@@ -16,6 +16,7 @@ import type { Technique } from "../../domain/knowledge.js";
 import type { Location, LocationScoutingBrief } from "../../domain/location.js";
 import type { MentorLesson } from "../../domain/mentor.js";
 import type { Scene, SceneFunction } from "../../domain/script.js";
+import type { FilmProject } from "../../domain/film.js";
 import type { PipelineStepSummary } from "../types.js";
 import { adaptFilmSeedData } from "./adaptFilmSeedData.js";
 import type { ProjectSetupRun } from "./createProjectSetupRun.js";
@@ -35,17 +36,21 @@ export interface MentorDevelopmentResult {
   readonly suggestedAction: string;
   readonly unlockedTechnique: string | null;
   readonly projectTechniqueCount: number;
+  readonly projectState: FilmProject;
   readonly pipelineStep: PipelineStepSummary;
 }
 
 export interface LocationDevelopmentResult {
   readonly path: "location";
   readonly pathLabel: "Scout locations";
+  readonly briefId: string;
   readonly briefTitle: string;
+  readonly topLocationId: string;
   readonly topLocation: string;
   readonly totalScore: number;
   readonly notes: readonly string[];
   readonly projectLocationCount: number;
+  readonly projectState: FilmProject;
   readonly pipelineStep: PipelineStepSummary;
 }
 
@@ -57,6 +62,7 @@ export interface ScriptDevelopmentResult {
   readonly sceneCount: number;
   readonly overallScore: number;
   readonly notes: readonly string[];
+  readonly projectState: FilmProject;
   readonly pipelineStep: PipelineStepSummary;
 }
 
@@ -110,6 +116,7 @@ export function createMentorDevelopmentResult(
     suggestedAction: advice.suggestedAction,
     unlockedTechnique,
     projectTechniqueCount: application.project.techniqueIdsUsed.length,
+    projectState: application.project,
     pipelineStep: {
       label: "Development action completed",
       detail: `Mentor lesson · ${advice.title}`,
@@ -131,11 +138,14 @@ export function createLocationDevelopmentResult(
   return {
     path: "location",
     pathLabel: "Scout locations",
+    briefId: brief.id,
     briefTitle: brief.title,
+    topLocationId: topLocation.id,
     topLocation: topLocation.name,
     totalScore: topScore.totalScore,
     notes: topScore.notes.slice(0, 3),
     projectLocationCount: selection.project.locationIds.length,
+    projectState: selection.project,
     pipelineStep: {
       label: "Development action completed",
       detail: `Location scouted · ${topLocation.name}`,
@@ -172,6 +182,7 @@ export function createScriptDevelopmentResult(run: ProjectSetupRun): ScriptDevel
     sceneCount: evaluation.sceneCount,
     overallScore: evaluation.overall,
     notes: buildScriptNotes(evaluation),
+    projectState: run.filmProjectState,
     pipelineStep: {
       label: "Development action completed",
       detail: `Starter script · ${evaluation.sceneCount} scenes`,

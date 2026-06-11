@@ -1,13 +1,15 @@
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { ProjectSetupRun } from "../demo/createProjectSetupRun.js";
+import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
 
 interface RunSummaryPanelProps {
   readonly run: ProjectSetupRun;
   readonly developmentResult: DevelopmentStepResult | null;
+  readonly preProductionResult: PreProductionStepResult | null;
   readonly onEdit: () => void;
 }
 
-export function RunSummaryPanel({ run, developmentResult, onEdit }: RunSummaryPanelProps) {
+export function RunSummaryPanel({ run, developmentResult, preProductionResult, onEdit }: RunSummaryPanelProps) {
   return (
     <section className="panel run-summary-panel">
       <div className="panel-heading">
@@ -21,9 +23,19 @@ export function RunSummaryPanel({ run, developmentResult, onEdit }: RunSummaryPa
         <SummaryItem
           label="Development status"
           value={developmentResult ? "Action completed" : "Ready for development"}
-          detail={developmentResult ? `${developmentResult.pathLabel} has been applied. This playable step is complete.` : "Choose one early development action."}
+          detail={developmentResult ? `${developmentResult.pathLabel} has been applied.` : "Choose one early development action."}
           accent
         />
+        {developmentResult && (
+          <SummaryItem
+            label="Pre-production status"
+            value={preProductionResult ? "Production locked" : "Production office open"}
+            detail={preProductionResult
+              ? `${preProductionResult.crew.projectCrewCount} crew and ${preProductionResult.casting.projectActorCount} actors are attached.`
+              : "Confirm a location, hire key crew and cast at least two actors."}
+            accent={Boolean(preProductionResult)}
+          />
+        )}
       </div>
     </section>
   );
