@@ -128,6 +128,13 @@ export function createProjectSetupRun(choices: ProjectSetupChoices): ProjectSetu
   };
 }
 
+export function addDevelopmentPipelineStep(
+  run: ProjectSetupRun,
+  developmentStep: PipelineStepSummary
+): readonly PipelineStepSummary[] {
+  return [...run.pipelineSteps, developmentStep];
+}
+
 function requireItem<T extends { readonly id: string }>(
   items: readonly T[],
   id: string,
