@@ -73,8 +73,18 @@ import type { StudioIncome } from "../../domain/career.js";
 import type { CrewDiscipline } from "../../domain/crew.js";
 import { asCharacterId, asSceneId, asStudioIncomeId } from "../../domain/ids.js";
 import type { Character, Scene } from "../../domain/script.js";
+import { adaptFilmSeedData } from "./adaptFilmSeedData";
 
-const data = {
+type DemoFilmData = Pick<FilmData,
+  | "actors" | "audienceSegments" | "awards" | "careerMilestones"
+  | "colorDecisions" | "crewMembers" | "criticProfiles" | "editDecisions"
+  | "festivals" | "genres" | "locationScoutingBriefs" | "locations"
+  | "mentorLessons" | "mentors" | "musicDecisions" | "productionChoices"
+  | "productionEvents" | "releaseStrategies" | "sceneFunctions" | "scriptTemplates"
+  | "soundDecisions" | "strategicGoals" | "studioExpenses" | "trailerStrategies"
+>;
+
+const data = adaptFilmSeedData<DemoFilmData>({
   actors,
   audienceSegments,
   awards: awardsData,
@@ -99,14 +109,7 @@ const data = {
   strategicGoals,
   studioExpenses,
   trailerStrategies
-} as unknown as Pick<FilmData,
-  | "actors" | "audienceSegments" | "awards" | "careerMilestones"
-  | "colorDecisions" | "crewMembers" | "criticProfiles" | "editDecisions"
-  | "festivals" | "genres" | "locationScoutingBriefs" | "locations"
-  | "mentorLessons" | "mentors" | "musicDecisions" | "productionChoices"
-  | "productionEvents" | "releaseStrategies" | "sceneFunctions" | "scriptTemplates"
-  | "soundDecisions" | "strategicGoals" | "studioExpenses" | "trailerStrategies"
->;
+});
 
 export interface PipelineStep {
   readonly label: string;

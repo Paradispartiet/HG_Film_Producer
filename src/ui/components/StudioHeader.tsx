@@ -1,7 +1,7 @@
-import type { DemoStudioRun } from "../demo/createDemoStudioRun";
+import type { StudioDashboardSummary } from "../types.js";
 
 interface StudioHeaderProps {
-  readonly studio: DemoStudioRun["studio"];
+  readonly studio: StudioDashboardSummary;
 }
 
 export function StudioHeader({ studio }: StudioHeaderProps) {
