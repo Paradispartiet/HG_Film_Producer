@@ -1,0 +1,58 @@
+[
+  {
+    "id": "location_oslo_harbour",
+    "name": "Aker Brygge Waterfront",
+    "city": "Oslo",
+    "type": "harbour",
+    "summary": "A working waterfront of piers, cranes and reflected light.",
+    "tags": ["water", "industrial", "open_air", "evening"],
+    "genreBonuses": [
+      { "genreId": "genre_thriller", "bonus": 8 },
+      { "genreId": "genre_social_realism", "bonus": 6 }
+    ],
+    "productionModifiers": { "cost": 1.2, "logistics": 60, "authenticity": 80 },
+    "hgPlaceId": "hg_oslo_aker_brygge"
+  },
+  {
+    "id": "location_oslo_old_street",
+    "name": "Damstredet Old Street",
+    "city": "Oslo",
+    "type": "street",
+    "summary": "A narrow, crooked street of wooden houses that reads as the past.",
+    "tags": ["historic", "wood", "narrow", "daylight"],
+    "genreBonuses": [
+      { "genreId": "genre_period_drama", "bonus": 10 },
+      { "genreId": "genre_drama", "bonus": 4 }
+    ],
+    "productionModifiers": { "cost": 1.0, "logistics": 45, "authenticity": 90 },
+    "hgPlaceId": "hg_oslo_damstredet"
+  },
+  {
+    "id": "location_oslo_apartment",
+    "name": "Grünerløkka Apartment",
+    "city": "Oslo",
+    "type": "apartment",
+    "summary": "A small flat with hard interior light and lived-in detail.",
+    "tags": ["interior", "intimate", "modern", "controlled"],
+    "genreBonuses": [
+      { "genreId": "genre_drama", "bonus": 8 },
+      { "genreId": "genre_romance", "bonus": 6 }
+    ],
+    "productionModifiers": { "cost": 0.8, "logistics": 25, "authenticity": 70 },
+    "hgPlaceId": null
+  },
+  {
+    "id": "location_oslo_forest",
+    "name": "Nordmarka Forest Edge",
+    "city": "Oslo",
+    "type": "forest",
+    "summary": "Dense pine forest with deep shadow and isolating quiet.",
+    "tags": ["nature", "isolated", "dark", "weather"],
+    "genreBonuses": [
+      { "genreId": "genre_horror", "bonus": 10 },
+      { "genreId": "genre_thriller", "bonus": 5 }
+    ],
+    "productionModifiers": { "cost": 1.1, "logistics": 70, "authenticity": 85 },
+    "hgPlaceId": "hg_oslo_nordmarka"
+  }
+]

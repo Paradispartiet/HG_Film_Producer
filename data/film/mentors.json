@@ -1,0 +1,68 @@
+[
+  {
+    "id": "mentor_001",
+    "name": "Sergei Eisenstein",
+    "focusRoleId": "role_editor",
+    "domain": "Editing and montage",
+    "problem": "The film drags in the middle and progress is hard to convey.",
+    "lesson": "Cut for collision and rhythm; let images compress time and meaning.",
+    "example": "The montage theory of 1920s Soviet cinema.",
+    "teachesTechniqueIds": ["technique_montage", "technique_cross_cutting"],
+    "unlocksKnowledgeEntryId": "knowledge_montage"
+  },
+  {
+    "id": "mentor_002",
+    "name": "Alfred Hitchcock",
+    "focusRoleId": "role_director",
+    "domain": "Suspense and audience control",
+    "problem": "A scene lacks tension because the audience knows too little.",
+    "lesson": "Let the audience know something a character does not, then cut between threads.",
+    "example": "Classic suspense built on parallel action and timing.",
+    "teachesTechniqueIds": ["technique_cross_cutting", "technique_offscreen_sound"],
+    "unlocksKnowledgeEntryId": "knowledge_cross_cutting"
+  },
+  {
+    "id": "mentor_003",
+    "name": "Ingmar Bergman",
+    "focusRoleId": "role_director",
+    "domain": "Faces, silence and inner life",
+    "problem": "A character feels flat and their inner reaction is invisible.",
+    "lesson": "Hold on the face; let the close-up and silence carry the emotion.",
+    "example": "Intimate chamber dramas centred on the human face.",
+    "teachesTechniqueIds": ["technique_close_up"],
+    "unlocksKnowledgeEntryId": "knowledge_close_up"
+  },
+  {
+    "id": "mentor_004",
+    "name": "Jean-Luc Godard",
+    "focusRoleId": "role_editor",
+    "domain": "Modern rhythm and rule-breaking",
+    "problem": "A passage feels static and conventional.",
+    "lesson": "Break continuity on purpose; the jump cut creates restless modern energy.",
+    "example": "The disruptive editing of the French New Wave.",
+    "teachesTechniqueIds": ["technique_jump_cut"],
+    "unlocksKnowledgeEntryId": "knowledge_jump_cut"
+  },
+  {
+    "id": "mentor_005",
+    "name": "Roger Deakins",
+    "focusRoleId": "role_cinematographer",
+    "domain": "Light and space",
+    "problem": "A scene lacks mood and the budget cannot carry heavy lighting.",
+    "lesson": "Work with natural and motivated light for honest, grounded images.",
+    "example": "Naturalistic cinematography that trusts available light.",
+    "teachesTechniqueIds": ["technique_natural_light"],
+    "unlocksKnowledgeEntryId": "knowledge_natural_light"
+  },
+  {
+    "id": "mentor_006",
+    "name": "Walter Murch",
+    "focusRoleId": "role_sound_designer",
+    "domain": "Sound as storytelling",
+    "problem": "A scene feels small and you want threat or scale without showing it.",
+    "lesson": "Use sound from outside the frame to expand the world and imply danger.",
+    "example": "Sound design that builds space the camera never shows.",
+    "teachesTechniqueIds": ["technique_offscreen_sound"],
+    "unlocksKnowledgeEntryId": "knowledge_offscreen_sound"
+  }
+]

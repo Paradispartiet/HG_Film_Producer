@@ -1,0 +1,79 @@
+[
+  {
+    "id": "role_producer",
+    "name": "Producer",
+    "department": "production",
+    "summary": "Steers resources, deals, risk and the overall shape of the project.",
+    "affectedStats": ["quality", "audienceAppeal"]
+  },
+  {
+    "id": "role_director",
+    "name": "Director",
+    "department": "direction",
+    "summary": "Owns the creative whole: tone, rhythm, staging and performances.",
+    "affectedStats": ["quality", "emotion", "performance", "visualStyle"]
+  },
+  {
+    "id": "role_screenwriter",
+    "name": "Screenwriter",
+    "department": "writing",
+    "summary": "Shapes the story: structure, characters, dialogue and theme.",
+    "affectedStats": ["structure", "emotion", "audienceAppeal"]
+  },
+  {
+    "id": "role_cinematographer",
+    "name": "Cinematographer",
+    "department": "camera",
+    "summary": "Shapes the image through light, lenses, framing and movement.",
+    "affectedStats": ["visualStyle", "emotion"]
+  },
+  {
+    "id": "role_editor",
+    "name": "Editor",
+    "department": "post_production",
+    "summary": "Shapes time: pacing, rhythm and the final form of the film.",
+    "affectedStats": ["pacing", "structure", "emotion"]
+  },
+  {
+    "id": "role_composer",
+    "name": "Composer",
+    "department": "music",
+    "summary": "Shapes feeling through theme, mood and musical identity.",
+    "affectedStats": ["emotion", "sound"]
+  },
+  {
+    "id": "role_sound_designer",
+    "name": "Sound Designer",
+    "department": "sound",
+    "summary": "Shapes the world through space, presence, danger and realism.",
+    "affectedStats": ["sound", "emotion"]
+  },
+  {
+    "id": "role_production_designer",
+    "name": "Production Designer",
+    "department": "design",
+    "summary": "Shapes the environment: period, class, credibility and symbolism.",
+    "affectedStats": ["visualStyle", "quality"]
+  },
+  {
+    "id": "role_casting_director",
+    "name": "Casting Director",
+    "department": "casting",
+    "summary": "Shapes who the characters become on screen and the chemistry between them.",
+    "affectedStats": ["performance", "audienceAppeal"]
+  },
+  {
+    "id": "role_location_manager",
+    "name": "Location Manager",
+    "department": "production",
+    "summary": "Connects the story to real places and manages their logistics and cost.",
+    "affectedStats": ["visualStyle", "quality"]
+  },
+  {
+    "id": "role_marketer",
+    "name": "Marketer",
+    "department": "release",
+    "summary": "Shapes how the film meets its audience: trailer, target group and expectation.",
+    "affectedStats": ["audienceAppeal", "criticalAppeal"]
+  }
+]

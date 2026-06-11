@@ -1,0 +1,101 @@
+[
+  {
+    "id": "choice_slow_middle",
+    "phase": "post_production",
+    "problem": "The middle of the film drags and the audience loses momentum.",
+    "prompt": "How do you handle the slow second act in the edit?",
+    "options": [
+      {
+        "id": "option_montage",
+        "label": "Build a montage",
+        "description": "Compress the development into a rhythmic sequence of short shots.",
+        "statChanges": { "pacing": 8, "structure": 4 },
+        "unlocksTechniqueId": "technique_montage",
+        "unlocksKnowledgeEntryId": "knowledge_montage"
+      },
+      {
+        "id": "option_trim",
+        "label": "Trim scenes",
+        "description": "Shorten existing scenes without changing their shape.",
+        "statChanges": { "pacing": 3 },
+        "unlocksTechniqueId": null,
+        "unlocksKnowledgeEntryId": null
+      },
+      {
+        "id": "option_leave",
+        "label": "Leave it as is",
+        "description": "Trust the material and keep the slower rhythm.",
+        "statChanges": { "pacing": -4, "audienceAppeal": -3 },
+        "unlocksTechniqueId": null,
+        "unlocksKnowledgeEntryId": null
+      }
+    ],
+    "bestOptionId": "option_montage"
+  },
+  {
+    "id": "choice_flat_character",
+    "phase": "shooting",
+    "problem": "A pivotal character reads as flat and their inner reaction is invisible.",
+    "prompt": "How do you shoot the emotional turning point?",
+    "options": [
+      {
+        "id": "option_close_up",
+        "label": "Go to a close-up",
+        "description": "Hold tight on the face so the smallest reaction lands.",
+        "statChanges": { "emotion": 8, "performance": 5 },
+        "unlocksTechniqueId": "technique_close_up",
+        "unlocksKnowledgeEntryId": "knowledge_close_up"
+      },
+      {
+        "id": "option_wide",
+        "label": "Keep the wide shot",
+        "description": "Stay back and let the staging carry the moment.",
+        "statChanges": { "visualStyle": 2, "emotion": -2 },
+        "unlocksTechniqueId": null,
+        "unlocksKnowledgeEntryId": null
+      },
+      {
+        "id": "option_voiceover",
+        "label": "Add a voiceover",
+        "description": "Explain the feeling in narration instead of showing it.",
+        "statChanges": { "emotion": 3, "visualStyle": -3 },
+        "unlocksTechniqueId": "technique_voiceover",
+        "unlocksKnowledgeEntryId": "knowledge_voiceover"
+      }
+    ],
+    "bestOptionId": "option_close_up"
+  },
+  {
+    "id": "choice_tight_budget",
+    "phase": "pre_production",
+    "problem": "The lighting plan is too expensive for the budget and the schedule.",
+    "prompt": "How do you light the location work?",
+    "options": [
+      {
+        "id": "option_natural_light",
+        "label": "Use natural light",
+        "description": "Shoot with available light for realism and a lower cost.",
+        "statChanges": { "visualStyle": 5, "quality": 4 },
+        "unlocksTechniqueId": "technique_natural_light",
+        "unlocksKnowledgeEntryId": "knowledge_natural_light"
+      },
+      {
+        "id": "option_full_rig",
+        "label": "Rent a full lighting rig",
+        "description": "Buy total control at a cost the budget can barely carry.",
+        "statChanges": { "visualStyle": 7, "quality": -3 },
+        "unlocksTechniqueId": null,
+        "unlocksKnowledgeEntryId": null
+      },
+      {
+        "id": "option_cut_scenes",
+        "label": "Cut the lit scenes",
+        "description": "Avoid the problem by removing the scenes entirely.",
+        "statChanges": { "structure": -4, "visualStyle": -2 },
+        "unlocksTechniqueId": null,
+        "unlocksKnowledgeEntryId": null
+      }
+    ],
+    "bestOptionId": "option_natural_light"
+  }
+]
