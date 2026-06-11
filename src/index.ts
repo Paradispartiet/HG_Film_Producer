@@ -1,4 +1,13 @@
 import { addSceneToScript } from "./core/addSceneToScript.js";
+import { applyReleaseResultToStudio } from "./core/applyReleaseResultToStudio.js";
+import { calculateReleaseRevenue } from "./core/calculateReleaseRevenue.js";
+import { createReleasePlan } from "./core/createReleasePlan.js";
+import { evaluateReleaseOutcome } from "./core/evaluateReleaseOutcome.js";
+import { generateAudienceResult } from "./core/generateAudienceResult.js";
+import { generateReviewResult } from "./core/generateReviewResult.js";
+import { resolveAwardsOutcome } from "./core/resolveAwardsOutcome.js";
+import { scoreReleaseStrategy } from "./core/scoreReleaseStrategy.js";
+import { submitToFestival } from "./core/submitToFestival.js";
 import { applyColorDecision } from "./core/applyColorDecision.js";
 import { applyEditDecision } from "./core/applyEditDecision.js";
 import { applyMentorLesson } from "./core/applyMentorLesson.js";
@@ -283,8 +292,78 @@ const { project: updatedProject, outcome } = applyProductionChoice(staffedProjec
 // 20. Calculate a film result shaped by both the production team and locked cut.
 const result = calculateFilmResult(updatedProject, productionTeam, postProduction);
 
-// 21. Log a readable summary of the complete production loop.
-console.log("HG Film Producer — full production and post-production demo\n");
+// 21. Compare the available release routes and choose the strongest fit.
+const rankedReleaseStrategies = data.releaseStrategies
+  .map((strategy) => ({
+    strategy,
+    score: scoreReleaseStrategy(updatedProject, result, strategy, postProduction)
+  }))
+  .sort((left, right) => right.score.totalScore - left.score.totalScore);
+const selectedRelease = rankedReleaseStrategies[0];
+if (!selectedRelease) {
+  throw new Error("Release planning requires at least one strategy in seed data.");
+}
+
+// 22. Create a plan and submit the finished film to a fitting festival.
+let releasePlan = createReleasePlan(updatedProject, selectedRelease.strategy);
+const selectedFestival = requireSeed(
+  data.festivals,
+  "festival_nordic_debut",
+  "festival"
+);
+const festivalResult = submitToFestival(updatedProject, result, selectedFestival);
+releasePlan = {
+  ...releasePlan,
+  festivalSubmissionIds: [selectedFestival.id],
+  notes: [...releasePlan.notes, `Submitted to ${selectedFestival.name}.`]
+};
+
+// 23. Generate a small critic panel and representative audience sample.
+const selectedCritics = [
+  requireSeed(data.criticProfiles, "critic_mainstream_newspaper", "critic profile"),
+  requireSeed(data.criticProfiles, "critic_arthouse_journal", "critic profile"),
+  requireSeed(data.criticProfiles, "critic_local_culture", "critic profile")
+];
+const reviews = selectedCritics.map((critic) =>
+  generateReviewResult(updatedProject, result, critic, postProduction)
+);
+const selectedAudiences = [
+  requireSeed(data.audienceSegments, "audience_broad_weekend", "audience segment"),
+  requireSeed(data.audienceSegments, "audience_arthouse_regulars", "audience segment"),
+  requireSeed(data.audienceSegments, "audience_local_oslo", "audience segment")
+];
+const audienceResults = selectedAudiences.map((segment) =>
+  generateAudienceResult(updatedProject, result, segment, selectedRelease.strategy)
+);
+
+// 24. Resolve the financial, awards, and final studio consequences.
+const revenue = calculateReleaseRevenue(
+  updatedProject,
+  releasePlan,
+  selectedRelease.strategy,
+  audienceResults
+);
+const awards = resolveAwardsOutcome(
+  updatedProject,
+  result,
+  data.awards,
+  reviews,
+  [festivalResult]
+);
+const releaseOutcome = evaluateReleaseOutcome(
+  updatedProject,
+  result,
+  selectedRelease.score,
+  [festivalResult],
+  reviews,
+  audienceResults,
+  revenue,
+  awards
+);
+const studioRelease = applyReleaseResultToStudio(studio, releaseOutcome);
+
+// 25. Log a readable summary of the complete production-to-release loop.
+console.log("HG Film Producer — full production, post-production, and release demo\n");
 
 console.log(`Studio:   ${studio.name}`);
 console.log(`  money ${studio.money.toLocaleString("en-US")}, reputation ${studio.reputation}, prestige ${studio.prestige}\n`);
@@ -435,7 +514,63 @@ console.log("Film result:");
 console.log(`  quality ${result.quality}, audience ${result.audienceAppeal}, critics ${result.criticalAppeal}`);
 console.log(`  budget spent ${result.budgetSpent.toLocaleString("en-US")}`);
 console.log(`  revenue estimate ${result.revenueEstimate.toLocaleString("en-US")}`);
-console.log(`  reputation ${signed(result.reputationDelta)}, prestige ${signed(result.prestigeDelta)}`);
+console.log(`  reputation ${signed(result.reputationDelta)}, prestige ${signed(result.prestigeDelta)}\n`);
+
+console.log(`Release strategy: ${selectedRelease.strategy.title}`);
+console.log(
+  `  total ${selectedRelease.score.totalScore}, audience ${selectedRelease.score.audienceFit}, critics ${selectedRelease.score.criticFit}, festivals ${selectedRelease.score.festivalFit}`
+);
+console.log(
+  `  revenue ${selectedRelease.score.revenueFit}, prestige ${selectedRelease.score.prestigeFit}, risk fit ${selectedRelease.score.riskFit}`
+);
+console.log(`  marketing budget ${releasePlan.marketingBudget.toLocaleString("en-US")}\n`);
+
+console.log(`Festival: ${selectedFestival.name}`);
+console.log(
+  `  ${festivalResult.accepted ? "accepted" : "not selected"}, selection ${festivalResult.selectionScore}, premiere ${festivalResult.premiereValue}, prestige +${festivalResult.prestigeGain}`
+);
+console.log(`  submission cost ${festivalResult.cost.toLocaleString("en-US")}\n`);
+
+console.log("Reviews:");
+for (const [index, review] of reviews.entries()) {
+  const critic = selectedCritics[index];
+  console.log(
+    `  • ${critic?.name ?? review.criticProfileId}: ${review.score}/100 (${review.sentiment}) — “${review.pullQuote}”`
+  );
+}
+console.log("");
+
+console.log("Audiences:");
+for (const [index, audience] of audienceResults.entries()) {
+  const segment = selectedAudiences[index];
+  console.log(
+    `  • ${segment?.name ?? audience.segmentId}: interest ${audience.interestScore}, satisfaction ${audience.satisfactionScore}, word of mouth ${audience.wordOfMouth}, viewers ${audience.estimatedViewers.toLocaleString("en-US")}`
+  );
+}
+console.log("");
+
+console.log("Revenue:");
+console.log(
+  `  gross ${revenue.grossRevenue.toLocaleString("en-US")}, marketing ${revenue.marketingSpend.toLocaleString("en-US")}, distribution ${revenue.distributionCost.toLocaleString("en-US")}`
+);
+console.log(
+  `  net ${revenue.netRevenue.toLocaleString("en-US")}, ROI ${(revenue.roi * 100).toFixed(0)}%, ${revenue.breakEven ? "break-even achieved" : "below break-even"}\n`
+);
+
+console.log("Awards:");
+console.log(`  nominations ${awards.nominations.length}: ${awards.nominations.join(", ") || "none"}`);
+console.log(`  wins ${awards.wins.length}: ${awards.wins.join(", ") || "none"}`);
+console.log(`  prestige +${awards.prestigeGain}, audience +${awards.audienceGain}\n`);
+
+console.log(`Release outcome: ${releaseOutcome.overall}/100`);
+console.log(
+  `  reputation ${signed(releaseOutcome.reputationDelta)}, prestige ${signed(releaseOutcome.prestigeDelta)}`
+);
+console.log("Final studio:");
+console.log(
+  `  money ${studioRelease.studio.money.toLocaleString("en-US")}, reputation ${studioRelease.studio.reputation}, prestige ${studioRelease.studio.prestige}`
+);
+console.log(`  ${studioRelease.note}`);
 
 function requireSeed<TItem extends { readonly id: string }>(
   items: readonly TItem[],

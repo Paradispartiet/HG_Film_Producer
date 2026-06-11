@@ -106,3 +106,34 @@ export function asPostDecisionId(value: string): PostDecisionId {
 export function asTrailerStrategyId(value: string): TrailerStrategyId {
   return value as TrailerStrategyId;
 }
+
+export type ReleasePlanId = Brand<string, "ReleasePlanId">;
+export type ReleaseStrategyId = Brand<string, "ReleaseStrategyId">;
+export type FestivalId = Brand<string, "FestivalId">;
+export type CriticProfileId = Brand<string, "CriticProfileId">;
+export type AudienceSegmentId = Brand<string, "AudienceSegmentId">;
+export type AwardId = Brand<string, "AwardId">;
+
+export function asReleasePlanId(value: string): ReleasePlanId {
+  return value as ReleasePlanId;
+}
+
+export function asReleaseStrategyId(value: string): ReleaseStrategyId {
+  return value as ReleaseStrategyId;
+}
+
+export function asFestivalId(value: string): FestivalId {
+  return value as FestivalId;
+}
+
+export function asCriticProfileId(value: string): CriticProfileId {
+  return value as CriticProfileId;
+}
+
+export function asAudienceSegmentId(value: string): AudienceSegmentId {
+  return value as AudienceSegmentId;
+}
+
+export function asAwardId(value: string): AwardId {
+  return value as AwardId;
+}

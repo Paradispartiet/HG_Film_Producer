@@ -1,0 +1,9 @@
+[
+  { "id": "critic_mainstream_newspaper", "name": "Elin Strand, The Daily Ledger", "type": "mainstream", "tasteTags": ["drama", "thriller", "comedy"], "harshness": 58, "audienceInfluence": 82, "prestigeInfluence": 62 },
+  { "id": "critic_arthouse_journal", "name": "Mara Voss, Frame & Form", "type": "arthouse", "tasteTags": ["drama", "social_realism", "period_drama"], "harshness": 72, "audienceInfluence": 45, "prestigeInfluence": 90 },
+  { "id": "critic_genre_magazine", "name": "Jonas Rook, Midnight Reels", "type": "genre", "tasteTags": ["horror", "thriller", "science_fiction"], "harshness": 48, "audienceInfluence": 72, "prestigeInfluence": 48 },
+  { "id": "critic_local_culture", "name": "Ingrid Sol, City Culture Review", "type": "local", "tasteTags": ["drama", "comedy", "documentary"], "harshness": 42, "audienceInfluence": 58, "prestigeInfluence": 40 },
+  { "id": "critic_industry_trade", "name": "Theo March, Production Bulletin", "type": "industry", "tasteTags": ["drama", "action", "thriller"], "harshness": 65, "audienceInfluence": 52, "prestigeInfluence": 78 },
+  { "id": "critic_academic_film", "name": "Dr. Ada Kern, Moving Image Quarterly", "type": "academic", "tasteTags": ["social_realism", "documentary", "period_drama"], "harshness": 76, "audienceInfluence": 30, "prestigeInfluence": 86 },
+  { "id": "critic_streaming_audience", "name": "Nico Vale, Queue Watch", "type": "streaming", "tasteTags": ["comedy", "thriller", "romance"], "harshness": 38, "audienceInfluence": 88, "prestigeInfluence": 32 }
+]

@@ -120,6 +120,10 @@ Resultatet etter lansering.
 
 Bør inneholde publikum, økonomi, kritikk, festivalrespons, priser, kultstatus og effekt på studioets rykte.
 
+### release and reception engine
+
+Lanseringen er nå modellert med immutable planer og strategiscoring, deterministiske festivaluttak, kritikker, publikumssegmenter, inntekter og priser. En samlet `ReleaseOutcomeEvaluation` kan til slutt anvendes på studioets økonomi, omdømme, prestisje og fullførte prosjekter.
+
 ### knowledge_entry
 
 Læringsinnhold knyttet til det spilleren faktisk bruker.

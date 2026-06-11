@@ -1,0 +1,12 @@
+[
+  { "id": "award_northern_best_picture", "title": "Northern Screen Best Picture", "category": "best_picture", "prestigeValue": 12, "audienceValue": 8, "requiredScore": 78, "preferredTags": [] },
+  { "id": "award_northern_directing", "title": "Northern Screen Directing Prize", "category": "directing", "prestigeValue": 10, "audienceValue": 4, "requiredScore": 76, "preferredTags": [] },
+  { "id": "award_northern_screenplay", "title": "Northern Screen Screenplay Prize", "category": "screenplay", "prestigeValue": 9, "audienceValue": 4, "requiredScore": 74, "preferredTags": ["drama", "comedy", "social_realism"] },
+  { "id": "award_northern_acting", "title": "Northern Screen Acting Prize", "category": "acting", "prestigeValue": 8, "audienceValue": 7, "requiredScore": 73, "preferredTags": ["drama", "romance", "period_drama"] },
+  { "id": "award_northern_cinematography", "title": "Luminous Frame Cinematography Prize", "category": "cinematography", "prestigeValue": 8, "audienceValue": 3, "requiredScore": 72, "preferredTags": [] },
+  { "id": "award_northern_editing", "title": "Luminous Frame Editing Prize", "category": "editing", "prestigeValue": 7, "audienceValue": 3, "requiredScore": 71, "preferredTags": [] },
+  { "id": "award_northern_sound", "title": "Resonant Screen Sound Prize", "category": "sound", "prestigeValue": 6, "audienceValue": 3, "requiredScore": 70, "preferredTags": ["horror", "thriller", "drama"] },
+  { "id": "award_northern_music", "title": "Resonant Screen Music Prize", "category": "music", "prestigeValue": 6, "audienceValue": 4, "requiredScore": 70, "preferredTags": [] },
+  { "id": "award_northern_audience", "title": "Open House Audience Award", "category": "audience_award", "prestigeValue": 4, "audienceValue": 12, "requiredScore": 68, "preferredTags": [] },
+  { "id": "award_northern_debut", "title": "First Light Debut Feature Prize", "category": "debut", "prestigeValue": 9, "audienceValue": 5, "requiredScore": 70, "preferredTags": [] }
+]
