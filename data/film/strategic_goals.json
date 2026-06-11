@@ -1,0 +1,102 @@
+[
+  {
+    "id": "strategic_goal_survive_year_one",
+    "title": "Survive year one",
+    "type": "survive_year",
+    "description": "Keep the studio solvent through four quarters and finish one film.",
+    "targetYear": 1,
+    "requiredProgress": 100,
+    "rewardTags": ["low_budget"],
+    "note": "Prioritize cash discipline and a finishable slate."
+  },
+  {
+    "id": "strategic_goal_profitable_debut",
+    "title": "Make a profitable debut",
+    "type": "launch_debut",
+    "description": "Release the first studio film with positive net revenue.",
+    "targetYear": 1,
+    "requiredProgress": 100,
+    "rewardTags": ["commercial"],
+    "note": "Balance production ambition against an achievable audience."
+  },
+  {
+    "id": "strategic_goal_arthouse_reputation",
+    "title": "Build arthouse reputation",
+    "type": "build_prestige",
+    "description": "Develop critically distinctive films and festival relationships.",
+    "targetYear": 2,
+    "requiredProgress": 100,
+    "rewardTags": ["arthouse", "prestige"],
+    "note": "Favor authorial clarity, craft, and selective release routes."
+  },
+  {
+    "id": "strategic_goal_commercial_audience",
+    "title": "Build a commercial audience",
+    "type": "grow_audience",
+    "description": "Create repeatable audience appeal across the studio slate.",
+    "targetYear": 2,
+    "requiredProgress": 100,
+    "rewardTags": ["commercial"],
+    "note": "Invest in accessible concepts, casting, trailers, and distribution."
+  },
+  {
+    "id": "strategic_goal_festival_award",
+    "title": "Win a festival award",
+    "type": "win_award",
+    "description": "Guide one film from festival selection to a competitive win.",
+    "targetYear": 2,
+    "requiredProgress": 100,
+    "rewardTags": ["prestige", "arthouse"],
+    "note": "A focused campaign can matter as much as broad reach."
+  },
+  {
+    "id": "strategic_goal_thriller_specialist",
+    "title": "Become known for thrillers",
+    "type": "specialize_genre",
+    "description": "Complete a coherent run of suspense-driven genre films.",
+    "targetYear": 3,
+    "requiredProgress": 100,
+    "rewardTags": ["genre"],
+    "note": "Repeatable genre craft can build a loyal audience."
+  },
+  {
+    "id": "strategic_goal_local_oslo_studio",
+    "title": "Become a local Oslo studio",
+    "type": "build_reputation",
+    "description": "Build a recognizable local voice through Oslo stories, crews, and locations.",
+    "targetYear": 2,
+    "requiredProgress": 100,
+    "rewardTags": ["local"],
+    "note": "Local specificity should shape both production and audience strategy."
+  },
+  {
+    "id": "strategic_goal_discover_new_talent",
+    "title": "Discover new talent",
+    "type": "discover_talent",
+    "description": "Launch emerging actors or crew through meaningful creative responsibility.",
+    "targetYear": 2,
+    "requiredProgress": 100,
+    "rewardTags": ["talent_lab", "youth"],
+    "note": "Create workshops and low-risk opportunities for new voices."
+  },
+  {
+    "id": "strategic_goal_improve_technical_craft",
+    "title": "Improve technical craft",
+    "type": "build_reputation",
+    "description": "Raise production quality through training, equipment, and strong department heads.",
+    "targetYear": 2,
+    "requiredProgress": 100,
+    "rewardTags": ["technical_craft"],
+    "note": "Reliable craft creates value across every genre and scale."
+  },
+  {
+    "id": "strategic_goal_international_co_production",
+    "title": "Secure an international co-production",
+    "type": "international_breakthrough",
+    "description": "Build enough standing to package a film with foreign creative and financing partners.",
+    "targetYear": 3,
+    "requiredProgress": 100,
+    "rewardTags": ["international"],
+    "note": "Prestige, partner fit, and a clear local contribution are essential."
+  }
+]

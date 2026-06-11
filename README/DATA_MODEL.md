@@ -156,3 +156,7 @@ Innspillingen planlegges som deterministiske `ShootDay`-objekter med scener, loc
 ### post-production engine
 
 Postproduksjon modelleres som en egen, immutable plan med valg for klipp, lyd, musikk og farge. En deterministisk testvisning og trailerstrategi gir et forklarbart `PostProductionEvaluation`; låst klippekvalitet, trailer-effekt og faktiske postkostnader kan deretter påvirke filmresultatet uten å bryte eksisterende kallere.
+
+### studio career engine
+
+Studioets langsiktige progresjon modelleres som en immutable `CareerState` med år og kvartaler, kontantstrøm, filmografi, strategiske mål, milepæler og en forklarbar studioidentitet. Rene core-funksjoner oppdaterer karrieren uten å blande seed-data eller UI inn i domenelogikken.

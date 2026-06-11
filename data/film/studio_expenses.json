@@ -1,0 +1,101 @@
+[
+  {
+    "id": "studio_expense_small_office_rent",
+    "title": "Small office rent",
+    "category": "office",
+    "amount": 24000,
+    "recurring": true,
+    "quarter": "q1",
+    "note": "Quarterly rent for a compact production office and meeting room."
+  },
+  {
+    "id": "studio_expense_editing_suite_lease",
+    "title": "Editing suite lease",
+    "category": "equipment",
+    "amount": 18000,
+    "recurring": true,
+    "quarter": "q2",
+    "note": "Lease for an offline edit suite, calibrated monitor, and storage."
+  },
+  {
+    "id": "studio_expense_staff_payroll",
+    "title": "Core staff payroll",
+    "category": "staff",
+    "amount": 95000,
+    "recurring": true,
+    "quarter": "q1",
+    "note": "Quarterly payroll for the producer, coordinator, and production assistant."
+  },
+  {
+    "id": "studio_expense_equipment_maintenance",
+    "title": "Equipment maintenance",
+    "category": "equipment",
+    "amount": 12000,
+    "recurring": true,
+    "quarter": "q3",
+    "note": "Inspection, repair, insurance excess, and replacement media."
+  },
+  {
+    "id": "studio_expense_script_development_slate",
+    "title": "Script development slate",
+    "category": "development",
+    "amount": 40000,
+    "recurring": false,
+    "quarter": "q1",
+    "note": "Option fees, research, and writer sessions for three early-stage projects."
+  },
+  {
+    "id": "studio_expense_festival_campaign",
+    "title": "Festival campaign",
+    "category": "festival",
+    "amount": 55000,
+    "recurring": false,
+    "quarter": "q3",
+    "note": "Submissions, publicist support, screeners, and filmmaker travel."
+  },
+  {
+    "id": "studio_expense_location_scouting_travel",
+    "title": "Location scouting travel",
+    "category": "scouting",
+    "amount": 16000,
+    "recurring": false,
+    "quarter": "q2",
+    "note": "Regional travel, local fixers, permits research, and scout photography."
+  },
+  {
+    "id": "studio_expense_acting_workshop",
+    "title": "Acting workshop",
+    "category": "training",
+    "amount": 9000,
+    "recurring": false,
+    "quarter": "q2",
+    "note": "A rehearsal laboratory for emerging actors and directors."
+  },
+  {
+    "id": "studio_expense_marketing_retainer",
+    "title": "Marketing retainer",
+    "category": "marketing",
+    "amount": 28000,
+    "recurring": true,
+    "quarter": "q4",
+    "note": "Quarterly strategy, artwork coordination, press materials, and social planning."
+  },
+  {
+    "id": "studio_expense_debt_payment",
+    "title": "Production debt payment",
+    "category": "debt",
+    "amount": 60000,
+    "recurring": true,
+    "quarter": "q4",
+    "note": "Scheduled repayment on a revolving production credit facility."
+  },
+  {
+    "id": "studio_expense_legal_accounting",
+    "title": "Legal and accounting",
+    "category": "staff",
+    "amount": 22000,
+    "recurring": true,
+    "quarter": "q4",
+    "note": "Contracts, rights checks, payroll reporting, and annual accounts."
+  }
+]

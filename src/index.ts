@@ -1,4 +1,8 @@
 import { addSceneToScript } from "./core/addSceneToScript.js";
+import { advanceCareerQuarter } from "./core/advanceCareerQuarter.js";
+import { applyCareerMilestone } from "./core/applyCareerMilestone.js";
+import { applyStudioExpense } from "./core/applyStudioExpense.js";
+import { applyStudioIncome } from "./core/applyStudioIncome.js";
 import { applyReleaseResultToStudio } from "./core/applyReleaseResultToStudio.js";
 import { calculateReleaseRevenue } from "./core/calculateReleaseRevenue.js";
 import { createReleasePlan } from "./core/createReleasePlan.js";
@@ -19,6 +23,7 @@ import { attachLocationToProject } from "./core/attachLocationToProject.js";
 import { calculateCastingChemistry } from "./core/calculateCastingChemistry.js";
 import { calculateFilmResult } from "./core/calculateFilmResult.js";
 import { castActor, scoreActorForProject } from "./core/castActor.js";
+import { createCareerState } from "./core/createCareerState.js";
 import { createFilmProject } from "./core/createFilmProject.js";
 import { createPostProductionPlan } from "./core/createPostProductionPlan.js";
 import { createProductionSchedule } from "./core/createProductionSchedule.js";
@@ -26,27 +31,40 @@ import { createScript } from "./core/createScript.js";
 import { createTrailerCut } from "./core/createTrailerCut.js";
 import { createStudio } from "./core/createStudio.js";
 import { estimateSceneShootDifficulty } from "./core/estimateSceneShootDifficulty.js";
+import { evaluateCareerYear } from "./core/evaluateCareerYear.js";
 import { evaluatePostProduction } from "./core/evaluatePostProduction.js";
 import { evaluateProductionTeam } from "./core/evaluateProductionTeam.js";
 import { evaluateShootResult } from "./core/evaluateShootResult.js";
+import { evaluateStudioIdentity } from "./core/evaluateStudioIdentity.js";
 import { evaluateScript } from "./core/evaluateScript.js";
 import { findMentorsForProblem } from "./core/findMentorsForProblem.js";
 import { getMentorAdvice } from "./core/getMentorAdvice.js";
 import { hireCrewMember } from "./core/hireCrewMember.js";
 import { scoreCrewMemberForProject } from "./core/scoreCrewMemberForProject.js";
+import { recordCompletedFilm } from "./core/recordCompletedFilm.js";
 import { resolveShootDay } from "./core/resolveShootDay.js";
 import { runTestScreening } from "./core/runTestScreening.js";
 import { scoutLocations } from "./core/scoutLocations.js";
+import { selectNextStrategicGoal } from "./core/selectNextStrategicGoal.js";
 import { loadFilmData } from "./data/filmData.js";
+import type { StudioIncome } from "./domain/career.js";
 import type { CrewDiscipline } from "./domain/crew.js";
-import { asCharacterId, asSceneId } from "./domain/ids.js";
+import { asCharacterId, asSceneId, asStudioIncomeId } from "./domain/ids.js";
 import type { FilmStat } from "./domain/knowledge.js";
 import type { Character, Scene } from "./domain/script.js";
 
 const data = loadFilmData();
 
-// 1. A new studio.
+// 1. A new studio and its first career year.
 const studio = createStudio({ name: "Nordlys Film" });
+let careerState = createCareerState(studio, 1);
+const strategicGoal = requireSeed(
+  data.strategicGoals,
+  "strategic_goal_arthouse_reputation",
+  "strategic goal"
+);
+const strategicGoalSelection = selectNextStrategicGoal(careerState, strategicGoal);
+careerState = strategicGoalSelection.careerState;
 
 // 2. Build a film project from a script template so genre and structure agree.
 const template = data.scriptTemplates.find((t) => t.id === "script_template_intimate_drama");
@@ -362,8 +380,58 @@ const releaseOutcome = evaluateReleaseOutcome(
 );
 const studioRelease = applyReleaseResultToStudio(studio, releaseOutcome);
 
-// 25. Log a readable summary of the complete production-to-release loop.
-console.log("HG Film Producer — full production, post-production, and release demo\n");
+// 25. Carry reception into the career state, then record release cashflow exactly once.
+careerState = {
+  ...careerState,
+  studio: { ...studioRelease.studio, money: careerState.studio.money }
+};
+const releaseIncome: StudioIncome = {
+  id: asStudioIncomeId(`studio_income_${updatedProject.id}_release`),
+  title: `${updatedProject.title} release income`,
+  amount: releaseOutcome.netRevenue,
+  sourceProjectId: updatedProject.id,
+  quarter: careerState.currentQuarter,
+  note: "Net release revenue after marketing and distribution costs."
+};
+careerState = applyStudioIncome(careerState, releaseIncome);
+
+const completedFilm = {
+  projectId: updatedProject.id,
+  title: updatedProject.title,
+  year: careerState.currentYear,
+  genreId: updatedProject.genreId,
+  scale: updatedProject.scale,
+  quality: result.quality,
+  audienceAppeal: result.audienceAppeal,
+  criticalAppeal: result.criticalAppeal,
+  grossRevenue: releaseOutcome.grossRevenue,
+  netRevenue: releaseOutcome.netRevenue,
+  awardsWon: awards.wins.length,
+  reputationDelta: releaseOutcome.reputationDelta,
+  prestigeDelta: releaseOutcome.prestigeDelta,
+  identityTags: ["arthouse", "local", "low_budget"] as const
+};
+careerState = recordCompletedFilm(careerState, completedFilm);
+
+const studioExpense = requireSeed(
+  data.studioExpenses,
+  "studio_expense_small_office_rent",
+  "studio expense"
+);
+careerState = applyStudioExpense(careerState, studioExpense);
+
+const studioIdentity = evaluateStudioIdentity(careerState);
+const careerYearEvaluation = evaluateCareerYear(careerState, careerState.currentYear);
+const milestone = requireSeed(
+  data.careerMilestones,
+  "career_milestone_first_completed_film",
+  "career milestone"
+);
+const milestoneResult = applyCareerMilestone(careerState, milestone);
+careerState = advanceCareerQuarter(milestoneResult.careerState);
+
+// 26. Log a readable summary of the complete production-to-career loop.
+console.log("HG Film Producer — full production, release, and studio career demo\n");
 
 console.log(`Studio:   ${studio.name}`);
 console.log(`  money ${studio.money.toLocaleString("en-US")}, reputation ${studio.reputation}, prestige ${studio.prestige}\n`);
@@ -566,11 +634,50 @@ console.log(`Release outcome: ${releaseOutcome.overall}/100`);
 console.log(
   `  reputation ${signed(releaseOutcome.reputationDelta)}, prestige ${signed(releaseOutcome.prestigeDelta)}`
 );
-console.log("Final studio:");
+console.log("Studio before/after release:");
 console.log(
-  `  money ${studioRelease.studio.money.toLocaleString("en-US")}, reputation ${studioRelease.studio.reputation}, prestige ${studioRelease.studio.prestige}`
+  `  before: money ${studio.money.toLocaleString("en-US")}, reputation ${studio.reputation}, prestige ${studio.prestige}`
 );
-console.log(`  ${studioRelease.note}`);
+console.log(
+  `  after:  money ${studioRelease.studio.money.toLocaleString("en-US")}, reputation ${studioRelease.studio.reputation}, prestige ${studioRelease.studio.prestige}`
+);
+console.log(`  ${studioRelease.note}\n`);
+
+console.log(`Strategic goal: ${strategicGoal.title}`);
+console.log(`  ${strategicGoalSelection.note}\n`);
+
+console.log("Completed film record:");
+console.log(
+  `  ${completedFilm.title} — quality ${completedFilm.quality}, audience ${completedFilm.audienceAppeal}, critics ${completedFilm.criticalAppeal}`
+);
+console.log(
+  `  gross ${completedFilm.grossRevenue.toLocaleString("en-US")}, net ${completedFilm.netRevenue.toLocaleString("en-US")}, awards ${completedFilm.awardsWon}`
+);
+console.log(`  identity tags: ${completedFilm.identityTags.join(", ")}\n`);
+
+console.log("Career cashflow:");
+console.log(`  income:  ${releaseIncome.title} ${signed(releaseIncome.amount)}`);
+console.log(`  expense: ${studioExpense.title} -${studioExpense.amount.toLocaleString("en-US")}\n`);
+
+console.log("Studio identity:");
+console.log(
+  `  strongest: ${studioIdentity.strongestTags.join(", ") || "not formed"}; commercial ${studioIdentity.commercialScore}, prestige ${studioIdentity.prestigeScore}, craft ${studioIdentity.craftScore}, audience ${studioIdentity.audienceScore}`
+);
+console.log(`  all tags: ${studioIdentity.identityTags.join(", ") || "none"}\n`);
+
+console.log(`Career year ${careerYearEvaluation.year}: ${careerYearEvaluation.overall}/100`);
+console.log(
+  `  profit ${signed(careerYearEvaluation.profit)}, cash health ${careerYearEvaluation.cashHealth}, reputation ${signed(careerYearEvaluation.reputationGrowth)}, prestige ${signed(careerYearEvaluation.prestigeGrowth)}`
+);
+console.log(
+  `  films ${careerYearEvaluation.filmsCompleted}, award momentum ${careerYearEvaluation.awardMomentum}\n`
+);
+
+console.log(`Milestone: ${milestone.title}`);
+console.log(`  ${milestoneResult.note}`);
+console.log(
+  `Career position: year ${careerState.currentYear}, ${careerState.currentQuarter}; money ${careerState.studio.money.toLocaleString("en-US")}, reputation ${careerState.studio.reputation}, prestige ${careerState.studio.prestige}`
+);
 
 function requireSeed<TItem extends { readonly id: string }>(
   items: readonly TItem[],

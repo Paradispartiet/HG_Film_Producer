@@ -26,6 +26,10 @@ export type ProductionEventId = Brand<string, "ProductionEventId">;
 export type PostProductionPlanId = Brand<string, "PostProductionPlanId">;
 export type PostDecisionId = Brand<string, "PostDecisionId">;
 export type TrailerStrategyId = Brand<string, "TrailerStrategyId">;
+export type StudioExpenseId = Brand<string, "StudioExpenseId">;
+export type StudioIncomeId = Brand<string, "StudioIncomeId">;
+export type CareerMilestoneId = Brand<string, "CareerMilestoneId">;
+export type StrategicGoalId = Brand<string, "StrategicGoalId">;
 
 export function asStudioId(value: string): StudioId {
   return value as StudioId;
@@ -105,6 +109,22 @@ export function asPostDecisionId(value: string): PostDecisionId {
 
 export function asTrailerStrategyId(value: string): TrailerStrategyId {
   return value as TrailerStrategyId;
+}
+
+export function asStudioExpenseId(value: string): StudioExpenseId {
+  return value as StudioExpenseId;
+}
+
+export function asStudioIncomeId(value: string): StudioIncomeId {
+  return value as StudioIncomeId;
+}
+
+export function asCareerMilestoneId(value: string): CareerMilestoneId {
+  return value as CareerMilestoneId;
+}
+
+export function asStrategicGoalId(value: string): StrategicGoalId {
+  return value as StrategicGoalId;
 }
 
 export type ReleasePlanId = Brand<string, "ReleasePlanId">;
