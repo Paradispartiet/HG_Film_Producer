@@ -1,5 +1,6 @@
 import type { ProductionTeamEvaluation } from "../domain/crew.js";
 import type { FilmProject, FilmResult } from "../domain/film.js";
+import type { PostProductionEvaluation } from "../domain/post.js";
 
 const SCALE_BONUS: Record<FilmProject["scale"], number> = {
   micro: 0,
@@ -10,16 +11,20 @@ const SCALE_BONUS: Record<FilmProject["scale"], number> = {
 };
 
 /**
- * Calculate a release result. Existing one-argument callers keep a count-based
- * fallback, while a production-team evaluation makes actual fit, chemistry,
- * reliability and cost shape the result.
+ * Calculate a release result. Existing one- and two-argument callers retain
+ * their previous behavior; optional post-production improves the locked cut,
+ * positions the trailer, and adds its actual cost.
  */
 export function calculateFilmResult(
   project: FilmProject,
-  productionTeam?: ProductionTeamEvaluation
+  productionTeam?: ProductionTeamEvaluation,
+  postProduction?: PostProductionEvaluation
 ): FilmResult {
   if (productionTeam && productionTeam.projectId !== project.id) {
     throw new Error(`Production team evaluation does not belong to project "${project.id}".`);
+  }
+  if (postProduction && postProduction.projectId !== project.id) {
+    throw new Error(`Post-production evaluation does not belong to project "${project.id}".`);
   }
 
   const crewQuality = productionTeam?.crewScore ?? fallbackCrewScore(project);
@@ -30,19 +35,26 @@ export function calculateFilmResult(
   const locationStrength = Math.min(10, project.locationIds.length * 3);
   const techniqueStrength = Math.min(15, project.techniqueIdsUsed.length * 5);
   const scaleBonus = SCALE_BONUS[project.scale];
+  const lockedCutAdjustment = postProduction ? (postProduction.lockedCutQuality - 50) * 0.25 : 0;
+  const trailerAdjustment = postProduction ? (postProduction.trailerScore - 50) * 0.28 : 0;
 
   const quality = clampScore(
-    15 + crewQuality * 0.42 + chemistry * 0.1 + reliability * 0.08 + techniqueStrength + scaleBonus * 0.35
+    15 + crewQuality * 0.42 + chemistry * 0.1 + reliability * 0.08 + techniqueStrength
+      + scaleBonus * 0.35 + lockedCutAdjustment
   );
   const audienceAppeal = clampScore(
     15 + castQuality * 0.36 + chemistry * 0.2 + locationStrength + scaleBonus * 0.65
+      + trailerAdjustment + lockedCutAdjustment * 0.35
   );
   const criticalAppeal = clampScore(
-    12 + crewQuality * 0.32 + castQuality * 0.12 + chemistry * 0.12 + techniqueStrength + locationStrength * 0.5
+    12 + crewQuality * 0.32 + castQuality * 0.12 + chemistry * 0.12 + techniqueStrength
+      + locationStrength * 0.5 + lockedCutAdjustment * 0.7
+      + (postProduction ? (postProduction.overall - 50) * 0.12 : 0)
   );
-  const budgetSpent = Math.round(
+  const productionBudgetSpent = Math.round(
     project.budget * budgetPressure(project.scale) * (1 + Math.max(0, teamBudgetPressure - 50) / 500)
   );
+  const budgetSpent = productionBudgetSpent + (postProduction?.totalCost ?? 0);
   const revenueEstimate = Math.round(
     (audienceAppeal * 1200 + quality * 800) * revenueMultiplier(project.scale)
   );

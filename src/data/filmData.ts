@@ -8,6 +8,13 @@ import type { Location, LocationScoutingBrief } from "../domain/location.js";
 import type { MentorLesson } from "../domain/mentor.js";
 import type { Mentor } from "../domain/people.js";
 import type { ProductionChoice } from "../domain/production.js";
+import type {
+  ColorDecision,
+  EditDecision,
+  MusicDecision,
+  SoundDecision,
+  TrailerStrategy
+} from "../domain/post.js";
 import type { SceneFunction, ScriptTemplate } from "../domain/script.js";
 import type { ProductionEvent } from "../domain/shoot.js";
 
@@ -32,6 +39,11 @@ export interface FilmData {
   readonly sceneFunctions: readonly SceneFunction[];
   readonly scriptTemplates: readonly ScriptTemplate[];
   readonly productionEvents: readonly ProductionEvent[];
+  readonly editDecisions: readonly EditDecision[];
+  readonly soundDecisions: readonly SoundDecision[];
+  readonly musicDecisions: readonly MusicDecision[];
+  readonly colorDecisions: readonly ColorDecision[];
+  readonly trailerStrategies: readonly TrailerStrategy[];
 }
 
 // data/film lives at the repo root, two levels up from this module in both the
@@ -58,6 +70,11 @@ export function loadFilmData(): FilmData {
     knowledgeEntries: readJson<KnowledgeEntry[]>("knowledge_entries.json"),
     sceneFunctions: readJson<SceneFunction[]>("scene_functions.json"),
     scriptTemplates: readJson<ScriptTemplate[]>("script_templates.json"),
-    productionEvents: readJson<ProductionEvent[]>("production_events.json")
+    productionEvents: readJson<ProductionEvent[]>("production_events.json"),
+    editDecisions: readJson<EditDecision[]>("edit_decisions.json"),
+    soundDecisions: readJson<SoundDecision[]>("sound_decisions.json"),
+    musicDecisions: readJson<MusicDecision[]>("music_decisions.json"),
+    colorDecisions: readJson<ColorDecision[]>("color_decisions.json"),
+    trailerStrategies: readJson<TrailerStrategy[]>("trailer_strategies.json")
   };
 }

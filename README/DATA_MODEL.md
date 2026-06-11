@@ -148,3 +148,7 @@ Hvis en datatype ikke kan påvirke et filmvalg, et produksjonsvalg eller en lær
 ### production_schedule og shoot engine
 
 Innspillingen planlegges som deterministiske `ShootDay`-objekter med scener, location, dagskostnad og hendelser. Scenevanskelighet, produksjonshendelser, take quality, forsinkelser, budsjettstatus og produksjonsmoral evalueres av rene core-funksjoner, slik at systemet senere kan utvides med spillerstyrte valg eller randomness uten å endre domenemodellen.
+
+### post-production engine
+
+Postproduksjon modelleres som en egen, immutable plan med valg for klipp, lyd, musikk og farge. En deterministisk testvisning og trailerstrategi gir et forklarbart `PostProductionEvaluation`; låst klippekvalitet, trailer-effekt og faktiske postkostnader kan deretter påvirke filmresultatet uten å bryte eksisterende kallere.

@@ -23,6 +23,9 @@ export type ScriptTemplateId = Brand<string, "ScriptTemplateId">;
 export type ProductionScheduleId = Brand<string, "ProductionScheduleId">;
 export type ShootDayId = Brand<string, "ShootDayId">;
 export type ProductionEventId = Brand<string, "ProductionEventId">;
+export type PostProductionPlanId = Brand<string, "PostProductionPlanId">;
+export type PostDecisionId = Brand<string, "PostDecisionId">;
+export type TrailerStrategyId = Brand<string, "TrailerStrategyId">;
 
 export function asStudioId(value: string): StudioId {
   return value as StudioId;
@@ -90,4 +93,16 @@ export function asShootDayId(value: string): ShootDayId {
 
 export function asProductionEventId(value: string): ProductionEventId {
   return value as ProductionEventId;
+}
+
+export function asPostProductionPlanId(value: string): PostProductionPlanId {
+  return value as PostProductionPlanId;
+}
+
+export function asPostDecisionId(value: string): PostDecisionId {
+  return value as PostDecisionId;
+}
+
+export function asTrailerStrategyId(value: string): TrailerStrategyId {
+  return value as TrailerStrategyId;
 }
