@@ -3,6 +3,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import type { Genre, KnowledgeEntry, Role, Technique } from "../domain/knowledge.js";
+import type { MentorLesson } from "../domain/mentor.js";
 import type { Mentor } from "../domain/people.js";
 import type { Location, ProductionChoice } from "../domain/production.js";
 import type { SceneFunction, ScriptTemplate } from "../domain/script.js";
@@ -18,6 +19,7 @@ export interface FilmData {
   readonly genres: readonly Genre[];
   readonly techniques: readonly Technique[];
   readonly mentors: readonly Mentor[];
+  readonly mentorLessons: readonly MentorLesson[];
   readonly locations: readonly Location[];
   readonly productionChoices: readonly ProductionChoice[];
   readonly knowledgeEntries: readonly KnowledgeEntry[];
@@ -40,6 +42,7 @@ export function loadFilmData(): FilmData {
     genres: readJson<Genre[]>("genres.json"),
     techniques: readJson<Technique[]>("techniques.json"),
     mentors: readJson<Mentor[]>("mentors.json"),
+    mentorLessons: readJson<MentorLesson[]>("mentor_lessons.json"),
     locations: readJson<Location[]>("locations.json"),
     productionChoices: readJson<ProductionChoice[]>("production_choices.json"),
     knowledgeEntries: readJson<KnowledgeEntry[]>("knowledge_entries.json"),

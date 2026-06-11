@@ -9,6 +9,7 @@ export type RoleId = Brand<string, "RoleId">;
 export type CrewMemberId = Brand<string, "CrewMemberId">;
 export type ActorId = Brand<string, "ActorId">;
 export type MentorId = Brand<string, "MentorId">;
+export type MentorLessonId = Brand<string, "MentorLessonId">;
 export type TechniqueId = Brand<string, "TechniqueId">;
 export type MovementId = Brand<string, "MovementId">;
 export type GenreId = Brand<string, "GenreId">;
@@ -25,6 +26,10 @@ export function asStudioId(value: string): StudioId {
 
 export function asFilmProjectId(value: string): FilmProjectId {
   return value as FilmProjectId;
+}
+
+export function asMentorLessonId(value: string): MentorLessonId {
+  return value as MentorLessonId;
 }
 
 export function asTechniqueId(value: string): TechniqueId {
