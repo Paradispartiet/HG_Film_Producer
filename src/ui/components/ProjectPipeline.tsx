@@ -1,8 +1,8 @@
-import type { DemoStudioRun } from "../demo/createDemoStudioRun";
+import type { PipelineStepSummary, ProjectDashboardSummary } from "../types.js";
 
 interface ProjectPipelineProps {
-  readonly project: DemoStudioRun["filmProject"];
-  readonly steps: DemoStudioRun["pipelineSteps"];
+  readonly project: ProjectDashboardSummary;
+  readonly steps: readonly PipelineStepSummary[];
 }
 
 export function ProjectPipeline({ project, steps }: ProjectPipelineProps) {
