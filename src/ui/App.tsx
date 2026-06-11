@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { CareerPanel } from "./components/CareerPanel";
+import { DevelopmentPanel } from "./components/DevelopmentPanel";
+import { DevelopmentResultPanel } from "./components/DevelopmentResultPanel";
 import { FilmResultPanel } from "./components/FilmResultPanel";
 import { ProjectPipeline } from "./components/ProjectPipeline";
 import { ReleasePanel } from "./components/ReleasePanel";
@@ -7,8 +9,15 @@ import { RunSummaryPanel } from "./components/RunSummaryPanel";
 import { SetupPanel } from "./components/SetupPanel";
 import { StudioHeader } from "./components/StudioHeader";
 import { SystemStatusPanel } from "./components/SystemStatusPanel";
+import {
+  type DevelopmentPath,
+  type DevelopmentStepResult
+} from "./demo/createDevelopmentStepRun";
 import { createDemoStudioRun } from "./demo/createDemoStudioRun";
-import type { ProjectSetupRun } from "./demo/createProjectSetupRun";
+import {
+  addDevelopmentPipelineStep,
+  type ProjectSetupRun
+} from "./demo/createProjectSetupRun";
 import type { AppMode } from "./types";
 
 const demo = createDemoStudioRun();
@@ -16,6 +25,20 @@ const demo = createDemoStudioRun();
 export function App() {
   const [mode, setMode] = useState<AppMode>("demo");
   const [customRun, setCustomRun] = useState<ProjectSetupRun | null>(null);
+  const [selectedDevelopmentPath, setSelectedDevelopmentPath] = useState<DevelopmentPath | null>(null);
+  const [developmentResult, setDevelopmentResult] = useState<DevelopmentStepResult | null>(null);
+
+  function createCustomRun(run: ProjectSetupRun) {
+    setCustomRun(run);
+    setSelectedDevelopmentPath(null);
+    setDevelopmentResult(null);
+  }
+
+  function editCustomRun() {
+    setCustomRun(null);
+    setSelectedDevelopmentPath(null);
+    setDevelopmentResult(null);
+  }
 
   return (
     <div className="app-shell">
@@ -29,11 +52,20 @@ export function App() {
 
       {mode === "demo" ? <DemoDashboard /> : (
         customRun
-          ? <CustomDashboard run={customRun} onEdit={() => setCustomRun(null)} />
-          : <main className="setup-workspace"><SetupPanel onCreate={setCustomRun} /></main>
+          ? (
+            <CustomDashboard
+              developmentResult={developmentResult}
+              onCompleteDevelopment={setDevelopmentResult}
+              onEdit={editCustomRun}
+              onSelectDevelopmentPath={setSelectedDevelopmentPath}
+              run={customRun}
+              selectedDevelopmentPath={selectedDevelopmentPath}
+            />
+          )
+          : <main className="setup-workspace"><SetupPanel onCreate={createCustomRun} /></main>
       )}
 
-      <footer><span>HG Film Producer</span><span>{mode === "demo" ? "Engine-backed deterministic demo" : "Interactive project setup"}</span></footer>
+      <footer><span>HG Film Producer</span><span>{mode === "demo" ? "Engine-backed deterministic demo" : "Interactive project development"}</span></footer>
     </div>
   );
 }
@@ -63,18 +95,50 @@ function DemoDashboard() {
   );
 }
 
-function CustomDashboard({ run, onEdit }: { readonly run: ProjectSetupRun; readonly onEdit: () => void }) {
+interface CustomDashboardProps {
+  readonly run: ProjectSetupRun;
+  readonly selectedDevelopmentPath: DevelopmentPath | null;
+  readonly developmentResult: DevelopmentStepResult | null;
+  readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
+  readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
+  readonly onEdit: () => void;
+}
+
+function CustomDashboard({
+  run,
+  selectedDevelopmentPath,
+  developmentResult,
+  onSelectDevelopmentPath,
+  onCompleteDevelopment,
+  onEdit
+}: CustomDashboardProps) {
+  const pipelineSteps = developmentResult
+    ? addDevelopmentPipelineStep(run, developmentResult.pipelineStep)
+    : run.pipelineSteps;
+
   return (
     <>
       <StudioHeader studio={run.studio} />
       <main>
         <div className="dashboard-intro">
           <div><span className="eyebrow">Opening slate</span><h2>Development desk</h2></div>
-          <p>Your studio and first film are ready. The simulation is paused before development.</p>
+          <p>{developmentResult ? "Your first development action is complete. The project is paused before the wider production loop." : "Your studio and first film are ready. Choose one early development action."}</p>
         </div>
         <div className="custom-dashboard-grid">
-          <ProjectPipeline project={run.project} steps={run.pipelineSteps} />
-          <RunSummaryPanel run={run} onEdit={onEdit} />
+          <div className="dashboard-main">
+            <ProjectPipeline project={run.project} steps={pipelineSteps} />
+            {developmentResult
+              ? <DevelopmentResultPanel result={developmentResult} />
+              : (
+                <DevelopmentPanel
+                  onComplete={onCompleteDevelopment}
+                  onSelectPath={onSelectDevelopmentPath}
+                  run={run}
+                  selectedPath={selectedDevelopmentPath}
+                />
+              )}
+          </div>
+          <RunSummaryPanel developmentResult={developmentResult} run={run} onEdit={onEdit} />
         </div>
       </main>
     </>

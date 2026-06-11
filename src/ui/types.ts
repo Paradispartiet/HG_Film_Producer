@@ -34,3 +34,11 @@ export interface PipelineStepSummary {
   readonly detail: string;
   readonly score: number;
 }
+
+export interface DevelopmentPathOption {
+  readonly id: "mentor" | "location" | "script";
+  readonly number: string;
+  readonly title: string;
+  readonly description: string;
+  readonly consequence: string;
+}
