@@ -1,19 +1,24 @@
 import { addSceneToScript } from "./core/addSceneToScript.js";
 import { applyMentorLesson } from "./core/applyMentorLesson.js";
 import { applyProductionChoice } from "./core/applyProductionChoice.js";
+import { applyProductionEvent } from "./core/applyProductionEvent.js";
 import { attachLocationToProject } from "./core/attachLocationToProject.js";
 import { calculateCastingChemistry } from "./core/calculateCastingChemistry.js";
 import { calculateFilmResult } from "./core/calculateFilmResult.js";
 import { castActor, scoreActorForProject } from "./core/castActor.js";
 import { createFilmProject } from "./core/createFilmProject.js";
+import { createProductionSchedule } from "./core/createProductionSchedule.js";
 import { createScript } from "./core/createScript.js";
 import { createStudio } from "./core/createStudio.js";
+import { estimateSceneShootDifficulty } from "./core/estimateSceneShootDifficulty.js";
 import { evaluateProductionTeam } from "./core/evaluateProductionTeam.js";
+import { evaluateShootResult } from "./core/evaluateShootResult.js";
 import { evaluateScript } from "./core/evaluateScript.js";
 import { findMentorsForProblem } from "./core/findMentorsForProblem.js";
 import { getMentorAdvice } from "./core/getMentorAdvice.js";
 import { hireCrewMember } from "./core/hireCrewMember.js";
 import { scoreCrewMemberForProject } from "./core/scoreCrewMemberForProject.js";
+import { resolveShootDay } from "./core/resolveShootDay.js";
 import { scoutLocations } from "./core/scoutLocations.js";
 import { loadFilmData } from "./data/filmData.js";
 import type { CrewDiscipline } from "./domain/crew.js";
@@ -202,18 +207,44 @@ for (const candidate of chosenActors) {
 const chemistry = calculateCastingChemistry(chosenActors.map((candidate) => candidate.actor));
 const productionTeam = evaluateProductionTeam(staffedProject, data.crewMembers, data.actors);
 
-// 13. Resolve one production choice using the game's recommended option.
+// 13. Turn the script into a practical production schedule.
+const schedule = createProductionSchedule(staffedProject, scenes);
+
+// 14. Estimate each scene's shoot pressure with the selected location context.
+const sceneDifficulties = scenes.map((scene) => estimateSceneShootDifficulty(scene, {
+  locationLogistics: bestLocation.productionModifiers.logistics,
+  actorCount: scene.characterIds.length
+}));
+
+// 15. Apply a deterministic production event to the first day.
+const firstShootDay = schedule.shootDays[0];
+if (!firstShootDay) {
+  throw new Error("The production schedule did not create a shoot day.");
+}
+const shootEvent = data.productionEvents.find(
+  (candidate) => candidate.id === "production_event_transport_delay"
+);
+if (!shootEvent) {
+  throw new Error("Seed data is missing the 'transport_delay' production event.");
+}
+const eventApplication = applyProductionEvent(firstShootDay, shootEvent);
+
+// 16. Resolve the day and evaluate the shoot completed so far.
+const shootDayResult = resolveShootDay(eventApplication.shootDay, scenes, data.productionEvents);
+const shootEvaluation = evaluateShootResult(staffedProject, schedule, [shootDayResult]);
+
+// 17. Resolve one production choice using the game's recommended option.
 const choice = data.productionChoices.find((candidate) => candidate.id === "choice_slow_middle");
 if (!choice) {
   throw new Error("Seed data is missing the 'choice_slow_middle' production choice.");
 }
 const { project: updatedProject, outcome } = applyProductionChoice(staffedProject, choice);
 
-// 14. Calculate a film result in which the evaluated team meaningfully matters.
+// 18. Calculate a film result in which the evaluated team meaningfully matters.
 const result = calculateFilmResult(updatedProject, productionTeam);
 
-// 15. Log a readable summary of the complete production loop.
-console.log("HG Film Producer — crew and casting demo\n");
+// 19. Log a readable summary of the complete production loop.
+console.log("HG Film Producer — production schedule and shoot demo\n");
 
 console.log(`Studio:   ${studio.name}`);
 console.log(`  money ${studio.money.toLocaleString("en-US")}, reputation ${studio.reputation}, prestige ${studio.prestige}\n`);
@@ -288,6 +319,46 @@ console.log(`  structure ${evaluation.scores.structure}, character ${evaluation.
 console.log(`  pacing ${evaluation.scores.pacing}, emotion ${evaluation.scores.emotion}, originality ${evaluation.scores.originality}, feasibility ${evaluation.scores.productionFeasibility}`);
 for (const evaluationNote of evaluation.notes) {
   console.log(`  - ${evaluationNote}`);
+}
+console.log("");
+
+console.log("Production schedule:");
+console.log(
+  `  ${schedule.totalPlannedDays} days, planned ${schedule.plannedBudget.toLocaleString("en-US")}, contingency ${schedule.contingencyBudget.toLocaleString("en-US")}`
+);
+for (const day of schedule.shootDays) {
+  console.log(
+    `  • day ${day.dayNumber}: ${day.sceneIds.join(", ")} at ${day.locationId ?? "unassigned location"}, cost ${day.plannedCost.toLocaleString("en-US")}`
+  );
+}
+console.log("  Scene difficulty:");
+for (const difficulty of sceneDifficulties) {
+  console.log(`    - ${difficulty.sceneId}: ${difficulty.difficultyScore}/100`);
+}
+console.log("");
+
+console.log(`Shoot event: ${shootEvent.title} (${shootEvent.severity})`);
+console.log(`  ${eventApplication.note}`);
+console.log("Shoot day result:");
+console.log(
+  `  take quality ${shootDayResult.takeQuality}, cost ${shootDayResult.costSpent.toLocaleString("en-US")}, schedule delta +${shootDayResult.scheduleDeltaDays}`
+);
+console.log(`  completed: ${shootDayResult.completedSceneIds.join(", ") || "none"}`);
+console.log(`  delayed: ${shootDayResult.delayedSceneIds.join(", ") || "none"}`);
+for (const shootNote of shootDayResult.notes) {
+  console.log(`  - ${shootNote}`);
+}
+console.log("");
+
+console.log("Shoot evaluation:");
+console.log(
+  `  overall ${shootEvaluation.overall}, take quality ${shootEvaluation.averageTakeQuality}, schedule health ${shootEvaluation.scheduleHealth}, budget health ${shootEvaluation.budgetHealth}, morale ${shootEvaluation.productionMorale}`
+);
+console.log(
+  `  completed days ${shootEvaluation.completedDays}, delayed days ${shootEvaluation.delayedDays}, spent ${shootEvaluation.totalCostSpent.toLocaleString("en-US")}`
+);
+for (const shootNote of shootEvaluation.notes) {
+  console.log(`  - ${shootNote}`);
 }
 console.log("");
 

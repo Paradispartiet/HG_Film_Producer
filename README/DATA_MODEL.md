@@ -144,3 +144,7 @@ Foreslått struktur:
 ## Viktig regel
 
 Hvis en datatype ikke kan påvirke et filmvalg, et produksjonsvalg eller en læringssituasjon, er den ikke ferdig designet.
+
+### production_schedule og shoot engine
+
+Innspillingen planlegges som deterministiske `ShootDay`-objekter med scener, location, dagskostnad og hendelser. Scenevanskelighet, produksjonshendelser, take quality, forsinkelser, budsjettstatus og produksjonsmoral evalueres av rene core-funksjoner, slik at systemet senere kan utvides med spillerstyrte valg eller randomness uten å endre domenemodellen.
