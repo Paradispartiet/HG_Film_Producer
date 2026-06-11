@@ -9,6 +9,7 @@ import type { MentorLesson } from "../domain/mentor.js";
 import type { Mentor } from "../domain/people.js";
 import type { ProductionChoice } from "../domain/production.js";
 import type { SceneFunction, ScriptTemplate } from "../domain/script.js";
+import type { ProductionEvent } from "../domain/shoot.js";
 
 /**
  * All seed data for the film world, loaded from data/film/*.json.
@@ -30,6 +31,7 @@ export interface FilmData {
   readonly knowledgeEntries: readonly KnowledgeEntry[];
   readonly sceneFunctions: readonly SceneFunction[];
   readonly scriptTemplates: readonly ScriptTemplate[];
+  readonly productionEvents: readonly ProductionEvent[];
 }
 
 // data/film lives at the repo root, two levels up from this module in both the
@@ -55,6 +57,7 @@ export function loadFilmData(): FilmData {
     productionChoices: readJson<ProductionChoice[]>("production_choices.json"),
     knowledgeEntries: readJson<KnowledgeEntry[]>("knowledge_entries.json"),
     sceneFunctions: readJson<SceneFunction[]>("scene_functions.json"),
-    scriptTemplates: readJson<ScriptTemplate[]>("script_templates.json")
+    scriptTemplates: readJson<ScriptTemplate[]>("script_templates.json"),
+    productionEvents: readJson<ProductionEvent[]>("production_events.json")
   };
 }

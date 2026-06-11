@@ -20,6 +20,9 @@ export type ProductionChoiceId = Brand<string, "ProductionChoiceId">;
 export type KnowledgeEntryId = Brand<string, "KnowledgeEntryId">;
 export type SceneFunctionId = Brand<string, "SceneFunctionId">;
 export type ScriptTemplateId = Brand<string, "ScriptTemplateId">;
+export type ProductionScheduleId = Brand<string, "ProductionScheduleId">;
+export type ShootDayId = Brand<string, "ShootDayId">;
+export type ProductionEventId = Brand<string, "ProductionEventId">;
 
 export function asStudioId(value: string): StudioId {
   return value as StudioId;
@@ -75,4 +78,16 @@ export function asActorId(value: string): ActorId {
 
 export function asGenreId(value: string): GenreId {
   return value as GenreId;
+}
+
+export function asProductionScheduleId(value: string): ProductionScheduleId {
+  return value as ProductionScheduleId;
+}
+
+export function asShootDayId(value: string): ShootDayId {
+  return value as ShootDayId;
+}
+
+export function asProductionEventId(value: string): ProductionEventId {
+  return value as ProductionEventId;
 }
