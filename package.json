@@ -5,16 +5,27 @@
   "description": "A professional TypeScript foundation for HG Film Producer, a full film studio simulator connected to place-based film history.",
   "type": "module",
   "scripts": {
-    "typecheck": "tsc --noEmit",
+    "dev": "vite",
     "build": "tsc",
+    "build:ui": "tsc -p tsconfig.app.json && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.app.json",
     "start": "node dist/index.js",
     "test": "npm run build && node --test dist/core/*.test.js"
   },
   "engines": {
     "node": ">=20.0.0"
   },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
   "devDependencies": {
     "@types/node": "^20.19.43",
-    "typescript": "^5.5.4"
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "typescript": "^5.5.4",
+    "vite": "^7.1.7"
   }
 }
