@@ -1,16 +1,23 @@
 import { addSceneToScript } from "./core/addSceneToScript.js";
+import { applyColorDecision } from "./core/applyColorDecision.js";
+import { applyEditDecision } from "./core/applyEditDecision.js";
 import { applyMentorLesson } from "./core/applyMentorLesson.js";
+import { applyMusicDecision } from "./core/applyMusicDecision.js";
 import { applyProductionChoice } from "./core/applyProductionChoice.js";
 import { applyProductionEvent } from "./core/applyProductionEvent.js";
+import { applySoundDecision } from "./core/applySoundDecision.js";
 import { attachLocationToProject } from "./core/attachLocationToProject.js";
 import { calculateCastingChemistry } from "./core/calculateCastingChemistry.js";
 import { calculateFilmResult } from "./core/calculateFilmResult.js";
 import { castActor, scoreActorForProject } from "./core/castActor.js";
 import { createFilmProject } from "./core/createFilmProject.js";
+import { createPostProductionPlan } from "./core/createPostProductionPlan.js";
 import { createProductionSchedule } from "./core/createProductionSchedule.js";
 import { createScript } from "./core/createScript.js";
+import { createTrailerCut } from "./core/createTrailerCut.js";
 import { createStudio } from "./core/createStudio.js";
 import { estimateSceneShootDifficulty } from "./core/estimateSceneShootDifficulty.js";
+import { evaluatePostProduction } from "./core/evaluatePostProduction.js";
 import { evaluateProductionTeam } from "./core/evaluateProductionTeam.js";
 import { evaluateShootResult } from "./core/evaluateShootResult.js";
 import { evaluateScript } from "./core/evaluateScript.js";
@@ -19,6 +26,7 @@ import { getMentorAdvice } from "./core/getMentorAdvice.js";
 import { hireCrewMember } from "./core/hireCrewMember.js";
 import { scoreCrewMemberForProject } from "./core/scoreCrewMemberForProject.js";
 import { resolveShootDay } from "./core/resolveShootDay.js";
+import { runTestScreening } from "./core/runTestScreening.js";
 import { scoutLocations } from "./core/scoutLocations.js";
 import { loadFilmData } from "./data/filmData.js";
 import type { CrewDiscipline } from "./domain/crew.js";
@@ -233,18 +241,50 @@ const eventApplication = applyProductionEvent(firstShootDay, shootEvent);
 const shootDayResult = resolveShootDay(eventApplication.shootDay, scenes, data.productionEvents);
 const shootEvaluation = evaluateShootResult(staffedProject, schedule, [shootDayResult]);
 
-// 17. Resolve one production choice using the game's recommended option.
+// 17. Build the first cut through edit, sound, music, and color decisions.
+let postPlan = createPostProductionPlan(staffedProject);
+const editDecision = requireSeed(data.editDecisions, "edit_tighten_middle_act", "edit decision");
+const soundDecision = requireSeed(data.soundDecisions, "sound_dialogue_clarity", "sound decision");
+const musicDecision = requireSeed(data.musicDecisions, "music_recurring_motif", "music decision");
+const colorDecision = requireSeed(data.colorDecisions, "color_naturalistic_grade", "color decision");
+postPlan = applyEditDecision(postPlan, editDecision).plan;
+postPlan = applySoundDecision(postPlan, soundDecision).plan;
+postPlan = applyMusicDecision(postPlan, musicDecision).plan;
+postPlan = applyColorDecision(postPlan, colorDecision).plan;
+
+// 18. Screen the cut, position a trailer, and evaluate the complete post workflow.
+const testScreening = runTestScreening(staffedProject, postPlan, shootEvaluation, evaluation);
+const trailerStrategy = requireSeed(
+  data.trailerStrategies,
+  "trailer_character_journey",
+  "trailer strategy"
+);
+const trailerResult = createTrailerCut(staffedProject, postPlan, trailerStrategy);
+const postProduction = evaluatePostProduction(
+  staffedProject,
+  postPlan,
+  {
+    edits: [editDecision],
+    sound: [soundDecision],
+    music: [musicDecision],
+    color: [colorDecision]
+  },
+  testScreening,
+  trailerResult
+);
+
+// 19. Resolve one production choice using the game's recommended option.
 const choice = data.productionChoices.find((candidate) => candidate.id === "choice_slow_middle");
 if (!choice) {
   throw new Error("Seed data is missing the 'choice_slow_middle' production choice.");
 }
 const { project: updatedProject, outcome } = applyProductionChoice(staffedProject, choice);
 
-// 18. Calculate a film result in which the evaluated team meaningfully matters.
-const result = calculateFilmResult(updatedProject, productionTeam);
+// 20. Calculate a film result shaped by both the production team and locked cut.
+const result = calculateFilmResult(updatedProject, productionTeam, postProduction);
 
-// 19. Log a readable summary of the complete production loop.
-console.log("HG Film Producer — production schedule and shoot demo\n");
+// 21. Log a readable summary of the complete production loop.
+console.log("HG Film Producer — full production and post-production demo\n");
 
 console.log(`Studio:   ${studio.name}`);
 console.log(`  money ${studio.money.toLocaleString("en-US")}, reputation ${studio.reputation}, prestige ${studio.prestige}\n`);
@@ -362,6 +402,24 @@ for (const shootNote of shootEvaluation.notes) {
 }
 console.log("");
 
+console.log("Post-production evaluation:");
+console.log(
+  `  overall ${postProduction.overall}, locked cut ${postProduction.lockedCutQuality}, edit ${postProduction.editScore}, sound ${postProduction.soundScore}, music ${postProduction.musicScore}, color ${postProduction.colorScore}`
+);
+console.log(
+  `  screening ${postProduction.testScreeningScore}, trailer ${postProduction.trailerScore}, cost ${postProduction.totalCost.toLocaleString("en-US")}`
+);
+for (const postNote of postProduction.notes) {
+  console.log(`  - ${postNote}`);
+}
+console.log("");
+
+console.log(`Trailer: ${trailerStrategy.title}`);
+console.log(
+  `  audience ${trailerResult.audienceInterest}, critics ${trailerResult.criticInterest}, genre clarity ${trailerResult.genreClarity}, spoiler risk ${trailerResult.spoilerRisk}`
+);
+console.log(`  ${trailerResult.note}\n`);
+
 console.log(`Choice:   ${choice.problem}`);
 console.log(`  picked "${outcome.selectedOptionId}"${outcome.isBestOption ? " (best option)" : ""}`);
 console.log(`  stat changes: ${formatStatChanges(outcome.statChanges)}`);
@@ -375,8 +433,21 @@ console.log("");
 
 console.log("Film result:");
 console.log(`  quality ${result.quality}, audience ${result.audienceAppeal}, critics ${result.criticalAppeal}`);
+console.log(`  budget spent ${result.budgetSpent.toLocaleString("en-US")}`);
 console.log(`  revenue estimate ${result.revenueEstimate.toLocaleString("en-US")}`);
 console.log(`  reputation ${signed(result.reputationDelta)}, prestige ${signed(result.prestigeDelta)}`);
+
+function requireSeed<TItem extends { readonly id: string }>(
+  items: readonly TItem[],
+  id: string,
+  label: string
+): TItem {
+  const item = items.find((candidate) => candidate.id === id);
+  if (!item) {
+    throw new Error(`Seed data is missing ${label} "${id}".`);
+  }
+  return item;
+}
 
 function requireSceneFunction(id: string) {
   const sceneFunction = data.sceneFunctions.find((candidate) => candidate.id === id);
