@@ -2,6 +2,11 @@ import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import type {
+  CareerMilestone,
+  StrategicGoal,
+  StudioExpense
+} from "../domain/career.js";
 import type { Actor, CrewMember } from "../domain/crew.js";
 import type { Genre, KnowledgeEntry, Role, Technique } from "../domain/knowledge.js";
 import type { Location, LocationScoutingBrief } from "../domain/location.js";
@@ -56,6 +61,9 @@ export interface FilmData {
   readonly criticProfiles: readonly CriticProfile[];
   readonly audienceSegments: readonly AudienceSegment[];
   readonly awards: readonly Award[];
+  readonly studioExpenses: readonly StudioExpense[];
+  readonly careerMilestones: readonly CareerMilestone[];
+  readonly strategicGoals: readonly StrategicGoal[];
 }
 
 // data/film lives at the repo root, two levels up from this module in both the
@@ -92,6 +100,9 @@ export function loadFilmData(): FilmData {
     festivals: readJson<Festival[]>("festivals.json"),
     criticProfiles: readJson<CriticProfile[]>("critic_profiles.json"),
     audienceSegments: readJson<AudienceSegment[]>("audience_segments.json"),
-    awards: readJson<Award[]>("awards.json")
+    awards: readJson<Award[]>("awards.json"),
+    studioExpenses: readJson<StudioExpense[]>("studio_expenses.json"),
+    careerMilestones: readJson<CareerMilestone[]>("career_milestones.json"),
+    strategicGoals: readJson<StrategicGoal[]>("strategic_goals.json")
   };
 }
