@@ -60,3 +60,19 @@ export function asScriptTemplateId(value: string): ScriptTemplateId {
 export function asLocationScoutingBriefId(value: string): LocationScoutingBriefId {
   return value as LocationScoutingBriefId;
 }
+
+export function asRoleId(value: string): RoleId {
+  return value as RoleId;
+}
+
+export function asCrewMemberId(value: string): CrewMemberId {
+  return value as CrewMemberId;
+}
+
+export function asActorId(value: string): ActorId {
+  return value as ActorId;
+}
+
+export function asGenreId(value: string): GenreId {
+  return value as GenreId;
+}

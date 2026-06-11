@@ -2,15 +2,21 @@ import { addSceneToScript } from "./core/addSceneToScript.js";
 import { applyMentorLesson } from "./core/applyMentorLesson.js";
 import { applyProductionChoice } from "./core/applyProductionChoice.js";
 import { attachLocationToProject } from "./core/attachLocationToProject.js";
+import { calculateCastingChemistry } from "./core/calculateCastingChemistry.js";
 import { calculateFilmResult } from "./core/calculateFilmResult.js";
+import { castActor, scoreActorForProject } from "./core/castActor.js";
 import { createFilmProject } from "./core/createFilmProject.js";
 import { createScript } from "./core/createScript.js";
 import { createStudio } from "./core/createStudio.js";
+import { evaluateProductionTeam } from "./core/evaluateProductionTeam.js";
 import { evaluateScript } from "./core/evaluateScript.js";
 import { findMentorsForProblem } from "./core/findMentorsForProblem.js";
 import { getMentorAdvice } from "./core/getMentorAdvice.js";
+import { hireCrewMember } from "./core/hireCrewMember.js";
+import { scoreCrewMemberForProject } from "./core/scoreCrewMemberForProject.js";
 import { scoutLocations } from "./core/scoutLocations.js";
 import { loadFilmData } from "./data/filmData.js";
+import type { CrewDiscipline } from "./domain/crew.js";
 import { asCharacterId, asSceneId } from "./domain/ids.js";
 import type { FilmStat } from "./domain/knowledge.js";
 import type { Character, Scene } from "./domain/script.js";
@@ -151,21 +157,63 @@ if (!bestLocation) {
 // 9. Attach the winning location and retain its production impact estimate.
 const locationSelection = attachLocationToProject(mentorApplication.project, bestLocation);
 
-// 10. Resolve one production choice using the game's recommended option.
+// 10. Score candidates and hire a small key crew for the film's desired style.
+const desiredCrewDisciplines: readonly CrewDiscipline[] = [
+  "directing",
+  "cinematography",
+  "editing"
+];
+const desiredStyleTags = ["intimate", "naturalistic", "character_first"] as const;
+let staffedProject = locationSelection.project;
+const hiredCrew = [];
+
+for (const discipline of desiredCrewDisciplines) {
+  const rankedCandidates = data.crewMembers
+    .filter((crewMember) => crewMember.discipline === discipline)
+    .map((crewMember) => ({
+      crewMember,
+      score: scoreCrewMemberForProject(staffedProject, crewMember, desiredStyleTags)
+    }))
+    .sort((left, right) => right.score.totalScore - left.score.totalScore);
+  const bestCandidate = rankedCandidates[0];
+  if (!bestCandidate) {
+    throw new Error(`Seed data has no crew member for discipline "${discipline}".`);
+  }
+
+  const hire = hireCrewMember(staffedProject, bestCandidate.crewMember, bestCandidate.score);
+  staffedProject = hire.project;
+  hiredCrew.push(bestCandidate);
+}
+
+// 11. Score the actor pool and cast the two strongest project fits.
+const rankedActors = data.actors
+  .map((actor) => ({ actor, score: scoreActorForProject(staffedProject, actor) }))
+  .sort((left, right) => right.score.totalScore - left.score.totalScore);
+const chosenActors = rankedActors.slice(0, 2);
+if (chosenActors.length < 2) {
+  throw new Error("Casting requires at least two actors in seed data.");
+}
+
+for (const candidate of chosenActors) {
+  staffedProject = castActor(staffedProject, candidate.actor, candidate.score).project;
+}
+
+// 12. Measure cast chemistry and evaluate the complete attached team.
+const chemistry = calculateCastingChemistry(chosenActors.map((candidate) => candidate.actor));
+const productionTeam = evaluateProductionTeam(staffedProject, data.crewMembers, data.actors);
+
+// 13. Resolve one production choice using the game's recommended option.
 const choice = data.productionChoices.find((candidate) => candidate.id === "choice_slow_middle");
 if (!choice) {
   throw new Error("Seed data is missing the 'choice_slow_middle' production choice.");
 }
-const { project: updatedProject, outcome } = applyProductionChoice(
-  locationSelection.project,
-  choice
-);
+const { project: updatedProject, outcome } = applyProductionChoice(staffedProject, choice);
 
-// 11. Calculate a film result from the updated project.
-const result = calculateFilmResult(updatedProject);
+// 14. Calculate a film result in which the evaluated team meaningfully matters.
+const result = calculateFilmResult(updatedProject, productionTeam);
 
-// 12. Log a readable summary of the whole loop.
-console.log("HG Film Producer — mentor and location scouting demo\n");
+// 15. Log a readable summary of the complete production loop.
+console.log("HG Film Producer — crew and casting demo\n");
 
 console.log(`Studio:   ${studio.name}`);
 console.log(`  money ${studio.money.toLocaleString("en-US")}, reputation ${studio.reputation}, prestige ${studio.prestige}\n`);
@@ -203,6 +251,36 @@ console.log(
   `  impact: budget ${locationSelection.impact.budgetMultiplier.toFixed(2)}x, logistics risk ${locationSelection.impact.logisticsRisk}, authenticity +${locationSelection.impact.authenticityBonus}, visual +${locationSelection.impact.visualBonus}, history +${locationSelection.impact.historyBonus}`
 );
 console.log(`  ${locationSelection.impact.note}\n`);
+
+console.log("Hired crew:");
+for (const candidate of hiredCrew) {
+  console.log(
+    `  • ${candidate.crewMember.name} — ${candidate.crewMember.discipline}, fit ${candidate.score.totalScore}/100, fee ${candidate.crewMember.fee.toLocaleString("en-US")}`
+  );
+}
+console.log("");
+
+console.log("Cast:");
+for (const candidate of chosenActors) {
+  console.log(
+    `  • ${candidate.actor.name} — ${candidate.actor.actingStyle}, fit ${candidate.score.totalScore}/100, star power ${candidate.actor.starPower}`
+  );
+}
+console.log(`  chemistry ${chemistry.chemistryScore}/100 — ${chemistry.note}`);
+console.log(`  shared tags: ${chemistry.sharedTags.join(", ") || "none"}`);
+console.log(`  tension tags: ${chemistry.tensionTags.join(", ") || "none"}\n`);
+
+console.log("Production team evaluation:");
+console.log(
+  `  overall ${productionTeam.overall}, crew ${productionTeam.crewScore}, cast ${productionTeam.castScore}, chemistry ${productionTeam.chemistryScore}`
+);
+console.log(
+  `  reliability ${productionTeam.reliabilityScore}, budget pressure ${productionTeam.budgetPressure}%`
+);
+for (const teamNote of productionTeam.notes) {
+  console.log(`  - ${teamNote}`);
+}
+console.log("");
 
 console.log("Script evaluation:");
 console.log(`  overall ${evaluation.overall} across ${evaluation.sceneCount} scenes`);
