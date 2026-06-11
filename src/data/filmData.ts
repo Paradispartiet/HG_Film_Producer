@@ -17,6 +17,13 @@ import type {
 } from "../domain/post.js";
 import type { SceneFunction, ScriptTemplate } from "../domain/script.js";
 import type { ProductionEvent } from "../domain/shoot.js";
+import type {
+  AudienceSegment,
+  Award,
+  CriticProfile,
+  Festival,
+  ReleaseStrategy
+} from "../domain/release.js";
 
 /**
  * All seed data for the film world, loaded from data/film/*.json.
@@ -44,6 +51,11 @@ export interface FilmData {
   readonly musicDecisions: readonly MusicDecision[];
   readonly colorDecisions: readonly ColorDecision[];
   readonly trailerStrategies: readonly TrailerStrategy[];
+  readonly releaseStrategies: readonly ReleaseStrategy[];
+  readonly festivals: readonly Festival[];
+  readonly criticProfiles: readonly CriticProfile[];
+  readonly audienceSegments: readonly AudienceSegment[];
+  readonly awards: readonly Award[];
 }
 
 // data/film lives at the repo root, two levels up from this module in both the
@@ -75,6 +87,11 @@ export function loadFilmData(): FilmData {
     soundDecisions: readJson<SoundDecision[]>("sound_decisions.json"),
     musicDecisions: readJson<MusicDecision[]>("music_decisions.json"),
     colorDecisions: readJson<ColorDecision[]>("color_decisions.json"),
-    trailerStrategies: readJson<TrailerStrategy[]>("trailer_strategies.json")
+    trailerStrategies: readJson<TrailerStrategy[]>("trailer_strategies.json"),
+    releaseStrategies: readJson<ReleaseStrategy[]>("release_strategies.json"),
+    festivals: readJson<Festival[]>("festivals.json"),
+    criticProfiles: readJson<CriticProfile[]>("critic_profiles.json"),
+    audienceSegments: readJson<AudienceSegment[]>("audience_segments.json"),
+    awards: readJson<Award[]>("awards.json")
   };
 }

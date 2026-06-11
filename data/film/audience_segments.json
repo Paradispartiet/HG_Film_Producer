@@ -1,0 +1,10 @@
+[
+  { "id": "audience_broad_weekend", "name": "Broad weekend audience", "type": "broad", "tasteTags": ["comedy", "action", "thriller", "drama"], "priceSensitivity": 55, "marketingSensitivity": 78, "wordOfMouthPower": 62 },
+  { "id": "audience_arthouse_regulars", "name": "Arthouse regulars", "type": "arthouse", "tasteTags": ["drama", "social_realism", "period_drama"], "priceSensitivity": 30, "marketingSensitivity": 42, "wordOfMouthPower": 76 },
+  { "id": "audience_genre_fans", "name": "Genre fans", "type": "genre_fans", "tasteTags": ["horror", "thriller", "science_fiction", "action"], "priceSensitivity": 38, "marketingSensitivity": 68, "wordOfMouthPower": 90 },
+  { "id": "audience_young_streaming", "name": "Young streaming viewers", "type": "youth", "tasteTags": ["comedy", "thriller", "romance", "science_fiction"], "priceSensitivity": 82, "marketingSensitivity": 88, "wordOfMouthPower": 84 },
+  { "id": "audience_local_oslo", "name": "Local Oslo audience", "type": "local", "tasteTags": ["drama", "comedy", "documentary"], "priceSensitivity": 48, "marketingSensitivity": 55, "wordOfMouthPower": 72 },
+  { "id": "audience_festival", "name": "Festival audience", "type": "festival", "tasteTags": ["drama", "social_realism", "documentary"], "priceSensitivity": 22, "marketingSensitivity": 35, "wordOfMouthPower": 82 },
+  { "id": "audience_documentary", "name": "Documentary audience", "type": "arthouse", "tasteTags": ["documentary", "social_realism"], "priceSensitivity": 35, "marketingSensitivity": 40, "wordOfMouthPower": 74 },
+  { "id": "audience_international_niche", "name": "International niche viewers", "type": "international", "tasteTags": ["drama", "horror", "documentary", "period_drama"], "priceSensitivity": 50, "marketingSensitivity": 52, "wordOfMouthPower": 78 }
+]
