@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import type { Genre, KnowledgeEntry, Role, Technique } from "../domain/knowledge.js";
 import type { Mentor } from "../domain/people.js";
 import type { Location, ProductionChoice } from "../domain/production.js";
+import type { SceneFunction, ScriptTemplate } from "../domain/script.js";
 
 /**
  * All seed data for the film world, loaded from data/film/*.json.
@@ -20,6 +21,8 @@ export interface FilmData {
   readonly locations: readonly Location[];
   readonly productionChoices: readonly ProductionChoice[];
   readonly knowledgeEntries: readonly KnowledgeEntry[];
+  readonly sceneFunctions: readonly SceneFunction[];
+  readonly scriptTemplates: readonly ScriptTemplate[];
 }
 
 // data/film lives at the repo root, two levels up from this module in both the
@@ -39,6 +42,8 @@ export function loadFilmData(): FilmData {
     mentors: readJson<Mentor[]>("mentors.json"),
     locations: readJson<Location[]>("locations.json"),
     productionChoices: readJson<ProductionChoice[]>("production_choices.json"),
-    knowledgeEntries: readJson<KnowledgeEntry[]>("knowledge_entries.json")
+    knowledgeEntries: readJson<KnowledgeEntry[]>("knowledge_entries.json"),
+    sceneFunctions: readJson<SceneFunction[]>("scene_functions.json"),
+    scriptTemplates: readJson<ScriptTemplate[]>("script_templates.json")
   };
 }

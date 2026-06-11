@@ -1,0 +1,90 @@
+[
+  {
+    "id": "scene_function_opening",
+    "kind": "opening",
+    "name": "Opening",
+    "purpose": "Establish tone, world and point of view in the first minutes.",
+    "typicalRisk": "A flat opening that states the world instead of dramatising it.",
+    "usefulTechniqueIds": ["technique_long_take", "technique_natural_light"]
+  },
+  {
+    "id": "scene_function_setup",
+    "kind": "setup",
+    "name": "Setup",
+    "purpose": "Plant the characters, wants and rules the story will pay off later.",
+    "typicalRisk": "Exposition dumps that stall momentum before anything happens.",
+    "usefulTechniqueIds": ["technique_close_up", "technique_voiceover"]
+  },
+  {
+    "id": "scene_function_inciting_incident",
+    "kind": "inciting_incident",
+    "name": "Inciting incident",
+    "purpose": "Break the status quo and force the protagonist into the story.",
+    "typicalRisk": "The disruption lands too softly to commit the hero to action.",
+    "usefulTechniqueIds": ["technique_cross_cutting", "technique_close_up"]
+  },
+  {
+    "id": "scene_function_confrontation",
+    "kind": "confrontation",
+    "name": "Confrontation",
+    "purpose": "Put opposing wants in direct collision and raise the stakes.",
+    "typicalRisk": "Conflict that is talked about rather than played out.",
+    "usefulTechniqueIds": ["technique_close_up", "technique_handheld_camera"]
+  },
+  {
+    "id": "scene_function_midpoint",
+    "kind": "midpoint",
+    "name": "Midpoint",
+    "purpose": "Shift the goal or the ground rules so the second half feels different.",
+    "typicalRisk": "A sagging middle where nothing meaningfully changes.",
+    "usefulTechniqueIds": ["technique_montage", "technique_match_cut"]
+  },
+  {
+    "id": "scene_function_reveal",
+    "kind": "reveal",
+    "name": "Reveal",
+    "purpose": "Deliver new information that recolours everything before it.",
+    "typicalRisk": "A twist that feels arbitrary because it was never set up.",
+    "usefulTechniqueIds": ["technique_match_cut", "technique_close_up"]
+  },
+  {
+    "id": "scene_function_chase",
+    "kind": "chase",
+    "name": "Chase",
+    "purpose": "Drive the story forward with physical, time-pressured pursuit.",
+    "typicalRisk": "Spectacle with no stakes the audience actually cares about.",
+    "usefulTechniqueIds": ["technique_cross_cutting", "technique_handheld_camera"]
+  },
+  {
+    "id": "scene_function_intimacy",
+    "kind": "intimacy",
+    "name": "Intimacy",
+    "purpose": "Slow down for closeness, vulnerability and quiet character truth.",
+    "typicalRisk": "Sentimentality that tips the scene into melodrama.",
+    "usefulTechniqueIds": ["technique_close_up", "technique_natural_light"]
+  },
+  {
+    "id": "scene_function_reversal",
+    "kind": "reversal",
+    "name": "Reversal",
+    "purpose": "Flip fortunes so the path to the goal suddenly closes or opens.",
+    "typicalRisk": "A turn so abrupt the audience loses the thread of cause and effect.",
+    "usefulTechniqueIds": ["technique_jump_cut", "technique_cross_cutting"]
+  },
+  {
+    "id": "scene_function_climax",
+    "kind": "climax",
+    "name": "Climax",
+    "purpose": "Force the final, decisive confrontation of the central conflict.",
+    "typicalRisk": "An anticlimax that resolves the plot without testing the theme.",
+    "usefulTechniqueIds": ["technique_long_take", "technique_offscreen_sound"]
+  },
+  {
+    "id": "scene_function_aftermath",
+    "kind": "aftermath",
+    "name": "Aftermath",
+    "purpose": "Show the new normal and let the change land emotionally.",
+    "typicalRisk": "Overstaying the ending and draining the climax of its power.",
+    "usefulTechniqueIds": ["technique_voiceover", "technique_natural_light"]
+  }
+]

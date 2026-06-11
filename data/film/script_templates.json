@@ -1,0 +1,98 @@
+[
+  {
+    "id": "script_template_intimate_drama",
+    "title": "Intimate drama",
+    "genreId": "genre_drama",
+    "structure": "three_act",
+    "defaultTheme": "What we owe the people we love.",
+    "recommendedSceneFunctions": [
+      "scene_function_opening",
+      "scene_function_setup",
+      "scene_function_inciting_incident",
+      "scene_function_confrontation",
+      "scene_function_intimacy",
+      "scene_function_climax",
+      "scene_function_aftermath"
+    ],
+    "recommendedTechniqueIds": ["technique_close_up", "technique_long_take", "technique_natural_light"]
+  },
+  {
+    "id": "script_template_urban_thriller",
+    "title": "Urban thriller",
+    "genreId": "genre_thriller",
+    "structure": "three_act",
+    "defaultTheme": "Trust is the most dangerous thing to give away.",
+    "recommendedSceneFunctions": [
+      "scene_function_opening",
+      "scene_function_inciting_incident",
+      "scene_function_chase",
+      "scene_function_reversal",
+      "scene_function_reveal",
+      "scene_function_climax"
+    ],
+    "recommendedTechniqueIds": ["technique_cross_cutting", "technique_offscreen_sound", "technique_handheld_camera"]
+  },
+  {
+    "id": "script_template_low_budget_horror",
+    "title": "Low budget horror",
+    "genreId": "genre_horror",
+    "structure": "three_act",
+    "defaultTheme": "The thing we refuse to look at is the thing that finds us.",
+    "recommendedSceneFunctions": [
+      "scene_function_opening",
+      "scene_function_setup",
+      "scene_function_reveal",
+      "scene_function_chase",
+      "scene_function_climax",
+      "scene_function_aftermath"
+    ],
+    "recommendedTechniqueIds": ["technique_offscreen_sound", "technique_close_up", "technique_handheld_camera"]
+  },
+  {
+    "id": "script_template_documentary_portrait",
+    "title": "Documentary portrait",
+    "genreId": "genre_documentary",
+    "structure": "documentary",
+    "defaultTheme": "A life is more than the story it tells about itself.",
+    "recommendedSceneFunctions": [
+      "scene_function_opening",
+      "scene_function_setup",
+      "scene_function_reveal",
+      "scene_function_intimacy",
+      "scene_function_aftermath"
+    ],
+    "recommendedTechniqueIds": ["technique_voiceover", "technique_handheld_camera", "technique_natural_light"]
+  },
+  {
+    "id": "script_template_romantic_comedy",
+    "title": "Romantic comedy",
+    "genreId": "genre_romance",
+    "structure": "three_act",
+    "defaultTheme": "We have to lose the version of ourselves that cannot love.",
+    "recommendedSceneFunctions": [
+      "scene_function_opening",
+      "scene_function_inciting_incident",
+      "scene_function_midpoint",
+      "scene_function_reversal",
+      "scene_function_climax",
+      "scene_function_aftermath"
+    ],
+    "recommendedTechniqueIds": ["technique_match_cut", "technique_close_up", "technique_jump_cut"]
+  },
+  {
+    "id": "script_template_social_realism",
+    "title": "Social realism",
+    "genreId": "genre_social_realism",
+    "structure": "ensemble",
+    "defaultTheme": "Ordinary lives bend under pressures they did not choose.",
+    "recommendedSceneFunctions": [
+      "scene_function_opening",
+      "scene_function_setup",
+      "scene_function_confrontation",
+      "scene_function_midpoint",
+      "scene_function_intimacy",
+      "scene_function_aftermath"
+    ],
+    "recommendedTechniqueIds": ["technique_handheld_camera", "technique_natural_light", "technique_long_take"]
+  }
+]
