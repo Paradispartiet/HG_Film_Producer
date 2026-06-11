@@ -1,11 +1,13 @@
 import { addSceneToScript } from "./core/addSceneToScript.js";
+import { applyMentorLesson } from "./core/applyMentorLesson.js";
 import { applyProductionChoice } from "./core/applyProductionChoice.js";
-import { applySceneTechnique } from "./core/applySceneTechnique.js";
 import { calculateFilmResult } from "./core/calculateFilmResult.js";
 import { createFilmProject } from "./core/createFilmProject.js";
 import { createScript } from "./core/createScript.js";
 import { createStudio } from "./core/createStudio.js";
 import { evaluateScript } from "./core/evaluateScript.js";
+import { findMentorsForProblem } from "./core/findMentorsForProblem.js";
+import { getMentorAdvice } from "./core/getMentorAdvice.js";
 import { loadFilmData } from "./data/filmData.js";
 import { asCharacterId, asSceneId } from "./domain/ids.js";
 import type { FilmStat } from "./domain/knowledge.js";
@@ -109,33 +111,35 @@ for (const scene of scenes) {
   script = addSceneToScript(script, scene);
 }
 
-// 5. Apply one scene technique to the most emotional scene.
-const intimacyScene = scenes[2];
-if (!intimacyScene) {
-  throw new Error("Demo expected three scenes.");
-}
-const closeUp = data.techniques.find((technique) => technique.id === "technique_close_up");
-if (!closeUp) {
-  throw new Error("Seed data is missing the 'close_up' technique.");
-}
-const { scene: enhancedScene, statChanges, note } = applySceneTechnique(intimacyScene, closeUp.id);
-scenes[2] = enhancedScene;
-
-// 6. Evaluate the script against its scenes.
+// 5. Evaluate the script against its scenes.
 const evaluation = evaluateScript(script, scenes);
 
-// 7. Resolve one production choice using the game's recommended option.
+// 6. Find a lesson for a concrete production problem.
+const matchingLessons = findMentorsForProblem(data.mentorLessons, ["scene_lacks_tension"]);
+const chosenLesson = matchingLessons[0];
+if (!chosenLesson) {
+  throw new Error("Seed data has no mentor lesson for 'scene_lacks_tension'.");
+}
+
+// 7. Turn the lesson into player-facing advice and apply it to the project.
+const mentorAdvice = getMentorAdvice(chosenLesson);
+const mentorApplication = applyMentorLesson(project, chosenLesson);
+
+// 8. Resolve one production choice using the game's recommended option.
 const choice = data.productionChoices.find((candidate) => candidate.id === "choice_slow_middle");
 if (!choice) {
   throw new Error("Seed data is missing the 'choice_slow_middle' production choice.");
 }
-const { project: updatedProject, outcome } = applyProductionChoice(project, choice);
+const { project: updatedProject, outcome } = applyProductionChoice(
+  mentorApplication.project,
+  choice
+);
 
-// 8. Calculate a film result from the updated project.
+// 9. Calculate a film result from the updated project.
 const result = calculateFilmResult(updatedProject);
 
-// 9. Log a readable summary of the whole loop.
-console.log("HG Film Producer — script and scene engine demo\n");
+// 10. Log a readable summary of the whole loop.
+console.log("HG Film Producer — mentor lesson engine demo\n");
 
 console.log(`Studio:   ${studio.name}`);
 console.log(`  money ${studio.money.toLocaleString("en-US")}, reputation ${studio.reputation}, prestige ${studio.prestige}\n`);
@@ -155,8 +159,14 @@ for (const scene of scenes) {
 }
 console.log("");
 
-console.log(`Technique: ${note}`);
-console.log(`  stat changes: ${formatStatChanges(statChanges)}\n`);
+const mentor = data.mentors.find((candidate) => candidate.id === mentorAdvice.mentorId);
+console.log(`Mentor lesson: ${mentorAdvice.title}${mentor ? ` — ${mentor.name}` : ""}`);
+console.log(`  advice: ${mentorAdvice.advice}`);
+console.log(`  action: ${mentorAdvice.suggestedAction}`);
+console.log(`  stat changes: ${formatStatChanges(mentorAdvice.statChanges)}`);
+console.log(`  technique: ${mentorApplication.unlockedTechniqueId ?? "none"}`);
+console.log(`  knowledge: ${mentorApplication.unlockedKnowledgeEntryId ?? "none"}`);
+console.log(`  ${mentorApplication.note}\n`);
 
 console.log("Script evaluation:");
 console.log(`  overall ${evaluation.overall} across ${evaluation.sceneCount} scenes`);
