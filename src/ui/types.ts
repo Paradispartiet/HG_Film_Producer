@@ -42,3 +42,9 @@ export interface DevelopmentPathOption {
   readonly description: string;
   readonly consequence: string;
 }
+
+export interface PreProductionSelectionState {
+  readonly selectedLocationId: string;
+  readonly selectedCrewIds: readonly string[];
+  readonly selectedActorIds: readonly string[];
+}

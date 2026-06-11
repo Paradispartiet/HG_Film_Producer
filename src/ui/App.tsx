@@ -3,6 +3,8 @@ import { CareerPanel } from "./components/CareerPanel";
 import { DevelopmentPanel } from "./components/DevelopmentPanel";
 import { DevelopmentResultPanel } from "./components/DevelopmentResultPanel";
 import { FilmResultPanel } from "./components/FilmResultPanel";
+import { PreProductionPanel } from "./components/PreProductionPanel";
+import { ProductionTeamResultPanel } from "./components/ProductionTeamResultPanel";
 import { ProjectPipeline } from "./components/ProjectPipeline";
 import { ReleasePanel } from "./components/ReleasePanel";
 import { RunSummaryPanel } from "./components/RunSummaryPanel";
@@ -15,10 +17,14 @@ import {
 } from "./demo/createDevelopmentStepRun";
 import { createDemoStudioRun } from "./demo/createDemoStudioRun";
 import {
+  getPreProductionLocationOptions,
+  type PreProductionStepResult
+} from "./demo/createPreProductionStepRun";
+import {
   addDevelopmentPipelineStep,
   type ProjectSetupRun
 } from "./demo/createProjectSetupRun";
-import type { AppMode } from "./types";
+import type { AppMode, PreProductionSelectionState } from "./types";
 
 const demo = createDemoStudioRun();
 
@@ -27,17 +33,43 @@ export function App() {
   const [customRun, setCustomRun] = useState<ProjectSetupRun | null>(null);
   const [selectedDevelopmentPath, setSelectedDevelopmentPath] = useState<DevelopmentPath | null>(null);
   const [developmentResult, setDevelopmentResult] = useState<DevelopmentStepResult | null>(null);
+  const [preProductionResult, setPreProductionResult] = useState<PreProductionStepResult | null>(null);
+  const [selectedLocationId, setSelectedLocationId] = useState<PreProductionSelectionState["selectedLocationId"]>("");
+  const [selectedCrewIds, setSelectedCrewIds] = useState<PreProductionSelectionState["selectedCrewIds"]>([]);
+  const [selectedActorIds, setSelectedActorIds] = useState<PreProductionSelectionState["selectedActorIds"]>([]);
 
   function createCustomRun(run: ProjectSetupRun) {
     setCustomRun(run);
     setSelectedDevelopmentPath(null);
     setDevelopmentResult(null);
+    resetPreProduction();
   }
 
   function editCustomRun() {
     setCustomRun(null);
     setSelectedDevelopmentPath(null);
     setDevelopmentResult(null);
+    resetPreProduction();
+  }
+
+  function completeDevelopment(result: DevelopmentStepResult) {
+    setDevelopmentResult(result);
+    setPreProductionResult(null);
+    setSelectedLocationId(getPreProductionLocationOptions(customRunRequired(), result).find((option) => option.recommended)?.id ?? "");
+    setSelectedCrewIds([]);
+    setSelectedActorIds([]);
+  }
+
+  function resetPreProduction() {
+    setPreProductionResult(null);
+    setSelectedLocationId("");
+    setSelectedCrewIds([]);
+    setSelectedActorIds([]);
+  }
+
+  function customRunRequired(): ProjectSetupRun {
+    if (!customRun) throw new Error("A project setup run is required before development.");
+    return customRun;
   }
 
   return (
@@ -55,17 +87,25 @@ export function App() {
           ? (
             <CustomDashboard
               developmentResult={developmentResult}
-              onCompleteDevelopment={setDevelopmentResult}
+              onCompleteDevelopment={completeDevelopment}
               onEdit={editCustomRun}
+              onLockPreProduction={setPreProductionResult}
+              onSelectActors={setSelectedActorIds}
+              onSelectCrew={setSelectedCrewIds}
+              onSelectLocation={setSelectedLocationId}
+              preProductionResult={preProductionResult}
               onSelectDevelopmentPath={setSelectedDevelopmentPath}
               run={customRun}
+              selectedActorIds={selectedActorIds}
+              selectedCrewIds={selectedCrewIds}
               selectedDevelopmentPath={selectedDevelopmentPath}
+              selectedLocationId={selectedLocationId}
             />
           )
           : <main className="setup-workspace"><SetupPanel onCreate={createCustomRun} /></main>
       )}
 
-      <footer><span>HG Film Producer</span><span>{mode === "demo" ? "Engine-backed deterministic demo" : "Interactive project development"}</span></footer>
+      <footer><span>HG Film Producer</span><span>{mode === "demo" ? "Engine-backed deterministic demo" : "Interactive development and pre-production"}</span></footer>
     </div>
   );
 }
@@ -99,8 +139,16 @@ interface CustomDashboardProps {
   readonly run: ProjectSetupRun;
   readonly selectedDevelopmentPath: DevelopmentPath | null;
   readonly developmentResult: DevelopmentStepResult | null;
+  readonly preProductionResult: PreProductionStepResult | null;
+  readonly selectedLocationId: string;
+  readonly selectedCrewIds: readonly string[];
+  readonly selectedActorIds: readonly string[];
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
+  readonly onSelectLocation: (locationId: string) => void;
+  readonly onSelectCrew: (crewIds: readonly string[]) => void;
+  readonly onSelectActors: (actorIds: readonly string[]) => void;
+  readonly onLockPreProduction: (result: PreProductionStepResult) => void;
   readonly onEdit: () => void;
 }
 
@@ -108,37 +156,65 @@ function CustomDashboard({
   run,
   selectedDevelopmentPath,
   developmentResult,
+  preProductionResult,
+  selectedLocationId,
+  selectedCrewIds,
+  selectedActorIds,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
+  onSelectLocation,
+  onSelectCrew,
+  onSelectActors,
+  onLockPreProduction,
   onEdit
 }: CustomDashboardProps) {
-  const pipelineSteps = developmentResult
+  const developmentPipeline = developmentResult
     ? addDevelopmentPipelineStep(run, developmentResult.pipelineStep)
     : run.pipelineSteps;
+  const pipelineSteps = preProductionResult
+    ? [...developmentPipeline, preProductionResult.pipelineStep]
+    : developmentPipeline;
 
   return (
     <>
       <StudioHeader studio={run.studio} />
       <main>
         <div className="dashboard-intro">
-          <div><span className="eyebrow">Opening slate</span><h2>Development desk</h2></div>
-          <p>{developmentResult ? "Your first development action is complete. The project is paused before the wider production loop." : "Your studio and first film are ready. Choose one early development action."}</p>
+          <div><span className="eyebrow">Opening slate</span><h2>{developmentResult ? "Pre-production desk" : "Development desk"}</h2></div>
+          <p>{preProductionResult ? "The production team is locked. This playable step stops before the shoot." : developmentResult ? "Development is complete. Build the practical team and location plan." : "Your studio and first film are ready. Choose one early development action."}</p>
         </div>
         <div className="custom-dashboard-grid">
           <div className="dashboard-main">
             <ProjectPipeline project={run.project} steps={pipelineSteps} />
-            {developmentResult
-              ? <DevelopmentResultPanel result={developmentResult} />
-              : (
-                <DevelopmentPanel
-                  onComplete={onCompleteDevelopment}
-                  onSelectPath={onSelectDevelopmentPath}
-                  run={run}
-                  selectedPath={selectedDevelopmentPath}
-                />
-              )}
+            {developmentResult ? (
+              <>
+                <DevelopmentResultPanel result={developmentResult} />
+                {preProductionResult
+                  ? <ProductionTeamResultPanel result={preProductionResult} />
+                  : (
+                    <PreProductionPanel
+                      developmentResult={developmentResult}
+                      onLock={onLockPreProduction}
+                      onSelectActors={onSelectActors}
+                      onSelectCrew={onSelectCrew}
+                      onSelectLocation={onSelectLocation}
+                      run={run}
+                      selectedActorIds={selectedActorIds}
+                      selectedCrewIds={selectedCrewIds}
+                      selectedLocationId={selectedLocationId}
+                    />
+                  )}
+              </>
+            ) : (
+              <DevelopmentPanel
+                onComplete={onCompleteDevelopment}
+                onSelectPath={onSelectDevelopmentPath}
+                run={run}
+                selectedPath={selectedDevelopmentPath}
+              />
+            )}
           </div>
-          <RunSummaryPanel developmentResult={developmentResult} run={run} onEdit={onEdit} />
+          <RunSummaryPanel developmentResult={developmentResult} preProductionResult={preProductionResult} run={run} onEdit={onEdit} />
         </div>
       </main>
     </>
