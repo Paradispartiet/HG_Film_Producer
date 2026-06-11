@@ -8,7 +8,11 @@ import { calculateCastingChemistry } from "./calculateCastingChemistry.js";
 import { scoreActorForProject } from "./castActor.js";
 import { scoreCrewMemberForProject } from "./scoreCrewMemberForProject.js";
 
-/** Evaluate only the crew and actors currently attached to the project. */
+/**
+ * Evaluate only the crew and actors currently attached to the project. Crew
+ * fit includes collaboration, while an empty team receives no artificial
+ * budget-health bonus.
+ */
 export function evaluateProductionTeam(
   project: FilmProject,
   crewMembers: readonly CrewMember[],
@@ -24,7 +28,12 @@ export function evaluateProductionTeam(
   });
 
   const crewScore = averageOrZero(
-    selectedCrew.map((crewMember) => scoreCrewMemberForProject(project, crewMember).totalScore)
+    selectedCrew.map((crewMember) =>
+      clamp(
+        scoreCrewMemberForProject(project, crewMember).totalScore * 0.85 +
+          crewMember.collaboration * 0.15
+      )
+    )
   );
   const castScore = averageOrZero(
     selectedActors.map((actor) => scoreActorForProject(project, actor).totalScore)
@@ -40,12 +49,14 @@ export function evaluateProductionTeam(
   const budgetPressure = project.budget <= 0
     ? committedFees > 0 ? 100 : 0
     : clamp((committedFees / project.budget) * 100);
+  const hasSelectedTeam = selectedCrew.length + selectedActors.length > 0;
+  const budgetHealth = hasSelectedTeam ? 100 - budgetPressure : 0;
   const overall = clamp(
     crewScore * 0.3 +
       castScore * 0.25 +
       chemistryScore * 0.2 +
       reliabilityScore * 0.15 +
-      (100 - budgetPressure) * 0.1
+      budgetHealth * 0.1
   );
 
   return {

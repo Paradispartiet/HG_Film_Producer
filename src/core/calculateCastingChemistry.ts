@@ -15,8 +15,8 @@ const TENSION_PAIRS: readonly (readonly [string, string])[] = [
 export function calculateCastingChemistry(
   selectedActors: readonly Actor[]
 ): CastingChemistryResult {
-  const actorIds = uniqueActors(selectedActors).map((actor) => actor.id);
   const actors = uniqueActors(selectedActors);
+  const actorIds = actors.map((actor) => actor.id);
 
   if (actors.length < 2) {
     return {
