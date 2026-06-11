@@ -88,7 +88,7 @@ Eksempler: drama, komedie, thriller, skrekk, action, dokumentar, musikal, romant
 
 Et sted, gjerne koblet til History Go.
 
-Bør inneholde stedstype, by, tags, sjangerbonus, stemning, produksjonskostnad, logistikk, autentisitet og historisk verdi.
+Bør inneholde stedstype, by, tags, sjangerbonus, stemning, produksjonskostnad, logistikk, autentisitet, visuell verdi og historisk verdi. Location scouting rangerer steder mot prosjekt og brief, og et valgt sted gir et eksplisitt produksjonsestimat.
 
 ### historical_film
 
@@ -136,6 +136,7 @@ Foreslått struktur:
 - data/film/movements.json
 - data/film/genres.json
 - data/film/locations.json
+- data/film/location_scouting_briefs.json
 - data/film/films.json
 - data/film/production_choices.json
 - data/film/knowledge_entries.json

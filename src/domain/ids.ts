@@ -14,6 +14,7 @@ export type TechniqueId = Brand<string, "TechniqueId">;
 export type MovementId = Brand<string, "MovementId">;
 export type GenreId = Brand<string, "GenreId">;
 export type LocationId = Brand<string, "LocationId">;
+export type LocationScoutingBriefId = Brand<string, "LocationScoutingBriefId">;
 export type HistoricalFilmId = Brand<string, "HistoricalFilmId">;
 export type ProductionChoiceId = Brand<string, "ProductionChoiceId">;
 export type KnowledgeEntryId = Brand<string, "KnowledgeEntryId">;
@@ -54,4 +55,8 @@ export function asSceneFunctionId(value: string): SceneFunctionId {
 
 export function asScriptTemplateId(value: string): ScriptTemplateId {
   return value as ScriptTemplateId;
+}
+
+export function asLocationScoutingBriefId(value: string): LocationScoutingBriefId {
+  return value as LocationScoutingBriefId;
 }

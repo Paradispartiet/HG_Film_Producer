@@ -1,7 +1,6 @@
 import type {
   GenreId,
   KnowledgeEntryId,
-  LocationId,
   ProductionChoiceId,
   TechniqueId
 } from "./ids.js";
@@ -17,37 +16,11 @@ export type ProductionPhase =
   | "post_production"
   | "release";
 
-/**
- * A physical place a film can shoot at, ideally tied to a History Go place.
- * Locations carry genre bonuses and production modifiers so a place is never
- * just a backdrop — it has game value.
- */
-export interface LocationGenreBonus {
-  readonly genreId: GenreId;
-  readonly bonus: number;
-}
-
-export interface LocationProductionModifiers {
-  /** Cost multiplier applied to the slice of budget spent here (1 = neutral). */
-  readonly cost: number;
-  /** Logistical difficulty, 0 (trivial) .. 100 (very hard). */
-  readonly logistics: number;
-  /** How real/specific the place feels on screen, 0 .. 100. */
-  readonly authenticity: number;
-}
-
-export interface Location {
-  readonly id: LocationId;
-  readonly name: string;
-  readonly city: string;
-  readonly type: string;
-  readonly summary: string;
-  readonly tags: readonly string[];
-  readonly genreBonuses: readonly LocationGenreBonus[];
-  readonly productionModifiers: LocationProductionModifiers;
-  /** Optional link into a History Go place. */
-  readonly hgPlaceId: string | null;
-}
+export type {
+  Location,
+  LocationGenreBonus,
+  LocationProductionModifiers
+} from "./location.js";
 
 /**
  * One selectable answer to a production problem. A good option moves stats in
