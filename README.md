@@ -50,4 +50,6 @@ Modulær struktur.
 
 Repoet er i grunnfase.
 
-Det finnes foreløpig ingen frontend, backend, package.json eller app-kode. Første mål er å definere spillets univers, systemer og datatyper før implementasjon.
+Det finnes foreløpig ingen frontend, backend eller app-UI. Første mål er å definere spillets univers, systemer og datatyper før implementasjon.
+
+> **PR 2** legger til det første dataskjelettet (`data/film/*.json`) og den første studiomotoren i `src/core` (opprett studio, opprett filmprosjekt, ta et produksjonsvalg, beregn filmresultat). Fortsatt ingen UI, React/Vite eller backend.

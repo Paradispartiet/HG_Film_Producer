@@ -1,0 +1,92 @@
+[
+  {
+    "id": "genre_drama",
+    "name": "Drama",
+    "summary": "Character and conflict driven stories about people under pressure.",
+    "audienceBias": 4,
+    "criticBias": 8,
+    "recommendedScale": "indie",
+    "recommendedTechniqueIds": ["technique_close_up", "technique_long_take"]
+  },
+  {
+    "id": "genre_thriller",
+    "name": "Thriller",
+    "summary": "Tension, stakes and suspense that keep the audience leaning forward.",
+    "audienceBias": 8,
+    "criticBias": 5,
+    "recommendedScale": "mid_budget",
+    "recommendedTechniqueIds": ["technique_cross_cutting", "technique_offscreen_sound"]
+  },
+  {
+    "id": "genre_comedy",
+    "name": "Comedy",
+    "summary": "Timing, tone and character chemistry built around laughter.",
+    "audienceBias": 9,
+    "criticBias": 3,
+    "recommendedScale": "indie",
+    "recommendedTechniqueIds": ["technique_jump_cut", "technique_match_cut"]
+  },
+  {
+    "id": "genre_horror",
+    "name": "Horror",
+    "summary": "Dread and shock built from anticipation and sound.",
+    "audienceBias": 8,
+    "criticBias": 4,
+    "recommendedScale": "micro",
+    "recommendedTechniqueIds": ["technique_offscreen_sound", "technique_close_up"]
+  },
+  {
+    "id": "genre_documentary",
+    "name": "Documentary",
+    "summary": "Real subjects and events shaped into a story.",
+    "audienceBias": 3,
+    "criticBias": 9,
+    "recommendedScale": "micro",
+    "recommendedTechniqueIds": ["technique_voiceover", "technique_handheld_camera"]
+  },
+  {
+    "id": "genre_action",
+    "name": "Action",
+    "summary": "Movement, set pieces and physical stakes at scale.",
+    "audienceBias": 10,
+    "criticBias": 2,
+    "recommendedScale": "studio",
+    "recommendedTechniqueIds": ["technique_cross_cutting", "technique_long_take"]
+  },
+  {
+    "id": "genre_romance",
+    "name": "Romance",
+    "summary": "Relationships, longing and chemistry between leads.",
+    "audienceBias": 8,
+    "criticBias": 4,
+    "recommendedScale": "indie",
+    "recommendedTechniqueIds": ["technique_close_up", "technique_natural_light"]
+  },
+  {
+    "id": "genre_science_fiction",
+    "name": "Science fiction",
+    "summary": "Speculative worlds that use the future to examine the present.",
+    "audienceBias": 7,
+    "criticBias": 6,
+    "recommendedScale": "studio",
+    "recommendedTechniqueIds": ["technique_match_cut", "technique_voiceover"]
+  },
+  {
+    "id": "genre_period_drama",
+    "name": "Period drama",
+    "summary": "Stories set in a recreated past where design and place matter.",
+    "audienceBias": 5,
+    "criticBias": 8,
+    "recommendedScale": "mid_budget",
+    "recommendedTechniqueIds": ["technique_long_take", "technique_natural_light"]
+  },
+  {
+    "id": "genre_social_realism",
+    "name": "Social realism",
+    "summary": "Grounded stories about ordinary lives and social conditions.",
+    "audienceBias": 3,
+    "criticBias": 9,
+    "recommendedScale": "micro",
+    "recommendedTechniqueIds": ["technique_handheld_camera", "technique_natural_light"]
+  }
+]

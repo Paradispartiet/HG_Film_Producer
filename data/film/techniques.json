@@ -1,0 +1,82 @@
+[
+  {
+    "id": "technique_montage",
+    "name": "Montage",
+    "summary": "A sequence of short shots that compresses time and shows change.",
+    "solves": "The middle of the film feels slow and development is hard to show.",
+    "affectedStats": ["pacing", "structure"],
+    "knowledgeEntryId": "knowledge_montage"
+  },
+  {
+    "id": "technique_close_up",
+    "name": "Close-up",
+    "summary": "A tight shot on a face or detail that raises emotional weight.",
+    "solves": "A scene reads as flat and the character's inner reaction is invisible.",
+    "affectedStats": ["emotion", "performance"],
+    "knowledgeEntryId": "knowledge_close_up"
+  },
+  {
+    "id": "technique_long_take",
+    "name": "Long take",
+    "summary": "An unbroken shot that builds tension and realism in real time.",
+    "solves": "A tense scene loses intensity because cutting breaks the moment.",
+    "affectedStats": ["visualStyle", "emotion"],
+    "knowledgeEntryId": "knowledge_long_take"
+  },
+  {
+    "id": "technique_jump_cut",
+    "name": "Jump cut",
+    "summary": "A deliberate temporal jump within a shot that creates nervous energy.",
+    "solves": "A passage feels static and you want modern, restless momentum.",
+    "affectedStats": ["pacing", "visualStyle"],
+    "knowledgeEntryId": "knowledge_jump_cut"
+  },
+  {
+    "id": "technique_voiceover",
+    "name": "Voiceover",
+    "summary": "Narration laid over the image that gives access to inner life.",
+    "solves": "A character's interior thoughts are hard to show visually.",
+    "affectedStats": ["emotion", "structure"],
+    "knowledgeEntryId": "knowledge_voiceover"
+  },
+  {
+    "id": "technique_natural_light",
+    "name": "Natural light",
+    "summary": "Shooting with available light for realism and lower cost.",
+    "solves": "The budget is tight and you want an honest, grounded look.",
+    "affectedStats": ["visualStyle", "quality"],
+    "knowledgeEntryId": "knowledge_natural_light"
+  },
+  {
+    "id": "technique_cross_cutting",
+    "name": "Cross-cutting",
+    "summary": "Cutting between two parallel actions to build suspense.",
+    "solves": "Two storylines need tension and a sense of converging stakes.",
+    "affectedStats": ["pacing", "audienceAppeal"],
+    "knowledgeEntryId": "knowledge_cross_cutting"
+  },
+  {
+    "id": "technique_match_cut",
+    "name": "Match cut",
+    "summary": "A cut linking two shots by shape or motion to suggest connection.",
+    "solves": "A transition feels abrupt and you want a graceful thematic link.",
+    "affectedStats": ["visualStyle", "structure"],
+    "knowledgeEntryId": "knowledge_match_cut"
+  },
+  {
+    "id": "technique_handheld_camera",
+    "name": "Handheld camera",
+    "summary": "An unstabilised camera that adds immediacy and physical presence.",
+    "solves": "A scene feels too polished and you want raw, in-the-moment energy.",
+    "affectedStats": ["visualStyle", "emotion"],
+    "knowledgeEntryId": "knowledge_handheld_camera"
+  },
+  {
+    "id": "technique_offscreen_sound",
+    "name": "Offscreen sound",
+    "summary": "Sound from outside the frame that expands the world and implies threat.",
+    "solves": "A scene feels small and you want danger or scale without showing it.",
+    "affectedStats": ["sound", "emotion"],
+    "knowledgeEntryId": "knowledge_offscreen_sound"
+  }
+]

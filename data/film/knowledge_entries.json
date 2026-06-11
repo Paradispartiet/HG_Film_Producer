@@ -1,0 +1,92 @@
+[
+  {
+    "id": "knowledge_montage",
+    "title": "Montage",
+    "explanation": "A montage joins short shots so time and change are felt rather than watched in full. Editing for rhythm and contrast lets meaning emerge from the cut itself.",
+    "usedInGameplay": "Solves a slow second act and raises pacing and structure.",
+    "relatedTechniqueId": "technique_montage",
+    "relatedRoleId": "role_editor",
+    "relatedGenreId": null
+  },
+  {
+    "id": "knowledge_close_up",
+    "title": "Close-up",
+    "explanation": "A close-up isolates a face or detail and gives it emotional weight. The audience reads the smallest reaction, so the moment lands without dialogue.",
+    "usedInGameplay": "Solves a flat character beat and raises emotion and performance.",
+    "relatedTechniqueId": "technique_close_up",
+    "relatedRoleId": "role_director",
+    "relatedGenreId": null
+  },
+  {
+    "id": "knowledge_long_take",
+    "title": "Long take",
+    "explanation": "A long take holds a single unbroken shot, building tension and realism in real time. It demands precise planning because there is no cut to hide behind.",
+    "usedInGameplay": "Raises visual style and emotion when a tense scene must not be broken.",
+    "relatedTechniqueId": "technique_long_take",
+    "relatedRoleId": "role_cinematographer",
+    "relatedGenreId": null
+  },
+  {
+    "id": "knowledge_jump_cut",
+    "title": "Jump cut",
+    "explanation": "A jump cut breaks continuity inside a shot, skipping time and creating a restless, modern energy that draws attention to the edit.",
+    "usedInGameplay": "Raises pacing and visual style when a passage feels static.",
+    "relatedTechniqueId": "technique_jump_cut",
+    "relatedRoleId": "role_editor",
+    "relatedGenreId": null
+  },
+  {
+    "id": "knowledge_voiceover",
+    "title": "Voiceover",
+    "explanation": "Voiceover lays narration over the image to reach a character's inner life. It is efficient, but it can weaken visual storytelling if it explains too much.",
+    "usedInGameplay": "Raises emotion and structure, with a risk to visual style.",
+    "relatedTechniqueId": "technique_voiceover",
+    "relatedRoleId": "role_screenwriter",
+    "relatedGenreId": null
+  },
+  {
+    "id": "knowledge_natural_light",
+    "title": "Natural light",
+    "explanation": "Shooting with available light gives realism and a lower cost, trading total control for honesty. It rewards planning around the time of day.",
+    "usedInGameplay": "Raises visual style and quality when the budget is tight.",
+    "relatedTechniqueId": "technique_natural_light",
+    "relatedRoleId": "role_cinematographer",
+    "relatedGenreId": null
+  },
+  {
+    "id": "knowledge_cross_cutting",
+    "title": "Cross-cutting",
+    "explanation": "Cross-cutting alternates between two parallel actions so the audience feels them converge. It is a core engine of suspense and momentum.",
+    "usedInGameplay": "Raises pacing and audience appeal when two threads need tension.",
+    "relatedTechniqueId": "technique_cross_cutting",
+    "relatedRoleId": "role_editor",
+    "relatedGenreId": null
+  },
+  {
+    "id": "knowledge_match_cut",
+    "title": "Match cut",
+    "explanation": "A match cut links two shots by shape or movement so a transition reads as a thematic connection rather than a break.",
+    "usedInGameplay": "Raises visual style and structure when a transition feels abrupt.",
+    "relatedTechniqueId": "technique_match_cut",
+    "relatedRoleId": "role_editor",
+    "relatedGenreId": null
+  },
+  {
+    "id": "knowledge_handheld_camera",
+    "title": "Handheld camera",
+    "explanation": "A handheld camera adds immediacy and physical presence, putting the audience inside the moment at the cost of a polished image.",
+    "usedInGameplay": "Raises visual style and emotion when a scene feels too clean.",
+    "relatedTechniqueId": "technique_handheld_camera",
+    "relatedRoleId": "role_cinematographer",
+    "relatedGenreId": null
+  },
+  {
+    "id": "knowledge_offscreen_sound",
+    "title": "Offscreen sound",
+    "explanation": "Sound from outside the frame expands the world and implies threat or scale the camera never shows, doing more with less.",
+    "usedInGameplay": "Raises sound and emotion when a scene needs danger without spectacle.",
+    "relatedTechniqueId": "technique_offscreen_sound",
+    "relatedRoleId": "role_sound_designer",
+    "relatedGenreId": null
+  }
+]
