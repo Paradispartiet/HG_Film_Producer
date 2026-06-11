@@ -52,13 +52,13 @@ Eksempler: produsent, regissør, manusforfatter, fotograf, klipper, komponist, l
 
 En konkret person i crewet.
 
-Bør kobles til rolle, erfaring, stil, styrker, svakheter, lønn, samarbeidsevne og historisk/fiktiv status.
+Bør kobles til rolle, erfaring, stil, styrker, svakheter, lønn, samarbeidsevne og historisk/fiktiv status. Første crew-motor scorer rolle-, sjanger- og stilmatch sammen med erfaring, pålitelighet og kostnad før en person ansettes uten å mutere prosjektet.
 
 ### actor
 
 En skuespiller som kan castes.
 
-Bør inneholde stjerneverdi, erfaring, spillestil, sjangerstyrke, kjemi, publikumstrekk og rolle-egnethet.
+Bør inneholde stjerneverdi, erfaring, spillestil, sjangerstyrke, kjemi, publikumstrekk og rolle-egnethet. Første castingmotor scorer skuespillere, måler delte og motstridende kjemitags og samler crew, cast, pålitelighet og budsjettpress i en produksjonsteamevaluering.
 
 ### mentor
 

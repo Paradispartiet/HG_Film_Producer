@@ -1,25 +1,51 @@
+import type { ProductionTeamEvaluation } from "../domain/crew.js";
 import type { FilmProject, FilmResult } from "../domain/film.js";
 
 const SCALE_BONUS: Record<FilmProject["scale"], number> = {
   micro: 0,
-  indie: 8,
-  mid_budget: 16,
-  studio: 24,
-  prestige: 30
+  indie: 6,
+  mid_budget: 12,
+  studio: 18,
+  prestige: 22
 };
 
-export function calculateFilmResult(project: FilmProject): FilmResult {
-  const crewStrength = project.crewMemberIds.length * 4;
-  const castStrength = project.actorIds.length * 3;
-  const locationStrength = project.locationIds.length * 2;
-  const techniqueStrength = project.techniqueIdsUsed.length * 5;
+/**
+ * Calculate a release result. Existing one-argument callers keep a count-based
+ * fallback, while a production-team evaluation makes actual fit, chemistry,
+ * reliability and cost shape the result.
+ */
+export function calculateFilmResult(
+  project: FilmProject,
+  productionTeam?: ProductionTeamEvaluation
+): FilmResult {
+  if (productionTeam && productionTeam.projectId !== project.id) {
+    throw new Error(`Production team evaluation does not belong to project "${project.id}".`);
+  }
+
+  const crewQuality = productionTeam?.crewScore ?? fallbackCrewScore(project);
+  const castQuality = productionTeam?.castScore ?? fallbackCastScore(project);
+  const chemistry = productionTeam?.chemistryScore ?? fallbackChemistryScore(project);
+  const reliability = productionTeam?.reliabilityScore ?? 60;
+  const teamBudgetPressure = productionTeam?.budgetPressure ?? 0;
+  const locationStrength = Math.min(10, project.locationIds.length * 3);
+  const techniqueStrength = Math.min(15, project.techniqueIdsUsed.length * 5);
   const scaleBonus = SCALE_BONUS[project.scale];
 
-  const quality = clampScore(30 + crewStrength + techniqueStrength + scaleBonus);
-  const audienceAppeal = clampScore(25 + castStrength + locationStrength + scaleBonus);
-  const criticalAppeal = clampScore(20 + techniqueStrength + crewStrength + project.locationIds.length);
-  const budgetSpent = Math.round(project.budget * budgetPressure(project.scale));
-  const revenueEstimate = Math.round((audienceAppeal * 1200 + quality * 800) * revenueMultiplier(project.scale));
+  const quality = clampScore(
+    15 + crewQuality * 0.42 + chemistry * 0.1 + reliability * 0.08 + techniqueStrength + scaleBonus * 0.35
+  );
+  const audienceAppeal = clampScore(
+    15 + castQuality * 0.36 + chemistry * 0.2 + locationStrength + scaleBonus * 0.65
+  );
+  const criticalAppeal = clampScore(
+    12 + crewQuality * 0.32 + castQuality * 0.12 + chemistry * 0.12 + techniqueStrength + locationStrength * 0.5
+  );
+  const budgetSpent = Math.round(
+    project.budget * budgetPressure(project.scale) * (1 + Math.max(0, teamBudgetPressure - 50) / 500)
+  );
+  const revenueEstimate = Math.round(
+    (audienceAppeal * 1200 + quality * 800) * revenueMultiplier(project.scale)
+  );
 
   return {
     projectId: project.id,
@@ -31,6 +57,18 @@ export function calculateFilmResult(project: FilmProject): FilmResult {
     reputationDelta: Math.round((quality + audienceAppeal) / 25),
     prestigeDelta: Math.round(criticalAppeal / 30)
   };
+}
+
+function fallbackCrewScore(project: FilmProject): number {
+  return clampScore(35 + project.crewMemberIds.length * 8);
+}
+
+function fallbackCastScore(project: FilmProject): number {
+  return clampScore(35 + project.actorIds.length * 10);
+}
+
+function fallbackChemistryScore(project: FilmProject): number {
+  return project.actorIds.length >= 2 ? 55 : project.actorIds.length === 1 ? 40 : 0;
 }
 
 function clampScore(value: number): number {

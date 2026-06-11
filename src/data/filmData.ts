@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import type { Actor, CrewMember } from "../domain/crew.js";
 import type { Genre, KnowledgeEntry, Role, Technique } from "../domain/knowledge.js";
 import type { Location, LocationScoutingBrief } from "../domain/location.js";
 import type { MentorLesson } from "../domain/mentor.js";
@@ -17,6 +18,8 @@ import type { SceneFunction, ScriptTemplate } from "../domain/script.js";
  */
 export interface FilmData {
   readonly roles: readonly Role[];
+  readonly crewMembers: readonly CrewMember[];
+  readonly actors: readonly Actor[];
   readonly genres: readonly Genre[];
   readonly techniques: readonly Technique[];
   readonly mentors: readonly Mentor[];
@@ -41,6 +44,8 @@ function readJson<T>(fileName: string): T {
 export function loadFilmData(): FilmData {
   return {
     roles: readJson<Role[]>("roles.json"),
+    crewMembers: readJson<CrewMember[]>("crew_members.json"),
+    actors: readJson<Actor[]>("actors.json"),
     genres: readJson<Genre[]>("genres.json"),
     techniques: readJson<Technique[]>("techniques.json"),
     mentors: readJson<Mentor[]>("mentors.json"),
