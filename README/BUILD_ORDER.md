@@ -130,3 +130,7 @@ Systemet bør støtte flere filmer over tid, ansatte som utvikler seg, studio-id
 Ikke start med login, stor backend, avansert kart, komplett historisk database, AI-manusgenerator eller masse bilder.
 
 Først må kjernemotoren være tydelig.
+
+## UI foundation
+
+The first player-facing layer is a Vite and React studio dashboard. It presents one deterministic, engine-backed run from idea through career result; interaction, routing, persistence, maps, and backend work remain intentionally out of scope for this foundation.
