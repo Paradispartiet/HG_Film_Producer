@@ -1,58 +1,151 @@
 [
   {
-    "id": "location_oslo_harbour",
-    "name": "Aker Brygge Waterfront",
+    "id": "location_oslo_urban_street",
+    "name": "Central Oslo Side Street",
     "city": "Oslo",
-    "type": "harbour",
-    "summary": "A working waterfront of piers, cranes and reflected light.",
-    "tags": ["water", "industrial", "open_air", "evening"],
+    "type": "urban_street",
+    "summary": "A dense city street with shopfront reflections, service alleys and steady pedestrian movement.",
+    "tags": ["urban", "street", "night", "neon", "crowded"],
     "genreBonuses": [
-      { "genreId": "genre_thriller", "bonus": 8 },
+      { "genreId": "genre_thriller", "bonus": 10 },
       { "genreId": "genre_social_realism", "bonus": 6 }
     ],
-    "productionModifiers": { "cost": 1.2, "logistics": 60, "authenticity": 80 },
-    "hgPlaceId": "hg_oslo_aker_brygge"
+    "productionModifiers": { "cost": 1.2, "logistics": 68, "authenticity": 88, "visualValue": 82, "historicalValue": 35 },
+    "hgPlaceId": null
   },
   {
-    "id": "location_oslo_old_street",
-    "name": "Damstredet Old Street",
+    "id": "location_oslo_old_cinema",
+    "name": "Oslo Old Cinema",
     "city": "Oslo",
-    "type": "street",
-    "summary": "A narrow, crooked street of wooden houses that reads as the past.",
-    "tags": ["historic", "wood", "narrow", "daylight"],
+    "type": "cinema",
+    "summary": "A faded single-screen cinema with a deep stage, worn velvet and intact projection details.",
+    "tags": ["interior", "historic", "cinema", "ornate", "controlled"],
     "genreBonuses": [
-      { "genreId": "genre_period_drama", "bonus": 10 },
-      { "genreId": "genre_drama", "bonus": 4 }
+      { "genreId": "genre_period_drama", "bonus": 9 },
+      { "genreId": "genre_drama", "bonus": 7 },
+      { "genreId": "genre_horror", "bonus": 5 }
     ],
-    "productionModifiers": { "cost": 1.0, "logistics": 45, "authenticity": 90 },
-    "hgPlaceId": "hg_oslo_damstredet"
+    "productionModifiers": { "cost": 1.1, "logistics": 42, "authenticity": 86, "visualValue": 92, "historicalValue": 84 },
+    "hgPlaceId": null
+  },
+  {
+    "id": "location_oslo_harbour",
+    "name": "Oslo Harbour District",
+    "city": "Oslo",
+    "type": "harbour_district",
+    "summary": "A working harbour edge of piers, warehouses, cranes and reflected evening light.",
+    "tags": ["water", "industrial", "open_air", "evening", "harbour"],
+    "genreBonuses": [
+      { "genreId": "genre_thriller", "bonus": 8 },
+      { "genreId": "genre_social_realism", "bonus": 7 },
+      { "genreId": "genre_documentary", "bonus": 5 }
+    ],
+    "productionModifiers": { "cost": 1.2, "logistics": 62, "authenticity": 90, "visualValue": 88, "historicalValue": 68 },
+    "hgPlaceId": null
   },
   {
     "id": "location_oslo_apartment",
     "name": "Grünerløkka Apartment",
     "city": "Oslo",
-    "type": "apartment",
-    "summary": "A small flat with hard interior light and lived-in detail.",
-    "tags": ["interior", "intimate", "modern", "controlled"],
+    "type": "apartment_interior",
+    "summary": "A compact lived-in flat with controllable practical light and close dramatic geography.",
+    "tags": ["interior", "intimate", "modern", "controlled", "domestic"],
     "genreBonuses": [
-      { "genreId": "genre_drama", "bonus": 8 },
-      { "genreId": "genre_romance", "bonus": 6 }
+      { "genreId": "genre_drama", "bonus": 10 },
+      { "genreId": "genre_romance", "bonus": 7 },
+      { "genreId": "genre_social_realism", "bonus": 8 }
     ],
-    "productionModifiers": { "cost": 0.8, "logistics": 25, "authenticity": 70 },
+    "productionModifiers": { "cost": 0.78, "logistics": 22, "authenticity": 82, "visualValue": 62, "historicalValue": 30 },
     "hgPlaceId": null
   },
   {
-    "id": "location_oslo_forest",
-    "name": "Nordmarka Forest Edge",
+    "id": "location_oslo_city_park",
+    "name": "Oslo City Park",
     "city": "Oslo",
-    "type": "forest",
-    "summary": "Dense pine forest with deep shadow and isolating quiet.",
-    "tags": ["nature", "isolated", "dark", "weather"],
+    "type": "city_park",
+    "summary": "An accessible green park with paths, mature trees, open lawns and recognizable city edges.",
+    "tags": ["park", "nature", "daylight", "romantic", "public"],
     "genreBonuses": [
-      { "genreId": "genre_horror", "bonus": 10 },
-      { "genreId": "genre_thriller", "bonus": 5 }
+      { "genreId": "genre_romance", "bonus": 10 },
+      { "genreId": "genre_documentary", "bonus": 4 },
+      { "genreId": "genre_drama", "bonus": 4 }
     ],
-    "productionModifiers": { "cost": 1.1, "logistics": 70, "authenticity": 85 },
-    "hgPlaceId": "hg_oslo_nordmarka"
+    "productionModifiers": { "cost": 0.9, "logistics": 38, "authenticity": 74, "visualValue": 78, "historicalValue": 48 },
+    "hgPlaceId": null
+  },
+  {
+    "id": "location_oslo_metro_station",
+    "name": "Oslo Metro Platform",
+    "city": "Oslo",
+    "type": "metro_station",
+    "summary": "A tiled underground platform with hard lines, repeating light and compressed public movement.",
+    "tags": ["urban", "transit", "underground", "crowded", "fluorescent"],
+    "genreBonuses": [
+      { "genreId": "genre_thriller", "bonus": 9 },
+      { "genreId": "genre_action", "bonus": 7 },
+      { "genreId": "genre_social_realism", "bonus": 5 }
+    ],
+    "productionModifiers": { "cost": 1.35, "logistics": 82, "authenticity": 92, "visualValue": 84, "historicalValue": 42 },
+    "hgPlaceId": null
+  },
+  {
+    "id": "location_oslo_museum_hall",
+    "name": "Oslo Museum Hall",
+    "city": "Oslo",
+    "type": "museum_hall",
+    "summary": "A formal exhibition hall with high ceilings, preserved surfaces and strong cultural context.",
+    "tags": ["interior", "museum", "historic", "formal", "ornate"],
+    "genreBonuses": [
+      { "genreId": "genre_period_drama", "bonus": 10 },
+      { "genreId": "genre_documentary", "bonus": 8 },
+      { "genreId": "genre_drama", "bonus": 5 }
+    ],
+    "productionModifiers": { "cost": 1.3, "logistics": 70, "authenticity": 89, "visualValue": 90, "historicalValue": 96 },
+    "hgPlaceId": null
+  },
+  {
+    "id": "location_oslo_industrial_area",
+    "name": "East Oslo Industrial Yard",
+    "city": "Oslo",
+    "type": "industrial_area",
+    "summary": "A rough service yard of concrete, loading bays, fences and adaptable warehouse edges.",
+    "tags": ["industrial", "urban", "gritty", "night", "open_space"],
+    "genreBonuses": [
+      { "genreId": "genre_thriller", "bonus": 9 },
+      { "genreId": "genre_horror", "bonus": 8 },
+      { "genreId": "genre_action", "bonus": 7 }
+    ],
+    "productionModifiers": { "cost": 0.92, "logistics": 48, "authenticity": 84, "visualValue": 80, "historicalValue": 44 },
+    "hgPlaceId": null
+  },
+  {
+    "id": "location_oslo_waterfront",
+    "name": "Fjord Waterfront Promenade",
+    "city": "Oslo",
+    "type": "waterfront",
+    "summary": "A broad contemporary promenade with open sky, architectural lines and changing fjord light.",
+    "tags": ["water", "modern", "open_air", "sunset", "romantic"],
+    "genreBonuses": [
+      { "genreId": "genre_romance", "bonus": 9 },
+      { "genreId": "genre_drama", "bonus": 5 },
+      { "genreId": "genre_documentary", "bonus": 4 }
+    ],
+    "productionModifiers": { "cost": 1.15, "logistics": 55, "authenticity": 76, "visualValue": 94, "historicalValue": 52 },
+    "hgPlaceId": null
+  },
+  {
+    "id": "location_oslo_historic_square",
+    "name": "Old Oslo Market Square",
+    "city": "Oslo",
+    "type": "historic_square",
+    "summary": "A stone-paved square framed by older facades, civic sightlines and layers of public history.",
+    "tags": ["historic", "square", "period", "public", "architecture"],
+    "genreBonuses": [
+      { "genreId": "genre_period_drama", "bonus": 10 },
+      { "genreId": "genre_documentary", "bonus": 6 },
+      { "genreId": "genre_romance", "bonus": 4 }
+    ],
+    "productionModifiers": { "cost": 1.18, "logistics": 64, "authenticity": 94, "visualValue": 91, "historicalValue": 98 },
+    "hgPlaceId": null
   }
 ]

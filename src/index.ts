@@ -1,6 +1,7 @@
 import { addSceneToScript } from "./core/addSceneToScript.js";
 import { applyMentorLesson } from "./core/applyMentorLesson.js";
 import { applyProductionChoice } from "./core/applyProductionChoice.js";
+import { attachLocationToProject } from "./core/attachLocationToProject.js";
 import { calculateFilmResult } from "./core/calculateFilmResult.js";
 import { createFilmProject } from "./core/createFilmProject.js";
 import { createScript } from "./core/createScript.js";
@@ -8,6 +9,7 @@ import { createStudio } from "./core/createStudio.js";
 import { evaluateScript } from "./core/evaluateScript.js";
 import { findMentorsForProblem } from "./core/findMentorsForProblem.js";
 import { getMentorAdvice } from "./core/getMentorAdvice.js";
+import { scoutLocations } from "./core/scoutLocations.js";
 import { loadFilmData } from "./data/filmData.js";
 import { asCharacterId, asSceneId } from "./domain/ids.js";
 import type { FilmStat } from "./domain/knowledge.js";
@@ -125,21 +127,45 @@ if (!chosenLesson) {
 const mentorAdvice = getMentorAdvice(chosenLesson);
 const mentorApplication = applyMentorLesson(project, chosenLesson);
 
-// 8. Resolve one production choice using the game's recommended option.
+// 8. Scout locations against a creative and practical brief.
+const scoutingBrief = data.locationScoutingBriefs.find(
+  (candidate) => candidate.id === "location_brief_intimate_drama"
+);
+if (!scoutingBrief) {
+  throw new Error("Seed data is missing the 'intimate_drama' location scouting brief.");
+}
+
+const scouting = scoutLocations(mentorApplication.project, data.locations, scoutingBrief);
+const bestLocationScore = scouting.rankedLocations[0];
+if (!bestLocationScore) {
+  throw new Error("Location scouting requires at least one candidate location.");
+}
+
+const bestLocation = data.locations.find(
+  (candidate) => candidate.id === bestLocationScore.locationId
+);
+if (!bestLocation) {
+  throw new Error(`Scouting returned an unknown location "${bestLocationScore.locationId}".`);
+}
+
+// 9. Attach the winning location and retain its production impact estimate.
+const locationSelection = attachLocationToProject(mentorApplication.project, bestLocation);
+
+// 10. Resolve one production choice using the game's recommended option.
 const choice = data.productionChoices.find((candidate) => candidate.id === "choice_slow_middle");
 if (!choice) {
   throw new Error("Seed data is missing the 'choice_slow_middle' production choice.");
 }
 const { project: updatedProject, outcome } = applyProductionChoice(
-  mentorApplication.project,
+  locationSelection.project,
   choice
 );
 
-// 9. Calculate a film result from the updated project.
+// 11. Calculate a film result from the updated project.
 const result = calculateFilmResult(updatedProject);
 
-// 10. Log a readable summary of the whole loop.
-console.log("HG Film Producer — mentor lesson engine demo\n");
+// 12. Log a readable summary of the whole loop.
+console.log("HG Film Producer — mentor and location scouting demo\n");
 
 console.log(`Studio:   ${studio.name}`);
 console.log(`  money ${studio.money.toLocaleString("en-US")}, reputation ${studio.reputation}, prestige ${studio.prestige}\n`);
@@ -167,6 +193,16 @@ console.log(`  stat changes: ${formatStatChanges(mentorAdvice.statChanges)}`);
 console.log(`  technique: ${mentorApplication.unlockedTechniqueId ?? "none"}`);
 console.log(`  knowledge: ${mentorApplication.unlockedKnowledgeEntryId ?? "none"}`);
 console.log(`  ${mentorApplication.note}\n`);
+
+console.log(`Chosen location: ${bestLocation.name} — ${scoutingBrief.title}`);
+console.log(`  scouting score: ${bestLocationScore.totalScore}/100`);
+console.log(
+  `  fit: genre ${bestLocationScore.genreFit}, tags ${bestLocationScore.tagFit}, authenticity ${bestLocationScore.authenticity}, logistics ${bestLocationScore.logisticsFit}, cost ${bestLocationScore.costFit}`
+);
+console.log(
+  `  impact: budget ${locationSelection.impact.budgetMultiplier.toFixed(2)}x, logistics risk ${locationSelection.impact.logisticsRisk}, authenticity +${locationSelection.impact.authenticityBonus}, visual +${locationSelection.impact.visualBonus}, history +${locationSelection.impact.historyBonus}`
+);
+console.log(`  ${locationSelection.impact.note}\n`);
 
 console.log("Script evaluation:");
 console.log(`  overall ${evaluation.overall} across ${evaluation.sceneCount} scenes`);

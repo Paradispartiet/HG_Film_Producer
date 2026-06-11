@@ -1,0 +1,79 @@
+[
+  {
+    "id": "location_brief_urban_thriller",
+    "title": "Urban thriller pursuit",
+    "genreId": "genre_thriller",
+    "desiredTags": ["urban", "night", "crowded"],
+    "mood": "tense, anonymous and kinetic",
+    "maxLogistics": 70,
+    "budgetSensitivity": 55,
+    "needsAuthenticity": true,
+    "needsHistoricalValue": false
+  },
+  {
+    "id": "location_brief_intimate_drama",
+    "title": "Intimate family drama",
+    "genreId": "genre_drama",
+    "desiredTags": ["interior", "intimate", "domestic", "controlled"],
+    "mood": "close, fragile and lived-in",
+    "maxLogistics": 35,
+    "budgetSensitivity": 80,
+    "needsAuthenticity": true,
+    "needsHistoricalValue": false
+  },
+  {
+    "id": "location_brief_low_budget_horror",
+    "title": "Low-budget horror confinement",
+    "genreId": "genre_horror",
+    "desiredTags": ["industrial", "night", "interior"],
+    "mood": "isolated, uncanny and threatening",
+    "maxLogistics": 50,
+    "budgetSensitivity": 100,
+    "needsAuthenticity": false,
+    "needsHistoricalValue": false
+  },
+  {
+    "id": "location_brief_documentary_portrait",
+    "title": "Documentary portrait of a city",
+    "genreId": "genre_documentary",
+    "desiredTags": ["public", "historic", "urban"],
+    "mood": "observant, specific and humane",
+    "maxLogistics": 60,
+    "budgetSensitivity": 85,
+    "needsAuthenticity": true,
+    "needsHistoricalValue": true
+  },
+  {
+    "id": "location_brief_romantic_comedy",
+    "title": "Romantic comedy encounter",
+    "genreId": "genre_romance",
+    "desiredTags": ["romantic", "daylight", "public"],
+    "mood": "bright, playful and open",
+    "maxLogistics": 50,
+    "budgetSensitivity": 65,
+    "needsAuthenticity": false,
+    "needsHistoricalValue": false
+  },
+  {
+    "id": "location_brief_social_realism",
+    "title": "Social realist neighborhood story",
+    "genreId": "genre_social_realism",
+    "desiredTags": ["urban", "domestic", "public"],
+    "mood": "grounded, immediate and unsentimental",
+    "maxLogistics": 45,
+    "budgetSensitivity": 95,
+    "needsAuthenticity": true,
+    "needsHistoricalValue": false
+  },
+  {
+    "id": "location_brief_period_drama",
+    "title": "Period drama civic scene",
+    "genreId": "genre_period_drama",
+    "desiredTags": ["historic", "period", "architecture"],
+    "mood": "formal, layered and historically credible",
+    "maxLogistics": 70,
+    "budgetSensitivity": 40,
+    "needsAuthenticity": true,
+    "needsHistoricalValue": true
+  }
+]
