@@ -65,3 +65,9 @@ export interface ReleaseSelectionState {
   readonly releaseStrategyId: string;
   readonly festivalId: string;
 }
+
+export interface CareerApplicationDelta {
+  readonly before: number;
+  readonly after: number;
+  readonly delta: number;
+}

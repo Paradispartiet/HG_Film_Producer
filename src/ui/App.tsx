@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CareerApplicationPanel } from "./components/CareerApplicationPanel";
 import { CareerPanel } from "./components/CareerPanel";
 import { DevelopmentPanel } from "./components/DevelopmentPanel";
 import { DevelopmentResultPanel } from "./components/DevelopmentResultPanel";
@@ -18,6 +19,10 @@ import {
   type DevelopmentPath,
   type DevelopmentStepResult
 } from "./demo/createDevelopmentStepRun";
+import {
+  createCareerApplicationStepResult,
+  type CareerApplicationStepResult
+} from "./demo/createCareerApplicationStepRun";
 import { createDemoStudioRun } from "./demo/createDemoStudioRun";
 import {
   getPreProductionLocationOptions,
@@ -53,6 +58,7 @@ export function App() {
   const [postProductionResult, setPostProductionResult] = useState<PostProductionStepResult | null>(null);
   const [releaseChoices, setReleaseChoices] = useState<ReleaseStepChoices>(emptyReleaseChoices);
   const [releaseResult, setReleaseResult] = useState<ReleaseStepResult | null>(null);
+  const [careerApplicationResult, setCareerApplicationResult] = useState<CareerApplicationStepResult | null>(null);
 
   function createCustomRun(run: ProjectSetupRun) {
     setCustomRun(run);
@@ -102,6 +108,7 @@ export function App() {
   function resetRelease() {
     setReleaseChoices(emptyReleaseChoices);
     setReleaseResult(null);
+    setCareerApplicationResult(null);
   }
 
   function lockPreProduction(result: PreProductionStepResult) {
@@ -128,6 +135,7 @@ export function App() {
         customRun
           ? (
             <CustomDashboard
+              careerApplicationResult={careerApplicationResult}
               developmentResult={developmentResult}
               onCompleteDevelopment={completeDevelopment}
               onEdit={editCustomRun}
@@ -142,7 +150,12 @@ export function App() {
               onChangePostProductionChoices={setPostProductionChoices}
               onLockPostProduction={(result) => { setPostProductionResult(result); resetRelease(); }}
               onChangeReleaseChoices={setReleaseChoices}
-              onReleaseFilm={setReleaseResult}
+              onReleaseFilm={(result) => { setReleaseResult(result); setCareerApplicationResult(null); }}
+              onApplyCareerResult={() => {
+                if (releaseResult) {
+                  setCareerApplicationResult(createCareerApplicationStepResult(customRun, releaseResult, { closeFilmYear: true }));
+                }
+              }}
               releaseChoices={releaseChoices}
               releaseResult={releaseResult}
               onSelectProductionEvent={setSelectedProductionEventId}
@@ -192,6 +205,7 @@ function DemoDashboard() {
 interface CustomDashboardProps {
   readonly run: ProjectSetupRun;
   readonly selectedDevelopmentPath: DevelopmentPath | null;
+  readonly careerApplicationResult: CareerApplicationStepResult | null;
   readonly developmentResult: DevelopmentStepResult | null;
   readonly preProductionResult: PreProductionStepResult | null;
   readonly selectedLocationId: string;
@@ -215,11 +229,13 @@ interface CustomDashboardProps {
   readonly onLockPostProduction: (result: PostProductionStepResult) => void;
   readonly onChangeReleaseChoices: (choices: ReleaseStepChoices) => void;
   readonly onReleaseFilm: (result: ReleaseStepResult) => void;
+  readonly onApplyCareerResult: () => void;
   readonly onEdit: () => void;
 }
 
 function CustomDashboard({
   run,
+  careerApplicationResult,
   selectedDevelopmentPath,
   developmentResult,
   preProductionResult,
@@ -244,6 +260,7 @@ function CustomDashboard({
   onLockPostProduction,
   onChangeReleaseChoices,
   onReleaseFilm,
+  onApplyCareerResult,
   onEdit
 }: CustomDashboardProps) {
   const developmentPipeline = developmentResult
@@ -256,15 +273,26 @@ function CustomDashboard({
     ? [...preProductionPipeline, shootResult.pipelineStep]
     : preProductionPipeline;
   const postProductionPipeline = postProductionResult ? [...shootPipeline, postProductionResult.pipelineStep] : shootPipeline;
-  const pipelineSteps = releaseResult ? [...postProductionPipeline, releaseResult.pipelineStep] : postProductionPipeline;
+  const releasePipeline = releaseResult ? [...postProductionPipeline, releaseResult.pipelineStep] : postProductionPipeline;
+  const pipelineSteps = careerApplicationResult ? [...releasePipeline, careerApplicationResult.pipelineStep] : releasePipeline;
+  const displayedStudio = careerApplicationResult
+    ? {
+        name: careerApplicationResult.updatedStudio.name,
+        money: careerApplicationResult.updatedStudio.money,
+        reputation: careerApplicationResult.updatedStudio.reputation,
+        prestige: careerApplicationResult.updatedStudio.prestige,
+        currentYear: careerApplicationResult.updatedCareerState.currentYear,
+        currentQuarter: careerApplicationResult.updatedCareerState.currentQuarter.toUpperCase()
+      }
+    : run.studio;
 
   return (
     <>
-      <StudioHeader studio={run.studio} />
+      <StudioHeader studio={displayedStudio} />
       <main>
         <div className="dashboard-intro">
-          <div><span className="eyebrow">Opening slate</span><h2>{releaseResult ? "Release report" : postProductionResult ? "Release desk" : shootResult ? "Post-production desk" : preProductionResult ? "Shoot desk" : developmentResult ? "Pre-production desk" : "Development desk"}</h2></div>
-          <p>{releaseResult ? "The film is released. Applying the outcome to the studio and career is the next future step." : postProductionResult ? "The cut is locked. Choose a distribution strategy and festival to release the film." : shootResult ? "The first shoot day is resolved. Start post-production and lock the cut." : preProductionResult ? "The production team is locked. Start and resolve the first shoot day." : developmentResult ? "Development is complete. Build the practical team and location plan." : "Your studio and first film are ready. Choose one early development action."}</p>
+          <div><span className="eyebrow">Opening slate</span><h2>{careerApplicationResult ? "Career review" : releaseResult ? "Release report" : postProductionResult ? "Release desk" : shootResult ? "Post-production desk" : preProductionResult ? "Shoot desk" : developmentResult ? "Pre-production desk" : "Development desk"}</h2></div>
+          <p>{careerApplicationResult ? "The release is recorded. Review the updated studio and prepare to start the next project." : releaseResult ? "The film is released. Apply the outcome to the studio and close the film year." : postProductionResult ? "The cut is locked. Choose a distribution strategy and festival to release the film." : shootResult ? "The first shoot day is resolved. Start post-production and lock the cut." : preProductionResult ? "The production team is locked. Start and resolve the first shoot day." : developmentResult ? "Development is complete. Build the practical team and location plan." : "Your studio and first film are ready. Choose one early development action."}</p>
         </div>
         <div className="custom-dashboard-grid">
           <div className="dashboard-main">
@@ -291,6 +319,9 @@ function CustomDashboard({
                       {shootResult && postProductionResult && (
                         <ReleaseStepPanel choices={releaseChoices} developmentResult={developmentResult} onChange={onChangeReleaseChoices} onRelease={onReleaseFilm} postProductionResult={postProductionResult} preProductionResult={preProductionResult} result={releaseResult} run={run} shootResult={shootResult} />
                       )}
+                      {postProductionResult && (
+                        <CareerApplicationPanel onApply={onApplyCareerResult} releaseResult={releaseResult} result={careerApplicationResult} run={run} />
+                      )}
                     </>
                   )
                   : (
@@ -316,7 +347,7 @@ function CustomDashboard({
               />
             )}
           </div>
-          <RunSummaryPanel developmentResult={developmentResult} postProductionResult={postProductionResult} preProductionResult={preProductionResult} releaseResult={releaseResult} run={run} shootResult={shootResult} onEdit={onEdit} />
+          <RunSummaryPanel careerApplicationResult={careerApplicationResult} developmentResult={developmentResult} postProductionResult={postProductionResult} preProductionResult={preProductionResult} releaseResult={releaseResult} run={run} shootResult={shootResult} onEdit={onEdit} />
         </div>
       </main>
     </>
