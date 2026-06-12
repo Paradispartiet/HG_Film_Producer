@@ -1,15 +1,17 @@
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { ProjectSetupRun } from "../demo/createProjectSetupRun.js";
 import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
+import type { ShootStepResult } from "../demo/createShootStepRun.js";
 
 interface RunSummaryPanelProps {
   readonly run: ProjectSetupRun;
   readonly developmentResult: DevelopmentStepResult | null;
   readonly preProductionResult: PreProductionStepResult | null;
+  readonly shootResult: ShootStepResult | null;
   readonly onEdit: () => void;
 }
 
-export function RunSummaryPanel({ run, developmentResult, preProductionResult, onEdit }: RunSummaryPanelProps) {
+export function RunSummaryPanel({ run, developmentResult, preProductionResult, shootResult, onEdit }: RunSummaryPanelProps) {
   return (
     <section className="panel run-summary-panel">
       <div className="panel-heading">
@@ -34,6 +36,16 @@ export function RunSummaryPanel({ run, developmentResult, preProductionResult, o
               ? `${preProductionResult.crew.projectCrewCount} crew and ${preProductionResult.casting.projectActorCount} actors are attached.`
               : "Confirm a location, hire key crew and cast at least two actors."}
             accent={Boolean(preProductionResult)}
+          />
+        )}
+        {preProductionResult && (
+          <SummaryItem
+            label="Shoot status"
+            value={shootResult ? "Shoot day resolved" : "Start shoot unlocked"}
+            detail={shootResult
+              ? `${shootResult.shootDayResult.completedSceneIds.length} scenes completed with ${shootResult.shootDayResult.takeQuality} take quality.`
+              : "Choose one production event and resolve the first shoot day."}
+            accent={Boolean(shootResult)}
           />
         )}
       </div>

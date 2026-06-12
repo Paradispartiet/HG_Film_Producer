@@ -9,6 +9,7 @@ import { ProjectPipeline } from "./components/ProjectPipeline";
 import { ReleasePanel } from "./components/ReleasePanel";
 import { RunSummaryPanel } from "./components/RunSummaryPanel";
 import { SetupPanel } from "./components/SetupPanel";
+import { ShootPanel } from "./components/ShootPanel";
 import { StudioHeader } from "./components/StudioHeader";
 import { SystemStatusPanel } from "./components/SystemStatusPanel";
 import {
@@ -24,6 +25,7 @@ import {
   addDevelopmentPipelineStep,
   type ProjectSetupRun
 } from "./demo/createProjectSetupRun";
+import { type ShootStepResult } from "./demo/createShootStepRun";
 import type { AppMode, PreProductionSelectionState } from "./types";
 
 const demo = createDemoStudioRun();
@@ -37,12 +39,15 @@ export function App() {
   const [selectedLocationId, setSelectedLocationId] = useState<PreProductionSelectionState["selectedLocationId"]>("");
   const [selectedCrewIds, setSelectedCrewIds] = useState<PreProductionSelectionState["selectedCrewIds"]>([]);
   const [selectedActorIds, setSelectedActorIds] = useState<PreProductionSelectionState["selectedActorIds"]>([]);
+  const [selectedProductionEventId, setSelectedProductionEventId] = useState("");
+  const [shootResult, setShootResult] = useState<ShootStepResult | null>(null);
 
   function createCustomRun(run: ProjectSetupRun) {
     setCustomRun(run);
     setSelectedDevelopmentPath(null);
     setDevelopmentResult(null);
     resetPreProduction();
+    resetShoot();
   }
 
   function editCustomRun() {
@@ -50,6 +55,7 @@ export function App() {
     setSelectedDevelopmentPath(null);
     setDevelopmentResult(null);
     resetPreProduction();
+    resetShoot();
   }
 
   function completeDevelopment(result: DevelopmentStepResult) {
@@ -58,6 +64,7 @@ export function App() {
     setSelectedLocationId(getPreProductionLocationOptions(customRunRequired(), result).find((option) => option.recommended)?.id ?? "");
     setSelectedCrewIds([]);
     setSelectedActorIds([]);
+    resetShoot();
   }
 
   function resetPreProduction() {
@@ -65,6 +72,17 @@ export function App() {
     setSelectedLocationId("");
     setSelectedCrewIds([]);
     setSelectedActorIds([]);
+    resetShoot();
+  }
+
+  function resetShoot() {
+    setSelectedProductionEventId("");
+    setShootResult(null);
+  }
+
+  function lockPreProduction(result: PreProductionStepResult) {
+    setPreProductionResult(result);
+    resetShoot();
   }
 
   function customRunRequired(): ProjectSetupRun {
@@ -89,17 +107,21 @@ export function App() {
               developmentResult={developmentResult}
               onCompleteDevelopment={completeDevelopment}
               onEdit={editCustomRun}
-              onLockPreProduction={setPreProductionResult}
+              onLockPreProduction={lockPreProduction}
               onSelectActors={setSelectedActorIds}
               onSelectCrew={setSelectedCrewIds}
               onSelectLocation={setSelectedLocationId}
               preProductionResult={preProductionResult}
+              onResolveShootDay={setShootResult}
+              onSelectProductionEvent={setSelectedProductionEventId}
               onSelectDevelopmentPath={setSelectedDevelopmentPath}
               run={customRun}
               selectedActorIds={selectedActorIds}
               selectedCrewIds={selectedCrewIds}
               selectedDevelopmentPath={selectedDevelopmentPath}
               selectedLocationId={selectedLocationId}
+              selectedProductionEventId={selectedProductionEventId}
+              shootResult={shootResult}
             />
           )
           : <main className="setup-workspace"><SetupPanel onCreate={createCustomRun} /></main>
@@ -143,12 +165,16 @@ interface CustomDashboardProps {
   readonly selectedLocationId: string;
   readonly selectedCrewIds: readonly string[];
   readonly selectedActorIds: readonly string[];
+  readonly selectedProductionEventId: string;
+  readonly shootResult: ShootStepResult | null;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
   readonly onSelectLocation: (locationId: string) => void;
   readonly onSelectCrew: (crewIds: readonly string[]) => void;
   readonly onSelectActors: (actorIds: readonly string[]) => void;
   readonly onLockPreProduction: (result: PreProductionStepResult) => void;
+  readonly onSelectProductionEvent: (eventId: string) => void;
+  readonly onResolveShootDay: (result: ShootStepResult) => void;
   readonly onEdit: () => void;
 }
 
@@ -160,28 +186,35 @@ function CustomDashboard({
   selectedLocationId,
   selectedCrewIds,
   selectedActorIds,
+  selectedProductionEventId,
+  shootResult,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
   onSelectLocation,
   onSelectCrew,
   onSelectActors,
   onLockPreProduction,
+  onSelectProductionEvent,
+  onResolveShootDay,
   onEdit
 }: CustomDashboardProps) {
   const developmentPipeline = developmentResult
     ? addDevelopmentPipelineStep(run, developmentResult.pipelineStep)
     : run.pipelineSteps;
-  const pipelineSteps = preProductionResult
+  const preProductionPipeline = preProductionResult
     ? [...developmentPipeline, preProductionResult.pipelineStep]
     : developmentPipeline;
+  const pipelineSteps = shootResult
+    ? [...preProductionPipeline, shootResult.pipelineStep]
+    : preProductionPipeline;
 
   return (
     <>
       <StudioHeader studio={run.studio} />
       <main>
         <div className="dashboard-intro">
-          <div><span className="eyebrow">Opening slate</span><h2>{developmentResult ? "Pre-production desk" : "Development desk"}</h2></div>
-          <p>{preProductionResult ? "The production team is locked. This playable step stops before the shoot." : developmentResult ? "Development is complete. Build the practical team and location plan." : "Your studio and first film are ready. Choose one early development action."}</p>
+          <div><span className="eyebrow">Opening slate</span><h2>{preProductionResult ? "Shoot desk" : developmentResult ? "Pre-production desk" : "Development desk"}</h2></div>
+          <p>{shootResult ? "The first shoot day is resolved. Post-production is the next future step." : preProductionResult ? "The production team is locked. Start and resolve the first shoot day." : developmentResult ? "Development is complete. Build the practical team and location plan." : "Your studio and first film are ready. Choose one early development action."}</p>
         </div>
         <div className="custom-dashboard-grid">
           <div className="dashboard-main">
@@ -190,7 +223,20 @@ function CustomDashboard({
               <>
                 <DevelopmentResultPanel result={developmentResult} />
                 {preProductionResult
-                  ? <ProductionTeamResultPanel result={preProductionResult} />
+                  ? (
+                    <>
+                      <ProductionTeamResultPanel compact result={preProductionResult} />
+                      <ShootPanel
+                        developmentResult={developmentResult}
+                        onResolveShootDay={onResolveShootDay}
+                        onSelectProductionEvent={onSelectProductionEvent}
+                        preProductionResult={preProductionResult}
+                        run={run}
+                        selectedProductionEventId={selectedProductionEventId}
+                        shootResult={shootResult}
+                      />
+                    </>
+                  )
                   : (
                     <PreProductionPanel
                       developmentResult={developmentResult}
@@ -214,7 +260,7 @@ function CustomDashboard({
               />
             )}
           </div>
-          <RunSummaryPanel developmentResult={developmentResult} preProductionResult={preProductionResult} run={run} onEdit={onEdit} />
+          <RunSummaryPanel developmentResult={developmentResult} preProductionResult={preProductionResult} run={run} shootResult={shootResult} onEdit={onEdit} />
         </div>
       </main>
     </>
