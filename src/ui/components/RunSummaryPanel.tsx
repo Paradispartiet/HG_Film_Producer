@@ -1,3 +1,4 @@
+import type { CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun";
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { ProjectSetupRun } from "../demo/createProjectSetupRun.js";
 import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
@@ -7,6 +8,7 @@ import type { ReleaseStepResult } from "../demo/createReleaseStepRun.js";
 
 interface RunSummaryPanelProps {
   readonly run: ProjectSetupRun;
+  readonly careerApplicationResult: CareerApplicationStepResult | null;
   readonly developmentResult: DevelopmentStepResult | null;
   readonly preProductionResult: PreProductionStepResult | null;
   readonly shootResult: ShootStepResult | null;
@@ -15,7 +17,7 @@ interface RunSummaryPanelProps {
   readonly onEdit: () => void;
 }
 
-export function RunSummaryPanel({ run, developmentResult, preProductionResult, shootResult, postProductionResult, releaseResult, onEdit }: RunSummaryPanelProps) {
+export function RunSummaryPanel({ run, careerApplicationResult, developmentResult, preProductionResult, shootResult, postProductionResult, releaseResult, onEdit }: RunSummaryPanelProps) {
   return (
     <section className="panel run-summary-panel">
       <div className="panel-heading">
@@ -56,7 +58,10 @@ export function RunSummaryPanel({ run, developmentResult, preProductionResult, s
           <SummaryItem label="Post-production status" value={postProductionResult ? "Locked cut complete" : "Edit suite open"} detail={postProductionResult ? `Locked cut quality ${postProductionResult.postProductionEvaluation.lockedCutQuality}. Release is unlocked.` : "Choose edit, sound, music, color and trailer strategies."} accent={Boolean(postProductionResult)} />
         )}
         {postProductionResult && (
-          <SummaryItem label="Release status" value={releaseResult ? "Film released" : "Distribution desk open"} detail={releaseResult ? `Release outcome ${releaseResult.releaseOutcomeEvaluation.overall}/100. Studio and career application comes next.` : "Choose one release strategy and one festival."} accent={Boolean(releaseResult)} />
+          <SummaryItem label="Release status" value={releaseResult ? "Film released" : "Distribution desk open"} detail={releaseResult ? `Release outcome ${releaseResult.releaseOutcomeEvaluation.overall}/100. ${careerApplicationResult ? "Studio state is updated." : "Studio and career application comes next."}` : "Choose one release strategy and one festival."} accent={Boolean(releaseResult)} />
+        )}
+        {releaseResult && (
+          <SummaryItem label="Career status" value={careerApplicationResult ? "Studio updated" : "Review ready"} detail={careerApplicationResult ? `Year ${careerApplicationResult.careerYearEvaluation.year} evaluated. Next step: start next project.` : "Close the film year to apply the release result."} accent={Boolean(careerApplicationResult)} />
         )}
       </div>
     </section>
