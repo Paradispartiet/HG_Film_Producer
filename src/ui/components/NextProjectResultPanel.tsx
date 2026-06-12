@@ -1,6 +1,7 @@
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { NextProjectStepResult } from "../demo/createNextProjectStepRun.js";
 import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
+import type { PostProductionStepResult } from "../demo/createPostProductionStepRun.js";
 import type { ShootStepResult } from "../demo/createShootStepRun.js";
 
 interface NextProjectResultPanelProps {
@@ -8,6 +9,7 @@ interface NextProjectResultPanelProps {
   readonly developmentResult?: DevelopmentStepResult | null;
   readonly preProductionResult?: PreProductionStepResult | null;
   readonly shootResult?: ShootStepResult | null;
+  readonly postProductionResult?: PostProductionStepResult | null;
 }
 
 export function NextProjectResultPanel({
@@ -15,6 +17,7 @@ export function NextProjectResultPanel({
   developmentResult = null,
   preProductionResult = null,
   shootResult = null,
+  postProductionResult = null,
 }: NextProjectResultPanelProps) {
   const developmentPipeline = developmentResult
     ? [...result.pipelineSteps, developmentResult.pipelineStep]
@@ -22,9 +25,12 @@ export function NextProjectResultPanel({
   const preProductionPipeline = preProductionResult
     ? [...developmentPipeline, preProductionResult.pipelineStep]
     : developmentPipeline;
-  const pipelineSteps = shootResult
+  const shootPipeline = shootResult
     ? [...preProductionPipeline, shootResult.pipelineStep]
     : preProductionPipeline;
+  const pipelineSteps = postProductionResult
+    ? [...shootPipeline, postProductionResult.pipelineStep]
+    : shootPipeline;
 
   return (
     <section className="next-project-result" aria-live="polite">
@@ -36,7 +42,7 @@ export function NextProjectResultPanel({
         </div>
         <div className="ready-badge">
           <span>Next status</span>
-          <strong>{shootResult ? "Shoot day resolved" : preProductionResult ? "Pre-production locked" : developmentResult ? "Development action completed" : "Ready for development"}</strong>
+          <strong>{postProductionResult ? "Post-production locked" : shootResult ? "Shoot day resolved" : preProductionResult ? "Pre-production locked" : developmentResult ? "Development action completed" : "Ready for development"}</strong>
         </div>
       </div>
       <div className="next-project-result-grid">
@@ -106,11 +112,13 @@ export function NextProjectResultPanel({
         </ol>
       </div>
       <div className="development-handoff">
-        <span>{shootResult ? "Film 2 shoot complete" : preProductionResult ? "Film 2 handoff" : developmentResult ? "Film 2 development" : "Next action"}</span>
-        <strong>{shootResult ? "Next step: post-production for film 2" : preProductionResult ? "Start shoot for film 2" : developmentResult ? "Start pre-production for film 2" : "Reuse the development flow for project 2"}</strong>
+        <span>{postProductionResult ? "Film 2 cut locked" : shootResult ? "Film 2 shoot complete" : preProductionResult ? "Film 2 handoff" : developmentResult ? "Film 2 development" : "Next action"}</span>
+        <strong>{postProductionResult ? "Next step: release film 2" : shootResult ? "Start post-production for film 2" : preProductionResult ? "Start shoot for film 2" : developmentResult ? "Start pre-production for film 2" : "Reuse the development flow for project 2"}</strong>
         <p>
-          {shootResult
-            ? "The first shoot day is resolved. Film 2 post-production is intentionally not implemented in this PR."
+          {postProductionResult
+            ? "The film 2 cut is locked. Release remains intentionally outside this PR."
+            : shootResult
+              ? "The first shoot day is resolved. Select all five finishing decisions and lock post-production for film 2."
             : preProductionResult
               ? "The location, crew and cast are locked. Choose one production event and resolve the film 2 shoot day."
             : developmentResult
