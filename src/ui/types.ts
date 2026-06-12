@@ -1,7 +1,10 @@
 import type { FilmScale } from "../domain/film.js";
 
 export type AppMode = "demo" | "setup";
-export type StartingMoneyPreset = "micro_studio" | "indie_studio" | "prestige_startup";
+export type StartingMoneyPreset =
+  | "micro_studio"
+  | "indie_studio"
+  | "prestige_startup";
 
 export interface ProjectSetupChoices {
   readonly studioName: string;
@@ -70,4 +73,11 @@ export interface CareerApplicationDelta {
   readonly before: number;
   readonly after: number;
   readonly delta: number;
+}
+
+export interface NextProjectFormErrors {
+  readonly projectTitle?: string;
+  readonly genreId?: string;
+  readonly scriptTemplateId?: string;
+  readonly form?: string;
 }

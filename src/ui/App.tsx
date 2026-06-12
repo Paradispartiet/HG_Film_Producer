@@ -4,6 +4,7 @@ import { CareerPanel } from "./components/CareerPanel";
 import { DevelopmentPanel } from "./components/DevelopmentPanel";
 import { DevelopmentResultPanel } from "./components/DevelopmentResultPanel";
 import { FilmResultPanel } from "./components/FilmResultPanel";
+import { NextProjectPanel } from "./components/NextProjectPanel";
 import { PostProductionPanel } from "./components/PostProductionPanel";
 import { PreProductionPanel } from "./components/PreProductionPanel";
 import { ProductionTeamResultPanel } from "./components/ProductionTeamResultPanel";
@@ -346,6 +347,7 @@ function CustomDashboard({
                 selectedPath={selectedDevelopmentPath}
               />
             )}
+            {careerApplicationResult && <NextProjectPanel careerApplicationResult={careerApplicationResult} run={run} />}
           </div>
           <RunSummaryPanel careerApplicationResult={careerApplicationResult} developmentResult={developmentResult} postProductionResult={postProductionResult} preProductionResult={preProductionResult} releaseResult={releaseResult} run={run} shootResult={shootResult} onEdit={onEdit} />
         </div>
