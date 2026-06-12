@@ -74,6 +74,8 @@ export function App() {
   const [secondProjectPreProductionResult, setSecondProjectPreProductionResult] = useState<PreProductionStepResult | null>(null);
   const [secondProjectSelectedProductionEventId, setSecondProjectSelectedProductionEventId] = useState("");
   const [secondProjectShootResult, setSecondProjectShootResult] = useState<ShootStepResult | null>(null);
+  const [secondProjectPostProductionChoices, setSecondProjectPostProductionChoices] = useState<PostProductionChoices>(emptyPostProductionChoices);
+  const [secondProjectPostProductionResult, setSecondProjectPostProductionResult] = useState<PostProductionStepResult | null>(null);
 
   function createCustomRun(run: ProjectSetupRun) {
     setCustomRun(run);
@@ -137,6 +139,8 @@ export function App() {
     setSecondProjectPreProductionResult(null);
     setSecondProjectSelectedProductionEventId("");
     setSecondProjectShootResult(null);
+    setSecondProjectPostProductionChoices(emptyPostProductionChoices);
+    setSecondProjectPostProductionResult(null);
   }
 
   function lockPreProduction(result: PreProductionStepResult) {
@@ -208,6 +212,8 @@ export function App() {
               secondProjectPreProductionResult={secondProjectPreProductionResult}
               secondProjectSelectedProductionEventId={secondProjectSelectedProductionEventId}
               secondProjectShootResult={secondProjectShootResult}
+              secondProjectPostProductionChoices={secondProjectPostProductionChoices}
+              secondProjectPostProductionResult={secondProjectPostProductionResult}
               onCreateNextProject={(result) => {
                 setNextProjectResult(result);
                 setSelectedNextDevelopmentPath(null);
@@ -216,6 +222,8 @@ export function App() {
                 setSecondProjectPreProductionResult(null);
                 setSecondProjectSelectedProductionEventId("");
                 setSecondProjectShootResult(null);
+                setSecondProjectPostProductionChoices(emptyPostProductionChoices);
+                setSecondProjectPostProductionResult(null);
               }}
               onSelectSecondProjectDevelopmentPath={setSelectedNextDevelopmentPath}
               onCompleteSecondProjectDevelopment={(result) => {
@@ -227,15 +235,25 @@ export function App() {
                 setSecondProjectPreProductionResult(null);
                 setSecondProjectSelectedProductionEventId("");
                 setSecondProjectShootResult(null);
+                setSecondProjectPostProductionChoices(emptyPostProductionChoices);
+                setSecondProjectPostProductionResult(null);
               }}
               onChangeSecondProjectPreProductionSelections={setSecondProjectPreProductionSelections}
               onLockSecondProjectPreProduction={(result) => {
                 setSecondProjectPreProductionResult(result);
                 setSecondProjectSelectedProductionEventId("");
                 setSecondProjectShootResult(null);
+                setSecondProjectPostProductionChoices(emptyPostProductionChoices);
+                setSecondProjectPostProductionResult(null);
               }}
               onSelectSecondProjectProductionEvent={setSecondProjectSelectedProductionEventId}
-              onResolveSecondProjectShootDay={setSecondProjectShootResult}
+              onResolveSecondProjectShootDay={(result) => {
+                setSecondProjectShootResult(result);
+                setSecondProjectPostProductionChoices(emptyPostProductionChoices);
+                setSecondProjectPostProductionResult(null);
+              }}
+              onChangeSecondProjectPostProductionChoices={setSecondProjectPostProductionChoices}
+              onLockSecondProjectPostProduction={setSecondProjectPostProductionResult}
             />
           )
           : <main className="setup-workspace"><SetupPanel onCreate={createCustomRun} /></main>
@@ -307,6 +325,8 @@ interface CustomDashboardProps {
   readonly secondProjectPreProductionResult: PreProductionStepResult | null;
   readonly secondProjectSelectedProductionEventId: string;
   readonly secondProjectShootResult: ShootStepResult | null;
+  readonly secondProjectPostProductionChoices: PostProductionChoices;
+  readonly secondProjectPostProductionResult: PostProductionStepResult | null;
   readonly onCreateNextProject: (result: NextProjectStepResult) => void;
   readonly onSelectSecondProjectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteSecondProjectDevelopment: (result: DevelopmentStepResult) => void;
@@ -314,6 +334,8 @@ interface CustomDashboardProps {
   readonly onLockSecondProjectPreProduction: (result: PreProductionStepResult) => void;
   readonly onSelectSecondProjectProductionEvent: (eventId: string) => void;
   readonly onResolveSecondProjectShootDay: (result: ShootStepResult) => void;
+  readonly onChangeSecondProjectPostProductionChoices: (choices: PostProductionChoices) => void;
+  readonly onLockSecondProjectPostProduction: (result: PostProductionStepResult) => void;
 }
 
 function CustomDashboard({
@@ -352,13 +374,17 @@ function CustomDashboard({
   secondProjectPreProductionResult,
   secondProjectSelectedProductionEventId,
   secondProjectShootResult,
+  secondProjectPostProductionChoices,
+  secondProjectPostProductionResult,
   onCreateNextProject,
   onSelectSecondProjectDevelopmentPath,
   onCompleteSecondProjectDevelopment,
   onChangeSecondProjectPreProductionSelections,
   onLockSecondProjectPreProduction,
   onSelectSecondProjectProductionEvent,
-  onResolveSecondProjectShootDay
+  onResolveSecondProjectShootDay,
+  onChangeSecondProjectPostProductionChoices,
+  onLockSecondProjectPostProduction
 }: CustomDashboardProps) {
   const developmentPipeline = developmentResult
     ? addDevelopmentPipelineStep(run, developmentResult.pipelineStep)
@@ -411,7 +437,7 @@ function CustomDashboard({
                         shootResult={shootResult}
                       />
                       {shootResult && (
-                        <PostProductionPanel choices={postProductionChoices} developmentResult={developmentResult} onChange={onChangePostProductionChoices} onLock={onLockPostProduction} preProductionResult={preProductionResult} result={postProductionResult} run={run} shootResult={shootResult} />
+                        <PostProductionPanel choices={postProductionChoices} onChange={onChangePostProductionChoices} onLock={onLockPostProduction} preProductionResult={preProductionResult} projectContext={createProjectRunContext(run)} result={postProductionResult} shootResult={shootResult} />
                       )}
                       {shootResult && postProductionResult && (
                         <ReleaseStepPanel choices={releaseChoices} developmentResult={developmentResult} onChange={onChangeReleaseChoices} onRelease={onReleaseFilm} postProductionResult={postProductionResult} preProductionResult={preProductionResult} result={releaseResult} run={run} shootResult={shootResult} />
@@ -457,6 +483,10 @@ function CustomDashboard({
                 preProductionResult={secondProjectPreProductionResult}
                 selectedProductionEventId={secondProjectSelectedProductionEventId}
                 shootResult={secondProjectShootResult}
+                postProductionChoices={secondProjectPostProductionChoices}
+                postProductionResult={secondProjectPostProductionResult}
+                onChangePostProductionChoices={onChangeSecondProjectPostProductionChoices}
+                onLockPostProduction={onLockSecondProjectPostProduction}
                 preProductionSelections={secondProjectPreProductionSelections}
                 result={nextProjectResult}
                 run={run}

@@ -26,9 +26,8 @@ import type {
 } from "../../domain/post.js";
 import type { PipelineStepSummary } from "../types.js";
 import { adaptFilmSeedData } from "./adaptFilmSeedData.js";
-import type { DevelopmentStepResult } from "./createDevelopmentStepRun.js";
 import type { PreProductionStepResult } from "./createPreProductionStepRun.js";
-import type { ProjectSetupRun } from "./createProjectSetupRun.js";
+import type { ProjectRunContext } from "./createProjectRunContext.js";
 import type { ShootStepResult } from "./createShootStepRun.js";
 
 interface PostProductionSeedData {
@@ -90,13 +89,12 @@ export function getPostProductionOptions(): PostProductionOptions {
 }
 
 export function createPostProductionStepResult(
-  run: ProjectSetupRun,
-  developmentResult: DevelopmentStepResult,
+  projectContext: ProjectRunContext,
   preProductionResult: PreProductionStepResult,
   shootResult: ShootStepResult,
   choices: PostProductionChoices
 ): PostProductionStepResult {
-  assertCompletedSteps(run, developmentResult, preProductionResult, shootResult);
+  assertCompletedSteps(projectContext, preProductionResult, shootResult);
   const edit = requireItem(postProductionData.editDecisions, choices.editDecisionId, "edit decision");
   const sound = requireItem(postProductionData.soundDecisions, choices.soundDecisionId, "sound decision");
   const music = requireItem(postProductionData.musicDecisions, choices.musicDecisionId, "music decision");
@@ -162,16 +160,15 @@ function summarizeDecision(
 }
 
 function assertCompletedSteps(
-  run: ProjectSetupRun,
-  developmentResult: DevelopmentStepResult,
+  projectContext: ProjectRunContext,
   preProductionResult: PreProductionStepResult,
   shootResult: ShootStepResult
 ): void {
-  if (preProductionResult.projectState.id !== run.filmProjectState.id) {
-    throw new Error("Pre-production does not belong to this project setup run.");
+  if (preProductionResult.projectState.id !== projectContext.filmProjectState.id) {
+    throw new Error("Pre-production does not belong to this project run context.");
   }
-  if (!developmentResult.pipelineStep.label || !shootResult.pipelineStep.label) {
-    throw new Error("Development and shoot must be completed before post-production.");
+  if (!preProductionResult.pipelineStep.label || !shootResult.pipelineStep.label) {
+    throw new Error("Pre-production and shoot must be completed before post-production.");
   }
 }
 

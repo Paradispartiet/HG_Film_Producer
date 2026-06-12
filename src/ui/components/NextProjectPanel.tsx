@@ -21,6 +21,8 @@ import { ProductionTeamResultPanel } from "./ProductionTeamResultPanel.js";
 import { ShootPanel } from "./ShootPanel.js";
 import type { ShootStepResult } from "../demo/createShootStepRun.js";
 import { StudioCarryoverPanel } from "./StudioCarryoverPanel.js";
+import { PostProductionPanel } from "./PostProductionPanel.js";
+import type { PostProductionChoices, PostProductionStepResult } from "../demo/createPostProductionStepRun.js";
 
 const options = getNextProjectOptions();
 const initialChoices: NextProjectChoices = {
@@ -40,6 +42,8 @@ interface NextProjectPanelProps {
   readonly preProductionResult: PreProductionStepResult | null;
   readonly selectedProductionEventId: string;
   readonly shootResult: ShootStepResult | null;
+  readonly postProductionChoices: PostProductionChoices;
+  readonly postProductionResult: PostProductionStepResult | null;
   readonly onCreate: (result: NextProjectStepResult) => void;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
@@ -47,6 +51,8 @@ interface NextProjectPanelProps {
   readonly onLockPreProduction: (result: PreProductionStepResult) => void;
   readonly onSelectProductionEvent: (eventId: string) => void;
   readonly onResolveShootDay: (result: ShootStepResult) => void;
+  readonly onChangePostProductionChoices: (choices: PostProductionChoices) => void;
+  readonly onLockPostProduction: (result: PostProductionStepResult) => void;
 }
 
 export function NextProjectPanel({
@@ -59,6 +65,8 @@ export function NextProjectPanel({
   preProductionResult,
   selectedProductionEventId,
   shootResult,
+  postProductionChoices,
+  postProductionResult,
   onCreate,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
@@ -66,6 +74,8 @@ export function NextProjectPanel({
   onLockPreProduction,
   onSelectProductionEvent,
   onResolveShootDay,
+  onChangePostProductionChoices,
+  onLockPostProduction,
 }: NextProjectPanelProps) {
   const [choices, setChoices] = useState<NextProjectChoices>(initialChoices);
   const [errors, setErrors] = useState<NextProjectFormErrors>({});
@@ -124,14 +134,14 @@ export function NextProjectPanel({
       </div>
       {result ? (
         <>
-          <NextProjectResultPanel developmentResult={developmentResult} preProductionResult={preProductionResult} result={result} shootResult={shootResult} />
+          <NextProjectResultPanel developmentResult={developmentResult} postProductionResult={postProductionResult} preProductionResult={preProductionResult} result={result} shootResult={shootResult} />
           {developmentResult ? (
             <>
               <DevelopmentResultPanel result={developmentResult} />
               {preProductionResult ? (
                 <>
                   <ProductionTeamResultPanel
-                    nextStepLabel={shootResult ? "Shoot day resolved" : "Shoot is next"}
+                    nextStepLabel={postProductionResult ? "Post-production locked" : shootResult ? "Shoot day resolved" : "Shoot is next"}
                     projectLabel="Film 2"
                     result={preProductionResult}
                   />
@@ -145,6 +155,18 @@ export function NextProjectPanel({
                     selectedProductionEventId={selectedProductionEventId}
                     shootResult={shootResult}
                   />
+                  {shootResult && (
+                    <PostProductionPanel
+                      choices={postProductionChoices}
+                      onChange={onChangePostProductionChoices}
+                      onLock={onLockPostProduction}
+                      preProductionResult={preProductionResult}
+                      projectContext={createProjectRunContext(result)}
+                      projectLabel="film 2"
+                      result={postProductionResult}
+                      shootResult={shootResult}
+                    />
+                  )}
                 </>
               ) : (
                 <PreProductionPanel
