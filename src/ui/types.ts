@@ -52,3 +52,11 @@ export interface PreProductionSelectionState {
 export interface ShootSelectionState {
   readonly selectedProductionEventId: string;
 }
+
+export interface PostProductionSelectionState {
+  readonly editDecisionId: string;
+  readonly soundDecisionId: string;
+  readonly musicDecisionId: string;
+  readonly colorDecisionId: string;
+  readonly trailerStrategyId: string;
+}
