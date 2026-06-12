@@ -81,3 +81,5 @@ export interface NextProjectFormErrors {
   readonly scriptTemplateId?: string;
   readonly form?: string;
 }
+
+export type ProjectShootLabel = "first film" | "film 2";

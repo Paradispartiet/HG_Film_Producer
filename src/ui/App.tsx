@@ -69,9 +69,11 @@ export function App() {
   const [careerApplicationResult, setCareerApplicationResult] = useState<CareerApplicationStepResult | null>(null);
   const [nextProjectResult, setNextProjectResult] = useState<NextProjectStepResult | null>(null);
   const [selectedNextDevelopmentPath, setSelectedNextDevelopmentPath] = useState<DevelopmentPath | null>(null);
-  const [nextDevelopmentResult, setNextDevelopmentResult] = useState<DevelopmentStepResult | null>(null);
-  const [nextPreProductionSelections, setNextPreProductionSelections] = useState<PreProductionSelectionState>(emptyPreProductionSelections);
-  const [nextPreProductionResult, setNextPreProductionResult] = useState<PreProductionStepResult | null>(null);
+  const [secondProjectDevelopmentResult, setSecondProjectDevelopmentResult] = useState<DevelopmentStepResult | null>(null);
+  const [secondProjectPreProductionSelections, setSecondProjectPreProductionSelections] = useState<PreProductionSelectionState>(emptyPreProductionSelections);
+  const [secondProjectPreProductionResult, setSecondProjectPreProductionResult] = useState<PreProductionStepResult | null>(null);
+  const [secondProjectSelectedProductionEventId, setSecondProjectSelectedProductionEventId] = useState("");
+  const [secondProjectShootResult, setSecondProjectShootResult] = useState<ShootStepResult | null>(null);
 
   function createCustomRun(run: ProjectSetupRun) {
     setCustomRun(run);
@@ -130,9 +132,11 @@ export function App() {
   function resetNextProject() {
     setNextProjectResult(null);
     setSelectedNextDevelopmentPath(null);
-    setNextDevelopmentResult(null);
-    setNextPreProductionSelections(emptyPreProductionSelections);
-    setNextPreProductionResult(null);
+    setSecondProjectDevelopmentResult(null);
+    setSecondProjectPreProductionSelections(emptyPreProductionSelections);
+    setSecondProjectPreProductionResult(null);
+    setSecondProjectSelectedProductionEventId("");
+    setSecondProjectShootResult(null);
   }
 
   function lockPreProduction(result: PreProductionStepResult) {
@@ -199,27 +203,39 @@ export function App() {
               shootResult={shootResult}
               nextProjectResult={nextProjectResult}
               selectedNextDevelopmentPath={selectedNextDevelopmentPath}
-              nextDevelopmentResult={nextDevelopmentResult}
-              nextPreProductionSelections={nextPreProductionSelections}
-              nextPreProductionResult={nextPreProductionResult}
+              secondProjectDevelopmentResult={secondProjectDevelopmentResult}
+              secondProjectPreProductionSelections={secondProjectPreProductionSelections}
+              secondProjectPreProductionResult={secondProjectPreProductionResult}
+              secondProjectSelectedProductionEventId={secondProjectSelectedProductionEventId}
+              secondProjectShootResult={secondProjectShootResult}
               onCreateNextProject={(result) => {
                 setNextProjectResult(result);
                 setSelectedNextDevelopmentPath(null);
-                setNextDevelopmentResult(null);
-                setNextPreProductionSelections(emptyPreProductionSelections);
-                setNextPreProductionResult(null);
+                setSecondProjectDevelopmentResult(null);
+                setSecondProjectPreProductionSelections(emptyPreProductionSelections);
+                setSecondProjectPreProductionResult(null);
+                setSecondProjectSelectedProductionEventId("");
+                setSecondProjectShootResult(null);
               }}
-              onSelectNextDevelopmentPath={setSelectedNextDevelopmentPath}
-              onCompleteNextDevelopment={(result) => {
-                setNextDevelopmentResult(result);
+              onSelectSecondProjectDevelopmentPath={setSelectedNextDevelopmentPath}
+              onCompleteSecondProjectDevelopment={(result) => {
+                setSecondProjectDevelopmentResult(result);
                 const projectContext = createProjectRunContext(nextProjectResultRequired(nextProjectResult));
                 const recommendedLocationId = getPreProductionLocationOptions(projectContext, result)
                   .find((option) => option.recommended)?.id ?? "";
-                setNextPreProductionSelections({ ...emptyPreProductionSelections, selectedLocationId: recommendedLocationId });
-                setNextPreProductionResult(null);
+                setSecondProjectPreProductionSelections({ ...emptyPreProductionSelections, selectedLocationId: recommendedLocationId });
+                setSecondProjectPreProductionResult(null);
+                setSecondProjectSelectedProductionEventId("");
+                setSecondProjectShootResult(null);
               }}
-              onChangeNextPreProductionSelections={setNextPreProductionSelections}
-              onLockNextPreProduction={setNextPreProductionResult}
+              onChangeSecondProjectPreProductionSelections={setSecondProjectPreProductionSelections}
+              onLockSecondProjectPreProduction={(result) => {
+                setSecondProjectPreProductionResult(result);
+                setSecondProjectSelectedProductionEventId("");
+                setSecondProjectShootResult(null);
+              }}
+              onSelectSecondProjectProductionEvent={setSecondProjectSelectedProductionEventId}
+              onResolveSecondProjectShootDay={setSecondProjectShootResult}
             />
           )
           : <main className="setup-workspace"><SetupPanel onCreate={createCustomRun} /></main>
@@ -286,14 +302,18 @@ interface CustomDashboardProps {
   readonly onEdit: () => void;
   readonly nextProjectResult: NextProjectStepResult | null;
   readonly selectedNextDevelopmentPath: DevelopmentPath | null;
-  readonly nextDevelopmentResult: DevelopmentStepResult | null;
-  readonly nextPreProductionSelections: PreProductionSelectionState;
-  readonly nextPreProductionResult: PreProductionStepResult | null;
+  readonly secondProjectDevelopmentResult: DevelopmentStepResult | null;
+  readonly secondProjectPreProductionSelections: PreProductionSelectionState;
+  readonly secondProjectPreProductionResult: PreProductionStepResult | null;
+  readonly secondProjectSelectedProductionEventId: string;
+  readonly secondProjectShootResult: ShootStepResult | null;
   readonly onCreateNextProject: (result: NextProjectStepResult) => void;
-  readonly onSelectNextDevelopmentPath: (path: DevelopmentPath) => void;
-  readonly onCompleteNextDevelopment: (result: DevelopmentStepResult) => void;
-  readonly onChangeNextPreProductionSelections: (selections: PreProductionSelectionState) => void;
-  readonly onLockNextPreProduction: (result: PreProductionStepResult) => void;
+  readonly onSelectSecondProjectDevelopmentPath: (path: DevelopmentPath) => void;
+  readonly onCompleteSecondProjectDevelopment: (result: DevelopmentStepResult) => void;
+  readonly onChangeSecondProjectPreProductionSelections: (selections: PreProductionSelectionState) => void;
+  readonly onLockSecondProjectPreProduction: (result: PreProductionStepResult) => void;
+  readonly onSelectSecondProjectProductionEvent: (eventId: string) => void;
+  readonly onResolveSecondProjectShootDay: (result: ShootStepResult) => void;
 }
 
 function CustomDashboard({
@@ -327,14 +347,18 @@ function CustomDashboard({
   onEdit,
   nextProjectResult,
   selectedNextDevelopmentPath,
-  nextDevelopmentResult,
-  nextPreProductionSelections,
-  nextPreProductionResult,
+  secondProjectDevelopmentResult,
+  secondProjectPreProductionSelections,
+  secondProjectPreProductionResult,
+  secondProjectSelectedProductionEventId,
+  secondProjectShootResult,
   onCreateNextProject,
-  onSelectNextDevelopmentPath,
-  onCompleteNextDevelopment,
-  onChangeNextPreProductionSelections,
-  onLockNextPreProduction
+  onSelectSecondProjectDevelopmentPath,
+  onCompleteSecondProjectDevelopment,
+  onChangeSecondProjectPreProductionSelections,
+  onLockSecondProjectPreProduction,
+  onSelectSecondProjectProductionEvent,
+  onResolveSecondProjectShootDay
 }: CustomDashboardProps) {
   const developmentPipeline = developmentResult
     ? addDevelopmentPipelineStep(run, developmentResult.pipelineStep)
@@ -382,7 +406,7 @@ function CustomDashboard({
                         onResolveShootDay={onResolveShootDay}
                         onSelectProductionEvent={onSelectProductionEvent}
                         preProductionResult={preProductionResult}
-                        run={run}
+                        projectContext={createProjectRunContext(run)}
                         selectedProductionEventId={selectedProductionEventId}
                         shootResult={shootResult}
                       />
@@ -422,14 +446,18 @@ function CustomDashboard({
             {careerApplicationResult && (
               <NextProjectPanel
                 careerApplicationResult={careerApplicationResult}
-                developmentResult={nextDevelopmentResult}
-                onCompleteDevelopment={onCompleteNextDevelopment}
-                onChangePreProductionSelections={onChangeNextPreProductionSelections}
-                onLockPreProduction={onLockNextPreProduction}
+                developmentResult={secondProjectDevelopmentResult}
+                onCompleteDevelopment={onCompleteSecondProjectDevelopment}
+                onChangePreProductionSelections={onChangeSecondProjectPreProductionSelections}
+                onLockPreProduction={onLockSecondProjectPreProduction}
+                onResolveShootDay={onResolveSecondProjectShootDay}
+                onSelectProductionEvent={onSelectSecondProjectProductionEvent}
                 onCreate={onCreateNextProject}
-                onSelectDevelopmentPath={onSelectNextDevelopmentPath}
-                preProductionResult={nextPreProductionResult}
-                preProductionSelections={nextPreProductionSelections}
+                onSelectDevelopmentPath={onSelectSecondProjectDevelopmentPath}
+                preProductionResult={secondProjectPreProductionResult}
+                selectedProductionEventId={secondProjectSelectedProductionEventId}
+                shootResult={secondProjectShootResult}
+                preProductionSelections={secondProjectPreProductionSelections}
                 result={nextProjectResult}
                 run={run}
                 selectedDevelopmentPath={selectedNextDevelopmentPath}

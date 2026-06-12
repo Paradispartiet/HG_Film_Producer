@@ -1,15 +1,17 @@
+import type { ProjectShootLabel } from "../types.js";
 import type { SceneDifficultySummary } from "../demo/createShootStepRun.js";
 
 interface SceneDifficultyPanelProps {
   readonly summaries: readonly SceneDifficultySummary[];
+  readonly projectLabel?: ProjectShootLabel;
 }
 
-export function SceneDifficultyPanel({ summaries }: SceneDifficultyPanelProps) {
+export function SceneDifficultyPanel({ summaries, projectLabel = "first film" }: SceneDifficultyPanelProps) {
   return (
     <section className="shoot-desk-section">
       <div className="shoot-section-heading">
         <div><span className="eyebrow">Scene pressure</span><h3>Difficulty cards</h3></div>
-        <p>Starter scenes for this first playable shoot step.</p>
+        <p>Starter scenes for the first playable shoot step of {projectLabel}.</p>
       </div>
       <div className="scene-difficulty-grid">
         {summaries.map((summary) => (
