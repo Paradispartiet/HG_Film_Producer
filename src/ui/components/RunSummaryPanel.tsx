@@ -1,6 +1,7 @@
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { ProjectSetupRun } from "../demo/createProjectSetupRun.js";
 import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
+import type { PostProductionStepResult } from "../demo/createPostProductionStepRun.js";
 import type { ShootStepResult } from "../demo/createShootStepRun.js";
 
 interface RunSummaryPanelProps {
@@ -8,10 +9,11 @@ interface RunSummaryPanelProps {
   readonly developmentResult: DevelopmentStepResult | null;
   readonly preProductionResult: PreProductionStepResult | null;
   readonly shootResult: ShootStepResult | null;
+  readonly postProductionResult: PostProductionStepResult | null;
   readonly onEdit: () => void;
 }
 
-export function RunSummaryPanel({ run, developmentResult, preProductionResult, shootResult, onEdit }: RunSummaryPanelProps) {
+export function RunSummaryPanel({ run, developmentResult, preProductionResult, shootResult, postProductionResult, onEdit }: RunSummaryPanelProps) {
   return (
     <section className="panel run-summary-panel">
       <div className="panel-heading">
@@ -47,6 +49,9 @@ export function RunSummaryPanel({ run, developmentResult, preProductionResult, s
               : "Choose one production event and resolve the first shoot day."}
             accent={Boolean(shootResult)}
           />
+        )}
+        {shootResult && (
+          <SummaryItem label="Post-production status" value={postProductionResult ? "Locked cut complete" : "Edit suite open"} detail={postProductionResult ? `Locked cut quality ${postProductionResult.postProductionEvaluation.lockedCutQuality}. Release is next.` : "Choose edit, sound, music, color and trailer strategies."} accent={Boolean(postProductionResult)} />
         )}
       </div>
     </section>

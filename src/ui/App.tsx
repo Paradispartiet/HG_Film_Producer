@@ -3,6 +3,7 @@ import { CareerPanel } from "./components/CareerPanel";
 import { DevelopmentPanel } from "./components/DevelopmentPanel";
 import { DevelopmentResultPanel } from "./components/DevelopmentResultPanel";
 import { FilmResultPanel } from "./components/FilmResultPanel";
+import { PostProductionPanel } from "./components/PostProductionPanel";
 import { PreProductionPanel } from "./components/PreProductionPanel";
 import { ProductionTeamResultPanel } from "./components/ProductionTeamResultPanel";
 import { ProjectPipeline } from "./components/ProjectPipeline";
@@ -26,9 +27,13 @@ import {
   type ProjectSetupRun
 } from "./demo/createProjectSetupRun";
 import { type ShootStepResult } from "./demo/createShootStepRun";
-import type { AppMode, PreProductionSelectionState } from "./types";
+import type { PostProductionChoices, PostProductionStepResult } from "./demo/createPostProductionStepRun";
+import type { AppMode, PostProductionSelectionState, PreProductionSelectionState } from "./types";
 
 const demo = createDemoStudioRun();
+const emptyPostProductionChoices: PostProductionSelectionState = {
+  editDecisionId: "", soundDecisionId: "", musicDecisionId: "", colorDecisionId: "", trailerStrategyId: ""
+};
 
 export function App() {
   const [mode, setMode] = useState<AppMode>("demo");
@@ -41,6 +46,8 @@ export function App() {
   const [selectedActorIds, setSelectedActorIds] = useState<PreProductionSelectionState["selectedActorIds"]>([]);
   const [selectedProductionEventId, setSelectedProductionEventId] = useState("");
   const [shootResult, setShootResult] = useState<ShootStepResult | null>(null);
+  const [postProductionChoices, setPostProductionChoices] = useState<PostProductionChoices>(emptyPostProductionChoices);
+  const [postProductionResult, setPostProductionResult] = useState<PostProductionStepResult | null>(null);
 
   function createCustomRun(run: ProjectSetupRun) {
     setCustomRun(run);
@@ -78,6 +85,12 @@ export function App() {
   function resetShoot() {
     setSelectedProductionEventId("");
     setShootResult(null);
+    resetPostProduction();
+  }
+
+  function resetPostProduction() {
+    setPostProductionChoices(emptyPostProductionChoices);
+    setPostProductionResult(null);
   }
 
   function lockPreProduction(result: PreProductionStepResult) {
@@ -111,8 +124,12 @@ export function App() {
               onSelectActors={setSelectedActorIds}
               onSelectCrew={setSelectedCrewIds}
               onSelectLocation={setSelectedLocationId}
+              postProductionChoices={postProductionChoices}
+              postProductionResult={postProductionResult}
               preProductionResult={preProductionResult}
-              onResolveShootDay={setShootResult}
+              onResolveShootDay={(result) => { setShootResult(result); resetPostProduction(); }}
+              onChangePostProductionChoices={setPostProductionChoices}
+              onLockPostProduction={setPostProductionResult}
               onSelectProductionEvent={setSelectedProductionEventId}
               onSelectDevelopmentPath={setSelectedDevelopmentPath}
               run={customRun}
@@ -127,7 +144,7 @@ export function App() {
           : <main className="setup-workspace"><SetupPanel onCreate={createCustomRun} /></main>
       )}
 
-      <footer><span>HG Film Producer</span><span>{mode === "demo" ? "Engine-backed deterministic demo" : "Interactive development and pre-production"}</span></footer>
+      <footer><span>HG Film Producer</span><span>{mode === "demo" ? "Engine-backed deterministic demo" : "Interactive production pipeline"}</span></footer>
     </div>
   );
 }
@@ -167,6 +184,8 @@ interface CustomDashboardProps {
   readonly selectedActorIds: readonly string[];
   readonly selectedProductionEventId: string;
   readonly shootResult: ShootStepResult | null;
+  readonly postProductionChoices: PostProductionChoices;
+  readonly postProductionResult: PostProductionStepResult | null;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
   readonly onSelectLocation: (locationId: string) => void;
@@ -175,6 +194,8 @@ interface CustomDashboardProps {
   readonly onLockPreProduction: (result: PreProductionStepResult) => void;
   readonly onSelectProductionEvent: (eventId: string) => void;
   readonly onResolveShootDay: (result: ShootStepResult) => void;
+  readonly onChangePostProductionChoices: (choices: PostProductionChoices) => void;
+  readonly onLockPostProduction: (result: PostProductionStepResult) => void;
   readonly onEdit: () => void;
 }
 
@@ -188,6 +209,8 @@ function CustomDashboard({
   selectedActorIds,
   selectedProductionEventId,
   shootResult,
+  postProductionChoices,
+  postProductionResult,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
   onSelectLocation,
@@ -196,6 +219,8 @@ function CustomDashboard({
   onLockPreProduction,
   onSelectProductionEvent,
   onResolveShootDay,
+  onChangePostProductionChoices,
+  onLockPostProduction,
   onEdit
 }: CustomDashboardProps) {
   const developmentPipeline = developmentResult
@@ -204,17 +229,18 @@ function CustomDashboard({
   const preProductionPipeline = preProductionResult
     ? [...developmentPipeline, preProductionResult.pipelineStep]
     : developmentPipeline;
-  const pipelineSteps = shootResult
+  const shootPipeline = shootResult
     ? [...preProductionPipeline, shootResult.pipelineStep]
     : preProductionPipeline;
+  const pipelineSteps = postProductionResult ? [...shootPipeline, postProductionResult.pipelineStep] : shootPipeline;
 
   return (
     <>
       <StudioHeader studio={run.studio} />
       <main>
         <div className="dashboard-intro">
-          <div><span className="eyebrow">Opening slate</span><h2>{preProductionResult ? "Shoot desk" : developmentResult ? "Pre-production desk" : "Development desk"}</h2></div>
-          <p>{shootResult ? "The first shoot day is resolved. Post-production is the next future step." : preProductionResult ? "The production team is locked. Start and resolve the first shoot day." : developmentResult ? "Development is complete. Build the practical team and location plan." : "Your studio and first film are ready. Choose one early development action."}</p>
+          <div><span className="eyebrow">Opening slate</span><h2>{shootResult ? "Post-production desk" : preProductionResult ? "Shoot desk" : developmentResult ? "Pre-production desk" : "Development desk"}</h2></div>
+          <p>{postProductionResult ? "The cut is locked. Release is the next future step." : shootResult ? "The first shoot day is resolved. Start post-production and lock the cut." : preProductionResult ? "The production team is locked. Start and resolve the first shoot day." : developmentResult ? "Development is complete. Build the practical team and location plan." : "Your studio and first film are ready. Choose one early development action."}</p>
         </div>
         <div className="custom-dashboard-grid">
           <div className="dashboard-main">
@@ -235,6 +261,9 @@ function CustomDashboard({
                         selectedProductionEventId={selectedProductionEventId}
                         shootResult={shootResult}
                       />
+                      {shootResult && (
+                        <PostProductionPanel choices={postProductionChoices} developmentResult={developmentResult} onChange={onChangePostProductionChoices} onLock={onLockPostProduction} preProductionResult={preProductionResult} result={postProductionResult} run={run} shootResult={shootResult} />
+                      )}
                     </>
                   )
                   : (
@@ -260,7 +289,7 @@ function CustomDashboard({
               />
             )}
           </div>
-          <RunSummaryPanel developmentResult={developmentResult} preProductionResult={preProductionResult} run={run} shootResult={shootResult} onEdit={onEdit} />
+          <RunSummaryPanel developmentResult={developmentResult} postProductionResult={postProductionResult} preProductionResult={preProductionResult} run={run} shootResult={shootResult} onEdit={onEdit} />
         </div>
       </main>
     </>
