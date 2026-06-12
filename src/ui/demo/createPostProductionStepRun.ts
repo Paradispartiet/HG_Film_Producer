@@ -24,7 +24,7 @@ import type {
   TrailerCutResult,
   TrailerStrategy
 } from "../../domain/post.js";
-import type { PipelineStepSummary } from "../types.js";
+import type { PipelineStepSummary, PostProductionSelectionState } from "../types.js";
 import { adaptFilmSeedData } from "./adaptFilmSeedData.js";
 import type { PreProductionStepResult } from "./createPreProductionStepRun.js";
 import type { ProjectRunContext } from "./createProjectRunContext.js";
@@ -46,13 +46,7 @@ const postProductionData = adaptFilmSeedData<PostProductionSeedData>({
   trailerStrategies: trailerStrategiesJson
 });
 
-export interface PostProductionChoices {
-  readonly editDecisionId: string;
-  readonly soundDecisionId: string;
-  readonly musicDecisionId: string;
-  readonly colorDecisionId: string;
-  readonly trailerStrategyId: string;
-}
+export type PostProductionChoices = PostProductionSelectionState;
 
 export interface AppliedDecisionSummary {
   readonly title: string;

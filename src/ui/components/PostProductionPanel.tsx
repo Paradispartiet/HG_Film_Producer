@@ -51,9 +51,9 @@ export function PostProductionPanel({
   }
 
   function lockPostProduction() {
-    const missing = missingChoice(choices);
-    if (missing) {
-      setMessage(`Choose one ${missing} option before locking post-production.`);
+    const missing = missingChoices(choices);
+    if (missing.length > 0) {
+      setMessage(`Choose ${formatList(missing)} before locking post-production.`);
       return;
     }
 
@@ -65,7 +65,7 @@ export function PostProductionPanel({
     <section className={`panel post-production-panel${isSecondFilm ? " post-production-panel--second-project" : ""}`}>
       <div className="post-panel-heading">
         <div>
-          <span className="eyebrow">{isSecondFilm ? "Film 2 post-production" : "Start post-production"}</span>
+          <span className="eyebrow">{isSecondFilm ? "Start post-production for film 2" : "Start post-production"}</span>
           <h2>{isSecondFilm ? `Finish ${projectContext.project.title}` : "Edit suite & finishing desk"}</h2>
         </div>
         <p>Shape the locked cut, test it with an audience, and define the trailer promise.</p>
@@ -90,15 +90,25 @@ export function PostProductionPanel({
   );
 }
 
-function missingChoice(choices: PostProductionChoices): string | null {
-  if (!choices.editDecisionId) return "edit";
-  if (!choices.soundDecisionId) return "sound";
-  if (!choices.musicDecisionId) return "music";
-  if (!choices.colorDecisionId) return "color";
-  if (!choices.trailerStrategyId) return "trailer";
-  return null;
+const choiceLabels: ReadonlyArray<readonly [keyof PostProductionChoices, string]> = [
+  ["editDecisionId", "an edit decision"],
+  ["soundDecisionId", "a sound decision"],
+  ["musicDecisionId", "a music decision"],
+  ["colorDecisionId", "a color decision"],
+  ["trailerStrategyId", "a trailer strategy"]
+];
+
+function missingChoices(choices: PostProductionChoices): readonly string[] {
+  return choiceLabels
+    .filter(([key]) => !choices[key])
+    .map(([, label]) => label);
+}
+
+function formatList(items: readonly string[]): string {
+  if (items.length <= 1) return items[0] ?? "all five finishing choices";
+  return `${items.slice(0, -1).join(", ")}, and ${items.at(-1)}`;
 }
 
 function selectedCount(choices: PostProductionChoices): number {
-  return Object.values(choices).filter(Boolean).length;
+  return choiceLabels.filter(([key]) => Boolean(choices[key])).length;
 }
