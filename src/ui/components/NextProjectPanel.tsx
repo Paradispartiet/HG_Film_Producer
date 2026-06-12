@@ -9,12 +9,15 @@ import type { CareerApplicationStepResult } from "../demo/createCareerApplicatio
 import type { ProjectSetupRun } from "../demo/createProjectSetupRun.js";
 import type { DevelopmentPath, DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import { createProjectRunContext } from "../demo/createProjectRunContext.js";
-import type { NextProjectFormErrors } from "../types.js";
+import type { NextProjectFormErrors, PreProductionSelectionState } from "../types.js";
+import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
 import { NextProjectResultPanel } from "./NextProjectResultPanel.js";
 import { DevelopmentPanel } from "./DevelopmentPanel.js";
 import { DevelopmentResultPanel } from "./DevelopmentResultPanel.js";
 import { NextProjectSetupForm } from "./NextProjectSetupForm.js";
 import { PreviousFilmLegacyPanel } from "./PreviousFilmLegacyPanel.js";
+import { PreProductionPanel } from "./PreProductionPanel.js";
+import { ProductionTeamResultPanel } from "./ProductionTeamResultPanel.js";
 import { StudioCarryoverPanel } from "./StudioCarryoverPanel.js";
 
 const options = getNextProjectOptions();
@@ -31,9 +34,13 @@ interface NextProjectPanelProps {
   readonly result: NextProjectStepResult | null;
   readonly selectedDevelopmentPath: DevelopmentPath | null;
   readonly developmentResult: DevelopmentStepResult | null;
+  readonly preProductionSelections: PreProductionSelectionState;
+  readonly preProductionResult: PreProductionStepResult | null;
   readonly onCreate: (result: NextProjectStepResult) => void;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
+  readonly onChangePreProductionSelections: (selections: PreProductionSelectionState) => void;
+  readonly onLockPreProduction: (result: PreProductionStepResult) => void;
 }
 
 export function NextProjectPanel({
@@ -42,9 +49,13 @@ export function NextProjectPanel({
   result,
   selectedDevelopmentPath,
   developmentResult,
+  preProductionSelections,
+  preProductionResult,
   onCreate,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
+  onChangePreProductionSelections,
+  onLockPreProduction,
 }: NextProjectPanelProps) {
   const [choices, setChoices] = useState<NextProjectChoices>(initialChoices);
   const [errors, setErrors] = useState<NextProjectFormErrors>({});
@@ -103,9 +114,31 @@ export function NextProjectPanel({
       </div>
       {result ? (
         <>
-          <NextProjectResultPanel developmentResult={developmentResult} result={result} />
+          <NextProjectResultPanel developmentResult={developmentResult} preProductionResult={preProductionResult} result={result} />
           {developmentResult ? (
-            <DevelopmentResultPanel result={developmentResult} />
+            <>
+              <DevelopmentResultPanel result={developmentResult} />
+              {preProductionResult ? (
+                <ProductionTeamResultPanel
+                  nextStepLabel="Shoot is next"
+                  projectLabel="Film 2"
+                  result={preProductionResult}
+                />
+              ) : (
+                <PreProductionPanel
+                  developmentResult={developmentResult}
+                  onLock={onLockPreProduction}
+                  onSelectActors={(selectedActorIds) => onChangePreProductionSelections({ ...preProductionSelections, selectedActorIds })}
+                  onSelectCrew={(selectedCrewIds) => onChangePreProductionSelections({ ...preProductionSelections, selectedCrewIds })}
+                  onSelectLocation={(selectedLocationId) => onChangePreProductionSelections({ ...preProductionSelections, selectedLocationId })}
+                  projectContext={createProjectRunContext(result)}
+                  projectLabel="film 2"
+                  selectedActorIds={preProductionSelections.selectedActorIds}
+                  selectedCrewIds={preProductionSelections.selectedCrewIds}
+                  selectedLocationId={preProductionSelections.selectedLocationId}
+                />
+              )}
+            </>
           ) : (
             <DevelopmentPanel
               onComplete={onCompleteDevelopment}

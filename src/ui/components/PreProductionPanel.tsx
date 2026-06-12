@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
-import type { ProjectSetupRun } from "../demo/createProjectSetupRun.js";
+import type { ProjectRunContext } from "../demo/createProjectRunContext.js";
 import {
   createPreProductionResult,
   getActorCandidates,
@@ -13,7 +13,7 @@ import { CrewHiringPanel } from "./CrewHiringPanel.js";
 import { PreProductionLocationPanel } from "./PreProductionLocationPanel.js";
 
 interface PreProductionPanelProps {
-  readonly run: ProjectSetupRun;
+  readonly projectContext: ProjectRunContext;
   readonly developmentResult: DevelopmentStepResult;
   readonly selectedLocationId: string;
   readonly selectedCrewIds: readonly string[];
@@ -22,10 +22,11 @@ interface PreProductionPanelProps {
   readonly onSelectCrew: (crewIds: readonly string[]) => void;
   readonly onSelectActors: (actorIds: readonly string[]) => void;
   readonly onLock: (result: PreProductionStepResult) => void;
+  readonly projectLabel?: string;
 }
 
 export function PreProductionPanel({
-  run,
+  projectContext,
   developmentResult,
   selectedLocationId,
   selectedCrewIds,
@@ -33,12 +34,14 @@ export function PreProductionPanel({
   onSelectLocation,
   onSelectCrew,
   onSelectActors,
-  onLock
+  onLock,
+  projectLabel
 }: PreProductionPanelProps) {
   const [message, setMessage] = useState("");
-  const locationOptions = getPreProductionLocationOptions(run, developmentResult);
+  const locationOptions = getPreProductionLocationOptions(projectContext, developmentResult);
   const crewGroups = getCrewCandidatesByDiscipline(developmentResult);
   const actorCandidates = getActorCandidates(developmentResult);
+  const labelSuffix = projectLabel ? ` for ${projectLabel}` : "";
 
   function lockPreProduction() {
     const missingDiscipline = crewGroups.find((group) =>
@@ -57,18 +60,22 @@ export function PreProductionPanel({
       return;
     }
 
-    setMessage("");
-    onLock(createPreProductionResult(run, developmentResult, {
-      locationId: selectedLocationId,
-      crewMemberIds: selectedCrewIds,
-      actorIds: selectedActorIds
-    }));
+    try {
+      onLock(createPreProductionResult(projectContext, developmentResult, {
+        locationId: selectedLocationId,
+        crewMemberIds: selectedCrewIds,
+        actorIds: selectedActorIds
+      }));
+      setMessage("");
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Pre-production could not be locked.");
+    }
   }
 
   return (
     <section className="panel pre-production-panel">
       <div className="pre-production-heading">
-        <div><span className="eyebrow">Start pre-production</span><h2>Production office</h2></div>
+        <div><span className="eyebrow">Start pre-production{labelSuffix}</span><h2>{projectContext.project.title} production office</h2></div>
         <p>Turn the development direction into a practical location, crew and casting plan.</p>
       </div>
       <PreProductionLocationPanel options={locationOptions} selectedLocationId={selectedLocationId} onSelect={(id) => { onSelectLocation(id); setMessage(""); }} />
@@ -79,9 +86,9 @@ export function PreProductionPanel({
           <span className={message ? "inline-message inline-message--error" : "inline-message"} role="status">
             {message || `${selectedCrewIds.length}/3 key crew · ${selectedActorIds.length} cast selected`}
           </span>
-          <small>Locking ends this playable pre-production step.</small>
+          <small>Locking ends this playable pre-production step{labelSuffix}.</small>
         </div>
-        <button className="primary-button" onClick={lockPreProduction} type="button">Lock pre-production</button>
+        <button className="primary-button" onClick={lockPreProduction} type="button">Lock pre-production{labelSuffix}</button>
       </div>
     </section>
   );

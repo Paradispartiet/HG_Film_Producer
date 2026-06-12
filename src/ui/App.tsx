@@ -45,6 +45,11 @@ const emptyPostProductionChoices: PostProductionSelectionState = {
   editDecisionId: "", soundDecisionId: "", musicDecisionId: "", colorDecisionId: "", trailerStrategyId: ""
 };
 const emptyReleaseChoices: ReleaseSelectionState = { releaseStrategyId: "", festivalId: "" };
+const emptyPreProductionSelections: PreProductionSelectionState = {
+  selectedLocationId: "",
+  selectedCrewIds: [],
+  selectedActorIds: []
+};
 
 export function App() {
   const [mode, setMode] = useState<AppMode>("demo");
@@ -65,6 +70,8 @@ export function App() {
   const [nextProjectResult, setNextProjectResult] = useState<NextProjectStepResult | null>(null);
   const [selectedNextDevelopmentPath, setSelectedNextDevelopmentPath] = useState<DevelopmentPath | null>(null);
   const [nextDevelopmentResult, setNextDevelopmentResult] = useState<DevelopmentStepResult | null>(null);
+  const [nextPreProductionSelections, setNextPreProductionSelections] = useState<PreProductionSelectionState>(emptyPreProductionSelections);
+  const [nextPreProductionResult, setNextPreProductionResult] = useState<PreProductionStepResult | null>(null);
 
   function createCustomRun(run: ProjectSetupRun) {
     setCustomRun(run);
@@ -87,7 +94,7 @@ export function App() {
   function completeDevelopment(result: DevelopmentStepResult) {
     setDevelopmentResult(result);
     setPreProductionResult(null);
-    setSelectedLocationId(getPreProductionLocationOptions(customRunRequired(), result).find((option) => option.recommended)?.id ?? "");
+    setSelectedLocationId(getPreProductionLocationOptions(createProjectRunContext(customRunRequired()), result).find((option) => option.recommended)?.id ?? "");
     setSelectedCrewIds([]);
     setSelectedActorIds([]);
     resetShoot();
@@ -124,6 +131,8 @@ export function App() {
     setNextProjectResult(null);
     setSelectedNextDevelopmentPath(null);
     setNextDevelopmentResult(null);
+    setNextPreProductionSelections(emptyPreProductionSelections);
+    setNextPreProductionResult(null);
   }
 
   function lockPreProduction(result: PreProductionStepResult) {
@@ -134,6 +143,11 @@ export function App() {
   function customRunRequired(): ProjectSetupRun {
     if (!customRun) throw new Error("A project setup run is required before development.");
     return customRun;
+  }
+
+  function nextProjectResultRequired(result: NextProjectStepResult | null): NextProjectStepResult {
+    if (!result) throw new Error("A second project is required before development.");
+    return result;
   }
 
   return (
@@ -186,13 +200,26 @@ export function App() {
               nextProjectResult={nextProjectResult}
               selectedNextDevelopmentPath={selectedNextDevelopmentPath}
               nextDevelopmentResult={nextDevelopmentResult}
+              nextPreProductionSelections={nextPreProductionSelections}
+              nextPreProductionResult={nextPreProductionResult}
               onCreateNextProject={(result) => {
                 setNextProjectResult(result);
                 setSelectedNextDevelopmentPath(null);
                 setNextDevelopmentResult(null);
+                setNextPreProductionSelections(emptyPreProductionSelections);
+                setNextPreProductionResult(null);
               }}
               onSelectNextDevelopmentPath={setSelectedNextDevelopmentPath}
-              onCompleteNextDevelopment={setNextDevelopmentResult}
+              onCompleteNextDevelopment={(result) => {
+                setNextDevelopmentResult(result);
+                const projectContext = createProjectRunContext(nextProjectResultRequired(nextProjectResult));
+                const recommendedLocationId = getPreProductionLocationOptions(projectContext, result)
+                  .find((option) => option.recommended)?.id ?? "";
+                setNextPreProductionSelections({ ...emptyPreProductionSelections, selectedLocationId: recommendedLocationId });
+                setNextPreProductionResult(null);
+              }}
+              onChangeNextPreProductionSelections={setNextPreProductionSelections}
+              onLockNextPreProduction={setNextPreProductionResult}
             />
           )
           : <main className="setup-workspace"><SetupPanel onCreate={createCustomRun} /></main>
@@ -260,9 +287,13 @@ interface CustomDashboardProps {
   readonly nextProjectResult: NextProjectStepResult | null;
   readonly selectedNextDevelopmentPath: DevelopmentPath | null;
   readonly nextDevelopmentResult: DevelopmentStepResult | null;
+  readonly nextPreProductionSelections: PreProductionSelectionState;
+  readonly nextPreProductionResult: PreProductionStepResult | null;
   readonly onCreateNextProject: (result: NextProjectStepResult) => void;
   readonly onSelectNextDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteNextDevelopment: (result: DevelopmentStepResult) => void;
+  readonly onChangeNextPreProductionSelections: (selections: PreProductionSelectionState) => void;
+  readonly onLockNextPreProduction: (result: PreProductionStepResult) => void;
 }
 
 function CustomDashboard({
@@ -297,9 +328,13 @@ function CustomDashboard({
   nextProjectResult,
   selectedNextDevelopmentPath,
   nextDevelopmentResult,
+  nextPreProductionSelections,
+  nextPreProductionResult,
   onCreateNextProject,
   onSelectNextDevelopmentPath,
-  onCompleteNextDevelopment
+  onCompleteNextDevelopment,
+  onChangeNextPreProductionSelections,
+  onLockNextPreProduction
 }: CustomDashboardProps) {
   const developmentPipeline = developmentResult
     ? addDevelopmentPipelineStep(run, developmentResult.pipelineStep)
@@ -369,7 +404,7 @@ function CustomDashboard({
                       onSelectActors={onSelectActors}
                       onSelectCrew={onSelectCrew}
                       onSelectLocation={onSelectLocation}
-                      run={run}
+                      projectContext={createProjectRunContext(run)}
                       selectedActorIds={selectedActorIds}
                       selectedCrewIds={selectedCrewIds}
                       selectedLocationId={selectedLocationId}
@@ -389,8 +424,12 @@ function CustomDashboard({
                 careerApplicationResult={careerApplicationResult}
                 developmentResult={nextDevelopmentResult}
                 onCompleteDevelopment={onCompleteNextDevelopment}
+                onChangePreProductionSelections={onChangeNextPreProductionSelections}
+                onLockPreProduction={onLockNextPreProduction}
                 onCreate={onCreateNextProject}
                 onSelectDevelopmentPath={onSelectNextDevelopmentPath}
+                preProductionResult={nextPreProductionResult}
+                preProductionSelections={nextPreProductionSelections}
                 result={nextProjectResult}
                 run={run}
                 selectedDevelopmentPath={selectedNextDevelopmentPath}

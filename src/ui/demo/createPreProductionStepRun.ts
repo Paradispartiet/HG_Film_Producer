@@ -23,7 +23,7 @@ import type { Location, LocationFitScore, LocationScoutingBrief } from "../../do
 import type { PipelineStepSummary } from "../types.js";
 import { adaptFilmSeedData } from "./adaptFilmSeedData.js";
 import type { DevelopmentStepResult } from "./createDevelopmentStepRun.js";
-import type { ProjectSetupRun } from "./createProjectSetupRun.js";
+import type { ProjectRunContext } from "./createProjectRunContext.js";
 
 const REQUIRED_DISCIPLINES = ["directing", "cinematography", "editing"] as const;
 export type RequiredCrewDiscipline = typeof REQUIRED_DISCIPLINES[number];
@@ -127,10 +127,10 @@ export interface PreProductionStepResult {
 }
 
 export function getPreProductionLocationOptions(
-  run: ProjectSetupRun,
+  projectContext: ProjectRunContext,
   developmentResult: DevelopmentStepResult
 ): readonly PreProductionLocationOption[] {
-  const brief = getScoutingBrief(run, developmentResult);
+  const brief = getScoutingBrief(projectContext, developmentResult);
   const scouting = scoutLocations(developmentResult.projectState, preProductionData.locations, brief);
 
   return scouting.rankedLocations.slice(0, 5).map((score) => {
@@ -170,13 +170,13 @@ export function getActorCandidates(
 }
 
 export function createPreProductionResult(
-  run: ProjectSetupRun,
+  projectContext: ProjectRunContext,
   developmentResult: DevelopmentStepResult,
   choices: PreProductionChoices
 ): PreProductionStepResult {
   validateChoices(choices);
 
-  const locationOptions = getPreProductionLocationOptions(run, developmentResult);
+  const locationOptions = getPreProductionLocationOptions(projectContext, developmentResult);
   const locationOption = requireItem(locationOptions, choices.locationId, "scouted location option");
   const location = requireItem(preProductionData.locations, choices.locationId, "location");
   let project = attachLocationToProject(developmentResult.projectState, location).project;
@@ -233,13 +233,13 @@ export function createPreProductionResult(
 }
 
 function getScoutingBrief(
-  run: ProjectSetupRun,
+  projectContext: ProjectRunContext,
   developmentResult: DevelopmentStepResult
 ): LocationScoutingBrief | undefined {
   if (developmentResult.path === "location") {
     return requireItem(preProductionData.locationScoutingBriefs, developmentResult.briefId, "location scouting brief");
   }
-  return preProductionData.locationScoutingBriefs.find((brief) => brief.genreId === run.filmProjectState.genreId);
+  return preProductionData.locationScoutingBriefs.find((brief) => brief.genreId === projectContext.filmProjectState.genreId);
 }
 
 function toLocationOption(
