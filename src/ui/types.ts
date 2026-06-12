@@ -60,3 +60,8 @@ export interface PostProductionSelectionState {
   readonly colorDecisionId: string;
   readonly trailerStrategyId: string;
 }
+
+export interface ReleaseSelectionState {
+  readonly releaseStrategyId: string;
+  readonly festivalId: string;
+}
