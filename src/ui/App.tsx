@@ -8,6 +8,7 @@ import { PreProductionPanel } from "./components/PreProductionPanel";
 import { ProductionTeamResultPanel } from "./components/ProductionTeamResultPanel";
 import { ProjectPipeline } from "./components/ProjectPipeline";
 import { ReleasePanel } from "./components/ReleasePanel";
+import { ReleaseStepPanel } from "./components/ReleaseStepPanel";
 import { RunSummaryPanel } from "./components/RunSummaryPanel";
 import { SetupPanel } from "./components/SetupPanel";
 import { ShootPanel } from "./components/ShootPanel";
@@ -28,12 +29,14 @@ import {
 } from "./demo/createProjectSetupRun";
 import { type ShootStepResult } from "./demo/createShootStepRun";
 import type { PostProductionChoices, PostProductionStepResult } from "./demo/createPostProductionStepRun";
-import type { AppMode, PostProductionSelectionState, PreProductionSelectionState } from "./types";
+import type { ReleaseStepChoices, ReleaseStepResult } from "./demo/createReleaseStepRun";
+import type { AppMode, PostProductionSelectionState, PreProductionSelectionState, ReleaseSelectionState } from "./types";
 
 const demo = createDemoStudioRun();
 const emptyPostProductionChoices: PostProductionSelectionState = {
   editDecisionId: "", soundDecisionId: "", musicDecisionId: "", colorDecisionId: "", trailerStrategyId: ""
 };
+const emptyReleaseChoices: ReleaseSelectionState = { releaseStrategyId: "", festivalId: "" };
 
 export function App() {
   const [mode, setMode] = useState<AppMode>("demo");
@@ -48,6 +51,8 @@ export function App() {
   const [shootResult, setShootResult] = useState<ShootStepResult | null>(null);
   const [postProductionChoices, setPostProductionChoices] = useState<PostProductionChoices>(emptyPostProductionChoices);
   const [postProductionResult, setPostProductionResult] = useState<PostProductionStepResult | null>(null);
+  const [releaseChoices, setReleaseChoices] = useState<ReleaseStepChoices>(emptyReleaseChoices);
+  const [releaseResult, setReleaseResult] = useState<ReleaseStepResult | null>(null);
 
   function createCustomRun(run: ProjectSetupRun) {
     setCustomRun(run);
@@ -91,6 +96,12 @@ export function App() {
   function resetPostProduction() {
     setPostProductionChoices(emptyPostProductionChoices);
     setPostProductionResult(null);
+    resetRelease();
+  }
+
+  function resetRelease() {
+    setReleaseChoices(emptyReleaseChoices);
+    setReleaseResult(null);
   }
 
   function lockPreProduction(result: PreProductionStepResult) {
@@ -129,7 +140,11 @@ export function App() {
               preProductionResult={preProductionResult}
               onResolveShootDay={(result) => { setShootResult(result); resetPostProduction(); }}
               onChangePostProductionChoices={setPostProductionChoices}
-              onLockPostProduction={setPostProductionResult}
+              onLockPostProduction={(result) => { setPostProductionResult(result); resetRelease(); }}
+              onChangeReleaseChoices={setReleaseChoices}
+              onReleaseFilm={setReleaseResult}
+              releaseChoices={releaseChoices}
+              releaseResult={releaseResult}
               onSelectProductionEvent={setSelectedProductionEventId}
               onSelectDevelopmentPath={setSelectedDevelopmentPath}
               run={customRun}
@@ -186,6 +201,8 @@ interface CustomDashboardProps {
   readonly shootResult: ShootStepResult | null;
   readonly postProductionChoices: PostProductionChoices;
   readonly postProductionResult: PostProductionStepResult | null;
+  readonly releaseChoices: ReleaseStepChoices;
+  readonly releaseResult: ReleaseStepResult | null;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
   readonly onSelectLocation: (locationId: string) => void;
@@ -196,6 +213,8 @@ interface CustomDashboardProps {
   readonly onResolveShootDay: (result: ShootStepResult) => void;
   readonly onChangePostProductionChoices: (choices: PostProductionChoices) => void;
   readonly onLockPostProduction: (result: PostProductionStepResult) => void;
+  readonly onChangeReleaseChoices: (choices: ReleaseStepChoices) => void;
+  readonly onReleaseFilm: (result: ReleaseStepResult) => void;
   readonly onEdit: () => void;
 }
 
@@ -211,6 +230,8 @@ function CustomDashboard({
   shootResult,
   postProductionChoices,
   postProductionResult,
+  releaseChoices,
+  releaseResult,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
   onSelectLocation,
@@ -221,6 +242,8 @@ function CustomDashboard({
   onResolveShootDay,
   onChangePostProductionChoices,
   onLockPostProduction,
+  onChangeReleaseChoices,
+  onReleaseFilm,
   onEdit
 }: CustomDashboardProps) {
   const developmentPipeline = developmentResult
@@ -232,15 +255,16 @@ function CustomDashboard({
   const shootPipeline = shootResult
     ? [...preProductionPipeline, shootResult.pipelineStep]
     : preProductionPipeline;
-  const pipelineSteps = postProductionResult ? [...shootPipeline, postProductionResult.pipelineStep] : shootPipeline;
+  const postProductionPipeline = postProductionResult ? [...shootPipeline, postProductionResult.pipelineStep] : shootPipeline;
+  const pipelineSteps = releaseResult ? [...postProductionPipeline, releaseResult.pipelineStep] : postProductionPipeline;
 
   return (
     <>
       <StudioHeader studio={run.studio} />
       <main>
         <div className="dashboard-intro">
-          <div><span className="eyebrow">Opening slate</span><h2>{shootResult ? "Post-production desk" : preProductionResult ? "Shoot desk" : developmentResult ? "Pre-production desk" : "Development desk"}</h2></div>
-          <p>{postProductionResult ? "The cut is locked. Release is the next future step." : shootResult ? "The first shoot day is resolved. Start post-production and lock the cut." : preProductionResult ? "The production team is locked. Start and resolve the first shoot day." : developmentResult ? "Development is complete. Build the practical team and location plan." : "Your studio and first film are ready. Choose one early development action."}</p>
+          <div><span className="eyebrow">Opening slate</span><h2>{releaseResult ? "Release report" : postProductionResult ? "Release desk" : shootResult ? "Post-production desk" : preProductionResult ? "Shoot desk" : developmentResult ? "Pre-production desk" : "Development desk"}</h2></div>
+          <p>{releaseResult ? "The film is released. Applying the outcome to the studio and career is the next future step." : postProductionResult ? "The cut is locked. Choose a distribution strategy and festival to release the film." : shootResult ? "The first shoot day is resolved. Start post-production and lock the cut." : preProductionResult ? "The production team is locked. Start and resolve the first shoot day." : developmentResult ? "Development is complete. Build the practical team and location plan." : "Your studio and first film are ready. Choose one early development action."}</p>
         </div>
         <div className="custom-dashboard-grid">
           <div className="dashboard-main">
@@ -263,6 +287,9 @@ function CustomDashboard({
                       />
                       {shootResult && (
                         <PostProductionPanel choices={postProductionChoices} developmentResult={developmentResult} onChange={onChangePostProductionChoices} onLock={onLockPostProduction} preProductionResult={preProductionResult} result={postProductionResult} run={run} shootResult={shootResult} />
+                      )}
+                      {shootResult && postProductionResult && (
+                        <ReleaseStepPanel choices={releaseChoices} developmentResult={developmentResult} onChange={onChangeReleaseChoices} onRelease={onReleaseFilm} postProductionResult={postProductionResult} preProductionResult={preProductionResult} result={releaseResult} run={run} shootResult={shootResult} />
                       )}
                     </>
                   )
@@ -289,7 +316,7 @@ function CustomDashboard({
               />
             )}
           </div>
-          <RunSummaryPanel developmentResult={developmentResult} postProductionResult={postProductionResult} preProductionResult={preProductionResult} run={run} shootResult={shootResult} onEdit={onEdit} />
+          <RunSummaryPanel developmentResult={developmentResult} postProductionResult={postProductionResult} preProductionResult={preProductionResult} releaseResult={releaseResult} run={run} shootResult={shootResult} onEdit={onEdit} />
         </div>
       </main>
     </>
