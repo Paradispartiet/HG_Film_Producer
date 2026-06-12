@@ -8,14 +8,14 @@ import {
   type DevelopmentPath,
   type DevelopmentStepResult
 } from "../demo/createDevelopmentStepRun.js";
-import type { ProjectSetupRun } from "../demo/createProjectSetupRun.js";
+import type { ProjectRunContext } from "../demo/createProjectRunContext.js";
 import type { DevelopmentPathOption } from "../types.js";
 import { LocationChoicePanel } from "./LocationChoicePanel.js";
 import { MentorChoicePanel } from "./MentorChoicePanel.js";
 import { ScriptChoicePanel } from "./ScriptChoicePanel.js";
 
 interface DevelopmentPanelProps {
-  readonly run: ProjectSetupRun;
+  readonly run: ProjectRunContext;
   readonly selectedPath: DevelopmentPath | null;
   readonly onSelectPath: (path: DevelopmentPath) => void;
   readonly onComplete: (result: DevelopmentStepResult) => void;

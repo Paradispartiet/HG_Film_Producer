@@ -1,7 +1,7 @@
-import type { ProjectSetupRun } from "../demo/createProjectSetupRun.js";
+import type { ProjectRunContext } from "../demo/createProjectRunContext.js";
 
 interface ScriptChoicePanelProps {
-  readonly run: ProjectSetupRun;
+  readonly run: ProjectRunContext;
   readonly onApply: () => void;
 }
 

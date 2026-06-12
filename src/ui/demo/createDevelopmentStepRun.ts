@@ -19,7 +19,7 @@ import type { Scene, SceneFunction } from "../../domain/script.js";
 import type { FilmProject } from "../../domain/film.js";
 import type { PipelineStepSummary } from "../types.js";
 import { adaptFilmSeedData } from "./adaptFilmSeedData.js";
-import type { ProjectSetupRun } from "./createProjectSetupRun.js";
+import type { ProjectRunContext } from "./createProjectRunContext.js";
 
 export type DevelopmentPath = "mentor" | "location" | "script";
 
@@ -91,14 +91,14 @@ export const mentorDevelopmentChoices: readonly MentorLesson[] = developmentData
   .filter((lesson) => lesson.productionPhase === "script" || lesson.productionPhase === "pre_production")
   .slice(0, 5);
 
-export function getLocationDevelopmentChoices(run: ProjectSetupRun): readonly LocationScoutingBrief[] {
+export function getLocationDevelopmentChoices(run: ProjectRunContext): readonly LocationScoutingBrief[] {
   return [...developmentData.locationScoutingBriefs]
     .sort((left, right) => Number(right.genreId === run.filmProjectState.genreId) - Number(left.genreId === run.filmProjectState.genreId))
     .slice(0, 5);
 }
 
 export function createMentorDevelopmentResult(
-  run: ProjectSetupRun,
+  run: ProjectRunContext,
   lessonId: string
 ): MentorDevelopmentResult {
   const lesson = requireItem(developmentData.mentorLessons, lessonId, "mentor lesson");
@@ -126,7 +126,7 @@ export function createMentorDevelopmentResult(
 }
 
 export function createLocationDevelopmentResult(
-  run: ProjectSetupRun,
+  run: ProjectRunContext,
   briefId: string
 ): LocationDevelopmentResult {
   const brief = requireItem(developmentData.locationScoutingBriefs, briefId, "location scouting brief");
@@ -154,7 +154,7 @@ export function createLocationDevelopmentResult(
   };
 }
 
-export function createScriptDevelopmentResult(run: ProjectSetupRun): ScriptDevelopmentResult {
+export function createScriptDevelopmentResult(run: ProjectRunContext): ScriptDevelopmentResult {
   const template = run.scriptTemplate;
   const starterFunctions = template.recommendedSceneFunctions.slice(0, 3).map((functionId) =>
     requireItem(developmentData.sceneFunctions, functionId, "scene function")
@@ -192,7 +192,7 @@ export function createScriptDevelopmentResult(run: ProjectSetupRun): ScriptDevel
 }
 
 function createStarterScene(
-  run: ProjectSetupRun,
+  run: ProjectRunContext,
   sceneFunction: SceneFunction,
   index: number
 ): Scene {

@@ -33,7 +33,9 @@ import {
   addDevelopmentPipelineStep,
   type ProjectSetupRun
 } from "./demo/createProjectSetupRun";
+import { createProjectRunContext } from "./demo/createProjectRunContext";
 import { type ShootStepResult } from "./demo/createShootStepRun";
+import type { NextProjectStepResult } from "./demo/createNextProjectStepRun";
 import type { PostProductionChoices, PostProductionStepResult } from "./demo/createPostProductionStepRun";
 import type { ReleaseStepChoices, ReleaseStepResult } from "./demo/createReleaseStepRun";
 import type { AppMode, PostProductionSelectionState, PreProductionSelectionState, ReleaseSelectionState } from "./types";
@@ -60,6 +62,9 @@ export function App() {
   const [releaseChoices, setReleaseChoices] = useState<ReleaseStepChoices>(emptyReleaseChoices);
   const [releaseResult, setReleaseResult] = useState<ReleaseStepResult | null>(null);
   const [careerApplicationResult, setCareerApplicationResult] = useState<CareerApplicationStepResult | null>(null);
+  const [nextProjectResult, setNextProjectResult] = useState<NextProjectStepResult | null>(null);
+  const [selectedNextDevelopmentPath, setSelectedNextDevelopmentPath] = useState<DevelopmentPath | null>(null);
+  const [nextDevelopmentResult, setNextDevelopmentResult] = useState<DevelopmentStepResult | null>(null);
 
   function createCustomRun(run: ProjectSetupRun) {
     setCustomRun(run);
@@ -67,6 +72,7 @@ export function App() {
     setDevelopmentResult(null);
     resetPreProduction();
     resetShoot();
+    resetNextProject();
   }
 
   function editCustomRun() {
@@ -75,6 +81,7 @@ export function App() {
     setDevelopmentResult(null);
     resetPreProduction();
     resetShoot();
+    resetNextProject();
   }
 
   function completeDevelopment(result: DevelopmentStepResult) {
@@ -110,6 +117,13 @@ export function App() {
     setReleaseChoices(emptyReleaseChoices);
     setReleaseResult(null);
     setCareerApplicationResult(null);
+    resetNextProject();
+  }
+
+  function resetNextProject() {
+    setNextProjectResult(null);
+    setSelectedNextDevelopmentPath(null);
+    setNextDevelopmentResult(null);
   }
 
   function lockPreProduction(result: PreProductionStepResult) {
@@ -151,10 +165,11 @@ export function App() {
               onChangePostProductionChoices={setPostProductionChoices}
               onLockPostProduction={(result) => { setPostProductionResult(result); resetRelease(); }}
               onChangeReleaseChoices={setReleaseChoices}
-              onReleaseFilm={(result) => { setReleaseResult(result); setCareerApplicationResult(null); }}
+              onReleaseFilm={(result) => { setReleaseResult(result); setCareerApplicationResult(null); resetNextProject(); }}
               onApplyCareerResult={() => {
                 if (releaseResult) {
                   setCareerApplicationResult(createCareerApplicationStepResult(customRun, releaseResult, { closeFilmYear: true }));
+                  resetNextProject();
                 }
               }}
               releaseChoices={releaseChoices}
@@ -168,6 +183,16 @@ export function App() {
               selectedLocationId={selectedLocationId}
               selectedProductionEventId={selectedProductionEventId}
               shootResult={shootResult}
+              nextProjectResult={nextProjectResult}
+              selectedNextDevelopmentPath={selectedNextDevelopmentPath}
+              nextDevelopmentResult={nextDevelopmentResult}
+              onCreateNextProject={(result) => {
+                setNextProjectResult(result);
+                setSelectedNextDevelopmentPath(null);
+                setNextDevelopmentResult(null);
+              }}
+              onSelectNextDevelopmentPath={setSelectedNextDevelopmentPath}
+              onCompleteNextDevelopment={setNextDevelopmentResult}
             />
           )
           : <main className="setup-workspace"><SetupPanel onCreate={createCustomRun} /></main>
@@ -232,6 +257,12 @@ interface CustomDashboardProps {
   readonly onReleaseFilm: (result: ReleaseStepResult) => void;
   readonly onApplyCareerResult: () => void;
   readonly onEdit: () => void;
+  readonly nextProjectResult: NextProjectStepResult | null;
+  readonly selectedNextDevelopmentPath: DevelopmentPath | null;
+  readonly nextDevelopmentResult: DevelopmentStepResult | null;
+  readonly onCreateNextProject: (result: NextProjectStepResult) => void;
+  readonly onSelectNextDevelopmentPath: (path: DevelopmentPath) => void;
+  readonly onCompleteNextDevelopment: (result: DevelopmentStepResult) => void;
 }
 
 function CustomDashboard({
@@ -262,7 +293,13 @@ function CustomDashboard({
   onChangeReleaseChoices,
   onReleaseFilm,
   onApplyCareerResult,
-  onEdit
+  onEdit,
+  nextProjectResult,
+  selectedNextDevelopmentPath,
+  nextDevelopmentResult,
+  onCreateNextProject,
+  onSelectNextDevelopmentPath,
+  onCompleteNextDevelopment
 }: CustomDashboardProps) {
   const developmentPipeline = developmentResult
     ? addDevelopmentPipelineStep(run, developmentResult.pipelineStep)
@@ -343,11 +380,22 @@ function CustomDashboard({
               <DevelopmentPanel
                 onComplete={onCompleteDevelopment}
                 onSelectPath={onSelectDevelopmentPath}
-                run={run}
+                run={createProjectRunContext(run)}
                 selectedPath={selectedDevelopmentPath}
               />
             )}
-            {careerApplicationResult && <NextProjectPanel careerApplicationResult={careerApplicationResult} run={run} />}
+            {careerApplicationResult && (
+              <NextProjectPanel
+                careerApplicationResult={careerApplicationResult}
+                developmentResult={nextDevelopmentResult}
+                onCompleteDevelopment={onCompleteNextDevelopment}
+                onCreate={onCreateNextProject}
+                onSelectDevelopmentPath={onSelectNextDevelopmentPath}
+                result={nextProjectResult}
+                run={run}
+                selectedDevelopmentPath={selectedNextDevelopmentPath}
+              />
+            )}
           </div>
           <RunSummaryPanel careerApplicationResult={careerApplicationResult} developmentResult={developmentResult} postProductionResult={postProductionResult} preProductionResult={preProductionResult} releaseResult={releaseResult} run={run} shootResult={shootResult} onEdit={onEdit} />
         </div>
