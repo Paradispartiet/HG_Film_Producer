@@ -2,16 +2,17 @@ import type { PreProductionStepResult } from "../demo/createPreProductionStepRun
 
 interface ProductionTeamResultPanelProps {
   readonly result: PreProductionStepResult;
+  readonly compact?: boolean;
 }
 
-export function ProductionTeamResultPanel({ result }: ProductionTeamResultPanelProps) {
+export function ProductionTeamResultPanel({ result, compact = false }: ProductionTeamResultPanelProps) {
   const evaluation = result.teamEvaluation;
 
   return (
-    <section className="panel production-result-panel">
+    <section className={compact ? "panel production-result-panel production-result-panel--compact" : "panel production-result-panel"}>
       <div className="panel-heading">
         <div><span className="eyebrow">Pre-production locked</span><h2>Production team report</h2></div>
-        <span className="status-pill status-pill--positive">Ready</span>
+        <span className="status-pill status-pill--positive">{compact ? "Shoot unlocked" : "Ready"}</span>
       </div>
       <div className="production-result-body">
         <div className="production-result-lead">
@@ -23,6 +24,7 @@ export function ProductionTeamResultPanel({ result }: ProductionTeamResultPanelP
           <ul>{result.location.notes.map((note) => <li key={note}>{note}</li>)}</ul>
         </div>
 
+        {!compact && (
         <div className="locked-team-grid">
           <ResultRoster title={`Key crew · ${result.crew.projectCrewCount}`} items={result.crew.hired.map((crewMember) => ({
             id: crewMember.id,
@@ -37,6 +39,7 @@ export function ProductionTeamResultPanel({ result }: ProductionTeamResultPanelP
             score: actor.fitScore
           }))} />
         </div>
+        )}
 
         <div className="chemistry-strip">
           <div><span>Casting chemistry</span><strong>{result.casting.chemistryScore} / 100</strong></div>
@@ -54,9 +57,11 @@ export function ProductionTeamResultPanel({ result }: ProductionTeamResultPanelP
             <EvaluationMetric label="Reliability" value={evaluation.reliabilityScore} />
             <EvaluationMetric label="Budget pressure" value={evaluation.budgetPressure} inverse />
           </div>
+          {!compact && (
           <div className="result-notes result-notes--compact">
             <ul>{evaluation.notes.map((note) => <li key={note}>{note}</li>)}</ul>
           </div>
+          )}
         </div>
       </div>
     </section>

@@ -48,3 +48,7 @@ export interface PreProductionSelectionState {
   readonly selectedCrewIds: readonly string[];
   readonly selectedActorIds: readonly string[];
 }
+
+export interface ShootSelectionState {
+  readonly selectedProductionEventId: string;
+}
