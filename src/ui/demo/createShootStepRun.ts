@@ -23,7 +23,7 @@ import type { PipelineStepSummary } from "../types.js";
 import { adaptFilmSeedData } from "./adaptFilmSeedData.js";
 import type { DevelopmentStepResult } from "./createDevelopmentStepRun.js";
 import type { PreProductionStepResult } from "./createPreProductionStepRun.js";
-import type { ProjectSetupRun } from "./createProjectSetupRun.js";
+import type { ProjectRunContext } from "./createProjectRunContext.js";
 
 interface ShootSeedData {
   readonly productionEvents: readonly ProductionEvent[];
@@ -88,20 +88,20 @@ export interface ShootStepResult {
 }
 
 export function getShootPreparation(
-  run: ProjectSetupRun,
+  projectContext: ProjectRunContext,
   developmentResult: DevelopmentStepResult,
   preProductionResult: PreProductionStepResult
 ): ShootStepPreparation {
-  const starterScenes = createStarterScenes(run, developmentResult, preProductionResult);
+  const selectedLocation = requireItem(shootData.locations, preProductionResult.location.id, "location");
+  const starterScenes = createStarterScenes(projectContext, developmentResult, selectedLocation);
   const productionSchedule = createProductionSchedule(preProductionResult.projectState, starterScenes);
   const firstShootDay = requireFirst(productionSchedule.shootDays, "first shoot day");
-  const selectedLocation = shootData.locations.find((location) => location.id === preProductionResult.location.id);
   const sceneDifficultySummaries = starterScenes.slice(0, 3).map((scene) => ({
     scene,
     functionName: requireItem(shootData.sceneFunctions, scene.functionId, "scene function").name,
     difficulty: estimateSceneShootDifficulty(scene, {
       actorCount: preProductionResult.casting.projectActorCount,
-      locationLogistics: selectedLocation?.productionModifiers.logistics ?? 35
+      locationLogistics: selectedLocation.productionModifiers.logistics
     })
   }));
 
@@ -176,11 +176,11 @@ export function createShootStepResult(
 }
 
 function createStarterScenes(
-  run: ProjectSetupRun,
+  projectContext: ProjectRunContext,
   developmentResult: DevelopmentStepResult,
-  preProductionResult: PreProductionStepResult
+  location: Location
 ): readonly Scene[] {
-  const selectedFunctionIds = run.scriptTemplate.recommendedSceneFunctions.slice(0, 3);
+  const selectedFunctionIds = projectContext.scriptTemplate.recommendedSceneFunctions.slice(0, 3);
   const sceneProfiles = [
     { conflict: 38, pacing: 44, emotion: 50 },
     { conflict: 58, pacing: 57, emotion: 64 },
@@ -191,16 +191,16 @@ function createStarterScenes(
     const sceneFunction = requireItem(shootData.sceneFunctions, functionId, "scene function");
     const profile = sceneProfiles[index] ?? sceneProfiles[2];
     return {
-      id: asSceneId(`shoot_scene_${slug(run.project.title)}_${index + 1}`),
+      id: asSceneId(`shoot_scene_${slug(projectContext.project.title)}_${index + 1}`),
       title: buildSceneTitle(sceneFunction, developmentResult, index),
       functionId: sceneFunction.id,
-      locationId: preProductionResult.location.id,
+      locationId: location.id,
       characterIds: [],
-      mood: run.scriptTemplate.defaultTheme,
+      mood: projectContext.scriptTemplate.defaultTheme,
       conflictLevel: profile.conflict,
       pacing: profile.pacing,
       emotionalWeight: profile.emotion,
-      techniqueIdsUsed: run.scriptTemplate.recommendedTechniqueIds.slice(index, index + 1)
+      techniqueIdsUsed: projectContext.scriptTemplate.recommendedTechniqueIds.slice(index, index + 1)
     };
   });
 }

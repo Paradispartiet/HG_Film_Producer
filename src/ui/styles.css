@@ -862,3 +862,25 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
     margin-left: 20px;
   }
 }
+
+/* Film 2 reuses the shared shoot desk without merging it into the completed first-film pipeline. */
+.next-project-panel > .shoot-panel,
+.next-project-panel .production-result-panel + .shoot-panel {
+  margin: 0 30px 30px;
+}
+
+.shoot-panel--second-project {
+  border-color: rgba(91, 143, 104, 0.42);
+}
+
+.shoot-panel--second-project .shoot-panel-heading {
+  background: linear-gradient(100deg, rgba(91, 143, 104, 0.14), transparent 56%);
+}
+
+@media (max-width: 700px) {
+  .next-project-panel > .shoot-panel,
+  .next-project-panel .production-result-panel + .shoot-panel {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}

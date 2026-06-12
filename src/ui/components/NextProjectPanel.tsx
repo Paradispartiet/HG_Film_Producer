@@ -18,6 +18,8 @@ import { NextProjectSetupForm } from "./NextProjectSetupForm.js";
 import { PreviousFilmLegacyPanel } from "./PreviousFilmLegacyPanel.js";
 import { PreProductionPanel } from "./PreProductionPanel.js";
 import { ProductionTeamResultPanel } from "./ProductionTeamResultPanel.js";
+import { ShootPanel } from "./ShootPanel.js";
+import type { ShootStepResult } from "../demo/createShootStepRun.js";
 import { StudioCarryoverPanel } from "./StudioCarryoverPanel.js";
 
 const options = getNextProjectOptions();
@@ -36,11 +38,15 @@ interface NextProjectPanelProps {
   readonly developmentResult: DevelopmentStepResult | null;
   readonly preProductionSelections: PreProductionSelectionState;
   readonly preProductionResult: PreProductionStepResult | null;
+  readonly selectedProductionEventId: string;
+  readonly shootResult: ShootStepResult | null;
   readonly onCreate: (result: NextProjectStepResult) => void;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
   readonly onChangePreProductionSelections: (selections: PreProductionSelectionState) => void;
   readonly onLockPreProduction: (result: PreProductionStepResult) => void;
+  readonly onSelectProductionEvent: (eventId: string) => void;
+  readonly onResolveShootDay: (result: ShootStepResult) => void;
 }
 
 export function NextProjectPanel({
@@ -51,11 +57,15 @@ export function NextProjectPanel({
   developmentResult,
   preProductionSelections,
   preProductionResult,
+  selectedProductionEventId,
+  shootResult,
   onCreate,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
   onChangePreProductionSelections,
   onLockPreProduction,
+  onSelectProductionEvent,
+  onResolveShootDay,
 }: NextProjectPanelProps) {
   const [choices, setChoices] = useState<NextProjectChoices>(initialChoices);
   const [errors, setErrors] = useState<NextProjectFormErrors>({});
@@ -114,16 +124,28 @@ export function NextProjectPanel({
       </div>
       {result ? (
         <>
-          <NextProjectResultPanel developmentResult={developmentResult} preProductionResult={preProductionResult} result={result} />
+          <NextProjectResultPanel developmentResult={developmentResult} preProductionResult={preProductionResult} result={result} shootResult={shootResult} />
           {developmentResult ? (
             <>
               <DevelopmentResultPanel result={developmentResult} />
               {preProductionResult ? (
-                <ProductionTeamResultPanel
-                  nextStepLabel="Shoot is next"
-                  projectLabel="Film 2"
-                  result={preProductionResult}
-                />
+                <>
+                  <ProductionTeamResultPanel
+                    nextStepLabel={shootResult ? "Shoot day resolved" : "Shoot is next"}
+                    projectLabel="Film 2"
+                    result={preProductionResult}
+                  />
+                  <ShootPanel
+                    developmentResult={developmentResult}
+                    onResolveShootDay={onResolveShootDay}
+                    onSelectProductionEvent={onSelectProductionEvent}
+                    preProductionResult={preProductionResult}
+                    projectContext={createProjectRunContext(result)}
+                    projectLabel="film 2"
+                    selectedProductionEventId={selectedProductionEventId}
+                    shootResult={shootResult}
+                  />
+                </>
               ) : (
                 <PreProductionPanel
                   developmentResult={developmentResult}
