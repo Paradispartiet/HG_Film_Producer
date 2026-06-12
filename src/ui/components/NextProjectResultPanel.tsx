@@ -1,12 +1,19 @@
+import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { NextProjectStepResult } from "../demo/createNextProjectStepRun.js";
 
 interface NextProjectResultPanelProps {
   readonly result: NextProjectStepResult;
+  readonly developmentResult?: DevelopmentStepResult | null;
 }
 
 export function NextProjectResultPanel({
   result,
+  developmentResult = null,
 }: NextProjectResultPanelProps) {
+  const pipelineSteps = developmentResult
+    ? [...result.pipelineSteps, developmentResult.pipelineStep]
+    : result.pipelineSteps;
+
   return (
     <section className="next-project-result" aria-live="polite">
       <div className="next-project-result-hero">
@@ -17,7 +24,7 @@ export function NextProjectResultPanel({
         </div>
         <div className="ready-badge">
           <span>Next status</span>
-          <strong>Ready for development</strong>
+          <strong>{developmentResult ? "Development action completed" : "Ready for development"}</strong>
         </div>
       </div>
       <div className="next-project-result-grid">
@@ -68,10 +75,10 @@ export function NextProjectResultPanel({
           </div>
         </div>
         <ol>
-          {result.pipelineSteps.map((step, index) => (
+          {pipelineSteps.map((step, index) => (
             <li
               className={
-                index === result.pipelineSteps.length - 1
+                index === pipelineSteps.length - 1
                   ? "next-pipeline-current"
                   : ""
               }
@@ -87,11 +94,12 @@ export function NextProjectResultPanel({
         </ol>
       </div>
       <div className="development-handoff">
-        <span>Next implementation task</span>
-        <strong>Reuse the development flow for project 2</strong>
+        <span>{developmentResult ? "Film 2 development" : "Next action"}</span>
+        <strong>{developmentResult ? developmentResult.pathLabel : "Reuse the development flow for project 2"}</strong>
         <p>
-          Development has not run automatically, and the completed first-film
-          pipeline remains separate.
+          {developmentResult
+            ? "The second film has completed one development action. Pre-production is intentionally not started yet."
+            : "Choose one development action for film 2. The completed first-film pipeline remains separate."}
         </p>
       </div>
     </section>

@@ -7,8 +7,12 @@ import {
 } from "../demo/createNextProjectStepRun.js";
 import type { CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun.js";
 import type { ProjectSetupRun } from "../demo/createProjectSetupRun.js";
+import type { DevelopmentPath, DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
+import { createProjectRunContext } from "../demo/createProjectRunContext.js";
 import type { NextProjectFormErrors } from "../types.js";
 import { NextProjectResultPanel } from "./NextProjectResultPanel.js";
+import { DevelopmentPanel } from "./DevelopmentPanel.js";
+import { DevelopmentResultPanel } from "./DevelopmentResultPanel.js";
 import { NextProjectSetupForm } from "./NextProjectSetupForm.js";
 import { PreviousFilmLegacyPanel } from "./PreviousFilmLegacyPanel.js";
 import { StudioCarryoverPanel } from "./StudioCarryoverPanel.js";
@@ -24,15 +28,26 @@ const initialChoices: NextProjectChoices = {
 interface NextProjectPanelProps {
   readonly run: ProjectSetupRun;
   readonly careerApplicationResult: CareerApplicationStepResult | null;
+  readonly result: NextProjectStepResult | null;
+  readonly selectedDevelopmentPath: DevelopmentPath | null;
+  readonly developmentResult: DevelopmentStepResult | null;
+  readonly onCreate: (result: NextProjectStepResult) => void;
+  readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
+  readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
 }
 
 export function NextProjectPanel({
   run,
   careerApplicationResult,
+  result,
+  selectedDevelopmentPath,
+  developmentResult,
+  onCreate,
+  onSelectDevelopmentPath,
+  onCompleteDevelopment,
 }: NextProjectPanelProps) {
   const [choices, setChoices] = useState<NextProjectChoices>(initialChoices);
   const [errors, setErrors] = useState<NextProjectFormErrors>({});
-  const [result, setResult] = useState<NextProjectStepResult | null>(null);
 
   if (!careerApplicationResult) {
     return (
@@ -56,9 +71,7 @@ export function NextProjectPanel({
     }
 
     try {
-      setResult(
-        createNextProjectStepResult(run, careerApplicationResult, choices),
-      );
+      onCreate(createNextProjectStepResult(run, careerApplicationResult, choices));
       setErrors({});
     } catch (error) {
       setErrors({
@@ -89,7 +102,19 @@ export function NextProjectPanel({
         <PreviousFilmLegacyPanel result={careerApplicationResult} />
       </div>
       {result ? (
-        <NextProjectResultPanel result={result} />
+        <>
+          <NextProjectResultPanel developmentResult={developmentResult} result={result} />
+          {developmentResult ? (
+            <DevelopmentResultPanel result={developmentResult} />
+          ) : (
+            <DevelopmentPanel
+              onComplete={onCompleteDevelopment}
+              onSelectPath={onSelectDevelopmentPath}
+              run={createProjectRunContext(result)}
+              selectedPath={selectedDevelopmentPath}
+            />
+          )}
+        </>
       ) : (
         <NextProjectSetupForm
           activeStrategicGoalIds={
