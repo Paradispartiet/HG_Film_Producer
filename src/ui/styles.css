@@ -826,3 +826,39 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
   .next-project-result-hero { align-items: stretch; flex-direction: column; }
   .legacy-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* Film 2 reuses the shared pre-production office inside the next-project workspace. */
+.next-project-panel > .pre-production-panel,
+.next-project-panel > .production-result-panel,
+.next-project-panel .next-project-result + .development-result-panel,
+.next-project-panel .development-result-panel + .pre-production-panel,
+.next-project-panel .development-result-panel + .production-result-panel {
+  margin: 0 30px 30px;
+}
+
+.next-project-panel .pre-production-panel {
+  border-color: rgba(91, 143, 104, 0.34);
+}
+
+.next-project-panel .pre-production-heading {
+  background: linear-gradient(90deg, rgba(91, 143, 104, 0.12), transparent 52%);
+}
+
+.next-project-panel .production-result-panel {
+  border-color: rgba(91, 143, 104, 0.4);
+}
+
+.next-pipeline ol {
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+@media (max-width: 700px) {
+  .next-project-panel > .pre-production-panel,
+  .next-project-panel > .production-result-panel,
+  .next-project-panel .next-project-result + .development-result-panel,
+  .next-project-panel .development-result-panel + .pre-production-panel,
+  .next-project-panel .development-result-panel + .production-result-panel {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}

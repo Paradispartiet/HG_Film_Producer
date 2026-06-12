@@ -1,18 +1,24 @@
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { NextProjectStepResult } from "../demo/createNextProjectStepRun.js";
+import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
 
 interface NextProjectResultPanelProps {
   readonly result: NextProjectStepResult;
   readonly developmentResult?: DevelopmentStepResult | null;
+  readonly preProductionResult?: PreProductionStepResult | null;
 }
 
 export function NextProjectResultPanel({
   result,
   developmentResult = null,
+  preProductionResult = null,
 }: NextProjectResultPanelProps) {
-  const pipelineSteps = developmentResult
+  const developmentPipeline = developmentResult
     ? [...result.pipelineSteps, developmentResult.pipelineStep]
     : result.pipelineSteps;
+  const pipelineSteps = preProductionResult
+    ? [...developmentPipeline, preProductionResult.pipelineStep]
+    : developmentPipeline;
 
   return (
     <section className="next-project-result" aria-live="polite">
@@ -24,7 +30,7 @@ export function NextProjectResultPanel({
         </div>
         <div className="ready-badge">
           <span>Next status</span>
-          <strong>{developmentResult ? "Development action completed" : "Ready for development"}</strong>
+          <strong>{preProductionResult ? "Pre-production locked" : developmentResult ? "Development action completed" : "Ready for development"}</strong>
         </div>
       </div>
       <div className="next-project-result-grid">
@@ -94,12 +100,14 @@ export function NextProjectResultPanel({
         </ol>
       </div>
       <div className="development-handoff">
-        <span>{developmentResult ? "Film 2 development" : "Next action"}</span>
-        <strong>{developmentResult ? developmentResult.pathLabel : "Reuse the development flow for project 2"}</strong>
+        <span>{preProductionResult ? "Film 2 handoff" : developmentResult ? "Film 2 development" : "Next action"}</span>
+        <strong>{preProductionResult ? "Next step: shoot for film 2" : developmentResult ? "Start pre-production for film 2" : "Reuse the development flow for project 2"}</strong>
         <p>
-          {developmentResult
-            ? "The second film has completed one development action. Pre-production is intentionally not started yet."
-            : "Choose one development action for film 2. The completed first-film pipeline remains separate."}
+          {preProductionResult
+            ? "The location, crew and cast are locked. The film 2 shoot is intentionally not implemented in this step."
+            : developmentResult
+              ? "The second film has completed one development action and is ready to reuse the shared pre-production office."
+              : "Choose one development action for film 2. The completed first-film pipeline remains separate."}
         </p>
       </div>
     </section>

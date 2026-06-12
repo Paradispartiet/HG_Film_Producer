@@ -3,16 +3,23 @@ import type { PreProductionStepResult } from "../demo/createPreProductionStepRun
 interface ProductionTeamResultPanelProps {
   readonly result: PreProductionStepResult;
   readonly compact?: boolean;
+  readonly projectLabel?: string;
+  readonly nextStepLabel?: string;
 }
 
-export function ProductionTeamResultPanel({ result, compact = false }: ProductionTeamResultPanelProps) {
+export function ProductionTeamResultPanel({
+  result,
+  compact = false,
+  projectLabel,
+  nextStepLabel
+}: ProductionTeamResultPanelProps) {
   const evaluation = result.teamEvaluation;
 
   return (
     <section className={compact ? "panel production-result-panel production-result-panel--compact" : "panel production-result-panel"}>
       <div className="panel-heading">
-        <div><span className="eyebrow">Pre-production locked</span><h2>Production team report</h2></div>
-        <span className="status-pill status-pill--positive">{compact ? "Shoot unlocked" : "Ready"}</span>
+        <div><span className="eyebrow">Pre-production locked{projectLabel ? ` · ${projectLabel}` : ""}</span><h2>Production team report</h2></div>
+        <span className="status-pill status-pill--positive">{nextStepLabel ?? (compact ? "Shoot unlocked" : "Ready")}</span>
       </div>
       <div className="production-result-body">
         <div className="production-result-lead">
