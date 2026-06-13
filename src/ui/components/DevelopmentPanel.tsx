@@ -15,7 +15,8 @@ import { MentorChoicePanel } from "./MentorChoicePanel.js";
 import { ScriptChoicePanel } from "./ScriptChoicePanel.js";
 
 interface DevelopmentPanelProps {
-  readonly run: ProjectRunContext;
+  readonly projectContext: ProjectRunContext;
+  readonly projectLabel?: string;
   readonly selectedPath: DevelopmentPath | null;
   readonly onSelectPath: (path: DevelopmentPath) => void;
   readonly onComplete: (result: DevelopmentStepResult) => void;
@@ -27,11 +28,17 @@ const paths: readonly DevelopmentPathOption[] = [
   { id: "script", number: "03", title: "Shape the script", description: "Build and evaluate three starter scenes.", consequence: "A scored starter draft" }
 ];
 
-export function DevelopmentPanel({ run, selectedPath, onSelectPath, onComplete }: DevelopmentPanelProps) {
+export function DevelopmentPanel({
+  projectContext,
+  projectLabel = "Film 1",
+  selectedPath,
+  onSelectPath,
+  onComplete
+}: DevelopmentPanelProps) {
   const [selectedLessonId, setSelectedLessonId] = useState("");
   const [selectedBriefId, setSelectedBriefId] = useState("");
   const [message, setMessage] = useState("");
-  const locationChoices = getLocationDevelopmentChoices(run);
+  const locationChoices = getLocationDevelopmentChoices(projectContext);
 
   function selectPath(path: DevelopmentPath) {
     setMessage("");
@@ -43,7 +50,7 @@ export function DevelopmentPanel({ run, selectedPath, onSelectPath, onComplete }
       setMessage("Choose a mentor lesson before applying this path.");
       return;
     }
-    onComplete(createMentorDevelopmentResult(run, selectedLessonId));
+    onComplete(createMentorDevelopmentResult(projectContext, selectedLessonId));
   }
 
   function applyLocationBrief() {
@@ -51,13 +58,13 @@ export function DevelopmentPanel({ run, selectedPath, onSelectPath, onComplete }
       setMessage("Choose a scouting brief before running the location scout.");
       return;
     }
-    onComplete(createLocationDevelopmentResult(run, selectedBriefId));
+    onComplete(createLocationDevelopmentResult(projectContext, selectedBriefId));
   }
 
   return (
     <section className="panel development-panel">
       <div className="development-panel-heading">
-        <div><span className="eyebrow">Start development</span><h2>Choose the first move</h2></div>
+        <div><span className="eyebrow">{projectLabel} development</span><h2>Develop {projectLabel.toLowerCase()}</h2></div>
         <p>Your producer’s desk has room for one action. The choice will be applied through the simulation engine.</p>
       </div>
       <div className="development-path-grid">
@@ -94,7 +101,7 @@ export function DevelopmentPanel({ run, selectedPath, onSelectPath, onComplete }
           selectedBriefId={selectedBriefId}
         />
       )}
-      {selectedPath === "script" && <ScriptChoicePanel run={run} onApply={() => onComplete(createScriptDevelopmentResult(run))} />}
+      {selectedPath === "script" && <ScriptChoicePanel run={projectContext} onApply={() => onComplete(createScriptDevelopmentResult(projectContext))} />}
     </section>
   );
 }

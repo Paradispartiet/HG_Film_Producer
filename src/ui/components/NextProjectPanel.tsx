@@ -51,8 +51,12 @@ interface NextProjectPanelProps {
   readonly releaseResult: ReleaseStepResult | null;
   readonly secondProjectCareerApplicationResult: CareerApplicationStepResult | null;
   readonly thirdProjectResult: NextProjectStepResult | null;
+  readonly selectedThirdDevelopmentPath: DevelopmentPath | null;
+  readonly thirdProjectDevelopmentResult: DevelopmentStepResult | null;
   readonly onCreate: (result: NextProjectStepResult) => void;
   readonly onCreateThirdProject: (result: NextProjectStepResult) => void;
+  readonly onSelectThirdProjectDevelopmentPath: (path: DevelopmentPath) => void;
+  readonly onCompleteThirdProjectDevelopment: (result: DevelopmentStepResult) => void;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
   readonly onChangePreProductionSelections: (selections: PreProductionSelectionState) => void;
@@ -82,8 +86,12 @@ export function NextProjectPanel({
   releaseResult,
   secondProjectCareerApplicationResult,
   thirdProjectResult,
+  selectedThirdDevelopmentPath,
+  thirdProjectDevelopmentResult,
   onCreate,
   onCreateThirdProject,
+  onSelectThirdProjectDevelopmentPath,
+  onCompleteThirdProjectDevelopment,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
   onChangePreProductionSelections,
@@ -162,7 +170,7 @@ export function NextProjectPanel({
           <NextProjectResultPanel careerApplicationResult={secondProjectCareerApplicationResult} developmentResult={developmentResult} postProductionResult={postProductionResult} preProductionResult={preProductionResult} releaseResult={releaseResult} result={result} shootResult={shootResult} />
           {developmentResult ? (
             <>
-              <DevelopmentResultPanel result={developmentResult} />
+              <DevelopmentResultPanel projectLabel="Film 2" result={developmentResult} />
               {preProductionResult ? (
                 <>
                   <ProductionTeamResultPanel
@@ -236,7 +244,8 @@ export function NextProjectPanel({
             <DevelopmentPanel
               onComplete={onCompleteDevelopment}
               onSelectPath={onSelectDevelopmentPath}
-              run={createProjectRunContext(result)}
+              projectContext={createProjectRunContext(result)}
+              projectLabel="Film 2"
               selectedPath={selectedDevelopmentPath}
             />
           )}
@@ -262,7 +271,11 @@ export function NextProjectPanel({
         <ThirdProjectSetup
           careerApplicationResult={secondProjectCareerApplicationResult}
           onCreate={onCreateThirdProject}
+          onCompleteDevelopment={onCompleteThirdProjectDevelopment}
+          onSelectDevelopmentPath={onSelectThirdProjectDevelopmentPath}
+          developmentResult={thirdProjectDevelopmentResult}
           result={thirdProjectResult}
+          selectedDevelopmentPath={selectedThirdDevelopmentPath}
           sourceProject={result}
         />
       )}
@@ -273,12 +286,20 @@ export function NextProjectPanel({
 function ThirdProjectSetup({
   careerApplicationResult,
   onCreate,
+  onCompleteDevelopment,
+  onSelectDevelopmentPath,
+  developmentResult,
   result,
+  selectedDevelopmentPath,
   sourceProject,
 }: {
   readonly careerApplicationResult: CareerApplicationStepResult;
   readonly onCreate: (result: NextProjectStepResult) => void;
+  readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
+  readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
+  readonly developmentResult: DevelopmentStepResult | null;
   readonly result: NextProjectStepResult | null;
+  readonly selectedDevelopmentPath: DevelopmentPath | null;
   readonly sourceProject: NextProjectStepResult;
 }) {
   const [choices, setChoices] = useState<NextProjectChoices>(initialChoices);
@@ -332,7 +353,27 @@ function ThirdProjectSetup({
         />
       </div>
       {result ? (
-        <NextProjectResultPanel projectNumber={3} result={result} />
+        <>
+          <NextProjectResultPanel
+            developmentResult={developmentResult}
+            projectNumber={3}
+            result={result}
+          />
+          {developmentResult ? (
+            <DevelopmentResultPanel
+              projectLabel="Film 3"
+              result={developmentResult}
+            />
+          ) : (
+            <DevelopmentPanel
+              onComplete={onCompleteDevelopment}
+              onSelectPath={onSelectDevelopmentPath}
+              projectContext={createProjectRunContext(result)}
+              projectLabel="Film 3"
+              selectedPath={selectedDevelopmentPath}
+            />
+          )}
+        </>
       ) : (
         <NextProjectSetupForm
           activeStrategicGoalIds={

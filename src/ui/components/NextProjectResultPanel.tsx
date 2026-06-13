@@ -144,7 +144,9 @@ export function NextProjectResultPanel({
         </span>
         <strong>
           {projectNumber === 3
-            ? "Next step: develop film 3"
+            ? developmentResult
+              ? "Next step: pre-production for film 3"
+              : "Next step: develop film 3"
             : careerApplicationResult
               ? "Next step: start film 3"
               : releaseResult
@@ -161,7 +163,9 @@ export function NextProjectResultPanel({
         </strong>
         <p>
           {projectNumber === 3
-            ? "Film 3 has been created from the updated career after film 2. Development is intentionally not implemented in this step."
+            ? developmentResult
+              ? "Film 3 has completed one shared development action. Pre-production is intentionally not implemented in this step."
+              : "Film 3 has been created from the updated career after film 2. Choose one shared development action to continue."
             : careerApplicationResult
             ? "Film 2 is recorded in the studio ledger and career filmography. Film 3 is intentionally not started here."
             : releaseResult

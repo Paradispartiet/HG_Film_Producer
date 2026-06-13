@@ -2,13 +2,14 @@ import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js"
 
 interface DevelopmentResultPanelProps {
   readonly result: DevelopmentStepResult;
+  readonly projectLabel?: string;
 }
 
-export function DevelopmentResultPanel({ result }: DevelopmentResultPanelProps) {
+export function DevelopmentResultPanel({ result, projectLabel = "Film 1" }: DevelopmentResultPanelProps) {
   return (
     <section className="panel development-result-panel">
       <div className="panel-heading">
-        <div><span className="eyebrow">Development complete</span><h2>{result.pathLabel}</h2></div>
+        <div><span className="eyebrow">{projectLabel} development</span><h2>{result.pathLabel}</h2></div>
         <span className="status-pill status-pill--positive">Applied</span>
       </div>
       {result.path === "mentor" && (
