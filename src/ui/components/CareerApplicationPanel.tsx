@@ -22,25 +22,23 @@ export function CareerApplicationPanel({
   result,
   onApply
 }: CareerApplicationPanelProps) {
-  const displayLabel = projectLabel === "first film" ? "first film" : "film 2";
-
   return (
     <section className="panel career-application-panel">
       <div className="career-application-heading">
         <div>
           <span className="eyebrow">Studio finance &amp; career review</span>
-          <h2>Apply {displayLabel} to studio/career</h2>
+          <h2>Apply {projectLabel} to studio/career</h2>
           <p>Close the film year to post the release outcome, record the completed film, and evaluate the studio career.</p>
         </div>
         {!result && (
           <button className="primary-button" disabled={!releaseResult} onClick={onApply} type="button">
-            Close {displayLabel} year
+            Close {projectLabel} year
           </button>
         )}
       </div>
 
       {!releaseResult && (
-        <p className="inline-validation" role="status">Release {displayLabel} before applying its result to the studio.</p>
+        <p className="inline-validation" role="status">Release {projectLabel} before applying its result to the studio.</p>
       )}
       {releaseResult && !result && (
         <div className="career-ready-strip">
