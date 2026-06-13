@@ -21,7 +21,7 @@ export function LandingScreen({ onStart, onDemo, onDevDashboard }: LandingScreen
             <span>Start new studio</span>
             <b aria-hidden="true">→</b>
           </button>
-          <button className="landing-secondary" onClick={onDemo} type="button">Demo run</button>
+          <button className="landing-secondary" onClick={onDemo} type="button">Demo dashboard</button>
         </div>
         <button className="landing-dev-link" onClick={onDevDashboard} type="button">Dev dashboard</button>
       </div>

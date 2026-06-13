@@ -207,7 +207,7 @@ export function App() {
         <div><span className="eyebrow">HG Film Producer</span><strong>Production workspace</strong></div>
         <div className="mode-switch-buttons">
           <button className={mode === "demo" ? "mode-button mode-button--active" : "mode-button"} onClick={() => setMode("demo")} type="button">Demo run</button>
-          <button className="mode-button" onClick={() => setView("game")} type="button">Playable shell</button>
+          <button className="mode-button" onClick={() => { setMode("setup"); setView("game"); }} type="button">Playable shell</button>
           <button className="mode-button" onClick={() => setView("landing")} type="button">Title screen</button>
         </div>
       </nav>}
