@@ -48,7 +48,7 @@ export interface CareerApplicationStepResult {
 
 /** Apply one released film to the studio ledger and career without mutating setup state. */
 export function createCareerApplicationStepResult(
-  run: ProjectRunContext,
+  projectContext: ProjectRunContext,
   releaseResult: ReleaseStepResult,
   choices: CareerApplicationChoices
 ): CareerApplicationStepResult {
@@ -57,34 +57,39 @@ export function createCareerApplicationStepResult(
   }
 
   const outcome = releaseResult.releaseOutcomeEvaluation;
-  if (outcome.projectId !== run.filmProjectState.id) {
+  if (outcome.projectId !== projectContext.filmProjectState.id) {
     throw new Error("The release result does not belong to the active film project.");
   }
+  if (projectContext.careerState.completedFilms.some(
+    (film) => film.projectId === projectContext.filmProjectState.id
+  )) {
+    throw new Error("This film has already been applied to the studio and career.");
+  }
 
-  const previousStudio = run.careerState.studio;
+  const previousStudio = projectContext.careerState.studio;
   const studioReleaseApplicationResult = applyReleaseResultToStudio(previousStudio, outcome);
   const careerWithReleaseStudio: CareerState = {
-    ...run.careerState,
+    ...projectContext.careerState,
     studio: {
       ...studioReleaseApplicationResult.studio,
-      money: run.careerState.studio.money
+      money: projectContext.careerState.studio.money
     }
   };
   const releaseIncome = {
-    id: asStudioIncomeId(`studio_income_${run.filmProjectState.id}_release`),
-    title: `${run.filmProjectState.title} release result`,
+    id: asStudioIncomeId(`studio_income_${projectContext.filmProjectState.id}_release`),
+    title: `${projectContext.filmProjectState.title} release result`,
     amount: outcome.netRevenue,
-    sourceProjectId: run.filmProjectState.id,
+    sourceProjectId: projectContext.filmProjectState.id,
     quarter: careerWithReleaseStudio.currentQuarter,
     note: "Net release revenue after marketing and distribution costs."
   };
   const careerWithIncome = applyStudioIncome(careerWithReleaseStudio, releaseIncome);
   const completedFilmRecord: CompletedFilmRecord = {
-    projectId: run.filmProjectState.id,
-    title: run.filmProjectState.title,
+    projectId: projectContext.filmProjectState.id,
+    title: projectContext.filmProjectState.title,
     year: careerWithIncome.currentYear,
-    genreId: run.filmProjectState.genreId,
-    scale: run.filmProjectState.scale,
+    genreId: projectContext.filmProjectState.genreId,
+    scale: projectContext.filmProjectState.scale,
     quality: releaseResult.filmResult.quality,
     audienceAppeal: releaseResult.filmResult.audienceAppeal,
     criticalAppeal: releaseResult.filmResult.criticalAppeal,
@@ -128,7 +133,7 @@ export function createCareerApplicationStepResult(
     prestigeDelta: updatedStudio.prestige - previousStudio.prestige,
     pipelineStep: {
       label: "Studio updated",
-      detail: `${run.filmProjectState.title} recorded · Year ${careerYearEvaluation.year} evaluated`,
+      detail: `${projectContext.filmProjectState.title} recorded · Year ${careerYearEvaluation.year} evaluated`,
       score: careerYearEvaluation.overall
     }
   };
