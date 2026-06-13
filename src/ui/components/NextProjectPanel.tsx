@@ -55,12 +55,16 @@ interface NextProjectPanelProps {
   readonly thirdProjectDevelopmentResult: DevelopmentStepResult | null;
   readonly thirdProjectPreProductionSelections: PreProductionSelectionState;
   readonly thirdProjectPreProductionResult: PreProductionStepResult | null;
+  readonly thirdProjectSelectedProductionEventId: string;
+  readonly thirdProjectShootResult: ShootStepResult | null;
   readonly onCreate: (result: NextProjectStepResult) => void;
   readonly onCreateThirdProject: (result: NextProjectStepResult) => void;
   readonly onSelectThirdProjectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteThirdProjectDevelopment: (result: DevelopmentStepResult) => void;
   readonly onChangeThirdProjectPreProductionSelections: (selections: PreProductionSelectionState) => void;
   readonly onLockThirdProjectPreProduction: (result: PreProductionStepResult) => void;
+  readonly onSelectThirdProjectProductionEvent: (eventId: string) => void;
+  readonly onResolveThirdProjectShootDay: (result: ShootStepResult) => void;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
   readonly onChangePreProductionSelections: (selections: PreProductionSelectionState) => void;
@@ -94,12 +98,16 @@ export function NextProjectPanel({
   thirdProjectDevelopmentResult,
   thirdProjectPreProductionSelections,
   thirdProjectPreProductionResult,
+  thirdProjectSelectedProductionEventId,
+  thirdProjectShootResult,
   onCreate,
   onCreateThirdProject,
   onSelectThirdProjectDevelopmentPath,
   onCompleteThirdProjectDevelopment,
   onChangeThirdProjectPreProductionSelections,
   onLockThirdProjectPreProduction,
+  onSelectThirdProjectProductionEvent,
+  onResolveThirdProjectShootDay,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
   onChangePreProductionSelections,
@@ -284,8 +292,12 @@ export function NextProjectPanel({
           developmentResult={thirdProjectDevelopmentResult}
           preProductionSelections={thirdProjectPreProductionSelections}
           preProductionResult={thirdProjectPreProductionResult}
+          selectedProductionEventId={thirdProjectSelectedProductionEventId}
+          shootResult={thirdProjectShootResult}
           onChangePreProductionSelections={onChangeThirdProjectPreProductionSelections}
           onLockPreProduction={onLockThirdProjectPreProduction}
+          onSelectProductionEvent={onSelectThirdProjectProductionEvent}
+          onResolveShootDay={onResolveThirdProjectShootDay}
           result={thirdProjectResult}
           selectedDevelopmentPath={selectedThirdDevelopmentPath}
           sourceProject={result}
@@ -303,8 +315,12 @@ function ThirdProjectSetup({
   developmentResult,
   preProductionSelections,
   preProductionResult,
+  selectedProductionEventId,
+  shootResult,
   onChangePreProductionSelections,
   onLockPreProduction,
+  onSelectProductionEvent,
+  onResolveShootDay,
   result,
   selectedDevelopmentPath,
   sourceProject,
@@ -316,8 +332,12 @@ function ThirdProjectSetup({
   readonly developmentResult: DevelopmentStepResult | null;
   readonly preProductionSelections: PreProductionSelectionState;
   readonly preProductionResult: PreProductionStepResult | null;
+  readonly selectedProductionEventId: string;
+  readonly shootResult: ShootStepResult | null;
   readonly onChangePreProductionSelections: (selections: PreProductionSelectionState) => void;
   readonly onLockPreProduction: (result: PreProductionStepResult) => void;
+  readonly onSelectProductionEvent: (eventId: string) => void;
+  readonly onResolveShootDay: (result: ShootStepResult) => void;
   readonly result: NextProjectStepResult | null;
   readonly selectedDevelopmentPath: DevelopmentPath | null;
   readonly sourceProject: NextProjectStepResult;
@@ -377,6 +397,7 @@ function ThirdProjectSetup({
           <NextProjectResultPanel
             developmentResult={developmentResult}
             preProductionResult={preProductionResult}
+            shootResult={shootResult}
             projectNumber={3}
             result={result}
           />
@@ -387,11 +408,23 @@ function ThirdProjectSetup({
                 result={developmentResult}
               />
               {preProductionResult ? (
-                <ProductionTeamResultPanel
-                  nextStepLabel="Next step: shoot film 3"
-                  projectLabel="Film 3"
-                  result={preProductionResult}
-                />
+                <>
+                  <ProductionTeamResultPanel
+                    nextStepLabel={shootResult ? "Shoot day resolved" : "Next step: shoot film 3"}
+                    projectLabel="Film 3"
+                    result={preProductionResult}
+                  />
+                  <ShootPanel
+                    developmentResult={developmentResult}
+                    onResolveShootDay={onResolveShootDay}
+                    onSelectProductionEvent={onSelectProductionEvent}
+                    preProductionResult={preProductionResult}
+                    projectContext={createProjectRunContext(result)}
+                    projectLabel="film 3"
+                    selectedProductionEventId={selectedProductionEventId}
+                    shootResult={shootResult}
+                  />
+                </>
               ) : (
                 <PreProductionPanel
                   developmentResult={developmentResult}

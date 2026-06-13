@@ -8,10 +8,12 @@ interface ShootDayResultPanelProps {
 }
 
 export function ShootDayResultPanel({ preparation, result, projectLabel = "first film" }: ShootDayResultPanelProps) {
+  const heading = projectLabel === "first film" ? "Shoot day result" : `${projectLabel.replace("film", "Film")} shoot day result`;
+
   return (
     <section className="shoot-desk-section shoot-result-section">
       <div className="shoot-section-heading">
-        <div><span className="eyebrow">Resolved day</span><h3>{projectLabel === "film 2" ? "Film 2 shoot day result" : "Shoot day result"}</h3></div>
+        <div><span className="eyebrow">Resolved day</span><h3>{heading}</h3></div>
         <strong className="shoot-day-badge">Take quality {result.shootDayResult.takeQuality}</strong>
       </div>
       <div className="shoot-result-grid">
