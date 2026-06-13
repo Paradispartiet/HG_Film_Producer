@@ -19,7 +19,7 @@ import { asStudioIncomeId } from "../../domain/ids.js";
 import type { StudioReleaseApplicationResult } from "../../domain/release.js";
 import type { PipelineStepSummary } from "../types.js";
 import { adaptFilmSeedData } from "./adaptFilmSeedData.js";
-import type { ProjectSetupRun } from "./createProjectSetupRun.js";
+import type { ProjectRunContext } from "./createProjectRunContext.js";
 import type { ReleaseStepResult } from "./createReleaseStepRun.js";
 
 const careerApplicationData = adaptFilmSeedData<{
@@ -47,7 +47,7 @@ export interface CareerApplicationStepResult {
 
 /** Apply one released film to the studio ledger and career without mutating setup state. */
 export function createCareerApplicationStepResult(
-  run: ProjectSetupRun,
+  run: ProjectRunContext,
   releaseResult: ReleaseStepResult,
   choices: CareerApplicationChoices
 ): CareerApplicationStepResult {
