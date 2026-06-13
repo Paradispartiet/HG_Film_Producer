@@ -84,3 +84,4 @@ export interface NextProjectFormErrors {
 
 export type ProjectShootLabel = "first film" | "film 2";
 export type ProjectPostProductionLabel = ProjectShootLabel;
+export type ProjectReleaseLabel = ProjectPostProductionLabel;

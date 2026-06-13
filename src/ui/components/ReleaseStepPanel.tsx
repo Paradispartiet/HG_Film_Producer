@@ -6,6 +6,7 @@ import type { PostProductionStepResult } from "../demo/createPostProductionStepR
 import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
 import type { ProjectRunContext } from "../demo/createProjectRunContext.js";
 import type { ShootStepResult } from "../demo/createShootStepRun.js";
+import type { ProjectReleaseLabel } from "../types.js";
 import { AudienceResultPanel } from "./AudienceResultPanel.js";
 import { AwardsResultPanel } from "./AwardsResultPanel.js";
 import { FestivalSubmissionPanel } from "./FestivalSubmissionPanel.js";
@@ -16,7 +17,7 @@ import { ReviewResultPanel } from "./ReviewResultPanel.js";
 
 interface ReleaseStepPanelProps {
   readonly projectContext: ProjectRunContext;
-  readonly projectLabel?: string;
+  readonly projectLabel?: ProjectReleaseLabel;
   readonly developmentResult: DevelopmentStepResult;
   readonly preProductionResult: PreProductionStepResult;
   readonly shootResult: ShootStepResult;
@@ -31,7 +32,7 @@ const options = getReleaseStepOptions();
 
 export function ReleaseStepPanel({
   projectContext,
-  projectLabel = "film",
+  projectLabel = "first film",
   developmentResult,
   preProductionResult,
   shootResult,
@@ -106,10 +107,8 @@ export function ReleaseStepPanel({
           <AwardsResultPanel awards={options.awards} result={result.awardsOutcome} />
           <ReleaseOutcomeResultPanel
             evaluation={result.releaseOutcomeEvaluation}
+            projectLabel={projectLabel}
             strategyScore={result.releaseStrategyScore}
-            {...(projectLabel === "film 2"
-              ? { nextStepLabel: "Next step: apply film 2 to studio/career" }
-              : {})}
           />
         </div>
       )}
