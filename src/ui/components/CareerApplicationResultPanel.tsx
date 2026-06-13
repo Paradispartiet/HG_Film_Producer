@@ -28,7 +28,7 @@ export function CareerApplicationResultPanel({
 
   return (
     <div className="career-application-results">
-      <StudioDeltaPanel projectContext={projectContext} result={result} />
+      <StudioDeltaPanel result={result} />
       <div className="career-review-grid">
         <CompletedFilmPanel projectContext={projectContext} releaseResult={releaseResult} result={result} />
         <CareerYearPanel result={result} />

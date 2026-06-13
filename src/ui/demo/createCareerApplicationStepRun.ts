@@ -32,6 +32,7 @@ export interface CareerApplicationChoices {
 
 export interface CareerApplicationStepResult {
   readonly choices: CareerApplicationChoices;
+  readonly previousStudio: Studio;
   readonly updatedStudio: Studio;
   readonly updatedCareerState: CareerState;
   readonly completedFilmRecord: CompletedFilmRecord;
@@ -60,7 +61,8 @@ export function createCareerApplicationStepResult(
     throw new Error("The release result does not belong to the active film project.");
   }
 
-  const studioReleaseApplicationResult = applyReleaseResultToStudio(run.studioState, outcome);
+  const previousStudio = run.careerState.studio;
+  const studioReleaseApplicationResult = applyReleaseResultToStudio(previousStudio, outcome);
   const careerWithReleaseStudio: CareerState = {
     ...run.careerState,
     studio: {
@@ -113,6 +115,7 @@ export function createCareerApplicationStepResult(
 
   return {
     choices,
+    previousStudio,
     updatedStudio,
     updatedCareerState,
     completedFilmRecord,
@@ -120,9 +123,9 @@ export function createCareerApplicationStepResult(
     careerYearEvaluation,
     studioIdentityEvaluation,
     milestoneResults,
-    moneyDelta: updatedStudio.money - run.studioState.money,
-    reputationDelta: updatedStudio.reputation - run.studioState.reputation,
-    prestigeDelta: updatedStudio.prestige - run.studioState.prestige,
+    moneyDelta: updatedStudio.money - previousStudio.money,
+    reputationDelta: updatedStudio.reputation - previousStudio.reputation,
+    prestigeDelta: updatedStudio.prestige - previousStudio.prestige,
     pipelineStep: {
       label: "Studio updated",
       detail: `${run.filmProjectState.title} recorded · Year ${careerYearEvaluation.year} evaluated`,
