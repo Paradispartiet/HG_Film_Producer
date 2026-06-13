@@ -835,7 +835,7 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
   .legacy-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* Film 2 reuses the shared pre-production office inside the next-project workspace. */
+/* Later films reuse the shared pre-production office inside their own project workspaces. */
 .next-project-panel > .pre-production-panel,
 .next-project-panel > .production-result-panel,
 .next-project-panel .next-project-result + .development-result-panel,
