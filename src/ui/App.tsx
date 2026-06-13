@@ -82,6 +82,8 @@ export function App() {
   const [thirdProjectResult, setThirdProjectResult] = useState<NextProjectStepResult | null>(null);
   const [selectedThirdDevelopmentPath, setSelectedThirdDevelopmentPath] = useState<DevelopmentPath | null>(null);
   const [thirdProjectDevelopmentResult, setThirdProjectDevelopmentResult] = useState<DevelopmentStepResult | null>(null);
+  const [thirdProjectPreProductionSelections, setThirdProjectPreProductionSelections] = useState<PreProductionSelectionState>(emptyPreProductionSelections);
+  const [thirdProjectPreProductionResult, setThirdProjectPreProductionResult] = useState<PreProductionStepResult | null>(null);
 
   function createCustomRun(run: ProjectSetupRun) {
     setCustomRun(run);
@@ -153,6 +155,8 @@ export function App() {
     setThirdProjectResult(null);
     setSelectedThirdDevelopmentPath(null);
     setThirdProjectDevelopmentResult(null);
+    setThirdProjectPreProductionSelections(emptyPreProductionSelections);
+    setThirdProjectPreProductionResult(null);
   }
 
   function lockPreProduction(result: PreProductionStepResult) {
@@ -232,6 +236,8 @@ export function App() {
               thirdProjectResult={thirdProjectResult}
               selectedThirdDevelopmentPath={selectedThirdDevelopmentPath}
               thirdProjectDevelopmentResult={thirdProjectDevelopmentResult}
+              thirdProjectPreProductionSelections={thirdProjectPreProductionSelections}
+              thirdProjectPreProductionResult={thirdProjectPreProductionResult}
               onCreateNextProject={(result) => {
                 setNextProjectResult(result);
                 setSelectedNextDevelopmentPath(null);
@@ -329,9 +335,20 @@ export function App() {
                 setThirdProjectResult(result);
                 setSelectedThirdDevelopmentPath(null);
                 setThirdProjectDevelopmentResult(null);
+                setThirdProjectPreProductionSelections(emptyPreProductionSelections);
+                setThirdProjectPreProductionResult(null);
               }}
               onSelectThirdProjectDevelopmentPath={setSelectedThirdDevelopmentPath}
-              onCompleteThirdProjectDevelopment={setThirdProjectDevelopmentResult}
+              onCompleteThirdProjectDevelopment={(result) => {
+                setThirdProjectDevelopmentResult(result);
+                const projectContext = createProjectRunContext(nextProjectResultRequired(thirdProjectResult));
+                const selectedLocationId = getPreProductionLocationOptions(projectContext, result)
+                  .find((option) => option.recommended)?.id ?? "";
+                setThirdProjectPreProductionSelections({ ...emptyPreProductionSelections, selectedLocationId });
+                setThirdProjectPreProductionResult(null);
+              }}
+              onChangeThirdProjectPreProductionSelections={setThirdProjectPreProductionSelections}
+              onLockThirdProjectPreProduction={setThirdProjectPreProductionResult}
             />
           )
           : <main className="setup-workspace"><SetupPanel onCreate={createCustomRun} /></main>
@@ -411,6 +428,8 @@ interface CustomDashboardProps {
   readonly thirdProjectResult: NextProjectStepResult | null;
   readonly selectedThirdDevelopmentPath: DevelopmentPath | null;
   readonly thirdProjectDevelopmentResult: DevelopmentStepResult | null;
+  readonly thirdProjectPreProductionSelections: PreProductionSelectionState;
+  readonly thirdProjectPreProductionResult: PreProductionStepResult | null;
   readonly onCreateNextProject: (result: NextProjectStepResult) => void;
   readonly onSelectSecondProjectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteSecondProjectDevelopment: (result: DevelopmentStepResult) => void;
@@ -426,6 +445,8 @@ interface CustomDashboardProps {
   readonly onCreateThirdProject: (result: NextProjectStepResult) => void;
   readonly onSelectThirdProjectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteThirdProjectDevelopment: (result: DevelopmentStepResult) => void;
+  readonly onChangeThirdProjectPreProductionSelections: (selections: PreProductionSelectionState) => void;
+  readonly onLockThirdProjectPreProduction: (result: PreProductionStepResult) => void;
 }
 
 function CustomDashboard({
@@ -472,6 +493,8 @@ function CustomDashboard({
   thirdProjectResult,
   selectedThirdDevelopmentPath,
   thirdProjectDevelopmentResult,
+  thirdProjectPreProductionSelections,
+  thirdProjectPreProductionResult,
   onCreateNextProject,
   onSelectSecondProjectDevelopmentPath,
   onCompleteSecondProjectDevelopment,
@@ -487,6 +510,8 @@ function CustomDashboard({
   onCreateThirdProject,
   onSelectThirdProjectDevelopmentPath,
   onCompleteThirdProjectDevelopment,
+  onChangeThirdProjectPreProductionSelections,
+  onLockThirdProjectPreProduction,
 }: CustomDashboardProps) {
   const developmentPipeline = developmentResult
     ? addDevelopmentPipelineStep(run, developmentResult.pipelineStep)
@@ -597,12 +622,16 @@ function CustomDashboard({
                 thirdProjectResult={thirdProjectResult}
                 selectedThirdDevelopmentPath={selectedThirdDevelopmentPath}
                 thirdProjectDevelopmentResult={thirdProjectDevelopmentResult}
+                thirdProjectPreProductionSelections={thirdProjectPreProductionSelections}
+                thirdProjectPreProductionResult={thirdProjectPreProductionResult}
                 onChangeReleaseChoices={onChangeSecondProjectReleaseChoices}
                 onRelease={onReleaseSecondProject}
                 onApplyCareerResult={onApplySecondProjectCareerResult}
                 onCreateThirdProject={onCreateThirdProject}
                 onSelectThirdProjectDevelopmentPath={onSelectThirdProjectDevelopmentPath}
                 onCompleteThirdProjectDevelopment={onCompleteThirdProjectDevelopment}
+                onChangeThirdProjectPreProductionSelections={onChangeThirdProjectPreProductionSelections}
+                onLockThirdProjectPreProduction={onLockThirdProjectPreProduction}
                 preProductionSelections={secondProjectPreProductionSelections}
                 result={nextProjectResult}
                 run={run}
