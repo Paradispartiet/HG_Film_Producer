@@ -468,7 +468,7 @@ function CustomDashboard({
                         <PostProductionPanel choices={postProductionChoices} onChange={onChangePostProductionChoices} onLock={onLockPostProduction} preProductionResult={preProductionResult} projectContext={createProjectRunContext(run)} result={postProductionResult} shootResult={shootResult} />
                       )}
                       {shootResult && postProductionResult && (
-                        <ReleaseStepPanel choices={releaseChoices} developmentResult={developmentResult} onChange={onChangeReleaseChoices} onRelease={onReleaseFilm} postProductionResult={postProductionResult} preProductionResult={preProductionResult} projectContext={createProjectRunContext(run)} result={releaseResult} shootResult={shootResult} />
+                        <ReleaseStepPanel choices={releaseChoices} developmentResult={developmentResult} onChange={onChangeReleaseChoices} onRelease={onReleaseFilm} postProductionResult={postProductionResult} preProductionResult={preProductionResult} projectContext={createProjectRunContext(run)} projectLabel="first film" result={releaseResult} shootResult={shootResult} />
                       )}
                       {postProductionResult && (
                         <CareerApplicationPanel onApply={onApplyCareerResult} releaseResult={releaseResult} result={careerApplicationResult} run={run} />
