@@ -78,6 +78,7 @@ export function App() {
   const [secondProjectPostProductionResult, setSecondProjectPostProductionResult] = useState<PostProductionStepResult | null>(null);
   const [secondProjectReleaseChoices, setSecondProjectReleaseChoices] = useState<ReleaseStepChoices>(emptyReleaseChoices);
   const [secondProjectReleaseResult, setSecondProjectReleaseResult] = useState<ReleaseStepResult | null>(null);
+  const [secondProjectCareerApplicationResult, setSecondProjectCareerApplicationResult] = useState<CareerApplicationStepResult | null>(null);
 
   function createCustomRun(run: ProjectSetupRun) {
     setCustomRun(run);
@@ -145,6 +146,7 @@ export function App() {
     setSecondProjectPostProductionResult(null);
     setSecondProjectReleaseChoices(emptyReleaseChoices);
     setSecondProjectReleaseResult(null);
+    setSecondProjectCareerApplicationResult(null);
   }
 
   function lockPreProduction(result: PreProductionStepResult) {
@@ -194,7 +196,7 @@ export function App() {
               onReleaseFilm={(result) => { setReleaseResult(result); setCareerApplicationResult(null); resetNextProject(); }}
               onApplyCareerResult={() => {
                 if (releaseResult) {
-                  setCareerApplicationResult(createCareerApplicationStepResult(customRun, releaseResult, { closeFilmYear: true }));
+                  setCareerApplicationResult(createCareerApplicationStepResult(createProjectRunContext(customRun), releaseResult, { closeFilmYear: true }));
                   resetNextProject();
                 }
               }}
@@ -220,6 +222,7 @@ export function App() {
               secondProjectPostProductionResult={secondProjectPostProductionResult}
               secondProjectReleaseChoices={secondProjectReleaseChoices}
               secondProjectReleaseResult={secondProjectReleaseResult}
+              secondProjectCareerApplicationResult={secondProjectCareerApplicationResult}
               onCreateNextProject={(result) => {
                 setNextProjectResult(result);
                 setSelectedNextDevelopmentPath(null);
@@ -232,6 +235,7 @@ export function App() {
                 setSecondProjectPostProductionResult(null);
                 setSecondProjectReleaseChoices(emptyReleaseChoices);
                 setSecondProjectReleaseResult(null);
+                setSecondProjectCareerApplicationResult(null);
               }}
               onSelectSecondProjectDevelopmentPath={setSelectedNextDevelopmentPath}
               onCompleteSecondProjectDevelopment={(result) => {
@@ -247,6 +251,7 @@ export function App() {
                 setSecondProjectPostProductionResult(null);
                 setSecondProjectReleaseChoices(emptyReleaseChoices);
                 setSecondProjectReleaseResult(null);
+                setSecondProjectCareerApplicationResult(null);
               }}
               onChangeSecondProjectPreProductionSelections={setSecondProjectPreProductionSelections}
               onLockSecondProjectPreProduction={(result) => {
@@ -257,6 +262,7 @@ export function App() {
                 setSecondProjectPostProductionResult(null);
                 setSecondProjectReleaseChoices(emptyReleaseChoices);
                 setSecondProjectReleaseResult(null);
+                setSecondProjectCareerApplicationResult(null);
               }}
               onSelectSecondProjectProductionEvent={setSecondProjectSelectedProductionEventId}
               onResolveSecondProjectShootDay={(result) => {
@@ -265,15 +271,30 @@ export function App() {
                 setSecondProjectPostProductionResult(null);
                 setSecondProjectReleaseChoices(emptyReleaseChoices);
                 setSecondProjectReleaseResult(null);
+                setSecondProjectCareerApplicationResult(null);
               }}
               onChangeSecondProjectPostProductionChoices={setSecondProjectPostProductionChoices}
               onLockSecondProjectPostProduction={(result) => {
                 setSecondProjectPostProductionResult(result);
                 setSecondProjectReleaseChoices(emptyReleaseChoices);
                 setSecondProjectReleaseResult(null);
+                setSecondProjectCareerApplicationResult(null);
               }}
               onChangeSecondProjectReleaseChoices={setSecondProjectReleaseChoices}
-              onReleaseSecondProject={setSecondProjectReleaseResult}
+              onReleaseSecondProject={(result) => {
+                setSecondProjectReleaseResult(result);
+                setSecondProjectCareerApplicationResult(null);
+              }}
+              onApplySecondProjectCareerResult={() => {
+                if (!nextProjectResult || !secondProjectReleaseResult) return;
+                setSecondProjectCareerApplicationResult(
+                  createCareerApplicationStepResult(
+                    createProjectRunContext(nextProjectResult),
+                    secondProjectReleaseResult,
+                    { closeFilmYear: true }
+                  )
+                );
+              }}
             />
           )
           : <main className="setup-workspace"><SetupPanel onCreate={createCustomRun} /></main>
@@ -349,6 +370,7 @@ interface CustomDashboardProps {
   readonly secondProjectPostProductionResult: PostProductionStepResult | null;
   readonly secondProjectReleaseChoices: ReleaseStepChoices;
   readonly secondProjectReleaseResult: ReleaseStepResult | null;
+  readonly secondProjectCareerApplicationResult: CareerApplicationStepResult | null;
   readonly onCreateNextProject: (result: NextProjectStepResult) => void;
   readonly onSelectSecondProjectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteSecondProjectDevelopment: (result: DevelopmentStepResult) => void;
@@ -360,6 +382,7 @@ interface CustomDashboardProps {
   readonly onLockSecondProjectPostProduction: (result: PostProductionStepResult) => void;
   readonly onChangeSecondProjectReleaseChoices: (choices: ReleaseStepChoices) => void;
   readonly onReleaseSecondProject: (result: ReleaseStepResult) => void;
+  readonly onApplySecondProjectCareerResult: () => void;
 }
 
 function CustomDashboard({
@@ -402,6 +425,7 @@ function CustomDashboard({
   secondProjectPostProductionResult,
   secondProjectReleaseChoices,
   secondProjectReleaseResult,
+  secondProjectCareerApplicationResult,
   onCreateNextProject,
   onSelectSecondProjectDevelopmentPath,
   onCompleteSecondProjectDevelopment,
@@ -412,7 +436,8 @@ function CustomDashboard({
   onChangeSecondProjectPostProductionChoices,
   onLockSecondProjectPostProduction,
   onChangeSecondProjectReleaseChoices,
-  onReleaseSecondProject
+  onReleaseSecondProject,
+  onApplySecondProjectCareerResult
 }: CustomDashboardProps) {
   const developmentPipeline = developmentResult
     ? addDevelopmentPipelineStep(run, developmentResult.pipelineStep)
@@ -426,14 +451,15 @@ function CustomDashboard({
   const postProductionPipeline = postProductionResult ? [...shootPipeline, postProductionResult.pipelineStep] : shootPipeline;
   const releasePipeline = releaseResult ? [...postProductionPipeline, releaseResult.pipelineStep] : postProductionPipeline;
   const pipelineSteps = careerApplicationResult ? [...releasePipeline, careerApplicationResult.pipelineStep] : releasePipeline;
-  const displayedStudio = careerApplicationResult
+  const displayedCareerResult = secondProjectCareerApplicationResult ?? careerApplicationResult;
+  const displayedStudio = displayedCareerResult
     ? {
-        name: careerApplicationResult.updatedStudio.name,
-        money: careerApplicationResult.updatedStudio.money,
-        reputation: careerApplicationResult.updatedStudio.reputation,
-        prestige: careerApplicationResult.updatedStudio.prestige,
-        currentYear: careerApplicationResult.updatedCareerState.currentYear,
-        currentQuarter: careerApplicationResult.updatedCareerState.currentQuarter.toUpperCase()
+        name: displayedCareerResult.updatedStudio.name,
+        money: displayedCareerResult.updatedStudio.money,
+        reputation: displayedCareerResult.updatedStudio.reputation,
+        prestige: displayedCareerResult.updatedStudio.prestige,
+        currentYear: displayedCareerResult.updatedCareerState.currentYear,
+        currentQuarter: displayedCareerResult.updatedCareerState.currentQuarter.toUpperCase()
       }
     : run.studio;
 
@@ -471,7 +497,7 @@ function CustomDashboard({
                         <ReleaseStepPanel choices={releaseChoices} developmentResult={developmentResult} onChange={onChangeReleaseChoices} onRelease={onReleaseFilm} postProductionResult={postProductionResult} preProductionResult={preProductionResult} projectContext={createProjectRunContext(run)} projectLabel="first film" result={releaseResult} shootResult={shootResult} />
                       )}
                       {postProductionResult && (
-                        <CareerApplicationPanel onApply={onApplyCareerResult} releaseResult={releaseResult} result={careerApplicationResult} run={run} />
+                        <CareerApplicationPanel onApply={onApplyCareerResult} projectContext={createProjectRunContext(run)} projectLabel="first film" releaseResult={releaseResult} result={careerApplicationResult} strategicGoal={run.strategicGoal} />
                       )}
                     </>
                   )
@@ -517,8 +543,10 @@ function CustomDashboard({
                 onLockPostProduction={onLockSecondProjectPostProduction}
                 releaseChoices={secondProjectReleaseChoices}
                 releaseResult={secondProjectReleaseResult}
+                secondProjectCareerApplicationResult={secondProjectCareerApplicationResult}
                 onChangeReleaseChoices={onChangeSecondProjectReleaseChoices}
                 onRelease={onReleaseSecondProject}
+                onApplyCareerResult={onApplySecondProjectCareerResult}
                 preProductionSelections={secondProjectPreProductionSelections}
                 result={nextProjectResult}
                 run={run}

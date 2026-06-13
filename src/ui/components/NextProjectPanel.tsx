@@ -6,6 +6,7 @@ import {
   type NextProjectStepResult,
 } from "../demo/createNextProjectStepRun.js";
 import type { CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun.js";
+import { CareerApplicationPanel } from "./CareerApplicationPanel.js";
 import type { ProjectSetupRun } from "../demo/createProjectSetupRun.js";
 import type { DevelopmentPath, DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import { createProjectRunContext } from "../demo/createProjectRunContext.js";
@@ -48,6 +49,7 @@ interface NextProjectPanelProps {
   readonly postProductionResult: PostProductionStepResult | null;
   readonly releaseChoices: ReleaseStepChoices;
   readonly releaseResult: ReleaseStepResult | null;
+  readonly secondProjectCareerApplicationResult: CareerApplicationStepResult | null;
   readonly onCreate: (result: NextProjectStepResult) => void;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
@@ -59,6 +61,7 @@ interface NextProjectPanelProps {
   readonly onLockPostProduction: (result: PostProductionStepResult) => void;
   readonly onChangeReleaseChoices: (choices: ReleaseStepChoices) => void;
   readonly onRelease: (result: ReleaseStepResult) => void;
+  readonly onApplyCareerResult: () => void;
 }
 
 export function NextProjectPanel({
@@ -75,6 +78,7 @@ export function NextProjectPanel({
   postProductionResult,
   releaseChoices,
   releaseResult,
+  secondProjectCareerApplicationResult,
   onCreate,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
@@ -86,6 +90,7 @@ export function NextProjectPanel({
   onLockPostProduction,
   onChangeReleaseChoices,
   onRelease,
+  onApplyCareerResult,
 }: NextProjectPanelProps) {
   const [choices, setChoices] = useState<NextProjectChoices>(initialChoices);
   const [errors, setErrors] = useState<NextProjectFormErrors>({});
@@ -144,7 +149,7 @@ export function NextProjectPanel({
       </div>
       {result ? (
         <>
-          <NextProjectResultPanel developmentResult={developmentResult} postProductionResult={postProductionResult} preProductionResult={preProductionResult} releaseResult={releaseResult} result={result} shootResult={shootResult} />
+          <NextProjectResultPanel careerApplicationResult={secondProjectCareerApplicationResult} developmentResult={developmentResult} postProductionResult={postProductionResult} preProductionResult={preProductionResult} releaseResult={releaseResult} result={result} shootResult={shootResult} />
           {developmentResult ? (
             <>
               <DevelopmentResultPanel result={developmentResult} />
@@ -177,7 +182,7 @@ export function NextProjectPanel({
                       shootResult={shootResult}
                     />
                   )}
-                  {postProductionResult && (
+                  {shootResult && postProductionResult && (
                     <ReleaseStepPanel
                       choices={releaseChoices}
                       developmentResult={developmentResult}
@@ -189,6 +194,16 @@ export function NextProjectPanel({
                       projectLabel="film 2"
                       result={releaseResult}
                       shootResult={shootResult}
+                    />
+                  )}
+                  {postProductionResult && (
+                    <CareerApplicationPanel
+                      onApply={onApplyCareerResult}
+                      projectContext={createProjectRunContext(result)}
+                      projectLabel="film 2"
+                      releaseResult={releaseResult}
+                      result={secondProjectCareerApplicationResult}
+                      strategicGoal={result.selectedStrategicGoal ?? run.strategicGoal}
                     />
                   )}
                 </>

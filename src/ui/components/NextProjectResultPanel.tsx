@@ -4,6 +4,7 @@ import type { PreProductionStepResult } from "../demo/createPreProductionStepRun
 import type { PostProductionStepResult } from "../demo/createPostProductionStepRun.js";
 import type { ShootStepResult } from "../demo/createShootStepRun.js";
 import type { ReleaseStepResult } from "../demo/createReleaseStepRun.js";
+import type { CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun.js";
 
 interface NextProjectResultPanelProps {
   readonly result: NextProjectStepResult;
@@ -12,6 +13,7 @@ interface NextProjectResultPanelProps {
   readonly shootResult?: ShootStepResult | null;
   readonly postProductionResult?: PostProductionStepResult | null;
   readonly releaseResult?: ReleaseStepResult | null;
+  readonly careerApplicationResult?: CareerApplicationStepResult | null;
 }
 
 export function NextProjectResultPanel({
@@ -21,6 +23,7 @@ export function NextProjectResultPanel({
   shootResult = null,
   postProductionResult = null,
   releaseResult = null,
+  careerApplicationResult = null,
 }: NextProjectResultPanelProps) {
   const developmentPipeline = developmentResult
     ? [...result.pipelineSteps, developmentResult.pipelineStep]
@@ -34,9 +37,12 @@ export function NextProjectResultPanel({
   const postProductionPipeline = postProductionResult
     ? [...shootPipeline, postProductionResult.pipelineStep]
     : shootPipeline;
-  const pipelineSteps = releaseResult
+  const releasePipeline = releaseResult
     ? [...postProductionPipeline, releaseResult.pipelineStep]
     : postProductionPipeline;
+  const pipelineSteps = careerApplicationResult
+    ? [...releasePipeline, careerApplicationResult.pipelineStep]
+    : releasePipeline;
 
   return (
     <section className="next-project-result" aria-live="polite">
@@ -48,7 +54,7 @@ export function NextProjectResultPanel({
         </div>
         <div className="ready-badge">
           <span>Next status</span>
-          <strong>{releaseResult ? "Film released" : postProductionResult ? "Post-production locked" : shootResult ? "Shoot day resolved" : preProductionResult ? "Pre-production locked" : developmentResult ? "Development action completed" : "Ready for development"}</strong>
+          <strong>{careerApplicationResult ? "Studio updated" : releaseResult ? "Film released" : postProductionResult ? "Post-production locked" : shootResult ? "Shoot day resolved" : preProductionResult ? "Pre-production locked" : developmentResult ? "Development action completed" : "Ready for development"}</strong>
         </div>
       </div>
       <div className="next-project-result-grid">
@@ -77,17 +83,17 @@ export function NextProjectResultPanel({
           </dl>
         </div>
         <div className="carried-studio-card">
-          <span>Carried studio</span>
+          <span>{careerApplicationResult ? "Updated studio" : "Carried studio"}</span>
           <strong>{result.carriedStudio.name}</strong>
           <p>
-            {formatMoney(result.carriedStudio.money)} · Reputation{" "}
-            {result.carriedStudio.reputation} · Prestige{" "}
-            {result.carriedStudio.prestige}
+            {formatMoney(careerApplicationResult?.updatedStudio.money ?? result.carriedStudio.money)} · Reputation{" "}
+            {careerApplicationResult?.updatedStudio.reputation ?? result.carriedStudio.reputation} · Prestige{" "}
+            {careerApplicationResult?.updatedStudio.prestige ?? result.carriedStudio.prestige}
           </p>
           <small>
-            Year {result.carriedCareerState.currentYear} ·{" "}
-            {result.carriedCareerState.currentQuarter.toUpperCase()} ·{" "}
-            {result.carriedCareerState.completedFilms.length} completed film
+            Year {careerApplicationResult?.updatedCareerState.currentYear ?? result.carriedCareerState.currentYear} ·{" "}
+            {(careerApplicationResult?.updatedCareerState.currentQuarter ?? result.carriedCareerState.currentQuarter).toUpperCase()} ·{" "}
+            {careerApplicationResult?.updatedCareerState.completedFilms.length ?? result.carriedCareerState.completedFilms.length} completed films
           </small>
         </div>
       </div>
@@ -118,11 +124,13 @@ export function NextProjectResultPanel({
         </ol>
       </div>
       <div className="development-handoff">
-        <span>{releaseResult ? "Film 2 released" : postProductionResult ? "Film 2 cut locked" : shootResult ? "Film 2 shoot complete" : preProductionResult ? "Film 2 handoff" : developmentResult ? "Film 2 development" : "Next action"}</span>
-        <strong>{releaseResult ? "Next step: apply film 2 to studio/career" : postProductionResult ? "Release film 2" : shootResult ? "Start post-production for film 2" : preProductionResult ? "Start shoot for film 2" : developmentResult ? "Start pre-production for film 2" : "Reuse the development flow for project 2"}</strong>
+        <span>{careerApplicationResult ? "Film 2 applied" : releaseResult ? "Film 2 released" : postProductionResult ? "Film 2 cut locked" : shootResult ? "Film 2 shoot complete" : preProductionResult ? "Film 2 handoff" : developmentResult ? "Film 2 development" : "Next action"}</span>
+        <strong>{careerApplicationResult ? "Next step: start film 3" : releaseResult ? "Next step: apply film 2 to studio/career" : postProductionResult ? "Release film 2" : shootResult ? "Start post-production for film 2" : preProductionResult ? "Start shoot for film 2" : developmentResult ? "Start pre-production for film 2" : "Reuse the development flow for project 2"}</strong>
         <p>
-          {releaseResult
-            ? "The film 2 release is complete. Studio and career application remains intentionally outside this PR."
+          {careerApplicationResult
+            ? "Film 2 is recorded in the studio ledger and career filmography. Film 3 is intentionally not started here."
+            : releaseResult
+            ? "The film 2 release is complete. Close the film 2 year to update the carried-forward studio and career."
             : postProductionResult
             ? "The film 2 cut is locked. Choose a release strategy and festival to resolve the release."
             : shootResult

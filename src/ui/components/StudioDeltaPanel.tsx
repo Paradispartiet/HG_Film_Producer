@@ -1,17 +1,17 @@
 import type { CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun";
-import type { ProjectSetupRun } from "../demo/createProjectSetupRun";
+import type { ProjectRunContext } from "../demo/createProjectRunContext";
 import type { CareerApplicationDelta } from "../types";
 
 interface StudioDeltaPanelProps {
-  readonly run: ProjectSetupRun;
+  readonly projectContext: ProjectRunContext;
   readonly result: CareerApplicationStepResult;
 }
 
-export function StudioDeltaPanel({ run, result }: StudioDeltaPanelProps) {
+export function StudioDeltaPanel({ projectContext, result }: StudioDeltaPanelProps) {
   const metrics: readonly { readonly label: string; readonly value: CareerApplicationDelta; readonly money?: boolean }[] = [
-    { label: "Money", value: { before: run.studioState.money, after: result.updatedStudio.money, delta: result.moneyDelta }, money: true },
-    { label: "Reputation", value: { before: run.studioState.reputation, after: result.updatedStudio.reputation, delta: result.reputationDelta } },
-    { label: "Prestige", value: { before: run.studioState.prestige, after: result.updatedStudio.prestige, delta: result.prestigeDelta } }
+    { label: "Money", value: { before: projectContext.studioState.money, after: result.updatedStudio.money, delta: result.moneyDelta }, money: true },
+    { label: "Reputation", value: { before: projectContext.studioState.reputation, after: result.updatedStudio.reputation, delta: result.reputationDelta } },
+    { label: "Prestige", value: { before: projectContext.studioState.prestige, after: result.updatedStudio.prestige, delta: result.prestigeDelta } }
   ];
 
   return (

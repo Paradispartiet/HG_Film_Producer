@@ -1,19 +1,19 @@
 import type { CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun";
-import type { ProjectSetupRun } from "../demo/createProjectSetupRun";
+import type { ProjectRunContext } from "../demo/createProjectRunContext";
 import type { ReleaseStepResult } from "../demo/createReleaseStepRun";
 
 interface CompletedFilmPanelProps {
-  readonly run: ProjectSetupRun;
+  readonly projectContext: ProjectRunContext;
   readonly releaseResult: ReleaseStepResult;
   readonly result: CareerApplicationStepResult;
 }
 
-export function CompletedFilmPanel({ run, releaseResult, result }: CompletedFilmPanelProps) {
+export function CompletedFilmPanel({ projectContext, releaseResult, result }: CompletedFilmPanelProps) {
   const film = result.completedFilmRecord;
   return (
     <section className="career-review-card completed-film-card">
       <div className="career-card-heading"><span className="section-label">Completed film</span><strong>{film.title}</strong></div>
-      <div className="completed-film-meta"><span>{run.project.genre}</span><span>{formatLabel(film.scale)}</span></div>
+      <div className="completed-film-meta"><span>{projectContext.project.genre}</span><span>{formatLabel(film.scale)}</span></div>
       <dl className="career-metric-grid">
         <Metric label="Quality" value={`${film.quality}/100`} />
         <Metric label="Audience appeal" value={`${film.audienceAppeal}/100`} />
