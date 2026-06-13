@@ -37,6 +37,29 @@ jobs:
       - name: Build UI
         run: npm run build:ui
 
+      - name: Verify Pages artifact
+        shell: bash
+        run: |
+          set -euxo pipefail
+
+          echo "Contents of dist:"
+          find dist -maxdepth 3 -type f -print | sort
+
+          echo "Generated dist/index.html:"
+          cat dist/index.html
+
+          if grep -Fq '/src/ui/main.tsx' dist/index.html; then
+            echo "::error file=dist/index.html::Vite source entrypoint is still present in the Pages artifact."
+            exit 1
+          fi
+
+          if ! grep -Fq '/HG_Film_Producer/assets/' dist/index.html; then
+            echo "::error file=dist/index.html::Expected repository-prefixed Vite asset path was not found."
+            exit 1
+          fi
+
+          echo "Verified dist/index.html uses the built HG_Film_Producer asset bundle."
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
