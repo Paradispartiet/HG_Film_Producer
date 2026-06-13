@@ -28,16 +28,19 @@ jobs:
           node-version: 20
           cache: npm
 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build UI
         run: npm run build:ui
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: dist
+          path: ./dist
 
   deploy:
     environment:
