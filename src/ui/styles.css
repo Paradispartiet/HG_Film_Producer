@@ -486,8 +486,8 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 
 /* Interactive post-production desk */
 .post-production-panel, .post-production-result-panel { overflow: hidden; border-color: #30343a; background: linear-gradient(180deg, rgba(30, 31, 33, 0.98), rgba(17, 19, 22, 0.99)); }
-.post-production-panel--second-project, .post-production-result-panel--second-project { border-color: rgba(214, 174, 98, 0.5); box-shadow: inset 0 3px 0 rgba(214, 174, 98, 0.45); }
-.post-production-panel--second-project .post-panel-heading, .post-production-result-panel--second-project .post-panel-heading { background: linear-gradient(105deg, rgba(214, 174, 98, 0.12), transparent 62%); }
+.post-production-panel--later-project, .post-production-result-panel--later-project { border-color: rgba(214, 174, 98, 0.5); box-shadow: inset 0 3px 0 rgba(214, 174, 98, 0.45); }
+.post-production-panel--later-project .post-panel-heading, .post-production-result-panel--later-project .post-panel-heading { background: linear-gradient(105deg, rgba(214, 174, 98, 0.12), transparent 62%); }
 .post-panel-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; padding: 26px; border-bottom: 1px solid var(--line); background: linear-gradient(100deg, rgba(214, 174, 98, 0.08), transparent 56%); }
 .post-panel-heading h2, .post-section-heading h3 { margin: 4px 0 0; }
 .post-panel-heading p, .post-section-heading p { max-width: 470px; margin: 0; color: var(--muted-light); font-size: 11px; line-height: 1.55; }
@@ -750,7 +750,9 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .third-project-setup { margin-top: 24px; border-top: 2px solid rgba(108, 154, 116, 0.5); background: rgba(5, 8, 9, 0.28); }
 .third-project-setup .next-project-result,
 .third-project-setup .development-panel,
-.third-project-setup .development-result-panel { margin: 16px; }
+.third-project-setup .development-result-panel,
+.third-project-setup .post-production-panel,
+.third-project-setup .post-production-result-panel { margin: 16px; }
 .third-project-setup .development-handoff p { font-size: 12px; }
 .third-project-setup .development-handoff strong { font-size: 15px; }
 .next-project-panel--locked { padding: 26px 30px; }

@@ -39,7 +39,8 @@ export function PostProductionPanel({
 }: PostProductionPanelProps) {
   const [message, setMessage] = useState("");
   const options = getPostProductionOptions();
-  const isSecondFilm = projectLabel === "film 2";
+  const isLaterFilm = projectLabel !== "first film";
+  const displayLabel = projectLabel === "first film" ? null : projectLabel;
 
   if (result) {
     return <PostProductionResultPanel projectLabel={projectLabel} result={result} />;
@@ -62,11 +63,11 @@ export function PostProductionPanel({
   }
 
   return (
-    <section className={`panel post-production-panel${isSecondFilm ? " post-production-panel--second-project" : ""}`}>
+    <section className={`panel post-production-panel${isLaterFilm ? " post-production-panel--later-project" : ""}`}>
       <div className="post-panel-heading">
         <div>
-          <span className="eyebrow">{isSecondFilm ? "Start post-production for film 2" : "Start post-production"}</span>
-          <h2>{isSecondFilm ? `Finish ${projectContext.project.title}` : "Edit suite & finishing desk"}</h2>
+          <span className="eyebrow">{displayLabel ? `Start post-production for ${displayLabel}` : "Start post-production"}</span>
+          <h2>{displayLabel ? `Finish ${projectContext.project.title}` : "Edit suite & finishing desk"}</h2>
         </div>
         <p>Shape the locked cut, test it with an audience, and define the trailer promise.</p>
       </div>
@@ -83,7 +84,7 @@ export function PostProductionPanel({
           <small>Locking runs the test screening, trailer cut and post-production evaluation.</small>
         </div>
         <button className="primary-button" onClick={lockPostProduction} type="button">
-          {isSecondFilm ? "Lock post-production for film 2" : "Lock post-production"}
+          {displayLabel ? `Lock post-production for ${displayLabel}` : "Lock post-production"}
         </button>
       </div>
     </section>
