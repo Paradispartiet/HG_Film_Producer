@@ -8,6 +8,8 @@ interface ShootEvaluationPanelProps {
 
 export function ShootEvaluationPanel({ result, projectLabel = "first film" }: ShootEvaluationPanelProps) {
   const evaluation = result.shootEvaluation;
+  const numberedProject = projectLabel !== "first film";
+  const displayLabel = projectLabel.replace("film", "Film");
   const metrics = [
     ["Completed days", `${evaluation.completedDays}`],
     ["Delayed days", `${evaluation.delayedDays}`],
@@ -22,7 +24,7 @@ export function ShootEvaluationPanel({ result, projectLabel = "first film" }: Sh
   return (
     <section className="shoot-desk-section shoot-evaluation-section">
       <div className="shoot-section-heading">
-        <div><span className="eyebrow">Production evaluation</span><h3>{projectLabel === "film 2" ? "Film 2 first day readout" : "First day readout"}</h3></div>
+        <div><span className="eyebrow">Production evaluation</span><h3>{numberedProject ? `${displayLabel} first day readout` : "First day readout"}</h3></div>
         <strong className="shoot-day-badge">Overall {evaluation.overall}</strong>
       </div>
       <div className="shoot-evaluation-grid">
@@ -31,7 +33,7 @@ export function ShootEvaluationPanel({ result, projectLabel = "first film" }: Sh
       <ul className="shoot-note-list">
         {evaluation.notes.map((note) => <li key={note}>{note}</li>)}
       </ul>
-      <div className="next-step-strip"><span>Next step</span><strong>{projectLabel === "film 2" ? "Next step: post-production for film 2" : "Post-production unlocks after this first resolved shoot day."}</strong></div>
+      <div className="next-step-strip"><span>Next step</span><strong>{numberedProject ? `Next step: post-production for ${projectLabel}` : "Post-production unlocks after this first resolved shoot day."}</strong></div>
     </section>
   );
 }

@@ -40,7 +40,8 @@ export function ShootPanel({
     () => getShootPreparation(projectContext, developmentResult, preProductionResult),
     [projectContext, developmentResult, preProductionResult]
   );
-  const isSecondProject = projectLabel === "film 2";
+  const numberedProject = projectLabel !== "first film";
+  const displayLabel = projectLabel.replace("film", "Film");
 
   function resolveDay() {
     if (!selectedProductionEventId) {
@@ -52,11 +53,11 @@ export function ShootPanel({
   }
 
   return (
-    <section className={isSecondProject ? "panel shoot-panel shoot-panel--second-project" : "panel shoot-panel"}>
+    <section className={numberedProject ? "panel shoot-panel shoot-panel--later-project" : "panel shoot-panel"}>
       <div className="shoot-panel-heading">
         <div>
-          <span className="eyebrow">{isSecondProject ? "Start shoot for film 2" : "Start shoot"}</span>
-          <h2>{isSecondProject ? "Film 2 on-set production desk" : "On-set production desk"}</h2>
+          <span className="eyebrow">{numberedProject ? `Start shoot for ${projectLabel}` : "Start shoot"}</span>
+          <h2>{numberedProject ? `${displayLabel} shoot` : "On-set production desk"}</h2>
         </div>
         <p>Schedule the first day, apply one event and resolve the first playable shoot result for {projectLabel}.</p>
       </div>
