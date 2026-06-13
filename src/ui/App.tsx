@@ -4,6 +4,8 @@ import { CareerPanel } from "./components/CareerPanel";
 import { DevelopmentPanel } from "./components/DevelopmentPanel";
 import { DevelopmentResultPanel } from "./components/DevelopmentResultPanel";
 import { FilmResultPanel } from "./components/FilmResultPanel";
+import { GameNavigation } from "./components/GameNavigation";
+import { LandingScreen } from "./components/LandingScreen";
 import { NextProjectPanel } from "./components/NextProjectPanel";
 import { PostProductionPanel } from "./components/PostProductionPanel";
 import { PreProductionPanel } from "./components/PreProductionPanel";
@@ -52,6 +54,7 @@ const emptyPreProductionSelections: PreProductionSelectionState = {
 };
 
 export function App() {
+  const [view, setView] = useState<"landing" | "game" | "dev">("landing");
   const [mode, setMode] = useState<AppMode>("demo");
   const [customRun, setCustomRun] = useState<ProjectSetupRun | null>(null);
   const [selectedDevelopmentPath, setSelectedDevelopmentPath] = useState<DevelopmentPath | null>(null);
@@ -182,15 +185,32 @@ export function App() {
     return result;
   }
 
+  if (view === "landing") {
+    return (
+      <LandingScreen
+        onDemo={() => { setMode("demo"); setView("dev"); }}
+        onDevDashboard={() => { setMode("demo"); setView("dev"); }}
+        onStart={() => { setMode("setup"); setView("game"); }}
+      />
+    );
+  }
+
   return (
     <div className="app-shell">
-      <nav className="mode-switch" aria-label="Dashboard mode">
+      {view === "game" ? (
+        <GameNavigation
+          context={customRun?.project.title ?? "New studio"}
+          onDevDashboard={() => { setMode("demo"); setView("dev"); }}
+          onHome={() => setView("landing")}
+        />
+      ) : <nav className="mode-switch" aria-label="Dashboard mode">
         <div><span className="eyebrow">HG Film Producer</span><strong>Production workspace</strong></div>
         <div className="mode-switch-buttons">
           <button className={mode === "demo" ? "mode-button mode-button--active" : "mode-button"} onClick={() => setMode("demo")} type="button">Demo run</button>
-          <button className={mode === "setup" ? "mode-button mode-button--active" : "mode-button"} onClick={() => setMode("setup")} type="button">Create project</button>
+          <button className="mode-button" onClick={() => { setMode("setup"); setView("game"); }} type="button">Playable shell</button>
+          <button className="mode-button" onClick={() => setView("landing")} type="button">Title screen</button>
         </div>
-      </nav>
+      </nav>}
 
       {mode === "demo" ? <DemoDashboard /> : (
         customRun
@@ -388,7 +408,7 @@ export function App() {
           : <main className="setup-workspace"><SetupPanel onCreate={createCustomRun} /></main>
       )}
 
-      <footer><span>HG Film Producer</span><span>{mode === "demo" ? "Engine-backed deterministic demo" : "Interactive production pipeline"}</span></footer>
+      <footer><span>HG Film Producer</span><span>{view === "dev" ? "Dev mode · engine-backed dashboard" : "Interactive production pipeline"}</span></footer>
     </div>
   );
 }
@@ -586,18 +606,34 @@ function CustomDashboard({
         currentQuarter: displayedCareerResult.updatedCareerState.currentQuarter.toUpperCase()
       }
     : run.studio;
+  const currentPhase = releaseResult
+    ? 5
+    : postProductionResult || shootResult
+      ? 4
+      : preProductionResult
+        ? 3
+        : developmentResult
+          ? 2
+          : selectedDevelopmentPath
+            ? 1
+            : 0;
+
+  function focusCurrentAction() {
+    document.querySelector<HTMLElement>(".active-workspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 
   return (
     <>
       <StudioHeader studio={displayedStudio} />
       <main>
-        <div className="dashboard-intro">
-          <div><span className="eyebrow">Opening slate</span><h2>{careerApplicationResult ? "Career review" : releaseResult ? "Release report" : postProductionResult ? "Release desk" : shootResult ? "Post-production desk" : preProductionResult ? "Shoot desk" : developmentResult ? "Pre-production desk" : "Development desk"}</h2></div>
-          <p>{careerApplicationResult ? "The release is recorded. Review the updated studio and prepare to start the next project." : releaseResult ? "The film is released. Apply the outcome to the studio and close the film year." : postProductionResult ? "The cut is locked. Choose a distribution strategy and festival to release the film." : shootResult ? "The first shoot day is resolved. Start post-production and lock the cut." : preProductionResult ? "The production team is locked. Start and resolve the first shoot day." : developmentResult ? "Development is complete. Build the practical team and location plan." : "Your studio and first film are ready. Choose one early development action."}</p>
+        <div className="game-section-heading">
+          <div><span className="eyebrow">Production office</span><h2>Your studio slate</h2></div>
+          <p>Make the next decision, move the film forward, and build your studio’s place in cinema history.</p>
         </div>
         <div className="custom-dashboard-grid">
           <div className="dashboard-main">
-            <ProjectPipeline project={run.project} steps={pipelineSteps} />
+            <ProjectPipeline currentPhase={currentPhase} onNextAction={focusCurrentAction} project={run.project} steps={pipelineSteps} />
+            <div className="active-workspace">
             {developmentResult ? (
               <>
                 <DevelopmentResultPanel projectLabel="Film 1" result={developmentResult} />
@@ -696,6 +732,7 @@ function CustomDashboard({
                 selectedDevelopmentPath={selectedNextDevelopmentPath}
               />
             )}
+            </div>
           </div>
           <RunSummaryPanel careerApplicationResult={careerApplicationResult} developmentResult={developmentResult} postProductionResult={postProductionResult} preProductionResult={preProductionResult} releaseResult={releaseResult} run={run} shootResult={shootResult} onEdit={onEdit} />
         </div>
