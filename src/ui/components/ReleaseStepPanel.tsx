@@ -4,7 +4,7 @@ import { createReleaseStepResult, getReleaseStepOptions } from "../demo/createRe
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { PostProductionStepResult } from "../demo/createPostProductionStepRun.js";
 import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
-import type { ProjectSetupRun } from "../demo/createProjectSetupRun.js";
+import type { ProjectRunContext } from "../demo/createProjectRunContext.js";
 import type { ShootStepResult } from "../demo/createShootStepRun.js";
 import { AudienceResultPanel } from "./AudienceResultPanel.js";
 import { AwardsResultPanel } from "./AwardsResultPanel.js";
@@ -15,7 +15,8 @@ import { RevenueResultPanel } from "./RevenueResultPanel.js";
 import { ReviewResultPanel } from "./ReviewResultPanel.js";
 
 interface ReleaseStepPanelProps {
-  readonly run: ProjectSetupRun;
+  readonly projectContext: ProjectRunContext;
+  readonly projectLabel?: string;
   readonly developmentResult: DevelopmentStepResult;
   readonly preProductionResult: PreProductionStepResult;
   readonly shootResult: ShootStepResult;
@@ -29,7 +30,8 @@ interface ReleaseStepPanelProps {
 const options = getReleaseStepOptions();
 
 export function ReleaseStepPanel({
-  run,
+  projectContext,
+  projectLabel = "film",
   developmentResult,
   preProductionResult,
   shootResult,
@@ -49,7 +51,7 @@ export function ReleaseStepPanel({
     }
     try {
       onRelease(createReleaseStepResult(
-        run,
+        projectContext,
         developmentResult,
         preProductionResult,
         shootResult,
@@ -70,7 +72,7 @@ export function ReleaseStepPanel({
   return (
     <section className="panel release-step-panel">
       <div className="release-desk-heading">
-        <div><span className="eyebrow">Distribution &amp; festivals</span><h2>Release film</h2><p>Choose the route to market and one premiere submission. The release engine will resolve the complete deterministic outcome.</p></div>
+        <div><span className="eyebrow">Distribution &amp; festivals</span><h2>Release {projectLabel}</h2><p>Choose the route to market and one premiere submission. The release engine will resolve the complete deterministic outcome.</p></div>
         <div className="release-readiness"><span>Locked cut</span><strong>{postProductionResult.postProductionEvaluation.lockedCutQuality}</strong><small>quality</small></div>
       </div>
 
@@ -86,7 +88,7 @@ export function ReleaseStepPanel({
       {!result && (
         <div className="release-actions">
           <div><strong>Ready for release?</strong><span>Both selections are required. Results are deterministic and final for this run.</span>{validationMessage && <p role="alert">{validationMessage}</p>}</div>
-          <button className="primary-button" onClick={releaseFilm} type="button">Release film</button>
+          <button className="primary-button" onClick={releaseFilm} type="button">Release {projectLabel}</button>
         </div>
       )}
 
@@ -102,7 +104,13 @@ export function ReleaseStepPanel({
           <AudienceResultPanel results={result.audienceResults} segments={options.audienceSegments} />
           <RevenueResultPanel result={result.revenueResult} />
           <AwardsResultPanel awards={options.awards} result={result.awardsOutcome} />
-          <ReleaseOutcomeResultPanel evaluation={result.releaseOutcomeEvaluation} strategyScore={result.releaseStrategyScore} />
+          <ReleaseOutcomeResultPanel
+            evaluation={result.releaseOutcomeEvaluation}
+            strategyScore={result.releaseStrategyScore}
+            {...(projectLabel === "film 2"
+              ? { nextStepLabel: "Next step: apply film 2 to studio/career" }
+              : {})}
+          />
         </div>
       )}
     </section>

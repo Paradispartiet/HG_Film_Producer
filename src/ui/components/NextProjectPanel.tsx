@@ -23,6 +23,8 @@ import type { ShootStepResult } from "../demo/createShootStepRun.js";
 import { StudioCarryoverPanel } from "./StudioCarryoverPanel.js";
 import { PostProductionPanel } from "./PostProductionPanel.js";
 import type { PostProductionChoices, PostProductionStepResult } from "../demo/createPostProductionStepRun.js";
+import type { ReleaseStepChoices, ReleaseStepResult } from "../demo/createReleaseStepRun.js";
+import { ReleaseStepPanel } from "./ReleaseStepPanel.js";
 
 const options = getNextProjectOptions();
 const initialChoices: NextProjectChoices = {
@@ -44,6 +46,8 @@ interface NextProjectPanelProps {
   readonly shootResult: ShootStepResult | null;
   readonly postProductionChoices: PostProductionChoices;
   readonly postProductionResult: PostProductionStepResult | null;
+  readonly releaseChoices: ReleaseStepChoices;
+  readonly releaseResult: ReleaseStepResult | null;
   readonly onCreate: (result: NextProjectStepResult) => void;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
@@ -53,6 +57,8 @@ interface NextProjectPanelProps {
   readonly onResolveShootDay: (result: ShootStepResult) => void;
   readonly onChangePostProductionChoices: (choices: PostProductionChoices) => void;
   readonly onLockPostProduction: (result: PostProductionStepResult) => void;
+  readonly onChangeReleaseChoices: (choices: ReleaseStepChoices) => void;
+  readonly onRelease: (result: ReleaseStepResult) => void;
 }
 
 export function NextProjectPanel({
@@ -67,6 +73,8 @@ export function NextProjectPanel({
   shootResult,
   postProductionChoices,
   postProductionResult,
+  releaseChoices,
+  releaseResult,
   onCreate,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
@@ -76,6 +84,8 @@ export function NextProjectPanel({
   onResolveShootDay,
   onChangePostProductionChoices,
   onLockPostProduction,
+  onChangeReleaseChoices,
+  onRelease,
 }: NextProjectPanelProps) {
   const [choices, setChoices] = useState<NextProjectChoices>(initialChoices);
   const [errors, setErrors] = useState<NextProjectFormErrors>({});
@@ -134,7 +144,7 @@ export function NextProjectPanel({
       </div>
       {result ? (
         <>
-          <NextProjectResultPanel developmentResult={developmentResult} postProductionResult={postProductionResult} preProductionResult={preProductionResult} result={result} shootResult={shootResult} />
+          <NextProjectResultPanel developmentResult={developmentResult} postProductionResult={postProductionResult} preProductionResult={preProductionResult} releaseResult={releaseResult} result={result} shootResult={shootResult} />
           {developmentResult ? (
             <>
               <DevelopmentResultPanel result={developmentResult} />
@@ -164,6 +174,20 @@ export function NextProjectPanel({
                       projectContext={createProjectRunContext(result)}
                       projectLabel="film 2"
                       result={postProductionResult}
+                      shootResult={shootResult}
+                    />
+                  )}
+                  {postProductionResult && (
+                    <ReleaseStepPanel
+                      choices={releaseChoices}
+                      developmentResult={developmentResult}
+                      onChange={onChangeReleaseChoices}
+                      onRelease={onRelease}
+                      postProductionResult={postProductionResult}
+                      preProductionResult={preProductionResult}
+                      projectContext={createProjectRunContext(result)}
+                      projectLabel="film 2"
+                      result={releaseResult}
                       shootResult={shootResult}
                     />
                   )}
