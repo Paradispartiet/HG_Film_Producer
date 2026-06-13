@@ -10,7 +10,7 @@ import type { ScriptTemplate } from "../../domain/script.js";
 import type { PipelineStepSummary, ProjectDashboardSummary } from "../types.js";
 import { adaptFilmSeedData } from "./adaptFilmSeedData.js";
 import type { CareerApplicationStepResult } from "./createCareerApplicationStepRun.js";
-import type { ProjectSetupRun } from "./createProjectSetupRun.js";
+import type { ProjectRunContext } from "./createProjectRunContext.js";
 
 const nextProjectData = adaptFilmSeedData<{
   readonly genres: readonly Genre[];
@@ -51,15 +51,15 @@ export function getNextProjectOptions(): NextProjectOptions {
   return nextProjectData;
 }
 
-/** Carry the updated career forward and create film two without starting development. */
+/** Carry an applied film's updated career forward into the next project setup. */
 export function createNextProjectStepResult(
-  run: ProjectSetupRun,
+  sourceProject: ProjectRunContext,
   careerApplicationResult: CareerApplicationStepResult,
   choices: NextProjectChoices,
 ): NextProjectStepResult {
   if (
     careerApplicationResult.completedFilmRecord.projectId !==
-    run.filmProjectState.id
+    sourceProject.filmProjectState.id
   ) {
     throw new Error(
       "The studio/career update does not belong to the completed film.",
@@ -143,7 +143,7 @@ export function createNextProjectStepResult(
       },
       {
         label: "Ready for development",
-        detail: "Film 2 setup complete · development has not started",
+        detail: `Film ${carriedCareerState.completedFilms.length + 1} setup complete · development has not started`,
         score: 10,
       },
     ],

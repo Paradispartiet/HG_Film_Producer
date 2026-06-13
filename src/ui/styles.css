@@ -747,6 +747,11 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 
 /* Next project loop */
 .next-project-panel { overflow: hidden; border-color: rgba(108, 154, 116, 0.34); }
+.third-project-setup { margin-top: 24px; border-top: 2px solid rgba(108, 154, 116, 0.5); background: rgba(5, 8, 9, 0.28); }
+.third-project-setup .eyebrow,
+.third-project-setup small,
+.third-project-setup .next-pipeline li strong,
+.third-project-setup .next-pipeline li small { font-size: 11px; }
 .next-project-panel--locked { padding: 26px 30px; }
 .next-project-panel--locked h2 { margin: 7px 0; }
 .next-project-panel--locked p { margin: 0; color: var(--muted); font-size: 13px; }

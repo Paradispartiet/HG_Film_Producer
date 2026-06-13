@@ -2,17 +2,19 @@ import type { CareerApplicationStepResult } from "../demo/createCareerApplicatio
 
 interface PreviousFilmLegacyPanelProps {
   readonly result: CareerApplicationStepResult;
+  readonly filmLabel?: string;
 }
 
 export function PreviousFilmLegacyPanel({
   result,
+  filmLabel = "Film 1",
 }: PreviousFilmLegacyPanelProps) {
   const film = result.completedFilmRecord;
   return (
     <section className="next-project-card legacy-card">
       <div className="compact-card-heading">
         <div>
-          <span className="eyebrow">Film 1 legacy</span>
+          <span className="eyebrow">{filmLabel} legacy</span>
           <h3>{film.title}</h3>
         </div>
         <span className="recorded-badge">Recorded</span>

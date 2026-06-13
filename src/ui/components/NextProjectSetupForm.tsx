@@ -18,6 +18,8 @@ const scales: readonly { readonly id: FilmScale; readonly label: string }[] = [
 ];
 
 interface NextProjectSetupFormProps {
+  readonly projectNumber: number;
+  readonly previousFilmLabel: string;
   readonly choices: NextProjectChoices;
   readonly options: NextProjectOptions;
   readonly activeStrategicGoalIds: readonly string[];
@@ -27,6 +29,8 @@ interface NextProjectSetupFormProps {
 }
 
 export function NextProjectSetupForm({
+  projectNumber,
+  previousFilmLabel,
   choices,
   options,
   activeStrategicGoalIds,
@@ -42,9 +46,11 @@ export function NextProjectSetupForm({
   return (
     <form className="next-project-form" onSubmit={submit}>
       <div className="next-project-form-heading">
-        <span className="slate-number">02</span>
+        <span className="slate-number">
+          {String(projectNumber).padStart(2, "0")}
+        </span>
         <div>
-          <span className="eyebrow">Greenlight film 2</span>
+          <span className="eyebrow">Greenlight film {projectNumber}</span>
           <h3>Package the next project</h3>
           <p>Choose the new film. Development remains a separate next step.</p>
         </div>
@@ -123,10 +129,13 @@ export function NextProjectSetupForm({
       <div className="next-project-actions">
         <div>
           <strong>Carry the studio forward</strong>
-          <span>Film 1 stays recorded; film 2 begins at setup only.</span>
+          <span>
+            {previousFilmLabel} stays recorded; film {projectNumber} begins at
+            setup only.
+          </span>
         </div>
         <button className="primary-button" type="submit">
-          Create next project
+          Create film {projectNumber}
         </button>
       </div>
     </form>
