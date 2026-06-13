@@ -886,3 +886,31 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
     margin-left: 20px;
   }
 }
+
+/* Film 2 reuses the shared release desk while keeping its slate visually separate. */
+.next-project-panel > .release-step-panel {
+  margin: 0 30px 30px;
+  border-color: rgba(91, 143, 104, 0.42);
+}
+
+.next-project-panel > .release-step-panel .release-desk-heading {
+  background: linear-gradient(105deg, rgba(91, 143, 104, 0.15), transparent 58%);
+}
+
+.next-project-panel > .release-step-panel .release-readiness strong,
+.next-project-panel > .release-step-panel .release-card-kicker {
+  color: var(--positive);
+}
+
+.next-project-panel > .release-step-panel .release-option-card--selected {
+  border-color: rgba(91, 143, 104, 0.78);
+  background: rgba(91, 143, 104, 0.09);
+  box-shadow: inset 3px 0 0 var(--positive);
+}
+
+@media (max-width: 700px) {
+  .next-project-panel > .release-step-panel {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}

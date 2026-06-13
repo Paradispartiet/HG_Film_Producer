@@ -33,7 +33,7 @@ import { adaptFilmSeedData } from "./adaptFilmSeedData.js";
 import type { DevelopmentStepResult } from "./createDevelopmentStepRun.js";
 import type { PostProductionStepResult } from "./createPostProductionStepRun.js";
 import type { PreProductionStepResult } from "./createPreProductionStepRun.js";
-import type { ProjectSetupRun } from "./createProjectSetupRun.js";
+import type { ProjectRunContext } from "./createProjectRunContext.js";
 import type { ShootStepResult } from "./createShootStepRun.js";
 
 interface ReleaseSeedData {
@@ -78,14 +78,14 @@ export function getReleaseStepOptions(): ReleaseStepOptions {
 }
 
 export function createReleaseStepResult(
-  run: ProjectSetupRun,
+  projectContext: ProjectRunContext,
   developmentResult: DevelopmentStepResult,
   preProductionResult: PreProductionStepResult,
   shootResult: ShootStepResult,
   postProductionResult: PostProductionStepResult,
   choices: ReleaseStepChoices
 ): ReleaseStepResult {
-  assertCompletedSteps(run, developmentResult, preProductionResult, shootResult, postProductionResult);
+  assertCompletedSteps(projectContext, developmentResult, preProductionResult, shootResult, postProductionResult);
   const strategy = requireItem(releaseData.releaseStrategies, choices.releaseStrategyId, "release strategy");
   const festival = requireItem(releaseData.festivals, choices.festivalId, "festival");
   const project = preProductionResult.projectState;
@@ -181,14 +181,15 @@ function audiencePriority(segment: AudienceSegment, genre: string, strategy: Rel
 }
 
 function assertCompletedSteps(
-  run: ProjectSetupRun,
+  projectContext: ProjectRunContext,
   developmentResult: DevelopmentStepResult,
   preProductionResult: PreProductionStepResult,
   shootResult: ShootStepResult,
   postProductionResult: PostProductionStepResult
 ): void {
-  if (preProductionResult.projectState.id !== run.filmProjectState.id) {
-    throw new Error("Pre-production does not belong to this project setup run.");
+  const projectId = projectContext.filmProjectState.id;
+  if (developmentResult.projectState.id !== projectId || preProductionResult.projectState.id !== projectId) {
+    throw new Error("Development and pre-production must belong to this project run context.");
   }
   const completedLabels = [
     developmentResult.pipelineStep.label,
