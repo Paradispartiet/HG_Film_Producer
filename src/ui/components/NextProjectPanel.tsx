@@ -50,7 +50,9 @@ interface NextProjectPanelProps {
   readonly releaseChoices: ReleaseStepChoices;
   readonly releaseResult: ReleaseStepResult | null;
   readonly secondProjectCareerApplicationResult: CareerApplicationStepResult | null;
+  readonly thirdProjectResult: NextProjectStepResult | null;
   readonly onCreate: (result: NextProjectStepResult) => void;
+  readonly onCreateThirdProject: (result: NextProjectStepResult) => void;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
   readonly onChangePreProductionSelections: (selections: PreProductionSelectionState) => void;
@@ -79,7 +81,9 @@ export function NextProjectPanel({
   releaseChoices,
   releaseResult,
   secondProjectCareerApplicationResult,
+  thirdProjectResult,
   onCreate,
+  onCreateThirdProject,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
   onChangePreProductionSelections,
@@ -117,7 +121,13 @@ export function NextProjectPanel({
     }
 
     try {
-      onCreate(createNextProjectStepResult(run, careerApplicationResult, choices));
+      onCreate(
+        createNextProjectStepResult(
+          createProjectRunContext(run),
+          careerApplicationResult,
+          choices,
+        ),
+      );
       setErrors({});
     } catch (error) {
       setErrors({
@@ -244,6 +254,100 @@ export function NextProjectPanel({
           }}
           onSubmit={createNextProject}
           options={options}
+          previousFilmLabel="Film 1"
+          projectNumber={2}
+        />
+      )}
+      {result && secondProjectCareerApplicationResult && (
+        <ThirdProjectSetup
+          careerApplicationResult={secondProjectCareerApplicationResult}
+          onCreate={onCreateThirdProject}
+          result={thirdProjectResult}
+          sourceProject={result}
+        />
+      )}
+    </section>
+  );
+}
+
+function ThirdProjectSetup({
+  careerApplicationResult,
+  onCreate,
+  result,
+  sourceProject,
+}: {
+  readonly careerApplicationResult: CareerApplicationStepResult;
+  readonly onCreate: (result: NextProjectStepResult) => void;
+  readonly result: NextProjectStepResult | null;
+  readonly sourceProject: NextProjectStepResult;
+}) {
+  const [choices, setChoices] = useState<NextProjectChoices>(initialChoices);
+  const [errors, setErrors] = useState<NextProjectFormErrors>({});
+
+  function createThirdProject() {
+    const validationErrors = validateChoices(choices);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    try {
+      onCreate(
+        createNextProjectStepResult(
+          createProjectRunContext(sourceProject),
+          careerApplicationResult,
+          choices,
+        ),
+      );
+      setErrors({});
+    } catch (error) {
+      setErrors({
+        form:
+          error instanceof Error
+            ? error.message
+            : "Film 3 could not be created.",
+      });
+    }
+  }
+
+  return (
+    <section className="third-project-setup">
+      <div className="next-project-intro">
+        <div>
+          <span className="eyebrow">Film 2 complete</span>
+          <h2>Film 3 setup</h2>
+        </div>
+        <p>
+          Start film 3 from the studio and career state updated by film 2.
+        </p>
+      </div>
+      <div className="next-project-carryover-grid">
+        <StudioCarryoverPanel
+          careerState={careerApplicationResult.updatedCareerState}
+          sourceFilmLabel="film 2"
+        />
+        <PreviousFilmLegacyPanel
+          filmLabel="Film 2"
+          result={careerApplicationResult}
+        />
+      </div>
+      {result ? (
+        <NextProjectResultPanel projectNumber={3} result={result} />
+      ) : (
+        <NextProjectSetupForm
+          activeStrategicGoalIds={
+            careerApplicationResult.updatedCareerState.activeStrategicGoalIds
+          }
+          choices={choices}
+          errors={errors}
+          onChange={(nextChoices) => {
+            setChoices(nextChoices);
+            setErrors({});
+          }}
+          onSubmit={createThirdProject}
+          options={options}
+          previousFilmLabel="Film 2"
+          projectNumber={3}
         />
       )}
     </section>

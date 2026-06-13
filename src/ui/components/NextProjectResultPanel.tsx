@@ -8,6 +8,7 @@ import type { CareerApplicationStepResult } from "../demo/createCareerApplicatio
 
 interface NextProjectResultPanelProps {
   readonly result: NextProjectStepResult;
+  readonly projectNumber?: number;
   readonly developmentResult?: DevelopmentStepResult | null;
   readonly preProductionResult?: PreProductionStepResult | null;
   readonly shootResult?: ShootStepResult | null;
@@ -18,6 +19,7 @@ interface NextProjectResultPanelProps {
 
 export function NextProjectResultPanel({
   result,
+  projectNumber = 2,
   developmentResult = null,
   preProductionResult = null,
   shootResult = null,
@@ -25,6 +27,7 @@ export function NextProjectResultPanel({
   releaseResult = null,
   careerApplicationResult = null,
 }: NextProjectResultPanelProps) {
+  const projectLabel = `Film ${projectNumber}`;
   const developmentPipeline = developmentResult
     ? [...result.pipelineSteps, developmentResult.pipelineStep]
     : result.pipelineSteps;
@@ -48,7 +51,7 @@ export function NextProjectResultPanel({
     <section className="next-project-result" aria-live="polite">
       <div className="next-project-result-hero">
         <div>
-          <span className="eyebrow">Film 2 created</span>
+          <span className="eyebrow">{projectLabel} created</span>
           <h3>{result.project.title}</h3>
           <p>{result.project.logline}</p>
         </div>
@@ -100,7 +103,7 @@ export function NextProjectResultPanel({
       <div className="next-pipeline">
         <div className="compact-card-heading">
           <div>
-            <span className="eyebrow">Film 2 pipeline</span>
+            <span className="eyebrow">{projectLabel} pipeline</span>
             <h3>New slate opened</h3>
           </div>
         </div>
@@ -124,10 +127,42 @@ export function NextProjectResultPanel({
         </ol>
       </div>
       <div className="development-handoff">
-        <span>{careerApplicationResult ? "Film 2 applied" : releaseResult ? "Film 2 released" : postProductionResult ? "Film 2 cut locked" : shootResult ? "Film 2 shoot complete" : preProductionResult ? "Film 2 handoff" : developmentResult ? "Film 2 development" : "Next action"}</span>
-        <strong>{careerApplicationResult ? "Next step: start film 3" : releaseResult ? "Next step: apply film 2 to studio/career" : postProductionResult ? "Release film 2" : shootResult ? "Start post-production for film 2" : preProductionResult ? "Start shoot for film 2" : developmentResult ? "Start pre-production for film 2" : "Reuse the development flow for project 2"}</strong>
-        <p>
+        <span>
           {careerApplicationResult
+            ? `${projectLabel} applied`
+            : releaseResult
+              ? `${projectLabel} released`
+              : postProductionResult
+                ? `${projectLabel} cut locked`
+                : shootResult
+                  ? `${projectLabel} shoot complete`
+                  : preProductionResult
+                    ? `${projectLabel} handoff`
+                    : developmentResult
+                      ? `${projectLabel} development`
+                      : "Next action"}
+        </span>
+        <strong>
+          {projectNumber === 3
+            ? "Next step: develop film 3"
+            : careerApplicationResult
+              ? "Next step: start film 3"
+              : releaseResult
+                ? "Next step: apply film 2 to studio/career"
+                : postProductionResult
+                  ? "Release film 2"
+                  : shootResult
+                    ? "Start post-production for film 2"
+                    : preProductionResult
+                      ? "Start shoot for film 2"
+                      : developmentResult
+                        ? "Start pre-production for film 2"
+                        : "Reuse the development flow for project 2"}
+        </strong>
+        <p>
+          {projectNumber === 3
+            ? "Film 3 has been created from the updated career after film 2. Development is intentionally not implemented in this step."
+            : careerApplicationResult
             ? "Film 2 is recorded in the studio ledger and career filmography. Film 3 is intentionally not started here."
             : releaseResult
             ? "The film 2 release is complete. Close the film 2 year to update the carried-forward studio and career."

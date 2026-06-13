@@ -2,17 +2,23 @@ import type { CareerState } from "../../domain/career.js";
 
 interface StudioCarryoverPanelProps {
   readonly careerState: CareerState;
+  readonly sourceFilmLabel?: string;
 }
 
 export function StudioCarryoverPanel({
   careerState,
+  sourceFilmLabel,
 }: StudioCarryoverPanelProps) {
   const studio = careerState.studio;
   return (
     <section className="next-project-card carryover-card">
       <div className="compact-card-heading">
         <div>
-          <span className="eyebrow">Studio carryover</span>
+          <span className="eyebrow">
+            {sourceFilmLabel
+              ? `Studio after ${sourceFilmLabel}`
+              : "Studio carryover"}
+          </span>
           <h3>{studio.name}</h3>
         </div>
         <span className="carryover-period">
