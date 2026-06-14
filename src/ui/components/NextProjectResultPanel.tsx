@@ -144,7 +144,9 @@ export function NextProjectResultPanel({
         </span>
         <strong>
           {projectNumber === 3
-            ? releaseResult
+            ? careerApplicationResult
+              ? "Next step: start film 4"
+              : releaseResult
               ? "Next step: apply film 3 to studio/career"
               : postProductionResult
               ? "Next step: release film 3"
@@ -171,7 +173,9 @@ export function NextProjectResultPanel({
         </strong>
         <p>
           {projectNumber === 3
-            ? releaseResult
+            ? careerApplicationResult
+              ? "Film 3 is recorded in the studio ledger and career filmography. Film 4 is intentionally not started in this release."
+              : releaseResult
               ? "Film 3 has completed the shared release flow. Applying it to the studio and career is intentionally deferred to the next step."
               : postProductionResult
               ? "Film 3 has locked post-production through the shared finishing flow. Choose a release strategy and festival to resolve the release."

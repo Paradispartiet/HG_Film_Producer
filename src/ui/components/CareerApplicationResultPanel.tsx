@@ -24,7 +24,8 @@ export function CareerApplicationResultPanel({
   result
 }: CareerApplicationResultPanelProps) {
   const unlockedMilestones = result.milestoneResults.filter((milestone) => milestone.rewardsApplied);
-  const isSecondFilm = projectLabel === "film 2";
+  const projectNumber = projectLabel === "first film" ? 1 : projectLabel === "film 2" ? 2 : 3;
+  const nextStep = projectNumber === 1 ? "Start next project" : `Start film ${projectNumber + 1}`;
 
   return (
     <div className="career-application-results">
@@ -37,7 +38,7 @@ export function CareerApplicationResultPanel({
       <section className="career-final-summary">
         <div>
           <span className="eyebrow">Studio updated</span>
-          <h3>{isSecondFilm ? "Film 2 year closed" : "Film year closed"}</h3>
+          <h3>{projectNumber === 1 ? "Film year closed" : `Film ${projectNumber} year closed`}</h3>
           <p>{result.completedFilmRecord.title} is now part of the studio ledger, filmography, career evaluation, and identity profile.</p>
         </div>
         <ul className="career-check-list">
@@ -48,8 +49,8 @@ export function CareerApplicationResultPanel({
         </ul>
         <div className="next-project-callout">
           <span>Next step</span>
-          <strong>{isSecondFilm ? "Start film 3" : "Start next project"}</strong>
-          <p>{isSecondFilm ? "Film 3 is not created in this release." : "No second project is created automatically in this step."}</p>
+          <strong>{nextStep}</strong>
+          <p>{projectNumber === 3 ? "Film 4 is not created in this release." : "The next project is not created automatically in this step."}</p>
         </div>
       </section>
     </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { StrategicGoal } from "../../domain/career.js";
 import {
   createNextProjectStepResult,
   getNextProjectOptions,
@@ -61,6 +62,7 @@ interface NextProjectPanelProps {
   readonly thirdProjectPostProductionResult: PostProductionStepResult | null;
   readonly thirdProjectReleaseChoices: ReleaseStepChoices;
   readonly thirdProjectReleaseResult: ReleaseStepResult | null;
+  readonly thirdProjectCareerApplicationResult: CareerApplicationStepResult | null;
   readonly onCreate: (result: NextProjectStepResult) => void;
   readonly onCreateThirdProject: (result: NextProjectStepResult) => void;
   readonly onSelectThirdProjectDevelopmentPath: (path: DevelopmentPath) => void;
@@ -73,6 +75,7 @@ interface NextProjectPanelProps {
   readonly onLockThirdProjectPostProduction: (result: PostProductionStepResult) => void;
   readonly onChangeThirdProjectReleaseChoices: (choices: ReleaseStepChoices) => void;
   readonly onReleaseThirdProject: (result: ReleaseStepResult) => void;
+  readonly onApplyThirdProjectCareerResult: () => void;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
   readonly onChangePreProductionSelections: (selections: PreProductionSelectionState) => void;
@@ -112,6 +115,7 @@ export function NextProjectPanel({
   thirdProjectPostProductionResult,
   thirdProjectReleaseChoices,
   thirdProjectReleaseResult,
+  thirdProjectCareerApplicationResult,
   onCreate,
   onCreateThirdProject,
   onSelectThirdProjectDevelopmentPath,
@@ -124,6 +128,7 @@ export function NextProjectPanel({
   onLockThirdProjectPostProduction,
   onChangeThirdProjectReleaseChoices,
   onReleaseThirdProject,
+  onApplyThirdProjectCareerResult,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
   onChangePreProductionSelections,
@@ -301,7 +306,7 @@ export function NextProjectPanel({
       )}
       {result && secondProjectCareerApplicationResult && (
         <ThirdProjectSetup
-          careerApplicationResult={secondProjectCareerApplicationResult}
+          sourceCareerApplicationResult={secondProjectCareerApplicationResult}
           onCreate={onCreateThirdProject}
           onCompleteDevelopment={onCompleteThirdProjectDevelopment}
           onSelectDevelopmentPath={onSelectThirdProjectDevelopmentPath}
@@ -314,6 +319,8 @@ export function NextProjectPanel({
           postProductionResult={thirdProjectPostProductionResult}
           releaseChoices={thirdProjectReleaseChoices}
           releaseResult={thirdProjectReleaseResult}
+          careerApplicationResult={thirdProjectCareerApplicationResult}
+          strategicGoal={thirdProjectResult?.selectedStrategicGoal ?? result.selectedStrategicGoal ?? run.strategicGoal}
           onChangePreProductionSelections={onChangeThirdProjectPreProductionSelections}
           onLockPreProduction={onLockThirdProjectPreProduction}
           onSelectProductionEvent={onSelectThirdProjectProductionEvent}
@@ -322,6 +329,7 @@ export function NextProjectPanel({
           onLockPostProduction={onLockThirdProjectPostProduction}
           onChangeReleaseChoices={onChangeThirdProjectReleaseChoices}
           onRelease={onReleaseThirdProject}
+          onApplyCareerResult={onApplyThirdProjectCareerResult}
           result={thirdProjectResult}
           selectedDevelopmentPath={selectedThirdDevelopmentPath}
           sourceProject={result}
@@ -332,7 +340,8 @@ export function NextProjectPanel({
 }
 
 function ThirdProjectSetup({
-  careerApplicationResult,
+  sourceCareerApplicationResult,
+  strategicGoal,
   onCreate,
   onCompleteDevelopment,
   onSelectDevelopmentPath,
@@ -345,6 +354,7 @@ function ThirdProjectSetup({
   postProductionResult,
   releaseChoices,
   releaseResult,
+  careerApplicationResult,
   onChangePreProductionSelections,
   onLockPreProduction,
   onSelectProductionEvent,
@@ -353,11 +363,12 @@ function ThirdProjectSetup({
   onLockPostProduction,
   onChangeReleaseChoices,
   onRelease,
+  onApplyCareerResult,
   result,
   selectedDevelopmentPath,
   sourceProject,
 }: {
-  readonly careerApplicationResult: CareerApplicationStepResult;
+  readonly sourceCareerApplicationResult: CareerApplicationStepResult;
   readonly onCreate: (result: NextProjectStepResult) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
@@ -370,6 +381,8 @@ function ThirdProjectSetup({
   readonly postProductionResult: PostProductionStepResult | null;
   readonly releaseChoices: ReleaseStepChoices;
   readonly releaseResult: ReleaseStepResult | null;
+  readonly careerApplicationResult: CareerApplicationStepResult | null;
+  readonly strategicGoal: StrategicGoal;
   readonly onChangePreProductionSelections: (selections: PreProductionSelectionState) => void;
   readonly onLockPreProduction: (result: PreProductionStepResult) => void;
   readonly onSelectProductionEvent: (eventId: string) => void;
@@ -378,6 +391,7 @@ function ThirdProjectSetup({
   readonly onLockPostProduction: (result: PostProductionStepResult) => void;
   readonly onChangeReleaseChoices: (choices: ReleaseStepChoices) => void;
   readonly onRelease: (result: ReleaseStepResult) => void;
+  readonly onApplyCareerResult: () => void;
   readonly result: NextProjectStepResult | null;
   readonly selectedDevelopmentPath: DevelopmentPath | null;
   readonly sourceProject: NextProjectStepResult;
@@ -396,7 +410,7 @@ function ThirdProjectSetup({
       onCreate(
         createNextProjectStepResult(
           createProjectRunContext(sourceProject),
-          careerApplicationResult,
+          sourceCareerApplicationResult,
           choices,
         ),
       );
@@ -424,12 +438,12 @@ function ThirdProjectSetup({
       </div>
       <div className="next-project-carryover-grid">
         <StudioCarryoverPanel
-          careerState={careerApplicationResult.updatedCareerState}
+          careerState={sourceCareerApplicationResult.updatedCareerState}
           sourceFilmLabel="film 2"
         />
         <PreviousFilmLegacyPanel
           filmLabel="Film 2"
-          result={careerApplicationResult}
+          result={sourceCareerApplicationResult}
         />
       </div>
       {result ? (
@@ -440,6 +454,7 @@ function ThirdProjectSetup({
             shootResult={shootResult}
             postProductionResult={postProductionResult}
             releaseResult={releaseResult}
+            careerApplicationResult={careerApplicationResult}
             projectNumber={3}
             result={result}
           />
@@ -492,6 +507,16 @@ function ThirdProjectSetup({
                       shootResult={shootResult}
                     />
                   )}
+                  {postProductionResult && (
+                    <CareerApplicationPanel
+                      onApply={onApplyCareerResult}
+                      projectContext={createProjectRunContext(result)}
+                      projectLabel="film 3"
+                      releaseResult={releaseResult}
+                      result={careerApplicationResult}
+                      strategicGoal={strategicGoal}
+                    />
+                  )}
                 </>
               ) : (
                 <PreProductionPanel
@@ -521,7 +546,7 @@ function ThirdProjectSetup({
       ) : (
         <NextProjectSetupForm
           activeStrategicGoalIds={
-            careerApplicationResult.updatedCareerState.activeStrategicGoalIds
+            sourceCareerApplicationResult.updatedCareerState.activeStrategicGoalIds
           }
           choices={choices}
           errors={errors}
