@@ -91,6 +91,8 @@ export function App() {
   const [thirdProjectShootResult, setThirdProjectShootResult] = useState<ShootStepResult | null>(null);
   const [thirdProjectPostProductionChoices, setThirdProjectPostProductionChoices] = useState<PostProductionChoices>(emptyPostProductionChoices);
   const [thirdProjectPostProductionResult, setThirdProjectPostProductionResult] = useState<PostProductionStepResult | null>(null);
+  const [thirdProjectReleaseChoices, setThirdProjectReleaseChoices] = useState<ReleaseStepChoices>(emptyReleaseChoices);
+  const [thirdProjectReleaseResult, setThirdProjectReleaseResult] = useState<ReleaseStepResult | null>(null);
 
   function createCustomRun(run: ProjectSetupRun) {
     setCustomRun(run);
@@ -168,6 +170,8 @@ export function App() {
     setThirdProjectShootResult(null);
     setThirdProjectPostProductionChoices(emptyPostProductionChoices);
     setThirdProjectPostProductionResult(null);
+    setThirdProjectReleaseChoices(emptyReleaseChoices);
+    setThirdProjectReleaseResult(null);
   }
 
   function lockPreProduction(result: PreProductionStepResult) {
@@ -270,6 +274,8 @@ export function App() {
               thirdProjectShootResult={thirdProjectShootResult}
               thirdProjectPostProductionChoices={thirdProjectPostProductionChoices}
               thirdProjectPostProductionResult={thirdProjectPostProductionResult}
+              thirdProjectReleaseChoices={thirdProjectReleaseChoices}
+              thirdProjectReleaseResult={thirdProjectReleaseResult}
               onCreateNextProject={(result) => {
                 setNextProjectResult(result);
                 setSelectedNextDevelopmentPath(null);
@@ -373,6 +379,8 @@ export function App() {
                 setThirdProjectShootResult(null);
                 setThirdProjectPostProductionChoices(emptyPostProductionChoices);
                 setThirdProjectPostProductionResult(null);
+                setThirdProjectReleaseChoices(emptyReleaseChoices);
+                setThirdProjectReleaseResult(null);
               }}
               onSelectThirdProjectDevelopmentPath={setSelectedThirdDevelopmentPath}
               onCompleteThirdProjectDevelopment={(result) => {
@@ -386,6 +394,8 @@ export function App() {
                 setThirdProjectShootResult(null);
                 setThirdProjectPostProductionChoices(emptyPostProductionChoices);
                 setThirdProjectPostProductionResult(null);
+                setThirdProjectReleaseChoices(emptyReleaseChoices);
+                setThirdProjectReleaseResult(null);
               }}
               onChangeThirdProjectPreProductionSelections={setThirdProjectPreProductionSelections}
               onLockThirdProjectPreProduction={(result) => {
@@ -394,15 +404,25 @@ export function App() {
                 setThirdProjectShootResult(null);
                 setThirdProjectPostProductionChoices(emptyPostProductionChoices);
                 setThirdProjectPostProductionResult(null);
+                setThirdProjectReleaseChoices(emptyReleaseChoices);
+                setThirdProjectReleaseResult(null);
               }}
               onSelectThirdProjectProductionEvent={setThirdProjectSelectedProductionEventId}
               onResolveThirdProjectShootDay={(result) => {
                 setThirdProjectShootResult(result);
                 setThirdProjectPostProductionChoices(emptyPostProductionChoices);
                 setThirdProjectPostProductionResult(null);
+                setThirdProjectReleaseChoices(emptyReleaseChoices);
+                setThirdProjectReleaseResult(null);
               }}
               onChangeThirdProjectPostProductionChoices={setThirdProjectPostProductionChoices}
-              onLockThirdProjectPostProduction={setThirdProjectPostProductionResult}
+              onLockThirdProjectPostProduction={(result) => {
+                setThirdProjectPostProductionResult(result);
+                setThirdProjectReleaseChoices(emptyReleaseChoices);
+                setThirdProjectReleaseResult(null);
+              }}
+              onChangeThirdProjectReleaseChoices={setThirdProjectReleaseChoices}
+              onReleaseThirdProject={setThirdProjectReleaseResult}
             />
           )
           : <main className="setup-workspace"><SetupPanel onCreate={createCustomRun} /></main>
@@ -488,6 +508,8 @@ interface CustomDashboardProps {
   readonly thirdProjectShootResult: ShootStepResult | null;
   readonly thirdProjectPostProductionChoices: PostProductionChoices;
   readonly thirdProjectPostProductionResult: PostProductionStepResult | null;
+  readonly thirdProjectReleaseChoices: ReleaseStepChoices;
+  readonly thirdProjectReleaseResult: ReleaseStepResult | null;
   readonly onCreateNextProject: (result: NextProjectStepResult) => void;
   readonly onSelectSecondProjectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteSecondProjectDevelopment: (result: DevelopmentStepResult) => void;
@@ -509,6 +531,8 @@ interface CustomDashboardProps {
   readonly onResolveThirdProjectShootDay: (result: ShootStepResult) => void;
   readonly onChangeThirdProjectPostProductionChoices: (choices: PostProductionChoices) => void;
   readonly onLockThirdProjectPostProduction: (result: PostProductionStepResult) => void;
+  readonly onChangeThirdProjectReleaseChoices: (choices: ReleaseStepChoices) => void;
+  readonly onReleaseThirdProject: (result: ReleaseStepResult) => void;
 }
 
 function CustomDashboard({
@@ -561,6 +585,8 @@ function CustomDashboard({
   thirdProjectShootResult,
   thirdProjectPostProductionChoices,
   thirdProjectPostProductionResult,
+  thirdProjectReleaseChoices,
+  thirdProjectReleaseResult,
   onCreateNextProject,
   onSelectSecondProjectDevelopmentPath,
   onCompleteSecondProjectDevelopment,
@@ -582,6 +608,8 @@ function CustomDashboard({
   onResolveThirdProjectShootDay,
   onChangeThirdProjectPostProductionChoices,
   onLockThirdProjectPostProduction,
+  onChangeThirdProjectReleaseChoices,
+  onReleaseThirdProject,
 }: CustomDashboardProps) {
   const developmentPipeline = developmentResult
     ? addDevelopmentPipelineStep(run, developmentResult.pipelineStep)
@@ -714,6 +742,8 @@ function CustomDashboard({
                 thirdProjectShootResult={thirdProjectShootResult}
                 thirdProjectPostProductionChoices={thirdProjectPostProductionChoices}
                 thirdProjectPostProductionResult={thirdProjectPostProductionResult}
+                thirdProjectReleaseChoices={thirdProjectReleaseChoices}
+                thirdProjectReleaseResult={thirdProjectReleaseResult}
                 onChangeReleaseChoices={onChangeSecondProjectReleaseChoices}
                 onRelease={onReleaseSecondProject}
                 onApplyCareerResult={onApplySecondProjectCareerResult}
@@ -726,6 +756,8 @@ function CustomDashboard({
                 onResolveThirdProjectShootDay={onResolveThirdProjectShootDay}
                 onChangeThirdProjectPostProductionChoices={onChangeThirdProjectPostProductionChoices}
                 onLockThirdProjectPostProduction={onLockThirdProjectPostProduction}
+                onChangeThirdProjectReleaseChoices={onChangeThirdProjectReleaseChoices}
+                onReleaseThirdProject={onReleaseThirdProject}
                 preProductionSelections={secondProjectPreProductionSelections}
                 result={nextProjectResult}
                 run={run}

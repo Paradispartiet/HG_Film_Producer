@@ -144,7 +144,9 @@ export function NextProjectResultPanel({
         </span>
         <strong>
           {projectNumber === 3
-            ? postProductionResult
+            ? releaseResult
+              ? "Next step: apply film 3 to studio/career"
+              : postProductionResult
               ? "Next step: release film 3"
               : shootResult
               ? "Next step: post-production for film 3"
@@ -169,8 +171,10 @@ export function NextProjectResultPanel({
         </strong>
         <p>
           {projectNumber === 3
-            ? postProductionResult
-              ? "Film 3 has locked post-production through the shared finishing flow. Release is intentionally not implemented in this step."
+            ? releaseResult
+              ? "Film 3 has completed the shared release flow. Applying it to the studio and career is intentionally deferred to the next step."
+              : postProductionResult
+              ? "Film 3 has locked post-production through the shared finishing flow. Choose a release strategy and festival to resolve the release."
               : shootResult
               ? "Film 3 has resolved its first shoot day through the shared shoot flow. Select all five finishing decisions and lock post-production."
               : preProductionResult

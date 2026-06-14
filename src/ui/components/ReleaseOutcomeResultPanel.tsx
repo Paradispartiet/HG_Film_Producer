@@ -29,7 +29,7 @@ function formatProjectLabel(projectLabel: ProjectReleaseLabel): string {
 }
 
 function getNextStepLabel(projectLabel: ProjectReleaseLabel): string {
-  return projectLabel === "film 2"
-    ? "Next step: apply film 2 to studio/career"
-    : "The release is resolved. Apply this result to the studio and career to close the film year.";
+  if (projectLabel === "film 2") return "Next step: apply film 2 to studio/career";
+  if (projectLabel === "film 3") return "Next step: apply film 3 to studio/career";
+  return "The release is resolved. Apply this result to the studio and career to close the film year.";
 }

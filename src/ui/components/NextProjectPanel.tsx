@@ -59,6 +59,8 @@ interface NextProjectPanelProps {
   readonly thirdProjectShootResult: ShootStepResult | null;
   readonly thirdProjectPostProductionChoices: PostProductionChoices;
   readonly thirdProjectPostProductionResult: PostProductionStepResult | null;
+  readonly thirdProjectReleaseChoices: ReleaseStepChoices;
+  readonly thirdProjectReleaseResult: ReleaseStepResult | null;
   readonly onCreate: (result: NextProjectStepResult) => void;
   readonly onCreateThirdProject: (result: NextProjectStepResult) => void;
   readonly onSelectThirdProjectDevelopmentPath: (path: DevelopmentPath) => void;
@@ -69,6 +71,8 @@ interface NextProjectPanelProps {
   readonly onResolveThirdProjectShootDay: (result: ShootStepResult) => void;
   readonly onChangeThirdProjectPostProductionChoices: (choices: PostProductionChoices) => void;
   readonly onLockThirdProjectPostProduction: (result: PostProductionStepResult) => void;
+  readonly onChangeThirdProjectReleaseChoices: (choices: ReleaseStepChoices) => void;
+  readonly onReleaseThirdProject: (result: ReleaseStepResult) => void;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
   readonly onChangePreProductionSelections: (selections: PreProductionSelectionState) => void;
@@ -106,6 +110,8 @@ export function NextProjectPanel({
   thirdProjectShootResult,
   thirdProjectPostProductionChoices,
   thirdProjectPostProductionResult,
+  thirdProjectReleaseChoices,
+  thirdProjectReleaseResult,
   onCreate,
   onCreateThirdProject,
   onSelectThirdProjectDevelopmentPath,
@@ -116,6 +122,8 @@ export function NextProjectPanel({
   onResolveThirdProjectShootDay,
   onChangeThirdProjectPostProductionChoices,
   onLockThirdProjectPostProduction,
+  onChangeThirdProjectReleaseChoices,
+  onReleaseThirdProject,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
   onChangePreProductionSelections,
@@ -304,12 +312,16 @@ export function NextProjectPanel({
           shootResult={thirdProjectShootResult}
           postProductionChoices={thirdProjectPostProductionChoices}
           postProductionResult={thirdProjectPostProductionResult}
+          releaseChoices={thirdProjectReleaseChoices}
+          releaseResult={thirdProjectReleaseResult}
           onChangePreProductionSelections={onChangeThirdProjectPreProductionSelections}
           onLockPreProduction={onLockThirdProjectPreProduction}
           onSelectProductionEvent={onSelectThirdProjectProductionEvent}
           onResolveShootDay={onResolveThirdProjectShootDay}
           onChangePostProductionChoices={onChangeThirdProjectPostProductionChoices}
           onLockPostProduction={onLockThirdProjectPostProduction}
+          onChangeReleaseChoices={onChangeThirdProjectReleaseChoices}
+          onRelease={onReleaseThirdProject}
           result={thirdProjectResult}
           selectedDevelopmentPath={selectedThirdDevelopmentPath}
           sourceProject={result}
@@ -331,12 +343,16 @@ function ThirdProjectSetup({
   shootResult,
   postProductionChoices,
   postProductionResult,
+  releaseChoices,
+  releaseResult,
   onChangePreProductionSelections,
   onLockPreProduction,
   onSelectProductionEvent,
   onResolveShootDay,
   onChangePostProductionChoices,
   onLockPostProduction,
+  onChangeReleaseChoices,
+  onRelease,
   result,
   selectedDevelopmentPath,
   sourceProject,
@@ -352,12 +368,16 @@ function ThirdProjectSetup({
   readonly shootResult: ShootStepResult | null;
   readonly postProductionChoices: PostProductionChoices;
   readonly postProductionResult: PostProductionStepResult | null;
+  readonly releaseChoices: ReleaseStepChoices;
+  readonly releaseResult: ReleaseStepResult | null;
   readonly onChangePreProductionSelections: (selections: PreProductionSelectionState) => void;
   readonly onLockPreProduction: (result: PreProductionStepResult) => void;
   readonly onSelectProductionEvent: (eventId: string) => void;
   readonly onResolveShootDay: (result: ShootStepResult) => void;
   readonly onChangePostProductionChoices: (choices: PostProductionChoices) => void;
   readonly onLockPostProduction: (result: PostProductionStepResult) => void;
+  readonly onChangeReleaseChoices: (choices: ReleaseStepChoices) => void;
+  readonly onRelease: (result: ReleaseStepResult) => void;
   readonly result: NextProjectStepResult | null;
   readonly selectedDevelopmentPath: DevelopmentPath | null;
   readonly sourceProject: NextProjectStepResult;
@@ -419,6 +439,7 @@ function ThirdProjectSetup({
             preProductionResult={preProductionResult}
             shootResult={shootResult}
             postProductionResult={postProductionResult}
+            releaseResult={releaseResult}
             projectNumber={3}
             result={result}
           />
@@ -454,6 +475,20 @@ function ThirdProjectSetup({
                       projectContext={createProjectRunContext(result)}
                       projectLabel="film 3"
                       result={postProductionResult}
+                      shootResult={shootResult}
+                    />
+                  )}
+                  {shootResult && postProductionResult && (
+                    <ReleaseStepPanel
+                      choices={releaseChoices}
+                      developmentResult={developmentResult}
+                      onChange={onChangeReleaseChoices}
+                      onRelease={onRelease}
+                      postProductionResult={postProductionResult}
+                      preProductionResult={preProductionResult}
+                      projectContext={createProjectRunContext(result)}
+                      projectLabel="film 3"
+                      result={releaseResult}
                       shootResult={shootResult}
                     />
                   )}
