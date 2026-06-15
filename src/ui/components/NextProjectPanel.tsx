@@ -63,6 +63,7 @@ interface NextProjectPanelProps {
   readonly thirdProjectReleaseChoices: ReleaseStepChoices;
   readonly thirdProjectReleaseResult: ReleaseStepResult | null;
   readonly thirdProjectCareerApplicationResult: CareerApplicationStepResult | null;
+  readonly fourthProjectResult: NextProjectStepResult | null;
   readonly onCreate: (result: NextProjectStepResult) => void;
   readonly onCreateThirdProject: (result: NextProjectStepResult) => void;
   readonly onSelectThirdProjectDevelopmentPath: (path: DevelopmentPath) => void;
@@ -76,6 +77,7 @@ interface NextProjectPanelProps {
   readonly onChangeThirdProjectReleaseChoices: (choices: ReleaseStepChoices) => void;
   readonly onReleaseThirdProject: (result: ReleaseStepResult) => void;
   readonly onApplyThirdProjectCareerResult: () => void;
+  readonly onCreateFourthProject: (result: NextProjectStepResult) => void;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
   readonly onChangePreProductionSelections: (selections: PreProductionSelectionState) => void;
@@ -116,6 +118,7 @@ export function NextProjectPanel({
   thirdProjectReleaseChoices,
   thirdProjectReleaseResult,
   thirdProjectCareerApplicationResult,
+  fourthProjectResult,
   onCreate,
   onCreateThirdProject,
   onSelectThirdProjectDevelopmentPath,
@@ -129,6 +132,7 @@ export function NextProjectPanel({
   onChangeThirdProjectReleaseChoices,
   onReleaseThirdProject,
   onApplyThirdProjectCareerResult,
+  onCreateFourthProject,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
   onChangePreProductionSelections,
@@ -333,6 +337,109 @@ export function NextProjectPanel({
           result={thirdProjectResult}
           selectedDevelopmentPath={selectedThirdDevelopmentPath}
           sourceProject={result}
+        />
+      )}
+      {thirdProjectResult && thirdProjectCareerApplicationResult && (
+        <NextProjectCreationSection
+          existingResult={fourthProjectResult}
+          onCreate={onCreateFourthProject}
+          previousFilmLabel="Film 3"
+          projectNumber={4}
+          sourceCareerApplicationResult={thirdProjectCareerApplicationResult}
+          sourceProject={thirdProjectResult}
+        />
+      )}
+    </section>
+  );
+}
+
+function NextProjectCreationSection({
+  existingResult,
+  onCreate,
+  previousFilmLabel,
+  projectNumber,
+  sourceCareerApplicationResult,
+  sourceProject,
+}: {
+  readonly existingResult: NextProjectStepResult | null;
+  readonly onCreate: (result: NextProjectStepResult) => void;
+  readonly previousFilmLabel: string;
+  readonly projectNumber: number;
+  readonly sourceCareerApplicationResult: CareerApplicationStepResult;
+  readonly sourceProject: NextProjectStepResult;
+}) {
+  const [choices, setChoices] = useState<NextProjectChoices>(initialChoices);
+  const [errors, setErrors] = useState<NextProjectFormErrors>({});
+
+  function createProject() {
+    const validationErrors = validateChoices(choices);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    try {
+      onCreate(
+        createNextProjectStepResult(
+          createProjectRunContext(sourceProject),
+          sourceCareerApplicationResult,
+          choices,
+        ),
+      );
+      setErrors({});
+    } catch (error) {
+      setErrors({
+        form:
+          error instanceof Error
+            ? error.message
+            : `Film ${projectNumber} could not be created.`,
+      });
+    }
+  }
+
+  return (
+    <section className="next-project-setup-section">
+      <div className="next-project-intro">
+        <div>
+          <span className="eyebrow">{previousFilmLabel} complete</span>
+          <h2>Film {projectNumber} setup</h2>
+        </div>
+        <p>
+          Start film {projectNumber} from the studio and career state updated
+          by {previousFilmLabel.toLowerCase()}.
+        </p>
+      </div>
+      <div className="next-project-carryover-grid">
+        <StudioCarryoverPanel
+          careerState={sourceCareerApplicationResult.updatedCareerState}
+          sourceFilmLabel={previousFilmLabel.toLowerCase()}
+        />
+        <PreviousFilmLegacyPanel
+          filmLabel={previousFilmLabel}
+          result={sourceCareerApplicationResult}
+        />
+      </div>
+      {existingResult ? (
+        <NextProjectResultPanel
+          projectNumber={projectNumber}
+          result={existingResult}
+        />
+      ) : (
+        <NextProjectSetupForm
+          activeStrategicGoalIds={
+            sourceCareerApplicationResult.updatedCareerState
+              .activeStrategicGoalIds
+          }
+          choices={choices}
+          errors={errors}
+          onChange={(nextChoices) => {
+            setChoices(nextChoices);
+            setErrors({});
+          }}
+          onSubmit={createProject}
+          options={options}
+          previousFilmLabel={previousFilmLabel}
+          projectNumber={projectNumber}
         />
       )}
     </section>

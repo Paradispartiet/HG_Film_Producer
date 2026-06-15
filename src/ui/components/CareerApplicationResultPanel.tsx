@@ -50,7 +50,7 @@ export function CareerApplicationResultPanel({
         <div className="next-project-callout">
           <span>Next step</span>
           <strong>{nextStep}</strong>
-          <p>{projectNumber === 3 ? "Film 4 is not created in this release." : "The next project is not created automatically in this step."}</p>
+          <p>The next project is not created automatically in this step.</p>
         </div>
       </section>
     </div>
