@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { StrategicGoal } from "../domain/career";
 import { CareerApplicationPanel } from "./components/CareerApplicationPanel";
 import { CareerPanel } from "./components/CareerPanel";
 import { DevelopmentPanel } from "./components/DevelopmentPanel";
@@ -6,7 +7,8 @@ import { DevelopmentResultPanel } from "./components/DevelopmentResultPanel";
 import { FilmResultPanel } from "./components/FilmResultPanel";
 import { GameNavigation } from "./components/GameNavigation";
 import { LandingScreen } from "./components/LandingScreen";
-import { NextProjectPanel } from "./components/NextProjectPanel";
+import { NextProjectResultPanel } from "./components/NextProjectResultPanel";
+import { NextProjectSetupForm } from "./components/NextProjectSetupForm";
 import { PostProductionPanel } from "./components/PostProductionPanel";
 import { PreProductionPanel } from "./components/PreProductionPanel";
 import { ProductionTeamResultPanel } from "./components/ProductionTeamResultPanel";
@@ -16,911 +18,97 @@ import { ReleaseStepPanel } from "./components/ReleaseStepPanel";
 import { RunSummaryPanel } from "./components/RunSummaryPanel";
 import { SetupPanel } from "./components/SetupPanel";
 import { ShootPanel } from "./components/ShootPanel";
+import { StudioCarryoverPanel } from "./components/StudioCarryoverPanel";
 import { StudioHeader } from "./components/StudioHeader";
 import { SystemStatusPanel } from "./components/SystemStatusPanel";
-import {
-  type DevelopmentPath,
-  type DevelopmentStepResult
-} from "./demo/createDevelopmentStepRun";
-import {
-  createCareerApplicationStepResult,
-  type CareerApplicationStepResult
-} from "./demo/createCareerApplicationStepRun";
 import { createDemoStudioRun } from "./demo/createDemoStudioRun";
-import {
-  getPreProductionLocationOptions,
-  type PreProductionStepResult
-} from "./demo/createPreProductionStepRun";
-import {
-  addDevelopmentPipelineStep,
-  type ProjectSetupRun
-} from "./demo/createProjectSetupRun";
+import { addDevelopmentPipelineStep, type ProjectSetupRun } from "./demo/createProjectSetupRun";
 import { createProjectRunContext } from "./demo/createProjectRunContext";
-import { type ShootStepResult } from "./demo/createShootStepRun";
-import type { NextProjectStepResult } from "./demo/createNextProjectStepRun";
-import type { PostProductionChoices, PostProductionStepResult } from "./demo/createPostProductionStepRun";
-import type { ReleaseStepChoices, ReleaseStepResult } from "./demo/createReleaseStepRun";
-import type { AppMode, PostProductionSelectionState, PreProductionSelectionState, ReleaseSelectionState } from "./types";
+import { createNextProjectStepResult, getNextProjectOptions, type NextProjectChoices } from "./demo/createNextProjectStepRun";
+import { type AppMode, type NextProjectFormErrors } from "./types";
+import { careerRunActions, type CareerFilmProjectRun, useCareerRunState } from "./state/careerRunState";
 
 const demo = createDemoStudioRun();
-const emptyPostProductionChoices: PostProductionSelectionState = {
-  editDecisionId: "", soundDecisionId: "", musicDecisionId: "", colorDecisionId: "", trailerStrategyId: ""
-};
-const emptyReleaseChoices: ReleaseSelectionState = { releaseStrategyId: "", festivalId: "" };
-const emptyPreProductionSelections: PreProductionSelectionState = {
-  selectedLocationId: "",
-  selectedCrewIds: [],
-  selectedActorIds: []
-};
+const nextProjectOptions = getNextProjectOptions();
+const initialNextProjectChoices: NextProjectChoices = { projectTitle: "", genreId: "", scale: "indie", scriptTemplateId: "" };
 
 export function App() {
   const [view, setView] = useState<"landing" | "game" | "dev">("landing");
   const [mode, setMode] = useState<AppMode>("demo");
-  const [customRun, setCustomRun] = useState<ProjectSetupRun | null>(null);
-  const [selectedDevelopmentPath, setSelectedDevelopmentPath] = useState<DevelopmentPath | null>(null);
-  const [developmentResult, setDevelopmentResult] = useState<DevelopmentStepResult | null>(null);
-  const [preProductionResult, setPreProductionResult] = useState<PreProductionStepResult | null>(null);
-  const [selectedLocationId, setSelectedLocationId] = useState<PreProductionSelectionState["selectedLocationId"]>("");
-  const [selectedCrewIds, setSelectedCrewIds] = useState<PreProductionSelectionState["selectedCrewIds"]>([]);
-  const [selectedActorIds, setSelectedActorIds] = useState<PreProductionSelectionState["selectedActorIds"]>([]);
-  const [selectedProductionEventId, setSelectedProductionEventId] = useState("");
-  const [shootResult, setShootResult] = useState<ShootStepResult | null>(null);
-  const [postProductionChoices, setPostProductionChoices] = useState<PostProductionChoices>(emptyPostProductionChoices);
-  const [postProductionResult, setPostProductionResult] = useState<PostProductionStepResult | null>(null);
-  const [releaseChoices, setReleaseChoices] = useState<ReleaseStepChoices>(emptyReleaseChoices);
-  const [releaseResult, setReleaseResult] = useState<ReleaseStepResult | null>(null);
-  const [careerApplicationResult, setCareerApplicationResult] = useState<CareerApplicationStepResult | null>(null);
-  const [nextProjectResult, setNextProjectResult] = useState<NextProjectStepResult | null>(null);
-  const [selectedNextDevelopmentPath, setSelectedNextDevelopmentPath] = useState<DevelopmentPath | null>(null);
-  const [secondProjectDevelopmentResult, setSecondProjectDevelopmentResult] = useState<DevelopmentStepResult | null>(null);
-  const [secondProjectPreProductionSelections, setSecondProjectPreProductionSelections] = useState<PreProductionSelectionState>(emptyPreProductionSelections);
-  const [secondProjectPreProductionResult, setSecondProjectPreProductionResult] = useState<PreProductionStepResult | null>(null);
-  const [secondProjectSelectedProductionEventId, setSecondProjectSelectedProductionEventId] = useState("");
-  const [secondProjectShootResult, setSecondProjectShootResult] = useState<ShootStepResult | null>(null);
-  const [secondProjectPostProductionChoices, setSecondProjectPostProductionChoices] = useState<PostProductionChoices>(emptyPostProductionChoices);
-  const [secondProjectPostProductionResult, setSecondProjectPostProductionResult] = useState<PostProductionStepResult | null>(null);
-  const [secondProjectReleaseChoices, setSecondProjectReleaseChoices] = useState<ReleaseStepChoices>(emptyReleaseChoices);
-  const [secondProjectReleaseResult, setSecondProjectReleaseResult] = useState<ReleaseStepResult | null>(null);
-  const [secondProjectCareerApplicationResult, setSecondProjectCareerApplicationResult] = useState<CareerApplicationStepResult | null>(null);
-  const [thirdProjectResult, setThirdProjectResult] = useState<NextProjectStepResult | null>(null);
-  const [selectedThirdDevelopmentPath, setSelectedThirdDevelopmentPath] = useState<DevelopmentPath | null>(null);
-  const [thirdProjectDevelopmentResult, setThirdProjectDevelopmentResult] = useState<DevelopmentStepResult | null>(null);
-  const [thirdProjectPreProductionSelections, setThirdProjectPreProductionSelections] = useState<PreProductionSelectionState>(emptyPreProductionSelections);
-  const [thirdProjectPreProductionResult, setThirdProjectPreProductionResult] = useState<PreProductionStepResult | null>(null);
-  const [thirdProjectSelectedProductionEventId, setThirdProjectSelectedProductionEventId] = useState("");
-  const [thirdProjectShootResult, setThirdProjectShootResult] = useState<ShootStepResult | null>(null);
-  const [thirdProjectPostProductionChoices, setThirdProjectPostProductionChoices] = useState<PostProductionChoices>(emptyPostProductionChoices);
-  const [thirdProjectPostProductionResult, setThirdProjectPostProductionResult] = useState<PostProductionStepResult | null>(null);
-  const [thirdProjectReleaseChoices, setThirdProjectReleaseChoices] = useState<ReleaseStepChoices>(emptyReleaseChoices);
-  const [thirdProjectReleaseResult, setThirdProjectReleaseResult] = useState<ReleaseStepResult | null>(null);
-  const [thirdProjectCareerApplicationResult, setThirdProjectCareerApplicationResult] = useState<CareerApplicationStepResult | null>(null);
-  const [fourthProjectResult, setFourthProjectResult] = useState<NextProjectStepResult | null>(null);
-  const [selectedFourthDevelopmentPath, setSelectedFourthDevelopmentPath] = useState<DevelopmentPath | null>(null);
-  const [fourthProjectDevelopmentResult, setFourthProjectDevelopmentResult] = useState<DevelopmentStepResult | null>(null);
-  const [fourthProjectPreProductionSelections, setFourthProjectPreProductionSelections] = useState<PreProductionSelectionState>(emptyPreProductionSelections);
-  const [fourthProjectPreProductionResult, setFourthProjectPreProductionResult] = useState<PreProductionStepResult | null>(null);
+  const { state: careerRun, setState: setCareerRun, hasSave } = useCareerRunState();
+  const activeProject = careerRun.projects.at(-1);
 
-  function createCustomRun(run: ProjectSetupRun) {
-    setCustomRun(run);
-    setSelectedDevelopmentPath(null);
-    setDevelopmentResult(null);
-    resetPreProduction();
-    resetShoot();
-    resetNextProject();
-  }
-
-  function editCustomRun() {
-    setCustomRun(null);
-    setSelectedDevelopmentPath(null);
-    setDevelopmentResult(null);
-    resetPreProduction();
-    resetShoot();
-    resetNextProject();
-  }
-
-  function completeDevelopment(result: DevelopmentStepResult) {
-    setDevelopmentResult(result);
-    setPreProductionResult(null);
-    setSelectedLocationId(getPreProductionLocationOptions(createProjectRunContext(customRunRequired()), result).find((option) => option.recommended)?.id ?? "");
-    setSelectedCrewIds([]);
-    setSelectedActorIds([]);
-    resetShoot();
-  }
-
-  function resetPreProduction() {
-    setPreProductionResult(null);
-    setSelectedLocationId("");
-    setSelectedCrewIds([]);
-    setSelectedActorIds([]);
-    resetShoot();
-  }
-
-  function resetShoot() {
-    setSelectedProductionEventId("");
-    setShootResult(null);
-    resetPostProduction();
-  }
-
-  function resetPostProduction() {
-    setPostProductionChoices(emptyPostProductionChoices);
-    setPostProductionResult(null);
-    resetRelease();
-  }
-
-  function resetRelease() {
-    setReleaseChoices(emptyReleaseChoices);
-    setReleaseResult(null);
-    setCareerApplicationResult(null);
-    resetNextProject();
-  }
-
-  function resetNextProject() {
-    setNextProjectResult(null);
-    setSelectedNextDevelopmentPath(null);
-    setSecondProjectDevelopmentResult(null);
-    setSecondProjectPreProductionSelections(emptyPreProductionSelections);
-    setSecondProjectPreProductionResult(null);
-    setSecondProjectSelectedProductionEventId("");
-    setSecondProjectShootResult(null);
-    setSecondProjectPostProductionChoices(emptyPostProductionChoices);
-    setSecondProjectPostProductionResult(null);
-    setSecondProjectReleaseChoices(emptyReleaseChoices);
-    setSecondProjectReleaseResult(null);
-    setSecondProjectCareerApplicationResult(null);
-    setThirdProjectResult(null);
-    setSelectedThirdDevelopmentPath(null);
-    setThirdProjectDevelopmentResult(null);
-    setThirdProjectPreProductionSelections(emptyPreProductionSelections);
-    setThirdProjectPreProductionResult(null);
-    setThirdProjectSelectedProductionEventId("");
-    setThirdProjectShootResult(null);
-    setThirdProjectPostProductionChoices(emptyPostProductionChoices);
-    setThirdProjectPostProductionResult(null);
-    setThirdProjectReleaseChoices(emptyReleaseChoices);
-    setThirdProjectReleaseResult(null);
-    setThirdProjectCareerApplicationResult(null);
-    setFourthProjectResult(null);
-    setSelectedFourthDevelopmentPath(null);
-    setFourthProjectDevelopmentResult(null);
-    setFourthProjectPreProductionSelections(emptyPreProductionSelections);
-    setFourthProjectPreProductionResult(null);
-  }
-
-  function lockPreProduction(result: PreProductionStepResult) {
-    setPreProductionResult(result);
-    resetShoot();
-  }
-
-  function customRunRequired(): ProjectSetupRun {
-    if (!customRun) throw new Error("A project setup run is required before development.");
-    return customRun;
-  }
-
-  function nextProjectResultRequired(result: NextProjectStepResult | null): NextProjectStepResult {
-    if (!result) throw new Error("A second project is required before development.");
-    return result;
-  }
+  function startStudio(run: ProjectSetupRun) { setCareerRun(careerRunActions.startStudio(run)); }
+  function resetCareer() { setCareerRun(careerRunActions.resetCareer()); setMode("setup"); setView("game"); }
 
   if (view === "landing") {
-    return (
-      <LandingScreen
-        onDemo={() => { setMode("demo"); setView("dev"); }}
-        onDevDashboard={() => { setMode("demo"); setView("dev"); }}
-        onStart={() => { setMode("setup"); setView("game"); }}
-      />
-    );
+    return <LandingScreen hasSave={hasSave} onContinue={() => { setMode("setup"); setView("game"); }} onDemo={() => { setMode("demo"); setView("dev"); }} onDevDashboard={() => { setMode("demo"); setView("dev"); }} onStart={() => { resetCareer(); }} />;
   }
 
   return (
     <div className="app-shell">
       {view === "game" ? (
-        <GameNavigation
-          context={customRun?.project.title ?? "New studio"}
-          onDevDashboard={() => { setMode("demo"); setView("dev"); }}
-          onHome={() => setView("landing")}
-        />
-      ) : <nav className="mode-switch" aria-label="Dashboard mode">
-        <div><span className="eyebrow">HG Film Producer</span><strong>Production workspace</strong></div>
-        <div className="mode-switch-buttons">
-          <button className={mode === "demo" ? "mode-button mode-button--active" : "mode-button"} onClick={() => setMode("demo")} type="button">Demo run</button>
-          <button className="mode-button" onClick={() => { setMode("setup"); setView("game"); }} type="button">Playable shell</button>
-          <button className="mode-button" onClick={() => setView("landing")} type="button">Title screen</button>
-        </div>
-      </nav>}
-
-      {mode === "demo" ? <DemoDashboard /> : (
-        customRun
-          ? (
-            <CustomDashboard
-              careerApplicationResult={careerApplicationResult}
-              developmentResult={developmentResult}
-              onCompleteDevelopment={completeDevelopment}
-              onEdit={editCustomRun}
-              onLockPreProduction={lockPreProduction}
-              onSelectActors={setSelectedActorIds}
-              onSelectCrew={setSelectedCrewIds}
-              onSelectLocation={setSelectedLocationId}
-              postProductionChoices={postProductionChoices}
-              postProductionResult={postProductionResult}
-              preProductionResult={preProductionResult}
-              onResolveShootDay={(result) => { setShootResult(result); resetPostProduction(); }}
-              onChangePostProductionChoices={setPostProductionChoices}
-              onLockPostProduction={(result) => { setPostProductionResult(result); resetRelease(); }}
-              onChangeReleaseChoices={setReleaseChoices}
-              onReleaseFilm={(result) => { setReleaseResult(result); setCareerApplicationResult(null); resetNextProject(); }}
-              onApplyCareerResult={() => {
-                if (releaseResult) {
-                  setCareerApplicationResult(createCareerApplicationStepResult(createProjectRunContext(customRun), releaseResult, { closeFilmYear: true }));
-                  resetNextProject();
-                }
-              }}
-              releaseChoices={releaseChoices}
-              releaseResult={releaseResult}
-              onSelectProductionEvent={setSelectedProductionEventId}
-              onSelectDevelopmentPath={setSelectedDevelopmentPath}
-              run={customRun}
-              selectedActorIds={selectedActorIds}
-              selectedCrewIds={selectedCrewIds}
-              selectedDevelopmentPath={selectedDevelopmentPath}
-              selectedLocationId={selectedLocationId}
-              selectedProductionEventId={selectedProductionEventId}
-              shootResult={shootResult}
-              nextProjectResult={nextProjectResult}
-              selectedNextDevelopmentPath={selectedNextDevelopmentPath}
-              secondProjectDevelopmentResult={secondProjectDevelopmentResult}
-              secondProjectPreProductionSelections={secondProjectPreProductionSelections}
-              secondProjectPreProductionResult={secondProjectPreProductionResult}
-              secondProjectSelectedProductionEventId={secondProjectSelectedProductionEventId}
-              secondProjectShootResult={secondProjectShootResult}
-              secondProjectPostProductionChoices={secondProjectPostProductionChoices}
-              secondProjectPostProductionResult={secondProjectPostProductionResult}
-              secondProjectReleaseChoices={secondProjectReleaseChoices}
-              secondProjectReleaseResult={secondProjectReleaseResult}
-              secondProjectCareerApplicationResult={secondProjectCareerApplicationResult}
-              thirdProjectResult={thirdProjectResult}
-              selectedThirdDevelopmentPath={selectedThirdDevelopmentPath}
-              thirdProjectDevelopmentResult={thirdProjectDevelopmentResult}
-              thirdProjectPreProductionSelections={thirdProjectPreProductionSelections}
-              thirdProjectPreProductionResult={thirdProjectPreProductionResult}
-              thirdProjectSelectedProductionEventId={thirdProjectSelectedProductionEventId}
-              thirdProjectShootResult={thirdProjectShootResult}
-              thirdProjectPostProductionChoices={thirdProjectPostProductionChoices}
-              thirdProjectPostProductionResult={thirdProjectPostProductionResult}
-              thirdProjectReleaseChoices={thirdProjectReleaseChoices}
-              thirdProjectReleaseResult={thirdProjectReleaseResult}
-              thirdProjectCareerApplicationResult={thirdProjectCareerApplicationResult}
-              fourthProjectResult={fourthProjectResult}
-              selectedFourthDevelopmentPath={selectedFourthDevelopmentPath}
-              fourthProjectDevelopmentResult={fourthProjectDevelopmentResult}
-              fourthProjectPreProductionSelections={fourthProjectPreProductionSelections}
-              fourthProjectPreProductionResult={fourthProjectPreProductionResult}
-              onCreateNextProject={(result) => {
-                setNextProjectResult(result);
-                setSelectedNextDevelopmentPath(null);
-                setSecondProjectDevelopmentResult(null);
-                setSecondProjectPreProductionSelections(emptyPreProductionSelections);
-                setSecondProjectPreProductionResult(null);
-                setSecondProjectSelectedProductionEventId("");
-                setSecondProjectShootResult(null);
-                setSecondProjectPostProductionChoices(emptyPostProductionChoices);
-                setSecondProjectPostProductionResult(null);
-                setSecondProjectReleaseChoices(emptyReleaseChoices);
-                setSecondProjectReleaseResult(null);
-                setSecondProjectCareerApplicationResult(null);
-                setThirdProjectResult(null);
-                setSelectedThirdDevelopmentPath(null);
-                setThirdProjectDevelopmentResult(null);
-                setFourthProjectResult(null);
-                setSelectedFourthDevelopmentPath(null);
-                setFourthProjectDevelopmentResult(null);
-                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
-                setFourthProjectPreProductionResult(null);
-              }}
-              onSelectSecondProjectDevelopmentPath={setSelectedNextDevelopmentPath}
-              onCompleteSecondProjectDevelopment={(result) => {
-                setSecondProjectDevelopmentResult(result);
-                const projectContext = createProjectRunContext(nextProjectResultRequired(nextProjectResult));
-                const recommendedLocationId = getPreProductionLocationOptions(projectContext, result)
-                  .find((option) => option.recommended)?.id ?? "";
-                setSecondProjectPreProductionSelections({ ...emptyPreProductionSelections, selectedLocationId: recommendedLocationId });
-                setSecondProjectPreProductionResult(null);
-                setSecondProjectSelectedProductionEventId("");
-                setSecondProjectShootResult(null);
-                setSecondProjectPostProductionChoices(emptyPostProductionChoices);
-                setSecondProjectPostProductionResult(null);
-                setSecondProjectReleaseChoices(emptyReleaseChoices);
-                setSecondProjectReleaseResult(null);
-                setSecondProjectCareerApplicationResult(null);
-                setThirdProjectResult(null);
-                setSelectedThirdDevelopmentPath(null);
-                setThirdProjectDevelopmentResult(null);
-                setFourthProjectResult(null);
-                setSelectedFourthDevelopmentPath(null);
-                setFourthProjectDevelopmentResult(null);
-                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
-                setFourthProjectPreProductionResult(null);
-              }}
-              onChangeSecondProjectPreProductionSelections={setSecondProjectPreProductionSelections}
-              onLockSecondProjectPreProduction={(result) => {
-                setSecondProjectPreProductionResult(result);
-                setSecondProjectSelectedProductionEventId("");
-                setSecondProjectShootResult(null);
-                setSecondProjectPostProductionChoices(emptyPostProductionChoices);
-                setSecondProjectPostProductionResult(null);
-                setSecondProjectReleaseChoices(emptyReleaseChoices);
-                setSecondProjectReleaseResult(null);
-                setSecondProjectCareerApplicationResult(null);
-                setThirdProjectResult(null);
-                setSelectedThirdDevelopmentPath(null);
-                setThirdProjectDevelopmentResult(null);
-                setFourthProjectResult(null);
-                setSelectedFourthDevelopmentPath(null);
-                setFourthProjectDevelopmentResult(null);
-                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
-                setFourthProjectPreProductionResult(null);
-              }}
-              onSelectSecondProjectProductionEvent={setSecondProjectSelectedProductionEventId}
-              onResolveSecondProjectShootDay={(result) => {
-                setSecondProjectShootResult(result);
-                setSecondProjectPostProductionChoices(emptyPostProductionChoices);
-                setSecondProjectPostProductionResult(null);
-                setSecondProjectReleaseChoices(emptyReleaseChoices);
-                setSecondProjectReleaseResult(null);
-                setSecondProjectCareerApplicationResult(null);
-                setThirdProjectResult(null);
-                setSelectedThirdDevelopmentPath(null);
-                setThirdProjectDevelopmentResult(null);
-                setFourthProjectResult(null);
-                setSelectedFourthDevelopmentPath(null);
-                setFourthProjectDevelopmentResult(null);
-                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
-                setFourthProjectPreProductionResult(null);
-              }}
-              onChangeSecondProjectPostProductionChoices={setSecondProjectPostProductionChoices}
-              onLockSecondProjectPostProduction={(result) => {
-                setSecondProjectPostProductionResult(result);
-                setSecondProjectReleaseChoices(emptyReleaseChoices);
-                setSecondProjectReleaseResult(null);
-                setSecondProjectCareerApplicationResult(null);
-                setThirdProjectResult(null);
-                setSelectedThirdDevelopmentPath(null);
-                setThirdProjectDevelopmentResult(null);
-                setFourthProjectResult(null);
-                setSelectedFourthDevelopmentPath(null);
-                setFourthProjectDevelopmentResult(null);
-                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
-                setFourthProjectPreProductionResult(null);
-              }}
-              onChangeSecondProjectReleaseChoices={setSecondProjectReleaseChoices}
-              onReleaseSecondProject={(result) => {
-                setSecondProjectReleaseResult(result);
-                setSecondProjectCareerApplicationResult(null);
-                setThirdProjectResult(null);
-                setSelectedThirdDevelopmentPath(null);
-                setThirdProjectDevelopmentResult(null);
-              }}
-              onApplySecondProjectCareerResult={() => {
-                if (!nextProjectResult || !secondProjectReleaseResult) return;
-                setSecondProjectCareerApplicationResult(
-                  createCareerApplicationStepResult(
-                    createProjectRunContext(nextProjectResult),
-                    secondProjectReleaseResult,
-                    { closeFilmYear: true }
-                  )
-                );
-                setThirdProjectResult(null);
-                setSelectedThirdDevelopmentPath(null);
-                setThirdProjectDevelopmentResult(null);
-              }}
-              onCreateThirdProject={(result) => {
-                setThirdProjectResult(result);
-                setSelectedThirdDevelopmentPath(null);
-                setThirdProjectDevelopmentResult(null);
-                setThirdProjectPreProductionSelections(emptyPreProductionSelections);
-                setThirdProjectPreProductionResult(null);
-                setThirdProjectSelectedProductionEventId("");
-                setThirdProjectShootResult(null);
-                setThirdProjectPostProductionChoices(emptyPostProductionChoices);
-                setThirdProjectPostProductionResult(null);
-                setThirdProjectReleaseChoices(emptyReleaseChoices);
-                setThirdProjectReleaseResult(null);
-                setThirdProjectCareerApplicationResult(null);
-                setFourthProjectResult(null);
-                setSelectedFourthDevelopmentPath(null);
-                setFourthProjectDevelopmentResult(null);
-                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
-                setFourthProjectPreProductionResult(null);
-              }}
-              onSelectThirdProjectDevelopmentPath={setSelectedThirdDevelopmentPath}
-              onCompleteThirdProjectDevelopment={(result) => {
-                setThirdProjectDevelopmentResult(result);
-                const projectContext = createProjectRunContext(nextProjectResultRequired(thirdProjectResult));
-                const selectedLocationId = getPreProductionLocationOptions(projectContext, result)
-                  .find((option) => option.recommended)?.id ?? "";
-                setThirdProjectPreProductionSelections({ ...emptyPreProductionSelections, selectedLocationId });
-                setThirdProjectPreProductionResult(null);
-                setThirdProjectSelectedProductionEventId("");
-                setThirdProjectShootResult(null);
-                setThirdProjectPostProductionChoices(emptyPostProductionChoices);
-                setThirdProjectPostProductionResult(null);
-                setThirdProjectReleaseChoices(emptyReleaseChoices);
-                setThirdProjectReleaseResult(null);
-                setThirdProjectCareerApplicationResult(null);
-                setFourthProjectResult(null);
-                setSelectedFourthDevelopmentPath(null);
-                setFourthProjectDevelopmentResult(null);
-                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
-                setFourthProjectPreProductionResult(null);
-              }}
-              onChangeThirdProjectPreProductionSelections={setThirdProjectPreProductionSelections}
-              onLockThirdProjectPreProduction={(result) => {
-                setThirdProjectPreProductionResult(result);
-                setThirdProjectSelectedProductionEventId("");
-                setThirdProjectShootResult(null);
-                setThirdProjectPostProductionChoices(emptyPostProductionChoices);
-                setThirdProjectPostProductionResult(null);
-                setThirdProjectReleaseChoices(emptyReleaseChoices);
-                setThirdProjectReleaseResult(null);
-                setThirdProjectCareerApplicationResult(null);
-                setFourthProjectResult(null);
-                setSelectedFourthDevelopmentPath(null);
-                setFourthProjectDevelopmentResult(null);
-                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
-                setFourthProjectPreProductionResult(null);
-              }}
-              onSelectThirdProjectProductionEvent={setThirdProjectSelectedProductionEventId}
-              onResolveThirdProjectShootDay={(result) => {
-                setThirdProjectShootResult(result);
-                setThirdProjectPostProductionChoices(emptyPostProductionChoices);
-                setThirdProjectPostProductionResult(null);
-                setThirdProjectReleaseChoices(emptyReleaseChoices);
-                setThirdProjectReleaseResult(null);
-                setThirdProjectCareerApplicationResult(null);
-                setFourthProjectResult(null);
-                setSelectedFourthDevelopmentPath(null);
-                setFourthProjectDevelopmentResult(null);
-                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
-                setFourthProjectPreProductionResult(null);
-              }}
-              onChangeThirdProjectPostProductionChoices={setThirdProjectPostProductionChoices}
-              onLockThirdProjectPostProduction={(result) => {
-                setThirdProjectPostProductionResult(result);
-                setThirdProjectReleaseChoices(emptyReleaseChoices);
-                setThirdProjectReleaseResult(null);
-                setThirdProjectCareerApplicationResult(null);
-                setFourthProjectResult(null);
-                setSelectedFourthDevelopmentPath(null);
-                setFourthProjectDevelopmentResult(null);
-                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
-                setFourthProjectPreProductionResult(null);
-              }}
-              onChangeThirdProjectReleaseChoices={setThirdProjectReleaseChoices}
-              onReleaseThirdProject={(result) => {
-                setThirdProjectReleaseResult(result);
-                setThirdProjectCareerApplicationResult(null);
-                setFourthProjectResult(null);
-                setSelectedFourthDevelopmentPath(null);
-                setFourthProjectDevelopmentResult(null);
-                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
-                setFourthProjectPreProductionResult(null);
-              }}
-              onApplyThirdProjectCareerResult={() => {
-                if (!thirdProjectResult || !thirdProjectReleaseResult || thirdProjectCareerApplicationResult) return;
-                setThirdProjectCareerApplicationResult(
-                  createCareerApplicationStepResult(
-                    createProjectRunContext(thirdProjectResult),
-                    thirdProjectReleaseResult,
-                    { closeFilmYear: true }
-                  )
-                );
-                setFourthProjectResult(null);
-                setSelectedFourthDevelopmentPath(null);
-                setFourthProjectDevelopmentResult(null);
-                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
-                setFourthProjectPreProductionResult(null);
-              }}
-              onCreateFourthProject={(result) => {
-                setFourthProjectResult(result);
-                setSelectedFourthDevelopmentPath(null);
-                setFourthProjectDevelopmentResult(null);
-                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
-                setFourthProjectPreProductionResult(null);
-              }}
-              onSelectFourthProjectDevelopmentPath={setSelectedFourthDevelopmentPath}
-              onCompleteFourthProjectDevelopment={(result) => {
-                setFourthProjectDevelopmentResult(result);
-                const projectContext = createProjectRunContext(nextProjectResultRequired(fourthProjectResult));
-                const selectedLocationId = getPreProductionLocationOptions(projectContext, result)
-                  .find((option) => option.recommended)?.id ?? "";
-                setFourthProjectPreProductionSelections({ ...emptyPreProductionSelections, selectedLocationId });
-                setFourthProjectPreProductionResult(null);
-              }}
-              onChangeFourthProjectPreProductionSelections={setFourthProjectPreProductionSelections}
-              onLockFourthProjectPreProduction={setFourthProjectPreProductionResult}
-            />
-          )
-          : <main className="setup-workspace"><SetupPanel onCreate={createCustomRun} /></main>
-      )}
-
+        <GameNavigation context={activeProject?.run.project.title ?? "New studio"} onDevDashboard={() => { setMode("demo"); setView("dev"); }} onHome={() => setView("landing")} />
+      ) : <nav className="mode-switch" aria-label="Dashboard mode"><div><span className="eyebrow">HG Film Producer</span><strong>Production workspace</strong></div><div className="mode-switch-buttons"><button className={mode === "demo" ? "mode-button mode-button--active" : "mode-button"} onClick={() => setMode("demo")} type="button">Demo run</button><button className="mode-button" onClick={() => { setMode("setup"); setView("game"); }} type="button">Playable shell</button><button className="mode-button" onClick={() => setView("landing")} type="button">Title screen</button></div></nav>}
+      {mode === "demo" ? <DemoDashboard /> : (careerRun.projects.length > 0 ? <CareerDashboard careerRun={careerRun.projects} onResetCareer={resetCareer} setCareerRun={setCareerRun} /> : <main className="setup-workspace"><SetupPanel onCreate={startStudio} /></main>)}
       <footer><span>HG Film Producer</span><span>{view === "dev" ? "Dev mode · engine-backed dashboard" : "Interactive production pipeline"}</span></footer>
     </div>
   );
 }
 
 function DemoDashboard() {
-  return (
-    <>
-      <StudioHeader studio={demo.studio} />
-      <main>
-        <div className="dashboard-intro">
-          <div><span className="eyebrow">Portfolio overview</span><h2>Production desk</h2></div>
-          <p>One deterministic studio run, live from the HG simulation engine.</p>
-        </div>
-        <div className="dashboard-grid">
-          <div className="dashboard-main">
-            <ProjectPipeline project={demo.filmProject} steps={demo.pipelineSteps} />
-            <ReleasePanel release={demo.releaseOutcome} />
-          </div>
-          <aside className="dashboard-side">
-            <CareerPanel career={demo.careerState} />
-            <FilmResultPanel result={demo.filmResult} />
-            <SystemStatusPanel engines={demo.representedEngines} />
-          </aside>
-        </div>
-      </main>
-    </>
-  );
+  return <><StudioHeader studio={demo.studio} /><main><div className="dashboard-intro"><div><span className="eyebrow">Portfolio overview</span><h2>Production desk</h2></div><p>One deterministic studio run, live from the HG simulation engine.</p></div><div className="dashboard-grid"><div className="dashboard-main"><ProjectPipeline project={demo.filmProject} steps={demo.pipelineSteps} /><ReleasePanel release={demo.releaseOutcome} /></div><aside className="dashboard-side"><CareerPanel career={demo.careerState} /><FilmResultPanel result={demo.filmResult} /><SystemStatusPanel engines={demo.representedEngines} /></aside></div></main></>;
 }
 
-interface CustomDashboardProps {
-  readonly run: ProjectSetupRun;
-  readonly selectedDevelopmentPath: DevelopmentPath | null;
-  readonly careerApplicationResult: CareerApplicationStepResult | null;
-  readonly developmentResult: DevelopmentStepResult | null;
-  readonly preProductionResult: PreProductionStepResult | null;
-  readonly selectedLocationId: string;
-  readonly selectedCrewIds: readonly string[];
-  readonly selectedActorIds: readonly string[];
-  readonly selectedProductionEventId: string;
-  readonly shootResult: ShootStepResult | null;
-  readonly postProductionChoices: PostProductionChoices;
-  readonly postProductionResult: PostProductionStepResult | null;
-  readonly releaseChoices: ReleaseStepChoices;
-  readonly releaseResult: ReleaseStepResult | null;
-  readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
-  readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
-  readonly onSelectLocation: (locationId: string) => void;
-  readonly onSelectCrew: (crewIds: readonly string[]) => void;
-  readonly onSelectActors: (actorIds: readonly string[]) => void;
-  readonly onLockPreProduction: (result: PreProductionStepResult) => void;
-  readonly onSelectProductionEvent: (eventId: string) => void;
-  readonly onResolveShootDay: (result: ShootStepResult) => void;
-  readonly onChangePostProductionChoices: (choices: PostProductionChoices) => void;
-  readonly onLockPostProduction: (result: PostProductionStepResult) => void;
-  readonly onChangeReleaseChoices: (choices: ReleaseStepChoices) => void;
-  readonly onReleaseFilm: (result: ReleaseStepResult) => void;
-  readonly onApplyCareerResult: () => void;
-  readonly onEdit: () => void;
-  readonly nextProjectResult: NextProjectStepResult | null;
-  readonly selectedNextDevelopmentPath: DevelopmentPath | null;
-  readonly secondProjectDevelopmentResult: DevelopmentStepResult | null;
-  readonly secondProjectPreProductionSelections: PreProductionSelectionState;
-  readonly secondProjectPreProductionResult: PreProductionStepResult | null;
-  readonly secondProjectSelectedProductionEventId: string;
-  readonly secondProjectShootResult: ShootStepResult | null;
-  readonly secondProjectPostProductionChoices: PostProductionChoices;
-  readonly secondProjectPostProductionResult: PostProductionStepResult | null;
-  readonly secondProjectReleaseChoices: ReleaseStepChoices;
-  readonly secondProjectReleaseResult: ReleaseStepResult | null;
-  readonly secondProjectCareerApplicationResult: CareerApplicationStepResult | null;
-  readonly thirdProjectResult: NextProjectStepResult | null;
-  readonly selectedThirdDevelopmentPath: DevelopmentPath | null;
-  readonly thirdProjectDevelopmentResult: DevelopmentStepResult | null;
-  readonly thirdProjectPreProductionSelections: PreProductionSelectionState;
-  readonly thirdProjectPreProductionResult: PreProductionStepResult | null;
-  readonly thirdProjectSelectedProductionEventId: string;
-  readonly thirdProjectShootResult: ShootStepResult | null;
-  readonly thirdProjectPostProductionChoices: PostProductionChoices;
-  readonly thirdProjectPostProductionResult: PostProductionStepResult | null;
-  readonly thirdProjectReleaseChoices: ReleaseStepChoices;
-  readonly thirdProjectReleaseResult: ReleaseStepResult | null;
-  readonly thirdProjectCareerApplicationResult: CareerApplicationStepResult | null;
-  readonly fourthProjectResult: NextProjectStepResult | null;
-  readonly selectedFourthDevelopmentPath: DevelopmentPath | null;
-  readonly fourthProjectDevelopmentResult: DevelopmentStepResult | null;
-  readonly fourthProjectPreProductionSelections: PreProductionSelectionState;
-  readonly fourthProjectPreProductionResult: PreProductionStepResult | null;
-  readonly onCreateNextProject: (result: NextProjectStepResult) => void;
-  readonly onSelectSecondProjectDevelopmentPath: (path: DevelopmentPath) => void;
-  readonly onCompleteSecondProjectDevelopment: (result: DevelopmentStepResult) => void;
-  readonly onChangeSecondProjectPreProductionSelections: (selections: PreProductionSelectionState) => void;
-  readonly onLockSecondProjectPreProduction: (result: PreProductionStepResult) => void;
-  readonly onSelectSecondProjectProductionEvent: (eventId: string) => void;
-  readonly onResolveSecondProjectShootDay: (result: ShootStepResult) => void;
-  readonly onChangeSecondProjectPostProductionChoices: (choices: PostProductionChoices) => void;
-  readonly onLockSecondProjectPostProduction: (result: PostProductionStepResult) => void;
-  readonly onChangeSecondProjectReleaseChoices: (choices: ReleaseStepChoices) => void;
-  readonly onReleaseSecondProject: (result: ReleaseStepResult) => void;
-  readonly onApplySecondProjectCareerResult: () => void;
-  readonly onCreateThirdProject: (result: NextProjectStepResult) => void;
-  readonly onSelectThirdProjectDevelopmentPath: (path: DevelopmentPath) => void;
-  readonly onCompleteThirdProjectDevelopment: (result: DevelopmentStepResult) => void;
-  readonly onChangeThirdProjectPreProductionSelections: (selections: PreProductionSelectionState) => void;
-  readonly onLockThirdProjectPreProduction: (result: PreProductionStepResult) => void;
-  readonly onSelectThirdProjectProductionEvent: (eventId: string) => void;
-  readonly onResolveThirdProjectShootDay: (result: ShootStepResult) => void;
-  readonly onChangeThirdProjectPostProductionChoices: (choices: PostProductionChoices) => void;
-  readonly onLockThirdProjectPostProduction: (result: PostProductionStepResult) => void;
-  readonly onChangeThirdProjectReleaseChoices: (choices: ReleaseStepChoices) => void;
-  readonly onReleaseThirdProject: (result: ReleaseStepResult) => void;
-  readonly onApplyThirdProjectCareerResult: () => void;
-  readonly onCreateFourthProject: (result: NextProjectStepResult) => void;
-  readonly onSelectFourthProjectDevelopmentPath: (path: DevelopmentPath) => void;
-  readonly onCompleteFourthProjectDevelopment: (result: DevelopmentStepResult) => void;
-  readonly onChangeFourthProjectPreProductionSelections: (selections: PreProductionSelectionState) => void;
-  readonly onLockFourthProjectPreProduction: (result: PreProductionStepResult) => void;
+function getRunContext(run: ProjectSetupRun | import("./demo/createNextProjectStepRun").NextProjectStepResult) { return createProjectRunContext(run as ProjectSetupRun & import("./demo/createNextProjectStepRun").NextProjectStepResult); }
+function getRunStudio(run: ProjectSetupRun | import("./demo/createNextProjectStepRun").NextProjectStepResult) { return "studio" in run ? run.studio : { name: run.carriedStudio.name, money: run.carriedStudio.money, reputation: run.carriedStudio.reputation, prestige: run.carriedStudio.prestige, currentYear: run.carriedCareerState.currentYear, currentQuarter: run.carriedCareerState.currentQuarter.toUpperCase() }; }
+function getStrategicGoal(run: ProjectSetupRun | import("./demo/createNextProjectStepRun").NextProjectStepResult, fallback?: CareerFilmProjectRun): StrategicGoal {
+  if ("strategicGoal" in run) return run.strategicGoal;
+  if (run.selectedStrategicGoal) return run.selectedStrategicGoal;
+  if (fallback) return getStrategicGoal(fallback.run);
+  throw new Error("A strategic goal is required for career application.");
 }
 
-function CustomDashboard({
-  run,
-  careerApplicationResult,
-  selectedDevelopmentPath,
-  developmentResult,
-  preProductionResult,
-  selectedLocationId,
-  selectedCrewIds,
-  selectedActorIds,
-  selectedProductionEventId,
-  shootResult,
-  postProductionChoices,
-  postProductionResult,
-  releaseChoices,
-  releaseResult,
-  onSelectDevelopmentPath,
-  onCompleteDevelopment,
-  onSelectLocation,
-  onSelectCrew,
-  onSelectActors,
-  onLockPreProduction,
-  onSelectProductionEvent,
-  onResolveShootDay,
-  onChangePostProductionChoices,
-  onLockPostProduction,
-  onChangeReleaseChoices,
-  onReleaseFilm,
-  onApplyCareerResult,
-  onEdit,
-  nextProjectResult,
-  selectedNextDevelopmentPath,
-  secondProjectDevelopmentResult,
-  secondProjectPreProductionSelections,
-  secondProjectPreProductionResult,
-  secondProjectSelectedProductionEventId,
-  secondProjectShootResult,
-  secondProjectPostProductionChoices,
-  secondProjectPostProductionResult,
-  secondProjectReleaseChoices,
-  secondProjectReleaseResult,
-  secondProjectCareerApplicationResult,
-  thirdProjectResult,
-  selectedThirdDevelopmentPath,
-  thirdProjectDevelopmentResult,
-  thirdProjectPreProductionSelections,
-  thirdProjectPreProductionResult,
-  thirdProjectSelectedProductionEventId,
-  thirdProjectShootResult,
-  thirdProjectPostProductionChoices,
-  thirdProjectPostProductionResult,
-  thirdProjectReleaseChoices,
-  thirdProjectReleaseResult,
-  thirdProjectCareerApplicationResult,
-  fourthProjectResult,
-  selectedFourthDevelopmentPath,
-  fourthProjectDevelopmentResult,
-  fourthProjectPreProductionSelections,
-  fourthProjectPreProductionResult,
-  onCreateNextProject,
-  onSelectSecondProjectDevelopmentPath,
-  onCompleteSecondProjectDevelopment,
-  onChangeSecondProjectPreProductionSelections,
-  onLockSecondProjectPreProduction,
-  onSelectSecondProjectProductionEvent,
-  onResolveSecondProjectShootDay,
-  onChangeSecondProjectPostProductionChoices,
-  onLockSecondProjectPostProduction,
-  onChangeSecondProjectReleaseChoices,
-  onReleaseSecondProject,
-  onApplySecondProjectCareerResult,
-  onCreateThirdProject,
-  onSelectThirdProjectDevelopmentPath,
-  onCompleteThirdProjectDevelopment,
-  onChangeThirdProjectPreProductionSelections,
-  onLockThirdProjectPreProduction,
-  onSelectThirdProjectProductionEvent,
-  onResolveThirdProjectShootDay,
-  onChangeThirdProjectPostProductionChoices,
-  onLockThirdProjectPostProduction,
-  onChangeThirdProjectReleaseChoices,
-  onReleaseThirdProject,
-  onApplyThirdProjectCareerResult,
-  onCreateFourthProject,
-  onSelectFourthProjectDevelopmentPath,
-  onCompleteFourthProjectDevelopment,
-  onChangeFourthProjectPreProductionSelections,
-  onLockFourthProjectPreProduction,
-}: CustomDashboardProps) {
-  const developmentPipeline = developmentResult
-    ? addDevelopmentPipelineStep(run, developmentResult.pipelineStep)
-    : run.pipelineSteps;
-  const preProductionPipeline = preProductionResult
-    ? [...developmentPipeline, preProductionResult.pipelineStep]
-    : developmentPipeline;
-  const shootPipeline = shootResult
-    ? [...preProductionPipeline, shootResult.pipelineStep]
-    : preProductionPipeline;
-  const postProductionPipeline = postProductionResult ? [...shootPipeline, postProductionResult.pipelineStep] : shootPipeline;
-  const releasePipeline = releaseResult ? [...postProductionPipeline, releaseResult.pipelineStep] : postProductionPipeline;
-  const pipelineSteps = careerApplicationResult ? [...releasePipeline, careerApplicationResult.pipelineStep] : releasePipeline;
-  const displayedCareerResult = thirdProjectCareerApplicationResult
-    ?? secondProjectCareerApplicationResult
-    ?? careerApplicationResult;
-  const displayedStudio = displayedCareerResult
-    ? {
-        name: displayedCareerResult.updatedStudio.name,
-        money: displayedCareerResult.updatedStudio.money,
-        reputation: displayedCareerResult.updatedStudio.reputation,
-        prestige: displayedCareerResult.updatedStudio.prestige,
-        currentYear: displayedCareerResult.updatedCareerState.currentYear,
-        currentQuarter: displayedCareerResult.updatedCareerState.currentQuarter.toUpperCase()
-      }
-    : run.studio;
-  const currentPhase = releaseResult
-    ? 5
-    : postProductionResult || shootResult
-      ? 4
-      : preProductionResult
-        ? 3
-        : developmentResult
-          ? 2
-          : selectedDevelopmentPath
-            ? 1
-            : 0;
+function CareerDashboard({ careerRun, setCareerRun, onResetCareer }: { readonly careerRun: readonly CareerFilmProjectRun[]; readonly setCareerRun: React.Dispatch<React.SetStateAction<{ version: 1; projects: readonly CareerFilmProjectRun[] }>>; readonly onResetCareer: () => void; }) {
+  const firstProject = careerRun[0];
+  if (!firstProject) return null;
+  const latestCareerResult = [...careerRun].reverse().find((project) => project.careerApplicationResult)?.careerApplicationResult;
+  const displayedStudio = latestCareerResult ? { name: latestCareerResult.updatedStudio.name, money: latestCareerResult.updatedStudio.money, reputation: latestCareerResult.updatedStudio.reputation, prestige: latestCareerResult.updatedStudio.prestige, currentYear: latestCareerResult.updatedCareerState.currentYear, currentQuarter: latestCareerResult.updatedCareerState.currentQuarter.toUpperCase() } : getRunStudio(firstProject.run);
+  function update(action: Parameters<typeof setCareerRun>[0]) { setCareerRun(action); }
 
-  function focusCurrentAction() {
-    document.querySelector<HTMLElement>(".active-workspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  return <><StudioHeader studio={displayedStudio} /><main><div className="game-section-heading"><div><span className="eyebrow">Production office</span><h2>Your studio slate</h2></div><p>Make the next decision, move each film forward, and build your studio’s place in cinema history.</p><button className="secondary-button" onClick={onResetCareer} type="button">Reset career</button></div><div className="custom-dashboard-grid"><div className="dashboard-main active-workspace">{careerRun.map((project, index) => <FilmProjectWorkspace key={project.id} previousProject={index > 0 ? careerRun[index - 1] : undefined} project={project} setCareerRun={update} />)}</div><RunSummaryPanel careerApplicationResult={firstProject.careerApplicationResult} developmentResult={firstProject.developmentResult} postProductionResult={firstProject.postProductionResult} preProductionResult={firstProject.preProductionResult} releaseResult={firstProject.releaseResult} run={firstProject.run as ProjectSetupRun} shootResult={firstProject.shootResult} onEdit={onResetCareer} /></div></main></>;
+}
+
+function FilmProjectWorkspace({ project, previousProject, setCareerRun }: { readonly project: CareerFilmProjectRun; readonly previousProject: CareerFilmProjectRun | undefined; readonly setCareerRun: React.Dispatch<React.SetStateAction<{ version: 1; projects: readonly CareerFilmProjectRun[] }>>; }) {
+  const context = getRunContext(project.run);
+  const pipeline = project.careerApplicationResult ? [...projectPipeline(project), project.careerApplicationResult.pipelineStep] : projectPipeline(project);
+  const currentPhase = project.releaseResult ? 5 : project.postProductionResult || project.shootResult ? 4 : project.preProductionResult ? 3 : project.developmentResult ? 2 : project.selectedDevelopmentPath ? 1 : 0;
+  const label = `Film ${project.projectNumber}`;
+  const lowerLabel = (project.projectNumber === 1 ? "first film" : `film ${project.projectNumber}`) as import("./types").ProjectShootLabel;
+  const strategicGoal = getStrategicGoal(project.run, previousProject);
+
+  return <section className="panel next-project-panel"><ProjectPipeline currentPhase={currentPhase} project={project.run.project} steps={pipeline} />{previousProject?.careerApplicationResult && <div className="next-project-carryover-grid"><StudioCarryoverPanel careerState={previousProject.careerApplicationResult.updatedCareerState} sourceFilmLabel={`film ${previousProject.projectNumber}`} /></div>}{project.projectNumber > 1 && <NextProjectResultPanel careerApplicationResult={project.careerApplicationResult} developmentResult={project.developmentResult} postProductionResult={project.postProductionResult} preProductionResult={project.preProductionResult} releaseResult={project.releaseResult} result={project.run as never} shootResult={project.shootResult} projectNumber={project.projectNumber} />}{project.developmentResult ? <><DevelopmentResultPanel projectLabel={label} result={project.developmentResult} />{project.preProductionResult ? <><ProductionTeamResultPanel compact={project.projectNumber === 1} projectLabel={label} result={project.preProductionResult} /><ShootPanel developmentResult={project.developmentResult} onResolveShootDay={(result) => setCareerRun((state) => careerRunActions.resolveShoot(state, project.id, result))} onSelectProductionEvent={(eventId) => setCareerRun((state) => careerRunActions.selectProductionEvent(state, project.id, eventId))} preProductionResult={project.preProductionResult} projectContext={context} projectLabel={lowerLabel} selectedProductionEventId={project.selectedProductionEventId} shootResult={project.shootResult} />{project.shootResult && <PostProductionPanel choices={project.postProductionChoices} onChange={(choices) => setCareerRun((state) => careerRunActions.changePostProductionChoices(state, project.id, choices))} onLock={(result) => setCareerRun((state) => careerRunActions.lockPostProduction(state, project.id, result))} preProductionResult={project.preProductionResult} projectContext={context} projectLabel={lowerLabel} result={project.postProductionResult} shootResult={project.shootResult} />}{project.shootResult && project.postProductionResult && <ReleaseStepPanel choices={project.releaseChoices} developmentResult={project.developmentResult} onChange={(choices) => setCareerRun((state) => careerRunActions.changeReleaseChoices(state, project.id, choices))} onRelease={(result) => setCareerRun((state) => careerRunActions.releaseFilm(state, project.id, result))} postProductionResult={project.postProductionResult} preProductionResult={project.preProductionResult} projectContext={context} projectLabel={lowerLabel} result={project.releaseResult} shootResult={project.shootResult} />}{project.postProductionResult && <CareerApplicationPanel onApply={() => setCareerRun((state) => careerRunActions.applyCareerResult(state, project.id))} projectContext={context} projectLabel={lowerLabel} releaseResult={project.releaseResult} result={project.careerApplicationResult} strategicGoal={strategicGoal} />}</> : <PreProductionPanel developmentResult={project.developmentResult} onLock={(result) => setCareerRun((state) => careerRunActions.lockPreProduction(state, project.id, result))} onSelectActors={(selectedActorIds) => setCareerRun((state) => careerRunActions.changePreProductionSelections(state, project.id, { ...project.preProductionSelections, selectedActorIds }))} onSelectCrew={(selectedCrewIds) => setCareerRun((state) => careerRunActions.changePreProductionSelections(state, project.id, { ...project.preProductionSelections, selectedCrewIds }))} onSelectLocation={(selectedLocationId) => setCareerRun((state) => careerRunActions.changePreProductionSelections(state, project.id, { ...project.preProductionSelections, selectedLocationId }))} projectContext={context} projectLabel={lowerLabel} selectedActorIds={project.preProductionSelections.selectedActorIds} selectedCrewIds={project.preProductionSelections.selectedCrewIds} selectedLocationId={project.preProductionSelections.selectedLocationId} />}</> : <DevelopmentPanel onComplete={(result) => setCareerRun((state) => careerRunActions.completeDevelopment(state, project.id, result))} onSelectPath={(path) => setCareerRun((state) => careerRunActions.selectDevelopmentPath(state, project.id, path))} projectContext={context} projectLabel={label} selectedPath={project.selectedDevelopmentPath} />}{project.careerApplicationResult && <NextProjectCreator previousProject={project} setCareerRun={setCareerRun} />}</section>;
+}
+
+function projectPipeline(project: CareerFilmProjectRun) {
+  const developmentPipeline = project.developmentResult ? addDevelopmentPipelineStep(project.run as ProjectSetupRun, project.developmentResult.pipelineStep) : project.run.pipelineSteps;
+  const preProductionPipeline = project.preProductionResult ? [...developmentPipeline, project.preProductionResult.pipelineStep] : developmentPipeline;
+  const shootPipeline = project.shootResult ? [...preProductionPipeline, project.shootResult.pipelineStep] : preProductionPipeline;
+  const postProductionPipeline = project.postProductionResult ? [...shootPipeline, project.postProductionResult.pipelineStep] : shootPipeline;
+  return project.releaseResult ? [...postProductionPipeline, project.releaseResult.pipelineStep] : postProductionPipeline;
+}
+
+function NextProjectCreator({ previousProject, setCareerRun }: { readonly previousProject: CareerFilmProjectRun; readonly setCareerRun: React.Dispatch<React.SetStateAction<{ version: 1; projects: readonly CareerFilmProjectRun[] }>>; }) {
+  const [choices, setChoices] = useState<NextProjectChoices>(initialNextProjectChoices);
+  const [errors, setErrors] = useState<NextProjectFormErrors>({});
+  if (!previousProject.careerApplicationResult) return null;
+  function createProject() {
+    const nextErrors = { ...(!choices.projectTitle.trim() ? { projectTitle: "Enter a title for the next project." } : {}), ...(!choices.genreId ? { genreId: "Select a genre." } : {}), ...(!choices.scriptTemplateId ? { scriptTemplateId: "Select a script template." } : {}) };
+    setErrors(nextErrors);
+    if (Object.keys(nextErrors).length > 0 || !previousProject.careerApplicationResult) return;
+    const run = createNextProjectStepResult(getRunContext(previousProject.run), previousProject.careerApplicationResult, choices);
+    setCareerRun((state) => careerRunActions.startNextProject(state, run));
+    setChoices(initialNextProjectChoices);
   }
-
-  return (
-    <>
-      <StudioHeader studio={displayedStudio} />
-      <main>
-        <div className="game-section-heading">
-          <div><span className="eyebrow">Production office</span><h2>Your studio slate</h2></div>
-          <p>Make the next decision, move the film forward, and build your studio’s place in cinema history.</p>
-        </div>
-        <div className="custom-dashboard-grid">
-          <div className="dashboard-main">
-            <ProjectPipeline currentPhase={currentPhase} onNextAction={focusCurrentAction} project={run.project} steps={pipelineSteps} />
-            <div className="active-workspace">
-            {developmentResult ? (
-              <>
-                <DevelopmentResultPanel projectLabel="Film 1" result={developmentResult} />
-                {preProductionResult
-                  ? (
-                    <>
-                      <ProductionTeamResultPanel compact result={preProductionResult} />
-                      <ShootPanel
-                        developmentResult={developmentResult}
-                        onResolveShootDay={onResolveShootDay}
-                        onSelectProductionEvent={onSelectProductionEvent}
-                        preProductionResult={preProductionResult}
-                        projectContext={createProjectRunContext(run)}
-                        selectedProductionEventId={selectedProductionEventId}
-                        shootResult={shootResult}
-                      />
-                      {shootResult && (
-                        <PostProductionPanel choices={postProductionChoices} onChange={onChangePostProductionChoices} onLock={onLockPostProduction} preProductionResult={preProductionResult} projectContext={createProjectRunContext(run)} result={postProductionResult} shootResult={shootResult} />
-                      )}
-                      {shootResult && postProductionResult && (
-                        <ReleaseStepPanel choices={releaseChoices} developmentResult={developmentResult} onChange={onChangeReleaseChoices} onRelease={onReleaseFilm} postProductionResult={postProductionResult} preProductionResult={preProductionResult} projectContext={createProjectRunContext(run)} projectLabel="first film" result={releaseResult} shootResult={shootResult} />
-                      )}
-                      {postProductionResult && (
-                        <CareerApplicationPanel onApply={onApplyCareerResult} projectContext={createProjectRunContext(run)} projectLabel="first film" releaseResult={releaseResult} result={careerApplicationResult} strategicGoal={run.strategicGoal} />
-                      )}
-                    </>
-                  )
-                  : (
-                    <PreProductionPanel
-                      developmentResult={developmentResult}
-                      onLock={onLockPreProduction}
-                      onSelectActors={onSelectActors}
-                      onSelectCrew={onSelectCrew}
-                      onSelectLocation={onSelectLocation}
-                      projectContext={createProjectRunContext(run)}
-                      selectedActorIds={selectedActorIds}
-                      selectedCrewIds={selectedCrewIds}
-                      selectedLocationId={selectedLocationId}
-                    />
-                  )}
-              </>
-            ) : (
-              <DevelopmentPanel
-                onComplete={onCompleteDevelopment}
-                onSelectPath={onSelectDevelopmentPath}
-                projectContext={createProjectRunContext(run)}
-                projectLabel="Film 1"
-                selectedPath={selectedDevelopmentPath}
-              />
-            )}
-            {careerApplicationResult && (
-              <NextProjectPanel
-                careerApplicationResult={careerApplicationResult}
-                developmentResult={secondProjectDevelopmentResult}
-                onCompleteDevelopment={onCompleteSecondProjectDevelopment}
-                onChangePreProductionSelections={onChangeSecondProjectPreProductionSelections}
-                onLockPreProduction={onLockSecondProjectPreProduction}
-                onResolveShootDay={onResolveSecondProjectShootDay}
-                onSelectProductionEvent={onSelectSecondProjectProductionEvent}
-                onCreate={onCreateNextProject}
-                onSelectDevelopmentPath={onSelectSecondProjectDevelopmentPath}
-                preProductionResult={secondProjectPreProductionResult}
-                selectedProductionEventId={secondProjectSelectedProductionEventId}
-                shootResult={secondProjectShootResult}
-                postProductionChoices={secondProjectPostProductionChoices}
-                postProductionResult={secondProjectPostProductionResult}
-                onChangePostProductionChoices={onChangeSecondProjectPostProductionChoices}
-                onLockPostProduction={onLockSecondProjectPostProduction}
-                releaseChoices={secondProjectReleaseChoices}
-                releaseResult={secondProjectReleaseResult}
-                secondProjectCareerApplicationResult={secondProjectCareerApplicationResult}
-                thirdProjectResult={thirdProjectResult}
-                selectedThirdDevelopmentPath={selectedThirdDevelopmentPath}
-                thirdProjectDevelopmentResult={thirdProjectDevelopmentResult}
-                thirdProjectPreProductionSelections={thirdProjectPreProductionSelections}
-                thirdProjectPreProductionResult={thirdProjectPreProductionResult}
-                thirdProjectSelectedProductionEventId={thirdProjectSelectedProductionEventId}
-                thirdProjectShootResult={thirdProjectShootResult}
-                thirdProjectPostProductionChoices={thirdProjectPostProductionChoices}
-                thirdProjectPostProductionResult={thirdProjectPostProductionResult}
-                thirdProjectReleaseChoices={thirdProjectReleaseChoices}
-                thirdProjectReleaseResult={thirdProjectReleaseResult}
-                thirdProjectCareerApplicationResult={thirdProjectCareerApplicationResult}
-                fourthProjectResult={fourthProjectResult}
-                selectedFourthDevelopmentPath={selectedFourthDevelopmentPath}
-                fourthProjectDevelopmentResult={fourthProjectDevelopmentResult}
-                fourthProjectPreProductionSelections={fourthProjectPreProductionSelections}
-                fourthProjectPreProductionResult={fourthProjectPreProductionResult}
-                onChangeReleaseChoices={onChangeSecondProjectReleaseChoices}
-                onRelease={onReleaseSecondProject}
-                onApplyCareerResult={onApplySecondProjectCareerResult}
-                onCreateThirdProject={onCreateThirdProject}
-                onSelectThirdProjectDevelopmentPath={onSelectThirdProjectDevelopmentPath}
-                onCompleteThirdProjectDevelopment={onCompleteThirdProjectDevelopment}
-                onChangeThirdProjectPreProductionSelections={onChangeThirdProjectPreProductionSelections}
-                onLockThirdProjectPreProduction={onLockThirdProjectPreProduction}
-                onSelectThirdProjectProductionEvent={onSelectThirdProjectProductionEvent}
-                onResolveThirdProjectShootDay={onResolveThirdProjectShootDay}
-                onChangeThirdProjectPostProductionChoices={onChangeThirdProjectPostProductionChoices}
-                onLockThirdProjectPostProduction={onLockThirdProjectPostProduction}
-                onChangeThirdProjectReleaseChoices={onChangeThirdProjectReleaseChoices}
-                onReleaseThirdProject={onReleaseThirdProject}
-                onApplyThirdProjectCareerResult={onApplyThirdProjectCareerResult}
-                onCreateFourthProject={onCreateFourthProject}
-                onSelectFourthProjectDevelopmentPath={onSelectFourthProjectDevelopmentPath}
-                onCompleteFourthProjectDevelopment={onCompleteFourthProjectDevelopment}
-                onChangeFourthProjectPreProductionSelections={onChangeFourthProjectPreProductionSelections}
-                onLockFourthProjectPreProduction={onLockFourthProjectPreProduction}
-                preProductionSelections={secondProjectPreProductionSelections}
-                result={nextProjectResult}
-                run={run}
-                selectedDevelopmentPath={selectedNextDevelopmentPath}
-              />
-            )}
-            </div>
-          </div>
-          <RunSummaryPanel careerApplicationResult={careerApplicationResult} developmentResult={developmentResult} postProductionResult={postProductionResult} preProductionResult={preProductionResult} releaseResult={releaseResult} run={run} shootResult={shootResult} onEdit={onEdit} />
-        </div>
-      </main>
-    </>
-  );
+  return <section className="next-project-setup-section"><div className="next-project-intro"><div><span className="eyebrow">{`Film ${previousProject.projectNumber} complete`}</span><h2>{`Film ${previousProject.projectNumber + 1} setup`}</h2></div><p>Start the next film from the updated studio and career state.</p></div><NextProjectSetupForm activeStrategicGoalIds={previousProject.careerApplicationResult.updatedCareerState.activeStrategicGoalIds} choices={choices} errors={errors} onChange={(nextChoices) => { setChoices(nextChoices); setErrors({}); }} onSubmit={createProject} options={nextProjectOptions} previousFilmLabel={`Film ${previousProject.projectNumber}`} projectNumber={previousProject.projectNumber + 1} /></section>;
 }

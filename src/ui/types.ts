@@ -82,7 +82,7 @@ export interface NextProjectFormErrors {
   readonly form?: string;
 }
 
-export type ProjectShootLabel = "first film" | "film 2" | "film 3";
+export type ProjectShootLabel = "first film" | `film ${number}`;
 export type ProjectPostProductionLabel = ProjectShootLabel;
 export type ProjectReleaseLabel = ProjectPostProductionLabel;
 export type ProjectCareerLabel = ProjectReleaseLabel;
