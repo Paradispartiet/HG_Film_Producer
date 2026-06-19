@@ -86,6 +86,10 @@ export function getScenarioProductionBrief(scenarioId: string): ScenarioProducti
   return scenarioProductionBriefs[scenarioId];
 }
 
+export function resolveScenarioProductionBrief(scenario: FilmScenarioSeed): ScenarioProductionBrief {
+  return getScenarioProductionBrief(scenario.id) ?? getFallbackScenarioProductionBrief(scenario);
+}
+
 export function getFallbackScenarioProductionBrief(scenario: FilmScenarioSeed): ScenarioProductionBrief {
   return {
     scenarioId: scenario.id,
