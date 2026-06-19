@@ -1052,3 +1052,20 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
   .scenario-library-header { align-items: flex-start; flex-direction: column; }
   .scenario-library-header p { text-align: left; }
 }
+
+/* Scenario production brief panel. */
+.scenario-brief-panel { display: grid; gap: 18px; margin: 0 30px 30px; padding: 22px; border: 1px solid rgba(214, 174, 98, 0.28); background: linear-gradient(145deg, rgba(21, 25, 31, 0.97), rgba(9, 11, 15, 0.98)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 18px 44px rgba(0, 0, 0, 0.18); }
+.scenario-brief-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.scenario-brief-header h3 { margin: 5px 0 8px; font-family: Georgia, serif; font-size: clamp(24px, 3vw, 34px); font-weight: 500; letter-spacing: -0.035em; }
+.scenario-brief-header p { max-width: 760px; margin: 0; color: var(--muted-light); font-size: 12px; line-height: 1.65; }
+.scenario-brief-status { flex: 0 0 auto; padding: 7px 10px; border: 1px solid rgba(214, 174, 98, 0.35); background: var(--accent-soft); color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.scenario-brief-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.scenario-brief-section { padding: 14px; border: 1px solid rgba(255, 255, 255, 0.08); background: rgba(6, 8, 11, 0.42); }
+.scenario-brief-section h4 { margin: 0 0 10px; color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.scenario-brief-list { display: grid; gap: 7px; margin: 0; padding-left: 16px; color: var(--muted-light); font-size: 12px; line-height: 1.45; }
+.scenario-brief-list li::marker { color: var(--accent); }
+
+@media (max-width: 700px) {
+  .scenario-brief-panel { margin-right: 20px; margin-left: 20px; }
+  .scenario-brief-header { flex-direction: column; }
+}

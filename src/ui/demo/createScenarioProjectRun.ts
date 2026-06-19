@@ -20,6 +20,7 @@ export function createScenarioProjectRun(scenario: FilmScenarioSeed): ProjectSet
 
   return {
     ...run,
+    classicScenarioId: scenario.id,
     project: {
       ...run.project,
       logline: scenario.production_challenge || run.project.logline
