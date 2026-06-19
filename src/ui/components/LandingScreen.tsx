@@ -1,10 +1,12 @@
 interface LandingScreenProps {
   readonly onStart: () => void;
+  readonly onContinue: () => void;
   readonly onDemo: () => void;
   readonly onDevDashboard: () => void;
+  readonly hasSave: boolean;
 }
 
-export function LandingScreen({ onStart, onDemo, onDevDashboard }: LandingScreenProps) {
+export function LandingScreen({ onStart, onContinue, onDemo, onDevDashboard, hasSave }: LandingScreenProps) {
   return (
     <main className="landing-screen">
       <div className="landing-grain" aria-hidden="true" />
@@ -17,8 +19,12 @@ export function LandingScreen({ onStart, onDemo, onDevDashboard }: LandingScreen
         <h1>HG Film<br /><em>Producer</em></h1>
         <p>Build a film studio through film history</p>
         <div className="landing-actions">
-          <button className="landing-primary" onClick={onStart} type="button">
-            <span>Start new studio</span>
+          {hasSave && <button className="landing-primary" onClick={onContinue} type="button">
+            <span>Continue career</span>
+            <b aria-hidden="true">→</b>
+          </button>}
+          <button className={hasSave ? "landing-secondary" : "landing-primary"} onClick={onStart} type="button">
+            <span>New career</span>
             <b aria-hidden="true">→</b>
           </button>
           <button className="landing-secondary" onClick={onDemo} type="button">Demo dashboard</button>
