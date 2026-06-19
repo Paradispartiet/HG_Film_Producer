@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paradispartiet.github.io/HG_Film_Producer/schemas/film_scenario_schema.json",
+  "title": "HG Film Producer film scenario seed schema",
+  "type": "object",
+  "required": ["schema_version", "source_list_id", "scenario_count", "scenarios"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "string" },
+    "source_list_id": { "type": "string" },
+    "scenario_count": { "type": "integer", "minimum": 0 },
+    "note": { "type": "string" },
+    "scenarios": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/scenario" }
+    }
+  },
+  "$defs": {
+    "scenario": {
+      "type": "object",
+      "required": ["id", "status", "source", "film", "scenario_type", "production_challenge", "phases"],
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": "string", "pattern": "^scenario_[a-z0-9_]+$" },
+        "status": { "type": "string" },
+        "source": { "$ref": "#/$defs/source" },
+        "film": { "$ref": "#/$defs/film" },
+        "scenario_type": { "type": "string" },
+        "production_challenge": { "type": "string" },
+        "phases": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "manual_enrichment_needed": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["list_id", "position", "imdb_id", "url"],
+      "additionalProperties": true,
+      "properties": {
+        "list_id": { "type": "string" },
+        "position": { "type": ["integer", "null"] },
+        "imdb_id": { "type": "string", "pattern": "^tt[0-9]+$" },
+        "url": { "type": "string" }
+      }
+    },
+    "film": {
+      "type": "object",
+      "required": ["title", "original_title", "year", "title_type", "runtime_mins", "directors", "genres", "genre_keys"],
+      "additionalProperties": true,
+      "properties": {
+        "title": { "type": "string" },
+        "original_title": { "type": "string" },
+        "year": { "type": ["integer", "null"] },
+        "title_type": { "type": "string" },
+        "runtime_mins": { "type": ["integer", "null"] },
+        "directors": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "genres": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "genre_keys": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "imdb_rating": { "type": ["number", "null"] },
+        "user_rating": { "type": ["number", "null"] }
+      }
+    }
+  }
+}
