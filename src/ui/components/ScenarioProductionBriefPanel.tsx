@@ -1,8 +1,8 @@
 import type { FilmScenarioSeed } from "../data/filmScenarios";
-import { getFallbackScenarioProductionBrief, getScenarioProductionBrief, type ScenarioProductionBrief } from "../data/scenarioProductionBriefs";
+import { resolveScenarioProductionBrief, type ScenarioProductionBrief } from "../data/scenarioProductionBriefs";
 
 export function ScenarioProductionBriefPanel({ scenario }: { readonly scenario: FilmScenarioSeed }) {
-  const brief = getScenarioProductionBrief(scenario.id) ?? getFallbackScenarioProductionBrief(scenario);
+  const brief = resolveScenarioProductionBrief(scenario);
 
   return (
     <section className="scenario-brief-panel" aria-labelledby="scenario-brief-title">
