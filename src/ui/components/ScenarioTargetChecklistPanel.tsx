@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import type { ScenarioProductionBrief } from "../data/scenarioProductionBriefs";
 import {
   createScenarioTargetChecklist,
@@ -9,14 +9,19 @@ import {
 
 const categories: readonly ScenarioTargetCategory[] = ["genre", "tone", "screenplay", "cinematography", "editing", "sound", "learning"];
 
-export function ScenarioTargetChecklistPanel({ brief }: { readonly brief: ScenarioProductionBrief }) {
-  const [selectedTargetIds, setSelectedTargetIds] = useState<string[]>([]);
+interface ScenarioTargetChecklistPanelProps {
+  readonly brief: ScenarioProductionBrief;
+  readonly selectedTargetIds: readonly string[];
+  readonly onChangeSelectedTargetIds: (targetIds: readonly string[]) => void;
+}
+
+export function ScenarioTargetChecklistPanel({ brief, selectedTargetIds, onChangeSelectedTargetIds }: ScenarioTargetChecklistPanelProps) {
   const checklist = useMemo(() => createScenarioTargetChecklist(brief), [brief]);
   const targetCount = getScenarioTargetCount(checklist);
   const selectedCount = selectedTargetIds.length;
 
   function toggleTarget(targetId: string) {
-    setSelectedTargetIds((current) => current.includes(targetId) ? current.filter((id) => id !== targetId) : [...current, targetId]);
+    onChangeSelectedTargetIds(selectedTargetIds.includes(targetId) ? selectedTargetIds.filter((id) => id !== targetId) : [...selectedTargetIds, targetId]);
   }
 
   return (

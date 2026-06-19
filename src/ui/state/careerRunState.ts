@@ -20,6 +20,7 @@ export interface CareerFilmProjectRun {
   readonly projectNumber: number;
   readonly run: ProjectSetupRun | NextProjectStepResult;
   readonly selectedDevelopmentPath: DevelopmentPath | null;
+  readonly selectedScenarioTargetIds?: readonly string[];
   readonly developmentResult: DevelopmentStepResult | null;
   readonly preProductionSelections: PreProductionSelectionState;
   readonly preProductionResult: PreProductionStepResult | null;
@@ -55,6 +56,7 @@ export const careerRunActions = {
   createProject(state: CareerRunState, run: NextProjectStepResult): CareerRunState { return { ...state, projects: [...state.projects, createCareerProject(run, state.projects.length + 1)] }; },
   selectDevelopmentPath(state: CareerRunState, projectId: string, selectedDevelopmentPath: DevelopmentPath): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, selectedDevelopmentPath })); },
   completeDevelopment(state: CareerRunState, projectId: string, result: DevelopmentStepResult): CareerRunState { return updateProject(state, projectId, (project) => resetAfterDevelopment(project, result)); },
+  changeScenarioTargetSelections(state: CareerRunState, projectId: string, selectedTargetIds: readonly string[]): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, selectedScenarioTargetIds: [...selectedTargetIds] })); },
   changePreProductionSelections(state: CareerRunState, projectId: string, selections: PreProductionSelectionState): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, preProductionSelections: selections })); },
   lockPreProduction(state: CareerRunState, projectId: string, result: PreProductionStepResult): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, preProductionResult: result, selectedProductionEventId: "", shootResult: null, postProductionChoices: emptyPostProductionChoices, postProductionResult: null, releaseChoices: emptyReleaseChoices, releaseResult: null, careerApplicationResult: null })); },
   selectProductionEvent(state: CareerRunState, projectId: string, selectedProductionEventId: string): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, selectedProductionEventId })); },
