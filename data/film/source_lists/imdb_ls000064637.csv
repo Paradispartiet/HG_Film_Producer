@@ -1,0 +1,2 @@
+Position,Const,Title,Original Title,URL,Title Type,IMDb Rating,Runtime (mins),Year,Genres,Directors,Your Rating
+# Placeholder only. Replace with the raw IMDb CSV export before re-running the importer. The imported scenario seed already exists in data/film/scenarios/film_scenarios_seed.json.
