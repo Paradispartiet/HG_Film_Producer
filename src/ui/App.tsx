@@ -97,6 +97,8 @@ export function App() {
   const [fourthProjectResult, setFourthProjectResult] = useState<NextProjectStepResult | null>(null);
   const [selectedFourthDevelopmentPath, setSelectedFourthDevelopmentPath] = useState<DevelopmentPath | null>(null);
   const [fourthProjectDevelopmentResult, setFourthProjectDevelopmentResult] = useState<DevelopmentStepResult | null>(null);
+  const [fourthProjectPreProductionSelections, setFourthProjectPreProductionSelections] = useState<PreProductionSelectionState>(emptyPreProductionSelections);
+  const [fourthProjectPreProductionResult, setFourthProjectPreProductionResult] = useState<PreProductionStepResult | null>(null);
 
   function createCustomRun(run: ProjectSetupRun) {
     setCustomRun(run);
@@ -180,6 +182,8 @@ export function App() {
     setFourthProjectResult(null);
     setSelectedFourthDevelopmentPath(null);
     setFourthProjectDevelopmentResult(null);
+    setFourthProjectPreProductionSelections(emptyPreProductionSelections);
+    setFourthProjectPreProductionResult(null);
   }
 
   function lockPreProduction(result: PreProductionStepResult) {
@@ -288,6 +292,8 @@ export function App() {
               fourthProjectResult={fourthProjectResult}
               selectedFourthDevelopmentPath={selectedFourthDevelopmentPath}
               fourthProjectDevelopmentResult={fourthProjectDevelopmentResult}
+              fourthProjectPreProductionSelections={fourthProjectPreProductionSelections}
+              fourthProjectPreProductionResult={fourthProjectPreProductionResult}
               onCreateNextProject={(result) => {
                 setNextProjectResult(result);
                 setSelectedNextDevelopmentPath(null);
@@ -307,6 +313,8 @@ export function App() {
                 setFourthProjectResult(null);
                 setSelectedFourthDevelopmentPath(null);
                 setFourthProjectDevelopmentResult(null);
+                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
+                setFourthProjectPreProductionResult(null);
               }}
               onSelectSecondProjectDevelopmentPath={setSelectedNextDevelopmentPath}
               onCompleteSecondProjectDevelopment={(result) => {
@@ -329,6 +337,8 @@ export function App() {
                 setFourthProjectResult(null);
                 setSelectedFourthDevelopmentPath(null);
                 setFourthProjectDevelopmentResult(null);
+                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
+                setFourthProjectPreProductionResult(null);
               }}
               onChangeSecondProjectPreProductionSelections={setSecondProjectPreProductionSelections}
               onLockSecondProjectPreProduction={(result) => {
@@ -346,6 +356,8 @@ export function App() {
                 setFourthProjectResult(null);
                 setSelectedFourthDevelopmentPath(null);
                 setFourthProjectDevelopmentResult(null);
+                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
+                setFourthProjectPreProductionResult(null);
               }}
               onSelectSecondProjectProductionEvent={setSecondProjectSelectedProductionEventId}
               onResolveSecondProjectShootDay={(result) => {
@@ -361,6 +373,8 @@ export function App() {
                 setFourthProjectResult(null);
                 setSelectedFourthDevelopmentPath(null);
                 setFourthProjectDevelopmentResult(null);
+                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
+                setFourthProjectPreProductionResult(null);
               }}
               onChangeSecondProjectPostProductionChoices={setSecondProjectPostProductionChoices}
               onLockSecondProjectPostProduction={(result) => {
@@ -374,6 +388,8 @@ export function App() {
                 setFourthProjectResult(null);
                 setSelectedFourthDevelopmentPath(null);
                 setFourthProjectDevelopmentResult(null);
+                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
+                setFourthProjectPreProductionResult(null);
               }}
               onChangeSecondProjectReleaseChoices={setSecondProjectReleaseChoices}
               onReleaseSecondProject={(result) => {
@@ -412,6 +428,8 @@ export function App() {
                 setFourthProjectResult(null);
                 setSelectedFourthDevelopmentPath(null);
                 setFourthProjectDevelopmentResult(null);
+                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
+                setFourthProjectPreProductionResult(null);
               }}
               onSelectThirdProjectDevelopmentPath={setSelectedThirdDevelopmentPath}
               onCompleteThirdProjectDevelopment={(result) => {
@@ -431,6 +449,8 @@ export function App() {
                 setFourthProjectResult(null);
                 setSelectedFourthDevelopmentPath(null);
                 setFourthProjectDevelopmentResult(null);
+                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
+                setFourthProjectPreProductionResult(null);
               }}
               onChangeThirdProjectPreProductionSelections={setThirdProjectPreProductionSelections}
               onLockThirdProjectPreProduction={(result) => {
@@ -445,6 +465,8 @@ export function App() {
                 setFourthProjectResult(null);
                 setSelectedFourthDevelopmentPath(null);
                 setFourthProjectDevelopmentResult(null);
+                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
+                setFourthProjectPreProductionResult(null);
               }}
               onSelectThirdProjectProductionEvent={setThirdProjectSelectedProductionEventId}
               onResolveThirdProjectShootDay={(result) => {
@@ -457,6 +479,8 @@ export function App() {
                 setFourthProjectResult(null);
                 setSelectedFourthDevelopmentPath(null);
                 setFourthProjectDevelopmentResult(null);
+                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
+                setFourthProjectPreProductionResult(null);
               }}
               onChangeThirdProjectPostProductionChoices={setThirdProjectPostProductionChoices}
               onLockThirdProjectPostProduction={(result) => {
@@ -467,6 +491,8 @@ export function App() {
                 setFourthProjectResult(null);
                 setSelectedFourthDevelopmentPath(null);
                 setFourthProjectDevelopmentResult(null);
+                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
+                setFourthProjectPreProductionResult(null);
               }}
               onChangeThirdProjectReleaseChoices={setThirdProjectReleaseChoices}
               onReleaseThirdProject={(result) => {
@@ -475,6 +501,8 @@ export function App() {
                 setFourthProjectResult(null);
                 setSelectedFourthDevelopmentPath(null);
                 setFourthProjectDevelopmentResult(null);
+                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
+                setFourthProjectPreProductionResult(null);
               }}
               onApplyThirdProjectCareerResult={() => {
                 if (!thirdProjectResult || !thirdProjectReleaseResult || thirdProjectCareerApplicationResult) return;
@@ -488,14 +516,27 @@ export function App() {
                 setFourthProjectResult(null);
                 setSelectedFourthDevelopmentPath(null);
                 setFourthProjectDevelopmentResult(null);
+                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
+                setFourthProjectPreProductionResult(null);
               }}
               onCreateFourthProject={(result) => {
                 setFourthProjectResult(result);
                 setSelectedFourthDevelopmentPath(null);
                 setFourthProjectDevelopmentResult(null);
+                setFourthProjectPreProductionSelections(emptyPreProductionSelections);
+                setFourthProjectPreProductionResult(null);
               }}
               onSelectFourthProjectDevelopmentPath={setSelectedFourthDevelopmentPath}
-              onCompleteFourthProjectDevelopment={setFourthProjectDevelopmentResult}
+              onCompleteFourthProjectDevelopment={(result) => {
+                setFourthProjectDevelopmentResult(result);
+                const projectContext = createProjectRunContext(nextProjectResultRequired(fourthProjectResult));
+                const selectedLocationId = getPreProductionLocationOptions(projectContext, result)
+                  .find((option) => option.recommended)?.id ?? "";
+                setFourthProjectPreProductionSelections({ ...emptyPreProductionSelections, selectedLocationId });
+                setFourthProjectPreProductionResult(null);
+              }}
+              onChangeFourthProjectPreProductionSelections={setFourthProjectPreProductionSelections}
+              onLockFourthProjectPreProduction={setFourthProjectPreProductionResult}
             />
           )
           : <main className="setup-workspace"><SetupPanel onCreate={createCustomRun} /></main>
@@ -587,6 +628,8 @@ interface CustomDashboardProps {
   readonly fourthProjectResult: NextProjectStepResult | null;
   readonly selectedFourthDevelopmentPath: DevelopmentPath | null;
   readonly fourthProjectDevelopmentResult: DevelopmentStepResult | null;
+  readonly fourthProjectPreProductionSelections: PreProductionSelectionState;
+  readonly fourthProjectPreProductionResult: PreProductionStepResult | null;
   readonly onCreateNextProject: (result: NextProjectStepResult) => void;
   readonly onSelectSecondProjectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteSecondProjectDevelopment: (result: DevelopmentStepResult) => void;
@@ -614,6 +657,8 @@ interface CustomDashboardProps {
   readonly onCreateFourthProject: (result: NextProjectStepResult) => void;
   readonly onSelectFourthProjectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteFourthProjectDevelopment: (result: DevelopmentStepResult) => void;
+  readonly onChangeFourthProjectPreProductionSelections: (selections: PreProductionSelectionState) => void;
+  readonly onLockFourthProjectPreProduction: (result: PreProductionStepResult) => void;
 }
 
 function CustomDashboard({
@@ -672,6 +717,8 @@ function CustomDashboard({
   fourthProjectResult,
   selectedFourthDevelopmentPath,
   fourthProjectDevelopmentResult,
+  fourthProjectPreProductionSelections,
+  fourthProjectPreProductionResult,
   onCreateNextProject,
   onSelectSecondProjectDevelopmentPath,
   onCompleteSecondProjectDevelopment,
@@ -699,6 +746,8 @@ function CustomDashboard({
   onCreateFourthProject,
   onSelectFourthProjectDevelopmentPath,
   onCompleteFourthProjectDevelopment,
+  onChangeFourthProjectPreProductionSelections,
+  onLockFourthProjectPreProduction,
 }: CustomDashboardProps) {
   const developmentPipeline = developmentResult
     ? addDevelopmentPipelineStep(run, developmentResult.pipelineStep)
@@ -839,6 +888,8 @@ function CustomDashboard({
                 fourthProjectResult={fourthProjectResult}
                 selectedFourthDevelopmentPath={selectedFourthDevelopmentPath}
                 fourthProjectDevelopmentResult={fourthProjectDevelopmentResult}
+                fourthProjectPreProductionSelections={fourthProjectPreProductionSelections}
+                fourthProjectPreProductionResult={fourthProjectPreProductionResult}
                 onChangeReleaseChoices={onChangeSecondProjectReleaseChoices}
                 onRelease={onReleaseSecondProject}
                 onApplyCareerResult={onApplySecondProjectCareerResult}
@@ -857,6 +908,8 @@ function CustomDashboard({
                 onCreateFourthProject={onCreateFourthProject}
                 onSelectFourthProjectDevelopmentPath={onSelectFourthProjectDevelopmentPath}
                 onCompleteFourthProjectDevelopment={onCompleteFourthProjectDevelopment}
+                onChangeFourthProjectPreProductionSelections={onChangeFourthProjectPreProductionSelections}
+                onLockFourthProjectPreProduction={onLockFourthProjectPreProduction}
                 preProductionSelections={secondProjectPreProductionSelections}
                 result={nextProjectResult}
                 run={run}

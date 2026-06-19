@@ -66,6 +66,8 @@ interface NextProjectPanelProps {
   readonly fourthProjectResult: NextProjectStepResult | null;
   readonly selectedFourthDevelopmentPath: DevelopmentPath | null;
   readonly fourthProjectDevelopmentResult: DevelopmentStepResult | null;
+  readonly fourthProjectPreProductionSelections: PreProductionSelectionState;
+  readonly fourthProjectPreProductionResult: PreProductionStepResult | null;
   readonly onCreate: (result: NextProjectStepResult) => void;
   readonly onCreateThirdProject: (result: NextProjectStepResult) => void;
   readonly onSelectThirdProjectDevelopmentPath: (path: DevelopmentPath) => void;
@@ -82,6 +84,8 @@ interface NextProjectPanelProps {
   readonly onCreateFourthProject: (result: NextProjectStepResult) => void;
   readonly onSelectFourthProjectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteFourthProjectDevelopment: (result: DevelopmentStepResult) => void;
+  readonly onChangeFourthProjectPreProductionSelections: (selections: PreProductionSelectionState) => void;
+  readonly onLockFourthProjectPreProduction: (result: PreProductionStepResult) => void;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
   readonly onChangePreProductionSelections: (selections: PreProductionSelectionState) => void;
@@ -125,6 +129,8 @@ export function NextProjectPanel({
   fourthProjectResult,
   selectedFourthDevelopmentPath,
   fourthProjectDevelopmentResult,
+  fourthProjectPreProductionSelections,
+  fourthProjectPreProductionResult,
   onCreate,
   onCreateThirdProject,
   onSelectThirdProjectDevelopmentPath,
@@ -141,6 +147,8 @@ export function NextProjectPanel({
   onCreateFourthProject,
   onSelectFourthProjectDevelopmentPath,
   onCompleteFourthProjectDevelopment,
+  onChangeFourthProjectPreProductionSelections,
+  onLockFourthProjectPreProduction,
   onSelectDevelopmentPath,
   onCompleteDevelopment,
   onChangePreProductionSelections,
@@ -351,8 +359,12 @@ export function NextProjectPanel({
         <NextProjectCreationSection
           existingResult={fourthProjectResult}
           developmentResult={fourthProjectDevelopmentResult}
+          preProductionSelections={fourthProjectPreProductionSelections}
+          preProductionResult={fourthProjectPreProductionResult}
           onCreate={onCreateFourthProject}
           onCompleteDevelopment={onCompleteFourthProjectDevelopment}
+          onChangePreProductionSelections={onChangeFourthProjectPreProductionSelections}
+          onLockPreProduction={onLockFourthProjectPreProduction}
           onSelectDevelopmentPath={onSelectFourthProjectDevelopmentPath}
           previousFilmLabel="Film 3"
           projectNumber={4}
@@ -368,8 +380,12 @@ export function NextProjectPanel({
 function NextProjectCreationSection({
   existingResult,
   developmentResult,
+  preProductionSelections,
+  preProductionResult,
   onCreate,
   onCompleteDevelopment,
+  onChangePreProductionSelections,
+  onLockPreProduction,
   onSelectDevelopmentPath,
   previousFilmLabel,
   projectNumber,
@@ -379,8 +395,12 @@ function NextProjectCreationSection({
 }: {
   readonly existingResult: NextProjectStepResult | null;
   readonly developmentResult: DevelopmentStepResult | null;
+  readonly preProductionSelections: PreProductionSelectionState;
+  readonly preProductionResult: PreProductionStepResult | null;
   readonly onCreate: (result: NextProjectStepResult) => void;
   readonly onCompleteDevelopment: (result: DevelopmentStepResult) => void;
+  readonly onChangePreProductionSelections: (selections: PreProductionSelectionState) => void;
+  readonly onLockPreProduction: (result: PreProductionStepResult) => void;
   readonly onSelectDevelopmentPath: (path: DevelopmentPath) => void;
   readonly previousFilmLabel: string;
   readonly projectNumber: number;
@@ -443,14 +463,37 @@ function NextProjectCreationSection({
         <>
           <NextProjectResultPanel
             developmentResult={developmentResult}
+            preProductionResult={preProductionResult}
             projectNumber={projectNumber}
             result={existingResult}
           />
           {developmentResult ? (
-            <DevelopmentResultPanel
-              projectLabel={`Film ${projectNumber}`}
-              result={developmentResult}
-            />
+            <>
+              <DevelopmentResultPanel
+                projectLabel={`Film ${projectNumber}`}
+                result={developmentResult}
+              />
+              {preProductionResult ? (
+                <ProductionTeamResultPanel
+                  nextStepLabel={`Next step: shoot film ${projectNumber}`}
+                  projectLabel={`Film ${projectNumber}`}
+                  result={preProductionResult}
+                />
+              ) : (
+                <PreProductionPanel
+                  developmentResult={developmentResult}
+                  onLock={onLockPreProduction}
+                  onSelectActors={(selectedActorIds) => onChangePreProductionSelections({ ...preProductionSelections, selectedActorIds })}
+                  onSelectCrew={(selectedCrewIds) => onChangePreProductionSelections({ ...preProductionSelections, selectedCrewIds })}
+                  onSelectLocation={(selectedLocationId) => onChangePreProductionSelections({ ...preProductionSelections, selectedLocationId })}
+                  projectContext={createProjectRunContext(existingResult)}
+                  projectLabel={`film ${projectNumber}`}
+                  selectedActorIds={preProductionSelections.selectedActorIds}
+                  selectedCrewIds={preProductionSelections.selectedCrewIds}
+                  selectedLocationId={preProductionSelections.selectedLocationId}
+                />
+              )}
+            </>
           ) : (
             <DevelopmentPanel
               onComplete={onCompleteDevelopment}
