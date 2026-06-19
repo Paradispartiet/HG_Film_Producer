@@ -5,6 +5,7 @@ import { CareerPanel } from "./components/CareerPanel";
 import { DevelopmentPanel } from "./components/DevelopmentPanel";
 import { DevelopmentResultPanel } from "./components/DevelopmentResultPanel";
 import { FilmResultPanel } from "./components/FilmResultPanel";
+import { FilmScenarioLibrary } from "./components/FilmScenarioLibrary";
 import { GameNavigation } from "./components/GameNavigation";
 import { LandingScreen } from "./components/LandingScreen";
 import { NextProjectResultPanel } from "./components/NextProjectResultPanel";
@@ -33,7 +34,7 @@ const nextProjectOptions = getNextProjectOptions();
 const initialNextProjectChoices: NextProjectChoices = { projectTitle: "", genreId: "", scale: "indie", scriptTemplateId: "" };
 
 export function App() {
-  const [view, setView] = useState<"landing" | "game" | "dev">("landing");
+  const [view, setView] = useState<"landing" | "game" | "dev" | "scenarios">("landing");
   const [mode, setMode] = useState<AppMode>("demo");
   const { state: careerRun, setState: setCareerRun, hasSave } = useCareerRunState();
   const activeProject = careerRun.projects.at(-1);
@@ -49,9 +50,9 @@ export function App() {
     <div className="app-shell">
       {view === "game" ? (
         <GameNavigation context={activeProject?.run.project.title ?? "New studio"} onDevDashboard={() => { setMode("demo"); setView("dev"); }} onHome={() => setView("landing")} />
-      ) : <nav className="mode-switch" aria-label="Dashboard mode"><div><span className="eyebrow">HG Film Producer</span><strong>Production workspace</strong></div><div className="mode-switch-buttons"><button className={mode === "demo" ? "mode-button mode-button--active" : "mode-button"} onClick={() => setMode("demo")} type="button">Demo run</button><button className="mode-button" onClick={() => { setMode("setup"); setView("game"); }} type="button">Playable shell</button><button className="mode-button" onClick={() => setView("landing")} type="button">Title screen</button></div></nav>}
-      {mode === "demo" ? <DemoDashboard /> : (careerRun.projects.length > 0 ? <CareerDashboard careerRun={careerRun.projects} onResetCareer={resetCareer} setCareerRun={setCareerRun} /> : <main className="setup-workspace"><SetupPanel onCreate={startStudio} /></main>)}
-      <footer><span>HG Film Producer</span><span>{view === "dev" ? "Dev mode · engine-backed dashboard" : "Interactive production pipeline"}</span></footer>
+      ) : <nav className="mode-switch" aria-label="Dashboard mode"><div><span className="eyebrow">HG Film Producer</span><strong>Production workspace</strong></div><div className="mode-switch-buttons"><button className={mode === "demo" && view === "dev" ? "mode-button mode-button--active" : "mode-button"} onClick={() => { setMode("demo"); setView("dev"); }} type="button">Demo run</button><button className={view === "scenarios" ? "mode-button mode-button--active" : "mode-button"} onClick={() => setView("scenarios")} type="button">Classic scenarios</button><button className="mode-button" onClick={() => { setMode("setup"); setView("game"); }} type="button">Playable shell</button><button className="mode-button" onClick={() => setView("landing")} type="button">Title screen</button></div></nav>}
+      {view === "scenarios" ? <FilmScenarioLibrary /> : mode === "demo" ? <DemoDashboard /> : (careerRun.projects.length > 0 ? <CareerDashboard careerRun={careerRun.projects} onResetCareer={resetCareer} setCareerRun={setCareerRun} /> : <main className="setup-workspace"><SetupPanel onCreate={startStudio} /></main>)}
+      <footer><span>HG Film Producer</span><span>{view === "dev" ? "Dev mode · engine-backed dashboard" : view === "scenarios" ? "Classic scenario catalogue" : "Interactive production pipeline"}</span></footer>
     </div>
   );
 }
