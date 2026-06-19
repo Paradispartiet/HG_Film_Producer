@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
-import { getClassicFilmScenarios } from "../data/filmScenarios";
+import { getClassicFilmScenarios, type FilmScenarioSeed } from "../data/filmScenarios";
 
-export function FilmScenarioLibrary() {
+export function FilmScenarioLibrary({ onStartScenario }: { readonly onStartScenario?: (scenario: FilmScenarioSeed) => void }) {
   const [query, setQuery] = useState("");
   const scenarios = getClassicFilmScenarios();
   const normalizedQuery = query.trim().toLowerCase();
@@ -51,7 +51,7 @@ export function FilmScenarioLibrary() {
               {scenario.film.genres.map((genre) => <span key={genre}>{genre}</span>)}
             </div>
             <p>{scenario.production_challenge}</p>
-            <button className="secondary-button" disabled type="button">Start scenario</button>
+            <button className="secondary-button" disabled={!onStartScenario} onClick={() => onStartScenario?.(scenario)} type="button">Start scenario</button>
           </article>
         ))}
       </div>
