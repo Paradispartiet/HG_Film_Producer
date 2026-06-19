@@ -66,6 +66,7 @@ export const startingStudioPresets: readonly StartingStudioPreset[] = [
 ];
 
 export interface ProjectSetupRun {
+  readonly classicScenarioId?: string;
   readonly studio: StudioDashboardSummary;
   readonly studioState: Studio;
   readonly careerState: ReturnType<typeof createCareerState>;
