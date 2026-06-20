@@ -535,6 +535,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use songs as evidence", "Let music carry emotion", "Balance interviews with listening"],
     learningGoals: ["Documentary can turn research into suspense and rediscovery"],
     verificationStatus: "needs_research"
+  },
+  scenario_smoke_1995: {
+    scenarioId: "scenario_smoke_1995",
+    title: "Smoke production brief",
+    logline: "Turn everyday neighborhood stories into gentle comedy-drama about grief, lies, and connection.",
+    genreTargets: ["Character comedy-drama", "Neighborhood story exchange", "Everyday ensemble drama"],
+    toneTargets: ["Warm and observant", "Gently melancholic", "Human and conversational"],
+    screenplayTargets: ["Turn routine into encounter", "Reveal grief through small lies", "Use storytelling as structure"],
+    cinematographyTargets: ["Make the corner shop a hub", "Frame routine as community", "Let faces carry reveals"],
+    editingTargets: ["Keep a conversational rhythm", "Let stories unfold gently", "Hold room for small reactions"],
+    soundTargets: ["Let voices create intimacy", "Use street texture lightly", "Keep storytelling emotionally clear"],
+    learningGoals: ["Everyday encounters can become dramatic through story exchange"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_class_2008: {
+    scenarioId: "scenario_the_class_2008",
+    title: "The Class production brief",
+    logline: "Use one classroom as a social pressure system where language, authority, and identity collide.",
+    genreTargets: ["Classroom social drama", "Institutional ensemble drama", "Discussion-led conflict"],
+    toneTargets: ["Observational and tense", "Socially noisy", "Grounded and immediate"],
+    screenplayTargets: ["Build conflict through discussion", "Let misunderstanding escalate", "Test authority through language"],
+    cinematographyTargets: ["Use one room as pressure", "Track ensemble reactions", "Frame group dynamics clearly"],
+    editingTargets: ["Cut with debate momentum", "Hold reaction chains", "Let misunderstandings accumulate"],
+    soundTargets: ["Layer overlapping dialogue", "Use classroom noise as pressure", "Let voices compete for power"],
+    learningGoals: ["A single social space can reveal power, identity and conflict"],
+    verificationStatus: "needs_research"
+  },
+  scenario_requiem_for_a_dream_2000: {
+    scenarioId: "scenario_requiem_for_a_dream_2000",
+    title: "Requiem for a Dream production brief",
+    logline: "Make desire and obsession feel physical as parallel characters push toward psychological collapse.",
+    genreTargets: ["Psychological character drama", "Addiction pressure story", "Parallel collapse drama"],
+    toneTargets: ["Intense and subjective", "Compulsive", "Escalating toward collapse"],
+    screenplayTargets: ["Parallel character pressure", "Turn desire into obsession", "Escalate choices into collapse"],
+    cinematographyTargets: ["Make inner states visible", "Use subjective visual rhythm", "Frame bodies under pressure"],
+    editingTargets: ["Make editing feel like compulsion", "Use repetition as escalation", "Cut fast when pressure spikes"],
+    soundTargets: ["Use music as pressure", "Repeat sounds like urges", "Make compulsion audible"],
+    learningGoals: ["Editing and sound can make inner states feel physical"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_shining_1980: {
+    scenarioId: "scenario_the_shining_1980",
+    title: "The Shining production brief",
+    logline: "Let space create dread as family pressure and isolation turn an interior world into a threat.",
+    genreTargets: ["Psychological horror", "Isolation drama", "Family pressure nightmare"],
+    toneTargets: ["Dread-filled", "Cold and uncanny", "Patient before shock"],
+    screenplayTargets: ["Tie family pressure to space", "Let routine become warning", "Build threat through isolation"],
+    cinematographyTargets: ["Use symmetry as unease", "Frame negative space", "Make interiors feel hostile"],
+    editingTargets: ["Build slow dread first", "Delay shocks with patience", "Use repetition as warning"],
+    soundTargets: ["Make sound feel uneasy", "Repeat cues as warnings", "Let quiet spaces threaten"],
+    learningGoals: ["Horror can be built from space, rhythm and anticipation"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_return_2003: {
+    scenarioId: "scenario_the_return_2003",
+    title: "The Return production brief",
+    logline: "Use a sparse journey to test family bonds through authority, absence, landscape, and silence.",
+    genreTargets: ["Austere family drama", "Coming-of-age journey", "Authority and absence story"],
+    toneTargets: ["Restrained and mysterious", "Quietly tense", "Emotionally loaded"],
+    screenplayTargets: ["Make the journey an emotional test", "Keep authority uncertain", "Let absence shape conflict"],
+    cinematographyTargets: ["Use landscape as pressure", "Make water feel charged", "Frame distance in family bonds"],
+    editingTargets: ["Keep pacing restrained", "Let silence lengthen tension", "Hold uncertainty between scenes"],
+    soundTargets: ["Use silence as family tension", "Let place sound distant", "Keep dialogue minimal"],
+    learningGoals: ["Minimal dialogue can make relationships feel mysterious and loaded"],
+    verificationStatus: "needs_research"
   }
 };
 
