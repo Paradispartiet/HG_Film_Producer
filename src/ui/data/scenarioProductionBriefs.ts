@@ -340,6 +340,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Make danger feel physical", "Use crime-world texture sparingly", "Let quiet choices precede escalation"],
     learningGoals: ["Origin stories can connect character formation to system pressure"],
     verificationStatus: "needs_research"
+  },
+  scenario_the_bothersome_man_2006: {
+    scenarioId: "scenario_the_bothersome_man_2006",
+    title: "The Bothersome Man production brief",
+    logline: "Build an absurd social satire where a pleasant world makes conformity feel like existential captivity.",
+    genreTargets: ["Absurd speculative satire", "Conformity drama", "Trapped-normality mystery"],
+    toneTargets: ["Pleasant but wrong", "Dryly comic", "Existentially uneasy"],
+    screenplayTargets: ["Make conformity the pressure", "Reveal mystery through small disruptions", "Let alienation grow under politeness"],
+    cinematographyTargets: ["Use controlled clean spaces", "Let design feel emotionally wrong", "Frame normality as a trap"],
+    editingTargets: ["Keep a dry comic rhythm", "Hold discomfort after disruptions", "Let repetition expose unease"],
+    soundTargets: ["Use uncomfortable silence", "Keep surfaces calmly polished", "Let small sounds disturb order"],
+    learningGoals: ["Speculative worlds can critique normal life through design and tone"],
+    verificationStatus: "needs_research"
+  },
+  scenario_buffalo_66_1998: {
+    scenarioId: "scenario_buffalo_66_1998",
+    title: "Buffalo '66 production brief",
+    logline: "Shape an offbeat romantic tragicomedy where defensive performance hides loneliness and emotional damage.",
+    genreTargets: ["Offbeat romantic tragicomedy", "Loneliness character study", "Awkward intimacy drama"],
+    toneTargets: ["Defensive and wounded", "Awkwardly funny", "Suddenly vulnerable"],
+    screenplayTargets: ["Make performance reveal damage", "Use awkward pauses as character action", "Let intimacy grow through contradiction"],
+    cinematographyTargets: ["Use stylized framing", "Make memory feel subjective", "Frame closeness as uncomfortable"],
+    editingTargets: ["Hold discomfort before release", "Let pauses create tension", "Cut sharply into vulnerability"],
+    soundTargets: ["Use music as emotional rupture", "Let silence expose defenses", "Shift sound with memory and feeling"],
+    learningGoals: ["Romance can grow from contradiction and awkward performance"],
+    verificationStatus: "needs_research"
+  },
+  scenario_dogville_2003: {
+    scenarioId: "scenario_dogville_2003",
+    title: "Dogville production brief",
+    logline: "Stage a theatrical moral crime drama where community pressure turns a social experiment into exploitation.",
+    genreTargets: ["Theatrical moral crime drama", "Community pressure story", "Social experiment drama"],
+    toneTargets: ["Severe and analytical", "Morally escalating", "Exposed and judgmental"],
+    screenplayTargets: ["Repeat situations to shift power", "Make staging expose the community's rules", "Escalate exploitation through consent"],
+    cinematographyTargets: ["Use stripped-down staging", "Make space function as judgment", "Frame bodies inside social rules"],
+    editingTargets: ["Build chapter-like escalation", "Track power shifts clearly", "Let repetition become accusation"],
+    soundTargets: ["Use voice as judgment", "Let empty space speak", "Keep community pressure audible"],
+    learningGoals: ["Stripped-down staging can expose social rules and moral violence"],
+    verificationStatus: "needs_research"
+  },
+  scenario_down_by_law_1986: {
+    scenarioId: "scenario_down_by_law_1986",
+    title: "Down by Law production brief",
+    logline: "Create a deadpan prison and escape comedy drama where mismatched outsiders drift into reluctant friendship.",
+    genreTargets: ["Deadpan prison comedy drama", "Escape story", "Mismatched outsider friendship"],
+    toneTargets: ["Dry and spare", "Slowly comic", "Detached but tender"],
+    screenplayTargets: ["Keep plot minimal", "Build rhythm from character friction", "Let friendship arrive reluctantly"],
+    cinematographyTargets: ["Use black-and-white spareness", "Frame outsiders in empty space", "Keep the world visually restrained"],
+    editingTargets: ["Hold slow comic timing", "Let pauses do story work", "Make small shifts feel dramatic"],
+    soundTargets: ["Use music as mood and drift", "Let voices define rhythm", "Keep silence relaxed and strange"],
+    learningGoals: ["Deadpan rhythm can make small character shifts feel dramatic"],
+    verificationStatus: "needs_research"
+  },
+  scenario_american_splendor_2003: {
+    scenarioId: "scenario_american_splendor_2003",
+    title: "American Splendor production brief",
+    logline: "Build a biographical comic drama where ordinary frustration becomes story through self-reflexive form.",
+    genreTargets: ["Biographical comic drama", "Everyday-life character study", "Self-reflexive biography"],
+    toneTargets: ["Dry and observant", "Plainspoken and frustrated", "Funny without polish"],
+    screenplayTargets: ["Turn ordinary frustration into story material", "Mix biography with self-commentary", "Let everyday routines reveal character"],
+    cinematographyTargets: ["Mix realism with performance", "Use comic-book framing lightly", "Frame ordinary spaces as expressive"],
+    editingTargets: ["Cut between forms clearly", "Use dry humor through observation", "Let routine create rhythm"],
+    soundTargets: ["Use voiceover texture", "Keep interview-like directness", "Let ordinary noise ground the humor"],
+    learningGoals: ["Biography can use form-mixing to show ordinary experience"],
+    verificationStatus: "needs_research"
   }
 };
 
