@@ -7,12 +7,17 @@ import {
 } from "./scenarioProductionBriefs";
 import type { FilmScenarioSeed } from "./filmScenarios";
 
-const starterScenarioIds = [
+const manualScenarioIds = [
   "scenario_the_machinist_2004",
   "scenario_the_lives_of_others_2006",
   "scenario_lost_in_translation_2003",
   "scenario_12_angry_men_1957",
-  "scenario_a_prophet_2009"
+  "scenario_a_prophet_2009",
+  "scenario_3_iron_2004",
+  "scenario_one_flew_over_the_cuckoos_nest_1975",
+  "scenario_last_life_in_the_universe_2003",
+  "scenario_moonrise_kingdom_2012",
+  "scenario_true_romance_1993"
 ] as const;
 
 const targetCategories = [
@@ -56,8 +61,8 @@ function createScenario(id: string): FilmScenarioSeed {
   };
 }
 
-test("starter scenario production briefs resolve with research-needed status and targets", () => {
-  for (const scenarioId of starterScenarioIds) {
+test("manual scenario production briefs resolve with research-needed status and targets", () => {
+  for (const scenarioId of manualScenarioIds) {
     const brief = resolveScenarioProductionBrief(createScenario(scenarioId));
 
     assert.equal(brief.scenarioId, scenarioId);

@@ -79,6 +79,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use hard institutional texture", "Let crowds signal danger", "Drop into quiet for calculation"],
     learningGoals: ["Build world rules through pressure", "Show power structures in action", "Track moral compromise clearly"],
     verificationStatus: "needs_research"
+  },
+  scenario_3_iron_2004: {
+    scenarioId: "scenario_3_iron_2004",
+    title: "3-Iron production brief",
+    logline: "Shape a quiet crime-romance drama where borrowed spaces and small gestures create intimacy without conventional dialogue.",
+    genreTargets: ["Quiet crime-romance drama", "Intimate outsider story", "Borrowed-space character study"],
+    toneTargets: ["Silent and observant", "Tenderly uneasy", "Restrained and intimate"],
+    screenplayTargets: ["Let silence carry intention", "Build connection through gestures", "Use empty rooms as story turns"],
+    cinematographyTargets: ["Frame borrowed spaces carefully", "Observe bodies at a distance", "Let rooms reveal character"],
+    editingTargets: ["Keep an observational rhythm", "Hold on quiet discoveries", "Let actions replace exposition"],
+    soundTargets: ["Practice sound restraint", "Use room tone as intimacy", "Let silence stay active"],
+    learningGoals: ["Create intimacy without dialogue", "Make spaces feel temporarily owned", "Tell emotion through gesture"],
+    verificationStatus: "needs_research"
+  },
+  scenario_one_flew_over_the_cuckoos_nest_1975: {
+    scenarioId: "scenario_one_flew_over_the_cuckoos_nest_1975",
+    title: "One Flew Over the Cuckoo's Nest production brief",
+    logline: "Stage an institutional drama where rebellion, control, and ensemble pressure escalate through character conflict.",
+    genreTargets: ["Institutional drama", "Rebellion-versus-control story", "Ensemble character conflict"],
+    toneTargets: ["Pressurized and human", "Defiant under restraint", "Performance-driven"],
+    screenplayTargets: ["Set rules against rebellion", "Escalate through character conflict", "Let the ensemble create pressure"],
+    cinematographyTargets: ["Use institutional space as pressure", "Frame control in interiors", "Track power through blocking"],
+    editingTargets: ["Build performance-driven escalation", "Cut around group reactions", "Let confrontations gather force"],
+    soundTargets: ["Let voices define power", "Use routine as pressure", "Hold silence after defiance"],
+    learningGoals: ["Dramatize rebellion inside rules", "Use ensemble pressure clearly", "Escalate conflict through performance"],
+    verificationStatus: "needs_research"
+  },
+  scenario_last_life_in_the_universe_2003: {
+    scenarioId: "scenario_last_life_in_the_universe_2003",
+    title: "Last Life in the Universe production brief",
+    logline: "Build a melancholic crime-romance mood piece where loneliness, drift, and alienation matter more than plot mechanics.",
+    genreTargets: ["Melancholic crime romance", "Loneliness drama", "Drifting character study"],
+    toneTargets: ["Quietly alienated", "Melancholic and sparse", "Tender but distant"],
+    screenplayTargets: ["Favor mood over plot", "Use sparse dialogue", "Let alienation shape choices"],
+    cinematographyTargets: ["Hold quiet visual rhythm", "Frame distance between people", "Use spaces for emotional drift"],
+    editingTargets: ["Let scenes linger", "Move with a drifting pace", "Cut gently between moods"],
+    soundTargets: ["Keep dialogue spare", "Use quiet textures", "Let silence suggest loneliness"],
+    learningGoals: ["Make loneliness playable", "Build romance through distance", "Let mood guide structure"],
+    verificationStatus: "needs_research"
+  },
+  scenario_moonrise_kingdom_2012: {
+    scenarioId: "scenario_moonrise_kingdom_2012",
+    title: "Moonrise Kingdom production brief",
+    logline: "Create a stylized coming-of-age adventure where childlike seriousness, ritual, and composed frames turn escape into a storybook quest.",
+    genreTargets: ["Stylized coming-of-age adventure", "Ensemble comedy adventure", "Storybook escape romance"],
+    toneTargets: ["Childlike and serious", "Playfully melancholic", "Precise and warm"],
+    screenplayTargets: ["Treat young stakes seriously", "Build rituals into conflict", "Use ensemble timing for comedy"],
+    cinematographyTargets: ["Compose symmetrical frames", "Build a map-like world", "Use objects as story clues"],
+    editingTargets: ["Keep comedy timing crisp", "Move like a planned expedition", "Balance play with melancholy"],
+    soundTargets: ["Use cues with playful precision", "Let objects and rituals sound clear", "Support wonder without clutter"],
+    learningGoals: ["Build a world with maps and rituals", "Direct comedy through composition", "Balance innocence with melancholy"],
+    verificationStatus: "needs_research"
+  },
+  scenario_true_romance_1993: {
+    scenarioId: "scenario_true_romance_1993",
+    title: "True Romance production brief",
+    logline: "Drive a crime-romance thriller where lovers-on-the-run momentum, pop-culture voice, and sudden danger create violent tonal shifts.",
+    genreTargets: ["Crime romance thriller", "Lovers-on-the-run story", "Pop-culture crime tale"],
+    toneTargets: ["Fast and heightened", "Romantic under threat", "Violently unpredictable"],
+    screenplayTargets: ["Give lovers active momentum", "Use heightened dialogue", "Let danger interrupt fantasy"],
+    cinematographyTargets: ["Frame romance inside threat", "Use bold locations as pressure", "Make confrontations feel sudden"],
+    editingTargets: ["Keep run-away energy", "Snap into danger quickly", "Shape sharp tonal shifts"],
+    soundTargets: ["Let dialogue drive rhythm", "Use music for romantic charge", "Make violence arrive abruptly"],
+    learningGoals: ["Blend romance with crime stakes", "Control violent tonal shifts", "Write voice-forward conflict"],
+    verificationStatus: "needs_research"
   }
 };
 
