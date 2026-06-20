@@ -17,7 +17,12 @@ const manualScenarioIds = [
   "scenario_one_flew_over_the_cuckoos_nest_1975",
   "scenario_last_life_in_the_universe_2003",
   "scenario_moonrise_kingdom_2012",
-  "scenario_true_romance_1993"
+  "scenario_true_romance_1993",
+  "scenario_waltz_with_bashir_2008",
+  "scenario_into_the_wild_2007",
+  "scenario_ex_machina_2014",
+  "scenario_winters_bone_2010",
+  "scenario_midnight_in_paris_2011"
 ] as const;
 
 const targetCategories = [

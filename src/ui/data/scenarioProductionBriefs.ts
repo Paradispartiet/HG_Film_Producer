@@ -144,6 +144,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Let dialogue drive rhythm", "Use music for romantic charge", "Make violence arrive abruptly"],
     learningGoals: ["Blend romance with crime stakes", "Control violent tonal shifts", "Write voice-forward conflict"],
     verificationStatus: "needs_research"
+  },
+  scenario_waltz_with_bashir_2008: {
+    scenarioId: "scenario_waltz_with_bashir_2008",
+    title: "Waltz with Bashir production brief",
+    logline: "Shape an animated documentary memory journey where trauma returns through fragments, witnesses, and subjective reconstruction.",
+    genreTargets: ["Animated documentary", "Memory journey", "Trauma investigation"],
+    toneTargets: ["Haunted and reflective", "Fragmented but focused", "Dreamlike under pressure"],
+    screenplayTargets: ["Let memory fragments guide structure", "Use witnesses as perspective shifts", "Keep reconstruction subjective"],
+    cinematographyTargets: ["Build a dreamlike visual language", "Make memory feel unstable", "Frame testimony as inner landscape"],
+    editingTargets: ["Transition between memory fragments", "Let association drive movement", "Balance drift with discovery"],
+    soundTargets: ["Use music as emotional pressure", "Let voices carry uncertainty", "Make silence expose trauma"],
+    learningGoals: ["Use stylization to explore memory", "Turn testimony into structure", "Make documentary form playable"],
+    verificationStatus: "needs_research"
+  },
+  scenario_into_the_wild_2007: {
+    scenarioId: "scenario_into_the_wild_2007",
+    title: "Into the Wild production brief",
+    logline: "Follow a biographical road adventure where idealism, escape, and consequence turn travel into inner transformation.",
+    genreTargets: ["Biographical road drama", "Adventure character study", "Escape-and-consequence journey"],
+    toneTargets: ["Idealistic and searching", "Free but isolated", "Reflective and bittersweet"],
+    screenplayTargets: ["Build an episodic journey structure", "Let freedom clash with isolation", "Track idealism toward consequence"],
+    cinematographyTargets: ["Use landscape as inner state", "Frame travel as transformation", "Make distance feel emotional"],
+    editingTargets: ["Keep a reflective rhythm", "Let episodes accumulate meaning", "Balance movement with stillness"],
+    soundTargets: ["Use music as reflection", "Let nature carry solitude", "Keep quiet moments open"],
+    learningGoals: ["Let place and travel carry transformation", "Make escape reveal character", "Use landscape as emotional pressure"],
+    verificationStatus: "needs_research"
+  },
+  scenario_ex_machina_2014: {
+    scenarioId: "scenario_ex_machina_2014",
+    title: "Ex Machina production brief",
+    logline: "Stage a contained sci-fi psychological thriller where dialogue, control, and ambiguity make every exchange feel like a test.",
+    genreTargets: ["Contained sci-fi thriller", "Psychological chamber drama", "Control-and-manipulation story"],
+    toneTargets: ["Controlled and uneasy", "Ambiguous under the surface", "Intimate but threatening"],
+    screenplayTargets: ["Make dialogue feel like a test", "Withhold information carefully", "Let manipulation shift power"],
+    cinematographyTargets: ["Use clean controlled spaces", "Frame glass and distance as pressure", "Make symmetry feel trapped"],
+    editingTargets: ["Build slow tension", "Delay certainty between scenes", "Cut around withheld information"],
+    soundTargets: ["Keep sound sparse", "Suggest machine unease", "Let quiet rooms feel monitored"],
+    learningGoals: ["Stage science fiction as chamber drama", "Create suspense through dialogue", "Use controlled space as conflict"],
+    verificationStatus: "needs_research"
+  },
+  scenario_winters_bone_2010: {
+    scenarioId: "scenario_winters_bone_2010",
+    title: "Winter's Bone production brief",
+    logline: "Build a rural mystery drama where survival, family pressure, and community silence turn every boundary into suspense.",
+    genreTargets: ["Rural mystery drama", "Survival family story", "Community-boundary investigation"],
+    toneTargets: ["Harsh and restrained", "Quietly threatening", "Grounded in silence"],
+    screenplayTargets: ["Investigate through community boundaries", "Let family pressure drive choices", "Make silence block answers"],
+    cinematographyTargets: ["Use harsh landscape as pressure", "Favor lived-in realism", "Frame survival in everyday spaces"],
+    editingTargets: ["Keep pacing restrained", "Let encounters reveal risk", "Hold tension after refusals"],
+    soundTargets: ["Keep threats quiet in dialogue", "Use ambient sound as pressure", "Let silence signal danger"],
+    learningGoals: ["Use social worldbuilding to create suspense", "Make restraint feel dangerous", "Turn community rules into stakes"],
+    verificationStatus: "needs_research"
+  },
+  scenario_midnight_in_paris_2011: {
+    scenarioId: "scenario_midnight_in_paris_2011",
+    title: "Midnight in Paris production brief",
+    logline: "Create a romantic fantasy comedy where nostalgia, city enchantment, and a whimsical time-shift premise reveal present longing.",
+    genreTargets: ["Romantic fantasy comedy", "Whimsical time-shift story", "City dream-space romance"],
+    toneTargets: ["Light and wistful", "Whimsical but clear", "Romantic with comic ease"],
+    screenplayTargets: ["Let nostalgia become the central conflict", "Make the premise simple to play", "Contrast longing with present life"],
+    cinematographyTargets: ["Use the city as dream space", "Make streets feel enchanted", "Frame wonder through movement"],
+    editingTargets: ["Keep a light comic rhythm", "Let time shifts feel graceful", "Balance fantasy with conversation"],
+    soundTargets: ["Use music as period mood", "Let city ambience feel inviting", "Keep fantasy cues light"],
+    learningGoals: ["Externalize longing through fantasy", "Make nostalgia playable", "Use place as romantic imagination"],
+    verificationStatus: "needs_research"
   }
 };
 
