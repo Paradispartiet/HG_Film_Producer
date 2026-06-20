@@ -184,8 +184,8 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     learningGoals: ["Stage science fiction as chamber drama", "Create suspense through dialogue", "Use controlled space as conflict"],
     verificationStatus: "needs_research"
   },
-  scenario_winters_bone_2010: {
-    scenarioId: "scenario_winters_bone_2010",
+  scenario_winter_s_bone_2010: {
+    scenarioId: "scenario_winter_s_bone_2010",
     title: "Winter's Bone production brief",
     logline: "Build a rural mystery drama where survival, family pressure, and community silence turn every boundary into suspense.",
     genreTargets: ["Rural mystery drama", "Survival family story", "Community-boundary investigation"],
@@ -195,6 +195,72 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     editingTargets: ["Keep pacing restrained", "Let encounters reveal risk", "Hold tension after refusals"],
     soundTargets: ["Keep threats quiet in dialogue", "Use ambient sound as pressure", "Let silence signal danger"],
     learningGoals: ["Use social worldbuilding to create suspense", "Make restraint feel dangerous", "Turn community rules into stakes"],
+    verificationStatus: "needs_research"
+  },
+
+  scenario_district_9_2009: {
+    scenarioId: "scenario_district_9_2009",
+    title: "District 9 production brief",
+    logline: "Build a sci-fi action thriller where social pressure, body change, and institutional force collide in restricted zones.",
+    genreTargets: ["Sci-fi action thriller", "Social-pressure survival story", "Institutional alienation drama"],
+    toneTargets: ["Immediate and unstable", "Chaotic but readable", "Physically escalating"],
+    screenplayTargets: ["Make bureaucracy part of the worldbuilding", "Turn transformation into escalation", "Push alienation through institutional force"],
+    cinematographyTargets: ["Use documentary-style immediacy", "Frame restricted zones as pressure", "Keep action legible inside chaos"],
+    editingTargets: ["Cut media fragments into world rules", "Escalate from procedure to panic", "Keep action geography readable"],
+    soundTargets: ["Layer crowd and media pressure", "Make body change unsettling", "Use alarms and orders as threat"],
+    learningGoals: ["Science fiction can make social conflict physical and immediate"],
+    verificationStatus: "needs_research"
+  },
+  scenario_it_s_a_wonderful_life_1946: {
+    scenarioId: "scenario_it_s_a_wonderful_life_1946",
+    title: "It's a Wonderful Life production brief",
+    logline: "Shape a fantasy-inflected community drama where moral crisis reveals one person's value through relationships.",
+    genreTargets: ["Fantasy-inflected community drama", "Moral crisis story", "Ensemble small-town drama"],
+    toneTargets: ["Warm but pressured", "Despairing then communal", "Emotionally generous"],
+    screenplayTargets: ["Reveal value through relationships", "Turn the community into the emotional stakes", "Make ordinary choices feel moral"],
+    cinematographyTargets: ["Make the town a dramatic universe", "Frame belonging through groups", "Contrast isolation with community"],
+    editingTargets: ["Keep a warm ensemble rhythm", "Let crisis beats accumulate", "Move clearly between despair and support"],
+    soundTargets: ["Let voices create belonging", "Use quiet to expose despair", "Make community sound restorative"],
+    learningGoals: ["Fantasy can reframe everyday life as moral drama"],
+    verificationStatus: "needs_research"
+  },
+  scenario_no_country_for_old_men_2007: {
+    scenarioId: "scenario_no_country_for_old_men_2007",
+    title: "No Country for Old Men production brief",
+    logline: "Build a sparse crime thriller where pursuit, silence, and moral exhaustion make fate feel unavoidable.",
+    genreTargets: ["Sparse crime thriller", "Pursuit suspense story", "Moral exhaustion drama"],
+    toneTargets: ["Bleak and restrained", "Inevitable", "Quietly threatening"],
+    screenplayTargets: ["Let pursuit define structure", "Withhold explanations for pressure", "Use minimal dialogue as tension"],
+    cinematographyTargets: ["Make landscape feel dangerous", "Frame absence as threat", "Hold distance around violence"],
+    editingTargets: ["Control suspense with restraint", "Delay releases of information", "Let silence stretch before action"],
+    soundTargets: ["Let silence create threat", "Keep footsteps and objects precise", "Use absence of sound as pressure"],
+    learningGoals: ["Suspense can come from restraint, silence and inevitability"],
+    verificationStatus: "needs_research"
+  },
+  scenario_beasts_of_the_southern_wild_2012: {
+    scenarioId: "scenario_beasts_of_the_southern_wild_2012",
+    title: "Beasts of the Southern Wild production brief",
+    logline: "Create a mythic coming-of-age survival drama where a child's perspective turns place, community, and catastrophe into legend.",
+    genreTargets: ["Mythic coming-of-age drama", "Survival community story", "Heightened realism fable"],
+    toneTargets: ["Raw and wondrous", "Energetic and intimate", "Defiant under catastrophe"],
+    screenplayTargets: ["Scale events through a child perspective", "Tie community to survival", "Let catastrophe feel personal and mythic"],
+    cinematographyTargets: ["Use tactile worldbuilding", "Keep a rough visual energy", "Make landscape feel alive"],
+    editingTargets: ["Move with rough momentum", "Balance wonder with danger", "Let memory and sensation guide rhythm"],
+    soundTargets: ["Layer weather and community texture", "Make the world feel handmade", "Let music lift mythic moments"],
+    learningGoals: ["Place can become myth through perspective"],
+    verificationStatus: "needs_research"
+  },
+  scenario_moon_2009: {
+    scenarioId: "scenario_moon_2009",
+    title: "Moon production brief",
+    logline: "Stage a contained sci-fi mystery drama where isolation, routine, and doubt turn identity into the central question.",
+    genreTargets: ["Contained sci-fi mystery", "Isolation identity drama", "Minimal-cast chamber story"],
+    toneTargets: ["Lonely and controlled", "Quietly doubtful", "Restrained and uncanny"],
+    screenplayTargets: ["Use routine to make doubt visible", "Let repetition expose identity questions", "Build a slow reveal structure"],
+    cinematographyTargets: ["Control space tightly", "Frame isolation inside routine", "Make work areas feel repetitive"],
+    editingTargets: ["Pace reveals patiently", "Repeat patterns with small changes", "Keep the mystery contained"],
+    soundTargets: ["Use restrained machine ambience", "Let quiet rooms feel isolated", "Make repeated sounds signal routine"],
+    learningGoals: ["Science fiction can use confinement to explore selfhood"],
     verificationStatus: "needs_research"
   },
   scenario_midnight_in_paris_2011: {
