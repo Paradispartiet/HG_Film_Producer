@@ -275,6 +275,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use music as period mood", "Let city ambience feel inviting", "Keep fantasy cues light"],
     learningGoals: ["Externalize longing through fantasy", "Make nostalgia playable", "Use place as romantic imagination"],
     verificationStatus: "needs_research"
+  },
+  scenario_the_big_lebowski_1998: {
+    scenarioId: "scenario_the_big_lebowski_1998",
+    title: "The Big Lebowski production brief",
+    logline: "Build a comic crime mystery where mistaken identity turns an absurd investigation into a relaxed character maze.",
+    genreTargets: ["Comic crime mystery", "Absurd investigation", "Mistaken-identity comedy"],
+    toneTargets: ["Deadpan and odd", "Relaxed under pressure", "Playfully escalating"],
+    screenplayTargets: ["Let absurd detours drive the mystery", "Set relaxed characters against crime structure", "Use social rituals as comic turns"],
+    cinematographyTargets: ["Use Los Angeles as a comic maze", "Frame hangouts as investigation spaces", "Make ordinary rooms feel strange"],
+    editingTargets: ["Build rhythm from detours", "Hold reactions for deadpan comedy", "Escalate through odd encounters"],
+    soundTargets: ["Let dialogue carry dry humor", "Use room texture for social awkwardness", "Keep crime beats lightly off-balance"],
+    learningGoals: ["Crime structure can carry absurd comedy"],
+    verificationStatus: "needs_research"
+  },
+  scenario_leaving_las_vegas_1995: {
+    scenarioId: "scenario_leaving_las_vegas_1995",
+    title: "Leaving Las Vegas production brief",
+    logline: "Shape an intimate tragic romance where self-destruction and fragile connection meet without a rescue fantasy.",
+    genreTargets: ["Intimate tragic romance", "Two-character drama", "Self-destruction character study"],
+    toneTargets: ["Emotionally honest", "Fragile and nocturnal", "Tender without rescue"],
+    screenplayTargets: ["Build romance around acceptance", "Keep connection fragile", "Let honesty matter more than solutions"],
+    cinematographyTargets: ["Use nightlife as emotional atmosphere", "Frame city drift as loneliness", "Hold restrained intimacy between two people"],
+    editingTargets: ["Let quiet encounters breathe", "Drift between closeness and distance", "Avoid easy recovery beats"],
+    soundTargets: ["Use music as loneliness", "Let nightlife sound feel adrift", "Keep intimate silences exposed"],
+    learningGoals: ["Romance can be built around acceptance, not solution"],
+    verificationStatus: "needs_research"
+  },
+  scenario_gran_torino_2008: {
+    scenarioId: "scenario_gran_torino_2008",
+    title: "Gran Torino production brief",
+    logline: "Stage a character drama where isolation, neighbor conflict, and a changing community pressure moral change.",
+    genreTargets: ["Character drama", "Neighbor-conflict story", "Moral-change drama"],
+    toneTargets: ["Guarded and confrontational", "Grounded in community tension", "Controlled toward choice"],
+    screenplayTargets: ["Use reluctant connection as pressure", "Set old values against change", "Show moral change through community conflict"],
+    cinematographyTargets: ["Use domestic space as boundary", "Frame streets as contested ground", "Mark distance between neighbors"],
+    editingTargets: ["Build toward moral choice", "Let confrontations play through performance", "Control rhythm around boundary shifts"],
+    soundTargets: ["Make neighborhood sound present", "Let silence follow confrontation", "Keep dialogue pressure direct"],
+    learningGoals: ["Character change can be shown through community pressure"],
+    verificationStatus: "needs_research"
+  },
+  scenario_mesrine_public_enemy_no_1_2008: {
+    scenarioId: "scenario_mesrine_public_enemy_no_1_2008",
+    title: "Mesrine: Public Enemy No. 1 production brief",
+    logline: "Drive a biographical crime-action thriller where notoriety, pursuit, and public image become story pressure.",
+    genreTargets: ["Biographical crime thriller", "Action pursuit story", "Notoriety-driven drama"],
+    toneTargets: ["Urgent and consequential", "Publicly exposed", "Escalating under pressure"],
+    screenplayTargets: ["Turn reputation into story pressure", "Use pursuit as structure", "Let criminal pressure escalate choices"],
+    cinematographyTargets: ["Frame public identity as threat", "Use institutions as pressure", "Keep action grounded in consequence"],
+    editingTargets: ["Build action rhythm with fallout", "Escalate through chase structure", "Cut between pressure and reaction"],
+    soundTargets: ["Layer media and public noise", "Use pursuit sounds as tension", "Let consequences land after action"],
+    learningGoals: ["Crime biography can turn reputation into story engine"],
+    verificationStatus: "needs_research"
+  },
+  scenario_mesrine_killer_instinct_2008: {
+    scenarioId: "scenario_mesrine_killer_instinct_2008",
+    title: "Mesrine: Killer Instinct production brief",
+    logline: "Shape a biographical crime origin story where violence, ambition, and identity push survival choices into moral descent.",
+    genreTargets: ["Biographical crime origin story", "Criminal-rise drama", "Violent survival thriller"],
+    toneTargets: ["Hard-edged and volatile", "Ambitious under threat", "Morally descending"],
+    screenplayTargets: ["Connect formation to system pressure", "Escalate from choice to criminal life", "Tie survival to identity"],
+    cinematographyTargets: ["Build period crime-world texture", "Frame physical danger closely", "Show systems around personal choices"],
+    editingTargets: ["Use sharp escalation", "Keep momentum through danger", "Track descent step by step"],
+    soundTargets: ["Make danger feel physical", "Use crime-world texture sparingly", "Let quiet choices precede escalation"],
+    learningGoals: ["Origin stories can connect character formation to system pressure"],
+    verificationStatus: "needs_research"
   }
 };
 
