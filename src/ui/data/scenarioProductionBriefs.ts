@@ -470,6 +470,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use cues as ritual", "Make reset sounds readable", "Let repetition become payoff"],
     learningGoals: ["Fantasy rules can drive comedy, structure and character growth"],
     verificationStatus: "needs_research"
+  },
+  scenario_the_truman_show_1998: {
+    scenarioId: "scenario_the_truman_show_1998",
+    title: "The Truman Show production brief",
+    logline: "Build a media satire and character drama where artificial normality traps a life performed under watch.",
+    genreTargets: ["Media satire", "Character drama", "Staged-reality mystery"],
+    toneTargets: ["Bright but controlled", "Uneasy under routine", "Human and suspicious"],
+    screenplayTargets: ["Question identity and performance", "Let freedom grow from suspicion", "Make routine reveal control"],
+    cinematographyTargets: ["Design the world as a trap", "Use hidden-camera feeling", "Frame normal life as staged"],
+    editingTargets: ["Cut between routine and doubt", "Build suspicion through repetition", "Shape revelation as release"],
+    soundTargets: ["Keep cheerful surfaces brittle", "Use public sound as pressure", "Let silence expose control"],
+    learningGoals: ["Production design can make an entire world feel like a trap"],
+    verificationStatus: "needs_research"
+  },
+  scenario_stranger_than_paradise_1984: {
+    scenarioId: "scenario_stranger_than_paradise_1984",
+    title: "Stranger Than Paradise production brief",
+    logline: "Create a minimalist deadpan road and immigrant comedy drama where drift and awkward companionship become movement.",
+    genreTargets: ["Minimalist deadpan comedy", "Road drama", "Immigrant character study"],
+    toneTargets: ["Dry and alienated", "Awkwardly companionable", "Quietly bored"],
+    screenplayTargets: ["Let drift create structure", "Use repetition with tiny shifts", "Keep plot minimal but active"],
+    cinematographyTargets: ["Use spare black-and-white language", "Frame distance in plain spaces", "Let emptiness shape mood"],
+    editingTargets: ["Let pauses become the rhythm", "Hold anti-dramatic beats", "Make small changes register"],
+    soundTargets: ["Use music as distance", "Let silence carry boredom", "Keep voices dry and sparse"],
+    learningGoals: ["Minimal plot can still create strong tone and character movement"],
+    verificationStatus: "needs_research"
+  },
+  scenario_forrest_gump_1994: {
+    scenarioId: "scenario_forrest_gump_1994",
+    title: "Forrest Gump production brief",
+    logline: "Shape a character-led historical life journey where innocence and memory carry one life across public history.",
+    genreTargets: ["Historical life journey", "Character-led drama", "Episodic memory story"],
+    toneTargets: ["Innocent and reflective", "Warm through change", "Bittersweet across time"],
+    screenplayTargets: ["Structure life as episodes", "Cross personal story with larger events", "Let memory guide transitions"],
+    cinematographyTargets: ["Track time through visual change", "Keep the character centered", "Make history feel personal"],
+    editingTargets: ["Use montage as memory structure", "Bridge time jumps emotionally", "Keep episodes connected"],
+    soundTargets: ["Use music as memory engine", "Let narration feel personal", "Carry emotion across eras"],
+    learningGoals: ["One character’s life can structure a broad historical panorama"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_man_who_wasn_t_there_2001: {
+    scenarioId: "scenario_the_man_who_wasn_t_there_2001",
+    title: "The Man Who Wasn't There production brief",
+    logline: "Build a noir crime drama where quiet restraint, moral drift, and fatal choice tighten around an empty life.",
+    genreTargets: ["Noir crime drama", "Fatalistic character study", "Blackmail pressure story"],
+    toneTargets: ["Quiet and restrained", "Bleakly controlled", "Detached but doomed"],
+    screenplayTargets: ["Pressure crime through restraint", "Let fate narrow choices", "Track moral drift quietly"],
+    cinematographyTargets: ["Use stark composition", "Frame negative space", "Make emptiness feel active"],
+    editingTargets: ["Keep a slow fatalistic rhythm", "Delay consequences calmly", "Let restraint build pressure"],
+    soundTargets: ["Use voiceover as distance", "Let silence suggest interior life", "Keep sound sparse and fatal"],
+    learningGoals: ["Noir can be built from restraint, emptiness and fatal choice"],
+    verificationStatus: "needs_research"
+  },
+  scenario_searching_for_sugar_man_2012: {
+    scenarioId: "scenario_searching_for_sugar_man_2012",
+    title: "Searching for Sugar Man production brief",
+    logline: "Create an investigative music documentary where research becomes mystery, rediscovery, and public memory.",
+    genreTargets: ["Investigative music documentary", "Archive mystery", "Witness-led rediscovery"],
+    toneTargets: ["Curious and suspenseful", "Reflective about memory", "Emotionally rediscovering"],
+    screenplayTargets: ["Turn research into mystery", "Use witnesses as perspective", "Build artist myth carefully"],
+    cinematographyTargets: ["Blend archive and present inquiry", "Frame evidence as discovery", "Let interviews carry memory"],
+    editingTargets: ["Reveal through evidence and music", "Shape inquiry as suspense", "Connect testimony into momentum"],
+    soundTargets: ["Use songs as evidence", "Let music carry emotion", "Balance interviews with listening"],
+    learningGoals: ["Documentary can turn research into suspense and rediscovery"],
+    verificationStatus: "needs_research"
   }
 };
 
