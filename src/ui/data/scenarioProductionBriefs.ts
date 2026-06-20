@@ -405,6 +405,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use voiceover texture", "Keep interview-like directness", "Let ordinary noise ground the humor"],
     learningGoals: ["Biography can use form-mixing to show ordinary experience"],
     verificationStatus: "needs_research"
+  },
+  scenario_mystery_train_1989: {
+    scenarioId: "scenario_mystery_train_1989",
+    title: "Mystery Train production brief",
+    logline: "Build a deadpan ensemble comedy-crime drama where lonely travellers cross through one shared city night.",
+    genreTargets: ["Deadpan ensemble comedy", "Crime-tinged city drama", "Intersecting traveller stories"],
+    toneTargets: ["Lonely and offbeat", "Dryly comic", "Slow and atmospheric"],
+    screenplayTargets: ["Connect separate stories through shared place", "Let rituals reveal lonely travellers", "Use pop memory as mood"],
+    cinematographyTargets: ["Make the hotel a narrative junction", "Treat city spaces as memory", "Frame encounters with distance"],
+    editingTargets: ["Hold pauses for deadpan timing", "Let stories echo through rhythm", "Keep intersections clear and quiet"],
+    soundTargets: ["Use music as identity", "Let voices shape atmosphere", "Make city sound feel nocturnal"],
+    learningGoals: ["Separate stories can be joined through place, rhythm and mood"],
+    verificationStatus: "needs_research"
+  },
+  scenario_dheepan_2015: {
+    scenarioId: "scenario_dheepan_2015",
+    title: "Dheepan production brief",
+    logline: "Shape an immigrant crime-social drama where a false family seeks belonging as private trauma meets public violence.",
+    genreTargets: ["Immigrant social drama", "Crime-pressure thriller", "False-family survival story"],
+    toneTargets: ["Restrained and fragile", "Grounded in realism", "Suddenly threatening"],
+    screenplayTargets: ["Build belonging through survival", "Let private trauma meet public violence", "Make family roles practical and tense"],
+    cinematographyTargets: ["Use housing space as pressure", "Frame community distance clearly", "Keep danger close to routine"],
+    editingTargets: ["Let realism tighten into thriller", "Hold quiet before sudden threat", "Track stakes through environment"],
+    soundTargets: ["Use social noise as pressure", "Make distance audible", "Let danger enter through sound"],
+    learningGoals: ["Social realism can become thriller through environment and stakes"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_pianist_2002: {
+    scenarioId: "scenario_the_pianist_2002",
+    title: "The Pianist production brief",
+    logline: "Create a historical survival drama where isolation, hiding, and music make endurance experiential.",
+    genreTargets: ["Historical survival drama", "Music-focused character study", "Isolation under threat"],
+    toneTargets: ["Restrained and grave", "Isolated and watchful", "Cumulatively pressured"],
+    screenplayTargets: ["Build survival through absence", "Make hiding active drama", "Tie endurance to artistic identity"],
+    cinematographyTargets: ["Use rooms as danger and refuge", "Frame observation under threat", "Make city space unstable"],
+    editingTargets: ["Keep pacing restrained", "Let pressure accumulate", "Hold survival moments without rush"],
+    soundTargets: ["Make silence part of survival", "Use music as emotional structure", "Let absence shape tension"],
+    learningGoals: ["Historical drama can use restraint to make survival experiential"],
+    verificationStatus: "needs_research"
+  },
+  scenario_crash_2004: {
+    scenarioId: "scenario_crash_2004",
+    title: "Crash production brief",
+    logline: "Build an ensemble social crime drama where intersecting lives turn prejudice, fear, and coincidence into collision.",
+    genreTargets: ["Ensemble social crime drama", "Intersecting-lives structure", "Moral collision story"],
+    toneTargets: ["Tense and confrontational", "Urban and volatile", "Morally pressured"],
+    screenplayTargets: ["Intersect lives through consequence", "Turn fear into sudden action", "Expose prejudice through confrontation"],
+    cinematographyTargets: ["Use the city as a network", "Frame encounters as pressure points", "Keep collisions visually direct"],
+    editingTargets: ["Cross-cut social tension", "Use coincidence as structure", "Build impact through collision"],
+    soundTargets: ["Let dialogue confront and expose", "Use city noise as pressure", "Hold silence after impact"],
+    learningGoals: ["Ensemble structure can turn social tension into dramatic collision"],
+    verificationStatus: "needs_research"
+  },
+  scenario_groundhog_day_1993: {
+    scenarioId: "scenario_groundhog_day_1993",
+    title: "Groundhog Day production brief",
+    logline: "Design a fantasy romantic comedy where a repeating day turns comic routine into self-knowledge and moral change.",
+    genreTargets: ["Fantasy romantic comedy", "Repetition-premise comedy", "Moral-change character story"],
+    toneTargets: ["Playful and structured", "Comic under pressure", "Warmly transformational"],
+    screenplayTargets: ["Use repetition as character pressure", "Turn routine into transformation", "Let fantasy rules drive growth"],
+    cinematographyTargets: ["Make the town a game board", "Repeat spaces with variation", "Frame routine as a reset"],
+    editingTargets: ["Build rhythm from variation", "Pay off repeated setups", "Keep resets clear and comic"],
+    soundTargets: ["Use cues as ritual", "Make reset sounds readable", "Let repetition become payoff"],
+    learningGoals: ["Fantasy rules can drive comedy, structure and character growth"],
+    verificationStatus: "needs_research"
   }
 };
 
