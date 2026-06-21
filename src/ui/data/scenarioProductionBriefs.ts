@@ -665,6 +665,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use natural field sound", "Make creature threat audible", "Keep comic understatement"],
     learningGoals: ["Fantasy can feel credible through documentary rules and local detail"],
     verificationStatus: "needs_research"
+  },
+  scenario_alamar_2009: {
+    scenarioId: "scenario_alamar_2009",
+    title: "Alamar production brief",
+    logline: "Shape an observational documentary-drama where parent-child care and the natural world create temporary belonging.",
+    genreTargets: ["Observational documentary-drama", "Parent-child intimacy", "Nature-rooted character study"],
+    toneTargets: ["Gentle and lived-in", "Tenderly observant", "Temporary but warm"],
+    screenplayTargets: ["Let daily work reveal care", "Build belonging through routine", "Keep separation quietly present"],
+    cinematographyTargets: ["Make sea and land emotional", "Observe work without forcing drama", "Hold intimate everyday moments"],
+    editingTargets: ["Keep a gentle rhythm", "Let lived-in moments breathe", "Move through care and routine"],
+    soundTargets: ["Use natural sound as presence", "Let water and wind hold memory", "Keep quiet moments open"],
+    learningGoals: ["Observation can make ordinary care feel cinematic"],
+    verificationStatus: "needs_research"
+  },
+  scenario_hugo_2011: {
+    scenarioId: "scenario_hugo_2011",
+    title: "Hugo production brief",
+    logline: "Build a family fantasy mystery where a child follows machines, spaces, and clues into hidden history.",
+    genreTargets: ["Adventure family fantasy", "Child-perspective mystery", "Discovery story"],
+    toneTargets: ["Curious and wondrous", "Mechanical but magical", "Warmly mysterious"],
+    screenplayTargets: ["Turn objects into mystery clues", "Reveal history through spaces", "Let curiosity drive discovery"],
+    cinematographyTargets: ["Make the station a magical world", "Use machines as visual wonder", "Frame hidden spaces as invitations"],
+    editingTargets: ["Move with curiosity", "Build reveal structure clearly", "Balance motion with discovery"],
+    soundTargets: ["Use clocks as story texture", "Let machines carry memory", "Make quiet discoveries feel intimate"],
+    learningGoals: ["Production design can turn film history into playable mystery"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_hunt_2012: {
+    scenarioId: "scenario_the_hunt_2012",
+    title: "The Hunt production brief",
+    logline: "Stage a social character drama where accusation breaks trust and turns ordinary community life into moral pressure.",
+    genreTargets: ["Social character drama", "Community collapse story", "Accusation-driven drama"],
+    toneTargets: ["Restrained and tense", "Morally pressured", "Quietly escalating"],
+    screenplayTargets: ["Show trust collapsing through reactions", "Let ordinary life become pressure", "Escalate through exclusion"],
+    cinematographyTargets: ["Use restrained realism", "Observe faces closely", "Frame community space as judgment"],
+    editingTargets: ["Build through looks and silences", "Let exclusion accumulate", "Hold reactions after suspicion"],
+    soundTargets: ["Use social sound as pressure", "Let absence create isolation", "Keep accusations emotionally sharp"],
+    learningGoals: ["Drama can build suspense through social trust breaking down"],
+    verificationStatus: "needs_research"
+  },
+  scenario_breathless_1960: {
+    scenarioId: "scenario_breathless_1960",
+    title: "Breathless production brief",
+    logline: "Create a crime drama where fugitives, identity, and casual rebellion move with restless modern energy.",
+    genreTargets: ["Restless crime drama", "Fugitive character story", "Modern urban rebellion"],
+    toneTargets: ["Casual and defiant", "Restless and cool", "Romantic but unstable"],
+    screenplayTargets: ["Let identity stay in motion", "Use conversation as drift", "Keep rebellion casual and risky"],
+    cinematographyTargets: ["Use loose urban movement", "Make street life the style", "Keep the camera feeling restless"],
+    editingTargets: ["Make editing feel restless", "Use jumpy rhythm", "Let scenes drift conversationally"],
+    soundTargets: ["Mix music with city sound", "Use pauses as attitude", "Let street noise keep momentum"],
+    learningGoals: ["Editing and camera style can become a film’s personality"],
+    verificationStatus: "needs_research"
+  },
+  scenario_bombon_el_perro_2004: {
+    scenarioId: "scenario_bombon_el_perro_2004",
+    title: "Bombón: El Perro production brief",
+    logline: "Shape a gentle character drama where loneliness, dignity, and unexpected companionship open a small road of possibility.",
+    genreTargets: ["Gentle character drama", "Companionship journey", "Small-opportunity road story"],
+    toneTargets: ["Warm and restrained", "Quietly comic", "Patient and humane"],
+    screenplayTargets: ["Use companionship as character movement", "Let dignity guide choices", "Make small opportunities matter"],
+    cinematographyTargets: ["Use sparse landscape patiently", "Observe character without pressure", "Frame the road as possibility"],
+    editingTargets: ["Keep quiet comic timing", "Let restraint carry feeling", "Move patiently between encounters"],
+    soundTargets: ["Use natural sound as warmth", "Let silence feel companionable", "Keep the world gently present"],
+    learningGoals: ["A simple relationship can carry a whole character journey"],
+    verificationStatus: "needs_research"
   }
 };
 
