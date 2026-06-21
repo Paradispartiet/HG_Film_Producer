@@ -600,6 +600,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use silence as family tension", "Let place sound distant", "Keep dialogue minimal"],
     learningGoals: ["Minimal dialogue can make relationships feel mysterious and loaded"],
     verificationStatus: "needs_research"
+  },
+  scenario_kitchen_stories_2003: {
+    scenarioId: "scenario_kitchen_stories_2003",
+    title: "Kitchen Stories production brief",
+    logline: "Let observation, distance, and small rule-breaks turn a controlled domestic experiment into awkward friendship.",
+    genreTargets: ["Nordic deadpan comedy-drama", "Domestic social experiment", "Awkward friendship story"],
+    toneTargets: ["Dry and restrained", "Observational", "Quietly awkward"],
+    screenplayTargets: ["Build comedy from protocol", "Let tiny breaches matter", "Turn routine into friendship"],
+    cinematographyTargets: ["Keep controlled domestic distance", "Frame observation as behavior", "Use space for visual restraint"],
+    editingTargets: ["Hold dry pauses", "Let small routines repeat", "Time tiny comic shifts"],
+    soundTargets: ["Use quiet room sound", "Let silence create tension", "Keep reactions understated"],
+    learningGoals: ["Comedy can grow from observation, distance, and small rule-breaks"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_celebration_1998: {
+    scenarioId: "scenario_the_celebration_1998",
+    title: "The Celebration production brief",
+    logline: "Turn a contained family ritual into a pressure cooker where truth breaks social order.",
+    genreTargets: ["Intense family chamber drama", "Ritual collapse story", "Contained ensemble drama"],
+    toneTargets: ["Immediate and volatile", "Socially pressured", "Emotionally raw"],
+    screenplayTargets: ["Turn ritual into pressure", "Escalate through speeches", "Make reactions change the room"],
+    cinematographyTargets: ["Use handheld immediacy", "Stay close to the gathering", "Let rooms feel unstable"],
+    editingTargets: ["Cut through interruptions", "Track social collapse", "Build pressure from reactions"],
+    soundTargets: ["Layer overlapping voices", "Use room tension", "Let silence follow truth"],
+    learningGoals: ["A social ritual can become a dramatic pressure system"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_400_blows_1959: {
+    scenarioId: "scenario_the_400_blows_1959",
+    title: "The 400 Blows production brief",
+    logline: "Make youth, authority, and escape collide as ordinary institutions become emotional confinement.",
+    genreTargets: ["Coming-of-age crime drama", "Youth authority conflict", "Escape story"],
+    toneTargets: ["Observational and restless", "Tender but pressured", "Institutionally restricted"],
+    screenplayTargets: ["Pressure youth with authority", "Let episodes drift toward consequence", "Make escape feel necessary"],
+    cinematographyTargets: ["Use everyday spaces as confinement", "Follow street movement", "Keep realism observational"],
+    editingTargets: ["Shape episodic drift", "Let consequences accumulate", "Balance routine with escape"],
+    soundTargets: ["Use city and school pressure", "Let silence isolate", "Keep ordinary noise restrictive"],
+    learningGoals: ["Youth drama can turn ordinary institutions into conflict"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_straight_story_1999: {
+    scenarioId: "scenario_the_straight_story_1999",
+    title: "The Straight Story production brief",
+    logline: "Use a simple slow journey to carry age, reconciliation, and emotional repair.",
+    genreTargets: ["Gentle biographical road drama", "Reconciliation journey", "Slow travel character study"],
+    toneTargets: ["Gentle and patient", "Reflective", "Warmly restrained"],
+    screenplayTargets: ["Make the journey emotional structure", "Let encounters reveal memory", "Keep repair simple and clear"],
+    cinematographyTargets: ["Use landscape as patience", "Frame travel as reflection", "Let distance hold memory"],
+    editingTargets: ["Keep calm pacing", "Let quiet encounters breathe", "Build repair gradually"],
+    soundTargets: ["Use music as warmth", "Let natural sound support reflection", "Keep quiet moments open"],
+    learningGoals: ["A small journey can carry large emotional repair"],
+    verificationStatus: "needs_research"
+  },
+  scenario_troll_hunter_2010: {
+    scenarioId: "scenario_troll_hunter_2010",
+    title: "Troll Hunter production brief",
+    logline: "Make folklore feel credible by filtering monster mystery through documentary rules and local detail.",
+    genreTargets: ["Found-footage fantasy thriller", "Folklore investigation", "Bureaucratic monster mystery"],
+    toneTargets: ["Documentary-grounded", "Tense but understated", "Locally comic"],
+    screenplayTargets: ["Investigate the monster mystery", "Mix folklore with bureaucracy", "Let rules make fantasy credible"],
+    cinematographyTargets: ["Use handheld field footage", "Restrict visibility", "Scale fantasy through glimpses"],
+    editingTargets: ["Balance documentary tone and scale", "Reveal threats through investigation", "Keep field tension readable"],
+    soundTargets: ["Use natural field sound", "Make creature threat audible", "Keep comic understatement"],
+    learningGoals: ["Fantasy can feel credible through documentary rules and local detail"],
+    verificationStatus: "needs_research"
   }
 };
 
