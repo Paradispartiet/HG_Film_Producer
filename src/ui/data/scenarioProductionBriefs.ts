@@ -1120,6 +1120,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use silence as unease", "Keep domestic sounds small", "Let quiet suggest boundaries"],
     learningGoals: ["Build tension from closeness and boundaries", "Make absence and need dramatic"],
     verificationStatus: "needs_research"
+  },
+  scenario_tangerines_2013: {
+    scenarioId: "scenario_tangerines_2013",
+    title: "Tangerines production brief",
+    logline: "Use containment, shelter, and reluctant care to make wartime enemies feel fragile and human.",
+    genreTargets: ["Intimate war drama", "Contained moral conflict", "Enemies-under-shelter story"],
+    toneTargets: ["Restrained and humane", "Quietly threatened", "Fragile under pressure"],
+    screenplayTargets: ["Make shelter a moral test", "Build tension through proximity", "Use reluctant care as change"],
+    cinematographyTargets: ["Use house and orchard as arena", "Observe threat with restraint", "Frame enemies in shared space"],
+    editingTargets: ["Build tension through waiting", "Hold proximity under threat", "Let care shift slowly"],
+    soundTargets: ["Keep domestic stillness quiet", "Let distant danger intrude", "Use silence as fragile safety"],
+    learningGoals: ["War drama can become powerful through containment and fragile empathy", "Use containment to create fragile empathy"],
+    verificationStatus: "needs_research"
+  },
+  scenario_it_follows_2014: {
+    scenarioId: "scenario_it_follows_2014",
+    title: "It Follows production brief",
+    logline: "Make ordinary suburbs unsafe through simple invisible rules, patient pursuit, and dangerous empty space.",
+    genreTargets: ["Supernatural horror", "Mystery thriller", "Pursuit dread story"],
+    toneTargets: ["Patiently fearful", "Uncertain and exposed", "Ordinary but unsafe"],
+    screenplayTargets: ["Define simple threat rules", "Withhold certainty carefully", "Turn anticipation into suspense"],
+    cinematographyTargets: ["Use wide frames", "Make negative space dangerous", "Track slow threat movement"],
+    editingTargets: ["Stretch anticipation", "Delay confirmation", "Let suspense grow patiently"],
+    soundTargets: ["Use synth dread as pressure", "Let quiet spaces feel watched", "Keep pursuit sonically present"],
+    learningGoals: ["Horror can grow from simple rules, space and patient threat", "Make empty space feel dangerous"],
+    verificationStatus: "needs_research"
+  },
+  scenario_mad_max_fury_road_2015: {
+    scenarioId: "scenario_mad_max_fury_road_2015",
+    title: "Mad Max: Fury Road production brief",
+    logline: "Tell an escape story through survival momentum, clear pursuit geography, and kinetic wasteland design.",
+    genreTargets: ["Action sci-fi road adventure", "Survival escape story", "Wasteland pursuit film"],
+    toneTargets: ["Kinetic and urgent", "Mythic but physical", "Relentlessly survival-driven"],
+    screenplayTargets: ["Use pursuit as structure", "Set clear physical objectives", "Let escape define choices"],
+    cinematographyTargets: ["Build world through vehicles", "Use bodies and factions as design", "Keep action geography clear"],
+    editingTargets: ["Maintain action clarity", "Escalate rhythm and stakes", "Cut movement for momentum"],
+    soundTargets: ["Make engines kinetic force", "Use impact as punctuation", "Drive momentum with music"],
+    learningGoals: ["Action can tell story through movement, geography and design", "Tell story through movement and geography"],
+    verificationStatus: "needs_research"
+  },
+  scenario_birdman_or_the_unexpected_virtue_of_ignorance_2014: {
+    scenarioId: "scenario_birdman_or_the_unexpected_virtue_of_ignorance_2014",
+    title: "Birdman or (The Unexpected Virtue of Ignorance) production brief",
+    logline: "Make backstage anxiety feel continuous as ego, performance, and desperation move through a pressure maze.",
+    genreTargets: ["Backstage comedy-drama", "Performance anxiety story", "Artistic desperation drama"],
+    toneTargets: ["Nervous and comic", "Desperate under performance", "Continuous and pressurized"],
+    screenplayTargets: ["Pressure ego through performance", "Use corridors as a maze", "Escalate entrances and exits"],
+    cinematographyTargets: ["Use fluid camera movement", "Preserve performance continuity", "Make backstage space close in"],
+    editingTargets: ["Build rhythm from entrances", "Let exits trigger breakdowns", "Keep anxiety flowing"],
+    soundTargets: ["Use drums as nervous energy", "Layer voices and backstage noise", "Let performance sound bleed"],
+    learningGoals: ["Camera movement can make performance anxiety feel continuous", "Make anxiety continuous through camera flow"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_road_warrior_1981: {
+    scenarioId: "scenario_the_road_warrior_1981",
+    title: "The Road Warrior production brief",
+    logline: "Build mythic post-apocalyptic conflict through scarcity, convoy stakes, and escalating road action.",
+    genreTargets: ["Post-apocalyptic action adventure", "Survival thriller", "Mythic road conflict"],
+    toneTargets: ["Scarce and dangerous", "Mythic but practical", "Hard-edged and kinetic"],
+    screenplayTargets: ["Use convoy as structure", "Make scarcity drive conflict", "Tie survival to road stakes"],
+    cinematographyTargets: ["Build desert world through vehicles", "Use costume and tribes as story", "Frame pursuit geography clearly"],
+    editingTargets: ["Escalate chase rhythm", "Keep action geography readable", "Cut stakes into movement"],
+    soundTargets: ["Use engines as world language", "Let metal and impact threaten", "Make danger audible"],
+    learningGoals: ["Action worldbuilding can be built through movement, vehicles and stakes", "Build world through vehicles and stakes"],
+    verificationStatus: "needs_research"
   }
 };
 

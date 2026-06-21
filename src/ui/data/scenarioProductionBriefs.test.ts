@@ -92,7 +92,12 @@ const manualScenarioIds = [
   "scenario_nightcrawler_2014",
   "scenario_nebraska_2013",
   "scenario_detachment_2011",
-  "scenario_homesick_2015"
+  "scenario_homesick_2015",
+  "scenario_tangerines_2013",
+  "scenario_it_follows_2014",
+  "scenario_mad_max_fury_road_2015",
+  "scenario_birdman_or_the_unexpected_virtue_of_ignorance_2014",
+  "scenario_the_road_warrior_1981"
 ] as const;
 
 const targetCategories = [
@@ -106,11 +111,11 @@ const targetCategories = [
 ] as const satisfies readonly (keyof ScenarioProductionBrief)[];
 
 const newBatchManualScenarioIds = [
-  "scenario_boyhood_2014",
-  "scenario_nightcrawler_2014",
-  "scenario_nebraska_2013",
-  "scenario_detachment_2011",
-  "scenario_homesick_2015"
+  "scenario_tangerines_2013",
+  "scenario_it_follows_2014",
+  "scenario_mad_max_fury_road_2015",
+  "scenario_birdman_or_the_unexpected_virtue_of_ignorance_2014",
+  "scenario_the_road_warrior_1981"
 ] as const;
 
 function createScenario(id: string): FilmScenarioSeed {
@@ -149,8 +154,8 @@ test("manual scenario ids include the corrected Winter's Bone id only", () => {
   assert.ok(!manualScenarioIds.includes("scenario_winters_bone_2010" as (typeof manualScenarioIds)[number]));
 });
 
-test("all 85 manual scenario production briefs resolve with research-needed status and targets", () => {
-  assert.equal(manualScenarioIds.length, 85);
+test("all 90 manual scenario production briefs resolve with research-needed status and targets", () => {
+  assert.equal(manualScenarioIds.length, 90);
   for (const scenarioId of manualScenarioIds) {
     const brief = resolveScenarioProductionBrief(createScenario(scenarioId));
 
@@ -165,7 +170,7 @@ test("all 85 manual scenario production briefs resolve with research-needed stat
 });
 
 
-test("batch 17 manual briefs keep concise target coverage", () => {
+test("batch 18 manual briefs keep concise target coverage", () => {
   for (const scenarioId of newBatchManualScenarioIds) {
     const brief = resolveScenarioProductionBrief(createScenario(scenarioId));
 
