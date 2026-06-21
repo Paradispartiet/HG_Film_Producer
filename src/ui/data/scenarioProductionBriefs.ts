@@ -925,6 +925,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use sand and breath as suspense", "Make danger sound close", "Keep quiet moments tense"],
     learningGoals: ["War drama can focus on aftermath, responsibility and fragile empathy"],
     verificationStatus: "needs_research"
+  },
+  scenario_revanche_2008: {
+    scenarioId: "scenario_revanche_2008",
+    title: "Revanche production brief",
+    logline: "Let revenge unfold through guilt, restraint, and moral hesitation.",
+    genreTargets: ["Crime romance thriller", "Revenge drama", "Moral suspense story"],
+    toneTargets: ["Restrained and tense", "Guilt-driven", "Morally uncertain"],
+    screenplayTargets: ["Cross-cut hidden consequences", "Delay revenge decisions", "Let guilt pressure choices"],
+    cinematographyTargets: ["Contrast rural and urban spaces", "Frame distance as pressure", "Use quiet settings for tension"],
+    editingTargets: ["Delay emotional release", "Build suspense through restraint", "Let consequences surface slowly"],
+    soundTargets: ["Use silence as inner pressure", "Keep tension understated", "Let quiet moments unsettle"],
+    learningGoals: ["Revenge drama can work through restraint, delay and moral ambiguity"],
+    verificationStatus: "needs_research"
+  },
+  scenario_paris_texas_1984: {
+    scenarioId: "scenario_paris_texas_1984",
+    title: "Paris, Texas production brief",
+    logline: "Use landscape as missing memory in a quiet road drama about absence and family connection.",
+    genreTargets: ["Road character drama", "Broken-family story", "Memory journey"],
+    toneTargets: ["Lonely and quiet", "Searching", "Emotionally withheld"],
+    screenplayTargets: ["Reveal history through encounters", "Let absence drive connection", "Use pauses as discovery"],
+    cinematographyTargets: ["Use landscape as emptiness", "Frame distance between people", "Observe movement quietly"],
+    editingTargets: ["Let revelations arrive slowly", "Hold pauses between encounters", "Keep the journey patient"],
+    soundTargets: ["Use music as loneliness", "Let silence carry memory", "Keep ambient space open"],
+    learningGoals: ["Landscape and silence can carry a character’s missing history"],
+    verificationStatus: "needs_research"
+  },
+  scenario_being_john_malkovich_1999: {
+    scenarioId: "scenario_being_john_malkovich_1999",
+    title: "Being John Malkovich production brief",
+    logline: "Treat absurd rules as practical reality in a surreal comedy about identity and desire.",
+    genreTargets: ["Surreal comedy", "Fantasy drama", "Identity farce"],
+    toneTargets: ["Deadpan and strange", "Awkwardly intellectual", "Absurd but practical"],
+    screenplayTargets: ["Play the impossible premise seriously", "Make desire distort identity", "Set clear portal rules"],
+    cinematographyTargets: ["Use strange spaces as worldbuilding", "Frame cramped absurdity plainly", "Make the portal feel practical"],
+    editingTargets: ["Balance deadpan reactions and escalation", "Cut for awkward timing", "Let absurdity build logically"],
+    soundTargets: ["Use dialogue as awkward comedy", "Keep reactions dry", "Let ordinary sounds ground fantasy"],
+    learningGoals: ["Fantasy comedy works when absurd rules are treated as practical reality"],
+    verificationStatus: "needs_research"
+  },
+  scenario_45_years_2015: {
+    scenarioId: "scenario_45_years_2015",
+    title: "45 Years production brief",
+    logline: "Make small discoveries destabilize a life in an intimate marriage drama.",
+    genreTargets: ["Intimate marriage drama", "Late-life uncertainty story", "Domestic emotional crisis"],
+    toneTargets: ["Restrained and intimate", "Uneasy", "Quietly devastating"],
+    screenplayTargets: ["Let memory disturb routine", "Turn jealousy into uncertainty", "Make small shifts decisive"],
+    cinematographyTargets: ["Observe faces closely", "Use domestic space as pressure", "Frame restraint before rupture"],
+    editingTargets: ["Escalate through pauses", "Hold withheld feelings", "Track looks as story turns"],
+    soundTargets: ["Use silence as relationship pressure", "Let room tone hold tension", "Keep speech exposed"],
+    learningGoals: ["Small discoveries can transform an entire relationship drama"],
+    verificationStatus: "needs_research"
+  },
+  scenario_blue_jasmine_2013: {
+    scenarioId: "scenario_blue_jasmine_2013",
+    title: "Blue Jasmine production brief",
+    logline: "Let dialogue reveal status and panic as a social identity collapses.",
+    genreTargets: ["Social character comedy-drama", "Class-collapse drama", "Identity performance story"],
+    toneTargets: ["Brittle and comic", "Anxious", "Socially exposed"],
+    screenplayTargets: ["Fracture present and past", "Make denial active", "Use status as conflict"],
+    cinematographyTargets: ["Contrast social worlds", "Frame performance against reality", "Make spaces expose class pressure"],
+    editingTargets: ["Track emotional unravelling", "Cut memory against collapse", "Shape performance rhythm"],
+    soundTargets: ["Use dialogue as status", "Let panic break composure", "Make self-deception audible"],
+    learningGoals: ["Character drama can expose collapse through voice, memory and social contrast"],
+    verificationStatus: "needs_research"
   }
 };
 

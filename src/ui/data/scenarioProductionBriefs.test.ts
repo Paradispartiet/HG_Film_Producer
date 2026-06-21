@@ -77,7 +77,12 @@ const manualScenarioIds = [
   "scenario_noi_the_albino_2003",
   "scenario_the_impossible_2012",
   "scenario_taste_of_cherry_1997",
-  "scenario_land_of_mine_2015"
+  "scenario_land_of_mine_2015",
+  "scenario_revanche_2008",
+  "scenario_paris_texas_1984",
+  "scenario_being_john_malkovich_1999",
+  "scenario_45_years_2015",
+  "scenario_blue_jasmine_2013"
 ] as const;
 
 const targetCategories = [
@@ -126,8 +131,8 @@ test("manual scenario ids include the corrected Winter's Bone id only", () => {
   assert.ok(!manualScenarioIds.includes("scenario_winters_bone_2010" as (typeof manualScenarioIds)[number]));
 });
 
-test("all 70 manual scenario production briefs resolve with research-needed status and targets", () => {
-  assert.equal(manualScenarioIds.length, 70);
+test("all 75 manual scenario production briefs resolve with research-needed status and targets", () => {
+  assert.equal(manualScenarioIds.length, 75);
   for (const scenarioId of manualScenarioIds) {
     const brief = resolveScenarioProductionBrief(createScenario(scenarioId));
 
