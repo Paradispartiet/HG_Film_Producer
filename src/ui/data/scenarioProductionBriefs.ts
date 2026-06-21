@@ -1055,6 +1055,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Keep dialogue flat", "Use sound as absurdity", "Let silence expose repetition"],
     learningGoals: ["Use fixed frames as comic philosophy", "Turn repetition into existential comedy"],
     verificationStatus: "needs_research"
+  },
+  scenario_boyhood_2014: {
+    scenarioId: "scenario_boyhood_2014",
+    title: "Boyhood production brief",
+    logline: "Let ordinary family life become a long-form coming-of-age drama about time, change, and memory.",
+    genreTargets: ["Long-form coming-of-age drama", "Family life chronicle", "Everyday memory story"],
+    toneTargets: ["Gentle and observant", "Accumulated over time", "Ordinary but moving"],
+    screenplayTargets: ["Let life stages shape structure", "Favor ordinary change over plot", "Track family through time"],
+    cinematographyTargets: ["Use everyday spaces as memory markers", "Frame growth through routine", "Keep places emotionally specific"],
+    editingTargets: ["Use gentle ellipses", "Accumulate small moments", "Let time pass cleanly"],
+    soundTargets: ["Use music as period and mood", "Let sound suggest growth", "Keep family spaces lived-in"],
+    learningGoals: ["Let time become dramatic structure", "Build meaning from accumulated moments"],
+    verificationStatus: "needs_research"
+  },
+  scenario_nightcrawler_2014: {
+    scenarioId: "scenario_nightcrawler_2014",
+    title: "Nightcrawler production brief",
+    logline: "Make ambition drive an urban crime thriller about media ethics, predatory watching, and danger.",
+    genreTargets: ["Urban crime thriller", "Media ethics character study", "Night-city suspense story"],
+    toneTargets: ["Predatory and tense", "Neon and threatening", "Morally hungry"],
+    screenplayTargets: ["Make ambition drive the thriller", "Turn footage into leverage", "Escalate through deals and danger"],
+    cinematographyTargets: ["Make the protagonist hunter and camera", "Use night city as market and threat", "Frame observation as appetite"],
+    editingTargets: ["Build tension through footage", "Cut deals against danger", "Escalate pressure clearly"],
+    soundTargets: ["Use police scanners as pressure", "Layer traffic and news sound", "Make night movement urgent"],
+    learningGoals: ["Make ambition drive the thriller", "Turn visual appetite into suspense"],
+    verificationStatus: "needs_research"
+  },
+  scenario_nebraska_2013: {
+    scenarioId: "scenario_nebraska_2013",
+    title: "Nebraska production brief",
+    logline: "Use a modest road story to reveal aging, dignity, family history, and small-town memory.",
+    genreTargets: ["Restrained road drama", "Family confrontation story", "Small-town memory drama"],
+    toneTargets: ["Dry and understated", "Melancholic but humane", "Plainspoken"],
+    screenplayTargets: ["Use the road to reveal family history", "Make aging and dignity central", "Let the journey force confrontation"],
+    cinematographyTargets: ["Use stark landscape", "Frame plain social spaces", "Make towns hold memory"],
+    editingTargets: ["Hold dry pauses", "Understate emotional reveals", "Let encounters gather history"],
+    soundTargets: ["Use quiet room tone", "Let travel sound carry melancholy", "Keep conversations exposed"],
+    learningGoals: ["Use the road to reveal family history", "Find dignity in modest drama"],
+    verificationStatus: "needs_research"
+  },
+  scenario_detachment_2011: {
+    scenarioId: "scenario_detachment_2011",
+    title: "Detachment production brief",
+    logline: "Show a school system through one exhausted observer facing burnout, empathy, and institutional failure.",
+    genreTargets: ["School social drama", "Burnout character study", "Institutional failure story"],
+    toneTargets: ["Worn down and intense", "Empathetic under pressure", "Reflective and troubled"],
+    screenplayTargets: ["Make classrooms emotional battlefields", "Fragment lives around one teacher", "Show a system through one observer"],
+    cinematographyTargets: ["Frame school spaces as pressure", "Observe exhaustion closely", "Contrast public roles with private strain"],
+    editingTargets: ["Use intense performance rhythm", "Break pressure with reflective pauses", "Connect fragmented lives clearly"],
+    soundTargets: ["Use voice as pressure", "Let silence expose burnout", "Layer school noise as stress"],
+    learningGoals: ["Show a system through one exhausted observer", "Turn empathy into social drama"],
+    verificationStatus: "needs_research"
+  },
+  scenario_homesick_2015: {
+    scenarioId: "scenario_homesick_2015",
+    title: "Homesick production brief",
+    logline: "Build intimate drama tension from closeness, absence, taboo, and confused emotional boundaries.",
+    genreTargets: ["Intimate family drama", "Identity and need story", "Boundary-confusion drama"],
+    toneTargets: ["Restrained and uneasy", "Emotionally exposed", "Close but unstable"],
+    screenplayTargets: ["Build tension from closeness and boundaries", "Let taboo emerge through need", "Escalate through discomfort and desire"],
+    cinematographyTargets: ["Use private spaces as unstable intimacy", "Observe bodies and distance", "Keep closeness visually tense"],
+    editingTargets: ["Escalate discomfort slowly", "Hold moments of uncertainty", "Let absence shape rhythm"],
+    soundTargets: ["Use silence as unease", "Keep domestic sounds small", "Let quiet suggest boundaries"],
+    learningGoals: ["Build tension from closeness and boundaries", "Make absence and need dramatic"],
+    verificationStatus: "needs_research"
   }
 };
 
