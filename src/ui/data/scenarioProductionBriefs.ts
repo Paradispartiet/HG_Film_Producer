@@ -990,6 +990,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use dialogue as status", "Let panic break composure", "Make self-deception audible"],
     learningGoals: ["Character drama can expose collapse through voice, memory and social contrast"],
     verificationStatus: "needs_research"
+  },
+  scenario_rush_2013: {
+    scenarioId: "scenario_rush_2013",
+    title: "Rush production brief",
+    logline: "Turn a sports rivalry into a character engine about ambition, risk, and pressure.",
+    genreTargets: ["Biographical sports drama", "Rivalry character drama", "Period competition story"],
+    toneTargets: ["Driven and competitive", "Risk-aware", "Emotionally pressurized"],
+    screenplayTargets: ["Contrast two personalities", "Make ambition test identity", "Turn rivalry into structure"],
+    cinematographyTargets: ["Show speed as pressure", "Build a period racing world", "Frame competition as character"],
+    editingTargets: ["Shape race rhythm clearly", "Cross-cut emotion and action", "Build pressure through pace"],
+    soundTargets: ["Use machines as tension", "Make breath audible", "Let pressure build in sound"],
+    learningGoals: ["Sports drama can turn rivalry into character structure"],
+    verificationStatus: "needs_research"
+  },
+  scenario_her_2013: {
+    scenarioId: "scenario_her_2013",
+    title: "Her production brief",
+    logline: "Make a speculative romance where technology becomes the space for loneliness and intimacy.",
+    genreTargets: ["Speculative romance drama", "Near-future character study", "Intimate technology story"],
+    toneTargets: ["Tender and lonely", "Softly futuristic", "Interior and reflective"],
+    screenplayTargets: ["Center intimacy without presence", "Make technology emotional space", "Let loneliness shape connection"],
+    cinematographyTargets: ["Design the future emotionally", "Use soft spaces for intimacy", "Frame solitude gently"],
+    editingTargets: ["Keep pacing soft", "Follow interior rhythm", "Let quiet moments breathe"],
+    soundTargets: ["Use voice as intimacy", "Make interfaces feel personal", "Let music hold emotion"],
+    learningGoals: ["Science fiction can feel intimate when technology becomes emotional space"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_lobster_2015: {
+    scenarioId: "scenario_the_lobster_2015",
+    title: "The Lobster production brief",
+    logline: "Treat absurd social rules as normal to make romance, loneliness, and coercion feel threatening.",
+    genreTargets: ["Deadpan speculative romance", "Absurdist thriller", "Social-rule drama"],
+    toneTargets: ["Deadpan and restrained", "Coercive under calm", "Comic but menacing"],
+    screenplayTargets: ["Treat absurd rules as normal", "Make loneliness procedural", "Let coercion define choices"],
+    cinematographyTargets: ["Use institutional spaces as pressure", "Frame rules plainly", "Keep compositions controlled"],
+    editingTargets: ["Hold a dry rhythm", "Use restraint before threat", "Let sudden danger interrupt calm"],
+    soundTargets: ["Keep dialogue flat", "Use silence as menace", "Let stillness support comedy"],
+    learningGoals: ["Absurd rules become powerful when the film treats them as normal"],
+    verificationStatus: "needs_research"
+  },
+  scenario_4_months_3_weeks_and_2_days_2007: {
+    scenarioId: "scenario_4_months_3_weeks_and_2_days_2007",
+    title: "4 Months, 3 Weeks and 2 Days production brief",
+    logline: "Build austere real-time suspense through friendship, moral pressure, waiting, and constraint.",
+    genreTargets: ["Austere social realist drama", "Real-time tension story", "Friendship under pressure drama"],
+    toneTargets: ["Urgent and restrained", "Morally pressured", "Anxious without relief"],
+    screenplayTargets: ["Make ordinary rooms dangerous", "Pressure friendship through choices", "Build tension through waiting"],
+    cinematographyTargets: ["Use long takes", "Restrict the viewpoint", "Turn rooms into danger zones"],
+    editingTargets: ["Let duration create suspense", "Hold negotiation in real time", "Withhold relief after choices"],
+    soundTargets: ["Use ambient silence", "Keep practical sound exposed", "Let anxiety sit in quiet"],
+    learningGoals: ["Realism can create suspense through duration, constraint and withheld relief"],
+    verificationStatus: "needs_research"
+  },
+  scenario_a_pigeon_sat_on_a_branch_reflecting_on_existence_2014: {
+    scenarioId: "scenario_a_pigeon_sat_on_a_branch_reflecting_on_existence_2014",
+    title: "A Pigeon Sat on a Branch Reflecting on Existence production brief",
+    logline: "Use fixed comic tableaux to turn human loneliness, repetition, and anti-climax into philosophy.",
+    genreTargets: ["Absurdist tableau comedy-drama", "Existential deadpan", "Sketch-like human comedy"],
+    toneTargets: ["Flatly absurd", "Melancholic and repetitive", "Deadpan philosophical"],
+    screenplayTargets: ["Repeat human loneliness", "Build scenes as comic paintings", "Let anti-climax carry meaning"],
+    cinematographyTargets: ["Use static scenes", "Construct pale spaces", "Block figures precisely"],
+    editingTargets: ["Keep sketch-like rhythm", "Hold fixed frames", "Let anti-climax land"],
+    soundTargets: ["Keep dialogue flat", "Use sound as absurdity", "Let silence expose repetition"],
+    learningGoals: ["Fixed composition can turn everyday absurdity into philosophy"],
+    verificationStatus: "needs_research"
   }
 };
 
