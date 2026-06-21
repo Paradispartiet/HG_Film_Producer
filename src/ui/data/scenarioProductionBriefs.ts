@@ -1185,7 +1185,73 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use engines as world language", "Let metal and impact threaten", "Make danger audible"],
     learningGoals: ["Action worldbuilding can be built through movement, vehicles and stakes", "Build world through vehicles and stakes"],
     verificationStatus: "needs_research"
+  },
+  scenario_inside_out_2015: {
+    scenarioId: "scenario_inside_out_2015",
+    title: "Inside Out production brief",
+    logline: "Turn inner life, memory, and growing up into an animated emotional adventure.",
+    genreTargets: ["Animated emotional adventure", "Family comedy journey", "Inner-life worldbuilding"],
+    toneTargets: ["Colorful and playful", "Tender about growing up", "Comic with emotional payoff"],
+    screenplayTargets: ["Make feelings playable characters", "Turn memory into story mechanics", "Tie adventure to growing up"],
+    cinematographyTargets: ["Build mental spaces with color", "Make abstract ideas readable", "Use visual rhythm for emotion"],
+    editingTargets: ["Balance comic timing and feeling", "Move between inner and outer stakes", "Land emotional payoff clearly"],
+    soundTargets: ["Use voice as feeling language", "Let music guide emotion", "Make inner worlds sound distinct"],
+    learningGoals: ["Animation can turn inner emotion into visible story mechanics", "Turn emotion into visible mechanics"],
+    verificationStatus: "needs_research"
+  },
+  scenario_victoria_2015: {
+    scenarioId: "scenario_victoria_2015",
+    title: "Victoria production brief",
+    logline: "Build a night-city thriller where attraction, danger, and consequence escalate in real time.",
+    genreTargets: ["Real-time crime thriller", "Romance-under-danger story", "Night-city pressure path"],
+    toneTargets: ["Immediate and urgent", "Romantic under threat", "Escalating and breathless"],
+    screenplayTargets: ["Let attraction invite risk", "Narrow choices with time pressure", "Escalate consequence through movement"],
+    cinematographyTargets: ["Use mobile camera feeling", "Turn streets into a pressure path", "Stay close to shifting danger"],
+    editingTargets: ["Build tension through momentum", "Keep urgency continuous", "Let choices close in"],
+    soundTargets: ["Use street sound as pressure", "Let music carry momentum", "Make breath and movement tense"],
+    learningGoals: ["Thriller tension can grow from movement, time pressure and emotional risk", "Build tension through continuous urgency"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_game_1997: {
+    scenarioId: "scenario_the_game_1997",
+    title: "The Game production brief",
+    logline: "Destabilize a controlled life through paranoia, puzzles, and manipulated reality.",
+    genreTargets: ["Psychological mystery thriller", "Paranoia puzzle story", "Manipulated-reality thriller"],
+    toneTargets: ["Controlled then unstable", "Suspicious and tense", "Threateningly uncertain"],
+    screenplayTargets: ["Make every rule uncertain", "Withhold certainty carefully", "Use reversals as pressure"],
+    cinematographyTargets: ["Make private spaces threatening", "Frame wealth as isolation", "Use controlled spaces against him"],
+    editingTargets: ["Control information and doubt", "Turn clues into reversals", "Delay stable answers"],
+    soundTargets: ["Use silence as suspicion", "Let small sounds feel staged", "Make quiet spaces distrustful"],
+    learningGoals: ["Mystery can destabilize the viewer by making every rule uncertain", "Make every rule uncertain"],
+    verificationStatus: "needs_research"
+  },
+  scenario_brothers_2015: {
+    scenarioId: "scenario_brothers_2015",
+    title: "Brothers production brief",
+    logline: "Observe childhood, time, and sibling closeness through everyday family life.",
+    genreTargets: ["Observational documentary", "Family portrait", "Childhood time study"],
+    toneTargets: ["Intimate and patient", "Everyday and warm", "Reflective about growth"],
+    screenplayTargets: ["Use family life as observation", "Let small changes show time", "Follow sibling closeness gently"],
+    cinematographyTargets: ["Keep intimate camera distance", "Notice everyday detail", "Observe growth without forcing it"],
+    editingTargets: ["Build memory through fragments", "Let time pass in details", "Shape growth with quiet rhythm"],
+    soundTargets: ["Use natural sound as presence", "Let home sounds mark time", "Keep observation unobtrusive"],
+    learningGoals: ["Documentary can make time visible through small observed changes", "Use observation to make time visible"],
+    verificationStatus: "needs_research"
+  },
+  scenario_my_skinny_sister_2015: {
+    scenarioId: "scenario_my_skinny_sister_2015",
+    title: "My Skinny Sister production brief",
+    logline: "Build family tension from sibling care, body pressure, and hidden distress.",
+    genreTargets: ["Intimate family drama", "Coming-of-age drama", "Sibling pressure story"],
+    toneTargets: ["Quietly anxious", "Tender but uneasy", "Restrained and intimate"],
+    screenplayTargets: ["Let hidden distress surface slowly", "Use sibling care as pressure", "Escalate through family silence"],
+    cinematographyTargets: ["Observe discomfort closely", "Use home as a pressure zone", "Frame sport and social spaces as stress"],
+    editingTargets: ["Slowly escalate secrets", "Hold pauses for anxiety", "Let silence reveal family pressure"],
+    soundTargets: ["Use quiet sound as anxiety", "Let pauses carry pressure", "Keep family silence present"],
+    learningGoals: ["Family drama can build tension from what is hidden in plain sight", "Let silence reveal family pressure"],
+    verificationStatus: "needs_research"
   }
+
 };
 
 export function getScenarioProductionBrief(scenarioId: string): ScenarioProductionBrief | undefined {

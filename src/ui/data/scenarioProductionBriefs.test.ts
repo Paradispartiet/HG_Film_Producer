@@ -97,7 +97,12 @@ const manualScenarioIds = [
   "scenario_it_follows_2014",
   "scenario_mad_max_fury_road_2015",
   "scenario_birdman_or_the_unexpected_virtue_of_ignorance_2014",
-  "scenario_the_road_warrior_1981"
+  "scenario_the_road_warrior_1981",
+  "scenario_inside_out_2015",
+  "scenario_victoria_2015",
+  "scenario_the_game_1997",
+  "scenario_brothers_2015",
+  "scenario_my_skinny_sister_2015"
 ] as const;
 
 const targetCategories = [
@@ -111,11 +116,11 @@ const targetCategories = [
 ] as const satisfies readonly (keyof ScenarioProductionBrief)[];
 
 const newBatchManualScenarioIds = [
-  "scenario_tangerines_2013",
-  "scenario_it_follows_2014",
-  "scenario_mad_max_fury_road_2015",
-  "scenario_birdman_or_the_unexpected_virtue_of_ignorance_2014",
-  "scenario_the_road_warrior_1981"
+  "scenario_inside_out_2015",
+  "scenario_victoria_2015",
+  "scenario_the_game_1997",
+  "scenario_brothers_2015",
+  "scenario_my_skinny_sister_2015"
 ] as const;
 
 function createScenario(id: string): FilmScenarioSeed {
@@ -154,8 +159,8 @@ test("manual scenario ids include the corrected Winter's Bone id only", () => {
   assert.ok(!manualScenarioIds.includes("scenario_winters_bone_2010" as (typeof manualScenarioIds)[number]));
 });
 
-test("all 90 manual scenario production briefs resolve with research-needed status and targets", () => {
-  assert.equal(manualScenarioIds.length, 90);
+test("all 95 manual scenario production briefs resolve with research-needed status and targets", () => {
+  assert.equal(manualScenarioIds.length, 95);
   for (const scenarioId of manualScenarioIds) {
     const brief = resolveScenarioProductionBrief(createScenario(scenarioId));
 
@@ -170,7 +175,7 @@ test("all 90 manual scenario production briefs resolve with research-needed stat
 });
 
 
-test("batch 18 manual briefs keep concise target coverage", () => {
+test("batch 19 manual briefs keep concise target coverage", () => {
   for (const scenarioId of newBatchManualScenarioIds) {
     const brief = resolveScenarioProductionBrief(createScenario(scenarioId));
 
