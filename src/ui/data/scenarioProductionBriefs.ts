@@ -860,6 +860,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Make machines feel alive", "Use sound as character voice", "Turn movement into feeling"],
     learningGoals: ["Animation can build character through movement, objects, and sound"],
     verificationStatus: "needs_research"
+  },
+  scenario_antonia_s_line_1995: {
+    scenarioId: "scenario_antonia_s_line_1995",
+    title: "Antonia's Line production brief",
+    logline: "Turn family history into a warm community story about women, independence, and change across generations.",
+    genreTargets: ["Generational comedy-drama", "Family and community ensemble", "Village life social story"],
+    toneTargets: ["Warm and humane", "Memory-shaped", "Socially changing"],
+    screenplayTargets: ["Follow women across generations", "Build family as community", "Turn independence into action"],
+    cinematographyTargets: ["Make village life an ecosystem", "Frame gatherings as belonging", "Use time passing visibly"],
+    editingTargets: ["Keep a warm rhythm", "Move clearly across time", "Let ensemble stories accumulate"],
+    soundTargets: ["Use voice as family history", "Let community sound feel alive", "Keep storytelling intimate"],
+    learningGoals: ["Ensemble drama can turn family history into community myth"],
+    verificationStatus: "needs_research"
+  },
+  scenario_noi_the_albino_2003: {
+    scenarioId: "scenario_noi_the_albino_2003",
+    title: "Noi the Albino production brief",
+    logline: "Make teenage alienation visible through deadpan stillness, remote landscape, and escape fantasy.",
+    genreTargets: ["Nordic deadpan coming-of-age", "Comedy-drama of isolation", "Escape fantasy character story"],
+    toneTargets: ["Awkwardly still", "Dry and melancholic", "Quietly rebellious"],
+    screenplayTargets: ["Pressure boredom into fantasy", "Let small rebellions matter", "Keep alienation understated"],
+    cinematographyTargets: ["Make landscape show isolation", "Use remote space as confinement", "Frame stillness around the character"],
+    editingTargets: ["Hold dry timing", "Let pauses become mood", "Keep rebellion small and clear"],
+    soundTargets: ["Use silence as mood", "Let weather create pressure", "Keep sparse sound lonely"],
+    learningGoals: ["Place can make teenage alienation visible"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_impossible_2012: {
+    scenarioId: "scenario_the_impossible_2012",
+    title: "The Impossible production brief",
+    logline: "Keep disaster scale tied to human stakes as separation, shock, and endurance drive survival suspense.",
+    genreTargets: ["Survival disaster drama", "Family separation thriller", "Endurance character story"],
+    toneTargets: ["Immediate and frightening", "Physically vulnerable", "Emotionally urgent"],
+    screenplayTargets: ["Keep family stakes central", "Restrict viewpoint during danger", "Turn uncertainty into suspense"],
+    cinematographyTargets: ["Show disaster as bodily pressure", "Stay close to immediate danger", "Frame recovery as fragile"],
+    editingTargets: ["Cut around shock and confusion", "Build suspense through uncertainty", "Balance chaos with recovery"],
+    soundTargets: ["Use sound as chaos", "Make impact feel physical", "Let vulnerability stay audible"],
+    learningGoals: ["Disaster drama works when scale stays tied to human stakes"],
+    verificationStatus: "needs_research"
+  },
+  scenario_taste_of_cherry_1997: {
+    scenarioId: "scenario_taste_of_cherry_1997",
+    title: "Taste of Cherry production brief",
+    logline: "Use conversation, distance, and repetition to create deep tension from minimal action.",
+    genreTargets: ["Minimalist character drama", "Existential conversation story", "Landscape chamber drama"],
+    toneTargets: ["Restrained and searching", "Morally open", "Quietly tense"],
+    screenplayTargets: ["Center existential choice", "Use conversation as action", "Let distance shape meaning"],
+    cinematographyTargets: ["Use car and landscape as chamber", "Hold long observations", "Keep visual restraint"],
+    editingTargets: ["Use pauses as moral pressure", "Build rhythm through repetition", "Let scenes breathe"],
+    soundTargets: ["Let silence create moral space", "Use ambient sound carefully", "Keep speech exposed"],
+    learningGoals: ["Minimal action can create deep dramatic tension through conversation"],
+    verificationStatus: "needs_research"
+  },
+  scenario_land_of_mine_2015: {
+    scenarioId: "scenario_land_of_mine_2015",
+    title: "Land of Mine production brief",
+    logline: "Build war-drama tension through aftermath, responsibility, procedure, and fragile empathy under danger.",
+    genreTargets: ["Historical war drama", "Aftermath survival story", "Moral responsibility drama"],
+    toneTargets: ["Restrained and tense", "Physically vulnerable", "Fragilely empathetic"],
+    screenplayTargets: ["Focus on guilt and duty", "Make survival procedural", "Let empathy stay fragile"],
+    cinematographyTargets: ["Use dangerous landscape as moral test", "Frame bodies as vulnerable", "Keep realism restrained"],
+    editingTargets: ["Build suspense through procedure", "Hold waiting and risk", "Let danger arrive clearly"],
+    soundTargets: ["Use sand and breath as suspense", "Make danger sound close", "Keep quiet moments tense"],
+    learningGoals: ["War drama can focus on aftermath, responsibility and fragile empathy"],
+    verificationStatus: "needs_research"
   }
 };
 
