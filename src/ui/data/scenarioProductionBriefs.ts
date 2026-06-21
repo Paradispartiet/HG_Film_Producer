@@ -730,6 +730,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use natural sound as warmth", "Let silence feel companionable", "Keep the world gently present"],
     learningGoals: ["A simple relationship can carry a whole character journey"],
     verificationStatus: "needs_research"
+  },
+  scenario_trainspotting_1996: {
+    scenarioId: "scenario_trainspotting_1996",
+    title: "Trainspotting production brief",
+    logline: "Drive a kinetic crime character drama where addiction, friendship, and self-destruction make inner chaos feel physical.",
+    genreTargets: ["Kinetic crime drama", "Addiction character study", "Friendship under pressure"],
+    toneTargets: ["Subjective and chaotic", "Darkly comic", "Self-destructive"],
+    screenplayTargets: ["Tie friendship to damage", "Make choices feel compulsive", "Let voice expose denial"],
+    cinematographyTargets: ["Stylize urban spaces", "Push physical extremes", "Make bodies feel trapped"],
+    editingTargets: ["Keep a fast rhythm", "Use montage pressure", "Let voice drive momentum"],
+    soundTargets: ["Use music as identity", "Accelerate with sound", "Let noise feel social"],
+    learningGoals: ["Make style feel like inner chaos."],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_motorcycle_diaries_2004: {
+    scenarioId: "scenario_the_motorcycle_diaries_2004",
+    title: "The Motorcycle Diaries production brief",
+    logline: "Shape a biographical road adventure where travel, friendship, and political awakening turn movement into transformation.",
+    genreTargets: ["Biographical road drama", "Adventure friendship story", "Political awakening journey"],
+    toneTargets: ["Reflective and open", "Curious and humane", "Gradually awakened"],
+    screenplayTargets: ["Build through encounters", "Let friendship test perspective", "Turn travel into change"],
+    cinematographyTargets: ["Use geography as discovery", "Frame landscapes morally", "Let distance reshape viewpoint"],
+    editingTargets: ["Keep episodic movement", "Balance travel and reflection", "Let encounters accumulate"],
+    soundTargets: ["Use music as distance", "Let ambience carry memory", "Mark change through sound"],
+    learningGoals: ["Turn travel into transformation."],
+    verificationStatus: "needs_research"
+  },
+  scenario_mean_streets_1973: {
+    scenarioId: "scenario_mean_streets_1973",
+    title: "Mean Streets production brief",
+    logline: "Build a street-level crime drama where loyalty, guilt, and local pressure turn the neighborhood into a moral trap.",
+    genreTargets: ["Street-level crime drama", "Loyalty conflict story", "Neighborhood character study"],
+    toneTargets: ["Restless and pressured", "Guilty and volatile", "Locally trapped"],
+    screenplayTargets: ["Use debts as pressure", "Let hangouts create tension", "Make loyalty costly"],
+    cinematographyTargets: ["Stay close to bodies", "Use restless observation", "Make streets feel binding"],
+    editingTargets: ["Build tension through hangouts", "Let violence interrupt routine", "Keep pressure local"],
+    soundTargets: ["Use music as energy", "Layer street sound", "Let voices crowd choices"],
+    learningGoals: ["Use the neighborhood as moral pressure."],
+    verificationStatus: "needs_research"
+  },
+  scenario_clockers_1995: {
+    scenarioId: "scenario_clockers_1995",
+    title: "Clockers production brief",
+    logline: "Stage an urban crime mystery where street economy, suspicion, and institutional pressure reveal a social system.",
+    genreTargets: ["Urban crime mystery", "Social pressure drama", "Street economy investigation"],
+    toneTargets: ["Suspicious and pressured", "Public and exposed", "Morally trapped"],
+    screenplayTargets: ["Trap young characters morally", "Mix clues with social observation", "Let institutions press choices"],
+    cinematographyTargets: ["Use public space as danger", "Frame surveillance in the open", "Show community pressure"],
+    editingTargets: ["Blend investigation and observation", "Track suspicion clearly", "Let pressure accumulate"],
+    soundTargets: ["Layer streets and police", "Use community sound as pressure", "Let public noise threaten"],
+    learningGoals: ["Let investigation expose a system."],
+    verificationStatus: "needs_research"
+  },
+  scenario_rumble_fish_1983: {
+    scenarioId: "scenario_rumble_fish_1983",
+    title: "Rumble Fish production brief",
+    logline: "Create a stylized youth crime drama where myth, brotherhood, and lost identity make conflict feel symbolic.",
+    genreTargets: ["Stylized youth crime drama", "Brotherhood myth story", "Lost-identity character drama"],
+    toneTargets: ["Dreamlike and alienated", "Mythic and wounded", "Emotionally dislocated"],
+    screenplayTargets: ["Make conflict symbolic", "Tie brotherhood to identity", "Let youth drift toward myth"],
+    cinematographyTargets: ["Use high contrast", "Build a dreamlike street world", "Frame conflict as symbol"],
+    editingTargets: ["Keep rhythm fragmented", "Let emotion feel displaced", "Move like memory"],
+    soundTargets: ["Use music as mood", "Let sound suggest memory", "Make alienation audible"],
+    learningGoals: ["Make youth conflict feel mythic."],
+    verificationStatus: "needs_research"
   }
 };
 
