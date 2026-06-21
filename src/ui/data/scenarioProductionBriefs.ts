@@ -1250,6 +1250,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use quiet sound as anxiety", "Let pauses carry pressure", "Keep family silence present"],
     learningGoals: ["Family drama can build tension from what is hidden in plain sight", "Let silence reveal family pressure"],
     verificationStatus: "needs_research"
+  },
+  scenario_mommy_2014: {
+    scenarioId: "scenario_mommy_2014",
+    title: "Mommy production brief",
+    logline: "Make parent-child love, volatility, and pressure feel physical inside a close family drama.",
+    genreTargets: ["Intense family character drama", "Parent-child pressure story", "Home-neighborhood drama"],
+    toneTargets: ["Volatile and tender", "Pressurized and intimate", "Explosive with relief"],
+    screenplayTargets: ["Make love and conflict inseparable", "Let pressure reshape family choices", "Build relief after emotional explosions"],
+    cinematographyTargets: ["Keep character focus tight", "Use home as pressure space", "Make closeness expressive"],
+    editingTargets: ["Rhythm between explosions and tenderness", "Let relief arrive as release", "Hold close emotional turns"],
+    soundTargets: ["Use music as release", "Let sound trigger memory", "Make emotion overflow"],
+    learningGoals: ["Family drama can make emotional intensity feel physical"],
+    verificationStatus: "needs_research"
+  },
+  scenario_adam_s_apples_2005: {
+    scenarioId: "scenario_adam_s_apples_2005",
+    title: "Adam's Apples production brief",
+    logline: "Let moral seriousness collide with absurd behavior in an isolated dark crime comedy-drama.",
+    genreTargets: ["Dark crime comedy-drama", "Absurd redemption story", "Isolated community drama"],
+    toneTargets: ["Deadpan and cruel", "Absurd but serious", "Innocent under threat"],
+    screenplayTargets: ["Collide faith with violence", "Use denial as pressure", "Let redemption stay absurd"],
+    cinematographyTargets: ["Use isolation as moral pressure", "Frame innocence beside cruelty", "Keep contrasts dry"],
+    editingTargets: ["Escalate through collision", "Time blunt reversals", "Let deadpan beats land"],
+    soundTargets: ["Use silence for comedy", "Keep dialogue blunt", "Make sudden impact funny"],
+    learningGoals: ["Black comedy works when moral seriousness meets absurd behavior"],
+    verificationStatus: "needs_research"
+  },
+  scenario_taxi_2015: {
+    scenarioId: "scenario_taxi_2015",
+    title: "Taxi production brief",
+    logline: "Use one small moving space to reveal society through conversation, rules, and observation.",
+    genreTargets: ["Contained comedy-drama", "Public conversation film", "Everyday observation story"],
+    toneTargets: ["Conversational and alert", "Wry about social rules", "Contained but expansive"],
+    screenplayTargets: ["Turn passengers into social episodes", "Let public conversation reveal rules", "Use interruptions as structure"],
+    cinematographyTargets: ["Make the car a moving stage", "Restrict perspective clearly", "Keep encounters lived-in"],
+    editingTargets: ["Build episodic passenger rhythm", "Cut around interruptions", "Let conversations accumulate"],
+    soundTargets: ["Use street sound as texture", "Keep conversation central", "Let traffic shape pace"],
+    learningGoals: ["A small contained space can reveal a whole society"],
+    verificationStatus: "needs_research"
+  },
+  scenario_rams_2015: {
+    scenarioId: "scenario_rams_2015",
+    title: "Rams production brief",
+    logline: "Turn stubborn distance, brotherhood, and rural survival into dry emotional stakes.",
+    genreTargets: ["Nordic rural deadpan comedy-drama", "Brotherhood conflict story", "Rural survival drama"],
+    toneTargets: ["Deadpan and restrained", "Dryly funny", "Quietly isolated"],
+    screenplayTargets: ["Make stubbornness drive stakes", "Let brotherhood stay buried", "Tie survival to rural routines"],
+    cinematographyTargets: ["Use landscape as isolation", "Frame distance between brothers", "Find dry visual humor"],
+    editingTargets: ["Keep rhythm restrained", "Let small human shifts matter", "Hold stillness for pressure"],
+    soundTargets: ["Use wind as pressure", "Let animals shape the world", "Make silence rural and tense"],
+    learningGoals: ["Deadpan drama can turn stubborn distance into emotional stakes"],
+    verificationStatus: "needs_research"
+  },
+  scenario_anomalisa_2015: {
+    scenarioId: "scenario_anomalisa_2015",
+    title: "Anomalisa production brief",
+    logline: "Make loneliness visible through voice, texture, repetition, and one fragile connection.",
+    genreTargets: ["Animated adult comedy-drama-romance", "Loneliness character study", "Fragile connection story"],
+    toneTargets: ["Awkward and intimate", "Lonely and repetitive", "Tender but uneasy"],
+    screenplayTargets: ["Make sameness a pressure", "Build connection through small pauses", "Let fragility guide romance"],
+    cinematographyTargets: ["Use interiors as alienation machine", "Animate faces and bodies intimately", "Hold pauses in close detail"],
+    editingTargets: ["Keep slow emotional rhythm", "Time awkward encounters", "Let repetition become pressure"],
+    soundTargets: ["Use voice as identity pressure", "Let repetition expose loneliness", "Hold silence around connection"],
+    learningGoals: ["Animation can make loneliness visible through voice, texture and repetition"],
+    verificationStatus: "needs_research"
   }
 
 };
