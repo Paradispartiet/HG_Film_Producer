@@ -1315,6 +1315,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use voice as identity pressure", "Let repetition expose loneliness", "Hold silence around connection"],
     learningGoals: ["Animation can make loneliness visible through voice, texture and repetition"],
     verificationStatus: "needs_research"
+  },
+  scenario_leviathan_2014: {
+    scenarioId: "scenario_leviathan_2014",
+    title: "Leviathan production brief",
+    logline: "Make power visible through legal pressure, family conflict, and personal collapse.",
+    genreTargets: ["Social crime drama", "Legal pressure story", "Family-property conflict"],
+    toneTargets: ["Grave and restrained", "Institutionally pressured", "Morally heavy"],
+    screenplayTargets: ["Pressure family through property conflict", "Escalate through procedure", "Tie law to personal collapse"],
+    cinematographyTargets: ["Use landscape as moral weight", "Frame institutions as pressure", "Hold rooms under strain"],
+    editingTargets: ["Build slow humiliation", "Let procedures tighten", "Delay relief after setbacks"],
+    soundTargets: ["Use official voices as pressure", "Let silence fill rooms", "Keep institutions audible"],
+    learningGoals: ["Social drama can make power visible through everyday legal pressure", "Make collapse grow from ordinary systems"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_hateful_eight_2015: {
+    scenarioId: "scenario_the_hateful_eight_2015",
+    title: "The Hateful Eight production brief",
+    logline: "Turn one hostile room into a suspicion machine of stories, silence, and violence.",
+    genreTargets: ["Contained western crime mystery", "Ensemble thriller", "Frontier pressure chamber"],
+    toneTargets: ["Hostile and distrustful", "Menacingly talkative", "Violent under restraint"],
+    screenplayTargets: ["Control information carefully", "Shift stories and alliances", "Delay reveals for pressure"],
+    cinematographyTargets: ["Block suspicion in one room", "Use ensemble distance", "Keep frontier atmosphere hostile"],
+    editingTargets: ["Time reversals clearly", "Hold tension before violence", "Let suspicion change the room"],
+    soundTargets: ["Make dialogue a weapon", "Use storm as menace", "Let silence threaten"],
+    learningGoals: ["A contained space can turn dialogue into suspense and violence", "Turn one room into a suspicion machine"],
+    verificationStatus: "needs_research"
+  },
+  scenario_drifters_2015: {
+    scenarioId: "scenario_drifters_2015",
+    title: "Drifters production brief",
+    logline: "Show survival through debt, marginal life, and choices that keep narrowing.",
+    genreTargets: ["Social crime drama", "Street-level survival story", "Marginal-life character drama"],
+    toneTargets: ["Rough and vulnerable", "Economically pressured", "Unstable but grounded"],
+    screenplayTargets: ["Tie debt to daily choices", "Narrow options scene by scene", "Keep vulnerability close"],
+    cinematographyTargets: ["Use rough spaces as pressure", "Stay close to street realism", "Frame survival without polish"],
+    editingTargets: ["Build tension through small choices", "Let consequences accumulate", "Keep momentum uncertain"],
+    soundTargets: ["Use ambient city instability", "Let silence expose risk", "Keep streets present"],
+    learningGoals: ["Crime drama can show social pressure through everyday survival", "Show survival through narrowing choices"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_measure_of_a_man_2015: {
+    scenarioId: "scenario_the_measure_of_a_man_2015",
+    title: "The Measure of a Man production brief",
+    logline: "Make ordinary procedures dramatic through dignity, work pressure, and moral compromise.",
+    genreTargets: ["Realist work drama", "Social dignity story", "Employment pressure drama"],
+    toneTargets: ["Restrained and observant", "Quietly humiliating", "Morally pressured"],
+    screenplayTargets: ["Turn workplace systems into pressure", "Make waiting dramatic", "Expose compromise in small choices"],
+    cinematographyTargets: ["Observe plain spaces", "Frame work as pressure", "Keep distance respectful"],
+    editingTargets: ["Hold interviews and waiting", "Let small humiliations land", "Build tension through procedure"],
+    soundTargets: ["Use room tone for realism", "Keep institutional sound present", "Let silence show discomfort"],
+    learningGoals: ["Social realism can make ordinary procedures feel dramatic", "Make ordinary procedures dramatic"],
+    verificationStatus: "needs_research"
+  },
+  scenario_dogtooth_2009: {
+    scenarioId: "scenario_dogtooth_2009",
+    title: "Dogtooth production brief",
+    logline: "Build tension from rules, confinement, distorted language, and controlled family reality.",
+    genreTargets: ["Controlled psychological drama", "Confinement thriller", "Family rule-system story"],
+    toneTargets: ["Flat and unsettling", "Controlled but volatile", "Strangely clinical"],
+    screenplayTargets: ["Make language distort reality", "Withhold outside context", "Let rigid routines create threat"],
+    cinematographyTargets: ["Use home as a closed system", "Frame behavior at a distance", "Keep compositions static"],
+    editingTargets: ["Repeat routines with tension", "Cut around missing context", "Let rules tighten slowly"],
+    soundTargets: ["Use flat sound as violence", "Let silence feel controlled", "Keep the home emotionally cold"],
+    learningGoals: ["Thriller tension can come from rules, confinement and distorted language", "Build tension from rules and confinement"],
+    verificationStatus: "needs_research"
   }
 
 };
