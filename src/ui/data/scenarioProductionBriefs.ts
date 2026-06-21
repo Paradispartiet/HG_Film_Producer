@@ -1001,7 +1001,7 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     cinematographyTargets: ["Show speed as pressure", "Build a period racing world", "Frame competition as character"],
     editingTargets: ["Shape race rhythm clearly", "Cross-cut emotion and action", "Build pressure through pace"],
     soundTargets: ["Use machines as tension", "Make breath audible", "Let pressure build in sound"],
-    learningGoals: ["Sports drama can turn rivalry into character structure"],
+    learningGoals: ["Turn rivalry into character structure", "Use risk to reveal ambition"],
     verificationStatus: "needs_research"
   },
   scenario_her_2013: {
@@ -1014,7 +1014,7 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     cinematographyTargets: ["Design the future emotionally", "Use soft spaces for intimacy", "Frame solitude gently"],
     editingTargets: ["Keep pacing soft", "Follow interior rhythm", "Let quiet moments breathe"],
     soundTargets: ["Use voice as intimacy", "Make interfaces feel personal", "Let music hold emotion"],
-    learningGoals: ["Science fiction can feel intimate when technology becomes emotional space"],
+    learningGoals: ["Make technology feel like emotional space", "Use voice to build intimacy"],
     verificationStatus: "needs_research"
   },
   scenario_the_lobster_2015: {
@@ -1027,7 +1027,7 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     cinematographyTargets: ["Use institutional spaces as pressure", "Frame rules plainly", "Keep compositions controlled"],
     editingTargets: ["Hold a dry rhythm", "Use restraint before threat", "Let sudden danger interrupt calm"],
     soundTargets: ["Keep dialogue flat", "Use silence as menace", "Let stillness support comedy"],
-    learningGoals: ["Absurd rules become powerful when the film treats them as normal"],
+    learningGoals: ["Treat absurd rules as normal", "Let restraint sharpen comic menace"],
     verificationStatus: "needs_research"
   },
   scenario_4_months_3_weeks_and_2_days_2007: {
@@ -1040,7 +1040,7 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     cinematographyTargets: ["Use long takes", "Restrict the viewpoint", "Turn rooms into danger zones"],
     editingTargets: ["Let duration create suspense", "Hold negotiation in real time", "Withhold relief after choices"],
     soundTargets: ["Use ambient silence", "Keep practical sound exposed", "Let anxiety sit in quiet"],
-    learningGoals: ["Realism can create suspense through duration, constraint and withheld relief"],
+    learningGoals: ["Build suspense through waiting", "Use constraint to withhold relief"],
     verificationStatus: "needs_research"
   },
   scenario_a_pigeon_sat_on_a_branch_reflecting_on_existence_2014: {
@@ -1053,7 +1053,7 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     cinematographyTargets: ["Use static scenes", "Construct pale spaces", "Block figures precisely"],
     editingTargets: ["Keep sketch-like rhythm", "Hold fixed frames", "Let anti-climax land"],
     soundTargets: ["Keep dialogue flat", "Use sound as absurdity", "Let silence expose repetition"],
-    learningGoals: ["Fixed composition can turn everyday absurdity into philosophy"],
+    learningGoals: ["Use fixed frames as comic philosophy", "Turn repetition into existential comedy"],
     verificationStatus: "needs_research"
   }
 };

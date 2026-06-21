@@ -100,6 +100,14 @@ const targetCategories = [
   "learningGoals"
 ] as const satisfies readonly (keyof ScenarioProductionBrief)[];
 
+const newBatchManualScenarioIds = [
+  "scenario_rush_2013",
+  "scenario_her_2013",
+  "scenario_the_lobster_2015",
+  "scenario_4_months_3_weeks_and_2_days_2007",
+  "scenario_a_pigeon_sat_on_a_branch_reflecting_on_existence_2014"
+] as const;
+
 function createScenario(id: string): FilmScenarioSeed {
   return {
     id,
@@ -147,6 +155,21 @@ test("all 80 manual scenario production briefs resolve with research-needed stat
     for (const category of targetCategories) {
       assert.ok(Array.isArray(brief[category]));
       assert.ok(brief[category].length > 0, `${scenarioId} is missing ${category}`);
+    }
+  }
+});
+
+
+test("batch 16 manual briefs keep concise target coverage", () => {
+  for (const scenarioId of newBatchManualScenarioIds) {
+    const brief = resolveScenarioProductionBrief(createScenario(scenarioId));
+
+    assert.equal(brief.verificationStatus, "needs_research");
+
+    for (const category of targetCategories) {
+      assert.ok(Array.isArray(brief[category]));
+      assert.ok(brief[category].length >= 2, `${scenarioId} needs at least two ${category}`);
+      assert.ok(brief[category].length <= 4, `${scenarioId} has too many ${category}`);
     }
   }
 });
