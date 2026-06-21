@@ -795,6 +795,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use music as mood", "Let sound suggest memory", "Make alienation audible"],
     learningGoals: ["Make youth conflict feel mythic."],
     verificationStatus: "needs_research"
+  },
+  scenario_in_the_house_2012: {
+    scenarioId: "scenario_in_the_house_2012",
+    title: "In the House production brief",
+    logline: "Build a literary mystery-thriller where writing, voyeurism, and manipulation turn domestic life into suspense.",
+    genreTargets: ["Literary mystery thriller", "Domestic observation drama", "Manipulation character study"],
+    toneTargets: ["Intellectual and tense", "Tempting and uneasy", "Quietly suspicious"],
+    screenplayTargets: ["Use story-within-story structure", "Make narration change reality", "Shift perspective to control information"],
+    cinematographyTargets: ["Turn home into temptation", "Frame watching as pressure", "Make domestic space feel observed"],
+    editingTargets: ["Control reveals carefully", "Shift between layers clearly", "Let perspective changes create suspense"],
+    soundTargets: ["Make dialogue intellectual tension", "Let narration unsettle reality", "Use quiet rooms as pressure"],
+    learningGoals: ["Writing can become suspense when narration changes reality"],
+    verificationStatus: "needs_research"
+  },
+  scenario_amelie_2001: {
+    scenarioId: "scenario_amelie_2001",
+    title: "Amélie production brief",
+    logline: "Create a whimsical romantic comedy where loneliness, imagination, and small interventions make kindness feel magical.",
+    genreTargets: ["Whimsical romantic comedy", "Urban fairy-tale romance", "Imagination-led character story"],
+    toneTargets: ["Playful and tender", "Lonely but hopeful", "Wonderfully heightened"],
+    screenplayTargets: ["Build playful cause and effect", "Turn small kindness into action", "Let imagination map desire"],
+    cinematographyTargets: ["Heighten the city world", "Use detail as emotion", "Make places feel like a private map"],
+    editingTargets: ["Cut quick visual details", "Time comedy precisely", "Link small actions with rhythm"],
+    soundTargets: ["Use music as wonder", "Give private feelings rhythm", "Let sound support whimsy"],
+    learningGoals: ["Stylized detail can turn everyday kindness into cinematic magic"],
+    verificationStatus: "needs_research"
+  },
+  scenario_taxidermia_2006: {
+    scenarioId: "scenario_taxidermia_2006",
+    title: "Taxidermia production brief",
+    logline: "Shape a grotesque black comedy-horror where bodies, inheritance, and appetite fuse family history into one system.",
+    genreTargets: ["Grotesque black comedy horror", "Body-focused family saga", "Surreal generational nightmare"],
+    toneTargets: ["Grotesque and absurd", "Physically uncomfortable", "Darkly comic"],
+    screenplayTargets: ["Use episodic generations", "Tie appetite to inheritance", "Make bodies carry family history"],
+    cinematographyTargets: ["Heighten grotesque details", "Make bodies unavoidable", "Build a surreal visual world"],
+    editingTargets: ["Use shocking rhythm", "Bridge generations boldly", "Let surreal transitions disturb"],
+    soundTargets: ["Make sound physically uncomfortable", "Use absurdity as pressure", "Let bodies shape the soundscape"],
+    learningGoals: ["Grotesque style can expose family, body, and history as one system"],
+    verificationStatus: "needs_research"
+  },
+  scenario_a_somewhat_gentle_man_2010: {
+    scenarioId: "scenario_a_somewhat_gentle_man_2010",
+    title: "A Somewhat Gentle Man production brief",
+    logline: "Stage a Nordic deadpan crime comedy-drama where an ex-criminal meets routine, violence, and awkward kindness.",
+    genreTargets: ["Nordic deadpan crime comedy", "Ex-criminal re-entry drama", "Awkward redemption story"],
+    toneTargets: ["Dry and restrained", "Awkwardly kind", "Quietly violent"],
+    screenplayTargets: ["Test re-entry through routine", "Let small choices matter", "Mix violence with ordinary life"],
+    cinematographyTargets: ["Use cold everyday spaces", "Frame routine as pressure", "Keep compositions understated"],
+    editingTargets: ["Hold dry timing", "Escalate without fuss", "Let awkward pauses land"],
+    soundTargets: ["Use silence as comedy", "Keep delivery flat", "Let quiet reactions carry tension"],
+    learningGoals: ["Crime comedy can work through restraint, awkwardness, and small choices"],
+    verificationStatus: "needs_research"
+  },
+  scenario_walle_2008: {
+    scenarioId: "scenario_walle_2008",
+    title: "WALL·E production brief",
+    logline: "Build an animated sci-fi adventure-romance where loneliness, care, and ruined environments become visual character story.",
+    genreTargets: ["Animated sci-fi adventure", "Robot romance", "Environmental discovery story"],
+    toneTargets: ["Lonely and tender", "Curious and hopeful", "Comic but sincere"],
+    screenplayTargets: ["Tell story with minimal dialogue", "Make care the central action", "Use discovery to reveal emotion"],
+    cinematographyTargets: ["Design worlds through objects", "Show machines and waste clearly", "Frame scale through loneliness"],
+    editingTargets: ["Build physical comedy", "Cut around discovery", "Let gestures carry emotion"],
+    soundTargets: ["Make machines feel alive", "Use sound as character voice", "Turn movement into feeling"],
+    learningGoals: ["Animation can build character through movement, objects, and sound"],
+    verificationStatus: "needs_research"
   }
 };
 
