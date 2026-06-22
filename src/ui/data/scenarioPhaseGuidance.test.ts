@@ -3,7 +3,7 @@ import test from "node:test";
 import { createScenarioPhaseGuidance } from "./scenarioPhaseGuidance";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 
-const brief: ScenarioProductionBrief = {
+const productionCaseBrief: ScenarioProductionBrief = {
   scenarioId: "scenario_test",
   briefType: "production_case",
   title: "Test production brief",
@@ -18,8 +18,13 @@ const brief: ScenarioProductionBrief = {
   verificationStatus: "seeded",
 };
 
-test("createScenarioPhaseGuidance maps brief targets to all production phases", () => {
-  const guidance = createScenarioPhaseGuidance(brief);
+const fallbackBrief: ScenarioProductionBrief = {
+  ...productionCaseBrief,
+  briefType: "seed_fallback",
+};
+
+test("createScenarioPhaseGuidance maps production cases through mission phases", () => {
+  const guidance = createScenarioPhaseGuidance(productionCaseBrief);
 
   assert.deepEqual(
     guidance.map((phase) => phase.phase),
@@ -27,7 +32,11 @@ test("createScenarioPhaseGuidance maps brief targets to all production phases", 
   );
   assert.deepEqual(
     guidance.find((phase) => phase.phase === "development")?.targets,
-    ["Genre A", "Tone A", "Tone B", "Screenplay A"],
+    ["Test a phase guidance mapping.", "Genre A", "Tone A", "Tone B", "Screenplay A"],
+  );
+  assert.deepEqual(
+    guidance.find((phase) => phase.phase === "pre_production")?.targets,
+    ["Cinematography A"],
   );
   assert.deepEqual(guidance.find((phase) => phase.phase === "shoot")?.targets, [
     "Cinematography A",
@@ -41,5 +50,26 @@ test("createScenarioPhaseGuidance maps brief targets to all production phases", 
   assert.deepEqual(
     guidance.find((phase) => phase.phase === "release")?.targets,
     ["Learning A"],
+  );
+  assert.match(
+    guidance.find((phase) => phase.phase === "development")?.description ?? "",
+    /not a new film.*manusfasen/i,
+  );
+});
+
+test("createScenarioPhaseGuidance keeps seed fallback as generic production guidance", () => {
+  const guidance = createScenarioPhaseGuidance(fallbackBrief);
+
+  assert.deepEqual(
+    guidance.find((phase) => phase.phase === "development")?.targets,
+    ["Genre A", "Tone A", "Tone B", "Screenplay A"],
+  );
+  assert.equal(
+    guidance.find((phase) => phase.phase === "pre_production")?.title,
+    "Pre-production focus",
+  );
+  assert.match(
+    guidance.find((phase) => phase.phase === "development")?.description ?? "",
+    /seeded concept/i,
   );
 });
