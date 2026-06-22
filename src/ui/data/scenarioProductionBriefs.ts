@@ -1640,6 +1640,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use ambient coldness", "Let rooms sound empty", "Keep voices muted"],
     learningGoals: ["Drama can make absence feel like the central character", "Make absence the central character"],
     verificationStatus: "needs_research"
+  },
+  scenario_the_man_without_a_past_2002: {
+    scenarioId: "scenario_the_man_without_a_past_2002",
+    title: "The Man Without a Past production brief",
+    logline: "Shape a deadpan romantic comedy-drama where memory loss resets a life through kindness and small gestures.",
+    genreTargets: ["Deadpan romantic comedy-drama", "Identity rebuilding story", "Kindness-led character drama"],
+    toneTargets: ["Dry and gentle", "Plainly hopeful", "Quietly warm"],
+    screenplayTargets: ["Use memory loss as social reset", "Rebuild identity through small gestures", "Let kindness create momentum"],
+    cinematographyTargets: ["Use plain spaces", "Favor precise understatement", "Frame modest routines clearly"],
+    editingTargets: ["Keep a gentle rhythm", "Let small acts accumulate", "Time dry humor with restraint"],
+    soundTargets: ["Use music as warmth", "Let silence stay friendly", "Keep modest sounds present"],
+    learningGoals: ["Comedy drama can rebuild identity through small human gestures", "Rebuild identity through small gestures"],
+    verificationStatus: "needs_research"
+  },
+  scenario_blindness_2008: {
+    scenarioId: "scenario_blindness_2008",
+    title: "Blindness production brief",
+    logline: "Build a dystopian mystery-thriller drama where lost vision turns fear and social collapse into moral pressure.",
+    genreTargets: ["Dystopian mystery/thriller drama", "Social-collapse pressure story", "Moral survival drama"],
+    toneTargets: ["Disorienting and fearful", "Morally pressured", "Uncertain and tense"],
+    screenplayTargets: ["Use epidemic premise as social experiment", "Withhold clarity", "Force choices under collapse"],
+    cinematographyTargets: ["Restrict visual information", "Create sensory uncertainty", "Frame confinement as vulnerability"],
+    editingTargets: ["Build tension through confinement", "Cut through chaos carefully", "Delay clarity for pressure"],
+    soundTargets: ["Use crowd noise as threat", "Let silence expose vulnerability", "Make sound guide uncertainty"],
+    learningGoals: ["Thriller tension can come from taking vision and certainty away", "Take certainty away"],
+    verificationStatus: "needs_research"
+  },
+  scenario_scenes_from_a_marriage_1974: {
+    scenarioId: "scenario_scenes_from_a_marriage_1974",
+    title: "Scenes from a Marriage production brief",
+    logline: "Stage an intimate relationship drama where love, resentment, and negotiation make conversation feel like action.",
+    genreTargets: ["Intimate relationship drama", "Emotional negotiation story", "Private-room chamber drama"],
+    toneTargets: ["Intimate and raw", "Restrained but painful", "Emotionally exact"],
+    screenplayTargets: ["Make conversation feel like action", "Turn private rooms into battlegrounds", "Shift power through speech"],
+    cinematographyTargets: ["Observe faces closely", "Hold pauses without escape", "Frame rooms as emotional traps"],
+    editingTargets: ["Shape long confrontations", "Track shifting power", "Let pauses change scenes"],
+    soundTargets: ["Use dialogue as pressure", "Let silence wound", "Keep rooms emotionally exposed"],
+    learningGoals: ["Relationship drama can make conversation feel like action", "Make conversation feel like action"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_florida_project_2017: {
+    scenarioId: "scenario_the_florida_project_2017",
+    title: "The Florida Project production brief",
+    logline: "Create a child-view social character drama where play and bright everyday spaces reveal fragile protection.",
+    genreTargets: ["Child-view social character drama", "Poverty and play story", "Everyday survival drama"],
+    toneTargets: ["Bright but fragile", "Playful under pressure", "Tender and precarious"],
+    screenplayTargets: ["Reveal harsh reality indirectly", "Contrast play with adult pressure", "Protect fragility through viewpoint"],
+    cinematographyTargets: ["Observe from low angles", "Use bright everyday spaces", "Follow lived-in movement"],
+    editingTargets: ["Keep an episodic rhythm", "Follow childhood freedom", "Let adult pressure interrupt"],
+    soundTargets: ["Use motel ambience", "Layer street texture", "Let play and pressure coexist"],
+    learningGoals: ["Social drama can use a child’s viewpoint to reveal harsh reality indirectly", "Reveal harsh reality indirectly"],
+    verificationStatus: "needs_research"
+  },
+  scenario_dog_day_afternoon_1975: {
+    scenarioId: "scenario_dog_day_afternoon_1975",
+    title: "Dog Day Afternoon production brief",
+    logline: "Drive a biographical crime drama-thriller where one public crisis becomes spectacle, pressure, and character exposure.",
+    genreTargets: ["Biographical crime drama/thriller", "Contained crisis story", "Public-pressure character drama"],
+    toneTargets: ["Hot and desperate", "Publicly exposed", "Tense but human"],
+    screenplayTargets: ["Turn public crisis into character pressure", "Use one crisis as social theatre", "Make attention escalate stakes"],
+    cinematographyTargets: ["Frame crowd and police pressure", "Keep the crisis contained", "Show media as pressure system"],
+    editingTargets: ["Escalate through negotiation", "Build tension through waiting", "Track attention as pressure"],
+    soundTargets: ["Use street noise as heat", "Let shouting raise pressure", "Drop into silence for exposure"],
+    learningGoals: ["Crime drama can turn a public crisis into character pressure", "Turn public crisis into character pressure"],
+    verificationStatus: "needs_research"
   }
 
 
