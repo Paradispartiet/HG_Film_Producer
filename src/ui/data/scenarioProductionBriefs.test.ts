@@ -132,7 +132,12 @@ const manualScenarioIds = [
   "scenario_the_square_2017",
   "scenario_the_savages_2007",
   "scenario_the_million_dollar_hotel_2000",
-  "scenario_loveless_2017"
+  "scenario_loveless_2017",
+  "scenario_the_man_without_a_past_2002",
+  "scenario_blindness_2008",
+  "scenario_scenes_from_a_marriage_1974",
+  "scenario_the_florida_project_2017",
+  "scenario_dog_day_afternoon_1975"
 ] as const;
 
 const targetCategories = [
@@ -146,11 +151,11 @@ const targetCategories = [
 ] as const satisfies readonly (keyof ScenarioProductionBrief)[];
 
 const newBatchManualScenarioIds = [
-  "scenario_a_monster_calls_2016",
-  "scenario_the_square_2017",
-  "scenario_the_savages_2007",
-  "scenario_the_million_dollar_hotel_2000",
-  "scenario_loveless_2017"
+  "scenario_the_man_without_a_past_2002",
+  "scenario_blindness_2008",
+  "scenario_scenes_from_a_marriage_1974",
+  "scenario_the_florida_project_2017",
+  "scenario_dog_day_afternoon_1975"
 ] as const;
 
 function createScenario(id: string): FilmScenarioSeed {
@@ -189,8 +194,8 @@ test("manual scenario ids include the corrected Winter's Bone id only", () => {
   assert.ok(!manualScenarioIds.includes("scenario_winters_bone_2010" as (typeof manualScenarioIds)[number]));
 });
 
-test("all 125 manual scenario production briefs resolve with research-needed status and targets", () => {
-  assert.equal(manualScenarioIds.length, 125);
+test("all 130 manual scenario production briefs resolve with research-needed status and targets", () => {
+  assert.equal(manualScenarioIds.length, 130);
   for (const scenarioId of manualScenarioIds) {
     const brief = resolveScenarioProductionBrief(createScenario(scenarioId));
 
@@ -205,7 +210,7 @@ test("all 125 manual scenario production briefs resolve with research-needed sta
 });
 
 
-test("batch 25 manual briefs keep concise target coverage", () => {
+test("batch 26 manual briefs keep concise target coverage", () => {
   for (const scenarioId of newBatchManualScenarioIds) {
     const brief = resolveScenarioProductionBrief(createScenario(scenarioId));
 
