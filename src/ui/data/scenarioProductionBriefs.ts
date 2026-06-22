@@ -1445,6 +1445,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Keep winter space quiet", "Use pauses as grief", "Let ordinary sound continue"],
     learningGoals: ["Let grief unfold through restraint", "Use everyday duty as character pressure"],
     verificationStatus: "needs_research"
+  },
+  scenario_paterson_2016: {
+    scenarioId: "scenario_paterson_2016",
+    title: "Paterson production brief",
+    logline: "Shape a quiet character comedy-drama where routine, poetry, and everyday attention become structure.",
+    genreTargets: ["Quiet character comedy-drama", "Everyday romance", "Poetic routine story"],
+    toneTargets: ["Gentle and observant", "Warmly understated", "Quietly funny"],
+    screenplayTargets: ["Turn routine into structure", "Use small repetitions as story turns", "Let tiny shifts reveal feeling"],
+    cinematographyTargets: ["Make ordinary city spaces emotional", "Observe everyday details", "Frame routine with care"],
+    editingTargets: ["Pace through repeated patterns", "Let tiny changes register", "Keep a gentle daily rhythm"],
+    soundTargets: ["Layer ambient city sound", "Use conversation as texture", "Keep quiet music understated"],
+    learningGoals: ["Everyday routine can become cinematic structure through attention and repetition", "Turn routine into structure"],
+    verificationStatus: "needs_research"
+  },
+  scenario_before_sunrise_1995: {
+    scenarioId: "scenario_before_sunrise_1995",
+    title: "Before Sunrise production brief",
+    logline: "Build a romantic walking-and-talking comedy-drama from chance, connection, and one-night intimacy.",
+    genreTargets: ["Romantic walking comedy-drama", "One-night intimacy story", "Conversation-led romance"],
+    toneTargets: ["Curious and intimate", "Playful but sincere", "Open to chance"],
+    screenplayTargets: ["Build romance through conversation", "Let connection drive scenes", "Use time together as stakes"],
+    cinematographyTargets: ["Make the city walk an emotional map", "Frame movement as discovery", "Use streets as shared space"],
+    editingTargets: ["Hold long conversational rhythm", "Let natural pauses breathe", "Keep the walk flowing"],
+    soundTargets: ["Use street sound as intimacy", "Let silence make space", "Keep voices close"],
+    learningGoals: ["Romance can be built from time, place and honest conversation", "Build romance through conversation"],
+    verificationStatus: "needs_research"
+  },
+  scenario_before_sunset_2004: {
+    scenarioId: "scenario_before_sunset_2004",
+    title: "Before Sunset production brief",
+    logline: "Stage an intimate real-time romantic drama where memory, regret, and unfinished love press against the clock.",
+    genreTargets: ["Intimate real-time romantic drama", "Unfinished love story", "Walking conversation drama"],
+    toneTargets: ["Tender and regretful", "Compressed and alert", "Emotionally restrained"],
+    screenplayTargets: ["Make almost-said feelings dramatic", "Use compressed time pressure", "Let memory reopen conflict"],
+    cinematographyTargets: ["Make city movement a countdown", "Track closeness through walking", "Frame private feeling in public spaces"],
+    editingTargets: ["Build restraint through pauses", "Hold glances and unfinished sentences", "Keep real-time pressure present"],
+    soundTargets: ["Use ambient city sound privately", "Let pauses carry regret", "Keep conversation exposed"],
+    learningGoals: ["Dramatic tension can come from what characters almost say", "Make almost-said feelings dramatic"],
+    verificationStatus: "needs_research"
+  },
+  scenario_i_daniel_blake_2016: {
+    scenarioId: "scenario_i_daniel_blake_2016",
+    title: "I, Daniel Blake production brief",
+    logline: "Make a social realist character drama where dignity, bureaucracy, and human solidarity create conflict.",
+    genreTargets: ["Social realist character drama", "Bureaucracy pressure story", "Human solidarity drama"],
+    toneTargets: ["Plain and dignified", "Quietly angry", "Human and grounded"],
+    screenplayTargets: ["Make bureaucracy feel like conflict", "Use institutions as pressure machines", "Let solidarity answer humiliation"],
+    cinematographyTargets: ["Observe practical spaces plainly", "Frame ordinary institutions as pressure", "Keep distance respectful"],
+    editingTargets: ["Build tension through waiting", "Let forms create obstacles", "Hold small humiliations"],
+    soundTargets: ["Use quiet rooms as pressure", "Let official voices dominate", "Make silence socially heavy"],
+    learningGoals: ["Social drama can make bureaucracy feel like conflict", "Make bureaucracy feel like conflict"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_big_sick_2017: {
+    scenarioId: "scenario_the_big_sick_2017",
+    title: "The Big Sick production brief",
+    logline: "Shape a romantic comedy-drama where love, family, culture, and crisis turn humor toward vulnerability.",
+    genreTargets: ["Romantic comedy-drama", "Family crisis romance", "Culture-and-love story"],
+    toneTargets: ["Funny and vulnerable", "Awkward but warm", "Tender under pressure"],
+    screenplayTargets: ["Let humor meet real vulnerability", "Use comedy and illness as contrast", "Make family pressure personal"],
+    cinematographyTargets: ["Use family spaces for warmth and pressure", "Frame social spaces as negotiation", "Keep intimacy grounded"],
+    editingTargets: ["Balance jokes with real fear", "Time awkwardness honestly", "Let crisis shift rhythm"],
+    soundTargets: ["Use dialogue as humor and defense", "Let conversation build connection", "Keep fear close under jokes"],
+    learningGoals: ["Romantic comedy can deepen when humor meets real vulnerability", "Let humor meet real vulnerability"],
+    verificationStatus: "needs_research"
   }
 
 };
