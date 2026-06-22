@@ -2,7 +2,9 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   countProductionCaseMatches,
+  getProductionCaseMissionScore,
   getProductionCaseProgressEntry,
+  getProductionCaseScoreSummary,
   parseProductionCaseProgress,
   productionCaseProgressStorageKey,
   readProductionCaseProgress,
@@ -183,4 +185,98 @@ test("reset clears selected choices for the current scenario", () => {
   const resetState = resetProductionCaseScenarioProgress(state, "scenario_taxi_driver_1976");
 
   assert.equal(getProductionCaseProgressEntry(resetState, "scenario_taxi_driver_1976").selectedChoicesByMissionId, undefined);
+});
+
+
+test("production case mission score maps choice quality to points", () => {
+  assert.equal(getProductionCaseMissionScore("match"), 2);
+  assert.equal(getProductionCaseMissionScore("partial"), 1);
+  assert.equal(getProductionCaseMissionScore("miss"), 0);
+  assert.equal(getProductionCaseMissionScore(undefined), 0);
+});
+
+test("Taxi Driver with six match choices scores 12/12", () => {
+  const missions = Array.from({ length: 6 }, (_, index) => {
+    const missionNumber = index + 1;
+    return {
+      id: `scenario_taxi_driver_1976-mission-${missionNumber}`,
+      choices: [
+        { id: `scenario_taxi_driver_1976-choice-${missionNumber}-match`, quality: "match" },
+        { id: `scenario_taxi_driver_1976-choice-${missionNumber}-partial`, quality: "partial" },
+        { id: `scenario_taxi_driver_1976-choice-${missionNumber}-miss`, quality: "miss" },
+      ],
+    };
+  });
+  const selectedChoicesByMissionId = Object.fromEntries(
+    missions.map((mission, index) => [mission.id, `scenario_taxi_driver_1976-choice-${index + 1}-match`]),
+  );
+
+  assert.deepEqual(
+    getProductionCaseScoreSummary(missions, { selectedChoicesByMissionId }),
+    { score: 12, maxScore: 12 },
+  );
+});
+
+test("mixed production case choices score match, partial, miss, and unselected missions", () => {
+  const missions = [
+    {
+      id: "mission-a",
+      choices: [{ id: "choice-a", quality: "match" }],
+    },
+    {
+      id: "mission-b",
+      choices: [{ id: "choice-b", quality: "partial" }],
+    },
+    {
+      id: "mission-c",
+      choices: [{ id: "choice-c", quality: "miss" }],
+    },
+    {
+      id: "mission-d",
+      choices: [{ id: "choice-d", quality: "match" }],
+    },
+  ];
+
+  assert.deepEqual(
+    getProductionCaseScoreSummary(missions, {
+      selectedChoicesByMissionId: {
+        "mission-a": "choice-a",
+        "mission-b": "choice-b",
+        "mission-c": "choice-c",
+      },
+    }),
+    { score: 3, maxScore: 8 },
+  );
+});
+
+test("reset makes score 0 for the current scenario without affecting completion helpers", () => {
+  const missions = [
+    { id: "mission-a", choices: [{ id: "choice-a", quality: "match" }] },
+  ];
+  let state = setProductionCaseMissionChoice({}, "scenario_taxi_driver_1976", "mission-a", "choice-a");
+  state = setProductionCaseMissionCompletion(state, "scenario_taxi_driver_1976", "mission-a", true);
+
+  const resetState = resetProductionCaseScenarioProgress(state, "scenario_taxi_driver_1976");
+
+  assert.deepEqual(
+    getProductionCaseScoreSummary(missions, getProductionCaseProgressEntry(resetState, "scenario_taxi_driver_1976")),
+    { score: 0, maxScore: 2 },
+  );
+  assert.deepEqual(getProductionCaseProgressEntry(resetState, "scenario_taxi_driver_1976").completedMissionIds, []);
+});
+
+test("seed fallback without production case missions gets no scoring total", () => {
+  assert.deepEqual(getProductionCaseScoreSummary([], {}), { score: 0, maxScore: 0 });
+});
+
+test("production case scoring helpers avoid forbidden copy", () => {
+  const helperSource = [
+    getProductionCaseMissionScore.name,
+    getProductionCaseScoreSummary.name,
+    "Case-score",
+    "Fase-score",
+  ].join(" ").toLowerCase();
+
+  assert.ok(!helperSource.includes("inspired by"));
+  assert.ok(!helperSource.includes("in the spirit of"));
 });
