@@ -1575,6 +1575,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use silence as tenderness", "Keep everyday sound close", "Let awkward pauses breathe"],
     learningGoals: ["Quiet drama can make small acts of courage feel large"],
     verificationStatus: "needs_research"
+  },
+  scenario_a_monster_calls_2016: {
+    scenarioId: "scenario_a_monster_calls_2016",
+    title: "A Monster Calls production brief",
+    logline: "Shape a dark family fantasy-drama where grief and fear become visible through a monster's symbolic presence.",
+    genreTargets: ["Dark family fantasy-drama", "Grief and fear story", "Symbolic monster tale"],
+    toneTargets: ["Dread-filled but tender", "Storybook wonder under pain", "Emotionally truthful"],
+    screenplayTargets: ["Make fantasy inner conflict", "Turn grief into structure", "Let fear seek comfort"],
+    cinematographyTargets: ["Contrast ordinary life with fantasy", "Make home and school grounded", "Frame symbolic spaces boldly"],
+    editingTargets: ["Move between dread and wonder", "Build toward emotional release", "Let fantasy interrupt reality"],
+    soundTargets: ["Use voice as fear and comfort", "Let silence hold grief", "Make fantasy sound intimate"],
+    learningGoals: ["Fantasy can turn grief into visible story structure", "Turn grief into visible story structure"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_square_2017: {
+    scenarioId: "scenario_the_square_2017",
+    title: "The Square production brief",
+    logline: "Build a social satire comedy-drama where art, status, and public morality make polite spaces unstable.",
+    genreTargets: ["Social satire comedy-drama", "Art-world pressure story", "Public morality drama"],
+    toneTargets: ["Deadpan and awkward", "Polite but unstable", "Embarrassingly controlled"],
+    screenplayTargets: ["Expose rules through hypocrisy", "Make status a pressure point", "Turn culture spaces into arenas"],
+    cinematographyTargets: ["Use controlled compositions", "Frame public awkwardness", "Make galleries feel pressurized"],
+    editingTargets: ["Escalate through embarrassment", "Hold deadpan discomfort", "Let hypocrisy sharpen slowly"],
+    soundTargets: ["Use silence as satire", "Layer public noise lightly", "Keep formal dialogue brittle"],
+    learningGoals: ["Satire can expose social rules by making polite spaces unstable", "Make polite spaces unstable"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_savages_2007: {
+    scenarioId: "scenario_the_savages_2007",
+    title: "The Savages production brief",
+    logline: "Stage a family comedy-drama where aging, responsibility, and sibling friction turn care into confrontation.",
+    genreTargets: ["Family comedy-drama", "Aging responsibility story", "Sibling friction drama"],
+    toneTargets: ["Dry and uncomfortable", "Blunt but tender", "Awkwardly humane"],
+    screenplayTargets: ["Make care a confrontation", "Let duty expose siblings", "Mix discomfort and tenderness"],
+    cinematographyTargets: ["Observe family duty plainly", "Use care spaces as pressure", "Frame awkward closeness"],
+    editingTargets: ["Balance dry humor with discomfort", "Let tenderness arrive quietly", "Hold difficult pauses"],
+    soundTargets: ["Use room tone as pressure", "Let silence expose duty", "Keep blunt dialogue direct"],
+    learningGoals: ["Family drama can mix discomfort and humor without losing tenderness", "Mix discomfort and tenderness"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_million_dollar_hotel_2000: {
+    scenarioId: "scenario_the_million_dollar_hotel_2000",
+    title: "The Million Dollar Hotel production brief",
+    logline: "Shape a mystery/romance drama-thriller where longing and investigation drift through a dreamlike hotel world.",
+    genreTargets: ["Mystery/romance drama-thriller", "Outsider community story", "Dreamlike hotel mystery"],
+    toneTargets: ["Romantic and uncertain", "Eccentric but fragile", "Dreamlike under mystery"],
+    screenplayTargets: ["Make investigation emotional", "Use longing as pressure", "Let outsiders define the world"],
+    cinematographyTargets: ["Make hotel a state of mind", "Fragment viewpoint gently", "Frame romance as uncertainty"],
+    editingTargets: ["Move through mystery and memory", "Let encounters feel eccentric", "Keep romantic uncertainty alive"],
+    soundTargets: ["Use music as atmosphere", "Layer ambient hotel sound", "Let silence feel suspended"],
+    learningGoals: ["Mystery can become emotional when place feels like a state of mind", "Make place feel like a state of mind"],
+    verificationStatus: "needs_research"
+  },
+  scenario_loveless_2017: {
+    scenarioId: "scenario_loveless_2017",
+    title: "Loveless production brief",
+    logline: "Build an austere family/social drama where neglect, absence, and emotional coldness become the central pressure.",
+    genreTargets: ["Austere family/social drama", "Absence and neglect story", "Emotional coldness drama"],
+    toneTargets: ["Cold and distant", "Austere but tense", "Emotionally withheld"],
+    screenplayTargets: ["Make absence central", "Show breakdown as landscape", "Let refusal create tension"],
+    cinematographyTargets: ["Observe from a distance", "Use empty spaces as pressure", "Frame rooms as absence"],
+    editingTargets: ["Build slow search tension", "Hold silence and refusal", "Let absence stretch time"],
+    soundTargets: ["Use ambient coldness", "Let rooms sound empty", "Keep voices muted"],
+    learningGoals: ["Drama can make absence feel like the central character", "Make absence the central character"],
+    verificationStatus: "needs_research"
   }
 
 
