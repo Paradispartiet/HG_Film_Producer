@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import {
-  countProductionCaseMatches,
+  getProductionCaseMissionScoreSummary,
   getProductionCaseProgressEntry,
+  getProductionCaseScoreSummary,
   readProductionCaseProgress,
   resetProductionCaseScenarioProgress,
   setProductionCaseMissionChoice,
@@ -96,7 +97,7 @@ function ProductionCaseMissionFlow({
     completedMissionIdSet.has(mission.id),
   ).length;
   const allComplete = missions.length > 0 && completedCount === missions.length;
-  const caseMatch = countProductionCaseMatches(selectedChoicesByMissionId, missions);
+  const caseScore = getProductionCaseScoreSummary(missions, progressEntry);
 
   function updateProgress(nextState: ProductionCaseProgressState) {
     setProgressState(nextState);
@@ -139,7 +140,7 @@ function ProductionCaseMissionFlow({
               ? "Produksjonscase fullført"
               : `${completedCount}/${missions.length} faser fullført`}
           </strong>
-          <span className="scenario-mission-score">Case-match: {caseMatch.matchCount}/{caseMatch.selectedCount}</span>
+          <span className="scenario-mission-score">Case-score: {caseScore.score}/{caseScore.maxScore}</span>
         </div>
         <button onClick={resetCurrentScenario} type="button">
           Nullstill case-progress
@@ -149,6 +150,7 @@ function ProductionCaseMissionFlow({
         const isComplete = completedMissionIdSet.has(mission.id);
         const selectedChoiceId = selectedChoicesByMissionId[mission.id];
         const selectedChoice = mission.choices.find((choice) => choice.id === selectedChoiceId);
+        const phaseScore = getProductionCaseMissionScoreSummary(mission, selectedChoiceId);
         return (
           <article
             className={`scenario-mission-card${isComplete ? " scenario-mission-card--complete" : ""}`}
@@ -160,6 +162,7 @@ function ProductionCaseMissionFlow({
                 <h4>{mission.title}</h4>
                 <span>{isComplete ? "Fullført" : "Åpen fase"}</span>
               </div>
+              <span className="scenario-mission-score">Fase-score: {phaseScore.score}/{phaseScore.maxScore}</span>
               <p>{mission.prompt}</p>
               <ul className="scenario-brief-list">
                 {mission.targets.map((target) => (

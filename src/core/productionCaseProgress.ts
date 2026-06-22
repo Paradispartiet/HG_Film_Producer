@@ -117,6 +117,57 @@ export function setProductionCaseMissionChoice(
   };
 }
 
+export type ProductionCaseMissionScoreChoiceQuality = "match" | "partial" | "miss";
+
+export type ProductionCaseScoreMission = {
+  readonly id: string;
+  readonly choices: readonly {
+    readonly id: string;
+    readonly quality: ProductionCaseMissionScoreChoiceQuality | string;
+  }[];
+};
+
+export type ProductionCaseScoreSummary = {
+  readonly score: number;
+  readonly maxScore: number;
+};
+
+export function getProductionCaseMissionScore(
+  choiceQuality: ProductionCaseMissionScoreChoiceQuality | string | undefined,
+): number {
+  if (choiceQuality === "match") return 2;
+  if (choiceQuality === "partial") return 1;
+  return 0;
+}
+
+export function getProductionCaseScoreSummary(
+  missions: readonly ProductionCaseScoreMission[],
+  progress: Pick<ProductionCaseProgressEntry, "selectedChoicesByMissionId">,
+): ProductionCaseScoreSummary {
+  const selectedChoicesByMissionId = progress.selectedChoicesByMissionId ?? {};
+  const score = missions.reduce((total, mission) => {
+    const selectedChoiceId = selectedChoicesByMissionId[mission.id];
+    const selectedChoice = mission.choices.find((choice) => choice.id === selectedChoiceId);
+    return total + getProductionCaseMissionScore(selectedChoice?.quality);
+  }, 0);
+
+  return {
+    score,
+    maxScore: missions.length * 2,
+  };
+}
+
+export function getProductionCaseMissionScoreSummary(
+  mission: ProductionCaseScoreMission,
+  selectedChoiceId: string | undefined,
+): ProductionCaseScoreSummary {
+  const selectedChoice = mission.choices.find((choice) => choice.id === selectedChoiceId);
+  return {
+    score: getProductionCaseMissionScore(selectedChoice?.quality),
+    maxScore: 2,
+  };
+}
+
 export function countProductionCaseMatches(
   selectedChoicesByMissionId: Readonly<Record<string, string>> | undefined,
   missions: readonly { readonly id: string; readonly choices: readonly { readonly id: string; readonly quality: string }[] }[],
