@@ -1380,6 +1380,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use flat sound as violence", "Let silence feel controlled", "Keep the home emotionally cold"],
     learningGoals: ["Thriller tension can come from rules, confinement and distorted language", "Build tension from rules and confinement"],
     verificationStatus: "needs_research"
+  },
+  scenario_amy_2015: {
+    scenarioId: "scenario_amy_2015",
+    title: "Amy production brief",
+    logline: "Shape an intimate documentary portrait where fame, voice, and pressure are felt through fragments and performance traces.",
+    genreTargets: ["Documentary music portrait", "Biographical fame study", "Public-private pressure story"],
+    toneTargets: ["Intimate and reflective", "Tender under pressure", "Haunted by absence"],
+    screenplayTargets: ["Build character through archive", "Use witnesses as emotional structure", "Let public pressure close in"],
+    cinematographyTargets: ["Treat fragments as portraiture", "Let performance traces carry presence", "Contrast public image and private space"],
+    editingTargets: ["Edit as memory", "Shape rise and collapse", "Let absence create turns"],
+    soundTargets: ["Use music as evidence", "Let interviews carry intimacy", "Make silence emotionally present"],
+    learningGoals: ["Build character through archive, sound, and absence", "Make fragments feel intimate"],
+    verificationStatus: "needs_research"
+  },
+  scenario_nerve_2016: {
+    scenarioId: "scenario_nerve_2016",
+    title: "Nerve production brief",
+    logline: "Drive a digital-age thriller where identity, spectators, and escalating dares turn the city into a public risk arena.",
+    genreTargets: ["Digital-age adventure thriller", "Crime game thriller", "Online pressure story"],
+    toneTargets: ["Fast and exposed", "Playful then dangerous", "Publicly pressurized"],
+    screenplayTargets: ["Use rules to raise risk", "Escalate dares clearly", "Make spectators drive pressure"],
+    cinematographyTargets: ["Turn night streets into stage", "Frame screens as social pressure", "Use movement as performance"],
+    editingTargets: ["Cut with screen rhythm", "Accelerate through danger", "Keep game stakes legible"],
+    soundTargets: ["Use notifications as pressure", "Layer crowd noise", "Let music push risk"],
+    learningGoals: ["Grow thriller structure from rules, spectators, and risk", "Use spectators to raise risk"],
+    verificationStatus: "needs_research"
+  },
+  scenario_cafe_society_2016: {
+    scenarioId: "scenario_cafe_society_2016",
+    title: "Café Society production brief",
+    logline: "Stage a romantic comedy-drama where ambition, love, and social performance reveal desire and compromise.",
+    genreTargets: ["Romantic comedy-drama", "Social ambition story", "Bittersweet love triangle"],
+    toneTargets: ["Witty and wistful", "Polished but regretful", "Light with longing"],
+    screenplayTargets: ["Contrast two social worlds", "Reveal desire through status", "Let compromise shape romance"],
+    cinematographyTargets: ["Polish period social spaces", "Use glamour as emotional surface", "Contrast intimacy and display"],
+    editingTargets: ["Keep gentle comic rhythm", "Balance wit with longing", "Let regret land softly"],
+    soundTargets: ["Use dialogue as status", "Let music carry nostalgia", "Keep mood elegant"],
+    learningGoals: ["Reveal compromise through social setting", "Use social worlds to expose desire"],
+    verificationStatus: "needs_research"
+  },
+  scenario_room_2015: {
+    scenarioId: "scenario_room_2015",
+    title: "Room production brief",
+    logline: "Build an intimate survival drama where confinement, care, and transition change what space means.",
+    genreTargets: ["Intimate survival drama", "Character trauma drama", "Confinement-to-transition story"],
+    toneTargets: ["Close and vulnerable", "Protective under fear", "Tender but traumatic"],
+    screenplayTargets: ["Make limited space a world", "Structure inside and outside", "Track care through transition"],
+    cinematographyTargets: ["Restrict viewpoint closely", "Make confinement emotionally specific", "Stay near vulnerable faces"],
+    editingTargets: ["Build around space change", "Let transition alter rhythm", "Hold small emotional shifts"],
+    soundTargets: ["Use breath as vulnerability", "Make small room sounds matter", "Let silence feel protective"],
+    learningGoals: ["Make space change meaning", "Turn world into memory through craft"],
+    verificationStatus: "needs_research"
+  },
+  scenario_manchester_by_the_sea_2016: {
+    scenarioId: "scenario_manchester_by_the_sea_2016",
+    title: "Manchester by the Sea production brief",
+    logline: "Let a restrained family drama unfold through loss, responsibility, memory pressure, and everyday duty.",
+    genreTargets: ["Restrained grief drama", "Family responsibility story", "Coastal memory drama"],
+    toneTargets: ["Quiet and blocked", "Wintry and restrained", "Everyday under grief"],
+    screenplayTargets: ["Let duty expose grief", "Reveal memory in fragments", "Keep emotional blockage active"],
+    cinematographyTargets: ["Use coastal town as pressure", "Observe daily tasks plainly", "Frame distance without force"],
+    editingTargets: ["Reveal grief non-linearly", "Cut memory as emotional pressure", "Let pauses carry turns"],
+    soundTargets: ["Keep winter space quiet", "Use pauses as grief", "Let ordinary sound continue"],
+    learningGoals: ["Let grief unfold through restraint", "Use everyday duty as character pressure"],
+    verificationStatus: "needs_research"
   }
 
 };
