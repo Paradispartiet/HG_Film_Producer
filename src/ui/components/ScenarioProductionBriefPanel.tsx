@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import {
   getProductionCaseMissionScoreSummary,
   getProductionCaseProgressEntry,
+  getProductionCaseResultTier,
   getProductionCaseScoreSummary,
   readProductionCaseProgress,
   resetProductionCaseScenarioProgress,
@@ -98,6 +99,7 @@ function ProductionCaseMissionFlow({
   ).length;
   const allComplete = missions.length > 0 && completedCount === missions.length;
   const caseScore = getProductionCaseScoreSummary(missions, progressEntry);
+  const resultTier = getProductionCaseResultTier(caseScore, completedCount);
 
   function updateProgress(nextState: ProductionCaseProgressState) {
     setProgressState(nextState);
@@ -146,6 +148,7 @@ function ProductionCaseMissionFlow({
           Nullstill case-progress
         </button>
       </div>
+      {resultTier ? <ProductionCaseResultBox tier={resultTier} /> : null}
       {missions.map((mission, index) => {
         const isComplete = completedMissionIdSet.has(mission.id);
         const selectedChoiceId = selectedChoicesByMissionId[mission.id];
@@ -205,6 +208,45 @@ function ProductionCaseMissionFlow({
     </div>
   );
 }
+
+function ProductionCaseResultBox({
+  tier,
+}: {
+  readonly tier: NonNullable<ReturnType<typeof getProductionCaseResultTier>>;
+}) {
+  const result = productionCaseResultCopy[tier];
+
+  return (
+    <section className={`scenario-production-result scenario-production-result--${tier}`} aria-label="Resultat">
+      <span className="eyebrow">Resultat</span>
+      <strong>{result.label}</strong>
+      <p>{result.description}</p>
+    </section>
+  );
+}
+
+const productionCaseResultCopy = {
+  not_started: {
+    label: "Ikke startet",
+    description: "Start produksjonscaset for å bygge forståelsen.",
+  },
+  in_progress: {
+    label: "Under arbeid",
+    description: "Du er i gang med å rekonstruere produksjonsvalgene.",
+  },
+  assistant: {
+    label: "Assistent",
+    description: "Du fullførte caset, men flere valg traff ikke filmens logikk.",
+  },
+  producer: {
+    label: "Produsent",
+    description: "Du forstod de viktigste produksjonsvalgene.",
+  },
+  auteur: {
+    label: "Auteur",
+    description: "Du matchet filmens produksjonslogikk svært presist.",
+  },
+} as const satisfies Record<NonNullable<ReturnType<typeof getProductionCaseResultTier>>, { readonly label: string; readonly description: string }>;
 
 function BriefSection({
   title,
