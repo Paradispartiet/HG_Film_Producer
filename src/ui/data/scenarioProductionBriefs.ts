@@ -1510,7 +1510,73 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use dialogue as humor and defense", "Let conversation build connection", "Keep fear close under jokes"],
     learningGoals: ["Romantic comedy can deepen when humor meets real vulnerability", "Let humor meet real vulnerability"],
     verificationStatus: "needs_research"
+  },
+  scenario_on_body_and_soul_2017: {
+    scenarioId: "scenario_on_body_and_soul_2017",
+    title: "On Body and Soul production brief",
+    logline: "Shape a quiet romantic fantasy-drama where loneliness and shared inner life make connection feel fragile.",
+    genreTargets: ["Quiet romantic fantasy-drama", "Loneliness and connection story", "Shared inner-life drama"],
+    toneTargets: ["Restrained and intimate", "Lonely but hopeful", "Ordinary with dream logic"],
+    screenplayTargets: ["Treat the impossible with restraint", "Let recognition build connection", "Contrast routine with inner life"],
+    cinematographyTargets: ["Observe work spaces plainly", "Use visual motifs gently", "Frame distance before closeness"],
+    editingTargets: ["Keep a slow emotional rhythm", "Build through distance and recognition", "Let quiet moments linger"],
+    soundTargets: ["Use silence as intimacy", "Keep natural sound present", "Let sparse music feel private"],
+    learningGoals: ["Fantasy can feel intimate when the impossible is treated with restraint"],
+    verificationStatus: "needs_research"
+  },
+  scenario_good_time_2017: {
+    scenarioId: "scenario_good_time_2017",
+    title: "Good Time production brief",
+    logline: "Drive an urgent crime-thriller drama where loyalty, desperation, and bad decisions turn the city into a trap.",
+    genreTargets: ["Urgent crime-thriller drama", "Desperation survival story", "Night-city pressure maze"],
+    toneTargets: ["Panicked and relentless", "Loyal but reckless", "Unstable under pressure"],
+    screenplayTargets: ["Let one bad choice narrow every option", "Escalate through mistakes", "Make loyalty create danger"],
+    cinematographyTargets: ["Stay close to panic", "Use kinetic movement", "Make night city feel trapped"],
+    editingTargets: ["Keep escapes tightening", "Cut around narrowing options", "Let mistakes accelerate rhythm"],
+    soundTargets: ["Use electronic tension", "Layer street noise as pressure", "Keep breath close"],
+    learningGoals: ["Thriller momentum can come from one bad choice making every next choice worse"],
+    verificationStatus: "needs_research"
+  },
+  scenario_tradgardsgatan_2017: {
+    scenarioId: "scenario_tradgardsgatan_2017",
+    title: "Trädgårdsgatan production brief",
+    logline: "Build an intimate drama-romance where memory, youth, and emotional return turn the past into present pressure.",
+    genreTargets: ["Intimate drama-romance", "Memory and youth story", "Emotional return drama"],
+    toneTargets: ["Tender and unresolved", "Reflective but immediate", "Quietly pressured"],
+    screenplayTargets: ["Turn memory into present conflict", "Let the past pressure choices", "Keep feelings unresolved"],
+    cinematographyTargets: ["Observe closeness with restraint", "Frame distance as emotion", "Let places carry memory"],
+    editingTargets: ["Move through recollection", "Hold silence after feeling", "Let unresolved moments breathe"],
+    soundTargets: ["Use domestic sound as memory", "Keep street sound quiet", "Let silence texture return"],
+    learningGoals: ["Romance drama can turn memory into present-tense conflict"],
+    verificationStatus: "needs_research"
+  },
+  scenario_clerks_1994: {
+    scenarioId: "scenario_clerks_1994",
+    title: "Clerks production brief",
+    logline: "Make a low-key workplace comedy where boredom, routine, and talk turn one ordinary place into a comic world.",
+    genreTargets: ["Low-key workplace comedy", "Routine frustration story", "Talk-driven comic world"],
+    toneTargets: ["Deadpan and restless", "Everyday and absurd", "Frustrated but playful"],
+    screenplayTargets: ["Build comedy from place and talk", "Let boredom create action", "Turn arguments into set pieces"],
+    cinematographyTargets: ["Use simple blocking", "Keep the workplace readable", "Favor conversational energy"],
+    editingTargets: ["Time interruptions sharply", "Hold deadpan reactions", "Let arguments set rhythm"],
+    soundTargets: ["Make dialogue the engine", "Use room noise for texture", "Let everyday sound support jokes"],
+    learningGoals: ["Comedy can be built from place, talk and everyday frustration"],
+    verificationStatus: "needs_research"
+  },
+  scenario_virgin_mountain_2015: {
+    scenarioId: "scenario_virgin_mountain_2015",
+    title: "Virgin Mountain production brief",
+    logline: "Shape a gentle character drama-romance where loneliness, dignity, and small emotional risk make courage feel large.",
+    genreTargets: ["Gentle character drama-romance", "Loneliness and dignity story", "Small emotional risk drama"],
+    toneTargets: ["Gentle and awkward", "Tenderly restrained", "Quietly hopeful"],
+    screenplayTargets: ["Make small courage feel large", "Use routine as protection", "Let hesitation reveal desire"],
+    cinematographyTargets: ["Observe stillness softly", "Keep distance respectful", "Frame routines as shelter"],
+    editingTargets: ["Move through tiny gestures", "Let hesitant connection grow", "Keep the rhythm slow"],
+    soundTargets: ["Use silence as tenderness", "Keep everyday sound close", "Let awkward pauses breathe"],
+    learningGoals: ["Quiet drama can make small acts of courage feel large"],
+    verificationStatus: "needs_research"
   }
+
 
 };
 
