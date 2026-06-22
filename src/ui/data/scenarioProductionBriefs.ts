@@ -1965,6 +1965,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use wind as warning", "Let voices carry fate", "Hold silence after consequence"],
     learningGoals: ["Connect ambition to cultural collapse", "Make personal choices carry communal cost"],
     verificationStatus: "needs_research"
+  },
+  scenario_the_killing_of_a_sacred_deer_2017: {
+    scenarioId: "scenario_the_killing_of_a_sacred_deer_2017",
+    title: "The Killing of a Sacred Deer production brief",
+    logline: "Shape a cold psychological horror-thriller where guilt and punishment turn family and medical spaces into a moral trap.",
+    genreTargets: ["Cold psychological horror", "Ritualized thriller", "Moral-trap family drama"],
+    toneTargets: ["Sterile and distant", "Guilty and punishing", "Ritualized dread"],
+    screenplayTargets: ["Make guilt feel physical", "Build threat through rules", "Force an impossible choice"],
+    cinematographyTargets: ["Use sterile distance", "Favor symmetry and negative space", "Trap bodies in clean rooms"],
+    editingTargets: ["Let repetition create dread", "Hold slow threat", "Delay release through restraint"],
+    soundTargets: ["Use clinical silence", "Let room sound feel exposed", "Make sudden music wound"],
+    learningGoals: ["Horror can make guilt feel physical through rules and restraint", "Make guilt feel physical"],
+    verificationStatus: "needs_research"
+  },
+  scenario_leaving_neverland_2019: {
+    scenarioId: "scenario_leaving_neverland_2019",
+    title: "Leaving Neverland production brief",
+    logline: "Build a testimony-driven documentary where memory, trauma, and ethical witness are held with restraint and care.",
+    genreTargets: ["Testimony-driven documentary", "Memory and trauma account", "Ethical witness portrait"],
+    toneTargets: ["Restrained and careful", "Grave and attentive", "Emotionally responsible"],
+    screenplayTargets: ["Structure around personal accounts", "Move from disclosure to consequence", "Handle testimony with ethical care"],
+    cinematographyTargets: ["Keep visual support restrained", "Center the witness space", "Avoid distracting emphasis"],
+    editingTargets: ["Edit through disclosure", "Track consequence with care", "Let difficult moments breathe"],
+    soundTargets: ["Trust voice and room tone", "Use silence for gravity", "Keep support unobtrusive"],
+    learningGoals: ["Documentary can handle painful testimony through structure, restraint and ethical care", "Handle testimony with ethical care"],
+    verificationStatus: "needs_research"
+  },
+  scenario_happy_as_lazzaro_2018: {
+    scenarioId: "scenario_happy_as_lazzaro_2018",
+    title: "Happy as Lazzaro production brief",
+    logline: "Create a poetic social fantasy-drama where innocence, exploitation, and time displacement become a moral fable.",
+    genreTargets: ["Poetic social fantasy", "Moral fable drama", "Rural-urban contrast story"],
+    toneTargets: ["Innocent and strange", "Gentle but unjust", "Wondering and mournful"],
+    screenplayTargets: ["Make innocence feel out of time", "Contrast rural and urban worlds", "Turn exploitation into fable"],
+    cinematographyTargets: ["Observe nature patiently", "Mix realism with wonder", "Let spaces mark displacement"],
+    editingTargets: ["Rhythm through patience", "Let rupture transform the story", "Hold wonder after change"],
+    soundTargets: ["Use wind as texture", "Keep voices quiet", "Let sparse music suggest fable"],
+    learningGoals: ["Fantasy can reveal social injustice by making innocence feel out of time", "Make innocence feel out of time"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_house_that_jack_built_2018: {
+    scenarioId: "scenario_the_house_that_jack_built_2018",
+    title: "The House That Jack Built production brief",
+    logline: "Shape a dark crime-horror character study where violence, ego, and self-justification drive confession and descent.",
+    genreTargets: ["Dark crime horror", "Character study", "Confession descent story"],
+    toneTargets: ["Cold and disturbing", "Egotistical and uneasy", "Controlled discomfort"],
+    screenplayTargets: ["Expose worldview through structure", "Use episodes as confession", "Turn self-justification into conflict"],
+    cinematographyTargets: ["Observe from a distance", "Keep discomfort controlled", "Frame violence coldly"],
+    editingTargets: ["Rhythm through chapters", "Escalate moral argument", "Let descent accumulate"],
+    soundTargets: ["Use voiceover as unease", "Let silence judge scenes", "Sharpen sudden sounds"],
+    learningGoals: ["Horror can expose a character's worldview through structure and distance", "Expose worldview through structure"],
+    verificationStatus: "needs_research"
+  },
+  scenario_brazil_1985: {
+    scenarioId: "scenario_brazil_1985",
+    title: "Brazil production brief",
+    logline: "Build a dystopian sci-fi satire-thriller where bureaucracy, fantasy, and trapped individuality become a nightmare machine.",
+    genreTargets: ["Dystopian sci-fi satire", "Bureaucratic thriller", "Absurd system nightmare"],
+    toneTargets: ["Oppressive and absurd", "Chaotic but controlled", "Dreamy under pressure"],
+    screenplayTargets: ["Make bureaucracy a nightmare machine", "Trap individuality in systems", "Contrast paperwork with fantasy"],
+    cinematographyTargets: ["Use cluttered design", "Stage controlled chaos", "Contrast dreams with oppression"],
+    editingTargets: ["Rhythm through paperwork", "Escalate pursuit pressure", "Cut into escape fantasy"],
+    soundTargets: ["Layer mechanical sound", "Use alarms as pressure", "Let music fight the system"],
+    learningGoals: ["Speculative satire can make bureaucracy feel like a nightmare machine", "Make bureaucracy a nightmare machine"],
+    verificationStatus: "needs_research"
   }
 
 
