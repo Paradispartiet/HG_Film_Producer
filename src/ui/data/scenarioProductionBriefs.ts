@@ -2,6 +2,23 @@ import type { FilmScenarioSeed } from "./filmScenarios";
 
 export type ScenarioProductionBriefType = "production_case" | "seed_fallback";
 
+export type ProductionCaseMissionPhase =
+  | "case_orientation"
+  | "screenplay"
+  | "cinematography"
+  | "editing"
+  | "sound"
+  | "reflection";
+
+export type ProductionCaseMission = {
+  readonly id: string;
+  readonly phase: ProductionCaseMissionPhase;
+  readonly title: string;
+  readonly prompt: string;
+  readonly targets: readonly string[];
+  readonly learningFocus: string;
+};
+
 export type ScenarioProductionBrief = {
   readonly scenarioId: string;
   readonly briefType: ScenarioProductionBriefType;
@@ -2117,6 +2134,82 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
 
 
 };
+
+const missionTargetLimit = 4;
+
+function takeMissionTargets(targets: readonly string[]): readonly string[] {
+  return targets.slice(0, missionTargetLimit);
+}
+
+function createMissionId(
+  brief: ScenarioProductionBrief,
+  phase: ProductionCaseMissionPhase,
+) {
+  return `${brief.scenarioId}-mission-${phase}`;
+}
+
+export function createProductionCaseMissions(
+  brief: ScenarioProductionBrief,
+): readonly ProductionCaseMission[] {
+  if (brief.briefType !== "production_case") return [];
+
+  const caseTitle = brief.title.replace(/ production brief$/i, "");
+
+  return [
+    {
+      id: createMissionId(brief, "case_orientation"),
+      phase: "case_orientation",
+      title: "Case orientation",
+      prompt: `This is not a new film, but a production case in how ${caseTitle} is built. Identify the production problem and match choices to the film's concrete expression.`,
+      targets: takeMissionTargets([
+        brief.logline,
+        ...brief.genreTargets,
+        ...brief.toneTargets,
+      ]),
+      learningFocus: "Forstå hvordan denne filmen løser den overordnede produksjonsutfordringen.",
+    },
+    {
+      id: createMissionId(brief, "screenplay"),
+      phase: "screenplay",
+      title: "Manusvalg",
+      prompt: "Forstå hvordan denne filmen løser manusfasen. Identifiser produksjonsvalgene bak scenene før du låser utviklingen.",
+      targets: takeMissionTargets(brief.screenplayTargets),
+      learningFocus: "Koble premiss, konflikt og scenevalg til filmens konkrete dramaturgi.",
+    },
+    {
+      id: createMissionId(brief, "cinematography"),
+      phase: "cinematography",
+      title: "Visuelt system",
+      prompt: "Forstå hvordan denne filmen løser foto og rom. Match valgene til filmens konkrete uttrykk.",
+      targets: takeMissionTargets(brief.cinematographyTargets),
+      learningFocus: "Les hvordan bildevalg, rom og blocking gjør produksjonsproblemet spillbart.",
+    },
+    {
+      id: createMissionId(brief, "editing"),
+      phase: "editing",
+      title: "Klipperytme",
+      prompt: "Forstå hvordan denne filmen løser klippfasen. Identifiser hvordan rytme, rekkefølge og tilbakeholdelse bygger caset.",
+      targets: takeMissionTargets(brief.editingTargets),
+      learningFocus: "Se hvordan klippen organiserer publikums forståelse av filmen.",
+    },
+    {
+      id: createMissionId(brief, "sound"),
+      phase: "sound",
+      title: "Lydverden",
+      prompt: "Forstå hvordan denne filmen løser lydfasen. Match lydvalg, stillhet og tekstur til filmens konkrete uttrykk.",
+      targets: takeMissionTargets(brief.soundTargets),
+      learningFocus: "Bruk lyd som produksjonsvalg, ikke som generisk stemning.",
+    },
+    {
+      id: createMissionId(brief, "reflection"),
+      phase: "reflection",
+      title: "Hva filmen lærer deg",
+      prompt: "Dette er ikke en ny film, men et case i hvordan filmen er bygget. Oppsummer hva produksjonsvalgene lærer deg.",
+      targets: takeMissionTargets(brief.learningGoals),
+      learningFocus: "Gjør læringen spesifikk for denne filmen og dens byggede løsninger.",
+    },
+  ];
+}
 
 export function getScenarioProductionBrief(scenarioId: string): ScenarioProductionBrief | undefined {
   const brief = scenarioProductionBriefs[scenarioId];

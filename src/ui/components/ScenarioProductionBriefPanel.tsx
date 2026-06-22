@@ -1,6 +1,8 @@
 import type { FilmScenarioSeed } from "../data/filmScenarios";
 import {
+  createProductionCaseMissions,
   resolveScenarioProductionBrief,
+  type ProductionCaseMission,
   type ScenarioProductionBrief,
 } from "../data/scenarioProductionBriefs";
 
@@ -10,6 +12,7 @@ export function ScenarioProductionBriefPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const brief = resolveScenarioProductionBrief(scenario);
+  const missions = createProductionCaseMissions(brief);
 
   return (
     <section
@@ -31,19 +34,54 @@ export function ScenarioProductionBriefPanel({
           {formatVerificationStatus(brief.verificationStatus)}
         </span>
       </div>
-      <div className="scenario-brief-grid">
-        <BriefSection title="Genre targets" items={brief.genreTargets} />
-        <BriefSection title="Tone" items={brief.toneTargets} />
-        <BriefSection title="Screenplay" items={brief.screenplayTargets} />
-        <BriefSection
-          title="Cinematography"
-          items={brief.cinematographyTargets}
-        />
-        <BriefSection title="Editing" items={brief.editingTargets} />
-        <BriefSection title="Sound" items={brief.soundTargets} />
-        <BriefSection title="Learning goals" items={brief.learningGoals} />
-      </div>
+      {missions.length > 0 ? (
+        <ProductionCaseMissionFlow missions={missions} />
+      ) : (
+        <div className="scenario-brief-grid">
+          <BriefSection title="Genre targets" items={brief.genreTargets} />
+          <BriefSection title="Tone" items={brief.toneTargets} />
+          <BriefSection title="Screenplay" items={brief.screenplayTargets} />
+          <BriefSection
+            title="Cinematography"
+            items={brief.cinematographyTargets}
+          />
+          <BriefSection title="Editing" items={brief.editingTargets} />
+          <BriefSection title="Sound" items={brief.soundTargets} />
+          <BriefSection title="Learning goals" items={brief.learningGoals} />
+        </div>
+      )}
     </section>
+  );
+}
+
+function ProductionCaseMissionFlow({
+  missions,
+}: {
+  readonly missions: readonly ProductionCaseMission[];
+}) {
+  return (
+    <div
+      className="scenario-mission-flow"
+      aria-label="Production case mission flow"
+    >
+      {missions.map((mission, index) => (
+        <article className="scenario-mission-card" key={mission.id}>
+          <span className="scenario-mission-step">{index + 1}</span>
+          <div>
+            <h4>{mission.title}</h4>
+            <p>{mission.prompt}</p>
+            <ul className="scenario-brief-list">
+              {mission.targets.map((target) => (
+                <li key={target}>{target}</li>
+              ))}
+            </ul>
+            <p className="scenario-mission-learning">
+              <strong>Learning focus:</strong> {mission.learningFocus}
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
   );
 }
 
