@@ -1,3 +1,12 @@
+import { useEffect, useMemo, useState } from "react";
+import {
+  getProductionCaseProgressEntry,
+  readProductionCaseProgress,
+  resetProductionCaseScenarioProgress,
+  setProductionCaseMissionCompletion,
+  writeProductionCaseProgress,
+  type ProductionCaseProgressState,
+} from "../../core/productionCaseProgress";
 import type { FilmScenarioSeed } from "../data/filmScenarios";
 import {
   createProductionCaseMissions,
@@ -34,8 +43,11 @@ export function ScenarioProductionBriefPanel({
           {formatVerificationStatus(brief.verificationStatus)}
         </span>
       </div>
-      {missions.length > 0 ? (
-        <ProductionCaseMissionFlow missions={missions} />
+      {missions.length > 0 && brief.briefType === "production_case" ? (
+        <ProductionCaseMissionFlow
+          missions={missions}
+          scenarioId={brief.scenarioId}
+        />
       ) : (
         <div className="scenario-brief-grid">
           <BriefSection title="Genre targets" items={brief.genreTargets} />
@@ -56,31 +68,100 @@ export function ScenarioProductionBriefPanel({
 
 function ProductionCaseMissionFlow({
   missions,
+  scenarioId,
 }: {
   readonly missions: readonly ProductionCaseMission[];
+  readonly scenarioId: string;
 }) {
+  const [progressState, setProgressState] = useState<ProductionCaseProgressState>({});
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    setProgressState(readProductionCaseProgress(window.localStorage));
+  }, [scenarioId]);
+
+  const completedMissionIds = useMemo(
+    () => getProductionCaseProgressEntry(progressState, scenarioId).completedMissionIds,
+    [progressState, scenarioId],
+  );
+  const completedMissionIdSet = useMemo(
+    () => new Set(completedMissionIds),
+    [completedMissionIds],
+  );
+  const completedCount = missions.filter((mission) =>
+    completedMissionIdSet.has(mission.id),
+  ).length;
+  const allComplete = missions.length > 0 && completedCount === missions.length;
+
+  function updateProgress(nextState: ProductionCaseProgressState) {
+    setProgressState(nextState);
+    if (typeof window !== "undefined") {
+      writeProductionCaseProgress(window.localStorage, nextState);
+    }
+  }
+
+  function toggleMission(missionId: string) {
+    updateProgress(
+      setProductionCaseMissionCompletion(
+        progressState,
+        scenarioId,
+        missionId,
+        !completedMissionIdSet.has(missionId),
+      ),
+    );
+  }
+
+  function resetCurrentScenario() {
+    updateProgress(resetProductionCaseScenarioProgress(progressState, scenarioId));
+  }
+
   return (
     <div
       className="scenario-mission-flow"
       aria-label="Production case mission flow"
     >
-      {missions.map((mission, index) => (
-        <article className="scenario-mission-card" key={mission.id}>
-          <span className="scenario-mission-step">{index + 1}</span>
-          <div>
-            <h4>{mission.title}</h4>
-            <p>{mission.prompt}</p>
-            <ul className="scenario-brief-list">
-              {mission.targets.map((target) => (
-                <li key={target}>{target}</li>
-              ))}
-            </ul>
-            <p className="scenario-mission-learning">
-              <strong>Learning focus:</strong> {mission.learningFocus}
-            </p>
-          </div>
-        </article>
-      ))}
+      <div className="scenario-mission-summary">
+        <div>
+          <span className="eyebrow">Case-progress</span>
+          <strong>
+            {allComplete
+              ? "Produksjonscase fullført"
+              : `${completedCount}/${missions.length} faser fullført`}
+          </strong>
+        </div>
+        <button onClick={resetCurrentScenario} type="button">
+          Nullstill case-progress
+        </button>
+      </div>
+      {missions.map((mission, index) => {
+        const isComplete = completedMissionIdSet.has(mission.id);
+        return (
+          <article
+            className={`scenario-mission-card${isComplete ? " scenario-mission-card--complete" : ""}`}
+            key={mission.id}
+          >
+            <span className="scenario-mission-step">{index + 1}</span>
+            <div>
+              <div className="scenario-mission-card-header">
+                <h4>{mission.title}</h4>
+                <span>{isComplete ? "Fullført" : "Åpen fase"}</span>
+              </div>
+              <p>{mission.prompt}</p>
+              <ul className="scenario-brief-list">
+                {mission.targets.map((target) => (
+                  <li key={target}>{target}</li>
+                ))}
+              </ul>
+              <p className="scenario-mission-learning">
+                <strong>Forstå produksjonsvalget:</strong> {mission.learningFocus}
+              </p>
+              <button onClick={() => toggleMission(mission.id)} type="button">
+                {isComplete ? "Angre fullført" : "Fullfør fase"}
+              </button>
+            </div>
+          </article>
+        );
+      })}
     </div>
   );
 }
@@ -106,7 +187,7 @@ function BriefSection({
 
 function getBriefIntro(brief: ScenarioProductionBrief, filmTitle: string) {
   if (brief.briefType === "production_case") {
-    return `Follow the production choices behind ${filmTitle}. Recreate the central decisions in screenplay, image, editing, and sound as a learning case for this specific film.`;
+    return `Forstå produksjonsvalget bak ${filmTitle}. Følg fasene som et konkret case i manus, bilde, klipp og lyd for denne filmen.`;
   }
 
   return "This imported seed still needs film-specific production-case design; use the fallback targets as provisional craft guidance.";
