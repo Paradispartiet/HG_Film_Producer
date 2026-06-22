@@ -137,7 +137,12 @@ const manualScenarioIds = [
   "scenario_blindness_2008",
   "scenario_scenes_from_a_marriage_1974",
   "scenario_the_florida_project_2017",
-  "scenario_dog_day_afternoon_1975"
+  "scenario_dog_day_afternoon_1975",
+  "scenario_taxi_driver_1976",
+  "scenario_manhattan_1979",
+  "scenario_bicycle_thieves_1948",
+  "scenario_la_strada_1954",
+  "scenario_vertigo_1958"
 ] as const;
 
 const targetCategories = [
@@ -151,11 +156,11 @@ const targetCategories = [
 ] as const satisfies readonly (keyof ScenarioProductionBrief)[];
 
 const newBatchManualScenarioIds = [
-  "scenario_the_man_without_a_past_2002",
-  "scenario_blindness_2008",
-  "scenario_scenes_from_a_marriage_1974",
-  "scenario_the_florida_project_2017",
-  "scenario_dog_day_afternoon_1975"
+  "scenario_taxi_driver_1976",
+  "scenario_manhattan_1979",
+  "scenario_bicycle_thieves_1948",
+  "scenario_la_strada_1954",
+  "scenario_vertigo_1958"
 ] as const;
 
 function createScenario(id: string): FilmScenarioSeed {
@@ -194,8 +199,8 @@ test("manual scenario ids include the corrected Winter's Bone id only", () => {
   assert.ok(!manualScenarioIds.includes("scenario_winters_bone_2010" as (typeof manualScenarioIds)[number]));
 });
 
-test("all 130 manual scenario production briefs resolve with research-needed status and targets", () => {
-  assert.equal(manualScenarioIds.length, 130);
+test("all 135 manual scenario production briefs resolve with research-needed status and targets", () => {
+  assert.equal(manualScenarioIds.length, 135);
   for (const scenarioId of manualScenarioIds) {
     const brief = resolveScenarioProductionBrief(createScenario(scenarioId));
 
@@ -210,7 +215,7 @@ test("all 130 manual scenario production briefs resolve with research-needed sta
 });
 
 
-test("batch 26 manual briefs keep concise target coverage", () => {
+test("batch 27 manual briefs keep concise target coverage", () => {
   for (const scenarioId of newBatchManualScenarioIds) {
     const brief = resolveScenarioProductionBrief(createScenario(scenarioId));
 

@@ -1705,6 +1705,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use street noise as heat", "Let shouting raise pressure", "Drop into silence for exposure"],
     learningGoals: ["Crime drama can turn a public crisis into character pressure", "Turn public crisis into character pressure"],
     verificationStatus: "needs_research"
+  },
+  scenario_taxi_driver_1976: {
+    scenarioId: "scenario_taxi_driver_1976",
+    title: "Taxi Driver production brief",
+    logline: "Build an urban crime character drama where isolation turns the city at night into psychological pressure.",
+    genreTargets: ["Urban crime drama", "Character decay story", "Night-city pressure piece"],
+    toneTargets: ["Isolated and obsessive", "Morally decaying", "Threatening under restraint"],
+    screenplayTargets: ["Make the city feel like a mind", "Use subjective observation", "Escalate alienation into threat"],
+    cinematographyTargets: ["Make night streets oppressive", "Frame unstable observation", "Use city light as pressure"],
+    editingTargets: ["Build slow escalation", "Hold alienation before action", "Let routine become threat"],
+    soundTargets: ["Layer street noise", "Use jazz mood as loneliness", "Let silence isolate the character"],
+    learningGoals: ["Character drama can make a city feel like a mind under pressure", "Make the city feel like a mind"],
+    verificationStatus: "needs_research"
+  },
+  scenario_manhattan_1979: {
+    scenarioId: "scenario_manhattan_1979",
+    title: "Manhattan production brief",
+    logline: "Shape a romantic comedy-drama where love, self-image, and city spaces define desire and contradiction.",
+    genreTargets: ["Romantic comedy-drama", "Urban relationship story", "Self-image character comedy"],
+    toneTargets: ["Sophisticated and wistful", "Witty but uncertain", "Romantic and self-questioning"],
+    screenplayTargets: ["Use place to shape desire", "Let wit reveal hesitation", "Turn romance into self-deception"],
+    cinematographyTargets: ["Compose city spaces elegantly", "Block conversations with precision", "Make place emotional identity"],
+    editingTargets: ["Rhythm through wit", "Hold romantic contradiction", "Let hesitation shape pace"],
+    soundTargets: ["Use music as nostalgia", "Layer city ambience", "Let pauses soften the comedy"],
+    learningGoals: ["Romantic drama can use place to shape desire and self-deception", "Use place to shape desire"],
+    verificationStatus: "needs_research"
+  },
+  scenario_bicycle_thieves_1948: {
+    scenarioId: "scenario_bicycle_thieves_1948",
+    title: "Bicycle Thieves production brief",
+    logline: "Follow a social realist drama where one missing object turns an ordinary city journey into survival pressure.",
+    genreTargets: ["Social realist drama", "Survival quest", "Human-scale city story"],
+    toneTargets: ["Plainspoken and urgent", "Dignified under poverty", "Morally pressured"],
+    screenplayTargets: ["Make one object carry a life", "Turn searching into survival", "Pressure dignity with need"],
+    cinematographyTargets: ["Use observational street realism", "Keep the city human scale", "Frame ordinary spaces plainly"],
+    editingTargets: ["Build tension through searching", "Hold waiting and setbacks", "Let public humiliation sting"],
+    soundTargets: ["Use ambient street sound", "Let silence show social reality", "Keep crowds grounded"],
+    learningGoals: ["Realism can make a simple object carry an entire life", "Make one object carry a life"],
+    verificationStatus: "needs_research"
+  },
+  scenario_la_strada_1954: {
+    scenarioId: "scenario_la_strada_1954",
+    title: "La Strada production brief",
+    logline: "Create a poetic character drama where innocence, cruelty, and wandering life turn a journey into moral fable.",
+    genreTargets: ["Poetic character drama", "Road-and-circus fable", "Wandering life story"],
+    toneTargets: ["Innocent and wounded", "Cruel but tender", "Fable-like and sad"],
+    screenplayTargets: ["Turn a journey into moral fable", "Build episodes through encounters", "Set innocence against cruelty"],
+    cinematographyTargets: ["Center expressive faces", "Use movement as emotion", "Make spaces symbolic"],
+    editingTargets: ["Shape episodic encounters", "Let loss mark the rhythm", "Move between wonder and hurt"],
+    soundTargets: ["Use music as soul", "Let silence deepen feeling", "Feature performance sound"],
+    learningGoals: ["Poetic drama can turn a journey into moral fable", "Turn a journey into moral fable"],
+    verificationStatus: "needs_research"
+  },
+  scenario_vertigo_1958: {
+    scenarioId: "scenario_vertigo_1958",
+    title: "Vertigo production brief",
+    logline: "Design a psychological mystery-romance thriller where obsession makes desire, identity, and perception unreliable.",
+    genreTargets: ["Psychological mystery thriller", "Romance under obsession", "Unstable identity story"],
+    toneTargets: ["Hypnotic and uneasy", "Obsessive and haunted", "Romantic but trapped"],
+    screenplayTargets: ["Make perception unreliable", "Turn pursuit into a trap", "Link desire to illusion"],
+    cinematographyTargets: ["Use subjective camera anxiety", "Make height a threat", "Repeat color and motifs"],
+    editingTargets: ["Build suspense through repetition", "Delay revelation", "Cut around fixation"],
+    soundTargets: ["Use music as hypnotic unease", "Let silence unsettle desire", "Hold sound around fixation"],
+    learningGoals: ["Thriller form can make desire and perception unreliable", "Make perception unreliable"],
+    verificationStatus: "needs_research"
   }
 
 
