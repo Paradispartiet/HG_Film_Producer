@@ -1146,3 +1146,13 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .scenario-mission-card h4 { margin: 0 0 7px; color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
 .scenario-mission-card p { margin: 0 0 10px; color: var(--muted-light); font-size: 12px; line-height: 1.55; }
 .scenario-mission-learning { margin-top: 10px; color: var(--muted); }
+.scenario-mission-summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 15px; border: 1px solid rgba(214, 174, 98, 0.3); background: var(--accent-soft); }
+.scenario-mission-summary strong { display: block; margin-top: 4px; color: var(--text); font-size: 15px; }
+.scenario-mission-summary button, .scenario-mission-card button { border: 1px solid rgba(214, 174, 98, 0.45); cursor: pointer; background: rgba(6, 8, 11, 0.72); color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.scenario-mission-summary button { padding: 9px 11px; }
+.scenario-mission-card--complete { border-color: rgba(115, 184, 149, 0.42); background: var(--positive-soft); }
+.scenario-mission-card-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.scenario-mission-card-header span { color: var(--muted); font-size: 9px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.scenario-mission-card--complete .scenario-mission-card-header span { color: var(--positive); }
+.scenario-mission-card button { margin-top: 10px; padding: 8px 10px; }
+.scenario-mission-card button:hover, .scenario-mission-summary button:hover { border-color: var(--accent); color: var(--text); }
