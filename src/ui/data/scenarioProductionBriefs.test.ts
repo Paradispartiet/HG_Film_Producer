@@ -3,7 +3,7 @@ import test from "node:test";
 import {
   getFallbackScenarioProductionBrief,
   resolveScenarioProductionBrief,
-  type ScenarioProductionBrief
+  type ScenarioProductionBrief,
 } from "./scenarioProductionBriefs";
 import type { FilmScenarioSeed } from "./filmScenarios";
 
@@ -168,7 +168,7 @@ const manualScenarioIds = [
   "scenario_tangerine_2015",
   "scenario_don_t_look_up_2021",
   "scenario_where_is_the_friend_s_house_1987",
-  "scenario_another_round_2020"
+  "scenario_another_round_2020",
 ] as const;
 
 const targetCategories = [
@@ -178,7 +178,7 @@ const targetCategories = [
   "cinematographyTargets",
   "editingTargets",
   "soundTargets",
-  "learningGoals"
+  "learningGoals",
 ] as const satisfies readonly (keyof ScenarioProductionBrief)[];
 
 const newBatchManualScenarioIds = [
@@ -187,7 +187,7 @@ const newBatchManualScenarioIds = [
   "scenario_tangerine_2015",
   "scenario_don_t_look_up_2021",
   "scenario_where_is_the_friend_s_house_1987",
-  "scenario_another_round_2020"
+  "scenario_another_round_2020",
 ] as const;
 
 function createScenario(id: string): FilmScenarioSeed {
@@ -198,7 +198,7 @@ function createScenario(id: string): FilmScenarioSeed {
       list_id: "test_list",
       position: 999,
       imdb_id: "tt0000000",
-      url: "https://example.test/title/tt0000000/"
+      url: "https://example.test/title/tt0000000/",
     },
     film: {
       title: "Test Film",
@@ -210,20 +210,24 @@ function createScenario(id: string): FilmScenarioSeed {
       genres: ["Drama"],
       genre_keys: ["drama"],
       imdb_rating: 7,
-      user_rating: 0
+      user_rating: 0,
     },
     scenario_type: "classic",
     production_challenge: "Make a readable production challenge.",
     required_choices_seed: {},
     phases: [],
     learning_goals_seed: ["Learn from the scenario."],
-    manual_enrichment_needed: []
+    manual_enrichment_needed: [],
   };
 }
 
 test("manual scenario ids include the corrected Winter's Bone id only", () => {
   assert.ok(manualScenarioIds.includes("scenario_winter_s_bone_2010"));
-  assert.ok(!manualScenarioIds.includes("scenario_winters_bone_2010" as (typeof manualScenarioIds)[number]));
+  assert.ok(
+    !manualScenarioIds.includes(
+      "scenario_winters_bone_2010" as (typeof manualScenarioIds)[number],
+    ),
+  );
 });
 
 test("all 161 manual scenario production briefs resolve with research-needed status and targets", () => {
@@ -233,14 +237,17 @@ test("all 161 manual scenario production briefs resolve with research-needed sta
 
     assert.equal(brief.scenarioId, scenarioId);
     assert.equal(brief.verificationStatus, "needs_research");
+    assert.equal(brief.briefType, "production_case");
 
     for (const category of targetCategories) {
       assert.ok(Array.isArray(brief[category]));
-      assert.ok(brief[category].length > 0, `${scenarioId} is missing ${category}`);
+      assert.ok(
+        brief[category].length > 0,
+        `${scenarioId} is missing ${category}`,
+      );
     }
   }
 });
-
 
 test("batch 32 manual briefs keep concise target coverage", () => {
   for (const scenarioId of newBatchManualScenarioIds) {
@@ -250,9 +257,33 @@ test("batch 32 manual briefs keep concise target coverage", () => {
 
     for (const category of targetCategories) {
       assert.ok(Array.isArray(brief[category]));
-      assert.ok(brief[category].length >= 2, `${scenarioId} needs at least two ${category}`);
-      assert.ok(brief[category].length <= 4, `${scenarioId} has too many ${category}`);
+      assert.ok(
+        brief[category].length >= 2,
+        `${scenarioId} needs at least two ${category}`,
+      );
+      assert.ok(
+        brief[category].length <= 4,
+        `${scenarioId} has too many ${category}`,
+      );
     }
+  }
+});
+
+test("manual production cases do not default to inspired-by language", () => {
+  for (const scenarioId of manualScenarioIds) {
+    const brief = resolveScenarioProductionBrief(createScenario(scenarioId));
+    const defaultLanguage = [brief.title, brief.logline]
+      .join(" ")
+      .toLowerCase();
+
+    assert.ok(
+      !defaultLanguage.includes("inspired by"),
+      `${scenarioId} defaults to inspired-by language`,
+    );
+    assert.ok(
+      !defaultLanguage.includes("in the spirit of"),
+      `${scenarioId} defaults to spirit-of language`,
+    );
   }
 });
 
@@ -263,5 +294,6 @@ test("unknown imported scenarios use the seeded fallback production brief", () =
   assert.deepEqual(brief, getFallbackScenarioProductionBrief(scenario));
   assert.equal(brief.scenarioId, scenario.id);
   assert.equal(brief.verificationStatus, "seeded");
+  assert.equal(brief.briefType, "seed_fallback");
   assert.equal(brief.logline, scenario.production_challenge);
 });

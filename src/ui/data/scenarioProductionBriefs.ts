@@ -1,7 +1,10 @@
 import type { FilmScenarioSeed } from "./filmScenarios";
 
+export type ScenarioProductionBriefType = "production_case" | "seed_fallback";
+
 export type ScenarioProductionBrief = {
   readonly scenarioId: string;
+  readonly briefType: ScenarioProductionBriefType;
   readonly title: string;
   readonly logline: string;
   readonly genreTargets: readonly string[];
@@ -14,7 +17,9 @@ export type ScenarioProductionBrief = {
   readonly verificationStatus: "seeded" | "needs_research" | "verified";
 };
 
-const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
+type ManualScenarioProductionBrief = Omit<ScenarioProductionBrief, "briefType">;
+
+const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = {
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     title: "The Machinist production brief",
@@ -2114,7 +2119,8 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
 };
 
 export function getScenarioProductionBrief(scenarioId: string): ScenarioProductionBrief | undefined {
-  return scenarioProductionBriefs[scenarioId];
+  const brief = scenarioProductionBriefs[scenarioId];
+  return brief ? { ...brief, briefType: "production_case" } : undefined;
 }
 
 export function resolveScenarioProductionBrief(scenario: FilmScenarioSeed): ScenarioProductionBrief {
@@ -2124,11 +2130,12 @@ export function resolveScenarioProductionBrief(scenario: FilmScenarioSeed): Scen
 export function getFallbackScenarioProductionBrief(scenario: FilmScenarioSeed): ScenarioProductionBrief {
   return {
     scenarioId: scenario.id,
+    briefType: "seed_fallback",
     title: `${scenario.film.title} production brief`,
     logline: scenario.production_challenge,
     genreTargets: scenario.film.genres.length > 0 ? [...scenario.film.genres] : ["Drama"],
-    toneTargets: ["Match the scenario challenge", "Keep choices readable"],
-    screenplayTargets: ["Focus the central conflict", "Use the seeded learning goals"],
+    toneTargets: ["Treat this as an imported seed pending film-specific design", "Keep choices readable"],
+    screenplayTargets: ["Focus the central conflict", "Use the seeded learning goals as provisional guidance"],
     cinematographyTargets: ["Choose spaces that support the conflict", "Frame the player task clearly"],
     editingTargets: ["Keep story turns legible", "Build rhythm around consequences"],
     soundTargets: ["Support tone without overexplaining", "Use silence and texture as pressure"],

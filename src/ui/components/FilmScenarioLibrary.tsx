@@ -1,7 +1,15 @@
 import { useMemo, useState } from "react";
-import { getClassicFilmScenarios, type FilmScenarioSeed } from "../data/filmScenarios";
+import {
+  getClassicFilmScenarios,
+  type FilmScenarioSeed,
+} from "../data/filmScenarios";
+import { resolveScenarioProductionBrief } from "../data/scenarioProductionBriefs";
 
-export function FilmScenarioLibrary({ onStartScenario }: { readonly onStartScenario?: (scenario: FilmScenarioSeed) => void }) {
+export function FilmScenarioLibrary({
+  onStartScenario,
+}: {
+  readonly onStartScenario?: (scenario: FilmScenarioSeed) => void;
+}) {
   const [query, setQuery] = useState("");
   const scenarios = getClassicFilmScenarios();
   const normalizedQuery = query.trim().toLowerCase();
@@ -14,7 +22,9 @@ export function FilmScenarioLibrary({ onStartScenario }: { readonly onStartScena
         ...scenario.film.directors,
         ...scenario.film.genres,
         ...scenario.film.genre_keys,
-      ].join(" ").toLowerCase();
+      ]
+        .join(" ")
+        .toLowerCase();
       return searchable.includes(normalizedQuery);
     });
   }, [normalizedQuery, scenarios]);
@@ -26,14 +36,24 @@ export function FilmScenarioLibrary({ onStartScenario }: { readonly onStartScena
           <span className="eyebrow">Seed catalogue</span>
           <h2>Classic production scenarios</h2>
         </div>
-        <p>{scenarios.length} scenarios from the classic film seed file. Pick a reference point now; production simulation hooks arrive later.</p>
+        <p>
+          {scenarios.length} scenarios from the classic film seed file. Manual
+          briefs are production cases: follow and reconstruct the production
+          choices behind the specific film.
+        </p>
       </div>
       <label className="scenario-search">
         <span>Search by title, director, or genre</span>
-        <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Try kubrick, crime, or The Machinist" type="search" />
+        <input
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder="Try kubrick, crime, or The Machinist"
+          type="search"
+        />
       </label>
       <div className="scenario-meta" aria-live="polite">
-        Showing <strong>{filteredScenarios.length}</strong> of <strong>{scenarios.length}</strong> scenarios
+        Showing <strong>{filteredScenarios.length}</strong> of{" "}
+        <strong>{scenarios.length}</strong> scenarios
       </div>
       <div className="scenario-grid">
         {filteredScenarios.map((scenario) => (
@@ -44,17 +64,44 @@ export function FilmScenarioLibrary({ onStartScenario }: { readonly onStartScena
             </div>
             <h3>{scenario.film.title}</h3>
             <dl className="scenario-meta">
-              <div><dt>Year</dt><dd>{scenario.film.year}</dd></div>
-              <div><dt>Director</dt><dd>{scenario.film.directors.join(", ")}</dd></div>
+              <div>
+                <dt>Year</dt>
+                <dd>{scenario.film.year}</dd>
+              </div>
+              <div>
+                <dt>Director</dt>
+                <dd>{scenario.film.directors.join(", ")}</dd>
+              </div>
             </dl>
-            <div className="scenario-tags" aria-label={`Genres for ${scenario.film.title}`}>
-              {scenario.film.genres.map((genre) => <span key={genre}>{genre}</span>)}
+            <div
+              className="scenario-tags"
+              aria-label={`Genres for ${scenario.film.title}`}
+            >
+              {scenario.film.genres.map((genre) => (
+                <span key={genre}>{genre}</span>
+              ))}
             </div>
-            <p>{scenario.production_challenge}</p>
-            <button className="secondary-button" disabled={!onStartScenario} onClick={() => onStartScenario?.(scenario)} type="button">Start scenario</button>
+            <p>{getScenarioCardDescription(scenario)}</p>
+            <button
+              className="secondary-button"
+              disabled={!onStartScenario}
+              onClick={() => onStartScenario?.(scenario)}
+              type="button"
+            >
+              Start production case
+            </button>
           </article>
         ))}
       </div>
     </main>
   );
+}
+
+function getScenarioCardDescription(scenario: FilmScenarioSeed) {
+  const brief = resolveScenarioProductionBrief(scenario);
+  if (brief.briefType === "production_case") {
+    return `Follow the production choices behind ${scenario.film.title}: understand how this film solves script, image, editing, and sound.`;
+  }
+
+  return `${scenario.production_challenge} This imported seed still needs film-specific production-case design.`;
 }

@@ -4,10 +4,18 @@ import {
   createScenarioTargetChecklist,
   getScenarioTargetCategoryLabel,
   getScenarioTargetCount,
-  type ScenarioTargetCategory
+  type ScenarioTargetCategory,
 } from "../data/scenarioTargetChecklist";
 
-const categories: readonly ScenarioTargetCategory[] = ["genre", "tone", "screenplay", "cinematography", "editing", "sound", "learning"];
+const categories: readonly ScenarioTargetCategory[] = [
+  "genre",
+  "tone",
+  "screenplay",
+  "cinematography",
+  "editing",
+  "sound",
+  "learning",
+];
 
 interface ScenarioTargetChecklistPanelProps {
   readonly brief: ScenarioProductionBrief;
@@ -15,28 +23,49 @@ interface ScenarioTargetChecklistPanelProps {
   readonly onChangeSelectedTargetIds: (targetIds: readonly string[]) => void;
 }
 
-export function ScenarioTargetChecklistPanel({ brief, selectedTargetIds, onChangeSelectedTargetIds }: ScenarioTargetChecklistPanelProps) {
-  const checklist = useMemo(() => createScenarioTargetChecklist(brief), [brief]);
+export function ScenarioTargetChecklistPanel({
+  brief,
+  selectedTargetIds,
+  onChangeSelectedTargetIds,
+}: ScenarioTargetChecklistPanelProps) {
+  const checklist = useMemo(
+    () => createScenarioTargetChecklist(brief),
+    [brief],
+  );
   const targetCount = getScenarioTargetCount(checklist);
   const selectedCount = selectedTargetIds.length;
 
   function toggleTarget(targetId: string) {
-    onChangeSelectedTargetIds(selectedTargetIds.includes(targetId) ? selectedTargetIds.filter((id) => id !== targetId) : [...selectedTargetIds, targetId]);
+    onChangeSelectedTargetIds(
+      selectedTargetIds.includes(targetId)
+        ? selectedTargetIds.filter((id) => id !== targetId)
+        : [...selectedTargetIds, targetId],
+    );
   }
 
   return (
-    <section className="scenario-target-panel" aria-labelledby="scenario-target-title">
+    <section
+      className="scenario-target-panel"
+      aria-labelledby="scenario-target-title"
+    >
       <div className="scenario-target-header">
         <div>
           <span className="eyebrow">Playable target board</span>
           <h3 id="scenario-target-title">Scenario target checklist</h3>
-          <p>Pick the craft targets your production is trying to hit.</p>
+          <p>
+            Pick the craft targets to master while reconstructing this specific
+            film as a production case.
+          </p>
         </div>
-        <span className="scenario-target-progress">{selectedCount} / {targetCount} targets selected</span>
+        <span className="scenario-target-progress">
+          {selectedCount} / {targetCount} targets selected
+        </span>
       </div>
       <div className="scenario-target-grid">
         {categories.map((category) => {
-          const targets = checklist.filter((target) => target.category === category);
+          const targets = checklist.filter(
+            (target) => target.category === category,
+          );
           if (targets.length === 0) return null;
           return (
             <section className="scenario-target-category" key={category}>
@@ -44,7 +73,11 @@ export function ScenarioTargetChecklistPanel({ brief, selectedTargetIds, onChang
               <div className="scenario-target-list">
                 {targets.map((target) => (
                   <label className="scenario-target-item" key={target.id}>
-                    <input checked={selectedTargetIds.includes(target.id)} onChange={() => toggleTarget(target.id)} type="checkbox" />
+                    <input
+                      checked={selectedTargetIds.includes(target.id)}
+                      onChange={() => toggleTarget(target.id)}
+                      type="checkbox"
+                    />
                     <span>{target.label}</span>
                   </label>
                 ))}
@@ -53,7 +86,9 @@ export function ScenarioTargetChecklistPanel({ brief, selectedTargetIds, onChang
           );
         })}
       </div>
-      <p className="scenario-target-status">{getProgressStatus(selectedCount)}</p>
+      <p className="scenario-target-status">
+        {getProgressStatus(selectedCount)}
+      </p>
     </section>
   );
 }
@@ -61,6 +96,6 @@ export function ScenarioTargetChecklistPanel({ brief, selectedTargetIds, onChang
 function getProgressStatus(selectedCount: number) {
   if (selectedCount === 0) return "No targets selected yet";
   if (selectedCount <= 3) return "Early production intent";
-  if (selectedCount <= 7) return "Focused scenario direction";
-  return "Strong classic alignment";
+  if (selectedCount <= 7) return "Focused production-case direction";
+  return "Strong production-case alignment";
 }

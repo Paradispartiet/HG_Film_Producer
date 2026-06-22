@@ -1,13 +1,21 @@
 import type { FilmScenarioSeed } from "../data/filmScenarios";
-import { createProjectSetupRun, projectSetupData, type ProjectSetupRun } from "./createProjectSetupRun";
+import { resolveScenarioProductionBrief } from "../data/scenarioProductionBriefs";
+import {
+  createProjectSetupRun,
+  projectSetupData,
+  type ProjectSetupRun,
+} from "./createProjectSetupRun";
 
 const DEFAULT_GENRE_ID = "genre_drama";
 const DEFAULT_SCRIPT_TEMPLATE_ID = "script_template_intimate_drama";
 const DEFAULT_STRATEGIC_GOAL_ID = "strategic_goal_survive_year_one";
 
-export function createScenarioProjectRun(scenario: FilmScenarioSeed): ProjectSetupRun {
+export function createScenarioProjectRun(
+  scenario: FilmScenarioSeed,
+): ProjectSetupRun {
   const genreId = getScenarioGenreId(scenario);
   const scriptTemplateId = getScenarioScriptTemplateId(scenario, genreId);
+  const brief = resolveScenarioProductionBrief(scenario);
   const run = createProjectSetupRun({
     studioName: "HG Classics Studio",
     startingMoneyPreset: "indie_studio",
@@ -15,7 +23,7 @@ export function createScenarioProjectRun(scenario: FilmScenarioSeed): ProjectSet
     projectTitle: scenario.film.title,
     genreId,
     scale: "indie",
-    scriptTemplateId
+    scriptTemplateId,
   });
 
   return {
@@ -23,33 +31,53 @@ export function createScenarioProjectRun(scenario: FilmScenarioSeed): ProjectSet
     classicScenarioId: scenario.id,
     project: {
       ...run.project,
-      logline: scenario.production_challenge || run.project.logline
+      logline:
+        brief.briefType === "production_case"
+          ? `Follow the production choices behind ${scenario.film.title} as a film-specific production case.`
+          : scenario.production_challenge || run.project.logline,
     },
-    pipelineSteps: scenario.production_challenge
-      ? [
-          ...run.pipelineSteps,
-          {
-            label: "Scenario challenge loaded",
-            detail: scenario.production_challenge,
-            score: 100
-          }
-        ]
-      : run.pipelineSteps
+    pipelineSteps: [
+      ...run.pipelineSteps,
+      {
+        label:
+          brief.briefType === "production_case"
+            ? "Production case loaded"
+            : "Imported scenario seed loaded",
+        detail:
+          brief.briefType === "production_case"
+            ? `Recreate the central production choices behind ${scenario.film.title}.`
+            : `${scenario.production_challenge} This seed still needs film-specific production-case design.`,
+        score: 100,
+      },
+    ],
   };
 }
 
 function getScenarioGenreId(scenario: FilmScenarioSeed): string {
   const matchingGenre = scenario.film.genre_keys
     .map((genreKey) => `genre_${genreKey}`)
-    .find((genreId) => projectSetupData.genres.some((genre) => genre.id === genreId));
+    .find((genreId) =>
+      projectSetupData.genres.some((genre) => genre.id === genreId),
+    );
 
   return matchingGenre ?? DEFAULT_GENRE_ID;
 }
 
-function getScenarioScriptTemplateId(scenario: FilmScenarioSeed, genreId: string): string {
-  if (projectSetupData.scriptTemplates.some((template) => template.id === scenario.scenario_type)) {
+function getScenarioScriptTemplateId(
+  scenario: FilmScenarioSeed,
+  genreId: string,
+): string {
+  if (
+    projectSetupData.scriptTemplates.some(
+      (template) => template.id === scenario.scenario_type,
+    )
+  ) {
     return scenario.scenario_type;
   }
 
-  return projectSetupData.scriptTemplates.find((template) => template.genreId === genreId)?.id ?? DEFAULT_SCRIPT_TEMPLATE_ID;
+  return (
+    projectSetupData.scriptTemplates.find(
+      (template) => template.genreId === genreId,
+    )?.id ?? DEFAULT_SCRIPT_TEMPLATE_ID
+  );
 }
