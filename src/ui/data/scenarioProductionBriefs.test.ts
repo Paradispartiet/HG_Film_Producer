@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  createProductionCaseMissions,
   getFallbackScenarioProductionBrief,
   resolveScenarioProductionBrief,
   type ScenarioProductionBrief,
@@ -283,6 +284,78 @@ test("manual production cases do not default to inspired-by language", () => {
     assert.ok(
       !defaultLanguage.includes("in the spirit of"),
       `${scenarioId} defaults to spirit-of language`,
+    );
+  }
+});
+
+test("Taxi Driver manual brief creates phase-based production case missions from targets", () => {
+  const brief = resolveScenarioProductionBrief(
+    createScenario("scenario_taxi_driver_1976"),
+  );
+  const missions = createProductionCaseMissions(brief);
+
+  assert.equal(brief.briefType, "production_case");
+  assert.deepEqual(
+    missions.map((mission) => mission.phase),
+    [
+      "case_orientation",
+      "screenplay",
+      "cinematography",
+      "editing",
+      "sound",
+      "reflection",
+    ],
+  );
+
+  const screenplay = missions.find((mission) => mission.phase === "screenplay");
+  const cinematography = missions.find(
+    (mission) => mission.phase === "cinematography",
+  );
+  const editing = missions.find((mission) => mission.phase === "editing");
+  const sound = missions.find((mission) => mission.phase === "sound");
+  const reflection = missions.find((mission) => mission.phase === "reflection");
+
+  assert.deepEqual(screenplay?.targets, brief.screenplayTargets.slice(0, 4));
+  assert.deepEqual(
+    cinematography?.targets,
+    brief.cinematographyTargets.slice(0, 4),
+  );
+  assert.deepEqual(editing?.targets, brief.editingTargets.slice(0, 4));
+  assert.deepEqual(sound?.targets, brief.soundTargets.slice(0, 4));
+  assert.deepEqual(reflection?.targets, brief.learningGoals.slice(0, 4));
+});
+
+test("fallback briefs do not create production case missions by default", () => {
+  const brief = resolveScenarioProductionBrief(
+    createScenario("scenario_unknown_imported_2026"),
+  );
+
+  assert.equal(brief.briefType, "seed_fallback");
+  assert.deepEqual(createProductionCaseMissions(brief), []);
+});
+
+test("production case missions avoid inspired-by language", () => {
+  for (const scenarioId of manualScenarioIds) {
+    const missions = createProductionCaseMissions(
+      resolveScenarioProductionBrief(createScenario(scenarioId)),
+    );
+    const missionLanguage = missions
+      .flatMap((mission) => [
+        mission.title,
+        mission.prompt,
+        mission.learningFocus,
+        ...mission.targets,
+      ])
+      .join(" ")
+      .toLowerCase();
+
+    assert.ok(
+      !missionLanguage.includes("inspired by"),
+      `${scenarioId} mission uses inspired-by language`,
+    );
+    assert.ok(
+      !missionLanguage.includes("in the spirit of"),
+      `${scenarioId} mission uses spirit-of language`,
     );
   }
 });
