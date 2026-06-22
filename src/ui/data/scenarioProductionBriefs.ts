@@ -1770,6 +1770,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use music as hypnotic unease", "Let silence unsettle desire", "Hold sound around fixation"],
     learningGoals: ["Thriller form can make desire and perception unreliable", "Make perception unreliable"],
     verificationStatus: "needs_research"
+  },
+  scenario_the_lost_weekend_1945: {
+    scenarioId: "scenario_the_lost_weekend_1945",
+    title: "The Lost Weekend production brief",
+    logline: "Build a noir character drama where addiction, shame, and temptation turn private collapse into pressure.",
+    genreTargets: ["Noir character drama", "Addiction and shame story", "Interior pressure piece"],
+    toneTargets: ["Ashamed and anxious", "Tempted and trapped", "Subjectively pressured"],
+    screenplayTargets: ["Turn weakness into pressure", "Use denial as conflict", "Make relapse reshape choices"],
+    cinematographyTargets: ["Use city interiors as traps", "Frame shadow as temptation", "Observe collapse closely"],
+    editingTargets: ["Rhythm through relapse", "Cut denial against confrontation", "Let pressure tighten gradually"],
+    soundTargets: ["Use silence as shame", "Let room tone press in", "Make music feel anxious"],
+    learningGoals: ["Turn inner weakness into pressure", "Make collapse visual and sonic"],
+    verificationStatus: "needs_research"
+  },
+  scenario_fargo_1996: {
+    scenarioId: "scenario_fargo_1996",
+    title: "Fargo production brief",
+    logline: "Shape a deadpan crime thriller where greed and incompetence collide with plain moral contrast.",
+    genreTargets: ["Deadpan crime thriller", "Crime comedy-drama", "Moral contrast story"],
+    toneTargets: ["Dry and restrained", "Absurd but dangerous", "Plainspoken under threat"],
+    screenplayTargets: ["Let greed expose incompetence", "Contrast crime with decency", "Escalate through bad choices"],
+    cinematographyTargets: ["Use snow as pressure", "Frame behavior plainly", "Make violence arrive suddenly"],
+    editingTargets: ["Balance calm with escalation", "Hold deadpan observation", "Cut sharply into violence"],
+    soundTargets: ["Use quiet spaces", "Keep dialogue blunt", "Let violence jar the tone"],
+    learningGoals: ["Mix absurdity and violence through restraint", "Make landscape pressure ironic"],
+    verificationStatus: "needs_research"
+  },
+  scenario_eyes_wide_shut_1999: {
+    scenarioId: "scenario_eyes_wide_shut_1999",
+    title: "Eyes Wide Shut production brief",
+    logline: "Create a psychological mystery drama where desire, secrecy, and social masks turn night into a maze.",
+    genreTargets: ["Psychological mystery drama", "Erotic thriller pressure", "Night-journey drama"],
+    toneTargets: ["Hypnotic and uneasy", "Secretive and controlled", "Tempted but uncertain"],
+    screenplayTargets: ["Make desire a maze", "Hide rules behind masks", "Let temptation test identity"],
+    cinematographyTargets: ["Control interior spaces", "Make rituals unsettling", "Frame unease subjectively"],
+    editingTargets: ["Build slow suspense", "Repeat tempting patterns", "Delay certainty through concealment"],
+    soundTargets: ["Use music as threat", "Let footsteps guide tension", "Hold silence hypnotically"],
+    learningGoals: ["Make desire feel like a maze", "Turn social masks into suspense"],
+    verificationStatus: "needs_research"
+  },
+  scenario_call_me_by_your_name_2017: {
+    scenarioId: "scenario_call_me_by_your_name_2017",
+    title: "Call Me by Your Name production brief",
+    logline: "Shape an intimate romantic drama where summer atmosphere carries first love before words can.",
+    genreTargets: ["Intimate romantic drama", "First-love awakening", "Summer memory story"],
+    toneTargets: ["Sensual and tender", "Hesitant but open", "Longing and sunlit"],
+    screenplayTargets: ["Let hesitation reveal desire", "Use summer as awakening", "Keep emotion before confession"],
+    cinematographyTargets: ["Observe bodies and gestures", "Use home as memory", "Frame distance as longing"],
+    editingTargets: ["Move through glances", "Let hesitation breathe", "Build awakening slowly"],
+    soundTargets: ["Use natural sound as longing", "Let music open feeling", "Keep silence emotionally active"],
+    learningGoals: ["Let atmosphere speak before words", "Make memory carry romance"],
+    verificationStatus: "needs_research"
+  },
+  scenario_filmworker_2017: {
+    scenarioId: "scenario_filmworker_2017",
+    title: "Filmworker production brief",
+    logline: "Build a biographical documentary where testimony and craft detail make hidden creative labor visible.",
+    genreTargets: ["Biographical documentary", "Craft and loyalty portrait", "Invisible labor story"],
+    toneTargets: ["Reflective and dedicated", "Personal but craft-focused", "Quietly costly"],
+    screenplayTargets: ["Structure around working life", "Make loyalty dramatic", "Reveal cost through testimony"],
+    cinematographyTargets: ["Center interviews and archive", "Show process as drama", "Use detail to reveal labor"],
+    editingTargets: ["Cut through memory", "Balance evidence and cost", "Let craft details accumulate"],
+    soundTargets: ["Use voice as legacy", "Let archive sound texture memory", "Hold silence around cost"],
+    learningGoals: ["Make hidden labor visible", "Turn testimony into craft drama"],
+    verificationStatus: "needs_research"
   }
 
 
