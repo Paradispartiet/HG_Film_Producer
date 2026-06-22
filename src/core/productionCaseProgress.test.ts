@@ -4,6 +4,7 @@ import {
   countProductionCaseMatches,
   getProductionCaseMissionScore,
   getProductionCaseProgressEntry,
+  getProductionCaseResultTier,
   getProductionCaseScoreSummary,
   parseProductionCaseProgress,
   productionCaseProgressStorageKey,
@@ -275,6 +276,72 @@ test("production case scoring helpers avoid forbidden copy", () => {
     getProductionCaseScoreSummary.name,
     "Case-score",
     "Fase-score",
+  ].join(" ").toLowerCase();
+
+  assert.ok(!helperSource.includes("inspired by"));
+  assert.ok(!helperSource.includes("in the spirit of"));
+});
+
+
+test("production case result tier is not_started at 0 score and 0 completed phases", () => {
+  assert.equal(getProductionCaseResultTier({ score: 0, maxScore: 12 }, 0), "not_started");
+});
+
+test("production case result tier is in_progress when score exists but not all phases are completed", () => {
+  assert.equal(getProductionCaseResultTier({ score: 12, maxScore: 12 }, 0), "in_progress");
+  assert.equal(getProductionCaseResultTier({ score: 4, maxScore: 12 }, 3), "in_progress");
+});
+
+test("production case result tier is assistant when all phases are completed below 50 percent score", () => {
+  assert.equal(getProductionCaseResultTier({ score: 5, maxScore: 12 }, 6), "assistant");
+});
+
+test("production case result tier is producer when all phases are completed from 50 through 83 percent score", () => {
+  assert.equal(getProductionCaseResultTier({ score: 6, maxScore: 12 }, 6), "producer");
+  assert.equal(getProductionCaseResultTier({ score: 10, maxScore: 12 }, 6), "producer");
+});
+
+test("production case result tier is auteur when all phases are completed at 84 percent score or higher", () => {
+  assert.equal(getProductionCaseResultTier({ score: 11, maxScore: 12 }, 6), "auteur");
+  assert.equal(getProductionCaseResultTier({ score: 12, maxScore: 12 }, 6), "auteur");
+});
+
+test("12/12 score without completed phases does not give auteur", () => {
+  assert.equal(getProductionCaseResultTier({ score: 12, maxScore: 12 }, 0), "in_progress");
+});
+
+test("reset gives not_started result tier for the current scenario", () => {
+  const missions = [
+    { id: "mission-a", choices: [{ id: "choice-a", quality: "match" }] },
+    { id: "mission-b", choices: [{ id: "choice-b", quality: "match" }] },
+  ];
+  let state = setProductionCaseMissionChoice({}, "scenario_taxi_driver_1976", "mission-a", "choice-a");
+  state = setProductionCaseMissionCompletion(state, "scenario_taxi_driver_1976", "mission-a", true);
+
+  const resetEntry = getProductionCaseProgressEntry(
+    resetProductionCaseScenarioProgress(state, "scenario_taxi_driver_1976"),
+    "scenario_taxi_driver_1976",
+  );
+
+  assert.equal(
+    getProductionCaseResultTier(getProductionCaseScoreSummary(missions, resetEntry), resetEntry.completedMissionIds.length),
+    "not_started",
+  );
+});
+
+test("seed fallback without production case missions gets no result tier", () => {
+  assert.equal(getProductionCaseResultTier({ score: 0, maxScore: 0 }, 0), undefined);
+});
+
+test("production case result tier helper avoids forbidden copy", () => {
+  const helperSource = [
+    getProductionCaseResultTier.name,
+    "Resultat",
+    "Assistent",
+    "Produsent",
+    "Auteur",
+    "produksjonslogikk",
+    "produksjonsvalg",
   ].join(" ").toLowerCase();
 
   assert.ok(!helperSource.includes("inspired by"));

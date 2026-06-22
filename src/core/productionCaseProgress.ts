@@ -132,6 +132,24 @@ export type ProductionCaseScoreSummary = {
   readonly maxScore: number;
 };
 
+export type ProductionCaseResultTier = "not_started" | "in_progress" | "assistant" | "producer" | "auteur";
+
+export function getProductionCaseResultTier(
+  scoreSummary: ProductionCaseScoreSummary,
+  completedCount: number,
+): ProductionCaseResultTier | undefined {
+  if (scoreSummary.maxScore <= 0) return undefined;
+  if (completedCount === 0 && scoreSummary.score === 0) return "not_started";
+
+  const totalMissionCount = scoreSummary.maxScore / 2;
+  if (completedCount < totalMissionCount) return "in_progress";
+
+  const scoreRatio = scoreSummary.score / scoreSummary.maxScore;
+  if (scoreRatio < 0.5) return "assistant";
+  if (scoreRatio < 0.84) return "producer";
+  return "auteur";
+}
+
 export function getProductionCaseMissionScore(
   choiceQuality: ProductionCaseMissionScoreChoiceQuality | string | undefined,
 ): number {
