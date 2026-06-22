@@ -3,6 +3,7 @@ export const productionCaseProgressStorageKey = "hg_film_production_case_progres
 export type ProductionCaseProgressEntry = {
   readonly scenarioId: string;
   readonly completedMissionIds: readonly string[];
+  readonly selectedChoicesByMissionId?: Readonly<Record<string, string>>;
   readonly updatedAt?: string;
 };
 
@@ -25,10 +26,18 @@ function normalizeEntry(scenarioId: string, value: unknown): ProductionCaseProgr
   const completedMissionIds = Array.isArray(maybeEntry.completedMissionIds)
     ? [...new Set(maybeEntry.completedMissionIds.filter((id): id is string => typeof id === "string"))]
     : [];
+  const selectedChoicesByMissionId = maybeEntry.selectedChoicesByMissionId && typeof maybeEntry.selectedChoicesByMissionId === "object"
+    ? Object.fromEntries(
+        Object.entries(maybeEntry.selectedChoicesByMissionId).filter(
+          (entry): entry is [string, string] => typeof entry[1] === "string",
+        ),
+      )
+    : undefined;
 
   return {
     scenarioId,
     completedMissionIds,
+    ...(selectedChoicesByMissionId && Object.keys(selectedChoicesByMissionId).length > 0 ? { selectedChoicesByMissionId } : {}),
     ...(typeof maybeEntry.updatedAt === "string" ? { updatedAt: maybeEntry.updatedAt } : {}),
   };
 }
@@ -79,9 +88,52 @@ export function setProductionCaseMissionCompletion(
     [scenarioId]: {
       scenarioId,
       completedMissionIds: missionIds,
+      ...(entry.selectedChoicesByMissionId ? { selectedChoicesByMissionId: entry.selectedChoicesByMissionId } : {}),
       updatedAt,
     },
   };
+}
+
+export function setProductionCaseMissionChoice(
+  state: ProductionCaseProgressState,
+  scenarioId: string,
+  missionId: string,
+  choiceId: string,
+  updatedAt = new Date().toISOString(),
+): ProductionCaseProgressState {
+  const entry = getProductionCaseProgressEntry(state, scenarioId);
+
+  return {
+    ...state,
+    [scenarioId]: {
+      scenarioId,
+      completedMissionIds: entry.completedMissionIds,
+      selectedChoicesByMissionId: {
+        ...entry.selectedChoicesByMissionId,
+        [missionId]: choiceId,
+      },
+      updatedAt,
+    },
+  };
+}
+
+export function countProductionCaseMatches(
+  selectedChoicesByMissionId: Readonly<Record<string, string>> | undefined,
+  missions: readonly { readonly id: string; readonly choices: readonly { readonly id: string; readonly quality: string }[] }[],
+): { readonly matchCount: number; readonly selectedCount: number } {
+  let matchCount = 0;
+  let selectedCount = 0;
+
+  for (const mission of missions) {
+    const selectedChoiceId = selectedChoicesByMissionId?.[mission.id];
+    if (!selectedChoiceId) continue;
+    const selectedChoice = mission.choices.find((choice) => choice.id === selectedChoiceId);
+    if (!selectedChoice) continue;
+    selectedCount += 1;
+    if (selectedChoice.quality === "match") matchCount += 1;
+  }
+
+  return { matchCount, selectedCount };
 }
 
 export function resetProductionCaseScenarioProgress(

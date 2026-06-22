@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import {
+  countProductionCaseMatches,
   getProductionCaseProgressEntry,
   readProductionCaseProgress,
   resetProductionCaseScenarioProgress,
+  setProductionCaseMissionChoice,
   setProductionCaseMissionCompletion,
   writeProductionCaseProgress,
   type ProductionCaseProgressState,
@@ -80,10 +82,12 @@ function ProductionCaseMissionFlow({
     setProgressState(readProductionCaseProgress(window.localStorage));
   }, [scenarioId]);
 
-  const completedMissionIds = useMemo(
-    () => getProductionCaseProgressEntry(progressState, scenarioId).completedMissionIds,
+  const progressEntry = useMemo(
+    () => getProductionCaseProgressEntry(progressState, scenarioId),
     [progressState, scenarioId],
   );
+  const completedMissionIds = progressEntry.completedMissionIds;
+  const selectedChoicesByMissionId = progressEntry.selectedChoicesByMissionId ?? {};
   const completedMissionIdSet = useMemo(
     () => new Set(completedMissionIds),
     [completedMissionIds],
@@ -92,6 +96,7 @@ function ProductionCaseMissionFlow({
     completedMissionIdSet.has(mission.id),
   ).length;
   const allComplete = missions.length > 0 && completedCount === missions.length;
+  const caseMatch = countProductionCaseMatches(selectedChoicesByMissionId, missions);
 
   function updateProgress(nextState: ProductionCaseProgressState) {
     setProgressState(nextState);
@@ -108,6 +113,12 @@ function ProductionCaseMissionFlow({
         missionId,
         !completedMissionIdSet.has(missionId),
       ),
+    );
+  }
+
+  function selectChoice(missionId: string, choiceId: string) {
+    updateProgress(
+      setProductionCaseMissionChoice(progressState, scenarioId, missionId, choiceId),
     );
   }
 
@@ -128,6 +139,7 @@ function ProductionCaseMissionFlow({
               ? "Produksjonscase fullført"
               : `${completedCount}/${missions.length} faser fullført`}
           </strong>
+          <span className="scenario-mission-score">Case-match: {caseMatch.matchCount}/{caseMatch.selectedCount}</span>
         </div>
         <button onClick={resetCurrentScenario} type="button">
           Nullstill case-progress
@@ -135,6 +147,8 @@ function ProductionCaseMissionFlow({
       </div>
       {missions.map((mission, index) => {
         const isComplete = completedMissionIdSet.has(mission.id);
+        const selectedChoiceId = selectedChoicesByMissionId[mission.id];
+        const selectedChoice = mission.choices.find((choice) => choice.id === selectedChoiceId);
         return (
           <article
             className={`scenario-mission-card${isComplete ? " scenario-mission-card--complete" : ""}`}
@@ -152,6 +166,29 @@ function ProductionCaseMissionFlow({
                   <li key={target}>{target}</li>
                 ))}
               </ul>
+              <div className="scenario-mission-choices" aria-label={`Velg produksjonsgrep for ${mission.title}`}>
+                <strong>Velg produksjonsgrep</strong>
+                <div className="scenario-mission-choice-grid">
+                  {mission.choices.map((choice) => (
+                    <button
+                      aria-pressed={choice.id === selectedChoiceId}
+                      className={choice.id === selectedChoiceId ? "scenario-choice-button scenario-choice-button--selected" : "scenario-choice-button"}
+                      key={choice.id}
+                      onClick={() => selectChoice(mission.id, choice.id)}
+                      type="button"
+                    >
+                      {choice.label}
+                    </button>
+                  ))}
+                </div>
+                {selectedChoice ? (
+                  <p className={`scenario-choice-feedback scenario-choice-feedback--${selectedChoice.quality}`}>
+                    {selectedChoice.feedback}
+                  </p>
+                ) : (
+                  <p className="scenario-choice-feedback">Velg produksjonsgrep før du fullfører fasen.</p>
+                )}
+              </div>
               <p className="scenario-mission-learning">
                 <strong>Forstå produksjonsvalget:</strong> {mission.learningFocus}
               </p>
