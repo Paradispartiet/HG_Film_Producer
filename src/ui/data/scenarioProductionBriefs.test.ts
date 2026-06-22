@@ -122,7 +122,12 @@ const manualScenarioIds = [
   "scenario_before_sunrise_1995",
   "scenario_before_sunset_2004",
   "scenario_i_daniel_blake_2016",
-  "scenario_the_big_sick_2017"
+  "scenario_the_big_sick_2017",
+  "scenario_on_body_and_soul_2017",
+  "scenario_good_time_2017",
+  "scenario_tradgardsgatan_2017",
+  "scenario_clerks_1994",
+  "scenario_virgin_mountain_2015"
 ] as const;
 
 const targetCategories = [
@@ -136,11 +141,11 @@ const targetCategories = [
 ] as const satisfies readonly (keyof ScenarioProductionBrief)[];
 
 const newBatchManualScenarioIds = [
-  "scenario_paterson_2016",
-  "scenario_before_sunrise_1995",
-  "scenario_before_sunset_2004",
-  "scenario_i_daniel_blake_2016",
-  "scenario_the_big_sick_2017"
+  "scenario_on_body_and_soul_2017",
+  "scenario_good_time_2017",
+  "scenario_tradgardsgatan_2017",
+  "scenario_clerks_1994",
+  "scenario_virgin_mountain_2015"
 ] as const;
 
 function createScenario(id: string): FilmScenarioSeed {
@@ -179,8 +184,8 @@ test("manual scenario ids include the corrected Winter's Bone id only", () => {
   assert.ok(!manualScenarioIds.includes("scenario_winters_bone_2010" as (typeof manualScenarioIds)[number]));
 });
 
-test("all 115 manual scenario production briefs resolve with research-needed status and targets", () => {
-  assert.equal(manualScenarioIds.length, 115);
+test("all 120 manual scenario production briefs resolve with research-needed status and targets", () => {
+  assert.equal(manualScenarioIds.length, 120);
   for (const scenarioId of manualScenarioIds) {
     const brief = resolveScenarioProductionBrief(createScenario(scenarioId));
 
@@ -195,7 +200,7 @@ test("all 115 manual scenario production briefs resolve with research-needed sta
 });
 
 
-test("batch 23 manual briefs keep concise target coverage", () => {
+test("batch 24 manual briefs keep concise target coverage", () => {
   for (const scenarioId of newBatchManualScenarioIds) {
     const brief = resolveScenarioProductionBrief(createScenario(scenarioId));
 
