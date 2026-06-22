@@ -1835,6 +1835,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use voice as legacy", "Let archive sound texture memory", "Hold silence around cost"],
     learningGoals: ["Make hidden labor visible", "Turn testimony into craft drama"],
     verificationStatus: "needs_research"
+  },
+  scenario_a_clockwork_orange_1971: {
+    scenarioId: "scenario_a_clockwork_orange_1971",
+    title: "A Clockwork Orange production brief",
+    logline: "Build a dystopian crime satire where violence, control, and moral choice collide in a stylized future society.",
+    genreTargets: ["Dystopian crime satire", "Sci-fi social experiment", "Stylized moral conflict"],
+    toneTargets: ["Provocative and uneasy", "Controlled but dangerous", "Satirical and disturbing"],
+    screenplayTargets: ["Test violence against control", "Make moral choice visible", "Use society as experiment"],
+    cinematographyTargets: ["Use controlled geometry", "Push bold design", "Frame subjective unease"],
+    editingTargets: ["Rhythm through transgression", "Shift into punishment", "Shape conditioning as pressure"],
+    soundTargets: ["Contrast music with violence", "Use voice as unease", "Let silence disturb"],
+    learningGoals: ["Make social control visible through style and behavior", "Turn speculative style into ethical pressure"],
+    verificationStatus: "needs_research"
+  },
+  scenario_terrified_2017: {
+    scenarioId: "scenario_terrified_2017",
+    title: "Terrified production brief",
+    logline: "Create supernatural horror where ordinary homes become dangerous through invisible rules and escalating fear.",
+    genreTargets: ["Supernatural horror", "Domestic dread story", "Neighborhood haunting"],
+    toneTargets: ["Fearful and tense", "Ordinary but unsafe", "Escalating and uncanny"],
+    screenplayTargets: ["Withhold the rules", "Build dread through investigation", "Let fear spread room by room"],
+    cinematographyTargets: ["Use negative space", "Hide threat in darkness", "Stage sudden reveals"],
+    editingTargets: ["Stretch the waiting", "Cut shocks cleanly", "Pace fear through discovery"],
+    soundTargets: ["Use dread sound", "Make silence threatening", "Keep danger off-screen"],
+    learningGoals: ["Make ordinary rooms dangerous through sound and withheld information", "Build fear from invisible rules"],
+    verificationStatus: "needs_research"
+  },
+  scenario_capernaum_2018: {
+    scenarioId: "scenario_capernaum_2018",
+    title: "Capernaum production brief",
+    logline: "Shape a social realist character drama where childhood survival exposes social abandonment and consequence.",
+    genreTargets: ["Social realist drama", "Childhood survival story", "Character-driven city drama"],
+    toneTargets: ["Urgent and grounded", "Compassionate but harsh", "Immediate and observant"],
+    screenplayTargets: ["Center a child's viewpoint", "Make survival choices concrete", "Show systems through pressure"],
+    cinematographyTargets: ["Observe closely", "Move with urgency", "Use streets as pressure"],
+    editingTargets: ["Rhythm through hardship", "Track care and consequence", "Keep survival immediate"],
+    soundTargets: ["Use street sound", "Layer voices as pressure", "Let silence reveal abandonment"],
+    learningGoals: ["Show survival through a child's viewpoint", "Make social pressure feel immediate"],
+    verificationStatus: "needs_research"
+  },
+  scenario_elephant_2003: {
+    scenarioId: "scenario_elephant_2003",
+    title: "Elephant production brief",
+    logline: "Build restrained crime drama from an ordinary school day where routine slowly turns into irreversible violence.",
+    genreTargets: ["Restrained crime drama", "School-day character study", "Looming-threat drama"],
+    toneTargets: ["Calm and unsettling", "Ordinary but ominous", "Detached and mournful"],
+    screenplayTargets: ["Follow ordinary routines", "Let paths overlap", "Avoid overexplaining violence"],
+    cinematographyTargets: ["Keep observational distance", "Repeat quiet paths", "Use corridors as pressure"],
+    editingTargets: ["Move slowly through routine", "Overlap perspectives", "Let threat loom"],
+    soundTargets: ["Use ambient school sound", "Let silence create unease", "Keep threat understated"],
+    learningGoals: ["Create dread from routine", "Observe ordinary behavior without overexplaining"],
+    verificationStatus: "needs_research"
+  },
+  scenario_halloween_1978: {
+    scenarioId: "scenario_halloween_1978",
+    title: "Halloween production brief",
+    logline: "Create slasher horror where stalking, vulnerability, and suburban space become a maze of threat.",
+    genreTargets: ["Slasher horror", "Suburban thriller", "Stalking suspense story"],
+    toneTargets: ["Tense and minimal", "Vulnerable and exposed", "Patiently frightening"],
+    screenplayTargets: ["Build stalking into structure", "Make vulnerability clear", "Delay danger for suspense"],
+    cinematographyTargets: ["Use negative space", "Build point-of-view tension", "Withhold visible danger"],
+    editingTargets: ["Sustain anticipation", "Pace pursuit clearly", "Delay the reveal"],
+    soundTargets: ["Use a simple dread motif", "Let silence pressurize", "Make breath feel close"],
+    learningGoals: ["Turn ordinary space into danger", "Use framing, rhythm, and sound as threat"],
+    verificationStatus: "needs_research"
   }
 
 
