@@ -2030,6 +2030,84 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Layer mechanical sound", "Use alarms as pressure", "Let music fight the system"],
     learningGoals: ["Speculative satire can make bureaucracy feel like a nightmare machine", "Make bureaucracy a nightmare machine"],
     verificationStatus: "needs_research"
+  },
+  scenario_once_upon_a_time_in_hollywood_2019: {
+    scenarioId: "scenario_once_upon_a_time_in_hollywood_2019",
+    title: "Once Upon a Time in... Hollywood production brief",
+    logline: "Build a nostalgic comedy-drama where fame, friendship, and a changing industry world feel lived-in.",
+    genreTargets: ["Nostalgic comedy-drama", "Industry friendship story", "Fading-identity character study"],
+    toneTargets: ["Relaxed and observant", "Warmly nostalgic", "Suddenly consequential"],
+    screenplayTargets: ["Explore fame and friendship", "Use hangout scenes as texture", "Let routine reveal fading identity"],
+    cinematographyTargets: ["Make Hollywood spaces feel remembered", "Frame streets as performance world", "Use period texture as atmosphere"],
+    editingTargets: ["Rhythm through digression", "Let routines breathe", "Shift suddenly into consequence"],
+    soundTargets: ["Use music as era texture", "Layer radio and street sound", "Let silence mark change"],
+    learningGoals: ["Comedy drama can make an industry world feel lived-in through rhythm and atmosphere", "Make an industry world feel lived-in"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_lighthouse_2019: {
+    scenarioId: "scenario_the_lighthouse_2019",
+    title: "The Lighthouse production brief",
+    logline: "Shape psychological horror-fantasy drama where isolation, madness, and power struggle become myth.",
+    genreTargets: ["Psychological horror", "Fantasy-tinged drama", "Remote workplace nightmare"],
+    toneTargets: ["Harsh and claustrophobic", "Mythic and unstable", "Combative and obsessive"],
+    screenplayTargets: ["Pressure isolation into madness", "Turn work into power struggle", "Let conflict feed hallucination"],
+    cinematographyTargets: ["Use confined geometry", "Hold harsh faces", "Push symbolic imagery"],
+    editingTargets: ["Rhythm through repetition", "Escalate through conflict", "Blur routine with hallucination"],
+    soundTargets: ["Use wind as pressure", "Let foghorns dominate", "Make sea and silence collapse inward"],
+    learningGoals: ["Horror can turn isolation into myth through sound, space and repetition", "Turn isolation into myth"],
+    verificationStatus: "needs_research"
+  },
+  scenario_tangerine_2015: {
+    scenarioId: "scenario_tangerine_2015",
+    title: "Tangerine production brief",
+    logline: "Drive a street-level comedy-crime drama where friendship, hustle, and city momentum keep colliding.",
+    genreTargets: ["Street-level comedy-crime drama", "Friendship hustle story", "Urban momentum drama"],
+    toneTargets: ["Kinetic and funny", "Raw but affectionate", "Fast and confrontational"],
+    screenplayTargets: ["Let friendship drive pursuit", "Make hustle create momentum", "Turn streets into a social maze"],
+    cinematographyTargets: ["Use mobile immediacy", "Push saturated energy", "Stay close to pursuit"],
+    editingTargets: ["Rhythm through movement", "Cut with confrontation", "Build comic collisions"],
+    soundTargets: ["Use street noise as propulsion", "Let music add velocity", "Layer overlapping voices"],
+    learningGoals: ["Low-scale drama can feel huge when movement and place drive every scene", "Let movement and place drive scenes"],
+    verificationStatus: "needs_research"
+  },
+  scenario_don_t_look_up_2021: {
+    scenarioId: "scenario_don_t_look_up_2021",
+    title: "Don’t Look Up production brief",
+    logline: "Build satirical sci-fi comedy-drama where denial and spectacle make disaster absurd.",
+    genreTargets: ["Satirical sci-fi comedy-drama", "Disaster absurdity story", "Institutional failure ensemble"],
+    toneTargets: ["Panicked and comic", "Absurdly public", "Angry under the jokes"],
+    screenplayTargets: ["Filter threat through performance", "Expose denial and spectacle", "Show systems performing instead of responding"],
+    cinematographyTargets: ["Use media screens as pressure", "Stage public rooms as theater", "Track ensemble reactions"],
+    editingTargets: ["Rhythm through escalation", "Interrupt certainty often", "Build comic panic"],
+    soundTargets: ["Use broadcast sound", "Layer arguments as noise", "Let silence expose absurdity"],
+    learningGoals: ["Satire can make disaster feel absurd by showing how systems perform instead of respond", "Show systems performing instead of responding"],
+    verificationStatus: "needs_research"
+  },
+  scenario_where_is_the_friend_s_house_1987: {
+    scenarioId: "scenario_where_is_the_friend_s_house_1987",
+    title: "Where Is the Friend’s House? production brief",
+    logline: "Shape a quiet child-view adventure-drama where a simple errand becomes a moral quest.",
+    genreTargets: ["Quiet child-view adventure", "Moral persistence drama", "Simple-errand journey"],
+    toneTargets: ["Gentle and attentive", "Persistent and kind", "Small but urgent"],
+    screenplayTargets: ["Turn responsibility into action", "Let kindness drive choices", "Make obstacles simple and clear"],
+    cinematographyTargets: ["Map village paths clearly", "Use doors as decisions", "Read faces as geography"],
+    editingTargets: ["Rhythm through repetition", "Build gentle obstacles", "Let care guide pace"],
+    soundTargets: ["Use footsteps as attention", "Keep voices grounded", "Let rural silence focus the task"],
+    learningGoals: ["Adventure drama can turn a small task into a moral quest", "Turn a small task into a moral quest"],
+    verificationStatus: "needs_research"
+  },
+  scenario_another_round_2020: {
+    scenarioId: "scenario_another_round_2020",
+    title: "Another Round production brief",
+    logline: "Shape a character comedy-drama where midlife risk tests vitality, denial, and consequence.",
+    genreTargets: ["Character comedy-drama", "Midlife risk story", "Social experiment drama"],
+    toneTargets: ["Funny and uneasy", "Loose but consequential", "Vital and ashamed"],
+    screenplayTargets: ["Turn risk into experiment", "Track controlled loss of control", "Let denial meet consequence"],
+    cinematographyTargets: ["Observe ensemble behavior", "Use school and social spaces", "Track shifting body language"],
+    editingTargets: ["Rhythm through tests", "Escalate into shame", "Release through movement"],
+    soundTargets: ["Use music as life-force", "Let silence expose cost", "Contrast social sound with isolation"],
+    learningGoals: ["Comedy drama can turn a risky premise into a study of vitality, denial and consequence", "Turn risk into a study of vitality"],
+    verificationStatus: "needs_research"
   }
 
 
