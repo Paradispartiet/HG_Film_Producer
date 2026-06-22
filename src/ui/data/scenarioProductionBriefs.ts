@@ -1900,6 +1900,71 @@ const scenarioProductionBriefs: Record<string, ScenarioProductionBrief> = {
     soundTargets: ["Use a simple dread motif", "Let silence pressurize", "Make breath feel close"],
     learningGoals: ["Turn ordinary space into danger", "Use framing, rhythm, and sound as threat"],
     verificationStatus: "needs_research"
+  },
+  scenario_psychobitch_2019: {
+    scenarioId: "scenario_psychobitch_2019",
+    title: "Psychobitch production brief",
+    logline: "Shape an intense youth drama where labels, vulnerability, and emotional risk pressure fragile trust.",
+    genreTargets: ["Intense youth drama", "Character conflict study", "School social pressure story"],
+    toneTargets: ["Vulnerable and sharp", "Awkward and unstable", "Emotionally exposed"],
+    screenplayTargets: ["Make identity pressure visible", "Test social labels through behavior", "Let trust stay fragile"],
+    cinematographyTargets: ["Observe awkwardness closely", "Use school spaces as pressure", "Frame instability in social moments"],
+    editingTargets: ["Rhythm through provocation", "Hold silences after risk", "Let fragile trust shift pace"],
+    soundTargets: ["Use everyday sound", "Let pauses build tension", "Keep blunt dialogue exposed"],
+    learningGoals: ["Make identity pressure visible through social behavior", "Turn emotional risk into youth drama"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_favourite_2018: {
+    scenarioId: "scenario_the_favourite_2018",
+    title: "The Favourite production brief",
+    logline: "Build a dark period comedy-drama where intimacy and manipulation turn court spaces into strategy.",
+    genreTargets: ["Dark period comedy-drama", "Power game drama", "Manipulation chamber story"],
+    toneTargets: ["Witty and cruel", "Intimate but strategic", "Controlled and excessive"],
+    screenplayTargets: ["Turn status games into strategy", "Make intimacy a power move", "Use reversals as pressure"],
+    cinematographyTargets: ["Distort perspective", "Block ensembles as rivalry", "Make interiors a game board"],
+    editingTargets: ["Rhythm through rivalry", "Cut on reversal", "Let humiliation reset power"],
+    soundTargets: ["Use formal dialogue as combat", "Let silence signal power", "Make music sharpen rivalry"],
+    learningGoals: ["Turn status games into visual strategy", "Make power visible through blocking"],
+    verificationStatus: "needs_research"
+  },
+  scenario_shoplifters_2018: {
+    scenarioId: "scenario_shoplifters_2018",
+    title: "Shoplifters production brief",
+    logline: "Create an intimate crime-family drama where care, poverty, and survival make morality complex.",
+    genreTargets: ["Intimate crime drama", "Chosen-family story", "Domestic survival drama"],
+    toneTargets: ["Warm and fragile", "Tender but pressured", "Morally ambiguous"],
+    screenplayTargets: ["Make morality complex through care", "Reveal pressure through routine", "Tie survival to consequence"],
+    cinematographyTargets: ["Use small rooms as refuge", "Observe warmth quietly", "Hide social pressure in details"],
+    editingTargets: ["Slowly reveal consequence", "Let care shape rhythm", "Hold routine before rupture"],
+    soundTargets: ["Use quiet room tone", "Layer street sound gently", "Let pauses carry tenderness"],
+    learningGoals: ["Make morality complex through care", "Show survival as emotional pressure"],
+    verificationStatus: "needs_research"
+  },
+  scenario_the_guilty_2018: {
+    scenarioId: "scenario_the_guilty_2018",
+    title: "The Guilty production brief",
+    logline: "Stage a contained crime thriller where voice, guilt, and limited information build an unseen world.",
+    genreTargets: ["Contained crime thriller", "One-room suspense story", "Voice-driven mystery"],
+    toneTargets: ["Tense and restricted", "Guilty and urgent", "Uncertain under pressure"],
+    screenplayTargets: ["Control information through calls", "Change assumptions scene by scene", "Make guilt drive choices"],
+    cinematographyTargets: ["Use one room as arena", "Restrict viewpoint tightly", "Suggest action off-screen"],
+    editingTargets: ["Tension through calls", "Hold silence for doubt", "Pivot on new assumptions"],
+    soundTargets: ["Build a world through sound", "Use phone audio as suspense", "Make breath and room tone tense"],
+    learningGoals: ["Build a world through sound", "Create thriller stakes with limited information"],
+    verificationStatus: "needs_research"
+  },
+  scenario_birds_of_passage_2018: {
+    scenarioId: "scenario_birds_of_passage_2018",
+    title: "Birds of Passage production brief",
+    logline: "Shape a crime-family epic where tradition, trade, and ambition escalate toward cultural collapse.",
+    genreTargets: ["Crime-family epic", "Tradition under pressure drama", "Generational consequence story"],
+    toneTargets: ["Grave and ritualized", "Expansive but controlled", "Fateful and warning"],
+    screenplayTargets: ["Connect ambition to cultural collapse", "Escalate deals into betrayal", "Make tradition pressure choices"],
+    cinematographyTargets: ["Use landscape as pressure", "Frame family hierarchy clearly", "Balance ritual with scale"],
+    editingTargets: ["Rhythm through deals", "Track betrayals cleanly", "Let generational cost accumulate"],
+    soundTargets: ["Use wind as warning", "Let voices carry fate", "Hold silence after consequence"],
+    learningGoals: ["Connect ambition to cultural collapse", "Make personal choices carry communal cost"],
+    verificationStatus: "needs_research"
   }
 
 
