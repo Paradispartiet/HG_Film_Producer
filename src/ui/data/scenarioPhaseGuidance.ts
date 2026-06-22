@@ -14,37 +14,48 @@ export type ScenarioPhaseGuidance = {
   readonly targets: readonly string[];
 };
 
-export function createScenarioPhaseGuidance(brief: ScenarioProductionBrief): readonly ScenarioPhaseGuidance[] {
+export function createScenarioPhaseGuidance(
+  brief: ScenarioProductionBrief,
+): readonly ScenarioPhaseGuidance[] {
   return [
     {
       phase: "development",
       title: "Development focus",
-      description: "Shape the concept, tone and script direction before the film moves into production.",
-      targets: [...brief.genreTargets, ...brief.toneTargets, ...brief.screenplayTargets]
+      description:
+        "Study the film-specific concept, tone and script decisions before the case moves into production.",
+      targets: [
+        ...brief.genreTargets,
+        ...brief.toneTargets,
+        ...brief.screenplayTargets,
+      ],
     },
     {
       phase: "pre_production",
       title: "Pre-production focus",
-      description: "Prepare the visual plan, team choices and production approach around the scenario brief.",
-      targets: [...brief.toneTargets, ...brief.cinematographyTargets]
+      description:
+        "Prepare the visual plan, team choices and production approach around the film-specific production case.",
+      targets: [...brief.toneTargets, ...brief.cinematographyTargets],
     },
     {
       phase: "shoot",
       title: "Shoot focus",
-      description: "Use the shooting phase to commit to image, space, rhythm and sound intent.",
-      targets: [...brief.cinematographyTargets, ...brief.soundTargets]
+      description:
+        "Use the shooting phase to commit to image, space, rhythm and sound intent.",
+      targets: [...brief.cinematographyTargets, ...brief.soundTargets],
     },
     {
       phase: "post_production",
       title: "Post-production focus",
-      description: "Use editing and sound to lock the final shape of the scenario.",
-      targets: [...brief.editingTargets, ...brief.soundTargets]
+      description:
+        "Use editing and sound to reconstruct the final shape of the production case.",
+      targets: [...brief.editingTargets, ...brief.soundTargets],
     },
     {
       phase: "release",
       title: "Release and learning focus",
-      description: "Read the result as a learning summary of what the production practiced.",
-      targets: [...brief.learningGoals]
-    }
+      description:
+        "Read the result as a learning summary of the film-specific production choices practiced.",
+      targets: [...brief.learningGoals],
+    },
   ];
 }
