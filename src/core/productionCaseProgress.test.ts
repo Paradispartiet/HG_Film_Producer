@@ -1,11 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  countProductionCaseMatches,
   getProductionCaseProgressEntry,
   parseProductionCaseProgress,
   productionCaseProgressStorageKey,
   readProductionCaseProgress,
   resetProductionCaseScenarioProgress,
+  setProductionCaseMissionChoice,
   setProductionCaseMissionCompletion,
   writeProductionCaseProgress,
 } from "./productionCaseProgress.js";
@@ -117,3 +119,68 @@ test("progress writes to the v1 localStorage key and can be read back", () => {
   assert.deepEqual(readProductionCaseProgress(storage), state);
 });
 
+
+
+test("selectedChoicesByMissionId is saved per scenario id", () => {
+  let state = setProductionCaseMissionChoice(
+    {},
+    "scenario_taxi_driver_1976",
+    "scenario_taxi_driver_1976-mission-screenplay",
+    "scenario_taxi_driver_1976-choice-screenplay-match-1",
+    "2026-06-22T00:00:00.000Z",
+  );
+  state = setProductionCaseMissionChoice(
+    state,
+    "scenario_the_lighthouse_2019",
+    "scenario_the_lighthouse_2019-mission-sound",
+    "scenario_the_lighthouse_2019-choice-sound-match-1",
+    "2026-06-22T00:00:00.000Z",
+  );
+
+  assert.equal(
+    getProductionCaseProgressEntry(state, "scenario_taxi_driver_1976").selectedChoicesByMissionId?.["scenario_taxi_driver_1976-mission-screenplay"],
+    "scenario_taxi_driver_1976-choice-screenplay-match-1",
+  );
+  assert.equal(
+    getProductionCaseProgressEntry(state, "scenario_the_lighthouse_2019").selectedChoicesByMissionId?.["scenario_the_lighthouse_2019-mission-sound"],
+    "scenario_the_lighthouse_2019-choice-sound-match-1",
+  );
+});
+
+test("old progress without selectedChoicesByMissionId parses safely", () => {
+  const state = parseProductionCaseProgress(JSON.stringify({
+    scenario_taxi_driver_1976: {
+      completedMissionIds: ["scenario_taxi_driver_1976-mission-screenplay"],
+    },
+  }));
+
+  const entry = getProductionCaseProgressEntry(state, "scenario_taxi_driver_1976");
+  assert.deepEqual(entry.completedMissionIds, ["scenario_taxi_driver_1976-mission-screenplay"]);
+  assert.equal(entry.selectedChoicesByMissionId, undefined);
+});
+
+test("Case-match counts selected match choices only", () => {
+  const missions = [
+    { id: "mission-a", choices: [{ id: "choice-a", quality: "match" }] },
+    { id: "mission-b", choices: [{ id: "choice-b", quality: "partial" }] },
+    { id: "mission-c", choices: [{ id: "choice-c", quality: "match" }] },
+  ];
+
+  assert.deepEqual(
+    countProductionCaseMatches({ "mission-a": "choice-a", "mission-b": "choice-b" }, missions),
+    { matchCount: 1, selectedCount: 2 },
+  );
+});
+
+test("reset clears selected choices for the current scenario", () => {
+  const state = setProductionCaseMissionChoice(
+    {},
+    "scenario_taxi_driver_1976",
+    "scenario_taxi_driver_1976-mission-screenplay",
+    "scenario_taxi_driver_1976-choice-screenplay-match-1",
+  );
+
+  const resetState = resetProductionCaseScenarioProgress(state, "scenario_taxi_driver_1976");
+
+  assert.equal(getProductionCaseProgressEntry(resetState, "scenario_taxi_driver_1976").selectedChoicesByMissionId, undefined);
+});

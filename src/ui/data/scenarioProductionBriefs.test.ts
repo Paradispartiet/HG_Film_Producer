@@ -323,6 +323,14 @@ test("Taxi Driver manual brief creates phase-based production case missions from
   assert.deepEqual(editing?.targets, brief.editingTargets.slice(0, 4));
   assert.deepEqual(sound?.targets, brief.soundTargets.slice(0, 4));
   assert.deepEqual(reflection?.targets, brief.learningGoals.slice(0, 4));
+
+  for (const mission of missions) {
+    assert.ok(mission.choices.length >= 2 && mission.choices.length <= 4);
+    assert.ok(
+      mission.choices.some((choice) => choice.quality === "match"),
+      `${mission.id} should include a matching production choice`,
+    );
+  }
 });
 
 test("fallback briefs do not create production case missions by default", () => {
@@ -345,6 +353,7 @@ test("production case missions avoid inspired-by language", () => {
         mission.prompt,
         mission.learningFocus,
         ...mission.targets,
+        ...mission.choices.flatMap((choice) => [choice.label, choice.feedback]),
       ])
       .join(" ")
       .toLowerCase();
@@ -356,6 +365,10 @@ test("production case missions avoid inspired-by language", () => {
     assert.ok(
       !missionLanguage.includes("in the spirit of"),
       `${scenarioId} mission uses spirit-of language`,
+    );
+    assert.ok(
+      !missionLanguage.includes("create your own version"),
+      `${scenarioId} mission uses own-version language`,
     );
   }
 });

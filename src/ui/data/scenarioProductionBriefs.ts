@@ -10,6 +10,15 @@ export type ProductionCaseMissionPhase =
   | "sound"
   | "reflection";
 
+export type ProductionCaseMissionChoiceQuality = "match" | "partial" | "miss";
+
+export type ProductionCaseMissionChoice = {
+  readonly id: string;
+  readonly label: string;
+  readonly quality: ProductionCaseMissionChoiceQuality;
+  readonly feedback: string;
+};
+
 export type ProductionCaseMission = {
   readonly id: string;
   readonly phase: ProductionCaseMissionPhase;
@@ -17,6 +26,7 @@ export type ProductionCaseMission = {
   readonly prompt: string;
   readonly targets: readonly string[];
   readonly learningFocus: string;
+  readonly choices: readonly ProductionCaseMissionChoice[];
 };
 
 export type ScenarioProductionBrief = {
@@ -2148,6 +2158,38 @@ function createMissionId(
   return `${brief.scenarioId}-mission-${phase}`;
 }
 
+function createMissionChoices(
+  brief: ScenarioProductionBrief,
+  phase: ProductionCaseMissionPhase,
+  targets: readonly string[],
+): readonly ProductionCaseMissionChoice[] {
+  if (brief.briefType !== "production_case") return [];
+
+  const matchTargets = targets.slice(0, 2);
+  const choices: ProductionCaseMissionChoice[] = matchTargets.map((target, index) => ({
+    id: `${brief.scenarioId}-choice-${phase}-match-${index + 1}`,
+    label: target,
+    quality: "match",
+    feedback: "Matcher caset",
+  }));
+
+  choices.push({
+    id: `${brief.scenarioId}-choice-${phase}-partial`,
+    label: `Bruk ${brief.toneTargets[0] ?? "tydelig tone"} som generell rettesnor`,
+    quality: "partial",
+    feedback: "Delvis relevant",
+  });
+
+  choices.push({
+    id: `${brief.scenarioId}-choice-${phase}-miss`,
+    label: "Velg et bredt og trygt standardgrep uten case-spesifikk prioritet",
+    quality: "miss",
+    feedback: "Mindre presist for dette caset",
+  });
+
+  return choices.slice(0, 4);
+}
+
 export function createProductionCaseMissions(
   brief: ScenarioProductionBrief,
 ): readonly ProductionCaseMission[] {
@@ -2155,8 +2197,13 @@ export function createProductionCaseMissions(
 
   const caseTitle = brief.title.replace(/ production brief$/i, "");
 
+  const makeMission = (mission: Omit<ProductionCaseMission, "choices">): ProductionCaseMission => ({
+    ...mission,
+    choices: createMissionChoices(brief, mission.phase, mission.targets),
+  });
+
   return [
-    {
+    makeMission({
       id: createMissionId(brief, "case_orientation"),
       phase: "case_orientation",
       title: "Case orientation",
@@ -2167,47 +2214,47 @@ export function createProductionCaseMissions(
         ...brief.toneTargets,
       ]),
       learningFocus: "Forstå hvordan denne filmen løser den overordnede produksjonsutfordringen.",
-    },
-    {
+    }),
+    makeMission({
       id: createMissionId(brief, "screenplay"),
       phase: "screenplay",
       title: "Manusvalg",
       prompt: "Forstå hvordan denne filmen løser manusfasen. Identifiser produksjonsvalgene bak scenene før du låser utviklingen.",
       targets: takeMissionTargets(brief.screenplayTargets),
       learningFocus: "Koble premiss, konflikt og scenevalg til filmens konkrete dramaturgi.",
-    },
-    {
+    }),
+    makeMission({
       id: createMissionId(brief, "cinematography"),
       phase: "cinematography",
       title: "Visuelt system",
       prompt: "Forstå hvordan denne filmen løser foto og rom. Match valgene til filmens konkrete uttrykk.",
       targets: takeMissionTargets(brief.cinematographyTargets),
       learningFocus: "Les hvordan bildevalg, rom og blocking gjør produksjonsproblemet spillbart.",
-    },
-    {
+    }),
+    makeMission({
       id: createMissionId(brief, "editing"),
       phase: "editing",
       title: "Klipperytme",
       prompt: "Forstå hvordan denne filmen løser klippfasen. Identifiser hvordan rytme, rekkefølge og tilbakeholdelse bygger caset.",
       targets: takeMissionTargets(brief.editingTargets),
       learningFocus: "Se hvordan klippen organiserer publikums forståelse av filmen.",
-    },
-    {
+    }),
+    makeMission({
       id: createMissionId(brief, "sound"),
       phase: "sound",
       title: "Lydverden",
       prompt: "Forstå hvordan denne filmen løser lydfasen. Match lydvalg, stillhet og tekstur til filmens konkrete uttrykk.",
       targets: takeMissionTargets(brief.soundTargets),
       learningFocus: "Bruk lyd som produksjonsvalg, ikke som generisk stemning.",
-    },
-    {
+    }),
+    makeMission({
       id: createMissionId(brief, "reflection"),
       phase: "reflection",
       title: "Hva filmen lærer deg",
       prompt: "Dette er ikke en ny film, men et case i hvordan filmen er bygget. Oppsummer hva produksjonsvalgene lærer deg.",
       targets: takeMissionTargets(brief.learningGoals),
       learningFocus: "Gjør læringen spesifikk for denne filmen og dens byggede løsninger.",
-    },
+    }),
   ];
 }
 
