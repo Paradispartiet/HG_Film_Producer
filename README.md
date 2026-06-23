@@ -23,6 +23,70 @@ Kunnskap læres gjennom handling:
 > Du lærer manusstruktur fordi filmen mister publikum i andre akt.  
 > Du lærer filmhistorie fordi historiske eksempler gir deg bedre produksjonsvalg.
 
+## Filmene som tematisk motor
+
+HG Film Producer skal ikke bare bruke filmer som trivia, referanser eller quizstoff.
+
+Filmene skal brukes som et arkiv over moderne menneskelige konflikter:
+
+- fremmedgjøring
+- klasse
+- ambisjon
+- arbeid
+- kropp
+- skam
+- statusangst
+- forbruk
+- familieplikt
+- ensomhet
+- begjær
+- makt
+- byliv
+- maskulinitet og femininitet
+- moral under press
+- drømmen om et annet liv
+
+Målet er ikke å kopiere filmer, karakterer, scener eller dialog.
+
+Målet er å hente ut hva filmene undersøker, og oversette det til spillbare systemer, roller, valg og hverdagskonflikter.
+
+```text
+Film -> tema -> sosiologisk konflikt -> rollehverdag -> korrespondanse -> valg
+```
+
+Eksempel:
+
+```text
+En film om fremmedgjøring i byen
+blir ikke kopiert som plot,
+men kan inspirere en rolle der spilleren møter mennesker hele dagen
+uten å bli sett som et helt menneske.
+```
+
+## Kobling til Civication
+
+Film Producer kan også fungere som tematisk inspirasjonsbank for **Civication**.
+
+Civication-roller skal ikke bare være korte jobbsekvenser eller én mail om morgenen. En ekte rolle skal bygges som en liten sosiologisk hverdagsserie:
+
+- faste sosiale typer
+- stereotypier med funksjon
+- morgen, lunsj, ettermiddag og kveld
+- små korrespondanser på 5–10 meldingsvekslinger
+- arbeidspress
+- privat etterklang
+- valg som får konsekvenser senere
+- klasse, status, kropp, økonomi og relasjoner som spillbare krefter
+
+Filmene gir Civication temabanken. Civication oversetter temaene til arbeidsliv, hverdagsliv og sosialt press.
+
+Dette betyr:
+
+```text
+Vi kopierer ikke filmen.
+Vi lar oss inspirere av hva filmen handler om.
+```
+
 ## Dokumentasjon
 
 All faktisk grunnlagsdokumentasjon ligger i `/README/`.
