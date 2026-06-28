@@ -290,6 +290,71 @@ export function getProductionCaseAchievements(
   });
 }
 
+export type ProductionCaseNextActionType = "continue" | "improve" | "start" | "master" | "complete";
+
+export type ProductionCaseNextActionStatus = ProductionCaseLibraryStatus & {
+  readonly scenarioId: string;
+  readonly title: string;
+};
+
+export type ProductionCaseNextAction = {
+  readonly scenarioId: string;
+  readonly title: string;
+  readonly actionType: ProductionCaseNextActionType;
+  readonly label: string;
+  readonly description: string;
+};
+
+function formatProductionCaseNextActionDescription(status: ProductionCaseNextActionStatus): string {
+  const progressLabel = `${status.completedCount}/${status.missionCount} faser fullført`;
+  if (!status.score) return progressLabel;
+  return `${progressLabel} · Case-score ${status.score.score}/${status.score.maxScore}`;
+}
+
+function createProductionCaseNextAction(
+  status: ProductionCaseNextActionStatus,
+  actionType: ProductionCaseNextActionType,
+  label: string,
+): ProductionCaseNextAction {
+  return {
+    scenarioId: status.scenarioId,
+    title: status.title,
+    actionType,
+    label,
+    description: formatProductionCaseNextActionDescription(status),
+  };
+}
+
+export function getProductionCaseNextAction(
+  statuses: readonly (ProductionCaseNextActionStatus | undefined)[],
+): ProductionCaseNextAction | undefined {
+  const manualStatuses = statuses.filter((status): status is ProductionCaseNextActionStatus => Boolean(status));
+  if (manualStatuses.length === 0) return undefined;
+
+  const inProgress = manualStatuses.find((status) => status.tier === "in_progress");
+  if (inProgress) return createProductionCaseNextAction(inProgress, "continue", "Fortsett case");
+
+  const assistant = manualStatuses.find((status) => status.tier === "assistant");
+  if (assistant) return createProductionCaseNextAction(assistant, "improve", "Forbedre resultat");
+
+  const notStarted = manualStatuses.find((status) => status.tier === "not_started");
+  if (notStarted) return createProductionCaseNextAction(notStarted, "start", "Start nytt case");
+
+  const producer = manualStatuses.find((status) => status.tier === "producer");
+  if (producer) return createProductionCaseNextAction(producer, "master", "Jakt Auteur");
+
+  const firstStatus = manualStatuses[0];
+  if (!firstStatus) return undefined;
+
+  return {
+    scenarioId: firstStatus.scenarioId,
+    title: firstStatus.title,
+    actionType: "complete",
+    label: "Katalog mestret",
+    description: "Alle production cases er fullført på høyeste nivå.",
+  };
+}
+
 export function productionCaseLibraryStatusMatchesFilter(
   status: Pick<ProductionCaseLibraryStatus, "tier"> | undefined,
   filter: ProductionCaseLibraryStatusFilter,
