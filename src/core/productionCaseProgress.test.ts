@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   countProductionCaseMatches,
+  getProductionCaseCollectionSummary,
   getProductionCaseMissionScore,
   getProductionCaseLibraryStatus,
   getProductionCaseProgressEntry,
@@ -425,6 +426,39 @@ test("library status is absent for seed fallback mission lists", () => {
   assert.equal(getProductionCaseLibraryStatus([], { completedMissionIds: [] }), undefined);
 });
 
+test("production case collection summary counts statuses, tiers, and scores", () => {
+  const notStarted = getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds: [] });
+  const inProgress = getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds: ["mission-1"] });
+  const completedMissionIds = libraryStatusMissions.map((mission) => mission.id);
+  const assistant = getProductionCaseLibraryStatus(libraryStatusMissions, {
+    completedMissionIds,
+    selectedChoicesByMissionId: Object.fromEntries(libraryStatusMissions.map((mission, index) => [mission.id, `choice-${index + 1}-miss`])),
+  });
+  const producer = getProductionCaseLibraryStatus(libraryStatusMissions, {
+    completedMissionIds,
+    selectedChoicesByMissionId: Object.fromEntries(libraryStatusMissions.map((mission, index) => [mission.id, `choice-${index + 1}-partial`])),
+  });
+  const auteur = getProductionCaseLibraryStatus(libraryStatusMissions, {
+    completedMissionIds,
+    selectedChoicesByMissionId: Object.fromEntries(libraryStatusMissions.map((mission, index) => [mission.id, `choice-${index + 1}-match`])),
+  });
+
+  assert.deepEqual(
+    getProductionCaseCollectionSummary([notStarted, inProgress, assistant, producer, auteur, undefined]),
+    {
+      totalCases: 5,
+      notStartedCount: 1,
+      inProgressCount: 1,
+      completedCount: 3,
+      assistantCount: 1,
+      producerCount: 1,
+      auteurCount: 1,
+      totalScore: 18,
+      maxScore: 60,
+    },
+  );
+});
+
 test("library status filters include the expected case cards", () => {
   const notStarted = getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds: [] });
   const inProgress = getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds: ["mission-1"] });
@@ -463,6 +497,8 @@ test("library status copy avoids forbidden language", () => {
     "Produsent",
     "Auteur",
     "Case-score",
+    "Production cases",
+    "Samlet Case-score",
   ].join(" ").toLowerCase();
 
   assert.ok(!copy.includes("inspired by"));

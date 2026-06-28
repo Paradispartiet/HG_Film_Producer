@@ -1,6 +1,10 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  getProductionCaseCollectionSummary,
+  getProductionCaseLibraryStatus,
+} from "../../core/productionCaseProgress";
+import {
   createProductionCaseMissions,
   getFallbackScenarioProductionBrief,
   resolveScenarioProductionBrief,
@@ -382,4 +386,25 @@ test("unknown imported scenarios use the seeded fallback production brief", () =
   assert.equal(brief.verificationStatus, "seeded");
   assert.equal(brief.briefType, "seed_fallback");
   assert.equal(brief.logline, scenario.production_challenge);
+});
+
+test("empty production case progress summarizes 161 manual cases and excludes seed fallback", () => {
+  const manualStatuses = manualScenarioIds.map((scenarioId) => {
+    const brief = resolveScenarioProductionBrief(createScenario(scenarioId));
+    return getProductionCaseLibraryStatus(createProductionCaseMissions(brief), { completedMissionIds: [] });
+  });
+  const fallbackBrief = resolveScenarioProductionBrief(createScenario("scenario_unknown_imported_2026"));
+  const fallbackStatus = getProductionCaseLibraryStatus(createProductionCaseMissions(fallbackBrief), { completedMissionIds: [] });
+
+  const summary = getProductionCaseCollectionSummary([...manualStatuses, fallbackStatus]);
+
+  assert.equal(summary.totalCases, 161);
+  assert.equal(summary.notStartedCount, 161);
+  assert.equal(summary.inProgressCount, 0);
+  assert.equal(summary.completedCount, 0);
+  assert.equal(summary.auteurCount, 0);
+  assert.equal(summary.totalScore, 0);
+  assert.equal(summary.maxScore, 1932);
+  assert.equal(fallbackBrief.briefType, "seed_fallback");
+  assert.equal(fallbackStatus, undefined);
 });
