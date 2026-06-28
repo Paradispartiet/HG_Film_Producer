@@ -133,6 +133,22 @@ export type ProductionCaseScoreSummary = {
 };
 
 export type ProductionCaseResultTier = "not_started" | "in_progress" | "assistant" | "producer" | "auteur";
+export type ProductionCaseLibraryStatusFilter = "all" | "not_started" | "in_progress" | "completed";
+export type ProductionCaseLibraryStatus = {
+  readonly label: string;
+  readonly tier: ProductionCaseResultTier;
+  readonly completedCount: number;
+  readonly missionCount: number;
+  readonly score?: ProductionCaseScoreSummary;
+};
+
+export const productionCaseResultTierLabels = {
+  not_started: "Ikke startet",
+  in_progress: "Under arbeid",
+  assistant: "Assistent",
+  producer: "Produsent",
+  auteur: "Auteur",
+} as const satisfies Record<ProductionCaseResultTier, string>;
 
 export function getProductionCaseResultTier(
   scoreSummary: ProductionCaseScoreSummary,
@@ -173,6 +189,36 @@ export function getProductionCaseScoreSummary(
     score,
     maxScore: missions.length * 2,
   };
+}
+
+export function getProductionCaseLibraryStatus(
+  missions: readonly ProductionCaseScoreMission[],
+  progress: Pick<ProductionCaseProgressEntry, "completedMissionIds" | "selectedChoicesByMissionId">,
+): ProductionCaseLibraryStatus | undefined {
+  const scoreSummary = getProductionCaseScoreSummary(missions, progress);
+  const completedCount = missions.filter((mission) => progress.completedMissionIds.includes(mission.id)).length;
+  const tier = getProductionCaseResultTier(scoreSummary, completedCount);
+  if (!tier) return undefined;
+
+  return {
+    label: productionCaseResultTierLabels[tier],
+    tier,
+    completedCount,
+    missionCount: missions.length,
+    ...(progress.selectedChoicesByMissionId && Object.keys(progress.selectedChoicesByMissionId).length > 0
+      ? { score: scoreSummary }
+      : {}),
+  };
+}
+
+export function productionCaseLibraryStatusMatchesFilter(
+  status: Pick<ProductionCaseLibraryStatus, "tier"> | undefined,
+  filter: ProductionCaseLibraryStatusFilter,
+): boolean {
+  if (filter === "all") return true;
+  if (!status) return false;
+  if (filter === "completed") return ["assistant", "producer", "auteur"].includes(status.tier);
+  return status.tier === filter;
 }
 
 export function getProductionCaseMissionScoreSummary(

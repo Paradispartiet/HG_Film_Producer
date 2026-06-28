@@ -3,10 +3,12 @@ import test from "node:test";
 import {
   countProductionCaseMatches,
   getProductionCaseMissionScore,
+  getProductionCaseLibraryStatus,
   getProductionCaseProgressEntry,
   getProductionCaseResultTier,
   getProductionCaseScoreSummary,
   parseProductionCaseProgress,
+  productionCaseLibraryStatusMatchesFilter,
   productionCaseProgressStorageKey,
   readProductionCaseProgress,
   resetProductionCaseScenarioProgress,
@@ -14,6 +16,18 @@ import {
   setProductionCaseMissionCompletion,
   writeProductionCaseProgress,
 } from "./productionCaseProgress.js";
+
+const libraryStatusMissions = Array.from({ length: 6 }, (_, index) => {
+  const missionNumber = index + 1;
+  return {
+    id: `mission-${missionNumber}`,
+    choices: [
+      { id: `choice-${missionNumber}-match`, quality: "match" },
+      { id: `choice-${missionNumber}-partial`, quality: "partial" },
+      { id: `choice-${missionNumber}-miss`, quality: "miss" },
+    ],
+  };
+});
 
 type MemoryStorage = {
   values: Map<string, string>;
@@ -346,4 +360,111 @@ test("production case result tier helper avoids forbidden copy", () => {
 
   assert.ok(!helperSource.includes("inspired by"));
   assert.ok(!helperSource.includes("in the spirit of"));
+});
+
+test("library status shows Ikke startet at 0/6 phases", () => {
+  assert.deepEqual(
+    getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds: [] }),
+    {
+      label: "Ikke startet",
+      tier: "not_started",
+      completedCount: 0,
+      missionCount: 6,
+    },
+  );
+});
+
+test("library status shows Under arbeid with partial phase completion", () => {
+  const status = getProductionCaseLibraryStatus(libraryStatusMissions, {
+    completedMissionIds: ["mission-1", "mission-2", "mission-3"],
+  });
+
+  assert.equal(status?.label, "Under arbeid");
+  assert.equal(status?.tier, "in_progress");
+  assert.equal(`${status?.completedCount}/${status?.missionCount} faser`, "3/6 faser");
+});
+
+test("library status shows Assistent, Produsent, and Auteur for completed cases", () => {
+  const completedMissionIds = libraryStatusMissions.map((mission) => mission.id);
+
+  assert.equal(
+    getProductionCaseLibraryStatus(libraryStatusMissions, {
+      completedMissionIds,
+      selectedChoicesByMissionId: Object.fromEntries(libraryStatusMissions.map((mission, index) => [mission.id, `choice-${index + 1}-miss`])),
+    })?.label,
+    "Assistent",
+  );
+  assert.equal(
+    getProductionCaseLibraryStatus(libraryStatusMissions, {
+      completedMissionIds,
+      selectedChoicesByMissionId: Object.fromEntries(libraryStatusMissions.map((mission, index) => [mission.id, `choice-${index + 1}-partial`])),
+    })?.label,
+    "Produsent",
+  );
+  assert.equal(
+    getProductionCaseLibraryStatus(libraryStatusMissions, {
+      completedMissionIds,
+      selectedChoicesByMissionId: Object.fromEntries(libraryStatusMissions.map((mission, index) => [mission.id, `choice-${index + 1}-match`])),
+    })?.label,
+    "Auteur",
+  );
+});
+
+test("library status shows 6/6 faser and Case-score when choices exist", () => {
+  const completedMissionIds = libraryStatusMissions.map((mission) => mission.id);
+  const status = getProductionCaseLibraryStatus(libraryStatusMissions, {
+    completedMissionIds,
+    selectedChoicesByMissionId: Object.fromEntries(libraryStatusMissions.map((mission, index) => [mission.id, `choice-${index + 1}-partial`])),
+  });
+
+  assert.equal(`${status?.completedCount}/${status?.missionCount} faser`, "6/6 faser");
+  assert.equal(`Case-score: ${status?.score?.score}/${status?.score?.maxScore}`, "Case-score: 6/12");
+});
+
+test("library status is absent for seed fallback mission lists", () => {
+  assert.equal(getProductionCaseLibraryStatus([], { completedMissionIds: [] }), undefined);
+});
+
+test("library status filters include the expected case cards", () => {
+  const notStarted = getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds: [] });
+  const inProgress = getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds: ["mission-1"] });
+  const completedMissionIds = libraryStatusMissions.map((mission) => mission.id);
+  const assistant = getProductionCaseLibraryStatus(libraryStatusMissions, {
+    completedMissionIds,
+    selectedChoicesByMissionId: Object.fromEntries(libraryStatusMissions.map((mission, index) => [mission.id, `choice-${index + 1}-miss`])),
+  });
+  const producer = getProductionCaseLibraryStatus(libraryStatusMissions, {
+    completedMissionIds,
+    selectedChoicesByMissionId: Object.fromEntries(libraryStatusMissions.map((mission, index) => [mission.id, `choice-${index + 1}-partial`])),
+  });
+  const auteur = getProductionCaseLibraryStatus(libraryStatusMissions, {
+    completedMissionIds,
+    selectedChoicesByMissionId: Object.fromEntries(libraryStatusMissions.map((mission, index) => [mission.id, `choice-${index + 1}-match`])),
+  });
+
+  assert.equal(productionCaseLibraryStatusMatchesFilter(notStarted, "not_started"), true);
+  assert.equal(productionCaseLibraryStatusMatchesFilter(inProgress, "in_progress"), true);
+  assert.equal(productionCaseLibraryStatusMatchesFilter(notStarted, "completed"), false);
+  assert.equal(productionCaseLibraryStatusMatchesFilter(inProgress, "completed"), false);
+  assert.equal(productionCaseLibraryStatusMatchesFilter(assistant, "completed"), true);
+  assert.equal(productionCaseLibraryStatusMatchesFilter(producer, "completed"), true);
+  assert.equal(productionCaseLibraryStatusMatchesFilter(auteur, "completed"), true);
+  assert.equal(productionCaseLibraryStatusMatchesFilter(undefined, "all"), true);
+  assert.equal(productionCaseLibraryStatusMatchesFilter(undefined, "not_started"), false);
+});
+
+test("library status copy avoids forbidden language", () => {
+  const copy = [
+    "Case-status",
+    "Ikke startet",
+    "Under arbeid",
+    "Fullført",
+    "Assistent",
+    "Produsent",
+    "Auteur",
+    "Case-score",
+  ].join(" ").toLowerCase();
+
+  assert.ok(!copy.includes("inspired by"));
+  assert.ok(!copy.includes("in the spirit of"));
 });
