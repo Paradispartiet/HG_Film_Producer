@@ -5,6 +5,7 @@ import {
   getProductionCaseAchievements,
   getProductionCaseCollectionSummary,
   getProductionCaseMissionScore,
+  getProductionCaseImprovementHint,
   getProductionCaseLibraryStatus,
   getProductionCaseNextAction,
   getProductionCaseProgressEntry,
@@ -19,6 +20,40 @@ import {
   setProductionCaseMissionCompletion,
   writeProductionCaseProgress,
 } from "./productionCaseProgress.js";
+
+
+const improvementHintMissions = [
+  {
+    id: "mission-a",
+    phase: "screenplay",
+    title: "Manusvalg",
+    choices: [
+      { id: "a-match", quality: "match" },
+      { id: "a-partial", quality: "partial" },
+      { id: "a-miss", quality: "miss" },
+    ],
+  },
+  {
+    id: "mission-b",
+    phase: "editing",
+    title: "Klipperytme",
+    choices: [
+      { id: "b-match", quality: "match" },
+      { id: "b-partial", quality: "partial" },
+      { id: "b-miss", quality: "miss" },
+    ],
+  },
+  {
+    id: "mission-c",
+    phase: "sound",
+    title: "Lydverden",
+    choices: [
+      { id: "c-match", quality: "match" },
+      { id: "c-partial", quality: "partial" },
+      { id: "c-miss", quality: "miss" },
+    ],
+  },
+] as const;
 
 const libraryStatusMissions = Array.from({ length: 6 }, (_, index) => {
   const missionNumber = index + 1;
@@ -230,6 +265,87 @@ test("reset clears selected choices for the current scenario", () => {
   assert.equal(getProductionCaseProgressEntry(resetState, "scenario_taxi_driver_1976").selectedChoicesByMissionId, undefined);
 });
 
+
+
+test("production case improvement hint is undefined for seed fallback and full match scores", () => {
+  assert.equal(getProductionCaseImprovementHint([], {}), undefined);
+  assert.equal(
+    getProductionCaseImprovementHint(improvementHintMissions, {
+      selectedChoicesByMissionId: {
+        "mission-a": "a-match",
+        "mission-b": "b-match",
+        "mission-c": "c-match",
+      },
+    }),
+    undefined,
+  );
+});
+
+test("production case improvement hint recommends choosing an unselected mission first", () => {
+  const hint = getProductionCaseImprovementHint(improvementHintMissions, {
+    selectedChoicesByMissionId: {
+      "mission-a": "a-miss",
+      "mission-c": "c-partial",
+    },
+  });
+
+  assert.deepEqual(hint, {
+    missionId: "mission-b",
+    phase: "editing",
+    title: "Klipperytme",
+    currentScore: 0,
+    maxScore: 2,
+    hintType: "choose",
+    label: "Velg produksjonsgrep",
+    description: "Denne fasen mangler et valgt produksjonsgrep.",
+  });
+});
+
+test("production case improvement hint recommends rethinking misses before partials", () => {
+  const hint = getProductionCaseImprovementHint(improvementHintMissions, {
+    selectedChoicesByMissionId: {
+      "mission-a": "a-partial",
+      "mission-b": "b-miss",
+      "mission-c": "c-partial",
+    },
+  });
+
+  assert.equal(hint?.hintType, "rethink");
+  assert.equal(hint?.label, "Revurder fasen");
+  assert.equal(hint?.missionId, "mission-b");
+  assert.equal(hint?.phase, "editing");
+  assert.equal(hint?.title, "Klipperytme");
+  assert.equal(hint?.currentScore, 0);
+});
+
+test("production case improvement hint recommends sharpening partial choices", () => {
+  const hint = getProductionCaseImprovementHint(improvementHintMissions, {
+    selectedChoicesByMissionId: {
+      "mission-a": "a-match",
+      "mission-b": "b-partial",
+      "mission-c": "c-match",
+    },
+  });
+
+  assert.equal(hint?.hintType, "sharpen");
+  assert.equal(hint?.label, "Spiss valget");
+  assert.equal(hint?.missionId, "mission-b");
+  assert.equal(hint?.currentScore, 1);
+});
+
+test("production case improvement hint copy avoids forbidden language", () => {
+  const hint = getProductionCaseImprovementHint(improvementHintMissions, {
+    selectedChoicesByMissionId: {
+      "mission-a": "a-match",
+      "mission-b": "b-partial",
+      "mission-c": "c-match",
+    },
+  });
+  const copy = [hint?.label, hint?.description, "Forbedre neste"].join(" ").toLowerCase();
+
+  assert.ok(!copy.includes("inspired by"));
+  assert.ok(!copy.includes("in the spirit of"));
+});
 
 test("production case mission score maps choice quality to points", () => {
   assert.equal(getProductionCaseMissionScore("match"), 2);

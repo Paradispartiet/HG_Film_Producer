@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import {
   getProductionCaseAchievements,
   getProductionCaseCollectionSummary,
+  getProductionCaseImprovementHint,
   getProductionCaseLibraryStatus,
   getProductionCaseNextAction,
   getProductionCaseProgressEntry,
@@ -54,6 +55,15 @@ export function FilmScenarioLibrary({
   const nextActionScenario = nextAction
     ? scenarios.find((scenario) => scenario.id === nextAction.scenarioId)
     : undefined;
+  const nextActionImprovementHint = useMemo(() => {
+    if (!nextActionScenario || !nextAction || !["improve", "master"].includes(nextAction.actionType)) return undefined;
+    const brief = resolveScenarioProductionBrief(nextActionScenario);
+    if (brief.briefType !== "production_case") return undefined;
+    return getProductionCaseImprovementHint(
+      createProductionCaseMissions(brief),
+      getProductionCaseProgressEntry(progressState, nextActionScenario.id),
+    );
+  }, [nextAction, nextActionScenario, progressState]);
   const filteredScenarioCards = useMemo(() => {
     return scenarioCards.filter(({ scenario, caseStatus }) => {
       const matchesQuery = !normalizedQuery || getScenarioSearchText(scenario).includes(normalizedQuery);
@@ -90,6 +100,7 @@ export function FilmScenarioLibrary({
       <ProductionCaseCollectionSummaryCard summary={collectionSummary} />
       <ProductionCaseAchievementsSection summary={collectionSummary} />
       <ProductionCaseNextActionCard
+        improvementHint={nextActionImprovementHint}
         nextAction={nextAction}
         onOpenScenario={nextActionScenario ? () => { onStartScenario?.(nextActionScenario); } : undefined}
       />
@@ -163,9 +174,11 @@ export function FilmScenarioLibrary({
 }
 
 function ProductionCaseNextActionCard({
+  improvementHint,
   nextAction,
   onOpenScenario,
 }: {
+  readonly improvementHint?: ReturnType<typeof getProductionCaseImprovementHint>;
   readonly nextAction: ProductionCaseNextAction | undefined;
   readonly onOpenScenario?: (() => void) | undefined;
 }) {
@@ -177,6 +190,7 @@ function ProductionCaseNextActionCard({
         <span>Neste handling</span>
         <strong>{nextAction.actionType === "complete" ? nextAction.label : `${nextAction.label}: ${nextAction.title}`}</strong>
         <small>{nextAction.description}</small>
+        {improvementHint ? <small>{formatNextActionImprovementHint(improvementHint)}</small> : null}
       </div>
       {nextAction.actionType !== "complete" ? (
         <button className="secondary-button" disabled={!onOpenScenario} onClick={onOpenScenario} type="button">
@@ -185,6 +199,11 @@ function ProductionCaseNextActionCard({
       ) : null}
     </section>
   );
+}
+
+function formatNextActionImprovementHint(hint: NonNullable<ReturnType<typeof getProductionCaseImprovementHint>>) {
+  if (hint.hintType === "sharpen") return `Spiss valget i ${hint.title}`;
+  return `Forbedre: ${hint.title}`;
 }
 
 function ProductionCaseCollectionSummaryCard({
