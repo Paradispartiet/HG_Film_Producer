@@ -6,6 +6,7 @@ import {
   getProductionCaseCollectionSummary,
   getProductionCaseMissionScore,
   getProductionCaseLibraryStatus,
+  getProductionCaseNextAction,
   getProductionCaseProgressEntry,
   getProductionCaseResultTier,
   getProductionCaseScoreSummary,
@@ -555,6 +556,87 @@ test("library status copy avoids forbidden language", () => {
     "Case-score",
     "Production cases",
     "Samlet Case-score",
+  ].join(" ").toLowerCase();
+
+  assert.ok(!copy.includes("inspired by"));
+  assert.ok(!copy.includes("in the spirit of"));
+});
+
+test("production case next action prioritizes in-progress cases first", () => {
+  const nextAction = getProductionCaseNextAction([
+    { scenarioId: "scenario-a", title: "A", label: "Ikke startet", tier: "not_started", completedCount: 0, missionCount: 6 },
+    { scenarioId: "scenario-b", title: "Taxi Driver", label: "Under arbeid", tier: "in_progress", completedCount: 3, missionCount: 6, score: { score: 5, maxScore: 12 } },
+    { scenarioId: "scenario-c", title: "C", label: "Assistent", tier: "assistant", completedCount: 6, missionCount: 6, score: { score: 4, maxScore: 12 } },
+  ]);
+
+  assert.deepEqual(nextAction, {
+    scenarioId: "scenario-b",
+    title: "Taxi Driver",
+    actionType: "continue",
+    label: "Fortsett case",
+    description: "3/6 faser fullført · Case-score 5/12",
+  });
+});
+
+test("production case next action recommends assistant result improvement when no case is in progress", () => {
+  const nextAction = getProductionCaseNextAction([
+    { scenarioId: "scenario-a", title: "A", label: "Ikke startet", tier: "not_started", completedCount: 0, missionCount: 6 },
+    { scenarioId: "scenario-b", title: "B", label: "Assistent", tier: "assistant", completedCount: 6, missionCount: 6, score: { score: 5, maxScore: 12 } },
+  ]);
+
+  assert.equal(nextAction?.actionType, "improve");
+  assert.equal(nextAction?.label, "Forbedre resultat");
+  assert.equal(nextAction?.scenarioId, "scenario-b");
+});
+
+test("production case next action recommends first not-started case when there is no progress or assistant result", () => {
+  const nextAction = getProductionCaseNextAction([
+    { scenarioId: "scenario-a", title: "A", label: "Produsent", tier: "producer", completedCount: 6, missionCount: 6, score: { score: 8, maxScore: 12 } },
+    { scenarioId: "scenario-b", title: "B", label: "Ikke startet", tier: "not_started", completedCount: 0, missionCount: 6 },
+  ]);
+
+  assert.equal(nextAction?.actionType, "start");
+  assert.equal(nextAction?.label, "Start nytt case");
+  assert.equal(nextAction?.scenarioId, "scenario-b");
+});
+
+test("production case next action recommends producer mastery when all cases are completed but not all are auteur", () => {
+  const nextAction = getProductionCaseNextAction([
+    { scenarioId: "scenario-a", title: "A", label: "Auteur", tier: "auteur", completedCount: 6, missionCount: 6, score: { score: 12, maxScore: 12 } },
+    { scenarioId: "scenario-b", title: "B", label: "Produsent", tier: "producer", completedCount: 6, missionCount: 6, score: { score: 8, maxScore: 12 } },
+  ]);
+
+  assert.equal(nextAction?.actionType, "master");
+  assert.equal(nextAction?.label, "Jakt Auteur");
+  assert.equal(nextAction?.scenarioId, "scenario-b");
+});
+
+test("production case next action reports catalogue completion when all cases are auteur", () => {
+  const nextAction = getProductionCaseNextAction([
+    { scenarioId: "scenario-a", title: "A", label: "Auteur", tier: "auteur", completedCount: 6, missionCount: 6, score: { score: 12, maxScore: 12 } },
+  ]);
+
+  assert.deepEqual(nextAction, {
+    scenarioId: "scenario-a",
+    title: "A",
+    actionType: "complete",
+    label: "Katalog mestret",
+    description: "Alle production cases er fullført på høyeste nivå.",
+  });
+});
+
+test("production case next action excludes seed fallback and avoids forbidden language", () => {
+  const nextAction = getProductionCaseNextAction([undefined]);
+  assert.equal(nextAction, undefined);
+
+  const copy = [
+    "Neste handling",
+    "Fortsett case",
+    "Forbedre resultat",
+    "Start nytt case",
+    "Jakt Auteur",
+    "Katalog mestret",
+    "Åpne case",
   ].join(" ").toLowerCase();
 
   assert.ok(!copy.includes("inspired by"));

@@ -3,11 +3,14 @@ import {
   getProductionCaseAchievements,
   getProductionCaseCollectionSummary,
   getProductionCaseLibraryStatus,
+  getProductionCaseNextAction,
   getProductionCaseProgressEntry,
   productionCaseLibraryStatusMatchesFilter,
   readProductionCaseProgress,
   type ProductionCaseLibraryStatus,
   type ProductionCaseLibraryStatusFilter,
+  type ProductionCaseNextAction,
+  type ProductionCaseNextActionStatus,
 } from "../../core/productionCaseProgress";
 import {
   getClassicFilmScenarios,
@@ -45,6 +48,12 @@ export function FilmScenarioLibrary({
   const collectionSummary = useMemo(() => getProductionCaseCollectionSummary(
     scenarioCards.map(({ caseStatus }) => caseStatus),
   ), [scenarioCards]);
+  const nextAction = useMemo(() => getProductionCaseNextAction(
+    scenarioCards.map(({ caseStatus }) => caseStatus),
+  ), [scenarioCards]);
+  const nextActionScenario = nextAction
+    ? scenarios.find((scenario) => scenario.id === nextAction.scenarioId)
+    : undefined;
   const filteredScenarioCards = useMemo(() => {
     return scenarioCards.filter(({ scenario, caseStatus }) => {
       const matchesQuery = !normalizedQuery || getScenarioSearchText(scenario).includes(normalizedQuery);
@@ -80,6 +89,10 @@ export function FilmScenarioLibrary({
       </div>
       <ProductionCaseCollectionSummaryCard summary={collectionSummary} />
       <ProductionCaseAchievementsSection summary={collectionSummary} />
+      <ProductionCaseNextActionCard
+        nextAction={nextAction}
+        onOpenScenario={nextActionScenario ? () => { onStartScenario?.(nextActionScenario); } : undefined}
+      />
       <div className="scenario-library-controls">
         <label className="scenario-search">
           <span>Search by title, director, or genre</span>
@@ -146,6 +159,31 @@ export function FilmScenarioLibrary({
         ))}
       </div>
     </main>
+  );
+}
+
+function ProductionCaseNextActionCard({
+  nextAction,
+  onOpenScenario,
+}: {
+  readonly nextAction: ProductionCaseNextAction | undefined;
+  readonly onOpenScenario?: (() => void) | undefined;
+}) {
+  if (!nextAction) return null;
+
+  return (
+    <section className="production-case-next-action" aria-label="Neste handling">
+      <div>
+        <span>Neste handling</span>
+        <strong>{nextAction.actionType === "complete" ? nextAction.label : `${nextAction.label}: ${nextAction.title}`}</strong>
+        <small>{nextAction.description}</small>
+      </div>
+      {nextAction.actionType !== "complete" ? (
+        <button className="secondary-button" disabled={!onOpenScenario} onClick={onOpenScenario} type="button">
+          Åpne case
+        </button>
+      ) : null}
+    </section>
   );
 }
 
@@ -239,13 +277,19 @@ function getScenarioSearchText(scenario: FilmScenarioSeed) {
 export function getScenarioCaseStatus(
   scenario: FilmScenarioSeed,
   progressState: Parameters<typeof getProductionCaseProgressEntry>[0],
-): ProductionCaseLibraryStatus | undefined {
+): ProductionCaseNextActionStatus | undefined {
   const brief = resolveScenarioProductionBrief(scenario);
   if (brief.briefType !== "production_case") return undefined;
 
   const missions = createProductionCaseMissions(brief);
   const progressEntry = getProductionCaseProgressEntry(progressState, scenario.id);
-  return getProductionCaseLibraryStatus(missions, progressEntry);
+  const status = getProductionCaseLibraryStatus(missions, progressEntry);
+  if (!status) return undefined;
+  return {
+    ...status,
+    scenarioId: scenario.id,
+    title: scenario.film.title,
+  };
 }
 
 function getScenarioCardDescription(scenario: FilmScenarioSeed) {
