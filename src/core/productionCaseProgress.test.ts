@@ -8,6 +8,7 @@ import {
   getProductionCaseImprovementHint,
   getProductionCaseLibraryStatus,
   getProductionCaseNextAction,
+  getProductionCaseReport,
   getProductionCaseProgressEntry,
   getProductionCaseResultTier,
   getProductionCaseScoreSummary,
@@ -342,6 +343,132 @@ test("production case improvement hint copy avoids forbidden language", () => {
     },
   });
   const copy = [hint?.label, hint?.description, "Forbedre neste"].join(" ").toLowerCase();
+
+  assert.ok(!copy.includes("inspired by"));
+  assert.ok(!copy.includes("in the spirit of"));
+});
+
+test("production case report is undefined for seed fallback or missing missions", () => {
+  assert.equal(getProductionCaseReport([], { completedMissionIds: [] }), undefined);
+});
+
+test("production case report summarizes score, matches, weak phases, and improvement hint", () => {
+  const missions = [
+    {
+      id: "mission-a",
+      phase: "screenplay",
+      title: "Manusvalg",
+      choices: [
+        { id: "a-match", label: "Presist manusgrep", quality: "match" },
+        { id: "a-partial", label: "Delvis manusgrep", quality: "partial" },
+      ],
+    },
+    {
+      id: "mission-b",
+      phase: "cinematography",
+      title: "Fotovalg",
+      choices: [
+        { id: "b-miss", label: "Feil fotogrep", quality: "miss" },
+        { id: "b-match", label: "Presist fotogrep", quality: "match" },
+      ],
+    },
+    {
+      id: "mission-c",
+      phase: "editing",
+      title: "Klippvalg",
+      choices: [
+        { id: "c-partial", label: "Delvis klippgrep", quality: "partial" },
+        { id: "c-match", label: "Presist klippgrep", quality: "match" },
+      ],
+    },
+    {
+      id: "mission-d",
+      phase: "sound",
+      title: "Lydvalg",
+      choices: [
+        { id: "d-match", label: "Presist lydgrep", quality: "match" },
+      ],
+    },
+    {
+      id: "mission-e",
+      phase: "reflection",
+      title: "Refleksjon",
+      choices: [
+        { id: "e-miss", label: "Feil refleksjon", quality: "miss" },
+      ],
+    },
+  ] as const;
+
+  const report = getProductionCaseReport(missions, {
+    completedMissionIds: ["mission-a", "mission-b"],
+    selectedChoicesByMissionId: {
+      "mission-a": "a-match",
+      "mission-b": "b-miss",
+      "mission-c": "c-partial",
+      "mission-e": "e-miss",
+    },
+  });
+
+  assert.equal(report?.completedCount, 2);
+  assert.equal(report?.totalMissions, 5);
+  assert.equal(report?.score, 3);
+  assert.equal(report?.maxScore, 10);
+  assert.equal(report?.resultTier, "in_progress");
+  assert.deepEqual(report?.matchedPhases, [{
+    missionId: "mission-a",
+    phase: "screenplay",
+    title: "Manusvalg",
+    selectedChoiceLabel: "Presist manusgrep",
+  }]);
+  assert.deepEqual(report?.weakPhases.map((phase) => phase.weakness), ["miss", "miss", "partial"]);
+  assert.equal(report?.weakPhases.length, 3);
+  assert.equal(report?.improvementHint?.missionId, "mission-d");
+  assert.equal(report?.improvementHint?.hintType, "choose");
+});
+
+test("production case report has no weak phases when every choice is a match", () => {
+  const missions = improvementHintMissions.map((mission) => ({
+    ...mission,
+    choices: mission.choices.map((choice) => ({ ...choice, label: choice.id })),
+  }));
+  const report = getProductionCaseReport(missions, {
+    completedMissionIds: missions.map((mission) => mission.id),
+    selectedChoicesByMissionId: { "mission-a": "a-match", "mission-b": "b-match", "mission-c": "c-match" },
+  });
+
+  assert.deepEqual(report?.weakPhases, []);
+  assert.equal(report?.resultTier, "auteur");
+});
+
+test("production case report learning summary changes for low, medium, and high scores", () => {
+  const missions = improvementHintMissions.map((mission) => ({
+    ...mission,
+    choices: mission.choices.map((choice) => ({ ...choice, label: choice.id })),
+  }));
+  const completedMissionIds = missions.map((mission) => mission.id);
+  const low = getProductionCaseReport(missions, { completedMissionIds, selectedChoicesByMissionId: { "mission-a": "a-miss", "mission-b": "b-miss", "mission-c": "c-partial" } });
+  const medium = getProductionCaseReport(missions, { completedMissionIds, selectedChoicesByMissionId: { "mission-a": "a-match", "mission-b": "b-partial", "mission-c": "c-partial" } });
+  const high = getProductionCaseReport(missions, { completedMissionIds, selectedChoicesByMissionId: { "mission-a": "a-match", "mission-b": "b-match", "mission-c": "c-match" } });
+
+  assert.notEqual(low?.learningSummary, medium?.learningSummary);
+  assert.notEqual(medium?.learningSummary, high?.learningSummary);
+  assert.match(high?.learningSummary ?? "", /produksjonslogikk/);
+});
+
+test("production case report copy avoids forbidden language", () => {
+  const report = getProductionCaseReport(improvementHintMissions.map((mission) => ({
+    ...mission,
+    choices: mission.choices.map((choice) => ({ ...choice, label: choice.id })),
+  })), { completedMissionIds: [] });
+  const copy = [
+    "Case report",
+    "Case report under arbeid",
+    "Sterkeste treff",
+    "Bør forbedres",
+    "Ingen svake faser registrert",
+    report?.learningSummary,
+    report?.improvementHint?.description,
+  ].join(" ").toLowerCase();
 
   assert.ok(!copy.includes("inspired by"));
   assert.ok(!copy.includes("in the spirit of"));

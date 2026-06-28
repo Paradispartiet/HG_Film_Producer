@@ -146,6 +146,44 @@ export type ProductionCaseImprovementHintMission = ProductionCaseScoreMission & 
   readonly title: string;
 };
 
+export type ProductionCaseReportMission = {
+  readonly id: string;
+  readonly phase: string;
+  readonly title: string;
+  readonly choices: readonly {
+    readonly id: string;
+    readonly label: string;
+    readonly quality: ProductionCaseMissionScoreChoiceQuality | string;
+  }[];
+};
+
+export type ProductionCaseReportMatchedPhase = {
+  readonly missionId: string;
+  readonly phase: string;
+  readonly title: string;
+  readonly selectedChoiceLabel: string;
+};
+
+export type ProductionCaseReportWeakPhase = {
+  readonly missionId: string;
+  readonly phase: string;
+  readonly title: string;
+  readonly weakness: "miss" | "partial" | "missing";
+  readonly selectedChoiceLabel?: string;
+};
+
+export type ProductionCaseReport = {
+  readonly completedCount: number;
+  readonly totalMissions: number;
+  readonly score: number;
+  readonly maxScore: number;
+  readonly resultTier: ProductionCaseResultTier;
+  readonly matchedPhases: readonly ProductionCaseReportMatchedPhase[];
+  readonly weakPhases: readonly ProductionCaseReportWeakPhase[];
+  readonly improvementHint: ProductionCaseImprovementHint | undefined;
+  readonly learningSummary: string;
+};
+
 function createProductionCaseImprovementHint(
   mission: ProductionCaseImprovementHintMission,
   currentScore: number,
@@ -200,6 +238,97 @@ export function getProductionCaseImprovementHint(
   if (partialMission) return createProductionCaseImprovementHint(partialMission.mission, partialMission.score, "sharpen");
 
   return undefined;
+}
+
+function getProductionCaseLearningSummary(
+  missions: readonly ProductionCaseReportMission[],
+  matchCount: number,
+  resultTier: ProductionCaseResultTier,
+): string {
+  const missingCount = missions.length - matchCount;
+  const weakFocus = missions
+    .filter((mission) => mission.phase !== "case_orientation" && mission.phase !== "reflection")
+    .slice(0, 3)
+    .map((mission) => mission.phase)
+    .join("/");
+
+  if (resultTier === "not_started" || resultTier === "in_progress") {
+    return missingCount > 0
+      ? "Du har startet å kartlegge produksjonslogikken, men flere faser mangler valg."
+      : "Du kartlegger produksjonslogikken og kan fullføre fasene for å låse resultatet.";
+  }
+
+  if (resultTier === "assistant") {
+    return weakFocus
+      ? `Du har noen riktige produksjonsvalg, men caset må spisses i ${weakFocus}.`
+      : "Du har noen riktige produksjonsvalg, men caset må spisses i flere faser.";
+  }
+
+  if (resultTier === "producer") {
+    return weakFocus
+      ? `Du forstår flere sentrale valg, men caset kan spisses i ${weakFocus}.`
+      : "Du forstår flere sentrale produksjonsvalg, men caset kan spisses videre.";
+  }
+
+  return "Du matcher filmens produksjonslogikk sterkt på tvers av fasene.";
+}
+
+export function getProductionCaseReport(
+  missions: readonly ProductionCaseReportMission[],
+  progress: Pick<ProductionCaseProgressEntry, "completedMissionIds" | "selectedChoicesByMissionId">,
+): ProductionCaseReport | undefined {
+  if (missions.length === 0) return undefined;
+
+  const selectedChoicesByMissionId = progress.selectedChoicesByMissionId ?? {};
+  const completedCount = missions.filter((mission) => progress.completedMissionIds.includes(mission.id)).length;
+  const scoreSummary = getProductionCaseScoreSummary(missions, progress);
+  const resultTier = getProductionCaseResultTier(scoreSummary, completedCount);
+  if (!resultTier) return undefined;
+
+  const matchedPhases = missions.flatMap<ProductionCaseReportMatchedPhase>((mission) => {
+    const selectedChoiceId = selectedChoicesByMissionId[mission.id];
+    const selectedChoice = mission.choices.find((choice) => choice.id === selectedChoiceId);
+    if (selectedChoice?.quality !== "match") return [];
+
+    return [{
+      missionId: mission.id,
+      phase: mission.phase,
+      title: mission.title,
+      selectedChoiceLabel: selectedChoice.label,
+    }];
+  });
+
+  const weaknessRank = { miss: 0, partial: 1, missing: 2 } as const;
+  const weakPhases = missions
+    .flatMap<ProductionCaseReportWeakPhase>((mission) => {
+      const selectedChoiceId = selectedChoicesByMissionId[mission.id];
+      const selectedChoice = mission.choices.find((choice) => choice.id === selectedChoiceId);
+      if (!selectedChoice) {
+        return [{ missionId: mission.id, phase: mission.phase, title: mission.title, weakness: "missing" }];
+      }
+      if (selectedChoice.quality !== "partial" && selectedChoice.quality !== "miss") return [];
+      return [{
+        missionId: mission.id,
+        phase: mission.phase,
+        title: mission.title,
+        weakness: selectedChoice.quality,
+        selectedChoiceLabel: selectedChoice.label,
+      }];
+    })
+    .sort((a, b) => weaknessRank[a.weakness] - weaknessRank[b.weakness])
+    .slice(0, 3);
+
+  return {
+    completedCount,
+    totalMissions: missions.length,
+    score: scoreSummary.score,
+    maxScore: scoreSummary.maxScore,
+    resultTier,
+    matchedPhases,
+    weakPhases,
+    improvementHint: getProductionCaseImprovementHint(missions, progress),
+    learningSummary: getProductionCaseLearningSummary(missions, matchedPhases.length, resultTier),
+  };
 }
 
 export type ProductionCaseScoreSummary = {
