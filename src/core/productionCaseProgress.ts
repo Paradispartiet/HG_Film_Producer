@@ -154,6 +154,14 @@ export type ProductionCaseCollectionSummary = {
   readonly maxScore: number;
 };
 
+export type ProductionCaseAchievement = {
+  readonly id: string;
+  readonly label: string;
+  readonly description: string;
+  readonly unlocked: boolean;
+  readonly progressLabel: string;
+};
+
 export const productionCaseResultTierLabels = {
   not_started: "Ikke startet",
   in_progress: "Under arbeid",
@@ -252,6 +260,33 @@ export function getProductionCaseCollectionSummary(
     auteurCount: 0,
     totalScore: 0,
     maxScore: 0,
+  });
+}
+
+const productionCaseAchievementDefinitions = [
+  { id: "first-case", label: "Første case", description: "Fullfør én production case.", target: 1, getValue: (summary: ProductionCaseCollectionSummary) => summary.completedCount },
+  { id: "five-cases", label: "Fem cases", description: "Fullfør fem production cases.", target: 5, getValue: (summary: ProductionCaseCollectionSummary) => summary.completedCount },
+  { id: "ten-cases", label: "Ti cases", description: "Fullfør ti production cases.", target: 10, getValue: (summary: ProductionCaseCollectionSummary) => summary.completedCount },
+  { id: "first-producer", label: "Første Produsent", description: "Oppnå Produsent eller Auteur i én production case.", target: 1, getValue: (summary: ProductionCaseCollectionSummary) => summary.producerCount + summary.auteurCount },
+  { id: "first-auteur", label: "Første Auteur", description: "Oppnå Auteur i én production case.", target: 1, getValue: (summary: ProductionCaseCollectionSummary) => summary.auteurCount },
+  { id: "auteur-series", label: "Auteur-serie", description: "Oppnå Auteur i fem production cases.", target: 5, getValue: (summary: ProductionCaseCollectionSummary) => summary.auteurCount },
+  { id: "half-catalogue", label: "Halv katalog", description: "Fullfør 80 production cases.", target: 80, getValue: (summary: ProductionCaseCollectionSummary) => summary.completedCount },
+  { id: "full-catalogue", label: "Hele katalogen", description: "Fullfør alle 161 production cases.", target: 161, getValue: (summary: ProductionCaseCollectionSummary) => summary.completedCount },
+] as const;
+
+export function getProductionCaseAchievements(
+  summary: ProductionCaseCollectionSummary,
+): readonly ProductionCaseAchievement[] {
+  return productionCaseAchievementDefinitions.map((achievement) => {
+    const value = Math.min(achievement.getValue(summary), achievement.target);
+
+    return {
+      id: achievement.id,
+      label: achievement.label,
+      description: achievement.description,
+      unlocked: value >= achievement.target,
+      progressLabel: `${value}/${achievement.target}`,
+    };
   });
 }
 
