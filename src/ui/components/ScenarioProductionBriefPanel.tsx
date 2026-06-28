@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
+  getProductionCaseImprovementHint,
   getProductionCaseMissionScoreSummary,
   getProductionCaseProgressEntry,
   getProductionCaseResultTier,
@@ -100,6 +101,7 @@ function ProductionCaseMissionFlow({
   const allComplete = missions.length > 0 && completedCount === missions.length;
   const caseScore = getProductionCaseScoreSummary(missions, progressEntry);
   const resultTier = getProductionCaseResultTier(caseScore, completedCount);
+  const improvementHint = getProductionCaseImprovementHint(missions, progressEntry);
 
   function updateProgress(nextState: ProductionCaseProgressState) {
     setProgressState(nextState);
@@ -149,6 +151,7 @@ function ProductionCaseMissionFlow({
         </button>
       </div>
       {resultTier ? <ProductionCaseResultBox tier={resultTier} /> : null}
+      {improvementHint ? <ProductionCaseImprovementHintBox hint={improvementHint} /> : null}
       {missions.map((mission, index) => {
         const isComplete = completedMissionIdSet.has(mission.id);
         const selectedChoiceId = selectedChoicesByMissionId[mission.id];
@@ -206,6 +209,21 @@ function ProductionCaseMissionFlow({
         );
       })}
     </div>
+  );
+}
+
+function ProductionCaseImprovementHintBox({
+  hint,
+}: {
+  readonly hint: NonNullable<ReturnType<typeof getProductionCaseImprovementHint>>;
+}) {
+  return (
+    <section className={`scenario-production-improvement scenario-production-improvement--${hint.hintType}`} aria-label="Forbedre neste">
+      <span className="eyebrow">Forbedre neste</span>
+      <strong>{hint.label}: {hint.title}</strong>
+      <small>Fase-score: {hint.currentScore}/{hint.maxScore}</small>
+      <p>{hint.description}</p>
+    </section>
   );
 }
 

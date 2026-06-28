@@ -127,6 +127,81 @@ export type ProductionCaseScoreMission = {
   }[];
 };
 
+
+export type ProductionCaseImprovementHintType = "choose" | "rethink" | "sharpen";
+
+export type ProductionCaseImprovementHint = {
+  readonly missionId: string;
+  readonly phase: string;
+  readonly title: string;
+  readonly currentScore: number;
+  readonly maxScore: number;
+  readonly hintType: ProductionCaseImprovementHintType;
+  readonly label: string;
+  readonly description: string;
+};
+
+export type ProductionCaseImprovementHintMission = ProductionCaseScoreMission & {
+  readonly phase: string;
+  readonly title: string;
+};
+
+function createProductionCaseImprovementHint(
+  mission: ProductionCaseImprovementHintMission,
+  currentScore: number,
+  hintType: ProductionCaseImprovementHintType,
+): ProductionCaseImprovementHint {
+  const copy = {
+    choose: {
+      label: "Velg produksjonsgrep",
+      description: "Denne fasen mangler et valgt produksjonsgrep.",
+    },
+    rethink: {
+      label: "Revurder fasen",
+      description: "Valget ditt er mindre presist for dette caset. Se på target-listen og velg grepet som best matcher filmens produksjonslogikk.",
+    },
+    sharpen: {
+      label: "Spiss valget",
+      description: "Valget ditt er delvis relevant. Spiss fasen ved å velge grepet som ligger nærmest filmens konkrete uttrykk.",
+    },
+  } as const satisfies Record<ProductionCaseImprovementHintType, { readonly label: string; readonly description: string }>;
+
+  return {
+    missionId: mission.id,
+    phase: mission.phase,
+    title: mission.title,
+    currentScore,
+    maxScore: 2,
+    hintType,
+    ...copy[hintType],
+  };
+}
+
+export function getProductionCaseImprovementHint(
+  missions: readonly ProductionCaseImprovementHintMission[],
+  progress: Pick<ProductionCaseProgressEntry, "selectedChoicesByMissionId">,
+): ProductionCaseImprovementHint | undefined {
+  if (missions.length === 0) return undefined;
+
+  const selectedChoicesByMissionId = progress.selectedChoicesByMissionId ?? {};
+  const unselectedMission = missions.find((mission) => !selectedChoicesByMissionId[mission.id]);
+  if (unselectedMission) return createProductionCaseImprovementHint(unselectedMission, 0, "choose");
+
+  const missionScores = missions.map((mission) => {
+    const selectedChoiceId = selectedChoicesByMissionId[mission.id];
+    const selectedChoice = mission.choices.find((choice) => choice.id === selectedChoiceId);
+    return { mission, score: getProductionCaseMissionScore(selectedChoice?.quality) };
+  });
+
+  const missedMission = missionScores.find(({ score }) => score === 0);
+  if (missedMission) return createProductionCaseImprovementHint(missedMission.mission, missedMission.score, "rethink");
+
+  const partialMission = missionScores.find(({ score }) => score === 1);
+  if (partialMission) return createProductionCaseImprovementHint(partialMission.mission, partialMission.score, "sharpen");
+
+  return undefined;
+}
+
 export type ProductionCaseScoreSummary = {
   readonly score: number;
   readonly maxScore: number;
