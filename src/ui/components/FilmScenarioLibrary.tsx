@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
+  getProductionCaseAchievements,
   getProductionCaseCollectionSummary,
   getProductionCaseLibraryStatus,
   getProductionCaseProgressEntry,
@@ -78,6 +79,7 @@ export function FilmScenarioLibrary({
         </p>
       </div>
       <ProductionCaseCollectionSummaryCard summary={collectionSummary} />
+      <ProductionCaseAchievementsSection summary={collectionSummary} />
       <div className="scenario-library-controls">
         <label className="scenario-search">
           <span>Search by title, director, or genre</span>
@@ -177,6 +179,35 @@ function ProductionCaseCollectionSummaryCard({
       <div>
         <span>Samlet Case-score</span>
         <strong>{summary.totalScore}/{summary.maxScore}</strong>
+      </div>
+    </section>
+  );
+}
+
+function ProductionCaseAchievementsSection({
+  summary,
+}: {
+  readonly summary: ReturnType<typeof getProductionCaseCollectionSummary>;
+}) {
+  const achievements = getProductionCaseAchievements(summary);
+
+  return (
+    <section className="production-case-achievements" aria-label="Merker">
+      <div className="production-case-achievements-heading">
+        <span>Merker</span>
+        <small>{achievements.filter((achievement) => achievement.unlocked).length}/{achievements.length} låst opp</small>
+      </div>
+      <div className="production-case-achievement-list">
+        {achievements.map((achievement) => (
+          <article
+            className={achievement.unlocked ? "production-case-achievement unlocked" : "production-case-achievement"}
+            key={achievement.id}
+          >
+            <strong>{achievement.label}</strong>
+            <span>{achievement.progressLabel}</span>
+            <small>{achievement.description}</small>
+          </article>
+        ))}
       </div>
     </section>
   );

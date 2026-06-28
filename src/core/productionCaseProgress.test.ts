@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   countProductionCaseMatches,
+  getProductionCaseAchievements,
   getProductionCaseCollectionSummary,
   getProductionCaseMissionScore,
   getProductionCaseLibraryStatus,
@@ -29,6 +30,31 @@ const libraryStatusMissions = Array.from({ length: 6 }, (_, index) => {
     ],
   };
 });
+
+
+function createCollectionSummary(overrides: Partial<ReturnType<typeof getProductionCaseCollectionSummary>> = {}) {
+  return {
+    totalCases: 161,
+    notStartedCount: 161,
+    inProgressCount: 0,
+    completedCount: 0,
+    assistantCount: 0,
+    producerCount: 0,
+    auteurCount: 0,
+    totalScore: 0,
+    maxScore: 1932,
+    ...overrides,
+  };
+}
+
+function achievementByLabel(
+  summary: ReturnType<typeof getProductionCaseCollectionSummary>,
+  label: string,
+) {
+  const achievement = getProductionCaseAchievements(summary).find((item) => item.label === label);
+  assert.ok(achievement, `Missing achievement ${label}`);
+  return achievement;
+}
 
 type MemoryStorage = {
   values: Map<string, string>;
@@ -457,6 +483,36 @@ test("production case collection summary counts statuses, tiers, and scores", ()
       maxScore: 60,
     },
   );
+});
+
+test("production case achievements unlock from collection summary thresholds", () => {
+  const emptyAchievements = getProductionCaseAchievements(createCollectionSummary());
+
+  assert.equal(emptyAchievements.length, 8);
+  assert.equal(achievementByLabel(createCollectionSummary(), "Første case").unlocked, false);
+  assert.equal(achievementByLabel(createCollectionSummary(), "Første case").progressLabel, "0/1");
+  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 1 }), "Første case").unlocked, true);
+  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 1 }), "Første case").progressLabel, "1/1");
+  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 3 }), "Fem cases").progressLabel, "3/5");
+  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 5 }), "Fem cases").unlocked, true);
+  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 10 }), "Ti cases").unlocked, true);
+  assert.equal(achievementByLabel(createCollectionSummary({ producerCount: 1 }), "Første Produsent").unlocked, true);
+  assert.equal(achievementByLabel(createCollectionSummary({ auteurCount: 1 }), "Første Produsent").unlocked, true);
+  assert.equal(achievementByLabel(createCollectionSummary({ auteurCount: 1 }), "Første Auteur").unlocked, true);
+  assert.equal(achievementByLabel(createCollectionSummary({ auteurCount: 5 }), "Auteur-serie").unlocked, true);
+  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 12 }), "Halv katalog").progressLabel, "12/80");
+  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 80 }), "Halv katalog").unlocked, true);
+  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 161 }), "Hele katalogen").unlocked, true);
+});
+
+test("production case achievement copy avoids forbidden language", () => {
+  const copy = getProductionCaseAchievements(createCollectionSummary())
+    .flatMap((achievement) => [achievement.label, achievement.description, achievement.progressLabel])
+    .join(" ")
+    .toLowerCase();
+
+  assert.ok(!copy.includes("inspired by"));
+  assert.ok(!copy.includes("in the spirit of"));
 });
 
 test("library status filters include the expected case cards", () => {
