@@ -1172,6 +1172,10 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .scenario-mission-card--complete .scenario-mission-card-header span { color: var(--positive); }
 .scenario-mission-card button { margin-top: 10px; padding: 8px 10px; }
 .scenario-mission-card button:hover, .scenario-mission-summary button:hover { border-color: var(--accent); color: var(--text); }
+.production-case-summary-card { display: grid; grid-template-columns: repeat(6, minmax(110px, 1fr)); gap: 8px; padding: 12px; border: 1px solid rgba(214, 174, 98, 0.24); background: linear-gradient(145deg, rgba(21, 25, 31, 0.84), rgba(12, 15, 19, 0.92)); }
+.production-case-summary-card div { display: grid; gap: 4px; min-width: 0; padding: 8px 10px; border: 1px solid rgba(255, 255, 255, 0.06); background: rgba(6, 8, 11, 0.35); }
+.production-case-summary-card span { color: var(--accent); font-size: 8px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.production-case-summary-card strong { color: var(--text); font-size: 13px; }
 .scenario-library-controls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(180px, 240px); gap: 12px; align-items: stretch; }
 .scenario-status-filter { display: grid; gap: 8px; padding: 18px; border: 1px solid var(--line); background: linear-gradient(145deg, rgba(21, 25, 31, 0.94), rgba(12, 15, 19, 0.98)); }
 .scenario-status-filter span { color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
@@ -1183,5 +1187,6 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .scenario-case-status small { color: var(--muted-light); font-size: 11px; }
 
 @media (max-width: 760px) {
+  .production-case-summary-card { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .scenario-library-controls { grid-template-columns: 1fr; }
 }

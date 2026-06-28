@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
+  getProductionCaseCollectionSummary,
   getProductionCaseLibraryStatus,
   getProductionCaseProgressEntry,
   productionCaseLibraryStatusMatchesFilter,
@@ -40,6 +41,9 @@ export function FilmScenarioLibrary({
       caseStatus: getScenarioCaseStatus(scenario, progressState),
     }));
   }, [progressState, scenarios]);
+  const collectionSummary = useMemo(() => getProductionCaseCollectionSummary(
+    scenarioCards.map(({ caseStatus }) => caseStatus),
+  ), [scenarioCards]);
   const filteredScenarioCards = useMemo(() => {
     return scenarioCards.filter(({ scenario, caseStatus }) => {
       const matchesQuery = !normalizedQuery || getScenarioSearchText(scenario).includes(normalizedQuery);
@@ -73,6 +77,7 @@ export function FilmScenarioLibrary({
           choices behind the specific film.
         </p>
       </div>
+      <ProductionCaseCollectionSummaryCard summary={collectionSummary} />
       <div className="scenario-library-controls">
         <label className="scenario-search">
           <span>Search by title, director, or genre</span>
@@ -139,6 +144,41 @@ export function FilmScenarioLibrary({
         ))}
       </div>
     </main>
+  );
+}
+
+function ProductionCaseCollectionSummaryCard({
+  summary,
+}: {
+  readonly summary: ReturnType<typeof getProductionCaseCollectionSummary>;
+}) {
+  return (
+    <section className="production-case-summary-card" aria-label="Production case collection summary">
+      <div>
+        <span>Production cases</span>
+        <strong>{summary.totalCases}</strong>
+      </div>
+      <div>
+        <span>Fullført</span>
+        <strong>{summary.completedCount}</strong>
+      </div>
+      <div>
+        <span>Under arbeid</span>
+        <strong>{summary.inProgressCount}</strong>
+      </div>
+      <div>
+        <span>Ikke startet</span>
+        <strong>{summary.notStartedCount}</strong>
+      </div>
+      <div>
+        <span>Auteur</span>
+        <strong>{summary.auteurCount}</strong>
+      </div>
+      <div>
+        <span>Samlet Case-score</span>
+        <strong>{summary.totalScore}/{summary.maxScore}</strong>
+      </div>
+    </section>
   );
 }
 

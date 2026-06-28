@@ -142,6 +142,18 @@ export type ProductionCaseLibraryStatus = {
   readonly score?: ProductionCaseScoreSummary;
 };
 
+export type ProductionCaseCollectionSummary = {
+  readonly totalCases: number;
+  readonly notStartedCount: number;
+  readonly inProgressCount: number;
+  readonly completedCount: number;
+  readonly assistantCount: number;
+  readonly producerCount: number;
+  readonly auteurCount: number;
+  readonly totalScore: number;
+  readonly maxScore: number;
+};
+
 export const productionCaseResultTierLabels = {
   not_started: "Ikke startet",
   in_progress: "Under arbeid",
@@ -209,6 +221,38 @@ export function getProductionCaseLibraryStatus(
       ? { score: scoreSummary }
       : {}),
   };
+}
+
+export function getProductionCaseCollectionSummary(
+  statuses: readonly (ProductionCaseLibraryStatus | undefined)[],
+): ProductionCaseCollectionSummary {
+  return statuses.reduce<ProductionCaseCollectionSummary>((summary, status) => {
+    if (!status) return summary;
+
+    const isCompleted = ["assistant", "producer", "auteur"].includes(status.tier);
+
+    return {
+      totalCases: summary.totalCases + 1,
+      notStartedCount: summary.notStartedCount + (status.tier === "not_started" ? 1 : 0),
+      inProgressCount: summary.inProgressCount + (status.tier === "in_progress" ? 1 : 0),
+      completedCount: summary.completedCount + (isCompleted ? 1 : 0),
+      assistantCount: summary.assistantCount + (status.tier === "assistant" ? 1 : 0),
+      producerCount: summary.producerCount + (status.tier === "producer" ? 1 : 0),
+      auteurCount: summary.auteurCount + (status.tier === "auteur" ? 1 : 0),
+      totalScore: summary.totalScore + (status.score?.score ?? 0),
+      maxScore: summary.maxScore + (status.score?.maxScore ?? status.missionCount * 2),
+    };
+  }, {
+    totalCases: 0,
+    notStartedCount: 0,
+    inProgressCount: 0,
+    completedCount: 0,
+    assistantCount: 0,
+    producerCount: 0,
+    auteurCount: 0,
+    totalScore: 0,
+    maxScore: 0,
+  });
 }
 
 export function productionCaseLibraryStatusMatchesFilter(
