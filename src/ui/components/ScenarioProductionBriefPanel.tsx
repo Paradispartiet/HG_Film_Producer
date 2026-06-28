@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import {
   getProductionCaseImprovementHint,
   getProductionCaseMissionScoreSummary,
+  getProductionCaseReport,
   getProductionCaseProgressEntry,
   getProductionCaseResultTier,
   getProductionCaseScoreSummary,
@@ -102,6 +103,7 @@ function ProductionCaseMissionFlow({
   const caseScore = getProductionCaseScoreSummary(missions, progressEntry);
   const resultTier = getProductionCaseResultTier(caseScore, completedCount);
   const improvementHint = getProductionCaseImprovementHint(missions, progressEntry);
+  const caseReport = getProductionCaseReport(missions, progressEntry);
 
   function updateProgress(nextState: ProductionCaseProgressState) {
     setProgressState(nextState);
@@ -152,6 +154,7 @@ function ProductionCaseMissionFlow({
       </div>
       {resultTier ? <ProductionCaseResultBox tier={resultTier} /> : null}
       {improvementHint ? <ProductionCaseImprovementHintBox hint={improvementHint} /> : null}
+      {caseReport ? <ProductionCaseReportBox report={caseReport} /> : null}
       {missions.map((mission, index) => {
         const isComplete = completedMissionIdSet.has(mission.id);
         const selectedChoiceId = selectedChoicesByMissionId[mission.id];
@@ -209,6 +212,62 @@ function ProductionCaseMissionFlow({
         );
       })}
     </div>
+  );
+}
+
+function ProductionCaseReportBox({
+  report,
+}: {
+  readonly report: NonNullable<ReturnType<typeof getProductionCaseReport>>;
+}) {
+  const title = report.completedCount === report.totalMissions ? "Case report" : "Case report under arbeid";
+  const strongestMatches = report.matchedPhases.slice(0, 3);
+
+  return (
+    <section className="scenario-production-report" aria-label={title}>
+      <div className="scenario-production-report-header">
+        <span className="eyebrow">{title}</span>
+        <strong>{report.learningSummary}</strong>
+      </div>
+      <div className="scenario-production-report-stats">
+        <span>Resultat: {productionCaseResultCopy[report.resultTier].label}</span>
+        <span>Case-score: {report.score}/{report.maxScore}</span>
+        <span>Faser: {report.completedCount}/{report.totalMissions}</span>
+      </div>
+      <div className="scenario-production-report-columns">
+        <div>
+          <h4>Sterkeste treff</h4>
+          {strongestMatches.length > 0 ? (
+            <ul>
+              {strongestMatches.map((phase) => (
+                <li key={phase.missionId}>
+                  <span>{phase.title}</span>
+                  <small>{phase.selectedChoiceLabel}</small>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>Velg produksjonsvalg som matcher for å registrere sterkeste treff.</p>
+          )}
+        </div>
+        <div>
+          <h4>Bør forbedres</h4>
+          {report.weakPhases.length > 0 ? (
+            <ul>
+              {report.weakPhases.map((phase) => (
+                <li key={phase.missionId}>
+                  <span>{phase.title}</span>
+                  <small>{phase.selectedChoiceLabel ?? "Mangler produksjonsvalg"}</small>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>Ingen svake faser registrert.</p>
+          )}
+          {report.improvementHint ? <p>{report.improvementHint.description}</p> : null}
+        </div>
+      </div>
+    </section>
   );
 }
 
