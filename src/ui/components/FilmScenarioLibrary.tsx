@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import {
   getProductionCaseAchievements,
   getProductionCaseBestResultEntry,
+  getProductionCaseCareerSummary,
   getProductionCaseCollectionSummary,
   getProductionCaseImprovementHint,
   getProductionCaseLibraryStatus,
@@ -58,6 +59,10 @@ export function FilmScenarioLibrary({
   const collectionSummary = useMemo(() => getProductionCaseCollectionSummary(
     scenarioCards.map(({ caseStatus }) => caseStatus),
   ), [scenarioCards]);
+  const careerSummary = useMemo(() => getProductionCaseCareerSummary(
+    scenarioCards.map(({ caseStatus }) => caseStatus),
+    bestResultsState,
+  ), [bestResultsState, scenarioCards]);
   const nextAction = useMemo(() => getProductionCaseNextAction(
     scenarioCards.map(({ caseStatus }) => caseStatus),
   ), [scenarioCards]);
@@ -106,8 +111,8 @@ export function FilmScenarioLibrary({
           choices behind the specific film.
         </p>
       </div>
-      <ProductionCaseCollectionSummaryCard summary={collectionSummary} />
-      <ProductionCaseAchievementsSection summary={collectionSummary} />
+      <ProductionCaseCollectionSummaryCard careerSummary={careerSummary} summary={collectionSummary} />
+      <ProductionCaseAchievementsSection summary={careerSummary} />
       <ProductionCaseNextActionCard
         improvementHint={nextActionImprovementHint}
         nextAction={nextAction}
@@ -222,34 +227,44 @@ function formatNextActionImprovementHint(hint: NonNullable<ReturnType<typeof get
 }
 
 function ProductionCaseCollectionSummaryCard({
+  careerSummary,
   summary,
 }: {
+  readonly careerSummary: ReturnType<typeof getProductionCaseCareerSummary>;
   readonly summary: ReturnType<typeof getProductionCaseCollectionSummary>;
 }) {
   return (
     <section className="production-case-summary-card" aria-label="Production case collection summary">
-      <div>
-        <span>Production cases</span>
-        <strong>{summary.totalCases}</strong>
+      <div className="production-case-summary-heading">
+        <span>Career progress</span>
+        <strong>{careerSummary.completedBestCount}/{careerSummary.totalCases}</strong>
       </div>
       <div>
-        <span>Fullført</span>
+        <span>Fullført best</span>
+        <strong>{careerSummary.completedBestCount}/{careerSummary.totalCases}</strong>
+      </div>
+      <div>
+        <span>Beste samlet score</span>
+        <strong>{careerSummary.bestTotalScore}/{careerSummary.bestMaxScore}</strong>
+      </div>
+      <div>
+        <span>Auteur best</span>
+        <strong>{careerSummary.auteurBestCount}</strong>
+      </div>
+      <div>
+        <span>Current progress · Fullført</span>
         <strong>{summary.completedCount}</strong>
       </div>
       <div>
-        <span>Under arbeid</span>
+        <span>Current progress · Under arbeid</span>
         <strong>{summary.inProgressCount}</strong>
       </div>
       <div>
-        <span>Ikke startet</span>
+        <span>Current progress · Ikke startet</span>
         <strong>{summary.notStartedCount}</strong>
       </div>
       <div>
-        <span>Auteur</span>
-        <strong>{summary.auteurCount}</strong>
-      </div>
-      <div>
-        <span>Samlet Case-score</span>
+        <span>Current progress · Case-score</span>
         <strong>{summary.totalScore}/{summary.maxScore}</strong>
       </div>
     </section>
@@ -259,7 +274,7 @@ function ProductionCaseCollectionSummaryCard({
 function ProductionCaseAchievementsSection({
   summary,
 }: {
-  readonly summary: ReturnType<typeof getProductionCaseCollectionSummary>;
+  readonly summary: ReturnType<typeof getProductionCaseCareerSummary>;
 }) {
   const achievements = getProductionCaseAchievements(summary);
 
