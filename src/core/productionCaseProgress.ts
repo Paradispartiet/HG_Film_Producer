@@ -1,5 +1,6 @@
 export const productionCaseProgressStorageKey = "hg_film_production_case_progress_v1";
 export const productionCaseBestResultsStorageKey = "hg_film_production_case_best_results_v1";
+export const productionCaseLibraryControlsStorageKey = "hg_film_production_case_library_controls_v1";
 
 export type ProductionCaseProgressEntry = {
   readonly scenarioId: string;
@@ -463,6 +464,16 @@ export type ProductionCaseResultTier = "not_started" | "in_progress" | "assistan
 export type ProductionCaseLibraryStatusFilter = "all" | "not_started" | "in_progress" | "completed";
 export type ProductionCaseMasteryFilter = "all" | "not_completed_best" | "assistant_best" | "producer_best" | "auteur_best" | "can_improve";
 export type ProductionCaseLibrarySortMode = "default" | "title_asc" | "best_score_desc" | "best_score_asc" | "recent_best";
+export type ProductionCaseLibraryControls = {
+  readonly caseStatusFilter: ProductionCaseLibraryStatusFilter;
+  readonly masteryFilter: ProductionCaseMasteryFilter;
+  readonly sortMode: ProductionCaseLibrarySortMode;
+};
+export const defaultProductionCaseLibraryControls: ProductionCaseLibraryControls = {
+  caseStatusFilter: "all",
+  masteryFilter: "all",
+  sortMode: "default",
+};
 export type ProductionCaseLibraryStatus = {
   readonly label: string;
   readonly tier: ProductionCaseResultTier;
@@ -734,6 +745,57 @@ export type ProductionCaseLibrarySortableCard = {
   };
   readonly bestResult?: Pick<ProductionCaseBestResultEntry, "bestScore" | "updatedAt"> | undefined;
 };
+
+const productionCaseLibraryStatusFilterValues = new Set<ProductionCaseLibraryStatusFilter>(["all", "not_started", "in_progress", "completed"]);
+const productionCaseMasteryFilterValues = new Set<ProductionCaseMasteryFilter>(["all", "not_completed_best", "assistant_best", "producer_best", "auteur_best", "can_improve"]);
+const productionCaseLibrarySortModeValues = new Set<ProductionCaseLibrarySortMode>(["default", "title_asc", "best_score_desc", "best_score_asc", "recent_best"]);
+
+function isProductionCaseLibraryStatusFilter(value: unknown): value is ProductionCaseLibraryStatusFilter {
+  return typeof value === "string" && productionCaseLibraryStatusFilterValues.has(value as ProductionCaseLibraryStatusFilter);
+}
+
+function isProductionCaseMasteryFilter(value: unknown): value is ProductionCaseMasteryFilter {
+  return typeof value === "string" && productionCaseMasteryFilterValues.has(value as ProductionCaseMasteryFilter);
+}
+
+function isProductionCaseLibrarySortMode(value: unknown): value is ProductionCaseLibrarySortMode {
+  return typeof value === "string" && productionCaseLibrarySortModeValues.has(value as ProductionCaseLibrarySortMode);
+}
+
+export function parseProductionCaseLibraryControls(rawValue: string | null): ProductionCaseLibraryControls {
+  if (!rawValue) return defaultProductionCaseLibraryControls;
+
+  try {
+    const parsed = JSON.parse(rawValue) as unknown;
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return defaultProductionCaseLibraryControls;
+    const maybeControls = parsed as Partial<ProductionCaseLibraryControls>;
+
+    return {
+      caseStatusFilter: isProductionCaseLibraryStatusFilter(maybeControls.caseStatusFilter)
+        ? maybeControls.caseStatusFilter
+        : defaultProductionCaseLibraryControls.caseStatusFilter,
+      masteryFilter: isProductionCaseMasteryFilter(maybeControls.masteryFilter)
+        ? maybeControls.masteryFilter
+        : defaultProductionCaseLibraryControls.masteryFilter,
+      sortMode: isProductionCaseLibrarySortMode(maybeControls.sortMode)
+        ? maybeControls.sortMode
+        : defaultProductionCaseLibraryControls.sortMode,
+    };
+  } catch {
+    return defaultProductionCaseLibraryControls;
+  }
+}
+
+export function readProductionCaseLibraryControls(storage: Pick<StorageLike, "getItem">): ProductionCaseLibraryControls {
+  return parseProductionCaseLibraryControls(storage.getItem(productionCaseLibraryControlsStorageKey));
+}
+
+export function writeProductionCaseLibraryControls(
+  storage: Pick<StorageLike, "setItem">,
+  controls: ProductionCaseLibraryControls,
+): void {
+  storage.setItem(productionCaseLibraryControlsStorageKey, JSON.stringify(controls));
+}
 
 export function sortProductionCaseLibraryCards<T extends ProductionCaseLibrarySortableCard>(
   cards: readonly T[],

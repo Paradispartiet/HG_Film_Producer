@@ -1196,7 +1196,8 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .production-case-achievement span { color: var(--accent); font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; }
 .production-case-achievement.unlocked span { color: var(--positive); }
 .production-case-achievement small { color: var(--muted); font-size: 10px; line-height: 1.35; }
-.scenario-library-controls { display: grid; grid-template-columns: minmax(0, 1fr) repeat(3, minmax(150px, 210px)); gap: 12px; align-items: stretch; }
+.scenario-library-controls { display: grid; grid-template-columns: minmax(0, 1fr) repeat(3, minmax(150px, 210px)) minmax(130px, auto); gap: 12px; align-items: stretch; }
+.scenario-filter-reset { align-self: end; min-height: 50px; padding-inline: 14px; }
 .scenario-status-filter { display: grid; gap: 8px; padding: 18px; border: 1px solid var(--line); background: linear-gradient(145deg, rgba(21, 25, 31, 0.94), rgba(12, 15, 19, 0.98)); }
 .scenario-status-filter span { color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
 .scenario-status-filter select { width: 100%; padding: 13px 14px; border: 1px solid var(--line); outline: none; background: rgba(6, 8, 11, 0.82); color: var(--text); font-size: 13px; }
