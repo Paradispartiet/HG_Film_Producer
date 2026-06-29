@@ -468,11 +468,13 @@ export type ProductionCaseLibraryControls = {
   readonly caseStatusFilter: ProductionCaseLibraryStatusFilter;
   readonly masteryFilter: ProductionCaseMasteryFilter;
   readonly sortMode: ProductionCaseLibrarySortMode;
+  readonly searchQuery: string;
 };
 export const defaultProductionCaseLibraryControls: ProductionCaseLibraryControls = {
   caseStatusFilter: "all",
   masteryFilter: "all",
   sortMode: "default",
+  searchQuery: "",
 };
 export type ProductionCaseLibraryStatus = {
   readonly label: string;
@@ -780,6 +782,9 @@ export function parseProductionCaseLibraryControls(rawValue: string | null): Pro
       sortMode: isProductionCaseLibrarySortMode(maybeControls.sortMode)
         ? maybeControls.sortMode
         : defaultProductionCaseLibraryControls.sortMode,
+      searchQuery: typeof maybeControls.searchQuery === "string"
+        ? maybeControls.searchQuery
+        : defaultProductionCaseLibraryControls.searchQuery,
     };
   } catch {
     return defaultProductionCaseLibraryControls;
