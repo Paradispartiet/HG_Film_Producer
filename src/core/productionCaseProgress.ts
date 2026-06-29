@@ -461,6 +461,7 @@ export type ProductionCaseScoreSummary = {
 
 export type ProductionCaseResultTier = "not_started" | "in_progress" | "assistant" | "producer" | "auteur";
 export type ProductionCaseLibraryStatusFilter = "all" | "not_started" | "in_progress" | "completed";
+export type ProductionCaseMasteryFilter = "all" | "not_completed_best" | "assistant_best" | "producer_best" | "auteur_best" | "can_improve";
 export type ProductionCaseLibraryStatus = {
   readonly label: string;
   readonly tier: ProductionCaseResultTier;
@@ -733,6 +734,22 @@ export function productionCaseLibraryStatusMatchesFilter(
   if (!status) return false;
   if (filter === "completed") return ["assistant", "producer", "auteur"].includes(status.tier);
   return status.tier === filter;
+}
+
+export function productionCaseMasteryFilterMatches(
+  status: Pick<ProductionCaseLibraryStatus, "tier"> | undefined,
+  bestResult: Pick<ProductionCaseBestResultEntry, "bestTier"> | undefined,
+  filter: ProductionCaseMasteryFilter,
+): boolean {
+  if (filter === "all") return true;
+  if (!status) return false;
+
+  if (filter === "not_completed_best") return !bestResult;
+  if (filter === "can_improve") return !bestResult || bestResult.bestTier === "assistant" || bestResult.bestTier === "producer";
+  if (!bestResult) return false;
+  if (filter === "assistant_best") return bestResult.bestTier === "assistant";
+  if (filter === "producer_best") return bestResult.bestTier === "producer";
+  return bestResult.bestTier === "auteur";
 }
 
 export function getProductionCaseMissionScoreSummary(

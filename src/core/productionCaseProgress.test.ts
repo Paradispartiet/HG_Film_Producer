@@ -18,6 +18,7 @@ import {
   parseProductionCaseProgress,
   productionCaseBestResultsStorageKey,
   productionCaseLibraryStatusMatchesFilter,
+  productionCaseMasteryFilterMatches,
   productionCaseProgressStorageKey,
   readProductionCaseBestResults,
   readProductionCaseProgress,
@@ -887,6 +888,68 @@ test("library status filters include the expected case cards", () => {
   assert.equal(productionCaseLibraryStatusMatchesFilter(auteur, "completed"), true);
   assert.equal(productionCaseLibraryStatusMatchesFilter(undefined, "all"), true);
   assert.equal(productionCaseLibraryStatusMatchesFilter(undefined, "not_started"), false);
+});
+
+
+test("production case mastery filters match best-result tiers and improvement candidates", () => {
+  const status = getProductionCaseLibraryStatus(libraryStatusMissions, {
+    completedMissionIds: libraryStatusMissions.map((mission) => mission.id),
+  });
+  const assistantBest = { ...createProductionCaseReportBest("scenario_assistant", 4), bestTier: "assistant" as const };
+  const producerBest = { ...createProductionCaseReportBest("scenario_producer", 8), bestTier: "producer" as const };
+  const auteurBest = { ...createProductionCaseReportBest("scenario_auteur", 12), bestTier: "auteur" as const };
+
+  assert.equal(productionCaseMasteryFilterMatches(status, undefined, "not_completed_best"), true);
+  assert.equal(productionCaseMasteryFilterMatches(status, assistantBest, "not_completed_best"), false);
+  assert.equal(productionCaseMasteryFilterMatches(status, assistantBest, "assistant_best"), true);
+  assert.equal(productionCaseMasteryFilterMatches(status, producerBest, "assistant_best"), false);
+  assert.equal(productionCaseMasteryFilterMatches(status, producerBest, "producer_best"), true);
+  assert.equal(productionCaseMasteryFilterMatches(status, assistantBest, "producer_best"), false);
+  assert.equal(productionCaseMasteryFilterMatches(status, auteurBest, "auteur_best"), true);
+  assert.equal(productionCaseMasteryFilterMatches(status, producerBest, "auteur_best"), false);
+  assert.equal(productionCaseMasteryFilterMatches(status, undefined, "can_improve"), true);
+  assert.equal(productionCaseMasteryFilterMatches(status, assistantBest, "can_improve"), true);
+  assert.equal(productionCaseMasteryFilterMatches(status, producerBest, "can_improve"), true);
+  assert.equal(productionCaseMasteryFilterMatches(status, auteurBest, "can_improve"), false);
+});
+
+test("production case status and mastery filters combine and exclude seed fallback from mastery", () => {
+  const completedMissionIds = libraryStatusMissions.map((mission) => mission.id);
+  const cards = [
+    { id: "not-started", status: getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds: [] }), bestResult: undefined },
+    { id: "in-progress", status: getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds: ["mission-1"] }), bestResult: undefined },
+    { id: "assistant", status: getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds }), bestResult: { ...createProductionCaseReportBest("assistant", 4), bestTier: "assistant" as const } },
+    { id: "producer", status: getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds }), bestResult: { ...createProductionCaseReportBest("producer", 8), bestTier: "producer" as const } },
+    { id: "auteur", status: getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds }), bestResult: { ...createProductionCaseReportBest("auteur", 12), bestTier: "auteur" as const } },
+    { id: "seed-fallback", status: undefined, bestResult: undefined },
+  ];
+
+  assert.deepEqual(
+    cards
+      .filter((card) => productionCaseLibraryStatusMatchesFilter(card.status, "completed")
+        && productionCaseMasteryFilterMatches(card.status, card.bestResult, "can_improve"))
+      .map((card) => card.id),
+    ["assistant", "producer"],
+  );
+  assert.equal(productionCaseMasteryFilterMatches(undefined, undefined, "not_completed_best"), false);
+  assert.equal(productionCaseMasteryFilterMatches(undefined, { ...createProductionCaseReportBest("seed-fallback", 12), bestTier: "auteur" }, "auteur_best"), false);
+  assert.equal(productionCaseMasteryFilterMatches(undefined, undefined, "all"), true);
+});
+
+test("production case mastery filter UI copy and empty state avoid forbidden language", () => {
+  const copy = [
+    "Mastery",
+    "Alle",
+    "Ikke fullført best",
+    "Assistent",
+    "Produsent",
+    "Auteur",
+    "Kan forbedres",
+    "Ingen production cases matcher filtrene.",
+  ].join(" ").toLowerCase();
+
+  assert.ok(!copy.includes("inspired by"));
+  assert.ok(!copy.includes("in the spirit of"));
 });
 
 test("library status copy avoids forbidden language", () => {

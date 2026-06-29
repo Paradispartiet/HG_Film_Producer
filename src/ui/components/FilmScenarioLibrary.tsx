@@ -9,12 +9,14 @@ import {
   getProductionCaseNextAction,
   getProductionCaseProgressEntry,
   productionCaseLibraryStatusMatchesFilter,
+  productionCaseMasteryFilterMatches,
   readProductionCaseBestResults,
   readProductionCaseProgress,
   productionCaseResultTierLabels,
   type ProductionCaseBestResultsState,
   type ProductionCaseLibraryStatus,
   type ProductionCaseLibraryStatusFilter,
+  type ProductionCaseMasteryFilter,
   type ProductionCaseNextAction,
   type ProductionCaseNextActionStatus,
 } from "../../core/productionCaseProgress";
@@ -31,6 +33,15 @@ const caseStatusFilters = [
   { value: "completed", label: "Fullført" },
 ] as const satisfies readonly { readonly value: ProductionCaseLibraryStatusFilter; readonly label: string }[];
 
+const masteryFilters = [
+  { value: "all", label: "Alle" },
+  { value: "not_completed_best", label: "Ikke fullført best" },
+  { value: "assistant_best", label: "Assistent" },
+  { value: "producer_best", label: "Produsent" },
+  { value: "auteur_best", label: "Auteur" },
+  { value: "can_improve", label: "Kan forbedres" },
+] as const satisfies readonly { readonly value: ProductionCaseMasteryFilter; readonly label: string }[];
+
 export function FilmScenarioLibrary({
   onStartScenario,
 }: {
@@ -38,6 +49,7 @@ export function FilmScenarioLibrary({
 }) {
   const [query, setQuery] = useState("");
   const [caseStatusFilter, setCaseStatusFilter] = useState<ProductionCaseLibraryStatusFilter>("all");
+  const [masteryFilter, setMasteryFilter] = useState<ProductionCaseMasteryFilter>("all");
   const [progressRefreshKey, setProgressRefreshKey] = useState(0);
   const scenarios = getClassicFilmScenarios();
   const progressState = useMemo(() => {
@@ -79,12 +91,13 @@ export function FilmScenarioLibrary({
     );
   }, [nextAction, nextActionScenario, progressState]);
   const filteredScenarioCards = useMemo(() => {
-    return scenarioCards.filter(({ scenario, caseStatus }) => {
+    return scenarioCards.filter(({ scenario, bestResult, caseStatus }) => {
       const matchesQuery = !normalizedQuery || getScenarioSearchText(scenario).includes(normalizedQuery);
       if (!matchesQuery) return false;
-      return productionCaseLibraryStatusMatchesFilter(caseStatus, caseStatusFilter);
+      return productionCaseLibraryStatusMatchesFilter(caseStatus, caseStatusFilter)
+        && productionCaseMasteryFilterMatches(caseStatus, bestResult, masteryFilter);
     });
-  }, [caseStatusFilter, normalizedQuery, scenarioCards]);
+  }, [caseStatusFilter, masteryFilter, normalizedQuery, scenarioCards]);
 
   useEffect(() => {
     const refreshProgress = () => setProgressRefreshKey((key) => key + 1);
@@ -139,11 +152,25 @@ export function FilmScenarioLibrary({
             ))}
           </select>
         </label>
+        <label className="scenario-status-filter">
+          <span>Mastery</span>
+          <select
+            value={masteryFilter}
+            onChange={(event) => setMasteryFilter(event.target.value as ProductionCaseMasteryFilter)}
+          >
+            {masteryFilters.map((filter) => (
+              <option key={filter.value} value={filter.value}>{filter.label}</option>
+            ))}
+          </select>
+        </label>
       </div>
       <div className="scenario-meta" aria-live="polite">
         Showing <strong>{filteredScenarioCards.length}</strong> of{" "}
         <strong>{scenarios.length}</strong> scenarios
       </div>
+      {filteredScenarioCards.length === 0 ? (
+        <p className="scenario-empty-state">Ingen production cases matcher filtrene.</p>
+      ) : null}
       <div className="scenario-grid">
         {filteredScenarioCards.map(({ scenario, bestResult, caseStatus }) => (
           <article className="scenario-card" key={scenario.id}>
