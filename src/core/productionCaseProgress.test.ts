@@ -11,6 +11,7 @@ import {
   getProductionCaseCollectionSummary,
   getProductionCaseMissionScore,
   getProductionCaseImprovementHint,
+  importProductionCaseProgressBackup,
   getProductionCaseLibraryStatus,
   getProductionCaseLibraryResultSummary,
   getProductionCaseNextAction,
@@ -304,6 +305,78 @@ test("production case progress export does not crash on corrupt storage", () => 
   assert.deepEqual(exported.libraryControls, defaultProductionCaseLibraryControls);
 });
 
+
+test("production case progress import restores a valid export from storage", () => {
+  const sourceStorage = createMemoryStorage();
+  const targetStorage = createMemoryStorage();
+  const currentProgress = setProductionCaseMissionChoice(
+    setProductionCaseMissionCompletion(
+      {},
+      "scenario_taxi_driver_1976",
+      "scenario_taxi_driver_1976-mission-case_orientation",
+      true,
+      "2026-06-22T00:00:00.000Z",
+    ),
+    "scenario_taxi_driver_1976",
+    "scenario_taxi_driver_1976-mission-screenplay",
+    "scenario_taxi_driver_1976-choice-screenplay-match-1",
+    "2026-06-22T00:00:00.000Z",
+  );
+  const bestResults = {
+    scenario_taxi_driver_1976: createProductionCaseReportBest("scenario_taxi_driver_1976", 12),
+  };
+  const libraryControls = {
+    caseStatusFilter: "completed",
+    masteryFilter: "auteur_best",
+    sortMode: "recent_best",
+    searchQuery: "taxi",
+  } as const;
+  writeProductionCaseProgress(sourceStorage, currentProgress);
+  writeProductionCaseBestResults(sourceStorage, bestResults);
+  writeProductionCaseLibraryControls(sourceStorage, libraryControls);
+
+  const exported = createProductionCaseProgressExport(sourceStorage, "2026-06-29T00:00:00.000Z");
+  const result = importProductionCaseProgressBackup(
+    JSON.stringify(exported),
+    targetStorage,
+    "2026-06-29T01:00:00.000Z",
+  );
+
+  assert.deepEqual(result, {
+    ok: true,
+    importedAt: "2026-06-29T01:00:00.000Z",
+    counts: { currentProgressCount: 1, bestResultCount: 1 },
+  });
+  assert.equal(targetStorage.values.get(productionCaseProgressStorageKey), JSON.stringify(currentProgress));
+  assert.equal(targetStorage.values.get(productionCaseBestResultsStorageKey), JSON.stringify(bestResults));
+  assert.equal(targetStorage.values.get(productionCaseLibraryControlsStorageKey), JSON.stringify(libraryControls));
+});
+
+test("production case progress import fails safely for invalid backups", () => {
+  const invalidBackups = [
+    "{not-json",
+    JSON.stringify({ version: "wrong", currentProgress: {}, bestResults: {}, libraryControls: defaultProductionCaseLibraryControls }),
+    JSON.stringify({ version: productionCaseProgressExportVersion, currentProgress: {}, bestResults: {} }),
+    JSON.stringify({ version: productionCaseProgressExportVersion, currentProgress: [], bestResults: {}, libraryControls: defaultProductionCaseLibraryControls }),
+    JSON.stringify({ version: productionCaseProgressExportVersion, currentProgress: {}, bestResults: [], libraryControls: defaultProductionCaseLibraryControls }),
+    JSON.stringify({ version: productionCaseProgressExportVersion, currentProgress: {}, bestResults: {}, libraryControls: { ...defaultProductionCaseLibraryControls, sortMode: "random" } }),
+  ];
+
+  for (const rawJson of invalidBackups) {
+    const storage = createMemoryStorage();
+    storage.setItem(productionCaseProgressStorageKey, "existing-progress");
+    storage.setItem(productionCaseBestResultsStorageKey, "existing-best");
+    storage.setItem(productionCaseLibraryControlsStorageKey, "existing-controls");
+
+    const result = importProductionCaseProgressBackup(rawJson, storage);
+
+    assert.equal(result.ok, false);
+    assert.equal(storage.values.get(productionCaseProgressStorageKey), "existing-progress");
+    assert.equal(storage.values.get(productionCaseBestResultsStorageKey), "existing-best");
+    assert.equal(storage.values.get(productionCaseLibraryControlsStorageKey), "existing-controls");
+  }
+});
+
 test("production case library controls default when storage is empty", () => {
   assert.deepEqual(parseProductionCaseLibraryControls(null), defaultProductionCaseLibraryControls);
   assert.deepEqual(readProductionCaseLibraryControls(createMemoryStorage()), defaultProductionCaseLibraryControls);
@@ -463,6 +536,12 @@ test("FilmScenarioLibrary initializes from persisted controls and exposes reset 
   assert.match(uiSource, /setSortMode\(defaultProductionCaseLibraryControls\.sortMode\)/);
   assert.match(uiSource, /setSearchQuery\(defaultProductionCaseLibraryControls\.searchQuery\)/);
   assert.match(uiSource, /Søk film, år eller case/);
+  assert.match(uiSource, /Importer progress/);
+  assert.match(uiSource, /Import overskriver lokal production-case progress/);
+  assert.match(uiSource, /Bekreft import/);
+  assert.match(uiSource, /Progress importert/);
+  assert.match(uiSource, /Kunne ikke importere progress/);
+  assert.match(uiSource, /importProductionCaseProgressBackup\(importJson, window\.localStorage\)/);
 });
 
 test("production case library controls parse legacy and invalid search query safely", () => {
