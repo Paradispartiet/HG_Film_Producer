@@ -1,16 +1,20 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   getProductionCaseImprovementHint,
+  getProductionCaseBestResultEntry,
   getProductionCaseMissionScoreSummary,
   getProductionCaseReport,
   getProductionCaseProgressEntry,
   getProductionCaseResultTier,
   getProductionCaseScoreSummary,
+  readProductionCaseBestResults,
   readProductionCaseProgress,
   resetProductionCaseScenarioProgress,
   setProductionCaseMissionChoice,
   setProductionCaseMissionCompletion,
+  updateProductionCaseBestResult,
   writeProductionCaseProgress,
+  type ProductionCaseBestResultsState,
   type ProductionCaseProgressState,
 } from "../../core/productionCaseProgress";
 import type { FilmScenarioSeed } from "../data/filmScenarios";
@@ -80,10 +84,12 @@ function ProductionCaseMissionFlow({
   readonly scenarioId: string;
 }) {
   const [progressState, setProgressState] = useState<ProductionCaseProgressState>({});
+  const [bestResultsState, setBestResultsState] = useState<ProductionCaseBestResultsState>({});
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     setProgressState(readProductionCaseProgress(window.localStorage));
+    setBestResultsState(readProductionCaseBestResults(window.localStorage));
   }, [scenarioId]);
 
   const progressEntry = useMemo(
@@ -104,6 +110,15 @@ function ProductionCaseMissionFlow({
   const resultTier = getProductionCaseResultTier(caseScore, completedCount);
   const improvementHint = getProductionCaseImprovementHint(missions, progressEntry);
   const caseReport = getProductionCaseReport(missions, progressEntry);
+  const bestResult = getProductionCaseBestResultEntry(bestResultsState, scenarioId);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const updatedBestResult = updateProductionCaseBestResult(scenarioId, caseReport, window.localStorage);
+    if (updatedBestResult && updatedBestResult !== bestResult) {
+      setBestResultsState(readProductionCaseBestResults(window.localStorage));
+    }
+  }, [bestResult, caseReport, scenarioId]);
 
   function updateProgress(nextState: ProductionCaseProgressState) {
     setProgressState(nextState);
@@ -154,7 +169,7 @@ function ProductionCaseMissionFlow({
       </div>
       {resultTier ? <ProductionCaseResultBox tier={resultTier} /> : null}
       {improvementHint ? <ProductionCaseImprovementHintBox hint={improvementHint} /> : null}
-      {caseReport ? <ProductionCaseReportBox report={caseReport} /> : null}
+      {caseReport ? <ProductionCaseReportBox bestResult={bestResult} report={caseReport} /> : null}
       {missions.map((mission, index) => {
         const isComplete = completedMissionIdSet.has(mission.id);
         const selectedChoiceId = selectedChoicesByMissionId[mission.id];
@@ -216,8 +231,10 @@ function ProductionCaseMissionFlow({
 }
 
 function ProductionCaseReportBox({
+  bestResult,
   report,
 }: {
+  readonly bestResult: ReturnType<typeof getProductionCaseBestResultEntry>;
   readonly report: NonNullable<ReturnType<typeof getProductionCaseReport>>;
 }) {
   const title = report.completedCount === report.totalMissions ? "Case report" : "Case report under arbeid";
@@ -233,6 +250,9 @@ function ProductionCaseReportBox({
         <span>Resultat: {productionCaseResultCopy[report.resultTier].label}</span>
         <span>Case-score: {report.score}/{report.maxScore}</span>
         <span>Faser: {report.completedCount}/{report.totalMissions}</span>
+        {bestResult ? (
+          <span>Beste resultat: {productionCaseResultCopy[bestResult.bestTier].label} · {bestResult.bestScore}/{bestResult.maxScore}</span>
+        ) : null}
       </div>
       <div className="scenario-production-report-columns">
         <div>
