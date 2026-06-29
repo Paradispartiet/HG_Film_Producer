@@ -20,6 +20,7 @@ import {
   productionCaseLibraryStatusMatchesFilter,
   productionCaseMasteryFilterMatches,
   productionCaseProgressStorageKey,
+  sortProductionCaseLibraryCards,
   readProductionCaseBestResults,
   readProductionCaseProgress,
   resetProductionCaseScenarioProgress,
@@ -28,6 +29,7 @@ import {
   updateProductionCaseBestResult,
   writeProductionCaseBestResults,
   writeProductionCaseProgress,
+  type ProductionCaseBestResultEntry,
 } from "./productionCaseProgress.js";
 
 
@@ -936,6 +938,34 @@ test("production case status and mastery filters combine and exclude seed fallba
   assert.equal(productionCaseMasteryFilterMatches(undefined, undefined, "all"), true);
 });
 
+
+test("production case library sorting orders filtered cards", () => {
+  const completedMissionIds = libraryStatusMissions.map((mission) => mission.id);
+  const completed = getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds });
+  const inProgress = getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds: ["mission-1"] });
+  const cards = [
+    createLibrarySortCard("charlie", "Charlie", completed, { ...createProductionCaseReportBest("charlie", 8), updatedAt: "2026-06-23T00:00:00.000Z" }),
+    createLibrarySortCard("alpha", "Alpha", completed, { ...createProductionCaseReportBest("alpha", 12), updatedAt: "2026-06-25T00:00:00.000Z" }),
+    createLibrarySortCard("delta", "Delta", inProgress, undefined),
+    createLibrarySortCard("bravo", "Bravo", completed, { ...createProductionCaseReportBest("bravo", 4), updatedAt: "2026-06-24T00:00:00.000Z", bestTier: "assistant" } as ProductionCaseBestResultEntry),
+  ];
+
+  assert.deepEqual(sortProductionCaseLibraryCards(cards, "default").map((card) => card.id), ["charlie", "alpha", "delta", "bravo"]);
+  assert.deepEqual(sortProductionCaseLibraryCards(cards, "title_asc").map((card) => card.id), ["alpha", "bravo", "charlie", "delta"]);
+  assert.deepEqual(sortProductionCaseLibraryCards(cards, "best_score_desc").map((card) => card.id), ["alpha", "charlie", "bravo", "delta"]);
+  assert.deepEqual(sortProductionCaseLibraryCards(cards, "best_score_asc").map((card) => card.id), ["delta", "bravo", "charlie", "alpha"]);
+  assert.deepEqual(sortProductionCaseLibraryCards(cards, "recent_best").map((card) => card.id), ["alpha", "bravo", "charlie", "delta"]);
+
+  assert.deepEqual(
+    sortProductionCaseLibraryCards(
+      cards.filter((card) => productionCaseLibraryStatusMatchesFilter(card.status, "completed")
+        && productionCaseMasteryFilterMatches(card.status, card.bestResult, "assistant_best")),
+      "best_score_desc",
+    ).map((card) => card.id),
+    ["bravo"],
+  );
+});
+
 test("production case mastery filter UI copy and empty state avoid forbidden language", () => {
   const copy = [
     "Mastery",
@@ -946,6 +976,12 @@ test("production case mastery filter UI copy and empty state avoid forbidden lan
     "Auteur",
     "Kan forbedres",
     "Ingen production cases matcher filtrene.",
+    "Sorter",
+    "Standard",
+    "Tittel A–Å",
+    "Beste score høyest",
+    "Beste score lavest",
+    "Nylig beste resultat",
   ].join(" ").toLowerCase();
 
   assert.ok(!copy.includes("inspired by"));
@@ -1150,6 +1186,21 @@ test("best-result helpers and UI copy avoid banned phrasing", () => {
 
   assert.doesNotMatch(helperCopy, /inspired by|in the spirit of/);
 });
+
+
+function createLibrarySortCard(
+  id: string,
+  title: string,
+  status: ReturnType<typeof getProductionCaseLibraryStatus>,
+  bestResult: ProductionCaseBestResultEntry | undefined,
+) {
+  return {
+    id,
+    scenario: { film: { title } },
+    status,
+    bestResult,
+  };
+}
 
 function createProductionCaseReportBest(scenarioId: string, bestScore: number) {
   return {

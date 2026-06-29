@@ -13,10 +13,12 @@ import {
   readProductionCaseBestResults,
   readProductionCaseProgress,
   productionCaseResultTierLabels,
+  sortProductionCaseLibraryCards,
   type ProductionCaseBestResultsState,
   type ProductionCaseLibraryStatus,
   type ProductionCaseLibraryStatusFilter,
   type ProductionCaseMasteryFilter,
+  type ProductionCaseLibrarySortMode,
   type ProductionCaseNextAction,
   type ProductionCaseNextActionStatus,
 } from "../../core/productionCaseProgress";
@@ -42,6 +44,14 @@ const masteryFilters = [
   { value: "can_improve", label: "Kan forbedres" },
 ] as const satisfies readonly { readonly value: ProductionCaseMasteryFilter; readonly label: string }[];
 
+const sortModeOptions = [
+  { value: "default", label: "Standard" },
+  { value: "title_asc", label: "Tittel A–Å" },
+  { value: "best_score_desc", label: "Beste score høyest" },
+  { value: "best_score_asc", label: "Beste score lavest" },
+  { value: "recent_best", label: "Nylig beste resultat" },
+] as const satisfies readonly { readonly value: ProductionCaseLibrarySortMode; readonly label: string }[];
+
 export function FilmScenarioLibrary({
   onStartScenario,
 }: {
@@ -50,6 +60,7 @@ export function FilmScenarioLibrary({
   const [query, setQuery] = useState("");
   const [caseStatusFilter, setCaseStatusFilter] = useState<ProductionCaseLibraryStatusFilter>("all");
   const [masteryFilter, setMasteryFilter] = useState<ProductionCaseMasteryFilter>("all");
+  const [sortMode, setSortMode] = useState<ProductionCaseLibrarySortMode>("default");
   const [progressRefreshKey, setProgressRefreshKey] = useState(0);
   const scenarios = getClassicFilmScenarios();
   const progressState = useMemo(() => {
@@ -91,13 +102,14 @@ export function FilmScenarioLibrary({
     );
   }, [nextAction, nextActionScenario, progressState]);
   const filteredScenarioCards = useMemo(() => {
-    return scenarioCards.filter(({ scenario, bestResult, caseStatus }) => {
+    const filteredCards = scenarioCards.filter(({ scenario, bestResult, caseStatus }) => {
       const matchesQuery = !normalizedQuery || getScenarioSearchText(scenario).includes(normalizedQuery);
       if (!matchesQuery) return false;
       return productionCaseLibraryStatusMatchesFilter(caseStatus, caseStatusFilter)
         && productionCaseMasteryFilterMatches(caseStatus, bestResult, masteryFilter);
     });
-  }, [caseStatusFilter, masteryFilter, normalizedQuery, scenarioCards]);
+    return sortProductionCaseLibraryCards(filteredCards, sortMode);
+  }, [caseStatusFilter, masteryFilter, normalizedQuery, scenarioCards, sortMode]);
 
   useEffect(() => {
     const refreshProgress = () => setProgressRefreshKey((key) => key + 1);
@@ -160,6 +172,17 @@ export function FilmScenarioLibrary({
           >
             {masteryFilters.map((filter) => (
               <option key={filter.value} value={filter.value}>{filter.label}</option>
+            ))}
+          </select>
+        </label>
+        <label className="scenario-status-filter scenario-sort-control">
+          <span>Sorter</span>
+          <select
+            value={sortMode}
+            onChange={(event) => setSortMode(event.target.value as ProductionCaseLibrarySortMode)}
+          >
+            {sortModeOptions.map((option) => (
+              <option key={option.value} value={option.value}>{option.label}</option>
             ))}
           </select>
         </label>
