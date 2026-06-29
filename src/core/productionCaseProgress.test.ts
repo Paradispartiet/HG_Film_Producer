@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 import {
   countProductionCaseMatches,
+  defaultProductionCaseLibraryControls,
   getProductionCaseBestResultEntry,
   getProductionCaseAchievements,
   getProductionCaseCareerSummary,
@@ -15,19 +17,23 @@ import {
   getProductionCaseResultTier,
   getProductionCaseScoreSummary,
   parseProductionCaseBestResults,
+  parseProductionCaseLibraryControls,
   parseProductionCaseProgress,
   productionCaseBestResultsStorageKey,
+  productionCaseLibraryControlsStorageKey,
   productionCaseLibraryStatusMatchesFilter,
   productionCaseMasteryFilterMatches,
   productionCaseProgressStorageKey,
   sortProductionCaseLibraryCards,
   readProductionCaseBestResults,
+  readProductionCaseLibraryControls,
   readProductionCaseProgress,
   resetProductionCaseScenarioProgress,
   setProductionCaseMissionChoice,
   setProductionCaseMissionCompletion,
   updateProductionCaseBestResult,
   writeProductionCaseBestResults,
+  writeProductionCaseLibraryControls,
   writeProductionCaseProgress,
   type ProductionCaseBestResultEntry,
 } from "./productionCaseProgress.js";
@@ -228,6 +234,85 @@ test("reset clears only the current scenario progress", () => {
   assert.deepEqual(getProductionCaseProgressEntry(resetState, "scenario_another_round_2020").completedMissionIds, [
     "scenario_another_round_2020-mission-reflection",
   ]);
+});
+
+
+test("production case library controls default when storage is empty", () => {
+  assert.deepEqual(parseProductionCaseLibraryControls(null), defaultProductionCaseLibraryControls);
+  assert.deepEqual(readProductionCaseLibraryControls(createMemoryStorage()), defaultProductionCaseLibraryControls);
+});
+
+test("production case library controls default when storage JSON is invalid", () => {
+  assert.deepEqual(parseProductionCaseLibraryControls("{not-json"), defaultProductionCaseLibraryControls);
+});
+
+test("production case library controls default unknown filter and sort values", () => {
+  assert.deepEqual(
+    parseProductionCaseLibraryControls(JSON.stringify({
+      caseStatusFilter: "archived",
+      masteryFilter: "legendary",
+      sortMode: "random",
+    })),
+    defaultProductionCaseLibraryControls,
+  );
+  assert.deepEqual(
+    parseProductionCaseLibraryControls(JSON.stringify({
+      caseStatusFilter: "completed",
+      masteryFilter: "mystery",
+      sortMode: "recent_best",
+    })),
+    { caseStatusFilter: "completed", masteryFilter: "all", sortMode: "recent_best" },
+  );
+});
+
+test("production case library controls read and write valid controls", () => {
+  const storage = createMemoryStorage();
+  const controls = {
+    caseStatusFilter: "in_progress",
+    masteryFilter: "can_improve",
+    sortMode: "best_score_asc",
+  } as const;
+
+  writeProductionCaseLibraryControls(storage, controls);
+
+  assert.equal(storage.values.get(productionCaseLibraryControlsStorageKey), JSON.stringify(controls));
+  assert.deepEqual(readProductionCaseLibraryControls(storage), controls);
+});
+
+test("production case library controls reset writes defaults", () => {
+  const storage = createMemoryStorage();
+  writeProductionCaseLibraryControls(storage, {
+    caseStatusFilter: "completed",
+    masteryFilter: "can_improve",
+    sortMode: "best_score_asc",
+  });
+
+  writeProductionCaseLibraryControls(storage, defaultProductionCaseLibraryControls);
+
+  assert.deepEqual(readProductionCaseLibraryControls(storage), defaultProductionCaseLibraryControls);
+});
+
+test("production case library controls helper and UI copy avoid forbidden language", () => {
+  const uiSource = readFileSync("src/ui/components/FilmScenarioLibrary.tsx", "utf8").toLowerCase();
+  const helperCopy = [
+    productionCaseLibraryControlsStorageKey,
+    JSON.stringify(defaultProductionCaseLibraryControls),
+    JSON.stringify(readProductionCaseLibraryControls(createMemoryStorage())),
+    uiSource,
+  ].join(" ").toLowerCase();
+
+  assert.doesNotMatch(helperCopy, /inspired by|in the spirit of/);
+});
+
+test("FilmScenarioLibrary initializes from persisted controls and exposes reset copy", () => {
+  const uiSource = readFileSync("src/ui/components/FilmScenarioLibrary.tsx", "utf8");
+
+  assert.match(uiSource, /readProductionCaseLibraryControls\(window\.localStorage\)/);
+  assert.match(uiSource, /writeProductionCaseLibraryControls\(window\.localStorage, \{ caseStatusFilter, masteryFilter, sortMode \}\)/);
+  assert.match(uiSource, /Nullstill filtre/);
+  assert.match(uiSource, /setCaseStatusFilter\(defaultProductionCaseLibraryControls\.caseStatusFilter\)/);
+  assert.match(uiSource, /setMasteryFilter\(defaultProductionCaseLibraryControls\.masteryFilter\)/);
+  assert.match(uiSource, /setSortMode\(defaultProductionCaseLibraryControls\.sortMode\)/);
 });
 
 test("progress writes to the v1 localStorage key and can be read back", () => {
@@ -1177,6 +1262,7 @@ test("Taxi Driver and The Lighthouse keep separate best results", () => {
 test("best-result helpers and UI copy avoid banned phrasing", () => {
   const helperCopy = [
     productionCaseBestResultsStorageKey,
+  productionCaseLibraryControlsStorageKey,
     "Beste resultat",
     "Beste",
     "Assistent",

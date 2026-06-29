@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
+  defaultProductionCaseLibraryControls,
   getProductionCaseAchievements,
   getProductionCaseBestResultEntry,
   getProductionCaseCareerSummary,
@@ -11,9 +12,11 @@ import {
   productionCaseLibraryStatusMatchesFilter,
   productionCaseMasteryFilterMatches,
   readProductionCaseBestResults,
+  readProductionCaseLibraryControls,
   readProductionCaseProgress,
   productionCaseResultTierLabels,
   sortProductionCaseLibraryCards,
+  writeProductionCaseLibraryControls,
   type ProductionCaseBestResultsState,
   type ProductionCaseLibraryStatus,
   type ProductionCaseLibraryStatusFilter,
@@ -21,6 +24,7 @@ import {
   type ProductionCaseLibrarySortMode,
   type ProductionCaseNextAction,
   type ProductionCaseNextActionStatus,
+  type ProductionCaseLibraryControls,
 } from "../../core/productionCaseProgress";
 import {
   getClassicFilmScenarios,
@@ -52,15 +56,25 @@ const sortModeOptions = [
   { value: "recent_best", label: "Nylig beste resultat" },
 ] as const satisfies readonly { readonly value: ProductionCaseLibrarySortMode; readonly label: string }[];
 
+
+function getInitialProductionCaseLibraryControls(): ProductionCaseLibraryControls {
+  if (typeof window === "undefined") return defaultProductionCaseLibraryControls;
+  try {
+    return readProductionCaseLibraryControls(window.localStorage);
+  } catch {
+    return defaultProductionCaseLibraryControls;
+  }
+}
+
 export function FilmScenarioLibrary({
   onStartScenario,
 }: {
   readonly onStartScenario?: (scenario: FilmScenarioSeed) => void;
 }) {
   const [query, setQuery] = useState("");
-  const [caseStatusFilter, setCaseStatusFilter] = useState<ProductionCaseLibraryStatusFilter>("all");
-  const [masteryFilter, setMasteryFilter] = useState<ProductionCaseMasteryFilter>("all");
-  const [sortMode, setSortMode] = useState<ProductionCaseLibrarySortMode>("default");
+  const [caseStatusFilter, setCaseStatusFilter] = useState<ProductionCaseLibraryStatusFilter>(() => getInitialProductionCaseLibraryControls().caseStatusFilter);
+  const [masteryFilter, setMasteryFilter] = useState<ProductionCaseMasteryFilter>(() => getInitialProductionCaseLibraryControls().masteryFilter);
+  const [sortMode, setSortMode] = useState<ProductionCaseLibrarySortMode>(() => getInitialProductionCaseLibraryControls().sortMode);
   const [progressRefreshKey, setProgressRefreshKey] = useState(0);
   const scenarios = getClassicFilmScenarios();
   const progressState = useMemo(() => {
@@ -112,6 +126,16 @@ export function FilmScenarioLibrary({
   }, [caseStatusFilter, masteryFilter, normalizedQuery, scenarioCards, sortMode]);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      writeProductionCaseLibraryControls(window.localStorage, { caseStatusFilter, masteryFilter, sortMode });
+    } catch {
+      // Ignore unavailable storage in test/server-like contexts.
+    }
+  }, [caseStatusFilter, masteryFilter, sortMode]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof document === "undefined") return;
     const refreshProgress = () => setProgressRefreshKey((key) => key + 1);
     window.addEventListener("focus", refreshProgress);
     window.addEventListener("storage", refreshProgress);
@@ -122,6 +146,12 @@ export function FilmScenarioLibrary({
       document.removeEventListener("visibilitychange", refreshProgress);
     };
   }, []);
+
+  const resetLibraryControls = () => {
+    setCaseStatusFilter(defaultProductionCaseLibraryControls.caseStatusFilter);
+    setMasteryFilter(defaultProductionCaseLibraryControls.masteryFilter);
+    setSortMode(defaultProductionCaseLibraryControls.sortMode);
+  };
 
   return (
     <main className="scenario-library">
@@ -186,6 +216,9 @@ export function FilmScenarioLibrary({
             ))}
           </select>
         </label>
+        <button className="secondary-button scenario-filter-reset" onClick={resetLibraryControls} type="button">
+          Nullstill filtre
+        </button>
       </div>
       <div className="scenario-meta" aria-live="polite">
         Showing <strong>{filteredScenarioCards.length}</strong> of{" "}
