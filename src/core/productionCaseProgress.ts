@@ -462,6 +462,7 @@ export type ProductionCaseScoreSummary = {
 export type ProductionCaseResultTier = "not_started" | "in_progress" | "assistant" | "producer" | "auteur";
 export type ProductionCaseLibraryStatusFilter = "all" | "not_started" | "in_progress" | "completed";
 export type ProductionCaseMasteryFilter = "all" | "not_completed_best" | "assistant_best" | "producer_best" | "auteur_best" | "can_improve";
+export type ProductionCaseLibrarySortMode = "default" | "title_asc" | "best_score_desc" | "best_score_asc" | "recent_best";
 export type ProductionCaseLibraryStatus = {
   readonly label: string;
   readonly tier: ProductionCaseResultTier;
@@ -724,6 +725,53 @@ export function getProductionCaseNextAction(
     label: "Katalog mestret",
     description: "Alle production cases er fullført på høyeste nivå.",
   };
+}
+
+
+export type ProductionCaseLibrarySortableCard = {
+  readonly scenario: {
+    readonly film: { readonly title: string };
+  };
+  readonly bestResult?: Pick<ProductionCaseBestResultEntry, "bestScore" | "updatedAt"> | undefined;
+};
+
+export function sortProductionCaseLibraryCards<T extends ProductionCaseLibrarySortableCard>(
+  cards: readonly T[],
+  sortMode: ProductionCaseLibrarySortMode,
+): T[] {
+  const indexedCards = cards.map((card, index) => ({ card, index }));
+  if (sortMode === "default") return indexedCards.map(({ card }) => card);
+
+  return indexedCards
+    .sort((left, right) => {
+      const leftBestResult = left.card.bestResult;
+      const rightBestResult = right.card.bestResult;
+
+      if (sortMode === "title_asc") {
+        return left.card.scenario.film.title.localeCompare(right.card.scenario.film.title, "nb", { sensitivity: "base" })
+          || left.index - right.index;
+      }
+
+      if (sortMode === "best_score_desc") {
+        if (!leftBestResult && !rightBestResult) return left.index - right.index;
+        if (!leftBestResult) return 1;
+        if (!rightBestResult) return -1;
+        return rightBestResult.bestScore - leftBestResult.bestScore || left.index - right.index;
+      }
+
+      if (sortMode === "best_score_asc") {
+        if (!leftBestResult && !rightBestResult) return left.index - right.index;
+        if (!leftBestResult) return -1;
+        if (!rightBestResult) return 1;
+        return leftBestResult.bestScore - rightBestResult.bestScore || left.index - right.index;
+      }
+
+      if (!leftBestResult && !rightBestResult) return left.index - right.index;
+      if (!leftBestResult) return 1;
+      if (!rightBestResult) return -1;
+      return Date.parse(rightBestResult.updatedAt) - Date.parse(leftBestResult.updatedAt) || left.index - right.index;
+    })
+    .map(({ card }) => card);
 }
 
 export function productionCaseLibraryStatusMatchesFilter(
