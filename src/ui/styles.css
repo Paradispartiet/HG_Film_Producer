@@ -1030,9 +1030,9 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .scenario-library-header { display: flex; align-items: end; justify-content: space-between; gap: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
 .scenario-library-header h2 { margin-top: 5px; font-family: Georgia, serif; font-size: clamp(30px, 4vw, 48px); font-weight: 500; letter-spacing: -0.04em; }
 .scenario-library-header p { max-width: 560px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; text-align: right; }
-.scenario-search { display: grid; gap: 8px; padding: 18px; border: 1px solid var(--line); background: linear-gradient(145deg, rgba(21, 25, 31, 0.94), rgba(12, 15, 19, 0.98)); }
+.scenario-search { display: grid; gap: 8px; min-width: 0; padding: 16px; border: 1px solid var(--line); background: linear-gradient(145deg, rgba(21, 25, 31, 0.94), rgba(12, 15, 19, 0.98)); }
 .scenario-search span { color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
-.scenario-search input { width: 100%; padding: 13px 14px; border: 1px solid var(--line); outline: none; background: rgba(6, 8, 11, 0.82); color: var(--text); font-size: 13px; }
+.scenario-search input { width: 100%; min-width: 0; padding: 12px 14px; border: 1px solid var(--line); outline: none; background: rgba(6, 8, 11, 0.82); color: var(--text); font-size: 13px; }
 .scenario-search input:focus { border-color: rgba(214, 174, 98, 0.75); box-shadow: 0 0 0 3px var(--accent-soft); }
 .scenario-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
 .scenario-card { display: flex; min-height: 330px; flex-direction: column; gap: 14px; padding: 20px; border: 1px solid var(--line); background: linear-gradient(150deg, rgba(21, 25, 31, 0.98), rgba(11, 13, 17, 0.98)); box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16); }
@@ -1196,16 +1196,18 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .production-case-achievement span { color: var(--accent); font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; }
 .production-case-achievement.unlocked span { color: var(--positive); }
 .production-case-achievement small { color: var(--muted); font-size: 10px; line-height: 1.35; }
-.scenario-library-controls { display: grid; grid-template-columns: minmax(0, 1fr) repeat(3, minmax(150px, 210px)) minmax(130px, auto); gap: 12px; align-items: stretch; }
-.scenario-filter-reset { align-self: end; min-height: 50px; padding-inline: 14px; }
-.scenario-result-summary { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; color: var(--muted); font-size: 12px; }
+.scenario-library-controls { display: grid; gap: 10px; min-width: 0; }
+.scenario-controls-search-row, .scenario-controls-filter-row { display: grid; gap: 10px; min-width: 0; }
+.scenario-controls-filter-row { grid-template-columns: repeat(3, minmax(140px, 1fr)) auto; align-items: stretch; }
+.scenario-filter-reset { align-self: end; min-height: 42px; padding: 10px 13px; font-size: 9px; white-space: nowrap; }
+.scenario-result-summary { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; min-width: 0; color: var(--muted); font-size: 12px; }
 .scenario-result-summary > span:first-child { color: var(--text); font-weight: 800; }
-.scenario-active-controls { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-.scenario-active-controls span { padding: 5px 8px; border: 1px solid var(--line); border-radius: 999px; background: rgba(214, 174, 98, 0.08); color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: 0.04em; }
+.scenario-active-controls { display: flex; flex: 1 1 260px; flex-wrap: wrap; gap: 6px; align-items: center; min-width: 0; }
+.scenario-active-controls span { max-width: 100%; overflow-wrap: anywhere; padding: 5px 8px; border: 1px solid var(--line); border-radius: 999px; background: rgba(214, 174, 98, 0.08); color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: 0.04em; }
 .scenario-active-controls-empty { color: var(--muted); font-size: 11px; font-weight: 700; }
-.scenario-status-filter { display: grid; gap: 8px; padding: 18px; border: 1px solid var(--line); background: linear-gradient(145deg, rgba(21, 25, 31, 0.94), rgba(12, 15, 19, 0.98)); }
+.scenario-status-filter { display: grid; gap: 7px; min-width: 0; padding: 14px; border: 1px solid var(--line); background: linear-gradient(145deg, rgba(21, 25, 31, 0.94), rgba(12, 15, 19, 0.98)); }
 .scenario-status-filter span { color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
-.scenario-status-filter select { width: 100%; padding: 13px 14px; border: 1px solid var(--line); outline: none; background: rgba(6, 8, 11, 0.82); color: var(--text); font-size: 13px; }
+.scenario-status-filter select { width: 100%; min-width: 0; padding: 11px 12px; border: 1px solid var(--line); outline: none; background: rgba(6, 8, 11, 0.82); color: var(--text); font-size: 13px; }
 .scenario-status-filter select:focus { border-color: rgba(214, 174, 98, 0.75); box-shadow: 0 0 0 3px var(--accent-soft); }
 .scenario-empty-state { margin: 0; padding: 16px 18px; border: 1px solid var(--line); background: rgba(12, 15, 19, 0.78); color: var(--muted); }
 .scenario-case-status, .scenario-case-best-result { display: grid; grid-template-columns: 1fr auto; gap: 5px 10px; padding: 10px 12px; border: 1px solid rgba(214, 174, 98, 0.24); background: rgba(214, 174, 98, 0.08); color: var(--muted-light); font-size: 11px; }
@@ -1218,7 +1220,15 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
   .production-case-summary-card { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .production-case-next-action { align-items: stretch; flex-direction: column; }
   .production-case-achievement-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .scenario-library-controls { grid-template-columns: 1fr; }
+  .scenario-controls-filter-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .scenario-filter-reset { width: 100%; }
+  .scenario-result-summary { align-items: flex-start; flex-direction: column; }
+  .scenario-active-controls { flex-basis: auto; width: 100%; }
+}
+
+@media (max-width: 520px) {
+  .scenario-search, .scenario-status-filter { padding: 13px; }
+  .scenario-controls-filter-row { grid-template-columns: 1fr; }
 }
 
 .scenario-production-report { display: grid; gap: 12px; padding: 14px 15px; border: 1px solid rgba(115, 184, 149, 0.3); background: rgba(115, 184, 149, 0.07); }

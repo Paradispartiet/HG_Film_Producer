@@ -183,51 +183,55 @@ export function FilmScenarioLibrary({
         onOpenScenario={nextActionScenario ? () => { onStartScenario?.(nextActionScenario); } : undefined}
       />
       <div className="scenario-library-controls">
-        <label className="scenario-search">
-          <span>Søk</span>
-          <input
-            value={searchQuery}
-            onChange={(event) => setSearchQuery(event.target.value)}
-            placeholder="Søk film, år eller case"
-            type="search"
-          />
-        </label>
-        <label className="scenario-status-filter">
-          <span>Case-status</span>
-          <select
-            value={caseStatusFilter}
-            onChange={(event) => setCaseStatusFilter(event.target.value as ProductionCaseLibraryStatusFilter)}
-          >
-            {caseStatusFilters.map((filter) => (
-              <option key={filter.value} value={filter.value}>{filter.label}</option>
-            ))}
-          </select>
-        </label>
-        <label className="scenario-status-filter">
-          <span>Mastery</span>
-          <select
-            value={masteryFilter}
-            onChange={(event) => setMasteryFilter(event.target.value as ProductionCaseMasteryFilter)}
-          >
-            {masteryFilters.map((filter) => (
-              <option key={filter.value} value={filter.value}>{filter.label}</option>
-            ))}
-          </select>
-        </label>
-        <label className="scenario-status-filter scenario-sort-control">
-          <span>Sorter</span>
-          <select
-            value={sortMode}
-            onChange={(event) => setSortMode(event.target.value as ProductionCaseLibrarySortMode)}
-          >
-            {sortModeOptions.map((option) => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-            ))}
-          </select>
-        </label>
-        <button className="secondary-button scenario-filter-reset" onClick={resetLibraryControls} type="button">
-          Nullstill filtre
-        </button>
+        <div className="scenario-controls-search-row">
+          <label className="scenario-search">
+            <span>Søk</span>
+            <input
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              placeholder="Søk film, år eller case"
+              type="search"
+            />
+          </label>
+        </div>
+        <div className="scenario-controls-filter-row">
+          <label className="scenario-status-filter">
+            <span>Case-status</span>
+            <select
+              value={caseStatusFilter}
+              onChange={(event) => setCaseStatusFilter(event.target.value as ProductionCaseLibraryStatusFilter)}
+            >
+              {caseStatusFilters.map((filter) => (
+                <option key={filter.value} value={filter.value}>{filter.label}</option>
+              ))}
+            </select>
+          </label>
+          <label className="scenario-status-filter">
+            <span>Mastery</span>
+            <select
+              value={masteryFilter}
+              onChange={(event) => setMasteryFilter(event.target.value as ProductionCaseMasteryFilter)}
+            >
+              {masteryFilters.map((filter) => (
+                <option key={filter.value} value={filter.value}>{filter.label}</option>
+              ))}
+            </select>
+          </label>
+          <label className="scenario-status-filter scenario-sort-control">
+            <span>Sorter</span>
+            <select
+              value={sortMode}
+              onChange={(event) => setSortMode(event.target.value as ProductionCaseLibrarySortMode)}
+            >
+              {sortModeOptions.map((option) => (
+                <option key={option.value} value={option.value}>{option.label}</option>
+              ))}
+            </select>
+          </label>
+          <button className="secondary-button scenario-filter-reset" onClick={resetLibraryControls} type="button">
+            Nullstill filtre
+          </button>
+        </div>
       </div>
       <div className="scenario-result-summary" aria-live="polite">
         <span>{resultSummary.label}</span>
