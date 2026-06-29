@@ -891,6 +891,103 @@ export function createProductionCaseProgressExport(
   };
 }
 
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
+}
+
+function isValidProductionCaseProgressEntry(scenarioId: string, value: unknown): value is ProductionCaseProgressEntry {
+  if (!isRecord(value)) return false;
+  if (typeof value.scenarioId !== "string" || value.scenarioId !== scenarioId) return false;
+  if (!Array.isArray(value.completedMissionIds) || !value.completedMissionIds.every((id) => typeof id === "string")) return false;
+  if ("selectedChoicesByMissionId" in value && value.selectedChoicesByMissionId !== undefined) {
+    if (!isRecord(value.selectedChoicesByMissionId)) return false;
+    if (!Object.values(value.selectedChoicesByMissionId).every((choiceId) => typeof choiceId === "string")) return false;
+  }
+  if ("updatedAt" in value && value.updatedAt !== undefined && typeof value.updatedAt !== "string") return false;
+  return true;
+}
+
+function isValidProductionCaseProgressState(value: unknown): value is ProductionCaseProgressState {
+  return isRecord(value) && Object.entries(value).every(([scenarioId, entry]) => (
+    isValidProductionCaseProgressEntry(scenarioId, entry)
+  ));
+}
+
+function isValidProductionCaseBestResultEntry(scenarioId: string, value: unknown): value is ProductionCaseBestResultEntry {
+  if (!isRecord(value)) return false;
+  return value.scenarioId === scenarioId
+    && typeof value.bestScore === "number"
+    && Number.isFinite(value.bestScore)
+    && typeof value.maxScore === "number"
+    && Number.isFinite(value.maxScore)
+    && isProductionCaseBestResultTier(value.bestTier)
+    && typeof value.bestMatchedCount === "number"
+    && Number.isFinite(value.bestMatchedCount)
+    && typeof value.completedAt === "string"
+    && typeof value.updatedAt === "string";
+}
+
+function isValidProductionCaseBestResultsState(value: unknown): value is ProductionCaseBestResultsState {
+  return isRecord(value) && Object.entries(value).every(([scenarioId, entry]) => (
+    isValidProductionCaseBestResultEntry(scenarioId, entry)
+  ));
+}
+
+function isValidProductionCaseLibraryControls(value: unknown): value is ProductionCaseLibraryControls {
+  if (!isRecord(value)) return false;
+  return isProductionCaseLibraryStatusFilter(value.caseStatusFilter)
+    && isProductionCaseMasteryFilter(value.masteryFilter)
+    && isProductionCaseLibrarySortMode(value.sortMode)
+    && typeof value.searchQuery === "string";
+}
+
+export type ProductionCaseProgressImportResult =
+  | {
+      readonly ok: true;
+      readonly importedAt: string;
+      readonly counts: {
+        readonly currentProgressCount: number;
+        readonly bestResultCount: number;
+      };
+    }
+  | { readonly ok: false; readonly reason: string };
+
+export function importProductionCaseProgressBackup(
+  rawJson: string,
+  storage: ProductionCaseProgressStorage,
+  importedAt = new Date().toISOString(),
+): ProductionCaseProgressImportResult {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(rawJson) as unknown;
+  } catch {
+    return { ok: false, reason: "invalid_json" };
+  }
+
+  if (!isRecord(parsed)) return { ok: false, reason: "invalid_backup" };
+  if (parsed.version !== productionCaseProgressExportVersion) return { ok: false, reason: "invalid_version" };
+  if (!("currentProgress" in parsed) || !("bestResults" in parsed) || !("libraryControls" in parsed)) {
+    return { ok: false, reason: "missing_fields" };
+  }
+  if (!isValidProductionCaseProgressState(parsed.currentProgress)) return { ok: false, reason: "invalid_current_progress" };
+  if (!isValidProductionCaseBestResultsState(parsed.bestResults)) return { ok: false, reason: "invalid_best_results" };
+  if (!isValidProductionCaseLibraryControls(parsed.libraryControls)) return { ok: false, reason: "invalid_library_controls" };
+
+  storage.setItem(productionCaseProgressStorageKey, JSON.stringify(parsed.currentProgress));
+  storage.setItem(productionCaseBestResultsStorageKey, JSON.stringify(parsed.bestResults));
+  storage.setItem(productionCaseLibraryControlsStorageKey, JSON.stringify(parsed.libraryControls));
+
+  return {
+    ok: true,
+    importedAt,
+    counts: {
+      currentProgressCount: Object.keys(parsed.currentProgress).length,
+      bestResultCount: Object.keys(parsed.bestResults).length,
+    },
+  };
+}
+
 export function sortProductionCaseLibraryCards<T extends ProductionCaseLibrarySortableCard>(
   cards: readonly T[],
   sortMode: ProductionCaseLibrarySortMode,

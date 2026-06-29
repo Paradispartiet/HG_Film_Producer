@@ -1199,9 +1199,14 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .scenario-library-controls { display: grid; gap: 10px; min-width: 0; }
 .scenario-controls-search-row, .scenario-controls-filter-row { display: grid; gap: 10px; min-width: 0; }
 .scenario-controls-filter-row { grid-template-columns: repeat(3, minmax(140px, 1fr)) auto auto; align-items: stretch; }
-.scenario-filter-reset, .scenario-export-button { align-self: end; min-height: 42px; padding: 10px 13px; font-size: 9px; white-space: nowrap; }
-.scenario-export-status { color: var(--positive); font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
-.scenario-export-fallback { width: 100%; min-height: 130px; box-sizing: border-box; padding: 10px 12px; border: 1px solid var(--line); outline: none; resize: vertical; background: rgba(6, 8, 11, 0.82); color: var(--text); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; }
+.scenario-filter-reset, .scenario-export-button, .scenario-import-button { align-self: end; min-height: 42px; padding: 10px 13px; font-size: 9px; white-space: nowrap; }
+.scenario-export-status, .scenario-import-status { color: var(--positive); font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+.scenario-export-fallback, .scenario-import-control textarea { width: 100%; min-height: 130px; box-sizing: border-box; padding: 10px 12px; border: 1px solid var(--line); outline: none; resize: vertical; background: rgba(6, 8, 11, 0.82); color: var(--text); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; }
+.scenario-import-control { display: grid; gap: 8px; padding: 12px; border: 1px solid var(--line); background: rgba(6, 8, 11, 0.38); }
+.scenario-import-control label { display: grid; gap: 7px; color: var(--muted-light); font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.scenario-import-control p { margin: 0; color: var(--accent); font-size: 11px; font-weight: 750; }
+.scenario-import-button { justify-self: start; }
+.scenario-import-button:disabled { cursor: not-allowed; opacity: 0.45; }
 .scenario-result-summary { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; min-width: 0; color: var(--muted); font-size: 12px; }
 .scenario-result-summary > span:first-child { color: var(--text); font-weight: 800; }
 .scenario-active-controls { display: flex; flex: 1 1 260px; flex-wrap: wrap; gap: 6px; align-items: center; min-width: 0; }

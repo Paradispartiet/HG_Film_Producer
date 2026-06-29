@@ -11,6 +11,7 @@ import {
   getProductionCaseLibraryResultSummary,
   getProductionCaseNextAction,
   getProductionCaseProgressEntry,
+  importProductionCaseProgressBackup,
   productionCaseLibraryStatusMatchesFilter,
   productionCaseMasteryFilterMatches,
   readProductionCaseBestResults,
@@ -80,6 +81,8 @@ export function FilmScenarioLibrary({
   const [progressRefreshKey, setProgressRefreshKey] = useState(0);
   const [exportStatus, setExportStatus] = useState<"exported" | "ready_to_copy" | undefined>();
   const [exportFallbackJson, setExportFallbackJson] = useState("");
+  const [importJson, setImportJson] = useState("");
+  const [importStatus, setImportStatus] = useState<"imported" | "error" | undefined>();
   const scenarios = getClassicFilmScenarios();
   const progressState = useMemo(() => {
     if (typeof window === "undefined") return {};
@@ -197,6 +200,30 @@ export function FilmScenarioLibrary({
     setExportStatus("ready_to_copy");
   };
 
+  const refreshProductionCaseLibraryState = () => {
+    if (typeof window === "undefined") return;
+    const controls = readProductionCaseLibraryControls(window.localStorage);
+    setCaseStatusFilter(controls.caseStatusFilter);
+    setMasteryFilter(controls.masteryFilter);
+    setSortMode(controls.sortMode);
+    setSearchQuery(controls.searchQuery);
+    setProgressRefreshKey((key) => key + 1);
+  };
+
+  const confirmProductionCaseProgressImport = () => {
+    if (typeof window === "undefined") return;
+
+    const result = importProductionCaseProgressBackup(importJson, window.localStorage);
+    if (!result.ok) {
+      setImportStatus("error");
+      return;
+    }
+
+    refreshProductionCaseLibraryState();
+    setImportStatus("imported");
+    setImportJson("");
+  };
+
   return (
     <main className="scenario-library">
       <div className="scenario-library-header">
@@ -270,9 +297,38 @@ export function FilmScenarioLibrary({
             Eksporter progress
           </button>
         </div>
+        <div className="scenario-import-control">
+          <label>
+            <span>Importer progress</span>
+            <textarea
+              value={importJson}
+              onChange={(event) => {
+                setImportJson(event.target.value);
+                setImportStatus(undefined);
+              }}
+              rows={4}
+              placeholder="Lim inn JSON-backup"
+              aria-label="Importer progress"
+            />
+          </label>
+          <p>Import overskriver lokal production-case progress.</p>
+          <button
+            className="secondary-button scenario-import-button"
+            disabled={!importJson.trim()}
+            onClick={confirmProductionCaseProgressImport}
+            type="button"
+          >
+            Bekreft import
+          </button>
+        </div>
         {exportStatus ? (
           <div className="scenario-export-status" aria-live="polite">
             {exportStatus === "exported" ? "Progress eksportert" : "Progress klar til kopiering"}
+          </div>
+        ) : null}
+        {importStatus ? (
+          <div className="scenario-import-status" aria-live="polite">
+            {importStatus === "imported" ? "Progress importert" : "Kunne ikke importere progress"}
           </div>
         ) : null}
         {exportFallbackJson ? (
