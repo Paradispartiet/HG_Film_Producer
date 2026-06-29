@@ -71,7 +71,7 @@ export function FilmScenarioLibrary({
 }: {
   readonly onStartScenario?: (scenario: FilmScenarioSeed) => void;
 }) {
-  const [query, setQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(() => getInitialProductionCaseLibraryControls().searchQuery);
   const [caseStatusFilter, setCaseStatusFilter] = useState<ProductionCaseLibraryStatusFilter>(() => getInitialProductionCaseLibraryControls().caseStatusFilter);
   const [masteryFilter, setMasteryFilter] = useState<ProductionCaseMasteryFilter>(() => getInitialProductionCaseLibraryControls().masteryFilter);
   const [sortMode, setSortMode] = useState<ProductionCaseLibrarySortMode>(() => getInitialProductionCaseLibraryControls().sortMode);
@@ -85,7 +85,7 @@ export function FilmScenarioLibrary({
     if (typeof window === "undefined") return {};
     return readProductionCaseBestResults(window.localStorage);
   }, [progressRefreshKey]);
-  const normalizedQuery = query.trim().toLowerCase();
+  const normalizedSearchQuery = searchQuery.trim().toLowerCase();
   const scenarioCards = useMemo(() => {
     return scenarios.map((scenario) => ({
       scenario,
@@ -117,22 +117,22 @@ export function FilmScenarioLibrary({
   }, [nextAction, nextActionScenario, progressState]);
   const filteredScenarioCards = useMemo(() => {
     const filteredCards = scenarioCards.filter(({ scenario, bestResult, caseStatus }) => {
-      const matchesQuery = !normalizedQuery || getScenarioSearchText(scenario).includes(normalizedQuery);
+      const matchesQuery = !normalizedSearchQuery || getScenarioSearchText(scenario).includes(normalizedSearchQuery);
       if (!matchesQuery) return false;
       return productionCaseLibraryStatusMatchesFilter(caseStatus, caseStatusFilter)
         && productionCaseMasteryFilterMatches(caseStatus, bestResult, masteryFilter);
     });
     return sortProductionCaseLibraryCards(filteredCards, sortMode);
-  }, [caseStatusFilter, masteryFilter, normalizedQuery, scenarioCards, sortMode]);
+  }, [caseStatusFilter, masteryFilter, normalizedSearchQuery, scenarioCards, sortMode]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     try {
-      writeProductionCaseLibraryControls(window.localStorage, { caseStatusFilter, masteryFilter, sortMode });
+      writeProductionCaseLibraryControls(window.localStorage, { caseStatusFilter, masteryFilter, sortMode, searchQuery });
     } catch {
       // Ignore unavailable storage in test/server-like contexts.
     }
-  }, [caseStatusFilter, masteryFilter, sortMode]);
+  }, [caseStatusFilter, masteryFilter, searchQuery, sortMode]);
 
   useEffect(() => {
     if (typeof window === "undefined" || typeof document === "undefined") return;
@@ -151,6 +151,7 @@ export function FilmScenarioLibrary({
     setCaseStatusFilter(defaultProductionCaseLibraryControls.caseStatusFilter);
     setMasteryFilter(defaultProductionCaseLibraryControls.masteryFilter);
     setSortMode(defaultProductionCaseLibraryControls.sortMode);
+    setSearchQuery(defaultProductionCaseLibraryControls.searchQuery);
   };
 
   return (
@@ -175,11 +176,11 @@ export function FilmScenarioLibrary({
       />
       <div className="scenario-library-controls">
         <label className="scenario-search">
-          <span>Search by title, director, or genre</span>
+          <span>Søk</span>
           <input
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder="Try kubrick, crime, or The Machinist"
+            value={searchQuery}
+            onChange={(event) => setSearchQuery(event.target.value)}
+            placeholder="Søk film, år eller case"
             type="search"
           />
         </label>
@@ -225,7 +226,7 @@ export function FilmScenarioLibrary({
         <strong>{scenarios.length}</strong> scenarios
       </div>
       {filteredScenarioCards.length === 0 ? (
-        <p className="scenario-empty-state">Ingen production cases matcher filtrene.</p>
+        <p className="scenario-empty-state">Ingen production cases matcher søket eller filtrene.</p>
       ) : null}
       <div className="scenario-grid">
         {filteredScenarioCards.map(({ scenario, bestResult, caseStatus }) => (
@@ -394,14 +395,19 @@ function ScenarioCaseStatusBadge({ status }: { readonly status: ProductionCaseLi
   );
 }
 
-function getScenarioSearchText(scenario: FilmScenarioSeed) {
+export function getScenarioSearchText(scenario: FilmScenarioSeed) {
+  const brief = resolveScenarioProductionBrief(scenario);
   return [
     scenario.film.title,
     scenario.film.original_title,
+    String(scenario.film.year),
     ...scenario.film.directors,
     ...scenario.film.genres,
     ...scenario.film.genre_keys,
+    brief.title,
+    brief.logline,
   ]
+    .filter(Boolean)
     .join(" ")
     .toLowerCase();
 }

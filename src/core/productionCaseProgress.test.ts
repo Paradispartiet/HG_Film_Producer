@@ -261,7 +261,7 @@ test("production case library controls default unknown filter and sort values", 
       masteryFilter: "mystery",
       sortMode: "recent_best",
     })),
-    { caseStatusFilter: "completed", masteryFilter: "all", sortMode: "recent_best" },
+    { caseStatusFilter: "completed", masteryFilter: "all", sortMode: "recent_best", searchQuery: "" },
   );
 });
 
@@ -271,6 +271,7 @@ test("production case library controls read and write valid controls", () => {
     caseStatusFilter: "in_progress",
     masteryFilter: "can_improve",
     sortMode: "best_score_asc",
+    searchQuery: "taxi",
   } as const;
 
   writeProductionCaseLibraryControls(storage, controls);
@@ -285,6 +286,7 @@ test("production case library controls reset writes defaults", () => {
     caseStatusFilter: "completed",
     masteryFilter: "can_improve",
     sortMode: "best_score_asc",
+    searchQuery: "taxi",
   });
 
   writeProductionCaseLibraryControls(storage, defaultProductionCaseLibraryControls);
@@ -308,11 +310,69 @@ test("FilmScenarioLibrary initializes from persisted controls and exposes reset 
   const uiSource = readFileSync("src/ui/components/FilmScenarioLibrary.tsx", "utf8");
 
   assert.match(uiSource, /readProductionCaseLibraryControls\(window\.localStorage\)/);
-  assert.match(uiSource, /writeProductionCaseLibraryControls\(window\.localStorage, \{ caseStatusFilter, masteryFilter, sortMode \}\)/);
+  assert.match(uiSource, /writeProductionCaseLibraryControls\(window\.localStorage, \{ caseStatusFilter, masteryFilter, sortMode, searchQuery \}\)/);
   assert.match(uiSource, /Nullstill filtre/);
   assert.match(uiSource, /setCaseStatusFilter\(defaultProductionCaseLibraryControls\.caseStatusFilter\)/);
   assert.match(uiSource, /setMasteryFilter\(defaultProductionCaseLibraryControls\.masteryFilter\)/);
   assert.match(uiSource, /setSortMode\(defaultProductionCaseLibraryControls\.sortMode\)/);
+  assert.match(uiSource, /setSearchQuery\(defaultProductionCaseLibraryControls\.searchQuery\)/);
+  assert.match(uiSource, /Søk film, år eller case/);
+});
+
+test("production case library controls parse legacy and invalid search query safely", () => {
+  assert.equal(defaultProductionCaseLibraryControls.searchQuery, "");
+  assert.deepEqual(
+    parseProductionCaseLibraryControls(JSON.stringify({
+      caseStatusFilter: "completed",
+      masteryFilter: "can_improve",
+      sortMode: "title_asc",
+    })),
+    { caseStatusFilter: "completed", masteryFilter: "can_improve", sortMode: "title_asc", searchQuery: "" },
+  );
+  assert.deepEqual(
+    parseProductionCaseLibraryControls(JSON.stringify({
+      caseStatusFilter: "completed",
+      masteryFilter: "can_improve",
+      sortMode: "title_asc",
+      searchQuery: 1976,
+    })),
+    { caseStatusFilter: "completed", masteryFilter: "can_improve", sortMode: "title_asc", searchQuery: "" },
+  );
+});
+
+test("FilmScenarioLibrary search includes title, year, director, and brief logline fields", () => {
+  const uiSource = readFileSync("src/ui/components/FilmScenarioLibrary.tsx", "utf8");
+
+  assert.match(uiSource, /scenario\.film\.title/);
+  assert.match(uiSource, /scenario\.film\.original_title/);
+  assert.match(uiSource, /String\(scenario\.film\.year\)/);
+  assert.match(uiSource, /\.\.\.scenario\.film\.directors/);
+  assert.match(uiSource, /brief\.logline/);
+  assert.match(uiSource, /trim\(\)\.toLowerCase\(\)/);
+  assert.match(uiSource, /includes\(normalizedSearchQuery\)/);
+});
+
+test("FilmScenarioLibrary search combines before status, mastery, and sorting", () => {
+  const completedMissionIds = libraryStatusMissions.map((mission) => mission.id);
+  const completed = getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds });
+  const inProgress = getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds: ["mission-1"] });
+  const cards = [
+    createLibrarySortCard("taxi-b", "Taxi Bravo", completed, { ...createProductionCaseReportBest("taxi-b", 4), bestTier: "assistant" }),
+    createLibrarySortCard("other", "Other", completed, { ...createProductionCaseReportBest("other", 12), bestTier: "auteur" }),
+    createLibrarySortCard("taxi-a", "Taxi Alpha", inProgress, undefined),
+  ];
+
+  const searched = cards.filter((card) => card.scenario.film.title.toLowerCase().includes("taxi"));
+  assert.deepEqual(searched.map((card) => card.id), ["taxi-b", "taxi-a"]);
+  assert.deepEqual(
+    searched.filter((card) => productionCaseLibraryStatusMatchesFilter(card.status, "completed")).map((card) => card.id),
+    ["taxi-b"],
+  );
+  assert.deepEqual(
+    searched.filter((card) => productionCaseMasteryFilterMatches(card.status, card.bestResult, "can_improve")).map((card) => card.id),
+    ["taxi-b", "taxi-a"],
+  );
+  assert.deepEqual(sortProductionCaseLibraryCards(searched, "title_asc").map((card) => card.id), ["taxi-a", "taxi-b"]);
 });
 
 test("progress writes to the v1 localStorage key and can be read back", () => {
@@ -1060,7 +1120,9 @@ test("production case mastery filter UI copy and empty state avoid forbidden lan
     "Produsent",
     "Auteur",
     "Kan forbedres",
-    "Ingen production cases matcher filtrene.",
+    "Ingen production cases matcher søket eller filtrene.",
+    "Søk",
+    "Søk film, år eller case",
     "Sorter",
     "Standard",
     "Tittel A–Å",
