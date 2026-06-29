@@ -476,6 +476,71 @@ export const defaultProductionCaseLibraryControls: ProductionCaseLibraryControls
   sortMode: "default",
   searchQuery: "",
 };
+
+const productionCaseLibraryStatusFilterLabels: Record<ProductionCaseLibraryStatusFilter, string> = {
+  all: "Alle",
+  not_started: "Ikke startet",
+  in_progress: "Under arbeid",
+  completed: "Fullført",
+};
+
+const productionCaseMasteryFilterLabels: Record<ProductionCaseMasteryFilter, string> = {
+  all: "Alle",
+  not_completed_best: "Ikke fullført best",
+  assistant_best: "Assistent",
+  producer_best: "Produsent",
+  auteur_best: "Auteur",
+  can_improve: "Kan forbedres",
+};
+
+const productionCaseLibrarySortModeLabels: Record<ProductionCaseLibrarySortMode, string> = {
+  default: "Standard",
+  title_asc: "Tittel A–Å",
+  best_score_desc: "Beste score høyest",
+  best_score_asc: "Beste score lavest",
+  recent_best: "Nylig beste resultat",
+};
+
+export type ProductionCaseLibraryResultSummary = {
+  readonly visibleCount: number;
+  readonly totalCount: number;
+  readonly label: string;
+  readonly activeControlLabels: readonly string[];
+};
+
+export function getProductionCaseLibraryResultSummary({
+  totalCount,
+  visibleCount,
+  controls,
+}: {
+  readonly totalCount: number;
+  readonly visibleCount: number;
+  readonly controls: ProductionCaseLibraryControls;
+}): ProductionCaseLibraryResultSummary {
+  const activeControlLabels: string[] = [];
+  const normalizedSearchQuery = controls.searchQuery.trim();
+
+  if (normalizedSearchQuery) activeControlLabels.push(`Søk: ${normalizedSearchQuery}`);
+  if (controls.caseStatusFilter !== defaultProductionCaseLibraryControls.caseStatusFilter) {
+    activeControlLabels.push(`Case-status: ${productionCaseLibraryStatusFilterLabels[controls.caseStatusFilter]}`);
+  }
+  if (controls.masteryFilter !== defaultProductionCaseLibraryControls.masteryFilter) {
+    activeControlLabels.push(`Mastery: ${productionCaseMasteryFilterLabels[controls.masteryFilter]}`);
+  }
+  if (controls.sortMode !== defaultProductionCaseLibraryControls.sortMode) {
+    activeControlLabels.push(`Sorter: ${productionCaseLibrarySortModeLabels[controls.sortMode]}`);
+  }
+
+  return {
+    visibleCount,
+    totalCount,
+    label: visibleCount === 0
+      ? "Ingen production cases matcher søket eller filtrene"
+      : `Viser ${visibleCount} av ${totalCount} production cases`,
+    activeControlLabels,
+  };
+}
+
 export type ProductionCaseLibraryStatus = {
   readonly label: string;
   readonly tier: ProductionCaseResultTier;

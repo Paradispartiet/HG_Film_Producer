@@ -11,6 +11,7 @@ import {
   getProductionCaseMissionScore,
   getProductionCaseImprovementHint,
   getProductionCaseLibraryStatus,
+  getProductionCaseLibraryResultSummary,
   getProductionCaseNextAction,
   getProductionCaseReport,
   getProductionCaseProgressEntry,
@@ -265,6 +266,75 @@ test("production case library controls default unknown filter and sort values", 
   );
 });
 
+
+test("production case library result summary reports default counts without active controls", () => {
+  const summary = getProductionCaseLibraryResultSummary({
+    totalCount: 161,
+    visibleCount: 161,
+    controls: defaultProductionCaseLibraryControls,
+  });
+
+  assert.equal(summary.visibleCount, 161);
+  assert.equal(summary.totalCount, 161);
+  assert.equal(summary.label, "Viser 161 av 161 production cases");
+  assert.deepEqual(summary.activeControlLabels, []);
+});
+
+test("production case library result summary lists only non-default controls", () => {
+  const summary = getProductionCaseLibraryResultSummary({
+    totalCount: 161,
+    visibleCount: 12,
+    controls: {
+      caseStatusFilter: "all",
+      masteryFilter: "all",
+      sortMode: "best_score_asc",
+      searchQuery: " taxi ",
+    },
+  });
+
+  assert.equal(summary.label, "Viser 12 av 161 production cases");
+  assert.deepEqual(summary.activeControlLabels, ["Søk: taxi", "Sorter: Beste score lavest"]);
+  assert.ok(!summary.activeControlLabels.includes("Case-status: Alle"));
+  assert.ok(!summary.activeControlLabels.includes("Mastery: Alle"));
+  assert.ok(!summary.activeControlLabels.includes("Sorter: Standard"));
+});
+
+test("production case library result summary labels status and mastery filters", () => {
+  const summary = getProductionCaseLibraryResultSummary({
+    totalCount: 161,
+    visibleCount: 8,
+    controls: {
+      caseStatusFilter: "in_progress",
+      masteryFilter: "can_improve",
+      sortMode: "default",
+      searchQuery: "",
+    },
+  });
+
+  assert.deepEqual(summary.activeControlLabels, ["Case-status: Under arbeid", "Mastery: Kan forbedres"]);
+});
+
+test("production case library result summary uses empty-result label", () => {
+  const summary = getProductionCaseLibraryResultSummary({
+    totalCount: 161,
+    visibleCount: 0,
+    controls: { ...defaultProductionCaseLibraryControls, searchQuery: "zzzz" },
+  });
+
+  assert.equal(summary.label, "Ingen production cases matcher søket eller filtrene");
+  assert.deepEqual(summary.activeControlLabels, ["Søk: zzzz"]);
+});
+
+test("production case library result summary reset removes active controls", () => {
+  const summary = getProductionCaseLibraryResultSummary({
+    totalCount: 161,
+    visibleCount: 161,
+    controls: defaultProductionCaseLibraryControls,
+  });
+
+  assert.deepEqual(summary.activeControlLabels, []);
+});
+
 test("production case library controls read and write valid controls", () => {
   const storage = createMemoryStorage();
   const controls = {
@@ -312,6 +382,9 @@ test("FilmScenarioLibrary initializes from persisted controls and exposes reset 
   assert.match(uiSource, /readProductionCaseLibraryControls\(window\.localStorage\)/);
   assert.match(uiSource, /writeProductionCaseLibraryControls\(window\.localStorage, \{ caseStatusFilter, masteryFilter, sortMode, searchQuery \}\)/);
   assert.match(uiSource, /Nullstill filtre/);
+  assert.match(uiSource, /getProductionCaseLibraryResultSummary/);
+  assert.match(uiSource, /scenario-result-summary/);
+  assert.match(uiSource, /Ingen aktive filtre/);
   assert.match(uiSource, /setCaseStatusFilter\(defaultProductionCaseLibraryControls\.caseStatusFilter\)/);
   assert.match(uiSource, /setMasteryFilter\(defaultProductionCaseLibraryControls\.masteryFilter\)/);
   assert.match(uiSource, /setSortMode\(defaultProductionCaseLibraryControls\.sortMode\)/);
