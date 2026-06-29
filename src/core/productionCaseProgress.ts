@@ -481,6 +481,19 @@ export type ProductionCaseCollectionSummary = {
   readonly maxScore: number;
 };
 
+export type ProductionCaseCareerSummary = {
+  readonly totalCases: number;
+  readonly completedBestCount: number;
+  readonly notCompletedBestCount: number;
+  readonly assistantBestCount: number;
+  readonly producerBestCount: number;
+  readonly auteurBestCount: number;
+  readonly bestTotalScore: number;
+  readonly bestMaxScore: number;
+};
+
+type ProductionCaseCareerSummaryStatus = (ProductionCaseLibraryStatus & { readonly scenarioId?: string }) | undefined;
+
 export type ProductionCaseAchievement = {
   readonly id: string;
   readonly label: string;
@@ -590,19 +603,49 @@ export function getProductionCaseCollectionSummary(
   });
 }
 
+export function getProductionCaseCareerSummary(
+  statuses: readonly ProductionCaseCareerSummaryStatus[],
+  bestResults: ProductionCaseBestResultsState,
+): ProductionCaseCareerSummary {
+  const productionCaseStatuses = statuses.filter((status): status is ProductionCaseLibraryStatus & { readonly scenarioId?: string } => Boolean(status));
+  const productionCaseIds = new Set(
+    productionCaseStatuses
+      .map((status) => status.scenarioId)
+      .filter((scenarioId): scenarioId is string => typeof scenarioId === "string" && scenarioId.length > 0),
+  );
+  const scopedBestResults = productionCaseStatuses.length === 0
+    ? []
+    : Object.values(bestResults).filter((bestResult) => (
+        productionCaseIds.size === 0 || productionCaseIds.has(bestResult.scenarioId)
+      ));
+
+  const completedBestCount = scopedBestResults.length;
+
+  return {
+    totalCases: productionCaseStatuses.length,
+    completedBestCount,
+    notCompletedBestCount: Math.max(productionCaseStatuses.length - completedBestCount, 0),
+    assistantBestCount: scopedBestResults.filter((bestResult) => bestResult.bestTier === "assistant").length,
+    producerBestCount: scopedBestResults.filter((bestResult) => bestResult.bestTier === "producer").length,
+    auteurBestCount: scopedBestResults.filter((bestResult) => bestResult.bestTier === "auteur").length,
+    bestTotalScore: scopedBestResults.reduce((total, bestResult) => total + bestResult.bestScore, 0),
+    bestMaxScore: scopedBestResults.reduce((total, bestResult) => total + bestResult.maxScore, 0),
+  };
+}
+
 const productionCaseAchievementDefinitions = [
-  { id: "first-case", label: "Første case", description: "Fullfør én production case.", target: 1, getValue: (summary: ProductionCaseCollectionSummary) => summary.completedCount },
-  { id: "five-cases", label: "Fem cases", description: "Fullfør fem production cases.", target: 5, getValue: (summary: ProductionCaseCollectionSummary) => summary.completedCount },
-  { id: "ten-cases", label: "Ti cases", description: "Fullfør ti production cases.", target: 10, getValue: (summary: ProductionCaseCollectionSummary) => summary.completedCount },
-  { id: "first-producer", label: "Første Produsent", description: "Oppnå Produsent eller Auteur i én production case.", target: 1, getValue: (summary: ProductionCaseCollectionSummary) => summary.producerCount + summary.auteurCount },
-  { id: "first-auteur", label: "Første Auteur", description: "Oppnå Auteur i én production case.", target: 1, getValue: (summary: ProductionCaseCollectionSummary) => summary.auteurCount },
-  { id: "auteur-series", label: "Auteur-serie", description: "Oppnå Auteur i fem production cases.", target: 5, getValue: (summary: ProductionCaseCollectionSummary) => summary.auteurCount },
-  { id: "half-catalogue", label: "Halv katalog", description: "Fullfør 80 production cases.", target: 80, getValue: (summary: ProductionCaseCollectionSummary) => summary.completedCount },
-  { id: "full-catalogue", label: "Hele katalogen", description: "Fullfør alle 161 production cases.", target: 161, getValue: (summary: ProductionCaseCollectionSummary) => summary.completedCount },
+  { id: "first-case", label: "Første case", description: "Fullfør én production case.", target: 1, getValue: (summary: ProductionCaseCareerSummary) => summary.completedBestCount },
+  { id: "five-cases", label: "Fem cases", description: "Fullfør fem production cases.", target: 5, getValue: (summary: ProductionCaseCareerSummary) => summary.completedBestCount },
+  { id: "ten-cases", label: "Ti cases", description: "Fullfør ti production cases.", target: 10, getValue: (summary: ProductionCaseCareerSummary) => summary.completedBestCount },
+  { id: "first-producer", label: "Første Produsent", description: "Oppnå Produsent eller Auteur i én production case.", target: 1, getValue: (summary: ProductionCaseCareerSummary) => summary.producerBestCount + summary.auteurBestCount },
+  { id: "first-auteur", label: "Første Auteur", description: "Oppnå Auteur i én production case.", target: 1, getValue: (summary: ProductionCaseCareerSummary) => summary.auteurBestCount },
+  { id: "auteur-series", label: "Auteur-serie", description: "Oppnå Auteur i fem production cases.", target: 5, getValue: (summary: ProductionCaseCareerSummary) => summary.auteurBestCount },
+  { id: "half-catalogue", label: "Halv katalog", description: "Fullfør 80 production cases.", target: 80, getValue: (summary: ProductionCaseCareerSummary) => summary.completedBestCount },
+  { id: "full-catalogue", label: "Hele katalogen", description: "Fullfør alle 161 production cases.", target: 161, getValue: (summary: ProductionCaseCareerSummary) => summary.completedBestCount },
 ] as const;
 
 export function getProductionCaseAchievements(
-  summary: ProductionCaseCollectionSummary,
+  summary: ProductionCaseCareerSummary,
 ): readonly ProductionCaseAchievement[] {
   return productionCaseAchievementDefinitions.map((achievement) => {
     const value = Math.min(achievement.getValue(summary), achievement.target);

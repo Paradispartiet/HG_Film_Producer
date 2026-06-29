@@ -4,6 +4,7 @@ import {
   countProductionCaseMatches,
   getProductionCaseBestResultEntry,
   getProductionCaseAchievements,
+  getProductionCaseCareerSummary,
   getProductionCaseCollectionSummary,
   getProductionCaseMissionScore,
   getProductionCaseImprovementHint,
@@ -91,6 +92,21 @@ function createCollectionSummary(overrides: Partial<ReturnType<typeof getProduct
 }
 
 
+function createCareerSummary(overrides: Partial<ReturnType<typeof getProductionCaseCareerSummary>> = {}) {
+  return {
+    totalCases: 161,
+    completedBestCount: 0,
+    notCompletedBestCount: 161,
+    assistantBestCount: 0,
+    producerBestCount: 0,
+    auteurBestCount: 0,
+    bestTotalScore: 0,
+    bestMaxScore: 0,
+    ...overrides,
+  };
+}
+
+
 function createProductionCaseReport(overrides: Partial<NonNullable<ReturnType<typeof getProductionCaseReport>>> = {}) {
   return {
     completedCount: 6,
@@ -112,7 +128,7 @@ function createProductionCaseReport(overrides: Partial<NonNullable<ReturnType<ty
 }
 
 function achievementByLabel(
-  summary: ReturnType<typeof getProductionCaseCollectionSummary>,
+  summary: ReturnType<typeof getProductionCaseCareerSummary>,
   label: string,
 ) {
   const achievement = getProductionCaseAchievements(summary).find((item) => item.label === label);
@@ -756,28 +772,87 @@ test("production case collection summary counts statuses, tiers, and scores", ()
   );
 });
 
-test("production case achievements unlock from collection summary thresholds", () => {
-  const emptyAchievements = getProductionCaseAchievements(createCollectionSummary());
+test("production case career summary counts completed cases, tiers, and score from best results", () => {
+  const completedMissionIds = libraryStatusMissions.map((mission) => mission.id);
+  const statuses = [
+    { ...getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds: [] })!, scenarioId: "scenario_not_started" },
+    { ...getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds: ["mission-1"] })!, scenarioId: "scenario_in_progress" },
+    { ...getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds })!, scenarioId: "scenario_assistant" },
+    { ...getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds })!, scenarioId: "scenario_producer" },
+    { ...getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds })!, scenarioId: "scenario_auteur" },
+    undefined,
+  ];
+
+  assert.deepEqual(getProductionCaseCareerSummary(statuses, {
+    scenario_assistant: { ...createProductionCaseReportBest("scenario_assistant", 4), bestTier: "assistant" },
+    scenario_producer: { ...createProductionCaseReportBest("scenario_producer", 8), bestTier: "producer" },
+    scenario_auteur: { ...createProductionCaseReportBest("scenario_auteur", 12), bestTier: "auteur" },
+    scenario_seed_fallback: { ...createProductionCaseReportBest("scenario_seed_fallback", 12), bestTier: "auteur" },
+  }), {
+    totalCases: 5,
+    completedBestCount: 3,
+    notCompletedBestCount: 2,
+    assistantBestCount: 1,
+    producerBestCount: 1,
+    auteurBestCount: 1,
+    bestTotalScore: 24,
+    bestMaxScore: 36,
+  });
+});
+
+test("production case career summary excludes seed fallback-only statuses", () => {
+  assert.deepEqual(getProductionCaseCareerSummary([undefined], {
+    scenario_seed_fallback: { ...createProductionCaseReportBest("scenario_seed_fallback", 12), bestTier: "auteur" },
+  }), {
+    totalCases: 0,
+    completedBestCount: 0,
+    notCompletedBestCount: 0,
+    assistantBestCount: 0,
+    producerBestCount: 0,
+    auteurBestCount: 0,
+    bestTotalScore: 0,
+    bestMaxScore: 0,
+  });
+});
+
+test("production case career summary and achievements survive current-progress reset", () => {
+  const storage = createMemoryStorage();
+  const status = { ...getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds: [] })!, scenarioId: "scenario_taxi_driver_1976" };
+  updateProductionCaseBestResult("scenario_taxi_driver_1976", createProductionCaseReport({ score: 12, resultTier: "auteur" }), storage, "2026-06-23T00:00:00.000Z");
+  const progressState = setProductionCaseMissionCompletion({}, "scenario_taxi_driver_1976", "mission-1", true);
+  writeProductionCaseProgress(storage, resetProductionCaseScenarioProgress(progressState, "scenario_taxi_driver_1976"));
+
+  const careerSummary = getProductionCaseCareerSummary([status], readProductionCaseBestResults(storage));
+
+  assert.equal(storage.getItem(productionCaseProgressStorageKey), null);
+  assert.equal(careerSummary.completedBestCount, 1);
+  assert.equal(careerSummary.auteurBestCount, 1);
+  assert.equal(achievementByLabel(careerSummary, "Første case").unlocked, true);
+  assert.equal(achievementByLabel(careerSummary, "Første Auteur").unlocked, true);
+});
+
+test("production case achievements unlock from career best-results thresholds", () => {
+  const emptyAchievements = getProductionCaseAchievements(createCareerSummary());
 
   assert.equal(emptyAchievements.length, 8);
-  assert.equal(achievementByLabel(createCollectionSummary(), "Første case").unlocked, false);
-  assert.equal(achievementByLabel(createCollectionSummary(), "Første case").progressLabel, "0/1");
-  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 1 }), "Første case").unlocked, true);
-  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 1 }), "Første case").progressLabel, "1/1");
-  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 3 }), "Fem cases").progressLabel, "3/5");
-  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 5 }), "Fem cases").unlocked, true);
-  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 10 }), "Ti cases").unlocked, true);
-  assert.equal(achievementByLabel(createCollectionSummary({ producerCount: 1 }), "Første Produsent").unlocked, true);
-  assert.equal(achievementByLabel(createCollectionSummary({ auteurCount: 1 }), "Første Produsent").unlocked, true);
-  assert.equal(achievementByLabel(createCollectionSummary({ auteurCount: 1 }), "Første Auteur").unlocked, true);
-  assert.equal(achievementByLabel(createCollectionSummary({ auteurCount: 5 }), "Auteur-serie").unlocked, true);
-  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 12 }), "Halv katalog").progressLabel, "12/80");
-  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 80 }), "Halv katalog").unlocked, true);
-  assert.equal(achievementByLabel(createCollectionSummary({ completedCount: 161 }), "Hele katalogen").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary(), "Første case").unlocked, false);
+  assert.equal(achievementByLabel(createCareerSummary(), "Første case").progressLabel, "0/1");
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 1 }), "Første case").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 1 }), "Første case").progressLabel, "1/1");
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 3 }), "Fem cases").progressLabel, "3/5");
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 5 }), "Fem cases").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 10 }), "Ti cases").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ producerBestCount: 1 }), "Første Produsent").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ auteurBestCount: 1 }), "Første Produsent").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ auteurBestCount: 1 }), "Første Auteur").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ auteurBestCount: 5 }), "Auteur-serie").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 12 }), "Halv katalog").progressLabel, "12/80");
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 80 }), "Halv katalog").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 161 }), "Hele katalogen").unlocked, true);
 });
 
 test("production case achievement copy avoids forbidden language", () => {
-  const copy = getProductionCaseAchievements(createCollectionSummary())
+  const copy = getProductionCaseAchievements(createCareerSummary())
     .flatMap((achievement) => [achievement.label, achievement.description, achievement.progressLabel])
     .join(" ")
     .toLowerCase();
