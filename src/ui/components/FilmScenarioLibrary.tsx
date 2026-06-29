@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
+  createProductionCaseProgressExport,
   defaultProductionCaseLibraryControls,
   getProductionCaseAchievements,
   getProductionCaseBestResultEntry,
@@ -77,6 +78,8 @@ export function FilmScenarioLibrary({
   const [masteryFilter, setMasteryFilter] = useState<ProductionCaseMasteryFilter>(() => getInitialProductionCaseLibraryControls().masteryFilter);
   const [sortMode, setSortMode] = useState<ProductionCaseLibrarySortMode>(() => getInitialProductionCaseLibraryControls().sortMode);
   const [progressRefreshKey, setProgressRefreshKey] = useState(0);
+  const [exportStatus, setExportStatus] = useState<"exported" | "ready_to_copy" | undefined>();
+  const [exportFallbackJson, setExportFallbackJson] = useState("");
   const scenarios = getClassicFilmScenarios();
   const progressState = useMemo(() => {
     if (typeof window === "undefined") return {};
@@ -162,6 +165,38 @@ export function FilmScenarioLibrary({
     setSearchQuery(defaultProductionCaseLibraryControls.searchQuery);
   };
 
+  const exportProductionCaseProgress = async () => {
+    if (typeof window === "undefined") return;
+
+    const exportJson = JSON.stringify(createProductionCaseProgressExport(window.localStorage), null, 2);
+    setExportFallbackJson("");
+
+    if (typeof Blob !== "undefined" && typeof document !== "undefined" && window.URL?.createObjectURL) {
+      const blob = new Blob([exportJson], { type: "application/json" });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "hg-film-production-case-progress.json";
+      link.click();
+      window.URL.revokeObjectURL(url);
+      setExportStatus("exported");
+      return;
+    }
+
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(exportJson);
+        setExportStatus("ready_to_copy");
+        return;
+      } catch {
+        // Fall back to showing the JSON when clipboard access is unavailable.
+      }
+    }
+
+    setExportFallbackJson(exportJson);
+    setExportStatus("ready_to_copy");
+  };
+
   return (
     <main className="scenario-library">
       <div className="scenario-library-header">
@@ -231,7 +266,24 @@ export function FilmScenarioLibrary({
           <button className="secondary-button scenario-filter-reset" onClick={resetLibraryControls} type="button">
             Nullstill filtre
           </button>
+          <button className="secondary-button scenario-export-button" onClick={exportProductionCaseProgress} type="button">
+            Eksporter progress
+          </button>
         </div>
+        {exportStatus ? (
+          <div className="scenario-export-status" aria-live="polite">
+            {exportStatus === "exported" ? "Progress eksportert" : "Progress klar til kopiering"}
+          </div>
+        ) : null}
+        {exportFallbackJson ? (
+          <textarea
+            className="scenario-export-fallback"
+            readOnly
+            rows={6}
+            value={exportFallbackJson}
+            aria-label="Progress klar til kopiering"
+          />
+        ) : null}
       </div>
       <div className="scenario-result-summary" aria-live="polite">
         <span>{resultSummary.label}</span>

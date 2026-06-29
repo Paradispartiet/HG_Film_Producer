@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 import {
   countProductionCaseMatches,
+  createProductionCaseProgressExport,
   defaultProductionCaseLibraryControls,
   getProductionCaseBestResultEntry,
   getProductionCaseAchievements,
@@ -24,6 +25,7 @@ import {
   productionCaseLibraryControlsStorageKey,
   productionCaseLibraryStatusMatchesFilter,
   productionCaseMasteryFilterMatches,
+  productionCaseProgressExportVersion,
   productionCaseProgressStorageKey,
   sortProductionCaseLibraryCards,
   readProductionCaseBestResults,
@@ -238,6 +240,70 @@ test("reset clears only the current scenario progress", () => {
 });
 
 
+
+test("production case progress export includes version, timestamp, progress, best results, and controls", () => {
+  const storage = createMemoryStorage();
+  const currentProgress = setProductionCaseMissionChoice(
+    setProductionCaseMissionCompletion(
+      {},
+      "scenario_taxi_driver_1976",
+      "scenario_taxi_driver_1976-mission-case_orientation",
+      true,
+      "2026-06-22T00:00:00.000Z",
+    ),
+    "scenario_taxi_driver_1976",
+    "scenario_taxi_driver_1976-mission-screenplay",
+    "scenario_taxi_driver_1976-choice-screenplay-match-1",
+    "2026-06-22T00:00:00.000Z",
+  );
+  const bestResults = {
+    scenario_taxi_driver_1976: createProductionCaseReportBest("scenario_taxi_driver_1976", 12),
+  };
+  const libraryControls = {
+    caseStatusFilter: "completed",
+    masteryFilter: "auteur_best",
+    sortMode: "recent_best",
+    searchQuery: "taxi",
+  } as const;
+  writeProductionCaseProgress(storage, currentProgress);
+  writeProductionCaseBestResults(storage, bestResults);
+  writeProductionCaseLibraryControls(storage, libraryControls);
+
+  const exported = createProductionCaseProgressExport(storage, "2026-06-29T00:00:00.000Z");
+
+  assert.equal(exported.version, productionCaseProgressExportVersion);
+  assert.equal(exported.version, "hg_film_production_case_progress_export_v1");
+  assert.equal(exported.exportedAt, "2026-06-29T00:00:00.000Z");
+  assert.deepEqual(exported.currentProgress, currentProgress);
+  assert.deepEqual(exported.bestResults, bestResults);
+  assert.deepEqual(exported.libraryControls, libraryControls);
+  assert.doesNotThrow(() => JSON.stringify(exported));
+});
+
+test("production case progress export uses safe defaults for empty storage", () => {
+  const exported = createProductionCaseProgressExport(createMemoryStorage(), "2026-06-29T00:00:00.000Z");
+
+  assert.equal(exported.version, "hg_film_production_case_progress_export_v1");
+  assert.equal(exported.exportedAt, "2026-06-29T00:00:00.000Z");
+  assert.deepEqual(exported.currentProgress, {});
+  assert.deepEqual(exported.bestResults, {});
+  assert.deepEqual(exported.libraryControls, defaultProductionCaseLibraryControls);
+});
+
+test("production case progress export does not crash on corrupt storage", () => {
+  const storage = createMemoryStorage();
+  storage.setItem(productionCaseProgressStorageKey, "{not-json");
+  storage.setItem(productionCaseBestResultsStorageKey, "[not an object]");
+  storage.setItem(productionCaseLibraryControlsStorageKey, "null");
+
+  assert.doesNotThrow(() => createProductionCaseProgressExport(storage));
+  const exported = createProductionCaseProgressExport(storage, "2026-06-29T00:00:00.000Z");
+
+  assert.deepEqual(exported.currentProgress, {});
+  assert.deepEqual(exported.bestResults, {});
+  assert.deepEqual(exported.libraryControls, defaultProductionCaseLibraryControls);
+});
+
 test("production case library controls default when storage is empty", () => {
   assert.deepEqual(parseProductionCaseLibraryControls(null), defaultProductionCaseLibraryControls);
   assert.deepEqual(readProductionCaseLibraryControls(createMemoryStorage()), defaultProductionCaseLibraryControls);
@@ -364,16 +430,18 @@ test("production case library controls reset writes defaults", () => {
   assert.deepEqual(readProductionCaseLibraryControls(storage), defaultProductionCaseLibraryControls);
 });
 
-test("production case library controls helper and UI copy avoid forbidden language", () => {
+test("production case library controls, export helper, and UI copy avoid forbidden language", () => {
   const uiSource = readFileSync("src/ui/components/FilmScenarioLibrary.tsx", "utf8").toLowerCase();
   const helperCopy = [
     productionCaseLibraryControlsStorageKey,
+    productionCaseProgressExportVersion,
+    JSON.stringify(createProductionCaseProgressExport(createMemoryStorage(), "2026-06-29T00:00:00.000Z")),
     JSON.stringify(defaultProductionCaseLibraryControls),
     JSON.stringify(readProductionCaseLibraryControls(createMemoryStorage())),
     uiSource,
   ].join(" ").toLowerCase();
 
-  assert.doesNotMatch(helperCopy, /inspired by|in the spirit of/);
+  assert.doesNotMatch(helperCopy, /inspired by|in the spirit of|create your own version|lag en ny film/);
 });
 
 test("FilmScenarioLibrary initializes from persisted controls and exposes reset copy", () => {
@@ -382,6 +450,11 @@ test("FilmScenarioLibrary initializes from persisted controls and exposes reset 
   assert.match(uiSource, /readProductionCaseLibraryControls\(window\.localStorage\)/);
   assert.match(uiSource, /writeProductionCaseLibraryControls\(window\.localStorage, \{ caseStatusFilter, masteryFilter, sortMode, searchQuery \}\)/);
   assert.match(uiSource, /Nullstill filtre/);
+  assert.match(uiSource, /Eksporter progress/);
+  assert.match(uiSource, /Progress eksportert/);
+  assert.match(uiSource, /Progress klar til kopiering/);
+  assert.match(uiSource, /createProductionCaseProgressExport\(window\.localStorage\)/);
+  assert.match(uiSource, /hg-film-production-case-progress\.json/);
   assert.match(uiSource, /getProductionCaseLibraryResultSummary/);
   assert.match(uiSource, /scenario-result-summary/);
   assert.match(uiSource, /Ingen aktive filtre/);
@@ -1405,7 +1478,7 @@ test("best-result helpers and UI copy avoid banned phrasing", () => {
     "Auteur",
   ].join(" ").toLowerCase();
 
-  assert.doesNotMatch(helperCopy, /inspired by|in the spirit of/);
+  assert.doesNotMatch(helperCopy, /inspired by|in the spirit of|create your own version|lag en ny film/);
 });
 
 
