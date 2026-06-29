@@ -1,4 +1,5 @@
 export const productionCaseProgressStorageKey = "hg_film_production_case_progress_v1";
+export const productionCaseBestResultsStorageKey = "hg_film_production_case_best_results_v1";
 
 export type ProductionCaseProgressEntry = {
   readonly scenarioId: string;
@@ -9,6 +10,20 @@ export type ProductionCaseProgressEntry = {
 
 export type ProductionCaseProgressState = Record<string, ProductionCaseProgressEntry>;
 
+export type ProductionCaseBestResultTier = "assistant" | "producer" | "auteur";
+
+export type ProductionCaseBestResultEntry = {
+  readonly scenarioId: string;
+  readonly bestScore: number;
+  readonly maxScore: number;
+  readonly bestTier: ProductionCaseBestResultTier;
+  readonly bestMatchedCount: number;
+  readonly completedAt: string;
+  readonly updatedAt: string;
+};
+
+export type ProductionCaseBestResultsState = Record<string, ProductionCaseBestResultEntry>;
+
 export type ProductionCaseProgressStorage = Pick<StorageLike, "getItem" | "setItem" | "removeItem">;
 
 type StorageLike = {
@@ -16,6 +31,114 @@ type StorageLike = {
   setItem(key: string, value: string): void;
   removeItem(key: string): void;
 };
+
+
+function normalizeBestResultEntry(scenarioId: string, value: unknown): ProductionCaseBestResultEntry | undefined {
+  if (!value || typeof value !== "object") return undefined;
+  const maybeEntry = value as Partial<ProductionCaseBestResultEntry>;
+  if (typeof maybeEntry.bestScore !== "number" || typeof maybeEntry.maxScore !== "number") return undefined;
+  if (!isProductionCaseBestResultTier(maybeEntry.bestTier)) return undefined;
+  if (typeof maybeEntry.bestMatchedCount !== "number") return undefined;
+  if (typeof maybeEntry.completedAt !== "string" || typeof maybeEntry.updatedAt !== "string") return undefined;
+
+  return {
+    scenarioId,
+    bestScore: maybeEntry.bestScore,
+    maxScore: maybeEntry.maxScore,
+    bestTier: maybeEntry.bestTier,
+    bestMatchedCount: maybeEntry.bestMatchedCount,
+    completedAt: maybeEntry.completedAt,
+    updatedAt: maybeEntry.updatedAt,
+  };
+}
+
+export function parseProductionCaseBestResults(rawValue: string | null): ProductionCaseBestResultsState {
+  if (!rawValue) return {};
+
+  try {
+    const parsed = JSON.parse(rawValue) as unknown;
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+
+    return Object.fromEntries(
+      Object.entries(parsed).flatMap(([scenarioId, value]) => {
+        const entry = normalizeBestResultEntry(scenarioId, value);
+        return entry ? [[scenarioId, entry]] : [];
+      }),
+    );
+  } catch {
+    return {};
+  }
+}
+
+export function readProductionCaseBestResults(storage: ProductionCaseProgressStorage): ProductionCaseBestResultsState {
+  return parseProductionCaseBestResults(storage.getItem(productionCaseBestResultsStorageKey));
+}
+
+export function writeProductionCaseBestResults(
+  storage: ProductionCaseProgressStorage,
+  state: ProductionCaseBestResultsState,
+): void {
+  if (Object.keys(state).length === 0) {
+    storage.removeItem(productionCaseBestResultsStorageKey);
+    return;
+  }
+
+  storage.setItem(productionCaseBestResultsStorageKey, JSON.stringify(state));
+}
+
+export function getProductionCaseBestResultEntry(
+  state: ProductionCaseBestResultsState,
+  scenarioId: string,
+): ProductionCaseBestResultEntry | undefined {
+  return state[scenarioId];
+}
+
+function isProductionCaseBestResultTier(tier: unknown): tier is ProductionCaseBestResultTier {
+  return tier === "assistant" || tier === "producer" || tier === "auteur";
+}
+
+function getProductionCaseBestResultTierRank(tier: ProductionCaseBestResultTier): number {
+  return tier === "auteur" ? 3 : tier === "producer" ? 2 : 1;
+}
+
+function isProductionCaseBestResultBetter(
+  candidate: ProductionCaseBestResultEntry,
+  current: ProductionCaseBestResultEntry | undefined,
+): boolean {
+  if (!current) return true;
+  if (candidate.bestScore !== current.bestScore) return candidate.bestScore > current.bestScore;
+  return getProductionCaseBestResultTierRank(candidate.bestTier) >= getProductionCaseBestResultTierRank(current.bestTier);
+}
+
+export function updateProductionCaseBestResult(
+  scenarioId: string,
+  report: ProductionCaseReport | undefined,
+  storage: ProductionCaseProgressStorage,
+  updatedAt = new Date().toISOString(),
+): ProductionCaseBestResultEntry | undefined {
+  if (!report) return undefined;
+  if (report.completedCount !== report.totalMissions) return undefined;
+  if (report.maxScore <= 0) return undefined;
+  if (!isProductionCaseBestResultTier(report.resultTier)) return undefined;
+
+  const state = readProductionCaseBestResults(storage);
+  const current = state[scenarioId];
+  const candidate: ProductionCaseBestResultEntry = {
+    scenarioId,
+    bestScore: report.score,
+    maxScore: report.maxScore,
+    bestTier: report.resultTier,
+    bestMatchedCount: report.matchedPhases.length,
+    completedAt: current?.completedAt ?? updatedAt,
+    updatedAt,
+  };
+
+  if (!isProductionCaseBestResultBetter(candidate, current)) return undefined;
+
+  const nextState = { ...state, [scenarioId]: candidate };
+  writeProductionCaseBestResults(storage, nextState);
+  return candidate;
+}
 
 function normalizeEntry(scenarioId: string, value: unknown): ProductionCaseProgressEntry {
   if (!value || typeof value !== "object") {

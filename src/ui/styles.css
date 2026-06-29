@@ -1201,9 +1201,10 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .scenario-status-filter span { color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
 .scenario-status-filter select { width: 100%; padding: 13px 14px; border: 1px solid var(--line); outline: none; background: rgba(6, 8, 11, 0.82); color: var(--text); font-size: 13px; }
 .scenario-status-filter select:focus { border-color: rgba(214, 174, 98, 0.75); box-shadow: 0 0 0 3px var(--accent-soft); }
-.scenario-case-status { display: grid; grid-template-columns: 1fr auto; gap: 5px 10px; padding: 10px 12px; border: 1px solid rgba(214, 174, 98, 0.24); background: rgba(214, 174, 98, 0.08); color: var(--muted-light); font-size: 11px; }
-.scenario-case-status span { color: var(--accent); font-size: 8px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
-.scenario-case-status strong { color: var(--text); font-size: 12px; }
+.scenario-case-status, .scenario-case-best-result { display: grid; grid-template-columns: 1fr auto; gap: 5px 10px; padding: 10px 12px; border: 1px solid rgba(214, 174, 98, 0.24); background: rgba(214, 174, 98, 0.08); color: var(--muted-light); font-size: 11px; }
+.scenario-case-best-result { margin-top: 6px; border-color: rgba(104, 193, 142, 0.28); background: rgba(104, 193, 142, 0.08); }
+.scenario-case-status span, .scenario-case-best-result span { color: var(--accent); font-size: 8px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.scenario-case-status strong, .scenario-case-best-result strong { color: var(--text); font-size: 12px; }
 .scenario-case-status small { color: var(--muted-light); font-size: 11px; }
 
 @media (max-width: 760px) {

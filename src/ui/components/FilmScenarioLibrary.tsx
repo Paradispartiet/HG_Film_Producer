@@ -1,13 +1,17 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   getProductionCaseAchievements,
+  getProductionCaseBestResultEntry,
   getProductionCaseCollectionSummary,
   getProductionCaseImprovementHint,
   getProductionCaseLibraryStatus,
   getProductionCaseNextAction,
   getProductionCaseProgressEntry,
   productionCaseLibraryStatusMatchesFilter,
+  readProductionCaseBestResults,
   readProductionCaseProgress,
+  productionCaseResultTierLabels,
+  type ProductionCaseBestResultsState,
   type ProductionCaseLibraryStatus,
   type ProductionCaseLibraryStatusFilter,
   type ProductionCaseNextAction,
@@ -39,13 +43,18 @@ export function FilmScenarioLibrary({
     if (typeof window === "undefined") return {};
     return readProductionCaseProgress(window.localStorage);
   }, [progressRefreshKey]);
+  const bestResultsState = useMemo(() => {
+    if (typeof window === "undefined") return {};
+    return readProductionCaseBestResults(window.localStorage);
+  }, [progressRefreshKey]);
   const normalizedQuery = query.trim().toLowerCase();
   const scenarioCards = useMemo(() => {
     return scenarios.map((scenario) => ({
       scenario,
+      bestResult: getScenarioCaseBestResult(scenario, bestResultsState),
       caseStatus: getScenarioCaseStatus(scenario, progressState),
     }));
-  }, [progressState, scenarios]);
+  }, [bestResultsState, progressState, scenarios]);
   const collectionSummary = useMemo(() => getProductionCaseCollectionSummary(
     scenarioCards.map(({ caseStatus }) => caseStatus),
   ), [scenarioCards]);
@@ -131,7 +140,7 @@ export function FilmScenarioLibrary({
         <strong>{scenarios.length}</strong> scenarios
       </div>
       <div className="scenario-grid">
-        {filteredScenarioCards.map(({ scenario, caseStatus }) => (
+        {filteredScenarioCards.map(({ scenario, bestResult, caseStatus }) => (
           <article className="scenario-card" key={scenario.id}>
             <div className="scenario-card-topline">
               <span>#{scenario.source.position}</span>
@@ -149,6 +158,12 @@ export function FilmScenarioLibrary({
               </div>
             </dl>
             {caseStatus ? <ScenarioCaseStatusBadge status={caseStatus} /> : null}
+            {bestResult ? (
+              <div className="scenario-case-best-result" aria-label={`Beste resultat: ${productionCaseResultTierLabels[bestResult.bestTier]}`}>
+                <span>Beste</span>
+                <strong>{productionCaseResultTierLabels[bestResult.bestTier]} · {bestResult.bestScore}/{bestResult.maxScore}</strong>
+              </div>
+            ) : null}
             <div
               className="scenario-tags"
               aria-label={`Genres for ${scenario.film.title}`}
@@ -318,4 +333,13 @@ function getScenarioCardDescription(scenario: FilmScenarioSeed) {
   }
 
   return `${scenario.production_challenge} This imported seed still needs film-specific production-case design.`;
+}
+
+export function getScenarioCaseBestResult(
+  scenario: FilmScenarioSeed,
+  bestResultsState: ProductionCaseBestResultsState,
+) {
+  const brief = resolveScenarioProductionBrief(scenario);
+  if (brief.briefType !== "production_case") return undefined;
+  return getProductionCaseBestResultEntry(bestResultsState, scenario.id);
 }

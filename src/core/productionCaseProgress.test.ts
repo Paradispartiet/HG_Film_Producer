@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   countProductionCaseMatches,
+  getProductionCaseBestResultEntry,
   getProductionCaseAchievements,
   getProductionCaseCollectionSummary,
   getProductionCaseMissionScore,
@@ -12,13 +13,18 @@ import {
   getProductionCaseProgressEntry,
   getProductionCaseResultTier,
   getProductionCaseScoreSummary,
+  parseProductionCaseBestResults,
   parseProductionCaseProgress,
+  productionCaseBestResultsStorageKey,
   productionCaseLibraryStatusMatchesFilter,
   productionCaseProgressStorageKey,
+  readProductionCaseBestResults,
   readProductionCaseProgress,
   resetProductionCaseScenarioProgress,
   setProductionCaseMissionChoice,
   setProductionCaseMissionCompletion,
+  updateProductionCaseBestResult,
+  writeProductionCaseBestResults,
   writeProductionCaseProgress,
 } from "./productionCaseProgress.js";
 
@@ -80,6 +86,27 @@ function createCollectionSummary(overrides: Partial<ReturnType<typeof getProduct
     auteurCount: 0,
     totalScore: 0,
     maxScore: 1932,
+    ...overrides,
+  };
+}
+
+
+function createProductionCaseReport(overrides: Partial<NonNullable<ReturnType<typeof getProductionCaseReport>>> = {}) {
+  return {
+    completedCount: 6,
+    totalMissions: 6,
+    score: 8,
+    maxScore: 12,
+    resultTier: "producer" as const,
+    matchedPhases: Array.from({ length: 4 }, (_, index) => ({
+      missionId: `mission-${index + 1}`,
+      phase: "screenplay",
+      title: `Mission ${index + 1}`,
+      selectedChoiceLabel: "Match",
+    })),
+    weakPhases: [],
+    improvementHint: undefined,
+    learningSummary: "Du forstår flere sentrale produksjonsvalg.",
     ...overrides,
   };
 }
@@ -884,4 +911,121 @@ test("production case next action excludes seed fallback and avoids forbidden la
 
   assert.ok(!copy.includes("inspired by"));
   assert.ok(!copy.includes("in the spirit of"));
+});
+
+test("best result is stored when all production case phases are completed", () => {
+  const storage = createMemoryStorage();
+  const result = updateProductionCaseBestResult("scenario_taxi_driver_1976", createProductionCaseReport(), storage, "2026-06-23T00:00:00.000Z");
+
+  assert.equal(result?.bestScore, 8);
+  assert.equal(result?.maxScore, 12);
+  assert.equal(result?.bestTier, "producer");
+  assert.equal(result?.bestMatchedCount, 4);
+  assert.equal(result?.completedAt, "2026-06-23T00:00:00.000Z");
+  assert.equal(getProductionCaseBestResultEntry(readProductionCaseBestResults(storage), "scenario_taxi_driver_1976")?.bestScore, 8);
+});
+
+test("best result is not stored when the case is not completed", () => {
+  const storage = createMemoryStorage();
+  const result = updateProductionCaseBestResult("scenario_taxi_driver_1976", createProductionCaseReport({ completedCount: 5 }), storage);
+
+  assert.equal(result, undefined);
+  assert.deepEqual(readProductionCaseBestResults(storage), {});
+});
+
+test("higher score replaces lower best result", () => {
+  const storage = createMemoryStorage();
+  updateProductionCaseBestResult("scenario_taxi_driver_1976", createProductionCaseReport({ score: 8, resultTier: "producer" }), storage, "2026-06-23T00:00:00.000Z");
+  const result = updateProductionCaseBestResult("scenario_taxi_driver_1976", createProductionCaseReport({ score: 12, resultTier: "auteur", matchedPhases: [] }), storage, "2026-06-24T00:00:00.000Z");
+
+  assert.equal(result?.bestScore, 12);
+  assert.equal(result?.bestTier, "auteur");
+  assert.equal(result?.completedAt, "2026-06-23T00:00:00.000Z");
+  assert.equal(result?.updatedAt, "2026-06-24T00:00:00.000Z");
+});
+
+test("lower score does not replace higher best result", () => {
+  const storage = createMemoryStorage();
+  updateProductionCaseBestResult("scenario_taxi_driver_1976", createProductionCaseReport({ score: 12, resultTier: "auteur" }), storage, "2026-06-23T00:00:00.000Z");
+  const result = updateProductionCaseBestResult("scenario_taxi_driver_1976", createProductionCaseReport({ score: 6, resultTier: "producer" }), storage, "2026-06-24T00:00:00.000Z");
+
+  assert.equal(result, undefined);
+  const stored = getProductionCaseBestResultEntry(readProductionCaseBestResults(storage), "scenario_taxi_driver_1976");
+  assert.ok(stored);
+  assert.equal(stored.updatedAt, "2026-06-23T00:00:00.000Z");
+});
+
+test("resetting case progress does not delete best result", () => {
+  const storage = createMemoryStorage();
+  updateProductionCaseBestResult("scenario_taxi_driver_1976", createProductionCaseReport(), storage, "2026-06-23T00:00:00.000Z");
+  const progressState = setProductionCaseMissionCompletion({}, "scenario_taxi_driver_1976", "mission-a", true);
+  writeProductionCaseProgress(storage, resetProductionCaseScenarioProgress(progressState, "scenario_taxi_driver_1976"));
+
+  assert.equal(storage.getItem(productionCaseProgressStorageKey), null);
+  const stored = getProductionCaseBestResultEntry(readProductionCaseBestResults(storage), "scenario_taxi_driver_1976");
+  assert.ok(stored);
+  assert.equal(stored.bestScore, 8);
+});
+
+test("seed fallback gets no best result because reports are unavailable", () => {
+  const storage = createMemoryStorage();
+  const result = updateProductionCaseBestResult("scenario_seed_fallback", getProductionCaseReport([], { completedMissionIds: [] }), storage);
+
+  assert.equal(result, undefined);
+  assert.equal(storage.getItem(productionCaseBestResultsStorageKey), null);
+});
+
+test("best result can be read per scenarioId", () => {
+  const storage = createMemoryStorage();
+  writeProductionCaseBestResults(storage, {
+    scenario_taxi_driver_1976: createProductionCaseReportBest("scenario_taxi_driver_1976", 8),
+  });
+
+  assert.equal(getProductionCaseBestResultEntry(readProductionCaseBestResults(storage), "scenario_taxi_driver_1976")?.bestScore, 8);
+  assert.equal(getProductionCaseBestResultEntry(readProductionCaseBestResults(storage), "scenario_the_lighthouse_2019"), undefined);
+});
+
+test("Taxi Driver and The Lighthouse keep separate best results", () => {
+  const storage = createMemoryStorage();
+  updateProductionCaseBestResult("scenario_taxi_driver_1976", createProductionCaseReport({ score: 8, resultTier: "producer" }), storage);
+  updateProductionCaseBestResult("scenario_the_lighthouse_2019", createProductionCaseReport({ score: 12, resultTier: "auteur" }), storage);
+  const state = readProductionCaseBestResults(storage);
+
+  const taxiDriver = getProductionCaseBestResultEntry(state, "scenario_taxi_driver_1976");
+  const lighthouse = getProductionCaseBestResultEntry(state, "scenario_the_lighthouse_2019");
+  assert.ok(taxiDriver);
+  assert.ok(lighthouse);
+  assert.equal(taxiDriver.bestScore, 8);
+  assert.equal(lighthouse.bestScore, 12);
+  assert.equal(lighthouse.bestTier, "auteur");
+});
+
+test("best-result helpers and UI copy avoid banned phrasing", () => {
+  const helperCopy = [
+    productionCaseBestResultsStorageKey,
+    "Beste resultat",
+    "Beste",
+    "Assistent",
+    "Produsent",
+    "Auteur",
+  ].join(" ").toLowerCase();
+
+  assert.doesNotMatch(helperCopy, /inspired by|in the spirit of/);
+});
+
+function createProductionCaseReportBest(scenarioId: string, bestScore: number) {
+  return {
+    scenarioId,
+    bestScore,
+    maxScore: 12,
+    bestTier: "producer" as const,
+    bestMatchedCount: 4,
+    completedAt: "2026-06-23T00:00:00.000Z",
+    updatedAt: "2026-06-23T00:00:00.000Z",
+  };
+}
+
+test("best result parser ignores malformed storage", () => {
+  assert.deepEqual(parseProductionCaseBestResults("not-json"), {});
+  assert.deepEqual(parseProductionCaseBestResults(JSON.stringify({ broken: { bestTier: "in_progress" } })), {});
 });
