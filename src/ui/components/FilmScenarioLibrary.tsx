@@ -7,6 +7,7 @@ import {
   getProductionCaseCollectionSummary,
   getProductionCaseImprovementHint,
   getProductionCaseLibraryStatus,
+  getProductionCaseLibraryResultSummary,
   getProductionCaseNextAction,
   getProductionCaseProgressEntry,
   productionCaseLibraryStatusMatchesFilter,
@@ -115,15 +116,22 @@ export function FilmScenarioLibrary({
       getProductionCaseProgressEntry(progressState, nextActionScenario.id),
     );
   }, [nextAction, nextActionScenario, progressState]);
+  const productionCaseScenarioCards = useMemo(() => scenarioCards.filter(({ caseStatus }) => Boolean(caseStatus)), [scenarioCards]);
   const filteredScenarioCards = useMemo(() => {
-    const filteredCards = scenarioCards.filter(({ scenario, bestResult, caseStatus }) => {
+    const filteredCards = productionCaseScenarioCards.filter(({ scenario, bestResult, caseStatus }) => {
       const matchesQuery = !normalizedSearchQuery || getScenarioSearchText(scenario).includes(normalizedSearchQuery);
       if (!matchesQuery) return false;
       return productionCaseLibraryStatusMatchesFilter(caseStatus, caseStatusFilter)
         && productionCaseMasteryFilterMatches(caseStatus, bestResult, masteryFilter);
     });
     return sortProductionCaseLibraryCards(filteredCards, sortMode);
-  }, [caseStatusFilter, masteryFilter, normalizedSearchQuery, scenarioCards, sortMode]);
+  }, [caseStatusFilter, masteryFilter, normalizedSearchQuery, productionCaseScenarioCards, sortMode]);
+
+  const resultSummary = useMemo(() => getProductionCaseLibraryResultSummary({
+    totalCount: productionCaseScenarioCards.length,
+    visibleCount: filteredScenarioCards.length,
+    controls: { caseStatusFilter, masteryFilter, sortMode, searchQuery },
+  }), [caseStatusFilter, filteredScenarioCards.length, masteryFilter, productionCaseScenarioCards.length, searchQuery, sortMode]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -221,12 +229,20 @@ export function FilmScenarioLibrary({
           Nullstill filtre
         </button>
       </div>
-      <div className="scenario-meta" aria-live="polite">
-        Showing <strong>{filteredScenarioCards.length}</strong> of{" "}
-        <strong>{scenarios.length}</strong> scenarios
+      <div className="scenario-result-summary" aria-live="polite">
+        <span>{resultSummary.label}</span>
+        {resultSummary.activeControlLabels.length > 0 ? (
+          <span className="scenario-active-controls">
+            {resultSummary.activeControlLabels.map((label) => (
+              <span key={label}>{label}</span>
+            ))}
+          </span>
+        ) : (
+          <span className="scenario-active-controls scenario-active-controls-empty">Ingen aktive filtre</span>
+        )}
       </div>
       {filteredScenarioCards.length === 0 ? (
-        <p className="scenario-empty-state">Ingen production cases matcher søket eller filtrene.</p>
+        <p className="scenario-empty-state">{resultSummary.label}</p>
       ) : null}
       <div className="scenario-grid">
         {filteredScenarioCards.map(({ scenario, bestResult, caseStatus }) => (
