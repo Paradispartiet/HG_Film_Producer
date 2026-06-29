@@ -867,6 +867,30 @@ export function writeProductionCaseLibraryControls(
   storage.setItem(productionCaseLibraryControlsStorageKey, JSON.stringify(controls));
 }
 
+
+export const productionCaseProgressExportVersion = "hg_film_production_case_progress_export_v1";
+
+export type ProductionCaseProgressExport = {
+  readonly version: typeof productionCaseProgressExportVersion;
+  readonly exportedAt: string;
+  readonly currentProgress: ProductionCaseProgressState;
+  readonly bestResults: ProductionCaseBestResultsState;
+  readonly libraryControls: ProductionCaseLibraryControls;
+};
+
+export function createProductionCaseProgressExport(
+  storage: Pick<StorageLike, "getItem">,
+  exportedAt = new Date().toISOString(),
+): ProductionCaseProgressExport {
+  return {
+    version: productionCaseProgressExportVersion,
+    exportedAt,
+    currentProgress: parseProductionCaseProgress(storage.getItem(productionCaseProgressStorageKey)),
+    bestResults: parseProductionCaseBestResults(storage.getItem(productionCaseBestResultsStorageKey)),
+    libraryControls: parseProductionCaseLibraryControls(storage.getItem(productionCaseLibraryControlsStorageKey)),
+  };
+}
+
 export function sortProductionCaseLibraryCards<T extends ProductionCaseLibrarySortableCard>(
   cards: readonly T[],
   sortMode: ProductionCaseLibrarySortMode,
