@@ -28,6 +28,7 @@ import {
   productionCaseMasteryFilterMatches,
   productionCaseProgressExportVersion,
   productionCaseProgressStorageKey,
+  previewProductionCaseProgressBackup,
   sortProductionCaseLibraryCards,
   readProductionCaseBestResults,
   readProductionCaseLibraryControls,
@@ -306,6 +307,66 @@ test("production case progress export does not crash on corrupt storage", () => 
 });
 
 
+test("production case progress backup preview summarizes a valid export without storage writes", () => {
+  const sourceStorage = createMemoryStorage();
+  const targetStorage = createMemoryStorage();
+  const currentProgress = {
+    scenario_taxi_driver_1976: {
+      scenarioId: "scenario_taxi_driver_1976",
+      completedMissionIds: ["mission-a"],
+      updatedAt: "2026-06-22T00:00:00.000Z",
+    },
+    scenario_another_round_2020: {
+      scenarioId: "scenario_another_round_2020",
+      completedMissionIds: ["mission-b"],
+      updatedAt: "2026-06-23T00:00:00.000Z",
+    },
+  };
+  const bestResults = {
+    scenario_taxi_driver_1976: createProductionCaseReportBest("scenario_taxi_driver_1976", 12),
+    scenario_another_round_2020: createProductionCaseReportBest("scenario_another_round_2020", 8),
+    scenario_the_lighthouse_2019: createProductionCaseReportBest("scenario_the_lighthouse_2019", 10),
+  };
+  const libraryControls = {
+    caseStatusFilter: "in_progress",
+    masteryFilter: "producer_best",
+    sortMode: "best_score_desc",
+    searchQuery: "taxi",
+  } as const;
+  writeProductionCaseProgress(sourceStorage, currentProgress);
+  writeProductionCaseBestResults(sourceStorage, bestResults);
+  writeProductionCaseLibraryControls(sourceStorage, libraryControls);
+  targetStorage.setItem(productionCaseProgressStorageKey, "existing-progress");
+
+  const exported = createProductionCaseProgressExport(sourceStorage, "2026-06-29T00:00:00.000Z");
+  const preview = previewProductionCaseProgressBackup(JSON.stringify(exported));
+
+  assert.deepEqual(preview, {
+    ok: true,
+    exportedAt: "2026-06-29T00:00:00.000Z",
+    currentProgressCount: 2,
+    bestResultCount: 3,
+    hasLibraryControls: true,
+  });
+  assert.equal(targetStorage.values.get(productionCaseProgressStorageKey), "existing-progress");
+  assert.equal(targetStorage.values.has(productionCaseBestResultsStorageKey), false);
+  assert.equal(targetStorage.values.has(productionCaseLibraryControlsStorageKey), false);
+});
+
+test("production case progress backup preview fails safely for invalid JSON and wrong version", () => {
+  assert.deepEqual(previewProductionCaseProgressBackup("{not-json"), { ok: false, reason: "invalid_json" });
+  assert.deepEqual(
+    previewProductionCaseProgressBackup(JSON.stringify({
+      version: "wrong",
+      exportedAt: "2026-06-29T00:00:00.000Z",
+      currentProgress: {},
+      bestResults: {},
+      libraryControls: defaultProductionCaseLibraryControls,
+    })),
+    { ok: false, reason: "invalid_version" },
+  );
+});
+
 test("production case progress import restores a valid export from storage", () => {
   const sourceStorage = createMemoryStorage();
   const targetStorage = createMemoryStorage();
@@ -541,6 +602,14 @@ test("FilmScenarioLibrary initializes from persisted controls and exposes reset 
   assert.match(uiSource, /Søk film, år eller case/);
   assert.match(uiSource, /Importer progress/);
   assert.match(uiSource, /Import overskriver lokal production-case progress/);
+  assert.match(uiSource, /previewProductionCaseProgressBackup\(importJson\)/);
+  assert.match(uiSource, /Backup funnet/);
+  assert.match(uiSource, /Eksportert: /);
+  assert.match(uiSource, /Current progress: /);
+  assert.match(uiSource, /Beste resultater: /);
+  assert.match(uiSource, /Library controls: /);
+  assert.match(uiSource, /Backup kan ikke leses/);
+  assert.match(uiSource, /disabled=\{!importJson\.trim\(\) \|\| importPreview\?\.ok === false\}/);
   assert.match(uiSource, /Bekreft import/);
   assert.match(uiSource, /Progress importert/);
   assert.match(uiSource, /Kunne ikke importere progress/);

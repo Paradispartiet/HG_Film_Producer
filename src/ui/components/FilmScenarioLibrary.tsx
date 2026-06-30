@@ -12,6 +12,7 @@ import {
   getProductionCaseNextAction,
   getProductionCaseProgressEntry,
   importProductionCaseProgressBackup,
+  previewProductionCaseProgressBackup,
   productionCaseLibraryStatusMatchesFilter,
   productionCaseMasteryFilterMatches,
   readProductionCaseBestResults,
@@ -83,6 +84,10 @@ export function FilmScenarioLibrary({
   const [exportFallbackJson, setExportFallbackJson] = useState("");
   const [importJson, setImportJson] = useState("");
   const [importStatus, setImportStatus] = useState<"imported" | "error" | undefined>();
+  const importPreview = useMemo(() => {
+    if (!importJson.trim()) return undefined;
+    return previewProductionCaseProgressBackup(importJson);
+  }, [importJson]);
   const scenarios = getClassicFilmScenarios();
   const progressState = useMemo(() => {
     if (typeof window === "undefined") return {};
@@ -318,9 +323,27 @@ export function FilmScenarioLibrary({
                 />
               </label>
               <p>Import overskriver lokal production-case progress.</p>
+              {importPreview ? (
+                <div
+                  className={`scenario-import-preview${importPreview.ok ? "" : " scenario-import-preview-invalid"}`}
+                  aria-live="polite"
+                >
+                  {importPreview.ok ? (
+                    <>
+                      <strong>Backup funnet</strong>
+                      <span>Eksportert: {importPreview.exportedAt}</span>
+                      <span>Current progress: {importPreview.currentProgressCount}</span>
+                      <span>Beste resultater: {importPreview.bestResultCount}</span>
+                      <span>Library controls: {importPreview.hasLibraryControls ? "ja" : "nei"}</span>
+                    </>
+                  ) : (
+                    <strong>Backup kan ikke leses</strong>
+                  )}
+                </div>
+              ) : null}
               <button
                 className="secondary-button scenario-import-button"
-                disabled={!importJson.trim()}
+                disabled={!importJson.trim() || importPreview?.ok === false}
                 onClick={confirmProductionCaseProgressImport}
                 type="button"
               >
