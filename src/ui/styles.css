@@ -1128,6 +1128,8 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .scenario-learning-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .scenario-learning-header h3 { margin: 5px 0 0; font-family: Georgia, serif; font-size: clamp(22px, 3vw, 30px); font-weight: 500; letter-spacing: -0.035em; }
 .scenario-learning-header span:last-child { flex: 0 0 auto; max-width: 42%; color: var(--muted-light); font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-align: right; text-transform: uppercase; }
+.scenario-learning-intro { margin: 0; color: var(--muted-light); font-size: 13px; line-height: 1.6; }
+.scenario-learning-intro strong { color: var(--accent); font-weight: 800; }
 .scenario-learning-counts { display: flex; flex-wrap: wrap; gap: 10px; }
 .scenario-learning-counts span { padding: 9px 12px; border: 1px solid rgba(214, 174, 98, 0.2); background: rgba(255, 255, 255, 0.035); color: var(--muted-light); font-size: 12px; }
 .scenario-learning-counts strong { color: var(--accent); }
