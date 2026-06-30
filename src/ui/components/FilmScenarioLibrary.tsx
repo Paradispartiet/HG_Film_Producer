@@ -244,20 +244,22 @@ export function FilmScenarioLibrary({
           choices behind the specific film.
         </p>
       </div>
-      <ProductionCaseCollectionSummaryCard careerSummary={careerSummary} summary={collectionSummary} />
-      <ProductionCaseAchievementsSection summary={careerSummary} />
-      <RecentProductionCaseBestResultsSection
-        items={recentBestResults}
-        onOpenScenario={onStartScenario ? (scenarioId) => {
-          const scenario = scenarios.find((item) => item.id === scenarioId);
-          if (scenario) onStartScenario(scenario);
-        } : undefined}
-      />
-      <ProductionCaseNextActionCard
-        improvementHint={nextActionImprovementHint}
-        nextAction={nextAction}
-        onOpenScenario={nextActionScenario ? () => { onStartScenario?.(nextActionScenario); } : undefined}
-      />
+      <div className="production-case-dashboard">
+        <ProductionCaseCollectionSummaryCard careerSummary={careerSummary} summary={collectionSummary} />
+        <ProductionCaseNextActionCard
+          improvementHint={nextActionImprovementHint}
+          nextAction={nextAction}
+          onOpenScenario={nextActionScenario ? () => { onStartScenario?.(nextActionScenario); } : undefined}
+        />
+        <ProductionCaseAchievementsSection summary={careerSummary} />
+        <RecentProductionCaseBestResultsSection
+          items={recentBestResults}
+          onOpenScenario={onStartScenario ? (scenarioId) => {
+            const scenario = scenarios.find((item) => item.id === scenarioId);
+            if (scenario) onStartScenario(scenario);
+          } : undefined}
+        />
+      </div>
       <div className="scenario-library-controls">
         <div className="scenario-controls-search-row">
           <label className="scenario-search">
