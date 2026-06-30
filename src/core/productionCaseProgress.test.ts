@@ -613,6 +613,7 @@ test("production case MVP loop core UI copy is preserved", () => {
   assert.match(copy, /Siste beste resultater/);
   assert.match(copy, /Progress backup/);
   assert.match(copy, /Gå til fase/);
+  assert.match(librarySource, /production-case-dashboard/);
   assert.doesNotMatch(copy.toLowerCase(), /inspired by|in the spirit of|create your own version|lag en ny film/);
 });
 
