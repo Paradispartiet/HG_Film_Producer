@@ -293,53 +293,61 @@ export function FilmScenarioLibrary({
           <button className="secondary-button scenario-filter-reset" onClick={resetLibraryControls} type="button">
             Nullstill filtre
           </button>
-          <button className="secondary-button scenario-export-button" onClick={exportProductionCaseProgress} type="button">
-            Eksporter progress
-          </button>
         </div>
-        <div className="scenario-import-control">
-          <label>
-            <span>Importer progress</span>
-            <textarea
-              value={importJson}
-              onChange={(event) => {
-                setImportJson(event.target.value);
-                setImportStatus(undefined);
-              }}
-              rows={4}
-              placeholder="Lim inn JSON-backup"
-              aria-label="Importer progress"
-            />
-          </label>
-          <p>Import overskriver lokal production-case progress.</p>
-          <button
-            className="secondary-button scenario-import-button"
-            disabled={!importJson.trim()}
-            onClick={confirmProductionCaseProgressImport}
-            type="button"
-          >
-            Bekreft import
-          </button>
-        </div>
-        {exportStatus ? (
-          <div className="scenario-export-status" aria-live="polite">
-            {exportStatus === "exported" ? "Progress eksportert" : "Progress klar til kopiering"}
+        <details className="scenario-backup-panel">
+          <summary>
+            <span>Progress backup</span>
+            <small>Lagre eller gjenopprett lokal production-case progress.</small>
+          </summary>
+          <div className="scenario-backup-content">
+            <button className="secondary-button scenario-export-button" onClick={exportProductionCaseProgress} type="button">
+              Eksporter progress
+            </button>
+            <div className="scenario-import-control">
+              <label>
+                <span>Importer progress</span>
+                <textarea
+                  value={importJson}
+                  onChange={(event) => {
+                    setImportJson(event.target.value);
+                    setImportStatus(undefined);
+                  }}
+                  rows={4}
+                  placeholder="Lim inn JSON-backup"
+                  aria-label="Importer progress"
+                />
+              </label>
+              <p>Import overskriver lokal production-case progress.</p>
+              <button
+                className="secondary-button scenario-import-button"
+                disabled={!importJson.trim()}
+                onClick={confirmProductionCaseProgressImport}
+                type="button"
+              >
+                Bekreft import
+              </button>
+            </div>
+            {exportStatus ? (
+              <div className="scenario-export-status" aria-live="polite">
+                {exportStatus === "exported" ? "Progress eksportert" : "Progress klar til kopiering"}
+              </div>
+            ) : null}
+            {importStatus ? (
+              <div className="scenario-import-status" aria-live="polite">
+                {importStatus === "imported" ? "Progress importert" : "Kunne ikke importere progress"}
+              </div>
+            ) : null}
+            {exportFallbackJson ? (
+              <textarea
+                className="scenario-export-fallback"
+                readOnly
+                rows={6}
+                value={exportFallbackJson}
+                aria-label="Progress klar til kopiering"
+              />
+            ) : null}
           </div>
-        ) : null}
-        {importStatus ? (
-          <div className="scenario-import-status" aria-live="polite">
-            {importStatus === "imported" ? "Progress importert" : "Kunne ikke importere progress"}
-          </div>
-        ) : null}
-        {exportFallbackJson ? (
-          <textarea
-            className="scenario-export-fallback"
-            readOnly
-            rows={6}
-            value={exportFallbackJson}
-            aria-label="Progress klar til kopiering"
-          />
-        ) : null}
+        </details>
       </div>
       <div className="scenario-result-summary" aria-live="polite">
         <span>{resultSummary.label}</span>
