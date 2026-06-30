@@ -1193,6 +1193,19 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .scenario-mission-card--complete .scenario-mission-card-header span { color: var(--positive); }
 .scenario-mission-card button { margin-top: 10px; padding: 8px 10px; }
 .scenario-mission-card button:hover, .scenario-mission-summary button:hover { border-color: var(--accent); color: var(--text); }
+
+.production-case-start-here { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: center; padding: 15px 16px; border: 1px solid rgba(214, 174, 98, 0.28); background: linear-gradient(145deg, rgba(214, 174, 98, 0.1), rgba(6, 8, 11, 0.3)); }
+.production-case-start-here-copy { display: grid; gap: 7px; }
+.production-case-start-here-copy span { color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.production-case-start-here-copy h3 { margin: 0; color: var(--text); font-size: 16px; }
+.production-case-start-here-copy ol { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 0; padding-left: 18px; color: var(--muted-light); font-size: 12px; line-height: 1.45; }
+.production-case-start-here-copy li::marker { color: var(--accent); font-weight: 800; }
+.production-case-start-here-actions { display: grid; gap: 10px; justify-items: end; min-width: min(360px, 100%); }
+.production-case-start-here-actions .primary-button:disabled { cursor: not-allowed; opacity: 0.52; }
+.production-case-suggested-first-cases { display: grid; gap: 7px; width: 100%; }
+.production-case-suggested-first-cases strong { color: var(--muted); font-size: 9px; letter-spacing: 0.1em; text-align: right; text-transform: uppercase; }
+.production-case-suggested-first-cases div { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+.production-case-continuation-note { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 11px; }
 .production-case-dashboard { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr); gap: 12px; align-items: start; }
 .production-case-summary-card { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(4, minmax(120px, 1fr)); gap: 8px; padding: 14px; border: 1px solid rgba(214, 174, 98, 0.24); background: linear-gradient(145deg, rgba(21, 25, 31, 0.84), rgba(12, 15, 19, 0.92)); }
 .production-case-summary-card div { display: grid; gap: 4px; min-width: 0; padding: 8px 10px; border: 1px solid rgba(255, 255, 255, 0.06); background: rgba(6, 8, 11, 0.35); }
@@ -1263,6 +1276,10 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .scenario-case-status small { color: var(--muted-light); font-size: 11px; }
 
 @media (max-width: 760px) {
+  .production-case-start-here { grid-template-columns: 1fr; }
+  .production-case-start-here-actions { justify-items: stretch; min-width: 0; }
+  .production-case-suggested-first-cases strong { text-align: left; }
+  .production-case-suggested-first-cases div { justify-content: flex-start; }
   .production-case-dashboard { grid-template-columns: 1fr; }
   .production-case-summary-card { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .scenario-production-guidance { grid-template-columns: 1fr; }

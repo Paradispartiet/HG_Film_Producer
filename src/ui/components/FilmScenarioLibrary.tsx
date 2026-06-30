@@ -130,6 +130,25 @@ export function FilmScenarioLibrary({
     );
   }, [nextAction, nextActionScenario, progressState]);
   const productionCaseScenarioCards = useMemo(() => scenarioCards.filter(({ caseStatus }) => Boolean(caseStatus)), [scenarioCards]);
+  const productionCaseScenarioIds = useMemo(
+    () => new Set(productionCaseScenarioCards.map(({ scenario }) => scenario.id)),
+    [productionCaseScenarioCards],
+  );
+  const hasProductionCaseProgress = useMemo(() => Object.values(progressState).some((entry) => (
+    productionCaseScenarioIds.has(entry.scenarioId)
+    && (entry.completedMissionIds.length > 0 || Object.keys(entry.selectedChoicesByMissionId ?? {}).length > 0)
+  )), [productionCaseScenarioIds, progressState]);
+  const hasProductionCaseBestResults = useMemo(() => Object.values(bestResultsState).some((entry) => (
+    productionCaseScenarioIds.has(entry.scenarioId)
+  )), [bestResultsState, productionCaseScenarioIds]);
+  const isFirstProductionCaseSession = Boolean(nextAction)
+    && productionCaseScenarioCards.length > 0
+    && !hasProductionCaseProgress
+    && !hasProductionCaseBestResults;
+  const firstProductionCaseScenario = productionCaseScenarioCards[0]?.scenario;
+  const suggestedFirstProductionCaseScenarios = !hasProductionCaseProgress
+    ? productionCaseScenarioCards.slice(0, 3).map(({ scenario }) => scenario)
+    : [];
   const filteredScenarioCards = useMemo(() => {
     const filteredCards = productionCaseScenarioCards.filter(({ scenario, bestResult, caseStatus }) => {
       const matchesQuery = !normalizedSearchQuery || getScenarioSearchText(scenario).includes(normalizedSearchQuery);
@@ -244,7 +263,17 @@ export function FilmScenarioLibrary({
           choices behind the specific film.
         </p>
       </div>
+      {isFirstProductionCaseSession ? (
+        <ProductionCaseStartHereGuidance
+          firstScenario={firstProductionCaseScenario}
+          onStartScenario={onStartScenario}
+          suggestedScenarios={suggestedFirstProductionCaseScenarios}
+        />
+      ) : null}
       <div className="production-case-dashboard">
+        {!isFirstProductionCaseSession ? (
+          <p className="production-case-continuation-note">Continue from Next action or improve earlier best results.</p>
+        ) : null}
         <ProductionCaseCollectionSummaryCard careerSummary={careerSummary} summary={collectionSummary} />
         <ProductionCaseNextActionCard
           improvementHint={nextActionImprovementHint}
@@ -444,6 +473,60 @@ export function FilmScenarioLibrary({
         ))}
       </div>
     </main>
+  );
+}
+
+
+function ProductionCaseStartHereGuidance({
+  firstScenario,
+  onStartScenario,
+  suggestedScenarios,
+}: {
+  readonly firstScenario: FilmScenarioSeed | undefined;
+  readonly onStartScenario: ((scenario: FilmScenarioSeed) => void) | undefined;
+  readonly suggestedScenarios: readonly FilmScenarioSeed[];
+}) {
+  return (
+    <section className="production-case-start-here" aria-label="Start here for Production Cases">
+      <div className="production-case-start-here-copy">
+        <span>Start here</span>
+        <h3>Play your first production case</h3>
+        <ol>
+          <li>Choose a production case.</li>
+          <li>Make production choices.</li>
+          <li>Get a score/report.</li>
+          <li>Improve your best result.</li>
+        </ol>
+      </div>
+      <div className="production-case-start-here-actions">
+        <button
+          className="primary-button"
+          disabled={!firstScenario || !onStartScenario}
+          onClick={() => { if (firstScenario) onStartScenario?.(firstScenario); }}
+          type="button"
+        >
+          Start first case
+        </button>
+        {suggestedScenarios.length > 0 ? (
+          <div className="production-case-suggested-first-cases">
+            <strong>Suggested first cases</strong>
+            <div>
+              {suggestedScenarios.map((scenario) => (
+                <button
+                  className="secondary-button"
+                  disabled={!onStartScenario}
+                  key={scenario.id}
+                  onClick={() => onStartScenario?.(scenario)}
+                  type="button"
+                >
+                  {scenario.film.title}
+                </button>
+              ))}
+            </div>
+          </div>
+        ) : null}
+      </div>
+    </section>
   );
 }
 
