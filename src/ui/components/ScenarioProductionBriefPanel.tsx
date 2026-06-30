@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   getProductionCaseImprovementHint,
   getProductionCaseBestResultEntry,
@@ -85,6 +85,8 @@ function ProductionCaseMissionFlow({
 }) {
   const [progressState, setProgressState] = useState<ProductionCaseProgressState>({});
   const [bestResultsState, setBestResultsState] = useState<ProductionCaseBestResultsState>({});
+  const [focusedMissionId, setFocusedMissionId] = useState<string | undefined>();
+  const missionCardRefs = useRef<Record<string, HTMLElement | null>>({});
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -148,6 +150,13 @@ function ProductionCaseMissionFlow({
     updateProgress(resetProductionCaseScenarioProgress(progressState, scenarioId));
   }
 
+  function focusMission(missionId: string) {
+    setFocusedMissionId(missionId);
+    const missionCard = missionCardRefs.current[missionId];
+    missionCard?.scrollIntoView?.({ behavior: "smooth", block: "center" });
+    missionCard?.focus?.({ preventScroll: true });
+  }
+
   return (
     <div
       className="scenario-mission-flow"
@@ -168,7 +177,7 @@ function ProductionCaseMissionFlow({
         </button>
       </div>
       {resultTier ? <ProductionCaseResultBox tier={resultTier} /> : null}
-      {improvementHint ? <ProductionCaseImprovementHintBox hint={improvementHint} /> : null}
+      {improvementHint ? <ProductionCaseImprovementHintBox hint={improvementHint} onFocusMission={focusMission} /> : null}
       {caseReport ? <ProductionCaseReportBox bestResult={bestResult} report={caseReport} /> : null}
       {missions.map((mission, index) => {
         const isComplete = completedMissionIdSet.has(mission.id);
@@ -177,8 +186,12 @@ function ProductionCaseMissionFlow({
         const phaseScore = getProductionCaseMissionScoreSummary(mission, selectedChoiceId);
         return (
           <article
-            className={`scenario-mission-card${isComplete ? " scenario-mission-card--complete" : ""}`}
+            className={`scenario-mission-card${isComplete ? " scenario-mission-card--complete" : ""}${focusedMissionId === mission.id ? " scenario-production-mission--focused" : ""}`}
+            data-mission-id={mission.id}
+            id={getProductionCaseMissionElementId(mission.id)}
             key={mission.id}
+            ref={(element) => { missionCardRefs.current[mission.id] = element; }}
+            tabIndex={-1}
           >
             <span className="scenario-mission-step">{index + 1}</span>
             <div>
@@ -293,8 +306,10 @@ function ProductionCaseReportBox({
 
 function ProductionCaseImprovementHintBox({
   hint,
+  onFocusMission,
 }: {
   readonly hint: NonNullable<ReturnType<typeof getProductionCaseImprovementHint>>;
+  readonly onFocusMission: (missionId: string) => void;
 }) {
   return (
     <section className={`scenario-production-improvement scenario-production-improvement--${hint.hintType}`} aria-label="Forbedre neste">
@@ -302,6 +317,9 @@ function ProductionCaseImprovementHintBox({
       <strong>{hint.label}: {hint.title}</strong>
       <small>Fase-score: {hint.currentScore}/{hint.maxScore}</small>
       <p>{hint.description}</p>
+      <button onClick={() => onFocusMission(hint.missionId)} type="button">
+        Gå til fase
+      </button>
     </section>
   );
 }
@@ -362,6 +380,10 @@ function BriefSection({
       </ul>
     </section>
   );
+}
+
+function getProductionCaseMissionElementId(missionId: string) {
+  return `production-case-mission-${missionId}`;
 }
 
 function getBriefIntro(brief: ScenarioProductionBrief, filmTitle: string) {
