@@ -187,10 +187,12 @@ function ProductionCaseMissionFlow({
           Nullstill case-progress
         </button>
       </div>
-      {resultTier ? <ProductionCaseResultBox tier={resultTier} /> : null}
-      {nextPhaseAction ? <ProductionCaseNextPhaseBox action={nextPhaseAction} onFocusMission={focusMission} /> : null}
-      {tierTarget ? <ProductionCaseTierTargetBox target={tierTarget} /> : null}
-      {improvementHint ? <ProductionCaseImprovementHintBox hint={improvementHint} onFocusMission={focusMission} /> : null}
+      <div className="scenario-production-guidance" aria-label="Production case guidance">
+        {resultTier ? <ProductionCaseResultBox tier={resultTier} /> : null}
+        {nextPhaseAction ? <ProductionCaseNextPhaseBox action={nextPhaseAction} onFocusMission={focusMission} /> : null}
+        {tierTarget ? <ProductionCaseTierTargetBox target={tierTarget} /> : null}
+        {improvementHint ? <ProductionCaseImprovementHintBox hint={improvementHint} onFocusMission={focusMission} /> : null}
+      </div>
       {caseReport ? <ProductionCaseReportBox bestResult={bestResult} bestResultFeedback={bestResultFeedback} report={caseReport} tierTarget={tierTarget} /> : null}
       {missions.map((mission, index) => {
         const isComplete = completedMissionIdSet.has(mission.id);
