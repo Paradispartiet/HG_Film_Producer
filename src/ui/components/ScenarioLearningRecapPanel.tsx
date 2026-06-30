@@ -29,12 +29,12 @@ export function ScenarioLearningRecapPanel({ scenarioTitle, brief, selectedTarge
     <section className="scenario-learning-recap" aria-labelledby="scenario-learning-recap-title">
       <div className="scenario-learning-header">
         <div>
-          <span className="eyebrow">Case report</span>
-          <h3 id="scenario-learning-recap-title">{recap.title}</h3>
+          <span className="eyebrow">Post-case learning</span>
+          <h3 id="scenario-learning-recap-title">Case report</h3>
         </div>
         <span>{scenarioTitle}</span>
       </div>
-      <p>{recap.intro}</p>
+      <p className="scenario-learning-intro"><strong>{recap.title}.</strong> {recap.intro}</p>
       <div className="scenario-learning-counts" aria-label="Production target counts">
         <span><strong>Matched targets:</strong> {matchedTargetCount}</span>
         <span><strong>Missing targets:</strong> {missingTargetCount}</span>
