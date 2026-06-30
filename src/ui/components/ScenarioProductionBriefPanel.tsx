@@ -8,6 +8,7 @@ import {
   getProductionCaseProgressEntry,
   getProductionCaseResultTier,
   getProductionCaseScoreSummary,
+  getProductionCaseTierTarget,
   readProductionCaseBestResults,
   readProductionCaseProgress,
   resetProductionCaseScenarioProgress,
@@ -113,6 +114,7 @@ function ProductionCaseMissionFlow({
   const resultTier = getProductionCaseResultTier(caseScore, completedCount);
   const improvementHint = getProductionCaseImprovementHint(missions, progressEntry);
   const nextPhaseAction = getProductionCaseNextPhaseAction(missions, progressEntry);
+  const tierTarget = getProductionCaseTierTarget(caseScore, completedCount);
   const caseReport = getProductionCaseReport(missions, progressEntry);
   const bestResult = getProductionCaseBestResultEntry(bestResultsState, scenarioId);
 
@@ -180,8 +182,9 @@ function ProductionCaseMissionFlow({
       </div>
       {resultTier ? <ProductionCaseResultBox tier={resultTier} /> : null}
       {nextPhaseAction ? <ProductionCaseNextPhaseBox action={nextPhaseAction} onFocusMission={focusMission} /> : null}
+      {tierTarget ? <ProductionCaseTierTargetBox target={tierTarget} /> : null}
       {improvementHint ? <ProductionCaseImprovementHintBox hint={improvementHint} onFocusMission={focusMission} /> : null}
-      {caseReport ? <ProductionCaseReportBox bestResult={bestResult} report={caseReport} /> : null}
+      {caseReport ? <ProductionCaseReportBox bestResult={bestResult} report={caseReport} tierTarget={tierTarget} /> : null}
       {missions.map((mission, index) => {
         const isComplete = completedMissionIdSet.has(mission.id);
         const selectedChoiceId = selectedChoicesByMissionId[mission.id];
@@ -249,9 +252,11 @@ function ProductionCaseMissionFlow({
 function ProductionCaseReportBox({
   bestResult,
   report,
+  tierTarget,
 }: {
   readonly bestResult: ReturnType<typeof getProductionCaseBestResultEntry>;
   readonly report: NonNullable<ReturnType<typeof getProductionCaseReport>>;
+  readonly tierTarget: ReturnType<typeof getProductionCaseTierTarget>;
 }) {
   const title = report.completedCount === report.totalMissions ? "Case report" : "Case report under arbeid";
   const strongestMatches = report.matchedPhases.slice(0, 3);
@@ -266,6 +271,7 @@ function ProductionCaseReportBox({
         <span>Resultat: {productionCaseResultCopy[report.resultTier].label}</span>
         <span>Case-score: {report.score}/{report.maxScore}</span>
         <span>Faser: {report.completedCount}/{report.totalMissions}</span>
+        {tierTarget ? <span>{tierTarget.label} · {tierTarget.description}</span> : null}
         {bestResult ? (
           <span>Beste resultat: {productionCaseResultCopy[bestResult.bestTier].label} · {bestResult.bestScore}/{bestResult.maxScore}</span>
         ) : null}
@@ -307,6 +313,22 @@ function ProductionCaseReportBox({
   );
 }
 
+
+
+function ProductionCaseTierTargetBox({
+  target,
+}: {
+  readonly target: NonNullable<ReturnType<typeof getProductionCaseTierTarget>>;
+}) {
+  return (
+    <section className={`scenario-production-tier-target${target.isMaxTier ? " scenario-production-tier-target--max" : ""}`} aria-label="Neste nivå">
+      <span className="eyebrow">Neste nivå</span>
+      <strong>{target.label}</strong>
+      <p>{target.description}</p>
+      <small>Nå: {target.currentTierLabel} · Case-score {target.score}/{target.maxScore}</small>
+    </section>
+  );
+}
 
 function ProductionCaseNextPhaseBox({
   action,
