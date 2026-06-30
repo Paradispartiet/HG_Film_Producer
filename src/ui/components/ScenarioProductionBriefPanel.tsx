@@ -3,6 +3,7 @@ import {
   getProductionCaseImprovementHint,
   getProductionCaseBestResultEntry,
   getProductionCaseMissionScoreSummary,
+  getProductionCaseNextPhaseAction,
   getProductionCaseReport,
   getProductionCaseProgressEntry,
   getProductionCaseResultTier,
@@ -111,6 +112,7 @@ function ProductionCaseMissionFlow({
   const caseScore = getProductionCaseScoreSummary(missions, progressEntry);
   const resultTier = getProductionCaseResultTier(caseScore, completedCount);
   const improvementHint = getProductionCaseImprovementHint(missions, progressEntry);
+  const nextPhaseAction = getProductionCaseNextPhaseAction(missions, progressEntry);
   const caseReport = getProductionCaseReport(missions, progressEntry);
   const bestResult = getProductionCaseBestResultEntry(bestResultsState, scenarioId);
 
@@ -177,6 +179,7 @@ function ProductionCaseMissionFlow({
         </button>
       </div>
       {resultTier ? <ProductionCaseResultBox tier={resultTier} /> : null}
+      {nextPhaseAction ? <ProductionCaseNextPhaseBox action={nextPhaseAction} onFocusMission={focusMission} /> : null}
       {improvementHint ? <ProductionCaseImprovementHintBox hint={improvementHint} onFocusMission={focusMission} /> : null}
       {caseReport ? <ProductionCaseReportBox bestResult={bestResult} report={caseReport} /> : null}
       {missions.map((mission, index) => {
@@ -300,6 +303,26 @@ function ProductionCaseReportBox({
           {report.improvementHint ? <p>{report.improvementHint.description}</p> : null}
         </div>
       </div>
+    </section>
+  );
+}
+
+
+function ProductionCaseNextPhaseBox({
+  action,
+  onFocusMission,
+}: {
+  readonly action: NonNullable<ReturnType<typeof getProductionCaseNextPhaseAction>>;
+  readonly onFocusMission: (missionId: string) => void;
+}) {
+  return (
+    <section className={`scenario-production-next-phase scenario-production-next-phase--${action.actionType}`} aria-label="Neste fase">
+      <span className="eyebrow">Neste fase</span>
+      <strong>{action.label}: {action.title}</strong>
+      <p>{action.description}</p>
+      <button onClick={() => onFocusMission(action.missionId)} type="button">
+        Gå til fase
+      </button>
     </section>
   );
 }

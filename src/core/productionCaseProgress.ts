@@ -455,6 +455,77 @@ export function getProductionCaseReport(
   };
 }
 
+
+export type ProductionCaseNextPhaseActionType = "choose" | "complete" | "improve";
+
+export type ProductionCaseNextPhaseActionMission = ProductionCaseImprovementHintMission;
+
+export type ProductionCaseNextPhaseAction = {
+  readonly missionId: string;
+  readonly phase: string;
+  readonly title: string;
+  readonly actionType: ProductionCaseNextPhaseActionType;
+  readonly label: string;
+  readonly description: string;
+};
+
+function createProductionCaseNextPhaseAction(
+  mission: ProductionCaseNextPhaseActionMission,
+  actionType: ProductionCaseNextPhaseActionType,
+  label: string,
+  description: string,
+): ProductionCaseNextPhaseAction {
+  return {
+    missionId: mission.id,
+    phase: mission.phase,
+    title: mission.title,
+    actionType,
+    label,
+    description,
+  };
+}
+
+export function getProductionCaseNextPhaseAction(
+  missions: readonly ProductionCaseNextPhaseActionMission[],
+  progress: Pick<ProductionCaseProgressEntry, "completedMissionIds" | "selectedChoicesByMissionId">,
+): ProductionCaseNextPhaseAction | undefined {
+  if (missions.length === 0) return undefined;
+
+  const selectedChoicesByMissionId = progress.selectedChoicesByMissionId ?? {};
+  const missionWithoutChoice = missions.find((mission) => !selectedChoicesByMissionId[mission.id]);
+  if (missionWithoutChoice) {
+    return createProductionCaseNextPhaseAction(
+      missionWithoutChoice,
+      "choose",
+      "Velg produksjonsgrep",
+      "Velg et produksjonsgrep før du fullfører fasen.",
+    );
+  }
+
+  const missionWithChoiceButIncomplete = missions.find((mission) => !progress.completedMissionIds.includes(mission.id));
+  if (missionWithChoiceButIncomplete) {
+    return createProductionCaseNextPhaseAction(
+      missionWithChoiceButIncomplete,
+      "complete",
+      "Fullfør fase",
+      "Marker fasen som fullført når produksjonsgrepet er valgt.",
+    );
+  }
+
+  const improvementHint = getProductionCaseImprovementHint(missions, progress);
+  if (!improvementHint) return undefined;
+
+  const missionToImprove = missions.find((mission) => mission.id === improvementHint.missionId);
+  if (!missionToImprove) return undefined;
+
+  return createProductionCaseNextPhaseAction(
+    missionToImprove,
+    "improve",
+    "Forbedre fase",
+    "Spiss produksjonsgrepet for å løfte case-scoren.",
+  );
+}
+
 export type ProductionCaseScoreSummary = {
   readonly score: number;
   readonly maxScore: number;
