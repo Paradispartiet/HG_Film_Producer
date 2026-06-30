@@ -523,6 +523,9 @@ test("FilmScenarioLibrary initializes from persisted controls and exposes reset 
   assert.match(uiSource, /readProductionCaseLibraryControls\(window\.localStorage\)/);
   assert.match(uiSource, /writeProductionCaseLibraryControls\(window\.localStorage, \{ caseStatusFilter, masteryFilter, sortMode, searchQuery \}\)/);
   assert.match(uiSource, /Nullstill filtre/);
+  assert.match(uiSource, /Progress backup/);
+  assert.match(uiSource, /Lagre eller gjenopprett lokal production-case progress\./);
+  assert.match(uiSource, /<details className="scenario-backup-panel">/);
   assert.match(uiSource, /Eksporter progress/);
   assert.match(uiSource, /Progress eksportert/);
   assert.match(uiSource, /Progress klar til kopiering/);
