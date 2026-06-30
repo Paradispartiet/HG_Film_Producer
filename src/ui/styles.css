@@ -1153,9 +1153,12 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .scenario-production-result strong, .scenario-production-improvement strong { color: var(--accent); font-size: 16px; }
 .scenario-production-result p, .scenario-production-improvement p { margin: 0; color: var(--muted-light); font-size: 12px; line-height: 1.55; }
 .scenario-production-improvement small { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.scenario-production-improvement button { justify-self: start; margin-top: 2px; }
 .scenario-production-improvement--choose { border-color: rgba(214, 174, 98, 0.4); }
 .scenario-production-improvement--rethink { border-color: rgba(202, 124, 104, 0.4); }
 .scenario-production-improvement--sharpen { border-color: rgba(115, 184, 149, 0.34); }
+.scenario-production-mission--focused { border-color: rgba(214, 174, 98, 0.68); box-shadow: 0 0 0 2px rgba(214, 174, 98, 0.18), 0 18px 38px rgba(0, 0, 0, 0.24); }
+.scenario-production-mission--focused:focus { outline: 2px solid rgba(214, 174, 98, 0.45); outline-offset: 3px; }
 .scenario-production-result--assistant { border-color: rgba(202, 124, 104, 0.34); }
 .scenario-production-result--producer { border-color: rgba(214, 174, 98, 0.48); }
 .scenario-production-result--auteur { border-color: rgba(115, 184, 149, 0.42); background: var(--positive-soft); }

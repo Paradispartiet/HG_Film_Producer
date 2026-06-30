@@ -756,6 +756,35 @@ test("reset clears selected choices for the current scenario", () => {
 
 
 
+
+test("ScenarioProductionBriefPanel exposes clickable improvement hint mission focus", () => {
+  const uiSource = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
+  const styleSource = readFileSync("src/ui/styles.css", "utf8");
+
+  assert.match(uiSource, /data-mission-id=\{mission\.id\}/);
+  assert.match(uiSource, /id=\{getProductionCaseMissionElementId\(mission\.id\)\}/);
+  assert.match(uiSource, /production-case-mission-\$\{missionId\}/);
+  assert.match(uiSource, /tabIndex=\{-1\}/);
+  assert.match(uiSource, /Gå til fase/);
+  assert.match(uiSource, /onClick=\{\(\) => onFocusMission\(hint\.missionId\)\}/);
+  assert.match(uiSource, /setFocusedMissionId\(missionId\)/);
+  assert.match(uiSource, /scrollIntoView\?\.\(\{ behavior: "smooth", block: "center" \}\)/);
+  assert.match(uiSource, /focus\?\.\(\{ preventScroll: true \}\)/);
+  assert.match(uiSource, /scenario-production-mission--focused/);
+  assert.match(styleSource, /\.scenario-production-mission--focused/);
+});
+
+test("ScenarioProductionBriefPanel focus helper copy avoids forbidden language", () => {
+  const uiSource = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8").toLowerCase();
+  const focusCopy = [
+    "Gå til fase",
+    "Forbedre neste",
+    uiSource,
+  ].join(" ");
+
+  assert.doesNotMatch(focusCopy, /inspired by|in the spirit of|create your own version|lag en ny film/);
+});
+
 test("production case improvement hint is undefined for seed fallback and full match scores", () => {
   assert.equal(getProductionCaseImprovementHint([], {}), undefined);
   assert.equal(
