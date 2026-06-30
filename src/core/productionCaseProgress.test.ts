@@ -6,6 +6,7 @@ import {
   createProductionCaseProgressExport,
   defaultProductionCaseLibraryControls,
   getProductionCaseBestResultEntry,
+  getProductionCaseBestResultFeedback,
   getProductionCaseAchievements,
   getProductionCaseCareerSummary,
   getProductionCaseCollectionSummary,
@@ -841,6 +842,10 @@ test("ScenarioProductionBriefPanel shows compact next tier target and preserves 
 
   assert.match(uiSource, /getProductionCaseTierTarget\(caseScore, completedCount\)/);
   assert.match(uiSource, /aria-label="Neste nivå"/);
+  assert.match(uiSource, /getProductionCaseBestResultFeedback\(caseReport, bestResult\)/);
+  assert.match(uiSource, /Ny beste resultat-feedback/);
+  assert.match(uiSource, /feedback\.label/);
+  assert.match(uiSource, /feedback\.description/);
   assert.match(uiSource, /tierTarget\.label/);
   assert.match(uiSource, /tierTarget\.description/);
   assert.match(uiSource, /Case report/);
@@ -1720,6 +1725,57 @@ test("production case next action excludes seed fallback and avoids forbidden la
 
   assert.ok(!copy.includes("inspired by"));
   assert.ok(!copy.includes("in the spirit of"));
+});
+
+test("best result feedback returns first_best for first completed case", () => {
+  const feedback = getProductionCaseBestResultFeedback(createProductionCaseReport(), undefined);
+
+  assert.equal(feedback?.feedbackType, "first_best");
+  assert.equal(feedback?.label, "Første beste resultat");
+  assert.equal(feedback?.description, "Dette er nå ditt beste lagrede resultat for caset.");
+  assert.equal(feedback?.newScore, 8);
+  assert.equal(feedback?.previousScore, undefined);
+});
+
+test("best result feedback returns score_improved for higher score", () => {
+  const previous = createProductionCaseReportBest("scenario_taxi_driver_1976", 8);
+  const feedback = getProductionCaseBestResultFeedback(createProductionCaseReport({ score: 10, resultTier: "producer" }), previous);
+
+  assert.equal(feedback?.feedbackType, "score_improved");
+  assert.equal(feedback?.label, "Ny beste score");
+  assert.equal(feedback?.description, "Du forbedret caset med 2 poeng.");
+  assert.equal(feedback?.scoreDelta, 2);
+});
+
+test("best result feedback returns tier_improved for higher tier", () => {
+  const previous = createProductionCaseReportBest("scenario_taxi_driver_1976", 9);
+  const feedback = getProductionCaseBestResultFeedback(createProductionCaseReport({ score: 10, resultTier: "auteur" }), previous);
+
+  assert.equal(feedback?.feedbackType, "tier_improved");
+  assert.equal(feedback?.label, "Nytt nivå");
+  assert.equal(feedback?.description, "Du løftet caset fra Produsent til Auteur.");
+  assert.equal(feedback?.tierImproved, true);
+});
+
+test("best result feedback returns maxed for Auteur max score", () => {
+  const previous = createProductionCaseReportBest("scenario_taxi_driver_1976", 10);
+  const feedback = getProductionCaseBestResultFeedback(createProductionCaseReport({ score: 12, resultTier: "auteur" }), previous);
+
+  assert.equal(feedback?.feedbackType, "maxed");
+  assert.equal(feedback?.label, "Maks resultat");
+  assert.equal(feedback?.description, "Dette caset er fullført med maks score.");
+});
+
+test("best result feedback is undefined when current result does not beat previous best", () => {
+  const previous = createProductionCaseReportBest("scenario_taxi_driver_1976", 10);
+
+  assert.equal(getProductionCaseBestResultFeedback(createProductionCaseReport({ score: 8 }), previous), undefined);
+});
+
+test("best result feedback is undefined for incomplete reports and zero max score fallback", () => {
+  assert.equal(getProductionCaseBestResultFeedback(createProductionCaseReport({ completedCount: 5 }), undefined), undefined);
+  assert.equal(getProductionCaseBestResultFeedback(createProductionCaseReport({ maxScore: 0 }), undefined), undefined);
+  assert.equal(getProductionCaseBestResultFeedback(getProductionCaseReport([], { completedMissionIds: [] }), undefined), undefined);
 });
 
 test("best result is stored when all production case phases are completed", () => {
