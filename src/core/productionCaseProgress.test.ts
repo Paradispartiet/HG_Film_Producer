@@ -581,6 +581,27 @@ test("production case library controls, export helper, and UI copy avoid forbidd
   assert.doesNotMatch(helperCopy, /inspired by|in the spirit of|create your own version|lag en ny film/);
 });
 
+test("FilmScenarioLibrary exposes recent best results helper and section copy", () => {
+  const uiSource = readFileSync("src/ui/components/FilmScenarioLibrary.tsx", "utf8");
+  const styleSource = readFileSync("src/ui/styles.css", "utf8");
+
+  assert.match(uiSource, /getRecentProductionCaseBestResults\(/);
+  assert.match(uiSource, /limit = 5/);
+  assert.match(uiSource, /brief\.briefType !== "production_case"/);
+  assert.match(uiSource, /Date\.parse\(value\)/);
+  assert.match(uiSource, /getBestResultTimestamp\(result\.updatedAt\) \|\| getBestResultTimestamp\(result\.completedAt\)/);
+  assert.match(uiSource, /\.sort\(\(left, right\) => getRecentBestResultSortTimestamp\(right\) - getRecentBestResultSortTimestamp\(left\)\)/);
+  assert.match(uiSource, /\.slice\(0, limit\)/);
+  assert.match(uiSource, /productionCaseScenarios\.get\(bestResult\.scenarioId\)/);
+  assert.match(uiSource, /Siste beste resultater/);
+  assert.match(uiSource, /Ingen beste resultater ennå\./);
+  assert.match(uiSource, /Åpne case/);
+  assert.match(uiSource, /bestTierLabel: productionCaseResultTierLabels\[bestResult\.bestTier\]/);
+  assert.match(uiSource, /\{item\.bestTierLabel\} · \{item\.bestScore\}\/\{item\.maxScore\}/);
+  assert.match(uiSource, /onOpenScenario\?\.\(item\.scenarioId\)/);
+  assert.match(styleSource, /production-case-recent-results/);
+});
+
 test("FilmScenarioLibrary initializes from persisted controls and exposes reset copy", () => {
   const uiSource = readFileSync("src/ui/components/FilmScenarioLibrary.tsx", "utf8");
 
