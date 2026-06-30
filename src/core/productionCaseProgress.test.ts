@@ -602,6 +602,20 @@ test("FilmScenarioLibrary exposes recent best results helper and section copy", 
   assert.match(styleSource, /production-case-recent-results/);
 });
 
+test("production case MVP loop core UI copy is preserved", () => {
+  const librarySource = readFileSync("src/ui/components/FilmScenarioLibrary.tsx", "utf8");
+  const briefPanelSource = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
+  const copy = [librarySource, briefPanelSource].join("\n");
+
+  assert.match(copy, /Neste fase/);
+  assert.match(copy, /Neste nivå/);
+  assert.match(copy, /Case report/);
+  assert.match(copy, /Siste beste resultater/);
+  assert.match(copy, /Progress backup/);
+  assert.match(copy, /Gå til fase/);
+  assert.doesNotMatch(copy.toLowerCase(), /inspired by|in the spirit of|create your own version|lag en ny film/);
+});
+
 test("FilmScenarioLibrary initializes from persisted controls and exposes reset copy", () => {
   const uiSource = readFileSync("src/ui/components/FilmScenarioLibrary.tsx", "utf8");
 
