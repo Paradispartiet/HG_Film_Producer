@@ -942,22 +942,19 @@ function isValidProductionCaseLibraryControls(value: unknown): value is Producti
     && typeof value.searchQuery === "string";
 }
 
-export type ProductionCaseProgressImportResult =
+export type ProductionCaseProgressBackupPreview =
   | {
       readonly ok: true;
-      readonly importedAt: string;
-      readonly counts: {
-        readonly currentProgressCount: number;
-        readonly bestResultCount: number;
-      };
+      readonly exportedAt: string;
+      readonly currentProgressCount: number;
+      readonly bestResultCount: number;
+      readonly hasLibraryControls: boolean;
     }
   | { readonly ok: false; readonly reason: string };
 
-export function importProductionCaseProgressBackup(
-  rawJson: string,
-  storage: ProductionCaseProgressStorage,
-  importedAt = new Date().toISOString(),
-): ProductionCaseProgressImportResult {
+function parseProductionCaseProgressBackup(rawJson: string):
+  | { readonly ok: true; readonly backup: ProductionCaseProgressExport }
+  | { readonly ok: false; readonly reason: string } {
   let parsed: unknown;
   try {
     parsed = JSON.parse(rawJson) as unknown;
@@ -974,16 +971,52 @@ export function importProductionCaseProgressBackup(
   if (!isValidProductionCaseBestResultsState(parsed.bestResults)) return { ok: false, reason: "invalid_best_results" };
   if (!isValidProductionCaseLibraryControls(parsed.libraryControls)) return { ok: false, reason: "invalid_library_controls" };
 
-  storage.setItem(productionCaseProgressStorageKey, JSON.stringify(parsed.currentProgress));
-  storage.setItem(productionCaseBestResultsStorageKey, JSON.stringify(parsed.bestResults));
-  storage.setItem(productionCaseLibraryControlsStorageKey, JSON.stringify(parsed.libraryControls));
+  return { ok: true, backup: parsed as ProductionCaseProgressExport };
+}
+
+export function previewProductionCaseProgressBackup(rawJson: string): ProductionCaseProgressBackupPreview {
+  const parsed = parseProductionCaseProgressBackup(rawJson);
+  if (!parsed.ok) return parsed;
+  if (typeof parsed.backup.exportedAt !== "string") return { ok: false, reason: "invalid_exported_at" };
+
+  return {
+    ok: true,
+    exportedAt: parsed.backup.exportedAt,
+    currentProgressCount: Object.keys(parsed.backup.currentProgress).length,
+    bestResultCount: Object.keys(parsed.backup.bestResults).length,
+    hasLibraryControls: isValidProductionCaseLibraryControls(parsed.backup.libraryControls),
+  };
+}
+
+export type ProductionCaseProgressImportResult =
+  | {
+      readonly ok: true;
+      readonly importedAt: string;
+      readonly counts: {
+        readonly currentProgressCount: number;
+        readonly bestResultCount: number;
+      };
+    }
+  | { readonly ok: false; readonly reason: string };
+
+export function importProductionCaseProgressBackup(
+  rawJson: string,
+  storage: ProductionCaseProgressStorage,
+  importedAt = new Date().toISOString(),
+): ProductionCaseProgressImportResult {
+  const parsed = parseProductionCaseProgressBackup(rawJson);
+  if (!parsed.ok) return parsed;
+
+  storage.setItem(productionCaseProgressStorageKey, JSON.stringify(parsed.backup.currentProgress));
+  storage.setItem(productionCaseBestResultsStorageKey, JSON.stringify(parsed.backup.bestResults));
+  storage.setItem(productionCaseLibraryControlsStorageKey, JSON.stringify(parsed.backup.libraryControls));
 
   return {
     ok: true,
     importedAt,
     counts: {
-      currentProgressCount: Object.keys(parsed.currentProgress).length,
-      bestResultCount: Object.keys(parsed.bestResults).length,
+      currentProgressCount: Object.keys(parsed.backup.currentProgress).length,
+      bestResultCount: Object.keys(parsed.backup.bestResults).length,
     },
   };
 }

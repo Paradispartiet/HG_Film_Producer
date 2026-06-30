@@ -1210,6 +1210,10 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .scenario-import-control { display: grid; gap: 8px; padding: 12px; border: 1px solid var(--line); background: rgba(6, 8, 11, 0.38); }
 .scenario-import-control label { display: grid; gap: 7px; color: var(--muted-light); font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
 .scenario-import-control p { margin: 0; color: var(--accent); font-size: 11px; font-weight: 750; }
+.scenario-import-preview { display: grid; gap: 4px; padding: 10px 12px; border: 1px solid rgba(110, 231, 183, 0.36); background: rgba(16, 185, 129, 0.08); color: var(--muted-light); font-size: 11px; font-weight: 750; }
+.scenario-import-preview strong { color: var(--positive); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
+.scenario-import-preview-invalid { border-color: rgba(248, 113, 113, 0.38); background: rgba(248, 113, 113, 0.08); }
+.scenario-import-preview-invalid strong { color: var(--negative); }
 .scenario-import-button { justify-self: start; }
 .scenario-import-button:disabled { cursor: not-allowed; opacity: 0.45; }
 .scenario-result-summary { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; min-width: 0; color: var(--muted); font-size: 12px; }
