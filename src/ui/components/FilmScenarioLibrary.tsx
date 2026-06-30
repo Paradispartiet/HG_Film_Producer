@@ -21,6 +21,7 @@ import {
   productionCaseResultTierLabels,
   sortProductionCaseLibraryCards,
   writeProductionCaseLibraryControls,
+  type ProductionCaseBestResultEntry,
   type ProductionCaseBestResultsState,
   type ProductionCaseLibraryStatus,
   type ProductionCaseLibraryStatusFilter,
@@ -118,6 +119,7 @@ export function FilmScenarioLibrary({
   const nextActionScenario = nextAction
     ? scenarios.find((scenario) => scenario.id === nextAction.scenarioId)
     : undefined;
+  const recentBestResults = useMemo(() => getRecentProductionCaseBestResults(scenarios, bestResultsState), [bestResultsState, scenarios]);
   const nextActionImprovementHint = useMemo(() => {
     if (!nextActionScenario || !nextAction || !["improve", "master"].includes(nextAction.actionType)) return undefined;
     const brief = resolveScenarioProductionBrief(nextActionScenario);
@@ -244,6 +246,13 @@ export function FilmScenarioLibrary({
       </div>
       <ProductionCaseCollectionSummaryCard careerSummary={careerSummary} summary={collectionSummary} />
       <ProductionCaseAchievementsSection summary={careerSummary} />
+      <RecentProductionCaseBestResultsSection
+        items={recentBestResults}
+        onOpenScenario={onStartScenario ? (scenarioId) => {
+          const scenario = scenarios.find((item) => item.id === scenarioId);
+          if (scenario) onStartScenario(scenario);
+        } : undefined}
+      />
       <ProductionCaseNextActionCard
         improvementHint={nextActionImprovementHint}
         nextAction={nextAction}
@@ -433,6 +442,115 @@ export function FilmScenarioLibrary({
         ))}
       </div>
     </main>
+  );
+}
+
+export type RecentProductionCaseBestResult = {
+  readonly scenarioId: string;
+  readonly title: string;
+  readonly year: number;
+  readonly bestScore: number;
+  readonly maxScore: number;
+  readonly bestTier: ProductionCaseBestResultEntry["bestTier"];
+  readonly bestTierLabel: string;
+  readonly updatedAt: string;
+  readonly completedAt: string;
+};
+
+function getBestResultTimestamp(value: string | undefined): number {
+  if (!value) return 0;
+  const timestamp = Date.parse(value);
+  return Number.isFinite(timestamp) ? timestamp : 0;
+}
+
+function getRecentBestResultSortTimestamp(result: Pick<RecentProductionCaseBestResult, "updatedAt" | "completedAt">): number {
+  return getBestResultTimestamp(result.updatedAt) || getBestResultTimestamp(result.completedAt);
+}
+
+export function getRecentProductionCaseBestResults(
+  scenarios: readonly FilmScenarioSeed[],
+  bestResults: ProductionCaseBestResultsState,
+  limit = 5,
+): readonly RecentProductionCaseBestResult[] {
+  if (limit <= 0) return [];
+
+  const productionCaseScenarios = new Map(
+    scenarios.flatMap((scenario) => {
+      const brief = resolveScenarioProductionBrief(scenario);
+      if (brief.briefType !== "production_case") return [];
+      return [[scenario.id, scenario]];
+    }),
+  );
+
+  return Object.values(bestResults)
+    .flatMap((bestResult) => {
+      const scenario = productionCaseScenarios.get(bestResult.scenarioId);
+      if (!scenario) return [];
+      return [{
+        scenarioId: bestResult.scenarioId,
+        title: scenario.film.title,
+        year: scenario.film.year,
+        bestScore: bestResult.bestScore,
+        maxScore: bestResult.maxScore,
+        bestTier: bestResult.bestTier,
+        bestTierLabel: productionCaseResultTierLabels[bestResult.bestTier],
+        updatedAt: bestResult.updatedAt,
+        completedAt: bestResult.completedAt,
+      }];
+    })
+    .sort((left, right) => getRecentBestResultSortTimestamp(right) - getRecentBestResultSortTimestamp(left))
+    .slice(0, limit);
+}
+
+function formatRecentBestResultDate(value: string): string | undefined {
+  const timestamp = Date.parse(value);
+  if (!Number.isFinite(timestamp)) return undefined;
+  try {
+    return new Intl.DateTimeFormat("nb-NO", { day: "2-digit", month: "short", year: "numeric" }).format(new Date(timestamp));
+  } catch {
+    return undefined;
+  }
+}
+
+function RecentProductionCaseBestResultsSection({
+  items,
+  onOpenScenario,
+}: {
+  readonly items: readonly RecentProductionCaseBestResult[];
+  readonly onOpenScenario?: ((scenarioId: string) => void) | undefined;
+}) {
+  return (
+    <section className="production-case-recent-results" aria-label="Siste beste resultater">
+      <div className="production-case-recent-results-heading">
+        <span>Siste beste resultater</span>
+        <small>{items.length > 0 ? `${items.length} nyeste` : "Ingen lagret"}</small>
+      </div>
+      {items.length === 0 ? (
+        <p>Ingen beste resultater ennå.</p>
+      ) : (
+        <div className="production-case-recent-results-list">
+          {items.map((item) => {
+            const dateLabel = formatRecentBestResultDate(item.updatedAt) ?? formatRecentBestResultDate(item.completedAt);
+            return (
+              <article className="production-case-recent-result" key={item.scenarioId}>
+                <div>
+                  <strong>{item.title} <span>({item.year})</span></strong>
+                  <small>{item.bestTierLabel} · {item.bestScore}/{item.maxScore}{dateLabel ? ` · ${dateLabel}` : ""}</small>
+                </div>
+                <button
+                  className="secondary-button"
+                  disabled={!onOpenScenario}
+                  onClick={() => onOpenScenario?.(item.scenarioId)}
+                  type="button"
+                >
+                  Åpne case
+                </button>
+              </article>
+            );
+          })}
+        </div>
+      )}
+    </section>
   );
 }
 
