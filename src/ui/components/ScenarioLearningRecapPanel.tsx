@@ -14,6 +14,8 @@ export function ScenarioLearningRecapPanel({ scenarioTitle, brief, selectedTarge
   const selectedTargetIdSet = new Set(selectedTargetIds);
   const selectedTargetLabels = checklist.filter((target) => selectedTargetIdSet.has(target.id)).map((target) => target.label);
   const unselectedTargetLabels = checklist.filter((target) => !selectedTargetIdSet.has(target.id)).map((target) => target.label);
+  const matchedTargetCount = selectedTargetLabels.length;
+  const missingTargetCount = unselectedTargetLabels.length;
   const alignmentScore = calculateScenarioAlignmentScore({ selectedTargetIds, totalTargets: checklist.length });
   const recap = createScenarioLearningRecap({
     scenarioTitle,
@@ -27,26 +29,39 @@ export function ScenarioLearningRecapPanel({ scenarioTitle, brief, selectedTarge
     <section className="scenario-learning-recap" aria-labelledby="scenario-learning-recap-title">
       <div className="scenario-learning-header">
         <div>
-          <span className="eyebrow">Scenario learning recap</span>
+          <span className="eyebrow">Case report</span>
           <h3 id="scenario-learning-recap-title">{recap.title}</h3>
         </div>
         <span>{scenarioTitle}</span>
       </div>
       <p>{recap.intro}</p>
+      <div className="scenario-learning-counts" aria-label="Production target counts">
+        <span><strong>Matched targets:</strong> {matchedTargetCount}</span>
+        <span><strong>Missing targets:</strong> {missingTargetCount}</span>
+      </div>
       <div className="scenario-learning-grid">
         <div className="scenario-learning-section">
-          <h4>You practiced</h4>
-          <ul className="scenario-learning-list">
-            {recap.learned.map((item) => <li key={`learned-${item}`}>{item}</li>)}
-          </ul>
+          <h4>What you matched</h4>
+          {matchedTargetCount > 0 ? (
+            <ul className="scenario-learning-list">
+              {recap.learned.map((item) => <li key={`learned-${item}`}>{item}</li>)}
+            </ul>
+          ) : (
+            <p className="scenario-learning-empty">You did not match a production target yet.</p>
+          )}
         </div>
         <div className="scenario-learning-section">
-          <h4>Next focus</h4>
-          <ul className="scenario-learning-list">
-            {recap.nextFocus.map((item) => <li key={`next-${item}`}>{item}</li>)}
-          </ul>
+          <h4>Improve next</h4>
+          {missingTargetCount > 0 ? (
+            <ul className="scenario-learning-list">
+              {recap.nextFocus.map((item) => <li key={`next-${item}`}>{item}</li>)}
+            </ul>
+          ) : (
+            <p className="scenario-learning-empty">All available targets matched.</p>
+          )}
         </div>
       </div>
+      <p className="scenario-learning-replay">Replay the case and focus on the missing craft targets to improve your best result.</p>
       <p className="scenario-learning-note">{recap.verificationNote}</p>
     </section>
   );

@@ -1113,23 +1113,32 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
   .scenario-alignment-header { flex-direction: column; }
 }
 
-.scenario-alignment-result { display: grid; gap: 12px; margin: 0 30px 30px; padding: 22px; border: 1px solid rgba(214, 174, 98, 0.32); background: linear-gradient(145deg, rgba(21, 25, 31, 0.97), rgba(9, 11, 15, 0.98)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 18px 44px rgba(0, 0, 0, 0.18); }
+.scenario-alignment-result { display: grid; gap: 12px; margin: 0 30px 30px; padding: 22px; border: 1px solid rgba(214, 174, 98, 0.38); background: radial-gradient(circle at top right, rgba(214, 174, 98, 0.12), transparent 34%), linear-gradient(145deg, rgba(21, 25, 31, 0.97), rgba(9, 11, 15, 0.98)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 20px 52px rgba(0, 0, 0, 0.22); }
 .scenario-alignment-result-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .scenario-alignment-result-header h3 { margin: 5px 0 0; font-family: Georgia, serif; font-size: clamp(22px, 3vw, 30px); font-weight: 500; letter-spacing: -0.035em; }
-.scenario-alignment-result-score { color: var(--accent); font-family: Georgia, serif; font-size: clamp(36px, 5vw, 58px); line-height: 0.95; letter-spacing: -0.05em; }
-.scenario-alignment-result-badge { flex: 0 0 auto; padding: 7px 10px; border: 1px solid rgba(214, 174, 98, 0.35); background: var(--accent-soft); color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.scenario-alignment-result-score { color: var(--accent); font-family: Georgia, serif; font-size: clamp(36px, 5vw, 58px); line-height: 0.95; letter-spacing: -0.05em; text-shadow: 0 0 28px rgba(214, 174, 98, 0.16); }
+.scenario-alignment-result-badges { display: flex; flex: 0 0 auto; flex-direction: column; align-items: flex-end; gap: 7px; }
+.scenario-alignment-result-badge { padding: 7px 10px; border: 1px solid rgba(214, 174, 98, 0.35); background: var(--accent-soft); color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.scenario-alignment-result-label { color: var(--muted-light); font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-align: right; text-transform: uppercase; }
+.scenario-alignment-result-meaning { margin: 0; padding: 12px 14px; border: 1px solid rgba(214, 174, 98, 0.22); background: rgba(214, 174, 98, 0.07); color: var(--muted-light); font-size: 13px; line-height: 1.55; }
+.scenario-alignment-result-meaning strong { color: var(--accent); }
 .scenario-alignment-result-summary { margin: 0; color: var(--muted-light); font-size: 13px; line-height: 1.6; }
 
-.scenario-learning-recap { display: grid; gap: 16px; margin: 0 30px 30px; padding: 22px; border: 1px solid rgba(214, 174, 98, 0.28); background: linear-gradient(145deg, rgba(21, 25, 31, 0.97), rgba(9, 11, 15, 0.98)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 18px 44px rgba(0, 0, 0, 0.18); }
+.scenario-learning-recap { display: grid; gap: 16px; margin: 0 30px 30px; padding: 22px; border: 1px solid rgba(214, 174, 98, 0.32); background: radial-gradient(circle at top left, rgba(214, 174, 98, 0.1), transparent 32%), linear-gradient(145deg, rgba(21, 25, 31, 0.97), rgba(9, 11, 15, 0.98)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 18px 44px rgba(0, 0, 0, 0.18); }
 .scenario-learning-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .scenario-learning-header h3 { margin: 5px 0 0; font-family: Georgia, serif; font-size: clamp(22px, 3vw, 30px); font-weight: 500; letter-spacing: -0.035em; }
 .scenario-learning-header span:last-child { flex: 0 0 auto; max-width: 42%; color: var(--muted-light); font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-align: right; text-transform: uppercase; }
+.scenario-learning-counts { display: flex; flex-wrap: wrap; gap: 10px; }
+.scenario-learning-counts span { padding: 9px 12px; border: 1px solid rgba(214, 174, 98, 0.2); background: rgba(255, 255, 255, 0.035); color: var(--muted-light); font-size: 12px; }
+.scenario-learning-counts strong { color: var(--accent); }
 .scenario-learning-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .scenario-learning-section { padding: 16px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.035); }
 .scenario-learning-section h4 { margin: 0 0 10px; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
 .scenario-learning-list { display: grid; gap: 8px; margin: 0; padding-left: 18px; color: var(--muted-light); font-size: 13px; line-height: 1.55; }
+.scenario-learning-empty { margin: 0; color: var(--muted-light); font-size: 13px; line-height: 1.55; }
+.scenario-learning-replay { margin: 0; padding: 13px 14px; border-left: 3px solid var(--accent); background: rgba(214, 174, 98, 0.07); color: var(--muted-light); font-size: 13px; line-height: 1.55; }
 .scenario-learning-note { margin: 0; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.5; }
-@media (max-width: 760px) { .scenario-learning-grid { grid-template-columns: 1fr; } .scenario-learning-header { display: grid; } .scenario-learning-header span:last-child { max-width: none; text-align: left; } }
+@media (max-width: 760px) { .scenario-alignment-result-header { display: grid; } .scenario-alignment-result-badges { align-items: flex-start; } .scenario-alignment-result-label { text-align: left; } .scenario-learning-grid { grid-template-columns: 1fr; } .scenario-learning-header { display: grid; } .scenario-learning-header span:last-child { max-width: none; text-align: left; } }
 
 .scenario-phase-guidance { display: grid; gap: 18px; margin: 0 30px 30px; padding: 22px; border: 1px solid rgba(214, 174, 98, 0.28); background: linear-gradient(145deg, rgba(21, 25, 31, 0.97), rgba(9, 11, 15, 0.98)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 18px 44px rgba(0, 0, 0, 0.18); }
 .scenario-phase-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
