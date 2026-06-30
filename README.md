@@ -112,8 +112,11 @@ Modulær struktur.
 
 ## Nåværende status
 
-Repoet er i grunnfase.
+Repoet har nå en React/Vite-basert app-UI for den spillbare MVP-en og videre motorinspeksjon.
 
-Det finnes foreløpig ingen frontend, backend eller app-UI. Første mål er å definere spillets univers, systemer og datatyper før implementasjon.
+- **Current playable MVP:** Production Cases — produksjonscase-katalogen er den primære spillbare loopen.
+- **Studio Career:** tidlig skall for studiopipeline og karriereflyt.
+- **Demo Dashboard:** inspeksjon av engine/demo-data.
+- **Full studio simulator:** senere utvidelse, ikke spillbar hovedmodus ennå.
 
-> **PR 2** legger til det første dataskjelettet (`data/film/*.json`) og den første studiomotoren i `src/core` (opprett studio, opprett filmprosjekt, ta et produksjonsvalg, beregn filmresultat). Fortsatt ingen UI, React/Vite eller backend.
+> Tidligere grunnfasearbeid la til dataskjelettet (`data/film/*.json`) og den første studiomotoren i `src/core` (opprett studio, opprett filmprosjekt, ta et produksjonsvalg, beregn filmresultat).

@@ -59,16 +59,16 @@ export function App() {
   function resetCareer() { setCareerRun(careerRunActions.resetCareer()); setMode("setup"); setView("game"); }
 
   if (view === "landing") {
-    return <LandingScreen hasSave={hasSave} onContinue={() => { setMode("setup"); setView("game"); }} onDemo={() => { setMode("demo"); setView("dev"); }} onDevDashboard={() => { setMode("demo"); setView("dev"); }} onStart={() => { resetCareer(); }} />;
+    return <LandingScreen hasSave={hasSave} onContinue={() => { setMode("setup"); setView("game"); }} onDemo={() => { setMode("demo"); setView("dev"); }} onDevDashboard={() => { setMode("demo"); setView("dev"); }} onProductionCases={() => setView("scenarios")} onStart={() => { resetCareer(); }} />;
   }
 
   return (
     <div className="app-shell">
       {view === "game" ? (
         <GameNavigation context={activeProject?.run.project.title ?? "New studio"} onDevDashboard={() => { setMode("demo"); setView("dev"); }} onHome={() => setView("landing")} />
-      ) : <nav className="mode-switch" aria-label="Dashboard mode"><div><span className="eyebrow">HG Film Producer</span><strong>Production workspace</strong></div><div className="mode-switch-buttons"><button className={mode === "demo" && view === "dev" ? "mode-button mode-button--active" : "mode-button"} onClick={() => { setMode("demo"); setView("dev"); }} type="button">Demo run</button><button className={view === "scenarios" ? "mode-button mode-button--active" : "mode-button"} onClick={() => setView("scenarios")} type="button">Classic scenarios</button><button className="mode-button" onClick={() => { setMode("setup"); setView("game"); }} type="button">Playable shell</button><button className="mode-button" onClick={() => setView("landing")} type="button">Title screen</button></div></nav>}
+      ) : <nav className="mode-switch" aria-label="Dashboard mode"><div><span className="eyebrow">HG Film Producer</span><strong>Production workspace</strong></div><div className="mode-switch-buttons"><button className={mode === "demo" && view === "dev" ? "mode-button mode-button--active" : "mode-button"} onClick={() => { setMode("demo"); setView("dev"); }} type="button">Demo run</button><button className={view === "scenarios" ? "mode-button mode-button--active" : "mode-button"} onClick={() => setView("scenarios")} type="button">Production Cases</button><button className="mode-button" onClick={() => { setMode("setup"); setView("game"); }} type="button">Studio Career</button><button className="mode-button" onClick={() => setView("landing")} type="button">Title screen</button></div></nav>}
       {view === "scenarios" ? <FilmScenarioLibrary onStartScenario={startClassicScenario} /> : mode === "demo" ? <DemoDashboard /> : (careerRun.projects.length > 0 ? <CareerDashboard careerRun={careerRun.projects} onResetCareer={resetCareer} setCareerRun={setCareerRun} /> : <main className="setup-workspace"><SetupPanel onCreate={startStudio} /></main>)}
-      <footer><span>HG Film Producer</span><span>{view === "dev" ? "Dev mode · engine-backed dashboard" : view === "scenarios" ? "Classic scenario catalogue" : "Interactive production pipeline"}</span></footer>
+      <footer><span>HG Film Producer</span><span>{view === "dev" ? "Dev mode · engine-backed dashboard" : view === "scenarios" ? "Production case catalogue" : "Interactive production pipeline"}</span></footer>
     </div>
   );
 }

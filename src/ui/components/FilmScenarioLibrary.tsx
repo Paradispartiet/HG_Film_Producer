@@ -236,10 +236,10 @@ export function FilmScenarioLibrary({
       <div className="scenario-library-header">
         <div>
           <span className="eyebrow">Seed catalogue</span>
-          <h2>Classic production scenarios</h2>
+          <h2>Production Cases</h2>
         </div>
         <p>
-          {scenarios.length} scenarios from the classic film seed file. Manual
+          {scenarios.length} production cases from the classic film seed file. Manual
           briefs are production cases: follow and reconstruct the production
           choices behind the specific film.
         </p>
