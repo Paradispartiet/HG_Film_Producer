@@ -677,6 +677,94 @@ export function getProductionCaseResultTier(
   return "auteur";
 }
 
+
+export type ProductionCaseTierTarget = {
+  readonly currentTier: ProductionCaseResultTier;
+  readonly currentTierLabel: string;
+  readonly nextTier: ProductionCaseResultTier | undefined;
+  readonly nextTierLabel: string | undefined;
+  readonly pointsNeeded: number;
+  readonly score: number;
+  readonly maxScore: number;
+  readonly isMaxTier: boolean;
+  readonly label: string;
+  readonly description: string;
+};
+
+function findMinimumScoreForProductionCaseTier(
+  targetTier: ProductionCaseResultTier,
+  maxScore: number,
+): number | undefined {
+  const completedCount = maxScore / 2;
+  for (let score = 0; score <= maxScore; score += 1) {
+    if (getProductionCaseResultTier({ score, maxScore }, completedCount) === targetTier) return score;
+  }
+  return undefined;
+}
+
+export function getProductionCaseTierTarget(
+  scoreSummary: ProductionCaseScoreSummary | undefined,
+  completedCount: number,
+): ProductionCaseTierTarget | undefined {
+  if (!scoreSummary || scoreSummary.maxScore <= 0) return undefined;
+
+  const currentTier = getProductionCaseResultTier(scoreSummary, completedCount);
+  if (!currentTier) return undefined;
+
+  if (currentTier === "auteur") {
+    return {
+      currentTier,
+      currentTierLabel: productionCaseResultTierLabels[currentTier],
+      nextTier: undefined,
+      nextTierLabel: undefined,
+      pointsNeeded: 0,
+      score: scoreSummary.score,
+      maxScore: scoreSummary.maxScore,
+      isMaxTier: true,
+      label: "Maks nivå nådd",
+      description: "Dette caset er fullført på høyeste nivå.",
+    };
+  }
+
+  const nextTier = currentTier === "assistant"
+    ? "producer"
+    : currentTier === "producer"
+      ? "auteur"
+      : "assistant";
+  const nextTierLabel = productionCaseResultTierLabels[nextTier];
+
+  if (currentTier === "not_started" || currentTier === "in_progress") {
+    return {
+      currentTier,
+      currentTierLabel: productionCaseResultTierLabels[currentTier],
+      nextTier,
+      nextTierLabel,
+      pointsNeeded: 0,
+      score: scoreSummary.score,
+      maxScore: scoreSummary.maxScore,
+      isMaxTier: false,
+      label: `Neste nivå: ${nextTierLabel}`,
+      description: "Fullfør fasene og øk Case-score.",
+    };
+  }
+
+  const targetScore = findMinimumScoreForProductionCaseTier(nextTier, scoreSummary.maxScore) ?? scoreSummary.maxScore;
+  const pointsNeeded = Math.max(targetScore - scoreSummary.score, 0);
+
+  return {
+    currentTier,
+    currentTierLabel: productionCaseResultTierLabels[currentTier],
+    nextTier,
+    nextTierLabel,
+    pointsNeeded,
+    score: scoreSummary.score,
+    maxScore: scoreSummary.maxScore,
+    isMaxTier: false,
+    label: `Neste nivå: ${nextTierLabel}`,
+    description: `Mangler ${pointsNeeded} poeng.`,
+  };
+}
+
 export function getProductionCaseMissionScore(
   choiceQuality: ProductionCaseMissionScoreChoiceQuality | string | undefined,
 ): number {

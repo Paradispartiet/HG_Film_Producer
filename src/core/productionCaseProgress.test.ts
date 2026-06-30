@@ -20,6 +20,7 @@ import {
   getProductionCaseProgressEntry,
   getProductionCaseResultTier,
   getProductionCaseScoreSummary,
+  getProductionCaseTierTarget,
   parseProductionCaseBestResults,
   parseProductionCaseLibraryControls,
   parseProductionCaseProgress,
@@ -833,6 +834,33 @@ test("production case next phase action is hidden for seed fallback and full mat
   );
 });
 
+
+test("ScenarioProductionBriefPanel shows compact next tier target and preserves next phase/report UI", () => {
+  const uiSource = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
+  const styleSource = readFileSync("src/ui/styles.css", "utf8");
+
+  assert.match(uiSource, /getProductionCaseTierTarget\(caseScore, completedCount\)/);
+  assert.match(uiSource, /aria-label="Neste nivå"/);
+  assert.match(uiSource, /tierTarget\.label/);
+  assert.match(uiSource, /tierTarget\.description/);
+  assert.match(uiSource, /Case report/);
+  assert.match(uiSource, /Neste fase/);
+  assert.match(styleSource, /scenario-production-tier-target/);
+});
+
+test("production case tier target helper and UI copy avoid forbidden language", () => {
+  const uiSource = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8").toLowerCase();
+  const copy = [
+    getProductionCaseTierTarget({ score: 4, maxScore: 12 }, 6)?.label,
+    getProductionCaseTierTarget({ score: 4, maxScore: 12 }, 6)?.description,
+    getProductionCaseTierTarget({ score: 11, maxScore: 12 }, 6)?.label,
+    getProductionCaseTierTarget({ score: 11, maxScore: 12 }, 6)?.description,
+    uiSource,
+  ].join(" ").toLowerCase();
+
+  assert.doesNotMatch(copy, /inspired by|in the spirit of|create your own version|lag en ny film/);
+});
+
 test("ScenarioProductionBriefPanel exposes clickable improvement hint mission focus", () => {
   const uiSource = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
   const styleSource = readFileSync("src/ui/styles.css", "utf8");
@@ -1167,6 +1195,57 @@ test("production case scoring helpers avoid forbidden copy", () => {
   assert.ok(!helperSource.includes("in the spirit of"));
 });
 
+
+
+test("production case tier target shows assistant target for not started and in progress", () => {
+  const notStarted = getProductionCaseTierTarget({ score: 0, maxScore: 12 }, 0);
+  const inProgress = getProductionCaseTierTarget({ score: 8, maxScore: 12 }, 3);
+
+  assert.equal(notStarted?.currentTier, "not_started");
+  assert.equal(notStarted?.label, "Neste nivå: Assistent");
+  assert.equal(notStarted?.description, "Fullfør fasene og øk Case-score.");
+  assert.equal(inProgress?.currentTier, "in_progress");
+  assert.equal(inProgress?.label, "Neste nivå: Assistent");
+});
+
+test("production case tier target advances assistant to producer with threshold points", () => {
+  const target = getProductionCaseTierTarget({ score: 4, maxScore: 12 }, 6);
+
+  assert.equal(target?.currentTier, "assistant");
+  assert.equal(target?.currentTierLabel, "Assistent");
+  assert.equal(target?.nextTier, "producer");
+  assert.equal(target?.nextTierLabel, "Produsent");
+  assert.equal(target?.pointsNeeded, 2);
+  assert.equal(target?.label, "Neste nivå: Produsent");
+  assert.equal(target?.description, "Mangler 2 poeng.");
+});
+
+test("production case tier target advances producer to auteur with threshold points", () => {
+  const target = getProductionCaseTierTarget({ score: 8, maxScore: 12 }, 6);
+
+  assert.equal(target?.currentTier, "producer");
+  assert.equal(target?.nextTier, "auteur");
+  assert.equal(target?.pointsNeeded, 3);
+  assert.equal(target?.label, "Neste nivå: Auteur");
+  assert.equal(target?.description, "Mangler 3 poeng.");
+});
+
+test("production case tier target marks auteur as max tier", () => {
+  const target = getProductionCaseTierTarget({ score: 11, maxScore: 12 }, 6);
+
+  assert.equal(target?.currentTier, "auteur");
+  assert.equal(target?.nextTier, undefined);
+  assert.equal(target?.nextTierLabel, undefined);
+  assert.equal(target?.pointsNeeded, 0);
+  assert.equal(target?.isMaxTier, true);
+  assert.equal(target?.label, "Maks nivå nådd");
+  assert.equal(target?.description, "Dette caset er fullført på høyeste nivå.");
+});
+
+test("production case tier target is undefined for missing score or seed fallback", () => {
+  assert.equal(getProductionCaseTierTarget(undefined, 0), undefined);
+  assert.equal(getProductionCaseTierTarget({ score: 0, maxScore: 0 }, 0), undefined);
+});
 
 test("production case result tier is not_started at 0 score and 0 completed phases", () => {
   assert.equal(getProductionCaseResultTier({ score: 0, maxScore: 12 }, 0), "not_started");

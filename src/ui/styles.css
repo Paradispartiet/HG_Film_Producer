@@ -1149,10 +1149,12 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .scenario-mission-summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 15px; border: 1px solid rgba(214, 174, 98, 0.3); background: var(--accent-soft); }
 .scenario-mission-summary strong { display: block; margin-top: 4px; color: var(--text); font-size: 15px; }
 .scenario-mission-score { display: block; margin-top: 5px; color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
-.scenario-production-result, .scenario-production-improvement, .scenario-production-next-phase { display: grid; gap: 5px; padding: 14px 15px; border: 1px solid rgba(214, 174, 98, 0.28); background: rgba(214, 174, 98, 0.07); }
-.scenario-production-result strong, .scenario-production-improvement strong, .scenario-production-next-phase strong { color: var(--accent); font-size: 16px; }
-.scenario-production-result p, .scenario-production-improvement p, .scenario-production-next-phase p { margin: 0; color: var(--muted-light); font-size: 12px; line-height: 1.55; }
+.scenario-production-result, .scenario-production-improvement, .scenario-production-next-phase, .scenario-production-tier-target { display: grid; gap: 5px; padding: 14px 15px; border: 1px solid rgba(214, 174, 98, 0.28); background: rgba(214, 174, 98, 0.07); }
+.scenario-production-result strong, .scenario-production-improvement strong, .scenario-production-next-phase strong, .scenario-production-tier-target strong { color: var(--accent); font-size: 16px; }
+.scenario-production-result p, .scenario-production-improvement p, .scenario-production-next-phase p, .scenario-production-tier-target p { margin: 0; color: var(--muted-light); font-size: 12px; line-height: 1.55; }
 .scenario-production-improvement small { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.scenario-production-tier-target small { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+.scenario-production-tier-target--max { border-color: rgba(115, 184, 149, 0.42); background: var(--positive-soft); }
 .scenario-production-improvement button, .scenario-production-next-phase button { justify-self: start; margin-top: 2px; }
 .scenario-production-improvement--choose, .scenario-production-next-phase--choose { border-color: rgba(214, 174, 98, 0.4); }
 .scenario-production-improvement--rethink { border-color: rgba(202, 124, 104, 0.4); }
