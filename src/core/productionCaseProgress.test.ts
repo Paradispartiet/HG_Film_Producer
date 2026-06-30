@@ -15,6 +15,7 @@ import {
   getProductionCaseLibraryStatus,
   getProductionCaseLibraryResultSummary,
   getProductionCaseNextAction,
+  getProductionCaseNextPhaseAction,
   getProductionCaseReport,
   getProductionCaseProgressEntry,
   getProductionCaseResultTier,
@@ -757,6 +758,81 @@ test("reset clears selected choices for the current scenario", () => {
 
 
 
+
+
+test("production case next phase action recommends missing choice first", () => {
+  const action = getProductionCaseNextPhaseAction(improvementHintMissions, {
+    completedMissionIds: [],
+    selectedChoicesByMissionId: {
+      "mission-b": "b-match",
+    },
+  });
+
+  assert.deepEqual(action, {
+    missionId: "mission-a",
+    phase: "screenplay",
+    title: "Manusvalg",
+    actionType: "choose",
+    label: "Velg produksjonsgrep",
+    description: "Velg et produksjonsgrep før du fullfører fasen.",
+  });
+});
+
+test("production case next phase action recommends completing a selected unfinished phase", () => {
+  const action = getProductionCaseNextPhaseAction(improvementHintMissions, {
+    completedMissionIds: ["mission-a"],
+    selectedChoicesByMissionId: {
+      "mission-a": "a-match",
+      "mission-b": "b-match",
+      "mission-c": "c-match",
+    },
+  });
+
+  assert.deepEqual(action, {
+    missionId: "mission-b",
+    phase: "editing",
+    title: "Klipperytme",
+    actionType: "complete",
+    label: "Fullfør fase",
+    description: "Marker fasen som fullført når produksjonsgrepet er valgt.",
+  });
+});
+
+test("production case next phase action recommends improving the first weak completed phase", () => {
+  const action = getProductionCaseNextPhaseAction(improvementHintMissions, {
+    completedMissionIds: ["mission-a", "mission-b", "mission-c"],
+    selectedChoicesByMissionId: {
+      "mission-a": "a-match",
+      "mission-b": "b-partial",
+      "mission-c": "c-match",
+    },
+  });
+
+  assert.deepEqual(action, {
+    missionId: "mission-b",
+    phase: "editing",
+    title: "Klipperytme",
+    actionType: "improve",
+    label: "Forbedre fase",
+    description: "Spiss produksjonsgrepet for å løfte case-scoren.",
+  });
+});
+
+test("production case next phase action is hidden for seed fallback and full match cases", () => {
+  assert.equal(getProductionCaseNextPhaseAction([], { completedMissionIds: [] }), undefined);
+  assert.equal(
+    getProductionCaseNextPhaseAction(improvementHintMissions, {
+      completedMissionIds: ["mission-a", "mission-b", "mission-c"],
+      selectedChoicesByMissionId: {
+        "mission-a": "a-match",
+        "mission-b": "b-match",
+        "mission-c": "c-match",
+      },
+    }),
+    undefined,
+  );
+});
+
 test("ScenarioProductionBriefPanel exposes clickable improvement hint mission focus", () => {
   const uiSource = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
   const styleSource = readFileSync("src/ui/styles.css", "utf8");
@@ -766,6 +842,9 @@ test("ScenarioProductionBriefPanel exposes clickable improvement hint mission fo
   assert.match(uiSource, /production-case-mission-\$\{missionId\}/);
   assert.match(uiSource, /tabIndex=\{-1\}/);
   assert.match(uiSource, /Gå til fase/);
+  assert.match(uiSource, /Neste fase/);
+  assert.match(uiSource, /getProductionCaseNextPhaseAction\(missions, progressEntry\)/);
+  assert.match(uiSource, /onClick=\{\(\) => onFocusMission\(action\.missionId\)\}/);
   assert.match(uiSource, /onClick=\{\(\) => onFocusMission\(hint\.missionId\)\}/);
   assert.match(uiSource, /setFocusedMissionId\(missionId\)/);
   assert.match(uiSource, /scrollIntoView\?\.\(\{ behavior: "smooth", block: "center" \}\)/);
@@ -779,6 +858,10 @@ test("ScenarioProductionBriefPanel focus helper copy avoids forbidden language",
   const focusCopy = [
     "Gå til fase",
     "Forbedre neste",
+    "Neste fase",
+    "Velg produksjonsgrep",
+    "Fullfør fase",
+    "Forbedre fase",
     uiSource,
   ].join(" ");
 
