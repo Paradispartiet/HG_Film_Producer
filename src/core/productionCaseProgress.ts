@@ -25,6 +25,20 @@ export type ProductionCaseBestResultEntry = {
 
 export type ProductionCaseBestResultsState = Record<string, ProductionCaseBestResultEntry>;
 
+export type ProductionCaseBestResultFeedbackType = "first_best" | "score_improved" | "tier_improved" | "maxed";
+
+export type ProductionCaseBestResultFeedback = {
+  readonly feedbackType: ProductionCaseBestResultFeedbackType;
+  readonly label: string;
+  readonly description: string;
+  readonly previousScore: number | undefined;
+  readonly newScore: number;
+  readonly previousTier: ProductionCaseBestResultTier | undefined;
+  readonly newTier: ProductionCaseBestResultTier;
+  readonly scoreDelta: number | undefined;
+  readonly tierImproved: boolean;
+};
+
 export type ProductionCaseProgressStorage = Pick<StorageLike, "getItem" | "setItem" | "removeItem">;
 
 type StorageLike = {
@@ -109,6 +123,85 @@ function isProductionCaseBestResultBetter(
   if (!current) return true;
   if (candidate.bestScore !== current.bestScore) return candidate.bestScore > current.bestScore;
   return getProductionCaseBestResultTierRank(candidate.bestTier) >= getProductionCaseBestResultTierRank(current.bestTier);
+}
+
+export function getProductionCaseBestResultFeedback(
+  report: ProductionCaseReport | undefined,
+  previousBestResult: ProductionCaseBestResultEntry | undefined,
+): ProductionCaseBestResultFeedback | undefined {
+  if (!report) return undefined;
+  if (report.completedCount !== report.totalMissions) return undefined;
+  if (report.maxScore <= 0) return undefined;
+  if (!isProductionCaseBestResultTier(report.resultTier)) return undefined;
+
+  const previousScore = previousBestResult?.bestScore;
+  const previousTier = previousBestResult?.bestTier;
+  const newScore = report.score;
+  const newTier = report.resultTier;
+  const scoreDelta = previousScore === undefined ? undefined : newScore - previousScore;
+  const tierImproved = previousTier === undefined
+    ? false
+    : getProductionCaseBestResultTierRank(newTier) > getProductionCaseBestResultTierRank(previousTier);
+
+  if (previousBestResult && newScore <= previousBestResult.bestScore && !tierImproved) return undefined;
+
+  if (newTier === "auteur" && newScore === report.maxScore) {
+    return {
+      feedbackType: "maxed",
+      label: "Maks resultat",
+      description: "Dette caset er fullført med maks score.",
+      previousScore,
+      newScore,
+      previousTier,
+      newTier,
+      scoreDelta,
+      tierImproved,
+    };
+  }
+
+  if (!previousBestResult) {
+    return {
+      feedbackType: "first_best",
+      label: "Første beste resultat",
+      description: "Dette er nå ditt beste lagrede resultat for caset.",
+      previousScore,
+      newScore,
+      previousTier,
+      newTier,
+      scoreDelta,
+      tierImproved,
+    };
+  }
+
+  if (tierImproved) {
+    return {
+      feedbackType: "tier_improved",
+      label: "Nytt nivå",
+      description: `Du løftet caset fra ${productionCaseResultTierLabels[previousBestResult.bestTier]} til ${productionCaseResultTierLabels[newTier]}.`,
+      previousScore,
+      newScore,
+      previousTier,
+      newTier,
+      scoreDelta,
+      tierImproved,
+    };
+  }
+
+  if (scoreDelta !== undefined && scoreDelta > 0) {
+    return {
+      feedbackType: "score_improved",
+      label: "Ny beste score",
+      description: `Du forbedret caset med ${scoreDelta} poeng.`,
+      previousScore,
+      newScore,
+      previousTier,
+      newTier,
+      scoreDelta,
+      tierImproved,
+    };
+  }
+
+  return undefined;
 }
 
 export function updateProductionCaseBestResult(

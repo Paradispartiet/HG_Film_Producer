@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   getProductionCaseImprovementHint,
   getProductionCaseBestResultEntry,
+  getProductionCaseBestResultFeedback,
   getProductionCaseMissionScoreSummary,
   getProductionCaseNextPhaseAction,
   getProductionCaseReport,
@@ -16,6 +17,7 @@ import {
   setProductionCaseMissionCompletion,
   updateProductionCaseBestResult,
   writeProductionCaseProgress,
+  type ProductionCaseBestResultFeedback,
   type ProductionCaseBestResultsState,
   type ProductionCaseProgressState,
 } from "../../core/productionCaseProgress";
@@ -87,6 +89,7 @@ function ProductionCaseMissionFlow({
 }) {
   const [progressState, setProgressState] = useState<ProductionCaseProgressState>({});
   const [bestResultsState, setBestResultsState] = useState<ProductionCaseBestResultsState>({});
+  const [bestResultFeedback, setBestResultFeedback] = useState<ProductionCaseBestResultFeedback | undefined>();
   const [focusedMissionId, setFocusedMissionId] = useState<string | undefined>();
   const missionCardRefs = useRef<Record<string, HTMLElement | null>>({});
 
@@ -120,9 +123,13 @@ function ProductionCaseMissionFlow({
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    const feedback = getProductionCaseBestResultFeedback(caseReport, bestResult);
     const updatedBestResult = updateProductionCaseBestResult(scenarioId, caseReport, window.localStorage);
-    if (updatedBestResult && updatedBestResult !== bestResult) {
+    if (updatedBestResult) {
+      setBestResultFeedback(feedback);
       setBestResultsState(readProductionCaseBestResults(window.localStorage));
+    } else if (!feedback) {
+      setBestResultFeedback(undefined);
     }
   }, [bestResult, caseReport, scenarioId]);
 
@@ -184,7 +191,7 @@ function ProductionCaseMissionFlow({
       {nextPhaseAction ? <ProductionCaseNextPhaseBox action={nextPhaseAction} onFocusMission={focusMission} /> : null}
       {tierTarget ? <ProductionCaseTierTargetBox target={tierTarget} /> : null}
       {improvementHint ? <ProductionCaseImprovementHintBox hint={improvementHint} onFocusMission={focusMission} /> : null}
-      {caseReport ? <ProductionCaseReportBox bestResult={bestResult} report={caseReport} tierTarget={tierTarget} /> : null}
+      {caseReport ? <ProductionCaseReportBox bestResult={bestResult} bestResultFeedback={bestResultFeedback} report={caseReport} tierTarget={tierTarget} /> : null}
       {missions.map((mission, index) => {
         const isComplete = completedMissionIdSet.has(mission.id);
         const selectedChoiceId = selectedChoicesByMissionId[mission.id];
@@ -251,10 +258,12 @@ function ProductionCaseMissionFlow({
 
 function ProductionCaseReportBox({
   bestResult,
+  bestResultFeedback,
   report,
   tierTarget,
 }: {
   readonly bestResult: ReturnType<typeof getProductionCaseBestResultEntry>;
+  readonly bestResultFeedback: ProductionCaseBestResultFeedback | undefined;
   readonly report: NonNullable<ReturnType<typeof getProductionCaseReport>>;
   readonly tierTarget: ReturnType<typeof getProductionCaseTierTarget>;
 }) {
@@ -267,6 +276,7 @@ function ProductionCaseReportBox({
         <span className="eyebrow">{title}</span>
         <strong>{report.learningSummary}</strong>
       </div>
+      {bestResultFeedback ? <ProductionCaseBestResultFeedbackBox feedback={bestResultFeedback} maxScore={report.maxScore} /> : null}
       <div className="scenario-production-report-stats">
         <span>Resultat: {productionCaseResultCopy[report.resultTier].label}</span>
         <span>Case-score: {report.score}/{report.maxScore}</span>
@@ -314,6 +324,28 @@ function ProductionCaseReportBox({
 }
 
 
+
+function ProductionCaseBestResultFeedbackBox({
+  feedback,
+  maxScore,
+}: {
+  readonly feedback: ProductionCaseBestResultFeedback;
+  readonly maxScore: number;
+}) {
+  const showScoreChange = feedback.previousScore !== undefined && feedback.previousScore !== feedback.newScore;
+
+  return (
+    <div className={`scenario-production-best-feedback scenario-production-best-feedback--${feedback.feedbackType}`} aria-label="Ny beste resultat-feedback">
+      <div>
+        <strong>{feedback.label}</strong>
+        <p>{feedback.description}</p>
+      </div>
+      {showScoreChange ? (
+        <span>{feedback.previousScore}/{maxScore} → {feedback.newScore}/{maxScore}</span>
+      ) : null}
+    </div>
+  );
+}
 
 function ProductionCaseTierTargetBox({
   target,
