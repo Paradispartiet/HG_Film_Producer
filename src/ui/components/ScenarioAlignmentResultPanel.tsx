@@ -15,7 +15,7 @@ export function ScenarioAlignmentResultPanel({ selectedTargetIds, totalTargets }
       <div className="scenario-alignment-result-header">
         <div>
           <span className="eyebrow">Release consequence</span>
-          <h3 id="scenario-alignment-result-title">Classic scenario result</h3>
+          <h3 id="scenario-alignment-result-title">Production case result</h3>
         </div>
         <span className="scenario-alignment-result-badge">{score.tier}</span>
       </div>
