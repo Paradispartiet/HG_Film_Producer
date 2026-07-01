@@ -30,8 +30,12 @@ import {
 } from "../data/scenarioProductionBriefs";
 
 export function ScenarioProductionBriefPanel({
+  onBackToProductionCases,
+  onStartNextScenario,
   scenario,
 }: {
+  readonly onBackToProductionCases?: (() => void) | undefined;
+  readonly onStartNextScenario?: (() => void) | undefined;
   readonly scenario: FilmScenarioSeed;
 }) {
   const brief = resolveScenarioProductionBrief(scenario);
@@ -60,6 +64,8 @@ export function ScenarioProductionBriefPanel({
       {missions.length > 0 && brief.briefType === "production_case" ? (
         <ProductionCaseMissionFlow
           missions={missions}
+          onBackToProductionCases={onBackToProductionCases}
+          onStartNextScenario={onStartNextScenario}
           scenarioId={brief.scenarioId}
         />
       ) : (
@@ -82,9 +88,13 @@ export function ScenarioProductionBriefPanel({
 
 function ProductionCaseMissionFlow({
   missions,
+  onBackToProductionCases,
+  onStartNextScenario,
   scenarioId,
 }: {
   readonly missions: readonly ProductionCaseMission[];
+  readonly onBackToProductionCases?: (() => void) | undefined;
+  readonly onStartNextScenario?: (() => void) | undefined;
   readonly scenarioId: string;
 }) {
   const [progressState, setProgressState] = useState<ProductionCaseProgressState>({});
@@ -193,7 +203,7 @@ function ProductionCaseMissionFlow({
         {tierTarget ? <ProductionCaseTierTargetBox target={tierTarget} /> : null}
         {improvementHint ? <ProductionCaseImprovementHintBox hint={improvementHint} onFocusMission={focusMission} /> : null}
       </div>
-      {caseReport ? <ProductionCaseReportBox bestResult={bestResult} bestResultFeedback={bestResultFeedback} report={caseReport} tierTarget={tierTarget} /> : null}
+      {caseReport ? <ProductionCaseReportBox bestResult={bestResult} bestResultFeedback={bestResultFeedback} onBackToProductionCases={onBackToProductionCases} onPlayAgain={resetCurrentScenario} onStartNextScenario={onStartNextScenario} report={caseReport} tierTarget={tierTarget} /> : null}
       {missions.map((mission, index) => {
         const isComplete = completedMissionIdSet.has(mission.id);
         const selectedChoiceId = selectedChoicesByMissionId[mission.id];
@@ -261,11 +271,17 @@ function ProductionCaseMissionFlow({
 function ProductionCaseReportBox({
   bestResult,
   bestResultFeedback,
+  onBackToProductionCases,
+  onPlayAgain,
+  onStartNextScenario,
   report,
   tierTarget,
 }: {
   readonly bestResult: ReturnType<typeof getProductionCaseBestResultEntry>;
   readonly bestResultFeedback: ProductionCaseBestResultFeedback | undefined;
+  readonly onBackToProductionCases?: (() => void) | undefined;
+  readonly onPlayAgain: () => void;
+  readonly onStartNextScenario?: (() => void) | undefined;
   readonly report: NonNullable<ReturnType<typeof getProductionCaseReport>>;
   readonly tierTarget: ReturnType<typeof getProductionCaseTierTarget>;
 }) {
@@ -287,6 +303,14 @@ function ProductionCaseReportBox({
         {bestResult ? (
           <span>Beste resultat: {productionCaseResultCopy[bestResult.bestTier].label} · {bestResult.bestScore}/{bestResult.maxScore}</span>
         ) : null}
+      </div>
+      <div className="scenario-production-report-actions" aria-label="Case continuation actions">
+        <button className="secondary-button" onClick={onPlayAgain} type="button">Play again</button>
+        {onStartNextScenario ? (
+          <button onClick={onStartNextScenario} type="button">Next case</button>
+        ) : (
+          <button className="secondary-button" onClick={onBackToProductionCases} type="button">Back to Production Cases</button>
+        )}
       </div>
       <div className="scenario-production-report-columns">
         <div>
