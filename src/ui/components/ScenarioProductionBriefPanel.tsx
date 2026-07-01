@@ -129,19 +129,22 @@ function ProductionCaseMissionFlow({
   const nextPhaseAction = getProductionCaseNextPhaseAction(missions, progressEntry);
   const tierTarget = getProductionCaseTierTarget(caseScore, completedCount);
   const caseReport = getProductionCaseReport(missions, progressEntry);
+  const completedCaseReport = allComplete ? caseReport : undefined;
   const bestResult = getProductionCaseBestResultEntry(bestResultsState, scenarioId);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const feedback = getProductionCaseBestResultFeedback(caseReport, bestResult);
-    const updatedBestResult = updateProductionCaseBestResult(scenarioId, caseReport, window.localStorage);
+    const feedback = getProductionCaseBestResultFeedback(completedCaseReport, bestResult);
+    const updatedBestResult = feedback
+      ? updateProductionCaseBestResult(scenarioId, completedCaseReport, window.localStorage)
+      : undefined;
     if (updatedBestResult) {
       setBestResultFeedback(feedback);
       setBestResultsState(readProductionCaseBestResults(window.localStorage));
     } else if (!feedback) {
       setBestResultFeedback(undefined);
     }
-  }, [bestResult, caseReport, scenarioId]);
+  }, [bestResult, completedCaseReport, scenarioId]);
 
   function updateProgress(nextState: ProductionCaseProgressState) {
     setProgressState(nextState);
@@ -203,7 +206,7 @@ function ProductionCaseMissionFlow({
         {tierTarget ? <ProductionCaseTierTargetBox target={tierTarget} /> : null}
         {improvementHint ? <ProductionCaseImprovementHintBox hint={improvementHint} onFocusMission={focusMission} /> : null}
       </div>
-      {caseReport ? <ProductionCaseReportBox bestResult={bestResult} bestResultFeedback={bestResultFeedback} onBackToProductionCases={onBackToProductionCases} onPlayAgain={resetCurrentScenario} onStartNextScenario={onStartNextScenario} report={caseReport} tierTarget={tierTarget} /> : null}
+      {completedCaseReport ? <ProductionCaseReportBox bestResult={bestResult} bestResultFeedback={bestResultFeedback} onBackToProductionCases={onBackToProductionCases} onPlayAgain={resetCurrentScenario} onStartNextScenario={onStartNextScenario} report={completedCaseReport} tierTarget={tierTarget} /> : null}
       {missions.map((mission, index) => {
         const isComplete = completedMissionIdSet.has(mission.id);
         const selectedChoiceId = selectedChoicesByMissionId[mission.id];
@@ -285,7 +288,7 @@ function ProductionCaseReportBox({
   readonly report: NonNullable<ReturnType<typeof getProductionCaseReport>>;
   readonly tierTarget: ReturnType<typeof getProductionCaseTierTarget>;
 }) {
-  const title = report.completedCount === report.totalMissions ? "Case report" : "Case report under arbeid";
+  const title = "Case report";
   const strongestMatches = report.matchedPhases.slice(0, 3);
 
   return (

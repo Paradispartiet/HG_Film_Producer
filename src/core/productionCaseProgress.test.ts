@@ -878,13 +878,14 @@ test("ScenarioProductionBriefPanel shows compact next tier target and preserves 
 
   assert.match(uiSource, /getProductionCaseTierTarget\(caseScore, completedCount\)/);
   assert.match(uiSource, /aria-label="Neste nivå"/);
-  assert.match(uiSource, /getProductionCaseBestResultFeedback\(caseReport, bestResult\)/);
+  assert.match(uiSource, /getProductionCaseBestResultFeedback\(completedCaseReport, bestResult\)/);
   assert.match(uiSource, /Ny beste resultat-feedback/);
   assert.match(uiSource, /feedback\.label/);
   assert.match(uiSource, /feedback\.description/);
   assert.match(uiSource, /tierTarget\.label/);
   assert.match(uiSource, /tierTarget\.description/);
   assert.match(uiSource, /Case report/);
+  assert.match(uiSource, /completedCaseReport \? <ProductionCaseReportBox/);
   assert.match(uiSource, /Neste fase/);
   assert.match(styleSource, /scenario-production-tier-target/);
 });
