@@ -1,5 +1,6 @@
 import type {
   GenreId,
+  HistoricalFilmId,
   KnowledgeEntryId,
   RoleId,
   TechniqueId
@@ -74,4 +75,5 @@ export interface KnowledgeEntry {
   readonly relatedTechniqueId: TechniqueId | null;
   readonly relatedRoleId: RoleId | null;
   readonly relatedGenreId: GenreId | null;
+  readonly relatedHistoricalFilmId: HistoricalFilmId | null;
 }

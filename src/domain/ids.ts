@@ -87,6 +87,14 @@ export function asGenreId(value: string): GenreId {
   return value as GenreId;
 }
 
+export function asMovementId(value: string): MovementId {
+  return value as MovementId;
+}
+
+export function asHistoricalFilmId(value: string): HistoricalFilmId {
+  return value as HistoricalFilmId;
+}
+
 export function asProductionScheduleId(value: string): ProductionScheduleId {
   return value as ProductionScheduleId;
 }

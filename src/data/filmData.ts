@@ -8,6 +8,7 @@ import type {
   StudioExpense
 } from "../domain/career.js";
 import type { Actor, CrewMember } from "../domain/crew.js";
+import type { FilmMovement, HistoricalFilm } from "../domain/filmHistory.js";
 import type { Genre, KnowledgeEntry, Role, Technique } from "../domain/knowledge.js";
 import type { Location, LocationScoutingBrief } from "../domain/location.js";
 import type { MentorLesson } from "../domain/mentor.js";
@@ -48,6 +49,8 @@ export interface FilmData {
   readonly locationScoutingBriefs: readonly LocationScoutingBrief[];
   readonly productionChoices: readonly ProductionChoice[];
   readonly knowledgeEntries: readonly KnowledgeEntry[];
+  readonly movements: readonly FilmMovement[];
+  readonly historicalFilms: readonly HistoricalFilm[];
   readonly sceneFunctions: readonly SceneFunction[];
   readonly scriptTemplates: readonly ScriptTemplate[];
   readonly productionEvents: readonly ProductionEvent[];
@@ -88,6 +91,8 @@ export function loadFilmData(): FilmData {
     locationScoutingBriefs: readJson<LocationScoutingBrief[]>("location_scouting_briefs.json"),
     productionChoices: readJson<ProductionChoice[]>("production_choices.json"),
     knowledgeEntries: readJson<KnowledgeEntry[]>("knowledge_entries.json"),
+    movements: readJson<FilmMovement[]>("movements.json"),
+    historicalFilms: readJson<HistoricalFilm[]>("films.json"),
     sceneFunctions: readJson<SceneFunction[]>("scene_functions.json"),
     scriptTemplates: readJson<ScriptTemplate[]>("script_templates.json"),
     productionEvents: readJson<ProductionEvent[]>("production_events.json"),

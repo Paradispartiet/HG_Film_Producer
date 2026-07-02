@@ -1,6 +1,9 @@
+import filmsJson from "../../../data/film/films.json";
+import knowledgeEntriesJson from "../../../data/film/knowledge_entries.json";
 import locationScoutingBriefsJson from "../../../data/film/location_scouting_briefs.json";
 import locationsJson from "../../../data/film/locations.json";
 import mentorLessonsJson from "../../../data/film/mentor_lessons.json";
+import movementsJson from "../../../data/film/movements.json";
 import sceneFunctionsJson from "../../../data/film/scene_functions.json";
 import techniquesJson from "../../../data/film/techniques.json";
 
@@ -12,7 +15,8 @@ import { evaluateScript } from "../../core/evaluateScript.js";
 import { getMentorAdvice } from "../../core/getMentorAdvice.js";
 import { scoutLocations } from "../../core/scoutLocations.js";
 import { asSceneId } from "../../domain/ids.js";
-import type { Technique } from "../../domain/knowledge.js";
+import type { FilmMovement, HistoricalFilm } from "../../domain/filmHistory.js";
+import type { KnowledgeEntry, Technique } from "../../domain/knowledge.js";
 import type { Location, LocationScoutingBrief } from "../../domain/location.js";
 import type { MentorLesson } from "../../domain/mentor.js";
 import type { Scene, SceneFunction } from "../../domain/script.js";
@@ -28,6 +32,17 @@ export type DevelopmentChoice =
   | { readonly path: "location"; readonly briefId: string }
   | { readonly path: "script" };
 
+export interface HistoricalExample {
+  readonly knowledgeTitle: string;
+  readonly explanation: string;
+  readonly usedInGameplay: string;
+  readonly filmTitle: string;
+  readonly filmYear: number;
+  readonly filmDirector: string;
+  readonly filmSummary: string;
+  readonly movementName: string | null;
+}
+
 export interface MentorDevelopmentResult {
   readonly path: "mentor";
   readonly pathLabel: "Ask a mentor";
@@ -35,6 +50,7 @@ export interface MentorDevelopmentResult {
   readonly advice: string;
   readonly suggestedAction: string;
   readonly unlockedTechnique: string | null;
+  readonly historicalExample: HistoricalExample | null;
   readonly projectTechniqueCount: number;
   readonly projectState: FilmProject;
   readonly pipelineStep: PipelineStepSummary;
@@ -77,6 +93,9 @@ interface DevelopmentSeedData {
   readonly locationScoutingBriefs: readonly LocationScoutingBrief[];
   readonly sceneFunctions: readonly SceneFunction[];
   readonly techniques: readonly Technique[];
+  readonly knowledgeEntries: readonly KnowledgeEntry[];
+  readonly historicalFilms: readonly HistoricalFilm[];
+  readonly movements: readonly FilmMovement[];
 }
 
 const developmentData = adaptFilmSeedData<DevelopmentSeedData>({
@@ -84,7 +103,10 @@ const developmentData = adaptFilmSeedData<DevelopmentSeedData>({
   locations: locationsJson,
   locationScoutingBriefs: locationScoutingBriefsJson,
   sceneFunctions: sceneFunctionsJson,
-  techniques: techniquesJson
+  techniques: techniquesJson,
+  knowledgeEntries: knowledgeEntriesJson,
+  historicalFilms: filmsJson,
+  movements: movementsJson
 });
 
 export const mentorDevelopmentChoices: readonly MentorLesson[] = developmentData.mentorLessons
@@ -107,6 +129,9 @@ export function createMentorDevelopmentResult(
   const unlockedTechnique = application.unlockedTechniqueId === null
     ? null
     : requireItem(developmentData.techniques, application.unlockedTechniqueId, "technique").name;
+  const historicalExample = application.unlockedTechniqueId === null
+    ? null
+    : getHistoricalExample(application.unlockedKnowledgeEntryId);
 
   return {
     path: "mentor",
@@ -115,6 +140,7 @@ export function createMentorDevelopmentResult(
     advice: advice.advice,
     suggestedAction: advice.suggestedAction,
     unlockedTechnique,
+    historicalExample,
     projectTechniqueCount: application.project.techniqueIdsUsed.length,
     projectState: application.project,
     pipelineStep: {
@@ -122,6 +148,28 @@ export function createMentorDevelopmentResult(
       detail: `Mentor lesson · ${advice.title}`,
       score: 100
     }
+  };
+}
+
+function getHistoricalExample(knowledgeEntryId: string | null): HistoricalExample | null {
+  if (!knowledgeEntryId) return null;
+  const entry = developmentData.knowledgeEntries.find((candidate) => candidate.id === knowledgeEntryId);
+  if (!entry?.relatedHistoricalFilmId) return null;
+  const film = developmentData.historicalFilms.find((candidate) => candidate.id === entry.relatedHistoricalFilmId);
+  if (!film) return null;
+  const movement = film.movementId
+    ? developmentData.movements.find((candidate) => candidate.id === film.movementId)
+    : undefined;
+
+  return {
+    knowledgeTitle: entry.title,
+    explanation: entry.explanation,
+    usedInGameplay: entry.usedInGameplay,
+    filmTitle: film.title,
+    filmYear: film.year,
+    filmDirector: film.director,
+    filmSummary: film.summary,
+    movementName: movement?.name ?? null
   };
 }
 
