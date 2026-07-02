@@ -24,6 +24,9 @@ export function CastingPanel({ candidates, selectedActorIds, onChange }: Casting
           <label className={selectedActorIds.includes(candidate.id) ? "candidate-card candidate-card--selected" : "candidate-card"} key={candidate.id}>
             <input checked={selectedActorIds.includes(candidate.id)} onChange={() => toggleActor(candidate.id)} type="checkbox" />
             <div className="candidate-card-title"><strong>{candidate.name}</strong><span>{candidate.score.totalScore}</span></div>
+            {candidate.previousFilmsTogether > 0 && (
+              <span className="candidate-returning-badge">Worked together on {candidate.previousFilmsTogether} film{candidate.previousFilmsTogether === 1 ? "" : "s"}</span>
+            )}
             <p>{candidate.actingStyle} · {candidate.chemistryTags.slice(0, 2).join(" · ")}</p>
             <dl className="candidate-stats">
               <div><dt>Star power</dt><dd>{candidate.starPower}</dd></div>

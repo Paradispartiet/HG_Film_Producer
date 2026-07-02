@@ -7,6 +7,7 @@ import { applyReleaseResultToStudio } from "../../core/applyReleaseResultToStudi
 import { applyStudioIncome } from "../../core/applyStudioIncome.js";
 import { evaluateCareerYear } from "../../core/evaluateCareerYear.js";
 import { evaluateStudioIdentity } from "../../core/evaluateStudioIdentity.js";
+import { recordCareerRosterFilm } from "../../core/recordCareerRosterFilm.js";
 import { recordCompletedFilm } from "../../core/recordCompletedFilm.js";
 import type {
   CareerMilestone,
@@ -18,11 +19,12 @@ import type {
   StudioIdentityEvaluation
 } from "../../domain/career.js";
 import type { Studio } from "../../domain/film.js";
-import { asStudioIncomeId } from "../../domain/ids.js";
+import { asActorId, asCrewMemberId, asStudioIncomeId } from "../../domain/ids.js";
 import type { StudioReleaseApplicationResult } from "../../domain/release.js";
 import type { PipelineStepSummary } from "../types.js";
 import { adaptFilmSeedData } from "./adaptFilmSeedData.js";
 import type { ProjectRunContext } from "./createProjectRunContext.js";
+import type { PreProductionStepResult } from "./createPreProductionStepRun.js";
 import type { ReleaseStepResult } from "./createReleaseStepRun.js";
 
 const careerApplicationData = adaptFilmSeedData<{
@@ -55,6 +57,7 @@ export interface CareerApplicationStepResult {
 export function createCareerApplicationStepResult(
   projectContext: ProjectRunContext,
   releaseResult: ReleaseStepResult,
+  preProductionResult: PreProductionStepResult,
   choices: CareerApplicationChoices
 ): CareerApplicationStepResult {
   if (!choices.closeFilmYear) {
@@ -119,8 +122,15 @@ export function createCareerApplicationStepResult(
     careerWithIdentity = milestoneResult.careerState;
   }
 
+  const careerWithRoster = recordCareerRosterFilm(
+    careerWithIdentity,
+    completedFilmRecord.title,
+    preProductionResult.crew.hired.map((crewMember) => asCrewMemberId(crewMember.id)),
+    preProductionResult.casting.actors.map((actor) => asActorId(actor.id))
+  );
+
   const { careerState: careerWithExpenses, appliedExpenses: appliedStudioExpenses } =
-    applyDueStudioExpenses(careerWithIdentity, careerApplicationData.studioExpenses);
+    applyDueStudioExpenses(careerWithRoster, careerApplicationData.studioExpenses);
 
   const careerYearEvaluation = evaluateCareerYear(careerWithExpenses, careerWithExpenses.currentYear);
   const updatedCareerState = advanceCareerQuarter(careerWithExpenses);

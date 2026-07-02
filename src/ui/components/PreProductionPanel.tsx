@@ -39,8 +39,8 @@ export function PreProductionPanel({
 }: PreProductionPanelProps) {
   const [message, setMessage] = useState("");
   const locationOptions = getPreProductionLocationOptions(projectContext, developmentResult);
-  const crewGroups = getCrewCandidatesByDiscipline(developmentResult);
-  const actorCandidates = getActorCandidates(developmentResult);
+  const crewGroups = getCrewCandidatesByDiscipline(developmentResult, projectContext.careerState);
+  const actorCandidates = getActorCandidates(developmentResult, projectContext.careerState);
   const labelSuffix = projectLabel ? ` for ${projectLabel}` : "";
 
   function lockPreProduction() {
