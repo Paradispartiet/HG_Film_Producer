@@ -47,10 +47,10 @@ export function RunSummaryPanel({ run, careerApplicationResult, developmentResul
         {preProductionResult && (
           <SummaryItem
             label="Shoot status"
-            value={shootResult ? "Shoot day resolved" : "Start shoot unlocked"}
+            value={shootResult ? "Shoot complete" : "Start shoot unlocked"}
             detail={shootResult
-              ? `${shootResult.shootDayResult.completedSceneIds.length} scenes completed with ${shootResult.shootDayResult.takeQuality} take quality.`
-              : "Choose one production event and resolve the first shoot day."}
+              ? `${shootResult.resolvedDays.length} shoot day${shootResult.resolvedDays.length === 1 ? "" : "s"} resolved with ${shootResult.shootEvaluation.averageTakeQuality} average take quality.`
+              : "Choose one production event and resolve each scheduled shoot day."}
             accent={Boolean(shootResult)}
           />
         )}

@@ -1,14 +1,15 @@
 import type { ProjectShootLabel } from "../types.js";
-import type { ShootStepPreparation, ShootStepResult } from "../demo/createShootStepRun.js";
+import type { ShootDayStepResult, ShootStepPreparation } from "../demo/createShootStepRun.js";
 
 interface ShootDayResultPanelProps {
   readonly preparation: ShootStepPreparation;
-  readonly result: ShootStepResult;
+  readonly result: ShootDayStepResult;
+  readonly dayNumber: number;
   readonly projectLabel?: ProjectShootLabel;
 }
 
-export function ShootDayResultPanel({ preparation, result, projectLabel = "first film" }: ShootDayResultPanelProps) {
-  const heading = projectLabel === "first film" ? "Shoot day result" : `${projectLabel.replace("film", "Film")} shoot day result`;
+export function ShootDayResultPanel({ preparation, result, dayNumber, projectLabel = "first film" }: ShootDayResultPanelProps) {
+  const heading = projectLabel === "first film" ? `Day ${dayNumber} result` : `${projectLabel.replace("film", "Film")} day ${dayNumber} result`;
 
   return (
     <section className="shoot-desk-section shoot-result-section">

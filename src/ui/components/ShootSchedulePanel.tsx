@@ -1,28 +1,34 @@
 import type { ProjectShootLabel } from "../types.js";
-import type { ShootStepPreparation, ShootStepResult } from "../demo/createShootStepRun.js";
+import type { ShootDay } from "../../domain/shoot.js";
+import type { ShootDayStepResult, ShootStepPreparation } from "../demo/createShootStepRun.js";
 
 interface ShootSchedulePanelProps {
   readonly preparation: ShootStepPreparation;
-  readonly result: ShootStepResult | null;
+  readonly resolvedDays: readonly ShootDayStepResult[];
+  readonly currentDay: ShootDay | undefined;
   readonly projectLabel?: ProjectShootLabel;
 }
 
-export function ShootSchedulePanel({ preparation, result, projectLabel = "first film" }: ShootSchedulePanelProps) {
-  const shootDay = result?.updatedShootDay ?? preparation.firstShootDay;
-  const plannedScenes = preparation.starterScenes.filter((scene) => shootDay.sceneIds.includes(scene.id));
-  const heading = projectLabel === "first film" ? "First shoot day" : `${projectLabel.replace("film", "Film")} first shoot day`;
+export function ShootSchedulePanel({ preparation, resolvedDays, currentDay, projectLabel = "first film" }: ShootSchedulePanelProps) {
+  const totalDays = preparation.productionSchedule.shootDays.length;
+  const displayDay = currentDay ?? resolvedDays.at(-1)?.updatedShootDay;
+  const heading = projectLabel === "first film" ? "Shoot schedule" : `${projectLabel.replace("film", "Film")} shoot schedule`;
+
+  if (!displayDay) return null;
+
+  const plannedScenes = preparation.starterScenes.filter((scene) => displayDay.sceneIds.includes(scene.id));
 
   return (
     <section className="shoot-desk-section">
       <div className="shoot-section-heading">
         <div><span className="eyebrow">Production schedule</span><h3>{heading}</h3></div>
-        <strong className="shoot-day-badge">Day {shootDay.dayNumber}</strong>
+        <strong className="shoot-day-badge">Day {displayDay.dayNumber} of {totalDays}</strong>
       </div>
       <div className="shoot-schedule-grid">
         <ScheduleMetric label="Planned scenes" value={`${plannedScenes.length}`} detail={plannedScenes.map((scene) => scene.title).join(" · ")} />
-        <ScheduleMetric label="Planned cost" value={formatMoney(shootDay.plannedCost)} detail={`${formatMoney(preparation.scheduleSummary.contingencyBudget)} contingency held`} />
+        <ScheduleMetric label="Planned cost" value={formatMoney(displayDay.plannedCost)} detail={`${formatMoney(preparation.scheduleSummary.contingencyBudget)} contingency held`} />
         <ScheduleMetric label="Location" value={preparation.locationName} detail="Locked from pre-production" />
-        <ScheduleMetric label="Status" value={formatLabel(shootDay.status)} detail={`${preparation.scheduleSummary.plannedDays} planned shoot days total`} />
+        <ScheduleMetric label="Status" value={formatLabel(displayDay.status)} detail={`${resolvedDays.length}/${totalDays} shoot days resolved`} />
       </div>
     </section>
   );

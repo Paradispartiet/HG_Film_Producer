@@ -51,7 +51,6 @@ export interface ShootScheduleSummary {
   readonly plannedDays: number;
   readonly plannedBudget: number;
   readonly contingencyBudget: number;
-  readonly firstDaySceneCount: number;
 }
 
 export interface ProductionEventSummary {
@@ -67,7 +66,6 @@ export interface ProductionEventSummary {
 export interface ShootStepPreparation {
   readonly projectState: FilmProject;
   readonly productionSchedule: ProductionSchedule;
-  readonly firstShootDay: ShootDay;
   readonly starterScenes: readonly Scene[];
   readonly sceneDifficultySummaries: readonly SceneDifficultySummary[];
   readonly availableProductionEvents: readonly ProductionEventOption[];
@@ -79,10 +77,14 @@ export interface ShootStepChoices {
   readonly selectedProductionEventId: string;
 }
 
-export interface ShootStepResult {
+export interface ShootDayStepResult {
   readonly updatedShootDay: ShootDay;
   readonly selectedEventSummary: ProductionEventSummary;
   readonly shootDayResult: ShootDayResult;
+}
+
+export interface ShootStepResult {
+  readonly resolvedDays: readonly ShootDayStepResult[];
   readonly shootEvaluation: ShootResultEvaluation;
   readonly pipelineStep: PipelineStepSummary;
 }
@@ -95,7 +97,6 @@ export function getShootPreparation(
   const selectedLocation = requireItem(shootData.locations, preProductionResult.location.id, "location");
   const starterScenes = createStarterScenes(projectContext, developmentResult, selectedLocation);
   const productionSchedule = createProductionSchedule(preProductionResult.projectState, starterScenes);
-  const firstShootDay = requireFirst(productionSchedule.shootDays, "first shoot day");
   const sceneDifficultySummaries = starterScenes.slice(0, 3).map((scene) => ({
     scene,
     functionName: requireItem(shootData.sceneFunctions, scene.functionId, "scene function").name,
@@ -108,15 +109,13 @@ export function getShootPreparation(
   return {
     projectState: preProductionResult.projectState,
     productionSchedule,
-    firstShootDay,
     starterScenes,
     sceneDifficultySummaries,
     availableProductionEvents: getProductionEventOptions(),
     scheduleSummary: {
       plannedDays: productionSchedule.totalPlannedDays,
       plannedBudget: productionSchedule.plannedBudget,
-      contingencyBudget: productionSchedule.contingencyBudget,
-      firstDaySceneCount: firstShootDay.sceneIds.length
+      contingencyBudget: productionSchedule.contingencyBudget
     },
     locationName: preProductionResult.location.name
   };
@@ -126,12 +125,27 @@ export function getProductionEventOptions(): readonly ProductionEventOption[] {
   return shootData.productionEvents.slice(0, 10).map((event) => ({ event }));
 }
 
-export function createShootStepResult(
+/** The next shoot day still waiting for a resolved result, or undefined once the schedule is complete. */
+export function getNextShootDay(
   preparation: ShootStepPreparation,
+  resolvedDays: readonly ShootDayStepResult[]
+): ShootDay | undefined {
+  return preparation.productionSchedule.shootDays[resolvedDays.length];
+}
+
+/** Resolve the next unresolved shoot day against one chosen production event. */
+export function resolveNextShootDay(
+  preparation: ShootStepPreparation,
+  resolvedDays: readonly ShootDayStepResult[],
   choices: ShootStepChoices
-): ShootStepResult {
+): ShootDayStepResult {
   if (!choices.selectedProductionEventId) {
     throw new Error("Choose one production event before resolving the shoot day.");
+  }
+
+  const currentDay = getNextShootDay(preparation, resolvedDays);
+  if (!currentDay) {
+    throw new Error("Every shoot day in this schedule has already been resolved.");
   }
 
   const selectedEvent = requireItem(
@@ -139,20 +153,13 @@ export function createShootStepResult(
     choices.selectedProductionEventId,
     "production event"
   );
-  const application = applyProductionEvent(preparation.firstShootDay, selectedEvent);
+  const application = applyProductionEvent(currentDay, selectedEvent);
   const shootDayResult = resolveShootDay(application.shootDay, preparation.starterScenes, [selectedEvent]);
   const resolvedShootDay: ShootDay = {
     ...application.shootDay,
     status: shootDayResult.delayedSceneIds.length > 0 || shootDayResult.scheduleDeltaDays > 0 ? "delayed" : "completed",
     notes: [...application.shootDay.notes, ...shootDayResult.notes]
   };
-  const resolvedSchedule: ProductionSchedule = {
-    ...preparation.productionSchedule,
-    shootDays: preparation.productionSchedule.shootDays.map((day) =>
-      day.id === resolvedShootDay.id ? resolvedShootDay : day
-    )
-  };
-  const shootEvaluation = evaluateShootResult(preparation.projectState, resolvedSchedule, [shootDayResult]);
 
   return {
     updatedShootDay: resolvedShootDay,
@@ -165,11 +172,32 @@ export function createShootStepResult(
       possibleUpside: selectedEvent.possibleUpside,
       note: application.note
     },
-    shootDayResult,
+    shootDayResult
+  };
+}
+
+/** Aggregate every resolved shoot day into the final shoot evaluation. Call once the schedule is complete. */
+export function createShootStepResult(
+  preparation: ShootStepPreparation,
+  resolvedDays: readonly ShootDayStepResult[]
+): ShootStepResult {
+  if (resolvedDays.length < preparation.productionSchedule.shootDays.length) {
+    throw new Error("Resolve every scheduled shoot day before finishing the shoot.");
+  }
+
+  const shootEvaluation = evaluateShootResult(
+    preparation.projectState,
+    preparation.productionSchedule,
+    resolvedDays.map((day) => day.shootDayResult)
+  );
+  const totalScenesCompleted = resolvedDays.reduce((sum, day) => sum + day.shootDayResult.completedSceneIds.length, 0);
+
+  return {
+    resolvedDays,
     shootEvaluation,
     pipelineStep: {
-      label: "Shoot day resolved",
-      detail: `Day ${resolvedShootDay.dayNumber} · ${shootDayResult.completedSceneIds.length} scenes · ${shootDayResult.takeQuality} take quality`,
+      label: "Shoot complete",
+      detail: `${resolvedDays.length} shoot day${resolvedDays.length === 1 ? "" : "s"} · ${totalScenesCompleted} scenes · ${shootEvaluation.averageTakeQuality} average take quality`,
       score: shootEvaluation.overall
     }
   };
@@ -215,12 +243,6 @@ function buildSceneTitle(sceneFunction: SceneFunction, developmentResult: Develo
 function requireItem<TItem extends { readonly id: string }>(items: readonly TItem[], id: string, label: string): TItem {
   const item = items.find((candidate) => candidate.id === id);
   if (!item) throw new Error(`Missing ${label}: ${id}`);
-  return item;
-}
-
-function requireFirst<TItem>(items: readonly TItem[], label: string): TItem {
-  const item = items[0];
-  if (!item) throw new Error(`Missing ${label}.`);
   return item;
 }
 
