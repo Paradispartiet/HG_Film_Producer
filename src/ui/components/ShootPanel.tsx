@@ -3,8 +3,10 @@ import type { ProjectShootLabel } from "../types.js";
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { ProjectRunContext } from "../demo/createProjectRunContext.js";
 import {
-  createShootStepResult,
+  getNextShootDay,
   getShootPreparation,
+  resolveNextShootDay,
+  type ShootDayStepResult,
   type ShootStepResult
 } from "../demo/createShootStepRun.js";
 import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
@@ -20,9 +22,10 @@ interface ShootPanelProps {
   readonly developmentResult: DevelopmentStepResult;
   readonly preProductionResult: PreProductionStepResult;
   readonly selectedProductionEventId: string;
+  readonly shootDayResults: readonly ShootDayStepResult[];
   readonly shootResult: ShootStepResult | null;
   readonly onSelectProductionEvent: (eventId: string) => void;
-  readonly onResolveShootDay: (result: ShootStepResult) => void;
+  readonly onResolveShootDay: (result: ShootDayStepResult) => void;
 }
 
 export function ShootPanel({
@@ -31,6 +34,7 @@ export function ShootPanel({
   developmentResult,
   preProductionResult,
   selectedProductionEventId,
+  shootDayResults,
   shootResult,
   onSelectProductionEvent,
   onResolveShootDay
@@ -42,14 +46,16 @@ export function ShootPanel({
   );
   const numberedProject = projectLabel !== "first film";
   const displayLabel = projectLabel.replace("film", "Film");
+  const totalDays = preparation.productionSchedule.shootDays.length;
+  const currentDay = getNextShootDay(preparation, shootDayResults);
 
   function resolveDay() {
     if (!selectedProductionEventId) {
-      setMessage(`Choose one production event before resolving the ${projectLabel} shoot day.`);
+      setMessage(`Choose one production event before resolving day ${currentDay?.dayNumber ?? shootDayResults.length + 1} of the ${projectLabel} shoot.`);
       return;
     }
     setMessage("");
-    onResolveShootDay(createShootStepResult(preparation, { selectedProductionEventId }));
+    onResolveShootDay(resolveNextShootDay(preparation, shootDayResults, { selectedProductionEventId }));
   }
 
   return (
@@ -59,11 +65,14 @@ export function ShootPanel({
           <span className="eyebrow">{numberedProject ? `Start shoot for ${projectLabel}` : "Start shoot"}</span>
           <h2>{numberedProject ? `${displayLabel} shoot` : "On-set production desk"}</h2>
         </div>
-        <p>Schedule the first day, apply one event and resolve the first playable shoot result for {projectLabel}.</p>
+        <p>Work through every scheduled shoot day, applying one event and resolving the result each day, for {projectLabel}.</p>
       </div>
-      <ShootSchedulePanel preparation={preparation} projectLabel={projectLabel} result={shootResult} />
+      <ShootSchedulePanel currentDay={currentDay} preparation={preparation} projectLabel={projectLabel} resolvedDays={shootDayResults} />
       <SceneDifficultyPanel projectLabel={projectLabel} summaries={preparation.sceneDifficultySummaries} />
-      {!shootResult && (
+      {shootDayResults.map((dayResult, index) => (
+        <ShootDayResultPanel dayNumber={index + 1} key={dayResult.updatedShootDay.id} preparation={preparation} projectLabel={projectLabel} result={dayResult} />
+      ))}
+      {currentDay && (
         <>
           <ProductionEventPanel
             inputName={`${projectContext.filmProjectState.id}-production-event`}
@@ -77,18 +86,13 @@ export function ShootPanel({
               <span className={message ? "inline-message inline-message--error" : "inline-message"} role="status">
                 {message || (selectedProductionEventId ? "Production event selected. Ready to resolve." : "Select one production event to continue.")}
               </span>
-              <small>This {projectLabel} step stops after one resolved shoot day.</small>
+              <small>Day {currentDay.dayNumber} of {totalDays} for {projectLabel}.</small>
             </div>
-            <button className="primary-button" onClick={resolveDay} type="button">Resolve {projectLabel} shoot day</button>
+            <button className="primary-button" onClick={resolveDay} type="button">Resolve day {currentDay.dayNumber}</button>
           </div>
         </>
       )}
-      {shootResult && (
-        <>
-          <ShootDayResultPanel preparation={preparation} projectLabel={projectLabel} result={shootResult} />
-          <ShootEvaluationPanel projectLabel={projectLabel} result={shootResult} />
-        </>
-      )}
+      {shootResult && <ShootEvaluationPanel projectLabel={projectLabel} result={shootResult} />}
     </section>
   );
 }
