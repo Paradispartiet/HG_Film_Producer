@@ -1,6 +1,8 @@
 import careerMilestonesJson from "../../../data/film/career_milestones.json";
+import studioExpensesJson from "../../../data/film/studio_expenses.json";
 import { advanceCareerQuarter } from "../../core/advanceCareerQuarter.js";
 import { applyCareerMilestone } from "../../core/applyCareerMilestone.js";
+import { applyDueStudioExpenses } from "../../core/applyDueStudioExpenses.js";
 import { applyReleaseResultToStudio } from "../../core/applyReleaseResultToStudio.js";
 import { applyStudioIncome } from "../../core/applyStudioIncome.js";
 import { evaluateCareerYear } from "../../core/evaluateCareerYear.js";
@@ -12,6 +14,7 @@ import type {
   CareerState,
   CareerYearEvaluation,
   CompletedFilmRecord,
+  StudioExpense,
   StudioIdentityEvaluation
 } from "../../domain/career.js";
 import type { Studio } from "../../domain/film.js";
@@ -24,7 +27,8 @@ import type { ReleaseStepResult } from "./createReleaseStepRun.js";
 
 const careerApplicationData = adaptFilmSeedData<{
   readonly careerMilestones: readonly CareerMilestone[];
-}>({ careerMilestones: careerMilestonesJson });
+  readonly studioExpenses: readonly StudioExpense[];
+}>({ careerMilestones: careerMilestonesJson, studioExpenses: studioExpensesJson });
 
 export interface CareerApplicationChoices {
   readonly closeFilmYear: true;
@@ -37,6 +41,7 @@ export interface CareerApplicationStepResult {
   readonly updatedCareerState: CareerState;
   readonly completedFilmRecord: CompletedFilmRecord;
   readonly studioReleaseApplicationResult: StudioReleaseApplicationResult;
+  readonly appliedStudioExpenses: readonly StudioExpense[];
   readonly careerYearEvaluation: CareerYearEvaluation;
   readonly studioIdentityEvaluation: StudioIdentityEvaluation;
   readonly milestoneResults: readonly CareerMilestoneApplicationResult[];
@@ -114,8 +119,11 @@ export function createCareerApplicationStepResult(
     careerWithIdentity = milestoneResult.careerState;
   }
 
-  const careerYearEvaluation = evaluateCareerYear(careerWithIdentity, careerWithIdentity.currentYear);
-  const updatedCareerState = advanceCareerQuarter(careerWithIdentity);
+  const { careerState: careerWithExpenses, appliedExpenses: appliedStudioExpenses } =
+    applyDueStudioExpenses(careerWithIdentity, careerApplicationData.studioExpenses);
+
+  const careerYearEvaluation = evaluateCareerYear(careerWithExpenses, careerWithExpenses.currentYear);
+  const updatedCareerState = advanceCareerQuarter(careerWithExpenses);
   const updatedStudio = updatedCareerState.studio;
 
   return {
@@ -125,6 +133,7 @@ export function createCareerApplicationStepResult(
     updatedCareerState,
     completedFilmRecord,
     studioReleaseApplicationResult,
+    appliedStudioExpenses,
     careerYearEvaluation,
     studioIdentityEvaluation,
     milestoneResults,
