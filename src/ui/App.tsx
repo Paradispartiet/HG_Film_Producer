@@ -99,9 +99,9 @@ function CareerDashboard({ careerRun, setCareerRun, onOpenProductionCases, onRes
 function FilmProjectWorkspace({ project, onOpenProductionCases, onStartScenario, previousProject, setCareerRun }: { readonly project: CareerFilmProjectRun; readonly onOpenProductionCases: () => void; readonly onStartScenario: (scenario: FilmScenarioSeed) => void; readonly previousProject: CareerFilmProjectRun | undefined; readonly setCareerRun: React.Dispatch<React.SetStateAction<{ version: 1; projects: readonly CareerFilmProjectRun[] }>>; }) {
   const context = getRunContext(project.run);
   const pipeline = project.careerApplicationResult ? [...projectPipeline(project), project.careerApplicationResult.pipelineStep] : projectPipeline(project);
-  const currentPhase = project.releaseResult ? 5 : project.postProductionResult || project.shootResult ? 4 : project.preProductionResult ? 3 : project.developmentResult ? 2 : project.selectedDevelopmentPath ? 1 : 0;
+  const currentPhase = project.releaseResult ? 4 : project.postProductionResult || project.shootResult ? 3 : project.preProductionResult ? 2 : project.developmentResult ? 1 : 0;
   const actionPanelId = `phase-action-${project.id}`;
-  const activePanelTarget = currentPhase <= 1 ? "development" : currentPhase === 2 ? "pre-production" : currentPhase === 3 ? "shoot" : currentPhase === 4 ? (project.postProductionResult ? "release" : "post-production") : "career-application";
+  const activePanelTarget = currentPhase === 0 ? "development" : currentPhase === 1 ? "pre-production" : currentPhase === 2 ? "shoot" : currentPhase === 3 ? (project.postProductionResult ? "release" : "post-production") : "career-application";
   function scrollToActivePanel() { document.getElementById(actionPanelId)?.scrollIntoView({ behavior: "smooth", block: "start" }); }
   const label = `Film ${project.projectNumber}`;
   const lowerLabel = (project.projectNumber === 1 ? "first film" : `film ${project.projectNumber}`) as import("./types").ProjectShootLabel;

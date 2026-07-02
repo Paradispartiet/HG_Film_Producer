@@ -8,7 +8,6 @@ interface ScenarioPhaseGuidancePanelProps {
 
 const phaseByPipelineStep: readonly ScenarioProductionPhase[] = [
   "development",
-  "development",
   "pre_production",
   "shoot",
   "post_production",
