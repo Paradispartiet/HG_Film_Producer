@@ -8,8 +8,7 @@ interface ProjectPipelineProps {
 }
 
 const phases = [
-  { label: "Idea", description: "Shape the concept and choose the creative direction." },
-  { label: "Script", description: "Develop the screenplay, theme, and dramatic spine." },
+  { label: "Development", description: "Shape the concept, choose a path, and develop the screenplay." },
   { label: "Pre-production", description: "Build the team, cast the film, and lock locations." },
   { label: "Shoot", description: "Put the production plan to work on set." },
   { label: "Post-production", description: "Find the final cut, sound, music, and look." },
@@ -49,7 +48,7 @@ export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction
                 <div><strong>{phase.label}</strong><p>{phase.description}</p></div>
                 <span className="phase-status">{status}</span>
                 {index === currentPhase && (
-                  <button onClick={onNextAction} type="button">{currentPhase === 5 ? "Open release desk" : `Continue ${phase.label}`} <b>→</b></button>
+                  <button onClick={onNextAction} type="button">{currentPhase === phases.length - 1 ? "Open release desk" : `Continue ${phase.label}`} <b>→</b></button>
                 )}
               </article>
             );
