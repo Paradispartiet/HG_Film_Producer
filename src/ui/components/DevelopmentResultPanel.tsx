@@ -1,4 +1,4 @@
-import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
+import type { DevelopmentStepResult, HistoricalExample } from "../demo/createDevelopmentStepRun.js";
 
 interface DevelopmentResultPanelProps {
   readonly result: DevelopmentStepResult;
@@ -21,6 +21,7 @@ export function DevelopmentResultPanel({ result, projectLabel = "Film 1" }: Deve
             <ResultMetric label="Unlocked technique" value={result.unlockedTechnique ?? "No technique unlock"} />
             <ResultMetric label="Project techniques" value={`${result.projectTechniqueCount}`} />
           </div>
+          {result.historicalExample && <HistoricalExamplePanel example={result.historicalExample} />}
         </div>
       )}
       {result.path === "location" && (
@@ -59,6 +60,22 @@ function ResultCopy({ label, value }: { readonly label: string; readonly value: 
 
 function ResultMetric({ label, value }: { readonly label: string; readonly value: string }) {
   return <div className="result-metric"><span>{label}</span><strong>{value}</strong></div>;
+}
+
+function HistoricalExamplePanel({ example }: { readonly example: HistoricalExample }) {
+  return (
+    <div className="historical-example">
+      <span className="section-label">Where this comes from</span>
+      <strong>{example.knowledgeTitle}</strong>
+      <p>{example.explanation}</p>
+      <p className="historical-example-used">{example.usedInGameplay}</p>
+      <div className="historical-example-film">
+        <strong>{example.filmTitle} ({example.filmYear})</strong>
+        <span>{example.filmDirector}{example.movementName ? ` · ${example.movementName}` : ""}</span>
+        <p>{example.filmSummary}</p>
+      </div>
+    </div>
+  );
 }
 
 function ResultNotes({ notes }: { readonly notes: readonly string[] }) {

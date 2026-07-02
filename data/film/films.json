@@ -1,0 +1,82 @@
+[
+  {
+    "id": "historical_film_battleship_potemkin",
+    "title": "Battleship Potemkin",
+    "year": 1925,
+    "director": "Sergei Eisenstein",
+    "movementId": "movement_soviet_montage",
+    "summary": "The Odessa Steps sequence compresses a massacre into a rhythm of short, colliding shots, the founding demonstration of montage as meaning."
+  },
+  {
+    "id": "historical_film_passion_of_joan_of_arc",
+    "title": "The Passion of Joan of Arc",
+    "year": 1928,
+    "director": "Carl Th. Dreyer",
+    "movementId": null,
+    "summary": "Built almost entirely from close-ups of Renee Falconetti's face, trusting the smallest reaction to carry the entire trial."
+  },
+  {
+    "id": "historical_film_touch_of_evil",
+    "title": "Touch of Evil",
+    "year": 1958,
+    "director": "Orson Welles",
+    "movementId": "movement_film_noir",
+    "summary": "The opening tracking shot holds one unbroken take across a border crossing, building dread in real time with no cut to release it."
+  },
+  {
+    "id": "historical_film_breathless",
+    "title": "Breathless",
+    "year": 1960,
+    "director": "Jean-Luc Godard",
+    "movementId": "movement_french_new_wave",
+    "summary": "Godard cut within continuous shots rather than around them, turning the jump cut from an error into a restless, modern rhythm."
+  },
+  {
+    "id": "historical_film_double_indemnity",
+    "title": "Double Indemnity",
+    "year": 1944,
+    "director": "Billy Wilder",
+    "movementId": "movement_film_noir",
+    "summary": "A confession delivered in voiceover from the start frames the entire plot as a man narrating his own downfall."
+  },
+  {
+    "id": "historical_film_days_of_heaven",
+    "title": "Days of Heaven",
+    "year": 1978,
+    "director": "Terrence Malick",
+    "movementId": "movement_new_hollywood",
+    "summary": "Shot almost entirely during the 'magic hour' after sunset, trading lighting control for a naturalism no studio lamp could match."
+  },
+  {
+    "id": "historical_film_intolerance",
+    "title": "Intolerance",
+    "year": 1916,
+    "director": "D.W. Griffith",
+    "movementId": null,
+    "summary": "Four separate historical stories are cross-cut together, accelerating toward a shared climax and establishing parallel editing at scale."
+  },
+  {
+    "id": "historical_film_2001_a_space_odyssey",
+    "title": "2001: A Space Odyssey",
+    "year": 1968,
+    "director": "Stanley Kubrick",
+    "movementId": "movement_new_hollywood",
+    "summary": "A thrown bone match-cuts directly into an orbiting spacecraft, collapsing millions of years of human tool-making into a single transition."
+  },
+  {
+    "id": "historical_film_festen",
+    "title": "Festen",
+    "year": 1998,
+    "director": "Thomas Vinterberg",
+    "movementId": "movement_dogme_95",
+    "summary": "Dogme #1, shot handheld on consumer video under the Dogme 95 vow of chastity, letting a family dinner's collapse feel unrehearsed and unsafe."
+  },
+  {
+    "id": "historical_film_jaws",
+    "title": "Jaws",
+    "year": 1975,
+    "director": "Steven Spielberg",
+    "movementId": "movement_new_hollywood",
+    "summary": "A malfunctioning shark prop forced the threat offscreen, so John Williams' theme and point-of-view shots did the work the creature could not."
+  }
+]

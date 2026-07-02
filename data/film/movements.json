@@ -1,0 +1,58 @@
+[
+  {
+    "id": "movement_german_expressionism",
+    "name": "German Expressionism",
+    "era": "Early 1920s",
+    "region": "Germany",
+    "summary": "Studio-built, deliberately unreal sets and extreme light and shadow externalized a character's inner state rather than showing a realistic world."
+  },
+  {
+    "id": "movement_soviet_montage",
+    "name": "Soviet Montage",
+    "era": "1920s",
+    "region": "Soviet Union",
+    "summary": "Editing itself became the primary storytelling tool: colliding shots generated meaning the individual images did not contain on their own."
+  },
+  {
+    "id": "movement_film_noir",
+    "name": "Film Noir",
+    "era": "1940s to 1950s",
+    "region": "United States",
+    "summary": "Low-key lighting, moral ambiguity, and fatalistic narration turned crime and city life into a study of guilt and doubt."
+  },
+  {
+    "id": "movement_italian_neorealism",
+    "name": "Italian Neorealism",
+    "era": "Late 1940s",
+    "region": "Italy",
+    "summary": "Working with real locations, non-professional actors, and everyday hardship after the war, in deliberate contrast to studio polish."
+  },
+  {
+    "id": "movement_french_new_wave",
+    "name": "French New Wave",
+    "era": "Late 1950s to 1960s",
+    "region": "France",
+    "summary": "Handheld cameras, jump cuts, and direct address broke classical continuity and put the director's presence on screen."
+  },
+  {
+    "id": "movement_new_hollywood",
+    "name": "New Hollywood",
+    "era": "Late 1960s to 1970s",
+    "region": "United States",
+    "summary": "Director-driven films took on morally complex, ambiguous stories and borrowed the location shooting and looser structure of European art cinema."
+  },
+  {
+    "id": "movement_dogme_95",
+    "name": "Dogme 95",
+    "era": "1990s",
+    "region": "Denmark",
+    "summary": "A shared set of rules stripped filmmaking back to handheld cameras, natural light, and on-location sound to force honesty over spectacle."
+  },
+  {
+    "id": "movement_streaming_era",
+    "name": "Streaming Era",
+    "era": "2010s to present",
+    "region": "Global",
+    "summary": "Serialized, algorithm-distributed production reshaped budgets, pacing, and release strategy around platforms rather than theaters."
+  }
+]

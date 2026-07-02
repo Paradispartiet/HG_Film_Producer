@@ -6,7 +6,8 @@
     "usedInGameplay": "Solves a slow second act and raises pacing and structure.",
     "relatedTechniqueId": "technique_montage",
     "relatedRoleId": "role_editor",
-    "relatedGenreId": null
+    "relatedGenreId": null,
+    "relatedHistoricalFilmId": "historical_film_battleship_potemkin"
   },
   {
     "id": "knowledge_close_up",
@@ -15,7 +16,8 @@
     "usedInGameplay": "Solves a flat character beat and raises emotion and performance.",
     "relatedTechniqueId": "technique_close_up",
     "relatedRoleId": "role_director",
-    "relatedGenreId": null
+    "relatedGenreId": null,
+    "relatedHistoricalFilmId": "historical_film_passion_of_joan_of_arc"
   },
   {
     "id": "knowledge_long_take",
@@ -24,7 +26,8 @@
     "usedInGameplay": "Raises visual style and emotion when a tense scene must not be broken.",
     "relatedTechniqueId": "technique_long_take",
     "relatedRoleId": "role_cinematographer",
-    "relatedGenreId": null
+    "relatedGenreId": null,
+    "relatedHistoricalFilmId": "historical_film_touch_of_evil"
   },
   {
     "id": "knowledge_jump_cut",
@@ -33,7 +36,8 @@
     "usedInGameplay": "Raises pacing and visual style when a passage feels static.",
     "relatedTechniqueId": "technique_jump_cut",
     "relatedRoleId": "role_editor",
-    "relatedGenreId": null
+    "relatedGenreId": null,
+    "relatedHistoricalFilmId": "historical_film_breathless"
   },
   {
     "id": "knowledge_voiceover",
@@ -42,7 +46,8 @@
     "usedInGameplay": "Raises emotion and structure, with a risk to visual style.",
     "relatedTechniqueId": "technique_voiceover",
     "relatedRoleId": "role_screenwriter",
-    "relatedGenreId": null
+    "relatedGenreId": null,
+    "relatedHistoricalFilmId": "historical_film_double_indemnity"
   },
   {
     "id": "knowledge_natural_light",
@@ -51,7 +56,8 @@
     "usedInGameplay": "Raises visual style and quality when the budget is tight.",
     "relatedTechniqueId": "technique_natural_light",
     "relatedRoleId": "role_cinematographer",
-    "relatedGenreId": null
+    "relatedGenreId": null,
+    "relatedHistoricalFilmId": "historical_film_days_of_heaven"
   },
   {
     "id": "knowledge_cross_cutting",
@@ -60,7 +66,8 @@
     "usedInGameplay": "Raises pacing and audience appeal when two threads need tension.",
     "relatedTechniqueId": "technique_cross_cutting",
     "relatedRoleId": "role_editor",
-    "relatedGenreId": null
+    "relatedGenreId": null,
+    "relatedHistoricalFilmId": "historical_film_intolerance"
   },
   {
     "id": "knowledge_match_cut",
@@ -69,7 +76,8 @@
     "usedInGameplay": "Raises visual style and structure when a transition feels abrupt.",
     "relatedTechniqueId": "technique_match_cut",
     "relatedRoleId": "role_editor",
-    "relatedGenreId": null
+    "relatedGenreId": null,
+    "relatedHistoricalFilmId": "historical_film_2001_a_space_odyssey"
   },
   {
     "id": "knowledge_handheld_camera",
@@ -78,7 +86,8 @@
     "usedInGameplay": "Raises visual style and emotion when a scene feels too clean.",
     "relatedTechniqueId": "technique_handheld_camera",
     "relatedRoleId": "role_cinematographer",
-    "relatedGenreId": null
+    "relatedGenreId": null,
+    "relatedHistoricalFilmId": "historical_film_festen"
   },
   {
     "id": "knowledge_offscreen_sound",
@@ -87,6 +96,7 @@
     "usedInGameplay": "Raises sound and emotion when a scene needs danger without spectacle.",
     "relatedTechniqueId": "technique_offscreen_sound",
     "relatedRoleId": "role_sound_designer",
-    "relatedGenreId": null
+    "relatedGenreId": null,
+    "relatedHistoricalFilmId": "historical_film_jaws"
   }
 ]
