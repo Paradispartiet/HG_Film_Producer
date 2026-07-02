@@ -33,7 +33,10 @@ export function CrewHiringPanel({ groups, selectedCrewIds, onChange }: CrewHirin
                   />
                   <div className="candidate-card-title"><strong>{candidate.name}</strong><span>{candidate.score.totalScore}</span></div>
                   {candidate.previousFilmsTogether > 0 && (
-                    <span className="candidate-returning-badge">Worked together on {candidate.previousFilmsTogether} film{candidate.previousFilmsTogether === 1 ? "" : "s"}</span>
+                    <span className="candidate-returning-badge">
+                      Worked together on {candidate.previousFilmsTogether} film{candidate.previousFilmsTogether === 1 ? "" : "s"}
+                      {candidate.styleTags.includes("studio_regular") && " · Studio regular"}
+                    </span>
                   )}
                   <p>{candidate.styleTags.slice(0, 3).map(formatLabel).join(" · ")}</p>
                   <dl className="candidate-stats">

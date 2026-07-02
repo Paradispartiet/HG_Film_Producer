@@ -3,6 +3,7 @@ import crewMembersJson from "../../../data/film/crew_members.json";
 import locationScoutingBriefsJson from "../../../data/film/location_scouting_briefs.json";
 import locationsJson from "../../../data/film/locations.json";
 
+import { applyActorRosterGrowth, applyCrewRosterGrowth } from "../../core/applyRosterGrowth.js";
 import { attachLocationToProject } from "../../core/attachLocationToProject.js";
 import { calculateCastingChemistry } from "../../core/calculateCastingChemistry.js";
 import { castActor, scoreActorForProject } from "../../core/castActor.js";
@@ -161,17 +162,20 @@ export function getActorCandidates(
   careerState?: CareerState
 ): readonly ActorCandidateOption[] {
   return preProductionData.actors
-    .map((actor) => ({
-      id: actor.id,
-      name: actor.name,
-      actingStyle: formatLabel(actor.actingStyle),
-      starPower: actor.starPower,
-      reliability: actor.reliability,
-      fee: actor.fee,
-      chemistryTags: actor.chemistryTags,
-      score: scoreActorForProject(developmentResult.projectState, actor),
-      previousFilmsTogether: careerState?.castRoster[actor.id]?.filmsWorked ?? 0
-    }))
+    .map((actor) => {
+      const grownActor = applyActorRosterGrowth(actor, careerState?.castRoster[actor.id]);
+      return {
+        id: actor.id,
+        name: actor.name,
+        actingStyle: formatLabel(actor.actingStyle),
+        starPower: actor.starPower,
+        reliability: actor.reliability,
+        fee: actor.fee,
+        chemistryTags: grownActor.chemistryTags,
+        score: scoreActorForProject(developmentResult.projectState, grownActor),
+        previousFilmsTogether: careerState?.castRoster[actor.id]?.filmsWorked ?? 0
+      };
+    })
     .sort((left, right) => right.score.totalScore - left.score.totalScore);
 }
 
@@ -187,8 +191,13 @@ export function createPreProductionResult(
   const location = requireItem(preProductionData.locations, choices.locationId, "location");
   let project = attachLocationToProject(developmentResult.projectState, location).project;
 
+  const grownCrewMembers = preProductionData.crewMembers.map((crewMember) =>
+    applyCrewRosterGrowth(crewMember, projectContext.careerState.crewRoster[crewMember.id]));
+  const grownActors = preProductionData.actors.map((actor) =>
+    applyActorRosterGrowth(actor, projectContext.careerState.castRoster[actor.id]));
+
   const hiredCrew = choices.crewMemberIds.map((crewMemberId) => {
-    const crewMember = requireItem(preProductionData.crewMembers, crewMemberId, "crew member");
+    const crewMember = requireItem(grownCrewMembers, crewMemberId, "crew member");
     const score = scoreCrewMemberForProject(project, crewMember);
     project = hireCrewMember(project, crewMember, score).project;
     return {
@@ -201,13 +210,13 @@ export function createPreProductionResult(
   });
 
   const castActors = choices.actorIds.map((actorId) => {
-    const actor = requireItem(preProductionData.actors, actorId, "actor");
+    const actor = requireItem(grownActors, actorId, "actor");
     const score = scoreActorForProject(project, actor);
     project = castActor(project, actor, score).project;
     return { actor, result: { id: actor.id, name: actor.name, fitScore: score.totalScore } };
   });
   const chemistry = calculateCastingChemistry(castActors.map(({ actor }) => actor));
-  const teamEvaluation = evaluateProductionTeam(project, preProductionData.crewMembers, preProductionData.actors);
+  const teamEvaluation = evaluateProductionTeam(project, grownCrewMembers, grownActors);
 
   return {
     projectState: project,
@@ -271,16 +280,18 @@ function toCrewCandidate(
   discipline: RequiredCrewDiscipline,
   careerState?: CareerState
 ): CrewCandidateOption {
+  const grownCrewMember = applyCrewRosterGrowth(crewMember, careerState?.crewRoster[crewMember.id]);
+
   return {
     id: crewMember.id,
     name: crewMember.name,
     discipline,
     roleLabel: formatDiscipline(discipline),
-    experience: crewMember.experience,
+    experience: grownCrewMember.experience,
     reliability: crewMember.reliability,
     fee: crewMember.fee,
-    styleTags: crewMember.styleTags,
-    score: scoreCrewMemberForProject(project, crewMember),
+    styleTags: grownCrewMember.styleTags,
+    score: scoreCrewMemberForProject(project, grownCrewMember),
     previousFilmsTogether: careerState?.crewRoster[crewMember.id]?.filmsWorked ?? 0
   };
 }
