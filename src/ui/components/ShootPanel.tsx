@@ -26,6 +26,7 @@ interface ShootPanelProps {
   readonly shootResult: ShootStepResult | null;
   readonly onSelectProductionEvent: (eventId: string) => void;
   readonly onResolveShootDay: (result: ShootDayStepResult) => void;
+  readonly id?: string | undefined;
 }
 
 export function ShootPanel({
@@ -37,7 +38,8 @@ export function ShootPanel({
   shootDayResults,
   shootResult,
   onSelectProductionEvent,
-  onResolveShootDay
+  onResolveShootDay,
+  id
 }: ShootPanelProps) {
   const [message, setMessage] = useState("");
   const preparation = useMemo(
@@ -59,7 +61,7 @@ export function ShootPanel({
   }
 
   return (
-    <section className={numberedProject ? "panel shoot-panel shoot-panel--later-project" : "panel shoot-panel"}>
+    <section className={numberedProject ? "panel shoot-panel shoot-panel--later-project" : "panel shoot-panel"} id={id}>
       <div className="shoot-panel-heading">
         <div>
           <span className="eyebrow">{numberedProject ? `Start shoot for ${projectLabel}` : "Start shoot"}</span>

@@ -12,6 +12,7 @@ interface CareerApplicationPanelProps {
   readonly releaseResult: ReleaseStepResult | null;
   readonly result: CareerApplicationStepResult | null;
   readonly onApply: () => void;
+  readonly id?: string | undefined;
 }
 
 export function CareerApplicationPanel({
@@ -20,10 +21,11 @@ export function CareerApplicationPanel({
   strategicGoal,
   releaseResult,
   result,
-  onApply
+  onApply,
+  id
 }: CareerApplicationPanelProps) {
   return (
-    <section className="panel career-application-panel">
+    <section className="panel career-application-panel" id={id}>
       <div className="career-application-heading">
         <div>
           <span className="eyebrow">Studio finance &amp; career review</span>
