@@ -34,7 +34,7 @@ export function LandingScreen({ onStart, onContinue, onDemo, onDevDashboard, onP
           <button className="landing-secondary" onClick={onDemo} type="button">Demo dashboard</button>
         </div>
         <div className="landing-future-modes" aria-label="Planned future modes">
-          <article><span>Manusrom</span><small>kommer senere</small></article>
+          <article><span>Writers' room</span><small>planned</small></article>
           <article><span>Full studio simulator</span><small>planned</small></article>
           <article><span>Film history atlas / locations</span><small>planned</small></article>
         </div>

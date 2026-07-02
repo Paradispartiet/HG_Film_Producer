@@ -148,8 +148,8 @@ export function getProductionCaseBestResultFeedback(
   if (newTier === "auteur" && newScore === report.maxScore) {
     return {
       feedbackType: "maxed",
-      label: "Maks resultat",
-      description: "Dette caset er fullført med maks score.",
+      label: "Maximum result",
+      description: "This case is complete with the maximum score.",
       previousScore,
       newScore,
       previousTier,
@@ -162,8 +162,8 @@ export function getProductionCaseBestResultFeedback(
   if (!previousBestResult) {
     return {
       feedbackType: "first_best",
-      label: "Første beste resultat",
-      description: "Dette er nå ditt beste lagrede resultat for caset.",
+      label: "First best result",
+      description: "This is now your best saved result for this case.",
       previousScore,
       newScore,
       previousTier,
@@ -176,8 +176,8 @@ export function getProductionCaseBestResultFeedback(
   if (tierImproved) {
     return {
       feedbackType: "tier_improved",
-      label: "Nytt nivå",
-      description: `Du løftet caset fra ${productionCaseResultTierLabels[previousBestResult.bestTier]} til ${productionCaseResultTierLabels[newTier]}.`,
+      label: "New tier",
+      description: `You raised this case from ${productionCaseResultTierLabels[previousBestResult.bestTier]} to ${productionCaseResultTierLabels[newTier]}.`,
       previousScore,
       newScore,
       previousTier,
@@ -190,8 +190,8 @@ export function getProductionCaseBestResultFeedback(
   if (scoreDelta !== undefined && scoreDelta > 0) {
     return {
       feedbackType: "score_improved",
-      label: "Ny beste score",
-      description: `Du forbedret caset med ${scoreDelta} poeng.`,
+      label: "New best score",
+      description: `You improved this case by ${scoreDelta} points.`,
       previousScore,
       newScore,
       previousTier,
@@ -408,16 +408,16 @@ function createProductionCaseImprovementHint(
 ): ProductionCaseImprovementHint {
   const copy = {
     choose: {
-      label: "Velg produksjonsgrep",
-      description: "Denne fasen mangler et valgt produksjonsgrep.",
+      label: "Choose a production approach",
+      description: "This phase is missing a chosen production approach.",
     },
     rethink: {
-      label: "Revurder fasen",
-      description: "Valget ditt er mindre presist for dette caset. Se på target-listen og velg grepet som best matcher filmens produksjonslogikk.",
+      label: "Reconsider this phase",
+      description: "Your choice is less precise for this case. Look at the target list and choose the approach that best matches the film's production logic.",
     },
     sharpen: {
-      label: "Spiss valget",
-      description: "Valget ditt er delvis relevant. Spiss fasen ved å velge grepet som ligger nærmest filmens konkrete uttrykk.",
+      label: "Sharpen your choice",
+      description: "Your choice is partially relevant. Sharpen this phase by choosing the approach closest to the film's concrete expression.",
     },
   } as const satisfies Record<ProductionCaseImprovementHintType, { readonly label: string; readonly description: string }>;
 
@@ -471,23 +471,23 @@ function getProductionCaseLearningSummary(
 
   if (resultTier === "not_started" || resultTier === "in_progress") {
     return missingCount > 0
-      ? "Du har startet å kartlegge produksjonslogikken, men flere faser mangler valg."
-      : "Du kartlegger produksjonslogikken og kan fullføre fasene for å låse resultatet.";
+      ? "You've started mapping the production logic, but several phases still need a choice."
+      : "You're mapping the production logic and can complete the phases to lock in a result.";
   }
 
   if (resultTier === "assistant") {
     return weakFocus
-      ? `Du har noen riktige produksjonsvalg, men caset må spisses i ${weakFocus}.`
-      : "Du har noen riktige produksjonsvalg, men caset må spisses i flere faser.";
+      ? `You have some correct production choices, but this case needs sharpening in ${weakFocus}.`
+      : "You have some correct production choices, but this case needs sharpening across several phases.";
   }
 
   if (resultTier === "producer") {
     return weakFocus
-      ? `Du forstår flere sentrale valg, men caset kan spisses i ${weakFocus}.`
-      : "Du forstår flere sentrale produksjonsvalg, men caset kan spisses videre.";
+      ? `You understand several key choices, but this case can be sharpened further in ${weakFocus}.`
+      : "You understand several key production choices, but this case can be sharpened further.";
   }
 
-  return "Du matcher filmens produksjonslogikk sterkt på tvers av fasene.";
+  return "You match the film's production logic strongly across every phase.";
 }
 
 export function getProductionCaseReport(
@@ -590,8 +590,8 @@ export function getProductionCaseNextPhaseAction(
     return createProductionCaseNextPhaseAction(
       missionWithoutChoice,
       "choose",
-      "Velg produksjonsgrep",
-      "Velg et produksjonsgrep før du fullfører fasen.",
+      "Choose a production approach",
+      "Choose a production approach before completing this phase.",
     );
   }
 
@@ -600,8 +600,8 @@ export function getProductionCaseNextPhaseAction(
     return createProductionCaseNextPhaseAction(
       missionWithChoiceButIncomplete,
       "complete",
-      "Fullfør fase",
-      "Marker fasen som fullført når produksjonsgrepet er valgt.",
+      "Complete phase",
+      "Mark the phase complete once you've chosen a production approach.",
     );
   }
 
@@ -614,8 +614,8 @@ export function getProductionCaseNextPhaseAction(
   return createProductionCaseNextPhaseAction(
     missionToImprove,
     "improve",
-    "Forbedre fase",
-    "Spiss produksjonsgrepet for å løfte case-scoren.",
+    "Improve phase",
+    "Sharpen the production approach to raise the case score.",
   );
 }
 
@@ -642,27 +642,27 @@ export const defaultProductionCaseLibraryControls: ProductionCaseLibraryControls
 };
 
 const productionCaseLibraryStatusFilterLabels: Record<ProductionCaseLibraryStatusFilter, string> = {
-  all: "Alle",
-  not_started: "Ikke startet",
-  in_progress: "Under arbeid",
-  completed: "Fullført",
+  all: "All",
+  not_started: "Not started",
+  in_progress: "In progress",
+  completed: "Completed",
 };
 
 const productionCaseMasteryFilterLabels: Record<ProductionCaseMasteryFilter, string> = {
-  all: "Alle",
-  not_completed_best: "Ikke fullført best",
-  assistant_best: "Assistent",
-  producer_best: "Produsent",
+  all: "All",
+  not_completed_best: "No best result yet",
+  assistant_best: "Assistant",
+  producer_best: "Producer",
   auteur_best: "Auteur",
-  can_improve: "Kan forbedres",
+  can_improve: "Can be improved",
 };
 
 const productionCaseLibrarySortModeLabels: Record<ProductionCaseLibrarySortMode, string> = {
-  default: "Standard",
-  title_asc: "Tittel A–Å",
-  best_score_desc: "Beste score høyest",
-  best_score_asc: "Beste score lavest",
-  recent_best: "Nylig beste resultat",
+  default: "Default",
+  title_asc: "Title A–Z",
+  best_score_desc: "Best score highest",
+  best_score_asc: "Best score lowest",
+  recent_best: "Recently improved",
 };
 
 export type ProductionCaseLibraryResultSummary = {
@@ -684,7 +684,7 @@ export function getProductionCaseLibraryResultSummary({
   const activeControlLabels: string[] = [];
   const normalizedSearchQuery = controls.searchQuery.trim();
 
-  if (normalizedSearchQuery) activeControlLabels.push(`Søk: ${normalizedSearchQuery}`);
+  if (normalizedSearchQuery) activeControlLabels.push(`Search: ${normalizedSearchQuery}`);
   if (controls.caseStatusFilter !== defaultProductionCaseLibraryControls.caseStatusFilter) {
     activeControlLabels.push(`Case-status: ${productionCaseLibraryStatusFilterLabels[controls.caseStatusFilter]}`);
   }
@@ -692,15 +692,15 @@ export function getProductionCaseLibraryResultSummary({
     activeControlLabels.push(`Mastery: ${productionCaseMasteryFilterLabels[controls.masteryFilter]}`);
   }
   if (controls.sortMode !== defaultProductionCaseLibraryControls.sortMode) {
-    activeControlLabels.push(`Sorter: ${productionCaseLibrarySortModeLabels[controls.sortMode]}`);
+    activeControlLabels.push(`Sort: ${productionCaseLibrarySortModeLabels[controls.sortMode]}`);
   }
 
   return {
     visibleCount,
     totalCount,
     label: visibleCount === 0
-      ? "Ingen production cases matcher søket eller filtrene"
-      : `Viser ${visibleCount} av ${totalCount} production cases`,
+      ? "No production cases match the search or filters"
+      : `Showing ${visibleCount} of ${totalCount} production cases`,
     activeControlLabels,
   };
 }
@@ -747,10 +747,10 @@ export type ProductionCaseAchievement = {
 };
 
 export const productionCaseResultTierLabels = {
-  not_started: "Ikke startet",
-  in_progress: "Under arbeid",
-  assistant: "Assistent",
-  producer: "Produsent",
+  not_started: "Not started",
+  in_progress: "In progress",
+  assistant: "Assistant",
+  producer: "Producer",
   auteur: "Auteur",
 } as const satisfies Record<ProductionCaseResultTier, string>;
 
@@ -814,8 +814,8 @@ export function getProductionCaseTierTarget(
       score: scoreSummary.score,
       maxScore: scoreSummary.maxScore,
       isMaxTier: true,
-      label: "Maks nivå nådd",
-      description: "Dette caset er fullført på høyeste nivå.",
+      label: "Maximum tier reached",
+      description: "This case is complete at the highest tier.",
     };
   }
 
@@ -836,8 +836,8 @@ export function getProductionCaseTierTarget(
       score: scoreSummary.score,
       maxScore: scoreSummary.maxScore,
       isMaxTier: false,
-      label: `Neste nivå: ${nextTierLabel}`,
-      description: "Fullfør fasene og øk Case-score.",
+      label: `Next tier: ${nextTierLabel}`,
+      description: "Complete the phases and raise the case score.",
     };
   }
 
@@ -853,8 +853,8 @@ export function getProductionCaseTierTarget(
     score: scoreSummary.score,
     maxScore: scoreSummary.maxScore,
     isMaxTier: false,
-    label: `Neste nivå: ${nextTierLabel}`,
-    description: `Mangler ${pointsNeeded} poeng.`,
+    label: `Next tier: ${nextTierLabel}`,
+    description: `${pointsNeeded} points needed.`,
   };
 }
 
@@ -966,14 +966,14 @@ export function getProductionCaseCareerSummary(
 }
 
 const productionCaseAchievementDefinitions = [
-  { id: "first-case", label: "Første case", description: "Fullfør én production case.", target: 1, getValue: (summary: ProductionCaseCareerSummary) => summary.completedBestCount },
-  { id: "five-cases", label: "Fem cases", description: "Fullfør fem production cases.", target: 5, getValue: (summary: ProductionCaseCareerSummary) => summary.completedBestCount },
-  { id: "ten-cases", label: "Ti cases", description: "Fullfør ti production cases.", target: 10, getValue: (summary: ProductionCaseCareerSummary) => summary.completedBestCount },
-  { id: "first-producer", label: "Første Produsent", description: "Oppnå Produsent eller Auteur i én production case.", target: 1, getValue: (summary: ProductionCaseCareerSummary) => summary.producerBestCount + summary.auteurBestCount },
-  { id: "first-auteur", label: "Første Auteur", description: "Oppnå Auteur i én production case.", target: 1, getValue: (summary: ProductionCaseCareerSummary) => summary.auteurBestCount },
-  { id: "auteur-series", label: "Auteur-serie", description: "Oppnå Auteur i fem production cases.", target: 5, getValue: (summary: ProductionCaseCareerSummary) => summary.auteurBestCount },
-  { id: "half-catalogue", label: "Halv katalog", description: "Fullfør 80 production cases.", target: 80, getValue: (summary: ProductionCaseCareerSummary) => summary.completedBestCount },
-  { id: "full-catalogue", label: "Hele katalogen", description: "Fullfør alle 161 production cases.", target: 161, getValue: (summary: ProductionCaseCareerSummary) => summary.completedBestCount },
+  { id: "first-case", label: "First case", description: "Complete one production case.", target: 1, getValue: (summary: ProductionCaseCareerSummary) => summary.completedBestCount },
+  { id: "five-cases", label: "Five cases", description: "Complete five production cases.", target: 5, getValue: (summary: ProductionCaseCareerSummary) => summary.completedBestCount },
+  { id: "ten-cases", label: "Ten cases", description: "Complete ten production cases.", target: 10, getValue: (summary: ProductionCaseCareerSummary) => summary.completedBestCount },
+  { id: "first-producer", label: "First Producer", description: "Reach Producer or Auteur in one production case.", target: 1, getValue: (summary: ProductionCaseCareerSummary) => summary.producerBestCount + summary.auteurBestCount },
+  { id: "first-auteur", label: "First Auteur", description: "Reach Auteur in one production case.", target: 1, getValue: (summary: ProductionCaseCareerSummary) => summary.auteurBestCount },
+  { id: "auteur-series", label: "Auteur streak", description: "Reach Auteur in five production cases.", target: 5, getValue: (summary: ProductionCaseCareerSummary) => summary.auteurBestCount },
+  { id: "half-catalogue", label: "Half the catalogue", description: "Complete 80 production cases.", target: 80, getValue: (summary: ProductionCaseCareerSummary) => summary.completedBestCount },
+  { id: "full-catalogue", label: "The whole catalogue", description: "Complete all 161 production cases.", target: 161, getValue: (summary: ProductionCaseCareerSummary) => summary.completedBestCount },
 ] as const;
 
 export function getProductionCaseAchievements(
@@ -1008,7 +1008,7 @@ export type ProductionCaseNextAction = {
 };
 
 function formatProductionCaseNextActionDescription(status: ProductionCaseNextActionStatus): string {
-  const progressLabel = `${status.completedCount}/${status.missionCount} faser fullført`;
+  const progressLabel = `${status.completedCount}/${status.missionCount} phases complete`;
   if (!status.score) return progressLabel;
   return `${progressLabel} · Case-score ${status.score.score}/${status.score.maxScore}`;
 }
@@ -1034,16 +1034,16 @@ export function getProductionCaseNextAction(
   if (manualStatuses.length === 0) return undefined;
 
   const inProgress = manualStatuses.find((status) => status.tier === "in_progress");
-  if (inProgress) return createProductionCaseNextAction(inProgress, "continue", "Fortsett case");
+  if (inProgress) return createProductionCaseNextAction(inProgress, "continue", "Continue case");
 
   const assistant = manualStatuses.find((status) => status.tier === "assistant");
-  if (assistant) return createProductionCaseNextAction(assistant, "improve", "Forbedre resultat");
+  if (assistant) return createProductionCaseNextAction(assistant, "improve", "Improve result");
 
   const notStarted = manualStatuses.find((status) => status.tier === "not_started");
-  if (notStarted) return createProductionCaseNextAction(notStarted, "start", "Start nytt case");
+  if (notStarted) return createProductionCaseNextAction(notStarted, "start", "Start new case");
 
   const producer = manualStatuses.find((status) => status.tier === "producer");
-  if (producer) return createProductionCaseNextAction(producer, "master", "Jakt Auteur");
+  if (producer) return createProductionCaseNextAction(producer, "master", "Chase Auteur");
 
   const firstStatus = manualStatuses[0];
   if (!firstStatus) return undefined;
@@ -1052,8 +1052,8 @@ export function getProductionCaseNextAction(
     scenarioId: firstStatus.scenarioId,
     title: firstStatus.title,
     actionType: "complete",
-    label: "Katalog mestret",
-    description: "Alle production cases er fullført på høyeste nivå.",
+    label: "Catalogue mastered",
+    description: "All production cases are complete at the highest tier.",
   };
 }
 
@@ -1286,7 +1286,7 @@ export function sortProductionCaseLibraryCards<T extends ProductionCaseLibrarySo
       const rightBestResult = right.card.bestResult;
 
       if (sortMode === "title_asc") {
-        return left.card.scenario.film.title.localeCompare(right.card.scenario.film.title, "nb", { sensitivity: "base" })
+        return left.card.scenario.film.title.localeCompare(right.card.scenario.film.title, "en", { sensitivity: "base" })
           || left.index - right.index;
       }
 

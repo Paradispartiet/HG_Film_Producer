@@ -191,13 +191,13 @@ function ProductionCaseMissionFlow({
           <span className="eyebrow">Case-progress</span>
           <strong>
             {allComplete
-              ? "Produksjonscase fullført"
-              : `${completedCount}/${missions.length} faser fullført`}
+              ? "Production case complete"
+              : `${completedCount}/${missions.length} phases complete`}
           </strong>
           <span className="scenario-mission-score">Case-score: {caseScore.score}/{caseScore.maxScore}</span>
         </div>
         <button onClick={resetCurrentScenario} type="button">
-          Nullstill case-progress
+          Reset case progress
         </button>
       </div>
       <div className="scenario-production-guidance" aria-label="Production case guidance">
@@ -225,17 +225,17 @@ function ProductionCaseMissionFlow({
             <div>
               <div className="scenario-mission-card-header">
                 <h4>{mission.title}</h4>
-                <span>{isComplete ? "Fullført" : "Åpen fase"}</span>
+                <span>{isComplete ? "Complete" : "Open phase"}</span>
               </div>
-              <span className="scenario-mission-score">Fase-score: {phaseScore.score}/{phaseScore.maxScore}</span>
+              <span className="scenario-mission-score">Phase score: {phaseScore.score}/{phaseScore.maxScore}</span>
               <p>{mission.prompt}</p>
               <ul className="scenario-brief-list">
                 {mission.targets.map((target) => (
                   <li key={target}>{target}</li>
                 ))}
               </ul>
-              <div className="scenario-mission-choices" aria-label={`Velg produksjonsgrep for ${mission.title}`}>
-                <strong>Velg produksjonsgrep</strong>
+              <div className="scenario-mission-choices" aria-label={`Choose a production approach for ${mission.title}`}>
+                <strong>Choose a production approach</strong>
                 <div className="scenario-mission-choice-grid">
                   {mission.choices.map((choice) => (
                     <button
@@ -254,14 +254,14 @@ function ProductionCaseMissionFlow({
                     {selectedChoice.feedback}
                   </p>
                 ) : (
-                  <p className="scenario-choice-feedback">Velg produksjonsgrep før du fullfører fasen.</p>
+                  <p className="scenario-choice-feedback">Choose a production approach before completing this phase.</p>
                 )}
               </div>
               <p className="scenario-mission-learning">
-                <strong>Forstå produksjonsvalget:</strong> {mission.learningFocus}
+                <strong>Understand the production choice:</strong> {mission.learningFocus}
               </p>
               <button onClick={() => toggleMission(mission.id)} type="button">
-                {isComplete ? "Angre fullført" : "Fullfør fase"}
+                {isComplete ? "Undo complete" : "Complete phase"}
               </button>
             </div>
           </article>
@@ -299,12 +299,12 @@ function ProductionCaseReportBox({
       </div>
       {bestResultFeedback ? <ProductionCaseBestResultFeedbackBox feedback={bestResultFeedback} maxScore={report.maxScore} /> : null}
       <div className="scenario-production-report-stats">
-        <span>Resultat: {productionCaseResultCopy[report.resultTier].label}</span>
+        <span>Result: {productionCaseResultCopy[report.resultTier].label}</span>
         <span>Case-score: {report.score}/{report.maxScore}</span>
-        <span>Faser: {report.completedCount}/{report.totalMissions}</span>
+        <span>Phases: {report.completedCount}/{report.totalMissions}</span>
         {tierTarget ? <span>{tierTarget.label} · {tierTarget.description}</span> : null}
         {bestResult ? (
-          <span>Beste resultat: {productionCaseResultCopy[bestResult.bestTier].label} · {bestResult.bestScore}/{bestResult.maxScore}</span>
+          <span>Best result: {productionCaseResultCopy[bestResult.bestTier].label} · {bestResult.bestScore}/{bestResult.maxScore}</span>
         ) : null}
       </div>
       <div className="scenario-production-report-actions" aria-label="Case continuation actions">
@@ -317,7 +317,7 @@ function ProductionCaseReportBox({
       </div>
       <div className="scenario-production-report-columns">
         <div>
-          <h4>Sterkeste treff</h4>
+          <h4>Strongest matches</h4>
           {strongestMatches.length > 0 ? (
             <ul>
               {strongestMatches.map((phase) => (
@@ -328,22 +328,22 @@ function ProductionCaseReportBox({
               ))}
             </ul>
           ) : (
-            <p>Velg produksjonsvalg som matcher for å registrere sterkeste treff.</p>
+            <p>Choose matching production choices to register strongest matches.</p>
           )}
         </div>
         <div>
-          <h4>Bør forbedres</h4>
+          <h4>Could improve</h4>
           {report.weakPhases.length > 0 ? (
             <ul>
               {report.weakPhases.map((phase) => (
                 <li key={phase.missionId}>
                   <span>{phase.title}</span>
-                  <small>{phase.selectedChoiceLabel ?? "Mangler produksjonsvalg"}</small>
+                  <small>{phase.selectedChoiceLabel ?? "Missing production choice"}</small>
                 </li>
               ))}
             </ul>
           ) : (
-            <p>Ingen svake faser registrert.</p>
+            <p>No weak phases recorded.</p>
           )}
           {report.improvementHint ? <p>{report.improvementHint.description}</p> : null}
         </div>
@@ -364,7 +364,7 @@ function ProductionCaseBestResultFeedbackBox({
   const showScoreChange = feedback.previousScore !== undefined && feedback.previousScore !== feedback.newScore;
 
   return (
-    <div className={`scenario-production-best-feedback scenario-production-best-feedback--${feedback.feedbackType}`} aria-label="Ny beste resultat-feedback">
+    <div className={`scenario-production-best-feedback scenario-production-best-feedback--${feedback.feedbackType}`} aria-label="New best result feedback">
       <div>
         <strong>{feedback.label}</strong>
         <p>{feedback.description}</p>
@@ -382,11 +382,11 @@ function ProductionCaseTierTargetBox({
   readonly target: NonNullable<ReturnType<typeof getProductionCaseTierTarget>>;
 }) {
   return (
-    <section className={`scenario-production-tier-target${target.isMaxTier ? " scenario-production-tier-target--max" : ""}`} aria-label="Neste nivå">
-      <span className="eyebrow">Neste nivå</span>
+    <section className={`scenario-production-tier-target${target.isMaxTier ? " scenario-production-tier-target--max" : ""}`} aria-label="Next tier">
+      <span className="eyebrow">Next tier</span>
       <strong>{target.label}</strong>
       <p>{target.description}</p>
-      <small>Nå: {target.currentTierLabel} · Case-score {target.score}/{target.maxScore}</small>
+      <small>Now: {target.currentTierLabel} · Case-score {target.score}/{target.maxScore}</small>
     </section>
   );
 }
@@ -399,12 +399,12 @@ function ProductionCaseNextPhaseBox({
   readonly onFocusMission: (missionId: string) => void;
 }) {
   return (
-    <section className={`scenario-production-next-phase scenario-production-next-phase--${action.actionType}`} aria-label="Neste fase">
-      <span className="eyebrow">Neste fase</span>
+    <section className={`scenario-production-next-phase scenario-production-next-phase--${action.actionType}`} aria-label="Next phase">
+      <span className="eyebrow">Next phase</span>
       <strong>{action.label}: {action.title}</strong>
       <p>{action.description}</p>
       <button onClick={() => onFocusMission(action.missionId)} type="button">
-        Gå til fase
+        Go to phase
       </button>
     </section>
   );
@@ -418,13 +418,13 @@ function ProductionCaseImprovementHintBox({
   readonly onFocusMission: (missionId: string) => void;
 }) {
   return (
-    <section className={`scenario-production-improvement scenario-production-improvement--${hint.hintType}`} aria-label="Forbedre neste">
-      <span className="eyebrow">Forbedre neste</span>
+    <section className={`scenario-production-improvement scenario-production-improvement--${hint.hintType}`} aria-label="Improve next">
+      <span className="eyebrow">Improve next</span>
       <strong>{hint.label}: {hint.title}</strong>
-      <small>Fase-score: {hint.currentScore}/{hint.maxScore}</small>
+      <small>Phase score: {hint.currentScore}/{hint.maxScore}</small>
       <p>{hint.description}</p>
       <button onClick={() => onFocusMission(hint.missionId)} type="button">
-        Gå til fase
+        Go to phase
       </button>
     </section>
   );
@@ -438,8 +438,8 @@ function ProductionCaseResultBox({
   const result = productionCaseResultCopy[tier];
 
   return (
-    <section className={`scenario-production-result scenario-production-result--${tier}`} aria-label="Resultat">
-      <span className="eyebrow">Resultat</span>
+    <section className={`scenario-production-result scenario-production-result--${tier}`} aria-label="Result">
+      <span className="eyebrow">Result</span>
       <strong>{result.label}</strong>
       <p>{result.description}</p>
     </section>
@@ -448,24 +448,24 @@ function ProductionCaseResultBox({
 
 const productionCaseResultCopy = {
   not_started: {
-    label: "Ikke startet",
-    description: "Start produksjonscaset for å bygge forståelsen.",
+    label: "Not started",
+    description: "Start the production case to build your understanding.",
   },
   in_progress: {
-    label: "Under arbeid",
-    description: "Du er i gang med å rekonstruere produksjonsvalgene.",
+    label: "In progress",
+    description: "You're reconstructing the production choices.",
   },
   assistant: {
-    label: "Assistent",
-    description: "Du fullførte caset, men flere valg traff ikke filmens logikk.",
+    label: "Assistant",
+    description: "You completed the case, but several choices missed the film's logic.",
   },
   producer: {
-    label: "Produsent",
-    description: "Du forstod de viktigste produksjonsvalgene.",
+    label: "Producer",
+    description: "You understood the most important production choices.",
   },
   auteur: {
     label: "Auteur",
-    description: "Du matchet filmens produksjonslogikk svært presist.",
+    description: "You matched the film's production logic very precisely.",
   },
 } as const satisfies Record<NonNullable<ReturnType<typeof getProductionCaseResultTier>>, { readonly label: string; readonly description: string }>;
 
@@ -494,7 +494,7 @@ function getProductionCaseMissionElementId(missionId: string) {
 
 function getBriefIntro(brief: ScenarioProductionBrief, filmTitle: string) {
   if (brief.briefType === "production_case") {
-    return `Forstå produksjonsvalget bak ${filmTitle}. Følg fasene som et konkret case i manus, bilde, klipp og lyd for denne filmen.`;
+    return `Understand the production choices behind ${filmTitle}. Follow the phases as a concrete case in script, image, editing, and sound for this film.`;
   }
 
   return "This imported seed still needs film-specific production-case design; use the fallback targets as provisional craft guidance.";

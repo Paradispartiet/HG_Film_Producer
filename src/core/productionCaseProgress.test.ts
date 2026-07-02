@@ -51,7 +51,7 @@ const improvementHintMissions = [
   {
     id: "mission-a",
     phase: "screenplay",
-    title: "Manusvalg",
+    title: "Script choices",
     choices: [
       { id: "a-match", quality: "match" },
       { id: "a-partial", quality: "partial" },
@@ -61,7 +61,7 @@ const improvementHintMissions = [
   {
     id: "mission-b",
     phase: "editing",
-    title: "Klipperytme",
+    title: "Cutting rhythm",
     choices: [
       { id: "b-match", quality: "match" },
       { id: "b-partial", quality: "partial" },
@@ -71,7 +71,7 @@ const improvementHintMissions = [
   {
     id: "mission-c",
     phase: "sound",
-    title: "Lydverden",
+    title: "Sound world",
     choices: [
       { id: "c-match", quality: "match" },
       { id: "c-partial", quality: "partial" },
@@ -139,7 +139,7 @@ function createProductionCaseReport(overrides: Partial<NonNullable<ReturnType<ty
     })),
     weakPhases: [],
     improvementHint: undefined,
-    learningSummary: "Du forstår flere sentrale produksjonsvalg.",
+    learningSummary: "You understand several key production choices.",
     ...overrides,
   };
 }
@@ -479,7 +479,7 @@ test("production case library result summary reports default counts without acti
 
   assert.equal(summary.visibleCount, 161);
   assert.equal(summary.totalCount, 161);
-  assert.equal(summary.label, "Viser 161 av 161 production cases");
+  assert.equal(summary.label, "Showing 161 of 161 production cases");
   assert.deepEqual(summary.activeControlLabels, []);
 });
 
@@ -495,11 +495,11 @@ test("production case library result summary lists only non-default controls", (
     },
   });
 
-  assert.equal(summary.label, "Viser 12 av 161 production cases");
-  assert.deepEqual(summary.activeControlLabels, ["Søk: taxi", "Sorter: Beste score lavest"]);
-  assert.ok(!summary.activeControlLabels.includes("Case-status: Alle"));
-  assert.ok(!summary.activeControlLabels.includes("Mastery: Alle"));
-  assert.ok(!summary.activeControlLabels.includes("Sorter: Standard"));
+  assert.equal(summary.label, "Showing 12 of 161 production cases");
+  assert.deepEqual(summary.activeControlLabels, ["Search: taxi", "Sort: Best score lowest"]);
+  assert.ok(!summary.activeControlLabels.includes("Case-status: All"));
+  assert.ok(!summary.activeControlLabels.includes("Mastery: All"));
+  assert.ok(!summary.activeControlLabels.includes("Sort: Default"));
 });
 
 test("production case library result summary labels status and mastery filters", () => {
@@ -514,7 +514,7 @@ test("production case library result summary labels status and mastery filters",
     },
   });
 
-  assert.deepEqual(summary.activeControlLabels, ["Case-status: Under arbeid", "Mastery: Kan forbedres"]);
+  assert.deepEqual(summary.activeControlLabels, ["Case-status: In progress", "Mastery: Can be improved"]);
 });
 
 test("production case library result summary uses empty-result label", () => {
@@ -524,8 +524,8 @@ test("production case library result summary uses empty-result label", () => {
     controls: { ...defaultProductionCaseLibraryControls, searchQuery: "zzzz" },
   });
 
-  assert.equal(summary.label, "Ingen production cases matcher søket eller filtrene");
-  assert.deepEqual(summary.activeControlLabels, ["Søk: zzzz"]);
+  assert.equal(summary.label, "No production cases match the search or filters");
+  assert.deepEqual(summary.activeControlLabels, ["Search: zzzz"]);
 });
 
 test("production case library result summary reset removes active controls", () => {
@@ -593,9 +593,9 @@ test("FilmScenarioLibrary exposes recent best results helper and section copy", 
   assert.match(uiSource, /\.sort\(\(left, right\) => getRecentBestResultSortTimestamp\(right\) - getRecentBestResultSortTimestamp\(left\)\)/);
   assert.match(uiSource, /\.slice\(0, limit\)/);
   assert.match(uiSource, /productionCaseScenarios\.get\(bestResult\.scenarioId\)/);
-  assert.match(uiSource, /Siste beste resultater/);
-  assert.match(uiSource, /Ingen beste resultater ennå\./);
-  assert.match(uiSource, /Åpne case/);
+  assert.match(uiSource, /Recent best results/);
+  assert.match(uiSource, /No best results yet\./);
+  assert.match(uiSource, /Open case/);
   assert.match(uiSource, /bestTierLabel: productionCaseResultTierLabels\[bestResult\.bestTier\]/);
   assert.match(uiSource, /\{item\.bestTierLabel\} · \{item\.bestScore\}\/\{item\.maxScore\}/);
   assert.match(uiSource, /onOpenScenario\?\.\(item\.scenarioId\)/);
@@ -607,12 +607,12 @@ test("production case MVP loop core UI copy is preserved", () => {
   const briefPanelSource = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
   const copy = [librarySource, briefPanelSource].join("\n");
 
-  assert.match(copy, /Neste fase/);
-  assert.match(copy, /Neste nivå/);
+  assert.match(copy, /Next phase/);
+  assert.match(copy, /Next tier/);
   assert.match(copy, /Case report/);
-  assert.match(copy, /Siste beste resultater/);
+  assert.match(copy, /Recent best results/);
   assert.match(copy, /Progress backup/);
-  assert.match(copy, /Gå til fase/);
+  assert.match(copy, /Go to phase/);
   assert.match(librarySource, /production-case-dashboard/);
   assert.doesNotMatch(copy.toLowerCase(), /inspired by|in the spirit of|create your own version|lag en ny film/);
 });
@@ -622,36 +622,36 @@ test("FilmScenarioLibrary initializes from persisted controls and exposes reset 
 
   assert.match(uiSource, /readProductionCaseLibraryControls\(window\.localStorage\)/);
   assert.match(uiSource, /writeProductionCaseLibraryControls\(window\.localStorage, \{ caseStatusFilter, masteryFilter, sortMode, searchQuery \}\)/);
-  assert.match(uiSource, /Nullstill filtre/);
+  assert.match(uiSource, /Reset filters/);
   assert.match(uiSource, /Progress backup/);
-  assert.match(uiSource, /Lagre eller gjenopprett lokal production-case progress\./);
+  assert.match(uiSource, /Save or restore local production-case progress\./);
   assert.match(uiSource, /<details className="scenario-backup-panel">/);
-  assert.match(uiSource, /Eksporter progress/);
-  assert.match(uiSource, /Progress eksportert/);
-  assert.match(uiSource, /Progress klar til kopiering/);
+  assert.match(uiSource, /Export progress/);
+  assert.match(uiSource, /Progress exported/);
+  assert.match(uiSource, /Progress ready to copy/);
   assert.match(uiSource, /createProductionCaseProgressExport\(window\.localStorage\)/);
   assert.match(uiSource, /hg-film-production-case-progress\.json/);
   assert.match(uiSource, /getProductionCaseLibraryResultSummary/);
   assert.match(uiSource, /scenario-result-summary/);
-  assert.match(uiSource, /Ingen aktive filtre/);
+  assert.match(uiSource, /No active filters/);
   assert.match(uiSource, /setCaseStatusFilter\(defaultProductionCaseLibraryControls\.caseStatusFilter\)/);
   assert.match(uiSource, /setMasteryFilter\(defaultProductionCaseLibraryControls\.masteryFilter\)/);
   assert.match(uiSource, /setSortMode\(defaultProductionCaseLibraryControls\.sortMode\)/);
   assert.match(uiSource, /setSearchQuery\(defaultProductionCaseLibraryControls\.searchQuery\)/);
-  assert.match(uiSource, /Søk film, år eller case/);
-  assert.match(uiSource, /Importer progress/);
-  assert.match(uiSource, /Import overskriver lokal production-case progress/);
+  assert.match(uiSource, /Search film, year, or case/);
+  assert.match(uiSource, /Import progress/);
+  assert.match(uiSource, /Importing overwrites local production-case progress/);
   assert.match(uiSource, /previewProductionCaseProgressBackup\(importJson\)/);
-  assert.match(uiSource, /Backup funnet/);
-  assert.match(uiSource, /Eksportert: /);
+  assert.match(uiSource, /Backup found/);
+  assert.match(uiSource, /Exported: /);
   assert.match(uiSource, /Current progress: /);
-  assert.match(uiSource, /Beste resultater: /);
+  assert.match(uiSource, /Best results: /);
   assert.match(uiSource, /Library controls: /);
-  assert.match(uiSource, /Backup kan ikke leses/);
+  assert.match(uiSource, /Backup can't be read/);
   assert.match(uiSource, /disabled=\{!importJson\.trim\(\) \|\| importPreview\?\.ok === false\}/);
-  assert.match(uiSource, /Bekreft import/);
-  assert.match(uiSource, /Progress importert/);
-  assert.match(uiSource, /Kunne ikke importere progress/);
+  assert.match(uiSource, /Confirm import/);
+  assert.match(uiSource, /Progress imported/);
+  assert.match(uiSource, /Could not import progress/);
   assert.match(uiSource, /importProductionCaseProgressBackup\(importJson, window\.localStorage\)/);
 });
 
@@ -809,10 +809,10 @@ test("production case next phase action recommends missing choice first", () => 
   assert.deepEqual(action, {
     missionId: "mission-a",
     phase: "screenplay",
-    title: "Manusvalg",
+    title: "Script choices",
     actionType: "choose",
-    label: "Velg produksjonsgrep",
-    description: "Velg et produksjonsgrep før du fullfører fasen.",
+    label: "Choose a production approach",
+    description: "Choose a production approach before completing this phase.",
   });
 });
 
@@ -829,10 +829,10 @@ test("production case next phase action recommends completing a selected unfinis
   assert.deepEqual(action, {
     missionId: "mission-b",
     phase: "editing",
-    title: "Klipperytme",
+    title: "Cutting rhythm",
     actionType: "complete",
-    label: "Fullfør fase",
-    description: "Marker fasen som fullført når produksjonsgrepet er valgt.",
+    label: "Complete phase",
+    description: "Mark the phase complete once you've chosen a production approach.",
   });
 });
 
@@ -849,10 +849,10 @@ test("production case next phase action recommends improving the first weak comp
   assert.deepEqual(action, {
     missionId: "mission-b",
     phase: "editing",
-    title: "Klipperytme",
+    title: "Cutting rhythm",
     actionType: "improve",
-    label: "Forbedre fase",
-    description: "Spiss produksjonsgrepet for å løfte case-scoren.",
+    label: "Improve phase",
+    description: "Sharpen the production approach to raise the case score.",
   });
 });
 
@@ -877,16 +877,16 @@ test("ScenarioProductionBriefPanel shows compact next tier target and preserves 
   const styleSource = readFileSync("src/ui/styles.css", "utf8");
 
   assert.match(uiSource, /getProductionCaseTierTarget\(caseScore, completedCount\)/);
-  assert.match(uiSource, /aria-label="Neste nivå"/);
+  assert.match(uiSource, /aria-label="Next tier"/);
   assert.match(uiSource, /getProductionCaseBestResultFeedback\(completedCaseReport, bestResult\)/);
-  assert.match(uiSource, /Ny beste resultat-feedback/);
+  assert.match(uiSource, /New best result feedback/);
   assert.match(uiSource, /feedback\.label/);
   assert.match(uiSource, /feedback\.description/);
   assert.match(uiSource, /tierTarget\.label/);
   assert.match(uiSource, /tierTarget\.description/);
   assert.match(uiSource, /Case report/);
   assert.match(uiSource, /completedCaseReport \? <ProductionCaseReportBox/);
-  assert.match(uiSource, /Neste fase/);
+  assert.match(uiSource, /Next phase/);
   assert.match(styleSource, /scenario-production-tier-target/);
 });
 
@@ -911,8 +911,8 @@ test("ScenarioProductionBriefPanel exposes clickable improvement hint mission fo
   assert.match(uiSource, /id=\{getProductionCaseMissionElementId\(mission\.id\)\}/);
   assert.match(uiSource, /production-case-mission-\$\{missionId\}/);
   assert.match(uiSource, /tabIndex=\{-1\}/);
-  assert.match(uiSource, /Gå til fase/);
-  assert.match(uiSource, /Neste fase/);
+  assert.match(uiSource, /Go to phase/);
+  assert.match(uiSource, /Next phase/);
   assert.match(uiSource, /getProductionCaseNextPhaseAction\(missions, progressEntry\)/);
   assert.match(uiSource, /onClick=\{\(\) => onFocusMission\(action\.missionId\)\}/);
   assert.match(uiSource, /onClick=\{\(\) => onFocusMission\(hint\.missionId\)\}/);
@@ -926,12 +926,12 @@ test("ScenarioProductionBriefPanel exposes clickable improvement hint mission fo
 test("ScenarioProductionBriefPanel focus helper copy avoids forbidden language", () => {
   const uiSource = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8").toLowerCase();
   const focusCopy = [
-    "Gå til fase",
-    "Forbedre neste",
-    "Neste fase",
-    "Velg produksjonsgrep",
-    "Fullfør fase",
-    "Forbedre fase",
+    "Go to phase",
+    "Improve next",
+    "Next phase",
+    "Choose a production approach",
+    "Complete phase",
+    "Improve phase",
     uiSource,
   ].join(" ");
 
@@ -963,12 +963,12 @@ test("production case improvement hint recommends choosing an unselected mission
   assert.deepEqual(hint, {
     missionId: "mission-b",
     phase: "editing",
-    title: "Klipperytme",
+    title: "Cutting rhythm",
     currentScore: 0,
     maxScore: 2,
     hintType: "choose",
-    label: "Velg produksjonsgrep",
-    description: "Denne fasen mangler et valgt produksjonsgrep.",
+    label: "Choose a production approach",
+    description: "This phase is missing a chosen production approach.",
   });
 });
 
@@ -982,10 +982,10 @@ test("production case improvement hint recommends rethinking misses before parti
   });
 
   assert.equal(hint?.hintType, "rethink");
-  assert.equal(hint?.label, "Revurder fasen");
+  assert.equal(hint?.label, "Reconsider this phase");
   assert.equal(hint?.missionId, "mission-b");
   assert.equal(hint?.phase, "editing");
-  assert.equal(hint?.title, "Klipperytme");
+  assert.equal(hint?.title, "Cutting rhythm");
   assert.equal(hint?.currentScore, 0);
 });
 
@@ -999,7 +999,7 @@ test("production case improvement hint recommends sharpening partial choices", (
   });
 
   assert.equal(hint?.hintType, "sharpen");
-  assert.equal(hint?.label, "Spiss valget");
+  assert.equal(hint?.label, "Sharpen your choice");
   assert.equal(hint?.missionId, "mission-b");
   assert.equal(hint?.currentScore, 1);
 });
@@ -1012,7 +1012,7 @@ test("production case improvement hint copy avoids forbidden language", () => {
       "mission-c": "c-match",
     },
   });
-  const copy = [hint?.label, hint?.description, "Forbedre neste"].join(" ").toLowerCase();
+  const copy = [hint?.label, hint?.description, "Improve next"].join(" ").toLowerCase();
 
   assert.ok(!copy.includes("inspired by"));
   assert.ok(!copy.includes("in the spirit of"));
@@ -1027,44 +1027,44 @@ test("production case report summarizes score, matches, weak phases, and improve
     {
       id: "mission-a",
       phase: "screenplay",
-      title: "Manusvalg",
+      title: "Script choices",
       choices: [
-        { id: "a-match", label: "Presist manusgrep", quality: "match" },
-        { id: "a-partial", label: "Delvis manusgrep", quality: "partial" },
+        { id: "a-match", label: "Precise script approach", quality: "match" },
+        { id: "a-partial", label: "Partial script approach", quality: "partial" },
       ],
     },
     {
       id: "mission-b",
       phase: "cinematography",
-      title: "Fotovalg",
+      title: "Photography choices",
       choices: [
-        { id: "b-miss", label: "Feil fotogrep", quality: "miss" },
-        { id: "b-match", label: "Presist fotogrep", quality: "match" },
+        { id: "b-miss", label: "Wrong photography approach", quality: "miss" },
+        { id: "b-match", label: "Precise photography approach", quality: "match" },
       ],
     },
     {
       id: "mission-c",
       phase: "editing",
-      title: "Klippvalg",
+      title: "Editing choices",
       choices: [
-        { id: "c-partial", label: "Delvis klippgrep", quality: "partial" },
-        { id: "c-match", label: "Presist klippgrep", quality: "match" },
+        { id: "c-partial", label: "Partial editing approach", quality: "partial" },
+        { id: "c-match", label: "Precise editing approach", quality: "match" },
       ],
     },
     {
       id: "mission-d",
       phase: "sound",
-      title: "Lydvalg",
+      title: "Sound choices",
       choices: [
-        { id: "d-match", label: "Presist lydgrep", quality: "match" },
+        { id: "d-match", label: "Precise sound approach", quality: "match" },
       ],
     },
     {
       id: "mission-e",
       phase: "reflection",
-      title: "Refleksjon",
+      title: "Reflection",
       choices: [
-        { id: "e-miss", label: "Feil refleksjon", quality: "miss" },
+        { id: "e-miss", label: "Wrong reflection", quality: "miss" },
       ],
     },
   ] as const;
@@ -1087,8 +1087,8 @@ test("production case report summarizes score, matches, weak phases, and improve
   assert.deepEqual(report?.matchedPhases, [{
     missionId: "mission-a",
     phase: "screenplay",
-    title: "Manusvalg",
-    selectedChoiceLabel: "Presist manusgrep",
+    title: "Script choices",
+    selectedChoiceLabel: "Precise script approach",
   }]);
   assert.deepEqual(report?.weakPhases.map((phase) => phase.weakness), ["miss", "miss", "partial"]);
   assert.equal(report?.weakPhases.length, 3);
@@ -1122,7 +1122,7 @@ test("production case report learning summary changes for low, medium, and high 
 
   assert.notEqual(low?.learningSummary, medium?.learningSummary);
   assert.notEqual(medium?.learningSummary, high?.learningSummary);
-  assert.match(high?.learningSummary ?? "", /produksjonslogikk/);
+  assert.match(high?.learningSummary ?? "", /production logic/);
 });
 
 test("production case report copy avoids forbidden language", () => {
@@ -1132,10 +1132,10 @@ test("production case report copy avoids forbidden language", () => {
   })), { completedMissionIds: [] });
   const copy = [
     "Case report",
-    "Case report under arbeid",
-    "Sterkeste treff",
-    "Bør forbedres",
-    "Ingen svake faser registrert",
+    "Case report in progress",
+    "Strongest matches",
+    "Could improve",
+    "No weak phases recorded",
     report?.learningSummary,
     report?.improvementHint?.description,
   ].join(" ").toLowerCase();
@@ -1230,7 +1230,7 @@ test("production case scoring helpers avoid forbidden copy", () => {
     getProductionCaseMissionScore.name,
     getProductionCaseScoreSummary.name,
     "Case-score",
-    "Fase-score",
+    "Phase score",
   ].join(" ").toLowerCase();
 
   assert.ok(!helperSource.includes("inspired by"));
@@ -1244,22 +1244,22 @@ test("production case tier target shows assistant target for not started and in 
   const inProgress = getProductionCaseTierTarget({ score: 8, maxScore: 12 }, 3);
 
   assert.equal(notStarted?.currentTier, "not_started");
-  assert.equal(notStarted?.label, "Neste nivå: Assistent");
-  assert.equal(notStarted?.description, "Fullfør fasene og øk Case-score.");
+  assert.equal(notStarted?.label, "Next tier: Assistant");
+  assert.equal(notStarted?.description, "Complete the phases and raise the case score.");
   assert.equal(inProgress?.currentTier, "in_progress");
-  assert.equal(inProgress?.label, "Neste nivå: Assistent");
+  assert.equal(inProgress?.label, "Next tier: Assistant");
 });
 
 test("production case tier target advances assistant to producer with threshold points", () => {
   const target = getProductionCaseTierTarget({ score: 4, maxScore: 12 }, 6);
 
   assert.equal(target?.currentTier, "assistant");
-  assert.equal(target?.currentTierLabel, "Assistent");
+  assert.equal(target?.currentTierLabel, "Assistant");
   assert.equal(target?.nextTier, "producer");
-  assert.equal(target?.nextTierLabel, "Produsent");
+  assert.equal(target?.nextTierLabel, "Producer");
   assert.equal(target?.pointsNeeded, 2);
-  assert.equal(target?.label, "Neste nivå: Produsent");
-  assert.equal(target?.description, "Mangler 2 poeng.");
+  assert.equal(target?.label, "Next tier: Producer");
+  assert.equal(target?.description, "2 points needed.");
 });
 
 test("production case tier target advances producer to auteur with threshold points", () => {
@@ -1268,8 +1268,8 @@ test("production case tier target advances producer to auteur with threshold poi
   assert.equal(target?.currentTier, "producer");
   assert.equal(target?.nextTier, "auteur");
   assert.equal(target?.pointsNeeded, 3);
-  assert.equal(target?.label, "Neste nivå: Auteur");
-  assert.equal(target?.description, "Mangler 3 poeng.");
+  assert.equal(target?.label, "Next tier: Auteur");
+  assert.equal(target?.description, "3 points needed.");
 });
 
 test("production case tier target marks auteur as max tier", () => {
@@ -1280,8 +1280,8 @@ test("production case tier target marks auteur as max tier", () => {
   assert.equal(target?.nextTierLabel, undefined);
   assert.equal(target?.pointsNeeded, 0);
   assert.equal(target?.isMaxTier, true);
-  assert.equal(target?.label, "Maks nivå nådd");
-  assert.equal(target?.description, "Dette caset er fullført på høyeste nivå.");
+  assert.equal(target?.label, "Maximum tier reached");
+  assert.equal(target?.description, "This case is complete at the highest tier.");
 });
 
 test("production case tier target is undefined for missing score or seed fallback", () => {
@@ -1342,23 +1342,23 @@ test("seed fallback without production case missions gets no result tier", () =>
 test("production case result tier helper avoids forbidden copy", () => {
   const helperSource = [
     getProductionCaseResultTier.name,
-    "Resultat",
-    "Assistent",
-    "Produsent",
+    "Result",
+    "Assistant",
+    "Producer",
     "Auteur",
-    "produksjonslogikk",
-    "produksjonsvalg",
+    "production logic",
+    "production choices",
   ].join(" ").toLowerCase();
 
   assert.ok(!helperSource.includes("inspired by"));
   assert.ok(!helperSource.includes("in the spirit of"));
 });
 
-test("library status shows Ikke startet at 0/6 phases", () => {
+test("library status shows Not started at 0/6 phases", () => {
   assert.deepEqual(
     getProductionCaseLibraryStatus(libraryStatusMissions, { completedMissionIds: [] }),
     {
-      label: "Ikke startet",
+      label: "Not started",
       tier: "not_started",
       completedCount: 0,
       missionCount: 6,
@@ -1366,17 +1366,17 @@ test("library status shows Ikke startet at 0/6 phases", () => {
   );
 });
 
-test("library status shows Under arbeid with partial phase completion", () => {
+test("library status shows In progress with partial phase completion", () => {
   const status = getProductionCaseLibraryStatus(libraryStatusMissions, {
     completedMissionIds: ["mission-1", "mission-2", "mission-3"],
   });
 
-  assert.equal(status?.label, "Under arbeid");
+  assert.equal(status?.label, "In progress");
   assert.equal(status?.tier, "in_progress");
-  assert.equal(`${status?.completedCount}/${status?.missionCount} faser`, "3/6 faser");
+  assert.equal(`${status?.completedCount}/${status?.missionCount} phases`, "3/6 phases");
 });
 
-test("library status shows Assistent, Produsent, and Auteur for completed cases", () => {
+test("library status shows Assistant, Producer, and Auteur for completed cases", () => {
   const completedMissionIds = libraryStatusMissions.map((mission) => mission.id);
 
   assert.equal(
@@ -1384,14 +1384,14 @@ test("library status shows Assistent, Produsent, and Auteur for completed cases"
       completedMissionIds,
       selectedChoicesByMissionId: Object.fromEntries(libraryStatusMissions.map((mission, index) => [mission.id, `choice-${index + 1}-miss`])),
     })?.label,
-    "Assistent",
+    "Assistant",
   );
   assert.equal(
     getProductionCaseLibraryStatus(libraryStatusMissions, {
       completedMissionIds,
       selectedChoicesByMissionId: Object.fromEntries(libraryStatusMissions.map((mission, index) => [mission.id, `choice-${index + 1}-partial`])),
     })?.label,
-    "Produsent",
+    "Producer",
   );
   assert.equal(
     getProductionCaseLibraryStatus(libraryStatusMissions, {
@@ -1402,14 +1402,14 @@ test("library status shows Assistent, Produsent, and Auteur for completed cases"
   );
 });
 
-test("library status shows 6/6 faser and Case-score when choices exist", () => {
+test("library status shows 6/6 phases and Case-score when choices exist", () => {
   const completedMissionIds = libraryStatusMissions.map((mission) => mission.id);
   const status = getProductionCaseLibraryStatus(libraryStatusMissions, {
     completedMissionIds,
     selectedChoicesByMissionId: Object.fromEntries(libraryStatusMissions.map((mission, index) => [mission.id, `choice-${index + 1}-partial`])),
   });
 
-  assert.equal(`${status?.completedCount}/${status?.missionCount} faser`, "6/6 faser");
+  assert.equal(`${status?.completedCount}/${status?.missionCount} phases`, "6/6 phases");
   assert.equal(`Case-score: ${status?.score?.score}/${status?.score?.maxScore}`, "Case-score: 6/12");
 });
 
@@ -1505,28 +1505,28 @@ test("production case career summary and achievements survive current-progress r
   assert.equal(storage.getItem(productionCaseProgressStorageKey), null);
   assert.equal(careerSummary.completedBestCount, 1);
   assert.equal(careerSummary.auteurBestCount, 1);
-  assert.equal(achievementByLabel(careerSummary, "Første case").unlocked, true);
-  assert.equal(achievementByLabel(careerSummary, "Første Auteur").unlocked, true);
+  assert.equal(achievementByLabel(careerSummary, "First case").unlocked, true);
+  assert.equal(achievementByLabel(careerSummary, "First Auteur").unlocked, true);
 });
 
 test("production case achievements unlock from career best-results thresholds", () => {
   const emptyAchievements = getProductionCaseAchievements(createCareerSummary());
 
   assert.equal(emptyAchievements.length, 8);
-  assert.equal(achievementByLabel(createCareerSummary(), "Første case").unlocked, false);
-  assert.equal(achievementByLabel(createCareerSummary(), "Første case").progressLabel, "0/1");
-  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 1 }), "Første case").unlocked, true);
-  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 1 }), "Første case").progressLabel, "1/1");
-  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 3 }), "Fem cases").progressLabel, "3/5");
-  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 5 }), "Fem cases").unlocked, true);
-  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 10 }), "Ti cases").unlocked, true);
-  assert.equal(achievementByLabel(createCareerSummary({ producerBestCount: 1 }), "Første Produsent").unlocked, true);
-  assert.equal(achievementByLabel(createCareerSummary({ auteurBestCount: 1 }), "Første Produsent").unlocked, true);
-  assert.equal(achievementByLabel(createCareerSummary({ auteurBestCount: 1 }), "Første Auteur").unlocked, true);
-  assert.equal(achievementByLabel(createCareerSummary({ auteurBestCount: 5 }), "Auteur-serie").unlocked, true);
-  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 12 }), "Halv katalog").progressLabel, "12/80");
-  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 80 }), "Halv katalog").unlocked, true);
-  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 161 }), "Hele katalogen").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary(), "First case").unlocked, false);
+  assert.equal(achievementByLabel(createCareerSummary(), "First case").progressLabel, "0/1");
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 1 }), "First case").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 1 }), "First case").progressLabel, "1/1");
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 3 }), "Five cases").progressLabel, "3/5");
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 5 }), "Five cases").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 10 }), "Ten cases").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ producerBestCount: 1 }), "First Producer").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ auteurBestCount: 1 }), "First Producer").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ auteurBestCount: 1 }), "First Auteur").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ auteurBestCount: 5 }), "Auteur streak").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 12 }), "Half the catalogue").progressLabel, "12/80");
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 80 }), "Half the catalogue").unlocked, true);
+  assert.equal(achievementByLabel(createCareerSummary({ completedBestCount: 161 }), "The whole catalogue").unlocked, true);
 });
 
 test("production case achievement copy avoids forbidden language", () => {
@@ -1644,21 +1644,21 @@ test("production case library sorting orders filtered cards", () => {
 test("production case mastery filter UI copy and empty state avoid forbidden language", () => {
   const copy = [
     "Mastery",
-    "Alle",
-    "Ikke fullført best",
-    "Assistent",
-    "Produsent",
+    "All",
+    "No best result yet",
+    "Assistant",
+    "Producer",
     "Auteur",
-    "Kan forbedres",
-    "Ingen production cases matcher søket eller filtrene.",
-    "Søk",
-    "Søk film, år eller case",
-    "Sorter",
-    "Standard",
-    "Tittel A–Å",
-    "Beste score høyest",
-    "Beste score lavest",
-    "Nylig beste resultat",
+    "Can be improved",
+    "No production cases match the search or filters.",
+    "Search",
+    "Search film, year, or case",
+    "Sort",
+    "Default",
+    "Title A-Z",
+    "Best score highest",
+    "Best score lowest",
+    "Recently improved",
   ].join(" ").toLowerCase();
 
   assert.ok(!copy.includes("inspired by"));
@@ -1668,15 +1668,15 @@ test("production case mastery filter UI copy and empty state avoid forbidden lan
 test("library status copy avoids forbidden language", () => {
   const copy = [
     "Case-status",
-    "Ikke startet",
-    "Under arbeid",
-    "Fullført",
-    "Assistent",
-    "Produsent",
+    "Not started",
+    "In progress",
+    "Completed",
+    "Assistant",
+    "Producer",
     "Auteur",
     "Case-score",
     "Production cases",
-    "Samlet Case-score",
+    "Combined Case-score",
   ].join(" ").toLowerCase();
 
   assert.ok(!copy.includes("inspired by"));
@@ -1685,50 +1685,50 @@ test("library status copy avoids forbidden language", () => {
 
 test("production case next action prioritizes in-progress cases first", () => {
   const nextAction = getProductionCaseNextAction([
-    { scenarioId: "scenario-a", title: "A", label: "Ikke startet", tier: "not_started", completedCount: 0, missionCount: 6 },
-    { scenarioId: "scenario-b", title: "Taxi Driver", label: "Under arbeid", tier: "in_progress", completedCount: 3, missionCount: 6, score: { score: 5, maxScore: 12 } },
-    { scenarioId: "scenario-c", title: "C", label: "Assistent", tier: "assistant", completedCount: 6, missionCount: 6, score: { score: 4, maxScore: 12 } },
+    { scenarioId: "scenario-a", title: "A", label: "Not started", tier: "not_started", completedCount: 0, missionCount: 6 },
+    { scenarioId: "scenario-b", title: "Taxi Driver", label: "In progress", tier: "in_progress", completedCount: 3, missionCount: 6, score: { score: 5, maxScore: 12 } },
+    { scenarioId: "scenario-c", title: "C", label: "Assistant", tier: "assistant", completedCount: 6, missionCount: 6, score: { score: 4, maxScore: 12 } },
   ]);
 
   assert.deepEqual(nextAction, {
     scenarioId: "scenario-b",
     title: "Taxi Driver",
     actionType: "continue",
-    label: "Fortsett case",
-    description: "3/6 faser fullført · Case-score 5/12",
+    label: "Continue case",
+    description: "3/6 phases complete · Case-score 5/12",
   });
 });
 
 test("production case next action recommends assistant result improvement when no case is in progress", () => {
   const nextAction = getProductionCaseNextAction([
-    { scenarioId: "scenario-a", title: "A", label: "Ikke startet", tier: "not_started", completedCount: 0, missionCount: 6 },
-    { scenarioId: "scenario-b", title: "B", label: "Assistent", tier: "assistant", completedCount: 6, missionCount: 6, score: { score: 5, maxScore: 12 } },
+    { scenarioId: "scenario-a", title: "A", label: "Not started", tier: "not_started", completedCount: 0, missionCount: 6 },
+    { scenarioId: "scenario-b", title: "B", label: "Assistant", tier: "assistant", completedCount: 6, missionCount: 6, score: { score: 5, maxScore: 12 } },
   ]);
 
   assert.equal(nextAction?.actionType, "improve");
-  assert.equal(nextAction?.label, "Forbedre resultat");
+  assert.equal(nextAction?.label, "Improve result");
   assert.equal(nextAction?.scenarioId, "scenario-b");
 });
 
 test("production case next action recommends first not-started case when there is no progress or assistant result", () => {
   const nextAction = getProductionCaseNextAction([
-    { scenarioId: "scenario-a", title: "A", label: "Produsent", tier: "producer", completedCount: 6, missionCount: 6, score: { score: 8, maxScore: 12 } },
-    { scenarioId: "scenario-b", title: "B", label: "Ikke startet", tier: "not_started", completedCount: 0, missionCount: 6 },
+    { scenarioId: "scenario-a", title: "A", label: "Producer", tier: "producer", completedCount: 6, missionCount: 6, score: { score: 8, maxScore: 12 } },
+    { scenarioId: "scenario-b", title: "B", label: "Not started", tier: "not_started", completedCount: 0, missionCount: 6 },
   ]);
 
   assert.equal(nextAction?.actionType, "start");
-  assert.equal(nextAction?.label, "Start nytt case");
+  assert.equal(nextAction?.label, "Start new case");
   assert.equal(nextAction?.scenarioId, "scenario-b");
 });
 
 test("production case next action recommends producer mastery when all cases are completed but not all are auteur", () => {
   const nextAction = getProductionCaseNextAction([
     { scenarioId: "scenario-a", title: "A", label: "Auteur", tier: "auteur", completedCount: 6, missionCount: 6, score: { score: 12, maxScore: 12 } },
-    { scenarioId: "scenario-b", title: "B", label: "Produsent", tier: "producer", completedCount: 6, missionCount: 6, score: { score: 8, maxScore: 12 } },
+    { scenarioId: "scenario-b", title: "B", label: "Producer", tier: "producer", completedCount: 6, missionCount: 6, score: { score: 8, maxScore: 12 } },
   ]);
 
   assert.equal(nextAction?.actionType, "master");
-  assert.equal(nextAction?.label, "Jakt Auteur");
+  assert.equal(nextAction?.label, "Chase Auteur");
   assert.equal(nextAction?.scenarioId, "scenario-b");
 });
 
@@ -1741,8 +1741,8 @@ test("production case next action reports catalogue completion when all cases ar
     scenarioId: "scenario-a",
     title: "A",
     actionType: "complete",
-    label: "Katalog mestret",
-    description: "Alle production cases er fullført på høyeste nivå.",
+    label: "Catalogue mastered",
+    description: "All production cases are complete at the highest tier.",
   });
 });
 
@@ -1751,13 +1751,13 @@ test("production case next action excludes seed fallback and avoids forbidden la
   assert.equal(nextAction, undefined);
 
   const copy = [
-    "Neste handling",
-    "Fortsett case",
-    "Forbedre resultat",
-    "Start nytt case",
-    "Jakt Auteur",
-    "Katalog mestret",
-    "Åpne case",
+    "Next action",
+    "Continue case",
+    "Improve result",
+    "Start new case",
+    "Chase Auteur",
+    "Catalogue mastered",
+    "Open case",
   ].join(" ").toLowerCase();
 
   assert.ok(!copy.includes("inspired by"));
@@ -1768,8 +1768,8 @@ test("best result feedback returns first_best for first completed case", () => {
   const feedback = getProductionCaseBestResultFeedback(createProductionCaseReport(), undefined);
 
   assert.equal(feedback?.feedbackType, "first_best");
-  assert.equal(feedback?.label, "Første beste resultat");
-  assert.equal(feedback?.description, "Dette er nå ditt beste lagrede resultat for caset.");
+  assert.equal(feedback?.label, "First best result");
+  assert.equal(feedback?.description, "This is now your best saved result for this case.");
   assert.equal(feedback?.newScore, 8);
   assert.equal(feedback?.previousScore, undefined);
 });
@@ -1779,8 +1779,8 @@ test("best result feedback returns score_improved for higher score", () => {
   const feedback = getProductionCaseBestResultFeedback(createProductionCaseReport({ score: 10, resultTier: "producer" }), previous);
 
   assert.equal(feedback?.feedbackType, "score_improved");
-  assert.equal(feedback?.label, "Ny beste score");
-  assert.equal(feedback?.description, "Du forbedret caset med 2 poeng.");
+  assert.equal(feedback?.label, "New best score");
+  assert.equal(feedback?.description, "You improved this case by 2 points.");
   assert.equal(feedback?.scoreDelta, 2);
 });
 
@@ -1789,8 +1789,8 @@ test("best result feedback returns tier_improved for higher tier", () => {
   const feedback = getProductionCaseBestResultFeedback(createProductionCaseReport({ score: 10, resultTier: "auteur" }), previous);
 
   assert.equal(feedback?.feedbackType, "tier_improved");
-  assert.equal(feedback?.label, "Nytt nivå");
-  assert.equal(feedback?.description, "Du løftet caset fra Produsent til Auteur.");
+  assert.equal(feedback?.label, "New tier");
+  assert.equal(feedback?.description, "You raised this case from Producer to Auteur.");
   assert.equal(feedback?.tierImproved, true);
 });
 
@@ -1799,8 +1799,8 @@ test("best result feedback returns maxed for Auteur max score", () => {
   const feedback = getProductionCaseBestResultFeedback(createProductionCaseReport({ score: 12, resultTier: "auteur" }), previous);
 
   assert.equal(feedback?.feedbackType, "maxed");
-  assert.equal(feedback?.label, "Maks resultat");
-  assert.equal(feedback?.description, "Dette caset er fullført med maks score.");
+  assert.equal(feedback?.label, "Maximum result");
+  assert.equal(feedback?.description, "This case is complete with the maximum score.");
 });
 
 test("best result feedback is undefined when current result does not beat previous best", () => {
@@ -1906,10 +1906,10 @@ test("best-result helpers and UI copy avoid banned phrasing", () => {
   const helperCopy = [
     productionCaseBestResultsStorageKey,
   productionCaseLibraryControlsStorageKey,
-    "Beste resultat",
-    "Beste",
-    "Assistent",
-    "Produsent",
+    "Best result",
+    "Best",
+    "Assistant",
+    "Producer",
     "Auteur",
   ].join(" ").toLowerCase();
 

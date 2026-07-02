@@ -76,7 +76,7 @@ function createProductionCasePhaseGuidance(
   return [
     {
       phase: "development",
-      title: "Case orientation + manusvalg",
+      title: "Case orientation + script choices",
       description: joinMissionPrompts(
         missions,
         "case_orientation",
@@ -86,26 +86,26 @@ function createProductionCasePhaseGuidance(
     },
     {
       phase: "pre_production",
-      title: "Visuelt system",
+      title: "Visual system",
       description: getMissionPrompt(missions, "cinematography"),
       targets: getMissionTargets(missions, "cinematography"),
     },
     {
       phase: "shoot",
-      title: "Bilde og lyd på opptak",
+      title: "Image and sound on set",
       description:
-        "Identifiser produksjonsvalgene bak scenene mens foto og lyd bindes til filmens konkrete uttrykk.",
+        "Identify the production choices behind the scenes as photography and sound tie into the film's concrete expression.",
       targets: getMissionTargets(missions, "cinematography", "sound"),
     },
     {
       phase: "post_production",
-      title: "Klipperytme + lydverden",
+      title: "Cutting rhythm + sound world",
       description: joinMissionPrompts(missions, "editing", "sound"),
       targets: getMissionTargets(missions, "editing", "sound"),
     },
     {
       phase: "release",
-      title: "Hva filmen lærer deg",
+      title: "What the film teaches you",
       description: getMissionPrompt(missions, "reflection"),
       targets: getMissionTargets(missions, "reflection"),
     },
@@ -118,7 +118,7 @@ function getMissionPrompt(
 ): string {
   return (
     missions.find((mission) => mission.phase === phase)?.prompt ??
-    "Forstå hvordan denne filmen løser fasen."
+    "Understand how this film solves the phase."
   );
 }
 

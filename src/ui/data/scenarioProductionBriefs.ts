@@ -2170,21 +2170,21 @@ function createMissionChoices(
     id: `${brief.scenarioId}-choice-${phase}-match-${index + 1}`,
     label: target,
     quality: "match",
-    feedback: "Matcher caset",
+    feedback: "Matches the case",
   }));
 
   choices.push({
     id: `${brief.scenarioId}-choice-${phase}-partial`,
-    label: `Bruk ${brief.toneTargets[0] ?? "tydelig tone"} som generell rettesnor`,
+    label: `Use ${brief.toneTargets[0] ?? "a clear tone"} as a general guideline`,
     quality: "partial",
-    feedback: "Delvis relevant",
+    feedback: "Partially relevant",
   });
 
   choices.push({
     id: `${brief.scenarioId}-choice-${phase}-miss`,
-    label: "Velg et bredt og trygt standardgrep uten case-spesifikk prioritet",
+    label: "Choose a broad, safe default approach with no case-specific priority",
     quality: "miss",
-    feedback: "Mindre presist for dette caset",
+    feedback: "Less precise for this case",
   });
 
   return choices.slice(0, 4);
@@ -2213,47 +2213,47 @@ export function createProductionCaseMissions(
         ...brief.genreTargets,
         ...brief.toneTargets,
       ]),
-      learningFocus: "Forstå hvordan denne filmen løser den overordnede produksjonsutfordringen.",
+      learningFocus: "Understand how this film solves the overall production challenge.",
     }),
     makeMission({
       id: createMissionId(brief, "screenplay"),
       phase: "screenplay",
-      title: "Manusvalg",
-      prompt: "Forstå hvordan denne filmen løser manusfasen. Identifiser produksjonsvalgene bak scenene før du låser utviklingen.",
+      title: "Script choices",
+      prompt: "Understand how this film solves the screenplay phase. Identify the production choices behind the scenes before locking in the development.",
       targets: takeMissionTargets(brief.screenplayTargets),
-      learningFocus: "Koble premiss, konflikt og scenevalg til filmens konkrete dramaturgi.",
+      learningFocus: "Connect premise, conflict, and scene choices to the film's concrete dramaturgy.",
     }),
     makeMission({
       id: createMissionId(brief, "cinematography"),
       phase: "cinematography",
-      title: "Visuelt system",
-      prompt: "Forstå hvordan denne filmen løser foto og rom. Match valgene til filmens konkrete uttrykk.",
+      title: "Visual system",
+      prompt: "Understand how this film solves photography and space. Match the choices to the film's concrete expression.",
       targets: takeMissionTargets(brief.cinematographyTargets),
-      learningFocus: "Les hvordan bildevalg, rom og blocking gjør produksjonsproblemet spillbart.",
+      learningFocus: "Read how image choices, space, and blocking make the production problem playable.",
     }),
     makeMission({
       id: createMissionId(brief, "editing"),
       phase: "editing",
-      title: "Klipperytme",
-      prompt: "Forstå hvordan denne filmen løser klippfasen. Identifiser hvordan rytme, rekkefølge og tilbakeholdelse bygger caset.",
+      title: "Cutting rhythm",
+      prompt: "Understand how this film solves the editing phase. Identify how rhythm, sequencing, and withholding build the case.",
       targets: takeMissionTargets(brief.editingTargets),
-      learningFocus: "Se hvordan klippen organiserer publikums forståelse av filmen.",
+      learningFocus: "See how the edit organizes the audience's understanding of the film.",
     }),
     makeMission({
       id: createMissionId(brief, "sound"),
       phase: "sound",
-      title: "Lydverden",
-      prompt: "Forstå hvordan denne filmen løser lydfasen. Match lydvalg, stillhet og tekstur til filmens konkrete uttrykk.",
+      title: "Sound world",
+      prompt: "Understand how this film solves the sound phase. Match sound choices, silence, and texture to the film's concrete expression.",
       targets: takeMissionTargets(brief.soundTargets),
-      learningFocus: "Bruk lyd som produksjonsvalg, ikke som generisk stemning.",
+      learningFocus: "Use sound as a production choice, not generic mood.",
     }),
     makeMission({
       id: createMissionId(brief, "reflection"),
       phase: "reflection",
-      title: "Hva filmen lærer deg",
-      prompt: "Dette er ikke en ny film, men et case i hvordan filmen er bygget. Oppsummer hva produksjonsvalgene lærer deg.",
+      title: "What the film teaches you",
+      prompt: "This is not a new film, but a case in how the film is built. Summarize what the production choices teach you.",
       targets: takeMissionTargets(brief.learningGoals),
-      learningFocus: "Gjør læringen spesifikk for denne filmen og dens byggede løsninger.",
+      learningFocus: "Make the learning specific to this film and its built solutions.",
     }),
   ];
 }
