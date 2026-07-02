@@ -77,10 +77,11 @@ export function ReleaseStepPanel({
         <div className="release-readiness"><span>Locked cut</span><strong>{postProductionResult.postProductionEvaluation.lockedCutQuality}</strong><small>quality</small></div>
       </div>
 
-      <ReleaseStrategyPanel disabled={Boolean(result)} onSelect={(releaseStrategyId) => updateChoices({ ...choices, releaseStrategyId })} selectedId={choices.releaseStrategyId} strategies={options.releaseStrategies} />
+      <ReleaseStrategyPanel disabled={Boolean(result)} inputName={`${projectContext.filmProjectState.id}-release-strategy`} onSelect={(releaseStrategyId) => updateChoices({ ...choices, releaseStrategyId })} selectedId={choices.releaseStrategyId} strategies={options.releaseStrategies} />
       <FestivalSubmissionPanel
         disabled={Boolean(result)}
         festivals={options.festivals}
+        inputName={`${projectContext.filmProjectState.id}-festival`}
         onSelect={(festivalId) => updateChoices({ ...choices, festivalId })}
         selectedId={choices.festivalId}
         {...(result ? { result: result.festivalSubmissionResult } : {})}

@@ -5,10 +5,11 @@ interface FestivalSubmissionPanelProps {
   readonly selectedId: string;
   readonly result?: FestivalSubmissionResult;
   readonly disabled?: boolean;
+  readonly inputName?: string;
   readonly onSelect: (festivalId: string) => void;
 }
 
-export function FestivalSubmissionPanel({ festivals, selectedId, result, disabled = false, onSelect }: FestivalSubmissionPanelProps) {
+export function FestivalSubmissionPanel({ festivals, selectedId, result, disabled = false, inputName = "festival", onSelect }: FestivalSubmissionPanelProps) {
   return (
     <section className="release-choice-section" aria-labelledby="festival-heading">
       <div className="release-section-heading">
@@ -20,7 +21,7 @@ export function FestivalSubmissionPanel({ festivals, selectedId, result, disable
           const isResolved = result?.festivalId === festival.id;
           return (
             <label className={selectedId === festival.id ? "release-option-card release-option-card--selected release-option-card--festival" : "release-option-card release-option-card--festival"} key={festival.id}>
-              <input checked={selectedId === festival.id} disabled={disabled} name="festival" onChange={() => onSelect(festival.id)} type="radio" />
+              <input checked={selectedId === festival.id} disabled={disabled} name={inputName} onChange={() => onSelect(festival.id)} type="radio" />
               <span className="release-card-kicker">{festival.tier} · {festival.city}</span>
               <strong>{festival.name}</strong>
               <div className="release-tags">{festival.profileTags.map((tag) => <span key={tag}>{formatLabel(tag)}</span>)}</div>
