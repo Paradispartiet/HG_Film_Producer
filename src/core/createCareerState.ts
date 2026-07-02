@@ -28,6 +28,8 @@ export function createCareerState(studio: Studio, startingYear = DEFAULT_STARTIN
     activeStrategicGoalIds: [],
     achievedMilestoneIds: [],
     identityTags: [],
+    crewRoster: {},
+    castRoster: {},
     notes: [`Career started in year ${startingYear}.`]
   };
 }

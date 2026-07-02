@@ -441,6 +441,7 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .candidate-stack { display: grid; gap: 6px; padding: 6px; }
 .candidate-card { min-height: 132px; padding: 12px; }
 .candidate-card-title strong { font-size: 12px; }
+.candidate-returning-badge { margin-top: 6px; color: var(--positive); font-size: 8px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
 .candidate-card > p { margin: 7px 0 12px; color: var(--muted); font-size: 9px; line-height: 1.4; text-transform: capitalize; }
 .candidate-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin: auto 0 0; }
 .candidate-stats div { min-width: 0; }

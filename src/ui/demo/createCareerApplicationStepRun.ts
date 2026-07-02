@@ -1,10 +1,13 @@
 import careerMilestonesJson from "../../../data/film/career_milestones.json";
+import studioExpensesJson from "../../../data/film/studio_expenses.json";
 import { advanceCareerQuarter } from "../../core/advanceCareerQuarter.js";
 import { applyCareerMilestone } from "../../core/applyCareerMilestone.js";
+import { applyDueStudioExpenses } from "../../core/applyDueStudioExpenses.js";
 import { applyReleaseResultToStudio } from "../../core/applyReleaseResultToStudio.js";
 import { applyStudioIncome } from "../../core/applyStudioIncome.js";
 import { evaluateCareerYear } from "../../core/evaluateCareerYear.js";
 import { evaluateStudioIdentity } from "../../core/evaluateStudioIdentity.js";
+import { recordCareerRosterFilm } from "../../core/recordCareerRosterFilm.js";
 import { recordCompletedFilm } from "../../core/recordCompletedFilm.js";
 import type {
   CareerMilestone,
@@ -12,19 +15,22 @@ import type {
   CareerState,
   CareerYearEvaluation,
   CompletedFilmRecord,
+  StudioExpense,
   StudioIdentityEvaluation
 } from "../../domain/career.js";
 import type { Studio } from "../../domain/film.js";
-import { asStudioIncomeId } from "../../domain/ids.js";
+import { asActorId, asCrewMemberId, asStudioIncomeId } from "../../domain/ids.js";
 import type { StudioReleaseApplicationResult } from "../../domain/release.js";
 import type { PipelineStepSummary } from "../types.js";
 import { adaptFilmSeedData } from "./adaptFilmSeedData.js";
 import type { ProjectRunContext } from "./createProjectRunContext.js";
+import type { PreProductionStepResult } from "./createPreProductionStepRun.js";
 import type { ReleaseStepResult } from "./createReleaseStepRun.js";
 
 const careerApplicationData = adaptFilmSeedData<{
   readonly careerMilestones: readonly CareerMilestone[];
-}>({ careerMilestones: careerMilestonesJson });
+  readonly studioExpenses: readonly StudioExpense[];
+}>({ careerMilestones: careerMilestonesJson, studioExpenses: studioExpensesJson });
 
 export interface CareerApplicationChoices {
   readonly closeFilmYear: true;
@@ -37,6 +43,7 @@ export interface CareerApplicationStepResult {
   readonly updatedCareerState: CareerState;
   readonly completedFilmRecord: CompletedFilmRecord;
   readonly studioReleaseApplicationResult: StudioReleaseApplicationResult;
+  readonly appliedStudioExpenses: readonly StudioExpense[];
   readonly careerYearEvaluation: CareerYearEvaluation;
   readonly studioIdentityEvaluation: StudioIdentityEvaluation;
   readonly milestoneResults: readonly CareerMilestoneApplicationResult[];
@@ -50,6 +57,7 @@ export interface CareerApplicationStepResult {
 export function createCareerApplicationStepResult(
   projectContext: ProjectRunContext,
   releaseResult: ReleaseStepResult,
+  preProductionResult: PreProductionStepResult,
   choices: CareerApplicationChoices
 ): CareerApplicationStepResult {
   if (!choices.closeFilmYear) {
@@ -114,8 +122,18 @@ export function createCareerApplicationStepResult(
     careerWithIdentity = milestoneResult.careerState;
   }
 
-  const careerYearEvaluation = evaluateCareerYear(careerWithIdentity, careerWithIdentity.currentYear);
-  const updatedCareerState = advanceCareerQuarter(careerWithIdentity);
+  const careerWithRoster = recordCareerRosterFilm(
+    careerWithIdentity,
+    completedFilmRecord.title,
+    preProductionResult.crew.hired.map((crewMember) => asCrewMemberId(crewMember.id)),
+    preProductionResult.casting.actors.map((actor) => asActorId(actor.id))
+  );
+
+  const { careerState: careerWithExpenses, appliedExpenses: appliedStudioExpenses } =
+    applyDueStudioExpenses(careerWithRoster, careerApplicationData.studioExpenses);
+
+  const careerYearEvaluation = evaluateCareerYear(careerWithExpenses, careerWithExpenses.currentYear);
+  const updatedCareerState = advanceCareerQuarter(careerWithExpenses);
   const updatedStudio = updatedCareerState.studio;
 
   return {
@@ -125,6 +143,7 @@ export function createCareerApplicationStepResult(
     updatedCareerState,
     completedFilmRecord,
     studioReleaseApplicationResult,
+    appliedStudioExpenses,
     careerYearEvaluation,
     studioIdentityEvaluation,
     milestoneResults,

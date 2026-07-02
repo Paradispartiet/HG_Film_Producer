@@ -10,6 +10,7 @@ import { evaluateProductionTeam } from "../../core/evaluateProductionTeam.js";
 import { hireCrewMember } from "../../core/hireCrewMember.js";
 import { scoreCrewMemberForProject } from "../../core/scoreCrewMemberForProject.js";
 import { scoutLocations } from "../../core/scoutLocations.js";
+import type { CareerState } from "../../domain/career.js";
 import type {
   Actor,
   CastingFitScore,
@@ -69,6 +70,7 @@ export interface CrewCandidateOption {
   readonly fee: number;
   readonly styleTags: readonly string[];
   readonly score: CrewFitScore;
+  readonly previousFilmsTogether: number;
 }
 
 export interface CrewCandidateGroup {
@@ -86,6 +88,7 @@ export interface ActorCandidateOption {
   readonly fee: number;
   readonly chemistryTags: readonly string[];
   readonly score: CastingFitScore;
+  readonly previousFilmsTogether: number;
 }
 
 export interface HiredCrewResult {
@@ -140,20 +143,22 @@ export function getPreProductionLocationOptions(
 }
 
 export function getCrewCandidatesByDiscipline(
-  developmentResult: DevelopmentStepResult
+  developmentResult: DevelopmentStepResult,
+  careerState?: CareerState
 ): readonly CrewCandidateGroup[] {
   return REQUIRED_DISCIPLINES.map((discipline) => ({
     discipline,
     label: formatDiscipline(discipline),
     candidates: preProductionData.crewMembers
       .filter((crewMember) => crewMember.discipline === discipline)
-      .map((crewMember) => toCrewCandidate(developmentResult.projectState, crewMember, discipline))
+      .map((crewMember) => toCrewCandidate(developmentResult.projectState, crewMember, discipline, careerState))
       .sort((left, right) => right.score.totalScore - left.score.totalScore)
   }));
 }
 
 export function getActorCandidates(
-  developmentResult: DevelopmentStepResult
+  developmentResult: DevelopmentStepResult,
+  careerState?: CareerState
 ): readonly ActorCandidateOption[] {
   return preProductionData.actors
     .map((actor) => ({
@@ -164,7 +169,8 @@ export function getActorCandidates(
       reliability: actor.reliability,
       fee: actor.fee,
       chemistryTags: actor.chemistryTags,
-      score: scoreActorForProject(developmentResult.projectState, actor)
+      score: scoreActorForProject(developmentResult.projectState, actor),
+      previousFilmsTogether: careerState?.castRoster[actor.id]?.filmsWorked ?? 0
     }))
     .sort((left, right) => right.score.totalScore - left.score.totalScore);
 }
@@ -262,7 +268,8 @@ function toLocationOption(
 function toCrewCandidate(
   project: FilmProject,
   crewMember: CrewMember,
-  discipline: RequiredCrewDiscipline
+  discipline: RequiredCrewDiscipline,
+  careerState?: CareerState
 ): CrewCandidateOption {
   return {
     id: crewMember.id,
@@ -273,7 +280,8 @@ function toCrewCandidate(
     reliability: crewMember.reliability,
     fee: crewMember.fee,
     styleTags: crewMember.styleTags,
-    score: scoreCrewMemberForProject(project, crewMember)
+    score: scoreCrewMemberForProject(project, crewMember),
+    previousFilmsTogether: careerState?.crewRoster[crewMember.id]?.filmsWorked ?? 0
   };
 }
 

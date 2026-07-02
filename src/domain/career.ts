@@ -1,6 +1,8 @@
 import type { FilmScale, Studio } from "./film.js";
 import type {
+  ActorId,
   CareerMilestoneId,
+  CrewMemberId,
   FilmProjectId,
   GenreId,
   StrategicGoalId,
@@ -57,7 +59,14 @@ export interface CareerState {
   readonly activeStrategicGoalIds: readonly StrategicGoalId[];
   readonly achievedMilestoneIds: readonly CareerMilestoneId[];
   readonly identityTags: readonly StudioIdentityTag[];
+  readonly crewRoster: Readonly<Record<CrewMemberId, CareerRosterEntry>>;
+  readonly castRoster: Readonly<Record<ActorId, CareerRosterEntry>>;
   readonly notes: readonly string[];
+}
+
+export interface CareerRosterEntry {
+  readonly filmsWorked: number;
+  readonly lastFilmTitle: string;
 }
 
 export interface CareerYear {
