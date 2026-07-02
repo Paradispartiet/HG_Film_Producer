@@ -4,10 +4,11 @@ interface ReleaseStrategyPanelProps {
   readonly strategies: readonly ReleaseStrategy[];
   readonly selectedId: string;
   readonly disabled?: boolean;
+  readonly inputName?: string;
   readonly onSelect: (strategyId: string) => void;
 }
 
-export function ReleaseStrategyPanel({ strategies, selectedId, disabled = false, onSelect }: ReleaseStrategyPanelProps) {
+export function ReleaseStrategyPanel({ strategies, selectedId, disabled = false, inputName = "release-strategy", onSelect }: ReleaseStrategyPanelProps) {
   return (
     <section className="release-choice-section" aria-labelledby="release-strategy-heading">
       <div className="release-section-heading">
@@ -17,7 +18,7 @@ export function ReleaseStrategyPanel({ strategies, selectedId, disabled = false,
       <div className="release-option-grid release-option-grid--strategies">
         {strategies.map((strategy) => (
           <label className={selectedId === strategy.id ? "release-option-card release-option-card--selected" : "release-option-card"} key={strategy.id}>
-            <input checked={selectedId === strategy.id} disabled={disabled} name="release-strategy" onChange={() => onSelect(strategy.id)} type="radio" />
+            <input checked={selectedId === strategy.id} disabled={disabled} name={inputName} onChange={() => onSelect(strategy.id)} type="radio" />
             <span className="release-card-kicker">{formatLabel(strategy.channel)}</span>
             <strong>{strategy.title}</strong>
             <p>{strategy.description}</p>
