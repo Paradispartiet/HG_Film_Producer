@@ -25,6 +25,7 @@ interface PostProductionPanelProps {
   readonly result: PostProductionStepResult | null;
   readonly onChange: (choices: PostProductionChoices) => void;
   readonly onLock: (result: PostProductionStepResult) => void;
+  readonly id?: string | undefined;
 }
 
 export function PostProductionPanel({
@@ -35,7 +36,8 @@ export function PostProductionPanel({
   choices,
   result,
   onChange,
-  onLock
+  onLock,
+  id
 }: PostProductionPanelProps) {
   const [message, setMessage] = useState("");
   const options = getPostProductionOptions();
@@ -63,7 +65,7 @@ export function PostProductionPanel({
   }
 
   return (
-    <section className={`panel post-production-panel${isLaterFilm ? " post-production-panel--later-project" : ""}`}>
+    <section className={`panel post-production-panel${isLaterFilm ? " post-production-panel--later-project" : ""}`} id={id}>
       <div className="post-panel-heading">
         <div>
           <span className="eyebrow">{displayLabel ? `Start post-production for ${displayLabel}` : "Start post-production"}</span>

@@ -26,6 +26,7 @@ interface ReleaseStepPanelProps {
   readonly result: ReleaseStepResult | null;
   readonly onChange: (choices: ReleaseStepChoices) => void;
   readonly onRelease: (result: ReleaseStepResult) => void;
+  readonly id?: string | undefined;
 }
 
 const options = getReleaseStepOptions();
@@ -40,7 +41,8 @@ export function ReleaseStepPanel({
   choices,
   result,
   onChange,
-  onRelease
+  onRelease,
+  id
 }: ReleaseStepPanelProps) {
   const [validationMessage, setValidationMessage] = useState("");
 
@@ -71,7 +73,7 @@ export function ReleaseStepPanel({
   }
 
   return (
-    <section className="panel release-step-panel">
+    <section className="panel release-step-panel" id={id}>
       <div className="release-desk-heading">
         <div><span className="eyebrow">Distribution &amp; festivals</span><h2>Release {projectLabel}</h2><p>Choose the route to market and one premiere submission. The release engine will resolve the complete deterministic outcome.</p></div>
         <div className="release-readiness"><span>Locked cut</span><strong>{postProductionResult.postProductionEvaluation.lockedCutQuality}</strong><small>quality</small></div>

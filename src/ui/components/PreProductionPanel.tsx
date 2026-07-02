@@ -23,6 +23,7 @@ interface PreProductionPanelProps {
   readonly onSelectActors: (actorIds: readonly string[]) => void;
   readonly onLock: (result: PreProductionStepResult) => void;
   readonly projectLabel?: string;
+  readonly id?: string | undefined;
 }
 
 export function PreProductionPanel({
@@ -35,7 +36,8 @@ export function PreProductionPanel({
   onSelectCrew,
   onSelectActors,
   onLock,
-  projectLabel
+  projectLabel,
+  id
 }: PreProductionPanelProps) {
   const [message, setMessage] = useState("");
   const locationOptions = getPreProductionLocationOptions(projectContext, developmentResult);
@@ -73,7 +75,7 @@ export function PreProductionPanel({
   }
 
   return (
-    <section className="panel pre-production-panel">
+    <section className="panel pre-production-panel" id={id}>
       <div className="pre-production-heading">
         <div><span className="eyebrow">Start pre-production{labelSuffix}</span><h2>{projectContext.project.title} production office</h2></div>
         <p>Turn the development direction into a practical location, crew and casting plan.</p>

@@ -22,6 +22,7 @@ interface DevelopmentPanelProps {
   readonly onSelectPath: (path: DevelopmentPath) => void;
   readonly onApplyAction: (result: DevelopmentStepResult) => void;
   readonly onFinishDevelopment: () => void;
+  readonly id?: string | undefined;
 }
 
 const paths: readonly DevelopmentPathOption[] = [
@@ -37,7 +38,8 @@ export function DevelopmentPanel({
   completedResults,
   onSelectPath,
   onApplyAction,
-  onFinishDevelopment
+  onFinishDevelopment,
+  id
 }: DevelopmentPanelProps) {
   const [selectedLessonId, setSelectedLessonId] = useState("");
   const [selectedBriefId, setSelectedBriefId] = useState("");
@@ -72,7 +74,7 @@ export function DevelopmentPanel({
   }
 
   return (
-    <section className="panel development-panel">
+    <section className="panel development-panel" id={id}>
       <div className="development-panel-heading">
         <div><span className="eyebrow">{projectLabel} development</span><h2>Develop {projectLabel.toLowerCase()}</h2></div>
         <p>Your producer’s desk can take on any combination of these actions. Finish development when you’re ready to move on.</p>
