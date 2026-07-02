@@ -38,27 +38,27 @@ import {
 import { createProductionCaseMissions, resolveScenarioProductionBrief } from "../data/scenarioProductionBriefs";
 
 const caseStatusFilters = [
-  { value: "all", label: "Alle" },
-  { value: "not_started", label: "Ikke startet" },
-  { value: "in_progress", label: "Under arbeid" },
-  { value: "completed", label: "Fullført" },
+  { value: "all", label: "All" },
+  { value: "not_started", label: "Not started" },
+  { value: "in_progress", label: "In progress" },
+  { value: "completed", label: "Completed" },
 ] as const satisfies readonly { readonly value: ProductionCaseLibraryStatusFilter; readonly label: string }[];
 
 const masteryFilters = [
-  { value: "all", label: "Alle" },
-  { value: "not_completed_best", label: "Ikke fullført best" },
-  { value: "assistant_best", label: "Assistent" },
-  { value: "producer_best", label: "Produsent" },
+  { value: "all", label: "All" },
+  { value: "not_completed_best", label: "No best result yet" },
+  { value: "assistant_best", label: "Assistant" },
+  { value: "producer_best", label: "Producer" },
   { value: "auteur_best", label: "Auteur" },
-  { value: "can_improve", label: "Kan forbedres" },
+  { value: "can_improve", label: "Can be improved" },
 ] as const satisfies readonly { readonly value: ProductionCaseMasteryFilter; readonly label: string }[];
 
 const sortModeOptions = [
-  { value: "default", label: "Standard" },
-  { value: "title_asc", label: "Tittel A–Å" },
-  { value: "best_score_desc", label: "Beste score høyest" },
-  { value: "best_score_asc", label: "Beste score lavest" },
-  { value: "recent_best", label: "Nylig beste resultat" },
+  { value: "default", label: "Default" },
+  { value: "title_asc", label: "Title A–Z" },
+  { value: "best_score_desc", label: "Best score highest" },
+  { value: "best_score_asc", label: "Best score lowest" },
+  { value: "recent_best", label: "Recently improved" },
 ] as const satisfies readonly { readonly value: ProductionCaseLibrarySortMode; readonly label: string }[];
 
 
@@ -292,11 +292,11 @@ export function FilmScenarioLibrary({
       <div className="scenario-library-controls">
         <div className="scenario-controls-search-row">
           <label className="scenario-search">
-            <span>Søk</span>
+            <span>Search</span>
             <input
               value={searchQuery}
               onChange={(event) => setSearchQuery(event.target.value)}
-              placeholder="Søk film, år eller case"
+              placeholder="Search film, year, or case"
               type="search"
             />
           </label>
@@ -325,7 +325,7 @@ export function FilmScenarioLibrary({
             </select>
           </label>
           <label className="scenario-status-filter scenario-sort-control">
-            <span>Sorter</span>
+            <span>Sort</span>
             <select
               value={sortMode}
               onChange={(event) => setSortMode(event.target.value as ProductionCaseLibrarySortMode)}
@@ -336,21 +336,21 @@ export function FilmScenarioLibrary({
             </select>
           </label>
           <button className="secondary-button scenario-filter-reset" onClick={resetLibraryControls} type="button">
-            Nullstill filtre
+            Reset filters
           </button>
         </div>
         <details className="scenario-backup-panel">
           <summary>
             <span>Progress backup</span>
-            <small>Lagre eller gjenopprett lokal production-case progress.</small>
+            <small>Save or restore local production-case progress.</small>
           </summary>
           <div className="scenario-backup-content">
             <button className="secondary-button scenario-export-button" onClick={exportProductionCaseProgress} type="button">
-              Eksporter progress
+              Export progress
             </button>
             <div className="scenario-import-control">
               <label>
-                <span>Importer progress</span>
+                <span>Import progress</span>
                 <textarea
                   value={importJson}
                   onChange={(event) => {
@@ -358,11 +358,11 @@ export function FilmScenarioLibrary({
                     setImportStatus(undefined);
                   }}
                   rows={4}
-                  placeholder="Lim inn JSON-backup"
-                  aria-label="Importer progress"
+                  placeholder="Paste JSON backup"
+                  aria-label="Import progress"
                 />
               </label>
-              <p>Import overskriver lokal production-case progress.</p>
+              <p>Importing overwrites local production-case progress.</p>
               {importPreview ? (
                 <div
                   className={`scenario-import-preview${importPreview.ok ? "" : " scenario-import-preview-invalid"}`}
@@ -370,14 +370,14 @@ export function FilmScenarioLibrary({
                 >
                   {importPreview.ok ? (
                     <>
-                      <strong>Backup funnet</strong>
-                      <span>Eksportert: {importPreview.exportedAt}</span>
+                      <strong>Backup found</strong>
+                      <span>Exported: {importPreview.exportedAt}</span>
                       <span>Current progress: {importPreview.currentProgressCount}</span>
-                      <span>Beste resultater: {importPreview.bestResultCount}</span>
-                      <span>Library controls: {importPreview.hasLibraryControls ? "ja" : "nei"}</span>
+                      <span>Best results: {importPreview.bestResultCount}</span>
+                      <span>Library controls: {importPreview.hasLibraryControls ? "yes" : "no"}</span>
                     </>
                   ) : (
-                    <strong>Backup kan ikke leses</strong>
+                    <strong>Backup can't be read</strong>
                   )}
                 </div>
               ) : null}
@@ -387,17 +387,17 @@ export function FilmScenarioLibrary({
                 onClick={confirmProductionCaseProgressImport}
                 type="button"
               >
-                Bekreft import
+                Confirm import
               </button>
             </div>
             {exportStatus ? (
               <div className="scenario-export-status" aria-live="polite">
-                {exportStatus === "exported" ? "Progress eksportert" : "Progress klar til kopiering"}
+                {exportStatus === "exported" ? "Progress exported" : "Progress ready to copy"}
               </div>
             ) : null}
             {importStatus ? (
               <div className="scenario-import-status" aria-live="polite">
-                {importStatus === "imported" ? "Progress importert" : "Kunne ikke importere progress"}
+                {importStatus === "imported" ? "Progress imported" : "Could not import progress"}
               </div>
             ) : null}
             {exportFallbackJson ? (
@@ -406,7 +406,7 @@ export function FilmScenarioLibrary({
                 readOnly
                 rows={6}
                 value={exportFallbackJson}
-                aria-label="Progress klar til kopiering"
+                aria-label="Progress ready to copy"
               />
             ) : null}
           </div>
@@ -421,7 +421,7 @@ export function FilmScenarioLibrary({
             ))}
           </span>
         ) : (
-          <span className="scenario-active-controls scenario-active-controls-empty">Ingen aktive filtre</span>
+          <span className="scenario-active-controls scenario-active-controls-empty">No active filters</span>
         )}
       </div>
       {filteredScenarioCards.length === 0 ? (
@@ -447,8 +447,8 @@ export function FilmScenarioLibrary({
             </dl>
             {caseStatus ? <ScenarioCaseStatusBadge status={caseStatus} /> : null}
             {bestResult ? (
-              <div className="scenario-case-best-result" aria-label={`Beste resultat: ${productionCaseResultTierLabels[bestResult.bestTier]}`}>
-                <span>Beste</span>
+              <div className="scenario-case-best-result" aria-label={`Best result: ${productionCaseResultTierLabels[bestResult.bestTier]}`}>
+                <span>Best</span>
                 <strong>{productionCaseResultTierLabels[bestResult.bestTier]} · {bestResult.bestScore}/{bestResult.maxScore}</strong>
               </div>
             ) : null}
@@ -591,7 +591,7 @@ function formatRecentBestResultDate(value: string): string | undefined {
   const timestamp = Date.parse(value);
   if (!Number.isFinite(timestamp)) return undefined;
   try {
-    return new Intl.DateTimeFormat("nb-NO", { day: "2-digit", month: "short", year: "numeric" }).format(new Date(timestamp));
+    return new Intl.DateTimeFormat("en-US", { day: "2-digit", month: "short", year: "numeric" }).format(new Date(timestamp));
   } catch {
     return undefined;
   }
@@ -605,13 +605,13 @@ function RecentProductionCaseBestResultsSection({
   readonly onOpenScenario?: ((scenarioId: string) => void) | undefined;
 }) {
   return (
-    <section className="production-case-recent-results" aria-label="Siste beste resultater">
+    <section className="production-case-recent-results" aria-label="Recent best results">
       <div className="production-case-recent-results-heading">
-        <span>Siste beste resultater</span>
-        <small>{items.length > 0 ? `${items.length} nyeste` : "Ingen lagret"}</small>
+        <span>Recent best results</span>
+        <small>{items.length > 0 ? `${items.length} most recent` : "None saved"}</small>
       </div>
       {items.length === 0 ? (
-        <p>Ingen beste resultater ennå.</p>
+        <p>No best results yet.</p>
       ) : (
         <div className="production-case-recent-results-list">
           {items.map((item) => {
@@ -628,7 +628,7 @@ function RecentProductionCaseBestResultsSection({
                   onClick={() => onOpenScenario?.(item.scenarioId)}
                   type="button"
                 >
-                  Åpne case
+                  Open case
                 </button>
               </article>
             );
@@ -651,16 +651,16 @@ function ProductionCaseNextActionCard({
   if (!nextAction) return null;
 
   return (
-    <section className="production-case-next-action" aria-label="Neste handling">
+    <section className="production-case-next-action" aria-label="Next action">
       <div>
-        <span>Neste handling</span>
+        <span>Next action</span>
         <strong>{nextAction.actionType === "complete" ? nextAction.label : `${nextAction.label}: ${nextAction.title}`}</strong>
         <small>{nextAction.description}</small>
         {improvementHint ? <small>{formatNextActionImprovementHint(improvementHint)}</small> : null}
       </div>
       {nextAction.actionType !== "complete" ? (
         <button className="secondary-button" disabled={!onOpenScenario} onClick={onOpenScenario} type="button">
-          Åpne case
+          Open case
         </button>
       ) : null}
     </section>
@@ -668,8 +668,8 @@ function ProductionCaseNextActionCard({
 }
 
 function formatNextActionImprovementHint(hint: NonNullable<ReturnType<typeof getProductionCaseImprovementHint>>) {
-  if (hint.hintType === "sharpen") return `Spiss valget i ${hint.title}`;
-  return `Forbedre: ${hint.title}`;
+  if (hint.hintType === "sharpen") return `Sharpen your choice in ${hint.title}`;
+  return `Improve: ${hint.title}`;
 }
 
 function ProductionCaseCollectionSummaryCard({
@@ -686,11 +686,11 @@ function ProductionCaseCollectionSummaryCard({
         <strong>{careerSummary.completedBestCount}/{careerSummary.totalCases}</strong>
       </div>
       <div>
-        <span>Fullført best</span>
+        <span>Completed best</span>
         <strong>{careerSummary.completedBestCount}/{careerSummary.totalCases}</strong>
       </div>
       <div>
-        <span>Beste samlet score</span>
+        <span>Best combined score</span>
         <strong>{careerSummary.bestTotalScore}/{careerSummary.bestMaxScore}</strong>
       </div>
       <div>
@@ -698,15 +698,15 @@ function ProductionCaseCollectionSummaryCard({
         <strong>{careerSummary.auteurBestCount}</strong>
       </div>
       <div>
-        <span>Current progress · Fullført</span>
+        <span>Current progress · Completed</span>
         <strong>{summary.completedCount}</strong>
       </div>
       <div>
-        <span>Current progress · Under arbeid</span>
+        <span>Current progress · In progress</span>
         <strong>{summary.inProgressCount}</strong>
       </div>
       <div>
-        <span>Current progress · Ikke startet</span>
+        <span>Current progress · Not started</span>
         <strong>{summary.notStartedCount}</strong>
       </div>
       <div>
@@ -725,10 +725,10 @@ function ProductionCaseAchievementsSection({
   const achievements = getProductionCaseAchievements(summary);
 
   return (
-    <section className="production-case-achievements" aria-label="Merker">
+    <section className="production-case-achievements" aria-label="Badges">
       <div className="production-case-achievements-heading">
-        <span>Merker</span>
-        <small>{achievements.filter((achievement) => achievement.unlocked).length}/{achievements.length} låst opp</small>
+        <span>Badges</span>
+        <small>{achievements.filter((achievement) => achievement.unlocked).length}/{achievements.length} unlocked</small>
       </div>
       <div className="production-case-achievement-list">
         {achievements.map((achievement) => (
@@ -751,7 +751,7 @@ function ScenarioCaseStatusBadge({ status }: { readonly status: ProductionCaseLi
     <div className="scenario-case-status" aria-label={`Case-status: ${status.label}`}>
       <span>Case-status</span>
       <strong>{status.label}</strong>
-      <small>{status.completedCount}/{status.missionCount} faser</small>
+      <small>{status.completedCount}/{status.missionCount} phases</small>
       {status.score ? <small>Case-score: {status.score.score}/{status.score.maxScore}</small> : null}
     </div>
   );
