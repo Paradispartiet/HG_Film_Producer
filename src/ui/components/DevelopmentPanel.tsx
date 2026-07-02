@@ -18,8 +18,10 @@ interface DevelopmentPanelProps {
   readonly projectContext: ProjectRunContext;
   readonly projectLabel?: string;
   readonly selectedPath: DevelopmentPath | null;
+  readonly completedResults: readonly DevelopmentStepResult[];
   readonly onSelectPath: (path: DevelopmentPath) => void;
-  readonly onComplete: (result: DevelopmentStepResult) => void;
+  readonly onApplyAction: (result: DevelopmentStepResult) => void;
+  readonly onFinishDevelopment: () => void;
 }
 
 const paths: readonly DevelopmentPathOption[] = [
@@ -32,15 +34,21 @@ export function DevelopmentPanel({
   projectContext,
   projectLabel = "Film 1",
   selectedPath,
+  completedResults,
   onSelectPath,
-  onComplete
+  onApplyAction,
+  onFinishDevelopment
 }: DevelopmentPanelProps) {
   const [selectedLessonId, setSelectedLessonId] = useState("");
   const [selectedBriefId, setSelectedBriefId] = useState("");
   const [message, setMessage] = useState("");
   const locationChoices = getLocationDevelopmentChoices(projectContext);
+  const completedPaths = new Set(completedResults.map((result) => result.path));
+  const latestProjectState = completedResults.at(-1)?.projectState ?? projectContext.filmProjectState;
+  const chainedContext: ProjectRunContext = { ...projectContext, filmProjectState: latestProjectState };
 
   function selectPath(path: DevelopmentPath) {
+    if (completedPaths.has(path)) return;
     setMessage("");
     onSelectPath(path);
   }
@@ -50,7 +58,8 @@ export function DevelopmentPanel({
       setMessage("Choose a mentor lesson before applying this path.");
       return;
     }
-    onComplete(createMentorDevelopmentResult(projectContext, selectedLessonId));
+    onApplyAction(createMentorDevelopmentResult(chainedContext, selectedLessonId));
+    setSelectedLessonId("");
   }
 
   function applyLocationBrief() {
@@ -58,31 +67,44 @@ export function DevelopmentPanel({
       setMessage("Choose a scouting brief before running the location scout.");
       return;
     }
-    onComplete(createLocationDevelopmentResult(projectContext, selectedBriefId));
+    onApplyAction(createLocationDevelopmentResult(chainedContext, selectedBriefId));
+    setSelectedBriefId("");
   }
 
   return (
     <section className="panel development-panel">
       <div className="development-panel-heading">
         <div><span className="eyebrow">{projectLabel} development</span><h2>Develop {projectLabel.toLowerCase()}</h2></div>
-        <p>Your producer’s desk has room for one action. The choice will be applied through the simulation engine.</p>
+        <p>Your producer’s desk can take on any combination of these actions. Finish development when you’re ready to move on.</p>
       </div>
       <div className="development-path-grid">
-        {paths.map((path) => (
-          <button
-            className={selectedPath === path.id ? "development-path development-path--selected" : "development-path"}
-            key={path.id}
-            onClick={() => selectPath(path.id)}
-            type="button"
-          >
-            <span className="development-path-number">{path.number}</span>
-            <strong>{path.title}</strong>
-            <span>{path.description}</span>
-            <small>{path.consequence}</small>
-          </button>
-        ))}
+        {paths.map((path) => {
+          const done = completedPaths.has(path.id);
+          return (
+            <button
+              className={
+                done
+                  ? "development-path development-path--done"
+                  : selectedPath === path.id
+                    ? "development-path development-path--selected"
+                    : "development-path"
+              }
+              disabled={done}
+              key={path.id}
+              onClick={() => selectPath(path.id)}
+              type="button"
+            >
+              <span className="development-path-number">{done ? "✓" : path.number}</span>
+              <strong>{path.title}</strong>
+              <span>{done ? "Applied" : path.description}</span>
+              <small>{path.consequence}</small>
+            </button>
+          );
+        })}
       </div>
-      {!selectedPath && <p className="development-prompt">Select a development path to open its working brief.</p>}
+      {!selectedPath && completedResults.length === 0 && (
+        <p className="development-prompt">Select a development path to open its working brief.</p>
+      )}
       {selectedPath === "mentor" && (
         <MentorChoicePanel
           lessons={mentorDevelopmentChoices}
@@ -101,7 +123,17 @@ export function DevelopmentPanel({
           selectedBriefId={selectedBriefId}
         />
       )}
-      {selectedPath === "script" && <ScriptChoicePanel run={projectContext} onApply={() => onComplete(createScriptDevelopmentResult(projectContext))} />}
+      {selectedPath === "script" && (
+        <ScriptChoicePanel onApply={() => onApplyAction(createScriptDevelopmentResult(chainedContext))} run={chainedContext} />
+      )}
+      {completedResults.length > 0 && (
+        <div className="development-actions">
+          <span className="inline-message" role="status">
+            {completedResults.length} of 3 development action{completedResults.length === 1 ? "" : "s"} applied.
+          </span>
+          <button className="primary-button" onClick={onFinishDevelopment} type="button">Finish development</button>
+        </div>
+      )}
     </section>
   );
 }

@@ -340,6 +340,9 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .development-path { display: grid; min-height: 166px; align-content: start; gap: 8px; padding: 20px; border: 0; cursor: pointer; background: var(--surface); color: var(--text); text-align: left; transition: background 120ms ease, box-shadow 120ms ease; }
 .development-path:hover { background: var(--surface-raised); }
 .development-path--selected { background: linear-gradient(145deg, var(--accent-soft), var(--surface)); box-shadow: inset 0 3px 0 var(--accent); }
+.development-path--done { cursor: default; background: var(--surface); box-shadow: inset 3px 0 0 var(--positive); }
+.development-path--done:hover { background: var(--surface); }
+.development-path--done .development-path-number { color: var(--positive); }
 .development-path-number { color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: 0.12em; }
 .development-path strong { margin-top: 4px; font-size: 15px; }
 .development-path > span:not(.development-path-number) { color: var(--muted-light); font-size: 12px; line-height: 1.5; }

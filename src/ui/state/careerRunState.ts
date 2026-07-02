@@ -21,6 +21,7 @@ export interface CareerFilmProjectRun {
   readonly run: ProjectSetupRun | NextProjectStepResult;
   readonly selectedDevelopmentPath: DevelopmentPath | null;
   readonly selectedScenarioTargetIds?: readonly string[];
+  readonly developmentResults: readonly DevelopmentStepResult[];
   readonly developmentResult: DevelopmentStepResult | null;
   readonly preProductionSelections: PreProductionSelectionState;
   readonly preProductionResult: PreProductionStepResult | null;
@@ -40,12 +41,12 @@ export function hasSavedCareerRun(): boolean { return typeof window !== "undefin
 function getRunContext(run: ProjectSetupRun | NextProjectStepResult) { return createProjectRunContext(run as ProjectSetupRun & NextProjectStepResult); }
 
 export function createCareerProject(run: ProjectSetupRun | NextProjectStepResult, projectNumber: number): CareerFilmProjectRun {
-  return { id: `${projectNumber}-${run.project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`, projectNumber, run, selectedDevelopmentPath: null, developmentResult: null, preProductionSelections: emptyPreProductionSelections, preProductionResult: null, selectedProductionEventId: "", shootDayResults: [], shootResult: null, postProductionChoices: emptyPostProductionChoices, postProductionResult: null, releaseChoices: emptyReleaseChoices, releaseResult: null, careerApplicationResult: null };
+  return { id: `${projectNumber}-${run.project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`, projectNumber, run, selectedDevelopmentPath: null, developmentResults: [], developmentResult: null, preProductionSelections: emptyPreProductionSelections, preProductionResult: null, selectedProductionEventId: "", shootDayResults: [], shootResult: null, postProductionChoices: emptyPostProductionChoices, postProductionResult: null, releaseChoices: emptyReleaseChoices, releaseResult: null, careerApplicationResult: null };
 }
 function truncateAfter(projects: readonly CareerFilmProjectRun[], index: number) { return projects.slice(0, index + 1); }
 function resetAfterDevelopment(project: CareerFilmProjectRun, developmentResult: DevelopmentStepResult): CareerFilmProjectRun {
   const selectedLocationId = getPreProductionLocationOptions(getRunContext(project.run), developmentResult).find((option) => option.recommended)?.id ?? "";
-  return { ...project, developmentResult, preProductionSelections: { ...emptyPreProductionSelections, selectedLocationId }, preProductionResult: null, selectedProductionEventId: "", shootDayResults: [], shootResult: null, postProductionChoices: emptyPostProductionChoices, postProductionResult: null, releaseChoices: emptyReleaseChoices, releaseResult: null, careerApplicationResult: null };
+  return { ...project, selectedDevelopmentPath: null, developmentResult, preProductionSelections: { ...emptyPreProductionSelections, selectedLocationId }, preProductionResult: null, selectedProductionEventId: "", shootDayResults: [], shootResult: null, postProductionChoices: emptyPostProductionChoices, postProductionResult: null, releaseChoices: emptyReleaseChoices, releaseResult: null, careerApplicationResult: null };
 }
 function updateProject(state: CareerRunState, projectId: string, updater: (project: CareerFilmProjectRun) => CareerFilmProjectRun): CareerRunState {
   const index = state.projects.findIndex((project) => project.id === projectId);
@@ -56,7 +57,18 @@ export const careerRunActions = {
   startStudio(run: ProjectSetupRun): CareerRunState { return { version: 1, projects: [createCareerProject(run, 1)] }; },
   createProject(state: CareerRunState, run: NextProjectStepResult): CareerRunState { return { ...state, projects: [...state.projects, createCareerProject(run, state.projects.length + 1)] }; },
   selectDevelopmentPath(state: CareerRunState, projectId: string, selectedDevelopmentPath: DevelopmentPath): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, selectedDevelopmentPath })); },
-  completeDevelopment(state: CareerRunState, projectId: string, result: DevelopmentStepResult): CareerRunState { return updateProject(state, projectId, (project) => resetAfterDevelopment(project, result)); },
+  applyDevelopmentAction(state: CareerRunState, projectId: string, result: DevelopmentStepResult): CareerRunState {
+    return updateProject(state, projectId, (project) => {
+      if (project.developmentResults.some((applied) => applied.path === result.path)) return project;
+      return { ...project, selectedDevelopmentPath: null, developmentResults: [...project.developmentResults, result] };
+    });
+  },
+  finishDevelopment(state: CareerRunState, projectId: string): CareerRunState {
+    return updateProject(state, projectId, (project) => {
+      const lastResult = project.developmentResults.at(-1);
+      return lastResult ? resetAfterDevelopment(project, lastResult) : project;
+    });
+  },
   changeScenarioTargetSelections(state: CareerRunState, projectId: string, selectedTargetIds: readonly string[]): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, selectedScenarioTargetIds: [...selectedTargetIds] })); },
   changePreProductionSelections(state: CareerRunState, projectId: string, selections: PreProductionSelectionState): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, preProductionSelections: selections })); },
   lockPreProduction(state: CareerRunState, projectId: string, result: PreProductionStepResult): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, preProductionResult: result, selectedProductionEventId: "", shootDayResults: [], shootResult: null, postProductionChoices: emptyPostProductionChoices, postProductionResult: null, releaseChoices: emptyReleaseChoices, releaseResult: null, careerApplicationResult: null })); },
