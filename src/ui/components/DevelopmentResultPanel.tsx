@@ -1,20 +1,28 @@
 import type { DevelopmentStepResult, HistoricalExample } from "../demo/createDevelopmentStepRun.js";
 
 interface DevelopmentResultPanelProps {
-  readonly result: DevelopmentStepResult;
+  readonly results: readonly DevelopmentStepResult[];
   readonly projectLabel?: string;
 }
 
-export function DevelopmentResultPanel({ result, projectLabel = "Film 1" }: DevelopmentResultPanelProps) {
+export function DevelopmentResultPanel({ results, projectLabel = "Film 1" }: DevelopmentResultPanelProps) {
   return (
     <section className="panel development-result-panel">
       <div className="panel-heading">
-        <div><span className="eyebrow">{projectLabel} development</span><h2>{result.pathLabel}</h2></div>
+        <div><span className="eyebrow">{projectLabel} development</span><h2>{results.length} development action{results.length === 1 ? "" : "s"} applied</h2></div>
         <span className="status-pill status-pill--positive">Applied</span>
       </div>
+      {results.map((result) => <DevelopmentActionResult key={result.path} result={result} />)}
+    </section>
+  );
+}
+
+function DevelopmentActionResult({ result }: { readonly result: DevelopmentStepResult }) {
+  return (
+    <div className="development-result-body">
+      <ResultLead label={result.pathLabel} value={result.path === "mentor" ? result.lessonTitle : result.path === "location" ? result.briefTitle : result.scriptTitle} />
       {result.path === "mentor" && (
-        <div className="development-result-body">
-          <ResultLead label="Lesson" value={result.lessonTitle} />
+        <>
           <ResultCopy label="Advice" value={result.advice} />
           <ResultCopy label="Suggested action" value={result.suggestedAction} />
           <div className="result-metric-grid">
@@ -22,31 +30,29 @@ export function DevelopmentResultPanel({ result, projectLabel = "Film 1" }: Deve
             <ResultMetric label="Project techniques" value={`${result.projectTechniqueCount}`} />
           </div>
           {result.historicalExample && <HistoricalExamplePanel example={result.historicalExample} />}
-        </div>
+        </>
       )}
       {result.path === "location" && (
-        <div className="development-result-body">
-          <ResultLead label="Selected brief" value={result.briefTitle} />
+        <>
           <div className="result-metric-grid">
             <ResultMetric label="Top location" value={result.topLocation} />
             <ResultMetric label="Total score" value={`${result.totalScore} / 100`} />
             <ResultMetric label="Project locations" value={`${result.projectLocationCount}`} />
           </div>
           <ResultNotes notes={result.notes} />
-        </div>
+        </>
       )}
       {result.path === "script" && (
-        <div className="development-result-body">
-          <ResultLead label="Script" value={result.scriptTitle} />
+        <>
           <div className="result-metric-grid">
             <ResultMetric label="Structure" value={result.structure} />
             <ResultMetric label="Scene count" value={`${result.sceneCount}`} />
             <ResultMetric label="Overall score" value={`${result.overallScore} / 100`} />
           </div>
           <ResultNotes notes={result.notes} />
-        </div>
+        </>
       )}
-    </section>
+    </div>
   );
 }
 
