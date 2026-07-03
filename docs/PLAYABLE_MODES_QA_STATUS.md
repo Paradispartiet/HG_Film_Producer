@@ -68,3 +68,22 @@ Run a real browser-driven manual QA pass for both playable modes using the exist
 - [`docs/STUDIO_CAREER_MANUAL_PLAYTEST.md`](STUDIO_CAREER_MANUAL_PLAYTEST.md)
 
 If that pass finds blocking UX issues, fix only the issue that blocks or clearly confuses the current documented path, then update the two manual playtest files and this status file with the exact result.
+
+## Consolidated QA pass checks
+
+This pass confirmed the required readiness documents are present on the current branch before validation:
+
+- `docs/PRODUCTION_CASES_MANUAL_PLAYTEST.md`
+- `docs/STUDIO_CAREER_MANUAL_PLAYTEST.md`
+- `docs/GAME_DIRECTION.md`
+- `docs/GAME_DIRECTION_ALIGNMENT_AUDIT.md`
+- `docs/STUDIO_CAREER_EXPERIMENTAL_STATUS.md`
+- `docs/PRODUCTION_CASES_MVP_CHECKPOINT.md`
+
+Automated checks run for this pass:
+
+- `npm run build`
+- `npm test`
+- `npm run build:ui`
+
+Final diff review confirmed this PR is documentation/status-only: no new systems, no new modes, no new cases/content, no scoring changes, no storage-format changes, and no Production Cases or Studio Career behavior changes were introduced.
