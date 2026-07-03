@@ -35,7 +35,7 @@ In practical terms, the player should be able to enter Production Cases from the
 ## What is intentionally not done yet
 
 - The full studio simulator is not the current playable MVP.
-- Studio Career is still an early shell.
+- Studio Career has since become an experimental playable branch and is documented separately in [`docs/STUDIO_CAREER_EXPERIMENTAL_STATUS.md`](STUDIO_CAREER_EXPERIMENTAL_STATUS.md).
 - Manusrom is not active gameplay yet.
 - Casting, crew, and economy systems should not be expanded yet.
 - Film history atlas and locations should not be expanded yet.
