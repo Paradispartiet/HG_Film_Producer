@@ -35,6 +35,21 @@ fresh app
 → continuity and learning checks
 ```
 
+
+## Manual pass record
+
+Use this record when updating the notes after a browser-driven pass. The current entry is a documentation baseline created from the current experimental-path requirements and source-level inspection only.
+
+| Field | Current note |
+| --- | --- |
+| Path covered | New Studio Career → Film One setup → development → pre-production → full shoot schedule → post-production → release → career review/application → Film Two → completed-film collapse/details → continuity checks |
+| Browser-driven pass | Not completed in this notes pass |
+| Source-level pass | Completed for expected flow/gating documentation |
+| Automated checks | Completed for repository health only; they do not replace the browser-driven manual pass |
+| Behavior changes | None; documentation/test-notes only |
+| Studio Career expansion | None; no new systems added |
+| Production Cases changes | None |
+
 ## 1. New career path
 
 **Steps**
