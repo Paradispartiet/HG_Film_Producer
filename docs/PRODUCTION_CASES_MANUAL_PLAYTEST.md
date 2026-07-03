@@ -33,7 +33,7 @@ This playtest note is intentionally limited to observing and documenting the exi
 - Source-level inspection completed: **yes**.
 - Automated checks completed: **yes**.
 
-Because this environment did not perform a live browser-driven playthrough, the checklist below records the intended manual path and the source-level/automated-check result. A future browser pass should replay the same steps in a real browser and update only the test status and any observed non-blocking notes.
+Because this environment did not perform a live browser-driven playthrough, the checklist below records the exact requested manual path and the source-level/automated-check result. A future browser pass should replay the same steps in a real browser and update only the test status and any observed non-blocking notes. No fixes or behavior changes are included in this documentation-only PR.
 
 ## Manual playtest checklist
 
@@ -147,10 +147,11 @@ The main limitation is that this note was produced in a non-browser coding envir
 - No blocking Production Cases UX issue was found during source-level validation.
 - Browser-driven confirmation remains unvalidated, so this pass cannot claim a live end-to-end browser playthrough.
 
-### Fixes made in this PR
+### Changes made in this PR
 
 - No Production Cases code behavior was changed.
-- Documentation was updated to record the consolidated playable-mode QA status.
+- No app logic, UI, routing, scoring, storage, seed data, simulation formulas, career logic, Production Cases logic, or gameplay behavior was changed.
+- Documentation was updated only to place the Production Cases manual playtest notes in the correct repository after the rollback of the misplaced History-Go PR #1632.
 
 ### Known remaining limitations
 
