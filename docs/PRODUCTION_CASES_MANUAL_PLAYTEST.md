@@ -29,11 +29,9 @@ This playtest note is intentionally limited to observing and documenting the exi
 
 ## Test environment and method
 
-- Browser-driven manual test completed: **no**.
-- Source-level inspection completed: **yes**.
-- Automated checks completed: **yes**.
+This file defines the detailed Production Cases test path/checklist. The current consolidated result, browser-driven QA status, and final v0.1 gate live in [`docs/PLAYABLE_MODES_QA_STATUS.md`](PLAYABLE_MODES_QA_STATUS.md).
 
-Because this environment did not perform a live browser-driven playthrough, the checklist below records the exact requested manual path and the source-level/automated-check result. A future browser pass should replay the same steps in a real browser and update only the test status and any observed non-blocking notes. No fixes or behavior changes are included in this documentation-only PR.
+Use the checklist below for the next real browser-driven playthrough. Update the consolidated status file with the overall result after that pass, and keep this file focused on the path, expected observations, and concrete notes.
 
 ## Manual playtest checklist
 
@@ -121,39 +119,13 @@ Because this environment did not perform a live browser-driven playthrough, the 
 
 **Status:** Source-level pass; browser confirmation still needed.
 
-## Known limitations
+## Status pointer
 
-- Browser-driven manual test completed: **no**.
-- Source-level inspection completed: **yes**.
-- Automated checks completed: **yes**.
+Current overall Production Cases QA status is intentionally not repeated here. See [`docs/PLAYABLE_MODES_QA_STATUS.md`](PLAYABLE_MODES_QA_STATUS.md) for:
 
-The main limitation is that this note was produced in a non-browser coding environment. The current result therefore cannot claim a completed real browser playthrough. It confirms that the documented path is represented in the repository docs/source and that the requested automated checks pass.
+- Whether the browser-driven pass is complete.
+- The current consolidated result.
+- The final gate before Production Cases v0.1.
+- The allowed/frozen scope before that gate.
 
-## Result
-
-**PASS WITH NOTES:** Production Cases appears playable as the documented v0.1 candidate path based on source-level inspection and passing automated checks, but a full browser-driven manual test was not actually performed in this environment. The remaining note is non-blocking for this documentation-only PR and should be resolved by a future browser playtest pass.
-
-## Browser QA pass
-
-| Field | Result |
-| --- | --- |
-| Date | 2026-07-03 |
-| Browser-driven test completed | **No** — no Playwright/equivalent browser automation dependency is present in this repo, and this pass did not install new unsafe tooling. |
-| Tested path | Source-level validation of landing → Production Cases library → first-session guidance → first case → mission completion/report gate → Case report → Play again / Next case → returning-player dashboard/Next Action/recent best results. |
-| Result | **PASS WITH NOTES** |
-
-### Issues found
-
-- No blocking Production Cases UX issue was found during source-level validation.
-- Browser-driven confirmation remains unvalidated, so this pass cannot claim a live end-to-end browser playthrough.
-
-### Changes made in this PR
-
-- No Production Cases code behavior was changed.
-- No app logic, UI, routing, scoring, storage, seed data, simulation formulas, career logic, Production Cases logic, or gameplay behavior was changed.
-- Documentation was updated only to place the Production Cases manual playtest notes in the correct repository after the rollback of the misplaced History-Go PR #1632.
-
-### Known remaining limitations
-
-- A real browser pass still needs to confirm click behavior, scroll position, localStorage persistence, and visual clarity after completing and replaying cases.
-- Production Cases remains the stable MVP/reference loop; this pass did not add cases, scoring changes, storage changes, or new systems.
+This checklist remains documentation-only and does not change Production Cases behavior.

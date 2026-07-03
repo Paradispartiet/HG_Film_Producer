@@ -38,17 +38,9 @@ fresh app
 
 ## Manual pass record
 
-Use this record when updating the notes after a browser-driven pass. The current entry is a documentation baseline created from the current experimental-path requirements and source-level inspection only.
+This file defines the detailed Studio Career test path/checklist. The current consolidated result, browser-driven QA status, and final experimental v0.1 gate live in [`docs/PLAYABLE_MODES_QA_STATUS.md`](PLAYABLE_MODES_QA_STATUS.md).
 
-| Field | Current note |
-| --- | --- |
-| Path covered | New Studio Career → Film One setup → development → pre-production → full shoot schedule → post-production → release → career review/application → Film Two → completed-film collapse/details → continuity checks |
-| Browser-driven pass | Not completed in this notes pass |
-| Source-level pass | Completed for expected flow/gating documentation |
-| Automated checks | Completed for repository health only; they do not replace the browser-driven manual pass |
-| Behavior changes | None; documentation/test-notes only |
-| Studio Career expansion | None; no new systems added |
-| Production Cases changes | None |
+Use the checklist below for the next real browser-driven playthrough. Update the consolidated status file with the overall result after that pass, and keep this file focused on the path, expected observations, and concrete notes.
 
 ## 1. New career path
 
@@ -238,49 +230,13 @@ Use this record when updating the notes after a browser-driven pass. The current
 
 - Source-level inspection indicates Studio Career includes carryover and completed-film summaries, but browser playtesting is still needed to judge whether the balance reads as film-learning rather than generic pipeline completion.
 
-## 11. Known limitations
+## 11. Status pointer
 
-- Browser-driven manual test completed: **no**.
-- Source-level inspection completed: **yes**.
-- Automated checks completed: **yes**.
+Current overall Studio Career QA status is intentionally not repeated here. See [`docs/PLAYABLE_MODES_QA_STATUS.md`](PLAYABLE_MODES_QA_STATUS.md) for:
 
-These notes document the exact path and source-level expectations, but they should not be treated as a completed browser playtest. A future browser-driven pass should update this file with observed pass/fail notes, screenshots if useful, and any blocking issues discovered.
+- Whether the browser-driven pass is complete.
+- The current consolidated result.
+- The final gate before Studio Career experimental v0.1.
+- The allowed/frozen scope before that gate.
 
-## 12. Result
-
-**PASS WITH NOTES:** Studio Career appears playable enough as an experimental v0.1 candidate from source-level inspection, but the browser-driven manual pass has not yet been completed. The main non-blocking note is that actual browser validation is still required before treating the experimental path as fully manually verified.
-
-## Non-goals confirmed for this notes pass
-
-- No app behavior changed.
-- No UI changed.
-- No routing changed.
-- No scoring, storage, seed data, simulation formulas, career logic, Production Cases logic, or gameplay behavior changed.
-- No bugs fixed in this PR.
-- No new Studio Career systems added.
-- No economy, awards, investors, distribution, crew/cast simulation, AI/manus, atlas/location systems, or content expanded.
-- Production Cases was not changed.
-
-## Browser QA pass
-
-| Field | Result |
-| --- | --- |
-| Date | 2026-07-03 |
-| Browser-driven test completed | **No** — no Playwright/equivalent browser automation dependency is present in this repo, and this pass did not install new unsafe tooling. |
-| Tested path | Source-level validation of landing → Experimental Studio Career → Film One setup → development → pre-production → full shoot schedule → post-production → release → career review/application → Film Two → Film One compact summary/Show details → continuity and learning checks. |
-| Result | **PASS WITH NOTES** |
-
-### Issues found
-
-- No blocking Studio Career UX issue was found during source-level validation.
-- Browser-driven confirmation remains unvalidated, so this pass cannot claim a live end-to-end browser playthrough.
-
-### Fixes made in this PR
-
-- No Studio Career code behavior was changed.
-- Documentation was updated to record the consolidated playable-mode QA status.
-
-### Known remaining limitations
-
-- A real browser pass still needs to confirm click behavior, active-panel scrolling, day-by-day shoot progression, result-panel ordering, and Film Two visibility after career application.
-- Studio Career remains experimental; this pass did not expand economy, awards, investors, distribution, crew/cast simulation, AI/manus, atlas/location systems, progression systems, or content.
+This checklist remains documentation-only and does not change Studio Career behavior.

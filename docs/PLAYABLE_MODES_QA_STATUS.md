@@ -2,72 +2,158 @@
 
 Date: 2026-07-03
 
-This document records the consolidated QA status for the two current playable paths. It is intentionally limited to validation status and scope control. It does not introduce new modes, systems, content, scoring rules, storage formats, or product-direction changes.
+This document is the single source of truth for current playable-mode QA status. The detailed manual paths live in the linked checklist files, but the current pass/fail result, remaining gate, and scope freeze are recorded here to avoid conflicting status language.
+
+This consolidation is documentation-only. It does not introduce new modes, systems, content, scoring rules, storage formats, simulation formulas, economy rules, crew/cast rules, release rules, routing changes, or product-direction changes.
 
 ## Summary
 
-| Mode | Current role | Browser-driven QA | Current result | Notes |
-| --- | --- | --- | --- | --- |
-| Production Cases | Stable MVP/reference loop | No | PASS WITH NOTES | Source-level QA found the documented loop represented and no blocking UX issue, but a real browser playthrough is still required. |
-| Studio Career | Experimental playable branch | No | PASS WITH NOTES | Source-level QA found the documented experimental path represented and no blocking UX issue, but a real browser playthrough is still required. |
+| Mode | Current role | Automated checks | Source-level inspection | Browser-driven manual playthrough | Current result | Final gate |
+| --- | --- | --- | --- | --- | --- | --- |
+| Production Cases | Stable MVP candidate / reference loop | Passed | Passed | Not completed | PASS WITH NOTES | Browser-driven manual playthrough of the documented path. |
+| Studio Career | Experimental playable branch | Passed | Passed | Not completed | PASS WITH NOTES | Browser-driven playthrough from new career through Film Two actionability. |
 
 ## Production Cases current QA status
 
-Production Cases remains the recommended first playable path and stable MVP checkpoint.
+Production Cases remains the recommended first playable path and stable MVP/reference loop.
 
-### Validated in this pass
+- **Status:** stable MVP candidate / reference loop.
+- **Current automated checks:** passed.
+- **Source-level inspection:** passed.
+- **Browser-driven manual playthrough:** not completed in this PR. No Playwright/equivalent browser automation dependency is present in this repo, and this pass did not install new tooling.
+- **Current result:** **PASS WITH NOTES** until the browser-driven pass is completed.
+- **Final gate before v0.1:** browser-driven manual playthrough of the documented path in [`docs/PRODUCTION_CASES_MANUAL_PLAYTEST.md`](PRODUCTION_CASES_MANUAL_PLAYTEST.md).
+
+### Production Cases source-level findings
 
 - Landing copy recommends Production Cases first.
 - Production Cases library has first-session guidance and a first-case entry point.
 - The intended loop remains: choose case → make choices → complete missions → Case report → replay or move to the next case → improve best result.
-- Source inspection confirms the library includes returning-player surfaces such as Next Action, collection/career summaries, achievements, and recent best results.
+- The library includes returning-player surfaces such as Next Action, collection/career summaries, achievements, and recent best results.
 - Source inspection did not identify a blocking issue in Play again / Next case fallback behavior.
 
-### Still unvalidated
+### Production Cases still unvalidated in a browser
 
-- Live browser clicks through the full first case.
-- Case report timing and visual clarity in an actual browser after mission completion.
-- LocalStorage persistence for best result/progress across reloads in a real browser.
+- Live clicks through the full first case.
+- Case report timing and visual clarity after mission completion.
+- LocalStorage persistence for best result/progress across reloads.
 - Scroll/focus clarity after Play again and Next case actions.
 
 ## Studio Career current QA status
 
 Studio Career remains an experimental playable branch and should not be treated as the stable MVP path.
 
-### Validated in this pass
+- **Status:** experimental playable branch.
+- **Current automated checks:** passed.
+- **Source-level inspection:** passed.
+- **Browser-driven manual playthrough:** not completed in this PR. No Playwright/equivalent browser automation dependency is present in this repo, and this pass did not install new tooling.
+- **Current result:** **PASS WITH NOTES** until the browser-driven pass is completed.
+- **Final gate before experimental v0.1:** browser-driven playthrough from new career through Film Two actionability using [`docs/STUDIO_CAREER_MANUAL_PLAYTEST.md`](STUDIO_CAREER_MANUAL_PLAYTEST.md).
+
+### Studio Career source-level findings
 
 - Landing copy labels Studio Career as experimental and recommends Production Cases first.
-- Source inspection confirms the documented path is represented: setup → development → pre-production → shoot → post-production → release → career review/application → next project.
-- Source inspection confirms Career review is gated behind release result rendering.
-- Source inspection confirms non-latest completed projects can collapse into compact summaries with Show details / Hide details while the latest project remains actionable.
+- The documented path is represented: setup → development → pre-production → shoot → post-production → release → career review/application → next project.
+- Career review is gated behind release result rendering.
+- Non-latest completed projects can collapse into compact summaries with Show details / Hide details while the latest project remains actionable.
 - Source inspection did not identify a blocking issue in active-project scoped controls.
 
-### Still unvalidated
+### Studio Career still unvalidated in a browser
 
-- Live browser completion of all development, pre-production, shoot, post-production, release, and career-application actions.
-- Active-panel scrolling behavior from Continue/Open actions in a real browser.
+- Live completion of all development, pre-production, shoot, post-production, release, and career-application actions.
+- Active-panel scrolling behavior from Continue/Open actions.
 - Whether release result and career review ordering is visually obvious during a real playthrough.
 - Whether Film Two is immediately visible/actionable without a long-scroll trap in a real browser viewport.
 - Whether continuity and learning cues are strong enough in practice without overemphasizing generic tycoon metrics.
 
-## What must not be expanded yet
+## Final readiness gates
 
-Do not expand the project with new playable systems or broad content until a real browser-driven QA pass has validated the current paths. In particular, do not expand:
+Production Cases v0.1 can be marked only when:
 
-- New modes or new case/content sets.
-- Studio Career scope.
-- Economy, awards, investors, distribution, crew/cast simulation, AI/manus, atlas/location systems, or progression systems.
-- Scoring formulas or storage formats unless a current flow is literally broken and the fix is minimal/compatibility-safe.
-- UI redesign or product-direction changes.
+- Browser-driven manual playthrough completed.
+- New player path works.
+- First case completes.
+- Case report appears only after completion.
+- Play again works.
+- Next case works or safe fallback works.
+- Returning-player dashboard/next action makes sense.
+- No blocking console errors.
+- No blocking UX issue.
 
-## Recommended next step
+Studio Career experimental v0.1 can be marked only when:
 
-Run a real browser-driven manual QA pass for both playable modes using the existing checklists in:
+- Browser-driven manual playthrough completed.
+- New Studio Career starts clearly as experimental.
+- Film One can progress through development, pre-production, full shoot schedule, post-production, release, career review.
+- Career review appears only after release result.
+- Film Two can be started.
+- Film One collapses.
+- Film Two remains immediately actionable.
+- No long-scroll trap.
+- No dead Continue/Open actions.
+- No blocking console errors.
 
-- [`docs/PRODUCTION_CASES_MANUAL_PLAYTEST.md`](PRODUCTION_CASES_MANUAL_PLAYTEST.md)
-- [`docs/STUDIO_CAREER_MANUAL_PLAYTEST.md`](STUDIO_CAREER_MANUAL_PLAYTEST.md)
+## Do not build before gate
 
-If that pass finds blocking UX issues, fix only the issue that blocks or clearly confuses the current documented path, then update the two manual playtest files and this status file with the exact result.
+Do not build next:
+
+- New Studio Career systems.
+- Deeper economy.
+- Awards expansion.
+- Investors/loans.
+- Distribution contracts.
+- AI writing/manus.
+- Location atlas.
+- New content batches.
+- New modes.
+- New progression layers.
+
+Allowed before gate:
+
+- Browser-driven manual QA.
+- Blocking bug fixes discovered in that QA.
+- Copy clarity.
+- Documentation cleanup.
+
+## Local human test checklist
+
+Use this checklist for the browser-driven pass that will close the remaining gate.
+
+### Production Cases
+
+1. Open app.
+2. Confirm “Recommended first / Production Cases”.
+3. Start Production Cases.
+4. Start first case.
+5. Complete all choices/missions.
+6. Confirm Case report appears after completion only.
+7. Test Play again.
+8. Test Next case.
+9. Return to library.
+10. Confirm dashboard/recent best result/next action.
+
+### Studio Career
+
+1. Open app.
+2. Confirm Studio Career is labeled experimental.
+3. Start New Studio Career.
+4. Start Film One.
+5. Complete development.
+6. Complete pre-production.
+7. Complete full shoot schedule.
+8. Complete post-production.
+9. Complete release.
+10. Open career review.
+11. Apply career result.
+12. Start Film Two.
+13. Confirm Film One collapses.
+14. Confirm Film Two is visible/actionable.
+15. Confirm no dead buttons/console errors.
+
+## Detailed checklist sources
+
+- [`docs/PRODUCTION_CASES_MANUAL_PLAYTEST.md`](PRODUCTION_CASES_MANUAL_PLAYTEST.md) defines the detailed Production Cases manual test path/checklist.
+- [`docs/STUDIO_CAREER_MANUAL_PLAYTEST.md`](STUDIO_CAREER_MANUAL_PLAYTEST.md) defines the detailed Studio Career manual test path/checklist.
 
 ## Consolidated QA pass checks
 

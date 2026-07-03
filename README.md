@@ -114,16 +114,13 @@ Modulær struktur.
 
 Repoet har nå en React/Vite-basert app-UI for den spillbare MVP-en og videre motorinspeksjon.
 
-- **Current playable MVP:** Production Cases — produksjonscase-katalogen er den stabile spillbare MVP-checkpointen og primære referanseloopen, med first-session guidance for brand-new Production Cases players.
+- **Current playable MVP candidate:** Production Cases — produksjonscase-katalogen er den stabile spillbare MVP-checkpointen og primære referanseloopen, med first-session guidance for brand-new Production Cases players.
 - Recommended first play path: Production Cases. Studio Career is available as an experimental branch for focused testing.
 - Game direction: see [`docs/GAME_DIRECTION.md`](docs/GAME_DIRECTION.md).
-- Game direction alignment audit: see [`docs/GAME_DIRECTION_ALIGNMENT_AUDIT.md`](docs/GAME_DIRECTION_ALIGNMENT_AUDIT.md).
+- **Playable modes QA status:** see [`docs/PLAYABLE_MODES_QA_STATUS.md`](docs/PLAYABLE_MODES_QA_STATUS.md) for the single consolidated readiness picture, current QA result, browser-driven gate, and links to detailed manual checklists.
 - Production Cases MVP checkpoint: see [`docs/PRODUCTION_CASES_MVP_CHECKPOINT.md`](docs/PRODUCTION_CASES_MVP_CHECKPOINT.md).
-- Production Cases manual playtest notes: [`docs/PRODUCTION_CASES_MANUAL_PLAYTEST.md`](docs/PRODUCTION_CASES_MANUAL_PLAYTEST.md).
 - **Current MVP loop:** choose case → make choices → score/report → improve best result.
 - **Studio Career:** eksperimentell spillbar branch, ikke hoved-MVP ennå; see [`docs/STUDIO_CAREER_EXPERIMENTAL_STATUS.md`](docs/STUDIO_CAREER_EXPERIMENTAL_STATUS.md).
-- Studio Career manual playtest notes: [`docs/STUDIO_CAREER_MANUAL_PLAYTEST.md`](docs/STUDIO_CAREER_MANUAL_PLAYTEST.md).
-- Playable modes QA status: [`docs/PLAYABLE_MODES_QA_STATUS.md`](docs/PLAYABLE_MODES_QA_STATUS.md).
 - **Demo Dashboard:** inspeksjon av engine/demo-data.
 - **Full studio simulator:** senere utvidelse, ikke spillbar hovedmodus ennå.
 
