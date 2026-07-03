@@ -254,13 +254,13 @@ export function FilmScenarioLibrary({
     <main className="scenario-library">
       <div className="scenario-library-header">
         <div>
-          <span className="eyebrow">Seed catalogue</span>
+          <span className="eyebrow">Stable MVP reference loop</span>
           <h2>Production Cases</h2>
         </div>
         <p>
-          {scenarios.length} production cases from the classic film seed file. Manual
-          briefs are production cases: follow and reconstruct the production
-          choices behind the specific film.
+          {scenarios.length} production cases in the stable MVP reference loop. Start here
+          to choose a production case, make choices, get a report, and improve
+          your best result.
         </p>
       </div>
       {isFirstProductionCaseSession ? (

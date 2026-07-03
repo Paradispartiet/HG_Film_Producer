@@ -115,6 +115,7 @@ Modulær struktur.
 Repoet har nå en React/Vite-basert app-UI for den spillbare MVP-en og videre motorinspeksjon.
 
 - **Current playable MVP:** Production Cases — produksjonscase-katalogen er den stabile spillbare MVP-checkpointen og primære referanseloopen, med first-session guidance for brand-new Production Cases players.
+- Recommended first play path: Production Cases. Studio Career is available as an experimental branch for focused testing.
 - Game direction: see [`docs/GAME_DIRECTION.md`](docs/GAME_DIRECTION.md).
 - Game direction alignment audit: see [`docs/GAME_DIRECTION_ALIGNMENT_AUDIT.md`](docs/GAME_DIRECTION_ALIGNMENT_AUDIT.md).
 - Production Cases MVP checkpoint: see [`docs/PRODUCTION_CASES_MVP_CHECKPOINT.md`](docs/PRODUCTION_CASES_MVP_CHECKPOINT.md).
