@@ -1,6 +1,6 @@
 # Production Cases MVP checkpoint
 
-Production Cases now has a closed playable MVP loop. This checkpoint exists to keep the project focused on manually playing and evaluating that loop before expanding into new simulator systems.
+Production Cases now has a closed playable MVP loop. This checkpoint exists to keep the project focused on manually playing and evaluating that loop before expanding into new simulator systems. Automated checks are green, but the full browser-based manual playthrough is still the next validation step.
 
 ## Current MVP loop
 
@@ -53,4 +53,4 @@ Before adding major features or broadening the project into full studio-simulato
 - Progress / best-result persistence.
 - Fallback back to the Production Cases library.
 
-Until those paths have been manually played and evaluated, avoid scope creep into new gameplay systems, larger simulator mechanics, expanded content catalogues, or advanced recommendation layers. The next checkpoint should be based on how this closed loop feels in real browser play, not on adding more systems before the loop is validated.
+Until those paths have been manually played and evaluated in a real browser, avoid scope creep into new gameplay systems, larger simulator mechanics, expanded content catalogues, casting / crew / economy expansions, atlas / location expansions, or advanced recommendation layers. The next checkpoint should be based on how this closed loop feels in real browser play, not on adding more systems before the loop is validated.
