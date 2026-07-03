@@ -119,6 +119,7 @@ Repoet har nå en React/Vite-basert app-UI for den spillbare MVP-en og videre mo
 - Game direction: see [`docs/GAME_DIRECTION.md`](docs/GAME_DIRECTION.md).
 - Game direction alignment audit: see [`docs/GAME_DIRECTION_ALIGNMENT_AUDIT.md`](docs/GAME_DIRECTION_ALIGNMENT_AUDIT.md).
 - Production Cases MVP checkpoint: see [`docs/PRODUCTION_CASES_MVP_CHECKPOINT.md`](docs/PRODUCTION_CASES_MVP_CHECKPOINT.md).
+- Production Cases manual playtest notes: [`docs/PRODUCTION_CASES_MANUAL_PLAYTEST.md`](docs/PRODUCTION_CASES_MANUAL_PLAYTEST.md).
 - **Current MVP loop:** choose case → make choices → score/report → improve best result.
 - **Studio Career:** eksperimentell spillbar branch, ikke hoved-MVP ennå; see [`docs/STUDIO_CAREER_EXPERIMENTAL_STATUS.md`](docs/STUDIO_CAREER_EXPERIMENTAL_STATUS.md).
 - **Demo Dashboard:** inspeksjon av engine/demo-data.
