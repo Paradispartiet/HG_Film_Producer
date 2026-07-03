@@ -260,3 +260,27 @@ These notes document the exact path and source-level expectations, but they shou
 - No new Studio Career systems added.
 - No economy, awards, investors, distribution, crew/cast simulation, AI/manus, atlas/location systems, or content expanded.
 - Production Cases was not changed.
+
+## Browser QA pass
+
+| Field | Result |
+| --- | --- |
+| Date | 2026-07-03 |
+| Browser-driven test completed | **No** — no Playwright/equivalent browser automation dependency is present in this repo, and this pass did not install new unsafe tooling. |
+| Tested path | Source-level validation of landing → Experimental Studio Career → Film One setup → development → pre-production → full shoot schedule → post-production → release → career review/application → Film Two → Film One compact summary/Show details → continuity and learning checks. |
+| Result | **PASS WITH NOTES** |
+
+### Issues found
+
+- No blocking Studio Career UX issue was found during source-level validation.
+- Browser-driven confirmation remains unvalidated, so this pass cannot claim a live end-to-end browser playthrough.
+
+### Fixes made in this PR
+
+- No Studio Career code behavior was changed.
+- Documentation was updated to record the consolidated playable-mode QA status.
+
+### Known remaining limitations
+
+- A real browser pass still needs to confirm click behavior, active-panel scrolling, day-by-day shoot progression, result-panel ordering, and Film Two visibility after career application.
+- Studio Career remains experimental; this pass did not expand economy, awards, investors, distribution, crew/cast simulation, AI/manus, atlas/location systems, progression systems, or content.
