@@ -123,6 +123,7 @@ Repoet har nå en React/Vite-basert app-UI for den spillbare MVP-en og videre mo
 - **Current MVP loop:** choose case → make choices → score/report → improve best result.
 - **Studio Career:** eksperimentell spillbar branch, ikke hoved-MVP ennå; see [`docs/STUDIO_CAREER_EXPERIMENTAL_STATUS.md`](docs/STUDIO_CAREER_EXPERIMENTAL_STATUS.md).
 - Studio Career manual playtest notes: [`docs/STUDIO_CAREER_MANUAL_PLAYTEST.md`](docs/STUDIO_CAREER_MANUAL_PLAYTEST.md).
+- Playable modes QA status: [`docs/PLAYABLE_MODES_QA_STATUS.md`](docs/PLAYABLE_MODES_QA_STATUS.md).
 - **Demo Dashboard:** inspeksjon av engine/demo-data.
 - **Full studio simulator:** senere utvidelse, ikke spillbar hovedmodus ennå.
 

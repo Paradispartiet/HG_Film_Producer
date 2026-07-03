@@ -132,3 +132,27 @@ The main limitation is that this note was produced in a non-browser coding envir
 ## Result
 
 **PASS WITH NOTES:** Production Cases appears playable as the documented v0.1 candidate path based on source-level inspection and passing automated checks, but a full browser-driven manual test was not actually performed in this environment. The remaining note is non-blocking for this documentation-only PR and should be resolved by a future browser playtest pass.
+
+## Browser QA pass
+
+| Field | Result |
+| --- | --- |
+| Date | 2026-07-03 |
+| Browser-driven test completed | **No** — no Playwright/equivalent browser automation dependency is present in this repo, and this pass did not install new unsafe tooling. |
+| Tested path | Source-level validation of landing → Production Cases library → first-session guidance → first case → mission completion/report gate → Case report → Play again / Next case → returning-player dashboard/Next Action/recent best results. |
+| Result | **PASS WITH NOTES** |
+
+### Issues found
+
+- No blocking Production Cases UX issue was found during source-level validation.
+- Browser-driven confirmation remains unvalidated, so this pass cannot claim a live end-to-end browser playthrough.
+
+### Fixes made in this PR
+
+- No Production Cases code behavior was changed.
+- Documentation was updated to record the consolidated playable-mode QA status.
+
+### Known remaining limitations
+
+- A real browser pass still needs to confirm click behavior, scroll position, localStorage persistence, and visual clarity after completing and replaying cases.
+- Production Cases remains the stable MVP/reference loop; this pass did not add cases, scoring changes, storage changes, or new systems.
