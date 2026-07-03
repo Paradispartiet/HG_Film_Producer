@@ -114,10 +114,10 @@ Modulær struktur.
 
 Repoet har nå en React/Vite-basert app-UI for den spillbare MVP-en og videre motorinspeksjon.
 
-- **Current playable MVP:** Production Cases — produksjonscase-katalogen er den primære spillbare loopen, med first-session guidance for brand-new Production Cases players.
+- **Current playable MVP:** Production Cases — produksjonscase-katalogen er den stabile spillbare MVP-checkpointen og primære referanseloopen, med first-session guidance for brand-new Production Cases players.
 - Production Cases MVP checkpoint: see [`docs/PRODUCTION_CASES_MVP_CHECKPOINT.md`](docs/PRODUCTION_CASES_MVP_CHECKPOINT.md).
 - **Current MVP loop:** choose case → make choices → score/report → improve best result.
-- **Studio Career:** tidlig skall for studiopipeline og karriereflyt.
+- **Studio Career:** eksperimentell spillbar branch, ikke hoved-MVP ennå; see [`docs/STUDIO_CAREER_EXPERIMENTAL_STATUS.md`](docs/STUDIO_CAREER_EXPERIMENTAL_STATUS.md).
 - **Demo Dashboard:** inspeksjon av engine/demo-data.
 - **Full studio simulator:** senere utvidelse, ikke spillbar hovedmodus ennå.
 
