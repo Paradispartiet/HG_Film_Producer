@@ -38,6 +38,8 @@ import { careerRunActions, type CareerFilmProjectRun, useCareerRunState } from "
 import { getClassicFilmScenarios, getFilmScenarioById, type FilmScenarioSeed } from "./data/filmScenarios";
 import { resolveScenarioProductionBrief } from "./data/scenarioProductionBriefs";
 import { createScenarioTargetChecklist, getScenarioTargetCount } from "./data/scenarioTargetChecklist";
+import { getNextProductionCaseId } from "../core/productionCaseProgress";
+import { getStudioCareerActivePanelId, getStudioCareerActivePhase, getStudioCareerCurrentPhaseIndex, shouldCollapseStudioCareerProject } from "../core/studioCareerFlow";
 
 const demo = createDemoStudioRun();
 const nextProjectOptions = getNextProjectOptions();
@@ -98,13 +100,13 @@ function CareerDashboard({ careerRun, setCareerRun, onOpenProductionCases, onRes
 
 function FilmProjectWorkspace({ project, isLatest, onOpenProductionCases, onStartScenario, previousProject, setCareerRun }: { readonly project: CareerFilmProjectRun; readonly isLatest: boolean; readonly onOpenProductionCases: () => void; readonly onStartScenario: (scenario: FilmScenarioSeed) => void; readonly previousProject: CareerFilmProjectRun | undefined; readonly setCareerRun: React.Dispatch<React.SetStateAction<{ version: 1; projects: readonly CareerFilmProjectRun[] }>>; }) {
   const [manualExpand, setManualExpand] = useState<boolean | null>(null);
-  const collapsed = (manualExpand === null ? !isLatest : !manualExpand) && Boolean(project.careerApplicationResult);
+  const collapsed = shouldCollapseStudioCareerProject({ isLatest, careerApplicationResult: project.careerApplicationResult, manualExpand });
   const pastSummary = project.careerApplicationResult?.pipelineStep;
   const context = getRunContext(project.run);
   const pipeline = project.careerApplicationResult ? [...projectPipeline(project), project.careerApplicationResult.pipelineStep] : projectPipeline(project);
-  const currentPhase = project.releaseResult ? 5 : project.postProductionResult ? 4 : project.shootResult ? 3 : project.preProductionResult ? 2 : project.developmentResult ? 1 : 0;
-  const actionPanelId = `phase-action-${project.id}`;
-  const activePanelTarget = currentPhase === 0 ? "development" : currentPhase === 1 ? "pre-production" : currentPhase === 2 ? "shoot" : currentPhase === 3 ? "post-production" : currentPhase === 4 ? "release" : "career-application";
+  const currentPhase = getStudioCareerCurrentPhaseIndex(project);
+  const actionPanelId = getStudioCareerActivePanelId(project.id);
+  const activePanelTarget = getStudioCareerActivePhase(project);
   function scrollToActivePanel() { document.getElementById(actionPanelId)?.scrollIntoView({ behavior: "smooth", block: "start" }); }
   const label = `Film ${project.projectNumber}`;
   const lowerLabel = (project.projectNumber === 1 ? "first film" : `film ${project.projectNumber}`) as import("./types").ProjectShootLabel;
@@ -119,8 +121,8 @@ function FilmProjectWorkspace({ project, isLatest, onOpenProductionCases, onStar
 
 function getNextClassicScenario(scenarioId: string) {
   const scenarios = getClassicFilmScenarios();
-  const scenarioIndex = scenarios.findIndex((scenario) => scenario.id === scenarioId);
-  return scenarioIndex >= 0 ? scenarios[scenarioIndex + 1] : undefined;
+  const nextScenarioId = getNextProductionCaseId(scenarios.map((scenario) => scenario.id), scenarioId);
+  return nextScenarioId && nextScenarioId !== scenarioId ? getFilmScenarioById(nextScenarioId) : undefined;
 }
 
 function projectPipeline(project: CareerFilmProjectRun) {
