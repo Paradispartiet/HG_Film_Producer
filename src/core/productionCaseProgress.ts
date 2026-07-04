@@ -992,6 +992,24 @@ export function getProductionCaseAchievements(
   });
 }
 
+
+export function isProductionCaseFirstSession(args: {
+  readonly progress: ProductionCaseProgressState;
+  readonly bestResults: ProductionCaseBestResultsState;
+}): boolean {
+  return Object.keys(args.progress).length === 0 && Object.keys(args.bestResults).length === 0;
+}
+
+export function getNextProductionCaseId(
+  orderedScenarioIds: readonly string[],
+  currentScenarioId: string,
+): string | undefined {
+  if (orderedScenarioIds.length === 0) return undefined;
+  const currentIndex = orderedScenarioIds.indexOf(currentScenarioId);
+  if (currentIndex < 0) return orderedScenarioIds[0];
+  return orderedScenarioIds[currentIndex + 1];
+}
+
 export type ProductionCaseNextActionType = "continue" | "improve" | "start" | "master" | "complete";
 
 export type ProductionCaseNextActionStatus = ProductionCaseLibraryStatus & {

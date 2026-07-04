@@ -172,4 +172,12 @@ Automated checks run for this pass:
 - `npm test`
 - `npm run build:ui`
 
-Final diff review confirmed this PR is documentation/status-only: no new systems, no new modes, no new cases/content, no scoring changes, no storage-format changes, and no Production Cases or Studio Career behavior changes were introduced.
+Final diff review for that earlier QA pass confirmed no new systems, no new modes, no new cases/content, no scoring changes, no storage-format changes, and no Production Cases or Studio Career behavior changes were introduced.
+
+## No-dependency smoke coverage
+
+Browser QA remains blocked because no browser/session is available in this environment and npm registry access previously blocked Playwright installation. No Playwright, Puppeteer, browser package, jsdom, or testing-library dependency has been added.
+
+No-dependency source-level smoke tests now cover key Production Cases and Studio Career flow invariants, including report gating, continuation helpers, first-session/returning-player recommendations, score/report bounds, Studio Career phase ordering, active targets, completed-film collapse assumptions, project-scoped release controls, and career-application availability.
+
+This does not close the final browser readiness gate. Final readiness still requires a real browser/manual playthrough of the Production Cases and Studio Career flows.
