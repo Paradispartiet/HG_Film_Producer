@@ -87,6 +87,17 @@ Vi kopierer ikke filmen.
 Vi lar oss inspirere av hva filmen handler om.
 ```
 
+
+## Local verification
+
+Before the final browser/manual QA gate, run the local no-dependency v0.1 preflight:
+
+```bash
+npm run verify:v0.1
+```
+
+This command composes source/documentation preflight checks, TypeScript checks, Node source-level smoke tests, and the UI build check. It does not replace the browser-driven manual playthroughs tracked in [`docs/PLAYABLE_MODES_QA_STATUS.md`](docs/PLAYABLE_MODES_QA_STATUS.md).
+
 ## Dokumentasjon
 
 All faktisk grunnlagsdokumentasjon ligger i `/README/`.

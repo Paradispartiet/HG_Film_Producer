@@ -66,6 +66,19 @@ Studio Career remains an experimental playable branch and should not be treated 
 - Whether Film Two is immediately visible/actionable without a long-scroll trap in a real browser viewport.
 - Whether continuity and learning cues are strong enough in practice without overemphasizing generic tycoon metrics.
 
+
+## Local v0.1 preflight verification
+
+Run this command before the final browser/manual gate:
+
+```bash
+npm run verify:v0.1
+```
+
+The command is intentionally no-dependency and local-only. It runs the built-in Node preflight script, TypeScript checks, source-level smoke tests, and the UI build check without adding Playwright, Puppeteer, jsdom, testing-library, or other browser packages.
+
+The preflight verifies that required readiness docs, package scripts, and key no-dependency smoke test files are present, and it guards against accidentally adding forbidden browser/test dependencies. This does not close the final browser readiness gate; Production Cases v0.1 and Studio Career experimental v0.1 still require the browser-driven manual playthroughs listed below.
+
 ## Final readiness gates
 
 Production Cases v0.1 can be marked only when:
