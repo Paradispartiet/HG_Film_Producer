@@ -98,6 +98,14 @@ npm run verify:v0.1
 
 This command composes source/documentation preflight checks, TypeScript checks, Node source-level smoke tests, and the UI build check. It does not replace the browser-driven manual playthroughs tracked in [`docs/PLAYABLE_MODES_QA_STATUS.md`](docs/PLAYABLE_MODES_QA_STATUS.md).
 
+For the remaining human browser pass on a real local machine, run the no-new-dependency manual QA launcher:
+
+```bash
+npm run qa:manual
+```
+
+The launcher starts the local Vite dev server, prints the Production Cases and Studio Career browser gate checklist, and points to the detailed QA docs. It is only a convenience for manual validation; it does not mark browser QA, Production Cases v0.1, or Studio Career experimental v0.1 complete.
+
 ## Dokumentasjon
 
 All faktisk grunnlagsdokumentasjon ligger i `/README/`.
