@@ -1,6 +1,6 @@
 # Playable modes QA status
 
-Date: 2026-07-03
+Date: 2026-07-07
 
 This document is the single source of truth for current playable-mode QA status. The detailed manual paths live in the linked checklist files, but the current pass/fail result, remaining gate, and scope freeze are recorded here to avoid conflicting status language.
 
@@ -12,6 +12,21 @@ This consolidation is documentation-only. It does not introduce new modes, syste
 | --- | --- | --- | --- | --- | --- | --- |
 | Production Cases | Stable MVP candidate / reference loop | Passed | Passed | Not completed | PASS WITH NOTES | Browser-driven manual playthrough of the documented path. |
 | Studio Career | Experimental playable branch | Passed | Passed | Not completed | PASS WITH NOTES | Browser-driven playthrough from new career through Film Two actionability. |
+
+
+## 2026-07-07 manual browser QA intake
+
+A local manual browser QA run was reported as performed with `npm run qa:manual`, but the submitted result fields still contained placeholders rather than concrete pass/blocker data:
+
+- Production Cases result: `<PASTE RESULT>`
+- Production Cases issues found: `<PASTE ISSUES OR “none”>`
+- Production Cases console errors: `<PASTE OR “none”>`
+- Studio Career result: `<PASTE RESULT>`
+- Studio Career issues found: `<PASTE ISSUES OR “none”>`
+- Studio Career console errors: `<PASTE OR “none”>`
+- Manual run details date/browser/local URL/command/tester notes: not provided as concrete values.
+
+Because no actual browser result, browser, URL, tester notes, issues list, or console-error result was provided, this pass cannot honestly close either browser gate. No browser result was invented, no blockers were inferred from placeholders, and no app code was changed. The browser-driven manual playthrough status therefore remains not completed for both modes until a concrete manual result is provided.
 
 ## Production Cases current QA status
 
