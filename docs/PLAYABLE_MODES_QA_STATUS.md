@@ -79,6 +79,16 @@ The command is intentionally no-dependency and local-only. It runs the built-in 
 
 The preflight verifies that required readiness docs, package scripts, and key no-dependency smoke test files are present, and it guards against accidentally adding forbidden browser/test dependencies. This does not close the final browser readiness gate; Production Cases v0.1 and Studio Career experimental v0.1 still require the browser-driven manual playthroughs listed below.
 
+## Local manual browser QA launcher
+
+On a real local machine with a browser, run this helper to start the Vite dev server and print the remaining browser gate checklist in the terminal:
+
+```bash
+npm run qa:manual
+```
+
+The helper uses only built-in Node modules and the existing Vite script. It does not install browser automation, add dependencies, change gameplay behavior, or mark browser QA as completed. For a production-build smoke pass after building, humans can run `npm run qa:manual:preview`, but the same manual checklist and unclosed browser gate still apply.
+
 ## Final readiness gates
 
 Production Cases v0.1 can be marked only when:
