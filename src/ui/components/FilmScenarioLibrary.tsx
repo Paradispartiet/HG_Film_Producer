@@ -254,13 +254,13 @@ export function FilmScenarioLibrary({
     <main className="scenario-library">
       <div className="scenario-library-header">
         <div>
-          <span className="eyebrow">Stable MVP reference loop</span>
+          <span className="eyebrow">Recommended first · stable MVP</span>
           <h2>Production Cases</h2>
         </div>
         <p>
-          {scenarios.length} production cases in the stable MVP reference loop. Start here
-          to choose a production case, make choices, get a report, and improve
-          your best result.
+          Start here: play one Production Case. Choose a case, make production choices,
+          finish all missions to unlock the Case report, then replay to improve or continue
+          to the next case.
         </p>
       </div>
       {isFirstProductionCaseSession ? (
@@ -272,7 +272,7 @@ export function FilmScenarioLibrary({
       ) : null}
       <div className="production-case-dashboard">
         {!isFirstProductionCaseSession ? (
-          <p className="production-case-continuation-note">Continue from Next action or improve earlier best results.</p>
+          <p className="production-case-continuation-note">What to do now: use Next action to continue, or open a previous case to improve its Case report result.</p>
         ) : null}
         <ProductionCaseCollectionSummaryCard careerSummary={careerSummary} summary={collectionSummary} />
         <ProductionCaseNextActionCard
@@ -425,7 +425,7 @@ export function FilmScenarioLibrary({
         )}
       </div>
       {filteredScenarioCards.length === 0 ? (
-        <p className="scenario-empty-state">{resultSummary.label}</p>
+        <p className="scenario-empty-state">No cases match these filters. Reset filters to choose a Production Case.</p>
       ) : null}
       <div className="scenario-grid">
         {filteredScenarioCards.map(({ scenario, bestResult, caseStatus }) => (
@@ -467,7 +467,7 @@ export function FilmScenarioLibrary({
               onClick={() => onStartScenario?.(scenario)}
               type="button"
             >
-              Start production case
+              Start this case
             </button>
           </article>
         ))}
@@ -494,8 +494,8 @@ function ProductionCaseStartHereGuidance({
         <ol>
           <li>Choose a production case.</li>
           <li>Make production choices.</li>
-          <li>Get a score/report.</li>
-          <li>Improve your best result.</li>
+          <li>Finish all missions to unlock the Case report.</li>
+          <li>After the report, replay to improve or continue to the next case.</li>
         </ol>
       </div>
       <div className="production-case-start-here-actions">
@@ -505,7 +505,7 @@ function ProductionCaseStartHereGuidance({
           onClick={() => { if (firstScenario) onStartScenario?.(firstScenario); }}
           type="button"
         >
-          Start first case
+          Start first case (recommended)
         </button>
         {suggestedScenarios.length > 0 ? (
           <div className="production-case-suggested-first-cases">
@@ -611,7 +611,7 @@ function RecentProductionCaseBestResultsSection({
         <small>{items.length > 0 ? `${items.length} most recent` : "None saved"}</small>
       </div>
       {items.length === 0 ? (
-        <p>No best results yet.</p>
+        <p>No best results yet. Finish a case and read its Case report to save one.</p>
       ) : (
         <div className="production-case-recent-results-list">
           {items.map((item) => {
@@ -682,7 +682,7 @@ function ProductionCaseCollectionSummaryCard({
   return (
     <section className="production-case-summary-card" aria-label="Production case collection summary">
       <div className="production-case-summary-heading">
-        <span>Career progress</span>
+        <span>Production Cases progress</span>
         <strong>{careerSummary.completedBestCount}/{careerSummary.totalCases}</strong>
       </div>
       <div>

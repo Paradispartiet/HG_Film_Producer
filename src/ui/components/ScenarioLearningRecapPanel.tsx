@@ -29,7 +29,7 @@ export function ScenarioLearningRecapPanel({ scenarioTitle, brief, selectedTarge
     <section className="scenario-learning-recap" aria-labelledby="scenario-learning-recap-title">
       <div className="scenario-learning-header">
         <div>
-          <span className="eyebrow">Post-case learning</span>
+          <span className="eyebrow">Case report reward</span>
           <h3 id="scenario-learning-recap-title">Case report</h3>
         </div>
         <span>{scenarioTitle}</span>
@@ -51,7 +51,7 @@ export function ScenarioLearningRecapPanel({ scenarioTitle, brief, selectedTarge
           )}
         </div>
         <div className="scenario-learning-section">
-          <h4>Improve next</h4>
+          <h4>Improve next replay</h4>
           {missingTargetCount > 0 ? (
             <ul className="scenario-learning-list">
               {recap.nextFocus.map((item) => <li key={`next-${item}`}>{item}</li>)}
@@ -61,7 +61,7 @@ export function ScenarioLearningRecapPanel({ scenarioTitle, brief, selectedTarge
           )}
         </div>
       </div>
-      <p className="scenario-learning-replay">Replay the case and focus on the missing craft targets to improve your best result.</p>
+      <p className="scenario-learning-replay">This Case report is the endpoint for the run. Replay to improve missing craft targets, or continue to another case from Production Cases.</p>
       <p className="scenario-learning-note">{recap.verificationNote}</p>
     </section>
   );

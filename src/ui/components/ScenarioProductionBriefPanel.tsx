@@ -188,10 +188,10 @@ function ProductionCaseMissionFlow({
     >
       <div className="scenario-mission-summary">
         <div>
-          <span className="eyebrow">Case-progress</span>
+          <span className="eyebrow">Case progress</span>
           <strong>
             {allComplete
-              ? "Production case complete"
+              ? "Case complete · report unlocked"
               : `${completedCount}/${missions.length} phases complete`}
           </strong>
           <span className="scenario-mission-score">Case-score: {caseScore.score}/{caseScore.maxScore}</span>
@@ -308,9 +308,9 @@ function ProductionCaseReportBox({
         ) : null}
       </div>
       <div className="scenario-production-report-actions" aria-label="Case continuation actions">
-        <button className="secondary-button" onClick={onPlayAgain} type="button">Play again</button>
+        <button className="secondary-button" onClick={onPlayAgain} type="button">Play again to improve</button>
         {onStartNextScenario ? (
-          <button onClick={onStartNextScenario} type="button">Next case</button>
+          <button onClick={onStartNextScenario} type="button">Continue to next case</button>
         ) : (
           <button className="secondary-button" onClick={onBackToProductionCases} type="button">Back to Production Cases</button>
         )}
@@ -328,11 +328,11 @@ function ProductionCaseReportBox({
               ))}
             </ul>
           ) : (
-            <p>Choose matching production choices to register strongest matches.</p>
+            <p>Choose production approaches and complete phases to build strongest matches.</p>
           )}
         </div>
         <div>
-          <h4>Could improve</h4>
+          <h4>Improve next</h4>
           {report.weakPhases.length > 0 ? (
             <ul>
               {report.weakPhases.map((phase) => (
@@ -343,7 +343,7 @@ function ProductionCaseReportBox({
               ))}
             </ul>
           ) : (
-            <p>No weak phases recorded.</p>
+            <p>No weak phases recorded. You can replay or continue to the next case.</p>
           )}
           {report.improvementHint ? <p>{report.improvementHint.description}</p> : null}
         </div>
@@ -449,11 +449,11 @@ function ProductionCaseResultBox({
 const productionCaseResultCopy = {
   not_started: {
     label: "Not started",
-    description: "Start the production case to build your understanding.",
+    description: "Start by choosing an approach in each phase, then complete every phase to unlock the Case report.",
   },
   in_progress: {
     label: "In progress",
-    description: "You're reconstructing the production choices.",
+    description: "Finish the open phases to unlock the Case report.",
   },
   assistant: {
     label: "Assistant",
