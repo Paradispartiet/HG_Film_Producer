@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { getStudioCareerFestivalInputName, getStudioCareerReleaseStrategyInputName } from "../../core/studioCareerFlow.js";
 import type { ReleaseStepChoices, ReleaseStepResult } from "../demo/createReleaseStepRun.js";
 import { createReleaseStepResult, getReleaseStepOptions } from "../demo/createReleaseStepRun.js";
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
@@ -79,11 +80,11 @@ export function ReleaseStepPanel({
         <div className="release-readiness"><span>Locked cut</span><strong>{postProductionResult.postProductionEvaluation.lockedCutQuality}</strong><small>quality</small></div>
       </div>
 
-      <ReleaseStrategyPanel disabled={Boolean(result)} inputName={`${projectContext.filmProjectState.id}-release-strategy`} onSelect={(releaseStrategyId) => updateChoices({ ...choices, releaseStrategyId })} selectedId={choices.releaseStrategyId} strategies={options.releaseStrategies} />
+      <ReleaseStrategyPanel disabled={Boolean(result)} inputName={getStudioCareerReleaseStrategyInputName(projectContext.filmProjectState.id)} onSelect={(releaseStrategyId) => updateChoices({ ...choices, releaseStrategyId })} selectedId={choices.releaseStrategyId} strategies={options.releaseStrategies} />
       <FestivalSubmissionPanel
         disabled={Boolean(result)}
         festivals={options.festivals}
-        inputName={`${projectContext.filmProjectState.id}-festival`}
+        inputName={getStudioCareerFestivalInputName(projectContext.filmProjectState.id)}
         onSelect={(festivalId) => updateChoices({ ...choices, festivalId })}
         selectedId={choices.festivalId}
         {...(result ? { result: result.festivalSubmissionResult } : {})}
