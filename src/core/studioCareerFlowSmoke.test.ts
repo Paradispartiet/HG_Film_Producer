@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  canApplyStudioCareerResult,
   canCreateNextStudioCareerProject,
   getStudioCareerActivePanelId,
   getStudioCareerActivePhase,
@@ -25,6 +26,8 @@ test("studio career pipeline order advances from development through career revi
   assert.equal(getStudioCareerActivePhase(project({ developmentResult: result, preProductionResult: result, shootResult: result })), "post-production");
   assert.equal(getStudioCareerActivePhase(project({ developmentResult: result, preProductionResult: result, shootResult: result, postProductionResult: result })), "release");
   assert.equal(getStudioCareerActivePhase(project({ developmentResult: result, preProductionResult: result, shootResult: result, postProductionResult: result, releaseResult: result })), "career-application");
+  assert.equal(canApplyStudioCareerResult(project({ postProductionResult: result })), false);
+  assert.equal(canApplyStudioCareerResult(project({ releaseResult: result })), true);
   assert.equal(canCreateNextStudioCareerProject(project({ releaseResult: result })), false);
   assert.equal(canCreateNextStudioCareerProject(project({ releaseResult: result, careerApplicationResult: result })), true);
 });
@@ -60,6 +63,8 @@ test("studio career project-scoped release control names are unique per project"
 test("studio career application invariants tolerate missing optional project details", () => {
   const sparseReleasedProject = project({ releaseResult: result });
   assert.equal(getStudioCareerActivePhase(sparseReleasedProject), "career-application");
+  assert.equal(canApplyStudioCareerResult(project()), false);
+  assert.equal(canApplyStudioCareerResult(sparseReleasedProject), true);
   assert.equal(canCreateNextStudioCareerProject(sparseReleasedProject), false);
   assert.equal(canCreateNextStudioCareerProject({ ...sparseReleasedProject, careerApplicationResult: { updatedCareerState: { completedFilms: [] } } }), true);
 });

@@ -48,6 +48,10 @@ export function shouldCollapseStudioCareerProject(args: {
   return (args.manualExpand === null ? !args.isLatest : !args.manualExpand) && Boolean(args.careerApplicationResult);
 }
 
+export function canApplyStudioCareerResult(project: StudioCareerFlowProject): boolean {
+  return Boolean(project.releaseResult);
+}
+
 export function canCreateNextStudioCareerProject(previousProject: StudioCareerFlowProject): boolean {
   return Boolean(previousProject.careerApplicationResult);
 }
