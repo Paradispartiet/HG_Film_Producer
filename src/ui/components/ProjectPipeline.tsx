@@ -28,14 +28,14 @@ export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction
       </div>
       <div className="project-hero-content">
         <div className="project-hero-topline">
-          <span className="eyebrow">Active film project</span>
+          <span className="eyebrow">Experimental Studio Career · active film</span>
           <div className="project-meta"><span>{project.genre}</span><span>{project.scale.replace("_", " ")}</span></div>
         </div>
         <h2>{project.title}</h2>
         <p>{project.logline}</p>
         <div className="current-phase">
           <div>
-            <span>Current phase</span>
+            <span>What to do now</span>
             <strong>{phases[currentPhase]?.label ?? "Release"}</strong>
           </div>
           <p>{phases[currentPhase]?.description}</p>
@@ -49,7 +49,7 @@ export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction
                 <div><strong>{phase.label}</strong><p>{phase.description}</p></div>
                 <span className="phase-status">{status}</span>
                 {index === currentPhase && (
-                  <button onClick={onNextAction} type="button">{phase.label === "Release" ? "Open release desk" : phase.label === "Career review" ? "Open career review" : `Continue ${phase.label}`} <b>→</b></button>
+                  <button onClick={onNextAction} type="button">{phase.label === "Release" ? "Open release step" : phase.label === "Career review" ? "Open career review" : `Continue ${phase.label}`} <b>→</b></button>
                 )}
               </article>
             );
@@ -57,7 +57,7 @@ export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction
         </div>
         {latestStep && (
           <div className="project-update">
-            <span>Latest production update</span>
+            <span>Latest Studio Career update</span>
             <strong>{latestStep.label}</strong>
             <p>{latestStep.detail}</p>
             <b>{latestStep.score}</b>

@@ -28,6 +28,27 @@ A local manual browser QA run was reported as performed with `npm run qa:manual`
 
 Because no actual browser result, browser, URL, tester notes, issues list, or console-error result was provided, this pass cannot honestly close either browser gate. No browser result was invented, no blockers were inferred from placeholders, and no app code was changed. The browser-driven manual playthrough status therefore remains not completed for both modes until a concrete manual result is provided.
 
+
+## 2026-07-07 informal local browser feedback
+
+A local browser run was performed through Codespaces forwarded port using `npm run qa:manual`.
+
+URL used:
+
+```text
+https://ominous-capybara-g4w5v59pwvg9f69g-5173.app.github.dev/HG_Film_Producer/
+```
+
+Result:
+
+- Production Cases: PASS WITH NOTES, informal; not full gate closure.
+- Studio Career: PASS WITH NOTES, informal; not full gate closure.
+- Tester feedback: game appears to work and feels cool, but the first-time experience is somewhat confusing and unorganized.
+- Console errors: not formally checked.
+- Final browser gates: still open until a strict checklist pass is completed.
+
+This feedback confirms that a real browser reached the app and produced useful UX notes, but it did not complete or document the strict manual checklist required for Production Cases v0.1 or Studio Career experimental v0.1.
+
 ## Production Cases current QA status
 
 Production Cases remains the recommended first playable path and stable MVP/reference loop.

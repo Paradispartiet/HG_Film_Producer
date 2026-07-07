@@ -12,7 +12,7 @@ export function CompletedFilmPanel({ projectContext, releaseResult, result }: Co
   const film = result.completedFilmRecord;
   return (
     <section className="career-review-card completed-film-card">
-      <div className="career-card-heading"><span className="section-label">Completed film</span><strong>{film.title}</strong></div>
+      <div className="career-card-heading"><span className="section-label">Completed film summary</span><strong>{film.title}</strong></div>
       <div className="completed-film-meta"><span>{projectContext.project.genre}</span><span>{formatLabel(film.scale)}</span></div>
       <dl className="career-metric-grid">
         <Metric label="Quality" value={`${film.quality}/100`} />
@@ -23,7 +23,7 @@ export function CompletedFilmPanel({ projectContext, releaseResult, result }: Co
         <Metric label="Awards won" value={`${film.awardsWon}`} />
       </dl>
       {releaseResult.awardsOutcome.wins.length > 0 && (
-        <p className="career-card-note">Wins: {releaseResult.awardsOutcome.wins.map(String).join(", ")}</p>
+        <p className="career-card-note">Award wins recorded: {releaseResult.awardsOutcome.wins.map(String).join(", ")}</p>
       )}
     </section>
   );

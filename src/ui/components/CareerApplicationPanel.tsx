@@ -28,9 +28,9 @@ export function CareerApplicationPanel({
     <section className="panel career-application-panel" id={id}>
       <div className="career-application-heading">
         <div>
-          <span className="eyebrow">Studio finance &amp; career review</span>
-          <h2>Apply {projectLabel} to studio/career</h2>
-          <p>Close the film year to post the release outcome, record the completed film, and evaluate the studio career.</p>
+          <span className="eyebrow">Experimental career review</span>
+          <h2>Finish {projectLabel} career review</h2>
+          <p>End this film year: post the release outcome, record the completed film, then unlock the next film setup.</p>
         </div>
         {!result && (
           <button className="primary-button" disabled={!releaseResult} onClick={onApply} type="button">

@@ -16,21 +16,21 @@ export function LandingScreen({ onStart, onContinue, onDemo, onDevDashboard, onP
           <span>HG</span>
           <i />
         </div>
-        <span className="landing-kicker">A studio management game</span>
+        <span className="landing-kicker">Learn film by making production choices</span>
         <h1>HG Film<br /><em>Producer</em></h1>
-        <p>Start with the stable case-based production loop, then explore the studio experiment.</p>
+        <p>Make pressured script, crew, shoot, post, and release choices. For your first run, start with Production Cases; Studio Career is an experimental branch for later.</p>
         <div className="landing-mode-summary" aria-label="Available modes">
-          <p><strong>Recommended first: Production Cases</strong> Play the stable case-based MVP loop first: choose a production case, make choices, get a report, improve your best result.</p>
-          <p><strong>Experimental: Studio Career</strong> A playable studio/career branch for testing the production pipeline. Expect rough edges.</p>
-          <p><strong>Planned later</strong> Full studio simulator and future modes are not part of the current playable MVP.</p>
+          <p><strong>Recommended first: Production Cases</strong> The stable MVP path: choose one case, make production choices under pressure, finish all missions, then read the Case report.</p>
+          <p><strong>Experimental: Studio Career</strong> A playable but rough studio pipeline. Try it after Production Cases if you want to test the broader career flow.</p>
+          <p><strong>Future modes</strong> Writers’ room, full studio simulator, and film atlas ideas are later—not the first-time path today.</p>
         </div>
         <div className="landing-actions">
           <button className="landing-primary" onClick={onProductionCases} type="button">
             <span>Start Production Cases</span>
             <b aria-hidden="true">→</b>
           </button>
-          {hasSave && <button className="landing-secondary" onClick={onContinue} type="button">Continue experimental career</button>}
-          <button className="landing-secondary" onClick={onStart} type="button">Experimental Studio Career</button>
+          {hasSave && <button className="landing-secondary" onClick={onContinue} type="button">Continue Studio Career (experimental)</button>}
+          <button className="landing-secondary" onClick={onStart} type="button">Open Studio Career (experimental)</button>
           <button className="landing-secondary" onClick={onDemo} type="button">Demo inspection</button>
         </div>
         <div className="landing-future-modes" aria-label="Planned future modes">
