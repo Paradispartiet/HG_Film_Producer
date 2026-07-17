@@ -125,8 +125,8 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     learningGoals: ["Create intimacy without dialogue", "Make spaces feel temporarily owned", "Tell emotion through gesture"],
     verificationStatus: "needs_research"
   },
-  scenario_one_flew_over_the_cuckoos_nest_1975: {
-    scenarioId: "scenario_one_flew_over_the_cuckoos_nest_1975",
+  scenario_one_flew_over_the_cuckoo_s_nest_1975: {
+    scenarioId: "scenario_one_flew_over_the_cuckoo_s_nest_1975",
     title: "One Flew Over the Cuckoo's Nest production brief",
     logline: "Stage an institutional drama where rebellion, control, and ensemble pressure escalate through character conflict.",
     genreTargets: ["Institutional drama", "Rebellion-versus-control story", "Ensemble character conflict"],

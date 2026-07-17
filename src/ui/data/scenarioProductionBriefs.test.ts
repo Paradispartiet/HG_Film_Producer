@@ -19,7 +19,7 @@ const manualScenarioIds = [
   "scenario_12_angry_men_1957",
   "scenario_a_prophet_2009",
   "scenario_3_iron_2004",
-  "scenario_one_flew_over_the_cuckoos_nest_1975",
+  "scenario_one_flew_over_the_cuckoo_s_nest_1975",
   "scenario_last_life_in_the_universe_2003",
   "scenario_moonrise_kingdom_2012",
   "scenario_true_romance_1993",

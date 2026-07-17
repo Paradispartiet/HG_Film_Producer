@@ -17,8 +17,8 @@ export function applyReleaseResultToStudio(
   const updatedStudio: Studio = {
     ...studio,
     money: studio.money + outcome.netRevenue,
-    reputation: Math.max(0, studio.reputation + outcome.reputationDelta),
-    prestige: Math.max(0, studio.prestige + outcome.prestigeDelta),
+    reputation: Math.min(100, Math.max(0, studio.reputation + outcome.reputationDelta)),
+    prestige: Math.min(100, Math.max(0, studio.prestige + outcome.prestigeDelta)),
     activeFilmProjectIds,
     completedFilmProjectIds
   };

@@ -5,6 +5,7 @@ interface ProjectPipelineProps {
   readonly steps: readonly PipelineStepSummary[];
   readonly currentPhase?: number;
   readonly onNextAction?: () => void;
+  readonly isProductionCase?: boolean;
 }
 
 const phases = [
@@ -16,7 +17,7 @@ const phases = [
   { label: "Career review", description: "Close the film year, post the result, and update the studio career." }
 ] as const;
 
-export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction }: ProjectPipelineProps) {
+export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction, isProductionCase = false }: ProjectPipelineProps) {
   const latestStep = steps.at(-1);
 
   return (
@@ -28,7 +29,7 @@ export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction
       </div>
       <div className="project-hero-content">
         <div className="project-hero-topline">
-          <span className="eyebrow">Experimental Studio Career · active film</span>
+          <span className="eyebrow">{isProductionCase ? "Production Case · active film" : "Experimental Studio Career · active film"}</span>
           <div className="project-meta"><span>{project.genre}</span><span>{project.scale.replace("_", " ")}</span></div>
         </div>
         <h2>{project.title}</h2>
@@ -57,7 +58,7 @@ export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction
         </div>
         {latestStep && (
           <div className="project-update">
-            <span>Latest Studio Career update</span>
+            <span>{isProductionCase ? "Latest Production Case update" : "Latest Studio Career update"}</span>
             <strong>{latestStep.label}</strong>
             <p>{latestStep.detail}</p>
             <b>{latestStep.score}</b>
