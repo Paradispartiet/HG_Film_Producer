@@ -40,8 +40,8 @@ export function applyCareerMilestone(
   const studio = {
     ...careerState.studio,
     money: careerState.studio.money + (rewards.money ?? 0),
-    reputation: Math.max(0, careerState.studio.reputation + (rewards.reputation ?? 0)),
-    prestige: Math.max(0, careerState.studio.prestige + (rewards.prestige ?? 0))
+    reputation: Math.min(100, Math.max(0, careerState.studio.reputation + (rewards.reputation ?? 0))),
+    prestige: Math.min(100, Math.max(0, careerState.studio.prestige + (rewards.prestige ?? 0)))
   };
   const identityTags = uniqueTags([
     ...careerState.identityTags,

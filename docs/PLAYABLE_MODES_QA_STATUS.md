@@ -77,11 +77,23 @@ Full path executed: experimental labeling confirmed (landing + in-app banner) �
 ### Issues found (none blocking)
 
 1. **Prestige exceeds its displayed cap**: after Film One's awards, the studio header showed "Prestige 105 / 100". No clamping on prestige gain.
-2. **"Resolve day N" silently no-ops until a production event is selected.** The button appears enabled; 8 clicks did nothing until an event radio was chosen. Should be disabled with a hint, or show validation.
-3. **Case-count mismatch**: the library progress header says X/160 while the catalogue badge says "Complete all 161 production cases".
+2. **"Resolve day N" looks enabled before a production event is selected.** Clicking it without an event does not resolve the day; source review showed it did surface an inline error message (so it was not fully silent, correcting the first write-up of this finding), but the enabled-looking button still invites dead-feeling clicks.
+3. **Case-count mismatch**: the library progress header said X/160 while the catalogue badge says "Complete all 161 production cases". Root cause: the manual brief for One Flew Over the Cuckoo's Nest used the id slug `cuckoos_nest` while the seed scenario id is `cuckoo_s_nest`, so that case fell back to a seed brief and was excluded from the library.
 4. **After "Create film 2", the setup form was not in the viewport** (it landed ~1300 px above the scroll position on a ~13,000 px-tall career page). The long-page/scroll concern in the checklist is real, though the form is reachable and Film Two setup works.
 5. **Production Cases opens inside the "Experimental Studio Career" shell**: the stable MVP path shows "EXPERIMENTAL STUDIO CAREER · ACTIVE FILM" labels while playing a case, which contradicts the landing's stable-vs-experimental framing and likely explains the earlier "confusing first-time experience" feedback.
 6. **Awards feel unbounded for a debut**: a 68/100 first film recorded 8 award wins in one festival cycle (drove finding 1). Balance, not correctness.
+
+### 2026-07-17 fixes applied for findings 1–5
+
+Findings 1–5 were fixed the same day and re-verified in a second full browser playthrough (One Flew Over the Cuckoo's Nest played end-to-end through the career pipeline into Film Two, zero console errors):
+
+1. Reputation and prestige are now clamped to 0–100 in `applyReleaseResultToStudio` and `applyCareerMilestone`.
+2. The Resolve day button is disabled until a production event is selected (matching the existing disabled-button pattern); the persistent "Select one production event to continue." hint remains.
+3. The Cuckoo's Nest brief id was corrected to match the seed scenario id; the library now shows 161/161 cases, case-score x/1932, and the case is playable.
+4. Creating the next film now scrolls to the new film's active development panel (verified in viewport after "Create film 2").
+5. Scenario runs now show Production Cases labels (banner, pipeline eyebrow, latest-update label, footer) instead of Experimental Studio Career labels; career runs keep the experimental labels.
+
+Finding 6 (award generosity) is deliberately left unchanged: rebalancing simulation formulas is out of scope under the pre-gate freeze.
 
 ### Remaining gate
 

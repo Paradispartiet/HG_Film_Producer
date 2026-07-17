@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import type { ProjectShootLabel } from "../types.js";
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { ProjectRunContext } from "../demo/createProjectRunContext.js";
@@ -41,7 +41,6 @@ export function ShootPanel({
   onResolveShootDay,
   id
 }: ShootPanelProps) {
-  const [message, setMessage] = useState("");
   const preparation = useMemo(
     () => getShootPreparation(projectContext, developmentResult, preProductionResult),
     [projectContext, developmentResult, preProductionResult]
@@ -52,11 +51,7 @@ export function ShootPanel({
   const currentDay = getNextShootDay(preparation, shootDayResults);
 
   function resolveDay() {
-    if (!selectedProductionEventId) {
-      setMessage(`Choose one production event before resolving day ${currentDay?.dayNumber ?? shootDayResults.length + 1} of the ${projectLabel} shoot.`);
-      return;
-    }
-    setMessage("");
+    if (!selectedProductionEventId) return;
     onResolveShootDay(resolveNextShootDay(preparation, shootDayResults, { selectedProductionEventId }));
   }
 
@@ -78,19 +73,19 @@ export function ShootPanel({
         <>
           <ProductionEventPanel
             inputName={`${projectContext.filmProjectState.id}-production-event`}
-            onSelect={(eventId) => { onSelectProductionEvent(eventId); setMessage(""); }}
+            onSelect={onSelectProductionEvent}
             options={preparation.availableProductionEvents}
             projectLabel={projectLabel}
             selectedProductionEventId={selectedProductionEventId}
           />
           <div className="shoot-actions">
             <div>
-              <span className={message ? "inline-message inline-message--error" : "inline-message"} role="status">
-                {message || (selectedProductionEventId ? "Production event selected. Ready to resolve." : "Select one production event to continue.")}
+              <span className="inline-message" role="status">
+                {selectedProductionEventId ? "Production event selected. Ready to resolve." : "Select one production event to continue."}
               </span>
               <small>Day {currentDay.dayNumber} of {totalDays} for {projectLabel}.</small>
             </div>
-            <button className="primary-button" onClick={resolveDay} type="button">Resolve day {currentDay.dayNumber}</button>
+            <button className="primary-button" disabled={!selectedProductionEventId} onClick={resolveDay} type="button">Resolve day {currentDay.dayNumber}</button>
           </div>
         </>
       )}
