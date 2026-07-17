@@ -49,6 +49,44 @@ Result:
 
 This feedback confirms that a real browser reached the app and produced useful UX notes, but it did not complete or document the strict manual checklist required for Production Cases v0.1 or Studio Career experimental v0.1.
 
+## 2026-07-17 agent-driven full browser playthrough (Claude Code)
+
+An AI agent (Claude Code) completed both strict checklists end-to-end in a real headless Chromium (Chrome 141) against the local Vite dev server, driven over the Chrome DevTools Protocol from outside the repository. No browser-automation dependency was added to the project; `package.json` is unchanged. Because the tester was an agent rather than a human, this run does **not** by itself close the human browser gate, but it is the first complete, documented browser run of both checklists and every step below was actually executed and observed.
+
+- Date: 2026-07-17 · Browser: headless Chromium 141 · URL: `http://localhost:5173/HG_Film_Producer/` · Command: `npm run dev`
+
+### Production Cases result: PASS (all 10 checklist steps)
+
+1. App opened; landing renders with no console errors.
+2. "Recommended first: Production Cases" confirmed on the landing screen.
+3. Start Production Cases opens the library: first-session guidance ("Play your first production case"), suggested first cases, 160-case catalogue, zeroed progress dashboard.
+4. "Start first case (recommended)" opened The Machinist.
+5. All 6 mission phases completed (case-specific choice picked in each).
+6. Case report appeared **only after** all phases completed (verified absent before): Result Auteur, case-score 12/12, best result recorded.
+7. Play again reset the run to 0/6 and hid the report; best result was preserved.
+8. Case re-completed; "Continue to next case" correctly opened The Lives of Others.
+9. Returned to the library via title screen.
+10. Returning-player dashboard correct: 1/160 completed, Recent best results "The Machinist · Auteur · 12/12", Next Action pointing at The Lives of Others, badges 3/8. Best result and progress survived a full page reload (localStorage persistence verified).
+
+Console errors: none across the whole flow.
+
+### Studio Career result: PASS (all 15 checklist steps)
+
+Full path executed: experimental labeling confirmed (landing + in-app banner) → Reset career → new studio created via setup form (indie preset, Survive year one, drama/indie/intimate-drama Film One "Harbor Lights") → development completed via all three actions (mentor lesson, location scout, starter script) → pre-production completed (location, 3 department leads, 2 cast) and locked → full shoot schedule resolved (3/3 days, event chosen per day) → post-production locked (edit/sound/music/color/trailer) → release resolved (festival strategy + festival, outcome 68/100) → career review unlocked **only after** the release result → "Close first film year" applied the result (ledger before/after, Year 1 evaluation 61/100, quarter advanced to Q2) → Film Two "Second Winter" created → Film One collapsed to a compact summary with a working Show details / Hide details toggle → Film Two immediately actionable (Continue Development in progress). Career state survived a page reload; the landing screen gained a "Continue Studio Career" button. No dead buttons, no trapped states, no console errors.
+
+### Issues found (none blocking)
+
+1. **Prestige exceeds its displayed cap**: after Film One's awards, the studio header showed "Prestige 105 / 100". No clamping on prestige gain.
+2. **"Resolve day N" silently no-ops until a production event is selected.** The button appears enabled; 8 clicks did nothing until an event radio was chosen. Should be disabled with a hint, or show validation.
+3. **Case-count mismatch**: the library progress header says X/160 while the catalogue badge says "Complete all 161 production cases".
+4. **After "Create film 2", the setup form was not in the viewport** (it landed ~1300 px above the scroll position on a ~13,000 px-tall career page). The long-page/scroll concern in the checklist is real, though the form is reachable and Film Two setup works.
+5. **Production Cases opens inside the "Experimental Studio Career" shell**: the stable MVP path shows "EXPERIMENTAL STUDIO CAREER · ACTIVE FILM" labels while playing a case, which contradicts the landing's stable-vs-experimental framing and likely explains the earlier "confusing first-time experience" feedback.
+6. **Awards feel unbounded for a debut**: a 68/100 first film recorded 8 award wins in one festival cycle (drove finding 1). Balance, not correctness.
+
+### Remaining gate
+
+A human browser-driven playthrough is still the formally defined final gate for both modes. This agent run provides a complete documented baseline and a concrete issues list for it; the human pass can focus on feel, clarity, and the issues above.
+
 ## Production Cases current QA status
 
 Production Cases remains the recommended first playable path and stable MVP/reference loop.
