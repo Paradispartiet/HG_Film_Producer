@@ -101,6 +101,7 @@ function ProductionCaseMissionFlow({
   const [bestResultsState, setBestResultsState] = useState<ProductionCaseBestResultsState>({});
   const [bestResultFeedback, setBestResultFeedback] = useState<ProductionCaseBestResultFeedback | undefined>();
   const [focusedMissionId, setFocusedMissionId] = useState<string | undefined>();
+  const [expandedMissionIds, setExpandedMissionIds] = useState<readonly string[]>([]);
   const missionCardRefs = useRef<Record<string, HTMLElement | null>>({});
 
   useEffect(() => {
@@ -154,13 +155,25 @@ function ProductionCaseMissionFlow({
   }
 
   function toggleMission(missionId: string) {
+    const completing = !completedMissionIdSet.has(missionId);
+    if (completing) {
+      setExpandedMissionIds((current) => current.filter((id) => id !== missionId));
+    }
     updateProgress(
       setProductionCaseMissionCompletion(
         progressState,
         scenarioId,
         missionId,
-        !completedMissionIdSet.has(missionId),
+        completing,
       ),
+    );
+  }
+
+  function toggleMissionExpanded(missionId: string) {
+    setExpandedMissionIds((current) =>
+      current.includes(missionId)
+        ? current.filter((id) => id !== missionId)
+        : [...current, missionId],
     );
   }
 
@@ -176,10 +189,17 @@ function ProductionCaseMissionFlow({
 
   function focusMission(missionId: string) {
     setFocusedMissionId(missionId);
+    setExpandedMissionIds((current) =>
+      current.includes(missionId) ? current : [...current, missionId],
+    );
     const missionCard = missionCardRefs.current[missionId];
     missionCard?.scrollIntoView?.({ behavior: "smooth", block: "center" });
     missionCard?.focus?.({ preventScroll: true });
   }
+
+  const activeMissionId = missions.find(
+    (mission) => !completedMissionIdSet.has(mission.id),
+  )?.id;
 
   return (
     <div
@@ -212,6 +232,32 @@ function ProductionCaseMissionFlow({
         const selectedChoiceId = selectedChoicesByMissionId[mission.id];
         const selectedChoice = mission.choices.find((choice) => choice.id === selectedChoiceId);
         const phaseScore = getProductionCaseMissionScoreSummary(mission, selectedChoiceId);
+        const isActive = mission.id === activeMissionId;
+        const isExpanded = isActive || expandedMissionIds.includes(mission.id);
+        if (!isExpanded) {
+          return (
+            <article
+              className={`scenario-mission-card scenario-mission-card--collapsed${isComplete ? " scenario-mission-card--complete" : ""}`}
+              data-mission-id={mission.id}
+              id={getProductionCaseMissionElementId(mission.id)}
+              key={mission.id}
+              ref={(element) => { missionCardRefs.current[mission.id] = element; }}
+              tabIndex={-1}
+            >
+              <span className="scenario-mission-step">{isComplete ? "✓" : index + 1}</span>
+              <div className="scenario-mission-collapsed-row">
+                <div>
+                  <h4>{mission.title}</h4>
+                  {selectedChoice ? <p>{selectedChoice.label}</p> : <p>No production approach chosen yet.</p>}
+                </div>
+                <span className="scenario-mission-score">{phaseScore.score}/{phaseScore.maxScore}</span>
+                <button onClick={() => toggleMissionExpanded(mission.id)} type="button">
+                  {isComplete ? "Show details" : "Open phase"}
+                </button>
+              </div>
+            </article>
+          );
+        }
         return (
           <article
             className={`scenario-mission-card${isComplete ? " scenario-mission-card--complete" : ""}${focusedMissionId === mission.id ? " scenario-production-mission--focused" : ""}`}
@@ -225,7 +271,7 @@ function ProductionCaseMissionFlow({
             <div>
               <div className="scenario-mission-card-header">
                 <h4>{mission.title}</h4>
-                <span>{isComplete ? "Complete" : "Open phase"}</span>
+                <span>{isComplete ? "Complete" : isActive ? "Current phase" : "Open phase"}</span>
               </div>
               <span className="scenario-mission-score">Phase score: {phaseScore.score}/{phaseScore.maxScore}</span>
               <p>{mission.prompt}</p>
@@ -260,9 +306,16 @@ function ProductionCaseMissionFlow({
               <p className="scenario-mission-learning">
                 <strong>Understand the production choice:</strong> {mission.learningFocus}
               </p>
-              <button onClick={() => toggleMission(mission.id)} type="button">
-                {isComplete ? "Undo complete" : "Complete phase"}
-              </button>
+              <div className="scenario-mission-card-actions">
+                <button onClick={() => toggleMission(mission.id)} type="button">
+                  {isComplete ? "Undo complete" : "Complete phase"}
+                </button>
+                {!isActive && (
+                  <button className="secondary-button" onClick={() => toggleMissionExpanded(mission.id)} type="button">
+                    Hide details
+                  </button>
+                )}
+              </div>
             </div>
           </article>
         );

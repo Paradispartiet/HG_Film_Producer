@@ -1350,3 +1350,11 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .completed-phase-row-text p { margin: 3px 0 0; color: var(--muted); font-size: 11px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
 .completed-phase-row-actions { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
 .completed-phase-row-actions b { font-family: Georgia, serif; font-size: 18px; font-weight: 400; color: var(--accent); }
+
+.scenario-mission-card--collapsed { align-items: center; padding: 12px 18px; }
+.scenario-mission-collapsed-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; min-width: 0; }
+.scenario-mission-collapsed-row h4 { margin: 0; font-size: 13px; }
+.scenario-mission-collapsed-row p { margin: 3px 0 0; color: var(--muted); font-size: 11px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
+.scenario-mission-collapsed-row > div { min-width: 0; flex: 1; }
+.scenario-mission-collapsed-row .scenario-mission-score { white-space: nowrap; }
+.scenario-mission-card-actions { display: flex; gap: 10px; align-items: center; }
