@@ -159,6 +159,20 @@ export function FilmScenarioLibrary({
     return sortProductionCaseLibraryCards(filteredCards, sortMode);
   }, [caseStatusFilter, masteryFilter, normalizedSearchQuery, productionCaseScenarioCards, sortMode]);
 
+  const [expandedEras, setExpandedEras] = useState<readonly string[]>([]);
+  const scenarioEraGroups = useMemo(() => {
+    const groups = new Map<string, (typeof filteredScenarioCards)[number][]>();
+    for (const entry of filteredScenarioCards) {
+      const era = `${Math.floor(entry.scenario.film.year / 10) * 10}s`;
+      const bucket = groups.get(era);
+      if (bucket) bucket.push(entry);
+      else groups.set(era, [entry]);
+    }
+    return [...groups.entries()]
+      .map(([era, cards]) => ({ era, cards }))
+      .sort((left, right) => left.era.localeCompare(right.era));
+  }, [filteredScenarioCards]);
+
   const resultSummary = useMemo(() => getProductionCaseLibraryResultSummary({
     totalCount: productionCaseScenarioCards.length,
     visibleCount: filteredScenarioCards.length,
@@ -427,54 +441,79 @@ export function FilmScenarioLibrary({
       {filteredScenarioCards.length === 0 ? (
         <p className="scenario-empty-state">No cases match these filters. Reset filters to choose a Production Case.</p>
       ) : null}
-      <div className="scenario-grid">
-        {filteredScenarioCards.map(({ scenario, bestResult, caseStatus }) => (
-          <article className="scenario-card" key={scenario.id}>
-            <div className="scenario-card-topline">
-              <span>#{scenario.source.position}</span>
-              <span>{scenario.scenario_type}</span>
+      {scenarioEraGroups.map(({ era, cards }) => {
+        const isExpanded = expandedEras.includes(era) || cards.length <= eraVisibleLimit;
+        const visibleCards = isExpanded ? cards : cards.slice(0, eraVisibleLimit);
+        return (
+          <section className="scenario-era" key={era} aria-label={`Production cases from the ${era}`}>
+            <div className="scenario-era-rail">
+              <b>{era}</b>
+              <span>{cards.length} {cards.length === 1 ? "case" : "cases"}</span>
             </div>
-            <h3>{scenario.film.title}</h3>
-            <dl className="scenario-meta">
-              <div>
-                <dt>Year</dt>
-                <dd>{scenario.film.year}</dd>
+            <div className="scenario-era-cases">
+              <div className="scenario-grid">
+                {visibleCards.map(({ scenario, bestResult, caseStatus }) => (
+                  <article className="scenario-card" key={scenario.id}>
+                    <div className="scenario-card-topline">
+                      <span>#{scenario.source.position}</span>
+                      <span>{scenario.scenario_type}</span>
+                    </div>
+                    <h3>{scenario.film.title}</h3>
+                    <dl className="scenario-meta">
+                      <div>
+                        <dt>Year</dt>
+                        <dd>{scenario.film.year}</dd>
+                      </div>
+                      <div>
+                        <dt>Director</dt>
+                        <dd>{scenario.film.directors.join(", ")}</dd>
+                      </div>
+                    </dl>
+                    {caseStatus ? <ScenarioCaseStatusBadge status={caseStatus} /> : null}
+                    {bestResult ? (
+                      <div className="scenario-case-best-result" aria-label={`Best result: ${productionCaseResultTierLabels[bestResult.bestTier]}`}>
+                        <span>Best</span>
+                        <strong>{productionCaseResultTierLabels[bestResult.bestTier]} · {bestResult.bestScore}/{bestResult.maxScore}</strong>
+                      </div>
+                    ) : null}
+                    <div
+                      className="scenario-tags"
+                      aria-label={`Genres for ${scenario.film.title}`}
+                    >
+                      {scenario.film.genres.map((genre) => (
+                        <span key={genre}>{genre}</span>
+                      ))}
+                    </div>
+                    <p>{getScenarioCardDescription(scenario)}</p>
+                    <button
+                      className="secondary-button"
+                      disabled={!onStartScenario}
+                      onClick={() => onStartScenario?.(scenario)}
+                      type="button"
+                    >
+                      Start this case
+                    </button>
+                  </article>
+                ))}
               </div>
-              <div>
-                <dt>Director</dt>
-                <dd>{scenario.film.directors.join(", ")}</dd>
-              </div>
-            </dl>
-            {caseStatus ? <ScenarioCaseStatusBadge status={caseStatus} /> : null}
-            {bestResult ? (
-              <div className="scenario-case-best-result" aria-label={`Best result: ${productionCaseResultTierLabels[bestResult.bestTier]}`}>
-                <span>Best</span>
-                <strong>{productionCaseResultTierLabels[bestResult.bestTier]} · {bestResult.bestScore}/{bestResult.maxScore}</strong>
-              </div>
-            ) : null}
-            <div
-              className="scenario-tags"
-              aria-label={`Genres for ${scenario.film.title}`}
-            >
-              {scenario.film.genres.map((genre) => (
-                <span key={genre}>{genre}</span>
-              ))}
+              {!isExpanded && (
+                <button
+                  className="secondary-button scenario-era-show-all"
+                  onClick={() => setExpandedEras((current) => [...current, era])}
+                  type="button"
+                >
+                  Show all {cards.length} cases from the {era}
+                </button>
+              )}
             </div>
-            <p>{getScenarioCardDescription(scenario)}</p>
-            <button
-              className="secondary-button"
-              disabled={!onStartScenario}
-              onClick={() => onStartScenario?.(scenario)}
-              type="button"
-            >
-              Start this case
-            </button>
-          </article>
-        ))}
-      </div>
+          </section>
+        );
+      })}
     </main>
   );
 }
+
+const eraVisibleLimit = 6;
 
 
 function ProductionCaseStartHereGuidance({

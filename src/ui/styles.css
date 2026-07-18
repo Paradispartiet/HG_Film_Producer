@@ -1358,3 +1358,13 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
 .scenario-mission-collapsed-row > div { min-width: 0; flex: 1; }
 .scenario-mission-collapsed-row .scenario-mission-score { white-space: nowrap; }
 .scenario-mission-card-actions { display: flex; gap: 10px; align-items: center; }
+
+.scenario-era { display: grid; grid-template-columns: 96px 1fr; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
+.scenario-era-rail b { display: block; font-family: Georgia, serif; font-size: 22px; font-weight: 400; color: var(--accent); }
+.scenario-era-rail span { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.scenario-era-cases { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.scenario-era-show-all { align-self: center; }
+@media (max-width: 640px) {
+  .scenario-era { grid-template-columns: 1fr; gap: 8px; }
+  .scenario-era-rail b { display: inline; margin-right: 10px; }
+}
