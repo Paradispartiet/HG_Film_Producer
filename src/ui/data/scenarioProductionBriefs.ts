@@ -2158,6 +2158,67 @@ function createMissionId(
   return `${brief.scenarioId}-mission-${phase}`;
 }
 
+// Decoy choices are drawn from other films' briefs so every option reads as a
+// real production answer; choosing well requires knowing what THIS film does.
+const missionDecoySourceField: Record<
+  ProductionCaseMissionPhase,
+  "genreTargets" | "screenplayTargets" | "cinematographyTargets" | "editingTargets" | "soundTargets" | "learningGoals"
+> = {
+  case_orientation: "genreTargets",
+  screenplay: "screenplayTargets",
+  cinematography: "cinematographyTargets",
+  editing: "editingTargets",
+  sound: "soundTargets",
+  reflection: "learningGoals",
+};
+
+function hashMissionSeed(value: string): number {
+  let hash = 0;
+  for (let index = 0; index < value.length; index++) {
+    hash = (hash * 31 + value.charCodeAt(index)) >>> 0;
+  }
+  return hash;
+}
+
+const genreStopWords = new Set(["and", "the", "with", "over", "under", "into"]);
+
+function genreWordSet(genreTargets: readonly string[]): ReadonlySet<string> {
+  return new Set(
+    genreTargets
+      .join(" ")
+      .toLowerCase()
+      .split(/[^a-z]+/)
+      .filter((word) => word.length > 2 && !genreStopWords.has(word)),
+  );
+}
+
+interface MissionDecoy {
+  readonly label: string;
+  readonly sourceTitle: string;
+}
+
+function pickMissionDecoy(
+  brief: ScenarioProductionBrief,
+  phase: ProductionCaseMissionPhase,
+  donors: readonly ManualScenarioProductionBrief[],
+  ownLabels: ReadonlySet<string>,
+  salt: string,
+): MissionDecoy | undefined {
+  if (donors.length === 0) return undefined;
+  const field = missionDecoySourceField[phase];
+  const start = hashMissionSeed(`${brief.scenarioId}:${phase}:${salt}`);
+  for (let offset = 0; offset < donors.length; offset++) {
+    const donor = donors[(start + offset) % donors.length];
+    if (!donor) continue;
+    const lines = donor[field];
+    const line = lines[start % Math.max(lines.length, 1)] ?? lines[0];
+    if (line && !ownLabels.has(line)) {
+      return { label: line, sourceTitle: donor.title.replace(/ production brief$/i, "") };
+    }
+  }
+  return undefined;
+}
+
 function createMissionChoices(
   brief: ScenarioProductionBrief,
   phase: ProductionCaseMissionPhase,
@@ -2173,19 +2234,39 @@ function createMissionChoices(
     feedback: "Matches the case",
   }));
 
-  choices.push({
-    id: `${brief.scenarioId}-choice-${phase}-partial`,
-    label: `Use ${brief.toneTargets[0] ?? "a clear tone"} as a general guideline`,
-    quality: "partial",
-    feedback: "Partially relevant",
-  });
+  const field = missionDecoySourceField[phase];
+  const ownLabels = new Set([...brief[field], ...targets]);
+  const allDonors = Object.values(scenarioProductionBriefs)
+    .filter((donor) => donor.scenarioId !== brief.scenarioId)
+    .sort((left, right) => (left.scenarioId < right.scenarioId ? -1 : 1));
+  const ownGenreWords = genreWordSet(brief.genreTargets);
+  const nearDonors = allDonors.filter((donor) =>
+    [...genreWordSet(donor.genreTargets)].some((word) => ownGenreWords.has(word)),
+  );
+  const farDonors = allDonors.filter(
+    (donor) => ![...genreWordSet(donor.genreTargets)].some((word) => ownGenreWords.has(word)),
+  );
 
-  choices.push({
-    id: `${brief.scenarioId}-choice-${phase}-miss`,
-    label: "Choose a broad, safe default approach with no case-specific priority",
-    quality: "miss",
-    feedback: "Less precise for this case",
-  });
+  const partialDecoy = pickMissionDecoy(brief, phase, nearDonors.length > 0 ? nearDonors : allDonors, ownLabels, "partial");
+  if (partialDecoy) {
+    choices.push({
+      id: `${brief.scenarioId}-choice-${phase}-partial`,
+      label: partialDecoy.label,
+      quality: "partial",
+      feedback: `Close in craft — but this is how ${partialDecoy.sourceTitle} solves this phase, not this film.`,
+    });
+    ownLabels.add(partialDecoy.label);
+  }
+
+  const missDecoy = pickMissionDecoy(brief, phase, farDonors.length > 0 ? farDonors : allDonors, ownLabels, "miss");
+  if (missDecoy) {
+    choices.push({
+      id: `${brief.scenarioId}-choice-${phase}-miss`,
+      label: missDecoy.label,
+      quality: "miss",
+      feedback: `That is ${missDecoy.sourceTitle}'s answer — a different production logic than this case.`,
+    });
+  }
 
   return choices.slice(0, 4);
 }
