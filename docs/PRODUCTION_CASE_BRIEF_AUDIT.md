@@ -36,10 +36,13 @@ aggregate catalogue coverage by decade from the seed data.
 
 All 216 missing learning goals were written and merged the day after this
 audit: every one of the 161 briefs now has exactly 3 learning goals, with no
-duplicates inside any brief. The lists below are preserved as the record of
-which films were filled. Worklists 3 (phrase dedupe) and 4 (era imports)
-remain open, and `verificationStatus` was intentionally left unchanged — the
-per-film verification pass is still to come.
+duplicates inside any brief. Worklist 3 was completed the same day: all 11
+phrases reused in 3+ briefs were replaced with film-specific wording (27
+replacements), keeping each phrase only in the film that owns the idea most;
+no phrase in the catalogue now appears in more than two briefs. The lists
+below are preserved as the record of what was filled and deduped. Worklist 4
+(era imports) remains open, and `verificationStatus` was intentionally left
+unchanged — the per-film verification pass is still to come.
 
 ## Worklist 1 — add two learning goals (70 briefs)
 
