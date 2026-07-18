@@ -32,6 +32,15 @@ aggregate catalogue coverage by decade from the seed data.
    The oldest cases are The Lost Weekend (1945), It's a Wonderful Life (1946), Bicycle Thieves (1948), La Strada (1954), 12 Angry Men (1957) —
    nothing at all from 1895–1944, despite the game's film-history framing.
 
+## 2026-07-18 update — Worklists 1 and 2 completed
+
+All 216 missing learning goals were written and merged the day after this
+audit: every one of the 161 briefs now has exactly 3 learning goals, with no
+duplicates inside any brief. The lists below are preserved as the record of
+which films were filled. Worklists 3 (phrase dedupe) and 4 (era imports)
+remain open, and `verificationStatus` was intentionally left unchanged — the
+per-film verification pass is still to come.
+
 ## Worklist 1 — add two learning goals (70 briefs)
 
 - 45 Years (2015)

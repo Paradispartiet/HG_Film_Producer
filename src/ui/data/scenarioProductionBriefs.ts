@@ -240,7 +240,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use documentary-style immediacy", "Frame restricted zones as pressure", "Keep action legible inside chaos"],
     editingTargets: ["Cut media fragments into world rules", "Escalate from procedure to panic", "Keep action geography readable"],
     soundTargets: ["Layer crowd and media pressure", "Make body change unsettling", "Use alarms and orders as threat"],
-    learningGoals: ["Science fiction can make social conflict physical and immediate"],
+    learningGoals: ["Science fiction can make social conflict physical and immediate", "Ground the impossible in documentary texture", "Let bureaucracy make cruelty feel routine"],
     verificationStatus: "needs_research"
   },
   scenario_it_s_a_wonderful_life_1946: {
@@ -253,7 +253,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make the town a dramatic universe", "Frame belonging through groups", "Contrast isolation with community"],
     editingTargets: ["Keep a warm ensemble rhythm", "Let crisis beats accumulate", "Move clearly between despair and support"],
     soundTargets: ["Let voices create belonging", "Use quiet to expose despair", "Make community sound restorative"],
-    learningGoals: ["Fantasy can reframe everyday life as moral drama"],
+    learningGoals: ["Fantasy can reframe everyday life as moral drama", "Show a town's debt to one ordinary life", "Let despair earn the film's warmth"],
     verificationStatus: "needs_research"
   },
   scenario_no_country_for_old_men_2007: {
@@ -266,7 +266,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make landscape feel dangerous", "Frame absence as threat", "Hold distance around violence"],
     editingTargets: ["Control suspense with restraint", "Delay releases of information", "Let silence stretch before action"],
     soundTargets: ["Let silence create threat", "Keep footsteps and objects precise", "Use absence of sound as pressure"],
-    learningGoals: ["Suspense can come from restraint, silence and inevitability"],
+    learningGoals: ["Suspense can come from restraint, silence and inevitability", "Let the antagonist embody a rule, not a motive", "End on consequence instead of confrontation"],
     verificationStatus: "needs_research"
   },
   scenario_beasts_of_the_southern_wild_2012: {
@@ -279,7 +279,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use tactile worldbuilding", "Keep a rough visual energy", "Make landscape feel alive"],
     editingTargets: ["Move with rough momentum", "Balance wonder with danger", "Let memory and sensation guide rhythm"],
     soundTargets: ["Layer weather and community texture", "Make the world feel handmade", "Let music lift mythic moments"],
-    learningGoals: ["Place can become myth through perspective"],
+    learningGoals: ["Place can become myth through perspective", "Let a child's voice narrate catastrophe", "Build myth from found materials and bodies"],
     verificationStatus: "needs_research"
   },
   scenario_moon_2009: {
@@ -292,7 +292,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Control space tightly", "Frame isolation inside routine", "Make work areas feel repetitive"],
     editingTargets: ["Pace reveals patiently", "Repeat patterns with small changes", "Keep the mystery contained"],
     soundTargets: ["Use restrained machine ambience", "Let quiet rooms feel isolated", "Make repeated sounds signal routine"],
-    learningGoals: ["Science fiction can use confinement to explore selfhood"],
+    learningGoals: ["Science fiction can use confinement to explore selfhood", "Double the actor to dramatize identity", "Make corporate design feel quietly hostile"],
     verificationStatus: "needs_research"
   },
   scenario_midnight_in_paris_2011: {
@@ -318,7 +318,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use Los Angeles as a comic maze", "Frame hangouts as investigation spaces", "Make ordinary rooms feel strange"],
     editingTargets: ["Build rhythm from detours", "Hold reactions for deadpan comedy", "Escalate through odd encounters"],
     soundTargets: ["Let dialogue carry dry humor", "Use room texture for social awkwardness", "Keep crime beats lightly off-balance"],
-    learningGoals: ["Crime structure can carry absurd comedy"],
+    learningGoals: ["Crime structure can carry absurd comedy", "Let digression carry the comedy", "Anchor absurdity in an unbothered protagonist"],
     verificationStatus: "needs_research"
   },
   scenario_leaving_las_vegas_1995: {
@@ -331,7 +331,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use nightlife as emotional atmosphere", "Frame city drift as loneliness", "Hold restrained intimacy between two people"],
     editingTargets: ["Let quiet encounters breathe", "Drift between closeness and distance", "Avoid easy recovery beats"],
     soundTargets: ["Use music as loneliness", "Let nightlife sound feel adrift", "Keep intimate silences exposed"],
-    learningGoals: ["Romance can be built around acceptance, not solution"],
+    learningGoals: ["Romance can be built around acceptance, not solution", "Refuse rescue as a story engine", "Score self-destruction with tenderness"],
     verificationStatus: "needs_research"
   },
   scenario_gran_torino_2008: {
@@ -344,7 +344,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use domestic space as boundary", "Frame streets as contested ground", "Mark distance between neighbors"],
     editingTargets: ["Build toward moral choice", "Let confrontations play through performance", "Control rhythm around boundary shifts"],
     soundTargets: ["Make neighborhood sound present", "Let silence follow confrontation", "Keep dialogue pressure direct"],
-    learningGoals: ["Character change can be shown through community pressure"],
+    learningGoals: ["Character change can be shown through community pressure", "Let prejudice erode through proximity", "Stage sacrifice as the only honest ending"],
     verificationStatus: "needs_research"
   },
   scenario_mesrine_public_enemy_no_1_2008: {
@@ -357,7 +357,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Frame public identity as threat", "Use institutions as pressure", "Keep action grounded in consequence"],
     editingTargets: ["Build action rhythm with fallout", "Escalate through chase structure", "Cut between pressure and reaction"],
     soundTargets: ["Layer media and public noise", "Use pursuit sounds as tension", "Let consequences land after action"],
-    learningGoals: ["Crime biography can turn reputation into story engine"],
+    learningGoals: ["Crime biography can turn reputation into story engine", "Let celebrity accelerate the downfall", "Stage violence as performance for the press"],
     verificationStatus: "needs_research"
   },
   scenario_mesrine_killer_instinct_2008: {
@@ -370,7 +370,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Build period crime-world texture", "Frame physical danger closely", "Show systems around personal choices"],
     editingTargets: ["Use sharp escalation", "Keep momentum through danger", "Track descent step by step"],
     soundTargets: ["Make danger feel physical", "Use crime-world texture sparingly", "Let quiet choices precede escalation"],
-    learningGoals: ["Origin stories can connect character formation to system pressure"],
+    learningGoals: ["Origin stories can connect character formation to system pressure", "Show the system teaching brutality", "Build charisma the audience must distrust"],
     verificationStatus: "needs_research"
   },
   scenario_the_bothersome_man_2006: {
@@ -383,7 +383,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use controlled clean spaces", "Let design feel emotionally wrong", "Frame normality as a trap"],
     editingTargets: ["Keep a dry comic rhythm", "Hold discomfort after disruptions", "Let repetition expose unease"],
     soundTargets: ["Use uncomfortable silence", "Keep surfaces calmly polished", "Let small sounds disturb order"],
-    learningGoals: ["Speculative worlds can critique normal life through design and tone"],
+    learningGoals: ["Speculative worlds can critique normal life through design and tone", "Make comfort itself the horror", "Use blank design to starve emotion"],
     verificationStatus: "needs_research"
   },
   scenario_buffalo_66_1998: {
@@ -396,7 +396,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use stylized framing", "Make memory feel subjective", "Frame closeness as uncomfortable"],
     editingTargets: ["Hold discomfort before release", "Let pauses create tension", "Cut sharply into vulnerability"],
     soundTargets: ["Use music as emotional rupture", "Let silence expose defenses", "Shift sound with memory and feeling"],
-    learningGoals: ["Romance can grow from contradiction and awkward performance"],
+    learningGoals: ["Romance can grow from contradiction and awkward performance", "Let neediness drive both cruelty and charm", "Stage memory as a posed tableau"],
     verificationStatus: "needs_research"
   },
   scenario_dogville_2003: {
@@ -409,7 +409,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use stripped-down staging", "Make space function as judgment", "Frame bodies inside social rules"],
     editingTargets: ["Build chapter-like escalation", "Track power shifts clearly", "Let repetition become accusation"],
     soundTargets: ["Use voice as judgment", "Let empty space speak", "Keep community pressure audible"],
-    learningGoals: ["Stripped-down staging can expose social rules and moral violence"],
+    learningGoals: ["Stripped-down staging can expose social rules and moral violence", "Let the audience furnish the missing walls", "Test mercy until it becomes judgment"],
     verificationStatus: "needs_research"
   },
   scenario_down_by_law_1986: {
@@ -422,7 +422,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use black-and-white spareness", "Frame outsiders in empty space", "Keep the world visually restrained"],
     editingTargets: ["Hold slow comic timing", "Let pauses do story work", "Make small shifts feel dramatic"],
     soundTargets: ["Use music as mood and drift", "Let voices define rhythm", "Keep silence relaxed and strange"],
-    learningGoals: ["Deadpan rhythm can make small character shifts feel dramatic"],
+    learningGoals: ["Deadpan rhythm can make small character shifts feel dramatic", "Compose poverty in patient black and white", "Let an outsider's optimism crack the deadpan"],
     verificationStatus: "needs_research"
   },
   scenario_american_splendor_2003: {
@@ -435,7 +435,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Mix realism with performance", "Use comic-book framing lightly", "Frame ordinary spaces as expressive"],
     editingTargets: ["Cut between forms clearly", "Use dry humor through observation", "Let routine create rhythm"],
     soundTargets: ["Use voiceover texture", "Keep interview-like directness", "Let ordinary noise ground the humor"],
-    learningGoals: ["Biography can use form-mixing to show ordinary experience"],
+    learningGoals: ["Biography can use form-mixing to show ordinary experience", "Let the real subject interrupt the fiction", "Find heroism in unglamorous persistence"],
     verificationStatus: "needs_research"
   },
   scenario_mystery_train_1989: {
@@ -448,7 +448,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make the hotel a narrative junction", "Treat city spaces as memory", "Frame encounters with distance"],
     editingTargets: ["Hold pauses for deadpan timing", "Let stories echo through rhythm", "Keep intersections clear and quiet"],
     soundTargets: ["Use music as identity", "Let voices shape atmosphere", "Make city sound feel nocturnal"],
-    learningGoals: ["Separate stories can be joined through place, rhythm and mood"],
+    learningGoals: ["Separate stories can be joined through place, rhythm and mood", "Let one offscreen event sync the stories", "Make a shabby hotel the film's heart"],
     verificationStatus: "needs_research"
   },
   scenario_dheepan_2015: {
@@ -461,7 +461,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use housing space as pressure", "Frame community distance clearly", "Keep danger close to routine"],
     editingTargets: ["Let realism tighten into thriller", "Hold quiet before sudden threat", "Track stakes through environment"],
     soundTargets: ["Use social noise as pressure", "Make distance audible", "Let danger enter through sound"],
-    learningGoals: ["Social realism can become thriller through environment and stakes"],
+    learningGoals: ["Social realism can become thriller through environment and stakes", "Let a false family become a real one", "Carry war reflexes into peacetime spaces"],
     verificationStatus: "needs_research"
   },
   scenario_the_pianist_2002: {
@@ -474,7 +474,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use rooms as danger and refuge", "Frame observation under threat", "Make city space unstable"],
     editingTargets: ["Keep pacing restrained", "Let pressure accumulate", "Hold survival moments without rush"],
     soundTargets: ["Make silence part of survival", "Use music as emotional structure", "Let absence shape tension"],
-    learningGoals: ["Historical drama can use restraint to make survival experiential"],
+    learningGoals: ["Historical drama can use restraint to make survival experiential", "Strip the survivor down to pure observation", "Let music interrupt barbarity"],
     verificationStatus: "needs_research"
   },
   scenario_crash_2004: {
@@ -487,7 +487,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use the city as a network", "Frame encounters as pressure points", "Keep collisions visually direct"],
     editingTargets: ["Cross-cut social tension", "Use coincidence as structure", "Build impact through collision"],
     soundTargets: ["Let dialogue confront and expose", "Use city noise as pressure", "Hold silence after impact"],
-    learningGoals: ["Ensemble structure can turn social tension into dramatic collision"],
+    learningGoals: ["Ensemble structure can turn social tension into dramatic collision", "Let coincidence force moral reversal", "Give every stereotype a counter-scene"],
     verificationStatus: "needs_research"
   },
   scenario_groundhog_day_1993: {
@@ -500,7 +500,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make the town a game board", "Repeat spaces with variation", "Frame routine as a reset"],
     editingTargets: ["Build rhythm from variation", "Pay off repeated setups", "Keep resets clear and comic"],
     soundTargets: ["Use cues as ritual", "Make reset sounds readable", "Let repetition become payoff"],
-    learningGoals: ["Fantasy rules can drive comedy, structure and character growth"],
+    learningGoals: ["Fantasy rules can drive comedy, structure and character growth", "Repeat scenes with escalating variation", "Let mastery come before sincerity"],
     verificationStatus: "needs_research"
   },
   scenario_the_truman_show_1998: {
@@ -513,7 +513,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Design the world as a trap", "Use hidden-camera feeling", "Frame normal life as staged"],
     editingTargets: ["Cut between routine and doubt", "Build suspicion through repetition", "Shape revelation as release"],
     soundTargets: ["Keep cheerful surfaces brittle", "Use public sound as pressure", "Let silence expose control"],
-    learningGoals: ["Production design can make an entire world feel like a trap"],
+    learningGoals: ["Production design can make an entire world feel like a trap", "Hide the cut so the world stays seamless", "Let sponsorship puncture sincerity"],
     verificationStatus: "needs_research"
   },
   scenario_stranger_than_paradise_1984: {
@@ -526,7 +526,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use spare black-and-white language", "Frame distance in plain spaces", "Let emptiness shape mood"],
     editingTargets: ["Let pauses become the rhythm", "Hold anti-dramatic beats", "Make small changes register"],
     soundTargets: ["Use music as distance", "Let silence carry boredom", "Keep voices dry and sparse"],
-    learningGoals: ["Minimal plot can still create strong tone and character movement"],
+    learningGoals: ["Minimal plot can still create strong tone and character movement", "Hold each scene in a single take", "Let boredom become deadpan music"],
     verificationStatus: "needs_research"
   },
   scenario_forrest_gump_1994: {
@@ -539,7 +539,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Track time through visual change", "Keep the character centered", "Make history feel personal"],
     editingTargets: ["Use montage as memory structure", "Bridge time jumps emotionally", "Keep episodes connected"],
     soundTargets: ["Use music as memory engine", "Let narration feel personal", "Carry emotion across eras"],
-    learningGoals: ["One character’s life can structure a broad historical panorama"],
+    learningGoals: ["One character’s life can structure a broad historical panorama", "Composite the hero into archive history", "Let simplicity judge a cynical era"],
     verificationStatus: "needs_research"
   },
   scenario_the_man_who_wasn_t_there_2001: {
@@ -552,7 +552,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use stark composition", "Frame negative space", "Make emptiness feel active"],
     editingTargets: ["Keep a slow fatalistic rhythm", "Delay consequences calmly", "Let restraint build pressure"],
     soundTargets: ["Use voiceover as distance", "Let silence suggest interior life", "Keep sound sparse and fatal"],
-    learningGoals: ["Noir can be built from restraint, emptiness and fatal choice"],
+    learningGoals: ["Noir can be built from restraint, emptiness and fatal choice", "Let stillness make the protagonist opaque", "Light smoke and shadow as fate"],
     verificationStatus: "needs_research"
   },
   scenario_searching_for_sugar_man_2012: {
@@ -565,7 +565,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Blend archive and present inquiry", "Frame evidence as discovery", "Let interviews carry memory"],
     editingTargets: ["Reveal through evidence and music", "Shape inquiry as suspense", "Connect testimony into momentum"],
     soundTargets: ["Use songs as evidence", "Let music carry emotion", "Balance interviews with listening"],
-    learningGoals: ["Documentary can turn research into suspense and rediscovery"],
+    learningGoals: ["Documentary can turn research into suspense and rediscovery", "Withhold the subject until the myth is built", "Let the fans narrate the legend first"],
     verificationStatus: "needs_research"
   },
   scenario_smoke_1995: {
@@ -578,7 +578,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make the corner shop a hub", "Frame routine as community", "Let faces carry reveals"],
     editingTargets: ["Keep a conversational rhythm", "Let stories unfold gently", "Hold room for small reactions"],
     soundTargets: ["Let voices create intimacy", "Use street texture lightly", "Keep storytelling emotionally clear"],
-    learningGoals: ["Everyday encounters can become dramatic through story exchange"],
+    learningGoals: ["Everyday encounters can become dramatic through story exchange", "Let one photograph slow the film down", "Trade stories as acts of care"],
     verificationStatus: "needs_research"
   },
   scenario_the_class_2008: {
@@ -591,7 +591,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use one room as pressure", "Track ensemble reactions", "Frame group dynamics clearly"],
     editingTargets: ["Cut with debate momentum", "Hold reaction chains", "Let misunderstandings accumulate"],
     soundTargets: ["Layer overlapping dialogue", "Use classroom noise as pressure", "Let voices compete for power"],
-    learningGoals: ["A single social space can reveal power, identity and conflict"],
+    learningGoals: ["A single social space can reveal power, identity and conflict", "Cast the real to sharpen the fiction", "Let classroom debate expose the institution"],
     verificationStatus: "needs_research"
   },
   scenario_requiem_for_a_dream_2000: {
@@ -604,7 +604,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make inner states visible", "Use subjective visual rhythm", "Frame bodies under pressure"],
     editingTargets: ["Make editing feel like compulsion", "Use repetition as escalation", "Cut fast when pressure spikes"],
     soundTargets: ["Use music as pressure", "Repeat sounds like urges", "Make compulsion audible"],
-    learningGoals: ["Editing and sound can make inner states feel physical"],
+    learningGoals: ["Editing and sound can make inner states feel physical", "Repeat montage until craving becomes structure", "Split the screen to isolate intimacy"],
     verificationStatus: "needs_research"
   },
   scenario_the_shining_1980: {
@@ -617,7 +617,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use symmetry as unease", "Frame negative space", "Make interiors feel hostile"],
     editingTargets: ["Build slow dread first", "Delay shocks with patience", "Use repetition as warning"],
     soundTargets: ["Make sound feel uneasy", "Repeat cues as warnings", "Let quiet spaces threaten"],
-    learningGoals: ["Horror can be built from space, rhythm and anticipation"],
+    learningGoals: ["Horror can be built from space, rhythm and anticipation", "Track the corridors until geography menaces", "Let the family unit be the monster"],
     verificationStatus: "needs_research"
   },
   scenario_the_return_2003: {
@@ -630,7 +630,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use landscape as pressure", "Make water feel charged", "Frame distance in family bonds"],
     editingTargets: ["Keep pacing restrained", "Let silence lengthen tension", "Hold uncertainty between scenes"],
     soundTargets: ["Use silence as family tension", "Let place sound distant", "Keep dialogue minimal"],
-    learningGoals: ["Minimal dialogue can make relationships feel mysterious and loaded"],
+    learningGoals: ["Minimal dialogue can make relationships feel mysterious and loaded", "Withhold the father's motive to the end", "Use weather and water as judgment"],
     verificationStatus: "needs_research"
   },
   scenario_kitchen_stories_2003: {
@@ -643,7 +643,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Keep controlled domestic distance", "Frame observation as behavior", "Use space for visual restraint"],
     editingTargets: ["Hold dry pauses", "Let small routines repeat", "Time tiny comic shifts"],
     soundTargets: ["Use quiet room sound", "Let silence create tension", "Keep reactions understated"],
-    learningGoals: ["Comedy can grow from observation, distance, and small rule-breaks"],
+    learningGoals: ["Comedy can grow from observation, distance, and small rule-breaks", "Make the observer the one who changes", "Let furniture and placement carry the comedy"],
     verificationStatus: "needs_research"
   },
   scenario_the_celebration_1998: {
@@ -656,7 +656,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use handheld immediacy", "Stay close to the gathering", "Let rooms feel unstable"],
     editingTargets: ["Cut through interruptions", "Track social collapse", "Build pressure from reactions"],
     soundTargets: ["Layer overlapping voices", "Use room tension", "Let silence follow truth"],
-    learningGoals: ["A social ritual can become a dramatic pressure system"],
+    learningGoals: ["A social ritual can become a dramatic pressure system", "Let handheld video make scandal intimate", "Stage the revelation as a toast"],
     verificationStatus: "needs_research"
   },
   scenario_the_400_blows_1959: {
@@ -669,7 +669,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use everyday spaces as confinement", "Follow street movement", "Keep realism observational"],
     editingTargets: ["Shape episodic drift", "Let consequences accumulate", "Balance routine with escape"],
     soundTargets: ["Use city and school pressure", "Let silence isolate", "Keep ordinary noise restrictive"],
-    learningGoals: ["Youth drama can turn ordinary institutions into conflict"],
+    learningGoals: ["Youth drama can turn ordinary institutions into conflict", "End on a frozen, unanswered face", "Let small lies escalate into exile"],
     verificationStatus: "needs_research"
   },
   scenario_the_straight_story_1999: {
@@ -682,7 +682,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use landscape as patience", "Frame travel as reflection", "Let distance hold memory"],
     editingTargets: ["Keep calm pacing", "Let quiet encounters breathe", "Build repair gradually"],
     soundTargets: ["Use music as warmth", "Let natural sound support reflection", "Keep quiet moments open"],
-    learningGoals: ["A small journey can carry large emotional repair"],
+    learningGoals: ["A small journey can carry large emotional repair", "Travel at the speed of reflection", "Let strangers carry pieces of the confession"],
     verificationStatus: "needs_research"
   },
   scenario_troll_hunter_2010: {
@@ -695,7 +695,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use handheld field footage", "Restrict visibility", "Scale fantasy through glimpses"],
     editingTargets: ["Balance documentary tone and scale", "Reveal threats through investigation", "Keep field tension readable"],
     soundTargets: ["Use natural field sound", "Make creature threat audible", "Keep comic understatement"],
-    learningGoals: ["Fantasy can feel credible through documentary rules and local detail"],
+    learningGoals: ["Fantasy can feel credible through documentary rules and local detail", "Play bureaucracy against the monstrous", "Let found footage set the rules of proof"],
     verificationStatus: "needs_research"
   },
   scenario_alamar_2009: {
@@ -708,7 +708,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make sea and land emotional", "Observe work without forcing drama", "Hold intimate everyday moments"],
     editingTargets: ["Keep a gentle rhythm", "Let lived-in moments breathe", "Move through care and routine"],
     soundTargets: ["Use natural sound as presence", "Let water and wind hold memory", "Keep quiet moments open"],
-    learningGoals: ["Observation can make ordinary care feel cinematic"],
+    learningGoals: ["Observation can make ordinary care feel cinematic", "Let father and son teach without plot", "Trust water, light and routine as story"],
     verificationStatus: "needs_research"
   },
   scenario_hugo_2011: {
@@ -721,7 +721,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make the station a magical world", "Use machines as visual wonder", "Frame hidden spaces as invitations"],
     editingTargets: ["Move with curiosity", "Build reveal structure clearly", "Balance motion with discovery"],
     soundTargets: ["Use clocks as story texture", "Let machines carry memory", "Make quiet discoveries feel intimate"],
-    learningGoals: ["Production design can turn film history into playable mystery"],
+    learningGoals: ["Production design can turn film history into playable mystery", "Make the machine a metaphor for purpose", "Restage early cinema as living wonder"],
     verificationStatus: "needs_research"
   },
   scenario_the_hunt_2012: {
@@ -734,7 +734,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use restrained realism", "Observe faces closely", "Frame community space as judgment"],
     editingTargets: ["Build through looks and silences", "Let exclusion accumulate", "Hold reactions after suspicion"],
     soundTargets: ["Use social sound as pressure", "Let absence create isolation", "Keep accusations emotionally sharp"],
-    learningGoals: ["Drama can build suspense through social trust breaking down"],
+    learningGoals: ["Drama can build suspense through social trust breaking down", "Let a child's half-lie become communal truth", "Stage friendship as the site of violence"],
     verificationStatus: "needs_research"
   },
   scenario_breathless_1960: {
@@ -747,7 +747,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use loose urban movement", "Make street life the style", "Keep the camera feeling restless"],
     editingTargets: ["Make editing feel restless", "Use jumpy rhythm", "Let scenes drift conversationally"],
     soundTargets: ["Mix music with city sound", "Use pauses as attitude", "Let street noise keep momentum"],
-    learningGoals: ["Editing and camera style can become a film’s personality"],
+    learningGoals: ["Editing and camera style can become a film’s personality", "Jump-cut to make crime feel casual", "Let the couple improvise toward betrayal"],
     verificationStatus: "needs_research"
   },
   scenario_bombon_el_perro_2004: {
@@ -760,7 +760,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use sparse landscape patiently", "Observe character without pressure", "Frame the road as possibility"],
     editingTargets: ["Keep quiet comic timing", "Let restraint carry feeling", "Move patiently between encounters"],
     soundTargets: ["Use natural sound as warmth", "Let silence feel companionable", "Keep the world gently present"],
-    learningGoals: ["A simple relationship can carry a whole character journey"],
+    learningGoals: ["A simple relationship can carry a whole character journey", "Let the dog restore a man's standing", "Underplay hope in a flat landscape"],
     verificationStatus: "needs_research"
   },
   scenario_trainspotting_1996: {
@@ -773,7 +773,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Stylize urban spaces", "Push physical extremes", "Make bodies feel trapped"],
     editingTargets: ["Keep a fast rhythm", "Use montage pressure", "Let voice drive momentum"],
     soundTargets: ["Use music as identity", "Accelerate with sound", "Let noise feel social"],
-    learningGoals: ["Make style feel like inner chaos."],
+    learningGoals: ["Make style feel like inner chaos.", "Narrate addiction with seductive energy", "Cut euphoria against consequence"],
     verificationStatus: "needs_research"
   },
   scenario_the_motorcycle_diaries_2004: {
@@ -786,7 +786,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use geography as discovery", "Frame landscapes morally", "Let distance reshape viewpoint"],
     editingTargets: ["Keep episodic movement", "Balance travel and reflection", "Let encounters accumulate"],
     soundTargets: ["Use music as distance", "Let ambience carry memory", "Mark change through sound"],
-    learningGoals: ["Turn travel into transformation."],
+    learningGoals: ["Turn travel into transformation.", "Let the landscapes radicalize the traveler", "Shift register as awareness grows"],
     verificationStatus: "needs_research"
   },
   scenario_mean_streets_1973: {
@@ -799,7 +799,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Stay close to bodies", "Use restless observation", "Make streets feel binding"],
     editingTargets: ["Build tension through hangouts", "Let violence interrupt routine", "Keep pressure local"],
     soundTargets: ["Use music as energy", "Layer street sound", "Let voices crowd choices"],
-    learningGoals: ["Use the neighborhood as moral pressure."],
+    learningGoals: ["Use the neighborhood as moral pressure.", "Score penance to jukebox rock", "Let loyalty be the trap"],
     verificationStatus: "needs_research"
   },
   scenario_clockers_1995: {
@@ -812,7 +812,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use public space as danger", "Frame surveillance in the open", "Show community pressure"],
     editingTargets: ["Blend investigation and observation", "Track suspicion clearly", "Let pressure accumulate"],
     soundTargets: ["Layer streets and police", "Use community sound as pressure", "Let public noise threaten"],
-    learningGoals: ["Let investigation expose a system."],
+    learningGoals: ["Let investigation expose a system.", "Circle one shooting from every side", "Make the corner a stage under surveillance"],
     verificationStatus: "needs_research"
   },
   scenario_rumble_fish_1983: {
@@ -825,7 +825,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use high contrast", "Build a dreamlike street world", "Frame conflict as symbol"],
     editingTargets: ["Keep rhythm fragmented", "Let emotion feel displaced", "Move like memory"],
     soundTargets: ["Use music as mood", "Let sound suggest memory", "Make alienation audible"],
-    learningGoals: ["Make youth conflict feel mythic."],
+    learningGoals: ["Make youth conflict feel mythic.", "Shoot the present as memory in monochrome", "Reserve color for what freedom looks like"],
     verificationStatus: "needs_research"
   },
   scenario_in_the_house_2012: {
@@ -838,7 +838,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Turn home into temptation", "Frame watching as pressure", "Make domestic space feel observed"],
     editingTargets: ["Control reveals carefully", "Shift between layers clearly", "Let perspective changes create suspense"],
     soundTargets: ["Make dialogue intellectual tension", "Let narration unsettle reality", "Use quiet rooms as pressure"],
-    learningGoals: ["Writing can become suspense when narration changes reality"],
+    learningGoals: ["Writing can become suspense when narration changes reality", "Blur the line between draft and event", "Make the reader complicit in the intrusion"],
     verificationStatus: "needs_research"
   },
   scenario_amelie_2001: {
@@ -851,7 +851,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Heighten the city world", "Use detail as emotion", "Make places feel like a private map"],
     editingTargets: ["Cut quick visual details", "Time comedy precisely", "Link small actions with rhythm"],
     soundTargets: ["Use music as wonder", "Give private feelings rhythm", "Let sound support whimsy"],
-    learningGoals: ["Stylized detail can turn everyday kindness into cinematic magic"],
+    learningGoals: ["Stylized detail can turn everyday kindness into cinematic magic", "Saturate color until the city smiles", "Catalogue characters by their tiny pleasures"],
     verificationStatus: "needs_research"
   },
   scenario_taxidermia_2006: {
@@ -864,7 +864,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Heighten grotesque details", "Make bodies unavoidable", "Build a surreal visual world"],
     editingTargets: ["Use shocking rhythm", "Bridge generations boldly", "Let surreal transitions disturb"],
     soundTargets: ["Make sound physically uncomfortable", "Use absurdity as pressure", "Let bodies shape the soundscape"],
-    learningGoals: ["Grotesque style can expose family, body, and history as one system"],
+    learningGoals: ["Grotesque style can expose family, body, and history as one system", "Escalate body imagery across generations", "Preserve history as literal flesh"],
     verificationStatus: "needs_research"
   },
   scenario_a_somewhat_gentle_man_2010: {
@@ -877,7 +877,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use cold everyday spaces", "Frame routine as pressure", "Keep compositions understated"],
     editingTargets: ["Hold dry timing", "Escalate without fuss", "Let awkward pauses land"],
     soundTargets: ["Use silence as comedy", "Keep delivery flat", "Let quiet reactions carry tension"],
-    learningGoals: ["Crime comedy can work through restraint, awkwardness, and small choices"],
+    learningGoals: ["Crime comedy can work through restraint, awkwardness, and small choices", "Let flat delivery defuse the crime cliches", "Give redemption modest, grubby stakes"],
     verificationStatus: "needs_research"
   },
   scenario_walle_2008: {
@@ -890,7 +890,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Design worlds through objects", "Show machines and waste clearly", "Frame scale through loneliness"],
     editingTargets: ["Build physical comedy", "Cut around discovery", "Let gestures carry emotion"],
     soundTargets: ["Make machines feel alive", "Use sound as character voice", "Turn movement into feeling"],
-    learningGoals: ["Animation can build character through movement, objects, and sound"],
+    learningGoals: ["Animation can build character through movement, objects, and sound", "Hold dialogue back for a full act", "Make trash a museum of humanity"],
     verificationStatus: "needs_research"
   },
   scenario_antonia_s_line_1995: {
@@ -903,7 +903,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make village life an ecosystem", "Frame gatherings as belonging", "Use time passing visibly"],
     editingTargets: ["Keep a warm rhythm", "Move clearly across time", "Let ensemble stories accumulate"],
     soundTargets: ["Use voice as family history", "Let community sound feel alive", "Keep storytelling intimate"],
-    learningGoals: ["Ensemble drama can turn family history into community myth"],
+    learningGoals: ["Ensemble drama can turn family history into community myth", "Chronicle decades in fable rhythm", "Let matriarchy rewrite the village rules"],
     verificationStatus: "needs_research"
   },
   scenario_noi_the_albino_2003: {
@@ -916,7 +916,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make landscape show isolation", "Use remote space as confinement", "Frame stillness around the character"],
     editingTargets: ["Hold dry timing", "Let pauses become mood", "Keep rebellion small and clear"],
     soundTargets: ["Use silence as mood", "Let weather create pressure", "Keep sparse sound lonely"],
-    learningGoals: ["Place can make teenage alienation visible"],
+    learningGoals: ["Place can make teenage alienation visible", "Trap ambition under snow and routine", "Keep the escape fantasy just offshore"],
     verificationStatus: "needs_research"
   },
   scenario_the_impossible_2012: {
@@ -929,7 +929,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Show disaster as bodily pressure", "Stay close to immediate danger", "Frame recovery as fragile"],
     editingTargets: ["Cut around shock and confusion", "Build suspense through uncertainty", "Balance chaos with recovery"],
     soundTargets: ["Use sound as chaos", "Make impact feel physical", "Let vulnerability stay audible"],
-    learningGoals: ["Disaster drama works when scale stays tied to human stakes"],
+    learningGoals: ["Disaster drama works when scale stays tied to human stakes", "Choreograph chaos around family sightlines", "Let injury detail keep spectacle human"],
     verificationStatus: "needs_research"
   },
   scenario_taste_of_cherry_1997: {
@@ -942,7 +942,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use car and landscape as chamber", "Hold long observations", "Keep visual restraint"],
     editingTargets: ["Use pauses as moral pressure", "Build rhythm through repetition", "Let scenes breathe"],
     soundTargets: ["Let silence create moral space", "Use ambient sound carefully", "Keep speech exposed"],
-    learningGoals: ["Minimal action can create deep dramatic tension through conversation"],
+    learningGoals: ["Minimal action can create deep dramatic tension through conversation", "Loop the same roads as moral repetition", "Let each passenger argue for life"],
     verificationStatus: "needs_research"
   },
   scenario_land_of_mine_2015: {
@@ -955,7 +955,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use dangerous landscape as moral test", "Frame bodies as vulnerable", "Keep realism restrained"],
     editingTargets: ["Build suspense through procedure", "Hold waiting and risk", "Let danger arrive clearly"],
     soundTargets: ["Use sand and breath as suspense", "Make danger sound close", "Keep quiet moments tense"],
-    learningGoals: ["War drama can focus on aftermath, responsibility and fragile empathy"],
+    learningGoals: ["War drama can focus on aftermath, responsibility and fragile empathy", "Count each defusal as moral arithmetic", "Make the captor's conscience the arc"],
     verificationStatus: "needs_research"
   },
   scenario_revanche_2008: {
@@ -968,7 +968,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Contrast rural and urban spaces", "Frame distance as pressure", "Use quiet settings for tension"],
     editingTargets: ["Delay emotional release", "Build suspense through restraint", "Let consequences surface slowly"],
     soundTargets: ["Use silence as inner pressure", "Keep tension understated", "Let quiet moments unsettle"],
-    learningGoals: ["Revenge drama can work through restraint, delay and moral ambiguity"],
+    learningGoals: ["Revenge drama can work through restraint, delay and moral ambiguity", "Let two households converge by accident", "Hide the crime inside pastoral quiet"],
     verificationStatus: "needs_research"
   },
   scenario_paris_texas_1984: {
@@ -981,7 +981,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use landscape as emptiness", "Frame distance between people", "Observe movement quietly"],
     editingTargets: ["Let revelations arrive slowly", "Hold pauses between encounters", "Keep the journey patient"],
     soundTargets: ["Use music as loneliness", "Let silence carry memory", "Keep ambient space open"],
-    learningGoals: ["Landscape and silence can carry a character’s missing history"],
+    learningGoals: ["Landscape and silence can carry a character’s missing history", "Reunite through glass and one-way speech", "Let color code loss and longing"],
     verificationStatus: "needs_research"
   },
   scenario_being_john_malkovich_1999: {
@@ -994,7 +994,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use strange spaces as worldbuilding", "Frame cramped absurdity plainly", "Make the portal feel practical"],
     editingTargets: ["Balance deadpan reactions and escalation", "Cut for awkward timing", "Let absurdity build logically"],
     soundTargets: ["Use dialogue as awkward comedy", "Keep reactions dry", "Let ordinary sounds ground fantasy"],
-    learningGoals: ["Fantasy comedy works when absurd rules are treated as practical reality"],
+    learningGoals: ["Fantasy comedy works when absurd rules are treated as practical reality", "Escalate the premise past its own rules", "Let desire hijack identity"],
     verificationStatus: "needs_research"
   },
   scenario_45_years_2015: {
@@ -1007,7 +1007,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe faces closely", "Use domestic space as pressure", "Frame restraint before rupture"],
     editingTargets: ["Escalate through pauses", "Hold withheld feelings", "Track looks as story turns"],
     soundTargets: ["Use silence as relationship pressure", "Let room tone hold tension", "Keep speech exposed"],
-    learningGoals: ["Small discoveries can transform an entire relationship drama"],
+    learningGoals: ["Small discoveries can transform an entire relationship drama", "Let the past arrive as an object", "Frame distance growing inside routine"],
     verificationStatus: "needs_research"
   },
   scenario_blue_jasmine_2013: {
@@ -1020,7 +1020,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Contrast social worlds", "Frame performance against reality", "Make spaces expose class pressure"],
     editingTargets: ["Track emotional unravelling", "Cut memory against collapse", "Shape performance rhythm"],
     soundTargets: ["Use dialogue as status", "Let panic break composure", "Make self-deception audible"],
-    learningGoals: ["Character drama can expose collapse through voice, memory and social contrast"],
+    learningGoals: ["Character drama can expose collapse through voice, memory and social contrast", "Intercut the fall with the gilded before", "Let self-narration outrun reality"],
     verificationStatus: "needs_research"
   },
   scenario_rush_2013: {
@@ -1033,7 +1033,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Show speed as pressure", "Build a period racing world", "Frame competition as character"],
     editingTargets: ["Shape race rhythm clearly", "Cross-cut emotion and action", "Build pressure through pace"],
     soundTargets: ["Use machines as tension", "Make breath audible", "Let pressure build in sound"],
-    learningGoals: ["Turn rivalry into character structure", "Use risk to reveal ambition"],
+    learningGoals: ["Turn rivalry into character structure", "Use risk to reveal ambition", "Let opposing temperaments define craft"],
     verificationStatus: "needs_research"
   },
   scenario_her_2013: {
@@ -1046,7 +1046,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Design the future emotionally", "Use soft spaces for intimacy", "Frame solitude gently"],
     editingTargets: ["Keep pacing soft", "Follow interior rhythm", "Let quiet moments breathe"],
     soundTargets: ["Use voice as intimacy", "Make interfaces feel personal", "Let music hold emotion"],
-    learningGoals: ["Make technology feel like emotional space", "Use voice to build intimacy"],
+    learningGoals: ["Make technology feel like emotional space", "Use voice to build intimacy", "Design a near future that feels soft and plausible"],
     verificationStatus: "needs_research"
   },
   scenario_the_lobster_2015: {
@@ -1059,7 +1059,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use institutional spaces as pressure", "Frame rules plainly", "Keep compositions controlled"],
     editingTargets: ["Hold a dry rhythm", "Use restraint before threat", "Let sudden danger interrupt calm"],
     soundTargets: ["Keep dialogue flat", "Use silence as menace", "Let stillness support comedy"],
-    learningGoals: ["Treat absurd rules as normal", "Let restraint sharpen comic menace"],
+    learningGoals: ["Treat absurd rules as normal", "Let restraint sharpen comic menace", "Flatten performance to expose the system"],
     verificationStatus: "needs_research"
   },
   scenario_4_months_3_weeks_and_2_days_2007: {
@@ -1072,7 +1072,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use long takes", "Restrict the viewpoint", "Turn rooms into danger zones"],
     editingTargets: ["Let duration create suspense", "Hold negotiation in real time", "Withhold relief after choices"],
     soundTargets: ["Use ambient silence", "Keep practical sound exposed", "Let anxiety sit in quiet"],
-    learningGoals: ["Build suspense through waiting", "Use constraint to withhold relief"],
+    learningGoals: ["Build suspense through waiting", "Use constraint to withhold relief", "Put the camera in real time with the crisis"],
     verificationStatus: "needs_research"
   },
   scenario_a_pigeon_sat_on_a_branch_reflecting_on_existence_2014: {
@@ -1085,7 +1085,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use static scenes", "Construct pale spaces", "Block figures precisely"],
     editingTargets: ["Keep sketch-like rhythm", "Hold fixed frames", "Let anti-climax land"],
     soundTargets: ["Keep dialogue flat", "Use sound as absurdity", "Let silence expose repetition"],
-    learningGoals: ["Use fixed frames as comic philosophy", "Turn repetition into existential comedy"],
+    learningGoals: ["Use fixed frames as comic philosophy", "Turn repetition into existential comedy", "Stage each tableau as a complete world"],
     verificationStatus: "needs_research"
   },
   scenario_boyhood_2014: {
@@ -1098,7 +1098,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use everyday spaces as memory markers", "Frame growth through routine", "Keep places emotionally specific"],
     editingTargets: ["Use gentle ellipses", "Accumulate small moments", "Let time pass cleanly"],
     soundTargets: ["Use music as period and mood", "Let sound suggest growth", "Keep family spaces lived-in"],
-    learningGoals: ["Let time become dramatic structure", "Build meaning from accumulated moments"],
+    learningGoals: ["Let time become dramatic structure", "Build meaning from accumulated moments", "Let the cast age instead of the makeup"],
     verificationStatus: "needs_research"
   },
   scenario_nightcrawler_2014: {
@@ -1111,7 +1111,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make the protagonist hunter and camera", "Use night city as market and threat", "Frame observation as appetite"],
     editingTargets: ["Build tension through footage", "Cut deals against danger", "Escalate pressure clearly"],
     soundTargets: ["Use police scanners as pressure", "Layer traffic and news sound", "Make night movement urgent"],
-    learningGoals: ["Make ambition drive the thriller", "Turn visual appetite into suspense"],
+    learningGoals: ["Make ambition drive the thriller", "Turn visual appetite into suspense", "Make the audience complicit in the footage"],
     verificationStatus: "needs_research"
   },
   scenario_nebraska_2013: {
@@ -1124,7 +1124,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use stark landscape", "Frame plain social spaces", "Make towns hold memory"],
     editingTargets: ["Hold dry pauses", "Understate emotional reveals", "Let encounters gather history"],
     soundTargets: ["Use quiet room tone", "Let travel sound carry melancholy", "Keep conversations exposed"],
-    learningGoals: ["Use the road to reveal family history", "Find dignity in modest drama"],
+    learningGoals: ["Use the road to reveal family history", "Find dignity in modest drama", "Shoot the plains as faded memory"],
     verificationStatus: "needs_research"
   },
   scenario_detachment_2011: {
@@ -1137,7 +1137,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Frame school spaces as pressure", "Observe exhaustion closely", "Contrast public roles with private strain"],
     editingTargets: ["Use intense performance rhythm", "Break pressure with reflective pauses", "Connect fragmented lives clearly"],
     soundTargets: ["Use voice as pressure", "Let silence expose burnout", "Layer school noise as stress"],
-    learningGoals: ["Show a system through one exhausted observer", "Turn empathy into social drama"],
+    learningGoals: ["Show a system through one exhausted observer", "Turn empathy into social drama", "Let temporary bonds expose permanent neglect"],
     verificationStatus: "needs_research"
   },
   scenario_homesick_2015: {
@@ -1150,7 +1150,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use private spaces as unstable intimacy", "Observe bodies and distance", "Keep closeness visually tense"],
     editingTargets: ["Escalate discomfort slowly", "Hold moments of uncertainty", "Let absence shape rhythm"],
     soundTargets: ["Use silence as unease", "Keep domestic sounds small", "Let quiet suggest boundaries"],
-    learningGoals: ["Build tension from closeness and boundaries", "Make absence and need dramatic"],
+    learningGoals: ["Build tension from closeness and boundaries", "Make absence and need dramatic", "Keep the taboo tension unresolved"],
     verificationStatus: "needs_research"
   },
   scenario_tangerines_2013: {
@@ -1163,7 +1163,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use house and orchard as arena", "Observe threat with restraint", "Frame enemies in shared space"],
     editingTargets: ["Build tension through waiting", "Hold proximity under threat", "Let care shift slowly"],
     soundTargets: ["Keep domestic stillness quiet", "Let distant danger intrude", "Use silence as fragile safety"],
-    learningGoals: ["War drama can become powerful through containment and fragile empathy", "Use containment to create fragile empathy"],
+    learningGoals: ["War drama can become powerful through containment and fragile empathy", "Use containment to create fragile empathy", "Let craft and harvest measure what war wastes"],
     verificationStatus: "needs_research"
   },
   scenario_it_follows_2014: {
@@ -1176,7 +1176,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use wide frames", "Make negative space dangerous", "Track slow threat movement"],
     editingTargets: ["Stretch anticipation", "Delay confirmation", "Let suspense grow patiently"],
     soundTargets: ["Use synth dread as pressure", "Let quiet spaces feel watched", "Keep pursuit sonically present"],
-    learningGoals: ["Horror can grow from simple rules, space and patient threat", "Make empty space feel dangerous"],
+    learningGoals: ["Horror can grow from simple rules, space and patient threat", "Make empty space feel dangerous", "Keep the threat at walking pace"],
     verificationStatus: "needs_research"
   },
   scenario_mad_max_fury_road_2015: {
@@ -1189,7 +1189,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Build world through vehicles", "Use bodies and factions as design", "Keep action geography clear"],
     editingTargets: ["Maintain action clarity", "Escalate rhythm and stakes", "Cut movement for momentum"],
     soundTargets: ["Make engines kinetic force", "Use impact as punctuation", "Drive momentum with music"],
-    learningGoals: ["Action can tell story through movement, geography and design", "Tell story through movement and geography"],
+    learningGoals: ["Action can tell story through movement, geography and design", "Tell story through movement and geography", "Cut for clarity inside chaos"],
     verificationStatus: "needs_research"
   },
   scenario_birdman_or_the_unexpected_virtue_of_ignorance_2014: {
@@ -1202,7 +1202,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use fluid camera movement", "Preserve performance continuity", "Make backstage space close in"],
     editingTargets: ["Build rhythm from entrances", "Let exits trigger breakdowns", "Keep anxiety flowing"],
     soundTargets: ["Use drums as nervous energy", "Layer voices and backstage noise", "Let performance sound bleed"],
-    learningGoals: ["Camera movement can make performance anxiety feel continuous", "Make anxiety continuous through camera flow"],
+    learningGoals: ["Camera movement can make performance anxiety feel continuous", "Make anxiety continuous through camera flow", "Let percussion drive the nervous system"],
     verificationStatus: "needs_research"
   },
   scenario_the_road_warrior_1981: {
@@ -1215,7 +1215,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Build desert world through vehicles", "Use costume and tribes as story", "Frame pursuit geography clearly"],
     editingTargets: ["Escalate chase rhythm", "Keep action geography readable", "Cut stakes into movement"],
     soundTargets: ["Use engines as world language", "Let metal and impact threaten", "Make danger audible"],
-    learningGoals: ["Action worldbuilding can be built through movement, vehicles and stakes", "Build world through vehicles and stakes"],
+    learningGoals: ["Action worldbuilding can be built through movement, vehicles and stakes", "Build world through vehicles and stakes", "Strip dialogue until action is language"],
     verificationStatus: "needs_research"
   },
   scenario_inside_out_2015: {
@@ -1228,7 +1228,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Build mental spaces with color", "Make abstract ideas readable", "Use visual rhythm for emotion"],
     editingTargets: ["Balance comic timing and feeling", "Move between inner and outer stakes", "Land emotional payoff clearly"],
     soundTargets: ["Use voice as feeling language", "Let music guide emotion", "Make inner worlds sound distinct"],
-    learningGoals: ["Animation can turn inner emotion into visible story mechanics", "Turn emotion into visible mechanics"],
+    learningGoals: ["Animation can turn inner emotion into visible story mechanics", "Turn emotion into visible mechanics", "Give abstraction physical stakes"],
     verificationStatus: "needs_research"
   },
   scenario_victoria_2015: {
@@ -1241,7 +1241,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use mobile camera feeling", "Turn streets into a pressure path", "Stay close to shifting danger"],
     editingTargets: ["Build tension through momentum", "Keep urgency continuous", "Let choices close in"],
     soundTargets: ["Use street sound as pressure", "Let music carry momentum", "Make breath and movement tense"],
-    learningGoals: ["Thriller tension can grow from movement, time pressure and emotional risk", "Build tension through continuous urgency"],
+    learningGoals: ["Thriller tension can grow from movement, time pressure and emotional risk", "Build tension through continuous urgency", "Commit to one take and let it strain"],
     verificationStatus: "needs_research"
   },
   scenario_the_game_1997: {
@@ -1254,7 +1254,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make private spaces threatening", "Frame wealth as isolation", "Use controlled spaces against him"],
     editingTargets: ["Control information and doubt", "Turn clues into reversals", "Delay stable answers"],
     soundTargets: ["Use silence as suspicion", "Let small sounds feel staged", "Make quiet spaces distrustful"],
-    learningGoals: ["Mystery can destabilize the viewer by making every rule uncertain", "Make every rule uncertain"],
+    learningGoals: ["Mystery can destabilize the viewer by making every rule uncertain", "Make every rule uncertain", "Weaponize the protagonist's need for control"],
     verificationStatus: "needs_research"
   },
   scenario_brothers_2015: {
@@ -1267,7 +1267,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Keep intimate camera distance", "Notice everyday detail", "Observe growth without forcing it"],
     editingTargets: ["Build memory through fragments", "Let time pass in details", "Shape growth with quiet rhythm"],
     soundTargets: ["Use natural sound as presence", "Let home sounds mark time", "Keep observation unobtrusive"],
-    learningGoals: ["Documentary can make time visible through small observed changes", "Use observation to make time visible"],
+    learningGoals: ["Documentary can make time visible through small observed changes", "Use observation to make time visible", "Let the years between shots do the storytelling"],
     verificationStatus: "needs_research"
   },
   scenario_my_skinny_sister_2015: {
@@ -1280,7 +1280,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe discomfort closely", "Use home as a pressure zone", "Frame sport and social spaces as stress"],
     editingTargets: ["Slowly escalate secrets", "Hold pauses for anxiety", "Let silence reveal family pressure"],
     soundTargets: ["Use quiet sound as anxiety", "Let pauses carry pressure", "Keep family silence present"],
-    learningGoals: ["Family drama can build tension from what is hidden in plain sight", "Let silence reveal family pressure"],
+    learningGoals: ["Family drama can build tension from what is hidden in plain sight", "Let silence reveal family pressure", "Watch illness through a sibling's envy and love"],
     verificationStatus: "needs_research"
   },
   scenario_mommy_2014: {
@@ -1293,7 +1293,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Keep character focus tight", "Use home as pressure space", "Make closeness expressive"],
     editingTargets: ["Rhythm between explosions and tenderness", "Let relief arrive as release", "Hold close emotional turns"],
     soundTargets: ["Use music as release", "Let sound trigger memory", "Make emotion overflow"],
-    learningGoals: ["Family drama can make emotional intensity feel physical"],
+    learningGoals: ["Family drama can make emotional intensity feel physical", "Narrow the frame to hold the pressure", "Open the aspect ratio as hope"],
     verificationStatus: "needs_research"
   },
   scenario_adam_s_apples_2005: {
@@ -1306,7 +1306,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use isolation as moral pressure", "Frame innocence beside cruelty", "Keep contrasts dry"],
     editingTargets: ["Escalate through collision", "Time blunt reversals", "Let deadpan beats land"],
     soundTargets: ["Use silence for comedy", "Keep dialogue blunt", "Make sudden impact funny"],
-    learningGoals: ["Black comedy works when moral seriousness meets absurd behavior"],
+    learningGoals: ["Black comedy works when moral seriousness meets absurd behavior", "Test faith with escalating misfortune", "Keep the tone deadpan while stakes turn biblical"],
     verificationStatus: "needs_research"
   },
   scenario_taxi_2015: {
@@ -1319,7 +1319,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make the car a moving stage", "Restrict perspective clearly", "Keep encounters lived-in"],
     editingTargets: ["Build episodic passenger rhythm", "Cut around interruptions", "Let conversations accumulate"],
     soundTargets: ["Use street sound as texture", "Keep conversation central", "Let traffic shape pace"],
-    learningGoals: ["A small contained space can reveal a whole society"],
+    learningGoals: ["A small contained space can reveal a whole society", "Turn censorship into the film's form", "Let passengers argue the state of the nation"],
     verificationStatus: "needs_research"
   },
   scenario_rams_2015: {
@@ -1332,7 +1332,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use landscape as isolation", "Frame distance between brothers", "Find dry visual humor"],
     editingTargets: ["Keep rhythm restrained", "Let small human shifts matter", "Hold stillness for pressure"],
     soundTargets: ["Use wind as pressure", "Let animals shape the world", "Make silence rural and tense"],
-    learningGoals: ["Deadpan drama can turn stubborn distance into emotional stakes"],
+    learningGoals: ["Deadpan drama can turn stubborn distance into emotional stakes", "Let the sheep carry brotherly love", "Play isolation for dry comedy until it breaks"],
     verificationStatus: "needs_research"
   },
   scenario_anomalisa_2015: {
@@ -1345,7 +1345,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use interiors as alienation machine", "Animate faces and bodies intimately", "Hold pauses in close detail"],
     editingTargets: ["Keep slow emotional rhythm", "Time awkward encounters", "Let repetition become pressure"],
     soundTargets: ["Use voice as identity pressure", "Let repetition expose loneliness", "Hold silence around connection"],
-    learningGoals: ["Animation can make loneliness visible through voice, texture and repetition"],
+    learningGoals: ["Animation can make loneliness visible through voice, texture and repetition", "Give every stranger the same voice", "Let the puppet seams show the fragile self"],
     verificationStatus: "needs_research"
   },
   scenario_leviathan_2014: {
@@ -1358,7 +1358,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use landscape as moral weight", "Frame institutions as pressure", "Hold rooms under strain"],
     editingTargets: ["Build slow humiliation", "Let procedures tighten", "Delay relief after setbacks"],
     soundTargets: ["Use official voices as pressure", "Let silence fill rooms", "Keep institutions audible"],
-    learningGoals: ["Social drama can make power visible through everyday legal pressure", "Make collapse grow from ordinary systems"],
+    learningGoals: ["Social drama can make power visible through everyday legal pressure", "Make collapse grow from ordinary systems", "Frame the state as a landscape-scale antagonist"],
     verificationStatus: "needs_research"
   },
   scenario_the_hateful_eight_2015: {
@@ -1371,7 +1371,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Block suspicion in one room", "Use ensemble distance", "Keep frontier atmosphere hostile"],
     editingTargets: ["Time reversals clearly", "Hold tension before violence", "Let suspicion change the room"],
     soundTargets: ["Make dialogue a weapon", "Use storm as menace", "Let silence threaten"],
-    learningGoals: ["A contained space can turn dialogue into suspense and violence", "Turn one room into a suspicion machine"],
+    learningGoals: ["A contained space can turn dialogue into suspense and violence", "Turn one room into a suspicion machine", "Let width and distance stage distrust"],
     verificationStatus: "needs_research"
   },
   scenario_drifters_2015: {
@@ -1384,7 +1384,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use rough spaces as pressure", "Stay close to street realism", "Frame survival without polish"],
     editingTargets: ["Build tension through small choices", "Let consequences accumulate", "Keep momentum uncertain"],
     soundTargets: ["Use ambient city instability", "Let silence expose risk", "Keep streets present"],
-    learningGoals: ["Crime drama can show social pressure through everyday survival", "Show survival through narrowing choices"],
+    learningGoals: ["Crime drama can show social pressure through everyday survival", "Show survival through narrowing choices", "Keep loyalty and self-interest indistinguishable"],
     verificationStatus: "needs_research"
   },
   scenario_the_measure_of_a_man_2015: {
@@ -1397,7 +1397,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe plain spaces", "Frame work as pressure", "Keep distance respectful"],
     editingTargets: ["Hold interviews and waiting", "Let small humiliations land", "Build tension through procedure"],
     soundTargets: ["Use room tone for realism", "Keep institutional sound present", "Let silence show discomfort"],
-    learningGoals: ["Social realism can make ordinary procedures feel dramatic", "Make ordinary procedures dramatic"],
+    learningGoals: ["Social realism can make ordinary procedures feel dramatic", "Make ordinary procedures dramatic", "Hold on the face that must comply"],
     verificationStatus: "needs_research"
   },
   scenario_dogtooth_2009: {
@@ -1410,7 +1410,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use home as a closed system", "Frame behavior at a distance", "Keep compositions static"],
     editingTargets: ["Repeat routines with tension", "Cut around missing context", "Let rules tighten slowly"],
     soundTargets: ["Use flat sound as violence", "Let silence feel controlled", "Keep the home emotionally cold"],
-    learningGoals: ["Thriller tension can come from rules, confinement and distorted language", "Build tension from rules and confinement"],
+    learningGoals: ["Thriller tension can come from rules, confinement and distorted language", "Build tension from rules and confinement", "Invent a vocabulary to show control"],
     verificationStatus: "needs_research"
   },
   scenario_amy_2015: {
@@ -1423,7 +1423,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Treat fragments as portraiture", "Let performance traces carry presence", "Contrast public image and private space"],
     editingTargets: ["Edit as memory", "Shape rise and collapse", "Let absence create turns"],
     soundTargets: ["Use music as evidence", "Let interviews carry intimacy", "Make silence emotionally present"],
-    learningGoals: ["Build character through archive, sound, and absence", "Make fragments feel intimate"],
+    learningGoals: ["Build character through archive, sound, and absence", "Make fragments feel intimate", "Let the lyrics annotate the life"],
     verificationStatus: "needs_research"
   },
   scenario_nerve_2016: {
@@ -1436,7 +1436,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Turn night streets into stage", "Frame screens as social pressure", "Use movement as performance"],
     editingTargets: ["Cut with screen rhythm", "Accelerate through danger", "Keep game stakes legible"],
     soundTargets: ["Use notifications as pressure", "Layer crowd noise", "Let music push risk"],
-    learningGoals: ["Grow thriller structure from rules, spectators, and risk", "Use spectators to raise risk"],
+    learningGoals: ["Grow thriller structure from rules, spectators, and risk", "Use spectators to raise risk", "Make the phone screen part of the grammar"],
     verificationStatus: "needs_research"
   },
   scenario_cafe_society_2016: {
@@ -1449,7 +1449,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Polish period social spaces", "Use glamour as emotional surface", "Contrast intimacy and display"],
     editingTargets: ["Keep gentle comic rhythm", "Balance wit with longing", "Let regret land softly"],
     soundTargets: ["Use dialogue as status", "Let music carry nostalgia", "Keep mood elegant"],
-    learningGoals: ["Reveal compromise through social setting", "Use social worlds to expose desire"],
+    learningGoals: ["Reveal compromise through social setting", "Use social worlds to expose desire", "Light nostalgia until it aches"],
     verificationStatus: "needs_research"
   },
   scenario_room_2015: {
@@ -1462,7 +1462,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Restrict viewpoint closely", "Make confinement emotionally specific", "Stay near vulnerable faces"],
     editingTargets: ["Build around space change", "Let transition alter rhythm", "Hold small emotional shifts"],
     soundTargets: ["Use breath as vulnerability", "Make small room sounds matter", "Let silence feel protective"],
-    learningGoals: ["Make space change meaning", "Turn world into memory through craft"],
+    learningGoals: ["Make space change meaning", "Turn world into memory through craft", "Split the film at the escape"],
     verificationStatus: "needs_research"
   },
   scenario_manchester_by_the_sea_2016: {
@@ -1475,7 +1475,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use coastal town as pressure", "Observe daily tasks plainly", "Frame distance without force"],
     editingTargets: ["Reveal grief non-linearly", "Cut memory as emotional pressure", "Let pauses carry turns"],
     soundTargets: ["Keep winter space quiet", "Use pauses as grief", "Let ordinary sound continue"],
-    learningGoals: ["Let grief unfold through restraint", "Use everyday duty as character pressure"],
+    learningGoals: ["Let grief unfold through restraint", "Use everyday duty as character pressure", "Withhold the backstory until it breaks the film open"],
     verificationStatus: "needs_research"
   },
   scenario_paterson_2016: {
@@ -1488,7 +1488,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make ordinary city spaces emotional", "Observe everyday details", "Frame routine with care"],
     editingTargets: ["Pace through repeated patterns", "Let tiny changes register", "Keep a gentle daily rhythm"],
     soundTargets: ["Layer ambient city sound", "Use conversation as texture", "Keep quiet music understated"],
-    learningGoals: ["Everyday routine can become cinematic structure through attention and repetition", "Turn routine into structure"],
+    learningGoals: ["Everyday routine can become cinematic structure through attention and repetition", "Turn routine into structure", "Find variation inside repetition"],
     verificationStatus: "needs_research"
   },
   scenario_before_sunrise_1995: {
@@ -1501,7 +1501,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make the city walk an emotional map", "Frame movement as discovery", "Use streets as shared space"],
     editingTargets: ["Hold long conversational rhythm", "Let natural pauses breathe", "Keep the walk flowing"],
     soundTargets: ["Use street sound as intimacy", "Let silence make space", "Keep voices close"],
-    learningGoals: ["Romance can be built from time, place and honest conversation", "Build romance through conversation"],
+    learningGoals: ["Romance can be built from time, place and honest conversation", "Build romance through conversation", "Let the deadline charge every minute"],
     verificationStatus: "needs_research"
   },
   scenario_before_sunset_2004: {
@@ -1514,7 +1514,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make city movement a countdown", "Track closeness through walking", "Frame private feeling in public spaces"],
     editingTargets: ["Build restraint through pauses", "Hold glances and unfinished sentences", "Keep real-time pressure present"],
     soundTargets: ["Use ambient city sound privately", "Let pauses carry regret", "Keep conversation exposed"],
-    learningGoals: ["Dramatic tension can come from what characters almost say", "Make almost-said feelings dramatic"],
+    learningGoals: ["Dramatic tension can come from what characters almost say", "Make almost-said feelings dramatic", "Play it in real time to raise the stakes"],
     verificationStatus: "needs_research"
   },
   scenario_i_daniel_blake_2016: {
@@ -1527,7 +1527,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe practical spaces plainly", "Frame ordinary institutions as pressure", "Keep distance respectful"],
     editingTargets: ["Build tension through waiting", "Let forms create obstacles", "Hold small humiliations"],
     soundTargets: ["Use quiet rooms as pressure", "Let official voices dominate", "Make silence socially heavy"],
-    learningGoals: ["Social drama can make bureaucracy feel like conflict", "Make bureaucracy feel like conflict"],
+    learningGoals: ["Social drama can make bureaucracy feel like conflict", "Make bureaucracy feel like conflict", "Document the forms and queues exactly"],
     verificationStatus: "needs_research"
   },
   scenario_the_big_sick_2017: {
@@ -1540,7 +1540,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use family spaces for warmth and pressure", "Frame social spaces as negotiation", "Keep intimacy grounded"],
     editingTargets: ["Balance jokes with real fear", "Time awkwardness honestly", "Let crisis shift rhythm"],
     soundTargets: ["Use dialogue as humor and defense", "Let conversation build connection", "Keep fear close under jokes"],
-    learningGoals: ["Romantic comedy can deepen when humor meets real vulnerability", "Let humor meet real vulnerability"],
+    learningGoals: ["Romantic comedy can deepen when humor meets real vulnerability", "Let humor meet real vulnerability", "Let the coma rearrange the romance"],
     verificationStatus: "needs_research"
   },
   scenario_on_body_and_soul_2017: {
@@ -1553,7 +1553,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe work spaces plainly", "Use visual motifs gently", "Frame distance before closeness"],
     editingTargets: ["Keep a slow emotional rhythm", "Build through distance and recognition", "Let quiet moments linger"],
     soundTargets: ["Use silence as intimacy", "Keep natural sound present", "Let sparse music feel private"],
-    learningGoals: ["Fantasy can feel intimate when the impossible is treated with restraint"],
+    learningGoals: ["Fantasy can feel intimate when the impossible is treated with restraint", "Share one dream between strangers", "Let workplace routine frame tenderness"],
     verificationStatus: "needs_research"
   },
   scenario_good_time_2017: {
@@ -1566,7 +1566,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Stay close to panic", "Use kinetic movement", "Make night city feel trapped"],
     editingTargets: ["Keep escapes tightening", "Cut around narrowing options", "Let mistakes accelerate rhythm"],
     soundTargets: ["Use electronic tension", "Layer street noise as pressure", "Keep breath close"],
-    learningGoals: ["Thriller momentum can come from one bad choice making every next choice worse"],
+    learningGoals: ["Thriller momentum can come from one bad choice making every next choice worse", "Grade the night in neon pressure", "Let charm reveal itself as exploitation"],
     verificationStatus: "needs_research"
   },
   scenario_tradgardsgatan_2017: {
@@ -1579,7 +1579,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe closeness with restraint", "Frame distance as emotion", "Let places carry memory"],
     editingTargets: ["Move through recollection", "Hold silence after feeling", "Let unresolved moments breathe"],
     soundTargets: ["Use domestic sound as memory", "Keep street sound quiet", "Let silence texture return"],
-    learningGoals: ["Romance drama can turn memory into present-tense conflict"],
+    learningGoals: ["Romance drama can turn memory into present-tense conflict", "Keep the trauma offscreen but present", "Let a place hold what people cannot say"],
     verificationStatus: "needs_research"
   },
   scenario_clerks_1994: {
@@ -1592,7 +1592,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use simple blocking", "Keep the workplace readable", "Favor conversational energy"],
     editingTargets: ["Time interruptions sharply", "Hold deadpan reactions", "Let arguments set rhythm"],
     soundTargets: ["Make dialogue the engine", "Use room noise for texture", "Let everyday sound support jokes"],
-    learningGoals: ["Comedy can be built from place, talk and everyday frustration"],
+    learningGoals: ["Comedy can be built from place, talk and everyday frustration", "Shoot conversation as the main event", "Let dead-end jobs sharpen the wit"],
     verificationStatus: "needs_research"
   },
   scenario_virgin_mountain_2015: {
@@ -1605,7 +1605,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe stillness softly", "Keep distance respectful", "Frame routines as shelter"],
     editingTargets: ["Move through tiny gestures", "Let hesitant connection grow", "Keep the rhythm slow"],
     soundTargets: ["Use silence as tenderness", "Keep everyday sound close", "Let awkward pauses breathe"],
-    learningGoals: ["Quiet drama can make small acts of courage feel large"],
+    learningGoals: ["Quiet drama can make small acts of courage feel large", "Let routine shield a gentle giant", "Risk humiliation as the price of contact"],
     verificationStatus: "needs_research"
   },
   scenario_a_monster_calls_2016: {
@@ -1618,7 +1618,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Contrast ordinary life with fantasy", "Make home and school grounded", "Frame symbolic spaces boldly"],
     editingTargets: ["Move between dread and wonder", "Build toward emotional release", "Let fantasy interrupt reality"],
     soundTargets: ["Use voice as fear and comfort", "Let silence hold grief", "Make fantasy sound intimate"],
-    learningGoals: ["Fantasy can turn grief into visible story structure", "Turn grief into visible story structure"],
+    learningGoals: ["Fantasy can turn grief into visible story structure", "Turn grief into visible story structure", "Let the tales within the tale argue back"],
     verificationStatus: "needs_research"
   },
   scenario_the_square_2017: {
@@ -1631,7 +1631,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use controlled compositions", "Frame public awkwardness", "Make galleries feel pressurized"],
     editingTargets: ["Escalate through embarrassment", "Hold deadpan discomfort", "Let hypocrisy sharpen slowly"],
     soundTargets: ["Use silence as satire", "Layer public noise lightly", "Keep formal dialogue brittle"],
-    learningGoals: ["Satire can expose social rules by making polite spaces unstable", "Make polite spaces unstable"],
+    learningGoals: ["Satire can expose social rules by making polite spaces unstable", "Make polite spaces unstable", "Stretch discomfort past the polite exit"],
     verificationStatus: "needs_research"
   },
   scenario_the_savages_2007: {
@@ -1644,7 +1644,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe family duty plainly", "Use care spaces as pressure", "Frame awkward closeness"],
     editingTargets: ["Balance dry humor with discomfort", "Let tenderness arrive quietly", "Hold difficult pauses"],
     soundTargets: ["Use room tone as pressure", "Let silence expose duty", "Keep blunt dialogue direct"],
-    learningGoals: ["Family drama can mix discomfort and humor without losing tenderness", "Mix discomfort and tenderness"],
+    learningGoals: ["Family drama can mix discomfort and humor without losing tenderness", "Mix discomfort and tenderness", "Let the parent's decline reorder the siblings"],
     verificationStatus: "needs_research"
   },
   scenario_the_million_dollar_hotel_2000: {
@@ -1657,7 +1657,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make hotel a state of mind", "Fragment viewpoint gently", "Frame romance as uncertainty"],
     editingTargets: ["Move through mystery and memory", "Let encounters feel eccentric", "Keep romantic uncertainty alive"],
     soundTargets: ["Use music as atmosphere", "Layer ambient hotel sound", "Let silence feel suspended"],
-    learningGoals: ["Mystery can become emotional when place feels like a state of mind", "Make place feel like a state of mind"],
+    learningGoals: ["Mystery can become emotional when place feels like a state of mind", "Make place feel like a state of mind", "Let the misfits investigate themselves"],
     verificationStatus: "needs_research"
   },
   scenario_loveless_2017: {
@@ -1670,7 +1670,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe from a distance", "Use empty spaces as pressure", "Frame rooms as absence"],
     editingTargets: ["Build slow search tension", "Hold silence and refusal", "Let absence stretch time"],
     soundTargets: ["Use ambient coldness", "Let rooms sound empty", "Keep voices muted"],
-    learningGoals: ["Drama can make absence feel like the central character", "Make absence the central character"],
+    learningGoals: ["Drama can make absence feel like the central character", "Make absence the central character", "Search landscapes that echo the neglect"],
     verificationStatus: "needs_research"
   },
   scenario_the_man_without_a_past_2002: {
@@ -1683,7 +1683,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use plain spaces", "Favor precise understatement", "Frame modest routines clearly"],
     editingTargets: ["Keep a gentle rhythm", "Let small acts accumulate", "Time dry humor with restraint"],
     soundTargets: ["Use music as warmth", "Let silence stay friendly", "Keep modest sounds present"],
-    learningGoals: ["Comedy drama can rebuild identity through small human gestures", "Rebuild identity through small gestures"],
+    learningGoals: ["Comedy drama can rebuild identity through small human gestures", "Rebuild identity through small gestures", "Start identity again from zero possessions"],
     verificationStatus: "needs_research"
   },
   scenario_blindness_2008: {
@@ -1696,7 +1696,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Restrict visual information", "Create sensory uncertainty", "Frame confinement as vulnerability"],
     editingTargets: ["Build tension through confinement", "Cut through chaos carefully", "Delay clarity for pressure"],
     soundTargets: ["Use crowd noise as threat", "Let silence expose vulnerability", "Make sound guide uncertainty"],
-    learningGoals: ["Thriller tension can come from taking vision and certainty away", "Take certainty away"],
+    learningGoals: ["Thriller tension can come from taking vision and certainty away", "Take certainty away", "Whiten the image to share the affliction"],
     verificationStatus: "needs_research"
   },
   scenario_scenes_from_a_marriage_1974: {
@@ -1709,7 +1709,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe faces closely", "Hold pauses without escape", "Frame rooms as emotional traps"],
     editingTargets: ["Shape long confrontations", "Track shifting power", "Let pauses change scenes"],
     soundTargets: ["Use dialogue as pressure", "Let silence wound", "Keep rooms emotionally exposed"],
-    learningGoals: ["Relationship drama can make conversation feel like action", "Make conversation feel like action"],
+    learningGoals: ["Relationship drama can make conversation feel like action", "Make conversation feel like action", "Stay in the room past the comfortable exit"],
     verificationStatus: "needs_research"
   },
   scenario_the_florida_project_2017: {
@@ -1722,7 +1722,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe from low angles", "Use bright everyday spaces", "Follow lived-in movement"],
     editingTargets: ["Keep an episodic rhythm", "Follow childhood freedom", "Let adult pressure interrupt"],
     soundTargets: ["Use motel ambience", "Layer street texture", "Let play and pressure coexist"],
-    learningGoals: ["Social drama can use a child’s viewpoint to reveal harsh reality indirectly", "Reveal harsh reality indirectly"],
+    learningGoals: ["Social drama can use a child’s viewpoint to reveal harsh reality indirectly", "Reveal harsh reality indirectly", "Keep the motel's color loud against the poverty"],
     verificationStatus: "needs_research"
   },
   scenario_dog_day_afternoon_1975: {
@@ -1735,7 +1735,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Frame crowd and police pressure", "Keep the crisis contained", "Show media as pressure system"],
     editingTargets: ["Escalate through negotiation", "Build tension through waiting", "Track attention as pressure"],
     soundTargets: ["Use street noise as heat", "Let shouting raise pressure", "Drop into silence for exposure"],
-    learningGoals: ["Crime drama can turn a public crisis into character pressure", "Turn public crisis into character pressure"],
+    learningGoals: ["Crime drama can turn a public crisis into character pressure", "Turn public crisis into character pressure", "Let the crowd turn the crime into theater"],
     verificationStatus: "needs_research"
   },
   scenario_taxi_driver_1976: {
@@ -1748,7 +1748,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make night streets oppressive", "Frame unstable observation", "Use city light as pressure"],
     editingTargets: ["Build slow escalation", "Hold alienation before action", "Let routine become threat"],
     soundTargets: ["Layer street noise", "Use jazz mood as loneliness", "Let silence isolate the character"],
-    learningGoals: ["Character drama can make a city feel like a mind under pressure", "Make the city feel like a mind"],
+    learningGoals: ["Character drama can make a city feel like a mind under pressure", "Make the city feel like a mind", "Score alienation as romance gone wrong"],
     verificationStatus: "needs_research"
   },
   scenario_manhattan_1979: {
@@ -1761,7 +1761,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Compose city spaces elegantly", "Block conversations with precision", "Make place emotional identity"],
     editingTargets: ["Rhythm through wit", "Hold romantic contradiction", "Let hesitation shape pace"],
     soundTargets: ["Use music as nostalgia", "Layer city ambience", "Let pauses soften the comedy"],
-    learningGoals: ["Romantic drama can use place to shape desire and self-deception", "Use place to shape desire"],
+    learningGoals: ["Romantic drama can use place to shape desire and self-deception", "Use place to shape desire", "Widen the frame until the people shrink"],
     verificationStatus: "needs_research"
   },
   scenario_bicycle_thieves_1948: {
@@ -1774,7 +1774,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use observational street realism", "Keep the city human scale", "Frame ordinary spaces plainly"],
     editingTargets: ["Build tension through searching", "Hold waiting and setbacks", "Let public humiliation sting"],
     soundTargets: ["Use ambient street sound", "Let silence show social reality", "Keep crowds grounded"],
-    learningGoals: ["Realism can make a simple object carry an entire life", "Make one object carry a life"],
+    learningGoals: ["Realism can make a simple object carry an entire life", "Make one object carry a life", "Cast non-actors to lower the fiction"],
     verificationStatus: "needs_research"
   },
   scenario_la_strada_1954: {
@@ -1787,7 +1787,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Center expressive faces", "Use movement as emotion", "Make spaces symbolic"],
     editingTargets: ["Shape episodic encounters", "Let loss mark the rhythm", "Move between wonder and hurt"],
     soundTargets: ["Use music as soul", "Let silence deepen feeling", "Feature performance sound"],
-    learningGoals: ["Poetic drama can turn a journey into moral fable", "Turn a journey into moral fable"],
+    learningGoals: ["Poetic drama can turn a journey into moral fable", "Turn a journey into moral fable", "Let the brute learn loss too late"],
     verificationStatus: "needs_research"
   },
   scenario_vertigo_1958: {
@@ -1800,7 +1800,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use subjective camera anxiety", "Make height a threat", "Repeat color and motifs"],
     editingTargets: ["Build suspense through repetition", "Delay revelation", "Cut around fixation"],
     soundTargets: ["Use music as hypnotic unease", "Let silence unsettle desire", "Hold sound around fixation"],
-    learningGoals: ["Thriller form can make desire and perception unreliable", "Make perception unreliable"],
+    learningGoals: ["Thriller form can make desire and perception unreliable", "Make perception unreliable", "Spiral the camera into obsession"],
     verificationStatus: "needs_research"
   },
   scenario_the_lost_weekend_1945: {
@@ -1813,7 +1813,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use city interiors as traps", "Frame shadow as temptation", "Observe collapse closely"],
     editingTargets: ["Rhythm through relapse", "Cut denial against confrontation", "Let pressure tighten gradually"],
     soundTargets: ["Use silence as shame", "Let room tone press in", "Make music feel anxious"],
-    learningGoals: ["Turn inner weakness into pressure", "Make collapse visual and sonic"],
+    learningGoals: ["Turn inner weakness into pressure", "Make collapse visual and sonic", "Stretch one bender across moral time"],
     verificationStatus: "needs_research"
   },
   scenario_fargo_1996: {
@@ -1826,7 +1826,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use snow as pressure", "Frame behavior plainly", "Make violence arrive suddenly"],
     editingTargets: ["Balance calm with escalation", "Hold deadpan observation", "Cut sharply into violence"],
     soundTargets: ["Use quiet spaces", "Keep dialogue blunt", "Let violence jar the tone"],
-    learningGoals: ["Mix absurdity and violence through restraint", "Make landscape pressure ironic"],
+    learningGoals: ["Mix absurdity and violence through restraint", "Make landscape pressure ironic", "Let politeness mask desperation"],
     verificationStatus: "needs_research"
   },
   scenario_eyes_wide_shut_1999: {
@@ -1839,7 +1839,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Control interior spaces", "Make rituals unsettling", "Frame unease subjectively"],
     editingTargets: ["Build slow suspense", "Repeat tempting patterns", "Delay certainty through concealment"],
     soundTargets: ["Use music as threat", "Let footsteps guide tension", "Hold silence hypnotically"],
-    learningGoals: ["Make desire feel like a maze", "Turn social masks into suspense"],
+    learningGoals: ["Make desire feel like a maze", "Turn social masks into suspense", "Slow the pace until desire feels dreamed"],
     verificationStatus: "needs_research"
   },
   scenario_call_me_by_your_name_2017: {
@@ -1852,7 +1852,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe bodies and gestures", "Use home as memory", "Frame distance as longing"],
     editingTargets: ["Move through glances", "Let hesitation breathe", "Build awakening slowly"],
     soundTargets: ["Use natural sound as longing", "Let music open feeling", "Keep silence emotionally active"],
-    learningGoals: ["Let atmosphere speak before words", "Make memory carry romance"],
+    learningGoals: ["Let atmosphere speak before words", "Make memory carry romance", "Let the father's speech land the theme"],
     verificationStatus: "needs_research"
   },
   scenario_filmworker_2017: {
@@ -1865,7 +1865,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Center interviews and archive", "Show process as drama", "Use detail to reveal labor"],
     editingTargets: ["Cut through memory", "Balance evidence and cost", "Let craft details accumulate"],
     soundTargets: ["Use voice as legacy", "Let archive sound texture memory", "Hold silence around cost"],
-    learningGoals: ["Make hidden labor visible", "Turn testimony into craft drama"],
+    learningGoals: ["Make hidden labor visible", "Turn testimony into craft drama", "Measure devotion against its cost"],
     verificationStatus: "needs_research"
   },
   scenario_a_clockwork_orange_1971: {
@@ -1878,7 +1878,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use controlled geometry", "Push bold design", "Frame subjective unease"],
     editingTargets: ["Rhythm through transgression", "Shift into punishment", "Shape conditioning as pressure"],
     soundTargets: ["Contrast music with violence", "Use voice as unease", "Let silence disturb"],
-    learningGoals: ["Make social control visible through style and behavior", "Turn speculative style into ethical pressure"],
+    learningGoals: ["Make social control visible through style and behavior", "Turn speculative style into ethical pressure", "Make the cure more chilling than the crime"],
     verificationStatus: "needs_research"
   },
   scenario_terrified_2017: {
@@ -1891,7 +1891,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use negative space", "Hide threat in darkness", "Stage sudden reveals"],
     editingTargets: ["Stretch the waiting", "Cut shocks cleanly", "Pace fear through discovery"],
     soundTargets: ["Use dread sound", "Make silence threatening", "Keep danger off-screen"],
-    learningGoals: ["Make ordinary rooms dangerous through sound and withheld information", "Build fear from invisible rules"],
+    learningGoals: ["Make ordinary rooms dangerous through sound and withheld information", "Build fear from invisible rules", "Refuse explanation to keep the fear open"],
     verificationStatus: "needs_research"
   },
   scenario_capernaum_2018: {
@@ -1904,7 +1904,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe closely", "Move with urgency", "Use streets as pressure"],
     editingTargets: ["Rhythm through hardship", "Track care and consequence", "Keep survival immediate"],
     soundTargets: ["Use street sound", "Layer voices as pressure", "Let silence reveal abandonment"],
-    learningGoals: ["Show survival through a child's viewpoint", "Make social pressure feel immediate"],
+    learningGoals: ["Show survival through a child's viewpoint", "Make social pressure feel immediate", "Let the courtroom frame the flashback"],
     verificationStatus: "needs_research"
   },
   scenario_elephant_2003: {
@@ -1917,7 +1917,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Keep observational distance", "Repeat quiet paths", "Use corridors as pressure"],
     editingTargets: ["Move slowly through routine", "Overlap perspectives", "Let threat loom"],
     soundTargets: ["Use ambient school sound", "Let silence create unease", "Keep threat understated"],
-    learningGoals: ["Create dread from routine", "Observe ordinary behavior without overexplaining"],
+    learningGoals: ["Create dread from routine", "Observe ordinary behavior without overexplaining", "Follow the corridors in overlapping time"],
     verificationStatus: "needs_research"
   },
   scenario_halloween_1978: {
@@ -1930,7 +1930,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use negative space", "Build point-of-view tension", "Withhold visible danger"],
     editingTargets: ["Sustain anticipation", "Pace pursuit clearly", "Delay the reveal"],
     soundTargets: ["Use a simple dread motif", "Let silence pressurize", "Make breath feel close"],
-    learningGoals: ["Turn ordinary space into danger", "Use framing, rhythm, and sound as threat"],
+    learningGoals: ["Turn ordinary space into danger", "Use framing, rhythm, and sound as threat", "Let the killer watch from the frame's edge"],
     verificationStatus: "needs_research"
   },
   scenario_psychobitch_2019: {
@@ -1943,7 +1943,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe awkwardness closely", "Use school spaces as pressure", "Frame instability in social moments"],
     editingTargets: ["Rhythm through provocation", "Hold silences after risk", "Let fragile trust shift pace"],
     soundTargets: ["Use everyday sound", "Let pauses build tension", "Keep blunt dialogue exposed"],
-    learningGoals: ["Make identity pressure visible through social behavior", "Turn emotional risk into youth drama"],
+    learningGoals: ["Make identity pressure visible through social behavior", "Turn emotional risk into youth drama", "Let perfection culture create the outsider"],
     verificationStatus: "needs_research"
   },
   scenario_the_favourite_2018: {
@@ -1956,7 +1956,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Distort perspective", "Block ensembles as rivalry", "Make interiors a game board"],
     editingTargets: ["Rhythm through rivalry", "Cut on reversal", "Let humiliation reset power"],
     soundTargets: ["Use formal dialogue as combat", "Let silence signal power", "Make music sharpen rivalry"],
-    learningGoals: ["Turn status games into visual strategy", "Make power visible through blocking"],
+    learningGoals: ["Turn status games into visual strategy", "Make power visible through blocking", "Distort the lens as power corrupts"],
     verificationStatus: "needs_research"
   },
   scenario_shoplifters_2018: {
@@ -1969,7 +1969,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use small rooms as refuge", "Observe warmth quietly", "Hide social pressure in details"],
     editingTargets: ["Slowly reveal consequence", "Let care shape rhythm", "Hold routine before rupture"],
     soundTargets: ["Use quiet room tone", "Layer street sound gently", "Let pauses carry tenderness"],
-    learningGoals: ["Make morality complex through care", "Show survival as emotional pressure"],
+    learningGoals: ["Make morality complex through care", "Show survival as emotional pressure", "Reveal the family's truth only after the love is proven"],
     verificationStatus: "needs_research"
   },
   scenario_the_guilty_2018: {
@@ -1982,7 +1982,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use one room as arena", "Restrict viewpoint tightly", "Suggest action off-screen"],
     editingTargets: ["Tension through calls", "Hold silence for doubt", "Pivot on new assumptions"],
     soundTargets: ["Build a world through sound", "Use phone audio as suspense", "Make breath and room tone tense"],
-    learningGoals: ["Build a world through sound", "Create thriller stakes with limited information"],
+    learningGoals: ["Build a world through sound", "Create thriller stakes with limited information", "Trap the drama in one desk and headset"],
     verificationStatus: "needs_research"
   },
   scenario_birds_of_passage_2018: {
@@ -1995,7 +1995,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use landscape as pressure", "Frame family hierarchy clearly", "Balance ritual with scale"],
     editingTargets: ["Rhythm through deals", "Track betrayals cleanly", "Let generational cost accumulate"],
     soundTargets: ["Use wind as warning", "Let voices carry fate", "Hold silence after consequence"],
-    learningGoals: ["Connect ambition to cultural collapse", "Make personal choices carry communal cost"],
+    learningGoals: ["Connect ambition to cultural collapse", "Make personal choices carry communal cost", "Ritualize the genre into anthropology"],
     verificationStatus: "needs_research"
   },
   scenario_the_killing_of_a_sacred_deer_2017: {
@@ -2008,7 +2008,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use sterile distance", "Favor symmetry and negative space", "Trap bodies in clean rooms"],
     editingTargets: ["Let repetition create dread", "Hold slow threat", "Delay release through restraint"],
     soundTargets: ["Use clinical silence", "Let room sound feel exposed", "Make sudden music wound"],
-    learningGoals: ["Horror can make guilt feel physical through rules and restraint", "Make guilt feel physical"],
+    learningGoals: ["Horror can make guilt feel physical through rules and restraint", "Make guilt feel physical", "Flatten the speech until dread is procedural"],
     verificationStatus: "needs_research"
   },
   scenario_leaving_neverland_2019: {
@@ -2021,7 +2021,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Keep visual support restrained", "Center the witness space", "Avoid distracting emphasis"],
     editingTargets: ["Edit through disclosure", "Track consequence with care", "Let difficult moments breathe"],
     soundTargets: ["Trust voice and room tone", "Use silence for gravity", "Keep support unobtrusive"],
-    learningGoals: ["Documentary can handle painful testimony through structure, restraint and ethical care", "Handle testimony with ethical care"],
+    learningGoals: ["Documentary can handle painful testimony through structure, restraint and ethical care", "Handle testimony with ethical care", "Hold on faces longer than comfort allows"],
     verificationStatus: "needs_research"
   },
   scenario_happy_as_lazzaro_2018: {
@@ -2034,7 +2034,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe nature patiently", "Mix realism with wonder", "Let spaces mark displacement"],
     editingTargets: ["Rhythm through patience", "Let rupture transform the story", "Hold wonder after change"],
     soundTargets: ["Use wind as texture", "Keep voices quiet", "Let sparse music suggest fable"],
-    learningGoals: ["Fantasy can reveal social injustice by making innocence feel out of time", "Make innocence feel out of time"],
+    learningGoals: ["Fantasy can reveal social injustice by making innocence feel out of time", "Make innocence feel out of time", "Fold time without warning"],
     verificationStatus: "needs_research"
   },
   scenario_the_house_that_jack_built_2018: {
@@ -2047,7 +2047,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe from a distance", "Keep discomfort controlled", "Frame violence coldly"],
     editingTargets: ["Rhythm through chapters", "Escalate moral argument", "Let descent accumulate"],
     soundTargets: ["Use voiceover as unease", "Let silence judge scenes", "Sharpen sudden sounds"],
-    learningGoals: ["Horror can expose a character's worldview through structure and distance", "Expose worldview through structure"],
+    learningGoals: ["Horror can expose a character's worldview through structure and distance", "Expose worldview through structure", "Let self-justification indict itself"],
     verificationStatus: "needs_research"
   },
   scenario_brazil_1985: {
@@ -2060,7 +2060,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use cluttered design", "Stage controlled chaos", "Contrast dreams with oppression"],
     editingTargets: ["Rhythm through paperwork", "Escalate pursuit pressure", "Cut into escape fantasy"],
     soundTargets: ["Layer mechanical sound", "Use alarms as pressure", "Let music fight the system"],
-    learningGoals: ["Speculative satire can make bureaucracy feel like a nightmare machine", "Make bureaucracy a nightmare machine"],
+    learningGoals: ["Speculative satire can make bureaucracy feel like a nightmare machine", "Make bureaucracy a nightmare machine", "Dream escapes that ducts and forms invade"],
     verificationStatus: "needs_research"
   },
   scenario_once_upon_a_time_in_hollywood_2019: {
@@ -2073,7 +2073,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Make Hollywood spaces feel remembered", "Frame streets as performance world", "Use period texture as atmosphere"],
     editingTargets: ["Rhythm through digression", "Let routines breathe", "Shift suddenly into consequence"],
     soundTargets: ["Use music as era texture", "Layer radio and street sound", "Let silence mark change"],
-    learningGoals: ["Comedy drama can make an industry world feel lived-in through rhythm and atmosphere", "Make an industry world feel lived-in"],
+    learningGoals: ["Comedy drama can make an industry world feel lived-in through rhythm and atmosphere", "Make an industry world feel lived-in", "Drift through a day before bending history"],
     verificationStatus: "needs_research"
   },
   scenario_the_lighthouse_2019: {
@@ -2086,7 +2086,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use confined geometry", "Hold harsh faces", "Push symbolic imagery"],
     editingTargets: ["Rhythm through repetition", "Escalate through conflict", "Blur routine with hallucination"],
     soundTargets: ["Use wind as pressure", "Let foghorns dominate", "Make sea and silence collapse inward"],
-    learningGoals: ["Horror can turn isolation into myth through sound, space and repetition", "Turn isolation into myth"],
+    learningGoals: ["Horror can turn isolation into myth through sound, space and repetition", "Turn isolation into myth", "Box the frame to trap two performances"],
     verificationStatus: "needs_research"
   },
   scenario_tangerine_2015: {
@@ -2099,7 +2099,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use mobile immediacy", "Push saturated energy", "Stay close to pursuit"],
     editingTargets: ["Rhythm through movement", "Cut with confrontation", "Build comic collisions"],
     soundTargets: ["Use street noise as propulsion", "Let music add velocity", "Layer overlapping voices"],
-    learningGoals: ["Low-scale drama can feel huge when movement and place drive every scene", "Let movement and place drive scenes"],
+    learningGoals: ["Low-scale drama can feel huge when movement and place drive every scene", "Let movement and place drive scenes", "Shoot small and fast so the energy leads"],
     verificationStatus: "needs_research"
   },
   scenario_don_t_look_up_2021: {
@@ -2112,7 +2112,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Use media screens as pressure", "Stage public rooms as theater", "Track ensemble reactions"],
     editingTargets: ["Rhythm through escalation", "Interrupt certainty often", "Build comic panic"],
     soundTargets: ["Use broadcast sound", "Layer arguments as noise", "Let silence expose absurdity"],
-    learningGoals: ["Satire can make disaster feel absurd by showing how systems perform instead of respond", "Show systems performing instead of responding"],
+    learningGoals: ["Satire can make disaster feel absurd by showing how systems perform instead of respond", "Show systems performing instead of responding", "Cut to the media gloss mid-catastrophe"],
     verificationStatus: "needs_research"
   },
   scenario_where_is_the_friend_s_house_1987: {
@@ -2125,7 +2125,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Map village paths clearly", "Use doors as decisions", "Read faces as geography"],
     editingTargets: ["Rhythm through repetition", "Build gentle obstacles", "Let care guide pace"],
     soundTargets: ["Use footsteps as attention", "Keep voices grounded", "Let rural silence focus the task"],
-    learningGoals: ["Adventure drama can turn a small task into a moral quest", "Turn a small task into a moral quest"],
+    learningGoals: ["Adventure drama can turn a small task into a moral quest", "Turn a small task into a moral quest", "Keep adult indifference the true obstacle"],
     verificationStatus: "needs_research"
   },
   scenario_another_round_2020: {
@@ -2138,7 +2138,7 @@ const scenarioProductionBriefs: Record<string, ManualScenarioProductionBrief> = 
     cinematographyTargets: ["Observe ensemble behavior", "Use school and social spaces", "Track shifting body language"],
     editingTargets: ["Rhythm through tests", "Escalate into shame", "Release through movement"],
     soundTargets: ["Use music as life-force", "Let silence expose cost", "Contrast social sound with isolation"],
-    learningGoals: ["Comedy drama can turn a risky premise into a study of vitality, denial and consequence", "Turn risk into a study of vitality"],
+    learningGoals: ["Comedy drama can turn a risky premise into a study of vitality, denial and consequence", "Turn risk into a study of vitality", "End on a release the theory cannot explain"],
     verificationStatus: "needs_research"
   }
 
