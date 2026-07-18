@@ -76,4 +76,9 @@ Before adding new Studio Career systems, someone should manually play through th
 
 ## Freeze rule
 
+**2026-07-18 owner decision: this freeze is lifted** (see
+`docs/PLAYABLE_MODES_QA_STATUS.md`). The manual test path above remains an
+open QA item, not a build blocker. The original rule is preserved below for
+the record.
+
 Until the manual path above has been completed and evaluated, Studio Career work should be limited to documentation, status clarification, and small fixes that unblock the existing path. Do not add new simulator layers, new progression systems, or large new content sets before this branch has been manually validated.

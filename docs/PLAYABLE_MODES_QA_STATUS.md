@@ -204,6 +204,13 @@ Studio Career experimental v0.1 can be marked only when:
 
 ## Do not build before gate
 
+**2026-07-18 owner decision: this freeze is lifted.** The project owner
+explicitly authorized development to proceed without waiting for the human
+browser playthrough. The browser-driven manual playthrough remains an open QA
+item and the formal readiness gate for the v0.1 labels below — it is no longer
+a build blocker. The list below is preserved for the record of what the freeze
+covered.
+
 Do not build next:
 
 - New Studio Career systems.

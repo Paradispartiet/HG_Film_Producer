@@ -44,6 +44,10 @@ In practical terms, the player should be able to enter Production Cases from the
 
 ## Do not expand before manual browser test
 
+**2026-07-18 owner decision: this freeze is lifted** (see
+`docs/PLAYABLE_MODES_QA_STATUS.md`). The manual browser test remains an open
+QA item, not a build blocker. The guidance below is preserved for the record.
+
 Before adding major features or broadening the project into full studio-simulator work, someone should manually play the existing loop in a browser and evaluate at least these paths:
 
 - New player path.
