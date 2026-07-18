@@ -102,13 +102,12 @@ Direction:
 
 ## Sequencing and freeze compliance
 
-Nothing structural above may be built before the browser QA gate closes
-(`docs/PLAYABLE_MODES_QA_STATUS.md`). Under the freeze, only copy clarity and
-blocking-bug fixes are allowed; of the items above, only small copy/label
-dedup arguably qualifies, and even that should wait unless it blocks the
-gate.
+**2026-07-18 update: the pre-gate freeze was lifted by owner decision** (see
+`docs/PLAYABLE_MODES_QA_STATUS.md`), so the work below may begin immediately.
+The human browser playthrough remains an open QA item; re-run it against the
+restructured flows as each priority lands.
 
-Recommended post-gate order:
+Recommended order:
 
 1. Phase stepper (Priority 1) — changes how the game feels most.
 2. Teaching decoys (Priority 2) — changes what the game teaches; data-only.
