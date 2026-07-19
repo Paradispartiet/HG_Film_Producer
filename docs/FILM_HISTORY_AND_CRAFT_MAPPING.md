@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case must contain all mapp
 All 161 Production Cases now resolve to the same complete mapping structure.
 
 - 17 mandatory film-history and film-craft areas.
-- 28 source-backed film-history profiles.
-- 133 cases with a complete audit structure and visible research gaps.
+- 32 source-backed film-history profiles.
+- 129 cases with a complete audit structure and visible research gaps.
 - No points, ranks, badges or reward currencies.
 - The historical comparison is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The current 28 source-backed history profiles are the same controlled group covered by the Production Case verification registry:
+The current 32 source-backed history profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -61,6 +61,10 @@ The current 28 source-backed history profiles are the same controlled group cove
 - Into the Wild
 - Winter's Bone
 - Beasts of the Southern Wild
+- Groundhog Day
+- The Truman Show
+- Moon
+- Midnight in Paris
 
 ## Complete mapping schema
 
@@ -152,7 +156,9 @@ A date or movement name alone does not teach film history. The player learns mor
 - anamorphic slasher suspense versus smartphone street cinema;
 - reconstructed orthochromatic response versus fisheye period staging;
 - neo-western border geography versus biographical road-film geography;
-- researched rural noir versus collectively built magical regional realism.
+- researched rural noir versus collectively built magical regional realism;
+- repeated-day continuity and editorial compression versus an artificial surveillance town;
+- miniature-based contained science fiction versus photochemical period separation across one real city.
 
 The alternatives are drawn from other real cases. A wrong choice therefore introduces another valid film-historical method instead of meaningless filler.
 
@@ -189,7 +195,7 @@ A Production Case is fully film-history-and-craft verified only when it has:
 - a playable historical comparison with plausible alternatives;
 - no unsupported claims of innovation or influence.
 
-## Research order for the remaining 133 cases
+## Research order for the remaining 129 cases
 
 Research should proceed by coherent historical groups, not by random list order. This makes comparisons better and reduces duplicate work.
 
