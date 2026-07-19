@@ -17,6 +17,17 @@ Source records are divided into reviewable batch files:
 
 The unified registry currently covers twenty cases.
 
+The same twenty cases now also have source-backed film-history profiles in:
+
+- `src/ui/data/scenarioFilmStudyMap.ts`
+
+The complete 17-area audit is defined in:
+
+- `src/core/filmStudyCoverage.ts`
+- `docs/FILM_HISTORY_AND_CRAFT_MAPPING.md`
+
+All 161 cases receive the same audit structure, but this does **not** mean that all 161 are verified. The remaining 141 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
+
 ### Pilot batch
 
 - `scenario_the_machinist_2004`
@@ -59,38 +70,59 @@ A registry record must:
 1. refer to a playable Production Case scenario;
 2. contain at least two independent HTTPS sources;
 3. use sources from at least two publishers;
-4. prefer filmmaker interviews, cinematographer interviews, film institutes, archival production histories, and established trade publications;
-5. state which craft areas each source supports;
+4. prefer filmmaker and department-head interviews, film institutes, archival production histories, preservation records and established trade publications;
+5. state which film-history and craft areas each source supports;
 6. explain briefly how the source supports the brief;
 7. record the verification date;
 8. pass the registry tests before merge.
 
-A plot synopsis or review alone is not enough to verify production choices. It may support context, but production claims should be grounded in production reporting, filmmaker testimony, documented craft analysis, or institutional records.
+A plot synopsis or review alone is not enough to verify production choices. It may support context or reception, but production claims should be grounded in production reporting, filmmaker testimony, documented craft analysis or institutional records.
 
-## Status policy
+Claims that a film was the first to use a method, changed film history or strongly influenced later cinema require especially strong evidence. Popularity or repetition of the claim is not enough.
+
+## Two separate status layers
+
+### Case verification
 
 - `seeded`: imported fallback content, not a manual Production Case.
 - `needs_research`: manual brief without completed source review.
 - `verified`: source review completed and recorded in the unified registry.
 
-The registry is intentionally separate from the large brief file. This keeps evidence reviewable, prevents source metadata from bloating mission content, and allows verification to proceed film by film. Batch files also keep each evidence review small enough to inspect directly.
+### Area coverage
+
+- `source_verified`: a specific history or craft area is supported by inspectable evidence.
+- `mapped`: the area is represented in the current brief but still needs dedicated source review.
+- `research_pending`: film-specific research has not been completed.
+- `not_central`: the area was considered but is not a central learning focus for this case.
+
+A case-level `verified` label does not automatically mean every one of the 17 areas is fully researched. The area audit must remain more precise than the case-level label.
+
+The registry is intentionally separate from the large brief file. This keeps evidence reviewable, prevents source metadata from bloating mission content and allows verification to proceed film by film. Batch files also keep each evidence review small enough to inspect directly.
 
 ## Player-facing status
 
-The Production Cases library displays the current verified count and marks each documented case before it is opened. The completed learning report exposes the evidence summary and direct source links.
+The Production Cases library and case view must distinguish verified material from pending research. Inside a case, the player can inspect:
+
+- the historical placement;
+- the before / historical moment / afterlife explanation;
+- the full history-and-craft coverage audit;
+- the sources supporting the case.
+
+Evidence is available as part of learning and is not locked behind completion.
 
 Verification supports learning; it does not support a score or ranking. A verified case gives the player stronger explanations and inspectable evidence, not more points or a higher tier.
 
 ## Next step
 
-Twenty cases now have source-backed verification. Pause broad source expansion and use the verified set as the controlled group for improving the academic and craft quality of the learning cases:
+Twenty cases now have source-backed Production Case verification and source-backed film-history profiles. Use this controlled group to improve the academic and professional quality of the learning cases while researching the remaining 141 in coherent historical batches:
 
-- make every alternative plausible and educational;
+- make every historical and technical alternative plausible and educational;
 - ensure feedback explains the concrete distinction between choices;
-- connect screenplay, directing, performance, image, editing and sound;
-- expose the most useful evidence in the completed learning report;
-- identify gaps where a case still teaches generic production language instead of the specific film.
+- connect historical context, screenplay, directing, performance, image, design, editing and sound;
+- expose useful evidence directly in the case;
+- replace `research_pending` only when the relevant area has been researched;
+- avoid claims of innovation or influence that the sources do not establish.
 
 Do not add generic budget, schedule, resource or prestige mechanics to this set. Production conditions belong in a case only when they are documented facts that explain the film's actual method.
 
-Do not mark the full catalogue verified based on a generic filmography source or on the internal consistency of the brief alone.
+Do not mark the full catalogue verified based on a generic filmography source, release metadata or the internal consistency of the brief alone.
