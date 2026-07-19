@@ -1,0 +1,32 @@
+.production-case-outcome {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.production-case-outcome span,
+.production-case-outcome small {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.production-case-outcome strong {
+  font-size: 1rem;
+}
+
+.production-case-outcome p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.production-case-outcome--capped {
+  border-color: rgba(255, 190, 95, 0.48);
+  background: rgba(255, 170, 70, 0.08);
+}
+
+.production-case-outcome--overextended {
+  border-color: rgba(255, 110, 110, 0.5);
+  background: rgba(255, 80, 80, 0.08);
+}
