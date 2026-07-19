@@ -29,6 +29,7 @@ import {
   getProductionCaseVerification,
   type ProductionCaseVerificationRecord,
 } from "../data/scenarioProductionVerificationRegistry";
+import { ScenarioFilmStudyPanel } from "./ScenarioFilmStudyPanel";
 
 export function ScenarioProductionBriefPanel({
   onBackToProductionCases,
@@ -61,6 +62,8 @@ export function ScenarioProductionBriefPanel({
         </div>
         <span className="scenario-brief-status">{formatVerificationStatus(verificationStatus)}</span>
       </div>
+
+      <ScenarioFilmStudyPanel brief={brief} scenario={scenario} />
 
       {missions.length > 0 && brief.briefType === "production_case" ? (
         <ProductionCaseMissionFlow

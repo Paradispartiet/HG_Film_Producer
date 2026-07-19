@@ -1,0 +1,302 @@
+.scenario-film-study {
+  display: grid;
+  gap: 14px;
+  margin: 16px 0 20px;
+  padding: 16px;
+  border: 1px solid rgba(214, 174, 98, 0.28);
+  background: linear-gradient(145deg, rgba(214, 174, 98, 0.08), rgba(6, 8, 11, 0.5));
+}
+
+.scenario-film-study-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: start;
+}
+
+.scenario-film-study-header h4 {
+  margin: 4px 0 7px;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.scenario-film-study-header p,
+.scenario-history-pending p,
+.scenario-history-arc p,
+.scenario-history-sources p,
+.scenario-study-coverage-item p {
+  margin: 0;
+  color: var(--muted-light);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.scenario-film-study-status {
+  display: grid;
+  min-width: 180px;
+  gap: 4px;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  background: rgba(6, 8, 11, 0.46);
+}
+
+.scenario-film-study-status span,
+.scenario-history-arc article > span,
+.scenario-study-coverage h5 {
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.scenario-film-study-status strong {
+  color: var(--text);
+  font-size: 13px;
+}
+
+.scenario-film-study-status small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.scenario-film-study-status--source_backed {
+  border-color: rgba(115, 184, 149, 0.42);
+  background: rgba(115, 184, 149, 0.08);
+}
+
+.scenario-film-study-status--research_pending {
+  border-color: rgba(214, 174, 98, 0.34);
+}
+
+.scenario-history-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.scenario-history-tags span {
+  padding: 5px 8px;
+  border: 1px solid rgba(214, 174, 98, 0.25);
+  background: rgba(214, 174, 98, 0.06);
+  color: var(--muted-light);
+  font-size: 10px;
+}
+
+.scenario-history-exercise {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid rgba(214, 174, 98, 0.22);
+  background: rgba(6, 8, 11, 0.36);
+}
+
+.scenario-history-exercise > strong {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.scenario-history-choice-grid {
+  display: grid;
+  gap: 7px;
+}
+
+.scenario-history-choice {
+  width: 100%;
+  padding: 10px 11px;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  background: rgba(6, 8, 11, 0.6);
+  color: var(--muted-light);
+  text-align: left;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.scenario-history-choice:hover,
+.scenario-history-choice--selected {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.scenario-history-choice--selected {
+  background: var(--accent-soft);
+}
+
+.scenario-history-feedback {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.scenario-history-feedback--match { color: var(--positive); }
+.scenario-history-feedback--partial { color: var(--accent); }
+.scenario-history-feedback--miss { color: var(--muted-light); }
+
+.scenario-history-arc {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.scenario-history-arc article {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.scenario-history-pending {
+  display: grid;
+  gap: 7px;
+  padding: 13px;
+  border: 1px dashed rgba(214, 174, 98, 0.36);
+  background: rgba(214, 174, 98, 0.04);
+}
+
+.scenario-history-pending strong {
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.scenario-study-coverage,
+.scenario-history-sources {
+  border: 1px solid var(--line);
+  background: rgba(6, 8, 11, 0.34);
+}
+
+.scenario-study-coverage summary,
+.scenario-history-sources summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 11px 13px;
+  cursor: pointer;
+}
+
+.scenario-study-coverage summary span,
+.scenario-history-sources summary span {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.scenario-study-coverage summary small,
+.scenario-history-sources summary small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.scenario-study-coverage-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0 12px 12px;
+}
+
+.scenario-study-coverage-groups > section {
+  min-width: 0;
+}
+
+.scenario-study-coverage h5 {
+  margin: 4px 0 8px;
+}
+
+.scenario-study-coverage ul,
+.scenario-history-sources ul {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.scenario-study-coverage-item {
+  display: grid;
+  gap: 5px;
+  padding: 9px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.scenario-study-coverage-item > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.scenario-study-coverage-item strong {
+  color: var(--text);
+  font-size: 11px;
+}
+
+.scenario-study-coverage-item span {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.scenario-study-coverage-item--source_verified {
+  border-color: rgba(115, 184, 149, 0.34);
+  background: rgba(115, 184, 149, 0.06);
+}
+
+.scenario-study-coverage-item--source_verified span { color: var(--positive); }
+.scenario-study-coverage-item--mapped span { color: var(--accent); }
+.scenario-study-coverage-item--research_pending { opacity: 0.82; }
+.scenario-study-coverage-item--not_central { opacity: 0.68; }
+
+.scenario-history-sources > p {
+  padding: 0 12px 10px;
+}
+
+.scenario-history-sources ul {
+  padding: 0 12px 12px;
+}
+
+.scenario-history-sources li {
+  display: grid;
+  gap: 4px;
+  padding: 9px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.scenario-history-sources a {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.scenario-history-sources li small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+@media (max-width: 760px) {
+  .scenario-film-study-header,
+  .scenario-history-arc,
+  .scenario-study-coverage-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .scenario-film-study-status {
+    min-width: 0;
+  }
+
+  .scenario-study-coverage summary,
+  .scenario-history-sources summary {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
