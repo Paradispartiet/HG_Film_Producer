@@ -6,7 +6,13 @@ import type {
   ReviewResult
 } from "../domain/release.js";
 
-/** Resolve nominations and wins from critical consensus and festival momentum. */
+type ScoredAward = {
+  readonly award: Award;
+  readonly score: number;
+  readonly margin: number;
+};
+
+/** Resolve a ranked and deliberately limited award slate from critical and festival momentum. */
 export function resolveAwardsOutcome(
   project: FilmProject,
   film: FilmResult,
@@ -22,28 +28,48 @@ export function resolveAwardsOutcome(
   const acceptedFestivals = festivals.filter((festival) => festival.accepted);
   const festivalMomentum = Math.min(12, acceptedFestivals.length * 4);
   const genre = project.genreId.replace(/^genre_/, "");
-  const nominations = [];
-  const wins = [];
+  const awardsStrength = clamp(
+    film.criticalAppeal * 0.4
+      + reviewAverage * 0.35
+      + film.quality * 0.25
+      + festivalMomentum
+  );
+  const nominationLimit = getNominationLimit(awardsStrength);
+  const winLimit = getWinLimit(awardsStrength, acceptedFestivals.length);
+
+  const rankedAwards = awards
+    .map((award): ScoredAward => {
+      const tagFit = award.preferredTags.length === 0 || award.preferredTags.includes(genre) ? 6 : 0;
+      const categoryFit = categoryScore(award.category, film);
+      const score = clamp(
+        film.criticalAppeal * 0.38 + reviewAverage * 0.32 + film.quality * 0.15
+          + categoryFit * 0.15 + festivalMomentum + tagFit
+      );
+      return {
+        award,
+        score,
+        margin: score - award.requiredScore
+      };
+    })
+    .filter((candidate) => candidate.margin >= 0)
+    .sort(compareScoredAwards);
+
+  const nominatedAwards = rankedAwards.slice(0, nominationLimit);
+  const winningAwards = nominatedAwards
+    .filter((candidate) => candidate.score >= candidate.award.requiredScore + 8)
+    .slice(0, winLimit);
+  const nominations = nominatedAwards.map((candidate) => candidate.award.id);
+  const wins = winningAwards.map((candidate) => candidate.award.id);
   let prestigeGain = 0;
   let audienceGain = 0;
 
-  for (const award of awards) {
-    const tagFit = award.preferredTags.length === 0 || award.preferredTags.includes(genre) ? 6 : 0;
-    const categoryFit = categoryScore(award.category, film);
-    const awardScore = clamp(
-      film.criticalAppeal * 0.38 + reviewAverage * 0.32 + film.quality * 0.15
-        + categoryFit * 0.15 + festivalMomentum + tagFit
-    );
-    if (awardScore >= award.requiredScore) {
-      nominations.push(award.id);
-      prestigeGain += Math.max(1, Math.round(award.prestigeValue * 0.3));
-      audienceGain += Math.max(0, Math.round(award.audienceValue * 0.2));
-    }
-    if (awardScore >= award.requiredScore + 8 && acceptedFestivals.length > 0) {
-      wins.push(award.id);
-      prestigeGain += award.prestigeValue;
-      audienceGain += award.audienceValue;
-    }
+  for (const candidate of nominatedAwards) {
+    prestigeGain += Math.max(1, Math.round(candidate.award.prestigeValue * 0.3));
+    audienceGain += Math.max(0, Math.round(candidate.award.audienceValue * 0.2));
+  }
+  for (const candidate of winningAwards) {
+    prestigeGain += candidate.award.prestigeValue;
+    audienceGain += candidate.award.audienceValue;
   }
 
   return {
@@ -53,9 +79,31 @@ export function resolveAwardsOutcome(
     audienceGain,
     notes: [
       `Awards use critical appeal, ${reviewAverage}/100 review consensus, quality, category fit, and ${acceptedFestivals.length} accepted festival(s).`,
-      "A win requires the nomination threshold plus eight points and at least one festival acceptance."
+      `The ${awardsStrength}/100 awards-strength slate is ranked and capped at ${nominationLimit} nomination(s) and ${winLimit} win(s).`,
+      "A win requires the nomination threshold plus eight points, festival acceptance, and a place inside the ranked win limit."
     ]
   };
+}
+
+function compareScoredAwards(left: ScoredAward, right: ScoredAward): number {
+  if (left.margin !== right.margin) return right.margin - left.margin;
+  if (left.score !== right.score) return right.score - left.score;
+  return String(left.award.id).localeCompare(String(right.award.id));
+}
+
+function getNominationLimit(awardsStrength: number): number {
+  if (awardsStrength >= 90) return 5;
+  if (awardsStrength >= 82) return 4;
+  if (awardsStrength >= 74) return 3;
+  if (awardsStrength >= 66) return 2;
+  return 1;
+}
+
+function getWinLimit(awardsStrength: number, acceptedFestivalCount: number): number {
+  if (acceptedFestivalCount === 0 || awardsStrength < 74) return 0;
+  if (awardsStrength >= 92) return Math.min(3, acceptedFestivalCount + 1);
+  if (awardsStrength >= 84) return Math.min(2, acceptedFestivalCount);
+  return 1;
 }
 
 function categoryScore(category: Award["category"], film: FilmResult): number {
