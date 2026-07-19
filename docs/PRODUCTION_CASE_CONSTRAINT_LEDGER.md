@@ -35,14 +35,4 @@ The final Case report keeps the existing craft score and adds a production condi
 - **Behind schedule**: time is below zero.
 - **Overextended**: both budget and time are below zero.
 
-## Producer outcome
-
-The craft score remains visible, but the production condition now affects the awarded producer tier:
-
-- **On track** and **Strained** keep the full craft tier.
-- **Over budget** or **Behind schedule** can award at most **Producer**.
-- **Overextended** can award at most **Assistant**.
-
-This keeps film understanding and production management legible as two related judgments. A player can understand the film precisely and still lose the Auteur result by failing to deliver it within the production frame. The constrained tier is used consistently in the Case report, saved best result, library status, filters and collection summaries.
-
-The existing storage shape is unchanged. Old saves remain readable; future completed results use the production-aware tier when a new best result is recorded.
+This first version deliberately keeps the existing score and best-result storage intact. The player now has two replay goals: improve the film match and deliver the production without exhausting its resources.

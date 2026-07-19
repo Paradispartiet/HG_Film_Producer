@@ -7,11 +7,6 @@ import {
   type ProductionCaseConstraintSummary,
 } from "../../core/productionCaseConstraints";
 import {
-  applyProductionCaseOutcomeToReport,
-  getProductionCaseOutcome,
-  type ProductionCaseOutcome,
-} from "../../core/productionCaseOutcome";
-import {
   getProductionCaseImprovementHint,
   getProductionCaseBestResultEntry,
   getProductionCaseBestResultFeedback,
@@ -143,22 +138,14 @@ function ProductionCaseMissionFlow({
   const completedCount = missions.filter(isMissionComplete).length;
   const allComplete = missions.length > 0 && completedCount === missions.length;
   const caseScore = getProductionCaseScoreSummary(missions, progressEntry);
-  const craftResultTier = getProductionCaseResultTier(caseScore, completedCount);
-  const constraintSummary = getProductionCaseConstraintSummary(missions, progressEntry);
-  const productionOutcome = craftResultTier
-    ? getProductionCaseOutcome(craftResultTier, constraintSummary.status)
-    : undefined;
-  const resultTier = productionOutcome?.finalTier;
+  const resultTier = getProductionCaseResultTier(caseScore, completedCount);
   const improvementHint = getProductionCaseImprovementHint(missions, progressEntry);
   const nextPhaseAction = getProductionCaseNextPhaseAction(missions, progressEntry);
   const tierTarget = getProductionCaseTierTarget(caseScore, completedCount);
-  const constrainedTierTarget = productionOutcome?.tierCapped ? undefined : tierTarget;
   const caseReport = getProductionCaseReport(missions, progressEntry);
-  const constrainedReport = caseReport
-    ? applyProductionCaseOutcomeToReport(caseReport, constraintSummary)
-    : undefined;
-  const completedCaseReport = allComplete ? constrainedReport?.report : undefined;
+  const completedCaseReport = allComplete ? caseReport : undefined;
   const bestResult = getProductionCaseBestResultEntry(bestResultsState, scenarioId);
+  const constraintSummary = getProductionCaseConstraintSummary(missions, progressEntry);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -262,19 +249,18 @@ function ProductionCaseMissionFlow({
       <div className="scenario-production-guidance" aria-label="Production case guidance">
         {resultTier ? <ProductionCaseResultBox tier={resultTier} /> : null}
         {nextPhaseAction ? <ProductionCaseNextPhaseBox action={nextPhaseAction} onFocusMission={focusMission} /> : null}
-        {constrainedTierTarget ? <ProductionCaseTierTargetBox target={constrainedTierTarget} /> : null}
+        {tierTarget ? <ProductionCaseTierTargetBox target={tierTarget} /> : null}
         {improvementHint ? <ProductionCaseImprovementHintBox hint={improvementHint} onFocusMission={focusMission} /> : null}
       </div>
       {completedCaseReport ? <ProductionCaseReportBox
         bestResult={bestResult}
         bestResultFeedback={bestResultFeedback}
         constraintSummary={constraintSummary}
-        outcome={productionOutcome}
         onBackToProductionCases={onBackToProductionCases}
         onPlayAgain={resetCurrentScenario}
         onStartNextScenario={onStartNextScenario}
         report={completedCaseReport}
-        tierTarget={constrainedTierTarget}
+        tierTarget={tierTarget}
       /> : null}
       {missions.map((mission, index) => {
         const isComplete = isMissionComplete(mission);
@@ -444,7 +430,6 @@ function ProductionCaseReportBox({
   bestResult,
   bestResultFeedback,
   constraintSummary,
-  outcome,
   onBackToProductionCases,
   onPlayAgain,
   onStartNextScenario,
@@ -454,7 +439,6 @@ function ProductionCaseReportBox({
   readonly bestResult: ReturnType<typeof getProductionCaseBestResultEntry>;
   readonly bestResultFeedback: ProductionCaseBestResultFeedback | undefined;
   readonly constraintSummary: ProductionCaseConstraintSummary;
-  readonly outcome: ProductionCaseOutcome | undefined;
   readonly onBackToProductionCases?: (() => void) | undefined;
   readonly onPlayAgain: () => void;
   readonly onStartNextScenario?: (() => void) | undefined;
@@ -473,9 +457,6 @@ function ProductionCaseReportBox({
       {bestResultFeedback ? <ProductionCaseBestResultFeedbackBox feedback={bestResultFeedback} maxScore={report.maxScore} /> : null}
       <div className="scenario-production-report-stats">
         <span>Result: {productionCaseResultCopy[report.resultTier].label}</span>
-        {outcome?.tierCapped ? (
-          <span>Craft result: {productionCaseResultCopy[outcome.craftTier].label}</span>
-        ) : null}
         <span>Case-score: {report.score}/{report.maxScore}</span>
         <span>Phases: {report.completedCount}/{report.totalMissions}</span>
         <span>Production condition: {constraintSummary.label}</span>
@@ -484,7 +465,6 @@ function ProductionCaseReportBox({
           <span>Best result: {productionCaseResultCopy[bestResult.bestTier].label} · {bestResult.bestScore}/{bestResult.maxScore}</span>
         ) : null}
       </div>
-      <ProductionCaseOutcomeNotice outcome={outcome} />
       <ProductionCaseConstraintLedger summary={constraintSummary} />
       <div className="scenario-production-report-actions" aria-label="Case continuation actions">
         <button className="secondary-button" onClick={onPlayAgain} type="button">Play again to improve</button>
@@ -527,28 +507,6 @@ function ProductionCaseReportBox({
           {report.improvementHint ? <p>{report.improvementHint.description}</p> : null}
         </div>
       </div>
-    </section>
-  );
-}
-
-function ProductionCaseOutcomeNotice({
-  outcome,
-}: {
-  readonly outcome: ProductionCaseOutcome | undefined;
-}) {
-  if (!outcome) return null;
-
-  return (
-    <section
-      className={`production-case-outcome${outcome.tierCapped ? " production-case-outcome--capped" : ""}${outcome.productionStatus === "overextended" ? " production-case-outcome--overextended" : ""}`}
-      aria-label="Producer consequence"
-    >
-      <span>Producer consequence</span>
-      <strong>{outcome.label}</strong>
-      <p>{outcome.description}</p>
-      {outcome.tierCapped ? (
-        <small>Craft: {productionCaseResultCopy[outcome.craftTier].label} · Final: {productionCaseResultCopy[outcome.finalTier].label}</small>
-      ) : null}
     </section>
   );
 }
