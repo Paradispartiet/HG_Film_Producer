@@ -6,7 +6,6 @@ import {
   getProductionCaseConstraintSummaryBeforeMission,
   type ProductionCaseConstraintSummary,
 } from "../../core/productionCaseConstraints";
-import { getProductionCaseChoiceConstraintForecast } from "../../core/productionCaseConstraintForecast";
 import {
   applyProductionCaseOutcomeToReport,
   getProductionCaseOutcome,
@@ -341,20 +340,10 @@ function ProductionCaseMissionFlow({
                 <div className="scenario-mission-choice-grid">
                   {mission.choices.map((choice) => {
                     const impact = getProductionCaseChoiceConstraintImpact(choice);
-                    const forecast = getProductionCaseChoiceConstraintForecast(
-                      missions,
-                      progressEntry,
-                      mission.id,
-                      choice.id,
-                    );
                     return (
                       <button
                         aria-pressed={choice.id === selectedChoiceId}
-                        className={[
-                          "scenario-choice-button",
-                          choice.id === selectedChoiceId ? "scenario-choice-button--selected" : "",
-                          forecast ? `scenario-choice-button--risk-${forecast.projected.status}` : "",
-                        ].filter(Boolean).join(" ")}
+                        className={choice.id === selectedChoiceId ? "scenario-choice-button scenario-choice-button--selected" : "scenario-choice-button"}
                         key={choice.id}
                         onClick={() => selectChoice(mission.id, choice.id)}
                         type="button"
@@ -363,18 +352,6 @@ function ProductionCaseMissionFlow({
                         <small>
                           {impact.label} · Budget {formatConstraintDelta(impact.budgetDelta)} · Time {formatConstraintDelta(impact.scheduleDelta)} · Control {formatConstraintDelta(impact.creativeControlDelta)}
                         </small>
-                        {forecast ? (
-                          <>
-                            <small className="scenario-choice-projection">
-                              After choice · Budget {forecast.projected.budgetRemaining}/{forecast.projected.startingBudget} · Time {forecast.projected.scheduleRemaining}/{forecast.projected.startingSchedule} · Control {formatConstraintDelta(forecast.projected.creativeControl)}
-                            </small>
-                            {forecast.projected.status !== "on_track" ? (
-                              <small className="scenario-choice-risk">
-                                {forecast.label} · {forecast.description}
-                              </small>
-                            ) : null}
-                          </>
-                        ) : null}
                       </button>
                     );
                   })}
