@@ -36,6 +36,7 @@ const film: FilmResult = {
 };
 const strategy = requireFirst(data.releaseStrategies);
 const festival = requireFirst(data.festivals);
+const secondFestival = requireAt(data.festivals, 1);
 const critic = requireFirst(data.criticProfiles);
 const segment = requireFirst(data.audienceSegments);
 
@@ -83,6 +84,96 @@ test("festivals, critics, and audiences resolve without randomness", () => {
   assert.ok(audience.estimatedViewers >= 0);
 });
 
+test("a moderate film can receive recognition without sweeping the awards", () => {
+  const moderateFilm: FilmResult = {
+    ...film,
+    quality: 68,
+    audienceAppeal: 68,
+    criticalAppeal: 68
+  };
+  const moderateReview = {
+    ...generateReviewResult(project, moderateFilm, critic),
+    score: 68
+  };
+  const acceptedSubmission = {
+    ...submitToFestival(project, moderateFilm, festival),
+    accepted: true
+  };
+
+  const awards = resolveAwardsOutcome(
+    project,
+    moderateFilm,
+    data.awards,
+    [moderateReview],
+    [acceptedSubmission]
+  );
+
+  assert.ok(awards.nominations.length <= 2);
+  assert.equal(awards.wins.length, 0);
+  assert.ok(awards.wins.every((awardId) => awards.nominations.includes(awardId)));
+});
+
+test("an exceptional film can win several awards but still has a ranked slate", () => {
+  const exceptionalFilm: FilmResult = {
+    ...film,
+    quality: 95,
+    audienceAppeal: 95,
+    criticalAppeal: 95
+  };
+  const exceptionalReview = {
+    ...generateReviewResult(project, exceptionalFilm, critic),
+    score: 95
+  };
+  const acceptedSubmissions = [festival, secondFestival].map((candidate) => ({
+    ...submitToFestival(project, exceptionalFilm, candidate),
+    accepted: true
+  }));
+
+  const awards = resolveAwardsOutcome(
+    project,
+    exceptionalFilm,
+    data.awards,
+    [exceptionalReview],
+    acceptedSubmissions
+  );
+
+  assert.equal(awards.nominations.length, 5);
+  assert.equal(awards.wins.length, 3);
+  assert.ok(awards.wins.every((awardId) => awards.nominations.includes(awardId)));
+  assert.deepEqual(
+    resolveAwardsOutcome(project, exceptionalFilm, data.awards, [exceptionalReview], acceptedSubmissions),
+    awards
+  );
+});
+
+test("award wins require an accepted festival", () => {
+  const exceptionalFilm: FilmResult = {
+    ...film,
+    quality: 95,
+    audienceAppeal: 95,
+    criticalAppeal: 95
+  };
+  const exceptionalReview = {
+    ...generateReviewResult(project, exceptionalFilm, critic),
+    score: 95
+  };
+  const rejectedSubmission = {
+    ...submitToFestival(project, exceptionalFilm, festival),
+    accepted: false
+  };
+
+  const awards = resolveAwardsOutcome(
+    project,
+    exceptionalFilm,
+    data.awards,
+    [exceptionalReview],
+    [rejectedSubmission]
+  );
+
+  assert.equal(awards.nominations.length, 5);
+  assert.equal(awards.wins.length, 0);
+});
+
 test("revenue, awards, evaluation, and studio application form one immutable pipeline", () => {
   const plan = createReleasePlan(project, strategy);
   const strategyScore = scoreReleaseStrategy(project, film, strategy);
@@ -112,7 +203,11 @@ test("revenue, awards, evaluation, and studio application form one immutable pip
 });
 
 function requireFirst<T>(items: readonly T[]): T {
-  const item = items[0];
-  if (!item) throw new Error("Missing release test fixture.");
+  return requireAt(items, 0);
+}
+
+function requireAt<T>(items: readonly T[], index: number): T {
+  const item = items[index];
+  if (!item) throw new Error(`Missing release test fixture at index ${index}.`);
   return item;
 }
