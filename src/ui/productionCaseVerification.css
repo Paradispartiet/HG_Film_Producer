@@ -1,0 +1,99 @@
+.scenario-brief-header:has(+ .scenario-mission-flow) .eyebrow {
+  font-size: 0;
+}
+
+.scenario-brief-header:has(+ .scenario-mission-flow) .eyebrow::after {
+  content: "Production case";
+  font-size: 0.72rem;
+}
+
+.scenario-brief-header:has(+ .scenario-mission-flow) .scenario-brief-status {
+  display: none;
+}
+
+.production-case-verification-evidence {
+  margin-top: 1rem;
+  border: 1px solid rgba(214, 179, 104, 0.35);
+  border-radius: 0.8rem;
+  background: rgba(214, 179, 104, 0.07);
+}
+
+.production-case-verification-evidence summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+}
+
+.production-case-verification-evidence summary span {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.production-case-verification-evidence summary small {
+  color: var(--text-muted, rgba(255, 255, 255, 0.68));
+  text-align: right;
+}
+
+.production-case-verification-content {
+  padding: 0 1rem 1rem;
+}
+
+.production-case-verification-content > p {
+  margin: 0 0 0.9rem;
+}
+
+.production-case-verification-content ul {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.production-case-verification-content li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.production-case-verification-content li div {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.production-case-verification-content li span {
+  color: var(--text-muted, rgba(255, 255, 255, 0.68));
+  font-size: 0.82rem;
+}
+
+.production-case-verification-content li p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.production-case-verification-content a {
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .production-case-verification-evidence summary,
+  .production-case-verification-content li {
+    align-items: stretch;
+    grid-template-columns: 1fr;
+  }
+
+  .production-case-verification-evidence summary {
+    flex-direction: column;
+  }
+
+  .production-case-verification-evidence summary small {
+    text-align: left;
+  }
+}
