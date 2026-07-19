@@ -1,6 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { canCompleteProductionCaseMission } from "../../core/canCompleteProductionCaseMission";
 import {
+  getProductionCaseChoiceConstraintImpact,
+  getProductionCaseConstraintSummary,
+  getProductionCaseConstraintSummaryBeforeMission,
+  type ProductionCaseConstraintSummary,
+} from "../../core/productionCaseConstraints";
+import {
   getProductionCaseImprovementHint,
   getProductionCaseBestResultEntry,
   getProductionCaseBestResultFeedback,
@@ -29,6 +35,7 @@ import {
   type ProductionCaseMission,
   type ScenarioProductionBrief,
 } from "../data/scenarioProductionBriefs";
+import { getProductionCaseVerification } from "../data/scenarioProductionVerificationRegistry";
 
 export function ScenarioProductionBriefPanel({
   onBackToProductionCases,
@@ -41,6 +48,8 @@ export function ScenarioProductionBriefPanel({
 }) {
   const brief = resolveScenarioProductionBrief(scenario);
   const missions = createProductionCaseMissions(brief);
+  const sourceVerification = getProductionCaseVerification(brief.scenarioId);
+  const verificationStatus = sourceVerification?.status ?? brief.verificationStatus;
 
   return (
     <section
@@ -50,16 +59,18 @@ export function ScenarioProductionBriefPanel({
       <div className="scenario-brief-header">
         <div>
           <span className="eyebrow">
-            {brief.briefType === "production_case"
-              ? "Verified production case"
-              : "Imported seed fallback"}
+            {brief.briefType === "seed_fallback"
+              ? "Imported seed fallback"
+              : sourceVerification
+                ? "Source-verified production case"
+                : "Production case · research pending"}
           </span>
           <h3 id="scenario-brief-title">{brief.title}</h3>
           <p>{getBriefIntro(brief, scenario.film.title)}</p>
           <p>{brief.logline}</p>
         </div>
         <span className="scenario-brief-status">
-          {formatVerificationStatus(brief.verificationStatus)}
+          {formatVerificationStatus(verificationStatus)}
         </span>
       </div>
       {missions.length > 0 && brief.briefType === "production_case" ? (
@@ -134,6 +145,7 @@ function ProductionCaseMissionFlow({
   const caseReport = getProductionCaseReport(missions, progressEntry);
   const completedCaseReport = allComplete ? caseReport : undefined;
   const bestResult = getProductionCaseBestResultEntry(bestResultsState, scenarioId);
+  const constraintSummary = getProductionCaseConstraintSummary(missions, progressEntry);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -233,13 +245,25 @@ function ProductionCaseMissionFlow({
           Reset case progress
         </button>
       </div>
+      <ProductionCaseConstraintLedger summary={constraintSummary} />
       <div className="scenario-production-guidance" aria-label="Production case guidance">
         {resultTier ? <ProductionCaseResultBox tier={resultTier} /> : null}
         {nextPhaseAction ? <ProductionCaseNextPhaseBox action={nextPhaseAction} onFocusMission={focusMission} /> : null}
         {tierTarget ? <ProductionCaseTierTargetBox target={tierTarget} /> : null}
         {improvementHint ? <ProductionCaseImprovementHintBox hint={improvementHint} onFocusMission={focusMission} /> : null}
       </div>
-      {completedCaseReport ? <ProductionCaseReportBox bestResult={bestResult} bestResultFeedback={bestResultFeedback} onBackToProductionCases={onBackToProductionCases} onPlayAgain={resetCurrentScenario} onStartNextScenario={onStartNextScenario} report={completedCaseReport} tierTarget={tierTarget} /> : null}
+      {completedCaseReport ? (
+        <ProductionCaseReportBox
+          bestResult={bestResult}
+          bestResultFeedback={bestResultFeedback}
+          constraintSummary={constraintSummary}
+          onBackToProductionCases={onBackToProductionCases}
+          onPlayAgain={resetCurrentScenario}
+          onStartNextScenario={onStartNextScenario}
+          report={completedCaseReport}
+          tierTarget={tierTarget}
+        />
+      ) : null}
       {missions.map((mission, index) => {
         const isComplete = isMissionComplete(mission);
         const selectedChoiceId = selectedChoicesByMissionId[mission.id];
@@ -247,6 +271,11 @@ function ProductionCaseMissionFlow({
         const phaseScore = getProductionCaseMissionScoreSummary(mission, selectedChoiceId);
         const isActive = mission.id === activeMissionId;
         const isExpanded = isActive || expandedMissionIds.includes(mission.id);
+        const carryoverSummary = getProductionCaseConstraintSummaryBeforeMission(
+          missions,
+          progressEntry,
+          mission.id,
+        );
         if (!isExpanded) {
           return (
             <article
@@ -287,6 +316,7 @@ function ProductionCaseMissionFlow({
                 <span>{isComplete ? "Complete" : isActive ? "Current phase" : "Open phase"}</span>
               </div>
               <span className="scenario-mission-score">Phase score: {phaseScore.score}/{phaseScore.maxScore}</span>
+              {index > 0 ? <ProductionCaseCarryover summary={carryoverSummary} /> : null}
               <p>{mission.prompt}</p>
               <ul className="scenario-brief-list">
                 {mission.targets.map((target) => (
@@ -296,17 +326,23 @@ function ProductionCaseMissionFlow({
               <div className="scenario-mission-choices" aria-label={`Choose a production approach for ${mission.title}`}>
                 <strong>Choose a production approach</strong>
                 <div className="scenario-mission-choice-grid">
-                  {mission.choices.map((choice) => (
-                    <button
-                      aria-pressed={choice.id === selectedChoiceId}
-                      className={choice.id === selectedChoiceId ? "scenario-choice-button scenario-choice-button--selected" : "scenario-choice-button"}
-                      key={choice.id}
-                      onClick={() => selectChoice(mission.id, choice.id)}
-                      type="button"
-                    >
-                      {choice.label}
-                    </button>
-                  ))}
+                  {mission.choices.map((choice) => {
+                    const impact = getProductionCaseChoiceConstraintImpact(choice);
+                    return (
+                      <button
+                        aria-pressed={choice.id === selectedChoiceId}
+                        className={choice.id === selectedChoiceId ? "scenario-choice-button scenario-choice-button--selected" : "scenario-choice-button"}
+                        key={choice.id}
+                        onClick={() => selectChoice(mission.id, choice.id)}
+                        type="button"
+                      >
+                        <span>{choice.label}</span>
+                        <small>
+                          {impact.label} · Budget {formatConstraintDelta(impact.budgetDelta)} · Time {formatConstraintDelta(impact.scheduleDelta)} · Control {formatConstraintDelta(impact.creativeControlDelta)}
+                        </small>
+                      </button>
+                    );
+                  })}
                 </div>
                 {selectedChoice ? (
                   <p className={`scenario-choice-feedback scenario-choice-feedback--${selectedChoice.quality}`}>
@@ -341,9 +377,61 @@ function ProductionCaseMissionFlow({
   );
 }
 
+function ProductionCaseConstraintLedger({
+  summary,
+}: {
+  readonly summary: ProductionCaseConstraintSummary;
+}) {
+  return (
+    <section
+      className={`production-constraint-ledger production-constraint-ledger--${summary.status}`}
+      aria-label="Production balance"
+    >
+      <div className="production-constraint-ledger-header">
+        <div>
+          <span className="eyebrow">Production balance</span>
+          <strong>{summary.label}</strong>
+        </div>
+        <p>{summary.description}</p>
+      </div>
+      <div className="production-constraint-values">
+        <div>
+          <span>Budget</span>
+          <strong>{summary.budgetRemaining}/{summary.startingBudget}</strong>
+        </div>
+        <div>
+          <span>Time</span>
+          <strong>{summary.scheduleRemaining}/{summary.startingSchedule}</strong>
+        </div>
+        <div>
+          <span>Creative control</span>
+          <strong>{formatConstraintDelta(summary.creativeControl)}</strong>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ProductionCaseCarryover({
+  summary,
+}: {
+  readonly summary: ProductionCaseConstraintSummary;
+}) {
+  return (
+    <div className={`production-constraint-carryover production-constraint-carryover--${summary.status}`}>
+      <span>Entering this phase</span>
+      <strong>{summary.label}</strong>
+      <small>
+        Budget {summary.budgetRemaining}/{summary.startingBudget} · Time {summary.scheduleRemaining}/{summary.startingSchedule} · Control {formatConstraintDelta(summary.creativeControl)}
+      </small>
+    </div>
+  );
+}
+
 function ProductionCaseReportBox({
   bestResult,
   bestResultFeedback,
+  constraintSummary,
   onBackToProductionCases,
   onPlayAgain,
   onStartNextScenario,
@@ -352,6 +440,7 @@ function ProductionCaseReportBox({
 }: {
   readonly bestResult: ReturnType<typeof getProductionCaseBestResultEntry>;
   readonly bestResultFeedback: ProductionCaseBestResultFeedback | undefined;
+  readonly constraintSummary: ProductionCaseConstraintSummary;
   readonly onBackToProductionCases?: (() => void) | undefined;
   readonly onPlayAgain: () => void;
   readonly onStartNextScenario?: (() => void) | undefined;
@@ -372,11 +461,13 @@ function ProductionCaseReportBox({
         <span>Result: {productionCaseResultCopy[report.resultTier].label}</span>
         <span>Case-score: {report.score}/{report.maxScore}</span>
         <span>Phases: {report.completedCount}/{report.totalMissions}</span>
+        <span>Production condition: {constraintSummary.label}</span>
         {tierTarget ? <span>{tierTarget.label} · {tierTarget.description}</span> : null}
         {bestResult ? (
           <span>Best result: {productionCaseResultCopy[bestResult.bestTier].label} · {bestResult.bestScore}/{bestResult.maxScore}</span>
         ) : null}
       </div>
+      <ProductionCaseConstraintLedger summary={constraintSummary} />
       <div className="scenario-production-report-actions" aria-label="Case continuation actions">
         <button className="secondary-button" onClick={onPlayAgain} type="button">Play again to improve</button>
         {onStartNextScenario ? (
@@ -554,6 +645,10 @@ function BriefSection({
       </ul>
     </section>
   );
+}
+
+function formatConstraintDelta(value: number) {
+  return value > 0 ? `+${value}` : String(value);
 }
 
 function getProductionCaseMissionElementId(missionId: string) {
