@@ -29,11 +29,18 @@ const modernCraftBatchIds = [
   "scenario_ex_machina_2014",
 ] as const;
 
+const crossEraBatchIds = [
+  "scenario_it_s_a_wonderful_life_1946",
+  "scenario_the_400_blows_1959",
+  "scenario_the_road_warrior_1981",
+  "scenario_victoria_2015",
+] as const;
+
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
   const scenarioIds = new Set(getClassicFilmScenarios().map((scenario) => scenario.id));
 
-  assert.equal(records.length, 16);
+  assert.equal(records.length, 20);
   assert.equal(new Set(records.map((record) => record.scenarioId)).size, records.length);
 
   for (const record of records) {
@@ -84,9 +91,18 @@ test("modern craft verification batch is present in the registry", () => {
   }
 });
 
+test("cross-era verification batch is present in the registry", () => {
+  for (const scenarioId of crossEraBatchIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.scenarioId, scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 3);
+  }
+});
+
 test("verification lookup and ID list expose the same registry", () => {
   const ids = getVerifiedProductionCaseIds();
-  assert.equal(ids.length, 16);
+  assert.equal(ids.length, 20);
   assert.equal(new Set(ids).size, ids.length);
 
   for (const scenarioId of ids) {
