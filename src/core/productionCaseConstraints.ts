@@ -1,3 +1,4 @@
+import { getProductionCaseIntervention } from "./productionCaseInterventions.js";
 import type { ProductionCaseProgressEntry } from "./productionCaseProgress.js";
 
 export const productionCaseStartingBudget = 10;
@@ -35,6 +36,7 @@ export type ProductionCaseConstraintSummary = {
   readonly scheduleRemaining: number;
   readonly creativeControl: number;
   readonly choicesMade: number;
+  readonly interventionsMade: number;
   readonly status: ProductionCaseConstraintStatus;
   readonly label: string;
   readonly description: string;
@@ -125,13 +127,18 @@ const constraintStatusCopy = {
 
 export function getProductionCaseConstraintSummary(
   missions: readonly ProductionCaseConstraintMission[],
-  progress: Pick<ProductionCaseProgressEntry, "selectedChoicesByMissionId">,
+  progress: Pick<
+    ProductionCaseProgressEntry,
+    "selectedChoicesByMissionId" | "selectedInterventionsByMissionId"
+  >,
 ): ProductionCaseConstraintSummary {
   const selectedChoicesByMissionId = progress.selectedChoicesByMissionId ?? {};
+  const selectedInterventionsByMissionId = progress.selectedInterventionsByMissionId ?? {};
   let budgetRemaining = productionCaseStartingBudget;
   let scheduleRemaining = productionCaseStartingSchedule;
   let creativeControl = 0;
   let choicesMade = 0;
+  let interventionsMade = 0;
 
   for (const mission of missions) {
     const selectedChoiceId = selectedChoicesByMissionId[mission.id];
@@ -143,6 +150,13 @@ export function getProductionCaseConstraintSummary(
     scheduleRemaining += impact.scheduleDelta;
     creativeControl += impact.creativeControlDelta;
     choicesMade += 1;
+
+    const intervention = getProductionCaseIntervention(selectedInterventionsByMissionId[mission.id]);
+    if (!intervention) continue;
+    budgetRemaining += intervention.budgetDelta;
+    scheduleRemaining += intervention.scheduleDelta;
+    creativeControl += intervention.creativeControlDelta;
+    interventionsMade += 1;
   }
 
   const status = getConstraintStatus(budgetRemaining, scheduleRemaining);
@@ -155,6 +169,7 @@ export function getProductionCaseConstraintSummary(
     scheduleRemaining,
     creativeControl,
     choicesMade,
+    interventionsMade,
     status,
     ...copy,
   };
@@ -162,7 +177,10 @@ export function getProductionCaseConstraintSummary(
 
 export function getProductionCaseConstraintSummaryBeforeMission(
   missions: readonly ProductionCaseConstraintMission[],
-  progress: Pick<ProductionCaseProgressEntry, "selectedChoicesByMissionId">,
+  progress: Pick<
+    ProductionCaseProgressEntry,
+    "selectedChoicesByMissionId" | "selectedInterventionsByMissionId"
+  >,
   missionId: string,
 ): ProductionCaseConstraintSummary {
   const missionIndex = missions.findIndex((mission) => mission.id === missionId);
