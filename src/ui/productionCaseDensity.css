@@ -1,0 +1,86 @@
+/*
+ * Production Cases library hierarchy pass.
+ * Keep the next playable decision prominent while compressing secondary career data.
+ */
+.production-case-dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.8fr);
+  align-items: start;
+  gap: 1rem;
+}
+
+.production-case-continuation-note {
+  grid-column: 1 / -1;
+  margin-block: 0;
+}
+
+.production-case-next-action {
+  grid-column: 1;
+  order: 1;
+  min-height: 100%;
+}
+
+.production-case-summary-card {
+  grid-column: 2;
+  order: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+}
+
+.production-case-summary-heading {
+  grid-column: 1 / -1;
+}
+
+.production-case-achievements,
+.production-case-recent-results {
+  order: 3;
+  max-height: 20rem;
+  overflow: auto;
+  scrollbar-gutter: stable;
+}
+
+.production-case-achievements {
+  grid-column: 1;
+}
+
+.production-case-recent-results {
+  grid-column: 2;
+}
+
+.production-case-achievement-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .production-case-dashboard {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .production-case-continuation-note,
+  .production-case-next-action,
+  .production-case-summary-card,
+  .production-case-achievements,
+  .production-case-recent-results {
+    grid-column: 1;
+  }
+
+  .production-case-achievements,
+  .production-case-recent-results {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 560px) {
+  .production-case-summary-card,
+  .production-case-achievement-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .production-case-summary-heading {
+    grid-column: 1;
+  }
+}
