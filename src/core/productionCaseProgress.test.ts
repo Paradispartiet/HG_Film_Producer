@@ -581,78 +581,62 @@ test("production case library controls, export helper, and UI copy avoid forbidd
   assert.doesNotMatch(helperCopy, /inspired by|in the spirit of|create your own version|lag en ny film/);
 });
 
-test("FilmScenarioLibrary exposes recent best results helper and section copy", () => {
+test("FilmScenarioLibrary exposes learning progress without best-result or score UI", () => {
   const uiSource = readFileSync("src/ui/components/FilmScenarioLibrary.tsx", "utf8");
-  const styleSource = readFileSync("src/ui/styles.css", "utf8");
 
-  assert.match(uiSource, /getRecentProductionCaseBestResults\(/);
-  assert.match(uiSource, /limit = 5/);
-  assert.match(uiSource, /brief\.briefType !== "production_case"/);
-  assert.match(uiSource, /Date\.parse\(value\)/);
-  assert.match(uiSource, /getBestResultTimestamp\(result\.updatedAt\) \|\| getBestResultTimestamp\(result\.completedAt\)/);
-  assert.match(uiSource, /\.sort\(\(left, right\) => getRecentBestResultSortTimestamp\(right\) - getRecentBestResultSortTimestamp\(left\)\)/);
-  assert.match(uiSource, /\.slice\(0, limit\)/);
-  assert.match(uiSource, /productionCaseScenarios\.get\(bestResult\.scenarioId\)/);
-  assert.match(uiSource, /Recent best results/);
-  assert.match(uiSource, /No best results yet\./);
-  assert.match(uiSource, /Open case/);
-  assert.match(uiSource, /bestTierLabel: productionCaseResultTierLabels\[bestResult\.bestTier\]/);
-  assert.match(uiSource, /\{item\.bestTierLabel\} · \{item\.bestScore\}\/\{item\.maxScore\}/);
-  assert.match(uiSource, /onOpenScenario\?\.\(item\.scenarioId\)/);
-  assert.match(styleSource, /production-case-recent-results/);
+  assert.match(uiSource, /There are no points or ranks/);
+  assert.match(uiSource, /Learning status/);
+  assert.match(uiSource, /Cases studied/);
+  assert.match(uiSource, /Next learning step/);
+  assert.doesNotMatch(uiSource, /Recent best results/);
+  assert.doesNotMatch(uiSource, /Case-score/);
+  assert.doesNotMatch(uiSource, /Best score/);
+  assert.doesNotMatch(uiSource, />Mastery</);
 });
 
-test("production case MVP loop core UI copy is preserved", () => {
+test("production case MVP loop preserves the learning-only UI", () => {
   const librarySource = readFileSync("src/ui/components/FilmScenarioLibrary.tsx", "utf8");
   const briefPanelSource = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
   const copy = [librarySource, briefPanelSource].join("\n");
 
-  assert.match(copy, /Next phase/);
-  assert.match(copy, /Next tier/);
-  assert.match(copy, /Case report/);
-  assert.match(copy, /Recent best results/);
-  assert.match(copy, /Progress backup/);
+  assert.match(copy, /Next learning step/);
+  assert.match(copy, /Learning report/);
+  assert.match(copy, /Learning progress backup/);
   assert.match(copy, /Go to phase/);
   assert.match(librarySource, /production-case-dashboard/);
+  assert.doesNotMatch(copy, /Next tier|Recent best results|Case-score|Phase score/);
+  assert.doesNotMatch(copy, />Assistant<|>Producer<|>Auteur</);
   assert.doesNotMatch(copy.toLowerCase(), /inspired by|in the spirit of|create your own version|lag en ny film/);
 });
 
-test("FilmScenarioLibrary initializes from persisted controls and exposes reset copy", () => {
+test("FilmScenarioLibrary preserves learning progress controls and backup", () => {
   const uiSource = readFileSync("src/ui/components/FilmScenarioLibrary.tsx", "utf8");
 
   assert.match(uiSource, /readProductionCaseLibraryControls\(window\.localStorage\)/);
-  assert.match(uiSource, /writeProductionCaseLibraryControls\(window\.localStorage, \{ caseStatusFilter, masteryFilter, sortMode, searchQuery \}\)/);
+  assert.match(uiSource, /masteryFilter: "all"/);
   assert.match(uiSource, /Reset filters/);
-  assert.match(uiSource, /Progress backup/);
-  assert.match(uiSource, /Save or restore local production-case progress\./);
+  assert.match(uiSource, /Learning progress backup/);
+  assert.match(uiSource, /Save or restore which cases and phases you have studied\./);
   assert.match(uiSource, /<details className="scenario-backup-panel">/);
   assert.match(uiSource, /Export progress/);
   assert.match(uiSource, /Progress exported/);
   assert.match(uiSource, /Progress ready to copy/);
   assert.match(uiSource, /createProductionCaseProgressExport\(window\.localStorage\)/);
-  assert.match(uiSource, /hg-film-production-case-progress\.json/);
-  assert.match(uiSource, /getProductionCaseLibraryResultSummary/);
+  assert.match(uiSource, /hg-film-learning-progress\.json/);
   assert.match(uiSource, /scenario-result-summary/);
-  assert.match(uiSource, /No active filters/);
-  assert.match(uiSource, /setCaseStatusFilter\(defaultProductionCaseLibraryControls\.caseStatusFilter\)/);
-  assert.match(uiSource, /setMasteryFilter\(defaultProductionCaseLibraryControls\.masteryFilter\)/);
-  assert.match(uiSource, /setSortMode\(defaultProductionCaseLibraryControls\.sortMode\)/);
-  assert.match(uiSource, /setSearchQuery\(defaultProductionCaseLibraryControls\.searchQuery\)/);
   assert.match(uiSource, /Search film, year, or case/);
   assert.match(uiSource, /Import progress/);
-  assert.match(uiSource, /Importing overwrites local production-case progress/);
+  assert.match(uiSource, /Importing overwrites local learning progress/);
   assert.match(uiSource, /previewProductionCaseProgressBackup\(importJson\)/);
   assert.match(uiSource, /Backup found/);
-  assert.match(uiSource, /Exported: /);
-  assert.match(uiSource, /Current progress: /);
-  assert.match(uiSource, /Best results: /);
-  assert.match(uiSource, /Library controls: /);
-  assert.match(uiSource, /Backup can't be read/);
+  assert.match(uiSource, /Cases with progress:/);
+  assert.match(uiSource, /Backup cannot be read/);
   assert.match(uiSource, /disabled=\{!importJson\.trim\(\) \|\| importPreview\?\.ok === false\}/);
   assert.match(uiSource, /Confirm import/);
   assert.match(uiSource, /Progress imported/);
   assert.match(uiSource, /Could not import progress/);
   assert.match(uiSource, /importProductionCaseProgressBackup\(importJson, window\.localStorage\)/);
+  assert.doesNotMatch(uiSource, /Best results:/);
 });
 
 test("production case library controls parse legacy and invalid search query safely", () => {
@@ -872,22 +856,18 @@ test("production case next phase action is hidden for seed fallback and full mat
 });
 
 
-test("ScenarioProductionBriefPanel shows compact next tier target and preserves next phase/report UI", () => {
+test("ScenarioProductionBriefPanel shows a score-free learning report", () => {
   const uiSource = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
-  const styleSource = readFileSync("src/ui/styles.css", "utf8");
 
-  assert.match(uiSource, /getProductionCaseTierTarget\(caseScore, completedCount\)/);
-  assert.match(uiSource, /aria-label="Next tier"/);
-  assert.match(uiSource, /getProductionCaseBestResultFeedback\(completedCaseReport, bestResult\)/);
-  assert.match(uiSource, /New best result feedback/);
-  assert.match(uiSource, /feedback\.label/);
-  assert.match(uiSource, /feedback\.description/);
-  assert.match(uiSource, /tierTarget\.label/);
-  assert.match(uiSource, /tierTarget\.description/);
-  assert.match(uiSource, /Case report/);
-  assert.match(uiSource, /completedCaseReport \? <ProductionCaseReportBox/);
-  assert.match(uiSource, /Next phase/);
-  assert.match(styleSource, /scenario-production-tier-target/);
+  assert.match(uiSource, /getProductionCaseLearningReport\(missions, progressEntry\)/);
+  assert.match(uiSource, /aria-label="Learning report"/);
+  assert.match(uiSource, /Understood clearly/);
+  assert.match(uiSource, /Review and compare/);
+  assert.match(uiSource, /Source basis/);
+  assert.match(uiSource, /Next learning step/);
+  assert.doesNotMatch(uiSource, /getProductionCaseTierTarget/);
+  assert.doesNotMatch(uiSource, /New best result feedback/);
+  assert.doesNotMatch(uiSource, /Case-score|Phase score|Next tier/);
 });
 
 test("production case tier target helper and UI copy avoid forbidden language", () => {
@@ -903,7 +883,7 @@ test("production case tier target helper and UI copy avoid forbidden language", 
   assert.doesNotMatch(copy, /inspired by|in the spirit of|create your own version|lag en ny film/);
 });
 
-test("ScenarioProductionBriefPanel exposes clickable improvement hint mission focus", () => {
+test("ScenarioProductionBriefPanel exposes clickable learning review focus", () => {
   const uiSource = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
   const styleSource = readFileSync("src/ui/styles.css", "utf8");
 
@@ -912,10 +892,11 @@ test("ScenarioProductionBriefPanel exposes clickable improvement hint mission fo
   assert.match(uiSource, /production-case-mission-\$\{missionId\}/);
   assert.match(uiSource, /tabIndex=\{-1\}/);
   assert.match(uiSource, /Go to phase/);
-  assert.match(uiSource, /Next phase/);
-  assert.match(uiSource, /getProductionCaseNextPhaseAction\(missions, progressEntry\)/);
+  assert.match(uiSource, /Next learning step/);
+  assert.match(uiSource, /getProductionCaseLearningNextAction\(missions, progressEntry\)/);
   assert.match(uiSource, /onClick=\{\(\) => onFocusMission\(action\.missionId\)\}/);
   assert.match(uiSource, /onClick=\{\(\) => onFocusMission\(hint\.missionId\)\}/);
+  assert.match(uiSource, /Review phase/);
   assert.match(uiSource, /setFocusedMissionId\(missionId\)/);
   assert.match(uiSource, /scrollIntoView\?\.\(\{ behavior: "smooth", block: "center" \}\)/);
   assert.match(uiSource, /focus\?\.\(\{ preventScroll: true \}\)/);
