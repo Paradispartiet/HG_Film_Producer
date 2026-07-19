@@ -2,120 +2,138 @@
 
 ## North Star
 
-HG Film Producer is a game about learning to understand film by producing films under pressure.
+HG Film Producer is a game for learning how films are made and why film choices work.
+
+The player studies real films through concrete cases in screenplay, directing, performance, cinematography, production design, editing and sound. The goal is understanding—not winning a simulation, maximizing a score or climbing a rank.
 
 ## One-sentence pitch
 
-Football Manager for film understanding: a production and career game where film history, technique, script, crew, economy and culture become playable choices.
+Learn film craft by examining the real choices behind films, comparing plausible alternatives and receiving film-specific explanations grounded in sources.
 
 ## What the game is
 
 HG Film Producer is:
 
-- A film production decision game.
-- A career/studio game.
-- A film literacy game where knowledge is learned through action.
-- A modular History Go-connected film universe.
-- A game about taste, craft, constraints and consequences.
+- A film-literacy and film-craft learning game.
+- A case-based way to understand how finished films solve artistic and technical problems.
+- A guided comparison between real filmmaking choices and plausible alternatives.
+- A source-backed film-history and craft system.
+- A modular film universe that can connect to History Go.
 
-The game should make film knowledge useful because the player needs it to make better productions. History, technique, genre, script, crew, economy and cultural context should become pressures, tradeoffs and decisions rather than passive reference material.
+The player should learn by doing more than reading, but the action must remain academically and professionally meaningful. A choice is useful when it clarifies screenplay structure, staging, acting, image, sound, editing, production method or historical context.
 
 ## What the game is not
 
 HG Film Producer is not:
 
-- A pure film quiz.
-- A generic tycoon.
-- An Excel economy simulator.
-- An AI manuscript generator.
+- A budget, schedule or resource-management simulator.
+- A generic tycoon or studio-economy game.
+- A points game.
+- A rank ladder built around Assistant, Producer or Auteur titles.
+- A best-score chase.
+- A quiz that rewards guessing without explanation.
+- An AI screenplay generator.
 - Just a film encyclopedia.
-- A clone of The Movies or Football Manager.
 
-These references can help describe ambition, scale or genre adjacency, but they must not replace the game's own purpose: learning film by producing films under constraints.
+Budget, time, technology, location and working conditions may appear when they are documented facts that explain how a real film was made. They must not become a universal simulated resource system detached from the film being studied.
 
-## Current modes
+## Stable mode: Production Cases
 
-### Production Cases
+Production Cases is the stable MVP and the reference model for the app.
 
-Production Cases is the stable MVP checkpoint.
-
-It is a case-based training mode that teaches film logic through concrete production choices. It is the reference loop for the app because it already expresses the essential promise in a focused form:
+Each case focuses on one film and breaks its filmmaking into concrete phases. The player compares approaches, chooses the one that best explains the film, reads immediate feedback and completes a learning report.
 
 ```text
-choose case → make choices → score/report → improve best result
+choose a film
+→ study the film-specific targets
+→ compare plausible approaches
+→ choose an explanation
+→ read why it fits, partly fits or does not fit
+→ read the learning report and sources
+→ review or continue
 ```
 
-Production Cases should remain the clearest checkpoint for whether new ideas actually improve film-production decision-making.
+There is no numerical score and no prestige tier. Progress records only which cases and phases have been studied.
 
-### Studio Career
+## Pedagogical assessment
 
-Studio Career is an experimental playable branch.
+The system may internally distinguish between:
 
-It is the career/studio mode and tests whether the player can use film logic across a production pipeline. It should be treated as a playable experiment rather than the stable main MVP.
+- a choice that clearly matches the documented film method;
+- a choice that explains part of the method;
+- a choice that should be reconsidered.
 
-Studio Career must not be expanded with new systems before focused playtesting shows what is already working, what is confusing and what should be removed, clarified or deepened.
+These distinctions exist only to select useful feedback and identify material worth reviewing. They must not be converted into points, ranks, currency, rewards or public performance labels.
 
-## Core player fantasy
+A wrong or partial choice is not a punishment. It is an opportunity to compare methods and understand the film more precisely.
 
-The player should feel:
+## Learning report
 
-- I run a film studio.
-- I make production choices under constraints.
-- I learn why film choices work.
-- I build taste, method, reputation and career.
-- I become better because I understand film better.
+After all phases are completed, the case report should show:
 
-The fantasy is not simply to accumulate money, unlock content or generate scripts. The fantasy is to become a better film producer by developing judgment under pressure.
+- which methods the player identified clearly;
+- which phases are worth comparing again;
+- the central film-craft lesson;
+- the sources supporting the case.
 
-## Core loop
+The report must not show a score, best result, rank or threshold for advancement.
 
-For the long-term game:
+## Progress
 
-```text
-research/inspiration
-→ choose production direction
-→ make constrained choices
-→ complete production
-→ receive result/critique
-→ learn film/craft principle
-→ improve next production
-```
+Progress exists to help the player return to learning:
 
-Every mode and system should be evaluated by whether it strengthens this loop or distracts from it.
+- Not started
+- In progress
+- Completed
+
+Completion means that the player has worked through the case. It does not certify mastery and does not rank the player against anyone else.
+
+## Film history and sources
+
+Film history is part of the explanation, not decorative trivia. Production claims should be supported by filmmaker interviews, cinematographer accounts, archival records, film institutes, established trade publications or comparable evidence.
+
+Sources should help explain why a method was used, what practical conditions shaped it and how the choice appears in the finished film.
 
 ## Design pillars
 
-### Knowledge through action
+### Film-specific knowledge
 
-The player should learn by making decisions, seeing consequences and improving the next attempt. Explanations matter, but they should support play rather than replace it.
+Every case must teach something concrete about the film being studied. Generic management dilemmas are not enough.
 
-### Film history as engine, not trivia
+### Explanation after choice
 
-Film history should create production possibilities, constraints, comparisons and craft lessons. It should not become isolated quiz content.
+The player should always learn why an alternative fits, partly fits or fails to explain the film.
 
-### Constraints create meaning
+### Comparison builds understanding
 
-Budget, time, crew, format, culture, location, audience, technology and taste should make choices meaningful. A choice without pressure is usually not yet a game choice.
+The value of a choice comes from comparing methods. Alternatives should be plausible enough to reveal meaningful distinctions.
 
-### Production choices should teach craft
+### Craft areas remain connected
 
-Choices should reveal something about script, staging, cinematography, editing, sound, performance, genre, audience or production strategy.
+Screenplay, directing, performance, cinematography, production design, editing and sound should be shown as interacting parts of one film—not isolated trivia categories.
 
-### Every system must feed the next production
+### Sources remain inspectable
 
-Progression, reputation, economy, research, critique and unlocks should help the player make a better next production. If a system does not feed back into production decisions, it should be questioned.
+A verified case must expose its evidence. The game should distinguish clearly between source-verified material and material still awaiting research.
 
-### One playable motor at a time
+### No motivational clutter
 
-Do not build several half-formed games at once. Production Cases is the stable reference motor. Studio Career is the experimental motor. New work should clarify one of these before introducing another major playable structure.
+Points, badges, streaks, ranks and simulated economy must not displace the subject matter. The film and the explanation are the reward.
+
+## Studio Career
+
+Studio Career is not the current reference model and must not steer Production Cases toward simulation mechanics.
+
+Any future career structure must remain subordinate to learning. It may organize cases, roles or curricula, but it must not turn the main game into budget management, prestige accumulation or an economy simulator.
 
 ## Expansion rule
 
 Before adding a feature, ask:
 
-- Does this help the player make better film-production choices?
-- Does this teach film through action?
-- Does this improve Production Cases or Studio Career clarity?
-- Does this belong now, or later?
+- Does this teach a concrete film concept?
+- Is the choice tied to a real film, method or documented production condition?
+- Does the feedback explain why?
+- Does it help the player compare techniques?
+- Can the same learning goal be achieved without points, ranks or simulated resources?
 
-If the answer is unclear, the feature should wait. The game should grow by strengthening its playable understanding of film, not by drifting into generic tycoon systems, quiz systems or AI-writing-tool features.
+If the learning value is unclear, the feature should wait. HG Film Producer grows by improving film understanding, not by adding generic game systems.

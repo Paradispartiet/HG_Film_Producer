@@ -77,10 +77,20 @@ The registry is intentionally separate from the large brief file. This keeps evi
 
 ## Player-facing status
 
-The Production Cases library displays the current verified count and marks each documented case before it is opened. The Case report exposes the evidence summary and direct source links after completion.
+The Production Cases library displays the current verified count and marks each documented case before it is opened. The completed learning report exposes the evidence summary and direct source links.
+
+Verification supports learning; it does not support a score or ranking. A verified case gives the player stronger explanations and inspectable evidence, not more points or a higher tier.
 
 ## Next step
 
-Twenty cases now have source-backed verification. Pause broad source expansion and use the verified set as the first controlled group for stronger producer mechanics, including constraints and consequences that carry between production phases.
+Twenty cases now have source-backed verification. Pause broad source expansion and use the verified set as the controlled group for improving the academic and craft quality of the learning cases:
+
+- make every alternative plausible and educational;
+- ensure feedback explains the concrete distinction between choices;
+- connect screenplay, directing, performance, image, editing and sound;
+- expose the most useful evidence in the completed learning report;
+- identify gaps where a case still teaches generic production language instead of the specific film.
+
+Do not add generic budget, schedule, resource or prestige mechanics to this set. Production conditions belong in a case only when they are documented facts that explain the film's actual method.
 
 Do not mark the full catalogue verified based on a generic filmography source or on the internal consistency of the brief alone.

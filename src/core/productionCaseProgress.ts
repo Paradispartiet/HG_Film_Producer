@@ -1,5 +1,3 @@
-import { isProductionCaseInterventionId, type ProductionCaseInterventionId } from "./productionCaseInterventions.js";
-
 export const productionCaseProgressStorageKey = "hg_film_production_case_progress_v1";
 export const productionCaseBestResultsStorageKey = "hg_film_production_case_best_results_v1";
 export const productionCaseLibraryControlsStorageKey = "hg_film_production_case_library_controls_v1";
@@ -8,7 +6,6 @@ export type ProductionCaseProgressEntry = {
   readonly scenarioId: string;
   readonly completedMissionIds: readonly string[];
   readonly selectedChoicesByMissionId?: Readonly<Record<string, string>>;
-  readonly selectedInterventionsByMissionId?: Readonly<Record<string, ProductionCaseInterventionId>>;
   readonly updatedAt?: string;
 };
 
@@ -253,22 +250,11 @@ function normalizeEntry(scenarioId: string, value: unknown): ProductionCaseProgr
         ),
       )
     : undefined;
-  const selectedInterventionsByMissionId = maybeEntry.selectedInterventionsByMissionId
-    && typeof maybeEntry.selectedInterventionsByMissionId === "object"
-    ? Object.fromEntries(
-        Object.entries(maybeEntry.selectedInterventionsByMissionId).filter(
-          (entry): entry is [string, ProductionCaseInterventionId] => isProductionCaseInterventionId(entry[1]),
-        ),
-      )
-    : undefined;
 
   return {
     scenarioId,
     completedMissionIds,
     ...(selectedChoicesByMissionId && Object.keys(selectedChoicesByMissionId).length > 0 ? { selectedChoicesByMissionId } : {}),
-    ...(selectedInterventionsByMissionId && Object.keys(selectedInterventionsByMissionId).length > 0
-      ? { selectedInterventionsByMissionId }
-      : {}),
     ...(typeof maybeEntry.updatedAt === "string" ? { updatedAt: maybeEntry.updatedAt } : {}),
   };
 }
@@ -320,9 +306,6 @@ export function setProductionCaseMissionCompletion(
       scenarioId,
       completedMissionIds: missionIds,
       ...(entry.selectedChoicesByMissionId ? { selectedChoicesByMissionId: entry.selectedChoicesByMissionId } : {}),
-      ...(entry.selectedInterventionsByMissionId
-        ? { selectedInterventionsByMissionId: entry.selectedInterventionsByMissionId }
-        : {}),
       updatedAt,
     },
   };
@@ -346,36 +329,6 @@ export function setProductionCaseMissionChoice(
         ...entry.selectedChoicesByMissionId,
         [missionId]: choiceId,
       },
-      ...(entry.selectedInterventionsByMissionId
-        ? { selectedInterventionsByMissionId: entry.selectedInterventionsByMissionId }
-        : {}),
-      updatedAt,
-    },
-  };
-}
-
-export function setProductionCaseMissionIntervention(
-  state: ProductionCaseProgressState,
-  scenarioId: string,
-  missionId: string,
-  interventionId: ProductionCaseInterventionId | undefined,
-  updatedAt = new Date().toISOString(),
-): ProductionCaseProgressState {
-  const entry = getProductionCaseProgressEntry(state, scenarioId);
-  const selectedInterventionsByMissionId: Record<string, ProductionCaseInterventionId> = {
-    ...entry.selectedInterventionsByMissionId,
-  };
-
-  if (interventionId) selectedInterventionsByMissionId[missionId] = interventionId;
-  else delete selectedInterventionsByMissionId[missionId];
-
-  return {
-    ...state,
-    [scenarioId]: {
-      scenarioId,
-      completedMissionIds: entry.completedMissionIds,
-      ...(entry.selectedChoicesByMissionId ? { selectedChoicesByMissionId: entry.selectedChoicesByMissionId } : {}),
-      ...(Object.keys(selectedInterventionsByMissionId).length > 0 ? { selectedInterventionsByMissionId } : {}),
       updatedAt,
     },
   };
@@ -1220,10 +1173,6 @@ function isValidProductionCaseProgressEntry(scenarioId: string, value: unknown):
   if ("selectedChoicesByMissionId" in value && value.selectedChoicesByMissionId !== undefined) {
     if (!isRecord(value.selectedChoicesByMissionId)) return false;
     if (!Object.values(value.selectedChoicesByMissionId).every((choiceId) => typeof choiceId === "string")) return false;
-  }
-  if ("selectedInterventionsByMissionId" in value && value.selectedInterventionsByMissionId !== undefined) {
-    if (!isRecord(value.selectedInterventionsByMissionId)) return false;
-    if (!Object.values(value.selectedInterventionsByMissionId).every(isProductionCaseInterventionId)) return false;
   }
   if ("updatedAt" in value && value.updatedAt !== undefined && typeof value.updatedAt !== "string") return false;
   return true;
