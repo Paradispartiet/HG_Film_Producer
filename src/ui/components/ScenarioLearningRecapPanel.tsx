@@ -1,6 +1,10 @@
 import { calculateScenarioAlignmentScore } from "../data/scenarioAlignmentScore";
 import { createScenarioLearningRecap } from "../data/scenarioLearningRecap";
 import type { ScenarioProductionBrief } from "../data/scenarioProductionBriefs";
+import {
+  getProductionCaseVerification,
+  type ProductionCaseVerificationRecord,
+} from "../data/scenarioProductionVerification";
 import { createScenarioTargetChecklist } from "../data/scenarioTargetChecklist";
 
 interface ScenarioLearningRecapPanelProps {
@@ -17,9 +21,10 @@ export function ScenarioLearningRecapPanel({ scenarioTitle, brief, selectedTarge
   const matchedTargetCount = selectedTargetLabels.length;
   const missingTargetCount = unselectedTargetLabels.length;
   const alignmentScore = calculateScenarioAlignmentScore({ selectedTargetIds, totalTargets: checklist.length });
+  const verification = getProductionCaseVerification(brief.scenarioId);
   const recap = createScenarioLearningRecap({
     scenarioTitle,
-    verificationStatus: brief.verificationStatus,
+    verificationStatus: verification?.status ?? brief.verificationStatus,
     selectedTargetLabels,
     unselectedTargetLabels,
     alignmentTier: alignmentScore.tier
@@ -63,6 +68,37 @@ export function ScenarioLearningRecapPanel({ scenarioTitle, brief, selectedTarge
       </div>
       <p className="scenario-learning-replay">This Case report is the endpoint for the run. Replay to improve missing craft targets, or continue to another case from Production Cases.</p>
       <p className="scenario-learning-note">{recap.verificationNote}</p>
+      {verification ? <ProductionCaseVerificationEvidence record={verification} /> : null}
     </section>
+  );
+}
+
+function ProductionCaseVerificationEvidence({
+  record,
+}: {
+  readonly record: ProductionCaseVerificationRecord;
+}) {
+  return (
+    <details className="production-case-verification-evidence">
+      <summary>
+        <span>Source verified</span>
+        <small>{record.sources.length} documented sources · verified {record.verifiedAt}</small>
+      </summary>
+      <div className="production-case-verification-content">
+        <p>{record.summary}</p>
+        <ul>
+          {record.sources.map((source) => (
+            <li key={source.url}>
+              <div>
+                <strong>{source.title}</strong>
+                <span>{source.publisher} · {source.supports.join(", ")}</span>
+                <p>{source.note}</p>
+              </div>
+              <a href={source.url} rel="noreferrer" target="_blank">Open source</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </details>
   );
 }

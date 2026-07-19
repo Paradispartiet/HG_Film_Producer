@@ -4,6 +4,7 @@ import { createRoot } from "react-dom/client";
 import { App } from "./App";
 import "./styles.css";
 import "./productionCaseDensity.css";
+import "./productionCaseVerification.css";
 
 console.info("HG Film Producer booting");
 
