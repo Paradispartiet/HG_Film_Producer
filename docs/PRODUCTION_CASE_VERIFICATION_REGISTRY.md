@@ -17,22 +17,24 @@ Source records are divided into reviewable batch files:
 - `src/ui/data/scenarioProductionVerificationTechnologyBatch.ts`
 - `src/ui/data/scenarioProductionVerificationLandscapeBatch.ts`
 - `src/ui/data/scenarioProductionVerificationConstructedWorldsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationMinimalistRoadBatch.ts`
 
-The unified registry currently covers thirty-two cases.
+The unified registry currently covers thirty-six cases.
 
-The same thirty-two cases also have source-backed film-history profiles in:
+The same thirty-six cases also have source-backed film-history profiles in:
 
 - `src/ui/data/scenarioFilmStudyMap.ts`
 - `src/ui/data/scenarioFilmStudyTechnologyBatch.ts`
 - `src/ui/data/scenarioFilmStudyLandscapeBatch.ts`
 - `src/ui/data/scenarioFilmStudyConstructedWorldsBatch.ts`
+- `src/ui/data/scenarioFilmStudyMinimalistRoadBatch.ts`
 
 The complete 17-area audit is defined in:
 
 - `src/core/filmStudyCoverage.ts`
 - `docs/FILM_HISTORY_AND_CRAFT_MAPPING.md`
 
-All 161 cases receive the same audit structure, but this does **not** mean that all 161 are verified. The remaining 129 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
+All 161 cases receive the same audit structure, but this does **not** mean that all 161 are verified. The remaining 125 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
 
 ### Pilot batch
 
@@ -111,6 +113,20 @@ This batch compares four ways an abstract premise becomes a physical production 
 - contained science fiction built from a constraint-shaped screenplay, one principal actor, studio design, miniatures and restrained digital compositing;
 - time-travel city fantasy built through Paris locations, period research, frame-specific redressing, film stocks, lenses, lighting and color separation.
 
+### Minimalist road cinema and designed estrangement batch
+
+- `scenario_stranger_than_paradise_1984`
+- `scenario_paris_texas_1984`
+- `scenario_the_bothersome_man_2006`
+- `scenario_nebraska_2013`
+
+This batch compares four ways restraint, geography and image design create historical meaning:
+
+- early American independent minimalism built from leftover black-and-white stock, fixed master-shot vignettes and ellipsis;
+- New German Cinema encountering the American road movie through chronological location production, available light, color and music;
+- Nordic dystopian satire built through immaculate lifestyle design, 35mm calm, deadpan performance and controlled absurdity;
+- contemporary Midwestern road cinema built through local casting, real locations and a tested digital-to-black-and-white image pipeline.
+
 ## Verification rule
 
 A registry record must:
@@ -162,7 +178,7 @@ Verification supports learning; it does not support a score or ranking. A verifi
 
 ## Next step
 
-Thirty-two cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 129 in coherent historical batches:
+Thirty-six cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 125 in coherent historical batches:
 
 - make every historical and technical alternative plausible and educational;
 - ensure feedback explains the concrete distinction between choices;
