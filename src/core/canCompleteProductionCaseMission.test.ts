@@ -11,7 +11,7 @@ const screenplayChoices = [
 test("Production Case phase cannot complete before a choice is selected", () => {
   assert.equal(
     canCompleteProductionCaseMission(
-      { selectedChoicesByMissionId: undefined },
+      {},
       "mission-screenplay",
       screenplayChoices,
     ),
