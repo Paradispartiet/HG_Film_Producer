@@ -1,0 +1,33 @@
+.scenario-choice-projection {
+  display: block;
+  margin-top: 0.35rem;
+  font-weight: 650;
+}
+
+.scenario-choice-risk {
+  display: block;
+  margin-top: 0.2rem;
+  line-height: 1.35;
+}
+
+.scenario-choice-button--risk-strained {
+  border-color: rgba(255, 194, 92, 0.62);
+}
+
+.scenario-choice-button--risk-over_budget,
+.scenario-choice-button--risk-over_schedule {
+  border-color: rgba(255, 126, 94, 0.78);
+  box-shadow: inset 0 0 0 1px rgba(255, 126, 94, 0.16);
+}
+
+.scenario-choice-button--risk-overextended {
+  border-color: rgba(255, 82, 112, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(255, 82, 112, 0.24);
+}
+
+.scenario-choice-button--risk-strained .scenario-choice-risk,
+.scenario-choice-button--risk-over_budget .scenario-choice-risk,
+.scenario-choice-button--risk-over_schedule .scenario-choice-risk,
+.scenario-choice-button--risk-overextended .scenario-choice-risk {
+  font-weight: 700;
+}
