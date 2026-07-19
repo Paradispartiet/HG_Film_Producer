@@ -1,0 +1,210 @@
+name: Apply production intervention integration
+
+on:
+  push:
+    branches:
+      - agent/production-rescue-interventions
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/production-rescue-interventions
+
+      - name: Patch production intervention integration
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_once(path: str, old: str, new: str) -> None:
+              file_path = Path(path)
+              text = file_path.read_text()
+              if old not in text:
+                  raise SystemExit(f"Expected source block not found in {path}: {old[:140]!r}")
+              file_path.write_text(text.replace(old, new, 1))
+
+          progress = "src/core/productionCaseProgress.ts"
+          replace_once(
+              progress,
+              'export const productionCaseProgressStorageKey = "hg_film_production_case_progress_v1";',
+              'import { isProductionCaseInterventionId, type ProductionCaseInterventionId } from "./productionCaseInterventions.js";\n\nexport const productionCaseProgressStorageKey = "hg_film_production_case_progress_v1";',
+          )
+          replace_once(
+              progress,
+              '''  readonly completedMissionIds: readonly string[];\n  readonly selectedChoicesByMissionId?: Readonly<Record<string, string>>;\n  readonly updatedAt?: string;''',
+              '''  readonly completedMissionIds: readonly string[];\n  readonly selectedChoicesByMissionId?: Readonly<Record<string, string>>;\n  readonly selectedInterventionsByMissionId?: Readonly<Record<string, ProductionCaseInterventionId>>;\n  readonly updatedAt?: string;''',
+          )
+          replace_once(
+              progress,
+              '''  const selectedChoicesByMissionId = maybeEntry.selectedChoicesByMissionId && typeof maybeEntry.selectedChoicesByMissionId === "object"\n    ? Object.fromEntries(\n        Object.entries(maybeEntry.selectedChoicesByMissionId).filter(\n          (entry): entry is [string, string] => typeof entry[1] === "string",\n        ),\n      )\n    : undefined;''',
+              '''  const selectedChoicesByMissionId = maybeEntry.selectedChoicesByMissionId && typeof maybeEntry.selectedChoicesByMissionId === "object"\n    ? Object.fromEntries(\n        Object.entries(maybeEntry.selectedChoicesByMissionId).filter(\n          (entry): entry is [string, string] => typeof entry[1] === "string",\n        ),\n      )\n    : undefined;\n  const selectedInterventionsByMissionId = maybeEntry.selectedInterventionsByMissionId\n    && typeof maybeEntry.selectedInterventionsByMissionId === "object"\n    ? Object.fromEntries(\n        Object.entries(maybeEntry.selectedInterventionsByMissionId).filter(\n          (entry): entry is [string, ProductionCaseInterventionId] => isProductionCaseInterventionId(entry[1]),\n        ),\n      )\n    : undefined;''',
+          )
+          replace_once(
+              progress,
+              '''    ...(selectedChoicesByMissionId && Object.keys(selectedChoicesByMissionId).length > 0 ? { selectedChoicesByMissionId } : {}),\n    ...(typeof maybeEntry.updatedAt === "string" ? { updatedAt: maybeEntry.updatedAt } : {}),''',
+              '''    ...(selectedChoicesByMissionId && Object.keys(selectedChoicesByMissionId).length > 0 ? { selectedChoicesByMissionId } : {}),\n    ...(selectedInterventionsByMissionId && Object.keys(selectedInterventionsByMissionId).length > 0\n      ? { selectedInterventionsByMissionId }\n      : {}),\n    ...(typeof maybeEntry.updatedAt === "string" ? { updatedAt: maybeEntry.updatedAt } : {}),''',
+          )
+          replace_once(
+              progress,
+              '''      ...(entry.selectedChoicesByMissionId ? { selectedChoicesByMissionId: entry.selectedChoicesByMissionId } : {}),\n      updatedAt,''',
+              '''      ...(entry.selectedChoicesByMissionId ? { selectedChoicesByMissionId: entry.selectedChoicesByMissionId } : {}),\n      ...(entry.selectedInterventionsByMissionId\n        ? { selectedInterventionsByMissionId: entry.selectedInterventionsByMissionId }\n        : {}),\n      updatedAt,''',
+          )
+          replace_once(
+              progress,
+              '''      selectedChoicesByMissionId: {\n        ...entry.selectedChoicesByMissionId,\n        [missionId]: choiceId,\n      },\n      updatedAt,''',
+              '''      selectedChoicesByMissionId: {\n        ...entry.selectedChoicesByMissionId,\n        [missionId]: choiceId,\n      },\n      ...(entry.selectedInterventionsByMissionId\n        ? { selectedInterventionsByMissionId: entry.selectedInterventionsByMissionId }\n        : {}),\n      updatedAt,''',
+          )
+          replace_once(
+              progress,
+              '\n\nexport type ProductionCaseMissionScoreChoiceQuality = "match" | "partial" | "miss";',
+              '''\n\nexport function setProductionCaseMissionIntervention(\n  state: ProductionCaseProgressState,\n  scenarioId: string,\n  missionId: string,\n  interventionId: ProductionCaseInterventionId | undefined,\n  updatedAt = new Date().toISOString(),\n): ProductionCaseProgressState {\n  const entry = getProductionCaseProgressEntry(state, scenarioId);\n  const selectedInterventionsByMissionId: Record<string, ProductionCaseInterventionId> = {\n    ...entry.selectedInterventionsByMissionId,\n  };\n\n  if (interventionId) selectedInterventionsByMissionId[missionId] = interventionId;\n  else delete selectedInterventionsByMissionId[missionId];\n\n  return {\n    ...state,\n    [scenarioId]: {\n      scenarioId,\n      completedMissionIds: entry.completedMissionIds,\n      ...(entry.selectedChoicesByMissionId ? { selectedChoicesByMissionId: entry.selectedChoicesByMissionId } : {}),\n      ...(Object.keys(selectedInterventionsByMissionId).length > 0 ? { selectedInterventionsByMissionId } : {}),\n      updatedAt,\n    },\n  };\n}\n\nexport type ProductionCaseMissionScoreChoiceQuality = "match" | "partial" | "miss";''',
+          )
+          replace_once(
+              progress,
+              '''  if ("selectedChoicesByMissionId" in value && value.selectedChoicesByMissionId !== undefined) {\n    if (!isRecord(value.selectedChoicesByMissionId)) return false;\n    if (!Object.values(value.selectedChoicesByMissionId).every((choiceId) => typeof choiceId === "string")) return false;\n  }\n  if ("updatedAt" in value && value.updatedAt !== undefined && typeof value.updatedAt !== "string") return false;''',
+              '''  if ("selectedChoicesByMissionId" in value && value.selectedChoicesByMissionId !== undefined) {\n    if (!isRecord(value.selectedChoicesByMissionId)) return false;\n    if (!Object.values(value.selectedChoicesByMissionId).every((choiceId) => typeof choiceId === "string")) return false;\n  }\n  if ("selectedInterventionsByMissionId" in value && value.selectedInterventionsByMissionId !== undefined) {\n    if (!isRecord(value.selectedInterventionsByMissionId)) return false;\n    if (!Object.values(value.selectedInterventionsByMissionId).every(isProductionCaseInterventionId)) return false;\n  }\n  if ("updatedAt" in value && value.updatedAt !== undefined && typeof value.updatedAt !== "string") return false;''',
+          )
+
+          constraints = "src/core/productionCaseConstraints.ts"
+          replace_once(
+              constraints,
+              'import type { ProductionCaseProgressEntry } from "./productionCaseProgress.js";',
+              'import { getProductionCaseIntervention } from "./productionCaseInterventions.js";\nimport type { ProductionCaseProgressEntry } from "./productionCaseProgress.js";',
+          )
+          replace_once(
+              constraints,
+              '''  readonly creativeControl: number;\n  readonly choicesMade: number;\n  readonly status: ProductionCaseConstraintStatus;''',
+              '''  readonly creativeControl: number;\n  readonly choicesMade: number;\n  readonly interventionsMade: number;\n  readonly status: ProductionCaseConstraintStatus;''',
+          )
+          replace_once(
+              constraints,
+              '''  progress: Pick<ProductionCaseProgressEntry, "selectedChoicesByMissionId">,\n): ProductionCaseConstraintSummary {\n  const selectedChoicesByMissionId = progress.selectedChoicesByMissionId ?? {};\n  let budgetRemaining = productionCaseStartingBudget;\n  let scheduleRemaining = productionCaseStartingSchedule;\n  let creativeControl = 0;\n  let choicesMade = 0;''',
+              '''  progress: Pick<\n    ProductionCaseProgressEntry,\n    "selectedChoicesByMissionId" | "selectedInterventionsByMissionId"\n  >,\n): ProductionCaseConstraintSummary {\n  const selectedChoicesByMissionId = progress.selectedChoicesByMissionId ?? {};\n  const selectedInterventionsByMissionId = progress.selectedInterventionsByMissionId ?? {};\n  let budgetRemaining = productionCaseStartingBudget;\n  let scheduleRemaining = productionCaseStartingSchedule;\n  let creativeControl = 0;\n  let choicesMade = 0;\n  let interventionsMade = 0;''',
+          )
+          replace_once(
+              constraints,
+              '''    creativeControl += impact.creativeControlDelta;\n    choicesMade += 1;\n  }''',
+              '''    creativeControl += impact.creativeControlDelta;\n    choicesMade += 1;\n\n    const intervention = getProductionCaseIntervention(selectedInterventionsByMissionId[mission.id]);\n    if (!intervention) continue;\n    budgetRemaining += intervention.budgetDelta;\n    scheduleRemaining += intervention.scheduleDelta;\n    creativeControl += intervention.creativeControlDelta;\n    interventionsMade += 1;\n  }''',
+          )
+          replace_once(
+              constraints,
+              '''    creativeControl,\n    choicesMade,\n    status,''',
+              '''    creativeControl,\n    choicesMade,\n    interventionsMade,\n    status,''',
+          )
+          replace_once(
+              constraints,
+              '''  progress: Pick<ProductionCaseProgressEntry, "selectedChoicesByMissionId">,\n  missionId: string,''',
+              '''  progress: Pick<\n    ProductionCaseProgressEntry,\n    "selectedChoicesByMissionId" | "selectedInterventionsByMissionId"\n  >,\n  missionId: string,''',
+          )
+
+          forecast = "src/core/productionCaseConstraintForecast.ts"
+          replace_once(
+              forecast,
+              '  progress: Pick<ProductionCaseProgressEntry, "selectedChoicesByMissionId">,',
+              '''  progress: Pick<\n    ProductionCaseProgressEntry,\n    "selectedChoicesByMissionId" | "selectedInterventionsByMissionId"\n  >,''',
+          )
+          replace_once(
+              forecast,
+              '''    { selectedChoicesByMissionId },\n  );''',
+              '''    {\n      selectedChoicesByMissionId,\n      selectedInterventionsByMissionId: progress.selectedInterventionsByMissionId,\n    },\n  );''',
+          )
+
+          outcome = "src/core/productionCaseOutcome.ts"
+          replace_once(
+              outcome,
+              '  progress: Pick<ProductionCaseProgressEntry, "completedMissionIds" | "selectedChoicesByMissionId">,',
+              '''  progress: Pick<\n    ProductionCaseProgressEntry,\n    "completedMissionIds" | "selectedChoicesByMissionId" | "selectedInterventionsByMissionId"\n  >,''',
+          )
+
+          panel = "src/ui/components/ScenarioProductionBriefPanel.tsx"
+          replace_once(
+              panel,
+              'import { getProductionCaseChoiceConstraintForecast } from "../../core/productionCaseConstraintForecast";\nimport {',
+              '''import { getProductionCaseChoiceConstraintForecast } from "../../core/productionCaseConstraintForecast";\nimport { getProductionCaseInterventionForecast } from "../../core/productionCaseInterventionForecast";\nimport {\n  getProductionCaseIntervention,\n  productionCaseInterventions,\n  type ProductionCaseInterventionId,\n} from "../../core/productionCaseInterventions";\nimport {''',
+          )
+          replace_once(
+              panel,
+              '''  setProductionCaseMissionChoice,\n  setProductionCaseMissionCompletion,''',
+              '''  setProductionCaseMissionChoice,\n  setProductionCaseMissionCompletion,\n  setProductionCaseMissionIntervention,''',
+          )
+          replace_once(
+              panel,
+              '''  const completedMissionIds = progressEntry.completedMissionIds;\n  const selectedChoicesByMissionId = progressEntry.selectedChoicesByMissionId ?? {};''',
+              '''  const completedMissionIds = progressEntry.completedMissionIds;\n  const selectedChoicesByMissionId = progressEntry.selectedChoicesByMissionId ?? {};\n  const selectedInterventionsByMissionId = progressEntry.selectedInterventionsByMissionId ?? {};''',
+          )
+          replace_once(
+              panel,
+              '''  function resetCurrentScenario() {\n    updateProgress(resetProductionCaseScenarioProgress(progressState, scenarioId));\n  }''',
+              '''  function selectIntervention(\n    missionId: string,\n    interventionId: ProductionCaseInterventionId | undefined,\n  ) {\n    updateProgress(\n      setProductionCaseMissionIntervention(\n        progressState,\n        scenarioId,\n        missionId,\n        interventionId,\n      ),\n    );\n  }\n\n  function resetCurrentScenario() {\n    updateProgress(resetProductionCaseScenarioProgress(progressState, scenarioId));\n  }''',
+          )
+          replace_once(
+              panel,
+              '''        const selectedChoiceId = selectedChoicesByMissionId[mission.id];\n        const selectedChoice = mission.choices.find((choice) => choice.id === selectedChoiceId);\n        const phaseScore = getProductionCaseMissionScoreSummary(mission, selectedChoiceId);''',
+              '''        const selectedChoiceId = selectedChoicesByMissionId[mission.id];\n        const selectedChoice = mission.choices.find((choice) => choice.id === selectedChoiceId);\n        const selectedInterventionId = selectedInterventionsByMissionId[mission.id];\n        const selectedIntervention = getProductionCaseIntervention(selectedInterventionId);\n        const phaseScore = getProductionCaseMissionScoreSummary(mission, selectedChoiceId);''',
+          )
+          replace_once(
+              panel,
+              '''                  {selectedChoice ? <p>{selectedChoice.label}</p> : <p>No production approach chosen yet.</p>}''',
+              '''                  {selectedChoice ? (\n                    <p>{selectedChoice.label}{selectedIntervention ? ` · ${selectedIntervention.label}` : ""}</p>\n                  ) : <p>No production approach chosen yet.</p>}''',
+          )
+          replace_once(
+              panel,
+              '''              </div>\n              <p className="scenario-mission-learning">\n                <strong>Understand the production choice:</strong> {mission.learningFocus}\n              </p>''',
+              '''              </div>\n              {selectedChoice ? (\n                <ProductionCaseInterventionPanel\n                  missionId={mission.id}\n                  missions={missions}\n                  onSelect={(interventionId) => selectIntervention(mission.id, interventionId)}\n                  progress={progressEntry}\n                  selectedInterventionId={selectedInterventionId}\n                />\n              ) : null}\n              <p className="scenario-mission-learning">\n                <strong>Understand the production choice:</strong> {mission.learningFocus}\n              </p>''',
+          )
+          replace_once(
+              panel,
+              'function ProductionCaseConstraintLedger({',
+              '''function ProductionCaseInterventionPanel({\n  missionId,\n  missions,\n  onSelect,\n  progress,\n  selectedInterventionId,\n}: {\n  readonly missionId: string;\n  readonly missions: readonly ProductionCaseMission[];\n  readonly onSelect: (interventionId: ProductionCaseInterventionId | undefined) => void;\n  readonly progress: ReturnType<typeof getProductionCaseProgressEntry>;\n  readonly selectedInterventionId: ProductionCaseInterventionId | undefined;\n}) {\n  const forecasts = productionCaseInterventions.flatMap((intervention) => {\n    const forecast = getProductionCaseInterventionForecast(\n      missions,\n      progress,\n      missionId,\n      intervention.id,\n    );\n    return forecast ? [forecast] : [];\n  });\n  const before = forecasts[0]?.before;\n  if (!before) return null;\n  if (before.status === "on_track" && !selectedInterventionId) return null;\n\n  const selectedIntervention = getProductionCaseIntervention(selectedInterventionId);\n\n  return (\n    <section className="production-intervention-panel" aria-label="Production intervention">\n      <div className="production-intervention-heading">\n        <span>Production intervention</span>\n        <strong>{before.status === "strained" ? "Protect the remaining margin" : "Recover the production"}</strong>\n        <small>Interventions change delivery resources, not the craft score.</small>\n      </div>\n      <div className="production-intervention-grid">\n        {forecasts.map(({ effect, intervention, projected }) => (\n          <button\n            aria-pressed={selectedInterventionId === intervention.id}\n            className={[\n              "production-intervention-option",\n              selectedInterventionId === intervention.id ? "production-intervention-option--selected" : "",\n              `production-intervention-option--${effect}`,\n            ].filter(Boolean).join(" ")}\n            key={intervention.id}\n            onClick={() => onSelect(intervention.id)}\n            type="button"\n          >\n            <strong>{intervention.label}</strong>\n            <small>{intervention.description}</small>\n            <small>Impact · Budget {formatConstraintDelta(intervention.budgetDelta)} · Time {formatConstraintDelta(intervention.scheduleDelta)} · Control {formatConstraintDelta(intervention.creativeControlDelta)}</small>\n            <small className="production-intervention-projection">\n              After intervention · Budget {projected.budgetRemaining}/{projected.startingBudget} · Time {projected.scheduleRemaining}/{projected.startingSchedule} · Control {formatConstraintDelta(projected.creativeControl)} · {projected.label}\n            </small>\n          </button>\n        ))}\n      </div>\n      {selectedIntervention ? (\n        <div className="production-intervention-current">\n          <small>Selected intervention: {selectedIntervention.label}</small>\n          <button className="secondary-button production-intervention-clear" onClick={() => onSelect(undefined)} type="button">\n            Remove intervention\n          </button>\n        </div>\n      ) : null}\n    </section>\n  );\n}\n\nfunction ProductionCaseConstraintLedger({''',
+          )
+          replace_once(
+              panel,
+              '''        <div>\n          <span>Creative control</span>\n          <strong>{formatConstraintDelta(summary.creativeControl)}</strong>\n        </div>\n      </div>''',
+              '''        <div>\n          <span>Creative control</span>\n          <strong>{formatConstraintDelta(summary.creativeControl)}</strong>\n        </div>\n        <div>\n          <span>Interventions</span>\n          <strong>{summary.interventionsMade}</strong>\n        </div>\n      </div>''',
+          )
+
+          main = "src/ui/main.tsx"
+          replace_once(
+              main,
+              'import "./productionCaseConstraintForecast.css";\nimport "./productionCaseOutcome.css";',
+              'import "./productionCaseConstraintForecast.css";\nimport "./productionCaseInterventions.css";\nimport "./productionCaseOutcome.css";',
+          )
+
+          doc = "docs/PRODUCTION_CASE_CONSTRAINT_LEDGER.md"
+          replace_once(
+              doc,
+              '## Producer outcome\n',
+              '''## Production interventions\n\nWhen a selected choice leaves the production strained or overrun, the phase offers three optional rescue decisions:\n\n- **Cut scope** restores budget and time but reduces creative control.\n- **Secure bridge financing** restores budget but consumes time and gives up some control.\n- **Buy extra shoot days** restores time by spending additional budget.\n\nOne intervention can be stored per phase. It can be changed or removed, carries forward into later phases, and affects the final production condition and producer-tier cap. Interventions never change the craft score.\n\n## Producer outcome\n''',
+          )
+          replace_once(
+              doc,
+              'The existing storage shape is unchanged. Old saves remain readable; future completed results use the production-aware tier when a new best result is recorded.',
+              'The existing storage key and export version are unchanged. Progress entries now accept an optional intervention map, so old saves and backups remain readable while new rescue decisions persist per phase.',
+          )
+          PY
+
+          rm .github/workflows/apply-production-interventions-patch.yml
+
+      - name: Commit integrated production interventions
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/core/productionCaseProgress.ts \
+            src/core/productionCaseConstraints.ts \
+            src/core/productionCaseConstraintForecast.ts \
+            src/core/productionCaseOutcome.ts \
+            src/ui/components/ScenarioProductionBriefPanel.tsx \
+            src/ui/main.tsx \
+            docs/PRODUCTION_CASE_CONSTRAINT_LEDGER.md \
+            .github/workflows/apply-production-interventions-patch.yml
+          git commit -m "Integrate production rescue interventions"
+          git push origin HEAD:agent/production-rescue-interventions
