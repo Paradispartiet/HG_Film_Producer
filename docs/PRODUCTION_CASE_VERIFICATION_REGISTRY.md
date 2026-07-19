@@ -8,12 +8,21 @@ The source-backed registry lives in:
 
 - `src/ui/data/scenarioProductionVerification.ts`
 
-The first pilot covers:
+The registry currently covers eight cases.
+
+### Pilot batch
 
 - `scenario_the_machinist_2004`
 - `scenario_the_lives_of_others_2006`
 - `scenario_lost_in_translation_2003`
 - `scenario_12_angry_men_1957`
+
+### Historic craft batch
+
+- `scenario_bicycle_thieves_1948`
+- `scenario_vertigo_1958`
+- `scenario_breathless_1960`
+- `scenario_the_shining_1980`
 
 ## Verification rule
 
@@ -39,11 +48,13 @@ The registry is intentionally separate from the large brief file. This keeps evi
 
 ## Next batch
 
-After the pilot is validated, continue with small batches of four to eight cases. Prioritize:
+Continue with small batches of four to eight cases. Prioritize:
 
 1. recommended first cases;
 2. films with distinctive, well-documented production methods;
 3. historically underrepresented decades;
 4. briefs whose strongest claims concern specific lenses, formats, locations, sound systems, editing structures, or production constraints.
+
+The next preferred batch should add distinctive production methods from the 1970s, 1990s, 2000s, and 2010s rather than clustering verification in one decade.
 
 Do not mark the full catalogue verified based on a generic filmography source or on the internal consistency of the brief alone.

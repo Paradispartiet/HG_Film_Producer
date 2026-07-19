@@ -150,6 +150,142 @@ const productionCaseVerificationRecords = {
         note: "Archival edition record identifying the production-history, Lumet, Reginald Rose, and Boris Kaufman materials used to document the film's construction."
       }
     ]
+  },
+  scenario_bicycle_thieves_1948: {
+    scenarioId: "scenario_bicycle_thieves_1948",
+    status: "verified",
+    verifiedAt: "2026-07-19",
+    summary: "The brief's neorealist street realism, nonprofessional casting, human-scale Rome, object-driven survival stakes, and understated cutting are supported by institutional history and close craft analysis.",
+    sources: [
+      {
+        title: "Bicycle Thieves (1948)",
+        publisher: "British Film Institute",
+        url: "https://www.bfi.org.uk/film/594f7408-2fdd-55a0-a347-79370e42e0ed/bicycle-thieves",
+        sourceKind: "film_institute",
+        supports: ["overall", "screenplay", "cinematography"],
+        note: "The BFI documents the film's nonprofessional cast, location work on Rome's streets, postwar social reality, and deliberately simple father-and-son search structure."
+      },
+      {
+        title: "The Bicycle Thief",
+        publisher: "Turner Classic Movies",
+        url: "https://www.tcm.com/articles/12767/the-bicycle-thief",
+        sourceKind: "archive_feature",
+        supports: ["overall", "cinematography"],
+        note: "Production history details De Sica's selection and direction of nonprofessional performers, including factory worker Lamberto Maggiorani and street-discovered Enzo Staiola."
+      },
+      {
+        title: "The Taviani brothers on Bicycle Thieves: It was like a course in directing",
+        publisher: "British Film Institute",
+        url: "https://www.bfi.org.uk/features/taviani-brothers-bicycle-thieves-it-was-like-course-directing",
+        sourceKind: "film_institute",
+        supports: ["cinematography", "editing"],
+        note: "The Tavianis analyse De Sica's restrained succession of shots, internal visual rhymes, and brief tracking move around Bruno rather than showy virtuoso camerawork."
+      }
+    ]
+  },
+  scenario_vertigo_1958: {
+    scenarioId: "scenario_vertigo_1958",
+    status: "verified",
+    verifiedAt: "2026-07-19",
+    summary: "The brief's subjective camera anxiety, height as threat, obsessive repetition, color motifs, early revelation, optical effects, and hypnotic score are supported by detailed cinematography and production histories.",
+    sources: [
+      {
+        title: "Vertigo: Hitchcock's Acrophobic Vision",
+        publisher: "American Cinematographer",
+        url: "https://theasc.com/articles/flashback-vertigo",
+        sourceKind: "archive_feature",
+        supports: ["overall", "cinematography", "editing", "sound"],
+        note: "The ASC history documents VistaVision, extensive location and effects work, the zoom-dolly vertigo effect, green diffusion, circular-set projection, visual motifs, and Bernard Herrmann's score."
+      },
+      {
+        title: "Behind the Camera on Vertigo",
+        publisher: "Turner Classic Movies",
+        url: "https://www.tcm.com/articles/89391/behind-the-camera-6-18-and-12-3-vertigo",
+        sourceKind: "archive_feature",
+        supports: ["overall", "cinematography", "editing", "sound"],
+        note: "The production account documents storyboarding, controlled location and stage work, the rotating kiss setup, matte and model effects, postproduction retakes, and the interrupted Herrmann scoring sessions."
+      },
+      {
+        title: "The Big Idea Behind Vertigo",
+        publisher: "Turner Classic Movies",
+        url: "https://www.tcm.com/articles/89390/the-big-idea-6-18-and-12-3-vertigo",
+        sourceKind: "archive_feature",
+        supports: ["overall", "screenplay"],
+        note: "The screenplay history traces multiple drafts, Hitchcock's collaboration on structure and pacing, Samuel Taylor's character work, and the decision to reveal Madeleine's secret before Scottie learns it."
+      }
+    ]
+  },
+  scenario_breathless_1960: {
+    scenarioId: "scenario_breathless_1960",
+    status: "verified",
+    verifiedAt: "2026-07-19",
+    summary: "The brief's handheld street immediacy, natural-location production, improvised development, broken continuity, long takes, jump cuts, and disruptive rhythm are supported by production histories and Godard's own account.",
+    sources: [
+      {
+        title: "Breathless",
+        publisher: "Turner Classic Movies",
+        url: "https://www.tcm.com/articles/87665/breathless",
+        sourceKind: "archive_feature",
+        supports: ["overall", "cinematography", "editing"],
+        note: "The production history records the small budget, Paris location shoot, handheld and wheelchair camera movement, avoided studio equipment, broken continuity, and frequent jump cuts."
+      },
+      {
+        title: "Behind the Camera - Breathless",
+        publisher: "Turner Classic Movies",
+        url: "https://www.tcm.com/articles/615686/behind-the-camera-breathless",
+        sourceKind: "archive_feature",
+        supports: ["overall", "editing"],
+        note: "The account distinguishes the film's long takes from its jump cuts and includes Godard's explanation that the famous cuts emerged while reducing an overlong first edit without smoothing its rhythm."
+      },
+      {
+        title: "Where to begin with Jean-Luc Godard – the early stuff",
+        publisher: "British Film Institute",
+        url: "https://www.bfi.org.uk/features/where-begin-jean-luc-godard-early-stuff",
+        sourceKind: "film_institute",
+        supports: ["overall", "cinematography", "editing"],
+        note: "The BFI describes Raoul Coutard's handheld long takes, rejection of classical coverage and transitions, and periodic disruption by jump cuts and other distancing devices."
+      },
+      {
+        title: "The Big Idea - Breathless",
+        publisher: "Turner Classic Movies",
+        url: "https://www.tcm.com/articles/615685/the-big-idea-breathless",
+        sourceKind: "archive_feature",
+        supports: ["overall", "screenplay"],
+        note: "The development history documents the four-page Truffaut synopsis, production without scripted dialogue, and Godard writing dialogue while the cast and crew were shooting."
+      }
+    ]
+  },
+  scenario_the_shining_1980: {
+    scenarioId: "scenario_the_shining_1980",
+    status: "verified",
+    verifiedAt: "2026-07-19",
+    summary: "The brief's hostile interior geography, symmetry, negative space, patient repetition, family isolation, moving-camera dread, and warning-like spatial rhythm are supported by first-person camera and cinematography accounts.",
+    sources: [
+      {
+        title: "The Steadicam and The Shining Revisited",
+        publisher: "American Cinematographer",
+        url: "https://theasc.com/articles/steadicam-shining-revisited",
+        sourceKind: "filmmaker_interview",
+        supports: ["overall", "cinematography", "editing"],
+        note: "Steadicam inventor and operator Garrett Brown describes sets designed around moving-camera possibilities, low lens heights, precise repeated takes, corridor movement, the kitchen and maze geography, and Kubrick's exacting framing."
+      },
+      {
+        title: "Photographing Stanley Kubrick's The Shining",
+        publisher: "American Cinematographer",
+        url: "https://theasc.com/articles/flashback-the-shining",
+        sourceKind: "filmmaker_interview",
+        supports: ["overall", "cinematography"],
+        note: "Cinematographer John Alcott details the long preproduction collaboration, lighting and set planning, visual concept development, and integration of the camera approach with the Overlook's constructed interiors."
+      },
+      {
+        title: "Come Play with The Shining",
+        publisher: "The New Yorker",
+        url: "https://www.newyorker.com/culture/culture-desk/come-play-with-the-shining",
+        sourceKind: "archive_feature",
+        supports: ["overall", "editing", "sound"],
+        note: "The craft overview identifies the film's slow pacing, crisp editing, production design, repeated Steadicam movement, technical innovation, and cumulative sound-and-image dread."
+      }
+    ]
   }
 } as const satisfies Record<string, ProductionCaseVerificationRecord>;
 
