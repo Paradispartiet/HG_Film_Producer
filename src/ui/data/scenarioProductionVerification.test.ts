@@ -6,7 +6,7 @@ import {
   getProductionCaseVerification,
   getProductionCaseVerificationRecords,
   getVerifiedProductionCaseIds,
-} from "./scenarioProductionVerification.js";
+} from "./scenarioProductionVerificationRegistry.js";
 
 const historicBatchIds = [
   "scenario_bicycle_thieves_1948",
@@ -15,11 +15,18 @@ const historicBatchIds = [
   "scenario_the_shining_1980",
 ] as const;
 
+const productionMethodBatchIds = [
+  "scenario_one_flew_over_the_cuckoo_s_nest_1975",
+  "scenario_the_celebration_1998",
+  "scenario_waltz_with_bashir_2008",
+  "scenario_mad_max_fury_road_2015",
+] as const;
+
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
   const scenarioIds = new Set(getClassicFilmScenarios().map((scenario) => scenario.id));
 
-  assert.equal(records.length, 8);
+  assert.equal(records.length, 12);
   assert.equal(new Set(records.map((record) => record.scenarioId)).size, records.length);
 
   for (const record of records) {
@@ -28,6 +35,10 @@ test("verification records are sourced and refer to playable scenarios", () => {
     assert.ok(record.summary.trim().length >= 40);
     assert.ok(scenarioIds.has(record.scenarioId), `Unknown scenario ${record.scenarioId}`);
     assert.ok(record.sources.length >= 2, `${record.scenarioId} needs at least two sources`);
+    assert.ok(
+      new Set(record.sources.map((source) => source.publisher)).size >= 2,
+      `${record.scenarioId} needs sources from at least two publishers`,
+    );
 
     for (const source of record.sources) {
       assert.match(source.url, /^https:\/\//);
@@ -48,9 +59,18 @@ test("historic verification batch is present in the registry", () => {
   }
 });
 
+test("production-method verification batch is present in the registry", () => {
+  for (const scenarioId of productionMethodBatchIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.scenarioId, scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 3);
+  }
+});
+
 test("verification lookup and ID list expose the same registry", () => {
   const ids = getVerifiedProductionCaseIds();
-  assert.equal(ids.length, 8);
+  assert.equal(ids.length, 12);
   assert.equal(new Set(ids).size, ids.length);
 
   for (const scenarioId of ids) {

@@ -4,7 +4,7 @@ import type { ScenarioProductionBrief } from "../data/scenarioProductionBriefs";
 import {
   getProductionCaseVerification,
   type ProductionCaseVerificationRecord,
-} from "../data/scenarioProductionVerification";
+} from "../data/scenarioProductionVerificationRegistry";
 import { createScenarioTargetChecklist } from "../data/scenarioTargetChecklist";
 
 interface ScenarioLearningRecapPanelProps {
