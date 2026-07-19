@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case must contain all mapp
 All 161 Production Cases now resolve to the same complete mapping structure.
 
 - 17 mandatory film-history and film-craft areas.
-- 24 source-backed film-history profiles.
-- 137 cases with a complete audit structure and visible research gaps.
+- 28 source-backed film-history profiles.
+- 133 cases with a complete audit structure and visible research gaps.
 - No points, ranks, badges or reward currencies.
 - The historical comparison is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The current 24 source-backed history profiles are the same controlled group covered by the Production Case verification registry:
+The current 28 source-backed history profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -57,6 +57,10 @@ The current 24 source-backed history profiles are the same controlled group cove
 - Tangerine
 - The Lighthouse
 - The Favourite
+- No Country for Old Men
+- Into the Wild
+- Winter's Bone
+- Beasts of the Southern Wild
 
 ## Complete mapping schema
 
@@ -146,7 +150,9 @@ A date or movement name alone does not teach film history. The player learns mor
 - practical stunt geography versus VFX-first action construction;
 - testimony-led animated documentary versus conventional live-action reconstruction;
 - anamorphic slasher suspense versus smartphone street cinema;
-- reconstructed orthochromatic response versus fisheye period staging.
+- reconstructed orthochromatic response versus fisheye period staging;
+- neo-western border geography versus biographical road-film geography;
+- researched rural noir versus collectively built magical regional realism.
 
 The alternatives are drawn from other real cases. A wrong choice therefore introduces another valid film-historical method instead of meaningless filler.
 
@@ -183,7 +189,7 @@ A Production Case is fully film-history-and-craft verified only when it has:
 - a playable historical comparison with plausible alternatives;
 - no unsupported claims of innovation or influence.
 
-## Research order for the remaining 137 cases
+## Research order for the remaining 133 cases
 
 Research should proceed by coherent historical groups, not by random list order. This makes comparisons better and reduces duplicate work.
 
@@ -199,8 +205,8 @@ Research should proceed by coherent historical groups, not by random list order.
 4. **1990s independent cinema and digital transition**
    - map Dogme 95, global independent cinema, consumer video and nonlinear editing.
 
-5. **2000s–2010s transnational and digital cinema**
-   - map digital capture, performance-preserving VFX, hybrid documentary, festival circulation and contemporary genre forms.
+5. **2000s–2010s transnational, regional and digital cinema**
+   - map digital capture, performance-preserving VFX, hybrid documentary, regional location production, festival circulation and contemporary genre forms.
 
 6. **2020s cases**
    - map streaming-era production and reception only when stable, sourced historical interpretation is possible.
