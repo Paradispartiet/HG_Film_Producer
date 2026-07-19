@@ -252,18 +252,16 @@ function ProductionCaseMissionFlow({
         {tierTarget ? <ProductionCaseTierTargetBox target={tierTarget} /> : null}
         {improvementHint ? <ProductionCaseImprovementHintBox hint={improvementHint} onFocusMission={focusMission} /> : null}
       </div>
-      {completedCaseReport ? (
-        <ProductionCaseReportBox
-          bestResult={bestResult}
-          bestResultFeedback={bestResultFeedback}
-          constraintSummary={constraintSummary}
-          onBackToProductionCases={onBackToProductionCases}
-          onPlayAgain={resetCurrentScenario}
-          onStartNextScenario={onStartNextScenario}
-          report={completedCaseReport}
-          tierTarget={tierTarget}
-        />
-      ) : null}
+      {completedCaseReport ? <ProductionCaseReportBox
+        bestResult={bestResult}
+        bestResultFeedback={bestResultFeedback}
+        constraintSummary={constraintSummary}
+        onBackToProductionCases={onBackToProductionCases}
+        onPlayAgain={resetCurrentScenario}
+        onStartNextScenario={onStartNextScenario}
+        report={completedCaseReport}
+        tierTarget={tierTarget}
+      /> : null}
       {missions.map((mission, index) => {
         const isComplete = isMissionComplete(mission);
         const selectedChoiceId = selectedChoicesByMissionId[mission.id];
