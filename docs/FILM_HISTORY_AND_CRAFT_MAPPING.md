@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case must contain all mapp
 All 161 Production Cases now resolve to the same complete mapping structure.
 
 - 17 mandatory film-history and film-craft areas.
-- 20 source-backed film-history profiles.
-- 141 cases with a complete audit structure and visible research gaps.
+- 24 source-backed film-history profiles.
+- 137 cases with a complete audit structure and visible research gaps.
 - No points, ranks, badges or reward currencies.
 - The historical comparison is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The current 20 source-backed history profiles are the same controlled group already covered by the Production Case verification registry:
+The current 24 source-backed history profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -53,6 +53,10 @@ The current 20 source-backed history profiles are the same controlled group alre
 - The 400 Blows
 - The Road Warrior
 - Victoria
+- Halloween
+- Tangerine
+- The Lighthouse
+- The Favourite
 
 ## Complete mapping schema
 
@@ -140,7 +144,9 @@ A date or movement name alone does not teach film history. The player learns mor
 - Dogme 95 consumer-digital restrictions versus effects-led digital cinema;
 - a genuine feature-length take versus a hidden-edit long-take illusion;
 - practical stunt geography versus VFX-first action construction;
-- testimony-led animated documentary versus conventional live-action reconstruction.
+- testimony-led animated documentary versus conventional live-action reconstruction;
+- anamorphic slasher suspense versus smartphone street cinema;
+- reconstructed orthochromatic response versus fisheye period staging.
 
 The alternatives are drawn from other real cases. A wrong choice therefore introduces another valid film-historical method instead of meaningless filler.
 
@@ -177,7 +183,7 @@ A Production Case is fully film-history-and-craft verified only when it has:
 - a playable historical comparison with plausible alternatives;
 - no unsupported claims of innovation or influence.
 
-## Research order for the remaining 141 cases
+## Research order for the remaining 137 cases
 
 Research should proceed by coherent historical groups, not by random list order. This makes comparisons better and reduces duplicate work.
 
