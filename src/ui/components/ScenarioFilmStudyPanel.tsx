@@ -19,6 +19,11 @@ import {
   resolveLandscapeFilmStudyMap,
 } from "../data/scenarioFilmStudyLandscapeBatch";
 import {
+  createMinimalistRoadFilmHistoryChoices,
+  getMinimalistRoadFilmHistoryProfile,
+  resolveMinimalistRoadFilmStudyMap,
+} from "../data/scenarioFilmStudyMinimalistRoadBatch";
+import {
   createTechnologyFilmHistoryChoices,
   getTechnologyFilmHistoryProfile,
   resolveTechnologyFilmStudyMap,
@@ -34,7 +39,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveConstructedWorldsFilmStudyMap(scenario, brief)
+    () => resolveMinimalistRoadFilmStudyMap(scenario, brief)
+      ?? resolveConstructedWorldsFilmStudyMap(scenario, brief)
       ?? resolveLandscapeFilmStudyMap(scenario, brief)
       ?? resolveTechnologyFilmStudyMap(scenario, brief)
       ?? resolveScenarioFilmStudyMap(scenario, brief),
@@ -49,6 +55,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getMinimalistRoadFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createMinimalistRoadFilmHistoryChoices(historyProfile);
+    }
     if (getConstructedWorldsFilmHistoryProfile(historyProfile.scenarioId)) {
       return createConstructedWorldsFilmHistoryChoices(historyProfile);
     }
