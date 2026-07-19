@@ -50,11 +50,18 @@ const landscapeCinemaBatchIds = [
   "scenario_beasts_of_the_southern_wild_2012",
 ] as const;
 
+const constructedWorldsBatchIds = [
+  "scenario_groundhog_day_1993",
+  "scenario_the_truman_show_1998",
+  "scenario_moon_2009",
+  "scenario_midnight_in_paris_2011",
+] as const;
+
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
   const scenarioIds = new Set(getClassicFilmScenarios().map((scenario) => scenario.id));
 
-  assert.equal(records.length, 28);
+  assert.equal(records.length, 32);
   assert.equal(new Set(records.map((record) => record.scenarioId)).size, records.length);
 
   for (const record of records) {
@@ -132,9 +139,18 @@ test("landscape-cinema verification batch is present in the registry", () => {
   }
 });
 
+test("constructed-worlds verification batch is present in the registry", () => {
+  for (const scenarioId of constructedWorldsBatchIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.scenarioId, scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
 test("verification lookup and ID list expose the same registry", () => {
   const ids = getVerifiedProductionCaseIds();
-  assert.equal(ids.length, 28);
+  assert.equal(ids.length, 32);
   assert.equal(new Set(ids).size, ids.length);
 
   for (const scenarioId of ids) {
