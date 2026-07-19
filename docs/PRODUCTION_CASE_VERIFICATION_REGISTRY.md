@@ -15,20 +15,22 @@ Source records are divided into reviewable batch files:
 - `src/ui/data/scenarioProductionVerificationModernBatch.ts`
 - `src/ui/data/scenarioProductionVerificationCrossEraBatch.ts`
 - `src/ui/data/scenarioProductionVerificationTechnologyBatch.ts`
+- `src/ui/data/scenarioProductionVerificationLandscapeBatch.ts`
 
-The unified registry currently covers twenty-four cases.
+The unified registry currently covers twenty-eight cases.
 
-The same twenty-four cases also have source-backed film-history profiles in:
+The same twenty-eight cases also have source-backed film-history profiles in:
 
 - `src/ui/data/scenarioFilmStudyMap.ts`
 - `src/ui/data/scenarioFilmStudyTechnologyBatch.ts`
+- `src/ui/data/scenarioFilmStudyLandscapeBatch.ts`
 
 The complete 17-area audit is defined in:
 
 - `src/core/filmStudyCoverage.ts`
 - `docs/FILM_HISTORY_AND_CRAFT_MAPPING.md`
 
-All 161 cases receive the same audit structure, but this does **not** mean that all 161 are verified. The remaining 137 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
+All 161 cases receive the same audit structure, but this does **not** mean that all 161 are verified. The remaining 133 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
 
 ### Pilot batch
 
@@ -78,6 +80,20 @@ This batch compares four distinct historical production systems:
 - smartphone capture as a credible feature-production system;
 - reconstruction of early photographic response through stock, optics, filtration and aspect ratio;
 - revisionist period staging through 35mm, natural light and extreme wide-angle lenses.
+
+### Landscape and regional-cinema batch
+
+- `scenario_no_country_for_old_men_2007`
+- `scenario_into_the_wild_2007`
+- `scenario_winter_s_bone_2010`
+- `scenario_beasts_of_the_southern_wild_2012`
+
+This batch compares four ways location and regional knowledge become production method:
+
+- neo-western pursuit built through border geography, acoustic detail and restrained score;
+- biographical road cinema assembled across actual locations, seasons and nonlinear memory;
+- rural noir grounded in Ozarks research, local casting, real properties and digital independent production;
+- collective 16mm magical realism built with South Louisiana communities, nonprofessional performers and documentary-influenced observation.
 
 ## Verification rule
 
@@ -130,7 +146,7 @@ Verification supports learning; it does not support a score or ranking. A verifi
 
 ## Next step
 
-Twenty-four cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 137 in coherent historical batches:
+Twenty-eight cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 133 in coherent historical batches:
 
 - make every historical and technical alternative plausible and educational;
 - ensure feedback explains the concrete distinction between choices;

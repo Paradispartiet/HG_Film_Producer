@@ -9,6 +9,11 @@ import {
   resolveScenarioFilmStudyMap,
 } from "../data/scenarioFilmStudyMap";
 import {
+  createLandscapeFilmHistoryChoices,
+  getLandscapeFilmHistoryProfile,
+  resolveLandscapeFilmStudyMap,
+} from "../data/scenarioFilmStudyLandscapeBatch";
+import {
   createTechnologyFilmHistoryChoices,
   getTechnologyFilmHistoryProfile,
   resolveTechnologyFilmStudyMap,
@@ -24,7 +29,9 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveTechnologyFilmStudyMap(scenario, brief) ?? resolveScenarioFilmStudyMap(scenario, brief),
+    () => resolveLandscapeFilmStudyMap(scenario, brief)
+      ?? resolveTechnologyFilmStudyMap(scenario, brief)
+      ?? resolveScenarioFilmStudyMap(scenario, brief),
     [brief, scenario],
   );
   const [selectedHistoryChoiceId, setSelectedHistoryChoiceId] = useState<string | undefined>();
@@ -36,6 +43,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getLandscapeFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createLandscapeFilmHistoryChoices(historyProfile);
+    }
     return getTechnologyFilmHistoryProfile(historyProfile.scenarioId)
       ? createTechnologyFilmHistoryChoices(historyProfile)
       : createFilmHistoryChoices(historyProfile);
