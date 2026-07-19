@@ -1,0 +1,128 @@
+name: Apply production outcome integration
+
+on:
+  push:
+    branches:
+      - agent/enforce-production-outcomes
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/enforce-production-outcomes
+
+      - name: Patch production outcome integration
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_once(path: str, old: str, new: str) -> None:
+              file_path = Path(path)
+              text = file_path.read_text()
+              if old not in text:
+                  raise SystemExit(f"Expected source block not found in {path}: {old[:100]!r}")
+              file_path.write_text(text.replace(old, new, 1))
+
+          panel = "src/ui/components/ScenarioProductionBriefPanel.tsx"
+          replace_once(
+              panel,
+              '} from "../../core/productionCaseConstraints";\nimport {',
+              '} from "../../core/productionCaseConstraints";\nimport {\n  applyProductionCaseOutcomeToReport,\n  getProductionCaseOutcome,\n  type ProductionCaseOutcome,\n} from "../../core/productionCaseOutcome";\nimport {',
+          )
+          replace_once(
+              panel,
+              '''  const caseScore = getProductionCaseScoreSummary(missions, progressEntry);\n  const resultTier = getProductionCaseResultTier(caseScore, completedCount);\n  const improvementHint = getProductionCaseImprovementHint(missions, progressEntry);\n  const nextPhaseAction = getProductionCaseNextPhaseAction(missions, progressEntry);\n  const tierTarget = getProductionCaseTierTarget(caseScore, completedCount);\n  const caseReport = getProductionCaseReport(missions, progressEntry);\n  const completedCaseReport = allComplete ? caseReport : undefined;\n  const bestResult = getProductionCaseBestResultEntry(bestResultsState, scenarioId);\n  const constraintSummary = getProductionCaseConstraintSummary(missions, progressEntry);''',
+              '''  const caseScore = getProductionCaseScoreSummary(missions, progressEntry);\n  const craftResultTier = getProductionCaseResultTier(caseScore, completedCount);\n  const constraintSummary = getProductionCaseConstraintSummary(missions, progressEntry);\n  const productionOutcome = craftResultTier\n    ? getProductionCaseOutcome(craftResultTier, constraintSummary.status)\n    : undefined;\n  const resultTier = productionOutcome?.finalTier;\n  const improvementHint = getProductionCaseImprovementHint(missions, progressEntry);\n  const nextPhaseAction = getProductionCaseNextPhaseAction(missions, progressEntry);\n  const tierTarget = getProductionCaseTierTarget(caseScore, completedCount);\n  const constrainedTierTarget = productionOutcome?.tierCapped ? undefined : tierTarget;\n  const caseReport = getProductionCaseReport(missions, progressEntry);\n  const constrainedReport = caseReport\n    ? applyProductionCaseOutcomeToReport(caseReport, constraintSummary)\n    : undefined;\n  const completedCaseReport = allComplete ? constrainedReport?.report : undefined;\n  const bestResult = getProductionCaseBestResultEntry(bestResultsState, scenarioId);''',
+          )
+          replace_once(
+              panel,
+              '{tierTarget ? <ProductionCaseTierTargetBox target={tierTarget} /> : null}',
+              '{constrainedTierTarget ? <ProductionCaseTierTargetBox target={constrainedTierTarget} /> : null}',
+          )
+          replace_once(
+              panel,
+              '''        constraintSummary={constraintSummary}\n        onBackToProductionCases={onBackToProductionCases}''',
+              '''        constraintSummary={constraintSummary}\n        outcome={productionOutcome}\n        onBackToProductionCases={onBackToProductionCases}''',
+          )
+          replace_once(
+              panel,
+              '        tierTarget={tierTarget}\n      /> : null}',
+              '        tierTarget={constrainedTierTarget}\n      /> : null}',
+          )
+          replace_once(
+              panel,
+              '''  constraintSummary,\n  onBackToProductionCases,''',
+              '''  constraintSummary,\n  outcome,\n  onBackToProductionCases,''',
+          )
+          replace_once(
+              panel,
+              '''  readonly constraintSummary: ProductionCaseConstraintSummary;\n  readonly onBackToProductionCases?: (() => void) | undefined;''',
+              '''  readonly constraintSummary: ProductionCaseConstraintSummary;\n  readonly outcome: ProductionCaseOutcome | undefined;\n  readonly onBackToProductionCases?: (() => void) | undefined;''',
+          )
+          replace_once(
+              panel,
+              '''        <span>Result: {productionCaseResultCopy[report.resultTier].label}</span>\n        <span>Case-score: {report.score}/{report.maxScore}</span>''',
+              '''        <span>Result: {productionCaseResultCopy[report.resultTier].label}</span>\n        {outcome?.tierCapped ? (\n          <span>Craft result: {productionCaseResultCopy[outcome.craftTier].label}</span>\n        ) : null}\n        <span>Case-score: {report.score}/{report.maxScore}</span>''',
+          )
+          replace_once(
+              panel,
+              '''      </div>\n      <ProductionCaseConstraintLedger summary={constraintSummary} />\n      <div className="scenario-production-report-actions"''',
+              '''      </div>\n      <ProductionCaseOutcomeNotice outcome={outcome} />\n      <ProductionCaseConstraintLedger summary={constraintSummary} />\n      <div className="scenario-production-report-actions"''',
+          )
+          replace_once(
+              panel,
+              'function ProductionCaseBestResultFeedbackBox({',
+              '''function ProductionCaseOutcomeNotice({\n  outcome,\n}: {\n  readonly outcome: ProductionCaseOutcome | undefined;\n}) {\n  if (!outcome) return null;\n\n  return (\n    <section\n      className={`production-case-outcome${outcome.tierCapped ? " production-case-outcome--capped" : ""}${outcome.productionStatus === "overextended" ? " production-case-outcome--overextended" : ""}`}\n      aria-label="Producer consequence"\n    >\n      <span>Producer consequence</span>\n      <strong>{outcome.label}</strong>\n      <p>{outcome.description}</p>\n      {outcome.tierCapped ? (\n        <small>Craft: {productionCaseResultCopy[outcome.craftTier].label} · Final: {productionCaseResultCopy[outcome.finalTier].label}</small>\n      ) : null}\n    </section>\n  );\n}\n\nfunction ProductionCaseBestResultFeedbackBox({''',
+          )
+
+          library = "src/ui/components/FilmScenarioLibrary.tsx"
+          replace_once(library, '  getProductionCaseLibraryStatus,\n', '')
+          replace_once(
+              library,
+              '} from "../../core/productionCaseProgress";\nimport {',
+              '} from "../../core/productionCaseProgress";\nimport { getProductionCaseConstrainedLibraryStatus } from "../../core/productionCaseOutcome";\nimport {',
+          )
+          replace_once(
+              library,
+              '  const status = getProductionCaseLibraryStatus(missions, progressEntry);',
+              '  const status = getProductionCaseConstrainedLibraryStatus(missions, progressEntry);',
+          )
+
+          main = "src/ui/main.tsx"
+          replace_once(
+              main,
+              'import "./productionCaseConstraints.css";\n',
+              'import "./productionCaseConstraints.css";\nimport "./productionCaseOutcome.css";\n',
+          )
+
+          doc = Path("docs/PRODUCTION_CASE_CONSTRAINT_LEDGER.md")
+          doc_text = doc.read_text()
+          old = '''This first version deliberately keeps the existing score and best-result storage intact. The player now has two replay goals: improve the film match and deliver the production without exhausting its resources.\n'''
+          new = '''## Producer outcome\n\nThe craft score remains visible, but the production condition now affects the awarded producer tier:\n\n- **On track** and **Strained** keep the full craft tier.\n- **Over budget** or **Behind schedule** can award at most **Producer**.\n- **Overextended** can award at most **Assistant**.\n\nThis keeps film understanding and production management legible as two related judgments. A player can understand the film precisely and still lose the Auteur result by failing to deliver it within the production frame. The constrained tier is used consistently in the Case report, saved best result, library status, filters and collection summaries.\n\nThe existing storage shape is unchanged. Old saves remain readable; future completed results use the production-aware tier when a new best result is recorded.\n'''
+          if old not in doc_text:
+              raise SystemExit("Expected constraint-ledger closing paragraph not found")
+          doc.write_text(doc_text.replace(old, new, 1))
+          PY
+
+          rm .github/workflows/apply-production-outcome-patch.yml
+
+      - name: Commit integrated outcome rules
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/ui/components/ScenarioProductionBriefPanel.tsx \
+            src/ui/components/FilmScenarioLibrary.tsx \
+            src/ui/main.tsx \
+            docs/PRODUCTION_CASE_CONSTRAINT_LEDGER.md \
+            .github/workflows/apply-production-outcome-patch.yml
+          git commit -m "Integrate production outcome consequences"
+          git push origin HEAD:agent/enforce-production-outcomes
