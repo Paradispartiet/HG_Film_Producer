@@ -59,7 +59,10 @@ const forecastCopy = {
  */
 export function getProductionCaseChoiceConstraintForecast(
   missions: readonly ProductionCaseConstraintMission[],
-  progress: Pick<ProductionCaseProgressEntry, "selectedChoicesByMissionId">,
+  progress: Pick<
+    ProductionCaseProgressEntry,
+    "selectedChoicesByMissionId" | "selectedInterventionsByMissionId"
+  >,
   missionId: string,
   choiceId: string,
 ): ProductionCaseConstraintForecast | undefined {
@@ -76,7 +79,10 @@ export function getProductionCaseChoiceConstraintForecast(
   };
   const projected = getProductionCaseConstraintSummary(
     missions.slice(0, missionIndex + 1),
-    { selectedChoicesByMissionId },
+    {
+      selectedChoicesByMissionId,
+      selectedInterventionsByMissionId: progress.selectedInterventionsByMissionId ?? {},
+    },
   );
   const copy = forecastCopy[projected.status];
 
