@@ -81,7 +81,7 @@ export function getProductionCaseChoiceConstraintForecast(
     missions.slice(0, missionIndex + 1),
     {
       selectedChoicesByMissionId,
-      selectedInterventionsByMissionId: progress.selectedInterventionsByMissionId,
+      selectedInterventionsByMissionId: progress.selectedInterventionsByMissionId ?? {},
     },
   );
   const copy = forecastCopy[projected.status];
