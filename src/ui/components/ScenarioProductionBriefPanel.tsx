@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { canCompleteProductionCaseMission } from "../../core/canCompleteProductionCaseMission";
 import {
   getProductionCaseImprovementHint,
   getProductionCaseBestResultEntry,
@@ -120,9 +121,10 @@ function ProductionCaseMissionFlow({
     () => new Set(completedMissionIds),
     [completedMissionIds],
   );
-  const completedCount = missions.filter((mission) =>
-    completedMissionIdSet.has(mission.id),
-  ).length;
+  const isMissionComplete = (mission: ProductionCaseMission) =>
+    completedMissionIdSet.has(mission.id)
+    && canCompleteProductionCaseMission(progressEntry, mission.id, mission.choices);
+  const completedCount = missions.filter(isMissionComplete).length;
   const allComplete = missions.length > 0 && completedCount === missions.length;
   const caseScore = getProductionCaseScoreSummary(missions, progressEntry);
   const resultTier = getProductionCaseResultTier(caseScore, completedCount);
@@ -154,16 +156,29 @@ function ProductionCaseMissionFlow({
     }
   }
 
-  function toggleMission(missionId: string) {
-    const completing = !completedMissionIdSet.has(missionId);
+  function toggleMission(mission: ProductionCaseMission) {
+    const isComplete = isMissionComplete(mission);
+    const completing = !isComplete;
+
+    if (
+      completing
+      && !canCompleteProductionCaseMission(progressEntry, mission.id, mission.choices)
+    ) {
+      setFocusedMissionId(mission.id);
+      setExpandedMissionIds((current) =>
+        current.includes(mission.id) ? current : [...current, mission.id],
+      );
+      return;
+    }
+
     if (completing) {
-      setExpandedMissionIds((current) => current.filter((id) => id !== missionId));
+      setExpandedMissionIds((current) => current.filter((id) => id !== mission.id));
     }
     updateProgress(
       setProductionCaseMissionCompletion(
         progressState,
         scenarioId,
-        missionId,
+        mission.id,
         completing,
       ),
     );
@@ -197,9 +212,7 @@ function ProductionCaseMissionFlow({
     missionCard?.focus?.({ preventScroll: true });
   }
 
-  const activeMissionId = missions.find(
-    (mission) => !completedMissionIdSet.has(mission.id),
-  )?.id;
+  const activeMissionId = missions.find((mission) => !isMissionComplete(mission))?.id;
 
   return (
     <div
@@ -228,7 +241,7 @@ function ProductionCaseMissionFlow({
       </div>
       {completedCaseReport ? <ProductionCaseReportBox bestResult={bestResult} bestResultFeedback={bestResultFeedback} onBackToProductionCases={onBackToProductionCases} onPlayAgain={resetCurrentScenario} onStartNextScenario={onStartNextScenario} report={completedCaseReport} tierTarget={tierTarget} /> : null}
       {missions.map((mission, index) => {
-        const isComplete = completedMissionIdSet.has(mission.id);
+        const isComplete = isMissionComplete(mission);
         const selectedChoiceId = selectedChoicesByMissionId[mission.id];
         const selectedChoice = mission.choices.find((choice) => choice.id === selectedChoiceId);
         const phaseScore = getProductionCaseMissionScoreSummary(mission, selectedChoiceId);
@@ -307,7 +320,11 @@ function ProductionCaseMissionFlow({
                 <strong>Understand the production choice:</strong> {mission.learningFocus}
               </p>
               <div className="scenario-mission-card-actions">
-                <button onClick={() => toggleMission(mission.id)} type="button">
+                <button
+                  disabled={!isComplete && !selectedChoice}
+                  onClick={() => toggleMission(mission)}
+                  type="button"
+                >
                   {isComplete ? "Undo complete" : "Complete phase"}
                 </button>
                 {!isActive && (
@@ -404,8 +421,6 @@ function ProductionCaseReportBox({
     </section>
   );
 }
-
-
 
 function ProductionCaseBestResultFeedbackBox({
   feedback,
