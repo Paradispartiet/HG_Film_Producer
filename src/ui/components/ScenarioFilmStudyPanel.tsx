@@ -8,6 +8,11 @@ import {
   createFilmHistoryChoices,
   resolveScenarioFilmStudyMap,
 } from "../data/scenarioFilmStudyMap";
+import {
+  createTechnologyFilmHistoryChoices,
+  getTechnologyFilmHistoryProfile,
+  resolveTechnologyFilmStudyMap,
+} from "../data/scenarioFilmStudyTechnologyBatch";
 import type { ScenarioProductionBrief } from "../data/scenarioProductionBriefs";
 import "./scenarioFilmStudy.css";
 
@@ -19,7 +24,7 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveScenarioFilmStudyMap(scenario, brief),
+    () => resolveTechnologyFilmStudyMap(scenario, brief) ?? resolveScenarioFilmStudyMap(scenario, brief),
     [brief, scenario],
   );
   const [selectedHistoryChoiceId, setSelectedHistoryChoiceId] = useState<string | undefined>();
@@ -29,10 +34,12 @@ export function ScenarioFilmStudyPanel({
   }, [scenario.id]);
 
   const historyProfile = filmStudy.historyProfile;
-  const historyChoices = useMemo(
-    () => historyProfile ? createFilmHistoryChoices(historyProfile) : [],
-    [historyProfile],
-  );
+  const historyChoices = useMemo(() => {
+    if (!historyProfile) return [];
+    return getTechnologyFilmHistoryProfile(historyProfile.scenarioId)
+      ? createTechnologyFilmHistoryChoices(historyProfile)
+      : createFilmHistoryChoices(historyProfile);
+  }, [historyProfile]);
   const selectedHistoryChoice = historyChoices.find((choice) => choice.id === selectedHistoryChoiceId);
   const historyCoverage = filmStudy.coverage.filter((item) => item.group === "history");
   const craftCoverage = filmStudy.coverage.filter((item) => item.group === "craft");
