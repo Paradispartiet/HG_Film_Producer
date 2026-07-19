@@ -14,19 +14,21 @@ Source records are divided into reviewable batch files:
 - `src/ui/data/scenarioProductionVerificationMethodBatch.ts`
 - `src/ui/data/scenarioProductionVerificationModernBatch.ts`
 - `src/ui/data/scenarioProductionVerificationCrossEraBatch.ts`
+- `src/ui/data/scenarioProductionVerificationTechnologyBatch.ts`
 
-The unified registry currently covers twenty cases.
+The unified registry currently covers twenty-four cases.
 
-The same twenty cases now also have source-backed film-history profiles in:
+The same twenty-four cases also have source-backed film-history profiles in:
 
 - `src/ui/data/scenarioFilmStudyMap.ts`
+- `src/ui/data/scenarioFilmStudyTechnologyBatch.ts`
 
 The complete 17-area audit is defined in:
 
 - `src/core/filmStudyCoverage.ts`
 - `docs/FILM_HISTORY_AND_CRAFT_MAPPING.md`
 
-All 161 cases receive the same audit structure, but this does **not** mean that all 161 are verified. The remaining 141 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
+All 161 cases receive the same audit structure, but this does **not** mean that all 161 are verified. The remaining 137 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
 
 ### Pilot batch
 
@@ -62,6 +64,20 @@ All 161 cases receive the same audit structure, but this does **not** mean that 
 - `scenario_the_400_blows_1959`
 - `scenario_the_road_warrior_1981`
 - `scenario_victoria_2015`
+
+### Technology-history batch
+
+- `scenario_halloween_1978`
+- `scenario_tangerine_2015`
+- `scenario_the_lighthouse_2019`
+- `scenario_the_favourite_2018`
+
+This batch compares four distinct historical production systems:
+
+- anamorphic low-budget suspense and the formation of modern slasher grammar;
+- smartphone capture as a credible feature-production system;
+- reconstruction of early photographic response through stock, optics, filtration and aspect ratio;
+- revisionist period staging through 35mm, natural light and extreme wide-angle lenses.
 
 ## Verification rule
 
@@ -114,7 +130,7 @@ Verification supports learning; it does not support a score or ranking. A verifi
 
 ## Next step
 
-Twenty cases now have source-backed Production Case verification and source-backed film-history profiles. Use this controlled group to improve the academic and professional quality of the learning cases while researching the remaining 141 in coherent historical batches:
+Twenty-four cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 137 in coherent historical batches:
 
 - make every historical and technical alternative plausible and educational;
 - ensure feedback explains the concrete distinction between choices;
