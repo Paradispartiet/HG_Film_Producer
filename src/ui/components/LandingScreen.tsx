@@ -1,13 +1,11 @@
 interface LandingScreenProps {
   readonly onStart: () => void;
   readonly onContinue: () => void;
-  readonly onDemo: () => void;
-  readonly onDevDashboard: () => void;
   readonly onProductionCases: () => void;
   readonly hasSave: boolean;
 }
 
-export function LandingScreen({ onStart, onContinue, onDemo, onDevDashboard, onProductionCases, hasSave }: LandingScreenProps) {
+export function LandingScreen({ onStart, onContinue, onProductionCases, hasSave }: LandingScreenProps) {
   return (
     <main className="landing-screen">
       <div className="landing-grain" aria-hidden="true" />
@@ -31,14 +29,12 @@ export function LandingScreen({ onStart, onContinue, onDemo, onDevDashboard, onP
           </button>
           {hasSave && <button className="landing-secondary" onClick={onContinue} type="button">Continue Studio Career (experimental)</button>}
           <button className="landing-secondary" onClick={onStart} type="button">Open Studio Career (experimental)</button>
-          <button className="landing-secondary" onClick={onDemo} type="button">Demo inspection</button>
         </div>
         <div className="landing-future-modes" aria-label="Planned future modes">
           <article><span>Writers' room</span><small>planned later</small></article>
           <article><span>Full studio simulator</span><small>planned later</small></article>
           <article><span>Film history atlas / locations</span><small>planned later</small></article>
         </div>
-        <button className="landing-dev-link" onClick={onDevDashboard} type="button">Engine inspection</button>
       </div>
       <div className="landing-era" aria-hidden="true">
         <span>1895</span><i /><span>The future of cinema is yours</span><i /><span>Today</span>
