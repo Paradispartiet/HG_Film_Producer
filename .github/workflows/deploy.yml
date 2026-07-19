@@ -44,7 +44,17 @@ jobs:
         run: npm run typecheck
 
       - name: Test
-        run: npm test
+        shell: bash
+        run: |
+          set -o pipefail
+          npm test 2>&1 | tee core-test-output.txt
+
+      - name: Upload failed test diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: core-test-diagnostics
+          path: core-test-output.txt
 
       - name: Build UI
         run: npm run build:ui
