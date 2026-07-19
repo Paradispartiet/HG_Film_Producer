@@ -6,6 +6,7 @@ import {
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
 import { productionMethodVerificationRecords } from "./scenarioProductionVerificationMethodBatch";
 import { modernCraftVerificationRecords } from "./scenarioProductionVerificationModernBatch";
+import { technologyHistoryVerificationRecords } from "./scenarioProductionVerificationTechnologyBatch";
 
 export type {
   ProductionCaseVerificationArea,
@@ -17,6 +18,7 @@ const additionalVerificationRecords = [
   ...productionMethodVerificationRecords,
   ...modernCraftVerificationRecords,
   ...crossEraVerificationRecords,
+  ...technologyHistoryVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
 
 const additionalVerificationByScenarioId = new Map<string, ProductionCaseVerificationRecord>(
