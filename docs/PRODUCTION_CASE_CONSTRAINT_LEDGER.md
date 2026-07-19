@@ -35,6 +35,18 @@ The final Case report keeps the existing craft score and adds a production condi
 - **Behind schedule**: time is below zero.
 - **Overextended**: both budget and time are below zero.
 
+## Pre-decision forecast
+
+Every choice now previews the production position it would create immediately after that phase:
+
+- remaining budget;
+- remaining time;
+- accumulated creative control;
+- low-margin or overrun status;
+- the Producer or Assistant result cap caused by an overrun.
+
+The forecast only counts earlier phases and the current candidate choice. Stored choices in later phases do not distort an earlier decision, and switching an existing choice replaces its previous impact instead of counting it twice. Risky choices remain available because an intentional production gamble can be a valid player decision.
+
 ## Producer outcome
 
 The craft score remains visible, but the production condition now affects the awarded producer tier:
