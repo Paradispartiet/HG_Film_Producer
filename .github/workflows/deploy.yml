@@ -37,8 +37,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Verify v0.1
-        run: npm run verify:v0.1
+      - name: Preflight v0.1
+        run: npm run preflight:v0.1
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Test
+        run: npm test
+
+      - name: Build UI
+        run: npm run build:ui
 
       - name: Verify Pages artifact
         shell: bash
