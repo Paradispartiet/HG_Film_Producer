@@ -68,6 +68,7 @@ export function getProductionCaseInterventionForecast(
   const intervention = getProductionCaseIntervention(interventionId);
   if (!intervention) return undefined;
 
+  const selectedChoicesByMissionId = progress.selectedChoicesByMissionId ?? {};
   const selectedInterventionsByMissionId = {
     ...progress.selectedInterventionsByMissionId,
     [missionId]: interventionId,
@@ -76,11 +77,11 @@ export function getProductionCaseInterventionForecast(
   delete withoutCurrentIntervention[missionId];
   const scopedMissions = missions.slice(0, missionIndex + 1);
   const before = getProductionCaseConstraintSummary(scopedMissions, {
-    selectedChoicesByMissionId: progress.selectedChoicesByMissionId,
+    selectedChoicesByMissionId,
     selectedInterventionsByMissionId: withoutCurrentIntervention,
   });
   const projected = getProductionCaseConstraintSummary(scopedMissions, {
-    selectedChoicesByMissionId: progress.selectedChoicesByMissionId,
+    selectedChoicesByMissionId,
     selectedInterventionsByMissionId,
   });
 
