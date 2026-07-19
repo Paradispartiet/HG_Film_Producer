@@ -7,6 +7,7 @@ import "./styles.css";
 import "./productionCaseDensity.css";
 import "./productionCaseVerification.css";
 import "./productionCaseVerificationLibrary.css";
+import "./productionCaseConstraints.css";
 
 console.info("HG Film Producer booting");
 
