@@ -47,16 +47,6 @@ Every choice now previews the production position it would create immediately af
 
 The forecast only counts earlier phases and the current candidate choice. Stored choices in later phases do not distort an earlier decision, and switching an existing choice replaces its previous impact instead of counting it twice. Risky choices remain available because an intentional production gamble can be a valid player decision.
 
-## Production interventions
-
-When a selected choice leaves the production strained or overrun, the phase offers three optional rescue decisions:
-
-- **Cut scope** restores budget and time but reduces creative control.
-- **Secure bridge financing** restores budget but consumes time and gives up some control.
-- **Buy extra shoot days** restores time by spending additional budget.
-
-One intervention can be stored per phase. It can be changed or removed, carries forward into later phases, and affects the final production condition and producer-tier cap. Interventions never change the craft score.
-
 ## Producer outcome
 
 The craft score remains visible, but the production condition now affects the awarded producer tier:
@@ -67,4 +57,4 @@ The craft score remains visible, but the production condition now affects the aw
 
 This keeps film understanding and production management legible as two related judgments. A player can understand the film precisely and still lose the Auteur result by failing to deliver it within the production frame. The constrained tier is used consistently in the Case report, saved best result, library status, filters and collection summaries.
 
-The existing storage key and export version are unchanged. Progress entries now accept an optional intervention map, so old saves and backups remain readable while new rescue decisions persist per phase.
+The existing storage shape is unchanged. Old saves remain readable; future completed results use the production-aware tier when a new best result is recorded.

@@ -97,7 +97,6 @@ test("constrained reports preserve craft evidence and apply the producer tier ca
     scheduleRemaining: 2,
     creativeControl: 9,
     choicesMade: 6,
-    interventionsMade: 0,
     status: "over_budget",
     label: "Over budget",
     description: "Creative commitments exceeded the available budget.",

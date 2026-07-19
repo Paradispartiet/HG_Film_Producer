@@ -7,12 +7,6 @@ import {
   type ProductionCaseConstraintSummary,
 } from "../../core/productionCaseConstraints";
 import { getProductionCaseChoiceConstraintForecast } from "../../core/productionCaseConstraintForecast";
-import { getProductionCaseInterventionForecast } from "../../core/productionCaseInterventionForecast";
-import {
-  getProductionCaseIntervention,
-  productionCaseInterventions,
-  type ProductionCaseInterventionId,
-} from "../../core/productionCaseInterventions";
 import {
   applyProductionCaseOutcomeToReport,
   getProductionCaseOutcome,
@@ -34,7 +28,6 @@ import {
   resetProductionCaseScenarioProgress,
   setProductionCaseMissionChoice,
   setProductionCaseMissionCompletion,
-  setProductionCaseMissionIntervention,
   updateProductionCaseBestResult,
   writeProductionCaseProgress,
   type ProductionCaseBestResultFeedback,
@@ -141,7 +134,6 @@ function ProductionCaseMissionFlow({
   );
   const completedMissionIds = progressEntry.completedMissionIds;
   const selectedChoicesByMissionId = progressEntry.selectedChoicesByMissionId ?? {};
-  const selectedInterventionsByMissionId = progressEntry.selectedInterventionsByMissionId ?? {};
   const completedMissionIdSet = useMemo(
     () => new Set(completedMissionIds),
     [completedMissionIds],
@@ -232,20 +224,6 @@ function ProductionCaseMissionFlow({
     );
   }
 
-  function selectIntervention(
-    missionId: string,
-    interventionId: ProductionCaseInterventionId | undefined,
-  ) {
-    updateProgress(
-      setProductionCaseMissionIntervention(
-        progressState,
-        scenarioId,
-        missionId,
-        interventionId,
-      ),
-    );
-  }
-
   function resetCurrentScenario() {
     updateProgress(resetProductionCaseScenarioProgress(progressState, scenarioId));
   }
@@ -303,8 +281,6 @@ function ProductionCaseMissionFlow({
         const isComplete = isMissionComplete(mission);
         const selectedChoiceId = selectedChoicesByMissionId[mission.id];
         const selectedChoice = mission.choices.find((choice) => choice.id === selectedChoiceId);
-        const selectedInterventionId = selectedInterventionsByMissionId[mission.id];
-        const selectedIntervention = getProductionCaseIntervention(selectedInterventionId);
         const phaseScore = getProductionCaseMissionScoreSummary(mission, selectedChoiceId);
         const isActive = mission.id === activeMissionId;
         const isExpanded = isActive || expandedMissionIds.includes(mission.id);
@@ -327,9 +303,7 @@ function ProductionCaseMissionFlow({
               <div className="scenario-mission-collapsed-row">
                 <div>
                   <h4>{mission.title}</h4>
-                  {selectedChoice ? (
-                    <p>{selectedChoice.label}{selectedIntervention ? ` · ${selectedIntervention.label}` : ""}</p>
-                  ) : <p>No production approach chosen yet.</p>}
+                  {selectedChoice ? <p>{selectedChoice.label}</p> : <p>No production approach chosen yet.</p>}
                 </div>
                 <span className="scenario-mission-score">{phaseScore.score}/{phaseScore.maxScore}</span>
                 <button onClick={() => toggleMissionExpanded(mission.id)} type="button">
@@ -413,15 +387,6 @@ function ProductionCaseMissionFlow({
                   <p className="scenario-choice-feedback">Choose a production approach before completing this phase.</p>
                 )}
               </div>
-              {selectedChoice ? (
-                <ProductionCaseInterventionPanel
-                  missionId={mission.id}
-                  missions={missions}
-                  onSelect={(interventionId) => selectIntervention(mission.id, interventionId)}
-                  progress={progressEntry}
-                  selectedInterventionId={selectedInterventionId}
-                />
-              ) : null}
               <p className="scenario-mission-learning">
                 <strong>Understand the production choice:</strong> {mission.learningFocus}
               </p>
@@ -444,75 +409,6 @@ function ProductionCaseMissionFlow({
         );
       })}
     </div>
-  );
-}
-
-function ProductionCaseInterventionPanel({
-  missionId,
-  missions,
-  onSelect,
-  progress,
-  selectedInterventionId,
-}: {
-  readonly missionId: string;
-  readonly missions: readonly ProductionCaseMission[];
-  readonly onSelect: (interventionId: ProductionCaseInterventionId | undefined) => void;
-  readonly progress: ReturnType<typeof getProductionCaseProgressEntry>;
-  readonly selectedInterventionId: ProductionCaseInterventionId | undefined;
-}) {
-  const forecasts = productionCaseInterventions.flatMap((intervention) => {
-    const forecast = getProductionCaseInterventionForecast(
-      missions,
-      progress,
-      missionId,
-      intervention.id,
-    );
-    return forecast ? [forecast] : [];
-  });
-  const before = forecasts[0]?.before;
-  if (!before) return null;
-  if (before.status === "on_track" && !selectedInterventionId) return null;
-
-  const selectedIntervention = getProductionCaseIntervention(selectedInterventionId);
-
-  return (
-    <section className="production-intervention-panel" aria-label="Production intervention">
-      <div className="production-intervention-heading">
-        <span>Production intervention</span>
-        <strong>{before.status === "strained" ? "Protect the remaining margin" : "Recover the production"}</strong>
-        <small>Interventions change delivery resources, not the craft score.</small>
-      </div>
-      <div className="production-intervention-grid">
-        {forecasts.map(({ effect, intervention, projected }) => (
-          <button
-            aria-pressed={selectedInterventionId === intervention.id}
-            className={[
-              "production-intervention-option",
-              selectedInterventionId === intervention.id ? "production-intervention-option--selected" : "",
-              `production-intervention-option--${effect}`,
-            ].filter(Boolean).join(" ")}
-            key={intervention.id}
-            onClick={() => onSelect(intervention.id)}
-            type="button"
-          >
-            <strong>{intervention.label}</strong>
-            <small>{intervention.description}</small>
-            <small>Impact · Budget {formatConstraintDelta(intervention.budgetDelta)} · Time {formatConstraintDelta(intervention.scheduleDelta)} · Control {formatConstraintDelta(intervention.creativeControlDelta)}</small>
-            <small className="production-intervention-projection">
-              After intervention · Budget {projected.budgetRemaining}/{projected.startingBudget} · Time {projected.scheduleRemaining}/{projected.startingSchedule} · Control {formatConstraintDelta(projected.creativeControl)} · {projected.label}
-            </small>
-          </button>
-        ))}
-      </div>
-      {selectedIntervention ? (
-        <div className="production-intervention-current">
-          <small>Selected intervention: {selectedIntervention.label}</small>
-          <button className="secondary-button production-intervention-clear" onClick={() => onSelect(undefined)} type="button">
-            Remove intervention
-          </button>
-        </div>
-      ) : null}
-    </section>
   );
 }
 
@@ -545,10 +441,6 @@ function ProductionCaseConstraintLedger({
         <div>
           <span>Creative control</span>
           <strong>{formatConstraintDelta(summary.creativeControl)}</strong>
-        </div>
-        <div>
-          <span>Interventions</span>
-          <strong>{summary.interventionsMade}</strong>
         </div>
       </div>
     </section>

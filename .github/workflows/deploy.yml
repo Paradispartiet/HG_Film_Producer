@@ -41,17 +41,7 @@ jobs:
         run: npm run preflight:v0.1
 
       - name: Typecheck
-        shell: bash
-        run: |
-          set -o pipefail
-          npm run typecheck 2>&1 | tee typecheck-output.txt
-
-      - name: Upload failed typecheck diagnostics
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: typecheck-diagnostics
-          path: typecheck-output.txt
+        run: npm run typecheck
 
       - name: Test
         shell: bash

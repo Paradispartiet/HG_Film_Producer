@@ -143,10 +143,7 @@ export function applyProductionCaseOutcomeToReport(
 
 export function getProductionCaseConstrainedLibraryStatus(
   missions: readonly ProductionCaseOutcomeMission[],
-  progress: Pick<
-    ProductionCaseProgressEntry,
-    "completedMissionIds" | "selectedChoicesByMissionId" | "selectedInterventionsByMissionId"
-  >,
+  progress: Pick<ProductionCaseProgressEntry, "completedMissionIds" | "selectedChoicesByMissionId">,
 ): ProductionCaseLibraryStatus | undefined {
   const status = getProductionCaseLibraryStatus(missions, progress);
   if (!status) return undefined;
