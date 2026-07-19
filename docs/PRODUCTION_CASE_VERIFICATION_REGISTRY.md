@@ -12,8 +12,9 @@ Source records are divided into reviewable batch files:
 
 - `src/ui/data/scenarioProductionVerification.ts`
 - `src/ui/data/scenarioProductionVerificationMethodBatch.ts`
+- `src/ui/data/scenarioProductionVerificationModernBatch.ts`
 
-The unified registry currently covers twelve cases.
+The unified registry currently covers sixteen cases.
 
 ### Pilot batch
 
@@ -35,6 +36,13 @@ The unified registry currently covers twelve cases.
 - `scenario_the_celebration_1998`
 - `scenario_waltz_with_bashir_2008`
 - `scenario_mad_max_fury_road_2015`
+
+### Modern craft batch
+
+- `scenario_district_9_2009`
+- `scenario_birdman_or_the_unexpected_virtue_of_ignorance_2014`
+- `scenario_boyhood_2014`
+- `scenario_ex_machina_2014`
 
 ## Verification rule
 
@@ -59,6 +67,10 @@ A plot synopsis or review alone is not enough to verify production choices. It m
 
 The registry is intentionally separate from the large brief file. This keeps evidence reviewable, prevents source metadata from bloating mission content, and allows verification to proceed film by film. Batch files also keep each evidence review small enough to inspect directly.
 
+## Player-facing status
+
+The Production Cases library displays the current verified count and marks each documented case before it is opened. The Case report exposes the evidence summary and direct source links after completion.
+
 ## Next batch
 
 Continue with small batches of four to eight cases. Prioritize:
@@ -68,6 +80,6 @@ Continue with small batches of four to eight cases. Prioritize:
 3. historically underrepresented decades;
 4. briefs whose strongest claims concern specific lenses, formats, locations, sound systems, editing structures, or production constraints.
 
-The next work should pause source expansion long enough to expose verified status in the Production Cases library, so players can identify documented cases before completing them.
+The next verification batch should broaden genre and geography rather than concentrating further on English-language drama and science fiction.
 
 Do not mark the full catalogue verified based on a generic filmography source or on the internal consistency of the brief alone.

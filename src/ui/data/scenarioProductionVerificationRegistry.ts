@@ -4,6 +4,7 @@ import {
   type ProductionCaseVerificationRecord,
 } from "./scenarioProductionVerification";
 import { productionMethodVerificationRecords } from "./scenarioProductionVerificationMethodBatch";
+import { modernCraftVerificationRecords } from "./scenarioProductionVerificationModernBatch";
 
 export type {
   ProductionCaseVerificationArea,
@@ -11,21 +12,26 @@ export type {
   ProductionCaseVerificationSource,
 } from "./scenarioProductionVerification";
 
-const productionMethodVerificationByScenarioId = new Map<string, ProductionCaseVerificationRecord>(
-  productionMethodVerificationRecords.map((record) => [record.scenarioId, record]),
+const additionalVerificationRecords = [
+  ...productionMethodVerificationRecords,
+  ...modernCraftVerificationRecords,
+] as const satisfies readonly ProductionCaseVerificationRecord[];
+
+const additionalVerificationByScenarioId = new Map<string, ProductionCaseVerificationRecord>(
+  additionalVerificationRecords.map((record) => [record.scenarioId, record]),
 );
 
 export function getProductionCaseVerification(
   scenarioId: string,
 ): ProductionCaseVerificationRecord | undefined {
-  return productionMethodVerificationByScenarioId.get(scenarioId)
+  return additionalVerificationByScenarioId.get(scenarioId)
     ?? getFoundationVerification(scenarioId);
 }
 
 export function getProductionCaseVerificationRecords(): readonly ProductionCaseVerificationRecord[] {
   return [
     ...getFoundationVerificationRecords(),
-    ...productionMethodVerificationRecords,
+    ...additionalVerificationRecords,
   ];
 }
 
