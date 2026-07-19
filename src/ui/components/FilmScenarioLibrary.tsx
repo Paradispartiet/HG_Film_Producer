@@ -7,7 +7,6 @@ import {
   getProductionCaseCareerSummary,
   getProductionCaseCollectionSummary,
   getProductionCaseImprovementHint,
-  getProductionCaseLibraryStatus,
   getProductionCaseLibraryResultSummary,
   getProductionCaseNextAction,
   getProductionCaseProgressEntry,
@@ -31,6 +30,7 @@ import {
   type ProductionCaseNextActionStatus,
   type ProductionCaseLibraryControls,
 } from "../../core/productionCaseProgress";
+import { getProductionCaseConstrainedLibraryStatus } from "../../core/productionCaseOutcome";
 import {
   getClassicFilmScenarios,
   type FilmScenarioSeed,
@@ -822,7 +822,7 @@ export function getScenarioCaseStatus(
 
   const missions = createProductionCaseMissions(brief);
   const progressEntry = getProductionCaseProgressEntry(progressState, scenario.id);
-  const status = getProductionCaseLibraryStatus(missions, progressEntry);
+  const status = getProductionCaseConstrainedLibraryStatus(missions, progressEntry);
   if (!status) return undefined;
   return {
     ...status,
