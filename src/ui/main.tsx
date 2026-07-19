@@ -2,9 +2,11 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 import { App } from "./App";
+import { installProductionCaseVerificationMarkers } from "./data/productionCaseVerificationLibrary";
 import "./styles.css";
 import "./productionCaseDensity.css";
 import "./productionCaseVerification.css";
+import "./productionCaseVerificationLibrary.css";
 
 console.info("HG Film Producer booting");
 
@@ -19,3 +21,5 @@ createRoot(rootElement).render(
     <App />
   </StrictMode>
 );
+
+installProductionCaseVerificationMarkers();
