@@ -16,21 +16,23 @@ Source records are divided into reviewable batch files:
 - `src/ui/data/scenarioProductionVerificationCrossEraBatch.ts`
 - `src/ui/data/scenarioProductionVerificationTechnologyBatch.ts`
 - `src/ui/data/scenarioProductionVerificationLandscapeBatch.ts`
+- `src/ui/data/scenarioProductionVerificationConstructedWorldsBatch.ts`
 
-The unified registry currently covers twenty-eight cases.
+The unified registry currently covers thirty-two cases.
 
-The same twenty-eight cases also have source-backed film-history profiles in:
+The same thirty-two cases also have source-backed film-history profiles in:
 
 - `src/ui/data/scenarioFilmStudyMap.ts`
 - `src/ui/data/scenarioFilmStudyTechnologyBatch.ts`
 - `src/ui/data/scenarioFilmStudyLandscapeBatch.ts`
+- `src/ui/data/scenarioFilmStudyConstructedWorldsBatch.ts`
 
 The complete 17-area audit is defined in:
 
 - `src/core/filmStudyCoverage.ts`
 - `docs/FILM_HISTORY_AND_CRAFT_MAPPING.md`
 
-All 161 cases receive the same audit structure, but this does **not** mean that all 161 are verified. The remaining 133 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
+All 161 cases receive the same audit structure, but this does **not** mean that all 161 are verified. The remaining 129 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
 
 ### Pilot batch
 
@@ -95,6 +97,20 @@ This batch compares four ways location and regional knowledge become production 
 - rural noir grounded in Ozarks research, local casting, real properties and digital independent production;
 - collective 16mm magical realism built with South Louisiana communities, nonprofessional performers and documentary-influenced observation.
 
+### Constructed worlds and time systems batch
+
+- `scenario_groundhog_day_1993`
+- `scenario_the_truman_show_1998`
+- `scenario_moon_2009`
+- `scenario_midnight_in_paris_2011`
+
+This batch compares four ways an abstract premise becomes a physical production system:
+
+- time-loop comedy built through repeated geography, performance variation, editorial compression and recurring music;
+- media satire built through a master-planned town, commercial lighting, surveillance framing and an in-world broadcast soundtrack;
+- contained science fiction built from a constraint-shaped screenplay, one principal actor, studio design, miniatures and restrained digital compositing;
+- time-travel city fantasy built through Paris locations, period research, frame-specific redressing, film stocks, lenses, lighting and color separation.
+
 ## Verification rule
 
 A registry record must:
@@ -146,7 +162,7 @@ Verification supports learning; it does not support a score or ranking. A verifi
 
 ## Next step
 
-Twenty-eight cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 133 in coherent historical batches:
+Thirty-two cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 129 in coherent historical batches:
 
 - make every historical and technical alternative plausible and educational;
 - ensure feedback explains the concrete distinction between choices;

@@ -9,6 +9,11 @@ import {
   resolveScenarioFilmStudyMap,
 } from "../data/scenarioFilmStudyMap";
 import {
+  createConstructedWorldsFilmHistoryChoices,
+  getConstructedWorldsFilmHistoryProfile,
+  resolveConstructedWorldsFilmStudyMap,
+} from "../data/scenarioFilmStudyConstructedWorldsBatch";
+import {
   createLandscapeFilmHistoryChoices,
   getLandscapeFilmHistoryProfile,
   resolveLandscapeFilmStudyMap,
@@ -29,7 +34,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveLandscapeFilmStudyMap(scenario, brief)
+    () => resolveConstructedWorldsFilmStudyMap(scenario, brief)
+      ?? resolveLandscapeFilmStudyMap(scenario, brief)
       ?? resolveTechnologyFilmStudyMap(scenario, brief)
       ?? resolveScenarioFilmStudyMap(scenario, brief),
     [brief, scenario],
@@ -43,6 +49,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getConstructedWorldsFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createConstructedWorldsFilmHistoryChoices(historyProfile);
+    }
     if (getLandscapeFilmHistoryProfile(historyProfile.scenarioId)) {
       return createLandscapeFilmHistoryChoices(historyProfile);
     }
