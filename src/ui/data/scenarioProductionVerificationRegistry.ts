@@ -4,6 +4,7 @@ import {
   type ProductionCaseVerificationRecord,
 } from "./scenarioProductionVerification";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
+import { landscapeCinemaVerificationRecords } from "./scenarioProductionVerificationLandscapeBatch";
 import { productionMethodVerificationRecords } from "./scenarioProductionVerificationMethodBatch";
 import { modernCraftVerificationRecords } from "./scenarioProductionVerificationModernBatch";
 import { technologyHistoryVerificationRecords } from "./scenarioProductionVerificationTechnologyBatch";
@@ -19,6 +20,7 @@ const additionalVerificationRecords = [
   ...modernCraftVerificationRecords,
   ...crossEraVerificationRecords,
   ...technologyHistoryVerificationRecords,
+  ...landscapeCinemaVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
 
 const additionalVerificationByScenarioId = new Map<string, ProductionCaseVerificationRecord>(
