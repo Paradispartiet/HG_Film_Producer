@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const beauTravailFilmHistoryProfile = {
+  scenarioId: "scenario_beau_travail_1999",
+  period: "French postcolonial modernism, military body cinema and fragmented memory",
+  traditions: ["Postcolonial modernism", "Literary adaptation", "Choreographic body cinema"],
+  before: "Military films commonly organized bodies through mission, combat and command exposition, while colonial settings were treated as strategic background rather than as spaces that expose the institution's historical redundancy.",
+  moment: "Claire Denis and Jean-Pol Fargeau transform Herman Melville's Billy Budd through Galoup's fragmented memory, filming French Foreign Legion routines in Djibouti with Agnès Godard, editor Nelly Quettier and choreographer Bernardo Montet so drills, uniforms, landscape, Britten, pop music, breath and repeated labour carry jealousy and repression.",
+  after: "A director-approved restoration supervised by Godard preserved the 1.66:1 colour image and stereo soundtrack, while the film remains a key reference for postcolonial authorship, female views of masculinity and narrative built through choreography, sensation and memory.",
+  historyQuestion: "Which production system explains why military drills, bodies, salt flats, music and memory replace combat as the main action?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Criterion place the French Foreign Legion in Djibouti within the afterlife of French colonial power and late-1990s European art cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The sources identify a postcolonial, sensory and choreographic modernism that adapts Billy Budd without reproducing conventional military narrative." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion and BFI document the French television-linked coproduction, Djibouti location work and the long-running creative team of Denis, Godard and Quettier." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion's director-approved restoration and BFI's sustained critical study document the film's continued standing as a reference for body, masculinity and postcolonial form." },
+    { area: "screenplay", status: "source_verified", note: "Denis and Fargeau adapt Melville through Galoup's unreliable recollection, ritual, withheld motive and recurring bodies rather than mission-led exposition." },
+    { area: "directing", status: "source_verified", note: "Denis stages drills, chores, glances and punishment as physical relations, allowing choreography and spatial repetition to reveal authority and desire." },
+    { area: "performance", status: "source_verified", note: "Denis Lavant's compressed narration and body, Grégoire Colin's stillness and Michel Subor's institutional presence create a hierarchy expressed through gesture more than dialogue." },
+    { area: "production_design", status: "source_verified", note: "Barracks, training grounds, roads, discos and salt flats are organized as contrasting social and physical systems rather than neutral location backgrounds." },
+    { area: "costume_makeup", status: "source_verified", note: "Uniforms, training clothes and repeated dressing and ironing routines make discipline, rank and bodily display visible throughout the film." },
+    { area: "cinematography", status: "source_verified", note: "Agnès Godard's colour photography combines bodies, desert, sea, stone and extreme heat into a sensual but politically unsettled landscape system." },
+    { area: "lighting", status: "source_verified", note: "Hard Djibouti sun, reflective salt, deep colour and controlled interiors are central to Godard's documented image design and restoration supervision." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records the director-approved 4K restoration in colour and 1.66:1, supervised by Godard with an uncompressed stereo soundtrack." },
+    { area: "editing", status: "source_verified", note: "Nelly Quettier assembles memory, drills, punishment and Paris aftermath through rhythmic association rather than linear military procedure." },
+    { area: "sound_design", status: "source_verified", note: "Commands, breath, scraping ground, sea, machinery, silence and disco space give the bodies and landscapes an acoustic weight beyond dialogue." },
+    { area: "music", status: "source_verified", note: "Benjamin Britten's Billy Budd, Eran Tzur's music and Corona's Rhythm of the Night create competing systems of discipline, tragedy and bodily release." },
+    { area: "effects_animation", status: "not_central", note: "The film relies on bodies, landscape, choreography, image and sound rather than effects spectacle." },
+    { area: "documentary_method", status: "mapped", note: "Location observation and attention to Legion routine support the fiction, while dedicated documentation of the research process remains incomplete." },
+  ],
+} as const satisfies FilmHistoryProfile;
