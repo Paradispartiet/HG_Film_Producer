@@ -18,7 +18,9 @@ concurrency:
 
 jobs:
   build:
+    name: Verify, build, and prepare Pages
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Checkout
@@ -35,39 +37,20 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Preflight v0.1
-        run: npm run preflight:v0.1
-
-      - name: Typecheck
+      - name: Full v0.1 verification
         shell: bash
         run: |
           set -o pipefail
-          npm run typecheck 2>&1 | tee typecheck-output.txt
+          npm run verify:v0.1 2>&1 | tee verify-v0.1-output.txt
 
-      - name: Upload failed typecheck diagnostics
+      - name: Upload failed verification diagnostics
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: typecheck-diagnostics
-          path: typecheck-output.txt
-
-      - name: Test
-        shell: bash
-        run: |
-          set -o pipefail
-          npm test 2>&1 | tee core-test-output.txt
-
-      - name: Upload failed test diagnostics
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: core-test-diagnostics
-          path: core-test-output.txt
-
-      - name: Build UI
-        run: npm run build:ui
+          name: verify-v0.1-diagnostics
+          path: verify-v0.1-output.txt
 
       - name: Verify Pages artifact
         shell: bash
