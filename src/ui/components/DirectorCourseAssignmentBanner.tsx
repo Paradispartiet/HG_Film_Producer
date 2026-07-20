@@ -98,14 +98,15 @@ export function DirectorCourseAssignmentBanner({ filmSlug, visible }: DirectorCo
   }
 
   if (isCapstoneAssignment(activeAssignment)) {
-    const snapshot = loadCapstoneSnapshot(activeAssignment);
-    const validation = validateFilmSchoolCapstoneProject(snapshot.project, activeAssignment);
-    const submitted = isFilmSchoolCapstoneSubmissionForAssignment(snapshot.submission, activeAssignment);
+    const capstoneAssignment: LoadedCapstoneAssignment = activeAssignment;
+    const snapshot = loadCapstoneSnapshot(capstoneAssignment);
+    const validation = validateFilmSchoolCapstoneProject(snapshot.project, capstoneAssignment);
+    const submitted = isFilmSchoolCapstoneSubmissionForAssignment(snapshot.submission, capstoneAssignment);
     const projectChangedAfterSubmission = Boolean(submitted && snapshot.project && snapshot.submission && snapshot.project.updatedAt !== snapshot.submission.projectUpdatedAt);
 
     function submitCapstone() {
       if (!snapshot.project) return;
-      const submission = createFilmSchoolCapstoneSubmission(snapshot.project, activeAssignment);
+      const submission = createFilmSchoolCapstoneSubmission(snapshot.project, capstoneAssignment);
       if (!submission) return;
       try {
         window.localStorage.setItem(FILM_SCHOOL_CAPSTONE_SUBMISSION_STORAGE_KEY, JSON.stringify(submission));
@@ -124,10 +125,10 @@ export function DirectorCourseAssignmentBanner({ filmSlug, visible }: DirectorCo
     return (
       <aside className={submitted && !projectChangedAfterSubmission ? "director-course-assignment director-course-assignment--capstone is-submitted" : "director-course-assignment director-course-assignment--capstone"} aria-label="Film School final directing exam">
         <header>
-          <div><span>Film School · Regieksamen</span><strong>{activeAssignment.title}</strong><small>{activeAssignment.filmYear} · {activeAssignment.filmTitle}</small></div>
+          <div><span>Film School · Regieksamen</span><strong>{capstoneAssignment.title}</strong><small>{capstoneAssignment.filmYear} · {capstoneAssignment.filmTitle}</small></div>
           <button aria-label="Dismiss course assignment" onClick={dismiss} type="button">×</button>
         </header>
-        <p>{submitted && !projectChangedAfterSubmission ? `Levert ${formatDateTime(snapshot.submission?.submittedAt)} · ${snapshot.submission?.sceneTitle}` : activeAssignment.prompt}</p>
+        <p>{submitted && !projectChangedAfterSubmission ? `Levert ${formatDateTime(snapshot.submission?.submittedAt)} · ${snapshot.submission?.sceneTitle}` : capstoneAssignment.prompt}</p>
         <section className="director-capstone-requirements" aria-live="polite">
           <div className={validation.completedBriefFields === validation.totalBriefFields ? "is-complete" : ""}><strong>{validation.completedBriefFields}/{validation.totalBriefFields}</strong><span>regifelt i aktiv scene</span></div>
           <div className={validation.completeShotCount >= validation.minimumCompleteShots ? "is-complete" : ""}><strong>{validation.completeShotCount}/{validation.minimumCompleteShots}</strong><span>komplette shot cards</span></div>
