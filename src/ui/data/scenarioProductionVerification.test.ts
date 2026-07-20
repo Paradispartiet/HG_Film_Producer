@@ -50,7 +50,14 @@ const noirRealism1940sIds = [
   "scenario_the_third_man_1949",
 ] as const;
 
-const expectedVerifiedCount = 68;
+const asianPostwar1950sIds = [
+  "scenario_rashomon_1950",
+  "scenario_tokyo_story_1953",
+  "scenario_seven_samurai_1954",
+  "scenario_pather_panchali_1955",
+] as const;
+
+const expectedVerifiedCount = 72;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -108,6 +115,14 @@ test("classical Hollywood systems are verified with four sources each", () => {
 
 test("1940s noir and realism systems are verified with four sources each", () => {
   for (const scenarioId of noirRealism1940sIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("1950s Asian postwar systems are verified with four sources each", () => {
+  for (const scenarioId of asianPostwar1950sIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);

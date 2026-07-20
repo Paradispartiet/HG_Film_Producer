@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 68 source-backed Production Cases.
+- 72 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -39,6 +39,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerification1930sProductionSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts`
 - `src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts`
+- `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 
 The complete audit schema is defined in:
 
@@ -189,6 +190,15 @@ This batch compares prestige location western production, MGM Technicolor musica
 - `scenario_the_third_man_1949`
 
 This batch compares Paramount studio noir, British restrained melodrama, Italian neorealism under material scarcity and British location noir in occupied Vienna.
+
+### 1950s Asian postwar cinema batch
+
+- `scenario_rashomon_1950`
+- `scenario_tokyo_story_1953`
+- `scenario_seven_samurai_1954`
+- `scenario_pather_panchali_1955`
+
+This batch compares Daiei subjective period modernism, Shochiku domestic minimalism, Toho location action and Bengali location humanism.
 
 ## Verification rule
 

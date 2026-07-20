@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const rashomonFilmHistoryProfile = {
+  scenarioId: "scenario_rashomon_1950",
+  period: "Postwar Japanese modernism, Daiei period production and subjective narration",
+  traditions: ["Jidaigeki", "Unreliable testimony", "International art cinema"],
+  before: "Classical investigation stories normally organize testimony toward one recoverable sequence of events, while Japanese period films often privilege action, honor and historical spectacle.",
+  moment: "Kurosawa and Shinobu Hashimoto combine two Akutagawa stories into incompatible accounts of one crime, using altered performance, repeated action, a reconstructed gate, forest tracking, direct sun, mirrors, rain and Fumio Hayasaka's recurring musical pattern.",
+  after: "The Venice success and international circulation made the film a major reference for contradictory narration, while restoration work preserved Kazuo Miyagawa's high-contrast forest photography and the original monaural presentation.",
+  historyQuestion: "Which production system explains why the same event changes through acting, camera movement, light, cutting and narration instead of yielding one stable truth?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Criterion place the Daiei production in postwar Japanese cinema and its rapid international breakthrough." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film joins jidaigeki settings to modernist unreliable narration and emerging international art-cinema circulation." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion and BFI document Daiei's initial uncertainty, the unusually substantial gate construction and the film's 1950 production." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI records the Venice Golden Lion and the later term 'Rashomon effect'; Criterion documents the institutional restoration." },
+    { area: "screenplay", status: "source_verified", note: "Kurosawa and Hashimoto adapt two Akutagawa stories into repeated, self-serving accounts framed beneath the ruined gate." },
+    { area: "directing", status: "source_verified", note: "Each testimony receives a distinct performance and visual emphasis rather than functioning as neutral replay." },
+    { area: "performance", status: "source_verified", note: "Mifune, Kyo, Mori and Shimura alter gesture, force and vulnerability across incompatible versions." },
+    { area: "production_design", status: "source_verified", note: "The monumental gate, stripped court space and forest create three sharply different narrative environments." },
+    { area: "costume_makeup", status: "mapped", note: "Period costume clarifies role and status, while dedicated costume-department evidence remains incomplete." },
+    { area: "cinematography", status: "source_verified", note: "Miyagawa uses choreographed tracking, direct sunlight, lens flare and forest movement as active narrative construction." },
+    { area: "lighting", status: "source_verified", note: "Mirrors redirect sunlight and produce the mobile dappled contrast documented by MoMA and institutional film histories." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records a black-and-white 1.33:1 Japanese production with restored monaural sound." },
+    { area: "editing", status: "source_verified", note: "Repeated actions are re-cut with changed duration, emphasis and order so every testimony becomes its own construction." },
+    { area: "sound_design", status: "mapped", note: "Rain, narration, silence and monaural dialogue separate the gate, court and forest, while detailed sound-production research remains pending." },
+    { area: "music", status: "source_verified", note: "Fumio Hayasaka's score supplies a recurring bolero-like pulse that distinguishes movement and testimony." },
+    { area: "effects_animation", status: "not_central", note: "The primary transformations come from performance, weather, light and editorial repetition rather than effects spectacle." },
+    { area: "documentary_method", status: "not_central", note: "The film investigates testimony through controlled fiction rather than documentary evidence." },
+  ],
+} as const satisfies FilmHistoryProfile;

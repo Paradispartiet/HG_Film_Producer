@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const tokyoStoryFilmHistoryProfile = {
+  scenarioId: "scenario_tokyo_story_1953",
+  period: "Postwar Shochiku domestic drama and Ozu's mature family-film system",
+  traditions: ["Shomin-geki", "Domestic modernism", "Restrained ensemble drama"],
+  before: "Family melodrama often externalized conflict through confrontation and plot escalation, while studio continuity normally motivated camera movement and cuts through action.",
+  moment: "Ozu and Kogo Noda shape generational distance through routine visits, absences and pauses; Yuharu Atsuta's low fixed camera, frontal rooms, restrained performance and transitional city images keep emotional pressure inside ordinary duration.",
+  after: "Delayed international circulation established the film as a central reference for domestic modernism, and later restoration and exhibition preserved its precise black-and-white framing and monaural sound.",
+  historyQuestion: "Which production system explains why fixed low framing, pauses, empty transitional spaces and restrained acting carry more dramatic weight than overt confrontation?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Shochiku, BFI and MoMA place the film in postwar Japan and connect its family structure to social transition." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The case belongs to Shochiku domestic drama and Ozu's mature shomin-geki style rather than action-led historical cinema." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI documents Ozu's long-term Shochiku company system; Shochiku verifies the Ofuna production and department heads." },
+    { area: "reception_and_legacy", status: "source_verified", note: "MoMA documents the delayed US circulation, while BFI and Shochiku record its later canonical position." },
+    { area: "screenplay", status: "source_verified", note: "Ozu and Kogo Noda build generational rupture from a simple visit, everyday obligations and what family members fail to do." },
+    { area: "directing", status: "source_verified", note: "Controlled repetition, refusal of melodramatic emphasis and attention to ordinary routine define the staging." },
+    { area: "performance", status: "source_verified", note: "MoMA and BFI emphasize understated acting, sparse dialogue and emotion intensified by restraint." },
+    { area: "production_design", status: "source_verified", note: "Shochiku credits Tatsuo Hamada; frontal rooms, thresholds and carefully placed objects organize family relations." },
+    { area: "costume_makeup", status: "mapped", note: "Dress distinguishes generation, occupation and domestic formality, while dedicated costume evidence remains incomplete." },
+    { area: "cinematography", status: "source_verified", note: "Atsuta's low, nearly fixed camera and head-on compositions place viewers at seated height inside domestic space." },
+    { area: "lighting", status: "source_verified", note: "Shochiku identifies lighting director Itsuo Takashita; the controlled interiors preserve clear tonal separation without expressive noir contrast." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records black-and-white 1.33:1 photography with restored uncompressed monaural sound." },
+    { area: "editing", status: "source_verified", note: "Cuts follow spatial and emotional rhythm, using transitional city and object images rather than conventional dramatic bridges." },
+    { area: "sound_design", status: "mapped", note: "Trains, streets, domestic quiet and naturalistic dialogue mark movement and passing time; deeper production evidence remains pending." },
+    { area: "music", status: "source_verified", note: "Shochiku and Criterion credit Kojun Saito's restrained score as part of the controlled tonal system." },
+    { area: "effects_animation", status: "not_central", note: "The film's form depends on rooms, performance, framing, cutting and duration rather than effects work." },
+    { area: "documentary_method", status: "mapped", note: "The social observation is precise, but it is achieved through scripted studio fiction rather than documentary capture." },
+  ],
+} as const satisfies FilmHistoryProfile;

@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const patherPanchaliFilmHistoryProfile = {
+  scenarioId: "scenario_pather_panchali_1955",
+  period: "Post-independence Bengali location realism and the emergence of Indian art cinema",
+  traditions: ["Indian parallel cinema", "Neorealist influence", "Rural humanism"],
+  before: "Commercial Indian production often centered stars, songs and studio-controlled spectacle, while Italian neorealism offered a model for ordinary lives, locations and material circumstance.",
+  moment: "Ray adapts Bibhutibhushan Bandyopadhyay with a largely inexperienced team, intermittent location shooting outside Calcutta, Subrata Mitra's black-and-white photography, Bansi Chandragupta's art direction, Dulal Dutta's editing and Ravi Shankar's music.",
+  after: "MoMA's 1955 premiere, Cannes recognition and later Academy-led preservation established the film and the Apu cycle as central works of international art cinema.",
+  historyQuestion: "Which production system explains how limited resources, real locations, seasonal observation and a child's discoveries become the film's scale rather than a constraint to hide?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, MoMA and Criterion place the debut in post-independence Bengal and the international emergence of Indian art cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film joins Indian artistic traditions to a documented neorealist influence without simply copying European form." },
+    { area: "industry_and_production_context", status: "source_verified", note: "MoMA documents the prolonged funding struggle, government subsidy, finishing support and raw stock; Criterion records the Government of West Bengal production." },
+    { area: "reception_and_legacy", status: "source_verified", note: "MoMA records the 1955 world premiere; BFI and the Academy document Cannes recognition, preservation and later circulation." },
+    { area: "screenplay", status: "source_verified", note: "Ray adapts the novel as an accumulation of family labor, childhood discovery, seasonal change and material loss rather than plot-heavy melodrama." },
+    { area: "directing", status: "source_verified", note: "The production observes people, landscape and routine with patient staging while preserving decisive emotional events." },
+    { area: "performance", status: "source_verified", note: "Criterion and BFI identify the family ensemble and the film's naturalistic performance texture, including first-time and non-star performers." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Bansi Chandragupta; built and found details are integrated into the rural location rather than presented as studio display." },
+    { area: "costume_makeup", status: "mapped", note: "Everyday clothing supports social and material specificity, while dedicated department documentation remains incomplete." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Subrata Mitra; BFI and MoMA connect the black-and-white location imagery to childhood discovery, nature and rural life." },
+    { area: "lighting", status: "mapped", note: "Natural and available-light appearance is central to the result, while precise lighting documentation remains pending." },
+    { area: "camera_format", status: "source_verified", note: "MoMA records a 35mm Bengali production; Criterion records black-and-white 1.37:1 and restored monaural sound." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Dulal Dutta; episodes, visual discoveries and seasonal transitions accumulate into the family's changing condition." },
+    { area: "sound_design", status: "source_verified", note: "Criterion credits Bhupen Ghosh; environmental sounds, voices and rural activity remain integral to the location world." },
+    { area: "music", status: "source_verified", note: "Criterion and MoMA credit Ravi Shankar's score, which supports discovery and loss without replacing observed daily rhythm." },
+    { area: "effects_animation", status: "not_central", note: "The production's force comes from location, performance, weather and observation rather than effects construction." },
+    { area: "documentary_method", status: "source_verified", note: "Location work, ordinary activity and material observation are used inside a scripted adaptation to create a realist social texture." },
+  ],
+} as const satisfies FilmHistoryProfile;

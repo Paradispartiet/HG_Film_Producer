@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const sevenSamuraiFilmHistoryProfile = {
+  scenarioId: "scenario_seven_samurai_1954",
+  period: "Postwar Toho jidaigeki rebuilt as large-scale ensemble action and historical realism",
+  traditions: ["Jidaigeki", "Ensemble action epic", "Location-based historical production"],
+  before: "Japanese period films often favored ritualized swordplay and compressed heroic plots, while studio action commonly relied on controlled coverage and limited location scale.",
+  moment: "Kurosawa, Shinobu Hashimoto and Hideo Oguni expand recruitment, preparation and battle into a three-hour-plus structure; the Toho production uses researched village geography, weather, horses, multiple cameras and a large ensemble to make tactics and class relations visible.",
+  after: "Its international release, later restoration and many adaptations established the film as a durable reference for team assembly, spatially legible action and weather-driven battle staging.",
+  historyQuestion: "Which production logic explains why recruitment, village planning, class conflict and rain-soaked battle all belong to one readable action system?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI places the 1954 Toho production in postwar Japanese cinema and its reconstruction of sixteenth-century conflict." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film revises jidaigeki through historical research, ensemble humanism and modern action construction." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI documents the unusually expensive, lengthy location production and Toho's role; Criterion records the principal department credits." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI and Criterion document international circulation, restoration and the film's continuing relation to later ensemble action." },
+    { area: "screenplay", status: "source_verified", note: "The three writers divide the story into recruitment, fortification and battle while sustaining distinct arcs across farmers and samurai." },
+    { area: "directing", status: "source_verified", note: "Kurosawa coordinates performance, mapped geography, weather and multiple cameras so large-scale action remains emotionally and tactically clear." },
+    { area: "performance", status: "source_verified", note: "Shimura's controlled leadership and Mifune's unstable outsider energy define contrasting positions inside the ensemble." },
+    { area: "production_design", status: "source_verified", note: "BFI documents meticulously researched village sets, fortifications, costumes and weapons built for historical credibility and action geography." },
+    { area: "costume_makeup", status: "source_verified", note: "Costume and equipment distinguish samurai, farmers and bandits while preserving the production's researched period texture." },
+    { area: "cinematography", status: "source_verified", note: "Asakazu Nakai's black-and-white location photography uses multiple-camera setups, movement, long views and environmental conditions." },
+    { area: "lighting", status: "mapped", note: "Natural conditions and weather shape the image, while dedicated lighting documentation remains incomplete." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records the restored black-and-white presentation in 1.37:1 and 1.33:1 variants with monaural sound." },
+    { area: "editing", status: "source_verified", note: "Multiple-camera material allows rapid changes of scale and angle while preserving direction, tactical position and reaction." },
+    { area: "sound_design", status: "mapped", note: "Rain, horses, weapons, footsteps and crowd voices structure battle intensity, while detailed sound-production evidence remains pending." },
+    { area: "music", status: "source_verified", note: "Criterion credits Fumio Hayasaka; recurring themes distinguish collective preparation, character and battle momentum." },
+    { area: "effects_animation", status: "source_verified", note: "Practical horse work, mud, rain, weapons and coordinated stunt action form the central effects system." },
+    { area: "documentary_method", status: "source_verified", note: "BFI documents research into period sets, costumes, weapons and social conditions as part of the production method." },
+  ],
+} as const satisfies FilmHistoryProfile;
