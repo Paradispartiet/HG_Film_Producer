@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 104 source-backed Production Cases.
+- 108 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -39,6 +39,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerification1930sProductionSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts`
 - `src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts`
+- `src/ui/data/scenarioProductionVerificationCrimeNoirTransformationsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts`
@@ -198,6 +199,15 @@ This batch compares prestige location western production, MGM Technicolor musica
 - `scenario_the_third_man_1949`
 
 This batch compares Paramount studio noir, British restrained melodrama, Italian neorealism under material scarcity and British location noir in occupied Vienna.
+
+### Crime and noir transformations batch
+
+- `scenario_the_maltese_falcon_1941`
+- `scenario_the_lost_weekend_1945`
+- `scenario_out_of_the_past_1947`
+- `scenario_band_of_outsiders_1964`
+
+This batch compares Warner Bros. hard-boiled dialogue staging, Paramount social-problem noir, RKO fatalist location-studio noir and French New Wave pulp genre play.
 
 ### 1950s Asian postwar cinema batch
 

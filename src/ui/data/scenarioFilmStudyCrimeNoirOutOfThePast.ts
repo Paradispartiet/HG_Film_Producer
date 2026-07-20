@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const outOfThePastFilmHistoryProfile = {
+  scenarioId: "scenario_out_of_the_past_1947",
+  period: "RKO postwar film noir, fatalist literary adaptation and location-studio dream geography",
+  traditions: ["Classical American film noir", "Hard-boiled literary adaptation", "Postwar fatalist crime cinema"],
+  before: "RKO had developed a compact house style for shadowed genre production, while wartime crime films had normalized flashback, voice-over and morally compromised investigators as flexible structures for postwar uncertainty.",
+  moment: "RKO, producer Warren Duff, director Jacques Tourneur, writer Daniel Mainwaring, cinematographer Nicholas Musuraca, editor Samuel E. Beetley, designers Albert S. D'Agostino and Jack Okey, composer Roy Webb and a controlled star ensemble move between California, Nevada, Mexico-coded space and studio interiors to make memory feel like an inescapable geography.",
+  after: "The film entered the National Film Registry and came to be treated as a defining noir: its drifting locations, underplayed performance, layered flashback, fatal dialogue and luminous darkness became a durable model for crime films about people unable to escape an earlier choice.",
+  historyQuestion: "Which production system explains the film's RKO economy, false identity, nested past-tense narration, Sierra and Tahoe locations, Musuraca shadow, Mitchum underplaying and fatal geography?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI documents the 1945 rights purchase, 1946–47 production, RKO context and Production Code negotiations; BFI and Criterion place the result within postwar noir." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Criterion identify the film as a concentrated classical noir built from hard-boiled dialogue, flashback, femme-fatale structure and postwar fatalism." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents RKO Radio Pictures, Warren Duff, casting changes, borrowed performers, the October 1946–January 1947 schedule and extensive California and Nevada locations." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Library of Congress records the film's 1991 National Film Registry selection, while BFI and Criterion document its later standing as a central noir reference." },
+    { area: "screenplay", status: "source_verified", note: "AFI credits Geoffrey Homes, the pseudonym of novelist Daniel Mainwaring, and documents script revisions under Production Code pressure; Criterion discusses the film's layered pulp dialogue and drifting structure." },
+    { area: "directing", status: "source_verified", note: "Criterion describes Tourneur's exact control of place, absence, quiet and underplayed behavior, while AFI documents the production change that brought him to the project." },
+    { area: "performance", status: "source_verified", note: "Criterion connects Robert Mitchum's delayed, soft delivery to Tourneur's preference for underplaying; AFI documents Jane Greer, Kirk Douglas and the RKO casting system around him." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Albert S. D'Agostino and Jack Okey and documents the mixture of RKO ranch, interiors and multiple real locations that create the film's shifting geography." },
+    { area: "costume_makeup", status: "mapped", note: "Coats, suits, hats and Kathie's controlled transformations support noir identity and social mobility, but current sources do not isolate the wardrobe, makeup or hair process." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Nicholas Musuraca; BFI and Criterion describe the film's movement between hard daylight, luminous exteriors, smoke, darkness and carefully controlled faces." },
+    { area: "lighting", status: "source_verified", note: "Criterion emphasizes Tourneur's exact attention to how every shadow falls, while BFI identifies half-light and darkness as the visual organization of fatal return." },
+    { area: "camera_format", status: "source_verified", note: "AFI records a black-and-white RCA sound production and the RKO camera department, situating the film in the studio's established photochemical noir practice." },
+    { area: "editing", status: "source_verified", note: "AFI credits Samuel E. Beetley; the institutional accounts support a structure moving clearly between present, extended flashback, changing locations and repeated traps." },
+    { area: "sound_design", status: "mapped", note: "Underplayed dialogue, environmental quiet, cars, telephones and sudden violence shape the film's mood, but the current sources do not provide a detailed sound-department method." },
+    { area: "music", status: "source_verified", note: "AFI credits Roy Webb and the RKO music department; the score supports transitions between apparent refuge, remembered desire and renewed threat." },
+    { area: "effects_animation", status: "mapped", note: "AFI notes modern-source credit for Linwood Dunn's optical effects, but effects remain supporting transitions rather than the central production system." },
+    { area: "documentary_method", status: "mapped", note: "Bridgeport, Lake Tahoe, High Sierra and other locations give the noir a material geography, though the film remains a controlled literary studio production rather than an observational project." },
+  ],
+} as const satisfies FilmHistoryProfile;

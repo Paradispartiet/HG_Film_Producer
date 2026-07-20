@@ -44,6 +44,11 @@ import {
   resolveConstructedWorldsFilmStudyMap,
 } from "../data/scenarioFilmStudyConstructedWorldsBatch";
 import {
+  createCrimeNoirTransformationsFilmHistoryChoices,
+  getCrimeNoirTransformationsFilmHistoryProfile,
+  resolveCrimeNoirTransformationsFilmStudyMap,
+} from "../data/scenarioFilmStudyCrimeNoirTransformationsBatch";
+import {
   createCzechoslovakNewWaveFilmHistoryChoices,
   getCzechoslovakNewWaveFilmHistoryProfile,
   resolveCzechoslovakNewWaveFilmStudyMap,
@@ -124,7 +129,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveEarly1960sProductionSystemsFilmStudyMap(scenario, brief)
+    () => resolveCrimeNoirTransformationsFilmStudyMap(scenario, brief)
+      ?? resolveEarly1960sProductionSystemsFilmStudyMap(scenario, brief)
       ?? resolve1950sExpressivePostwarFilmStudyMap(scenario, brief)
       ?? resolveEuropeanModernistProductionFilmStudyMap(scenario, brief)
       ?? resolve1960sScaleIndependentFilmStudyMap(scenario, brief)
@@ -157,6 +163,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getCrimeNoirTransformationsFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createCrimeNoirTransformationsFilmHistoryChoices(historyProfile);
+    }
     if (getEarly1960sProductionSystemsFilmHistoryProfile(historyProfile.scenarioId)) {
       return createEarly1960sProductionSystemsFilmHistoryChoices(historyProfile);
     }

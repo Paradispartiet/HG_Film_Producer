@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case contains all mapping 
 Every Production Case in the current catalogue resolves to the same complete mapping structure. Catalogue size is read dynamically and is not duplicated in documentation or tests.
 
 - 17 mandatory film-history and film-craft areas.
-- 104 source-backed film-history profiles.
+- 108 source-backed film-history profiles.
 - All remaining cases retain complete audit structures with visible research gaps.
 - No points, ranks, badges or reward currencies.
 - Historical placement is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The 104 source-backed profiles are the same controlled group covered by the Production Case verification registry:
+The 108 source-backed profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -101,6 +101,10 @@ The 104 source-backed profiles are the same controlled group covered by the Prod
 - Brief Encounter
 - Rome, Open City
 - The Third Man
+- The Maltese Falcon
+- The Lost Weekend
+- Out of the Past
+- Band of Outsiders
 - Rashomon
 - Tokyo Story
 - Seven Samurai
@@ -247,6 +251,8 @@ A date or movement name alone does not teach film history. The player learns by 
 - RKO modernist biography versus Warner Bros. wartime studio melodrama;
 - Paramount confessional noir versus British railway-station melodrama;
 - Italian occupation neorealism versus postwar Vienna location noir;
+- Warner Bros. hard-boiled dialogue staging versus Paramount researched social-problem noir;
+- RKO fatalist location-studio noir versus French New Wave pulp genre play;
 - Daiei contradictory testimony versus Shochiku domestic minimalism;
 - Toho tactical action versus Bengali location humanism;
 - Danish spiritual long-take chamber cinema versus Polish Film School one-night political tragedy;

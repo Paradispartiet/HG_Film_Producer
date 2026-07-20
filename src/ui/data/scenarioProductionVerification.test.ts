@@ -50,6 +50,13 @@ const noirRealism1940sIds = [
   "scenario_the_third_man_1949",
 ] as const;
 
+const crimeNoirTransformationsIds = [
+  "scenario_the_maltese_falcon_1941",
+  "scenario_the_lost_weekend_1945",
+  "scenario_out_of_the_past_1947",
+  "scenario_band_of_outsiders_1964",
+] as const;
+
 const asianPostwar1950sIds = [
   "scenario_rashomon_1950",
   "scenario_tokyo_story_1953",
@@ -113,7 +120,7 @@ const europeanModernistProductionIds = [
   "scenario_the_battle_of_algiers_1966",
 ] as const;
 
-const expectedVerifiedCount = 104;
+const expectedVerifiedCount = 108;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -171,6 +178,14 @@ test("classical Hollywood systems are verified with four sources each", () => {
 
 test("1940s noir and realism systems are verified with four sources each", () => {
   for (const scenarioId of noirRealism1940sIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("crime and noir transformation systems are verified with four sources each", () => {
+  for (const scenarioId of crimeNoirTransformationsIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);

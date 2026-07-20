@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const bandOfOutsidersFilmHistoryProfile = {
+  scenarioId: "scenario_band_of_outsiders_1964",
+  period: "French New Wave pulp adaptation, economical Paris location production and self-conscious genre play",
+  traditions: ["French New Wave", "Pulp crime adaptation", "Youth and location cinema"],
+  before: "American pulp crime and classical heist films treated planning, suspense and payoff as tightly organized genre machinery, while the first French New Wave films had already shown how small crews, locations, narration and discontinuity could loosen that machinery.",
+  moment: "Anouchka Films and Orsay Films, producer-director-writer Jean-Luc Godard, producer Claude Ganz, cinematographer Raoul Coutard, editor Agnès Guillemot, sound collaborators René Levert and Antoine Bonfanti, composer Michel Legrand and performers Anna Karina, Claude Brasseur and Sami Frey turn Dolores Hitchens's novel into a Paris crime film structured by pauses, games, dance, narration and digression.",
+  after: "The film became one of the most recognizable examples of New Wave genre play: the Madison dance, minute of silence, Louvre sprint and melancholy heist continue to demonstrate how popular cinema can be quoted, interrupted and emotionally renewed without losing its basic story.",
+  historyQuestion: "Which production system explains the film's low-scale Paris locations, pulp novel, narrated digressions, mobile black-and-white photography, deliberate silence, café dance and robbery treated as both game and consequence?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion, BFI, MoMA and the Cinémathèque place the 1964 film within Godard's early New Wave period and its active dialogue with American pulp culture." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion and BFI explicitly describe a radical, playful reimagining of gangster and 1940s pulp crime films through French New Wave methods." },
+    { area: "industry_and_production_context", status: "source_verified", note: "The Cinémathèque documents Anouchka Films, Orsay Films, producers Godard and Claude Ganz, production manager Philippe Dussart and original Columbia distribution." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion and BFI document the continuing visibility of the Madison dance, Louvre sprint and film's international afterlife, while MoMA preserves it within its film collection." },
+    { area: "screenplay", status: "source_verified", note: "Criterion and the Cinémathèque credit Godard adapting Dolores Hitchens's Fool's Gold/Pigeon vole and support a structure in which the robbery is interrupted by games, waiting and narration." },
+    { area: "directing", status: "source_verified", note: "Criterion, BFI and Cinémathèque accounts identify Godard's direction as deliberately nonchalant, self-aware and open to digression while retaining a legible heist progression." },
+    { area: "performance", status: "source_verified", note: "Criterion and BFI foreground Anna Karina, Claude Brasseur and Sami Frey as a youthful trio whose play-acting, hesitation, dance and rivalry continually reshape the crime plot." },
+    { area: "production_design", status: "mapped", note: "Classrooms, cafés, suburban streets, the house and the Louvre form a coherent found-location world, but the current sources do not document a separate production-design department process." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion and the Cinémathèque credit Christiane Fageol and Janou Pottier; clothing and hair distinguish Odile's shifting self-presentation from Arthur and Franz's borrowed gangster poses." },
+    { area: "cinematography", status: "source_verified", note: "Criterion, BFI and the Cinémathèque credit Raoul Coutard and document mobile black-and-white location photography centered on bodies moving through ordinary Paris space." },
+    { area: "lighting", status: "mapped", note: "Available-looking interiors and streets preserve economical immediacy, but the present institutional sources do not isolate a complete lighting method." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the black-and-white 1.33:1 film and Gaumont restoration, while BFI records the 95-minute French production and its monochrome presentation." },
+    { area: "editing", status: "source_verified", note: "Criterion and the Cinémathèque credit Agnès Guillemot; the film uses narration, ellipsis, pauses, abrupt transitions and set-piece duration to loosen conventional heist continuity." },
+    { area: "sound_design", status: "source_verified", note: "The Cinémathèque credits René Levert and Antoine Bonfanti, while Criterion and BFI identify narration, room tone, everyday ambience and the staged minute of silence as visible formal choices." },
+    { area: "music", status: "source_verified", note: "Criterion, BFI and the Cinémathèque credit Michel Legrand; recurring cues and the Madison sequence turn music into both social action and commentary." },
+    { area: "effects_animation", status: "not_central", note: "The film's invention depends on location, camera, performance, editing, narration and sound rather than a central effects or animation pipeline." },
+    { area: "documentary_method", status: "mapped", note: "Paris locations and attention to ordinary movement create observational texture, but the production remains a scripted pulp adaptation rather than documentary practice." },
+  ],
+} as const satisfies FilmHistoryProfile;
