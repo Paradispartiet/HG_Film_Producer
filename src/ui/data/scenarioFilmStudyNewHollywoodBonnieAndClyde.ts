@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const bonnieAndClydeFilmHistoryProfile = {
+  scenarioId: "scenario_bonnie_and_clyde_1967",
+  period: "New Hollywood transition, European-influenced outlaw film and location realism",
+  traditions: ["New Hollywood", "Gangster revision", "French New Wave influence"],
+  before: "Classical American gangster films normally contained criminal ambition through stable genre morality, controlled studio form and clearly separated comedy, romance and violence.",
+  moment: "Arthur Penn, producer-star Warren Beatty, writers David Newman and Robert Benton, cinematographer Burnett Guffey and editor Dede Allen combine Texas locations, period detail, tonal collision, raw color photography and fragmented multi-speed violence.",
+  after: "Its disputed release and later success became a key reference for Hollywood's turn toward younger filmmakers, morally unstable protagonists, European formal influence and more confrontational screen violence.",
+  historyQuestion: "Which production system explains the film's mixture of Depression locations, youthful outlaw glamour, comic looseness and an abruptly fragmented violent ending?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and Library of Congress document the 1967 release, Depression setting, controversy and later critical and commercial reassessment." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI places the film at the beginning of New Hollywood and documents its dialogue with French New Wave style." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI records Beatty's independent producing role, Warner Bros. distribution, Texas production and later Burbank interiors and effects work." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Library of Congress and BFI document the violence debate, initially uncertain release and later historical standing." },
+    { area: "screenplay", status: "source_verified", note: "AFI credits Newman and Benton, Robert Towne's special-consultant rewrites and the script's altered characterization and episodic outlaw structure." },
+    { area: "directing", status: "source_verified", note: "ASC records Penn's demand for an untheatrical, harsh realism and BFI documents his control of tonal shifts and the final ambush." },
+    { area: "performance", status: "source_verified", note: "BFI and institutional records support a youthful ensemble system that moves between comedy, intimacy, Method performance and shock." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Dean Tavoularis; ASC describes actual banks, period buildings, distressed motel interiors and practical location logistics." },
+    { area: "costume_makeup", status: "source_verified", note: "AFI credits Theadora Van Runkle and the makeup department, while the period look became part of the film's controlled 1930s reconstruction." },
+    { area: "cinematography", status: "source_verified", note: "ASC details Burnett Guffey's raw color realism, minimal fill, location interiors, handheld car work and wide range of lenses." },
+    { area: "lighting", status: "source_verified", note: "ASC documents key-light-only faces, difficult daylight balancing, night-for-night shootouts and rejection of glamour diffusion." },
+    { area: "camera_format", status: "source_verified", note: "AFI identifies Technicolor sound production; ASC documents Arriflex handheld work, zooms, telephoto lenses and location camera systems." },
+    { area: "editing", status: "source_verified", note: "AFI credits Dede Allen and BFI documents the multi-speed, many-shot final ambush that turns violence into formal rupture." },
+    { area: "sound_design", status: "mapped", note: "Gunfire, camera-click motifs, dialogue and abrupt silence are central, while dedicated sound-department process documentation remains limited." },
+    { area: "music", status: "source_verified", note: "AFI documents Charles Strouse and the use of Flatt and Scruggs recordings, including the recurring banjo drive of the robberies." },
+    { area: "effects_animation", status: "source_verified", note: "AFI credits Danny Lee for special effects; ASC and BFI document extensive blanks, squibs and practical staging in the shootouts and ambush." },
+    { area: "documentary_method", status: "source_verified", note: "ASC documents real Texas environments, local background performers and a stated semi-documentary photographic goal within fictional reconstruction." },
+  ],
+} as const satisfies FilmHistoryProfile;
