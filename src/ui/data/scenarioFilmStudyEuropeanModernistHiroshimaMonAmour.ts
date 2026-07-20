@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const hiroshimaMonAmourFilmHistoryProfile = {
+  scenarioId: "scenario_hiroshima_mon_amour_1959",
+  period: "French Left Bank modernism, Franco-Japanese co-production and fiction shaped by documentary memory",
+  traditions: ["Left Bank cinema", "Nouveau roman screenplay", "Documentary-fiction modernism"],
+  before: "Postwar documentary and fiction usually separated historical evidence from private melodrama, while flashbacks tended to clarify chronology rather than question whether the past could be represented or shared.",
+  moment: "A commission for an atomic-bomb documentary becomes a Franco-Japanese fiction when Alain Resnais collaborates with Marguerite Duras, producers in both countries, two cinematographers, two editors and two composers to join contemporary Hiroshima, staged memory, documentary traces and intimate performance.",
+  after: "The film became a defining model for modern memory cinema: history is not delivered as settled exposition but enters the present through montage, repetition, voice, contradiction and the limits of what images can prove.",
+  historyQuestion: "Which production system explains the film's movement from an atomic-bomb documentary commission into a bilingual fiction built from two countries, two image units, fragmented memory, repeated dialogue and competing musical voices?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Cannes and Criterion identify the 1959 Franco-Japanese production, its postwar Hiroshima setting and its origin in a proposed atomic-bomb documentary." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI places Resnais within the French Left Bank group and connects the feature to documentary practice, experimental literature and the nouveau roman." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion credits producers Anatole Dauman, Samy Halfon, Sacha Kamenka and Takeo Shirakawa, documenting a coordinated French-Japanese production rather than a single national unit." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the 1959 festival presentation and the 2013 restoration; BFI and Criterion preserve the film as a central postwar modernist work." },
+    { area: "screenplay", status: "source_verified", note: "Criterion and Cannes credit Marguerite Duras for screenplay and dialogue; BFI documents the transformation from documentary commission to a fiction linking public catastrophe and private memory." },
+    { area: "directing", status: "source_verified", note: "BFI describes Resnais's fragmented rhythm, documentary-like opening and gradual intrusion of Nevers memories into the Hiroshima present." },
+    { area: "performance", status: "source_verified", note: "Criterion's preserved interviews with Emmanuelle Riva and its cast record support a performance system built around intimate repetition, withheld biography and bilingual exchange with Eiji Okada." },
+    { area: "production_design", status: "mapped", note: "Hiroshima streets, hotel rooms, museums, film-set material and reconstructed Nevers spaces are central, but the current institutional sources do not isolate a complete design-department account." },
+    { area: "costume_makeup", status: "mapped", note: "Contemporary dress, film-within-the-film costume and the remembered public punishment in Nevers carry historical meaning, while dedicated department documentation remains limited." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Sacha Vierny and Michio Takahashi, supporting a two-unit image system that distinguishes French memory material, contemporary Hiroshima and documentary-coded traces." },
+    { area: "lighting", status: "mapped", note: "Bodies, reflective interiors, night streets and high-contrast remembered spaces are carefully differentiated, but a dedicated lighting-process source is still needed." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the black-and-white 1.37:1 presentation and a 4K restoration from preserved film elements with monaural sound." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Henri Colpi and Jasmine Chasney; BFI documents associative flashes and elliptical editing that allow the past to invade rather than merely explain the present." },
+    { area: "sound_design", status: "source_verified", note: "Criterion's monaural restoration and BFI analysis support repeated dialogue, voice-over, environmental sound and acoustic transitions as equal partners with the image montage." },
+    { area: "music", status: "source_verified", note: "Criterion and Cannes credit Georges Delerue and Giovanni Fusco, documenting a dual-composer system that moves between intimate, historical and modernist registers." },
+    { area: "effects_animation", status: "not_central", note: "The production's primary transformations come through editing, performance, archival or documentary-coded imagery and sound rather than a separate effects or animation pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "BFI documents the original non-fiction commission and the documentary-like Hiroshima opening, while Cannes records the restoration of the film's historical image materials." },
+  ],
+} as const satisfies FilmHistoryProfile;
