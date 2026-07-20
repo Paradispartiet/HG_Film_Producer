@@ -11,6 +11,7 @@ import "./filmDirectorExperience.css";
 import "./filmDirectorProject.css";
 import "./directorKnowledgeDesk.css";
 import "./directorPracticeCoach.css";
+import "./filmSchoolScreenplayCourse.css";
 import "./filmCraftLibrary.css";
 import "./filmCraftLibraryFilmLens.css";
 import "./filmResearchControlRoom.css";
