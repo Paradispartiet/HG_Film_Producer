@@ -43,7 +43,14 @@ const classicalHollywoodIds = [
   "scenario_casablanca_1942",
 ] as const;
 
-const expectedVerifiedCount = 64;
+const noirRealism1940sIds = [
+  "scenario_double_indemnity_1944",
+  "scenario_brief_encounter_1945",
+  "scenario_rome_open_city_1945",
+  "scenario_the_third_man_1949",
+] as const;
+
+const expectedVerifiedCount = 68;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -93,6 +100,14 @@ test("1930s production systems are verified with four sources each", () => {
 
 test("classical Hollywood systems are verified with four sources each", () => {
   for (const scenarioId of classicalHollywoodIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("1940s noir and realism systems are verified with four sources each", () => {
+  for (const scenarioId of noirRealism1940sIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);
