@@ -244,7 +244,7 @@ export function FilmSchoolCameraCourse({
         </section>
 
         <section className={mastered ? "school-final-assignment is-unlocked" : "school-final-assignment"}>
-          <div><span className="filmverket-kicker">Avsluttende oppgave</span><h2>Fra sceneintensjon til kamerasytem</h2><p>Planlegg én scene der utsnitt, kameraposisjon, objektiv, bevegelse og fokus følger scenens dramatiske utvikling. Oppgaven åpnes i Film Director med fem leveransefelt.</p></div>
+          <div><span className="filmverket-kicker">Avsluttende oppgave</span><h2>Fra sceneintensjon til kamerasystem</h2><p>Planlegg én scene der utsnitt, kameraposisjon, objektiv, bevegelse og fokus følger scenens dramatiske utvikling. Oppgaven åpnes i Film Director med fem leveransefelt.</p></div>
           <aside>
             <label><span>Velg referansefilm</span><select disabled={!mastered} onChange={(event: ChangeEvent<HTMLSelectElement>) => setAssignmentFilmId(event.target.value)} value={assignmentFilmId}>{lessonExamples.map((scenario) => <option key={scenario.id} value={scenario.id}>{scenario.film.year} · {scenario.film.title}</option>)}</select></label>
             <button className="filmverket-primary-action" disabled={!mastered || !assignmentFilmId} onClick={startDirectorAssignment} type="button">{mastered ? "Start avsluttende oppgave i Film Director →" : `Mestre ${CAMERA_COURSE_LESSONS.length - masteredCount} leksjon${CAMERA_COURSE_LESSONS.length - masteredCount === 1 ? "" : "er"} først`}</button>
