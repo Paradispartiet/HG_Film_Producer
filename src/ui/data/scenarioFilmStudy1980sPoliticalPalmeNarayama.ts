@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const narayamaFilmHistoryProfile = {
+  scenarioId: "scenario_the_ballad_of_narayama_1983",
+  period: "Japanese rural naturalism, post-New-Wave social anthropology and ecological folk adaptation",
+  traditions: ["Shōhei Imamura social anthropology", "Rural survival cinema", "Naturalist literary adaptation"],
+  before: "The same Fukazawa stories had been adapted by Keisuke Kinoshita as highly theatrical studio cinema in 1958, while Imamura's postwar work repeatedly examined marginal lives, sexuality and social custom through material environments rather than idealized national images.",
+  moment: "Imamura Productions and Toei build a poor nineteenth-century Shinshū village around food, sex, labour, animals, seasonal scarcity and the rule that elders must die on Narayama, with Masao Tochizawa and additional cinematographers, production designer Nobutaka Yoshino, editors Fusako Matsumoto, Hajime Okayasu and Toshihiko Kojima, sound recordist Kenichi Benitani and composer Shinichirō Ikebe sustaining a dense ecological world.",
+  after: "The film won the 1983 Palme d'Or, became Imamura's first Cannes victory and was later restored from the original 35mm negative and related materials for Cannes Classics.",
+  historyQuestion: "Which production system explains a village filmed as a complete survival ecology, human labour and sexuality intercut with animal life, seasonal scarcity governing every relationship and the final mountain ritual emerging from material custom rather than theatrical allegory?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, JFDB, BFI and FIFF place the film in a nineteenth-century mountain village governed by scarcity, household survival and the social burden placed on ageing bodies." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Cannes identifies Imamura with Japanese New Wave social criticism and contrasts his naturalistic adaptation with Kinoshita's stylized 1958 studio version." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes, JFDB and FIFF document the Imamura Productions and Toei production, principal producers, adapted source and complete craft team." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the 1983 Palme d'Or and later Cannes Classics restoration; institutional retrospectives place the film as Imamura's first Palme-winning work." },
+    { area: "screenplay", status: "source_verified", note: "Cannes, JFDB and FIFF credit Shōhei Imamura adapting Shichirō Fukazawa; the screenplay organizes food, inheritance, mating, punishment and ritual as one village system." },
+    { area: "directing", status: "source_verified", note: "Institutional sources credit Imamura and describe a cold, clinical naturalism where human conduct is observed inside biological and economic pressures." },
+    { area: "performance", status: "source_verified", note: "Cannes, BFI, JFDB and FIFF document Sumiko Sakamoto and Ken Ogata; physical labour, ageing, appetite and restraint carry the parent-child conflict without sentimental separation from village life." },
+    { area: "production_design", status: "source_verified", note: "JFDB credits Nobutaka Yoshino and FIFF identifies the Toei production; houses, storage, paths, fields and the mountain make scarcity and household hierarchy spatially legible." },
+    { area: "costume_makeup", status: "mapped", note: "Period garments, ageing work and bodily presentation support the rural world, but the current institutional sources do not isolate a full costume and makeup account." },
+    { area: "cinematography", status: "source_verified", note: "Cannes credits Masao Tochizawa, while FIFF records Tochizawa, Hiroshi Kanazawa and Shigeru Komatsubara; dense natural detail and layered village action bind human and animal life." },
+    { area: "lighting", status: "mapped", note: "Seasonal exteriors, firelit interiors and winter conditions shape the naturalist world, but dedicated lighting-department evidence remains incomplete." },
+    { area: "camera_format", status: "source_verified", note: "JFDB records a colour Vista presentation and Cannes restoration materials identify the original 35mm negative used for preservation." },
+    { area: "editing", status: "source_verified", note: "FIFF credits Fusako Matsumoto, Hajime Okayasu and Toshihiko Kojima; the edit moves among households, animals, labour and ritual so ecology accumulates into narrative pressure." },
+    { area: "sound_design", status: "source_verified", note: "FIFF credits Kenichi Benitani; insects, animals, tools, weather, cooking, bodies and communal voices keep the village's material ecology continuously audible." },
+    { area: "music", status: "source_verified", note: "Cannes, JFDB and FIFF credit Shinichirō Ikebe; the score supports ritual and seasonal transition without replacing the dense environmental soundtrack." },
+    { area: "effects_animation", status: "mapped", note: "Animal handling and practical environmental work are visible parts of the production, but current sources do not document a central effects department or animation pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Cannes and institutional festival accounts describe Imamura's naturalistic, socially critical observation of custom, poverty and biological life inside a fully constructed fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;
