@@ -124,7 +124,7 @@ export const classicalHollywoodVerificationRecords = [
       {
         title: "Michael Curtiz's Casablanca", publisher: "Museum of Modern Art",
         url: "https://www.moma.org/explore/inside_out/2011/05/31/michael-curtizs-casablanca/", sourceKind: "archive_feature",
-        supports: ["overall", "screenplay", "directing"],
+        supports: ["overall", "screenplay", "editing"],
         note: "MoMA's film-curator notes place Curtiz and the screenplay inside classical Hollywood authorship and document the film's lasting reception as collaborative studio cinema."
       }
     ]
