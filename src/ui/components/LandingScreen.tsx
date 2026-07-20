@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef } from "react";
 import { createFilmSlug, type FilmverketRoute } from "../../core/filmverketRoutes";
 import { getClassicFilmScenarios } from "../data/filmScenarios";
 import { useFilmverketHashRoute } from "../routing/useFilmverketHashRoute";
+import { DirectorKnowledgeDesk } from "./DirectorKnowledgeDesk";
 import { FilmCraftLibraryOverlay } from "./FilmCraftLibraryOverlay";
 import { FilmDirectorExperience } from "./FilmDirectorExperience";
 import { FilmResearchControlRoom } from "./FilmResearchControlRoom";
@@ -39,6 +40,7 @@ export function LandingScreen(props: LandingScreenProps) {
       ) : (
         <RoutedFilmverketPlatform {...props} navigate={navigate} route={route} />
       )}
+      <DirectorKnowledgeDesk visible={route.section === "director"} />
       <FilmCraftLibraryOverlay />
       <FilmResearchControlRoom
         onClose={() => navigate(previousNonResearchRoute.current)}
