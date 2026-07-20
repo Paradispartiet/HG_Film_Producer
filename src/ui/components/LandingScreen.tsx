@@ -4,6 +4,7 @@ import { createFilmSlug, type FilmverketRoute } from "../../core/filmverketRoute
 import { getClassicFilmScenarios } from "../data/filmScenarios";
 import { useFilmverketHashRoute } from "../routing/useFilmverketHashRoute";
 import { DirectorKnowledgeDesk } from "./DirectorKnowledgeDesk";
+import { DirectorPracticeCoach } from "./DirectorPracticeCoach";
 import { FilmCraftLibraryOverlay } from "./FilmCraftLibraryOverlay";
 import { FilmDirectorExperience } from "./FilmDirectorExperience";
 import { FilmResearchControlRoom } from "./FilmResearchControlRoom";
@@ -40,6 +41,7 @@ export function LandingScreen(props: LandingScreenProps) {
       ) : (
         <RoutedFilmverketPlatform {...props} navigate={navigate} route={route} />
       )}
+      <DirectorPracticeCoach visible={route.section === "director"} />
       <DirectorKnowledgeDesk visible={route.section === "director"} />
       <FilmCraftLibraryOverlay />
       <FilmResearchControlRoom
