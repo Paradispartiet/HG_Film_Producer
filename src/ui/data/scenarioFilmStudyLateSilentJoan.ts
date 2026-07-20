@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const passionOfJoanFilmHistoryProfile = {
+  scenarioId: "scenario_the_passion_of_joan_of_arc_1928",
+  period: "Late silent European modernism and psychologically concentrated historical drama",
+  traditions: ["Silent modernism", "Trial-film compression", "Close-up performance cinema"],
+  before: "Historical epics usually organized the past through spectacle, pageantry and spatially coherent staging.",
+  moment: "Dreyer condenses Joan's trial into one day and replaces epic scale with Falconetti's face, white backgrounds, fragmented space, discontinuous eyelines and rapid confrontation between accuser and accused.",
+  after: "The recovered original version and later restorations preserved a model of screen acting and editing in which emotional coherence can outweigh conventional spatial continuity.",
+  historyQuestion: "Which production logic explains why the film sacrifices stable geography and historical spectacle to faces, fragments and interior pressure?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and DFI place the French production at the end of the silent era and inside Dreyer's international 1920s work." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film is documented as late silent modernism built around psychological realism rather than pageantry." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Société Générale des Films gave Dreyer extensive resources and creative control after producing Napoléon." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI documents the film's difficult release history, rediscovery in Oslo and modern restoration." },
+    { area: "screenplay", status: "source_verified", note: "Trial records are condensed into a single-day dramatic progression focused on interrogation and execution." },
+    { area: "directing", status: "source_verified", note: "Dreyer deliberately rejects conventional establishing geography to keep attention on Joan's interior state." },
+    { area: "performance", status: "source_verified", note: "Falconetti's makeup-free close-up performance carries the principal emotional and dramatic information." },
+    { area: "production_design", status: "source_verified", note: "Sparse white architecture removes depth cues and turns the set into psychological pressure rather than historical display." },
+    { area: "costume_makeup", status: "source_verified", note: "The exposed face and restrained costume system keep material detail subordinate to performance." },
+    { area: "cinematography", status: "source_verified", note: "Extreme close-ups, unusual angles and flattened backgrounds isolate faces from stable space." },
+    { area: "lighting", status: "mapped", note: "High-key facial exposure and pale environments are central, while department-level lighting documentation remains incomplete." },
+    { area: "camera_format", status: "mapped", note: "The case is a silent black-and-white production; precise camera and stock documentation remains pending." },
+    { area: "editing", status: "source_verified", note: "More than 1,500 cuts, discontinuous eyelines and very few matches on action create confrontation without conventional continuity." },
+    { area: "sound_design", status: "not_central", note: "The original film is silent and its primary spatial and emotional system is visual." },
+    { area: "music", status: "mapped", note: "Several restored editions use different accompaniments; no single modern score defines the film." },
+    { area: "effects_animation", status: "not_central", note: "The film's radical effect comes from framing, performance, design and editing rather than spectacle effects." },
+    { area: "documentary_method", status: "source_verified", note: "The screenplay draws directly on edited records of Joan's historical trial while transforming them into concentrated fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;
