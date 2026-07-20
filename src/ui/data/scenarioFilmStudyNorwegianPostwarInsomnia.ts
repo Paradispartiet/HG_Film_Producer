@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const insomniaFilmHistoryProfile = {
+  scenarioId: "scenario_insomnia_1997",
+  period: "Norwegian 1990s psychological crime cinema, reversed daylight noir and Arctic location modernism",
+  traditions: ["Nordic psychological thriller", "Reversed or daylight noir", "Arctic location cinema"],
+  before: "Classical noir made darkness, enclosed cities and moral compromise mutually reinforcing, while Scandinavian crime traditions had developed procedural investigation without yet establishing the international Nordic-noir label that became common later.",
+  moment: "Erik Skjoldbjærg and Nikolaj Frobenius build a debut feature around Stellan Skarsgård's compromised investigator, Erling Thurmann-Andersen's bleached northern daylight, Eli Bø's production design, Håkon Øverås's editing, Geir Jenssen's electronic score and Tromsø geography where the absence of night becomes the central pressure system.",
+  after: "The film became a major Norwegian 1990s thriller, screened at Cannes, inspired an American remake and remained an early reference point for Nordic noir by reversing the genre's expected darkness into sleepless, morally exposing light.",
+  historyQuestion: "Which production system explains the film's Tromsø setting, midnight-sun daylight, Swedish investigator, insomnia-driven moral collapse, pale 1.85:1 imagery, restrained electronic music and reversal of classical noir darkness?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Norsk filmografi, Cinemateket, BFI and Danish Film Institute place the 1997 production within a renewed Norwegian feature culture and international Scandinavian crime cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI describes the film as a reversed film noir driven by light, while SNL identifies it as an early precursor to later Nordic-noir labeling." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Norsk filmografi and DFI document the Norwegian production, credited producers and Norsk Film involvement; Cinemateket records its Cannes exposure and later remake history." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cinemateket, BFI and SNL identify the film as a central Norwegian 1990s thriller and document the Christopher Nolan remake." },
+    { area: "screenplay", status: "source_verified", note: "Norsk filmografi credits Nikolaj Frobenius and Erik Skjoldbjærg; the script makes investigation, accidental killing, concealment and insomnia one tightening moral structure." },
+    { area: "directing", status: "source_verified", note: "Norsk filmografi, BFI and Cinemateket credit Skjoldbjærg and support a direction strategy that turns constant daylight and procedural behavior into psychological disorientation." },
+    { area: "performance", status: "source_verified", note: "BFI, DFI and Cinemateket foreground Stellan Skarsgård's controlled deterioration, supported by Sverre Anker Ousdal, Bjørn Floberg, Gisken Armand and Maria Bonnevie." },
+    { area: "production_design", status: "source_verified", note: "Norsk filmografi credits Eli Bø; hotel rooms, police spaces, fog, shoreline and sparse northern interiors keep the investigator exposed rather than sheltered." },
+    { area: "costume_makeup", status: "mapped", note: "Practical police and civilian clothing reinforces procedural realism, but the current institutional sources do not isolate a dedicated costume or makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Norsk filmografi credits Erling Thurmann-Andersen; BFI and Cinemateket document the stark northern setting and daylight used as the film's dramatic visual force." },
+    { area: "lighting", status: "source_verified", note: "BFI quotes Skjoldbjærg's description of light rather than darkness as the dramatic force, making overexposure and sleepless brightness central to the noir reversal." },
+    { area: "camera_format", status: "source_verified", note: "Cinemateket documents a 1.85:1 presentation and Dolby SR sound, while Norsk filmografi records the feature's credited photographic team." },
+    { area: "editing", status: "source_verified", note: "Norsk filmografi credits Håkon Øverås; the structure alternates investigation, concealment, memory pressure and insomnia without surrendering procedural clarity." },
+    { area: "sound_design", status: "source_verified", note: "Norsk filmografi documents the sound department; gulls, breathing, hotel quiet, distant traffic and persistent environmental presence make daylight oppressive." },
+    { area: "music", status: "source_verified", note: "Norsk filmografi and Cinemateket credit Geir Jenssen, whose restrained electronic score extends the film's cold, suspended northern atmosphere." },
+    { area: "effects_animation", status: "not_central", note: "The film's disorientation comes from location, exposure, performance, editing and sound rather than effects or animation." },
+    { area: "documentary_method", status: "mapped", note: "Tromsø geography and recognizable police procedure give the thriller material credibility, but the production remains a controlled psychological fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;
