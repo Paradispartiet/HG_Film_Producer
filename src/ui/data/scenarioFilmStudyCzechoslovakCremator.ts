@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const crematorFilmHistoryProfile = {
+  scenarioId: "scenario_the_cremator_1969",
+  period: "Czechoslovak dark modernism, grotesque psychological horror and political allegory",
+  traditions: ["Czechoslovak New Wave", "Expressionist horror", "Political grotesque"],
+  before: "Psychological horror commonly separated subjective breakdown from social history, while fascist narratives often located evil in overt villains or external institutions.",
+  moment: "Juraj Herz and Ladislav Fuks bind a crematorium manager's polished self-narration to fascist opportunity through wide-angle distortion, mirrors, abrupt associative cuts, repeated speech, elegant interiors and Zdeněk Liška's ritualized score, making ideology appear as a seductive extension of ordinary professional vanity.",
+  after: "The film was suppressed after the Prague Spring and later restored in 4K with its original monaural soundtrack, preserving a production whose visual and sonic instability remains central to teaching political horror and subjective editing.",
+  historyQuestion: "Which production system explains how polite speech, professional routine and elegant domestic space mutate into fascist horror through lenses, cuts, mirrors and recurring sound?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion and BFI connect the 1968 production to the Prague Spring, Soviet invasion and subsequent suppression." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion and BFI identify the film as Czechoslovak New Wave dark modernism combining grotesque satire, expressionism and horror." },
+    { area: "industry_and_production_context", status: "source_verified", note: "NFA and Criterion record the production team, 1968 production year, 1969 release and later 4K restoration." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI documents the post-Prague-Spring ban, while Criterion and NFA document restoration and renewed circulation." },
+    { area: "screenplay", status: "source_verified", note: "Herz and Ladislav Fuks adapt the novel by merging professional rhetoric, family life, Buddhist language and Nazi advancement into one subjective descent." },
+    { area: "directing", status: "source_verified", note: "Criterion's production documentary and Herz testimony document the deliberate construction of the film's macabre, ironic and psychologically unstable style." },
+    { area: "performance", status: "source_verified", note: "Criterion includes Rudolf Hrušínský's testimony, and institutional analysis centers his controlled, persuasive performance as the film's subjective engine." },
+    { area: "production_design", status: "source_verified", note: "NFA and Criterion credit Zbyněk Hloch and František Straka; crematorium, apartment and ceremonial interiors turn order into threat." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion credits Olga Dimitrovová and František Čížek, whose controlled bourgeois appearance supports the protagonist's self-image and transformation." },
+    { area: "cinematography", status: "source_verified", note: "Stanislav Milota's stark black-and-white photography uses wide angles, close faces, mirrors and spatial distortion to channel Kopfrkingl's mind." },
+    { area: "lighting", status: "source_verified", note: "Expressionistic contrast and polished ceremonial interiors intensify the split between respectable surfaces and violence." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents black-and-white 1.66:1 presentation and uncompressed monaural restoration; NFA records restored DCP and 35 mm versions." },
+    { area: "editing", status: "source_verified", note: "Jaromír Janáček's associative transitions, repeated gestures and sudden spatial shifts collapse fantasy, memory and action." },
+    { area: "sound_design", status: "source_verified", note: "Ceremonial speech, crematorium ambience, repeated phrases and abrupt acoustic changes make persuasion and routine threatening." },
+    { area: "music", status: "source_verified", note: "Criterion and NFA credit Zdeněk Liška; restoration materials foreground the score's ritual and psychological role." },
+    { area: "effects_animation", status: "not_central", note: "Distortion is created primarily through lenses, editing, staging and sound rather than effects spectacle." },
+    { area: "documentary_method", status: "mapped", note: "Historical occupation and institutional procedure inform the fiction, but dedicated research-method documentation remains incomplete." },
+  ],
+} as const satisfies FilmHistoryProfile;

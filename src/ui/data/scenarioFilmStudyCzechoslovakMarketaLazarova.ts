@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const marketaLazarovaFilmHistoryProfile = {
+  scenarioId: "scenario_marketa_lazarova_1967",
+  period: "Czechoslovak historical modernism, researched medieval epic and sensory montage",
+  traditions: ["Historical modernism", "Literary adaptation", "Landscape epic"],
+  before: "Historical cinema often organized the past through clear exposition, court spectacle and stable heroic viewpoints, while literary adaptation translated narrative sequence more directly.",
+  moment: "František Vláčil and František Pavlíček turn Vladislav Vančura's novel into a two-part black-and-white historical mosaic prepared through years of research, extensive location and design work, fragmented chronology, harsh landscape, layered voices and Zdeněk Liška's choral-percussive score.",
+  after: "The film became a central reference in Czech historical cinema and the first Czech feature to receive a major digital restoration, preserving its dense image, mono sound and deliberately unstable experience of medieval time.",
+  historyQuestion: "Which production system explains why medieval history is experienced through weather, bodies, ritual, broken chronology and layered sound instead of conventional exposition?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "NFA documents years of period research and the film's reconstruction of thirteenth-century social, religious and material conflict." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI, Criterion and NFA place the film within Czechoslovak historical modernism rather than conventional heritage spectacle." },
+    { area: "industry_and_production_context", status: "source_verified", note: "NFA records the 1965–1967 production, extensive preparation and status as the most expensive Czech production of the 1960s." },
+    { area: "reception_and_legacy", status: "source_verified", note: "NFA documents its major national critical standing and its role as the first digitally restored Czech feature." },
+    { area: "screenplay", status: "source_verified", note: "Vláčil and Pavlíček divide the adaptation into two parts and replace straightforward plot with a polymorphous historical mosaic." },
+    { area: "directing", status: "source_verified", note: "Criterion's archival Vláčil materials and NFA production history document a filmmaking process built from storyboards, research and controlled sensory disorientation." },
+    { area: "performance", status: "source_verified", note: "NFA and Criterion document the ensemble and actor testimony supporting a physical, ritualized performance system rather than modern psychological naturalism alone." },
+    { area: "production_design", status: "source_verified", note: "NFA credits Oldřich Okáč and a large artist team; years of research shaped settlements, objects and the material medieval environment." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion includes costume designer Theodor Pištěk's testimony, and NFA records the production's exhaustive period design effort." },
+    { area: "cinematography", status: "source_verified", note: "Bedřich Baťka's black-and-white photography uses snow, forest, mud, bodies and layered landscape composition as historical forces." },
+    { area: "lighting", status: "mapped", note: "High-contrast exterior weather and severe interiors structure the image, while dedicated lighting documentation remains incomplete." },
+    { area: "camera_format", status: "source_verified", note: "Criterion and NFA document the restored black-and-white feature, its monaural soundtrack and archival transfer history." },
+    { area: "editing", status: "source_verified", note: "NFA describes chronology disrupted by fragmented reminiscences and visions; Miroslav Hájek's editing makes history experiential rather than explanatory." },
+    { area: "sound_design", status: "source_verified", note: "NFA details literary monologues, shouts, animal cries, narration and unusual reverberation in the dense mono sound field." },
+    { area: "music", status: "source_verified", note: "NFA and Criterion identify Zdeněk Liška's score as a principal element of the film's visual and ritual power." },
+    { area: "effects_animation", status: "not_central", note: "The film's transformation of history depends on landscape, design, montage and sound rather than effects spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "Archival and material research into the period directly informed the fictional reconstruction, even though the result is not documentary realism." },
+  ],
+} as const satisfies FilmHistoryProfile;

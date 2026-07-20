@@ -64,7 +64,14 @@ const postwarEuropeanModernismIds = [
   "scenario_daisies_1966",
 ] as const;
 
-const expectedVerifiedCount = 76;
+const czechoslovakNewWaveIds = [
+  "scenario_closely_watched_trains_1966",
+  "scenario_the_firemens_ball_1967",
+  "scenario_marketa_lazarova_1967",
+  "scenario_the_cremator_1969",
+] as const;
+
+const expectedVerifiedCount = 80;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -138,6 +145,14 @@ test("1950s Asian postwar systems are verified with four sources each", () => {
 
 test("postwar European modernism systems are verified with four sources each", () => {
   for (const scenarioId of postwarEuropeanModernismIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("Czechoslovak New Wave systems are verified with four sources each", () => {
+  for (const scenarioId of czechoslovakNewWaveIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);

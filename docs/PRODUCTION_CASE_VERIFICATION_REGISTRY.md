@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 76 source-backed Production Cases.
+- 80 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -41,6 +41,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts`
+- `src/ui/data/scenarioProductionVerificationCzechoslovakNewWaveBatch.ts`
 
 The complete audit schema is defined in:
 
@@ -209,6 +210,15 @@ This batch compares Daiei subjective period modernism, Shochiku domestic minimal
 - `scenario_daisies_1966`
 
 This batch compares Danish spiritual long-take chamber cinema, Polish Film School historical tragedy, Swedish psychological self-reflexivity and Czechoslovak feminist collage.
+
+### Czechoslovak New Wave production systems batch
+
+- `scenario_closely_watched_trains_1966`
+- `scenario_the_firemens_ball_1967`
+- `scenario_marketa_lazarova_1967`
+- `scenario_the_cremator_1969`
+
+This batch compares literary wartime tragicomedy, nonprofessional institutional satire, researched medieval historical modernism and grotesque political horror.
 
 ## Verification rule
 

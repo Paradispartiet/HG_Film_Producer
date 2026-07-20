@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const firemensBallFilmHistoryProfile = {
+  scenarioId: "scenario_the_firemens_ball_1967",
+  period: "Czechoslovak New Wave, nonprofessional ensemble comedy and institutional satire",
+  traditions: ["Czechoslovak New Wave", "Social tragicomedy", "Nonprofessional ensemble cinema"],
+  before: "Institutional comedy commonly depended on professional comic types and controlled studio situations, while political satire often announced its targets through explicit allegory.",
+  moment: "Miloš Forman, Ivan Passer and Jaroslav Papoušek turn an actual volunteer-firemen's ball into a Czech-Italian color production filmed in Vrchlabí with nonprofessional performers, accumulating failed ceremonies, theft and social embarrassment through ensemble observation rather than a single protagonist.",
+  after: "The film's censorship history and international circulation made it inseparable from the Prague Spring period, while restoration and director-approved transfer materials preserve Miroslav Ondříček's color photography and the compact one-night ensemble design.",
+  historyQuestion: "Which production system explains why one provincial celebration becomes an entire social structure through nonprofessional faces, simultaneous failures and deadpan observation?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion, BFI and NFA connect the production and reception to the Prague Spring, the 1968 invasion and later suppression." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources place the film within Czechoslovak New Wave tragicomedy, social observation and political satire." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion documents the Czech-Italian co-production, Carlo Ponti financing, color production and Vrchlabí shoot." },
+    { area: "reception_and_legacy", status: "source_verified", note: "NFA, BFI and Criterion document controversy, shelving, censorship, international distribution and the Academy Award nomination." },
+    { area: "screenplay", status: "source_verified", note: "Forman, Passer and Papoušek developed the script after attending a real firemen's ball and organized it as escalating ceremonial failure." },
+    { area: "directing", status: "source_verified", note: "Forman directs simultaneous behavior and official rhetoric with a deadpan observational distance rather than explanatory satire." },
+    { area: "performance", status: "source_verified", note: "Criterion records an entirely nonprofessional cast drawn from the town, making faces, hesitation and group behavior central." },
+    { area: "production_design", status: "source_verified", note: "The cultural hall, lottery table, beauty-pageant area, bandstand and burning farmhouse form one coherent practical world." },
+    { area: "costume_makeup", status: "mapped", note: "Uniforms, formal dresses and local social clothing organize status and embarrassment, while dedicated department research remains incomplete." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Miroslav Ondříček and provides transfer materials documenting the film's compact color ensemble photography." },
+    { area: "lighting", status: "mapped", note: "Practical hall lighting and the night fire contrast ceremony with exposed failure, but dedicated lighting sources remain incomplete." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the film as a color 1.33:1 production; NFA supplies restored DCP and 35 mm exhibition records." },
+    { area: "editing", status: "source_verified", note: "Miroslav Hájek's cutting moves among parallel catastrophes while maintaining readable social geography inside the hall." },
+    { area: "sound_design", status: "source_verified", note: "Announcements, brass-band cues, crowd murmur, applause and the failed ceremony create the audible structure of institutional collapse." },
+    { area: "music", status: "source_verified", note: "NFA credits Karel Mareš and records the orchestral use of the song whose refrain supplied the Czech title." },
+    { area: "effects_animation", status: "mapped", note: "The farmhouse fire is a practical narrative event, but effects-department documentation remains incomplete." },
+    { area: "documentary_method", status: "source_verified", note: "NFA describes the episodic documentary style, and Criterion documents the use of local nonprofessionals and observed social behavior." },
+  ],
+} as const satisfies FilmHistoryProfile;
