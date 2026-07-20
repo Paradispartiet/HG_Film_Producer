@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const nightOfTheHunterFilmHistoryProfile = {
+  scenarioId: "scenario_the_night_of_the_hunter_1955",
+  period: "American independent studio production, Expressionist fairy-tale noir and child-centred moral fable",
+  traditions: ["American film noir", "German Expressionist design", "Fairy-tale and biblical fable"],
+  before: "American crime films and noirs had developed urban shadow, fatalism and criminal psychology, while children's stories and religious morality tales generally occupied separate visual and tonal worlds.",
+  moment: "Producer Paul Gregory, first-time feature director Charles Laughton, writer James Agee, cinematographer Stanley Cortez, designer Hilyard Brown, editor Robert Golden, composer Walter Schumann and a precisely cast ensemble construct a child-centred pursuit through stylized studio landscapes, practical river imagery, hymns and extreme silhouette.",
+  after: "Its mixture of independent production, theatrical direction, child viewpoint, Expressionist geometry and lyrical horror became a singular reference point for American genre cinema even though Laughton never directed another feature.",
+  historyQuestion: "Which production system explains the film's independent Paul Gregory production, child-centred viewpoint, painted and forced-perspective spaces, extreme silhouettes, recurring hymn and river journey shaped like a dark storybook?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, Criterion and the Library of Congress place the 1955 film within independent American production, postwar noir and a contested Production Code environment." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion and Library of Congress accounts identify the fusion of noir, horror, biblical morality tale, Grimm-like fairy tale and Expressionist imagery." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Paul Gregory Productions, United Artists distribution and Laughton's feature-directing debut after Gregory developed Davis Grubb's novel." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Library of Congress records the film's National Film Registry status, while AFI and Criterion document its later recognition after an initially difficult release." },
+    { area: "screenplay", status: "source_verified", note: "AFI credits James Agee's adaptation of Davis Grubb and records censorship negotiations around the murderous preacher, sexuality and mob violence." },
+    { area: "directing", status: "source_verified", note: "Criterion's production essay and AFI record support Laughton's theatrical preparation, child perspective, precise visual conception and direction of the ensemble." },
+    { area: "performance", status: "source_verified", note: "Criterion and AFI identify Robert Mitchum, Lillian Gish, Shelley Winters and the child performers as a deliberately contrasted performance system of menace, fragility and protection." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Hilyard Brown, while Criterion and Library of Congress analysis emphasize storybook sets, silhouettes, forced perspective, river imagery and deliberately artificial spaces." },
+    { area: "costume_makeup", status: "source_verified", note: "AFI records wardrobe, makeup and hair departments; the preacher's dark suit, hat, tattoos and Rachel Cooper's contrasting domestic silhouette function as recurring moral signs." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Stanley Cortez, and Criterion identifies the high-contrast black-and-white photography, looming shadows, underwater body image and lyrical night exteriors." },
+    { area: "lighting", status: "source_verified", note: "Criterion and Library of Congress analysis support the extreme silhouette, hard window shadows, luminous river passage and theatrical separation of innocence and threat." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the restored black-and-white feature and its preserved film materials; AFI supplies the original production and laboratory record." },
+    { area: "editing", status: "source_verified", note: "AFI credits Robert Golden, while Criterion's account supports the movement between pursuit suspense, tableau-like threat and the extended lyrical river escape." },
+    { area: "sound_design", status: "source_verified", note: "AFI credits Stanford Naughton and records the film's sound department; hymns, distant singing, animals, river ambience and sudden silence organize offscreen danger." },
+    { area: "music", status: "source_verified", note: "AFI credits Walter Schumann and lists the recurring hymns and original songs that allow the preacher's voice to approach before his body appears." },
+    { area: "effects_animation", status: "source_verified", note: "AFI credits Jack Rabin and Louis DeWitt for special photographic effects, while the institutional essays identify practical underwater, miniature and forced-perspective imagery." },
+    { area: "documentary_method", status: "not_central", note: "The film draws on Depression-era America and a literary regional setting, but its primary method is visibly theatrical and Expressionist rather than documentary-coded observation." },
+  ],
+} as const satisfies FilmHistoryProfile;

@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 96 source-backed Production Cases.
+- 100 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -40,6 +40,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts`
 - `src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
+- `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts`
 - `src/ui/data/scenarioProductionVerificationCzechoslovakNewWaveBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch.ts`
@@ -205,6 +206,15 @@ This batch compares Paramount studio noir, British restrained melodrama, Italian
 - `scenario_pather_panchali_1955`
 
 This batch compares Daiei subjective period modernism, Shochiku domestic minimalism, Toho location action and Bengali location humanism.
+
+### 1950s expressive postwar production systems batch
+
+- `scenario_la_strada_1954`
+- `scenario_the_night_of_the_hunter_1955`
+- `scenario_the_seventh_seal_1957`
+- `scenario_touch_of_evil_1958`
+
+This batch compares Italian post-neorealist road fable, American independent Expressionist child thriller, Swedish theatre-derived allegory and baroque Universal border noir.
 
 ### Postwar European modernism and New Waves batch
 

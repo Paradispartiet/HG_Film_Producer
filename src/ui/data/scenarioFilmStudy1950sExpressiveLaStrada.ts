@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const laStradaFilmHistoryProfile = {
+  scenarioId: "scenario_la_strada_1954",
+  period: "Italian post-neorealism, poetic road cinema and performance-centred modern fable",
+  traditions: ["Italian neorealism", "Poetic road cinema", "Circus and clown performance"],
+  before: "Postwar Italian neorealism had established location shooting, ordinary environments and social hardship as major cinematic materials, while travelling performers and melodramatic archetypes belonged to older popular traditions.",
+  moment: "Federico Fellini, Tullio Pinelli, Ennio Flaiano, producers Carlo Ponti and Dino De Laurentiis, cinematographers Otello Martelli and Carlo Carlini, editor Leo Catozzo, composer Nino Rota and performers Giulietta Masina and Anthony Quinn turn roads, provincial landscapes and circus labour into a deliberately simple modern fable.",
+  after: "The film became Fellini's international breakthrough and a durable model for cinema that moves from neorealist material observation toward poetic, autobiographical and performance-led modernism without abandoning the postwar landscape.",
+  historyQuestion: "Which production system explains the film's Italian roads and poor environments, physical clown performance, episodic journey, recurring trumpet theme and movement from neorealist observation toward parable?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, MoMA and Criterion place the 1954 film in postwar Italy and identify it as Fellini's international breakthrough from his neorealist background." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI explicitly describes the film as a bridge from Italian neorealism toward Fellini's personal, poetic and fairytale-like cinema." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion and the Academy credit producers Carlo Ponti and Dino De Laurentiis, while BFI documents the Italian production's international release and recognition." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Academy records the inaugural competitive foreign-language-film win; BFI and MoMA document the film's role in launching Fellini and Giulietta Masina internationally." },
+    { area: "screenplay", status: "source_verified", note: "Criterion and MoMA credit Federico Fellini, Tullio Pinelli and Ennio Flaiano and support the episodic road structure organized around performance, cruelty and recognition." },
+    { area: "directing", status: "source_verified", note: "BFI and MoMA describe Fellini's controlled movement between observed postwar environments, grotesque show-business detail and the emotional clarity of fable." },
+    { area: "performance", status: "source_verified", note: "Criterion, BFI and MoMA identify Giulietta Masina's Chaplinesque physical performance and Anthony Quinn's bodily force as the film's central expressive system." },
+    { area: "production_design", status: "mapped", note: "Roadsides, fairs, temporary stages and poor interiors form a coherent material world, but the current sources do not isolate a production-design department process." },
+    { area: "costume_makeup", status: "mapped", note: "Gelsomina's clown-like silhouette, Zampanò's work clothes and travelling-performance dress are central to characterization, but dedicated department evidence is still limited." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Otello Martelli and Carlo Carlini, while BFI and MoMA describe the bleak roads, faces and provincial landscapes joining realism with fable." },
+    { area: "lighting", status: "mapped", note: "Naturalistic exteriors and shaped performance spaces support the road-cinema texture, but a complete lighting method is not documented in the current sources." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the restored black-and-white film and credits the cinematography team; the restoration was made from original film elements." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Leo Catozzo, and the institutional accounts support an episodic progression in which repeated acts and departures accumulate consequence." },
+    { area: "sound_design", status: "mapped", note: "Road ambience, circus work, crowds and silence support the physical world, but the available sources emphasize music and performance more than a separate sound-effects process." },
+    { area: "music", status: "source_verified", note: "Criterion, BFI and MoMA credit Nino Rota and identify the recurring theme as the emotional memory connecting Gelsomina, performance and the film's final recognition." },
+    { area: "effects_animation", status: "not_central", note: "Practical circus acts and performance stunts are present, but the film's primary construction depends on location, bodies, editing and music rather than an effects pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "BFI and MoMA connect the film to neorealist attention to postwar roads, poor communities and ordinary environments while stressing its transformation of those materials into fable." },
+  ],
+} as const satisfies FilmHistoryProfile;

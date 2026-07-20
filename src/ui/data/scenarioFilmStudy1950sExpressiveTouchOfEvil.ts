@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const touchOfEvilFilmHistoryProfile = {
+  scenarioId: "scenario_touch_of_evil_1958",
+  period: "Late-classical American noir, border modernism and studio production reshaped by Orson Welles",
+  traditions: ["Film noir", "Baroque long-take staging", "Border and institutional corruption cinema"],
+  before: "Classical noir had established shadow, corruption and unstable investigation, but studio crime films still tended to separate dialogue, score, location texture and camera movement into clearer continuity units.",
+  moment: "Producer Albert Zugsmith and Universal give Orson Welles a studio crime property that he rewrites and directs with Russell Metty, designers Alexander Golitzen and Robert Clatworthy, editors Virgil Vogel and Aaron Stell, Henry Mancini and a large ensemble across Venice, California locations and Universal facilities.",
+  after: "Its moving-camera geography, wide-angle staging, layered source music and contested editing history made the film a central late-noir reference and an unusually visible case of authorship negotiated inside a Hollywood studio system.",
+  historyQuestion: "Which production system explains the film's Venice-built border town, wide-angle night staging, extended moving shots, overlapping street sound, source music and later reconstruction from Welles's detailed editorial memo?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, Academy and BFI place the 1958 film at the end of the classical noir cycle and document Welles's return to American studio directing." },
+    { area: "movement_and_tradition", status: "source_verified", note: "AFI and Academy identify the film as a morally unstable border noir, while BFI emphasizes its long-take and spatial modernism." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Universal-International, producer Albert Zugsmith, the Whit Masterson source novel and Welles's entry as writer-director within an existing studio project." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Library of Congress records its National Film Registry status; Academy and BFI describe its later recognition and restoration history." },
+    { area: "screenplay", status: "source_verified", note: "AFI and Academy credit Welles's screenplay from Whit Masterson and document the reorganization of the crime story around institutional corruption and competing investigators." },
+    { area: "directing", status: "source_verified", note: "Academy and BFI describe Welles's complex choreography of actors, vehicles and camera movement, especially the opening border-crossing sequence." },
+    { area: "performance", status: "source_verified", note: "AFI and Academy document Charlton Heston, Janet Leigh, Welles, Joseph Calleia, Akim Tamiroff and Marlene Dietrich as a deliberately heterogeneous ensemble." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Alexander Golitzen and Robert Clatworthy, while BFI production photographs document Venice, California streets and constructed border environments." },
+    { area: "costume_makeup", status: "mapped", note: "Quinlan's altered body, Susan Vargas's vulnerable travel clothing and border-town uniforms are important, but the current sources do not isolate the full department process." },
+    { area: "cinematography", status: "source_verified", note: "AFI and Academy credit Russell Metty, and BFI documents Philip H. Lathrop operating during the moving-camera production." },
+    { area: "lighting", status: "source_verified", note: "Academy describes the striking black-and-white images, while AFI and BFI support the use of low-key night exteriors, practical signs, hard interiors and deep staging." },
+    { area: "camera_format", status: "source_verified", note: "AFI records the black-and-white Universal production, and Academy documents the preserved 35mm presentation and photographic authorship." },
+    { area: "editing", status: "source_verified", note: "AFI credits Virgil Vogel and Aaron Stell; the documented versions and Welles's later memo make editing order, transitions and studio intervention part of the film's production history." },
+    { area: "sound_design", status: "source_verified", note: "AFI documents the sound departments, while BFI and Academy analysis show overlapping dialogue, radio, traffic, street noise and acoustic transitions binding the border geography." },
+    { area: "music", status: "source_verified", note: "AFI and Academy credit Henry Mancini, and Criterion analysis documents the Afro-Cuban theme and source-music conception central to the opening and border environment." },
+    { area: "effects_animation", status: "mapped", note: "The car bombing, practical smoke, stunt work and optical transitions support the crime plot, but effects remain integrated into staging rather than a separate spectacle pipeline." },
+    { area: "documentary_method", status: "mapped", note: "Venice locations, multilingual street texture and mobile observation give the invented border town material density, but the film remains a stylized studio noir rather than documentary reconstruction." },
+  ],
+} as const satisfies FilmHistoryProfile;

@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const seventhSealFilmHistoryProfile = {
+  scenarioId: "scenario_the_seventh_seal_1957",
+  period: "Postwar Scandinavian art cinema, medieval allegory and theatre-derived existential modernism",
+  traditions: ["Scandinavian art cinema", "Medieval morality play", "Theatre-to-film adaptation"],
+  before: "Religious and historical films often presented medieval worlds through spectacle or devotional certainty, while philosophical theatre and popular film were usually treated as distinct cultural forms.",
+  moment: "Ingmar Bergman expands his stage work Wood Painting into a minimally budgeted Svensk Filmindustri feature shot in thirty-six days, with Gunnar Fischer's black-and-white images, P. A. Lundgren's design, Lennart Wallén's editing, Erik Nordgren's music and an ensemble drawn from Bergman's theatre practice.",
+  after: "The film became an international emblem of European art cinema, translating theological doubt into simple visible actions and images—chess with Death, travelling players and the final dance—that moved far beyond their original Swedish production context.",
+  historyQuestion: "Which production system explains the film's theatre-derived structure, limited thirty-six-day schedule, stark 1.37 black-and-white imagery, medieval tableaux, ensemble performance and direct embodiment of Death as a speaking character?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Ingmar Bergman Foundation and BFI place the film in postwar Sweden and connect its medieval plague setting to contemporary existential and nuclear-age anxiety." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion, BFI and the Bergman Foundation identify the film as a turning point toward internationally recognized Scandinavian art cinema and existential modernism." },
+    { area: "industry_and_production_context", status: "source_verified", note: "The Bergman Foundation documents Svensk Filmindustri, a minimal budget and a thirty-six-day shoot granted after Smiles of a Summer Night's Cannes success." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Bergman Foundation, BFI and Criterion document its strong international reception and the migration of Death and the chess game into global film culture." },
+    { area: "screenplay", status: "source_verified", note: "The Bergman Foundation traces the screenplay to Bergman's one-act play Wood Painting and preserves script drafts, production notes and the theatre-to-film transformation." },
+    { area: "directing", status: "source_verified", note: "The Bergman Foundation documents Bergman's use of theatre collaborators, tableaux and a compressed schedule, while BFI describes the balance of allegory and intimate human detail." },
+    { area: "performance", status: "source_verified", note: "Criterion credits Max von Sydow, Gunnar Björnstrand, Bengt Ekerot, Bibi Andersson and the ensemble, whose theatrical precision keeps the allegorical figures physically direct." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits architect P. A. Lundgren, and the Bergman Foundation connects the imagery to medieval church paintings, the Wood Painting stage work and specific Swedish locations." },
+    { area: "costume_makeup", status: "mapped", note: "Death's white face and black robe, crusader dress and travelling-player costumes are central visual signs, but the current sources do not isolate a complete department process." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and BFI credit Gunnar Fischer and describe the sombre black-and-white photography, stark shore imagery, chiaroscuro and final silhouetted dance." },
+    { area: "lighting", status: "source_verified", note: "BFI and Bergman Foundation materials support the use of hard contrast, silhouettes, storm light and tableau-like separation inspired by medieval and early cinematic imagery." },
+    { area: "camera_format", status: "source_verified", note: "The Bergman Foundation records black-and-white 1.37:1 photography and optical mono; Criterion documents the preserved and restored presentation format." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Lennart Wallén; the film's editing alternates the chess game, pilgrimage encounters and travelling performers while preserving the clarity of a morality play." },
+    { area: "sound_design", status: "source_verified", note: "Criterion credits Aaby Wedin, Lennart Wallin and sound-effects artist Evald Andersson; wind, ritual voices, bells and silence keep the allegory materially present." },
+    { area: "music", status: "source_verified", note: "Criterion credits Erik Nordgren, whose restrained score supports procession, performance and dread without replacing the film's spoken theological conflict." },
+    { area: "effects_animation", status: "mapped", note: "Practical smoke, fire, makeup and staged silhouettes support the medieval world, but effects are subordinate to performance, design and photographic composition." },
+    { area: "documentary_method", status: "not_central", note: "Swedish landscapes and historical visual sources ground the production, but the method is an openly theatrical allegory rather than documentary reconstruction." },
+  ],
+} as const satisfies FilmHistoryProfile;

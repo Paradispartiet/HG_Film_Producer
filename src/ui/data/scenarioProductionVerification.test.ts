@@ -57,6 +57,13 @@ const asianPostwar1950sIds = [
   "scenario_pather_panchali_1955",
 ] as const;
 
+const expressivePostwar1950sIds = [
+  "scenario_la_strada_1954",
+  "scenario_the_night_of_the_hunter_1955",
+  "scenario_the_seventh_seal_1957",
+  "scenario_touch_of_evil_1958",
+] as const;
+
 const postwarEuropeanModernismIds = [
   "scenario_ordet_1955",
   "scenario_ashes_and_diamonds_1958",
@@ -99,7 +106,7 @@ const europeanModernistProductionIds = [
   "scenario_the_battle_of_algiers_1966",
 ] as const;
 
-const expectedVerifiedCount = 96;
+const expectedVerifiedCount = 100;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -165,6 +172,14 @@ test("1940s noir and realism systems are verified with four sources each", () =>
 
 test("1950s Asian postwar systems are verified with four sources each", () => {
   for (const scenarioId of asianPostwar1950sIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("1950s expressive postwar systems are verified with four sources each", () => {
+  for (const scenarioId of expressivePostwar1950sIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);
