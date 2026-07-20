@@ -79,6 +79,11 @@ import {
   resolveEuropeanPressureFilmStudyMap,
 } from "../data/scenarioFilmStudyEuropeanPressureBatch";
 import {
+  createFestivalJourneyDisplacementSystemsFilmHistoryChoices,
+  getFestivalJourneyDisplacementSystemsFilmHistoryProfile,
+  resolveFestivalJourneyDisplacementSystemsFilmStudyMap,
+} from "../data/scenarioFilmStudyFestivalJourneyDisplacementSystemsBatch";
+import {
   createIndependentStorytellingFilmHistoryChoices,
   getIndependentStorytellingFilmHistoryProfile,
   resolveIndependentStorytellingFilmStudyMap,
@@ -149,7 +154,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolve1980sPoliticalPalmeSystemsFilmStudyMap(scenario, brief)
+    () => resolveFestivalJourneyDisplacementSystemsFilmStudyMap(scenario, brief)
+      ?? resolve1980sPoliticalPalmeSystemsFilmStudyMap(scenario, brief)
       ?? resolveModernNordicBehaviorSystemsFilmStudyMap(scenario, brief)
       ?? resolveNordicMinimalistSocialSystemsFilmStudyMap(scenario, brief)
       ?? resolveNorwegianPostwarGenreSystemsFilmStudyMap(scenario, brief)
@@ -187,6 +193,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getFestivalJourneyDisplacementSystemsFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createFestivalJourneyDisplacementSystemsFilmHistoryChoices(historyProfile);
+    }
     if (get1980sPoliticalPalmeSystemsFilmHistoryProfile(historyProfile.scenarioId)) {
       return create1980sPoliticalPalmeSystemsFilmHistoryChoices(historyProfile);
     }
