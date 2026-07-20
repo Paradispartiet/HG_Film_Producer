@@ -1,4 +1,35 @@
-import type { FilmScenarioSeed } from "./filmScenarios";
+export type HistoricalFilmScenario = {
+  readonly id: string;
+  readonly status: string;
+  readonly source: {
+    readonly list_id: string;
+    readonly position: number;
+    readonly imdb_id: string;
+    readonly url: string;
+  };
+  readonly film: {
+    readonly title: string;
+    readonly original_title: string;
+    readonly year: number;
+    readonly title_type: string;
+    readonly runtime_mins: number;
+    readonly directors: readonly string[];
+    readonly genres: readonly string[];
+    readonly genre_keys: readonly string[];
+    readonly imdb_rating: number;
+    readonly user_rating: number;
+  };
+  readonly scenario_type: string;
+  readonly production_challenge: string;
+  readonly required_choices_seed: Record<string, readonly string[]>;
+  readonly phases: readonly {
+    readonly id: string;
+    readonly label: string;
+    readonly player_task: string;
+  }[];
+  readonly learning_goals_seed: readonly string[];
+  readonly manual_enrichment_needed: readonly string[];
+};
 
 export type EarlyCinemaExpansionDefinition = {
   readonly id: string;
@@ -327,7 +358,7 @@ export function normalizeEarlyCinemaTitle(value: string): string {
 }
 
 export function scenarioMatchesEarlyCinemaDefinition(
-  scenario: FilmScenarioSeed,
+  scenario: HistoricalFilmScenario,
   definition: EarlyCinemaExpansionDefinition,
 ): boolean {
   if (scenario.id === definition.id) return true;
@@ -338,14 +369,14 @@ export function scenarioMatchesEarlyCinemaDefinition(
 }
 
 export function getEarlyCinemaExpansionDefinition(
-  scenario: FilmScenarioSeed,
+  scenario: HistoricalFilmScenario,
 ): EarlyCinemaExpansionDefinition | undefined {
   return earlyCinemaExpansionDefinitions.find((definition) => scenarioMatchesEarlyCinemaDefinition(scenario, definition));
 }
 
 export function mergeEarlyCinemaExpansion(
-  baseScenarios: readonly FilmScenarioSeed[],
-): readonly FilmScenarioSeed[] {
+  baseScenarios: readonly HistoricalFilmScenario[],
+): readonly HistoricalFilmScenario[] {
   const merged = [...baseScenarios];
   let nextPosition = Math.max(0, ...baseScenarios.map((scenario) => scenario.source.position)) + 1;
   for (const definition of earlyCinemaExpansionDefinitions) {
@@ -359,7 +390,7 @@ export function mergeEarlyCinemaExpansion(
 function createEarlyCinemaScenario(
   definition: EarlyCinemaExpansionDefinition,
   position: number,
-): FilmScenarioSeed {
+): HistoricalFilmScenario {
   const genreKeys = definition.genres.map(toGenreKey);
   return {
     id: definition.id,
