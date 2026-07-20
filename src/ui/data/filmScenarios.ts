@@ -1,6 +1,7 @@
 import seedData from "../../../data/film/scenarios/film_scenarios_seed.json";
 import { mergeEarlyCinemaExpansion } from "../../core/earlyCinemaExpansion.js";
 import { mergeEastAsianAuteurExpansion } from "../../core/eastAsianAuteurExpansion.js";
+import { mergeJapaneseAuteurExpansion } from "../../core/japaneseAuteurExpansion.js";
 import { mergeModernCanonExpansion } from "../../core/modernCanonExpansion.js";
 import { mergePriorityIndieExpansion } from "../../core/priorityIndieExpansion.js";
 
@@ -49,13 +50,14 @@ const importedSeedData = seedData as FilmScenarioSeedFile;
 const historicalScenarios = mergeEarlyCinemaExpansion(importedSeedData.scenarios);
 const modernCanonScenarios = mergeModernCanonExpansion(historicalScenarios);
 const priorityIndieScenarios = mergePriorityIndieExpansion(modernCanonScenarios);
-const mergedScenarios = mergeEastAsianAuteurExpansion(priorityIndieScenarios);
+const eastAsianAuteurScenarios = mergeEastAsianAuteurExpansion(priorityIndieScenarios);
+const mergedScenarios = mergeJapaneseAuteurExpansion(eastAsianAuteurScenarios);
 
 export const filmScenarioSeedData: FilmScenarioSeedFile = {
   ...importedSeedData,
-  source_list_id: `${importedSeedData.source_list_id}+manual_early_cinema_expansion_2026+manual_modern_indie_asian_prize_expansion_2026+manual_priority_indie_completion_2026+manual_east_asian_auteur_expansion_2026`,
+  source_list_id: `${importedSeedData.source_list_id}+manual_early_cinema_expansion_2026+manual_modern_indie_asian_prize_expansion_2026+manual_priority_indie_completion_2026+manual_east_asian_auteur_expansion_2026+manual_japanese_auteur_expansion_2026`,
   scenario_count: mergedScenarios.length,
-  note: `${importedSeedData.note} The requested historical expansion, modern independent/Asian/prize-cinema expansion, 20-film priority-indie completion, and 11-film East Asian auteur expansion reuse matching entries and append only missing titles.`,
+  note: `${importedSeedData.note} The requested historical expansion, modern independent/Asian/prize-cinema expansion, 20-film priority-indie completion, 11-film East Asian auteur expansion, and seven-film Japanese auteur expansion reuse matching entries and append only missing titles.`,
   scenarios: mergedScenarios,
 };
 
