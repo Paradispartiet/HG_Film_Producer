@@ -1,58 +1,87 @@
 import { useEffect, useState } from "react";
 
+import { DIRECTOR_BRIEF_FIELDS } from "../../core/directorBrief";
 import {
+  PERFORMANCE_COURSE_ID,
+  PERFORMANCE_DIRECTOR_ASSIGNMENT_STORAGE_KEY,
+  type PerformanceDirectorAssignment,
+} from "../../core/filmSchoolPerformanceCourse";
+import {
+  SCREENPLAY_COURSE_ID,
   SCREENPLAY_DIRECTOR_ASSIGNMENT_STORAGE_KEY,
-  getScreenplayDirectorAssignmentFieldLabels,
   type ScreenplayDirectorAssignment,
 } from "../../core/filmSchoolScreenplayCourse";
+
+type CourseAssignment = ScreenplayDirectorAssignment | PerformanceDirectorAssignment;
+type LoadedCourseAssignment = CourseAssignment & { readonly storageKey: string };
 
 type DirectorCourseAssignmentBannerProps = {
   readonly filmSlug: string | undefined;
   readonly visible: boolean;
 };
 
+const assignmentSources = [
+  { storageKey: SCREENPLAY_DIRECTOR_ASSIGNMENT_STORAGE_KEY, courseId: SCREENPLAY_COURSE_ID },
+  { storageKey: PERFORMANCE_DIRECTOR_ASSIGNMENT_STORAGE_KEY, courseId: PERFORMANCE_COURSE_ID },
+] as const;
+
 export function DirectorCourseAssignmentBanner({ filmSlug, visible }: DirectorCourseAssignmentBannerProps) {
-  const [assignment, setAssignment] = useState<ScreenplayDirectorAssignment | undefined>(() => loadAssignment());
+  const [assignment, setAssignment] = useState<LoadedCourseAssignment | undefined>(() => loadAssignment(filmSlug));
 
   useEffect(() => {
-    if (visible) setAssignment(loadAssignment());
+    if (visible) setAssignment(loadAssignment(filmSlug));
   }, [filmSlug, visible]);
 
   if (!visible || !assignment || assignment.filmSlug !== filmSlug) return null;
+  const activeAssignment = assignment;
 
   function dismiss() {
     try {
-      window.localStorage.removeItem(SCREENPLAY_DIRECTOR_ASSIGNMENT_STORAGE_KEY);
+      window.localStorage.removeItem(activeAssignment.storageKey);
     } catch {
       // Banner can still be dismissed for the current session.
     }
     setAssignment(undefined);
   }
 
+  const fieldLabels = activeAssignment.fieldIds.map((fieldId) => (
+    DIRECTOR_BRIEF_FIELDS.find((field) => field.id === fieldId)?.label ?? fieldId
+  ));
+
   return (
     <aside className="director-course-assignment" aria-label="Film School director assignment">
       <header>
-        <div><span>Film School-oppgave</span><strong>{assignment.title}</strong><small>{assignment.filmYear} · {assignment.filmTitle}</small></div>
+        <div><span>Film School-oppgave</span><strong>{activeAssignment.title}</strong><small>{activeAssignment.filmYear} · {activeAssignment.filmTitle}</small></div>
         <button aria-label="Dismiss course assignment" onClick={dismiss} type="button">×</button>
       </header>
-      <p>{assignment.prompt}</p>
-      <div>{getScreenplayDirectorAssignmentFieldLabels().map((label, index) => <span key={label}><b>{String(index + 1).padStart(2, "0")}</b>{label}</span>)}</div>
+      <p>{activeAssignment.prompt}</p>
+      <div>{fieldLabels.map((label, index) => <span key={label}><b>{String(index + 1).padStart(2, "0")}</b>{label}</span>)}</div>
       <button onClick={() => document.getElementById("director-active-scene")?.scrollIntoView({ behavior: "smooth", block: "start" })} type="button">Gå til scenebrieffet →</button>
     </aside>
   );
 }
 
-function loadAssignment(): ScreenplayDirectorAssignment | undefined {
-  try {
-    const value = JSON.parse(window.localStorage.getItem(SCREENPLAY_DIRECTOR_ASSIGNMENT_STORAGE_KEY) ?? "null") as unknown;
-    if (!isRecord(value)) return undefined;
-    if (value.version !== 1 || value.courseId !== "director_screenplay_scene_analysis") return undefined;
-    if (typeof value.filmId !== "string" || typeof value.filmTitle !== "string" || typeof value.filmYear !== "number" || typeof value.filmSlug !== "string") return undefined;
-    if (typeof value.title !== "string" || typeof value.prompt !== "string" || typeof value.createdAt !== "string" || !Array.isArray(value.fieldIds)) return undefined;
-    return value as unknown as ScreenplayDirectorAssignment;
-  } catch {
-    return undefined;
+function loadAssignment(filmSlug: string | undefined): LoadedCourseAssignment | undefined {
+  const assignments: LoadedCourseAssignment[] = [];
+  for (const source of assignmentSources) {
+    try {
+      const value = JSON.parse(window.localStorage.getItem(source.storageKey) ?? "null") as unknown;
+      if (!isAssignment(value, source.courseId)) continue;
+      if (filmSlug && value.filmSlug !== filmSlug) continue;
+      assignments.push({ ...value, storageKey: source.storageKey } as LoadedCourseAssignment);
+    } catch {
+      // Ignore invalid or unavailable storage entries.
+    }
   }
+  return assignments.sort((a, b) => b.createdAt.localeCompare(a.createdAt))[0];
+}
+
+function isAssignment(value: unknown, courseId: string): value is CourseAssignment {
+  if (!isRecord(value)) return false;
+  if (value.version !== 1 || value.courseId !== courseId) return false;
+  if (typeof value.filmId !== "string" || typeof value.filmTitle !== "string" || typeof value.filmYear !== "number" || typeof value.filmSlug !== "string") return false;
+  if (typeof value.title !== "string" || typeof value.prompt !== "string" || typeof value.createdAt !== "string" || !Array.isArray(value.fieldIds)) return false;
+  return value.fieldIds.every((fieldId) => typeof fieldId === "string");
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {

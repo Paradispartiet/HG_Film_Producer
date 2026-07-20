@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { createFilmSlug, type FilmverketRoute } from "../../core/filmverketRoutes";
 import { getClassicFilmScenarios } from "../data/filmScenarios";
@@ -9,8 +9,12 @@ import { DirectorPracticeCoach } from "./DirectorPracticeCoach";
 import { FilmCraftLibraryOverlay } from "./FilmCraftLibraryOverlay";
 import { FilmDirectorExperience } from "./FilmDirectorExperience";
 import { FilmResearchControlRoom } from "./FilmResearchControlRoom";
+import { FilmSchoolCourseNavigation, type FilmSchoolCourseId } from "./FilmSchoolCourseNavigation";
+import { FilmSchoolPerformanceCourse } from "./FilmSchoolPerformanceCourse";
 import { FilmSchoolScreenplayCourse } from "./FilmSchoolScreenplayCourse";
 import { RoutedFilmverketPlatform } from "./RoutedFilmverketPlatform";
+
+const SCHOOL_ACTIVE_COURSE_STORAGE_KEY = "hg_film_school_active_course_v1";
 
 interface LandingScreenProps {
   readonly onStart: () => void;
@@ -23,6 +27,7 @@ export function LandingScreen(props: LandingScreenProps) {
   const { navigate, route } = useFilmverketHashRoute();
   const scenarios = useMemo(() => getClassicFilmScenarios(), []);
   const previousNonResearchRoute = useRef<FilmverketRoute>({ section: "home" });
+  const [schoolCourseId, setSchoolCourseId] = useState<FilmSchoolCourseId>(() => loadSchoolCourseId());
   const directorRoute = route.section === "director" ? route : undefined;
 
   useEffect(() => {
@@ -36,17 +41,39 @@ export function LandingScreen(props: LandingScreenProps) {
     navigate(destination === "atlas" ? { section: "atlas", filmSlug } : { section: "director", filmSlug });
   }
 
+  function selectSchoolCourse(courseId: FilmSchoolCourseId) {
+    setSchoolCourseId(courseId);
+    try {
+      window.localStorage.setItem(SCHOOL_ACTIVE_COURSE_STORAGE_KEY, courseId);
+    } catch {
+      // Course switching still works for the current session.
+    }
+  }
+
   return (
     <>
       {directorRoute ? (
         <FilmDirectorExperience navigate={navigate} route={directorRoute} />
       ) : route.section === "school" ? (
-        <FilmSchoolScreenplayCourse
-          navigate={navigate}
-          onOpenAtlas={(scenario) => openScenario(scenario.id, "atlas")}
-          onOpenDirector={(scenario) => openScenario(scenario.id, "director")}
-          scenarios={scenarios}
-        />
+        schoolCourseId === "performance" ? (
+          <FilmSchoolPerformanceCourse
+            navigate={navigate}
+            onOpenAtlas={(scenario) => openScenario(scenario.id, "atlas")}
+            onOpenDirector={(scenario) => openScenario(scenario.id, "director")}
+            onSelectCourse={selectSchoolCourse}
+            scenarios={scenarios}
+          />
+        ) : (
+          <>
+            <FilmSchoolScreenplayCourse
+              navigate={navigate}
+              onOpenAtlas={(scenario) => openScenario(scenario.id, "atlas")}
+              onOpenDirector={(scenario) => openScenario(scenario.id, "director")}
+              scenarios={scenarios}
+            />
+            <FilmSchoolCourseNavigation activeCourseId="screenplay" onSelectCourse={selectSchoolCourse} />
+          </>
+        )
       ) : (
         <RoutedFilmverketPlatform {...props} navigate={navigate} route={route} />
       )}
@@ -63,4 +90,12 @@ export function LandingScreen(props: LandingScreenProps) {
       />
     </>
   );
+}
+
+function loadSchoolCourseId(): FilmSchoolCourseId {
+  try {
+    return window.localStorage.getItem(SCHOOL_ACTIVE_COURSE_STORAGE_KEY) === "performance" ? "performance" : "screenplay";
+  } catch {
+    return "screenplay";
+  }
 }
