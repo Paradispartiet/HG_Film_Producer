@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const anotherRoundFilmHistoryProfile = {
+  scenarioId: "scenario_another_round_2020",
+  period: "Danish ensemble tragicomedy, alcohol experiment narrative and performance-centred digital realism",
+  traditions: ["Thomas Vinterberg ensemble drama", "Danish social tragicomedy", "Experiment-structured midlife narrative"],
+  before: "Vinterberg's cinema had repeatedly tested families and communities through group pressure, while alcohol films often settled into either cautionary decline or uncomplicated celebration rather than sustaining contradictory pleasure, risk and grief.",
+  moment: "Zentropa and Nordic-European partners unite Vinterberg and Tobias Lindholm's staged experiment, four experienced actors, Sturla Brandth Grøvlen's handheld Alexa Mini and Canon K35 photography, Anne Østerud and Janus Billeskov Jansen's escalating edit, truthful colour and a final dance that keeps intoxication, friendship and loss unresolved.",
+  after: "The film became Denmark's largest domestic success of 2020, won the Academy Award for International Feature, received a directing nomination and consolidated a production model where ensemble precision, camera freedom and tonal contradiction can carry both comedy and bereavement.",
+  historyQuestion: "Which production system explains four teachers recording fixed blood-alcohol levels, experienced actors performing exact stages of drunkenness, handheld intimate digital photography, escalating group comparison and a final dance that joins liberation, danger and grief?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "DFI, Cannes, Nordisk Film & TV Fond and the Academy place the 2020 film within Danish state-supported cinema, pandemic-era exhibition and international awards circulation." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Cannes and Vinterberg's interviews describe an inconclusive investigation into alcohol, midlife repetition, risk and vitality rather than a simple moral lesson." },
+    { area: "industry_and_production_context", status: "source_verified", note: "DFI and Nordisk Film & TV Fond document Zentropa, Scandinavian and Dutch co-production, public funding, Copenhagen, North Zealand and Västra Götaland locations, distribution and sales." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Academy records the International Feature win and directing nomination; DFI and Nordisk Film & TV Fond document major European awards and exceptional Danish admissions." },
+    { area: "screenplay", status: "source_verified", note: "DFI, Cannes and EFA credit Thomas Vinterberg and Tobias Lindholm; the script organizes intoxication as a measured group experiment with stages, logs and unequal consequences." },
+    { area: "directing", status: "source_verified", note: "Vinterberg describes deliberately avoiding a conclusion and asking the actors to defend subtle emotional journeys, slapstick and precisely differentiated levels of drunkenness." },
+    { area: "performance", status: "source_verified", note: "DFI, Cannes and production reporting document Mads Mikkelsen, Thomas Bo Larsen, Lars Ranthe and Magnus Millang; their prior collaboration supports tightly calibrated ensemble rhythm and behavioural contrast." },
+    { area: "production_design", status: "source_verified", note: "DFI and EFA credit Sabine Hviid; classrooms, homes, restaurants, sports spaces and waterfront celebration track how the experiment moves through work, family and friendship." },
+    { area: "costume_makeup", status: "source_verified", note: "EFA credits Ellen Lens, Manon Rasmussen and Marly van de Wardt; restrained professional and domestic appearance keeps behavioural changes legible without externalizing intoxication as caricature." },
+    { area: "cinematography", status: "source_verified", note: "DFI, EFA and cinematographer records credit Sturla Brandth Grøvlen; handheld proximity and flexible reframing preserve actor freedom while moving from restrained routine toward physical release." },
+    { area: "lighting", status: "source_verified", note: "The cinematography account describes limited lighting, location freedom and a grade seeking an honest, truthful and intimate image rather than heightened intoxication effects." },
+    { area: "camera_format", status: "source_verified", note: "Grøvlen's production record documents ARRI Alexa Mini, vintage Canon K35 lenses and a 2:1 frame, combining digital flexibility with softer optical texture." },
+    { area: "editing", status: "source_verified", note: "DFI and EFA credit Anne Østerud and Janus Billeskov Jansen; the edit compares repeated tests, rising levels and diverging outcomes while preserving ensemble momentum." },
+    { area: "sound_design", status: "source_verified", note: "DFI and EFA credit Jan Schermer and Hans Møller; breath, glass, classroom noise, domestic quiet, celebration and music measure changing control and social energy." },
+    { area: "music", status: "source_verified", note: "DFI documents music supervision and editing; recurring songs and the final dance turn collective rhythm into a dramatic argument about vitality rather than decorative release." },
+    { area: "effects_animation", status: "not_central", note: "The production system depends on acting, camera movement, editing, sound and real locations rather than a central visual-effects or animation pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "The film adopts measurements, logs, historical examples and staged classroom observation as a research-like dramatic device while remaining openly inconclusive about alcohol." },
+  ],
+} as const satisfies FilmHistoryProfile;
