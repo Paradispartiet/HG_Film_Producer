@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const starWarsFilmHistoryProfile = {
+  scenarioId: "scenario_star_wars_1977",
+  period: "New Hollywood effects blockbuster, used-future design and coordinated audiovisual worldbuilding",
+  traditions: ["Space opera", "Effects blockbuster", "Mythic adventure"],
+  before: "Earlier studio science fiction often separated photographed drama from effects display and presented futuristic environments as clean spectacle rather than a materially worn everyday world.",
+  moment: "George Lucas, producer Gary Kurtz, production designer John Barry, cinematographer Gilbert Taylor, ILM, three principal editors, Ben Burtt and John Williams coordinate Tunisia, British stages, miniatures, motion-control photography, optical compositing, design, accelerated cutting and a newly constructed sound world.",
+  after: "Its production and release consolidated effects, design, editing, sound, music and merchandising into an event-film system that became central to later blockbuster production.",
+  historyQuestion: "Which production system explains how locations, worn sets, miniature motion, rapid parallel editing, designed sound and orchestral themes make an invented galaxy feel coherent?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and Library of Congress document the 1976 production, 1977 release, science-fiction context and National Film Registry recognition." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources describe a space-opera adventure joining mythic serial structure with integrated modern special effects." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Lucasfilm and Fox, constrained budgeting, Tunisia and British stages, the new ILM facility and a production completed across multiple units and post-production sites." },
+    { area: "reception_and_legacy", status: "source_verified", note: "AFI documents the limited initial opening, rapid box-office expansion, repeat reissues and the wider industrial effects of the film's success." },
+    { area: "screenplay", status: "source_verified", note: "AFI credits George Lucas and records the development from earlier story drafts into a clear civil-war quest, rescue and parallel attack structure." },
+    { area: "directing", status: "source_verified", note: "AFI documents Lucas's fast-production plan, location and stage work, conflicts over incomplete effects and continued second-unit additions." },
+    { area: "performance", status: "source_verified", note: "AFI documents the screen-test casting of Mark Hamill, Carrie Fisher and Harrison Ford and the integration of actors, suited characters, puppets and voices." },
+    { area: "production_design", status: "source_verified", note: "AFI credits John Barry, Ralph McQuarrie, Norman Reynolds and Roger Christian and documents the deliberate worn, credible used-future design principle across forty-five sets." },
+    { area: "costume_makeup", status: "source_verified", note: "AFI credits John Mollo and Stuart Freeborn and documents creature-production difficulties and added second-unit cantina material." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Gilbert Taylor and multiple second-unit cinematographers across Tunisia, Britain, California and Guatemala, integrating location and stage photography." },
+    { area: "lighting", status: "mapped", note: "Location desert exposure, stage illumination and effects plates require distinct lighting systems, while this batch retains lighting as mapped pending a dedicated Taylor source." },
+    { area: "camera_format", status: "source_verified", note: "AFI records DeLuxe color, Panavision exhibition, Technicolor prints and VistaVision-based special-photographic systems built for ILM." },
+    { area: "editing", status: "source_verified", note: "AFI credits Paul Hirsch, Marcia Lucas and Richard Chew; parallel rescue and battle lines are accelerated while objectives and screen direction remain readable." },
+    { area: "sound_design", status: "source_verified", note: "AFI credits Ben Burtt's special dialogue and sound effects, the editorial crew, Dolby consultation and the rerecording team responsible for the film's constructed sonic world." },
+    { area: "music", status: "source_verified", note: "AFI credits John Williams and the London Symphony Orchestra; orchestral themes organize character, faction, movement and mythic scale." },
+    { area: "effects_animation", status: "source_verified", note: "AFI documents the new ILM unit, custom optical and motion-control systems, VistaVision photography, miniatures and the production crisis around delayed effects shots." },
+    { area: "documentary_method", status: "source_verified", note: "Tunisia, Death Valley and Guatemala locations provide observed terrain and architecture that are transformed through design into fictional planetary geography." },
+  ],
+} as const satisfies FilmHistoryProfile;
