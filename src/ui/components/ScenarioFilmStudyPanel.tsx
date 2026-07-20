@@ -39,6 +39,11 @@ import {
   resolveCzechoslovakNewWaveFilmStudyMap,
 } from "../data/scenarioFilmStudyCzechoslovakNewWaveBatch";
 import {
+  createEuropeanPoliticalFeministModernismFilmHistoryChoices,
+  getEuropeanPoliticalFeministModernismFilmHistoryProfile,
+  resolveEuropeanPoliticalFeministModernismFilmStudyMap,
+} from "../data/scenarioFilmStudyEuropeanPoliticalFeministModernismBatch";
+import {
   createEuropeanPressureFilmHistoryChoices,
   getEuropeanPressureFilmHistoryProfile,
   resolveEuropeanPressureFilmStudyMap,
@@ -94,7 +99,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveCzechoslovakNewWaveFilmStudyMap(scenario, brief)
+    () => resolveEuropeanPoliticalFeministModernismFilmStudyMap(scenario, brief)
+      ?? resolveCzechoslovakNewWaveFilmStudyMap(scenario, brief)
       ?? resolvePostwarEuropeanModernismFilmStudyMap(scenario, brief)
       ?? resolve1950sAsianPostwarFilmStudyMap(scenario, brief)
       ?? resolve1940sNoirRealismFilmStudyMap(scenario, brief)
@@ -121,6 +127,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getEuropeanPoliticalFeministModernismFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createEuropeanPoliticalFeministModernismFilmHistoryChoices(historyProfile);
+    }
     if (getCzechoslovakNewWaveFilmHistoryProfile(historyProfile.scenarioId)) {
       return createCzechoslovakNewWaveFilmHistoryChoices(historyProfile);
     }

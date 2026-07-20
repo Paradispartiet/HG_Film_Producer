@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const conformistFilmHistoryProfile = {
+  scenarioId: "scenario_the_conformist_1970",
+  period: "Italian political modernism, fascist memory drama and expressive design-cinematography collaboration",
+  traditions: ["Political modernism", "Literary adaptation", "Psychological period cinema"],
+  before: "Historical thrillers often separated political context from private motivation and used flashback mainly to explain plot, while prestige period films treated architecture and costume as stable background.",
+  moment: "Bernardo Bertolucci adapts Alberto Moravia through a fractured flashback structure and works with Vittorio Storaro, production designer Ferdinando Scarfiotti and editor Franco Arcalli to turn Fascist architecture, colour, striped costume, moving camera, hard shadows and Georges Delerue's score into a visual cage around Marcello's search for normality.",
+  after: "The film became an enduring reference for political psychology and cinematography; Storaro identified it as the work that led directly to later international collaborations, and institutional retrospectives continue to preserve its colour and sound under the supervision of former collaborators.",
+  historyQuestion: "Which production system explains why fascism is expressed through architecture, costume, light, camera movement and broken memory rather than through dialogue alone?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Film at Lincoln Center and MoMA place the film in Mussolini's Italy and identify its political subject as the psychology of fascist conformity." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The sources place the film within Italian political modernism, literary adaptation and a post-1968 reworking of classical period cinema." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI records the Italian-French-West German production and principal creative team; MoMA documents later preservation with colour and sound correction supervised by Bertolucci collaborators." },
+    { area: "reception_and_legacy", status: "source_verified", note: "ASC, MoMA and BFI document the film's sustained importance to cinematographers and later American directors without reducing its legacy to popularity alone." },
+    { area: "screenplay", status: "source_verified", note: "Bertolucci and Franco Arcalli reorganize Moravia's novel through layered flashback, mission structure, marriage and childhood memory so conformity appears actively constructed." },
+    { area: "directing", status: "source_verified", note: "ASC documents Bertolucci's collaboration on composition and camera movement, while the staging repeatedly isolates Marcello within crowds, corridors and monumental rooms." },
+    { area: "performance", status: "source_verified", note: "Jean-Louis Trintignant's controlled physical reserve and Stefania Sandrelli and Dominique Sanda's contrasting social performances carry the conflict between conformity, desire and political role." },
+    { area: "production_design", status: "source_verified", note: "BFI identifies Ferdinando Scarfiotti's period fashions and imposing Fascist architecture as central components of the film's political meaning." },
+    { area: "costume_makeup", status: "source_verified", note: "ASC records the collaboration and productive accident linking Giulia's striped dress to Storaro's venetian-blind lighting, while period costume separates bourgeois display from official power." },
+    { area: "cinematography", status: "source_verified", note: "Storaro and Bertolucci use moving compositions, architecture, colour and spatial imbalance to place Marcello as an outsider seeking shelter inside authoritarian order." },
+    { area: "lighting", status: "source_verified", note: "Storaro describes sharp light and shadow as a deliberate visual cage, including scenes shaped by limited arc lights, firelight and high-contrast architectural patterns." },
+    { area: "camera_format", status: "source_verified", note: "Film at Lincoln Center and institutional screenings document the colour 35mm presentation and preservation prints supplied by Cinecittà." },
+    { area: "editing", status: "source_verified", note: "The complex flashback structure moves between pursuit, marriage, childhood and political assignment while maintaining the forward pressure of the assassination mission." },
+    { area: "sound_design", status: "mapped", note: "Trains, official interiors, footsteps, dance spaces and environmental quiet support the political design, but dedicated production-sound documentation remains incomplete." },
+    { area: "music", status: "source_verified", note: "Institutional credits identify Georges Delerue's score, which shifts between elegance, propulsion and unease as social performance and violence converge." },
+    { area: "effects_animation", status: "not_central", note: "The film's transformation of political memory depends on design, movement, light and editing rather than effects spectacle." },
+    { area: "documentary_method", status: "not_central", note: "Historical architecture and period research ground the fiction, but the film works through expressive reconstruction rather than documentary observation." },
+  ],
+} as const satisfies FilmHistoryProfile;

@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const jeanneDielmanFilmHistoryProfile = {
+  scenarioId: "scenario_jeanne_dielman_1975",
+  period: "Belgian feminist modernism, durational domestic cinema and fixed-frame observation",
+  traditions: ["Feminist avant-garde", "Structural duration", "Domestic labour cinema"],
+  before: "Domestic work was commonly compressed into montage, used as background for family drama or removed from narrative time, while avant-garde duration rarely centred a middle-aged woman's paid and unpaid labour with this narrative precision.",
+  moment: "Chantal Akerman and cinematographer Babette Mangolte construct three days from frontal fixed frames, consistent camera height, complete household tasks, controlled colour, direct sound and minute deviations in routine, allowing Delphine Seyrig's performance and the apartment's measured time to become the suspense system.",
+  after: "The film's careful colour scheme and original 35mm negative were restored by CINEMATEK with Akerman's involvement, and its treatment of time, space, women's work and expectation remains a central reference in feminist and experimental film history.",
+  historyQuestion: "Which production system explains why cooking, cleaning, waiting, sex work and tiny timing errors become the film's primary dramatic events?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, MoMA and CINEMATEK place the 1975 Belgian-French production within second-wave feminist debate and postwar European experimental cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion and BFI identify the film's combination of structural duration, feminist attention to labour and rigorous narrative minimalism." },
+    { area: "industry_and_production_context", status: "source_verified", note: "MoMA and BFI document Akerman's early-career production, the Belgian-French financing context and the later archival partnership between Fondation Chantal Akerman and CINEMATEK." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI and MoMA document the film's long critical afterlife, preservation history and sustained influence on filmmakers working with duration, routine and domestic space." },
+    { area: "screenplay", status: "source_verified", note: "The screenplay organizes three days through repeated meals, errands, clients and conversations, so small deviations in order and timing replace conventional plot escalation." },
+    { area: "directing", status: "source_verified", note: "Akerman maintains a consistent frontal viewpoint and refuses explanatory emphasis, making the viewer learn Jeanne's system before recognizing its breakdown." },
+    { area: "performance", status: "source_verified", note: "Delphine Seyrig performs routine through exact gesture, tempo and restraint; changes in potato preparation, posture and waiting become legible because the baseline is so controlled." },
+    { area: "production_design", status: "source_verified", note: "The apartment, corridor, kitchen, dining room and bedroom are arranged as repeatable work zones, while MoMA's restoration record confirms the importance of the film's careful colour scheme." },
+    { area: "costume_makeup", status: "mapped", note: "Jeanne's restrained wardrobe supports repetition and social role, but dedicated costume-department documentation remains incomplete." },
+    { area: "cinematography", status: "source_verified", note: "Babette Mangolte's fixed frontal compositions, consistent camera height and measured distance make the apartment readable as both workplace and enclosure." },
+    { area: "lighting", status: "mapped", note: "Even interior exposure and controlled colour continuity support the measured space, while detailed lighting records remain limited." },
+    { area: "camera_format", status: "source_verified", note: "MoMA and CINEMATEK document restoration from the original 35mm colour negative, preserving the intended colour relationships and framing." },
+    { area: "editing", status: "source_verified", note: "Cuts follow rooms, completed tasks and repeated transitions rather than conventional dramatic coverage, making duration and deviation measurable." },
+    { area: "sound_design", status: "source_verified", note: "Taps, dishes, doors, footsteps, appliances, street spill and silence remain exposed without cushioning, turning domestic work into an acoustic structure." },
+    { area: "music", status: "not_central", note: "The film avoids a guiding score so direct household sound and temporal repetition carry rhythm and pressure." },
+    { area: "effects_animation", status: "not_central", note: "No effects system drives the film; transformation emerges from duration, gesture, space and expectation." },
+    { area: "documentary_method", status: "source_verified", note: "Although fictional, the complete observation of household tasks and material time uses a documentary discipline to make normally omitted labour visible." },
+  ],
+} as const satisfies FilmHistoryProfile;
