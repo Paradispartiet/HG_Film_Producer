@@ -29,6 +29,7 @@
   },
   "include": [
     "src/ui/**/*.ts",
-    "src/ui/**/*.tsx"
+    "src/ui/**/*.tsx",
+    "src/**/*.d.ts"
   ]
 }
