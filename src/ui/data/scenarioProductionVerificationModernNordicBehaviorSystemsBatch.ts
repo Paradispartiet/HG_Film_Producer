@@ -45,7 +45,7 @@ export const modernNordicBehaviorSystemsVerificationRecords = [
     scenarioId: "scenario_woman_at_war_2018",
     status: "verified",
     verifiedAt: "2026-07-20",
-    summary: "The case's Icelandic climate-politics basis, genre-breaking screenplay, Iceland-Ukraine production, visible Greek-chorus musicians, Bergsteinn Björgúlfsson photography, Davíð Alexander Corno editing, awarded sound, score, design and effects are supported by Nordisk Film & TV Fond production, interview, prize and craft records.",
+    summary: "The case's Icelandic climate-politics basis, genre-breaking screenplay, Iceland-Ukraine production, visible Greek-chorus musicians, Bergsteinn Björgúlfsson photography, Davíð Alexander Corno editing, awarded sound, score, design and effects are supported by Nordisk Film & TV Fond production, interview and craft records plus the official Critics' Week record.",
     sources: [
       {
         title: "Benedikt Erlingsson on saving the planet and #MeToo",
@@ -72,12 +72,12 @@ export const modernNordicBehaviorSystemsVerificationRecords = [
         note: "The Edda record identifies awards for screenplay, cinematography, editing, production design, sound, visual effects and Davíð Þór Jónsson's original score, supporting the complete craft map."
       },
       {
-        title: "Nordic Council Film Prize 2018: Woman at War",
-        publisher: "Nordisk Film & TV Fond",
-        url: "https://nordiskfilmogtvfond.com/events/nordic-council-prize/2018",
+        title: "Kona fer í stríð (Woman at War)",
+        publisher: "La Semaine de la Critique",
+        url: "https://www.semainedelacritique.com/en/edition/2018/movie/konaferi-stri",
         sourceKind: "film_institute",
-        supports: ["overall", "screenplay"],
-        note: "The Nordic Council prize record confirms the Icelandic production, director and producers, summarizes the linked sabotage and adoption structure and documents the film's major Nordic reception."
+        supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
+        note: "The official Critics' Week record documents the Iceland-France-Ukraine production and credits Erlingsson, Ólafur Egill Egilsson, Bergsteinn Björgúlfsson, Davíð Alexander Corno, the four-person sound team, Snorri Freyr Hilmarsson and Davíð Þór Jónsson."
       }
     ]
   },
