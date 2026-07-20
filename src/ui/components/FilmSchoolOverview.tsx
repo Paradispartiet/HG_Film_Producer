@@ -2,6 +2,11 @@ import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 
 import { DIRECTOR_BRIEF_FIELDS } from "../../core/directorBrief";
 import {
+  FILM_SCHOOL_CAPSTONE_SUBMISSION_STORAGE_KEY,
+  coerceFilmSchoolCapstoneSubmission,
+  type FilmSchoolCapstoneSubmission,
+} from "../../core/filmSchoolCapstoneSubmission";
+import {
   FILM_SCHOOL_CAPSTONE_ASSIGNMENT_STORAGE_KEY,
   FILM_SCHOOL_GROUND_COURSES,
   createFilmSchoolCapstoneAssignment,
@@ -32,7 +37,8 @@ type FilmSchoolOverviewProps = {
 
 export function FilmSchoolOverview({ navigate, onOpenDirector, onSelectCourse, scenarios }: FilmSchoolOverviewProps) {
   const [summary, setSummary] = useState<FilmSchoolGroundCourseSummary>(() => loadSummary());
-  const [assignmentFilmId, setAssignmentFilmId] = useState(() => scenarios[0]?.id ?? "");
+  const [submission, setSubmission] = useState<FilmSchoolCapstoneSubmission | undefined>(() => loadSubmission());
+  const [assignmentFilmId, setAssignmentFilmId] = useState(() => submission?.filmId ?? scenarios[0]?.id ?? "");
   const summaryByCourseId = useMemo(() => new Map(summary.courses.map((course) => [course.courseId, course])), [summary]);
 
   useEffect(() => {
@@ -40,7 +46,12 @@ export function FilmSchoolOverview({ navigate, onOpenDirector, onSelectCourse, s
   }, []);
 
   useEffect(() => {
-    const refresh = () => setSummary(loadSummary());
+    const refresh = () => {
+      const nextSubmission = loadSubmission();
+      setSummary(loadSummary());
+      setSubmission(nextSubmission);
+      if (nextSubmission) setAssignmentFilmId((current) => current || nextSubmission.filmId);
+    };
     window.addEventListener("focus", refresh);
     window.addEventListener("storage", refresh);
     return () => {
@@ -71,6 +82,12 @@ export function FilmSchoolOverview({ navigate, onOpenDirector, onSelectCourse, s
     onOpenDirector(scenario);
   }
 
+  function openSubmittedCapstone() {
+    if (!submission) return;
+    const scenario = scenarios.find((candidate) => candidate.id === submission.filmId);
+    if (scenario) onOpenDirector(scenario);
+  }
+
   return (
     <div className="filmverket-shell school-overview-shell">
       <header className="filmverket-header">
@@ -92,6 +109,7 @@ export function FilmSchoolOverview({ navigate, onOpenDirector, onSelectCourse, s
             <strong>{summary.completionPercent}<small>%</small></strong>
             <div className="school-overview-progress" aria-label={`${summary.completionPercent}% complete`}><span style={{ width: `${summary.completionPercent}%` }} /></div>
             <p>{summary.masteredCourses} av {FILM_SCHOOL_GROUND_COURSES.length} kurs mestret · {summary.completedMilestones} av {summary.totalMilestones} milepæler</p>
+            {submission ? <p className="school-overview-completion-line">Regieksamen levert · {formatDate(submission.submittedAt)}</p> : null}
           </aside>
         </section>
 
@@ -114,7 +132,7 @@ export function FilmSchoolOverview({ navigate, onOpenDirector, onSelectCourse, s
           })}
         </section>
 
-        <section className={summary.mastered ? "school-capstone is-unlocked" : "school-capstone"}>
+        <section className={submission ? "school-capstone is-unlocked is-completed" : summary.mastered ? "school-capstone is-unlocked" : "school-capstone"}>
           <div>
             <span className="filmverket-kicker">Avsluttende regieksamen</span>
             <h2>Én scene. Ett sammenhengende regisystem.</h2>
@@ -122,15 +140,23 @@ export function FilmSchoolOverview({ navigate, onOpenDirector, onSelectCourse, s
             <div className="school-capstone-fields">{DIRECTOR_BRIEF_FIELDS.map((field, index) => <span key={field.id}><b>{String(index + 1).padStart(2, "0")}</b>{field.label}</span>)}</div>
           </div>
           <aside>
-            <strong>{summary.mastered ? "Grunnkurset er fullført" : "Eksamen er låst"}</strong>
-            <p>{summary.mastered ? "Velg en film som faglig referanse og åpne den komplette oppgaven i Film Director." : `Mestre ${FILM_SCHOOL_GROUND_COURSES.length - summary.masteredCourses} kurs til. Alle 75 milepæler må være gjennomført.`}</p>
+            <strong>{submission ? "Regi-grunnkurs fullført" : summary.mastered ? "Grunnkurset er fullført" : "Eksamen er låst"}</strong>
+            {submission ? (
+              <section className="school-capstone-completion">
+                <span>Levert {formatDateTime(submission.submittedAt)}</span>
+                <h3>{submission.sceneTitle}</h3>
+                <p>{submission.filmYear} · {submission.filmTitle}</p>
+                <small>{submission.briefFieldCount} regifelt · {submission.completeShotCount} komplette shot cards</small>
+                <button onClick={openSubmittedCapstone} type="button">Åpne levert regieksamen →</button>
+              </section>
+            ) : <p>{summary.mastered ? "Velg en film som faglig referanse og åpne den komplette oppgaven i Film Director." : `Mestre ${FILM_SCHOOL_GROUND_COURSES.length - summary.masteredCourses} kurs til. Alle 75 milepæler må være gjennomført.`}</p>}
             <label>
-              <span>Velg referansefilm</span>
+              <span>{submission ? "Ny eller oppdatert eksamen" : "Velg referansefilm"}</span>
               <select disabled={!summary.mastered} onChange={(event: ChangeEvent<HTMLSelectElement>) => setAssignmentFilmId(event.target.value)} value={assignmentFilmId}>
                 {scenarios.map((scenario) => <option key={scenario.id} value={scenario.id}>{scenario.film.year} · {scenario.film.title}</option>)}
               </select>
             </label>
-            <button className="filmverket-primary-action" disabled={!summary.mastered || !assignmentFilmId} onClick={startCapstone} type="button">Start regieksamen i Film Director →</button>
+            <button className="filmverket-primary-action" disabled={!summary.mastered || !assignmentFilmId} onClick={startCapstone} type="button">{submission ? "Åpne ny eksamensoppgave →" : "Start regieksamen i Film Director →"}</button>
           </aside>
         </section>
       </main>
@@ -150,6 +176,24 @@ function loadSummary(): FilmSchoolGroundCourseSummary {
     }
   }
   return summarizeFilmSchoolGroundCourse(values);
+}
+
+function loadSubmission(): FilmSchoolCapstoneSubmission | undefined {
+  try {
+    return coerceFilmSchoolCapstoneSubmission(JSON.parse(window.localStorage.getItem(FILM_SCHOOL_CAPSTONE_SUBMISSION_STORAGE_KEY) ?? "null") as unknown);
+  } catch {
+    return undefined;
+  }
+}
+
+function formatDate(value: string): string {
+  const timestamp = Date.parse(value);
+  return Number.isFinite(timestamp) ? new Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(new Date(timestamp)) : value;
+}
+
+function formatDateTime(value: string): string {
+  const timestamp = Date.parse(value);
+  return Number.isFinite(timestamp) ? new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" }).format(new Date(timestamp)) : value;
 }
 
 function routeForSection(section: FilmverketSection): FilmverketRoute {
