@@ -64,11 +64,18 @@ const minimalistRoadBatchIds = [
   "scenario_nebraska_2013",
 ] as const;
 
+const europeanPressureBatchIds = [
+  "scenario_dogtooth_2009",
+  "scenario_the_hunt_2012",
+  "scenario_the_measure_of_a_man_2015",
+  "scenario_revanche_2008",
+] as const;
+
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
   const scenarioIds = new Set(getClassicFilmScenarios().map((scenario) => scenario.id));
 
-  assert.equal(records.length, 36);
+  assert.equal(records.length, 40);
   assert.equal(new Set(records.map((record) => record.scenarioId)).size, records.length);
 
   for (const record of records) {
@@ -164,9 +171,18 @@ test("minimalist-road verification batch is present in the registry", () => {
   }
 });
 
+test("European-pressure verification batch is present in the registry", () => {
+  for (const scenarioId of europeanPressureBatchIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.scenarioId, scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
 test("verification lookup and ID list expose the same registry", () => {
   const ids = getVerifiedProductionCaseIds();
-  assert.equal(ids.length, 36);
+  assert.equal(ids.length, 40);
   assert.equal(new Set(ids).size, ids.length);
 
   for (const scenarioId of ids) {
