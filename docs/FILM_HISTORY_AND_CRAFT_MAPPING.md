@@ -22,11 +22,11 @@ A blank field is not an acceptable final state. Every case must contain all mapp
 
 ## Current implementation
 
-All 161 Production Cases now resolve to the same complete mapping structure.
+All 217 Production Cases now resolve to the same complete mapping structure.
 
 - 17 mandatory film-history and film-craft areas.
 - 44 source-backed film-history profiles.
-- 117 cases with a complete audit structure and visible research gaps.
+- 173 cases with a complete audit structure and visible research gaps.
 - No points, ranks, badges or reward currencies.
 - The historical comparison is playable through explanation choices.
 - Sources are inspectable inside the case.
@@ -213,7 +213,7 @@ A Production Case is fully film-history-and-craft verified only when it has:
 - a playable historical comparison with plausible alternatives;
 - no unsupported claims of innovation or influence.
 
-## Research order for the remaining 117 cases
+## Research order for the remaining 173 cases
 
 Research should proceed by coherent historical groups, not by random list order. This makes comparisons better and reduces duplicate work.
 

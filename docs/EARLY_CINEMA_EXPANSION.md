@@ -4,6 +4,8 @@
 
 The following 58 requested films are part of HG Film Producer's Production Case catalogue.
 
+After title/year deduplication, the complete Production Case catalogue contains **217 cases**. Of these, 44 have completed source verification and 173 remain visibly marked for further source research.
+
 The expansion is merged by film title and release year:
 
 - a matching film already present in the original catalogue is reused;

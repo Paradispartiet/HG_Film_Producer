@@ -38,7 +38,7 @@ The complete 17-area audit is defined in:
 - `src/core/filmStudyCoverage.ts`
 - `docs/FILM_HISTORY_AND_CRAFT_MAPPING.md`
 
-All 161 cases receive the same audit structure, but this does **not** mean that all 161 are verified. The remaining 117 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
+All 217 cases receive the same audit structure, but this does **not** mean that all 161 are verified. The remaining 173 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
 
 ### Pilot batch
 
@@ -210,7 +210,7 @@ Verification supports learning; it does not support a score or ranking. A verifi
 
 ## Next step
 
-Forty-four cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 117 in coherent historical batches:
+Forty-four cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 173 in coherent historical batches:
 
 - make every historical and technical alternative plausible and educational;
 - ensure feedback explains the concrete distinction between choices;
