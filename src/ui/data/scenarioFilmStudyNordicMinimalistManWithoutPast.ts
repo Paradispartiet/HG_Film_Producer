@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const manWithoutPastFilmHistoryProfile = {
+  scenarioId: "scenario_the_man_without_a_past_2002",
+  period: "Finnish deadpan humanism, working-class fable and colour-controlled social cinema",
+  traditions: ["Aki Kaurismäki loser trilogy", "Working-class humanist fable", "Minimalist colour melodrama"],
+  before: "Kaurismäki's proletariat trilogy had mapped exclusion through increasingly severe deadpan stories, while his later work moved toward fragile communities where music, labour and practical solidarity could offer limited resistance to bureaucracy and violence.",
+  moment: "Sputnik, YLE, Pandora, ZDF/Arte and French partners support a Helsinki production in which Kaurismäki's screenplay and direction, Timo Salminen's colour photography, Markku Pätilä's art direction, Outi Harjupatana's costumes, Timo Linnasalo's editing and live popular music turn amnesia into a working-class reconstruction of identity.",
+  after: "The film won the Cannes Grand Prix, earned Kati Outinen the festival's acting award, received the first Nordic Council Film Prize and became Kaurismäki's most internationally recognized fusion of deadpan form, social commitment and guarded hope.",
+  historyQuestion: "Which production system explains the Helsinki container settlement, amnesiac protagonist, frontal colour design, sparse dialogue, practical community, Salvation Army music and social renewal built from work rather than recovered biography?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, BFI, Pandora Film and DFI place the 2002 film within Nordic social cinema and Kaurismäki's continuing attention to unemployed, homeless and economically marginal people." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI identifies the film as part of Kaurismäki's loser trilogy and documents his minimal dialogue, static composition, vivid colour and deadpan tragicomedy." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Pandora Film documents Sputnik, YLE, Pandora, ZDF/Arte, French coproduction partners, Finnish Film Foundation and Nordic Film & TV Fund support." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the Grand Prix and Kati Outinen's acting award; DFI records the first Nordic Council Film Prize and BFI notes the film's major international success." },
+    { area: "screenplay", status: "source_verified", note: "Cannes and Pandora credit Kaurismäki's screenplay; identity is rebuilt through shelter, work, music and relationships rather than mystery-driven memory recovery." },
+    { area: "directing", status: "source_verified", note: "Cannes, BFI and Pandora credit Kaurismäki and support a restrained system where comedy, violence and kindness are staged without emphatic psychological explanation." },
+    { area: "performance", status: "source_verified", note: "Cannes foregrounds Markku Peltola and Kati Outinen; the film's deadpan acting turns pauses, practical gestures and quiet recognition into the main emotional vocabulary." },
+    { area: "production_design", status: "source_verified", note: "Pandora credits Markku Pätilä and Jukka Salmi; the container home, dock, Salvation Army spaces and modest bar create a coherent alternative city economy." },
+    { area: "costume_makeup", status: "source_verified", note: "Pandora credits Outi Harjupatana and Nadja Delcos; restrained work clothes and carefully controlled appearance bind characters to labour, poverty and institutional roles." },
+    { area: "cinematography", status: "source_verified", note: "Cannes and Pandora credit Timo Salminen; BFI documents Kaurismäki's vivid palette and infrequent camera movement, while the film uses frontal compositions and saturated interiors." },
+    { area: "lighting", status: "mapped", note: "Controlled colour, isolated practicals and clear frontal illumination shape the fable, but the current sources do not isolate a full lighting-department account." },
+    { area: "camera_format", status: "source_verified", note: "Pandora records colour, 1.85:1 and Dolby SRD for a ninety-seven-minute Helsinki production." },
+    { area: "editing", status: "source_verified", note: "Cannes and Pandora credit Timo Linnasalo; clean ellipses move from assault to recovery, work, romance and confrontation without conventional explanatory bridges." },
+    { area: "sound_design", status: "source_verified", note: "Pandora credits Jouko Lumme and Tero Malmberg; sparse dialogue, harbour ambience, trains, rooms and live performance preserve the film's material social world." },
+    { area: "music", status: "source_verified", note: "Pandora credits Marko Haavisto & Poutahaukat, while the story makes rehearsal and performance central to community, courtship and renewed purpose." },
+    { area: "effects_animation", status: "not_central", note: "The film's formal system depends on production design, colour, acting, editing, location and music rather than a central effects or animation pipeline." },
+    { area: "documentary_method", status: "mapped", note: "Helsinki docks, containers and institutions give the fable material specificity, but the production remains a deliberately stylized scripted world." },
+  ],
+} as const satisfies FilmHistoryProfile;
