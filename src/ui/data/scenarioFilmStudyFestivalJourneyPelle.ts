@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const pelleFilmHistoryProfile = {
+  scenarioId: "scenario_pelle_the_conqueror_1987",
+  period: "Nordic historical realism, migration drama and father-son proletarian epic",
+  traditions: ["Scandinavian social realism", "Literary historical adaptation", "Child-centred migration drama"],
+  before: "Martin Andersen Nexø's proletarian novel and Scandinavian social cinema had made class, labour and rural hierarchy central subjects, while Bille August's earlier youth films developed a patient child-centred approach to family and social pressure.",
+  moment: "Per Holst Filmproduktion and Svensk Filmindustri mount a Danish-Swedish adaptation on Bornholm, where Bille August, Per Olov Enquist and Bjarne Reuter compress the novel around Pelle and Lasse; Jörgen Persson's widescreen 35mm photography, Anna Asp's farm world, Janus Billeskov Jansen's seasonal editing, Niels Arild and Lars Lund's material sound and Stefan Nilsson's score turn migration and class into lived space and labour.",
+  after: "The film won the 1988 Palme d'Or and the Academy Award for foreign-language film, brought August international recognition and remains a major Nordic example of large-scale literary adaptation grounded in intimate father-son performance.",
+  historyQuestion: "Which production system explains Swedish migrants arriving by sea, a child learning class hierarchy through seasonal farm labour, a large historical design held together by father-son intimacy and widescreen images that make weather, work and social position visible?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "DFI, Cannes and the Swedish Film Institute place the film within late-19th-century Swedish migration to Denmark and the 1980s Nordic revival of socially engaged literary cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "DFI identifies the source as Martin Andersen Nexø's proletarian classic and describes the adaptation's emphasis on father and son while retaining the novel's social indignation." },
+    { area: "industry_and_production_context", status: "source_verified", note: "DFI documents the Danish-Swedish production by Per Holst Filmproduktion and Svensk Filmindustri, Nordic distribution and the complete department structure." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the 1988 Palme d'Or; DFI and the Swedish Film Institute document the Academy Award, European recognition and August's international breakthrough." },
+    { area: "screenplay", status: "source_verified", note: "DFI credits Bille August, Per Olov Enquist and Bjarne Reuter and identifies the film as an adaptation of the first part of Nexø's novel." },
+    { area: "directing", status: "source_verified", note: "Cannes and DFI credit Bille August; the direction keeps the social epic legible through Pelle's observation, Lasse's compromises and repeated labour situations." },
+    { area: "performance", status: "source_verified", note: "Cannes and DFI document Pelle Hvenegaard, Max von Sydow, Erik Paaske and Björn Granath; the European Film Awards recognised both von Sydow and Hvenegaard." },
+    { area: "production_design", status: "source_verified", note: "Cannes and DFI credit Anna Asp and a full set-dressing team; farm compounds, worker quarters, interiors and coastlines make class hierarchy concrete." },
+    { area: "costume_makeup", status: "source_verified", note: "DFI credits Kicki Ilander, Birthe Qualmann, Gitte Kolvig and the makeup team; clothing separates owners, servants, migrants, workers and seasonal conditions." },
+    { area: "cinematography", status: "source_verified", note: "Cannes and DFI credit Jörgen Persson; widescreen landscape and ensemble composition connect labouring bodies to fields, buildings, weather and authority." },
+    { area: "lighting", status: "mapped", note: "DFI credits the electrical department, but the current sources do not isolate a dedicated account of the film's naturalistic interior and exterior lighting method." },
+    { area: "camera_format", status: "source_verified", note: "DFI records 35mm colour, widescreen presentation and Dolby sound." },
+    { area: "editing", status: "source_verified", note: "Cannes and DFI credit Janus Billeskov Jansen; the edit uses seasons, work routines and accumulating humiliations to carry the large adaptation." },
+    { area: "sound_design", status: "source_verified", note: "DFI credits Niels Arild and Lars Lund; wind, animals, tools, commands, communal meals and coastal ambience preserve the material pressure of farm life." },
+    { area: "music", status: "source_verified", note: "Cannes and DFI credit Stefan Nilsson; the score supports migration, endurance and the father-son bond without replacing the physical world of labour." },
+    { area: "effects_animation", status: "not_central", note: "The film's production system depends on historical design, location, ensemble performance and weather rather than a central effects or animation pipeline." },
+    { area: "documentary_method", status: "mapped", note: "The adaptation reconstructs labour, migration and rural hierarchy through historical detail, but the current sources do not document a separate research or documentary process." },
+  ],
+} as const satisfies FilmHistoryProfile;
