@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 108 source-backed Production Cases.
+- 112 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -40,6 +40,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts`
 - `src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts`
 - `src/ui/data/scenarioProductionVerificationCrimeNoirTransformationsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationNorwegianPostwarGenreSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts`
@@ -208,6 +209,15 @@ This batch compares Paramount studio noir, British restrained melodrama, Italian
 - `scenario_band_of_outsiders_1964`
 
 This batch compares Warner Bros. hard-boiled dialogue staging, Paramount social-problem noir, RKO fatalist location-studio noir and French New Wave pulp genre play.
+
+### Norwegian postwar and genre systems batch
+
+- `scenario_gategutter_1949`
+- `scenario_fjols_til_fjells_1957`
+- `scenario_de_dodes_tjern_1958`
+- `scenario_insomnia_1997`
+
+This batch compares east-Oslo neorealist social cinema, independent mountain-hotel farce, Agascope literary horror and reversed daylight noir.
 
 ### 1950s Asian postwar cinema batch
 
