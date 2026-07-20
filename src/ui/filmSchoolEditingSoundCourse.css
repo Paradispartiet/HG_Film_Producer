@@ -1,0 +1,29 @@
+.school-course-hero--editing-sound {
+  background:
+    radial-gradient(circle at 82% 20%, rgba(90, 218, 255, 0.17), transparent 31%),
+    radial-gradient(circle at 68% 74%, rgba(155, 111, 255, 0.13), transparent 34%),
+    linear-gradient(135deg, rgba(90, 218, 255, 0.08), rgba(211, 255, 70, 0.025) 56%, transparent);
+}
+
+.school-editing-sound-course-shell .school-course-progress > span {
+  background: linear-gradient(90deg, #5adaff, #9b6fff, #d3ff46);
+}
+
+.school-editing-sound-course-shell .school-principle-card {
+  border-color: rgba(90, 218, 255, 0.28);
+  background: linear-gradient(135deg, rgba(90, 218, 255, 0.1), rgba(155, 111, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.school-editing-sound-course-shell .school-film-example {
+  border-color: rgba(90, 218, 255, 0.24);
+}
+
+.school-course-roadmap--complete article {
+  border-color: rgba(211, 255, 70, 0.3);
+  background: linear-gradient(135deg, rgba(211, 255, 70, 0.08), rgba(90, 218, 255, 0.04));
+}
+
+.school-course-roadmap--complete article > span,
+.school-course-roadmap--complete article small {
+  color: #d3ff46;
+}
