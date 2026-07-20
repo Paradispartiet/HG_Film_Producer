@@ -71,7 +71,14 @@ const czechoslovakNewWaveIds = [
   "scenario_the_cremator_1969",
 ] as const;
 
-const expectedVerifiedCount = 80;
+const europeanPoliticalFeministModernismIds = [
+  "scenario_cleo_from_5_to_7_1962",
+  "scenario_the_conformist_1970",
+  "scenario_jeanne_dielman_1975",
+  "scenario_beau_travail_1999",
+] as const;
+
+const expectedVerifiedCount = 84;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -153,6 +160,14 @@ test("postwar European modernism systems are verified with four sources each", (
 
 test("Czechoslovak New Wave systems are verified with four sources each", () => {
   for (const scenarioId of czechoslovakNewWaveIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("European political and feminist modernism systems are verified with four sources each", () => {
+  for (const scenarioId of europeanPoliticalFeministModernismIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);
