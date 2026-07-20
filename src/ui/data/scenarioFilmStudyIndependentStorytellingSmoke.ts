@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const smokeFilmHistoryProfile = {
+  scenarioId: "scenario_smoke_1995",
+  period: "Mid-1990s transnational American independent ensemble cinema and literary Brooklyn",
+  traditions: ["American independent ensemble drama", "New York neighborhood cinema", "Literary adaptation and oral storytelling"],
+  before: "The film grows from Paul Auster's Christmas story and from neighborhood ensemble films in which one recurring public place allows strangers, regulars and private histories to meet through conversation rather than plot spectacle.",
+  moment: "A German-Japanese-backed New York production turns a converted Park Slope post office into a cigar-shop social hub. Scripted encounters, stories within stories, repeated customers and patient performance rhythms make speech, chance and community the production's main resources.",
+  after: "Its Berlinale recognition and continuing study of Auster's cinema preserve it as a strong example of how a contained urban set, literary structure and ensemble performance can create a larger city beyond the frame.",
+  historyQuestion: "Which production system best explains why Smoke can feel like a broad portrait of Brooklyn while spending so much time inside one cigar shop?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Berlinale, BFI and filmmaker records place the film within the international circulation of mid-1990s American independent cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film joins New York neighborhood cinema, literary adaptation, ensemble drama and oral storytelling." },
+    { area: "industry_and_production_context", status: "source_verified", note: "The Park Slope production used international financing and a converted former post office as the central cigar-shop set." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Berlinale archive records Paul Auster's Silver Bear and the film's place in a notable 1995 American independent selection." },
+    { area: "screenplay", status: "source_verified", note: "Auster expands one short story into intersecting lives, nested anecdotes, chance meetings and recurring returns to the same social space." },
+    { area: "directing", status: "source_verified", note: "Wayne Wang organizes dialogue and ensemble attention around the shop so minor gestures and changing relationships carry the drama." },
+    { area: "performance", status: "mapped", note: "Conversational timing, listening and contrasting social energies are primary, while detailed actor and rehearsal sourcing remains pending." },
+    { area: "production_design", status: "source_verified", note: "The converted post office became a dense, credible cigar shop designed as a crossroads for stories and neighborhood life." },
+    { area: "costume_makeup", status: "mapped", note: "Everyday clothing supports class, age and neighborhood specificity, but department-level research remains pending." },
+    { area: "cinematography", status: "mapped", note: "Adam Holender's photography keeps faces, counters and groupings readable inside the recurring set; a detailed cinematography interview remains pending." },
+    { area: "lighting", status: "mapped", note: "Warm shop interiors and changing street conditions support familiarity and passing time, while a lighting account remains pending." },
+    { area: "camera_format", status: "research_pending", note: "The current evidence verifies the cinematographer but not the complete camera, stock and lens package." },
+    { area: "editing", status: "mapped", note: "Maysie Hoy's edit favors performance duration and story handoffs, but editor-level sourcing remains pending." },
+    { area: "sound_design", status: "mapped", note: "Street ambience, shop activity and spoken stories enlarge the neighborhood beyond the set, while sound-team research remains incomplete." },
+    { area: "music", status: "mapped", note: "Rachel Portman's score supports reflection and connection, while a dedicated composition account remains pending." },
+    { area: "effects_animation", status: "not_central", note: "The film's world is created through set, dialogue, ensemble and location rather than effects." },
+    { area: "documentary_method", status: "mapped", note: "Park Slope locations and attention to ordinary neighborhood behavior give the fiction observational texture, while the film remains fully scripted." },
+  ],
+} as const satisfies FilmHistoryProfile;

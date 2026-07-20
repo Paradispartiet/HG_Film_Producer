@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const mysteryTrainFilmHistoryProfile = {
+  scenarioId: "scenario_mystery_train_1989",
+  period: "Late-1980s American independent cinema, transnational ensemble storytelling and music-city revision",
+  traditions: ["American independent cinema", "Episodic and circular narrative", "Music, migration and place cinema"],
+  before: "The film inherits anthology and triptych structures, one-day city stories, travel cinema and Jarmusch's earlier minimalist attention to outsiders, but replaces a single journey with several perspectives crossing the same neglected geography.",
+  moment: "Three stories unfold across the same Memphis night. Repeated locations, radio, train sounds, gunfire and musical references join international visitors and local residents, while Robby Müller's controlled color turns a faded music city into a precise visual system rather than a tourist backdrop.",
+  after: "Its Cannes recognition and continuing restoration history preserve it as a useful model for building a city through recurrence, parallel time, outsider perspective, sound and color instead of explanatory exposition.",
+  historyQuestion: "Which production history best explains how Mystery Train makes one city and one night feel different each time the film returns to them?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes and Criterion place the film at the late-1980s international breakthrough of Jarmusch's American independent production model." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The disguised trilogy joins American independent minimalism, episodic city narrative, travel cinema and music history." },
+    { area: "industry_and_production_context", status: "source_verified", note: "A location-led Memphis production coordinates international performers, an independent creative team and a director-approved restoration record." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The 1989 Cannes artistic-contribution prize and later Criterion restoration document the film's established historical afterlife." },
+    { area: "screenplay", status: "source_verified", note: "Three self-contained stories share a single day, repeated spaces and audible events, allowing information and comedy to accumulate across viewpoints." },
+    { area: "directing", status: "source_verified", note: "Jarmusch stages each group with its own rhythm while preserving enough spatial and temporal repetition for the stories to interlock." },
+    { area: "performance", status: "mapped", note: "Contrasting languages, restrained reactions and outsider behavior drive the ensemble, while actor-level rehearsal research remains pending." },
+    { area: "production_design", status: "mapped", note: "Hotel rooms, streets, diners and decayed music landmarks create a non-touristic Memphis, but department-level sourcing remains pending." },
+    { area: "costume_makeup", status: "mapped", note: "Clothing distinguishes travelers, musicians and local subcultures, while dedicated costume research remains incomplete." },
+    { area: "cinematography", status: "source_verified", note: "Robby Müller's controlled palette of cool, worn surroundings punctuated by red gives repeated geography a coherent but changing emotional identity." },
+    { area: "lighting", status: "mapped", note: "Night interiors, available urban sources and restrained contrast support the worn city atmosphere, while detailed lighting documentation remains pending." },
+    { area: "camera_format", status: "mapped", note: "The photochemical production and restoration are documented, but the complete stock, camera and lens package remains pending." },
+    { area: "editing", status: "source_verified", note: "Melody London's edit preserves each episode as a separate duration while aligning repeated sounds and events across the same twenty-four hours." },
+    { area: "sound_design", status: "mapped", note: "Trains, radio, distant gunfire and room tone connect stories outside the frame, but a dedicated sound-team account remains pending." },
+    { area: "music", status: "source_verified", note: "John Lurie's score and Memphis music references place cultural memory inside the characters' movement through the city." },
+    { area: "effects_animation", status: "not_central", note: "The film's construction depends on place, performance, recurrence, color and sound rather than effects." },
+    { area: "documentary_method", status: "mapped", note: "Real Memphis streets and musical landmarks give the fiction a location-observational base without making it documentary." },
+  ],
+} as const satisfies FilmHistoryProfile;

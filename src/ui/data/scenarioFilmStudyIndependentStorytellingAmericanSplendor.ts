@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const americanSplendorFilmHistoryProfile = {
+  scenarioId: "scenario_american_splendor_2003",
+  period: "Early-2000s American independent mixed-media biography and documentary-fiction hybrid",
+  traditions: ["Autobiographical underground comics", "Hybrid documentary and reflexive biography", "American independent mixed-media cinema"],
+  before: "The film inherits Harvey Pekar's autobiographical comics, documentary portraiture, biographical dramatization and television archive, but refuses to let any single actor, image system or narrator become the definitive Harvey.",
+  moment: "The filmmakers combine Paul Giamatti's performance with the real Pekar and Joyce Brabner, Cleveland locations, studio interviews, archive television, comic panels, drawn figures, photographs and animation. Editing becomes the system that lets contradictory representations coexist rather than hiding the adaptation process.",
+  after: "Its Sundance prize and adapted-screenplay Academy nomination preserve it as a strong teaching case for biography that makes authorship, mediation and the gap between a life and its representations visible inside the film.",
+  historyQuestion: "Which production method best explains why American Splendor repeatedly changes who represents Harvey and what kind of image the audience is watching?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Sundance, Academy and filmmaker sources place the film within early-2000s American independent experimentation with biography and media hybridity." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film joins underground autobiographical comics, documentary portraiture, fictional biopic and reflexive mixed-media cinema." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Documentary-trained filmmakers worked with the real subjects, actors, Cleveland locations, archive and animation inside one independent feature." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The 2003 Sundance Dramatic Grand Jury Prize and Academy adapted-screenplay nomination document the film's recognized historical position." },
+    { area: "screenplay", status: "source_verified", note: "The adaptation selects episodes from Pekar's life while openly switching between narration, reconstruction, interview, comic framing and archive." },
+    { area: "directing", status: "source_verified", note: "Berman and Pulcini direct several representation systems at once and preserve friction between the real people, actors and drawn identities." },
+    { area: "performance", status: "mapped", note: "Paul Giamatti, Hope Davis and the real subjects create deliberate gaps between performance and self-presentation, while detailed actor sourcing remains pending." },
+    { area: "production_design", status: "mapped", note: "Cleveland locations, reconstructed interiors and white studio space separate lived environment from reflexive commentary, but designer-level research remains pending." },
+    { area: "costume_makeup", status: "mapped", note: "Costume and physical transformation connect performers to recognizable real subjects without erasing difference; department sourcing remains incomplete." },
+    { area: "cinematography", status: "mapped", note: "Distinct image treatments help viewers distinguish dramatization, interview, archive and graphic interruption, while a cinematographer account remains pending." },
+    { area: "lighting", status: "mapped", note: "Naturalistic Cleveland scenes contrast with deliberately exposed studio presentation, but detailed lighting research remains pending." },
+    { area: "camera_format", status: "research_pending", note: "The current evidence set does not yet verify the complete capture formats, stocks, cameras and lenses across the hybrid material." },
+    { area: "editing", status: "source_verified", note: "Editing moves among actors, real subjects, archival television, photographs, comic panels and animation without pretending they form one seamless reality." },
+    { area: "sound_design", status: "mapped", note: "Voice-over, direct address, interview sound, archive and scene dialogue shift narrative authority, while sound-team sourcing remains pending." },
+    { area: "music", status: "mapped", note: "Music supports period, mood and transitions between representational layers, while dedicated composition research remains incomplete." },
+    { area: "effects_animation", status: "source_verified", note: "Drawn figures, comic panels and animation are documented components of the hybrid method rather than decorative additions." },
+    { area: "documentary_method", status: "source_verified", note: "The real Pekar and Brabner, filmmaker interviews, actual locations and archive remain visible beside dramatization, making documentary evidence part of the film's form." },
+  ],
+} as const satisfies FilmHistoryProfile;

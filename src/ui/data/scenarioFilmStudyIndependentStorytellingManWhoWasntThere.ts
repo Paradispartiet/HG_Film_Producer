@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const manWhoWasntThereFilmHistoryProfile = {
+  scenarioId: "scenario_the_man_who_wasn_t_there_2001",
+  period: "Early-2000s neo-noir and photochemical reconstruction of monochrome classicism",
+  traditions: ["Film noir and James M. Cain crime fiction", "Coen brothers surreal Americana", "Modern planned monochrome cinema"],
+  before: "The film inherits hard-boiled crime, fatalistic voice-over, 1940s small-town noir and James M. Cain's chains of compromised choices, but filters those traditions through the Coens' deadpan pacing and absurd Americana.",
+  moment: "A 1949 world is built with exact design, restrained performance and a color-negative production intended for black-and-white release. Roger Deakins lights for a clean contemporary monochrome image rather than merely copying period contrast, making capture, printing and restoration part of the film's historical argument.",
+  after: "Cannes recognition and the Deakins-supervised restoration preserve the film as a teaching case for designing monochrome from screenplay, costume, production design, lighting and laboratory workflow instead of treating black-and-white as a late filter.",
+  historyQuestion: "Which production history best explains why The Man Who Wasn't There looks historically noir but not like a simple imitation of a 1940s print?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes and Criterion place the film at an early-2000s moment of deliberate neo-noir reconstruction rather than contemporary crime realism." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion connects classic noir and hard-boiled writing to the Coens' surreal, deadpan American world." },
+    { area: "industry_and_production_context", status: "source_verified", note: "The production captured on modern color negative for a planned black-and-white result and later received a cinematographer-supervised restoration." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Joel Coen's Cannes directing award and the restored Criterion edition document the film's durable craft and historical standing." },
+    { area: "screenplay", status: "source_verified", note: "Voice-over, blackmail, accident and escalating consequence translate Cain-like crime logic into an emotionally withdrawn barber's perspective." },
+    { area: "directing", status: "source_verified", note: "The Coens use exact blocking, pauses and visual irony so genre fate and absurd behavior occupy the same scenes." },
+    { area: "performance", status: "mapped", note: "Billy Bob Thornton's minimal speech and controlled physicality anchor the film, while a dedicated performance-source review remains pending." },
+    { area: "production_design", status: "mapped", note: "Dennis Gassner's 1949 shops, homes, streets and institutions are integral to the monochrome world, but detailed designer testimony remains pending." },
+    { area: "costume_makeup", status: "mapped", note: "Period silhouettes and tonal separation support the black-and-white image, while department-level sourcing remains incomplete." },
+    { area: "cinematography", status: "source_verified", note: "Deakins uses precise framing, controlled tonal separation and modern color stock intended for monochrome presentation." },
+    { area: "lighting", status: "source_verified", note: "The lighting was designed as a simplified contemporary black-and-white system, informed by but not mechanically imitating classic noir." },
+    { area: "camera_format", status: "source_verified", note: "The documented workflow used modern color negative and photochemical conversion or printing to black-and-white, preserving a planned monochrome release." },
+    { area: "editing", status: "mapped", note: "Roderick Jaynes and Tricia Cooke shape deadpan duration, voice-over compression and sudden consequence; editor-level analysis remains pending." },
+    { area: "sound_design", status: "mapped", note: "Barber tools, interiors, silence and restrained dialogue support Ed's isolation, while dedicated sound-team sourcing remains pending." },
+    { area: "music", status: "mapped", note: "Carter Burwell's score and recurring classical piano contribute fatalism and interiority, while a composer account remains pending." },
+    { area: "effects_animation", status: "not_central", note: "The central transformation is the coordinated monochrome production pipeline rather than effects spectacle." },
+    { area: "documentary_method", status: "not_central", note: "The film is a rigorously designed genre reconstruction rather than an observational or documentary-derived work." },
+  ],
+} as const satisfies FilmHistoryProfile;

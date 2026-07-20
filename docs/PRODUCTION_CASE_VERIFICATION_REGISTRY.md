@@ -19,10 +19,11 @@ Source records are divided into reviewable batch files:
 - `src/ui/data/scenarioProductionVerificationConstructedWorldsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationMinimalistRoadBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEuropeanPressureBatch.ts`
+- `src/ui/data/scenarioProductionVerificationIndependentStorytellingBatch.ts`
 
-The unified registry currently covers forty cases.
+The unified registry currently covers forty-four cases.
 
-The same forty cases also have source-backed film-history profiles in:
+The same forty-four cases also have source-backed film-history profiles in:
 
 - `src/ui/data/scenarioFilmStudyMap.ts`
 - `src/ui/data/scenarioFilmStudyTechnologyBatch.ts`
@@ -30,13 +31,14 @@ The same forty cases also have source-backed film-history profiles in:
 - `src/ui/data/scenarioFilmStudyConstructedWorldsBatch.ts`
 - `src/ui/data/scenarioFilmStudyMinimalistRoadBatch.ts`
 - `src/ui/data/scenarioFilmStudyEuropeanPressureBatch.ts`
+- `src/ui/data/scenarioFilmStudyIndependentStorytellingBatch.ts`
 
 The complete 17-area audit is defined in:
 
 - `src/core/filmStudyCoverage.ts`
 - `docs/FILM_HISTORY_AND_CRAFT_MAPPING.md`
 
-All 161 cases receive the same audit structure, but this does **not** mean that all 161 are verified. The remaining 121 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
+All 161 cases receive the same audit structure, but this does **not** mean that all 161 are verified. The remaining 117 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
 
 ### Pilot batch
 
@@ -143,6 +145,20 @@ This batch compares four ways European cinema turns social pressure into product
 - semi-documentary labor cinema built through long takes, real workplaces and occupational nonprofessionals;
 - Austrian slow thriller shifting noir revenge into rural reconciliation through 35mm, rehearsal, landscape and duration.
 
+### American independent storytelling and media-form batch
+
+- `scenario_mystery_train_1989`
+- `scenario_smoke_1995`
+- `scenario_the_man_who_wasn_t_there_2001`
+- `scenario_american_splendor_2003`
+
+This batch compares four ways American independent cinema makes narrative form part of production method:
+
+- episodic Memphis storytelling built through parallel time, repeated geography, international outsiders, color and music;
+- literary Brooklyn ensemble drama built around one converted neighborhood set, dialogue, chance and oral storytelling;
+- neo-noir reconstructed through a 1949 world, color-negative capture, planned black-and-white printing and contemporary monochrome lighting;
+- mixed-media biography combining actors, real subjects, Cleveland locations, archive, comics, photographs and animation.
+
 ## Verification rule
 
 A registry record must:
@@ -194,7 +210,7 @@ Verification supports learning; it does not support a score or ranking. A verifi
 
 ## Next step
 
-Forty cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 121 in coherent historical batches:
+Forty-four cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 117 in coherent historical batches:
 
 - make every historical and technical alternative plausible and educational;
 - ensure feedback explains the concrete distinction between choices;
