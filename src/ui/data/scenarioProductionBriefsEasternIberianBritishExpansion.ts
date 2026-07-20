@@ -2,12 +2,13 @@ import { createModernCanonBriefBlueprint } from "../../core/modernCanonBriefBlue
 import { getEasternIberianBritishExpansionDefinition } from "../../core/easternIberianBritishExpansion.js";
 import type { FilmScenarioSeed } from "./filmScenarios";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
+import { getItalyFranceGermanyBeneluxExpansionProductionBrief } from "./scenarioProductionBriefsItalyFranceGermanyBeneluxExpansion";
 
 export function getEasternIberianBritishExpansionProductionBrief(
   scenario: FilmScenarioSeed,
 ): ScenarioProductionBrief | undefined {
   const definition = getEasternIberianBritishExpansionDefinition(scenario);
-  if (!definition) return undefined;
+  if (!definition) return getItalyFranceGermanyBeneluxExpansionProductionBrief(scenario);
   const blueprint = createModernCanonBriefBlueprint(definition);
 
   return {
