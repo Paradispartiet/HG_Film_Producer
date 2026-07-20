@@ -1,9 +1,14 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
-import { getClassicFilmScenarios } from "../ui/data/filmScenarios.js";
 import { DIRECTOR_BRIEF_FIELDS } from "./directorBrief.js";
 import "./directorKnowledgeExtensions.js";
+import { mergeEarlyCinemaExpansion, type HistoricalFilmScenario } from "./earlyCinemaExpansion.js";
+import { mergeEastAsianAuteurExpansion } from "./eastAsianAuteurExpansion.js";
+import { mergeEasternIberianBritishExpansion } from "./easternIberianBritishExpansion.js";
+import { mergeFestivalWinners1981To2009Expansion } from "./festivalWinners1981To2009Expansion.js";
+import { mergeFestivalWinners2010To2024Expansion } from "./festivalWinners2010To2024Expansion.js";
 import {
   PERFORMANCE_COURSE_LESSONS,
   PERFORMANCE_DIRECTOR_ASSIGNMENT_FIELDS,
@@ -16,6 +21,13 @@ import {
   isPerformanceCourseMastered,
   isPerformanceCourseQuizAnswerCorrect,
 } from "./filmSchoolPerformanceCourse.js";
+import { mergeItalyFranceGermanyBeneluxExpansion } from "./italyFranceGermanyBeneluxExpansion.js";
+import { mergeJapaneseAuteurExpansion } from "./japaneseAuteurExpansion.js";
+import { mergeModernCanonExpansion } from "./modernCanonExpansion.js";
+import { mergePriorityIndieExpansion } from "./priorityIndieExpansion.js";
+import { mergeScandinavianEuropeanExpansion } from "./scandinavianEuropeanExpansion.js";
+import { mergeSouthKoreanCinemaExpansion } from "./southKoreanCinemaExpansion.js";
+import { mergeSouthSoutheastAsianExpansion } from "./southSoutheastAsianExpansion.js";
 
 const fixedNow = "2026-07-20T14:00:00.000Z";
 
@@ -43,7 +55,7 @@ test("all performance course terminology links resolve", () => {
 });
 
 test("all five performance course film examples resolve exactly once in Film Atlas", () => {
-  const scenarios = getClassicFilmScenarios();
+  const scenarios = buildCurrentCatalogue();
   for (const lesson of PERFORMANCE_COURSE_LESSONS) {
     const requestedTitle = normalizeTitle(lesson.film.title);
     const matches = scenarios.filter((scenario) => (
@@ -115,6 +127,23 @@ test("final performance assignment links to valid Director brief fields", () => 
   assert.deepEqual(assignment.fieldIds, PERFORMANCE_DIRECTOR_ASSIGNMENT_FIELDS);
   assert.equal(assignment.createdAt, fixedNow);
 });
+
+function buildCurrentCatalogue(): readonly HistoricalFilmScenario[] {
+  const seedUrl = new URL("../../data/film/scenarios/film_scenarios_seed.json", import.meta.url);
+  const parsed = JSON.parse(readFileSync(seedUrl, "utf8")) as { readonly scenarios: readonly HistoricalFilmScenario[] };
+  const historical = mergeEarlyCinemaExpansion(parsed.scenarios);
+  const modern = mergeModernCanonExpansion(historical);
+  const priorityIndie = mergePriorityIndieExpansion(modern);
+  const eastAsian = mergeEastAsianAuteurExpansion(priorityIndie);
+  const japanese = mergeJapaneseAuteurExpansion(eastAsian);
+  const southKorean = mergeSouthKoreanCinemaExpansion(japanese);
+  const southSoutheastAsian = mergeSouthSoutheastAsianExpansion(southKorean);
+  const earlyFestival = mergeFestivalWinners1981To2009Expansion(southSoutheastAsian);
+  const recentFestival = mergeFestivalWinners2010To2024Expansion(earlyFestival);
+  const scandinavianEuropean = mergeScandinavianEuropeanExpansion(recentFestival);
+  const easternIberianBritish = mergeEasternIberianBritishExpansion(scandinavianEuropean);
+  return mergeItalyFranceGermanyBeneluxExpansion(easternIberianBritish);
+}
 
 function normalizeTitle(value: string): string {
   return value.toLocaleLowerCase("en").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
