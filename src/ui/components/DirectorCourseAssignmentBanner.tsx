@@ -33,27 +33,28 @@ export function DirectorCourseAssignmentBanner({ filmSlug, visible }: DirectorCo
   }, [filmSlug, visible]);
 
   if (!visible || !assignment || assignment.filmSlug !== filmSlug) return null;
+  const activeAssignment = assignment;
 
   function dismiss() {
     try {
-      window.localStorage.removeItem(assignment.storageKey);
+      window.localStorage.removeItem(activeAssignment.storageKey);
     } catch {
       // Banner can still be dismissed for the current session.
     }
     setAssignment(undefined);
   }
 
-  const fieldLabels = assignment.fieldIds.map((fieldId) => (
+  const fieldLabels = activeAssignment.fieldIds.map((fieldId) => (
     DIRECTOR_BRIEF_FIELDS.find((field) => field.id === fieldId)?.label ?? fieldId
   ));
 
   return (
     <aside className="director-course-assignment" aria-label="Film School director assignment">
       <header>
-        <div><span>Film School-oppgave</span><strong>{assignment.title}</strong><small>{assignment.filmYear} · {assignment.filmTitle}</small></div>
+        <div><span>Film School-oppgave</span><strong>{activeAssignment.title}</strong><small>{activeAssignment.filmYear} · {activeAssignment.filmTitle}</small></div>
         <button aria-label="Dismiss course assignment" onClick={dismiss} type="button">×</button>
       </header>
-      <p>{assignment.prompt}</p>
+      <p>{activeAssignment.prompt}</p>
       <div>{fieldLabels.map((label, index) => <span key={label}><b>{String(index + 1).padStart(2, "0")}</b>{label}</span>)}</div>
       <button onClick={() => document.getElementById("director-active-scene")?.scrollIntoView({ behavior: "smooth", block: "start" })} type="button">Gå til scenebrieffet →</button>
     </aside>
