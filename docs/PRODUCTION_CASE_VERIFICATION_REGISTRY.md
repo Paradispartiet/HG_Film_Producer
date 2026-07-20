@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 60 source-backed Production Cases.
+- 64 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -37,6 +37,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationSilentStudioSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts`
 - `src/ui/data/scenarioProductionVerification1930sProductionSystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts`
 
 The complete audit schema is defined in:
 
@@ -169,6 +170,15 @@ This batch compares close-up silent modernism, reflexive documentary montage, of
 - `scenario_the_rules_of_the_game_1939`
 
 This batch compares integrated creature effects, industrial sound satire, feature-animation pipeline production and deep-space French ensemble staging.
+
+### Classical Hollywood 1939–1942 batch
+
+- `scenario_stagecoach_1939`
+- `scenario_the_wizard_of_oz_1939`
+- `scenario_citizen_kane_1941`
+- `scenario_casablanca_1942`
+
+This batch compares prestige location western production, MGM Technicolor musical fantasy, RKO modernist biography and Warner Bros. wartime studio melodrama.
 
 ## Verification rule
 
