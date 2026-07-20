@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const tripToTheMoonFilmHistoryProfile = {
+  scenarioId: "scenario_a_trip_to_the_moon_1902",
+  period: "Turn-of-the-century early cinema, theatrical trick film and screen fantasy",
+  traditions: ["Early trick film", "Theatrical tableau staging", "Handmade screen fantasy"],
+  before: "The film grows from stage magic, féerie theatre, illustrated science fantasy and the first decade of short actuality and attraction-based cinema.",
+  moment: "Méliès turns a scientific expedition into a chain of frontal tableaux, painted environments and transformations produced through camera stoppage, multiple exposure, masks, forced perspective and hand-applied colour.",
+  after: "Its Moon image became an emblem of early cinema, while the recovery and frame-by-frame reconstruction of the colour version made the film a major preservation case as well as a production-effects landmark.",
+  historyQuestion: "Which production tradition best explains why the voyage is built as a sequence of visible attractions rather than naturalistic space and psychology?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes and the Library of Congress place the film inside Méliès's early screen fantasy and special-effects practice." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film joins stage magic, theatrical tableaux, Jules Verne and H. G. Wells-inspired fantasy, and camera transformation." },
+    { area: "industry_and_production_context", status: "source_verified", note: "The Star Film production belongs to Méliès's self-built camera and glass-studio production system." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The recovered colour version was reconstructed from 13,375 image fragments and returned at Cannes Classics in 2011." },
+    { area: "screenplay", status: "mapped", note: "The expedition, lunar encounter, escape and return form a clear attraction-led chain, while detailed script documentation remains pending." },
+    { area: "directing", status: "source_verified", note: "Méliès coordinates performers, scenery and timed transformations inside fixed theatrical views." },
+    { area: "performance", status: "mapped", note: "Broad ensemble gesture supports visual legibility, but performer-level research remains pending." },
+    { area: "production_design", status: "source_verified", note: "Painted fantastical sets and handmade celestial environments are central to the film's construction." },
+    { area: "costume_makeup", status: "mapped", note: "Astronomer and Selenite designs are visible production elements, but dedicated costume research remains pending." },
+    { area: "cinematography", status: "source_verified", note: "Fixed frontal framing, multiple exposure, black masking and forced perspective turn photographic capture into illusion." },
+    { area: "lighting", status: "mapped", note: "The glass-studio environment shaped available production light, while shot-level lighting research remains pending." },
+    { area: "camera_format", status: "mapped", note: "The work survives in black-and-white and hand-coloured silent-film materials; exact camera and stock documentation remains incomplete." },
+    { area: "editing", status: "source_verified", note: "Stop-camera substitution and transformation cuts make editing itself part of the spectacle." },
+    { area: "sound_design", status: "not_central", note: "The original work is silent; exhibition accompaniment supports rather than creates the photographed transformations." },
+    { area: "music", status: "source_verified", note: "The 2011 restored colour presentation received a new score by Air, documented by Cannes." },
+    { area: "effects_animation", status: "source_verified", note: "Camera stoppage, double exposure, masks, forced perspective and painted scenery form the film's core effects system." },
+    { area: "documentary_method", status: "not_central", note: "The film is constructed theatrical fantasy rather than observational or documentary practice." },
+  ],
+} as const satisfies FilmHistoryProfile;
