@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case contains all mapping 
 Every Production Case in the current catalogue resolves to the same complete mapping structure. Catalogue size is read dynamically and is not duplicated in documentation or tests.
 
 - 17 mandatory film-history and film-craft areas.
-- 92 source-backed film-history profiles.
+- 96 source-backed film-history profiles.
 - All remaining cases retain complete audit structures with visible research gaps.
 - No points, ranks, badges or reward currencies.
 - Historical placement is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The 92 source-backed profiles are the same controlled group covered by the Production Case verification registry:
+The 96 source-backed profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -125,6 +125,10 @@ The 92 source-backed profiles are the same controlled group covered by the Produ
 - Lawrence of Arabia
 - 2001: A Space Odyssey
 - Night of the Living Dead
+- Hiroshima mon amour
+- 8½
+- The Umbrellas of Cherbourg
+- The Battle of Algiers
 
 ## Complete mapping schema
 
@@ -246,7 +250,9 @@ A date or movement name alone does not teach film history. The player learns by 
 - European-influenced outlaw revision versus prestige family crime production;
 - open-water location suspense versus used-future effects and sound worldbuilding;
 - economical black-and-white studio suspense versus international 70mm location epic;
-- engineered analogue effects modernism versus regional collective low-budget horror.
+- engineered analogue effects modernism versus regional collective low-budget horror;
+- Franco-Japanese documentary-memory fiction versus Italian-French film-about-film;
+- wholly sung colour melodrama versus documentary-coded political reconstruction.
 
 The alternatives come from other real cases. A wrong choice introduces another valid film-historical method instead of meaningless filler.
 
