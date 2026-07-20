@@ -1,4 +1,4 @@
-export type FilmSchoolCourseId = "screenplay" | "performance" | "camera" | "lightingDesign" | "editingSound";
+export type FilmSchoolCourseId = "overview" | "screenplay" | "performance" | "camera" | "lightingDesign" | "editingSound";
 
 type FilmSchoolCourseNavigationProps = {
   readonly activeCourseId: FilmSchoolCourseId;
@@ -6,6 +6,7 @@ type FilmSchoolCourseNavigationProps = {
 };
 
 const availableCourses = [
+  { id: "overview" as const, number: "00", title: "Oversikt og regieksamen" },
   { id: "screenplay" as const, number: "01", title: "Manus og sceneanalyse" },
   { id: "performance" as const, number: "02", title: "Skuespillerregi og blocking" },
   { id: "camera" as const, number: "03", title: "Bilde, kamera og optikk" },
