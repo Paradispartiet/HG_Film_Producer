@@ -1,0 +1,104 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+
+import { DIRECTOR_BRIEF_FIELDS } from "./directorBrief.js";
+import "./directorKnowledgeExtensions.js";
+import {
+  PERFORMANCE_COURSE_LESSONS,
+  PERFORMANCE_DIRECTOR_ASSIGNMENT_FIELDS,
+  coercePerformanceCourseProgress,
+  createBlankPerformanceCourseProgress,
+  createPerformanceDirectorAssignment,
+  getPerformanceCourseCompletionPercent,
+  getPerformanceCourseLessonTerms,
+  getPerformanceLessonMasteryStage,
+  isPerformanceCourseMastered,
+  isPerformanceCourseQuizAnswerCorrect,
+} from "./filmSchoolPerformanceCourse.js";
+
+const fixedNow = "2026-07-20T14:00:00.000Z";
+
+test("performance course has five complete and unique lessons", () => {
+  assert.equal(PERFORMANCE_COURSE_LESSONS.length, 5);
+  assert.equal(new Set(PERFORMANCE_COURSE_LESSONS.map((lesson) => lesson.id)).size, 5);
+  assert.deepEqual(PERFORMANCE_COURSE_LESSONS.map((lesson) => lesson.number), ["01", "02", "03", "04", "05"]);
+  for (const lesson of PERFORMANCE_COURSE_LESSONS) {
+    assert.ok(lesson.title.length >= 8);
+    assert.ok(lesson.summary.length >= 30);
+    assert.ok(lesson.principle.length >= 60);
+    assert.ok(lesson.termIds.length >= 4);
+    assert.equal(lesson.checklist.length, 3);
+    assert.equal(lesson.quiz.options.length, 4);
+    assert.ok(lesson.quiz.correctIndex >= 0 && lesson.quiz.correctIndex < lesson.quiz.options.length);
+  }
+});
+
+test("all performance course terminology links resolve", () => {
+  for (const lesson of PERFORMANCE_COURSE_LESSONS) {
+    const terms = getPerformanceCourseLessonTerms(lesson);
+    assert.equal(terms.length, lesson.termIds.length, `${lesson.id} has unresolved terminology`);
+    assert.deepEqual(terms.map((term) => term.id), lesson.termIds);
+  }
+});
+
+test("quiz grading accepts only the configured answer", () => {
+  for (const lesson of PERFORMANCE_COURSE_LESSONS) {
+    lesson.quiz.options.forEach((_, index) => {
+      assert.equal(isPerformanceCourseQuizAnswerCorrect(lesson, index), index === lesson.quiz.correctIndex);
+    });
+    assert.equal(isPerformanceCourseQuizAnswerCorrect(lesson, -1), false);
+    assert.equal(isPerformanceCourseQuizAnswerCorrect(lesson, 1.5), false);
+  }
+});
+
+test("progress coercion removes unknown lesson IDs and preserves valid notes", () => {
+  const validLesson = PERFORMANCE_COURSE_LESSONS[1];
+  assert.ok(validLesson);
+  const progress = coercePerformanceCourseProgress({
+    activeLessonId: validLesson.id,
+    seenLessonIds: [validLesson.id, validLesson.id, "missing"],
+    understoodLessonIds: ["missing"],
+    usedLessonIds: [validLesson.id],
+    notesByLessonId: { [validLesson.id]: "A concrete rehearsal note.", missing: "discard" },
+    updatedAt: fixedNow,
+  }, fixedNow);
+  assert.equal(progress.activeLessonId, validLesson.id);
+  assert.deepEqual(progress.seenLessonIds, [validLesson.id]);
+  assert.deepEqual(progress.understoodLessonIds, []);
+  assert.deepEqual(progress.usedLessonIds, [validLesson.id]);
+  assert.deepEqual(progress.notesByLessonId, { [validLesson.id]: "A concrete rehearsal note." });
+});
+
+test("mastery and completion require seen, understood, and used for every lesson", () => {
+  const blank = createBlankPerformanceCourseProgress(fixedNow);
+  assert.equal(getPerformanceCourseCompletionPercent(blank), 0);
+  assert.equal(isPerformanceCourseMastered(blank), false);
+  const lessonIds = PERFORMANCE_COURSE_LESSONS.map((lesson) => lesson.id);
+  const mastered = {
+    ...blank,
+    seenLessonIds: lessonIds,
+    understoodLessonIds: lessonIds,
+    usedLessonIds: lessonIds,
+  };
+  assert.equal(getPerformanceCourseCompletionPercent(mastered), 100);
+  assert.equal(isPerformanceCourseMastered(mastered), true);
+  for (const lessonId of lessonIds) assert.equal(getPerformanceLessonMasteryStage(mastered, lessonId), "mastered");
+});
+
+test("final performance assignment links to valid Director brief fields", () => {
+  const validFieldIds = new Set(DIRECTOR_BRIEF_FIELDS.map((field) => field.id));
+  assert.equal(PERFORMANCE_DIRECTOR_ASSIGNMENT_FIELDS.length, 5);
+  assert.equal(new Set(PERFORMANCE_DIRECTOR_ASSIGNMENT_FIELDS).size, 5);
+  for (const fieldId of PERFORMANCE_DIRECTOR_ASSIGNMENT_FIELDS) assert.equal(validFieldIds.has(fieldId), true);
+
+  const assignment = createPerformanceDirectorAssignment({
+    id: "scenario_kes_1969",
+    title: "Kes",
+    year: 1969,
+    slug: "kes-1969",
+  }, fixedNow);
+  assert.equal(assignment.courseId, "director_performance_blocking");
+  assert.equal(assignment.filmSlug, "kes-1969");
+  assert.deepEqual(assignment.fieldIds, PERFORMANCE_DIRECTOR_ASSIGNMENT_FIELDS);
+  assert.equal(assignment.createdAt, fixedNow);
+});
