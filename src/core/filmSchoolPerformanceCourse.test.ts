@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
+import { getClassicFilmScenarios } from "../ui/data/filmScenarios.js";
 import { DIRECTOR_BRIEF_FIELDS } from "./directorBrief.js";
 import "./directorKnowledgeExtensions.js";
 import {
@@ -38,6 +39,18 @@ test("all performance course terminology links resolve", () => {
     const terms = getPerformanceCourseLessonTerms(lesson);
     assert.equal(terms.length, lesson.termIds.length, `${lesson.id} has unresolved terminology`);
     assert.deepEqual(terms.map((term) => term.id), lesson.termIds);
+  }
+});
+
+test("all five performance course film examples resolve exactly once in Film Atlas", () => {
+  const scenarios = getClassicFilmScenarios();
+  for (const lesson of PERFORMANCE_COURSE_LESSONS) {
+    const requestedTitle = normalizeTitle(lesson.film.title);
+    const matches = scenarios.filter((scenario) => (
+      scenario.film.year === lesson.film.year
+      && [scenario.film.title, scenario.film.original_title].map(normalizeTitle).includes(requestedTitle)
+    ));
+    assert.equal(matches.length, 1, `${lesson.film.title} (${lesson.film.year}) should resolve exactly once`);
   }
 });
 
@@ -102,3 +115,7 @@ test("final performance assignment links to valid Director brief fields", () => 
   assert.deepEqual(assignment.fieldIds, PERFORMANCE_DIRECTOR_ASSIGNMENT_FIELDS);
   assert.equal(assignment.createdAt, fixedNow);
 });
+
+function normalizeTitle(value: string): string {
+  return value.toLocaleLowerCase("en").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+}
