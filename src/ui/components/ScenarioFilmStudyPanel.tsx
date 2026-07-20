@@ -9,6 +9,11 @@ import {
   resolveScenarioFilmStudyMap,
 } from "../data/scenarioFilmStudyMap";
 import {
+  create1930sProductionSystemsFilmHistoryChoices,
+  get1930sProductionSystemsFilmHistoryProfile,
+  resolve1930sProductionSystemsFilmStudyMap,
+} from "../data/scenarioFilmStudy1930sProductionSystemsBatch";
+import {
   createConstructedWorldsFilmHistoryChoices,
   getConstructedWorldsFilmHistoryProfile,
   resolveConstructedWorldsFilmStudyMap,
@@ -64,7 +69,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveLateSilentEarlySoundFilmStudyMap(scenario, brief)
+    () => resolve1930sProductionSystemsFilmStudyMap(scenario, brief)
+      ?? resolveLateSilentEarlySoundFilmStudyMap(scenario, brief)
       ?? resolveSilentStudioSystemsFilmStudyMap(scenario, brief)
       ?? resolveSilentFoundationsFilmStudyMap(scenario, brief)
       ?? resolveIndependentStorytellingFilmStudyMap(scenario, brief)
@@ -85,6 +91,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (get1930sProductionSystemsFilmHistoryProfile(historyProfile.scenarioId)) {
+      return create1930sProductionSystemsFilmHistoryChoices(historyProfile);
+    }
     if (getLateSilentEarlySoundFilmHistoryProfile(historyProfile.scenarioId)) {
       return createLateSilentEarlySoundFilmHistoryChoices(historyProfile);
     }
