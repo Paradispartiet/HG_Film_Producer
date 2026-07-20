@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 88 source-backed Production Cases.
+- 92 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -44,6 +44,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationCzechoslovakNewWaveBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch.ts`
 - `src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts`
+- `src/ui/data/scenarioProductionVerification1960sScaleIndependentBatch.ts`
 
 The complete audit schema is defined in:
 
@@ -239,6 +240,15 @@ This batch compares French Left Bank real-time city cinema, Italian fascist memo
 - `scenario_star_wars_1977`
 
 This batch compares European-influenced outlaw revision, prestige family crime production, open-water suspense and coordinated effects, editing, sound and music worldbuilding.
+
+### 1960s scale and independent production systems batch
+
+- `scenario_psycho_1960`
+- `scenario_lawrence_of_arabia_1962`
+- `scenario_2001_a_space_odyssey_1968`
+- `scenario_night_of_the_living_dead_1968`
+
+This batch compares economical black-and-white studio suspense, international 70mm location epic, engineered analogue effects modernism and regional collective low-budget horror.
 
 ## Verification rule
 
