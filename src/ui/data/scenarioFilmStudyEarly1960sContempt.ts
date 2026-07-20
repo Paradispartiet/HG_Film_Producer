@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const contemptFilmHistoryProfile = {
+  scenarioId: "scenario_contempt_1963",
+  period: "French-Italian New Wave prestige production, widescreen color modernism and film-about-film",
+  traditions: ["French New Wave", "International co-production", "Self-reflexive modernism"],
+  before: "European art cinema and commercial prestige production often occupied separate industrial and stylistic territories, while films about filmmaking usually treated production as backstage subject rather than as the structure of a marriage and an authorship crisis.",
+  moment: "Jean-Luc Godard works within his largest budget to date alongside Georges de Beauregard, Carlo Ponti and Joseph E. Levine, adapting Alberto Moravia with Brigitte Bardot, Michel Piccoli, Jack Palance and Fritz Lang, Raoul Coutard's CinemaScope color, Capri locations and Georges Delerue's repeated score.",
+  after: "The film became a central example of commercial scale turned into modernist critique: star image, producer pressure, widescreen composition, architecture, dubbing, multilingual speech and repeated music expose the conflict between art, labor, money and intimate trust.",
+  historyQuestion: "Which production system explains the film's international producers, Bardot star vehicle, Fritz Lang playing himself, CinemaScope color, Cinecittà and Capri spaces, multilingual dialogue and repeated music as a critique of production compromise?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Criterion, the Cinémathèque and Cannes place the 1963 France-Italy production within Godard's New Wave period and document its unusual commercial scale." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion and BFI identify a New Wave film-about-film that uses prestige spectacle, literary adaptation and self-reflexive modernism against each other." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion credits Georges de Beauregard, Carlo Ponti and Joseph E. Levine; the Cinémathèque and Cannes document the France-Italy production and StudioCanal preservation context." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes documents the film's initial commercial failure relative to its budget and its later restoration and canonical reassessment." },
+    { area: "screenplay", status: "source_verified", note: "Criterion, BFI and the Cinémathèque credit Godard adapting Alberto Moravia, using the Odyssey production and a long apartment confrontation to bind labor compromise to marital breakdown." },
+    { area: "directing", status: "source_verified", note: "BFI and Criterion document Godard's controlled collision of commercial requirements, playful references, extended confrontation and direct exposure of filmmaking as work." },
+    { area: "performance", status: "source_verified", note: "Criterion, BFI and the Cinémathèque document Bardot, Piccoli, Palance and Fritz Lang playing himself as competing star, writer, producer and director positions." },
+    { area: "production_design", status: "source_verified", note: "BFI and the Cinémathèque document Cinecittà, the modern apartment and Capri's Casa Malaparte as architectural systems that separate commerce, intimacy and classical myth." },
+    { area: "costume_makeup", status: "mapped", note: "Bardot's wigs, robes, dresses and changing color relationships contribute to star image and emotional distance, but dedicated department documentation remains limited in the current sources." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and the Cinémathèque credit Raoul Coutard; BFI emphasizes the long apartment scene and the film's opulent widescreen color construction." },
+    { area: "lighting", status: "mapped", note: "Flat Mediterranean daylight, saturated interiors and sculpted apartment passages organize emotional distance, but a complete lighting-department account is not isolated in the current sources." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents color and 2.35:1 presentation with a transfer supervised by Raoul Coutard; BFI identifies the production as widescreen." },
+    { area: "editing", status: "mapped", note: "Extended duration, abrupt chapter-like changes and repeated image-music relations shape the film, but the current sources do not provide a full editor-centered production account." },
+    { area: "sound_design", status: "source_verified", note: "Criterion documents French and optional English-dubbed soundtracks; multilingual dialogue, dubbing, abrupt continuity and production noise make industrial division audible." },
+    { area: "music", status: "source_verified", note: "Criterion credits Georges Delerue; the score's repeated theme interrupts and reframes the apartment, travel and Capri passages rather than simply accompanying them." },
+    { area: "effects_animation", status: "not_central", note: "The film's spectacle is built from stars, architecture, widescreen framing, color and location rather than a dedicated effects system." },
+    { area: "documentary_method", status: "mapped", note: "Fritz Lang plays himself and the film exposes cameras, rushes and production labor, but this self-documenting element remains embedded in controlled fiction rather than observational documentary." },
+  ],
+} as const satisfies FilmHistoryProfile;

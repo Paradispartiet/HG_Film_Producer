@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const julesAndJimFilmHistoryProfile = {
+  scenarioId: "scenario_jules_and_jim_1962",
+  period: "French New Wave literary adaptation, mobile location cinema and accelerated historical biography",
+  traditions: ["French New Wave", "Literary adaptation", "Location-based modernist romance"],
+  before: "Prestige literary adaptations generally favored stable period reconstruction and continuous dramatic scenes, while silent comedy, newsreel and popular song belonged to visibly separate forms.",
+  moment: "François Truffaut and Jean Gruault adapt Henri-Pierre Roché through Les Films du Carrosse, Raoul Coutard's mobile black-and-white photography, Claudine Bouché's rapid editing, Michel Subor's narration, Georges Delerue's score and Jeanne Moreau's performance across locations and decades.",
+  after: "The film became a durable example of how New Wave production could compress a long historical span through voice-over, archive material, freeze frames, irises, wipes, location movement and abrupt tonal change without abandoning emotional legibility.",
+  historyQuestion: "Which production system explains the film's twenty-five-year span, mobile outdoor photography, narration, newsreel inserts, freeze frames, irises, rapid ellipsis and recurring song around one unstable relationship?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Criterion, MoMA and the Cinémathèque place the 1962 film within the French New Wave and its retrospective account of friendship, love and war across several decades." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI explicitly connects the film's open-air spontaneity, silent-era transitions and formal invention to early French New Wave practice." },
+    { area: "industry_and_production_context", status: "source_verified", note: "The Cinémathèque documents Les Films du Carrosse, SEDIF, producer François Truffaut, executive producer Marcel Berbert and the production team behind the independent French feature." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion and BFI document the film's international success and continuing status as a major New Wave reference, while MoMA preserves it within a Truffaut-focused exhibition context." },
+    { area: "screenplay", status: "source_verified", note: "Criterion, BFI, MoMA and the Cinémathèque credit Truffaut and Jean Gruault adapting Henri-Pierre Roché's novel into an episodic, narrated long-span structure." },
+    { area: "directing", status: "source_verified", note: "BFI and the Cinémathèque support Truffaut's combination of location movement, abrupt tonal shifts, playful visual devices and controlled changes from freedom to consequence." },
+    { area: "performance", status: "source_verified", note: "Criterion, BFI and the Cinémathèque identify Jeanne Moreau, Oskar Werner and Henri Serre as the central triangle, with Moreau's physical and vocal presence organizing the film's tonal volatility." },
+    { area: "production_design", status: "mapped", note: "Homes, cafés, bridges, countryside and wartime environments remain materially legible across the historical span, but current sources do not isolate a complete design-department process." },
+    { area: "costume_makeup", status: "source_verified", note: "The Cinémathèque credits Fred Capel for décor and costume and Simone Knapp for makeup and hair, supporting the passage of time and Catherine's changing self-presentation." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and the Cinémathèque credit Raoul Coutard; BFI describes spontaneous open-air shooting and the mobile visual vocabulary associated with the New Wave." },
+    { area: "lighting", status: "mapped", note: "Available-light exteriors and shaped interiors sustain mobility and period atmosphere, but the current sources do not provide a dedicated lighting account." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the black-and-white 2.35:1 presentation and a restored 2K transfer, while the Cinémathèque records the original cinematography team." },
+    { area: "editing", status: "source_verified", note: "Criterion and the Cinémathèque credit Claudine Bouché; BFI identifies irises, wipes and other transitions, while the film compresses decades through montage and ellipsis." },
+    { area: "sound_design", status: "source_verified", note: "The Cinémathèque credits the production team and Michel Subor's narration; voice-over, dialogue, songs and historical sound material bind discontinuous time." },
+    { area: "music", status: "source_verified", note: "Criterion and the Cinémathèque credit Georges Delerue and the song Le Tourbillon, which turns performance and repetition into memory within the relationship." },
+    { area: "effects_animation", status: "not_central", note: "Masks, freeze frames and optical transitions are formal devices, but the production is not organized around a separate effects pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "BFI and MoMA document the use of open-air location shooting, newsreel material and historical inserts within a fictional literary adaptation." },
+  ],
+} as const satisfies FilmHistoryProfile;

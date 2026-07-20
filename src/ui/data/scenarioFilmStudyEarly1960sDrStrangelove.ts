@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const drStrangeloveFilmHistoryProfile = {
+  scenarioId: "scenario_dr_strangelove_1964",
+  period: "Cold War British-American black comedy, researched systems satire and monumental studio design",
+  traditions: ["Cold War satire", "Black comedy", "Studio systems film"],
+  before: "Nuclear-war films and political thrillers generally treated deterrence as grave procedural drama, while service comedy and grotesque farce remained separate from claims of strategic realism.",
+  moment: "Stanley Kubrick, Peter George and Terry Southern transform Red Alert from serious thriller into comedy through extensive nuclear research, Peter Sellers's multiple roles, Ken Adam's War Room and B-52 sets, Gilbert Taylor's black-and-white photography, Anthony Harvey's cross-cutting and coordinated model and process effects at British studios.",
+  after: "The film established a durable production model for systems satire in which accurate procedure, monumental design, straight performance, communications technology, montage and absurd language make institutional logic more frightening precisely because it remains legible.",
+  historyQuestion: "Which production system explains the film's researched deterrence procedures, three enclosed command spaces, Peter Sellers in multiple roles, Ken Adam's War Room, reconstructed B-52 interior, cross-cut countdown and documentary-coded military detail played as black comedy?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and BFI document Kubrick's sustained research into nuclear strategy, the Cold War context, the adaptation of Red Alert and the decision to turn a serious scenario into black comedy." },
+    { area: "movement_and_tradition", status: "source_verified", note: "AFI and BFI identify the film as black comedy and strategic satire built by applying straight procedural detail to absurd institutional logic." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Hawk Films, Polaris Productions, Columbia distribution, production beginning in January 1963 and British studio work including Shepperton." },
+    { area: "reception_and_legacy", status: "source_verified", note: "AFI records major contemporary success and the Academy records four nominations for picture, directing, adapted screenplay and Peter Sellers." },
+    { area: "screenplay", status: "source_verified", note: "AFI, BFI and the Academy credit Kubrick, Peter George and Terry Southern and document the transformation of Red Alert into a three-location comic catastrophe." },
+    { area: "directing", status: "source_verified", note: "BFI production materials show Kubrick directing controlled ensemble performance, military action and camera setups while insisting that absurd roles be played with procedural seriousness." },
+    { area: "performance", status: "source_verified", note: "BFI and the Academy document Peter Sellers's three-role performance, with Sterling Hayden, George C. Scott and Slim Pickens providing distinct institutional and physical registers." },
+    { area: "production_design", status: "source_verified", note: "BFI documents Ken Adam's War Room and B-52 reconstruction, including research from technical publications after access to real aircraft was denied." },
+    { area: "costume_makeup", status: "mapped", note: "Uniforms, political tailoring and Stewart Freeborn's Dr. Strangelove makeup support institutional caricature, but current sources do not isolate a complete costume-and-makeup process." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Gilbert Taylor and BFI production images document high-angle, wide-angle and deep-space staging across the base, bomber and War Room." },
+    { area: "lighting", status: "source_verified", note: "BFI's Kubrick Archive feature links Kubrick's preference for motivated source lighting to Ken Adam's dramatic architectural design and the War Room's illuminated table." },
+    { area: "camera_format", status: "source_verified", note: "AFI documents black-and-white sound production and credits the photographic and process departments supporting studio, model and aircraft material." },
+    { area: "editing", status: "source_verified", note: "AFI credits Anthony Harvey; the film's parallel progression between bomber, air base and War Room preserves procedure while tightening the irreversible countdown." },
+    { area: "sound_design", status: "source_verified", note: "AFI documents Westrex recording and sound personnel; radio codes, telephone voices, aircraft machinery, gunfire and room acoustics connect the three command systems." },
+    { area: "music", status: "source_verified", note: "AFI documents the use of When Johnny Comes Marching Home and We'll Meet Again, whose familiar associations sharpen military absurdity and apocalyptic finality." },
+    { area: "effects_animation", status: "source_verified", note: "AFI credits Wally Veevers, Vic Margutti and process departments; BFI archive materials document the B-52 model and practical construction supporting flight and destruction imagery." },
+    { area: "documentary_method", status: "source_verified", note: "BFI documents Kubrick's books, index cards, strategic research and technical reconstruction, while AFI records aviation advice and the production's effort to make fictional procedure materially credible." },
+  ],
+} as const satisfies FilmHistoryProfile;

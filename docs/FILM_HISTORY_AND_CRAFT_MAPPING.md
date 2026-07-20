@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case contains all mapping 
 Every Production Case in the current catalogue resolves to the same complete mapping structure. Catalogue size is read dynamically and is not duplicated in documentation or tests.
 
 - 17 mandatory film-history and film-craft areas.
-- 100 source-backed film-history profiles.
+- 104 source-backed film-history profiles.
 - All remaining cases retain complete audit structures with visible research gaps.
 - No points, ranks, badges or reward currencies.
 - Historical placement is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The 100 source-backed profiles are the same controlled group covered by the Production Case verification registry:
+The 104 source-backed profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -133,6 +133,10 @@ The 100 source-backed profiles are the same controlled group covered by the Prod
 - The Night of the Hunter
 - The Seventh Seal
 - Touch of Evil
+- Breakfast at Tiffany's
+- Jules and Jim
+- Contempt
+- Dr. Strangelove
 
 ## Complete mapping schema
 
@@ -258,7 +262,9 @@ A date or movement name alone does not teach film history. The player learns by 
 - Franco-Japanese documentary-memory fiction versus Italian-French film-about-film;
 - wholly sung colour melodrama versus documentary-coded political reconstruction;
 - Italian post-neorealist road fable versus American Expressionist child thriller;
-- Swedish theatre-derived allegory versus baroque Universal border noir.
+- Swedish theatre-derived allegory versus baroque Universal border noir;
+- Paramount star-and-fashion romance versus mobile French New Wave literary biography;
+- French-Italian widescreen film-about-film versus researched British-American Cold War systems satire.
 
 The alternatives come from other real cases. A wrong choice introduces another valid film-historical method instead of meaningless filler.
 

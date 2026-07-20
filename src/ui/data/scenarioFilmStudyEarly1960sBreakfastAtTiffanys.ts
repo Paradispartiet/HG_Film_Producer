@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const breakfastAtTiffanysFilmHistoryProfile = {
+  scenarioId: "scenario_breakfast_at_tiffany_s_1961",
+  period: "Early-1960s Paramount romantic comedy, New York star vehicle and designed modern glamour",
+  traditions: ["Hollywood romantic comedy", "Literary adaptation", "Star image and fashion cinema"],
+  before: "Classical Hollywood romantic comedy had long joined star performance, studio design and city fantasy, while Truman Capote's novella presented a sharper and less conventionally romantic portrait of self-invention and economic precarity.",
+  moment: "Jurow-Shepherd Productions and Paramount coordinate George Axelrod's adaptation, Blake Edwards's direction, Audrey Hepburn's star performance, New York location work, Paramount interiors, Franz Planer's Technicolor photography, Givenchy and Edith Head costumes, and Henry Mancini's score into a unified screen identity.",
+  after: "The film's combination of urban location, studio polish, fashion, star framing and recurring song remained a durable model for cinematic glamour, while its adaptation choices and representation also remain important subjects for critical historical study.",
+  historyQuestion: "Which production system explains the film's mix of New York locations and Paramount interiors, Audrey Hepburn's self-fashioned persona, coordinated couture and color design, literary softening, and Moon River as emotional structure?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and the Library of Congress document the adaptation of Truman Capote's 1958 novella, the altered romantic structure and the film's place in early-1960s American star culture." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI, AFI and the Library of Congress place the film within Hollywood romantic comedy, literary adaptation and a modernized female star-image tradition." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Jurow-Shepherd Productions, Paramount distribution, production from October 1960 to February 1961, eight days of New York location work and the return to the Paramount lot." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Academy records five nominations and two music wins, while the Library of Congress records selection for the National Film Registry." },
+    { area: "screenplay", status: "source_verified", note: "AFI, BFI, the Academy and the Library of Congress credit George Axelrod and document the transformation of Capote's novella into a more conventionally romantic screen narrative." },
+    { area: "directing", status: "source_verified", note: "AFI and BFI credit Blake Edwards and support the coordinated movement between location comedy, party ensemble scenes and intimate star-centered passages." },
+    { area: "performance", status: "source_verified", note: "The Library of Congress and Academy document Audrey Hepburn's central performance and its role in converting Holly's knowingly constructed public identity into the film's emotional focus." },
+    { area: "production_design", status: "source_verified", note: "AFI and the Academy credit Hal Pereira, Roland Anderson, Sam Comer and Ray Moyer, linking Tiffany's, the brownstone apartment, parties and Paramount interiors into one designed New York fantasy." },
+    { area: "costume_makeup", status: "source_verified", note: "AFI credits Edith Head, Hubert de Givenchy, Pauline Trigère, Wally Westmore and Nellie Manley; wardrobe, makeup and hair are documented parts of the film's star construction." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Franz F. Planer and documents the combination of Manhattan locations, studio interiors and Technicolor photography." },
+    { area: "lighting", status: "mapped", note: "Soft star lighting, reflective jewelry-store surfaces and controlled apartment and party interiors are central to the image, but the current sources do not isolate a full lighting-department account." },
+    { area: "camera_format", status: "source_verified", note: "AFI documents a sound Technicolor production and credits color consultant Richard Mueller alongside cinematographer Franz Planer." },
+    { area: "editing", status: "source_verified", note: "AFI credits Howard Smith; the production record supports a structure moving between social comedy, withheld biography, city movement and private melancholy." },
+    { area: "sound_design", status: "mapped", note: "Dialogue, parties, street ambience, rain and apartment acoustics support the urban world, but the available institutional sources emphasize music more strongly than a separate sound-effects process." },
+    { area: "music", status: "source_verified", note: "AFI and the Academy credit Henry Mancini and Johnny Mercer; the Academy records wins for score and Moon River, which functions as Holly's recurring private motif." },
+    { area: "effects_animation", status: "mapped", note: "AFI credits John P. Fulton and Farciot Edouart for special and process photography, though effects are supporting tools rather than the primary production system." },
+    { area: "documentary_method", status: "not_central", note: "New York locations provide recognizable urban texture, but the film is a designed literary star vehicle rather than an observational or documentary-led production." },
+  ],
+} as const satisfies FilmHistoryProfile;
