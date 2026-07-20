@@ -2,12 +2,13 @@ import { createEarlyCinemaBriefBlueprint } from "../../core/earlyCinemaBriefBlue
 import { getEarlyCinemaExpansionDefinition } from "../../core/earlyCinemaExpansion.js";
 import type { FilmScenarioSeed } from "./filmScenarios";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
+import { getModernCanonExpansionProductionBrief } from "./scenarioProductionBriefsModernCanonExpansion";
 
 export function getEarlyCinemaExpansionProductionBrief(
   scenario: FilmScenarioSeed,
 ): ScenarioProductionBrief | undefined {
   const definition = getEarlyCinemaExpansionDefinition(scenario);
-  if (!definition) return undefined;
+  if (!definition) return getModernCanonExpansionProductionBrief(scenario);
   const blueprint = createEarlyCinemaBriefBlueprint(definition);
 
   return {
