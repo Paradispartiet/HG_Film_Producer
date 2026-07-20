@@ -71,11 +71,18 @@ const europeanPressureBatchIds = [
   "scenario_revanche_2008",
 ] as const;
 
+const independentStorytellingBatchIds = [
+  "scenario_mystery_train_1989",
+  "scenario_smoke_1995",
+  "scenario_the_man_who_wasn_t_there_2001",
+  "scenario_american_splendor_2003",
+] as const;
+
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
   const scenarioIds = new Set(getClassicFilmScenarios().map((scenario) => scenario.id));
 
-  assert.equal(records.length, 40);
+  assert.equal(records.length, 44);
   assert.equal(new Set(records.map((record) => record.scenarioId)).size, records.length);
 
   for (const record of records) {
@@ -180,9 +187,18 @@ test("European-pressure verification batch is present in the registry", () => {
   }
 });
 
+test("independent-storytelling verification batch is present in the registry", () => {
+  for (const scenarioId of independentStorytellingBatchIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.scenarioId, scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
 test("verification lookup and ID list expose the same registry", () => {
   const ids = getVerifiedProductionCaseIds();
-  assert.equal(ids.length, 40);
+  assert.equal(ids.length, 44);
   assert.equal(new Set(ids).size, ids.length);
 
   for (const scenarioId of ids) {
