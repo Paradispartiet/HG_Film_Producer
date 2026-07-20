@@ -58,9 +58,8 @@ test("every requested film resolves once and has a complete playable brief bluep
   }
 });
 
-test("the merged catalogue keeps unique scenario ids", () => {
+test("the merged catalogue contains 217 unique Production Cases", () => {
   const scenarios = mergeEarlyCinemaExpansion(readSeedScenarios());
-  console.log(`Merged Production Case count: ${scenarios.length}`);
+  assert.equal(scenarios.length, 217);
   assert.equal(new Set(scenarios.map((scenario) => scenario.id)).size, scenarios.length);
-  assert.ok(scenarios.length >= 161);
 });
