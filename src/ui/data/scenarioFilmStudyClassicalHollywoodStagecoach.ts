@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const stagecoachFilmHistoryProfile = {
+  scenarioId: "scenario_stagecoach_1939",
+  period: "Late-1930s independent prestige western combining ensemble drama, Monument Valley locations and practical action",
+  traditions: ["Classical Hollywood western", "Location action", "Ensemble journey drama"],
+  before: "The western had become strongly associated with inexpensive series production, while Ford had spent more than a decade away from directing the genre.",
+  moment: "Walter Wanger's independent production combines a socially mixed coach ensemble with Monument Valley landscapes, carefully mapped vehicle geography, Yakima Canutt stunt work and classical continuity editing.",
+  after: "The film helped establish a durable model for the prestige western, John Wayne's star persona and Ford's repeated use of Monument Valley as both location and mythic dramatic space.",
+  historyQuestion: "Which production system explains why intimate coach-interior conflict and large exterior pursuit remain part of one clear dramatic geography?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and BFI place the film in the 1939 revival of higher-budget western production and Ford's return to the genre." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The case joins the classical western, ensemble social drama and practical location action." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Walter Wanger Productions, United Artists distribution, the production dates, budget context and borrowed cast." },
+    { area: "reception_and_legacy", status: "source_verified", note: "AFI, BFI and the Library of Congress document its awards, preservation and long-term genre influence." },
+    { area: "screenplay", status: "source_verified", note: "Dudley Nichols adapts Ernest Haycox into a journey structure that continually tests class judgment, prejudice and alliance." },
+    { area: "directing", status: "source_verified", note: "Ford coordinates ensemble observation, landscape scale and action direction without losing character hierarchy." },
+    { area: "performance", status: "source_verified", note: "The mixed ensemble and John Wayne's entrance are staged through glances, gesture and spatial relation as well as dialogue." },
+    { area: "production_design", status: "mapped", note: "Coach interiors and town sets support the journey, while dedicated design documentation remains incomplete." },
+    { area: "costume_makeup", status: "source_verified", note: "AFI credits Walter Plunkett and the costumes clarify occupation, class and social respectability inside the ensemble." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Bert Glennon and documents Monument Valley and other locations; BFI connects landscape to character and genre scale." },
+    { area: "lighting", status: "mapped", note: "Exterior and controlled interior lighting sustain continuity, while detailed department evidence remains pending." },
+    { area: "camera_format", status: "source_verified", note: "AFI records a black-and-white sound production using Western Electric Mirrophonic recording." },
+    { area: "editing", status: "source_verified", note: "Otho Lovering and Dorothy Spencer preserve direction, coach geography, passenger reactions and stunt escalation across the chase." },
+    { area: "sound_design", status: "source_verified", note: "Hoofbeats, wheels, gunfire, dialogue and environmental sound connect enclosed character scenes to exterior danger." },
+    { area: "music", status: "source_verified", note: "AFI documents the score's adaptation of American folk songs and its Academy Award recognition." },
+    { area: "effects_animation", status: "source_verified", note: "Practical stunt coordination, special photography and real vehicles form the central effects system rather than optical spectacle." },
+    { area: "documentary_method", status: "mapped", note: "Location texture gives physical credibility, but the film remains a controlled fictional studio production." },
+  ],
+} as const satisfies FilmHistoryProfile;

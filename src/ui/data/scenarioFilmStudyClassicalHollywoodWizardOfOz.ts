@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const wizardOfOzFilmHistoryProfile = {
+  scenarioId: "scenario_the_wizard_of_oz_1939",
+  period: "Late-1930s MGM musical fantasy built through coordinated Technicolor studio departments",
+  traditions: ["Classical Hollywood musical", "Technicolor fantasy", "Integrated studio spectacle"],
+  before: "MGM had developed large musical and fantasy departments, while live-action features were still learning how to organize color, songs and effects as one continuous dramatic system.",
+  moment: "The production contrasts sepia Kansas with three-strip Technicolor Oz and coordinates songs, choreography, sets, costumes, makeup, effects, character performance and pre-scored musical timing across a large studio pipeline.",
+  after: "Television revivals and restoration turned the film into a central reference point for color transition, integrated musical storytelling and the industrial coordination of classical studio fantasy.",
+  historyQuestion: "Which production system explains why the change from Kansas to Oz feels simultaneously like a narrative turn, a color event, a musical event and a complete departmental transformation?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and BFI place the film inside MGM's 1939 musical and Technicolor production culture." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The case joins classical musical form, children's fantasy adaptation and three-strip Technicolor spectacle." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents MGM, Mervyn LeRoy, the long recording and filming schedule, multiple directors and the unusually large credited and uncredited workforce." },
+    { area: "reception_and_legacy", status: "source_verified", note: "AFI and BFI document the original financial result, awards, television afterlife and later canonical status." },
+    { area: "screenplay", status: "source_verified", note: "The credited writers transform Baum's episodic journey into a clear home-departure-return arc with songs embedded in character objectives." },
+    { area: "directing", status: "source_verified", note: "Victor Fleming, King Vidor and earlier production directors worked inside an MGM system coordinated around a unified final style." },
+    { area: "performance", status: "source_verified", note: "Judy Garland's emotional directness and the companions' differentiated physical performances connect musical numbers to the quest." },
+    { area: "production_design", status: "source_verified", note: "AFI documents Cedric Gibbons, William Horning and extensive scenic, prop and studio contributions to the Oz world." },
+    { area: "costume_makeup", status: "source_verified", note: "Costume, prosthetic makeup, hair and character silhouette distinguish each companion and threat while remaining coordinated with color design." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Harold Rosson's Technicolor photography and the production's color personnel; BFI highlights the sepia-to-Technicolor transition." },
+    { area: "lighting", status: "mapped", note: "Three-strip Technicolor required controlled studio illumination, while more detailed department sourcing remains pending." },
+    { area: "camera_format", status: "source_verified", note: "AFI records sound production with sepia black-and-white sequences and three-strip Technicolor Oz sequences." },
+    { area: "editing", status: "source_verified", note: "Blanche Sewell's editing joins musical phrasing, effects transitions and episodic encounters into a continuous quest." },
+    { area: "sound_design", status: "source_verified", note: "Western Electric sound, dialogue, character effects and environmental cues are integrated with pre-scored musical action." },
+    { area: "music", status: "source_verified", note: "AFI documents Harold Arlen, E. Y. Harburg, Herbert Stothart and the production's plan to integrate songs into the script and score." },
+    { area: "effects_animation", status: "source_verified", note: "Cyclone work, fire, smoke, flying characters, matte and practical effects are coordinated with live action and color design." },
+    { area: "documentary_method", status: "not_central", note: "The film is an intentionally artificial studio fantasy rather than an observational or documentary production." },
+  ],
+} as const satisfies FilmHistoryProfile;

@@ -14,6 +14,11 @@ import {
   resolve1930sProductionSystemsFilmStudyMap,
 } from "../data/scenarioFilmStudy1930sProductionSystemsBatch";
 import {
+  createClassicalHollywoodFilmHistoryChoices,
+  getClassicalHollywoodFilmHistoryProfile,
+  resolveClassicalHollywoodFilmStudyMap,
+} from "../data/scenarioFilmStudyClassicalHollywoodBatch";
+import {
   createConstructedWorldsFilmHistoryChoices,
   getConstructedWorldsFilmHistoryProfile,
   resolveConstructedWorldsFilmStudyMap,
@@ -69,7 +74,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolve1930sProductionSystemsFilmStudyMap(scenario, brief)
+    () => resolveClassicalHollywoodFilmStudyMap(scenario, brief)
+      ?? resolve1930sProductionSystemsFilmStudyMap(scenario, brief)
       ?? resolveLateSilentEarlySoundFilmStudyMap(scenario, brief)
       ?? resolveSilentStudioSystemsFilmStudyMap(scenario, brief)
       ?? resolveSilentFoundationsFilmStudyMap(scenario, brief)
@@ -91,6 +97,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getClassicalHollywoodFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createClassicalHollywoodFilmHistoryChoices(historyProfile);
+    }
     if (get1930sProductionSystemsFilmHistoryProfile(historyProfile.scenarioId)) {
       return create1930sProductionSystemsFilmHistoryChoices(historyProfile);
     }

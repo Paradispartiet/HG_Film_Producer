@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const citizenKaneFilmHistoryProfile = {
+  scenarioId: "scenario_citizen_kane_1941",
+  period: "Early-1940s RKO modernism combining radio, theatre, newsreel, deep-focus staging and nonlinear biography",
+  traditions: ["Modernist studio biography", "Deep-focus mise-en-scène", "Radio-influenced sound montage"],
+  before: "Classical Hollywood biography usually sought chronological clarity and stable character explanation, while Welles arrived from theatre and radio with unusual contractual freedom at RKO.",
+  moment: "Welles, Gregg Toland, Robert Wise, Bernard Herrmann and the Mercury ensemble construct Kane through conflicting witnesses, deep-focus rooms, low angles, optical transitions, overlapping dialogue and compressed audiovisual time.",
+  after: "The film became a central teaching case for how a studio production can reorganize chronology, depth, sound and authorship without abandoning narrative accessibility.",
+  historyQuestion: "Which production system explains why the film investigates one life through incompatible testimony, layered depth, newsreel form and sound transitions rather than a single authoritative biography?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, BFI and MoMA place the film in Welles's 1940–1941 RKO production after his theatre and radio career." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The case combines classical studio craft with modernist biography, radio montage, theatrical staging and newsreel form." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Mercury Productions, RKO, the extended production schedule, credited departments and the Hearst controversy." },
+    { area: "reception_and_legacy", status: "source_verified", note: "MoMA and BFI document the film's archival importance, critical canonization and continuing formal influence." },
+    { area: "screenplay", status: "source_verified", note: "Mankiewicz and Welles organize the life through a reporter frame, multiple witnesses, flashbacks and unresolved contradiction." },
+    { area: "directing", status: "source_verified", note: "Welles coordinates performance, camera, set architecture, sound and transitions as mutually dependent storytelling systems." },
+    { area: "performance", status: "source_verified", note: "The Mercury Theatre ensemble and Welles's aging performance shift style across decades and narrators." },
+    { area: "production_design", status: "source_verified", note: "Ceilinged sets, low camera positions, Xanadu scale, miniature work and layered interiors make power and isolation architectural." },
+    { area: "costume_makeup", status: "source_verified", note: "Aging makeup and changing costume silhouettes help carry decades of biography across a compact production." },
+    { area: "cinematography", status: "source_verified", note: "AFI and BFI document Gregg Toland's deep-focus photography, wide-angle staging, low angles and high-contrast image system." },
+    { area: "lighting", status: "source_verified", note: "BFI describes the powerful lighting and reduced fill needed for depth and contrast beyond standard 1930s practice." },
+    { area: "camera_format", status: "source_verified", note: "AFI records black-and-white 35mm production with RCA sound." },
+    { area: "editing", status: "source_verified", note: "Robert Wise's editing compresses years through graphic, musical and conceptual transitions while preserving the investigation frame." },
+    { area: "sound_design", status: "source_verified", note: "Overlapping dialogue, acoustic depth, radio-style montage and sound bridges structure scenes and transitions." },
+    { area: "music", status: "source_verified", note: "AFI and AFI Movie Club document Bernard Herrmann's debut feature score and its structural role." },
+    { area: "effects_animation", status: "source_verified", note: "Miniatures, optical work, matte combinations and transition effects expand spaces and periods beyond the physical sets." },
+    { area: "documentary_method", status: "source_verified", note: "The News on the March sequence imitates documentary authority so the later testimonies can expose its incompleteness." },
+  ],
+} as const satisfies FilmHistoryProfile;

@@ -36,7 +36,14 @@ const productionSystems1930sIds = [
   "scenario_the_rules_of_the_game_1939",
 ] as const;
 
-const expectedVerifiedCount = 60;
+const classicalHollywoodIds = [
+  "scenario_stagecoach_1939",
+  "scenario_the_wizard_of_oz_1939",
+  "scenario_citizen_kane_1941",
+  "scenario_casablanca_1942",
+] as const;
+
+const expectedVerifiedCount = 64;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -78,6 +85,14 @@ test("late silent and early sound systems are verified with four sources each", 
 
 test("1930s production systems are verified with four sources each", () => {
   for (const scenarioId of productionSystems1930sIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("classical Hollywood systems are verified with four sources each", () => {
+  for (const scenarioId of classicalHollywoodIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);

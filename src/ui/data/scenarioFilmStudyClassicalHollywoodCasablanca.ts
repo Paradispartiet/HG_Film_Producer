@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const casablancaFilmHistoryProfile = {
+  scenarioId: "scenario_casablanca_1942",
+  period: "Wartime Warner Bros. studio melodrama combining romance, refugee politics and ensemble world-building",
+  traditions: ["Classical studio melodrama", "Wartime political romance", "Multinational ensemble drama"],
+  before: "Warner Bros. had developed fast-moving social drama, star vehicles and topical genre production, while wartime Hollywood increasingly turned European conflict into immediate popular storytelling.",
+  moment: "Hal Wallis's production converts a studio-built café and airport into a wartime crossroads through a multinational cast, continually revised screenplay, controlled lighting, source music, crowd texture and precise continuity editing.",
+  after: "The film became a canonical example of the classical studio system producing emotional unity from collaborative writing, performance, design, music and topical historical pressure.",
+  historyQuestion: "Which production system explains why a largely studio-bound romance can feel like a crowded international city shaped by war, memory, music and political choice?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, BFI and the Library of Congress place the production directly inside the wartime refugee and anti-Nazi context of 1942." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The case combines classical melodrama, political romance and Warner Bros. topical studio storytelling." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Warner Bros., Hal Wallis, the May–August 1942 schedule, soundstage production and the large credited department system." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Library of Congress, BFI and MoMA document wartime reception, awards and the film's long afterlife as a studio-system reference point." },
+    { area: "screenplay", status: "source_verified", note: "The Epsteins and Howard Koch adapt an unproduced play through ongoing revision, delayed backstory and a final choice balancing love with public duty." },
+    { area: "directing", status: "source_verified", note: "Michael Curtiz coordinates entrances, close-ups, crowd action, dialogue rhythm and political escalation within classical continuity." },
+    { area: "performance", status: "source_verified", note: "Bogart, Bergman, Rains, Henreid and the multinational supporting cast create competing emotional and political positions inside the café ensemble." },
+    { area: "production_design", status: "source_verified", note: "Carl Jules Weyl and George James Hopkins construct Rick's café, offices and airport as a complete social world on the Warner lot." },
+    { area: "costume_makeup", status: "source_verified", note: "Orry-Kelly and Perc Westmore support star identity, class position and controlled wartime glamour." },
+    { area: "cinematography", status: "source_verified", note: "Arthur Edeson's black-and-white photography separates crowded public space, romantic memory and moral isolation through framing and contrast." },
+    { area: "lighting", status: "source_verified", note: "Controlled studio lighting shapes Bergman's close-ups, Rick's guarded interiors and the fog-bound farewell atmosphere." },
+    { area: "camera_format", status: "source_verified", note: "AFI records black-and-white sound production using the RCA Sound System." },
+    { area: "editing", status: "source_verified", note: "Owen Marks times entrances, reaction shifts, Paris flashback and the final airport decision inside clear classical continuity." },
+    { area: "sound_design", status: "source_verified", note: "Multilingual dialogue, crowd ambience, aircraft, doors and offscreen activity make the studio café feel socially and politically crowded." },
+    { area: "music", status: "source_verified", note: "Max Steiner's score, As Time Goes By and competing national songs connect memory, romance and public defiance." },
+    { area: "effects_animation", status: "source_verified", note: "Miniatures, fog, rear projection and special-effects work extend the studio production into airport and wartime exterior scale." },
+    { area: "documentary_method", status: "mapped", note: "Topical wartime casting and refugee context create historical immediacy, but the film remains a constructed studio melodrama." },
+  ],
+} as const satisfies FilmHistoryProfile;
