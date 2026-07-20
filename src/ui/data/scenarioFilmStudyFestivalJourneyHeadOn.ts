@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const headOnFilmHistoryProfile = {
+  scenarioId: "scenario_head_on_2004",
+  period: "German-Turkish transnational cinema, punk romance and handheld identity drama",
+  traditions: ["German-Turkish migration cinema", "Raw performance-centred romance", "Music-driven urban realism"],
+  before: "New German and migrant cinema had explored guest-worker experience, divided belonging and urban marginality, while Fatih Akin's early features and documentaries developed a direct Hamburg-based style shaped by travel, music and Turkish-German family histories.",
+  moment: "Wüste Film, NDR/Arte and Corazón International connect Hamburg and Istanbul through Fatih Akin's volatile marriage-of-convenience screenplay, Birol Ünel and Sibel Kekilli's exposed performances, Rainer Klausmann's all-handheld photography, Tamo Kunz and Sirma Bradley's two-city design, Andrew Bird's abrupt editing, Kai Lüde and the sound team's physical detail and a punk, soul and Turkish-music structure punctuated by Bosporus performances.",
+  after: "The film won the 2004 Golden Bear and European Film Award, brought Akin to the centre of European cinema and became a key example of transnational filmmaking that refuses to reduce German-Turkish identity to a single national or moral framework.",
+  historyQuestion: "Which production system explains two self-destructive Hamburg outsiders entering a marriage of convenience, handheld camera staying close to volatile bodies, punk and Turkish music dividing and connecting two cities and abrupt violence redirecting the film from Germany toward Istanbul?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Goethe-Institut and Cannes place Akin and the film within German-Turkish migration history, divided national claims and early-2000s European transnational cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Goethe describe a raw, culturally hybrid cinema that resists stereotypes and joins punk energy, romance, family pressure and border-crossing identity." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Wüste Film and BFI document production by Wüste Film with NDR/Arte and Corazón International, German public funding and separate Hamburg and Turkish production units." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Wüste Film, BFI and the European Film Academy record the Golden Bear, German Film Awards and 2004 European Film recognition." },
+    { area: "screenplay", status: "source_verified", note: "Wüste Film, BFI and EFA credit Fatih Akin; the marriage bargain turns into love through impulsive action, sexual freedom, jealousy, imprisonment and displacement to Istanbul." },
+    { area: "directing", status: "source_verified", note: "Cannes and Goethe place Akin's direction at the intersection of Hamburg experience, Turkish family history, music and border-crossing stories rather than simple cultural opposition." },
+    { area: "performance", status: "source_verified", note: "EFA and Wüste Film document Birol Ünel and Sibel Kekilli and their major acting recognition; physical volatility and emotional exposure carry the tonal changes." },
+    { area: "production_design", status: "source_verified", note: "BFI and EFA credit Tamo Kunz with Sirma Bradley and the Turkish art department; flats, clubs, hospitals, family interiors, streets and Istanbul spaces mark changing freedom and danger." },
+    { area: "costume_makeup", status: "source_verified", note: "BFI and EFA credit Katrin Aschendorf, Daniel Schröder and Nursen Balci; clothing and bodily appearance track punk identity, family presentation, injury, imprisonment and reinvention." },
+    { area: "cinematography", status: "source_verified", note: "Wüste Film, BFI and EFA credit Rainer Klausmann; Akin later described Head-On as entirely handheld, preserving unstable proximity and performance freedom." },
+    { area: "lighting", status: "mapped", note: "Nightclubs, flats, hospital rooms and Istanbul exteriors retain a rough location texture, but the current sources do not isolate a dedicated lighting account." },
+    { area: "camera_format", status: "mapped", note: "The sources document colour production, handheld camerawork and department credits but do not provide a sufficiently explicit capture-format statement for source verification." },
+    { area: "editing", status: "source_verified", note: "BFI, EFA and Wüste Film credit Andrew Bird; sharp transitions, musical interludes and sudden consequences redirect the romance without smoothing its contradictions." },
+    { area: "sound_design", status: "source_verified", note: "BFI documents sound designer Jörg Krieger, Nani Schumann, supervisor Martin Langenbach, recordist Kai Lüde and the mixing team; clubs, impacts, breath, streets and domestic voices keep the film physical." },
+    { area: "music", status: "source_verified", note: "BFI records Selim Sesler, Maceo Parker, Fanfare Ciocarlia and the wider music team; punk, soul and Turkish performance act as structural transitions between identities and cities." },
+    { area: "effects_animation", status: "not_central", note: "BFI credits practical effects, fight choreography and stunt coordination, but effects are supporting tools inside a performance-, camera- and editing-led system." },
+    { area: "documentary_method", status: "mapped", note: "Akin draws on lived German-Turkish experience and observation, but the film remains a scripted romance and the current sources do not document a separate documentary-research process." },
+  ],
+} as const satisfies FilmHistoryProfile;
