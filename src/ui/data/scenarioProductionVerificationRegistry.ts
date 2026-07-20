@@ -18,6 +18,7 @@ import { early1960sProductionSystemsVerificationRecords } from "./scenarioProduc
 import { europeanModernistProductionVerificationRecords } from "./scenarioProductionVerificationEuropeanModernistProductionBatch";
 import { europeanPoliticalFeministModernismVerificationRecords } from "./scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch";
 import { europeanPressureVerificationRecords } from "./scenarioProductionVerificationEuropeanPressureBatch";
+import { festivalJourneyDisplacementVerificationRecords } from "./scenarioProductionVerificationFestivalJourneyDisplacementSystemsBatch";
 import { independentStorytellingVerificationRecords } from "./scenarioProductionVerificationIndependentStorytellingBatch";
 import { landscapeCinemaVerificationRecords } from "./scenarioProductionVerificationLandscapeBatch";
 import { lateSilentEarlySoundVerificationRecords } from "./scenarioProductionVerificationLateSilentEarlySoundBatch";
@@ -60,6 +61,7 @@ const additionalVerificationRecords = [
   ...nordicMinimalistSocialSystemsVerificationRecords,
   ...modernNordicBehaviorSystemsVerificationRecords,
   ...politicalPalme1980sVerificationRecords,
+  ...festivalJourneyDisplacementVerificationRecords,
   ...asianPostwar1950sVerificationRecords,
   ...expressivePostwar1950sVerificationRecords,
   ...postwarEuropeanModernismVerificationRecords,
