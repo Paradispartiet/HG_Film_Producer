@@ -3,11 +3,13 @@ import { useEffect, useMemo, useRef } from "react";
 import { createFilmSlug, type FilmverketRoute } from "../../core/filmverketRoutes";
 import { getClassicFilmScenarios } from "../data/filmScenarios";
 import { useFilmverketHashRoute } from "../routing/useFilmverketHashRoute";
+import { DirectorCourseAssignmentBanner } from "./DirectorCourseAssignmentBanner";
 import { DirectorKnowledgeDesk } from "./DirectorKnowledgeDesk";
 import { DirectorPracticeCoach } from "./DirectorPracticeCoach";
 import { FilmCraftLibraryOverlay } from "./FilmCraftLibraryOverlay";
 import { FilmDirectorExperience } from "./FilmDirectorExperience";
 import { FilmResearchControlRoom } from "./FilmResearchControlRoom";
+import { FilmSchoolScreenplayCourse } from "./FilmSchoolScreenplayCourse";
 import { RoutedFilmverketPlatform } from "./RoutedFilmverketPlatform";
 
 interface LandingScreenProps {
@@ -38,9 +40,17 @@ export function LandingScreen(props: LandingScreenProps) {
     <>
       {directorRoute ? (
         <FilmDirectorExperience navigate={navigate} route={directorRoute} />
+      ) : route.section === "school" ? (
+        <FilmSchoolScreenplayCourse
+          navigate={navigate}
+          onOpenAtlas={(scenario) => openScenario(scenario.id, "atlas")}
+          onOpenDirector={(scenario) => openScenario(scenario.id, "director")}
+          scenarios={scenarios}
+        />
       ) : (
         <RoutedFilmverketPlatform {...props} navigate={navigate} route={route} />
       )}
+      <DirectorCourseAssignmentBanner filmSlug={directorRoute?.filmSlug} visible={route.section === "director"} />
       <DirectorPracticeCoach visible={route.section === "director"} />
       <DirectorKnowledgeDesk visible={route.section === "director"} />
       <FilmCraftLibraryOverlay />
