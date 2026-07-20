@@ -54,6 +54,23 @@ The original title screen is now the Filmverket front page. The connected entran
 
 Returning home from the game returns to Filmverket.
 
+## Canonical hash routes
+
+Filmverket uses hash routing so direct links work on GitHub Pages without server-side rewrite rules. The browser history, refresh, copied links, and back/forward navigation all resolve through the same route model.
+
+- `#/` — Filmverket front page
+- `#/producer` — Film Producer gateway
+- `#/atlas` — Film Atlas catalogue
+- `#/atlas/film/<title-year-slug>` — one permanent Film Atlas page
+- `#/director/<title-year-slug>` — the same film in Director Lab
+- `#/school` — Film School
+- `#/history` — Film History
+- `#/research` — Research Control Room
+
+Film slugs are generated deterministically from the stored title and year. For example, `Mulholland Drive` from 2001 becomes `mulholland-drive-2001`. Unknown film slugs show an explicit not-found state rather than silently opening the wrong film.
+
+Research Control Room links every queue item directly to both its Film Atlas route and its Director Lab route. Film Atlas also provides chronological previous/next navigation and a copy-link action for the current film.
+
 ## Craft glossary rules
 
 A technique entry is not a praise word or a broad style label. It must contain:
