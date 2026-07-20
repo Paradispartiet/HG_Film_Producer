@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const mFilmHistoryProfile = {
+  scenarioId: "scenario_m_1931",
+  period: "Weimar early sound cinema, urban crime procedure and social panic",
+  traditions: ["Early sound crime film", "Weimar urban modernism", "Parallel institutional procedure"],
+  before: "Silent crime cinema had developed visual pursuit and urban conspiracy, while early talkies often treated recorded dialogue as the principal attraction.",
+  moment: "Lang uses his first sound feature to organize Berlin through absence, offscreen whistles, sound bridges and parallel meetings of police and criminals, making the unseen killer a pressure on the whole city.",
+  after: "The film became a durable model for serial-killer cinema, procedural cross-cutting and sound used to identify a figure before the image does.",
+  historyQuestion: "Which transition-era production logic explains why voices, silence and a recurring whistle can connect spaces more strongly than visible action?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "filmportal and BFI identify M as Lang's 1931 first sound film, made in late Weimar Germany." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film carries Lang's silent crime and Expressionist visual control into a new early-sound procedural system." },
+    { area: "industry_and_production_context", status: "source_verified", note: "filmportal records Nero-Film, producer Seymour Nebenzahl, the Berlin shoot and Tobis-Klangfilm sound." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Contemporary filmportal material documents the major Berlin premiere and BFI records its continuing place in crime-film history." },
+    { area: "screenplay", status: "source_verified", note: "Police, criminals, public fear and the killer are interwoven as parallel systems rather than a single detective line." },
+    { area: "directing", status: "source_verified", note: "Lang withholds violence, organizes mass behavior and moves attention between institutions through image and sound." },
+    { area: "performance", status: "source_verified", note: "Peter Lorre's vocal and physical breakdown shifts the killer from unseen sign to unstable human presence." },
+    { area: "production_design", status: "mapped", note: "Streets, offices, underworld rooms and the improvised court structure the social cross-section; deeper design sourcing remains pending." },
+    { area: "costume_makeup", status: "mapped", note: "Institutional and class identities are legible through dress, while department-level research remains pending." },
+    { area: "cinematography", status: "source_verified", note: "Silhouettes, empty spaces, urban geometry and controlled crowd images preserve visual suspense within the sound film." },
+    { area: "lighting", status: "mapped", note: "Graphic contrast and darkness support threat, but dedicated lighting evidence remains incomplete." },
+    { area: "camera_format", status: "source_verified", note: "filmportal records black-and-white 35mm in 1.19:1 with Tobis-Klangfilm sound." },
+    { area: "editing", status: "source_verified", note: "Parallel meetings and sound bridges collapse time and connect police, criminal and public responses." },
+    { area: "sound_design", status: "source_verified", note: "The whistle, offscreen voices, abrupt silence and carried sound identify people and spaces beyond the frame." },
+    { area: "music", status: "source_verified", note: "The recurring Grieg melody functions as an in-world identifying motif rather than conventional background scoring." },
+    { area: "effects_animation", status: "not_central", note: "The film's formal innovation rests on staging, editing and recorded sound rather than effects spectacle." },
+    { area: "documentary_method", status: "mapped", note: "The contemporary urban crime context informs the fiction, but the film is not a documentary reconstruction." },
+  ],
+} as const satisfies FilmHistoryProfile;
