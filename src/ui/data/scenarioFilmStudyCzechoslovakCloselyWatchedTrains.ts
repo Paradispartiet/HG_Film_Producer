@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const closelyWatchedTrainsFilmHistoryProfile = {
+  scenarioId: "scenario_closely_watched_trains_1966",
+  period: "Czechoslovak New Wave, literary tragicomedy and wartime provincial cinema",
+  traditions: ["Czechoslovak New Wave", "Bohumil Hrabal adaptation", "Wartime tragicomedy"],
+  before: "Official wartime cinema often organized resistance through heroic certainty, while literary adaptation tended to stabilize character and plot around public history.",
+  moment: "Jiří Menzel and Bohumil Hrabal compress occupation, work routine, sexual embarrassment and resistance into one provincial railway station, using black-and-white observation, modest blocking, precise reaction timing and the station's machines as the film's practical dramatic system.",
+  after: "Its international circulation and Academy Award helped establish the Czechoslovak New Wave abroad, while later restoration preserved Jaromír Šofr's black-and-white photography, the original mono sound and the film's deliberately understated tragicomic rhythm.",
+  historyQuestion: "Which production system explains how railway routine, erotic awkwardness and wartime danger remain comic and ordinary until one small action becomes historically consequential?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "NFA and BFI place the film in occupied Czechoslovakia and the political rethinking of wartime resistance during the 1960s." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Czech Film Center, BFI and Criterion identify Menzel as a central Czechoslovak New Wave figure and the film as a defining literary tragicomedy." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Institutional records identify the production team, feature-debut context and later digital restoration." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Czech Film Center and NFA document the 1968 Academy Award and continued national and international circulation." },
+    { area: "screenplay", status: "source_verified", note: "Menzel and Hrabal adapt the novella by tying Miloš's coming of age to railway procedure and an understated resistance action." },
+    { area: "directing", status: "source_verified", note: "Menzel directs humor through observation, pauses and behavior rather than broad wartime heroics." },
+    { area: "performance", status: "source_verified", note: "NFA records Václav Neckář's naive central performance and Josef Somr's contrasting worldly dispatcher as the core of the station ensemble." },
+    { area: "production_design", status: "source_verified", note: "The station office, tracks, telegraph equipment and passing trains organize both comedy and danger as one working environment." },
+    { area: "costume_makeup", status: "mapped", note: "Uniforms and civilian clothing clarify occupation-era roles, while dedicated department research remains incomplete." },
+    { area: "cinematography", status: "source_verified", note: "NFA specifically credits Jaromír Šofr's sensitive black-and-white photography and the film's close observation of faces and railway space." },
+    { area: "lighting", status: "mapped", note: "Naturalistic station interiors and exteriors support the observational tone, but dedicated lighting documentation remains incomplete." },
+    { area: "camera_format", status: "source_verified", note: "Criterion and NFA document a black-and-white 1.33/1.37 presentation with restored monaural sound." },
+    { area: "editing", status: "source_verified", note: "Jiřina Lukešová's cutting protects comic pauses and routine before tightening around the final military train." },
+    { area: "sound_design", status: "source_verified", note: "Whistles, wheels, telegraph activity and station ambience keep occupation history embedded in ordinary work." },
+    { area: "music", status: "mapped", note: "Jiří Šust's credited score supports the tragicomic tone, while detailed scoring research remains pending." },
+    { area: "effects_animation", status: "not_central", note: "The film's primary method is performance, railway space and practical action rather than effects spectacle." },
+    { area: "documentary_method", status: "mapped", note: "The film uses close social observation and ordinary behavior within controlled fiction rather than documentary evidence." },
+  ],
+} as const satisfies FilmHistoryProfile;
