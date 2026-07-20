@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const songsFromSecondFloorFilmHistoryProfile = {
+  scenarioId: "scenario_songs_from_the_second_floor_2000",
+  period: "Swedish studio tableau cinema, millennial social allegory and static complex-image production",
+  traditions: ["Roy Andersson tableau cinema", "Absurdist social allegory", "Studio-built slow cinema"],
+  before: "European modernism, silent comedy, painting and advertising had all explored frontal composition and social caricature, while Roy Andersson's long retreat into commercials gave him the studio control needed to rebuild feature filmmaking shot by shot.",
+  moment: "Across a four-year production, Andersson and collaborators construct forty-six discrete episodes in a purpose-built studio through fixed wide shots, elaborate pale sets, shadowless illumination, spectral makeup, nonprofessional performance, recurring dialogue, sound bridges and Benny Andersson's contrapuntal music.",
+  after: "The film won the Jury Prize at Cannes and established the formal system that continued through Andersson's living trilogy: the static complex image as a social field where foreground and background action, architecture, comedy and historical guilt remain visible at once.",
+  historyQuestion: "Which production system explains the four-year shoot, forty-six self-contained tableaux, purpose-built studio sets, locked camera, pale makeup, deep background action and social collapse organized without a conventional central plot?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, the Swedish Film Institute and Film at Lincoln Center place the 2000 film at the millennium and within Andersson's return to feature production after a twenty-five-year gap." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI identifies influences from Chaplin, Fellini, Buñuel, Tati, Goya, Daumier and Dix and places the film within deadpan tableau and slow-cinema traditions." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI documents a four-year project partly financed by Andersson himself; DFI records the Swedish-Danish-German-French coproduction and principal production credits." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI, Film at Lincoln Center and the Swedish Film Institute document the Cannes Jury Prize and the film's role as the first chapter of Andersson's living trilogy." },
+    { area: "screenplay", status: "source_verified", note: "BFI reports that scenes were not conventionally scripted or storyboarded in advance; forty-six episodes accumulate through repeated situations, lines and social motifs." },
+    { area: "directing", status: "source_verified", note: "BFI and Film at Lincoln Center describe Andersson's complex-image method: static long shots staged so social criticism and comedy emerge from the whole frame." },
+    { area: "performance", status: "source_verified", note: "BFI documents nonprofessional performers and deadpan bodily behavior, with each figure positioned as part of an exact social tableau rather than isolated psychological realism." },
+    { area: "production_design", status: "source_verified", note: "BFI describes elaborate sets built over months in Andersson's studio; anonymous offices, streets, corridors and ritual spaces form one bleached civic world." },
+    { area: "costume_makeup", status: "source_verified", note: "BFI records pale spectral makeup and controlled costume surfaces that make the characters appear socially exhausted and visually continuous with the sets." },
+    { area: "cinematography", status: "source_verified", note: "DFI credits Jesper Klevenås, István Borbás and Robert Komarek; BFI and Film at Lincoln Center describe fixed wide-angle tableaux with layered foreground and background action." },
+    { area: "lighting", status: "source_verified", note: "BFI documents the specific studio lighting that penetrates the frame without protective shadows, exposing every figure and architectural detail." },
+    { area: "camera_format", status: "source_verified", note: "DFI records 35 mm, widescreen, colour and sound; institutional sources identify a ninety-eight-to-one-hundred-minute Swedish feature." },
+    { area: "editing", status: "source_verified", note: "DFI credits Andersson as editor; cuts separate self-contained tableaux while recurring characters, phrases and motifs build cumulative social meaning." },
+    { area: "sound_design", status: "source_verified", note: "DFI credits Jan Alvermark; sparse dialogue, footsteps, traffic, distant activity and room ambience extend the anonymous city beyond each locked frame." },
+    { area: "music", status: "source_verified", note: "DFI credits Benny Andersson, while BFI records Roy Andersson's preference for music that plays contrapuntally rather than merely following the image." },
+    { area: "effects_animation", status: "mapped", note: "A failed magic act, processions and improbable civic events require practical staging, but the present sources emphasize set construction and tableau choreography rather than a separate effects pipeline." },
+    { area: "documentary_method", status: "not_central", note: "The film diagnoses contemporary society through wholly controlled studio allegory rather than observational documentary practice." },
+  ],
+} as const satisfies FilmHistoryProfile;

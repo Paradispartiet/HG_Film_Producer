@@ -64,6 +64,13 @@ const norwegianPostwarGenreSystemsIds = [
   "scenario_insomnia_1997",
 ] as const;
 
+const nordicMinimalistSocialSystemsIds = [
+  "scenario_the_match_factory_girl_1990",
+  "scenario_songs_from_the_second_floor_2000",
+  "scenario_the_man_without_a_past_2002",
+  "scenario_oslo_august_31st_2011",
+] as const;
+
 const asianPostwar1950sIds = [
   "scenario_rashomon_1950",
   "scenario_tokyo_story_1953",
@@ -127,7 +134,7 @@ const europeanModernistProductionIds = [
   "scenario_the_battle_of_algiers_1966",
 ] as const;
 
-const expectedVerifiedCount = 112;
+const expectedVerifiedCount = 116;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -201,6 +208,14 @@ test("crime and noir transformation systems are verified with four sources each"
 
 test("Norwegian postwar genre systems are verified with four sources each", () => {
   for (const scenarioId of norwegianPostwarGenreSystemsIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("Nordic minimalist social systems are verified with four sources each", () => {
+  for (const scenarioId of nordicMinimalistSocialSystemsIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);

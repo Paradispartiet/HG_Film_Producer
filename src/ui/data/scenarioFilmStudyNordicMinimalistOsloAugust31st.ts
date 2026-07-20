@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const osloAugust31stFilmHistoryProfile = {
+  scenarioId: "scenario_oslo_august_31st_2011",
+  period: "Norwegian one-day urban realism, literary reimagining and subjective city portrait",
+  traditions: ["Joachim Trier's Oslo trilogy", "One-day city film", "Contemporary adaptation of The Fire Within"],
+  before: "Pierre Drieu La Rochelle's novel and Louis Malle's The Fire Within had used a final day of social encounters to examine addiction and self-destruction, while Joachim Trier and Eskil Vogt's Reprise had already developed a mobile, subjective language for contemporary Oslo.",
+  moment: "Motlys and Don't Look Now support Trier and Vogt's transposition of the story to a recovering heroin addict on leave from rehabilitation, shaped through Anders Danielsen Lie's performance, Jakob Ihre's city photography, Jørgen Stangebye Larsen's design, Olivier Bugge Coutté's editing, Gisle Tveito's sound and Ola Fløttum's music.",
+  after: "The film premiered in Un Certain Regard, became the middle chapter of Trier's Oslo trilogy and remained a central Norwegian city film because its one-day structure joins addiction, class, memory and urban belonging without reducing the protagonist to diagnosis or moral lesson.",
+  historyQuestion: "Which production system explains the one-day rehabilitation leave, reimagining of The Fire Within, Oslo voices and locations, subjective fragments, long café observation and city sound used as the protagonist's emotional field?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, Cinemateket, Criterion and Filmweb place the film in 2011 Norway, contemporary Oslo and the social reality of rehabilitation, addiction and urban exclusion." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion documents the reimagining of Louis Malle and Drieu La Rochelle; Cinemateket places it as the middle film of Trier's Oslo trilogy." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes records Don't Look Now as production contact and the full principal craft team, while Filmweb documents Norwegian distribution and the Reprise production team." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the Un Certain Regard premiere; Cinemateket treats the film as a recurring Norwegian classic and a central chapter of the Oslo trilogy." },
+    { area: "screenplay", status: "source_verified", note: "Cannes credits Joachim Trier and Eskil Vogt; Criterion explains how they transpose The Fire Within into contemporary Oslo and organize the film around one day of encounters." },
+    { area: "directing", status: "source_verified", note: "Cannes and Criterion document Trier's understated, subjective approach, joining close observation with formal departures and a deliberately time-bound city structure." },
+    { area: "performance", status: "source_verified", note: "Cannes and Cinemateket foreground Anders Danielsen Lie, whose controlled social fluency and private collapse allow ordinary conversations to carry escalating finality." },
+    { area: "production_design", status: "source_verified", note: "Cannes credits Jørgen Stangebye Larsen; rehabilitation centre, café, offices, apartments, parks and party spaces chart Anders's unstable access to different Oslo lives." },
+    { area: "costume_makeup", status: "mapped", note: "Contemporary clothing supports class, institutional and social distinctions, but the current sources do not document a dedicated costume or makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Cannes credits Jakob Ihre; Criterion and Cinemateket describe a mobile, observant city portrait moving between institutional edges, public space and intimate interiors." },
+    { area: "lighting", status: "mapped", note: "Late-summer daylight, cafés, apartments and the short night shape the temporal arc, but the present sources do not isolate a complete lighting method." },
+    { area: "camera_format", status: "source_verified", note: "Cinemateket records a ninety-five-minute Norwegian production shown in 35 mm, while Cannes records the ninety-six-minute festival version." },
+    { area: "editing", status: "source_verified", note: "Cannes credits Olivier Bugge Coutté; Criterion documents the use of memory fragments and archival Norwegian images, while the day remains geographically and temporally legible." },
+    { area: "sound_design", status: "source_verified", note: "Cannes credits Gisle Tveito; Criterion documents collected Oslo voices, and the film layers café conversation, streets, transport, rooms and sudden quiet into subjective city experience." },
+    { area: "music", status: "source_verified", note: "Cannes credits Ola Fløttum; music appears selectively against city ambience and social spaces rather than continuously explaining Anders's emotional state." },
+    { area: "effects_animation", status: "not_central", note: "The film's formal departures depend on editing, archival material, performance, camera and sound rather than a central effects or animation pipeline." },
+    { area: "documentary_method", status: "mapped", note: "Collected Oslo voices, archival images and location observation widen the fiction toward a social city portrait, but the central narrative remains scripted and performed." },
+  ],
+} as const satisfies FilmHistoryProfile;
