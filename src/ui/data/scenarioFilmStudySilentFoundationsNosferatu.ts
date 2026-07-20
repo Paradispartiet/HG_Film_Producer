@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const nosferatuFilmHistoryProfile = {
+  scenarioId: "scenario_nosferatu_1922",
+  period: "Weimar silent horror combining Expressionist threat with extensive location photography",
+  traditions: ["German silent horror", "Location Expressionism", "Unauthorized literary adaptation"],
+  before: "The film draws on Bram Stoker's Dracula, German fantastic cinema and Expressionism, but moves supernatural threat beyond a wholly studio-painted world.",
+  moment: "Prana-Film combines northern German ports, warehouses and streets with Carpathian locations, Albin Grau's design, Max Schreck's physical presence and Fritz Arno Wagner's photography to make vampirism resemble travel, plague and material invasion.",
+  after: "Its surviving prints, restorations and repeated circulation helped establish the elongated shadow, emptied street and location-bound vampire as durable horror images.",
+  historyQuestion: "Which production approach best explains why the supernatural in Nosferatu feels embedded in real landscapes, buildings and transport routes?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Filmportal and BFI place the film in 1922 Weimar cinema and identify its unauthorized relation to Bram Stoker's Dracula." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film joins German Expressionist threat to location-based silent horror rather than relying only on painted studio distortion." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Filmportal documents Prana-Film, producers Albin Grau and Enrico Dieckmann, and an August-to-October 1921 location shoot." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI records its continuing horror influence, while filmportal documents restored and digitized versions of the surviving film." },
+    { area: "screenplay", status: "source_verified", note: "Henrik Galeen reshapes Dracula into a journey, sea voyage and plague narrative with renamed characters and locations." },
+    { area: "directing", status: "source_verified", note: "Murnau stages supernatural arrival through landscapes, architecture, entrances, stillness and controlled bodily movement." },
+    { area: "performance", status: "source_verified", note: "Max Schreck's narrow silhouette and restrained, unnatural movement make Orlok readable as a graphic threat within real space." },
+    { area: "production_design", status: "source_verified", note: "Albin Grau is credited for sets and coordinates architecture, props and occult visual identity across the production." },
+    { area: "costume_makeup", status: "source_verified", note: "Filmportal credits Grau's costume work; Orlok's coat, bald head, ears, teeth and hands form a consistent creature silhouette." },
+    { area: "cinematography", status: "source_verified", note: "Fritz Arno Wagner's photography combines real ports, warehouses, castle landscapes and stark silhouettes." },
+    { area: "lighting", status: "mapped", note: "Shadow and contrast are central to the images, while a dedicated lighting-source study remains pending." },
+    { area: "camera_format", status: "source_verified", note: "Filmportal records the original as a five-act 35mm silent film in 1.33:1." },
+    { area: "editing", status: "mapped", note: "Travel, voyage, plague and threatened town are connected through parallel action and recurring motifs, but shot-level editing research remains pending." },
+    { area: "sound_design", status: "not_central", note: "The original is silent; offscreen threat is created primarily through framing, intertitles and accompaniment." },
+    { area: "music", status: "source_verified", note: "Filmportal credits Hans Erdmann's original cinema music and records later adaptations used for restored versions." },
+    { area: "effects_animation", status: "mapped", note: "Negative imagery and altered movement contribute to the uncanny system, while complete effects documentation remains pending." },
+    { area: "documentary_method", status: "mapped", note: "The fiction uses real streets, ports and landscapes for physical credibility without adopting documentary structure." },
+  ],
+} as const satisfies FilmHistoryProfile;
