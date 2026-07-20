@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 128 source-backed Production Cases.
+- 132 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -45,6 +45,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationModernNordicBehaviorSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1980sPoliticalPalmeSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationFestivalJourneyDisplacementSystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts`
@@ -258,6 +259,15 @@ This batch compares Polish Solidarity investigative docufiction, Turkish prison-
 - `scenario_head_on_2004`
 
 This batch compares Nordic historical migration epic, Brazilian documentary-informed road cinema, Greek long-take border modernism and German-Turkish handheld punk romance.
+
+### Intimate festival body and care systems batch
+
+- `scenario_vera_drake_2004`
+- `scenario_the_wrestler_2008`
+- `scenario_the_milk_of_sorrow_2009`
+- `scenario_somewhere_2010`
+
+This batch compares British research-built abortion-procedure ensemble, American handheld Super 16 wrestling labour drama, Peruvian trauma-and-song ritual realism and American hotel-duration celebrity alienation.
 
 ### 1950s Asian postwar cinema batch
 
