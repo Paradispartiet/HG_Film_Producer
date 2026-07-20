@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const gategutterFilmHistoryProfile = {
+  scenarioId: "scenario_gategutter_1949",
+  period: "Norwegian postwar social realism, Oslo location production and neorealist-influenced youth drama",
+  traditions: ["Norwegian postwar realism", "Italian neorealist influence", "Urban working-class youth cinema"],
+  before: "Norwegian studio cinema had often favored literary prestige, rural settings and established performers, while Italian neorealism had recently demonstrated how locations, ordinary faces and working-class conflict could reorganize national cinema.",
+  moment: "Norsk Film A/S gives first-time feature directors Arne Skouen and Ulf Greber a production based on Skouen's novel, joining Ragnar Sørensen's black-and-white location photography, professional and nonprofessional performers, east-Oslo dialect, real working-class streets, Titus Vibe-Müller's editing and Gunnar Sønstevold's music.",
+  after: "The film became a central Norwegian example of postwar realism and a durable account of class, youth and solidarity, showing how local speech, location, casting and social history could move Norwegian filmmaking closer to contemporary urban life.",
+  historyQuestion: "Which production system explains the film's Grünerløkka locations, mixture of professional and amateur performers, east-Oslo dialect, labor-conflict setting and nearly documentary black-and-white observation?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Norsk filmografi, Filmweb and Store norske leksikon place the 1949 production against the 1920s labor conflicts represented in Skouen's novel and screenplay." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Store norske leksikon and Filmweb explicitly connect the film to Italian neorealism and a new Norwegian postwar realism." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Norsk filmografi documents Norsk Film A/S, directors Arne Skouen and Ulf Greber, production manager Rigmor Hansson Rodin and Kommunenes filmcentral distribution." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Store norske leksikon, Filmweb and Filmoteket describe the film as Skouen's debut and a lasting Norwegian film classic." },
+    { area: "screenplay", status: "source_verified", note: "Norsk filmografi credits Skouen adapting his own novel, while Filmweb documents the integration of youth friendship, work, strikebreaking and social choice." },
+    { area: "directing", status: "source_verified", note: "Norsk filmografi credits Skouen and Greber; Filmweb describes their use of ordinary streets, dialect and observational realism rather than polished studio distance." },
+    { area: "performance", status: "source_verified", note: "Filmweb documents the mixture of professionals and amateurs, including young performers drawn toward a natural, non-stylized acting system." },
+    { area: "production_design", status: "source_verified", note: "Norsk filmografi credits H.C. Hansen and Ernst Holmboe, while the location record shows design supporting rather than replacing the east-Oslo environment." },
+    { area: "costume_makeup", status: "source_verified", note: "Norsk filmografi credits Vera Hall for makeup; clothing and faces support the period working-class setting without glamour-centered styling." },
+    { area: "cinematography", status: "source_verified", note: "Norsk filmografi credits Ragnar Sørensen, Finn Bergan and Per Cedergren; SNL and Filmweb document location photography on Grünerløkka and a near-documentary visual texture." },
+    { area: "lighting", status: "source_verified", note: "Norsk filmografi specifically credits Frank Menskau for lighting, supporting the controlled black-and-white rendering of streets and interiors." },
+    { area: "camera_format", status: "source_verified", note: "Norsk filmografi records a black-and-white sound feature; the documented photographic approach is location-led rather than color or widescreen spectacle." },
+    { area: "editing", status: "source_verified", note: "Norsk filmografi credits Titus Vibe-Müller; the film organizes episodic youth life, work and labor conflict into an escalating social narrative." },
+    { area: "sound_design", status: "source_verified", note: "Norsk filmografi credits Robert Heuch and Dagfinn Akselsen; dialect dialogue and street activity are central to the film's social specificity." },
+    { area: "music", status: "source_verified", note: "Norsk filmografi credits Gunnar Sønstevold, whose score supports the youth drama without displacing location and dialogue realism." },
+    { area: "effects_animation", status: "not_central", note: "The production system depends on location, ensemble, social action and documentary-inflected photography rather than effects or animation." },
+    { area: "documentary_method", status: "source_verified", note: "Filmweb and SNL document real working-class locations, ordinary faces and observational texture as deliberate neorealist-influenced methods inside a scripted feature." },
+  ],
+} as const satisfies FilmHistoryProfile;

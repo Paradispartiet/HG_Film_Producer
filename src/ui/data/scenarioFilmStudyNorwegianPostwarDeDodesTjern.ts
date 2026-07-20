@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const deDodesTjernFilmHistoryProfile = {
+  scenarioId: "scenario_de_dodes_tjern_1958",
+  period: "Norwegian 1950s literary psychological horror, landscape mystery and Agascope genre production",
+  traditions: ["Norwegian literary adaptation", "Psychological and supernatural horror", "Landscape-centered mystery"],
+  before: "Norwegian cinema had rarely sustained feature-length horror, while André Bjerke's novel joined classic closed-group mystery to psychoanalysis, folklore and an unresolved struggle between rational and supernatural explanation.",
+  moment: "Norsk Film A/S lets director-screenwriter Kåre Bergstrøm adapt Bjerke through Ragnar Sørensen's black-and-white Agascope photography, forest and lake geography, Grethe Hejer and H.C. Hansen's design, Gunnar Sønstevold's chamber-like music, ensemble debate and carefully delayed subjective menace.",
+  after: "The film became a durable Norwegian horror classic and an important example of national landscape used not as picturesque background but as psychological and possibly supernatural force, while its commercial reception also mattered to Norsk Film A/S.",
+  historyQuestion: "Which production system explains the film's Bjerke adaptation, black-and-white Agascope landscape, cabin ensemble, psychoanalytic-versus-occult debate, lake imagery and controlled ambiguity between natural and supernatural causes?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Norsk filmografi, Cinemateket and Store norske leksikon place the 1958 production within Norwegian postwar cinema and the rare development of a national horror feature." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Cinemateket and SNL identify the film as psychological horror and mystery, combining literary crime, folklore, psychoanalysis and supernatural possibility." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Norsk filmografi documents Norsk Film A/S, production manager Bjarne Stokland and Kommunenes filmcentral distribution; Cinemateket notes its commercial importance to the company." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cinemateket, SNL and Filmoteket describe the film as a lasting Norwegian horror classic with strong audience and critical reception." },
+    { area: "screenplay", status: "source_verified", note: "Norsk filmografi credits Kåre Bergstrøm adapting André Bjerke's novel; the program record documents the structured conflict between psychological and occult explanations." },
+    { area: "directing", status: "source_verified", note: "Norsk filmografi credits Bergstrøm; Cinemateket documents a carefully controlled atmosphere balancing humor, intellectual debate and creeping fear." },
+    { area: "performance", status: "source_verified", note: "Norsk filmografi documents the ensemble including Henny Moan, Henki Kolstad, André Bjerke and Erling Lindahl, whose contrasting interpretations sustain the mystery." },
+    { area: "production_design", status: "source_verified", note: "Norsk filmografi credits Grethe Hejer, H.C. Hansen and Thorleif Tranby; cabin, forest objects and the lake environment create a contained investigative world." },
+    { area: "costume_makeup", status: "source_verified", note: "Norsk filmografi credits Ingvald Bredangen for makeup; restrained contemporary appearance keeps attention on behavior, sleepwalking and psychological deterioration." },
+    { area: "cinematography", status: "source_verified", note: "Norsk filmografi credits Ragnar Sørensen, Gunnar Syvertsen and Hans Nord; Cinemateket highlights atmospheric black-and-white landscape photography." },
+    { area: "lighting", status: "mapped", note: "Night interiors, forest contrast and reflective water are crucial to dread, but the current sources do not isolate a complete lighting-department account." },
+    { area: "camera_format", status: "source_verified", note: "Cinemateket identifies the wide Agascope presentation and black-and-white image, while Norsk filmografi records the sound feature format." },
+    { area: "editing", status: "source_verified", note: "Norsk filmografi credits Olav Engebretsen; the film controls investigation, subjective episodes and delayed revelation while preserving uncertainty." },
+    { area: "sound_design", status: "source_verified", note: "Norsk filmografi credits Arne Holm; water, forest quiet, voices and offscreen absence make the landscape acoustically threatening." },
+    { area: "music", status: "source_verified", note: "Norsk filmografi credits Gunnar Sønstevold and the flute, cello and harp players, documenting a deliberately shaped instrumental atmosphere." },
+    { area: "effects_animation", status: "mapped", note: "Sleepwalking, apparitional suggestion and water danger rely primarily on staging, photography, editing and sound rather than a central effects pipeline." },
+    { area: "documentary_method", status: "not_central", note: "The forest and lake provide material specificity, but the production is a literary genre construction rather than documentary observation." },
+  ],
+} as const satisfies FilmHistoryProfile;
