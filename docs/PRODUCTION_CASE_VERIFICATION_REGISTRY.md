@@ -2,13 +2,26 @@
 
 ## Purpose
 
-The manual Production Case briefs are film-specific teaching material, but `verificationStatus` must not be changed from `needs_research` to `verified` without inspectable evidence.
+Manual Production Case briefs are film-specific teaching material, but a case is not `verified` until its claims have inspectable evidence in the unified source registry.
 
-The source-backed registry is exposed through:
+The registry is exposed through:
 
 - `src/ui/data/scenarioProductionVerificationRegistry.ts`
 
-Source records are divided into reviewable batch files:
+Research Control Room derives verified status from this registry rather than relying only on a provisional brief flag.
+
+## Current status
+
+- 52 source-backed Production Cases.
+- Every verified case resolves to a playable scenario in the current catalogue.
+- Catalogue size is read dynamically and is not duplicated in this document.
+- Every case still receives the same complete 17-area audit structure, whether verified or pending.
+
+A case-level `verified` label does **not** mean that every one of its 17 areas is source verified. The area-level audit remains more precise.
+
+## Registry files
+
+Source records are divided into reviewable batches:
 
 - `src/ui/data/scenarioProductionVerification.ts`
 - `src/ui/data/scenarioProductionVerificationMethodBatch.ts`
@@ -20,25 +33,15 @@ Source records are divided into reviewable batch files:
 - `src/ui/data/scenarioProductionVerificationMinimalistRoadBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEuropeanPressureBatch.ts`
 - `src/ui/data/scenarioProductionVerificationIndependentStorytellingBatch.ts`
+- `src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationSilentStudioSystemsBatch.ts`
 
-The unified registry currently covers forty-four cases.
-
-The same forty-four cases also have source-backed film-history profiles in:
-
-- `src/ui/data/scenarioFilmStudyMap.ts`
-- `src/ui/data/scenarioFilmStudyTechnologyBatch.ts`
-- `src/ui/data/scenarioFilmStudyLandscapeBatch.ts`
-- `src/ui/data/scenarioFilmStudyConstructedWorldsBatch.ts`
-- `src/ui/data/scenarioFilmStudyMinimalistRoadBatch.ts`
-- `src/ui/data/scenarioFilmStudyEuropeanPressureBatch.ts`
-- `src/ui/data/scenarioFilmStudyIndependentStorytellingBatch.ts`
-
-The complete 17-area audit is defined in:
+The complete audit schema is defined in:
 
 - `src/core/filmStudyCoverage.ts`
 - `docs/FILM_HISTORY_AND_CRAFT_MAPPING.md`
 
-All 244 cases receive the same audit structure, but this does **not** mean that all 244 are verified. The remaining 200 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
+## Verified batches
 
 ### Pilot batch
 
@@ -82,12 +85,7 @@ All 244 cases receive the same audit structure, but this does **not** mean that 
 - `scenario_the_lighthouse_2019`
 - `scenario_the_favourite_2018`
 
-This batch compares four distinct historical production systems:
-
-- anamorphic low-budget suspense and the formation of modern slasher grammar;
-- smartphone capture as a credible feature-production system;
-- reconstruction of early photographic response through stock, optics, filtration and aspect ratio;
-- revisionist period staging through 35mm, natural light and extreme wide-angle lenses.
+This batch compares anamorphic low-budget suspense, smartphone feature production, reconstructed early photographic response and revisionist period staging.
 
 ### Landscape and regional-cinema batch
 
@@ -96,12 +94,7 @@ This batch compares four distinct historical production systems:
 - `scenario_winter_s_bone_2010`
 - `scenario_beasts_of_the_southern_wild_2012`
 
-This batch compares four ways location and regional knowledge become production method:
-
-- neo-western pursuit built through border geography, acoustic detail and restrained score;
-- biographical road cinema assembled across actual locations, seasons and nonlinear memory;
-- rural noir grounded in Ozarks research, local casting, real properties and digital independent production;
-- collective 16mm magical realism built with South Louisiana communities, nonprofessional performers and documentary-influenced observation.
+This batch compares border geography, biographical road production, researched rural noir and collectively built regional magical realism.
 
 ### Constructed worlds and time systems batch
 
@@ -110,12 +103,7 @@ This batch compares four ways location and regional knowledge become production 
 - `scenario_moon_2009`
 - `scenario_midnight_in_paris_2011`
 
-This batch compares four ways an abstract premise becomes a physical production system:
-
-- time-loop comedy built through repeated geography, performance variation, editorial compression and recurring music;
-- media satire built through a master-planned town, commercial lighting, surveillance framing and an in-world broadcast soundtrack;
-- contained science fiction built from a constraint-shaped screenplay, one principal actor, studio design, miniatures and restrained digital compositing;
-- time-travel city fantasy built through Paris locations, period research, frame-specific redressing, film stocks, lenses, lighting and color separation.
+This batch compares repeated-day continuity, an artificial surveillance town, miniature-based contained science fiction and photochemical period separation across one city.
 
 ### Minimalist road cinema and designed estrangement batch
 
@@ -124,12 +112,7 @@ This batch compares four ways an abstract premise becomes a physical production 
 - `scenario_the_bothersome_man_2006`
 - `scenario_nebraska_2013`
 
-This batch compares four ways restraint, geography and image design create historical meaning:
-
-- early American independent minimalism built from leftover black-and-white stock, fixed master-shot vignettes and ellipsis;
-- New German Cinema encountering the American road movie through chronological location production, available light, color and music;
-- Nordic dystopian satire built through immaculate lifestyle design, 35mm calm, deadpan performance and controlled absurdity;
-- contemporary Midwestern road cinema built through local casting, real locations and a tested digital-to-black-and-white image pipeline.
+This batch compares fixed-shot independent minimalism, chronologically produced road cinema, immaculate Nordic dystopian design and digitally reconstructed Midwestern black-and-white realism.
 
 ### European social and moral pressure batch
 
@@ -138,12 +121,7 @@ This batch compares four ways restraint, geography and image design create histo
 - `scenario_the_measure_of_a_man_2015`
 - `scenario_revanche_2008`
 
-This batch compares four ways European cinema turns social pressure into production method:
-
-- enclosed low-resource family dystopia built through invented language, rigid space, ritual and mechanical staging;
-- post-Dogme community drama built through restrained camera work, seasonal continuity and ensemble realism;
-- semi-documentary labor cinema built through long takes, real workplaces and occupational nonprofessionals;
-- Austrian slow thriller shifting noir revenge into rural reconciliation through 35mm, rehearsal, landscape and duration.
+This batch compares enclosed family allegory, post-Dogme community drama, semi-documentary labour cinema and Austrian noir transformed through rural duration.
 
 ### American independent storytelling and media-form batch
 
@@ -152,12 +130,25 @@ This batch compares four ways European cinema turns social pressure into product
 - `scenario_the_man_who_wasn_t_there_2001`
 - `scenario_american_splendor_2003`
 
-This batch compares four ways American independent cinema makes narrative form part of production method:
+This batch compares episodic parallel time, dialogue-led neighbourhood ensemble, planned photochemical monochrome and documentary-comics-animation biography.
 
-- episodic Memphis storytelling built through parallel time, repeated geography, international outsiders, color and music;
-- literary Brooklyn ensemble drama built around one converted neighborhood set, dialogue, chance and oral storytelling;
-- neo-noir reconstructed through a 1949 world, color-negative capture, planned black-and-white printing and contemporary monochrome lighting;
-- mixed-media biography combining actors, real subjects, Cleveland locations, archive, comics, photographs and animation.
+### Silent cinema foundations batch
+
+- `scenario_a_trip_to_the_moon_1902`
+- `scenario_the_cabinet_of_dr_caligari_1920`
+- `scenario_nosferatu_1922`
+- `scenario_battleship_potemkin_1925`
+
+This batch compares theatrical trick film, Expressionist studio design, location-based Weimar horror and Soviet collision montage.
+
+### Silent and early studio systems batch
+
+- `scenario_the_phantom_carriage_1921`
+- `scenario_the_general_1926`
+- `scenario_metropolis_1927`
+- `scenario_frankenstein_1931`
+
+This batch compares Swedish literary silent cinema, practical railway action comedy, UFA architectural science-fiction spectacle and Universal sound horror.
 
 ## Verification rule
 
@@ -166,59 +157,53 @@ A registry record must:
 1. refer to a playable Production Case scenario;
 2. contain at least two independent HTTPS sources;
 3. use sources from at least two publishers;
-4. prefer filmmaker and department-head interviews, film institutes, archival production histories, preservation records and established trade publications;
-5. state which film-history and craft areas each source supports;
-6. explain briefly how the source supports the brief;
+4. prefer filmmaker and department-head interviews, film institutes, archives, preservation records and established trade publications;
+5. state which history and craft areas each source supports;
+6. explain how each source supports the case;
 7. record the verification date;
-8. pass the registry tests before merge.
+8. pass the registry and current-catalogue tests before merge.
 
-A plot synopsis or review alone is not enough to verify production choices. It may support context or reception, but production claims should be grounded in production reporting, filmmaker testimony, documented craft analysis or institutional records.
+A plot synopsis or review alone is not enough to verify production choices. It may support context or reception, but production claims require production reporting, filmmaker testimony, documented craft analysis or institutional records.
 
-Claims that a film was the first to use a method, changed film history or strongly influenced later cinema require especially strong evidence. Popularity or repetition of the claim is not enough.
+Claims that a film was the first to use a method, changed film history or strongly influenced later cinema require especially strong evidence. Repetition of a claim is not verification.
 
-## Two separate status layers
+## Two status layers
 
 ### Case verification
 
-- `seeded`: imported fallback content, not a manual Production Case.
+- `seeded`: imported fallback content, not a completed manual Production Case.
 - `needs_research`: manual brief without completed source review.
-- `verified`: source review completed and recorded in the unified registry.
+- `verified`: source review completed and recorded in the registry.
 
 ### Area coverage
 
-- `source_verified`: a specific history or craft area is supported by inspectable evidence.
-- `mapped`: the area is represented in the current brief but still needs dedicated source review.
-- `research_pending`: film-specific research has not been completed.
-- `not_central`: the area was considered but is not a central learning focus for this case.
+- `source_verified`: the specific area is supported by inspectable evidence.
+- `mapped`: the area is represented but still needs dedicated source review.
+- `research_pending`: film-specific research is not complete.
+- `not_central`: the area was considered but is not a central learning focus.
 
-A case-level `verified` label does not automatically mean every one of the 17 areas is fully researched. The area audit must remain more precise than the case-level label.
-
-The registry is intentionally separate from the large brief file. This keeps evidence reviewable, prevents source metadata from bloating mission content and allows verification to proceed film by film. Batch files also keep each evidence review small enough to inspect directly.
+The registry is intentionally separate from the large brief files. This keeps evidence reviewable, prevents source metadata from bloating mission content and allows verification to proceed film by film.
 
 ## Player-facing status
 
-The Production Cases library and case view must distinguish verified material from pending research. Inside a case, the player can inspect:
+Inside a verified case, the player can inspect:
 
-- the historical placement;
-- the before / historical moment / afterlife explanation;
-- the full history-and-craft coverage audit;
+- historical placement;
+- before / historical moment / afterlife explanation;
+- the complete 17-area audit;
 - the sources supporting the case.
 
-Evidence is available as part of learning and is not locked behind completion.
-
-Verification supports learning; it does not support a score or ranking. A verified case gives the player stronger explanations and inspectable evidence, not more points or a higher tier.
+Evidence is part of learning and is never locked behind completion. Verification does not create points, ranks or certification.
 
 ## Next step
 
-Forty-four cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 200 in coherent historical batches:
+Continue researching the unverified catalogue in coherent historical groups:
 
 - make every historical and technical alternative plausible and educational;
-- ensure feedback explains the concrete distinction between choices;
-- connect historical context, screenplay, directing, performance, image, design, editing and sound;
+- explain concrete differences between comparison choices;
+- connect context, screenplay, directing, performance, image, design, editing and sound;
 - expose useful evidence directly in the case;
 - replace `research_pending` only when the relevant area has been researched;
-- avoid claims of innovation or influence that the sources do not establish.
+- avoid unsupported claims of innovation or influence.
 
-Do not add generic budget, schedule, resource or prestige mechanics to this set. Production conditions belong in a case only when they are documented facts that explain the film's actual method.
-
-Do not mark the full catalogue verified based on a generic filmography source, release metadata or the internal consistency of the brief alone.
+Do not add generic budget, schedule, resource or prestige mechanics. Production conditions belong in a case only when they are documented facts that explain the film's actual method.

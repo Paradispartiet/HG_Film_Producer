@@ -2,36 +2,36 @@
 
 ## Decision
 
-Film history is a playable learning layer inside every Production Case. It is not a decorative biography, a list of awards or an encyclopedia page detached from the film's construction.
+Film history is a playable learning layer inside every Production Case. It is not a decorative biography, awards list or encyclopedia page detached from how the film was constructed.
 
 The player should understand four connected questions:
 
 1. What filmmaking traditions existed before this film?
-2. What historical, industrial and technological conditions shaped this production?
-3. How do those conditions appear in the film's concrete craft choices?
+2. What historical, industrial and technological conditions shaped the production?
+3. How do those conditions appear in concrete craft choices?
 4. What did the film carry forward into later cinema, teaching and preservation?
 
 The game must always distinguish between:
 
-- `source_verified`: the claim is supported by inspectable sources;
-- `mapped`: the area is represented in the current brief but has not completed dedicated source review;
-- `research_pending`: the area has not yet received film-specific research;
-- `not_central`: the area was considered but is not a central learning focus for this particular case.
+- `source_verified`: supported by inspectable sources;
+- `mapped`: represented in the current case but not fully source reviewed;
+- `research_pending`: film-specific research has not been completed;
+- `not_central`: considered, but not a central learning focus for the case.
 
-A blank field is not an acceptable final state. Every case must contain all mapping areas and explicitly state the research status of each.
+A blank field is not an acceptable final state. Every case contains all mapping areas and explicitly states the research status of each.
 
 ## Current implementation
 
-All 244 Production Cases now resolve to the same complete mapping structure.
+Every Production Case in the current catalogue resolves to the same complete mapping structure. Catalogue size is read dynamically and is not duplicated in documentation or tests.
 
 - 17 mandatory film-history and film-craft areas.
-- 44 source-backed film-history profiles.
-- 200 cases with a complete audit structure and visible research gaps.
+- 52 source-backed film-history profiles.
+- All remaining cases retain complete audit structures with visible research gaps.
 - No points, ranks, badges or reward currencies.
-- The historical comparison is playable through explanation choices.
+- Historical placement is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The current 44 source-backed history profiles are the same controlled group covered by the Production Case verification registry:
+The 52 source-backed profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -77,12 +77,20 @@ The current 44 source-backed history profiles are the same controlled group cove
 - Smoke
 - The Man Who Wasn't There
 - American Splendor
+- A Trip to the Moon
+- The Cabinet of Dr. Caligari
+- Nosferatu
+- Battleship Potemkin
+- The Phantom Carriage
+- The General
+- Metropolis
+- Frankenstein
 
 ## Complete mapping schema
 
 ### Film history
 
-Every film must be mapped across:
+Every film is mapped across:
 
 1. **Historical context**
    - release year and broad era;
@@ -94,23 +102,23 @@ Every film must be mapped across:
    - movement, wave, school or genre tradition;
    - relevant earlier films and filmmakers;
    - conventions inherited, revised or rejected;
-   - whether the movement label is contemporary, retrospective or disputed.
+   - whether the label is contemporary, retrospective or disputed.
 
 3. **Industry and production context**
    - financing and production model when historically relevant;
    - studio, independent, television, state-funded or transnational conditions;
-   - location, schedule, available technology and labor organization;
+   - location, schedule, available technology and labour organization;
    - distribution, festival or exhibition conditions that shaped the work.
 
 4. **Reception and legacy**
    - contemporary reception when it clarifies the film's place;
    - censorship, controversy, preservation or restoration where relevant;
-   - later influence supported by evidence;
+   - later influence only when supported by evidence;
    - what the film remains useful for teaching today.
 
 ### Film technique
 
-Every film must be assessed across:
+Every film is assessed across:
 
 1. Screenplay and dramaturgy
 2. Directing and staging
@@ -126,11 +134,9 @@ Every film must be assessed across:
 12. Practical effects, VFX and animation
 13. Documentary and research method
 
-The technical map is not a demand that every craft area be equally important in every film. It is a demand that every area be considered and classified. For example, VFX may be `not_central` in a one-room drama while performance and blocking are primary. Animation may be primary in *Waltz with Bashir*. Documentary method may be central in *District 9* as mock-documentary form, supporting in *Bicycle Thieves*, and not central in *Vertigo*.
+The technical map does not demand that every craft area be equally important. It demands that every area be considered and classified. Effects may be `not_central` in a one-room drama, while performance and blocking are primary. Animation may be primary in *Waltz with Bashir*. Documentary method may be central, supporting or not central depending on the film.
 
 ## Film-history game loop
-
-The history layer uses the following sequence:
 
 ```text
 PLACE THE FILM
@@ -140,7 +146,7 @@ PLACE THE FILM
 
 BEFORE / MOMENT / AFTER
 → identify the inherited tradition
-→ see the film's production conditions and formal solution
+→ see the production conditions and formal solution
 → understand what the film carries forward
 
 FULL CRAFT AUDIT
@@ -153,41 +159,38 @@ PRODUCTION CASE
 → understand each phase inside the film's historical position
 ```
 
-This model avoids a separate trivia quiz. Historical knowledge changes how the player interprets the film's craft.
+This model avoids a detached trivia quiz. Historical knowledge changes how the player interprets craft.
 
 ## Why the history layer uses comparison
 
-A date or movement name alone does not teach film history. The player learns more by distinguishing between real production systems:
+A date or movement name alone does not teach film history. The player learns by distinguishing real production systems:
 
 - Italian neorealism versus controlled studio classicism;
 - French New Wave location production versus classical continuity;
-- Dogme 95 consumer-digital restrictions versus effects-led digital cinema;
+- Dogme 95 digital restrictions versus effects-led digital cinema;
 - a genuine feature-length take versus a hidden-edit long-take illusion;
 - practical stunt geography versus VFX-first action construction;
 - testimony-led animated documentary versus conventional live-action reconstruction;
 - anamorphic slasher suspense versus smartphone street cinema;
 - reconstructed orthochromatic response versus fisheye period staging;
 - neo-western border geography versus biographical road-film geography;
-- researched rural noir versus collectively built magical regional realism;
-- repeated-day continuity and editorial compression versus an artificial surveillance town;
-- miniature-based contained science fiction versus photochemical period separation across one real city;
-- fixed-shot American independent minimalism versus chronologically produced transatlantic road cinema;
-- immaculate Nordic dystopian design versus digitally reconstructed Midwestern black-and-white realism;
+- researched rural noir versus collectively built regional magical realism;
+- repeated-day continuity versus an artificial surveillance town;
+- miniature-based contained science fiction versus photochemical period separation;
+- fixed-shot independent minimalism versus chronologically produced road cinema;
+- immaculate Nordic dystopian design versus reconstructed Midwestern monochrome;
 - enclosed Greek family allegory versus restrained post-Dogme community realism;
-- semi-documentary French labor surveillance versus Austrian noir transformed through rural duration;
-- episodic Memphis place and parallel time versus dialogue-led Brooklyn neighborhood ensemble;
-- planned photochemical neo-noir monochrome versus documentary-comics-animation biography.
-- videotaped independent confession versus observational queer community documentary;
-- Taiwan urban modernism versus Chinese provincial duration and disappearing-landscape realism;
-- Japanese procedural horror versus Korean lyrical moral realism;
-- activist archival montage versus postcolonial restitution essay film;
-- conventional historical observation versus first-person experiential adaptation.
+- semi-documentary labour observation versus rural duration and noir reconciliation;
+- episodic Memphis parallel time versus dialogue-led Brooklyn ensemble;
+- planned photochemical monochrome versus documentary-comics-animation biography;
+- theatrical trick fantasy versus Expressionist studio design;
+- location-based Weimar horror versus Soviet collision montage;
+- Swedish nested-flashback spectral cinema versus practical railway action comedy;
+- UFA architectural science-fiction spectacle versus Universal sound horror.
 
-The alternatives are drawn from other real cases. A wrong choice therefore introduces another valid film-historical method instead of meaningless filler.
+The alternatives come from other real cases. A wrong choice introduces another valid film-historical method instead of meaningless filler.
 
 ## Required evidence
-
-A film is not considered fully mapped until its key claims are supported by inspectable evidence.
 
 Preferred sources:
 
@@ -201,65 +204,61 @@ Preferred sources:
 
 A review or plot synopsis may support reception or context, but it is not enough to verify production technique.
 
-At least two independent publishers should support a completed film profile. Claims about influence, innovation, first use or historical importance require especially strong evidence and should not be inferred from popularity.
+At least two independent publishers must support a completed profile. Claims about influence, innovation, first use or historical importance require especially strong evidence and must not be inferred from popularity.
 
 ## Completion requirements for one film
 
-A Production Case is fully film-history-and-craft verified only when it has:
+A Production Case is film-history-and-craft verified only when it has:
 
 - a sourced historical period and context;
 - a sourced movement or tradition placement;
 - a sourced production and industry context;
 - a carefully worded reception or legacy statement;
 - a complete status for all 13 technical areas;
-- film-specific notes for every primary or supporting craft area;
+- film-specific notes for every primary or supporting area;
 - at least one explanation linking historical conditions to a visible or audible choice;
 - inspectable sources;
 - a playable historical comparison with plausible alternatives;
 - no unsupported claims of innovation or influence.
 
-## Research order for the remaining 200 cases
+## Research order
 
-Research should proceed by coherent historical groups, not by random list order. This makes comparisons better and reduces duplicate work.
+Research proceeds by coherent historical groups, not random catalogue order. This improves comparison choices and reduces duplicated work.
 
-1. **Postwar realism and New Waves**
-   - map neorealism, French New Wave, British social realism, New German Cinema and related national movements.
+1. **Further silent cinema and classical foundations**
+   - continue into silent comedy, early national cinemas, animation and the first studio genre systems.
 
-2. **Classical Hollywood and postwar studio cinema**
-   - map studio production, genre development, television adaptation, widescreen and color systems.
+2. **Postwar realism and New Waves**
+   - neorealism, French New Wave, British social realism, New German Cinema and related movements.
 
-3. **1970s–1980s national and genre renewal**
-   - map New Hollywood, Australian cinema, political cinema, modern horror and blockbuster-era production.
+3. **Classical Hollywood and postwar studio cinema**
+   - studio production, genre development, television adaptation, widescreen and colour systems.
 
-4. **1990s independent cinema and digital transition**
-   - map Dogme 95, global independent cinema, consumer video and nonlinear editing.
+4. **1970s–1980s national and genre renewal**
+   - New Hollywood, Australian cinema, political cinema, modern horror and blockbuster-era production.
 
-5. **2000s–2010s transnational, regional and digital cinema**
-   - map digital capture, performance-preserving VFX, hybrid documentary, regional location production, festival circulation and contemporary genre forms.
+5. **1990s independent cinema and digital transition**
+   - Dogme 95, global independent cinema, consumer video and nonlinear editing.
 
-6. **2020s cases**
-   - map streaming-era production and reception only when stable, sourced historical interpretation is possible.
+6. **2000s–2010s transnational, regional and digital cinema**
+   - digital capture, performance-preserving VFX, hybrid documentary, regional location production, festival circulation and contemporary genre forms.
 
-Each research batch should add related films together so the game can offer meaningful comparison choices.
+7. **2020s cases**
+   - streaming-era production and reception only when stable, sourced interpretation is possible.
+
+Each batch adds related films together so the game can offer meaningful comparison choices.
 
 ## Interface rules
 
 - Show the historical layer before the craft phases.
-- Keep the full 17-area audit collapsible so the case remains readable.
-- Show `research_pending` honestly rather than filling the interface with generic prose.
-- Expose source links before completion; evidence is part of learning, not a reward.
+- Keep the 17-area audit collapsible.
+- Show `research_pending` honestly rather than filling gaps with generic prose.
+- Expose sources before completion; evidence is part of learning, not a reward.
 - Do not add points for choosing the historical match.
 - Do not treat completion as certification.
 - Do not reduce history to release date, awards or trivia.
-- Do not describe a film as a movement landmark, technical first or major influence without evidence.
+- Do not describe a film as a landmark, technical first or major influence without evidence.
 
 ## Relationship to authoritative film-education models
 
-The mapping combines historical significance with complete production craft:
-
-- The Library of Congress evaluates films as culturally, historically or aesthetically significant and publishes expert film-history essays: https://www.loc.gov/programs/national-film-preservation-board/film-registry/
-- AFI teaches filmmaking through connected disciplines including cinematography, directing, editing, producing, production design and screenwriting: https://www.afi.com/
-- The Academy's education resources cover animation, casting, cinematography, costume, editing, composing, makeup, production design, performance, screenwriting, sound and VFX: https://www.oscars.org/learn/academy-gold-education-video-guide
-- BFI education resources connect film study, history and practical filmmaking: https://www.bfi.org.uk/resources-events-teachers/resources-teachers
-
-HG Film Producer uses these principles in a case-based game form: historical placement, concrete craft analysis, comparison, explanation and inspectable evidence.
+The mapping combines historical significance with complete production craft. The Library of Congress, AFI, BFI, national film institutes, archives, cinematheques and preservation foundations provide evidence and educational reference points. HG Film Producer keeps its own case-based architecture: historical placement, concrete craft analysis, comparison, explanation and inspectable evidence.

@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const metropolisFilmHistoryProfile = {
+  scenarioId: "scenario_metropolis_1927",
+  period: "Late Weimar silent spectacle, UFA studio production and architectural science fiction",
+  traditions: ["German Expressionist spectacle", "Dystopian science fiction", "Industrial mass choreography"],
+  before: "German silent cinema had already joined Expressionist design, Gothic fantasy and large studio resources, while modern architecture and industrialisation supplied new images of collective life.",
+  moment: "UFA coordinates monumental sets, miniatures, the Schüfftan process, mass movement, a mobile camera and Gottfried Huppertz's score to turn class hierarchy into a complete futuristic city.",
+  after: "The heavily cut film survived through scattered versions before international reconstruction restored much of its structure; its city, robot and industrial imagery became central reference points for later science fiction.",
+  historyQuestion: "Which production system best explains how architecture, effects, crowds and class structure become the same visual argument?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Deutsche Kinemathek place the film within Weimar modernity, industrial anxiety and late German silent spectacle." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI identifies its mixture of Expressionist, Gothic and futurist design as foundational dystopian science fiction." },
+    { area: "industry_and_production_context", status: "source_verified", note: "filmportal records UFA, producer Erich Pommer, the 1925–1926 studio shoot and the major credited production departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "UNESCO, BFI and Deutsche Kinemathek document its global influence, archival significance and reconstruction history." },
+    { area: "screenplay", status: "source_verified", note: "filmportal credits Thea von Harbou and Fritz Lang; the narrative spatially divides elite city, workers' depths, laboratory and catacombs." },
+    { area: "directing", status: "source_verified", note: "Lang coordinates architectural scale, crowd geometry, performance and effects as a single monumental staging system." },
+    { area: "performance", status: "source_verified", note: "BFI highlights Brigitte Helm's double role and the mechanical crowd movement that makes bodies part of the city's design." },
+    { area: "production_design", status: "source_verified", note: "filmportal credits Otto Hunte, Erich Kettelhut and Karl Vollbrecht; BFI documents the influential cityscapes and miniatures." },
+    { area: "costume_makeup", status: "source_verified", note: "filmportal credits Änne Willkomm and sculptor Walter Schulze-Mittendorff, whose Maschinenmensch body became the production's central icon." },
+    { area: "cinematography", status: "source_verified", note: "filmportal credits Karl Freund and Günther Rittau, while Deutsche Kinemathek preserves the mobile Stachow camera associated with the production." },
+    { area: "lighting", status: "source_verified", note: "BFI connects angular light and dark division to the film's Expressionist social design, distinguishing the upper city from industrial depths." },
+    { area: "camera_format", status: "source_verified", note: "filmportal records the original nine-act 35mm black-and-white silent production in 1.33:1." },
+    { area: "editing", status: "source_verified", note: "The film cross-cuts upper and lower city, machine crisis and mass movement; restoration records show how severe recutting damaged this structure." },
+    { area: "sound_design", status: "not_central", note: "The original film is silent; mechanical force is primarily visual, supported in exhibition by orchestral accompaniment." },
+    { area: "music", status: "source_verified", note: "filmportal and Deutsche Kinemathek document Gottfried Huppertz's original 1927 score and its role in reconstructed presentations." },
+    { area: "effects_animation", status: "source_verified", note: "BFI and institutional records identify miniatures, optical combination and the Schüfftan process as central to the future-city spectacle." },
+    { area: "documentary_method", status: "not_central", note: "The film constructs a speculative studio city rather than observing contemporary urban life as documentary evidence." },
+  ],
+} as const satisfies FilmHistoryProfile;

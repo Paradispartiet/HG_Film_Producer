@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const frankensteinFilmHistoryProfile = {
+  scenarioId: "scenario_frankenstein_1931",
+  period: "Early Hollywood sound, Universal studio horror and expressionist laboratory spectacle",
+  traditions: ["Universal horror cycle", "Gothic stage-to-screen adaptation", "Expressionist studio design"],
+  before: "Universal had found major success with Dracula, while Mary Shelley's novel had passed through many theatrical adaptations and silent-film versions before the studio acquired a recent stage lineage.",
+  moment: "James Whale combines Charles D. Hall's Gothic laboratory world, Arthur Edeson's mobile photography, Jack Pierce's makeup, Kenneth Strickfaden's electrical apparatus and Boris Karloff's physical performance into one studio-created monster system.",
+  after: "The film established the defining screen image of Frankenstein's creature, expanded Universal's horror cycle and provided a durable model for cinematic Gothic production across makeup, design, performance and sound.",
+  historyQuestion: "Which studio system best explains why the creature's identity depends equally on makeup, acting, laboratory design, camera movement and electrical sound?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and BFI place the film in Universal's early-1930s horror cycle following Dracula and document its stage-to-screen adaptation history." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI identifies the film's Expressionist design, Gothic theatrical inheritance and central place in classical studio horror." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI records Universal Pictures, producer Carl Laemmle Jr., the August–October 1931 production and the principal craft departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI and the Library of Congress identify the film and its monster image as enduring landmarks of American horror heritage." },
+    { area: "screenplay", status: "source_verified", note: "AFI documents the screenplay credits and the adaptation path from Shelley through Peggy Webling and John L. Balderston's stage versions." },
+    { area: "directing", status: "source_verified", note: "BFI emphasizes Whale's cinematic transformation of potentially stage-bound material through movement, sympathy and visual invention." },
+    { area: "performance", status: "source_verified", note: "BFI and AFI Silver describe Karloff's physical and emotional construction of the creature beneath Jack Pierce's makeup." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Charles D. Hall, Herman Rosse and Kenneth Strickfaden, including the special electrical laboratory apparatus." },
+    { area: "costume_makeup", status: "source_verified", note: "AFI credits Jack Pierce, while BFI documents the flat-topped, bolt-necked makeup as central to the creature's lasting screen identity." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Arthur Edeson; BFI highlights Whale's roaming camera and the visual departure from static stage adaptation." },
+    { area: "lighting", status: "source_verified", note: "The laboratory, watchtower and creature are shaped through high-contrast studio lighting tied to the Expressionist design system documented by BFI." },
+    { area: "camera_format", status: "source_verified", note: "AFI records a black-and-white sound feature using the Western Electric sound system, running approximately 70 minutes." },
+    { area: "editing", status: "source_verified", note: "AFI credits Clarence Kolster and Maurice Pivar; the film moves from body assembly and creation spectacle into containment, escape and collective pursuit." },
+    { area: "sound_design", status: "source_verified", note: "AFI records C. Roy Hunter and William Hedgcock and the Western Electric system; machinery, thunder, voices and silence give the laboratory physical force." },
+    { area: "music", status: "mapped", note: "The film relies heavily on dialogue and effects rather than a continuous modern score; a dedicated original exhibition-music study remains pending." },
+    { area: "effects_animation", status: "source_verified", note: "Kenneth Strickfaden's practical electrical apparatus and the coordinated laboratory effects make creation a photographed mechanical event." },
+    { area: "documentary_method", status: "not_central", note: "The production is a controlled studio Gothic fiction rather than an observational or nonfiction work." },
+  ],
+} as const satisfies FilmHistoryProfile;

@@ -15,7 +15,14 @@ const silentFoundationIds = [
   "scenario_battleship_potemkin_1925",
 ] as const;
 
-const expectedVerifiedCount = 48;
+const silentStudioSystemIds = [
+  "scenario_the_general_1926",
+  "scenario_the_phantom_carriage_1921",
+  "scenario_metropolis_1927",
+  "scenario_frankenstein_1931",
+] as const;
+
+const expectedVerifiedCount = 52;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -46,6 +53,15 @@ test("silent cinema foundations are verified with four sources each", () => {
     assert.equal(record?.scenarioId, scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("silent and early studio systems are verified with five sources each", () => {
+  for (const scenarioId of silentStudioSystemIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.scenarioId, scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 5);
   }
 });
 

@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const phantomCarriageFilmHistoryProfile = {
+  scenarioId: "scenario_the_phantom_carriage_1921",
+  period: "Swedish silent cinema at Filmstaden, literary adaptation and layered supernatural melodrama",
+  traditions: ["Swedish silent golden age", "Nested flashback narration", "In-camera spectral superimposition"],
+  before: "Swedish silent cinema had developed a strong international identity through literary adaptation, landscape and controlled performance, while Sjöström repeatedly worked with Selma Lagerlöf's fiction.",
+  moment: "Filmstaden's inaugural production combines a New Year's Eve morality tale with flashbacks inside flashbacks, deep studio staging and multiple layers of double exposure that let ghosts move through ordinary space.",
+  after: "Its narrative and effects became internationally influential, its spectral imagery remained central to Swedish film history, and later restoration preserved the work for new musical presentations.",
+  historyQuestion: "Which production system best explains how moral memory, nested time and transparent ghosts remain readable inside the same film?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "The Swedish Film Institute places the film in the Swedish silent golden age and identifies it as Filmstaden's first production." },
+    { area: "movement_and_tradition", status: "source_verified", note: "SFI and Criterion connect the film to Swedish literary adaptation, national silent cinema and the supernatural morality tale." },
+    { area: "industry_and_production_context", status: "source_verified", note: "SFI records the new Råsunda Filmstaden studios and the fourth collaboration between Sjöström and Selma Lagerlöf." },
+    { area: "reception_and_legacy", status: "source_verified", note: "SFI, BFI and Criterion document the film's international standing, later influence and restoration history." },
+    { area: "screenplay", status: "source_verified", note: "The adaptation organizes redemption through flashbacks nested inside other flashbacks and repeated views of David Holm's past actions." },
+    { area: "directing", status: "source_verified", note: "Sjöström coordinates restrained performance, deep staging, moral melodrama and complex in-camera illusion without separating them into different styles." },
+    { area: "performance", status: "source_verified", note: "Criterion describes Sjöström's rejection of broad theatrical acting in favour of controlled faces, movement and gesture suited to silent film." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Alexander Bakó and Axel Esbensen and documents the studio environments built for the inaugural Filmstaden production." },
+    { area: "costume_makeup", status: "mapped", note: "The hooded driver, Salvation Army dress and working-class clothing are narratively important, but dedicated department evidence remains pending." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Julius Jaenzon and describes layered superimpositions, moving camera work, filters and deep-focus studio photography." },
+    { area: "lighting", status: "source_verified", note: "Criterion documents differentiated lighting and filters for spectral layers, supported by artificial studio lighting and deep staging." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records the Swedish 1921 black-and-white silent feature in 1.37:1, while SFI documents its restored exhibition versions." },
+    { area: "editing", status: "source_verified", note: "SFI highlights flashback within flashback, while repeated actions and temporal returns keep the moral structure legible." },
+    { area: "sound_design", status: "not_central", note: "The original work is silent; the Swedish Film Institute offers live-music and recorded-score presentation formats." },
+    { area: "music", status: "source_verified", note: "SFI and Criterion document modern scores including Matti Bye and alternative restored-edition accompaniments." },
+    { area: "effects_animation", status: "source_verified", note: "SFI, BFI and Criterion identify complex double exposure and superimposition as the core spectral effects method." },
+    { area: "documentary_method", status: "not_central", note: "The film is a literary supernatural melodrama rather than an observational or nonfiction production." },
+  ],
+} as const satisfies FilmHistoryProfile;

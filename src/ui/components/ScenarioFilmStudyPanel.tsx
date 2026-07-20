@@ -39,6 +39,11 @@ import {
   resolveSilentFoundationsFilmStudyMap,
 } from "../data/scenarioFilmStudySilentFoundationsBatch";
 import {
+  createSilentStudioSystemsFilmHistoryChoices,
+  getSilentStudioSystemsFilmHistoryProfile,
+  resolveSilentStudioSystemsFilmStudyMap,
+} from "../data/scenarioFilmStudySilentStudioSystemsBatch";
+import {
   createTechnologyFilmHistoryChoices,
   getTechnologyFilmHistoryProfile,
   resolveTechnologyFilmStudyMap,
@@ -54,7 +59,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveSilentFoundationsFilmStudyMap(scenario, brief)
+    () => resolveSilentStudioSystemsFilmStudyMap(scenario, brief)
+      ?? resolveSilentFoundationsFilmStudyMap(scenario, brief)
       ?? resolveIndependentStorytellingFilmStudyMap(scenario, brief)
       ?? resolveEuropeanPressureFilmStudyMap(scenario, brief)
       ?? resolveMinimalistRoadFilmStudyMap(scenario, brief)
@@ -73,6 +79,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getSilentStudioSystemsFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createSilentStudioSystemsFilmHistoryChoices(historyProfile);
+    }
     if (getSilentFoundationsFilmHistoryProfile(historyProfile.scenarioId)) {
       return createSilentFoundationsFilmHistoryChoices(historyProfile);
     }

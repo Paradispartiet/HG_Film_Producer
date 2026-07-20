@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const theGeneralFilmHistoryProfile = {
+  scenarioId: "scenario_the_general_1926",
+  period: "Late American silent comedy, large-scale location action and independent star production",
+  traditions: ["Silent physical comedy", "Practical railway action", "Spatially legible stunt filmmaking"],
+  before: "Keaton had already joined bodily comedy to machines, architecture and cinema tricks, while 1920s American production enabled star-led independent features on an increasingly ambitious scale.",
+  moment: "Buster Keaton Productions turns a Civil War railway pursuit into a chain of practical problems performed with real locomotives, landscape, full-body framing and causal visual gags.",
+  after: "Its initial commercial disappointment limited Keaton's future independence, but later preservation and criticism established it as a defining fusion of silent comedy and action construction.",
+  historyQuestion: "Which production logic best explains why the comedy remains clear even while real trains, geography and dangerous stunts keep escalating?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and BFI identify the Civil War source incident, the independent Keaton production and its unusually ambitious scale." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and MoMA place the film within Keaton's precise fusion of bodily comedy, machinery, landscape and action." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI records Buster Keaton Productions, producer Joseph M. Schenck, the credited directors, photographers and technical director Fred Gabourie." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI documents the expensive production, its initial failure and its later recognition as a major silent comedy and action film." },
+    { area: "screenplay", status: "source_verified", note: "The pursuit grows from one stolen locomotive and a repeated practical objective whose solutions generate new obstacles." },
+    { area: "directing", status: "source_verified", note: "Keaton and Clyde Bruckman coordinate performance, locomotives, landscape and large-scale action as one causal system." },
+    { area: "performance", status: "source_verified", note: "MoMA emphasizes Keaton's exact relation between body and machinery, while BFI records the stoic performance inside escalating danger." },
+    { area: "production_design", status: "mapped", note: "Railway equipment, bridges and military environments are central, while a complete art-department sourcing study remains pending." },
+    { area: "costume_makeup", status: "mapped", note: "Period military and railway dress support the historical setting, but dedicated department evidence remains pending." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Bert Haines and Dev Jennings; the film uses wide, readable views to preserve train direction, stunt mechanics and bodily timing." },
+    { area: "lighting", status: "mapped", note: "AFI credits Denver Harmon for lighting effects, but a shot-level lighting study remains pending." },
+    { area: "camera_format", status: "source_verified", note: "AFI records the production as an eight-reel black-and-white silent feature." },
+    { area: "editing", status: "source_verified", note: "BFI describes meticulously placed and timed gags, while the chase maintains direction, cause and payoff across real geography." },
+    { area: "sound_design", status: "not_central", note: "The original feature is silent; action information is carried primarily by performance, framing and editing." },
+    { area: "music", status: "source_verified", note: "The Library of Congress preserves a contemporary thematic cue sheet prepared for silent-film accompaniment." },
+    { area: "effects_animation", status: "mapped", note: "The signature effects are practical stunts and controlled destruction rather than animation; detailed stunt engineering remains partly mapped." },
+    { area: "documentary_method", status: "mapped", note: "The film recreates a historical railway incident with extensive physical realism without claiming documentary neutrality." },
+  ],
+} as const satisfies FilmHistoryProfile;
