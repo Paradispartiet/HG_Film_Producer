@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case contains all mapping 
 Every Production Case in the current catalogue resolves to the same complete mapping structure. Catalogue size is read dynamically and is not duplicated in documentation or tests.
 
 - 17 mandatory film-history and film-craft areas.
-- 84 source-backed film-history profiles.
+- 88 source-backed film-history profiles.
 - All remaining cases retain complete audit structures with visible research gaps.
 - No points, ranks, badges or reward currencies.
 - Historical placement is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The 84 source-backed profiles are the same controlled group covered by the Production Case verification registry:
+The 88 source-backed profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -117,6 +117,10 @@ The 84 source-backed profiles are the same controlled group covered by the Produ
 - The Conformist
 - Jeanne Dielman, 23 quai du Commerce, 1080 Bruxelles
 - Beau Travail
+- Bonnie and Clyde
+- The Godfather
+- Jaws
+- Star Wars
 
 ## Complete mapping schema
 
@@ -234,7 +238,9 @@ A date or movement name alone does not teach film history. The player learns by 
 - railway-station wartime tragicomedy versus nonprofessional institutional satire;
 - researched medieval sensory epic versus grotesque subjective political horror;
 - French Left Bank real-time city observation versus Italian fascist memory design;
-- Belgian durational domestic labour versus French postcolonial military choreography.
+- Belgian durational domestic labour versus French postcolonial military choreography;
+- European-influenced outlaw revision versus prestige family crime production;
+- open-water location suspense versus used-future effects and sound worldbuilding.
 
 The alternatives come from other real cases. A wrong choice introduces another valid film-historical method instead of meaningless filler.
 
