@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const huntFilmHistoryProfile = {
+  scenarioId: "scenario_the_hunt_2012",
+  period: "Early-2010s Danish social drama after Dogme 95",
+  traditions: ["Danish ensemble drama", "Post-Dogme realism", "Community tragedy and modern witch-hunt narrative"],
+  before: "Vinterberg inherits Dogme 95's interest in performance, domestic conflict and stripped-back realism, but rejects the need to repeat Dogme's visible handheld restrictions as a style formula.",
+  moment: "A Danish-Swedish production coordinates precise screenplay escalation, fixed and unobtrusive camera work, ordinary community spaces, seasonal continuity and restrained ensemble acting so rumor spreads through credible social behavior.",
+  after: "The Cannes acting and cinematography prizes and later Academy nomination preserve the film as a case in how post-Dogme Danish cinema could retain moral immediacy while returning to controlled classical craft.",
+  historyQuestion: "Which historical explanation best distinguishes The Hunt from both Vinterberg's earlier Dogme filmmaking and a visually demonstrative contemporary thriller?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "DFI and Cannes place the film within internationally visible early-2010s Danish cinema and the mature phase of Vinterberg's post-Dogme career." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film retains performance-centered Danish realism but uses controlled cinematography rather than reapplying Dogme 95 as an external rulebook." },
+    { area: "industry_and_production_context", status: "source_verified", note: "DFI documents the Danish-Swedish co-production and the complete research, design, camera, editing, sound, costume and makeup departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes awarded Mads Mikkelsen and cinematographer Charlotte Bruus Christensen, and the film later received an Academy nomination." },
+    { area: "screenplay", status: "source_verified", note: "A passing statement becomes a sequence of institutionally credible reactions, allowing escalation to emerge through repetition, interpretation and social confirmation." },
+    { area: "directing", status: "source_verified", note: "Vinterberg coordinates ensemble behavior and community space while keeping the camera subordinate to the unfolding accusation." },
+    { area: "performance", status: "source_verified", note: "Cannes recognition and the restrained ensemble method establish performance as a principal carrier of ambiguity, humiliation and collective certainty." },
+    { area: "production_design", status: "mapped", note: "Kindergarten, homes, church, supermarket and hunting spaces make the community legible, while department-level design analysis remains pending." },
+    { area: "costume_makeup", status: "mapped", note: "Ordinary seasonal clothing supports social continuity and Lucas's changing vulnerability, but dedicated source review remains pending." },
+    { area: "cinematography", status: "source_verified", note: "Christensen describes deliberately minimal, accurate images designed not to call attention to themselves but to preserve story and performance." },
+    { area: "lighting", status: "source_verified", note: "Credible everyday realism and seasonal atmosphere are integrated into the image rather than separated as expressive lighting display." },
+    { area: "camera_format", status: "research_pending", note: "The full camera, lens and capture package still needs dedicated verification." },
+    { area: "editing", status: "source_verified", note: "The edit accumulates small confirmations and social exclusions, letting rumor become communal fact without montage spectacle." },
+    { area: "sound_design", status: "source_verified", note: "DFI verifies the sound department; quiet rooms, public confrontation and seasonal environments keep pressure embedded in ordinary social space." },
+    { area: "music", status: "mapped", note: "The credited score remains restrained within the realism, while a dedicated compositional account remains pending." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on performance, social geography and controlled realism rather than effects." },
+    { area: "documentary_method", status: "mapped", note: "The observational restraint resembles documentary attention, but the film remains a precisely scripted and classically organized fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;

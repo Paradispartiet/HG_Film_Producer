@@ -18,23 +18,25 @@ Source records are divided into reviewable batch files:
 - `src/ui/data/scenarioProductionVerificationLandscapeBatch.ts`
 - `src/ui/data/scenarioProductionVerificationConstructedWorldsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationMinimalistRoadBatch.ts`
+- `src/ui/data/scenarioProductionVerificationEuropeanPressureBatch.ts`
 
-The unified registry currently covers thirty-six cases.
+The unified registry currently covers forty cases.
 
-The same thirty-six cases also have source-backed film-history profiles in:
+The same forty cases also have source-backed film-history profiles in:
 
 - `src/ui/data/scenarioFilmStudyMap.ts`
 - `src/ui/data/scenarioFilmStudyTechnologyBatch.ts`
 - `src/ui/data/scenarioFilmStudyLandscapeBatch.ts`
 - `src/ui/data/scenarioFilmStudyConstructedWorldsBatch.ts`
 - `src/ui/data/scenarioFilmStudyMinimalistRoadBatch.ts`
+- `src/ui/data/scenarioFilmStudyEuropeanPressureBatch.ts`
 
 The complete 17-area audit is defined in:
 
 - `src/core/filmStudyCoverage.ts`
 - `docs/FILM_HISTORY_AND_CRAFT_MAPPING.md`
 
-All 161 cases receive the same audit structure, but this does **not** mean that all 161 are verified. The remaining 125 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
+All 161 cases receive the same audit structure, but this does **not** mean that all 161 are verified. The remaining 121 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
 
 ### Pilot batch
 
@@ -127,6 +129,20 @@ This batch compares four ways restraint, geography and image design create histo
 - Nordic dystopian satire built through immaculate lifestyle design, 35mm calm, deadpan performance and controlled absurdity;
 - contemporary Midwestern road cinema built through local casting, real locations and a tested digital-to-black-and-white image pipeline.
 
+### European social and moral pressure batch
+
+- `scenario_dogtooth_2009`
+- `scenario_the_hunt_2012`
+- `scenario_the_measure_of_a_man_2015`
+- `scenario_revanche_2008`
+
+This batch compares four ways European cinema turns social pressure into production method:
+
+- enclosed low-resource family dystopia built through invented language, rigid space, ritual and mechanical staging;
+- post-Dogme community drama built through restrained camera work, seasonal continuity and ensemble realism;
+- semi-documentary labor cinema built through long takes, real workplaces and occupational nonprofessionals;
+- Austrian slow thriller shifting noir revenge into rural reconciliation through 35mm, rehearsal, landscape and duration.
+
 ## Verification rule
 
 A registry record must:
@@ -178,7 +194,7 @@ Verification supports learning; it does not support a score or ranking. A verifi
 
 ## Next step
 
-Thirty-six cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 125 in coherent historical batches:
+Forty cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 121 in coherent historical batches:
 
 - make every historical and technical alternative plausible and educational;
 - ensure feedback explains the concrete distinction between choices;

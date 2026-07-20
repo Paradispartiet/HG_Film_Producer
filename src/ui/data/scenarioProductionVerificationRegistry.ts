@@ -5,6 +5,7 @@ import {
 } from "./scenarioProductionVerification";
 import { constructedWorldsVerificationRecords } from "./scenarioProductionVerificationConstructedWorldsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
+import { europeanPressureVerificationRecords } from "./scenarioProductionVerificationEuropeanPressureBatch";
 import { landscapeCinemaVerificationRecords } from "./scenarioProductionVerificationLandscapeBatch";
 import { minimalistRoadVerificationRecords } from "./scenarioProductionVerificationMinimalistRoadBatch";
 import { productionMethodVerificationRecords } from "./scenarioProductionVerificationMethodBatch";
@@ -25,6 +26,7 @@ const additionalVerificationRecords = [
   ...landscapeCinemaVerificationRecords,
   ...constructedWorldsVerificationRecords,
   ...minimalistRoadVerificationRecords,
+  ...europeanPressureVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
 
 const additionalVerificationByScenarioId = new Map<string, ProductionCaseVerificationRecord>(

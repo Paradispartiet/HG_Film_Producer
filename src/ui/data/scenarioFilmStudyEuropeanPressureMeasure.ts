@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const measureOfAManFilmHistoryProfile = {
+  scenarioId: "scenario_the_measure_of_a_man_2015",
+  period: "Mid-2010s French social realism and semi-documentary labor cinema",
+  traditions: ["French social realism", "Semi-documentary fiction", "Workplace and surveillance drama"],
+  before: "The film follows French and European traditions of filming ordinary labor, unemployment and institutional encounters, including the Dardenne-influenced use of location, duration and non-professional presence.",
+  moment: "Documentary-trained cinematography, long handheld takes, real workplaces, employees playing versions of their own jobs and one professional star create a fiction in which economic systems appear through actual procedures and observed behavior.",
+  after: "Its Cannes competition position and Best Actor award preserve it as a focused teaching case for how contemporary social cinema can turn surveillance, casting and duration into an ethical production method.",
+  historyQuestion: "Which production method best explains why The Measure of a Man makes job interviews, training sessions and supermarket surveillance feel dramatically intense without conventional thriller devices?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes and BFI place the film inside contemporary French debates about unemployment, market pressure and the symbolic violence of work." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film extends French social realism through a semi-documentary method related to European location-based labor cinema." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Real locations, occupational non-professionals and a documentary-trained cinematographer shape the production as much as the written dramatic outline." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Cannes competition premiere and Vincent Lindon's Best Actor award establish the film's contemporary institutional recognition." },
+    { area: "screenplay", status: "source_verified", note: "Long institutional encounters replace conventional plot beats, and each procedure forces Thierry to negotiate dignity, survival and complicity." },
+    { area: "directing", status: "source_verified", note: "Brizé organizes real processes and non-professional behavior around Lindon without turning the supporting world into illustrative background." },
+    { area: "performance", status: "source_verified", note: "One professional lead is surrounded by people working in or near their real occupations, creating friction between crafted performance and procedural reality." },
+    { area: "production_design", status: "source_verified", note: "Employment offices, bank rooms, the family home and supermarket surveillance architecture are treated as working systems rather than decorative sets." },
+    { area: "costume_makeup", status: "mapped", note: "Ordinary work and domestic clothing preserves social specificity, but dedicated costume and makeup sourcing remains pending." },
+    { area: "cinematography", status: "source_verified", note: "Handheld long takes and close observation maintain pressure without expressive reframing or explanatory inserts." },
+    { area: "lighting", status: "mapped", note: "Available institutional and retail light supports the reality effect, while detailed lighting documentation remains pending." },
+    { area: "camera_format", status: "research_pending", note: "The complete camera and capture package is not yet verified in the current evidence set." },
+    { area: "editing", status: "source_verified", note: "Long sequences are juxtaposed without introductory explanation, making the accumulation of procedures the film's temporal structure." },
+    { area: "sound_design", status: "source_verified", note: "Cannes verifies the sound team, and direct speech, room tone and surveillance spaces preserve the friction of actual institutional encounters." },
+    { area: "music", status: "not_central", note: "The method relies primarily on observed speech, duration and workplace sound rather than score-led emotional instruction." },
+    { area: "effects_animation", status: "not_central", note: "No effects system is central to the film's realism or dramatic method." },
+    { area: "documentary_method", status: "source_verified", note: "Documentary-trained camera work, real workplaces and occupational non-professionals are explicit foundations of the production." },
+  ],
+} as const satisfies FilmHistoryProfile;
