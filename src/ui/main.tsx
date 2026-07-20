@@ -13,6 +13,7 @@ import "./directorKnowledgeDesk.css";
 import "./directorPracticeCoach.css";
 import "./filmSchoolScreenplayCourse.css";
 import "./filmSchoolCourseNavigation.css";
+import "./filmSchoolLightingDesignCourse.css";
 import "./filmCraftLibrary.css";
 import "./filmCraftLibraryFilmLens.css";
 import "./filmResearchControlRoom.css";
