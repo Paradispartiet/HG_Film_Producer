@@ -94,19 +94,21 @@ Every case therefore enters the same learning flow as the existing catalogue: sc
 
 ## Implementation files
 
-- `src/ui/data/earlyCinemaExpansion.ts`
+- `src/core/earlyCinemaExpansion.ts`
   - authoritative requested-film definitions;
   - title/year alias matching;
   - deduplication against the original seed;
   - scenario creation for missing titles.
+- `src/core/earlyCinemaBriefBlueprint.ts`
+  - shared film-specific learning targets used by both the UI and the core regression test.
 - `src/ui/data/scenarioProductionBriefsEarlyCinemaExpansion.ts`
-  - film-specific playable briefs generated from each film's historical production focus.
+  - converts each core blueprint into a playable Production Case brief.
 - `src/ui/data/filmScenarios.ts`
   - merges the original seed and historical expansion and reports the real merged count.
 - `src/ui/data/scenarioProductionBriefs.ts`
   - resolves the historical briefs before falling back to an imported seed.
 - `src/core/earlyCinemaExpansion.test.ts`
-  - requires all 58 films to resolve exactly once and remain honestly marked `needs_research`.
+  - requires all 58 films to resolve exactly once and keeps their historical material outside the source-verification registry until researched.
 
 ## Research status
 
