@@ -1,15 +1,14 @@
-import { createEarlyCinemaBriefBlueprint } from "../../core/earlyCinemaBriefBlueprint.js";
-import { getEarlyCinemaExpansionDefinition } from "../../core/earlyCinemaExpansion.js";
+import { createModernCanonBriefBlueprint } from "../../core/modernCanonBriefBlueprint.js";
+import { getModernCanonExpansionDefinition } from "../../core/modernCanonExpansion.js";
 import type { FilmScenarioSeed } from "./filmScenarios";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
-import { getModernCanonExpansionProductionBrief } from "./scenarioProductionBriefsModernCanonExpansion";
 
-export function getEarlyCinemaExpansionProductionBrief(
+export function getModernCanonExpansionProductionBrief(
   scenario: FilmScenarioSeed,
 ): ScenarioProductionBrief | undefined {
-  const definition = getEarlyCinemaExpansionDefinition(scenario);
-  if (!definition) return getModernCanonExpansionProductionBrief(scenario);
-  const blueprint = createEarlyCinemaBriefBlueprint(definition);
+  const definition = getModernCanonExpansionDefinition(scenario);
+  if (!definition) return undefined;
+  const blueprint = createModernCanonBriefBlueprint(definition);
 
   return {
     scenarioId: scenario.id,

@@ -22,11 +22,11 @@ A blank field is not an acceptable final state. Every case must contain all mapp
 
 ## Current implementation
 
-All 217 Production Cases now resolve to the same complete mapping structure.
+All 244 Production Cases now resolve to the same complete mapping structure.
 
 - 17 mandatory film-history and film-craft areas.
 - 44 source-backed film-history profiles.
-- 173 cases with a complete audit structure and visible research gaps.
+- 200 cases with a complete audit structure and visible research gaps.
 - No points, ranks, badges or reward currencies.
 - The historical comparison is playable through explanation choices.
 - Sources are inspectable inside the case.
@@ -177,6 +177,11 @@ A date or movement name alone does not teach film history. The player learns mor
 - semi-documentary French labor surveillance versus Austrian noir transformed through rural duration;
 - episodic Memphis place and parallel time versus dialogue-led Brooklyn neighborhood ensemble;
 - planned photochemical neo-noir monochrome versus documentary-comics-animation biography.
+- videotaped independent confession versus observational queer community documentary;
+- Taiwan urban modernism versus Chinese provincial duration and disappearing-landscape realism;
+- Japanese procedural horror versus Korean lyrical moral realism;
+- activist archival montage versus postcolonial restitution essay film;
+- conventional historical observation versus first-person experiential adaptation.
 
 The alternatives are drawn from other real cases. A wrong choice therefore introduces another valid film-historical method instead of meaningless filler.
 
@@ -213,7 +218,7 @@ A Production Case is fully film-history-and-craft verified only when it has:
 - a playable historical comparison with plausible alternatives;
 - no unsupported claims of innovation or influence.
 
-## Research order for the remaining 173 cases
+## Research order for the remaining 200 cases
 
 Research should proceed by coherent historical groups, not by random list order. This makes comparisons better and reduces duplicate work.
 
