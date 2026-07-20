@@ -99,6 +99,11 @@ import {
   resolveNewHollywoodBlockbusterFilmStudyMap,
 } from "../data/scenarioFilmStudyNewHollywoodBlockbusterBatch";
 import {
+  createNordicMinimalistSocialSystemsFilmHistoryChoices,
+  getNordicMinimalistSocialSystemsFilmHistoryProfile,
+  resolveNordicMinimalistSocialSystemsFilmStudyMap,
+} from "../data/scenarioFilmStudyNordicMinimalistSocialSystemsBatch";
+import {
   createNorwegianPostwarGenreSystemsFilmHistoryChoices,
   getNorwegianPostwarGenreSystemsFilmHistoryProfile,
   resolveNorwegianPostwarGenreSystemsFilmStudyMap,
@@ -134,7 +139,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveNorwegianPostwarGenreSystemsFilmStudyMap(scenario, brief)
+    () => resolveNordicMinimalistSocialSystemsFilmStudyMap(scenario, brief)
+      ?? resolveNorwegianPostwarGenreSystemsFilmStudyMap(scenario, brief)
       ?? resolveCrimeNoirTransformationsFilmStudyMap(scenario, brief)
       ?? resolveEarly1960sProductionSystemsFilmStudyMap(scenario, brief)
       ?? resolve1950sExpressivePostwarFilmStudyMap(scenario, brief)
@@ -169,6 +175,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getNordicMinimalistSocialSystemsFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createNordicMinimalistSocialSystemsFilmHistoryChoices(historyProfile);
+    }
     if (getNorwegianPostwarGenreSystemsFilmHistoryProfile(historyProfile.scenarioId)) {
       return createNorwegianPostwarGenreSystemsFilmHistoryChoices(historyProfile);
     }
