@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   group: hg-film-producer-${{ github.event_name }}-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
