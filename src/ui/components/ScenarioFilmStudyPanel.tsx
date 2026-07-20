@@ -19,6 +19,11 @@ import {
   resolveEuropeanPressureFilmStudyMap,
 } from "../data/scenarioFilmStudyEuropeanPressureBatch";
 import {
+  createIndependentStorytellingFilmHistoryChoices,
+  getIndependentStorytellingFilmHistoryProfile,
+  resolveIndependentStorytellingFilmStudyMap,
+} from "../data/scenarioFilmStudyIndependentStorytellingBatch";
+import {
   createLandscapeFilmHistoryChoices,
   getLandscapeFilmHistoryProfile,
   resolveLandscapeFilmStudyMap,
@@ -44,7 +49,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveEuropeanPressureFilmStudyMap(scenario, brief)
+    () => resolveIndependentStorytellingFilmStudyMap(scenario, brief)
+      ?? resolveEuropeanPressureFilmStudyMap(scenario, brief)
       ?? resolveMinimalistRoadFilmStudyMap(scenario, brief)
       ?? resolveConstructedWorldsFilmStudyMap(scenario, brief)
       ?? resolveLandscapeFilmStudyMap(scenario, brief)
@@ -61,6 +67,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getIndependentStorytellingFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createIndependentStorytellingFilmHistoryChoices(historyProfile);
+    }
     if (getEuropeanPressureFilmHistoryProfile(historyProfile.scenarioId)) {
       return createEuropeanPressureFilmHistoryChoices(historyProfile);
     }
