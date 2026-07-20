@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const revancheFilmHistoryProfile = {
+  scenarioId: "scenario_revanche_2008",
+  period: "Late-2000s Austrian art cinema reshaping noir and revenge drama",
+  traditions: ["Austrian realist cinema", "Slow thriller", "Noir transformed into moral drama"],
+  before: "The film begins with recognizable crime, noir and revenge structures, then draws on European art cinema's patience, moral ambiguity and attention to landscape to resist the expected cycle of violent payoff.",
+  moment: "A nationally funded 35mm production moves from Vienna's criminal economy to Lower Austrian rural stillness, using intensive rehearsal, repeated takes, restrained camera movement, seasonal change and slow pacing to shift the story from revenge toward reconciliation.",
+  after: "Its Berlin reception, international awards, Academy nomination and director-approved Criterion edition preserve it as a major example of genre tension created through delay, perspective and ethical transformation rather than action escalation.",
+  historyQuestion: "Which historical production system best explains how Revanche can begin as urban crime noir and gradually become a quiet rural moral drama without losing suspense?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Austrian institutional records place the film within the nationally funded late-2000s Austrian cinema that reached international festivals and the Academy Awards." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film joins crime noir and revenge drama to Austrian realist and European art-cinema traditions of duration, landscape and moral uncertainty." },
+    { area: "industry_and_production_context", status: "source_verified", note: "The Austrian Film Institute documents national and regional funding, Vienna and Lower Austria locations and an August-to-October 2007 shoot." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Festival awards, an Academy nomination and a director-approved Criterion edition establish its durable international afterlife." },
+    { area: "screenplay", status: "source_verified", note: "A robbery and accidental death create a conventional revenge engine, but the screenplay repeatedly replaces violent opportunity with proximity, work and moral recognition." },
+    { area: "directing", status: "source_verified", note: "Spielmann uses intensive rehearsal, repeated takes and carefully shifting hunter-and-hunted relationships to keep power unstable." },
+    { area: "performance", status: "source_verified", note: "Production reporting describes extensive rehearsal and ensemble chemistry before filming, supporting the film's restrained behavioral tension." },
+    { area: "production_design", status: "source_verified", note: "The brothel, Vienna margins, old farm, new suburban house and surrounding forest establish two economic and moral worlds that gradually intersect." },
+    { area: "costume_makeup", status: "mapped", note: "Clothing separates urban labor, police respectability and rural work, while dedicated costume and makeup analysis remains pending." },
+    { area: "cinematography", status: "source_verified", note: "Martin Gschlacht's controlled 35mm images and measured movement let ordinary landscape hold both serenity and threat." },
+    { area: "lighting", status: "mapped", note: "Urban interiors and changing rural seasons create distinct visual pressures, while detailed lighting documentation remains pending." },
+    { area: "camera_format", status: "source_verified", note: "Austrian institutional records verify 35mm production, 1.85:1 presentation and Dolby Digital sound." },
+    { area: "editing", status: "source_verified", note: "Slow pacing, withheld confrontation and the transition between two worlds make duration itself the suspense mechanism." },
+    { area: "sound_design", status: "source_verified", note: "Institutional records verify the sound department, while restrained environmental sound and offscreen possibility maintain tension without constant music." },
+    { area: "music", status: "not_central", note: "The film's suspense and moral change depend primarily on space, performance and environmental sound rather than a dominant score." },
+    { area: "effects_animation", status: "not_central", note: "The production relies on real locations, controlled staging and photochemical image-making rather than effects." },
+    { area: "documentary_method", status: "mapped", note: "Real Austrian locations and attention to work and landscape provide realist texture inside a rigorously constructed genre narrative." },
+  ],
+} as const satisfies FilmHistoryProfile;
