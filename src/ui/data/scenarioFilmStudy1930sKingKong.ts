@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const kingKongFilmHistoryProfile = {
+  scenarioId: "scenario_king_kong_1933",
+  period: "Depression-era RKO sound spectacle and integrated creature-effects production",
+  traditions: ["Studio adventure spectacle", "Stop-motion creature performance", "Early symphonic sound cinema"],
+  before: "Cooper and Schoedsack brought expedition filmmaking and staged adventure experience into a studio system already developing miniature and stop-motion techniques under Willis O'Brien.",
+  moment: "RKO combines live action, miniature environments, stop-motion animation, optical compositing, rear projection, full-scale elements, editing and Max Steiner's score so Kong can function as a dramatic screen presence across incompatible scales.",
+  after: "The restored uncensored version and National Film Registry preservation keep the film available as a major teaching case in effects integration, creature performance and sound-era spectacle.",
+  historyQuestion: "Which production system explains why Kong feels like one character even though the film constructs him through animation, miniatures, live-action reactions, sound and editing?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, MoMA and the Library of Congress place the film inside 1933 RKO production and Depression-era studio spectacle." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film joins expedition adventure, stop-motion fantasy and early sound spectacle in one production system." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI records the extended RKO production, Cooper and Schoedsack, the credited craft departments and the film's release and reissue history." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Library of Congress documents National Film Registry recognition, while AFI records censorship, reissues and restoration." },
+    { area: "screenplay", status: "source_verified", note: "AFI documents the Cooper and Edgar Wallace story basis and the Creelman and Rose screenplay credits." },
+    { area: "directing", status: "source_verified", note: "Cooper and Schoedsack coordinate expedition staging, live-action drama and effects sequences across the RKO production." },
+    { area: "performance", status: "source_verified", note: "Kong's behavior is constructed as animated creature performance and answered by Fay Wray and the live-action cast." },
+    { area: "production_design", status: "source_verified", note: "Miniature environments, Skull Island sets and full-scale elements create linked spaces for live action and animation." },
+    { area: "costume_makeup", status: "mapped", note: "Human costume and makeup support the adventure world, but dedicated department-level research remains pending." },
+    { area: "cinematography", status: "source_verified", note: "AFI and Library records identify the photographic personnel, while the film integrates miniature photography, rear projection and live action." },
+    { area: "lighting", status: "mapped", note: "Lighting must match separate scales and elements, but detailed department evidence remains incomplete." },
+    { area: "camera_format", status: "source_verified", note: "AFI records black-and-white sound production using the RCA Photophone system." },
+    { area: "editing", status: "source_verified", note: "Ted Cheesman's cutting links effects scale, eyelines, reactions and threat geography into continuous dramatic action." },
+    { area: "sound_design", status: "source_verified", note: "Creature vocalization and effects give weight and continuity to animation and miniature destruction." },
+    { area: "music", status: "source_verified", note: "Library of Congress records Max Steiner's score as part of the production's sound identity." },
+    { area: "effects_animation", status: "source_verified", note: "Willis O'Brien's stop-motion and the production's miniature, projection and composite methods form the central craft system." },
+    { area: "documentary_method", status: "mapped", note: "The filmmakers' expedition background informs the adventure framing, but the film is a constructed studio fantasy." },
+  ],
+} as const satisfies FilmHistoryProfile;
