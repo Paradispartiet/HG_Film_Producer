@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const spaceOdysseyFilmHistoryProfile = {
+  scenarioId: "scenario_2001_a_space_odyssey_1968",
+  period: "Large-format modernist science fiction, analogue effects engineering and audiovisual world construction",
+  traditions: ["Modernist science fiction", "Super Panavision 70", "Analogue photographic effects"],
+  before: "Screen science fiction often separated dramatic live action from visibly fantastic effects, relied on explanatory dialogue and treated spacecraft, planets and future technology as illustrated genre conventions.",
+  moment: "Stanley Kubrick, Arthur C. Clarke and a large British production organization combine 65mm photography, rotating sets, front projection, models, repeatable camera movement, optical compositing, graphic design, classical music and extended duration into one engineered cinematic system.",
+  after: "Its material precision, nonverbal structure and integrated effects pipeline became a standard against which later science-fiction design, space imagery, visual effects and immersive sound-image construction were measured.",
+  historyQuestion: "Which production system explains the film's 65mm precision, rotating environments, front projection, miniature photography, radical ellipsis and use of music and silence instead of conventional exposition?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, BFI and the Library of Congress place the 1968 film at the convergence of the space age, large-format roadshow cinema and late-1960s modernism." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Library of Congress materials identify the film as both science-fiction spectacle and formally radical modernist cinema." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents MGM British Studios, Kubrick's producing and directing role, Arthur C. Clarke's collaboration and a long effects-heavy production and postproduction process." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Library of Congress preserves the film as historically significant, while BFI and ASC treat its image and effects systems as enduring technical and aesthetic reference points." },
+    { area: "screenplay", status: "source_verified", note: "AFI documents the Kubrick-Clarke development process and the parallel evolution of screenplay and novel around large temporal leaps, machine intelligence and human transformation." },
+    { area: "directing", status: "source_verified", note: "AFI and ASC document Kubrick's unusually centralized control of design, camera tests, effects photography, performance, editing and final audiovisual structure." },
+    { area: "performance", status: "mapped", note: "Restrained human performance, choreographed movement and Douglas Rain's voice performance are essential, though the current sources focus more heavily on the engineered image and sound systems." },
+    { area: "production_design", status: "source_verified", note: "AFI and ASC document spacecraft interiors, the centrifuge, graphic interfaces, furniture, miniatures and practical mechanisms designed as functional parts of the film's future world." },
+    { area: "costume_makeup", status: "source_verified", note: "AFI records costume, spacesuit and ape-work departments, integrating human evolution, institutional uniforms and technical life-support design into the production system." },
+    { area: "cinematography", status: "source_verified", note: "ASC documents Geoffrey Unsworth and John Alcott's large-format photography, practical sources, exposure testing and the separate miniature and effects photography units." },
+    { area: "lighting", status: "source_verified", note: "ASC records built-in practical lighting, difficult exposure control, illuminated instruments, front-projection requirements and the moving light systems used inside the centrifuge." },
+    { area: "camera_format", status: "source_verified", note: "AFI and ASC identify Super Panavision 70, Panavized 65mm Mitchell cameras, large-format negatives and specialized effects photography using repeatable camera systems." },
+    { area: "editing", status: "source_verified", note: "AFI and BFI support the film's radical historical ellipsis, graphic match cuts, extended duration and controlled alternation between human action, machines and abstract passage." },
+    { area: "sound_design", status: "source_verified", note: "AFI credits the sound departments, while BFI and institutional analysis identify breathing, machine voices, alarms, acoustic isolation and extended silence as structural choices." },
+    { area: "music", status: "source_verified", note: "AFI and BFI document the final use of existing classical and modernist recordings to organize movement, cosmic scale, irony and nonverbal narrative." },
+    { area: "effects_animation", status: "source_verified", note: "ASC details front projection, miniatures, slit-scan imagery, optical compositing, repeat motion, long exposures and frame-by-frame photographic work performed as a coordinated analogue pipeline." },
+    { area: "documentary_method", status: "mapped", note: "Technical consultation and functional design create documentary-like credibility, but the film remains an explicitly constructed speculative and philosophical production rather than documentary representation." },
+  ],
+} as const satisfies FilmHistoryProfile;
