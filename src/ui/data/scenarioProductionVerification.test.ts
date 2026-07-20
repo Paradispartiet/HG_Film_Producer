@@ -78,7 +78,14 @@ const europeanPoliticalFeministModernismIds = [
   "scenario_beau_travail_1999",
 ] as const;
 
-const expectedVerifiedCount = 84;
+const newHollywoodBlockbusterIds = [
+  "scenario_bonnie_and_clyde_1967",
+  "scenario_the_godfather_1972",
+  "scenario_jaws_1975",
+  "scenario_star_wars_1977",
+] as const;
+
+const expectedVerifiedCount = 88;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -168,6 +175,14 @@ test("Czechoslovak New Wave systems are verified with four sources each", () => 
 
 test("European political and feminist modernism systems are verified with four sources each", () => {
   for (const scenarioId of europeanPoliticalFeministModernismIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("New Hollywood and blockbuster systems are verified with four sources each", () => {
+  for (const scenarioId of newHollywoodBlockbusterIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);
