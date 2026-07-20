@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const jawsFilmHistoryProfile = {
+  scenarioId: "scenario_jaws_1975",
+  period: "New Hollywood location thriller, ocean production and emerging summer blockbuster",
+  traditions: ["New Hollywood", "Creature thriller", "Location production"],
+  before: "Studio creature films commonly controlled water, effects and visibility on backlots or tanks, while classical thrillers could reveal their threat more reliably and on schedule.",
+  moment: "Steven Spielberg, producers Richard D. Zanuck and David Brown and a large craft team commit the production to Martha's Vineyard and open water, where mechanical-shark failures, weather, water-level photography, handheld boat work, editing and music reshape the suspense system.",
+  after: "Its nationwide release, audience response and preservation history established a central reference for location suspense and the modern summer event-film model without reducing its craft to marketing alone.",
+  historyQuestion: "Which production system explains why the threat is often withheld while water-level framing, reactions, editing and a recurring musical pulse carry the suspense?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and Library of Congress document the 1975 release, Benchley adaptation, major audience response and National Film Registry status." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The sources place the film between New Hollywood location production, creature thriller and the emerging wide-release event film." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Universal and Zanuck/Brown production, Martha's Vineyard photography, schedule expansion and cost growth caused by ocean and shark difficulties." },
+    { area: "reception_and_legacy", status: "source_verified", note: "AFI and Library of Congress document the reviews, record-setting release, sequels, imitators and preservation recognition." },
+    { area: "screenplay", status: "source_verified", note: "AFI credits Peter Benchley and Carl Gottlieb and documents the adaptation from Benchley's novel into community crisis and three-person sea hunt." },
+    { area: "directing", status: "source_verified", note: "ASC records Spielberg's insistence on actual sea production and AFI documents how mechanical failures changed the strategy for showing the shark." },
+    { area: "performance", status: "source_verified", note: "AFI documents the principal ensemble; the production protects character conflict and reaction as the threat becomes less mechanically available." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Joseph Alves and records the mechanical shark and marine production systems that had to function with the real island and sea." },
+    { area: "costume_makeup", status: "mapped", note: "Contemporary coastal wardrobe and victim makeup support realism, but dedicated process evidence is less complete than the image, effects and sound record." },
+    { area: "cinematography", status: "source_verified", note: "ASC documents Bill Butler's water-level point of view, handheld boat photography, multiple cameras and visual shift from sunny island to ominous sea." },
+    { area: "lighting", status: "source_verified", note: "ASC explains matching uncontrolled New England weather through angle choice and separating the bright community section from the darker final voyage." },
+    { area: "camera_format", status: "source_verified", note: "AFI records Technicolor, Panavision and Westrex sound; ASC documents Panaflex handheld work, water boxes and spray-deflecting equipment." },
+    { area: "editing", status: "source_verified", note: "AFI credits Verna Fields and identifies editing as one of the systems that strengthened the completed film under the difficult effects conditions." },
+    { area: "sound_design", status: "source_verified", note: "AFI records the production and recording crew; water, boat machinery, offscreen attack and silence extend the threat beyond visible effects." },
+    { area: "music", status: "source_verified", note: "AFI and Library of Congress identify John Williams's recurring two-note shark motif as a principal suspense and identification system." },
+    { area: "effects_animation", status: "source_verified", note: "AFI documents Robert A. Mattey's hydraulic shark models, repeated breakdowns, corrosion, weekly skin replacement and their direct effect on schedule and staging." },
+    { area: "documentary_method", status: "source_verified", note: "Actual Martha's Vineyard environments, open-water work and live-shark footage by Ron and Valerie Taylor give the fictional thriller materially observed marine detail." },
+  ],
+} as const satisfies FilmHistoryProfile;
