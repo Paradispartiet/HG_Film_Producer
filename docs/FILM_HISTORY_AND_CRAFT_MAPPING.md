@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case contains all mapping 
 Every Production Case in the current catalogue resolves to the same complete mapping structure. Catalogue size is read dynamically and is not duplicated in documentation or tests.
 
 - 17 mandatory film-history and film-craft areas.
-- 64 source-backed film-history profiles.
+- 68 source-backed film-history profiles.
 - All remaining cases retain complete audit structures with visible research gaps.
 - No points, ranks, badges or reward currencies.
 - Historical placement is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The 64 source-backed profiles are the same controlled group covered by the Production Case verification registry:
+The 68 source-backed profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -97,6 +97,10 @@ The 64 source-backed profiles are the same controlled group covered by the Produ
 - The Wizard of Oz
 - Citizen Kane
 - Casablanca
+- Double Indemnity
+- Brief Encounter
+- Rome, Open City
+- The Third Man
 
 ## Complete mapping schema
 
@@ -204,7 +208,9 @@ A date or movement name alone does not teach film history. The player learns by 
 - integrated creature effects versus industrial feature-animation production;
 - mechanical sound satire versus deep-space ensemble staging;
 - Monument Valley location action versus MGM Technicolor musical fantasy;
-- RKO modernist biography versus Warner Bros. wartime studio melodrama.
+- RKO modernist biography versus Warner Bros. wartime studio melodrama;
+- Paramount confessional noir versus British railway-station melodrama;
+- Italian occupation neorealism versus postwar Vienna location noir.
 
 The alternatives come from other real cases. A wrong choice introduces another valid film-historical method instead of meaningless filler.
 
