@@ -17,15 +17,11 @@ jobs:
         with:
           ref: early-cinema-expansion-58
       - name: Move registry and remove UI type dependency
+        shell: bash
         run: |
           git mv src/ui/data/earlyCinemaExpansion.ts src/core/earlyCinemaExpansion.ts
-          python - <<'PY'
-          from pathlib import Path
-
-          path = Path('src/core/earlyCinemaExpansion.ts')
-          text = path.read_text(encoding='utf-8')
-          old = 'import type { FilmScenarioSeed } from "./filmScenarios";\n\n'
-          new = '''export type HistoricalFilmScenario = {
+          cat > /tmp/historical-film-scenario-type.txt <<'EOF'
+          export type HistoricalFilmScenario = {
             readonly id: string;
             readonly status: string;
             readonly source: {
@@ -58,21 +54,29 @@ jobs:
             readonly manual_enrichment_needed: readonly string[];
           };
 
-'''
+          EOF
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('src/core/earlyCinemaExpansion.ts')
+          text = path.read_text(encoding='utf-8')
+          old = 'import type { FilmScenarioSeed } from "./filmScenarios";\n\n'
           if old not in text:
               raise SystemExit('UI type import anchor not found')
-          text = text.replace(old, new, 1)
+          type_block = Path('/tmp/historical-film-scenario-type.txt').read_text(encoding='utf-8')
+          text = text.replace(old, type_block, 1)
           text = text.replace('scenario: FilmScenarioSeed,', 'scenario: HistoricalFilmScenario,')
           text = text.replace('baseScenarios: readonly FilmScenarioSeed[],', 'baseScenarios: readonly HistoricalFilmScenario[],')
           text = text.replace('): readonly FilmScenarioSeed[] {', '): readonly HistoricalFilmScenario[] {')
           text = text.replace('): FilmScenarioSeed {', '): HistoricalFilmScenario {')
           path.write_text(text, encoding='utf-8')
           PY
-      - name: Remove temporary workflow and commit
+      - name: Remove temporary files and commit
+        shell: bash
         run: |
           rm .github/workflows/move-early-cinema-core.yml
+          rm -f .github/early-cinema-trigger
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/core/earlyCinemaExpansion.ts src/ui/data/earlyCinemaExpansion.ts .github/workflows/move-early-cinema-core.yml
+          git add -A
           git commit -m "Move early cinema registry into core"
           git push origin HEAD:early-cinema-expansion-58
