@@ -14,43 +14,26 @@ const silentFoundationIds = [
   "scenario_nosferatu_1922",
   "scenario_battleship_potemkin_1925",
 ] as const;
-
 const silentStudioSystemIds = [
-  "scenario_the_general_1926",
-  "scenario_the_phantom_carriage_1921",
-  "scenario_metropolis_1927",
-  "scenario_frankenstein_1931",
+  "scenario_the_general_1926", "scenario_the_phantom_carriage_1921", "scenario_metropolis_1927", "scenario_frankenstein_1931",
 ] as const;
-
 const lateSilentEarlySoundIds = [
-  "scenario_the_passion_of_joan_of_arc_1928",
-  "scenario_man_with_a_movie_camera_1929",
-  "scenario_m_1931",
-  "scenario_city_lights_1931",
+  "scenario_the_passion_of_joan_of_arc_1928", "scenario_man_with_a_movie_camera_1929", "scenario_m_1931", "scenario_city_lights_1931",
 ] as const;
-
 const productionSystems1930sIds = [
-  "scenario_king_kong_1933",
-  "scenario_modern_times_1936",
-  "scenario_snow_white_and_the_seven_dwarfs_1937",
-  "scenario_the_rules_of_the_game_1939",
+  "scenario_king_kong_1933", "scenario_modern_times_1936", "scenario_snow_white_and_the_seven_dwarfs_1937", "scenario_the_rules_of_the_game_1939",
 ] as const;
-
 const classicalHollywoodIds = [
-  "scenario_stagecoach_1939",
-  "scenario_the_wizard_of_oz_1939",
-  "scenario_citizen_kane_1941",
-  "scenario_casablanca_1942",
+  "scenario_stagecoach_1939", "scenario_the_wizard_of_oz_1939", "scenario_citizen_kane_1941", "scenario_casablanca_1942",
 ] as const;
-
 const noirRealism1940sIds = [
-  "scenario_double_indemnity_1944",
-  "scenario_brief_encounter_1945",
-  "scenario_rome_open_city_1945",
-  "scenario_the_third_man_1949",
+  "scenario_double_indemnity_1944", "scenario_brief_encounter_1945", "scenario_rome_open_city_1945", "scenario_the_third_man_1949",
+] as const;
+const asianPostwar1950sIds = [
+  "scenario_rashomon_1950", "scenario_tokyo_story_1953", "scenario_seven_samurai_1954", "scenario_pather_panchali_1955",
 ] as const;
 
-const expectedVerifiedCount = 68;
+const expectedVerifiedCount = 72;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -74,44 +57,27 @@ test("verification records are sourced and refer to playable scenarios", () => {
   }
 });
 
-test("silent cinema foundations are verified with four sources each", () => {
-  for (const scenarioId of silentFoundationIds) assert.ok((getProductionCaseVerification(scenarioId)?.sources.length ?? 0) >= 4);
-});
+const fourSourceBatches = [
+  silentFoundationIds,
+  lateSilentEarlySoundIds,
+  productionSystems1930sIds,
+  classicalHollywoodIds,
+  noirRealism1940sIds,
+  asianPostwar1950sIds,
+] as const;
+
+for (const batch of fourSourceBatches) {
+  test(`verification batch beginning ${batch[0]} has four sources per film`, () => {
+    for (const scenarioId of batch) {
+      const record = getProductionCaseVerification(scenarioId);
+      assert.equal(record?.status, "verified");
+      assert.ok((record?.sources.length ?? 0) >= 4);
+    }
+  });
+}
 
 test("silent and early studio systems are verified with five sources each", () => {
   for (const scenarioId of silentStudioSystemIds) assert.ok((getProductionCaseVerification(scenarioId)?.sources.length ?? 0) >= 5);
-});
-
-test("late silent and early sound systems are verified with four sources each", () => {
-  for (const scenarioId of lateSilentEarlySoundIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("1930s production systems are verified with four sources each", () => {
-  for (const scenarioId of productionSystems1930sIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("classical Hollywood systems are verified with four sources each", () => {
-  for (const scenarioId of classicalHollywoodIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("1940s noir and realism systems are verified with four sources each", () => {
-  for (const scenarioId of noirRealism1940sIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
 });
 
 test("verification lookup and ID list expose the same registry", () => {
