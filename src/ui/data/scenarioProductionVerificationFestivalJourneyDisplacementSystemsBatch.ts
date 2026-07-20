@@ -131,7 +131,7 @@ export const festivalJourneyDisplacementVerificationRecords = [
         title: "Head On",
         publisher: "Wüste Film",
         url: "https://www.wuestefilm.de/en/filme/gegen-die-wand/",
-        sourceKind: "production_record",
+        sourceKind: "archive_feature",
         supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
         note: "The production company documents Wüste Film, NDR/Arte and Corazón International, producers, public funding, Hamburg and Turkish units, Rainer Klausmann, Andrew Bird, Kai Lüde, Tamo Kunz and release awards."
       },
