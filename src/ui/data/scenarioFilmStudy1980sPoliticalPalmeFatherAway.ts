@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const fatherAwayFilmHistoryProfile = {
+  scenarioId: "scenario_when_father_was_away_on_business_1985",
+  period: "Yugoslav historical family tragicomedy, child-view political cinema and post-Tito memory work",
+  traditions: ["Yugoslav family history cinema", "Child-perspective political drama", "Central European tragicomic ensemble"],
+  before: "Postwar Yugoslav cinema had developed partisan epics, modernist critique and Black Wave dissent, while Kusturica's FAMU training and first feature established an interest in families whose humour, music and disorder reveal larger political contradictions.",
+  moment: "Abdulah Sidran's screenplay and Emir Kusturica's direction place the Tito-Stalin split and security-state fear inside Malik's partial childhood understanding, with Vilko Filač's 35mm photography, Predrag Lucovac and Adil Lelo's period design, Andrija Zafranović's editing, Ljubomir Petek and Hasan Vejzagić's sound and Zoran Simjanović's music building a crowded family world where adult betrayal becomes political catastrophe.",
+  after: "The film won the 1985 Palme d'Or and a FIPRESCI prize, received an Academy Award nomination and established Kusturica internationally through a form that joins historical repression, domestic comedy, music and a child's limited knowledge.",
+  historyQuestion: "Which production system explains the Tito-Stalin split entering a household through gossip and romantic revenge, a father's labour-camp disappearance understood by a six-year-old, family comedy coexisting with state fear and political history arriving through partial adult explanations?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, BFI and DFI place the story in early-1950s Yugoslavia after the Tito-Stalin split, when political remarks, denunciation and security investigation could transform family life." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Cannes position the film within Yugoslav and Balkan cinema, joining family tragicomedy, historical reconstruction and a child's restricted political viewpoint." },
+    { area: "industry_and_production_context", status: "source_verified", note: "DFI documents Forum Sarajevo and Sarajevo Film, producer Mirza Pašić, the full department team and the Yugoslav 35mm production and distribution record." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the unanimous 1985 Palme d'Or and FIPRESCI recognition, while BFI documents the film's international breakthrough and Academy Award nomination." },
+    { area: "screenplay", status: "source_verified", note: "DFI credits Abdulah Sidran; the script filters arrest, exile and marital betrayal through Malik's incomplete knowledge, sleepwalking and overheard adult narratives." },
+    { area: "directing", status: "source_verified", note: "Cannes and DFI credit Emir Kusturica; direction keeps political violence embedded in meals, celebrations, football, illness, infidelity and family movement rather than separating history into exposition." },
+    { area: "performance", status: "source_verified", note: "DFI and BFI document Moreno de Bartoli, Miki Manojlović, Mirjana Karanović, Mustafa Nadarević and the ensemble; child observation and contradictory adult behaviour produce the tonal instability." },
+    { area: "production_design", status: "source_verified", note: "DFI credits Predrag Lucovac and Adil Lelo; homes, hospital rooms, provincial streets, celebrations and institutional spaces reconstruct class and political pressure through daily environments." },
+    { area: "costume_makeup", status: "source_verified", note: "DFI credits Divna Jovanović and Branka Brkić; period dress distinguishes family role, official authority, work, celebration and displacement without turning the setting into decorative nostalgia." },
+    { area: "cinematography", status: "source_verified", note: "DFI credits Vilko Filač and Enco Lešić; mobile ensemble framing and child-height observation hold domestic intimacy and wider social history in the same visual field." },
+    { area: "lighting", status: "mapped", note: "Warm crowded interiors and harder institutional or exterior spaces shape the tragicomic contrast, but the current sources do not isolate a dedicated lighting account." },
+    { area: "camera_format", status: "source_verified", note: "DFI records 35mm colour, 1.85:1 widescreen and sound for the 136-minute Yugoslav feature." },
+    { area: "editing", status: "source_verified", note: "DFI credits Andrija Zafranović; episodic family events, political consequences and Malik's understanding accumulate without forcing a single explanatory viewpoint." },
+    { area: "sound_design", status: "source_verified", note: "DFI credits Ljubomir Petek and Hasan Vejzagić; household voices, radio, public gatherings, arguments, sleepwalking quiet and institutional formality let politics enter through ordinary sound." },
+    { area: "music", status: "source_verified", note: "DFI credits Zoran Simjanović; songs and music bind celebration, memory and irony while preserving the instability between comedy and repression." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on ensemble performance, historical design, location, editing, sound and music rather than a central effects or animation pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Cannes and BFI describe a vivid reconstruction of Yugoslav political fear through family experience and child perspective, using historical conditions as lived dramatic structure rather than detached background." },
+  ],
+} as const satisfies FilmHistoryProfile;

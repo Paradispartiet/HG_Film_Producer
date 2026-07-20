@@ -78,6 +78,13 @@ const modernNordicBehaviorSystemsIds = [
   "scenario_the_worst_person_in_the_world_2021",
 ] as const;
 
+const politicalPalme1980sIds = [
+  "scenario_man_of_iron_1981",
+  "scenario_yol_1982",
+  "scenario_the_ballad_of_narayama_1983",
+  "scenario_when_father_was_away_on_business_1985",
+] as const;
+
 const asianPostwar1950sIds = [
   "scenario_rashomon_1950",
   "scenario_tokyo_story_1953",
@@ -141,7 +148,7 @@ const europeanModernistProductionIds = [
   "scenario_the_battle_of_algiers_1966",
 ] as const;
 
-const expectedVerifiedCount = 120;
+const expectedVerifiedCount = 124;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -231,6 +238,14 @@ test("Nordic minimalist social systems are verified with four sources each", () 
 
 test("modern Nordic behavior systems are verified with four sources each", () => {
   for (const scenarioId of modernNordicBehaviorSystemsIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("1980s political Palme systems are verified with four sources each", () => {
+  for (const scenarioId of politicalPalme1980sIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);

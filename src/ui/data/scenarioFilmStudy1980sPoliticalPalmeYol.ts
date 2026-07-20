@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const yolFilmHistoryProfile = {
+  scenarioId: "scenario_yol_1982",
+  period: "Turkish political cinema, prison-release road structure and transnational exile production",
+  traditions: ["Yılmaz Güney political cinema", "Multi-protagonist road realism", "Cinema made under imprisonment and censorship"],
+  before: "Güney's earlier work had joined popular performance with increasingly direct accounts of poverty, state violence and rural inequality, while Turkish political cinema faced censorship, imprisonment and disrupted production conditions.",
+  moment: "Yılmaz Güney writes the screenplay while imprisoned, Şerif Gören directs the Turkish shoot, Erdoğan Engin photographs five prisoners travelling through roads, trains, villages, checkpoints and winter landscapes, and Güney shapes the completed film after exile into a parallel national portrait of freedom constrained outside prison.",
+  after: "Yol shared the 1982 Palme d'Or, won the FIPRESCI prize and later circulated in a restored full version assembled from the original 35mm negative, positive material and digitized sound tapes.",
+  historyQuestion: "Which production system explains five prisoners receiving one week of leave, parallel journeys mapping law and custom across Turkey, a screenplay written from prison, direction delegated to a trusted collaborator and final authorship completed through exile and editing?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes and Film at Lincoln Center place Yol within military repression, imprisonment, Kurdish and rural marginalization and the contradiction between legal release and continued social confinement." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI, Cannes and Film at Lincoln Center identify the film as Güney's political road cinema, joining social realism with five intercut personal histories." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes, BFI and restoration records document Turkish, Swiss and French participation, Güney's imprisonment and exile, Şerif Gören's direction and the later full-version restoration." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the shared Palme d'Or and unanimous FIPRESCI prize in 1982, and Cannes Classics documents the film's restored full-version return." },
+    { area: "screenplay", status: "source_verified", note: "Cannes, BFI and DFI credit Yılmaz Güney; the script uses separate leave journeys to expose family authority, poverty, militarization and regional inequality." },
+    { area: "directing", status: "source_verified", note: "Cannes and BFI credit Şerif Gören and Yılmaz Güney; location direction preserves physical continuity across multiple protagonists while serving Güney's detailed imprisoned screenplay." },
+    { area: "performance", status: "source_verified", note: "Cannes and BFI document Tarık Akan, Halil Ergün, Necmettin Çobanoğlu, Şerif Sezer and the wider ensemble; distinct journeys depend on restrained, socially specific performance rather than a single heroic lead." },
+    { area: "production_design", status: "mapped", note: "Prisons, trains, village homes, roads and checkpoints form a materially specific world, but the current sources do not isolate a production-design department account." },
+    { area: "costume_makeup", status: "mapped", note: "Work clothes, prison release dress, regional garments and winter layers distinguish geography and social position, but dedicated costume and makeup sourcing remains incomplete." },
+    { area: "cinematography", status: "source_verified", note: "Cannes credits Erdoğan Engin; roads, snow, interiors, animals and checkpoints turn travel geography into a visible system of exposure and restriction." },
+    { area: "lighting", status: "mapped", note: "Natural exteriors and modest practical interiors preserve social realism, but the current sources do not provide a dedicated lighting account." },
+    { area: "camera_format", status: "source_verified", note: "Cannes Classics documents restoration from the original 35mm negative, interpositive and positive print, confirming the photochemical basis of the production." },
+    { area: "editing", status: "source_verified", note: "DFI records Güney as editor; the parallel construction compares five journeys by pressure, geography and consequence rather than converging them into one plot." },
+    { area: "sound_design", status: "source_verified", note: "Restoration records document a new mix from digitized original tapes; transport, weather, family voices, military authority and silence differentiate each route." },
+    { area: "music", status: "source_verified", note: "Cannes credits Kendal and Sebastian Argol; music accompanies regional movement and emotional transitions without replacing the harsh environmental soundscape." },
+    { area: "effects_animation", status: "not_central", note: "The film's system is built from location travel, weather, performance, crosscutting and social observation rather than a central effects or animation pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Institutional accounts connect the detailed screenplay and location journeys to lived imprisonment, military rule and observed regional conditions while retaining fictional protagonists." },
+  ],
+} as const satisfies FilmHistoryProfile;

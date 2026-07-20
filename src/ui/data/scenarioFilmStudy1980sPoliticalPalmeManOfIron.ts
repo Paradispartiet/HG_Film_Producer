@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const manOfIronFilmHistoryProfile = {
+  scenarioId: "scenario_man_of_iron_1981",
+  period: "Polish Solidarity-era political cinema, investigative docufiction and state-media critique",
+  traditions: ["Polish cinema of moral anxiety", "Investigative political drama", "Archive-and-fiction historical cinema"],
+  before: "Wajda's Man of Marble had already used an investigator, testimony and suppressed records to reopen Stalinist labour mythology, while Polish cinema of the 1970s increasingly tested private ethics against compromised public institutions.",
+  moment: "Film Unit X, writer Aleksander Ścibor-Rylski, cinematographer Edward Kłosiński, designer Allan Starski, editor Halina Prugar-Ketling and sound recordist Piotr Zawadzki construct a reporter's attempted smear of a Gdańsk strike leader through interviews, flashback, archival texture, shipyard crowds and events filmed close to the birth of Solidarity.",
+  after: "The film won the 1981 Palme d'Or, circulated internationally as both political testimony and dramatic sequel, and was later restored from the original colour negative and magnetic sound materials under Polish institutional supervision.",
+  historyQuestion: "Which production system explains a state-radio reporter entering the occupied Gdańsk shipyard, testimony and flashback exposing suppressed labour history, archival material merging with fiction and the investigation turning into a crisis of political conscience?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, the Polish Film Academy and Film at Lincoln Center place the film directly inside the August 1980 Gdańsk strikes, Solidarity's emergence and the political pressure preceding martial law." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify the film as a continuation of Man of Marble and as Polish political cinema joining moral investigation, recent history and documentary evidence." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes and the Polish Film Academy record Film Unit X and the principal production team; restoration records identify the surviving original colour negative and magnetic sound materials." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the 1981 Palme d'Or, while later Cannes Classics and Polish restoration materials document the film's preservation and continuing historical circulation." },
+    { area: "screenplay", status: "source_verified", note: "Cannes, DFI and the Polish Film Academy credit Aleksander Ścibor-Rylski; the screenplay organizes the story as an ordered smear investigation undone by testimony, archives and personal memory." },
+    { area: "directing", status: "source_verified", note: "Cannes and Polish institutional records credit Andrzej Wajda; staging repeatedly places the reporter between controlled media spaces and the collective reality of the shipyard." },
+    { area: "performance", status: "source_verified", note: "Film at Lincoln Center and Cannes document Marian Opania's compromised reporter, Krystyna Janda's Agnieszka and Jerzy Radziwiłowicz's dual connection to Man of Marble and the new generation." },
+    { area: "production_design", status: "source_verified", note: "Cannes and DFI credit Allan Starski; radio offices, detention spaces, domestic rooms and industrial locations distinguish institutional control from worker occupation." },
+    { area: "costume_makeup", status: "mapped", note: "Contemporary work clothes, media-professional dress and police or institutional appearance support the historical world, but the current sources do not isolate a costume or makeup account." },
+    { area: "cinematography", status: "source_verified", note: "Cannes, DFI and the Polish Film Academy credit Edward Kłosiński; crowded shipyard observation, interviews and reconstructed memories share a mobile political-realist image system." },
+    { area: "lighting", status: "mapped", note: "Available light and controlled interiors differentiate public action, testimony and institutional rooms, but the current sources do not provide a dedicated lighting account." },
+    { area: "camera_format", status: "source_verified", note: "DFI records 35mm colour in 1.85:1 with sound; Cannes restoration records confirm work from the original colour 35mm negative." },
+    { area: "editing", status: "source_verified", note: "Cannes and DFI credit Halina Prugar-Ketling; the edit moves among present investigation, 1970 memories, Man of Marble continuity and documentary material without losing the reporter's moral trajectory." },
+    { area: "sound_design", status: "source_verified", note: "Cannes credits Piotr Zawadzki and restoration records identify original magnetic sound; speeches, shipyard noise, interviews, radio control and crowd response form the political sound field." },
+    { area: "music", status: "source_verified", note: "Cannes, DFI and the Polish Film Academy credit Andrzej Korzyński; music supports transitions and historical momentum without replacing the evidentiary force of voices and industrial sound." },
+    { area: "effects_animation", status: "not_central", note: "The production system depends on location, archive, ensemble staging, editing and sound rather than a central effects or animation pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Cannes and Film at Lincoln Center document the use of recent strike history, unreleased footage, testimony and real political figures inside a fictional investigative structure." },
+  ],
+} as const satisfies FilmHistoryProfile;

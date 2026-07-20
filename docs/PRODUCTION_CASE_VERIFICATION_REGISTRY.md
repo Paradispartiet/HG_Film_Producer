@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 120 source-backed Production Cases.
+- 124 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -43,6 +43,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationNorwegianPostwarGenreSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationNordicMinimalistSocialSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationModernNordicBehaviorSystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerification1980sPoliticalPalmeSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts`
@@ -238,6 +239,15 @@ This batch compares Finnish proletarian minimalism, Swedish studio tableau cinem
 - `scenario_the_worst_person_in_the_world_2021`
 
 This batch compares transnational Alpine social experiment, Icelandic eco-political visible-music action, Danish performance-centred alcohol experiment and Norwegian chaptered 35mm Oslo subjectivity.
+
+### 1980s political Palme systems batch
+
+- `scenario_man_of_iron_1981`
+- `scenario_yol_1982`
+- `scenario_the_ballad_of_narayama_1983`
+- `scenario_when_father_was_away_on_business_1985`
+
+This batch compares Polish Solidarity investigative docufiction, Turkish prison-release road cinema, Japanese rural ecological naturalism and Yugoslav child-view historical tragicomedy.
 
 ### 1950s Asian postwar cinema batch
 
