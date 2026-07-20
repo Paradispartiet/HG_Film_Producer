@@ -1,14 +1,13 @@
 import { createModernCanonBriefBlueprint } from "../../core/modernCanonBriefBlueprint.js";
-import { getScandinavianEuropeanExpansionDefinition } from "../../core/scandinavianEuropeanExpansion.js";
+import { getEasternIberianBritishExpansionDefinition } from "../../core/easternIberianBritishExpansion.js";
 import type { FilmScenarioSeed } from "./filmScenarios";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
-import { getEasternIberianBritishExpansionProductionBrief } from "./scenarioProductionBriefsEasternIberianBritishExpansion";
 
-export function getScandinavianEuropeanExpansionProductionBrief(
+export function getEasternIberianBritishExpansionProductionBrief(
   scenario: FilmScenarioSeed,
 ): ScenarioProductionBrief | undefined {
-  const definition = getScandinavianEuropeanExpansionDefinition(scenario);
-  if (!definition) return getEasternIberianBritishExpansionProductionBrief(scenario);
+  const definition = getEasternIberianBritishExpansionDefinition(scenario);
+  if (!definition) return undefined;
   const blueprint = createModernCanonBriefBlueprint(definition);
 
   return {
