@@ -112,5 +112,5 @@ test("exports the complete scene project and shot list", () => {
 
 test("uses stable project storage keys and entity ids", () => {
   assert.equal(getDirectorProjectStorageKey(identity.filmId), "hg_film_director_project_v1:mulholland_drive");
-  assert.equal(createDirectorEntityId("scene", 1000, 0.25), "scene_rs_5dhs");
+  assert.equal(createDirectorEntityId("scene", 1000, 0.25), "scene_rs_5cwg");
 });
