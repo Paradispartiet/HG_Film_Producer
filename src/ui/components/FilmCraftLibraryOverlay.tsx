@@ -1,6 +1,8 @@
 import { useMemo, useState, type ChangeEvent } from "react";
 
-import { filmCraftGlossary, type FilmCraftDomain } from "../data/filmCraftGlossary";
+import { filmCraftGlossary, getFilmCraftTechniques, type FilmCraftDomain } from "../data/filmCraftGlossary";
+import { getClassicFilmScenarios } from "../data/filmScenarios";
+import { resolveScenarioProductionBrief } from "../data/scenarioProductionBriefs";
 
 const domainLabels: Record<FilmCraftDomain, string> = {
   screenplay: "Screenplay",
@@ -9,14 +11,23 @@ const domainLabels: Record<FilmCraftDomain, string> = {
   sound: "Sound",
 };
 
+const filmScenarios = getClassicFilmScenarios();
+
 export function FilmCraftLibraryOverlay() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [domain, setDomain] = useState<FilmCraftDomain | "all">("all");
+  const [selectedFilmId, setSelectedFilmId] = useState("all");
+
+  const selectedFilm = filmScenarios.find((scenario) => scenario.id === selectedFilmId);
+  const filmMatchedTechniques = useMemo(() => {
+    if (!selectedFilm) return filmCraftGlossary;
+    return getFilmCraftTechniques(resolveScenarioProductionBrief(selectedFilm), filmCraftGlossary.length);
+  }, [selectedFilm]);
 
   const techniques = useMemo(() => {
     const normalizedQuery = query.trim().toLocaleLowerCase();
-    return filmCraftGlossary.filter((technique) => {
+    return filmMatchedTechniques.filter((technique) => {
       const matchesDomain = domain === "all" || technique.domain === domain;
       const searchableText = [
         technique.name,
@@ -27,7 +38,7 @@ export function FilmCraftLibraryOverlay() {
       ].join(" ").toLocaleLowerCase();
       return matchesDomain && (!normalizedQuery || searchableText.includes(normalizedQuery));
     });
-  }, [domain, query]);
+  }, [domain, filmMatchedTechniques, query]);
 
   return (
     <>
@@ -49,10 +60,19 @@ export function FilmCraftLibraryOverlay() {
             </header>
 
             <div className="craft-library-controls">
-              <label>
-                <span>Search technique or function</span>
-                <input onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)} placeholder="Example: silence, blocking, rhythm…" type="search" value={query} />
-              </label>
+              <div className="craft-library-control-grid">
+                <label>
+                  <span>Film lens</span>
+                  <select onChange={(event: ChangeEvent<HTMLSelectElement>) => setSelectedFilmId(event.target.value)} value={selectedFilmId}>
+                    <option value="all">All registered techniques</option>
+                    {filmScenarios.map((scenario) => <option key={scenario.id} value={scenario.id}>{scenario.film.year} · {scenario.film.title}</option>)}
+                  </select>
+                </label>
+                <label>
+                  <span>Search technique or function</span>
+                  <input onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)} placeholder="Example: silence, blocking, rhythm…" type="search" value={query} />
+                </label>
+              </div>
               <div aria-label="Filter by craft domain" className="craft-library-domains">
                 <button className={domain === "all" ? "craft-domain-button craft-domain-button--active" : "craft-domain-button"} onClick={() => setDomain("all")} type="button">All</button>
                 {(Object.keys(domainLabels) as FilmCraftDomain[]).map((domainId) => (
@@ -63,7 +83,9 @@ export function FilmCraftLibraryOverlay() {
               </div>
             </div>
 
-            <div className="craft-library-summary"><strong>{techniques.length}</strong> of {filmCraftGlossary.length} techniques</div>
+            <div className="craft-library-summary">
+              <strong>{techniques.length}</strong> {selectedFilm ? `techniques matched to ${selectedFilm.film.title}` : `of ${filmCraftGlossary.length} techniques`}
+            </div>
 
             <div className="craft-library-list">
               {techniques.map((technique) => (
@@ -79,7 +101,7 @@ export function FilmCraftLibraryOverlay() {
                   </dl>
                 </article>
               ))}
-              {techniques.length === 0 && <p className="craft-library-empty">No techniques match this search.</p>}
+              {techniques.length === 0 && <p className="craft-library-empty">No techniques match this film and filter yet.</p>}
             </div>
           </section>
         </div>
