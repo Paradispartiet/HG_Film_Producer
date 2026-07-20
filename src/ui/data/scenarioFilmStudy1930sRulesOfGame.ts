@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const rulesOfTheGameFilmHistoryProfile = {
+  scenarioId: "scenario_the_rules_of_the_game_1939",
+  period: "Late-1930s French ensemble cinema and mobile deep-space social satire",
+  traditions: ["French poetic realism", "Comedy of manners", "Ensemble mise-en-scène"],
+  before: "French sound cinema had absorbed theatrical dialogue, poetic realism and mobile camera staging, while Renoir increasingly treated social space as a field of competing viewpoints rather than a single protagonist's world.",
+  moment: "Renoir builds a country-house weekend from interlocking desires across masters and servants, using long controlled takes, depth, doors, lateral movement, offscreen activity and layered dialogue to keep several relationships active inside one shot.",
+  after: "The 1959 reconstruction restored a version close to Renoir's intentions after cuts, bans and wartime loss, making the film a central preservation case as well as a model for ensemble staging.",
+  historyQuestion: "Which production logic explains why the film often keeps several characters and social layers visible at once instead of isolating each conflict in separate close-ups?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Criterion place the film on the eve of the Second World War and within Renoir's critique of French bourgeois society." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film joins French poetic realism, comic-theatre traditions and mobile ensemble mise-en-scène." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion documents Renoir's ambitious 1939 production, original version, cuts, destroyed negative and later reconstruction." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI and Criterion record the hostile premiere, government ban, wartime loss and 1959 reconstruction." },
+    { area: "screenplay", status: "source_verified", note: "Renoir adapts comedy-of-manners structures into an ensemble web where every character's desire affects several others." },
+    { area: "directing", status: "source_verified", note: "Long takes and mobile staging shift attention through shared rooms rather than breaking every exchange into isolated coverage." },
+    { area: "performance", status: "source_verified", note: "Masters, servants and Renoir's own Octave are directed as one social ensemble whose motives overlap and collide." },
+    { area: "production_design", status: "source_verified", note: "Country-house rooms, corridors, doors and the mechanical-theatre sequence provide layered spaces for simultaneous action." },
+    { area: "costume_makeup", status: "mapped", note: "Class and occasion are visible through dress, and Criterion records costume involvement, but dedicated department research remains pending." },
+    { area: "cinematography", status: "source_verified", note: "BFI documents long controlled takes, depth of vision and action moving through foreground, middle ground and background." },
+    { area: "lighting", status: "mapped", note: "Interior visibility supports deep staging, but dedicated lighting documentation remains incomplete." },
+    { area: "camera_format", status: "source_verified", note: "BFI and Criterion record a black-and-white French sound feature in approximately 1.33–1.37:1." },
+    { area: "editing", status: "source_verified", note: "Cutting preserves ensemble geography and shifts among parallel social and emotional beats without reducing the house to disconnected fragments." },
+    { area: "sound_design", status: "source_verified", note: "Layered dialogue, music and offscreen activity extend the crowded social field beyond the visible frame." },
+    { area: "music", status: "source_verified", note: "Criterion records arranged music by Roger Désormière and Joseph Kosma alongside pieces used within the film's social world." },
+    { area: "effects_animation", status: "not_central", note: "Mechanical objects and staged spectacle matter thematically, but effects production is not the film's central system." },
+    { area: "documentary_method", status: "mapped", note: "The hunting sequence and social observation introduce documentary texture inside a controlled fictional ensemble." },
+  ],
+} as const satisfies FilmHistoryProfile;

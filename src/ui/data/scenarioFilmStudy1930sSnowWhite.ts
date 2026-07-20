@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const snowWhiteFilmHistoryProfile = {
+  scenarioId: "scenario_snow_white_and_the_seven_dwarfs_1937",
+  period: "Late-1930s classical feature animation built through an industrial studio pipeline",
+  traditions: ["Character animation", "Technicolor musical fantasy", "Multiplane feature production"],
+  before: "Disney's shorts and Silly Symphonies developed synchronized music, color, personality animation and depth experiments before the studio attempted a sustained animated feature.",
+  moment: "Hundreds of artists divide story, character design, layout, backgrounds, effects, in-betweening, ink-and-paint, camera and sound into coordinated departments, using personality animation, Technicolor and layered camera work to sustain a feature-length emotional arc.",
+  after: "National Film Registry preservation and surviving production art make the film a durable teaching case for animation as collaborative performance, design, photography and sound rather than drawing alone.",
+  historyQuestion: "Which production model explains how thousands of drawings, painted backgrounds, character voices, songs and layered camera passes can still feel like one continuous performance world?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and Disney museum records place the film as Walt Disney Productions' first feature-length production after years of short-form experimentation." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The production develops character personality, musical synchronization, Technicolor and multiplane depth inside classical studio animation." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents the large departmental workforce, long development, budget expansion, outside assistance and production schedule." },
+    { area: "reception_and_legacy", status: "source_verified", note: "AFI and the Library of Congress document its release history, National Film Registry status and continuing preservation." },
+    { area: "screenplay", status: "source_verified", note: "AFI records the Grimm source, years of story development, discarded material and the restructuring of the dwarfs as distinct personalities." },
+    { area: "directing", status: "source_verified", note: "David Hand and the sequence-direction system coordinate many specialist units into one feature narrative." },
+    { area: "performance", status: "source_verified", note: "Voices, reference, character model sheets and personality animation make each dwarf and major character behaviorally distinct." },
+    { area: "production_design", status: "source_verified", note: "AFI credits extensive art-direction and background departments, while museum materials preserve the drawings and paintings used to define the world." },
+    { area: "costume_makeup", status: "mapped", note: "Costume and facial design are embedded in character animation, but a separate department-level source review remains pending." },
+    { area: "cinematography", status: "source_verified", note: "The multiplane system and layered cel photography create depth while maintaining scale relationships across backgrounds and characters." },
+    { area: "lighting", status: "mapped", note: "Painted light, color styling and camera exposure shape atmosphere, but dedicated lighting documentation remains incomplete." },
+    { area: "camera_format", status: "source_verified", note: "AFI records 35mm color production in Technicolor with RCA sound recording." },
+    { area: "editing", status: "mapped", note: "Scene rhythm, songs and visual continuity unify departmental work, while editor-specific documentation remains pending." },
+    { area: "sound_design", status: "source_verified", note: "Voices, effects and musical timing were planned as integrated components of the animated action." },
+    { area: "music", status: "source_verified", note: "AFI documents extensive song development, character motifs and the final integrated score and song structure." },
+    { area: "effects_animation", status: "source_verified", note: "Character, effects and multiplane camera departments create movement, atmosphere and dimensional illusion through separate coordinated layers." },
+    { area: "documentary_method", status: "not_central", note: "The film is designed fairy-tale animation rather than documentary or observational production." },
+  ],
+} as const satisfies FilmHistoryProfile;

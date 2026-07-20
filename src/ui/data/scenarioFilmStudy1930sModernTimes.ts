@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const modernTimesFilmHistoryProfile = {
+  scenarioId: "scenario_modern_times_1936",
+  period: "Mid-1930s industrial satire made as a mostly silent feature inside established sound cinema",
+  traditions: ["Pantomime comedy", "Depression-era social satire", "Selective synchronized sound"],
+  before: "By 1936 Hollywood dialogue production was standard, while Chaplin's Tramp still depended on visual performance, full-body action and international pantomime.",
+  moment: "Chaplin builds factories, machines and institutional spaces around physical comedy, then reserves intelligible voices for screens, loudspeakers and authority while music, effects and the nonsense song carry the soundtrack.",
+  after: "The film remains a preservation and teaching case for using new technology selectively: sound becomes part of the satire rather than replacing visual storytelling.",
+  historyQuestion: "Which production decision explains why machines and managers speak clearly while the Tramp communicates mainly through movement, effects, music and one deliberately nonsensical song?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, BFI, MoMA and the Chaplin archive place the film in the Depression and nearly a decade after the coming of sound." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The production deliberately continues pantomime comedy while adopting selected synchronized sound techniques." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI records the Charles Chaplin Film Corporation production, long 1934–1935 schedule, large sets, San Pedro work and independent financing." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Library of Congress preserves the film as a National Film Registry title and MoMA treats it as a central Chaplin satire." },
+    { area: "screenplay", status: "source_verified", note: "AFI records Chaplin's completed script and episodic structure linking factory labor, unemployment, prison, domestic aspiration and performance work." },
+    { area: "directing", status: "source_verified", note: "Chaplin controls writing, directing, editing and score so the industrial theme appears in every formal department." },
+    { area: "performance", status: "source_verified", note: "Pantomime, mechanical repetition and bodily resistance make the worker readable without conventional dialogue." },
+    { area: "production_design", status: "source_verified", note: "AFI documents huge studio sets and exterior construction, while the factory machines organize action and satire." },
+    { area: "costume_makeup", status: "mapped", note: "The Tramp silhouette and worker clothing support social identity, but dedicated costume research remains pending." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Ira Morgan and Rollie Totheroh; stable framing and clear machine geography preserve physical action." },
+    { area: "lighting", status: "mapped", note: "Controlled studio lighting supports large industrial sets, while department-level evidence remains incomplete." },
+    { area: "camera_format", status: "source_verified", note: "AFI records black-and-white 35mm presentation with Western Electric synchronized music, effects and singing." },
+    { area: "editing", status: "source_verified", note: "Chaplin's editing matches comic escalation to assembly-line repetition, interruption and machine malfunction." },
+    { area: "sound_design", status: "source_verified", note: "The official Chaplin archive documents effects, mediated voices and natural noises incorporated into the musical construction." },
+    { area: "music", status: "source_verified", note: "Chaplin composed the score, with David Raksin and Edward Powell involved in arrangement and synchronization." },
+    { area: "effects_animation", status: "mapped", note: "Mechanical gags and controlled set action are important, but effects work is secondary to performance, staging and sound." },
+    { area: "documentary_method", status: "mapped", note: "The factory and unemployment context derives from contemporary observation but is transformed through studio comedy." },
+  ],
+} as const satisfies FilmHistoryProfile;

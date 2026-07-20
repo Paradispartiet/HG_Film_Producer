@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case contains all mapping 
 Every Production Case in the current catalogue resolves to the same complete mapping structure. Catalogue size is read dynamically and is not duplicated in documentation or tests.
 
 - 17 mandatory film-history and film-craft areas.
-- 52 source-backed film-history profiles.
+- 60 source-backed film-history profiles.
 - All remaining cases retain complete audit structures with visible research gaps.
 - No points, ranks, badges or reward currencies.
 - Historical placement is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The 52 source-backed profiles are the same controlled group covered by the Production Case verification registry:
+The 60 source-backed profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -85,6 +85,14 @@ The 52 source-backed profiles are the same controlled group covered by the Produ
 - The General
 - Metropolis
 - Frankenstein
+- The Passion of Joan of Arc
+- Man with a Movie Camera
+- M
+- City Lights
+- King Kong
+- Modern Times
+- Snow White and the Seven Dwarfs
+- The Rules of the Game
 
 ## Complete mapping schema
 
@@ -186,7 +194,11 @@ A date or movement name alone does not teach film history. The player learns by 
 - theatrical trick fantasy versus Expressionist studio design;
 - location-based Weimar horror versus Soviet collision montage;
 - Swedish nested-flashback spectral cinema versus practical railway action comedy;
-- UFA architectural science-fiction spectacle versus Universal sound horror.
+- UFA architectural science-fiction spectacle versus Universal sound horror;
+- close-up silent modernism versus reflexive city-symphony documentary;
+- early sound crime procedure versus synchronized pantomime resisting dialogue;
+- integrated creature effects versus industrial feature-animation production;
+- mechanical sound satire versus deep-space ensemble staging.
 
 The alternatives come from other real cases. A wrong choice introduces another valid film-historical method instead of meaningless filler.
 
