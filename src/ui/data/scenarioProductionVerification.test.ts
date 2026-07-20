@@ -57,6 +57,13 @@ const crimeNoirTransformationsIds = [
   "scenario_band_of_outsiders_1964",
 ] as const;
 
+const norwegianPostwarGenreSystemsIds = [
+  "scenario_gategutter_1949",
+  "scenario_fjols_til_fjells_1957",
+  "scenario_de_dodes_tjern_1958",
+  "scenario_insomnia_1997",
+] as const;
+
 const asianPostwar1950sIds = [
   "scenario_rashomon_1950",
   "scenario_tokyo_story_1953",
@@ -120,7 +127,7 @@ const europeanModernistProductionIds = [
   "scenario_the_battle_of_algiers_1966",
 ] as const;
 
-const expectedVerifiedCount = 108;
+const expectedVerifiedCount = 112;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -186,6 +193,14 @@ test("1940s noir and realism systems are verified with four sources each", () =>
 
 test("crime and noir transformation systems are verified with four sources each", () => {
   for (const scenarioId of crimeNoirTransformationsIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("Norwegian postwar genre systems are verified with four sources each", () => {
+  for (const scenarioId of norwegianPostwarGenreSystemsIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);
