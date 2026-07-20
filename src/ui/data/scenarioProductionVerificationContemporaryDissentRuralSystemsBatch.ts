@@ -156,7 +156,7 @@ export const contemporaryDissentRuralVerificationRecords = [
         publisher: "British Film Institute",
         url: "https://www.bfi.org.uk/news/network-lff-2022-roundup",
         sourceKind: "film_institute",
-        supports: ["overall", "performance", "cinematography"],
+        supports: ["overall", "screenplay", "cinematography"],
         note: "BFI records the Golden Bear-winning film as shot in Alcarràs with a nonprofessional cast and documents Simón's Q&A on working with non-actors and developing the second feature."
       }
     ]
