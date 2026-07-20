@@ -55,6 +55,7 @@ test("every requested film resolves to one playable Production Case", () => {
 
 test("the merged catalogue reports its real size and keeps unique scenario ids", () => {
   const scenarios = getClassicFilmScenarios();
+  console.log(`Merged Production Case count: ${scenarios.length}`);
   assert.equal(filmScenarioSeedData.scenario_count, scenarios.length);
   assert.equal(new Set(scenarios.map((scenario) => scenario.id)).size, scenarios.length);
   assert.ok(scenarios.length >= 161);
