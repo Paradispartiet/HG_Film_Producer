@@ -20,10 +20,11 @@ Source records are divided into reviewable batch files:
 - `src/ui/data/scenarioProductionVerificationMinimalistRoadBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEuropeanPressureBatch.ts`
 - `src/ui/data/scenarioProductionVerificationIndependentStorytellingBatch.ts`
+- `src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts`
 
-The unified registry currently covers forty-four cases.
+The unified registry currently covers forty-eight cases.
 
-The same forty-four cases also have source-backed film-history profiles in:
+The same forty-eight cases also have source-backed film-history profiles in:
 
 - `src/ui/data/scenarioFilmStudyMap.ts`
 - `src/ui/data/scenarioFilmStudyTechnologyBatch.ts`
@@ -32,13 +33,14 @@ The same forty-four cases also have source-backed film-history profiles in:
 - `src/ui/data/scenarioFilmStudyMinimalistRoadBatch.ts`
 - `src/ui/data/scenarioFilmStudyEuropeanPressureBatch.ts`
 - `src/ui/data/scenarioFilmStudyIndependentStorytellingBatch.ts`
+- `src/ui/data/scenarioFilmStudySilentFoundationsBatch.ts`
 
 The complete 17-area audit is defined in:
 
 - `src/core/filmStudyCoverage.ts`
 - `docs/FILM_HISTORY_AND_CRAFT_MAPPING.md`
 
-All 244 cases receive the same audit structure, but this does **not** mean that all 244 are verified. The remaining 200 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
+All 244 cases receive the same audit structure, but this does **not** mean that all 244 are verified. The remaining 196 must show their missing film-history and craft research as `research_pending` instead of displaying generic claims as facts.
 
 ### Pilot batch
 
@@ -159,6 +161,20 @@ This batch compares four ways American independent cinema makes narrative form p
 - neo-noir reconstructed through a 1949 world, color-negative capture, planned black-and-white printing and contemporary monochrome lighting;
 - mixed-media biography combining actors, real subjects, Cleveland locations, archive, comics, photographs and animation.
 
+### Silent cinema foundations batch
+
+- `scenario_a_trip_to_the_moon_1902`
+- `scenario_the_cabinet_of_dr_caligari_1920`
+- `scenario_nosferatu_1922`
+- `scenario_battleship_potemkin_1925`
+
+This batch compares four foundational silent production systems:
+
+- theatrical trick film built through painted tableaux, camera transformations, handmade colour and screen fantasy;
+- German Expressionist studio horror built through angular design, graphic shadows, stylized performance and unreliable narration;
+- location-based Weimar horror built through ports, warehouses, landscapes, physical silhouette and plague imagery;
+- Soviet revolutionary montage built through five movements, collective action, graphic photography, repetition, collision and expanded screen time.
+
 ## Verification rule
 
 A registry record must:
@@ -210,7 +226,7 @@ Verification supports learning; it does not support a score or ranking. A verifi
 
 ## Next step
 
-Forty-four cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 200 in coherent historical batches:
+Forty-eight cases now have source-backed Production Case verification and source-backed film-history profiles. Continue researching the remaining 196 in coherent historical batches:
 
 - make every historical and technical alternative plausible and educational;
 - ensure feedback explains the concrete distinction between choices;
