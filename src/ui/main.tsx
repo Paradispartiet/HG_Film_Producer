@@ -7,6 +7,7 @@ import "./styles.css";
 import "./filmverket.css";
 import "./filmverketRouting.css";
 import "./filmDirectorExperience.css";
+import "./filmDirectorProject.css";
 import "./filmCraftLibrary.css";
 import "./filmCraftLibraryFilmLens.css";
 import "./filmResearchControlRoom.css";
@@ -25,7 +26,7 @@ if (!rootElement) {
 createRoot(rootElement).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 );
 
 installProductionCaseVerificationMarkers();
