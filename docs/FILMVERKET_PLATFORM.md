@@ -11,6 +11,7 @@ Filmverket is the umbrella platform. Film Producer remains the production game, 
 - **Film School** — structured learning paths generated from the shared film knowledge.
 - **Film History** — the chronological entrance into the catalogue.
 - **Craft Library** — the shared dictionary of observable film techniques, analytical questions, and practical production uses.
+- **Research Control Room** — the editorial overview of verified, seeded, and unfinished film research.
 
 Film Producer is not renamed Film Director because the game controls more than directing. Director Lab is instead the artistic craft layer inside the wider platform.
 
@@ -30,12 +31,14 @@ The platform intentionally reuses existing production-case data instead of creat
    - research status
 3. `filmCraftGlossary` supplies reusable formal-technique definitions across screenplay, cinematography, editing, and sound.
 4. `getFilmCraftTechniques()` matches the stored construction analysis for a selected film to relevant glossary techniques.
-5. Film Producer uses the film knowledge as playable Production Cases.
-6. Film Atlas renders the same knowledge as analysis.
-7. Director Lab isolates one craft lens and converts the stored principles into a directing brief.
-8. Film School organizes the same material into courses.
-9. Film History orders the shared catalogue chronologically and links back to analysis.
-10. Craft Library allows direct browsing or selection of a film to inspect the techniques detected in its current analysis.
+5. `createFilmResearchQueue()` turns the shared catalogue into an explicit editorial work queue.
+6. Film Producer uses the film knowledge as playable Production Cases.
+7. Film Atlas renders the same knowledge as analysis.
+8. Director Lab isolates one craft lens and converts the stored principles into a directing brief.
+9. Film School organizes the same material into courses.
+10. Film History orders the shared catalogue chronologically and links back to analysis.
+11. Craft Library allows direct browsing or selection of a film to inspect the techniques detected in its current analysis.
+12. Research Control Room exposes completion, provisional material, and research priorities without changing the underlying film records.
 
 ## Current user flow
 
@@ -47,6 +50,7 @@ The original title screen is now the Filmverket front page. The connected entran
 - Film School opens six initial core courses with linked film examples.
 - Film History opens a decade-based timeline and links every work into Film Atlas.
 - Craft Library opens from Filmverket as a searchable film-science drawer and can filter its technique set through any film in the catalogue.
+- Research Control Room opens as the editorial status surface for the complete catalogue.
 
 Returning home from the game returns to Filmverket.
 
@@ -65,7 +69,17 @@ Film matching is currently deterministic keyword matching against the shared pro
 
 ## Research status
 
-The platform displays existing verification status rather than presenting all analysis as fully researched. `verified`, `seeded`, and `needs_research` remain visible distinctions. Film-specific historical movements, technologies, national cinemas, influences, reception, scene evidence, and bibliographic sources should be added as structured data rather than hard-coded UI copy.
+The platform displays existing verification status rather than presenting all analysis as fully researched. `verified`, `seeded`, and `needs_research` remain visible distinctions.
+
+Research Control Room treats these states as editorial workflow, not quality scores:
+
+- `verified` means the stored film-specific claims have passed the project's research process.
+- `seeded` means the entry is a provisional imported or generated foundation.
+- `needs_research` means the film has useful production-case material but still requires film-specific verification and sourcing.
+
+The queue sorts unfinished work first and shows craft-statement density and learning-goal density separately from verification. A film does not become verified merely because it contains many statements.
+
+Film-specific historical movements, technologies, national cinemas, influences, reception, scene evidence, and bibliographic sources should be added as structured data rather than hard-coded UI copy.
 
 ## Continuous verification
 
@@ -94,4 +108,4 @@ The platform UI is ready for these future shared fields:
 - scholarly sources and verification notes
 - people, roles, studios, locations, and institutions
 
-These layers should enrich the existing film entity so the game, atlas, school, history timeline, craft library, and future modes always read from the same source of truth.
+These layers should enrich the existing film entity so the game, atlas, school, history timeline, craft library, research control room, and future modes always read from the same source of truth.
