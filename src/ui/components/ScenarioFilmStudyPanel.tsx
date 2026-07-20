@@ -49,6 +49,11 @@ import {
   resolveConstructedWorldsFilmStudyMap,
 } from "../data/scenarioFilmStudyConstructedWorldsBatch";
 import {
+  createContemporaryDissentRuralSystemsFilmHistoryChoices,
+  getContemporaryDissentRuralSystemsFilmHistoryProfile,
+  resolveContemporaryDissentRuralSystemsFilmStudyMap,
+} from "../data/scenarioFilmStudyContemporaryDissentRuralSystemsBatch";
+import {
   createCrimeNoirTransformationsFilmHistoryChoices,
   getCrimeNoirTransformationsFilmHistoryProfile,
   resolveCrimeNoirTransformationsFilmStudyMap,
@@ -164,7 +169,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveFestivalUrbanIntimacySystemsFilmStudyMap(scenario, brief)
+    () => resolveContemporaryDissentRuralSystemsFilmStudyMap(scenario, brief)
+      ?? resolveFestivalUrbanIntimacySystemsFilmStudyMap(scenario, brief)
       ?? resolveIntimateFestivalBodyCareSystemsFilmStudyMap(scenario, brief)
       ?? resolveFestivalJourneyDisplacementSystemsFilmStudyMap(scenario, brief)
       ?? resolve1980sPoliticalPalmeSystemsFilmStudyMap(scenario, brief)
@@ -205,6 +211,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getContemporaryDissentRuralSystemsFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createContemporaryDissentRuralSystemsFilmHistoryChoices(historyProfile);
+    }
     if (getFestivalUrbanIntimacySystemsFilmHistoryProfile(historyProfile.scenarioId)) {
       return createFestivalUrbanIntimacySystemsFilmHistoryChoices(historyProfile);
     }
