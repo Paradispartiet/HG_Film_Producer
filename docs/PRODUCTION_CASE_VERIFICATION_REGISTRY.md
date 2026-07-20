@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 136 source-backed Production Cases.
+- 140 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -47,6 +47,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationFestivalJourneyDisplacementSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationFestivalUrbanIntimacySystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationContemporaryDissentRuralSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts`
@@ -278,6 +279,15 @@ This batch compares British research-built abortion-procedure ensemble, American
 - `scenario_from_afar_2015`
 
 This batch compares South Korean low-budget industrial moral melodrama, French close-performance relationship naturalism, Chinese wintry post-industrial neo-noir and Venezuelan anamorphic class-distance drama.
+
+### Contemporary dissent and rural systems batch
+
+- `scenario_synonyms_2019`
+- `scenario_there_is_no_evil_2020`
+- `scenario_bad_luck_banging_or_loony_porn_2021`
+- `scenario_alcarras_2022`
+
+This batch compares Israeli-French language-and-body exile modernism, Iranian clandestine anthology ethics, Romanian pandemic essay satire and Catalan nonprofessional seasonal rural realism.
 
 ### 1950s Asian postwar cinema batch
 
