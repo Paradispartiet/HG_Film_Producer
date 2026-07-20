@@ -1,0 +1,74 @@
+name: Record merged historical catalogue count
+
+on:
+  push:
+    branches:
+      - early-cinema-expansion-58
+
+permissions:
+  contents: write
+
+jobs:
+  count:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: early-cinema-expansion-58
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Build core and calculate deduplicated catalogue size
+        run: |
+          npm run build
+          node --input-type=module <<'NODE' > /tmp/catalogue-count
+          import { readFileSync } from 'node:fs';
+          import { mergeEarlyCinemaExpansion } from './dist/core/earlyCinemaExpansion.js';
+          const seed = JSON.parse(readFileSync('./data/film/scenarios/film_scenarios_seed.json', 'utf8'));
+          process.stdout.write(String(mergeEarlyCinemaExpansion(seed.scenarios).length));
+          NODE
+      - name: Patch catalogue documentation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          total = int(Path('/tmp/catalogue-count').read_text().strip())
+          verified = 44
+          pending = total - verified
+
+          mapping = Path('docs/FILM_HISTORY_AND_CRAFT_MAPPING.md')
+          text = mapping.read_text(encoding='utf-8')
+          text = re.sub(r'All \d+ Production Cases now resolve', f'All {total} Production Cases now resolve', text)
+          text = re.sub(r'- \d+ cases with a complete audit structure and visible research gaps\.', f'- {pending} cases with a complete audit structure and visible research gaps.', text)
+          text = re.sub(r'## Research order for the remaining \d+ cases', f'## Research order for the remaining {pending} cases', text)
+          mapping.write_text(text, encoding='utf-8')
+
+          registry = Path('docs/PRODUCTION_CASE_VERIFICATION_REGISTRY.md')
+          text = registry.read_text(encoding='utf-8')
+          text = re.sub(r'All \d+ cases receive', f'All {total} cases receive', text)
+          text = re.sub(r'The remaining \d+ must show', f'The remaining {pending} must show', text)
+          text = re.sub(r'Continue researching the remaining \d+ in coherent historical batches', f'Continue researching the remaining {pending} in coherent historical batches', text)
+          registry.write_text(text, encoding='utf-8')
+
+          expansion = Path('docs/EARLY_CINEMA_EXPANSION.md')
+          text = expansion.read_text(encoding='utf-8')
+          marker = 'The following 58 requested films are part of HG Film Producer\'s Production Case catalogue.\n'
+          count_line = f'\nAfter title/year deduplication, the complete Production Case catalogue contains **{total} cases**. Of these, 44 have completed source verification and {pending} remain visibly marked for further source research.\n'
+          if count_line.strip() not in text:
+              text = text.replace(marker, marker + count_line, 1)
+          expansion.write_text(text, encoding='utf-8')
+
+          print(f'catalogue={total} verified={verified} pending={pending}')
+          PY
+      - name: Remove temporary workflow and commit
+        run: |
+          rm .github/workflows/record-early-cinema-count.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Record merged historical catalogue count"
+          git push origin HEAD:early-cinema-expansion-58
