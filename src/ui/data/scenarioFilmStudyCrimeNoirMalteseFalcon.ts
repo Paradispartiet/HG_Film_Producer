@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const malteseFalconFilmHistoryProfile = {
+  scenarioId: "scenario_the_maltese_falcon_1941",
+  period: "Warner Bros. hard-boiled detective adaptation, early American film noir and dialogue-led studio ensemble",
+  traditions: ["Hard-boiled detective fiction", "Early American film noir", "Classical Hollywood studio adaptation"],
+  before: "Dashiell Hammett's 1930 novel had already produced two Warner Bros. screen versions, but the 1941 production arrived under stricter Production Code conditions and after the studio had developed a strong cycle of urban crime pictures and character actors.",
+  moment: "Warner Bros., executive producer Hal B. Wallis, associate producer Henry Blanke, first-time director John Huston, cinematographer Arthur Edeson, art director Robert Haas, editor Thomas Richards and an unusually concentrated ensemble turn Hammett's dialogue, false identities and contested object into a tightly rehearsed three-day studio narrative.",
+  after: "The film consolidated Humphrey Bogart's private-eye screen identity, established Huston as a director and became an early reference point for the urban crime cycle later named film noir, while preservation and repertory institutions continue to teach it as a model of literary adaptation and ensemble control.",
+  historyQuestion: "Which production system explains the film's close Hammett adaptation, Warner Bros. character ensemble, rehearsed dialogue, mostly sequential studio shooting, shadowed San Francisco interiors and object-centred investigation?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and the Library of Congress document the 1930 Hammett source, the two earlier Warner adaptations, stricter 1941 censorship and the production's place in the studio's crime cycle." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI, MoMA and the Library of Congress identify the film as a hard-boiled detective adaptation and an early formation of the urban style later called film noir." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Warner Bros.–First National production, Hal B. Wallis, Henry Blanke, the June–July 1941 schedule, retakes and the studio department credits." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Library of Congress records the film's 1989 National Film Registry selection, while BFI and MoMA document its importance to Huston, Bogart and the detective-film tradition." },
+    { area: "screenplay", status: "source_verified", note: "AFI, BFI, MoMA and the Library of Congress credit Huston's adaptation and document its unusually close relation to Hammett's novel after two looser earlier versions." },
+    { area: "directing", status: "source_verified", note: "The Library of Congress documents Huston's directorial debut, extensive rehearsal and mostly sequential filming; MoMA and BFI place the result within his later adaptation practice." },
+    { area: "performance", status: "source_verified", note: "Library of Congress and BFI accounts document Bogart's casting against his earlier supporting-gangster image, Greenstreet's screen debut and the rehearsed ensemble delivery of Hammett's dialogue." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Robert Haas and the Warner art department; BFI describes a largely studio-built nocturnal San Francisco organized around offices, apartments, corridors and the falcon itself." },
+    { area: "costume_makeup", status: "mapped", note: "Suits, hats, coats and Brigid's controlled presentation clarify profession and deception, but the current sources do not isolate wardrobe, makeup or hair processes in enough detail." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Arthur Edeson, while BFI and Library of Congress accounts connect the black-and-white photography, low angles, close groupings and exaggerated shadow to the film's crime world." },
+    { area: "lighting", status: "source_verified", note: "BFI explicitly describes photography designed to exaggerate shadows, and MoMA's analysis places the studio image within the emerging dark urban crime style." },
+    { area: "camera_format", status: "source_verified", note: "AFI records a black-and-white RCA sound production and the complete camera crew, grounding the case in standard Warner studio photochemical practice." },
+    { area: "editing", status: "source_verified", note: "AFI credits Thomas Richards, while the Library of Congress documents sequential shooting and a compressed three-day progression culminating in the extended apartment confrontation." },
+    { area: "sound_design", status: "mapped", note: "Dialogue, telephones, doors, footsteps and offscreen arrivals structure the investigation, but current institutional accounts emphasize writing and performance more than a separate effects-editing method." },
+    { area: "music", status: "source_verified", note: "AFI credits Adolph Deutsch and the Warner music department; the restrained score supports transitions and threat without displacing the dialogue-led ensemble system." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on studio staging, performance, lighting, editing and sound rather than a central practical-effects or animation pipeline." },
+    { area: "documentary_method", status: "not_central", note: "The film draws on Hammett's knowledge of detective work and a San Francisco setting, but its primary method is controlled literary studio adaptation rather than documentary observation." },
+  ],
+} as const satisfies FilmHistoryProfile;
