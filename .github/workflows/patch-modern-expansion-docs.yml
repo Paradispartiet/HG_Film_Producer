@@ -1,0 +1,78 @@
+name: Patch modern expansion documentation
+
+on:
+  push:
+    branches:
+      - agent/modern-indie-asian-prize-expansion-27
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/modern-indie-asian-prize-expansion-27
+      - name: Update catalogue totals and research comparisons
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          mapping = Path('docs/FILM_HISTORY_AND_CRAFT_MAPPING.md')
+          text = mapping.read_text(encoding='utf-8')
+          replacements = {
+              'All 217 Production Cases now resolve': 'All 244 Production Cases now resolve',
+              '- 173 cases with a complete audit structure and visible research gaps.': '- 200 cases with a complete audit structure and visible research gaps.',
+              '## Research order for the remaining 173 cases': '## Research order for the remaining 200 cases',
+          }
+          for old, new in replacements.items():
+              if old not in text:
+                  raise SystemExit(f'mapping marker missing: {old}')
+              text = text.replace(old, new, 1)
+          comparison_marker = '- planned photochemical neo-noir monochrome versus documentary-comics-animation biography.\n'
+          comparison_addition = (
+              '- videotaped independent confession versus observational queer community documentary;\n'
+              '- Taiwan urban modernism versus Chinese provincial duration and disappearing-landscape realism;\n'
+              '- Japanese procedural horror versus Korean lyrical moral realism;\n'
+              '- activist archival montage versus postcolonial restitution essay film;\n'
+              '- conventional historical observation versus first-person experiential adaptation.\n'
+          )
+          if comparison_addition.strip() not in text:
+              if comparison_marker not in text:
+                  raise SystemExit('comparison marker missing')
+              text = text.replace(comparison_marker, comparison_marker + comparison_addition, 1)
+          mapping.write_text(text, encoding='utf-8')
+
+          registry = Path('docs/PRODUCTION_CASE_VERIFICATION_REGISTRY.md')
+          text = registry.read_text(encoding='utf-8')
+          replacements = {
+              'All 217 cases receive the same audit structure, but this does **not** mean that all 217 are verified. The remaining 173':
+                  'All 244 cases receive the same audit structure, but this does **not** mean that all 244 are verified. The remaining 200',
+              'Continue researching the remaining 173 in coherent historical batches':
+                  'Continue researching the remaining 200 in coherent historical batches',
+          }
+          for old, new in replacements.items():
+              if old not in text:
+                  raise SystemExit(f'registry marker missing: {old}')
+              text = text.replace(old, new, 1)
+          registry.write_text(text, encoding='utf-8')
+
+          early = Path('docs/EARLY_CINEMA_EXPANSION.md')
+          text = early.read_text(encoding='utf-8')
+          old = 'After title/year deduplication, the complete Production Case catalogue contains **217 cases**. Of these, 44 have completed source verification and 173 remain visibly marked for further source research.'
+          new = 'After this historical expansion, the catalogue contained **217 cases**. A later 27-film modern independent, Asian and prize-cinema expansion brings the current total to **244 cases**: 44 source verified and 200 visibly marked for further source research.'
+          if old not in text:
+              raise SystemExit('early expansion total marker missing')
+          early.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+      - name: Remove temporary workflow and commit
+        run: |
+          rm .github/workflows/patch-modern-expansion-docs.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Update modern expansion catalogue totals"
+          git push origin HEAD:agent/modern-indie-asian-prize-expansion-27
