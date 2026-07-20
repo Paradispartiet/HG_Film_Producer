@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const thereIsNoEvilFilmHistoryProfile = {
+  scenarioId: "scenario_there_is_no_evil_2020",
+  period: "Iranian dissident anthology cinema, clandestine production and capital-punishment moral inquiry",
+  traditions: ["Iranian dissident cinema", "Political anthology film", "Censorship-shaped independent production"],
+  before: "Iranian filmmakers including Mohammad Rasoulof and Jafar Panahi had long developed indirect, episodic and location-based forms under censorship, while anthology cinema offered a way to test one ethical problem across separate lives and social positions.",
+  moment: "Rasoulof divides the film into four independently organised stories partly because shorter shoots reduced the danger of secret production; Iranian and German partners share financing, production and distribution work while each episode approaches obedience, refusal, military service, family secrecy and capital punishment from a different dramatic angle.",
+  after: "There Is No Evil won the 2020 Golden Bear while Rasoulof was barred from travelling, and its production model became inseparable from its ethical argument: a film about individual responsibility made through practical resistance to state restriction.",
+  historyQuestion: "Which production system explains four separately produced Iranian stories about execution, obedience and refusal, designed to reduce the risk of clandestine filming while building one cumulative moral argument across domestic routine, barracks, roads and rural isolation?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Film Comment and BFI place the film inside present-day Iran's death-penalty system, compulsory military structures and the legal restrictions imposed on Rasoulof." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Film Comment identify the film as Iranian dissident cinema using an anthology form to examine state power through ordinary moral decisions." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Rasoulof explains that four shorter units reduced clandestine shooting risk and that Iranian and German partners shared art, production, financing and distribution work." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Berlinale and BFI record the 2020 Golden Bear and the director's enforced absence, making the film's festival history part of its censorship context." },
+    { area: "screenplay", status: "source_verified", note: "Film Comment documents the four-story structure as both a practical response to restriction and a way to examine obedience and refusal from multiple social positions." },
+    { area: "directing", status: "source_verified", note: "Rasoulof describes organising separate stories with distinct dramatic mechanisms while holding them together through the recurring question of responsible action under totalitarian authority." },
+    { area: "performance", status: "source_verified", note: "BFI records the ensemble across the four episodes; ordinary domestic and military behaviour is used to delay recognition of each character's relation to execution." },
+    { area: "production_design", status: "mapped", note: "Homes, prisons, barracks, roads and rural refuges define different ranges of freedom, but the current sources do not isolate a production-design department account." },
+    { area: "costume_makeup", status: "mapped", note: "Military uniform, domestic clothing and rural workwear support institutional role and social position, but no dedicated department source is currently recorded." },
+    { area: "cinematography", status: "mapped", note: "The episodes move from controlled urban routine to open roads and rural landscapes, but the current source set does not provide a detailed cinematographer interview." },
+    { area: "lighting", status: "mapped", note: "Domestic, institutional and natural environments are differentiated visibly, but no dedicated lighting account is currently recorded." },
+    { area: "camera_format", status: "mapped", note: "The current institutional and interview sources do not isolate the original camera and lens package." },
+    { area: "editing", status: "source_verified", note: "BFI and Film Comment describe four complete episodes whose reversals and changing scales accumulate into one argument without a continuous protagonist." },
+    { area: "sound_design", status: "mapped", note: "Domestic routine, commands, vehicles, nature and sudden quiet are central audible materials, but the current sources do not provide a dedicated sound-team account." },
+    { area: "music", status: "mapped", note: "Music is subordinate to speech, routine and environment in the current case, and no dedicated composition account is recorded." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on performance, real environments, episodic construction and clandestine logistics rather than an effects-led pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Rasoulof connects the fiction directly to the real administration of executions, compulsory service, censorship and the economic conditions of independent Iranian filmmaking." },
+  ],
+} as const satisfies FilmHistoryProfile;

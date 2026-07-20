@@ -106,6 +106,13 @@ const festivalUrbanIntimacyIds = [
   "scenario_from_afar_2015",
 ] as const;
 
+const contemporaryDissentRuralIds = [
+  "scenario_synonyms_2019",
+  "scenario_there_is_no_evil_2020",
+  "scenario_bad_luck_banging_or_loony_porn_2021",
+  "scenario_alcarras_2022",
+] as const;
+
 const asianPostwar1950sIds = [
   "scenario_rashomon_1950",
   "scenario_tokyo_story_1953",
@@ -169,7 +176,7 @@ const europeanModernistProductionIds = [
   "scenario_the_battle_of_algiers_1966",
 ] as const;
 
-const expectedVerifiedCount = 136;
+const expectedVerifiedCount = 140;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -291,6 +298,14 @@ test("intimate festival body care systems are verified with four sources each", 
 
 test("festival urban intimacy systems are verified with four sources each", () => {
   for (const scenarioId of festivalUrbanIntimacyIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("contemporary dissent rural systems are verified with four sources each", () => {
+  for (const scenarioId of contemporaryDissentRuralIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);

@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const badLuckBangingFilmHistoryProfile = {
+  scenarioId: "scenario_bad_luck_banging_or_loony_porn_2021",
+  period: "Romanian pandemic satire, essay-film collage and digital public confrontation",
+  traditions: ["Romanian New Wave social critique", "Essay-film montage", "Pandemic-era digital satire"],
+  before: "Radu Jude's earlier work had moved from Romanian realist satire toward archival montage, historical confrontation and deliberately heterogeneous form, while essay cinema offered a structure in which public images, definitions and arguments could interrupt conventional narrative.",
+  moment: "Developed through the Berlinale Co-Production Market and filmed under lockdown conditions, the production uses three movements: a masked walk through Bucharest, an alphabetic montage of archival and contemporary media, and a parent tribunal with multiple possible endings; rough digital observation, explicit private imagery, street noise and overlapping public speech turn a leaked video into a wider inquiry into nationalism, misogyny and institutional hypocrisy.",
+  after: "Bad Luck Banging or Loony Porn won the 2021 Golden Bear and became a defining pandemic-era European film, preserving the masks, emptied routines, internet circulation and political contradictions of its production moment inside its form.",
+  historyQuestion: "Which production system explains a Romanian lockdown film divided into street observation, a montage dictionary and a masked parent tribunal, using rough digital images, archive fragments, explicit media and competing endings to turn one leaked private video into a systemic public argument?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Film at Lincoln Center place the film in COVID-era Bucharest, where masks, lockdown conditions, internet circulation and public moral panic shape both production and story." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Film Comment connect Jude's Romanian New Wave background to essay-film collage, political satire and the montage tradition of using heterogeneous evidence as argument." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Berlinale records the project at its 2020 Co-Production Market and its 2021 Golden Bear, while BFI identifies the multinational Romanian-led lockdown production." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Berlinale and BFI record the 2021 Golden Bear and the film's immediate status as a major pandemic-era political satire." },
+    { area: "screenplay", status: "source_verified", note: "BFI and Film at Lincoln Center document the triptych structure: urban walk, associative glossary and confrontational parent meeting rather than a conventional escalating plot." },
+    { area: "directing", status: "source_verified", note: "Jude organises incompatible registers—street observation, pornography, archive, definition, debate and fantasy endings—so form itself tests the audience's moral hierarchy." },
+    { area: "performance", status: "source_verified", note: "BFI and Film at Lincoln Center centre Katia Pascariu's controlled performance against an increasingly aggressive ensemble of parents, colleagues and public voices." },
+    { area: "production_design", status: "mapped", note: "Actual streets, shops, advertisements, school space and pandemic barriers provide the social environment, but the current sources do not isolate a design-department account." },
+    { area: "costume_makeup", status: "mapped", note: "Masks and ordinary contemporary clothing are historically central to the lockdown setting, but no dedicated costume or makeup source is currently recorded." },
+    { area: "cinematography", status: "source_verified", note: "BFI describes rough digital street observation, frontal confrontation, screens, advertisements and surveillance-like distance as the film's visual evidence." },
+    { area: "lighting", status: "mapped", note: "Available city and interior light support the documentary roughness, but no dedicated lighting account is currently recorded." },
+    { area: "camera_format", status: "mapped", note: "The institutional sources document DCP presentation and digital imagery but do not isolate the original camera and lens package." },
+    { area: "editing", status: "source_verified", note: "Film Comment and BFI analyse the alphabetic montage, archival collisions, chapter breaks and competing endings as the film's central argumentative machinery." },
+    { area: "sound_design", status: "source_verified", note: "BFI describes street noise, phones, insults, definitions, public speech and overlapping tribunal debate as a dense social field rather than a polished dramatic track." },
+    { area: "music", status: "mapped", note: "Music appears within the collage but is not the primary organising system in the current source set." },
+    { area: "effects_animation", status: "not_central", note: "The film's heterogeneity comes from practical digital recording, found imagery and montage rather than an effects-led pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "The first movement records pandemic Bucharest as contemporary evidence, while the second incorporates archive photographs, clips, signs and definitions into an essayistic public record." },
+  ],
+} as const satisfies FilmHistoryProfile;
