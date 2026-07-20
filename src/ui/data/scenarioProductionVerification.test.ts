@@ -22,14 +22,20 @@ const silentStudioSystemIds = [
   "scenario_frankenstein_1931",
 ] as const;
 
-const expectedVerifiedCount = 52;
+const lateSilentEarlySoundIds = [
+  "scenario_the_passion_of_joan_of_arc_1928",
+  "scenario_man_with_a_movie_camera_1929",
+  "scenario_m_1931",
+  "scenario_city_lights_1931",
+] as const;
+
+const expectedVerifiedCount = 56;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
   const scenarioIds = new Set(getClassicFilmScenarios().map((scenario) => scenario.id));
   assert.equal(records.length, expectedVerifiedCount);
   assert.equal(new Set(records.map((record) => record.scenarioId)).size, records.length);
-
   for (const record of records) {
     assert.equal(record.status, "verified");
     assert.match(record.verifiedAt, /^\d{4}-\d{2}-\d{2}$/);
@@ -48,20 +54,18 @@ test("verification records are sourced and refer to playable scenarios", () => {
 });
 
 test("silent cinema foundations are verified with four sources each", () => {
-  for (const scenarioId of silentFoundationIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.scenarioId, scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
+  for (const scenarioId of silentFoundationIds) assert.ok((getProductionCaseVerification(scenarioId)?.sources.length ?? 0) >= 4);
 });
 
 test("silent and early studio systems are verified with five sources each", () => {
-  for (const scenarioId of silentStudioSystemIds) {
+  for (const scenarioId of silentStudioSystemIds) assert.ok((getProductionCaseVerification(scenarioId)?.sources.length ?? 0) >= 5);
+});
+
+test("late silent and early sound systems are verified with four sources each", () => {
+  for (const scenarioId of lateSilentEarlySoundIds) {
     const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.scenarioId, scenarioId);
     assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 5);
+    assert.ok((record?.sources.length ?? 0) >= 4);
   }
 });
 
