@@ -5,6 +5,7 @@ import { mergeJapaneseAuteurExpansion } from "../../core/japaneseAuteurExpansion
 import { mergeModernCanonExpansion } from "../../core/modernCanonExpansion.js";
 import { mergePriorityIndieExpansion } from "../../core/priorityIndieExpansion.js";
 import { mergeSouthKoreanCinemaExpansion } from "../../core/southKoreanCinemaExpansion.js";
+import { mergeSouthSoutheastAsianExpansion } from "../../core/southSoutheastAsianExpansion.js";
 
 export type FilmScenarioSeed = {
   readonly id: string;
@@ -53,13 +54,14 @@ const modernCanonScenarios = mergeModernCanonExpansion(historicalScenarios);
 const priorityIndieScenarios = mergePriorityIndieExpansion(modernCanonScenarios);
 const eastAsianAuteurScenarios = mergeEastAsianAuteurExpansion(priorityIndieScenarios);
 const japaneseAuteurScenarios = mergeJapaneseAuteurExpansion(eastAsianAuteurScenarios);
-const mergedScenarios = mergeSouthKoreanCinemaExpansion(japaneseAuteurScenarios);
+const southKoreanScenarios = mergeSouthKoreanCinemaExpansion(japaneseAuteurScenarios);
+const mergedScenarios = mergeSouthSoutheastAsianExpansion(southKoreanScenarios);
 
 export const filmScenarioSeedData: FilmScenarioSeedFile = {
   ...importedSeedData,
-  source_list_id: `${importedSeedData.source_list_id}+manual_early_cinema_expansion_2026+manual_modern_indie_asian_prize_expansion_2026+manual_priority_indie_completion_2026+manual_east_asian_auteur_expansion_2026+manual_japanese_auteur_expansion_2026+manual_south_korean_cinema_expansion_2026`,
+  source_list_id: `${importedSeedData.source_list_id}+manual_early_cinema_expansion_2026+manual_modern_indie_asian_prize_expansion_2026+manual_priority_indie_completion_2026+manual_east_asian_auteur_expansion_2026+manual_japanese_auteur_expansion_2026+manual_south_korean_cinema_expansion_2026+manual_south_southeast_asian_expansion_2026`,
   scenario_count: mergedScenarios.length,
-  note: `${importedSeedData.note} The requested historical expansion, modern independent/Asian/prize-cinema expansion, 20-film priority-indie completion, 11-film East Asian auteur expansion, seven-film Japanese auteur expansion, and four-film South Korean cinema expansion reuse matching entries and append only missing titles.`,
+  note: `${importedSeedData.note} The requested historical expansion, modern independent/Asian/prize-cinema expansion, 20-film priority-indie completion, 11-film East Asian auteur expansion, seven-film Japanese auteur expansion, four-film South Korean cinema expansion, and seven-film South and Southeast Asian expansion reuse matching entries and append only missing titles.`,
   scenarios: mergedScenarios,
 };
 
