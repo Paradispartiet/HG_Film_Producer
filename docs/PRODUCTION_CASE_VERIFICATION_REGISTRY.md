@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 72 source-backed Production Cases.
+- 76 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -40,6 +40,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts`
 - `src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
+- `src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts`
 
 The complete audit schema is defined in:
 
@@ -199,6 +200,15 @@ This batch compares Paramount studio noir, British restrained melodrama, Italian
 - `scenario_pather_panchali_1955`
 
 This batch compares Daiei subjective period modernism, Shochiku domestic minimalism, Toho location action and Bengali location humanism.
+
+### Postwar European modernism and New Waves batch
+
+- `scenario_ordet_1955`
+- `scenario_ashes_and_diamonds_1958`
+- `scenario_persona_1966`
+- `scenario_daisies_1966`
+
+This batch compares Danish spiritual long-take chamber cinema, Polish Film School historical tragedy, Swedish psychological self-reflexivity and Czechoslovak feminist collage.
 
 ## Verification rule
 
