@@ -2,7 +2,7 @@
   "name": "hg-film-producer",
   "version": "0.1.0",
   "private": true,
-  "description": "A professional TypeScript foundation for HG Film Producer, a full film studio simulator connected to place-based film history.",
+  "description": "Filmverket: a shared film platform containing the Film Producer game, Film Atlas, Director Lab, Film School, and Film History.",
   "type": "module",
   "scripts": {
     "dev": "vite",
