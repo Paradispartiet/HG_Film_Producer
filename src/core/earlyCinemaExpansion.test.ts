@@ -41,6 +41,15 @@ test("the requested historical expansion contains exactly 58 unique films", () =
   assert.deepEqual(actualByDecade, requestedTitlesByDecade);
 });
 
+test("the expansion reuses two existing films and appends 56 missing films", () => {
+  const seedScenarios = readSeedScenarios();
+  const reusedDefinitions = earlyCinemaExpansionDefinitions.filter((definition) => (
+    seedScenarios.some((scenario) => scenarioMatchesEarlyCinemaDefinition(scenario, definition))
+  ));
+  assert.equal(reusedDefinitions.length, 2);
+  assert.equal(earlyCinemaExpansionDefinitions.length - reusedDefinitions.length, 56);
+});
+
 test("every requested film resolves once and has a complete playable brief blueprint", () => {
   const scenarios = mergeEarlyCinemaExpansion(readSeedScenarios());
 
