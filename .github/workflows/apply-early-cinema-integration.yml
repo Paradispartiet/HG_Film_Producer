@@ -1,0 +1,56 @@
+name: Apply early cinema resolver integration
+
+on:
+  push:
+    branches:
+      - early-cinema-expansion-58
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: early-cinema-expansion-58
+      - name: Patch production brief resolver
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('src/ui/data/scenarioProductionBriefs.ts')
+          text = path.read_text(encoding='utf-8')
+
+          import_line = 'import { getEarlyCinemaExpansionProductionBrief } from "./scenarioProductionBriefsEarlyCinemaExpansion";\n'
+          anchor = 'import type { FilmScenarioSeed } from "./filmScenarios";\n'
+          if import_line not in text:
+              if anchor not in text:
+                  raise SystemExit('Import anchor not found')
+              text = text.replace(anchor, anchor + import_line, 1)
+
+          old = '''export function resolveScenarioProductionBrief(scenario: FilmScenarioSeed): ScenarioProductionBrief {
+            return getScenarioProductionBrief(scenario.id) ?? getFallbackScenarioProductionBrief(scenario);
+          }'''
+          new = '''export function resolveScenarioProductionBrief(scenario: FilmScenarioSeed): ScenarioProductionBrief {
+            return getScenarioProductionBrief(scenario.id)
+              ?? getEarlyCinemaExpansionProductionBrief(scenario)
+              ?? getFallbackScenarioProductionBrief(scenario);
+          }'''
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif new not in text:
+              raise SystemExit('Resolver anchor not found')
+
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Remove temporary workflow and commit
+        run: |
+          rm .github/workflows/apply-early-cinema-integration.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/ui/data/scenarioProductionBriefs.ts .github/workflows/apply-early-cinema-integration.yml
+          git commit -m "Integrate early cinema production briefs"
+          git push origin HEAD:early-cinema-expansion-58
