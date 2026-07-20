@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const milkOfSorrowFilmHistoryProfile = {
+  scenarioId: "scenario_the_milk_of_sorrow_2009",
+  period: "Peruvian post-conflict art cinema, inherited-trauma allegory and song-led social realism",
+  traditions: ["Latin American post-conflict cinema", "Quechua-language cultural memory", "Ritual and allegorical social realism"],
+  before: "Peruvian and Latin American cinema had repeatedly addressed political violence, internal migration and uneven modernity, while Claudia Llosa's Madeinusa established an interest in ritual, female subjectivity and the unstable encounter between Andean traditions and urban power.",
+  moment: "Oberón Cinematográfica, Wanda Visión and Peruvian partners build Fausta's story from Claudia Llosa's screenplay, Magaly Solier's restrained performance and self-expressive songs, Natasha Braier's controlled images, Ana Villanueva's costumes, Frank Gutiérrez's patient editing and Selma Mutal's music; weddings, domestic labour, a wealthy household and dry Lima landscapes turn inherited fear into a material system of bodies, objects, class and ritual.",
+  after: "The Milk of Sorrow became the first Peruvian film in Berlinale competition, won the 2009 Golden Bear and FIPRESCI Prize and received an Academy Award nomination, bringing international attention to a form that joins post-conflict memory, cultural specificity, allegory and a protagonist's gradual recovery of agency.",
+  historyQuestion: "Which production system explains inherited fear from Peru's years of political violence entering a young woman's body, private Quechua songs becoming her clearest voice, weddings and mourning sharing the same spaces and restrained images turning ritual, labour and class into a path toward agency?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Berlinale and Cineuropa connect the film to Peru's internal conflict, sexual violence against women and the persistence of fear across generations after the historical period itself." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Cineuropa and BFI place the film within Peruvian and Latin American art cinema, combining social observation, cultural ritual, allegory and a female-centred visual language." },
+    { area: "industry_and_production_context", status: "source_verified", note: "DFI and Cineuropa document the Spain-Peru co-production, Oberón Cinematográfica, Wanda Visión, Vela Producciones, San Borja and the full principal craft team." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Berlinale and Cineuropa record the 2009 Golden Bear and FIPRESCI Prize; DFI and institutional circulation records document the film's international release and recognition." },
+    { area: "screenplay", status: "source_verified", note: "DFI and Cineuropa credit Claudia Llosa; the script externalises inherited fear through bodily protection, mourning, unequal domestic labour, withheld speech and ritual rather than clinical explanation." },
+    { area: "directing", status: "source_verified", note: "Cineuropa documents Llosa's use of a hostile but beautiful environment, cultural specificity and carefully controlled performance to hold realism, symbolism and tenderness together." },
+    { area: "performance", status: "source_verified", note: "DFI and Cineuropa document Magaly Solier, Susi Sánchez and the ensemble; Solier's controlled physical distance and songs make Fausta's inner life legible without explanatory dialogue." },
+    { area: "production_design", status: "mapped", note: "Enclosed rooms, wedding compounds, a wealthy household, grave and dry outskirts create the film's social geography, but the current sources do not isolate a dedicated production-design account." },
+    { area: "costume_makeup", status: "source_verified", note: "Cineuropa credits Ana Villanueva; wedding clothing, domestic uniforms, mourning dress and everyday garments connect class, ceremony and bodily self-protection." },
+    { area: "cinematography", status: "source_verified", note: "DFI and Cineuropa credit Natasha Braier; BFI identifies the film as an early example of her visually inventive Latin American work, with controlled distance, colour and object-centred composition." },
+    { area: "lighting", status: "mapped", note: "Interior restraint and hard exterior light separate private fear, ceremonial colour and exposed landscape, but the current sources do not document a dedicated lighting method." },
+    { area: "camera_format", status: "mapped", note: "The sources document the feature's visual authorship and international production but do not provide a sufficiently specific verified capture-format record." },
+    { area: "editing", status: "source_verified", note: "DFI and Cineuropa credit Frank Gutiérrez; the edit moves patiently among mourning, employment, weddings and small acts of agency so transformation remains incremental." },
+    { area: "sound_design", status: "mapped", note: "Domestic ambience, ceremony, withheld speech and the contrast between private song and public sound are structurally central, but the current sources do not isolate a complete sound-team account." },
+    { area: "music", status: "source_verified", note: "DFI and Cineuropa credit Selma Mutal, while contemporary festival coverage records Magaly Solier's role in the songs through which Fausta communicates fear, memory and resistance." },
+    { area: "effects_animation", status: "not_central", note: "The film depends on performance, symbolic objects, location, ritual, editing and sound rather than a central effects or animation pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Berlinale's World Cinema Fund and Cineuropa describe extensive gathered information about conflict memory, cultural practice and transmission, which Llosa transforms into fictional allegory rather than direct testimony." },
+  ],
+} as const satisfies FilmHistoryProfile;
