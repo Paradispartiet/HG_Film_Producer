@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const doubleIndemnityFilmHistoryProfile = {
+  scenarioId: "scenario_double_indemnity_1944",
+  period: "Mid-1940s Paramount crime production and the consolidation of American film noir",
+  traditions: ["Film noir", "Hard-boiled literary adaptation", "Confessional crime narration"],
+  before: "American crime films, hard-boiled fiction and German-influenced studio lighting had already supplied fatal plots, urban shadows and morally compromised protagonists.",
+  moment: "Billy Wilder and Raymond Chandler adapt James M. Cain into a retrospective confession whose Paramount interiors, John F. Seitz photography, venetian-blind shadows, procedural detail and Miklós Rózsa score bind desire to an already known outcome.",
+  after: "Its flashback confession, fatal couple and controlled chiaroscuro became a durable reference system for noir storytelling and screen crime.",
+  historyQuestion: "Which production logic explains why the film reveals the crime's outcome immediately yet increases suspense through voice-over, procedure, lighting and performance?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and BFI place the 1944 Paramount production inside the cycle later named film noir." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Hard-boiled adaptation, fatalistic crime narration and low-key studio imagery operate as one noir system." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Paramount, the 1943 production dates, Production Code negotiations and the credited department structure." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI, AFI and the Library of Congress document its later noir canonization and preservation status." },
+    { area: "screenplay", status: "source_verified", note: "Wilder and Chandler reshape Cain through a dictaphone confession, procedural insurance detail and an ending established before the flashback begins." },
+    { area: "directing", status: "source_verified", note: "Wilder stages seduction, planning and exposure as increasingly constrained exchanges rather than sensational murder spectacle." },
+    { area: "performance", status: "source_verified", note: "Fred MacMurray's against-type restraint, Barbara Stanwyck's controlled manipulation and Edward G. Robinson's rapid procedural speech create distinct moral pressures." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Hans Dreier and Hal Pereira; offices, the Dietrichson house and ordinary commercial spaces turn routine American interiors into traps." },
+    { area: "costume_makeup", status: "source_verified", note: "AFI credits Edith Head and the styling system separates professional normality, domestic display and calculated seduction." },
+    { area: "cinematography", status: "source_verified", note: "John F. Seitz's black-and-white photography uses angles, depth, night exteriors and patterned shadow as narrative information." },
+    { area: "lighting", status: "source_verified", note: "BFI specifically identifies the film's angles, shadow and venetian-blind chiaroscuro as central to its noir construction." },
+    { area: "camera_format", status: "source_verified", note: "AFI records a black-and-white sound production using Western Electric Mirrophonic recording." },
+    { area: "editing", status: "source_verified", note: "Doane Harrison's editing preserves the confession frame while tightening each procedural step toward the known collapse." },
+    { area: "sound_design", status: "source_verified", note: "The dictaphone, office speech, telephones, footsteps and restrained environmental sound make confession and surveillance audible." },
+    { area: "music", status: "source_verified", note: "AFI credits Miklós Rózsa; the score reinforces fatal momentum without replacing the film's dialogue-led procedure." },
+    { area: "effects_animation", status: "mapped", note: "AFI records process photography, but effects are supporting tools rather than the film's primary learning system." },
+    { area: "documentary_method", status: "not_central", note: "Insurance procedure and Los Angeles detail are researched fiction rather than documentary practice." },
+  ],
+} as const satisfies FilmHistoryProfile;
