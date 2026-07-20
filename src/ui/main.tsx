@@ -6,6 +6,7 @@ import { installProductionCaseVerificationMarkers } from "./data/productionCaseV
 import "./styles.css";
 import "./filmverket.css";
 import "./filmverketRouting.css";
+import "./filmDirectorExperience.css";
 import "./filmCraftLibrary.css";
 import "./filmCraftLibraryFilmLens.css";
 import "./filmResearchControlRoom.css";
