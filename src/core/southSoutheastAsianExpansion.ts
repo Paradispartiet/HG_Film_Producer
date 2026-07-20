@@ -121,7 +121,7 @@ export const southSoutheastAsianExpansionDefinitions = [
   },
 ] as const satisfies readonly ModernCanonExpansionDefinition[];
 
-const IDENTITY_GUARDED_IDS = new Set(
+const IDENTITY_GUARDED_IDS: ReadonlySet<string> = new Set(
   southSoutheastAsianExpansionDefinitions.map((definition) => definition.id),
 );
 
