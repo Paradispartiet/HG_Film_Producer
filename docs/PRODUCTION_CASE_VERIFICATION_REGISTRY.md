@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 116 source-backed Production Cases.
+- 120 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -42,6 +42,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationCrimeNoirTransformationsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationNorwegianPostwarGenreSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationNordicMinimalistSocialSystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationModernNordicBehaviorSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts`
@@ -228,6 +229,15 @@ This batch compares east-Oslo neorealist social cinema, independent mountain-hot
 - `scenario_oslo_august_31st_2011`
 
 This batch compares Finnish proletarian minimalism, Swedish studio tableau cinema, Finnish deadpan humanist community fable and Norwegian one-day urban realism.
+
+### Modern Nordic behavior and social systems batch
+
+- `scenario_force_majeure_2014`
+- `scenario_woman_at_war_2018`
+- `scenario_another_round_2020`
+- `scenario_the_worst_person_in_the_world_2021`
+
+This batch compares transnational Alpine social experiment, Icelandic eco-political visible-music action, Danish performance-centred alcohol experiment and Norwegian chaptered 35mm Oslo subjectivity.
 
 ### 1950s Asian postwar cinema batch
 

@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const worstPersonFilmHistoryProfile = {
+  scenarioId: "scenario_the_worst_person_in_the_world_2021",
+  period: "Norwegian contemporary Oslo cinema, chaptered romantic self-portrait and 35mm subjective realism",
+  traditions: ["Joachim Trier Oslo trilogy", "Contemporary romantic comedy-drama", "Chaptered subjective city cinema"],
+  before: "Trier and Eskil Vogt had already used Oslo, voice-over and subjective rupture to examine young adulthood, while romantic comedy usually demanded stable identity, clear lessons or a final couple as narrative resolution.",
+  moment: "Oslo Pictures and European partners build twelve chapters, a prologue and epilogue around Renate Reinsve's performance, Kasper Tuxen's 35mm natural-light photography, Oliver Bugge Coutté's temporal shifts, Roger Rosenberg's Oslo environments, Gisle Tveito's detailed sound and a citywide freeze sequence staged during the pandemic.",
+  after: "Renate Reinsve won Best Actress at Cannes, the film received Academy nominations for International Feature and Original Screenplay, and the completed Oslo trilogy became a major international example of contemporary romance using city, format and formal play without reducing adult uncertainty to failure.",
+  historyQuestion: "Which production system explains twelve chapters, 35mm Oslo portraiture, voice-over, changing careers and relationships, a city frozen for one subjective escape, and romantic comedy that gradually opens into illness, grief and time?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "NFI, Cannes and BFI production notes place the 2021 Norwegian-European production within the Oslo trilogy, pandemic-era filmmaking and international festival circulation." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Cannes and Film at Lincoln Center describe a modern character portrait divided into twelve chapters, renewing romantic comedy through mutable identity and subjective city form." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI production notes document Oslo Pictures, French, Swedish and Danish co-production, NFI, Eurimages and Nordic support, sales, distribution and the full production leadership." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records Renate Reinsve's acting award; NFI records Academy nominations for International Feature and Original Screenplay and major international circulation." },
+    { area: "screenplay", status: "source_verified", note: "Cannes and BFI credit Joachim Trier and Eskil Vogt; prologue, twelve chapters, epilogue, voice-over and temporal leaps preserve contradiction instead of forcing one coming-of-age conclusion." },
+    { area: "directing", status: "source_verified", note: "Trier's production interviews describe planning for 35mm, creating space for luck and staging the frozen-city sequence with residents joining the held action." },
+    { area: "performance", status: "source_verified", note: "Cannes and Film at Lincoln Center foreground Renate Reinsve, Anders Danielsen Lie and Herbert Nordrum; rehearsal, actor freedom and close portraiture carry tonal shifts from playfulness to mortality." },
+    { area: "production_design", status: "source_verified", note: "BFI credits Roger Rosenberg, Mirjam Veske, Elin Våg and Olga Gøril Vik; apartments, book events, cafés, hospitals and streets chart changing generations, relationships and possible lives." },
+    { area: "costume_makeup", status: "source_verified", note: "BFI credits Ellen Dæhli Ystehede and Trine Morland; evolving everyday dress and precise appearance changes help the chapter structure register time, work and relationship identity." },
+    { area: "cinematography", status: "source_verified", note: "Cannes, BFI, ARRI and Kasper Tuxen's production interview document 35mm portraiture, natural light, Cooke lenses, controlled movement and performance-centred framing across Oslo seasons." },
+    { area: "lighting", status: "source_verified", note: "Tuxen describes studying Oslo light, protecting continuity with bounced LED and HMI sources, recreating hard sun and sustaining long interiors and the multi-day frozen sequence." },
+    { area: "camera_format", status: "source_verified", note: "ARRI and the cinematography account document ARRICAM LT 35mm capture, 1.85:1 framing, Cooke lenses, faster stocks and grain used to preserve intimate portrait texture." },
+    { area: "editing", status: "source_verified", note: "Cannes and BFI credit Oliver Bugge Coutté; chapter transitions, ellipses, voice-over, fantasy departures and abrupt changes in duration turn several years into a subjective life structure." },
+    { area: "sound_design", status: "source_verified", note: "Cannes and BFI credit Gisle Tveito as sound designer and re-recording mixer; city texture, intimate speech, silence, music and heightened details distinguish realism from interior rupture." },
+    { area: "music", status: "source_verified", note: "Cannes and BFI credit Ola Fløttum and music supervisor Goran Obad; songs and score mark generational taste, emotional release, memory and chapter rhythm without fixing one stable tone." },
+    { area: "effects_animation", status: "source_verified", note: "BFI documents Storyline, BaconX and Symbiosys VFX, while production accounts explain the frozen-time sequence as coordinated live staging supported by visual effects and continuity work." },
+    { area: "documentary_method", status: "mapped", note: "The production studies real Oslo light, neighbourhoods and contemporary behaviour, but the film remains a deliberately scripted and formally subjective portrait rather than documentary observation." },
+  ],
+} as const satisfies FilmHistoryProfile;

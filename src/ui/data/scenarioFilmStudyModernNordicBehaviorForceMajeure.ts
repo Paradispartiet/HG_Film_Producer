@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const forceMajeureFilmHistoryProfile = {
+  scenarioId: "scenario_force_majeure_2014",
+  period: "Swedish contemporary social satire, controlled observational comedy and transnational Alpine production",
+  traditions: ["Ruben Östlund social experiment cinema", "Nordic discomfort comedy", "Family-role crisis drama"],
+  before: "Östlund's earlier features had already treated public behaviour as a social experiment, while European family comedy often depended on dialogue-driven reconciliation or psychological explanation rather than prolonged observation of one humiliating act.",
+  moment: "Plattform Produktion and European partners place a Scandinavian family in the French Alps, where Östlund's screenplay, Fredrik Wenzel's geometric widescreen photography, Jacob Secher Schulsinger's sustained editing, controlled resort spaces, recurring Vivaldi and the avalanche incident turn masculine self-image into a repeatable social test.",
+  after: "The film won the Un Certain Regard Jury Prize, became Sweden's Academy submission and established Östlund internationally as a filmmaker who uses exact staging, uncomfortable duration and corrosive humour to make audiences judge social behaviour without a reassuring verdict.",
+  historyQuestion: "Which production system explains the Alpine resort geometry, apparent avalanche, repeated retelling of one cowardly action, long social discomfort, multilingual Scandinavian family and comedy built from masculine self-defence rather than conventional reconciliation?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "The Swedish Film Institute, Cannes, DFI and Film at Lincoln Center place the 2014 transnational production within contemporary Scandinavian social satire and international festival cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Cannes and Film at Lincoln Center describe Östlund's observational comedy as a sociological test of family role, survival instinct, masculinity and bad faith." },
+    { area: "industry_and_production_context", status: "source_verified", note: "SFI, DFI and Cannes document Plattform Produktion with Swedish, Danish, Norwegian and French partners, public support, international sales and Alpine location production." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the Un Certain Regard Jury Prize, SFI records the Swedish Academy submission and international sales, and Film at Lincoln Center situates the film in Östlund's retrospective." },
+    { area: "screenplay", status: "source_verified", note: "DFI and Cannes credit Ruben Östlund; the script repeatedly restages and verbally contests the avalanche response so narrative control becomes the central marital conflict." },
+    { area: "directing", status: "source_verified", note: "Cannes, SFI and Magnolia's production materials credit Östlund and support a controlled observational method that withholds easy identification and extends embarrassment beyond ordinary comic timing." },
+    { area: "performance", status: "source_verified", note: "DFI and Cannes document Johannes Bah Kuhnke, Lisa Loven Kongsli, the child performers and Kristofer Hivju; performance shifts through denial, testimony, staged crying and social rehearsal." },
+    { area: "production_design", status: "source_verified", note: "The official production materials and institutional records identify the resort, hotel, restaurant, corridors, lifts and slopes as a tightly controlled spatial system for family surveillance and public embarrassment." },
+    { area: "costume_makeup", status: "source_verified", note: "Cannes credits Pia Aleborg's costume design; coordinated ski clothing, hotel leisure wear and technical mountain gear keep class, family unity and role performance visibly organized." },
+    { area: "cinematography", status: "source_verified", note: "Cannes and DFI credit Fredrik Wenzel; wide geometric compositions, reflective surfaces, distant bodies and spectacular mountain scale refuse to validate the family's emotional claims." },
+    { area: "lighting", status: "mapped", note: "Snow glare, resort practicals and controlled interiors shape the clinical tone, but the current sources do not isolate a complete lighting-department account." },
+    { area: "camera_format", status: "source_verified", note: "Cannes, DFI and Magnolia document the 118-minute widescreen festival feature and its digital exhibition materials; framing emphasizes architecture, landscape and sustained group behaviour." },
+    { area: "editing", status: "source_verified", note: "DFI credits Jacob Secher Schulsinger; held shots, delayed cuts and returns to routine allow discomfort to change meaning without releasing the characters through conventional reaction cutting." },
+    { area: "sound_design", status: "mapped", note: "Avalanche roar, grooming machinery, hotel ambience, crying and silence create pressure, but the available sources do not provide a full sound-department production account." },
+    { area: "music", status: "mapped", note: "Recurring Vivaldi functions as an ironic ritual cue around Alpine order and family self-image, although the present institutional sources do not isolate the complete music-supervision process." },
+    { area: "effects_animation", status: "mapped", note: "The apparent avalanche is the decisive practical and visual-effects event, but the current sources do not document the complete effects pipeline closely enough for source-verified status." },
+    { area: "documentary_method", status: "source_verified", note: "Östlund's institutional descriptions frame the film as an observational social experiment: one plausible emergency is used to expose learned roles, instinct and public self-narration." },
+  ],
+} as const satisfies FilmHistoryProfile;

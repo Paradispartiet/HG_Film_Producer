@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const womanAtWarFilmHistoryProfile = {
+  scenarioId: "scenario_woman_at_war_2018",
+  period: "Icelandic eco-political action comedy, visible-music narration and transnational arthouse production",
+  traditions: ["Icelandic landscape cinema", "Eco-political thriller", "Musical meta-comedy"],
+  before: "Environmental protest cinema often separated political argument from genre pleasure, while film music usually remained outside the story world instead of appearing beside the protagonist as an active chorus.",
+  moment: "Benedikt Erlingsson and Ólafur Egill Egilsson join sabotage thriller, adoption drama and Icelandic landscape action while Bergsteinn Björgúlfsson's photography, Davíð Alexander Corno's editing, Snorri Freyr Hilmarsson's design, an onscreen trio and Ukrainian singers make politics, inner conflict and score visible in the same frame.",
+  after: "The film won the Nordic Council Film Prize and European Parliament LUX Prize, earned major Icelandic craft awards and became a widely circulated example of ecological urgency carried through playful genre, female action and self-aware musical form.",
+  historyQuestion: "Which production system explains the Icelandic highlands, industrial sabotage, adoption deadline, visible musicians, Ukrainian chorus, comic surveillance and an environmental activist treated simultaneously as action hero, citizen and prospective mother?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Nordisk Film & TV Fond places the film in Icelandic climate politics, anti-dam protest history and the international rise of Icelandic cinema before its 2018 Cannes launch." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The director and fund describe an arthouse musical thriller that breaks genre codes, combining eco-political action, comedy, motherhood and a Greek-chorus-like music system." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Nordisk Film & TV Fond documents Icelandic-French-Ukrainian production, Icelandic Film Centre and CNC support, Beta Cinema sales and principal photography in Iceland and Ukraine." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Nordic Council records the 2018 film prize; Nordisk Film & TV Fond records the LUX Award, Cannes screenplay recognition, international awards and Icelandic Edda sweep." },
+    { area: "screenplay", status: "source_verified", note: "Erlingsson's interviews and production reporting credit co-writer Ólafur Egill Egilsson and document the linked environmental mission, adoption plot and deliberate refusal of one stable genre." },
+    { area: "directing", status: "source_verified", note: "The director describes a playful method inspired by filmmakers who break convention, surprising the audience while taking ecological and personal stakes seriously." },
+    { area: "performance", status: "source_verified", note: "The sources foreground Halldóra Geirharðsdóttir's central performance and dual-role work, carrying physical sabotage, comic concealment, choir leadership and maternal longing." },
+    { area: "production_design", status: "source_verified", note: "The Edda record credits Snorri Freyr Hilmarsson's awarded production design; industrial infrastructure, domestic cover, rehearsal space and landscape form one political action map." },
+    { area: "costume_makeup", status: "mapped", note: "Outdoor gear, choir clothing and everyday disguise support Halla's double life, but the current sources do not isolate complete costume and makeup department records." },
+    { area: "cinematography", status: "source_verified", note: "The Edda awards identify Bergsteinn Björgúlfsson's cinematography; the film connects highland scale, power lines, surveillance distance and visible musicians within precise action geography." },
+    { area: "lighting", status: "mapped", note: "Natural landscape light, industrial night work and domestic interiors shift the film between action and fable, but the present sources do not provide a detailed lighting account." },
+    { area: "camera_format", status: "mapped", note: "Institutional sources document the feature and its international presentation, but not enough capture-format detail is available here for source-verified status." },
+    { area: "editing", status: "source_verified", note: "The Edda record credits Davíð Alexander Corno; brisk alternation between sabotage, pursuit, choir, adoption bureaucracy and comic interruption preserves physical clarity and tonal surprise." },
+    { area: "sound_design", status: "source_verified", note: "The Edda awards identify Aymeric Devoldere, François De Morant, Raphael Sohier and Vincent Cosson; industrial noise, landscape presence and visible performance integrate action with commentary." },
+    { area: "music", status: "source_verified", note: "Erlingsson's interviews explain the visible trio as a Greek chorus and inner demons, while the Edda and Harpa records credit Davíð Þór Jónsson's award-winning score." },
+    { area: "effects_animation", status: "source_verified", note: "The Edda awards document the visual-effects team; infrastructure sabotage, pursuit and environmental action use effects as support for comprehensible physical stakes rather than spectacle alone." },
+    { area: "documentary_method", status: "source_verified", note: "The director grounds the fiction in his own climate activism, Icelandic anti-dam politics and real environmental conflict while transforming that research into a playful genre construction." },
+  ],
+} as const satisfies FilmHistoryProfile;

@@ -23,6 +23,7 @@ import { lateSilentEarlySoundVerificationRecords } from "./scenarioProductionVer
 import { minimalistRoadVerificationRecords } from "./scenarioProductionVerificationMinimalistRoadBatch";
 import { productionMethodVerificationRecords } from "./scenarioProductionVerificationMethodBatch";
 import { modernCraftVerificationRecords } from "./scenarioProductionVerificationModernBatch";
+import { modernNordicBehaviorSystemsVerificationRecords } from "./scenarioProductionVerificationModernNordicBehaviorSystemsBatch";
 import { newHollywoodBlockbusterVerificationRecords } from "./scenarioProductionVerificationNewHollywoodBlockbusterBatch";
 import { nordicMinimalistSocialSystemsVerificationRecords } from "./scenarioProductionVerificationNordicMinimalistSocialSystemsBatch";
 import { norwegianPostwarGenreSystemsVerificationRecords } from "./scenarioProductionVerificationNorwegianPostwarGenreSystemsBatch";
@@ -56,6 +57,7 @@ const additionalVerificationRecords = [
   ...crimeNoirTransformationsVerificationRecords,
   ...norwegianPostwarGenreSystemsVerificationRecords,
   ...nordicMinimalistSocialSystemsVerificationRecords,
+  ...modernNordicBehaviorSystemsVerificationRecords,
   ...asianPostwar1950sVerificationRecords,
   ...expressivePostwar1950sVerificationRecords,
   ...postwarEuropeanModernismVerificationRecords,
