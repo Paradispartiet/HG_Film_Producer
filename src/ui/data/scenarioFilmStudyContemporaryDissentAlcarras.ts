@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const alcarrasFilmHistoryProfile = {
+  scenarioId: "scenario_alcarras_2022",
+  period: "Catalan rural realism, nonprofessional ensemble cinema and agricultural transition drama",
+  traditions: ["Catalan regional cinema", "Neorealist nonprofessional performance", "Seasonal ensemble family drama"],
+  before: "Carla Simón's Summer 1993 had already transformed family memory and Catalan place into intimate realism, while Italian neorealism, rural ensemble cinema and seasonal labour films offered models for joining nonprofessional performance, landscape and social change.",
+  moment: "Simón and Arnau Vilaró shape a multi-generational final harvest from family experience and regional research; a year-long search across villages and farms considers thousands of local people, months of improvisation create shared family memories, and orchards, machinery, dialect, heat, insects and collective work preserve a threatened peach-farming life without turning it into pastoral nostalgia.",
+  after: "Alcarràs won the 2022 Golden Bear and brought Catalan rural life, small-scale agriculture and a large nonprofessional ensemble to international audiences, demonstrating how a highly prepared production can make scripted family drama feel observed rather than imposed.",
+  historyQuestion: "Which production system explains a Catalan final-harvest film written from family memory, cast through a year-long regional search, rehearsed through months of improvised shared life and organised across children, parents and grandparents rather than one central protagonist?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Berlinale, BFI and Cineuropa connect the film to changing Catalan agriculture, insecure land tenure, solar development and the decline of small family farming." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Simón cites Italian neorealism, The Tree of Wooden Clogs, western landscape cinema and contemporary filmmakers while adapting those references to regional Catalan ensemble realism." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cineuropa documents the project from Berlinale Co-Production Market development, while Screen and Berlinale describe the Spanish-Italian production and pandemic-delayed preparation." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Berlinale and BFI record the 2022 Golden Bear and the film's international recognition as a major contemporary rural ensemble drama." },
+    { area: "screenplay", status: "source_verified", note: "Screen documents Simón and Arnau Vilaró's family-inspired writing and the decision to distribute viewpoint across a grandfather, parents, children and adolescents." },
+    { area: "directing", status: "source_verified", note: "Simón describes precise narrative functions combined with flexible wording and improvisation, using extensive preparation so scenes can appear to happen spontaneously." },
+    { area: "performance", status: "source_verified", note: "Screen, BFI and Simón's interviews document a year-long regional search, thousands of candidates, mostly nonprofessional performers and months of exercises that built them into a believable family." },
+    { area: "production_design", status: "mapped", note: "Working orchards, farmhouses, machinery, vehicles and village spaces provide the material world, but the current sources do not isolate a dedicated production-design account." },
+    { area: "costume_makeup", status: "mapped", note: "Regional work clothes, summer wear and lived-in family appearance support age and labour, but no dedicated department source is currently recorded." },
+    { area: "cinematography", status: "source_verified", note: "BFI and Simón's interviews emphasise orchards, harsh summer conditions, collective labour and a camera that keeps multiple family actions alive within the same seasonal environment." },
+    { area: "lighting", status: "source_verified", note: "Simón describes filming the difficult summer sun to avoid idealising the countryside and to preserve how agricultural workers actually experience the land." },
+    { area: "camera_format", status: "mapped", note: "The current institutional and interview sources do not isolate the original camera and lens package." },
+    { area: "editing", status: "source_verified", note: "BFI and the interviews describe an ensemble rhythm built from parallel work, children's play, arguments and seasonal tasks rather than a single goal-driven protagonist." },
+    { area: "sound_design", status: "source_verified", note: "Insects, tractors, irrigation, family overlap, songs and harvest work preserve the living texture of the farm and keep labour present beyond dialogue." },
+    { area: "music", status: "mapped", note: "Songs and family music appear within the social environment, but the current source set does not provide a dedicated score-production account." },
+    { area: "effects_animation", status: "not_central", note: "Real locations, seasonal labour, performance and ensemble staging drive the production rather than an effects-led pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "The production draws on Simón's family history, regional dialect, real farmers, village casting, agricultural routines and long observation of the Alcarràs area." },
+  ],
+} as const satisfies FilmHistoryProfile;
