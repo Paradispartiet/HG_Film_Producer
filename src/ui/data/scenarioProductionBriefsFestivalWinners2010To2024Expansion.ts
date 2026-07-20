@@ -2,12 +2,13 @@ import { createModernCanonBriefBlueprint } from "../../core/modernCanonBriefBlue
 import { getFestivalWinners2010To2024ExpansionDefinition } from "../../core/festivalWinners2010To2024Expansion.js";
 import type { FilmScenarioSeed } from "./filmScenarios";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
+import { getScandinavianEuropeanExpansionProductionBrief } from "./scenarioProductionBriefsScandinavianEuropeanExpansion";
 
 export function getFestivalWinners2010To2024ExpansionProductionBrief(
   scenario: FilmScenarioSeed,
 ): ScenarioProductionBrief | undefined {
   const definition = getFestivalWinners2010To2024ExpansionDefinition(scenario);
-  if (!definition) return undefined;
+  if (!definition) return getScandinavianEuropeanExpansionProductionBrief(scenario);
   const blueprint = createModernCanonBriefBlueprint(definition);
 
   return {
