@@ -3,6 +3,7 @@ import {
   getProductionCaseVerificationRecords as getFoundationVerificationRecords,
   type ProductionCaseVerificationRecord,
 } from "./scenarioProductionVerification";
+import { productionSystems1930sVerificationRecords } from "./scenarioProductionVerification1930sProductionSystemsBatch";
 import { constructedWorldsVerificationRecords } from "./scenarioProductionVerificationConstructedWorldsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
 import { europeanPressureVerificationRecords } from "./scenarioProductionVerificationEuropeanPressureBatch";
@@ -35,6 +36,7 @@ const additionalVerificationRecords = [
   ...silentFoundationsVerificationRecords,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
+  ...productionSystems1930sVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
 
 const additionalVerificationByScenarioId = new Map<string, ProductionCaseVerificationRecord>(
