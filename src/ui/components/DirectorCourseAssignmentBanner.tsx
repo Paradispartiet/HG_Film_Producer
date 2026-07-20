@@ -43,6 +43,7 @@ import {
 
 type CourseAssignment = ScreenplayDirectorAssignment | PerformanceDirectorAssignment | CameraDirectorAssignment | LightingDesignDirectorAssignment | EditingSoundDirectorAssignment | FilmSchoolCapstoneAssignment;
 type LoadedCourseAssignment = CourseAssignment & { readonly storageKey: string };
+type LoadedCapstoneAssignment = FilmSchoolCapstoneAssignment & { readonly storageKey: string };
 
 type DirectorCourseAssignmentBannerProps = {
   readonly filmSlug: string | undefined;
@@ -96,7 +97,7 @@ export function DirectorCourseAssignmentBanner({ filmSlug, visible }: DirectorCo
     setAssignment(undefined);
   }
 
-  if (activeAssignment.courseId === FILM_SCHOOL_GROUND_COURSE_ID) {
+  if (isCapstoneAssignment(activeAssignment)) {
     const snapshot = loadCapstoneSnapshot(activeAssignment);
     const validation = validateFilmSchoolCapstoneProject(snapshot.project, activeAssignment);
     const submitted = isFilmSchoolCapstoneSubmissionForAssignment(snapshot.submission, activeAssignment);
@@ -212,6 +213,10 @@ function formatDateTime(value: string | undefined): string {
 
 function capitalize(value: string): string {
   return value ? `${value[0]?.toLocaleUpperCase() ?? ""}${value.slice(1)}` : value;
+}
+
+function isCapstoneAssignment(value: LoadedCourseAssignment): value is LoadedCapstoneAssignment {
+  return value.courseId === FILM_SCHOOL_GROUND_COURSE_ID;
 }
 
 function isAssignment(value: unknown, courseId: string): value is CourseAssignment {
