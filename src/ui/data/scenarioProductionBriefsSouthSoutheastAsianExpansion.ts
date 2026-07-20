@@ -1,14 +1,13 @@
 import { createModernCanonBriefBlueprint } from "../../core/modernCanonBriefBlueprint.js";
-import { getSouthKoreanCinemaExpansionDefinition } from "../../core/southKoreanCinemaExpansion.js";
+import { getSouthSoutheastAsianExpansionDefinition } from "../../core/southSoutheastAsianExpansion.js";
 import type { FilmScenarioSeed } from "./filmScenarios";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
-import { getSouthSoutheastAsianExpansionProductionBrief } from "./scenarioProductionBriefsSouthSoutheastAsianExpansion.js";
 
-export function getSouthKoreanCinemaExpansionProductionBrief(
+export function getSouthSoutheastAsianExpansionProductionBrief(
   scenario: FilmScenarioSeed,
 ): ScenarioProductionBrief | undefined {
-  const definition = getSouthKoreanCinemaExpansionDefinition(scenario);
-  if (!definition) return getSouthSoutheastAsianExpansionProductionBrief(scenario);
+  const definition = getSouthSoutheastAsianExpansionDefinition(scenario);
+  if (!definition) return undefined;
   const blueprint = createModernCanonBriefBlueprint(definition);
 
   return {
