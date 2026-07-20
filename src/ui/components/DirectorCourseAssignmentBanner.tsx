@@ -1,11 +1,20 @@
 import { useEffect, useState } from "react";
 
 import { DIRECTOR_BRIEF_FIELDS } from "../../core/directorBrief";
+import { coerceDirectorProject, getDirectorProjectStorageKey, type DirectorProject } from "../../core/directorProject";
 import {
   CAMERA_COURSE_ID,
   CAMERA_DIRECTOR_ASSIGNMENT_STORAGE_KEY,
   type CameraDirectorAssignment,
 } from "../../core/filmSchoolCameraCourse";
+import {
+  FILM_SCHOOL_CAPSTONE_SUBMISSION_STORAGE_KEY,
+  coerceFilmSchoolCapstoneSubmission,
+  createFilmSchoolCapstoneSubmission,
+  isFilmSchoolCapstoneSubmissionForAssignment,
+  validateFilmSchoolCapstoneProject,
+  type FilmSchoolCapstoneSubmission,
+} from "../../core/filmSchoolCapstoneSubmission";
 import {
   EDITING_SOUND_COURSE_ID,
   EDITING_SOUND_DIRECTOR_ASSIGNMENT_STORAGE_KEY,
@@ -34,10 +43,16 @@ import {
 
 type CourseAssignment = ScreenplayDirectorAssignment | PerformanceDirectorAssignment | CameraDirectorAssignment | LightingDesignDirectorAssignment | EditingSoundDirectorAssignment | FilmSchoolCapstoneAssignment;
 type LoadedCourseAssignment = CourseAssignment & { readonly storageKey: string };
+type LoadedCapstoneAssignment = FilmSchoolCapstoneAssignment & { readonly storageKey: string };
 
 type DirectorCourseAssignmentBannerProps = {
   readonly filmSlug: string | undefined;
   readonly visible: boolean;
+};
+
+type CapstoneSnapshot = {
+  readonly project: DirectorProject | undefined;
+  readonly submission: FilmSchoolCapstoneSubmission | undefined;
 };
 
 const assignmentSources = [
@@ -51,9 +66,23 @@ const assignmentSources = [
 
 export function DirectorCourseAssignmentBanner({ filmSlug, visible }: DirectorCourseAssignmentBannerProps) {
   const [assignment, setAssignment] = useState<LoadedCourseAssignment | undefined>(() => loadAssignment(filmSlug));
+  const [, setRevision] = useState(0);
 
   useEffect(() => {
-    if (visible) setAssignment(loadAssignment(filmSlug));
+    if (!visible) return undefined;
+    const refresh = () => {
+      setAssignment(loadAssignment(filmSlug));
+      setRevision((current) => current + 1);
+    };
+    refresh();
+    const intervalId = window.setInterval(refresh, 800);
+    window.addEventListener("focus", refresh);
+    window.addEventListener("storage", refresh);
+    return () => {
+      window.clearInterval(intervalId);
+      window.removeEventListener("focus", refresh);
+      window.removeEventListener("storage", refresh);
+    };
   }, [filmSlug, visible]);
 
   if (!visible || !assignment || assignment.filmSlug !== filmSlug) return null;
@@ -66,6 +95,56 @@ export function DirectorCourseAssignmentBanner({ filmSlug, visible }: DirectorCo
       // Banner can still be dismissed for the current session.
     }
     setAssignment(undefined);
+  }
+
+  if (isCapstoneAssignment(activeAssignment)) {
+    const capstoneAssignment: LoadedCapstoneAssignment = activeAssignment;
+    const snapshot = loadCapstoneSnapshot(capstoneAssignment);
+    const validation = validateFilmSchoolCapstoneProject(snapshot.project, capstoneAssignment);
+    const submitted = isFilmSchoolCapstoneSubmissionForAssignment(snapshot.submission, capstoneAssignment);
+    const projectChangedAfterSubmission = Boolean(submitted && snapshot.project && snapshot.submission && snapshot.project.updatedAt !== snapshot.submission.projectUpdatedAt);
+
+    function submitCapstone() {
+      if (!snapshot.project) return;
+      const submission = createFilmSchoolCapstoneSubmission(snapshot.project, capstoneAssignment);
+      if (!submission) return;
+      try {
+        window.localStorage.setItem(FILM_SCHOOL_CAPSTONE_SUBMISSION_STORAGE_KEY, JSON.stringify(submission));
+      } catch {
+        return;
+      }
+      setRevision((current) => current + 1);
+    }
+
+    const submissionLabel = submitted && !projectChangedAfterSubmission
+      ? "Regieksamen levert"
+      : submitted
+        ? "Lever oppdatert versjon"
+        : "Lever regieksamen";
+
+    return (
+      <aside className={submitted && !projectChangedAfterSubmission ? "director-course-assignment director-course-assignment--capstone is-submitted" : "director-course-assignment director-course-assignment--capstone"} aria-label="Film School final directing exam">
+        <header>
+          <div><span>Film School · Regieksamen</span><strong>{capstoneAssignment.title}</strong><small>{capstoneAssignment.filmYear} · {capstoneAssignment.filmTitle}</small></div>
+          <button aria-label="Dismiss course assignment" onClick={dismiss} type="button">×</button>
+        </header>
+        <p>{submitted && !projectChangedAfterSubmission ? `Levert ${formatDateTime(snapshot.submission?.submittedAt)} · ${snapshot.submission?.sceneTitle}` : capstoneAssignment.prompt}</p>
+        <section className="director-capstone-requirements" aria-live="polite">
+          <div className={validation.completedBriefFields === validation.totalBriefFields ? "is-complete" : ""}><strong>{validation.completedBriefFields}/{validation.totalBriefFields}</strong><span>regifelt i aktiv scene</span></div>
+          <div className={validation.completeShotCount >= validation.minimumCompleteShots ? "is-complete" : ""}><strong>{validation.completeShotCount}/{validation.minimumCompleteShots}</strong><span>komplette shot cards</span></div>
+          <div className={validation.assignmentMatchesProject ? "is-complete" : ""}><strong>{validation.assignmentMatchesProject ? "Ja" : "Nei"}</strong><span>riktig referansefilm</span></div>
+        </section>
+        {!submitted || projectChangedAfterSubmission ? (
+          <p className="director-capstone-guidance">{validation.canSubmit ? "Aktiv scene oppfyller kravene og kan leveres." : buildValidationGuidance(validation)}</p>
+        ) : null}
+        {projectChangedAfterSubmission ? <p className="director-capstone-warning">Prosjektet er endret etter innleveringen. Lever på nytt for å registrere siste versjon.</p> : null}
+        <section className="director-capstone-actions">
+          <button onClick={() => document.getElementById("director-active-scene")?.scrollIntoView({ behavior: "smooth", block: "start" })} type="button">Gå til scenebrieffet</button>
+          <button onClick={() => document.getElementById("director-shot-list")?.scrollIntoView({ behavior: "smooth", block: "start" })} type="button">Gå til bildeplanen</button>
+          <button className="is-primary" disabled={!validation.canSubmit || (submitted && !projectChangedAfterSubmission)} onClick={submitCapstone} type="button">{submissionLabel}</button>
+        </section>
+      </aside>
+    );
   }
 
   const fieldLabels = activeAssignment.fieldIds.map((fieldId) => (
@@ -98,6 +177,47 @@ function loadAssignment(filmSlug: string | undefined): LoadedCourseAssignment | 
     }
   }
   return assignments.sort((a, b) => b.createdAt.localeCompare(a.createdAt))[0];
+}
+
+function loadCapstoneSnapshot(assignment: FilmSchoolCapstoneAssignment): CapstoneSnapshot {
+  let project: DirectorProject | undefined;
+  let submission: FilmSchoolCapstoneSubmission | undefined;
+  try {
+    const rawProject = window.localStorage.getItem(getDirectorProjectStorageKey(assignment.filmId));
+    if (rawProject) {
+      project = coerceDirectorProject(JSON.parse(rawProject) as unknown, {
+        filmId: assignment.filmId,
+        filmTitle: assignment.filmTitle,
+        filmYear: assignment.filmYear,
+      }, "scene_capstone");
+    }
+    submission = coerceFilmSchoolCapstoneSubmission(JSON.parse(window.localStorage.getItem(FILM_SCHOOL_CAPSTONE_SUBMISSION_STORAGE_KEY) ?? "null") as unknown);
+  } catch {
+    // Missing or corrupt local data leaves the exam open but not submittable.
+  }
+  return { project, submission };
+}
+
+function buildValidationGuidance(validation: ReturnType<typeof validateFilmSchoolCapstoneProject>): string {
+  const messages: string[] = [];
+  if (!validation.assignmentMatchesProject) messages.push("Åpne filmen som ble valgt i Film School");
+  if (validation.missingBriefFieldIds.length > 0) messages.push(`fyll ${validation.missingBriefFieldIds.length} åpne regifelt`);
+  if (validation.completeShotCount < validation.minimumCompleteShots) messages.push(`fullfør ${validation.minimumCompleteShots - validation.completeShotCount} flere shot cards`);
+  return messages.length > 0 ? `${capitalize(messages.join(", og "))}.` : "Aktiv scene kan ikke leveres ennå.";
+}
+
+function formatDateTime(value: string | undefined): string {
+  if (!value) return "ukjent tidspunkt";
+  const timestamp = Date.parse(value);
+  return Number.isFinite(timestamp) ? new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" }).format(new Date(timestamp)) : value;
+}
+
+function capitalize(value: string): string {
+  return value ? `${value[0]?.toLocaleUpperCase() ?? ""}${value.slice(1)}` : value;
+}
+
+function isCapstoneAssignment(value: LoadedCourseAssignment): value is LoadedCapstoneAssignment {
+  return value.courseId === FILM_SCHOOL_GROUND_COURSE_ID;
 }
 
 function isAssignment(value: unknown, courseId: string): value is CourseAssignment {
