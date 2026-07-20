@@ -4,6 +4,7 @@ import { createFilmSlug, type FilmverketRoute } from "../../core/filmverketRoute
 import { getClassicFilmScenarios } from "../data/filmScenarios";
 import { useFilmverketHashRoute } from "../routing/useFilmverketHashRoute";
 import { FilmCraftLibraryOverlay } from "./FilmCraftLibraryOverlay";
+import { FilmDirectorExperience } from "./FilmDirectorExperience";
 import { FilmResearchControlRoom } from "./FilmResearchControlRoom";
 import { RoutedFilmverketPlatform } from "./RoutedFilmverketPlatform";
 
@@ -18,6 +19,7 @@ export function LandingScreen(props: LandingScreenProps) {
   const { navigate, route } = useFilmverketHashRoute();
   const scenarios = useMemo(() => getClassicFilmScenarios(), []);
   const previousNonResearchRoute = useRef<FilmverketRoute>({ section: "home" });
+  const directorRoute = route.section === "director" ? route : undefined;
 
   useEffect(() => {
     if (route.section !== "research") previousNonResearchRoute.current = route;
@@ -32,7 +34,11 @@ export function LandingScreen(props: LandingScreenProps) {
 
   return (
     <>
-      <RoutedFilmverketPlatform {...props} navigate={navigate} route={route} />
+      {directorRoute ? (
+        <FilmDirectorExperience navigate={navigate} route={directorRoute} />
+      ) : (
+        <RoutedFilmverketPlatform {...props} navigate={navigate} route={route} />
+      )}
       <FilmCraftLibraryOverlay />
       <FilmResearchControlRoom
         onClose={() => navigate(previousNonResearchRoute.current)}
