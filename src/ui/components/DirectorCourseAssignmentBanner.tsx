@@ -7,6 +7,11 @@ import {
   type CameraDirectorAssignment,
 } from "../../core/filmSchoolCameraCourse";
 import {
+  LIGHTING_DESIGN_COURSE_ID,
+  LIGHTING_DESIGN_DIRECTOR_ASSIGNMENT_STORAGE_KEY,
+  type LightingDesignDirectorAssignment,
+} from "../../core/filmSchoolLightingDesignCourse";
+import {
   PERFORMANCE_COURSE_ID,
   PERFORMANCE_DIRECTOR_ASSIGNMENT_STORAGE_KEY,
   type PerformanceDirectorAssignment,
@@ -17,7 +22,7 @@ import {
   type ScreenplayDirectorAssignment,
 } from "../../core/filmSchoolScreenplayCourse";
 
-type CourseAssignment = ScreenplayDirectorAssignment | PerformanceDirectorAssignment | CameraDirectorAssignment;
+type CourseAssignment = ScreenplayDirectorAssignment | PerformanceDirectorAssignment | CameraDirectorAssignment | LightingDesignDirectorAssignment;
 type LoadedCourseAssignment = CourseAssignment & { readonly storageKey: string };
 
 type DirectorCourseAssignmentBannerProps = {
@@ -29,6 +34,7 @@ const assignmentSources = [
   { storageKey: SCREENPLAY_DIRECTOR_ASSIGNMENT_STORAGE_KEY, courseId: SCREENPLAY_COURSE_ID },
   { storageKey: PERFORMANCE_DIRECTOR_ASSIGNMENT_STORAGE_KEY, courseId: PERFORMANCE_COURSE_ID },
   { storageKey: CAMERA_DIRECTOR_ASSIGNMENT_STORAGE_KEY, courseId: CAMERA_COURSE_ID },
+  { storageKey: LIGHTING_DESIGN_DIRECTOR_ASSIGNMENT_STORAGE_KEY, courseId: LIGHTING_DESIGN_COURSE_ID },
 ] as const;
 
 export function DirectorCourseAssignmentBanner({ filmSlug, visible }: DirectorCourseAssignmentBannerProps) {

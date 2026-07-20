@@ -1,0 +1,19 @@
+.school-course-hero--lighting-design {
+  background:
+    radial-gradient(circle at 82% 20%, rgba(255, 103, 147, 0.17), transparent 31%),
+    radial-gradient(circle at 68% 74%, rgba(121, 96, 255, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(255, 103, 147, 0.08), rgba(211, 255, 70, 0.025) 56%, transparent);
+}
+
+.school-lighting-design-course-shell .school-course-progress > span {
+  background: linear-gradient(90deg, #ff6793, #f6b84b, #d3ff46);
+}
+
+.school-lighting-design-course-shell .school-principle-card {
+  border-color: rgba(255, 103, 147, 0.28);
+  background: linear-gradient(135deg, rgba(255, 103, 147, 0.1), rgba(121, 96, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.school-lighting-design-course-shell .school-film-example {
+  border-color: rgba(255, 103, 147, 0.24);
+}

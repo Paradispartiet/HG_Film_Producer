@@ -11,6 +11,7 @@ import { FilmDirectorExperience } from "./FilmDirectorExperience";
 import { FilmResearchControlRoom } from "./FilmResearchControlRoom";
 import { FilmSchoolCameraCourse } from "./FilmSchoolCameraCourse";
 import { FilmSchoolCourseNavigation, type FilmSchoolCourseId } from "./FilmSchoolCourseNavigation";
+import { FilmSchoolLightingDesignCourse } from "./FilmSchoolLightingDesignCourse";
 import { FilmSchoolPerformanceCourse } from "./FilmSchoolPerformanceCourse";
 import { FilmSchoolScreenplayCourse } from "./FilmSchoolScreenplayCourse";
 import { RoutedFilmverketPlatform } from "./RoutedFilmverketPlatform";
@@ -64,6 +65,9 @@ export function LandingScreen(props: LandingScreenProps) {
     if (schoolCourseId === "camera") {
       return <FilmSchoolCameraCourse {...sharedProps} onSelectCourse={selectSchoolCourse} />;
     }
+    if (schoolCourseId === "lightingDesign") {
+      return <FilmSchoolLightingDesignCourse {...sharedProps} onSelectCourse={selectSchoolCourse} />;
+    }
     return (
       <>
         <FilmSchoolScreenplayCourse {...sharedProps} />
@@ -99,7 +103,7 @@ export function LandingScreen(props: LandingScreenProps) {
 function loadSchoolCourseId(): FilmSchoolCourseId {
   try {
     const stored = window.localStorage.getItem(SCHOOL_ACTIVE_COURSE_STORAGE_KEY);
-    if (stored === "performance" || stored === "camera") return stored;
+    if (stored === "performance" || stored === "camera" || stored === "lightingDesign") return stored;
     return "screenplay";
   } catch {
     return "screenplay";
