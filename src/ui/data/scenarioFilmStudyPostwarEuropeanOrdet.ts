@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const ordetFilmHistoryProfile = {
+  scenarioId: "scenario_ordet_1955",
+  period: "Danish postwar spiritual modernism, Palladium chamber production and long-take staging",
+  traditions: ["Transcendental cinema", "Theatrical adaptation", "Long-take chamber drama"],
+  before: "Stage-derived religious drama often lets dialogue explain belief and uses editing to move between speakers, while classical screen melodrama externalizes crisis through reaction coverage and musical emphasis.",
+  moment: "Dreyer transforms Kaj Munk's play into a rigorously cinematic chamber work: Henning Bendtsen's black-and-white camera moves slowly through spare farm interiors, dialogue replaces rapid découpage, performance remains physically exact, and only 114 shots carry the full feature.",
+  after: "DFI preservation, institutional circulation and continued study of the film's long takes, restrained sound and staged belief have kept it central to discussions of spiritual and transcendental cinema.",
+  historyQuestion: "Which production system explains why belief, doubt and grief are carried by duration, blocking, voices and tiny camera movements instead of rapid cutting or spectacle?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "DFI and BFI place the 1955 Palladium production in Dreyer's late Danish period and identify it as his only feature between 1945 and 1964." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and DFI scholarship connect the film to spiritual modernism, theatrical adaptation and an unusually controlled long-take style." },
+    { area: "industry_and_production_context", status: "source_verified", note: "DFI records Palladium production, the complete department credits, 35 mm black-and-white sound capture and Danish release context." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI, Criterion and DFI preserve and circulate the film as a major reference for transcendental staging and long-duration chamber cinema." },
+    { area: "screenplay", status: "source_verified", note: "Dreyer adapts Kaj Munk's 1932 play, preserving doctrinal conflict while reorganizing it around rooms, waiting, childbirth, death and the final test of belief." },
+    { area: "directing", status: "source_verified", note: "Dreyer replaces conventional coverage with slow camera movement, long uninterrupted takes and exact entrances, exits and shifts of attention." },
+    { area: "performance", status: "source_verified", note: "Speech, stillness, gesture and distance between family members carry opposing forms of faith without broad melodramatic emphasis." },
+    { area: "production_design", status: "source_verified", note: "DFI credits Erik Aaes; sparse farm rooms, doors, beds and practical objects create a precise chamber geography for belief and grief." },
+    { area: "costume_makeup", status: "mapped", note: "DFI records wardrobe and makeup departments, but detailed film-specific evidence about their design method remains limited." },
+    { area: "cinematography", status: "source_verified", note: "Henning Bendtsen's restrained black-and-white photography and slow lateral movement keep bodies, rooms and changes of conviction readable inside extended takes." },
+    { area: "lighting", status: "mapped", note: "The interiors maintain controlled tonal separation and practical realism, while dedicated lighting-method documentation remains incomplete." },
+    { area: "camera_format", status: "source_verified", note: "DFI records a 35 mm black-and-white sound production in the normal Academy-era frame." },
+    { area: "editing", status: "source_verified", note: "BFI and DFI scholarship document the extreme reduction of cutting: 114 shots carry roughly two hours, with dialogue and blocking doing work normally assigned to montage." },
+    { area: "sound_design", status: "source_verified", note: "Voices, footsteps, wind and domestic quiet remain exposed; DFI credits sound engineer Knud Kristensen and BFI identifies sound as part of the film's physical intensity." },
+    { area: "music", status: "source_verified", note: "DFI credits Poul Schierbeck and documents the film's restrained score and songs rather than a continuously directive musical system." },
+    { area: "effects_animation", status: "not_central", note: "The climactic transformation is staged through performance, duration, framing and sound rather than visible effects spectacle." },
+    { area: "documentary_method", status: "not_central", note: "The film is a controlled literary and theatrical adaptation rather than an observational or documentary production." },
+  ],
+} as const satisfies FilmHistoryProfile;
