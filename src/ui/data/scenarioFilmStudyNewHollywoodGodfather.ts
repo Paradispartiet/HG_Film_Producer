@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const godfatherFilmHistoryProfile = {
+  scenarioId: "scenario_the_godfather_1972",
+  period: "New Hollywood prestige production, period crime epic and family succession drama",
+  traditions: ["New Hollywood", "Gangster epic", "Literary adaptation"],
+  before: "American gangster films usually treated criminal organizations through rise-and-fall plots, public action and moral containment, while studio prestige adaptations favored more visibly polished illumination.",
+  moment: "Francis Ford Coppola and Mario Puzo reshape Puzo's novel as a family and institutional succession story, produced by Paramount and Alfran across New York, studio interiors and Sicily with Gordon Willis's controlled darkness and Dean Tavoularis's period world.",
+  after: "The film's large audience, awards and preservation history made its union of auteur control, studio scale, period design and restrained performance a durable model for prestige American crime storytelling.",
+  historyQuestion: "Which production system explains the film's quiet family rituals, dark interiors, period locations and parallel editing of ceremony with organized violence?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and Library of Congress document the early-1970s production, 1945-1950s setting and its place in American film culture." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources place the film within New Hollywood while showing its transformation of the classical gangster and family-epic traditions." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Paramount and Alfran production, studio resistance, New York and Sicily locations, Filmways interiors and a roughly six-million-dollar production." },
+    { area: "reception_and_legacy", status: "source_verified", note: "AFI and Library of Congress document its awards, major audience response, National Film Registry status and continuing preservation history." },
+    { area: "screenplay", status: "source_verified", note: "AFI credits Coppola and Puzo and documents adaptation decisions, studio pressure and the retention of the novel's mid-century setting." },
+    { area: "directing", status: "source_verified", note: "AFI documents Coppola's defense of New York locations, Brando and Pacino, while ASC records his agreement with Willis on a mechanically simple period approach." },
+    { area: "performance", status: "source_verified", note: "AFI documents casting conflict, Brando's physical and vocal construction and Pacino's gradual performance convincing studio executives." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Dean Tavoularis and records real New York settings, the Staten Island compound, Filmways interiors and period-controlled locations." },
+    { area: "costume_makeup", status: "source_verified", note: "AFI credits Anna Hill Johnstone and Dick Smith and documents Brando's screen-test transformation into the older Don Corleone." },
+    { area: "cinematography", status: "source_verified", note: "ASC's production interview documents Gordon Willis's brown and blue-black palette, location strategy, restrained mechanics and controlled negative exposure." },
+    { area: "lighting", status: "source_verified", note: "Library of Congress and ASC document the underlit mood and overhead lighting system extended from Brando's screen test across the film." },
+    { area: "camera_format", status: "source_verified", note: "AFI records Technicolor sound production; ASC specifies Eastman color negative, Arriflex use, dolly track and strict one-light printing control." },
+    { area: "editing", status: "source_verified", note: "AFI credits William Reynolds and Peter Zinner; the film organizes long-form succession through controlled ellipsis and parallel ceremony-violence structures." },
+    { area: "sound_design", status: "source_verified", note: "AFI credits Christopher Newman, Bud Grenzbach and Richard Portman and records the production and rerecording sound departments." },
+    { area: "music", status: "source_verified", note: "AFI and Library of Congress document Nino Rota's melancholy recurring score and Carmine Coppola's wedding music." },
+    { area: "effects_animation", status: "mapped", note: "Practical gun effects and limited special-effects work support the crime action, but effects are not the film's primary production system." },
+    { area: "documentary_method", status: "source_verified", note: "AFI documents extensive real New York settings and location coordination used to ground the fictional period reconstruction in specific neighborhoods." },
+  ],
+} as const satisfies FilmHistoryProfile;
