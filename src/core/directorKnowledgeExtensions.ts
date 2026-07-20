@@ -1,4 +1,4 @@
-import { DIRECTOR_TERMS, type DirectorTerm } from "./directorKnowledge";
+import { DIRECTOR_TERMS, type DirectorTerm } from "./directorKnowledge.js";
 
 const extensions: readonly DirectorTerm[] = [
   { id: "camera_test", term: "Camera test", norwegian: "Kameratest", category: "production_post", phase: "preproduction", level: "foundation", definition: "En planlagt prøve av kamera, objektiv, lys, eksponering, kostyme, sminke eller arbeidsflyt før hovedopptak.", directorUse: "Regissøren bruker testen til å gjøre estetiske valg konkrete og oppdage tekniske problemer før de blir kostbare.", example: "To linsesett testes på hud, praktiske lyskilder og høylys før filmens optikk velges.", sourceIds: ["arri-image", "screenskills-director"] },
