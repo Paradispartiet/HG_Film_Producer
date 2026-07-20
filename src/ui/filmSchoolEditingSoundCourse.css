@@ -18,6 +18,12 @@
   border-color: rgba(90, 218, 255, 0.24);
 }
 
+.school-performance-course-shell .school-course-roadmap,
+.school-camera-course-shell .school-course-roadmap,
+.school-lighting-design-course-shell .school-course-roadmap {
+  display: none;
+}
+
 .school-course-roadmap--complete article {
   border-color: rgba(211, 255, 70, 0.3);
   background: linear-gradient(135deg, rgba(211, 255, 70, 0.08), rgba(90, 218, 255, 0.04));
