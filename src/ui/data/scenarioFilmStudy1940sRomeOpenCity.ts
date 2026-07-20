@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const romeOpenCityFilmHistoryProfile = {
+  scenarioId: "scenario_rome_open_city_1945",
+  period: "Italian wartime and immediate-postwar production at the emergence of neorealism",
+  traditions: ["Italian neorealism", "Resistance drama", "Location-based wartime reconstruction"],
+  before: "Italian studio cinema under Fascism had favored controlled production, while wartime documentary and lived occupation created pressure for a more immediate relation between screen fiction and contemporary streets.",
+  moment: "Rossellini, Sergio Amidei and Federico Fellini develop resistance stories during and just after occupation, then combine Rome locations, damaged infrastructure, scarce mixed film stock, studio interiors, professional performers and ordinary faces into an urgent communal drama.",
+  after: "The film's international circulation helped establish Italian neorealism as a major postwar reference for location production, social history and fiction shaped by material conditions.",
+  historyQuestion: "Which production logic explains why uneven materials, real streets, melodrama and communal experience strengthen rather than weaken the film's historical force?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Criterion place the film directly after Rome's liberation and connect its subject to experiences lived by the filmmakers." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film is documented as a foundational case of Italian neorealism while retaining melodramatic and star-performance elements." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI documents damaged or unavailable studio infrastructure, street shooting, scarce electricity and mixed 35mm stock under precarious conditions." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI and Criterion document its international awards, restoration and role in the recognition of postwar Italian cinema." },
+    { area: "screenplay", status: "source_verified", note: "Sergio Amidei, Federico Fellini and Rossellini weave several resistance and civilian experiences into one compressed communal narrative." },
+    { area: "directing", status: "source_verified", note: "Rossellini moves between domestic routine, resistance procedure, humor and sudden violence without isolating politics from everyday life." },
+    { area: "performance", status: "source_verified", note: "Anna Magnani and Aldo Fabrizi anchor the film while professional and less-polished presences create a deliberately mixed performance texture." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Rosario Megna; real streets and improvised facilities are combined with designed interiors rather than replacing studio work entirely." },
+    { area: "costume_makeup", status: "mapped", note: "Wartime civilian, clerical and military dress grounds social identities, while dedicated department sourcing remains incomplete." },
+    { area: "cinematography", status: "source_verified", note: "Ubaldo Arata's photography joins location immediacy, studio coverage and visibly uneven materials into one historical texture." },
+    { area: "lighting", status: "mapped", note: "Available environments and constrained production affected exposure, but detailed lighting documentation remains incomplete." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records black-and-white 1.37:1, while BFI documents the difficult sourcing of 35mm stock." },
+    { area: "editing", status: "source_verified", note: "Eraldo Da Roma connects neighborhood life, resistance action and abrupt death while preserving communal rather than single-hero emphasis." },
+    { area: "sound_design", status: "mapped", note: "Dialogue, streets and crowd activity support immediacy, but detailed production and post-sound evidence remains pending." },
+    { area: "music", status: "source_verified", note: "Criterion credits Renzo Rossellini; the score supports melodrama and mourning inside the rougher realist surface." },
+    { area: "effects_animation", status: "not_central", note: "The film's force comes from location, performance and reconstruction rather than effects spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "The screenplay draws on recent people, events and places, but rhetorically reshapes them into resistance fiction rather than neutral record." },
+  ],
+} as const satisfies FilmHistoryProfile;

@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const thirdManFilmHistoryProfile = {
+  scenarioId: "scenario_the_third_man_1949",
+  period: "British postwar thriller production built from occupied Vienna, location noir and transatlantic collaboration",
+  traditions: ["Postwar noir", "Location thriller", "Graham Greene moral fable"],
+  before: "Studio noir had already developed shadow, fatalism and criminal investigation, while wartime Europe supplied ruined cities and divided political geographies that could no longer be treated as neutral backdrops.",
+  moment: "Alexander Korda commissions Graham Greene to research Vienna; Carol Reed then combines bombed streets, three location units, Robert Krasker's canted photography, Shepperton sewer replicas, Orson Welles's delayed arrival and Anton Karas's solo zither into a thriller inseparable from the occupied city.",
+  after: "Its location-nightmare imagery, delayed star reveal and counterintuitive zither score became durable models for postwar thrillers and cities treated as moral systems.",
+  historyQuestion: "Which production logic explains why real ruins, reconstructed sewers, canted frames and a solo zither feel like parts of one divided postwar city?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Criterion place the film in four-power occupied Vienna and the material aftermath of the Second World War." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The case joins British thriller craft, noir visual language and a postwar European moral fable." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion documents Korda's commission, Vienna research, three location units, Sascha facilities and later Shepperton reconstruction." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI and Criterion document restoration, long critical standing and the continuing circulation of the Harry Lime theme." },
+    { area: "screenplay", status: "source_verified", note: "Graham Greene develops the story from Vienna research, delayed revelation and conflicting testimony around an apparently dead friend." },
+    { area: "directing", status: "source_verified", note: "Reed personally coordinates multiple units, night work, actor scenes and the gradual conversion of investigation into moral disillusionment." },
+    { area: "performance", status: "source_verified", note: "Joseph Cotten's naïveté, Alida Valli's guarded loyalty and Orson Welles's delayed entrance distribute knowledge unevenly across the ensemble." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Vincent Korda; actual Vienna ruins and rebuilt sewer environments are integrated into one visual world." },
+    { area: "costume_makeup", status: "mapped", note: "Occupation uniforms, displaced civilians and postwar civilian dress clarify authority and precarity, while department research remains incomplete." },
+    { area: "cinematography", status: "source_verified", note: "Robert Krasker's black-and-white photography uses wide-angle distortion, canted frames, wet streets, deep shadow and stark entrances." },
+    { area: "lighting", status: "source_verified", note: "Night-unit photography and hard directional light turn doorways, rubble and sewers into unstable fields of revelation." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records a black-and-white 1.33:1 production with monaural sound." },
+    { area: "editing", status: "source_verified", note: "Oswald Hafenrichter controls delayed revelation, witness accounts, pursuit geography and the cross-location sewer climax." },
+    { area: "sound_design", status: "source_verified", note: "Footsteps, echoes, multilingual streets and sewer acoustics extend threat beyond the visible frame." },
+    { area: "music", status: "source_verified", note: "Anton Karas's solo zither resists expected orchestral noir scoring and gives the damaged city an ironic, brittle identity." },
+    { area: "effects_animation", status: "source_verified", note: "Stand-ins, second-unit plates and Shepperton sewer reconstruction solve unavailable performers and unsafe or impractical locations." },
+    { area: "documentary_method", status: "mapped", note: "Greene's research and extensive location work ground the fiction in occupied Vienna without making it documentary." },
+  ],
+} as const satisfies FilmHistoryProfile;

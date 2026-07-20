@@ -4,6 +4,7 @@ import {
   type ProductionCaseVerificationRecord,
 } from "./scenarioProductionVerification";
 import { productionSystems1930sVerificationRecords } from "./scenarioProductionVerification1930sProductionSystemsBatch";
+import { noirRealism1940sVerificationRecords } from "./scenarioProductionVerification1940sNoirRealismBatch";
 import { classicalHollywoodVerificationRecords } from "./scenarioProductionVerificationClassicalHollywoodBatch";
 import { constructedWorldsVerificationRecords } from "./scenarioProductionVerificationConstructedWorldsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -39,6 +40,7 @@ const additionalVerificationRecords = [
   ...lateSilentEarlySoundVerificationRecords,
   ...productionSystems1930sVerificationRecords,
   ...classicalHollywoodVerificationRecords,
+  ...noirRealism1940sVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
 
 const additionalVerificationByScenarioId = new Map<string, ProductionCaseVerificationRecord>(
