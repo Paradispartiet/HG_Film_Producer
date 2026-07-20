@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case must contain all mapp
 All 244 Production Cases now resolve to the same complete mapping structure.
 
 - 17 mandatory film-history and film-craft areas.
-- 44 source-backed film-history profiles.
-- 200 cases with a complete audit structure and visible research gaps.
+- 48 source-backed film-history profiles.
+- 196 cases with a complete audit structure and visible research gaps.
 - No points, ranks, badges or reward currencies.
 - The historical comparison is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The current 44 source-backed history profiles are the same controlled group covered by the Production Case verification registry:
+The current 48 source-backed history profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -77,6 +77,10 @@ The current 44 source-backed history profiles are the same controlled group cove
 - Smoke
 - The Man Who Wasn't There
 - American Splendor
+- A Trip to the Moon
+- The Cabinet of Dr. Caligari
+- Nosferatu
+- Battleship Potemkin
 
 ## Complete mapping schema
 
@@ -176,7 +180,9 @@ A date or movement name alone does not teach film history. The player learns mor
 - enclosed Greek family allegory versus restrained post-Dogme community realism;
 - semi-documentary French labor surveillance versus Austrian noir transformed through rural duration;
 - episodic Memphis place and parallel time versus dialogue-led Brooklyn neighborhood ensemble;
-- planned photochemical neo-noir monochrome versus documentary-comics-animation biography.
+- planned photochemical neo-noir monochrome versus documentary-comics-animation biography;
+- theatrical camera-trick fantasy versus a wholly designed Expressionist studio world;
+- location-based Weimar horror versus Soviet collision montage;
 - videotaped independent confession versus observational queer community documentary;
 - Taiwan urban modernism versus Chinese provincial duration and disappearing-landscape realism;
 - Japanese procedural horror versus Korean lyrical moral realism;
@@ -218,26 +224,29 @@ A Production Case is fully film-history-and-craft verified only when it has:
 - a playable historical comparison with plausible alternatives;
 - no unsupported claims of innovation or influence.
 
-## Research order for the remaining 200 cases
+## Research order for the remaining 196 cases
 
 Research should proceed by coherent historical groups, not by random list order. This makes comparisons better and reduces duplicate work.
 
-1. **Postwar realism and New Waves**
+1. **Further silent cinema and classical foundations**
+   - continue from trick film, Expressionism, location horror and Soviet montage into silent comedy, Scandinavian cinema and early studio genre systems.
+
+2. **Postwar realism and New Waves**
    - map neorealism, French New Wave, British social realism, New German Cinema and related national movements.
 
-2. **Classical Hollywood and postwar studio cinema**
+3. **Classical Hollywood and postwar studio cinema**
    - map studio production, genre development, television adaptation, widescreen and color systems.
 
-3. **1970s–1980s national and genre renewal**
+4. **1970s–1980s national and genre renewal**
    - map New Hollywood, Australian cinema, political cinema, modern horror and blockbuster-era production.
 
-4. **1990s independent cinema and digital transition**
+5. **1990s independent cinema and digital transition**
    - map Dogme 95, global independent cinema, consumer video and nonlinear editing.
 
-5. **2000s–2010s transnational, regional and digital cinema**
+6. **2000s–2010s transnational, regional and digital cinema**
    - map digital capture, performance-preserving VFX, hybrid documentary, regional location production, festival circulation and contemporary genre forms.
 
-6. **2020s cases**
+7. **2020s cases**
    - map streaming-era production and reception only when stable, sourced historical interpretation is possible.
 
 Each research batch should add related films together so the game can offer meaningful comparison choices.
@@ -258,8 +267,7 @@ Each research batch should add related films together so the game can offer mean
 The mapping combines historical significance with complete production craft:
 
 - The Library of Congress evaluates films as culturally, historically or aesthetically significant and publishes expert film-history essays: https://www.loc.gov/programs/national-film-preservation-board/film-registry/
-- AFI teaches filmmaking through connected disciplines including cinematography, directing, editing, producing, production design and screenwriting: https://www.afi.com/
-- The Academy's education resources cover animation, casting, cinematography, costume, editing, composing, makeup, production design, performance, screenwriting, sound and VFX: https://www.oscars.org/learn/academy-gold-education-video-guide
-- BFI education resources connect film study, history and practical filmmaking: https://www.bfi.org.uk/resources-events-teachers/resources-teachers
+- The BFI teaches film through historical context, close analysis and production understanding: https://www.bfi.org.uk/
+- National and institutional archives provide restoration, credit and production records used to separate documented evidence from interpretation.
 
-HG Film Producer uses these principles in a case-based game form: historical placement, concrete craft analysis, comparison, explanation and inspectable evidence.
+These models are guidance for evidence and teaching structure. HG Film Producer keeps its own playable Production Case architecture.
