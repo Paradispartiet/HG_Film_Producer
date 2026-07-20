@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const battleshipPotemkinFilmHistoryProfile = {
+  scenarioId: "scenario_battleship_potemkin_1925",
+  period: "Mid-1920s Soviet revolutionary cinema and montage theory in practice",
+  traditions: ["Soviet montage", "Collective political drama", "Revolutionary historical reconstruction"],
+  before: "After the revolution, Soviet filmmakers sought a cinema whose editing could produce political argument and collective emotion rather than hide construction behind seamless continuity.",
+  moment: "Eisenstein organizes the 1905 mutiny into five movements and coordinates Eduard Tisse's graphic images of sailors, crowds, machines and violence through repetition, contrast, collision and expanded screen time.",
+  after: "The Odessa Steps sequence and the film's anti-illusionary montage became major international reference points for editing, political cinema and the ability of juxtaposed shots to create ideas and bodily shock.",
+  historyQuestion: "Which historical theory best explains why meaning and emotion arise from collisions between shots rather than from one continuous dramatic space?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "MoMA places the film's 1905 mutiny narrative inside the post-revolutionary search for a new proletarian film language." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film is a defining Soviet montage case built around juxtaposition, repetition, contrast and shock." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Institutional records identify the First Studio of Goskino production and the concentrated 1925 Soviet production context." },
+    { area: "reception_and_legacy", status: "source_verified", note: "MoMA and BFI document the film's international impact, canonization and history of censorship and bans." },
+    { area: "screenplay", status: "source_verified", note: "The historical material is organized into five major movements that transform grievance into collective uprising." },
+    { area: "directing", status: "source_verified", note: "Eisenstein directs bodies, objects, crowds and camera positions as units intended to collide in the edit." },
+    { area: "performance", status: "mapped", note: "Collective gesture and typage replace a single star protagonist, while cast and performance research remains incomplete." },
+    { area: "production_design", status: "mapped", note: "Ship, quay and steps organize the action materially, while dedicated design and prop sourcing remains pending." },
+    { area: "costume_makeup", status: "mapped", note: "Uniforms and civilian dress separate institutions and crowds, but department-level documentation remains pending." },
+    { area: "cinematography", status: "source_verified", note: "Eduard Tisse's close details, diagonals, high and low angles, moving crowds and mechanical forms provide graphic material for montage." },
+    { area: "lighting", status: "mapped", note: "Strong graphic contrast supports the compositions, while dedicated lighting research remains pending." },
+    { area: "camera_format", status: "source_verified", note: "MoMA records the work as a Soviet silent film preserved and screened in 35mm versions." },
+    { area: "editing", status: "source_verified", note: "Percussive cutting, repetition, temporal expansion, visual contrast and collision create argument beyond continuous space." },
+    { area: "sound_design", status: "not_central", note: "The original is silent; the primary formal argument is produced through image order and exhibition accompaniment." },
+    { area: "music", status: "mapped", note: "Different restored and exhibition versions use musical accompaniment, while a dedicated score-history mapping remains pending." },
+    { area: "effects_animation", status: "not_central", note: "The principal spectacle comes from staging, photography and editing rather than animation or effects construction." },
+    { area: "documentary_method", status: "mapped", note: "The film reconstructs a historical event for revolutionary argument rather than presenting neutral documentary evidence." },
+  ],
+} as const satisfies FilmHistoryProfile;
