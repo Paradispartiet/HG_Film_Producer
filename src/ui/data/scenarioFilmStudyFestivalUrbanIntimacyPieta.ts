@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const pietaFilmHistoryProfile = {
+  scenarioId: "scenario_pieta_2012",
+  period: "South Korean low-budget auteur cinema, moral melodrama and industrial-capitalist social allegory",
+  traditions: ["Kim Ki-duk moral melodrama", "South Korean independent auteur cinema", "Urban industrial social allegory"],
+  before: "Kim Ki-duk's earlier films had already joined bodily violence, damaged intimacy, spiritual symbolism and stripped-down independent production, while South Korean cinema's international festival presence had made private moral crisis a route into wider social change.",
+  moment: "Kim Ki-Duk Film makes Pietà with a ten-day shoot, a 100 million won budget and a crew of twenty-five; Kim writes, directs, operates camera and edits, while Cho Young-jik's photography, Choo Kyoung-yeob's lighting, Lee Hyun-joo's design, Ji Ji-yeon's costumes and Park In-young's music turn Cheonggyecheon workshops, debt collection, machinery and bodily damage into a revenge melodrama about money and broken family bonds.",
+  after: "Pietà won the 2012 Golden Lion and became one of Kim Ki-duk's most internationally visible films, while its compact production and disappearing Cheonggye industrial setting made its social argument inseparable from the conditions and places in which it was produced.",
+  historyQuestion: "Which production system explains a ten-day Korean feature made by a twenty-five-person crew, set among threatened Cheonggye workshops, where a violent debt collector, a claimed mother, machinery, bodily injury and withheld identity turn capitalist pressure into family revenge melodrama?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "KOFIC and La Biennale place the film in 2012 South Korean cinema and connect its story to money, family, revenge and the rapidly changing Cheonggye industrial district." },
+    { area: "movement_and_tradition", status: "source_verified", note: "KOFIC's Kim interview places Pietà within his small-scale moral cinema, where damaged bodies, family absence and spiritual language expose material and social violence." },
+    { area: "industry_and_production_context", status: "source_verified", note: "KOFIC records a ten-day shoot, 100 million won budget and twenty-five-person crew; La Biennale and KOFIC identify Kim Ki-Duk Film and Finecut." },
+    { area: "reception_and_legacy", status: "source_verified", note: "La Biennale records the 2012 Golden Lion, while KOFIC documents the film's Korean awards and major international recognition." },
+    { area: "screenplay", status: "source_verified", note: "La Biennale and KOFIC credit Kim Ki-duk as screenwriter; the apparent reunion is structured so tenderness, suspicion and revenge continually reinterpret one another." },
+    { area: "directing", status: "source_verified", note: "KOFIC documents Kim's intention to connect money, human relationships and the Cheonggye setting, while his compact production keeps action concentrated around bodies, workshops and moral reversals." },
+    { area: "performance", status: "source_verified", note: "La Biennale and KOFIC document Cho Min-soo and Lee Jung-jin; Kim describes Cho preparing multiple character approaches and Lee revealing weakness beneath the debt collector's violence." },
+    { area: "production_design", status: "source_verified", note: "La Biennale credits Lee Hyun-joo; workshops, machines, alleys and sparse interiors make debt and industrial displacement physically present." },
+    { area: "costume_makeup", status: "source_verified", note: "La Biennale credits Ji Ji-yeon and KOFIC credits Choi Na-young; restrained clothing and damaged appearance preserve class, labour and bodily consequence." },
+    { area: "cinematography", status: "source_verified", note: "La Biennale and KOFIC credit Cho Young-jik, with Kim also credited as camera operator; close bodies and compressed industrial spaces keep violence materially immediate." },
+    { area: "lighting", status: "source_verified", note: "KOFIC credits Choo Kyoung-yeob; practical workshop and street environments support the film's harsh, unpolished industrial world." },
+    { area: "camera_format", status: "mapped", note: "La Biennale records a colour feature presentation, but the current sources do not isolate the original capture camera or stock." },
+    { area: "editing", status: "source_verified", note: "La Biennale and KOFIC credit Kim Ki-duk; repetitive collections give way to intimate dependency before delayed revelation reorganizes the apparent family bond." },
+    { area: "sound_design", status: "mapped", note: "Machinery, metal, bodily impact and abrupt quiet are central to the case, but the current sources do not provide a dedicated sound-department account." },
+    { area: "music", status: "source_verified", note: "La Biennale credits Park In-young; the score supports mourning and spiritual appeal without replacing the abrasive workshop environment." },
+    { area: "effects_animation", status: "not_central", note: "KOFIC lists a VFX artist, but the production system is driven by performance, practical industrial spaces, bodily action and editing rather than an effects-led pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Kim connects the film directly to seven years of factory work near Cheonggyecheon and his wish to record a disappearing industrial space from his youth." },
+  ],
+} as const satisfies FilmHistoryProfile;
