@@ -1,4 +1,5 @@
 import seedData from "../../../data/film/scenarios/film_scenarios_seed.json";
+import { mergeEarlyCinemaExpansion } from "./earlyCinemaExpansion";
 
 export type FilmScenarioSeed = {
   readonly id: string;
@@ -41,7 +42,16 @@ export type FilmScenarioSeedFile = {
   readonly scenarios: readonly FilmScenarioSeed[];
 };
 
-export const filmScenarioSeedData = seedData as FilmScenarioSeedFile;
+const importedSeedData = seedData as FilmScenarioSeedFile;
+const mergedScenarios = mergeEarlyCinemaExpansion(importedSeedData.scenarios);
+
+export const filmScenarioSeedData: FilmScenarioSeedFile = {
+  ...importedSeedData,
+  source_list_id: `${importedSeedData.source_list_id}+manual_early_cinema_expansion_2026`,
+  scenario_count: mergedScenarios.length,
+  note: `${importedSeedData.note} The requested 58-film historical expansion reuses matching catalogue entries and appends only missing titles.`,
+  scenarios: mergedScenarios,
+};
 
 export function getClassicFilmScenarios() {
   return filmScenarioSeedData.scenarios;
