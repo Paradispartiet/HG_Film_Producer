@@ -24,6 +24,7 @@ import { minimalistRoadVerificationRecords } from "./scenarioProductionVerificat
 import { productionMethodVerificationRecords } from "./scenarioProductionVerificationMethodBatch";
 import { modernCraftVerificationRecords } from "./scenarioProductionVerificationModernBatch";
 import { newHollywoodBlockbusterVerificationRecords } from "./scenarioProductionVerificationNewHollywoodBlockbusterBatch";
+import { nordicMinimalistSocialSystemsVerificationRecords } from "./scenarioProductionVerificationNordicMinimalistSocialSystemsBatch";
 import { norwegianPostwarGenreSystemsVerificationRecords } from "./scenarioProductionVerificationNorwegianPostwarGenreSystemsBatch";
 import { postwarEuropeanModernismVerificationRecords } from "./scenarioProductionVerificationPostwarEuropeanModernismBatch";
 import { silentFoundationsVerificationRecords } from "./scenarioProductionVerificationSilentFoundationsBatch";
@@ -54,6 +55,7 @@ const additionalVerificationRecords = [
   ...noirRealism1940sVerificationRecords,
   ...crimeNoirTransformationsVerificationRecords,
   ...norwegianPostwarGenreSystemsVerificationRecords,
+  ...nordicMinimalistSocialSystemsVerificationRecords,
   ...asianPostwar1950sVerificationRecords,
   ...expressivePostwar1950sVerificationRecords,
   ...postwarEuropeanModernismVerificationRecords,
