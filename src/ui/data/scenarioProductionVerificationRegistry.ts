@@ -16,6 +16,7 @@ import { lateSilentEarlySoundVerificationRecords } from "./scenarioProductionVer
 import { minimalistRoadVerificationRecords } from "./scenarioProductionVerificationMinimalistRoadBatch";
 import { productionMethodVerificationRecords } from "./scenarioProductionVerificationMethodBatch";
 import { modernCraftVerificationRecords } from "./scenarioProductionVerificationModernBatch";
+import { postwarEuropeanModernismVerificationRecords } from "./scenarioProductionVerificationPostwarEuropeanModernismBatch";
 import { silentFoundationsVerificationRecords } from "./scenarioProductionVerificationSilentFoundationsBatch";
 import { silentStudioSystemsVerificationRecords } from "./scenarioProductionVerificationSilentStudioSystemsBatch";
 import { technologyHistoryVerificationRecords } from "./scenarioProductionVerificationTechnologyBatch";
@@ -43,6 +44,7 @@ const additionalVerificationRecords = [
   ...classicalHollywoodVerificationRecords,
   ...noirRealism1940sVerificationRecords,
   ...asianPostwar1950sVerificationRecords,
+  ...postwarEuropeanModernismVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
 
 const additionalVerificationByScenarioId = new Map<string, ProductionCaseVerificationRecord>(

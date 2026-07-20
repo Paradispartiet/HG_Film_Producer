@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const personaFilmHistoryProfile = {
+  scenarioId: "scenario_persona_1966",
+  period: "Swedish psychological modernism, Fårö chamber production and self-reflexive film form",
+  traditions: ["Swedish modernism", "Psychological chamber cinema", "Self-reflexive art film"],
+  before: "Classical psychodrama usually stabilizes identity through dialogue, diagnosis and continuity, while star close-ups traditionally preserve the integrity of the performed face.",
+  moment: "Bergman builds the film around one woman's silence and another's speech, then lets Sven Nykvist's radical close-ups, Fårö isolation, Bibi Lindström's spare design, Ulla Ryghe's ruptured editing, projector imagery and material film damage destabilize the boundary between the two performers and the film itself.",
+  after: "Swedish Film Institute restoration, Bergman Archive documentation and international institutional circulation have preserved the work as a central reference for modernist close-up, fractured identity and cinema that exposes its own material construction.",
+  historyQuestion: "Which production system explains why faces, silence, film damage and repeated scenes become the drama rather than clues leading to one stable psychological solution?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "SFI, BFI and the Bergman Archive place the 1966 Svensk Filmindustri production in Bergman's mid-1960s period and document its Fårö setting and production circumstances." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Criterion identify the film as radical psychological and self-reflexive modernism rather than conventional chamber drama." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion and the Bergman Archive document the Svensk Filmindustri production, principal crew, early projector tests and the concentrated island-and-studio method." },
+    { area: "reception_and_legacy", status: "source_verified", note: "SFI restoration, BFI canonization and extensive Bergman Archive documentation preserve the film's historical place without relying on unsupported claims of technical priority." },
+    { area: "screenplay", status: "source_verified", note: "Bergman organizes the drama through Elisabet's refusal to speak, Alma's confessions, repeated stories and unstable transfers of identity." },
+    { area: "directing", status: "source_verified", note: "Staging alternates intimate confrontation, frontal address, deliberate ambiguity and visible breaks in the film's representational contract." },
+    { area: "performance", status: "source_verified", note: "Liv Ullmann's silence and Bibi Andersson's extended speech create opposing performance systems whose boundaries gradually collapse." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Bibi Lindström; clinic rooms, the Fårö cottage, beds, curtains and bare walls reduce the world to faces and psychological pressure." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion records Mago and Börje Lundh; restrained costume and facial presentation keep changes of identity dependent on proximity, repetition and expression." },
+    { area: "cinematography", status: "source_verified", note: "Sven Nykvist's stark monochrome, long intensive close-ups, occasional wide-angle views and paired faces make portraiture itself unstable." },
+    { area: "lighting", status: "source_verified", note: "Criterion and BFI describe stark contrast and soft modeled light that can separate, merge or flatten the two faces." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records black-and-white 1.37:1 photography and restored monaural sound." },
+    { area: "editing", status: "source_verified", note: "Ulla Ryghe's editing joins prologue montage, repeated monologue, abrupt rupture, damaged-film imagery and mirrored facial constructions without restoring stable chronology." },
+    { area: "sound_design", status: "source_verified", note: "Criterion credits P. O. Pettersson and Lennart Engholm; silence, breath, speech, projector noise and abrupt sonic breaks are structural rather than decorative." },
+    { area: "music", status: "source_verified", note: "Criterion credits Lars Johan Werle; sparse modernist music supports rupture and abstraction rather than continuous emotional guidance." },
+    { area: "effects_animation", status: "source_verified", note: "The projector, carbon-arc imagery, film burn, split and merged faces use practical and optical manipulation as explicit parts of the film's argument." },
+    { area: "documentary_method", status: "mapped", note: "On-set and archival material document the production, but the finished film remains a highly controlled fictional chamber work." },
+  ],
+} as const satisfies FilmHistoryProfile;

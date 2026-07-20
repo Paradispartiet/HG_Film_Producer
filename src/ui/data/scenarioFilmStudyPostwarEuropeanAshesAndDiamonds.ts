@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const ashesAndDiamondsFilmHistoryProfile = {
+  scenarioId: "scenario_ashes_and_diamonds_1958",
+  period: "Polish Film School, post-Stalin political thaw and one-night historical tragedy",
+  traditions: ["Polish Film School", "Postwar political modernism", "Nocturnal historical drama"],
+  before: "Official postwar narratives often divided resistance history into stable heroes and enemies, while literary adaptation could preserve ideological explanation at the expense of immediate moral conflict.",
+  moment: "Wajda and Jerzy Andrzejewski compress the end of the war into one day and night, using Jerzy Wójcik's high-contrast black-and-white photography, the Hotel Monopol, ruined churches, symbolic props, Zbigniew Cybulski's modern performance and Halina Nawrocka's editing to turn political transition into personal deadline.",
+  after: "Its Venice FIPRESCI recognition, Polish Film Heritage status and continued preservation established the film as a defining work of the Polish Film School and a durable model for historical conflict staged through youth, style and moral ambiguity.",
+  historyQuestion: "Which production logic explains why one assassination order, one hotel night and one conflicted performance can represent an entire country's political transition?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "FINA and BFI place the story on the final day of the Second World War and connect the 1958 production to Poland's contested postwar settlement." },
+    { area: "movement_and_tradition", status: "source_verified", note: "FINA, BFI and Criterion identify the film with the Polish Film School and its revision of official historical and moral narratives." },
+    { area: "industry_and_production_context", status: "source_verified", note: "FilmPolski and FINA document the Polish production, Wrocław locations, 35 mm black-and-white format and principal department credits." },
+    { area: "reception_and_legacy", status: "source_verified", note: "FINA records Venice FIPRESCI recognition, Polish Film Heritage status and the lasting cultural importance of Cybulski's Maciek." },
+    { area: "screenplay", status: "source_verified", note: "Wajda and novelist Jerzy Andrzejewski adapt the novel into a compressed assassination drama where public victory and private exhaustion occupy the same night." },
+    { area: "directing", status: "source_verified", note: "Wajda coordinates symbolic staging, hotel geography, ruined spaces and deadline pressure without separating political history from intimate behavior." },
+    { area: "performance", status: "source_verified", note: "FINA identifies Cybulski's contemporary physical style, dark glasses and conflicted youth as central to the film's generational impact." },
+    { area: "production_design", status: "source_verified", note: "FilmPolski credits Roman Mann; the Hotel Monopol, banquet rooms, chapel ruins and industrial edges turn political transition into a sequence of concrete spaces." },
+    { area: "costume_makeup", status: "mapped", note: "Uniforms, suits and Maciek's sunglasses distinguish institutions and generations, while dedicated department-level design evidence remains incomplete." },
+    { area: "cinematography", status: "source_verified", note: "Jerzy Wójcik's black-and-white photography uses deep shadows, strong backlight, ruined architecture and emblematic compositions to keep ideology physically present." },
+    { area: "lighting", status: "source_verified", note: "Night interiors, burning glasses, hard highlights and darkness create a visually divided world matching the protagonist's unstable allegiance." },
+    { area: "camera_format", status: "source_verified", note: "FINA and FilmPolski record a 35 mm black-and-white production." },
+    { area: "editing", status: "source_verified", note: "Halina Nawrocka's editing moves among mission procedure, hotel celebration, private hesitation and approaching deadline while preserving the single-night structure." },
+    { area: "sound_design", status: "mapped", note: "Speeches, fireworks, footsteps, gunfire and banquet noise collide with sudden quiet, while detailed production-sound documentation remains limited." },
+    { area: "music", status: "source_verified", note: "FINA and FilmPolski credit Filip Nowak's musical arrangement; public celebration and dance music intensify the gap between victory ritual and private violence." },
+    { area: "effects_animation", status: "not_central", note: "Gunfire, flame and physical action support the drama, but symbolic staging and performance remain more central than effects construction." },
+    { area: "documentary_method", status: "mapped", note: "The film uses historical locations, literary adaptation and recent national memory, but it is not organized as documentary observation." },
+  ],
+} as const satisfies FilmHistoryProfile;

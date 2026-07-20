@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const daisiesFilmHistoryProfile = {
+  scenarioId: "scenario_daisies_1966",
+  period: "Czechoslovak New Wave, Barrandov state-studio production and feminist collage modernism",
+  traditions: ["Czechoslovak New Wave", "Neo-Dada collage", "Feminist absurdist cinema"],
+  before: "State-studio narrative cinema generally required approved scripts, legible psychology and stable photographic continuity, while social satire often hid formal disruption behind conventional plot.",
+  moment: "Chytilová, Ester Krumbachová and Pavel Juráček build an episodic anti-narrative around two nonprofessional performers; Jaroslav Kučera's color filters and photographic experiments, Miroslav Hájek's fragmentation, Krumbachová's costumes, improvised dialogue and visible collage turn resistance to social order into resistance to film form.",
+  after: "Censorship disputes, delayed domestic release and later National Film Archive restoration made the production history inseparable from the film's survival and its continuing use in teaching Czech New Wave, feminist and collage cinema.",
+  historyQuestion: "Which production system explains why color changes, scissors, food, costume, jump cuts and improvised behavior attack narrative order as directly as the protagonists attack social rules?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Czech Film Center, NFA and BFI place the 1966 Barrandov production in the cultural opening before the Prague Spring and document its censorship conflict." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI, Criterion and Czech Film Center identify the film with the Czechoslovak New Wave, neo-Dada experimentation and feminist subversion." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Czech Film Center documents state-studio script approval, imported color stock, improvised departures during production and postproduction intervention." },
+    { area: "reception_and_legacy", status: "source_verified", note: "NFA records the restoration and renewed distribution, while BFI and Czech Film Center document censorship, delayed release and later historical recognition." },
+    { area: "screenplay", status: "source_verified", note: "Chytilová, Krumbachová and Juráček organize repeated games, meals and destructive episodes rather than psychological backstory or a conventional causal arc." },
+    { area: "directing", status: "source_verified", note: "Chytilová directs performance, objects, color and montage as coordinated attacks on social and cinematic decorum." },
+    { area: "performance", status: "source_verified", note: "Nonprofessional performers Jitka Cerhová and Ivana Karbanová use repetition, pose, appetite and improvised dialogue instead of naturalistic character development." },
+    { area: "production_design", status: "source_verified", note: "NFA credits Karel Lier; restaurants, apartments, banquet tables, machinery and graphic objects become modular spaces for collage and destruction." },
+    { area: "costume_makeup", status: "source_verified", note: "NFA and Czech Film Center document Ester Krumbachová's collaboration on eccentric costume, using dress and accessories as changing graphic identities." },
+    { area: "cinematography", status: "source_verified", note: "Jaroslav Kučera's photography shifts among color, monochrome, filters, overprinting and deliberately artificial visual effects." },
+    { area: "lighting", status: "mapped", note: "Lighting changes with each visual system, but dedicated evidence separating lighting design from filtration, stock and laboratory effects remains incomplete." },
+    { area: "camera_format", status: "source_verified", note: "Criterion and NFA record a color 1.37:1 production restored in 4K with monaural sound; NFA also preserves 35 mm distribution materials." },
+    { area: "editing", status: "source_verified", note: "Miroslav Hájek's editing uses abrupt fragmentation, repetitions, jump cuts, rhythmic destruction and literal screen-cutting to make montage the main comic engine." },
+    { area: "sound_design", status: "mapped", note: "Improvised speech, mechanical sounds, ringing phones, dining noise and abrupt acoustic breaks extend the collage, while detailed sound-production evidence remains limited." },
+    { area: "music", status: "source_verified", note: "NFA credits Jiří Šust and Jiří Šlitr; music appears as another discontinuous material rather than a stable emotional score." },
+    { area: "effects_animation", status: "source_verified", note: "Color filters, optical fragmentation, superimposition, altered motion and graphic cutting are central practical and laboratory effects, not decorative additions." },
+    { area: "documentary_method", status: "mapped", note: "Chytilová's earlier cinéma-vérité practice informs attention to behavior, but Daisies deliberately rejects observational realism for stylized collage." },
+  ],
+} as const satisfies FilmHistoryProfile;

@@ -59,6 +59,11 @@ import {
   resolveMinimalistRoadFilmStudyMap,
 } from "../data/scenarioFilmStudyMinimalistRoadBatch";
 import {
+  createPostwarEuropeanModernismFilmHistoryChoices,
+  getPostwarEuropeanModernismFilmHistoryProfile,
+  resolvePostwarEuropeanModernismFilmStudyMap,
+} from "../data/scenarioFilmStudyPostwarEuropeanModernismBatch";
+import {
   createSilentFoundationsFilmHistoryChoices,
   getSilentFoundationsFilmHistoryProfile,
   resolveSilentFoundationsFilmStudyMap,
@@ -84,7 +89,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolve1950sAsianPostwarFilmStudyMap(scenario, brief)
+    () => resolvePostwarEuropeanModernismFilmStudyMap(scenario, brief)
+      ?? resolve1950sAsianPostwarFilmStudyMap(scenario, brief)
       ?? resolve1940sNoirRealismFilmStudyMap(scenario, brief)
       ?? resolveClassicalHollywoodFilmStudyMap(scenario, brief)
       ?? resolve1930sProductionSystemsFilmStudyMap(scenario, brief)
@@ -109,6 +115,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getPostwarEuropeanModernismFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createPostwarEuropeanModernismFilmHistoryChoices(historyProfile);
+    }
     if (get1950sAsianPostwarFilmHistoryProfile(historyProfile.scenarioId)) {
       return create1950sAsianPostwarFilmHistoryChoices(historyProfile);
     }
