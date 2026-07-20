@@ -1,0 +1,147 @@
+.school-course-selector {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 94;
+  width: min(390px, calc(100vw - 36px));
+  overflow: hidden;
+  border: 1px solid rgba(211, 255, 70, 0.34);
+  border-radius: 16px;
+  background: rgba(9, 11, 13, 0.96);
+  color: #f5f7f1;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.58);
+  backdrop-filter: blur(16px);
+}
+
+.school-course-selector > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 13px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.school-course-selector > header span {
+  color: #d3ff46;
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.school-course-selector > header strong {
+  color: rgba(245, 247, 241, 0.68);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.school-course-selector > div {
+  display: grid;
+}
+
+.school-course-selector button {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 9px 12px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background: transparent;
+  color: inherit;
+  text-align: left;
+}
+
+.school-course-selector button:last-child {
+  border-bottom: 0;
+}
+
+.school-course-selector button:hover,
+.school-course-selector button:focus-visible {
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.school-course-selector button.is-active {
+  background: linear-gradient(90deg, rgba(211, 255, 70, 0.14), rgba(211, 255, 70, 0.025));
+}
+
+.school-course-selector button > span {
+  color: rgba(245, 247, 241, 0.42);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.school-course-selector button.is-active > span,
+.school-course-selector button.is-active > strong {
+  color: #d3ff46;
+}
+
+.school-course-selector button > strong {
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+
+.school-course-selector button > b {
+  color: rgba(245, 247, 241, 0.5);
+  font-size: 0.67rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.school-course-hero--performance {
+  background:
+    radial-gradient(circle at 83% 22%, rgba(104, 207, 255, 0.15), transparent 30%),
+    linear-gradient(135deg, rgba(104, 207, 255, 0.08), rgba(211, 255, 70, 0.035) 55%, transparent);
+}
+
+.school-performance-course-shell .school-course-progress > span {
+  background: linear-gradient(90deg, #68cfff, #d3ff46);
+}
+
+.school-performance-course-shell .school-principle-card {
+  border-color: rgba(104, 207, 255, 0.26);
+  background: linear-gradient(135deg, rgba(104, 207, 255, 0.09), rgba(255, 255, 255, 0.02));
+}
+
+.school-performance-course-shell .school-film-example {
+  border-color: rgba(104, 207, 255, 0.22);
+}
+
+@media (max-width: 760px) {
+  .school-course-selector {
+    left: 10px;
+    bottom: 10px;
+    width: calc(100vw - 20px);
+    border-radius: 13px;
+  }
+
+  .school-course-selector > header {
+    padding: 8px 10px;
+  }
+
+  .school-course-selector button {
+    min-height: 43px;
+    grid-template-columns: 27px minmax(0, 1fr) auto;
+    padding: 7px 10px;
+  }
+
+  .school-course-selector button > strong {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-height: 620px) and (orientation: landscape) {
+  .school-course-selector {
+    width: min(330px, calc(100vw - 24px));
+  }
+
+  .school-course-selector > header {
+    display: none;
+  }
+
+  .school-course-selector button {
+    min-height: 40px;
+  }
+}
