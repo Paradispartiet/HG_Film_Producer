@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const blackCoalThinIceFilmHistoryProfile = {
+  scenarioId: "scenario_black_coal_thin_ice_2014",
+  period: "Chinese post-industrial neo-noir, fractured police procedure and wintry urban alienation",
+  traditions: ["Chinese independent and festival cinema", "Neo-noir investigation", "Post-industrial urban crime film"],
+  before: "Diao Yinan's earlier Uniform and Night Train had joined crime, compromised authority and ordinary labour to changing Chinese cities, while film noir offered a structure of damaged investigators, withheld motives and fatal desire that could be redirected toward post-industrial northern landscapes.",
+  moment: "Vivian Qu, Wan Juan and partners produce Diao's five-year murder investigation across northern Chinese coal plants, laundries, streets and frozen recreation spaces; Dong Jinsong's winter photography uses practical colour and wide isolation, Yang Hongyu's editing breaks the case with a 1999-to-2004 jump and withheld connections, and Wen Zi's sparse music leaves machinery, traffic, footsteps and ice to carry much of the atmosphere.",
+  after: "Black Coal, Thin Ice won the 2014 Golden Bear and Liao Fan received the Silver Bear for acting, bringing Diao's oblique neo-noir international visibility and demonstrating how familiar detective forms could be reorganized through industrial geography, temporal fracture and compromised desire.",
+  historyQuestion: "Which production system explains a northern Chinese murder case split between 1999 and 2004, a disgraced detective drawn toward a laundry worker, coal plants and frozen spaces photographed as coloured industrial night, and noir clues arranged through gaps, awkward encounters and abrupt violence?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Tribeca and Film at Lincoln Center place the film in contemporary northern China, where coal industry, insecure labour and urban change become the material environment of the investigation." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and MUBI identify the film as a Chinese neo-noir that retains the damaged detective and femme-fatale structure while shifting emphasis toward industrial space, rhythm and social periphery." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Tribeca credits producers Vivian Qu and Wan Juan; Film Comment documents Qu's creatively involved independent producing under low-budget Chinese production constraints." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Film at Lincoln Center and BFI record the 2014 Golden Bear and Liao Fan's acting award, establishing the film's international festival breakthrough." },
+    { area: "screenplay", status: "source_verified", note: "Tribeca credits Diao Yinan as screenwriter; the case is organized through a failed 1999 arrest, a five-year gap, renewed murders and desire that contaminates investigation." },
+    { area: "directing", status: "source_verified", note: "BFI and MUBI describe Diao's preference for mood, peripheral spaces, delayed information and sudden bursts of violence over a clean procedural chain." },
+    { area: "performance", status: "source_verified", note: "Tribeca and BFI document Liao Fan, Gwei Lun-mei and Wang Xuebing; Liao's disgraced physicality and Gwei's guarded stillness keep motive and attachment unstable." },
+    { area: "production_design", status: "mapped", note: "Coal plants, laundries, underpasses, clubs, skating spaces and worker housing define the noir world, but the current sources do not isolate a principal production designer." },
+    { area: "costume_makeup", status: "mapped", note: "Police clothing, workwear, winter layers and the protagonist's dishevelled appearance support status and time, but no dedicated department account is available in the current sources." },
+    { area: "cinematography", status: "source_verified", note: "Tribeca credits Dong Jinsong; BFI and MUBI describe snow, industrial night, coloured practical light, wide isolation and gliding single-take movement across frozen space." },
+    { area: "lighting", status: "source_verified", note: "BFI and MUBI identify neon, streetlights and wintry practical sources as central to the film's cold industrial noir atmosphere." },
+    { area: "camera_format", status: "mapped", note: "Festival sources record digital exhibition, but the current evidence does not isolate the original capture camera and lens package." },
+    { area: "editing", status: "source_verified", note: "Tribeca credits Yang Hongyu; the edit uses the five-year leap, withheld connective action and abrupt set pieces to keep the case fractured by failure and incomplete knowledge." },
+    { area: "sound_design", status: "mapped", note: "Coal machinery, traffic, footsteps, clubs, skating and sudden violence remain central audible materials, but the current sources do not provide a dedicated sound-team account." },
+    { area: "music", status: "source_verified", note: "Tribeca credits Wen Zi; sparse scoring supports the noir mood while leaving industrial and urban ambience exposed." },
+    { area: "effects_animation", status: "not_central", note: "Practical locations, performance, photography and editing drive the film; effects are considered but are not the central production system." },
+    { area: "documentary_method", status: "source_verified", note: "Film Comment's producer interview documents a creatively involved independent process shaped by real low-budget constraints, while the film's locations preserve concrete post-industrial northern environments." },
+  ],
+} as const satisfies FilmHistoryProfile;
