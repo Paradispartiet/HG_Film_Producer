@@ -6,6 +6,7 @@ import {
 import { productionSystems1930sVerificationRecords } from "./scenarioProductionVerification1930sProductionSystemsBatch";
 import { noirRealism1940sVerificationRecords } from "./scenarioProductionVerification1940sNoirRealismBatch";
 import { asianPostwar1950sVerificationRecords } from "./scenarioProductionVerification1950sAsianPostwarBatch";
+import { expressivePostwar1950sVerificationRecords } from "./scenarioProductionVerification1950sExpressivePostwarBatch";
 import { sixtiesScaleIndependentVerificationRecords } from "./scenarioProductionVerification1960sScaleIndependentBatch";
 import { classicalHollywoodVerificationRecords } from "./scenarioProductionVerificationClassicalHollywoodBatch";
 import { constructedWorldsVerificationRecords } from "./scenarioProductionVerificationConstructedWorldsBatch";
@@ -49,6 +50,7 @@ const additionalVerificationRecords = [
   ...classicalHollywoodVerificationRecords,
   ...noirRealism1940sVerificationRecords,
   ...asianPostwar1950sVerificationRecords,
+  ...expressivePostwar1950sVerificationRecords,
   ...postwarEuropeanModernismVerificationRecords,
   ...czechoslovakNewWaveVerificationRecords,
   ...europeanPoliticalFeministModernismVerificationRecords,
