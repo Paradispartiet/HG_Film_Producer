@@ -2,12 +2,13 @@ import { getJapaneseAuteurExpansionDefinition } from "../../core/japaneseAuteurE
 import { createModernCanonBriefBlueprint } from "../../core/modernCanonBriefBlueprint.js";
 import type { FilmScenarioSeed } from "./filmScenarios";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
+import { getSouthKoreanCinemaExpansionProductionBrief } from "./scenarioProductionBriefsSouthKoreanCinemaExpansion";
 
 export function getJapaneseAuteurExpansionProductionBrief(
   scenario: FilmScenarioSeed,
 ): ScenarioProductionBrief | undefined {
   const definition = getJapaneseAuteurExpansionDefinition(scenario);
-  if (!definition) return undefined;
+  if (!definition) return getSouthKoreanCinemaExpansionProductionBrief(scenario);
   const blueprint = createModernCanonBriefBlueprint(definition);
 
   return {
