@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const cityLightsFilmHistoryProfile = {
+  scenarioId: "scenario_city_lights_1931",
+  period: "Late silent comedy produced inside the early sound era",
+  traditions: ["Pantomime comedy", "Independent star production", "Selective synchronized sound"],
+  before: "Chaplin's Tramp had been built through silent pantomime, visual misunderstanding and performance rhythm before synchronized dialogue became the industry norm.",
+  moment: "Chaplin retains silent storytelling while composing a synchronized score and using selected sound effects as jokes, protecting the Tramp's international, imagined voice and the exact balance between comedy and pathos.",
+  after: "The film demonstrated that synchronized sound could be used selectively rather than forcing dialogue, and its final recognition scene remains a central example of visual performance carrying emotional revelation.",
+  historyQuestion: "Which production choice explains why a 1931 release uses recorded sound yet keeps dialogue, gesture and visual recognition at the center?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, AFI and Chaplin's archive place the film after talkies had become the dominant industry form." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film deliberately continues silent pantomime while adapting selected elements of synchronized sound." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Chaplin financed and controlled the long production through his independent position and United Artists relationship." },
+    { area: "reception_and_legacy", status: "source_verified", note: "AFI, BFI and the Library of Congress document its major reception and preservation status." },
+    { area: "screenplay", status: "source_verified", note: "Mistaken identity, repeated encounters and sacrifice connect comic set pieces to the flower girl's restoration of sight." },
+    { area: "directing", status: "source_verified", note: "Chaplin controls rehearsal, performance, staging and sound to preserve visual clarity and emotional timing." },
+    { area: "performance", status: "source_verified", note: "Gesture, gaze, touch and full-body pantomime communicate identity and recognition without spoken dialogue." },
+    { area: "production_design", status: "mapped", note: "Street, mansion, boxing ring and flower shop support class contrast; detailed department research remains pending." },
+    { area: "costume_makeup", status: "source_verified", note: "The Tramp's established silhouette remains the basis for readable social identity and physical comedy." },
+    { area: "cinematography", status: "source_verified", note: "Stable framing protects gesture, spatial misunderstanding and the final exchange of looks and touch." },
+    { area: "lighting", status: "mapped", note: "Controlled studio lighting supports tonal continuity, while dedicated lighting documentation remains incomplete." },
+    { area: "camera_format", status: "mapped", note: "The film is black-and-white and synchronized for music and effects; precise camera and stock documentation remains pending." },
+    { area: "editing", status: "source_verified", note: "Cuts protect setup, recognition and payoff while allowing performance beats to complete inside the frame." },
+    { area: "sound_design", status: "source_verified", note: "Speech is refused, while comic effects such as the swallowed whistle show deliberate control of recorded sound." },
+    { area: "music", status: "source_verified", note: "Chaplin composed the synchronized score as a continuous emotional and rhythmic partner to the silent image." },
+    { area: "effects_animation", status: "not_central", note: "The film depends on physical performance and staging rather than effects construction." },
+    { area: "documentary_method", status: "not_central", note: "Its city and class observation are shaped through controlled fiction and comic performance." },
+  ],
+} as const satisfies FilmHistoryProfile;
