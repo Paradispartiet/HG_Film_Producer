@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 112 source-backed Production Cases.
+- 116 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -41,6 +41,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts`
 - `src/ui/data/scenarioProductionVerificationCrimeNoirTransformationsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationNorwegianPostwarGenreSystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationNordicMinimalistSocialSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts`
@@ -218,6 +219,15 @@ This batch compares Warner Bros. hard-boiled dialogue staging, Paramount social-
 - `scenario_insomnia_1997`
 
 This batch compares east-Oslo neorealist social cinema, independent mountain-hotel farce, Agascope literary horror and reversed daylight noir.
+
+### Nordic minimalist social systems batch
+
+- `scenario_the_match_factory_girl_1990`
+- `scenario_songs_from_the_second_floor_2000`
+- `scenario_the_man_without_a_past_2002`
+- `scenario_oslo_august_31st_2011`
+
+This batch compares Finnish proletarian minimalism, Swedish studio tableau cinema, Finnish deadpan humanist community fable and Norwegian one-day urban realism.
 
 ### 1950s Asian postwar cinema batch
 
