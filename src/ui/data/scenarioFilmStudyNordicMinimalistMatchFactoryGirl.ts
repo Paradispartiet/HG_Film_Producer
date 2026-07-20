@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const matchFactoryGirlFilmHistoryProfile = {
+  scenarioId: "scenario_the_match_factory_girl_1990",
+  period: "Finnish proletarian minimalism, deadpan social realism and compressed revenge melodrama",
+  traditions: ["Aki Kaurismäki proletariat trilogy", "Finnish working-class cinema", "Deadpan revenge melodrama"],
+  before: "European social realism and working-class melodrama usually relied on explanatory psychology, dense dialogue or visible emotional escalation, while Kaurismäki had already stripped romance and crime stories to terse gestures in the first two films of his proletariat trilogy.",
+  moment: "Writer-director-producer-editor Aki Kaurismäki, cinematographer Timo Salminen, art director Risto Karhula, sound recordist Jouko Lumme and Kati Outinen compress factory labour, domestic exploitation, failed romance and retaliation into sixty-nine minutes of frontal colour, minimal speech, abrupt ellipsis, popular song and impassive performance.",
+  after: "The film closed the proletariat trilogy and became one of Kaurismäki's clearest demonstrations that social critique, black comedy and revenge melodrama can be built from severe economy rather than explanatory realism or sensational violence.",
+  historyQuestion: "Which production system explains the automated factory opening, minimal dialogue, frontal colour compositions, Kati Outinen's withheld performance, abrupt ellipses and revenge treated as the logical extension of social exclusion?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion, BFI and Cannes place the 1990 film at the end of Kaurismäki's proletariat trilogy and connect it to Finnish working-class exclusion and failed social advancement." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion identifies social-realist farce and subdued revenge melodrama, while BFI describes the shift from bleak realism into pitch-black comedy." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion credits Kaurismäki as director, producer, screenwriter and editor alongside producers Katinka Faragó and Klas Olofsson, documenting a tightly concentrated authorship model." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion and BFI present the film as a defining Kaurismäki work, while Cannes later treated it as the decisive third chapter of the working-class trilogy." },
+    { area: "screenplay", status: "source_verified", note: "Criterion credits Kaurismäki's screenplay; its terse sequence of labour, rejection, pregnancy and retaliation removes explanatory subplots and makes accumulation the dramatic engine." },
+    { area: "directing", status: "source_verified", note: "Criterion and BFI document Kaurismäki's stripped-back, dispassionate handling of grim material, preserving comic irony without softening Iris's social confinement." },
+    { area: "performance", status: "source_verified", note: "Criterion and BFI foreground Kati Outinen's impenetrable, restrained Iris, whose withheld reaction makes tiny changes in posture and decision carry the drama." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Risto Karhula; factory, dance hall, drab home and bars reduce Iris's world to controlled spaces of labour, consumption and rejection." },
+    { area: "costume_makeup", status: "mapped", note: "The floral dress and otherwise restrained clothing make Iris's attempt at self-transformation visible, but the current sources do not document a complete costume or makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Timo Salminen, while Criterion and BFI describe stringent frontal compositions, pointed colour accents and the impassive observation of bodies and machines." },
+    { area: "lighting", status: "mapped", note: "Flat factory illumination, controlled interiors and isolated colour support the deadpan system, but the available sources do not isolate a full lighting method." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records a colour Finnish feature in 1.85:1 with a sixty-nine-minute runtime, matching the film's compressed widescreen presentation." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Kaurismäki as editor; terse scene endings, omitted transitions and abrupt consequences turn routine and revenge into one continuous social mechanism." },
+    { area: "sound_design", status: "source_verified", note: "Criterion credits Jouko Lumme; factory machinery, sparse dialogue, domestic silence and public-room ambience leave emotional pressure exposed rather than explained." },
+    { area: "music", status: "source_verified", note: "Criterion and BFI discuss dance-hall and popular-music passages whose romantic promise contrasts with Iris's exclusion and later emotional hardening." },
+    { area: "effects_animation", status: "not_central", note: "The film depends on performance, machines, framing, ellipsis and sound rather than a central practical-effects, visual-effects or animation pipeline." },
+    { area: "documentary_method", status: "mapped", note: "The opening machine montage and attention to repetitive labour create documentary force, but the production remains a tightly scripted deadpan melodrama." },
+  ],
+} as const satisfies FilmHistoryProfile;
