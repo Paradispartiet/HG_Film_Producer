@@ -8,6 +8,7 @@ import "./filmverket.css";
 import "./filmverketRouting.css";
 import "./filmDirectorExperience.css";
 import "./filmDirectorProject.css";
+import "./directorKnowledgeDesk.css";
 import "./filmCraftLibrary.css";
 import "./filmCraftLibraryFilmLens.css";
 import "./filmResearchControlRoom.css";
