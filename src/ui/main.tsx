@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
+import "../core/directorKnowledgeExtensions";
 import { App } from "./App";
 import { installProductionCaseVerificationMarkers } from "./data/productionCaseVerificationLibrary";
 import "./styles.css";
@@ -8,6 +9,7 @@ import "./filmverket.css";
 import "./filmverketRouting.css";
 import "./filmDirectorExperience.css";
 import "./filmDirectorProject.css";
+import "./directorKnowledgeDesk.css";
 import "./filmCraftLibrary.css";
 import "./filmCraftLibraryFilmLens.css";
 import "./filmResearchControlRoom.css";
