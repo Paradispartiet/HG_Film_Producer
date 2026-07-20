@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 124 source-backed Production Cases.
+- 128 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -44,6 +44,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationNordicMinimalistSocialSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationModernNordicBehaviorSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1980sPoliticalPalmeSystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationFestivalJourneyDisplacementSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts`
@@ -248,6 +249,15 @@ This batch compares transnational Alpine social experiment, Icelandic eco-politi
 - `scenario_when_father_was_away_on_business_1985`
 
 This batch compares Polish Solidarity investigative docufiction, Turkish prison-release road cinema, Japanese rural ecological naturalism and Yugoslav child-view historical tragicomedy.
+
+### Festival journey and displacement systems batch
+
+- `scenario_pelle_the_conqueror_1987`
+- `scenario_central_station_1998`
+- `scenario_eternity_and_a_day_1998`
+- `scenario_head_on_2004`
+
+This batch compares Nordic historical migration epic, Brazilian documentary-informed road cinema, Greek long-take border modernism and German-Turkish handheld punk romance.
 
 ### 1950s Asian postwar cinema batch
 

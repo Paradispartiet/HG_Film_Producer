@@ -85,6 +85,13 @@ const politicalPalme1980sIds = [
   "scenario_when_father_was_away_on_business_1985",
 ] as const;
 
+const festivalJourneyDisplacementIds = [
+  "scenario_pelle_the_conqueror_1987",
+  "scenario_central_station_1998",
+  "scenario_eternity_and_a_day_1998",
+  "scenario_head_on_2004",
+] as const;
+
 const asianPostwar1950sIds = [
   "scenario_rashomon_1950",
   "scenario_tokyo_story_1953",
@@ -148,7 +155,7 @@ const europeanModernistProductionIds = [
   "scenario_the_battle_of_algiers_1966",
 ] as const;
 
-const expectedVerifiedCount = 124;
+const expectedVerifiedCount = 128;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -246,6 +253,14 @@ test("modern Nordic behavior systems are verified with four sources each", () =>
 
 test("1980s political Palme systems are verified with four sources each", () => {
   for (const scenarioId of politicalPalme1980sIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("festival journey displacement systems are verified with four sources each", () => {
+  for (const scenarioId of festivalJourneyDisplacementIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);

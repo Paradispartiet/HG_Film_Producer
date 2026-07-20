@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const eternityDayFilmHistoryProfile = {
+  scenarioId: "scenario_eternity_and_a_day_1998",
+  period: "Greek modernist border cinema, memory journey and long-take historical meditation",
+  traditions: ["Theo Angelopoulos sequence-shot modernism", "Balkan border cinema", "Poetic memory journey"],
+  before: "Angelopoulos had developed a cinema of long takes, choreographed public space and historical time from The Travelling Players through his border trilogy, while European modernism had repeatedly used journeys and landscapes to join private memory to political history.",
+  moment: "A Greek-French-Italian-German co-production brings a dying poet, an Albanian refugee child and remembered family time into the same one-day journey; Theo Angelopoulos, Tonino Guerra and Petros Markaris write porous temporal transitions, Giorgos Arvanitis and Andreas Sinanos photograph extended 35mm movements, Giorgos Ziakas and Kostas Dimitriadis construct harbour and border spaces, Giannis Tsitsopoulos edits sparingly and Eleni Karaindrou's music binds rain, sea, language and memory.",
+  after: "The film won the unanimous 1998 Palme d'Or and became the culmination of Angelopoulos's border trilogy, preserving his sequence-shot method as a major example of how landscape, migration and private memory can share one continuous cinematic space.",
+  historyQuestion: "Which production system explains a final-day journey where present streets open directly into remembered family time, a refugee child turns a poet's private regret toward Balkan borders and long choreographed 35mm shots let weather, architecture, history and music unfold inside the frame?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, BFI and Thessaloniki Film Festival place the film within 1990s Balkan border anxiety, Albanian migration and Angelopoulos's continuing treatment of Greek and regional history." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI identifies Angelopoulos's long-take, landscape and architecture-based modernism and positions the film as the Palme-winning conclusion of his border trilogy." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Thessaloniki and BFI document the Greek Film Centre-led Greek, French, Italian and German co-production with Eurimages, Arte, Canal+ and public-film partners." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the unanimous 1998 Palme d'Or; BFI places the film among Angelopoulos's central works of historical fresco and sequence-shot cinema." },
+    { area: "screenplay", status: "source_verified", note: "Thessaloniki and BFI credit Theo Angelopoulos with Tonino Guerra and Petros Markaris; present action, letters, remembered summer and the refugee journey coexist without conventional flashback separation." },
+    { area: "directing", status: "source_verified", note: "Cannes and BFI document Angelopoulos's direction and his mature method of choreographing people, vehicles, weather and historical metaphor across extended shots." },
+    { area: "performance", status: "source_verified", note: "Thessaloniki and BFI credit Bruno Ganz, Isabelle Renauld, Fabrizio Bentivoglio and Achilleas Skevis; restrained adult performance and the child's presence hold private regret against border vulnerability." },
+    { area: "production_design", status: "source_verified", note: "BFI credits Giorgos Ziakas and Kostas Dimitriadis; the seafront house, harbour, bus, wedding, border fence and remembered beach become temporal and political spaces." },
+    { area: "costume_makeup", status: "source_verified", note: "Thessaloniki and BFI credit Giorgos Patsas for costumes; restrained contemporary and remembered clothing helps different times coexist without heavy period signalling." },
+    { area: "cinematography", status: "source_verified", note: "Thessaloniki and BFI credit Giorgos Arvanitis and Andreas Sinanos; extended camera movement and deep spatial choreography allow different times and groups to enter one shot." },
+    { area: "lighting", status: "mapped", note: "Rain, fog, snow, harbour grey and radiant remembered summer produce the film's temporal contrast, but the current sources do not isolate a dedicated lighting account." },
+    { area: "camera_format", status: "source_verified", note: "Thessaloniki Film Festival and Busan record a 35mm colour production running approximately 130 to 132 minutes." },
+    { area: "editing", status: "source_verified", note: "Thessaloniki and BFI credit Giannis Tsitsopoulos; sparse cutting protects long internal developments and lets memory emerge through staging rather than rapid montage." },
+    { area: "sound_design", status: "source_verified", note: "Thessaloniki and BFI credit Nikos Papadimitriou and Bernard Leroux; sea, rain, traffic, voices, poetry and border ambience join private memory to public space." },
+    { area: "music", status: "source_verified", note: "Thessaloniki and BFI credit Eleni Karaindrou; recurring melodic material links the final-day journey, lost family time and the child's uncertain future." },
+    { area: "effects_animation", status: "mapped", note: "BFI credits Manolis Sakadakis for special effects, but the film's primary system remains in-camera staging, weather, design and long-take choreography." },
+    { area: "documentary_method", status: "source_verified", note: "BFI and Thessaloniki connect the fiction to contemporary Balkan displacement and Albanian migration while maintaining a poetic rather than reportorial form." },
+  ],
+} as const satisfies FilmHistoryProfile;

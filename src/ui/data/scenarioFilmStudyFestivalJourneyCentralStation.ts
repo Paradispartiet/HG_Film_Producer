@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const centralStationFilmHistoryProfile = {
+  scenarioId: "scenario_central_station_1998",
+  period: "Brazilian road cinema, social realism and post-Cinema Novo humanist renewal",
+  traditions: ["Brazilian social road cinema", "Documentary-informed fiction", "Reluctant-caregiver melodrama"],
+  before: "Brazilian cinema had repeatedly joined regional inequality, urban displacement and documentary observation, while Walter Salles's documentaries and Foreign Land had already made travel, exile, letters and the search for identity central dramatic materials.",
+  moment: "VideoFilmes and international partners begin in Rio's crowded Central Station and move into Brazil's northeast, where Marcos Bernstein and João Emanuel Carneiro's letter-and-search structure, Walter Carvalho's 35mm location photography, Cássio Amarante and Carla Caffé's environments, Felipe Lacerda and Isabelle Rathery's road editing, layered public sound and Antônio Pinto and Jacques Morelenbaum's score transform geography into a reluctant bond between Dora and Josué.",
+  after: "The film won the 1998 Golden Bear, received two Academy Award nominations and established Salles and Fernanda Montenegro internationally while demonstrating how documentary attention, non-touristic location work and classical emotional structure could renew Brazilian road cinema.",
+  historyQuestion: "Which production system explains a letter writer and an orphan moving from a packed Rio terminal into Brazil's northeast, 35mm location images changing with geography, public voices and religious gatherings shaping the soundscape and a road search gradually becoming an ethical relationship?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, BFI and the Cinemateca Brasileira place the film in late-1990s Brazilian cinema and identify travel, literacy, regional inequality and family separation as its social field." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Cannes describes Salles as a filmmaker of travel and identity; BFI places the film within Brazilian road cinema and an unsentimental social-realist tradition." },
+    { area: "industry_and_production_context", status: "source_verified", note: "DFI and BFI document the Brazilian-French production, producers, department heads and international circulation; Cinemateca Brasileira records its original 35mm format." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes and BFI record the Golden Bear, BAFTA recognition and two Academy Award nominations, including Fernanda Montenegro's performance." },
+    { area: "screenplay", status: "source_verified", note: "DFI and BFI credit Marcos Bernstein and João Emanuel Carneiro from an original idea by Walter Salles; letters and the search for Josué's father organize the road structure." },
+    { area: "directing", status: "source_verified", note: "Cannes and the Academy's oral history document Salles's recurring interest in displacement and Montenegro's close collaboration with him and the cast." },
+    { area: "performance", status: "source_verified", note: "BFI, DFI and the Academy document Fernanda Montenegro, Vinícius de Oliveira and Marília Pêra; the film's emotional change depends on the tension between experienced theatre acting and the child's direct presence." },
+    { area: "production_design", status: "source_verified", note: "BFI and DFI credit Cássio Amarante and Carla Caffé; the station, buses, pilgrimage spaces, roadside stops and northeastern homes mark the changing social geography." },
+    { area: "costume_makeup", status: "source_verified", note: "BFI programme notes credit Cristina Camargo and Antoine Garabedian; restrained everyday appearance keeps class, travel and fatigue legible without decorative stylisation." },
+    { area: "cinematography", status: "source_verified", note: "DFI and BFI credit Walter Carvalho; crowded urban compression gives way to wider road, pilgrimage and sertão compositions as the relationship changes." },
+    { area: "lighting", status: "mapped", note: "The location images move between harsh station light, bus interiors and open northeastern daylight, but the current sources do not isolate a dedicated lighting account." },
+    { area: "camera_format", status: "source_verified", note: "Cinemateca Brasileira records the original 35mm colour format, while the BFI notes identify the laboratory and colour-timing workflow." },
+    { area: "editing", status: "source_verified", note: "DFI and BFI credit Felipe Lacerda and Isabelle Rathery; the edit alternates movement, temporary communities, letters and intimate pauses while preserving the search objective." },
+    { area: "sound_design", status: "source_verified", note: "BFI programme notes document Jean-Claude Brisson, François Groult, Bruno Tarrière, Waldir Xavier and the wider sound team; station crowds, trains, buses, voices and ceremony make public space active." },
+    { area: "music", status: "source_verified", note: "DFI and BFI credit Antônio Pinto and Jacques Morelenbaum and document the acoustic ensemble; strings, percussion and regional instruments accompany the road without erasing location sound." },
+    { area: "effects_animation", status: "not_central", note: "The film depends on location, performance, editing, sound and geography rather than a central effects or animation pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Cannes links Central Station to Salles's documentary Socorro Nobre and his continuing use of correspondence, travel and identity; location observation remains embedded in the fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;
