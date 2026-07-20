@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const dogtoothFilmHistoryProfile = {
+  scenarioId: "scenario_dogtooth_2009",
+  period: "Late-2000s low-budget Greek independent cinema and the contested Greek Weird Wave",
+  traditions: ["Greek independent cinema", "Absurdist family dystopia", "Festival-era European art cinema"],
+  before: "The film draws on enclosed-family allegory, absurdist theatre, surrealism and authoritarian social systems, while refusing conventional psychological explanation or naturalistic dialogue.",
+  moment: "A very small Greek production uses one sealed house, invented vocabulary, cool mechanical framing, choreographed games and flattened performance to turn financial limitation and creative freedom into a complete system of control.",
+  after: "Its Cannes prize and Academy nomination made it an international breakthrough for Lanthimos and for the loosely grouped Greek cinema later called the Greek Weird Wave, though the movement label remains retrospective and disputed.",
+  historyQuestion: "Which historical production system best explains why Dogtooth feels like a complete society even though it is built from one household, limited means and deliberately unnatural behavior?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Cannes and Academy records place the film at the late-2000s international breakthrough of low-budget contemporary Greek cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film is commonly placed in the critic-coined Greek Weird Wave, while Lanthimos's own comments warn against treating the label as a unified manifesto." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Lanthimos describes a production made with very limited means and difficult financing but substantial creative freedom." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Un Certain Regard prize and Academy nomination document its transition from small Greek production to internationally recognized film-history case." },
+    { area: "screenplay", status: "source_verified", note: "Invented definitions, repeated rules and the controlled arrival of outside objects make language itself the principal dramatic technology." },
+    { area: "directing", status: "source_verified", note: "Cool, mechanical direction presents abuse and absurdity without conventional emotional guidance, forcing the viewer to study rules and behavior." },
+    { area: "performance", status: "mapped", note: "Flat speech, ritualized games and bodily precision are central, while a dedicated actor and rehearsal source review remains pending." },
+    { area: "production_design", status: "source_verified", note: "The enclosed house, garden, fence, exercise areas and domestic objects form a deliberately complete authoritarian world." },
+    { area: "costume_makeup", status: "mapped", note: "Plain family clothing supports institutional sameness and infantilization, but department-level sourcing remains pending." },
+    { area: "cinematography", status: "source_verified", note: "Rigid distance, partial bodies, architectural framing and unemphatic observation turn the family compound into a visual control system." },
+    { area: "lighting", status: "mapped", note: "Bright exterior and clean domestic visibility remove gothic concealment, while detailed lighting documentation remains pending." },
+    { area: "camera_format", status: "research_pending", note: "The current evidence set does not yet verify the complete camera, stock and lens package." },
+    { area: "editing", status: "source_verified", note: "Abrupt scene changes and withheld causal explanation preserve the household's distorted logic instead of explaining it away." },
+    { area: "sound_design", status: "mapped", note: "Recorded lessons, repeated commands and sparse external sound reinforce linguistic captivity, while sound-team sourcing remains pending." },
+    { area: "music", status: "mapped", note: "Outside popular culture functions as forbidden knowledge rather than continuous score, but dedicated music research remains incomplete." },
+    { area: "effects_animation", status: "not_central", note: "The speculative world is created through language, staging, performance and space rather than effects." },
+    { area: "documentary_method", status: "not_central", note: "The film is a rigorously artificial allegorical construction rather than an observational or documentary-derived production." },
+  ],
+} as const satisfies FilmHistoryProfile;
