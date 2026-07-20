@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const psychoFilmHistoryProfile = {
+  scenarioId: "scenario_psycho_1960",
+  period: "Late-classical Hollywood suspense, television-trained production economy and modern horror",
+  traditions: ["Classical suspense", "Black-and-white studio horror", "Television-production economy"],
+  before: "Prestige Hollywood suspense was normally associated with star vehicles, polished studio continuity and increasingly expansive colour and widescreen production, while screen horror remained more clearly separated from everyday contemporary life.",
+  moment: "Alfred Hitchcock brings his Shamley television organization and a compact black-and-white production into Paramount and Universal facilities, combining Joseph Stefano's adaptation, John L. Russell's controlled photography, George Tomasini's fragmentary editing and Bernard Herrmann's string score.",
+  after: "Its protagonist switch, intimate contemporary setting, concentrated violence and audiovisual precision became a central reference for modern horror, while its production economy demonstrated that a major commercial film could be made outside prestige-scale expectations.",
+  historyQuestion: "Which production system explains the film's inexpensive black-and-white method, sudden transfer of identification and violence built from editing, sound and reaction rather than continuous spectacle?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, BFI and the Library of Congress place the 1960 film at the boundary between late-classical suspense and modern mainstream horror." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI describes the film as a watershed mainstream horror work that combines suspense, Gothic horror, dark humour and formal rule-breaking." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI and BFI document Hitchcock's Shamley production, a roughly thirty-day black-and-white shoot and extensive use of his television crew and economical working method." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Library of Congress records the film's preservation and continuing historical importance; the Academy record confirms four contemporary nominations." },
+    { area: "screenplay", status: "source_verified", note: "AFI credits Joseph Stefano's adaptation of Robert Bloch and documents revisions that reorganized the opening, characterization and narrative emphasis." },
+    { area: "directing", status: "source_verified", note: "AFI and BFI support Hitchcock's deliberate control of audience knowledge, the false initial story and the transfer of identification after the motel murder." },
+    { area: "performance", status: "source_verified", note: "BFI identifies Janet Leigh and Anthony Perkins as the central paired performances, while the Academy record confirms Leigh's supporting-actress nomination." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Joseph Hurley and Robert Clatworthy and documents production across Paramount, Universal and the surviving Bates house and motel environments." },
+    { area: "costume_makeup", status: "mapped", note: "Costume, hair, makeup and the practical body-effects work are represented in the production record, but this area still needs a dedicated department-level source." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits John L. Russell; the Academy nomination and BFI production account support the controlled black-and-white image and economical television-trained camera system." },
+    { area: "lighting", status: "mapped", note: "Low-key motel interiors, hard bathroom contrast and controlled studio night work are central to the image, but the current sources do not isolate a complete lighting process." },
+    { area: "camera_format", status: "source_verified", note: "AFI and BFI document the decision to shoot the feature in black and white within a compact studio production rather than as a prestige colour spectacle." },
+    { area: "editing", status: "source_verified", note: "AFI credits George Tomasini, and BFI documents the shower sequence's compressed fragments, jump cuts, viewpoint changes and precisely removed frames." },
+    { area: "sound_design", status: "source_verified", note: "AFI documents the sound departments, while BFI analysis shows running water, silence, voices and cutting working with the score as a single suspense system." },
+    { area: "music", status: "source_verified", note: "AFI and BFI document Bernard Herrmann's all-string score and its structural role in the titles, driving tension and the motel murder." },
+    { area: "effects_animation", status: "mapped", note: "Practical blood, body doubles, props and optical title design contribute to the film, but effects are subordinate to staging, editing and sound rather than a separate spectacle pipeline." },
+    { area: "documentary_method", status: "not_central", note: "The film uses contemporary American detail and economical production practice, but it is a tightly controlled studio suspense construction rather than documentary or documentary-coded reconstruction." },
+  ],
+} as const satisfies FilmHistoryProfile;

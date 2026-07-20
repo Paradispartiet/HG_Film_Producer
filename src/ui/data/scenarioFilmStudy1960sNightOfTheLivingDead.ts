@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const nightOfTheLivingDeadFilmHistoryProfile = {
+  scenarioId: "scenario_night_of_the_living_dead_1968",
+  period: "Regional American independent cinema, low-budget black-and-white horror and documentary-coded social crisis",
+  traditions: ["Regional independent cinema", "Modern zombie horror", "Low-budget location realism"],
+  before: "American horror was still strongly associated with studio monsters, Gothic settings, science-fiction creatures or polished exploitation formulas, while independent regional production rarely occupied the center of film history.",
+  moment: "George A. Romero and the Image Ten collective turn commercial-film skills, Pittsburgh-area locations, a rural house, nonprofessional support, borrowed resources, black-and-white photography, practical makeup and aggressive editing into a contained social siege.",
+  after: "The film's inexpensive production, public-domain circulation, documentary-coded immediacy, interracial casting and unresolved social violence helped redefine screen zombies and demonstrated the reach of regional independent horror.",
+  historyQuestion: "Which production system explains the film's rural Pennsylvania locations, collective financing, rough black-and-white image, practical gore, broadcast inserts and escalation through editing rather than studio scale?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, the Library of Congress and MoMA place the 1968 production within regional independent cinema, contemporary social unrest and the transformation of American horror." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The Library of Congress and Criterion identify the film as foundational modern zombie cinema and a landmark of independent American horror." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI, MoMA and Criterion document Image Ten, commercial-film company resources, a budget a little above one hundred thousand dollars and a dispersed Pennsylvania shoot." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Library of Congress records the film's National Film Registry status and its lasting effect on horror, independent production and political interpretation." },
+    { area: "screenplay", status: "source_verified", note: "AFI credits George Romero and John Russo and documents a contained siege structure built from incompatible survival strategies, broadcast information and an abrupt ending." },
+    { area: "directing", status: "source_verified", note: "AFI and MoMA support Romero's combination of harsh immediacy, controlled escalation, graphic interruption and refusal of a reassuring heroic resolution." },
+    { area: "performance", status: "source_verified", note: "MoMA and Criterion document Duane Jones, Judith O'Dea and a mixed professional and nonprofessional ensemble whose conflict is staged as seriously as the external attack." },
+    { area: "production_design", status: "source_verified", note: "AFI and MoMA document the farmhouse location, improvised barricades, cellar, television and practical household materials that define the film's readable siege geography." },
+    { area: "costume_makeup", status: "source_verified", note: "AFI credits costume and makeup work, while Criterion restoration materials preserve the practical wounds, corpse effects and ordinary clothing that keep the threat close to contemporary life." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Romero's photography; MoMA describes harsh lighting, handheld work and black-and-white location images that draw power from limited resources rather than conceal them." },
+    { area: "lighting", status: "source_verified", note: "MoMA identifies the harsh and uneven lighting as part of the film's raw visual force, especially across night exteriors, cramped interiors and news-like inserts." },
+    { area: "camera_format", status: "source_verified", note: "AFI, MoMA and Criterion document the black-and-white independent production and its restoration from surviving original film materials." },
+    { area: "editing", status: "source_verified", note: "AFI credits Romero and John Russo; MoMA emphasizes movement and shock created through editing, while broadcast inserts expand the world beyond the house." },
+    { area: "sound_design", status: "source_verified", note: "AFI credits Gary Streiner and Marshall Booth, and MoMA notes the deliberately unpolished dialogue, radio, television, impacts and screams that enlarge the crisis." },
+    { area: "music", status: "mapped", note: "Library music and recorded cues intensify the siege, but the current institutional sources concentrate more on image, editing, production conditions and sound texture than on a dedicated scoring process." },
+    { area: "effects_animation", status: "source_verified", note: "AFI documents practical makeup and special effects, while Criterion and MoMA preserve the handmade wounds, fire, props and body effects created within the collective low-budget system." },
+    { area: "documentary_method", status: "source_verified", note: "MoMA and Library of Congress accounts support the documentary-coded use of handheld images, local environments, television reports, ordinary faces and an ending presented through still photographs." },
+  ],
+} as const satisfies FilmHistoryProfile;

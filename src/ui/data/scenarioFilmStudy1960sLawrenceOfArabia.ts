@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const lawrenceOfArabiaFilmHistoryProfile = {
+  scenarioId: "scenario_lawrence_of_arabia_1962",
+  period: "International roadshow epic, large-format location production and psychologically ambiguous historical biography",
+  traditions: ["Roadshow epic", "Super Panavision 70", "International historical production"],
+  before: "Postwar historical epics had already expanded screen scale through widescreen formats, stars, massed extras and distant locations, often organizing history around clear heroic action and national spectacle.",
+  moment: "Producer Sam Spiegel, director David Lean, writers Michael Wilson and Robert Bolt, cinematographer Freddie Young, designer John Box, editor Anne V. Coates and composer Maurice Jarre coordinate a long international production across desert locations, constructed cities, second units and 65mm photography.",
+  after: "The film became a defining example of the roadshow epic and large-format landscape cinema, while its fractured central performance and political ambiguity complicated the heroic biography that its monumental production appeared to promise.",
+  historyQuestion: "Which production system explains the film's union of 65mm desert scale, constructed historical environments, long-distance logistics, intimate performance and psychologically unstable heroism?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and BFI place the film within the early-1960s international epic cycle and document its First World War subject, roadshow scale and 1962 release." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI identifies the film as a landmark of the epic tradition and large-format cinema while emphasizing its ambivalent, de-mythologizing historical portrait." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI and BFI document Horizon Pictures, Columbia distribution, Sam Spiegel's production and filming in Jordan, Spain, Morocco and British studios." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Academy records seven wins, including picture, directing, cinematography, art direction, editing, score and sound; BFI treats it as a defining 70mm achievement." },
+    { area: "screenplay", status: "source_verified", note: "AFI and BFI credit Michael Wilson and Robert Bolt and describe an adaptation that selects historical episodes around Lawrence's self-invention, contradictions and imperial role." },
+    { area: "directing", status: "source_verified", note: "BFI documents Lean's meticulous mise-en-scène, long location production and control of both mass action and tense political interiors." },
+    { area: "performance", status: "source_verified", note: "BFI and the Academy record Peter O'Toole's central performance and the large international ensemble used to carry competing military, political and personal perspectives." },
+    { area: "production_design", status: "source_verified", note: "BFI credits John Box and records Shepperton and Moroccan studio work; the archive describes constructed dramatic spaces including the recreation of Aqaba in Almería." },
+    { area: "costume_makeup", status: "source_verified", note: "AFI's production record and the Academy craft recognition support the coordinated uniforms, robes, military dress, aging and desert-wear systems needed across the long chronology." },
+    { area: "cinematography", status: "source_verified", note: "AFI, BFI and the Academy document Freddie Young's large-format desert photography, long-lens scale, mirage imagery and movement between monumental landscapes and close performance." },
+    { area: "lighting", status: "source_verified", note: "BFI and cinematography records support the controlled use of hard desert sun, silhouette, reflected light and interior contrast across difficult location conditions." },
+    { area: "camera_format", status: "source_verified", note: "AFI and BFI identify Super Panavision 70 and 65mm-origin photography, with a roadshow presentation system designed for image scale and fine landscape detail." },
+    { area: "editing", status: "source_verified", note: "BFI credits Anne V. Coates and records months of editing; the Academy award confirms the film's control of vast geography, ellipsis, match transitions and campaign progression." },
+    { area: "sound_design", status: "source_verified", note: "The Academy sound award and BFI production credits support the coordinated use of wind, hoofbeats, machinery, battle scale, dialogue and distance across large-format presentation." },
+    { area: "music", status: "source_verified", note: "BFI and the Academy document Maurice Jarre's score, composed under a compressed schedule and used to connect landscape, character myth and roadshow scale." },
+    { area: "effects_animation", status: "mapped", note: "Practical explosions, train action, mass movement, optical transitions and second-unit work support the epic, but effects are integrated into the location-and-design system rather than foregrounded as a separate attraction." },
+    { area: "documentary_method", status: "mapped", note: "Real desert geography and historical research give the production material authority, but BFI also stresses that the film constructs an interpretive, mythic and politically selective biography rather than documentary history." },
+  ],
+} as const satisfies FilmHistoryProfile;

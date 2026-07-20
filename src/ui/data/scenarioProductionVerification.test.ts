@@ -85,7 +85,14 @@ const newHollywoodBlockbusterIds = [
   "scenario_star_wars_1977",
 ] as const;
 
-const expectedVerifiedCount = 88;
+const sixtiesScaleIndependentIds = [
+  "scenario_psycho_1960",
+  "scenario_lawrence_of_arabia_1962",
+  "scenario_2001_a_space_odyssey_1968",
+  "scenario_night_of_the_living_dead_1968",
+] as const;
+
+const expectedVerifiedCount = 92;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -183,6 +190,14 @@ test("European political and feminist modernism systems are verified with four s
 
 test("New Hollywood and blockbuster systems are verified with four sources each", () => {
   for (const scenarioId of newHollywoodBlockbusterIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("1960s scale and independent systems are verified with four sources each", () => {
+  for (const scenarioId of sixtiesScaleIndependentIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);
