@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const lostWeekendFilmHistoryProfile = {
+  scenarioId: "scenario_the_lost_weekend_1945",
+  period: "Paramount social-problem drama, expressionist film noir and researched urban addiction portrait",
+  traditions: ["Social-problem film", "American film noir", "Documentary-inflected studio realism"],
+  before: "Hollywood alcoholism had usually appeared as comic behavior, moral weakness or background characterization, while wartime and noir filmmaking had developed subjective image, urban location and expressionist sound as tools for psychological pressure.",
+  moment: "Paramount, producer and co-writer Charles Brackett, director and co-writer Billy Wilder, cinematographer John F. Seitz, editor Doane Harrison, designers Hans Dreier and Earl Hedrick, composer Miklós Rózsa and Ray Milland combine New York research, replicated Bellevue interiors, location shooting and controlled studio expressionism into a four-day addiction narrative.",
+  after: "The film became a major social-problem success, won Academy Awards for picture, director, actor and screenplay, entered the National Film Registry and remained a key example of Hollywood joining documentary research to subjective noir form.",
+  historyQuestion: "Which production system explains the film's Bellevue and bar research, compressed four-day binge, New York locations and copied interiors, subjective hallucinations, noir lighting and theremin-led score?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, BFI and the Library of Congress place the production in 1944–45 and document Hollywood resistance to an uncompromising screen treatment of alcoholism." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The Library of Congress explicitly identifies a social-problem film merging expressionistic noir with documentary realism; BFI and Wilder's interview describe the same hybrid method." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Paramount production, New York work beginning 1 October 1944, the later studio schedule and April 1945 additions and retakes." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Academy records wins for picture, directing, actor and screenplay; the Library of Congress records the film's 2011 National Film Registry selection." },
+    { area: "screenplay", status: "source_verified", note: "AFI and the Academy credit Charles Brackett and Billy Wilder adapting Charles Jackson, while BFI documents the compressed relapse structure and first-person writer perspective." },
+    { area: "directing", status: "source_verified", note: "Wilder's BFI interview documents his pursuit of realism, Bellevue research and exact replication of practical locations inside the Paramount production." },
+    { area: "performance", status: "source_verified", note: "The Academy records Ray Milland's acting win, while AFI and BFI support a performance system moving between concealment, craving, humiliation, hallucination and attempted recovery." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Hans Dreier, Earl Hedrick and the Paramount art departments; Wilder describes copying the alcoholic ward, apartment and specific New York bars." },
+    { area: "costume_makeup", status: "mapped", note: "Progressively disordered dress, sweat and facial deterioration visualize the binge, but the available sources do not provide a dedicated wardrobe, makeup or hair process account." },
+    { area: "cinematography", status: "source_verified", note: "AFI and the Academy credit and nominate John F. Seitz; the institutional accounts connect location detail, black-and-white contrast and subjective distortion to Don's experience." },
+    { area: "lighting", status: "source_verified", note: "BFI and Library of Congress descriptions identify an expressionist noir treatment of apartments, bars, hospital space and hallucination alongside researched realism." },
+    { area: "camera_format", status: "source_verified", note: "AFI records black-and-white photography and Western Electric recording, grounding the case in Paramount's wartime studio technology." },
+    { area: "editing", status: "source_verified", note: "AFI credits Doane Harrison and the Academy records his nomination; the film compresses the binge through concealment, repeated searches, flashback and subjective rupture." },
+    { area: "sound_design", status: "source_verified", note: "AFI documents the sound departments, while BFI describes hospital, bar and apartment detail joining internal pressure, voices, city noise and hallucination." },
+    { area: "music", status: "source_verified", note: "AFI and the Academy credit Miklós Rózsa; BFI documents the influential theremin score adopted after early screenings without music failed." },
+    { area: "effects_animation", status: "mapped", note: "The mouse-and-bat hallucination and other subjective images are important practical and photographic interventions, but the present sources do not isolate the full effects workflow." },
+    { area: "documentary_method", status: "source_verified", note: "Wilder's interview documents Bellevue observation, exact copies of the ward and apartment, and use of real New York exteriors and bars as production research." },
+  ],
+} as const satisfies FilmHistoryProfile;
