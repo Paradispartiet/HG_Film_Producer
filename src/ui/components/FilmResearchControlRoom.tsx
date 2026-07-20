@@ -15,8 +15,21 @@ const statusOptions: readonly { readonly id: FilmResearchStatus | "all"; readonl
   { id: "verified", label: "Verified" },
 ];
 
-export function FilmResearchControlRoom() {
-  const [open, setOpen] = useState(false);
+type FilmResearchControlRoomProps = {
+  readonly onClose: () => void;
+  readonly onOpen: () => void;
+  readonly onOpenAtlas: (scenarioId: string) => void;
+  readonly onOpenDirector: (scenarioId: string) => void;
+  readonly open: boolean;
+};
+
+export function FilmResearchControlRoom({
+  onClose,
+  onOpen,
+  onOpenAtlas,
+  onOpenDirector,
+  open,
+}: FilmResearchControlRoomProps) {
   const [query, setQuery] = useState("");
   const [status, setStatus] = useState<FilmResearchStatus | "all">("all");
   const queue = useMemo(() => createFilmResearchQueue(getClassicFilmScenarios()), []);
@@ -32,21 +45,23 @@ export function FilmResearchControlRoom() {
 
   return (
     <>
-      <button className="research-control-trigger" onClick={() => setOpen(true)} type="button">
-        <span>Editorial system</span>
-        <strong>Research control</strong>
-      </button>
+      {!open && (
+        <button className="research-control-trigger" onClick={onOpen} type="button">
+          <span>Editorial system</span>
+          <strong>Research control</strong>
+        </button>
+      )}
 
       {open && (
-        <div className="research-control-backdrop" onMouseDown={() => setOpen(false)} role="presentation">
+        <div className="research-control-backdrop" onMouseDown={onClose} role="presentation">
           <section aria-label="Film research control room" aria-modal="true" className="research-control-panel" onMouseDown={(event) => event.stopPropagation()} role="dialog">
             <header className="research-control-header">
               <div>
                 <span>Filmverket editorial control</span>
                 <h2>Research control room</h2>
-                <p>Keep verified film knowledge separate from provisional seeds and unfinished research.</p>
+                <p>Keep verified film knowledge separate from provisional seeds and unfinished research. Every row now opens the same film directly in Film Atlas or Director Lab.</p>
               </div>
-              <button aria-label="Close research control room" onClick={() => setOpen(false)} type="button">×</button>
+              <button aria-label="Close research control room" onClick={onClose} type="button">×</button>
             </header>
 
             <section className="research-summary-grid" aria-label="Research status summary">
@@ -90,6 +105,10 @@ export function FilmResearchControlRoom() {
                     <span><strong>{item.learningGoalCount}</strong> learning goals</span>
                   </div>
                   <strong className="research-status-label">{labelFilmResearchStatus(item.status)}</strong>
+                  <div className="research-film-actions">
+                    <button onClick={() => onOpenAtlas(item.scenarioId)} type="button">Film Atlas</button>
+                    <button onClick={() => onOpenDirector(item.scenarioId)} type="button">Director Lab</button>
+                  </div>
                 </article>
               ))}
               {visibleItems.length === 0 && <p className="research-empty">No films match this research filter.</p>}
