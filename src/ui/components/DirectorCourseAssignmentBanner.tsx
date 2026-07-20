@@ -12,6 +12,11 @@ import {
   type EditingSoundDirectorAssignment,
 } from "../../core/filmSchoolEditingSoundCourse";
 import {
+  FILM_SCHOOL_CAPSTONE_ASSIGNMENT_STORAGE_KEY,
+  FILM_SCHOOL_GROUND_COURSE_ID,
+  type FilmSchoolCapstoneAssignment,
+} from "../../core/filmSchoolGroundCourse";
+import {
   LIGHTING_DESIGN_COURSE_ID,
   LIGHTING_DESIGN_DIRECTOR_ASSIGNMENT_STORAGE_KEY,
   type LightingDesignDirectorAssignment,
@@ -27,7 +32,7 @@ import {
   type ScreenplayDirectorAssignment,
 } from "../../core/filmSchoolScreenplayCourse";
 
-type CourseAssignment = ScreenplayDirectorAssignment | PerformanceDirectorAssignment | CameraDirectorAssignment | LightingDesignDirectorAssignment | EditingSoundDirectorAssignment;
+type CourseAssignment = ScreenplayDirectorAssignment | PerformanceDirectorAssignment | CameraDirectorAssignment | LightingDesignDirectorAssignment | EditingSoundDirectorAssignment | FilmSchoolCapstoneAssignment;
 type LoadedCourseAssignment = CourseAssignment & { readonly storageKey: string };
 
 type DirectorCourseAssignmentBannerProps = {
@@ -41,6 +46,7 @@ const assignmentSources = [
   { storageKey: CAMERA_DIRECTOR_ASSIGNMENT_STORAGE_KEY, courseId: CAMERA_COURSE_ID },
   { storageKey: LIGHTING_DESIGN_DIRECTOR_ASSIGNMENT_STORAGE_KEY, courseId: LIGHTING_DESIGN_COURSE_ID },
   { storageKey: EDITING_SOUND_DIRECTOR_ASSIGNMENT_STORAGE_KEY, courseId: EDITING_SOUND_COURSE_ID },
+  { storageKey: FILM_SCHOOL_CAPSTONE_ASSIGNMENT_STORAGE_KEY, courseId: FILM_SCHOOL_GROUND_COURSE_ID },
 ] as const;
 
 export function DirectorCourseAssignmentBanner({ filmSlug, visible }: DirectorCourseAssignmentBannerProps) {
@@ -73,7 +79,7 @@ export function DirectorCourseAssignmentBanner({ filmSlug, visible }: DirectorCo
         <button aria-label="Dismiss course assignment" onClick={dismiss} type="button">×</button>
       </header>
       <p>{activeAssignment.prompt}</p>
-      <div>{fieldLabels.map((label, index) => <span key={label}><b>{String(index + 1).padStart(2, "0")}</b>{label}</span>)}</div>
+      <div>{fieldLabels.map((label, index) => <span key={`${index}:${label}`}><b>{String(index + 1).padStart(2, "0")}</b>{label}</span>)}</div>
       <button onClick={() => document.getElementById("director-active-scene")?.scrollIntoView({ behavior: "smooth", block: "start" })} type="button">Gå til scenebrieffet →</button>
     </aside>
   );
