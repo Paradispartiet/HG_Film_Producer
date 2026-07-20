@@ -26,7 +26,7 @@ Oversikten lager ikke et nytt poeng-, badge- eller belønningssystem. Den summer
 
 ## Film School-forsiden
 
-Kursvelgeren har fått inngangen `00 Oversikt og regieksamen`.
+Kursvelgeren har inngangen `00 Oversikt og regieksamen`.
 
 Forsiden viser:
 
@@ -36,6 +36,7 @@ Forsiden viser:
 - progresjon og leksjonsstatus for hvert enkelt kapittel
 - direkte åpning av riktig kurs
 - status for den avsluttende regieksamen
+- levert film, scene og innleveringsdato når eksamen er fullført
 
 Nye brukere åpner oversikten som standard. Eksisterende lagrede kursvalg fortsetter å virke.
 
@@ -66,13 +67,55 @@ Oppgaven bruker alle de 16 eksisterende feltene i Director-briefen:
 
 Oppgaven krever at alle avdelingene bygger samme dramatiske sceneutvikling. Den lager ikke et parallelt Director-format.
 
+## Innleveringskrav
+
+Director-panelet kontrollerer den aktive scenen mot den aktive eksamensoppgaven. Eksamen kan bare leveres når:
+
+- prosjektet tilhører filmen som ble valgt i Film School
+- alle 16 regifelt i den aktive scenen er utfylt
+- minst tre shot cards er fullstendig utfylt
+- hvert tellende shot card har alle ni eksisterende shot-felt
+
+Uferdige ekstra shot cards kan ligge i prosjektet, men de teller ikke mot minstekravet.
+
+Når kravene er oppfylt, vises knappen `Lever regieksamen`. Innleveringen registrerer:
+
+- film og filmadresse
+- aktiv scene og scenetittel
+- eksamensoppgavens opprettelsestid
+- prosjektversjonen som ble levert
+- antall utfylte regifelt
+- antall komplette og totale shot cards
+- innleveringsdato
+
+Dersom prosjektet endres etter innlevering, varsler Director-panelet og tilbyr `Lever oppdatert versjon`.
+
+## Fullført-status
+
+En gyldig innlevering gjør at Film School-forsiden viser `Regi-grunnkurs fullført` med:
+
+- referansefilm
+- levert scene
+- dato og klokkeslett
+- 16 registrerte regifelt
+- antall komplette shot cards
+- direkte åpning av det leverte Director-prosjektet
+
+Brukeren kan senere starte en ny eksamensoppgave uten at den tidligere fullført-statusen forsvinner. En ny innlevering erstatter den lagrede innleveringsposten.
+
 ## Lagring
 
 Den avsluttende oppgaven lagres i:
 
 - `hg_film_school_ground_course_capstone_assignment_v1`
 
-Director-oppdragskortet velger fortsatt den nyeste oppgaven som matcher aktiv film, men støtter nå både de fem kapitteloppgavene og den samlede regieksamen.
+Den leverte eksamen lagres i:
+
+- `hg_film_school_ground_course_capstone_submission_v1`
+
+Selve Director-prosjektet fortsetter å bruke den eksisterende filmbaserte lagringsnøkkelen. Innleveringsposten kopierer ikke hele prosjektet, men peker på film, scene og prosjektets `updatedAt` ved innlevering.
+
+Director-oppdragskortet velger fortsatt den nyeste oppgaven som matcher aktiv film, men støtter både de fem kapitteloppgavene og den samlede regieksamen.
 
 ## Avgrensning
 
@@ -82,5 +125,5 @@ Endringen påvirker ikke:
 - Film Atlas-katalogposter
 - Production Cases
 - research-verifisering
-- lagrede Director-prosjekter
+- strukturen i lagrede Director-prosjekter
 - backend eller brukerkontoer
