@@ -34,6 +34,11 @@ import {
   resolveMinimalistRoadFilmStudyMap,
 } from "../data/scenarioFilmStudyMinimalistRoadBatch";
 import {
+  createSilentFoundationsFilmHistoryChoices,
+  getSilentFoundationsFilmHistoryProfile,
+  resolveSilentFoundationsFilmStudyMap,
+} from "../data/scenarioFilmStudySilentFoundationsBatch";
+import {
   createTechnologyFilmHistoryChoices,
   getTechnologyFilmHistoryProfile,
   resolveTechnologyFilmStudyMap,
@@ -49,7 +54,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveIndependentStorytellingFilmStudyMap(scenario, brief)
+    () => resolveSilentFoundationsFilmStudyMap(scenario, brief)
+      ?? resolveIndependentStorytellingFilmStudyMap(scenario, brief)
       ?? resolveEuropeanPressureFilmStudyMap(scenario, brief)
       ?? resolveMinimalistRoadFilmStudyMap(scenario, brief)
       ?? resolveConstructedWorldsFilmStudyMap(scenario, brief)
@@ -67,6 +73,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getSilentFoundationsFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createSilentFoundationsFilmHistoryChoices(historyProfile);
+    }
     if (getIndependentStorytellingFilmHistoryProfile(historyProfile.scenarioId)) {
       return createIndependentStorytellingFilmHistoryChoices(historyProfile);
     }
@@ -189,7 +198,7 @@ export function ScenarioFilmStudyPanel({
   );
 }
 
-function HistoryArcStep({ label, text }: { readonly label: string; readonly text: string }) {
+function HistoryArcStep({ label, text }: { label: string; text: string }) {
   return (
     <article>
       <span>{label}</span>
@@ -198,13 +207,7 @@ function HistoryArcStep({ label, text }: { readonly label: string; readonly text
   );
 }
 
-function CoverageGroup({
-  items,
-  title,
-}: {
-  readonly items: readonly FilmStudyCoverageItem[];
-  readonly title: string;
-}) {
+function CoverageGroup({ items, title }: { items: readonly FilmStudyCoverageItem[]; title: string }) {
   return (
     <section>
       <h5>{title}</h5>
