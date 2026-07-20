@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const veraDrakeFilmHistoryProfile = {
+  scenarioId: "scenario_vera_drake_2004",
+  period: "British social realism, research-built ensemble cinema and postwar moral procedure",
+  traditions: ["Mike Leigh ensemble method", "British working-class social realism", "Historical legal and medical drama"],
+  before: "British social realism and Mike Leigh's television and feature work had already placed working-class routines, moral pressure and fully developed ensemble characters at the centre of drama, while Leigh's rehearsal method built scripts from research, biography and sustained actor collaboration rather than conventional screenplay delivery.",
+  moment: "Thin Man Films, the UK Film Council and international partners reconstruct London in 1950 through six months of character work and historical research; Mike Leigh, Imelda Staunton and the ensemble, Dick Pope's 35mm photography, Eve Stewart's compressed domestic design, Jacqueline Durran and Christine Blundell's period appearance, Jim Clark's patient-to-procedural editing and a fully credited sound team turn an illegal abortion practice into a conflict between care, class, family and law.",
+  after: "Vera Drake won the 2004 Golden Lion, received five Academy Award nominations and became a central example of how Leigh's research-and-rehearsal process could sustain historically detailed, morally complex cinema without reducing its characters to positions in a debate.",
+  historyQuestion: "Which production system explains a 1950 London household built through months of research and character rehearsal, a compassionate illegal practice revealed through ordinary visits, a long ensemble arrest sequence and police procedure tightening around a woman whose family never knew her secret?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and DFI place the film in London in 1950, before the 1967 change in English and Welsh abortion law, and connect postwar scarcity, class difference and illegal reproductive care directly to the drama." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI places the film within Mike Leigh's research-built British social realism, where extensive rehearsal and complete character biographies produce social and moral complexity." },
+    { area: "industry_and_production_context", status: "source_verified", note: "DFI and BFI document the British-French-New Zealand production, UK Film Council support, Thin Man Films collaboration and the complete principal department structure." },
+    { area: "reception_and_legacy", status: "source_verified", note: "La Biennale records the 2004 Golden Lion, while BFI documents the film's five Academy Award nominations and its major place in Leigh's international career." },
+    { area: "screenplay", status: "source_verified", note: "DFI credits Mike Leigh; BFI documents six months of research, character creation and improvisation before shooting, with the final dramatic material shaped from that process." },
+    { area: "directing", status: "source_verified", note: "BFI's Leigh interview explains his collaborative control of improvisation, full character histories and the decision to preserve moral tension by avoiding simple villains or explanatory speeches." },
+    { area: "performance", status: "source_verified", note: "BFI and DFI document Imelda Staunton, Phil Davis and the ensemble; Leigh describes developing every character from birth and using sustained improvisation to reach precise filmed scenes." },
+    { area: "production_design", status: "source_verified", note: "BFI and DFI credit Eve Stewart, Andrew Grant, Ed Walsh and the art department; cramped flats, upper-class homes, workplaces, police rooms and court spaces make class and institutional pressure visible." },
+    { area: "costume_makeup", status: "source_verified", note: "BFI credits Jacqueline Durran and Christine Blundell with the full wardrobe, hair and makeup teams; period clothing and appearance differentiate labour, class, family role and authority." },
+    { area: "cinematography", status: "source_verified", note: "BFI and DFI credit Dick Pope; controlled ensemble framing and close observation preserve the actors' social space while allowing the arrest and questioning to narrow around Vera." },
+    { area: "lighting", status: "source_verified", note: "British Cinematographer's tribute to Pope identifies Vera Drake's warm, human facial light as central to its realism, while BFI documents the complete lighting and camera departments." },
+    { area: "camera_format", status: "source_verified", note: "DFI records a 35mm colour production with DTS presentation." },
+    { area: "editing", status: "source_verified", note: "BFI and DFI credit Jim Clark; domestic routines and overlapping visits accumulate patiently before the police arrival, interrogation and family disclosure tighten the film's temporal pressure." },
+    { area: "sound_design", status: "source_verified", note: "BFI credits Tim Fraser, Nigel Stone, John Warhurst and the recording, editing, Foley and mixing teams; household work, footsteps, restrained speech and police formality carry the shift from care to procedure." },
+    { area: "music", status: "source_verified", note: "BFI and DFI credit Andrew Dickson and the recorded chamber ensemble; selective music supports period atmosphere and intimacy without replacing household and procedural sound." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on ensemble performance, historical reconstruction, camera, editing and sound rather than a central effects or animation pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Leigh describes general historical research, letters from women imprisoned for abortion offences and specialist advisers; the fictional characters emerge from assimilated evidence rather than direct biography." },
+  ],
+} as const satisfies FilmHistoryProfile;

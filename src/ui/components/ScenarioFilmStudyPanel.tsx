@@ -89,6 +89,11 @@ import {
   resolveIndependentStorytellingFilmStudyMap,
 } from "../data/scenarioFilmStudyIndependentStorytellingBatch";
 import {
+  createIntimateFestivalBodyCareSystemsFilmHistoryChoices,
+  getIntimateFestivalBodyCareSystemsFilmHistoryProfile,
+  resolveIntimateFestivalBodyCareSystemsFilmStudyMap,
+} from "../data/scenarioFilmStudyIntimateFestivalBodyCareSystemsBatch";
+import {
   createLandscapeFilmHistoryChoices,
   getLandscapeFilmHistoryProfile,
   resolveLandscapeFilmStudyMap,
@@ -154,7 +159,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveFestivalJourneyDisplacementSystemsFilmStudyMap(scenario, brief)
+    () => resolveIntimateFestivalBodyCareSystemsFilmStudyMap(scenario, brief)
+      ?? resolveFestivalJourneyDisplacementSystemsFilmStudyMap(scenario, brief)
       ?? resolve1980sPoliticalPalmeSystemsFilmStudyMap(scenario, brief)
       ?? resolveModernNordicBehaviorSystemsFilmStudyMap(scenario, brief)
       ?? resolveNordicMinimalistSocialSystemsFilmStudyMap(scenario, brief)
@@ -193,6 +199,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getIntimateFestivalBodyCareSystemsFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createIntimateFestivalBodyCareSystemsFilmHistoryChoices(historyProfile);
+    }
     if (getFestivalJourneyDisplacementSystemsFilmHistoryProfile(historyProfile.scenarioId)) {
       return createFestivalJourneyDisplacementSystemsFilmHistoryChoices(historyProfile);
     }

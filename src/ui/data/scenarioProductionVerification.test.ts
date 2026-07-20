@@ -92,6 +92,13 @@ const festivalJourneyDisplacementIds = [
   "scenario_head_on_2004",
 ] as const;
 
+const intimateFestivalBodyCareIds = [
+  "scenario_vera_drake_2004",
+  "scenario_the_wrestler_2008",
+  "scenario_the_milk_of_sorrow_2009",
+  "scenario_somewhere_2010",
+] as const;
+
 const asianPostwar1950sIds = [
   "scenario_rashomon_1950",
   "scenario_tokyo_story_1953",
@@ -155,7 +162,7 @@ const europeanModernistProductionIds = [
   "scenario_the_battle_of_algiers_1966",
 ] as const;
 
-const expectedVerifiedCount = 128;
+const expectedVerifiedCount = 132;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -261,6 +268,14 @@ test("1980s political Palme systems are verified with four sources each", () => 
 
 test("festival journey displacement systems are verified with four sources each", () => {
   for (const scenarioId of festivalJourneyDisplacementIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("intimate festival body care systems are verified with four sources each", () => {
+  for (const scenarioId of intimateFestivalBodyCareIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);
