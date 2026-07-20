@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const somewhereFilmHistoryProfile = {
+  scenarioId: "scenario_somewhere_2010",
+  period: "American minimalist celebrity cinema, father-daughter observation and duration-based alienation",
+  traditions: ["Sofia Coppola celebrity critique", "Hotel and leisure-space modernism", "Minimalist observational family drama"],
+  before: "Sofia Coppola's earlier films had already used hotels, privilege, music and suspended time to study isolation and young female subjectivity, while European modernist and durational cinema offered a model for making repetition, waiting and seemingly uneventful routine dramatically active.",
+  moment: "American Zoetrope and Focus Features organize a deliberately small production around the Chateau Marmont and Italian locations: Coppola's sparse script, Stephen Dorff and Elle Fanning's relaxed father-daughter interaction, Harris Savides's patient 35mm images, Anne Ross and Stacey Battat's coordinated spaces and clothes, Sarah Flack's long-duration editing and Phoenix-led music make celebrity comfort feel empty until ordinary shared time briefly changes its meaning.",
+  after: "Somewhere won the 2010 Golden Lion and became one of Coppola's clearest statements of minimalist duration, using long waits, repeated spectacle and a child's practical presence to turn fame and luxury into a study of emotional stasis rather than glamour.",
+  historyQuestion: "Which production system explains a movie star circling a racetrack, watching repeated private performances and drifting through hotel routine in long takes until time with his daughter gives the same spaces a different emotional weight?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Focus place the film in late-2000s celebrity culture and the Chateau Marmont, where luxury, publicity and professional access coexist with emotional isolation." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI connects Somewhere to Coppola's recurring hotel, fame and alienation cinema and to durational influences including Chantal Akerman's attention to solitary routine." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Focus documents the intentionally small American Zoetrope production, three-week Chateau shoot, Italian unit and close coordination among production, camera, design and costume departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "La Biennale records the 2010 Golden Lion, while BFI identifies the film as a major minimalist work in Coppola's career." },
+    { area: "screenplay", status: "source_verified", note: "BFI and Focus credit Sofia Coppola; the script reduces conventional plot and lets repeated routines, waiting, practical parenting and small changes in behaviour carry the arc." },
+    { area: "directing", status: "source_verified", note: "Focus describes Coppola's less-is-more approach, European intimate model and preference for allowing scenes to unfold without controlling every emotion through cuts." },
+    { area: "performance", status: "source_verified", note: "BFI and Focus document Stephen Dorff, Elle Fanning and Chris Pontius; Dorff lived at the Chateau and the production allowed relaxed interaction and selective improvisation around Coppola's precise situation design." },
+    { area: "production_design", status: "source_verified", note: "Focus credits Anne Ross and documents how the actual Chateau rooms, the bought-out fifth floor, Italian spaces and added colour around Cleo shape the film's changing emotional geography." },
+    { area: "costume_makeup", status: "source_verified", note: "Focus credits Stacey Battat and details the coordination of Cleo's colour, Johnny's vintage boots, Levi's and Brando references with Ross's spaces and Coppola's restrained visual system." },
+    { area: "cinematography", status: "source_verified", note: "Focus and BFI credit Harris Savides; fixed observation, patient distance and carefully controlled hotel and exterior images make repetition, comfort and emotional vacancy visible." },
+    { area: "lighting", status: "source_verified", note: "Focus records Savides's ability to keep whites, stripes and faces controlled while preserving the natural character of real hotel rooms and locations." },
+    { area: "camera_format", status: "source_verified", note: "DFI's Cinemateket record identifies the film's 35mm presentation, consistent with the photochemical production documented in Focus materials." },
+    { area: "editing", status: "source_verified", note: "Focus credits Sarah Flack and records the shared decision to let actions play in real time, including long single-shot smoking, skating and performance passages rather than cutting for conventional emphasis." },
+    { area: "sound_design", status: "mapped", note: "Engines, hotel ambience, television, distant music, room tone and quiet conversation separate public privilege from private stasis, but the current sources do not isolate a dedicated sound-team account." },
+    { area: "music", status: "source_verified", note: "Focus production materials document the selective pop and original-music structure, including Phoenix, used to punctuate rather than continuously explain Johnny's emotional state." },
+    { area: "effects_animation", status: "not_central", note: "The film depends on duration, location, performance, image, editing and sound rather than a central effects or animation pipeline." },
+    { area: "documentary_method", status: "mapped", note: "Real hotel spaces and observation of celebrity routines give the film a lived texture, but it remains a controlled fictional construction rather than a documented research or nonfiction process." },
+  ],
+} as const satisfies FilmHistoryProfile;
