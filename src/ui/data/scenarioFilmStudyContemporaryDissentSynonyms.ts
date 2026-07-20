@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const synonymsFilmHistoryProfile = {
+  scenarioId: "scenario_synonyms_2019",
+  period: "Israeli-French transnational modernism, language satire and physically volatile identity cinema",
+  traditions: ["Transnational exile cinema", "Israeli political modernism", "Performance-led urban satire"],
+  before: "Nadav Lapid's Policeman and The Kindergarten Teacher had already turned bodies, speech and institutional identity into unstable political forms, while exile cinema and Paris narratives offered a framework for testing whether language and nationality can actually be abandoned.",
+  moment: "France, Israel and Germany support Lapid's partly autobiographical Paris film about an ex-soldier who refuses Hebrew and tries to rebuild himself through French words; Tom Mercier's athletic performance, a camera that alternates racing proximity with frontal confrontation, abrupt tonal shifts and vocabulary-driven sound make identity an argument fought through body, language and movement.",
+  after: "Synonyms won the 2019 Golden Bear and became Lapid's international breakthrough, carrying his confrontational Israeli cinema into an explicitly transnational setting and providing a major contemporary example of how autobiography, political satire and unstable form can be fused.",
+  historyQuestion: "Which production system explains a partly autobiographical Israeli-French film in which an ex-soldier rejects Hebrew in Paris, recites lists of French words, turns his body into a political battleground and moves through comedy, humiliation, fantasy and fury without settling into a stable exile narrative?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Film Comment and Film at Lincoln Center place the film in early-2000s Paris after Israeli military service, linking migration, nationalism, assimilation and European self-image to Yoav's daily life." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Film Comment connect the film to Lapid's earlier Israeli political cinema while identifying its transnational exile structure, confrontational allegory and anti-binary modernism." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Film at Lincoln Center and Berlinale records identify the French-Israeli-German production and its circulation through Berlin and New York festival institutions." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Berlinale records Synonyms as the 2019 Golden Bear winner, while Film Comment and BFI place it as Lapid's major international breakthrough." },
+    { area: "screenplay", status: "source_verified", note: "Lapid tells Film Comment that the film grows from events he experienced in altered forms and that its unresolved contradictions were already built into the script." },
+    { area: "directing", status: "source_verified", note: "Film Comment documents Lapid's planned set pieces and his effort to create an existential state that is simultaneously intellectual, emotional, physical and verbal." },
+    { area: "performance", status: "source_verified", note: "Film at Lincoln Center and BFI centre Tom Mercier's physically exposed Yoav, whose movement, recitation, dance, aggression and vulnerability carry the film's political instability." },
+    { area: "production_design", status: "mapped", note: "Contrasting empty apartments, streets, integration classrooms and wealthy interiors organise class and belonging, but the current sources do not provide a dedicated design-department account." },
+    { area: "costume_makeup", status: "mapped", note: "Borrowed clothing, military memory and bodily exposure support Yoav's attempted reinvention, but no dedicated costume or makeup source is currently recorded." },
+    { area: "cinematography", status: "source_verified", note: "BFI and Film at Lincoln Center describe a camera that races with Yoav, shifts into tight frontal address and repeatedly makes physicality and urban movement the visual argument." },
+    { area: "lighting", status: "mapped", note: "Cold Paris interiors, streets and institutional spaces support alienation, but the current evidence does not isolate a lighting strategy or department account." },
+    { area: "camera_format", status: "mapped", note: "The current institutional and interview sources do not isolate the original camera and lens package." },
+    { area: "editing", status: "source_verified", note: "Lapid explains to Film Comment that editing intensifies the film's existential music by preserving contradictions and removing material that does not support that unstable condition." },
+    { area: "sound_design", status: "source_verified", note: "BFI and Film at Lincoln Center identify vocabulary drills, Hebrew refusal, French recitation, monologues, music and the Marseillaise as central conflicts over identity and belonging." },
+    { area: "music", status: "mapped", note: "Songs and musical set pieces shape several confrontations, but the current source set does not provide a dedicated composer or music-production account." },
+    { area: "effects_animation", status: "not_central", note: "Performance, language, location, camera movement and editing drive the film rather than an effects-led pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Lapid states that many incidents derive from his own post-military period in Paris, transformed rather than reproduced literally, giving the fiction an autobiographical research base." },
+  ],
+} as const satisfies FilmHistoryProfile;
