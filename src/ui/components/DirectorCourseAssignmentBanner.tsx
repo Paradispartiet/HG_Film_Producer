@@ -2,6 +2,11 @@ import { useEffect, useState } from "react";
 
 import { DIRECTOR_BRIEF_FIELDS } from "../../core/directorBrief";
 import {
+  CAMERA_COURSE_ID,
+  CAMERA_DIRECTOR_ASSIGNMENT_STORAGE_KEY,
+  type CameraDirectorAssignment,
+} from "../../core/filmSchoolCameraCourse";
+import {
   PERFORMANCE_COURSE_ID,
   PERFORMANCE_DIRECTOR_ASSIGNMENT_STORAGE_KEY,
   type PerformanceDirectorAssignment,
@@ -12,7 +17,7 @@ import {
   type ScreenplayDirectorAssignment,
 } from "../../core/filmSchoolScreenplayCourse";
 
-type CourseAssignment = ScreenplayDirectorAssignment | PerformanceDirectorAssignment;
+type CourseAssignment = ScreenplayDirectorAssignment | PerformanceDirectorAssignment | CameraDirectorAssignment;
 type LoadedCourseAssignment = CourseAssignment & { readonly storageKey: string };
 
 type DirectorCourseAssignmentBannerProps = {
@@ -23,6 +28,7 @@ type DirectorCourseAssignmentBannerProps = {
 const assignmentSources = [
   { storageKey: SCREENPLAY_DIRECTOR_ASSIGNMENT_STORAGE_KEY, courseId: SCREENPLAY_COURSE_ID },
   { storageKey: PERFORMANCE_DIRECTOR_ASSIGNMENT_STORAGE_KEY, courseId: PERFORMANCE_COURSE_ID },
+  { storageKey: CAMERA_DIRECTOR_ASSIGNMENT_STORAGE_KEY, courseId: CAMERA_COURSE_ID },
 ] as const;
 
 export function DirectorCourseAssignmentBanner({ filmSlug, visible }: DirectorCourseAssignmentBannerProps) {
