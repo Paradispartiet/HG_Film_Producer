@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const manWithMovieCameraFilmHistoryProfile = {
+  scenarioId: "scenario_man_with_a_movie_camera_1929",
+  period: "Late-1920s Soviet city symphony, Kino-Eye documentary and reflexive montage",
+  traditions: ["Kino-Eye", "City symphony", "Reflexive documentary"],
+  before: "Newsreels, actuality film and urban symphonies had already shown the modern city, while Soviet montage theorists were redefining editing as construction rather than invisible continuity.",
+  moment: "Vertov, cameraman Mikhail Kaufman and editor Yelizaveta Svilova build a day across Soviet cities while openly showing filming, projection and editing through split screen, superimposition, altered speed and associative montage.",
+  after: "The film became a central model for documentary modernism, self-reflexive cinema and teaching how observation is transformed by camera position and editorial construction.",
+  historyQuestion: "Which production system explains why workers, machines, spectators, camera and editor all become subjects of the same film?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Eye and MoMA place the film in Soviet modernism and Vertov's campaign against theatrical fiction." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Kino-Eye and city-symphony traditions join observation to explicit construction." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Vertov worked with VUFKU, cameraman Mikhail Kaufman and editor Yelizaveta Svilova across several Soviet cities." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Eye documents the surviving Dutch print and the film's later central position in film study and restoration." },
+    { area: "screenplay", status: "source_verified", note: "The film rejects fictional plot and intertitles in favor of a structured urban day and the process of filmmaking itself." },
+    { area: "directing", status: "source_verified", note: "Vertov organizes real activity, apparatus and spectators into a manifesto for a specifically cinematic language." },
+    { area: "performance", status: "mapped", note: "People appear as workers, citizens and film participants rather than conventional actors; individual performance research remains secondary." },
+    { area: "production_design", status: "not_central", note: "The production uses cities, workplaces and exhibition spaces rather than a designed fictional world." },
+    { area: "costume_makeup", status: "not_central", note: "Everyday dress belongs to observed urban life rather than a controlled costume concept." },
+    { area: "cinematography", status: "source_verified", note: "Unexpected angles, mobile observation, split screens, superimposition and varied speed expand what the camera can reveal." },
+    { area: "lighting", status: "mapped", note: "Available urban light is visible throughout, while detailed lighting research remains pending." },
+    { area: "camera_format", status: "source_verified", note: "MoMA records the work as a black-and-white silent 35mm film." },
+    { area: "editing", status: "source_verified", note: "Svilova's fast association, repetition, acceleration and collision condense space, labor and time while exposing the edit itself." },
+    { area: "sound_design", status: "not_central", note: "The original film is silent and does not attempt synchronized documentary sound." },
+    { area: "music", status: "source_verified", note: "Eye documents reconstruction of premiere accompaniment from cue notes preserved in the Vertov archive." },
+    { area: "effects_animation", status: "source_verified", note: "Stop motion, split screen, superimposition, freeze frames and altered speeds are visible analytical tools rather than hidden illusion." },
+    { area: "documentary_method", status: "source_verified", note: "The film combines actuality observation with explicit acknowledgment that camera and editing construct the resulting argument." },
+  ],
+} as const satisfies FilmHistoryProfile;
