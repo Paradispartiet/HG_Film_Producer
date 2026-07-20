@@ -1,4 +1,5 @@
 import { FilmCraftLibraryOverlay } from "./FilmCraftLibraryOverlay";
+import { FilmResearchControlRoom } from "./FilmResearchControlRoom";
 import { FilmverketPlatform } from "./FilmverketPlatform";
 
 interface LandingScreenProps {
@@ -13,6 +14,7 @@ export function LandingScreen(props: LandingScreenProps) {
     <>
       <FilmverketPlatform {...props} />
       <FilmCraftLibraryOverlay />
+      <FilmResearchControlRoom />
     </>
   );
 }
