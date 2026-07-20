@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 52 source-backed Production Cases.
+- 60 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -35,6 +35,8 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationIndependentStorytellingBatch.ts`
 - `src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationSilentStudioSystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts`
+- `src/ui/data/scenarioProductionVerification1930sProductionSystemsBatch.ts`
 
 The complete audit schema is defined in:
 
@@ -149,6 +151,24 @@ This batch compares theatrical trick film, Expressionist studio design, location
 - `scenario_frankenstein_1931`
 
 This batch compares Swedish literary silent cinema, practical railway action comedy, UFA architectural science-fiction spectacle and Universal sound horror.
+
+### Late silent and early sound transition batch
+
+- `scenario_the_passion_of_joan_of_arc_1928`
+- `scenario_man_with_a_movie_camera_1929`
+- `scenario_m_1931`
+- `scenario_city_lights_1931`
+
+This batch compares close-up silent modernism, reflexive documentary montage, offscreen early-sound crime procedure and selective synchronized sound preserving pantomime.
+
+### 1930s production systems batch
+
+- `scenario_king_kong_1933`
+- `scenario_modern_times_1936`
+- `scenario_snow_white_and_the_seven_dwarfs_1937`
+- `scenario_the_rules_of_the_game_1939`
+
+This batch compares integrated creature effects, industrial sound satire, feature-animation pipeline production and deep-space French ensemble staging.
 
 ## Verification rule
 
