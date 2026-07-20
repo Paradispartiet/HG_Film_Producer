@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const briefEncounterFilmHistoryProfile = {
+  scenarioId: "scenario_brief_encounter_1945",
+  period: "British wartime and immediate-postwar melodrama built from restraint, repetition and interior narration",
+  traditions: ["British romantic melodrama", "Noël Coward adaptation", "Railway-station realism"],
+  before: "Stage melodrama and screen romance often externalized passion through spectacle, social conflict and decisive public action.",
+  moment: "David Lean opens Noël Coward's one-act play into homes, streets, cinema and railway locations while Celia Johnson's voice-over, Robert Krasker's black-and-white photography, Jack Harris's memory structure and Rachmaninoff's concerto turn ordinary routine into private emotional pressure.",
+  after: "The film became a central model for restrained British melodrama, subjective memory and romances where place, interruption and repetition carry what characters cannot say publicly.",
+  historyQuestion: "Which production logic explains why repeated train meetings, interior voice-over and one recurring concerto create more emotional force than public declaration?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI places the 1945 release at the end of the Second World War and inside Lean's sequence of Noël Coward adaptations." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film joins British emotional restraint, romantic melodrama and realist public locations." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI records Cineguild and Independent Producers, Noël Coward's production role and the full British department credits." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI and Criterion document its Cannes recognition, restoration history and durable place in British cinema." },
+    { area: "screenplay", status: "source_verified", note: "Coward, Lean, Anthony Havelock-Allan and Ronald Neame expand Still Life through a framed confession, repeated encounters and domestic counterpoint." },
+    { area: "directing", status: "source_verified", note: "Lean balances controlled public behavior with subjective memory, interruption and flashes of imagined romantic freedom." },
+    { area: "performance", status: "source_verified", note: "Celia Johnson and Trevor Howard build the affair through restraint, pauses, glances and shifts between social composure and private distress." },
+    { area: "production_design", status: "source_verified", note: "BFI credits L. P. Williams; station tearoom, home and cinema spaces organize class, routine and secrecy." },
+    { area: "costume_makeup", status: "mapped", note: "Everyday middle-class dress supports realism and social restraint, while dedicated department research remains incomplete." },
+    { area: "cinematography", status: "source_verified", note: "Robert Krasker's black-and-white photography uses steam, reflections, night platforms and close observation to externalize emotion." },
+    { area: "lighting", status: "mapped", note: "Fog, platform darkness and controlled interiors are formally important, but dedicated lighting evidence remains incomplete." },
+    { area: "camera_format", status: "source_verified", note: "BFI and Criterion record a black-and-white sound production in the classical 1.37:1 range." },
+    { area: "editing", status: "source_verified", note: "Jack Harris organizes the affair as remembered repetition framed by the interrupted final meeting." },
+    { area: "sound_design", status: "source_verified", note: "Train noise, station announcements, domestic ambience and Laura's interior voice divide public action from private thought." },
+    { area: "music", status: "source_verified", note: "Rachmaninoff's Second Piano Concerto, performed by Eileen Joyce with the National Symphony Orchestra, functions as recurring emotional structure." },
+    { area: "effects_animation", status: "mapped", note: "Back projection is credited by BFI, but effects remain supporting tools rather than a primary system." },
+    { area: "documentary_method", status: "mapped", note: "Location work and ordinary routines create realist texture without turning the drama into documentary observation." },
+  ],
+} as const satisfies FilmHistoryProfile;
