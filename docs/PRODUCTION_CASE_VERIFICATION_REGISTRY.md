@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 64 source-backed Production Cases.
+- 68 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -38,6 +38,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts`
 - `src/ui/data/scenarioProductionVerification1930sProductionSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts`
+- `src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts`
 
 The complete audit schema is defined in:
 
@@ -179,6 +180,15 @@ This batch compares integrated creature effects, industrial sound satire, featur
 - `scenario_casablanca_1942`
 
 This batch compares prestige location western production, MGM Technicolor musical fantasy, RKO modernist biography and Warner Bros. wartime studio melodrama.
+
+### 1940s noir and realism batch
+
+- `scenario_double_indemnity_1944`
+- `scenario_brief_encounter_1945`
+- `scenario_rome_open_city_1945`
+- `scenario_the_third_man_1949`
+
+This batch compares Paramount studio noir, British restrained melodrama, Italian neorealism under material scarcity and British location noir in occupied Vienna.
 
 ## Verification rule
 
