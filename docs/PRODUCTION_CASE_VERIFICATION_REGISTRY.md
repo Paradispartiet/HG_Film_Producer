@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 80 source-backed Production Cases.
+- 84 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -42,6 +42,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts`
 - `src/ui/data/scenarioProductionVerificationCzechoslovakNewWaveBatch.ts`
+- `src/ui/data/scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch.ts`
 
 The complete audit schema is defined in:
 
@@ -219,6 +220,15 @@ This batch compares Danish spiritual long-take chamber cinema, Polish Film Schoo
 - `scenario_the_cremator_1969`
 
 This batch compares literary wartime tragicomedy, nonprofessional institutional satire, researched medieval historical modernism and grotesque political horror.
+
+### European political and feminist modernism batch
+
+- `scenario_cleo_from_5_to_7_1962`
+- `scenario_the_conformist_1970`
+- `scenario_jeanne_dielman_1975`
+- `scenario_beau_travail_1999`
+
+This batch compares French Left Bank real-time city cinema, Italian fascist memory design, Belgian durational domestic labour and French postcolonial military body cinema.
 
 ## Verification rule
 
