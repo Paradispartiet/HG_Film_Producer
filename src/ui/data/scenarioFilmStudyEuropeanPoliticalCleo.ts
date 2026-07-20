@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const cleoFilmHistoryProfile = {
+  scenarioId: "scenario_cleo_from_5_to_7_1962",
+  period: "French Left Bank modernism, near-real-time Paris city film and feminist self-observation",
+  traditions: ["Left Bank cinema", "Cinéma-vérité-inflected fiction", "Feminist city cinema"],
+  before: "Classical star vehicles usually organized a woman's image through romance, spectacle and controlled studio time, while documentary city films observed public life without giving a fictional protagonist the same continuous subjective arc.",
+  moment: "Agnès Varda writes, produces and directs a near-real-time journey across Paris, mixing location observation, chaptered clock time, a colour tarot prologue, black-and-white street photography, mirrors, a film within the film and Michel Legrand's live rehearsal song as Cléo moves from being looked at toward looking outward.",
+  after: "The film became a central reference for Left Bank cinema, feminist spectatorship and real-time city structure; Varda later supervised its restoration and repeatedly explained how costume, song, geography and duration divide Cléo's transformation.",
+  historyQuestion: "Which production system explains why clock time, Paris streets, mirrors, documentary observation and a live song gradually change who controls Cléo's image?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and MoMA place the film in early-1960s Paris, the French New Wave and Varda's specifically Left Bank and feminist practice." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion and BFI describe the film's fusion of New Wave location work, cinéma-vérité immediacy, melodrama and feminist self-observation." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion records Varda as writer-director, Georges de Beauregard as producer and Jean Rabier, Alain Levent and Paul Bonis as the credited cinematography team." },
+    { area: "reception_and_legacy", status: "source_verified", note: "MoMA records the film's international breakthrough for Varda, while Criterion documents a director-supervised restoration and extensive production recollections." },
+    { area: "screenplay", status: "source_verified", note: "The script uses near-real-time chapters, a precise journey and changing companions so the medical wait becomes a transformation in spectatorship rather than a conventional revelation plot." },
+    { area: "directing", status: "source_verified", note: "Varda coordinates street observation, mirrors, direct address, performance, documentary interruption and the comic film-within-the-film within one controlled temporal design." },
+    { area: "performance", status: "source_verified", note: "Corinne Marchand's movement from stylized singer persona to attentive street presence is supported by Criterion's making-of materials and Varda's retrospective explanations." },
+    { area: "production_design", status: "mapped", note: "Shops, cafés, rehearsal rooms, taxis and apartments are organized as social stages, while dedicated production-design documentation remains incomplete." },
+    { area: "costume_makeup", status: "source_verified", note: "Varda explicitly describes the structural change from Cléo's angelic white presentation to the black dress worn when she enters Paris on different terms." },
+    { area: "cinematography", status: "source_verified", note: "BFI documents the black-and-white Paris location shoot, while Criterion identifies the three credited cinematographers and the film's active use of mirrors, streets and movement." },
+    { area: "lighting", status: "mapped", note: "Street daylight, reflective interiors and the contrasting colour tarot sequence shape the image, but dedicated lighting records remain limited." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records a restored 1.66:1 French feature whose black-and-white body is interrupted by a colour opening sequence." },
+    { area: "editing", status: "source_verified", note: "The edit preserves legible clock time while allowing documentary glimpses, subjective shifts, chapter transitions and the silent short-film interruption." },
+    { area: "sound_design", status: "source_verified", note: "Paris traffic, cafés, radio, rehearsal, conversation and sudden quieter passages keep public space active around Cléo's private fear." },
+    { area: "music", status: "source_verified", note: "Michel Legrand's score and on-screen rehearsal culminate in a live song that Varda identifies as the film's structural and emotional midpoint." },
+    { area: "effects_animation", status: "not_central", note: "The film's formal transformation relies on time, geography, performance, montage and reflection rather than effects spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "MoMA and Criterion describe Varda's tendency to inflect fiction with reality; the traced Paris route and street observation make documentary method part of the dramatic system." },
+  ],
+} as const satisfies FilmHistoryProfile;
