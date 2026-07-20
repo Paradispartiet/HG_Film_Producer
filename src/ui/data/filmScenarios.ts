@@ -1,5 +1,5 @@
 import seedData from "../../../data/film/scenarios/film_scenarios_seed.json";
-import { mergeEarlyCinemaExpansion } from "./earlyCinemaExpansion";
+import { mergeEarlyCinemaExpansion } from "../../core/earlyCinemaExpansion.js";
 
 export type FilmScenarioSeed = {
   readonly id: string;
