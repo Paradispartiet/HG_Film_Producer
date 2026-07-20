@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const eightAndAHalfFilmHistoryProfile = {
+  scenarioId: "scenario_8_1_2_1963",
+  period: "Italian-French modernist film-about-film, studio authorship and self-reflexive production spectacle",
+  traditions: ["European art cinema", "Self-reflexive modernism", "Cinecittà production culture"],
+  before: "Earlier films about filmmakers often treated the studio as backstage subject matter, while dreams, memories and present action were usually separated by clear narrative signals.",
+  moment: "Federico Fellini turns his own creative block into an Italian-French production in which Angelo Rizzoli's company, four credited writers, Gianni di Venanzo, Piero Gherardi, Leo Catozzo, Nino Rota and a large ensemble make the unfinished film set itself the organizing world.",
+  after: "The film made authorship, production anxiety and the instability between reality, memory and fantasy into a central modernist form, leaving a durable model for films that expose their own making while remaining spectacularly staged.",
+  historyQuestion: "Which production system explains the film's giant unfinished set, moving ensemble choreography, black-and-white studio artifice, associative transitions and deliberately unstable boundary between production meeting, memory and fantasy?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and the Fellini Museum place the 1963 Italian-French production after La dolce vita and document creative block as the film's immediate historical and professional context." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Criterion identify the film as a major self-reflexive modernist work in which cinema, autobiography, dream and production culture become one subject." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI, Criterion and the Fellini Museum document producer Angelo Rizzoli, the Cineriz-Francinex production and the institutional world of a large Italian feature production." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Academy records two wins and five nominations, while BFI documents the film's rapid international recognition as a major work about filmmaking." },
+    { area: "screenplay", status: "source_verified", note: "Criterion and the Academy credit Fellini, Ennio Flaiano, Tullio Pinelli and Brunello Rondi for a screenplay that converts production paralysis into an elastic dramatic structure." },
+    { area: "directing", status: "source_verified", note: "BFI describes Fellini's construction of the director as harried ringmaster, while Criterion preserves production material and an alternate ending that reveal the film's evolving conception." },
+    { area: "performance", status: "source_verified", note: "Criterion documents Marcello Mastroianni's central alter-ego performance and the large cast whose entrances, gazes and demands turn authorship into ensemble pressure." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Piero Gherardi, and the Academy nominated the black-and-white art direction, supporting the spa, hotel, launch structure and studio spaces as one designed production world." },
+    { area: "costume_makeup", status: "source_verified", note: "The Academy awarded Piero Gherardi's black-and-white costume design, confirming costume as a major system for organizing fantasy, memory, celebrity and social role." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and DFI credit Gianni di Venanzo and the camera department; BFI connects the film's moving camera and visual invention to Fellini's developing post-neorealist style." },
+    { area: "lighting", status: "mapped", note: "High-key spa spaces, graphic studio light, silhouettes and dream transitions are central, but the current sources do not provide a dedicated lighting-department process account." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the black-and-white 1.85:1 film, while DFI records 35mm monochrome sound presentation." },
+    { area: "editing", status: "source_verified", note: "Criterion and DFI credit Leo Catozzo; the film's continuity depends on associative transitions and recurring figures that make reality, memory and fantasy overlap without explanatory markers." },
+    { area: "sound_design", status: "source_verified", note: "Criterion credits Mario Faraoni and Alberto Bartolomei and preserves the monaural soundtrack, supporting a deliberately constructed acoustic world of voices, announcements, music and abrupt subjective shifts." },
+    { area: "music", status: "source_verified", note: "Criterion and DFI credit Nino Rota, whose recurring circus, dance and lyrical motifs organize the production as a moving emotional ensemble." },
+    { area: "effects_animation", status: "mapped", note: "Wire work, rear projection, studio machinery and optical transitions support the dream imagery, but effects remain integrated into staging, design and editing rather than a separate spectacle pipeline." },
+    { area: "documentary_method", status: "mapped", note: "The film draws directly on Fellini's professional life and production environment, but converts them into openly artificial autobiography rather than observational documentary." },
+  ],
+} as const satisfies FilmHistoryProfile;
