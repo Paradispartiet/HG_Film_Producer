@@ -1,6 +1,7 @@
 import seedData from "../../../data/film/scenarios/film_scenarios_seed.json";
 import { mergeEarlyCinemaExpansion } from "../../core/earlyCinemaExpansion.js";
 import { mergeEastAsianAuteurExpansion } from "../../core/eastAsianAuteurExpansion.js";
+import { mergeEasternIberianBritishExpansion } from "../../core/easternIberianBritishExpansion.js";
 import { mergeFestivalWinners1981To2009Expansion } from "../../core/festivalWinners1981To2009Expansion.js";
 import { mergeFestivalWinners2010To2024Expansion } from "../../core/festivalWinners2010To2024Expansion.js";
 import { mergeJapaneseAuteurExpansion } from "../../core/japaneseAuteurExpansion.js";
@@ -61,13 +62,14 @@ const southKoreanScenarios = mergeSouthKoreanCinemaExpansion(japaneseAuteurScena
 const southSoutheastAsianScenarios = mergeSouthSoutheastAsianExpansion(southKoreanScenarios);
 const earlyFestivalWinnerScenarios = mergeFestivalWinners1981To2009Expansion(southSoutheastAsianScenarios);
 const recentFestivalWinnerScenarios = mergeFestivalWinners2010To2024Expansion(earlyFestivalWinnerScenarios);
-const mergedScenarios = mergeScandinavianEuropeanExpansion(recentFestivalWinnerScenarios);
+const scandinavianEuropeanScenarios = mergeScandinavianEuropeanExpansion(recentFestivalWinnerScenarios);
+const mergedScenarios = mergeEasternIberianBritishExpansion(scandinavianEuropeanScenarios);
 
 export const filmScenarioSeedData: FilmScenarioSeedFile = {
   ...importedSeedData,
-  source_list_id: `${importedSeedData.source_list_id}+manual_early_cinema_expansion_2026+manual_modern_indie_asian_prize_expansion_2026+manual_priority_indie_completion_2026+manual_east_asian_auteur_expansion_2026+manual_japanese_auteur_expansion_2026+manual_south_korean_cinema_expansion_2026+manual_south_southeast_asian_expansion_2026+manual_festival_winners_1981_2009_expansion_2026+manual_festival_winner_2010_2024_expansion_2026+manual_scandinavian_european_expansion_2026`,
+  source_list_id: `${importedSeedData.source_list_id}+manual_early_cinema_expansion_2026+manual_modern_indie_asian_prize_expansion_2026+manual_priority_indie_completion_2026+manual_east_asian_auteur_expansion_2026+manual_japanese_auteur_expansion_2026+manual_south_korean_cinema_expansion_2026+manual_south_southeast_asian_expansion_2026+manual_festival_winners_1981_2009_expansion_2026+manual_festival_winner_2010_2024_expansion_2026+manual_scandinavian_european_expansion_2026+manual_eastern_iberian_british_expansion_2026`,
   scenario_count: mergedScenarios.length,
-  note: `${importedSeedData.note} The requested historical expansion, modern independent/Asian/prize-cinema expansion, 20-film priority-indie completion, 11-film East Asian auteur expansion, seven-film Japanese auteur expansion, four-film South Korean cinema expansion, seven-film South and Southeast Asian expansion, eleven-film 1981-2009 festival-winner expansion, final eleven-film 2010-2024 festival-winner expansion, and 22-film Scandinavian and European balancing round reuse matching entries and append only missing titles. The agreed 98-film correction remains complete.`,
+  note: `${importedSeedData.note} The requested historical expansion, modern independent/Asian/prize-cinema expansion, 20-film priority-indie completion, 11-film East Asian auteur expansion, seven-film Japanese auteur expansion, four-film South Korean cinema expansion, seven-film South and Southeast Asian expansion, eleven-film 1981-2009 festival-winner expansion, final eleven-film 2010-2024 festival-winner expansion, 22-film Scandinavian and European balancing round, and 24-film Eastern, Iberian, Balkan, British and Irish round reuse matching entries and append only missing titles. The agreed 98-film correction remains complete.`,
   scenarios: mergedScenarios,
 };
 
