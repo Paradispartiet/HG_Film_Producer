@@ -1,0 +1,533 @@
+.film-director-shell {
+  min-height: 100vh;
+}
+
+.film-director-page {
+  display: grid;
+  gap: 16px;
+  padding: 34px clamp(16px, 3vw, 46px) 54px;
+}
+
+.film-director-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  gap: 24px;
+  align-items: stretch;
+  padding: clamp(26px, 4vw, 50px);
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 78% 18%, rgba(214, 174, 98, 0.13), transparent 30%),
+    linear-gradient(145deg, rgba(18, 22, 28, 0.98), rgba(8, 11, 15, 0.99));
+}
+
+.film-director-hero h1 {
+  margin: 8px 0 14px;
+  font-family: Georgia, serif;
+  font-size: clamp(50px, 8vw, 108px);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.86;
+}
+
+.film-director-hero h1 em {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.film-director-hero > div > p {
+  max-width: 760px;
+  margin: 0;
+  color: var(--muted-light);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.film-director-progress-card {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  padding: 24px;
+  border: 1px solid rgba(214, 174, 98, 0.34);
+  background: rgba(5, 8, 12, 0.72);
+}
+
+.film-director-progress-card > span {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.film-director-progress-card > strong {
+  color: var(--accent);
+  font-family: Georgia, serif;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.film-director-progress-card > strong small {
+  color: var(--muted);
+  font-size: 20px;
+}
+
+.film-director-progress-card p {
+  margin: 0;
+  color: var(--muted-light);
+  font-size: 11px;
+}
+
+.film-director-progress {
+  height: 5px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.film-director-progress span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transition: width 180ms ease;
+}
+
+.film-director-toolbar {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+  gap: 14px;
+  align-items: end;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: rgba(13, 16, 21, 0.96);
+}
+
+.film-director-toolbar label {
+  display: grid;
+  gap: 7px;
+}
+
+.film-director-toolbar label > span {
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.film-director-toolbar select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #343b45;
+  outline: none;
+  background: #080b0f;
+  color: var(--text);
+}
+
+.film-director-toolbar select:focus {
+  border-color: var(--accent);
+}
+
+.film-director-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.film-director-reference {
+  border: 1px solid rgba(214, 174, 98, 0.32);
+  background:
+    radial-gradient(circle at top right, rgba(214, 174, 98, 0.1), transparent 36%),
+    linear-gradient(145deg, #14191f, #0a0d11);
+}
+
+.film-director-reference > header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
+  gap: 32px;
+  align-items: end;
+  padding: 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.film-director-reference > header span {
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.film-director-reference > header h2 {
+  margin: 8px 0 0;
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+
+.film-director-reference > header p {
+  margin: 0;
+  color: #c8bfb2;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.film-director-reference-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(300px, 1.15fr);
+  gap: 18px;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.film-director-reference-controls > p {
+  margin: 0;
+  color: var(--muted-light);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.film-director-lenses {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.film-director-lens {
+  min-height: 42px;
+  padding: 8px;
+  border: 1px solid #343b45;
+  cursor: pointer;
+  background: #090c10;
+  color: var(--muted-light);
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.film-director-lens:hover,
+.film-director-lens--active {
+  border-color: var(--accent);
+  background: rgba(214, 174, 98, 0.09);
+  color: var(--accent);
+}
+
+.film-director-principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.film-director-principles article {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-content: start;
+  padding: 22px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.film-director-principles article:nth-child(3n) {
+  border-right: 0;
+}
+
+.film-director-principles article > span {
+  color: var(--accent);
+  font-family: Georgia, serif;
+  font-size: 20px;
+}
+
+.film-director-principles article p {
+  margin: 0;
+  color: var(--muted-light);
+  font-size: 12px;
+  line-height: 1.62;
+}
+
+.film-director-principles article button {
+  grid-column: 2;
+  justify-self: start;
+  padding: 7px 9px;
+  border: 1px solid #3a414b;
+  cursor: pointer;
+  background: transparent;
+  color: var(--muted-light);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.film-director-principles article button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.film-director-reference-seeds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 20px;
+}
+
+.film-director-reference-seeds button {
+  padding: 9px 11px;
+  border: 1px solid rgba(214, 174, 98, 0.34);
+  cursor: pointer;
+  background: rgba(214, 174, 98, 0.05);
+  color: var(--accent);
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.film-director-form {
+  display: grid;
+  gap: 14px;
+}
+
+.film-director-form-group {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  border: 1px solid var(--line);
+  background: rgba(12, 15, 19, 0.98);
+}
+
+.film-director-form-group > header {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 24px;
+  border-right: 1px solid var(--line);
+  background: rgba(214, 174, 98, 0.035);
+}
+
+.film-director-form-group > header span {
+  color: rgba(214, 174, 98, 0.42);
+  font-family: Georgia, serif;
+  font-size: 30px;
+}
+
+.film-director-form-group > header h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.film-director-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.film-director-field {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-width: 0;
+  padding: 20px;
+  border-right: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  box-shadow: inset 3px 0 0 transparent;
+}
+
+.film-director-field:nth-child(2n) {
+  border-right: 0;
+}
+
+.film-director-field--complete {
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.film-director-field > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.film-director-field > span strong {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.film-director-field > span small {
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.film-director-field--complete > span small {
+  color: var(--accent);
+}
+
+.film-director-field > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.film-director-field input,
+.film-director-field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #303741;
+  outline: none;
+  resize: vertical;
+  background: #070a0e;
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.film-director-field input:focus,
+.film-director-field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(214, 174, 98, 0.08);
+}
+
+.film-director-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(160px, 0.3fr) minmax(160px, 0.3fr);
+  border: 1px solid rgba(214, 174, 98, 0.28);
+  background: rgba(214, 174, 98, 0.04);
+}
+
+.film-director-summary > div {
+  display: grid;
+  align-content: center;
+  gap: 5px;
+  padding: 22px;
+  border-right: 1px solid var(--line);
+}
+
+.film-director-summary > div:last-child {
+  border-right: 0;
+}
+
+.film-director-summary h2 {
+  margin: 5px 0 0;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.film-director-summary p,
+.film-director-summary span {
+  margin: 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.film-director-summary > div > strong {
+  color: var(--accent);
+  font-family: Georgia, serif;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.film-director-not-found,
+.film-director-empty {
+  display: grid;
+  min-height: 65vh;
+  place-content: center;
+  justify-items: start;
+  padding: 30px;
+}
+
+.film-director-not-found h1,
+.film-director-empty h1 {
+  margin: 8px 0 12px;
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 7vw, 82px);
+  font-weight: 500;
+}
+
+.film-director-not-found p {
+  max-width: 620px;
+  color: var(--muted-light);
+}
+
+@media (max-width: 980px) {
+  .film-director-hero,
+  .film-director-reference > header,
+  .film-director-reference-controls,
+  .film-director-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .film-director-toolbar-actions {
+    justify-content: flex-start;
+  }
+
+  .film-director-principles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .film-director-principles article:nth-child(3n) {
+    border-right: 1px solid var(--line);
+  }
+
+  .film-director-principles article:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .film-director-form-group {
+    grid-template-columns: 1fr;
+  }
+
+  .film-director-form-group > header {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 700px) {
+  .film-director-page {
+    padding: 18px 10px 36px;
+  }
+
+  .film-director-hero,
+  .film-director-reference > header {
+    padding: 22px;
+  }
+
+  .film-director-lenses,
+  .film-director-principles,
+  .film-director-fields,
+  .film-director-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .film-director-principles article,
+  .film-director-principles article:nth-child(2n),
+  .film-director-principles article:nth-child(3n),
+  .film-director-field,
+  .film-director-field:nth-child(2n),
+  .film-director-summary > div {
+    border-right: 0;
+  }
+
+  .film-director-toolbar-actions {
+    display: grid;
+  }
+
+  .film-director-toolbar-actions button {
+    width: 100%;
+  }
+}
