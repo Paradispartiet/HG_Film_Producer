@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const wrestlerFilmHistoryProfile = {
+  scenarioId: "scenario_the_wrestler_2008",
+  period: "American independent body realism, labour melodrama and documentary-inflected performance cinema",
+  traditions: ["American independent realism", "Dardenne-influenced handheld observation", "Backstage performance and labour drama"],
+  before: "American independent cinema and documentary practice had long used lightweight cameras, marginal workplaces and damaged bodies to oppose polished studio spectacle, while Darren Aronofsky's earlier features explored obsessive physical and psychological systems through increasingly elaborate form.",
+  moment: "Protozoa Pictures and Wild Bunch move in the opposite direction from The Fountain's scale: Robert D. Siegel's independent-wrestling screenplay, Mickey Rourke's career history, Maryse Alberti's handheld Super 16 camera, Tim Grimes's New Jersey workspaces, Andrew Weisblum's rapid Avid workflow and a sound world of crowds, impacts, breathing and fluorescent labour keep Randy's public performance and private physical damage in the same immediate system.",
+  after: "The Wrestler won the 2008 Golden Lion, earned Academy Award nominations for Mickey Rourke and Marisa Tomei and became a widely cited model of grainy, shoulder-mounted performance realism in which the apparatus stays close enough to bodies to preserve both spectacle and exhaustion.",
+  historyQuestion: "Which production system explains an ageing wrestler followed through arenas, locker rooms, a supermarket and a trailer by a lightweight handheld Super 16 camera, with real independent-wrestling culture, bodily damage and a performer's public identity all treated as forms of labour?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and AFI place the film in the declining independent-wrestling economy of the 2000s and connect Randy's body, insecure work and 1980s persona to Mickey Rourke's own career history." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and cinematography accounts identify the Dardenne brothers and documentary observation as key references for the raw shoulder-mounted style." },
+    { area: "industry_and_production_context", status: "source_verified", note: "DFI and AFI document Protozoa Pictures, producers Darren Aronofsky and Scott Franklin, the United States-France production and the decision to use independent wrestling rather than licensed mainstream promotions." },
+    { area: "reception_and_legacy", status: "source_verified", note: "La Biennale records the 2008 Golden Lion; BFI and AFI document the film's critical reception and Academy Award nominations for Rourke and Tomei." },
+    { area: "screenplay", status: "source_verified", note: "DFI and AFI credit Robert D. Siegel; AFI documents Aronofsky's long-developed wrestling idea and the script's effort to treat potentially comic figures with dignity." },
+    { area: "directing", status: "source_verified", note: "BFI and AFI describe Aronofsky's shift toward physically immediate, low-scale realism and his close collaboration beside the camera during intuitive single-camera shooting." },
+    { area: "performance", status: "source_verified", note: "BFI, DFI and AFI document Mickey Rourke, Marisa Tomei and Evan Rachel Wood; Rourke's own boxing and career history intensify the film's blurred line between persona, acting and physical cost." },
+    { area: "production_design", status: "source_verified", note: "DFI and AFI credit Tim Grimes; arenas, VFW halls, backstage corridors, the deli counter, trailer and strip club make performance and precarious labour spatially continuous." },
+    { area: "costume_makeup", status: "mapped", note: "Wrestling gear, scars, tanning, hair, hearing aid and ordinary work clothes are central to Randy's constructed persona, but the current sources do not isolate a dedicated department account." },
+    { area: "cinematography", status: "source_verified", note: "DFI credits Maryse Alberti; her own account describes mainly handheld coverage, a 2.4:1 composition and a tactile, spontaneous camera designed to give actors freedom." },
+    { area: "lighting", status: "source_verified", note: "Alberti describes using new high-latitude stock and underexposing by two or three stops so practical arenas, trailers and fluorescent workplaces retained detail without losing the gritty look." },
+    { area: "camera_format", status: "source_verified", note: "Alberti and ICG document the ARRI 416, Kodak Vision3 500T, handheld Super 16 capture and 2.4:1 framing selected for grain, portability and environmental width." },
+    { area: "editing", status: "source_verified", note: "DFI and AFI credit Andrew Weisblum; his production account documents Super 16 dailies digitised into Avid and daily review with Aronofsky, supporting fast decisions around performance and coverage." },
+    { area: "sound_design", status: "mapped", note: "Crowd roar, entrance music, impacts, breathing, medical quiet and supermarket ambience separate public persona from private vulnerability, but the current sources do not isolate a complete sound-team account." },
+    { area: "music", status: "source_verified", note: "DFI credits Clint Mansell, while AFI documents the use of 1980s wrestling and rock culture and Bruce Springsteen's closing song as part of Randy's persistent public identity." },
+    { area: "effects_animation", status: "not_central", note: "The film's physical system relies on live performance, wrestling choreography, makeup, handheld capture and editing rather than a central VFX or animation pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "AFI documents research into independent wrestling, while Alberti's documentary background and the production's use of real venues and wrestling participants shape the fiction's observational method." },
+  ],
+} as const satisfies FilmHistoryProfile;
