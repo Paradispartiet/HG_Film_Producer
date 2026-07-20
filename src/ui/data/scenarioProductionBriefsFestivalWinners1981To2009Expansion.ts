@@ -1,14 +1,13 @@
+import { getFestivalWinners1981To2009ExpansionDefinition } from "../../core/festivalWinners1981To2009Expansion.js";
 import { createModernCanonBriefBlueprint } from "../../core/modernCanonBriefBlueprint.js";
-import { getSouthSoutheastAsianExpansionDefinition } from "../../core/southSoutheastAsianExpansion.js";
 import type { FilmScenarioSeed } from "./filmScenarios";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
-import { getFestivalWinners1981To2009ExpansionProductionBrief } from "./scenarioProductionBriefsFestivalWinners1981To2009Expansion";
 
-export function getSouthSoutheastAsianExpansionProductionBrief(
+export function getFestivalWinners1981To2009ExpansionProductionBrief(
   scenario: FilmScenarioSeed,
 ): ScenarioProductionBrief | undefined {
-  const definition = getSouthSoutheastAsianExpansionDefinition(scenario);
-  if (!definition) return getFestivalWinners1981To2009ExpansionProductionBrief(scenario);
+  const definition = getFestivalWinners1981To2009ExpansionDefinition(scenario);
+  if (!definition) return undefined;
   const blueprint = createModernCanonBriefBlueprint(definition);
 
   return {
