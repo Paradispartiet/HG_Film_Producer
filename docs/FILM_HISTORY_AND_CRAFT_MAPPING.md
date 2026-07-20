@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case contains all mapping 
 Every Production Case in the current catalogue resolves to the same complete mapping structure. Catalogue size is read dynamically and is not duplicated in documentation or tests.
 
 - 17 mandatory film-history and film-craft areas.
-- 132 source-backed film-history profiles.
+- 136 source-backed film-history profiles.
 - All remaining cases retain complete audit structures with visible research gaps.
 - No points, ranks, badges or reward currencies.
 - Historical placement is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The 132 source-backed profiles are the same controlled group covered by the Production Case verification registry:
+The 136 source-backed profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -129,6 +129,10 @@ The 132 source-backed profiles are the same controlled group covered by the Prod
 - The Wrestler
 - The Milk of Sorrow
 - Somewhere
+- Pietà
+- Blue Is the Warmest Colour
+- Black Coal, Thin Ice
+- From Afar
 - Rashomon
 - Tokyo Story
 - Seven Samurai
@@ -289,6 +293,8 @@ A date or movement name alone does not teach film history. The player learns by 
 - Greek long-take border memory journey versus German-Turkish handheld punk romance;
 - British research-built abortion-procedure ensemble versus American handheld Super 16 wrestling labour drama;
 - Peruvian trauma-and-song ritual realism versus American hotel-duration celebrity alienation;
+- South Korean low-budget industrial moral melodrama versus French close-performance relationship naturalism;
+- Chinese wintry post-industrial neo-noir versus Venezuelan anamorphic class-distance drama;
 - Daiei contradictory testimony versus Shochiku domestic minimalism;
 - Toho tactical action versus Bengali location humanism;
 - Danish spiritual long-take chamber cinema versus Polish Film School one-night political tragedy;

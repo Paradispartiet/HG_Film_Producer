@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 132 source-backed Production Cases.
+- 136 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -46,6 +46,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerification1980sPoliticalPalmeSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationFestivalJourneyDisplacementSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationFestivalUrbanIntimacySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts`
@@ -268,6 +269,15 @@ This batch compares Nordic historical migration epic, Brazilian documentary-info
 - `scenario_somewhere_2010`
 
 This batch compares British research-built abortion-procedure ensemble, American handheld Super 16 wrestling labour drama, Peruvian trauma-and-song ritual realism and American hotel-duration celebrity alienation.
+
+### Festival urban intimacy systems batch
+
+- `scenario_pieta_2012`
+- `scenario_blue_is_the_warmest_colour_2013`
+- `scenario_black_coal_thin_ice_2014`
+- `scenario_from_afar_2015`
+
+This batch compares South Korean low-budget industrial moral melodrama, French close-performance relationship naturalism, Chinese wintry post-industrial neo-noir and Venezuelan anamorphic class-distance drama.
 
 ### 1950s Asian postwar cinema batch
 

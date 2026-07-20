@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const fromAfarFilmHistoryProfile = {
+  scenarioId: "scenario_from_afar_2015",
+  period: "Venezuelan transnational art cinema, class-divided urban intimacy and psychologically withheld debut filmmaking",
+  traditions: ["Latin American urban art cinema", "Minimalist relationship drama", "Class and masculinity study"],
+  before: "Lorenzo Vigas came from documentary and short filmmaking, while Latin American art cinema had repeatedly used urban class division, absent fathers, restrained dialogue and nonprofessional presence to make private relationships carry wider political and social pressure.",
+  moment: "Factor RH, Malandro Films and international partners build a Caracas story from Vigas and Guillermo Arriaga's development work; Alfredo Castro receives full character discussion while newcomer Luis Silva discovers lines shortly before filming, Sergio Armstrong shoots Alexa with Lomo anamorphic lenses, mostly natural light and shallow focus, and Isabela Monteiro de Castro's elliptical editing turns looking, distance and offscreen action into the film's central dramatic grammar.",
+  after: "From Afar won the 2015 Golden Lion as Vigas's first feature and became an internationally visible Venezuelan case in which class separation, masculinity and intimacy are expressed through lens distance, performance preparation, location contrast and withheld information rather than explanatory dialogue.",
+  historyQuestion: "Which production system explains a Caracas debut feature about an isolated dental technician and a street youth, using different actor-preparation methods, Alexa and Lomo anamorphic lenses, mostly natural light, pale colour, shallow focus and elliptical offscreen action to make class and emotional distance visible?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, ICA and La Biennale place the film in contemporary Caracas and connect alienation, homophobia, masculinity and the lack of communication between social classes to the relationship." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and ICA place the film within restrained Latin American art cinema, where ambiguity, offscreen action and behavioural observation require an active audience." },
+    { area: "industry_and_production_context", status: "source_verified", note: "La Biennale documents Factor RH and Malandro Films, Venezuelan production and international sales; MovieMaker records CNAC financing and the transnational craft team." },
+    { area: "reception_and_legacy", status: "source_verified", note: "La Biennale records the 2015 Golden Lion, while BFI identifies Vigas as the first Venezuelan winner and the film as his debut feature." },
+    { area: "screenplay", status: "source_verified", note: "La Biennale credits Lorenzo Vigas; ICA documents development with Guillermo Arriaga and a story built around failed communication, ambiguity, absent fathers and class difference." },
+    { area: "directing", status: "source_verified", note: "ICA and MovieMaker document Vigas's no-rehearsal strategy, extensive character discussion, short-notice lines for Luis Silva and the decision to preserve tension through partial knowledge." },
+    { area: "performance", status: "source_verified", note: "BFI, ICA and MovieMaker document Alfredo Castro and newcomer Luis Silva; Castro works through character motivation while Silva discovers scenes shortly before shooting after months of camera workshops." },
+    { area: "production_design", status: "source_verified", note: "La Biennale credits Matias Tikas, while MovieMaker describes months of location work separating Armando's grey controlled interiors from Elder's socially dense Caracas spaces." },
+    { area: "costume_makeup", status: "source_verified", note: "La Biennale credits Marisela Marin; MovieMaker notes Castro's involvement in wardrobe, supporting the contrast between professional restraint and street physicality." },
+    { area: "cinematography", status: "source_verified", note: "La Biennale credits Sergio Armstrong; BFI, ICA and MovieMaker document shallow focus, static observation, separated planes and anamorphic framing as expressions of Armando's emotional distance." },
+    { area: "lighting", status: "source_verified", note: "MovieMaker records that the film used mostly natural lighting and pale, washed-out colour to reflect Armando's internal state." },
+    { area: "camera_format", status: "source_verified", note: "MovieMaker identifies the Arri Alexa and Lomo anamorphic lenses; La Biennale records a colour DCP and BFI records the unusually wide 2.66:1 presentation." },
+    { area: "editing", status: "source_verified", note: "La Biennale credits Isabela Monteiro de Castro; ICA describes how distance, missing action and ambiguity were strengthened during editing." },
+    { area: "sound_design", status: "source_verified", note: "BFI records Dolby Digital, while interviews describe a restrained world of traffic, interiors, silence and limited dialogue without an explanatory musical layer." },
+    { area: "music", status: "not_central", note: "The film avoids a dominant composed-score system and relies on silence, dialogue and Caracas ambience to preserve emotional uncertainty." },
+    { area: "effects_animation", status: "not_central", note: "La Biennale lists practical effects support, but performance, location, anamorphic photography and editing remain the central production system." },
+    { area: "documentary_method", status: "source_verified", note: "ICA documents Vigas's documentary background, real social inspirations and long development process; location and nonprofessional preparation keep the fictional drama tied to observed Caracas life." },
+  ],
+} as const satisfies FilmHistoryProfile;

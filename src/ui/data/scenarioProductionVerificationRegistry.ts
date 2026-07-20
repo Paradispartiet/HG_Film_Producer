@@ -19,6 +19,7 @@ import { europeanModernistProductionVerificationRecords } from "./scenarioProduc
 import { europeanPoliticalFeministModernismVerificationRecords } from "./scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch";
 import { europeanPressureVerificationRecords } from "./scenarioProductionVerificationEuropeanPressureBatch";
 import { festivalJourneyDisplacementVerificationRecords } from "./scenarioProductionVerificationFestivalJourneyDisplacementSystemsBatch";
+import { festivalUrbanIntimacyVerificationRecords } from "./scenarioProductionVerificationFestivalUrbanIntimacySystemsBatch";
 import { independentStorytellingVerificationRecords } from "./scenarioProductionVerificationIndependentStorytellingBatch";
 import { intimateFestivalBodyCareVerificationRecords } from "./scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch";
 import { landscapeCinemaVerificationRecords } from "./scenarioProductionVerificationLandscapeBatch";
@@ -64,6 +65,7 @@ const additionalVerificationRecords = [
   ...politicalPalme1980sVerificationRecords,
   ...festivalJourneyDisplacementVerificationRecords,
   ...intimateFestivalBodyCareVerificationRecords,
+  ...festivalUrbanIntimacyVerificationRecords,
   ...asianPostwar1950sVerificationRecords,
   ...expressivePostwar1950sVerificationRecords,
   ...postwarEuropeanModernismVerificationRecords,

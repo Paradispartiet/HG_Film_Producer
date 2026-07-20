@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const blueWarmestColourFilmHistoryProfile = {
+  scenarioId: "scenario_blue_is_the_warmest_colour_2013",
+  period: "French naturalist performance cinema, long-form coming-of-age realism and class-conscious intimate melodrama",
+  traditions: ["French naturalist cinema", "Performance-led relationship drama", "Literary and graphic-novel adaptation"],
+  before: "Abdellatif Kechiche's earlier films had developed long scenes, crowded social spaces, apparently improvised dialogue and close attention to actors, while French coming-of-age cinema repeatedly used school, family, work and class as the everyday structures through which desire becomes legible.",
+  moment: "Quat'sous Films and European partners produce a free adaptation of Julie Maroh's graphic novel around Adèle's growth, desire and work; Kechiche and Ghalia Lacroix reshape the source, Sofian El Fani's close handheld photography makes faces and bodies the visual centre, a five-editor team combines extended scenes with large ellipses, and direct breathing, eating, classroom, party and domestic sound preserves physical immediacy.",
+  after: "The film won the 2013 Palme d'Or jointly associated with Kechiche, Adèle Exarchopoulos and Léa Seydoux, and remains a major case for studying performance intensity, duration, close framing, class difference and the contested politics of representing intimacy.",
+  historyQuestion: "Which production system explains a free graphic-novel adaptation built around one young woman's school, family, work and relationship life, filmed in sustained close physical proximity, edited through long scenes and major ellipses, and carried by two performances awarded alongside the director at Cannes?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, DFI and BFI place the film in early-2010s French-European cinema and identify desire, coming of age, class difference, school and work as its social field." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Cannes connects the film to Kechiche's naturalist and humanist practice of long sequences, group scenes, socially specific daily life and intensive actor attention." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes and DFI document the France-Belgium-Spain production, Quat'sous Films and partners, principal producers and the full writing, image and editing structure." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the 2013 Palme d'Or and the exceptional recognition of Kechiche, Adèle Exarchopoulos and Léa Seydoux together." },
+    { area: "screenplay", status: "source_verified", note: "Cannes and DFI credit Abdellatif Kechiche and Ghalia Lacroix and describe a free adaptation that shifts attention from the source's political setting toward encounter, living together and separation." },
+    { area: "directing", status: "source_verified", note: "Cannes documents Kechiche's emphasis on close-ups for subtle expression and his established use of long, apparently improvised social scenes centred on performers." },
+    { area: "performance", status: "source_verified", note: "Cannes and BFI document Adèle Exarchopoulos and Léa Seydoux; physical detail, duration and emotional escalation make performance the dominant event in the frame." },
+    { area: "production_design", status: "mapped", note: "Homes, classrooms, streets, galleries, restaurants and parties distinguish class and life stages, but the current sources do not isolate a principal production designer." },
+    { area: "costume_makeup", status: "source_verified", note: "BFI programme data records the costume department; clothing, hair and the recurring blue motif help distinguish adolescence, art-world identity, work and changing intimacy." },
+    { area: "cinematography", status: "source_verified", note: "Cannes, DFI and BFI credit Sofian El Fani; shallow-focus close coverage captures faces, skin, eating, sleep, argument and gesture as tactile dramatic information." },
+    { area: "lighting", status: "mapped", note: "The image moves across classrooms, domestic interiors, streets, clubs and gallery spaces with naturalistic continuity, but the current sources do not isolate a dedicated lighting method." },
+    { area: "camera_format", status: "source_verified", note: "BFI records colour, Dolby Digital and a 2.35:1 presentation, supporting the widescreen close-performance system." },
+    { area: "editing", status: "source_verified", note: "Cannes and DFI credit Camille Toubkis, Albertine Lastera, Ghalia Lacroix, Jean-Marie Lengelle and Sophie Brunet; long scenes coexist with major temporal ellipses across years." },
+    { area: "sound_design", status: "source_verified", note: "Cannes credits Jean-Paul Hurier and Jérôme Chenevoy; breath, meals, classrooms, parties, street noise and domestic conversation remain immediate rather than submerged beneath continuous score." },
+    { area: "music", status: "not_central", note: "The production relies primarily on direct social and bodily sound, with music appearing situationally rather than as a dominant composed-score system." },
+    { area: "effects_animation", status: "not_central", note: "The film's production system is centred on performance, location, close photography, duration and editing rather than effects or animation." },
+    { area: "documentary_method", status: "source_verified", note: "Cannes and BFI describe an observational naturalism grounded in ordinary school, work, family and social behaviour, even though the film remains fully fictional." },
+  ],
+} as const satisfies FilmHistoryProfile;
