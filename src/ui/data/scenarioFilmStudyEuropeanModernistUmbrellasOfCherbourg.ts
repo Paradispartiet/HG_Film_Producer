@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const umbrellasOfCherbourgFilmHistoryProfile = {
+  scenarioId: "scenario_the_umbrellas_of_cherbourg_1964",
+  period: "French New Wave musical modernism, sung-through melodrama and coordinated colour production",
+  traditions: ["French New Wave musical", "Sung-through film", "Designed colour melodrama"],
+  before: "Classical film musicals normally separated spoken scenes from musical numbers, while colour, décor and songs often intensified selected moments rather than governing every exchange in ordinary life.",
+  moment: "Producer Mag Bodard, writer-director Jacques Demy, composer Michel Legrand, cinematographer Jean Rabier, designer Bernard Evein, costume designer Jacqueline Moreau and editor Anne-Marie Cotret build a completely sung film in which dialogue, score, camera movement, costume and three-strip colour design are planned as one continuous system.",
+  after: "The film became a lasting model for integrating everyday realism with total musical form, demonstrating that colour, post-synchronized singing and recurring motifs could organize an entire feature rather than appear as intermittent spectacle.",
+  historyQuestion: "Which production system explains the film's absence of spoken dialogue, continuous score, precisely matched wallpaper and costume, fluid camera movement and restored three-strip colour design?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Cannes place the 1964 Franco-West German production within the French New Wave era and connect its romance to military service in the Algerian War." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI identifies the film as a modern French musical that transforms Hollywood and operetta traditions through a wholly sung conversational form." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion and BFI document producer Mag Bodard and the coordinated craft departments behind an independently produced colour musical rather than a conventional studio number format." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the 1964 Grand Prix and technical prize, while the Academy records foreign-language, screenplay and music nominations across two ceremonies." },
+    { area: "screenplay", status: "source_verified", note: "Criterion, Cannes and the Academy credit Jacques Demy for a screenplay and libretto in which every practical exchange, time jump and emotional reversal remains inside the sung form." },
+    { area: "directing", status: "source_verified", note: "BFI describes Demy's synthesis of camera movement, décor, song and realistic social pressure into one continuous cinematic operetta." },
+    { area: "performance", status: "source_verified", note: "BFI and Criterion document Catherine Deneuve, Nino Castelnuovo and the ensemble within a system that separates visible acting from precisely post-synchronized singing." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Bernard Evein, while BFI identifies the colour-coded umbrella shop, apartments, garage and streets as a unified dramatic design." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion credits Jacqueline Moreau; BFI's contemporary and later accounts document costumes designed to rhyme, blend or clash with wallpaper and locations." },
+    { area: "cinematography", status: "source_verified", note: "Criterion, Cannes and BFI credit Jean Rabier and describe elegant fluid camerawork coordinated with performers, décor and the continuous score." },
+    { area: "lighting", status: "mapped", note: "Controlled interior illumination, wet streets, shop windows and the winter epilogue protect the colour design, but a dedicated lighting-process account is still needed." },
+    { area: "camera_format", status: "source_verified", note: "Criterion's restoration record documents recovery of the original three-strip colour separation system and monaural soundtrack." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Anne-Marie Cotret; musical continuity and precise ellipses carry the story across departure, pregnancy, marriage, return and the final winter encounter." },
+    { area: "sound_design", status: "source_verified", note: "Criterion's archival interviews and BFI analysis document a completely post-synchronized sung dialogue system in which ordinary speech rhythm is composed and recorded musically." },
+    { area: "music", status: "source_verified", note: "Cannes, Criterion, BFI and the Academy document Michel Legrand's continuous score, recurring themes and internationally recognized song material." },
+    { area: "effects_animation", status: "not_central", note: "The film's heightened world is produced primarily through colour, décor, costume, camera and sound rather than practical effects, visual effects or animation." },
+    { area: "documentary_method", status: "mapped", note: "Cherbourg locations, work, money, pregnancy and the Algerian War ground the story in contemporary life, but the method is transformed through total musical and colour design rather than documentary observation." },
+  ],
+} as const satisfies FilmHistoryProfile;

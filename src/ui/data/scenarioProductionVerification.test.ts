@@ -92,7 +92,14 @@ const sixtiesScaleIndependentIds = [
   "scenario_night_of_the_living_dead_1968",
 ] as const;
 
-const expectedVerifiedCount = 92;
+const europeanModernistProductionIds = [
+  "scenario_hiroshima_mon_amour_1959",
+  "scenario_8_1_2_1963",
+  "scenario_the_umbrellas_of_cherbourg_1964",
+  "scenario_the_battle_of_algiers_1966",
+] as const;
+
+const expectedVerifiedCount = 96;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -198,6 +205,14 @@ test("New Hollywood and blockbuster systems are verified with four sources each"
 
 test("1960s scale and independent systems are verified with four sources each", () => {
   for (const scenarioId of sixtiesScaleIndependentIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("European modernist production systems are verified with four sources each", () => {
+  for (const scenarioId of europeanModernistProductionIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);

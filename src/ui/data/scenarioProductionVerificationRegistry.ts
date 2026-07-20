@@ -11,6 +11,7 @@ import { classicalHollywoodVerificationRecords } from "./scenarioProductionVerif
 import { constructedWorldsVerificationRecords } from "./scenarioProductionVerificationConstructedWorldsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
 import { czechoslovakNewWaveVerificationRecords } from "./scenarioProductionVerificationCzechoslovakNewWaveBatch";
+import { europeanModernistProductionVerificationRecords } from "./scenarioProductionVerificationEuropeanModernistProductionBatch";
 import { europeanPoliticalFeministModernismVerificationRecords } from "./scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch";
 import { europeanPressureVerificationRecords } from "./scenarioProductionVerificationEuropeanPressureBatch";
 import { independentStorytellingVerificationRecords } from "./scenarioProductionVerificationIndependentStorytellingBatch";
@@ -53,6 +54,7 @@ const additionalVerificationRecords = [
   ...europeanPoliticalFeministModernismVerificationRecords,
   ...newHollywoodBlockbusterVerificationRecords,
   ...sixtiesScaleIndependentVerificationRecords,
+  ...europeanModernistProductionVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
 
 const additionalVerificationByScenarioId = new Map<string, ProductionCaseVerificationRecord>(

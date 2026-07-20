@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const battleOfAlgiersFilmHistoryProfile = {
+  scenarioId: "scenario_the_battle_of_algiers_1966",
+  period: "Algerian-Italian political modernism, location reconstruction and documentary-coded anti-colonial cinema",
+  traditions: ["Political modernism", "Neorealist location method", "Newsreel-style reconstruction"],
+  before: "Colonial wars were often represented through official military viewpoints, heroic stars or distant historical spectacle, while documentary authority and dramatic reconstruction were usually presented as separate modes.",
+  moment: "Producer and former FLN commander Saadi Yacef works with Gillo Pontecorvo, Franco Solinas, Antonio Musu, Marcello Gatti, nonprofessional performers, Algiers locations, multiple cameras, practical crowd logistics and Ennio Morricone to reconstruct the conflict through a deliberately newsreel-coded fiction.",
+  after: "The film became a central reference for political cinema because its production method makes geography, organization, counterinsurgency and civilian consequence legible while refusing to disguise staged reconstruction as recovered documentary footage.",
+  historyQuestion: "Which production system explains the film's Algiers street locations, former participants, nonprofessional cast, multi-camera crowd staging, grainy black-and-white image and equal musical lament over violence by opposing forces?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Criterion and MoMA place the film within the recently concluded Algerian War and document its reconstruction of the 1956–57 urban battle after independence." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI identifies a combination of Italian neorealism, political modernism and direct-cinema-coded photography rather than conventional war spectacle." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion credits Algerian producer and participant Saadi Yacef with Antonio Musu, while BFI and MoMA document the Algeria-Italy production and location work in the Casbah." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Academy records nominations across foreign-language film, directing and original screenplay; BFI and Criterion document the film's long political and educational afterlife." },
+    { area: "screenplay", status: "source_verified", note: "Criterion and the Academy credit Franco Solinas and Gillo Pontecorvo, while MoMA documents Sarah Maldoror's contribution and the use of historical testimony and participants." },
+    { area: "directing", status: "source_verified", note: "BFI documents Pontecorvo's repeated takes, multiple cameras and detailed crowd direction designed to produce fatigue, scale and apparent spontaneity." },
+    { area: "performance", status: "source_verified", note: "BFI, Criterion and MoMA document a largely nonprofessional ensemble, former participants and Jean Martin as the principal professional actor." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Sergio Canevari, while BFI and MoMA show how real Casbah streets, checkpoints, cells and military spaces organize the conflict's geography." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion credits Giovanni Axerio and Maurizio Giustini; uniforms, veils, civilian dress and practical wounds support the historical reconstruction and checkpoint strategies." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Marcello Gatti and Silvano Mancini; BFI documents month-long camera testing, multiple cameras and a newsreel-like black-and-white texture." },
+    { area: "lighting", status: "mapped", note: "Hard exterior light, dense interiors and night operations preserve documentary immediacy, but the current sources do not isolate a full lighting-department process." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents black-and-white 1.85:1 photography and a director-approved transfer supervised by cinematographer Marcello Gatti." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Mario Morra and Mario Serandrei; BFI documents cross-cut operations, checkpoints, bomb placements and collective response with thriller clarity." },
+    { area: "sound_design", status: "source_verified", note: "Criterion credits Omar Bouksani, while MoMA and BFI describe drums, gunfire, machinery, crowds and military procedure as one political acoustic field." },
+    { area: "music", status: "source_verified", note: "Criterion, BFI and MoMA credit Pontecorvo and Ennio Morricone and document the use of military march, percussion and shared lament across opposing acts of violence." },
+    { area: "effects_animation", status: "source_verified", note: "Criterion credits Aldo Gasparri; practical explosions, smoke, wounds and mass-action effects are integrated into location reconstruction rather than separated as spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "BFI, Criterion and MoMA explicitly document the staged newsreel appearance, real locations, historical participants, nonprofessional faces and research-based reconstruction." },
+  ],
+} as const satisfies FilmHistoryProfile;
