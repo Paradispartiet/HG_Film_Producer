@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 100 source-backed Production Cases.
+- 104 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -41,6 +41,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
+- `src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts`
 - `src/ui/data/scenarioProductionVerificationCzechoslovakNewWaveBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch.ts`
@@ -215,6 +216,15 @@ This batch compares Daiei subjective period modernism, Shochiku domestic minimal
 - `scenario_touch_of_evil_1958`
 
 This batch compares Italian post-neorealist road fable, American independent Expressionist child thriller, Swedish theatre-derived allegory and baroque Universal border noir.
+
+### Early 1960s production systems batch
+
+- `scenario_breakfast_at_tiffany_s_1961`
+- `scenario_jules_and_jim_1962`
+- `scenario_contempt_1963`
+- `scenario_dr_strangelove_1964`
+
+This batch compares Paramount romantic star production, French New Wave literary biography, French-Italian prestige film-about-film and researched British-American Cold War black comedy.
 
 ### Postwar European modernism and New Waves batch
 
