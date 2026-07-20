@@ -3,6 +3,7 @@ import {
   getProductionCaseVerificationRecords as getFoundationVerificationRecords,
   type ProductionCaseVerificationRecord,
 } from "./scenarioProductionVerification";
+import { politicalPalme1980sVerificationRecords } from "./scenarioProductionVerification1980sPoliticalPalmeSystemsBatch";
 import { productionSystems1930sVerificationRecords } from "./scenarioProductionVerification1930sProductionSystemsBatch";
 import { noirRealism1940sVerificationRecords } from "./scenarioProductionVerification1940sNoirRealismBatch";
 import { asianPostwar1950sVerificationRecords } from "./scenarioProductionVerification1950sAsianPostwarBatch";
@@ -58,6 +59,7 @@ const additionalVerificationRecords = [
   ...norwegianPostwarGenreSystemsVerificationRecords,
   ...nordicMinimalistSocialSystemsVerificationRecords,
   ...modernNordicBehaviorSystemsVerificationRecords,
+  ...politicalPalme1980sVerificationRecords,
   ...asianPostwar1950sVerificationRecords,
   ...expressivePostwar1950sVerificationRecords,
   ...postwarEuropeanModernismVerificationRecords,
