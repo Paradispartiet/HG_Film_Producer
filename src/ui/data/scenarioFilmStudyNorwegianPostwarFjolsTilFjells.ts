@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const fjolsTilFjellsFilmHistoryProfile = {
+  scenarioId: "scenario_fjols_til_fjells_1957",
+  period: "Norwegian 1950s independent popular comedy, theatrical adaptation and mountain-hotel farce",
+  traditions: ["Norwegian popular comedy", "Theatrical farce adaptation", "Independent producer-director partnership"],
+  before: "Norwegian popular comedy drew heavily on revue, stage farce and recognizable comic performers, while postwar film production depended on small companies able to coordinate theatrical material, location attraction and tightly organized studio craft.",
+  moment: "Carlmar Film A/S joins Edith Carlmar's direction, Otto Carlmar's production and screenplay, Leif Juster's star performance, Unni Bernhoft's disguise role, Frank Robert's double role, Sverre Bergli's black-and-white photography, hotel geography, winter exteriors, songs and rapid entrances into a controlled mistaken-identity machine.",
+  after: "The film became Edith Carlmar's largest popular success and one of the defining Norwegian comedies of the 1950s, preserving a production model in which theatrical timing, star persona, ensemble blocking and accessible national locations work as one system.",
+  historyQuestion: "Which production system explains the film's Carlmar Film independence, adaptation from stage farce, Leif Juster-centered ensemble, double role, disguise plot, mountain hotel geography and music-driven popular comedy?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Norsk filmografi, Cinemateket and Store norske leksikon place the film in 1957 Norwegian popular cinema and Carlmar's intensive 1950s production period." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Store norske leksikon and Norsk filmografi document the adaptation from the stage farce Bare jatt me'n and the film's place in Norwegian mistaken-identity comedy." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Norsk filmografi documents Carlmar Film A/S, producer Otto Carlmar, Norenafilm distribution and Edith Carlmar's direction within the couple's independent production partnership." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cinemateket and Store norske leksikon identify the film as a major 1957 audience success and Edith Carlmar's best-known popular comedy." },
+    { area: "screenplay", status: "source_verified", note: "Norsk filmografi and SNL credit Otto Carlmar's screenplay adapted from Bare jatt me'n, organizing disguise, double identity, service routines and romantic reversals." },
+    { area: "directing", status: "source_verified", note: "Norsk filmografi and Cinemateket credit Edith Carlmar and support a direction system built around clear hotel geography, entrances, reactions and escalating confusion." },
+    { area: "performance", status: "source_verified", note: "Norsk filmografi documents Leif Juster, Unni Bernhoft and Frank Robert's double role; SNL connects the film's success to comic performance and disguise." },
+    { area: "production_design", status: "source_verified", note: "Norsk filmografi credits Alexey Zaitzow and H.C. Hansen; the hotel environment functions as a readable stage for rooms, corridors, service work and repeated mistaken encounters." },
+    { area: "costume_makeup", status: "source_verified", note: "Norsk filmografi credits Vera Hall, while Rudolf's disguise and the contrast between celebrity, staff and guests make costume and appearance central to the farce." },
+    { area: "cinematography", status: "source_verified", note: "Norsk filmografi credits Sverre Bergli and Hans Nord; black-and-white framing preserves ensemble readability across hotel interiors and winter exteriors." },
+    { area: "lighting", status: "mapped", note: "Controlled hotel interiors and bright snow exteriors support comic visibility, but the current sources do not isolate a separate lighting-department account." },
+    { area: "camera_format", status: "source_verified", note: "Norsk filmografi records a black-and-white sound feature, while Cinemateket documents 35mm exhibition." },
+    { area: "editing", status: "source_verified", note: "Norsk filmografi credits Bjørn Breigutu; the farce depends on cutting entrances, discoveries, role confusion and reaction timing without losing spatial clarity." },
+    { area: "sound_design", status: "source_verified", note: "Norsk filmografi credits Tore Kinge; dialogue rhythm, doors, hotel bustle and performance timing support the comic mechanism." },
+    { area: "music", status: "source_verified", note: "Norsk filmografi and SNL credit Gunnar and Maj Sønstevold, while the song Kom til fjells helps join popular entertainment to the mountain-hotel setting." },
+    { area: "effects_animation", status: "not_central", note: "The film's production logic depends on performance, disguise, blocking, music and editing rather than effects or animation." },
+    { area: "documentary_method", status: "not_central", note: "Winter and hotel settings give recognizable national texture, but the film is a tightly designed theatrical farce rather than observational production." },
+  ],
+} as const satisfies FilmHistoryProfile;
