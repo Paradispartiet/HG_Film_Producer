@@ -108,11 +108,14 @@ test("ambiguous English titles do not match unrelated same-year films", () => {
   assert.ok(oasisDefinition);
   assert.ok(hostDefinition);
 
+  const [baseScenario] = readCatalogueBeforeSouthKoreanExpansion();
+  assert.ok(baseScenario);
+
   const unrelatedOasis: HistoricalFilmScenario = {
-    ...readCatalogueBeforeSouthKoreanExpansion()[0],
+    ...baseScenario,
     id: "scenario_unrelated_oasis_2002",
     film: {
-      ...readCatalogueBeforeSouthKoreanExpansion()[0].film,
+      ...baseScenario.film,
       title: "Oasis",
       original_title: "Oasis",
       year: 2002,
@@ -120,10 +123,10 @@ test("ambiguous English titles do not match unrelated same-year films", () => {
     },
   };
   const unrelatedHost: HistoricalFilmScenario = {
-    ...readCatalogueBeforeSouthKoreanExpansion()[0],
+    ...baseScenario,
     id: "scenario_unrelated_host_2006",
     film: {
-      ...readCatalogueBeforeSouthKoreanExpansion()[0].film,
+      ...baseScenario.film,
       title: "The Host",
       original_title: "The Host",
       year: 2006,
