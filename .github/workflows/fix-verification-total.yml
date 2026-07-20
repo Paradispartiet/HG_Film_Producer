@@ -1,0 +1,36 @@
+name: Fix verification catalogue total
+
+on:
+  push:
+    branches:
+      - early-cinema-expansion-58
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: early-cinema-expansion-58
+      - name: Fix stale total and remove workflow
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('docs/PRODUCTION_CASE_VERIFICATION_REGISTRY.md')
+          text = path.read_text(encoding='utf-8')
+          old = 'All 217 cases receive the same audit structure, but this does **not** mean that all 161 are verified.'
+          new = 'All 217 cases receive the same audit structure, but this does **not** mean that all 217 are verified.'
+          if old not in text:
+              raise SystemExit('stale total sentence not found')
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+          rm .github/workflows/fix-verification-total.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Fix verification catalogue total"
+          git push origin HEAD:early-cinema-expansion-58
