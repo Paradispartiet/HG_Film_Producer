@@ -14,6 +14,7 @@ import "./directorPracticeCoach.css";
 import "./filmSchoolScreenplayCourse.css";
 import "./filmSchoolCourseNavigation.css";
 import "./filmSchoolOverview.css";
+import "./filmSchoolCapstoneSubmission.css";
 import "./filmSchoolLightingDesignCourse.css";
 import "./filmSchoolEditingSoundCourse.css";
 import "./filmCraftLibrary.css";
