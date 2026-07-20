@@ -2,12 +2,13 @@ import { getFestivalWinners1981To2009ExpansionDefinition } from "../../core/fest
 import { createModernCanonBriefBlueprint } from "../../core/modernCanonBriefBlueprint.js";
 import type { FilmScenarioSeed } from "./filmScenarios";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
+import { getFestivalWinners2010To2024ExpansionProductionBrief } from "./scenarioProductionBriefsFestivalWinners2010To2024Expansion";
 
 export function getFestivalWinners1981To2009ExpansionProductionBrief(
   scenario: FilmScenarioSeed,
 ): ScenarioProductionBrief | undefined {
   const definition = getFestivalWinners1981To2009ExpansionDefinition(scenario);
-  if (!definition) return undefined;
+  if (!definition) return getFestivalWinners2010To2024ExpansionProductionBrief(scenario);
   const blueprint = createModernCanonBriefBlueprint(definition);
 
   return {
