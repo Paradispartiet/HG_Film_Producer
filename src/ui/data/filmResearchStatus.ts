@@ -1,5 +1,6 @@
 import type { FilmScenarioSeed } from "./filmScenarios";
 import { resolveScenarioProductionBrief, type ScenarioProductionBrief } from "./scenarioProductionBriefs";
+import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 
 export type FilmResearchStatus = ScenarioProductionBrief["verificationStatus"];
 
@@ -27,6 +28,13 @@ const statusPriority: Record<FilmResearchStatus, number> = {
   verified: 2,
 };
 
+export function resolveFilmResearchStatus(
+  scenarioId: string,
+  briefStatus: FilmResearchStatus,
+): FilmResearchStatus {
+  return getProductionCaseVerification(scenarioId) ? "verified" : briefStatus;
+}
+
 export function createFilmResearchQueue(scenarios: readonly FilmScenarioSeed[]): readonly FilmResearchQueueItem[] {
   return scenarios
     .map((scenario) => {
@@ -36,7 +44,7 @@ export function createFilmResearchQueue(scenarios: readonly FilmScenarioSeed[]):
         title: scenario.film.title,
         year: scenario.film.year,
         directors: scenario.film.directors,
-        status: brief.verificationStatus,
+        status: resolveFilmResearchStatus(scenario.id, brief.verificationStatus),
         craftStatementCount:
           brief.screenplayTargets.length
           + brief.cinematographyTargets.length

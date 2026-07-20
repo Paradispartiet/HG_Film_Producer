@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const caligariFilmHistoryProfile = {
+  scenarioId: "scenario_the_cabinet_of_dr_caligari_1920",
+  period: "Post-First World War German Expressionism and studio-bound psychological horror",
+  traditions: ["German Expressionism", "Designed subjective space", "Framed and unreliable narration"],
+  before: "Expressionism had already developed across painting, literature, architecture and theatre as a way to make inner emotion distort the external world.",
+  moment: "A Decla studio production unifies angular painted sets, graphic shadows, stylized costume and performance with a frame story that keeps authority, madness and objective reality unresolved.",
+  after: "The film became a lasting model for psychological horror, designed subjectivity and later horror and noir stylization; its 2014 restoration also preserves original intertitles and colour toning from surviving archival elements.",
+  historyQuestion: "Which historical production system best explains why streets, rooms, acting and narration all appear distorted by the same unstable mind?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI places the film in postwar German culture and the wider Expressionist movement." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The all-encompassing use of Expressionist design turns subjective emotion into the film's visible world." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Filmportal records the Decla production, producers Erich Pommer and Rudolf Meinert, and the Lixie Atelier shoot in Berlin-Weissensee." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI documents the film's long influence on horror and film noir, while Deutsche Kinemathek documents the 2014 4K restoration." },
+    { area: "screenplay", status: "source_verified", note: "Carl Mayer and Hans Janowitz's central murder story is enclosed by a frame that makes truth, delusion and authority ambiguous." },
+    { area: "directing", status: "source_verified", note: "Robert Wiene coordinates narrative uncertainty, stylized acting and designed space as one expressionist system." },
+    { area: "performance", status: "source_verified", note: "Werner Krauss and Conrad Veidt bring expressionist theatre experience into geometric movement, makeup and pose." },
+    { area: "production_design", status: "source_verified", note: "Hermann Warm, Walter Reimann and Walter Röhrig designed angular streets, rooms, scenery and painted shadows." },
+    { area: "costume_makeup", status: "source_verified", note: "Walter Reimann's graphic costume work and the stylized Caligari and Cesare appearances merge performers with the sets." },
+    { area: "cinematography", status: "source_verified", note: "Willy Hameister photographs the constructed graphic world so design, bodies and perspective remain legible as a single plane." },
+    { area: "lighting", status: "source_verified", note: "Painted and graphic shadows replace purely natural light behavior and make illumination part of the set design." },
+    { area: "camera_format", status: "source_verified", note: "Filmportal records a six-act, tinted silent production on 35mm in 1.33:1." },
+    { area: "editing", status: "mapped", note: "The frame story and central narrative are clearly separated, while shot-level editorial research remains pending." },
+    { area: "sound_design", status: "not_central", note: "The film is silent and its principal subjective system is visual and performative." },
+    { area: "music", status: "mapped", note: "Giuseppe Becce accompanied the premiere, but Deutsche Kinemathek records that most of the original composition is lost." },
+    { area: "effects_animation", status: "not_central", note: "The uncanny world is achieved primarily through scenery, performance, makeup and composition rather than effects spectacle." },
+    { area: "documentary_method", status: "not_central", note: "The film deliberately rejects observational realism in favour of a wholly designed studio world." },
+  ],
+} as const satisfies FilmHistoryProfile;

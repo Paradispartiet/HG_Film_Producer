@@ -11,6 +11,7 @@ import { landscapeCinemaVerificationRecords } from "./scenarioProductionVerifica
 import { minimalistRoadVerificationRecords } from "./scenarioProductionVerificationMinimalistRoadBatch";
 import { productionMethodVerificationRecords } from "./scenarioProductionVerificationMethodBatch";
 import { modernCraftVerificationRecords } from "./scenarioProductionVerificationModernBatch";
+import { silentFoundationsVerificationRecords } from "./scenarioProductionVerificationSilentFoundationsBatch";
 import { technologyHistoryVerificationRecords } from "./scenarioProductionVerificationTechnologyBatch";
 
 export type {
@@ -29,6 +30,7 @@ const additionalVerificationRecords = [
   ...minimalistRoadVerificationRecords,
   ...europeanPressureVerificationRecords,
   ...independentStorytellingVerificationRecords,
+  ...silentFoundationsVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
 
 const additionalVerificationByScenarioId = new Map<string, ProductionCaseVerificationRecord>(
