@@ -24,6 +24,11 @@ import {
   resolve1950sAsianPostwarFilmStudyMap,
 } from "../data/scenarioFilmStudy1950sAsianPostwarBatch";
 import {
+  create1950sExpressivePostwarFilmHistoryChoices,
+  get1950sExpressivePostwarFilmHistoryProfile,
+  resolve1950sExpressivePostwarFilmStudyMap,
+} from "../data/scenarioFilmStudy1950sExpressivePostwarBatch";
+import {
   create1960sScaleIndependentFilmHistoryChoices,
   get1960sScaleIndependentFilmHistoryProfile,
   resolve1960sScaleIndependentFilmStudyMap,
@@ -114,7 +119,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveEuropeanModernistProductionFilmStudyMap(scenario, brief)
+    () => resolve1950sExpressivePostwarFilmStudyMap(scenario, brief)
+      ?? resolveEuropeanModernistProductionFilmStudyMap(scenario, brief)
       ?? resolve1960sScaleIndependentFilmStudyMap(scenario, brief)
       ?? resolveNewHollywoodBlockbusterFilmStudyMap(scenario, brief)
       ?? resolveEuropeanPoliticalFeministModernismFilmStudyMap(scenario, brief)
@@ -145,6 +151,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (get1950sExpressivePostwarFilmHistoryProfile(historyProfile.scenarioId)) {
+      return create1950sExpressivePostwarFilmHistoryChoices(historyProfile);
+    }
     if (getEuropeanModernistProductionFilmHistoryProfile(historyProfile.scenarioId)) {
       return createEuropeanModernistProductionFilmHistoryChoices(historyProfile);
     }
