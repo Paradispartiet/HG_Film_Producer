@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const runLolaRunFilmHistoryProfile = {
+  scenarioId: "scenario_run_lola_run_1998",
+  period: "Post-reunification German kinetic cinema, recursive time and multimedia production",
+  traditions: ["Post-reunification German cinema", "Time-loop narrative", "Music-video, animation and game-form montage"],
+  before: "X Filme Creative Pool had emerged as a collaborative German production company, while 1990s music video, electronic dance culture, animation and nonlinear screen forms offered Tom Tykwer a vocabulary for joining experimental structure to accessible genre momentum.",
+  moment: "X Filme, WDR and Arte produce a Berlin film written and directed by Tykwer and shot from June to August 1997. Frank Griebe combines 35 mm Eastmancolor, black-and-white, video, Steadicam, helicopter photography and varied speeds; Gil Alkabetz and Ralf Bohde provide animation; Alexander Manasse organises recognisable Berlin routes as a repeatable game board; Mathilde Bonnefoy cuts three twenty-minute runs, split screens and flash-forward photo stories; Dirk Jacob's Dolby Digital sound design and the Tykwer-Johnny Klimek-Reinhold Heil techno score make pulse, breath and repetition the film's clock.",
+  after: "Filmportal documents a wide German release, strong first-week attendance, major German film prizes and later international festival circulation. The film's continued institutional presentation preserves it as a teaching case in how industrial co-production, mixed media, rhythmic editing, electronic music and a simple repeated objective can join formal experiment to popular velocity.",
+  historyQuestion: "Which production system explains a German film that gives a woman twenty minutes to cross Berlin, repeats the run three times with altered outcomes, and combines 35 mm, video, black-and-white, animation, split screens, flash-forward stills, rapid montage and a continuous techno pulse so narrative contingency is experienced as speed, rhythm and media change?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Filmportal and BFI place the film in late-1990s Berlin and post-reunification German cinema, where East and West locations become one imaginary field of movement." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and filmportal identify a postmodern mixture of time-loop storytelling, video-game logic, music-video energy, animation and cinematic montage." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Filmportal records X Filme Creative Pool with WDR and Arte, public film funding and a Berlin shoot from 18 June to 4 August 1997." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Filmportal documents the broad German release, first-week audience, major German Film Awards, Sundance and Seattle prizes and later retrospective circulation." },
+    { area: "screenplay", status: "source_verified", note: "BFI, DFI and filmportal credit Tom Tykwer; the screenplay resets one twenty-minute objective three times and lets small timing differences transform outcomes." },
+    { area: "directing", status: "source_verified", note: "Filmportal's production history records Tykwer's deliberate attempt to break apparent storytelling and market rules while maintaining emotional and popular momentum." },
+    { area: "performance", status: "source_verified", note: "BFI, DFI and filmportal document Franka Potente and Moritz Bleibtreu, with Potente's running, breath and repeated emotional adjustments carrying continuity across the three variants." },
+    { area: "production_design", status: "source_verified", note: "BFI and filmportal credit Alexander Manasse; bank, apartment, streets, supermarket, casino and ambulance route create a repeatable Berlin obstacle course." },
+    { area: "costume_makeup", status: "source_verified", note: "Filmportal credits Monika Jacobs, Margrit Neufink and Christa Krista; Lola's red hair and stable costume make her instantly trackable across media and repeated timelines." },
+    { area: "cinematography", status: "source_verified", note: "BFI, DFI and filmportal credit Frank Griebe and document Steadicam, helicopter and secondary-camera work supporting continuous running and sudden viewpoint changes." },
+    { area: "lighting", status: "mapped", note: "Bold daylight, saturated interiors and contrasting video passages separate spaces and media, but the current sources do not isolate the complete lighting plan." },
+    { area: "camera_format", status: "source_verified", note: "Filmportal documents 35 mm 1.66:1 Eastmancolor plus black-and-white, video passages and Dolby Digital presentation." },
+    { area: "editing", status: "source_verified", note: "BFI, DFI and filmportal credit Mathilde Bonnefoy; jump cuts, match cuts, split screens, still-image futures and clean resets make variation legible at high speed." },
+    { area: "sound_design", status: "source_verified", note: "BFI and filmportal credit Dirk Jacob, Frank Behnke, Markus Münz and Matthias Lempert; phones, traffic, breath, impacts and repeated dialogue lock each run to an audible clock." },
+    { area: "music", status: "source_verified", note: "BFI, DFI and filmportal credit Tykwer, Johnny Klimek and Reinhold Heil; techno tracks function as structural propulsion rather than detachable accompaniment." },
+    { area: "effects_animation", status: "source_verified", note: "BFI and filmportal document animation by Gil Alkabetz and Ralf Bohde, optical work, digital effects and practical special effects integrated with live action." },
+    { area: "documentary_method", status: "mapped", note: "Berlin locations remain recognisable, but the city is reorganised through repetition, effects and montage as a constructed game space rather than documentary geography." },
+  ],
+} as const satisfies FilmHistoryProfile;
