@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const theWhiteRibbonFilmHistoryProfile = {
+  scenarioId: "scenario_the_white_ribbon_2009",
+  period: "German-language historical austerity, village ensemble and origins-of-violence inquiry",
+  traditions: ["European historical art cinema", "Authoritarian social anatomy", "Black-and-white ensemble mystery"],
+  before: "Michael Haneke's earlier films had developed controlled distance, offscreen violence and moral uncertainty, while the long-planned village project allowed him to move those methods into a pre-First World War social structure organised by church, estate, family and school.",
+  moment: "X Filme, Wega Film, Les Films du Losange and Lucky Red produce a German-Austrian-French-Italian co-production shot from June to September 2008 in northern and eastern German locations. Haneke writes and directs an ensemble led by an uncertain retrospective narrator; Christian Berger photographs a severe black-and-white 35 mm 1.85:1 world; Christoph Kanter, Moidele Bickel and Waldemar Pokromski build period hierarchy through spaces, clothing and faces; Monika Willi edits incidents and routine through measured ellipsis; Guillaume Sciama and Jean-Pierre Laforce use Dolby SRD voices, labour, church and offscreen disturbance without a conventional score.",
+  after: "The film won the 2009 Palme d'Or and accumulated major European and German awards across writing, direction, image, design, costume, makeup, editing and sound. Cannes testimony, filmportal records and Christian Berger's craft interview preserve it as a teaching case in how historical production design, monochrome photography, ensemble performance and withheld causality can examine authoritarian formation without claiming a single solved origin.",
+  historyQuestion: "Which production system explains a multinational European period film set in a Protestant German village before the First World War, using an uncertain narrator, a large child-and-adult ensemble, severe black-and-white 35 mm images, precise period design, offscreen violence, measured ellipsis and almost no musical guidance to turn unexplained punishments into a study of authority rather than a solved mystery?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes and filmportal place the story in a Protestant northern German village in 1913-1914 and connect its institutions to Haneke's inquiry into absolutist values and later violence." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Cannes frame the film as austere European historical art cinema using social anatomy, moral uncertainty and ensemble mystery rather than conventional period suspense." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Filmportal documents X Filme, Wega Film, Les Films du Losange and Lucky Red, extensive public funding and the June-September 2008 German location shoot." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes and filmportal record the Palme d'Or and subsequent European, German and international recognition across film and craft categories." },
+    { area: "screenplay", status: "source_verified", note: "Cannes and filmportal credit Michael Haneke; his press conference describes a decade-long project about children taught absolutist values, while the script preserves uncertainty around the crimes." },
+    { area: "directing", status: "source_verified", note: "Haneke's Cannes testimony supports a deliberate refusal of simple explanation, using controlled staging and institutional routine to keep moral interpretation open." },
+    { area: "performance", status: "source_verified", note: "Cannes and filmportal document the large ensemble of children, parents, workers and authorities whose restrained behaviour distributes suspicion across the village." },
+    { area: "production_design", status: "source_verified", note: "Cannes and filmportal credit Christoph Kanter; school, church, estate, farm and domestic interiors materialise rank, discipline and dependence." },
+    { area: "costume_makeup", status: "source_verified", note: "Filmportal credits Moidele Bickel, Waldemar Pokromski and Anette Keiser; clothing, grooming and the white ribbon make hierarchy and punishment visible without explanatory dialogue." },
+    { area: "cinematography", status: "source_verified", note: "Cannes, BFI, filmportal and Christian Berger's interview document his crisp monochrome photography and long collaboration with Haneke." },
+    { area: "lighting", status: "source_verified", note: "Berger's interview directly discusses constructing the black-and-white look and his photographic partnership with Haneke, while BFI highlights the image's controlled tonal clarity." },
+    { area: "camera_format", status: "source_verified", note: "Filmportal records a 35 mm, 1.85:1 black-and-white presentation with Dolby SRD." },
+    { area: "editing", status: "source_verified", note: "Cannes and filmportal credit Monika Willi; incidents accumulate through ellipsis, return to routine and an uncertain narrator rather than clue-solving acceleration." },
+    { area: "sound_design", status: "source_verified", note: "Cannes and filmportal credit Guillaume Sciama and Jean-Pierre Laforce; voices, farm work, rooms, church and offscreen disturbance carry tension without manipulative scoring." },
+    { area: "music", status: "not_central", note: "The film largely avoids a conventional score, allowing institutional sound, speech and silence to determine rhythm and unease." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on period reconstruction, performance, controlled action and offscreen implication rather than an effects-led system." },
+    { area: "documentary_method", status: "mapped", note: "Historical research and location detail give the village social density, but the film is a constructed parable rather than documentary reconstruction." },
+  ],
+} as const satisfies FilmHistoryProfile;
