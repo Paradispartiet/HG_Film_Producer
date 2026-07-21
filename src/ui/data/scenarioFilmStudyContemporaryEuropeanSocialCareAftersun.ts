@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const aftersunFilmHistoryProfile = {
+  scenarioId: "scenario_aftersun_2022",
+  period: "British memory cinema, father-daughter holiday realism and mixed-format recollection",
+  traditions: ["British independent debut cinema", "Autobiographical memory fiction", "Mixed-format family portrait"],
+  before: "Family holiday films, home-video records and subjective memory cinema had long separated lived experience from later interpretation, while Charlotte Wells's short films developed elliptical family stories in which gesture, silence and material images carry what dialogue cannot explain.",
+  moment: "A Pastel and Unified Theory production backed by BFI, BBC Film and Creative Scotland turns a personal photograph and fictionalised memory into a late-1990s Turkish holiday; Gregory Oke photographs the main story on 35 mm with ARRICAM LT and Cooke S4 lenses, MiniDV footage supplies a literal child viewpoint, Frankie Corio and Paul Mescal rehearse together in Turkey, and Blair McClendon's seven-month edit layers adult hindsight, camcorder gaps, repeated gestures, music and club-space fragments without solving Calum's private despair.",
+  after: "Aftersun premiered in Cannes Critics' Week, won its French Touch jury prize and became an internationally recognised debut, showing how photochemical texture, home-video evidence, restrained performance and retrospective editing could construct grief from what a child saw but could not yet interpret.",
+  historyQuestion: "Which production system explains a British-American debut built from a fictionalised childhood holiday, photographed mainly on 35 mm but interrupted by MiniDV and Polaroid records, rehearsed by a new child performer and her screen father, and assembled over seven months so adult grief alters the meaning of ordinary remembered moments?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Cannes Critics' Week place the film within contemporary British-American independent production and a late-1990s package-holiday setting recalled from an adult daughter's present." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Wells and BFI describe a personal but explicitly fictional memory film, joining social observation, home-video material and elliptical subjective reconstruction." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI identifies A Pastel/Unified Theory production with BFI, BBC Film and Creative Scotland support; Kodak documents six weeks of preparation and principal photography in Ölüdeniz, Turkey." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes Critics' Week records the 2022 French Touch jury prize, while BFI records later British independent and BAFTA recognition for the debut." },
+    { area: "screenplay", status: "source_verified", note: "Cannes Critics' Week and BFI credit Wells; her A24 note describes the film as fiction built from personal photographs, videos and the instability of remembering a shared holiday." },
+    { area: "directing", status: "source_verified", note: "Wells describes withholding conventional exposition and calibrating what the adult perspective reveals, while allowing unplanned performer material to remain when it carries the desired feeling." },
+    { area: "performance", status: "source_verified", note: "Kodak documents two weeks of shared rehearsal in Turkey for Paul Mescal and first-time actor Frankie Corio; BFI interviews describe their collaborative father-daughter relationship." },
+    { area: "production_design", status: "source_verified", note: "Cannes Critics' Week credits Billur Turan; the fading resort, unfinished hotel spaces, excursions and ordinary holiday objects construct a specific late-1990s tourist environment." },
+    { area: "costume_makeup", status: "mapped", note: "Period swimwear, casual holiday clothes and Calum's physical wear support time and character, but the current source set does not isolate a department-level costume or makeup account." },
+    { area: "cinematography", status: "source_verified", note: "Kodak documents Gregory Oke's 35 mm strategy, ARRICAM LT, Cooke S4 lenses, 1.85:1 framing and shared childhood-photo research with Wells." },
+    { area: "lighting", status: "source_verified", note: "Kodak's production account explains the photochemical approach to bright Turkish exteriors, skin and memory colour, while the film contrasts resort daylight with low-light interiors and abstract club space." },
+    { area: "camera_format", status: "source_verified", note: "Kodak specifies 35 mm capture on ARRICAM LT with 400- and 1,000-foot magazines; Cannes and Wells document the interspersed MiniDV footage as a second image system." },
+    { area: "editing", status: "source_verified", note: "Cannes credits Blair McClendon, and Wells describes a seven-month edit calibrating layered narrative information, finding associative cuts and allowing present-day fragments to reshape the holiday." },
+    { area: "sound_design", status: "source_verified", note: "Cannes credits Jovan Ajder; resort ambience, camcorder playback, recorded voices, silence and distorted club sound separate lived holiday space from adult emotional recall." },
+    { area: "music", status: "source_verified", note: "Cannes credits Oliver Coates, while Wells explains how period songs and the final Under Pressure construction work as memory markers and internal emotional language." },
+    { area: "effects_animation", status: "not_central", note: "The film's formal system depends on practical locations, photochemical capture, MiniDV, performance, colour and editing rather than an effects-led pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Wells identifies photographs of herself and her father as a starting point and combines personal holiday records, shared childhood images and observed resort detail inside an explicitly fictional structure." },
+  ],
+} as const satisfies FilmHistoryProfile;
