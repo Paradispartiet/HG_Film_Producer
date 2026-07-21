@@ -9,6 +9,7 @@ import { noirRealism1940sVerificationRecords } from "./scenarioProductionVerific
 import { asianPostwar1950sVerificationRecords } from "./scenarioProductionVerification1950sAsianPostwarBatch";
 import { expressivePostwar1950sVerificationRecords } from "./scenarioProductionVerification1950sExpressivePostwarBatch";
 import { sixtiesScaleIndependentVerificationRecords } from "./scenarioProductionVerification1960sScaleIndependentBatch";
+import { balkanWarInstitutionVerificationRecords } from "./scenarioProductionVerificationBalkanWarInstitutionSystemsBatch";
 import { britishIrishPlaceBodyVerificationRecords } from "./scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch";
 import { classicalHollywoodVerificationRecords } from "./scenarioProductionVerificationClassicalHollywoodBatch";
 import { constructedWorldsVerificationRecords } from "./scenarioProductionVerificationConstructedWorldsBatch";
@@ -75,6 +76,7 @@ const additionalVerificationRecords = [
   ...contemporaryEuropeanSocialCareVerificationRecords,
   ...britishIrishPlaceBodyVerificationRecords,
   ...iberianPortugueseMemoryVerificationRecords,
+  ...balkanWarInstitutionVerificationRecords,
   ...europeanPoeticMemoryVerificationRecords,
   ...asianPostwar1950sVerificationRecords,
   ...expressivePostwar1950sVerificationRecords,
