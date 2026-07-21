@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const triangleOfSadnessFilmHistoryProfile = {
+  scenarioId: "scenario_triangle_of_sadness_2022",
+  period: "Swedish-European social satire, class-inversion farce and digitally manipulated ensemble spectacle",
+  traditions: ["European social satire", "Ruben Östlund behavioural cinema", "Three-part class reversal comedy"],
+  before: "Ruben Östlund's earlier films had turned controlled frames, repeated social tests and prolonged embarrassment into studies of masculinity and privilege, while shipboard satire and ensemble farce supplied structures for placing hierarchy under physical and economic pressure.",
+  moment: "Plattform Produktion and a large European co-production build a three-part satire across fashion, a luxury yacht and an island survival order; Östlund and Fredrik Wenzel spend weeks translating the prose-like script into blocking, Wenzel photographs on ALEXA LF for extensive post manipulation, Josefin Åsberg designs readable class environments, and Östlund with Mikel Cee Karlsson edits long escalation, bodily catastrophe and hierarchy reversal into distinct movements.",
+  after: "Triangle of Sadness won the 2022 Palme d'Or and the Cannes CST technical award, extending Östlund's international social-satire project while making image manipulation, ensemble choreography, production design and prolonged physical comedy central to a large transnational production.",
+  historyQuestion: "Which production system explains a Swedish-European satire divided between fashion, yacht and island, previsualised through weeks of blocking, photographed on ALEXA LF for extensive image stitching and alteration, and edited so formal social discomfort escalates into bodily chaos and a new material hierarchy?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes and the Swedish Film Institute place the production in contemporary European fashion, luxury and service economies and document its Swedish-led multinational financing." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Cannes and Wenzel's craft interview connect the film to Östlund's controlled behavioural satire while expanding it into shipboard farce, disaster comedy and class-inversion ensemble cinema." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes lists Plattform Produktion and partners across Germany, France, Sweden and Turkey; the Swedish Film Institute records national production support and Erik Hemmendorff as producer." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records both the 2022 Palme d'Or and the CST Award for Best Artist Technician, confirming the film's festival and craft recognition." },
+    { area: "screenplay", status: "source_verified", note: "Cannes credits Östlund, while Wenzel describes a prose-like first draft broken down over thirty-five days into images, blocking and a preliminary textual storyboard." },
+    { area: "directing", status: "source_verified", note: "The Cannes press conference and Wenzel interview document Östlund's performance-led social experiments, precise blocking and willingness to extend situations until status and audience allegiance shift." },
+    { area: "performance", status: "source_verified", note: "Cannes documents the international ensemble; repeated social actions, prolonged dinner catastrophe and changing group authority require tightly coordinated comic and physical performance." },
+    { area: "production_design", status: "source_verified", note: "Cannes credits Josefin Åsberg; fashion spaces, yacht interiors, service corridors and the island camp keep each economic order visually legible." },
+    { area: "costume_makeup", status: "mapped", note: "Fashion styling, uniforms, luxury dress and progressive bodily disarray are central to class legibility, but the current source set does not isolate a department-level costume or makeup account." },
+    { area: "cinematography", status: "source_verified", note: "Cannes credits Fredrik Wenzel, and ARRI documents his ALEXA LF choice for an image system designed around later stitching, extension and alteration." },
+    { area: "lighting", status: "source_verified", note: "Wenzel's craft account describes translating each blocked scene into controlled yacht, exterior and studio imagery while preserving readable bodies and architecture through changing conditions." },
+    { area: "camera_format", status: "source_verified", note: "ARRI identifies the ALEXA LF as the principal capture camera and explains that its image latitude supported Östlund's extensive postproduction manipulation." },
+    { area: "editing", status: "source_verified", note: "Cannes credits Östlund and Mikel Cee Karlsson; ARRI records the stitching of different takes and altered details, while the three-part structure resets social rules between movements." },
+    { area: "sound_design", status: "source_verified", note: "Cannes credits Andreas Franck, Bent Holm, Jacob Ilgner and Jonas Rudels; engines, dining service, storm, bodily chaos and beach ambience distinguish each class system acoustically." },
+    { area: "music", status: "mapped", note: "Music punctuates fashion display and social escalation, but the current sources do not provide a dedicated composition or music-supervision account." },
+    { area: "effects_animation", status: "source_verified", note: "ARRI states that almost every final image was manipulated through stitching, extensions or inserted details, making invisible digital alteration a supporting production system." },
+    { area: "documentary_method", status: "source_verified", note: "Wenzel records that the original fashion-world premise came through Östlund's fashion-photographer wife and that the team converted observed social behaviour into rehearsed cinematic tests." },
+  ],
+} as const satisfies FilmHistoryProfile;

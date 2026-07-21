@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 140 source-backed Production Cases.
+- 144 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -48,6 +48,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationFestivalUrbanIntimacySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationContemporaryDissentRuralSystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts`
@@ -288,6 +289,15 @@ This batch compares South Korean low-budget industrial moral melodrama, French c
 - `scenario_alcarras_2022`
 
 This batch compares Israeli-French language-and-body exile modernism, Iranian clandestine anthology ethics, Romanian pandemic essay satire and Catalan nonprofessional seasonal rural realism.
+
+### Contemporary European social role and care systems batch
+
+- `scenario_toni_erdmann_2016`
+- `scenario_triangle_of_sadness_2022`
+- `scenario_aftersun_2022`
+- `scenario_the_room_next_door_2024`
+
+This batch compares German corporate father-daughter embarrassment comedy, Swedish-European digitally manipulated class farce, British-American mixed-format memory drama and Spanish English-language end-of-life chamber melodrama.
 
 ### 1950s Asian postwar cinema batch
 

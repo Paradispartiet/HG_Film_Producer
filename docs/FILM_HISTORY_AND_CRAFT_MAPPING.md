@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case contains all mapping 
 Every Production Case in the current catalogue resolves to the same complete mapping structure. Catalogue size is read dynamically and is not duplicated in documentation or tests.
 
 - 17 mandatory film-history and film-craft areas.
-- 140 source-backed film-history profiles.
+- 144 source-backed film-history profiles.
 - All remaining cases retain complete audit structures with visible research gaps.
 - No points, ranks, badges or reward currencies.
 - Historical placement is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The 140 source-backed profiles are the same controlled group covered by the Production Case verification registry:
+The 144 source-backed profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -137,6 +137,10 @@ The 140 source-backed profiles are the same controlled group covered by the Prod
 - There Is No Evil
 - Bad Luck Banging or Loony Porn
 - Alcarràs
+- Toni Erdmann
+- Triangle of Sadness
+- Aftersun
+- The Room Next Door
 - Rashomon
 - Tokyo Story
 - Seven Samurai
@@ -301,6 +305,8 @@ A date or movement name alone does not teach film history. The player learns by 
 - Chinese wintry post-industrial neo-noir versus Venezuelan anamorphic class-distance drama;
 - Israeli-French language-and-body exile modernism versus Iranian clandestine anthology ethics;
 - Romanian pandemic essay satire versus Catalan nonprofessional seasonal rural realism;
+- German corporate father-daughter embarrassment comedy versus Swedish-European digitally manipulated class farce;
+- British-American mixed-format memory drama versus Spanish English-language end-of-life chamber melodrama;
 - Daiei contradictory testimony versus Shochiku domestic minimalism;
 - Toho tactical action versus Bengali location humanism;
 - Danish spiritual long-take chamber cinema versus Polish Film School one-night political tragedy;
