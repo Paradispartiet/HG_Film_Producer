@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 160 source-backed Production Cases.
+- 164 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -52,6 +52,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationIberianPortugueseMemorySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationBalkanWarInstitutionSystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
@@ -338,6 +339,15 @@ This batch compares late-Franco Spanish child-view domestic memory, Spain-France
 - `scenario_quo_vadis_aida_2020`
 
 This batch compares Macedonian-British circular photographic war modernism, Yugoslav archive-fiction historical grotesque, Bosnian contained trench institutional satire and Bosnian translator-led Srebrenica reconstruction.
+
+### European 1960s space, architecture and duration systems batch
+
+- `scenario_l_avventura_1960`
+- `scenario_last_year_at_marienbad_1961`
+- `scenario_playtime_1967`
+- `scenario_the_leopard_1963`
+
+This batch compares Italian-French landscape modernism, French-Italian palace-memory découpage, French purpose-built 65 mm urban comedy and Italian-French Super Technirama historical ceremony.
 
 ### 1950s Asian postwar cinema batch
 
