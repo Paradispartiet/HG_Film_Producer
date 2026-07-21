@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const landscapeInTheMistFilmHistoryProfile = {
+  scenarioId: "scenario_landscape_in_the_mist_1988",
+  period: "Greek modernism, Trilogy of Silence road cinema and choreographed landscape memory",
+  traditions: ["Theo Angelopoulos long-take modernism", "Mythic child journey", "European co-production landscape cinema"],
+  before: "Angelopoulos had transformed Greek history into long, spatially expressive sequence shots and then internalised that historical method in the Trilogy of Silence, working with screenwriter Tonino Guerra, cinematographer Giorgos Arvanitis and composer Eleni Karaindrou.",
+  moment: "A Greece-France-Italy 35 mm co-production written by Angelopoulos, Tonino Guerra and Thanassis Valtinos follows Voula and Alexandros across stations, roads, factories, snow and borders. Arvanitis's long travelling compositions, Yannis Tsitsopoulos's measured editing, Karaindrou's recurring music and carefully staged weather turn the search for an absent father into a passage through contemporary Greece, myth and the silence of history.",
+  after: "Landscape in the Mist won the 1989 European Film award and major Venice and Chicago recognition, carrying Angelopoulos's long-take historical method into an intimate child-centred journey that remains central to accounts of late European modernist cinema.",
+  historyQuestion: "Which production system explains a 1988 Greek-French-Italian 35 mm road film in which two children cross stations, highways, snow and borders through long choreographed shots, recurring music and large ellipses, making landscape and absence more important than conventional travel suspense?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Angelopoulos's official archive place the film in late-1980s Greece and identify it as the third part of the Trilogy of Silence, where public history becomes internal and personal." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI connects Angelopoulos to European long-take modernism, landscape, architecture and myth; the film adapts that method to a child's road journey." },
+    { area: "industry_and_production_context", status: "source_verified", note: "The producer and distributor records identify a Greece-France-Italy international co-production involving the Greek Film Centre, ERT, Paradis Films, La SEPT and Basic Cinematografica." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The European Film Academy records the 1989 European Film award and nominations for directing, screenplay and cinematography; the official archive records Venice and Chicago honours." },
+    { area: "screenplay", status: "source_verified", note: "European Film Academy and production records credit Theo Angelopoulos, Tonino Guerra and Thanassis Valtinos; the route uses episodes and absence rather than a solvable destination." },
+    { area: "directing", status: "source_verified", note: "BFI describes Angelopoulos's long, sinuous, intricately choreographed shots and his ability to make landscape function simultaneously as reality, history and spiritual metaphor." },
+    { area: "performance", status: "mapped", note: "The child leads Michalis Zeke and Tania Palaiologou anchor the journey, but the current source set does not isolate their rehearsal or direction process." },
+    { area: "production_design", status: "source_verified", note: "Production records credit art director Mikes Karapiperis; stations, industrial edges, the travelling players' fragments and border spaces organise a contemporary world stripped of secure arrival." },
+    { area: "costume_makeup", status: "source_verified", note: "Production records credit Anastasia Arseni; practical winter clothing and the travelling troupe's remnants distinguish exposure, performance and social worlds across the route." },
+    { area: "cinematography", status: "source_verified", note: "European Film Academy and festival records credit Giorgos Arvanitis and recognise the cinematography; BFI analyses Angelopoulos's expressive long shots and landscape choreography." },
+    { area: "lighting", status: "mapped", note: "Mist, snowfall, grey roads, industrial dusk and the final luminous tree create the visual progression, but the current sources do not isolate a dedicated lighting account." },
+    { area: "camera_format", status: "source_verified", note: "Busan, Film Fest Gent and production records identify 35 mm colour production, distinguishing the film's monumental landscape images from later digital slow cinema." },
+    { area: "editing", status: "source_verified", note: "Production records credit Yannis Tsitsopoulos; measured cuts join autonomous long-take episodes, geographic gaps and the children's repeated departures without conventional continuity coverage." },
+    { area: "sound_design", status: "source_verified", note: "Production records credit Marinos Athanassopoulos; trains, traffic, rain, distant voices, machinery and open silence extend the journey beyond the visible frame." },
+    { area: "music", status: "source_verified", note: "Film Fest Gent and production records credit Eleni Karaindrou; recurring orchestral material supplies emotional continuity across otherwise disconnected spaces and encounters." },
+    { area: "effects_animation", status: "not_central", note: "The giant hand and final mist-bound tree are staged as practical or compositional poetic events inside a location-driven production rather than an effects-led pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "The film records modern Greek roads, factories, stations, weather and migration imagery while transforming them through mythic staging and the children's restricted knowledge." },
+  ],
+} as const satisfies FilmHistoryProfile;
