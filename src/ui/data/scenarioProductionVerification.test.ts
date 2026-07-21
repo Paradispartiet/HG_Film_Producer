@@ -148,6 +148,13 @@ const balkanWarInstitutionIds = [
   "scenario_quo_vadis_aida_2020",
 ] as const;
 
+const european1960sSpaceIds = [
+  "scenario_l_avventura_1960",
+  "scenario_last_year_at_marienbad_1961",
+  "scenario_playtime_1967",
+  "scenario_the_leopard_1963",
+] as const;
+
 const asianPostwar1950sIds = [
   "scenario_rashomon_1950",
   "scenario_tokyo_story_1953",
@@ -211,7 +218,7 @@ const europeanModernistProductionIds = [
   "scenario_the_battle_of_algiers_1966",
 ] as const;
 
-const expectedVerifiedCount = 160;
+const expectedVerifiedCount = 164;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -381,6 +388,14 @@ test("Iberian Portuguese memory systems are verified with four sources each", ()
 
 test("Balkan war institution systems are verified with four sources each", () => {
   for (const scenarioId of balkanWarInstitutionIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("European 1960s space systems are verified with four sources each", () => {
+  for (const scenarioId of european1960sSpaceIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);
