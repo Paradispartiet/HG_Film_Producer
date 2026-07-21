@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 148 source-backed Production Cases.
+- 152 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -49,6 +49,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationFestivalUrbanIntimacySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationContemporaryDissentRuralSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
@@ -308,6 +309,15 @@ This batch compares German corporate father-daughter embarrassment comedy, Swedi
 - `scenario_the_double_life_of_veronique_1991`
 
 This batch compares French early-sound barge poetic realism, late-Franco Spanish childhood memory, Greek-French-Italian long-take landscape journey and Polish-French filtered double-life metaphysics.
+
+### British and Irish place, body and institution systems batch
+
+- `scenario_kes_1969`
+- `scenario_naked_1993`
+- `scenario_hunger_2008`
+- `scenario_the_banshees_of_inisherin_2022`
+
+This batch compares British regional youth realism, British rehearsal-built London nocturne, British-Irish bodily prison modernism and Irish island tragicomedy shaped by landscape and distant civil conflict.
 
 ### 1950s Asian postwar cinema batch
 
