@@ -9,6 +9,11 @@ import {
   resolveScenarioFilmStudyMap,
 } from "../data/scenarioFilmStudyMap";
 import {
+  createBritishIrishPlaceBodySystemsFilmHistoryChoices,
+  getBritishIrishPlaceBodySystemsFilmHistoryProfile,
+  resolveBritishIrishPlaceBodySystemsFilmStudyMap,
+} from "../data/scenarioFilmStudyBritishIrishPlaceBodySystemsBatch";
+import {
   create1930sProductionSystemsFilmHistoryChoices,
   get1930sProductionSystemsFilmHistoryProfile,
   resolve1930sProductionSystemsFilmStudyMap,
@@ -179,7 +184,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveEuropeanPoeticMemorySystemsFilmStudyMap(scenario, brief)
+    () => resolveBritishIrishPlaceBodySystemsFilmStudyMap(scenario, brief)
+      ?? resolveEuropeanPoeticMemorySystemsFilmStudyMap(scenario, brief)
       ?? resolveContemporaryEuropeanSocialCareSystemsFilmStudyMap(scenario, brief)
       ?? resolveContemporaryDissentRuralSystemsFilmStudyMap(scenario, brief)
       ?? resolveFestivalUrbanIntimacySystemsFilmStudyMap(scenario, brief)
@@ -223,6 +229,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getBritishIrishPlaceBodySystemsFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createBritishIrishPlaceBodySystemsFilmHistoryChoices(historyProfile);
+    }
     if (getEuropeanPoeticMemorySystemsFilmHistoryProfile(historyProfile.scenarioId)) {
       return createEuropeanPoeticMemorySystemsFilmHistoryChoices(historyProfile);
     }
