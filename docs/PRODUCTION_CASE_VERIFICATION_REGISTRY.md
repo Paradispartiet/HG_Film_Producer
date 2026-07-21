@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 168 source-backed Production Cases.
+- 172 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -54,6 +54,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationBalkanWarInstitutionSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationNewGermanCinemaSystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationEuropeanTimeIdentitySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
@@ -358,6 +359,15 @@ This batch compares Italian-French landscape modernism, French-Italian palace-me
 - `scenario_wings_of_desire_1987`
 
 This batch compares extreme-location colonial delirium, compressed social melodrama, professionalised postwar national allegory and divided-Berlin poetic listening.
+
+### European time, suspicion and identity systems batch
+
+- `scenario_the_vanishing_1988`
+- `scenario_run_lola_run_1998`
+- `scenario_the_white_ribbon_2009`
+- `scenario_phoenix_2014`
+
+This batch compares Dutch-French procedural knowledge suspense, post-reunification Berlin recursion, multinational prewar village suspicion and Berlin School postwar identity rehearsal.
 
 ### 1950s Asian postwar cinema batch
 
