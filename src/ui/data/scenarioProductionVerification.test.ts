@@ -162,6 +162,13 @@ const newGermanCinemaIds = [
   "scenario_wings_of_desire_1987",
 ] as const;
 
+const europeanTimeIdentityIds = [
+  "scenario_the_vanishing_1988",
+  "scenario_run_lola_run_1998",
+  "scenario_the_white_ribbon_2009",
+  "scenario_phoenix_2014",
+] as const;
+
 const asianPostwar1950sIds = [
   "scenario_rashomon_1950",
   "scenario_tokyo_story_1953",
@@ -225,7 +232,7 @@ const europeanModernistProductionIds = [
   "scenario_the_battle_of_algiers_1966",
 ] as const;
 
-const expectedVerifiedCount = 168;
+const expectedVerifiedCount = 172;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -411,6 +418,14 @@ test("European 1960s space systems are verified with four sources each", () => {
 
 test("New German Cinema systems are verified with four sources each", () => {
   for (const scenarioId of newGermanCinemaIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("European time and identity systems are verified with four sources each", () => {
+  for (const scenarioId of europeanTimeIdentityIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);
