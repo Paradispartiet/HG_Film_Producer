@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const lAtalanteFilmHistoryProfile = {
+  scenarioId: "scenario_l_atalante_1934",
+  period: "French poetic realism, early-sound location cinema and lyrical working-life romance",
+  traditions: ["French poetic realism", "Documented social viewpoint", "Early-sound lyrical montage"],
+  before: "Jean Vigo and cinematographer Boris Kaufman had already combined documentary observation, satire, surreal interruption and physical location work in À propos de Nice and Zéro de conduite, while early sound cinema was still learning how to join mobile everyday environments to recorded dialogue, music and effects.",
+  moment: "Producer Jacques-Louis Nounez backs Vigo's adaptation with Albert Riéra; Jean Dasté, Dita Parlo and Michel Simon inhabit a working canal barge photographed by Boris Kaufman with Louis Berger and Jean-Paul Alphen, edited by Louis Chavance and scored by Maurice Jaubert. Shot while Vigo was gravely ill, the film joins locks, fog, cramped cabins, engines, cats, street performance and the famous underwater desire sequence before distributors cut, retitled and musically altered the original release.",
+  after: "Postwar rediscovery and successive reconstructions restored L'Atalante from its mutilated release history; the 2001 Bernard Eisenschitz and Luce Vigo version became the fifth and most complete modern edit, preserving the film as a central example of poetic realism built from concrete labour, sensual montage and ordinary space.",
+  historyQuestion: "Which production system explains an early French sound film shot around a working canal barge, combining documentary texture, newlywed comedy, fog, machinery, Maurice Jaubert's music and sudden underwater or associative images, then surviving a distributor's cuts through decades of restoration?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Criterion place the 1934 production in early French sound cinema and document Vigo's death shortly after the film's commercially altered first release." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI describes the film's blend of spontaneous realism and partial fantasy, while Criterion connects Vigo and Kaufman to a documented social viewpoint, surrealism and later poetic-realist modernity." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion credits producer Jacques-Louis Nounez and the principal production team; its Vigo history documents the shoot during the director's tuberculosis and the distributor's cuts, retitling and imposed song." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI records the film's postwar canonisation and the 2001 Eisenschitz-Luce Vigo restoration, while Criterion documents renewed theatrical restoration and preservation." },
+    { area: "screenplay", status: "source_verified", note: "Criterion credits Jean Vigo and Albert Riéra; the production transforms a conventional barge-marriage premise through labour routine, separation, comic digression and lyrical association." },
+    { area: "directing", status: "source_verified", note: "Criterion's production history and collaborator testimony describe Vigo's energetic direction despite severe illness and his movement from social rebellion toward tenderness." },
+    { area: "performance", status: "source_verified", note: "Criterion records Jean Dasté, Dita Parlo and Michel Simon and preserves interviews with the Vigo company; their contrasting physical styles organise domestic intimacy, jealousy and anarchic barge life." },
+    { area: "production_design", status: "mapped", note: "The barge, cabins, locks, docks and Père Jules's object-filled quarters form the material world, but the current sources do not isolate a dedicated design department account." },
+    { area: "costume_makeup", status: "mapped", note: "Wedding clothes, workwear and urban dress distinguish ritual, labour and fantasy, but no dedicated costume or makeup source is currently recorded." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Boris Kaufman, Louis Berger and Jean-Paul Alphen; BFI and Criterion analyse the film's mobile location realism, fog, tactile close observation and underwater imagery." },
+    { area: "lighting", status: "mapped", note: "Mist, night exteriors, cramped interiors and reflective water create a shifting luminous texture, but the current source set does not isolate the lighting method." },
+    { area: "camera_format", status: "mapped", note: "The surviving sources identify the photography team and restoration history but do not provide a sufficiently specific original camera-and-stock package." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Louis Chavance; BFI documents the film's rough continuity, associative lyricism and five major editorial reconstructions culminating in the 2001 version." },
+    { area: "sound_design", status: "source_verified", note: "BFI's archival discussion and Criterion's production record support the early-sound mixture of engines, water, bells, street activity, dialogue and expressive silence rather than a sealed studio sound world." },
+    { area: "music", status: "source_verified", note: "Criterion credits Maurice Jaubert and documents how the distributor replaced the original identity with the popular song Le Chaland qui passe before later restoration recovered Vigo's film." },
+    { area: "effects_animation", status: "not_central", note: "The film's poetic departures depend on practical underwater photography, superimposition-like association and montage rather than an effects-led production pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Criterion links Kaufman's Vertov-influenced camera practice to Vigo's documented point of view, while the barge route, labour, waterways and city edges preserve observed material life inside the fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;
