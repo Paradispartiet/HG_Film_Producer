@@ -9,6 +9,11 @@ import {
   resolveScenarioFilmStudyMap,
 } from "../data/scenarioFilmStudyMap";
 import {
+  createEuropean1960sSpaceSystemsFilmHistoryChoices,
+  getEuropean1960sSpaceSystemsFilmHistoryProfile,
+  resolveEuropean1960sSpaceSystemsFilmStudyMap,
+} from "../data/scenarioFilmStudyEuropean1960sSpaceSystemsBatch";
+import {
   createBalkanWarInstitutionSystemsFilmHistoryChoices,
   getBalkanWarInstitutionSystemsFilmHistoryProfile,
   resolveBalkanWarInstitutionSystemsFilmStudyMap,
@@ -194,7 +199,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveBalkanWarInstitutionSystemsFilmStudyMap(scenario, brief)
+    () => resolveEuropean1960sSpaceSystemsFilmStudyMap(scenario, brief)
+      ?? resolveBalkanWarInstitutionSystemsFilmStudyMap(scenario, brief)
       ?? resolveIberianPortugueseMemorySystemsFilmStudyMap(scenario, brief)
       ?? resolveBritishIrishPlaceBodySystemsFilmStudyMap(scenario, brief)
       ?? resolveEuropeanPoeticMemorySystemsFilmStudyMap(scenario, brief)
@@ -241,6 +247,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getEuropean1960sSpaceSystemsFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createEuropean1960sSpaceSystemsFilmHistoryChoices(historyProfile);
+    }
     if (getBalkanWarInstitutionSystemsFilmHistoryProfile(historyProfile.scenarioId)) {
       return createBalkanWarInstitutionSystemsFilmHistoryChoices(historyProfile);
     }
