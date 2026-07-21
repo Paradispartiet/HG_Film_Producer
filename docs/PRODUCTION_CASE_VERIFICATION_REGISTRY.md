@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 156 source-backed Production Cases.
+- 160 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -51,6 +51,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationIberianPortugueseMemorySystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationBalkanWarInstitutionSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
@@ -328,6 +329,15 @@ This batch compares British regional youth realism, British rehearsal-built Lond
 - `scenario_horse_money_2014`
 
 This batch compares late-Franco Spanish child-view domestic memory, Spain-France queer theatre melodrama, Portuguese divided-format postcolonial recollection and Portuguese tiny-crew digital Cape Verdean migrant testimony.
+
+### Balkan war, circular history and institutional failure systems batch
+
+- `scenario_before_the_rain_1994`
+- `scenario_underground_1995`
+- `scenario_no_mans_land_2001`
+- `scenario_quo_vadis_aida_2020`
+
+This batch compares Macedonian-British circular photographic war modernism, Yugoslav archive-fiction historical grotesque, Bosnian contained trench institutional satire and Bosnian translator-led Srebrenica reconstruction.
 
 ### 1950s Asian postwar cinema batch
 

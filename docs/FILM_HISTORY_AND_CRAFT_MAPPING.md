@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case contains all mapping 
 Every Production Case in the current catalogue resolves to the same complete mapping structure. Catalogue size is read dynamically and is not duplicated in documentation or tests.
 
 - 17 mandatory film-history and film-craft areas.
-- 156 source-backed film-history profiles.
+- 160 source-backed film-history profiles.
 - All remaining cases retain complete audit structures with visible research gaps.
 - No points, ranks, badges or reward currencies.
 - Historical placement is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The 156 source-backed profiles are the same controlled group covered by the Production Case verification registry:
+The 160 source-backed profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -153,6 +153,10 @@ The 156 source-backed profiles are the same controlled group covered by the Prod
 - All About My Mother
 - Tabu
 - Horse Money
+- Before the Rain
+- Underground
+- No Man's Land
+- Quo Vadis, Aida?
 - Rashomon
 - Tokyo Story
 - Seven Samurai
@@ -325,6 +329,8 @@ A date or movement name alone does not teach film history. The player learns by 
 - British-Irish durational prison modernism versus Irish island tragicomedy shaped by landscape and distant civil-war sound;
 - late-Franco child-view domestic memory versus transnational queer theatre melodrama;
 - divided 35 mm and 16 mm postcolonial recollection versus tiny digital Cape Verdean migrant-memory tableau;
+- Macedonian-British circular photographic war triptych versus Yugoslav archive-fiction historical grotesque;
+- Bosnian contained trench institutional satire versus translator-led Srebrenica reconstruction through gates, crowds and multilingual procedure;
 - Daiei contradictory testimony versus Shochiku domestic minimalism;
 - Toho tactical action versus Bengali location humanism;
 - Danish spiritual long-take chamber cinema versus Polish Film School one-night political tragedy;
