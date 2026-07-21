@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const criaCuervosFilmHistoryProfile = {
+  scenarioId: "scenario_cria_cuervos_1976",
+  period: "Late-Franco Spanish memory cinema, child-view family allegory and domestic political modernism",
+  traditions: ["Spanish political allegory", "Childhood memory cinema", "Subjective domestic modernism"],
+  before: "Carlos Saura and producer Elías Querejeta had developed an indirect cinema of repression, family power and memory under Francoist censorship, while Ana Torrent's child performance in The Spirit of the Beehive had shown how incomplete understanding could carry national history without explanatory dialogue.",
+  moment: "Saura writes and directs a production shot in the summer of 1975 as Franco lay dying. Ana Torrent's watchful performance and Geraldine Chaplin's double role as the dead mother and adult Ana move through a sealed Madrid family house photographed by Teodoro Escamilla, edited by Pablo G. del Amo and organised by voices, fantasy, remembered gestures, traffic beyond the walls, Federico Mompou and the recurring pop song Porque te vas.",
+  after: "The film premiered in 1976, shared Cannes's Jury Special Grand Prix and became a durable account of dictatorship's afterlife inside family memory. Restored editions and interviews with Saura's collaborators preserve its precise joining of childhood perception, political allegory, domestic space, popular music and uncertain time.",
+  historyQuestion: "Which production system explains a Spanish film shot as Franco was dying, built around a child's partial understanding inside a sealed Madrid house, with the same actor embodying mother and adult memory, fantasy and present joined without firm boundaries, and a pop song turning private grief into historical recurrence?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion and BFI place the summer-1975 production at the end of the Franco dictatorship and read the military family house as a container for political and generational memory." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Criterion connect the film to Saura and Querejeta's censorship-era allegorical cinema and to Spanish child-view memory films that make silence and incomplete knowledge historically expressive." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion credits producers Elías Querejeta and Carlos Saura and the principal craft team; Cannes records the Spanish production, competition premiere and later restored presentation." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the 1976 Jury Special Grand Prix, while Criterion and BFI preserve the film through restoration, essays and collaborator interviews." },
+    { area: "screenplay", status: "source_verified", note: "Criterion and Cannes credit Saura's screenplay; adult narration, childhood action, memory and fantasy are deliberately interwoven rather than separated into explanatory flashbacks." },
+    { area: "directing", status: "source_verified", note: "Criterion's Saura documentary and actor interviews support a performance-centred method in which the child's behaviour, repetitions and domestic routines carry the political structure." },
+    { area: "performance", status: "source_verified", note: "Criterion records Ana Torrent, Geraldine Chaplin and the female household ensemble; Chaplin plays both Ana's mother and adult Ana while Torrent sustains the film's uncertain point of view." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits set decorator Rafael Palmero; the old family house, corridors, garden, photographs and military objects organise the sealed domestic world." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion credits Maiki Marín; children's clothing, mourning dress and adult family presentation distinguish remembered roles and domestic authority without spectacle." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and Cannes credit Teodoro Escamilla; framing through rooms, doors, faces and the enclosed garden aligns the house with Ana's observation and remembered imprisonment." },
+    { area: "lighting", status: "mapped", note: "Muted interiors, night corridors and exterior summer light separate emotional zones, but the current sources do not isolate a dedicated lighting method." },
+    { area: "camera_format", status: "mapped", note: "The source set identifies the cinematographer and restored transfer but does not provide a complete original camera, lens and stock specification." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Pablo G. del Amo; transitions among adult voice, childhood present, dead mother and imagined action make time subjective without using conventional flashback signals." },
+    { area: "sound_design", status: "source_verified", note: "Criterion credits Bernardo Mens and Antonio Illán; traffic outside the compound, quiet rooms, remembered voices and abrupt domestic sounds make the unseen city and lost adults present." },
+    { area: "music", status: "source_verified", note: "Criterion credits Federico Mompou and documents the use of Imperio Argentina and Jeanette's Porque te vas, whose repetition links play, grief, memory and popular culture." },
+    { area: "effects_animation", status: "not_central", note: "The film creates apparitions and temporal uncertainty through performance, staging, editing and sound rather than an effects-led production pipeline." },
+    { area: "documentary_method", status: "mapped", note: "The film draws on contemporary political atmosphere and observed family behaviour, but its method is primarily controlled fiction and subjective memory rather than documentary reconstruction." },
+  ],
+} as const satisfies FilmHistoryProfile;
