@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 144 source-backed Production Cases.
+- 148 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -49,6 +49,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationFestivalUrbanIntimacySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationContemporaryDissentRuralSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts`
@@ -298,6 +299,15 @@ This batch compares Israeli-French language-and-body exile modernism, Iranian cl
 - `scenario_the_room_next_door_2024`
 
 This batch compares German corporate father-daughter embarrassment comedy, Swedish-European digitally manipulated class farce, British-American mixed-format memory drama and Spanish English-language end-of-life chamber melodrama.
+
+### European poetic memory systems batch
+
+- `scenario_l_atalante_1934`
+- `scenario_the_spirit_of_the_beehive_1973`
+- `scenario_landscape_in_the_mist_1988`
+- `scenario_the_double_life_of_veronique_1991`
+
+This batch compares French early-sound barge poetic realism, late-Franco Spanish childhood memory, Greek-French-Italian long-take landscape journey and Polish-French filtered double-life metaphysics.
 
 ### 1950s Asian postwar cinema batch
 
