@@ -134,6 +134,13 @@ const britishIrishPlaceBodyIds = [
   "scenario_the_banshees_of_inisherin_2022",
 ] as const;
 
+const iberianPortugueseMemoryIds = [
+  "scenario_cria_cuervos_1976",
+  "scenario_all_about_my_mother_1999",
+  "scenario_tabu_2012",
+  "scenario_horse_money_2014",
+] as const;
+
 const asianPostwar1950sIds = [
   "scenario_rashomon_1950",
   "scenario_tokyo_story_1953",
@@ -197,7 +204,7 @@ const europeanModernistProductionIds = [
   "scenario_the_battle_of_algiers_1966",
 ] as const;
 
-const expectedVerifiedCount = 152;
+const expectedVerifiedCount = 156;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -351,6 +358,14 @@ test("European poetic memory systems are verified with four sources each", () =>
 
 test("British Irish place body systems are verified with four sources each", () => {
   for (const scenarioId of britishIrishPlaceBodyIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("Iberian Portuguese memory systems are verified with four sources each", () => {
+  for (const scenarioId of iberianPortugueseMemoryIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);
