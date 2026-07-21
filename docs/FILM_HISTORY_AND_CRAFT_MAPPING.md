@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case contains all mapping 
 Every Production Case in the current catalogue resolves to the same complete mapping structure. Catalogue size is read dynamically and is not duplicated in documentation or tests.
 
 - 17 mandatory film-history and film-craft areas.
-- 168 source-backed film-history profiles.
+- 172 source-backed film-history profiles.
 - All remaining cases retain complete audit structures with visible research gaps.
 - No points, ranks, badges or reward currencies.
 - Historical placement is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The 168 source-backed profiles are the same controlled group covered by the Production Case verification registry:
+The 172 source-backed profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -165,6 +165,10 @@ The 168 source-backed profiles are the same controlled group covered by the Prod
 - Ali: Fear Eats the Soul
 - The Marriage of Maria Braun
 - Wings of Desire
+- The Vanishing
+- Run Lola Run
+- The White Ribbon
+- Phoenix
 - Rashomon
 - Tokyo Story
 - Seven Samurai
@@ -343,6 +347,8 @@ A date or movement name alone does not teach film history. The player learns by 
 - purpose-built 65 mm urban sound comedy versus Super Technirama historical ceremony and class transition;
 - extreme-location colonial expedition versus compressed Munich social melodrama;
 - professionalised postwar national allegory versus divided-Berlin black-and-white/colour listening fantasy;
+- Dutch-French revealed-perpetrator procedure versus post-reunification Berlin recursive velocity;
+- prewar monochrome village suspicion versus postwar widescreen identity rehearsal and musical evidence;
 - Daiei contradictory testimony versus Shochiku domestic minimalism;
 - Toho tactical action versus Bengali location humanism;
 - Danish spiritual long-take chamber cinema versus Polish Film School one-night political tragedy;
