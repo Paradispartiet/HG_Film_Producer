@@ -9,6 +9,11 @@ import {
   resolveScenarioFilmStudyMap,
 } from "../data/scenarioFilmStudyMap";
 import {
+  createEuropeanTimeIdentitySystemsFilmHistoryChoices,
+  getEuropeanTimeIdentitySystemsFilmHistoryProfile,
+  resolveEuropeanTimeIdentitySystemsFilmStudyMap,
+} from "../data/scenarioFilmStudyEuropeanTimeIdentitySystemsBatch";
+import {
   createNewGermanCinemaSystemsFilmHistoryChoices,
   getNewGermanCinemaSystemsFilmHistoryProfile,
   resolveNewGermanCinemaSystemsFilmStudyMap,
@@ -204,7 +209,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveNewGermanCinemaSystemsFilmStudyMap(scenario, brief)
+    () => resolveEuropeanTimeIdentitySystemsFilmStudyMap(scenario, brief)
+      ?? resolveNewGermanCinemaSystemsFilmStudyMap(scenario, brief)
       ?? resolveEuropean1960sSpaceSystemsFilmStudyMap(scenario, brief)
       ?? resolveBalkanWarInstitutionSystemsFilmStudyMap(scenario, brief)
       ?? resolveIberianPortugueseMemorySystemsFilmStudyMap(scenario, brief)
@@ -253,6 +259,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getEuropeanTimeIdentitySystemsFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createEuropeanTimeIdentitySystemsFilmHistoryChoices(historyProfile);
+    }
     if (getNewGermanCinemaSystemsFilmHistoryProfile(historyProfile.scenarioId)) {
       return createNewGermanCinemaSystemsFilmHistoryChoices(historyProfile);
     }
