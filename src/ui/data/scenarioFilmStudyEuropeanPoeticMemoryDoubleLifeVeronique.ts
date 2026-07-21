@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const doubleLifeOfVeroniqueFilmHistoryProfile = {
+  scenarioId: "scenario_the_double_life_of_veronique_1991",
+  period: "Polish-French metaphysical co-production, doubled identity and sensory narrative",
+  traditions: ["Krzysztof Kieślowski metaphysical cinema", "European co-production modernism", "Music-and-colour subjective narration"],
+  before: "Krzysztof Kieślowski and Krzysztof Piesiewicz had moved from documentary and politically grounded Polish fiction toward chance, parallel lives and moral intuition in Blind Chance, No End and Dekalog, while cinematographer Sławomir Idziak and composer Zbigniew Preisner had developed highly controlled colour and musical systems with the director.",
+  moment: "The first major Polish-French Kieślowski co-production casts Irène Jacob as both Weronika and Véronique and builds their unexplained connection through parallel gesture, vocal performance, reflections, glass, inverted images, yellow-green filters and Preisner's recurring concert music. Idziak photographs Kraków and Clermont-Ferrand as filtered perceptual worlds, while editor Jacques Witta and Kieślowski test roughly twenty cuts of different opacity before settling on a version that withholds causal explanation.",
+  after: "The film premiered in Cannes competition in 1991, won best actress for Jacob and later returned in a restored Cannes Classics edition, marking Kieślowski's international transition and preserving a major model for narrative carried by intuition, colour, music and editorial possibility rather than explanation.",
+  historyQuestion: "Which production system explains a Polish-French film with one actress playing two women who never knowingly meet, connected through recurring music, green-gold filters, reflections, bodily intuition and parallel editing, with around twenty rough cuts used to balance clarity against mystery?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion and BFI place the film at Kieślowski's transition from Polish political-documentary traditions into international European co-production and metaphysical narrative." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion analyses the continuation of chance, doubling and interconnected lives from Blind Chance, No End and Dekalog while identifying the film's newly intensified sensory style." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes identifies the France-Poland production and restoration contacts; Criterion records producer Leonardo de la Fuente and the principal Polish-French creative team." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes documents the 1991 competition history, Irène Jacob's best-actress recognition and the film's 2021 restored Cannes Classics presentation." },
+    { area: "screenplay", status: "source_verified", note: "Criterion credits Kieślowski and Krzysztof Piesiewicz; its essays explain the parallel-life structure, withheld causality and multiple possible narrative arrangements." },
+    { area: "directing", status: "source_verified", note: "Criterion preserves Kieślowski's making-of interview and behind-the-scenes footage; Cannes analysis describes direction centred on Jacob's face, movement and opacity." },
+    { area: "performance", status: "source_verified", note: "Criterion and Cannes document Irène Jacob's double performance, her minimal-dialogue physical differentiation and the 1991 Cannes best-actress award." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits set decorator Patrice Mercier; puppets, glass, classrooms, concert spaces and repeated objects turn environment into a system of doubles and manipulation." },
+    { area: "costume_makeup", status: "mapped", note: "Wardrobe and hair help distinguish Weronika and Véronique while preserving resemblance, but the current sources do not isolate a dedicated costume or makeup account." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Sławomir Idziak and preserves his interview; its analysis details reflections, inverted views, distorting glass, circular movement and yellow-green filtering." },
+    { area: "lighting", status: "source_verified", note: "Criterion documents the green-gold filter strategy chosen against the grey of Kraków and Clermont-Ferrand, with shafts, rain and reflected light shaping subjective perception." },
+    { area: "camera_format", status: "mapped", note: "Criterion identifies the 1.66:1 colour presentation and restored transfer, but the current source set does not provide a complete original camera, lens and stock package." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Jacques Witta and reports that Kieślowski estimated roughly twenty rough cuts, ranging from more transparent to more opaque and including alternate endings." },
+    { area: "sound_design", status: "source_verified", note: "The cassette trail, phone call, breathing, concert acoustics and repeated sonic fragments carry connection across countries; Criterion preserves the restored soundtrack and production analysis." },
+    { area: "music", status: "source_verified", note: "Criterion credits Zbigniew Preisner and preserves his interview; the invented Van den Budenmayer concert work links performance, bodily risk and knowledge unavailable through dialogue." },
+    { area: "effects_animation", status: "not_central", note: "Doubling is achieved primarily through casting, framing, reflections, editing and brief controlled composite work rather than an effects-led production pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "The film carries Kieślowski's documentary attention to faces, public space and material detail into a constructed metaphysical co-production, including the Kraków demonstration moving against Weronika's private path." },
+  ],
+} as const satisfies FilmHistoryProfile;

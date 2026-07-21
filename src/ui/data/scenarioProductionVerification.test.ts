@@ -120,6 +120,13 @@ const contemporaryEuropeanSocialCareIds = [
   "scenario_the_room_next_door_2024",
 ] as const;
 
+const europeanPoeticMemoryIds = [
+  "scenario_l_atalante_1934",
+  "scenario_the_spirit_of_the_beehive_1973",
+  "scenario_landscape_in_the_mist_1988",
+  "scenario_the_double_life_of_veronique_1991",
+] as const;
+
 const asianPostwar1950sIds = [
   "scenario_rashomon_1950",
   "scenario_tokyo_story_1953",
@@ -183,7 +190,7 @@ const europeanModernistProductionIds = [
   "scenario_the_battle_of_algiers_1966",
 ] as const;
 
-const expectedVerifiedCount = 144;
+const expectedVerifiedCount = 148;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -321,6 +328,14 @@ test("contemporary dissent rural systems are verified with four sources each", (
 
 test("contemporary European social care systems are verified with four sources each", () => {
   for (const scenarioId of contemporaryEuropeanSocialCareIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("European poetic memory systems are verified with four sources each", () => {
+  for (const scenarioId of europeanPoeticMemoryIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);
