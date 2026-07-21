@@ -79,6 +79,11 @@ import {
   resolveEuropeanModernistProductionFilmStudyMap,
 } from "../data/scenarioFilmStudyEuropeanModernistProductionBatch";
 import {
+  createEuropeanPoeticMemorySystemsFilmHistoryChoices,
+  getEuropeanPoeticMemorySystemsFilmHistoryProfile,
+  resolveEuropeanPoeticMemorySystemsFilmStudyMap,
+} from "../data/scenarioFilmStudyEuropeanPoeticMemorySystemsBatch";
+import {
   createEuropeanPoliticalFeministModernismFilmHistoryChoices,
   getEuropeanPoliticalFeministModernismFilmHistoryProfile,
   resolveEuropeanPoliticalFeministModernismFilmStudyMap,
@@ -174,7 +179,8 @@ export function ScenarioFilmStudyPanel({
   readonly scenario: FilmScenarioSeed;
 }) {
   const filmStudy = useMemo(
-    () => resolveContemporaryEuropeanSocialCareSystemsFilmStudyMap(scenario, brief)
+    () => resolveEuropeanPoeticMemorySystemsFilmStudyMap(scenario, brief)
+      ?? resolveContemporaryEuropeanSocialCareSystemsFilmStudyMap(scenario, brief)
       ?? resolveContemporaryDissentRuralSystemsFilmStudyMap(scenario, brief)
       ?? resolveFestivalUrbanIntimacySystemsFilmStudyMap(scenario, brief)
       ?? resolveIntimateFestivalBodyCareSystemsFilmStudyMap(scenario, brief)
@@ -217,6 +223,9 @@ export function ScenarioFilmStudyPanel({
   const historyProfile = filmStudy.historyProfile;
   const historyChoices = useMemo(() => {
     if (!historyProfile) return [];
+    if (getEuropeanPoeticMemorySystemsFilmHistoryProfile(historyProfile.scenarioId)) {
+      return createEuropeanPoeticMemorySystemsFilmHistoryChoices(historyProfile);
+    }
     if (getContemporaryEuropeanSocialCareSystemsFilmHistoryProfile(historyProfile.scenarioId)) {
       return createContemporaryEuropeanSocialCareSystemsFilmHistoryChoices(historyProfile);
     }
