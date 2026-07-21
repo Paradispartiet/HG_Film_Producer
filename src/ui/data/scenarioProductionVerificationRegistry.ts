@@ -19,6 +19,7 @@ import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductio
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
 import { czechoslovakNewWaveVerificationRecords } from "./scenarioProductionVerificationCzechoslovakNewWaveBatch";
 import { early1960sProductionSystemsVerificationRecords } from "./scenarioProductionVerificationEarly1960sProductionSystemsBatch";
+import { european1960sSpaceVerificationRecords } from "./scenarioProductionVerificationEuropean1960sSpaceSystemsBatch";
 import { europeanModernistProductionVerificationRecords } from "./scenarioProductionVerificationEuropeanModernistProductionBatch";
 import { europeanPoeticMemoryVerificationRecords } from "./scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch";
 import { europeanPoliticalFeministModernismVerificationRecords } from "./scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch";
@@ -77,6 +78,7 @@ const additionalVerificationRecords = [
   ...britishIrishPlaceBodyVerificationRecords,
   ...iberianPortugueseMemoryVerificationRecords,
   ...balkanWarInstitutionVerificationRecords,
+  ...european1960sSpaceVerificationRecords,
   ...europeanPoeticMemoryVerificationRecords,
   ...asianPostwar1950sVerificationRecords,
   ...expressivePostwar1950sVerificationRecords,

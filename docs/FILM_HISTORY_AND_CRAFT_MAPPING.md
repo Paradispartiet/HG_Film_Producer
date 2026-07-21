@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case contains all mapping 
 Every Production Case in the current catalogue resolves to the same complete mapping structure. Catalogue size is read dynamically and is not duplicated in documentation or tests.
 
 - 17 mandatory film-history and film-craft areas.
-- 160 source-backed film-history profiles.
+- 164 source-backed film-history profiles.
 - All remaining cases retain complete audit structures with visible research gaps.
 - No points, ranks, badges or reward currencies.
 - Historical placement is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The 160 source-backed profiles are the same controlled group covered by the Production Case verification registry:
+The 164 source-backed profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -157,6 +157,10 @@ The 160 source-backed profiles are the same controlled group covered by the Prod
 - Underground
 - No Man's Land
 - Quo Vadis, Aida?
+- L'Avventura
+- Last Year at Marienbad
+- Playtime
+- The Leopard
 - Rashomon
 - Tokyo Story
 - Seven Samurai
@@ -331,6 +335,8 @@ A date or movement name alone does not teach film history. The player learns by 
 - divided 35 mm and 16 mm postcolonial recollection versus tiny digital Cape Verdean migrant-memory tableau;
 - Macedonian-British circular photographic war triptych versus Yugoslav archive-fiction historical grotesque;
 - Bosnian contained trench institutional satire versus translator-led Srebrenica reconstruction through gates, crowds and multilingual procedure;
+- Italian landscape-and-absence modernism versus French-Italian palace-memory découpage;
+- purpose-built 65 mm urban sound comedy versus Super Technirama historical ceremony and class transition;
 - Daiei contradictory testimony versus Shochiku domestic minimalism;
 - Toho tactical action versus Bengali location humanism;
 - Danish spiritual long-take chamber cinema versus Polish Film School one-night political tragedy;
