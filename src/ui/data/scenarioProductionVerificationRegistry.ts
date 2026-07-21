@@ -24,6 +24,7 @@ import { europeanPoliticalFeministModernismVerificationRecords } from "./scenari
 import { europeanPressureVerificationRecords } from "./scenarioProductionVerificationEuropeanPressureBatch";
 import { festivalJourneyDisplacementVerificationRecords } from "./scenarioProductionVerificationFestivalJourneyDisplacementSystemsBatch";
 import { festivalUrbanIntimacyVerificationRecords } from "./scenarioProductionVerificationFestivalUrbanIntimacySystemsBatch";
+import { iberianPortugueseMemoryVerificationRecords } from "./scenarioProductionVerificationIberianPortugueseMemorySystemsBatch";
 import { independentStorytellingVerificationRecords } from "./scenarioProductionVerificationIndependentStorytellingBatch";
 import { intimateFestivalBodyCareVerificationRecords } from "./scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch";
 import { landscapeCinemaVerificationRecords } from "./scenarioProductionVerificationLandscapeBatch";
@@ -73,6 +74,7 @@ const additionalVerificationRecords = [
   ...contemporaryDissentRuralVerificationRecords,
   ...contemporaryEuropeanSocialCareVerificationRecords,
   ...britishIrishPlaceBodyVerificationRecords,
+  ...iberianPortugueseMemoryVerificationRecords,
   ...europeanPoeticMemoryVerificationRecords,
   ...asianPostwar1950sVerificationRecords,
   ...expressivePostwar1950sVerificationRecords,

@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const allAboutMyMotherFilmHistoryProfile = {
+  scenarioId: "scenario_all_about_my_mother_1999",
+  period: "Spanish transnational melodrama, queer ensemble care and theatre-cinema intertext",
+  traditions: ["Almodóvar melodrama", "Queer chosen-family ensemble", "Theatrical and cinematic intertext"],
+  before: "Pedro Almodóvar and El Deseo had spent the democratic Spanish period remaking melodrama, comedy and noir through saturated colour, female and queer ensembles and self-conscious performance, while All About Eve, A Streetcar Named Desire and Lorca supplied a theatrical language of role, repetition and emotional truth.",
+  moment: "El Deseo and French partners produce a Spain-France film written and directed by Almodóvar. Cecilia Roth's grieving Manuela moves from Madrid to Barcelona into an ensemble of performers, carers and chosen family; Affonso Beato's widescreen colour, Antxón Gómez's designed interiors, José Salcedo's fluid tonal editing, Miguel Rejas's sound and Alberto Iglesias's score join hospital procedure, theatre, city movement, comedy and maternal melodrama.",
+  after: "The film won best director at Cannes and later major international awards, while its restored edition and making-of record preserve a production in which queer identity, motherhood, acting and care are not separate themes but one melodramatic system organised through colour, ensemble entrances, performance and return.",
+  historyQuestion: "Which production system explains a Spain-France melodrama moving from Madrid hospital procedure to Barcelona theatre and chosen family, using saturated widescreen colour, repeated references to All About Eve and A Streetcar Named Desire, ensemble care, fluid shifts between grief and comedy, and Alberto Iglesias's music?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion, BFI and Cannes place the film in 1999 Spain-France production and connect its grief, AIDS-era context, queer identities and chosen family to Almodóvar's democratic-period cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion and BFI identify a modern melodrama built from theatre, classical women's pictures, Almodóvar's queer ensemble tradition and cinematic quotation." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion credits El Deseo executive producer Agustín Almodóvar, production director Esther García and the complete principal craft team; Cannes records the Spain-France competition production." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the 1999 best-director award, while Criterion documents a director-approved restoration and extensive production testimony." },
+    { area: "screenplay", status: "source_verified", note: "Criterion and Cannes credit Pedro Almodóvar; the screenplay links organ-donation procedure, journey, theatrical performance, coincidence and acts of care through returning roles and names." },
+    { area: "directing", status: "source_verified", note: "Criterion's making-of material and Cannes recognition support Almodóvar's control of performance, colour, tone and intertext across grief, comedy and ensemble melodrama." },
+    { area: "performance", status: "source_verified", note: "Criterion and Cannes document Cecilia Roth, Marisa Paredes, Penélope Cruz, Antonia San Juan, Candela Peña and Rosa Maria Sardá as the ensemble through which care and performance continually change roles." },
+    { area: "production_design", status: "source_verified", note: "Criterion and Cannes credit Antxón Gómez; BFI production notes record set decoration and graphic design, supporting the constructed theatre, hospital and Barcelona interiors." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion and BFI production notes credit costume, makeup and hair departments whose colour, glamour, medical appearance and stage presentation distinguish each performed identity." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and Cannes credit Affonso Beato; the 2.35:1 colour image joins moving city passages, theatrical framing, vivid close performance and designed red-blue interiors." },
+    { area: "lighting", status: "mapped", note: "Hospital clarity, saturated interiors, stage light and Barcelona night are strongly differentiated, but the current sources do not isolate a complete lighting strategy." },
+    { area: "camera_format", status: "mapped", note: "Criterion documents the colour 2.35:1 presentation and restoration, but the current source set does not provide a complete original camera, lens and stock package." },
+    { area: "editing", status: "source_verified", note: "Criterion and Cannes credit José Salcedo; the edit moves between Madrid and Barcelona, tragedy and comedy, backstage and domestic care while keeping the ensemble emotionally continuous." },
+    { area: "sound_design", status: "source_verified", note: "Criterion credits Miguel Rejas and BFI production notes document production sound, effects and re-recording, supporting the film's hospital, traffic, theatre and domestic acoustic worlds." },
+    { area: "music", status: "source_verified", note: "Criterion and Cannes credit Alberto Iglesias; the score connects travel, grief, theatricality and renewed care without flattening the film's tonal shifts." },
+    { area: "effects_animation", status: "source_verified", note: "BFI production notes document optical effects, digital post-production and title design; these support transitions and graphic construction without becoming the film's primary method." },
+    { area: "documentary_method", status: "mapped", note: "Medical procedure and social identities are grounded in researched contemporary life, but the production remains a deliberately heightened melodrama rather than a documentary-led reconstruction." },
+  ],
+} as const satisfies FilmHistoryProfile;

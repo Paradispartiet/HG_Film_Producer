@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 152 source-backed Production Cases.
+- 156 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -50,6 +50,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationContemporaryDissentRuralSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationIberianPortugueseMemorySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
@@ -318,6 +319,15 @@ This batch compares French early-sound barge poetic realism, late-Franco Spanish
 - `scenario_the_banshees_of_inisherin_2022`
 
 This batch compares British regional youth realism, British rehearsal-built London nocturne, British-Irish bodily prison modernism and Irish island tragicomedy shaped by landscape and distant civil conflict.
+
+### Iberian and Portuguese memory, melodrama and colonial afterimage systems batch
+
+- `scenario_cria_cuervos_1976`
+- `scenario_all_about_my_mother_1999`
+- `scenario_tabu_2012`
+- `scenario_horse_money_2014`
+
+This batch compares late-Franco Spanish child-view domestic memory, Spain-France queer theatre melodrama, Portuguese divided-format postcolonial recollection and Portuguese tiny-crew digital Cape Verdean migrant testimony.
 
 ### 1950s Asian postwar cinema batch
 
