@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const theVanishingFilmHistoryProfile = {
+  scenarioId: "scenario_the_vanishing_1988",
+  period: "Dutch-French psychological thriller, procedural obsession and radical information control",
+  traditions: ["European psychological thriller", "Missing-person narrative revision", "Documentary-trained procedural observation"],
+  before: "George Sluizer had moved between documentary and fiction for decades, while Tim Krabbé's novel The Golden Egg supplied a missing-person premise that could be reorganised away from concealed identity and toward process, repetition and the cost of knowing.",
+  moment: "A Dutch-French production written by Tim Krabbé and adapted, directed, produced and partly edited by Sluizer follows Saskia's disappearance, Rex's three-year obsession and Raymond's rehearsed crime across ordinary roads, service stations, homes and public spaces. Toni Kuhn photographs in colour 1.66:1; Santiago Isidro Pin's art direction keeps the world materially unexceptional; Lin Friedman and Sluizer divide time among victim, searcher and perpetrator; Piotr van Dijk's monaural sound and Henny Vrienten's restrained music preserve clinical calm rather than announcing horror.",
+  after: "Sluizer later described the original film's initial distribution difficulty, while restoration and critical editions preserved its Dutch-French version after his English-language remake altered the ending. Criterion and BFI materials keep the film useful for studying how revealed information, nonlinear structure, ordinary geography and controlled performance can intensify suspense instead of reducing it.",
+  historyQuestion: "Which production system explains a Dutch-French colour thriller that reveals the abductor early, moves between a vanished woman, her obsessive partner and the methodical perpetrator, and uses ordinary roads, service stations, homes, nonlinear fragments, restrained performance and monaural sound to make the desire for complete knowledge more frightening than a hidden culprit?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion and BFI place the film in late-1980s Dutch-French cinema and distinguish its European version from Sluizer's later American remake." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion essays connect the film to missing-person suspense while showing how it reverses the genre by revealing the perpetrator and shifting tension to process and knowledge." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion documents the France-Netherlands production, Sluizer's producer role, the original 106-minute version and the later 4K restoration." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Sluizer's Criterion interview records early distribution difficulty, while the restoration and continuing BFI and Criterion circulation preserve the original ending and structure." },
+    { area: "screenplay", status: "source_verified", note: "Criterion credits Tim Krabbé's screenplay, Sluizer's adaptation and the novel The Golden Egg; the structure discloses Raymond early and makes Rex's need to know the central dramatic danger." },
+    { area: "directing", status: "source_verified", note: "Criterion's director interview and essays support Sluizer's lucid, clinical staging of rehearsals, ordinary behaviour and converging routines rather than sensational concealment." },
+    { area: "performance", status: "source_verified", note: "Criterion and BFI analyse Gene Bervoets, Johanna ter Steege and Bernard-Pierre Donnadieu as contrasting ordinary presences whose restraint keeps obsession and violence socially plausible." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Santiago Isidro Pin; service stations, tunnels, roads, domestic rooms and public spaces embed the crime in familiar cross-border travel rather than a stylised underworld." },
+    { area: "costume_makeup", status: "mapped", note: "Everyday holiday, family and professional clothing protects the perpetrator's ordinariness, but the current source set does not provide a complete costume and makeup account." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Toni Kuhn; crisp colour framing and measured distance keep landscapes and routine actions legible while misdirecting attention without visual distortion." },
+    { area: "lighting", status: "mapped", note: "Sunlit service areas, domestic interiors and dark enclosed spaces create decisive contrast, but the current sources do not isolate the complete lighting method." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the colour 1.66:1 presentation and 4K restoration of the 106-minute Dutch-French version." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Lin Friedman and George Sluizer; nonlinear fragments, the three-year ellipsis and repeated preparations transfer suspense from culprit identification to temporal convergence." },
+    { area: "sound_design", status: "source_verified", note: "Criterion credits Piotr van Dijk and preserves the uncompressed monaural track; traffic, radio, conversation and quiet keep threat inside ordinary acoustic space." },
+    { area: "music", status: "source_verified", note: "Criterion credits Henny Vrienten; restrained scoring supports dread without replacing the procedural clarity of action and ambient sound." },
+    { area: "effects_animation", status: "not_central", note: "The film depends on performance, information control, location and editing rather than an effects or animation system." },
+    { area: "documentary_method", status: "mapped", note: "Sluizer's documentary background and precise observation inform the fiction, but the film remains a fully scripted psychological thriller." },
+  ],
+} as const satisfies FilmHistoryProfile;
