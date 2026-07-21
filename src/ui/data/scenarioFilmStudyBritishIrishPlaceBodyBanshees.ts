@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const bansheesOfInisherinFilmHistoryProfile = {
+  scenarioId: "scenario_the_banshees_of_inisherin_2022",
+  period: "Irish-British island tragicomedy, theatrical dialogue cinema and landscape-built civil-conflict allegory",
+  traditions: ["Irish tragicomedy", "Playwright-led chamber cinema", "Western-inflected island landscape production"],
+  before: "Martin McDonagh had carried his theatre background into dialogue-driven films that balance cruelty, comedy and violence, while Irish cinema and drama had often used remote communities, folklore and historical conflict to enlarge intimate moral disputes.",
+  moment: "Blueprint Pictures and Searchlight produce an Ireland-UK-USA film set in 1923 on the fictional island of Inisherin. McDonagh's screenplay and detailed storyboards are realised across Inis Mór and Achill Island; Ben Davis combines doorway and window compositions with expansive western-like landscapes, Mark Tildesley builds and adapts cottages, roads and the pub, Eimer Ní Mhaoldomhnaigh creates colour-coded period clothing, Mikkel E.G. Nielsen tests comic and tragic rhythms in the edit, and Simon Willis, Carter Burwell and the post-sound team connect dialogue, fiddle music, animals, bells, sea and distant civil-war gunfire.",
+  after: "The film premiered in Venice competition, won acting and screenplay honours there and later received BAFTA recognition for British film, screenplay and performance, while its craft nominations and interviews documented how precise design and editing turned a simple friendship rupture into a geographically expansive tragic structure.",
+  historyQuestion: "Which production system explains a 1923-set Irish tragicomedy shot across two Atlantic islands, with a fictional community built from real and constructed locations, detailed storyboards, western-like doorway frames and wide landscapes, colour-coded costume, repeated dialogue encounters and distant civil-war sound?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "La Biennale and Searchlight identify the 1923 Irish setting and transnational Ireland-UK-USA production, while the film keeps the Civil War audible and distant from the island conflict." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Craft interviews connect McDonagh's playwright-led tragicomedy to western framing, Irish folklore, island community and black-comic escalation." },
+    { area: "industry_and_production_context", status: "source_verified", note: "La Biennale records Blueprint Pictures, the producers and the principal craft team; Searchlight identifies McDonagh's authorship and production partners." },
+    { area: "reception_and_legacy", status: "source_verified", note: "La Biennale records the Venice competition presentation and awards, while BAFTA documents British-film, screenplay and acting recognition and editing nomination." },
+    { area: "screenplay", status: "source_verified", note: "La Biennale and BAFTA credit McDonagh's original screenplay; the structure repeats visits, refusals and ultimatums until comic routine becomes irreversible tragedy." },
+    { area: "directing", status: "source_verified", note: "Ben Davis and Mark Tildesley describe McDonagh's detailed storyboards, precise tonal control and use of windows, doorways and landscape to stage relationships." },
+    { area: "performance", status: "source_verified", note: "La Biennale documents Colin Farrell, Brendan Gleeson, Kerry Condon and Barry Keoghan; Venice and BAFTA recognition confirms the ensemble's central production role." },
+    { area: "production_design", status: "source_verified", note: "La Biennale credits Mark Tildesley; his interviews document constructed cottages, adapted real interiors, local colour research and landscape-specific sets across the two islands." },
+    { area: "costume_makeup", status: "source_verified", note: "La Biennale credits Eimer Ní Mhaoldomhnaigh, whose craft interview explains period research, island practicality and strong coat and colour systems used to separate characters." },
+    { area: "cinematography", status: "source_verified", note: "La Biennale credits Ben Davis; his production interview explains western references, large landscapes, doorway frames and visual contrast between intimate conflict and Atlantic space." },
+    { area: "lighting", status: "mapped", note: "Weather, window light, warm pub interiors and changing exterior conditions organise the image, but the current source set does not isolate a complete lighting package." },
+    { area: "camera_format", status: "mapped", note: "The current sources document the cinematographer and visual strategy but do not provide a sufficiently complete camera, lens and capture specification." },
+    { area: "editing", status: "source_verified", note: "La Biennale and BAFTA credit Mikkel E.G. Nielsen; his interview describes testing alternatives to balance comedy, drama, performance and the film's tightening circular structure." },
+    { area: "sound_design", status: "source_verified", note: "La Biennale credits Simon Willis and the sound department; mixer interviews describe dialogue as the backbone, joined by ambience, music and precise directorial guidance." },
+    { area: "music", status: "source_verified", note: "La Biennale credits Carter Burwell; fiddle performance and score are integrated with bells, pub life and the island's acoustic distance from the mainland." },
+    { area: "effects_animation", status: "source_verified", note: "La Biennale credits Simon Hughes for visual effects, while Tildesley documents a practically protected and controlled cottage burn supported by minimal image work." },
+    { area: "documentary_method", status: "source_verified", note: "The production researched 1920s Irish colour, clothing, dyes, architecture and island geography, then combined that material with a deliberately fictional composite island." },
+  ],
+} as const satisfies FilmHistoryProfile;
