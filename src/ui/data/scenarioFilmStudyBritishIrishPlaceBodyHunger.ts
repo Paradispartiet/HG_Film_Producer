@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const hungerFilmHistoryProfile = {
+  scenarioId: "scenario_hunger_2008",
+  period: "British-Irish prison modernism, artist-to-feature transition and embodied political history",
+  traditions: ["British visual-artist cinema", "Irish historical prison drama", "Durational bodily modernism"],
+  before: "Steve McQueen's gallery films had already explored framing, bodily endurance, offscreen pressure, repetition and the viewer's physical relation to duration, while British and Irish cinema had repeatedly approached the Troubles through testimony, political drama and historical reconstruction.",
+  moment: "Film4 backs McQueen's first feature, co-written with playwright Enda Walsh and produced by Robin Gutch and Laura Hastings-Smith. Sean Bobbitt's controlled widescreen images, Tom McCullagh's Maze-prison environments, Joe Walker's division of collective routine, sustained dialogue and bodily decline, Michael Fassbender's physical transformation, and David Holmes and Leo Abrahams's sparse music turn the 1981 protests into an experiential structure rather than a conventional explanatory biopic.",
+  after: "Hunger opened Un Certain Regard and won the 2008 Caméra d'Or, followed by BAFTA's first-feature recognition for McQueen. Its director-approved restoration and making-of testimony preserve a debut that joined gallery-derived image, sound and duration to rigorously researched political history.",
+  historyQuestion: "Which production system explains a British-Irish debut feature about the 1981 Maze protests that divides itself between collective prison routine, an extended moral conversation and bodily decline, using controlled widescreen framing, material sound, historical research and an actor's physical transformation instead of conventional political exposition?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Film4, BFI and Criterion place the film in the 1981 Maze Prison protests and identify the contested demand for political status as its historical foundation." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion connects the feature to McQueen's gallery practice of framing, duration, movement, stasis and sound, while BFI identifies its unconventional historical structure." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Film4 and Criterion identify the UK-Ireland production, producers Robin Gutch and Laura Hastings-Smith, McQueen's feature debut and the principal craft team." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the 2008 Caméra d'Or, while BAFTA documents McQueen's first-feature award and Film4 records the film's major debut recognition." },
+    { area: "screenplay", status: "source_verified", note: "Criterion, Film4 and Cannes credit Steve McQueen and Enda Walsh; the script organises the film into contrasting movements rather than a single protagonist-led chronology." },
+    { area: "directing", status: "source_verified", note: "Criterion preserves interviews and a making-of documentary with McQueen and collaborators; its analysis connects his visual-art practice to the feature's controlled duration and restricted exposition." },
+    { area: "performance", status: "source_verified", note: "Criterion documents Michael Fassbender, Liam Cunningham and the prison ensemble, including Fassbender's account of the physically demanding Bobby Sands performance." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Tom McCullagh; cells, corridors, visiting spaces and institutional surfaces turn Maze architecture into the film's organising material system." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion credits Anushia Nieradzik and Jacqueline Fowler; blankets, uniforms, hair, wounds and bodily deterioration make political status and institutional control visible." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Sean Bobbitt and records the 2.35:1 colour presentation; the film's frontal tableaux, tracking passages and sustained dialogue framing continue McQueen's attention to spatial duration." },
+    { area: "lighting", status: "mapped", note: "Cold institutional illumination, dark cells and controlled shafts shape bodily visibility, but the current source set does not isolate a dedicated lighting account." },
+    { area: "camera_format", status: "mapped", note: "Criterion documents the restored widescreen presentation but the current source set does not provide a complete original camera, lens and capture package." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Joe Walker; the construction alternates repeated prison actions, extended uninterrupted confrontation and narrowing bodily time rather than conventional suspense cutting." },
+    { area: "sound_design", status: "source_verified", note: "Criterion's McQueen analysis identifies sound as a force that creates atmosphere and drives the film; scraping, washing, breath, corridors and silence make institutional violence physical." },
+    { area: "music", status: "source_verified", note: "Criterion credits David Holmes and Leo Abrahams; sparse musical intervention leaves bodily and architectural sound dominant while marking the final movement." },
+    { area: "effects_animation", status: "not_central", note: "The film depends on practical environments, performance, makeup, controlled framing, editing and sound rather than an effects-led production pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Criterion includes contemporary BBC Panorama material and collaborator testimony, while Film4 and BFI anchor the fiction in documented Maze events and political responses." },
+  ],
+} as const satisfies FilmHistoryProfile;

@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const nakedFilmHistoryProfile = {
+  scenarioId: "scenario_naked_1993",
+  period: "British improvisation-based character cinema, post-punk London nocturne and social confrontation",
+  traditions: ["Mike Leigh rehearsal-built drama", "British urban social cinema", "Bleach-bypass nocturnal realism"],
+  before: "Mike Leigh had spent decades developing characters and scenes through long, disciplined rehearsal and improvisation for theatre, television and film, while cinematographer Dick Pope brought documentary experience and a growing collaboration with Leigh from Life Is Sweet.",
+  moment: "Simon Channing-Williams produces a Film4-era British feature developed through Leigh's extended work with David Thewlis, Lesley Sharp, Katrin Cartlidge and the ensemble. Pope, production designer Alison Chitty and costume designer Lindy Hemming test colours for a print bleach-bypass process that creates cold blue, green and black contrast; winter dawns, cramped real interiors and lightly equipped handheld Soho filming turn Johnny's two-day London passage into a hostile social landscape, shaped by Jon Gregory's editing and Andrew Dickson's score.",
+  after: "Naked won the 1993 Cannes awards for direction and David Thewlis's performance. A BFI National Archive 4K remaster returned to the original print look under Pope's supervision, preserving the film as a major example of rehearsal-built performance fused with highly designed photochemical urban form.",
+  historyQuestion: "Which production system explains a British London film developed through months of character work rather than a conventional pre-written shooting script, then given a cold post-punk look through bleach-bypass print processing, colour tests, winter location work, handheld Soho filming and long confrontational performance scenes?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Criterion and Cannes place the film in early-1990s British cinema and identify its London underclass, social fracture and post-punk visual atmosphere." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI explains Leigh's disciplined rehearsal-built method, while Criterion places Naked within British character cinema and Leigh's theatre-to-film practice." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion credits producer Simon Channing-Williams and the complete craft team; BFI restoration interviews document the photochemical laboratory collaboration and real-location constraints." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the 1993 best-director and best-actor awards; BFI documents the National Archive 4K remaster and restoration of the intended bleach-bypass appearance." },
+    { area: "screenplay", status: "source_verified", note: "Cannes and Criterion credit Mike Leigh, while BFI describes his process of building characters, histories, relationships and final scenes through extensive research and rehearsal." },
+    { area: "directing", status: "source_verified", note: "BFI interviews preserve Leigh's account of translating the nocturnal dramatic idea into a shared visual language and directing violent or intimate scenes through precise evolved staging." },
+    { area: "performance", status: "source_verified", note: "Criterion, Cannes and BFI document the ensemble and the rehearsal method; Thewlis's performance received Cannes's 1993 acting award." },
+    { area: "production_design", status: "source_verified", note: "Criterion and Cannes credit Alison Chitty; Pope describes joint colour testing so walls, rooms and objects would survive the extreme bleach-bypass palette." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion credits Lindy Hemming, and Leigh's BFI discussion identifies costume as part of the team that tested and constructed the film's visual world." },
+    { area: "cinematography", status: "source_verified", note: "Cannes and Criterion credit Dick Pope; his BFI interview details guerrilla-style Soho exteriors, invisible tracking moves, cramped interiors and the cold post-punk visual design." },
+    { area: "lighting", status: "source_verified", note: "Pope explains using very little added light on some street work, winter dawn and dusk, existing fluorescent interiors and careful grading to control whites, greens and deep blacks." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records a colour 1.85:1 film presentation, while Pope explains that bleach bypass was applied to release printing rather than permanently to the camera negative." },
+    { area: "editing", status: "source_verified", note: "Cannes and Criterion credit Jon Gregory; Pope describes invisible camera movement and Leigh's organically evolving scene construction, which Gregory shapes into the nocturnal journey." },
+    { area: "sound_design", status: "mapped", note: "Dense speech, traffic, rooms and night ambience are central to the experience, but the current source set does not isolate a dedicated production-sound or post-sound account." },
+    { area: "music", status: "source_verified", note: "Cannes and Criterion credit Andrew Dickson; Pope identifies the harp-led score as a decisive element in the finished film's emotional construction." },
+    { area: "effects_animation", status: "not_central", note: "The film's stylisation is achieved through performance, real locations, camera movement, laboratory processing, production design and grading rather than an effects-led pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Pope's documentary background, Leigh's character research and the lightly equipped filming of real London streets carry observational methods into an intensely constructed fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;

@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const kesFilmHistoryProfile = {
+  scenarioId: "scenario_kes_1969",
+  period: "British social realism, regional working-class cinema and location-based youth performance",
+  traditions: ["British television social realism", "Regional working-class cinema", "Documentary-informed nonprofessional performance"],
+  before: "Ken Loach and producer Tony Garnett had developed mobile 16 mm television drama outside the studio in works such as Up the Junction and Cathy Come Home, while Barry Hines's novel A Kestrel for a Knave offered a Barnsley story grounded in school, family, labour and regional speech.",
+  moment: "United Artists money secured a very small budget and unusual freedom for Garnett and Loach to adapt Hines's novel in 35 mm colour. First-time actor David Bradley trained with kestrels so Billy's falconry could be performed rather than imitated; Chris Menges photographed Barnsley streets, schoolrooms, housing and fields, Roy Watts edited the accumulating episodes, and John Cameron's music opens lyrical space without softening the institutions closing around Billy.",
+  after: "The distributor initially resisted the Yorkshire dialect and released the film cautiously, but regional screenings broke house records before wider circulation. Later BFI and Criterion restorations, production testimony and archive material preserved Kes as a key example of British social realism joining authentic place, non-glamorised performance and cinematic lyricism.",
+  historyQuestion: "Which production system explains a low-budget British feature adapted from a Yorkshire novel, shot in 35 mm colour around Barnsley with regional speech, a first-time child actor trained to handle a real kestrel, documentary-influenced location photography and institutions observed without sentimental rescue?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Tony Garnett's testimony place Kes within late-1960s British working-class screen culture and Loach-Garnett's move from socially committed television drama into feature production." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Criterion connect the film to British social realism, regional location work and a production method shaped by documentary observation rather than studio polish." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Garnett records United Artists financing, a tiny budget, 35 mm colour and the resulting creative freedom; Criterion credits Garnett and the principal production team." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Garnett documents the distributor's dialect concerns and the film's strong initial Yorkshire screenings, while BFI and Criterion preserve later restoration and educational circulation." },
+    { area: "screenplay", status: "source_verified", note: "Criterion credits Barry Hines and Ken Loach adapting A Kestrel for a Knave; daily work, school and falconry accumulate rather than obeying a conventional triumph narrative." },
+    { area: "directing", status: "source_verified", note: "BFI and Criterion production material describe Loach's naturalistic direction, regional casting and preference for behaviour close to the characters' social world." },
+    { area: "performance", status: "source_verified", note: "BFI archive notes document David Bradley's first-time casting and practical kestrel training, making Billy's skill and attention physically credible on screen." },
+    { area: "production_design", status: "mapped", note: "Barnsley housing, classrooms, employment offices and farm spaces form the social environment, but the current sources do not isolate a department-level design process beyond William McCrow's credit." },
+    { area: "costume_makeup", status: "mapped", note: "School uniform, workwear and family clothing reinforce class and institutional pressure, but no dedicated costume or makeup account is currently recorded." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Chris Menges; BFI and Garnett identify the film's location-based 35 mm colour photography and its balance of social observation with lyrical falconry sequences." },
+    { area: "lighting", status: "mapped", note: "Available-looking school, domestic and exterior light supports the realism, but the current source set does not provide a separate lighting account." },
+    { area: "camera_format", status: "source_verified", note: "Garnett explicitly records that the production was made in 35 mm colour after the financiers refused black and white." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Roy Watts; the film's episodic construction moves among home, school, work and falconry while withholding a conventional upward-mobility resolution." },
+    { area: "sound_design", status: "source_verified", note: "Criterion documents both the original regional-dialect soundtrack and an alternate internationally post-synchronised version, making speech, class and distribution inseparable production issues." },
+    { area: "music", status: "source_verified", note: "Criterion credits John Cameron and BFI identifies the score's lyrical role alongside Chris Menges's images without converting Billy's circumstances into sentimentality." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on real locations, live-bird handling, performance and observed institutions rather than an effects-led pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "The Loach-Garnett television background, regional casting, Barnsley locations and Bradley's practical training carry documentary habits into a scripted feature." },
+  ],
+} as const satisfies FilmHistoryProfile;
