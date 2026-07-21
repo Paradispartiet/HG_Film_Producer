@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const spiritOfTheBeehiveFilmHistoryProfile = {
+  scenarioId: "scenario_the_spirit_of_the_beehive_1973",
+  period: "Late-Franco Spanish memory cinema, childhood perception and poetic rural modernism",
+  traditions: ["Spanish postwar allegory", "Child-viewpoint cinema", "Cinema-memory modernism"],
+  before: "Spanish filmmakers working under Franco often displaced political history into family, landscape, silence and allegory, while films about childhood and spectatorship had shown how incomplete knowledge could make ordinary spaces strange and historically charged.",
+  moment: "Producer Elías Querejeta brings together Víctor Erice and co-writer Ángel Fernández Santos, cinematographer Luís Cuadrado, editor Pablo G. del Amo and six-year-old Ana Torrent. Set in a Castilian village in 1940, the production filters civil-war aftermath through a child's encounter with James Whale's Frankenstein, using honey-coloured interiors, open plains, windows, trains, offscreen adult lives and measured sound-image ellipses rather than direct political explanation.",
+  after: "The Spirit of the Beehive established Erice internationally and became a durable model for cinema about childhood, national silence and the imagination activated by another film, with later restorations and institutional retrospectives preserving its colour, framing and acoustic restraint.",
+  historyQuestion: "Which production system explains a 1973 Spanish film made while Franco was still alive, set in 1940 and organised around a six-year-old girl's experience of Frankenstein, using honey-coloured rooms, Castilian emptiness, adult silence and elliptical sound-image links instead of explicit political exposition?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI places the film in the late Franco period and reads its 1940 setting as a study of civil-war scars, family silence and defeated Republican memory." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Criterion identify impressionistic childhood cinema, postwar allegory and film-within-film spectatorship as the production's governing traditions." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion and BFI credit producer Elías Querejeta, writers Víctor Erice and Ángel Fernández Santos, cinematographer Luís Cuadrado and editor Pablo G. del Amo." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI documents the film's lasting international standing, while Criterion's restored edition preserves extensive production testimony and scholarly analysis." },
+    { area: "screenplay", status: "source_verified", note: "Criterion credits Erice and Fernández Santos; BFI explains the measured, allusive narrative built from questions, gaps, fantasy and the adults' withheld histories." },
+    { area: "directing", status: "source_verified", note: "Criterion preserves Erice's interview and a making-of documentary; BFI characterises his precise juxtaposition of sound and image and refusal of direct explanatory dialogue." },
+    { area: "performance", status: "source_verified", note: "Criterion and later Ana Torrent testimony document her casting at six, the character's renaming to match her real name and Erice's use of a child's unstable boundary between fiction and reality." },
+    { area: "production_design", status: "mapped", note: "The family house, school, abandoned building, village cinema and beehive imagery create a controlled symbolic world, but the current sources do not isolate a department-level design account." },
+    { area: "costume_makeup", status: "mapped", note: "1940 rural clothing and the Frankenstein creature's appearance organise period and imagination, but no dedicated costume or makeup source is currently recorded." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Luís Cuadrado; BFI analyses the painterly compositions, faces, thresholds, open Castilian landscape and child's watchful point of view." },
+    { area: "lighting", status: "source_verified", note: "BFI's discussion of time and light and the film's honey-coloured interiors supports the controlled contrast between amber domestic space, pale exteriors and nocturnal imagined encounters." },
+    { area: "camera_format", status: "mapped", note: "The current institutional sources identify the cinematographer and restored transfer but do not provide a sufficiently specific original camera, lens and stock package." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Pablo G. del Amo; BFI describes an elliptical construction in which routine, memory of Frankenstein and imagined presence connect through measured juxtaposition." },
+    { area: "sound_design", status: "source_verified", note: "BFI emphasises meaning created through sound-image relation; wind, trains, classroom voices, domestic quiet and offscreen adult activity make historical absence audible." },
+    { area: "music", status: "mapped", note: "Sparse music supports recollection and fantasy, but the current source set does not isolate a dedicated score-production account." },
+    { area: "effects_animation", status: "not_central", note: "The film relies on practical locations, performance, costume, editing and ambiguity rather than an effects-led pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "The production grounds allegory in a specific Castilian village, postwar domestic behaviour and a real child's perception, preserving historical pressure without reconstructing public events directly." },
+  ],
+} as const satisfies FilmHistoryProfile;
