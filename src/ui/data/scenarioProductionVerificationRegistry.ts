@@ -9,6 +9,7 @@ import { noirRealism1940sVerificationRecords } from "./scenarioProductionVerific
 import { asianPostwar1950sVerificationRecords } from "./scenarioProductionVerification1950sAsianPostwarBatch";
 import { expressivePostwar1950sVerificationRecords } from "./scenarioProductionVerification1950sExpressivePostwarBatch";
 import { sixtiesScaleIndependentVerificationRecords } from "./scenarioProductionVerification1960sScaleIndependentBatch";
+import { britishIrishPlaceBodyVerificationRecords } from "./scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch";
 import { classicalHollywoodVerificationRecords } from "./scenarioProductionVerificationClassicalHollywoodBatch";
 import { constructedWorldsVerificationRecords } from "./scenarioProductionVerificationConstructedWorldsBatch";
 import { contemporaryDissentRuralVerificationRecords } from "./scenarioProductionVerificationContemporaryDissentRuralSystemsBatch";
@@ -71,6 +72,7 @@ const additionalVerificationRecords = [
   ...festivalUrbanIntimacyVerificationRecords,
   ...contemporaryDissentRuralVerificationRecords,
   ...contemporaryEuropeanSocialCareVerificationRecords,
+  ...britishIrishPlaceBodyVerificationRecords,
   ...europeanPoeticMemoryVerificationRecords,
   ...asianPostwar1950sVerificationRecords,
   ...expressivePostwar1950sVerificationRecords,
