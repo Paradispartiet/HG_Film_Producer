@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const aliFearEatsTheSoulFilmHistoryProfile = {
+  scenarioId: "scenario_ali_fear_eats_the_soul_1974",
+  period: "New German Cinema, low-budget social melodrama and spatialised everyday racism",
+  traditions: ["New German Cinema", "Douglas Sirk revision", "Brechtian social melodrama"],
+  before: "Fassbinder's antitheater work and early films had developed frontal performance, social types and visible power relations, while his encounter with Douglas Sirk showed how popular melodrama could carry political analysis without giving up emotional force.",
+  moment: "Tango-Film produces a compressed Munich shoot written, directed and produced by Fassbinder. Brigitte Mira and El Hedi ben Salem play Emmi and Ali inside cafés, stairwells, courtyards, shops and apartments where social judgment is organised through distance and groups. Jürgen Jürges photographs in Eastmancolor 35 mm; Ekkehard Heinrich shapes the lighting; Kurt Raab and Fassbinder organise the sparse environments; Thea Eymèsz edits direct tests of the relationship; Fritz Müller-Scherz records dialogue and exposed room tone while archival music and jukebox songs punctuate the otherwise stripped-down sound field.",
+  after: "The film won the FIPRESCI Prize and Prize of the Ecumenical Jury at Cannes and became one of Fassbinder's clearest international breakthroughs. Restoration supervised by Jürges and archival records from the Fassbinder Foundation and filmportal preserve a compact production that remains useful for teaching how low budget, compressed schedule, framing, stillness and melodramatic structure can expose racism, age, class and conditional acceptance.",
+  historyQuestion: "Which production system explains a fast, low-budget Munich melodrama that places an older cleaner and a younger Moroccan worker inside doorways, stairwells, cafés and hostile groups, using static distance, sparse music, long silences and direct scene construction to join Douglas Sirk's emotional model to New German Cinema social analysis?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Criterion and the Fassbinder Foundation place the film in 1970s West Germany's guest-worker society and connect the romance to racism, age, class and economic dependence." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion identifies the film as a major New German Cinema work shaped by Fassbinder's theatrical style, Brechtian distance and his encounter with Douglas Sirk's melodramas." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI documents a fifteen-day stop-gap shoot; filmportal and the Fassbinder Foundation identify Tango-Film, Munich locations and the compact 35 mm production." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Filmportal records the 1974 Cannes FIPRESCI and Ecumenical Jury prizes, while Criterion documents the cinematographer-supervised restoration." },
+    { area: "screenplay", status: "source_verified", note: "The Fassbinder Foundation and filmportal credit Fassbinder; Criterion traces the story's relation to The American Soldier and All That Heaven Allows without reducing it to a remake." },
+    { area: "directing", status: "source_verified", note: "Criterion and BFI describe a stripped-down method in which frontal staging, pauses and spatial separation turn social pressure into visible dramatic structure." },
+    { area: "performance", status: "source_verified", note: "Criterion, BFI and the Foundation document Brigitte Mira and El Hedi ben Salem, whose restrained physical and vocal choices hold tenderness against imposed social roles." },
+    { area: "production_design", status: "source_verified", note: "Filmportal credits Kurt Raab and Fassbinder for set design; cafés, landings, courtyards, shops and modest rooms make prejudice and conditional access spatially concrete." },
+    { area: "costume_makeup", status: "mapped", note: "Work clothes, dresses, suits and everyday grooming distinguish age, labour and social presentation, but the current sources do not provide a full costume account." },
+    { area: "cinematography", status: "source_verified", note: "Criterion, filmportal and the Foundation credit Jürgen Jürges; distant frames, doorways and grouped observers hold emotional involvement together with analytical distance." },
+    { area: "lighting", status: "source_verified", note: "Filmportal credits Ekkehard Heinrich for lighting design, supporting the controlled contrast between dim bars, exposed apartments and public social spaces." },
+    { area: "camera_format", status: "source_verified", note: "Filmportal documents Eastmancolor 35 mm production, while Criterion preserves the cinematographer-supervised 4K restoration and monaural soundtrack." },
+    { area: "editing", status: "source_verified", note: "Filmportal and the Foundation credit Thea Eymèsz; direct scene transitions and held pauses organise repeated cycles of rejection, temporary acceptance and internal strain." },
+    { area: "sound_design", status: "source_verified", note: "Filmportal credits Fritz Müller-Scherz; sparse dialogue, room tone, silence, bar ambience and jukebox sound keep isolation audible without continuous scoring." },
+    { area: "music", status: "source_verified", note: "The Foundation records archival music; selective songs and dance music mark moments of contact while leaving most social encounters acoustically exposed." },
+    { area: "effects_animation", status: "not_central", note: "The film's system is built from performance, framing, location and sound rather than effects or animation." },
+    { area: "documentary_method", status: "mapped", note: "Everyday Munich locations and guest-worker conditions ground the fiction, but the film uses stylised melodrama and fable rather than documentary procedure." },
+  ],
+} as const satisfies FilmHistoryProfile;
