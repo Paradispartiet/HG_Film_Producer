@@ -12,7 +12,7 @@ Research Control Room derives verified status from this registry rather than rel
 
 ## Current status
 
-- 164 source-backed Production Cases.
+- 168 source-backed Production Cases.
 - Every verified case resolves to a playable scenario in the current catalogue.
 - Catalogue size is read dynamically and is not duplicated in this document.
 - Every case still receives the same complete 17-area audit structure, whether verified or pending.
@@ -53,6 +53,7 @@ Source records are divided into reviewable batches:
 - `src/ui/data/scenarioProductionVerificationIberianPortugueseMemorySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationBalkanWarInstitutionSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts`
+- `src/ui/data/scenarioProductionVerificationNewGermanCinemaSystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts`
 - `src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts`
@@ -348,6 +349,15 @@ This batch compares Macedonian-British circular photographic war modernism, Yugo
 - `scenario_the_leopard_1963`
 
 This batch compares Italian-French landscape modernism, French-Italian palace-memory découpage, French purpose-built 65 mm urban comedy and Italian-French Super Technirama historical ceremony.
+
+### New German Cinema, postwar identity and national memory systems batch
+
+- `scenario_aguirre_the_wrath_of_god_1972`
+- `scenario_ali_fear_eats_the_soul_1974`
+- `scenario_the_marriage_of_maria_braun_1979`
+- `scenario_wings_of_desire_1987`
+
+This batch compares extreme-location colonial delirium, compressed social melodrama, professionalised postwar national allegory and divided-Berlin poetic listening.
 
 ### 1950s Asian postwar cinema batch
 
