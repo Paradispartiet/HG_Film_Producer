@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const roomNextDoorFilmHistoryProfile = {
+  scenarioId: "scenario_the_room_next_door_2024",
+  period: "Spanish auteur chamber melodrama, English-language adaptation and end-of-life friendship cinema",
+  traditions: ["Pedro Almodóvar melodrama", "Literary chamber adaptation", "Friendship and assisted-dying drama"],
+  before: "Pedro Almodóvar's films had long joined saturated design, expressive performance and moral conversation, while chamber dramas about illness and friendship offered a structure in which practical arrangements, remembered lives and physical proximity could carry ethical conflict without turning death into suspense spectacle.",
+  moment: "El Deseo produces Almodóvar's first English-language feature from Sigrid Nunez's novel What Are You Going Through; a table read establishes Tilda Swinton and Julianne Moore as the film's narrative centre, Edu Grau photographs them on ALEXA 35 with Panavision C-series anamorphic lenses, Inbal Weinberg and Bina Daigeler construct colour and paired spaces, and Teresa Font's editing with Alberto Iglesias's music sustains a calm progression through conversation, recollection, waiting and chosen death.",
+  after: "The Room Next Door won the 2024 Golden Lion, marking a major festival recognition for Almodóvar's English-language transition and preserving his colour, performance and melodramatic precision inside a restrained two-woman chamber structure.",
+  historyQuestion: "Which production system explains an El Deseo English-language adaptation carried by two actresses after a decisive table read, photographed on ALEXA 35 with vintage anamorphic lenses, designed through vivid paired rooms and edited as calm conversation, recollection and waiting around a planned death?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "La Biennale and Sony Pictures Classics place the film as Almodóvar's first English-language feature, a Spanish production set partly in an imagined New York and centred on friendship, terminal illness and chosen death." },
+    { area: "movement_and_tradition", status: "source_verified", note: "La Biennale's director statement and the production's design interviews connect the film to Almodóvar's performance-led melodrama, saturated colour and moral chamber conversation." },
+    { area: "industry_and_production_context", status: "source_verified", note: "La Biennale documents El Deseo producers Agustín Almodóvar and Esther García, while Sony Pictures Classics records the international distribution context." },
+    { area: "reception_and_legacy", status: "source_verified", note: "La Biennale's official awards record identifies The Room Next Door as the 2024 Golden Lion winner." },
+    { area: "screenplay", status: "source_verified", note: "La Biennale credits Almodóvar's adaptation of Sigrid Nunez's What Are You Going Through; the drama is organised through reunion, practical arrangements, remembered experience and ethical companionship." },
+    { area: "directing", status: "source_verified", note: "Almodóvar states that the first table read resolved his anxiety about directing in English and that the actors carry the story, making performance and mutual comprehension the central directing system." },
+    { area: "performance", status: "source_verified", note: "La Biennale documents Tilda Swinton and Julianne Moore and records Almodóvar's description of their work as the emotional and narrative weight of the production." },
+    { area: "production_design", status: "source_verified", note: "La Biennale credits Inbal Weinberg, while the director-cinematographer frame analysis documents researched New York references reconstructed through controlled Spanish interiors, architecture and colour." },
+    { area: "costume_makeup", status: "source_verified", note: "La Biennale credits Bina Daigeler, with Morag Ross and Manolo García documented by Grau; costumes, hair and makeup preserve individuality, illness and Almodóvar's precise colour relationships." },
+    { area: "cinematography", status: "source_verified", note: "La Biennale credits Edu Grau, whose production record and direct interview describe centring the actresses, adapting Almodóvar's palette and using composition and colour as emotional structure." },
+    { area: "lighting", status: "source_verified", note: "Grau and Almodóvar describe a guiding idea that the actresses should appear to carry the light within the frame, keeping faces and bodies primary inside strongly designed spaces." },
+    { area: "camera_format", status: "source_verified", note: "Edu Grau's official production record specifies ARRI ALEXA 35 capture with Panavision C-series anamorphic lenses." },
+    { area: "editing", status: "source_verified", note: "La Biennale credits Teresa Font; the completed film moves between dialogue, memory, landscape and waiting while preserving the characters' agency rather than manufacturing thriller suspense." },
+    { area: "sound_design", status: "source_verified", note: "La Biennale credits Sergio Bürmann; measured speech, domestic quiet, exterior ambience and offscreen separation make the neighbouring-room arrangement dramatically legible." },
+    { area: "music", status: "source_verified", note: "La Biennale credits Alberto Iglesias; selective orchestral music supports reflection and emotional continuity without replacing the two central performances." },
+    { area: "effects_animation", status: "source_verified", note: "La Biennale credits Eduardo Díaz and Guillermo Orbe for visual effects, supporting the controlled reconstruction of an American-set world while remaining subordinate to actors and design." },
+    { area: "documentary_method", status: "source_verified", note: "The frame analysis documents location research in New York before Spanish production, allowing specific American visual references to be transformed rather than generically imitated." },
+  ],
+} as const satisfies FilmHistoryProfile;
