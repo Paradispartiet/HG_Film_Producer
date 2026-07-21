@@ -113,6 +113,13 @@ const contemporaryDissentRuralIds = [
   "scenario_alcarras_2022",
 ] as const;
 
+const contemporaryEuropeanSocialCareIds = [
+  "scenario_toni_erdmann_2016",
+  "scenario_triangle_of_sadness_2022",
+  "scenario_aftersun_2022",
+  "scenario_the_room_next_door_2024",
+] as const;
+
 const asianPostwar1950sIds = [
   "scenario_rashomon_1950",
   "scenario_tokyo_story_1953",
@@ -176,7 +183,7 @@ const europeanModernistProductionIds = [
   "scenario_the_battle_of_algiers_1966",
 ] as const;
 
-const expectedVerifiedCount = 140;
+const expectedVerifiedCount = 144;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -306,6 +313,14 @@ test("festival urban intimacy systems are verified with four sources each", () =
 
 test("contemporary dissent rural systems are verified with four sources each", () => {
   for (const scenarioId of contemporaryDissentRuralIds) {
+    const record = getProductionCaseVerification(scenarioId);
+    assert.equal(record?.status, "verified");
+    assert.ok((record?.sources.length ?? 0) >= 4);
+  }
+});
+
+test("contemporary European social care systems are verified with four sources each", () => {
+  for (const scenarioId of contemporaryEuropeanSocialCareIds) {
     const record = getProductionCaseVerification(scenarioId);
     assert.equal(record?.status, "verified");
     assert.ok((record?.sources.length ?? 0) >= 4);
