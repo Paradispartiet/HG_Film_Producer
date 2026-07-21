@@ -25,13 +25,13 @@ A blank field is not an acceptable final state. Every case contains all mapping 
 Every Production Case in the current catalogue resolves to the same complete mapping structure. Catalogue size is read dynamically and is not duplicated in documentation or tests.
 
 - 17 mandatory film-history and film-craft areas.
-- 148 source-backed film-history profiles.
+- 152 source-backed film-history profiles.
 - All remaining cases retain complete audit structures with visible research gaps.
 - No points, ranks, badges or reward currencies.
 - Historical placement is playable through explanation choices.
 - Sources are inspectable inside the case.
 
-The 148 source-backed profiles are the same controlled group covered by the Production Case verification registry:
+The 152 source-backed profiles are the same controlled group covered by the Production Case verification registry:
 
 - The Machinist
 - The Lives of Others
@@ -145,6 +145,10 @@ The 148 source-backed profiles are the same controlled group covered by the Prod
 - The Spirit of the Beehive
 - Landscape in the Mist
 - The Double Life of Véronique
+- Kes
+- Naked
+- Hunger
+- The Banshees of Inisherin
 - Rashomon
 - Tokyo Story
 - Seven Samurai
@@ -313,6 +317,8 @@ A date or movement name alone does not teach film history. The player learns by 
 - British-American mixed-format memory drama versus Spanish English-language end-of-life chamber melodrama;
 - French early-sound barge poetic realism versus late-Franco Spanish child-view memory cinema;
 - Greek-French-Italian long-take landscape journey versus Polish-French filtered double-life metaphysics;
+- British regional youth realism versus rehearsal-built bleach-bypass London nocturne;
+- British-Irish durational prison modernism versus Irish island tragicomedy shaped by landscape and distant civil-war sound;
 - Daiei contradictory testimony versus Shochiku domestic minimalism;
 - Toho tactical action versus Bengali location humanism;
 - Danish spiritual long-take chamber cinema versus Polish Film School one-night political tragedy;
