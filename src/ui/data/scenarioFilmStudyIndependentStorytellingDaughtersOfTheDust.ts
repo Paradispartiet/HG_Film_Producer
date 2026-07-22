@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const daughtersOfTheDustFilmHistoryProfile = {
+  scenarioId: "scenario_daughters_of_the_dust_1991",
+  period: "L.A. Rebellion legacy, Black feminist historical cinema and independent theatrical breakthrough",
+  traditions: ["L.A. Rebellion", "Black feminist independent cinema", "Historical memory and magical realism"],
+  before: "American historical cinema usually centered linear national narratives and underrepresented Black women's authorship, while L.A. Rebellion filmmakers had developed community-based alternatives grounded in cultural memory, independent production and formal experimentation.",
+  moment: "Julie Dash writes, directs and produces a 35mm color feature set in the Sea Islands, joining Gullah language and history, nonlinear family narration, Arthur Jafa's luminous cinematography, symbolic mise-en-scène, ensemble performance and John Barnes' score.",
+  after: "General theatrical release, National Film Registry preservation and restoration with the image's color design protected established the film as a durable reference for Black independent authorship, historical memory and non-linear feature construction.",
+  historyQuestion: "Which production system explains a Sea Islands family history built through collective voices, nonlinear time, Gullah cultural research, designed color and magical-realist memory rather than a single linear hero?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "UCLA and the Library of Congress place the 1991 feature within Black independent production and its 1902 Gullah Sea Islands historical setting." },
+    { area: "movement_and_tradition", status: "source_verified", note: "UCLA identifies the film with the L.A. Rebellion and Black independent concerns around family, tradition, historical trauma and collective deliverance." },
+    { area: "industry_and_production_context", status: "source_verified", note: "The Library of Congress records American Playhouse and Geechee Girls production, while UCLA documents Dash as writer, director and producer." },
+    { area: "reception_and_legacy", status: "source_verified", note: "UCLA documents its general theatrical-release distinction and 2004 National Film Registry selection; institutional restoration records preserve its continuing circulation." },
+    { area: "screenplay", status: "source_verified", note: "Dash's credited screenplay organizes one family gathering through multiple generations, nonlinear time, migration debate and narration by an unborn child." },
+    { area: "directing", status: "source_verified", note: "UCLA credits Dash and describes the film's formal construction through symbolic markers, magical-realist gestures and carefully orchestrated family space." },
+    { area: "performance", status: "source_verified", note: "UCLA documents the ensemble and describes performances carrying conflicting positions on migration, Christianity, memory, independence and family continuity." },
+    { area: "production_design", status: "source_verified", note: "UCLA identifies mise-en-scène and symbolic objects as central to constructing the island home as a cultural and historical world." },
+    { area: "costume_makeup", status: "source_verified", note: "The coordinated white dresses, period clothing, hair and embodied ritual are central visible carriers of family identity, historical time and collective composition." },
+    { area: "cinematography", status: "source_verified", note: "UCLA and the Library of Congress credit Arthur Jafa and preserve the luminous color image as a defining part of landscape, skin, fabric and memory." },
+    { area: "lighting", status: "mapped", note: "Natural exteriors and luminous interiors shape the visual world, but the current sources do not isolate a complete lighting process." },
+    { area: "camera_format", status: "source_verified", note: "The Library of Congress documents a 35mm color feature in 1.66:1, while restoration records preserve the intended color grading." },
+    { area: "editing", status: "source_verified", note: "UCLA credits Amy Carey and Joseph Burton; nonlinear time and associative family images allow past, present and future to coexist without conventional chronology." },
+    { area: "sound_design", status: "source_verified", note: "Gullah speech, collective voices, coastal ambience and ritual sound make cultural continuity audible rather than merely explained." },
+    { area: "music", status: "source_verified", note: "UCLA identifies John Barnes' original score as a central expressive layer supporting memory, spirituality and migration." },
+    { area: "effects_animation", status: "mapped", note: "Magical-realist presence is achieved mainly through staging, image, narration and editing rather than a separate effects spectacle pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Historical and cultural research into Gullah life, language and migration grounds the fictional family construction in community-specific knowledge." },
+  ],
+} as const satisfies FilmHistoryProfile;
