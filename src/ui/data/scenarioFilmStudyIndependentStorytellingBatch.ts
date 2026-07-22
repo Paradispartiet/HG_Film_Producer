@@ -18,18 +18,26 @@ import { mysteryTrainFilmHistoryProfile } from "./scenarioFilmStudyIndependentSt
 import { sexLiesVideotapeFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSexLiesVideotape";
 import { slackerFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSlacker";
 import { smokeFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSmoke";
+import { afterLifeFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryAfterLife";
+import { blackRainImamuraFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryBlackRain";
+import { stillWalkingFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryStillWalking";
+import { tampopoFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryTampopo";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 
 const independentStorytellingProfiles = {
+  [tampopoFilmHistoryProfile.scenarioId]: tampopoFilmHistoryProfile,
   [killerOfSheepFilmHistoryProfile.scenarioId]: killerOfSheepFilmHistoryProfile,
   [mysteryTrainFilmHistoryProfile.scenarioId]: mysteryTrainFilmHistoryProfile,
+  [blackRainImamuraFilmHistoryProfile.scenarioId]: blackRainImamuraFilmHistoryProfile,
   [sexLiesVideotapeFilmHistoryProfile.scenarioId]: sexLiesVideotapeFilmHistoryProfile,
   [slackerFilmHistoryProfile.scenarioId]: slackerFilmHistoryProfile,
   [daughtersOfTheDustFilmHistoryProfile.scenarioId]: daughtersOfTheDustFilmHistoryProfile,
   [smokeFilmHistoryProfile.scenarioId]: smokeFilmHistoryProfile,
+  [afterLifeFilmHistoryProfile.scenarioId]: afterLifeFilmHistoryProfile,
   [manWhoWasntThereFilmHistoryProfile.scenarioId]: manWhoWasntThereFilmHistoryProfile,
   [americanSplendorFilmHistoryProfile.scenarioId]: americanSplendorFilmHistoryProfile,
+  [stillWalkingFilmHistoryProfile.scenarioId]: stillWalkingFilmHistoryProfile,
 } as const satisfies Record<string, FilmHistoryProfile>;
 
 function statusRank(status: FilmStudyCoverageOverride["status"]): number {
@@ -129,7 +137,7 @@ export function createIndependentStorytellingFilmHistoryChoices(
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real American independent storytelling system, but it belongs to another balance of city, genre, literary structure, documentary evidence and visual construction.",
+      feedback: "This is a real independent storytelling system, but it belongs to another balance of place, genre, memory, documentary evidence, performance and visual construction.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
