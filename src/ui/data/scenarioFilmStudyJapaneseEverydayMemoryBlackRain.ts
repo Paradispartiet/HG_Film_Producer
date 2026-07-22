@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const blackRainImamuraFilmHistoryProfile = {
+  scenarioId: "scenario_black_rain_imamura_1989",
+  period: "Late-1980s Japanese postwar memory cinema, survivor testimony and monochrome historical realism",
+  traditions: ["Japanese postwar memory cinema", "Hibakusha representation", "Social-historical realism"],
+  before: "Atomic-bomb narratives often separated catastrophe from later domestic life or translated historical trauma into explicit spectacle, while survivor stigma and long-term illness received less sustained everyday attention.",
+  moment: "Shōhei Imamura and Toshiro Ishido adapt Masuji Ibuse through a black-and-white family drama that joins reconstructed Hiroshima catastrophe to later village routines, marriage negotiations and radiation stigma, using Takashi Kawamata's photography, Hajime Okayasu's editing, Hisao Inagaki's design and Tōru Takemitsu's score.",
+  after: "Its Cannes technical recognition and continuing institutional circulation established the film as a major reference for representing nuclear violence through survivor bodies, social exclusion, domestic duration and documentary-coded monochrome form.",
+  historyQuestion: "Which production system explains a film that reconstructs Hiroshima but gives equal weight to later meals, medical uncertainty, marriage negotiations and social stigma in controlled black-and-white realism?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, Japan Foundation and Japanese Film Festival records place the film in 1989 Japanese postwar memory cinema focused on Hiroshima survivors and delayed radiation effects." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Japan Foundation connect Imamura's Japanese New Wave background to an unusually restrained, Ozu-inflected survivor drama and documentary-like realism." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes verifies the principal screenplay, cinematography, editing, production-design and music departments behind the Japanese feature." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records its Competition selection and 1989 technical grand prize; Japanese Film Festival records extensive Japanese awards and continued 35mm exhibition." },
+    { area: "screenplay", status: "source_verified", note: "Cannes credits Imamura and Toshiro Ishido; the adaptation links Ibuse's historical material to one family's later routines, illness and blocked marriage prospects." },
+    { area: "directing", status: "source_verified", note: "Institutional accounts describe Imamura foregrounding survivor dignity, psychological damage and social consequence rather than reducing the film to anti-nuclear rhetoric or spectacle." },
+    { area: "performance", status: "source_verified", note: "Festival records identify Yoshiko Tanaka, Kazuo Kitamura and Etsuko Ichihara, whose restrained domestic performances carry bodily uncertainty and social shame across ordinary scenes." },
+    { area: "production_design", status: "source_verified", note: "Cannes credits Hisao Inagaki; destroyed-city reconstruction and later village interiors create two historically distinct but causally joined worlds." },
+    { area: "costume_makeup", status: "mapped", note: "Period clothing, aging, injury and illness makeup are essential to historical continuity, but the current sources do not isolate the full department process." },
+    { area: "cinematography", status: "source_verified", note: "Cannes credits Takashi Kawamata, and BFI identifies his connection to Ozu's production history; monochrome unifies catastrophe, memory and later domestic life." },
+    { area: "lighting", status: "source_verified", note: "Japanese Film Festival records the film's major lighting award, supporting the controlled black-and-white contrast across blast aftermath, interiors and rural exteriors." },
+    { area: "camera_format", status: "source_verified", note: "Japanese Film Festival documents the work as a 35mm black-and-white feature, while institutional screenings preserve its theatrical format." },
+    { area: "editing", status: "source_verified", note: "Cannes credits Hajime Okayasu and the Japanese awards record recognizes the editing that connects remembered catastrophe to later domestic and social duration." },
+    { area: "sound_design", status: "source_verified", note: "Japan Foundation's description of documentary-like realism supports a sound world moving between catastrophic rupture, medical quiet, village ambience and domestic routine." },
+    { area: "music", status: "source_verified", note: "Cannes credits Tōru Takemitsu and Japanese awards recognize the score, which supports historical dread without turning survivor experience into continuous melodramatic emphasis." },
+    { area: "effects_animation", status: "mapped", note: "The Hiroshima reconstruction requires practical staging, makeup and effects, but available sources do not separate the complete effects workflow from design and cinematography." },
+    { area: "documentary_method", status: "source_verified", note: "Japan Foundation explicitly describes the film's documentary-like realism, while its survivor-centered historical adaptation grounds fiction in testimony, medical consequence and social history." },
+  ],
+} as const satisfies FilmHistoryProfile;

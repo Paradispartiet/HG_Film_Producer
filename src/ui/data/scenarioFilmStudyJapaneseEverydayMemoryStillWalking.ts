@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const stillWalkingFilmHistoryProfile = {
+  scenarioId: "scenario_still_walking_2008",
+  period: "2000s Japanese domestic realism, family-memory cinema and documentary-inflected performance",
+  traditions: ["Japanese family drama", "Domestic observational realism", "Everyday ritual and memory cinema"],
+  before: "Family melodrama often organized grief around revelation or reconciliation, while domestic routines such as cooking, cleaning and small talk were treated as connective detail rather than the main dramatic system.",
+  moment: "Hirokazu Kore-eda writes and edits a one-day family gathering inspired by his mother's death, using Yutaka Yamazaki's controlled color photography, a carefully built home, ensemble master shots, food preparation, ritual gestures and layered household sound to reveal grief through repetition and restraint.",
+  after: "Its director-approved preservation, extensive making-of record and continuing critical study made the film a central contemporary model for family drama built from domestic space, food, performance detail and unresolved memory rather than cathartic confrontation.",
+  historyQuestion: "Which production system explains a family drama where kitchens, meals, stairs, graveside ritual and coded remarks carry decades of grief without a large explanatory confrontation?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion and BFI place the 2008 film within contemporary Japanese family drama and Kore-eda's documentary-inflected humanist tradition." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion and Busan connect the film to Japanese domestic cinema and Ozu while emphasizing Kore-eda's own observational method, family ritual and unresolved absence." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion documents Kore-eda as writer, director and editor with Yutaka Yamazaki, two art directors, dedicated lighting and sound departments and a multi-producer Japanese production." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion preserves a director-approved edition with on-set documentary material and filmmaker interviews, supporting the film's continuing role in international study of Kore-eda's work." },
+    { area: "screenplay", status: "source_verified", note: "Criterion describes one commemorative family day organized through gestures, routines and delayed information rather than large plot events, with autobiography shaping the dramatic design." },
+    { area: "directing", status: "source_verified", note: "Kore-eda controls entrances, meals, pauses, rituals and indirect remarks so family history emerges inside apparently ordinary behavior instead of explanatory scenes." },
+    { area: "performance", status: "source_verified", note: "Criterion's performance analysis documents Kirin Kiki's spontaneous, historically layered behavior and the use of wide ensemble compositions to preserve family interaction." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Toshihiro Isomi and Keiko Mitsumatsu; kitchen, corridors, stairs, altar, dining spaces and nearby cemetery form a practical map of memory and hierarchy." },
+    { area: "costume_makeup", status: "mapped", note: "Everyday clothing and generational styling support naturalism and family difference, but the current sources do not document the department process beyond the credited costume designer." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Yutaka Yamazaki and documents a director- and cinematographer-supervised transfer; master shots, low viewpoints and domestic inserts preserve ensemble relations and routine." },
+    { area: "lighting", status: "source_verified", note: "Criterion credits Eiji Oshita as lighting director, supporting the controlled naturalistic daylight and interior continuity across the family home." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records a color 1.85:1 feature, and Busan documents the original 35mm exhibition format." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Kore-eda as editor; duration, offscreen activity and delayed revelations allow emotional meaning to accumulate through meals, visits and departures." },
+    { area: "sound_design", status: "source_verified", note: "Criterion credits Yutaka Tsurumaki and Shuji Ohtake; cooking, insects, footsteps, overlapping speech, household movement and a remembered song carry family history beneath dialogue." },
+    { area: "music", status: "source_verified", note: "Criterion credits Gontiti, while its song study shows how a briefly played popular record opens a private corridor into the mother's earlier life." },
+    { area: "effects_animation", status: "not_central", note: "The film's emotional construction depends on performance, domestic staging, duration, food and sound rather than a separate effects or animation pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Criterion connects the film to Kore-eda's earlier documentary work and personal family experience, while its making-of material records observation and on-set construction." },
+  ],
+} as const satisfies FilmHistoryProfile;

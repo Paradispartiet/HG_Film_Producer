@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const afterLifeFilmHistoryProfile = {
+  scenarioId: "scenario_after_life_1998",
+  period: "Late-1990s Japanese documentary-fiction, humanist fantasy and memory cinema",
+  traditions: ["Documentary-inflected fiction", "Humanist fantasy", "Cinema about memory and filmmaking"],
+  before: "Afterlife stories generally relied on metaphysical spectacle or explanatory mythology, while documentary testimony and visible low-tech filmmaking usually belonged to separate nonfiction or reflexive traditions.",
+  moment: "Hirokazu Kore-eda builds a modest institutional limbo from interviews with hundreds of people, mixes actors with testimony-derived material and turns handmade memory reconstructions into the film's dramatic action through his own writing and editing, two cinematographers, practical sets and restrained mono sound.",
+  after: "Its international breakthrough, director-approved restoration and continuing institutional study established the film as a key model for combining documentary behavior, fictional world-building, practical effects and cinema's ability to preserve chosen memory.",
+  historyQuestion: "Which production system explains an afterlife fantasy built from real interviews, plain institutional rooms and visibly handmade memory films rather than metaphysical spectacle?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion and BFI identify the 1998 film as Kore-eda's international breakthrough and place it at the meeting point of Japanese documentary practice, fiction and humanist fantasy." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources describe the film's documentary-like approach, testimony-based construction and reflexive interest in cinema as a machine for preserving memory." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion documents Kore-eda as writer, director and editor, Shiho Sato and Masayuki Akieda as producers and Yutaka Yamazaki and Masayoshi Sukita as cinematographers." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion identifies the film as an international breakthrough and documents a director-approved 2K restoration with new filmmaker and cinematographer interviews." },
+    { area: "screenplay", status: "source_verified", note: "Criterion documents a high-concept structure shaped through interviews with hundreds of Japanese citizens, turning one chosen memory into each visitor's dramatic problem." },
+    { area: "directing", status: "source_verified", note: "Kore-eda directs testimony, staff procedure and practical reconstruction in the same restrained register so fantasy remains grounded in observable work and human hesitation." },
+    { area: "performance", status: "source_verified", note: "BFI documents the mixture of scripted actors and real-life testimony in the early section, creating performance behavior that moves between interview, improvisation and fiction." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Toshihiro Isomi and Hideo Gunji, while Kore-eda identifies the about-to-be-demolished Tsukishima Fisheries Experiment Station as the principal setting and source of inspiration." },
+    { area: "costume_makeup", status: "mapped", note: "Plain institutional clothing and modest period memory details support the premise, but the current sources do not isolate the full costume and makeup workflow." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Yutaka Yamazaki and Masayoshi Sukita and includes dedicated interviews on the image system, which keeps the institution observable while memory scenes change register." },
+    { area: "lighting", status: "mapped", note: "Soft institutional daylight and deliberately artificial memory-stage light are formally important, but the current sources do not document a complete lighting process." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records a color 1.66:1 feature restored in 2K with an uncompressed monaural soundtrack." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Kore-eda as editor; testimony, selection, preparation and projection are arranged so documentary fragments gradually become one fictional institution." },
+    { area: "sound_design", status: "source_verified", note: "Criterion credits Osamu Takizawa and Kenji Shibasaki; room tone, voices, production activity and mono playback distinguish lived recollection from its handmade reconstruction." },
+    { area: "music", status: "source_verified", note: "Criterion credits composer Yasuhiro Kasamatsu, whose restrained contribution leaves testimony, silence and practical filmmaking sounds at the center." },
+    { area: "effects_animation", status: "source_verified", note: "BFI explicitly describes the labor of sets, props and invented practical effects used to recreate memories, making visible artifice part of the film's emotional argument." },
+    { area: "documentary_method", status: "source_verified", note: "Criterion documents interviews with hundreds of citizens and BFI identifies real-life testimonies inside the film, directly linking Kore-eda's nonfiction practice to the finished fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;
