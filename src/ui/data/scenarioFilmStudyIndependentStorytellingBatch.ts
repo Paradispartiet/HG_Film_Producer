@@ -11,14 +11,22 @@ import type {
   ScenarioFilmStudyMap,
 } from "./scenarioFilmStudyMap";
 import { americanSplendorFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingAmericanSplendor";
+import { daughtersOfTheDustFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingDaughtersOfTheDust";
+import { killerOfSheepFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingKillerOfSheep";
 import { manWhoWasntThereFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingManWhoWasntThere";
 import { mysteryTrainFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingMysteryTrain";
+import { sexLiesVideotapeFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSexLiesVideotape";
+import { slackerFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSlacker";
 import { smokeFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSmoke";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 
 const independentStorytellingProfiles = {
+  [killerOfSheepFilmHistoryProfile.scenarioId]: killerOfSheepFilmHistoryProfile,
   [mysteryTrainFilmHistoryProfile.scenarioId]: mysteryTrainFilmHistoryProfile,
+  [sexLiesVideotapeFilmHistoryProfile.scenarioId]: sexLiesVideotapeFilmHistoryProfile,
+  [slackerFilmHistoryProfile.scenarioId]: slackerFilmHistoryProfile,
+  [daughtersOfTheDustFilmHistoryProfile.scenarioId]: daughtersOfTheDustFilmHistoryProfile,
   [smokeFilmHistoryProfile.scenarioId]: smokeFilmHistoryProfile,
   [manWhoWasntThereFilmHistoryProfile.scenarioId]: manWhoWasntThereFilmHistoryProfile,
   [americanSplendorFilmHistoryProfile.scenarioId]: americanSplendorFilmHistoryProfile,
