@@ -31,6 +31,7 @@ import { festivalUrbanIntimacyVerificationRecords } from "./scenarioProductionVe
 import { iberianPortugueseMemoryVerificationRecords } from "./scenarioProductionVerificationIberianPortugueseMemorySystemsBatch";
 import { independentStorytellingVerificationRecords } from "./scenarioProductionVerificationIndependentStorytellingBatch";
 import { intimateFestivalBodyCareVerificationRecords } from "./scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch";
+import { japaneseEverydayMemoryVerificationRecords } from "./scenarioProductionVerificationJapaneseEverydayMemoryBatch";
 import { landscapeCinemaVerificationRecords } from "./scenarioProductionVerificationLandscapeBatch";
 import { lateSilentEarlySoundVerificationRecords } from "./scenarioProductionVerificationLateSilentEarlySoundBatch";
 import { minimalistRoadVerificationRecords } from "./scenarioProductionVerificationMinimalistRoadBatch";
@@ -63,6 +64,7 @@ const additionalVerificationRecords = [
   ...europeanPressureVerificationRecords,
   ...independentStorytellingVerificationRecords,
   ...americanIndependentBreakthroughsVerificationRecords,
+  ...japaneseEverydayMemoryVerificationRecords,
   ...silentFoundationsVerificationRecords,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
