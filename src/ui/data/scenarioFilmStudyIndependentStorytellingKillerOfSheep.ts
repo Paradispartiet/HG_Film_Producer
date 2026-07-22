@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const killerOfSheepFilmHistoryProfile = {
+  scenarioId: "scenario_killer_of_sheep_1977",
+  period: "L.A. Rebellion, UCLA student production and Black working-class independent realism",
+  traditions: ["L.A. Rebellion", "African American independent cinema", "Community-based location realism"],
+  before: "Mainstream American cinema and the exploitation market rarely gave ordinary Black working-class life sustained interior attention, while UCLA filmmakers were developing independent forms grounded in community, cultural memory and alternatives to commercial genre images.",
+  moment: "Charles Burnett writes, directs, produces, photographs and edits an extended 16mm production made piecemeal on spare weekends in Watts, using nonprofessional performers, handheld locations, minimal resources, storyboarded observation and African American recorded music.",
+  after: "Music-rights restrictions delayed broad distribution, but UCLA restoration, National Film Registry preservation and later theatrical circulation made the film a durable production model for community-centered American independent cinema.",
+  historyQuestion: "Which production system explains the film's spare-weekend 16mm method, nonprofessional Watts ensemble, mosaic structure and recorded-music memory rather than a studio plot engine?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "UCLA and the Library of Congress place the film in 1970s Black independent production and preserve it as a record of working-class Watts." },
+    { area: "movement_and_tradition", status: "source_verified", note: "UCLA identifies the film within the L.A. Rebellion and connects Burnett's method to poetic documentary, neorealist observation and Black community authorship." },
+    { area: "industry_and_production_context", status: "source_verified", note: "UCLA documents an extended 16mm production completed piecemeal on spare weekends beginning in 1972, followed by restoration and delayed rights clearance." },
+    { area: "reception_and_legacy", status: "source_verified", note: "UCLA and the Library of Congress document festival recognition, 1990 National Film Registry selection, restoration and eventual commercial circulation." },
+    { area: "screenplay", status: "source_verified", note: "Burnett's credited writing organizes labor, family, children and neighborhood episodes as an accumulating portrait rather than a conventional goal-driven plot." },
+    { area: "directing", status: "source_verified", note: "UCLA credits Burnett as director and describes a controlled mixture of storyboarded construction, apparent spontaneity, humor and despair." },
+    { area: "performance", status: "source_verified", note: "UCLA documents nonprofessional actors and identifies Henry Gayle Sanders, Kaycee Moore and the neighborhood ensemble central to the film's lived scale." },
+    { area: "production_design", status: "mapped", note: "Watts homes, streets, lots and the slaughterhouse supply the material world, but the current sources emphasize found locations rather than a separate design department." },
+    { area: "costume_makeup", status: "mapped", note: "Everyday clothing and unglamorized bodies support social specificity, but dedicated costume and makeup documentation has not yet been located." },
+    { area: "cinematography", status: "source_verified", note: "UCLA credits Burnett as cinematographer and documents handheld location shooting; institutional accounts preserve the black-and-white community image system." },
+    { area: "lighting", status: "mapped", note: "Available and minimal lighting are consistent with the location method, but the surviving sources do not provide a complete lighting breakdown." },
+    { area: "camera_format", status: "source_verified", note: "UCLA and the Library of Congress document the original 16mm black-and-white production and later 35mm restoration and preservation materials." },
+    { area: "editing", status: "source_verified", note: "UCLA credits Burnett as editor and supports the episodic juxtaposition of labor, domestic intimacy, children's play and neighborhood fragments." },
+    { area: "sound_design", status: "source_verified", note: "Voices, neighborhood activity, work sounds and monaural restoration materials support an exposed, materially direct sound world." },
+    { area: "music", status: "source_verified", note: "UCLA identifies the evocative African American soundtrack as structural and records that music-rights clearance delayed commercial distribution for years." },
+    { area: "effects_animation", status: "not_central", note: "The film relies on bodies, labor, locations, montage and music rather than practical-effects, VFX or animation spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "Although fictional and substantially storyboarded, the nonprofessional cast, real neighborhood locations and attention to everyday labor create a documentary-adjacent community method." },
+  ],
+} as const satisfies FilmHistoryProfile;
