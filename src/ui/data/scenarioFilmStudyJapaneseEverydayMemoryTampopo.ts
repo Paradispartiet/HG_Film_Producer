@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const tampopoFilmHistoryProfile = {
+  scenarioId: "scenario_tampopo_1985",
+  period: "1980s Japanese independent comedy, food cinema and genre-parody modernism",
+  traditions: ["Japanese food cinema", "Episodic ensemble comedy", "Genre parody and sensory realism"],
+  before: "Food commonly served as social detail or domestic background, while classical quest narratives and western iconography normally remained separate from urban Japanese everyday comedy.",
+  moment: "Jūzō Itami writes, directs and produces a color feature that turns ramen-shop improvement into a comic western quest, interrupts it with autonomous food vignettes and coordinates Masaki Tamura's photography, Akira Suzuki's editing, Takeo Kimura's design and Seiko Ogawa's food styling around appetite as action.",
+  after: "Its restoration, renewed theatrical circulation and extensive craft documentation established the film as a durable reference for food styling, episodic structure, genre quotation and the cinematic treatment of cooking and eating as material performance.",
+  historyQuestion: "Which production system explains a ramen-shop quest repeatedly interrupted by food vignettes, western parody, precise culinary styling and amplified eating sounds rather than one continuous realist plot?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion and BFI place the 1985 film within Japanese food cinema, international genre exchange and the period's renewed independent comic authorship." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion documents the film as a ramen western combining quest structure, genre parody, social satire, erotic comedy and episodic food culture." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion credits Itami as writer, director and producer and preserves a feature-length making-of documentary, actor interview and food-stylist interview." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion documents the 4K restoration and renewed theatrical run, while its edition frames the film's lasting international importance to food cinema." },
+    { area: "screenplay", status: "source_verified", note: "The sourced structure joins a clear ramen-shop improvement quest to self-contained vignettes that return to appetite, class, etiquette, sex and mortality." },
+    { area: "directing", status: "source_verified", note: "Itami coordinates western iconography, comic timing, sensual close observation and abrupt tonal changes without allowing the central craft quest to disappear." },
+    { area: "performance", status: "source_verified", note: "Criterion's cast record and Nobuko Miyamoto interview support an ensemble system built from practical training, comic precision and sharply differentiated social behavior." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Takeo Kimura and Toshiharu Ochi; restaurants, kitchens, counters, table settings and the rebuilt ramen shop organize the film's social world." },
+    { area: "costume_makeup", status: "mapped", note: "Cowboy hats, neckerchiefs, white gangster clothing and restaurant uniforms carry parody and status, but the current sources do not document the full department process." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Masaki Tamura and documents the 1.85:1 color image, which alternates ensemble staging with tactile close views of steam, broth, noodles, hands and mouths." },
+    { area: "lighting", status: "mapped", note: "Restaurant interiors and glossy food surfaces require controlled light, but the current sources do not isolate a complete lighting workflow." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records a color 1.85:1 feature restored in 4K with its original monaural soundtrack." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Akira Suzuki; the edit repeatedly leaves and re-enters the central quest while preserving thematic continuity across otherwise independent episodes." },
+    { area: "sound_design", status: "source_verified", note: "Criterion and BFI analysis identify slurping, chopping, boiling, restaurant clatter and bodily food sounds as active comic and sensory material." },
+    { area: "music", status: "source_verified", note: "Criterion credits Kunihiko Murai, whose music supports western parody, comic transitions and the larger-than-life framing of ordinary culinary labor." },
+    { area: "effects_animation", status: "not_central", note: "The film's transformations are produced mainly through food preparation, performance, staging, montage and practical comic business rather than an effects pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "The making-of record and Seiko Ogawa interview document culinary research and highly specific food styling, including the recreated Tokyo ramen that grounds the fantasy in material practice." },
+  ],
+} as const satisfies FilmHistoryProfile;
