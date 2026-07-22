@@ -114,7 +114,7 @@ export const japaneseEverydayMemoryVerificationRecords = [
       {
         title: "After Life: In Memoriam",
         publisher: "Criterion Collection",
-        url: "https://www.criterion.com/current/posts/7514-after-life-in-memoriam",
+        url: "https://www.criterion.com/current/posts/7492-after-life-in-memoriam",
         sourceKind: "archive_feature",
         supports: ["overall", "screenplay", "editing"],
         note: "The essay situates the film as a meditation on mortality, memory and cinema and analyzes how practical reconstruction and institutional procedure turn individual recollection into shared film form."
