@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const sexLiesVideotapeFilmHistoryProfile = {
+  scenarioId: "scenario_sex_lies_and_videotape_1989",
+  period: "Late-1980s American independent breakthrough, festival discovery and specialty distribution",
+  traditions: ["American independent chamber drama", "Sundance-era discovery", "Video-age intimacy"],
+  before: "American independent features had built regional and personal alternatives to studio production, but a compact dialogue drama still needed festivals and specialty distribution to move from a small production into national theatrical circulation.",
+  moment: "Steven Soderbergh writes and edits an Outlaw Productions chamber drama shot across five six-day weeks in Louisiana, using available locations, natural daylight, a small ensemble and videotaped confession as both production object and dramatic pressure.",
+  after: "Its U.S. Film Festival audience response, Cannes prizes and Miramax acquisition made the film a visible example of the festival-to-specialty-distribution route that would shape the following decade of American independent cinema.",
+  historyQuestion: "Which production system explains a low-budget Louisiana chamber drama in which conversations and videotaped confession carry the dramatic action, then festivals connect the film to specialty distribution?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, Sundance and Cannes place the 1989 film at the point where regional independent production, festival discovery and specialty distribution became newly visible." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify a dialogue-centered American independent breakthrough whose treatment of recording technology separates it from studio melodrama." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Outlaw Productions, a reported 1.2-million-dollar budget, five six-day shooting weeks, Louisiana locations and the subsequent Miramax acquisition." },
+    { area: "reception_and_legacy", status: "source_verified", note: "AFI, Sundance and Cannes document the U.S. Film Festival audience award, distributor bidding and Cannes Palme d'Or, FIPRESCI and acting recognition." },
+    { area: "screenplay", status: "source_verified", note: "AFI documents Soderbergh's eight-day first draft and credits him as writer; the film organizes disclosure through conversation, withholding and recorded testimony." },
+    { area: "directing", status: "source_verified", note: "AFI credits Soderbergh and supports a concentrated four-character production in which shifts of attention and access replace external spectacle." },
+    { area: "performance", status: "source_verified", note: "The small ensemble and Cannes recognition for James Spader support performance as the central production resource for desire, discomfort and changing power." },
+    { area: "production_design", status: "mapped", note: "Joanne Schmidt's credited art direction and the houses and offices define social boundaries, but current sources do not isolate a full design process." },
+    { area: "costume_makeup", status: "mapped", note: "Clothing and grooming distinguish public self-presentation from private disclosure, but dedicated department-level evidence remains limited." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Walt Lloyd and records natural daylight, uncontrolled weather and the use of available Louisiana locations without fully prearranged sets." },
+    { area: "lighting", status: "source_verified", note: "AFI records that natural sunlight was used as much as possible for daytime interiors, making practical production economy part of the restrained visual system." },
+    { area: "camera_format", status: "source_verified", note: "AFI documents AGFA XT320 stock, Panaflex cameras and lenses, color production and Dolby Stereo presentation." },
+    { area: "editing", status: "source_verified", note: "AFI credits Soderbergh as editor and documents an initial videotape edit followed by the final film edit, mirroring the story's relation between live and recorded material." },
+    { area: "sound_design", status: "source_verified", note: "AFI records production and postproduction sound departments; voices, room tone and recorder playback keep intimacy and mediation audible." },
+    { area: "music", status: "source_verified", note: "AFI credits Cliff Martinez and the acoustic-guitar material, supporting a restrained score that leaves conversational rhythm in control." },
+    { area: "effects_animation", status: "not_central", note: "The film's production system is built from actors, rooms, film photography and video recording rather than effects or animation." },
+    { area: "documentary_method", status: "mapped", note: "The videotapes imitate direct testimony and change performance behavior, but the feature remains a scripted chamber drama rather than documentary production." },
+  ],
+} as const satisfies FilmHistoryProfile;

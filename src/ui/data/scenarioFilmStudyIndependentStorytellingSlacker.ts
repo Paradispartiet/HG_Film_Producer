@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const slackerFilmHistoryProfile = {
+  scenarioId: "scenario_slacker_1990",
+  period: "Austin microbudget independent cinema and early-1990s regional breakthrough",
+  traditions: ["American microbudget cinema", "Episodic city portrait", "Austin independent film culture"],
+  before: "American independent narratives usually retained a central protagonist or genre spine even when made outside the studios, while regional film communities were building production cultures that could sustain smaller and more local forms.",
+  moment: "Richard Linklater writes, directs and produces a roughly twenty-three-thousand-dollar Austin feature shot on 16mm with a local cinephile crew, passing attention among more than one hundred characters through geographic handoffs instead of a conventional protagonist.",
+  after: "A local Austin release, Sundance exposure, Orion Classics distribution and National Film Registry preservation turned the film into a durable example of microbudget regional production becoming a complete narrative system.",
+  historyQuestion: "Which production system explains a 16mm Austin film that transfers attention from person to person, makes local geography its structure and replaces a central plot with conversational handoffs?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "The Library of Congress, BFI and Sundance place the film between a 1990 Austin release and its 1991 national independent-film breakthrough." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Criterion identify a regional microbudget film influenced by New Wave freedom but organized around Austin people, streets and digressive talk." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion and BFI document the roughly twenty-three-thousand-dollar 16mm production, local crew and Austin Film Society culture behind the feature." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Sundance documents the festival breakthrough; the Library of Congress records Orion Classics distribution and 2012 National Film Registry selection." },
+    { area: "screenplay", status: "source_verified", note: "Linklater's credited writing replaces a central protagonist with a chain of encounters whose departures and arrivals transfer the film to the next speaker." },
+    { area: "directing", status: "source_verified", note: "Institutional sources credit Linklater's direction and support a production method that makes wandering, listening and social handoffs the organizing action." },
+    { area: "performance", status: "source_verified", note: "Criterion documents more than one hundred characters, while the Library of Congress records Linklater and the local ensemble as part of the film's independent production identity." },
+    { area: "production_design", status: "mapped", note: "Austin houses, cafés, streets, bookstores and transit spaces function as found social environments rather than a separately constructed design world." },
+    { area: "costume_makeup", status: "mapped", note: "Everyday clothing helps distinguish the large local ensemble, but current sources do not document a dedicated costume or makeup process." },
+    { area: "cinematography", status: "source_verified", note: "The Library of Congress credits Lee Daniel, and Criterion and BFI support mobile location photography built around readable Austin spaces and continuous handoffs." },
+    { area: "lighting", status: "mapped", note: "The microbudget location method depends on practical and available environments, but a dedicated lighting account has not yet been located." },
+    { area: "camera_format", status: "source_verified", note: "Criterion and BFI document the original 16mm production; the Library of Congress preserves the distributed 35mm reference-print form." },
+    { area: "editing", status: "source_verified", note: "The Library of Congress credits Scott Rhodes; the film cuts on meetings, departures and spatial transfers so each marginal figure opens the next scene." },
+    { area: "sound_design", status: "source_verified", note: "Conversation, street ambience and imperfect social proximity preserve the feeling of a local oral map rather than a polished studio sound field." },
+    { area: "music", status: "mapped", note: "Recorded music contributes to the Austin environment, but talk and ambient location sound remain more central than a unified score system." },
+    { area: "effects_animation", status: "not_central", note: "The production relies on locations, performers, camera movement and editing handoffs rather than effects or animation." },
+    { area: "documentary_method", status: "source_verified", note: "The feature is scripted, but its local ensemble, regional spaces and accumulation of subcultures make Austin itself an observed social subject." },
+  ],
+} as const satisfies FilmHistoryProfile;
