@@ -42,9 +42,10 @@ const verificationGroups = [
   ["1960s scale and independent systems", ["scenario_psycho_1960", "scenario_lawrence_of_arabia_1962", "scenario_2001_a_space_odyssey_1968", "scenario_night_of_the_living_dead_1968"], 4],
   ["European modernist production systems", ["scenario_hiroshima_mon_amour_1959", "scenario_8_1_2_1963", "scenario_the_umbrellas_of_cherbourg_1964", "scenario_the_battle_of_algiers_1966"], 4],
   ["American independent breakthroughs", ["scenario_killer_of_sheep_1977", "scenario_sex_lies_and_videotape_1989", "scenario_slacker_1990", "scenario_daughters_of_the_dust_1991"], 4],
+  ["Japanese everyday memory systems", ["scenario_tampopo_1985", "scenario_black_rain_imamura_1989", "scenario_after_life_1998", "scenario_still_walking_2008"], 4],
 ] as const;
 
-const expectedVerifiedCount = 176;
+const expectedVerifiedCount = 180;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
