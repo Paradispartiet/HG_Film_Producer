@@ -17,7 +17,7 @@ export const daughtersOfTheDustFilmHistoryProfile = {
     { area: "directing", status: "source_verified", note: "UCLA credits Dash and describes the film's formal construction through symbolic markers, magical-realist gestures and carefully orchestrated family space." },
     { area: "performance", status: "source_verified", note: "UCLA documents the ensemble and describes performances carrying conflicting positions on migration, Christianity, memory, independence and family continuity." },
     { area: "production_design", status: "source_verified", note: "UCLA identifies mise-en-scène and symbolic objects as central to constructing the island home as a cultural and historical world." },
-    { area: "costume_makeup", status: "source_verified", note: "The coordinated white dresses, period clothing, hair and embodied ritual are central visible carriers of family identity, historical time and collective composition." },
+    { area: "costume_makeup", status: "mapped", note: "The coordinated white dresses, period clothing and hair are central visible carriers of family identity, but dedicated department-level documentation is still needed." },
     { area: "cinematography", status: "source_verified", note: "UCLA and the Library of Congress credit Arthur Jafa and preserve the luminous color image as a defining part of landscape, skin, fabric and memory." },
     { area: "lighting", status: "mapped", note: "Natural exteriors and luminous interiors shape the visual world, but the current sources do not isolate a complete lighting process." },
     { area: "camera_format", status: "source_verified", note: "The Library of Congress documents a 35mm color feature in 1.66:1, while restoration records preserve the intended color grading." },
