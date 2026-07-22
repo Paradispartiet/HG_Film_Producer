@@ -8,231 +8,43 @@ import {
   getVerifiedProductionCaseIds,
 } from "./scenarioProductionVerificationRegistry.js";
 
-const silentFoundationIds = [
-  "scenario_a_trip_to_the_moon_1902",
-  "scenario_the_cabinet_of_dr_caligari_1920",
-  "scenario_nosferatu_1922",
-  "scenario_battleship_potemkin_1925",
+const verificationGroups = [
+  ["silent cinema foundations", ["scenario_a_trip_to_the_moon_1902", "scenario_the_cabinet_of_dr_caligari_1920", "scenario_nosferatu_1922", "scenario_battleship_potemkin_1925"], 4],
+  ["silent and early studio systems", ["scenario_the_general_1926", "scenario_the_phantom_carriage_1921", "scenario_metropolis_1927", "scenario_frankenstein_1931"], 5],
+  ["late silent and early sound systems", ["scenario_the_passion_of_joan_of_arc_1928", "scenario_man_with_a_movie_camera_1929", "scenario_m_1931", "scenario_city_lights_1931"], 4],
+  ["1930s production systems", ["scenario_king_kong_1933", "scenario_modern_times_1936", "scenario_snow_white_and_the_seven_dwarfs_1937", "scenario_the_rules_of_the_game_1939"], 4],
+  ["classical Hollywood systems", ["scenario_stagecoach_1939", "scenario_the_wizard_of_oz_1939", "scenario_citizen_kane_1941", "scenario_casablanca_1942"], 4],
+  ["1940s noir and realism systems", ["scenario_double_indemnity_1944", "scenario_brief_encounter_1945", "scenario_rome_open_city_1945", "scenario_the_third_man_1949"], 4],
+  ["crime and noir transformations", ["scenario_the_maltese_falcon_1941", "scenario_the_lost_weekend_1945", "scenario_out_of_the_past_1947", "scenario_band_of_outsiders_1964"], 4],
+  ["Norwegian postwar genre systems", ["scenario_gategutter_1949", "scenario_fjols_til_fjells_1957", "scenario_de_dodes_tjern_1958", "scenario_insomnia_1997"], 4],
+  ["Nordic minimalist social systems", ["scenario_the_match_factory_girl_1990", "scenario_songs_from_the_second_floor_2000", "scenario_the_man_without_a_past_2002", "scenario_oslo_august_31st_2011"], 4],
+  ["modern Nordic behavior systems", ["scenario_force_majeure_2014", "scenario_woman_at_war_2018", "scenario_another_round_2020", "scenario_the_worst_person_in_the_world_2021"], 4],
+  ["1980s political Palme systems", ["scenario_man_of_iron_1981", "scenario_yol_1982", "scenario_the_ballad_of_narayama_1983", "scenario_when_father_was_away_on_business_1985"], 4],
+  ["festival journey displacement systems", ["scenario_pelle_the_conqueror_1987", "scenario_central_station_1998", "scenario_eternity_and_a_day_1998", "scenario_head_on_2004"], 4],
+  ["intimate festival body care systems", ["scenario_vera_drake_2004", "scenario_the_wrestler_2008", "scenario_the_milk_of_sorrow_2009", "scenario_somewhere_2010"], 4],
+  ["festival urban intimacy systems", ["scenario_pieta_2012", "scenario_blue_is_the_warmest_colour_2013", "scenario_black_coal_thin_ice_2014", "scenario_from_afar_2015"], 4],
+  ["contemporary dissent rural systems", ["scenario_synonyms_2019", "scenario_there_is_no_evil_2020", "scenario_bad_luck_banging_or_loony_porn_2021", "scenario_alcarras_2022"], 4],
+  ["contemporary European social care systems", ["scenario_toni_erdmann_2016", "scenario_triangle_of_sadness_2022", "scenario_aftersun_2022", "scenario_the_room_next_door_2024"], 4],
+  ["European poetic memory systems", ["scenario_l_atalante_1934", "scenario_the_spirit_of_the_beehive_1973", "scenario_landscape_in_the_mist_1988", "scenario_the_double_life_of_veronique_1991"], 4],
+  ["British and Irish place-body systems", ["scenario_kes_1969", "scenario_naked_1993", "scenario_hunger_2008", "scenario_the_banshees_of_inisherin_2022"], 4],
+  ["Iberian and Portuguese memory systems", ["scenario_cria_cuervos_1976", "scenario_all_about_my_mother_1999", "scenario_tabu_2012", "scenario_horse_money_2014"], 4],
+  ["Balkan war and institution systems", ["scenario_before_the_rain_1994", "scenario_underground_1995", "scenario_no_mans_land_2001", "scenario_quo_vadis_aida_2020"], 4],
+  ["European 1960s space systems", ["scenario_l_avventura_1960", "scenario_last_year_at_marienbad_1961", "scenario_playtime_1967", "scenario_the_leopard_1963"], 4],
+  ["New German Cinema systems", ["scenario_aguirre_the_wrath_of_god_1972", "scenario_ali_fear_eats_the_soul_1974", "scenario_the_marriage_of_maria_braun_1979", "scenario_wings_of_desire_1987"], 4],
+  ["European time and identity systems", ["scenario_the_vanishing_1988", "scenario_run_lola_run_1998", "scenario_the_white_ribbon_2009", "scenario_phoenix_2014"], 4],
+  ["1950s Asian postwar systems", ["scenario_rashomon_1950", "scenario_tokyo_story_1953", "scenario_seven_samurai_1954", "scenario_pather_panchali_1955"], 4],
+  ["1950s expressive postwar systems", ["scenario_la_strada_1954", "scenario_the_night_of_the_hunter_1955", "scenario_the_seventh_seal_1957", "scenario_touch_of_evil_1958"], 4],
+  ["early 1960s production systems", ["scenario_breakfast_at_tiffany_s_1961", "scenario_jules_and_jim_1962", "scenario_contempt_1963", "scenario_dr_strangelove_1964"], 4],
+  ["postwar European modernism systems", ["scenario_ordet_1955", "scenario_ashes_and_diamonds_1958", "scenario_persona_1966", "scenario_daisies_1966"], 4],
+  ["Czechoslovak New Wave systems", ["scenario_closely_watched_trains_1966", "scenario_the_firemens_ball_1967", "scenario_marketa_lazarova_1967", "scenario_the_cremator_1969"], 4],
+  ["European political and feminist modernism systems", ["scenario_cleo_from_5_to_7_1962", "scenario_the_conformist_1970", "scenario_jeanne_dielman_1975", "scenario_beau_travail_1999"], 4],
+  ["New Hollywood and blockbuster systems", ["scenario_bonnie_and_clyde_1967", "scenario_the_godfather_1972", "scenario_jaws_1975", "scenario_star_wars_1977"], 4],
+  ["1960s scale and independent systems", ["scenario_psycho_1960", "scenario_lawrence_of_arabia_1962", "scenario_2001_a_space_odyssey_1968", "scenario_night_of_the_living_dead_1968"], 4],
+  ["European modernist production systems", ["scenario_hiroshima_mon_amour_1959", "scenario_8_1_2_1963", "scenario_the_umbrellas_of_cherbourg_1964", "scenario_the_battle_of_algiers_1966"], 4],
+  ["American independent breakthroughs", ["scenario_killer_of_sheep_1977", "scenario_sex_lies_and_videotape_1989", "scenario_slacker_1990", "scenario_daughters_of_the_dust_1991"], 4],
 ] as const;
 
-const silentStudioSystemIds = [
-  "scenario_the_general_1926",
-  "scenario_the_phantom_carriage_1921",
-  "scenario_metropolis_1927",
-  "scenario_frankenstein_1931",
-] as const;
-
-const lateSilentEarlySoundIds = [
-  "scenario_the_passion_of_joan_of_arc_1928",
-  "scenario_man_with_a_movie_camera_1929",
-  "scenario_m_1931",
-  "scenario_city_lights_1931",
-] as const;
-
-const productionSystems1930sIds = [
-  "scenario_king_kong_1933",
-  "scenario_modern_times_1936",
-  "scenario_snow_white_and_the_seven_dwarfs_1937",
-  "scenario_the_rules_of_the_game_1939",
-] as const;
-
-const classicalHollywoodIds = [
-  "scenario_stagecoach_1939",
-  "scenario_the_wizard_of_oz_1939",
-  "scenario_citizen_kane_1941",
-  "scenario_casablanca_1942",
-] as const;
-
-const noirRealism1940sIds = [
-  "scenario_double_indemnity_1944",
-  "scenario_brief_encounter_1945",
-  "scenario_rome_open_city_1945",
-  "scenario_the_third_man_1949",
-] as const;
-
-const crimeNoirTransformationsIds = [
-  "scenario_the_maltese_falcon_1941",
-  "scenario_the_lost_weekend_1945",
-  "scenario_out_of_the_past_1947",
-  "scenario_band_of_outsiders_1964",
-] as const;
-
-const norwegianPostwarGenreSystemsIds = [
-  "scenario_gategutter_1949",
-  "scenario_fjols_til_fjells_1957",
-  "scenario_de_dodes_tjern_1958",
-  "scenario_insomnia_1997",
-] as const;
-
-const nordicMinimalistSocialSystemsIds = [
-  "scenario_the_match_factory_girl_1990",
-  "scenario_songs_from_the_second_floor_2000",
-  "scenario_the_man_without_a_past_2002",
-  "scenario_oslo_august_31st_2011",
-] as const;
-
-const modernNordicBehaviorSystemsIds = [
-  "scenario_force_majeure_2014",
-  "scenario_woman_at_war_2018",
-  "scenario_another_round_2020",
-  "scenario_the_worst_person_in_the_world_2021",
-] as const;
-
-const politicalPalme1980sIds = [
-  "scenario_man_of_iron_1981",
-  "scenario_yol_1982",
-  "scenario_the_ballad_of_narayama_1983",
-  "scenario_when_father_was_away_on_business_1985",
-] as const;
-
-const festivalJourneyDisplacementIds = [
-  "scenario_pelle_the_conqueror_1987",
-  "scenario_central_station_1998",
-  "scenario_eternity_and_a_day_1998",
-  "scenario_head_on_2004",
-] as const;
-
-const intimateFestivalBodyCareIds = [
-  "scenario_vera_drake_2004",
-  "scenario_the_wrestler_2008",
-  "scenario_the_milk_of_sorrow_2009",
-  "scenario_somewhere_2010",
-] as const;
-
-const festivalUrbanIntimacyIds = [
-  "scenario_pieta_2012",
-  "scenario_blue_is_the_warmest_colour_2013",
-  "scenario_black_coal_thin_ice_2014",
-  "scenario_from_afar_2015",
-] as const;
-
-const contemporaryDissentRuralIds = [
-  "scenario_synonyms_2019",
-  "scenario_there_is_no_evil_2020",
-  "scenario_bad_luck_banging_or_loony_porn_2021",
-  "scenario_alcarras_2022",
-] as const;
-
-const contemporaryEuropeanSocialCareIds = [
-  "scenario_toni_erdmann_2016",
-  "scenario_triangle_of_sadness_2022",
-  "scenario_aftersun_2022",
-  "scenario_the_room_next_door_2024",
-] as const;
-
-const europeanPoeticMemoryIds = [
-  "scenario_l_atalante_1934",
-  "scenario_the_spirit_of_the_beehive_1973",
-  "scenario_landscape_in_the_mist_1988",
-  "scenario_the_double_life_of_veronique_1991",
-] as const;
-
-const britishIrishPlaceBodyIds = [
-  "scenario_kes_1969",
-  "scenario_naked_1993",
-  "scenario_hunger_2008",
-  "scenario_the_banshees_of_inisherin_2022",
-] as const;
-
-const iberianPortugueseMemoryIds = [
-  "scenario_cria_cuervos_1976",
-  "scenario_all_about_my_mother_1999",
-  "scenario_tabu_2012",
-  "scenario_horse_money_2014",
-] as const;
-
-const balkanWarInstitutionIds = [
-  "scenario_before_the_rain_1994",
-  "scenario_underground_1995",
-  "scenario_no_mans_land_2001",
-  "scenario_quo_vadis_aida_2020",
-] as const;
-
-const european1960sSpaceIds = [
-  "scenario_l_avventura_1960",
-  "scenario_last_year_at_marienbad_1961",
-  "scenario_playtime_1967",
-  "scenario_the_leopard_1963",
-] as const;
-
-const newGermanCinemaIds = [
-  "scenario_aguirre_the_wrath_of_god_1972",
-  "scenario_ali_fear_eats_the_soul_1974",
-  "scenario_the_marriage_of_maria_braun_1979",
-  "scenario_wings_of_desire_1987",
-] as const;
-
-const europeanTimeIdentityIds = [
-  "scenario_the_vanishing_1988",
-  "scenario_run_lola_run_1998",
-  "scenario_the_white_ribbon_2009",
-  "scenario_phoenix_2014",
-] as const;
-
-const asianPostwar1950sIds = [
-  "scenario_rashomon_1950",
-  "scenario_tokyo_story_1953",
-  "scenario_seven_samurai_1954",
-  "scenario_pather_panchali_1955",
-] as const;
-
-const expressivePostwar1950sIds = [
-  "scenario_la_strada_1954",
-  "scenario_the_night_of_the_hunter_1955",
-  "scenario_the_seventh_seal_1957",
-  "scenario_touch_of_evil_1958",
-] as const;
-
-const early1960sProductionSystemsIds = [
-  "scenario_breakfast_at_tiffany_s_1961",
-  "scenario_jules_and_jim_1962",
-  "scenario_contempt_1963",
-  "scenario_dr_strangelove_1964",
-] as const;
-
-const postwarEuropeanModernismIds = [
-  "scenario_ordet_1955",
-  "scenario_ashes_and_diamonds_1958",
-  "scenario_persona_1966",
-  "scenario_daisies_1966",
-] as const;
-
-const czechoslovakNewWaveIds = [
-  "scenario_closely_watched_trains_1966",
-  "scenario_the_firemens_ball_1967",
-  "scenario_marketa_lazarova_1967",
-  "scenario_the_cremator_1969",
-] as const;
-
-const europeanPoliticalFeministModernismIds = [
-  "scenario_cleo_from_5_to_7_1962",
-  "scenario_the_conformist_1970",
-  "scenario_jeanne_dielman_1975",
-  "scenario_beau_travail_1999",
-] as const;
-
-const newHollywoodBlockbusterIds = [
-  "scenario_bonnie_and_clyde_1967",
-  "scenario_the_godfather_1972",
-  "scenario_jaws_1975",
-  "scenario_star_wars_1977",
-] as const;
-
-const sixtiesScaleIndependentIds = [
-  "scenario_psycho_1960",
-  "scenario_lawrence_of_arabia_1962",
-  "scenario_2001_a_space_odyssey_1968",
-  "scenario_night_of_the_living_dead_1968",
-] as const;
-
-const europeanModernistProductionIds = [
-  "scenario_hiroshima_mon_amour_1959",
-  "scenario_8_1_2_1963",
-  "scenario_the_umbrellas_of_cherbourg_1964",
-  "scenario_the_battle_of_algiers_1966",
-] as const;
-
-const expectedVerifiedCount = 172;
+const expectedVerifiedCount = 176;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
@@ -256,251 +68,13 @@ test("verification records are sourced and refer to playable scenarios", () => {
   }
 });
 
-test("silent cinema foundations are verified with four sources each", () => {
-  for (const scenarioId of silentFoundationIds) assert.ok((getProductionCaseVerification(scenarioId)?.sources.length ?? 0) >= 4);
-});
-
-test("silent and early studio systems are verified with five sources each", () => {
-  for (const scenarioId of silentStudioSystemIds) assert.ok((getProductionCaseVerification(scenarioId)?.sources.length ?? 0) >= 5);
-});
-
-test("late silent and early sound systems are verified with four sources each", () => {
-  for (const scenarioId of lateSilentEarlySoundIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("1930s production systems are verified with four sources each", () => {
-  for (const scenarioId of productionSystems1930sIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("classical Hollywood systems are verified with four sources each", () => {
-  for (const scenarioId of classicalHollywoodIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("1940s noir and realism systems are verified with four sources each", () => {
-  for (const scenarioId of noirRealism1940sIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("crime and noir transformation systems are verified with four sources each", () => {
-  for (const scenarioId of crimeNoirTransformationsIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("Norwegian postwar genre systems are verified with four sources each", () => {
-  for (const scenarioId of norwegianPostwarGenreSystemsIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("Nordic minimalist social systems are verified with four sources each", () => {
-  for (const scenarioId of nordicMinimalistSocialSystemsIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("modern Nordic behavior systems are verified with four sources each", () => {
-  for (const scenarioId of modernNordicBehaviorSystemsIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("1980s political Palme systems are verified with four sources each", () => {
-  for (const scenarioId of politicalPalme1980sIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("festival journey displacement systems are verified with four sources each", () => {
-  for (const scenarioId of festivalJourneyDisplacementIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("intimate festival body care systems are verified with four sources each", () => {
-  for (const scenarioId of intimateFestivalBodyCareIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("festival urban intimacy systems are verified with four sources each", () => {
-  for (const scenarioId of festivalUrbanIntimacyIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("contemporary dissent rural systems are verified with four sources each", () => {
-  for (const scenarioId of contemporaryDissentRuralIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("contemporary European social care systems are verified with four sources each", () => {
-  for (const scenarioId of contemporaryEuropeanSocialCareIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("European poetic memory systems are verified with four sources each", () => {
-  for (const scenarioId of europeanPoeticMemoryIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("British Irish place body systems are verified with four sources each", () => {
-  for (const scenarioId of britishIrishPlaceBodyIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("Iberian Portuguese memory systems are verified with four sources each", () => {
-  for (const scenarioId of iberianPortugueseMemoryIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("Balkan war institution systems are verified with four sources each", () => {
-  for (const scenarioId of balkanWarInstitutionIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("European 1960s space systems are verified with four sources each", () => {
-  for (const scenarioId of european1960sSpaceIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("New German Cinema systems are verified with four sources each", () => {
-  for (const scenarioId of newGermanCinemaIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("European time and identity systems are verified with four sources each", () => {
-  for (const scenarioId of europeanTimeIdentityIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("1950s Asian postwar systems are verified with four sources each", () => {
-  for (const scenarioId of asianPostwar1950sIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("1950s expressive postwar systems are verified with four sources each", () => {
-  for (const scenarioId of expressivePostwar1950sIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("early 1960s production systems are verified with four sources each", () => {
-  for (const scenarioId of early1960sProductionSystemsIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("postwar European modernism systems are verified with four sources each", () => {
-  for (const scenarioId of postwarEuropeanModernismIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("Czechoslovak New Wave systems are verified with four sources each", () => {
-  for (const scenarioId of czechoslovakNewWaveIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("European political and feminist modernism systems are verified with four sources each", () => {
-  for (const scenarioId of europeanPoliticalFeministModernismIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("New Hollywood and blockbuster systems are verified with four sources each", () => {
-  for (const scenarioId of newHollywoodBlockbusterIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("1960s scale and independent systems are verified with four sources each", () => {
-  for (const scenarioId of sixtiesScaleIndependentIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
-  }
-});
-
-test("European modernist production systems are verified with four sources each", () => {
-  for (const scenarioId of europeanModernistProductionIds) {
-    const record = getProductionCaseVerification(scenarioId);
-    assert.equal(record?.status, "verified");
-    assert.ok((record?.sources.length ?? 0) >= 4);
+test("controlled verification groups retain their source minimums", () => {
+  for (const [label, scenarioIds, minimumSources] of verificationGroups) {
+    for (const scenarioId of scenarioIds) {
+      const record = getProductionCaseVerification(scenarioId);
+      assert.equal(record?.status, "verified", `${label}: ${scenarioId}`);
+      assert.ok((record?.sources.length ?? 0) >= minimumSources, `${label}: ${scenarioId}`);
+    }
   }
 });
 
