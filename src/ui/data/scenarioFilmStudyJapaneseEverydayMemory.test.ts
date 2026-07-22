@@ -2,12 +2,12 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import { getClassicFilmScenarios } from "./filmScenarios.js";
-import { resolveScenarioProductionBrief } from "./scenarioProductionBriefs.js";
 import {
-  createJapaneseEverydayMemoryFilmHistoryChoices,
-  getJapaneseEverydayMemoryFilmHistoryProfile,
-  resolveJapaneseEverydayMemoryFilmStudyMap,
-} from "./scenarioFilmStudyJapaneseEverydayMemoryBatch.js";
+  createIndependentStorytellingFilmHistoryChoices,
+  getIndependentStorytellingFilmHistoryProfile,
+  resolveIndependentStorytellingFilmStudyMap,
+} from "./scenarioFilmStudyIndependentStorytellingBatch.js";
+import { resolveScenarioProductionBrief } from "./scenarioProductionBriefs.js";
 
 const scenarioIds = [
   "scenario_tampopo_1985",
@@ -22,7 +22,7 @@ test("Japanese everyday memory batch resolves complete source-backed maps", () =
     const scenario = scenarios.get(scenarioId);
     assert.ok(scenario, `Missing scenario ${scenarioId}`);
     const brief = resolveScenarioProductionBrief(scenario);
-    const study = resolveJapaneseEverydayMemoryFilmStudyMap(scenario, brief);
+    const study = resolveIndependentStorytellingFilmStudyMap(scenario, brief);
     assert.equal(study?.scenarioId, scenarioId);
     assert.equal(study?.historyStatus, "source_backed");
     assert.equal(study?.coverage.length, 17);
@@ -34,9 +34,9 @@ test("Japanese everyday memory batch resolves complete source-backed maps", () =
 
 test("Japanese everyday memory choices compare three real systems", () => {
   for (const scenarioId of scenarioIds) {
-    const profile = getJapaneseEverydayMemoryFilmHistoryProfile(scenarioId);
+    const profile = getIndependentStorytellingFilmHistoryProfile(scenarioId);
     assert.ok(profile);
-    const choices = createJapaneseEverydayMemoryFilmHistoryChoices(profile);
+    const choices = createIndependentStorytellingFilmHistoryChoices(profile);
     assert.equal(choices.length, 3);
     assert.deepEqual(new Set(choices.map((choice) => choice.quality)), new Set(["match", "partial", "miss"]));
   }
