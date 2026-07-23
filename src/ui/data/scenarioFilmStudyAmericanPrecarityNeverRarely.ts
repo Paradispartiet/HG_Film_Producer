@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const neverRarelySometimesAlwaysFilmHistoryProfile = {
+  scenarioId: "scenario_never_rarely_sometimes_always_2020",
+  period: "Early-2020s American independent procedural realism, reproductive-care journey and 16 mm adolescent viewpoint",
+  traditions: ["American neorealist independent cinema", "Procedural reproductive-care drama", "Female adolescent subjective realism"],
+  before: "Abortion narratives often centered debate, confession or moral reversal, while travel, cost, paperwork, waiting and the ordinary harassment surrounding access remained compressed or displaced into exposition.",
+  moment: "Eliza Hittman follows two teenagers from Pennsylvania to New York through buses, clinics, waiting rooms and limited cash without turning the decision itself into a debate. Research with counselors, real medical locations, nonprofessional discovery, restrained performance and Hélène Louvart's intimate Kodak 16 mm photography make institutional procedure and mutual care physically present.",
+  after: "Its Sundance neorealism award, Berlinale recognition and rapid critical canonization established the film as a major model for politically urgent drama built through practical barriers, close observation and protection of a young protagonist's interiority.",
+  historyQuestion: "Which production system explains a Kodak 16 mm anti-road movie where bus routes, clinic forms, money, waiting, close facial observation and one sustained counseling interview turn reproductive access into concrete procedural suspense?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Focus, Sundance and Criterion place the film in contemporary United States reproductive-care restrictions, where rural teenagers must cross state lines and navigate cost, secrecy and institutional barriers." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Sundance identifies the film's neorealist approach, while Kodak and Focus describe an intimate independent realism built from adolescent viewpoint and practical procedure." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Focus and Sundance document the Pastel, BBC Film and Focus-backed production, extensive research, location access and the collaboration with counselors and first-time performers." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Sundance records the U.S. Dramatic Special Jury Award for Neorealism and Criterion documents the film's immediate critical importance as a contemporary reproductive-rights drama." },
+    { area: "screenplay", status: "source_verified", note: "Hittman's screenplay withholds debate over Autumn's decision and organizes the drama through travel, forms, medical timing, money, unsafe encounters and the four-answer counseling sequence." },
+    { area: "directing", status: "source_verified", note: "Focus and Sundance document Hittman's research-led method, real-world auditions and preference for unobtrusive observation rather than melodramatic escalation." },
+    { area: "performance", status: "source_verified", note: "Sundance records Sidney Flanigan and Talia Ryder's performances and the casting of counselor Kelly Chapman, whose real professional experience grounds the pivotal interview." },
+    { area: "production_design", status: "source_verified", note: "Production records credit Meredith Lippincott; supermarkets, buses, Port Authority, clinics and waiting rooms remain ordinary systems whose layouts determine movement, exposure and rest." },
+    { area: "costume_makeup", status: "mapped", note: "Repeated practical clothing, one shared suitcase and restrained physical continuity support limited resources and elapsed time, but the inspected sources do not detail the full costume process." },
+    { area: "cinematography", status: "source_verified", note: "Kodak documents Hélène Louvart's close, gesture-focused photography, using faces, hands and bodies to preserve intimacy without turning vulnerability into spectacle." },
+    { area: "lighting", status: "source_verified", note: "Kodak describes a stark naturalistic aesthetic on 16 mm, keeping fluorescent clinics, transit spaces and available-looking city light consistent with the film's unforced observation." },
+    { area: "camera_format", status: "source_verified", note: "Kodak confirms the production was photographed on Kodak 16 mm film, whose grain and compact camera practice support proximity and tactile realism." },
+    { area: "editing", status: "source_verified", note: "Production records credit Scott Cummings; the edit preserves travel duration, queues, forms, repeated examinations and pauses while allowing the counseling scene to unfold without protective interruption." },
+    { area: "sound_design", status: "source_verified", note: "Transit noise, clinic rooms, supermarket ambience, sparse speech and long pauses keep institutional pressure audible without imposing thriller cues or explanatory voice-over." },
+    { area: "music", status: "source_verified", note: "Production records credit Julia Holter; limited score and diegetic performance moments leave most emotional weight with bodies, environment and conversation." },
+    { area: "effects_animation", status: "not_central", note: "The film relies on location, performance, 16 mm photography, editing and sound rather than effects spectacle or animation." },
+    { area: "documentary_method", status: "source_verified", note: "Hittman's interviews with counselors, filming in real care environments and casting of an actual counselor transform research into dramatic procedure while retaining a fictional narrative." },
+  ],
+} as const satisfies FilmHistoryProfile;
