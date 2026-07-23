@@ -45,9 +45,10 @@ const verificationGroups = [
   ["Japanese everyday memory systems", ["scenario_tampopo_1985", "scenario_black_rain_imamura_1989", "scenario_after_life_1998", "scenario_still_walking_2008"], 4],
   ["South Korean genre systems", ["scenario_peppermint_candy_1999", "scenario_oasis_2002", "scenario_the_host_2006", "scenario_the_wailing_2016"], 4],
   ["South and Southeast Asian institutional and performance systems", ["scenario_syndromes_and_a_century_2006", "scenario_court_2014", "scenario_marlina_the_murderer_in_four_acts_2017", "scenario_the_disciple_2020"], 4],
+  ["Hong Kong and Taiwan urban-time systems", ["scenario_days_of_being_wild_1990", "scenario_vive_l_amour_1994", "scenario_millennium_mambo_2001", "scenario_goodbye_dragon_inn_2003"], 4],
 ] as const;
 
-const expectedVerifiedCount = 188;
+const expectedVerifiedCount = 192;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
