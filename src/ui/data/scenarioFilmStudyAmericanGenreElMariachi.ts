@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const elMariachiFilmHistoryProfile = {
+  scenarioId: "scenario_el_mariachi_1992",
+  period: "Early-1990s Latino American microbudget action cinema and resource-driven independent production",
+  traditions: ["Microbudget independent cinema", "Border action western", "Resource-driven genre filmmaking"],
+  before: "Independent action films were commonly judged against studio resources, making scale, coverage and technical polish appear inseparable from large crews and budgets.",
+  moment: "Robert Rodriguez writes around available bars, vehicles, a ranch, friends and props, then directs, photographs, edits and co-produces a Spanish-language mistaken-identity action film whose inserts, repeated objects, concise setups and aggressive sound manufacture momentum from scarcity.",
+  after: "The Sundance Audience Award, Columbia release and 2011 National Film Registry selection made the film a durable model of DIY production and helped establish a visible Latino independent route into American genre filmmaking.",
+  historyQuestion: "Which production system explains a Spanish-language border action film built for roughly seven thousand dollars from available locations, amateur performers, repeated props, clear inserts, economical coverage, self-editing and sharply enlarged gunfire and guitar sound?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, Sundance, BFI and the Library of Congress place the film in the early-1990s American independent boom and document its Mexican-border production context." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The Library of Congress and BFI identify a resourceful fusion of Mexican narcotraficante conventions, transnational action, western mistaken identity and American DIY filmmaking." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Los Hooligans Productions and Rodriguez's multiple roles; the Library of Congress records the two-week, roughly seven-thousand-dollar production and Columbia pickup." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Sundance documents the 1993 festival premiere and preserved anniversary print; the Library of Congress records its 2011 National Film Registry selection and independent-film significance." },
+    { area: "screenplay", status: "source_verified", note: "AFI records Rodriguez designing the story around assets already available, converting two guitar cases, bars, vehicles and local spaces into a clear mistaken-identity chase structure." },
+    { area: "directing", status: "source_verified", note: "Rodriguez coordinates performance, camera, practical action and editorial planning himself, minimizing setups while keeping pursuit, geography and visual misunderstanding readable." },
+    { area: "performance", status: "source_verified", note: "BFI documents a mostly amateur cast led by Carlos Gallardo; direct physical objectives and concise reactions allow nonprofessional energy to serve the film's lean genre rhythm." },
+    { area: "production_design", status: "source_verified", note: "AFI records the production being written around available bars, a ranch, a school bus, a motorcycle and existing props, turning logistical inventory into story design." },
+    { area: "costume_makeup", status: "mapped", note: "Black clothing, guitar cases and practical injury continuity clarify mistaken identities, though the inspected sources do not fully document department-level costume and makeup workflows." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Rodriguez as cinematographer; strong silhouettes, inserts, handheld urgency, repeated angles and practical locations create readable action with minimal equipment." },
+    { area: "lighting", status: "mapped", note: "Available daylight and practical interiors support the fast regional shoot, but the inspected institutional sources do not specify the full lighting package." },
+    { area: "camera_format", status: "source_verified", note: "AFI and BFI document the compact independent feature and its preservation history; the production's economical image strategy was designed for low-cost acquisition and later theatrical release." },
+    { area: "editing", status: "source_verified", note: "AFI credits Rodriguez as editor; concise inserts, eyelines, repeated actions and recombined coverage enlarge gunfights and chases beyond what was captured in any single setup." },
+    { area: "sound_design", status: "source_verified", note: "Gunshots, engines, footsteps, guitar handling and sharply defined effects give weight and continuity to action assembled from sparse visual resources." },
+    { area: "music", status: "source_verified", note: "The mariachi identity, guitar performance and Rodriguez's credited musical contribution bind character, prop logic and genre tone inside the same production system." },
+    { area: "effects_animation", status: "source_verified", note: "Practical squibs, falls, prop weapons and in-camera action are scaled through editing and sound rather than expensive visual effects or animation." },
+    { area: "documentary_method", status: "mapped", note: "Local performers and accessible Ciudad Acuña environments give the fiction regional immediacy, but the film is a tightly planned genre feature rather than documentary work." },
+  ],
+} as const satisfies FilmHistoryProfile;

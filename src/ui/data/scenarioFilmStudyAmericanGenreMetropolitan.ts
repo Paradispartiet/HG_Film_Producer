@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const metropolitanFilmHistoryProfile = {
+  scenarioId: "scenario_metropolitan_1990",
+  period: "1990 American microbudget dialogue comedy and independent urban chamber cinema",
+  traditions: ["American independent comedy", "Comedy of manners", "Urban ensemble chamber film"],
+  before: "Low-budget independent features often sought energy through location realism, genre tension or autobiographical roughness rather than highly controlled verbal ensemble comedy.",
+  moment: "Whit Stillman builds a feature from winter apartments, taxis, formal clothes, unknown performers and carefully shaped conversation, turning class language, romantic misreading and social self-description into the film's principal action.",
+  after: "Its Sundance success, Academy Award screenplay nomination and Independent Spirit recognition demonstrated that an independently financed debut could reach wide audiences through dialogue, performance and recurring interiors rather than conventional spectacle.",
+  historyQuestion: "Which production system explains a shoestring New York debut where repeated apartment gatherings, formal dress, unknown actors, literate dialogue, ensemble timing and restrained monaural sound create the entire dramatic world?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, Sundance, Criterion and BFI place the independently financed debut in the 1990 American indie breakthrough period and document its Upper East Side winter setting." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion and BFI identify a comedy of manners shaped as an American independent chamber film, with language and class performance replacing conventional plot mechanics." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Westerly Films, Allagash Films, independent financing, a five-week New York shoot and the low-cost production model assembled by Stillman." },
+    { area: "reception_and_legacy", status: "source_verified", note: "AFI records the Academy Award screenplay nomination, Independent Spirit first-feature win and festival recognition; Sundance and Criterion describe its lasting independent-film status." },
+    { area: "screenplay", status: "source_verified", note: "Criterion, AFI and Sundance credit Stillman and emphasize dense, stylized conversation, class anxiety, romantic interpretation and recurring argument as the film's structural engine." },
+    { area: "directing", status: "source_verified", note: "Stillman directs long conversational scenes so confidence, deception, attraction and status can shift through delivery, reaction and social positioning rather than action beats." },
+    { area: "performance", status: "source_verified", note: "AFI documents a largely unknown cast and feature debuts; the ensemble's precise verbal rhythm and awkward pauses make social performance visible without broad caricature." },
+    { area: "production_design", status: "source_verified", note: "AFI and Criterion document apartments, hotels, taxis and formal gatherings used as recurring chamber spaces whose limited geography clarifies alliances and exclusions." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion credits Mary Jane Fort; tuxedos, gowns, rented formalwear and controlled grooming communicate money, aspiration and outsider status before dialogue confirms them." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and AFI credit John Thomas; balanced interiors, group compositions, city transitions and restrained close views preserve both ensemble geometry and conversational nuance." },
+    { area: "lighting", status: "mapped", note: "Warm apartment practicals and controlled winter-night interiors support the chamber tone, but the inspected sources do not detail the complete lighting package." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records a 1.66:1 colour presentation and a director-and-cinematographer-supervised restoration with uncompressed monaural sound." },
+    { area: "editing", status: "source_verified", note: "Criterion and AFI credit Christopher Tellefsen; the edit protects extended dialogue while using entrances, exits, taxis and returns to vary the recurring social circuit." },
+    { area: "sound_design", status: "source_verified", note: "Criterion credits Antonio Arroyo and Jay Kessel; clear speech, room tone, street transitions and subdued party ambience keep verbal status games fully intelligible." },
+    { area: "music", status: "source_verified", note: "Criterion credits Mark Suozzo and additional music; restrained scoring supports transitions and melancholy without displacing conversation as the dominant expressive system." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on writing, performance, costume, interior staging, photography and editing rather than effects or animation." },
+    { area: "documentary_method", status: "mapped", note: "Stillman's social observation and captured New York winter environments lend specificity, but the film remains a scripted comedy of manners rather than a documentary hybrid." },
+  ],
+} as const satisfies FilmHistoryProfile;

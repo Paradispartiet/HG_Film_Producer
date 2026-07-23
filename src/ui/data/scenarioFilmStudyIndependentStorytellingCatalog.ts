@@ -1,4 +1,8 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import { bloodSimpleFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreBloodSimple";
+import { elMariachiFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreElMariachi";
+import { metropolitanFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreMetropolitan";
+import { reservoirDogsFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreReservoirDogs";
 import { neverRarelySometimesAlwaysFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecarityNeverRarely";
 import { soundOfMetalFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecaritySoundOfMetal";
 import { theRiderFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecarityTheRider";
@@ -77,6 +81,7 @@ export type IndependentStorytellingProfileGroup =
   | "body_archive_restitution_perspective"
   | "queer_independent_body_community_archive"
   | "american_precarity_body_care"
+  | "american_independent_genre_resourcefulness"
   | "asian_transnational_urban_identity"
   | "japanese_ambiguity_dialogue";
 
@@ -137,6 +142,10 @@ const profiles = [
   theRiderFilmHistoryProfile,
   soundOfMetalFilmHistoryProfile,
   neverRarelySometimesAlwaysFilmHistoryProfile,
+  bloodSimpleFilmHistoryProfile,
+  metropolitanFilmHistoryProfile,
+  reservoirDogsFilmHistoryProfile,
+  elMariachiFilmHistoryProfile,
   cycloFilmHistoryProfile,
   happyTogetherFilmHistoryProfile,
   infernalAffairsFilmHistoryProfile,
@@ -222,6 +231,12 @@ assignGroup("american_precarity_body_care", [
   theRiderFilmHistoryProfile.scenarioId,
   soundOfMetalFilmHistoryProfile.scenarioId,
   neverRarelySometimesAlwaysFilmHistoryProfile.scenarioId,
+]);
+assignGroup("american_independent_genre_resourcefulness", [
+  bloodSimpleFilmHistoryProfile.scenarioId,
+  metropolitanFilmHistoryProfile.scenarioId,
+  reservoirDogsFilmHistoryProfile.scenarioId,
+  elMariachiFilmHistoryProfile.scenarioId,
 ]);
 assignGroup("asian_transnational_urban_identity", [
   cycloFilmHistoryProfile.scenarioId,

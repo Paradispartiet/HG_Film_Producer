@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const reservoirDogsFilmHistoryProfile = {
+  scenarioId: "scenario_reservoir_dogs_1992",
+  period: "Early-1990s American independent crime cinema, nonlinear chamber structure and pop-soundtrack revisionism",
+  traditions: ["American independent crime film", "Nonlinear ensemble thriller", "Postmodern genre revision"],
+  before: "Heist films generally organized suspense around planning, execution and visible action, while independent crime production often imitated studio scale it could not fully afford.",
+  moment: "Quentin Tarantino removes the robbery, concentrates the survivors in a mortuary warehouse, reorganizes time through chapter-like flashbacks and makes dialogue, withheld information, saturated 35 mm color, ensemble blocking and diegetic radio music carry the event's scale.",
+  after: "Its Sundance premiere, Cannes circulation and cult afterlife helped reset expectations for independent genre cinema, popularizing dialogue-led crime ensembles, nonlinear disclosure and pop-song counterpoint across the 1990s.",
+  historyQuestion: "Which production system explains a heist film that omits the heist, traps wounded criminals in one warehouse, uses chapter flashbacks, slow 35 mm stock, intense primary colors, extended dialogue and a fictional radio soundtrack to create scale?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, Sundance and BFI place the feature in the 1991 Directors Lab and 1992 festival breakthrough that accelerated American independent crime cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Sundance identify a postmodern heist revision combining crime chamber drama, nonlinear narration, black comedy, explicit violence and pop-cultural dialogue." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents LIVE America, Dog Eat Dog Productions, producer Lawrence Bender, the five-week Los Angeles shoot and mortuary locations used for the warehouse." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Sundance and BFI document the premiere, divisive response, cult growth and broad influence on 1990s dialogue-driven crime films and soundtrack culture." },
+    { area: "screenplay", status: "source_verified", note: "AFI records Tarantino's chapter-heading concept and inspiration from The Killing; the script distributes backstory and betrayal through flashbacks while withholding the robbery itself." },
+    { area: "directing", status: "source_verified", note: "Sundance Lab support and ASC testimony show Tarantino shaping theatrical ensemble staging, bold framing, rehearsal and tonal shifts between banter, suspense and horror." },
+    { area: "performance", status: "source_verified", note: "Sundance and BFI emphasize the ensemble of Harvey Keitel, Tim Roth, Steve Buscemi, Michael Madsen and others, whose verbal timing and competing loyalties sustain the contained action." },
+    { area: "production_design", status: "source_verified", note: "AFI credits David Wasco and records the mortuary warehouse and embalming-room locations; doors, ramps, blood pools and sparse objects become a changing tactical map." },
+    { area: "costume_makeup", status: "source_verified", note: "The black suits and color-coded identities create immediate group coherence, while practical wound and blood continuity make time, injury and suspicion readable across reordered scenes." },
+    { area: "cinematography", status: "source_verified", note: "ASC and AFI credit Andrzej Sekula; low angles, lateral movement, ensemble wides, withheld offscreen violence and dense color turn the limited warehouse into dynamic cinema." },
+    { area: "lighting", status: "source_verified", note: "ASC documents Sekula's intensive lighting for slow 50 ASA stock, aiming for saturated reds, deep blacks and a richer image than the modest independent budget suggested." },
+    { area: "camera_format", status: "source_verified", note: "ASC documents Kodak 5245 50 ASA motion-picture stock selected to make colors pop and preserve strong contrast during the 35 mm production." },
+    { area: "editing", status: "source_verified", note: "AFI credits Sally Menke; chapter cards, flashbacks and delayed character histories reorder cause while returning repeatedly to the warehouse's urgent present." },
+    { area: "sound_design", status: "source_verified", note: "AFI and BFI document the warehouse dialogue, offscreen action, gunfire and fictional K-Billy radio presentation that joins spatial suspense to tonal counterpoint." },
+    { area: "music", status: "source_verified", note: "BFI and TCM describe the absence of an original score and the use of 1970s songs as diegetic radio, making musical nostalgia collide with violence and black comedy." },
+    { area: "effects_animation", status: "mapped", note: "Practical blood, wounds and makeup effects support the violence, but the film's scale comes primarily from performance, staging, cinematography, editing and sound." },
+    { area: "documentary_method", status: "not_central", note: "The film is a highly stylized scripted crime construction rather than documentary work, despite its reliance on real Los Angeles locations and actor rehearsal." },
+  ],
+} as const satisfies FilmHistoryProfile;
