@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const bloodSimpleFilmHistoryProfile = {
+  scenarioId: "scenario_blood_simple_1984",
+  period: "Mid-1980s American regional independent neo-noir and low-budget genre reinvention",
+  traditions: ["American independent cinema", "Neo-noir", "Regional crime filmmaking"],
+  before: "Independent crime films often borrowed noir iconography while remaining constrained by limited locations, small casts and modest production resources.",
+  moment: "Joel and Ethan Coen turn those limits into a controlled system of misunderstanding, object-based suspense, lurid Texas color, carefully planned camera movement, sparse locations, dark comedy and Carter Burwell's score.",
+  after: "Its 1985 Sundance Grand Jury Prize and later institutional restoration established the film as a foundational example of how regional microbudget production could renew classical genre form and launch a durable independent filmmaking team.",
+  historyQuestion: "Which production system explains a Texas neo-noir where incomplete information, a few rooms and roads, neon color, storyboarded camera movement, precise ellipsis and charged sound turn a modest debut into a major independent breakthrough?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, Sundance, Criterion and BFI place the Coens' debut at the emergence of the mid-1980s American independent boom and identify its Texas neo-noir framework." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion and BFI describe the film as a low-budget neo-noir that combines pulp crime, horror inflection, black comedy and regional independent production." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI records River Road Productions and the principal departments, while Sundance confirms the 1985 Grand Jury Prize and the film's breakthrough status." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Sundance identifies the Grand Jury Prize and continuing influence; Criterion and BFI frame the film as a landmark arrival in American independent cinema." },
+    { area: "screenplay", status: "source_verified", note: "AFI credits Joel and Ethan Coen; institutional analyses describe a plot driven by misread evidence, separate knowledge and plans that collide through misunderstanding." },
+    { area: "directing", status: "source_verified", note: "Joel Coen directs the limited locations and small ensemble as a diagram of partial viewpoints, controlling when characters and spectators can verify events." },
+    { area: "performance", status: "source_verified", note: "Criterion and Sundance foreground Frances McDormand's debut and M. Emmet Walsh's private detective within an ensemble calibrated to concealment, panic and deadpan violence." },
+    { area: "production_design", status: "source_verified", note: "AFI and Criterion credit Jane Musky; bars, bedrooms, roads, offices and the final apartment convert inexpensive regional spaces into legible suspense architecture." },
+    { area: "costume_makeup", status: "mapped", note: "Walsh's yellow suit and the film's practical blood continuity are visually central, although the inspected sources do not fully document the complete costume and makeup workflows." },
+    { area: "cinematography", status: "source_verified", note: "Criterion, AFI and Sundance credit Barry Sonnenfeld and emphasize neon signs, headlights, mobile framing, object detail and strongly controlled color as the film's visual engine." },
+    { area: "lighting", status: "source_verified", note: "Criterion and Sundance describe a look built from neon, jukebox color, darkness and harsh headlights, using contrast to keep evidence and danger only partly visible." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records the colour feature in a 1.85:1 presentation and documents a cinematographer-approved restoration preserving the intended image design." },
+    { area: "editing", status: "source_verified", note: "AFI and Criterion credit Roderick Jaynes and Don Wiegmann; delayed confirmation, cross-cut plans and exact ellipses make misunderstanding structurally productive." },
+    { area: "sound_design", status: "source_verified", note: "Criterion documents sound editor Skip Lievsay; insects, telephones, engines, footsteps, gunshots and sudden quiet sharpen actions occurring beyond secure knowledge." },
+    { area: "music", status: "source_verified", note: "Criterion, AFI and Sundance credit Carter Burwell and identify his haunting score as a central tonal counterweight to the film's violence and black comedy." },
+    { area: "effects_animation", status: "not_central", note: "The film depends on practical blood effects, controlled staging, camera placement, editing and sound rather than animation or effects spectacle." },
+    { area: "documentary_method", status: "mapped", note: "Regional locations and material detail ground the fiction, but the film is a rigorously constructed genre work rather than a documentary or hybrid production." },
+  ],
+} as const satisfies FilmHistoryProfile;
