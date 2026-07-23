@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const cureFilmHistoryProfile = {
+  scenarioId: "scenario_cure_1997",
+  period: "Late-1990s Japanese post-bubble psychological horror, procedural uncertainty and J-horror precursor",
+  traditions: ["Japanese psychological horror", "Procedural uncertainty", "Post-bubble urban dread"],
+  before: "Japanese crime thrillers generally treated investigation as a route toward recovered causality, while supernatural horror more often externalised threat through visible monsters, folklore or explicit rules rather than making ordinary rooms, pauses and incomplete explanation carry the disturbance.",
+  moment: "Kiyoshi Kurosawa turns a serial-murder investigation into a study of suggestion, erased identity and social disconnection. Tokusho Kikumura's restrained 35mm frames, Tomoyuki Maruo's ordinary industrial and domestic spaces, Kan Suzuki's patient ellipses, Gary Ashiya's sparse music and an unusually precise field of water, flame, ventilation and distant traffic make uncertainty physical without resolving it.",
+  after: "The film became Kurosawa's international breakthrough and a major precursor to the late-1990s J-horror wave, demonstrating that genre fear could emerge from duration, offscreen space, social vacancy and unstable causality rather than effects spectacle or a closed supernatural mythology.",
+  historyQuestion: "Which production system explains a 35mm police procedural where hypnotic questioning, deep ordinary spaces, long pauses, water, flame and environmental sound gradually make identity and causality less stable instead of solving the murders cleanly?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion and BFI place the 1997 film at the emergence of post-bubble Japanese horror and identify it as Kurosawa's international breakthrough and an important precursor to the J-horror cycle." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources describe a hybrid of police thriller, psychological horror and existential social inquiry in which dread grows from ordinary urban and industrial space." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion records the producers and principal screenplay, cinematography, production-design, editing and music departments behind the feature's compact genre production." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion and BFI document the film's continuing status as a defining Kurosawa work and a foundational reference for the philosophical, low-key direction later associated with J-horror." },
+    { area: "screenplay", status: "source_verified", note: "Kurosawa's screenplay begins with linked murders but repeatedly weakens conventional clues, identity and motive, turning the investigation into an encounter with suggestion and social erasure rather than a closed solution." },
+    { area: "directing", status: "source_verified", note: "Film at Lincoln Center and Criterion identify the slow-burn method: action is held at a distance, menace enters through pauses and thresholds, and scenes often continue after their expected explanatory beat." },
+    { area: "performance", status: "source_verified", note: "Koji Yakusho and Masato Hagiwara oppose compressed professional control to disarming vacancy; interrogation becomes a rhythm of repetition, hesitation and apparently casual questions rather than conventional confrontation." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Tomoyuki Maruo; hospitals, apartments, police rooms, abandoned structures and bleak industrial edges remain recognisably ordinary while their emptiness and wear make social disconnection visible." },
+    { area: "costume_makeup", status: "mapped", note: "Police dress, plain civilian clothing and bodily marks support institutional identity and violence, but the inspected sources do not document a complete costume or makeup production method." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Tokusho Kikumura and records a supervised restoration; Film at Lincoln Center emphasises the controlled distance and deep, static compositions that allow offscreen and background space to remain threatening." },
+    { area: "lighting", status: "mapped", note: "Muted daylight, practical interiors, shadowed industrial rooms and isolated flames shape the visual field, but the available sources do not specify a complete lighting package." },
+    { area: "camera_format", status: "source_verified", note: "Film at Lincoln Center records a 35mm presentation, while Criterion identifies the colour 1.85:1 feature and a restoration supervised by cinematographer Tokusho Kikumura." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Kan Suzuki; patient scene duration, hard ellipses and withheld connective action preserve uncertainty between suggestion, murder and investigation instead of clarifying cause and effect." },
+    { area: "sound_design", status: "source_verified", note: "Film at Lincoln Center singles out the sound design; water, ventilation, flame, distant traffic, footsteps and abrupt silence recur as sensory triggers and make unseen space active." },
+    { area: "music", status: "source_verified", note: "Criterion credits Gary Ashiya; sparse musical intervention leaves environmental sound and silence exposed, intensifying dread without supplying a stable emotional explanation." },
+    { area: "effects_animation", status: "not_central", note: "The film's horror is constructed through framing, duration, performance, sound and incomplete causality rather than effects-led spectacle or animation." },
+    { area: "documentary_method", status: "mapped", note: "Realistic police procedure and recognisable post-bubble urban environments give the film observational weight, but its method remains a controlled fictional genre construction rather than documentary practice." },
+  ],
+} as const satisfies FilmHistoryProfile;
