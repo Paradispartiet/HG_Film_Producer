@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const desertHeartsFilmHistoryProfile = {
+  scenarioId: "scenario_desert_hearts_1985",
+  period: "Mid-1980s American independent queer romance, regional period drama and lesbian-authored breakthrough",
+  traditions: ["American independent cinema", "Queer period romance", "Regional women-directed filmmaking"],
+  before: "Lesbian relationships in mainstream narrative cinema were often displaced into implication, punishment, pathology or tragic closure, while independent production rarely had the financing or distribution needed to sustain a direct romantic viewpoint.",
+  moment: "Donna Deitch adapts Jane Rule's novel into a 1959 Reno love story built around two women's mutual attraction rather than social condemnation. Independently financed on a limited budget, the film uses Nevada landscape, intimate performance, country music, 1.85 framing and a restrained dramatic structure to make desire, hesitation and the possibility of a shared future visible without converting the romance into a cautionary tale.",
+  after: "Its 1986 Sundance Special Jury Prize, later UCLA-Outfest-Sundance preservation and enduring circulation established Desert Hearts as a foundational reference for lesbian narrative cinema and for independently produced queer romance with a non-punitive ending.",
+  historyQuestion: "Which production system explains a 1959-set Reno romance where independently financed location work, open desert space, country music, intimate performance and 1.85 compositions make lesbian desire direct, gradual and emotionally affirmative?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Sundance and Criterion identify the story as a 1959 Nevada romance centered on Vivian Bell's Reno divorce residency and her growing relationship with Cay Rivvers." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources position the film as an independently made lesbian romance and a major breakthrough in queer and women-directed American cinema." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI and Criterion describe a fully independent, shoestring production, while Sundance documents its 1986 festival recognition and later preservation through UCLA, Outfest and Sundance Institute." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Sundance records the Special Jury Prize Dramatic, and the UCLA-Outfest-Sundance restoration confirms the film's long-term preservation and canonical importance." },
+    { area: "screenplay", status: "source_verified", note: "Natalie Cooper's credited adaptation of Jane Rule's Desert of the Heart structures the romance through arrival, observation, social pressure, hesitation and a final choice rather than punitive melodrama." },
+    { area: "directing", status: "source_verified", note: "Donna Deitch directs the relationship from Vivian's changing perception, balancing social constraint with tenderness and refusing the fatalism common to earlier lesbian representation." },
+    { area: "performance", status: "source_verified", note: "Helen Shaver and Patricia Charbonneau carry the film through contrast, gaze, conversational rhythm and gradual physical confidence, with Audra Lindley shaping the ranch's competing emotional authority." },
+    { area: "production_design", status: "source_verified", note: "Criterion identifies Jeannine Oppewall's production design; ranch interiors, casino space, bars, cars and Reno locations create a socially specific 1959 environment around the romance." },
+    { area: "costume_makeup", status: "mapped", note: "Period dress distinguishes Vivian's controlled East Coast reserve from Cay's local confidence, although the inspected institutional records do not provide a complete costume-and-makeup department account." },
+    { area: "cinematography", status: "source_verified", note: "Robert Elswit's credited cinematography uses desert openness, low interiors and close performance observation; the restoration was supervised by Elswit and created with the UCLA Film & Television Archive." },
+    { area: "lighting", status: "mapped", note: "Natural exterior light, warm interiors and night social spaces support the film's regional intimacy, but the inspected sources do not document a complete lighting package." },
+    { area: "camera_format", status: "source_verified", note: "BFI and Criterion document a colour 1.85:1 presentation, preserved through a director-approved restoration with an uncompressed monaural soundtrack." },
+    { area: "editing", status: "source_verified", note: "The film's editing protects pauses, glances and accumulating encounters so Vivian's emotional shift develops through duration rather than abrupt plot turns." },
+    { area: "sound_design", status: "mapped", note: "Dialogue, casino and ranch ambience, cars and open-landscape quiet create distinct social spaces, while the surviving institutional records chiefly document the mono presentation rather than the full sound crew." },
+    { area: "music", status: "source_verified", note: "BFI and Criterion repeatedly identify the country-and-western song world as central to the film's period, regional identity and emotional atmosphere." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on location, performance, period design, framing, editing and music rather than effects spectacle or animation." },
+    { area: "documentary_method", status: "mapped", note: "The film is fictional but gains specificity from real Nevada geography, period social detail and a production history preserved through institutional archival work." },
+  ],
+} as const satisfies FilmHistoryProfile;
