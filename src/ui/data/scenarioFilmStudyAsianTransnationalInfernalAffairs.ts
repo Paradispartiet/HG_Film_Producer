@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const infernalAffairsFilmHistoryProfile = {
+  scenarioId: "scenario_infernal_affairs_2002",
+  period: "Early-2000s Hong Kong industrial recovery, post-handover identity thriller and precision digital-era crime cinema",
+  traditions: ["Hong Kong crime cinema", "Dual-protagonist undercover thriller", "Post-handover identity noir"],
+  before: "Hong Kong undercover films usually centred one infiltrator and drew suspense from gang loyalty, gunplay and exposure, while the local industry entered the early 2000s under severe commercial pressure and declining production volume.",
+  moment: "Andrew Lau and Alan Mak mirror a police mole inside the triads against a triad mole inside the police. Alan Mak and Felix Chong's screenplay, paired star performances, rooftop and surveillance locations, Andrew Lau and Lai Yiu-fai's widescreen photography, the Pang brothers' editing and phones, recordings and coded sound turn identity into an information system.",
+  after: "The film became a major Hong Kong box-office recovery, launched a trilogy, revitalised the local crime thriller and provided the narrative basis for The Departed, proving that star-driven genre production could regain industrial force through symmetry, moral pressure and precise information control.",
+  historyQuestion: "Which production system explains a Hong Kong thriller built around two mirrored moles, widescreen urban geometry, phones and recordings, parallel investigations and exact crosscutting where each man hunts the traitor who is structurally his double?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Hong Kong Film Archive, BFI and Criterion place the 2002 film inside a weakened local industry and record its role in restoring commercial and international confidence." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources connect the film to Hong Kong undercover and policier traditions while identifying its cooler, more symmetrical revision of heroic-bloodshed crime cinema." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Hong Kong Film Archive records Media Asia and the principal presenters; Criterion records Andrew Lau, Alan Mak, Felix Chong, Nansun Shi, John Chong and the major craft departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI, Film at Lincoln Center and Criterion document the Asian blockbuster success, trilogy, industrial revitalisation and later adaptation as Martin Scorsese's The Departed." },
+    { area: "screenplay", status: "source_verified", note: "Alan Mak and Felix Chong construct two long-term infiltrations as mirrored lines of action, controlling who knows each identity and tightening suspense through simultaneous searches for the same hidden traitor." },
+    { area: "directing", status: "source_verified", note: "Andrew Lau and Alan Mak replace continuous action escalation with controlled encounters, surveillance, moral hesitation and spatially exact confrontations between parallel protagonists." },
+    { area: "performance", status: "source_verified", note: "Tony Leung and Andy Lau oppose exhausted buried identity to polished institutional control, while Anthony Wong and Eric Tsang anchor the emotional cost of each man's divided allegiance." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits Choo Sung-pong and Wong Ching-ching; police offices, hi-fi interiors, rooftops, alleys and reflective glass turn Hong Kong into a network of exposed and concealed identities." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion credits Lee Pik-kwan; suits, police dress, casual undercover clothing and controlled grooming make institutional belonging visible while disguising actual loyalty." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Andrew Lau and Lai Yiu-fai and records a 2.35:1 image; cool glass, compressed interiors and crisp urban distance give the thriller its controlled visual precision." },
+    { area: "lighting", status: "mapped", note: "Blue-green offices, warm hi-fi interiors, backlit rooftops and night streets organise moral and institutional space, but the available sources do not document the full lighting package." },
+    { area: "camera_format", status: "source_verified", note: "Hong Kong Film Archive records a colour 35mm Cantonese feature, while Criterion records the 2.35:1 presentation and later director-approved 4K restoration." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Danny Pang and Curran Pang; parallel raids, phone exchanges, near discoveries and mirrored reaction chains preserve exact information advantage across both sides." },
+    { area: "sound_design", status: "source_verified", note: "Phones, Morse-like coded taps, earpieces, recordings, surveillance playback and controlled silence function as plot actions rather than background texture." },
+    { area: "music", status: "source_verified", note: "Criterion credits Comfort Chan; the score supports moral gravity and mirrored fate without replacing the communication devices and live acoustic clues that drive suspense." },
+    { area: "effects_animation", status: "not_central", note: "The film's impact comes from screenplay symmetry, star performance, real locations, photography, editing and sound rather than effects-led spectacle." },
+    { area: "documentary_method", status: "mapped", note: "Specific Hong Kong streets, institutions and post-handover industrial context ground the fiction, but the production method remains a tightly engineered commercial thriller rather than documentary observation." },
+  ],
+} as const satisfies FilmHistoryProfile;
