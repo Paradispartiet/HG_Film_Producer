@@ -113,6 +113,7 @@ function partialFeedback(group: IndependentStorytellingProfileGroup): string {
     asian_landscape_grief_attention: "This is a real Asian landscape, grief-and-attention system, but it organizes mythic transformation, redevelopment, spiritual crisis, moral observation, performance, duration and sound differently.",
     subjective_enclosure_performance: "This is a real subjective-enclosure and performed-identity system, but it organizes restricted viewpoint, duration, political impersonation, creative labour, architecture, scale and sound differently.",
     family_performance_grief_power: "This is a real family-performance, grief-and-verbal-power system, but it organizes devised behaviour, musical rupture, bereavement routine, long argument, domestic space and sound differently.",
+    body_archive_restitution_perspective: "This is a real bodily-risk, activist-archive, restitution-and-perspective system, but it organizes embodied procedure, personal archive, institutional return, first-person camera, editing and sound differently.",
     asian_transnational_urban_identity: "This is a real Asian transnational urban-identity system, but it organizes migration, labour, romance, surveillance, time and belonging differently.",
     japanese_ambiguity_dialogue: "This is a real Japanese ambiguity-and-dialogue production system, but it organizes hypnosis, coincidence, institutional viewpoint, environmental procedure, performance and sound differently.",
   };
@@ -130,6 +131,7 @@ function missFeedback(group: IndependentStorytellingProfileGroup): string {
     asian_landscape_grief_attention: "This places the film inside the wrong relationship between Asian landscape, loss, social change, moral attention, performance and sensory form.",
     subjective_enclosure_performance: "This places the film inside the wrong relationship between enclosure, social power, performed identity, authorship, duration and visual control.",
     family_performance_grief_power: "This places the film inside the wrong relationship between family behaviour, fantasy, bereavement, argument, class power and everyday space.",
+    body_archive_restitution_perspective: "This places the film inside the wrong relationship between bodily autonomy, activist memory, restitution, historical violence, camera subjectivity and institutional power.",
     asian_transnational_urban_identity: "This places the film inside the wrong relationship between Asian city, displacement, divided identity, social systems and return.",
     japanese_ambiguity_dialogue: "This places the film inside the wrong Japanese relationship between uncertainty, conversation, institutional pressure, landscape and moral interpretation.",
   };

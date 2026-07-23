@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const happeningFilmHistoryProfile = {
+  scenarioId: "scenario_happening_2021",
+  period: "Early-2020s French historical bodily realism, Ernaux adaptation and procedural abortion drama",
+  traditions: ["French literary adaptation", "Embodied historical realism", "Restricted-viewpoint procedural drama"],
+  before: "Historical abortion stories often treated law and social prohibition through retrospective explanation, courtroom debate or broad period reconstruction, while bodily danger remained partially displaced into dialogue and aftermath.",
+  moment: "Audrey Diwan adapts Annie Ernaux by holding the film close to one student's narrowing field of choices in 1963 France. A near-square frame, shallow subjective attention, restrained period display, week markers, practical rooms, bodily sound and procedural duration make illegality operate directly through time, secrecy and physical risk.",
+  after: "The 2021 Venice Golden Lion and subsequent European circulation established the film as a major contemporary model for historical drama in which politics is expressed through embodied viewpoint and accumulating procedure rather than explanatory distance.",
+  historyQuestion: "Which production system explains a 1.37:1 historical drama where passing weeks, shallow focus, ordinary student rooms, institutional quiet and increasingly explicit bodily procedure make an illegal abortion feel like time closing around one person?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Venice, Unifrance and European Film Academy records place the story in early-1960s France, when abortion was illegal and a student's pregnancy threatened education, autonomy and liberty." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify an Annie Ernaux adaptation combining French historical realism, restricted subjective narration and procedural bodily suspense." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Venice and European Film Academy document Rectangle Productions, France 3 Cinéma, Wild Bunch, SRAB and the principal writing, camera, editing, design, costume, makeup, music and sound departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Venice and BFI records identify the film as the 2021 Golden Lion winner, while European Film Academy and Unifrance document its wider festival and institutional circulation." },
+    { area: "screenplay", status: "source_verified", note: "Audrey Diwan and Marcia Romano organize the adaptation through passing weeks, failed requests, secrecy and escalating practical danger while keeping Anne's experience central." },
+    { area: "directing", status: "source_verified", note: "Diwan restricts contextual explanation and directs encounters as immediate obstacles or uncertain openings, allowing the social order to appear through behaviour, avoidance and procedural risk." },
+    { area: "performance", status: "source_verified", note: "Anamaria Vartolomei carries the film through controlled observation, concealment, pain and practical decision-making, with surrounding performances calibrated to what Anne can safely reveal." },
+    { area: "production_design", status: "source_verified", note: "Diéné Bérété's credited design uses dormitories, classrooms, cafés, clinics, homes and hidden rooms as ordinary lived spaces rather than decorative historical display." },
+    { area: "costume_makeup", status: "source_verified", note: "European Film Academy credits Isabelle Pannetier and makeup artists Amélie Bouilly and Sarah Mescoff; period dress and physical continuity support social pressure and bodily change without spectacle." },
+    { area: "cinematography", status: "source_verified", note: "Laurent Tangy's credited cinematography holds close to Anne in a narrow field, using shallow attention and constrained framing to limit what can be known or escaped." },
+    { area: "lighting", status: "mapped", note: "Naturalistic dormitory, classroom, street and interior light preserves immediacy, but the inspected sources do not document the complete lighting package." },
+    { area: "camera_format", status: "source_verified", note: "Unifrance records the colour feature in a 1.37 aspect ratio with 5.1 audio, supporting the film's compressed subjective field." },
+    { area: "editing", status: "source_verified", note: "Géraldine Mangenot's credited editing uses week markers, ellipsis and increasingly sustained procedural scenes to turn delay into danger." },
+    { area: "sound_design", status: "source_verified", note: "European Film Academy and Venice credit Antoine Mercier, Thomas Desjonquères, Simon Poupard and Marc Doisne; breath, bodily sound, institutional quiet and restrained ambience remain close to Anne's experience." },
+    { area: "music", status: "source_verified", note: "Evgueni and Sacha Galperine's credited score remains restrained so suspense grows primarily through duration, performance and physical sound rather than melodramatic release." },
+    { area: "effects_animation", status: "not_central", note: "The film's historical and bodily force depends on performance, practical staging, framing, editing and sound rather than effects spectacle or animation." },
+    { area: "documentary_method", status: "mapped", note: "Ernaux's autobiographical source and historically specific institutions ground the fiction, but the production transforms testimony through controlled dramatic reconstruction." },
+  ],
+} as const satisfies FilmHistoryProfile;
