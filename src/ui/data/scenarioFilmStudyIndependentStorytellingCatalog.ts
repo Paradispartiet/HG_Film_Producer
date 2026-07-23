@@ -85,7 +85,7 @@ const profiles = [
 ] as const satisfies readonly FilmHistoryProfile[];
 
 const profilesByScenarioId = new Map<string, FilmHistoryProfile>(
-  profiles.map((profile) => [profile.scenarioId, profile]),
+  profiles.map((profile) => [profile.scenarioId, profile] as const),
 );
 
 const groupByScenarioId = new Map<string, IndependentStorytellingProfileGroup>();
