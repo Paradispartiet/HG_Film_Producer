@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const platformFilmHistoryProfile = {
+  scenarioId: "scenario_platform_2000",
+  period: "Turn-of-the-millennium Chinese independent cinema, post-Mao social transition and durational provincial realism",
+  traditions: ["Chinese independent cinema", "Sixth Generation realism", "Long-duration social chronicle"],
+  before: "Official historical narratives tended to describe reform through national milestones, while conventional youth and performance films usually compressed change into decisive individual turning points rather than following how work, travel, media and relationships alter over many ordinary years.",
+  moment: "Jia Zhangke follows a Fenyang cultural troupe from 1979 to 1990 as state performance gives way to private enterprise and imported popular culture. Long 35mm views, real provincial environments, ensemble staging, songs, announcements and very large ellipses make social transformation visible through changing routines and distances.",
+  after: "The film consolidated Jia's international position and became a defining work of Chinese independent cinema, showing how provincial location, duration and popular media could register reform-era history outside official spectacle and metropolitan triumphalism.",
+  historyQuestion: "Which production system explains a 35mm provincial troupe chronicle where long views, real locations, travel, changing employment, loudspeakers, popular songs and decade-scale ellipses make reform history accumulate through everyday life?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and festival programme records place the story from 1979 to 1990, following the transition from Mao-era cultural organisation toward reform, private enterprise and new popular media." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional criticism identifies the film with Chinese independent cinema, Jia's hometown trilogy and a realist method joining documentary attention to long-form fictional construction." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Contemporary festival documentation records the Chinese-Hong Kong-Japanese production, principal producers and the cinematography, editing, design, sound and music departments behind the feature." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Festival and BFI records document its 2000 international circulation and continuing status as a major Jia Zhangke work and a central film about China's reform-era transformation." },
+    { area: "screenplay", status: "source_verified", note: "The screenplay follows a performance troupe across more than a decade, letting work, travel, romance, dress, music and institutional change accumulate without a single heroic centre." },
+    { area: "directing", status: "source_verified", note: "Jia stages ensembles in extended real spaces and allows social change to appear through altered behaviour, routes and distances rather than explanatory scenes or dramatic milestones." },
+    { area: "performance", status: "source_verified", note: "The ensemble, including Zhao Tao in her first feature role, uses restrained behaviour and group choreography so private relationships remain embedded in work and collective routine." },
+    { area: "production_design", status: "source_verified", note: "Provincial theatres, rehearsal rooms, streets, courtyards, roads, trains and changing performance equipment create a material timeline of institutional decline and commercial transition." },
+    { area: "costume_makeup", status: "mapped", note: "Uniforms, performance clothes, hairstyles and imported fashions visibly register the decade's cultural shift, but the inspected sources do not document a complete costume or makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Contemporary programme records credit Yu Lik-wai; static and slowly observing long shots place bodies within provincial architecture, landscape and changing public space." },
+    { area: "lighting", status: "mapped", note: "Available light, dim interiors and practical performance illumination support the film's material realism, but the sources do not specify the full lighting method." },
+    { area: "camera_format", status: "source_verified", note: "Festival and BFI records identify the colour feature as a 35mm production, with different circulating cuts preserving its extended durational construction." },
+    { area: "editing", status: "source_verified", note: "Festival records credit Kong Jing-le; large temporal ellipses and patient scenes make historical change legible through what disappears, returns or has become ordinary." },
+    { area: "sound_design", status: "source_verified", note: "Programme records credit Zhang Yang; public announcements, engines, street ambience, rehearsal, amplified performance and distant voices map changing institutions and mobility." },
+    { area: "music", status: "source_verified", note: "Popular songs, state repertoire, rock and electronic performance material function as dated social evidence, while Yoshihiro Hanno's credited music supports the long historical movement." },
+    { area: "effects_animation", status: "not_central", note: "The film's scale comes from duration, real locations, ensemble movement, sound and historical accumulation rather than effects spectacle or animation." },
+    { area: "documentary_method", status: "source_verified", note: "Real Fenyang environments, long observation and attention to local labour give the fiction a documentary-neorealist basis even as its decade-long structure is carefully scripted and staged." },
+  ],
+} as const satisfies FilmHistoryProfile;
