@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const taipeiStoryFilmHistoryProfile = {
+  scenarioId: "scenario_taipei_story_1985",
+  period: "Mid-1980s Taiwan New Cinema, urban modernisation and intimate social dislocation",
+  traditions: ["Taiwan New Cinema", "Urban modernism", "Relationship drama as social history"],
+  before: "Taiwanese commercial cinema more often separated melodrama from direct observation of contemporary urban change, while classical relationship stories usually treated the city as setting rather than as an economic and architectural force acting on private life.",
+  moment: "Edward Yang and his Taiwan New Cinema collaborators place a failing couple inside offices, apartments, roads, windows, television light and migration fantasies. Restrained performance, precise 35mm compositions, negative space, urban sound and ellipsis make rapidly modernising Taipei inseparable from the characters' incompatible memories and futures.",
+  after: "The film became a defining work of Taiwan New Cinema and a durable model for city films in which architecture, work, capital and emotional distance form one system rather than separate themes.",
+  historyQuestion: "Which production system explains a 35mm relationship drama where offices, apartments, traffic, windows, television and restrained ellipses turn Taipei's economic transformation into the couple's emotional crisis?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Taiwanese and international film institutions place the 1985 feature inside Taiwan New Cinema and the island's rapid transition toward urban capitalist modernity." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The restored-film record and critical programmes identify a Taiwan New Cinema method joining contemporary social observation, urban modernism and intimate relationship drama." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Taiwan Cinema and Film Foundation records document the independent collaborative production, principal producers and the writing partnership among Edward Yang, Chu Tien-wen and Hou Hsiao-hsien." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Restoration and repertory programmes treat the film as a central Edward Yang work and a major surviving document of Taiwan New Cinema's examination of urban change." },
+    { area: "screenplay", status: "source_verified", note: "The screenplay organizes work, family obligation, emigration fantasies, old loyalties and failed communication through ordinary encounters rather than a single explanatory conflict." },
+    { area: "directing", status: "source_verified", note: "Yang stages distance through architecture, withheld reaction and quiet scene duration, allowing city systems and social roles to pressure the relationship without overt exposition." },
+    { area: "performance", status: "source_verified", note: "Tsai Chin and Hou Hsiao-hsien use controlled, often non-demonstrative performance; pauses, routine and incompatible rhythms make emotional separation visible before it is spoken." },
+    { area: "production_design", status: "source_verified", note: "Offices, apartments, streets, signs, cars, windows and modern interiors are arranged as social evidence, contrasting corporate aspiration with unstable domestic belonging." },
+    { area: "costume_makeup", status: "mapped", note: "Business dress, baseball associations and ordinary urban clothing distinguish work, memory and social role, but the inspected sources do not document a complete costume or makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Institutional records credit Yang Wei-han; repertory and restoration notes emphasize precise urban compositions, negative space, windows, reflected surfaces and figures held inside modern architecture." },
+    { area: "lighting", status: "source_verified", note: "TFAI restoration notes specifically identify variations of daylight, shadow and blank space as means of deepening alienation and the emotional texture of city life." },
+    { area: "camera_format", status: "source_verified", note: "Taiwan Cinema and restoration records identify the colour feature as a 35mm production now preserved and circulated through restored digital materials." },
+    { area: "editing", status: "source_verified", note: "Taiwan Cinema credits Liao Ching-sung; restrained transitions and ellipses allow work changes, departures and emotional erosion to register indirectly across the city." },
+    { area: "sound_design", status: "source_verified", note: "Taiwan Cinema credits Tu Duu-chih; traffic, telephones, television, offices, domestic quiet and music create distinct but overlapping zones of modern Taipei." },
+    { area: "music", status: "mapped", note: "Popular and recorded music connects nostalgia, youth culture and urban interiors, although the available sources do not describe a complete scoring method." },
+    { area: "effects_animation", status: "not_central", note: "The film's modernity is constructed through location, architecture, performance, framing, editing and sound rather than effects spectacle or animation." },
+    { area: "documentary_method", status: "mapped", note: "Real Taipei locations and close attention to work, housing and traffic give the fiction observational force, but it remains a scripted and precisely staged drama." },
+  ],
+} as const satisfies FilmHistoryProfile;

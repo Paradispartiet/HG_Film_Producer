@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const farewellMyConcubineFilmHistoryProfile = {
+  scenarioId: "scenario_farewell_my_concubine_1993",
+  period: "Early-1990s Chinese Fifth Generation historical epic, opera performance and political melodrama",
+  traditions: ["Chinese Fifth Generation", "Historical melodrama", "Peking opera performance cinema"],
+  before: "Large Chinese historical films often treated political transformation through public leaders, battlefield scale or national allegory, while backstage performance dramas usually kept artistic identity separate from the full violence of twentieth-century regime change.",
+  moment: "Chen Kaige follows two Peking opera performers from brutal childhood training through war, occupation, revolution and the Cultural Revolution. Opera roles, bodily discipline, costume, makeup, saturated colour, crowds, recurring gestures and a decades-long structure make performance both intimate identity and public political evidence.",
+  after: "The film shared the 1993 Palme d'Or, becoming the first Chinese-language feature to receive Cannes' highest prize. Its international success made Fifth Generation historical cinema newly visible while its restored director's cut preserved the longer relation among opera, desire, censorship and political memory.",
+  historyQuestion: "Which production system explains a decades-spanning historical melodrama where opera training, repeated roles, costume, makeup, colour, crowds, applause and political slogans continually rebuild the performers' identities?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, Criterion and Hong Kong Film Archive records place the story across warlord rule, Japanese occupation, civil war, Communist revolution and the Cultural Revolution." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify a Fifth Generation historical epic structured through Peking opera, performance melodrama and the tension between artistic role and political identity." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion and Cannes document the Chinese-Hong Kong production, producer Hsu Feng and the principal writing, camera, editing, art, costume, makeup, music and sound departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Festival de Cannes confirms the shared 1993 Palme d'Or, while restoration records document the continuing circulation of the longer director's cut and its canonical international status." },
+    { area: "screenplay", status: "source_verified", note: "Adapted from Lilian Lee's novel, the screenplay links decades of political rupture through recurring opera roles, loyalty, desire and betrayal rather than treating history as detachable background." },
+    { area: "directing", status: "source_verified", note: "Chen stages training, backstage preparation, performance and public denunciation as variations on controlled bodies, making theatrical repetition carry private and political transformation." },
+    { area: "performance", status: "source_verified", note: "Leslie Cheung, Zhang Fengyi and Gong Li combine opera gesture, melodramatic intensity and changing social behaviour; performance inside the story continually alters performance outside it." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits production designer Yang Yu-he; opera schools, theatres, streets, mansions, military occupations and revolutionary assemblies create a material chronology across several regimes." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion and Cannes records credit costume and makeup departments, while restoration materials foreground the transformation from punished child bodies to elaborately constructed opera characters and later political exposure." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and Cannes credit Gu Changwei; saturated colour, theatrical depth, smoke, mass composition and intimate close observation bind opera spectacle to historical violence." },
+    { area: "lighting", status: "mapped", note: "Stage light, backstage shadow, warm interiors and harsher public spaces strongly differentiate artistic and political worlds, but the inspected sources do not describe the complete lighting package." },
+    { area: "camera_format", status: "source_verified", note: "Institutional restoration records identify the colour feature and its 4K restoration from original film elements, preserving the widescreen director's-cut presentation." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Pei Xiaonan; decades are crossed through performance echoes, repeated gestures, abrupt political ruptures and returns to the opera rather than exhaustive chronological explanation." },
+    { area: "sound_design", status: "source_verified", note: "Opera singing, training commands, applause, battle and street noise, public slogans and private speech chart changing systems of authority around the performers." },
+    { area: "music", status: "source_verified", note: "Criterion credits Zhao Jiping; opera repertory and original scoring connect remembered roles, public ceremony and private tragedy across the film's historical span." },
+    { area: "effects_animation", status: "not_central", note: "Historical scale is built primarily through crowds, locations, performance, design, costume, makeup, sound and editorial compression rather than effects-led spectacle or animation." },
+    { area: "documentary_method", status: "mapped", note: "The production draws on opera practice and twentieth-century history, but it transforms this research into an expressive star-led epic rather than a documentary reconstruction." },
+  ],
+} as const satisfies FilmHistoryProfile;

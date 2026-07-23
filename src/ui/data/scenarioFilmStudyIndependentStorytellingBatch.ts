@@ -109,6 +109,7 @@ function partialFeedback(group: IndependentStorytellingProfileGroup): string {
     south_southeast_asian: "This is a real South or Southeast Asian production system, but it organizes institution, performance, landscape, duration, genre and sound differently.",
     hong_kong_taiwan_urban_time: "This is a real Hong Kong or Taiwan urban-time system, but it organizes memory, architecture, duration, performance, music and exhibition space differently.",
     chinese_language_space_genre: "This is a real Chinese-language production system, but it organizes ritual, geography, historical genre, violence, duration and immersive space differently.",
+    chinese_language_modernity_memory: "This is a real Chinese-language modernity-and-memory system, but it organizes urban change, family history, opera performance, provincial duration, ellipsis and sound differently.",
     asian_transnational_urban_identity: "This is a real Asian transnational urban-identity system, but it organizes migration, labour, romance, surveillance, time and belonging differently.",
     japanese_ambiguity_dialogue: "This is a real Japanese ambiguity-and-dialogue production system, but it organizes hypnosis, coincidence, institutional viewpoint, environmental procedure, performance and sound differently.",
   };
@@ -122,6 +123,7 @@ function missFeedback(group: IndependentStorytellingProfileGroup): string {
     south_southeast_asian: "This places the film inside the wrong South or Southeast Asian institutional and production logic.",
     hong_kong_taiwan_urban_time: "This places the film inside the wrong Hong Kong or Taiwan relationship between city, memory, duration and spectatorship.",
     chinese_language_space_genre: "This places the film inside the wrong Chinese-language relationship between history, space, violence, genre and cinematic duration.",
+    chinese_language_modernity_memory: "This places the film inside the wrong Chinese-language relationship between modernisation, political memory, performance tradition, provincial life and historical time.",
     asian_transnational_urban_identity: "This places the film inside the wrong relationship between Asian city, displacement, divided identity, social systems and return.",
     japanese_ambiguity_dialogue: "This places the film inside the wrong Japanese relationship between uncertainty, conversation, institutional pressure, landscape and moral interpretation.",
   };

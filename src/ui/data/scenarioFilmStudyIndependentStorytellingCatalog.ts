@@ -7,6 +7,10 @@ import { aTouchOfSinFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguag
 import { longDaysJourneyIntoNightFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageLongDaysJourney";
 import { raiseTheRedLanternFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageRaiseTheRedLantern";
 import { theAssassinFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageTheAssassin";
+import { aCityOfSadnessFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageModernityCityOfSadness";
+import { farewellMyConcubineFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageModernityFarewellMyConcubine";
+import { platformFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageModernityPlatform";
+import { taipeiStoryFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageModernityTaipeiStory";
 import { daysOfBeingWildFilmHistoryProfile } from "./scenarioFilmStudyEastAsianDaysOfBeingWild";
 import { goodbyeDragonInnFilmHistoryProfile } from "./scenarioFilmStudyEastAsianGoodbyeDragonInn";
 import { millenniumMamboFilmHistoryProfile } from "./scenarioFilmStudyEastAsianMillenniumMambo";
@@ -42,6 +46,7 @@ export type IndependentStorytellingProfileGroup =
   | "south_southeast_asian"
   | "hong_kong_taiwan_urban_time"
   | "chinese_language_space_genre"
+  | "chinese_language_modernity_memory"
   | "asian_transnational_urban_identity"
   | "japanese_ambiguity_dialogue";
 
@@ -74,6 +79,10 @@ const profiles = [
   aTouchOfSinFilmHistoryProfile,
   theAssassinFilmHistoryProfile,
   longDaysJourneyIntoNightFilmHistoryProfile,
+  taipeiStoryFilmHistoryProfile,
+  aCityOfSadnessFilmHistoryProfile,
+  farewellMyConcubineFilmHistoryProfile,
+  platformFilmHistoryProfile,
   cycloFilmHistoryProfile,
   happyTogetherFilmHistoryProfile,
   infernalAffairsFilmHistoryProfile,
@@ -117,6 +126,12 @@ assignGroup("chinese_language_space_genre", [
   aTouchOfSinFilmHistoryProfile.scenarioId,
   theAssassinFilmHistoryProfile.scenarioId,
   longDaysJourneyIntoNightFilmHistoryProfile.scenarioId,
+]);
+assignGroup("chinese_language_modernity_memory", [
+  taipeiStoryFilmHistoryProfile.scenarioId,
+  aCityOfSadnessFilmHistoryProfile.scenarioId,
+  farewellMyConcubineFilmHistoryProfile.scenarioId,
+  platformFilmHistoryProfile.scenarioId,
 ]);
 assignGroup("asian_transnational_urban_identity", [
   cycloFilmHistoryProfile.scenarioId,
