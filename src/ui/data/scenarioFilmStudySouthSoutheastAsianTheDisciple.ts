@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const theDiscipleFilmHistoryProfile = {
+  scenarioId: "scenario_the_disciple_2020",
+  period: "Early-2020s Indian independent cinema, classical-music process drama and digital contemplative realism",
+  traditions: ["Indian independent cinema", "Classical-music process drama", "Contemplative digital realism"],
+  before: "Music films often compressed training into montage, separated authentic performance from dramatic shooting or guaranteed exceptional talent a recognisable triumph, leaving the long uncertainty of disciplined but limited artistic pursuit underexplored.",
+  moment: "Chaitanya Tamhane builds a multi-year portrait around real Hindustani musicians performing and recording on set, extended takes, exact musical duration and a digital image system whose lenses, movement and lighting gradually shift from romantic aspiration toward sharper everyday disillusionment.",
+  after: "Its Venice screenplay and FIPRESCI prizes, New York Film Festival selection and continuing cinematography and museum study established the film as a major production reference for representing artistic process without simplifying talent, tradition, commerce or failure.",
+  historyQuestion: "Which production system explains a music drama where real performers, five-to-seven-minute takes, live on-set playing and a changing lens strategy make artistic discipline and possible failure physically visible?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Venice, BFI, MoMA and Film at Lincoln Center place the 2020 feature inside contemporary Indian independent cinema and a long cinematic engagement with Hindustani classical tradition." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources describe contemplative Indian art cinema, musical process drama and a time-spanning artist portrait that refuses a simple success-or-failure arc." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Venice records Zoo Entertainment, producer Vivek Gomber, writer-director-editor Tamhane and the principal image, design, costume, music, sound and visual-effects departments; ASC documents Alfonso Cuarón's executive-production mentorship." },
+    { area: "reception_and_legacy", status: "source_verified", note: "ASC and BFI record the Venice Best Screenplay and FIPRESCI prizes and further festival recognition, while Film at Lincoln Center and MoMA document continued exhibition and study." },
+    { area: "screenplay", status: "source_verified", note: "Tamhane's screenplay spans more than a decade through lessons, competitions, work, recordings and ellipses, testing inherited ideals against talent, livelihood, commercial media and ordinary adulthood." },
+    { area: "directing", status: "source_verified", note: "ASC documents Tamhane's preference for low-key naturalism, extended musical duration and restrained movement whose rare camera changes correspond to the protagonist's inner relation to music." },
+    { area: "performance", status: "source_verified", note: "Film at Lincoln Center identifies singer Aditya Modak as a first-time actor, while ASC documents non-actor musicians performing rather than lip-syncing through takes lasting five to seven minutes and sometimes repeated thirty to fifty times." },
+    { area: "production_design", status: "source_verified", note: "Venice credits Pooja Talreja and Ravin D. Karde; ASC describes culturally specific Mumbai homes, teaching rooms, concert stages and locations whose colours and materials were checked against class and lived reality." },
+    { area: "costume_makeup", status: "source_verified", note: "Venice credits Sachin Lovalekar; costume supports the film's long chronology, performance settings and changing professional status, although makeup remains deliberately unobtrusive." },
+    { area: "cinematography", status: "source_verified", note: "ASC documents Michał Sobociński's gradually evolving visual plan, long wide musical takes, gentle spiritual camera movement, static observational passages and complex slow-motion motorcycle sequences." },
+    { area: "lighting", status: "source_verified", note: "ASC details elaborate low-key lighting hidden behind visible practical sources, SkyPanels in rooms, remote iPad control and extensive street lighting designed to appear naturalistic without interrupting performers." },
+    { area: "camera_format", status: "source_verified", note: "ASC records the Arri Alexa Mini with Cooke Anamorphic/i SF lenses for youthful idealism, later Arri/Zeiss Master Primes for clinical disillusionment and an Alexa SXT for high-speed motorcycle work." },
+    { area: "editing", status: "source_verified", note: "Venice credits Tamhane as editor; temporal jumps, recurring lessons and contrasting performance contexts measure small changes in confidence, listening and expectation across years." },
+    { area: "sound_design", status: "source_verified", note: "Venice credits Anita Kushwaha and Naren Chandavarkar, while ASC documents live on-set musical recording and the production's refusal to hide performance behind lip-sync or fragmented coverage." },
+    { area: "music", status: "source_verified", note: "Venice credits Aneesh Pradhan; real raag performance, teaching, tuning, breathing, archival voice and imperfect practice function as primary dramatic action rather than background scoring." },
+    { area: "effects_animation", status: "source_verified", note: "Venice credits Pawasut Chatmaleerat for visual effects, while ASC documents motion-control and technically complex camera systems designed to remain narratively unobtrusive." },
+    { area: "documentary_method", status: "mapped", note: "Real musicians, live performance duration, culturally exact locations and process observation create documentary intensity, but the film remains a fully scripted and designed fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;
