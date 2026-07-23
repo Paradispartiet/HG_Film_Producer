@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const theAssassinFilmHistoryProfile = {
+  scenarioId: "scenario_the_assassin_2015",
+  period: "Mid-2010s Taiwanese auteur cinema, wuxia revision and historical attention cinema",
+  traditions: ["Taiwanese auteur cinema", "Wuxia revision", "Historical attention cinema"],
+  before: "Contemporary wuxia usually organised historical space around frequent combat, explanatory intrigue and escalating spectacle, while landscape and court ritual served as connective material between action scenes.",
+  moment: "Hou Hsiao-hsien and Chu Tien-wen adapt the Tang-dynasty Nie Yinniang tale through selective disclosure, distant observation and moral hesitation. Mark Lee Ping-bing's layered landscapes and interiors, Hwarng Wern-ying's design, Liao Ching-sung and Huang Chih-chia's elliptical editing, Tu Duu-chih's environmental sound and Lim Giong's sparse music make attention, air, fabric and offscreen politics more important than combat quantity.",
+  after: "The Cannes Best Director award and broad critical recognition established the film as a landmark demonstration that wuxia could be rebuilt through realism, duration, historical texture and female moral agency rather than continuous choreography and exposition.",
+  historyQuestion: "Which production system explains a wuxia film where long observation, layered interiors, landscape sound and brief razor-sharp fights make moral attention more important than combat quantity?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, BFI and Film at Lincoln Center place the 2015 Taiwan-China-Hong Kong-France production inside Hou Hsiao-hsien's return after eight years and his first full wuxia feature." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify the film as both a Tang-dynasty wuxia and an unmistakable Hou work, combining martial-arts tradition with Taiwanese New Cinema's realism, duration and elliptical history." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes records the international co-production and credits Hou, Chu Tien-wen, Mark Lee Ping-bing, Hwarng Wern-ying, Liao Ching-sung, Huang Chih-chia, Tu Duu-chih and Lim Giong." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the 2015 Best Director award, while BFI and Film at Lincoln Center document its immediate recognition as a major revision of wuxia and a leading film of the year." },
+    { area: "screenplay", status: "source_verified", note: "Hou and Chu Tien-wen loosely adapt a Tang chuanqi tale, retaining family and provincial politics while withholding explanatory links so decisions emerge through observation and ritual." },
+    { area: "directing", status: "source_verified", note: "BFI analysis describes measured pacing, long quiet passages and realism interrupted by very brief action, preserving Hou's attention to behaviour, space and offscreen history." },
+    { area: "performance", status: "source_verified", note: "Shu Qi centres the film through stillness, watching and withheld action; BFI highlights her almost dialogue-free physical control inside courtly mise-en-scene." },
+    { area: "production_design", status: "source_verified", note: "Cannes credits Hwarng Wern-ying; layered curtains, screens, smoke, ritual objects and Tang court environments make political relationships visible without explanatory dialogue." },
+    { area: "costume_makeup", status: "source_verified", note: "Period robes, veils, armour and black assassin clothing are integrated with fabric movement and rank; institutional reviews identify historical verisimilitude and courtly texture as central." },
+    { area: "cinematography", status: "source_verified", note: "Cannes credits Mark Lee Ping-bing; wide compositions, distant bodies, mountain mist, trees and layered interiors shift attention from coverage to observation within the frame." },
+    { area: "lighting", status: "source_verified", note: "BFI analysis emphasises natural atmosphere, shadowed interiors and light passing through gauze and curtains, making visibility and concealment part of Yinniang's moral position." },
+    { area: "camera_format", status: "source_verified", note: "BFI records colour and black-and-white presentation in 1.85:1 with Dolby Digital, while Cannes documents the 104-minute competition version." },
+    { area: "editing", status: "source_verified", note: "Cannes credits Liao Ching-sung and Huang Chih-chia; long preparations and offscreen political events are interrupted by short, sharply cut fights rather than sustained action coverage." },
+    { area: "sound_design", status: "source_verified", note: "Cannes credits Tu Duu-chih; wind, birds, insects, fabric, footsteps and distant activity keep the historical environment active around sparse dialogue." },
+    { area: "music", status: "source_verified", note: "Cannes credits Lim Giong; sparse percussion and restrained scoring support ritual and landscape without converting the film into conventional heroic spectacle." },
+    { area: "effects_animation", status: "mapped", note: "Wire, stunt and impact work support brief fights, but BFI stresses razor-sharp editing and physical realism rather than spectacle-heavy effects as the dominant system." },
+    { area: "documentary_method", status: "mapped", note: "The film is a meticulously designed historical fiction, though its patient observation of weather, bodies and landscapes gives the world a material, almost documentary presence." },
+  ],
+} as const satisfies FilmHistoryProfile;
