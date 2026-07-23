@@ -20,11 +20,11 @@ export const wheelOfFortuneFilmHistoryProfile = {
     { area: "costume_makeup", status: "mapped", note: "Contemporary work, student and domestic clothing support social position and role-play, but the current sources do not isolate the costume or makeup departments." },
     { area: "cinematography", status: "source_verified", note: "BFI identifies medium and long shots, enclosed spaces and precisely responsive camera movement as the visual method that keeps conversational power and the actors' full physical relation readable." },
     { area: "lighting", status: "mapped", note: "Soft contemporary interiors and practical urban environments preserve naturalistic attention to faces and bodies, but a complete lighting package is not documented in the inspected sources." },
-    { area: "camera_format", status: "source_verified", note: "BFI Southbank records a digital Japanese feature presentation, supporting the clean contemporary image system used across the three separately contained stories." },
+    { area: "camera_format", status: "mapped", note: "Institutional records identify the finished digital presentation, but the currently inspected sources do not document the complete acquisition-camera format." },
     { area: "editing", status: "source_verified", note: "The triptych is divided into complete episodes while internal cuts protect long exchanges, delayed responses and reversals; occasional formal restarts make imagined alternatives visible without merging the stories." },
     { area: "sound_design", status: "source_verified", note: "Speech, pauses, breath, car movement, room tone and open doors remain foregrounded so language and the social risk of being overheard function as material events." },
     { area: "music", status: "not_central", note: "The production's primary rhythm comes from language, silence and performance duration rather than a continuous score organising the anthology." },
     { area: "effects_animation", status: "not_central", note: "Coincidence and imagined alternatives are staged through performance, framing and editing rather than visual-effects or animation systems." },
-    { area: "documentary_method", status: "source_verified", note: "Hamaguchi's workshop-based rehearsal and attention to unsmoothed conversational behaviour give the fiction an observational density even though all three episodes are carefully scripted constructions." },
+    { area: "documentary_method", status: "mapped", note: "Hamaguchi's workshop-based rehearsal and attention to unsmoothed conversational behaviour give the fiction observational density, but the production is a carefully scripted dramatic construction rather than a documentary method." },
   ],
 } as const satisfies FilmHistoryProfile;
