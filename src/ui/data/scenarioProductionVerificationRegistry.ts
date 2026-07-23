@@ -53,6 +53,7 @@ import { silentFoundationsVerificationRecords } from "./scenarioProductionVerifi
 import { silentStudioSystemsVerificationRecords } from "./scenarioProductionVerificationSilentStudioSystemsBatch";
 import { southKoreanGenreSystemsVerificationRecords } from "./scenarioProductionVerificationSouthKoreanGenreSystemsBatch";
 import { southSoutheastAsianSystemsVerificationRecords } from "./scenarioProductionVerificationSouthSoutheastAsianSystemsBatch";
+import { subjectiveEnclosurePerformanceVerificationRecords } from "./scenarioProductionVerificationSubjectiveEnclosurePerformanceBatch";
 import { technologyHistoryVerificationRecords } from "./scenarioProductionVerificationTechnologyBatch";
 
 export type {
@@ -79,6 +80,7 @@ const additionalVerificationRecords = [
   ...chineseLanguageSpaceGenreVerificationRecords,
   ...chineseLanguageModernityMemoryVerificationRecords,
   ...asianLandscapeGriefAttentionVerificationRecords,
+  ...subjectiveEnclosurePerformanceVerificationRecords,
   ...asianTransnationalUrbanIdentityVerificationRecords,
   ...japaneseAmbiguityDialogueVerificationRecords,
   ...silentFoundationsVerificationRecords,

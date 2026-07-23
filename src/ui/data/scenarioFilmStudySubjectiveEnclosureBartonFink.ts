@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const bartonFinkFilmHistoryProfile = {
+  scenarioId: "scenario_barton_fink_1991",
+  period: "Early-1990s American independent-studio crossover, Hollywood labour satire and surreal hotel chamber film",
+  traditions: ["Coen brothers genre hybridity", "Hollywood writer satire", "Expressionist chamber nightmare"],
+  before: "Hollywood writer films usually opposed artistic integrity to commercial compromise through recognisable industry conflict, while studio-era satire kept psychological breakdown separate from the literal architecture of production work.",
+  moment: "Joel and Ethan Coen write a playwright into a 1941 studio contract and trap him inside the decaying Hotel Earle. Roger Deakins's first Coen collaboration, Dennis Gassner's seedy production design, repeating corridors, peeling wallpaper, oppressive heat, low room noise, long conversations and sudden genre rupture turn writer's block into a material and subjective system.",
+  after: "Its unprecedented 1991 Cannes sweep—Palme d'Or, director and actor prizes—established the Coens internationally and began their long visual collaboration with Deakins, while the film became a durable model for industry satire that mutates into noir, horror and self-accusation.",
+  historyQuestion: "Which production system explains a 1941 Hollywood satire where one hotel room, repeating corridors, peeling wallpaper, heat, plumbing, low mechanical noise and a blocked screenplay turn labour, class rhetoric and authorship into a surreal chamber nightmare?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, Cannes and BFI place the film inside a fictionalised 1941 studio system shaped by contract writing, Wallace Beery assignments, playwright migration and Hollywood labour hierarchy." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify a Coen brothers hybrid of studio satire, writer film, black comedy, noir, expressionism and chamber horror." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI records the script's origin during work on Miller's Crossing and its parts conceived for John Turturro and John Goodman; Cannes and BFI document the principal production team." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes confirms the 1991 Palme d'Or, Best Director and Best Actor awards; ASC and later institutional histories identify the film as the beginning of the Coens' collaboration with Roger Deakins." },
+    { area: "screenplay", status: "source_verified", note: "The Coens build writer's block from contradictions between Barton's rhetoric about ordinary people, his inability to listen, studio demands and escalating events that refuse stable genre explanation." },
+    { area: "directing", status: "source_verified", note: "Joel Coen controls long conversations and precise comic timing before allowing hotel space, offscreen events and abrupt violence to destabilize the apparent industry satire." },
+    { area: "performance", status: "source_verified", note: "John Turturro's self-serious verbal control and John Goodman's warmth, physical scale and volatility create a relationship in which social listening and artistic representation are continually tested." },
+    { area: "production_design", status: "source_verified", note: "Cannes credits Dennis Gassner; the Hotel Earle's corridors, elevator, wallpaper, room geometry and oppressive surfaces become the film's principal psychological and narrative machine." },
+    { area: "costume_makeup", status: "mapped", note: "Period suits, studio dress and hotel appearance distinguish theatrical self-image, executive authority and ordinary labour, but the inspected sources do not document the complete costume and makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Cannes and AFI credit Roger Deakins; ASC records the collaboration's early storyboard process and the controlled camera system that made the film his first feature with the Coens." },
+    { area: "lighting", status: "source_verified", note: "Warm, sickly hotel interiors, hard studio-office separation, shadowed corridors and fire-lit rupture make heat and enclosure visible without abandoning period readability." },
+    { area: "camera_format", status: "mapped", note: "Institutional records document the colour 116-117 minute feature and its theatrical presentation, but the inspected sources do not provide a complete original stock-and-lens specification." },
+    { area: "editing", status: "source_verified", note: "Cannes and AFI credit Roderick Jaynes and Michael Berenbaum; long dialogue scenes, withheld coverage, ellipsis and abrupt tonal breaks move the film from comedy into nightmare." },
+    { area: "sound_design", status: "source_verified", note: "Room hum, distant activity, insects, plumbing, elevator movement, footsteps and sudden silence make the hotel feel inhabited and hostile beyond what the confined camera shows." },
+    { area: "music", status: "source_verified", note: "Cannes credits Carter Burwell; restrained motifs deepen Barton's grandiosity and the hotel's uncanny pressure without turning the chamber film into continuous melodrama." },
+    { area: "effects_animation", status: "mapped", note: "Fire, corridor transformation and selected subjective transitions involve practical and optical control, but the inspected sources do not document the complete effects process." },
+    { area: "documentary_method", status: "mapped", note: "Studio history, playwright mythology and period production research ground the satire, but the film deliberately compresses and distorts them into a subjective genre labyrinth." },
+  ],
+} as const satisfies FilmHistoryProfile;

@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const burningFilmHistoryProfile = {
+  scenarioId: "scenario_burning_2018",
+  period: "Late-2010s South Korean social mystery, literary adaptation and class-fractured ambiguity",
+  traditions: ["New Korean Cinema", "Literary social mystery", "Restricted-viewpoint ambiguity cinema"],
+  before: "Mystery thrillers usually separated objective clues from a protagonist's interpretation, while class dramas tended to identify exploitation through visible institutions or confirmed criminal acts.",
+  moment: "Lee Chang-dong loosely adapts Haruki Murakami by restricting the film to an insecure aspiring writer whose observations of Haemi and Ben are socially precise but never fully reliable. Patient digital widescreen, peripheral action, dusk, glass, rural borders, delayed repetition, jazz and charged silence turn class resentment and masculine fantasy into an unresolved disappearance.",
+  after: "Its Cannes technical prize, FIPRESCI recognition and international reception made the film a major contemporary model for mysteries in which class structure, viewpoint and absence generate suspense without producing a final authoritative solution.",
+  historyQuestion: "Which production system explains a digital literary mystery where dusk, glass, rural borders, luxury interiors, jazz, repeated objects and one insecure viewpoint make class difference and a woman's disappearance impossible to separate from projection?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "KOFIC and BFI situate the film in contemporary South Korea's economic anxiety, youth precarity, gender tension and widening class distance." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify a New Korean Cinema social mystery joining literary adaptation, slow-burn thriller form and constructive ambiguity." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes and KOFIC document Pinehouse Film, Nowfilm, NHK participation, Finecut sales and the principal writing, camera, design, editing, music and sound departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes confirms the 2018 Vulcain Prize for an artist technician, while KOFIC and BFI record the film's major international critical and festival standing." },
+    { area: "screenplay", status: "source_verified", note: "Lee Chang-dong and Oh Jung-mi expand Murakami's short story into a class-fractured triangular drama whose missing information remains filtered through Jongsu's uncertain interpretation." },
+    { area: "directing", status: "source_verified", note: "Lee stages ordinary social behaviour with enough duration for attraction, humiliation and suspicion to coexist, refusing to confirm whether Jongsu's pattern-making is insight or projection." },
+    { area: "performance", status: "source_verified", note: "Yoo Ah-in's guarded physicality, Steven Yeun's relaxed opacity and Jun Jong-seo's shifting self-presentation create three incompatible social rhythms rather than fixed psychological explanations." },
+    { area: "production_design", status: "source_verified", note: "Paju farm space, Haemi's cramped apartment, Ben's polished interiors, cafés, roads and greenhouses materialize unequal access to privacy, mobility and narrative control." },
+    { area: "costume_makeup", status: "mapped", note: "Clothing distinguishes precarious work, aspirational self-presentation and frictionless wealth, but the inspected sources do not document the complete costume and makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Cannes credits Hong Kyung-pyo; BFI criticism emphasizes exact camera placement, peripheral information, haunted landscape, dusk and glass as sources of uncertainty." },
+    { area: "lighting", status: "source_verified", note: "Natural dusk, window light, polished interiors and dark rural exteriors create beauty that can register simultaneously as sensual, threatening and unreadable." },
+    { area: "camera_format", status: "source_verified", note: "Institutional discussion identifies the film as Lee's first digitally photographed feature, using digital latitude for dusk, long observation and subtle spatial detail." },
+    { area: "editing", status: "source_verified", note: "Cannes credits Kim Hyun and Kim Da-won; delayed causal links, long observational passages and retrospective repetitions allow suspicion to accumulate without objective confirmation." },
+    { area: "sound_design", status: "source_verified", note: "Cannes credits Lee Seung-chul; rural ambience, traffic, phones, quiet apartments, distant broadcasts and charged silence widen what Jongsu cannot verify visually." },
+    { area: "music", status: "source_verified", note: "Cannes credits Mowg; jazz and deep, restrained tonal material intensify suspended observation without dictating a single thriller explanation." },
+    { area: "effects_animation", status: "not_central", note: "Threat and uncertainty are built through performance, landscape, viewpoint, editing and sound rather than effects spectacle or animation." },
+    { area: "documentary_method", status: "mapped", note: "Specific contemporary locations and social behaviours create observational credibility, but the production remains a tightly controlled literary adaptation and subjective fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;
