@@ -53,11 +53,12 @@ const verificationGroups = [
   ["Family performance, grief and verbal power systems", ["scenario_secrets_and_lies_1996", "scenario_dancer_in_the_dark_2000", "scenario_the_sons_room_2001", "scenario_winter_sleep_2014"], 4],
   ["Body, archive, restitution and perspective systems", ["scenario_happening_2021", "scenario_all_the_beauty_and_the_bloodshed_2022", "scenario_dahomey_2024", "scenario_nickel_boys_2024"], 4],
   ["Queer independent body, community and archive systems", ["scenario_desert_hearts_1985", "scenario_paris_is_burning_1990", "scenario_safe_1995", "scenario_the_watermelon_woman_1996"], 4],
+  ["American precarity, body and care systems", ["scenario_wendy_and_lucy_2008", "scenario_the_rider_2017", "scenario_sound_of_metal_2019", "scenario_never_rarely_sometimes_always_2020"], 4],
   ["Asian transnational urban identity systems", ["scenario_cyclo_1995", "scenario_happy_together_1997", "scenario_infernal_affairs_2002", "scenario_return_to_seoul_2022"], 4],
   ["Japanese ambiguity and dialogue systems", ["scenario_cure_1997", "scenario_wheel_of_fortune_and_fantasy_2021", "scenario_monster_kore_eda_2023", "scenario_evil_does_not_exist_2023"], 4],
 ] as const;
 
-const expectedVerifiedCount = 228;
+const expectedVerifiedCount = 232;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
