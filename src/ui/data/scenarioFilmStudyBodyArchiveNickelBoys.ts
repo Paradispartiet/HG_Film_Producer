@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const nickelBoysFilmHistoryProfile = {
+  scenarioId: "scenario_nickel_boys_2024",
+  period: "Mid-2020s American historical adaptation, radical first-person grammar and sentient-image cinema",
+  traditions: ["American historical adaptation", "First-person experiential cinema", "Documentary-inflected memory montage"],
+  before: "Historical institutional-abuse dramas usually maintained third-person coverage, giving viewers spatial overview and protected observational distance even when centred on victims' experience.",
+  moment: "RaMell Ross and cinematographer Jomo Fray rebuild conventional coverage around the embodied viewpoints of Elwood and Turner. Sony VENICE modular builds, Panavision VA lenses, body and helmet rigs, remote heads, shallow focus, 360-degree sets, archival fragments and Nicholas Monsour's associative editing make gaze, touch and withheld sight the film's ethical and historical structure.",
+  after: "Its NYFF Opening Night presentation and major cinematography recognition established the film as a prominent contemporary experiment in adapting historical fiction through a camera that behaves as a responsive body rather than an invisible observer.",
+  historyQuestion: "Which production system explains a historical adaptation where every scene is designed from a character's sentient first-person gaze, using modular cameras, body rigs, remote heads, 360-degree sets, shallow focus and associative archive so looking becomes an ethical action?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Film at Lincoln Center identifies the Jim Crow-era Florida reform-school setting and the real institutional history underlying Colson Whitehead's novel and the film's adaptation." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional and craft sources identify a radical first-person historical adaptation combining experiential fiction, photographic attention and documentary-inflected archival memory." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Film at Lincoln Center records Orion Pictures, Amazon MGM Studios, Plan B, Anonymous Content and Louverture Films, while craft interviews document extensive collaborative camera and set engineering." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The film opened the 62nd New York Film Festival, and Panavision records Jomo Fray's ASC Spotlight Award for the cinematography." },
+    { area: "screenplay", status: "source_verified", note: "RaMell Ross and Joslyn Barnes adapt the novel through exchanged viewpoints, fragmented memory and delayed historical consequence rather than conventional omniscient exposition." },
+    { area: "directing", status: "source_verified", note: "Ross treats the camera as a sentient participant whose gaze responds to actors, rehearsals and social danger, removing much of the distance associated with third-person historical drama." },
+    { area: "performance", status: "source_verified", note: "Actors perform toward, around and sometimes physically with the camera as Elwood or Turner, making eye contact, touch and improvised gaze changes central to scene construction." },
+    { area: "production_design", status: "source_verified", note: "Film Independent documents sets prepared for 360-degree scrutiny because the first-person camera could turn toward walls, tables and peripheral details rather than remain within conventional coverage axes." },
+    { area: "costume_makeup", status: "mapped", note: "Period clothing and physical continuity support the embodied historical viewpoint, but the inspected sources do not document the complete costume and makeup workflow." },
+    { area: "cinematography", status: "source_verified", note: "Jomo Fray and Ross planned each scene as a potential oner, using shallow focus, meticulous gaze maps, handheld movement, remote heads and custom body rigs to create an image tied to a body with stakes." },
+    { area: "lighting", status: "source_verified", note: "Craft interviews describe lighting and rigging teams coordinating around mobile 360-degree viewpoints so natural and period environments remained readable without exposing technical infrastructure." },
+    { area: "camera_format", status: "source_verified", note: "Film Independent documents a Sony VENICE system with Rialto separation for modular builds, while Panavision records VA large-format spherical lenses selected for volume, speed and lightweight point-of-view rigs." },
+    { area: "editing", status: "source_verified", note: "Film at Lincoln Center credits Nicholas Monsour's precise editing; viewpoint exchanges, associative cuts, archives and later-life fragments gradually clarify identity and historical consequence." },
+    { area: "sound_design", status: "source_verified", note: "Offscreen voices, bodily proximity, institutional noise and environmental detail extend the restricted image and preserve events that the character-camera cannot safely or directly see." },
+    { area: "music", status: "mapped", note: "Music participates in memory and historical texture, but the inspected sources focus more strongly on perspective, camera engineering and montage than on a complete scoring method." },
+    { area: "effects_animation", status: "mapped", note: "Custom rigs, low-frame-rate step printing and archival integration create selected perceptual effects, but the central innovation remains practical camera embodiment rather than effects spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "Ross brings documentary attention to gesture, environment and historical evidence into a scripted adaptation, while archival material interrupts and enlarges the characters' partial perceptions." },
+  ],
+} as const satisfies FilmHistoryProfile;
