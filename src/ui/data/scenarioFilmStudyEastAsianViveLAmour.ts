@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const viveLAmourFilmHistoryProfile = {
+  scenarioId: "scenario_vive_l_amour_1994",
+  period: "Mid-1990s Taiwan New Cinema, urban alienation and minimalist queer slow cinema",
+  traditions: ["Taiwan New Cinema", "Urban alienation cinema", "Minimalist queer slow cinema"],
+  before: "Urban romance generally connected characters through dialogue, shared social spaces and visible relationship progression, while empty property and construction space remained background rather than the central measure of emotional disconnection.",
+  moment: "Tsai Ming-liang places three isolated people inside and around one vacant Taipei apartment, using precise staging, minimal dialogue, long static observation, plumbing, doors and anonymous development space to make physical proximity and emotional absence the same production problem. The final park shot was discovered on location and extended into the film's cathartic ending.",
+  after: "The Golden Lion established Tsai internationally and consolidated a cinema of queer longing, urban vacancy, deadpan physical comedy and protracted duration that would shape his later work and the broader idea of contemporary slow cinema.",
+  historyQuestion: "Which production system explains a romance in which three people share a vacant apartment but remain emotionally separated through static duration, plumbing, doors, near encounters and almost no explanatory dialogue?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Criterion and Venice place the 1994 feature inside Taiwan's Second New Wave and Tsai Ming-liang's emerging international cinema of urban loneliness and queer desire." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional accounts identify minimalist slow cinema, tortured queerness, tragicomic erotic staging and vacant modern architecture as the film's defining tradition." },
+    { area: "industry_and_production_context", status: "source_verified", note: "The Venice restoration record identifies Central Motion Picture Corporation and records the screenplay, cinematography, editing, design, costume and five-person sound team." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion and Venice document the Golden Lion and the film's role in establishing Tsai as a leading international filmmaker, with a major restoration returning to Venice Classics in 2025." },
+    { area: "screenplay", status: "source_verified", note: "Tsai, Tsai Yi-chun and Yang Pi-ying construct the drama from routines, accidental cohabitation, withheld knowledge and near encounters rather than dialogue-led romance or a conventional triangle." },
+    { area: "directing", status: "source_verified", note: "Tsai's BFI interview explains that the final park scene was created from the discovered location, available sunlight and an on-the-day decision to let May Lin cry there." },
+    { area: "performance", status: "source_verified", note: "BFI and Criterion describe precisely staged tragicomic encounters in which Lee Kang-sheng, Yang Kuei-mei and Chen Chao-jung carry longing through bodies, waiting, sex, fatigue and silence." },
+    { area: "production_design", status: "source_verified", note: "Venice credits Chen Chien-hsun; the vacant apartment, stairwells, doors and the under-construction park organise ownership, concealment, cruising and emotional isolation." },
+    { area: "costume_makeup", status: "mapped", note: "Venice credits Lo Chung-hung and clothing supports profession and everyday Taipei life, but the current sources do not document a complete costume or makeup method." },
+    { area: "cinematography", status: "source_verified", note: "Venice credits Liao Pen-jung and Lin Ming-kuo; static framings and measured distance keep multiple rooms, thresholds and offscreen occupants legible within the same architecture." },
+    { area: "lighting", status: "source_verified", note: "Tsai's account of the final scene explicitly identifies the found sunlight as a directing condition, while apartment and construction spaces retain practical, unglamorous urban illumination." },
+    { area: "camera_format", status: "source_verified", note: "The Venice archive records the 118-minute 1994 feature and its restored presentation, preserving the film's original long-duration visual construction." },
+    { area: "editing", status: "source_verified", note: "Venice credits Sung Shun-cheng; duration, repeated entrances and delayed crossings allow absence and proximity to accumulate without conventional dramatic compression." },
+    { area: "sound_design", status: "source_verified", note: "Venice records the extensive sound team; footsteps, plumbing, doors, traffic, chewing and long speechless intervals turn the apartment and city into an acoustic container." },
+    { area: "music", status: "not_central", note: "The film's emotional system depends on environmental sound, bodily rhythm and silence rather than a continuous musical score." },
+    { area: "effects_animation", status: "not_central", note: "Urban alienation is produced through real architecture, duration, performance and sound rather than effects or animation." },
+    { area: "documentary_method", status: "mapped", note: "Vacant property, construction and ordinary Taipei behavior are observed with documentary patience, although the encounters are precisely staged fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;
