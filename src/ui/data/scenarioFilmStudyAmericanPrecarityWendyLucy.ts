@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const wendyAndLucyFilmHistoryProfile = {
+  scenarioId: "scenario_wendy_and_lucy_2008",
+  period: "Late-2000s American minimalist independent cinema, recession precarity and Pacific Northwest road-film revision",
+  traditions: ["American regional independent cinema", "Minimalist social realism", "Anti-road-movie precarity drama"],
+  before: "American road films often converted movement into freedom, reinvention or adventure, while poverty appeared as background texture rather than a chain of practical decisions capable of ending a journey.",
+  moment: "Kelly Reichardt and Jon Raymond compress a cross-country aspiration into one Oregon town, one failing car, a missing dog and a shrinking cash reserve. A 35 mm production by Filmscience and Glass Eye Pix uses restrained performance, precise locations, sparse music, train sound and Reichardt's own editing to make every small delay materially consequential.",
+  after: "Its Cannes Un Certain Regard selection, AFI recognition and later institutional retrospectives established Wendy and Lucy as a defining model for post-recession American independent cinema built from economic procedure, regional space and unsentimental care.",
+  historyQuestion: "Which production system explains a 35 mm Oregon anti-road movie where a broken car, a lost dog, exact cash calculations, freight-train sound and restrained cutting turn economic precarity into the film's entire dramatic engine?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, AFI, Cannes and Criterion place the film in a late-2000s American economy where one failed car and one minor legal incident can collapse a worker's already fragile plan." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify Reichardt's minimalist regional cinema, Pacific Northwest location practice and revision of the road movie through stalled movement rather than liberation." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI records Filmscience and Glass Eye Pix, producers Neil Kopp, Anish Savjani and Larry Fessenden, and the principal creative departments behind the independent production." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the 2008 Un Certain Regard selection; AFI named it among the year's ten films, and BFI and Criterion later positioned it as a central Reichardt work." },
+    { area: "screenplay", status: "source_verified", note: "Cannes, AFI and BFI credit Kelly Reichardt and Jon Raymond adapting Raymond's Train Choir into a chain of practical setbacks, withheld backstory and irreversible decisions." },
+    { area: "directing", status: "source_verified", note: "Reichardt directs through observation, offhand encounters and procedural detail, refusing explanatory speeches or sentimental rescue while keeping Wendy's choices legible." },
+    { area: "performance", status: "source_verified", note: "MoMA and BFI describe Michelle Williams's restrained, career-defining performance, while Lucy's ordinary animal behaviour keeps the central bond free of theatrical manipulation." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Ryan Smith; parking lots, grocery aisles, garages, streets and the animal shelter remain functional locations whose costs and rules shape the story." },
+    { area: "costume_makeup", status: "mapped", note: "Wendy's repeated clothing and practical appearance support continuity, mobility and limited resources, but the inspected institutional sources do not document a detailed costume process." },
+    { area: "cinematography", status: "source_verified", note: "AFI and Cannes credit Sam Levy, whose controlled framing and location photography keep Wendy embedded in roadsides, commercial margins and wooded Oregon space." },
+    { area: "lighting", status: "mapped", note: "Available-looking exterior and practical interior light preserve regional realism, but the inspected sources do not specify the complete lighting package." },
+    { area: "camera_format", status: "source_verified", note: "MoMA identifies the film as a 35 mm, 80-minute presentation, linking its modest production scale to a materially textured theatrical image." },
+    { area: "editing", status: "source_verified", note: "AFI and Cannes credit Kelly Reichardt as editor; the cut preserves waiting, walking, searching and transactional steps while removing conventional road-movie acceleration." },
+    { area: "sound_design", status: "source_verified", note: "AFI credits Leslie Shatz and Eric Offin; freight trains, traffic, footsteps, phone calls, store ambience and quiet distance make mobility audible even when Wendy cannot move." },
+    { area: "music", status: "source_verified", note: "AFI records Will Oldham's Wendy theme and Smokey Hormel's grocery-store music; sparse placement prevents score from manufacturing reassurance." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on location, performance, material objects, editing and sound rather than effects spectacle or animation." },
+    { area: "documentary_method", status: "mapped", note: "Real Oregon locations and observational restraint give the fiction documentary pressure, but the film remains a scripted adaptation rather than a nonfiction work." },
+  ],
+} as const satisfies FilmHistoryProfile;
