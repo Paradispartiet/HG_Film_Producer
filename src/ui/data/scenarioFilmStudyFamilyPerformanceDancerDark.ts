@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const dancerInTheDarkFilmHistoryProfile = {
+  scenarioId: "scenario_dancer_in_the_dark_2000",
+  period: "Turn-of-the-millennium European digital experimentation, anti-musical melodrama and transnational art production",
+  traditions: ["Post-Dogme handheld realism", "Hollywood musical revision", "European transnational melodrama"],
+  before: "Classical musicals transformed hardship into coordinated spectacle through polished continuity and stable visual mastery, while social realism typically rejected fantasy numbers in order to preserve one consistent observational world.",
+  moment: "Lars von Trier collides unstable handheld factory melodrama with Björk's musical imagination. Robby Müller's naturalistic photography, harsh social spaces and distressed editing give way to songs assembled from environmental rhythms, choreographed movement and, in one production-documented sequence, one hundred cameras that multiply viewpoints beyond Selma's failing sight.",
+  after: "The Palme d'Or and Björk's Best Actress prize made the film a defining turn-of-the-millennium collision of digital experimentation, art-house melodrama and musical form, showing that songs could intensify rather than escape institutional violence.",
+  historyQuestion: "Which production system explains a factory melodrama where handheld social realism breaks into songs built from machine rhythms, choreography and many simultaneous cameras, so musical omniscience expands precisely as the protagonist loses her sight?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, BFI and DFI place the film in the turn-of-the-millennium European art-cinema moment following Dogme 95 and within a large Denmark-led transnational co-production." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional records identify a deliberate hybrid of claustrophobic social realism, tragic melodrama and modern revision of the classical Hollywood musical." },
+    { area: "industry_and_production_context", status: "source_verified", note: "DFI documents Zentropa Entertainments, producer Vibeke Windeløv and extensive international producing, camera, editing, design, sound, music and choreography departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes confirms the 2000 Palme d'Or and Best Actress award; DFI records its Cannes premiere and continued institutional recognition." },
+    { area: "screenplay", status: "source_verified", note: "Von Trier structures the story as escalating labour, medical, legal and economic pressure interrupted by songs generated from Selma's perception of ordinary sound." },
+    { area: "directing", status: "source_verified", note: "The direction opposes unstable observational scenes to choreographed musical expansions, making fantasy a temporary formal reorganisation rather than a separate safe world." },
+    { area: "performance", status: "source_verified", note: "Björk's performance moves between guarded naturalism, bodily musical invention and increasingly restricted institutional space; Catherine Deneuve and the ensemble anchor fantasy in work and care." },
+    { area: "production_design", status: "source_verified", note: "Karl Juliusson's credited design links factory, trailer, railway, courtroom, theatre rehearsal and prison as repetitive systems whose textures can be transformed into musical pattern." },
+    { area: "costume_makeup", status: "source_verified", note: "DFI credits Manon Rasmussen and Sanne Gravfort with expanded makeup teams; practical work clothing and restrained appearance preserve social realism around the star performance." },
+    { area: "cinematography", status: "source_verified", note: "Cannes and DFI credit Robby Müller, with additional camera units and operators; handheld realism contrasts with distributed musical coverage and liberated camera positions." },
+    { area: "lighting", status: "source_verified", note: "DFI credits gaffer Frank Berger; flat industrial, domestic and institutional environments contrast with the greater colour and spatial freedom of musical sequences." },
+    { area: "camera_format", status: "source_verified", note: "DFI records a 35mm, CinemaScope, colour, Dolby Digital Stereo release while also documenting video, digital-dailies and technical-direction roles in the hybrid production workflow." },
+    { area: "editing", status: "source_verified", note: "Cannes and DFI credit Molly Malene Stensgaard and François Gédigier; distressed continuity in dramatic scenes gives way to rhythmic multi-angle assembly during songs." },
+    { area: "sound_design", status: "source_verified", note: "DFI credits Per Streit and Kristian Selin Eidnes Andersen; factory machines, trains, footsteps, courtroom marks and prison counting become both oppressive ambience and sources for musical rhythm." },
+    { area: "music", status: "source_verified", note: "Cannes and DFI credit Björk and Mark Bell, with lyrics, arrangements, singing and individual song records documenting how the score grows from the protagonist's sensory world." },
+    { area: "effects_animation", status: "mapped", note: "Digital dailies, colour timing and technical direction supported the hybrid image system, but effects are subordinate to camera multiplication, choreography, editing and sound." },
+    { area: "documentary_method", status: "source_verified", note: "DFI's production documentary Von Trier's 100 Eyes records the making of a dance sequence with one hundred cameras, making the unusual musical capture method directly inspectable." },
+  ],
+} as const satisfies FilmHistoryProfile;

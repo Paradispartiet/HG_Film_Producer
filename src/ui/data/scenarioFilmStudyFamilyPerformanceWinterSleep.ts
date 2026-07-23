@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const winterSleepFilmHistoryProfile = {
+  scenarioId: "scenario_winter_sleep_2014",
+  period: "Mid-2010s Turkish-European chamber epic, Chekhovian dialogue and Anatolian class enclosure",
+  traditions: ["Turkish art cinema", "Chekhovian chamber drama", "Long-duration moral argument"],
+  before: "Rural class conflict was often externalized through land, labour and visible confrontation, while dialogue-heavy chamber films typically reduced geography so speech could function apart from wider social systems.",
+  moment: "Nuri Bilge Ceylan and Ebru Ceylan confine a former actor-landlord, his wife, his sister and indebted tenants within Cappadocia's winter landscape and a cave hotel. Gökhan Tiryaki's interiors and snowbound exteriors, 196-minute duration, long confrontational conversations, withheld reactions, fire, windows and sparse environmental sound make eloquence itself a form of property and power.",
+  after: "The 2014 Palme d'Or consolidated Ceylan's international position and made the film a major contemporary example of how novelistic dialogue, landscape and digital-duration cinema can expose self-deception without reducing characters to a single moral verdict.",
+  historyQuestion: "Which production system explains a 196-minute Anatolian chamber epic where a cave hotel, snow, fire, windows and very long conversations let a former actor-landlord use intelligence and language as instruments of class and marital power?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, BFI and European Film Academy place the film in contemporary Turkey and in a Turkey-France-Germany production shaped by property, tenancy, philanthropy, marriage and rural inequality." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional records support a Turkish art-cinema chamber epic combining Chekhovian literary influence, Bergman-like moral confrontation and Ceylan's long-duration landscape practice." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes documents Zeynofilm, Memento Production and Bredok Film Production with producer Zeynep Özbatur Atakan and the principal camera, editing, design and sound departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes confirms the 2014 Palme d'Or; European Film Academy records nominations for European Film, Director and Screenwriter." },
+    { area: "screenplay", status: "source_verified", note: "Ebru and Nuri Bilge Ceylan build the 196-minute screenplay from interlocking disputes over rent, charity, marriage, divorce, writing and responsibility, with speech repeatedly changing the balance of power." },
+    { area: "directing", status: "source_verified", note: "Ceylan sustains conversations beyond ordinary dramatic efficiency, using silence, exits, repeated accusations and shifting sympathy to prevent any speaker from controlling the film's final judgment." },
+    { area: "performance", status: "source_verified", note: "Haluk Bilginer, Melisa Sözen and Demet Akbağ turn intellectual fluency, restraint, interruption and bodily withdrawal into competing strategies inside the confined hotel." },
+    { area: "production_design", status: "source_verified", note: "Cannes and European Film Academy credit Gamze Kuş; cave rooms, study, hotel common spaces, tenant interiors and snowbound roads connect intimate argument to ownership and regional geography." },
+    { area: "costume_makeup", status: "source_verified", note: "European Film Academy credits Gamze Kuş for costume design; winter layers, domestic dress and Aydin's cultivated appearance distinguish exposure, labour and self-fashioned authority." },
+    { area: "cinematography", status: "source_verified", note: "Cannes, European Film Academy and Gökhan Tiryaki's professional record credit Tiryaki; deep interiors, windows, firelight, snow and compressed landscape make the hotel both refuge and social enclosure." },
+    { area: "lighting", status: "source_verified", note: "Fire, lamps, window light and overcast winter exteriors create distinct zones of warmth and exclusion, supporting long dialogue scenes without flattening the cave architecture." },
+    { area: "camera_format", status: "mapped", note: "Institutional records document the colour 196-minute feature and contemporary digital circulation, but the inspected sources do not provide a complete original camera, sensor and lens specification." },
+    { area: "editing", status: "source_verified", note: "Cannes and European Film Academy credit Nuri Bilge Ceylan and Bora Göksingöl; extended scenes, delayed transitions and landscape intervals allow arguments to continue reverberating after speakers separate." },
+    { area: "sound_design", status: "source_verified", note: "Cannes credits Andreas Mücke and European Film Academy credits Thomas Robert; wind, fire, footsteps, doors, animals and room tone sharpen the physical conditions surrounding prolonged speech." },
+    { area: "music", status: "mapped", note: "Music is sparse and subordinate to dialogue and environmental sound; the inspected sources do not document a full original scoring department or method." },
+    { area: "effects_animation", status: "not_central", note: "Snow, landscape, interiors, performance, duration and sound create the film's scale without effects spectacle or animation." },
+    { area: "documentary_method", status: "mapped", note: "Cappadocian locations and observed property relations give the fiction social density, but the film reshapes them through literary construction and highly controlled performance." },
+  ],
+} as const satisfies FilmHistoryProfile;

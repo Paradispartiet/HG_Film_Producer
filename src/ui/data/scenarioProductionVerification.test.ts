@@ -50,11 +50,12 @@ const verificationGroups = [
   ["Chinese-language modernity and memory systems", ["scenario_taipei_story_1985", "scenario_a_city_of_sadness_1989", "scenario_farewell_my_concubine_1993", "scenario_platform_2000"], 4],
   ["Asian landscape, grief and moral attention systems", ["scenario_tropical_malady_2004", "scenario_still_life_2006", "scenario_secret_sunshine_2007", "scenario_poetry_2010"], 4],
   ["Subjective enclosure and performed identity systems", ["scenario_burning_2018", "scenario_an_elephant_sitting_still_2018", "scenario_kagemusha_1980", "scenario_barton_fink_1991"], 4],
+  ["Family performance, grief and verbal power systems", ["scenario_secrets_and_lies_1996", "scenario_dancer_in_the_dark_2000", "scenario_the_sons_room_2001", "scenario_winter_sleep_2014"], 4],
   ["Asian transnational urban identity systems", ["scenario_cyclo_1995", "scenario_happy_together_1997", "scenario_infernal_affairs_2002", "scenario_return_to_seoul_2022"], 4],
   ["Japanese ambiguity and dialogue systems", ["scenario_cure_1997", "scenario_wheel_of_fortune_and_fantasy_2021", "scenario_monster_kore_eda_2023", "scenario_evil_does_not_exist_2023"], 4],
 ] as const;
 
-const expectedVerifiedCount = 216;
+const expectedVerifiedCount = 220;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();

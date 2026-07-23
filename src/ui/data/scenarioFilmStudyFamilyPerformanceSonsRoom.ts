@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const theSonsRoomFilmHistoryProfile = {
+  scenarioId: "scenario_the_sons_room_2001",
+  period: "Early-2000s Italian family realism, bereavement drama and disrupted everyday routine",
+  traditions: ["Italian intimate realism", "Family bereavement drama", "Actor-director authorship"],
+  before: "Screen grief often arrived through heightened revelation, retrospective explanation or therapeutic catharsis, while family dramas commonly used death as the event that clarified previously hidden conflicts.",
+  moment: "Nanni Moretti first establishes a close family through running, meals, work, jokes, music and ordinary movement, then lets a son's accidental death break those repeated routines. Restrained performance, clear domestic geography, the father's psychoanalytic practice, measured editing and small changes in rooms and journeys make grief a continuing alteration of everyday time rather than a single dramatic climax.",
+  after: "The 2001 Palme d'Or confirmed Moretti's international standing and made the film a major reference for bereavement cinema that remains direct, formally controlled and attentive to how a family survives without claiming complete emotional resolution.",
+  historyQuestion: "Which production system explains a family drama that first teaches the viewer its runs, meals, office sessions, songs and rooms, then repeats and fractures those routines after a sudden death so grief is carried by ordinary time rather than one cathartic speech?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes and Filmitalia place the feature in early-2000s Italian-French production and in Moretti's movement from autobiographical and political comedy toward intimate family bereavement." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional records support an Italian intimate-realist family drama shaped by actor-director authorship, controlled melodrama and close observation of routine." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Filmitalia documents Sacher Film, Rai Cinema, Tele+, Bac Films and StudioCanal, producers Angelo Barbagallo and Nanni Moretti and the principal craft departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes confirms the 2001 Palme d'Or; Filmitalia records its continuing festival and retrospective circulation as a central Moretti film." },
+    { area: "screenplay", status: "source_verified", note: "Moretti, Heidrun Schleef and Linda Ferri organize the film around a before-and-after structure in which routines, patients, guilt, family distance and an unexpected letter gradually change meaning." },
+    { area: "directing", status: "source_verified", note: "Moretti avoids spectacle around the accident and instead directs its consequences through repeated actions, withheld reactions and the family's altered ability to occupy shared space." },
+    { area: "performance", status: "source_verified", note: "Moretti, Laura Morante, Jasmine Trinca and Giuseppe Sanfelice establish relaxed familial familiarity before grief separates their rhythms, while supporting patients and visitors prevent the family from becoming an isolated symbol." },
+    { area: "production_design", status: "source_verified", note: "Giancarlo Basili's credited design connects the home, consulting room, school, pool, streets and later journey, allowing adjacent spaces to carry different forms of memory and obligation." },
+    { area: "costume_makeup", status: "source_verified", note: "Filmitalia credits Maria Rita Barbera; ordinary family, professional and adolescent clothing preserves continuity while small changes in appearance register exhaustion and disrupted routine." },
+    { area: "cinematography", status: "source_verified", note: "Cannes and Filmitalia credit Giuseppe Lanci; clear colour compositions and measured camera distance preserve family interaction and the physical relation among domestic, professional and public spaces." },
+    { area: "lighting", status: "mapped", note: "Naturalistic interiors and coastal daylight support the restrained realism, but the inspected sources do not document the complete lighting package." },
+    { area: "camera_format", status: "mapped", note: "Filmitalia records the colour feature and 99-minute release, but the inspected sources do not provide a sufficiently precise original stock, lens and capture-format account." },
+    { area: "editing", status: "source_verified", note: "Cannes and Filmitalia credit Esmeralda Calabria; repetitions, ellipses and the sharp structural break around the death make the loss legible through altered duration and sequence." },
+    { area: "sound_design", status: "source_verified", note: "Running, household activity, consulting-room speech, music playback, phone calls and sudden quiet preserve the family's everyday sonic world while revealing its changed emotional weight." },
+    { area: "music", status: "source_verified", note: "Cannes and Filmitalia credit Nicola Piovani; restrained score and recorded songs connect family memory, private listening and the final movement without dictating a complete resolution." },
+    { area: "effects_animation", status: "not_central", note: "The film's force depends on performance, repeated routine, domestic geography, editing and sound rather than effects spectacle or animation." },
+    { area: "documentary_method", status: "mapped", note: "The psychoanalytic practice, coastal city and ordinary family routines receive observational detail, but the film remains a carefully written and performed fiction rather than documentary testimony." },
+  ],
+} as const satisfies FilmHistoryProfile;
