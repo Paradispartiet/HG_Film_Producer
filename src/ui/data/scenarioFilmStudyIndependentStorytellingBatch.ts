@@ -116,6 +116,7 @@ function partialFeedback(group: IndependentStorytellingProfileGroup): string {
     body_archive_restitution_perspective: "This is a real bodily-risk, activist-archive, restitution-and-perspective system, but it organizes embodied procedure, personal archive, institutional return, first-person camera, editing and sound differently.",
     queer_independent_body_community_archive: "This is a real queer independent body, community-and-archive system, but it organizes romance, testimony, illness, self-performance, historical absence, media mixture and social space differently.",
     american_precarity_body_care: "This is a real American precarity, body-and-care system, but it organizes economic procedure, injury, sensory viewpoint, reproductive access, regional space, performance, editing and sound differently.",
+    american_independent_genre_resourcefulness: "This is a real American independent genre-and-resourcefulness system, but it organizes noir misunderstanding, verbal ensemble comedy, nonlinear chamber crime, DIY action, restricted locations, editing and sound differently.",
     asian_transnational_urban_identity: "This is a real Asian transnational urban-identity system, but it organizes migration, labour, romance, surveillance, time and belonging differently.",
     japanese_ambiguity_dialogue: "This is a real Japanese ambiguity-and-dialogue production system, but it organizes hypnosis, coincidence, institutional viewpoint, environmental procedure, performance and sound differently.",
   };
@@ -136,6 +137,7 @@ function missFeedback(group: IndependentStorytellingProfileGroup): string {
     body_archive_restitution_perspective: "This places the film inside the wrong relationship between bodily autonomy, activist memory, restitution, historical violence, camera subjectivity and institutional power.",
     queer_independent_body_community_archive: "This places the film inside the wrong relationship between queer authorship, bodily experience, chosen community, archival absence, media form and independent production.",
     american_precarity_body_care: "This places the film inside the wrong relationship between economic vulnerability, bodily limitation, care systems, mobility, sensory form and practical access.",
+    american_independent_genre_resourcefulness: "This places the film inside the wrong relationship between independent financing, genre revision, restricted resources, information control, location reuse, editorial construction and sound-driven scale.",
     asian_transnational_urban_identity: "This places the film inside the wrong relationship between Asian city, displacement, divided identity, social systems and return.",
     japanese_ambiguity_dialogue: "This places the film inside the wrong Japanese relationship between uncertainty, conversation, institutional pressure, landscape and moral interpretation.",
   };
