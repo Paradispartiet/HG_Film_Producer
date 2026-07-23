@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const goodbyeDragonInnFilmHistoryProfile = {
+  scenarioId: "scenario_goodbye_dragon_inn_2003",
+  period: "Early-2000s Taiwanese slow cinema, cinephile architecture and exhibition-memory elegy",
+  traditions: ["Taiwanese slow cinema", "Cinephile space", "Architectural elegy"],
+  before: "Films about cinema usually privileged filmmakers, stars or explicit nostalgia, while theatres functioned as narrative settings rather than durational social architectures containing work, cruising, spectatorship, ghosts and technological memory.",
+  moment: "Tsai Ming-liang rents the closing Fu-Ho Grand Theatre, writes from a one-page poetic premise, secures Dragon Inn, and shoots the feature over ten days at roughly four shots per day. Static duration, leaking corridors, projection sound, rain, chewing and the presence of King Hu's ageing actors turn one real building into an elegy for exhibition and shared memory.",
+  after: "The film became a central work of contemporary slow cinema and cinephile self-reflection, preserving the Fu-Ho as both actual closing venue and imagined haunted community while demonstrating that exhibition space itself can be the protagonist and production method.",
+  historyQuestion: "Which production system explains a film shot in ten days inside one closing cinema, using roughly four long static shots per day, an actual Dragon Inn screening and layered auditorium sound to make exhibition space the protagonist?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Venice place the 2003 film at the decline of large repertory cinemas in Taipei and inside Tsai Ming-liang's mature slow-cinema investigation of disappearing public space." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify slow cinema, cinephile meta-fiction, architectural elegy, queer cruising space and a deliberate dialogue with King Hu's Dragon Inn." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Venice records Homegreen Films and the principal screenplay, cinematography, editing, design and sound departments; Tsai documents renting the cinema for a year and finally shooting during its last ten days." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI records the film's high placement in the 2022 Sight and Sound poll and continuing status as a major work about cinemagoing and the social memory of exhibition." },
+    { area: "screenplay", status: "source_verified", note: "Tsai describes beginning from a one-page piece of poetry, then structuring the final night around workers, spectators, cruising, ghosts and an actual Dragon Inn screening rather than a conventional plot." },
+    { area: "directing", status: "source_verified", note: "The BFI interview documents a ten-day shoot at roughly four shots per day, with duration, exact architectural observation and limited coverage chosen as the central directing system." },
+    { area: "performance", status: "source_verified", note: "Lee Kang-sheng, Chen Shiang-chyi and scattered spectators perform through walking, waiting, eating, watching and failed approaches, while Dragon Inn actors Miao Tien and Shih Chun bring literal cinema history into the auditorium." },
+    { area: "production_design", status: "source_verified", note: "Venice credits Lu Li-chin, but the decisive design resource is the existing Fu-Ho theatre itself: auditorium, projection booth, urinals, leaking corridors, stairways and backstage routes." },
+    { area: "costume_makeup", status: "mapped", note: "Work clothing, rainwear and ordinary spectator dress distinguish staff and patrons, but the current sources do not document a complete costume or makeup method." },
+    { area: "cinematography", status: "source_verified", note: "Venice credits Liao Pen-jung; long static compositions preserve deep architectural time, offscreen routes and the tension between the bright screen and dark social space." },
+    { area: "lighting", status: "mapped", note: "Projection light, practical corridor illumination and dark auditorium exposure define the film's visual space, but the current sources do not isolate the full lighting package." },
+    { area: "camera_format", status: "source_verified", note: "The Venice archive records a colour 35mm feature in an 82-minute version with Dolby SR, preserving the exhibition medium inside the film's own technical record." },
+    { area: "editing", status: "source_verified", note: "Venice credits Chen Sheng-chang; very few extended shots are arranged around entrances, absences, auditorium duration and the temporal relation between Dragon Inn and the closing theatre." },
+    { area: "sound_design", status: "source_verified", note: "Venice credits Tu Duu-chih; rain, footsteps, chewing, urinals, doors, cavernous room tone and the projected soundtrack connect visible and invisible occupants across the building." },
+    { area: "music", status: "not_central", note: "Musical affect arrives primarily through the film being projected and the theatre's acoustic memory rather than an independent continuous score." },
+    { area: "effects_animation", status: "not_central", note: "The ghostly atmosphere is created through duration, architecture, projection, sound and spectatorship rather than visual effects or animation." },
+    { area: "documentary_method", status: "source_verified", note: "The actual closing cinema, its material decay, exhibition technology and ageing Dragon Inn performers turn the staged fiction into a record of a real disappearing venue and viewing culture." },
+  ],
+} as const satisfies FilmHistoryProfile;
