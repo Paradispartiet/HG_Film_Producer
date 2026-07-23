@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const peppermintCandyFilmHistoryProfile = {
+  scenarioId: "scenario_peppermint_candy_1999",
+  period: "Late-1990s South Korean New Wave, democratic-transition memory cinema and reverse-chronology tragedy",
+  traditions: ["South Korean New Wave", "Historical memory cinema", "Reverse-chronology character tragedy"],
+  before: "South Korean social history was often represented through public events or linear political drama, while private character collapse and national trauma remained easier to separate than to place inside one temporal design.",
+  moment: "Lee Chang-dong structures seven chapters backward from 1999 to 1979, repeatedly using railway space and reverse-moving train transitions to uncover how military service, Gwangju-era violence, labour and economic change become embodied in one damaged life.",
+  after: "Its Busan opening-night position, international festival circulation and continuing Korean Film Council and museum study established the film as a major model for making reverse chronology an investigation of both character responsibility and national history.",
+  historyQuestion: "Which production system explains a tragedy that moves backward through seven historical periods, using trains and repeated locations to reconnect one man's violence to South Korea's political and economic transformation?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "KOFIC and MoMA connect the seven reversed episodes to twenty years of South Korean social, political and economic change from 1979 to 1999, including the period of military repression and the Gwangju uprising." },
+    { area: "movement_and_tradition", status: "source_verified", note: "KOFIC places the film within the rejuvenation of modern South Korean cinema and identifies Lee Chang-dong as a central filmmaker linking personal memory to national history." },
+    { area: "industry_and_production_context", status: "source_verified", note: "KOFIC records Pinehouse Film and East Film production, the principal creative team and the film's position as Lee's second feature and the opening film of the 1999 Busan International Film Festival." },
+    { area: "reception_and_legacy", status: "source_verified", note: "KOFIC documents major domestic and international festival recognition, while MoMA's continuing exhibition situates the film as a durable reference in modern Korean cinema." },
+    { area: "screenplay", status: "source_verified", note: "The KOFIC database describes seven episodes moving backward through one life, each earlier chapter revising the moral and historical meaning of damage already witnessed." },
+    { area: "directing", status: "source_verified", note: "KOFIC's location study documents Lee's deliberate use of the Jinso railway landscape and recurring train image to make historical reversal spatial and emotionally legible." },
+    { area: "performance", status: "source_verified", note: "Institutional records identify Sul Kyung-gu, Moon So-ri and Kim Yeo-jin; the same central body must register twenty years of changing age, power, fear and lost possibility across reverse chronology." },
+    { area: "production_design", status: "source_verified", note: "KOFIC's location record shows that railway tracks, reunion grounds, workplaces and period-specific public and private spaces recur as changing historical environments rather than neutral backgrounds." },
+    { area: "costume_makeup", status: "mapped", note: "Period clothing, uniforms, hair and aging are necessary to distinguish seven time layers, but the current sources do not isolate the full costume and makeup process." },
+    { area: "cinematography", status: "source_verified", note: "KOFIC and MoMA document the repeated railway compositions, public landscapes and temporal transitions that maintain visual orientation while the narrative moves backward." },
+    { area: "lighting", status: "mapped", note: "Changing seasons, daylight and institutional interiors help separate historical periods, but the current sources do not document a complete lighting workflow." },
+    { area: "camera_format", status: "source_verified", note: "MoMA records the feature's 129-minute restored digital presentation, while KOFIC preserves its feature-production and original release history." },
+    { area: "editing", status: "source_verified", note: "Large backward leaps are joined by repeated train transitions and returning locations, so montage reveals causality in reverse without losing the audience's historical orientation." },
+    { area: "sound_design", status: "source_verified", note: "Train movement, rails, public noise, military and workplace environments and abrupt quiet make each temporal transition physically audible and connect private memory to national systems." },
+    { area: "music", status: "mapped", note: "Period music and score contribute to temporal identity and lost intimacy, but the current source set does not isolate the complete music-production process." },
+    { area: "effects_animation", status: "not_central", note: "The film's temporal construction depends on performance, locations, repeated imagery and editing rather than an effects-led production system." },
+    { area: "documentary_method", status: "mapped", note: "Historically specific events, public environments and location research give the fiction documentary weight, although the film remains a scripted character tragedy." },
+  ],
+} as const satisfies FilmHistoryProfile;
