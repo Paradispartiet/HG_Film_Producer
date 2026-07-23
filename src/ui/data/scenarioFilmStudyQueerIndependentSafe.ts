@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const safeFilmHistoryProfile = {
+  scenarioId: "scenario_safe_1995",
+  period: "Mid-1990s American independent modernism, queer allegory and suburban environmental horror",
+  traditions: ["New Queer Cinema", "Independent modernist drama", "Suburban body horror"],
+  before: "Illness dramas commonly sought diagnostic certainty, heroic recovery or psychological explanation, while suburban domestic space was usually treated as stable background rather than an active system of alienation.",
+  moment: "Todd Haynes builds Carol White's unexplained illness through controlled 35 mm compositions, wide spatial distance, sterile production design, restrained performance and an unresolved conflict among environmental danger, social passivity and self-help ideology. The film's roughly one-million-dollar independent production uses polished surfaces and precise sound-image control to turn affluent normality into an invisible threat.",
+  after: "Its critical afterlife established Safe as a central work of 1990s independent and queer cinema: a film whose ambiguity, formal distance and critique of wellness culture continue to shape discussions of illness, class, gender, ecology and the AIDS era.",
+  historyQuestion: "Which production system explains a low-budget 35 mm drama where wide frames, bleached interiors, environmental hum, a nearly passive central performance and unresolved illness turn affluent Los Angeles suburbia and a New Age retreat into connected systems of threat?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion, Sony and BFI identify the story as set in late-1980s Southern California and connect its illness ambiguity to Reagan-era self-help culture, environmental anxiety and the AIDS crisis." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Criterion position the film within Haynes's experimental practice, New Queer Cinema and American independent modernism while noting its use of melodrama, horror and science-fiction unease." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI, Criterion and BFI document Chemical Films, producers Christine Vachon and Lauren Zalaznick, executive producers including James Schamus and Ted Hope, and an approximately one-million-dollar independent production." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion documents the film's later critical canonization and director-approved restoration, while BFI records its enduring status as a key Todd Haynes and 1990s independent work." },
+    { area: "screenplay", status: "source_verified", note: "Haynes's credited screenplay withholds a definitive diagnosis and structures Carol's movement from suburban routine to medical uncertainty, environmental-illness discourse and Wrenwood self-help isolation." },
+    { area: "directing", status: "source_verified", note: "Haynes directs by refusing explanatory closure and placing viewers at a cool distance from Carol, making institutions and environments compete to define what her body means." },
+    { area: "performance", status: "source_verified", note: "Julianne Moore's breakthrough performance uses small vocal inflections, hesitation, physical withdrawal and increasing fragility within frames that often minimize Carol's agency." },
+    { area: "production_design", status: "source_verified", note: "Criterion and AFI credit David Bomba; immaculate suburban interiors, medical rooms and Wrenwood's isolated architecture create successive versions of safety that also function as confinement." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion credits Nancy Steiner's costume design, which keeps Carol's polished social role visible as her body and confidence deteriorate." },
+    { area: "cinematography", status: "source_verified", note: "Alex Nepomniaschy's credited 35 mm cinematography uses wide angles, distant framing, controlled movement and pristine surfaces to render Carol small inside her own environment." },
+    { area: "lighting", status: "source_verified", note: "BFI analysis describes bleached interiors, glacial domestic spaces and ominous environmental illumination that make ordinary light feel clinical and unstable." },
+    { area: "camera_format", status: "source_verified", note: "BFI records the 35 mm production, while Criterion documents the colour 1.85:1 presentation and director-approved restoration with uncompressed monaural sound." },
+    { area: "editing", status: "source_verified", note: "James Lyons's credited editing preserves airless long takes, routine repetition and abrupt bodily episodes without converting ambiguity into conventional thriller explanation." },
+    { area: "sound_design", status: "source_verified", note: "Mechanical hum, ventilation, traffic, household activity, clinical quiet and discreet bodily sounds turn the offscreen environment into a persistent source of uncertainty." },
+    { area: "music", status: "source_verified", note: "Criterion credits Ed Tomney's music, whose restrained ominous cues intensify the film's horror and science-fiction undertones without resolving the illness." },
+    { area: "effects_animation", status: "not_central", note: "Invisible threat is created through framing, production design, performance, editing and sound rather than visible effects or animation." },
+    { area: "documentary_method", status: "mapped", note: "The fiction draws on environmental-illness and AIDS-era discourse, but its method is controlled dramatic construction rather than documentary observation." },
+  ],
+} as const satisfies FilmHistoryProfile;
