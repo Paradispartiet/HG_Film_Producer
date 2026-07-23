@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const theRiderFilmHistoryProfile = {
+  scenarioId: "scenario_the_rider_2017",
+  period: "Late-2010s American regional independent cinema, community-based western realism and bodily recovery drama",
+  traditions: ["Community-based independent production", "Contemporary western revision", "Nonprofessional performance realism"],
+  before: "Classical westerns treated riding skill, injury and masculine endurance as heroic tests that usually restored the cowboy's public identity, while Indigenous reservation life remained marginal to the genre's viewpoint.",
+  moment: "Chloé Zhao builds a fictional drama around Brady Jandreau's real rodeo injury, family, horses and Pine Ridge community. A six-person crew, real homes and events, nonprofessional performers, natural light, magic-hour scheduling and Joshua James Richards's widescreen photography turn recovery into a negotiation between body, labour, landscape and inherited cowboy mythology.",
+  after: "Its Cannes Directors' Fortnight breakthrough, Spirit Award nominations for feature, directing, cinematography and editing, and sustained institutional circulation made it a key model for hybrid regional filmmaking later expanded in Zhao and Richards's Nomadland collaboration.",
+  historyQuestion: "Which production system explains a contemporary western made with a six-person crew, real Pine Ridge families and horses, natural-light scheduling and widescreen landscape images that make a rodeo injury a crisis of work, masculinity and community identity?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Sony, BFI and Film Independent place the film in contemporary Pine Ridge rodeo culture, where limited work and a severe head injury destabilize a young rider's social and economic identity." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The sources identify a community-based revision of the American western that combines documentary realism, regional independent production and intimate character drama." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Sony and Film Independent document a five-week shoot, a six-person crew, real homes and events, reservation and Badlands locations, and production shaped around the participants' actual lives." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Film Independent records nominations for Best Feature, Director, Cinematography and Editing, while BFI and Criterion document the film's major critical and festival position." },
+    { area: "screenplay", status: "source_verified", note: "Zhao writes a fictionalized structure around Jandreau's real injury, family and work, allowing recovery, horse training and repeated attempts to ride to replace a conventional comeback plot." },
+    { area: "directing", status: "source_verified", note: "Film Independent records Zhao's method of preparing conditions for spontaneous behaviour, working around animals, weather and nonprofessional performers rather than forcing rigid coverage." },
+    { area: "performance", status: "source_verified", note: "Sony, BFI and Film Independent document Brady Jandreau, his father, sister and community playing versions of themselves, preserving skill, intimacy and disagreement grounded in lived relationships." },
+    { area: "production_design", status: "source_verified", note: "Real homes, trailers, hospitals, supermarkets, rodeo grounds, horse sales and reservation landscapes provide the design system, with practical spaces retained rather than rebuilt as genre décor." },
+    { area: "costume_makeup", status: "mapped", note: "Work clothes, rodeo gear, medical bandaging and visible scars connect body and occupation, but the inspected sources do not document a complete costume or makeup package." },
+    { area: "cinematography", status: "source_verified", note: "Sony, BFI and Film Independent credit Joshua James Richards and describe an organic but cinematic image system balancing close bodily observation with expansive South Dakota landscapes." },
+    { area: "lighting", status: "source_verified", note: "Zhao describes working without conventional lighting resources and scheduling around sun and magic hour; long horse-training takes use the changing natural light as part of performance time." },
+    { area: "camera_format", status: "source_verified", note: "BFI records the colour film in a 2.35:1 presentation, using widescreen space to hold rider, horse and prairie in one social and physical field." },
+    { area: "editing", status: "source_verified", note: "Film Independent's Spirit nominations credit Alex O'Flinn; the edit protects real-time horse work, recovery routines and quiet transitions while shaping lived material into a clear fictional arc." },
+    { area: "sound_design", status: "source_verified", note: "BFI analysis emphasizes wind, horse breath, hooves and environmental sound, while institutional coverage credits sound as central to the film's visceral relation between body and landscape." },
+    { area: "music", status: "source_verified", note: "Institutional criticism identifies Nathan Halpern's restrained score, which supports grief and reflection without overpowering the practical sounds of horses, work and open land." },
+    { area: "effects_animation", status: "not_central", note: "The film's force comes from real riding, animals, injury continuity, location and performance rather than effects spectacle or animation." },
+    { area: "documentary_method", status: "source_verified", note: "The production uses real people, events, skills and environments inside a scripted narrative, making community participation and observed behaviour foundational to the fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;
