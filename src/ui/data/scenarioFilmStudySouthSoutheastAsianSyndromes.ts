@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const syndromesAndACenturyFilmHistoryProfile = {
+  scenarioId: "scenario_syndromes_and_a_century_2006",
+  period: "Mid-2000s Thai New Wave, memory cinema and mirrored institutional modernism",
+  traditions: ["Thai New Wave", "Autobiographical memory cinema", "Mirrored institutional modernism"],
+  before: "Autobiographical films often separated remembered family history from contemporary institutions, while hospital dramas usually organized medical space through diagnosis, crisis and linear professional action.",
+  moment: "Apichatpong Weerasethakul transforms memories of his doctor parents into two analogous hospital halves: a warm rural clinic and a fluorescent Bangkok facility whose repeated encounters, architectural differences, sound fields and incomplete correspondences turn urbanisation and memory into the film's structure.",
+  after: "Its Venice competition premiere, New York Film Festival history, continuing 35mm archive circulation and later critical canonisation established the film as a key model for personal memory expressed through spatial doubling, environmental sound and non-causal repetition.",
+  historyQuestion: "Which production system explains a film that repeats altered encounters across rural and urban hospitals, using architecture, light and sound to turn personal memory into a changing institutional form?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Film at Lincoln Center and Criterion place the 2006 film inside internationally visible Thai art cinema and identify its autobiographical starting point in Weerasethakul's memories of his doctor parents." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional accounts describe a diptych built from memory, duality, rural-urban contrast and Weerasethakul's broader reinvention of fictional feature architecture." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI records Weerasethakul as writer, director and producer of a Thailand-France-Austria-Netherlands production, while Film at Lincoln Center documents its 35mm festival and archive life." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion identifies it as the first Thai film in Venice competition, Film at Lincoln Center records its NYFF44 selection and UCLA archive print, and BFI records its later Sight and Sound standing." },
+    { area: "screenplay", status: "source_verified", note: "The sourced structure divides the film into two distinct but analogous halves, repeating situations and characters across a small-town clinic and a modern Bangkok hospital rather than advancing one causal plot." },
+    { area: "directing", status: "source_verified", note: "BFI and archive descriptions document calm observation, tonal openness, understated humour and gradual shifts of attention that let daily behavior and institutional space carry the drama." },
+    { area: "performance", status: "mapped", note: "Soft speech, pauses and low-key ensemble behavior are central to the film's atmosphere, but the current sources do not document a complete casting or rehearsal method." },
+    { area: "production_design", status: "mapped", note: "The contrast between rural rooms, Bangkok corridors, ducts and basement machinery is structurally decisive, although the current sources do not isolate a production-design workflow." },
+    { area: "costume_makeup", status: "not_central", note: "Ordinary medical and civilian clothing supports institutional continuity, but costume and makeup are not central to the documented production method." },
+    { area: "cinematography", status: "source_verified", note: "BFI and Film at Lincoln Center describe carefully composed 35mm observation whose rural warmth, urban geometry and sustained spatial attention distinguish the two hospital worlds." },
+    { area: "lighting", status: "source_verified", note: "BFI explicitly contrasts the golden haze and natural ambience of the rural hospital with the fluorescent chill of the Bangkok clinic, making light part of the historical rural-urban transformation." },
+    { area: "camera_format", status: "source_verified", note: "Film at Lincoln Center documents the feature and its circulating UCLA Film & Television Archive print in 35mm." },
+    { area: "editing", status: "source_verified", note: "The midpoint reset, repeated scenes and altered correspondences make montage and structural doubling the primary way the film compares memory, place and time." },
+    { area: "sound_design", status: "source_verified", note: "BFI tracks the acoustic movement from birdsong and rural room tone toward ventilation, machinery and industrial hum, turning each institution into a distinct sound-memory system." },
+    { area: "music", status: "source_verified", note: "Film at Lincoln Center and Criterion document country-western performance and the final aerobics music, showing how communal music interrupts clinical routine and closes the film through collective movement." },
+    { area: "effects_animation", status: "not_central", note: "The film depends on spatial, temporal and acoustic transformation rather than effects or animation." },
+    { area: "documentary_method", status: "mapped", note: "Personal memories, people from the director's life and observational institutional detail inform the fiction, but the finished feature remains a staged autobiographical construction." },
+  ],
+} as const satisfies FilmHistoryProfile;

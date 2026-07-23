@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const courtFilmHistoryProfile = {
+  scenarioId: "scenario_court_2014",
+  period: "Mid-2010s Indian independent cinema, institutional realism and anti-spectacle legal drama",
+  traditions: ["Indian independent cinema", "Institutional realism", "Multi-perspective legal drama"],
+  before: "Courtroom cinema commonly concentrated conflict into eloquent advocacy, decisive evidence and climactic verdicts, while legal institutions were treated as arenas for exceptional protagonists rather than repetitive systems embedded in ordinary social life.",
+  moment: "Chaitanya Tamhane builds the film from extensive lower-court and protest-music research, real Mumbai locations, a cast that was roughly ninety percent nonprofessional, sync sound and long static scenes shot without improvisation through dozens of takes, then moves outside the hearings to expose the private routines sustaining institutional delay.",
+  after: "Its Venice Orizzonti and debut-film prizes, Mumbai recognition and continuing museum and festival study established the film as a central reference for legal anti-spectacle, ensemble social realism and production systems designed around patient observation rather than courtroom climax.",
+  historyQuestion: "Which production system explains a legal drama built from real locations, nonprofessional performers, long static takes and procedural repetition rather than speeches, surprise evidence and a decisive verdict?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "MoMA, Film at Lincoln Center, IFFR and the Venice archive place the 2014 debut inside a newly visible Indian independent cinema examining caste, colonial law, labour and institutional indifference." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources describe social realism, absurdist tragicomedy and a deliberate subversion of conventional courtroom drama through detached observation and multi-perspective structure." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Venice and IFFR record Zoo Entertainment, producer Vivek Gomber, writer-director Tamhane and the principal cinematography, editing, design, costume and sound departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Venice historical archive records the Orizzonti best-film and Lion of the Future prizes, while MoMA and Film at Lincoln Center document continued international exhibition and study." },
+    { area: "screenplay", status: "source_verified", note: "Tamhane describes research into Mumbai lower courts and protest singers; the screenplay distributes attention across the accused, defence, prosecution, judge and their private lives instead of following one heroic legal viewpoint." },
+    { area: "directing", status: "source_verified", note: "The director reports one scene per day, thirty to forty takes on average and no improvisation, preserving exact blocking and duration while allowing performers to find an internal rhythm." },
+    { area: "performance", status: "source_verified", note: "Film at Lincoln Center documents eight months of auditions across more than 1,800 candidates and a cast approximately ninety percent nonprofessional, with the whole production organized around performance comfort and precision." },
+    { area: "production_design", status: "source_verified", note: "IFFR and Venice credit Pooja Talreja and Somnath Pal; real courtrooms, offices, homes and public spaces preserve visible hierarchy and distinguish institutional procedure from private routine." },
+    { area: "costume_makeup", status: "mapped", note: "Venice credits Sachin Lovalekar and clothing supports class, profession and everyday credibility, but the current sources do not document a complete costume or makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Venice and IFFR credit Mrinal Desai, while MoMA and the filmmaker interview document long static takes and restrained distance that keep architecture, background activity and waiting legible." },
+    { area: "lighting", status: "mapped", note: "The image maintains naturalistic institutional and domestic light, but the current sources do not isolate the lighting package or exposure method." },
+    { area: "camera_format", status: "source_verified", note: "Venice and IFFR record a 116-minute colour feature presented in DCP." },
+    { area: "editing", status: "source_verified", note: "IFFR credits Rikhav Desai; clean ellipses move between hearings and private life while long scenes preserve procedural duration and deny conventional dramatic punctuation." },
+    { area: "sound_design", status: "source_verified", note: "IFFR credits Anita Kushwaha and Amrit Pritam, and Tamhane documents the production challenge of recording sync sound on real Mumbai locations with large groups of background performers." },
+    { area: "music", status: "source_verified", note: "The protest singer's live folk performance is a researched political practice and a competing form of public speech rather than a decorative score system." },
+    { area: "effects_animation", status: "not_central", note: "The film's institutional pressure is created through performance, duration, location and sound rather than visual effects or animation." },
+    { area: "documentary_method", status: "source_verified", note: "Lower-court research, real locations, nonprofessional casting, sync sound and restrained observation give the staged fiction a deliberately documentary production pressure." },
+  ],
+} as const satisfies FilmHistoryProfile;

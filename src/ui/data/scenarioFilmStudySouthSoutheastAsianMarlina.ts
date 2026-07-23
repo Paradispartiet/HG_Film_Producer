@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const marlinaFilmHistoryProfile = {
+  scenarioId: "scenario_marlina_the_murderer_in_four_acts_2017",
+  period: "Late-2010s Indonesian feminist genre cinema, Southeast Asian western and chaptered road narrative",
+  traditions: ["Indonesian feminist genre cinema", "Southeast Asian western", "Chaptered revenge road film"],
+  before: "The western and rape-revenge film were historically organized around masculine movement, conquest and visual possession, while rural Indonesian women and regional geography rarely controlled the genre's viewpoint or moral trajectory.",
+  moment: "Mouly Surya and Rama Adi develop Garin Nugroho's story into four acts, placing Marlina's self-defence and search for justice inside West Sumba's dry landscape, formal static tableaux, female solidarity, deadpan humour and a regional co-production that bends western iconography around local gender and institutional realities.",
+  after: "Its Cannes Atelier development, Directors' Fortnight premiere, wide festival circulation and Indonesian craft recognition established the film as a major reference for feminist genre reversal and for Southeast Asian landscape functioning as both production resource and political argument.",
+  historyQuestion: "Which production system explains a four-act revenge western that keeps a widow's agency central while rebuilding genre iconography through Sumba geography, static tableaux, female solidarity and institutional failure?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, Busan, IFFR and BFI place the 2017 film inside internationally visible Indonesian cinema and a wider Southeast Asian reworking of western and revenge traditions." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Festival sources explicitly identify a female-driven Southeast Asian western that reverses masculine genre convention through feminist agency, local custom and women helping one another." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes documents the project at L'Atelier with its early financing position, while Directors' Fortnight records Cinesurya, Kaninga Pictures and French, Malaysian, Indonesian and Thai co-production partners." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The film moved from Cannes development to the 2017 Directors' Fortnight, Busan and Rotterdam circulation; later institutional accounts record major Indonesian recognition across direction and craft departments." },
+    { area: "screenplay", status: "source_verified", note: "Cannes, Busan and IFFR credit Mouly Surya and Rama Adi, with Garin Nugroho's original treatment reorganized into four acts that move from siege through journey, institutional confrontation and renewed danger." },
+    { area: "directing", status: "source_verified", note: "Surya describes beginning from the image of Marlina carrying the severed head and instructing the camera toward formal, largely unmoving observation so western myth and objective social scrutiny coexist." },
+    { area: "performance", status: "source_verified", note: "Festival accounts foreground Marsha Timothy's controlled central performance and the female ensemble, whose restraint, humour and solidarity prevent the violent premise from becoming only spectacle." },
+    { area: "production_design", status: "source_verified", note: "Directors' Fortnight, IFFR and Busan credit Frans Paat; the remote wooden house, bus, police space and road environments organize each act and make gendered access to institutions visible." },
+    { area: "costume_makeup", status: "mapped", note: "Festival records credit costume design and clothing distinguishes widowhood, pregnancy, labour and local social roles, but the current sources do not document a complete costume or makeup workflow." },
+    { area: "cinematography", status: "source_verified", note: "Yunus Pasolang is credited across Cannes, IFFR and Busan; Surya describes flat formal angles and minimal camera movement, while festival records emphasize widescreen landscape and tightly controlled tableaux." },
+    { area: "lighting", status: "mapped", note: "Dry daylight, dark wooden interiors and night travel define the visual contrast, but the current sources do not isolate the lighting package or exposure process." },
+    { area: "camera_format", status: "source_verified", note: "IFFR, Busan and BFI record a colour feature of roughly 93 to 95 minutes presented in DCP." },
+    { area: "editing", status: "source_verified", note: "Cannes, IFFR and Busan credit Kelvin Nugroho; four titled acts balance still duration, abrupt violence and road progression while repeatedly changing the genre pressure." },
+    { area: "sound_design", status: "source_verified", note: "Cannes and IFFR credit Khikmawan Santosa; sparse dialogue, wind, animals, vehicles, footsteps and household activity keep the landscape materially present beneath the western scale." },
+    { area: "music", status: "source_verified", note: "Festival records credit Zeke Khaseli and Yudhi Arfani; recurring music and the headless musician motif give Marlina's journey mythic continuity without replacing environmental sound." },
+    { area: "effects_animation", status: "mapped", note: "Decapitation, the transported head and the returning headless figure are important controlled effects, but the current sources do not document their complete practical or postproduction method." },
+    { area: "documentary_method", status: "mapped", note: "West Sumba geography, local gendered spaces and social custom give the genre fiction regional specificity, although the film remains a designed and formally stylized narrative production." },
+  ],
+} as const satisfies FilmHistoryProfile;
