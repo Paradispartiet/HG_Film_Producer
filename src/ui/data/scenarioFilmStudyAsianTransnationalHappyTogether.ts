@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const happyTogetherFilmHistoryProfile = {
+  scenarioId: "scenario_happy_together_1997",
+  period: "Late-1990s Hong Kong queer diasporic cinema, pre-handover displacement and fragmented romantic modernism",
+  traditions: ["Hong Kong New Wave", "Queer diasporic romance", "Fragmented road melodrama"],
+  before: "Hong Kong romantic melodrama usually remained geographically tied to the city and organised relationships through clearer progression, while queer screen stories rarely combined star performance, international exile and a major auteur production system at this scale.",
+  moment: "Wong Kar-wai relocates Tony Leung and Leslie Cheung to Buenos Aires and builds the relationship from repeated breakups, temporary domesticity, jobs, tango, voice-over and failed attempts to start over. Christopher Doyle's 35mm monochrome-and-colour photography, William Chang's design and editing and a multilingual music-and-city soundtrack turn exile into form.",
+  after: "The Cannes directing prize and the film's later restoration secured it as a landmark of queer world cinema and pre-handover Hong Kong memory, showing how travel, format change, star performance and unstable chronology could make displacement inseparable from romantic structure.",
+  historyQuestion: "Which production system explains a Hong Kong queer romance shot largely in Buenos Aires, moving between monochrome and saturated 35mm colour while repeated breakups, tango, voice-over and homesickness make exile the form of the relationship?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Cannes and Criterion place the 1997 Hong Kong production at the edge of the handover and inside a growing international queer and diasporic film culture." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify Wong Kar-wai's Hong Kong New Wave modernism, queer relationship cinema, diasporic road imagery and fragmented romantic narration." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion records Wong as director, producer and writer, Christopher Doyle as cinematographer and William Chang as production designer and editor; Cannes records the competition production and directing award." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records Best Director in 1997, while BFI and Criterion document the film's continuing status as a major queer romance and its supervised 4K restoration from the 35mm negative." },
+    { area: "screenplay", status: "source_verified", note: "The film structures Lai and Ho through cycles of separation, return, care and renewed conflict, while Chang's friendship opens a route away from the couple's repeated enclosure." },
+    { area: "directing", status: "source_verified", note: "Wong uses geographic distance, variable visual texture, voice-over and repeated attempts to begin again instead of a conventional linear reconciliation or breakup arc." },
+    { area: "performance", status: "source_verified", note: "Tony Leung, Leslie Cheung and Chang Chen create distinct forms of homesickness, volatility and listening, with emotional change carried through domestic routine, touch, jealousy and withheld speech." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits William Chang; cramped rooms, restaurant kitchens, tango venues, roads and the Iguazú waterfall make Buenos Aires both temporary home and unreachable destination." },
+    { area: "costume_makeup", status: "mapped", note: "Work uniforms, casual domestic clothing and nightlife styling track labour and emotional instability, but the current institutional sources do not document a complete costume or makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Christopher Doyle and describes luminous monochrome and saturated colour, while BFI records the lush, dreamlike image system across Argentina." },
+    { area: "lighting", status: "mapped", note: "Night interiors, practical city light, high-contrast monochrome and saturated colour shifts are central, but the available sources do not isolate the full lighting package." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records black-and-white and colour in 1.85:1; BFI's restoration page confirms work from the original 35mm camera negative." },
+    { area: "editing", status: "source_verified", note: "Cannes credits William Chang and Criterion also credits Wong Ming-lam; ellipses, repeated domestic cycles, variable speed and voice-over make the relationship feel both immediate and remembered." },
+    { area: "sound_design", status: "source_verified", note: "Cantonese, Spanish, kitchen noise, tango rooms, street ambience, domestic quiet and voice-over keep cultural and emotional distance audible inside every location." },
+    { area: "music", status: "source_verified", note: "Criterion credits Danny Chung, while BFI identifies Wong's recurring needle-drop method; tango, Caetano Veloso and Frank Zappa cues reorganise place, desire and departure." },
+    { area: "effects_animation", status: "not_central", note: "Emotional and geographic estrangement is created through location, format, performance, editing and music rather than visual-effects or animation systems." },
+    { area: "documentary_method", status: "mapped", note: "Buenos Aires locations, migrant labour and multilingual public space provide material specificity, but the film is primarily a stylised romantic construction rather than a documentary process." },
+  ],
+} as const satisfies FilmHistoryProfile;

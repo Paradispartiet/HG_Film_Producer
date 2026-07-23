@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const returnToSeoulFilmHistoryProfile = {
+  scenarioId: "scenario_return_to_seoul_2022",
+  period: "Early-2020s Cambodian-French transnational cinema, Korean adoptee identity drama and elliptical return narrative",
+  traditions: ["Transnational adoptee cinema", "Fragmented return narrative", "Performance-led urban character study"],
+  before: "Adoption and homecoming films often organised identity around a single reunion, genealogical discovery or sentimental reconciliation, treating return as a path toward recovered origin rather than a long process of contradiction and reinvention.",
+  moment: "Davy Chou follows Freddie across Seoul and nearly a decade of abrupt personal change. A story sparked by a real adoptee journey, Park Ji-min's first screen performance, multilingual encounters, Thomas Favel's mobile camera, shifting urban and family spaces, Dounia Sichov's large temporal ellipses and layered nightlife sound refuse a stable answer to belonging.",
+  after: "The Cannes and New York Film Festival selection established the film as a major contemporary transnational identity work, showing how adoption, migration, performance volatility and long temporal gaps can resist the expected emotional closure of a return-to-origins story.",
+  historyQuestion: "Which production system explains a multilingual Seoul return film that follows a French adoptee across nearly a decade, using a non-professional lead, abrupt ellipses, changing social roles and mobile city observation to prevent identity from resolving into one reunion?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, BFI and Film at Lincoln Center place the 2022 France-Germany-Belgium-Cambodia-South Korea production inside contemporary transnational adoption and identity cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify an adoptee return narrative that deliberately avoids sentimental homecoming convention through behavioural unpredictability, multilingual space and extended time." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes records the international co-production and principal screenplay, cinematography, design, editing, music and sound departments; Film at Lincoln Center records its NYFF60 presentation." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The film premiered in Cannes Un Certain Regard, played the New York Film Festival and became a major 2023 critical reference for belonging, adoption and unstable identity." },
+    { area: "screenplay", status: "source_verified", note: "Chou builds the film across nearly eight to ten years, using abrupt shifts in relationships, work, appearance and social context rather than treating the first birth-family meeting as resolution." },
+    { area: "directing", status: "source_verified", note: "Cannes traces the project to Chou's experience accompanying a French-Korean adoptee; his direction stays close to Freddie's behaviour while withholding a fixed explanatory psychology." },
+    { area: "performance", status: "source_verified", note: "Park Ji-min's first screen role supplies the film's volatile physical rhythm, while multilingual exchanges with family, friends and intermediaries make misunderstanding part of performance rather than exposition." },
+    { area: "production_design", status: "source_verified", note: "Cannes credits Bo-Koung Shin and Chi-Youl Choi; hotels, bars, adoption offices, family rooms, rural homes and later corporate spaces register each new version of Freddie's relation to Korea." },
+    { area: "costume_makeup", status: "mapped", note: "Hair, clothing and styling change sharply across the time jumps and help establish new identities, but the current institutional sources do not document a complete department process." },
+    { area: "cinematography", status: "source_verified", note: "Cannes credits Thomas Favel; the alert mobile viewpoint follows Freddie through nightlife, transit, family meetings and new social roles without turning the city into illustrative background." },
+    { area: "lighting", status: "mapped", note: "Bars, hotel interiors, family rooms and night streets use distinct practical environments, but the available sources do not isolate the full lighting package." },
+    { area: "camera_format", status: "mapped", note: "The official records document the cinematographer and finished feature but do not provide a complete acquisition-format specification in the currently inspected sources." },
+    { area: "editing", status: "source_verified", note: "Cannes credits Dounia Sichov; decisive multi-year ellipses allow changed bodies, jobs and relationships to revise the meaning of earlier meetings without transitional explanation." },
+    { area: "sound_design", status: "source_verified", note: "Cannes credits Vincent Villa and Dirk Bombey; French, Korean and English speech, translation, nightlife, family silence and public noise make belonging and exclusion audible." },
+    { area: "music", status: "source_verified", note: "Cannes credits Jérémie Arcache and Christophe Musset; music shifts with Freddie's nightlife and changing self-presentation while leaving difficult family encounters exposed." },
+    { area: "effects_animation", status: "not_central", note: "The film's transformations are produced through performance, time, place, editing and sound rather than visual-effects or animation systems." },
+    { area: "documentary_method", status: "source_verified", note: "The project grows from a real adoptee return witnessed by Chou and observes actual adoption procedures, translation and family etiquette while reshaping them into fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;

@@ -47,9 +47,10 @@ const verificationGroups = [
   ["South and Southeast Asian institutional and performance systems", ["scenario_syndromes_and_a_century_2006", "scenario_court_2014", "scenario_marlina_the_murderer_in_four_acts_2017", "scenario_the_disciple_2020"], 4],
   ["Hong Kong and Taiwan urban-time systems", ["scenario_days_of_being_wild_1990", "scenario_vive_l_amour_1994", "scenario_millennium_mambo_2001", "scenario_goodbye_dragon_inn_2003"], 4],
   ["Chinese-language space and genre systems", ["scenario_raise_the_red_lantern_1991", "scenario_a_touch_of_sin_2013", "scenario_the_assassin_2015", "scenario_long_days_journey_into_night_2018"], 4],
+  ["Asian transnational urban identity systems", ["scenario_cyclo_1995", "scenario_happy_together_1997", "scenario_infernal_affairs_2002", "scenario_return_to_seoul_2022"], 4],
 ] as const;
 
-const expectedVerifiedCount = 196;
+const expectedVerifiedCount = 200;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
