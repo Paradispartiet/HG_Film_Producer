@@ -1,4 +1,8 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import { dancerInTheDarkFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceDancerDark";
+import { secretsAndLiesFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceSecretsLies";
+import { theSonsRoomFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceSonsRoom";
+import { winterSleepFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceWinterSleep";
 import { poetryFilmHistoryProfile } from "./scenarioFilmStudyAsianLandscapePoetry";
 import { secretSunshineFilmHistoryProfile } from "./scenarioFilmStudyAsianLandscapeSecretSunshine";
 import { stillLifeFilmHistoryProfile } from "./scenarioFilmStudyAsianLandscapeStillLife";
@@ -57,6 +61,7 @@ export type IndependentStorytellingProfileGroup =
   | "chinese_language_modernity_memory"
   | "asian_landscape_grief_attention"
   | "subjective_enclosure_performance"
+  | "family_performance_grief_power"
   | "asian_transnational_urban_identity"
   | "japanese_ambiguity_dialogue";
 
@@ -101,6 +106,10 @@ const profiles = [
   anElephantSittingStillFilmHistoryProfile,
   kagemushaFilmHistoryProfile,
   bartonFinkFilmHistoryProfile,
+  secretsAndLiesFilmHistoryProfile,
+  dancerInTheDarkFilmHistoryProfile,
+  theSonsRoomFilmHistoryProfile,
+  winterSleepFilmHistoryProfile,
   cycloFilmHistoryProfile,
   happyTogetherFilmHistoryProfile,
   infernalAffairsFilmHistoryProfile,
@@ -162,6 +171,12 @@ assignGroup("subjective_enclosure_performance", [
   anElephantSittingStillFilmHistoryProfile.scenarioId,
   kagemushaFilmHistoryProfile.scenarioId,
   bartonFinkFilmHistoryProfile.scenarioId,
+]);
+assignGroup("family_performance_grief_power", [
+  secretsAndLiesFilmHistoryProfile.scenarioId,
+  dancerInTheDarkFilmHistoryProfile.scenarioId,
+  theSonsRoomFilmHistoryProfile.scenarioId,
+  winterSleepFilmHistoryProfile.scenarioId,
 ]);
 assignGroup("asian_transnational_urban_identity", [
   cycloFilmHistoryProfile.scenarioId,
