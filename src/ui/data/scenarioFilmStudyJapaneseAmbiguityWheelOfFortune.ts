@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const wheelOfFortuneFilmHistoryProfile = {
+  scenarioId: "scenario_wheel_of_fortune_and_fantasy_2021",
+  period: "Early-2020s Japanese dialogue cinema, triptych coincidence and performance-centred relational modernism",
+  traditions: ["Japanese contemporary dialogue cinema", "Triptych anthology", "Performance-centred relational drama"],
+  before: "Anthology films often unified separate episodes through a framing story, a shared location or overt theme, while dialogue-heavy relationship cinema frequently treated conversation as exposition instead of a physical contest in which role-play and power can change from sentence to sentence.",
+  moment: "Ryusuke Hamaguchi links three independent stories through coincidence, imagination and reversals of emotional position. His flat table-reading rehearsal method, medium and long-shot performance coverage, extended conversations, ordinary interiors and carefully timed cuts let language, silence and role-play become the film's principal action rather than support for an external plot.",
+  after: "The Silver Bear Grand Jury Prize and the film's international circulation consolidated Hamaguchi as a central contemporary dramatist, showing that three autonomous stories could achieve unity through repeated production principles—conversation, mistaken identity, rehearsal-like performance and the possibility that one encounter can be replayed differently.",
+  historyQuestion: "Which production system explains a three-part film where coincidence and role-play replace shared characters, actors rehearse through flat table readings, and extended medium or long-shot conversations let tiny changes in speech and posture become the main dramatic action?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Film at Lincoln Center and Berlinale place the 2021 Japanese feature within Hamaguchi's international breakthrough year and contemporary dialogue-led art cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify a triptych of coincidence, doubling, role-play and modern relationship reversals rather than a conventional anthology joined by recurring characters." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Film at Lincoln Center records the Japanese 121-minute production and its NYFF presentation, while BFI documents Hamaguchi's established workshop and rehearsal process behind the performance system." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Berlinale records the Silver Bear Grand Jury Prize, and BFI places the film among the defining international works of 2021 and Hamaguchi's wider breakthrough." },
+    { area: "screenplay", status: "source_verified", note: "The screenplay builds three autonomous episodes around a love triangle, a failed seduction trap and mistaken identity, unifying them through contingency, imagined alternatives and sudden changes in relational power." },
+    { area: "directing", status: "source_verified", note: "BFI documents Hamaguchi's method of repeated, emotionless table readings before shooting, allowing rhythm and language to settle before emotional interpretation enters performance." },
+    { area: "performance", status: "source_verified", note: "BFI and Film at Lincoln Center describe long direct conversations, role-playing and shifting power; restrained bodies, pauses and changes in address carry reversals that conventional action would normally externalise." },
+    { area: "production_design", status: "mapped", note: "Cars, offices, classrooms, apartments and transit spaces give each episode a distinct social container, but the inspected sources do not document a complete production-design process." },
+    { area: "costume_makeup", status: "mapped", note: "Contemporary work, student and domestic clothing support social position and role-play, but the current sources do not isolate the costume or makeup departments." },
+    { area: "cinematography", status: "source_verified", note: "BFI identifies medium and long shots, enclosed spaces and precisely responsive camera movement as the visual method that keeps conversational power and the actors' full physical relation readable." },
+    { area: "lighting", status: "mapped", note: "Soft contemporary interiors and practical urban environments preserve naturalistic attention to faces and bodies, but a complete lighting package is not documented in the inspected sources." },
+    { area: "camera_format", status: "mapped", note: "Institutional records identify the finished digital presentation, but the currently inspected sources do not document the complete acquisition-camera format." },
+    { area: "editing", status: "source_verified", note: "The triptych is divided into complete episodes while internal cuts protect long exchanges, delayed responses and reversals; occasional formal restarts make imagined alternatives visible without merging the stories." },
+    { area: "sound_design", status: "source_verified", note: "Speech, pauses, breath, car movement, room tone and open doors remain foregrounded so language and the social risk of being overheard function as material events." },
+    { area: "music", status: "not_central", note: "The production's primary rhythm comes from language, silence and performance duration rather than a continuous score organising the anthology." },
+    { area: "effects_animation", status: "not_central", note: "Coincidence and imagined alternatives are staged through performance, framing and editing rather than visual-effects or animation systems." },
+    { area: "documentary_method", status: "mapped", note: "Hamaguchi's workshop-based rehearsal and attention to unsmoothed conversational behaviour give the fiction observational density, but the production is a carefully scripted dramatic construction rather than a documentary method." },
+  ],
+} as const satisfies FilmHistoryProfile;

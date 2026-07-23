@@ -5,115 +5,19 @@ import {
   type FilmStudyCoverageOverride,
 } from "../../core/filmStudyCoverage";
 import type { FilmScenarioSeed } from "./filmScenarios";
+import {
+  getIndependentStorytellingCatalogProfile,
+  getIndependentStorytellingDonors,
+  getIndependentStorytellingProfileGroup,
+  type IndependentStorytellingProfileGroup,
+} from "./scenarioFilmStudyIndependentStorytellingCatalog";
 import type {
   FilmHistoryChoice,
   FilmHistoryProfile,
   ScenarioFilmStudyMap,
 } from "./scenarioFilmStudyMap";
-import { cycloFilmHistoryProfile } from "./scenarioFilmStudyAsianTransnationalCyclo";
-import { happyTogetherFilmHistoryProfile } from "./scenarioFilmStudyAsianTransnationalHappyTogether";
-import { infernalAffairsFilmHistoryProfile } from "./scenarioFilmStudyAsianTransnationalInfernalAffairs";
-import { returnToSeoulFilmHistoryProfile } from "./scenarioFilmStudyAsianTransnationalReturnToSeoul";
-import { aTouchOfSinFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageATouchOfSin";
-import { longDaysJourneyIntoNightFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageLongDaysJourney";
-import { raiseTheRedLanternFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageRaiseTheRedLantern";
-import { theAssassinFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageTheAssassin";
-import { daysOfBeingWildFilmHistoryProfile } from "./scenarioFilmStudyEastAsianDaysOfBeingWild";
-import { goodbyeDragonInnFilmHistoryProfile } from "./scenarioFilmStudyEastAsianGoodbyeDragonInn";
-import { millenniumMamboFilmHistoryProfile } from "./scenarioFilmStudyEastAsianMillenniumMambo";
-import { viveLAmourFilmHistoryProfile } from "./scenarioFilmStudyEastAsianViveLAmour";
-import { americanSplendorFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingAmericanSplendor";
-import { daughtersOfTheDustFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingDaughtersOfTheDust";
-import { killerOfSheepFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingKillerOfSheep";
-import { manWhoWasntThereFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingManWhoWasntThere";
-import { mysteryTrainFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingMysteryTrain";
-import { sexLiesVideotapeFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSexLiesVideotape";
-import { slackerFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSlacker";
-import { smokeFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSmoke";
-import { afterLifeFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryAfterLife";
-import { blackRainImamuraFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryBlackRain";
-import { stillWalkingFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryStillWalking";
-import { tampopoFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryTampopo";
-import { oasisFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanOasis";
-import { peppermintCandyFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanPeppermintCandy";
-import { theHostFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanTheHost";
-import { theWailingFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanTheWailing";
-import { courtFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianCourt";
-import { marlinaFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianMarlina";
-import { syndromesAndACenturyFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianSyndromes";
-import { theDiscipleFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianTheDisciple";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
-
-const independentStorytellingProfiles = {
-  [tampopoFilmHistoryProfile.scenarioId]: tampopoFilmHistoryProfile,
-  [killerOfSheepFilmHistoryProfile.scenarioId]: killerOfSheepFilmHistoryProfile,
-  [mysteryTrainFilmHistoryProfile.scenarioId]: mysteryTrainFilmHistoryProfile,
-  [blackRainImamuraFilmHistoryProfile.scenarioId]: blackRainImamuraFilmHistoryProfile,
-  [sexLiesVideotapeFilmHistoryProfile.scenarioId]: sexLiesVideotapeFilmHistoryProfile,
-  [slackerFilmHistoryProfile.scenarioId]: slackerFilmHistoryProfile,
-  [daughtersOfTheDustFilmHistoryProfile.scenarioId]: daughtersOfTheDustFilmHistoryProfile,
-  [smokeFilmHistoryProfile.scenarioId]: smokeFilmHistoryProfile,
-  [afterLifeFilmHistoryProfile.scenarioId]: afterLifeFilmHistoryProfile,
-  [manWhoWasntThereFilmHistoryProfile.scenarioId]: manWhoWasntThereFilmHistoryProfile,
-  [americanSplendorFilmHistoryProfile.scenarioId]: americanSplendorFilmHistoryProfile,
-  [stillWalkingFilmHistoryProfile.scenarioId]: stillWalkingFilmHistoryProfile,
-  [peppermintCandyFilmHistoryProfile.scenarioId]: peppermintCandyFilmHistoryProfile,
-  [oasisFilmHistoryProfile.scenarioId]: oasisFilmHistoryProfile,
-  [theHostFilmHistoryProfile.scenarioId]: theHostFilmHistoryProfile,
-  [theWailingFilmHistoryProfile.scenarioId]: theWailingFilmHistoryProfile,
-  [syndromesAndACenturyFilmHistoryProfile.scenarioId]: syndromesAndACenturyFilmHistoryProfile,
-  [courtFilmHistoryProfile.scenarioId]: courtFilmHistoryProfile,
-  [marlinaFilmHistoryProfile.scenarioId]: marlinaFilmHistoryProfile,
-  [theDiscipleFilmHistoryProfile.scenarioId]: theDiscipleFilmHistoryProfile,
-  [daysOfBeingWildFilmHistoryProfile.scenarioId]: daysOfBeingWildFilmHistoryProfile,
-  [viveLAmourFilmHistoryProfile.scenarioId]: viveLAmourFilmHistoryProfile,
-  [millenniumMamboFilmHistoryProfile.scenarioId]: millenniumMamboFilmHistoryProfile,
-  [goodbyeDragonInnFilmHistoryProfile.scenarioId]: goodbyeDragonInnFilmHistoryProfile,
-  [raiseTheRedLanternFilmHistoryProfile.scenarioId]: raiseTheRedLanternFilmHistoryProfile,
-  [aTouchOfSinFilmHistoryProfile.scenarioId]: aTouchOfSinFilmHistoryProfile,
-  [theAssassinFilmHistoryProfile.scenarioId]: theAssassinFilmHistoryProfile,
-  [longDaysJourneyIntoNightFilmHistoryProfile.scenarioId]: longDaysJourneyIntoNightFilmHistoryProfile,
-  [cycloFilmHistoryProfile.scenarioId]: cycloFilmHistoryProfile,
-  [happyTogetherFilmHistoryProfile.scenarioId]: happyTogetherFilmHistoryProfile,
-  [infernalAffairsFilmHistoryProfile.scenarioId]: infernalAffairsFilmHistoryProfile,
-  [returnToSeoulFilmHistoryProfile.scenarioId]: returnToSeoulFilmHistoryProfile,
-} as const satisfies Record<string, FilmHistoryProfile>;
-
-const southKoreanGenreScenarioIds = new Set<string>([
-  peppermintCandyFilmHistoryProfile.scenarioId,
-  oasisFilmHistoryProfile.scenarioId,
-  theHostFilmHistoryProfile.scenarioId,
-  theWailingFilmHistoryProfile.scenarioId,
-]);
-
-const southSoutheastAsianScenarioIds = new Set<string>([
-  syndromesAndACenturyFilmHistoryProfile.scenarioId,
-  courtFilmHistoryProfile.scenarioId,
-  marlinaFilmHistoryProfile.scenarioId,
-  theDiscipleFilmHistoryProfile.scenarioId,
-]);
-
-const hongKongTaiwanUrbanTimeScenarioIds = new Set<string>([
-  daysOfBeingWildFilmHistoryProfile.scenarioId,
-  viveLAmourFilmHistoryProfile.scenarioId,
-  millenniumMamboFilmHistoryProfile.scenarioId,
-  goodbyeDragonInnFilmHistoryProfile.scenarioId,
-]);
-
-const chineseLanguageSpaceGenreScenarioIds = new Set<string>([
-  raiseTheRedLanternFilmHistoryProfile.scenarioId,
-  aTouchOfSinFilmHistoryProfile.scenarioId,
-  theAssassinFilmHistoryProfile.scenarioId,
-  longDaysJourneyIntoNightFilmHistoryProfile.scenarioId,
-]);
-
-const asianTransnationalUrbanIdentityScenarioIds = new Set<string>([
-  cycloFilmHistoryProfile.scenarioId,
-  happyTogetherFilmHistoryProfile.scenarioId,
-  infernalAffairsFilmHistoryProfile.scenarioId,
-  returnToSeoulFilmHistoryProfile.scenarioId,
-]);
 
 function statusRank(status: FilmStudyCoverageOverride["status"]): number {
   if (status === "source_verified") return 4;
@@ -151,13 +55,19 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
     { area: "historical_context", status: "source_verified", note: profile.period },
     { area: "movement_and_tradition", status: "source_verified", note: profile.traditions.join(" · ") },
     { area: "industry_and_production_context", status: "source_verified", note: profile.moment },
-    { area: "reception_and_legacy", status: profile.technicalHighlights.find((item) => item.area === "reception_and_legacy")?.status ?? "mapped", note: profile.after },
+    {
+      area: "reception_and_legacy",
+      status: profile.technicalHighlights.find((item) => item.area === "reception_and_legacy")?.status ?? "mapped",
+      note: profile.after,
+    },
     ...profile.technicalHighlights,
   ];
 }
 
-export function getIndependentStorytellingFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return independentStorytellingProfiles[scenarioId as keyof typeof independentStorytellingProfiles];
+export function getIndependentStorytellingFilmHistoryProfile(
+  scenarioId: string,
+): FilmHistoryProfile | undefined {
+  return getIndependentStorytellingCatalogProfile(scenarioId);
 }
 
 export function resolveIndependentStorytellingFilmStudyMap(
@@ -192,29 +102,37 @@ function hashString(value: string): number {
   return hash;
 }
 
+function partialFeedback(group: IndependentStorytellingProfileGroup): string {
+  const feedback: Record<IndependentStorytellingProfileGroup, string> = {
+    general: "This is a real independent storytelling system, but it belongs to another balance of place, genre, memory, documentary evidence, performance and visual construction.",
+    south_korean_genre: "This is a real South Korean production system, but it organizes historical pressure, performance, genre, location, effects, editing and sound differently.",
+    south_southeast_asian: "This is a real South or Southeast Asian production system, but it organizes institution, performance, landscape, duration, genre and sound differently.",
+    hong_kong_taiwan_urban_time: "This is a real Hong Kong or Taiwan urban-time system, but it organizes memory, architecture, duration, performance, music and exhibition space differently.",
+    chinese_language_space_genre: "This is a real Chinese-language production system, but it organizes ritual, geography, historical genre, violence, duration and immersive space differently.",
+    asian_transnational_urban_identity: "This is a real Asian transnational urban-identity system, but it organizes migration, labour, romance, surveillance, time and belonging differently.",
+    japanese_ambiguity_dialogue: "This is a real Japanese ambiguity-and-dialogue production system, but it organizes hypnosis, coincidence, institutional viewpoint, environmental procedure, performance and sound differently.",
+  };
+  return feedback[group];
+}
+
+function missFeedback(group: IndependentStorytellingProfileGroup): string {
+  const feedback: Record<IndependentStorytellingProfileGroup, string> = {
+    general: "This places the film inside the wrong historical relationship between place, narration, media mixture, performance and image-making.",
+    south_korean_genre: "This places the film inside the wrong South Korean historical and production logic.",
+    south_southeast_asian: "This places the film inside the wrong South or Southeast Asian institutional and production logic.",
+    hong_kong_taiwan_urban_time: "This places the film inside the wrong Hong Kong or Taiwan relationship between city, memory, duration and spectatorship.",
+    chinese_language_space_genre: "This places the film inside the wrong Chinese-language relationship between history, space, violence, genre and cinematic duration.",
+    asian_transnational_urban_identity: "This places the film inside the wrong relationship between Asian city, displacement, divided identity, social systems and return.",
+    japanese_ambiguity_dialogue: "This places the film inside the wrong Japanese relationship between uncertainty, conversation, institutional pressure, landscape and moral interpretation.",
+  };
+  return feedback[group];
+}
+
 export function createIndependentStorytellingFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
-  const isSouthKoreanGenreProfile = southKoreanGenreScenarioIds.has(profile.scenarioId);
-  const isSouthSoutheastAsianProfile = southSoutheastAsianScenarioIds.has(profile.scenarioId);
-  const isHongKongTaiwanUrbanTimeProfile = hongKongTaiwanUrbanTimeScenarioIds.has(profile.scenarioId);
-  const isChineseLanguageSpaceGenreProfile = chineseLanguageSpaceGenreScenarioIds.has(profile.scenarioId);
-  const isAsianTransnationalUrbanIdentityProfile = asianTransnationalUrbanIdentityScenarioIds.has(profile.scenarioId);
-  const donors = Object.values(independentStorytellingProfiles)
-    .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
-    .filter((candidate) => {
-      if (isSouthKoreanGenreProfile) return southKoreanGenreScenarioIds.has(candidate.scenarioId);
-      if (isSouthSoutheastAsianProfile) return southSoutheastAsianScenarioIds.has(candidate.scenarioId);
-      if (isHongKongTaiwanUrbanTimeProfile) return hongKongTaiwanUrbanTimeScenarioIds.has(candidate.scenarioId);
-      if (isChineseLanguageSpaceGenreProfile) return chineseLanguageSpaceGenreScenarioIds.has(candidate.scenarioId);
-      if (isAsianTransnationalUrbanIdentityProfile) return asianTransnationalUrbanIdentityScenarioIds.has(candidate.scenarioId);
-      return !southKoreanGenreScenarioIds.has(candidate.scenarioId)
-        && !southSoutheastAsianScenarioIds.has(candidate.scenarioId)
-        && !hongKongTaiwanUrbanTimeScenarioIds.has(candidate.scenarioId)
-        && !chineseLanguageSpaceGenreScenarioIds.has(candidate.scenarioId)
-        && !asianTransnationalUrbanIdentityScenarioIds.has(candidate.scenarioId);
-    })
-    .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
+  const group = getIndependentStorytellingProfileGroup(profile.scenarioId);
+  const donors = getIndependentStorytellingDonors(profile);
   const start = hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
@@ -229,33 +147,13 @@ export function createIndependentStorytellingFilmHistoryChoices(
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: isSouthKoreanGenreProfile
-        ? "This is a real South Korean production system, but it organizes historical pressure, performance, genre, location, effects, editing and sound differently."
-        : isSouthSoutheastAsianProfile
-          ? "This is a real South or Southeast Asian production system, but it organizes institution, performance, landscape, duration, genre and sound differently."
-          : isHongKongTaiwanUrbanTimeProfile
-            ? "This is a real Hong Kong or Taiwan urban-time system, but it organizes memory, architecture, duration, performance, music and exhibition space differently."
-            : isChineseLanguageSpaceGenreProfile
-              ? "This is a real Chinese-language production system, but it organizes ritual, geography, historical genre, violence, duration and immersive space differently."
-              : isAsianTransnationalUrbanIdentityProfile
-                ? "This is a real Asian transnational urban-identity system, but it organizes migration, labour, romance, surveillance, time and belonging differently."
-                : "This is a real independent storytelling system, but it belongs to another balance of place, genre, memory, documentary evidence, performance and visual construction.",
+      feedback: partialFeedback(group),
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: isSouthKoreanGenreProfile
-        ? "This places the film inside the wrong South Korean historical and production logic."
-        : isSouthSoutheastAsianProfile
-          ? "This places the film inside the wrong South or Southeast Asian institutional and production logic."
-          : isHongKongTaiwanUrbanTimeProfile
-            ? "This places the film inside the wrong Hong Kong or Taiwan relationship between city, memory, duration and spectatorship."
-            : isChineseLanguageSpaceGenreProfile
-              ? "This places the film inside the wrong Chinese-language relationship between history, space, violence, genre and cinematic duration."
-              : isAsianTransnationalUrbanIdentityProfile
-                ? "This places the film inside the wrong relationship between Asian city, displacement, divided identity, social systems and return."
-                : "This places the film inside the wrong historical relationship between place, narration, media mixture, performance and image-making.",
+      feedback: missFeedback(group),
     }] : []),
   ];
 }
