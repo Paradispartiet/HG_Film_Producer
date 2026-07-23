@@ -1,4 +1,8 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import { neverRarelySometimesAlwaysFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecarityNeverRarely";
+import { soundOfMetalFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecaritySoundOfMetal";
+import { theRiderFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecarityTheRider";
+import { wendyAndLucyFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecarityWendyLucy";
 import { allTheBeautyAndTheBloodshedFilmHistoryProfile } from "./scenarioFilmStudyBodyArchiveAllBeauty";
 import { dahomeyFilmHistoryProfile } from "./scenarioFilmStudyBodyArchiveDahomey";
 import { happeningFilmHistoryProfile } from "./scenarioFilmStudyBodyArchiveHappening";
@@ -72,6 +76,7 @@ export type IndependentStorytellingProfileGroup =
   | "family_performance_grief_power"
   | "body_archive_restitution_perspective"
   | "queer_independent_body_community_archive"
+  | "american_precarity_body_care"
   | "asian_transnational_urban_identity"
   | "japanese_ambiguity_dialogue";
 
@@ -128,6 +133,10 @@ const profiles = [
   parisIsBurningFilmHistoryProfile,
   safeFilmHistoryProfile,
   theWatermelonWomanFilmHistoryProfile,
+  wendyAndLucyFilmHistoryProfile,
+  theRiderFilmHistoryProfile,
+  soundOfMetalFilmHistoryProfile,
+  neverRarelySometimesAlwaysFilmHistoryProfile,
   cycloFilmHistoryProfile,
   happyTogetherFilmHistoryProfile,
   infernalAffairsFilmHistoryProfile,
@@ -207,6 +216,12 @@ assignGroup("queer_independent_body_community_archive", [
   parisIsBurningFilmHistoryProfile.scenarioId,
   safeFilmHistoryProfile.scenarioId,
   theWatermelonWomanFilmHistoryProfile.scenarioId,
+]);
+assignGroup("american_precarity_body_care", [
+  wendyAndLucyFilmHistoryProfile.scenarioId,
+  theRiderFilmHistoryProfile.scenarioId,
+  soundOfMetalFilmHistoryProfile.scenarioId,
+  neverRarelySometimesAlwaysFilmHistoryProfile.scenarioId,
 ]);
 assignGroup("asian_transnational_urban_identity", [
   cycloFilmHistoryProfile.scenarioId,

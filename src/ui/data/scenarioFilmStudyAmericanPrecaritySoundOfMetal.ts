@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const soundOfMetalFilmHistoryProfile = {
+  scenarioId: "scenario_sound_of_metal_2019",
+  period: "Late-2010s American independent sensory drama, Deaf-community representation and subjective sound cinema",
+  traditions: ["Subjective sound cinema", "Independent recovery drama", "Community-informed performance realism"],
+  before: "Films about disability and musicians often treated sensory loss as an obstacle to be cured or a device for inspirational triumph, while sound design remained an illustration of impairment rather than the primary narrative viewpoint.",
+  moment: "Darius Marder organizes Ruben's hearing loss through alternating external and intensely subjective sound fields. Chronological location shooting on film, live musical performance, ASL preparation, Deaf performers, body recordings, cochlear-implant simulation and an unusually long sound postproduction process make listening, silence and distortion the film's central dramatic language.",
+  after: "Its festival circulation, Spirit Award recognition and Academy Awards for sound and editing established Sound of Metal as a major contemporary reference for sensory point of view, inclusive casting and postproduction-led storytelling.",
+  historyQuestion: "Which production system explains a recovery drama shot chronologically on film where live drumming, Deaf performers, recordings from inside the actor's body, shifting auditory point of view and cochlear-implant simulation carry the character arc?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, BFI and Film Independent place the film in contemporary touring music, addiction recovery and Deaf-community contexts without treating deafness as a simple defect awaiting cure." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The sources position the film within American independent realism and subjective sound cinema, extending point-of-view practice from image into hearing, silence and vibration." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents the producers and principal departments; Film Independent records location shooting, chronological production, live performance, film capture and an intensive postproduction process." },
+    { area: "reception_and_legacy", status: "source_verified", note: "AFI and Film Independent document major festival and Spirit recognition, while the film's sound and editing work later became award-winning reference points for immersive audio storytelling." },
+    { area: "screenplay", status: "source_verified", note: "Darius and Abraham Marder structure the story around diagnosis, separation, community routines, resistance, surgery and a final choice to accept quiet rather than restore the former life." },
+    { area: "directing", status: "source_verified", note: "Marder describes experiential production, chronological shooting, live musicianship and authenticity requirements that bind performance, location and sound perspective together." },
+    { area: "performance", status: "source_verified", note: "Riz Ahmed trained in drumming and ASL, while Paul Raci and Deaf performers anchor the community scenes in lived language, behaviour and cultural perspective." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Jeremy Woodward; the RV, concert spaces, audiology rooms, sober Deaf community and Paris interiors each organize a different relation between activity, communication and isolation." },
+    { area: "costume_makeup", status: "source_verified", note: "Production records credit Megan Stark Evans and the hair-makeup departments; tattoos, musician clothing, hearing devices and later formal dress track Ruben's changing attempts to control identity." },
+    { area: "cinematography", status: "source_verified", note: "AFI and BFI credit Daniël Bouquet, whose watchful 35 mm imagery keeps hands, faces, ASL and visual information readable as sound perspective becomes unstable." },
+    { area: "lighting", status: "mapped", note: "Naturalistic clubs, the community compound, workshops and Paris interiors support the film's realism, but the inspected sources do not document the complete lighting package." },
+    { area: "camera_format", status: "source_verified", note: "Film Independent documents the decision to shoot on film, preserving a tactile, observational image alongside the radically constructed audio perspective." },
+    { area: "editing", status: "source_verified", note: "AFI credits Mikkel E.G. Nielsen; editing alternates objective continuity with sudden auditory transitions and gives adaptation, relapse and surgery distinct sensory phases." },
+    { area: "sound_design", status: "source_verified", note: "Marder and Nicolas Becker document stethoscope, underwater and multidirectional microphones, recordings inside Riz Ahmed's body, extensive experiments and a sound post process many times longer than the shoot." },
+    { area: "music", status: "source_verified", note: "AFI credits Nicolas Becker and Abraham Marder; live metal performance, restrained scoring and the final withdrawal of sound separate musical identity from the possibility of stillness." },
+    { area: "effects_animation", status: "not_central", note: "The principal transformation is acoustic and performative; visible effects and animation are not the production system carrying the film." },
+    { area: "documentary_method", status: "source_verified", note: "Community consultation, Deaf performers, real ASL, live music and bodily sound recording give the scripted drama an experiential research method without converting it into documentary." },
+  ],
+} as const satisfies FilmHistoryProfile;
