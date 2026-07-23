@@ -1,0 +1,152 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import { cycloFilmHistoryProfile } from "./scenarioFilmStudyAsianTransnationalCyclo";
+import { happyTogetherFilmHistoryProfile } from "./scenarioFilmStudyAsianTransnationalHappyTogether";
+import { infernalAffairsFilmHistoryProfile } from "./scenarioFilmStudyAsianTransnationalInfernalAffairs";
+import { returnToSeoulFilmHistoryProfile } from "./scenarioFilmStudyAsianTransnationalReturnToSeoul";
+import { aTouchOfSinFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageATouchOfSin";
+import { longDaysJourneyIntoNightFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageLongDaysJourney";
+import { raiseTheRedLanternFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageRaiseTheRedLantern";
+import { theAssassinFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageTheAssassin";
+import { daysOfBeingWildFilmHistoryProfile } from "./scenarioFilmStudyEastAsianDaysOfBeingWild";
+import { goodbyeDragonInnFilmHistoryProfile } from "./scenarioFilmStudyEastAsianGoodbyeDragonInn";
+import { millenniumMamboFilmHistoryProfile } from "./scenarioFilmStudyEastAsianMillenniumMambo";
+import { viveLAmourFilmHistoryProfile } from "./scenarioFilmStudyEastAsianViveLAmour";
+import { americanSplendorFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingAmericanSplendor";
+import { daughtersOfTheDustFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingDaughtersOfTheDust";
+import { killerOfSheepFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingKillerOfSheep";
+import { manWhoWasntThereFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingManWhoWasntThere";
+import { mysteryTrainFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingMysteryTrain";
+import { sexLiesVideotapeFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSexLiesVideotape";
+import { slackerFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSlacker";
+import { smokeFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSmoke";
+import { cureFilmHistoryProfile } from "./scenarioFilmStudyJapaneseAmbiguityCure";
+import { evilDoesNotExistFilmHistoryProfile } from "./scenarioFilmStudyJapaneseAmbiguityEvilDoesNotExist";
+import { monsterKoreedaFilmHistoryProfile } from "./scenarioFilmStudyJapaneseAmbiguityMonster";
+import { wheelOfFortuneFilmHistoryProfile } from "./scenarioFilmStudyJapaneseAmbiguityWheelOfFortune";
+import { afterLifeFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryAfterLife";
+import { blackRainImamuraFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryBlackRain";
+import { stillWalkingFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryStillWalking";
+import { tampopoFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryTampopo";
+import { oasisFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanOasis";
+import { peppermintCandyFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanPeppermintCandy";
+import { theHostFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanTheHost";
+import { theWailingFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanTheWailing";
+import { courtFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianCourt";
+import { marlinaFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianMarlina";
+import { syndromesAndACenturyFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianSyndromes";
+import { theDiscipleFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianTheDisciple";
+
+export type IndependentStorytellingProfileGroup =
+  | "general"
+  | "south_korean_genre"
+  | "south_southeast_asian"
+  | "hong_kong_taiwan_urban_time"
+  | "chinese_language_space_genre"
+  | "asian_transnational_urban_identity"
+  | "japanese_ambiguity_dialogue";
+
+const profiles = [
+  tampopoFilmHistoryProfile,
+  killerOfSheepFilmHistoryProfile,
+  mysteryTrainFilmHistoryProfile,
+  blackRainImamuraFilmHistoryProfile,
+  sexLiesVideotapeFilmHistoryProfile,
+  slackerFilmHistoryProfile,
+  daughtersOfTheDustFilmHistoryProfile,
+  smokeFilmHistoryProfile,
+  afterLifeFilmHistoryProfile,
+  manWhoWasntThereFilmHistoryProfile,
+  americanSplendorFilmHistoryProfile,
+  stillWalkingFilmHistoryProfile,
+  peppermintCandyFilmHistoryProfile,
+  oasisFilmHistoryProfile,
+  theHostFilmHistoryProfile,
+  theWailingFilmHistoryProfile,
+  syndromesAndACenturyFilmHistoryProfile,
+  courtFilmHistoryProfile,
+  marlinaFilmHistoryProfile,
+  theDiscipleFilmHistoryProfile,
+  daysOfBeingWildFilmHistoryProfile,
+  viveLAmourFilmHistoryProfile,
+  millenniumMamboFilmHistoryProfile,
+  goodbyeDragonInnFilmHistoryProfile,
+  raiseTheRedLanternFilmHistoryProfile,
+  aTouchOfSinFilmHistoryProfile,
+  theAssassinFilmHistoryProfile,
+  longDaysJourneyIntoNightFilmHistoryProfile,
+  cycloFilmHistoryProfile,
+  happyTogetherFilmHistoryProfile,
+  infernalAffairsFilmHistoryProfile,
+  returnToSeoulFilmHistoryProfile,
+  cureFilmHistoryProfile,
+  wheelOfFortuneFilmHistoryProfile,
+  monsterKoreedaFilmHistoryProfile,
+  evilDoesNotExistFilmHistoryProfile,
+] as const satisfies readonly FilmHistoryProfile[];
+
+const profilesByScenarioId = new Map<string, FilmHistoryProfile>(
+  profiles.map((profile) => [profile.scenarioId, profile]),
+);
+
+const groupByScenarioId = new Map<string, IndependentStorytellingProfileGroup>();
+
+function assignGroup(group: IndependentStorytellingProfileGroup, scenarioIds: readonly string[]): void {
+  for (const scenarioId of scenarioIds) groupByScenarioId.set(scenarioId, group);
+}
+
+assignGroup("south_korean_genre", [
+  peppermintCandyFilmHistoryProfile.scenarioId,
+  oasisFilmHistoryProfile.scenarioId,
+  theHostFilmHistoryProfile.scenarioId,
+  theWailingFilmHistoryProfile.scenarioId,
+]);
+assignGroup("south_southeast_asian", [
+  syndromesAndACenturyFilmHistoryProfile.scenarioId,
+  courtFilmHistoryProfile.scenarioId,
+  marlinaFilmHistoryProfile.scenarioId,
+  theDiscipleFilmHistoryProfile.scenarioId,
+]);
+assignGroup("hong_kong_taiwan_urban_time", [
+  daysOfBeingWildFilmHistoryProfile.scenarioId,
+  viveLAmourFilmHistoryProfile.scenarioId,
+  millenniumMamboFilmHistoryProfile.scenarioId,
+  goodbyeDragonInnFilmHistoryProfile.scenarioId,
+]);
+assignGroup("chinese_language_space_genre", [
+  raiseTheRedLanternFilmHistoryProfile.scenarioId,
+  aTouchOfSinFilmHistoryProfile.scenarioId,
+  theAssassinFilmHistoryProfile.scenarioId,
+  longDaysJourneyIntoNightFilmHistoryProfile.scenarioId,
+]);
+assignGroup("asian_transnational_urban_identity", [
+  cycloFilmHistoryProfile.scenarioId,
+  happyTogetherFilmHistoryProfile.scenarioId,
+  infernalAffairsFilmHistoryProfile.scenarioId,
+  returnToSeoulFilmHistoryProfile.scenarioId,
+]);
+assignGroup("japanese_ambiguity_dialogue", [
+  cureFilmHistoryProfile.scenarioId,
+  wheelOfFortuneFilmHistoryProfile.scenarioId,
+  monsterKoreedaFilmHistoryProfile.scenarioId,
+  evilDoesNotExistFilmHistoryProfile.scenarioId,
+]);
+
+export function getIndependentStorytellingCatalogProfile(scenarioId: string): FilmHistoryProfile | undefined {
+  return profilesByScenarioId.get(scenarioId);
+}
+
+export function getIndependentStorytellingProfileGroup(
+  scenarioId: string,
+): IndependentStorytellingProfileGroup {
+  return groupByScenarioId.get(scenarioId) ?? "general";
+}
+
+export function getIndependentStorytellingDonors(
+  profile: FilmHistoryProfile,
+): readonly FilmHistoryProfile[] {
+  const group = getIndependentStorytellingProfileGroup(profile.scenarioId);
+  return profiles
+    .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
+    .filter((candidate) => getIndependentStorytellingProfileGroup(candidate.scenarioId) === group)
+    .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
+}
