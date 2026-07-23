@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const secretsAndLiesFilmHistoryProfile = {
+  scenarioId: "scenario_secrets_and_lies_1996",
+  period: "Mid-1990s British independent social realism, devised ensemble performance and family melodrama",
+  traditions: ["Mike Leigh devised cinema", "British social realism", "Ensemble family melodrama"],
+  before: "Family melodramas commonly began from a completed screenplay and revealed secrets through tightly plotted reversals, while British social realism often privileged public institutions and visible class conflict over the slow construction of private family behaviour.",
+  moment: "Mike Leigh develops each character separately with the actors through research and rehearsal, then brings the family together and fixes every line before filming. Dick Pope's composed 1.85:1 images, portrait sessions, domestic rooms, long two-person scenes and the birthday-barbecue ensemble turn race, adoption, class and loneliness into lived relationships rather than explanatory themes.",
+  after: "The Palme d'Or and Brenda Blethyn's Cannes acting prize made the film Leigh's international breakthrough and one of the clearest demonstrations that painstaking devised preparation could produce formally exact, emotionally accessible feature cinema.",
+  historyQuestion: "Which production system explains a family drama built through months of separate character research and rehearsal, then fixed before shooting so portraits, kitchens, phone calls and one long birthday gathering reveal race, class, adoption and hidden kinship through performance?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Criterion place the film in mid-1990s Britain and in Leigh's continuing examination of working- and middle-class family life, adoption, race and social isolation." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion documents Leigh's distinctive devised method, joining British social realism to an emotionally expansive ensemble family melodrama." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes, BFI and Criterion identify the UK-France production, producer Simon Channing-Williams and the principal camera, editing, design, sound, costume, makeup and music departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes confirms the 1996 Palme d'Or and Best Actress award; BFI and Criterion treat the film as a central work in Leigh's career and British cinema." },
+    { area: "screenplay", status: "source_verified", note: "Criterion's production account explains that characters were researched and developed separately, relationships introduced gradually and scenes finally structured and written through rehearsal before filming." },
+    { area: "directing", status: "source_verified", note: "Leigh withholds character information from performers as well as viewers, then stages meetings and group scenes so discoveries occur through behaviour rather than imposed exposition." },
+    { area: "performance", status: "source_verified", note: "Brenda Blethyn, Marianne Jean-Baptiste, Timothy Spall, Phyllis Logan and Claire Rushbrook build distinct social rhythms whose collision gives the final gathering its accumulated emotional force." },
+    { area: "production_design", status: "source_verified", note: "Alison Chitty's credited design contrasts Cynthia's cramped East London home, Maurice's suburban house, his portrait studio and ordinary public spaces as material expressions of class and emotional distance." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion credits Maria Price and Christine Blundell; clothing, hair and makeup support separately developed class identities and self-presentations without turning them into caricature." },
+    { area: "cinematography", status: "source_verified", note: "Cannes and Criterion credit Dick Pope; elegant 1.85:1 composition, portrait framing and patient two-shots preserve performance while making family space and social distance visible." },
+    { area: "lighting", status: "mapped", note: "Naturalistic homes, studio portrait light and exterior daylight sustain social realism, but the inspected sources do not document the complete lighting package." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the colour 1.85:1 feature and a director- and cinematographer-approved 2K restoration with preserved surround soundtrack." },
+    { area: "editing", status: "source_verified", note: "Cannes and Criterion credit Jon Gregory; patient scene duration, parallel family strands and delayed convergence make the final revelations feel earned rather than mechanically plotted." },
+    { area: "sound_design", status: "source_verified", note: "Criterion credits George Richards; telephone voices, domestic room tone, portrait sessions, street ambience and overlapping family speech keep emotional conflict grounded in ordinary environments." },
+    { area: "music", status: "source_verified", note: "Cannes and Criterion credit Andrew Dickson; restrained music supports transitions and emotional release without replacing the actors' speech, pauses and physical behaviour." },
+    { area: "effects_animation", status: "not_central", note: "The film's construction depends on rehearsal, performance, location, framing, editing and sound rather than effects spectacle or animation." },
+    { area: "documentary_method", status: "source_verified", note: "Actor research included real workplaces and training, including factory shifts and optometry classes, giving the invented characters documentary social specificity inside a fully scripted fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;
