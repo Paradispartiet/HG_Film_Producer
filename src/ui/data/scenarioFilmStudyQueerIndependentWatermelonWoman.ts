@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const theWatermelonWomanFilmHistoryProfile = {
+  scenarioId: "scenario_the_watermelon_woman_1996",
+  period: "Mid-1990s Black lesbian independent cinema, New Queer Cinema and fabricated-archive historiography",
+  traditions: ["New Queer Cinema", "Black lesbian independent cinema", "Hybrid fiction-documentary archive film"],
+  before: "Black actresses, queer women and especially Black lesbians were systematically marginalized in both classical film history and the archives used to reconstruct it, leaving later filmmakers with gaps that conventional research could identify but not adequately represent.",
+  moment: "Cheryl Dunye turns that absence into form. Playing a fictionalized version of herself, she combines romantic comedy, direct address, video diary, 16 mm material, improvised interviews and staged black-and-white photographs created with Zoe Leonard. The film makes research, production labor and archival invention part of the story, allowing a fabricated actress to expose a real history of exclusion.",
+  after: "The film became a defining New Queer Cinema work, the first U.S. narrative feature directed by an out Black lesbian, a 2021 National Film Registry selection and a lasting model for using self-reflexive fiction and constructed evidence to challenge who is allowed to appear in film history.",
+  historyQuestion: "Which production system explains a low-budget Philadelphia feature where a filmmaker plays herself, mixes romantic comedy with video and 16 mm investigation, stages a missing archive and lets production obstacles become the method for reconstructing Black lesbian film history?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Criterion and Library of Congress place the film within 1990s Black lesbian life and its investigation of erased Black actresses in early American cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Criterion identify the film as a defining New Queer Cinema work, a hybrid 'Dunyementary' and the first U.S. feature directed by an out Black lesbian filmmaker." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion credits producers Barry Swimar and Alexandra Juhasz, cinematographer Michelle Crenshaw, editor Annie Taylor, production designer Robert Holtzman and archival-image collaborator Zoe Leonard." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion documents the film's Berlin premiere and later restoration, while the Library of Congress confirms its 2021 National Film Registry induction." },
+    { area: "screenplay", status: "source_verified", note: "Dunye's screenplay braids Cheryl's film-history investigation, friendship and interracial romance, using the search for Fae Richards to connect archival absence with present-day identity and authorship." },
+    { area: "directing", status: "source_verified", note: "Dunye keeps the film's construction visible through direct address, on-screen equipment, improvised encounters and shifts between narrative scenes and documentary-style research." },
+    { area: "performance", status: "source_verified", note: "Dunye, Guinevere Turner, Valarie Walker and interview participants move between scripted characterization, self-performance, improvisation and mock-documentary address." },
+    { area: "production_design", status: "source_verified", note: "Robert Holtzman's credited production design and Philadelphia locations frame video-store work, domestic life, archives, clubs and improvised production spaces as part of Cheryl's material filmmaking world." },
+    { area: "costume_makeup", status: "mapped", note: "Contemporary clothing and the fabricated period photographs distinguish present-day Philadelphia from the invented Fae Richards archive, but the inspected sources do not document a full costume-and-makeup department." },
+    { area: "cinematography", status: "source_verified", note: "Michelle Crenshaw's credited cinematography moves among grainy video, 16 mm, staged interviews, observational street material and controlled narrative scenes without hiding their different evidentiary statuses." },
+    { area: "lighting", status: "mapped", note: "Practical interiors, street observation and deliberately staged archival photographs use distinct light textures, though the inspected sources do not document the complete lighting package." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the 1.33:1 colour feature and a 2K restoration supervised by Dunye, Crenshaw and Juhasz; BFI analysis describes the deliberate mixture of 16 mm film and 1990s videotape textures." },
+    { area: "editing", status: "source_verified", note: "Annie Taylor's credited editing lets daily life, direct address, interviews, romance and fabricated archive interrupt and reinterpret one another while preserving the film's comic rhythm." },
+    { area: "sound_design", status: "source_verified", note: "On-camera speech, offscreen production voices, interview sound, club ambience, video-store noise and direct address keep authorship and recording conditions audible." },
+    { area: "music", status: "source_verified", note: "Criterion credits Paul Shapiro's original score and Bill Coleman's music supervision, supporting shifts among romantic comedy, investigation and self-reflexive filmmaking." },
+    { area: "effects_animation", status: "not_central", note: "The film's constructed evidence is created through photography, performance, period staging and editing rather than visual effects or animation." },
+    { area: "documentary_method", status: "source_verified", note: "BFI documents improvised interviews, talking heads, cinéma-vérité street material and fabricated archival photographs created when real historical materials were inaccessible or unaffordable." },
+  ],
+} as const satisfies FilmHistoryProfile;
