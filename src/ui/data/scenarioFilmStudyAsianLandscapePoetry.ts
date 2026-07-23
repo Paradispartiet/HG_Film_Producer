@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const poetryFilmHistoryProfile = {
+  scenarioId: "scenario_poetry_2010",
+  period: "Early-2010s South Korean social realism, late-life creativity and moral attention",
+  traditions: ["New Korean Cinema", "Literary social realism", "Ethical character study"],
+  before: "Films about late-life art often treated creativity as personal renewal, while crime and social-problem dramas usually centred investigation, punishment or public confrontation rather than the ethics of sustained attention.",
+  moment: "Lee Chang-dong follows an older woman learning to write a poem while memory loss and her grandson's participation in sexual violence force beauty into conflict with responsibility. Han River landscapes, ordinary care work, patient observation, social negotiation, quiet sound and Yoon Jeong-hee's performance make seeing clearly both an artistic and moral act.",
+  after: "The 2010 Cannes Best Screenplay award confirmed the film's international standing and strengthened Lee's model of social realism in which literary form, performance and everyday observation expose collective evasion without simplifying guilt or compassion.",
+  historyQuestion: "Which production system explains a social-realist character study where poetry lessons, river landscapes, care work, memory loss and quiet observation become inseparable from the moral burden of a concealed act of violence?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, KOFIC and BFI situate the film in contemporary South Korean social realism and in Lee Chang-dong's continuing movement between literature, public culture and cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources describe a literary and performance-centred realism that turns attention to ordinary life into an ethical confrontation rather than sentimental artistic escape." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes and KOFIC document Pinehouse Film, UniKorea, Finecut and the principal producers, cinematography, design, editing and sound departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes confirms the 2010 Best Screenplay award; KOFIC and BFI record its wide festival recognition and continuing status as a major Lee Chang-dong work." },
+    { area: "screenplay", status: "source_verified", note: "The screenplay intertwines poetry study, care work, memory loss, financial negotiation and concealed violence so that the search for language becomes a test of responsibility." },
+    { area: "directing", status: "source_verified", note: "Lee gives ordinary encounters full duration and refuses to isolate beauty from social harm, allowing observation, hesitation and compromised conversation to carry moral pressure." },
+    { area: "performance", status: "source_verified", note: "Yoon Jeong-hee builds Mija through curiosity, cultivated appearance, practical labour, forgetfulness and quietly changing attention rather than a single explanatory transformation." },
+    { area: "production_design", status: "source_verified", note: "A modest apartment, cultural centre, hospital, restaurants, streets, farms and riverbanks form a contemporary social geography connecting care, class and institutional avoidance." },
+    { area: "costume_makeup", status: "mapped", note: "Mija's flowered hats and carefully chosen clothes are narratively important to self-presentation and perception, but the inspected sources do not document the complete costume and makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Cannes credits Kim Hyun-seok; restrained compositions attend to faces, river landscapes, fruit, flowers and ordinary surfaces without detaching beauty from the violence surrounding it." },
+    { area: "lighting", status: "mapped", note: "Naturalistic daylight and practical interiors support the observational method, but the available sources do not specify a full lighting package." },
+    { area: "camera_format", status: "mapped", note: "Institutional records document the colour feature and current restored circulation, but the inspected sources do not provide a sufficiently precise original capture-format account." },
+    { area: "editing", status: "source_verified", note: "Cannes credits Kim Hyun; gradual disclosure, repeated observation and quiet ellipses let the moral meaning of ordinary scenes change without thriller-style escalation." },
+    { area: "sound_design", status: "source_verified", note: "Cannes credits Lee Seung-chul and Wavelab; classroom speech, care routines, river ambience, social negotiation and restrained silence distinguish competing forms of testimony." },
+    { area: "music", status: "mapped", note: "The film remains largely grounded in speech and environmental sound; music supports rather than resolves Mija's artistic and moral search, but the sources do not document a full scoring method." },
+    { area: "effects_animation", status: "not_central", note: "The case is constructed through performance, social space, language, landscape, editing and sound rather than effects spectacle or animation." },
+    { area: "documentary_method", status: "source_verified", note: "KOFIC's location record identifies the Han River and Icheon environments, while the film's observation of care, institutions and social negotiation gives the fiction a researched documentary density." },
+  ],
+} as const satisfies FilmHistoryProfile;
