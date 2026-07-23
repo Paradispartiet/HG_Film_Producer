@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const raiseTheRedLanternFilmHistoryProfile = {
+  scenarioId: "scenario_raise_the_red_lantern_1991",
+  period: "Early-1990s Chinese Fifth Generation cinema, enclosed historical drama and ritualised visual power",
+  traditions: ["Chinese Fifth Generation cinema", "Enclosed historical drama", "Ritualised domestic melodrama"],
+  before: "Historical household dramas often treated architecture and ceremony as setting around individual conflict, while patriarchal hierarchy was explained primarily through dialogue, plot revelation and exceptional cruelty.",
+  moment: "Zhang Yimou, screenwriter Ni Zhen and a concentrated ensemble turn Su Tong's story into a system of repeated lantern-lighting, foot massage, meals, seasonal courtyards and controlled access. Fei Zhao and Lun Yang's 35mm colour photography, Qao Jiuping and Dong Huamiao's design, Du Yuan's editing and Zhao Jiping's music make ritual variation itself the mechanism of power.",
+  after: "Its Silver Lion, international circulation and Oscar nomination helped establish Zhang Yimou and Gong Li as central figures in the global recognition of Fifth Generation cinema, while its use of colour, architecture and repetition became a lasting model for historical chamber drama.",
+  historyQuestion: "Which production system explains a historical drama where repeated lantern ceremonies, enclosed courtyards, colour, sound and small ritual changes reveal hierarchy more powerfully than speeches or open confrontation?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and the Venice archive place the 1991 China-Hong Kong-Taiwan production inside Zhang Yimou's internationally visible Fifth Generation period and record its Venice competition history." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify an enclosed historical drama of female oppression whose formal colour and ritual systems are inseparable from its social critique." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Venice records Era International, producer Ch'iu Fu-sheng, writer Ni Zhen, cinematographers Fei Zhao and Lun Yang, editor Du Yuan, composer Zhao Jiping and the principal design team." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Venice archive records the 1991 Silver Lion, while La Biennale's Zhang Yimou biography documents the film's subsequent Oscar nomination and international importance." },
+    { area: "screenplay", status: "source_verified", note: "Ni Zhen adapts Su Tong's story through repeated ceremonies, restricted information and shifting alliances among four wives rather than a conventional escape plot." },
+    { area: "directing", status: "source_verified", note: "Zhang organises blocking around thresholds, courtyards, roofs and ritual positions so authority is shown as a repeatable household procedure rather than only an individual's temperament." },
+    { area: "performance", status: "source_verified", note: "BFI identifies Gong Li's restrained performance as central to the film's depiction of rebellion, social constraint and psychological collapse, supported by a tightly differentiated female ensemble." },
+    { area: "production_design", status: "source_verified", note: "Venice credits Qao Jiuping and Dong Huamiao; symmetrical courtyards, closed rooms, roofs and lantern placements convert the estate into a visible map of access and punishment." },
+    { area: "costume_makeup", status: "mapped", note: "Period clothing, hair and seasonal variation distinguish rank and ceremony, but the current institutional sources do not document the complete costume or makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Venice credits Fei Zhao and Lun Yang and records colour 35mm photography in 1.85:1; frontal geometry, depth and saturated red make ritual power legible across the compound." },
+    { area: "lighting", status: "mapped", note: "Lantern illumination and seasonal daylight are visibly central to status and mood, but the current sources do not isolate the lighting package or exposure method." },
+    { area: "camera_format", status: "source_verified", note: "The Venice historical record documents a colour 35mm feature with optical Dolby stereo presentation and a 1.85:1 frame." },
+    { area: "editing", status: "source_verified", note: "Venice credits Du Yuan; repetitions of meals, massages and lantern preparation are cut with controlled variations so hierarchy tightens through accumulation." },
+    { area: "sound_design", status: "source_verified", note: "Commands, footsteps, courtyard distance and ceremonial percussion announce authority before characters enter the frame, supported by the archive's Dolby stereo record." },
+    { area: "music", status: "source_verified", note: "Venice credits Zhao Jiping; recurring vocal and percussion material reinforces ceremony, confinement and the difference between public ritual and private fear." },
+    { area: "effects_animation", status: "not_central", note: "The film's oppressive system is constructed through architecture, colour, performance, repetition and sound rather than visual effects or animation." },
+    { area: "documentary_method", status: "not_central", note: "The estate is a controlled historical and symbolic construction rather than a documentary observation system." },
+  ],
+} as const satisfies FilmHistoryProfile;
