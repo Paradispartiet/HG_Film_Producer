@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const dahomeyFilmHistoryProfile = {
+  scenarioId: "scenario_dahomey_2024",
+  period: "Mid-2020s postcolonial essay documentary, museum restitution and speculative object voice",
+  traditions: ["Restitution documentary", "Postcolonial essay film", "Speculative first-person object narration"],
+  before: "Museum-restitution documentaries often explained colonial provenance through experts, policy and institutional history, while transported objects remained visually central but narratively silent.",
+  moment: "Mati Diop follows twenty-six royal treasures from a Paris museum through packing, transport, arrival, installation and public debate in Benin. Precise digital observation, crate and gallery sound, ceremonial movement, student discussion and Makenzy Orcel's transformed first-person voice for object 26 make restitution simultaneously material procedure, historical imagination and unresolved political argument.",
+  after: "The 2024 Berlinale Golden Bear established the film as a major contemporary essay documentary and a reference point for cinema that refuses to treat restitution as a completed institutional gesture once objects cross a national border.",
+  historyQuestion: "Which production system explains a 68-minute documentary where crates, museums, transport, installation, ceremony and student debate are joined by the transformed first-person voice of a returned royal object, keeping restitution materially exact but politically unresolved?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Berlinale, BFI, Busan and BBFC records place the film around the 2021 transfer of twenty-six royal Dahomey objects from France to Benin and the continuing debate over colonial restitution." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional programmes identify a postcolonial essay documentary combining logistical observation, speculative voice, museum critique and public political discussion." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI production notes document Les Films du Bal and the France-Senegal-Benin-UK production, with principal camera, editing, music, sound, voice and effects departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Berlinale awards archive confirms the 2024 Golden Bear for producers Eve Robin, Judith Lou Lévy and Mati Diop." },
+    { area: "screenplay", status: "source_verified", note: "The film is structured through packing, travel, institutional installation, ceremonial reception and a student debate, interrupted and reframed by the imagined testimony of object 26." },
+    { area: "directing", status: "source_verified", note: "Diop observes institutional procedure without allowing official ceremony to close the meaning of return, giving objects, workers and young citizens different forms of temporal and political presence." },
+    { area: "performance", status: "source_verified", note: "Museum workers, officials, students and public participants appear in documentary action, while Makenzy Orcel performs a deliberately transformed voice that grants one displaced object a speculative subjectivity." },
+    { area: "production_design", status: "not_central", note: "Museum galleries, transport crates, streets, ceremonial spaces and university rooms are documented institutional environments rather than constructed dramatic sets." },
+    { area: "costume_makeup", status: "not_central", note: "Dress and appearance remain part of observed ceremony, labour and debate rather than a separately designed fiction-production system." },
+    { area: "cinematography", status: "source_verified", note: "Josephine Drouin Viallard's credited digital cinematography attends closely to surfaces, containers, galleries, faces and institutional framing while preserving the scale and opacity of the objects." },
+    { area: "lighting", status: "mapped", note: "Museum display light, transport darkness, ceremony and public-room illumination distinguish institutional stages, but the inspected sources do not document a complete lighting package." },
+    { area: "camera_format", status: "source_verified", note: "BFI production notes identify the 68-minute colour documentary as a digital production." },
+    { area: "editing", status: "source_verified", note: "Gabriel Gonzalez's credited editing sets logistical chronology beside historical imagination and present debate so the physical return never becomes the final argumentative endpoint." },
+    { area: "sound_design", status: "source_verified", note: "Corneille Houssou, Nicolas Becker and Cyril Holtz are credited across sound; crates, museum rooms, transport, ceremony, public speech and the processed object voice create distinct layers of agency." },
+    { area: "music", status: "source_verified", note: "Dean Blunt and Wally Badarou's credited music gives the journey ceremonial and speculative weight without replacing institutional ambience or public argument." },
+    { area: "effects_animation", status: "source_verified", note: "Maxime Villemard's credited visual-effects work supports the film's speculative layer while remaining subordinate to documentary objects, spaces and voices." },
+    { area: "documentary_method", status: "source_verified", note: "The production follows the real restitution process, observes institutional labour and records contemporary debate, then openly marks its imaginative intervention through the object's voice." },
+  ],
+} as const satisfies FilmHistoryProfile;
