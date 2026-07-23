@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const kagemushaFilmHistoryProfile = {
+  scenarioId: "scenario_kagemusha_1980",
+  period: "Late-1970s international rescue of Japanese studio epic, painterly colour and political impersonation",
+  traditions: ["Japanese historical epic", "Late Kurosawa colour cinema", "Performance and power tragedy"],
+  before: "Postwar samurai cinema had often centred individual martial action and moral choice, while historical epics treated doubles and disguises as plot devices rather than the operating principle of an entire political order.",
+  moment: "After years of funding difficulty, Akira Kurosawa converts extensive paintings into a large Toho-Fox production supported internationally by George Lucas and Francis Ford Coppola. A thief's performance as a dead warlord is organized through ceremonial blocking, widescreen armies, colour-coded banners, armour, landscape, weather, silence and catastrophic battlefield aftermath.",
+  after: "The shared 1980 Palme d'Or restored Kurosawa's large-scale international position and inaugurated the intensely painterly late-colour phase that continued through Ran, proving that historical spectacle could be structured by impersonation, ritual and visual design rather than heroic combat alone.",
+  historyQuestion: "Which production system explains an internationally financed colour epic where paintings become sets and formations, a thief's performance sustains a clan, and banners, armour, horses, weather, silence and mass choreography make political identity visible?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion, BFI and Cannes document Kurosawa's late-1970s financing difficulties, renewed international support and return to the Japanese historical epic." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify late Kurosawa colour cinema, samurai epic, Shakespearean identity play and painterly mass spectacle as the film's intersecting traditions." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion records Toho, international executive producers George Lucas and Francis Ford Coppola, production coordination, camera, art, lighting, costume, makeup, sound and music departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes confirms the shared 1980 Palme d'Or; Criterion and BFI place the film as the restoration of Kurosawa's international epic scale and the beginning of his late painterly phase." },
+    { area: "screenplay", status: "source_verified", note: "Kurosawa and Masato Ide build the drama around a thief learning to embody a dead warlord while strategy, ritual and family recognition continually test the political usefulness of resemblance." },
+    { area: "directing", status: "source_verified", note: "Kurosawa stages the double through repeated ceremonies, controlled observation and mass formations, then lets the impersonation fail through intimate recognition before military collapse." },
+    { area: "performance", status: "source_verified", note: "Tatsuya Nakadai differentiates thief, imitation and remembered ruler through posture, vocal control, fear and growing identification rather than simple makeup resemblance." },
+    { area: "production_design", status: "source_verified", note: "Yoshiro Muraki's credited design translates Kurosawa's preparatory paintings into castles, camps, interiors, armour fields and battlefield geography with legible political hierarchy." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion credits costumes, wigs, hair and makeup; clan colours, armour, formal dress and facial transformation make impersonation readable within large ceremonial and military groups." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and Cannes credit Takao Saito and the wider camera team; long-lens formations, broad 1.85:1 compositions and controlled camera distance convert armies and landscape into graphic movement." },
+    { area: "lighting", status: "source_verified", note: "Criterion credits Takeshi Sano; strong natural exteriors, controlled interiors, silhouettes and bold colour relationships preserve the paintings' clarity across changing weather and scale." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the 180-minute colour feature in 1.85:1 with restored high-definition transfer and four-channel soundtrack preservation." },
+    { area: "editing", status: "source_verified", note: "Ceremonial duration, strategic cross-cutting, graphic colour transitions and the delayed revelation of battlefield destruction alternate control with sudden historical collapse." },
+    { area: "sound_design", status: "source_verified", note: "Hoofbeats, armour, wind, distant formations, commands and extended silence shift attention between the double's intimate fear and the clan's mass political machinery." },
+    { area: "music", status: "source_verified", note: "Cannes and Criterion credit Shinichiro Ikebe; restrained ceremonial and tragic scoring supports scale without continuously filling the battlefield soundscape." },
+    { area: "effects_animation", status: "mapped", note: "Large-scale battle, fire and dream imagery require controlled practical and optical work, but the inspected sources do not document a complete effects pipeline." },
+    { area: "documentary_method", status: "mapped", note: "Historical research into Takeda Shingen and the Battle of Nagashino grounds the production, but the film openly transforms history through painterly staging and tragic impersonation." },
+  ],
+} as const satisfies FilmHistoryProfile;
