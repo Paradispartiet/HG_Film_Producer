@@ -10,6 +10,7 @@ import { asianPostwar1950sVerificationRecords } from "./scenarioProductionVerifi
 import { expressivePostwar1950sVerificationRecords } from "./scenarioProductionVerification1950sExpressivePostwarBatch";
 import { sixtiesScaleIndependentVerificationRecords } from "./scenarioProductionVerification1960sScaleIndependentBatch";
 import { americanIndependentBreakthroughsVerificationRecords } from "./scenarioProductionVerificationAmericanIndependentBreakthroughsBatch";
+import { asianLandscapeGriefAttentionVerificationRecords } from "./scenarioProductionVerificationAsianLandscapeGriefAttentionBatch";
 import { asianTransnationalUrbanIdentityVerificationRecords } from "./scenarioProductionVerificationAsianTransnationalUrbanIdentityBatch";
 import { balkanWarInstitutionVerificationRecords } from "./scenarioProductionVerificationBalkanWarInstitutionSystemsBatch";
 import { britishIrishPlaceBodyVerificationRecords } from "./scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch";
@@ -77,6 +78,7 @@ const additionalVerificationRecords = [
   ...hongKongTaiwanUrbanTimeVerificationRecords,
   ...chineseLanguageSpaceGenreVerificationRecords,
   ...chineseLanguageModernityMemoryVerificationRecords,
+  ...asianLandscapeGriefAttentionVerificationRecords,
   ...asianTransnationalUrbanIdentityVerificationRecords,
   ...japaneseAmbiguityDialogueVerificationRecords,
   ...silentFoundationsVerificationRecords,
