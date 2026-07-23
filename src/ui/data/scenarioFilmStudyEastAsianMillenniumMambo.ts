@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const millenniumMamboFilmHistoryProfile = {
+  scenarioId: "scenario_millennium_mambo_2001",
+  period: "Turn-of-the-millennium Taiwanese auteur cinema, nocturnal youth culture and retrospective memory narration",
+  traditions: ["Taiwanese contemporary auteur cinema", "Nocturnal youth-culture cinema", "Retrospective memory narration"],
+  before: "Youth films commonly treated nightlife as immediate present-tense energy and character crisis as a linear escape arc, while voice-over usually clarified events rather than placing the entire present inside an uncertain future memory.",
+  moment: "Hou Hsiao-hsien lets Vicky narrate 2001 from ten years ahead while Mark Lee Ping-bin's 35mm image, Steadicam passageways, blue-green practical light, long gliding scenes, club bass and Liao Ching-sung's ellipses hold her inside a repetitive nightlife world that already feels remembered.",
+  after: "The film became a defining image of turn-of-the-century Taipei and a major reference for combining long-take observation, electronic music, future-tense narration and sensorial urban light without converting drift into a conventional coming-of-age resolution.",
+  historyQuestion: "Which production system explains a nightlife film narrated from ten years in the future, where 35mm Steadicam movement, neon practical light, techno and long elliptical scenes make the present feel like memory before it has ended?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, IFFR, BFI and Film at Lincoln Center place the 2001 feature inside Hou Hsiao-hsien's contemporary Taiwanese work and the cultural threshold of a new millennium." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify nocturnal youth culture, long-take Taiwanese auteur cinema, retrospective narration and sensorial urban modernism rather than a conventional youth melodrama." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes and IFFR record the France-Taiwan production, producers Hou Hsiao-hsien and Eric Heumann and the principal screenplay, image, editing, design, music and sound departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records competition selection and a technical jury prize, while later BFI and Film at Lincoln Center programmes establish the film's continuing importance to urban and camera-history study." },
+    { area: "screenplay", status: "source_verified", note: "Chu Tien-wen's screenplay lets Vicky describe herself in the third person from 2011, using repeated departures, money, jealousy and partial refuge rather than a clean emancipation plot." },
+    { area: "directing", status: "source_verified", note: "Hou concentrates more closely than usual on one performer and one nocturnal social field, allowing behavior, atmosphere and retrospective distance to carry the dramatic arc." },
+    { area: "performance", status: "source_verified", note: "Film at Lincoln Center and Cannes centre Shu Qi's Vicky, whose drifting movement, guarded speech and repetition make emotional numbness and partial self-recognition visible without explanatory psychology." },
+    { area: "production_design", status: "source_verified", note: "Cannes credits Hwarng Wern-ying; clubs, apartments, tunnels, corridors and the snowy Yubari interval distinguish repetitive Taipei confinement from a brief alternative space." },
+    { area: "costume_makeup", status: "mapped", note: "Clothing and styling are central to turn-of-the-millennium nightlife identity, but the current institutional sources do not document the complete costume or makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Cannes credits Mark Lee Ping-bin, while Film at Lincoln Center documents the signature slow-motion tunnel entrance and Steadicam immersion in Vicky's nocturnal world." },
+    { area: "lighting", status: "source_verified", note: "BFI identifies fluorescent tunnel light, neon haze and blue-green nightlife illumination as the visual system that gradually shifts from excitement toward enclosure and repetition." },
+    { area: "camera_format", status: "source_verified", note: "IFFR and Film at Lincoln Center record 35mm presentation, with the camera's gliding movement and film texture central to the nocturnal atmosphere." },
+    { area: "editing", status: "source_verified", note: "Cannes credits Liao Ching-sung, and IFFR documents a recut after the Cannes premiere; long scenes, temporal ellipses and future narration create a double perspective on Vicky's present." },
+    { area: "sound_design", status: "source_verified", note: "Cannes credits Tu Duu-chih; club bass, street noise, intimate speech and quieter domestic intervals make social pressure and emotional isolation audible within the same city." },
+    { area: "music", status: "source_verified", note: "Cannes credits Lim Giong and Yoshihiro Hanno, while BFI identifies electronic pop and increasingly impersonal techno as primary dramatic material rather than decorative scoring." },
+    { area: "effects_animation", status: "not_central", note: "The film's altered temporality is created through narration, camera movement, lighting, editing and music rather than effects or animation." },
+    { area: "documentary_method", status: "mapped", note: "Nightlife, apartments and youth behavior are observed with sustained social specificity, although the production remains a highly designed fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;
