@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const cycloFilmHistoryProfile = {
+  scenarioId: "scenario_cyclo_1995",
+  period: "Mid-1990s Vietnamese diasporic urban modernism, post-Đổi Mới crime melodrama and Golden Lion breakthrough",
+  traditions: ["Vietnamese diasporic auteur cinema", "Urban crime melodrama", "Sensorial social modernism"],
+  before: "Vietnamese city life was rarely represented internationally through a locally shot, large-scale auteur crime film that joined economic transition, bodily danger and modernist image-making without turning the city into either touristic background or a simple realist case study.",
+  moment: "Trần Anh Hùng follows a stolen cycle-rickshaw into debt, coercion, prostitution and gang labour across post-Đổi Mới Saigon. Benoît Delhomme's 35mm colour image, Benoît Barouh's production design, Nicole Dedieu and Claude Ronzeau's editing, Tôn-Thất Tiết's music and dense street sound move between gritty observation and hallucinatory rupture.",
+  after: "The Golden Lion made the Vietnam-France production a landmark of 1990s Asian festival cinema and demonstrated that urban labour, crime melodrama, saturated colour, pop music and subjective violence could form one internationally legible but regionally specific production system.",
+  historyQuestion: "Which production system explains a 35mm Saigon crime film where cycle labour, debt, family vulnerability, neon, sweat, street noise and hallucinatory violence emerge from the same post-Đổi Mới urban environment?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Venice and Film at Lincoln Center identify the 1995 France-Vietnam production, its post-Đổi Mới Saigon setting and its Golden Lion breakthrough." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional programme notes place the film between Vietnamese diasporic auteur cinema, crime melodrama and a sensorial modernism that repeatedly shifts realism into fever dream." },
+    { area: "industry_and_production_context", status: "source_verified", note: "The Venice archive records Les Productions Lazennec, Christophe Rossignon and the principal screenplay, camera, editing, design, costume and music departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Venice records the 1995 Golden Lion, while Film at Lincoln Center preserves its New York Film Festival history and continuing status as a defining 1990s Asian urban film." },
+    { area: "screenplay", status: "source_verified", note: "Trần Anh Hùng and Nguyễn Trung Bình connect the cyclo driver, his sister and the Poet through theft, debt, criminal initiation and sexual exploitation rather than a heroic escape plot." },
+    { area: "directing", status: "source_verified", note: "Film at Lincoln Center describes the film as a radical darker departure after The Scent of Green Papaya, using escalating sensory pressure rather than explanatory social messaging." },
+    { area: "performance", status: "source_verified", note: "Tony Leung's near-silent Poet, Lê Văn Lộc's exposed physicality and Trần Nữ Yên Khê's guarded presence carry coercion through gaze, breath, stillness and bodily risk." },
+    { area: "production_design", status: "source_verified", note: "Venice credits Benoît Barouh; rooms, alleys, cycle routes, flooded surfaces, smoke and improvised criminal interiors make the city's economic hierarchy spatially legible." },
+    { area: "costume_makeup", status: "mapped", note: "Henriette Raz is credited by Venice, and work clothes, school dress and gangster styling distinguish social positions, but the available sources do not document the full department method." },
+    { area: "cinematography", status: "source_verified", note: "Venice credits Benoît Delhomme, while Film at Lincoln Center describes 35mm gritty immediacy that slips into saturated, increasingly hallucinatory visual grammar." },
+    { area: "lighting", status: "mapped", note: "Neon, available street light, saturated interiors, smoke and darkness are central to the image, but the current sources do not isolate a complete lighting package." },
+    { area: "camera_format", status: "source_verified", note: "The Venice archive records a colour 35mm feature with optical presentation, 120-minute festival runtime and Dolby Stereo SR." },
+    { area: "editing", status: "source_verified", note: "Venice credits Nicole Dedieu and Claude Ronzeau; daily labour, parallel family danger and abrupt subjective rupture are cut into one tightening urban system." },
+    { area: "sound_design", status: "source_verified", note: "Dolby stereo combines engines, bicycle movement, commerce, rooms, breath, violence and abrupt quiet so the city remains active around every character." },
+    { area: "music", status: "source_verified", note: "Venice credits Tôn-Thất Tiết, while Film at Lincoln Center identifies pop music as part of the film's fever-dream transformation of neon, sweat and criminal pressure." },
+    { area: "effects_animation", status: "not_central", note: "Subjective violence is produced through colour, performance, sound, staging and editing rather than effects-led spectacle or animation." },
+    { area: "documentary_method", status: "source_verified", note: "Real Saigon streets, transport, work and post-Đổi Mới social geography provide an observational material base even as the film repeatedly intensifies that reality into melodrama and dream." },
+  ],
+} as const satisfies FilmHistoryProfile;
