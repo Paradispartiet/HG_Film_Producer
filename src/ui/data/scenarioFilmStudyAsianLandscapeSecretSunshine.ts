@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const secretSunshineFilmHistoryProfile = {
+  scenarioId: "scenario_secret_sunshine_2007",
+  period: "Late-2000s South Korean social realism, provincial melodrama and unresolved spiritual crisis",
+  traditions: ["New Korean Cinema", "Performance-centred social realism", "Moral and spiritual melodrama"],
+  before: "Grief melodramas and faith narratives often promised catharsis through reconciliation, conversion or revelation, while provincial towns were commonly used as picturesque alternatives to metropolitan life.",
+  moment: "Lee Chang-dong moves a widowed mother from Seoul to Miryang and lets ordinary town routines, religious community, social awkwardness and catastrophic loss repeatedly overturn any stable idea of recovery. Supple widescreen observation, restrained cutting, environmental sound and Jeon Do-yeon's volatile performance keep belief and forgiveness morally unresolved.",
+  after: "Jeon Do-yeon's Cannes Best Actress award and the film's international circulation consolidated Lee as a central figure in contemporary Korean cinema and established a durable model for realism that can hold extreme emotion without confirming redemption.",
+  historyQuestion: "Which production system explains a provincial grief drama where ordinary shops, church meetings, piano lessons, sunlight and town conversation remain realistic while one performance moves through loss, conversion, rage and exhausted survival without a final spiritual resolution?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "KOFIC and international institutions place the film within the global emergence of New Korean Cinema and Lee Chang-dong's return to directing after public cultural office." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion, Cannes and Film at Lincoln Center describe a performance-centred social realism that uses melodrama to test faith, forgiveness and provincial belonging without guaranteeing catharsis." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes, Criterion and KOFIC document Pinehouse Film, CJ Entertainment and the principal screenplay, camera, design, editing, lighting, music, costume and sound departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes confirms Jeon Do-yeon's 2007 Best Actress award; Criterion and repertory programmes treat the film as a key work in Lee's international reputation." },
+    { area: "screenplay", status: "source_verified", note: "Adapted from Yi Chong-jun, the screenplay repeatedly redirects grief through relocation, crime, religious conversion, attempted forgiveness and disillusionment rather than building toward one curative revelation." },
+    { area: "directing", status: "source_verified", note: "Lee lets ordinary social behaviour coexist with extreme emotional turns, refusing visual or narrative signals that would settle whether faith, community or private rebellion offers release." },
+    { area: "performance", status: "source_verified", note: "Jeon Do-yeon's central performance moves between guarded urban difference, social effort, public grief, ecstatic belief, fury and exhaustion; Song Kang-ho supplies a contrasting everyday persistence." },
+    { area: "production_design", status: "source_verified", note: "Miryang's streets, garage, piano school, homes, shops, church interiors and institutional spaces create an ordinary provincial system that neither romanticizes nor explains the protagonist." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion credits Cha Sun-young and Kim Nuri; dress and appearance track Shin-ae's attempts at self-presentation, belonging, religious transformation and renewed control." },
+    { area: "cinematography", status: "source_verified", note: "Cannes and Criterion credit Cho Yong-kyu; director-approved restoration materials preserve supple 2.35:1 compositions that keep faces, town space and social observation in tension." },
+    { area: "lighting", status: "source_verified", note: "Criterion credits Chu In-sik, while the film's recurring ordinary sunlight and interior practicality resist turning spiritual experience into a separate miraculous visual register." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the colour 2.35:1 feature and a director- and cinematographer-approved digital transfer with restored 5.1 audio." },
+    { area: "editing", status: "source_verified", note: "Cannes and Criterion credit Kim Hyun; measured cuts give emotional reversals full performance duration while major events arrive without sensational montage." },
+    { area: "sound_design", status: "source_verified", note: "Cannes and Criterion credit the sound department; town ambience, church speech and song, domestic quiet, public crying and ordinary conversation keep crisis embedded in social space." },
+    { area: "music", status: "source_verified", note: "Christian Basso's credited music remains part of a restrained field rather than guaranteeing consolation, leaving belief and grief exposed to contradictory interpretation." },
+    { area: "effects_animation", status: "not_central", note: "The film's spiritual and emotional force depends on performance, ordinary environments, light, editing and sound rather than visible effects or animation." },
+    { area: "documentary_method", status: "mapped", note: "Provincial location work and attention to local routines create observational credibility, but the case remains a carefully scripted adaptation and performance-led fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;

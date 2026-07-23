@@ -1,4 +1,8 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import { poetryFilmHistoryProfile } from "./scenarioFilmStudyAsianLandscapePoetry";
+import { secretSunshineFilmHistoryProfile } from "./scenarioFilmStudyAsianLandscapeSecretSunshine";
+import { stillLifeFilmHistoryProfile } from "./scenarioFilmStudyAsianLandscapeStillLife";
+import { tropicalMaladyFilmHistoryProfile } from "./scenarioFilmStudyAsianLandscapeTropicalMalady";
 import { cycloFilmHistoryProfile } from "./scenarioFilmStudyAsianTransnationalCyclo";
 import { happyTogetherFilmHistoryProfile } from "./scenarioFilmStudyAsianTransnationalHappyTogether";
 import { infernalAffairsFilmHistoryProfile } from "./scenarioFilmStudyAsianTransnationalInfernalAffairs";
@@ -47,6 +51,7 @@ export type IndependentStorytellingProfileGroup =
   | "hong_kong_taiwan_urban_time"
   | "chinese_language_space_genre"
   | "chinese_language_modernity_memory"
+  | "asian_landscape_grief_attention"
   | "asian_transnational_urban_identity"
   | "japanese_ambiguity_dialogue";
 
@@ -83,6 +88,10 @@ const profiles = [
   aCityOfSadnessFilmHistoryProfile,
   farewellMyConcubineFilmHistoryProfile,
   platformFilmHistoryProfile,
+  tropicalMaladyFilmHistoryProfile,
+  stillLifeFilmHistoryProfile,
+  secretSunshineFilmHistoryProfile,
+  poetryFilmHistoryProfile,
   cycloFilmHistoryProfile,
   happyTogetherFilmHistoryProfile,
   infernalAffairsFilmHistoryProfile,
@@ -132,6 +141,12 @@ assignGroup("chinese_language_modernity_memory", [
   aCityOfSadnessFilmHistoryProfile.scenarioId,
   farewellMyConcubineFilmHistoryProfile.scenarioId,
   platformFilmHistoryProfile.scenarioId,
+]);
+assignGroup("asian_landscape_grief_attention", [
+  tropicalMaladyFilmHistoryProfile.scenarioId,
+  stillLifeFilmHistoryProfile.scenarioId,
+  secretSunshineFilmHistoryProfile.scenarioId,
+  poetryFilmHistoryProfile.scenarioId,
 ]);
 assignGroup("asian_transnational_urban_identity", [
   cycloFilmHistoryProfile.scenarioId,

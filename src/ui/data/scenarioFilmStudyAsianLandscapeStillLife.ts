@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const stillLifeFilmHistoryProfile = {
+  scenarioId: "scenario_still_life_2006",
+  period: "Mid-2000s Chinese digital realism, Three Gorges redevelopment and disappearing-landscape cinema",
+  traditions: ["Chinese independent cinema", "Digital location realism", "Disappearing-landscape social cinema"],
+  before: "Large infrastructure was commonly represented through official progress narratives or monumental spectacle, while social realist stories often treated damaged relationships and changing places as separate dramatic subjects.",
+  moment: "Jia Zhangke sends two searching protagonists through Fengjie while demolition races ahead of the Three Gorges reservoir. Lightweight digital cameras, real labour, widescreen geography, patient parallel journeys, industrial sound and brief surreal intrusions make redevelopment visible as both physical destruction and intimate dislocation.",
+  after: "The surprise Golden Lion at Venice made the film an international landmark for Chinese independent digital cinema and demonstrated how rapid location production could preserve a vanishing city while remaining formally playful and politically exact.",
+  historyQuestion: "Which production system explains a rapidly shot digital drama where two searches cross demolition sites, migrant labour, river traffic and soon-to-be-flooded streets, while brief surreal images interrupt an otherwise material record of redevelopment?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Venice, BFI and production reporting place the film inside the demolition and flooding of Fengjie for the Three Gorges Dam and China's accelerated reform-era redevelopment." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and filmmaker profiles identify Jia's Chinese independent, Sixth Generation and documentary-neorealist approach to grassroots economic transformation." },
+    { area: "industry_and_production_context", status: "source_verified", note: "The Venice archive records Xstream Pictures and principal departments; BFI documents the decision to use simple digital cameras because conventional production could not keep pace with demolition." },
+    { area: "reception_and_legacy", status: "source_verified", note: "La Biennale confirms the 2006 Golden Lion, while BFI and later production histories treat the feature as a defining work of early digital location cinema." },
+    { area: "screenplay", status: "source_verified", note: "Two parallel searches organize fragmented encounters with workers, families, officials and absent partners, connecting private loss to the dismantling of an entire city." },
+    { area: "directing", status: "source_verified", note: "Jia directs real environments and staged action as one field, allowing labour, waiting and movement through demolition to carry historical explanation." },
+    { area: "performance", status: "source_verified", note: "Han Sanming and Zhao Tao use restrained, practical behaviour; their separate journeys remain emotionally legible without being forced into a shared melodramatic plot." },
+    { area: "production_design", status: "source_verified", note: "Existing buildings, temporary rooms, boats, rubble, work sites and public infrastructure provide the primary design system, while selected surreal objects interrupt documentary expectation." },
+    { area: "costume_makeup", status: "mapped", note: "Work clothes and ordinary dress distinguish migrant labour, residents and visitors, but the inspected sources do not document a complete costume or makeup process." },
+    { area: "cinematography", status: "source_verified", note: "The Venice archive credits Yu Lik-wai; BFI describes lightweight digital capture used to race demolition, while widescreen compositions hold bodies against river, concrete and disappearing urban scale." },
+    { area: "lighting", status: "mapped", note: "Location light, haze, practical interiors and changing weather support immediacy, but the inspected sources do not specify a complete lighting package." },
+    { area: "camera_format", status: "source_verified", note: "BFI documents the return to simple consumer-level digital cameras for the location shoot, while Venice records the finished feature's 35mm festival presentation." },
+    { area: "editing", status: "source_verified", note: "Kong Jing-le's credited editing moves patiently between the two searches, using gaps and parallel structure so physical disappearance and relational absence reinforce one another." },
+    { area: "sound_design", status: "source_verified", note: "Demolition, hammers, engines, river traffic, public voices, phones and popular music create a dense material history of work and displacement." },
+    { area: "music", status: "source_verified", note: "The Venice archive credits Lim Giong; songs and score coexist with phones, dance and public playback, linking memory and contemporary circulation to the changing site." },
+    { area: "effects_animation", status: "source_verified", note: "Brief digital-surreal events—a launching building and an airborne object—are deliberately conspicuous ruptures inside the otherwise material location record." },
+    { area: "documentary_method", status: "source_verified", note: "The production filmed amid active demolition with lightweight equipment and incorporated real labour and locations, while shaping that evidence through scripted parallel fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;

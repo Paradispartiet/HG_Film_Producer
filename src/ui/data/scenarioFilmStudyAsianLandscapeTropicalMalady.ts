@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const tropicalMaladyFilmHistoryProfile = {
+  scenarioId: "scenario_tropical_malady_2004",
+  period: "Mid-2000s Thai independent cinema, queer desire, folklore and bifurcated jungle modernism",
+  traditions: ["New Thai Cinema", "Queer slow cinema", "Folklore and sensory landscape film"],
+  before: "Romantic drama normally preserved stable character identity and causal continuity, while folklore was often marked as a separate fantasy world rather than allowed to transform the film's entire narrative and sensory system.",
+  moment: "Apichatpong Weerasethakul begins with a tender rural romance, then breaks the film and reconstitutes desire as a nearly wordless jungle pursuit. Locked compositions, 35mm darkness, animal sound, uncertain point of view and local spirit lore make the second half an embodied transformation rather than an explanatory allegory.",
+  after: "Its 2004 Cannes Jury Prize helped establish New Thai Cinema internationally and made the film a major reference for queer, posthuman and slow-cinema approaches in which landscape, sound and myth can replace conventional psychological continuity.",
+  historyQuestion: "Which production system explains a 35mm love story that deliberately breaks in two, abandons urban dialogue for jungle darkness and lets animal sound, folklore and uncertain vision transform a lover into both person and tiger?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Festival and archive sources place the film in the early international emergence of New Thai Cinema and Apichatpong's development from experimental moving-image practice into feature filmmaking." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI, Harvard and Cannes describe a queer, formally bifurcated film joining rural realism, Thai folklore, slow cinema and sensory uncertainty." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes documents the France-Thailand production and principal departments, while later profiles describe the small-budget transnational conditions supporting Apichatpong's independent work." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes confirms the 2004 Jury Prize; BFI, Film at Lincoln Center and Harvard treat it as a breakthrough and one of the director's signature works." },
+    { area: "screenplay", status: "source_verified", note: "The screenplay creates two related but non-continuous halves: an everyday courtship and a mythic hunt whose repeated desire matters more than literal plot explanation." },
+    { area: "directing", status: "source_verified", note: "Apichatpong directs the first half through relaxed social observation, then reduces speech and ordinary orientation until listening, waiting and bodily submission become the dramatic action." },
+    { area: "performance", status: "source_verified", note: "Banlop Lomnoi and Sakda Kaewbuadee shift from understated flirtation and everyday gesture to an unstable relation among soldier, lover, spirit and tiger." },
+    { area: "production_design", status: "source_verified", note: "Town streets, family spaces, cinemas, shrines and the dense jungle form two linked environments, with natural terrain and darkness taking over the function of constructed dramatic space." },
+    { area: "costume_makeup", status: "mapped", note: "Military clothing and ordinary rural dress locate the characters socially, but the inspected sources do not document a complete costume or makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Cannes credits three cinematographers; locked compositions, daylight observation and extremely limited jungle visibility make space and perception unstable without abandoning physical landscape." },
+    { area: "lighting", status: "source_verified", note: "Institutional criticism emphasizes the film's sustained jungle darkness, where restricted visibility and small readable zones force the spectator to orient through sound and movement." },
+    { area: "camera_format", status: "source_verified", note: "Film at Lincoln Center and Harvard identify the colour feature and surviving collection prints as 35mm." },
+    { area: "editing", status: "source_verified", note: "The central break resets narrative, character and tone; patient internal durations and sparse transitions allow the two halves to echo without being resolved into one continuous explanation." },
+    { area: "sound_design", status: "source_verified", note: "BFI and filmmaker commentary emphasize insects, animals, breath, unseen movement, voice and silence until the jungle is understood primarily through listening." },
+    { area: "music", status: "mapped", note: "Songs and social music belong strongly to the first half, while the jungle half withdraws toward environmental sound; the inspected sources do not document a full scoring method." },
+    { area: "effects_animation", status: "not_central", note: "Transformation remains suggestive and perceptual rather than effects-led; landscape, performance, darkness, editing and sound carry the mythical shift." },
+    { area: "documentary_method", status: "mapped", note: "Rural locations and relaxed observation lend documentary immediacy, but the film deliberately reshapes them through staged romance, folklore and metaphysical fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;
