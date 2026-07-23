@@ -28,6 +28,7 @@ import { europeanPressureVerificationRecords } from "./scenarioProductionVerific
 import { europeanTimeIdentityVerificationRecords } from "./scenarioProductionVerificationEuropeanTimeIdentitySystemsBatch";
 import { festivalJourneyDisplacementVerificationRecords } from "./scenarioProductionVerificationFestivalJourneyDisplacementSystemsBatch";
 import { festivalUrbanIntimacyVerificationRecords } from "./scenarioProductionVerificationFestivalUrbanIntimacySystemsBatch";
+import { hongKongTaiwanUrbanTimeVerificationRecords } from "./scenarioProductionVerificationHongKongTaiwanUrbanTimeBatch";
 import { iberianPortugueseMemoryVerificationRecords } from "./scenarioProductionVerificationIberianPortugueseMemorySystemsBatch";
 import { independentStorytellingVerificationRecords } from "./scenarioProductionVerificationIndependentStorytellingBatch";
 import { intimateFestivalBodyCareVerificationRecords } from "./scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch";
@@ -69,6 +70,7 @@ const additionalVerificationRecords = [
   ...japaneseEverydayMemoryVerificationRecords,
   ...southKoreanGenreSystemsVerificationRecords,
   ...southSoutheastAsianSystemsVerificationRecords,
+  ...hongKongTaiwanUrbanTimeVerificationRecords,
   ...silentFoundationsVerificationRecords,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

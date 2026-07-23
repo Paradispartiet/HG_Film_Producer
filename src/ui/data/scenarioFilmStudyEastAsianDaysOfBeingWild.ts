@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const daysOfBeingWildFilmHistoryProfile = {
+  scenarioId: "scenario_days_of_being_wild_1990",
+  period: "Early-1990s Hong Kong New Wave, urban memory melodrama and fragmented ensemble modernism",
+  traditions: ["Hong Kong New Wave", "Urban memory cinema", "Fragmented romantic melodrama"],
+  before: "Hong Kong star melodrama generally organised desire through clear romantic pairings, genre momentum and resolved character arcs, while period reconstruction often served plot more than unstable memory or emotional duration.",
+  moment: "Wong Kar-wai turns 1960s Hong Kong into a drifting ensemble of missed attachments, clocks, corridors and humid interiors. Christopher Doyle's deliberately thin, nearly monochrome image, William Chang's design and costume system, Patrick Tam and Hai Kit Wai's elliptical editing and repeated Latin music make time, rejection and remembered space the film's organising production logic.",
+  after: "The film established Wong's mature collaboration with Doyle and Chang and became the first movement in a loose cycle extending through In the Mood for Love and 2046, making fragmented time, urban longing and production design inseparable from modern Hong Kong cinema.",
+  historyQuestion: "Which production system explains an ensemble melodrama organised through clocks, repeated interiors, withheld histories, elliptical encounters and a deliberately drained 1960s Hong Kong image rather than conventional romantic closure?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Criterion place the 1990 feature at the consolidation of Wong Kar-wai's Hong Kong New Wave style and his recurring preoccupation with time, memory, rejection and dislocation." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify fragmented multi-narrative melodrama, period memory and understated character thought rather than plot-driven genre convention." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion records Rover Tang and Alan Tang's production, Christopher Doyle's inaugural Wong collaboration, William Chang's art direction and the principal editing and costume departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI documents the film's initial commercial failure, later critical elevation and importance as the first full expression of Wong's mature style and later 1960s cycle." },
+    { area: "screenplay", status: "source_verified", note: "The film distributes attention across Yuddy, Su Li-zhen, Mimi, Tide and Zeb through withheld origins, interrupted attachments and an unrealised sequel structure rather than one resolved protagonist arc." },
+    { area: "directing", status: "source_verified", note: "Wong's own BFI account describes reacting against the harsh neon of his debut by pursuing a blank, thin and nearly monochrome emotional texture for a film about different kinds of depression." },
+    { area: "performance", status: "source_verified", note: "BFI and Criterion document the star ensemble and its restrained treatment of boredom, rejection and longing, with emotional information often carried through gesture, waiting and spatial separation." },
+    { area: "production_design", status: "source_verified", note: "Criterion credits William Chang; BFI describes the recreated Hong Kong of Wong's childhood, where corridors, mirrors, clocks, rooms and period surfaces function as an architecture of memory." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion records Lu Ha Fong's costume design, while BFI identifies costume and set design as central to the film's 1960s reconstruction and emotional distance." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and BFI identify Christopher Doyle's gauzy texture, saturated accents and Wong's requested drained palette, produced through filters, few lights and difficult focus control." },
+    { area: "lighting", status: "source_verified", note: "Wong's BFI interview explicitly describes controlled interior lighting, heavy filtration and reduced colour as the method for the film's thin, depressive visual field." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records a 95-minute colour film in 1.85:1, and the BFI restoration record confirms work from the 35mm original camera negative." },
+    { area: "editing", status: "source_verified", note: "Criterion credits Patrick Tam and Hai Kit Wai; encounters, viewpoint shifts and unresolved entrances are arranged through ellipsis so the ensemble feels remembered rather than sequentially explained." },
+    { area: "sound_design", status: "source_verified", note: "Clocks, footsteps, room tone and intimate voices bind separated characters, while the largely monaural sound field preserves interior distance and offscreen absence." },
+    { area: "music", status: "source_verified", note: "BFI documents recurring Los Indios Tabajaras and Xavier Cugat cues whose repetition and Latin distance express longing that the performances do not state directly." },
+    { area: "effects_animation", status: "not_central", note: "The film's temporal and emotional estrangement is constructed through performance, design, photography, editing and music rather than effects or animation." },
+    { area: "documentary_method", status: "mapped", note: "Period Hong Kong is stylised rather than observed documentarily, although location texture and environmental detail preserve a material city beneath the memory construction." },
+  ],
+} as const satisfies FilmHistoryProfile;

@@ -10,6 +10,10 @@ import type {
   FilmHistoryProfile,
   ScenarioFilmStudyMap,
 } from "./scenarioFilmStudyMap";
+import { daysOfBeingWildFilmHistoryProfile } from "./scenarioFilmStudyEastAsianDaysOfBeingWild";
+import { goodbyeDragonInnFilmHistoryProfile } from "./scenarioFilmStudyEastAsianGoodbyeDragonInn";
+import { millenniumMamboFilmHistoryProfile } from "./scenarioFilmStudyEastAsianMillenniumMambo";
+import { viveLAmourFilmHistoryProfile } from "./scenarioFilmStudyEastAsianViveLAmour";
 import { americanSplendorFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingAmericanSplendor";
 import { daughtersOfTheDustFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingDaughtersOfTheDust";
 import { killerOfSheepFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingKillerOfSheep";
@@ -54,6 +58,10 @@ const independentStorytellingProfiles = {
   [courtFilmHistoryProfile.scenarioId]: courtFilmHistoryProfile,
   [marlinaFilmHistoryProfile.scenarioId]: marlinaFilmHistoryProfile,
   [theDiscipleFilmHistoryProfile.scenarioId]: theDiscipleFilmHistoryProfile,
+  [daysOfBeingWildFilmHistoryProfile.scenarioId]: daysOfBeingWildFilmHistoryProfile,
+  [viveLAmourFilmHistoryProfile.scenarioId]: viveLAmourFilmHistoryProfile,
+  [millenniumMamboFilmHistoryProfile.scenarioId]: millenniumMamboFilmHistoryProfile,
+  [goodbyeDragonInnFilmHistoryProfile.scenarioId]: goodbyeDragonInnFilmHistoryProfile,
 } as const satisfies Record<string, FilmHistoryProfile>;
 
 const southKoreanGenreScenarioIds = new Set<string>([
@@ -68,6 +76,13 @@ const southSoutheastAsianScenarioIds = new Set<string>([
   courtFilmHistoryProfile.scenarioId,
   marlinaFilmHistoryProfile.scenarioId,
   theDiscipleFilmHistoryProfile.scenarioId,
+]);
+
+const hongKongTaiwanUrbanTimeScenarioIds = new Set<string>([
+  daysOfBeingWildFilmHistoryProfile.scenarioId,
+  viveLAmourFilmHistoryProfile.scenarioId,
+  millenniumMamboFilmHistoryProfile.scenarioId,
+  goodbyeDragonInnFilmHistoryProfile.scenarioId,
 ]);
 
 function statusRank(status: FilmStudyCoverageOverride["status"]): number {
@@ -152,13 +167,16 @@ export function createIndependentStorytellingFilmHistoryChoices(
 ): readonly FilmHistoryChoice[] {
   const isSouthKoreanGenreProfile = southKoreanGenreScenarioIds.has(profile.scenarioId);
   const isSouthSoutheastAsianProfile = southSoutheastAsianScenarioIds.has(profile.scenarioId);
+  const isHongKongTaiwanUrbanTimeProfile = hongKongTaiwanUrbanTimeScenarioIds.has(profile.scenarioId);
   const donors = Object.values(independentStorytellingProfiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .filter((candidate) => {
       if (isSouthKoreanGenreProfile) return southKoreanGenreScenarioIds.has(candidate.scenarioId);
       if (isSouthSoutheastAsianProfile) return southSoutheastAsianScenarioIds.has(candidate.scenarioId);
+      if (isHongKongTaiwanUrbanTimeProfile) return hongKongTaiwanUrbanTimeScenarioIds.has(candidate.scenarioId);
       return !southKoreanGenreScenarioIds.has(candidate.scenarioId)
-        && !southSoutheastAsianScenarioIds.has(candidate.scenarioId);
+        && !southSoutheastAsianScenarioIds.has(candidate.scenarioId)
+        && !hongKongTaiwanUrbanTimeScenarioIds.has(candidate.scenarioId);
     })
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = hashString(profile.scenarioId);
@@ -179,7 +197,9 @@ export function createIndependentStorytellingFilmHistoryChoices(
         ? "This is a real South Korean production system, but it organizes historical pressure, performance, genre, location, effects, editing and sound differently."
         : isSouthSoutheastAsianProfile
           ? "This is a real South or Southeast Asian production system, but it organizes institution, performance, landscape, duration, genre and sound differently."
-          : "This is a real independent storytelling system, but it belongs to another balance of place, genre, memory, documentary evidence, performance and visual construction.",
+          : isHongKongTaiwanUrbanTimeProfile
+            ? "This is a real Hong Kong or Taiwan urban-time system, but it organizes memory, architecture, duration, performance, music and exhibition space differently."
+            : "This is a real independent storytelling system, but it belongs to another balance of place, genre, memory, documentary evidence, performance and visual construction.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
@@ -189,7 +209,9 @@ export function createIndependentStorytellingFilmHistoryChoices(
         ? "This places the film inside the wrong South Korean historical and production logic."
         : isSouthSoutheastAsianProfile
           ? "This places the film inside the wrong South or Southeast Asian institutional and production logic."
-          : "This places the film inside the wrong historical relationship between place, narration, media mixture, performance and image-making.",
+          : isHongKongTaiwanUrbanTimeProfile
+            ? "This places the film inside the wrong Hong Kong or Taiwan relationship between city, memory, duration and spectatorship."
+            : "This places the film inside the wrong historical relationship between place, narration, media mixture, performance and image-making.",
     }] : []),
   ];
 }
