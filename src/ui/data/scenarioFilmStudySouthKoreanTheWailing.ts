@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const theWailingFilmHistoryProfile = {
+  scenarioId: "scenario_the_wailing_2016",
+  period: "Mid-2010s South Korean occult horror, rural procedural and epistemic-uncertainty cinema",
+  traditions: ["South Korean occult horror", "Rural police procedural", "Ritual and epistemic uncertainty"],
+  before: "Occult horror often resolved supernatural rules through a stable expert, while police procedurals promised that accumulated evidence would narrow uncertainty rather than multiply incompatible explanations.",
+  moment: "Na Hong-jin extends writing, location production and postproduction around a rural investigation whose rain-soaked landscapes, domestic infection, competing rituals, detailed design, special makeup and crosscut sound-image system make every urgent interpretation potentially catastrophic.",
+  after: "Its Cannes presentation and continuing BFI and KOFIC analysis established the film as a major contemporary reference for horror organized around duration, cultural collision, unstable evidence and the inability to separate prejudice, ritual, disease and supernatural agency safely.",
+  historyQuestion: "Which production system explains a rural investigation where rain, landscape, family crisis, special makeup and competing rituals intensify the need to act while making reliable interpretation less possible?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, BFI and KOFIC place the 2016 film within globally circulating South Korean genre cinema while grounding its crisis in a contemporary rural community and suspicion toward an outsider." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI identifies the film's slow-burn mixture of police procedural, occult horror, folklore, possession narrative and rural social observation." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes records Side Mirror and Fox International Production Korea and the principal screenplay, photography, editing, design, sound and music departments behind the 156-minute feature." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes presented the film Out of Competition in 2016, while BFI and KOFIC continue to treat it as a major modern South Korean horror production." },
+    { area: "screenplay", status: "source_verified", note: "Cannes credits Na Hong-jin, and KOFIC documents his unusually long writing process for a structure that accumulates incompatible procedural, religious and supernatural explanations." },
+    { area: "directing", status: "source_verified", note: "KOFIC's filmmaker interview documents Na's extended shoot, long postproduction and calculated control of audience response rather than a single explanatory reveal." },
+    { area: "performance", status: "source_verified", note: "Cannes records Kwak Do-won, Hwang Jung-min, Jun Kunimura and Chun Woo-hee, while KOFIC documents intensive preparation for escalating fear, ritual performance and physical crisis." },
+    { area: "production_design", status: "source_verified", note: "Cannes credits Lee Hwo-kyung, and KOFIC's production-design interview documents detailed spatial plans, actor paths and collaboration with Na to organize homes, ritual sites and investigative spaces." },
+    { area: "costume_makeup", status: "source_verified", note: "KOFIC's special-makeup interview documents repeated tests for Hyo-jin and the stranger, physical deterioration, wounds and a deer dummy developed in discussion with the director." },
+    { area: "cinematography", status: "source_verified", note: "Cannes credits Hong Kyung-pyo, while BFI identifies natural light, wet roads, muddy earth tones and mountainous isolation as central to the transition from grounded observation to supernatural threat." },
+    { area: "lighting", status: "source_verified", note: "BFI specifically emphasizes natural light and the film's earthy, rain-darkened palette, which preserves rural realism while allowing ritual fire and night interiors to become unstable evidence." },
+    { area: "camera_format", status: "mapped", note: "The Cannes record confirms a 156-minute feature and principal photography department, but the current source set does not isolate the complete capture and lens specification." },
+    { area: "editing", status: "source_verified", note: "Cannes credits Kim Sun-min, and KOFIC documents a different cutting strategy developed through extended postproduction to coordinate investigation, family crisis and competing rituals." },
+    { area: "sound_design", status: "source_verified", note: "Cannes credits Park Yong-ki; rain, insects, animals, chanting, percussion, shouting and abrupt silence make ritual sound compete directly with procedural evidence." },
+    { area: "music", status: "source_verified", note: "Cannes credits Jang Jae-young and Dalpalan, whose music participates in the collision between investigation, shamanic ritual and escalating supernatural interpretation." },
+    { area: "effects_animation", status: "source_verified", note: "Special makeup, physical deterioration, creature and corpse work and practical ritual staging create the film's bodily horror without turning it into effects display detached from performance and space." },
+    { area: "documentary_method", status: "mapped", note: "Natural-light landscapes, procedural observation and detailed rural behavior create documentary pressure, although the film's uncertainty is produced through fully staged fiction and genre construction." },
+  ],
+} as const satisfies FilmHistoryProfile;
