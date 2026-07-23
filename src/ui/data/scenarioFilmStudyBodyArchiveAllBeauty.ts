@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const allTheBeautyAndTheBloodshedFilmHistoryProfile = {
+  scenarioId: "scenario_all_the_beauty_and_the_bloodshed_2022",
+  period: "Early-2020s activist documentary, artist biography and archival accountability montage",
+  traditions: ["Investigative documentary", "Artist self-archive cinema", "Activist institutional critique"],
+  before: "Artist biographies often separated private life and aesthetic development from later political action, while campaign documentaries commonly organized evidence around institutions without giving art objects and personal memory equal structural weight.",
+  moment: "Laura Poitras and Nan Goldin interweave Goldin's photographs, recorded testimony, family history, queer and artistic communities, present-tense P.A.I.N. actions and institutional responses. Chaptered montage, protest footage, slideshows, archival audio, meeting recordings and recurring images make biography itself the evidence for collective action against Sackler philanthropy and the opioid crisis.",
+  after: "The 2022 Venice Golden Lion made the film a landmark contemporary documentary and reinforced a model in which an artist's archive, activist strategy and institutional accountability can form one inseparable narrative argument.",
+  historyQuestion: "Which production system explains a documentary where photographs, family testimony, queer community history, museum protests, meeting recordings and institutional responses are edited as one double narrative, so biography becomes evidence for activism?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Venice, BFI, Film at Lincoln Center and Participant situate the documentary in Nan Goldin's life, the opioid crisis, P.A.I.N.'s campaign and the Sackler family's cultural philanthropy." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional programmes identify a hybrid of artist biography, investigative documentary, queer-community archive and present-tense activist cinema." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Venice records Participant, Praxis Films and the production team, while the official production page identifies the film within Participant's social-impact documentary slate." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Venice awards archive confirms the 2022 Golden Lion, and Film at Lincoln Center selected the film as the NYFF60 Centerpiece before its theatrical release." },
+    { area: "screenplay", status: "source_verified", note: "Poitras constructs a double narrative in which Goldin's life and communities repeatedly revise the meaning of contemporary actions against museums and pharmaceutical power." },
+    { area: "directing", status: "source_verified", note: "The direction preserves Goldin's authorship and voice while placing personal testimony beside meetings, public actions and institutional consequences rather than treating her only as an interview subject." },
+    { area: "performance", status: "source_verified", note: "Goldin's recorded narration, public speech and participation with fellow activists create a self-aware documentary presence, while P.A.I.N. actions depend on collective rather than star-centred performance." },
+    { area: "production_design", status: "not_central", note: "The film's spaces are museums, homes, meeting rooms and protest sites encountered as documentary evidence; constructed production design is not the central organising craft." },
+    { area: "costume_makeup", status: "not_central", note: "Clothing and appearance remain part of archival and observational evidence rather than a separately designed dramatic system." },
+    { area: "cinematography", status: "source_verified", note: "Observational protest footage, intimate interviews, institutional interiors and photographed artworks retain distinct visual roles while remaining part of one evidentiary structure." },
+    { area: "lighting", status: "mapped", note: "Available and practical light preserve the difference among archives, interviews, meetings and demonstrations, but the inspected sources do not document a complete lighting package." },
+    { area: "camera_format", status: "mapped", note: "The production combines contemporary digital documentary footage with still photography and varied archival moving-image sources; the inspected sources do not reduce this mixture to one capture specification." },
+    { area: "editing", status: "source_verified", note: "Venice credits Amy Foote, Joe Bini and Brian A. Kates; chaptered recurrence and juxtaposition connect photographs, testimony, protest tactics and institutional responses without flattening chronology." },
+    { area: "sound_design", status: "source_verified", note: "Goldin's voice, archival recordings, meetings, chants, museum ambience and strategic silence move continually between private memory and public confrontation." },
+    { area: "music", status: "source_verified", note: "Venice credits Soundwalk Collective; music supports movement among photographic slideshows, memory and activism without replacing the documentary's recorded voices and evidence." },
+    { area: "effects_animation", status: "not_central", note: "The film's formal transformations come from archive, montage, slideshows and sound rather than effects spectacle or animation." },
+    { area: "documentary_method", status: "source_verified", note: "The production directly combines Goldin's personal archive, interviews, activist meetings, demonstrations and institutional outcomes, making source comparison and accountability central to the form." },
+  ],
+} as const satisfies FilmHistoryProfile;
