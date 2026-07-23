@@ -44,9 +44,10 @@ const verificationGroups = [
   ["American independent breakthroughs", ["scenario_killer_of_sheep_1977", "scenario_sex_lies_and_videotape_1989", "scenario_slacker_1990", "scenario_daughters_of_the_dust_1991"], 4],
   ["Japanese everyday memory systems", ["scenario_tampopo_1985", "scenario_black_rain_imamura_1989", "scenario_after_life_1998", "scenario_still_walking_2008"], 4],
   ["South Korean genre systems", ["scenario_peppermint_candy_1999", "scenario_oasis_2002", "scenario_the_host_2006", "scenario_the_wailing_2016"], 4],
+  ["South and Southeast Asian institutional and performance systems", ["scenario_syndromes_and_a_century_2006", "scenario_court_2014", "scenario_marlina_the_murderer_in_four_acts_2017", "scenario_the_disciple_2020"], 4],
 ] as const;
 
-const expectedVerifiedCount = 184;
+const expectedVerifiedCount = 188;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
