@@ -43,6 +43,10 @@ import { afterLifeFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEveryday
 import { blackRainImamuraFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryBlackRain";
 import { stillWalkingFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryStillWalking";
 import { tampopoFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryTampopo";
+import { desertHeartsFilmHistoryProfile } from "./scenarioFilmStudyQueerIndependentDesertHearts";
+import { parisIsBurningFilmHistoryProfile } from "./scenarioFilmStudyQueerIndependentParisIsBurning";
+import { safeFilmHistoryProfile } from "./scenarioFilmStudyQueerIndependentSafe";
+import { theWatermelonWomanFilmHistoryProfile } from "./scenarioFilmStudyQueerIndependentWatermelonWoman";
 import { oasisFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanOasis";
 import { peppermintCandyFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanPeppermintCandy";
 import { theHostFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanTheHost";
@@ -67,6 +71,7 @@ export type IndependentStorytellingProfileGroup =
   | "subjective_enclosure_performance"
   | "family_performance_grief_power"
   | "body_archive_restitution_perspective"
+  | "queer_independent_body_community_archive"
   | "asian_transnational_urban_identity"
   | "japanese_ambiguity_dialogue";
 
@@ -119,6 +124,10 @@ const profiles = [
   allTheBeautyAndTheBloodshedFilmHistoryProfile,
   dahomeyFilmHistoryProfile,
   nickelBoysFilmHistoryProfile,
+  desertHeartsFilmHistoryProfile,
+  parisIsBurningFilmHistoryProfile,
+  safeFilmHistoryProfile,
+  theWatermelonWomanFilmHistoryProfile,
   cycloFilmHistoryProfile,
   happyTogetherFilmHistoryProfile,
   infernalAffairsFilmHistoryProfile,
@@ -192,6 +201,12 @@ assignGroup("body_archive_restitution_perspective", [
   allTheBeautyAndTheBloodshedFilmHistoryProfile.scenarioId,
   dahomeyFilmHistoryProfile.scenarioId,
   nickelBoysFilmHistoryProfile.scenarioId,
+]);
+assignGroup("queer_independent_body_community_archive", [
+  desertHeartsFilmHistoryProfile.scenarioId,
+  parisIsBurningFilmHistoryProfile.scenarioId,
+  safeFilmHistoryProfile.scenarioId,
+  theWatermelonWomanFilmHistoryProfile.scenarioId,
 ]);
 assignGroup("asian_transnational_urban_identity", [
   cycloFilmHistoryProfile.scenarioId,
