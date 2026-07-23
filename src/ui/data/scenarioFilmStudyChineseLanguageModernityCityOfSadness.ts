@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const aCityOfSadnessFilmHistoryProfile = {
+  scenarioId: "scenario_a_city_of_sadness_1989",
+  period: "Late-1980s Taiwan New Cinema, postwar political transition and family-centred historical memory",
+  traditions: ["Taiwan New Cinema", "Family chronicle", "Elliptical historical cinema"],
+  before: "The February 28 Incident and the beginning of White Terror remained politically suppressed in Taiwanese public culture, while conventional historical films more often organised national trauma through visible leaders, decisive events and explanatory spectacle.",
+  moment: "Hou Hsiao-hsien traces the 1945-49 transition from Japanese rule to Nationalist government through the dispersed experiences of one family. Fixed long takes, deep domestic space, letters, multilingual speech, radio, offscreen violence and large ellipses turn incomplete witnessing into the film's historical method.",
+  after: "Its Golden Lion made it the first Taiwanese film to win Venice's highest prize and helped establish Taiwan New Cinema internationally, while its indirect representation of the February 28 Incident opened a major cinematic route into formerly taboo national memory.",
+  historyQuestion: "Which production system explains a family chronicle where fixed long takes, doorways, letters, radio, several languages, missing people and offscreen violence make political transition felt through incomplete domestic witnessing?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "TFAI, BFI and Venice records situate the film across the end of Japanese colonial rule, the Nationalist takeover, the February 28 Incident and the beginning of White Terror." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional programmes identify the film as a major Taiwan New Cinema family chronicle that represents national trauma through duration, ellipsis and ordinary life rather than heroic spectacle." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Venice records the Taiwanese production companies and principal screenplay, cinematography, editing, music and design departments behind the 35mm feature." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Venice archive confirms the 1989 Golden Lion; TFAI and BFI describe the work as a landmark in Taiwanese cinema and the first major film to confront the February 28 taboo." },
+    { area: "screenplay", status: "source_verified", note: "Chu Tien-wen and Wu Nien-jen build history through family dispersal, letters, absence, domestic exchange and partial viewpoints instead of giving one protagonist complete knowledge." },
+    { area: "directing", status: "source_verified", note: "Hou maintains distance through fixed tableaux and long scene duration, letting political pressure enter homes and businesses through interruption, disappearance and changes outside the frame." },
+    { area: "performance", status: "source_verified", note: "The ensemble distributes historical experience across siblings, spouses, friends and officials; Tony Leung's deaf photographer makes gesture, writing and visual attention central to communication." },
+    { area: "production_design", status: "source_verified", note: "Family rooms, restaurants, hospitals, railway spaces, streets and mountain settlements create a layered social geography in which domestic continuity is repeatedly broken by regime change." },
+    { area: "costume_makeup", status: "mapped", note: "Period clothing, uniforms and changing public roles locate the family historically, but the inspected sources do not document a complete costume or makeup production method." },
+    { area: "cinematography", status: "source_verified", note: "The Venice archive credits Chen Huai-en; deep fixed compositions, doorways, corridors and layered interiors hold private action while public history remains partly distant or unseen." },
+    { area: "lighting", status: "mapped", note: "Naturalistic interiors, windows and restrained contrast support historical distance, but the available institutional sources do not specify the production's full lighting package." },
+    { area: "camera_format", status: "source_verified", note: "The Venice historical archive records a colour 35mm production with optical monaural sound, while current institutional programmes document its restored circulation." },
+    { area: "editing", status: "source_verified", note: "Venice credits Liao Ching-sung; temporal gaps, missing events and abrupt changes in family presence make loss and incomplete knowledge part of the historical structure." },
+    { area: "sound_design", status: "source_verified", note: "Multilingual dialogue, written communication, radio reports, silence and violence heard beyond the frame extend political history beyond the camera's fixed viewpoint." },
+    { area: "music", status: "source_verified", note: "The Venice archive credits Chang Hong-yi; recurring music and songs join private memory to ceremony and political transition without replacing the film's sparse environmental field." },
+    { area: "effects_animation", status: "not_central", note: "Historical upheaval is conveyed through staging, offscreen action, sound, absence and aftermath rather than effects-led battle spectacle or animation." },
+    { area: "documentary_method", status: "mapped", note: "Research into suppressed history and attention to ordinary family experience ground the fiction, but the film transforms evidence through an elliptical dramatic chronicle rather than documentary testimony." },
+  ],
+} as const satisfies FilmHistoryProfile;
