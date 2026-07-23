@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const aTouchOfSinFilmHistoryProfile = {
+  scenarioId: "scenario_a_touch_of_sin_2013",
+  period: "Early-2010s Chinese social cinema, episodic national geography and genre-inflected violence",
+  traditions: ["Chinese independent social cinema", "Episodic national portrait", "Genre-inflected realism"],
+  before: "Jia Zhangke's observational cinema generally held violence at the edge of daily labour and social change, while martial-arts and crime genres separated spectacular action from contemporary institutional reality.",
+  moment: "Jia investigates four widely reported violent incidents, travels to their regions and reorganises them as four linked stories across mines, migration routes, service work and factories. Yu Lik-wai's wide social geography, Xudong Lin and Matthieu Laclau's episodic cutting, Zhang Yang's environmental sound and sudden genre bursts connect individual rage to national economic transformation.",
+  after: "The Cannes screenplay prize and wide international circulation established the film as a major example of contemporary Chinese social cinema entering action, wuxia and crime imagery without abandoning documentary research or regional specificity.",
+  historyQuestion: "Which production system explains four researched acts of violence across different Chinese provinces, joined through geography, labour, genre rupture and social accumulation rather than one protagonist's continuous plot?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes and Film at Lincoln Center place the 2013 China-Japan production inside Jia Zhangke's response to rapid economic change, inequality, migration and publicly reported violence." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources describe Jia entering crime, action and wuxia territory while retaining independent social observation and attention to marginalised workers." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes records Xstream Pictures, Shanxi Film and Television Group, Shanghai Film Group, Office Kitano and Bandai Visual with the principal camera, design, editing, music and sound departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the 2013 Best Screenplay award, and Film at Lincoln Center documents its New York Film Festival premiere and continued position as a central work of Jia's international career." },
+    { area: "screenplay", status: "source_verified", note: "Jia builds four overlapping stories from real violent incidents, using regional and thematic links to form a national portrait rather than forcing the characters into one causal plot." },
+    { area: "directing", status: "source_verified", note: "The Cannes production feature documents Jia's investigation of the events, travel to the locations and interviews with people before staging the stories through precise social environments and controlled genre escalation." },
+    { area: "performance", status: "source_verified", note: "The ensemble shifts from contained everyday behaviour to abrupt action without changing the films' social texture, allowing violence to emerge from humiliation, labour and institutional pressure." },
+    { area: "production_design", status: "source_verified", note: "Cannes credits Liu Weixin; mines, villages, roads, saunas, factories and dormitories preserve the distinct economic system behind each episode." },
+    { area: "costume_makeup", status: "mapped", note: "Work uniforms, service clothing and regional everyday dress anchor class and occupation, but the current sources do not document a complete costume or makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Cannes credits Yu Lik-wai; wide frames connect bodies to transport, workplaces, animals and changing landscapes before tighter genre images rupture the observational field." },
+    { area: "lighting", status: "mapped", note: "Naturalistic daylight, industrial interiors and service-space practicals maintain regional realism, but the current sources do not isolate the lighting package." },
+    { area: "camera_format", status: "source_verified", note: "Cannes and Film at Lincoln Center record a colour feature running approximately 125 to 133 minutes and presented in the principal international festival circuit." },
+    { area: "editing", status: "source_verified", note: "Cannes credits Xudong Lin and Matthieu Laclau; four stories accumulate through geographic, thematic and visual rhymes rather than a conventional single-protagonist arc." },
+    { area: "sound_design", status: "source_verified", note: "Cannes credits Zhang Yang; machinery, transit, animals, workplaces, weapons and abrupt quiet make violence feel embedded in ordinary systems." },
+    { area: "music", status: "source_verified", note: "Cannes credits Lim Giong; restrained scoring and opera or genre references connect contemporary rage to inherited Chinese performance and action traditions." },
+    { area: "effects_animation", status: "mapped", note: "Weapons and violent impacts are essential, but the current sources document the genre system more clearly than a complete effects or stunt pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Cannes explicitly documents research into four real news events, travel to the locations and interviews, preserving documentary evidence beneath the staged fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;

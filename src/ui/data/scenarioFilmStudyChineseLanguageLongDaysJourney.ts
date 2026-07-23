@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const longDaysJourneyIntoNightFilmHistoryProfile = {
+  scenarioId: "scenario_long_days_journey_into_night_2018",
+  period: "Late-2010s Chinese dream cinema, memory noir and immersive 3D long-take modernism",
+  traditions: ["Chinese dream cinema", "Memory noir", "Immersive long-take modernism"],
+  before: "Memory noir generally used flashback, montage and subjective fragments while long-take spectacle remained a local set piece; format changes rarely reorganised an entire film's relation between recollection and embodied present time.",
+  moment: "Bi Gan and consultant Chang Ta-chun divide the film into an achronological noir investigation and a nocturnal dream. Three cinematographers build fragmented rain-soaked memory before a roughly hour-long 3D sequence shot remakes Kaili as continuous physical space, with Qin Yanan's first-half editing, Liu Qiang's design, Li Danfeng's sound and Lim Giong's music guiding the shift.",
+  after: "Its Un Certain Regard premiere, NYFF selection, international theatrical success and widely discussed 3D long take established the film as a major contemporary example of format change functioning as narrative thought rather than technical display alone.",
+  historyQuestion: "Which production system explains a film that begins as an achronological memory noir, then puts on 3D glasses and enters a roughly hour-long continuous dream where camera movement rebuilds geography in real time?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes and Film at Lincoln Center place Bi Gan's second feature in the 2018 Un Certain Regard and New York Film Festival contexts after the international breakthrough of Kaili Blues." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources describe a noir-tinged memory film divided between achronological investigation and an immersive nocturnal dream, extending contemporary Chinese poetic and long-take cinema." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes records the China-France production and credits three cinematographers, production designer Liu Qiang, editor Qin Yanan, sound designer Li Danfeng and composer Lim Giong." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Film at Lincoln Center documents the NYFF56 selection, international release, exceptional Chinese box-office response and the long take's immediate recognition as a major poetic and technical achievement." },
+    { area: "screenplay", status: "source_verified", note: "Bi Gan's Cannes interview documents collaboration with novelist Chang Ta-chun and the deliberate two-part Poppy and Memory structure, beginning from film noir and transforming search into recollection." },
+    { area: "directing", status: "source_verified", note: "Bi organises the first half through fragments, recurring objects and uncertain chronology, then directs the second as continuous traversal where performance, camera and location must remain synchronised." },
+    { area: "performance", status: "source_verified", note: "Huang Jue, Tang Wei and the ensemble shift from noir-like withheld behaviour to extended real-time interaction, requiring the final movement to sustain character changes without editorial reset." },
+    { area: "production_design", status: "source_verified", note: "Cannes credits Liu Qiang; tunnels, rooms, a cinema, cableway, streets and suspended spaces are arranged into a traversable dream geography for the continuous sequence." },
+    { area: "costume_makeup", status: "mapped", note: "Clothing and appearance support identity echoes and noir memory, but the current sources do not document the complete costume or makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Cannes credits Yao Hung-I, Dong Jinsong and David Chizallet; the system contrasts fragmented noir imagery with a gravity-defying hour-long moving 3D shot." },
+    { area: "lighting", status: "source_verified", note: "Rain, coloured practicals, darkness, tunnels and nocturnal exterior sources maintain legibility as the final camera crosses multiple environments without conventional relighting cuts." },
+    { area: "camera_format", status: "source_verified", note: "Cannes and Film at Lincoln Center document the film's decisive transition into a stereoscopic 3D second half containing an approximately one-hour continuous shot." },
+    { area: "editing", status: "source_verified", note: "Cannes credits Qin Yanan; elliptical first-half assembly is placed against the refusal of cutting in the extended dream, making editing contrast the film's central formal event." },
+    { area: "sound_design", status: "source_verified", note: "Cannes credits Li Danfeng; rain, rooms, tunnels, voices, machinery and offscreen movement guide orientation across both unstable memory fragments and the continuous dream space." },
+    { area: "music", status: "source_verified", note: "Cannes credits Lim Giong; recurring music joins objects and emotional traces across the two parts without explaining the uncertain chronology." },
+    { area: "effects_animation", status: "source_verified", note: "The extended 3D movement requires coordinated rigs, spatial transitions and invisible technical support, but these serve embodied geography rather than detached effects spectacle." },
+    { area: "documentary_method", status: "mapped", note: "Kaili and Guizhou supply material locations and local texture, but the film reorganises them into subjective memory and dream rather than observational documentary evidence." },
+  ],
+} as const satisfies FilmHistoryProfile;

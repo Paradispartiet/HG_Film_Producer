@@ -12,6 +12,7 @@ import { sixtiesScaleIndependentVerificationRecords } from "./scenarioProduction
 import { americanIndependentBreakthroughsVerificationRecords } from "./scenarioProductionVerificationAmericanIndependentBreakthroughsBatch";
 import { balkanWarInstitutionVerificationRecords } from "./scenarioProductionVerificationBalkanWarInstitutionSystemsBatch";
 import { britishIrishPlaceBodyVerificationRecords } from "./scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch";
+import { chineseLanguageSpaceGenreVerificationRecords } from "./scenarioProductionVerificationChineseLanguageSpaceGenreBatch";
 import { classicalHollywoodVerificationRecords } from "./scenarioProductionVerificationClassicalHollywoodBatch";
 import { constructedWorldsVerificationRecords } from "./scenarioProductionVerificationConstructedWorldsBatch";
 import { contemporaryDissentRuralVerificationRecords } from "./scenarioProductionVerificationContemporaryDissentRuralSystemsBatch";
@@ -71,6 +72,7 @@ const additionalVerificationRecords = [
   ...southKoreanGenreSystemsVerificationRecords,
   ...southSoutheastAsianSystemsVerificationRecords,
   ...hongKongTaiwanUrbanTimeVerificationRecords,
+  ...chineseLanguageSpaceGenreVerificationRecords,
   ...silentFoundationsVerificationRecords,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
