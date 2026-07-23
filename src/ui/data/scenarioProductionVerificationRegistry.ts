@@ -45,6 +45,7 @@ import { norwegianPostwarGenreSystemsVerificationRecords } from "./scenarioProdu
 import { postwarEuropeanModernismVerificationRecords } from "./scenarioProductionVerificationPostwarEuropeanModernismBatch";
 import { silentFoundationsVerificationRecords } from "./scenarioProductionVerificationSilentFoundationsBatch";
 import { silentStudioSystemsVerificationRecords } from "./scenarioProductionVerificationSilentStudioSystemsBatch";
+import { southKoreanGenreSystemsVerificationRecords } from "./scenarioProductionVerificationSouthKoreanGenreSystemsBatch";
 import { technologyHistoryVerificationRecords } from "./scenarioProductionVerificationTechnologyBatch";
 
 export type {
@@ -65,6 +66,7 @@ const additionalVerificationRecords = [
   ...independentStorytellingVerificationRecords,
   ...americanIndependentBreakthroughsVerificationRecords,
   ...japaneseEverydayMemoryVerificationRecords,
+  ...southKoreanGenreSystemsVerificationRecords,
   ...silentFoundationsVerificationRecords,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

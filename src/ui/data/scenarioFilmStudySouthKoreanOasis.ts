@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const oasisFilmHistoryProfile = {
+  scenarioId: "scenario_oasis_2002",
+  period: "Early-2000s South Korean social realism, disability representation and subjective romantic drama",
+  traditions: ["South Korean social realism", "Disability and performance cinema", "Subjective romantic modernism"],
+  before: "Screen romance often idealized disability, moralized social exclusion or used fantasy to erase material difference, while difficult protagonists were commonly separated from tender or lyrical treatment.",
+  moment: "Lee Chang-dong builds an ethically abrasive relationship around two socially excluded characters, grounding it in Uijeongbu streets and domestic confinement while brief subjective transformations, patient close observation and physically exact performance make desire visible without replacing material reality.",
+  after: "Its Venice directing and performance awards and continued museum and institute circulation established the film as a demanding reference for disability performance, social exclusion and the responsibility involved in shifting between objective constraint and subjective fantasy.",
+  historyQuestion: "Which production system explains a romance that holds awkward social reality and brief subjective transformation together without allowing fantasy to erase disability, neglect or unequal power?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "KOFIC, Venice and MoMA place the 2002 feature inside a period of internationally visible South Korean cinema concerned with social exclusion, family neglect and institutional power." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify Lee Chang-dong's social realism while emphasizing the film's disruptive use of romance, magical realism and subjective imagery." },
+    { area: "industry_and_production_context", status: "source_verified", note: "KOFIC and Venice record East Film production, Lee as writer-director and the principal cinematography, editing, design, costume, music and effects departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Venice archive records the Special Director award for Lee and the Marcello Mastroianni award for Moon So-ri, while MoMA documents the film's continued international study." },
+    { area: "screenplay", status: "source_verified", note: "Lee's screenplay refuses idealized protagonists and develops intimacy through morally difficult behavior, family pressure, changing trust and recurrent conflict between social judgment and private perception." },
+    { area: "directing", status: "source_verified", note: "MoMA describes patient direction and intimate observation, while KOFIC's location study shows Lee selecting Uijeongbu spaces to carry the film's social meaning." },
+    { area: "performance", status: "source_verified", note: "MoMA and Venice document Moon So-ri's physically demanding performance and Sol Kyung-gu's volatile characterization, with performance carrying discomfort, tenderness and unequal power rather than smoothing them into convention." },
+    { area: "production_design", status: "source_verified", note: "Venice credits Shin Jeom-hui, while KOFIC documents Lee's careful location selection and selective interior construction around constrained homes, streets and social boundaries." },
+    { area: "costume_makeup", status: "mapped", note: "Venice credits costume design, and clothing supports class and bodily vulnerability, but the current sources do not document a complete costume or makeup method." },
+    { area: "cinematography", status: "source_verified", note: "Venice credits Choi Yeong-taek and MoMA identifies intimate cinematography that alternates constrained observation with brief subjective passages without abandoning the characters' material surroundings." },
+    { area: "lighting", status: "mapped", note: "Naturalistic interiors and the altered light of fantasy moments are central to viewpoint, but the current sources do not isolate the full lighting process." },
+    { area: "camera_format", status: "source_verified", note: "The Venice archive records a 132-minute color 35mm feature with Dolby SR presentation." },
+    { area: "editing", status: "source_verified", note: "Venice credits Kim Hyun; extended uncomfortable encounters are held long enough for power and tenderness to coexist, while subjective transformations remain clearly distinguished from material reality." },
+    { area: "sound_design", status: "source_verified", note: "The documented Dolby SR presentation and the film's strained speech, household noise, traffic and shifts in acoustic perspective keep communication and bodily effort physically present." },
+    { area: "music", status: "source_verified", note: "Venice credits Lee Jae-jin; music supports subjective release without replacing the harder social and environmental sound field." },
+    { area: "effects_animation", status: "source_verified", note: "Venice credits special effects by Kim Tae-young; selective transformations visualize Gong-ju's desire and freedom while returning explicitly to her unchanged physical and social reality." },
+    { area: "documentary_method", status: "mapped", note: "Location realism, patient observation and attention to social behavior give the fiction documentary pressure, although it remains a fully staged drama." },
+  ],
+} as const satisfies FilmHistoryProfile;
