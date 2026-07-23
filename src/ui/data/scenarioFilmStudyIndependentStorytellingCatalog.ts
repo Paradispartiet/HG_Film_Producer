@@ -43,6 +43,10 @@ import { courtFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianC
 import { marlinaFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianMarlina";
 import { syndromesAndACenturyFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianSyndromes";
 import { theDiscipleFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianTheDisciple";
+import { bartonFinkFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureBartonFink";
+import { burningFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureBurning";
+import { anElephantSittingStillFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureElephant";
+import { kagemushaFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureKagemusha";
 
 export type IndependentStorytellingProfileGroup =
   | "general"
@@ -52,6 +56,7 @@ export type IndependentStorytellingProfileGroup =
   | "chinese_language_space_genre"
   | "chinese_language_modernity_memory"
   | "asian_landscape_grief_attention"
+  | "subjective_enclosure_performance"
   | "asian_transnational_urban_identity"
   | "japanese_ambiguity_dialogue";
 
@@ -92,6 +97,10 @@ const profiles = [
   stillLifeFilmHistoryProfile,
   secretSunshineFilmHistoryProfile,
   poetryFilmHistoryProfile,
+  burningFilmHistoryProfile,
+  anElephantSittingStillFilmHistoryProfile,
+  kagemushaFilmHistoryProfile,
+  bartonFinkFilmHistoryProfile,
   cycloFilmHistoryProfile,
   happyTogetherFilmHistoryProfile,
   infernalAffairsFilmHistoryProfile,
@@ -147,6 +156,12 @@ assignGroup("asian_landscape_grief_attention", [
   stillLifeFilmHistoryProfile.scenarioId,
   secretSunshineFilmHistoryProfile.scenarioId,
   poetryFilmHistoryProfile.scenarioId,
+]);
+assignGroup("subjective_enclosure_performance", [
+  burningFilmHistoryProfile.scenarioId,
+  anElephantSittingStillFilmHistoryProfile.scenarioId,
+  kagemushaFilmHistoryProfile.scenarioId,
+  bartonFinkFilmHistoryProfile.scenarioId,
 ]);
 assignGroup("asian_transnational_urban_identity", [
   cycloFilmHistoryProfile.scenarioId,
