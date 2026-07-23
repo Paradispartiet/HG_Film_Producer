@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const anElephantSittingStillFilmHistoryProfile = {
+  scenarioId: "scenario_an_elephant_sitting_still_2018",
+  period: "Late-2010s Chinese independent cinema, postindustrial despair and four-hour durational ensemble form",
+  traditions: ["Chinese independent cinema", "Durational ensemble realism", "Shallow-focus subjective social cinema"],
+  before: "Ensemble social dramas often used cross-cutting to offer broad explanatory access to a community, while long films commonly justified duration through historical span, episodic adventure or panoramic visual scale.",
+  moment: "Hu Bo compresses four intersecting lives into one oppressive day and nearly four hours. Intimate tracking shots, shallow focus, obstructed foregrounds, limited reverse angles, extended movement, industrial-town sound and carefully delayed intersections keep the wider social world physically present but visually inaccessible.",
+  after: "Its Berlinale premiere and later international release established the feature as a landmark of contemporary Chinese independent cinema and a major example of how extreme duration and restricted visual space can produce immersion rather than panoramic mastery.",
+  historyQuestion: "Which production system explains a four-hour single-day ensemble where shallow focus, bodies blocking the frame, long following shots, delayed intersections and a distant elephant make systemic hopelessness feel physically close but never fully visible?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Film Comment and Film at Lincoln Center place the film in a postindustrial northern Chinese environment shaped by economic pressure, social abandonment and blocked mobility." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional criticism identifies Chinese independent durational realism joined to intimate subjective camera work and a multi-character one-day structure." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Film at Lincoln Center and Film Comment document Hu Bo's feature debut, its difficult independent production history, his combined writer-director-editor role and the film's posthumous international circulation." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Berlinale-era and repertory record describes the film as a landmark modern Chinese debut whose four-hour form and concentrated emotional force gained lasting international recognition." },
+    { area: "screenplay", status: "source_verified", note: "Four crises unfold across one day and intersect through geography, coincidence and the shared idea of Manzhouli, without granting any character a complete account of the others." },
+    { area: "directing", status: "source_verified", note: "Hu keeps the camera close to characters and allows actions to develop in extended scenes, making waiting, walking, avoidance and failed conversation carry the social pressure." },
+    { area: "performance", status: "source_verified", note: "Peng Yuchang, Wang Yuwen, Zhang Yu and Liu Congxi sustain guarded, exhausted behaviour across long takes, with emotional changes emerging through proximity and interruption rather than explanatory monologues." },
+    { area: "production_design", status: "source_verified", note: "Schools, apartments, corridors, stairwells, streets, stations and damaged industrial surroundings create a maze of narrow routes whose repetition makes escape materially difficult." },
+    { area: "costume_makeup", status: "mapped", note: "Ordinary winter clothing and worn appearance reinforce class, season and exhaustion, but the inspected sources do not document a complete costume or makeup process." },
+    { area: "cinematography", status: "source_verified", note: "Film at Lincoln Center and BFI emphasize moody close views, long tracking shots, shallow focus and obstructed compositions that withhold stable environmental overview." },
+    { area: "lighting", status: "mapped", note: "Muted winter exteriors, dim interiors and low-contrast practical environments support enclosure, but the inspected sources do not provide a complete lighting package." },
+    { area: "camera_format", status: "mapped", note: "Institutional records identify the colour feature and its contemporary digital circulation, but the inspected sources do not give a sufficiently precise original capture-format specification." },
+    { area: "editing", status: "source_verified", note: "Hu's own editing builds a continuous day from extended scenes and carefully delayed intersections, preserving duration while gradually revealing how the four trajectories connect." },
+    { area: "sound_design", status: "source_verified", note: "Traffic, corridors, footsteps, distant arguments, school noise, trains, sparse music and the final offscreen animal sound maintain a world extending beyond restricted images." },
+    { area: "music", status: "mapped", note: "Sparse music intensifies passages of movement and exhaustion without replacing the dominant field of environmental and social sound; the full scoring process is not documented in the inspected sources." },
+    { area: "effects_animation", status: "not_central", note: "The film's oppressive scale is created through location, duration, performance, camera proximity and sound rather than effects spectacle or animation." },
+    { area: "documentary_method", status: "source_verified", note: "Specific postindustrial environments, long observation and sociological detail give the fiction documentary density even as its intersections and symbolic destination are carefully constructed." },
+  ],
+} as const satisfies FilmHistoryProfile;
