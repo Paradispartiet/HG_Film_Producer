@@ -13,6 +13,7 @@ import { americanIndependentBreakthroughsVerificationRecords } from "./scenarioP
 import { asianTransnationalUrbanIdentityVerificationRecords } from "./scenarioProductionVerificationAsianTransnationalUrbanIdentityBatch";
 import { balkanWarInstitutionVerificationRecords } from "./scenarioProductionVerificationBalkanWarInstitutionSystemsBatch";
 import { britishIrishPlaceBodyVerificationRecords } from "./scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch";
+import { chineseLanguageModernityMemoryVerificationRecords } from "./scenarioProductionVerificationChineseLanguageModernityMemoryBatch";
 import { chineseLanguageSpaceGenreVerificationRecords } from "./scenarioProductionVerificationChineseLanguageSpaceGenreBatch";
 import { classicalHollywoodVerificationRecords } from "./scenarioProductionVerificationClassicalHollywoodBatch";
 import { constructedWorldsVerificationRecords } from "./scenarioProductionVerificationConstructedWorldsBatch";
@@ -75,6 +76,7 @@ const additionalVerificationRecords = [
   ...southSoutheastAsianSystemsVerificationRecords,
   ...hongKongTaiwanUrbanTimeVerificationRecords,
   ...chineseLanguageSpaceGenreVerificationRecords,
+  ...chineseLanguageModernityMemoryVerificationRecords,
   ...asianTransnationalUrbanIdentityVerificationRecords,
   ...japaneseAmbiguityDialogueVerificationRecords,
   ...silentFoundationsVerificationRecords,
