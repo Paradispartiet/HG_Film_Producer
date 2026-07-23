@@ -30,6 +30,7 @@ import { europeanPoeticMemoryVerificationRecords } from "./scenarioProductionVer
 import { europeanPoliticalFeministModernismVerificationRecords } from "./scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch";
 import { europeanPressureVerificationRecords } from "./scenarioProductionVerificationEuropeanPressureBatch";
 import { europeanTimeIdentityVerificationRecords } from "./scenarioProductionVerificationEuropeanTimeIdentitySystemsBatch";
+import { familyPerformanceGriefPowerVerificationRecords } from "./scenarioProductionVerificationFamilyPerformanceGriefPowerBatch";
 import { festivalJourneyDisplacementVerificationRecords } from "./scenarioProductionVerificationFestivalJourneyDisplacementSystemsBatch";
 import { festivalUrbanIntimacyVerificationRecords } from "./scenarioProductionVerificationFestivalUrbanIntimacySystemsBatch";
 import { hongKongTaiwanUrbanTimeVerificationRecords } from "./scenarioProductionVerificationHongKongTaiwanUrbanTimeBatch";
@@ -81,6 +82,7 @@ const additionalVerificationRecords = [
   ...chineseLanguageModernityMemoryVerificationRecords,
   ...asianLandscapeGriefAttentionVerificationRecords,
   ...subjectiveEnclosurePerformanceVerificationRecords,
+  ...familyPerformanceGriefPowerVerificationRecords,
   ...asianTransnationalUrbanIdentityVerificationRecords,
   ...japaneseAmbiguityDialogueVerificationRecords,
   ...silentFoundationsVerificationRecords,
