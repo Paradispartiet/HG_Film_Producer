@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const theHostFilmHistoryProfile = {
+  scenarioId: "scenario_the_host_2006",
+  period: "Mid-2000s South Korean genre hybridity, family monster cinema and transnational digital-effects production",
+  traditions: ["South Korean genre hybridity", "Family monster film", "Political blockbuster satire"],
+  before: "Creature features often separated spectacle from social satire or delayed the monster through darkness and concealment, while Korean family melodrama and political critique usually occupied different industrial and tonal spaces.",
+  moment: "Bong Joon-ho stages a digitally created creature in daylight across familiar Han River public space, then keeps one family's improvised rescue objective active through horror, slapstick, melodrama and institutional satire, using a Korean-American VFX pipeline rather than treating effects as an isolated attraction.",
+  after: "Its domestic scale, international breakthrough and continuing BFI and KOFIC study established the film as a major model for combining commercially legible creature spectacle with regional geography, unstable tone, family performance and criticism of state and media systems.",
+  historyQuestion: "Which production system explains a daylight river monster whose digital body, public-space geography, dysfunctional family rescue and bureaucratic satire all belong to the same popular genre machine?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "KOFIC and BFI place the 2006 feature in the expansion of globally visible South Korean popular cinema and connect its monster crisis to contemporary institutional, environmental and political anxieties." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI identifies the film as a defining hybrid of creature feature, family melodrama, comedy, action and political satire rather than a single stable genre." },
+    { area: "industry_and_production_context", status: "source_verified", note: "KOFIC records Chungeorahm Film production and the principal team, while its VFX interviews document collaboration between Korea's EON Digital Film and the American company The Orphanage." },
+    { area: "reception_and_legacy", status: "source_verified", note: "KOFIC records the film's exceptional Korean admissions, and BFI identifies it as Bong's international breakthrough and a central modern South Korean genre film." },
+    { area: "screenplay", status: "source_verified", note: "Institutional descriptions document a practical child-rescue objective repeatedly obstructed by family dysfunction, government procedure, media panic and genre shifts rather than a simple military monster hunt." },
+    { area: "directing", status: "source_verified", note: "BFI emphasizes Bong's controlled tonal movement and decision to reveal the creature early in daylight, keeping comedy, grief, pursuit and satire active within the same sequences." },
+    { area: "performance", status: "source_verified", note: "KOFIC records the ensemble led by Song Kang-ho, Byun Hee-bong, Park Hae-il, Bae Doona and Go Ah-sung; family behavior carries both physical comedy and grief inside the effects-driven crisis." },
+    { area: "production_design", status: "source_verified", note: "Han River parks, bridges, tunnels, kiosks and improvised shelters make the monster crisis spatially recognizable, while KOFIC credits the production and art departments that connect spectacle to everyday urban infrastructure." },
+    { area: "costume_makeup", status: "mapped", note: "Family clothing, contamination suits, wounds and institutional uniforms reinforce class and emergency systems, but the current sources do not isolate a full costume and makeup workflow." },
+    { area: "cinematography", status: "source_verified", note: "BFI documents readable daylight staging in public river spaces, while the production's framing and camera movement preserve family geography and creature scale during pursuit and attack." },
+    { area: "lighting", status: "source_verified", note: "The deliberate use of daylight, overcast river exteriors and visible public space rejects the concealment typical of many creature films and forces the digital monster to survive ordinary illumination." },
+    { area: "camera_format", status: "mapped", note: "The film's live-action and VFX plates form a coordinated digital-effects pipeline, but the current source set does not document the complete capture specification." },
+    { area: "editing", status: "source_verified", note: "Rapid transitions between pursuit, bureaucratic obstruction, mourning, slapstick and suspense maintain the rescue goal while refusing a single emotional register." },
+    { area: "sound_design", status: "source_verified", note: "Crowd panic, river ambience, creature movement, public announcements, weapons and overlapping family voices give blockbuster action a familiar civic and human acoustic field." },
+    { area: "music", status: "mapped", note: "Music participates in the film's tonal volatility, but the current sources do not isolate the complete scoring process." },
+    { area: "effects_animation", status: "source_verified", note: "KOFIC's VFX interview documents that The Orphanage created the creature while EON Digital Film completed the remaining visual effects, establishing a divided transnational pipeline." },
+    { area: "documentary_method", status: "mapped", note: "Recognizable public geography, media procedure and institutional behavior lend observational immediacy, although the film remains a constructed genre spectacle." },
+  ],
+} as const satisfies FilmHistoryProfile;
