@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const parisIsBurningFilmHistoryProfile = {
+  scenarioId: "scenario_paris_is_burning_1990",
+  period: "Late-1980s New York independent documentary, ballroom community portrait and queer nonfiction landmark",
+  traditions: ["Independent documentary", "Queer community portraiture", "Performance and testimony cinema"],
+  before: "Documentaries about queer and trans communities were frequently framed through medical, journalistic or outsider explanation, while Black and Latinx ballroom culture remained largely absent from widely circulated nonfiction cinema.",
+  moment: "Jennie Livingston spends years filming New York's ballroom scene, organizing the documentary through competitions, houses, interviews and recurring ideas such as realness, aspiration, kinship and survival. Paul Gibson's 1.33 cinematography, Jonathan Oppenheim's editing and the direct authority of participants' voices make performance and testimony illuminate one another without reducing the community to a single explanatory thesis.",
+  after: "The film's 1991 Sundance Grand Jury Prize, later UCLA-Sundance-Outfest preservation and 2016 National Film Registry induction established it as a major documentary and queer-cinema reference while also sustaining debate about authorship, access, representation and the circulation of community language.",
+  historyQuestion: "Which production system explains a seven-year documentary assembled from ballroom competitions, house structures, direct testimony, 1.33 observational footage and participant-defined language about race, class, gender, aspiration and chosen family?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Library of Congress, Sundance, BFI and Criterion place the film in New York's 1980s Black and Latinx ballroom scene amid racism, poverty, homophobia, transphobia and the AIDS crisis." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional records identify the film as a landmark independent queer documentary and community portrait built around ballroom performance and first-person testimony." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion credits Off White Productions personnel and the principal camera, editing and producing roles, while Sundance documents the film's festival history, preservation deposit and restoration context." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Sundance records the 1991 Grand Jury Prize: Documentary, and the Library of Congress confirms the film's 2016 National Film Registry induction for cultural, historic and aesthetic importance." },
+    { area: "screenplay", status: "source_verified", note: "The nonfiction structure is built from categories, competitions, interviews, repeated terms and evolving personal stories rather than a conventional scripted plot." },
+    { area: "directing", status: "source_verified", note: "Livingston directs by moving between public performance and private explanation, allowing participants to define the social meaning of houses, realness, voguing, desire and survival." },
+    { area: "performance", status: "source_verified", note: "Dorian Corey, Pepper LaBeija, Venus Xtravaganza, Willi Ninja and other participants shape the film through speech, gesture, runway performance and self-authored social analysis." },
+    { area: "production_design", status: "not_central", note: "The film observes existing ballrooms, homes, streets and interview spaces rather than constructing a fictional production environment." },
+    { area: "costume_makeup", status: "source_verified", note: "Ball categories, fashion, makeup and embodied transformation are primary subjects of the documentary and central to its analysis of realness, aspiration and social performance." },
+    { area: "cinematography", status: "source_verified", note: "Criterion credits Paul Gibson's cinematography, which moves between runway spectacle, close interviews and ordinary city environments while preserving the distinct energy of each setting." },
+    { area: "lighting", status: "mapped", note: "Available-light documentary conditions and ballroom illumination create strong contrasts, but the inspected sources do not document a complete lighting package." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents a colour 1.33:1 feature with a director-supervised 2K restoration and uncompressed monaural soundtrack." },
+    { area: "editing", status: "source_verified", note: "Jonathan Oppenheim's credited editing interweaves categories, interviews, house relationships and personal histories so vocabulary and lived experience repeatedly reinterpret one another." },
+    { area: "sound_design", status: "source_verified", note: "Direct testimony, emcee calls, music, applause, crowd noise and room ambience preserve the balls as social events while keeping participants' explanations intelligible." },
+    { area: "music", status: "mapped", note: "Dance tracks and ballroom rhythm are essential to performance and movement, although the inspected institutional sources emphasize the mono presentation rather than a complete music-clearance history." },
+    { area: "effects_animation", status: "not_central", note: "The documentary depends on filmed performance, testimony, editing and archival preservation rather than effects or animation." },
+    { area: "documentary_method", status: "source_verified", note: "Criterion and Sundance document years of filming, extensive outtakes, direct interviews and preserved production elements, confirming a long-term observational and interview-based method." },
+  ],
+} as const satisfies FilmHistoryProfile;
