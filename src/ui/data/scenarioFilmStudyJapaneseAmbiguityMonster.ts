@@ -25,6 +25,6 @@ export const monsterKoreedaFilmHistoryProfile = {
     { area: "sound_design", status: "source_verified", note: "Cannes credits Akihiko Okase and Kazuhiko Tomita; classroom noise, apologies, weather, trains, breath and children's games change meaning as the same spaces are revisited." },
     { area: "music", status: "source_verified", note: "Cannes identifies Monster as Ryuichi Sakamoto's final film work; the sparse score supports transitions from suspicion and grief toward the boys' private imaginative freedom without explaining their bond." },
     { area: "effects_animation", status: "not_central", note: "Perspective change is achieved through screenplay, performance, camera position, editing and sound rather than effects-led spectacle or animation." },
-    { area: "documentary_method", status: "source_verified", note: "Kore-eda's documentary background and fine-grained observation of school procedure, family behaviour and children's play give the scripted structure an institutional and behavioural specificity." },
+    { area: "documentary_method", status: "mapped", note: "Kore-eda's documentary background informs the fine-grained observation of school procedure, family behaviour and children's play, but Monster remains a fully scripted multiperspectival fiction." },
   ],
 } as const satisfies FilmHistoryProfile;
