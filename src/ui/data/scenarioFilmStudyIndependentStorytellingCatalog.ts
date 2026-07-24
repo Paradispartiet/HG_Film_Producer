@@ -1,4 +1,5 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import { scenesFromAMarriageFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceScenesMarriage";
 import { bloodSimpleFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreBloodSimple";
 import { elMariachiFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreElMariachi";
 import { metropolitanFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreMetropolitan";
@@ -96,6 +97,7 @@ export type IndependentStorytellingProfileGroup =
   | "japanese_ambiguity_dialogue";
 
 const profiles = [
+  scenesFromAMarriageFilmHistoryProfile,
   tampopoFilmHistoryProfile,
   killerOfSheepFilmHistoryProfile,
   mysteryTrainFilmHistoryProfile,
@@ -227,6 +229,7 @@ assignGroup("subjective_enclosure_performance", [
   bartonFinkFilmHistoryProfile.scenarioId,
 ]);
 assignGroup("family_performance_grief_power", [
+  scenesFromAMarriageFilmHistoryProfile.scenarioId,
   secretsAndLiesFilmHistoryProfile.scenarioId,
   dancerInTheDarkFilmHistoryProfile.scenarioId,
   theSonsRoomFilmHistoryProfile.scenarioId,
