@@ -50,6 +50,7 @@ import { inTheNameOfTheFatherVerificationRecords } from "./scenarioProductionVer
 import { trueRomanceVerificationRecords } from "./scenarioProductionVerificationTrueRomance";
 import { clerksVerificationRecords } from "./scenarioProductionVerificationClerks";
 import { forrestGumpVerificationRecords } from "./scenarioProductionVerificationForrestGump";
+import { satantangoVerificationRecords } from "./scenarioProductionVerificationSatantango";
 import { whereIsTheFriendsHouseVerificationRecords } from "./scenarioProductionVerificationWhereFriendsHouse";
 import { intimateFestivalBodyCareVerificationRecords } from "./scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch";
 import { japaneseAmbiguityDialogueVerificationRecords } from "./scenarioProductionVerificationJapaneseAmbiguityDialogueBatch";
@@ -99,6 +100,7 @@ const additionalVerificationRecords = [
   ...trueRomanceVerificationRecords,
   ...clerksVerificationRecords,
   ...forrestGumpVerificationRecords,
+  ...satantangoVerificationRecords,
   ...whereIsTheFriendsHouseVerificationRecords,
   ...americanIndependentBreakthroughsVerificationRecords,
   ...americanIndependentGenreResourcefulnessVerificationRecords,
