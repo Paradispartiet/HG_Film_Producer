@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { requiemForADreamProductionCaseVerification } from "./scenarioProductionVerificationRequiemForADream";
 import { rosettaProductionCaseVerification } from "./scenarioProductionVerificationRosetta";
 
 export const americanPrecarityBodyCareVerificationRecords = [
@@ -27,7 +28,7 @@ export const americanPrecarityBodyCareVerificationRecords = [
       {
         title: "Questioning the American Dream in Kelly Reichardt's Cinema",
         publisher: "The Criterion Collection",
-        url: "https://www.criterion.com/current/posts/6327/questioning-the-american-dream-in-kelly-reichardt-s-cinema",
+        url: "https://www.criterion.com/current/posts/6327-questioning-the-american-dream-in-kelly-reichardt-s-cinema",
         sourceKind: "film_institute",
         supports: ["overall", "screenplay", "editing", "sound"],
         note: "Criterion documents the film's genesis as Train Choir, its meditation on the American dream and social responsibility, and the minimalist system through which one stranded worker's practical losses accumulate."
@@ -162,5 +163,6 @@ export const americanPrecarityBodyCareVerificationRecords = [
       }
     ]
   },
+  requiemForADreamProductionCaseVerification,
   rosettaProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
