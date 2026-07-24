@@ -14,6 +14,10 @@ import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 import { aClockworkOrangeFilmHistoryProfile } from "./scenarioFilmStudyConstructedWorldsClockworkOrange";
 import { brazilFilmHistoryProfile } from "./scenarioFilmStudyConstructedWorldsBrazil";
+import {
+  getForrestGumpDonorScenarioIds,
+  getForrestGumpFilmHistoryProfile,
+} from "./scenarioFilmStudyConstructedWorldsForrestGumpCatalog";
 
 const coreConstructedWorldsProfiles = {
   [aClockworkOrangeFilmHistoryProfile.scenarioId]: aClockworkOrangeFilmHistoryProfile,
@@ -178,7 +182,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 }
 
 export function getConstructedWorldsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return constructedWorldsProfiles[scenarioId as keyof typeof constructedWorldsProfiles];
+  return getForrestGumpFilmHistoryProfile(scenarioId)
+    ?? constructedWorldsProfiles[scenarioId as keyof typeof constructedWorldsProfiles];
 }
 
 export function resolveConstructedWorldsFilmStudyMap(
@@ -216,12 +221,20 @@ function hashString(value: string): number {
 export function createConstructedWorldsFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
-  const donors = Object.values(coreConstructedWorldsProfiles)
+  const forrestGumpDonorScenarioIds = getForrestGumpDonorScenarioIds(profile);
+  const donors: readonly FilmHistoryProfile[] = (forrestGumpDonorScenarioIds
+    ? forrestGumpDonorScenarioIds.flatMap((scenarioId) => {
+      const candidate = constructedWorldsProfiles[scenarioId as keyof typeof constructedWorldsProfiles];
+      return candidate ? [candidate] : [];
+    })
+    : Object.values(coreConstructedWorldsProfiles))
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const forrestGumpPartial = "This is another real constructed-world system built from repetition, historical periods or controlled reality, but it does not combine autobiographical narration, national archive, invisible body effects, popular music and studio melodrama in the same way.";
+  const forrestGumpMiss = "This places the film inside the wrong relationship between fictional memory, American history, period design, performance, anamorphic photography, archival compositing, editing, sound and music.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
@@ -233,13 +246,17 @@ export function createConstructedWorldsFilmHistoryChoices(
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real constructed-world method, but it belongs to a different historical and production system.",
+      feedback: forrestGumpDonorScenarioIds
+        ? forrestGumpPartial
+        : "This is a real constructed-world method, but it belongs to a different historical and production system.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This places the film inside the wrong temporal, spatial and technical tradition.",
+      feedback: forrestGumpDonorScenarioIds
+        ? forrestGumpMiss
+        : "This places the film inside the wrong temporal, spatial and technical tradition.",
     }] : []),
   ];
 }
