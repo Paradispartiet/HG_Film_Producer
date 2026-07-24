@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { theBigLebowskiProductionCaseVerification } from "./scenarioProductionVerificationBigLebowski";
 
 export const americanIndependentGenreResourcefulnessVerificationRecords = [
   {
@@ -160,5 +161,6 @@ export const americanIndependentGenreResourcefulnessVerificationRecords = [
         note: "BFI identifies the mostly amateur cast, Spanish-language Mexican setting, roughly seven-thousand-dollar budget, DIY action method and central role in the 1990s American independent boom."
       }
     ]
-  }
+  },
+  theBigLebowskiProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
