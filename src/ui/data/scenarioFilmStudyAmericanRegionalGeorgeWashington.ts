@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const georgeWashingtonFilmHistoryProfile = {
+  scenarioId: "scenario_george_washington_2000",
+  period: "Turn-of-the-2000s American regional independent cinema and lyrical Southern youth ensemble filmmaking",
+  traditions: ["American regional independent cinema", "Lyrical realism", "Youth ensemble drama"],
+  before: "Independent coming-of-age films often organized childhood around one protagonist and a clear developmental arc, while poor Black and white children in the rural South were more often treated through social-problem realism.",
+  moment: "David Gordon Green builds a North Carolina community portrait from multiple children, reflective voice-over, rail yards, abandoned spaces, summer weather and Tim Orr's wide compositions, allowing accident, guilt and heroic fantasy to coexist with documentary-like observation.",
+  after: "The film's festival and critical reception established Green, Orr and their collaborators as a major regional independent team and helped renew interest in poetic Southern filmmaking grounded in local landscapes and non-centralized youth perspective.",
+  historyQuestion: "Which production system explains a North Carolina youth ensemble where an accident, fragmented narration, wide rural compositions, local spaces and associative editing turn childhood guilt into a lyrical regional memory?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, Criterion and BFI identify the film as David Gordon Green's 2000 debut and place it within a renewed wave of American regional independent cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion and BFI connect the film to lyrical realism, Southern regional cinema and influences including Charles Burnett, Terrence Malick and child-centered poetic filmmaking." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents the independent production companies, producers and principal departments, while Criterion preserves the film through a director-approved edition." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion describes the film as a distinct work of contemporary American independent cinema; later BFI writing treats it as foundational to Green's Southern regional style." },
+    { area: "screenplay", status: "source_verified", note: "AFI and Criterion credit Green; the screenplay distributes attention among several children and uses voice-over, fragments and moral aftermath rather than a conventional single-hero arc." },
+    { area: "directing", status: "source_verified", note: "Green directs performance, landscape and associative imagery as equally important narrative elements, allowing atmosphere and emotional perception to carry consequences that dialogue does not explain." },
+    { area: "performance", status: "source_verified", note: "Criterion foregrounds the ensemble of young performers, whose natural presence and contrasting voices keep the community portrait open rather than organized around one polished star performance." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Richard Wright; rail yards, industrial ruins, houses, roads and improvised play spaces create a specific material world for the children's social imagination." },
+    { area: "costume_makeup", status: "mapped", note: "Everyday clothing and physical continuity support the film's local realism, although the inspected sources do not fully document the costume and makeup departments." },
+    { area: "cinematography", status: "source_verified", note: "AFI and Criterion credit Tim Orr; the 2.35:1 image uses wide compositions, available landscapes and attentive close observation to join intimacy with regional scale." },
+    { area: "lighting", status: "source_verified", note: "Criterion and BFI emphasize the film's summer atmosphere, decaying Southern landscape and lyrical naturalism, shaped through sun, dusk, interiors and weather rather than polished studio light." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the colour feature in a 2.35:1 presentation and a restored high-definition transfer approved by the director." },
+    { area: "editing", status: "source_verified", note: "AFI credits Steven Gonzales and Zene Baker; the editing accumulates fragments, pauses, voice-over and associative images around the accident instead of driving a conventional mystery." },
+    { area: "sound_design", status: "source_verified", note: "Children's voices, trains, insects, industrial ambience, open air and silence make place audible and support the film's memory-like movement between observation and reflection." },
+    { area: "music", status: "source_verified", note: "AFI and Criterion credit Michael Linnen and David Wingo; restrained music works with ambient sound and narration to sustain the film's melancholy, dreamlike tone." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on location, performance, cinematography, editing, voice-over and sound rather than animation or effects spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "Criterion analysis describes the film's documentary veracity, while its regional locations and ensemble observation preserve local texture inside an openly poetic fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;
