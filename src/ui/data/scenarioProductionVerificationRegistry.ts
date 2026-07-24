@@ -44,6 +44,7 @@ import { hongKongTaiwanUrbanTimeVerificationRecords } from "./scenarioProduction
 import { iberianPortugueseMemoryVerificationRecords } from "./scenarioProductionVerificationIberianPortugueseMemorySystemsBatch";
 import { independentDesireIdentityAuthorshipVerificationRecords } from "./scenarioProductionVerificationIndependentDesireIdentityAuthorshipBatch";
 import { independentStorytellingVerificationRecords } from "./scenarioProductionVerificationIndependentStorytellingBatch";
+import { downByLawVerificationRecords } from "./scenarioProductionVerificationDownByLaw";
 import { intimateFestivalBodyCareVerificationRecords } from "./scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch";
 import { japaneseAmbiguityDialogueVerificationRecords } from "./scenarioProductionVerificationJapaneseAmbiguityDialogueBatch";
 import { japaneseEverydayMemoryVerificationRecords } from "./scenarioProductionVerificationJapaneseEverydayMemoryBatch";
@@ -86,6 +87,7 @@ const additionalVerificationRecords = [
   ...minimalistRoadVerificationRecords,
   ...europeanPressureVerificationRecords,
   ...independentStorytellingVerificationRecords,
+  ...downByLawVerificationRecords,
   ...americanIndependentBreakthroughsVerificationRecords,
   ...americanIndependentGenreResourcefulnessVerificationRecords,
   ...independentDesireIdentityAuthorshipVerificationRecords,
