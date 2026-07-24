@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const viridianaFilmHistoryProfile = {
+  scenarioId: "scenario_viridiana_1961",
+  period: "Franco-era Spanish-Mexican surrealist satire, anti-clerical modernism and controlled social grotesque",
+  traditions: ["Buñuelian surrealism", "Anti-clerical satire", "Estate melodrama and social grotesque"],
+  before: "Religious melodrama and charitable-reform stories often protected the moral authority of sacrifice, while Buñuel's earlier surrealist work had already used ritual, desire and bourgeois respectability as structures to be disturbed.",
+  moment: "Returning to Spain after long exile, Luis Buñuel and Julio Alejandro place a novice, an inherited estate and a community of beggars inside sober black-and-white compositions whose devotional objects, locked rooms, suppressed desire and staged Last Supper turn charity into a test of property, power and social performance.",
+  after: "The film won the 1961 Palme d'Or, was banned by the Franco government and condemned by the Vatican, and became a durable model for political and religious critique achieved through controlled mise-en-scène rather than explanatory argument.",
+  historyQuestion: "Which production system explains why austere black-and-white staging, religious objects, estate geography, withheld desire and a grotesque banquet turn charitable intention into anti-clerical and social satire?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion, BFI and Cannes place the 1961 Spanish-Mexican production inside Buñuel's return from exile, Franco-era censorship and the international controversy following its release." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion identifies the film's union of Buñuelian surrealism, anti-clerical satire, Catholic imagery and a sharply material account of class and desire." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI and Criterion record the Spanish-Mexican production, Gustavo Alatriste's production role and the political risk surrounding Buñuel's first Spanish feature in decades." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the Palme d'Or, while Criterion and BFI document the Franco government's ban, Vatican condemnation and the film's continuing canonical status." },
+    { area: "screenplay", status: "source_verified", note: "Criterion and Cannes credit Luis Buñuel and Julio Alejandro; the script connects religious vocation, inheritance, property and charity through escalating reversals rather than a reassuring reform narrative." },
+    { area: "directing", status: "source_verified", note: "Buñuel directs with plain surfaces and exact symbolic placement, allowing ritual, repetition and sudden social reversals to produce satire without announcing a single stable moral lesson." },
+    { area: "performance", status: "source_verified", note: "BFI and Criterion identify Silvia Pinal, Francisco Rabal and Fernando Rey; restrained principal performances are set against the increasingly unruly collective behaviour of the beggar ensemble." },
+    { area: "production_design", status: "source_verified", note: "The estate, convent threshold, locked rooms, courtyard, dining table and devotional objects form a repeatable system in which ownership, purity and social access are made spatially visible." },
+    { area: "costume_makeup", status: "mapped", note: "Viridiana's novice clothing, bridal imagery, practical estate dress and the beggars' worn garments organise social roles and reversals, although the inspected institutional sources do not fully document the costume department." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and Cannes credit José F. Aguayo; controlled black-and-white framing holds bodies, objects and doorways in clear relations so irony emerges from staging rather than decorative camera display." },
+    { area: "lighting", status: "mapped", note: "Readable interiors, strong tonal separation and restrained night work support the austere surface, but the inspected sources do not provide a detailed lighting plan." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the black-and-white feature in its intended 1.66:1 presentation, preserving the compact estate compositions and tableau structure." },
+    { area: "editing", status: "source_verified", note: "Cannes credits Pedro del Rey; direct transitions between devotion, threat, labour and farce preserve the dry surface while giving symbolic juxtapositions their shock." },
+    { area: "sound_design", status: "mapped", note: "Bells, footsteps, room tone, prayer and offscreen movement keep religious and domestic routines materially present, though detailed sound-postproduction documentation remains limited." },
+    { area: "music", status: "mapped", note: "Classical and popular music enter as social and ritual counterpoint, most decisively when Handel accompanies the beggars' banquet, but dedicated music-production documentation is incomplete." },
+    { area: "effects_animation", status: "not_central", note: "The film's transformations are achieved through physical staging, performance, objects, editing and symbolic reversal rather than visual-effects or animation systems." },
+    { area: "documentary_method", status: "not_central", note: "The social world is materially observed, but the film's governing method is controlled fictional satire rather than documentary production." },
+  ],
+} as const satisfies FilmHistoryProfile;
