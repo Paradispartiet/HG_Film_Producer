@@ -53,6 +53,7 @@ import { modernCraftVerificationRecords } from "./scenarioProductionVerification
 import { modernNordicBehaviorSystemsVerificationRecords } from "./scenarioProductionVerificationModernNordicBehaviorSystemsBatch";
 import { newGermanCinemaVerificationRecords } from "./scenarioProductionVerificationNewGermanCinemaSystemsBatch";
 import { newHollywoodBlockbusterVerificationRecords } from "./scenarioProductionVerificationNewHollywoodBlockbusterBatch";
+import { newHollywoodNewYorkVerificationRecords } from "./scenarioProductionVerificationNewHollywoodNewYorkBatch";
 import { nordicMinimalistSocialSystemsVerificationRecords } from "./scenarioProductionVerificationNordicMinimalistSocialSystemsBatch";
 import { norwegianPostwarGenreSystemsVerificationRecords } from "./scenarioProductionVerificationNorwegianPostwarGenreSystemsBatch";
 import { postwarEuropeanModernismVerificationRecords } from "./scenarioProductionVerificationPostwarEuropeanModernismBatch";
@@ -130,6 +131,7 @@ const additionalVerificationRecords = [
   ...europeanPoliticalFeministModernismVerificationRecords,
   ...europeanReligiousMoralVerificationRecords,
   ...newHollywoodBlockbusterVerificationRecords,
+  ...newHollywoodNewYorkVerificationRecords,
   ...sixtiesScaleIndependentVerificationRecords,
   ...europeanModernistProductionVerificationRecords,
   ...early1960sProductionSystemsVerificationRecords,
