@@ -22,6 +22,7 @@ import { chineseLanguageModernityMemoryVerificationRecords } from "./scenarioPro
 import { chineseLanguageSpaceGenreVerificationRecords } from "./scenarioProductionVerificationChineseLanguageSpaceGenreBatch";
 import { classicalHollywoodVerificationRecords } from "./scenarioProductionVerificationClassicalHollywoodBatch";
 import { constructedWorldsVerificationRecords } from "./scenarioProductionVerificationConstructedWorldsBatch";
+import { brazilVerificationRecords } from "./scenarioProductionVerificationBrazil";
 import { contemporaryDissentRuralVerificationRecords } from "./scenarioProductionVerificationContemporaryDissentRuralSystemsBatch";
 import { contemporaryEuropeanSocialCareVerificationRecords } from "./scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
@@ -81,6 +82,7 @@ const additionalVerificationRecords = [
   ...technologyHistoryVerificationRecords,
   ...landscapeCinemaVerificationRecords,
   ...constructedWorldsVerificationRecords,
+  ...brazilVerificationRecords,
   ...minimalistRoadVerificationRecords,
   ...europeanPressureVerificationRecords,
   ...independentStorytellingVerificationRecords,
