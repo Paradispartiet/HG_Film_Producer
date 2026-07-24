@@ -36,6 +36,10 @@ import {
   getLeavingLasVegasFilmHistoryDonors,
   getLeavingLasVegasFilmHistoryProfile,
 } from "./scenarioFilmStudyAmericanPrecarityLeavingLasVegasCatalog";
+import {
+  getTheGameFilmHistoryDonors,
+  getTheGameFilmHistoryProfile,
+} from "./scenarioFilmStudySubjectiveEnclosureTheGameCatalog";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 
@@ -87,7 +91,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return getLeavingLasVegasFilmHistoryProfile(scenarioId)
+  return getTheGameFilmHistoryProfile(scenarioId)
+    ?? getLeavingLasVegasFilmHistoryProfile(scenarioId)
     ?? getAntoniasLineFilmHistoryProfile(scenarioId)
     ?? getClerksFilmHistoryProfile(scenarioId)
     ?? getDownByLawFilmHistoryProfile(scenarioId)
@@ -176,25 +181,32 @@ function missFeedback(group: IndependentStorytellingProfileGroup): string {
 export function createIndependentStorytellingFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const theGameDonors = getTheGameFilmHistoryDonors(profile);
   const leavingLasVegasDonors = getLeavingLasVegasFilmHistoryDonors(profile);
   const antoniasLineDonors = getAntoniasLineFilmHistoryDonors(profile);
   const clerksDonors = getClerksFilmHistoryDonors(profile);
   const downByLawDonors = getDownByLawFilmHistoryDonors(profile);
   const priorityDonors = getPriorityIndieFinalDonors(profile);
-  const group: IndependentStorytellingProfileGroup = leavingLasVegasDonors
-    ? "american_precarity_body_care"
-    : antoniasLineDonors
-      ? "family_performance_grief_power"
-      : getIndependentStorytellingProfileGroup(profile.scenarioId);
-  const donors = leavingLasVegasDonors
+  const group: IndependentStorytellingProfileGroup = theGameDonors
+    ? "subjective_enclosure_performance"
+    : leavingLasVegasDonors
+      ? "american_precarity_body_care"
+      : antoniasLineDonors
+        ? "family_performance_grief_power"
+        : getIndependentStorytellingProfileGroup(profile.scenarioId);
+  const donors = theGameDonors
+    ?? leavingLasVegasDonors
     ?? antoniasLineDonors
     ?? clerksDonors
     ?? downByLawDonors
     ?? priorityDonors
     ?? getIndependentStorytellingDonors(profile);
-  const start = hashString(profile.scenarioId);
+  const start = theGameDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const theGameMatch = "This matches the documented production relationship among the Brancato-Ferris screenplay and Andrew Kevin Walker revisions, Consumer Recreation Services' performed reality, real San Francisco locations, the Filoli and office contrast, Harris Savides's Panavision image and practical lighting systems, restricted viewpoint, Ren Klyce's sound, Howard Shore's score and integrated effects.";
+  const theGamePartial = "This is another real subjective-enclosure, psychological-uncertainty or performed-identity system, but it does not turn an entire modern city, corporate service network, hidden cast, architecture, stunts, media, sound and effects into one continuous loss-of-control performance.";
+  const theGameMiss = "This places the film inside the wrong relationship between corporate satire, immersive staged reality, San Francisco location architecture, hidden performers, Panavision photography, large practical lighting systems, information withholding, sound and seamless effects.";
   const leavingLasVegasMatch = "This matches the documented production relationship among John O'Brien's uncompromising novel, a four-million-dollar twenty-eight-day shoot, two small Super 16 cameras, minimal lighting, real Nevada movement, actor research, donated Vivienne Westwood clothing and a director-composed blues-jazz score without a recovery ending.";
   const leavingLasVegasPartial = "This is another real American independent body-and-care system, but it organizes sensory recovery, unresolved environmental illness or economic precarity through a different relationship between bodily crisis, care, regional space, performance, image format and sound.";
   const leavingLasVegasMiss = "This places the film inside the wrong relationship between tragic romance, addiction without cure, low-budget transatlantic financing, mobile Super 16 production, two-camera intimacy, Vegas anti-spectacle, actor preparation and jazz-led emotional form.";
@@ -209,37 +221,43 @@ export function createIndependentStorytellingFilmHistoryChoices(
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: leavingLasVegasDonors
-        ? leavingLasVegasMatch
-        : "This connects the film's historical position directly to its documented relationship between place, narrative structure, image system, media form and production method.",
+      feedback: theGameDonors
+        ? theGameMatch
+        : leavingLasVegasDonors
+          ? leavingLasVegasMatch
+          : "This connects the film's historical position directly to its documented relationship between place, narrative structure, image system, media form and production method.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: leavingLasVegasDonors
-        ? leavingLasVegasPartial
-        : clerksDonors
-          ? clerksPartial
-          : downByLawDonors
-            ? downByLawPartial
-            : priorityDonors
-              ? priorityPartial
-              : partialFeedback(group),
+      feedback: theGameDonors
+        ? theGamePartial
+        : leavingLasVegasDonors
+          ? leavingLasVegasPartial
+          : clerksDonors
+            ? clerksPartial
+            : downByLawDonors
+              ? downByLawPartial
+              : priorityDonors
+                ? priorityPartial
+                : partialFeedback(group),
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: leavingLasVegasDonors
-        ? leavingLasVegasMiss
-        : clerksDonors
-          ? clerksMiss
-          : downByLawDonors
-            ? downByLawMiss
-            : priorityDonors
-              ? priorityMiss
-              : missFeedback(group),
+      feedback: theGameDonors
+        ? theGameMiss
+        : leavingLasVegasDonors
+          ? leavingLasVegasMiss
+          : clerksDonors
+            ? clerksMiss
+            : downByLawDonors
+              ? downByLawMiss
+              : priorityDonors
+                ? priorityMiss
+                : missFeedback(group),
     }] : []),
   ];
 }

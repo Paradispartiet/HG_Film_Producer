@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { theGameVerificationRecords } from "./scenarioProductionVerificationTheGame";
 
 export const subjectiveEnclosurePerformanceVerificationRecords = [
   {
@@ -160,5 +161,6 @@ export const subjectiveEnclosurePerformanceVerificationRecords = [
         note: "ASC identifies Barton Fink as the beginning of the Coen-Deakins collaboration and documents their early involvement, general visual discussion, storyboard refinement and deliberately limited coverage method."
       }
     ]
-  }
+  },
+  ...theGameVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
