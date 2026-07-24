@@ -25,6 +25,10 @@ import {
   getDownByLawFilmHistoryProfile,
 } from "./scenarioFilmStudyIndependentStorytellingDownByLawCatalog";
 import {
+  getEyesWideShutFilmHistoryDonors,
+  getEyesWideShutFilmHistoryProfile,
+} from "./scenarioFilmStudySubjectiveEnclosureEyesWideShutCatalog";
+import {
   getBeingJohnMalkovichFilmHistoryDonors,
   getBeingJohnMalkovichFilmHistoryProfile,
 } from "./scenarioFilmStudySubjectiveEnclosureBeingJohnMalkovichCatalog";
@@ -103,7 +107,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return getBeingJohnMalkovichFilmHistoryProfile(scenarioId)
+  return getEyesWideShutFilmHistoryProfile(scenarioId)
+    ?? getBeingJohnMalkovichFilmHistoryProfile(scenarioId)
     ?? getTheBigLebowskiFilmHistoryProfile(scenarioId)
     ?? getBuffalo66FilmHistoryProfile(scenarioId)
     ?? getTheGameFilmHistoryProfile(scenarioId)
@@ -196,6 +201,7 @@ function missFeedback(group: IndependentStorytellingProfileGroup): string {
 export function createIndependentStorytellingFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const eyesWideShutDonors = getEyesWideShutFilmHistoryDonors(profile);
   const beingJohnMalkovichDonors = getBeingJohnMalkovichFilmHistoryDonors(profile);
   const theBigLebowskiDonors = getTheBigLebowskiFilmHistoryDonors(profile);
   const buffalo66Donors = getBuffalo66FilmHistoryDonors(profile);
@@ -205,20 +211,23 @@ export function createIndependentStorytellingFilmHistoryChoices(
   const clerksDonors = getClerksFilmHistoryDonors(profile);
   const downByLawDonors = getDownByLawFilmHistoryDonors(profile);
   const priorityDonors = getPriorityIndieFinalDonors(profile);
-  const group: IndependentStorytellingProfileGroup = beingJohnMalkovichDonors
+  const group: IndependentStorytellingProfileGroup = eyesWideShutDonors
     ? "subjective_enclosure_performance"
-    : theBigLebowskiDonors
-      ? "american_independent_genre_resourcefulness"
-      : buffalo66Donors
-        ? "american_regional_identity_place_belonging"
-        : theGameDonors
-          ? "subjective_enclosure_performance"
-          : leavingLasVegasDonors
-            ? "american_precarity_body_care"
-            : antoniasLineDonors
-              ? "family_performance_grief_power"
-              : getIndependentStorytellingProfileGroup(profile.scenarioId);
-  const donors = beingJohnMalkovichDonors
+    : beingJohnMalkovichDonors
+      ? "subjective_enclosure_performance"
+      : theBigLebowskiDonors
+        ? "american_independent_genre_resourcefulness"
+        : buffalo66Donors
+          ? "american_regional_identity_place_belonging"
+          : theGameDonors
+            ? "subjective_enclosure_performance"
+            : leavingLasVegasDonors
+              ? "american_precarity_body_care"
+              : antoniasLineDonors
+                ? "family_performance_grief_power"
+                : getIndependentStorytellingProfileGroup(profile.scenarioId);
+  const donors = eyesWideShutDonors
+    ?? beingJohnMalkovichDonors
     ?? theBigLebowskiDonors
     ?? buffalo66Donors
     ?? theGameDonors
@@ -228,11 +237,14 @@ export function createIndependentStorytellingFilmHistoryChoices(
     ?? downByLawDonors
     ?? priorityDonors
     ?? getIndependentStorytellingDonors(profile);
-  const start = beingJohnMalkovichDonors || theBigLebowskiDonors || buffalo66Donors || theGameDonors
+  const start = eyesWideShutDonors || beingJohnMalkovichDonors || theBigLebowskiDonors || buffalo66Donors || theGameDonors
     ? 0
     : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const eyesWideShutMatch = "This matches the documented production relationship among Kubrick and Raphael's long-planned Schnitzler adaptation, the prolonged Pole Star and Warner production, an English reconstruction of Manhattan, Cruise and Kidman's marital performance, masked ritual, wide Zeiss lenses, Steadicam, pushed 35 mm, practical Christmas and street lighting, Nigel Galt's extended edit, Jocelyn Pook's recurring score and the digitally altered United States release.";
+  const eyesWideShutPartial = "This is another real subjective-enclosure, ritual-performance or nocturnal-uncertainty system, but it does not join a marriage crisis, reconstructed Manhattan, class access, masks, dream repetition, practical coloured light, pushed negative and prolonged actor-director exploration in the same way.";
+  const eyesWideShutMiss = "This places the film inside the wrong relationship between Viennese adaptation, studio-auteur control, marriage performance, nocturnal city architecture, masked ritual, wide-angle movement, photochemical colour, editorial ambiguity, music and release-version effects.";
   const beingJohnMalkovichMatch = "This matches the documented production relationship among Kaufman's unmakeable identity screenplay, Jonze's feature debut, the seven-and-a-half floor, the body portal, first-person Malkovich vision, actor self-performance, marionettes, body doubles, compositing, Zumbrunnen's identity transitions and Burwell's circular melancholic score.";
   const beingJohnMalkovichPartial = "This is another real subjective-enclosure, performed-identity or surreal-authorship system, but it does not combine a compressed workplace, puppet control, celebrity embodiment, bodily occupation, mock media and portal effects in the same way.";
   const beingJohnMalkovichMiss = "This places the film inside the wrong relationship between surreal independent production, office architecture, authorship, desire, bodily control, first-person framing, performance, puppetry, compositing, editing and sound.";
@@ -259,61 +271,67 @@ export function createIndependentStorytellingFilmHistoryChoices(
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: beingJohnMalkovichDonors
-        ? beingJohnMalkovichMatch
-        : theBigLebowskiDonors
-          ? theBigLebowskiMatch
-          : buffalo66Donors
-            ? buffalo66Match
-            : theGameDonors
-              ? theGameMatch
-              : leavingLasVegasDonors
-                ? leavingLasVegasMatch
-                : "This connects the film's historical position directly to its documented relationship between place, narrative structure, image system, media form and production method.",
+      feedback: eyesWideShutDonors
+        ? eyesWideShutMatch
+        : beingJohnMalkovichDonors
+          ? beingJohnMalkovichMatch
+          : theBigLebowskiDonors
+            ? theBigLebowskiMatch
+            : buffalo66Donors
+              ? buffalo66Match
+              : theGameDonors
+                ? theGameMatch
+                : leavingLasVegasDonors
+                  ? leavingLasVegasMatch
+                  : "This connects the film's historical position directly to its documented relationship between place, narrative structure, image system, media form and production method.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: beingJohnMalkovichDonors
-        ? beingJohnMalkovichPartial
-        : theBigLebowskiDonors
-          ? theBigLebowskiPartial
-          : buffalo66Donors
-            ? buffalo66Partial
-            : theGameDonors
-              ? theGamePartial
-              : leavingLasVegasDonors
-                ? leavingLasVegasPartial
-                : clerksDonors
-                  ? clerksPartial
-                  : downByLawDonors
-                    ? downByLawPartial
-                    : priorityDonors
-                      ? priorityPartial
-                      : partialFeedback(group),
+      feedback: eyesWideShutDonors
+        ? eyesWideShutPartial
+        : beingJohnMalkovichDonors
+          ? beingJohnMalkovichPartial
+          : theBigLebowskiDonors
+            ? theBigLebowskiPartial
+            : buffalo66Donors
+              ? buffalo66Partial
+              : theGameDonors
+                ? theGamePartial
+                : leavingLasVegasDonors
+                  ? leavingLasVegasPartial
+                  : clerksDonors
+                    ? clerksPartial
+                    : downByLawDonors
+                      ? downByLawPartial
+                      : priorityDonors
+                        ? priorityPartial
+                        : partialFeedback(group),
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: beingJohnMalkovichDonors
-        ? beingJohnMalkovichMiss
-        : theBigLebowskiDonors
-          ? theBigLebowskiMiss
-          : buffalo66Donors
-            ? buffalo66Miss
-            : theGameDonors
-              ? theGameMiss
-              : leavingLasVegasDonors
-                ? leavingLasVegasMiss
-                : clerksDonors
-                  ? clerksMiss
-                  : downByLawDonors
-                    ? downByLawMiss
-                    : priorityDonors
-                      ? priorityMiss
-                      : missFeedback(group),
+      feedback: eyesWideShutDonors
+        ? eyesWideShutMiss
+        : beingJohnMalkovichDonors
+          ? beingJohnMalkovichMiss
+          : theBigLebowskiDonors
+            ? theBigLebowskiMiss
+            : buffalo66Donors
+              ? buffalo66Miss
+              : theGameDonors
+                ? theGameMiss
+                : leavingLasVegasDonors
+                  ? leavingLasVegasMiss
+                  : clerksDonors
+                    ? clerksMiss
+                    : downByLawDonors
+                      ? downByLawMiss
+                      : priorityDonors
+                        ? priorityMiss
+                        : missFeedback(group),
     }] : []),
   ];
 }
