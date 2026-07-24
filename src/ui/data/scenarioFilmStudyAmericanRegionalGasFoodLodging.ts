@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const gasFoodLodgingFilmHistoryProfile = {
+  scenarioId: "scenario_gas_food_lodging_1992",
+  period: "Early-1990s American regional independent cinema and female-centered desert family drama",
+  traditions: ["American regional independent cinema", "Female-centered family drama", "Coming-of-age cinema"],
+  before: "Working-class mothers and daughters in small western towns were often treated as social-problem material or background figures rather than as a complete network of conflicting desires, fantasies and practical choices.",
+  moment: "Allison Anders adapts Richard Peck into a New Mexico ensemble where a waitress mother and two daughters move through diners, trailers, roads, cinemas and desert light, with voice-over, melodramatic movie fantasies and music linking separate forms of longing.",
+  after: "Its place in the Sundance class of 1992 established the film as a durable model for personal regional filmmaking that could center women's experience, popular culture and working-class family life without flattening them into one issue.",
+  historyQuestion: "Which production system explains a New Mexico family film where three women's parallel desires, desert locations, voice-over, movie-house fantasies and a detailed sound world turn regional limitation into emotional range?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, Sundance, BFI and Criterion place the film in the 1992 American independent breakthrough and document its New Mexico production and festival reception." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The sources identify a female-centered regional indie that combines family drama, coming-of-age structure, working-class observation and cinephilic melodrama." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Cineville, a roughly $1.3 million production, a one-month Deming shoot and the principal camera, design, editing and sound departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Sundance and Criterion retain the film as a defining work of the class of 1992, while BFI describes it as an underappreciated modern independent classic." },
+    { area: "screenplay", status: "source_verified", note: "AFI credits Anders and Richard Peck's source novel; the adaptation interweaves Nora, Trudi and Shade while using Shade's voice-over to connect observation, fantasy and family pressure." },
+    { area: "directing", status: "source_verified", note: "Anders keeps each woman distinct while allowing their work, romance, sexuality and desire to leave or belong to echo across the ensemble rather than collapse into one lesson." },
+    { area: "performance", status: "source_verified", note: "BFI and AFI foreground Brooke Adams, Ione Skye and Fairuza Balk, whose contrasting rhythms make generational conflict and solidarity visible without a single dominant viewpoint." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Jane Ann Stewart; trailers, diners, motel-like spaces, the local cinema and roadside businesses create a lived economic geography rather than scenic desert backdrop." },
+    { area: "costume_makeup", status: "source_verified", note: "AFI documents Susan L. Bertram and the hair and makeup teams; clothing distinguishes work, adolescence, romantic performance and the limited resources of the household." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Dean Lent and Panavision equipment; desert exteriors, practical interiors and the girls' movement through town give regional place a tactile emotional role." },
+    { area: "lighting", status: "source_verified", note: "The film's sun-worn exteriors, warm interiors and cinema-fantasy passages use light to separate daily scarcity from imagined romance without abandoning location realism." },
+    { area: "camera_format", status: "source_verified", note: "AFI documents a colour feature photographed with Panavision-provided Arriflex cameras and lenses and finished in Dolby Stereo exhibition formats." },
+    { area: "editing", status: "source_verified", note: "AFI credits Tracy Granger; the cutting alternates the three women's trajectories and Shade's narration so disappointment, humour and hope develop in parallel." },
+    { area: "sound_design", status: "source_verified", note: "AFI documents Leonard Marcel, Skywalker Sound and a detailed effects, ADR and Foley team; vehicles, work, radio and open-air ambience enlarge the modest locations." },
+    { area: "music", status: "source_verified", note: "Sundance and Criterion contextualize Anders's music-inflected independent style, while the film uses songs and movie culture as active forms of fantasy and emotional interpretation." },
+    { area: "effects_animation", status: "not_central", note: "The production relies on practical locations, performance, voice-over, music and editorial juxtaposition rather than animation or visual-effects spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "The Deming location shoot and Anders's personal additions to the source material give the fiction documentary-derived attention to work, family space, landscape and local social detail." },
+  ],
+} as const satisfies FilmHistoryProfile;
