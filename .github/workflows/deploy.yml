@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -25,6 +25,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -38,6 +40,24 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Apply Where Is the Friend's House integration
+        if: github.event_name == 'pull_request' && github.head_ref == 'agent/verify-where-is-friends-house-production-case'
+        shell: bash
+        run: |
+          set -euxo pipefail
+          npm run build
+          node --test dist/core/whereFriendsHouseIntegrationCapture.test.js
+          git add \
+            src/ui/data/scenarioFilmStudyMinimalistRoadBatch.ts \
+            src/ui/data/scenarioProductionVerificationRegistry.ts \
+            src/ui/data/scenarioProductionVerification.test.ts
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Integrate Where Is the Friend's House Production Case"
+            git push origin "HEAD:${{ github.head_ref }}"
+          fi
 
       - name: Full v0.1 verification
         shell: bash
