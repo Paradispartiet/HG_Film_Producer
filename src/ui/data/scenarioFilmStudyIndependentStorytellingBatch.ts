@@ -118,6 +118,7 @@ function partialFeedback(group: IndependentStorytellingProfileGroup): string {
     american_precarity_body_care: "This is a real American precarity, body-and-care system, but it organizes economic procedure, injury, sensory viewpoint, reproductive access, regional space, performance, editing and sound differently.",
     american_independent_genre_resourcefulness: "This is a real American independent genre-and-resourcefulness system, but it organizes noir misunderstanding, verbal ensemble comedy, nonlinear chamber crime, DIY action, restricted locations, editing and sound differently.",
     independent_desire_identity_authorship: "This is a real independent desire, identity-and-authorship system, but it organizes genre fragmentation, adolescent embodiment, social code-switching, autobiographical memory, performance, image texture and sound differently.",
+    american_regional_identity_place_belonging: "This is a real American regional identity, place-and-belonging system, but it organizes impersonation, migration, family economy, childhood memory, landscape, narration, ensemble performance and sound differently.",
     asian_transnational_urban_identity: "This is a real Asian transnational urban-identity system, but it organizes migration, labour, romance, surveillance, time and belonging differently.",
     japanese_ambiguity_dialogue: "This is a real Japanese ambiguity-and-dialogue production system, but it organizes hypnosis, coincidence, institutional viewpoint, environmental procedure, performance and sound differently.",
   };
@@ -140,6 +141,7 @@ function missFeedback(group: IndependentStorytellingProfileGroup): string {
     american_precarity_body_care: "This places the film inside the wrong relationship between economic vulnerability, bodily limitation, care systems, mobility, sensory form and practical access.",
     american_independent_genre_resourcefulness: "This places the film inside the wrong relationship between independent financing, genre revision, restricted resources, information control, location reuse, editorial construction and sound-driven scale.",
     independent_desire_identity_authorship: "This places the film inside the wrong relationship between desire, identity formation, social presentation, memory reconstruction, artistic voice, embodied viewpoint and independent authorship.",
+    american_regional_identity_place_belonging: "This places the film inside the wrong relationship between regional production, race, migration, family belonging, institutional identity, landscape, community memory and local material life.",
     asian_transnational_urban_identity: "This places the film inside the wrong relationship between Asian city, displacement, divided identity, social systems and return.",
     japanese_ambiguity_dialogue: "This places the film inside the wrong Japanese relationship between uncertainty, conversation, institutional pressure, landscape and moral interpretation.",
   };

@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const chameleonStreetFilmHistoryProfile = {
+  scenarioId: "scenario_chameleon_street_1990",
+  period: "Turn-of-the-1990s Black American regional independent satire and essayistic identity-performance cinema",
+  traditions: ["Black independent cinema", "Satirical biography", "Essayistic crime film"],
+  before: "American con-artist films usually separated performance from racial power, while Black independent filmmakers still faced severe financing and distribution barriers outside a few urban production centers.",
+  moment: "Wendell B. Harris Jr. turns the Michigan story of William Douglas Street into an episodic first-person satire built from code-switching, unreliable narration, costumes, direct address, abrupt tonal changes, fantasy inserts and the filmmaker's own central performance.",
+  after: "Its 1990 Sundance Grand Jury Prize, troubled release history and later restoration made the film both a landmark of Black independent authorship and a cautionary record of how acclaim could fail to overcome institutional exclusion.",
+  historyQuestion: "Which production system explains a Michigan independent satire where one writer-director-editor-star uses disguises, narration, episodic impersonations and abrupt formal shifts to expose the racial rules governing professional identity?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, Sundance, BFI and later institutional criticism place the film at the 1990 independent-cinema breakthrough moment while documenting its unusually difficult path to distribution." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI situates the film in Black American independent cinema and analyzes its mixture of biography, satire, crime narrative and essayistic self-consciousness." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Prismatic Images, regional Flint financing, a roughly $1.5 million production and location photography in and around Michigan." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Sundance records the Grand Jury Prize, while BFI and later criticism describe the film's disappearance, restoration and growing status as an overlooked independent landmark." },
+    { area: "screenplay", status: "source_verified", note: "AFI records Harris's long development process and numerous rewrites; BFI emphasizes the episodic impersonations, dense wordplay and unstable self-explanation." },
+    { area: "directing", status: "source_verified", note: "Harris directs from Street's restricted and unreliable viewpoint, shifting between satire, procedural incident, fantasy and direct address rather than stabilizing one moral register." },
+    { area: "performance", status: "source_verified", note: "BFI foregrounds Harris's comic timing and verbal control, while the film's changing professions depend on posture, accent, costume and institutional confidence as performed evidence." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Tim Alvaro; offices, hospitals, courtrooms, homes and workplaces become repeatable institutional stages on which identity can be accepted or challenged." },
+    { area: "costume_makeup", status: "source_verified", note: "The impersonation structure makes clothing, grooming and special makeup central practical tools for rebuilding Street's authority from role to role." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Dan Noga; crowded frames, mobile observation, direct address and abrupt visual departures keep the film aligned with Street's restless self-invention." },
+    { area: "lighting", status: "mapped", note: "The visual system moves between regional realism and heightened comic or fantasy passages, although the inspected sources do not fully document the lighting workflow." },
+    { area: "camera_format", status: "mapped", note: "AFI confirms a colour feature production, while later restoration coverage documents renewed preservation without a complete authoritative capture-format specification." },
+    { area: "editing", status: "source_verified", note: "AFI credits Harris as editor; BFI analysis highlights episodic leaps, narration, abrupt transitions and unstable chronology as the film's primary argumentative method." },
+    { area: "sound_design", status: "source_verified", note: "Voice-over, role-specific speech, direct address and abrupt shifts between social environments make sound and language part of every disguise." },
+    { area: "music", status: "source_verified", note: "AFI credits Peter S. Moore; the score and recurring stylized passages support the film's movement between biography, comedy, menace and self-mythology." },
+    { area: "effects_animation", status: "source_verified", note: "Later critical analysis identifies animation, fantasy inserts, slow motion, instant replay and practical special effects as deliberate breaks in the film's realist surface." },
+    { area: "documentary_method", status: "source_verified", note: "The project grew from reporting and Harris's prison interviews with the real Street, then transforms that research into a fictionalized and openly subjective first-person account." },
+  ],
+} as const satisfies FilmHistoryProfile;
