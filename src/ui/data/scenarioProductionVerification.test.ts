@@ -26,6 +26,7 @@ const verificationGroups = [
   ["contemporary dissent rural systems", ["scenario_synonyms_2019", "scenario_there_is_no_evil_2020", "scenario_bad_luck_banging_or_loony_porn_2021", "scenario_alcarras_2022"], 4],
   ["contemporary European social care systems", ["scenario_toni_erdmann_2016", "scenario_triangle_of_sadness_2022", "scenario_aftersun_2022", "scenario_the_room_next_door_2024"], 4],
   ["European poetic memory systems", ["scenario_l_atalante_1934", "scenario_the_spirit_of_the_beehive_1973", "scenario_landscape_in_the_mist_1988", "scenario_the_double_life_of_veronique_1991"], 4],
+  ["Cinema Paradiso communal cinema-memory system", ["scenario_cinema_paradiso_1988"], 6],
   ["British and Irish place-body systems", ["scenario_kes_1969", "scenario_naked_1993", "scenario_hunger_2008", "scenario_the_banshees_of_inisherin_2022"], 4],
   ["Iberian and Portuguese memory systems", ["scenario_cria_cuervos_1976", "scenario_all_about_my_mother_1999", "scenario_tabu_2012", "scenario_horse_money_2014"], 4],
   ["Balkan war and institution systems", ["scenario_before_the_rain_1994", "scenario_underground_1995", "scenario_no_mans_land_2001", "scenario_quo_vadis_aida_2020"], 4],
@@ -69,7 +70,7 @@ const verificationGroups = [
   ["Japanese ambiguity and dialogue systems", ["scenario_cure_1997", "scenario_wheel_of_fortune_and_fantasy_2021", "scenario_monster_kore_eda_2023", "scenario_evil_does_not_exist_2023"], 4],
 ] as const;
 
-const expectedVerifiedCount = 261;
+const expectedVerifiedCount = 262;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();

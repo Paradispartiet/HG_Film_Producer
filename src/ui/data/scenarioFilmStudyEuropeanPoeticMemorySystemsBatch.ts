@@ -9,6 +9,10 @@ import type { FilmHistoryChoice, FilmHistoryProfile, ScenarioFilmStudyMap } from
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 import { amarcordFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryAmarcord";
+import {
+  getCinemaParadisoDonorScenarioIds,
+  getCinemaParadisoFilmHistoryProfile,
+} from "./scenarioFilmStudyEuropeanPoeticMemoryCinemaParadisoCatalog";
 import { doubleLifeOfVeroniqueFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryDoubleLifeVeronique";
 import { lAtalanteFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryLAtalante";
 import { landscapeInTheMistFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryLandscapeMist";
@@ -60,7 +64,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getEuropeanPoeticMemorySystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return profiles[scenarioId as keyof typeof profiles];
+  return getCinemaParadisoFilmHistoryProfile(scenarioId)
+    ?? profiles[scenarioId as keyof typeof profiles];
 }
 
 export function resolveEuropeanPoeticMemorySystemsFilmStudyMap(
@@ -90,7 +95,11 @@ function hashString(value: string): number {
 }
 
 export function createEuropeanPoeticMemorySystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
-  const donors = Object.values(profiles)
+  const priorityDonorIds = getCinemaParadisoDonorScenarioIds(profile);
+  const priorityDonors = priorityDonorIds?.map(
+    (scenarioId) => profiles[scenarioId as keyof typeof profiles],
+  ).filter(Boolean) as readonly FilmHistoryProfile[] | undefined;
+  const donors = priorityDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = hashString(profile.scenarioId);
@@ -107,13 +116,17 @@ export function createEuropeanPoeticMemorySystemsFilmHistoryChoices(profile: Fil
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real European poetic production system, but it organises labour, childhood, landscape, doubling, colour, music and historical silence differently.",
+      feedback: priorityDonors
+        ? "This is another real European poetic-memory system, but it organises studio reconstruction, childhood history or landscape journey without Cinema Paradiso's projection labour, communal exhibition and version history."
+        : "This is a real European poetic production system, but it organises labour, childhood, landscape, doubling, colour, music and historical silence differently.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This assigns the film to the wrong historical, industrial and formal poetic-memory production logic.",
+      feedback: priorityDonors
+        ? "This places the film inside the wrong relationship between communal cinema, censorship, projection craft, remembered village space, alternate cuts and musical return."
+        : "This assigns the film to the wrong historical, industrial and formal poetic-memory production logic.",
     }] : []),
   ];
 }
