@@ -11,6 +11,10 @@ import type {
   ScenarioFilmStudyMap,
 } from "./scenarioFilmStudyMap";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
+import {
+  getWhereIsTheFriendsHouseDonorScenarioIds,
+  getWhereIsTheFriendsHouseFilmHistoryProfile,
+} from "./scenarioFilmStudyMinimalistRoadWhereFriendsHouseCatalog";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 
 const minimalistRoadProfiles = {
@@ -170,7 +174,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 }
 
 export function getMinimalistRoadFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return minimalistRoadProfiles[scenarioId as keyof typeof minimalistRoadProfiles];
+  return getWhereIsTheFriendsHouseFilmHistoryProfile(scenarioId)
+    ?? minimalistRoadProfiles[scenarioId as keyof typeof minimalistRoadProfiles];
 }
 
 export function resolveMinimalistRoadFilmStudyMap(
@@ -208,7 +213,11 @@ function hashString(value: string): number {
 export function createMinimalistRoadFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
-  const donors = Object.values(minimalistRoadProfiles)
+  const priorityDonorIds = getWhereIsTheFriendsHouseDonorScenarioIds(profile);
+  const priorityDonors = priorityDonorIds?.map(
+    (scenarioId) => minimalistRoadProfiles[scenarioId as keyof typeof minimalistRoadProfiles],
+  ).filter(Boolean) as readonly FilmHistoryProfile[] | undefined;
+  const donors = priorityDonors ?? Object.values(minimalistRoadProfiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = hashString(profile.scenarioId);
@@ -225,13 +234,17 @@ export function createMinimalistRoadFilmHistoryChoices(
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real minimalist or road-cinema production history, but it belongs to another industrial, regional and technical system.",
+      feedback: priorityDonors
+        ? "This is another real minimalist journey system, but it organizes adult alienation, transatlantic landscape or digital regional memory through a different production logic."
+        : "This is a real minimalist or road-cinema production history, but it belongs to another industrial, regional and technical system.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This places the film inside the wrong historical relationship between location, design, performance and image-making.",
+      feedback: priorityDonors
+        ? "This places the film inside the wrong relationship between a child's ethical quest, village geography, nonprofessional performance, repetition and documentary observation."
+        : "This places the film inside the wrong historical relationship between location, design, performance and image-making.",
     }] : []),
   ];
 }
