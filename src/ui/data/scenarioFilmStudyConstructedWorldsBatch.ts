@@ -222,10 +222,11 @@ export function createConstructedWorldsFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
   const forrestGumpDonorScenarioIds = getForrestGumpDonorScenarioIds(profile);
-  const donors = (forrestGumpDonorScenarioIds
-    ? forrestGumpDonorScenarioIds
-      .map((scenarioId) => constructedWorldsProfiles[scenarioId as keyof typeof constructedWorldsProfiles])
-      .filter((candidate): candidate is FilmHistoryProfile => Boolean(candidate))
+  const donors: readonly FilmHistoryProfile[] = (forrestGumpDonorScenarioIds
+    ? forrestGumpDonorScenarioIds.flatMap((scenarioId) => {
+      const candidate = constructedWorldsProfiles[scenarioId as keyof typeof constructedWorldsProfiles];
+      return candidate ? [candidate] : [];
+    })
     : Object.values(coreConstructedWorldsProfiles))
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
