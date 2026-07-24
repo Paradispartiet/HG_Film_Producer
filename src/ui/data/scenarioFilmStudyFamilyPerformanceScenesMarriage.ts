@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const scenesFromAMarriageFilmHistoryProfile = {
+  scenarioId: "scenario_scenes_from_a_marriage_1974",
+  period: "Early-1970s Swedish public-service television transformed into an actor-led marital chamber work and theatrical feature",
+  traditions: ["Television chamber drama", "Autobiographical relationship cinema", "Performance-led modernism"],
+  before: "Bergman's cinema and theatre had long explored couples, confession and emotional power, while television offered a domestic serial form capable of entering ordinary homes over several weeks.",
+  moment: "A low-risk six-part television commission, written rapidly and shot on 16 mm with a small mobile unit, cramped interiors and an accelerated schedule, concentrates nearly five hours on Liv Ullmann and Erland Josephson's prepared but collaborative performances, Sven Nykvist's close-ups and the changing violence of spoken language.",
+  after: "The abridged 35 mm theatrical version and the series' unusually broad television audience extended Bergman's influence on relationship drama, later cinema, television serials and stage adaptations.",
+  historyQuestion: "Which production system best explains how Scenes from a Marriage turns limited television resources into sustained emotional and visual intensity?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "The Ingmar Bergman Foundation documents the project as Bergman's first television series and a decisive move toward work conceived for public-service television." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The production joins television serial form, theatrical dialogue, Strindbergian marital conflict and Bergman's autobiographical relationship cinema." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Bergman's archive describes the deliberately low-cost, low-risk plan, 16 mm capture, cramped studio and extremely rapid production schedule." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Bergman Foundation and Criterion document the Swedish public response, international theatrical version, later stage adaptation and enduring influence on relationship drama." },
+    { area: "screenplay", status: "source_verified", note: "Bergman wrote six dialogue-led episodes in roughly two and a half months, drawing on bourgeois marriage, autobiography and successive stages of separation and return." },
+    { area: "directing", status: "source_verified", note: "Bergman strips away spectacle and organises scenes around duration, verbal reversals, emotional proximity and the actors' changing control of the same domestic spaces." },
+    { area: "performance", status: "source_verified", note: "The archive records Ullmann and Josephson's intensive preparation and their substantial suggestions for lines and scenes as central to the finished work." },
+    { area: "production_design", status: "mapped", note: "Restricted interiors and ordinary furnishings keep attention on relational behaviour, but dedicated production-design research remains limited." },
+    { area: "costume_makeup", status: "mapped", note: "Everyday wardrobe and gradual changes in appearance mark time and social role without display, though department-level sourcing remains pending." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and the Bergman Foundation document Sven Nykvist's intense close-ups and mobile 16 mm approach inside cramped television spaces." },
+    { area: "lighting", status: "mapped", note: "Practical domestic light and restrained studio control preserve faces and continuity at television speed, but a dedicated Nykvist lighting account remains pending." },
+    { area: "camera_format", status: "source_verified", note: "The production was shot in 16 mm at roughly 1.33:1 for television, then abridged and enlarged to 35 mm for theatrical distribution." },
+    { area: "editing", status: "source_verified", note: "The six-part 281-minute structure was later reduced to approximately 155 minutes, making serial duration and theatrical compression two documented versions of the work." },
+    { area: "sound_design", status: "source_verified", note: "Optical mono, close-recorded dialogue, pauses, room tone and verbal interruption carry the action without an ornamental soundscape." },
+    { area: "music", status: "not_central", note: "The production is organised around speech, silence and domestic sound rather than a continuous non-diegetic score." },
+    { area: "effects_animation", status: "not_central", note: "Effects are not central to the television chamber method." },
+    { area: "documentary_method", status: "mapped", note: "Autobiographical experience and ordinary middle-class behaviour inform the fiction, but the work remains tightly scripted and performed rather than documentary." },
+  ],
+} as const satisfies FilmHistoryProfile;
