@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const rumbleFishFilmHistoryProfile = {
+  scenarioId: "scenario_rumble_fish_1983",
+  period: "Early-1980s American post-New-Hollywood auteur production turning a youth novel into an expressionist psychological city film",
+  traditions: ["Post-New-Hollywood auteur cinema", "American expressionism", "Youth literary adaptation"],
+  before: "American youth films and literary adaptations usually favored social realism, romantic naturalism or classical coming-of-age continuity, while German expressionism and studio-era black-and-white techniques belonged to an older visual history.",
+  moment: "Francis Ford Coppola and S. E. Hinton turn Hinton's novel into a dreamlike Tulsa production whose electronic-video rehearsal, stylized body language, extreme wide-angle staging, hard black-and-white contrast, painted shadows, time-lapse, selective color and percussive score make Rusty-James's unstable sense of time and identity physical.",
+  after: "The film survived its difficult original reception as a durable reference for personal studio-adjacent experimentation, expressionist youth cinema and the deliberate revival of black-and-white craft inside 1980s American production.",
+  historyQuestion: "Which production system best explains why Rumble Fish feels like a real Tulsa youth story and an unstable expressionist dream at the same time?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and Criterion place the 1983 film immediately after The Outsiders, as Coppola's second S. E. Hinton adaptation and a markedly more personal and experimental production." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion and American Cinematographer connect the film to German expressionism, surrealism, hyperrealism, silent-era body language and studio black-and-white technique." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents the negative-pickup financing, Tulsa production, portable Electronic Cinema system and full video rehearsal made before principal photography." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion's director-approved restoration, production interviews and documentary on the film's later impact document its continuing historical and teaching value." },
+    { area: "screenplay", status: "source_verified", note: "AFI and Criterion credit Coppola and S. E. Hinton with adapting the novel into a concentrated brother story organized around myth, estrangement, time and failed gang identity." },
+    { area: "directing", status: "source_verified", note: "Coppola used video monitoring, expressionist references, stylized movement and psychologically motivated camera changes to coordinate performance and image in real time." },
+    { area: "performance", status: "source_verified", note: "American Cinematographer records Coppola showing silent and expressionist films to the actors so posture and body attitude could carry Rusty-James's psychological decline." },
+    { area: "production_design", status: "source_verified", note: "Dean Tavoularis shaped Tulsa as a lean ruined wasteland using smoke, partial destruction, graphic architecture and painted shadows that make ordinary streets feel slightly unreal." },
+    { area: "costume_makeup", status: "mapped", note: "Criterion credits costume designer Marge Bowers, and the youth silhouettes support the gang mythology, but a dedicated costume-process account remains pending." },
+    { area: "cinematography", status: "source_verified", note: "Stephen H. Burum describes extreme wide-angle lenses, camera proximity, handheld escalation, cranes, static counterpoints and abstract continuity used as psychological narration." },
+    { area: "lighting", status: "source_verified", note: "High-gamma black-and-white, firm black and highlight references, painted shadows, smoke and expressionistic lightning create heat, unease and emotional violence." },
+    { area: "camera_format", status: "source_verified", note: "Burum documents Plus-X exteriors, Double-X interiors and nights, normal processing at higher gamma, and a lens system centered on 25mm with 35mm, 18mm and 9.8mm extremes." },
+    { area: "editing", status: "source_verified", note: "Barry Malkin's editing joins straight-cut dream transitions, time-lapse, changing movement intensity and abrupt visual states without explaining the film's subjective ruptures." },
+    { area: "sound_design", status: "mapped", note: "Criterion credits Richard Beggs as sound designer; thunder, trains, street atmosphere and rhythmic temporal cues support the image system, while a department interview remains pending." },
+    { area: "music", status: "source_verified", note: "Criterion identifies Stewart Copeland's composed and performed percussive score as a central force in the film's fatalism, speed and recurring awareness of time." },
+    { area: "effects_animation", status: "source_verified", note: "ASC documents time-lapse, wire and articulated-body flight, an in-camera mirror dissolve, rear projection and separately photographed color fish inserted into the black-and-white world." },
+    { area: "documentary_method", status: "not_central", note: "Tulsa locations ground the film materially, but documentary observation is subordinate to controlled rehearsal, expressionist design and subjective audiovisual construction." },
+  ],
+} as const satisfies FilmHistoryProfile;
