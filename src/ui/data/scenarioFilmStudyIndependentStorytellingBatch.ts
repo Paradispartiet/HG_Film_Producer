@@ -25,6 +25,10 @@ import {
   getDownByLawFilmHistoryProfile,
 } from "./scenarioFilmStudyIndependentStorytellingDownByLawCatalog";
 import {
+  getTheStraightStoryFilmHistoryDonors,
+  getTheStraightStoryFilmHistoryProfile,
+} from "./scenarioFilmStudyAmericanRegionalStraightStoryCatalog";
+import {
   getRosettaFilmHistoryDonors,
   getRosettaFilmHistoryProfile,
 } from "./scenarioFilmStudySocialRealismRosettaCatalog";
@@ -66,6 +70,15 @@ import { getProductionCaseVerification } from "./scenarioProductionVerificationR
 type ResolvedIndependentStorytellingProfileGroup =
   | IndependentStorytellingProfileGroup
   | "social_realism_labor_body";
+
+type SpecialChoiceSystem = {
+  readonly donors: readonly FilmHistoryProfile[];
+  readonly group: ResolvedIndependentStorytellingProfileGroup;
+  readonly match?: string;
+  readonly partial?: string;
+  readonly miss?: string;
+  readonly forceStart?: boolean;
+};
 
 function statusRank(status: FilmStudyCoverageOverride["status"]): number {
   if (status === "source_verified") return 4;
@@ -115,7 +128,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return getRosettaFilmHistoryProfile(scenarioId)
+  return getTheStraightStoryFilmHistoryProfile(scenarioId)
+    ?? getRosettaFilmHistoryProfile(scenarioId)
     ?? getEyesWideShutFilmHistoryProfile(scenarioId)
     ?? getBeingJohnMalkovichFilmHistoryProfile(scenarioId)
     ?? getTheBigLebowskiFilmHistoryProfile(scenarioId)
@@ -209,155 +223,147 @@ function missFeedback(group: ResolvedIndependentStorytellingProfileGroup): strin
   return feedback[group];
 }
 
+function getSpecialChoiceSystem(profile: FilmHistoryProfile): SpecialChoiceSystem | undefined {
+  const straightStoryDonors = getTheStraightStoryFilmHistoryDonors(profile);
+  if (straightStoryDonors) return {
+    donors: straightStoryDonors,
+    group: "american_regional_identity_place_belonging",
+    forceStart: true,
+    match: "This matches the documented production relationship among Sweeney and Roach's fact-based Alvin Straight screenplay, rapid StudioCanal backing, chronological filming along the actual Iowa-Wisconsin route, Richard Farnsworth's embodied ageing performance, Freddie Francis's 35 mm anamorphic landscapes, Jack Fisk and Patricia Norris's regional material world, Mary Sweeney's patient sound-responsive editing, Lynch's practical road sound and Badalamenti's restrained score.",
+    partial: "This is another real American regional, slow-road or ageing-body system, but it does not combine a lawn-mower journey, chronological harvest production, actual route communities, physical limitation, anamorphic landscape, engine rhythm, roadside encounters and sibling reconciliation in the same way.",
+    miss: "This places the film inside the wrong relationship between fact-based regional production, ageing embodiment, extremely slow mobility, Midwestern landscape, chronological location work, 35 mm road imagery, practical sound, music and reconciliation.",
+  };
+
+  const rosettaDonors = getRosettaFilmHistoryDonors(profile);
+  if (rosettaDonors) return {
+    donors: rosettaDonors,
+    group: "social_realism_labor_body",
+    forceStart: true,
+    match: "This matches the documented production relationship among the Dardennes' post-documentary Belgian social realism, Films du Fleuve and ARP production, an unknown Émilie Dequenne, Seraing labour geography, Alain Marcoen's Super 16 image, Benoît Dervaux's body-camera choreography, Marie-Hélène Dozo's cutting, Jean-Pierre Duret's practical sound and the film's Cannes legacy.",
+    partial: "This is another real labour, precarity or embodied social-realist system, but it does not combine a war for employment, an unknown central performer, gas bottles, a caravan site, factory and waffle-stand procedure, Super 16 body-camera proximity and recurring practical sound in the same way.",
+    miss: "This places the film inside the wrong relationship between postindustrial labour, bodily performance, social belonging, Super 16 proximity, rehearsed handheld choreography, editing, environmental sound and ethical choice.",
+  };
+
+  const eyesWideShutDonors = getEyesWideShutFilmHistoryDonors(profile);
+  if (eyesWideShutDonors) return {
+    donors: eyesWideShutDonors,
+    group: "subjective_enclosure_performance",
+    forceStart: true,
+    match: "This matches the documented production relationship among Kubrick and Raphael's long-planned Schnitzler adaptation, the prolonged Pole Star and Warner production, an English reconstruction of Manhattan, Cruise and Kidman's marital performance, masked ritual, wide Zeiss lenses, Steadicam, pushed 35 mm, practical Christmas and street lighting, Nigel Galt's extended edit, Jocelyn Pook's recurring score and the digitally altered United States release.",
+    partial: "This is another real subjective-enclosure, ritual-performance or nocturnal-uncertainty system, but it does not join a marriage crisis, reconstructed Manhattan, class access, masks, dream repetition, practical coloured light, pushed negative and prolonged actor-director exploration in the same way.",
+    miss: "This places the film inside the wrong relationship between Viennese adaptation, studio-auteur control, marriage performance, nocturnal city architecture, masked ritual, wide-angle movement, photochemical colour, editorial ambiguity, music and release-version effects.",
+  };
+
+  const beingJohnMalkovichDonors = getBeingJohnMalkovichFilmHistoryDonors(profile);
+  if (beingJohnMalkovichDonors) return {
+    donors: beingJohnMalkovichDonors,
+    group: "subjective_enclosure_performance",
+    forceStart: true,
+    match: "This matches the documented production relationship among Kaufman's unmakeable identity screenplay, Jonze's feature debut, the seven-and-a-half floor, the body portal, first-person Malkovich vision, actor self-performance, marionettes, body doubles, compositing, Zumbrunnen's identity transitions and Burwell's circular melancholic score.",
+    partial: "This is another real subjective-enclosure, performed-identity or surreal-authorship system, but it does not combine a compressed workplace, puppet control, celebrity embodiment, bodily occupation, mock media and portal effects in the same way.",
+    miss: "This places the film inside the wrong relationship between surreal independent production, office architecture, authorship, desire, bodily control, first-person framing, performance, puppetry, compositing, editing and sound.",
+  };
+
+  const theBigLebowskiDonors = getTheBigLebowskiFilmHistoryDonors(profile);
+  if (theBigLebowskiDonors) return {
+    donors: theBigLebowskiDonors,
+    group: "american_independent_genre_resourcefulness",
+    forceStart: true,
+    match: "This matches the documented production relationship among the Coens' deliberately useless detective, Working Title and PolyGram production, Los Angeles architecture, bowling ritual, Roger Deakins's 35 mm image, Rick Heinrichs's design, Mary Zophres's costumes, ensemble dialogue, subjective editing, Skip Lievsay's sound, source-shaped music and elaborate fantasy effects.",
+    partial: "This is another real Coen, American independent genre or subjective-comedy system, but it does not turn a Chandler-like investigation, bowling friendship, Los Angeles social types, bright contemporary photography, dream choreography and music from the Dude's cultural memory into the same post-noir machine.",
+    miss: "This places the film inside the wrong relationship between post-noir genre revision, Los Angeles location architecture, ensemble absurdism, bowling design, 35 mm realism, character costume, layered sound, source-shaped music and authored fantasy effects.",
+  };
+
+  const buffalo66Donors = getBuffalo66FilmHistoryDonors(profile);
+  if (buffalo66Donors) return {
+    donors: buffalo66Donors,
+    group: "american_regional_identity_place_belonging",
+    forceStart: true,
+    match: "This matches the documented production relationship among Gallo and Bagnall's autobiographical Buffalo screenplay, a compact local shoot, tightly scripted performance, 35 mm reversal stock, precisely art-directed colour, regional interiors, abrupt memory and fantasy editing, subtle musical numbers and the frozen subjective gunshot tableau.",
+    partial: "This is another real American regional, performed-identity or music-city production system, but it does not combine a false marriage, hostile family homecoming, football grievance, exact reversal exposure, abrasive writer-director-star performance and musical fantasy in the same way.",
+    miss: "This places the film inside the wrong relationship between autobiographical regional production, Buffalo social memory, scripted performance, reversal-stock colour, designed interiors, music, romantic fantasy and subjective effects.",
+  };
+
+  const theGameDonors = getTheGameFilmHistoryDonors(profile);
+  if (theGameDonors) return {
+    donors: theGameDonors,
+    group: "subjective_enclosure_performance",
+    forceStart: true,
+    match: "This matches the documented production relationship among the Brancato-Ferris screenplay and Andrew Kevin Walker revisions, Consumer Recreation Services' performed reality, real San Francisco locations, the Filoli and office contrast, Harris Savides's Panavision image and practical lighting systems, restricted viewpoint, Ren Klyce's sound, Howard Shore's score and integrated effects.",
+    partial: "This is another real subjective-enclosure, psychological-uncertainty or performed-identity system, but it does not turn an entire modern city, corporate service network, hidden cast, architecture, stunts, media, sound and effects into one continuous loss-of-control performance.",
+    miss: "This places the film inside the wrong relationship between corporate satire, immersive staged reality, San Francisco location architecture, hidden performers, Panavision photography, large practical lighting systems, information withholding, sound and seamless effects.",
+  };
+
+  const leavingLasVegasDonors = getLeavingLasVegasFilmHistoryDonors(profile);
+  if (leavingLasVegasDonors) return {
+    donors: leavingLasVegasDonors,
+    group: "american_precarity_body_care",
+    match: "This matches the documented production relationship among John O'Brien's uncompromising novel, a four-million-dollar twenty-eight-day shoot, two small Super 16 cameras, minimal lighting, real Nevada movement, actor research, donated Vivienne Westwood clothing and a director-composed blues-jazz score without a recovery ending.",
+    partial: "This is another real American independent body-and-care system, but it organizes sensory recovery, unresolved environmental illness or economic precarity through a different relationship between bodily crisis, care, regional space, performance, image format and sound.",
+    miss: "This places the film inside the wrong relationship between tragic romance, addiction without cure, low-budget transatlantic financing, mobile Super 16 production, two-camera intimacy, Vegas anti-spectacle, actor preparation and jazz-led emotional form.",
+  };
+
+  const antoniasLineDonors = getAntoniasLineFilmHistoryDonors(profile);
+  if (antoniasLineDonors) return {
+    donors: antoniasLineDonors,
+    group: "family_performance_grief_power",
+  };
+
+  const clerksDonors = getClerksFilmHistoryDonors(profile);
+  if (clerksDonors) return {
+    donors: clerksDonors,
+    group: getIndependentStorytellingProfileGroup(profile.scenarioId),
+    partial: "This is another real American independent production system built from dialogue, regional place or strict resource limits, but it does not organize retail labour, overnight store access, fluorescent black-and-white 16mm and customer interruption in the same way.",
+    miss: "This places the film inside the wrong relationship between workplace experience, available stores, microbudget financing, unknown performers, dialogue density, 16mm black-and-white photography, editing and festival discovery.",
+  };
+
+  const downByLawDonors = getDownByLawFilmHistoryDonors(profile);
+  if (downByLawDonors) return {
+    donors: downByLawDonors,
+    group: getIndependentStorytellingProfileGroup(profile.scenarioId),
+    partial: "This is another American independent outsider-location system, but it organizes city recurrence, conversational drift or neighborhood observation through a different balance of structure, performance, place, editing and sound.",
+    miss: "This places the film inside the wrong relationship between American independent production, outsider ensemble, regional location, ellipsis, multilingual performance and music.",
+  };
+
+  const priorityDonors = getPriorityIndieFinalDonors(profile);
+  if (priorityDonors) return {
+    donors: priorityDonors,
+    group: getIndependentStorytellingProfileGroup(profile.scenarioId),
+    partial: "This is another final priority-independent system, but it organizes comic alienation, architectural attention or abrasive regional hustle through a different balance of design, performance, place, editing and sound.",
+    miss: "This places the film inside the wrong relationship between American independent production, designed environment, regional observation, social performance, analogue or spatial form and audience identification.",
+  };
+
+  return undefined;
+}
+
 export function createIndependentStorytellingFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
-  const rosettaDonors = getRosettaFilmHistoryDonors(profile);
-  const eyesWideShutDonors = getEyesWideShutFilmHistoryDonors(profile);
-  const beingJohnMalkovichDonors = getBeingJohnMalkovichFilmHistoryDonors(profile);
-  const theBigLebowskiDonors = getTheBigLebowskiFilmHistoryDonors(profile);
-  const buffalo66Donors = getBuffalo66FilmHistoryDonors(profile);
-  const theGameDonors = getTheGameFilmHistoryDonors(profile);
-  const leavingLasVegasDonors = getLeavingLasVegasFilmHistoryDonors(profile);
-  const antoniasLineDonors = getAntoniasLineFilmHistoryDonors(profile);
-  const clerksDonors = getClerksFilmHistoryDonors(profile);
-  const downByLawDonors = getDownByLawFilmHistoryDonors(profile);
-  const priorityDonors = getPriorityIndieFinalDonors(profile);
-  const group: ResolvedIndependentStorytellingProfileGroup = rosettaDonors
-    ? "social_realism_labor_body"
-    : eyesWideShutDonors
-      ? "subjective_enclosure_performance"
-      : beingJohnMalkovichDonors
-        ? "subjective_enclosure_performance"
-        : theBigLebowskiDonors
-          ? "american_independent_genre_resourcefulness"
-          : buffalo66Donors
-            ? "american_regional_identity_place_belonging"
-            : theGameDonors
-              ? "subjective_enclosure_performance"
-              : leavingLasVegasDonors
-                ? "american_precarity_body_care"
-                : antoniasLineDonors
-                  ? "family_performance_grief_power"
-                  : getIndependentStorytellingProfileGroup(profile.scenarioId);
-  const donors = rosettaDonors
-    ?? eyesWideShutDonors
-    ?? beingJohnMalkovichDonors
-    ?? theBigLebowskiDonors
-    ?? buffalo66Donors
-    ?? theGameDonors
-    ?? leavingLasVegasDonors
-    ?? antoniasLineDonors
-    ?? clerksDonors
-    ?? downByLawDonors
-    ?? priorityDonors
-    ?? getIndependentStorytellingDonors(profile);
-  const start = rosettaDonors || eyesWideShutDonors || beingJohnMalkovichDonors || theBigLebowskiDonors || buffalo66Donors || theGameDonors
-    ? 0
-    : hashString(profile.scenarioId);
+  const special = getSpecialChoiceSystem(profile);
+  const group = special?.group ?? getIndependentStorytellingProfileGroup(profile.scenarioId);
+  const donors = special?.donors ?? getIndependentStorytellingDonors(profile);
+  const start = special?.forceStart ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
-
-  const rosettaMatch = "This matches the documented production relationship among the Dardennes' post-documentary Belgian social realism, Films du Fleuve and ARP production, an unknown Émilie Dequenne, Seraing labour geography, Alain Marcoen's Super 16 image, Benoît Dervaux's body-camera choreography, Marie-Hélène Dozo's cutting, Jean-Pierre Duret's practical sound and the film's Cannes legacy.";
-  const rosettaPartial = "This is another real labour, precarity or embodied social-realist system, but it does not combine a war for employment, an unknown central performer, gas bottles, a caravan site, factory and waffle-stand procedure, Super 16 body-camera proximity and recurring practical sound in the same way.";
-  const rosettaMiss = "This places the film inside the wrong relationship between postindustrial labour, bodily performance, social belonging, Super 16 proximity, rehearsed handheld choreography, editing, environmental sound and ethical choice.";
-  const eyesWideShutMatch = "This matches the documented production relationship among Kubrick and Raphael's long-planned Schnitzler adaptation, the prolonged Pole Star and Warner production, an English reconstruction of Manhattan, Cruise and Kidman's marital performance, masked ritual, wide Zeiss lenses, Steadicam, pushed 35 mm, practical Christmas and street lighting, Nigel Galt's extended edit, Jocelyn Pook's recurring score and the digitally altered United States release.";
-  const eyesWideShutPartial = "This is another real subjective-enclosure, ritual-performance or nocturnal-uncertainty system, but it does not join a marriage crisis, reconstructed Manhattan, class access, masks, dream repetition, practical coloured light, pushed negative and prolonged actor-director exploration in the same way.";
-  const eyesWideShutMiss = "This places the film inside the wrong relationship between Viennese adaptation, studio-auteur control, marriage performance, nocturnal city architecture, masked ritual, wide-angle movement, photochemical colour, editorial ambiguity, music and release-version effects.";
-  const beingJohnMalkovichMatch = "This matches the documented production relationship among Kaufman's unmakeable identity screenplay, Jonze's feature debut, the seven-and-a-half floor, the body portal, first-person Malkovich vision, actor self-performance, marionettes, body doubles, compositing, Zumbrunnen's identity transitions and Burwell's circular melancholic score.";
-  const beingJohnMalkovichPartial = "This is another real subjective-enclosure, performed-identity or surreal-authorship system, but it does not combine a compressed workplace, puppet control, celebrity embodiment, bodily occupation, mock media and portal effects in the same way.";
-  const beingJohnMalkovichMiss = "This places the film inside the wrong relationship between surreal independent production, office architecture, authorship, desire, bodily control, first-person framing, performance, puppetry, compositing, editing and sound.";
-  const theBigLebowskiMatch = "This matches the documented production relationship among the Coens' deliberately useless detective, Working Title and PolyGram production, Los Angeles architecture, bowling ritual, Roger Deakins's 35 mm image, Rick Heinrichs's design, Mary Zophres's costumes, ensemble dialogue, subjective editing, Skip Lievsay's sound, source-shaped music and elaborate fantasy effects.";
-  const theBigLebowskiPartial = "This is another real Coen, American independent genre or subjective-comedy system, but it does not turn a Chandler-like investigation, bowling friendship, Los Angeles social types, bright contemporary photography, dream choreography and music from the Dude's cultural memory into the same post-noir machine.";
-  const theBigLebowskiMiss = "This places the film inside the wrong relationship between post-noir genre revision, Los Angeles location architecture, ensemble absurdism, bowling design, 35 mm realism, character costume, layered sound, source-shaped music and authored fantasy effects.";
-  const buffalo66Match = "This matches the documented production relationship among Gallo and Bagnall's autobiographical Buffalo screenplay, a compact local shoot, tightly scripted performance, 35 mm reversal stock, precisely art-directed colour, regional interiors, abrupt memory and fantasy editing, subtle musical numbers and the frozen subjective gunshot tableau.";
-  const buffalo66Partial = "This is another real American regional, performed-identity or music-city production system, but it does not combine a false marriage, hostile family homecoming, football grievance, exact reversal exposure, abrasive writer-director-star performance and musical fantasy in the same way.";
-  const buffalo66Miss = "This places the film inside the wrong relationship between autobiographical regional production, Buffalo social memory, scripted performance, reversal-stock colour, designed interiors, music, romantic fantasy and subjective effects.";
-  const theGameMatch = "This matches the documented production relationship among the Brancato-Ferris screenplay and Andrew Kevin Walker revisions, Consumer Recreation Services' performed reality, real San Francisco locations, the Filoli and office contrast, Harris Savides's Panavision image and practical lighting systems, restricted viewpoint, Ren Klyce's sound, Howard Shore's score and integrated effects.";
-  const theGamePartial = "This is another real subjective-enclosure, psychological-uncertainty or performed-identity system, but it does not turn an entire modern city, corporate service network, hidden cast, architecture, stunts, media, sound and effects into one continuous loss-of-control performance.";
-  const theGameMiss = "This places the film inside the wrong relationship between corporate satire, immersive staged reality, San Francisco location architecture, hidden performers, Panavision photography, large practical lighting systems, information withholding, sound and seamless effects.";
-  const leavingLasVegasMatch = "This matches the documented production relationship among John O'Brien's uncompromising novel, a four-million-dollar twenty-eight-day shoot, two small Super 16 cameras, minimal lighting, real Nevada movement, actor research, donated Vivienne Westwood clothing and a director-composed blues-jazz score without a recovery ending.";
-  const leavingLasVegasPartial = "This is another real American independent body-and-care system, but it organizes sensory recovery, unresolved environmental illness or economic precarity through a different relationship between bodily crisis, care, regional space, performance, image format and sound.";
-  const leavingLasVegasMiss = "This places the film inside the wrong relationship between tragic romance, addiction without cure, low-budget transatlantic financing, mobile Super 16 production, two-camera intimacy, Vegas anti-spectacle, actor preparation and jazz-led emotional form.";
-  const clerksPartial = "This is another real American independent production system built from dialogue, regional place or strict resource limits, but it does not organize retail labour, overnight store access, fluorescent black-and-white 16mm and customer interruption in the same way.";
-  const clerksMiss = "This places the film inside the wrong relationship between workplace experience, available stores, microbudget financing, unknown performers, dialogue density, 16mm black-and-white photography, editing and festival discovery.";
-  const downByLawPartial = "This is another American independent outsider-location system, but it organizes city recurrence, conversational drift or neighborhood observation through a different balance of structure, performance, place, editing and sound.";
-  const downByLawMiss = "This places the film inside the wrong relationship between American independent production, outsider ensemble, regional location, ellipsis, multilingual performance and music.";
-  const priorityPartial = "This is another final priority-independent system, but it organizes comic alienation, architectural attention or abrasive regional hustle through a different balance of design, performance, place, editing and sound.";
-  const priorityMiss = "This places the film inside the wrong relationship between American independent production, designed environment, regional observation, social performance, analogue or spatial form and audience identification.";
 
   return [
     {
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: rosettaDonors
-        ? rosettaMatch
-        : eyesWideShutDonors
-          ? eyesWideShutMatch
-          : beingJohnMalkovichDonors
-            ? beingJohnMalkovichMatch
-            : theBigLebowskiDonors
-              ? theBigLebowskiMatch
-              : buffalo66Donors
-                ? buffalo66Match
-                : theGameDonors
-                  ? theGameMatch
-                  : leavingLasVegasDonors
-                    ? leavingLasVegasMatch
-                    : "This connects the film's historical position directly to its documented relationship between place, narrative structure, image system, media form and production method.",
+      feedback: special?.match ?? "This connects the film's historical position directly to its documented relationship between place, narrative structure, image system, media form and production method.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: rosettaDonors
-        ? rosettaPartial
-        : eyesWideShutDonors
-          ? eyesWideShutPartial
-          : beingJohnMalkovichDonors
-            ? beingJohnMalkovichPartial
-            : theBigLebowskiDonors
-              ? theBigLebowskiPartial
-              : buffalo66Donors
-                ? buffalo66Partial
-                : theGameDonors
-                  ? theGamePartial
-                  : leavingLasVegasDonors
-                    ? leavingLasVegasPartial
-                    : clerksDonors
-                      ? clerksPartial
-                      : downByLawDonors
-                        ? downByLawPartial
-                        : priorityDonors
-                          ? priorityPartial
-                          : partialFeedback(group),
+      feedback: special?.partial ?? partialFeedback(group),
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: rosettaDonors
-        ? rosettaMiss
-        : eyesWideShutDonors
-          ? eyesWideShutMiss
-          : beingJohnMalkovichDonors
-            ? beingJohnMalkovichMiss
-            : theBigLebowskiDonors
-              ? theBigLebowskiMiss
-              : buffalo66Donors
-                ? buffalo66Miss
-                : theGameDonors
-                  ? theGameMiss
-                  : leavingLasVegasDonors
-                    ? leavingLasVegasMiss
-                    : clerksDonors
-                      ? clerksMiss
-                      : downByLawDonors
-                        ? downByLawMiss
-                        : priorityDonors
-                          ? priorityMiss
-                          : missFeedback(group),
+      feedback: special?.miss ?? missFeedback(group),
     }] : []),
   ];
 }
