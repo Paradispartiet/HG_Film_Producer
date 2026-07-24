@@ -67,6 +67,7 @@ function scanFilmHistoryProfileIds(): {
     if (!source.includes("FilmHistoryProfile")) continue;
     for (const match of source.matchAll(scenarioIdPattern)) {
       const scenarioId = match[1];
+      if (!scenarioId) continue;
       const files = origins.get(scenarioId) ?? [];
       if (!files.includes(fileName)) files.push(fileName);
       origins.set(scenarioId, files);
