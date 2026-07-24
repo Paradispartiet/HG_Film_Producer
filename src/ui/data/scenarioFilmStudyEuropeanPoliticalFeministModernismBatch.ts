@@ -12,6 +12,10 @@ import { beauTravailFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoliti
 import { cleoFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoliticalCleo";
 import { conformistFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoliticalConformist";
 import { jeanneDielmanFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoliticalJeanneDielman";
+import {
+  getEuropeanReligiousMoralDonors,
+  getEuropeanReligiousMoralProfile,
+} from "./scenarioFilmStudyEuropeanReligiousMoralCatalog";
 
 const profiles = {
   [cleoFilmHistoryProfile.scenarioId]: cleoFilmHistoryProfile,
@@ -60,7 +64,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 export function getEuropeanPoliticalFeministModernismFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return profiles[scenarioId as keyof typeof profiles];
+  return getEuropeanReligiousMoralProfile(scenarioId)
+    ?? profiles[scenarioId as keyof typeof profiles];
 }
 
 export function resolveEuropeanPoliticalFeministModernismFilmStudyMap(
@@ -92,30 +97,39 @@ function hashString(value: string): number {
 export function createEuropeanPoliticalFeministModernismFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
-  const donors = Object.values(profiles)
+  const religiousMoralDonors = getEuropeanReligiousMoralDonors(profile);
+  const donors = religiousMoralDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const religiousPartial = "This is another documented European religious or moral modernist system, but it builds ethical pressure through a different relation between institution, performance, landscape, objects, editing and sound.";
+  const religiousMiss = "This assigns the film to the wrong relationship between belief, property, sacred representation, bodily restraint, social institution and audiovisual form.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This matches the documented relationship between political or feminist history and the film's concrete production system.",
+      feedback: religiousMoralDonors
+        ? "This matches the documented relationship between European moral history, belief, institutions and the film's concrete production system."
+        : "This matches the documented relationship between political or feminist history and the film's concrete production system.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real European modernist production system, but it organizes time, bodies, space, memory and sound differently.",
+      feedback: religiousMoralDonors
+        ? religiousPartial
+        : "This is a real European modernist production system, but it organizes time, bodies, space, memory and sound differently.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This assigns the film to the wrong political, feminist and formal production logic.",
+      feedback: religiousMoralDonors
+        ? religiousMiss
+        : "This assigns the film to the wrong political, feminist and formal production logic.",
     }] : []),
   ];
 }

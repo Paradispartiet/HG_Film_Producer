@@ -32,6 +32,7 @@ import { european1960sSpaceVerificationRecords } from "./scenarioProductionVerif
 import { europeanModernistProductionVerificationRecords } from "./scenarioProductionVerificationEuropeanModernistProductionBatch";
 import { europeanPoeticMemoryVerificationRecords } from "./scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch";
 import { europeanPoliticalFeministModernismVerificationRecords } from "./scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch";
+import { europeanReligiousMoralVerificationRecords } from "./scenarioProductionVerificationEuropeanReligiousMoralBatch";
 import { europeanPressureVerificationRecords } from "./scenarioProductionVerificationEuropeanPressureBatch";
 import { europeanTimeIdentityVerificationRecords } from "./scenarioProductionVerificationEuropeanTimeIdentitySystemsBatch";
 import { familyPerformanceGriefPowerVerificationRecords } from "./scenarioProductionVerificationFamilyPerformanceGriefPowerBatch";
@@ -127,6 +128,7 @@ const additionalVerificationRecords = [
   ...postwarEuropeanModernismVerificationRecords,
   ...czechoslovakNewWaveVerificationRecords,
   ...europeanPoliticalFeministModernismVerificationRecords,
+  ...europeanReligiousMoralVerificationRecords,
   ...newHollywoodBlockbusterVerificationRecords,
   ...sixtiesScaleIndependentVerificationRecords,
   ...europeanModernistProductionVerificationRecords,
