@@ -1,4 +1,8 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import {
+  getTasteOfCherryDonorScenarioIds,
+  getTasteOfCherryFilmHistoryProfile,
+} from "./scenarioFilmStudyMinimalistRoadTasteOfCherryCatalog";
 import { whereIsTheFriendsHouseFilmHistoryProfile } from "./scenarioFilmStudyMinimalistRoadWhereFriendsHouse";
 
 const whereIsTheFriendsHouseDonorScenarioIds = [
@@ -10,15 +14,17 @@ const whereIsTheFriendsHouseDonorScenarioIds = [
 export function getWhereIsTheFriendsHouseFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return scenarioId === whereIsTheFriendsHouseFilmHistoryProfile.scenarioId
-    ? whereIsTheFriendsHouseFilmHistoryProfile
-    : undefined;
+  return getTasteOfCherryFilmHistoryProfile(scenarioId)
+    ?? (scenarioId === whereIsTheFriendsHouseFilmHistoryProfile.scenarioId
+      ? whereIsTheFriendsHouseFilmHistoryProfile
+      : undefined);
 }
 
 export function getWhereIsTheFriendsHouseDonorScenarioIds(
   profile: FilmHistoryProfile,
 ): readonly string[] | undefined {
-  return profile.scenarioId === whereIsTheFriendsHouseFilmHistoryProfile.scenarioId
-    ? whereIsTheFriendsHouseDonorScenarioIds
-    : undefined;
+  return getTasteOfCherryDonorScenarioIds(profile)
+    ?? (profile.scenarioId === whereIsTheFriendsHouseFilmHistoryProfile.scenarioId
+      ? whereIsTheFriendsHouseDonorScenarioIds
+      : undefined);
 }
