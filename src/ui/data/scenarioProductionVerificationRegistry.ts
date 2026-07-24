@@ -53,6 +53,7 @@ import { forrestGumpVerificationRecords } from "./scenarioProductionVerification
 import { satantangoVerificationRecords } from "./scenarioProductionVerificationSatantango";
 import { antoniasLineVerificationRecords } from "./scenarioProductionVerificationAntoniasLine";
 import { beforeSunriseVerificationRecords } from "./scenarioProductionVerificationBeforeSunrise";
+import { clockersVerificationRecords } from "./scenarioProductionVerificationClockers";
 import { whereIsTheFriendsHouseVerificationRecords } from "./scenarioProductionVerificationWhereFriendsHouse";
 import { intimateFestivalBodyCareVerificationRecords } from "./scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch";
 import { japaneseAmbiguityDialogueVerificationRecords } from "./scenarioProductionVerificationJapaneseAmbiguityDialogueBatch";
@@ -105,6 +106,7 @@ const additionalVerificationRecords = [
   ...satantangoVerificationRecords,
   ...antoniasLineVerificationRecords,
   ...beforeSunriseVerificationRecords,
+  ...clockersVerificationRecords,
   ...whereIsTheFriendsHouseVerificationRecords,
   ...americanIndependentBreakthroughsVerificationRecords,
   ...americanIndependentGenreResourcefulnessVerificationRecords,
