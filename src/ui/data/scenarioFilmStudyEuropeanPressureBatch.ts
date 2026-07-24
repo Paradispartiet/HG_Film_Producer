@@ -14,6 +14,10 @@ import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 import { dogtoothFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPressureDogtooth";
 import { huntFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPressureHunt";
+import {
+  getLaHaineDonorScenarioIds,
+  getLaHaineFilmHistoryProfile,
+} from "./scenarioFilmStudyEuropeanPressureLaHaineCatalog";
 import { measureOfAManFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPressureMeasure";
 import { revancheFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPressureRevanche";
 
@@ -66,7 +70,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 }
 
 export function getEuropeanPressureFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return europeanPressureProfiles[scenarioId as keyof typeof europeanPressureProfiles];
+  return getLaHaineFilmHistoryProfile(scenarioId)
+    ?? europeanPressureProfiles[scenarioId as keyof typeof europeanPressureProfiles];
 }
 
 export function resolveEuropeanPressureFilmStudyMap(
@@ -104,30 +109,43 @@ function hashString(value: string): number {
 export function createEuropeanPressureFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
-  const donors = Object.values(europeanPressureProfiles)
+  const laHaineDonorIds = getLaHaineDonorScenarioIds(profile);
+  const priorityDonors = laHaineDonorIds?.map(
+    (scenarioId) => europeanPressureProfiles[scenarioId as keyof typeof europeanPressureProfiles],
+  ).filter(Boolean) as readonly FilmHistoryProfile[] | undefined;
+  const donors = priorityDonors ?? Object.values(europeanPressureProfiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const matchFeedback = laHaineDonorIds
+    ? "This matches the documented relationship between police violence, banlieue social pressure, twenty-four-hour structure, local preparation, black-and-white 35mm, shifting camera scale, countdown editing, environmental music and offscreen sound."
+    : "This connects the film's social pressure directly to its documented historical position, production conditions, performance system and image strategy.";
+  const partialFeedback = laHaineDonorIds
+    ? "This is another real European social-pressure system, but it organizes labor procedure, rural criminal consequence or community accusation through a different relationship between location, performance, camera duration and institutional power."
+    : "This is a real European system for staging social pressure, but it belongs to another relationship between realism, allegory, genre and production method.";
+  const missFeedback = laHaineDonorIds
+    ? "This places the film inside the wrong relationship between banlieue preparation, minority youth ensemble, wide-versus-long-lens geography, hip-hop environment, clock rhythm, gunshot punctuation and fatal police escalation."
+    : "This places the film inside the wrong historical balance of institution, performance, camera restraint and narrative form.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This connects the film's social pressure directly to its documented historical position, production conditions, performance system and image strategy.",
+      feedback: matchFeedback,
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real European system for staging social pressure, but it belongs to another relationship between realism, allegory, genre and production method.",
+      feedback: partialFeedback,
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This places the film inside the wrong historical balance of institution, performance, camera restraint and narrative form.",
+      feedback: missFeedback,
     }] : []),
   ];
 }
