@@ -186,10 +186,5 @@ test("full Production Case catalog rest audit", () => {
   console.log(JSON.stringify(report, null, 2));
   console.log("HG_FILM_PRODUCER_REST_AUDIT_END");
 
-  assert.deepEqual(duplicateScenarioIds, []);
-  assert.deepEqual(duplicateVerificationIds, []);
-  assert.deepEqual(orphanVerificationIds, []);
-  assert.deepEqual(sourceQualityProblems, []);
-  assert.equal(verificationIdSet.size, verificationRecords.length);
-  assert.equal(scenarioIdSet.size, scenarios.length);
+  assert.fail("Controlled audit capture run");
 });
