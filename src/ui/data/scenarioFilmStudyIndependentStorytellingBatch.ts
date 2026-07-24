@@ -25,6 +25,10 @@ import {
   getDownByLawFilmHistoryProfile,
 } from "./scenarioFilmStudyIndependentStorytellingDownByLawCatalog";
 import {
+  getRequiemForADreamFilmHistoryDonors,
+  getRequiemForADreamFilmHistoryProfile,
+} from "./scenarioFilmStudyAddictionBodyMontageRequiemCatalog";
+import {
   getTheStraightStoryFilmHistoryDonors,
   getTheStraightStoryFilmHistoryProfile,
 } from "./scenarioFilmStudyAmericanRegionalStraightStoryCatalog";
@@ -69,7 +73,8 @@ import { getProductionCaseVerification } from "./scenarioProductionVerificationR
 
 type ResolvedIndependentStorytellingProfileGroup =
   | IndependentStorytellingProfileGroup
-  | "social_realism_labor_body";
+  | "social_realism_labor_body"
+  | "addiction_body_montage";
 
 type SpecialChoiceSystem = {
   readonly donors: readonly FilmHistoryProfile[];
@@ -128,7 +133,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return getTheStraightStoryFilmHistoryProfile(scenarioId)
+  return getRequiemForADreamFilmHistoryProfile(scenarioId)
+    ?? getTheStraightStoryFilmHistoryProfile(scenarioId)
     ?? getRosettaFilmHistoryProfile(scenarioId)
     ?? getEyesWideShutFilmHistoryProfile(scenarioId)
     ?? getBeingJohnMalkovichFilmHistoryProfile(scenarioId)
@@ -195,6 +201,7 @@ function partialFeedback(group: ResolvedIndependentStorytellingProfileGroup): st
     asian_transnational_urban_identity: "This is a real Asian transnational urban-identity system, but it organizes migration, labour, romance, surveillance, time and belonging differently.",
     japanese_ambiguity_dialogue: "This is a real Japanese ambiguity-and-dialogue production system, but it organizes hypnosis, coincidence, institutional viewpoint, environmental procedure, performance and sound differently.",
     social_realism_labor_body: "This is another real social-realist labour-and-body system, but it organizes work, exclusion, physical procedure, moral choice, camera proximity and environmental sound differently.",
+    addiction_body_montage: "This is another real addiction, bodily-crisis or subjective-montage system, but it organizes parallel compulsion, repeated ritual images, seasonal collapse, body-mounted camera, effects, music and designed sound differently.",
   };
   return feedback[group];
 }
@@ -219,11 +226,22 @@ function missFeedback(group: ResolvedIndependentStorytellingProfileGroup): strin
     asian_transnational_urban_identity: "This places the film inside the wrong relationship between Asian city, displacement, divided identity, social systems and return.",
     japanese_ambiguity_dialogue: "This places the film inside the wrong Japanese relationship between uncertainty, conversation, institutional pressure, landscape and moral interpretation.",
     social_realism_labor_body: "This places the film inside the wrong relationship between labour exclusion, bodily survival, social belonging, documentary-derived staging, mobile camera, cutting and practical sound.",
+    addiction_body_montage: "This places the film inside the wrong relationship between parallel addiction, bodily deterioration, seasonal colour, repeated ritual montage, subjective camera, aggressive editing, designed sound, music and low-cost effects.",
   };
   return feedback[group];
 }
 
 function getSpecialChoiceSystem(profile: FilmHistoryProfile): SpecialChoiceSystem | undefined {
+  const requiemForADreamDonors = getRequiemForADreamFilmHistoryDonors(profile);
+  if (requiemForADreamDonors) return {
+    donors: requiemForADreamDonors,
+    group: "addiction_body_montage",
+    forceStart: true,
+    match: "This matches the documented production relationship among Aronofsky and Selby's four-character addiction adaptation, Artisan and Protozoa independent production, Coney Island locations, Libatique's seasonal 35 mm and practical-light system, Chinlund's red-withholding design, bodily performance, Rabinowitz's hip-hop montage, Emrich's production-integrated sound, Mansell and Kronos Quartet music and Amoeba Proteus effects.",
+    partial: "This is another real addiction, sensory-body or music-driven montage system, but it does not combine four parallel compulsions, repeated ritual inserts, seasonal colour decline, split screen, SnorriCam, accelerating cross-cutting, electronic strings and low-cost subjective effects in the same way.",
+    miss: "This places the film inside the wrong relationship between independent addiction adaptation, ensemble bodily collapse, 35 mm seasonal design, body-mounted camera, repeated audiovisual ritual, editorial acceleration, sound, music and integrated effects.",
+  };
+
   const straightStoryDonors = getTheStraightStoryFilmHistoryDonors(profile);
   if (straightStoryDonors) return {
     donors: straightStoryDonors,
