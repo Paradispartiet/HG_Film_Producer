@@ -25,6 +25,10 @@ import {
   getDownByLawFilmHistoryProfile,
 } from "./scenarioFilmStudyIndependentStorytellingDownByLawCatalog";
 import {
+  getTheBigLebowskiFilmHistoryDonors,
+  getTheBigLebowskiFilmHistoryProfile,
+} from "./scenarioFilmStudyAmericanGenreBigLebowskiCatalog";
+import {
   getClerksFilmHistoryDonors,
   getClerksFilmHistoryProfile,
 } from "./scenarioFilmStudyAmericanGenreClerksCatalog";
@@ -95,7 +99,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return getBuffalo66FilmHistoryProfile(scenarioId)
+  return getTheBigLebowskiFilmHistoryProfile(scenarioId)
+    ?? getBuffalo66FilmHistoryProfile(scenarioId)
     ?? getTheGameFilmHistoryProfile(scenarioId)
     ?? getLeavingLasVegasFilmHistoryProfile(scenarioId)
     ?? getAntoniasLineFilmHistoryProfile(scenarioId)
@@ -186,6 +191,7 @@ function missFeedback(group: IndependentStorytellingProfileGroup): string {
 export function createIndependentStorytellingFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const theBigLebowskiDonors = getTheBigLebowskiFilmHistoryDonors(profile);
   const buffalo66Donors = getBuffalo66FilmHistoryDonors(profile);
   const theGameDonors = getTheGameFilmHistoryDonors(profile);
   const leavingLasVegasDonors = getLeavingLasVegasFilmHistoryDonors(profile);
@@ -193,16 +199,19 @@ export function createIndependentStorytellingFilmHistoryChoices(
   const clerksDonors = getClerksFilmHistoryDonors(profile);
   const downByLawDonors = getDownByLawFilmHistoryDonors(profile);
   const priorityDonors = getPriorityIndieFinalDonors(profile);
-  const group: IndependentStorytellingProfileGroup = buffalo66Donors
-    ? "american_regional_identity_place_belonging"
-    : theGameDonors
-      ? "subjective_enclosure_performance"
-      : leavingLasVegasDonors
-        ? "american_precarity_body_care"
-        : antoniasLineDonors
-          ? "family_performance_grief_power"
-          : getIndependentStorytellingProfileGroup(profile.scenarioId);
-  const donors = buffalo66Donors
+  const group: IndependentStorytellingProfileGroup = theBigLebowskiDonors
+    ? "american_independent_genre_resourcefulness"
+    : buffalo66Donors
+      ? "american_regional_identity_place_belonging"
+      : theGameDonors
+        ? "subjective_enclosure_performance"
+        : leavingLasVegasDonors
+          ? "american_precarity_body_care"
+          : antoniasLineDonors
+            ? "family_performance_grief_power"
+            : getIndependentStorytellingProfileGroup(profile.scenarioId);
+  const donors = theBigLebowskiDonors
+    ?? buffalo66Donors
     ?? theGameDonors
     ?? leavingLasVegasDonors
     ?? antoniasLineDonors
@@ -210,9 +219,12 @@ export function createIndependentStorytellingFilmHistoryChoices(
     ?? downByLawDonors
     ?? priorityDonors
     ?? getIndependentStorytellingDonors(profile);
-  const start = buffalo66Donors || theGameDonors ? 0 : hashString(profile.scenarioId);
+  const start = theBigLebowskiDonors || buffalo66Donors || theGameDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const theBigLebowskiMatch = "This matches the documented production relationship among the Coens' deliberately useless detective, Working Title and PolyGram production, Los Angeles architecture, bowling ritual, Roger Deakins's 35 mm image, Rick Heinrichs's design, Mary Zophres's costumes, ensemble dialogue, subjective editing, Skip Lievsay's sound, source-shaped music and elaborate fantasy effects.";
+  const theBigLebowskiPartial = "This is another real Coen, American independent genre or subjective-comedy system, but it does not turn a Chandler-like investigation, bowling friendship, Los Angeles social types, bright contemporary photography, dream choreography and music from the Dude's cultural memory into the same post-noir machine.";
+  const theBigLebowskiMiss = "This places the film inside the wrong relationship between post-noir genre revision, Los Angeles location architecture, ensemble absurdism, bowling design, 35 mm realism, character costume, layered sound, source-shaped music and authored fantasy effects.";
   const buffalo66Match = "This matches the documented production relationship among Gallo and Bagnall's autobiographical Buffalo screenplay, a compact local shoot, tightly scripted performance, 35 mm reversal stock, precisely art-directed colour, regional interiors, abrupt memory and fantasy editing, subtle musical numbers and the frozen subjective gunshot tableau.";
   const buffalo66Partial = "This is another real American regional, performed-identity or music-city production system, but it does not combine a false marriage, hostile family homecoming, football grievance, exact reversal exposure, abrasive writer-director-star performance and musical fantasy in the same way.";
   const buffalo66Miss = "This places the film inside the wrong relationship between autobiographical regional production, Buffalo social memory, scripted performance, reversal-stock colour, designed interiors, music, romantic fantasy and subjective effects.";
@@ -233,49 +245,55 @@ export function createIndependentStorytellingFilmHistoryChoices(
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: buffalo66Donors
-        ? buffalo66Match
-        : theGameDonors
-          ? theGameMatch
-          : leavingLasVegasDonors
-            ? leavingLasVegasMatch
-            : "This connects the film's historical position directly to its documented relationship between place, narrative structure, image system, media form and production method.",
+      feedback: theBigLebowskiDonors
+        ? theBigLebowskiMatch
+        : buffalo66Donors
+          ? buffalo66Match
+          : theGameDonors
+            ? theGameMatch
+            : leavingLasVegasDonors
+              ? leavingLasVegasMatch
+              : "This connects the film's historical position directly to its documented relationship between place, narrative structure, image system, media form and production method.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: buffalo66Donors
-        ? buffalo66Partial
-        : theGameDonors
-          ? theGamePartial
-          : leavingLasVegasDonors
-            ? leavingLasVegasPartial
-            : clerksDonors
-              ? clerksPartial
-              : downByLawDonors
-                ? downByLawPartial
-                : priorityDonors
-                  ? priorityPartial
-                  : partialFeedback(group),
+      feedback: theBigLebowskiDonors
+        ? theBigLebowskiPartial
+        : buffalo66Donors
+          ? buffalo66Partial
+          : theGameDonors
+            ? theGamePartial
+            : leavingLasVegasDonors
+              ? leavingLasVegasPartial
+              : clerksDonors
+                ? clerksPartial
+                : downByLawDonors
+                  ? downByLawPartial
+                  : priorityDonors
+                    ? priorityPartial
+                    : partialFeedback(group),
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: buffalo66Donors
-        ? buffalo66Miss
-        : theGameDonors
-          ? theGameMiss
-          : leavingLasVegasDonors
-            ? leavingLasVegasMiss
-            : clerksDonors
-              ? clerksMiss
-              : downByLawDonors
-                ? downByLawMiss
-                : priorityDonors
-                  ? priorityMiss
-                  : missFeedback(group),
+      feedback: theBigLebowskiDonors
+        ? theBigLebowskiMiss
+        : buffalo66Donors
+          ? buffalo66Miss
+          : theGameDonors
+            ? theGameMiss
+            : leavingLasVegasDonors
+              ? leavingLasVegasMiss
+              : clerksDonors
+                ? clerksMiss
+                : downByLawDonors
+                  ? downByLawMiss
+                  : priorityDonors
+                    ? priorityMiss
+                    : missFeedback(group),
     }] : []),
   ];
 }
