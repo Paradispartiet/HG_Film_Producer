@@ -36,6 +36,7 @@ import { europeanReligiousMoralVerificationRecords } from "./scenarioProductionV
 import { europeanPressureVerificationRecords } from "./scenarioProductionVerificationEuropeanPressureBatch";
 import { europeanTimeIdentityVerificationRecords } from "./scenarioProductionVerificationEuropeanTimeIdentitySystemsBatch";
 import { familyPerformanceGriefPowerVerificationRecords } from "./scenarioProductionVerificationFamilyPerformanceGriefPowerBatch";
+import { final1970sVerificationRecords } from "./scenarioProductionVerificationFinal1970sBatch";
 import { festivalJourneyDisplacementVerificationRecords } from "./scenarioProductionVerificationFestivalJourneyDisplacementSystemsBatch";
 import { festivalUrbanIntimacyVerificationRecords } from "./scenarioProductionVerificationFestivalUrbanIntimacySystemsBatch";
 import { hongKongTaiwanUrbanTimeVerificationRecords } from "./scenarioProductionVerificationHongKongTaiwanUrbanTimeBatch";
@@ -96,6 +97,7 @@ const additionalVerificationRecords = [
   ...asianLandscapeGriefAttentionVerificationRecords,
   ...subjectiveEnclosurePerformanceVerificationRecords,
   ...familyPerformanceGriefPowerVerificationRecords,
+  ...final1970sVerificationRecords,
   ...bodyArchiveRestitutionPerspectiveVerificationRecords,
   ...queerIndependentBodyCommunityArchiveVerificationRecords,
   ...americanPrecarityBodyCareVerificationRecords,
