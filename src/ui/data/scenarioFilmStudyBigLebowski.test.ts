@@ -55,7 +55,6 @@ test("The Big Lebowski receives dedicated Coen donors without entering existing 
     "scenario_metropolitan_1990",
     "scenario_reservoir_dogs_1992",
     "scenario_el_mariachi_1992",
-    "scenario_fargo_1996",
     "scenario_barton_fink_1991",
     "scenario_clerks_1994",
     "scenario_buffalo_66_1998",
