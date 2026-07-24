@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const pariahFilmHistoryProfile = {
+  scenarioId: "scenario_pariah_2011",
+  period: "Early-2010s Black queer independent coming-of-age cinema and Brooklyn identity filmmaking",
+  traditions: ["Black independent cinema", "Queer coming-of-age cinema", "Poetic urban realism"],
+  before: "American coming-out narratives often treated identity as a single disclosure problem, while Black queer teenage life, family complexity and gender presentation remained comparatively marginal in feature distribution.",
+  moment: "Dee Rees expands her short into a Brooklyn feature organized around Alike's movement among home, school, club space, friendship and private poetry, with Bradford Young's color and lighting, Mako Kamitsuna's editing and costume changes making code-switching physically legible.",
+  after: "The film's 2011 Sundance cinematography award, Focus Features release, Independent Spirit recognition and later National Film Registry selection established it as a landmark of Black queer authorship and independent coming-of-age form.",
+  historyQuestion: "Which production system explains a Brooklyn coming-of-age film where poetry, clothing, color-coded spaces, family performance and a young woman's movement between social worlds turn identity into an active process of self-authorship?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Focus, AFI and BFI identify the film as Dee Rees's 2011 feature debut and a landmark centered explicitly on a Black lesbian teenager's life in Brooklyn." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and AFI position the film within Black queer independent cinema while distinguishing its complex family portrait from a simplified coming-out template." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Northstar Pictures, aid+abet and Sundial Pictures, Focus Features distribution, Adrienne Shelly Foundation support and Spike Lee's executive-producer role." },
+    { area: "reception_and_legacy", status: "source_verified", note: "AFI records the Sundance Excellence in Cinematography Award and Independent Spirit recognition; institutional sources later identify the film as a durable landmark." },
+    { area: "screenplay", status: "source_verified", note: "AFI and Focus credit Dee Rees and describe a structure built from interstitial Brooklyn spaces, family pressure, friendship, poetry and choices about self-definition." },
+    { area: "directing", status: "source_verified", note: "Rees expands material first developed as an NYU short, keeping the feature centered on Alike's behavior and refusing to reduce sexuality, spirituality and gender identity to one binary decision." },
+    { area: "performance", status: "source_verified", note: "Focus and AFI identify Adepero Oduye and returning short-film performers; family and peer scenes depend on small shifts in dress, speech, posture and guardedness." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Inbal Weinberg; home interiors, school, streets, buses and queer nightlife create distinct social environments through which Alike repeatedly changes presentation." },
+    { area: "costume_makeup", status: "source_verified", note: "AFI's production discussion foregrounds clothing as a visible identity system, especially Alike's changes before returning home and the tension between imposed and chosen presentation." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Bradford Young, and both AFI and ASC record his 2011 Sundance Excellence in Cinematography Award for the film." },
+    { area: "lighting", status: "source_verified", note: "BFI emphasizes the film's vivid club opening and expressive image system; contrasting warmth, saturation and domestic restraint differentiate Alike's social worlds." },
+    { area: "camera_format", status: "mapped", note: "The inspected institutional sources document a colour production and Bradford Young's authorship but do not provide a complete authoritative capture-format specification." },
+    { area: "editing", status: "source_verified", note: "AFI credits Mako Kamitsuna; the editing accumulates concealment and expression across recurring spaces rather than treating identity as a single revelation scene." },
+    { area: "sound_design", status: "mapped", note: "Household speech, club ambience, street noise and silence shape social pressure, although the inspected sources do not fully document the sound-postproduction team." },
+    { area: "music", status: "source_verified", note: "AFI credits Sparlha Swa, Tamar-Kali and MBK Entertainment; club tracks, poetry and household listening distinguish public belonging, private voice and family expectation." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on performance, location, color, costume, editing and music rather than animation or visual-effects spectacle." },
+    { area: "documentary_method", status: "mapped", note: "The film uses location realism and autobiographical knowledge, but its social worlds are organized through scripted dramatic construction rather than documentary testimony." },
+  ],
+} as const satisfies FilmHistoryProfile;

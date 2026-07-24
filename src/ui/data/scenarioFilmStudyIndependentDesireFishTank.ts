@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const fishTankFilmHistoryProfile = {
+  scenarioId: "scenario_fish_tank_2009",
+  period: "Late-2000s British social realism, embodied coming-of-age cinema and poetic regional observation",
+  traditions: ["British social realism", "Coming-of-age cinema", "Contemporary independent cinema"],
+  before: "British social realism had long used working-class locations and non-professional performance, but contemporary digital-era production increasingly combined that inheritance with more subjective framing and lyrical sensory detail.",
+  moment: "Andrea Arnold keeps the film close to Mia's body and social environment through a 1.33:1 frame, lived-in Essex locations, newcomer Katie Jarvis, Robbie Ryan's cinematography, partly improvised performance and a soundtrack built from music, breath, argument and housing-estate ambience.",
+  after: "Its 2009 Cannes Jury Prize and continuing institutional circulation established the film as a central model for contemporary British realism that joins material social pressure to intensely cinematic color, movement, music and physical viewpoint.",
+  historyQuestion: "Which production system explains a 1.33:1 British coming-of-age film where a newcomer, lived-in locations, bodily camera proximity, partial improvisation and charged music turn social realism into Mia's immediate sensory world?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes, Criterion and BFI situate the film in 2009 British social realism and identify its Jury Prize, Essex setting and contemporary coming-of-age focus." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Criterion connect Arnold to British social-realist traditions while stressing her fusion of authenticity, poetic image-making and embodied subjectivity." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion and Cannes credit Kees Kasander, Nick Laws, BBC Films and Ruby Films personnel and document the principal creative departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the 2009 Jury Prize, while Criterion and BFI present the feature as a defining arrival for Andrea Arnold's contemporary British cinema." },
+    { area: "screenplay", status: "source_verified", note: "Cannes and Criterion credit Andrea Arnold; BFI describes a coming-of-age structure that reveals danger through behavior, attraction and gradually disclosed social information." },
+    { area: "directing", status: "source_verified", note: "BFI describes Arnold's mixture of professional and non-professional actors, partly scripted and partly improvised scenes and genuinely lived-in environments." },
+    { area: "performance", status: "source_verified", note: "Criterion foregrounds newcomer Katie Jarvis, while BFI emphasizes Arnold's method of combining non-professional presence with experienced performers inside unstable family relationships." },
+    { area: "production_design", status: "source_verified", note: "Cannes and Criterion credit Helen Scott; flats, stairwells, wasteland, roads and domestic rooms keep aspiration and confinement materially visible." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion credits Jane Petrie and Marese Langan; clothing, dance wear, casual family styling and unglamorous physical continuity define age, class and social self-presentation." },
+    { area: "cinematography", status: "source_verified", note: "Cannes and Criterion credit Robbie Ryan, while BFI describes a tactile visual fusion that makes the housing estate feel observed and sensorial rather than merely recorded." },
+    { area: "lighting", status: "source_verified", note: "The institutional analyses emphasize naturalistic interiors, summer exteriors and poetic color that preserve lived realism while giving Mia's experience heightened intensity." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the colour feature in a 1.33:1 presentation and a director-approved transfer preserving its unusually narrow contemporary frame." },
+    { area: "editing", status: "source_verified", note: "Cannes and Criterion credit Nicolas Chaudeurge; the cutting maintains physical proximity and present-tense behavior while allowing attraction, danger and escape fantasies to change direction abruptly." },
+    { area: "sound_design", status: "source_verified", note: "Cannes and Criterion credit Rashad Omar and Joakim Sundström; breath, arguments, traffic, household noise and open exterior ambience remain close to Mia's changing attention." },
+    { area: "music", status: "source_verified", note: "Criterion credits Liz Gallacher and highlights music as a major emotional system, especially dance tracks and recurring songs tied to longing, performance and connection." },
+    { area: "effects_animation", status: "not_central", note: "The production relies on performance, location, practical action, camera proximity and sound rather than animation or visual-effects spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "BFI's account of non-professional casting, partial improvisation and genuinely lived-in environments shows documentary-derived methods operating inside a scripted fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;

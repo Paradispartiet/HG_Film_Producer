@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const theSouvenirFilmHistoryProfile = {
+  scenarioId: "scenario_the_souvenir_2019",
+  period: "Late-2010s British autobiographical art cinema, memory reconstruction and artist-formation drama",
+  traditions: ["British art cinema", "Autobiographical fiction", "Memory cinema"],
+  before: "Autobiographical film often relied on direct confession or retrospective explanation, while Joanna Hogg's earlier work had already developed a restrained architectural realism built from distance, duration and incomplete social knowledge.",
+  moment: "Hogg reconstructs an unequal 1980s relationship through a novella-like scenario, improvised dialogue, grainy film texture, still wide compositions, a mutable Knightsbridge flat, elliptical editing and music that lets Julie's incomplete understanding become the film's form.",
+  after: "Its 2019 Sundance World Cinema Grand Jury Prize, Berlinale selection and continuation in The Souvenir Part II made the film a major contemporary example of autobiography transformed through performance, production design, omission and artistic self-examination.",
+  historyQuestion: "Which production system explains an autobiographical 1980s chamber film where improvised dialogue, grainy images, a carefully rebuilt flat, elliptical memory and a student's emerging artistic voice turn incomplete knowledge into form?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "A24, British Council, Sundance and BFI identify the film as Joanna Hogg's 2019 autobiographical portrait of a film student in early-1980s Britain." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI describes the film as a self-portrait and British art-cinema chamber work shaped by memory, ellipsis, architectural attention and a portrait-of-the-artist tradition." },
+    { area: "industry_and_production_context", status: "source_verified", note: "British Council records JWH Films, BBC Films, BFI and Sikelia support, Joanna Hogg and Luke Schiller as producers and Martin Scorsese among the executive producers." },
+    { area: "reception_and_legacy", status: "source_verified", note: "British Council and Sundance record the 2019 World Cinema Grand Jury Prize and Berlinale selection, followed by the film's continuation in a second feature." },
+    { area: "screenplay", status: "source_verified", note: "A24 and British Council credit Hogg, while BFI reports that she worked from a novella-like summary rather than a conventional dialogue script." },
+    { area: "directing", status: "source_verified", note: "Hogg directs retrospective experience without explanatory voice-over, allowing Julie's partial knowledge, class position and artistic uncertainty to organize the spectator's understanding." },
+    { area: "performance", status: "source_verified", note: "A24 and BFI foreground Honor Swinton Byrne's debut, Tom Burke and Tilda Swinton; improvised dialogue creates conversational spontaneity inside carefully controlled frames." },
+    { area: "production_design", status: "source_verified", note: "British Council credits Stéphane Collonge, and BFI analyzes the flat's shift from workspace and refuge to love nest and prison through subtle period reconstruction." },
+    { area: "costume_makeup", status: "source_verified", note: "BFI discusses Anthony's shaping of Julie through clothing and period taste, while the film's costume system turns class, influence and romantic self-invention into visible dramatic information." },
+    { area: "cinematography", status: "source_verified", note: "British Council and BFI credit David Raedeker; still wide shots, sparing close-ups, reflections and grainy texture allow body language and remembered detail to remain active within the frame." },
+    { area: "lighting", status: "source_verified", note: "BFI describes a cool, classical visual style using restrained interiors, windows, muted rooms and carefully held compositions rather than expressive lighting spectacle." },
+    { area: "camera_format", status: "source_verified", note: "BFI records Raedeker's use of grainy film stock to evoke the medium through which Hogg and Julie learned filmmaking, making material texture part of the period reconstruction." },
+    { area: "editing", status: "source_verified", note: "British Council credits Helle le Fevre; the film uses gaps, fragments and delayed recognition to recreate the incomplete understanding of living through the relationship." },
+    { area: "sound_design", status: "source_verified", note: "British Council credits Jovan Ajder; subdued speech, domestic quiet, offscreen absence and room ambience keep the chamber drama intimate and unstable." },
+    { area: "music", status: "source_verified", note: "BFI identifies carefully chosen songs and opera, including period tracks and Bluebeard's Castle, as emotional and interpretive counterpoints within Hogg's unusually music-rich design." },
+    { area: "effects_animation", status: "not_central", note: "The production relies on reconstruction, performance, film texture, architecture, editing and sound rather than animation or visual-effects spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "The film transforms Hogg's lived history through reconstruction and improvisation, retaining documentary-like behavioral uncertainty while openly shaping memory as fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;

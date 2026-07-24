@@ -35,6 +35,10 @@ import { daysOfBeingWildFilmHistoryProfile } from "./scenarioFilmStudyEastAsianD
 import { goodbyeDragonInnFilmHistoryProfile } from "./scenarioFilmStudyEastAsianGoodbyeDragonInn";
 import { millenniumMamboFilmHistoryProfile } from "./scenarioFilmStudyEastAsianMillenniumMambo";
 import { viveLAmourFilmHistoryProfile } from "./scenarioFilmStudyEastAsianViveLAmour";
+import { fishTankFilmHistoryProfile } from "./scenarioFilmStudyIndependentDesireFishTank";
+import { pariahFilmHistoryProfile } from "./scenarioFilmStudyIndependentDesirePariah";
+import { poisonFilmHistoryProfile } from "./scenarioFilmStudyIndependentDesirePoison";
+import { theSouvenirFilmHistoryProfile } from "./scenarioFilmStudyIndependentDesireTheSouvenir";
 import { americanSplendorFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingAmericanSplendor";
 import { daughtersOfTheDustFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingDaughtersOfTheDust";
 import { killerOfSheepFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingKillerOfSheep";
@@ -82,6 +86,7 @@ export type IndependentStorytellingProfileGroup =
   | "queer_independent_body_community_archive"
   | "american_precarity_body_care"
   | "american_independent_genre_resourcefulness"
+  | "independent_desire_identity_authorship"
   | "asian_transnational_urban_identity"
   | "japanese_ambiguity_dialogue";
 
@@ -146,6 +151,10 @@ const profiles = [
   metropolitanFilmHistoryProfile,
   reservoirDogsFilmHistoryProfile,
   elMariachiFilmHistoryProfile,
+  poisonFilmHistoryProfile,
+  fishTankFilmHistoryProfile,
+  pariahFilmHistoryProfile,
+  theSouvenirFilmHistoryProfile,
   cycloFilmHistoryProfile,
   happyTogetherFilmHistoryProfile,
   infernalAffairsFilmHistoryProfile,
@@ -237,6 +246,12 @@ assignGroup("american_independent_genre_resourcefulness", [
   metropolitanFilmHistoryProfile.scenarioId,
   reservoirDogsFilmHistoryProfile.scenarioId,
   elMariachiFilmHistoryProfile.scenarioId,
+]);
+assignGroup("independent_desire_identity_authorship", [
+  poisonFilmHistoryProfile.scenarioId,
+  fishTankFilmHistoryProfile.scenarioId,
+  pariahFilmHistoryProfile.scenarioId,
+  theSouvenirFilmHistoryProfile.scenarioId,
 ]);
 assignGroup("asian_transnational_urban_identity", [
   cycloFilmHistoryProfile.scenarioId,
