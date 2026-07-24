@@ -1,77 +1,44 @@
 import assert from "node:assert/strict";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
 
-function transformFile(relativePath: string, replacements: readonly [string, string][]): void {
-  const sourcePath = path.join(process.cwd(), relativePath);
-  let source = readFileSync(sourcePath, "utf8");
-  for (const [before, after] of replacements) {
-    assert.ok(source.includes(before), `${relativePath}: missing transform anchor ${before}`);
-    source = source.replace(before, after);
-  }
-  const outputPath = path.join(process.cwd(), "verify-v0.1-diagnostics", relativePath);
-  mkdirSync(path.dirname(outputPath), { recursive: true });
-  writeFileSync(outputPath, source, "utf8");
-  console.log(`FINAL1970S_FILE:${Buffer.from(relativePath, "utf8").toString("base64")}:${Buffer.from(source, "utf8").toString("base64")}:FINAL1970S_FILE_END`);
-}
+const completedScenarioIds = new Set([
+  "scenario_a_clockwork_orange_1971",
+  "scenario_amarcord_1973",
+  "scenario_scenes_from_a_marriage_1974",
+]);
 
-test("capture deterministic final 1970s integration", () => {
-  transformFile("src/ui/data/scenarioFilmStudyConstructedWorldsBatch.ts", [
-    [
-      'import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";\n',
-      'import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";\nimport { aClockworkOrangeFilmHistoryProfile } from "./scenarioFilmStudyConstructedWorldsClockworkOrange";\n',
-    ],
-    [
-      "const constructedWorldsProfiles = {\n",
-      "const constructedWorldsProfiles = {\n  [aClockworkOrangeFilmHistoryProfile.scenarioId]: aClockworkOrangeFilmHistoryProfile,\n",
-    ],
-  ]);
+test("capture updated Production Case rest audit after closing the 1970s", () => {
+  const sourcePath = path.join(process.cwd(), "docs", "PRODUCTION_CASE_REST_AUDIT.md");
+  let source = readFileSync(sourcePath, "utf8")
+    .replace("| Source-verified Production Cases | 254 |", "| Source-verified Production Cases | 257 |")
+    .replace("| Remaining unverified Production Cases | 124 |", "| Remaining unverified Production Cases | 121 |")
+    .replace("| Source-backed Film Study profiles | 254 |", "| Source-backed Film Study profiles | 257 |")
+    .replace("| Scenarios without source-backed profile | 124 |", "| Scenarios without source-backed profile | 121 |")
+    .replace("all 254 verified records and profiles", "all 257 verified records and profiles")
+    .replace("| `film_scenarios_seed.json` | 109 |", "| `film_scenarios_seed.json` | 107 |")
+    .replace("| `italyFranceGermanyBeneluxExpansion.ts` | 11 |", "| `italyFranceGermanyBeneluxExpansion.ts` | 10 |")
+    .replace("| 1970s | 3 |\n", "")
+    .replace("| Drama | 110 |", "| Drama | 108 |")
+    .replace("| Crime | 32 |", "| Crime | 31 |")
+    .replace("| Comedy | 30 |", "| Comedy | 29 |")
+    .replace("| Thriller | 26 |", "| Thriller | 24 |")
+    .replace("| Sci-Fi | 6 |", "| Sci-Fi | 5 |");
 
-  transformFile("src/ui/data/scenarioFilmStudyEuropeanPoeticMemorySystemsBatch.ts", [
-    [
-      'import { doubleLifeOfVeroniqueFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryDoubleLifeVeronique";\n',
-      'import { amarcordFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryAmarcord";\nimport { doubleLifeOfVeroniqueFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryDoubleLifeVeronique";\n',
-    ],
-    [
-      "const profiles = {\n",
-      "const profiles = {\n  [amarcordFilmHistoryProfile.scenarioId]: amarcordFilmHistoryProfile,\n",
-    ],
-  ]);
+  let nextIndex = 1;
+  source = source.split("\n").map((line) => {
+    const match = line.match(/^\|\s*(\d+)\s*\|\s*(\d{4})\s*\|\s*(.*?)\s*\|\s*`(scenario_[^`]+)`\s*\|$/);
+    if (!match) return line;
+    const [, , year, title, scenarioId] = match;
+    if (!year || !title || !scenarioId) return line;
+    if (completedScenarioIds.has(scenarioId)) return "";
+    const updated = `| ${nextIndex} | ${year} | ${title.trim()} | \`${scenarioId}\` |`;
+    nextIndex += 1;
+    return updated;
+  }).filter((line) => line !== "").join("\n");
 
-  transformFile("src/ui/data/scenarioFilmStudyIndependentStorytellingCatalog.ts", [
-    [
-      'import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";\n',
-      'import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";\nimport { scenesFromAMarriageFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceScenesMarriage";\n',
-    ],
-    [
-      "const profiles = [\n",
-      "const profiles = [\n  scenesFromAMarriageFilmHistoryProfile,\n",
-    ],
-    [
-      'assignGroup("family_performance_grief_power", [\n',
-      'assignGroup("family_performance_grief_power", [\n  scenesFromAMarriageFilmHistoryProfile.scenarioId,\n',
-    ],
-  ]);
-
-  transformFile("src/ui/data/scenarioProductionVerificationRegistry.ts", [
-    [
-      'import { familyPerformanceGriefPowerVerificationRecords } from "./scenarioProductionVerificationFamilyPerformanceGriefPowerBatch";\n',
-      'import { familyPerformanceGriefPowerVerificationRecords } from "./scenarioProductionVerificationFamilyPerformanceGriefPowerBatch";\nimport { final1970sVerificationRecords } from "./scenarioProductionVerificationFinal1970sBatch";\n',
-    ],
-    [
-      "  ...familyPerformanceGriefPowerVerificationRecords,\n",
-      "  ...familyPerformanceGriefPowerVerificationRecords,\n  ...final1970sVerificationRecords,\n",
-    ],
-  ]);
-
-  transformFile("src/ui/data/scenarioProductionVerification.test.ts", [
-    [
-      '  ["1970s New York production systems", ["scenario_mean_streets_1973", "scenario_dog_day_afternoon_1975", "scenario_taxi_driver_1976", "scenario_manhattan_1979"], 4],\n',
-      '  ["1970s New York production systems", ["scenario_mean_streets_1973", "scenario_dog_day_afternoon_1975", "scenario_taxi_driver_1976", "scenario_manhattan_1979"], 4],\n  ["final 1970s production systems", ["scenario_a_clockwork_orange_1971", "scenario_amarcord_1973", "scenario_scenes_from_a_marriage_1974"], 4],\n',
-    ],
-    ["const expectedVerifiedCount = 254;", "const expectedVerifiedCount = 257;"],
-  ]);
-
-  assert.fail("Intentional capture run for final 1970s integration files");
+  assert.equal(nextIndex - 1, 121);
+  console.log(`FINAL1970S_AUDIT_BASE64:${Buffer.from(source, "utf8").toString("base64")}:FINAL1970S_AUDIT_BASE64_END`);
+  assert.fail("Intentional capture run for updated Production Case rest audit");
 });
