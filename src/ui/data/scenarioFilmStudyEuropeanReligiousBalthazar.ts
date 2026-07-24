@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const balthazarFilmHistoryProfile = {
+  scenarioId: "scenario_au_hasard_balthazar_1966",
+  period: "1960s French spiritual minimalism, model performance and elliptical moral cinema",
+  traditions: ["Bressonian cinema", "Spiritual modernism", "Fragmentary sound-image construction"],
+  before: "Classical melodrama usually located emotion in expressive acting, explanatory psychology and continuous scenes, while religious allegory often depended on declared symbolism or redemptive spectacle.",
+  moment: "Robert Bresson follows the donkey Balthazar through changing owners while parallel fragments of Marie's life, repeated model performances, isolated hands and objects, ellipsis, offscreen violence, bells, hooves and machinery make moral experience emerge from material actions rather than interpretation.",
+  after: "The film became one of the defining works of Bressonian form and spiritual modernism, providing a lasting model for filmmakers who build profound emotion through withheld performance, fragmented causality and a sound world that reveals what the image refuses to display.",
+  historyQuestion: "Which production system explains why restricted performance, fragments of hands and objects, elliptical cuts, animal presence and offscreen sound create ethical and spiritual force without conventional melodrama?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion and BFI place the 1966 French-Swedish production within Bresson's mature postwar cinema and the wider modernist rejection of expressive dramatic convention." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI identifies the film as a central Bressonian work built from models, fragmentation, ellipsis, spiritual attention and the separation of sound from explanatory image." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion and BFI record the independent French-Swedish production and principal collaborators, including producer Mag Bodard and cinematographer Ghislain Cloquet." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion and BFI document the film's canonical critical standing and its continuing influence on austere, ethical and spiritually attentive cinema." },
+    { area: "screenplay", status: "source_verified", note: "Bresson's episodic screenplay passes Balthazar among owners and parallels the animal's burdens with Marie's life, using omission and recurrence instead of a rescue-driven plot." },
+    { area: "directing", status: "source_verified", note: "BFI's analysis explains Bresson's precise repetition, withholding of conventional emphasis and construction of emotion through small gestures, physical tasks and relations between shots and sounds." },
+    { area: "performance", status: "source_verified", note: "Bresson works with nonprofessional models, including Anne Wiazemsky, restricting expressive display so posture, repetition, contact and the donkey's physical presence carry meaning." },
+    { area: "production_design", status: "source_verified", note: "Criterion and BFI credits identify Pierre Charbonnier and Philippe Dussart; farms, roads, stables, rooms, carts and machinery create a practical world of ownership, work and confinement." },
+    { area: "costume_makeup", status: "mapped", note: "Plain rural clothing and minimally transformed faces support Bresson's refusal of display, but the inspected sources do not provide a detailed costume or makeup workflow." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and BFI credit Ghislain Cloquet; controlled black-and-white frames isolate hands, feet, doors, ropes, objects, bodies and the donkey without turning suffering into spectacle." },
+    { area: "lighting", status: "mapped", note: "Even rural exteriors and restrained interiors preserve tactile surfaces and simple spatial relations, although detailed lighting documentation remains limited." },
+    { area: "camera_format", status: "source_verified", note: "Criterion's restoration documentation preserves the black-and-white 1.66:1 image and its compact fragmentary compositions." },
+    { area: "editing", status: "source_verified", note: "Criterion and BFI credit Raymond Lamy; ellipsis, action fragments and abrupt causal links make viewers reconstruct events and recognise moral patterns without continuous dramatic coverage." },
+    { area: "sound_design", status: "source_verified", note: "BFI foregrounds bells, hooves, doors, machinery, voices and offscreen events; Antoine Archimbaud and Jacques Carrère's sound work supplies actions and violence the image withholds." },
+    { area: "music", status: "source_verified", note: "Criterion documents Schubert and Jean Wiener; the recurring piano sonata enters selectively as a formal and spiritual motif rather than continuous emotional instruction." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on animal handling, physical action, framing, editing and sound rather than visual effects or animation." },
+    { area: "documentary_method", status: "source_verified", note: "The exact observation of animal movement, work, roads, machinery and repeated material tasks gives the fiction a documentary attentiveness without abandoning allegorical construction." },
+  ],
+} as const satisfies FilmHistoryProfile;
