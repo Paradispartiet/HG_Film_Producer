@@ -13,6 +13,7 @@ function transformFile(relativePath: string, replacements: readonly [string, str
   const outputPath = path.join(process.cwd(), "verify-v0.1-diagnostics", relativePath);
   mkdirSync(path.dirname(outputPath), { recursive: true });
   writeFileSync(outputPath, source, "utf8");
+  console.log(`FINAL1970S_FILE:${Buffer.from(relativePath, "utf8").toString("base64")}:${Buffer.from(source, "utf8").toString("base64")}:FINAL1970S_FILE_END`);
 }
 
 test("capture deterministic final 1970s integration", () => {
