@@ -55,6 +55,7 @@ import { newHollywoodBlockbusterVerificationRecords } from "./scenarioProduction
 import { nordicMinimalistSocialSystemsVerificationRecords } from "./scenarioProductionVerificationNordicMinimalistSocialSystemsBatch";
 import { norwegianPostwarGenreSystemsVerificationRecords } from "./scenarioProductionVerificationNorwegianPostwarGenreSystemsBatch";
 import { postwarEuropeanModernismVerificationRecords } from "./scenarioProductionVerificationPostwarEuropeanModernismBatch";
+import { priorityIndieFinalVerificationRecords } from "./scenarioProductionVerificationPriorityIndieFinalBatch";
 import { queerIndependentBodyCommunityArchiveVerificationRecords } from "./scenarioProductionVerificationQueerIndependentBodyCommunityArchiveBatch";
 import { silentFoundationsVerificationRecords } from "./scenarioProductionVerificationSilentFoundationsBatch";
 import { silentStudioSystemsVerificationRecords } from "./scenarioProductionVerificationSilentStudioSystemsBatch";
@@ -83,6 +84,7 @@ const additionalVerificationRecords = [
   ...americanIndependentGenreResourcefulnessVerificationRecords,
   ...independentDesireIdentityAuthorshipVerificationRecords,
   ...americanRegionalIdentityPlaceBelongingVerificationRecords,
+  ...priorityIndieFinalVerificationRecords,
   ...japaneseEverydayMemoryVerificationRecords,
   ...southKoreanGenreSystemsVerificationRecords,
   ...southSoutheastAsianSystemsVerificationRecords,
