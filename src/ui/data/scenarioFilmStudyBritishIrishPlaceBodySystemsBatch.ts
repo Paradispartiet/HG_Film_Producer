@@ -10,6 +10,10 @@ import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 import { bansheesOfInisherinFilmHistoryProfile } from "./scenarioFilmStudyBritishIrishPlaceBodyBanshees";
 import { hungerFilmHistoryProfile } from "./scenarioFilmStudyBritishIrishPlaceBodyHunger";
+import {
+  getInTheNameOfTheFatherDonorScenarioIds,
+  getInTheNameOfTheFatherFilmHistoryProfile,
+} from "./scenarioFilmStudyBritishIrishPlaceBodyInTheNameFatherCatalog";
 import { kesFilmHistoryProfile } from "./scenarioFilmStudyBritishIrishPlaceBodyKes";
 import { nakedFilmHistoryProfile } from "./scenarioFilmStudyBritishIrishPlaceBodyNaked";
 
@@ -58,7 +62,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getBritishIrishPlaceBodySystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return profiles[scenarioId as keyof typeof profiles];
+  return getInTheNameOfTheFatherFilmHistoryProfile(scenarioId)
+    ?? profiles[scenarioId as keyof typeof profiles];
 }
 
 export function resolveBritishIrishPlaceBodySystemsFilmStudyMap(
@@ -88,7 +93,11 @@ function hashString(value: string): number {
 }
 
 export function createBritishIrishPlaceBodySystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
-  const donors = Object.values(profiles)
+  const priorityDonorIds = getInTheNameOfTheFatherDonorScenarioIds(profile);
+  const priorityDonors = priorityDonorIds?.map(
+    (scenarioId) => profiles[scenarioId as keyof typeof profiles],
+  ).filter(Boolean) as readonly FilmHistoryProfile[] | undefined;
+  const donors = priorityDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = hashString(profile.scenarioId);
@@ -105,13 +114,17 @@ export function createBritishIrishPlaceBodySystemsFilmHistoryChoices(profile: Fi
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real British-Irish production system, but it organises regional realism, urban rehearsal, prison duration, island design and social conflict differently.",
+      feedback: priorityDonors
+        ? "This is another real British-Irish place-and-body system, but it organises social class, prison resistance or urban performance without the Guildford Four adaptation's coerced confession, father-son imprisonment and appeal structure."
+        : "This is a real British-Irish production system, but it organises regional realism, urban rehearsal, prison duration, island design and social conflict differently.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This assigns the film to the wrong historical, industrial and formal place-and-body production logic.",
+      feedback: priorityDonors
+        ? "This places the film inside the wrong relationship between autobiographical evidence, state accusation, prison space, paternal performance, legal reconstruction and political release."
+        : "This assigns the film to the wrong historical, industrial and formal place-and-body production logic.",
     }] : []),
   ];
 }

@@ -46,6 +46,7 @@ import { iberianPortugueseMemoryVerificationRecords } from "./scenarioProduction
 import { independentDesireIdentityAuthorshipVerificationRecords } from "./scenarioProductionVerificationIndependentDesireIdentityAuthorshipBatch";
 import { independentStorytellingVerificationRecords } from "./scenarioProductionVerificationIndependentStorytellingBatch";
 import { downByLawVerificationRecords } from "./scenarioProductionVerificationDownByLaw";
+import { inTheNameOfTheFatherVerificationRecords } from "./scenarioProductionVerificationInTheNameFather";
 import { whereIsTheFriendsHouseVerificationRecords } from "./scenarioProductionVerificationWhereFriendsHouse";
 import { intimateFestivalBodyCareVerificationRecords } from "./scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch";
 import { japaneseAmbiguityDialogueVerificationRecords } from "./scenarioProductionVerificationJapaneseAmbiguityDialogueBatch";
@@ -91,6 +92,7 @@ const additionalVerificationRecords = [
   ...europeanPressureVerificationRecords,
   ...independentStorytellingVerificationRecords,
   ...downByLawVerificationRecords,
+  ...inTheNameOfTheFatherVerificationRecords,
   ...whereIsTheFriendsHouseVerificationRecords,
   ...americanIndependentBreakthroughsVerificationRecords,
   ...americanIndependentGenreResourcefulnessVerificationRecords,

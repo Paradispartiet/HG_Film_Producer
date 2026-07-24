@@ -28,6 +28,7 @@ const verificationGroups = [
   ["European poetic memory systems", ["scenario_l_atalante_1934", "scenario_the_spirit_of_the_beehive_1973", "scenario_landscape_in_the_mist_1988", "scenario_the_double_life_of_veronique_1991"], 4],
   ["Cinema Paradiso communal cinema-memory system", ["scenario_cinema_paradiso_1988"], 6],
   ["British and Irish place-body systems", ["scenario_kes_1969", "scenario_naked_1993", "scenario_hunger_2008", "scenario_the_banshees_of_inisherin_2022"], 4],
+  ["In the Name of the Father miscarriage-of-justice prison system", ["scenario_in_the_name_of_the_father_1993"], 6],
   ["Iberian and Portuguese memory systems", ["scenario_cria_cuervos_1976", "scenario_all_about_my_mother_1999", "scenario_tabu_2012", "scenario_horse_money_2014"], 4],
   ["Balkan war and institution systems", ["scenario_before_the_rain_1994", "scenario_underground_1995", "scenario_no_mans_land_2001", "scenario_quo_vadis_aida_2020"], 4],
   ["European 1960s space systems", ["scenario_l_avventura_1960", "scenario_last_year_at_marienbad_1961", "scenario_playtime_1967", "scenario_the_leopard_1963"], 4],
@@ -70,7 +71,7 @@ const verificationGroups = [
   ["Japanese ambiguity and dialogue systems", ["scenario_cure_1997", "scenario_wheel_of_fortune_and_fantasy_2021", "scenario_monster_kore_eda_2023", "scenario_evil_does_not_exist_2023"], 4],
 ] as const;
 
-const expectedVerifiedCount = 262;
+const expectedVerifiedCount = 263;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
