@@ -48,14 +48,16 @@ jobs:
           set -euxo pipefail
           npm run build
           node --test dist/core/whereFriendsHouseIntegrationCapture.test.js
+          node --test dist/core/whereFriendsHouseRestAuditApply.test.js
           git add \
+            docs/PRODUCTION_CASE_REST_AUDIT.md \
             src/ui/data/scenarioFilmStudyMinimalistRoadBatch.ts \
             src/ui/data/scenarioProductionVerificationRegistry.ts \
             src/ui/data/scenarioProductionVerification.test.ts
           if ! git diff --cached --quiet; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "Integrate Where Is the Friend's House Production Case"
+            git commit -m "Update Where Is the Friend's House integration audit"
             git push origin "HEAD:${{ github.head_ref }}"
           fi
 
