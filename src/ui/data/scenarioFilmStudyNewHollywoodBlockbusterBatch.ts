@@ -15,12 +15,14 @@ import {
   getNewHollywoodNewYorkDonors,
   getNewHollywoodNewYorkProfile,
 } from "./scenarioFilmStudyNewHollywoodNewYorkCatalog";
+import { rumbleFishFilmHistoryProfile } from "./scenarioFilmStudyNewHollywoodRumbleFish";
 import { starWarsFilmHistoryProfile } from "./scenarioFilmStudyNewHollywoodStarWars";
 
 const profiles = {
   [bonnieAndClydeFilmHistoryProfile.scenarioId]: bonnieAndClydeFilmHistoryProfile,
   [godfatherFilmHistoryProfile.scenarioId]: godfatherFilmHistoryProfile,
   [jawsFilmHistoryProfile.scenarioId]: jawsFilmHistoryProfile,
+  [rumbleFishFilmHistoryProfile.scenarioId]: rumbleFishFilmHistoryProfile,
   [starWarsFilmHistoryProfile.scenarioId]: starWarsFilmHistoryProfile,
 } as const satisfies Record<string, FilmHistoryProfile>;
 
