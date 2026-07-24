@@ -12,6 +12,10 @@ import { bandOfOutsidersFilmHistoryProfile } from "./scenarioFilmStudyCrimeNoirB
 import { lostWeekendFilmHistoryProfile } from "./scenarioFilmStudyCrimeNoirLostWeekend";
 import { malteseFalconFilmHistoryProfile } from "./scenarioFilmStudyCrimeNoirMalteseFalcon";
 import { outOfThePastFilmHistoryProfile } from "./scenarioFilmStudyCrimeNoirOutOfThePast";
+import {
+  getTrueRomanceDonorScenarioIds,
+  getTrueRomanceFilmHistoryProfile,
+} from "./scenarioFilmStudyCrimeNoirTrueRomanceCatalog";
 
 const profiles = {
   [malteseFalconFilmHistoryProfile.scenarioId]: malteseFalconFilmHistoryProfile,
@@ -58,7 +62,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getCrimeNoirTransformationsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return profiles[scenarioId as keyof typeof profiles];
+  return getTrueRomanceFilmHistoryProfile(scenarioId)
+    ?? profiles[scenarioId as keyof typeof profiles];
 }
 
 export function resolveCrimeNoirTransformationsFilmStudyMap(
@@ -88,7 +93,11 @@ function hashString(value: string): number {
 }
 
 export function createCrimeNoirTransformationsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
-  const donors = Object.values(profiles)
+  const priorityDonorIds = getTrueRomanceDonorScenarioIds(profile);
+  const priorityDonors = priorityDonorIds?.map(
+    (scenarioId) => profiles[scenarioId as keyof typeof profiles],
+  ).filter(Boolean) as readonly FilmHistoryProfile[] | undefined;
+  const donors = priorityDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = hashString(profile.scenarioId);
@@ -105,13 +114,17 @@ export function createCrimeNoirTransformationsFilmHistoryChoices(profile: FilmHi
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real crime or noir production system, but it organizes adaptation, studio control, location work, performance and narrative time differently.",
+      feedback: priorityDonors
+        ? "This is another real crime or noir production system, but it organizes fatalism, classical investigation or New Wave play without True Romance's postmodern lovers-on-the-run screenplay, studio road scale and hopeful ending."
+        : "This is a real crime or noir production system, but it organizes adaptation, studio control, location work, performance and narrative time differently.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This assigns the film to the wrong historical, industrial and stylistic crime-production logic.",
+      feedback: priorityDonors
+        ? "This places the film inside the wrong relationship between video-store cinephilia, ensemble dialogue, outlaw romance, widescreen colour, ratings edits and director-writer version history."
+        : "This assigns the film to the wrong historical, industrial and stylistic crime-production logic.",
     }] : []),
   ];
 }
