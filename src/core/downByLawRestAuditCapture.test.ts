@@ -27,8 +27,12 @@ type AuditReport = {
   readonly unverified: readonly AuditScenario[];
 };
 
+function escapePattern(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function replaceCount(document: string, label: string, value: number): string {
-  const pattern = new RegExp(`(\\| ${label.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")} \\| )\\d+( \\|)`);
+  const pattern = new RegExp(`(\\| ${escapePattern(label)} \\| )\\d+( \\|)`);
   assert.match(document, pattern, `Missing count row ${label}`);
   return document.replace(pattern, `$1${value}$2`);
 }
@@ -41,7 +45,7 @@ function replaceDistribution(
   let next = document;
   for (const [label, value] of Object.entries(values)) {
     const rendered = formatLabel(label);
-    const pattern = new RegExp(`(\\| ${rendered.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")} \\| )\\d+( \\|)`);
+    const pattern = new RegExp(`(\\| ${escapePattern(rendered)} \\| )\\d+( \\|)`);
     assert.match(next, pattern, `Missing distribution row ${label}`);
     next = next.replace(pattern, `$1${value}$2`);
   }
@@ -74,7 +78,7 @@ test("capture updated Down by Law rest audit document", () => {
   document = replaceCount(document, "Scenarios without source-backed profile", report.totals.scenariosWithoutSourceBackedProfile);
   document = document.replace(/After correction, all \d+ verified records and profiles/, `After correction, all ${report.totals.verifiedProductionCases} verified records and profiles`);
 
-  document = replaceDistribution(document, report.unverifiedDistributions.byOrigin, (label) => `\\`${label}\\``);
+  document = replaceDistribution(document, report.unverifiedDistributions.byOrigin, (label) => "`" + label + "`");
   document = replaceDistribution(document, report.unverifiedDistributions.byDecade, (label) => label);
   document = replaceDistribution(document, report.unverifiedDistributions.byGenre, (label) => label);
 
@@ -84,7 +88,7 @@ test("capture updated Down by Law rest audit document", () => {
   assert.notEqual(listStart, -1);
   assert.notEqual(methodStart, -1);
   const rows = report.unverified
-    .map((scenario, index) => `| ${index + 1} | ${scenario.year} | ${escapeCell(scenario.title)} | \\`${scenario.id}\\` |`)
+    .map((scenario, index) => "| " + (index + 1) + " | " + scenario.year + " | " + escapeCell(scenario.title) + " | `" + scenario.id + "` |")
     .join("\n");
   document = `${document.slice(0, listStart + listHeader.length)}${rows}\n${document.slice(methodStart)}`;
 
