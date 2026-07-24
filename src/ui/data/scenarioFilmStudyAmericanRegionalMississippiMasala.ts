@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const mississippiMasalaFilmHistoryProfile = {
+  scenarioId: "scenario_mississippi_masala_1991",
+  period: "Early-1990s diasporic independent cinema, interracial romance and transnational American regional filmmaking",
+  traditions: ["Diasporic cinema", "Interracial romance", "American regional independent cinema"],
+  before: "American immigrant stories and interracial romances rarely centered Black and South Asian communities together, while East African Asian displacement and southern motel economies remained largely absent from US feature cinema.",
+  moment: "Mira Nair and Sooni Taraporevala connect Uganda, India and Mississippi through a romance whose motels, family businesses, letters, memories, music and saturated southern spaces make migration history inseparable from everyday desire.",
+  after: "The film's restoration and renewed institutional circulation confirmed its lasting importance as a rare independent work that treats race, colorism, colonial history, family economy and erotic freedom within one warm but politically precise romantic form.",
+  historyQuestion: "Which production system explains a transnational romance where Uganda, Indian-owned Mississippi motels, Black southern life, family memory and humid colour all shape what it costs for two people to choose each other?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion, AFI, BFI and Sundance place the film in the early-1990s independent boom and connect its story to the 1972 expulsion of Asians from Uganda." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional sources identify a diasporic romance that combines migration history, southern regional cinema, interracial melodrama and documentary-derived social observation." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Mirabai Films, independent financing discussions, location production and the principal departments; Criterion records the later director-supervised restoration." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Sundance and Criterion describe the film's continuing relevance to interracial love, migration and representation, while the restoration returned its colour and sound system to circulation." },
+    { area: "screenplay", status: "source_verified", note: "AFI and Criterion credit Sooni Taraporevala; the screenplay balances Mina and Demetrius's romance with Jay's exile, family business pressures and several communities policing racial boundaries." },
+    { area: "directing", status: "source_verified", note: "Nair translates documentary research across Mississippi and Kampala into a fiction that keeps social specificity, humour, sensuality and political conflict active at once." },
+    { area: "performance", status: "source_verified", note: "Criterion and BFI foreground Sarita Choudhury, Denzel Washington, Roshan Seth and Sharmila Tagore in an ensemble where intimacy, family authority and cultural code-switching remain equally detailed." },
+    { area: "production_design", status: "source_verified", note: "Criterion and AFI credit Mitch Epstein; motel rooms, liquor stores, family homes and Ugandan memory spaces make migration and economic survival materially visible." },
+    { area: "costume_makeup", status: "mapped", note: "Clothing and grooming distinguish generations, communities and romantic self-presentation, although the inspected sources do not fully document the complete costume and makeup workflows." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and AFI credit Ed Lachman, whose director-supervised restoration preserves the film's saturated colour, humid exteriors and distinct visual treatment of memory and present life." },
+    { area: "lighting", status: "source_verified", note: "Criterion analysis emphasizes warm southern sensuality, lush Ugandan memory and expressive interiors that allow romance and historical displacement to occupy different emotional temperatures." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the colour feature in a 1.85:1 presentation and a new 4K restoration supervised by Nair and Lachman." },
+    { area: "editing", status: "source_verified", note: "AFI credits Roberto Silvi; the editing interweaves romance, family conflict, business life, letters and Jay's remembered homeland without reducing any strand to background explanation." },
+    { area: "sound_design", status: "source_verified", note: "Multilingual dialogue, motel and roadside ambience, family gatherings and the restored 2.0 surround track keep several cultural and geographic worlds audible together." },
+    { area: "music", status: "source_verified", note: "Institutional analysis identifies music as a binding system across romance, community celebration, family memory and the film's movement among Uganda, India and Mississippi." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on location, performance, colour, editing, music and social detail rather than animation or visual-effects spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "Nair's research trips through southern motel communities and her Direct Cinema background inform the film's location detail, social observation and attention to both Black and South Asian experience." },
+  ],
+} as const satisfies FilmHistoryProfile;
