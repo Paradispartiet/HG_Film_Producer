@@ -13,8 +13,9 @@ import type {
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 import { aClockworkOrangeFilmHistoryProfile } from "./scenarioFilmStudyConstructedWorldsClockworkOrange";
+import { brazilFilmHistoryProfile } from "./scenarioFilmStudyConstructedWorldsBrazil";
 
-const constructedWorldsProfiles = {
+const coreConstructedWorldsProfiles = {
   [aClockworkOrangeFilmHistoryProfile.scenarioId]: aClockworkOrangeFilmHistoryProfile,
   scenario_groundhog_day_1993: {
     scenarioId: "scenario_groundhog_day_1993",
@@ -130,6 +131,11 @@ const constructedWorldsProfiles = {
   },
 } as const satisfies Record<string, FilmHistoryProfile>;
 
+const constructedWorldsProfiles = {
+  ...coreConstructedWorldsProfiles,
+  [brazilFilmHistoryProfile.scenarioId]: brazilFilmHistoryProfile,
+} as const satisfies Record<string, FilmHistoryProfile>;
+
 function statusRank(status: FilmStudyCoverageOverride["status"]): number {
   if (status === "source_verified") return 4;
   if (status === "mapped") return 3;
@@ -210,7 +216,7 @@ function hashString(value: string): number {
 export function createConstructedWorldsFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
-  const donors = Object.values(constructedWorldsProfiles)
+  const donors = Object.values(coreConstructedWorldsProfiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = hashString(profile.scenarioId);
