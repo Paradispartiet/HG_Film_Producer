@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const downByLawFilmHistoryProfile = {
+  scenarioId: "scenario_down_by_law_1986",
+  period: "Mid-1980s American independent cinema joining New York no-wave deadpan to Louisiana location noir",
+  traditions: ["American independent cinema", "Neo-Beat noir comedy", "Southern Gothic road and prison film"],
+  before: "The film inherits prison-break cinema, film noir, Beat outsider writing and the road movie, but redirects those traditions away from suspense mechanics and toward waiting, failed communication, accidental companionship and marginal American spaces.",
+  moment: "Jim Jarmusch writes around Tom Waits, John Lurie and Roberto Benigni, omits the expected jailbreak procedure, shoots entirely on Louisiana locations and works with Robby Müller to join desolate New Orleans streets, a confined cell and luminous bayou landscapes through crisp 35 mm black-and-white, patient staging, lateral movement and music by Waits and Lurie.",
+  after: "The film established the first Jarmusch–Müller collaboration and remains a central American independent case for making performance rhythm, multilingual misunderstanding, location, ellipsis and music more important than conventional plot escalation.",
+  historyQuestion: "Which production system best explains why Down by Law feels simultaneously like a prison film, a road movie, a noir comedy and an unhurried study of three incompatible outsiders?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Academy, BFI and Criterion records place the film inside Jarmusch's mid-1980s rise as a defining American independent filmmaker." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Jarmusch's own neo-Beat noir description joins independent deadpan, prison narrative, Southern Gothic, road cinema and fairy-tale drift." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents a late-1985 Louisiana production filmed entirely on location, while Criterion preserves extensive director, cinematographer and location materials." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Academy, Criterion, Janus and BFI records preserve the film as a cult classic and the first of several Jarmusch–Müller collaborations." },
+    { area: "screenplay", status: "source_verified", note: "Jarmusch builds the film around three incompatible outsiders, writes Roberto for Benigni across a real language gap and deliberately skips the expected mechanics of the jailbreak." },
+    { area: "directing", status: "source_verified", note: "Direction privileges pauses, awkward coexistence, spatial observation and the avoidance of conventional dramatic peaks over action-driven prison-film suspense." },
+    { area: "performance", status: "source_verified", note: "Waits and Lurie extend their musician-personas into laconic fictional outsiders, while Benigni's linguistic energy reorganizes the trio's rhythm and emotional direction." },
+    { area: "production_design", status: "mapped", note: "Real streets, cells, decayed interiors, swamp structures and roadside spaces form the material world, but department-level design research remains pending." },
+    { area: "costume_makeup", status: "mapped", note: "Noir tailoring, worn rockabilly clothing and Roberto's outsider presentation separate the three men, while dedicated costume sourcing remains incomplete." },
+    { area: "cinematography", status: "source_verified", note: "Robby Müller's languid black-and-white compositions connect ghostlike New Orleans streets, shadow-latticed confinement and the Louisiana bayou without turning location into tourism." },
+    { area: "lighting", status: "source_verified", note: "Müller's location-responsive light and high-control monochrome contrast preserve texture in both nocturnal architecture and humid exterior landscapes." },
+    { area: "camera_format", status: "source_verified", note: "AFI and Academy records document black-and-white 35 mm production using Arriflex cameras and Zeiss lenses; current presentations preserve the 1.78:1 image." },
+    { area: "editing", status: "source_verified", note: "The film uses languorous duration and major ellipsis—most famously omitting the jailbreak procedure—to privilege before-and-after behavior over expected action mechanics." },
+    { area: "sound_design", status: "source_verified", note: "Sparse dialogue, multilingual phrases, prison resonance, street atmosphere and bayou ambience make offscreen environment and failed communication structurally important." },
+    { area: "music", status: "source_verified", note: "Tom Waits songs bookend the film, John Lurie's noir-inflected score shapes the journey and Irma Thomas anchors Louisiana sound without turning the film into local-color illustration." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on location, performance, photography, sound and ellipsis rather than visible effects." },
+    { area: "documentary_method", status: "mapped", note: "Entirely practical Louisiana shooting gives the fiction observational material detail, although the locations are reorganized into an imagined cinematic province rather than documentary geography." },
+  ],
+} as const satisfies FilmHistoryProfile;
