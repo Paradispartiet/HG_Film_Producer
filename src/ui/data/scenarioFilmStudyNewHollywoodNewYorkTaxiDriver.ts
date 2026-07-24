@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const taxiDriverFilmHistoryProfile = {
+  scenarioId: "scenario_taxi_driver_1976",
+  period: "Post-Vietnam New Hollywood, subjective urban psychodrama and expressionist neo-noir",
+  traditions: ["New Hollywood", "Film-noir subjectivity", "Expressionist city cinema"],
+  before: "Classical noir used voice-over, night streets and compromised protagonists to visualize moral instability, while European modernism and postwar American independent cinema loosened identification and made alienated perception itself a formal problem.",
+  moment: "Paul Schrader's script, Martin Scorsese's direction, Robert De Niro's preparation, Michael Chapman's location cinematography, fragmented editing and Bernard Herrmann's final score turn 1975 New York into Travis Bickle's unstable sensory system of steam, neon, slow motion, surveillance, fantasy and violent self-mythology.",
+  after: "Its Palme d'Or, critical canonization and continuing influence established the film as a central model for the modern urban antihero, subjective city photography and the dangerous gap between a character's self-narration and the film's wider moral view.",
+  historyQuestion: "Which production system explains a New York film where diary voice-over, slow motion, expressionist street detail, jazz-noir music and altered color in the climax all trap the audience inside an unreliable antihero's perception?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and BFI place the 1976 film in post-Vietnam, post-Watergate New York and document the alienated veteran, political campaign, urban violence and moral dislocation at its center." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI connects the film to New Hollywood, film noir, European art cinema and expressionist city imagery; ASC identifies Michael Chapman as a key cinematographer of the period." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents the Phillips producers, Columbia distribution and 1975 New York production; ASC describes the project as a small drama whose script offered unusual visual freedom." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI records the Palme d'Or and major critical standing, while institutional sources treat the film as a defining American urban and antihero work." },
+    { area: "screenplay", status: "source_verified", note: "AFI credits Paul Schrader and documents the screenplay's early optioning; BFI traces its noir, Dostoevsky and real-world political-assassination influences." },
+    { area: "directing", status: "source_verified", note: "ASC records Scorsese's deliberate use of unusual camerawork and slow motion; BFI describes his control of expressionist detail, subjective drift and the escalation into vigilante violence." },
+    { area: "performance", status: "source_verified", note: "AFI and BFI identify Robert De Niro's central performance and the ensemble around him; the production binds bodily preparation, isolated behavior and improvised-feeling self-address to the camera system." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Charles Rosen and the art department, while BFI and ASC describe a New York of taxis, campaign offices, cinemas, cheap rooms, steam and neon shaped into a subjective hellscape." },
+    { area: "costume_makeup", status: "source_verified", note: "AFI credits Ruth Morley and the makeup team; Travis's military jacket, gradually armed silhouette and final mohawk make his self-reinvention legible as a designed progression." },
+    { area: "cinematography", status: "source_verified", note: "ASC documents Michael Chapman's pursuit of odd, non-newsreel camerawork, slow motion and stylized urban detail, with New York transformed into a visual extension of the screenplay." },
+    { area: "lighting", status: "source_verified", note: "ASC and BFI support the deliberate use of neon, steam, night contrast and expressionist color rather than neutral location realism." },
+    { area: "camera_format", status: "mapped", note: "AFI records a color sound feature photographed in New York; the inspected sources emphasize the location, slow-motion and optical strategy more than a complete stock-and-lens specification." },
+    { area: "editing", status: "source_verified", note: "AFI credits Tom Rolf and Melvin Shapiro with Marcia Lucas supervising; the film uses diary progression, repeated routes, slow motion, dislocated glances and an overhead aftermath to control identification." },
+    { area: "sound_design", status: "source_verified", note: "AFI documents the sound team; taxi engines, rain, street voices, campaign noise, weapons and interior silence build a layered city that alternately surrounds and isolates Travis." },
+    { area: "music", status: "source_verified", note: "AFI and BFI document Bernard Herrmann's final score, whose romantic saxophone and threatening orchestral pressure hold loneliness and violence in the same system." },
+    { area: "effects_animation", status: "source_verified", note: "BFI documents the optically processed, desaturated climax used to reduce the blood's intensity for classification without removing the sequence." },
+    { area: "documentary_method", status: "mapped", note: "Real New York locations and contemporary street conditions anchor the film, but observation is repeatedly transformed by subjective framing, music, slow motion and expressionist detail." },
+  ],
+} as const satisfies FilmHistoryProfile;
