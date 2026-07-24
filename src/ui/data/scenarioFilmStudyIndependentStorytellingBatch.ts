@@ -24,6 +24,10 @@ import {
   getDownByLawFilmHistoryDonors,
   getDownByLawFilmHistoryProfile,
 } from "./scenarioFilmStudyIndependentStorytellingDownByLawCatalog";
+import {
+  getClerksFilmHistoryDonors,
+  getClerksFilmHistoryProfile,
+} from "./scenarioFilmStudyAmericanGenreClerksCatalog";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 
@@ -75,7 +79,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return getDownByLawFilmHistoryProfile(scenarioId)
+  return getClerksFilmHistoryProfile(scenarioId)
+    ?? getDownByLawFilmHistoryProfile(scenarioId)
     ?? getPriorityIndieFinalProfile(scenarioId)
     ?? getIndependentStorytellingCatalogProfile(scenarioId);
 }
@@ -161,13 +166,16 @@ function missFeedback(group: IndependentStorytellingProfileGroup): string {
 export function createIndependentStorytellingFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const clerksDonors = getClerksFilmHistoryDonors(profile);
   const downByLawDonors = getDownByLawFilmHistoryDonors(profile);
   const priorityDonors = getPriorityIndieFinalDonors(profile);
   const group = getIndependentStorytellingProfileGroup(profile.scenarioId);
-  const donors = downByLawDonors ?? priorityDonors ?? getIndependentStorytellingDonors(profile);
+  const donors = clerksDonors ?? downByLawDonors ?? priorityDonors ?? getIndependentStorytellingDonors(profile);
   const start = hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const clerksPartial = "This is another real American independent production system built from dialogue, regional place or strict resource limits, but it does not organize retail labour, overnight store access, fluorescent black-and-white 16mm and customer interruption in the same way.";
+  const clerksMiss = "This places the film inside the wrong relationship between workplace experience, available stores, microbudget financing, unknown performers, dialogue density, 16mm black-and-white photography, editing and festival discovery.";
   const downByLawPartial = "This is another American independent outsider-location system, but it organizes city recurrence, conversational drift or neighborhood observation through a different balance of structure, performance, place, editing and sound.";
   const downByLawMiss = "This places the film inside the wrong relationship between American independent production, outsider ensemble, regional location, ellipsis, multilingual performance and music.";
   const priorityPartial = "This is another final priority-independent system, but it organizes comic alienation, architectural attention or abrasive regional hustle through a different balance of design, performance, place, editing and sound.";
@@ -183,13 +191,13 @@ export function createIndependentStorytellingFilmHistoryChoices(
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: downByLawDonors ? downByLawPartial : priorityDonors ? priorityPartial : partialFeedback(group),
+      feedback: clerksDonors ? clerksPartial : downByLawDonors ? downByLawPartial : priorityDonors ? priorityPartial : partialFeedback(group),
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: downByLawDonors ? downByLawMiss : priorityDonors ? priorityMiss : missFeedback(group),
+      feedback: clerksDonors ? clerksMiss : downByLawDonors ? downByLawMiss : priorityDonors ? priorityMiss : missFeedback(group),
     }] : []),
   ];
 }
