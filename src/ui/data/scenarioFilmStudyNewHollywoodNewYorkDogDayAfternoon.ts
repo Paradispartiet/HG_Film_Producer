@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const dogDayAfternoonFilmHistoryProfile = {
+  scenarioId: "scenario_dog_day_afternoon_1975",
+  period: "Mid-1970s New Hollywood, real-event New York procedural drama and media-age institutional realism",
+  traditions: ["New Hollywood", "Real-event crime drama", "Performance-led institutional cinema"],
+  before: "Classical heist films usually privileged criminal expertise, mechanical suspense and clean genre control, while television-trained social drama developed methods for sustaining pressure through actors, confined space and live-feeling procedure.",
+  moment: "Sidney Lumet, Frank Pierson, Al Pacino, cinematographer Victor J. Kemper and editor Dede Allen turn a 1972 Brooklyn robbery into an unglamorous present-tense system of rehearsal, practical street geography, changing bank light, crowd feedback, police negotiation, television attention and virtually scoreless sound.",
+  after: "The film became a defining New Hollywood case for joining star performance to social observation, queer history, media spectacle and institutional procedure without converting desperate people into polished genre professionals.",
+  historyQuestion: "Which production system explains a heist film where rehearsal, practical geography, changing daylight, crowd response, telephones, television and performance escalation matter more than criminal competence or musical suspense?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and BFI document the film's basis in the 22 August 1972 Brooklyn robbery and its connection to Vietnam-era, policing, economic and changing sexual politics." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI places the film at Lumet's New Hollywood summit and identifies its fusion of real-event crime, New York social concern, comedy, pathos and institutional friction." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI verifies the 1975 production and principal crew, while ASC documents the demand for an immediate, unglamorous Brooklyn look rather than conventional Hollywood polish." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI identifies the film as a central Lumet achievement; AFI records Frank Pierson's screenplay and the film's durable standing as a major real-event New York drama." },
+    { area: "screenplay", status: "source_verified", note: "AFI credits Frank Pierson and the true-incident framework; BFI emphasizes how the script preserves concrete events while developing comedy, affection, desperation and changing public meaning." },
+    { area: "directing", status: "source_verified", note: "BFI describes Lumet as an actor's director and exact technician; the film organizes mounting pressure through rehearsal, ensemble behavior, spatial clarity and institutional reaction." },
+    { area: "performance", status: "source_verified", note: "BFI foregrounds Pacino, John Cazale, Chris Sarandon and the bank ensemble, with Lumet's rehearsal-based direction turning improvisatory energy into a controlled escalation." },
+    { area: "production_design", status: "source_verified", note: "AFI credits production designer Charles Bailey, while ASC documents construction and transformation of the bank and surrounding Brooklyn street as one continuous dramatic environment." },
+    { area: "costume_makeup", status: "mapped", note: "Ordinary summer clothing and incremental physical stress support the anti-glamorous present tense, but the inspected institutional sources do not provide a detailed costume or makeup workflow." },
+    { area: "cinematography", status: "source_verified", note: "ASC records Victor J. Kemper's instruction to make events feel as if they were happening immediately in Brooklyn and his close coordination with rehearsals, sets and the street." },
+    { area: "lighting", status: "source_verified", note: "ASC documents Kemper's evolving lighting design inside the bank and his minimalist practical-location approach rather than a glossy studio crime-film look." },
+    { area: "camera_format", status: "mapped", note: "AFI records a color sound feature photographed by Victor J. Kemper; the inspected sources focus on location and lighting method rather than a complete camera-stock specification." },
+    { area: "editing", status: "source_verified", note: "AFI credits Dede Allen; the film's cutting expands one enclosed robbery into a readable network of bank, street, police, family, media and crowd response while preserving near-real-time pressure." },
+    { area: "sound_design", status: "source_verified", note: "The production uses telephones, police loudspeakers, crowd chant, street noise, television and bank-room voices as the main suspense system rather than relying on a conventional score." },
+    { area: "music", status: "not_central", note: "The film is effectively scoreless after its opening use of recorded music, leaving performance, city ambience, media and institutional sound to carry tension." },
+    { area: "effects_animation", status: "not_central", note: "The case is built from actors, practical street control, confined geography and procedural escalation rather than effects or animation." },
+    { area: "documentary_method", status: "source_verified", note: "AFI and BFI support the real-event reconstruction, while ASC's immediate Brooklyn mandate gives the fiction a deliberately observed, present-tense documentary pressure." },
+  ],
+} as const satisfies FilmHistoryProfile;

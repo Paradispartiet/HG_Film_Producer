@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const meanStreetsFilmHistoryProfile = {
+  scenarioId: "scenario_mean_streets_1973",
+  period: "Early-1970s New Hollywood, independently financed personal crime cinema and Italian-American neighborhood modernism",
+  traditions: ["New Hollywood", "Autobiographical urban crime cinema", "Italian-American neighborhood realism"],
+  before: "Classical gangster films usually treated criminal hierarchy as an external genre machine, while postwar independent and European cinema opened space for local memory, unstable morality and formally visible authorship.",
+  moment: "Martin Scorsese, Mardik Martin, producer Jonathan Taplin, cinematographer Kent Wakeford and a small production assembled a roughly $480,000 film across New York and Los Angeles, using practical locations, friends, students, volatile performance, voice-over, rapid cutting and a jukebox soundtrack instead of a conventional score.",
+  after: "Its New York Film Festival breakthrough, first Scorsese-De Niro collaboration and later National Film Registry selection made it a foundational model for personal American crime cinema built from subculture, music, guilt and production resourcefulness.",
+  historyQuestion: "Which production system explains a crime film where Catholic guilt, neighborhood behavior, practical-location economy, unstable camera energy and pre-existing popular music all emerge from the same personal world?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and BFI place the 1973 film inside the New Hollywood breakthrough and document its autobiographical Little Italy, Catholic and Italian-American context." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI describes the film as Scorsese's seminal fusion of crime, Catholic conflict, music, movie reference and breathless New Hollywood energy." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents the independently raised approximately $480,000 budget, roughly twenty-seven-day schedule, Warner Bros. pickup and production split between New York and Los Angeles." },
+    { area: "reception_and_legacy", status: "source_verified", note: "AFI records the New York Film Festival reception, career breakthrough, first Scorsese-De Niro pairing and 1997 National Film Registry selection." },
+    { area: "screenplay", status: "source_verified", note: "AFI documents Scorsese and Mardik Martin's long development process, autobiographical neighborhood basis, religious conflict and Charlie's recurring interior voice-over." },
+    { area: "directing", status: "source_verified", note: "AFI and BFI support Scorsese's personal authorship, use of friends and neighborhood access, collision of prayer, obscenity, violence and comedy, and close control of the final form." },
+    { area: "performance", status: "source_verified", note: "AFI documents the casting history of Harvey Keitel and Robert De Niro, while BFI identifies the volatile behavioral energy that makes the social group feel observed rather than conventionally plotted." },
+    { area: "production_design", status: "source_verified", note: "AFI records practical locations, borrowed New York interiors and Los Angeles spaces and sets made to pass as Little Italy under severe cost constraints." },
+    { area: "costume_makeup", status: "mapped", note: "Street clothes, nightclub styling and character-specific dress support the neighborhood hierarchy, but the inspected institutional sources do not provide a detailed costume workflow." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Kent Wakeford and documents the mixed-location strategy, student-and-friend New York crew and practical shooting that preserves a rough, immediate neighborhood texture." },
+    { area: "lighting", status: "mapped", note: "Bars, streets, churches and apartments use expressive practical-looking contrast, although the inspected sources do not document a complete lighting plan." },
+    { area: "camera_format", status: "source_verified", note: "AFI records a color Technicolor sound production and the practical-location camera operation spread across New York and Los Angeles." },
+    { area: "editing", status: "source_verified", note: "AFI records that Scorsese substantially edited the film despite Sid Levin's screen credit; BFI analysis connects the cutting rhythm to Johnny Boy's volatility and the soundtrack's impact." },
+    { area: "sound_design", status: "source_verified", note: "AFI documents layered voice-over, Italian dialogue, street and bar environments and the absence of a traditional composed score." },
+    { area: "music", status: "source_verified", note: "AFI and BFI document the structural use of pre-existing songs, including the Ronettes and Rolling Stones, as memory, character entrance, rhythm and emotional counterpoint." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on location, performance, editing, practical violence and recorded music rather than effects or animation spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "AFI documents autobiographical source material, real neighborhood cooperation, friends and students in the crew and a result later described as urban ethnography." },
+  ],
+} as const satisfies FilmHistoryProfile;

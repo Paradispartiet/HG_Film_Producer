@@ -11,6 +11,10 @@ import { getProductionCaseVerification } from "./scenarioProductionVerificationR
 import { bonnieAndClydeFilmHistoryProfile } from "./scenarioFilmStudyNewHollywoodBonnieAndClyde";
 import { godfatherFilmHistoryProfile } from "./scenarioFilmStudyNewHollywoodGodfather";
 import { jawsFilmHistoryProfile } from "./scenarioFilmStudyNewHollywoodJaws";
+import {
+  getNewHollywoodNewYorkDonors,
+  getNewHollywoodNewYorkProfile,
+} from "./scenarioFilmStudyNewHollywoodNewYorkCatalog";
 import { starWarsFilmHistoryProfile } from "./scenarioFilmStudyNewHollywoodStarWars";
 
 const profiles = {
@@ -58,7 +62,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getNewHollywoodBlockbusterFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return profiles[scenarioId as keyof typeof profiles];
+  return getNewHollywoodNewYorkProfile(scenarioId)
+    ?? profiles[scenarioId as keyof typeof profiles];
 }
 
 export function resolveNewHollywoodBlockbusterFilmStudyMap(
@@ -88,12 +93,19 @@ function hashString(value: string): number {
 }
 
 export function createNewHollywoodBlockbusterFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
-  const donors = Object.values(profiles)
+  const newYorkDonors = getNewHollywoodNewYorkDonors(profile);
+  const donors = newYorkDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const partialFeedback = newYorkDonors
+    ? "This is another real 1970s New York production system, but it organizes subculture, institutional procedure, subjective nightmare or romanticized city space through a different balance of performance, camera, editing, sound and music."
+    : "This is a real New Hollywood-era production system, but it organizes location, performance, image, editing, effects and sound differently.";
+  const missFeedback = newYorkDonors
+    ? "This assigns the film to the wrong relationship between New York geography, antihero performance, production economy, image design, editing, sound and public space."
+    : "This assigns the film to the wrong New Hollywood production tradition and craft logic.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
@@ -105,13 +117,13 @@ export function createNewHollywoodBlockbusterFilmHistoryChoices(profile: FilmHis
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real New Hollywood-era production system, but it organizes location, performance, image, editing, effects and sound differently.",
+      feedback: partialFeedback,
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This assigns the film to the wrong New Hollywood production tradition and craft logic.",
+      feedback: missFeedback,
     }] : []),
   ];
 }
