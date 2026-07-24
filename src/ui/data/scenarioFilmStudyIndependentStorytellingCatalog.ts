@@ -7,6 +7,10 @@ import { neverRarelySometimesAlwaysFilmHistoryProfile } from "./scenarioFilmStud
 import { soundOfMetalFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecaritySoundOfMetal";
 import { theRiderFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecarityTheRider";
 import { wendyAndLucyFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecarityWendyLucy";
+import { chameleonStreetFilmHistoryProfile } from "./scenarioFilmStudyAmericanRegionalChameleonStreet";
+import { gasFoodLodgingFilmHistoryProfile } from "./scenarioFilmStudyAmericanRegionalGasFoodLodging";
+import { georgeWashingtonFilmHistoryProfile } from "./scenarioFilmStudyAmericanRegionalGeorgeWashington";
+import { mississippiMasalaFilmHistoryProfile } from "./scenarioFilmStudyAmericanRegionalMississippiMasala";
 import { allTheBeautyAndTheBloodshedFilmHistoryProfile } from "./scenarioFilmStudyBodyArchiveAllBeauty";
 import { dahomeyFilmHistoryProfile } from "./scenarioFilmStudyBodyArchiveDahomey";
 import { happeningFilmHistoryProfile } from "./scenarioFilmStudyBodyArchiveHappening";
@@ -87,6 +91,7 @@ export type IndependentStorytellingProfileGroup =
   | "american_precarity_body_care"
   | "american_independent_genre_resourcefulness"
   | "independent_desire_identity_authorship"
+  | "american_regional_identity_place_belonging"
   | "asian_transnational_urban_identity"
   | "japanese_ambiguity_dialogue";
 
@@ -155,6 +160,10 @@ const profiles = [
   fishTankFilmHistoryProfile,
   pariahFilmHistoryProfile,
   theSouvenirFilmHistoryProfile,
+  chameleonStreetFilmHistoryProfile,
+  mississippiMasalaFilmHistoryProfile,
+  gasFoodLodgingFilmHistoryProfile,
+  georgeWashingtonFilmHistoryProfile,
   cycloFilmHistoryProfile,
   happyTogetherFilmHistoryProfile,
   infernalAffairsFilmHistoryProfile,
@@ -252,6 +261,12 @@ assignGroup("independent_desire_identity_authorship", [
   fishTankFilmHistoryProfile.scenarioId,
   pariahFilmHistoryProfile.scenarioId,
   theSouvenirFilmHistoryProfile.scenarioId,
+]);
+assignGroup("american_regional_identity_place_belonging", [
+  chameleonStreetFilmHistoryProfile.scenarioId,
+  mississippiMasalaFilmHistoryProfile.scenarioId,
+  gasFoodLodgingFilmHistoryProfile.scenarioId,
+  georgeWashingtonFilmHistoryProfile.scenarioId,
 ]);
 assignGroup("asian_transnational_urban_identity", [
   cycloFilmHistoryProfile.scenarioId,
