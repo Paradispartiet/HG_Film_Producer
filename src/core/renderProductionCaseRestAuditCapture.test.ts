@@ -40,5 +40,6 @@ test("capture updated Production Case rest audit", () => {
   const outputDirectory = path.join(process.cwd(), "verify-v0.1-diagnostics");
   mkdirSync(outputDirectory, { recursive: true });
   writeFileSync(path.join(outputDirectory, "PRODUCTION_CASE_REST_AUDIT.md"), source, "utf8");
+  console.log(`REST_AUDIT_BASE64:${Buffer.from(source, "utf8").toString("base64")}:REST_AUDIT_BASE64_END`);
   assert.fail("Intentional capture run for updated rest-audit document");
 });
