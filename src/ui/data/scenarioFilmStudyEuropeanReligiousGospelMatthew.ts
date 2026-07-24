@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const gospelMatthewFilmHistoryProfile = {
+  scenarioId: "scenario_the_gospel_according_to_st_matthew_1964",
+  period: "1960s Italian sacred modernism, poetic realism and nonprofessional biblical adaptation",
+  traditions: ["Pasolinian sacred cinema", "Italian neorealist inheritance", "Non-spectacular biblical adaptation"],
+  before: "Postwar biblical epics commonly translated scripture into studio spectacle, star performance and archaeological display, while Italian neorealism had established locations, ordinary faces and material environments as alternatives to polished historical illusion.",
+  moment: "Pier Paolo Pasolini follows Matthew's text closely but films in southern Italian landscapes with nonprofessional performers, rough faces, frontal address, telephoto observation, sparse physical effects and a soundtrack ranging from Bach and Mozart to spirituals, joining sacred narrative to contemporary social urgency.",
+  after: "The film became a central example of religious cinema made without devotional prettification or epic spectacle, demonstrating how casting, location, montage and musical anachronism can preserve a canonical text while radically changing its social and cinematic address.",
+  historyQuestion: "Which production system explains a biblical film built from nonprofessional faces, southern Italian locations, rough black-and-white observation, direct scripture and music drawn across periods rather than studio spectacle?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion and BFI place the 1964 Italian-French production within Pasolini's early cinema, postwar political debate and the transformation of biblical representation after neorealism." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Criterion connect the film to Italian poetic realism, neorealist casting and location practice, sacred art, documentary observation and Pasolini's radical humanism." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI records producer Alfredo Bini and the Italian-French production context; the film replaces prestige biblical scale with a mobile location unit and performers outside conventional star casting." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion and BFI present the film as a landmark of sacred cinema whose austere production method remains influential across religious, political and historical filmmaking." },
+    { area: "screenplay", status: "source_verified", note: "Pasolini adapts the Gospel of Matthew with exceptional textual fidelity, selecting and arranging its episodes so teaching, movement, conflict and sacrifice retain direct dramatic momentum." },
+    { area: "directing", status: "source_verified", note: "BFI describes Pasolini's mixture of frontal iconic address, urgent observation and contrasting art-historical references, refusing one uniform prestige style for the sacred material." },
+    { area: "performance", status: "source_verified", note: "Criterion and BFI document the largely nonprofessional cast, including Enrique Irazoqui and Susanna Pasolini, whose faces and restrained delivery prevent the figures from becoming polished biblical celebrities." },
+    { area: "production_design", status: "source_verified", note: "BFI credits Luigi Scaccianoce and Dante Ferretti; villages, caves, stone settlements and Calabrian landscapes provide a material world assembled from real southern Italian locations rather than monumental studio sets." },
+    { area: "costume_makeup", status: "source_verified", note: "BFI credits Danilo Donati; simple robes, veils, head coverings and minimally cosmetic faces support an iconographic but non-glamorous historical world." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and BFI credit Tonino Delli Colli; rough black-and-white photography, telephoto lenses, handheld observation, frontal portraits and stark landscapes keep the image simultaneously immediate and iconic." },
+    { area: "lighting", status: "source_verified", note: "The location method uses hard exterior light, exposed skies and plainly illuminated interiors to preserve faces and terrain rather than smooth them into studio devotional imagery." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the black-and-white feature in a 1.85:1 presentation, retaining the alternation between compressed faces, group movement and broad landscape." },
+    { area: "editing", status: "source_verified", note: "BFI credits Nino Baragli; direct cuts connect sermons, journeys, miracles and confrontation, while abrupt changes of scale and visual reference keep scripture active rather than ceremonially continuous." },
+    { area: "sound_design", status: "source_verified", note: "Spoken scripture, footsteps, wind, crowds and periods of exposed quiet give the locations physical presence and allow words to remain forceful without a naturalistic historical sound illusion." },
+    { area: "music", status: "source_verified", note: "Criterion and BFI document the deliberately transhistorical soundtrack, including Bach, Mozart and Black spiritual traditions, which frames the sacred story as culturally alive rather than archaeologically sealed." },
+    { area: "effects_animation", status: "source_verified", note: "BFI analysis notes the film's minimal, practical handling of miracles and extraordinary events through framing and editing, rejecting the effects spectacle associated with biblical epics." },
+    { area: "documentary_method", status: "source_verified", note: "Nonprofessional casting, found landscapes, mobile observation and attention to unidealised faces give the fiction a documentary discipline while preserving explicit sacred and poetic construction." },
+  ],
+} as const satisfies FilmHistoryProfile;
