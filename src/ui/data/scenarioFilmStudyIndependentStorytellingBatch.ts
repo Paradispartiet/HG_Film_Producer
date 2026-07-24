@@ -40,6 +40,10 @@ import {
   getTheGameFilmHistoryDonors,
   getTheGameFilmHistoryProfile,
 } from "./scenarioFilmStudySubjectiveEnclosureTheGameCatalog";
+import {
+  getBuffalo66FilmHistoryDonors,
+  getBuffalo66FilmHistoryProfile,
+} from "./scenarioFilmStudyAmericanRegionalBuffalo66Catalog";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 
@@ -91,7 +95,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return getTheGameFilmHistoryProfile(scenarioId)
+  return getBuffalo66FilmHistoryProfile(scenarioId)
+    ?? getTheGameFilmHistoryProfile(scenarioId)
     ?? getLeavingLasVegasFilmHistoryProfile(scenarioId)
     ?? getAntoniasLineFilmHistoryProfile(scenarioId)
     ?? getClerksFilmHistoryProfile(scenarioId)
@@ -181,29 +186,36 @@ function missFeedback(group: IndependentStorytellingProfileGroup): string {
 export function createIndependentStorytellingFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const buffalo66Donors = getBuffalo66FilmHistoryDonors(profile);
   const theGameDonors = getTheGameFilmHistoryDonors(profile);
   const leavingLasVegasDonors = getLeavingLasVegasFilmHistoryDonors(profile);
   const antoniasLineDonors = getAntoniasLineFilmHistoryDonors(profile);
   const clerksDonors = getClerksFilmHistoryDonors(profile);
   const downByLawDonors = getDownByLawFilmHistoryDonors(profile);
   const priorityDonors = getPriorityIndieFinalDonors(profile);
-  const group: IndependentStorytellingProfileGroup = theGameDonors
-    ? "subjective_enclosure_performance"
-    : leavingLasVegasDonors
-      ? "american_precarity_body_care"
-      : antoniasLineDonors
-        ? "family_performance_grief_power"
-        : getIndependentStorytellingProfileGroup(profile.scenarioId);
-  const donors = theGameDonors
+  const group: IndependentStorytellingProfileGroup = buffalo66Donors
+    ? "american_regional_identity_place_belonging"
+    : theGameDonors
+      ? "subjective_enclosure_performance"
+      : leavingLasVegasDonors
+        ? "american_precarity_body_care"
+        : antoniasLineDonors
+          ? "family_performance_grief_power"
+          : getIndependentStorytellingProfileGroup(profile.scenarioId);
+  const donors = buffalo66Donors
+    ?? theGameDonors
     ?? leavingLasVegasDonors
     ?? antoniasLineDonors
     ?? clerksDonors
     ?? downByLawDonors
     ?? priorityDonors
     ?? getIndependentStorytellingDonors(profile);
-  const start = theGameDonors ? 0 : hashString(profile.scenarioId);
+  const start = buffalo66Donors || theGameDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const buffalo66Match = "This matches the documented production relationship among Gallo and Bagnall's autobiographical Buffalo screenplay, a compact local shoot, tightly scripted performance, 35 mm reversal stock, precisely art-directed colour, regional interiors, abrupt memory and fantasy editing, subtle musical numbers and the frozen subjective gunshot tableau.";
+  const buffalo66Partial = "This is another real American regional, performed-identity or music-city production system, but it does not combine a false marriage, hostile family homecoming, football grievance, exact reversal exposure, abrasive writer-director-star performance and musical fantasy in the same way.";
+  const buffalo66Miss = "This places the film inside the wrong relationship between autobiographical regional production, Buffalo social memory, scripted performance, reversal-stock colour, designed interiors, music, romantic fantasy and subjective effects.";
   const theGameMatch = "This matches the documented production relationship among the Brancato-Ferris screenplay and Andrew Kevin Walker revisions, Consumer Recreation Services' performed reality, real San Francisco locations, the Filoli and office contrast, Harris Savides's Panavision image and practical lighting systems, restricted viewpoint, Ren Klyce's sound, Howard Shore's score and integrated effects.";
   const theGamePartial = "This is another real subjective-enclosure, psychological-uncertainty or performed-identity system, but it does not turn an entire modern city, corporate service network, hidden cast, architecture, stunts, media, sound and effects into one continuous loss-of-control performance.";
   const theGameMiss = "This places the film inside the wrong relationship between corporate satire, immersive staged reality, San Francisco location architecture, hidden performers, Panavision photography, large practical lighting systems, information withholding, sound and seamless effects.";
@@ -221,43 +233,49 @@ export function createIndependentStorytellingFilmHistoryChoices(
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: theGameDonors
-        ? theGameMatch
-        : leavingLasVegasDonors
-          ? leavingLasVegasMatch
-          : "This connects the film's historical position directly to its documented relationship between place, narrative structure, image system, media form and production method.",
+      feedback: buffalo66Donors
+        ? buffalo66Match
+        : theGameDonors
+          ? theGameMatch
+          : leavingLasVegasDonors
+            ? leavingLasVegasMatch
+            : "This connects the film's historical position directly to its documented relationship between place, narrative structure, image system, media form and production method.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: theGameDonors
-        ? theGamePartial
-        : leavingLasVegasDonors
-          ? leavingLasVegasPartial
-          : clerksDonors
-            ? clerksPartial
-            : downByLawDonors
-              ? downByLawPartial
-              : priorityDonors
-                ? priorityPartial
-                : partialFeedback(group),
+      feedback: buffalo66Donors
+        ? buffalo66Partial
+        : theGameDonors
+          ? theGamePartial
+          : leavingLasVegasDonors
+            ? leavingLasVegasPartial
+            : clerksDonors
+              ? clerksPartial
+              : downByLawDonors
+                ? downByLawPartial
+                : priorityDonors
+                  ? priorityPartial
+                  : partialFeedback(group),
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: theGameDonors
-        ? theGameMiss
-        : leavingLasVegasDonors
-          ? leavingLasVegasMiss
-          : clerksDonors
-            ? clerksMiss
-            : downByLawDonors
-              ? downByLawMiss
-              : priorityDonors
-                ? priorityMiss
-                : missFeedback(group),
+      feedback: buffalo66Donors
+        ? buffalo66Miss
+        : theGameDonors
+          ? theGameMiss
+          : leavingLasVegasDonors
+            ? leavingLasVegasMiss
+            : clerksDonors
+              ? clerksMiss
+              : downByLawDonors
+                ? downByLawMiss
+                : priorityDonors
+                  ? priorityMiss
+                  : missFeedback(group),
     }] : []),
   ];
 }
