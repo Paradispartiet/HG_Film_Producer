@@ -25,6 +25,10 @@ import {
   getDownByLawFilmHistoryProfile,
 } from "./scenarioFilmStudyIndependentStorytellingDownByLawCatalog";
 import {
+  getRosettaFilmHistoryDonors,
+  getRosettaFilmHistoryProfile,
+} from "./scenarioFilmStudySocialRealismRosettaCatalog";
+import {
   getEyesWideShutFilmHistoryDonors,
   getEyesWideShutFilmHistoryProfile,
 } from "./scenarioFilmStudySubjectiveEnclosureEyesWideShutCatalog";
@@ -58,6 +62,10 @@ import {
 } from "./scenarioFilmStudyAmericanRegionalBuffalo66Catalog";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
+
+type ResolvedIndependentStorytellingProfileGroup =
+  | IndependentStorytellingProfileGroup
+  | "social_realism_labor_body";
 
 function statusRank(status: FilmStudyCoverageOverride["status"]): number {
   if (status === "source_verified") return 4;
@@ -107,7 +115,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return getEyesWideShutFilmHistoryProfile(scenarioId)
+  return getRosettaFilmHistoryProfile(scenarioId)
+    ?? getEyesWideShutFilmHistoryProfile(scenarioId)
     ?? getBeingJohnMalkovichFilmHistoryProfile(scenarioId)
     ?? getTheBigLebowskiFilmHistoryProfile(scenarioId)
     ?? getBuffalo66FilmHistoryProfile(scenarioId)
@@ -152,8 +161,8 @@ function hashString(value: string): number {
   return hash;
 }
 
-function partialFeedback(group: IndependentStorytellingProfileGroup): string {
-  const feedback: Record<IndependentStorytellingProfileGroup, string> = {
+function partialFeedback(group: ResolvedIndependentStorytellingProfileGroup): string {
+  const feedback: Record<ResolvedIndependentStorytellingProfileGroup, string> = {
     general: "This is a real independent storytelling system, but it belongs to another balance of place, genre, memory, documentary evidence, performance and visual construction.",
     south_korean_genre: "This is a real South Korean production system, but it organizes historical pressure, performance, genre, location, effects, editing and sound differently.",
     south_southeast_asian: "This is a real South or Southeast Asian production system, but it organizes institution, performance, landscape, duration, genre and sound differently.",
@@ -171,12 +180,13 @@ function partialFeedback(group: IndependentStorytellingProfileGroup): string {
     american_regional_identity_place_belonging: "This is a real American regional identity, place-and-belonging system, but it organizes impersonation, migration, family economy, childhood memory, landscape, narration, ensemble performance and sound differently.",
     asian_transnational_urban_identity: "This is a real Asian transnational urban-identity system, but it organizes migration, labour, romance, surveillance, time and belonging differently.",
     japanese_ambiguity_dialogue: "This is a real Japanese ambiguity-and-dialogue production system, but it organizes hypnosis, coincidence, institutional viewpoint, environmental procedure, performance and sound differently.",
+    social_realism_labor_body: "This is another real social-realist labour-and-body system, but it organizes work, exclusion, physical procedure, moral choice, camera proximity and environmental sound differently.",
   };
   return feedback[group];
 }
 
-function missFeedback(group: IndependentStorytellingProfileGroup): string {
-  const feedback: Record<IndependentStorytellingProfileGroup, string> = {
+function missFeedback(group: ResolvedIndependentStorytellingProfileGroup): string {
+  const feedback: Record<ResolvedIndependentStorytellingProfileGroup, string> = {
     general: "This places the film inside the wrong historical relationship between place, narration, media mixture, performance and image-making.",
     south_korean_genre: "This places the film inside the wrong South Korean historical and production logic.",
     south_southeast_asian: "This places the film inside the wrong South or Southeast Asian institutional and production logic.",
@@ -194,6 +204,7 @@ function missFeedback(group: IndependentStorytellingProfileGroup): string {
     american_regional_identity_place_belonging: "This places the film inside the wrong relationship between regional production, race, migration, family belonging, institutional identity, landscape, community memory and local material life.",
     asian_transnational_urban_identity: "This places the film inside the wrong relationship between Asian city, displacement, divided identity, social systems and return.",
     japanese_ambiguity_dialogue: "This places the film inside the wrong Japanese relationship between uncertainty, conversation, institutional pressure, landscape and moral interpretation.",
+    social_realism_labor_body: "This places the film inside the wrong relationship between labour exclusion, bodily survival, social belonging, documentary-derived staging, mobile camera, cutting and practical sound.",
   };
   return feedback[group];
 }
@@ -201,6 +212,7 @@ function missFeedback(group: IndependentStorytellingProfileGroup): string {
 export function createIndependentStorytellingFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const rosettaDonors = getRosettaFilmHistoryDonors(profile);
   const eyesWideShutDonors = getEyesWideShutFilmHistoryDonors(profile);
   const beingJohnMalkovichDonors = getBeingJohnMalkovichFilmHistoryDonors(profile);
   const theBigLebowskiDonors = getTheBigLebowskiFilmHistoryDonors(profile);
@@ -211,22 +223,25 @@ export function createIndependentStorytellingFilmHistoryChoices(
   const clerksDonors = getClerksFilmHistoryDonors(profile);
   const downByLawDonors = getDownByLawFilmHistoryDonors(profile);
   const priorityDonors = getPriorityIndieFinalDonors(profile);
-  const group: IndependentStorytellingProfileGroup = eyesWideShutDonors
-    ? "subjective_enclosure_performance"
-    : beingJohnMalkovichDonors
+  const group: ResolvedIndependentStorytellingProfileGroup = rosettaDonors
+    ? "social_realism_labor_body"
+    : eyesWideShutDonors
       ? "subjective_enclosure_performance"
-      : theBigLebowskiDonors
-        ? "american_independent_genre_resourcefulness"
-        : buffalo66Donors
-          ? "american_regional_identity_place_belonging"
-          : theGameDonors
-            ? "subjective_enclosure_performance"
-            : leavingLasVegasDonors
-              ? "american_precarity_body_care"
-              : antoniasLineDonors
-                ? "family_performance_grief_power"
-                : getIndependentStorytellingProfileGroup(profile.scenarioId);
-  const donors = eyesWideShutDonors
+      : beingJohnMalkovichDonors
+        ? "subjective_enclosure_performance"
+        : theBigLebowskiDonors
+          ? "american_independent_genre_resourcefulness"
+          : buffalo66Donors
+            ? "american_regional_identity_place_belonging"
+            : theGameDonors
+              ? "subjective_enclosure_performance"
+              : leavingLasVegasDonors
+                ? "american_precarity_body_care"
+                : antoniasLineDonors
+                  ? "family_performance_grief_power"
+                  : getIndependentStorytellingProfileGroup(profile.scenarioId);
+  const donors = rosettaDonors
+    ?? eyesWideShutDonors
     ?? beingJohnMalkovichDonors
     ?? theBigLebowskiDonors
     ?? buffalo66Donors
@@ -237,11 +252,15 @@ export function createIndependentStorytellingFilmHistoryChoices(
     ?? downByLawDonors
     ?? priorityDonors
     ?? getIndependentStorytellingDonors(profile);
-  const start = eyesWideShutDonors || beingJohnMalkovichDonors || theBigLebowskiDonors || buffalo66Donors || theGameDonors
+  const start = rosettaDonors || eyesWideShutDonors || beingJohnMalkovichDonors || theBigLebowskiDonors || buffalo66Donors || theGameDonors
     ? 0
     : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+
+  const rosettaMatch = "This matches the documented production relationship among the Dardennes' post-documentary Belgian social realism, Films du Fleuve and ARP production, an unknown Émilie Dequenne, Seraing labour geography, Alain Marcoen's Super 16 image, Benoît Dervaux's body-camera choreography, Marie-Hélène Dozo's cutting, Jean-Pierre Duret's practical sound and the film's Cannes legacy.";
+  const rosettaPartial = "This is another real labour, precarity or embodied social-realist system, but it does not combine a war for employment, an unknown central performer, gas bottles, a caravan site, factory and waffle-stand procedure, Super 16 body-camera proximity and recurring practical sound in the same way.";
+  const rosettaMiss = "This places the film inside the wrong relationship between postindustrial labour, bodily performance, social belonging, Super 16 proximity, rehearsed handheld choreography, editing, environmental sound and ethical choice.";
   const eyesWideShutMatch = "This matches the documented production relationship among Kubrick and Raphael's long-planned Schnitzler adaptation, the prolonged Pole Star and Warner production, an English reconstruction of Manhattan, Cruise and Kidman's marital performance, masked ritual, wide Zeiss lenses, Steadicam, pushed 35 mm, practical Christmas and street lighting, Nigel Galt's extended edit, Jocelyn Pook's recurring score and the digitally altered United States release.";
   const eyesWideShutPartial = "This is another real subjective-enclosure, ritual-performance or nocturnal-uncertainty system, but it does not join a marriage crisis, reconstructed Manhattan, class access, masks, dream repetition, practical coloured light, pushed negative and prolonged actor-director exploration in the same way.";
   const eyesWideShutMiss = "This places the film inside the wrong relationship between Viennese adaptation, studio-auteur control, marriage performance, nocturnal city architecture, masked ritual, wide-angle movement, photochemical colour, editorial ambiguity, music and release-version effects.";
@@ -266,72 +285,79 @@ export function createIndependentStorytellingFilmHistoryChoices(
   const downByLawMiss = "This places the film inside the wrong relationship between American independent production, outsider ensemble, regional location, ellipsis, multilingual performance and music.";
   const priorityPartial = "This is another final priority-independent system, but it organizes comic alienation, architectural attention or abrasive regional hustle through a different balance of design, performance, place, editing and sound.";
   const priorityMiss = "This places the film inside the wrong relationship between American independent production, designed environment, regional observation, social performance, analogue or spatial form and audience identification.";
+
   return [
     {
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: eyesWideShutDonors
-        ? eyesWideShutMatch
-        : beingJohnMalkovichDonors
-          ? beingJohnMalkovichMatch
-          : theBigLebowskiDonors
-            ? theBigLebowskiMatch
-            : buffalo66Donors
-              ? buffalo66Match
-              : theGameDonors
-                ? theGameMatch
-                : leavingLasVegasDonors
-                  ? leavingLasVegasMatch
-                  : "This connects the film's historical position directly to its documented relationship between place, narrative structure, image system, media form and production method.",
+      feedback: rosettaDonors
+        ? rosettaMatch
+        : eyesWideShutDonors
+          ? eyesWideShutMatch
+          : beingJohnMalkovichDonors
+            ? beingJohnMalkovichMatch
+            : theBigLebowskiDonors
+              ? theBigLebowskiMatch
+              : buffalo66Donors
+                ? buffalo66Match
+                : theGameDonors
+                  ? theGameMatch
+                  : leavingLasVegasDonors
+                    ? leavingLasVegasMatch
+                    : "This connects the film's historical position directly to its documented relationship between place, narrative structure, image system, media form and production method.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: eyesWideShutDonors
-        ? eyesWideShutPartial
-        : beingJohnMalkovichDonors
-          ? beingJohnMalkovichPartial
-          : theBigLebowskiDonors
-            ? theBigLebowskiPartial
-            : buffalo66Donors
-              ? buffalo66Partial
-              : theGameDonors
-                ? theGamePartial
-                : leavingLasVegasDonors
-                  ? leavingLasVegasPartial
-                  : clerksDonors
-                    ? clerksPartial
-                    : downByLawDonors
-                      ? downByLawPartial
-                      : priorityDonors
-                        ? priorityPartial
-                        : partialFeedback(group),
+      feedback: rosettaDonors
+        ? rosettaPartial
+        : eyesWideShutDonors
+          ? eyesWideShutPartial
+          : beingJohnMalkovichDonors
+            ? beingJohnMalkovichPartial
+            : theBigLebowskiDonors
+              ? theBigLebowskiPartial
+              : buffalo66Donors
+                ? buffalo66Partial
+                : theGameDonors
+                  ? theGamePartial
+                  : leavingLasVegasDonors
+                    ? leavingLasVegasPartial
+                    : clerksDonors
+                      ? clerksPartial
+                      : downByLawDonors
+                        ? downByLawPartial
+                        : priorityDonors
+                          ? priorityPartial
+                          : partialFeedback(group),
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: eyesWideShutDonors
-        ? eyesWideShutMiss
-        : beingJohnMalkovichDonors
-          ? beingJohnMalkovichMiss
-          : theBigLebowskiDonors
-            ? theBigLebowskiMiss
-            : buffalo66Donors
-              ? buffalo66Miss
-              : theGameDonors
-                ? theGameMiss
-                : leavingLasVegasDonors
-                  ? leavingLasVegasMiss
-                  : clerksDonors
-                    ? clerksMiss
-                    : downByLawDonors
-                      ? downByLawMiss
-                      : priorityDonors
-                        ? priorityMiss
-                        : missFeedback(group),
+      feedback: rosettaDonors
+        ? rosettaMiss
+        : eyesWideShutDonors
+          ? eyesWideShutMiss
+          : beingJohnMalkovichDonors
+            ? beingJohnMalkovichMiss
+            : theBigLebowskiDonors
+              ? theBigLebowskiMiss
+              : buffalo66Donors
+                ? buffalo66Miss
+                : theGameDonors
+                  ? theGameMiss
+                  : leavingLasVegasDonors
+                    ? leavingLasVegasMiss
+                    : clerksDonors
+                      ? clerksMiss
+                      : downByLawDonors
+                        ? downByLawMiss
+                        : priorityDonors
+                          ? priorityMiss
+                          : missFeedback(group),
     }] : []),
   ];
 }
