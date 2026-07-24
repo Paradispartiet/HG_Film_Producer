@@ -4,11 +4,11 @@ on:
   pull_request:
     branches: [main]
   push:
-    branches: [main, big-lebowski-production-case]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -33,7 +33,7 @@ jobs:
           cache: npm
 
       - name: Configure GitHub Pages
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
@@ -75,32 +75,14 @@ jobs:
 
           echo "Verified dist/index.html uses the built HG_Film_Producer asset bundle."
 
-      - name: Record Big Lebowski branch verification
-        if: github.ref == 'refs/heads/big-lebowski-production-case' && github.actor != 'github-actions[bot]'
-        shell: bash
-        run: |
-          set -euxo pipefail
-          cat > docs/BIG_LEBOWSKI_CI_PASS.md <<EOF
-          # Big Lebowski branch CI pass
-
-          Source commit: ${GITHUB_SHA}
-          Workflow run: ${GITHUB_RUN_ID}
-          Result: full v0.1 verification and Pages artifact validation passed.
-          EOF
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/BIG_LEBOWSKI_CI_PASS.md
-          git commit -m "Record Big Lebowski branch CI pass"
-          git push origin "HEAD:big-lebowski-production-case"
-
       - name: Upload Pages artifact
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
 
   deploy:
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
