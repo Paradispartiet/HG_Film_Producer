@@ -41,6 +41,7 @@ const verificationGroups = [
   ["European religious and moral modernism systems", ["scenario_viridiana_1961", "scenario_the_gospel_according_to_st_matthew_1964", "scenario_au_hasard_balthazar_1966"], 4],
   ["New Hollywood and blockbuster systems", ["scenario_bonnie_and_clyde_1967", "scenario_the_godfather_1972", "scenario_jaws_1975", "scenario_star_wars_1977"], 4],
   ["1970s New York production systems", ["scenario_mean_streets_1973", "scenario_dog_day_afternoon_1975", "scenario_taxi_driver_1976", "scenario_manhattan_1979"], 4],
+  ["final 1970s production systems", ["scenario_a_clockwork_orange_1971", "scenario_amarcord_1973", "scenario_scenes_from_a_marriage_1974"], 4],
   ["1960s scale and independent systems", ["scenario_psycho_1960", "scenario_lawrence_of_arabia_1962", "scenario_2001_a_space_odyssey_1968", "scenario_night_of_the_living_dead_1968"], 4],
   ["European modernist production systems", ["scenario_hiroshima_mon_amour_1959", "scenario_8_1_2_1963", "scenario_the_umbrellas_of_cherbourg_1964", "scenario_the_battle_of_algiers_1966"], 4],
   ["American independent breakthroughs", ["scenario_killer_of_sheep_1977", "scenario_sex_lies_and_videotape_1989", "scenario_slacker_1990", "scenario_daughters_of_the_dust_1991"], 4],
@@ -64,7 +65,7 @@ const verificationGroups = [
   ["Japanese ambiguity and dialogue systems", ["scenario_cure_1997", "scenario_wheel_of_fortune_and_fantasy_2021", "scenario_monster_kore_eda_2023", "scenario_evil_does_not_exist_2023"], 4],
 ] as const;
 
-const expectedVerifiedCount = 254;
+const expectedVerifiedCount = 257;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();

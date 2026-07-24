@@ -8,12 +8,14 @@ import type { FilmScenarioSeed } from "./filmScenarios";
 import type { FilmHistoryChoice, FilmHistoryProfile, ScenarioFilmStudyMap } from "./scenarioFilmStudyMap";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
+import { amarcordFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryAmarcord";
 import { doubleLifeOfVeroniqueFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryDoubleLifeVeronique";
 import { lAtalanteFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryLAtalante";
 import { landscapeInTheMistFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryLandscapeMist";
 import { spiritOfTheBeehiveFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemorySpiritBeehive";
 
 const profiles = {
+  [amarcordFilmHistoryProfile.scenarioId]: amarcordFilmHistoryProfile,
   [lAtalanteFilmHistoryProfile.scenarioId]: lAtalanteFilmHistoryProfile,
   [spiritOfTheBeehiveFilmHistoryProfile.scenarioId]: spiritOfTheBeehiveFilmHistoryProfile,
   [landscapeInTheMistFilmHistoryProfile.scenarioId]: landscapeInTheMistFilmHistoryProfile,

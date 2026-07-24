@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const amarcordFilmHistoryProfile = {
+  scenarioId: "scenario_amarcord_1973",
+  period: "Early-1970s Italian autobiographical modernism reconstructing provincial Fascist memory as a seasonal studio carnival",
+  traditions: ["Autobiographical memory cinema", "Italian grotesque", "Provincial anti-Fascist satire"],
+  before: "Fellini's earlier films moved from neorealist observation toward increasingly subjective, carnivalesque worlds, while postwar Italian cinema continued to examine everyday accommodation with Fascism.",
+  moment: "Fellini and Tonino Guerra organise a year of communal episodes rather than one hero's plot; Cinecittà recreates an imaginary Rimini through Danilo Donati's sets and costumes, Giuseppe Rotunno's colour, exaggerated ensemble faces, artificial weather and sea, postsynchronised sound and Nino Rota's recurring memory theme.",
+  after: "Its international success, Cannes presentation and Academy recognition established the film as a central model for autobiographical cinema in which remembered place is openly reconstructed, exaggerated and shared by an entire community.",
+  historyQuestion: "Which production system best explains why Amarcord feels like a remembered town rather than a factual reconstruction of Rimini?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Criterion place the film's provincial childhood material inside 1930s Fascist Italy and Fellini's postwar act of remembrance." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Criterion connects the film to Fellini's later carnivalesque style, where caricature, dream, social ritual and political satire replace neorealist transparency." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion documents the reconstruction of Fellini's hometown at Cinecittà, while Cannes confirms the Italian production and principal craft credits." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI, Cannes and Academy records document its international presentation, foreign-language-film win and later directing and screenplay nominations." },
+    { area: "screenplay", status: "source_verified", note: "Fellini and Tonino Guerra build a seasonal mosaic of school, family, church, Fascist spectacle, sexuality, weather and communal fantasy rather than a single causal plot." },
+    { area: "directing", status: "source_verified", note: "Criterion describes a world assembled from faces, projected character types, circus rhythm and dream logic rather than conventional psychological realism." },
+    { area: "performance", status: "source_verified", note: "The ensemble is organised as magnified social types whose gestures and faces carry the town's collective memory, desire and hypocrisy." },
+    { area: "production_design", status: "source_verified", note: "Criterion identifies Danilo Donati's extravagant sets and the Cinecittà reconstruction as the material basis of the imaginary provincial town." },
+    { area: "costume_makeup", status: "source_verified", note: "Donati's costumes and stylised bodies distinguish schoolchildren, clergy, Fascists, family members and fantasy figures inside the communal pageant." },
+    { area: "cinematography", status: "source_verified", note: "Criterion and Cannes credit Giuseppe Rotunno's colour photography, which joins warm remembrance, theatrical spectacle and deliberately artificial seasonal tableaux." },
+    { area: "lighting", status: "mapped", note: "Studio control lets daylight, night, fog, snow and fantasy share one heightened memory palette, but a dedicated Rotunno lighting account remains pending." },
+    { area: "camera_format", status: "mapped", note: "Criterion records the colour 1.85:1 presentation, while the complete camera, stock and lens package still needs dedicated technical sourcing." },
+    { area: "editing", status: "source_verified", note: "Ruggero Mastroianni's episodic assembly moves through seasons, rituals and recurring townspeople so association and return replace conventional escalation." },
+    { area: "sound_design", status: "mapped", note: "Voices, public ceremony, school noise, wind, foghorns and postsynchronised texture make the studio town communal, although department-level sourcing remains limited." },
+    { area: "music", status: "source_verified", note: "Criterion, BFI and Cannes identify Nino Rota's recurring nostalgic theme as the emotional thread binding otherwise dispersed episodes." },
+    { area: "effects_animation", status: "mapped", note: "Artificial fog, snow, sea and the passing liner are deliberately theatrical extensions of memory rather than invisible realism." },
+    { area: "documentary_method", status: "not_central", note: "The film draws on biography and history but openly invents an imaginary town and projected characters instead of claiming documentary reconstruction." },
+  ],
+} as const satisfies FilmHistoryProfile;

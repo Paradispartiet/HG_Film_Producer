@@ -12,8 +12,10 @@ import type {
 } from "./scenarioFilmStudyMap";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
+import { aClockworkOrangeFilmHistoryProfile } from "./scenarioFilmStudyConstructedWorldsClockworkOrange";
 
 const constructedWorldsProfiles = {
+  [aClockworkOrangeFilmHistoryProfile.scenarioId]: aClockworkOrangeFilmHistoryProfile,
   scenario_groundhog_day_1993: {
     scenarioId: "scenario_groundhog_day_1993",
     period: "Early-1990s American high-concept comedy transformed into an existential time-loop fable",
