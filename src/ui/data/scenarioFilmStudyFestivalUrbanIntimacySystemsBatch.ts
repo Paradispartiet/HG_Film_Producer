@@ -100,6 +100,9 @@ export function createFestivalUrbanIntimacySystemsFilmHistoryChoices(profile: Fi
   const start = hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const matchFeedback = beforeSunriseDonors
+    ? "This matches the documented relationship between Vienna co-production, collaborative dialogue writing, intensive rehearsal, two-person performance, real-location movement, 35mm observation, reaction-shot editing and near-real-time romantic duration."
+    : "This matches the documented relationship between festival-era urban pressure, intimacy, class, violence, performance, image, editing and sound.";
   const partialFeedback = beforeSunriseDonors
     ? "This is another real dialogue, city or one-night intimacy system, but it organizes ensemble geography, marital confrontation or urban solitude through a different balance of writing, rehearsal, camera duration, editing and sound."
     : "This is a real festival-era intimacy system, but it organizes industrial violence, embodied desire, noir investigation, class distance and actor process differently.";
@@ -111,7 +114,7 @@ export function createFestivalUrbanIntimacySystemsFilmHistoryChoices(profile: Fi
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This matches the documented relationship between festival-era urban pressure, intimacy, class, violence, performance, image, editing and sound.",
+      feedback: matchFeedback,
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
