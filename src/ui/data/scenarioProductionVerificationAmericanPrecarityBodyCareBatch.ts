@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { rosettaProductionCaseVerification } from "./scenarioProductionVerificationRosetta";
 
 export const americanPrecarityBodyCareVerificationRecords = [
   {
@@ -160,5 +161,6 @@ export const americanPrecarityBodyCareVerificationRecords = [
         note: "Criterion analyzes the four-answer counseling sequence, the sustained camera on Sidney Flanigan, wordless support between the cousins and the film's refusal to turn Autumn's decision into conventional debate."
       }
     ]
-  }
+  },
+  rosettaProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
