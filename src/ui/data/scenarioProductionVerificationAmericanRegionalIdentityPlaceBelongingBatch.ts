@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { buffalo66VerificationRecords } from "./scenarioProductionVerificationBuffalo66";
 
 export const americanRegionalIdentityPlaceBelongingVerificationRecords = [
   {
@@ -160,5 +161,6 @@ export const americanRegionalIdentityPlaceBelongingVerificationRecords = [
         note: "Green describes his film-school archive work with Tim Orr, the melancholy youth-film influence that led through Pleasant Grove to George Washington and his preference for emotional atmosphere as storytelling."
       }
     ]
-  }
+  },
+  ...buffalo66VerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
