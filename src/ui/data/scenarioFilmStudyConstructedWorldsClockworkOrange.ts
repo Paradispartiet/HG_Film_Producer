@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const aClockworkOrangeFilmHistoryProfile = {
+  scenarioId: "scenario_a_clockwork_orange_1971",
+  period: "Early-1970s British dystopian modernism built from contemporary architecture, behavioural conditioning and audiovisual counterpoint",
+  traditions: ["British dystopian cinema", "Constructed-world satire", "Institutional control drama"],
+  before: "British speculative fiction and social satire had already imagined authoritarian futures, while Anthony Burgess's novel joined invented youth language to a debate about violence, free will and state power.",
+  moment: "Kubrick turns existing brutalist London locations, modernist interiors, Milena Canonero's class-coded costumes, John Alcott's shifting palettes and practical light, stylised movement, Nadsat voice-over and Wendy Carlos's electronic-classical score into one recognisable near-future control system.",
+  after: "The film's withdrawal from British exhibition, later restoration to circulation and continuing influence on fashion, punk and dystopian screen culture made its production design and music inseparable from debates about violence, censorship and institutional authority.",
+  historyQuestion: "Which production system best explains how A Clockwork Orange makes a near-future Britain feel both recognisably contemporary and aggressively artificial?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI places the film in early-1970s Britain and documents its controversy, withdrawal and later return to exhibition." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI identifies the film as a major British dystopia joining black comedy, youth culture, speculative design and institutional control." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI records Kubrick as writer, producer and director, with Polaris and Hawk Films producing the adaptation for Warner Bros. distribution." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI documents the prolonged British withdrawal and the film's durable influence on punk, fashion and later dystopian imagery." },
+    { area: "screenplay", status: "source_verified", note: "Kubrick preserves Burgess's Nadsat and first-person structure while organising the adaptation into violence, institutional treatment and retaliatory return." },
+    { area: "directing", status: "source_verified", note: "ASC documents Kubrick and Alcott's distinct colour, movement and lighting strategy for the film's three-part structure." },
+    { area: "performance", status: "source_verified", note: "BFI records that the Singin' in the Rain assault emerged through rehearsal, binding McDowell's physical performance to musical counterpoint." },
+    { area: "production_design", status: "source_verified", note: "BFI documents the transformation of Thamesmead, Brunel University, underpasses and modernist homes into a coherent near-future Britain." },
+    { area: "costume_makeup", status: "source_verified", note: "BFI identifies Milena Canonero's white cricket clothing, codpieces, bowlers, boots and asymmetrical eyelash as a class-coded, enduring visual system." },
+    { area: "cinematography", status: "source_verified", note: "ASC details John Alcott's cold stark photography, fluid zooms and dollies, long takes and changing visual treatment across Alex's trajectory." },
+    { area: "lighting", status: "source_verified", note: "ASC documents high-key colour, cool flat institutional light, low-key later passages and lightweight Lowel units bounced from ceilings or umbrellas." },
+    { area: "camera_format", status: "source_verified", note: "ASC records the overhauled Mitchell BNC, crystal motor and joystick-operated zoom equipment used to expand Kubrick's lens and movement options." },
+    { area: "editing", status: "source_verified", note: "ASC records Kubrick and Bill Butler cutting at the director's estate with Steenbecks and a Moviola, shaping speed changes and musical montage." },
+    { area: "sound_design", status: "mapped", note: "Nadsat narration, institutional voices, bodily violence and ironic song placement form a controlled sound-image system, although department-level sound research remains limited." },
+    { area: "music", status: "source_verified", note: "ASC and BFI document Kubrick's classical counterpoint and Wendy Carlos's electronic treatment of Purcell, Rossini, Elgar and Beethoven." },
+    { area: "effects_animation", status: "not_central", note: "The future is constructed mainly through locations, design, costume, optics, performance and editing rather than effects spectacle." },
+    { area: "documentary_method", status: "mapped", note: "Contemporary British architecture is recorded as real material and recombined into fiction, but the production is not organised as documentary." },
+  ],
+} as const satisfies FilmHistoryProfile;
