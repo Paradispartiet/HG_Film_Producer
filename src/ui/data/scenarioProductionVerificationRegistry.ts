@@ -51,6 +51,7 @@ import { trueRomanceVerificationRecords } from "./scenarioProductionVerification
 import { clerksVerificationRecords } from "./scenarioProductionVerificationClerks";
 import { forrestGumpVerificationRecords } from "./scenarioProductionVerificationForrestGump";
 import { satantangoVerificationRecords } from "./scenarioProductionVerificationSatantango";
+import { antoniasLineVerificationRecords } from "./scenarioProductionVerificationAntoniasLine";
 import { whereIsTheFriendsHouseVerificationRecords } from "./scenarioProductionVerificationWhereFriendsHouse";
 import { intimateFestivalBodyCareVerificationRecords } from "./scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch";
 import { japaneseAmbiguityDialogueVerificationRecords } from "./scenarioProductionVerificationJapaneseAmbiguityDialogueBatch";
@@ -101,6 +102,7 @@ const additionalVerificationRecords = [
   ...clerksVerificationRecords,
   ...forrestGumpVerificationRecords,
   ...satantangoVerificationRecords,
+  ...antoniasLineVerificationRecords,
   ...whereIsTheFriendsHouseVerificationRecords,
   ...americanIndependentBreakthroughsVerificationRecords,
   ...americanIndependentGenreResourcefulnessVerificationRecords,
