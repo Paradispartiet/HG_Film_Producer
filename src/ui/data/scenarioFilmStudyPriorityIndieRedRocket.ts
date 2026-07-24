@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const redRocketFilmHistoryProfile = {
+  scenarioId: "scenario_red_rocket_2021",
+  period: "Early-2020s American regional independent cinema, abrasive social comedy and Gulf Coast precarity",
+  traditions: ["American neorealist independent cinema", "Regional social comedy", "Character-driven antihero film"],
+  before: "Sean Baker's earlier features had developed a location-based independent method centred on precarious communities, nontraditional casting and tonal mixtures of comedy, danger and social observation.",
+  moment: "Red Rocket uses Texas City locations, refineries, roadside businesses, 16 mm texture, Simon Rex's volatile charisma, local casting and repeated pop music to make an exploitative drifter both seductive and increasingly legible.",
+  after: "Its 2021 Cannes Competition premiere consolidated Baker's model of regionally embedded American independent cinema and showed how abrasive comedy, analogue image texture and casting energy could carry social critique without moral simplification.",
+  historyQuestion: "Which production system explains a Texas antihero comedy where 16 mm daylight, refineries, roadside businesses, local casting, repeated pop music and a relentlessly persuasive lead make exploitation feel energetic before its pattern becomes unmistakable?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes and A24 identify the 2021 feature as Sean Baker's Gulf Coast return story and his first film selected for Cannes Competition." },
+    { area: "movement_and_tradition", status: "source_verified", note: "A24 and Cannes place the film within Baker's raw, humane American regional cinema and his continuing focus on marginal economies and unstable social comedy." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes records FilmNation and the principal creative departments; A24 documents the film's American independent release context." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The official Cannes Competition selection established the film as a major international continuation of Baker's regional independent method." },
+    { area: "screenplay", status: "source_verified", note: "Cannes and A24 credit Sean Baker and Chris Bergoch; the repeated schemes and persuasive monologues reveal Mikey's exploitation through behaviour rather than explanatory judgement." },
+    { area: "directing", status: "source_verified", note: "Cannes describes Baker's mixture of raw social observation, humour and complex sympathy, along with his preference for performers found beyond conventional casting routes." },
+    { area: "performance", status: "source_verified", note: "Cannes foregrounds Simon Rex's live-wire performance and the ensemble of Suzanna Son, Bree Elrod and locally rooted supporting players." },
+    { area: "production_design", status: "source_verified", note: "Cannes credits Stephonik Youth; Texas City houses, doughnut shop, roadside businesses, open lots and refinery horizons make the local economy inseparable from character action." },
+    { area: "costume_makeup", status: "mapped", note: "Casual clothing, workwear and Mikey's self-conscious presentation reinforce social role and opportunism, though the inspected sources do not fully document the costume department." },
+    { area: "cinematography", status: "source_verified", note: "Cannes credits Drew Daniels; bright Gulf Coast exteriors, long lenses and analogue texture hold comic energy against industrial landscape and economic exposure." },
+    { area: "lighting", status: "source_verified", note: "The visual system favours hard Texas daylight, practical interiors and saturated dusk rather than polishing the region into conventional prestige realism." },
+    { area: "camera_format", status: "source_verified", note: "Production reporting and the film's institutional presentation document a 16 mm capture strategy that gives daylight, skin and refinery distance a distinct grain structure." },
+    { area: "editing", status: "source_verified", note: "Cannes credits Sean Baker as editor; the cutting sustains comic propulsion while recurring schemes and verbal patterns gradually expose Mikey's unchanged behaviour." },
+    { area: "sound_design", status: "source_verified", note: "Cannes credits Alex Altman; traffic, televisions, household arguments, industrial ambience and open-air quiet keep the town materially present." },
+    { area: "music", status: "source_verified", note: "Strategic repetition of pop music turns Mikey's self-myth and the film's comic momentum into a recurring sonic structure." },
+    { area: "effects_animation", status: "not_central", note: "The production relies on location, performance, analogue photography, editing and sound rather than animation or visual-effects spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "Cannes connects Baker's casting and regional observation to a documentary-derived method that lets local environments and social behaviour remain visible inside fiction." },
+  ],
+} as const satisfies FilmHistoryProfile;

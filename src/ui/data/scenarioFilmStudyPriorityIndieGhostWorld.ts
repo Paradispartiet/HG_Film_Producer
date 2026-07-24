@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const ghostWorldFilmHistoryProfile = {
+  scenarioId: "scenario_ghost_world_2001",
+  period: "Early-2000s American independent comic adaptation, post-teen alienation and deadpan suburban satire",
+  traditions: ["American independent comedy", "Alternative-comics adaptation", "Deadpan coming-of-age cinema"],
+  before: "Teen films and comic adaptations often simplified adolescence into romantic milestones or heightened fantasy, while underground comics offered harsher, more observational portraits of awkwardness, consumer culture and social identity.",
+  moment: "Terry Zwigoff and Daniel Clowes turn the comic into a deliberately strange suburban world where production design, thrift-store costume, flatly comic performance, Affonso Beato's framing and an eclectic 78-rpm-heavy soundtrack make alienation materially visible.",
+  after: "Its Oscar-nominated screenplay, Criterion canonisation and enduring cult reputation established the film as a key model for literate comic adaptation and American independent comedy built from design, tone, music and social observation.",
+  historyQuestion: "Which production system explains a comic adaptation where deadpan acting, cluttered rooms, consumer signage, thrift-store style and obsolete recorded music turn post-school alienation into a complete visual and sonic world?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, BFI and Criterion identify the 2001 feature as Zwigoff's fiction debut and a major American independent adaptation of Daniel Clowes's comic." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI and Criterion connect the film to underground comics, deadpan independent comedy and a rejection of conventional teen-movie falseness." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI records Mr. Mudd, United Artists and the principal producers, while BFI documents the difficult financing and adaptation process." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Criterion presents the film as a fiercely beloved twenty-first-century comedy and records the Oscar-nominated screenplay and continuing cult legacy." },
+    { area: "screenplay", status: "source_verified", note: "AFI credits Daniel Clowes and Terry Zwigoff; BFI's set report describes their long collaboration and effort to create complex social identities rather than teen-film stereotypes." },
+    { area: "directing", status: "source_verified", note: "BFI documents Zwigoff's documentary-derived attention to social detail, underplayed comedy and obsessive material specificity." },
+    { area: "performance", status: "source_verified", note: "Criterion's cast material describes the freedom given to Thora Birch, Scarlett Johansson and Illeana Douglas to explore chemistry and eccentric behaviour." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Edward T. McAvoy, while BFI details the chaotic rooms, ageing commercial spaces and photographed teenage-room research used to avoid generic set dressing." },
+    { area: "costume_makeup", status: "source_verified", note: "BFI foregrounds thrift-shop styling, green hair, jewellery and accumulated personal objects as visible identity construction for Enid and Rebecca." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Affonso Beato; Criterion records a colour 1.85:1 presentation whose composed frames hold characters against deliberately artificial consumer environments." },
+    { area: "lighting", status: "mapped", note: "The film uses controlled, readable colour and largely naturalistic interior and exterior lighting, but the inspected institutional sources do not provide a detailed lighting workflow." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the colour feature in a 1.85:1 presentation and preserves the intended visual geometry in its restoration." },
+    { area: "editing", status: "source_verified", note: "AFI credits Carole Kravetz-Aykanian and Michael R. Miller; BFI records Zwigoff's concern that precise postproduction timing was essential to making the underplayed comedy work." },
+    { area: "sound_design", status: "mapped", note: "Dry dialogue, room tone, traffic and commercial ambience support the deadpan world, although the inspected sources do not fully document the sound-postproduction team." },
+    { area: "music", status: "source_verified", note: "Zwigoff's Criterion essay explains how vintage recordings and deliberately awful commercial music were selected to sharpen paranoia, cynicism and nuanced deadpan tone." },
+    { area: "effects_animation", status: "not_central", note: "The production relies on performance, physical design, location, comic timing and recorded music rather than animation or visual-effects spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "BFI links Zwigoff's documentary background to the researched rooms, collector culture, found social detail and refusal of standardised teen-film environments." },
+  ],
+} as const satisfies FilmHistoryProfile;

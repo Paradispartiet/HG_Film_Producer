@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const columbusFilmHistoryProfile = {
+  scenarioId: "scenario_columbus_2017",
+  period: "Late-2010s American contemplative independent cinema, architectural modernism and intimate regional drama",
+  traditions: ["Contemplative independent cinema", "Architectural modernism", "Midwestern regional drama"],
+  before: "American independent character dramas often treated architecture as atmosphere or symbolic backdrop, while Kogonada's video essays had already developed a precise language for framing, repetition and spatial analysis.",
+  moment: "Columbus turns modernist buildings, balanced compositions, offscreen speech, walking conversations and restrained performances into the dramatic structure of two people delayed by family obligation.",
+  after: "Its Sundance NEXT premiere and Sundance-supported self-distribution made the film a widely cited example of formally rigorous regional filmmaking and independent audience-building outside a conventional acquisition path.",
+  historyQuestion: "Which production system explains a regional drama where modernist architecture, balanced static framing, pauses, walking conversations and withheld sound become the emotional language of family duty and unrealised possibility?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Sundance and BFI identify the film as Kogonada's first feature, premiering in the 2017 Sundance NEXT section and set in Columbus, Indiana." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI connects the film's formal control to Ozu, Linklater and modernist design while emphasising its distinct emotional use of architecture." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI lists the producer group, while Sundance documents the independent financing, festival premiere and Creative Distribution Fellowship strategy." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Sundance's case study records the film as a model for entrepreneurial independent distribution and long-tail audience development." },
+    { area: "screenplay", status: "source_verified", note: "Sundance credits Kogonada as writer-director and describes a drama organised around Casey, Jin, family obligation and the architecture that surrounds them." },
+    { area: "directing", status: "source_verified", note: "BFI describes rigorous control, contemplative pacing and architecture treated as emotionally active rather than decorative." },
+    { area: "performance", status: "source_verified", note: "BFI highlights Haley Lu Richardson's gesture-based performance and the restrained rapport with John Cho that avoids forced romance or resolution." },
+    { area: "production_design", status: "source_verified", note: "The real modernist buildings of Columbus function as the principal designed environment, with interiors, corridors, glass and public space determining blocking and emotional distance." },
+    { area: "costume_makeup", status: "mapped", note: "Contemporary, understated costume preserves the film's ordinary regional scale, but the inspected institutional sources do not provide detailed department documentation." },
+    { area: "cinematography", status: "source_verified", note: "Sundance's case study credits photographer Elisha Christian, while BFI analyses the precise framing, negative space and visual relation between people and buildings." },
+    { area: "lighting", status: "source_verified", note: "BFI's analysis emphasises natural daylight, reflective glass, controlled interiors and the soft tonal continuity that lets architectural surfaces remain legible." },
+    { area: "camera_format", status: "mapped", note: "The sources document the finished DCP and visual method but do not provide a complete authoritative capture-format specification." },
+    { area: "editing", status: "source_verified", note: "Kogonada's editing creates rhythm through pauses, entrances, returns and spatial correspondences rather than conventional plot acceleration." },
+    { area: "sound_design", status: "source_verified", note: "BFI notes crucial moments spoken but left unheard; footsteps, traffic, room tone and environmental quiet preserve space and emotional restraint." },
+    { area: "music", status: "source_verified", note: "The score by Hammock is used sparingly within a film whose dominant rhythm comes from dialogue, ambience and architectural quiet." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on real architecture, performance, composition, editing and environmental sound rather than visual-effects spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "The film's use of actual Columbus architecture and public geography gives its fictional encounters a site-specific documentary foundation." },
+  ],
+} as const satisfies FilmHistoryProfile;

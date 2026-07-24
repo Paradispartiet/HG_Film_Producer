@@ -16,6 +16,10 @@ import type {
   FilmHistoryProfile,
   ScenarioFilmStudyMap,
 } from "./scenarioFilmStudyMap";
+import {
+  getPriorityIndieFinalDonors,
+  getPriorityIndieFinalProfile,
+} from "./scenarioFilmStudyPriorityIndieFinalCatalog";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 
@@ -67,7 +71,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return getIndependentStorytellingCatalogProfile(scenarioId);
+  return getPriorityIndieFinalProfile(scenarioId)
+    ?? getIndependentStorytellingCatalogProfile(scenarioId);
 }
 
 export function resolveIndependentStorytellingFilmStudyMap(
@@ -151,11 +156,14 @@ function missFeedback(group: IndependentStorytellingProfileGroup): string {
 export function createIndependentStorytellingFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const priorityDonors = getPriorityIndieFinalDonors(profile);
   const group = getIndependentStorytellingProfileGroup(profile.scenarioId);
-  const donors = getIndependentStorytellingDonors(profile);
+  const donors = priorityDonors ?? getIndependentStorytellingDonors(profile);
   const start = hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const priorityPartial = "This is another final priority-independent system, but it organizes comic alienation, architectural attention or abrasive regional hustle through a different balance of design, performance, place, editing and sound.";
+  const priorityMiss = "This places the film inside the wrong relationship between American independent production, designed environment, regional observation, social performance, analogue or spatial form and audience identification.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
@@ -167,13 +175,13 @@ export function createIndependentStorytellingFilmHistoryChoices(
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: partialFeedback(group),
+      feedback: priorityDonors ? priorityPartial : partialFeedback(group),
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: missFeedback(group),
+      feedback: priorityDonors ? priorityMiss : missFeedback(group),
     }] : []),
   ];
 }
