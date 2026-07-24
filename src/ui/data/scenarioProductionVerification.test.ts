@@ -43,6 +43,7 @@ const verificationGroups = [
   ["European modernist production systems", ["scenario_hiroshima_mon_amour_1959", "scenario_8_1_2_1963", "scenario_the_umbrellas_of_cherbourg_1964", "scenario_the_battle_of_algiers_1966"], 4],
   ["American independent breakthroughs", ["scenario_killer_of_sheep_1977", "scenario_sex_lies_and_videotape_1989", "scenario_slacker_1990", "scenario_daughters_of_the_dust_1991"], 4],
   ["American independent genre and resourcefulness systems", ["scenario_blood_simple_1984", "scenario_metropolitan_1990", "scenario_reservoir_dogs_1992", "scenario_el_mariachi_1992"], 4],
+  ["Independent desire, identity and authorship systems", ["scenario_poison_1991", "scenario_fish_tank_2009", "scenario_pariah_2011", "scenario_the_souvenir_2019"], 4],
   ["Japanese everyday memory systems", ["scenario_tampopo_1985", "scenario_black_rain_imamura_1989", "scenario_after_life_1998", "scenario_still_walking_2008"], 4],
   ["South Korean genre systems", ["scenario_peppermint_candy_1999", "scenario_oasis_2002", "scenario_the_host_2006", "scenario_the_wailing_2016"], 4],
   ["South and Southeast Asian institutional and performance systems", ["scenario_syndromes_and_a_century_2006", "scenario_court_2014", "scenario_marlina_the_murderer_in_four_acts_2017", "scenario_the_disciple_2020"], 4],
@@ -59,7 +60,7 @@ const verificationGroups = [
   ["Japanese ambiguity and dialogue systems", ["scenario_cure_1997", "scenario_wheel_of_fortune_and_fantasy_2021", "scenario_monster_kore_eda_2023", "scenario_evil_does_not_exist_2023"], 4],
 ] as const;
 
-const expectedVerifiedCount = 236;
+const expectedVerifiedCount = 240;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
