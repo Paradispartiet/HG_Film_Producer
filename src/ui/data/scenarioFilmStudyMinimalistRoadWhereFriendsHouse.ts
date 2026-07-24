@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const whereIsTheFriendsHouseFilmHistoryProfile = {
+  scenarioId: "scenario_where_is_the_friend_s_house_1987",
+  period: "Late-1980s Iranian child-centred art cinema and the beginning of Abbas Kiarostami's Koker cycle",
+  traditions: ["Kanoon children's cinema", "Iranian poetic realism", "Neorealist journey and village cinema"],
+  before: "Kiarostami's work at Iran's Center for the Intellectual Development of Children and Young Adults had already developed a cinema of children, ethical choices and ordinary environments; this film turns those methods into a dramatic feature shaped by post-revolutionary rural life and neorealist attention.",
+  moment: "A boy's attempt to return a classmate's notebook becomes a repeated journey between Koker and a neighbouring village. Kiarostami uses nonprofessional performers, real northern-Iranian locations, child-height attention, recurring paths, restrained cutting, offscreen adult authority and a detailed monaural sound world to make personal responsibility physically legible.",
+  after: "Awards at the 1987 Fajr Film Festival and the Bronze Leopard with further prizes at Locarno in 1989 brought Kiarostami major international attention. The same village and production reality later became the basis of the self-reflexive Koker Trilogy.",
+  historyQuestion: "Which production system best explains how Where Is the Friend's House? turns one child's simple errand into an ethical journey through village geography, adult institutions and everyday sound?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Criterion places the production within Kiarostami's Kanoon work and identifies it as his first dramatic feature after the Iranian Revolution, while Fajr and Locarno records establish its national and international breakthrough." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional essays connect the film's child-centred village story to Iranian poetic realism, neorealist simplicity and the fiction-documentary boundary that later structures the Koker Trilogy." },
+    { area: "industry_and_production_context", status: "source_verified", note: "The film was produced by Kanoon, written and directed by Kiarostami and shot in and around Koker with a compact credited crew and locally grounded production method." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The film won two Fajr prizes, a Bronze Leopard and additional Locarno awards, initiated the Koker cycle and later ranked highly in the 2022 Sight and Sound critics' and directors' polls." },
+    { area: "screenplay", status: "source_verified", note: "A notebook, a deadline and incomplete directions create a clear object-driven quest whose repetitions reveal conflicts between obedience, friendship and personal responsibility." },
+    { area: "directing", status: "source_verified", note: "Kiarostami maintains the child's point of view, lets adults interrupt or misdirect the journey and turns repeated routes and ordinary encounters into suspense without conventional action escalation." },
+    { area: "performance", status: "source_verified", note: "Film institutions document the use of nonprofessional performers; Babak Ahmadpour's concentrated physical behaviour carries the story while adult speech often becomes an obstacle rather than exposition." },
+    { area: "production_design", status: "mapped", note: "Koker houses, school rooms, doors, alleys and the zigzag hillside path form a coherent material world, while detailed department-level design research remains limited." },
+    { area: "costume_makeup", status: "mapped", note: "School clothes and ordinary village dress support social specificity without display, but dedicated costume and makeup documentation remains pending." },
+    { area: "cinematography", status: "source_verified", note: "Farhad Saba's credited photography organizes the quest through child-scale framing, long views of paths and repeated spatial landmarks rather than touristic landscape spectacle." },
+    { area: "lighting", status: "mapped", note: "Naturalistic daylight and practical interiors preserve the continuity of the single-day journey, while a detailed lighting account remains pending." },
+    { area: "camera_format", status: "source_verified", note: "Criterion documents the colour 1.66:1 presentation and its 2K restoration, preserving a restrained photochemical image built for village geography and human scale." },
+    { area: "editing", status: "source_verified", note: "Kiarostami's credited edit uses repeated departures, returns, withheld destinations and ellipses to make the route feel both precise and uncertain." },
+    { area: "sound_design", status: "source_verified", note: "Credited location recordists and sound editor build a monaural field of voices, doors, footsteps, animals, wind and offscreen adult activity that extends the village beyond the frame." },
+    { area: "music", status: "source_verified", note: "Aminollah Hossein's credited music is used sparingly, allowing environmental sound and the rhythm of the journey to remain primary." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on location, performance, framing, editing and sound rather than visible effects or animation." },
+    { area: "documentary_method", status: "source_verified", note: "Real village locations, nonprofessional performers and close attention to ordinary work and social behaviour place the fiction deliberately near documentary observation without dissolving its constructed quest." },
+  ],
+} as const satisfies FilmHistoryProfile;
