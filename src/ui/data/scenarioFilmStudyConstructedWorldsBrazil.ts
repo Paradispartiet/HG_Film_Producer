@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const brazilFilmHistoryProfile = {
+  scenarioId: "scenario_brazil_1985",
+  period: "Mid-1980s British-American dystopian satire built as a retro-futurist bureaucratic machine",
+  traditions: ["Dystopian satire", "Retro-futurist production design", "Expressionist fantasy"],
+  before: "The film inherits Orwellian state dystopia, Kafkaesque administrative absurdity, expressionist architecture, slapstick machinery and the dream-reality friction of Fellini while rejecting a clean, technologically progressive future.",
+  moment: "Terry Gilliam, Tom Stoppard and Charles McKeown organize an information error, romantic escape fantasy and institutional pursuit inside Norman Garwood's layered world of 1930s futurism, exposed ducts, reused industrial locations, forced perspective, optical models, grotesque costume and Michael Kamen's transformations of the song Brazil.",
+  after: "The public conflict over Universal's shortened happy-ending version made authorship and final cut part of the film's history, while its retro-futuristic design became a durable reference for later cinematic dystopias and alternate realities.",
+  historyQuestion: "Which production system explains how Brazil turns bureaucracy into a complete material world while making fantasy, satire and studio conflict part of the same film history?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI and Criterion place the film in 1985 as a British-American dystopian satire whose release became a public conflict over the US version." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Institutional accounts connect Orwell, Kafka, Fellini, anti-totalitarian satire and expressionist alternate-world design without treating the setting as predictive realism." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Criterion documents Arnon Milchan's production and the principal craft team, while the release history records Universal's competing shortened cut and Gilliam's campaign for his version." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI and Criterion document the film's later standing as an influential dystopian design landmark and the Los Angeles critics' intervention before its US release." },
+    { area: "screenplay", status: "source_verified", note: "Gilliam, Stoppard and McKeown build the narrative from a clerical error whose consequences expand through forms, departments, surveillance, torture and Sam Lowry's compensating dream structure." },
+    { area: "directing", status: "source_verified", note: "Gilliam coordinates satire, physical comedy, nightmare violence and heroic fantasy so that each apparent escape is tested against the bureaucratic system's material persistence." },
+    { area: "performance", status: "mapped", note: "Jonathan Pryce's increasingly desperate ordinary-worker performance is surrounded by grotesquely normalized officials, technicians and consumers; dedicated actor-process sourcing remains limited." },
+    { area: "production_design", status: "source_verified", note: "Norman Garwood documents a cooperative design process based on 1930s magazines, Art Deco futures, ubiquitous ducts, built ministry interiors, industrial locations, scenic extensions and recurring glass-block architecture." },
+    { area: "costume_makeup", status: "source_verified", note: "Criterion credits James Acheson and Maggie Weston, while Garwood describes the shared design process and the deliberate contrast between drained bureaucratic clothing and the excessive color of elite consumption." },
+    { area: "cinematography", status: "source_verified", note: "Roger Pratt joined the evolving set design early, coordinating location scale, extreme architectural viewpoints and lighting plans that made built, found and model spaces belong to one oppressive world." },
+    { area: "lighting", status: "source_verified", note: "Garwood describes jointly planned top-and-bottom illumination for the padded cell and a large crane-mounted lighting system inside the cooling-tower torture chamber." },
+    { area: "camera_format", status: "source_verified", note: "Criterion records the color feature in 1.85:1, a frame used to crowd Sam with ducts, ceilings, office depth, monumental architecture and unstable fantasy scale." },
+    { area: "editing", status: "source_verified", note: "Julian Doyle's director's cut, the studio's ninety-four-minute happy-ending version and the later compromise release demonstrate how structure, fantasy revelation and ending meaning changed through competing edits." },
+    { area: "sound_design", status: "mapped", note: "Machines, forms, explosions, office devices and public announcements make administrative failure audible, but a dedicated sound-team production account remains pending." },
+    { area: "music", status: "source_verified", note: "Michael Kamen's official archive documents his orchestration, conducting and production of a score that continually transforms Ary Barroso's Brazil across offices, dreams, romance, escape and defeat." },
+    { area: "effects_animation", status: "source_verified", note: "Criterion credits George Gibbs and Richard Conway; the film joins models, optical work, rear projection, forced perspective, mechanical builds and practical destruction to Sam's expanding fantasy world." },
+    { area: "documentary_method", status: "not_central", note: "Real industrial and modernist locations provide material credibility, but the production is organized as designed satire and fantasy rather than documentary observation." },
+  ],
+} as const satisfies FilmHistoryProfile;
