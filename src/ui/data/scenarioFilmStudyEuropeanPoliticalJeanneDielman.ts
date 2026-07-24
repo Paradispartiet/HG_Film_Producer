@@ -1,7 +1,7 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
 
 export const jeanneDielmanFilmHistoryProfile = {
-  scenarioId: "scenario_jeanne_dielman_1975",
+  scenarioId: "scenario_jeanne_dielman_23_quai_du_commerce_1080_bruxelles_1975",
   period: "Belgian feminist modernism, durational domestic cinema and fixed-frame observation",
   traditions: ["Feminist avant-garde", "Structural duration", "Domestic labour cinema"],
   before: "Domestic work was commonly compressed into montage, used as background for family drama or removed from narrative time, while avant-garde duration rarely centred a middle-aged woman's paid and unpaid labour with this narrative precision.",

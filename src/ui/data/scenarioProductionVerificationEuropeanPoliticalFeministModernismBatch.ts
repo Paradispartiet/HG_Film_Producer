@@ -82,7 +82,7 @@ export const europeanPoliticalFeministModernismVerificationRecords = [
     ]
   },
   {
-    scenarioId: "scenario_jeanne_dielman_1975",
+    scenarioId: "scenario_jeanne_dielman_23_quai_du_commerce_1080_bruxelles_1975",
     status: "verified",
     verifiedAt: "2026-07-20",
     summary: "The case's three-day routine, complete domestic labour, fixed frontal camera, measured duration, direct household sound, controlled colour and CINEMATEK restoration are supported by BFI, Criterion, MoMA and Belgian archive partnerships.",

@@ -37,7 +37,7 @@ const verificationGroups = [
   ["early 1960s production systems", ["scenario_breakfast_at_tiffany_s_1961", "scenario_jules_and_jim_1962", "scenario_contempt_1963", "scenario_dr_strangelove_1964"], 4],
   ["postwar European modernism systems", ["scenario_ordet_1955", "scenario_ashes_and_diamonds_1958", "scenario_persona_1966", "scenario_daisies_1966"], 4],
   ["Czechoslovak New Wave systems", ["scenario_closely_watched_trains_1966", "scenario_the_firemens_ball_1967", "scenario_marketa_lazarova_1967", "scenario_the_cremator_1969"], 4],
-  ["European political and feminist modernism systems", ["scenario_cleo_from_5_to_7_1962", "scenario_the_conformist_1970", "scenario_jeanne_dielman_1975", "scenario_beau_travail_1999"], 4],
+  ["European political and feminist modernism systems", ["scenario_cleo_from_5_to_7_1962", "scenario_the_conformist_1970", "scenario_jeanne_dielman_23_quai_du_commerce_1080_bruxelles_1975", "scenario_beau_travail_1999"], 4],
   ["New Hollywood and blockbuster systems", ["scenario_bonnie_and_clyde_1967", "scenario_the_godfather_1972", "scenario_jaws_1975", "scenario_star_wars_1977"], 4],
   ["1960s scale and independent systems", ["scenario_psycho_1960", "scenario_lawrence_of_arabia_1962", "scenario_2001_a_space_odyssey_1968", "scenario_night_of_the_living_dead_1968"], 4],
   ["European modernist production systems", ["scenario_hiroshima_mon_amour_1959", "scenario_8_1_2_1963", "scenario_the_umbrellas_of_cherbourg_1964", "scenario_the_battle_of_algiers_1966"], 4],
