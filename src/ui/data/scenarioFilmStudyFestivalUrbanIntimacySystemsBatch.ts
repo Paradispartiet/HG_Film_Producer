@@ -8,6 +8,10 @@ import type { FilmScenarioSeed } from "./filmScenarios";
 import type { FilmHistoryChoice, FilmHistoryProfile, ScenarioFilmStudyMap } from "./scenarioFilmStudyMap";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
+import {
+  getBeforeSunriseFilmHistoryDonors,
+  getBeforeSunriseFilmHistoryProfile,
+} from "./scenarioFilmStudyFestivalUrbanIntimacyBeforeSunriseCatalog";
 import { blackCoalThinIceFilmHistoryProfile } from "./scenarioFilmStudyFestivalUrbanIntimacyBlackCoal";
 import { blueWarmestColourFilmHistoryProfile } from "./scenarioFilmStudyFestivalUrbanIntimacyBlue";
 import { fromAfarFilmHistoryProfile } from "./scenarioFilmStudyFestivalUrbanIntimacyFromAfar";
@@ -58,7 +62,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getFestivalUrbanIntimacySystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return profiles[scenarioId as keyof typeof profiles];
+  return getBeforeSunriseFilmHistoryProfile(scenarioId)
+    ?? profiles[scenarioId as keyof typeof profiles];
 }
 
 export function resolveFestivalUrbanIntimacySystemsFilmStudyMap(
@@ -88,30 +93,40 @@ function hashString(value: string): number {
 }
 
 export function createFestivalUrbanIntimacySystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
-  const donors = Object.values(profiles)
+  const beforeSunriseDonors = getBeforeSunriseFilmHistoryDonors(profile);
+  const donors = beforeSunriseDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const matchFeedback = beforeSunriseDonors
+    ? "This matches the documented relationship between Vienna co-production, collaborative dialogue writing, intensive rehearsal, two-person performance, real-location movement, 35mm observation, reaction-shot editing and near-real-time romantic duration."
+    : "This matches the documented relationship between festival-era urban pressure, intimacy, class, violence, performance, image, editing and sound.";
+  const partialFeedback = beforeSunriseDonors
+    ? "This is another real dialogue, city or one-night intimacy system, but it organizes ensemble geography, marital confrontation or urban solitude through a different balance of writing, rehearsal, camera duration, editing and sound."
+    : "This is a real festival-era intimacy system, but it organizes industrial violence, embodied desire, noir investigation, class distance and actor process differently.";
+  const missFeedback = beforeSunriseDonors
+    ? "This places the film inside the wrong relationship between transnational financing, Vienna location production, collaborative dialogue, two-person performance, near-real-time movement and romantic duration."
+    : "This assigns the film to the wrong historical, industrial and formal urban-intimacy production logic.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This matches the documented relationship between festival-era urban pressure, intimacy, class, violence, performance, image, editing and sound.",
+      feedback: matchFeedback,
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real festival-era intimacy system, but it organizes industrial violence, embodied desire, noir investigation, class distance and actor process differently.",
+      feedback: partialFeedback,
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This assigns the film to the wrong historical, industrial and formal urban-intimacy production logic.",
+      feedback: missFeedback,
     }] : []),
   ];
 }
