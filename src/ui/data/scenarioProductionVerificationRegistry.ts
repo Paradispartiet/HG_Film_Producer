@@ -60,6 +60,7 @@ import { norwegianPostwarGenreSystemsVerificationRecords } from "./scenarioProdu
 import { postwarEuropeanModernismVerificationRecords } from "./scenarioProductionVerificationPostwarEuropeanModernismBatch";
 import { priorityIndieFinalVerificationRecords } from "./scenarioProductionVerificationPriorityIndieFinalBatch";
 import { queerIndependentBodyCommunityArchiveVerificationRecords } from "./scenarioProductionVerificationQueerIndependentBodyCommunityArchiveBatch";
+import { rumbleFishVerificationRecords } from "./scenarioProductionVerificationRumbleFish";
 import { silentFoundationsVerificationRecords } from "./scenarioProductionVerificationSilentFoundationsBatch";
 import { silentStudioSystemsVerificationRecords } from "./scenarioProductionVerificationSilentStudioSystemsBatch";
 import { southKoreanGenreSystemsVerificationRecords } from "./scenarioProductionVerificationSouthKoreanGenreSystemsBatch";
@@ -133,6 +134,7 @@ const additionalVerificationRecords = [
   ...europeanPoliticalFeministModernismVerificationRecords,
   ...europeanReligiousMoralVerificationRecords,
   ...newHollywoodBlockbusterVerificationRecords,
+  ...rumbleFishVerificationRecords,
   ...newHollywoodNewYorkVerificationRecords,
   ...sixtiesScaleIndependentVerificationRecords,
   ...europeanModernistProductionVerificationRecords,

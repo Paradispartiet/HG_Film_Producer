@@ -15,13 +15,19 @@ import {
   getNewHollywoodNewYorkDonors,
   getNewHollywoodNewYorkProfile,
 } from "./scenarioFilmStudyNewHollywoodNewYorkCatalog";
+import { rumbleFishFilmHistoryProfile } from "./scenarioFilmStudyNewHollywoodRumbleFish";
 import { starWarsFilmHistoryProfile } from "./scenarioFilmStudyNewHollywoodStarWars";
 
-const profiles = {
+const foundationalProfiles = {
   [bonnieAndClydeFilmHistoryProfile.scenarioId]: bonnieAndClydeFilmHistoryProfile,
   [godfatherFilmHistoryProfile.scenarioId]: godfatherFilmHistoryProfile,
   [jawsFilmHistoryProfile.scenarioId]: jawsFilmHistoryProfile,
   [starWarsFilmHistoryProfile.scenarioId]: starWarsFilmHistoryProfile,
+} as const satisfies Record<string, FilmHistoryProfile>;
+
+const profiles = {
+  ...foundationalProfiles,
+  [rumbleFishFilmHistoryProfile.scenarioId]: rumbleFishFilmHistoryProfile,
 } as const satisfies Record<string, FilmHistoryProfile>;
 
 function rank(status: FilmStudyCoverageOverride["status"]): number {
@@ -94,7 +100,10 @@ function hashString(value: string): number {
 
 export function createNewHollywoodBlockbusterFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
   const newYorkDonors = getNewHollywoodNewYorkDonors(profile);
-  const donors = newYorkDonors ?? Object.values(profiles)
+  const donorProfiles = profile.scenarioId === rumbleFishFilmHistoryProfile.scenarioId
+    ? profiles
+    : foundationalProfiles;
+  const donors = newYorkDonors ?? Object.values(donorProfiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = hashString(profile.scenarioId);
