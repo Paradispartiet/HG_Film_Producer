@@ -56,6 +56,7 @@ import { beforeSunriseVerificationRecords } from "./scenarioProductionVerificati
 import { clockersVerificationRecords } from "./scenarioProductionVerificationClockers";
 import { laHaineVerificationRecords } from "./scenarioProductionVerificationLaHaine";
 import { leavingLasVegasVerificationRecords } from "./scenarioProductionVerificationLeavingLasVegas";
+import { fargoVerificationRecords } from "./scenarioProductionVerificationFargo";
 import { whereIsTheFriendsHouseVerificationRecords } from "./scenarioProductionVerificationWhereFriendsHouse";
 import { intimateFestivalBodyCareVerificationRecords } from "./scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch";
 import { japaneseAmbiguityDialogueVerificationRecords } from "./scenarioProductionVerificationJapaneseAmbiguityDialogueBatch";
@@ -111,6 +112,7 @@ const additionalVerificationRecords = [
   ...clockersVerificationRecords,
   ...laHaineVerificationRecords,
   ...leavingLasVegasVerificationRecords,
+  ...fargoVerificationRecords,
   ...whereIsTheFriendsHouseVerificationRecords,
   ...americanIndependentBreakthroughsVerificationRecords,
   ...americanIndependentGenreResourcefulnessVerificationRecords,
