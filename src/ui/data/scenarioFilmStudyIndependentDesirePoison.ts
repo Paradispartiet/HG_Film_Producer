@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const poisonFilmHistoryProfile = {
+  scenarioId: "scenario_poison_1991",
+  period: "Early-1990s New Queer Cinema, experimental anthology and AIDS-era independent filmmaking",
+  traditions: ["New Queer Cinema", "Experimental anthology", "Genre pastiche"],
+  before: "Late-1980s American independent cinema was frequently associated with realist character studies, while queer avant-garde work and AIDS activism often circulated through smaller exhibition and funding networks.",
+  moment: "Todd Haynes constructs a low-budget 16 mm feature from three intercut systems—tabloid television documentary, black-and-white science-fiction horror and stylized prison romance—using Jean Genet, genre imitation and montage to connect desire, stigma, punishment and social surveillance.",
+  after: "The film's 1991 Sundance Grand Jury Prize, public controversy over National Endowment for the Arts support and later identification with the emergence of New Queer Cinema made it a landmark for formally confrontational queer independent production.",
+  historyQuestion: "Which production system explains a 16 mm debut that intercuts mock television, black-and-white body horror and prison melodrama so genre form itself becomes an argument about queer desire, stigma and social control?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI, Sundance and MoMA place the film inside the AIDS-era culture wars, independent grant financing and the emergence of early-1990s New Queer Cinema." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Sundance and MoMA identify the feature as a formally radical queer work combining avant-garde practice, genre pastiche and Jean Genet's writing." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI documents Bronze Eye Productions, Christine Vachon, private and grant financing, a roughly $190,000 to $250,000 budget and New York principal photography." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Sundance records the 1991 Grand Jury Prize, while AFI and MoMA connect the film to censorship controversy and its lasting New Queer Cinema position." },
+    { area: "screenplay", status: "source_verified", note: "AFI and Sundance document the three distinct strands—Hero, Horror and Homo—and their Genet-inspired intercut structure rather than a single causal plot." },
+    { area: "directing", status: "source_verified", note: "Haynes directs each strand through a separate inherited screen language, preserving genre rules closely enough that their collision produces the film's political meaning." },
+    { area: "performance", status: "source_verified", note: "MoMA and AFI identify separate casts and performance registers for tabloid testimony, B-movie panic and heightened prison romance." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Sarah Stollman and Chas Plummer; studio-built and institutional spaces shift visibly among television reconstruction, laboratory horror and stylized confinement." },
+    { area: "costume_makeup", status: "mapped", note: "Period prison clothing, television-reconstruction styling and lesion makeup distinguish the strands, although the inspected sources do not document the complete costume and makeup workflow." },
+    { area: "cinematography", status: "source_verified", note: "AFI credits Maryse Alberti with cinematography and Barry Ellsworth with black-and-white camerawork, supporting the deliberately different visual grammars." },
+    { area: "lighting", status: "source_verified", note: "The sources describe sharply separated genre looks: flat testimonial television, expressionistic monochrome horror and saturated, stage-like romantic imprisonment." },
+    { area: "camera_format", status: "source_verified", note: "AFI records a 16 mm production using both colour and black-and-white material across the three formal systems." },
+    { area: "editing", status: "source_verified", note: "AFI credits James Lyons and Todd Haynes; Sundance emphasizes increasingly frequent intercutting that asks the spectator to read meaning across rather than within the stories." },
+    { area: "sound_design", status: "mapped", note: "Each strand adopts a distinct speech and effects register, but the inspected institutional sources do not fully document the sound-postproduction workflow." },
+    { area: "music", status: "mapped", note: "Music supports the different genre identities, although the available sources foreground structure, image and controversy more than the score's production history." },
+    { area: "effects_animation", status: "source_verified", note: "The Horror strand uses practical lesion and transformation effects within an intentionally inexpensive 1950s science-fiction vocabulary rather than seamless spectacle." },
+    { area: "documentary_method", status: "source_verified", note: "Hero imitates television true-crime testimony and citizen surveillance, using documentary conventions as a constructed and politically charged genre system." },
+  ],
+} as const satisfies FilmHistoryProfile;
