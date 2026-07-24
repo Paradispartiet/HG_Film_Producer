@@ -20,6 +20,10 @@ import {
   getPriorityIndieFinalDonors,
   getPriorityIndieFinalProfile,
 } from "./scenarioFilmStudyPriorityIndieFinalCatalog";
+import {
+  getDownByLawFilmHistoryDonors,
+  getDownByLawFilmHistoryProfile,
+} from "./scenarioFilmStudyIndependentStorytellingDownByLawCatalog";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 
@@ -71,7 +75,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return getPriorityIndieFinalProfile(scenarioId)
+  return getDownByLawFilmHistoryProfile(scenarioId)
+    ?? getPriorityIndieFinalProfile(scenarioId)
     ?? getIndependentStorytellingCatalogProfile(scenarioId);
 }
 
@@ -156,12 +161,15 @@ function missFeedback(group: IndependentStorytellingProfileGroup): string {
 export function createIndependentStorytellingFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const downByLawDonors = getDownByLawFilmHistoryDonors(profile);
   const priorityDonors = getPriorityIndieFinalDonors(profile);
   const group = getIndependentStorytellingProfileGroup(profile.scenarioId);
-  const donors = priorityDonors ?? getIndependentStorytellingDonors(profile);
+  const donors = downByLawDonors ?? priorityDonors ?? getIndependentStorytellingDonors(profile);
   const start = hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const downByLawPartial = "This is another American independent outsider-location system, but it organizes city recurrence, conversational drift or neighborhood observation through a different balance of structure, performance, place, editing and sound.";
+  const downByLawMiss = "This places the film inside the wrong relationship between American independent production, outsider ensemble, regional location, ellipsis, multilingual performance and music.";
   const priorityPartial = "This is another final priority-independent system, but it organizes comic alienation, architectural attention or abrasive regional hustle through a different balance of design, performance, place, editing and sound.";
   const priorityMiss = "This places the film inside the wrong relationship between American independent production, designed environment, regional observation, social performance, analogue or spatial form and audience identification.";
   return [
@@ -175,13 +183,13 @@ export function createIndependentStorytellingFilmHistoryChoices(
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: priorityDonors ? priorityPartial : partialFeedback(group),
+      feedback: downByLawDonors ? downByLawPartial : priorityDonors ? priorityPartial : partialFeedback(group),
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: priorityDonors ? priorityMiss : missFeedback(group),
+      feedback: downByLawDonors ? downByLawMiss : priorityDonors ? priorityMiss : missFeedback(group),
     }] : []),
   ];
 }
