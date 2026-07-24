@@ -32,6 +32,10 @@ import {
   getAntoniasLineFilmHistoryDonors,
   getAntoniasLineFilmHistoryProfile,
 } from "./scenarioFilmStudyFamilyPerformanceAntoniasLineCatalog";
+import {
+  getLeavingLasVegasFilmHistoryDonors,
+  getLeavingLasVegasFilmHistoryProfile,
+} from "./scenarioFilmStudyAmericanPrecarityLeavingLasVegasCatalog";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 
@@ -83,7 +87,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return getAntoniasLineFilmHistoryProfile(scenarioId)
+  return getLeavingLasVegasFilmHistoryProfile(scenarioId)
+    ?? getAntoniasLineFilmHistoryProfile(scenarioId)
     ?? getClerksFilmHistoryProfile(scenarioId)
     ?? getDownByLawFilmHistoryProfile(scenarioId)
     ?? getPriorityIndieFinalProfile(scenarioId)
@@ -171,14 +176,18 @@ function missFeedback(group: IndependentStorytellingProfileGroup): string {
 export function createIndependentStorytellingFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const leavingLasVegasDonors = getLeavingLasVegasFilmHistoryDonors(profile);
   const antoniasLineDonors = getAntoniasLineFilmHistoryDonors(profile);
   const clerksDonors = getClerksFilmHistoryDonors(profile);
   const downByLawDonors = getDownByLawFilmHistoryDonors(profile);
   const priorityDonors = getPriorityIndieFinalDonors(profile);
-  const group: IndependentStorytellingProfileGroup = antoniasLineDonors
-    ? "family_performance_grief_power"
-    : getIndependentStorytellingProfileGroup(profile.scenarioId);
-  const donors = antoniasLineDonors
+  const group: IndependentStorytellingProfileGroup = leavingLasVegasDonors
+    ? "american_precarity_body_care"
+    : antoniasLineDonors
+      ? "family_performance_grief_power"
+      : getIndependentStorytellingProfileGroup(profile.scenarioId);
+  const donors = leavingLasVegasDonors
+    ?? antoniasLineDonors
     ?? clerksDonors
     ?? downByLawDonors
     ?? priorityDonors
@@ -186,6 +195,9 @@ export function createIndependentStorytellingFilmHistoryChoices(
   const start = hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const leavingLasVegasMatch = "This matches the documented production relationship among John O'Brien's uncompromising novel, a four-million-dollar twenty-eight-day shoot, two small Super 16 cameras, minimal lighting, real Nevada movement, actor research, donated Vivienne Westwood clothing and a director-composed blues-jazz score without a recovery ending.";
+  const leavingLasVegasPartial = "This is another real American independent body-and-care system, but it organizes sensory recovery, unresolved environmental illness or economic precarity through a different relationship between bodily crisis, care, regional space, performance, image format and sound.";
+  const leavingLasVegasMiss = "This places the film inside the wrong relationship between tragic romance, addiction without cure, low-budget transatlantic financing, mobile Super 16 production, two-camera intimacy, Vegas anti-spectacle, actor preparation and jazz-led emotional form.";
   const clerksPartial = "This is another real American independent production system built from dialogue, regional place or strict resource limits, but it does not organize retail labour, overnight store access, fluorescent black-and-white 16mm and customer interruption in the same way.";
   const clerksMiss = "This places the film inside the wrong relationship between workplace experience, available stores, microbudget financing, unknown performers, dialogue density, 16mm black-and-white photography, editing and festival discovery.";
   const downByLawPartial = "This is another American independent outsider-location system, but it organizes city recurrence, conversational drift or neighborhood observation through a different balance of structure, performance, place, editing and sound.";
@@ -197,19 +209,37 @@ export function createIndependentStorytellingFilmHistoryChoices(
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This connects the film's historical position directly to its documented relationship between place, narrative structure, image system, media form and production method.",
+      feedback: leavingLasVegasDonors
+        ? leavingLasVegasMatch
+        : "This connects the film's historical position directly to its documented relationship between place, narrative structure, image system, media form and production method.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: clerksDonors ? clerksPartial : downByLawDonors ? downByLawPartial : priorityDonors ? priorityPartial : partialFeedback(group),
+      feedback: leavingLasVegasDonors
+        ? leavingLasVegasPartial
+        : clerksDonors
+          ? clerksPartial
+          : downByLawDonors
+            ? downByLawPartial
+            : priorityDonors
+              ? priorityPartial
+              : partialFeedback(group),
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: clerksDonors ? clerksMiss : downByLawDonors ? downByLawMiss : priorityDonors ? priorityMiss : missFeedback(group),
+      feedback: leavingLasVegasDonors
+        ? leavingLasVegasMiss
+        : clerksDonors
+          ? clerksMiss
+          : downByLawDonors
+            ? downByLawMiss
+            : priorityDonors
+              ? priorityMiss
+              : missFeedback(group),
     }] : []),
   ];
 }

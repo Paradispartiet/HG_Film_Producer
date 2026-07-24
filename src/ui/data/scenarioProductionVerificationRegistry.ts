@@ -55,6 +55,7 @@ import { antoniasLineVerificationRecords } from "./scenarioProductionVerificatio
 import { beforeSunriseVerificationRecords } from "./scenarioProductionVerificationBeforeSunrise";
 import { clockersVerificationRecords } from "./scenarioProductionVerificationClockers";
 import { laHaineVerificationRecords } from "./scenarioProductionVerificationLaHaine";
+import { leavingLasVegasVerificationRecords } from "./scenarioProductionVerificationLeavingLasVegas";
 import { whereIsTheFriendsHouseVerificationRecords } from "./scenarioProductionVerificationWhereFriendsHouse";
 import { intimateFestivalBodyCareVerificationRecords } from "./scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch";
 import { japaneseAmbiguityDialogueVerificationRecords } from "./scenarioProductionVerificationJapaneseAmbiguityDialogueBatch";
@@ -109,6 +110,7 @@ const additionalVerificationRecords = [
   ...beforeSunriseVerificationRecords,
   ...clockersVerificationRecords,
   ...laHaineVerificationRecords,
+  ...leavingLasVegasVerificationRecords,
   ...whereIsTheFriendsHouseVerificationRecords,
   ...americanIndependentBreakthroughsVerificationRecords,
   ...americanIndependentGenreResourcefulnessVerificationRecords,
