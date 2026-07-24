@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const manhattanFilmHistoryProfile = {
+  scenarioId: "scenario_manhattan_1979",
+  period: "Late-1970s American urban auteur comedy, monochrome widescreen city romance and New York cultural self-portrait",
+  traditions: ["New Hollywood urban auteurism", "City-symphony imagery", "Relationship comedy-drama"],
+  before: "American romantic comedy usually subordinated the city to star interaction and dialogue, while city symphonies and location modernism treated urban scale, movement and architecture as expressive structures in their own right.",
+  moment: "Woody Allen, Marshall Brickman, cinematographer Gordon Willis, production designer Mel Bourne and editor Susan E. Morse organize New York through black-and-white Panavision, Kodak Double-X, selective location lighting, static widescreen blocking, long city views, optical construction and George Gershwin recordings.",
+  after: "Its bridge, skyline and planetarium images became enduring references for romanticized New York photography and for the ability of monochrome widescreen composition to make intimate relationship comedy operate at metropolitan scale.",
+  historyQuestion: "Which production system explains a relationship comedy where black-and-white anamorphic framing, deep city space, selective lighting, long static compositions and Gershwin turn Manhattan into both emotional ideal and visible construction?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "AFI and BFI document the 1979 New York production and place it within the late-1970s cycle of urban auteur comedy and relationship drama." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI describes the film as a rhapsodic black-and-white city tribute, while ASC explains Gordon Willis's concept of romantic reality and metropolitan scale." },
+    { area: "industry_and_production_context", status: "source_verified", note: "AFI records United Artists, producer Charles H. Joffe, the principal crew and an August 1978 New York start; ASC documents the extensive photographic planning behind the apparently effortless location style." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI and ASC treat the film as one of Gordon Willis's defining achievements and a durable visual reference for photographing New York in monochrome widescreen." },
+    { area: "screenplay", status: "source_verified", note: "AFI credits Woody Allen and Marshall Brickman; BFI describes the tightly patterned relationship comedy and its opening voice-over construction of the city as remembered ideal." },
+    { area: "directing", status: "source_verified", note: "ASC documents the shared preproduction concept between Allen and Willis, including the decision to stage people and architecture in long, selective widescreen compositions rather than conventional close-coverage dominance." },
+    { area: "performance", status: "source_verified", note: "AFI and BFI identify the central ensemble; static two-shots, distant figures and dialogue played across large spaces make performance depend on blocking and duration as much as facial coverage." },
+    { area: "production_design", status: "source_verified", note: "AFI credits Mel Bourne, while ASC documents the mixture of real locations, controlled interiors, mirrors, props, models and constructed planetarium imagery." },
+    { area: "costume_makeup", status: "mapped", note: "Contemporary professional and social clothing differentiates the cultural milieu, but the inspected institutional sources do not provide a detailed costume or makeup production account." },
+    { area: "cinematography", status: "source_verified", note: "ASC provides Gordon Willis's detailed account of romantic reality, black-and-white selectivity, widescreen graphics, depth, filters and the relation between small figures and city scale." },
+    { area: "lighting", status: "source_verified", note: "ASC documents Willis's fixed exposure strategy, selective practical and location lighting, difficult night work and carefully built silhouettes and pools of light." },
+    { area: "camera_format", status: "source_verified", note: "ASC documents 35mm Panavision anamorphic photography in 2.35:1 using Kodak Double-X black-and-white negative, diffusion and tonal-control filters." },
+    { area: "editing", status: "source_verified", note: "AFI credits Susan E. Morse; BFI analysis identifies an intricate pattern of dolly shots, high angles, static medium shots and long views unified into a controlled comic-romantic rhythm." },
+    { area: "sound_design", status: "mapped", note: "Dialogue, city ambience and selective quiet remain clear within the wide compositions, although the inspected sources focus more strongly on image and music than sound-postproduction workflow." },
+    { area: "music", status: "source_verified", note: "AFI and BFI document the structural use of George and Ira Gershwin recordings, especially Rhapsody in Blue, to bind montage, nostalgia, cultural identity and metropolitan scale." },
+    { area: "effects_animation", status: "source_verified", note: "ASC documents the planetarium sequence's blue backing, internal mattes, mirrors, props and models used to create an apparently simple but extensively constructed cosmic space." },
+    { area: "documentary_method", status: "mapped", note: "The film records extensive New York geography, but Willis's account makes clear that the city is selectively romanticized and technically reconstructed rather than neutrally observed." },
+  ],
+} as const satisfies FilmHistoryProfile;
