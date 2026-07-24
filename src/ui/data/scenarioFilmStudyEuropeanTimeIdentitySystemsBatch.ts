@@ -12,12 +12,25 @@ import { theVanishingFilmHistoryProfile } from "./scenarioFilmStudyEuropeanTimeI
 import { runLolaRunFilmHistoryProfile } from "./scenarioFilmStudyEuropeanTimeIdentityRunLolaRun";
 import { theWhiteRibbonFilmHistoryProfile } from "./scenarioFilmStudyEuropeanTimeIdentityWhiteRibbon";
 import { phoenixFilmHistoryProfile } from "./scenarioFilmStudyEuropeanTimeIdentityPhoenix";
+import {
+  getSatantangoDonorScenarioIds,
+  getSatantangoFilmHistoryProfile,
+} from "./scenarioFilmStudyEuropeanTimeIdentitySatantangoCatalog";
 
-const profiles = {
+const coreProfiles = {
   [theVanishingFilmHistoryProfile.scenarioId]: theVanishingFilmHistoryProfile,
   [runLolaRunFilmHistoryProfile.scenarioId]: runLolaRunFilmHistoryProfile,
   [theWhiteRibbonFilmHistoryProfile.scenarioId]: theWhiteRibbonFilmHistoryProfile,
   [phoenixFilmHistoryProfile.scenarioId]: phoenixFilmHistoryProfile,
+} as const satisfies Record<string, FilmHistoryProfile>;
+
+const satantangoFilmHistoryProfile = getSatantangoFilmHistoryProfile("scenario_satantango_1994");
+
+const profiles = {
+  ...coreProfiles,
+  ...(satantangoFilmHistoryProfile
+    ? { [satantangoFilmHistoryProfile.scenarioId]: satantangoFilmHistoryProfile }
+    : {}),
 } as const satisfies Record<string, FilmHistoryProfile>;
 
 function rank(status: FilmStudyCoverageOverride["status"]): number {
@@ -87,11 +100,25 @@ function hashString(value: string): number {
   return hash;
 }
 
-export function createEuropeanTimeIdentitySystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
-  const donors = Object.values(profiles)
+function getChoiceDonors(profile: FilmHistoryProfile): FilmHistoryProfile[] {
+  const dedicatedIds = getSatantangoDonorScenarioIds(profile);
+  if (dedicatedIds) {
+    const donors: FilmHistoryProfile[] = [];
+    for (const scenarioId of dedicatedIds) {
+      const candidate = coreProfiles[scenarioId as keyof typeof coreProfiles];
+      if (candidate) donors.push(candidate);
+    }
+    return donors;
+  }
+
+  return Object.values(coreProfiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = hashString(profile.scenarioId);
+}
+
+export function createEuropeanTimeIdentitySystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
+  const donors = getChoiceDonors(profile);
+  const start = getSatantangoDonorScenarioIds(profile) ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
   return [
