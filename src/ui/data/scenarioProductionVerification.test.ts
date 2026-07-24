@@ -17,6 +17,7 @@ const verificationGroups = [
   ["1940s noir and realism systems", ["scenario_double_indemnity_1944", "scenario_brief_encounter_1945", "scenario_rome_open_city_1945", "scenario_the_third_man_1949"], 4],
   ["crime and noir transformations", ["scenario_the_maltese_falcon_1941", "scenario_the_lost_weekend_1945", "scenario_out_of_the_past_1947", "scenario_band_of_outsiders_1964"], 4],
   ["True Romance postmodern lovers-on-the-run system", ["scenario_true_romance_1993"], 9],
+  ["Clerks resource-driven retail-workplace system", ["scenario_clerks_1994"], 9],
   ["Norwegian postwar genre systems", ["scenario_gategutter_1949", "scenario_fjols_til_fjells_1957", "scenario_de_dodes_tjern_1958", "scenario_insomnia_1997"], 4],
   ["Nordic minimalist social systems", ["scenario_the_match_factory_girl_1990", "scenario_songs_from_the_second_floor_2000", "scenario_the_man_without_a_past_2002", "scenario_oslo_august_31st_2011"], 4],
   ["modern Nordic behavior systems", ["scenario_force_majeure_2014", "scenario_woman_at_war_2018", "scenario_another_round_2020", "scenario_the_worst_person_in_the_world_2021"], 4],
@@ -72,7 +73,7 @@ const verificationGroups = [
   ["Japanese ambiguity and dialogue systems", ["scenario_cure_1997", "scenario_wheel_of_fortune_and_fantasy_2021", "scenario_monster_kore_eda_2023", "scenario_evil_does_not_exist_2023"], 4],
 ] as const;
 
-const expectedVerifiedCount = 264;
+const expectedVerifiedCount = 265;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
