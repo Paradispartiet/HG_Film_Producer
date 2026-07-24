@@ -1,6 +1,7 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { tasteOfCherryVerificationRecords } from "./scenarioProductionVerificationTasteOfCherry";
 
-export const whereIsTheFriendsHouseVerificationRecords = [
+const whereIsTheFriendsHouseCoreVerificationRecords = [
   {
     scenarioId: "scenario_where_is_the_friend_s_house_1987",
     status: "verified",
@@ -57,4 +58,9 @@ export const whereIsTheFriendsHouseVerificationRecords = [
       }
     ]
   }
+] as const satisfies readonly ProductionCaseVerificationRecord[];
+
+export const whereIsTheFriendsHouseVerificationRecords = [
+  ...whereIsTheFriendsHouseCoreVerificationRecords,
+  ...tasteOfCherryVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
