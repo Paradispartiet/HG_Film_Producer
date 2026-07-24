@@ -28,6 +28,10 @@ import {
   getClerksFilmHistoryDonors,
   getClerksFilmHistoryProfile,
 } from "./scenarioFilmStudyAmericanGenreClerksCatalog";
+import {
+  getAntoniasLineFilmHistoryDonors,
+  getAntoniasLineFilmHistoryProfile,
+} from "./scenarioFilmStudyFamilyPerformanceAntoniasLineCatalog";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 
@@ -79,7 +83,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return getClerksFilmHistoryProfile(scenarioId)
+  return getAntoniasLineFilmHistoryProfile(scenarioId)
+    ?? getClerksFilmHistoryProfile(scenarioId)
     ?? getDownByLawFilmHistoryProfile(scenarioId)
     ?? getPriorityIndieFinalProfile(scenarioId)
     ?? getIndependentStorytellingCatalogProfile(scenarioId);
@@ -166,11 +171,18 @@ function missFeedback(group: IndependentStorytellingProfileGroup): string {
 export function createIndependentStorytellingFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const antoniasLineDonors = getAntoniasLineFilmHistoryDonors(profile);
   const clerksDonors = getClerksFilmHistoryDonors(profile);
   const downByLawDonors = getDownByLawFilmHistoryDonors(profile);
   const priorityDonors = getPriorityIndieFinalDonors(profile);
-  const group = getIndependentStorytellingProfileGroup(profile.scenarioId);
-  const donors = clerksDonors ?? downByLawDonors ?? priorityDonors ?? getIndependentStorytellingDonors(profile);
+  const group: IndependentStorytellingProfileGroup = antoniasLineDonors
+    ? "family_performance_grief_power"
+    : getIndependentStorytellingProfileGroup(profile.scenarioId);
+  const donors = antoniasLineDonors
+    ?? clerksDonors
+    ?? downByLawDonors
+    ?? priorityDonors
+    ?? getIndependentStorytellingDonors(profile);
   const start = hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
