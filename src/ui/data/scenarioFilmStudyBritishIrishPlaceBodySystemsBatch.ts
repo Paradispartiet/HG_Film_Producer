@@ -16,6 +16,10 @@ import {
 } from "./scenarioFilmStudyBritishIrishPlaceBodyInTheNameFatherCatalog";
 import { kesFilmHistoryProfile } from "./scenarioFilmStudyBritishIrishPlaceBodyKes";
 import { nakedFilmHistoryProfile } from "./scenarioFilmStudyBritishIrishPlaceBodyNaked";
+import {
+  getTrainspottingFilmHistoryDonors,
+  getTrainspottingFilmHistoryProfile,
+} from "./scenarioFilmStudyBritishIrishPlaceBodyTrainspottingCatalog";
 
 const profiles = {
   [kesFilmHistoryProfile.scenarioId]: kesFilmHistoryProfile,
@@ -62,7 +66,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getBritishIrishPlaceBodySystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getInTheNameOfTheFatherFilmHistoryProfile(scenarioId)
+  return getTrainspottingFilmHistoryProfile(scenarioId)
+    ?? getInTheNameOfTheFatherFilmHistoryProfile(scenarioId)
     ?? profiles[scenarioId as keyof typeof profiles];
 }
 
@@ -93,11 +98,12 @@ function hashString(value: string): number {
 }
 
 export function createBritishIrishPlaceBodySystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
+  const trainspottingDonors = getTrainspottingFilmHistoryDonors(profile);
   const priorityDonorIds = getInTheNameOfTheFatherDonorScenarioIds(profile);
   const priorityDonors = priorityDonorIds?.map(
     (scenarioId) => profiles[scenarioId as keyof typeof profiles],
   ).filter(Boolean) as readonly FilmHistoryProfile[] | undefined;
-  const donors = priorityDonors ?? Object.values(profiles)
+  const donors = trainspottingDonors ?? priorityDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = hashString(profile.scenarioId);
@@ -108,23 +114,29 @@ export function createBritishIrishPlaceBodySystemsFilmHistoryChoices(profile: Fi
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This matches the documented relationship between British-Irish place, class, body, institution, performance, image, editing and sound.",
+      feedback: trainspottingDonors
+        ? "This matches the documented relationship among Irvine Welsh's fragmented novel, Hodge's Renton-centred adaptation, a £1.5 million Scottish production, recovery-group research, Glasgow location substitution, photochemical pop energy, practical subjective sets, kinetic montage and a rock-techno-Britpop soundtrack."
+        : "This matches the documented relationship between British-Irish place, class, body, institution, performance, image, editing and sound.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: priorityDonors
-        ? "This is another real British-Irish place-and-body system, but it organises social class, prison resistance or urban performance without the Guildford Four adaptation's coerced confession, father-son imprisonment and appeal structure."
-        : "This is a real British-Irish production system, but it organises regional realism, urban rehearsal, prison duration, island design and social conflict differently.",
+      feedback: trainspottingDonors
+        ? "This is another real urban, addiction or youth-pressure production system, but it organizes social confrontation, tragic bodily decline or banlieue politics through a different relationship between place, performance, image texture, editing and sound."
+        : priorityDonors
+          ? "This is another real British-Irish place-and-body system, but it organises social class, prison resistance or urban performance without the Guildford Four adaptation's coerced confession, father-son imprisonment and appeal structure."
+          : "This is a real British-Irish production system, but it organises regional realism, urban rehearsal, prison duration, island design and social conflict differently.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: priorityDonors
-        ? "This places the film inside the wrong relationship between autobiographical evidence, state accusation, prison space, paternal performance, legal reconstruction and political release."
-        : "This assigns the film to the wrong historical, industrial and formal place-and-body production logic.",
+      feedback: trainspottingDonors
+        ? "This places the film inside the wrong relationship between Scottish countercultural adaptation, addiction research, local low-budget production, subjective practical effects, music-synchronised montage and culturally specific global breakthrough."
+        : priorityDonors
+          ? "This places the film inside the wrong relationship between autobiographical evidence, state accusation, prison space, paternal performance, legal reconstruction and political release."
+          : "This assigns the film to the wrong historical, industrial and formal place-and-body production logic.",
     }] : []),
   ];
 }
