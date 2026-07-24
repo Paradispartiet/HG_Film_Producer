@@ -47,6 +47,7 @@ import { independentDesireIdentityAuthorshipVerificationRecords } from "./scenar
 import { independentStorytellingVerificationRecords } from "./scenarioProductionVerificationIndependentStorytellingBatch";
 import { downByLawVerificationRecords } from "./scenarioProductionVerificationDownByLaw";
 import { inTheNameOfTheFatherVerificationRecords } from "./scenarioProductionVerificationInTheNameFather";
+import { trueRomanceVerificationRecords } from "./scenarioProductionVerificationTrueRomance";
 import { whereIsTheFriendsHouseVerificationRecords } from "./scenarioProductionVerificationWhereFriendsHouse";
 import { intimateFestivalBodyCareVerificationRecords } from "./scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch";
 import { japaneseAmbiguityDialogueVerificationRecords } from "./scenarioProductionVerificationJapaneseAmbiguityDialogueBatch";
@@ -93,6 +94,7 @@ const additionalVerificationRecords = [
   ...independentStorytellingVerificationRecords,
   ...downByLawVerificationRecords,
   ...inTheNameOfTheFatherVerificationRecords,
+  ...trueRomanceVerificationRecords,
   ...whereIsTheFriendsHouseVerificationRecords,
   ...americanIndependentBreakthroughsVerificationRecords,
   ...americanIndependentGenreResourcefulnessVerificationRecords,
