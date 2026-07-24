@@ -12,7 +12,7 @@ import {
 const scenarioIds = [
   "scenario_cleo_from_5_to_7_1962",
   "scenario_the_conformist_1970",
-  "scenario_jeanne_dielman_1975",
+  "scenario_jeanne_dielman_23_quai_du_commerce_1080_bruxelles_1975",
   "scenario_beau_travail_1999",
 ] as const;
 
