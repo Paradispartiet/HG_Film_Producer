@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { characterVerificationRecords } from "./scenarioProductionVerificationCharacter";
 
 export const europeanTimeIdentityVerificationRecords = [
   {
@@ -160,5 +161,6 @@ export const europeanTimeIdentityVerificationRecords = [
         note: "Filmportal supplies Schramm Film production records and detailed credits for Hans Fromm, lighting, Kade Gruber, Anette Guther, Bettina Böhler, Dominik Schleier, Andreas Mücke-Niesytka, mixing, effects and Stefan Will."
       }
     ]
-  }
+  },
+  ...characterVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];

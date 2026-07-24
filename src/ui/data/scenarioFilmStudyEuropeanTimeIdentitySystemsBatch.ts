@@ -16,6 +16,10 @@ import {
   getSatantangoDonorScenarioIds,
   getSatantangoFilmHistoryProfile,
 } from "./scenarioFilmStudyEuropeanTimeIdentitySatantangoCatalog";
+import {
+  getCharacterFilmHistoryDonors,
+  getCharacterFilmHistoryProfile,
+} from "./scenarioFilmStudyEuropeanTimeIdentityCharacterCatalog";
 
 const coreProfiles = {
   [theVanishingFilmHistoryProfile.scenarioId]: theVanishingFilmHistoryProfile,
@@ -71,7 +75,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getEuropeanTimeIdentitySystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return profiles[scenarioId as keyof typeof profiles];
+  return getCharacterFilmHistoryProfile(scenarioId)
+    ?? profiles[scenarioId as keyof typeof profiles];
 }
 
 export function resolveEuropeanTimeIdentitySystemsFilmStudyMap(
@@ -101,6 +106,9 @@ function hashString(value: string): number {
 }
 
 function getChoiceDonors(profile: FilmHistoryProfile): FilmHistoryProfile[] {
+  const characterDonors = getCharacterFilmHistoryDonors(profile);
+  if (characterDonors) return [...characterDonors];
+
   const dedicatedIds = getSatantangoDonorScenarioIds(profile);
   if (dedicatedIds) {
     const donors: FilmHistoryProfile[] = [];
@@ -117,28 +125,38 @@ function getChoiceDonors(profile: FilmHistoryProfile): FilmHistoryProfile[] {
 }
 
 export function createEuropeanTimeIdentitySystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
+  const characterDonors = getCharacterFilmHistoryDonors(profile);
   const donors = getChoiceDonors(profile);
-  const start = getSatantangoDonorScenarioIds(profile) ? 0 : hashString(profile.scenarioId);
+  const start = characterDonors || getSatantangoDonorScenarioIds(profile) ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const matchFeedback = characterDonors
+    ? "This matches the documented relationship among Bordewijk's two source texts, a murder-confession frame, multinational reconstruction of prewar Rotterdam, monumental period design, 35 mm colour, controlled performance, nonlinear memory and forceful music."
+    : "This matches the documented relationship between European suspense, historical control, recursive time, identity performance, image, editing, music and sound.";
+  const partialFeedback = characterDonors
+    ? "This is another real European time-and-identity production system, but it organises procedural obsession, authoritarian history or postwar identity rehearsal without Character's father-son debt struggle, social ascent and composite prewar city."
+    : "This is a real European time-and-identity production system, but it organises procedural knowledge, recursive velocity, historical suspicion and postwar rehearsal differently.";
+  const missFeedback = characterDonors
+    ? "This places the film inside the wrong relationship between literary adaptation, murder framing, social ambition, paternal authority, reconstructed urban history, period design and psychological melodrama."
+    : "This assigns the film to the wrong historical, temporal and audiovisual production logic.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This matches the documented relationship between European suspense, historical control, recursive time, identity performance, image, editing, music and sound.",
+      feedback: matchFeedback,
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real European time-and-identity production system, but it organises procedural knowledge, recursive velocity, historical suspicion and postwar rehearsal differently.",
+      feedback: partialFeedback,
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This assigns the film to the wrong historical, temporal and audiovisual production logic.",
+      feedback: missFeedback,
     }] : []),
   ];
 }
