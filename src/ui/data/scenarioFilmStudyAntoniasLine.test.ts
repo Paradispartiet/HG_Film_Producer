@@ -10,7 +10,6 @@ import {
   getIndependentStorytellingFilmHistoryProfile,
   resolveIndependentStorytellingFilmStudyMap,
 } from "./scenarioFilmStudyIndependentStorytellingBatch.js";
-import { getIndependentStorytellingProfileGroup } from "./scenarioFilmStudyIndependentStorytellingCatalog.js";
 import { resolveScenarioProductionBrief } from "./scenarioProductionBriefs.js";
 
 const scenarioId = "scenario_antonia_s_line_1995";
@@ -32,10 +31,9 @@ test("Antonia's Line resolves as a source-backed family-performance system", () 
   assert.equal(study?.verification?.status, "verified");
   assert.equal(study?.verification?.sources.length, 10);
   assert.equal(new Set(study?.verification?.sources.map((source) => source.publisher)).size, 9);
-  assert.equal(getIndependentStorytellingProfileGroup(scenarioId), "family_performance_grief_power");
 });
 
-test("Antonia's Line receives dedicated donors without entering existing family choices", () => {
+test("Antonia's Line receives dedicated family donors without entering existing choices", () => {
   const profile = getIndependentStorytellingFilmHistoryProfile(scenarioId);
   assert.ok(profile);
 
@@ -53,6 +51,7 @@ test("Antonia's Line receives dedicated donors without entering existing family 
   assert.equal(choices.length, 3);
   assert.deepEqual(new Set(choices.map((choice) => choice.quality)), new Set(["match", "partial", "miss"]));
   assert.equal(new Set(choices.map((choice) => choice.label)).size, 3);
+  assert.ok(choices.find((choice) => choice.quality === "partial")?.feedback.includes("family-performance"));
 
   for (const existingScenarioId of [
     "scenario_scenes_from_a_marriage_1974",
