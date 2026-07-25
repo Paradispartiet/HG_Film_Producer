@@ -15,6 +15,10 @@ import { getProductionCaseVerification } from "./scenarioProductionVerificationR
 import { brazilFilmHistoryProfile } from "./scenarioFilmStudyConstructedWorldsBrazil";
 import { coreConstructedWorldsProfiles } from "./scenarioFilmStudyConstructedWorldsCoreCatalog";
 import {
+  getDogvilleFilmHistoryDonors,
+  getDogvilleFilmHistoryProfile,
+} from "./scenarioFilmStudyConstructedWorldsDogvilleCatalog";
+import {
   getForrestGumpDonorScenarioIds,
   getForrestGumpFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsForrestGumpCatalog";
@@ -70,7 +74,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 }
 
 export function getConstructedWorldsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getThePianistFilmHistoryProfile(scenarioId)
+  return getDogvilleFilmHistoryProfile(scenarioId)
+    ?? getThePianistFilmHistoryProfile(scenarioId)
     ?? getForrestGumpFilmHistoryProfile(scenarioId)
     ?? constructedWorldsProfiles[scenarioId as keyof typeof constructedWorldsProfiles];
 }
@@ -110,9 +115,11 @@ function hashString(value: string): number {
 export function createConstructedWorldsFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const dogvilleDonors = getDogvilleFilmHistoryDonors(profile);
   const thePianistDonors = getThePianistFilmHistoryDonors(profile);
   const forrestGumpDonorScenarioIds = getForrestGumpDonorScenarioIds(profile);
-  const donors: readonly FilmHistoryProfile[] = (thePianistDonors
+  const donors: readonly FilmHistoryProfile[] = (dogvilleDonors
+    ?? thePianistDonors
     ?? (forrestGumpDonorScenarioIds
       ? forrestGumpDonorScenarioIds.flatMap((scenarioId) => {
         const candidate = constructedWorldsProfiles[scenarioId as keyof typeof constructedWorldsProfiles];
@@ -121,7 +128,7 @@ export function createConstructedWorldsFilmHistoryChoices(
       : Object.values(coreConstructedWorldsProfiles)))
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = thePianistDonors ? 0 : hashString(profile.scenarioId);
+  const start = dogvilleDonors || thePianistDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
   const forrestGumpPartial = "This is another real constructed-world system built from repetition, historical periods or controlled reality, but it does not combine autobiographical narration, national archive, invisible body effects, popular music and studio melodrama in the same way.";
@@ -129,34 +136,43 @@ export function createConstructedWorldsFilmHistoryChoices(
   const thePianistMatch = "This matches the documented production relationship among Szpilman's survivor memoir, Polanski's restricted viewpoint, the French-Polish-German-British co-production, Warsaw-Babelsberg-Jüterbog reconstruction, Brody's bodily survival performance, Starski and Sheppard's historical material world, Edelman's restrained 35 mm image, the progressively emptied sound field and Chopin as profession, memory and identity.";
   const thePianistPartial = "This is another real wartime, reconstructed-city or historical-memory system, but it does not combine one civilian survivor's access to shelter, food, sight and music with the same multinational reconstruction of occupied and destroyed Warsaw.";
   const thePianistMiss = "This places the film inside the wrong relationship between survivor testimony, Holocaust history, restricted civilian viewpoint, reconstructed urban destruction, bodily depletion, 35 mm observation, silence, practical sound and piano performance.";
+  const dogvilleMatch = "This matches the documented production relationship among the prologue-and-nine-chapter moral parable, post-Dogme theatrical abstraction, Peter Grant's chalk town, exposed ensemble performance, mobile digital close-ups, computer-controlled stage light, sound-created invisible architecture, Baroque counterpoint and composited overhead views.";
+  const dogvillePartial = "This is another real artificial-town, total-space or von Trier digital-performance system, but it does not make absent walls, visible neighbours, narrated chapters, mime and off-screen sound the same moral laboratory.";
+  const dogvilleMiss = "This places the film inside the wrong relationship between theatrical abstraction, social surveillance, ensemble exposure, digital camera mobility, stage lighting, narrated structure, invisible doors, sparse props and composited geography.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: thePianistDonors
-        ? thePianistMatch
-        : "This connects the film's constructed world, historical position and documented craft system.",
+      feedback: dogvilleDonors
+        ? dogvilleMatch
+        : thePianistDonors
+          ? thePianistMatch
+          : "This connects the film's constructed world, historical position and documented craft system.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: thePianistDonors
-        ? thePianistPartial
-        : forrestGumpDonorScenarioIds
-          ? forrestGumpPartial
-          : "This is a real constructed-world method, but it belongs to a different historical and production system.",
+      feedback: dogvilleDonors
+        ? dogvillePartial
+        : thePianistDonors
+          ? thePianistPartial
+          : forrestGumpDonorScenarioIds
+            ? forrestGumpPartial
+            : "This is a real constructed-world method, but it belongs to a different historical and production system.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: thePianistDonors
-        ? thePianistMiss
-        : forrestGumpDonorScenarioIds
-          ? forrestGumpMiss
-          : "This places the film inside the wrong temporal, spatial and technical tradition.",
+      feedback: dogvilleDonors
+        ? dogvilleMiss
+        : thePianistDonors
+          ? thePianistMiss
+          : forrestGumpDonorScenarioIds
+            ? forrestGumpMiss
+            : "This places the film inside the wrong temporal, spatial and technical tradition.",
     }] : []),
   ];
 }
