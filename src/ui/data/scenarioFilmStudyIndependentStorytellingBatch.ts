@@ -25,6 +25,10 @@ import {
   getDownByLawFilmHistoryProfile,
 } from "./scenarioFilmStudyIndependentStorytellingDownByLawCatalog";
 import {
+  getTheMillionDollarHotelFilmHistoryDonors,
+  getTheMillionDollarHotelFilmHistoryProfile,
+} from "./scenarioFilmStudyOutsiderHotelMusicMillionDollarHotelCatalog";
+import {
   getRequiemForADreamFilmHistoryDonors,
   getRequiemForADreamFilmHistoryProfile,
 } from "./scenarioFilmStudyAddictionBodyMontageRequiemCatalog";
@@ -74,7 +78,8 @@ import { getProductionCaseVerification } from "./scenarioProductionVerificationR
 type ResolvedIndependentStorytellingProfileGroup =
   | IndependentStorytellingProfileGroup
   | "social_realism_labor_body"
-  | "addiction_body_montage";
+  | "addiction_body_montage"
+  | "outsider_hotel_music_identity";
 
 type SpecialChoiceSystem = {
   readonly donors: readonly FilmHistoryProfile[];
@@ -133,7 +138,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return getRequiemForADreamFilmHistoryProfile(scenarioId)
+  return getTheMillionDollarHotelFilmHistoryProfile(scenarioId)
+    ?? getRequiemForADreamFilmHistoryProfile(scenarioId)
     ?? getTheStraightStoryFilmHistoryProfile(scenarioId)
     ?? getRosettaFilmHistoryProfile(scenarioId)
     ?? getEyesWideShutFilmHistoryProfile(scenarioId)
@@ -202,6 +208,7 @@ function partialFeedback(group: ResolvedIndependentStorytellingProfileGroup): st
     japanese_ambiguity_dialogue: "This is a real Japanese ambiguity-and-dialogue production system, but it organizes hypnosis, coincidence, institutional viewpoint, environmental procedure, performance and sound differently.",
     social_realism_labor_body: "This is another real social-realist labour-and-body system, but it organizes work, exclusion, physical procedure, moral choice, camera proximity and environmental sound differently.",
     addiction_body_montage: "This is another real addiction, bodily-crisis or subjective-montage system, but it organizes parallel compulsion, repeated ritual images, seasonal collapse, body-mounted camera, effects, music and designed sound differently.",
+    outsider_hotel_music_identity: "This is another real hotel, outsider-ensemble or music-led urban system, but it organizes a real building, marginal community, romantic murder mystery, subjective narration, CinemaScope space and rock-ambient collaboration differently.",
   };
   return feedback[group];
 }
@@ -227,11 +234,22 @@ function missFeedback(group: ResolvedIndependentStorytellingProfileGroup): strin
     japanese_ambiguity_dialogue: "This places the film inside the wrong Japanese relationship between uncertainty, conversation, institutional pressure, landscape and moral interpretation.",
     social_realism_labor_body: "This places the film inside the wrong relationship between labour exclusion, bodily survival, social belonging, documentary-derived staging, mobile camera, cutting and practical sound.",
     addiction_body_montage: "This places the film inside the wrong relationship between parallel addiction, bodily deterioration, seasonal colour, repeated ritual montage, subjective camera, aggressive editing, designed sound, music and low-cost effects.",
+    outsider_hotel_music_identity: "This places the film inside the wrong relationship between transatlantic auteur production, a real Downtown Los Angeles hotel, outsider ensemble, unstable narration, murder-mystery framing, CinemaScope architecture, sound and music-led identity.",
   };
   return feedback[group];
 }
 
 function getSpecialChoiceSystem(profile: FilmHistoryProfile): SpecialChoiceSystem | undefined {
+  const theMillionDollarHotelDonors = getTheMillionDollarHotelFilmHistoryDonors(profile);
+  if (theMillionDollarHotelDonors) return {
+    donors: theMillionDollarHotelDonors,
+    group: "outsider_hotel_music_identity",
+    forceStart: true,
+    match: "This matches the documented production relationship among Bono and Nicholas Klein's rooftop-born story, Wenders's transatlantic Road Movies-Kintop-Icon production, the real Downtown Los Angeles hotel, Jeremy Davies and Milla Jovovich's outsider romance, Mel Gibson's investigative counterforce, Phedon Papamichael's 35 mm CinemaScope image, resident-room design, Tom Tom's subjective editing, layered hotel sound and the Bono-Eno-Lanois-Hassell music system.",
+    partial: "This is another real hotel, urban-outsider or music-led ensemble system, but it does not combine a rooftop-born Bono story, a real decayed Los Angeles residence, romantic murder mystery, marginal ensemble, unstable first-person narration, CinemaScope architecture and ambient-rock collaboration in the same way.",
+    miss: "This places the film inside the wrong relationship between transatlantic auteur production, Downtown Los Angeles location history, outsider community, performed identity, murder investigation, subjective image ruptures, hotel sound and collaborative music.",
+  };
+
   const requiemForADreamDonors = getRequiemForADreamFilmHistoryDonors(profile);
   if (requiemForADreamDonors) return {
     donors: requiemForADreamDonors,

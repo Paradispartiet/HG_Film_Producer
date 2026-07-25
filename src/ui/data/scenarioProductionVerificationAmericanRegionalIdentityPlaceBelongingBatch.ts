@@ -1,6 +1,7 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
 import { buffalo66VerificationRecords } from "./scenarioProductionVerificationBuffalo66";
 import { theStraightStoryVerificationRecords } from "./scenarioProductionVerificationStraightStory";
+import { theMillionDollarHotelProductionCaseVerification } from "./scenarioProductionVerificationMillionDollarHotel";
 
 export const americanRegionalIdentityPlaceBelongingVerificationRecords = [
   {
@@ -165,4 +166,5 @@ export const americanRegionalIdentityPlaceBelongingVerificationRecords = [
   },
   ...buffalo66VerificationRecords,
   ...theStraightStoryVerificationRecords,
+  theMillionDollarHotelProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
