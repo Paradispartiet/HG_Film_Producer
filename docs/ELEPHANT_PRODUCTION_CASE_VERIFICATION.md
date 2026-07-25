@@ -26,7 +26,7 @@ The playable model connects:
 - abandonment of a conventional causal screenplay;
 - local high-school students playing characters developed from their own lives;
 - a real closed school used as branching corridor geography;
-- Gus Van Sant and Harris Savides's extended 35 mm tracking movements;
+- Gus Van Sant and Harris Savides' extended 35 mm tracking movements;
 - 1.37:1 Academy framing and fast 500 ASA stock;
 - practical hallway lighting and limited window augmentation;
 - repeated encounters edited from different characters and temporal positions;
@@ -89,6 +89,8 @@ The donor pool is isolated to Elephant. Existing donor choices are unchanged.
 8. The Independent — interview on Akerman, Tarr, script abandonment and violence staging
 9. Fandor Keyframe — Leslie Shatz interview on expressionistic sound and musique concrète
 10. The Seattle Times — contemporary production interview on HBO, casting, improvisation and withheld causality
+
+The complete inspectable HTTPS URLs and source-specific support notes are preserved in `scenarioProductionVerificationElephant.ts`.
 
 ## Scope control
 
