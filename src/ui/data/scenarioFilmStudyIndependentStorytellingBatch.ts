@@ -25,6 +25,10 @@ import {
   getDownByLawFilmHistoryProfile,
 } from "./scenarioFilmStudyIndependentStorytellingDownByLawCatalog";
 import {
+  getElephantFilmHistoryDonors,
+  getElephantFilmHistoryProfile,
+} from "./scenarioFilmStudyIndependentStorytellingElephantCatalog";
+import {
   getTheMillionDollarHotelFilmHistoryDonors,
   getTheMillionDollarHotelFilmHistoryProfile,
 } from "./scenarioFilmStudyOutsiderHotelMusicMillionDollarHotelCatalog";
@@ -138,7 +142,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return getTheMillionDollarHotelFilmHistoryProfile(scenarioId)
+  return getElephantFilmHistoryProfile(scenarioId)
+    ?? getTheMillionDollarHotelFilmHistoryProfile(scenarioId)
     ?? getRequiemForADreamFilmHistoryProfile(scenarioId)
     ?? getTheStraightStoryFilmHistoryProfile(scenarioId)
     ?? getRosettaFilmHistoryProfile(scenarioId)
@@ -240,6 +245,16 @@ function missFeedback(group: ResolvedIndependentStorytellingProfileGroup): strin
 }
 
 function getSpecialChoiceSystem(profile: FilmHistoryProfile): SpecialChoiceSystem | undefined {
+  const elephantDonors = getElephantFilmHistoryDonors(profile);
+  if (elephantDonors) return {
+    donors: elephantDonors,
+    group: "general",
+    forceStart: true,
+    match: "This matches the documented production relationship among HBO-backed Portland production, local student performers, a real closed school, script-light development, Harris Savides's square-frame 35 mm corridor tracking, practical lighting, repeated temporal paths, Van Sant's editorial re-entry, mobile MS stereo, Leslie Shatz's shifting sound field and music that emerges from the students' environment rather than explaining the violence.",
+    partial: "This is another real durational, observational or embodied social-space system, but it does not combine one American school day, nonprofessional teenagers, overlapping corridor routes, repeated encounters, Academy-ratio long takes, post-Columbine uncertainty and sound that moves between ordinary ambience and subjective pressure in the same way.",
+    miss: "This places the film inside the wrong relationship between school violence, nonprofessional performance, real institutional geography, incomplete causality, repeated time, mobile 35 mm observation, practical light, environmental sound, musique concrète and withheld explanation.",
+  };
+
   const theMillionDollarHotelDonors = getTheMillionDollarHotelFilmHistoryDonors(profile);
   if (theMillionDollarHotelDonors) return {
     donors: theMillionDollarHotelDonors,

@@ -45,6 +45,7 @@ import { hongKongTaiwanUrbanTimeVerificationRecords } from "./scenarioProduction
 import { iberianPortugueseMemoryVerificationRecords } from "./scenarioProductionVerificationIberianPortugueseMemorySystemsBatch";
 import { independentDesireIdentityAuthorshipVerificationRecords } from "./scenarioProductionVerificationIndependentDesireIdentityAuthorshipBatch";
 import { independentStorytellingVerificationRecords } from "./scenarioProductionVerificationIndependentStorytellingBatch";
+import { elephantProductionCaseVerification } from "./scenarioProductionVerificationElephant";
 import { downByLawVerificationRecords } from "./scenarioProductionVerificationDownByLaw";
 import { inTheNameOfTheFatherVerificationRecords } from "./scenarioProductionVerificationInTheNameFather";
 import { trueRomanceVerificationRecords } from "./scenarioProductionVerificationTrueRomance";
@@ -102,6 +103,7 @@ const additionalVerificationRecords = [
   ...minimalistRoadVerificationRecords,
   ...europeanPressureVerificationRecords,
   ...independentStorytellingVerificationRecords,
+  elephantProductionCaseVerification,
   ...downByLawVerificationRecords,
   ...inTheNameOfTheFatherVerificationRecords,
   ...trueRomanceVerificationRecords,
