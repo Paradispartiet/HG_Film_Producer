@@ -17,6 +17,10 @@ import { doubleLifeOfVeroniqueFilmHistoryProfile } from "./scenarioFilmStudyEuro
 import { lAtalanteFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryLAtalante";
 import { landscapeInTheMistFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryLandscapeMist";
 import { spiritOfTheBeehiveFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemorySpiritBeehive";
+import {
+  getAmelieFilmHistoryDonors,
+  getAmelieFilmHistoryProfile,
+} from "./scenarioFilmStudyWhimsicalUrbanRomanceAmelieCatalog";
 
 const profiles = {
   [amarcordFilmHistoryProfile.scenarioId]: amarcordFilmHistoryProfile,
@@ -64,7 +68,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getEuropeanPoeticMemorySystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getCinemaParadisoFilmHistoryProfile(scenarioId)
+  return getAmelieFilmHistoryProfile(scenarioId)
+    ?? getCinemaParadisoFilmHistoryProfile(scenarioId)
     ?? profiles[scenarioId as keyof typeof profiles];
 }
 
@@ -95,14 +100,15 @@ function hashString(value: string): number {
 }
 
 export function createEuropeanPoeticMemorySystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
+  const amelieDonors = getAmelieFilmHistoryDonors(profile);
   const priorityDonorIds = getCinemaParadisoDonorScenarioIds(profile);
   const priorityDonors = priorityDonorIds?.map(
     (scenarioId) => profiles[scenarioId as keyof typeof profiles],
   ).filter(Boolean) as readonly FilmHistoryProfile[] | undefined;
-  const donors = priorityDonors ?? Object.values(profiles)
+  const donors = amelieDonors ?? priorityDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = hashString(profile.scenarioId);
+  const start = amelieDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
   return [
@@ -110,23 +116,29 @@ export function createEuropeanPoeticMemorySystemsFilmHistoryChoices(profile: Fil
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This matches the documented relationship between European poetic realism, childhood, landscape, memory, intuition, image, editing, music and sound.",
+      feedback: amelieDonors
+        ? "This matches the documented relationship among Jeunet and Laurant's miniature intervention structure, Claudie Ossard's French-German production, Audrey Tautou's precise withheld performance, transformed Montmartre locations, Aline Bonetto and Madeline Fontaine's controlled colour world, Bruno Delbonnel's 35 mm image, Hervé Schneid's rapid detail montage, exact Paris sound, Yann Tiersen music and Duboi's poetic effects."
+        : "This matches the documented relationship between European poetic realism, childhood, landscape, memory, intuition, image, editing, music and sound.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: priorityDonors
-        ? "This is another real European poetic-memory system, but it organises studio reconstruction, childhood history or landscape journey without Cinema Paradiso's projection labour, communal exhibition and version history."
-        : "This is a real European poetic production system, but it organises labour, childhood, landscape, doubling, colour, music and historical silence differently.",
+      feedback: amelieDonors
+        ? "This is another real colour-, music-, city- or subjective-fantasy system, but it does not combine anonymous acts of care, narrator-led likes and dislikes, a photo-booth mystery, transformed Montmartre geography, rapid comic miniatures, precisely balanced detail sound and literal cartoon-like emotion in the same way."
+        : priorityDonors
+          ? "This is another real European poetic-memory system, but it organises studio reconstruction, childhood history or landscape journey without Cinema Paradiso's projection labour, communal exhibition and version history."
+          : "This is a real European poetic production system, but it organises labour, childhood, landscape, doubling, colour, music and historical silence differently.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: priorityDonors
-        ? "This places the film inside the wrong relationship between communal cinema, censorship, projection craft, remembered village space, alternate cuts and musical return."
-        : "This assigns the film to the wrong historical, industrial and formal poetic-memory production logic.",
+      feedback: amelieDonors
+        ? "This places the film inside the wrong relationship between popular French auteur production, Paris location transformation, romantic intervention structure, controlled production design, 35 mm and digital colour, miniature editing, detail sound, music and poetic effects."
+        : priorityDonors
+          ? "This places the film inside the wrong relationship between communal cinema, censorship, projection craft, remembered village space, alternate cuts and musical return."
+          : "This assigns the film to the wrong historical, industrial and formal poetic-memory production logic.",
     }] : []),
   ];
 }

@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { amelieProductionCaseVerification } from "./scenarioProductionVerificationAmelie";
 
 export const europeanPoeticMemoryVerificationRecords = [
   {
@@ -160,5 +161,6 @@ export const europeanPoeticMemoryVerificationRecords = [
         note: "BFI places the film at Kieślowski's international metaphysical turn and identifies Jacob's double performance, Idziak's cinematography, Preisner's music and the proposed multiple-ending strategy."
       }
     ]
-  }
+  },
+  amelieProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
