@@ -4,7 +4,7 @@ export const elephantProductionCaseVerification = {
   scenarioId: "scenario_elephant_2003",
   status: "verified",
   verifiedAt: "2026-07-25",
-  summary: "The film's immediate post-Columbine context, HBO-backed Portland production, scriptless development with local students, real-school geography, repeated temporal structure, Harris Savides long-take 35 mm photography, practical lighting, Gus Van Sant editing, mobile MS stereo, Leslie Shatz sound design, musique concrète, Beethoven, Arvo Pärt and Cannes recognition are supported by ten inspectable institutional, filmmaker, technical and contemporary sources.",
+  summary: "The film's immediate post-Columbine context, HBO-backed Portland production, scriptless development with local students, real-school geography, repeated temporal structure, Harris Savides' long-take 35 mm photography, practical lighting, Gus Van Sant's editing, mobile MS stereo, Leslie Shatz sound design, musique concrète, Beethoven, Arvo Pärt and Cannes recognition are supported by ten inspectable institutional, filmmaker, technical and contemporary sources.",
   sources: [
     {
       title: "Elephant",
