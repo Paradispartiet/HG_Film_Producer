@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { thePianistProductionCaseVerification } from "./scenarioProductionVerificationPianist";
 
 export const constructedWorldsVerificationRecords = [
   {
@@ -184,5 +185,6 @@ export const constructedWorldsVerificationRecords = [
         note: "Cannes records the film as its 2011 opening selection and confirms the international production context and principal cinematography, production-design and editing credits."
       }
     ]
-  }
+  },
+  thePianistProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
