@@ -8,6 +8,10 @@ import type { FilmScenarioSeed } from "./filmScenarios";
 import type { FilmHistoryChoice, FilmHistoryProfile, ScenarioFilmStudyMap } from "./scenarioFilmStudyMap";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
+import {
+  getKitchenStoriesFilmHistoryDonors,
+  getKitchenStoriesFilmHistoryProfile,
+} from "./scenarioFilmStudyNordicMinimalistKitchenStoriesCatalog";
 import { manWithoutPastFilmHistoryProfile } from "./scenarioFilmStudyNordicMinimalistManWithoutPast";
 import { matchFactoryGirlFilmHistoryProfile } from "./scenarioFilmStudyNordicMinimalistMatchFactoryGirl";
 import { osloAugust31stFilmHistoryProfile } from "./scenarioFilmStudyNordicMinimalistOsloAugust31st";
@@ -58,7 +62,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getNordicMinimalistSocialSystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return profiles[scenarioId as keyof typeof profiles];
+  return getKitchenStoriesFilmHistoryProfile(scenarioId)
+    ?? profiles[scenarioId as keyof typeof profiles];
 }
 
 export function resolveNordicMinimalistSocialSystemsFilmStudyMap(
@@ -88,10 +93,11 @@ function hashString(value: string): number {
 }
 
 export function createNordicMinimalistSocialSystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
-  const donors = Object.values(profiles)
+  const kitchenStoriesDonors = getKitchenStoriesFilmHistoryDonors(profile);
+  const donors = kitchenStoriesDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = hashString(profile.scenarioId);
+  const start = kitchenStoriesDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
   return [
@@ -99,19 +105,25 @@ export function createNordicMinimalistSocialSystemsFilmHistoryChoices(profile: F
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This matches the documented relationship between Nordic social conditions, production scale, performance, spatial design, image, editing and sound.",
+      feedback: kitchenStoriesDonors
+        ? "This matches the documented production relationship among postwar Swedish home research, Norwegian-Swedish coproduction, the no-contact observation protocol, Calmeyer and Norström's restrained friendship, Billy Johansson's kitchen-chair-caravan design, Philip Øgaard's 35 mm framing, patient editing, practical silence and Hans Mathisen's music."
+        : "This matches the documented relationship between Nordic social conditions, production scale, performance, spatial design, image, editing and sound.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real Nordic minimalist or social production system, but it organizes studio control, location, performance, narrative time and colour differently.",
+      feedback: kitchenStoriesDonors
+        ? "This is another real Nordic deadpan, institutional or observational production system, but it does not combine an elevated observation chair, a ban on contact, postwar kitchen science, cross-border mistrust and friendship through the same practical domestic space."
+        : "This is a real Nordic minimalist or social production system, but it organizes studio control, location, performance, narrative time and colour differently.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This assigns the film to the wrong historical, industrial and stylistic Nordic production logic.",
+      feedback: kitchenStoriesDonors
+        ? "This places the film inside the wrong relationship between functionalist research, observer and subject, postwar national identity, kitchen architecture, male solitude, deadpan performance, silence and reciprocal care."
+        : "This assigns the film to the wrong historical, industrial and stylistic Nordic production logic.",
     }] : []),
   ];
 }
