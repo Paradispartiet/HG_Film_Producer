@@ -70,6 +70,10 @@ import { safeFilmHistoryProfile } from "./scenarioFilmStudyQueerIndependentSafe"
 import { theWatermelonWomanFilmHistoryProfile } from "./scenarioFilmStudyQueerIndependentWatermelonWoman";
 import { oasisFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanOasis";
 import { peppermintCandyFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanPeppermintCandy";
+import {
+  getThreeIronFilmHistoryDonors,
+  getThreeIronFilmHistoryProfile,
+} from "./scenarioFilmStudySouthKoreanThreeIronCatalog";
 import { theHostFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanTheHost";
 import { theWailingFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanTheWailing";
 import { courtFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianCourt";
@@ -289,13 +293,17 @@ assignGroup("japanese_ambiguity_dialogue", [
 ]);
 
 export function getIndependentStorytellingCatalogProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getLastLifeInTheUniverseFilmHistoryProfile(scenarioId)
+  return getThreeIronFilmHistoryProfile(scenarioId)
+    ?? getLastLifeInTheUniverseFilmHistoryProfile(scenarioId)
     ?? profilesByScenarioId.get(scenarioId);
 }
 
 export function getIndependentStorytellingProfileGroup(
   scenarioId: string,
 ): IndependentStorytellingProfileGroup {
+  if (getThreeIronFilmHistoryProfile(scenarioId)) {
+    return "south_korean_genre";
+  }
   if (getLastLifeInTheUniverseFilmHistoryProfile(scenarioId)) {
     return "asian_transnational_urban_identity";
   }
@@ -305,6 +313,9 @@ export function getIndependentStorytellingProfileGroup(
 export function getIndependentStorytellingDonors(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryProfile[] {
+  const threeIronDonors = getThreeIronFilmHistoryDonors(profile);
+  if (threeIronDonors) return threeIronDonors;
+
   const lastLifeDonors = getLastLifeInTheUniverseFilmHistoryDonors(profile);
   if (lastLifeDonors) return lastLifeDonors;
 
