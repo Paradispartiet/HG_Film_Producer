@@ -47,6 +47,7 @@ import { independentDesireIdentityAuthorshipVerificationRecords } from "./scenar
 import { independentStorytellingVerificationRecords } from "./scenarioProductionVerificationIndependentStorytellingBatch";
 import { elephantProductionCaseVerification } from "./scenarioProductionVerificationElephant";
 import { kitchenStoriesProductionCaseVerification } from "./scenarioProductionVerificationKitchenStories";
+import { lastLifeInTheUniverseProductionCaseVerification } from "./scenarioProductionVerificationLastLifeUniverse";
 import { downByLawVerificationRecords } from "./scenarioProductionVerificationDownByLaw";
 import { inTheNameOfTheFatherVerificationRecords } from "./scenarioProductionVerificationInTheNameFather";
 import { trueRomanceVerificationRecords } from "./scenarioProductionVerificationTrueRomance";
@@ -106,6 +107,7 @@ const additionalVerificationRecords = [
   ...independentStorytellingVerificationRecords,
   elephantProductionCaseVerification,
   kitchenStoriesProductionCaseVerification,
+  lastLifeInTheUniverseProductionCaseVerification,
   ...downByLawVerificationRecords,
   ...inTheNameOfTheFatherVerificationRecords,
   ...trueRomanceVerificationRecords,
