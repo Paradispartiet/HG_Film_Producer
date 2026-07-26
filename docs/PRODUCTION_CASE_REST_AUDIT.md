@@ -29,8 +29,8 @@ The audit found and corrected one registry mismatch: the Jeanne Dielman profile 
 
 | Catalog origin | Remaining |
 |---|---:|
-| `film_scenarios_seed.json` | 75 |
-| `italyFranceGermanyBeneluxExpansion.ts` | 9 |
+| `film_scenarios_seed.json` | 78 |
+| `italyFranceGermanyBeneluxExpansion.ts` | 6 |
 | `southSoutheastAsianExpansion.ts` | 2 |
 
 ## Remaining work by decade
@@ -47,11 +47,11 @@ A film can belong to more than one genre.
 
 | Genre | Remaining |
 |---|---:|
-| Drama | 77 |
-| Comedy | 19 |
-| Crime | 21 |
+| Drama | 76 |
+| Comedy | 18 |
+| Crime | 20 |
 | Romance | 18 |
-| Thriller | 18 |
+| Thriller | 17 |
 | Fantasy | 9 |
 | Biography | 7 |
 | Mystery | 8 |
