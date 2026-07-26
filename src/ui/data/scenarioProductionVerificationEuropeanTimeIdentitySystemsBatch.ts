@@ -1,5 +1,6 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
 import { characterVerificationRecords } from "./scenarioProductionVerificationCharacter";
+import { theReturnProductionCaseVerification } from "./scenarioProductionVerificationTheReturn";
 
 export const europeanTimeIdentityVerificationRecords = [
   {
@@ -163,4 +164,5 @@ export const europeanTimeIdentityVerificationRecords = [
     ]
   },
   ...characterVerificationRecords,
+  theReturnProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
