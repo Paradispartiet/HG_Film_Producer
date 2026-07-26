@@ -27,7 +27,7 @@ export const noiTheAlbinoProductionCaseVerification = {
       publisher: "The Guardian",
       url: "https://www.theguardian.com/film/2003/nov/11/features.steverose",
       sourceKind: "filmmaker_interview",
-      supports: ["overall", "performance", "cinematography", "sound"],
+      supports: ["overall", "cinematography", "sound"],
       note: "The contemporary Dagur Kári interview documents Bolungarvík and the Westfjords shoot, the professional lead and locally recruited amateur ensemble, the young Icelandic industry's flexible working culture, severe snow and lighting-truck conditions and the film's mythic yet universal small-town escape design."
     },
     {
@@ -35,7 +35,7 @@ export const noiTheAlbinoProductionCaseVerification = {
       publisher: "Cineuropa",
       url: "https://cineuropa.org/en/interview/31869/",
       sourceKind: "filmmaker_interview",
-      supports: ["overall", "screenplay", "production", "reception"],
+      supports: ["overall", "screenplay"],
       note: "Kári explains that Nói developed over roughly twelve years, identifies Jarmusch, Kaurismäki, sitcom antiheroes and closed settings as influences, gives a €1.2 million budget with 25 percent Icelandic government support and describes the Icelandic producer, Coproduction Office and Danish partners behind the European coproduction."
     },
     {
@@ -43,7 +43,7 @@ export const noiTheAlbinoProductionCaseVerification = {
       publisher: "AboutFilm.com",
       url: "https://www.aboutfilm.com/features/noialbinoi/interviews.htm",
       sourceKind: "filmmaker_interview",
-      supports: ["overall", "screenplay", "performance", "music"],
+      supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
       note: "The interviews identify Tómas Lemarquis as Kári's only possible Nói, record the professional training behind his physically restrained performance, connect Kári with cinematographer Rasmus Videbæk and editor Daniel Dencik through the Danish film school and confirm that Kári composed the music with Slowblow."
     },
     {
@@ -51,7 +51,7 @@ export const noiTheAlbinoProductionCaseVerification = {
       publisher: "Screen Daily",
       url: "https://www.screendaily.com/noi-the-albino-noi-albinoi/4012051.article",
       sourceKind: "archive_feature",
-      supports: ["overall", "performance", "production", "music"],
+      supports: ["overall", "cinematography", "editing", "sound"],
       note: "The Rotterdam-era trade review records Zik Zak Filmworks, Essential Filmproduktion, The Bureau, M&M Productions, the Film Council and Coproduction Office; credits the core craft team and Slowblow; and describes the nonprofessional ensemble, poker-faced sight gags, restrained score and abrupt apocalyptic turn."
     },
     {
@@ -59,7 +59,7 @@ export const noiTheAlbinoProductionCaseVerification = {
       publisher: "New Zealand International Film Festival",
       url: "https://www.nziff.co.nz/2003/archive-1/noi-albinoi/",
       sourceKind: "film_institute",
-      supports: ["overall", "cinematography", "editing", "music"],
+      supports: ["overall", "cinematography", "editing", "sound"],
       note: "NZIFF records the four-country production, Icelandic language, 35 mm format, Dagur Kári screenplay, Rasmus Videbæk photography, Daniel Dencik editing and Slowblow music while characterizing the film as a mix of realism, humour and metaphor built around the basement refuge and tropical escape fantasy."
     },
     {
@@ -67,7 +67,7 @@ export const noiTheAlbinoProductionCaseVerification = {
       publisher: "AFI FEST",
       url: "https://fest.afi.com/2003/european-showcase-2003/noi-albinoi/",
       sourceKind: "film_institute",
-      supports: ["overall", "cinematography", "music", "reception"],
+      supports: ["overall", "cinematography", "sound"],
       note: "AFI FEST identifies the film as Kári's 2003 feature with Rasmus Videbæk as director of photography and describes the writer-director's resonant minimalist score as merging with the icy colour palette to build a tone that moves from misfit comedy toward tragedy and the sublime."
     },
     {
@@ -75,7 +75,7 @@ export const noiTheAlbinoProductionCaseVerification = {
       publisher: "filmportal.de",
       url: "https://www.filmportal.de/en/movie/noi-albinoi_ea43d4a6e9e35006e03053d50b37753d",
       sourceKind: "film_institute",
-      supports: ["overall", "production", "sound"],
+      supports: ["overall", "sound"],
       note: "The German national film portal documents the European production companies, Coproduction Office participation, sound and technical credits, original and working titles and German festival premiere, grounding the film's cross-border industrial and release history."
     },
     {
