@@ -20,6 +20,10 @@ import {
   getCharacterFilmHistoryDonors,
   getCharacterFilmHistoryProfile,
 } from "./scenarioFilmStudyEuropeanTimeIdentityCharacterCatalog";
+import {
+  getTheReturnFilmHistoryDonors,
+  getTheReturnFilmHistoryProfile,
+} from "./scenarioFilmStudyEuropeanTimeIdentityTheReturnCatalog";
 
 const coreProfiles = {
   [theVanishingFilmHistoryProfile.scenarioId]: theVanishingFilmHistoryProfile,
@@ -75,7 +79,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getEuropeanTimeIdentitySystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getCharacterFilmHistoryProfile(scenarioId)
+  return getTheReturnFilmHistoryProfile(scenarioId)
+    ?? getCharacterFilmHistoryProfile(scenarioId)
     ?? profiles[scenarioId as keyof typeof profiles];
 }
 
@@ -106,6 +111,9 @@ function hashString(value: string): number {
 }
 
 function getChoiceDonors(profile: FilmHistoryProfile): FilmHistoryProfile[] {
+  const theReturnDonors = getTheReturnFilmHistoryDonors(profile);
+  if (theReturnDonors) return [...theReturnDonors];
+
   const characterDonors = getCharacterFilmHistoryDonors(profile);
   if (characterDonors) return [...characterDonors];
 
@@ -125,20 +133,27 @@ function getChoiceDonors(profile: FilmHistoryProfile): FilmHistoryProfile[] {
 }
 
 export function createEuropeanTimeIdentitySystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
+  const theReturnDonors = getTheReturnFilmHistoryDonors(profile);
   const characterDonors = getCharacterFilmHistoryDonors(profile);
   const donors = getChoiceDonors(profile);
-  const start = characterDonors || getSatantangoDonorScenarioIds(profile) ? 0 : hashString(profile.scenarioId);
+  const start = theReturnDonors || characterDonors || getSatantangoDonorScenarioIds(profile) ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
-  const matchFeedback = characterDonors
-    ? "This matches the documented relationship among Bordewijk's two source texts, a murder-confession frame, multinational reconstruction of prewar Rotterdam, monumental period design, 35 mm colour, controlled performance, nonlinear memory and forceful music."
-    : "This matches the documented relationship between European suspense, historical control, recursive time, identity performance, image, editing, music and sound.";
-  const partialFeedback = characterDonors
-    ? "This is another real European time-and-identity production system, but it organises procedural obsession, authoritarian history or postwar identity rehearsal without Character's father-son debt struggle, social ascent and composite prewar city."
-    : "This is a real European time-and-identity production system, but it organises procedural knowledge, recursive velocity, historical suspicion and postwar rehearsal differently.";
-  const missFeedback = characterDonors
-    ? "This places the film inside the wrong relationship between literary adaptation, murder framing, social ambition, paternal authority, reconstructed urban history, period design and psychological melodrama."
-    : "This assigns the film to the wrong historical, temporal and audiovisual production logic.";
+  const matchFeedback = theReturnDonors
+    ? "This matches the documented production relationship among an unexplained paternal return, two opposed child viewpoints, a seven-day road and island journey, Ren Film production, Lavronenko-Garin-Dobronravov performance, Krichman's colour 35 mm landscape, Pakhomova's practical spaces, Mogilevsky's tightening edit, Dergachev's restrained music and sound and the film's unresolved spiritual authority."
+    : characterDonors
+      ? "This matches the documented relationship among Bordewijk's two source texts, a murder-confession frame, multinational reconstruction of prewar Rotterdam, monumental period design, 35 mm colour, controlled performance, nonlinear memory and forceful music."
+      : "This matches the documented relationship between European suspense, historical control, recursive time, identity performance, image, editing, music and sound.";
+  const partialFeedback = theReturnDonors
+    ? "This is another real European system of authoritarian family life, durational landscape or child-centred moral travel, but it does not combine a father's unexplained return, two brothers' conflicting belief, physical training, road movement, fog, boat labour, island secrecy and sudden bereavement in the same way."
+    : characterDonors
+      ? "This is another real European time-and-identity production system, but it organises procedural obsession, authoritarian history or postwar identity rehearsal without Character's father-son debt struggle, social ascent and composite prewar city."
+      : "This is a real European time-and-identity production system, but it organises procedural knowledge, recursive velocity, historical suspicion and postwar rehearsal differently.";
+  const missFeedback = theReturnDonors
+    ? "This places the film inside the wrong relationship between post-Soviet family authority, child perception, withheld backstory, practical journey geography, colour 35 mm landscape, religious imagery, environmental sound, paternal discipline and catastrophic loss."
+    : characterDonors
+      ? "This places the film inside the wrong relationship between literary adaptation, murder framing, social ambition, paternal authority, reconstructed urban history, period design and psychological melodrama."
+      : "This assigns the film to the wrong historical, temporal and audiovisual production logic.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
