@@ -27,6 +27,10 @@ import { tropicalMaladyFilmHistoryProfile } from "./scenarioFilmStudyAsianLandsc
 import { cycloFilmHistoryProfile } from "./scenarioFilmStudyAsianTransnationalCyclo";
 import { happyTogetherFilmHistoryProfile } from "./scenarioFilmStudyAsianTransnationalHappyTogether";
 import { infernalAffairsFilmHistoryProfile } from "./scenarioFilmStudyAsianTransnationalInfernalAffairs";
+import {
+  getLastLifeInTheUniverseFilmHistoryDonors,
+  getLastLifeInTheUniverseFilmHistoryProfile,
+} from "./scenarioFilmStudyAsianTransnationalLastLifeUniverseCatalog";
 import { returnToSeoulFilmHistoryProfile } from "./scenarioFilmStudyAsianTransnationalReturnToSeoul";
 import { aTouchOfSinFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageATouchOfSin";
 import { longDaysJourneyIntoNightFilmHistoryProfile } from "./scenarioFilmStudyChineseLanguageLongDaysJourney";
@@ -285,18 +289,25 @@ assignGroup("japanese_ambiguity_dialogue", [
 ]);
 
 export function getIndependentStorytellingCatalogProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return profilesByScenarioId.get(scenarioId);
+  return getLastLifeInTheUniverseFilmHistoryProfile(scenarioId)
+    ?? profilesByScenarioId.get(scenarioId);
 }
 
 export function getIndependentStorytellingProfileGroup(
   scenarioId: string,
 ): IndependentStorytellingProfileGroup {
+  if (getLastLifeInTheUniverseFilmHistoryProfile(scenarioId)) {
+    return "asian_transnational_urban_identity";
+  }
   return groupByScenarioId.get(scenarioId) ?? "general";
 }
 
 export function getIndependentStorytellingDonors(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryProfile[] {
+  const lastLifeDonors = getLastLifeInTheUniverseFilmHistoryDonors(profile);
+  if (lastLifeDonors) return lastLifeDonors;
+
   const group = getIndependentStorytellingProfileGroup(profile.scenarioId);
   return profiles
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
