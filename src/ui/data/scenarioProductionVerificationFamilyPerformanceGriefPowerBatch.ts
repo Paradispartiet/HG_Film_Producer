@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { theSavagesVerificationRecords } from "./scenarioProductionVerificationTheSavages";
 
 export const familyPerformanceGriefPowerVerificationRecords = [
   {
@@ -160,5 +161,6 @@ export const familyPerformanceGriefPowerVerificationRecords = [
         note: "The cinematographer's professional record confirms Winter Sleep among his major collaborations and records its 2014 Turkish Film Critics Association award for cinematography."
       }
     ]
-  }
+  },
+  ...theSavagesVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
