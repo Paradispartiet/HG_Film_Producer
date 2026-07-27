@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { bombonElPerroVerificationRecords } from "./scenarioProductionVerificationBombonElPerro";
 
 export const minimalistRoadVerificationRecords = [
   {
@@ -176,5 +177,6 @@ export const minimalistRoadVerificationRecords = [
         note: "Papamichael identifies Paper Moon and The Last Picture Show as visual references and explains how monochrome turns the plains, weathered faces and restrained regional spaces into the film's melancholy comic world."
       }
     ]
-  }
+  },
+  ...bombonElPerroVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
