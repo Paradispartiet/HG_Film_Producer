@@ -8,6 +8,10 @@ import type { FilmScenarioSeed } from "./filmScenarios";
 import type { FilmHistoryChoice, FilmHistoryProfile, ScenarioFilmStudyMap } from "./scenarioFilmStudyMap";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
+import {
+  getAProphetFilmHistoryDonors,
+  getAProphetFilmHistoryProfile,
+} from "./scenarioFilmStudyCrimeNoirAProphetCatalog";
 import { bandOfOutsidersFilmHistoryProfile } from "./scenarioFilmStudyCrimeNoirBandOfOutsiders";
 import {
   getClockersDonorScenarioIds,
@@ -78,7 +82,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getCrimeNoirTransformationsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getTrueRomanceFilmHistoryProfile(scenarioId)
+  return getAProphetFilmHistoryProfile(scenarioId)
+    ?? getTrueRomanceFilmHistoryProfile(scenarioId)
     ?? getClockersFilmHistoryProfile(scenarioId)
     ?? getMesrinePublicEnemyFilmHistoryProfile(scenarioId)
     ?? getMesrineKillerInstinctFilmHistoryProfile(scenarioId)
@@ -113,6 +118,7 @@ function hashString(value: string): number {
 }
 
 export function createCrimeNoirTransformationsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
+  const aProphetDonors = getAProphetFilmHistoryDonors(profile);
   const trueRomanceDonorIds = getTrueRomanceDonorScenarioIds(profile);
   const clockersDonorIds = getClockersDonorScenarioIds(profile);
   const mesrinePublicEnemyDonors = getMesrinePublicEnemyFilmHistoryDonors(profile);
@@ -122,43 +128,49 @@ export function createCrimeNoirTransformationsFilmHistoryChoices(profile: FilmHi
   const priorityDonors = priorityDonorIds?.map(
     (scenarioId) => profiles[scenarioId as keyof typeof profiles],
   ).filter(Boolean) as readonly FilmHistoryProfile[] | undefined;
-  const donors = mesrinePublicEnemyDonors ?? mesrineDonors ?? fargoDonors ?? priorityDonors ?? Object.values(profiles)
+  const donors = aProphetDonors ?? mesrinePublicEnemyDonors ?? mesrineDonors ?? fargoDonors ?? priorityDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
-  const matchFeedback = mesrinePublicEnemyDonors
-    ? "This matches the documented relationship between a concluding biographical chapter, public self-staging, media pressure, psychological paranoia, wider performance space, colour 35 mm Scope photography, episodic acceleration and circular fatalism."
-    : mesrineDonors
-      ? "This matches the documented relationship between a two-film historical biography, contested memoir evidence, international production, physical star transformation, colour 35 mm photography, episodic editing, detailed sound and public self-mythology."
-      : fargoDonors
-        ? "This matches Fargo's documented relationship between fabricated factual authority, regional crime writing, precise casting, small-crew winter locations, restrained 35mm observation, practical lighting, manufactured snow and Scandinavian-inflected orchestral music."
-        : clockersDonorIds
-          ? "This matches the documented relationship between literary crime adaptation, Black Brooklyn authorship, field research, location production, new performers, cross-processed film, subjective flashback and social consequence."
-          : "This matches the documented relationship between crime tradition, industrial production conditions and the film's specific performance, image, editing and sound system.";
-  const partialFeedback = mesrinePublicEnemyDonors
-    ? "This is another real crime or noir production system, but it does not combine the Mesrine diptych's later public identity, media performance, changing disguises, multi-axis pursuit form and return to a known endpoint in the same way."
-    : mesrineDonors
-      ? "This is another real crime or noir production system, but it does not combine a two-part biography, reverse-ordered physical transformation, France-Canada production, disputed memoir evidence and changing public identity in the same way."
-      : fargoDonors
-        ? "This is another real noir or regional crime-production system, but it does not combine Fargo's false true-story frame, Minnesota speech and casting, bright horizonless snowscapes, restrained observational camera and grave folk-derived score."
-        : trueRomanceDonorIds
-          ? "This is another real crime or noir production system, but it organizes fatalism, classical investigation or New Wave play without True Romance's postmodern lovers-on-the-run screenplay, studio road scale and hopeful ending."
+  const matchFeedback = aProphetDonors
+    ? "This matches the documented relationship between a purpose-built prison, multilingual group boundaries, researched newcomer performance, changing institutional access, episodic apprenticeship, subjective rupture and procedural sound."
+    : mesrinePublicEnemyDonors
+      ? "This matches the documented relationship between a concluding biographical chapter, public self-staging, media pressure, psychological paranoia, wider performance space, colour 35 mm Scope photography, episodic acceleration and circular fatalism."
+      : mesrineDonors
+        ? "This matches the documented relationship between a two-film historical biography, contested memoir evidence, international production, physical star transformation, colour 35 mm photography, episodic editing, detailed sound and public self-mythology."
+        : fargoDonors
+          ? "This matches Fargo's documented relationship between fabricated factual authority, regional crime writing, precise casting, small-crew winter locations, restrained 35mm observation, practical lighting, manufactured snow and Scandinavian-inflected orchestral music."
           : clockersDonorIds
-            ? "This is another real crime, addiction or youth-noir production system, but it does not combine Clockers' Universal-to-Spike-Lee adaptation history, Brooklyn housing-project research, Black ensemble authorship and experimental Ektachrome process."
-            : "This is a real crime or noir production system, but it organizes adaptation, studio control, location work, performance and narrative time differently.";
-  const missFeedback = mesrinePublicEnemyDonors
-    ? "This places the film inside the wrong relationship between historical evidence, public mythology, media visibility, psychological pursuit, period craft, performance space, episodic time and fatal closure."
-    : mesrineDonors
-      ? "This places the film inside the wrong relationship between historical evidence, biographical selection, international production, star transformation, period craft, episodic time, sound and public mythology."
-      : fargoDonors
-        ? "This places the film inside the wrong relationship between regional authorship, factual deception, banal economic crime, winter geography, practical-location craft, tonal violence and moral comedy."
-        : trueRomanceDonorIds
-          ? "This places the film inside the wrong relationship between video-store cinephilia, ensemble dialogue, outlaw romance, widescreen colour, ratings edits and director-writer version history."
-          : clockersDonorIds
-            ? "This places the film inside the wrong relationship between police procedure, drug-economy social pressure, Brooklyn location research, reconstructed evidence imagery, cross-processing and subjective urban realism."
-            : "This assigns the film to the wrong historical, industrial and stylistic crime-production logic.";
+            ? "This matches the documented relationship between literary crime adaptation, Black Brooklyn authorship, field research, location production, new performers, cross-processed film, subjective flashback and social consequence."
+            : "This matches the documented relationship between crime tradition, industrial production conditions and the film's specific performance, image, editing and sound system.";
+  const partialFeedback = aProphetDonors
+    ? "This is another real crime or prison production system, but it does not combine Malik's multilingual apprenticeship, constructed institution, social research, shifting access and six-year accumulation of power in the same way."
+    : mesrinePublicEnemyDonors
+      ? "This is another real crime or noir production system, but it does not combine the Mesrine diptych's later public identity, media performance, changing disguises, multi-axis pursuit form and return to a known endpoint in the same way."
+      : mesrineDonors
+        ? "This is another real crime or noir production system, but it does not combine a two-part biography, reverse-ordered physical transformation, France-Canada production, disputed memoir evidence and changing public identity in the same way."
+        : fargoDonors
+          ? "This is another real noir or regional crime-production system, but it does not combine Fargo's false true-story frame, Minnesota speech and casting, bright horizonless snowscapes, restrained observational camera and grave folk-derived score."
+          : trueRomanceDonorIds
+            ? "This is another real crime or noir production system, but it organizes fatalism, classical investigation or New Wave play without True Romance's postmodern lovers-on-the-run screenplay, studio road scale and hopeful ending."
+            : clockersDonorIds
+              ? "This is another real crime, addiction or youth-noir production system, but it does not combine Clockers' Universal-to-Spike-Lee adaptation history, Brooklyn housing-project research, Black ensemble authorship and experimental Ektachrome process."
+              : "This is a real crime or noir production system, but it organizes adaptation, studio control, location work, performance and narrative time differently.";
+  const missFeedback = aProphetDonors
+    ? "This places the film inside the wrong relationship between prison architecture, language, institutional hierarchy, newcomer performance, social research, subjective vision, editing and sound."
+    : mesrinePublicEnemyDonors
+      ? "This places the film inside the wrong relationship between historical evidence, public mythology, media visibility, psychological pursuit, period craft, performance space, episodic time and fatal closure."
+      : mesrineDonors
+        ? "This places the film inside the wrong relationship between historical evidence, biographical selection, international production, star transformation, period craft, episodic time, sound and public mythology."
+        : fargoDonors
+          ? "This places the film inside the wrong relationship between regional authorship, factual deception, banal economic crime, winter geography, practical-location craft, tonal violence and moral comedy."
+          : trueRomanceDonorIds
+            ? "This places the film inside the wrong relationship between video-store cinephilia, ensemble dialogue, outlaw romance, widescreen colour, ratings edits and director-writer version history."
+            : clockersDonorIds
+              ? "This places the film inside the wrong relationship between police procedure, drug-economy social pressure, Brooklyn location research, reconstructed evidence imagery, cross-processing and subjective urban realism."
+              : "This assigns the film to the wrong historical, industrial and stylistic crime-production logic.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
