@@ -30,7 +30,7 @@ const verificationGroups = [
   ["Character composite prewar Rotterdam adaptation system", ["scenario_character_1997"], 10],
   ["Taste of Cherry participatory Tehran road-film system", ["scenario_taste_of_cherry_1997"], 10],
   ["The Game staged-reality corporate paranoia system", ["scenario_the_game_1997"], 10],
-  ["Buffalo 66 reversal-stock regional homecoming system", ["scenario_buffalo_66_1998"], 10],
+  ["Buffalo 66 reversal-stock regional homecoming system", ["scenario_buffalo66_1998"], 10],
   ["The Big Lebowski Los Angeles post-noir comedy system", ["scenario_the_big_lebowski_1998"], 10],
   ["Being John Malkovich embodied portal and performed-identity system", ["scenario_being_john_malkovich_1999"], 10],
   ["Eyes Wide Shut nocturnal marriage and masked-ritual system", ["scenario_eyes_wide_shut_1999"], 10],
@@ -54,6 +54,7 @@ const verificationGroups = [
   ["Adam's Apples Danish theological grotesque rehabilitation system", ["scenario_adam_s_apples_2005"], 10],
   ["The Child Seraing infant-sale fatherhood restitution system", ["scenario_the_child_2005"], 10],
   ["Taxidermia Hungarian three-generation body-history grotesque system", ["scenario_taxidermia_2006"], 10],
+  ["4 Months Romanian abortion procedure and social-pressure system", ["scenario_4_months_3_weeks_and_2_days_2007"], 10],
   ["Norwegian postwar genre systems", ["scenario_gategutter_1949", "scenario_fjols_til_fjells_1957", "scenario_de_dodes_tjern_1958", "scenario_insomnia_1997"], 4],
   ["Nordic minimalist social systems", ["scenario_the_match_factory_girl_1990", "scenario_songs_from_the_second_floor_2000", "scenario_the_man_without_a_past_2002", "scenario_oslo_august_31st_2011"], 4],
   ["modern Nordic behavior systems", ["scenario_force_majeure_2014", "scenario_woman_at_war_2018", "scenario_another_round_2020", "scenario_the_worst_person_in_the_world_2021"], 4],
@@ -109,7 +110,7 @@ const verificationGroups = [
   ["Japanese ambiguity and dialogue systems", ["scenario_cure_1997", "scenario_wheel_of_fortune_and_fantasy_2021", "scenario_monster_kore_eda_2023", "scenario_evil_does_not_exist_2023"], 4],
 ] as const;
 
-const expectedVerifiedCount = 301;
+const expectedVerifiedCount = 302;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
