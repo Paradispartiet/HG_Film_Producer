@@ -12,6 +12,10 @@ import type {
 } from "./scenarioFilmStudyMap";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import {
+  getAlamarDonorScenarioIds,
+  getAlamarFilmHistoryProfile,
+} from "./scenarioFilmStudyMinimalistRoadAlamarCatalog";
+import {
   getBombonElPerroDonorScenarioIds,
   getBombonElPerroFilmHistoryProfile,
 } from "./scenarioFilmStudyMinimalistRoadBombonElPerroCatalog";
@@ -174,7 +178,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 }
 
 export function getMinimalistRoadFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getBombonElPerroFilmHistoryProfile(scenarioId)
+  return getAlamarFilmHistoryProfile(scenarioId)
+    ?? getBombonElPerroFilmHistoryProfile(scenarioId)
     ?? minimalistRoadProfiles[scenarioId as keyof typeof minimalistRoadProfiles];
 }
 
@@ -213,14 +218,16 @@ function hashString(value: string): number {
 export function createMinimalistRoadFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
-  const priorityDonorIds = getBombonElPerroDonorScenarioIds(profile);
+  const alamarDonorIds = getAlamarDonorScenarioIds(profile);
+  const bombonDonorIds = getBombonElPerroDonorScenarioIds(profile);
+  const priorityDonorIds = alamarDonorIds ?? bombonDonorIds;
   const priorityDonors = priorityDonorIds?.map(
     (scenarioId) => minimalistRoadProfiles[scenarioId as keyof typeof minimalistRoadProfiles],
   ).filter(Boolean) as readonly FilmHistoryProfile[] | undefined;
   const donors = priorityDonors ?? Object.values(minimalistRoadProfiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = hashString(profile.scenarioId);
+  const start = alamarDonorIds ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
   return [
@@ -228,23 +235,29 @@ export function createMinimalistRoadFilmHistoryChoices(
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This connects the film's historical position directly to its documented use of road space, minimalism, design and image technology.",
+      feedback: alamarDonorIds
+        ? "This matches the documented relationship between a father-son fictional spine, real family ties, reef labor, a tiny mobile crew, HDCAM observation, environmental sound and documentary openness to unrepeatable events."
+        : "This connects the film's historical position directly to its documented use of road space, minimalism, design and image technology.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: priorityDonors
-        ? "This is another real minimalist journey system, but it organizes adult alienation, transatlantic landscape or digital regional memory through a different production logic."
-        : "This is a real minimalist or road-cinema production history, but it belongs to another industrial, regional and technical system.",
+      feedback: alamarDonorIds
+        ? "This is another real minimalist journey system, but it does not combine a reef ecosystem, real father-son labor, hybrid fiction-documentary method and tiny waterborne production in the same way."
+        : priorityDonors
+          ? "This is another real minimalist journey system, but it organizes adult alienation, transatlantic landscape or digital regional memory through a different production logic."
+          : "This is a real minimalist or road-cinema production history, but it belongs to another industrial, regional and technical system.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: priorityDonors
-        ? "This places the film inside the wrong relationship between a child's ethical quest, village geography, nonprofessional performance, repetition and documentary observation."
-        : "This places the film inside the wrong historical relationship between location, design, performance and image-making.",
+      feedback: alamarDonorIds
+        ? "This places the film inside the wrong relationship between family separation, ecological location, real labor, observational camera, editing, sound and hybrid authorship."
+        : priorityDonors
+          ? "This places the film inside the wrong relationship between a child's ethical quest, village geography, nonprofessional performance, repetition and documentary observation."
+          : "This places the film inside the wrong historical relationship between location, design, performance and image-making.",
     }] : []),
   ];
 }

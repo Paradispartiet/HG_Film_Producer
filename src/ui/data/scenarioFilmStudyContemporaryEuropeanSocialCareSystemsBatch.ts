@@ -10,6 +10,10 @@ import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 import { aftersunFilmHistoryProfile } from "./scenarioFilmStudyContemporaryEuropeanSocialCareAftersun";
 import { roomNextDoorFilmHistoryProfile } from "./scenarioFilmStudyContemporaryEuropeanSocialCareRoomNextDoor";
+import {
+  getTheClassDonorScenarioIds,
+  getTheClassFilmHistoryProfile,
+} from "./scenarioFilmStudyContemporaryEuropeanSocialCareTheClassCatalog";
 import { toniErdmannFilmHistoryProfile } from "./scenarioFilmStudyContemporaryEuropeanSocialCareToniErdmann";
 import { triangleOfSadnessFilmHistoryProfile } from "./scenarioFilmStudyContemporaryEuropeanSocialCareTriangle";
 
@@ -58,7 +62,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getContemporaryEuropeanSocialCareSystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return profiles[scenarioId as keyof typeof profiles];
+  return getTheClassFilmHistoryProfile(scenarioId)
+    ?? profiles[scenarioId as keyof typeof profiles];
 }
 
 export function resolveContemporaryEuropeanSocialCareSystemsFilmStudyMap(
@@ -88,10 +93,14 @@ function hashString(value: string): number {
 }
 
 export function createContemporaryEuropeanSocialCareSystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
-  const donors = Object.values(profiles)
+  const theClassDonorIds = getTheClassDonorScenarioIds(profile);
+  const priorityDonors = theClassDonorIds?.map(
+    (scenarioId) => profiles[scenarioId as keyof typeof profiles],
+  ).filter(Boolean) as readonly FilmHistoryProfile[] | undefined;
+  const donors = priorityDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = hashString(profile.scenarioId);
+  const start = theClassDonorIds ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
   return [
@@ -99,19 +108,25 @@ export function createContemporaryEuropeanSocialCareSystemsFilmHistoryChoices(pr
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This matches the documented relationship between contemporary European social role, family, class, care, performance, image, editing and sound.",
+      feedback: theClassDonorIds
+        ? "This matches the documented relationship between memoir adaptation, a school-year workshop, nonprofessional ensemble performance, three simultaneous cameras, classroom architecture, overlapping speech and institutional power."
+        : "This matches the documented relationship between contemporary European social role, family, class, care, performance, image, editing and sound.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real contemporary European production system, but it organises social embarrassment, class inversion, memory, family and end-of-life care differently.",
+      feedback: theClassDonorIds
+        ? "This is another real contemporary European social production, but it does not build a classroom fiction from year-long collective workshops, live provocation and three-camera conversational observation."
+        : "This is a real contemporary European production system, but it organises social embarrassment, class inversion, memory, family and end-of-life care differently.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This assigns the film to the wrong historical, industrial and formal social-care production logic.",
+      feedback: theClassDonorIds
+        ? "This places the film inside the wrong relationship between school procedure, collective authorship, language, authority, multi-camera direction, editing and institutional sound."
+        : "This assigns the film to the wrong historical, industrial and formal social-care production logic.",
     }] : []),
   ];
 }

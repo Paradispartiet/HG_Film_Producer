@@ -26,6 +26,10 @@ import {
   getThePianistFilmHistoryDonors,
   getThePianistFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsPianistCatalog";
+import {
+  getWalleDonorScenarioIds,
+  getWalleFilmHistoryProfile,
+} from "./scenarioFilmStudyConstructedWorldsWalleCatalog";
 
 const constructedWorldsProfiles = {
   ...coreConstructedWorldsProfiles,
@@ -74,7 +78,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 }
 
 export function getConstructedWorldsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getDogvilleFilmHistoryProfile(scenarioId)
+  return getWalleFilmHistoryProfile(scenarioId)
+    ?? getDogvilleFilmHistoryProfile(scenarioId)
     ?? getThePianistFilmHistoryProfile(scenarioId)
     ?? getForrestGumpFilmHistoryProfile(scenarioId)
     ?? constructedWorldsProfiles[scenarioId as keyof typeof constructedWorldsProfiles];
@@ -115,10 +120,16 @@ function hashString(value: string): number {
 export function createConstructedWorldsFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const walleDonorIds = getWalleDonorScenarioIds(profile);
+  const walleDonors = walleDonorIds?.flatMap((scenarioId) => {
+    const candidate = constructedWorldsProfiles[scenarioId as keyof typeof constructedWorldsProfiles];
+    return candidate ? [candidate] : [];
+  });
   const dogvilleDonors = getDogvilleFilmHistoryDonors(profile);
   const thePianistDonors = getThePianistFilmHistoryDonors(profile);
   const forrestGumpDonorScenarioIds = getForrestGumpDonorScenarioIds(profile);
-  const donors: readonly FilmHistoryProfile[] = (dogvilleDonors
+  const donors: readonly FilmHistoryProfile[] = (walleDonors
+    ?? dogvilleDonors
     ?? thePianistDonors
     ?? (forrestGumpDonorScenarioIds
       ? forrestGumpDonorScenarioIds.flatMap((scenarioId) => {
@@ -128,7 +139,7 @@ export function createConstructedWorldsFilmHistoryChoices(
       : Object.values(coreConstructedWorldsProfiles)))
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = dogvilleDonors || thePianistDonors ? 0 : hashString(profile.scenarioId);
+  const start = walleDonors || dogvilleDonors || thePianistDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
   const forrestGumpPartial = "This is another real constructed-world system built from repetition, historical periods or controlled reality, but it does not combine autobiographical narration, national archive, invisible body effects, popular music and studio melodrama in the same way.";
@@ -139,40 +150,49 @@ export function createConstructedWorldsFilmHistoryChoices(
   const dogvilleMatch = "This matches the documented production relationship among the prologue-and-nine-chapter moral parable, post-Dogme theatrical abstraction, Peter Grant's chalk town, exposed ensemble performance, mobile digital close-ups, computer-controlled stage light, sound-created invisible architecture, Baroque counterpoint and composited overhead views.";
   const dogvillePartial = "This is another real artificial-town, total-space or von Trier digital-performance system, but it does not make absent walls, visible neighbours, narrated chapters, mime and off-screen sound the same moral laboratory.";
   const dogvilleMiss = "This places the film inside the wrong relationship between theatrical abstraction, social surveillance, ensemble exposure, digital camera mobility, stage lighting, narrated structure, invisible doors, sparse props and composited geography.";
+  const walleMatch = "This matches the documented relationship between silent-comedy robot performance, ecological worldbuilding, color-scripted environments, simulated photographed-camera behavior, Ben Burtt's vocal-mechanical sound and orchestral-pop musical memory.";
+  const wallePartial = "This is another real constructed-world production, but it does not combine dialogue-light animation, consumer dystopia, virtual 70 mm camera research, robot sound language and an Earth-to-space ecological romance in the same way.";
+  const walleMiss = "This places the film inside the wrong relationship between animation, silent visual storytelling, environmental design, virtual optics, editing, sound identity, music and ecological return.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: dogvilleDonors
-        ? dogvilleMatch
-        : thePianistDonors
-          ? thePianistMatch
-          : "This connects the film's constructed world, historical position and documented craft system.",
+      feedback: walleDonors
+        ? walleMatch
+        : dogvilleDonors
+          ? dogvilleMatch
+          : thePianistDonors
+            ? thePianistMatch
+            : "This connects the film's constructed world, historical position and documented craft system.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: dogvilleDonors
-        ? dogvillePartial
-        : thePianistDonors
-          ? thePianistPartial
-          : forrestGumpDonorScenarioIds
-            ? forrestGumpPartial
-            : "This is a real constructed-world method, but it belongs to a different historical and production system.",
+      feedback: walleDonors
+        ? wallePartial
+        : dogvilleDonors
+          ? dogvillePartial
+          : thePianistDonors
+            ? thePianistPartial
+            : forrestGumpDonorScenarioIds
+              ? forrestGumpPartial
+              : "This is a real constructed-world method, but it belongs to a different historical and production system.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: dogvilleDonors
-        ? dogvilleMiss
-        : thePianistDonors
-          ? thePianistMiss
-          : forrestGumpDonorScenarioIds
-            ? forrestGumpMiss
-            : "This places the film inside the wrong temporal, spatial and technical tradition.",
+      feedback: walleDonors
+        ? walleMiss
+        : dogvilleDonors
+          ? dogvilleMiss
+          : thePianistDonors
+            ? thePianistMiss
+            : forrestGumpDonorScenarioIds
+              ? forrestGumpMiss
+              : "This places the film inside the wrong temporal, spatial and technical tradition.",
     }] : []),
   ];
 }
