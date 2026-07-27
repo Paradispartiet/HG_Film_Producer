@@ -1,6 +1,7 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
 import { scenesFromAMarriageFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceScenesMarriage";
 import { bloodSimpleFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreBloodSimple";
+import { theBigLebowskiFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreBigLebowski";
 import { elMariachiFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreElMariachi";
 import { metropolitanFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreMetropolitan";
 import { reservoirDogsFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreReservoirDogs";
@@ -49,7 +50,9 @@ import { pariahFilmHistoryProfile } from "./scenarioFilmStudyIndependentDesirePa
 import { poisonFilmHistoryProfile } from "./scenarioFilmStudyIndependentDesirePoison";
 import { theSouvenirFilmHistoryProfile } from "./scenarioFilmStudyIndependentDesireTheSouvenir";
 import { americanSplendorFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingAmericanSplendor";
+import { crashFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingCrash";
 import { daughtersOfTheDustFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingDaughtersOfTheDust";
+import { elephantFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingElephant";
 import { killerOfSheepFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingKillerOfSheep";
 import { manWhoWasntThereFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingManWhoWasntThere";
 import { mysteryTrainFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingMysteryTrain";
@@ -117,6 +120,7 @@ const profiles = [
   afterLifeFilmHistoryProfile,
   manWhoWasntThereFilmHistoryProfile,
   americanSplendorFilmHistoryProfile,
+  crashFilmHistoryProfile,
   stillWalkingFilmHistoryProfile,
   peppermintCandyFilmHistoryProfile,
   oasisFilmHistoryProfile,
@@ -318,6 +322,14 @@ export function getIndependentStorytellingDonors(
 
   const lastLifeDonors = getLastLifeInTheUniverseFilmHistoryDonors(profile);
   if (lastLifeDonors) return lastLifeDonors;
+
+  if (profile.scenarioId === crashFilmHistoryProfile.scenarioId) {
+    return [
+      smokeFilmHistoryProfile,
+      elephantFilmHistoryProfile,
+      theBigLebowskiFilmHistoryProfile,
+    ];
+  }
 
   const group = getIndependentStorytellingProfileGroup(profile.scenarioId);
   return profiles
