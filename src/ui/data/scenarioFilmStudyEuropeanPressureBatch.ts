@@ -20,6 +20,10 @@ import {
 } from "./scenarioFilmStudyEuropeanPressureLaHaineCatalog";
 import { measureOfAManFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPressureMeasure";
 import { revancheFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPressureRevanche";
+import {
+  getFourMonthsFilmHistoryDonors,
+  getFourMonthsFilmHistoryProfile,
+} from "./scenarioFilmStudyRomanianPressureFourMonthsCatalog";
 
 const europeanPressureProfiles = {
   [dogtoothFilmHistoryProfile.scenarioId]: dogtoothFilmHistoryProfile,
@@ -70,7 +74,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 }
 
 export function getEuropeanPressureFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getLaHaineFilmHistoryProfile(scenarioId)
+  return getFourMonthsFilmHistoryProfile(scenarioId)
+    ?? getLaHaineFilmHistoryProfile(scenarioId)
     ?? europeanPressureProfiles[scenarioId as keyof typeof europeanPressureProfiles];
 }
 
@@ -109,25 +114,32 @@ function hashString(value: string): number {
 export function createEuropeanPressureFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const fourMonthsDonors = getFourMonthsFilmHistoryDonors(profile);
   const laHaineDonorIds = getLaHaineDonorScenarioIds(profile);
-  const priorityDonors = laHaineDonorIds?.map(
+  const laHaineDonors = laHaineDonorIds?.map(
     (scenarioId) => europeanPressureProfiles[scenarioId as keyof typeof europeanPressureProfiles],
   ).filter(Boolean) as readonly FilmHistoryProfile[] | undefined;
-  const donors = priorityDonors ?? Object.values(europeanPressureProfiles)
+  const donors = fourMonthsDonors ?? laHaineDonors ?? Object.values(europeanPressureProfiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = hashString(profile.scenarioId);
+  const start = fourMonthsDonors || laHaineDonorIds ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
-  const matchFeedback = laHaineDonorIds
-    ? "This matches the documented relationship between police violence, banlieue social pressure, twenty-four-hour structure, local preparation, black-and-white 35mm, shifting camera scale, countdown editing, environmental music and offscreen sound."
-    : "This connects the film's social pressure directly to its documented historical position, production conditions, performance system and image strategy.";
-  const partialFeedback = laHaineDonorIds
-    ? "This is another real European social-pressure system, but it organizes labor procedure, rural criminal consequence or community accusation through a different relationship between location, performance, camera duration and institutional power."
-    : "This is a real European system for staging social pressure, but it belongs to another relationship between realism, allegory, genre and production method.";
-  const missFeedback = laHaineDonorIds
-    ? "This places the film inside the wrong relationship between banlieue preparation, minority youth ensemble, wide-versus-long-lens geography, hip-hop environment, clock rhythm, gunshot punctuation and fatal police escalation."
-    : "This places the film inside the wrong historical balance of institution, performance, camera restraint and narrative form.";
+  const matchFeedback = fourMonthsDonors
+    ? "This matches the documented relationship among testimony-derived illegal-abortion history, Mobra Films production, one-day procedural structure, exact performance, real locations, widescreen one-shot staging, offscreen action, long-take editing, reconstructed practical sound and withheld music."
+    : laHaineDonorIds
+      ? "This matches the documented relationship between police violence, banlieue social pressure, twenty-four-hour structure, local preparation, black-and-white 35mm, shifting camera scale, countdown editing, environmental music and offscreen sound."
+      : "This connects the film's social pressure directly to its documented historical position, production conditions, performance system and image strategy.";
+  const partialFeedback = fourMonthsDonors
+    ? "This is another real bodily-autonomy, moral-procedure or one-day social-pressure system, but it does not combine 1987 Romanian abortion illegality, dormitory barter, hotel coercion, exact dialogue, long-take widescreen framing and offscreen practical sound in the same way."
+    : laHaineDonorIds
+      ? "This is another real European social-pressure system, but it organizes labor procedure, rural criminal consequence or community accusation through a different relationship between location, performance, camera duration and institutional power."
+      : "This is a real European system for staging social pressure, but it belongs to another relationship between realism, allegory, genre and production method.";
+  const missFeedback = fourMonthsDonors
+    ? "This places the film inside the wrong relationship between Ceaușescu-era reproductive control, testimony-based writing, one-day logistics, female friendship, coercion, real-location period detail, subjective camera movement, ellipsis, offscreen sound and refusal of explanatory music."
+    : laHaineDonorIds
+      ? "This places the film inside the wrong relationship between banlieue preparation, minority youth ensemble, wide-versus-long-lens geography, hip-hop environment, clock rhythm, gunshot punctuation and fatal police escalation."
+      : "This places the film inside the wrong historical balance of institution, performance, camera restraint and narrative form.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,

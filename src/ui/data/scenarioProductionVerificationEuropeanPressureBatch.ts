@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { fourMonthsProductionCaseVerification } from "./scenarioProductionVerificationFourMonths";
 
 export const europeanPressureVerificationRecords = [
   {
@@ -168,5 +169,6 @@ export const europeanPressureVerificationRecords = [
         note: "The essay analyzes how Martin Gschlacht's serene natural imagery, slow pacing and choreographed camera movement allow noir tension to transform into moral and existential drama."
       }
     ]
-  }
+  },
+  fourMonthsProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
