@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const mesrineKillerInstinctFilmHistoryProfile = {
+  scenarioId: "scenario_mesrine_killer_instinct_2008",
+  period: "Late-2000s French biographical cinema and transnational two-film production",
+  traditions: ["French biography", "Historical cinema", "Transnational production"],
+  before: "Biographical films often compress a life into one linear arc and treat memoir as stable evidence.",
+  moment: "A French-Canadian-Italian partnership develops a two-film historical portrait with Vincent Cassel, director Jean-François Richet, cinematographer Robert Gantz, editor Hervé Schneid and composers Marco Beltrami and Marcus Trumpp.",
+  after: "The two films became a major French awards and international distribution event.",
+  historyQuestion: "Which production system explains a two-film historical biography made across several countries with physical performance transformation, colour 35 mm photography, period design, episodic editing and an extensive sound system?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Institutional sources place the story in France and Canada during the 1960s and 1970s." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The production joins French biographical cinema, period filmmaking and the two-part historical epic." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Institutional catalogs document a France-Canada-Italy production led by Thomas Langmann." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Académie des César records major wins and nominations across acting, directing, sound, adaptation and craft." },
+    { area: "screenplay", status: "source_verified", note: "Abdel Raouf Dafri and Jean-François Richet organize the material as the first half of a two-film biography." },
+    { area: "directing", status: "source_verified", note: "Richet coordinated a nine-month multi-country production and an intentionally nonstandard shooting order." },
+    { area: "performance", status: "source_verified", note: "Vincent Cassel uses physical change, posture, voice and changing screen presence across the extended production." },
+    { area: "production_design", status: "mapped", note: "Emile Ghigo's credited period environments span domestic, institutional and public locations." },
+    { area: "costume_makeup", status: "source_verified", note: "Virginie Montel's costumes and the credited hair and makeup departments support multiple ages and public appearances." },
+    { area: "cinematography", status: "source_verified", note: "Robert Gantz's credited photography gives the production a consistent widescreen colour image across countries and periods." },
+    { area: "lighting", status: "mapped", note: "The image uses daylight, practical interiors and controlled night work, but the complete lighting package is not documented." },
+    { area: "camera_format", status: "source_verified", note: "UniFrance identifies the production format as colour 35 mm." },
+    { area: "editing", status: "source_verified", note: "Hervé Schneid shapes a fast episodic structure that connects the first film to the complete two-part arc." },
+    { area: "sound_design", status: "source_verified", note: "The credited sound team won a César for the two-film production's detailed location and action sound." },
+    { area: "music", status: "source_verified", note: "Marco Beltrami and Marcus Trumpp provide the credited original music system." },
+    { area: "effects_animation", status: "not_central", note: "Effects support continuity and period presentation but do not define the production system." },
+    { area: "documentary_method", status: "source_verified", note: "Filmmaker interviews document research through memoir, family, associates, police and historical records." },
+  ],
+} as const satisfies FilmHistoryProfile;

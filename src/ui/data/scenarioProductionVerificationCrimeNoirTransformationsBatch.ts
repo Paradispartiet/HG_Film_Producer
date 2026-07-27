@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { mesrineKillerInstinctProductionCaseVerification } from "./scenarioProductionVerificationMesrineKillerInstinct";
 
 export const crimeNoirTransformationsVerificationRecords = [
   {
@@ -160,5 +161,6 @@ export const crimeNoirTransformationsVerificationRecords = [
         note: "MoMA's collection record confirms the 1964 Godard film's preservation and placement within the museum's moving-image collection and broader institutional history of New Wave cinema."
       }
     ]
-  }
+  },
+  mesrineKillerInstinctProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
