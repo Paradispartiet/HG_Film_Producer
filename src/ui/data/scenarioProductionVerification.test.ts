@@ -47,6 +47,7 @@ const verificationGroups = [
   ["Noi the Albino Icelandic fjord-youth entrapment system", ["scenario_noi_the_albino_2003"], 10],
   ["The Return Russian father-son island trial system", ["scenario_the_return_2003"], 10],
   ["3-Iron silent empty-house occupation-romance system", ["scenario_3_iron_2004"], 10],
+  ["Before Sunset Paris real-time reunion dialogue system", ["scenario_before_sunset_2004"], 10],
   ["Norwegian postwar genre systems", ["scenario_gategutter_1949", "scenario_fjols_til_fjells_1957", "scenario_de_dodes_tjern_1958", "scenario_insomnia_1997"], 4],
   ["Nordic minimalist social systems", ["scenario_the_match_factory_girl_1990", "scenario_songs_from_the_second_floor_2000", "scenario_the_man_without_a_past_2002", "scenario_oslo_august_31st_2011"], 4],
   ["modern Nordic behavior systems", ["scenario_force_majeure_2014", "scenario_woman_at_war_2018", "scenario_another_round_2020", "scenario_the_worst_person_in_the_world_2021"], 4],
@@ -102,7 +103,7 @@ const verificationGroups = [
   ["Japanese ambiguity and dialogue systems", ["scenario_cure_1997", "scenario_wheel_of_fortune_and_fantasy_2021", "scenario_monster_kore_eda_2023", "scenario_evil_does_not_exist_2023"], 4],
 ] as const;
 
-const expectedVerifiedCount = 294;
+const expectedVerifiedCount = 295;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
