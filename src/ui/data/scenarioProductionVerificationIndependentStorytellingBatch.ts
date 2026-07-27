@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { taxidermiaProductionCaseVerification } from "./scenarioProductionVerificationTaxidermia";
 
 export const independentStorytellingVerificationRecords = [
   {
@@ -168,5 +169,6 @@ export const independentStorytellingVerificationRecords = [
         note: "The Academy records Robert Pulcini and Shari Springer Berman's adapted-screenplay nomination, supporting the film's recognized transformation of autobiographical comics and real lives into a hybrid screenplay."
       }
     ]
-  }
+  },
+  taxidermiaProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
