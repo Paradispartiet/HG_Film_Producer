@@ -12,6 +12,10 @@ import {
   getBeforeSunriseFilmHistoryDonors,
   getBeforeSunriseFilmHistoryProfile,
 } from "./scenarioFilmStudyFestivalUrbanIntimacyBeforeSunriseCatalog";
+import {
+  getBeforeSunsetFilmHistoryDonors,
+  getBeforeSunsetFilmHistoryProfile,
+} from "./scenarioFilmStudyFestivalUrbanIntimacyBeforeSunsetCatalog";
 import { blackCoalThinIceFilmHistoryProfile } from "./scenarioFilmStudyFestivalUrbanIntimacyBlackCoal";
 import { blueWarmestColourFilmHistoryProfile } from "./scenarioFilmStudyFestivalUrbanIntimacyBlue";
 import { fromAfarFilmHistoryProfile } from "./scenarioFilmStudyFestivalUrbanIntimacyFromAfar";
@@ -62,7 +66,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getFestivalUrbanIntimacySystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getBeforeSunriseFilmHistoryProfile(scenarioId)
+  return getBeforeSunsetFilmHistoryProfile(scenarioId)
+    ?? getBeforeSunriseFilmHistoryProfile(scenarioId)
     ?? profiles[scenarioId as keyof typeof profiles];
 }
 
@@ -93,22 +98,29 @@ function hashString(value: string): number {
 }
 
 export function createFestivalUrbanIntimacySystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
+  const beforeSunsetDonors = getBeforeSunsetFilmHistoryDonors(profile);
   const beforeSunriseDonors = getBeforeSunriseFilmHistoryDonors(profile);
-  const donors = beforeSunriseDonors ?? Object.values(profiles)
+  const donors = beforeSunsetDonors ?? beforeSunriseDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = hashString(profile.scenarioId);
+  const start = beforeSunsetDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
-  const matchFeedback = beforeSunriseDonors
-    ? "This matches the documented relationship between Vienna co-production, collaborative dialogue writing, intensive rehearsal, two-person performance, real-location movement, 35mm observation, reaction-shot editing and near-real-time romantic duration."
-    : "This matches the documented relationship between festival-era urban pressure, intimacy, class, violence, performance, image, editing and sound.";
-  const partialFeedback = beforeSunriseDonors
-    ? "This is another real dialogue, city or one-night intimacy system, but it organizes ensemble geography, marital confrontation or urban solitude through a different balance of writing, rehearsal, camera duration, editing and sound."
-    : "This is a real festival-era intimacy system, but it organizes industrial violence, embodied desire, noir investigation, class distance and actor process differently.";
-  const missFeedback = beforeSunriseDonors
-    ? "This places the film inside the wrong relationship between transnational financing, Vienna location production, collaborative dialogue, two-person performance, near-real-time movement and romantic duration."
-    : "This assigns the film to the wrong historical, industrial and formal urban-intimacy production logic.";
+  const matchFeedback = beforeSunsetDonors
+    ? "This matches the documented relationship among nine years of real actor ageing, Linklater-Delpy-Hawke collaborative writing, an eighty-minute departing-flight deadline, a fifteen-day Paris production, fixed dialogue, long Steadicam movement, natural light, continuity editing, practical city sound and apartment music that becomes the final decision."
+    : beforeSunriseDonors
+      ? "This matches the documented relationship between Vienna co-production, collaborative dialogue writing, intensive rehearsal, two-person performance, real-location movement, 35mm observation, reaction-shot editing and near-real-time romantic duration."
+      : "This matches the documented relationship between festival-era urban pressure, intimacy, class, violence, performance, image, editing and sound.";
+  const partialFeedback = beforeSunsetDonors
+    ? "This is another real dialogue, relationship or urban-duration system, but it does not combine a sequel after nine actual years, one Paris afternoon, a flight deadline, collaborative actor-authorship and unobtrusive real-time camera movement in the same way."
+    : beforeSunriseDonors
+      ? "This is another real dialogue, city or one-night intimacy system, but it organizes ensemble geography, marital confrontation or urban solitude through a different balance of writing, rehearsal, camera duration, editing and sound."
+      : "This is a real festival-era intimacy system, but it organizes industrial violence, embodied desire, noir investigation, class distance and actor process differently.";
+  const missFeedback = beforeSunsetDonors
+    ? "This places the film inside the wrong relationship between elapsed production time, sequel authorship, adult disappointment, Paris geography, real-time dialogue, natural-light continuity, editing and music-led open ending."
+    : beforeSunriseDonors
+      ? "This places the film inside the wrong relationship between transnational financing, Vienna location production, collaborative dialogue, two-person performance, near-real-time movement and romantic duration."
+      : "This assigns the film to the wrong historical, industrial and formal urban-intimacy production logic.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
