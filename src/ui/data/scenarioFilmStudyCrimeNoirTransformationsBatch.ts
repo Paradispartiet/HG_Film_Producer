@@ -19,6 +19,10 @@ import {
 } from "./scenarioFilmStudyCrimeNoirFargoCatalog";
 import { lostWeekendFilmHistoryProfile } from "./scenarioFilmStudyCrimeNoirLostWeekend";
 import { malteseFalconFilmHistoryProfile } from "./scenarioFilmStudyCrimeNoirMalteseFalcon";
+import {
+  getMesrineKillerInstinctFilmHistoryDonors,
+  getMesrineKillerInstinctFilmHistoryProfile,
+} from "./scenarioFilmStudyCrimeNoirMesrineKillerInstinctCatalog";
 import { outOfThePastFilmHistoryProfile } from "./scenarioFilmStudyCrimeNoirOutOfThePast";
 import {
   getTrueRomanceDonorScenarioIds,
@@ -72,6 +76,7 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 export function getCrimeNoirTransformationsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
   return getTrueRomanceFilmHistoryProfile(scenarioId)
     ?? getClockersFilmHistoryProfile(scenarioId)
+    ?? getMesrineKillerInstinctFilmHistoryProfile(scenarioId)
     ?? getFargoFilmHistoryProfile(scenarioId)
     ?? profiles[scenarioId as keyof typeof profiles];
 }
@@ -105,36 +110,43 @@ function hashString(value: string): number {
 export function createCrimeNoirTransformationsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
   const trueRomanceDonorIds = getTrueRomanceDonorScenarioIds(profile);
   const clockersDonorIds = getClockersDonorScenarioIds(profile);
+  const mesrineDonors = getMesrineKillerInstinctFilmHistoryDonors(profile);
   const fargoDonors = getFargoFilmHistoryDonors(profile);
   const priorityDonorIds = trueRomanceDonorIds ?? clockersDonorIds;
   const priorityDonors = priorityDonorIds?.map(
     (scenarioId) => profiles[scenarioId as keyof typeof profiles],
   ).filter(Boolean) as readonly FilmHistoryProfile[] | undefined;
-  const donors = fargoDonors ?? priorityDonors ?? Object.values(profiles)
+  const donors = mesrineDonors ?? fargoDonors ?? priorityDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
-  const matchFeedback = fargoDonors
-    ? "This matches Fargo's documented relationship between fabricated factual authority, regional crime writing, precise casting, small-crew winter locations, restrained 35mm observation, practical lighting, manufactured snow and Scandinavian-inflected orchestral music."
-    : clockersDonorIds
-      ? "This matches the documented relationship between literary crime adaptation, Black Brooklyn authorship, field research, location production, new performers, cross-processed film, subjective flashback and social consequence."
-      : "This matches the documented relationship between crime tradition, industrial production conditions and the film's specific performance, image, editing and sound system.";
-  const partialFeedback = fargoDonors
-    ? "This is another real noir or regional crime-production system, but it does not combine Fargo's false true-story frame, Minnesota speech and casting, bright horizonless snowscapes, restrained observational camera and grave folk-derived score."
-    : trueRomanceDonorIds
-      ? "This is another real crime or noir production system, but it organizes fatalism, classical investigation or New Wave play without True Romance's postmodern lovers-on-the-run screenplay, studio road scale and hopeful ending."
+  const matchFeedback = mesrineDonors
+    ? "This matches the documented relationship between a two-film historical biography, contested memoir evidence, international production, physical star transformation, colour 35 mm photography, episodic editing, detailed sound and public self-mythology."
+    : fargoDonors
+      ? "This matches Fargo's documented relationship between fabricated factual authority, regional crime writing, precise casting, small-crew winter locations, restrained 35mm observation, practical lighting, manufactured snow and Scandinavian-inflected orchestral music."
       : clockersDonorIds
-        ? "This is another real crime, addiction or youth-noir production system, but it does not combine Clockers' Universal-to-Spike-Lee adaptation history, Brooklyn housing-project research, Black ensemble authorship and experimental Ektachrome process."
-        : "This is a real crime or noir production system, but it organizes adaptation, studio control, location work, performance and narrative time differently.";
-  const missFeedback = fargoDonors
-    ? "This places the film inside the wrong relationship between regional authorship, factual deception, banal economic crime, winter geography, practical-location craft, tonal violence and moral comedy."
-    : trueRomanceDonorIds
-      ? "This places the film inside the wrong relationship between video-store cinephilia, ensemble dialogue, outlaw romance, widescreen colour, ratings edits and director-writer version history."
-      : clockersDonorIds
-        ? "This places the film inside the wrong relationship between police procedure, drug-economy social pressure, Brooklyn location research, reconstructed evidence imagery, cross-processing and subjective urban realism."
-        : "This assigns the film to the wrong historical, industrial and stylistic crime-production logic.";
+        ? "This matches the documented relationship between literary crime adaptation, Black Brooklyn authorship, field research, location production, new performers, cross-processed film, subjective flashback and social consequence."
+        : "This matches the documented relationship between crime tradition, industrial production conditions and the film's specific performance, image, editing and sound system.";
+  const partialFeedback = mesrineDonors
+    ? "This is another real crime or noir production system, but it does not combine a two-part biography, reverse-ordered physical transformation, France-Canada production, disputed memoir evidence and changing public identity in the same way."
+    : fargoDonors
+      ? "This is another real noir or regional crime-production system, but it does not combine Fargo's false true-story frame, Minnesota speech and casting, bright horizonless snowscapes, restrained observational camera and grave folk-derived score."
+      : trueRomanceDonorIds
+        ? "This is another real crime or noir production system, but it organizes fatalism, classical investigation or New Wave play without True Romance's postmodern lovers-on-the-run screenplay, studio road scale and hopeful ending."
+        : clockersDonorIds
+          ? "This is another real crime, addiction or youth-noir production system, but it does not combine Clockers' Universal-to-Spike-Lee adaptation history, Brooklyn housing-project research, Black ensemble authorship and experimental Ektachrome process."
+          : "This is a real crime or noir production system, but it organizes adaptation, studio control, location work, performance and narrative time differently.";
+  const missFeedback = mesrineDonors
+    ? "This places the film inside the wrong relationship between historical evidence, biographical selection, international production, star transformation, period craft, episodic time, sound and public mythology."
+    : fargoDonors
+      ? "This places the film inside the wrong relationship between regional authorship, factual deception, banal economic crime, winter geography, practical-location craft, tonal violence and moral comedy."
+      : trueRomanceDonorIds
+        ? "This places the film inside the wrong relationship between video-store cinephilia, ensemble dialogue, outlaw romance, widescreen colour, ratings edits and director-writer version history."
+        : clockersDonorIds
+          ? "This places the film inside the wrong relationship between police procedure, drug-economy social pressure, Brooklyn location research, reconstructed evidence imagery, cross-processing and subjective urban realism."
+          : "This assigns the film to the wrong historical, industrial and stylistic crime-production logic.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
