@@ -10,7 +10,7 @@ export const fourMonthsProductionCaseVerification = {
       title: "4 Months, 3 Weeks and 2 Days – English Press Kit",
       publisher: "Festival de Cannes",
       url: "https://cdn.festival-cannes.com/media/uploads/2023/03/63808.pdf",
-      sourceKind: "production_document",
+      sourceKind: "film_institute",
       supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
       note: "The official production dossier documents Mobra Films and Saga Film, financing, complete craft credits, testimony-based development, rewriting, casting, acting, location, period-prop and one-shot camera methods in Mungiu's own notes."
     },
