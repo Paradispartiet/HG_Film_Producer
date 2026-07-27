@@ -12,9 +12,9 @@ import type {
 } from "./scenarioFilmStudyMap";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import {
-  getWhereIsTheFriendsHouseDonorScenarioIds,
-  getWhereIsTheFriendsHouseFilmHistoryProfile,
-} from "./scenarioFilmStudyMinimalistRoadWhereFriendsHouseCatalog";
+  getBombonElPerroDonorScenarioIds,
+  getBombonElPerroFilmHistoryProfile,
+} from "./scenarioFilmStudyMinimalistRoadBombonElPerroCatalog";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 
 const minimalistRoadProfiles = {
@@ -174,7 +174,7 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 }
 
 export function getMinimalistRoadFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getWhereIsTheFriendsHouseFilmHistoryProfile(scenarioId)
+  return getBombonElPerroFilmHistoryProfile(scenarioId)
     ?? minimalistRoadProfiles[scenarioId as keyof typeof minimalistRoadProfiles];
 }
 
@@ -213,7 +213,7 @@ function hashString(value: string): number {
 export function createMinimalistRoadFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
-  const priorityDonorIds = getWhereIsTheFriendsHouseDonorScenarioIds(profile);
+  const priorityDonorIds = getBombonElPerroDonorScenarioIds(profile);
   const priorityDonors = priorityDonorIds?.map(
     (scenarioId) => minimalistRoadProfiles[scenarioId as keyof typeof minimalistRoadProfiles],
   ).filter(Boolean) as readonly FilmHistoryProfile[] | undefined;
