@@ -12,6 +12,10 @@ import { wendyAndLucyFilmHistoryProfile } from "./scenarioFilmStudyAmericanPreca
 import { chameleonStreetFilmHistoryProfile } from "./scenarioFilmStudyAmericanRegionalChameleonStreet";
 import { gasFoodLodgingFilmHistoryProfile } from "./scenarioFilmStudyAmericanRegionalGasFoodLodging";
 import { georgeWashingtonFilmHistoryProfile } from "./scenarioFilmStudyAmericanRegionalGeorgeWashington";
+import {
+  getGranTorinoFilmHistoryDonors,
+  getGranTorinoFilmHistoryProfile,
+} from "./scenarioFilmStudyAmericanRegionalGranTorinoCatalog";
 import { mississippiMasalaFilmHistoryProfile } from "./scenarioFilmStudyAmericanRegionalMississippiMasala";
 import { allTheBeautyAndTheBloodshedFilmHistoryProfile } from "./scenarioFilmStudyBodyArchiveAllBeauty";
 import { dahomeyFilmHistoryProfile } from "./scenarioFilmStudyBodyArchiveDahomey";
@@ -307,6 +311,7 @@ assignGroup("japanese_ambiguity_dialogue", [
 export function getIndependentStorytellingCatalogProfile(scenarioId: string): FilmHistoryProfile | undefined {
   return getThreeIronFilmHistoryProfile(scenarioId)
     ?? getLastLifeInTheUniverseFilmHistoryProfile(scenarioId)
+    ?? getGranTorinoFilmHistoryProfile(scenarioId)
     ?? getBlindnessFilmHistoryProfile(scenarioId)
     ?? getTheSavagesFilmHistoryProfile(scenarioId)
     ?? profilesByScenarioId.get(scenarioId);
@@ -320,6 +325,9 @@ export function getIndependentStorytellingProfileGroup(
   }
   if (getLastLifeInTheUniverseFilmHistoryProfile(scenarioId)) {
     return "asian_transnational_urban_identity";
+  }
+  if (getGranTorinoFilmHistoryProfile(scenarioId)) {
+    return "american_regional_identity_place_belonging";
   }
   if (getBlindnessFilmHistoryProfile(scenarioId)) {
     return "subjective_enclosure_performance";
@@ -338,6 +346,9 @@ export function getIndependentStorytellingDonors(
 
   const lastLifeDonors = getLastLifeInTheUniverseFilmHistoryDonors(profile);
   if (lastLifeDonors) return lastLifeDonors;
+
+  const granTorinoDonors = getGranTorinoFilmHistoryDonors(profile);
+  if (granTorinoDonors) return granTorinoDonors;
 
   const blindnessDonors = getBlindnessFilmHistoryDonors(profile);
   if (blindnessDonors) return blindnessDonors;
