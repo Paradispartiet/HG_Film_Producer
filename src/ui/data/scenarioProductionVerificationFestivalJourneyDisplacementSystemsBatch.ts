@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { motorcycleDiariesVerificationRecords } from "./scenarioProductionVerificationMotorcycleDiaries";
 
 export const festivalJourneyDisplacementVerificationRecords = [
   {
@@ -160,5 +161,6 @@ export const festivalJourneyDisplacementVerificationRecords = [
         note: "Goethe-Institut places the film within Akin's German-Turkish background, border-crossing cinema and raw early style and identifies it as the first chapter of his Love, Death and Devil trilogy."
       }
     ]
-  }
+  },
+  ...motorcycleDiariesVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
