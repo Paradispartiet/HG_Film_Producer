@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { adamsApplesVerificationRecords } from "./scenarioProductionVerificationAdamsApples";
 
 export const nordicMinimalistSocialSystemsVerificationRecords = [
   {
@@ -160,5 +161,6 @@ export const nordicMinimalistSocialSystemsVerificationRecords = [
         note: "Filmweb records the Norwegian release, Trier and Vogt screenplay, national distribution, inspiration from Le feu follet and the stated aim of creating a contemporary Oslo portrait."
       }
     ]
-  }
+  },
+  ...adamsApplesVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
