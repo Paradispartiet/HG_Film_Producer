@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { beforeSunsetVerificationRecords } from "./scenarioProductionVerificationBeforeSunset";
 
 export const festivalUrbanIntimacyVerificationRecords = [
   {
@@ -160,5 +161,6 @@ export const festivalUrbanIntimacyVerificationRecords = [
         note: "Vigas documents the Arri Alexa, Lomo anamorphic lenses, mostly natural light, pale colour grade, months of location work, no-rehearsal approach and distinct preparation for Alfredo Castro and the younger non-actors."
       }
     ]
-  }
+  },
+  ...beforeSunsetVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
