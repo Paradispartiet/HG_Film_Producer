@@ -11,6 +11,7 @@ import { getProductionCaseVerification } from "./scenarioProductionVerificationR
 import { centralStationFilmHistoryProfile } from "./scenarioFilmStudyFestivalJourneyCentralStation";
 import { eternityDayFilmHistoryProfile } from "./scenarioFilmStudyFestivalJourneyEternityDay";
 import { headOnFilmHistoryProfile } from "./scenarioFilmStudyFestivalJourneyHeadOn";
+import { motorcycleDiariesFilmHistoryProfile } from "./scenarioFilmStudyFestivalJourneyMotorcycleDiaries";
 import { pelleFilmHistoryProfile } from "./scenarioFilmStudyFestivalJourneyPelle";
 
 const profiles = {
@@ -58,6 +59,7 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getFestivalJourneyDisplacementSystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
+  if (scenarioId === motorcycleDiariesFilmHistoryProfile.scenarioId) return motorcycleDiariesFilmHistoryProfile;
   return profiles[scenarioId as keyof typeof profiles];
 }
 
@@ -88,10 +90,14 @@ function hashString(value: string): number {
 }
 
 export function createFestivalJourneyDisplacementSystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
-  const donors = Object.values(profiles)
-    .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
-    .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = hashString(profile.scenarioId);
+  const donors = profile.scenarioId === motorcycleDiariesFilmHistoryProfile.scenarioId
+    ? [centralStationFilmHistoryProfile, eternityDayFilmHistoryProfile, headOnFilmHistoryProfile]
+    : Object.values(profiles)
+      .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
+      .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
+  const start = profile.scenarioId === motorcycleDiariesFilmHistoryProfile.scenarioId
+    ? 0
+    : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
   return [
@@ -99,19 +105,25 @@ export function createFestivalJourneyDisplacementSystemsFilmHistoryChoices(profi
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This matches the documented relationship between migration or displacement, festival-era production, location, performance, image, editing, sound and journey structure.",
+      feedback: profile.scenarioId === motorcycleDiariesFilmHistoryProfile.scenarioId
+        ? "This matches the documented relationship among the two memoirs, multi-country route research, political coming-of-age, regional performers and non-actors, mobile film photography, natural light, practical period environments, episodic editing, location sound and acoustic music."
+        : "This matches the documented relationship between migration or displacement, festival-era production, location, performance, image, editing, sound and journey structure.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real journey or border production system, but it organizes class, geography, memory, performance, music and national identity differently.",
+      feedback: profile.scenarioId === motorcycleDiariesFilmHistoryProfile.scenarioId
+        ? "This is another real journey, border or ethical-transformation production system, but it does not combine Guevara and Granado's 1952 route, memoir adaptation, political awakening, regional non-actors, mobile Super 16 work and continental identity in the same way."
+        : "This is a real journey or border production system, but it organizes class, geography, memory, performance, music and national identity differently.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This assigns the film to the wrong historical, industrial and formal journey-production logic.",
+      feedback: profile.scenarioId === motorcycleDiariesFilmHistoryProfile.scenarioId
+        ? "This places the film inside the wrong relationship between historical biography, actual route, Latin American social observation, improvisation, photochemical location production, editing and music."
+        : "This assigns the film to the wrong historical, industrial and formal journey-production logic.",
     }] : []),
   ];
 }
