@@ -1,5 +1,6 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
 import { beingJohnMalkovichProductionCaseVerification } from "./scenarioProductionVerificationBeingJohnMalkovich";
+import { blindnessProductionCaseVerification } from "./scenarioProductionVerificationBlindness";
 import { eyesWideShutProductionCaseVerification } from "./scenarioProductionVerificationEyesWideShut";
 import { theGameVerificationRecords } from "./scenarioProductionVerificationTheGame";
 
@@ -37,7 +38,7 @@ export const subjectiveEnclosurePerformanceVerificationRecords = [
       {
         title: "Burning review: Lee Changdong's drama sparks with rage and imagination",
         publisher: "British Film Institute",
-        url: "https://www.bfi.org.uk/sight-and-sound/reviews/burning-review-lee-changdongs-drama-sparks-with-rage-imagination",
+        url: "https://www.bfi.org.uk/sight-and-sound/reviews/burning-review-lee-changdongs-drama-sparks-rage-imagination",
         sourceKind: "film_institute",
         supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
         note: "The Sight and Sound analysis identifies the expanded adaptation, restricted viewpoint, constructive ambiguity, class pressure and the film's patient visual and sonic control of uncertain evidence."
@@ -164,6 +165,7 @@ export const subjectiveEnclosurePerformanceVerificationRecords = [
       }
     ]
   },
+  blindnessProductionCaseVerification,
   ...theGameVerificationRecords,
   beingJohnMalkovichProductionCaseVerification,
   eyesWideShutProductionCaseVerification,
