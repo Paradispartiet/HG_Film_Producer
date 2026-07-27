@@ -88,6 +88,10 @@ import { marlinaFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsia
 import { syndromesAndACenturyFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianSyndromes";
 import { theDiscipleFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianTheDisciple";
 import { bartonFinkFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureBartonFink";
+import {
+  getBlindnessFilmHistoryDonors,
+  getBlindnessFilmHistoryProfile,
+} from "./scenarioFilmStudySubjectiveEnclosureBlindnessCatalog";
 import { burningFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureBurning";
 import { anElephantSittingStillFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureElephant";
 import { kagemushaFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureKagemusha";
@@ -303,6 +307,7 @@ assignGroup("japanese_ambiguity_dialogue", [
 export function getIndependentStorytellingCatalogProfile(scenarioId: string): FilmHistoryProfile | undefined {
   return getThreeIronFilmHistoryProfile(scenarioId)
     ?? getLastLifeInTheUniverseFilmHistoryProfile(scenarioId)
+    ?? getBlindnessFilmHistoryProfile(scenarioId)
     ?? getTheSavagesFilmHistoryProfile(scenarioId)
     ?? profilesByScenarioId.get(scenarioId);
 }
@@ -315,6 +320,9 @@ export function getIndependentStorytellingProfileGroup(
   }
   if (getLastLifeInTheUniverseFilmHistoryProfile(scenarioId)) {
     return "asian_transnational_urban_identity";
+  }
+  if (getBlindnessFilmHistoryProfile(scenarioId)) {
+    return "subjective_enclosure_performance";
   }
   if (getTheSavagesFilmHistoryProfile(scenarioId)) {
     return "family_performance_grief_power";
@@ -330,6 +338,9 @@ export function getIndependentStorytellingDonors(
 
   const lastLifeDonors = getLastLifeInTheUniverseFilmHistoryDonors(profile);
   if (lastLifeDonors) return lastLifeDonors;
+
+  const blindnessDonors = getBlindnessFilmHistoryDonors(profile);
+  if (blindnessDonors) return blindnessDonors;
 
   const theSavagesDonors = getTheSavagesFilmHistoryDonors(profile);
   if (theSavagesDonors) return theSavagesDonors;
