@@ -20,6 +20,10 @@ import { nickelBoysFilmHistoryProfile } from "./scenarioFilmStudyBodyArchiveNick
 import { dancerInTheDarkFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceDancerDark";
 import { secretsAndLiesFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceSecretsLies";
 import { theSonsRoomFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceSonsRoom";
+import {
+  getTheSavagesFilmHistoryDonors,
+  getTheSavagesFilmHistoryProfile,
+} from "./scenarioFilmStudyFamilyPerformanceTheSavagesCatalog";
 import { winterSleepFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceWinterSleep";
 import { poetryFilmHistoryProfile } from "./scenarioFilmStudyAsianLandscapePoetry";
 import { secretSunshineFilmHistoryProfile } from "./scenarioFilmStudyAsianLandscapeSecretSunshine";
@@ -299,6 +303,7 @@ assignGroup("japanese_ambiguity_dialogue", [
 export function getIndependentStorytellingCatalogProfile(scenarioId: string): FilmHistoryProfile | undefined {
   return getThreeIronFilmHistoryProfile(scenarioId)
     ?? getLastLifeInTheUniverseFilmHistoryProfile(scenarioId)
+    ?? getTheSavagesFilmHistoryProfile(scenarioId)
     ?? profilesByScenarioId.get(scenarioId);
 }
 
@@ -311,6 +316,9 @@ export function getIndependentStorytellingProfileGroup(
   if (getLastLifeInTheUniverseFilmHistoryProfile(scenarioId)) {
     return "asian_transnational_urban_identity";
   }
+  if (getTheSavagesFilmHistoryProfile(scenarioId)) {
+    return "family_performance_grief_power";
+  }
   return groupByScenarioId.get(scenarioId) ?? "general";
 }
 
@@ -322,6 +330,9 @@ export function getIndependentStorytellingDonors(
 
   const lastLifeDonors = getLastLifeInTheUniverseFilmHistoryDonors(profile);
   if (lastLifeDonors) return lastLifeDonors;
+
+  const theSavagesDonors = getTheSavagesFilmHistoryDonors(profile);
+  if (theSavagesDonors) return theSavagesDonors;
 
   if (profile.scenarioId === crashFilmHistoryProfile.scenarioId) {
     return [
