@@ -41,6 +41,10 @@ import {
   getTheStraightStoryFilmHistoryProfile,
 } from "./scenarioFilmStudyAmericanRegionalStraightStoryCatalog";
 import {
+  getTheChildFilmHistoryDonors,
+  getTheChildFilmHistoryProfile,
+} from "./scenarioFilmStudySocialRealismTheChildCatalog";
+import {
   getRosettaFilmHistoryDonors,
   getRosettaFilmHistoryProfile,
 } from "./scenarioFilmStudySocialRealismRosettaCatalog";
@@ -146,6 +150,7 @@ export function getIndependentStorytellingFilmHistoryProfile(
     ?? getTheMillionDollarHotelFilmHistoryProfile(scenarioId)
     ?? getRequiemForADreamFilmHistoryProfile(scenarioId)
     ?? getTheStraightStoryFilmHistoryProfile(scenarioId)
+    ?? getTheChildFilmHistoryProfile(scenarioId)
     ?? getRosettaFilmHistoryProfile(scenarioId)
     ?? getEyesWideShutFilmHistoryProfile(scenarioId)
     ?? getBeingJohnMalkovichFilmHistoryProfile(scenarioId)
@@ -283,6 +288,16 @@ function getSpecialChoiceSystem(profile: FilmHistoryProfile): SpecialChoiceSyste
     match: "This matches the documented production relationship among Sweeney and Roach's fact-based Alvin Straight screenplay, rapid StudioCanal backing, chronological filming along the actual Iowa-Wisconsin route, Richard Farnsworth's embodied ageing performance, Freddie Francis's 35 mm anamorphic landscapes, Jack Fisk and Patricia Norris's regional material world, Mary Sweeney's patient sound-responsive editing, Lynch's practical road sound and Badalamenti's restrained score.",
     partial: "This is another real American regional, slow-road or ageing-body system, but it does not combine a lawn-mower journey, chronological harvest production, actual route communities, physical limitation, anamorphic landscape, engine rhythm, roadside encounters and sibling reconciliation in the same way.",
     miss: "This places the film inside the wrong relationship between fact-based regional production, ageing embodiment, extremely slow mobility, Midwestern landscape, chronological location work, 35 mm road imagery, practical sound, music and reconciliation.",
+  };
+
+  const theChildDonors = getTheChildFilmHistoryDonors(profile);
+  if (theChildDonors) return {
+    donors: theChildDonors,
+    group: "social_realism_labor_body",
+    forceStart: true,
+    match: "This matches the documented production relationship among the observed Seraing pram image, the Dardennes' young-father screenplay, Les Films du Fleuve and Archipel 35 production, Jérémie Renier and Déborah François, rehearsed real-location action, Alain Marcoen's colour 35 mm image, Benoît Dervaux's actor-camera movement, Marie-Hélène Dozo's consequence-led edit, practical sound and the withholding of sentimental score.",
+    partial: "This is another real precarity, bodily-risk or care system, but it does not combine the sale of an infant, immediate exchange economy, young fatherhood, Seraing streets, attempted restitution, rehearsed handheld 35 mm movement and practical sound in the same way.",
+    miss: "This places the film inside the wrong relationship between postindustrial youth precarity, infant care, criminal exchange, moral responsibility, real-location rehearsal, mobile 35 mm camera, action-led editing, environmental sound and grace.",
   };
 
   const rosettaDonors = getRosettaFilmHistoryDonors(profile);
