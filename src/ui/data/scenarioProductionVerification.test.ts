@@ -63,6 +63,7 @@ const verificationGroups = [
   ["Next four 2008-2009 production systems", ["scenario_the_class_2008", "scenario_walle_2008", "scenario_a_prophet_2009", "scenario_alamar_2009"], 4],
   ["Next four 2010-2011 production systems", ["scenario_a_somewhat_gentle_man_2010", "scenario_troll_hunter_2010", "scenario_detachment_2011", "scenario_hugo_2011"], 4],
   ["Next four 2012 production systems", ["scenario_in_the_house_2012", "scenario_moonrise_kingdom_2012", "scenario_searching_for_sugar_man_2012", "scenario_the_broken_circle_breakdown_2012"], 4],
+  ["The Impossible historical tsunami reconstruction system", ["scenario_the_impossible_2012"], 10],
   ["Norwegian postwar genre systems", ["scenario_gategutter_1949", "scenario_fjols_til_fjells_1957", "scenario_de_dodes_tjern_1958", "scenario_insomnia_1997"], 4],
   ["Nordic minimalist social systems", ["scenario_the_match_factory_girl_1990", "scenario_songs_from_the_second_floor_2000", "scenario_the_man_without_a_past_2002", "scenario_oslo_august_31st_2011"], 4],
   ["modern Nordic behavior systems", ["scenario_force_majeure_2014", "scenario_woman_at_war_2018", "scenario_another_round_2020", "scenario_the_worst_person_in_the_world_2021"], 4],
@@ -118,7 +119,7 @@ const verificationGroups = [
   ["Japanese ambiguity and dialogue systems", ["scenario_cure_1997", "scenario_wheel_of_fortune_and_fantasy_2021", "scenario_monster_kore_eda_2023", "scenario_evil_does_not_exist_2023"], 4],
 ] as const;
 
-const expectedVerifiedCount = 319;
+const expectedVerifiedCount = 320;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
