@@ -1,5 +1,6 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
 import { amelieProductionCaseVerification } from "./scenarioProductionVerificationAmelie";
+import { theGreatBeautyProductionCaseVerification } from "./scenarioProductionVerificationGreatBeauty";
 
 export const europeanPoeticMemoryVerificationRecords = [
   {
@@ -163,4 +164,5 @@ export const europeanPoeticMemoryVerificationRecords = [
     ]
   },
   amelieProductionCaseVerification,
+  theGreatBeautyProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
