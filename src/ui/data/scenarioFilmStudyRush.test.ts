@@ -43,7 +43,7 @@ test("Rush receives its exact cross-tradition donor set", () => {
   assert.ok(choices[0]?.feedback.includes("Hunt-Lauda two-hander"));
   assert.ok(choices[1]?.feedback.includes("public-performance sports system"));
   assert.ok(choices[2]?.feedback.includes("historical sports biography"));
-  assert.ok(choices[1]?.label.includes("ageing wrestler"));
+  assert.ok(choices[1]?.label.includes("American independent body realism"));
   assert.ok(choices[2]?.label.includes("tsunami"));
 });
 
