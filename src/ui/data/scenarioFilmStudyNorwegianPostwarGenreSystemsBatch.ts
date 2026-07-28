@@ -12,6 +12,10 @@ import { deDodesTjernFilmHistoryProfile } from "./scenarioFilmStudyNorwegianPost
 import { fjolsTilFjellsFilmHistoryProfile } from "./scenarioFilmStudyNorwegianPostwarFjolsTilFjells";
 import { gategutterFilmHistoryProfile } from "./scenarioFilmStudyNorwegianPostwarGategutter";
 import { insomniaFilmHistoryProfile } from "./scenarioFilmStudyNorwegianPostwarInsomnia";
+import {
+  getTrollHunterFilmHistoryDonors,
+  getTrollHunterFilmHistoryProfile,
+} from "./scenarioFilmStudyNorwegianPostwarTrollHunterCatalog";
 
 const profiles = {
   [gategutterFilmHistoryProfile.scenarioId]: gategutterFilmHistoryProfile,
@@ -58,7 +62,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getNorwegianPostwarGenreSystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return profiles[scenarioId as keyof typeof profiles];
+  return getTrollHunterFilmHistoryProfile(scenarioId)
+    ?? profiles[scenarioId as keyof typeof profiles];
 }
 
 export function resolveNorwegianPostwarGenreSystemsFilmStudyMap(
@@ -88,30 +93,40 @@ function hashString(value: string): number {
 }
 
 export function createNorwegianPostwarGenreSystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
-  const donors = Object.values(profiles)
+  const specialDonors = getTrollHunterFilmHistoryDonors(profile);
+  const donors = specialDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = hashString(profile.scenarioId);
+  const start = specialDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const match = specialDonors
+    ? "This matches the documented relationship between Norwegian folklore, found-footage mockumentary, practical western landscape, dry bureaucratic performance, restricted digital camera, evidence-like editing, creature sound and integrated CGI trolls."
+    : "This matches the documented relationship between Norwegian production conditions, national genre tradition and the film's specific performance, image, editing and sound system.";
+  const partial = specialDonors
+    ? "This is another real Norwegian location or genre system, but it does not combine student documentary evidence, state troll management, improvised deadpan comedy, folklore rules and digital creatures in the same way."
+    : "This is a real Norwegian production system, but it organizes location, genre, performance, industrial structure and audiovisual form differently.";
+  const miss = specialDonors
+    ? "This places the film inside the wrong relationship between Norwegian folklore, government satire, found footage, real landscape, camera restriction, practical sound, digital effects and mock-documentary realism."
+    : "This assigns the film to the wrong historical, industrial and stylistic Norwegian production logic.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This matches the documented relationship between Norwegian production conditions, national genre tradition and the film's specific performance, image, editing and sound system.",
+      feedback: match,
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real Norwegian production system, but it organizes location, genre, performance, industrial structure and audiovisual form differently.",
+      feedback: partial,
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This assigns the film to the wrong historical, industrial and stylistic Norwegian production logic.",
+      feedback: miss,
     }] : []),
   ];
 }

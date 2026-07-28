@@ -46,6 +46,7 @@ import { iberianPortugueseMemoryVerificationRecords } from "./scenarioProduction
 import { independentDesireIdentityAuthorshipVerificationRecords } from "./scenarioProductionVerificationIndependentDesireIdentityAuthorshipBatch";
 import { independentStorytellingVerificationRecords } from "./scenarioProductionVerificationIndependentStorytellingBatch";
 import { nextFour2008_2009VerificationRecords } from "./scenarioProductionVerificationNextFour2008_2009Batch";
+import { nextFour2010_2011VerificationRecords } from "./scenarioProductionVerificationNextFour2010_2011Batch";
 import { elephantProductionCaseVerification } from "./scenarioProductionVerificationElephant";
 import { kitchenStoriesProductionCaseVerification } from "./scenarioProductionVerificationKitchenStories";
 import { lastLifeInTheUniverseProductionCaseVerification } from "./scenarioProductionVerificationLastLifeUniverse";
@@ -108,6 +109,7 @@ const additionalVerificationRecords = [
   ...europeanPressureVerificationRecords,
   ...independentStorytellingVerificationRecords,
   ...nextFour2008_2009VerificationRecords,
+  ...nextFour2010_2011VerificationRecords,
   elephantProductionCaseVerification,
   kitchenStoriesProductionCaseVerification,
   lastLifeInTheUniverseProductionCaseVerification,

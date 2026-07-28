@@ -10,6 +10,10 @@ import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 import { anotherRoundFilmHistoryProfile } from "./scenarioFilmStudyModernNordicBehaviorAnotherRound";
 import { forceMajeureFilmHistoryProfile } from "./scenarioFilmStudyModernNordicBehaviorForceMajeure";
+import {
+  getASomewhatGentleManFilmHistoryDonors,
+  getASomewhatGentleManFilmHistoryProfile,
+} from "./scenarioFilmStudyModernNordicBehaviorSomewhatGentleManCatalog";
 import { womanAtWarFilmHistoryProfile } from "./scenarioFilmStudyModernNordicBehaviorWomanAtWar";
 import { worstPersonFilmHistoryProfile } from "./scenarioFilmStudyModernNordicBehaviorWorstPerson";
 
@@ -58,7 +62,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getModernNordicBehaviorSystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return profiles[scenarioId as keyof typeof profiles];
+  return getASomewhatGentleManFilmHistoryProfile(scenarioId)
+    ?? profiles[scenarioId as keyof typeof profiles];
 }
 
 export function resolveModernNordicBehaviorSystemsFilmStudyMap(
@@ -88,30 +93,40 @@ function hashString(value: string): number {
 }
 
 export function createModernNordicBehaviorSystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
-  const donors = Object.values(profiles)
+  const specialDonors = getASomewhatGentleManFilmHistoryDonors(profile);
+  const donors = specialDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = hashString(profile.scenarioId);
+  const start = specialDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const match = specialDonors
+    ? "This matches the documented relationship between Kim Fupz Aakeson's revised screenplay, compact Oslo production, ageing Nordic ensemble, deadpan crime behaviour, cold practical image, pause-led editing, ordinary sound and dry musical counterpoint."
+    : "This matches the documented relationship between modern Nordic social conditions, performance experiment, location, image, editing, sound and genre design.";
+  const partial = specialDonors
+    ? "This is another real modern Nordic behaviour system, but it does not combine post-prison reintegration, low-level revenge, ageing sexuality, compact Oslo factory locations and deadpan ensemble timing in the same way."
+    : "This is a real modern Nordic production system, but it organizes behaviour, social pressure, landscape, performance, music and subjective form differently.";
+  const miss = specialDonors
+    ? "This places the film inside the wrong relationship between Nordic crime comedy, ageing dignity, practical Oslo production, restrained performance, cold visual tone, editing pauses, sound and music."
+    : "This assigns the film to the wrong Nordic historical, industrial and formal production logic.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This matches the documented relationship between modern Nordic social conditions, performance experiment, location, image, editing, sound and genre design.",
+      feedback: match,
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real modern Nordic production system, but it organizes behaviour, social pressure, landscape, performance, music and subjective form differently.",
+      feedback: partial,
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This assigns the film to the wrong Nordic historical, industrial and formal production logic.",
+      feedback: miss,
     }] : []),
   ];
 }
