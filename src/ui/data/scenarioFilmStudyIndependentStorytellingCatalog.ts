@@ -65,12 +65,15 @@ import { americanSplendorFilmHistoryProfile } from "./scenarioFilmStudyIndepende
 import { crashFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingCrash";
 import { daughtersOfTheDustFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingDaughtersOfTheDust";
 import { elephantFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingElephant";
+import { norteFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingNorte";
 import { killerOfSheepFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingKillerOfSheep";
 import { manWhoWasntThereFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingManWhoWasntThere";
 import { mysteryTrainFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingMysteryTrain";
 import { sexLiesVideotapeFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSexLiesVideotape";
 import { slackerFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSlacker";
 import { smokeFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSmoke";
+import { satantangoFilmHistoryProfile } from "./scenarioFilmStudyEuropeanTimeIdentitySatantango";
+import { rosettaFilmHistoryProfile } from "./scenarioFilmStudySocialRealismRosetta";
 import { cureFilmHistoryProfile } from "./scenarioFilmStudyJapaneseAmbiguityCure";
 import { evilDoesNotExistFilmHistoryProfile } from "./scenarioFilmStudyJapaneseAmbiguityEvilDoesNotExist";
 import { monsterKoreedaFilmHistoryProfile } from "./scenarioFilmStudyJapaneseAmbiguityMonster";
@@ -137,6 +140,7 @@ const profiles = [
   manWhoWasntThereFilmHistoryProfile,
   americanSplendorFilmHistoryProfile,
   crashFilmHistoryProfile,
+  norteFilmHistoryProfile,
   stillWalkingFilmHistoryProfile,
   peppermintCandyFilmHistoryProfile,
   oasisFilmHistoryProfile,
@@ -366,6 +370,14 @@ export function getIndependentStorytellingDonors(
 
   const theSavagesDonors = getTheSavagesFilmHistoryDonors(profile);
   if (theSavagesDonors) return theSavagesDonors;
+
+  if (profile.scenarioId === norteFilmHistoryProfile.scenarioId) {
+    return [
+      satantangoFilmHistoryProfile,
+      elephantFilmHistoryProfile,
+      rosettaFilmHistoryProfile,
+    ];
+  }
 
   if (profile.scenarioId === crashFilmHistoryProfile.scenarioId) {
     return [
