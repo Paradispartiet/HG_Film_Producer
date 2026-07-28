@@ -14,6 +14,10 @@ import {
   getCinemaParadisoFilmHistoryProfile,
 } from "./scenarioFilmStudyEuropeanPoeticMemoryCinemaParadisoCatalog";
 import { doubleLifeOfVeroniqueFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryDoubleLifeVeronique";
+import {
+  getTheGreatBeautyFilmHistoryDonors,
+  getTheGreatBeautyFilmHistoryProfile,
+} from "./scenarioFilmStudyEuropeanPoeticMemoryGreatBeautyCatalog";
 import { lAtalanteFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryLAtalante";
 import { landscapeInTheMistFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemoryLandscapeMist";
 import { spiritOfTheBeehiveFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemorySpiritBeehive";
@@ -70,6 +74,7 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 export function getEuropeanPoeticMemorySystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
   return getAmelieFilmHistoryProfile(scenarioId)
     ?? getCinemaParadisoFilmHistoryProfile(scenarioId)
+    ?? getTheGreatBeautyFilmHistoryProfile(scenarioId)
     ?? profiles[scenarioId as keyof typeof profiles];
 }
 
@@ -101,14 +106,15 @@ function hashString(value: string): number {
 
 export function createEuropeanPoeticMemorySystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
   const amelieDonors = getAmelieFilmHistoryDonors(profile);
+  const greatBeautyDonors = getTheGreatBeautyFilmHistoryDonors(profile);
   const priorityDonorIds = getCinemaParadisoDonorScenarioIds(profile);
   const priorityDonors = priorityDonorIds?.map(
     (scenarioId) => profiles[scenarioId as keyof typeof profiles],
   ).filter(Boolean) as readonly FilmHistoryProfile[] | undefined;
-  const donors = amelieDonors ?? priorityDonors ?? Object.values(profiles)
+  const donors = amelieDonors ?? greatBeautyDonors ?? priorityDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = amelieDonors ? 0 : hashString(profile.scenarioId);
+  const start = amelieDonors || greatBeautyDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
   return [
@@ -118,7 +124,9 @@ export function createEuropeanPoeticMemorySystemsFilmHistoryChoices(profile: Fil
       quality: "match",
       feedback: amelieDonors
         ? "This matches the documented relationship among Jeunet and Laurant's miniature intervention structure, Claudie Ossard's French-German production, Audrey Tautou's precise withheld performance, transformed Montmartre locations, Aline Bonetto and Madeline Fontaine's controlled colour world, Bruno Delbonnel's 35 mm image, Hervé Schneid's rapid detail montage, exact Paris sound, Yann Tiersen music and Duboi's poetic effects."
-        : "This matches the documented relationship between European poetic realism, childhood, landscape, memory, intuition, image, editing, music and sound.",
+        : greatBeautyDonors
+          ? "This matches the documented relationship among Jep's novel-like Roman circuit, Sorrentino and Contarello's episodic screenplay, Servillo's ageing writer, palaces and terraces as social theatre, Bigazzi's fast multi-camera widescreen movement and environment-wide light, Travaglioli's party-to-stillness montage, Cecere and Moraes's city sound, Marchitelli's score and the collision of dance, sacred music, spectacle, memory and artistic exhaustion."
+          : "This matches the documented relationship between European poetic realism, childhood, landscape, memory, intuition, image, editing, music and sound.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
@@ -126,9 +134,11 @@ export function createEuropeanPoeticMemorySystemsFilmHistoryChoices(profile: Fil
       quality: "partial" as const,
       feedback: amelieDonors
         ? "This is another real colour-, music-, city- or subjective-fantasy system, but it does not combine anonymous acts of care, narrator-led likes and dislikes, a photo-booth mystery, transformed Montmartre geography, rapid comic miniatures, precisely balanced detail sound and literal cartoon-like emotion in the same way."
-        : priorityDonors
-          ? "This is another real European poetic-memory system, but it organises studio reconstruction, childhood history or landscape journey without Cinema Paradiso's projection labour, communal exhibition and version history."
-          : "This is a real European poetic production system, but it organises labour, childhood, landscape, doubling, colour, music and historical silence differently.",
+        : greatBeautyDonors
+          ? "This is another real Italian modernist, Fellinian or urban-artistic production system, but it does not organise an ageing writer's Roman social panorama through contemporary location spectacle, rapid three-camera production, sacred and dance music, episodic encounters and the same movement from public brilliance toward private artistic reckoning."
+          : priorityDonors
+            ? "This is another real European poetic-memory system, but it organises studio reconstruction, childhood history or landscape journey without Cinema Paradiso's projection labour, communal exhibition and version history."
+            : "This is a real European poetic production system, but it organises labour, childhood, landscape, doubling, colour, music and historical silence differently.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
@@ -136,9 +146,11 @@ export function createEuropeanPoeticMemorySystemsFilmHistoryChoices(profile: Fil
       quality: "miss" as const,
       feedback: amelieDonors
         ? "This places the film inside the wrong relationship between popular French auteur production, Paris location transformation, romantic intervention structure, controlled production design, 35 mm and digital colour, miniature editing, detail sound, music and poetic effects."
-        : priorityDonors
-          ? "This places the film inside the wrong relationship between communal cinema, censorship, projection craft, remembered village space, alternate cuts and musical return."
-          : "This assigns the film to the wrong historical, industrial and formal poetic-memory production logic.",
+        : greatBeautyDonors
+          ? "This places the film inside the wrong baroque city-and-memory production system by separating Rome's architecture, social performance, writerly drift, moving camera, montage, sacred and popular music, silence and ageing self-judgment instead of treating them as one coordinated contemporary Italian-French form."
+          : priorityDonors
+            ? "This places the film inside the wrong relationship between communal cinema, censorship, projection craft, remembered village space, alternate cuts and musical return."
+            : "This assigns the film to the wrong historical, industrial and formal poetic-memory production logic.",
     }] : []),
   ];
 }
