@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { itFollowsVerificationRecords } from "./scenarioProductionVerificationItFollows";
 
 export const technologyHistoryVerificationRecords = [
   {
@@ -144,5 +145,6 @@ export const technologyHistoryVerificationRecords = [
         note: "The production-design account documents candle-only challenges, extensive wide and fisheye coverage, camera tests at Hatfield House and the need to design ceilings, corners and deliberately unfilled rooms for the expansive frame."
       }
     ]
-  }
+  },
+  ...itFollowsVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];

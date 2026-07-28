@@ -5,11 +5,14 @@ import {
   type FilmStudyCoverageOverride,
 } from "../../core/filmStudyCoverage";
 import type { FilmScenarioSeed } from "./filmScenarios";
+import { theVanishingFilmHistoryProfile } from "./scenarioFilmStudyEuropeanTimeIdentityVanishing";
+import { cureFilmHistoryProfile } from "./scenarioFilmStudyJapaneseAmbiguityCure";
 import type {
   FilmHistoryChoice,
   FilmHistoryProfile,
   ScenarioFilmStudyMap,
 } from "./scenarioFilmStudyMap";
+import { itFollowsFilmHistoryProfile } from "./scenarioFilmStudyTechnologyItFollowsCatalog";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 
@@ -127,6 +130,12 @@ const technologyHistoryProfiles = {
   },
 } as const satisfies Record<string, FilmHistoryProfile>;
 
+const itFollowsDonors = [
+  technologyHistoryProfiles.scenario_halloween_1978,
+  cureFilmHistoryProfile,
+  theVanishingFilmHistoryProfile,
+] as const satisfies readonly FilmHistoryProfile[];
+
 function statusRank(status: FilmStudyCoverageOverride["status"]): number {
   if (status === "source_verified") return 4;
   if (status === "mapped") return 3;
@@ -169,7 +178,17 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 }
 
 export function getTechnologyFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return technologyHistoryProfiles[scenarioId as keyof typeof technologyHistoryProfiles];
+  return scenarioId === itFollowsFilmHistoryProfile.scenarioId
+    ? itFollowsFilmHistoryProfile
+    : technologyHistoryProfiles[scenarioId as keyof typeof technologyHistoryProfiles];
+}
+
+export function getItFollowsTechnologyFilmHistoryDonors(
+  profile: FilmHistoryProfile,
+): readonly FilmHistoryProfile[] | undefined {
+  return profile.scenarioId === itFollowsFilmHistoryProfile.scenarioId
+    ? itFollowsDonors
+    : undefined;
 }
 
 export function resolveTechnologyFilmStudyMap(
@@ -207,10 +226,11 @@ function hashString(value: string): number {
 export function createTechnologyFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
-  const donors = Object.values(technologyHistoryProfiles)
+  const specialDonors = getItFollowsTechnologyFilmHistoryDonors(profile);
+  const donors = specialDonors ?? Object.values(technologyHistoryProfiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = hashString(profile.scenarioId);
+  const start = specialDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
   return [
@@ -218,19 +238,25 @@ export function createTechnologyFilmHistoryChoices(
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This connects the film's historical position directly to its documented production method.",
+      feedback: specialDonors
+        ? "This matches the documented production relationship among a transmitted walking curse, timeless Detroit suburbs, 18 mm deep-focus widescreen, realistic background distance, objective robotic pans and zooms, exact waiting cuts and a compressed synth-and-sound finish."
+        : "This connects the film's historical position directly to its documented production method.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real film-historical explanation, but it belongs to a different production tradition.",
+      feedback: specialDonors
+        ? "This is a real production system for suburban stalking, ordinary-space dread or inexorable suspense, but it does not combine a sexually transmitted walking rule, temporally mixed Detroit design, digital deep-focus scanning, robotic camera movement and Disasterpeace's accelerated synth-and-sound construction in the same way."
+        : "This is a real film-historical explanation, but it belongs to a different production tradition.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This places the film inside the wrong historical and technical system.",
+      feedback: specialDonors
+        ? "This places the film inside the wrong relationship between threat rules, adolescent vulnerability, timeless suburbia, wide-frame information, walking-speed pursuit, exact editing, environmental sound and synth pressure."
+        : "This places the film inside the wrong historical and technical system.",
     }] : []),
   ];
 }
