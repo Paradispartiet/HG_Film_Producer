@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { tangerinesProductionCaseVerification } from "./scenarioProductionVerificationTangerines";
 
 export const balkanWarInstitutionVerificationRecords = [
   {
@@ -160,5 +161,6 @@ export const balkanWarInstitutionVerificationRecords = [
         note: "Zbanic describes years of research, filming all location rehearsals in narrative order, planning emotional continuity before an out-of-order shoot and developing the image closely with Christine A. Maier."
       }
     ]
-  }
+  },
+  tangerinesProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
