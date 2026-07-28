@@ -27,6 +27,10 @@ import {
   getHugoFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsHugoCatalog";
 import {
+  getMoonriseKingdomFilmHistoryDonors,
+  getMoonriseKingdomFilmHistoryProfile,
+} from "./scenarioFilmStudyConstructedWorldsMoonriseKingdomCatalog";
+import {
   getThePianistFilmHistoryDonors,
   getThePianistFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsPianistCatalog";
@@ -82,7 +86,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 }
 
 export function getConstructedWorldsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getHugoFilmHistoryProfile(scenarioId)
+  return getMoonriseKingdomFilmHistoryProfile(scenarioId)
+    ?? getHugoFilmHistoryProfile(scenarioId)
     ?? getWalleFilmHistoryProfile(scenarioId)
     ?? getDogvilleFilmHistoryProfile(scenarioId)
     ?? getThePianistFilmHistoryProfile(scenarioId)
@@ -125,6 +130,7 @@ function hashString(value: string): number {
 export function createConstructedWorldsFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const moonriseDonors = getMoonriseKingdomFilmHistoryDonors(profile);
   const hugoDonors = getHugoFilmHistoryDonors(profile);
   const walleDonorIds = getWalleDonorScenarioIds(profile);
   const walleDonors = walleDonorIds?.flatMap((scenarioId) => {
@@ -134,7 +140,8 @@ export function createConstructedWorldsFilmHistoryChoices(
   const dogvilleDonors = getDogvilleFilmHistoryDonors(profile);
   const thePianistDonors = getThePianistFilmHistoryDonors(profile);
   const forrestGumpDonorScenarioIds = getForrestGumpDonorScenarioIds(profile);
-  const donors: readonly FilmHistoryProfile[] = (hugoDonors
+  const donors: readonly FilmHistoryProfile[] = (moonriseDonors
+    ?? hugoDonors
     ?? walleDonors
     ?? dogvilleDonors
     ?? thePianistDonors
@@ -146,7 +153,7 @@ export function createConstructedWorldsFilmHistoryChoices(
       : Object.values(coreConstructedWorldsProfiles)))
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = hugoDonors || walleDonors || dogvilleDonors || thePianistDonors ? 0 : hashString(profile.scenarioId);
+  const start = moonriseDonors || hugoDonors || walleDonors || dogvilleDonors || thePianistDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
   const forrestGumpPartial = "This is another real constructed-world system built from repetition, historical periods or controlled reality, but it does not combine autobiographical narration, national archive, invisible body effects, popular music and studio melodrama in the same way.";
@@ -163,52 +170,61 @@ export function createConstructedWorldsFilmHistoryChoices(
   const hugoMatch = "This matches the documented relationship between Scorsese's Méliès adaptation, native paired-camera 3D, Ferretti's constructed station and Paris, period performance and costume, Richardson's stereoscopic image, Schoonmaker's spatial editing, award-winning sound, Shore's score and integrated practical-digital effects.";
   const hugoPartial = "This is another real constructed-world, mechanical-character or reconstructed-city system, but it does not combine a 1930s station mystery, cinema preservation, native 3D depth, clockwork geography and recovered Méliès spectacle in the same way.";
   const hugoMiss = "This places the film inside the wrong relationship between film history, period reconstruction, stereoscopic digital photography, mechanical production design, editing, sound, music, visual effects and preservation.";
+  const moonriseMatch = "This matches the documented relationship among Anderson and Coppola's 1965 runaway screenplay, Rhode Island locations, Stockhausen's hand-built island geography, Walicka Maimone's researched costumes, Yeoman's Super 16 tableaux, Weisblum's diagrammatic editing, Britten records, Desplat's score and the approaching storm.";
+  const moonrisePartial = "This is another real period, child-centred or meticulously constructed world, but it does not combine scout procedure, island maps, handmade refuge, frontal ensemble staging, Super 16 texture, private record listening and hurricane-scale reunion in the same way.";
+  const moonriseMiss = "This places the film inside the wrong relationship between 1965 research, child performance, island location design, scout material culture, costume, Super 16 photography, graphic editing, sound, music and weather effects.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: hugoDonors
-        ? hugoMatch
-        : walleDonors
-          ? walleMatch
-          : dogvilleDonors
-            ? dogvilleMatch
-            : thePianistDonors
-              ? thePianistMatch
-              : "This connects the film's constructed world, historical position and documented craft system.",
+      feedback: moonriseDonors
+        ? moonriseMatch
+        : hugoDonors
+          ? hugoMatch
+          : walleDonors
+            ? walleMatch
+            : dogvilleDonors
+              ? dogvilleMatch
+              : thePianistDonors
+                ? thePianistMatch
+                : "This connects the film's constructed world, historical position and documented craft system.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: hugoDonors
-        ? hugoPartial
-        : walleDonors
-          ? wallePartial
-          : dogvilleDonors
-            ? dogvillePartial
-            : thePianistDonors
-              ? thePianistPartial
-              : forrestGumpDonorScenarioIds
-                ? forrestGumpPartial
-                : "This is a real constructed-world method, but it belongs to a different historical and production system.",
+      feedback: moonriseDonors
+        ? moonrisePartial
+        : hugoDonors
+          ? hugoPartial
+          : walleDonors
+            ? wallePartial
+            : dogvilleDonors
+              ? dogvillePartial
+              : thePianistDonors
+                ? thePianistPartial
+                : forrestGumpDonorScenarioIds
+                  ? forrestGumpPartial
+                  : "This is a real constructed-world method, but it belongs to a different historical and production system.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: hugoDonors
-        ? hugoMiss
-        : walleDonors
-          ? walleMiss
-          : dogvilleDonors
-            ? dogvilleMiss
-            : thePianistDonors
-              ? thePianistMiss
-              : forrestGumpDonorScenarioIds
-                ? forrestGumpMiss
-                : "This places the film inside the wrong temporal, spatial and technical tradition.",
+      feedback: moonriseDonors
+        ? moonriseMiss
+        : hugoDonors
+          ? hugoMiss
+          : walleDonors
+            ? walleMiss
+            : dogvilleDonors
+              ? dogvilleMiss
+              : thePianistDonors
+                ? thePianistMiss
+                : forrestGumpDonorScenarioIds
+                  ? forrestGumpMiss
+                  : "This places the film inside the wrong temporal, spatial and technical tradition.",
     }] : []),
   ];
 }
