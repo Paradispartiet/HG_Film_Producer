@@ -26,7 +26,7 @@ export const rushProductionCaseVerification = {
       title: "Film Awards 2014",
       publisher: "BAFTA",
       url: "https://www.bafta.org/awards/film/?award-year=2014",
-      sourceKind: "award_archive",
+      sourceKind: "archive_feature",
       supports: ["overall", "editing", "sound"],
       note: "The official results record Rush's editing win for Dan Hanley and Mike Hill and its sound nomination for Danny Hambrook, Martin Steyer, Stefan Korte, Markus Stemler and Frank Kruse."
     },
