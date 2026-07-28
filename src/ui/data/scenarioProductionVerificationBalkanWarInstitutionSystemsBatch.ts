@@ -54,7 +54,7 @@ export const balkanWarInstitutionVerificationRecords = [
         url: "https://www.festival-cannes.com/en/f/underground/",
         sourceKind: "film_institute",
         supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
-        note: "Cannes records the 1995 competition film and Palme d'Or, Kusturica and Dusan Kovacevic screenplay, Vilko Filac cinematography, Branka Ceperac editing, Miljen Kljajkovic design and Goran Bregovic music."
+        note: "Cannes records the 1995 competition film and Palme d'Or, Kusturica and Dusan Kovacevic screenplay, Vilko Filac cinematography, Branka Ceperac editing, Miljen Kljakovic design and Goran Bregovic music."
       },
       {
         title: "Underground",
