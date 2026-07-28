@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { tangerinesProductionCaseVerification } from "./scenarioProductionVerificationTangerines";
 
 export const balkanWarInstitutionVerificationRecords = [
   {
@@ -53,7 +54,7 @@ export const balkanWarInstitutionVerificationRecords = [
         url: "https://www.festival-cannes.com/en/f/underground/",
         sourceKind: "film_institute",
         supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
-        note: "Cannes records the 1995 competition film and Palme d'Or, Kusturica and Dusan Kovacevic screenplay, Vilko Filac cinematography, Branka Ceperac editing, Miljen Kljakovic design and Goran Bregovic music."
+        note: "Cannes records the 1995 competition film and Palme d'Or, Kusturica and Dusan Kovacevic screenplay, Vilko Filac cinematography, Branka Ceperac editing, Miljen Kljajkovic design and Goran Bregovic music."
       },
       {
         title: "Underground",
@@ -160,5 +161,6 @@ export const balkanWarInstitutionVerificationRecords = [
         note: "Zbanic describes years of research, filming all location rehearsals in narrative order, planning emotional continuity before an out-of-order shoot and developing the image closely with Christine A. Maier."
       }
     ]
-  }
+  },
+  tangerinesProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
