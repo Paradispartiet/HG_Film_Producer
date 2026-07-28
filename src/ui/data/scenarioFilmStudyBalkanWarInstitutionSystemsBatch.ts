@@ -11,6 +11,10 @@ import { getProductionCaseVerification } from "./scenarioProductionVerificationR
 import { beforeTheRainFilmHistoryProfile } from "./scenarioFilmStudyBalkanWarInstitutionBeforeRain";
 import { noMansLandFilmHistoryProfile } from "./scenarioFilmStudyBalkanWarInstitutionNoMansLand";
 import { quoVadisAidaFilmHistoryProfile } from "./scenarioFilmStudyBalkanWarInstitutionQuoVadisAida";
+import {
+  getTangerinesFilmHistoryDonors,
+  getTangerinesFilmHistoryProfile,
+} from "./scenarioFilmStudyBalkanWarInstitutionTangerines";
 import { undergroundFilmHistoryProfile } from "./scenarioFilmStudyBalkanWarInstitutionUnderground";
 
 const profiles = {
@@ -58,7 +62,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getBalkanWarInstitutionSystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return profiles[scenarioId as keyof typeof profiles];
+  return getTangerinesFilmHistoryProfile(scenarioId)
+    ?? profiles[scenarioId as keyof typeof profiles];
 }
 
 export function resolveBalkanWarInstitutionSystemsFilmStudyMap(
@@ -88,30 +93,41 @@ function hashString(value: string): number {
 }
 
 export function createBalkanWarInstitutionSystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
-  const donors = Object.values(profiles)
-    .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
-    .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = hashString(profile.scenarioId);
+  const tangerinesDonors = getTangerinesFilmHistoryDonors(profile);
+  const donors = tangerinesDonors
+    ?? Object.values(profiles)
+      .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
+      .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
+  const start = tangerinesDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const tangerinesMatch = "This matches the documented relationship among Urushadze's rapidly written shelter screenplay, the 1992 Abkhazian conflict, the Estonian-Georgian co-production, Guria standing in for Abkhazia, four restrained performances, Telia's house-workshop-orchard geography, Kotov's widescreen reframing and contrasted light, Kuranov's lulls and ruptures, Felt and Kallaste's fragile domestic sound field and Diasamidze's restrained recurring score.";
+  const tangerinesPartial = "This is another real contained antiwar system built around enemy proximity and a practical spatial problem, but it does not organise one civilian host, two wounded enemies, agricultural work, hospitality and a threatened domestic truce in the same way.";
+  const tangerinesMiss = "This places the film inside the wrong relationship between the Abkhazian war, Estonian-settler history, chamber performance, shelter, harvest labour, restrained widescreen observation, interrupted silence, music and antiwar moral change.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This matches the documented relationship between Balkan war history, production geography, institutions, narrative form, performance, image, editing, music and sound.",
+      feedback: tangerinesDonors
+        ? tangerinesMatch
+        : "This matches the documented relationship between Balkan war history, production geography, institutions, narrative form, performance, image, editing, music and sound.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real Balkan war-production system, but it organises circular time, historical grotesque, contained satire and civilian institutional reconstruction differently.",
+      feedback: tangerinesDonors
+        ? tangerinesPartial
+        : "This is a real Balkan war-production system, but it organises circular time, historical grotesque, contained satire and civilian institutional reconstruction differently.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This assigns the film to the wrong historical, industrial and formal war-production logic.",
+      feedback: tangerinesDonors
+        ? tangerinesMiss
+        : "This assigns the film to the wrong historical, industrial and formal war-production logic.",
     }] : []),
   ];
 }
