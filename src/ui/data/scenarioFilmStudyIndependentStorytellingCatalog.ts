@@ -5,6 +5,10 @@ import { theBigLebowskiFilmHistoryProfile } from "./scenarioFilmStudyAmericanGen
 import { elMariachiFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreElMariachi";
 import { metropolitanFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreMetropolitan";
 import { reservoirDogsFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreReservoirDogs";
+import {
+  getDetachmentFilmHistoryDonors,
+  getDetachmentFilmHistoryProfile,
+} from "./scenarioFilmStudyAmericanPrecarityDetachmentCatalog";
 import { neverRarelySometimesAlwaysFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecarityNeverRarely";
 import { soundOfMetalFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecaritySoundOfMetal";
 import { theRiderFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecarityTheRider";
@@ -312,6 +316,7 @@ export function getIndependentStorytellingCatalogProfile(scenarioId: string): Fi
   return getThreeIronFilmHistoryProfile(scenarioId)
     ?? getLastLifeInTheUniverseFilmHistoryProfile(scenarioId)
     ?? getGranTorinoFilmHistoryProfile(scenarioId)
+    ?? getDetachmentFilmHistoryProfile(scenarioId)
     ?? getBlindnessFilmHistoryProfile(scenarioId)
     ?? getTheSavagesFilmHistoryProfile(scenarioId)
     ?? profilesByScenarioId.get(scenarioId);
@@ -328,6 +333,9 @@ export function getIndependentStorytellingProfileGroup(
   }
   if (getGranTorinoFilmHistoryProfile(scenarioId)) {
     return "american_regional_identity_place_belonging";
+  }
+  if (getDetachmentFilmHistoryProfile(scenarioId)) {
+    return "american_precarity_body_care";
   }
   if (getBlindnessFilmHistoryProfile(scenarioId)) {
     return "subjective_enclosure_performance";
@@ -349,6 +357,9 @@ export function getIndependentStorytellingDonors(
 
   const granTorinoDonors = getGranTorinoFilmHistoryDonors(profile);
   if (granTorinoDonors) return granTorinoDonors;
+
+  const detachmentDonors = getDetachmentFilmHistoryDonors(profile);
+  if (detachmentDonors) return detachmentDonors;
 
   const blindnessDonors = getBlindnessFilmHistoryDonors(profile);
   if (blindnessDonors) return blindnessDonors;
