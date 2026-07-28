@@ -10,7 +10,7 @@ export const blueJasmineProductionCaseVerification = {
       title: "Blue Jasmine press kit",
       publisher: "Sony Pictures Classics",
       url: "https://www.sonyclassics.com/bluejasmine/bluejasmine_presskit.pdf",
-      sourceKind: "production_archive",
+      sourceKind: "archive_feature",
       supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
       note: "Official production notes and credits document the New York past and San Francisco present, associative flashback structure, cast and department heads, title music, location contrast and the production's balance of tragic and absurd behaviour."
     },
