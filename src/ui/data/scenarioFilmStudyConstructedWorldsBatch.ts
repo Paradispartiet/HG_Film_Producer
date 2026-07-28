@@ -23,6 +23,10 @@ import {
   getForrestGumpFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsForrestGumpCatalog";
 import {
+  getHerFilmHistoryDonors,
+  getHerFilmHistoryProfile,
+} from "./scenarioFilmStudyConstructedWorldsHerCatalog";
+import {
   getHugoFilmHistoryDonors,
   getHugoFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsHugoCatalog";
@@ -90,7 +94,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 }
 
 export function getConstructedWorldsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getTheImpossibleFilmHistoryProfile(scenarioId)
+  return getHerFilmHistoryProfile(scenarioId)
+    ?? getTheImpossibleFilmHistoryProfile(scenarioId)
     ?? getMoonriseKingdomFilmHistoryProfile(scenarioId)
     ?? getHugoFilmHistoryProfile(scenarioId)
     ?? getWalleFilmHistoryProfile(scenarioId)
@@ -135,6 +140,7 @@ function hashString(value: string): number {
 export function createConstructedWorldsFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const herDonors = getHerFilmHistoryDonors(profile);
   const impossibleDonors = getTheImpossibleFilmHistoryDonors(profile);
   const moonriseDonors = getMoonriseKingdomFilmHistoryDonors(profile);
   const hugoDonors = getHugoFilmHistoryDonors(profile);
@@ -146,7 +152,8 @@ export function createConstructedWorldsFilmHistoryChoices(
   const dogvilleDonors = getDogvilleFilmHistoryDonors(profile);
   const thePianistDonors = getThePianistFilmHistoryDonors(profile);
   const forrestGumpDonorScenarioIds = getForrestGumpDonorScenarioIds(profile);
-  const donors: readonly FilmHistoryProfile[] = (impossibleDonors
+  const donors: readonly FilmHistoryProfile[] = (herDonors
+    ?? impossibleDonors
     ?? moonriseDonors
     ?? hugoDonors
     ?? walleDonors
@@ -160,9 +167,12 @@ export function createConstructedWorldsFilmHistoryChoices(
       : Object.values(coreConstructedWorldsProfiles)))
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = impossibleDonors || moonriseDonors || hugoDonors || walleDonors || dogvilleDonors || thePianistDonors ? 0 : hashString(profile.scenarioId);
+  const start = herDonors || impossibleDonors || moonriseDonors || hugoDonors || walleDonors || dogvilleDonors || thePianistDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const herMatch = "This matches the documented relationship among Jonze's voice-led romance, Phoenix's embodied listening, Johansson's reconstructed postproduction performance, Barrett and Serdena's Los Angeles-Shanghai future, Storm's warm historical-future wardrobe, van Hoytema's intimate colour image, Zumbrunnen and Buchanan's unseen-partner editing, Klyce's discreet interface sound and Arcade Fire's emotional score.";
+  const herPartial = "This is another real artificial-world, mediated-relationship or technology-character system, but it does not combine an invisible operating-system lover, warm non-dystopian urban design, 35 mm intimacy, rewritten voice performance and romantic editing in the same way.";
+  const herMiss = "This places the film inside the wrong relationship between near-future worldbuilding, disembodied performance, humane interface design, photochemical observation, editorial absence, sound, music and romantic structure.";
   const forrestGumpPartial = "This is another real constructed-world system built from repetition, historical periods or controlled reality, but it does not combine autobiographical narration, national archive, invisible body effects, popular music and studio melodrama in the same way.";
   const forrestGumpMiss = "This places the film inside the wrong relationship between fictional memory, American history, period design, performance, anamorphic photography, archival compositing, editing, sound and music.";
   const thePianistMatch = "This matches the documented production relationship among Szpilman's survivor memoir, Polanski's restricted viewpoint, the French-Polish-German-British co-production, Warsaw-Babelsberg-Jüterbog reconstruction, Brody's bodily survival performance, Starski and Sheppard's historical material world, Edelman's restrained 35 mm image, the progressively emptied sound field and Chopin as profession, memory and identity.";
@@ -188,59 +198,65 @@ export function createConstructedWorldsFilmHistoryChoices(
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: impossibleDonors
-        ? impossibleMatch
-        : moonriseDonors
-          ? moonriseMatch
-          : hugoDonors
-            ? hugoMatch
-            : walleDonors
-              ? walleMatch
-              : dogvilleDonors
-                ? dogvilleMatch
-                : thePianistDonors
-                  ? thePianistMatch
-                  : "This connects the film's constructed world, historical position and documented craft system.",
+      feedback: herDonors
+        ? herMatch
+        : impossibleDonors
+          ? impossibleMatch
+          : moonriseDonors
+            ? moonriseMatch
+            : hugoDonors
+              ? hugoMatch
+              : walleDonors
+                ? walleMatch
+                : dogvilleDonors
+                  ? dogvilleMatch
+                  : thePianistDonors
+                    ? thePianistMatch
+                    : "This connects the film's constructed world, historical position and documented craft system.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: impossibleDonors
-        ? impossiblePartial
-        : moonriseDonors
-          ? moonrisePartial
-          : hugoDonors
-            ? hugoPartial
-            : walleDonors
-              ? wallePartial
-              : dogvilleDonors
-                ? dogvillePartial
-                : thePianistDonors
-                  ? thePianistPartial
-                  : forrestGumpDonorScenarioIds
-                    ? forrestGumpPartial
-                    : "This is a real constructed-world method, but it belongs to a different historical and production system.",
+      feedback: herDonors
+        ? herPartial
+        : impossibleDonors
+          ? impossiblePartial
+          : moonriseDonors
+            ? moonrisePartial
+            : hugoDonors
+              ? hugoPartial
+              : walleDonors
+                ? wallePartial
+                : dogvilleDonors
+                  ? dogvillePartial
+                  : thePianistDonors
+                    ? thePianistPartial
+                    : forrestGumpDonorScenarioIds
+                      ? forrestGumpPartial
+                      : "This is a real constructed-world method, but it belongs to a different historical and production system.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: impossibleDonors
-        ? impossibleMiss
-        : moonriseDonors
-          ? moonriseMiss
-          : hugoDonors
-            ? hugoMiss
-            : walleDonors
-              ? walleMiss
-              : dogvilleDonors
-                ? dogvilleMiss
-                : thePianistDonors
-                  ? thePianistMiss
-                  : forrestGumpDonorScenarioIds
-                    ? forrestGumpMiss
-                    : "This places the film inside the wrong temporal, spatial and technical tradition.",
+      feedback: herDonors
+        ? herMiss
+        : impossibleDonors
+          ? impossibleMiss
+          : moonriseDonors
+            ? moonriseMiss
+            : hugoDonors
+              ? hugoMiss
+              : walleDonors
+                ? walleMiss
+                : dogvilleDonors
+                  ? dogvilleMiss
+                  : thePianistDonors
+                    ? thePianistMiss
+                    : forrestGumpDonorScenarioIds
+                      ? forrestGumpMiss
+                      : "This places the film inside the wrong temporal, spatial and technical tradition.",
     }] : []),
   ];
 }
