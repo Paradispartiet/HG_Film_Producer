@@ -35,6 +35,10 @@ import {
   getMoonriseKingdomFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsMoonriseKingdomCatalog";
 import {
+  getRushFilmHistoryDonors,
+  getRushFilmHistoryProfile,
+} from "./scenarioFilmStudyConstructedWorldsRushCatalog";
+import {
   getTheImpossibleFilmHistoryDonors,
   getTheImpossibleFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsTheImpossibleCatalog";
@@ -94,7 +98,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 }
 
 export function getConstructedWorldsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getHerFilmHistoryProfile(scenarioId)
+  return getRushFilmHistoryProfile(scenarioId)
+    ?? getHerFilmHistoryProfile(scenarioId)
     ?? getTheImpossibleFilmHistoryProfile(scenarioId)
     ?? getMoonriseKingdomFilmHistoryProfile(scenarioId)
     ?? getHugoFilmHistoryProfile(scenarioId)
@@ -140,6 +145,7 @@ function hashString(value: string): number {
 export function createConstructedWorldsFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const rushDonors = getRushFilmHistoryDonors(profile);
   const herDonors = getHerFilmHistoryDonors(profile);
   const impossibleDonors = getTheImpossibleFilmHistoryDonors(profile);
   const moonriseDonors = getMoonriseKingdomFilmHistoryDonors(profile);
@@ -152,7 +158,8 @@ export function createConstructedWorldsFilmHistoryChoices(
   const dogvilleDonors = getDogvilleFilmHistoryDonors(profile);
   const thePianistDonors = getThePianistFilmHistoryDonors(profile);
   const forrestGumpDonorScenarioIds = getForrestGumpDonorScenarioIds(profile);
-  const donors: readonly FilmHistoryProfile[] = (herDonors
+  const donors: readonly FilmHistoryProfile[] = (rushDonors
+    ?? herDonors
     ?? impossibleDonors
     ?? moonriseDonors
     ?? hugoDonors
@@ -167,9 +174,16 @@ export function createConstructedWorldsFilmHistoryChoices(
       : Object.values(coreConstructedWorldsProfiles)))
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = herDonors || impossibleDonors || moonriseDonors || hugoDonors || walleDonors || dogvilleDonors || thePianistDonors ? 0 : hashString(profile.scenarioId);
+  const start = rushDonors
+    ? 2
+    : herDonors || impossibleDonors || moonriseDonors || hugoDonors || walleDonors || dogvilleDonors || thePianistDonors
+      ? 0
+      : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
+  const rushMatch = "This matches the documented relationship among Morgan's Hunt-Lauda two-hander, Howard's independently scaled historical reconstruction, Hemsworth and Brühl's opposed performance systems, real and replica Formula One cars, substitute circuits, Dod Mantle's mixed digital cameras and vintage lenses, Hanley and Hill's BAFTA-winning edit, exact historic-engine recording, Zimmer's score and integrated practical-digital race effects.";
+  const rushPartial = "This is another real body, labour or public-performance sports system, but it does not combine two Formula One rivals, a reconstructed 1976 championship, real historic machinery, multi-camera digital speed, period paddocks, engine-specific sound and a mutually defining biographical structure in the same way.";
+  const rushMiss = "This places the film inside the wrong relationship between historical sports biography, two-driver rivalry, practical racing danger, substituted circuits, digital cameras with vintage optics, performance-led race editing, exact engine identity, score and invisible effects.";
   const herMatch = "This matches the documented relationship among Jonze's voice-led romance, Phoenix's embodied listening, Johansson's reconstructed postproduction performance, Barrett and Serdena's Los Angeles-Shanghai future, Storm's warm historical-future wardrobe, van Hoytema's intimate colour image, Zumbrunnen and Buchanan's unseen-partner editing, Klyce's discreet interface sound and Arcade Fire's emotional score.";
   const herPartial = "This is another real artificial-world, mediated-relationship or technology-character system, but it does not combine an invisible operating-system lover, warm non-dystopian urban design, 35 mm intimacy, rewritten voice performance and romantic editing in the same way.";
   const herMiss = "This places the film inside the wrong relationship between near-future worldbuilding, disembodied performance, humane interface design, photochemical observation, editorial absence, sound, music and romantic structure.";
@@ -198,65 +212,71 @@ export function createConstructedWorldsFilmHistoryChoices(
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: herDonors
-        ? herMatch
-        : impossibleDonors
-          ? impossibleMatch
-          : moonriseDonors
-            ? moonriseMatch
-            : hugoDonors
-              ? hugoMatch
-              : walleDonors
-                ? walleMatch
-                : dogvilleDonors
-                  ? dogvilleMatch
-                  : thePianistDonors
-                    ? thePianistMatch
-                    : "This connects the film's constructed world, historical position and documented craft system.",
+      feedback: rushDonors
+        ? rushMatch
+        : herDonors
+          ? herMatch
+          : impossibleDonors
+            ? impossibleMatch
+            : moonriseDonors
+              ? moonriseMatch
+              : hugoDonors
+                ? hugoMatch
+                : walleDonors
+                  ? walleMatch
+                  : dogvilleDonors
+                    ? dogvilleMatch
+                    : thePianistDonors
+                      ? thePianistMatch
+                      : "This connects the film's constructed world, historical position and documented craft system.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: herDonors
-        ? herPartial
-        : impossibleDonors
-          ? impossiblePartial
-          : moonriseDonors
-            ? moonrisePartial
-            : hugoDonors
-              ? hugoPartial
-              : walleDonors
-                ? wallePartial
-                : dogvilleDonors
-                  ? dogvillePartial
-                  : thePianistDonors
-                    ? thePianistPartial
-                    : forrestGumpDonorScenarioIds
-                      ? forrestGumpPartial
-                      : "This is a real constructed-world method, but it belongs to a different historical and production system.",
+      feedback: rushDonors
+        ? rushPartial
+        : herDonors
+          ? herPartial
+          : impossibleDonors
+            ? impossiblePartial
+            : moonriseDonors
+              ? moonrisePartial
+              : hugoDonors
+                ? hugoPartial
+                : walleDonors
+                  ? wallePartial
+                  : dogvilleDonors
+                    ? dogvillePartial
+                    : thePianistDonors
+                      ? thePianistPartial
+                      : forrestGumpDonorScenarioIds
+                        ? forrestGumpPartial
+                        : "This is a real constructed-world method, but it belongs to a different historical and production system.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: herDonors
-        ? herMiss
-        : impossibleDonors
-          ? impossibleMiss
-          : moonriseDonors
-            ? moonriseMiss
-            : hugoDonors
-              ? hugoMiss
-              : walleDonors
-                ? walleMiss
-                : dogvilleDonors
-                  ? dogvilleMiss
-                  : thePianistDonors
-                    ? thePianistMiss
-                    : forrestGumpDonorScenarioIds
-                      ? forrestGumpMiss
-                      : "This places the film inside the wrong temporal, spatial and technical tradition.",
+      feedback: rushDonors
+        ? rushMiss
+        : herDonors
+          ? herMiss
+          : impossibleDonors
+            ? impossibleMiss
+            : moonriseDonors
+              ? moonriseMiss
+              : hugoDonors
+                ? hugoMiss
+                : walleDonors
+                  ? walleMiss
+                  : dogvilleDonors
+                    ? dogvilleMiss
+                    : thePianistDonors
+                      ? thePianistMiss
+                      : forrestGumpDonorScenarioIds
+                        ? forrestGumpMiss
+                        : "This places the film inside the wrong temporal, spatial and technical tradition.",
     }] : []),
   ];
 }
