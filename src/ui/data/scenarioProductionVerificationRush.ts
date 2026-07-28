@@ -35,7 +35,7 @@ export const rushProductionCaseVerification = {
       publisher: "Formula 1",
       url: "https://www.formula1.com/en/latest/article/on-this-day-50-years-ago-the-iconic-1976-formula-1-season-that-inspired-rush.Otn39lw7ILaJlV0jR0KOo.Otn39lw7ILaJlV0jR0KOo",
       sourceKind: "archive_feature",
-      supports: ["overall", "screenplay", "performance"],
+      supports: ["overall", "screenplay"],
       note: "Formula 1's historical retrospective documents the Hunt-Lauda 1976 championship, crash, return and Fuji finale and describes Daniel Brühl's access to Lauda and the later responses of Lauda and Lord Hesketh to the performances."
     },
     {
@@ -67,7 +67,7 @@ export const rushProductionCaseVerification = {
       publisher: "Motion Picture Association",
       url: "https://www.motionpictures.org/2013/09/building-the-perfect-engine-the-filmmakers-behind-universals-rush/",
       sourceKind: "trade_feature",
-      supports: ["overall", "production_design", "cinematography"],
+      supports: ["overall", "cinematography"],
       note: "The production-note feature records more than thirty cameras for some material and Mark Digby's requirement to turn limited tracks, vehicles, paddocks, signage and support equipment into many distinct races and countries."
     },
     {
@@ -83,7 +83,7 @@ export const rushProductionCaseVerification = {
       publisher: "Media & Entertainment",
       url: "https://mande.net/btl/awards/contender-portfolios/costume-designer-julian-day-dresses-rush",
       sourceKind: "filmmaker_interview",
-      supports: ["overall", "production_design", "performance"],
+      supports: ["overall"],
       note: "Julian Day describes his direct familiarity with 1970s Formula One, archival research and the contrasting race suits, team clothing and personal wardrobes used to separate Hunt's display from Lauda's control."
     }
   ]
