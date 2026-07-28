@@ -79,9 +79,9 @@ export const herProductionCaseVerification = {
       note: "Jonze recounts shooting Phoenix's scenes with Samantha Morton performing live, recognizing during the edit that the approach was not working and rebuilding Samantha with Scarlett Johansson during postproduction."
     },
     {
-      title: "K.K. Barrett on Designing the Near-Future World of Her",
+      title: "K.K. Barrett: A Vision for Her",
       publisher: "KCRW",
-      url: "https://www.kcrw.com/culture/shows/the-treatment/k-k-barrett-her",
+      url: "https://www.kcrw.com/shows/design-and-architecture/stories/k-k-barrett-a-vision-for-her",
       sourceKind: "filmmaker_interview",
       supports: ["overall", "cinematography"],
       note: "Barrett discusses an idealized but isolating Los Angeles, the use of Shanghai architecture, the absence of normal future-film cues and the production's attempt to make technological life visually comfortable rather than dystopian."
