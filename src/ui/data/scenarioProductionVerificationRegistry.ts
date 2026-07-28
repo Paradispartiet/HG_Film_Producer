@@ -49,6 +49,7 @@ import { nextFour2008_2009VerificationRecords } from "./scenarioProductionVerifi
 import { nextFour2010_2011VerificationRecords } from "./scenarioProductionVerificationNextFour2010_2011Batch";
 import { nextFour2012VerificationRecords } from "./scenarioProductionVerificationNextFour2012Batch";
 import { herVerificationRecords } from "./scenarioProductionVerificationHer";
+import { norteVerificationRecords } from "./scenarioProductionVerificationNorte";
 import { theImpossibleVerificationRecords } from "./scenarioProductionVerificationTheImpossible";
 import { elephantProductionCaseVerification } from "./scenarioProductionVerificationElephant";
 import { kitchenStoriesProductionCaseVerification } from "./scenarioProductionVerificationKitchenStories";
@@ -116,6 +117,7 @@ const additionalVerificationRecords = [
   ...nextFour2012VerificationRecords,
   ...theImpossibleVerificationRecords,
   ...herVerificationRecords,
+  ...norteVerificationRecords,
   elephantProductionCaseVerification,
   kitchenStoriesProductionCaseVerification,
   lastLifeInTheUniverseProductionCaseVerification,
