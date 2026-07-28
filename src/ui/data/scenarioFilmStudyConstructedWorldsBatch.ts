@@ -23,6 +23,10 @@ import {
   getForrestGumpFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsForrestGumpCatalog";
 import {
+  getHugoFilmHistoryDonors,
+  getHugoFilmHistoryProfile,
+} from "./scenarioFilmStudyConstructedWorldsHugoCatalog";
+import {
   getThePianistFilmHistoryDonors,
   getThePianistFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsPianistCatalog";
@@ -78,7 +82,8 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 }
 
 export function getConstructedWorldsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getWalleFilmHistoryProfile(scenarioId)
+  return getHugoFilmHistoryProfile(scenarioId)
+    ?? getWalleFilmHistoryProfile(scenarioId)
     ?? getDogvilleFilmHistoryProfile(scenarioId)
     ?? getThePianistFilmHistoryProfile(scenarioId)
     ?? getForrestGumpFilmHistoryProfile(scenarioId)
@@ -120,6 +125,7 @@ function hashString(value: string): number {
 export function createConstructedWorldsFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
+  const hugoDonors = getHugoFilmHistoryDonors(profile);
   const walleDonorIds = getWalleDonorScenarioIds(profile);
   const walleDonors = walleDonorIds?.flatMap((scenarioId) => {
     const candidate = constructedWorldsProfiles[scenarioId as keyof typeof constructedWorldsProfiles];
@@ -128,7 +134,8 @@ export function createConstructedWorldsFilmHistoryChoices(
   const dogvilleDonors = getDogvilleFilmHistoryDonors(profile);
   const thePianistDonors = getThePianistFilmHistoryDonors(profile);
   const forrestGumpDonorScenarioIds = getForrestGumpDonorScenarioIds(profile);
-  const donors: readonly FilmHistoryProfile[] = (walleDonors
+  const donors: readonly FilmHistoryProfile[] = (hugoDonors
+    ?? walleDonors
     ?? dogvilleDonors
     ?? thePianistDonors
     ?? (forrestGumpDonorScenarioIds
@@ -139,7 +146,7 @@ export function createConstructedWorldsFilmHistoryChoices(
       : Object.values(coreConstructedWorldsProfiles)))
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = walleDonors || dogvilleDonors || thePianistDonors ? 0 : hashString(profile.scenarioId);
+  const start = hugoDonors || walleDonors || dogvilleDonors || thePianistDonors ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
   const forrestGumpPartial = "This is another real constructed-world system built from repetition, historical periods or controlled reality, but it does not combine autobiographical narration, national archive, invisible body effects, popular music and studio melodrama in the same way.";
@@ -153,46 +160,55 @@ export function createConstructedWorldsFilmHistoryChoices(
   const walleMatch = "This matches the documented relationship between silent-comedy robot performance, ecological worldbuilding, color-scripted environments, simulated photographed-camera behavior, Ben Burtt's vocal-mechanical sound and orchestral-pop musical memory.";
   const wallePartial = "This is another real constructed-world production, but it does not combine dialogue-light animation, consumer dystopia, virtual 70 mm camera research, robot sound language and an Earth-to-space ecological romance in the same way.";
   const walleMiss = "This places the film inside the wrong relationship between animation, silent visual storytelling, environmental design, virtual optics, editing, sound identity, music and ecological return.";
+  const hugoMatch = "This matches the documented relationship between Scorsese's Méliès adaptation, native paired-camera 3D, Ferretti's constructed station and Paris, period performance and costume, Richardson's stereoscopic image, Schoonmaker's spatial editing, award-winning sound, Shore's score and integrated practical-digital effects.";
+  const hugoPartial = "This is another real constructed-world, mechanical-character or reconstructed-city system, but it does not combine a 1930s station mystery, cinema preservation, native 3D depth, clockwork geography and recovered Méliès spectacle in the same way.";
+  const hugoMiss = "This places the film inside the wrong relationship between film history, period reconstruction, stereoscopic digital photography, mechanical production design, editing, sound, music, visual effects and preservation.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: walleDonors
-        ? walleMatch
-        : dogvilleDonors
-          ? dogvilleMatch
-          : thePianistDonors
-            ? thePianistMatch
-            : "This connects the film's constructed world, historical position and documented craft system.",
+      feedback: hugoDonors
+        ? hugoMatch
+        : walleDonors
+          ? walleMatch
+          : dogvilleDonors
+            ? dogvilleMatch
+            : thePianistDonors
+              ? thePianistMatch
+              : "This connects the film's constructed world, historical position and documented craft system.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: walleDonors
-        ? wallePartial
-        : dogvilleDonors
-          ? dogvillePartial
-          : thePianistDonors
-            ? thePianistPartial
-            : forrestGumpDonorScenarioIds
-              ? forrestGumpPartial
-              : "This is a real constructed-world method, but it belongs to a different historical and production system.",
+      feedback: hugoDonors
+        ? hugoPartial
+        : walleDonors
+          ? wallePartial
+          : dogvilleDonors
+            ? dogvillePartial
+            : thePianistDonors
+              ? thePianistPartial
+              : forrestGumpDonorScenarioIds
+                ? forrestGumpPartial
+                : "This is a real constructed-world method, but it belongs to a different historical and production system.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: walleDonors
-        ? walleMiss
-        : dogvilleDonors
-          ? dogvilleMiss
-          : thePianistDonors
-            ? thePianistMiss
-            : forrestGumpDonorScenarioIds
-              ? forrestGumpMiss
-              : "This places the film inside the wrong temporal, spatial and technical tradition.",
+      feedback: hugoDonors
+        ? hugoMiss
+        : walleDonors
+          ? walleMiss
+          : dogvilleDonors
+            ? dogvilleMiss
+            : thePianistDonors
+              ? thePianistMiss
+              : forrestGumpDonorScenarioIds
+                ? forrestGumpMiss
+                : "This places the film inside the wrong temporal, spatial and technical tradition.",
     }] : []),
   ];
 }
