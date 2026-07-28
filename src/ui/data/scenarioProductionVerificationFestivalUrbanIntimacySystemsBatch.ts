@@ -1,5 +1,6 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
 import { beforeSunsetVerificationRecords } from "./scenarioProductionVerificationBeforeSunset";
+import { theLunchboxProductionCaseVerification } from "./scenarioProductionVerificationLunchbox";
 
 export const festivalUrbanIntimacyVerificationRecords = [
   {
@@ -163,4 +164,5 @@ export const festivalUrbanIntimacyVerificationRecords = [
     ]
   },
   ...beforeSunsetVerificationRecords,
+  theLunchboxProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
