@@ -84,6 +84,18 @@ import {
   getBuffalo66FilmHistoryDonors,
   getBuffalo66FilmHistoryProfile,
 } from "./scenarioFilmStudyAmericanRegionalBuffalo66Catalog";
+import {
+  getInTheHouseFilmHistoryDonors,
+  getInTheHouseFilmHistoryProfile,
+} from "./scenarioFilmStudySubjectiveEnclosureInTheHouseCatalog";
+import {
+  getSearchingForSugarManFilmHistoryDonors,
+  getSearchingForSugarManFilmHistoryProfile,
+} from "./scenarioFilmStudyMusicDocumentarySearchingForSugarManCatalog";
+import {
+  getBrokenCircleBreakdownFilmHistoryDonors,
+  getBrokenCircleBreakdownFilmHistoryProfile,
+} from "./scenarioFilmStudyFamilyPerformanceBrokenCircleBreakdownCatalog";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 
@@ -151,7 +163,10 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
-  return getElephantFilmHistoryProfile(scenarioId)
+  return getInTheHouseFilmHistoryProfile(scenarioId)
+    ?? getSearchingForSugarManFilmHistoryProfile(scenarioId)
+    ?? getBrokenCircleBreakdownFilmHistoryProfile(scenarioId)
+    ?? getElephantFilmHistoryProfile(scenarioId)
     ?? getTheMillionDollarHotelFilmHistoryProfile(scenarioId)
     ?? getTaxidermiaFilmHistoryProfile(scenarioId)
     ?? getRequiemForADreamFilmHistoryProfile(scenarioId)
@@ -258,6 +273,36 @@ function missFeedback(group: ResolvedIndependentStorytellingProfileGroup): strin
 }
 
 function getSpecialChoiceSystem(profile: FilmHistoryProfile): SpecialChoiceSystem | undefined {
+  const inTheHouseDonors = getInTheHouseFilmHistoryDonors(profile);
+  if (inTheHouseDonors) return {
+    donors: inTheHouseDonors,
+    group: "subjective_enclosure_performance",
+    forceStart: true,
+    match: "This matches the documented production relationship among Ozon's Mayorga adaptation, Claude's serial essays, Germain's revisions, Marne-la-Vallée school and suburban locations, domestic sightlines, voice-over, Gardette's reality-fiction handoffs, Rombi's score and writing as performed voyeurism.",
+    partial: "This is another real authorship, enclosure or performed-reality system, but it does not make weekly school writing, teacher correction, domestic infiltration and shifting imagined enactment the same mechanism of suspense.",
+    miss: "This places the film inside the wrong relationship between literary adaptation, teacher-student power, bourgeois domestic access, narration, widescreen observation, editing, sound and unstable authorship.",
+  };
+
+  const searchingForSugarManDonors = getSearchingForSugarManFilmHistoryDonors(profile);
+  if (searchingForSugarManDonors) return {
+    donors: searchingForSugarManDonors,
+    group: "body_archive_restitution_perspective",
+    forceStart: true,
+    match: "This matches the documented relationship among South African fan investigation, Detroit witnesses, records and photographs, Bendjelloul's four-year production and self-editing, transnational travel, animated reconstruction, Rodriguez's songs, recovered concerts and documentary mystery structure.",
+    partial: "This is another real archive, artist-biography or community-memory system, but it does not turn a singer's unknown overseas fame, death rumors, fan research, record circulation and belated live return into the same investigative music documentary.",
+    miss: "This places the film inside the wrong relationship between music history, apartheid-era circulation, fan evidence, Detroit and South African geography, archive, animation, editing, sound and documentary ethics.",
+  };
+
+  const brokenCircleDonors = getBrokenCircleBreakdownFilmHistoryDonors(profile);
+  if (brokenCircleDonors) return {
+    donors: brokenCircleDonors,
+    group: "family_performance_grief_power",
+    forceStart: true,
+    match: "This matches the documented production relationship among Heldenbergh and Dobbels's bluegrass theatre source, Van Groeningen and Joos's repeatedly rebuilt screenplay, Baetens and Heldenbergh's musical performance, Impens's intimate widescreen image, Rigolle's farm world, Leunen's nonlinear grief montage, Deca's sound and Eriksson's arrangements.",
+    partial: "This is another real family, grief or music-performance system, but it does not organize courtship, parenthood, childhood illness, belief and bereavement through bluegrass competence and emotionally associated time in the same way.",
+    miss: "This places the film inside the wrong relationship between theatre adaptation, family loss, live music, tattooed performance identity, Belgian rural space, nonlinear editing, practical sound and melodrama.",
+  };
+
   const elephantDonors = getElephantFilmHistoryDonors(profile);
   if (elephantDonors) return {
     donors: elephantDonors,
