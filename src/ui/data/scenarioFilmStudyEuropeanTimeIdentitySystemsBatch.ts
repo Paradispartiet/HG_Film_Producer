@@ -21,6 +21,10 @@ import {
   getCharacterFilmHistoryProfile,
 } from "./scenarioFilmStudyEuropeanTimeIdentityCharacterCatalog";
 import {
+  getLeviathanFilmHistoryDonors,
+  getLeviathanFilmHistoryProfile,
+} from "./scenarioFilmStudyEuropeanTimeIdentityLeviathanCatalog";
+import {
   getTheReturnFilmHistoryDonors,
   getTheReturnFilmHistoryProfile,
 } from "./scenarioFilmStudyEuropeanTimeIdentityTheReturnCatalog";
@@ -79,7 +83,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getEuropeanTimeIdentitySystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getTheReturnFilmHistoryProfile(scenarioId)
+  return getLeviathanFilmHistoryProfile(scenarioId)
+    ?? getTheReturnFilmHistoryProfile(scenarioId)
     ?? getCharacterFilmHistoryProfile(scenarioId)
     ?? profiles[scenarioId as keyof typeof profiles];
 }
@@ -111,6 +116,9 @@ function hashString(value: string): number {
 }
 
 function getChoiceDonors(profile: FilmHistoryProfile): FilmHistoryProfile[] {
+  const leviathanDonors = getLeviathanFilmHistoryDonors(profile);
+  if (leviathanDonors) return [...leviathanDonors];
+
   const theReturnDonors = getTheReturnFilmHistoryDonors(profile);
   if (theReturnDonors) return [...theReturnDonors];
 
@@ -133,27 +141,34 @@ function getChoiceDonors(profile: FilmHistoryProfile): FilmHistoryProfile[] {
 }
 
 export function createEuropeanTimeIdentitySystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
+  const leviathanDonors = getLeviathanFilmHistoryDonors(profile);
   const theReturnDonors = getTheReturnFilmHistoryDonors(profile);
   const characterDonors = getCharacterFilmHistoryDonors(profile);
   const donors = getChoiceDonors(profile);
-  const start = theReturnDonors || characterDonors || getSatantangoDonorScenarioIds(profile) ? 0 : hashString(profile.scenarioId);
+  const start = leviathanDonors || theReturnDonors || characterDonors || getSatantangoDonorScenarioIds(profile) ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
-  const matchFeedback = theReturnDonors
-    ? "This matches the documented production relationship among an unexplained paternal return, two opposed child viewpoints, a seven-day road and island journey, Ren Film production, Lavronenko-Garin-Dobronravov performance, Krichman's colour 35 mm landscape, Pakhomova's practical spaces, Mogilevsky's tightening edit, Dergachev's restrained music and sound and the film's unresolved spiritual authority."
-    : characterDonors
-      ? "This matches the documented relationship among Bordewijk's two source texts, a murder-confession frame, multinational reconstruction of prewar Rotterdam, monumental period design, 35 mm colour, controlled performance, nonlinear memory and forceful music."
-      : "This matches the documented relationship between European suspense, historical control, recursive time, identity performance, image, editing, music and sound.";
-  const partialFeedback = theReturnDonors
-    ? "This is another real European system of authoritarian family life, durational landscape or child-centred moral travel, but it does not combine a father's unexplained return, two brothers' conflicting belief, physical training, road movement, fog, boat labour, island secrecy and sudden bereavement in the same way."
-    : characterDonors
-      ? "This is another real European time-and-identity production system, but it organises procedural obsession, authoritarian history or postwar identity rehearsal without Character's father-son debt struggle, social ascent and composite prewar city."
-      : "This is a real European time-and-identity production system, but it organises procedural knowledge, recursive velocity, historical suspicion and postwar rehearsal differently.";
-  const missFeedback = theReturnDonors
-    ? "This places the film inside the wrong relationship between post-Soviet family authority, child perception, withheld backstory, practical journey geography, colour 35 mm landscape, religious imagery, environmental sound, paternal discipline and catastrophic loss."
-    : characterDonors
-      ? "This places the film inside the wrong relationship between literary adaptation, murder framing, social ambition, paternal authority, reconstructed urban history, period design and psychological melodrama."
-      : "This assigns the film to the wrong historical, temporal and audiovisual production logic.";
+  const matchFeedback = leviathanDonors
+    ? "This matches the documented production relationship among a publicly supported Russian auteur production, Job-Hobbes-Kohlhaas screenplay sources, municipal property seizure, a purpose-built inherited house designed for one-take demolition, fabricated whale remains, hybrid practical-digital church construction, Krichman's soft-light 35 mm Scope landscape, restrained ensemble performance, procedural sound and Philip Glass's circular pressure."
+    : theReturnDonors
+      ? "This matches the documented production relationship among an unexplained paternal return, two opposed child viewpoints, a seven-day road and island journey, Ren Film production, Lavronenko-Garin-Dobronravov performance, Krichman's colour 35 mm landscape, Pakhomova's practical spaces, Mogilevsky's tightening edit, Dergachev's restrained music and sound and the film's unresolved spiritual authority."
+      : characterDonors
+        ? "This matches the documented relationship among Bordewijk's two source texts, a murder-confession frame, multinational reconstruction of prewar Rotterdam, monumental period design, 35 mm colour, controlled performance, nonlinear memory and forceful music."
+        : "This matches the documented relationship between European suspense, historical control, recursive time, identity performance, image, editing, music and sound.";
+  const partialFeedback = leviathanDonors
+    ? "This is another real system of authoritarian family pressure, institutional violence or property-based class conflict, but it does not combine a Barents Sea municipality, inherited workshop and home, state-supported production, biblical-political source structure, full practical house construction, planned demolition, whale skeleton, replacement church and soft northern 35 mm landscape in the same way."
+    : theReturnDonors
+      ? "This is another real European system of authoritarian family life, durational landscape or child-centred moral travel, but it does not combine a father's unexplained return, two brothers' conflicting belief, physical training, road movement, fog, boat labour, island secrecy and sudden bereavement in the same way."
+      : characterDonors
+        ? "This is another real European time-and-identity production system, but it organises procedural obsession, authoritarian history or postwar identity rehearsal without Character's father-son debt struggle, social ascent and composite prewar city."
+        : "This is a real European time-and-identity production system, but it organises procedural knowledge, recursive velocity, historical suspicion and postwar rehearsal differently.";
+  const missFeedback = leviathanDonors
+    ? "This places the film inside the wrong relationship between Russian public financing, municipal and church authority, property law, family betrayal, Arctic geography, constructed realism, 35 mm image, patient procedural time, environmental sound and physical-digital destruction."
+    : theReturnDonors
+      ? "This places the film inside the wrong relationship between post-Soviet family authority, child perception, withheld backstory, practical journey geography, colour 35 mm landscape, religious imagery, environmental sound, paternal discipline and catastrophic loss."
+      : characterDonors
+        ? "This places the film inside the wrong relationship between literary adaptation, murder framing, social ambition, paternal authority, reconstructed urban history, period design and psychological melodrama."
+        : "This assigns the film to the wrong historical, temporal and audiovisual production logic.";
   return [
     {
       id: `${profile.scenarioId}-history-match`,
