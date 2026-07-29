@@ -1,5 +1,6 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
 import { blueJasmineVerificationRecords } from "./scenarioProductionVerificationBlueJasmine";
+import { mommyProductionCaseVerification } from "./scenarioProductionVerificationMommy";
 import { theSavagesVerificationRecords } from "./scenarioProductionVerificationTheSavages";
 
 export const familyPerformanceGriefPowerVerificationRecords = [
@@ -163,6 +164,7 @@ export const familyPerformanceGriefPowerVerificationRecords = [
       }
     ]
   },
+  mommyProductionCaseVerification,
   ...theSavagesVerificationRecords,
   ...blueJasmineVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
