@@ -74,6 +74,7 @@ const verificationGroups = [
   ["A Pigeon Sat Living Trilogy studio-tableau system", ["scenario_a_pigeon_sat_on_a_branch_reflecting_on_existence_2014"], 10],
   ["It Follows Detroit walking-curse spatial-dread system", ["scenario_it_follows_2014"], 10],
   ["Leviathan Barents state-church property-expropriation system", ["scenario_leviathan_2014"], 10],
+  ["Mommy Quebec square-frame family-pop system", ["scenario_mommy_2014"], 10],
   ["Norwegian postwar genre systems", ["scenario_gategutter_1949", "scenario_fjols_til_fjells_1957", "scenario_de_dodes_tjern_1958", "scenario_insomnia_1997"], 4],
   ["Nordic minimalist social systems", ["scenario_the_match_factory_girl_1990", "scenario_songs_from_the_second_floor_2000", "scenario_the_man_without_a_past_2002", "scenario_oslo_august_31st_2011"], 4],
   ["modern Nordic behavior systems", ["scenario_force_majeure_2014", "scenario_woman_at_war_2018", "scenario_another_round_2020", "scenario_the_worst_person_in_the_world_2021"], 4],
@@ -129,7 +130,7 @@ const verificationGroups = [
   ["Japanese ambiguity and dialogue systems", ["scenario_cure_1997", "scenario_wheel_of_fortune_and_fantasy_2021", "scenario_monster_kore_eda_2023", "scenario_evil_does_not_exist_2023"], 4],
 ] as const;
 
-const expectedVerifiedCount = 330;
+const expectedVerifiedCount = 331;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
