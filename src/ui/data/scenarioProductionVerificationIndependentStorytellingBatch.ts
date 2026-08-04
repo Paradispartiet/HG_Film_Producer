@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { amyProductionCaseVerification } from "./scenarioProductionVerificationAmy";
 import { taxidermiaProductionCaseVerification } from "./scenarioProductionVerificationTaxidermia";
 
 export const independentStorytellingVerificationRecords = [
@@ -170,5 +171,6 @@ export const independentStorytellingVerificationRecords = [
       }
     ]
   },
+  amyProductionCaseVerification,
   taxidermiaProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
