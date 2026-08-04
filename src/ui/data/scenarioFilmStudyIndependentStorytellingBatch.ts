@@ -89,6 +89,10 @@ import {
   getInTheHouseFilmHistoryProfile,
 } from "./scenarioFilmStudySubjectiveEnclosureInTheHouseCatalog";
 import {
+  getAmyFilmHistoryDonors,
+  getAmyFilmHistoryProfile,
+} from "./scenarioFilmStudyMusicDocumentaryAmyCatalog";
+import {
   getSearchingForSugarManFilmHistoryDonors,
   getSearchingForSugarManFilmHistoryProfile,
 } from "./scenarioFilmStudyMusicDocumentarySearchingForSugarManCatalog";
@@ -164,6 +168,7 @@ export function getIndependentStorytellingFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
   return getInTheHouseFilmHistoryProfile(scenarioId)
+    ?? getAmyFilmHistoryProfile(scenarioId)
     ?? getSearchingForSugarManFilmHistoryProfile(scenarioId)
     ?? getBrokenCircleBreakdownFilmHistoryProfile(scenarioId)
     ?? getElephantFilmHistoryProfile(scenarioId)
@@ -281,6 +286,16 @@ function getSpecialChoiceSystem(profile: FilmHistoryProfile): SpecialChoiceSyste
     match: "This matches the documented production relationship among Ozon's Mayorga adaptation, Claude's serial essays, Germain's revisions, Marne-la-Vallée school and suburban locations, domestic sightlines, voice-over, Gardette's reality-fiction handoffs, Rombi's score and writing as performed voyeurism.",
     partial: "This is another real authorship, enclosure or performed-reality system, but it does not make weekly school writing, teacher correction, domestic infiltration and shifting imagined enactment the same mechanism of suspense.",
     miss: "This places the film inside the wrong relationship between literary adaptation, teacher-student power, bourgeois domestic access, narration, widescreen observation, editing, sound and unstable authorship.",
+  };
+
+  const amyDonors = getAmyFilmHistoryDonors(profile);
+  if (amyDonors) return {
+    donors: amyDonors,
+    group: "body_archive_restitution_perspective",
+    forceStart: true,
+    match: "This matches the documented relationship among private and public archive, off-screen witness testimony, Amy Winehouse's recorded voice and performances, lyric captions, media-pressure evidence, Chris King's montage, sound continuity and Kapadia's refusal of visible talking heads.",
+    partial: "This is another real music, artist-biography or archive system, but it does not construct a posthumous public-private portrait from intimate home video, career performances, witness audio, press intrusion and the subject's own lyrics in the same way.",
+    miss: "This places the film inside the wrong relationship between archival access, celebrity biography, posthumous ethics, musical authorship, off-screen testimony, heterogeneous image sources, editing, sound and media complicity.",
   };
 
   const searchingForSugarManDonors = getSearchingForSugarManFilmHistoryDonors(profile);
