@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { fortyFiveYearsProductionCaseVerification } from "./scenarioProductionVerification45Years";
 
 export const theSavagesProductionCaseVerification = {
   scenarioId: "scenario_the_savages_2007",
@@ -91,4 +92,5 @@ export const theSavagesProductionCaseVerification = {
 
 export const theSavagesVerificationRecords = [
   theSavagesProductionCaseVerification,
+  fortyFiveYearsProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
