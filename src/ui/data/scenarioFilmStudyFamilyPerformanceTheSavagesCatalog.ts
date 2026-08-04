@@ -1,6 +1,10 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
 import { safeFilmHistoryProfile } from "./scenarioFilmStudyQueerIndependentSafe";
 import { blueJasmineFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceBlueJasmine";
+import {
+  getFortyFiveYearsFilmHistoryDonors,
+  getFortyFiveYearsFilmHistoryProfile,
+} from "./scenarioFilmStudyFamilyPerformance45YearsCatalog";
 import { scenesFromAMarriageFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceScenesMarriage";
 import { secretsAndLiesFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceSecretsLies";
 import { theSavagesFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceTheSavages";
@@ -22,6 +26,8 @@ const blueJasmineDonors = [
 export function getTheSavagesFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
+  const fortyFiveYearsProfile = getFortyFiveYearsFilmHistoryProfile(scenarioId);
+  if (fortyFiveYearsProfile) return fortyFiveYearsProfile;
   if (scenarioId === blueJasmineFilmHistoryProfile.scenarioId) return blueJasmineFilmHistoryProfile;
   return scenarioId === theSavagesFilmHistoryProfile.scenarioId
     ? theSavagesFilmHistoryProfile
@@ -31,6 +37,8 @@ export function getTheSavagesFilmHistoryProfile(
 export function getTheSavagesFilmHistoryDonors(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryProfile[] | undefined {
+  const fortyFiveYearsDonors = getFortyFiveYearsFilmHistoryDonors(profile);
+  if (fortyFiveYearsDonors) return fortyFiveYearsDonors;
   if (profile.scenarioId === blueJasmineFilmHistoryProfile.scenarioId) return blueJasmineDonors;
   return profile.scenarioId === theSavagesFilmHistoryProfile.scenarioId
     ? theSavagesDonors
