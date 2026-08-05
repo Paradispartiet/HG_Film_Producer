@@ -31,6 +31,10 @@ import {
   getInsideOutFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsInsideOutCatalog";
 import {
+  getLandOfMineFilmHistoryDonors,
+  getLandOfMineFilmHistoryProfile,
+} from "./scenarioFilmStudyConstructedWorldsLandOfMineCatalog";
+import {
   getHugoFilmHistoryDonors,
   getHugoFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsHugoCatalog";
@@ -105,6 +109,7 @@ export function getConstructedWorldsFilmHistoryProfile(scenarioId: string): Film
   return getRushFilmHistoryProfile(scenarioId)
     ?? getHerFilmHistoryProfile(scenarioId)
     ?? getInsideOutFilmHistoryProfile(scenarioId)
+    ?? getLandOfMineFilmHistoryProfile(scenarioId)
     ?? getTheImpossibleFilmHistoryProfile(scenarioId)
     ?? getMoonriseKingdomFilmHistoryProfile(scenarioId)
     ?? getHugoFilmHistoryProfile(scenarioId)
@@ -153,6 +158,7 @@ export function createConstructedWorldsFilmHistoryChoices(
   const rushDonors = getRushFilmHistoryDonors(profile);
   const herDonors = getHerFilmHistoryDonors(profile);
   const insideOutDonors = getInsideOutFilmHistoryDonors(profile);
+  const landOfMineDonors = getLandOfMineFilmHistoryDonors(profile);
   const impossibleDonors = getTheImpossibleFilmHistoryDonors(profile);
   const moonriseDonors = getMoonriseKingdomFilmHistoryDonors(profile);
   const hugoDonors = getHugoFilmHistoryDonors(profile);
@@ -167,6 +173,7 @@ export function createConstructedWorldsFilmHistoryChoices(
   const donors: readonly FilmHistoryProfile[] = (rushDonors
     ?? herDonors
     ?? insideOutDonors
+    ?? landOfMineDonors
     ?? impossibleDonors
     ?? moonriseDonors
     ?? hugoDonors
@@ -183,7 +190,7 @@ export function createConstructedWorldsFilmHistoryChoices(
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = rushDonors
     ? 2
-    : herDonors || insideOutDonors || impossibleDonors || moonriseDonors || hugoDonors || walleDonors || dogvilleDonors || thePianistDonors
+    : herDonors || insideOutDonors || landOfMineDonors || impossibleDonors || moonriseDonors || hugoDonors || walleDonors || dogvilleDonors || thePianistDonors
       ? 0
       : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
@@ -205,6 +212,9 @@ export function createConstructedWorldsFilmHistoryChoices(
   const insideOutMatch = "This matches the documented relationship among Docter's daughter-inspired emotion research, the five-emotion screenplay, the Joy-Sadness journey, the parallel Riley and Mind worlds, Eggleston's mental geography, Lin and White's virtual camera-lighting grammar, particle bodies, geometry-light rendering, Nolting's parallel edit, Klyce and Mills's sound design and Giacchino's inward score.";
   const insideOutPartial = "This is another real animation, subjective-interior or constructed-world system, but it does not combine a child's family transition, emotion research, five personified functions, parallel outer and inner causality, a Joy-Sadness journey and custom energy-light rendering in the same way.";
   const insideOutMiss = "This places the film inside the wrong relationship between psychology research, child-centred family drama, voice-and-animation performance, dual-world design, virtual cinematography, geometry-light rendering, parallel editing, mental sound and inward music.";
+  const landOfMineMatch = "This matches the documented relationship among Zandvliet's multi-year postwar research, the restricted Carl-and-prisoners moral structure, the Oksbøl coast, young German casting, daylight beauty, vulnerable actor-following photography, repeated mine-clearing procedure, metallic close sound and safety-controlled practical-digital explosions.";
+  const landOfMinePartial = "This is another real wartime, location-survival or research-led reconstruction system, but it does not combine Denmark's 1945 mine-clearing history, captive teenage labour, one exposed beach, repeated mine-clearing procedure and a guard's movement from revenge toward recognition in the same way.";
+  const landOfMineMiss = "This places the film inside the wrong relationship between postwar historical research, West Jutland landscape, youthful nonprofessional performance, daylight suspense, procedural sound, controlled explosions and moral transformation.";
   const walleMatch = "This matches the documented relationship between silent-comedy robot performance, ecological worldbuilding, color-scripted environments, simulated photographed-camera behavior, Ben Burtt's vocal-mechanical sound and orchestral-pop musical memory.";
   const wallePartial = "This is another real constructed-world production, but it does not combine dialogue-light animation, consumer dystopia, virtual 70 mm camera research, robot sound language and an Earth-to-space ecological romance in the same way.";
   const walleMiss = "This places the film inside the wrong relationship between animation, silent visual storytelling, environmental design, virtual optics, editing, sound identity, music and ecological return.";
@@ -226,21 +236,23 @@ export function createConstructedWorldsFilmHistoryChoices(
         ? rushMatch
         : herDonors
           ? herMatch
-          : impossibleDonors
-            ? impossibleMatch
-            : moonriseDonors
-              ? moonriseMatch
-              : hugoDonors
-                ? hugoMatch
-                : insideOutDonors
-                  ? insideOutMatch
-                  : walleDonors
-                    ? walleMatch
-                  : dogvilleDonors
-                    ? dogvilleMatch
-                    : thePianistDonors
-                      ? thePianistMatch
-                      : "This connects the film's constructed world, historical position and documented craft system.",
+          : landOfMineDonors
+            ? landOfMineMatch
+            : impossibleDonors
+              ? impossibleMatch
+              : moonriseDonors
+                ? moonriseMatch
+                : hugoDonors
+                  ? hugoMatch
+                  : insideOutDonors
+                    ? insideOutMatch
+                    : walleDonors
+                      ? walleMatch
+                      : dogvilleDonors
+                        ? dogvilleMatch
+                        : thePianistDonors
+                          ? thePianistMatch
+                          : "This connects the film's constructed world, historical position and documented craft system.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
@@ -250,23 +262,25 @@ export function createConstructedWorldsFilmHistoryChoices(
         ? rushPartial
         : herDonors
           ? herPartial
-          : impossibleDonors
-            ? impossiblePartial
-            : moonriseDonors
-              ? moonrisePartial
-              : hugoDonors
-                ? hugoPartial
-                : insideOutDonors
-                  ? insideOutPartial
-                  : walleDonors
-                    ? wallePartial
-                  : dogvilleDonors
-                    ? dogvillePartial
-                    : thePianistDonors
-                      ? thePianistPartial
-                      : forrestGumpDonorScenarioIds
-                        ? forrestGumpPartial
-                        : "This is a real constructed-world method, but it belongs to a different historical and production system.",
+          : landOfMineDonors
+            ? landOfMinePartial
+            : impossibleDonors
+              ? impossiblePartial
+              : moonriseDonors
+                ? moonrisePartial
+                : hugoDonors
+                  ? hugoPartial
+                  : insideOutDonors
+                    ? insideOutPartial
+                    : walleDonors
+                      ? wallePartial
+                      : dogvilleDonors
+                        ? dogvillePartial
+                        : thePianistDonors
+                          ? thePianistPartial
+                          : forrestGumpDonorScenarioIds
+                            ? forrestGumpPartial
+                            : "This is a real constructed-world method, but it belongs to a different historical and production system.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
@@ -276,23 +290,25 @@ export function createConstructedWorldsFilmHistoryChoices(
         ? rushMiss
         : herDonors
           ? herMiss
-          : impossibleDonors
-            ? impossibleMiss
-            : moonriseDonors
-              ? moonriseMiss
-              : hugoDonors
-                ? hugoMiss
-                : insideOutDonors
-                  ? insideOutMiss
-                  : walleDonors
-                    ? walleMiss
-                  : dogvilleDonors
-                    ? dogvilleMiss
-                    : thePianistDonors
-                      ? thePianistMiss
-                      : forrestGumpDonorScenarioIds
-                        ? forrestGumpMiss
-                        : "This places the film inside the wrong temporal, spatial and technical tradition.",
+          : landOfMineDonors
+            ? landOfMineMiss
+            : impossibleDonors
+              ? impossibleMiss
+              : moonriseDonors
+                ? moonriseMiss
+                : hugoDonors
+                  ? hugoMiss
+                  : insideOutDonors
+                    ? insideOutMiss
+                    : walleDonors
+                      ? walleMiss
+                      : dogvilleDonors
+                        ? dogvilleMiss
+                        : thePianistDonors
+                          ? thePianistMiss
+                          : forrestGumpDonorScenarioIds
+                            ? forrestGumpMiss
+                            : "This places the film inside the wrong temporal, spatial and technical tradition.",
     }] : []),
   ];
 }

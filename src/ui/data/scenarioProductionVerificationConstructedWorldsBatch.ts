@@ -3,6 +3,7 @@ import { dogvilleProductionCaseVerification } from "./scenarioProductionVerifica
 import { thePianistProductionCaseVerification } from "./scenarioProductionVerificationPianist";
 import { rushProductionCaseVerification } from "./scenarioProductionVerificationRush";
 import { insideOutProductionCaseVerification } from "./scenarioProductionVerificationInsideOut";
+import { landOfMineProductionCaseVerification } from "./scenarioProductionVerificationLandOfMine";
 
 export const constructedWorldsVerificationRecords = [
   {
@@ -193,4 +194,5 @@ export const constructedWorldsVerificationRecords = [
   dogvilleProductionCaseVerification,
   rushProductionCaseVerification,
   insideOutProductionCaseVerification,
+  landOfMineProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
