@@ -2,6 +2,7 @@ import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerif
 import { anomalisaProductionCaseVerification } from "./scenarioProductionVerificationAnomalisa";
 import { amyProductionCaseVerification } from "./scenarioProductionVerificationAmy";
 import { brothersProductionCaseVerification } from "./scenarioProductionVerificationBrothers";
+import { driftersProductionCaseVerification } from "./scenarioProductionVerificationDrifters";
 import { taxidermiaProductionCaseVerification } from "./scenarioProductionVerificationTaxidermia";
 
 export const independentStorytellingVerificationRecords = [
@@ -176,5 +177,6 @@ export const independentStorytellingVerificationRecords = [
   anomalisaProductionCaseVerification,
   amyProductionCaseVerification,
   brothersProductionCaseVerification,
+  driftersProductionCaseVerification,
   taxidermiaProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
