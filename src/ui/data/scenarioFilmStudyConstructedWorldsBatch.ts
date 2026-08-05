@@ -27,6 +27,10 @@ import {
   getHerFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsHerCatalog";
 import {
+  getInsideOutFilmHistoryDonors,
+  getInsideOutFilmHistoryProfile,
+} from "./scenarioFilmStudyConstructedWorldsInsideOutCatalog";
+import {
   getHugoFilmHistoryDonors,
   getHugoFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsHugoCatalog";
@@ -100,6 +104,7 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 export function getConstructedWorldsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
   return getRushFilmHistoryProfile(scenarioId)
     ?? getHerFilmHistoryProfile(scenarioId)
+    ?? getInsideOutFilmHistoryProfile(scenarioId)
     ?? getTheImpossibleFilmHistoryProfile(scenarioId)
     ?? getMoonriseKingdomFilmHistoryProfile(scenarioId)
     ?? getHugoFilmHistoryProfile(scenarioId)
@@ -147,6 +152,7 @@ export function createConstructedWorldsFilmHistoryChoices(
 ): readonly FilmHistoryChoice[] {
   const rushDonors = getRushFilmHistoryDonors(profile);
   const herDonors = getHerFilmHistoryDonors(profile);
+  const insideOutDonors = getInsideOutFilmHistoryDonors(profile);
   const impossibleDonors = getTheImpossibleFilmHistoryDonors(profile);
   const moonriseDonors = getMoonriseKingdomFilmHistoryDonors(profile);
   const hugoDonors = getHugoFilmHistoryDonors(profile);
@@ -160,6 +166,7 @@ export function createConstructedWorldsFilmHistoryChoices(
   const forrestGumpDonorScenarioIds = getForrestGumpDonorScenarioIds(profile);
   const donors: readonly FilmHistoryProfile[] = (rushDonors
     ?? herDonors
+    ?? insideOutDonors
     ?? impossibleDonors
     ?? moonriseDonors
     ?? hugoDonors
@@ -176,7 +183,7 @@ export function createConstructedWorldsFilmHistoryChoices(
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = rushDonors
     ? 2
-    : herDonors || impossibleDonors || moonriseDonors || hugoDonors || walleDonors || dogvilleDonors || thePianistDonors
+    : herDonors || insideOutDonors || impossibleDonors || moonriseDonors || hugoDonors || walleDonors || dogvilleDonors || thePianistDonors
       ? 0
       : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
@@ -195,6 +202,9 @@ export function createConstructedWorldsFilmHistoryChoices(
   const dogvilleMatch = "This matches the documented production relationship among the prologue-and-nine-chapter moral parable, post-Dogme theatrical abstraction, Peter Grant's chalk town, exposed ensemble performance, mobile digital close-ups, computer-controlled stage light, sound-created invisible architecture, Baroque counterpoint and composited overhead views.";
   const dogvillePartial = "This is another real artificial-town, total-space or von Trier digital-performance system, but it does not make absent walls, visible neighbours, narrated chapters, mime and off-screen sound the same moral laboratory.";
   const dogvilleMiss = "This places the film inside the wrong relationship between theatrical abstraction, social surveillance, ensemble exposure, digital camera mobility, stage lighting, narrated structure, invisible doors, sparse props and composited geography.";
+  const insideOutMatch = "This matches the documented relationship among Docter's daughter-inspired emotion research, the five-emotion screenplay, the Joy-Sadness journey, the parallel Riley and Mind worlds, Eggleston's mental geography, Lin and White's virtual camera-lighting grammar, particle bodies, geometry-light rendering, Nolting's parallel edit, Klyce and Mills's sound design and Giacchino's inward score.";
+  const insideOutPartial = "This is another real animation, subjective-interior or constructed-world system, but it does not combine a child's family transition, emotion research, five personified functions, parallel outer and inner causality, a Joy-Sadness journey and custom energy-light rendering in the same way.";
+  const insideOutMiss = "This places the film inside the wrong relationship between psychology research, child-centred family drama, voice-and-animation performance, dual-world design, virtual cinematography, geometry-light rendering, parallel editing, mental sound and inward music.";
   const walleMatch = "This matches the documented relationship between silent-comedy robot performance, ecological worldbuilding, color-scripted environments, simulated photographed-camera behavior, Ben Burtt's vocal-mechanical sound and orchestral-pop musical memory.";
   const wallePartial = "This is another real constructed-world production, but it does not combine dialogue-light animation, consumer dystopia, virtual 70 mm camera research, robot sound language and an Earth-to-space ecological romance in the same way.";
   const walleMiss = "This places the film inside the wrong relationship between animation, silent visual storytelling, environmental design, virtual optics, editing, sound identity, music and ecological return.";
@@ -222,8 +232,10 @@ export function createConstructedWorldsFilmHistoryChoices(
               ? moonriseMatch
               : hugoDonors
                 ? hugoMatch
-                : walleDonors
-                  ? walleMatch
+                : insideOutDonors
+                  ? insideOutMatch
+                  : walleDonors
+                    ? walleMatch
                   : dogvilleDonors
                     ? dogvilleMatch
                     : thePianistDonors
@@ -244,8 +256,10 @@ export function createConstructedWorldsFilmHistoryChoices(
               ? moonrisePartial
               : hugoDonors
                 ? hugoPartial
-                : walleDonors
-                  ? wallePartial
+                : insideOutDonors
+                  ? insideOutPartial
+                  : walleDonors
+                    ? wallePartial
                   : dogvilleDonors
                     ? dogvillePartial
                     : thePianistDonors
@@ -268,8 +282,10 @@ export function createConstructedWorldsFilmHistoryChoices(
               ? moonriseMiss
               : hugoDonors
                 ? hugoMiss
-                : walleDonors
-                  ? walleMiss
+                : insideOutDonors
+                  ? insideOutMiss
+                  : walleDonors
+                    ? walleMiss
                   : dogvilleDonors
                     ? dogvilleMiss
                     : thePianistDonors
