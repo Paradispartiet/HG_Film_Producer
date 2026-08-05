@@ -1,7 +1,10 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import { scenesFromAMarriageFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceScenesMarriage";
 import { dancerInTheDarkFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceDancerDark";
+import { homesickFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceHomesick";
 import { secretsAndLiesFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceSecretsLies";
 import { elephantFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingElephant";
+import { theSouvenirFilmHistoryProfile } from "./scenarioFilmStudyIndependentDesireTheSouvenir";
 
 export const mommyFilmHistoryProfile = {
   scenarioId: "scenario_mommy_2014",
@@ -38,13 +41,21 @@ const donors = [
   secretsAndLiesFilmHistoryProfile,
 ] as const;
 
+const homesickDonors = [
+  secretsAndLiesFilmHistoryProfile,
+  theSouvenirFilmHistoryProfile,
+  scenesFromAMarriageFilmHistoryProfile,
+] as const satisfies readonly FilmHistoryProfile[];
+
 export function getMommyFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
+  if (scenarioId === homesickFilmHistoryProfile.scenarioId) return homesickFilmHistoryProfile;
   return scenarioId === mommyFilmHistoryProfile.scenarioId
     ? mommyFilmHistoryProfile
     : undefined;
 }
 
 export function getMommyFilmHistoryDonors(profile: FilmHistoryProfile): readonly FilmHistoryProfile[] | undefined {
+  if (profile.scenarioId === homesickFilmHistoryProfile.scenarioId) return homesickDonors;
   return profile.scenarioId === mommyFilmHistoryProfile.scenarioId
     ? donors
     : undefined;
