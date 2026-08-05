@@ -102,13 +102,16 @@ import { courtFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianC
 import { marlinaFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianMarlina";
 import { syndromesAndACenturyFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianSyndromes";
 import { theDiscipleFilmHistoryProfile } from "./scenarioFilmStudySouthSoutheastAsianTheDisciple";
+import { anomalisaFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureAnomalisa";
 import { bartonFinkFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureBartonFink";
+import { beingJohnMalkovichFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureBeingJohnMalkovich";
 import {
   getBlindnessFilmHistoryDonors,
   getBlindnessFilmHistoryProfile,
 } from "./scenarioFilmStudySubjectiveEnclosureBlindnessCatalog";
 import { burningFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureBurning";
 import { anElephantSittingStillFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureElephant";
+import { eyesWideShutFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureEyesWideShut";
 import { kagemushaFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureKagemusha";
 
 export type IndependentStorytellingProfileGroup =
@@ -170,6 +173,7 @@ const profiles = [
   stillLifeFilmHistoryProfile,
   secretSunshineFilmHistoryProfile,
   poetryFilmHistoryProfile,
+  anomalisaFilmHistoryProfile,
   burningFilmHistoryProfile,
   anElephantSittingStillFilmHistoryProfile,
   kagemushaFilmHistoryProfile,
@@ -259,6 +263,7 @@ assignGroup("asian_landscape_grief_attention", [
   poetryFilmHistoryProfile.scenarioId,
 ]);
 assignGroup("subjective_enclosure_performance", [
+  anomalisaFilmHistoryProfile.scenarioId,
   burningFilmHistoryProfile.scenarioId,
   anElephantSittingStillFilmHistoryProfile.scenarioId,
   kagemushaFilmHistoryProfile.scenarioId,
@@ -381,6 +386,14 @@ export function getIndependentStorytellingDonors(
 
   const theSavagesDonors = getTheSavagesFilmHistoryDonors(profile);
   if (theSavagesDonors) return theSavagesDonors;
+
+  if (profile.scenarioId === anomalisaFilmHistoryProfile.scenarioId) {
+    return [
+      beingJohnMalkovichFilmHistoryProfile,
+      bartonFinkFilmHistoryProfile,
+      eyesWideShutFilmHistoryProfile,
+    ];
+  }
 
   if (profile.scenarioId === norteFilmHistoryProfile.scenarioId) {
     return [
