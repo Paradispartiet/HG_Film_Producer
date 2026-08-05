@@ -1,10 +1,13 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import { theRiderFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecarityTheRider";
+import { homesickFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceHomesick";
+import { mySkinnySisterFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceMySkinnySister";
 import { scenesFromAMarriageFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceScenesMarriage";
 import { dancerInTheDarkFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceDancerDark";
-import { homesickFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceHomesick";
 import { secretsAndLiesFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceSecretsLies";
 import { elephantFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingElephant";
 import { theSouvenirFilmHistoryProfile } from "./scenarioFilmStudyIndependentDesireTheSouvenir";
+import { stillWalkingFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryStillWalking";
 
 export const mommyFilmHistoryProfile = {
   scenarioId: "scenario_mommy_2014",
@@ -47,7 +50,14 @@ const homesickDonors = [
   scenesFromAMarriageFilmHistoryProfile,
 ] as const satisfies readonly FilmHistoryProfile[];
 
+const mySkinnySisterDonors = [
+  mommyFilmHistoryProfile,
+  theRiderFilmHistoryProfile,
+  stillWalkingFilmHistoryProfile,
+] as const satisfies readonly FilmHistoryProfile[];
+
 export function getMommyFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
+  if (scenarioId === mySkinnySisterFilmHistoryProfile.scenarioId) return mySkinnySisterFilmHistoryProfile;
   if (scenarioId === homesickFilmHistoryProfile.scenarioId) return homesickFilmHistoryProfile;
   return scenarioId === mommyFilmHistoryProfile.scenarioId
     ? mommyFilmHistoryProfile
@@ -55,6 +65,7 @@ export function getMommyFilmHistoryProfile(scenarioId: string): FilmHistoryProfi
 }
 
 export function getMommyFilmHistoryDonors(profile: FilmHistoryProfile): readonly FilmHistoryProfile[] | undefined {
+  if (profile.scenarioId === mySkinnySisterFilmHistoryProfile.scenarioId) return mySkinnySisterDonors;
   if (profile.scenarioId === homesickFilmHistoryProfile.scenarioId) return homesickDonors;
   return profile.scenarioId === mommyFilmHistoryProfile.scenarioId
     ? donors
