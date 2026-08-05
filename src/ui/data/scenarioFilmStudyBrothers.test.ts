@@ -54,7 +54,7 @@ test("Brothers receives exact archive, domestic-time and documentary-intimacy do
   assert.equal(new Set(choices.map((choice) => choice.label)).size, 3);
   assert.ok(choices[0]?.label.includes("eight-year childhood-time chronicle"));
   assert.ok(choices[0]?.label.includes("450 hours of footage"));
-  assert.ok(choices.slice(1).some((choice) => choice.label.includes("family") || choice.label.includes("archive") || choice.label.includes("community")));
+  assert.ok(choices.slice(1).some((choice) => /family|archive|community/i.test(choice.label)));
 });
 
 test("Brothers integration preserves established family and documentary profiles", () => {
