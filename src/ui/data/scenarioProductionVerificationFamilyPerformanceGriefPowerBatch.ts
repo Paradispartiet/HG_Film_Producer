@@ -1,6 +1,7 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
 import { blueJasmineVerificationRecords } from "./scenarioProductionVerificationBlueJasmine";
 import { mommyProductionCaseVerification } from "./scenarioProductionVerificationMommy";
+import { mySkinnySisterProductionCaseVerification } from "./scenarioProductionVerificationMySkinnySister";
 import { theSavagesVerificationRecords } from "./scenarioProductionVerificationTheSavages";
 
 export const familyPerformanceGriefPowerVerificationRecords = [
@@ -164,6 +165,7 @@ export const familyPerformanceGriefPowerVerificationRecords = [
       }
     ]
   },
+  mySkinnySisterProductionCaseVerification,
   mommyProductionCaseVerification,
   ...theSavagesVerificationRecords,
   ...blueJasmineVerificationRecords,
