@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { dheepanProductionCaseVerification } from "./scenarioProductionVerificationDheepan";
 
 export const asianTransnationalUrbanIdentityVerificationRecords = [
   {
@@ -160,5 +161,6 @@ export const asianTransnationalUrbanIdentityVerificationRecords = [
         note: "The review documents the real-life inspiration, adoption procedure, cultural translation and the five-year and three-year jumps that prevent a simple reconciliation narrative."
       }
     ]
-  }
+  },
+  dheepanProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
