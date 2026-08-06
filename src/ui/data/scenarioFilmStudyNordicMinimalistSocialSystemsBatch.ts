@@ -28,6 +28,10 @@ import {
   getAPigeonSatFilmHistoryProfile,
 } from "./scenarioFilmStudyNordicMinimalistPigeonCatalog";
 import { songsFromSecondFloorFilmHistoryProfile } from "./scenarioFilmStudyNordicMinimalistSongsFromSecondFloor";
+import {
+  getVirginMountainFilmHistoryDonors,
+  getVirginMountainFilmHistoryProfile,
+} from "./scenarioFilmStudyNordicMinimalistVirginMountainCatalog";
 
 const profiles = {
   [matchFactoryGirlFilmHistoryProfile.scenarioId]: matchFactoryGirlFilmHistoryProfile,
@@ -74,7 +78,8 @@ function profileCoverage(profile: FilmHistoryProfile): readonly FilmStudyCoverag
 }
 
 export function getNordicMinimalistSocialSystemsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
-  return getAPigeonSatFilmHistoryProfile(scenarioId)
+  return getVirginMountainFilmHistoryProfile(scenarioId)
+    ?? getAPigeonSatFilmHistoryProfile(scenarioId)
     ?? getAdamsApplesFilmHistoryProfile(scenarioId)
     ?? getNoiTheAlbinoFilmHistoryProfile(scenarioId)
     ?? getKitchenStoriesFilmHistoryProfile(scenarioId)
@@ -108,11 +113,12 @@ function hashString(value: string): number {
 }
 
 export function createNordicMinimalistSocialSystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
+  const virginMountainDonors = getVirginMountainFilmHistoryDonors(profile);
   const pigeonDonors = getAPigeonSatFilmHistoryDonors(profile);
   const adamsApplesDonors = getAdamsApplesFilmHistoryDonors(profile);
   const noiDonors = getNoiTheAlbinoFilmHistoryDonors(profile);
   const kitchenStoriesDonors = getKitchenStoriesFilmHistoryDonors(profile);
-  const specialDonors = pigeonDonors ?? adamsApplesDonors ?? noiDonors ?? kitchenStoriesDonors;
+  const specialDonors = virginMountainDonors ?? pigeonDonors ?? adamsApplesDonors ?? noiDonors ?? kitchenStoriesDonors;
   const donors = specialDonors ?? Object.values(profiles)
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
@@ -124,43 +130,49 @@ export function createNordicMinimalistSocialSystemsFilmHistoryChoices(profile: F
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: pigeonDonors
-        ? "This matches the documented production relationship among the final Living Trilogy chapter, Studio 24 independence, linked death-and-existence vignettes, two novelty salesmen, hand-built hyperreal rooms, trompe-l'oeil depth, nonprofessional faces, pale costume and makeup, fixed digital deep-focus tableaux, exact scene ordering, environmental sound, recurring songs and selective visual effects."
-        : adamsApplesDonors
-          ? "This matches the documented production relationship among a modern Book of Job screenplay, Danish-German production, a rural rehabilitation micro-community, cast-specific writing, repeated ensemble rehearsal, 35 mm CinemaScope deadpan, controlled design, emotionally disciplined editing, restrained sound, pop-song counterpoint and award-winning disasters around the apple tree and Ivan's body."
-          : noiDonors
-            ? "This matches the documented production relationship among the New Icelandic Wave, a twelve-year character idea, European coproduction, a snow-dependent Westfjords settlement, Tómas Lemarquis and a locally recruited ensemble, Rasmus Videbæk's 35 mm white-landscape and dark-interior contrast, the basement refuge, Daniel Dencik's deadpan cutting, Pétur Einarsson's practical sound, Slowblow's restrained music and the avalanche that turns imagined escape into physical catastrophe."
-            : kitchenStoriesDonors
-              ? "This matches the documented production relationship among postwar Swedish home research, Norwegian-Swedish coproduction, the no-contact observation protocol, Calmeyer and Norström's restrained friendship, Billy Johansson's kitchen-chair-caravan design, Philip Øgaard's 35 mm framing, patient editing, practical silence and Hans Mathisen's music."
-              : "This matches the documented relationship between Nordic social conditions, production scale, performance, spatial design, image, editing and sound.",
+      feedback: virginMountainDonors
+        ? "This matches the documented production relationship among Dagur Kári's return to a small Icelandic-language crew, a screenplay written for Gunnar Jónsson, the airport-toy metaphor, an Icelandic-Danish RVK/Nimbus coproduction, exact non-classical performance, practical workplace and domestic spaces, Scope framing, a year-long search for the ending, Dolby 5.1 restraint and Slowblow's melancholy music."
+        : pigeonDonors
+          ? "This matches the documented production relationship among the final Living Trilogy chapter, Studio 24 independence, linked death-and-existence vignettes, two novelty salesmen, hand-built hyperreal rooms, trompe-l'oeil depth, nonprofessional faces, pale costume and makeup, fixed digital deep-focus tableaux, exact scene ordering, environmental sound, recurring songs and selective visual effects."
+          : adamsApplesDonors
+            ? "This matches the documented production relationship among a modern Book of Job screenplay, Danish-German production, a rural rehabilitation micro-community, cast-specific writing, repeated ensemble rehearsal, 35 mm CinemaScope deadpan, controlled design, emotionally disciplined editing, restrained sound, pop-song counterpoint and award-winning disasters around the apple tree and Ivan's body."
+            : noiDonors
+              ? "This matches the documented production relationship among the New Icelandic Wave, a twelve-year character idea, European coproduction, a snow-dependent Westfjords settlement, Tómas Lemarquis and a locally recruited ensemble, Rasmus Videbæk's 35 mm white-landscape and dark-interior contrast, the basement refuge, Daniel Dencik's deadpan cutting, Pétur Einarsson's practical sound, Slowblow's restrained music and the avalanche that turns imagined escape into physical catastrophe."
+              : kitchenStoriesDonors
+                ? "This matches the documented production relationship among postwar Swedish home research, Norwegian-Swedish coproduction, the no-contact observation protocol, Calmeyer and Norström's restrained friendship, Billy Johansson's kitchen-chair-caravan design, Philip Øgaard's 35 mm framing, patient editing, practical silence and Hans Mathisen's music."
+                : "This matches the documented relationship between Nordic social conditions, production scale, performance, spatial design, image, editing and sound.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: pigeonDonors
-        ? "This is another real constructed tableau, ensemble or social-comedy production system, but it does not combine the closing Living Trilogy perspective, death prologue, recurring novelty salesmen, historical anachronism, corpse-pale human types, hand-built Studio 24 hyperreality and organised cruelty inside the same static moral gaze."
-        : adamsApplesDonors
-          ? "This is another real Nordic deadpan, damaged-community or moral-rehabilitation production system, but it does not combine a neo-Nazi and a denial-driven priest, the Book of Job, apple-pie labour, repeated cast rehearsal, pastoral CinemaScope, escalating tree catastrophes, grotesque bodily damage and How Deep Is Your Love in the same way."
-          : noiDonors
-            ? "This is another real Nordic outsider, deadpan or socially confined production system, but it does not combine one rebellious teenager, a plausible invented fjord village, amateur community performance, school and petrol-station routine, a basement refuge, tropical escape images, dangerous snow and sudden avalanche rupture in the same way."
-            : kitchenStoriesDonors
-              ? "This is another real Nordic deadpan, institutional or observational production system, but it does not combine an elevated observation chair, a ban on contact, postwar kitchen science, cross-border mistrust and friendship through the same practical domestic space."
-              : "This is a real Nordic minimalist or social production system, but it organizes studio control, location, performance, narrative time and colour differently.",
+      feedback: virginMountainDonors
+        ? "This is another real Nordic deadpan outsider or male-solitude production system, but it does not combine a middle-aged airport worker, miniature routines, a lead-specific screenplay, socially misread physical presence, disrupted romantic-comedy expectations and an ending discovered through prolonged postproduction in the same way."
+        : pigeonDonors
+          ? "This is another real constructed tableau, ensemble or social-comedy production system, but it does not combine the closing Living Trilogy perspective, death prologue, recurring novelty salesmen, historical anachronism, corpse-pale human types, hand-built Studio 24 hyperreality and organised cruelty inside the same static moral gaze."
+          : adamsApplesDonors
+            ? "This is another real Nordic deadpan, damaged-community or moral-rehabilitation production system, but it does not combine a neo-Nazi and a denial-driven priest, the Book of Job, apple-pie labour, repeated cast rehearsal, pastoral CinemaScope, escalating tree catastrophes, grotesque bodily damage and How Deep Is Your Love in the same way."
+            : noiDonors
+              ? "This is another real Nordic outsider, deadpan or socially confined production system, but it does not combine one rebellious teenager, a plausible invented fjord village, amateur community performance, school and petrol-station routine, a basement refuge, tropical escape images, dangerous snow and sudden avalanche rupture in the same way."
+              : kitchenStoriesDonors
+                ? "This is another real Nordic deadpan, institutional or observational production system, but it does not combine an elevated observation chair, a ban on contact, postwar kitchen science, cross-border mistrust and friendship through the same practical domestic space."
+                : "This is a real Nordic minimalist or social production system, but it organizes studio control, location, performance, narrative time and colour differently.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: pigeonDonors
-        ? "This places the film inside the wrong relationship between Roy Andersson's independent studio, Living Trilogy completion, vignette structure, fixed deep-focus observation, hyperreal set construction, pale ensemble choreography, historical time collapse, environmental sound, music and effects-supported social allegory."
-        : adamsApplesDonors
-          ? "This places the film inside the wrong relationship between Danish black comedy, theological fable, rehabilitation institution, ensemble preparation, controlled wide-screen framing, emotional editing, sound restraint, popular music, practical violence and visual-effects-supported miracle."
-          : noiDonors
-            ? "This places the film inside the wrong relationship between Icelandic youth, institutional boredom, remote geography, professional and nonprofessional performance, winter production, 35 mm landscape, dark interiors, basement safety, practical sound, minimalist music, black comedy and catastrophic escape."
-            : kitchenStoriesDonors
-              ? "This places the film inside the wrong relationship between functionalist research, observer and subject, postwar national identity, kitchen architecture, male solitude, deadpan performance, silence and reciprocal care."
-              : "This assigns the film to the wrong historical, industrial and stylistic Nordic production logic.",
+      feedback: virginMountainDonors
+        ? "This places the film inside the wrong relationship between actor-specific writing, Icelandic return, small-crew production, airport and domestic routine, non-classical performance, object scale, Scope social framing, editorial revision, practical sound, music and compassionate adult change."
+        : pigeonDonors
+          ? "This places the film inside the wrong relationship between Roy Andersson's independent studio, Living Trilogy completion, vignette structure, fixed deep-focus observation, hyperreal set construction, pale ensemble choreography, historical time collapse, environmental sound, music and effects-supported social allegory."
+          : adamsApplesDonors
+            ? "This places the film inside the wrong relationship between Danish black comedy, theological fable, rehabilitation institution, ensemble preparation, controlled wide-screen framing, emotional editing, sound restraint, popular music, practical violence and visual-effects-supported miracle."
+            : noiDonors
+              ? "This places the film inside the wrong relationship between Icelandic youth, institutional boredom, remote geography, professional and nonprofessional performance, winter production, 35 mm landscape, dark interiors, basement safety, practical sound, minimalist music, black comedy and catastrophic escape."
+              : kitchenStoriesDonors
+                ? "This places the film inside the wrong relationship between functionalist research, observer and subject, postwar national identity, kitchen architecture, male solitude, deadpan performance, silence and reciprocal care."
+                : "This assigns the film to the wrong historical, industrial and stylistic Nordic production logic.",
     }] : []),
   ];
 }
