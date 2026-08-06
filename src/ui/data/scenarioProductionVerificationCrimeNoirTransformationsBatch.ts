@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { hatefulEightProductionCaseVerification } from "./scenarioProductionVerificationHatefulEight";
 import { mesrineKillerInstinctProductionCaseVerification } from "./scenarioProductionVerificationMesrineKillerInstinct";
 import { mesrinePublicEnemyProductionCaseVerification } from "./scenarioProductionVerificationMesrinePublicEnemy";
 import { nightcrawlerProductionCaseVerification } from "./scenarioProductionVerificationNightcrawler";
@@ -167,4 +168,5 @@ export const crimeNoirTransformationsVerificationRecords = [
   mesrineKillerInstinctProductionCaseVerification,
   mesrinePublicEnemyProductionCaseVerification,
   nightcrawlerProductionCaseVerification,
+  hatefulEightProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
