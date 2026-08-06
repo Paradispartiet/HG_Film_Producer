@@ -13,10 +13,9 @@ import { resolveScenarioProductionBrief } from "./scenarioProductionBriefs.js";
 const scenarioId = "scenario_a_monster_calls_2016";
 
 test("A Monster Calls resolves as a source-backed child-grief constructed world", () => {
-  const scenarios = getClassicFilmScenarios();
-  const scenario = scenarios.find((candidate) => candidate.id === scenarioId);
+  const scenario = getClassicFilmScenarios().find((candidate) => candidate.id === scenarioId);
   assert.ok(scenario, `Missing scenario ${scenarioId}`);
-  assert.equal(scenarios.findIndex((candidate) => candidate.id === scenarioId) + 1, 121);
+  assert.equal(scenario.source.position, 121);
   assert.equal(scenario.film.runtime_mins, 108);
   assert.deepEqual(scenario.film.directors, ["J.A. Bayona"]);
   assert.deepEqual(scenario.film.genres, ["Adventure", "Drama", "Family", "Fantasy", "Horror"]);
