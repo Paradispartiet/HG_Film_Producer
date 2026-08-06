@@ -11,14 +11,28 @@ import { getProductionCaseVerification } from "./scenarioProductionVerificationR
 import { alcarrasFilmHistoryProfile } from "./scenarioFilmStudyContemporaryDissentAlcarras";
 import { badLuckBangingFilmHistoryProfile } from "./scenarioFilmStudyContemporaryDissentBadLuck";
 import { synonymsFilmHistoryProfile } from "./scenarioFilmStudyContemporaryDissentSynonyms";
+import { taxiFilmHistoryProfile } from "./scenarioFilmStudyContemporaryDissentTaxi";
 import { thereIsNoEvilFilmHistoryProfile } from "./scenarioFilmStudyContemporaryDissentThereIsNoEvil";
+import { tasteOfCherryFilmHistoryProfile } from "./scenarioFilmStudyMinimalistRoadTasteOfCherry";
+import { whereIsTheFriendsHouseFilmHistoryProfile } from "./scenarioFilmStudyMinimalistRoadWhereFriendsHouse";
 
 const profiles = {
   [synonymsFilmHistoryProfile.scenarioId]: synonymsFilmHistoryProfile,
   [thereIsNoEvilFilmHistoryProfile.scenarioId]: thereIsNoEvilFilmHistoryProfile,
   [badLuckBangingFilmHistoryProfile.scenarioId]: badLuckBangingFilmHistoryProfile,
   [alcarrasFilmHistoryProfile.scenarioId]: alcarrasFilmHistoryProfile,
+  [taxiFilmHistoryProfile.scenarioId]: taxiFilmHistoryProfile,
 } as const satisfies Record<string, FilmHistoryProfile>;
+
+const taxiDonors = [
+  tasteOfCherryFilmHistoryProfile,
+  thereIsNoEvilFilmHistoryProfile,
+  whereIsTheFriendsHouseFilmHistoryProfile,
+] as const satisfies readonly FilmHistoryProfile[];
+
+export function getTaxiFilmHistoryDonors(profile: FilmHistoryProfile): readonly FilmHistoryProfile[] {
+  return profile.scenarioId === taxiFilmHistoryProfile.scenarioId ? taxiDonors : [];
+}
 
 function rank(status: FilmStudyCoverageOverride["status"]): number {
   if (status === "source_verified") return 4;
@@ -88,10 +102,13 @@ function hashString(value: string): number {
 }
 
 export function createContemporaryDissentRuralSystemsFilmHistoryChoices(profile: FilmHistoryProfile): readonly FilmHistoryChoice[] {
-  const donors = Object.values(profiles)
-    .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
-    .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
-  const start = hashString(profile.scenarioId);
+  const isTaxi = profile.scenarioId === taxiFilmHistoryProfile.scenarioId;
+  const donors = isTaxi
+    ? taxiDonors
+    : Object.values(profiles)
+      .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
+      .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
+  const start = isTaxi ? 0 : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
   const far = donors[(start + 1) % donors.length];
   return [
@@ -99,19 +116,25 @@ export function createContemporaryDissentRuralSystemsFilmHistoryChoices(profile:
       id: `${profile.scenarioId}-history-match`,
       label: `${profile.period}: ${profile.moment}`,
       quality: "match",
-      feedback: "This matches the documented relationship between contemporary dissent, identity, state power, public conflict, rural change, performance, image, editing and sound.",
+      feedback: isTaxi
+        ? "This matches the documented relationship among Panahi's filmmaking ban, self-performance as a taxi driver, dashboard cameras, Tehran passengers, consumer recording devices, censorship rules, episodic editing, traffic sound and clandestine distribution."
+        : "This matches the documented relationship between contemporary dissent, identity, state power, public conflict, rural change, performance, image, editing and sound.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
       label: `${near.period}: ${near.moment}`,
       quality: "partial" as const,
-      feedback: "This is a real contemporary festival production system, but it organizes language, censorship, montage, public confrontation, regional labour and ensemble preparation differently.",
+      feedback: isTaxi
+        ? "This is another real Iranian journey or dissent system, but it does not turn a banned filmmaker, a working taxi, dashboard cameras, passengers and distributable-image rules into the same mobile docufiction apparatus."
+        : "This is a real contemporary festival production system, but it organizes language, censorship, montage, public confrontation, regional labour and ensemble preparation differently.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
       label: `${far.period}: ${far.moment}`,
       quality: "miss" as const,
-      feedback: "This assigns the film to the wrong historical, industrial and formal dissent-or-rural production logic.",
+      feedback: isTaxi
+        ? "This places the film inside the wrong relationship between Iranian censorship, car-space, performed reality, compact digital cameras, urban circulation, editing, sound and image ownership."
+        : "This assigns the film to the wrong historical, industrial and formal dissent-or-rural production logic.",
     }] : []),
   ];
 }
