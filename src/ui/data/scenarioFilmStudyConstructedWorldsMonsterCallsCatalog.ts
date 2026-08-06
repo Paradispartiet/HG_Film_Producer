@@ -1,0 +1,43 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import { hugoFilmHistoryProfile } from "./scenarioFilmStudyConstructedWorldsHugoCatalog";
+import { insideOutFilmHistoryProfile } from "./scenarioFilmStudyConstructedWorldsInsideOutCatalog";
+import { spiritOfTheBeehiveFilmHistoryProfile } from "./scenarioFilmStudyEuropeanPoeticMemorySpiritBeehive";
+
+export const aMonsterCallsFilmHistoryProfile = {
+  scenarioId: "scenario_a_monster_calls_2016",
+  period: "Mid-2010s Spanish-British-American child-grief fantasy combining performance-led creature effects, illustrated tales and grounded family melodrama",
+  traditions: ["Child-viewpoint grief fantasy", "Gothic family melodrama", "Illustrated story-within-story cinema", "Performance-led practical-digital creature production"],
+  before: "Childhood cinema had long turned fear, illness and incomplete adult knowledge into monsters, dreams and fairy tales. Patrick Ness completed Siobhan Dowd's original idea as a novel illustrated by Jim Kay, while J.A. Bayona's The Orphanage and The Impossible had already joined intimate mother-child experience to large physical and emotional spectacle.",
+  moment: "Patrick Ness adapts his own novel in close collaboration with Bayona and producer Belén Atienza, retaining Conor's three tales and demanded fourth truth as the screenplay's grief mechanism. Lewis MacDougall carries the grounded family, school and hospital material while Liam Neeson performs the Monster for two weeks of reference capture and on-set interaction; a large practical head gives the child actor scale and eyeline. Eugenio Caballero designs Conor's home, grandmother's ordered rooms, school, churchyard, drawings and ancient yew as one reality-fantasy system. Óscar Faura photographs the production on ARRI Alexa XT cameras with Hawk anamorphic lenses. Glassworks and Headless turn the embedded tales from watercolor and 2D imagery toward dimensional animation and reality, while MPC builds the forty-foot Monster from a lidar-scanned practical head, sliding wood plates, humanized eyes, keyframed performance and dynamic branches. Bernat Vilaplana and Jaume Martí control the movement among daily care, nightmare, tale and destructive release; Oriol Tarragó makes imagination audible; Fernando Velázquez joins dread, tenderness and choral scale.",
+  after: "The film received twelve Goya nominations and won nine, including direction, cinematography, editing, art direction, sound, score, makeup and effects, while Oriol Tarragó received the European Film Award for sound design. Its production-history value lies in making fantasy neither escape nor explanation: writing, child performance, practical scale references, evolving animation, creature work, image, sound and music all force Conor toward the contradictory truth of loving someone and wanting suffering to end.",
+  historyQuestion: "Which production system explains how a child-grief adaptation, a lead performance anchored by practical eyelines, ordinary family spaces, watercolor tales, an increasingly real animated world, a performance-led CG yew monster, anamorphic digital photography, editorial interruption, award-winning sound and Fernando Velázquez's score become one truthful confrontation with loss?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI, Focus Features and filmmaker accounts place the film in mid-2010s international family fantasy, adapted by Patrick Ness from the novel he completed from Siobhan Dowd's original idea." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The production joins child-viewpoint cinema, gothic family melodrama, illustrated fairy-tale narration and performance-led creature fantasy rather than treating the Monster as a conventional horror antagonist." },
+    { area: "industry_and_production_context", status: "source_verified", note: "BFI, EFA, Participant and Goya records identify Bayona, producer Belén Atienza, the Spanish-led international production and the principal writing, design, image, editorial, sound, music and effects departments." },
+    { area: "reception_and_legacy", status: "source_verified", note: "The Goya record documents nine wins from twelve nominations and the European Film Academy records Oriol Tarragó's 2017 sound-design award." },
+    { area: "screenplay", status: "source_verified", note: "Ness describes sustained Barcelona script meetings with Bayona and Atienza, scene-order work and continuing consultation during the shoot; the adaptation preserves the three stories and Conor's required truth as one emotional structure." },
+    { area: "directing", status: "source_verified", note: "Bayona coordinates grounded child performance, family restraint, music-led emotional staging, practical interaction, evolving tale animation and large-scale destruction while keeping every fantasy event tied to Conor's perception." },
+    { area: "performance", status: "source_verified", note: "Lewis MacDougall carries the restricted child viewpoint; Liam Neeson spent two weeks performing Monster scenes for reference and interaction, while a large practical head supplied MacDougall with physical scale and eyeline on set." },
+    { area: "production_design", status: "source_verified", note: "Eugenio Caballero and Bayona filtered hundreds of creature designs and organized the yew, Conor's drawings, home, grandmother's ordered house, school and graveyard as connected states of grief, control and imagination." },
+    { area: "costume_makeup", status: "source_verified", note: "EFA credits Steven Noble and Marese Langan, while the Goya record recognizes makeup and hair; restrained contemporary clothing and physical illness keep the domestic world credible beside the fantasy pipeline." },
+    { area: "cinematography", status: "source_verified", note: "EFA and Goya identify Óscar Faura and his award-winning photography; the image contrasts ordinary British family spaces with nocturnal yew encounters, storybook colour and increasingly physical fantasy." },
+    { area: "lighting", status: "mapped", note: "The film separates grounded interiors, blue-black nocturnal exteriors, fiery creature interiors and luminous illustrated tales, but the inspected evidence does not provide a sufficiently detailed department-level lighting account." },
+    { area: "camera_format", status: "source_verified", note: "Fxguide identifies ARRI Alexa XT acquisition with Hawk V-Lite anamorphic, V-Lite Vintage '74 and V-Plus lenses, establishing the digital anamorphic capture system." },
+    { area: "editing", status: "mapped", note: "Goya and EFA credit and recognize Bernat Vilaplana and Jaume Martí; the finished construction controls shifts among routine, nightmare, tale, rampage and acceptance, but a detailed editor-process account was not found." },
+    { area: "sound_design", status: "source_verified", note: "The European Film Academy awarded Oriol Tarragó for a design that makes imagination, darkness and emotional transformation audible across whispers, wood movement, destruction, domestic quiet and the Monster's voice." },
+    { area: "music", status: "source_verified", note: "EFA credits Fernando Velázquez and the Goya record recognizes his score, which connects intimate grief, threat, wonder, choir and release without converting the story into uncomplicated fantasy triumph." },
+    { area: "effects_animation", status: "source_verified", note: "Glassworks and Headless create the watercolor-to-dimensional tales, while MPC builds more than 180 Monster shots from a lidar-scanned practical head, rigid sliding facial plates, humanized eyes, keyframed acting, transformations, environments and destruction." },
+    { area: "documentary_method", status: "not_central", note: "The film seeks emotional truth and grounds fantasy in recognizable care and grief, but it is an authored adaptation and effects-led fiction rather than a documentary-method production." }
+  ]
+} as const satisfies FilmHistoryProfile;
+
+const donors = [insideOutFilmHistoryProfile, spiritOfTheBeehiveFilmHistoryProfile, hugoFilmHistoryProfile] as const satisfies readonly FilmHistoryProfile[];
+
+export function getAMonsterCallsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
+  return scenarioId === aMonsterCallsFilmHistoryProfile.scenarioId ? aMonsterCallsFilmHistoryProfile : undefined;
+}
+
+export function getAMonsterCallsFilmHistoryDonors(profile: FilmHistoryProfile): readonly FilmHistoryProfile[] | undefined {
+  return profile.scenarioId === aMonsterCallsFilmHistoryProfile.scenarioId ? donors : undefined;
+}
