@@ -1,5 +1,6 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
 import { fourMonthsProductionCaseVerification } from "./scenarioProductionVerificationFourMonths";
+import { lobsterProductionCaseVerification } from "./scenarioProductionVerificationLobster";
 
 export const europeanPressureVerificationRecords = [
   {
@@ -171,4 +172,5 @@ export const europeanPressureVerificationRecords = [
     ]
   },
   fourMonthsProductionCaseVerification,
+  lobsterProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
