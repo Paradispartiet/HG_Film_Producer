@@ -13,11 +13,12 @@ import { resolveScenarioProductionBrief } from "./scenarioProductionBriefs.js";
 const scenarioId = "scenario_the_hateful_eight_2015";
 
 test("The Hateful Eight resolves as a source-backed chamber western and 70mm crime system", () => {
-  const scenario = getClassicFilmScenarios().find((candidate) => candidate.id === scenarioId);
+  const scenarios = getClassicFilmScenarios();
+  const scenario = scenarios.find((candidate) => candidate.id === scenarioId);
   assert.ok(scenario, `Missing scenario ${scenarioId}`);
-  assert.equal(scenario.position, 102);
-  assert.equal(scenario.film.runtime_min, 168);
-  assert.equal(scenario.film.director, "Quentin Tarantino");
+  assert.equal(scenarios.findIndex((candidate) => candidate.id === scenarioId) + 1, 102);
+  assert.equal(scenario.film.runtime_mins, 168);
+  assert.deepEqual(scenario.film.directors, ["Quentin Tarantino"]);
   assert.deepEqual(scenario.film.genres, ["Crime", "Drama", "Mystery", "Thriller", "Western"]);
   assert.equal(scenario.scenario_type, "crime_thriller_production");
 
