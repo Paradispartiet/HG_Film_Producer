@@ -2,6 +2,7 @@ import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerif
 import { beingJohnMalkovichProductionCaseVerification } from "./scenarioProductionVerificationBeingJohnMalkovich";
 import { blindnessProductionCaseVerification } from "./scenarioProductionVerificationBlindness";
 import { eyesWideShutProductionCaseVerification } from "./scenarioProductionVerificationEyesWideShut";
+import { roomProductionCaseVerification } from "./scenarioProductionVerificationRoom";
 import { theGameVerificationRecords } from "./scenarioProductionVerificationTheGame";
 
 export const subjectiveEnclosurePerformanceVerificationRecords = [
@@ -165,6 +166,7 @@ export const subjectiveEnclosurePerformanceVerificationRecords = [
       }
     ]
   },
+  roomProductionCaseVerification,
   blindnessProductionCaseVerification,
   ...theGameVerificationRecords,
   beingJohnMalkovichProductionCaseVerification,
