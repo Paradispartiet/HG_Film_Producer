@@ -1,7 +1,9 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
 import { theRiderFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecarityTheRider";
+import { landOfMineFilmHistoryProfile } from "./scenarioFilmStudyConstructedWorldsLandOfMineCatalog";
 import { homesickFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceHomesick";
 import { mySkinnySisterFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceMySkinnySister";
+import { ramsFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceRams";
 import { scenesFromAMarriageFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceScenesMarriage";
 import { dancerInTheDarkFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceDancerDark";
 import { secretsAndLiesFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceSecretsLies";
@@ -56,7 +58,14 @@ const mySkinnySisterDonors = [
   stillWalkingFilmHistoryProfile,
 ] as const satisfies readonly FilmHistoryProfile[];
 
+const ramsDonors = [
+  theRiderFilmHistoryProfile,
+  stillWalkingFilmHistoryProfile,
+  landOfMineFilmHistoryProfile,
+] as const satisfies readonly FilmHistoryProfile[];
+
 export function getMommyFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
+  if (scenarioId === ramsFilmHistoryProfile.scenarioId) return ramsFilmHistoryProfile;
   if (scenarioId === mySkinnySisterFilmHistoryProfile.scenarioId) return mySkinnySisterFilmHistoryProfile;
   if (scenarioId === homesickFilmHistoryProfile.scenarioId) return homesickFilmHistoryProfile;
   return scenarioId === mommyFilmHistoryProfile.scenarioId
@@ -65,6 +74,7 @@ export function getMommyFilmHistoryProfile(scenarioId: string): FilmHistoryProfi
 }
 
 export function getMommyFilmHistoryDonors(profile: FilmHistoryProfile): readonly FilmHistoryProfile[] | undefined {
+  if (profile.scenarioId === ramsFilmHistoryProfile.scenarioId) return ramsDonors;
   if (profile.scenarioId === mySkinnySisterFilmHistoryProfile.scenarioId) return mySkinnySisterDonors;
   if (profile.scenarioId === homesickFilmHistoryProfile.scenarioId) return homesickDonors;
   return profile.scenarioId === mommyFilmHistoryProfile.scenarioId
