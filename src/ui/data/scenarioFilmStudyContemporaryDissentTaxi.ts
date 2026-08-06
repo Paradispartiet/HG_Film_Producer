@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const taxiFilmHistoryProfile = {
+  scenarioId: "scenario_taxi_2015",
+  period: "Mid-2010s Iranian dissident docufiction made clandestinely inside a moving Tehran taxi under Jafar Panahi's filmmaking ban",
+  traditions: ["Iranian dissident cinema", "In-car Iranian modernism", "Self-reflexive docufiction"],
+  before: "Iranian filmmakers had long used cars as mobile private-public rooms, while Panahi's This Is Not a Film and Closed Curtain had already transformed legal restriction, domestic confinement and digital recording into openly self-reflexive production material.",
+  moment: "Panahi drives a yellow taxi through Tehran and performs himself before dashboard-mounted digital cameras. An episodic passenger structure, ambiguous mixtures of actors and public figures, his niece's camera, phones and tablets, traffic-bound framing, direct speech and the absence of approved credits turn censorship, circulation and image ownership into the film's form.",
+  after: "Taxi won the 2015 Berlinale Golden Bear while Panahi could not travel, extending the international visibility of clandestine Iranian production and demonstrating how a severe legal and technical restriction could become a mobile studio, a city portrait and a comic-political argument about distributable reality.",
+  historyQuestion: "Which production system explains a Tehran comedy-drama in which a banned filmmaker becomes a taxi driver, dashboard cameras turn a car into a mobile studio, passengers debate law and images, and the inability to obtain official credits becomes part of the finished film?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Institutional and critical sources place Taxi as Panahi's third clandestine feature after the 2010 sentence banning him from filmmaking and travel." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The film continues Iranian in-car cinema associated with Kiarostami while joining dissident cinema, urban social observation and self-reflexive docufiction." },
+    { area: "industry_and_production_context", status: "source_verified", note: "The production replaces a conventional approved crew and set with Panahi driving, compact digital equipment, collaborators without screen credits and a moving car operating in public Tehran." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Taxi received the 2015 Golden Bear, accepted by Panahi's niece during his enforced absence, and became an internationally recognised model of clandestine filmmaking under restriction." },
+    { area: "screenplay", status: "source_verified", note: "A single-day chain of passengers creates recurring debates about punishment, inheritance, censorship, piracy, political imprisonment and what may count as a distributable image." },
+    { area: "directing", status: "source_verified", note: "Panahi directs from within the fiction as driver, performer and camera operator, controlling encounters while preserving uncertainty about rehearsal, reality and spontaneous interruption." },
+    { area: "performance", status: "source_verified", note: "Panahi performs a version of himself among passengers whose status as actors, acquaintances or public figures remains deliberately unstable; his niece and lawyer Nasrin Sotoudeh explicitly address filming and censorship." },
+    { area: "production_design", status: "source_verified", note: "The real yellow taxi, dashboard, mirrors, windows, doors and changing Tehran streets form a compact mobile set whose public-private boundary organises every encounter." },
+    { area: "costume_makeup", status: "mapped", note: "Ordinary clothing and role-specific presentation support the apparent documentary surface, but the inspected sources do not provide a dedicated costume or makeup workflow." },
+    { area: "cinematography", status: "source_verified", note: "Dashboard-mounted viewpoints look both through the windshield and into the cabin; cameras are turned or handled within scenes so reframing and limited coverage become visible dramatic actions." },
+    { area: "lighting", status: "mapped", note: "Daylight through the windshield and windows, changing street exposure and practical night conditions shape continuity, but no complete lighting package is documented in the inspected sources." },
+    { area: "camera_format", status: "source_verified", note: "Multiple compact digital cameras, including dashboard cameras and devices handled by passengers, permit discreet recording and make consumer image technology part of the narrative argument." },
+    { area: "editing", status: "source_verified", note: "The edit assembles self-contained rides, long dashboard takes, shifts among in-car devices and delayed returns to recorded images while preserving the impression of one circulating day." },
+    { area: "sound_design", status: "source_verified", note: "Passenger speech, road noise, horns, engines, doors, phones and changing street ambience provide spatial scale and social interruption without separating the dialogue from Tehran traffic." },
+    { area: "music", status: "source_verified", note: "Music is sparse and largely encountered through the film's moving social environment, leaving speech, traffic and recorded media to carry the principal rhythmic and political work." },
+    { area: "effects_animation", status: "not_central", note: "The production depends on compact cameras, performance, real movement, editing and sound rather than an effects or animation pipeline." },
+    { area: "documentary_method", status: "source_verified", note: "Real Tehran circulation, public figures playing themselves, debates about recorded evidence and uncertainty over staged passengers make the ethics and legal status of filming reality the central method." },
+  ],
+} as const satisfies FilmHistoryProfile;
