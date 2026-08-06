@@ -93,7 +93,7 @@ const verificationGroups = [
   ["Virgin Mountain actor-specific Icelandic outsider and editorial-renewal system", ["scenario_virgin_mountain_2015"], 10],
   ["A Monster Calls child-grief constructed-world and yew-creature system", ["scenario_a_monster_calls_2016"], 10],
   ["Norwegian postwar genre systems", ["scenario_gategutter_1949", "scenario_fjols_til_fjells_1957", "scenario_de_dodes_tjern_1958", "scenario_insomnia_1997"], 4],
-  ["Nordic minimalist social systems", ["scenario_the_match_factory_girl_1990", "scenario_songs_from_second_floor_2000", "scenario_the_man_without_a_past_2002", "scenario_oslo_august_31st_2011"], 4],
+  ["Nordic minimalist social systems", ["scenario_the_match_factory_girl_1990", "scenario_songs_from_the_second_floor_2000", "scenario_the_man_without_a_past_2002", "scenario_oslo_august_31st_2011"], 4],
   ["modern Nordic behavior systems", ["scenario_force_majeure_2014", "scenario_woman_at_war_2018", "scenario_another_round_2020", "scenario_the_worst_person_in_the_world_2021"], 4],
   ["1980s political Palme systems", ["scenario_man_of_iron_1981", "scenario_yol_1982", "scenario_the_ballad_of_narayama_1983", "scenario_when_father_was_away_on_business_1985"], 4],
   ["festival journey displacement systems", ["scenario_pelle_the_conqueror_1987", "scenario_central_station_1998", "scenario_eternity_and_a_day_1998", "scenario_head_on_2004"], 4],
