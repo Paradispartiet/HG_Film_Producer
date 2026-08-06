@@ -56,8 +56,8 @@ test("The Lobster receives exact rule, intimacy and hotel-alienation donors", ()
   assert.deepEqual(new Set(choices.map((choice) => choice.quality)), new Set(["match", "partial", "miss"]));
   assert.equal(new Set(choices.map((choice) => choice.label)).size, 3);
   assert.ok(choices[0]?.label.includes("speculative romance"));
-  assert.ok(choices[0]?.label.includes("seven-week Irish location shoot"));
-  assert.ok(choices[0]?.label.includes("Alexa natural-light photography"));
+  assert.ok(choices[0]?.label.includes("seven-week County Kerry location shoot"));
+  assert.ok(choices[0]?.label.includes("ARRI Alexa"));
 });
 
 test("The Lobster integration preserves established European-pressure profiles and choices", () => {
