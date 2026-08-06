@@ -88,3 +88,5 @@ The film-specific test requires:
 - unchanged three-choice behavior for all established Constructed Worlds profiles.
 
 The global verification test advances the controlled total from **349 to 350**. The permanent Production Case audit must report **350 of 378** verified and **28 remaining**, with no duplicate IDs, orphan records, missing profiles or seed fallbacks.
+
+<!-- temporary CI retrigger -->
