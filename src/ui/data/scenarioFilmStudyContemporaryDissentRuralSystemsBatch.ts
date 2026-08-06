@@ -16,11 +16,15 @@ import { thereIsNoEvilFilmHistoryProfile } from "./scenarioFilmStudyContemporary
 import { tasteOfCherryFilmHistoryProfile } from "./scenarioFilmStudyMinimalistRoadTasteOfCherry";
 import { whereIsTheFriendsHouseFilmHistoryProfile } from "./scenarioFilmStudyMinimalistRoadWhereFriendsHouse";
 
-const profiles = {
+const establishedProfiles = {
   [synonymsFilmHistoryProfile.scenarioId]: synonymsFilmHistoryProfile,
   [thereIsNoEvilFilmHistoryProfile.scenarioId]: thereIsNoEvilFilmHistoryProfile,
   [badLuckBangingFilmHistoryProfile.scenarioId]: badLuckBangingFilmHistoryProfile,
   [alcarrasFilmHistoryProfile.scenarioId]: alcarrasFilmHistoryProfile,
+} as const satisfies Record<string, FilmHistoryProfile>;
+
+const profiles = {
+  ...establishedProfiles,
   [taxiFilmHistoryProfile.scenarioId]: taxiFilmHistoryProfile,
 } as const satisfies Record<string, FilmHistoryProfile>;
 
@@ -105,7 +109,7 @@ export function createContemporaryDissentRuralSystemsFilmHistoryChoices(profile:
   const isTaxi = profile.scenarioId === taxiFilmHistoryProfile.scenarioId;
   const donors = isTaxi
     ? taxiDonors
-    : Object.values(profiles)
+    : Object.values(establishedProfiles)
       .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
       .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = isTaxi ? 0 : hashString(profile.scenarioId);
