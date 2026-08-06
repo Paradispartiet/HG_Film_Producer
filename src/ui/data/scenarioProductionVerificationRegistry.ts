@@ -25,6 +25,7 @@ import { constructedWorldsVerificationRecords } from "./scenarioProductionVerifi
 import { brazilVerificationRecords } from "./scenarioProductionVerificationBrazil";
 import { cinemaParadisoVerificationRecords } from "./scenarioProductionVerificationCinemaParadiso";
 import { contemporaryDissentRuralVerificationRecords } from "./scenarioProductionVerificationContemporaryDissentRuralSystemsBatch";
+import { taxiProductionCaseVerification } from "./scenarioProductionVerificationTaxi";
 import { contemporaryEuropeanSocialCareVerificationRecords } from "./scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -171,6 +172,7 @@ const additionalVerificationRecords = [
   ...intimateFestivalBodyCareVerificationRecords,
   ...festivalUrbanIntimacyVerificationRecords,
   ...contemporaryDissentRuralVerificationRecords,
+  taxiProductionCaseVerification,
   ...contemporaryEuropeanSocialCareVerificationRecords,
   ...britishIrishPlaceBodyVerificationRecords,
   ...iberianPortugueseMemoryVerificationRecords,
