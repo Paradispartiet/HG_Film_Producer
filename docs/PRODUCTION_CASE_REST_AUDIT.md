@@ -71,7 +71,7 @@ A film can belong to more than one genre.
 | 6 | 2016 | Paterson | `scenario_paterson_2016` |
 | 7 | 2017 | Call Me by Your Name | `scenario_call_me_by_your_name_2017` |
 | 8 | 2017 | Filmworker | `scenario_filmworker_2017` |
-| 9 | 2017 | Good Time | `scenario_good_time_time_2017` |
+| 9 | 2017 | Good Time | `scenario_good_time_2017` |
 | 10 | 2017 | Loveless | `scenario_loveless_2017` |
 | 11 | 2017 | On Body and Soul | `scenario_on_body_and_soul_2017` |
 | 12 | 2017 | Terrified | `scenario_terrified_2017` |
