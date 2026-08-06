@@ -106,4 +106,4 @@ The global verification test raises the source-backed total from 345 to 346. The
 
 ## Next case
 
-`scenario_the_treasure_2015` — *The Treasure* (2015).
+`scenario_the_hateful_eight_2015` — *The Hateful Eight* (2015).
