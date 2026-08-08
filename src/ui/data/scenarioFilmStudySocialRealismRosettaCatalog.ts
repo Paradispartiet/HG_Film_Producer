@@ -3,6 +3,7 @@ import { wendyAndLucyFilmHistoryProfile } from "./scenarioFilmStudyAmericanPreca
 import { happeningFilmHistoryProfile } from "./scenarioFilmStudyBodyArchiveHappening";
 import { theRiderFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecarityTheRider";
 import { driftersFilmHistoryProfile } from "./scenarioFilmStudySocialRealismDrifters";
+import { iDanielBlakeFilmHistoryProfile } from "./scenarioFilmStudySocialRealismIDanielBlake";
 import { rosettaFilmHistoryProfile } from "./scenarioFilmStudySocialRealismRosetta";
 import { theChildFilmHistoryProfile } from "./scenarioFilmStudySocialRealismTheChild";
 
@@ -18,10 +19,17 @@ const driftersDonors = [
   theChildFilmHistoryProfile,
 ] as const satisfies readonly FilmHistoryProfile[];
 
+const iDanielBlakeDonors = [
+  rosettaFilmHistoryProfile,
+  theChildFilmHistoryProfile,
+  wendyAndLucyFilmHistoryProfile,
+] as const satisfies readonly FilmHistoryProfile[];
+
 export function getRosettaFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
   if (scenarioId === driftersFilmHistoryProfile.scenarioId) return driftersFilmHistoryProfile;
+  if (scenarioId === iDanielBlakeFilmHistoryProfile.scenarioId) return iDanielBlakeFilmHistoryProfile;
   return scenarioId === rosettaFilmHistoryProfile.scenarioId
     ? rosettaFilmHistoryProfile
     : undefined;
@@ -31,6 +39,7 @@ export function getRosettaFilmHistoryDonors(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryProfile[] | undefined {
   if (profile.scenarioId === driftersFilmHistoryProfile.scenarioId) return driftersDonors;
+  if (profile.scenarioId === iDanielBlakeFilmHistoryProfile.scenarioId) return iDanielBlakeDonors;
   return profile.scenarioId === rosettaFilmHistoryProfile.scenarioId
     ? rosettaDonors
     : undefined;
