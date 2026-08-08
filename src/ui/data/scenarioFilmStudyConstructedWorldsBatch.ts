@@ -17,6 +17,10 @@ import {
   getAMonsterCallsFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsMonsterCallsCatalog";
 import {
+  getCafeSocietyFilmHistoryDonors,
+  getCafeSocietyFilmHistoryProfile,
+} from "./scenarioFilmStudyConstructedWorldsCafeSocietyCatalog";
+import {
   getBrandNewTestamentFilmHistoryDonors,
   getBrandNewTestamentFilmHistoryProfile,
 } from "./scenarioFilmStudyConstructedWorldsBrandNewTestamentCatalog";
@@ -115,6 +119,7 @@ function profileOverrides(profile: FilmHistoryProfile): readonly FilmStudyCovera
 
 export function getConstructedWorldsFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
   return getAMonsterCallsFilmHistoryProfile(scenarioId)
+    ?? getCafeSocietyFilmHistoryProfile(scenarioId)
     ?? getBrandNewTestamentFilmHistoryProfile(scenarioId)
     ?? getRushFilmHistoryProfile(scenarioId)
     ?? getHerFilmHistoryProfile(scenarioId)
@@ -166,6 +171,7 @@ export function createConstructedWorldsFilmHistoryChoices(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryChoice[] {
   const monsterCallsDonors = getAMonsterCallsFilmHistoryDonors(profile);
+  const cafeSocietyDonors = getCafeSocietyFilmHistoryDonors(profile);
   const brandNewTestamentDonors = getBrandNewTestamentFilmHistoryDonors(profile);
   const rushDonors = getRushFilmHistoryDonors(profile);
   const herDonors = getHerFilmHistoryDonors(profile);
@@ -183,6 +189,7 @@ export function createConstructedWorldsFilmHistoryChoices(
   const thePianistDonors = getThePianistFilmHistoryDonors(profile);
   const forrestGumpDonorScenarioIds = getForrestGumpDonorScenarioIds(profile);
   const donors: readonly FilmHistoryProfile[] = (monsterCallsDonors
+    ?? cafeSocietyDonors
     ?? brandNewTestamentDonors
     ?? rushDonors
     ?? herDonors
@@ -204,7 +211,7 @@ export function createConstructedWorldsFilmHistoryChoices(
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
   const start = rushDonors
     ? 2
-    : monsterCallsDonors || brandNewTestamentDonors || herDonors || insideOutDonors || landOfMineDonors || impossibleDonors || moonriseDonors || hugoDonors || walleDonors || dogvilleDonors || thePianistDonors
+    : monsterCallsDonors || cafeSocietyDonors || brandNewTestamentDonors || herDonors || insideOutDonors || landOfMineDonors || impossibleDonors || moonriseDonors || hugoDonors || walleDonors || dogvilleDonors || thePianistDonors
       ? 0
       : hashString(profile.scenarioId);
   const near = donors[start % donors.length];
@@ -212,6 +219,9 @@ export function createConstructedWorldsFilmHistoryChoices(
   const monsterCallsMatch = "This matches the documented relationship among Ness and Bayona's child-grief adaptation, MacDougall's restricted viewpoint, Neeson's reference performance, Caballero's reality-fantasy design, Faura's Alexa-Hawk anamorphic image, evolving watercolor tales, MPC's rigid-wood yew creature, Vilaplana and Martí's emotional construction, Tarragó's imaginative sound and Velázquez's score.";
   const monsterCallsPartial = "This is another real child-centred, subjective or constructed-world system, but it does not combine terminal illness, three embedded tales, a demanded fourth truth, practical creature eyelines, evolving watercolor animation and a performance-led yew monster in the same grief structure.";
   const monsterCallsMiss = "This places the film inside the wrong relationship between child grief, adaptation, domestic realism, illustrated storytelling, practical scale, digital anamorphic photography, performance-led creature effects, editing, sound and music.";
+  const cafeSocietyMatch = "This matches the documented relationship among Allen's 1930s Hollywood-New York romantic structure, Storaro's Sony F65/F55 digital image and controlled color-light system, Loquasto's surviving-location and nightclub design, Benzinger's period wardrobe, restrained ensemble performance and historically specific jazz.";
+  const cafeSocietyPartial = "This is another real period-city, romantic or designed-world system, but it does not combine Hollywood golden-age aspiration, New York café society, first-feature digital Storaro cinematography, 2:1 Univisium, 1930s wardrobe and supper-club jazz in the same way.";
+  const cafeSocietyMiss = "This places the film inside the wrong relationship between period romance, two-city social geography, digital color and lighting, historical architecture, nightclub production design, costume, performance and jazz.";
   const rushMatch = "This matches the documented relationship among Morgan's Hunt-Lauda two-hander, Howard's independently scaled historical reconstruction, Hemsworth and Brühl's opposed performance systems, real and replica Formula One cars, substitute circuits, Dod Mantle's mixed digital cameras and vintage lenses, Hanley and Hill's BAFTA-winning edit, exact historic-engine recording, Zimmer's score and integrated practical-digital race effects.";
   const rushPartial = "This is another real body, labour or public-performance sports system, but it does not combine two Formula One rivals, a reconstructed 1976 championship, real historic machinery, multi-camera digital speed, period paddocks, engine-specific sound and a mutually defining biographical structure in the same way.";
   const rushMiss = "This places the film inside the wrong relationship between historical sports biography, two-driver rivalry, practical racing danger, substituted circuits, digital cameras with vintage optics, performance-led race editing, exact engine identity, score and invisible effects.";
@@ -251,29 +261,31 @@ export function createConstructedWorldsFilmHistoryChoices(
       quality: "match",
       feedback: monsterCallsDonors
         ? monsterCallsMatch
-        : brandNewTestamentDonors
-          ? "This matches the documented relationship among Ea's child-led gospel structure, Brussels locations, frontal sacred symmetry, award-winning real-surreal design, Sony F65/F55 photography, mobile theatrical light, associative editing, tactile sound, character-specific music and modest practical-digital fantasy effects."
-          : rushDonors
-            ? rushMatch
-            : herDonors
-              ? herMatch
-              : landOfMineDonors
-                ? landOfMineMatch
-                : impossibleDonors
-                  ? impossibleMatch
-                  : moonriseDonors
-                    ? moonriseMatch
-                    : hugoDonors
-                      ? hugoMatch
-                      : insideOutDonors
-                        ? insideOutMatch
-                        : walleDonors
-                          ? walleMatch
-                          : dogvilleDonors
-                            ? dogvilleMatch
-                            : thePianistDonors
-                              ? thePianistMatch
-                              : "This connects the film's constructed world, historical position and documented craft system.",
+        : cafeSocietyDonors
+          ? cafeSocietyMatch
+          : brandNewTestamentDonors
+            ? "This matches the documented relationship among Ea's child-led gospel structure, Brussels locations, frontal sacred symmetry, award-winning real-surreal design, Sony F65/F55 photography, mobile theatrical light, associative editing, tactile sound, character-specific music and modest practical-digital fantasy effects."
+            : rushDonors
+              ? rushMatch
+              : herDonors
+                ? herMatch
+                : landOfMineDonors
+                  ? landOfMineMatch
+                  : impossibleDonors
+                    ? impossibleMatch
+                    : moonriseDonors
+                      ? moonriseMatch
+                      : hugoDonors
+                        ? hugoMatch
+                        : insideOutDonors
+                          ? insideOutMatch
+                          : walleDonors
+                            ? walleMatch
+                            : dogvilleDonors
+                              ? dogvilleMatch
+                              : thePianistDonors
+                                ? thePianistMatch
+                                : "This connects the film's constructed world, historical position and documented craft system.",
     },
     ...(near ? [{
       id: `${profile.scenarioId}-history-partial`,
@@ -281,31 +293,33 @@ export function createConstructedWorldsFilmHistoryChoices(
       quality: "partial" as const,
       feedback: monsterCallsDonors
         ? monsterCallsPartial
-        : brandNewTestamentDonors
-          ? "This is another real absurdist, theatrical or child-centred constructed world, but it does not combine a daughter's rebellion against God, six apostle episodes, Brussels materiality, sacred symmetry and perceptual fantasy in the same production system."
-          : rushDonors
-            ? rushPartial
-            : herDonors
-              ? herPartial
-              : landOfMineDonors
-                ? landOfMinePartial
-                : impossibleDonors
-                  ? impossiblePartial
-                  : moonriseDonors
-                    ? moonrisePartial
-                    : hugoDonors
-                      ? hugoPartial
-                      : insideOutDonors
-                        ? insideOutPartial
-                        : walleDonors
-                          ? wallePartial
-                          : dogvilleDonors
-                            ? dogvillePartial
-                            : thePianistDonors
-                              ? thePianistPartial
-                              : forrestGumpDonorScenarioIds
-                                ? forrestGumpPartial
-                                : "This is a real constructed-world method, but it belongs to a different historical and production system.",
+        : cafeSocietyDonors
+          ? cafeSocietyPartial
+          : brandNewTestamentDonors
+            ? "This is another real absurdist, theatrical or child-centred constructed world, but it does not combine a daughter's rebellion against God, six apostle episodes, Brussels materiality, sacred symmetry and perceptual fantasy in the same production system."
+            : rushDonors
+              ? rushPartial
+              : herDonors
+                ? herPartial
+                : landOfMineDonors
+                  ? landOfMinePartial
+                  : impossibleDonors
+                    ? impossiblePartial
+                    : moonriseDonors
+                      ? moonrisePartial
+                      : hugoDonors
+                        ? hugoPartial
+                        : insideOutDonors
+                          ? insideOutPartial
+                          : walleDonors
+                            ? wallePartial
+                            : dogvilleDonors
+                              ? dogvillePartial
+                              : thePianistDonors
+                                ? thePianistPartial
+                                : forrestGumpDonorScenarioIds
+                                  ? forrestGumpPartial
+                                  : "This is a real constructed-world method, but it belongs to a different historical and production system.",
     }] : []),
     ...(far ? [{
       id: `${profile.scenarioId}-history-miss`,
@@ -313,31 +327,33 @@ export function createConstructedWorldsFilmHistoryChoices(
       quality: "miss" as const,
       feedback: monsterCallsDonors
         ? monsterCallsMiss
-        : brandNewTestamentDonors
-          ? "This places the film inside the wrong relationship between Belgian surrealist comedy, child performance, religious iconography, theatrical fabrication, digital camera-lighting, episodic editing, tactile sound, music and fantasy effects."
-          : rushDonors
-            ? rushMiss
-            : herDonors
-              ? herMiss
-              : landOfMineDonors
-                ? landOfMineMiss
-                : impossibleDonors
-                  ? impossibleMiss
-                  : moonriseDonors
-                    ? moonriseMiss
-                    : hugoDonors
-                      ? hugoMiss
-                      : insideOutDonors
-                        ? insideOutMiss
-                        : walleDonors
-                          ? walleMiss
-                          : dogvilleDonors
-                            ? dogvilleMiss
-                            : thePianistDonors
-                              ? thePianistMiss
-                              : forrestGumpDonorScenarioIds
-                                ? forrestGumpMiss
-                                : "This places the film inside the wrong temporal, spatial and technical tradition.",
+        : cafeSocietyDonors
+          ? cafeSocietyMiss
+          : brandNewTestamentDonors
+            ? "This places the film inside the wrong relationship between Belgian surrealist comedy, child performance, religious iconography, theatrical fabrication, digital camera-lighting, episodic editing, tactile sound, music and fantasy effects."
+            : rushDonors
+              ? rushMiss
+              : herDonors
+                ? herMiss
+                : landOfMineDonors
+                  ? landOfMineMiss
+                  : impossibleDonors
+                    ? impossibleMiss
+                    : moonriseDonors
+                      ? moonriseMiss
+                      : hugoDonors
+                        ? hugoMiss
+                        : insideOutDonors
+                          ? insideOutMiss
+                          : walleDonors
+                            ? walleMiss
+                            : dogvilleDonors
+                              ? dogvilleMiss
+                              : thePianistDonors
+                                ? thePianistMiss
+                                : forrestGumpDonorScenarioIds
+                                  ? forrestGumpMiss
+                                  : "This places the film inside the wrong temporal, spatial and technical tradition.",
     }] : []),
   ];
 }
