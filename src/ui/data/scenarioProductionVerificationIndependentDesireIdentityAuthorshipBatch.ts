@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { callMeByYourNameProductionCaseVerification } from "./scenarioProductionVerificationCallMeByYourName";
 
 export const independentDesireIdentityAuthorshipVerificationRecords = [
   {
@@ -160,5 +161,6 @@ export const independentDesireIdentityAuthorshipVerificationRecords = [
         note: "Sundance documents the World Cinema Dramatic world premiere, Joanna Hogg and Luke Schiller production, principal cast and the artist-finding-her-voice structure before the film won the Grand Jury Prize."
       }
     ]
-  }
+  },
+  callMeByYourNameProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
