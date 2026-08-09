@@ -93,6 +93,10 @@ import {
   getAmyFilmHistoryProfile,
 } from "./scenarioFilmStudyMusicDocumentaryAmyCatalog";
 import {
+  getFilmworkerFilmHistoryDonors,
+  getFilmworkerFilmHistoryProfile,
+} from "./scenarioFilmStudyMusicDocumentaryFilmworkerCatalog";
+import {
   getSearchingForSugarManFilmHistoryDonors,
   getSearchingForSugarManFilmHistoryProfile,
 } from "./scenarioFilmStudyMusicDocumentarySearchingForSugarManCatalog";
@@ -169,6 +173,7 @@ export function getIndependentStorytellingFilmHistoryProfile(
 ): FilmHistoryProfile | undefined {
   return getInTheHouseFilmHistoryProfile(scenarioId)
     ?? getAmyFilmHistoryProfile(scenarioId)
+    ?? getFilmworkerFilmHistoryProfile(scenarioId)
     ?? getSearchingForSugarManFilmHistoryProfile(scenarioId)
     ?? getBrokenCircleBreakdownFilmHistoryProfile(scenarioId)
     ?? getElephantFilmHistoryProfile(scenarioId)
@@ -296,6 +301,16 @@ function getSpecialChoiceSystem(profile: FilmHistoryProfile): SpecialChoiceSyste
     match: "This matches the documented relationship among private and public archive, off-screen witness testimony, Amy Winehouse's recorded voice and performances, lyric captions, media-pressure evidence, Chris King's montage, sound continuity and Kapadia's refusal of visible talking heads.",
     partial: "This is another real music, artist-biography or archive system, but it does not construct a posthumous public-private portrait from intimate home video, career performances, witness audio, press intrusion and the subject's own lyrics in the same way.",
     miss: "This places the film inside the wrong relationship between archival access, celebrity biography, posthumous ethics, musical authorship, off-screen testimony, heterogeneous image sources, editing, sound and media complicity.",
+  };
+
+  const filmworkerDonors = getFilmworkerFilmHistoryDonors(profile);
+  if (filmworkerDonors) return {
+    donors: filmworkerDonors,
+    group: "body_archive_restitution_perspective",
+    forceStart: true,
+    match: "This matches the documented Filmworker system: Leon Vitali's long-form testimony, corroborating collaborator interviews, Kubrick film and production archive, Tony Zierra's own cinematography and editing, Chris Jenkins's sound work and a biography structured around otherwise invisible casting, coaching, print, color, release and restoration labor.",
+    partial: "This is another real archive, artist-biography or documentary-authorship system, but it does not make a behind-the-scenes worker's practical labor across production, postproduction, release and preservation the central historical argument in the same way.",
+    miss: "This places the film inside the wrong relationship between cinema history, auteur mythology, subject access, collaborator testimony, production archive, invisible labor, documentary editing, sound and preservation work.",
   };
 
   const searchingForSugarManDonors = getSearchingForSugarManFilmHistoryDonors(profile);
