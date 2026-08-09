@@ -1,5 +1,6 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
 import { blueJasmineVerificationRecords } from "./scenarioProductionVerificationBlueJasmine";
+import { manchesterByTheSeaProductionCaseVerification } from "./scenarioProductionVerificationManchesterByTheSea";
 import { mommyProductionCaseVerification } from "./scenarioProductionVerificationMommy";
 import { mySkinnySisterProductionCaseVerification } from "./scenarioProductionVerificationMySkinnySister";
 import { ramsProductionCaseVerification } from "./scenarioProductionVerificationRams";
@@ -169,6 +170,7 @@ export const familyPerformanceGriefPowerVerificationRecords = [
   ramsProductionCaseVerification,
   mySkinnySisterProductionCaseVerification,
   mommyProductionCaseVerification,
+  manchesterByTheSeaProductionCaseVerification,
   ...theSavagesVerificationRecords,
   ...blueJasmineVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
