@@ -70,16 +70,16 @@ Filmworker has its own match/partial/miss feedback. It does not inherit Amy- or 
 
 The Production Case registers eleven inspectable sources from eleven distinct publishers:
 
-1. Festival de Cannes — Tony Zierra interview on the documentary's origin and the Vitali/Kubrick relationship.
-2. Festival de Cannes official film record — Cannes Classics, Zierra editing and Chris Jenkins sound.
-3. IDFA — production, cinematography, editing and music credits plus documentary description.
-4. AFI FEST — producers, cinematography, editor, composers and Cinema's Legacy context.
-5. Film at Lincoln Center — NYFF record, 94-minute runtime and biography framing.
-6. International Documentary Association — Leon Vitali interview on the two-person production, non-interference and his production roles.
-7. The Criterion Collection — Cannes dossier on witnesses, follow-up method, print inspection and color timing.
-8. Filmmaker Magazine — Vitali on actor coaching, restoration, 4K timing and collective filmmaking labor.
-9. Film Comment — contemporary Cannes analysis emphasizing print, transfer and soundtrack checking.
-10. Los Angeles Times — Zierra on changing the project after encountering Vitali and his production archive.
+1. Festival de Cannes — official Cannes Classics record, Tony Zierra editing and Chris Jenkins sound.
+2. IDFA — production, cinematography, editing and music credits plus documentary description.
+3. AFI FEST — producers, cinematography, editor, composers and Cinema's Legacy context.
+4. Film at Lincoln Center — NYFF record, 94-minute runtime and biography framing.
+5. International Documentary Association — Leon Vitali interview on the two-person production, non-interference and his production roles.
+6. The Criterion Collection — Cannes dossier on witnesses, follow-up method, print inspection and color timing.
+7. Filmmaker Magazine — Vitali on actor coaching, restoration, 4K timing and collective filmmaking labor.
+8. Film Comment — contemporary Cannes analysis emphasizing print, transfer and soundtrack checking.
+9. Los Angeles Times — Zierra on changing the project after encountering Vitali and his production archive.
+10. The Guardian — contemporary account of Vitali's roles across production assistance, acting coaching, sound, casting and restoration.
 11. RogerEbert.com — analysis of Zierra's follow-up questions and multi-witness documentary method.
 
 The source registry deliberately does not treat IMDb as Production Case evidence.
