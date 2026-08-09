@@ -3,6 +3,7 @@ import { scenesFromAMarriageFilmHistoryProfile } from "./scenarioFilmStudyFamily
 import { bloodSimpleFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreBloodSimple";
 import { theBigLebowskiFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreBigLebowski";
 import { elMariachiFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreElMariachi";
+import { goodTimeFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreGoodTime";
 import { metropolitanFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreMetropolitan";
 import { reservoirDogsFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreReservoirDogs";
 import {
@@ -199,6 +200,7 @@ const profiles = [
   metropolitanFilmHistoryProfile,
   reservoirDogsFilmHistoryProfile,
   elMariachiFilmHistoryProfile,
+  goodTimeFilmHistoryProfile,
   poisonFilmHistoryProfile,
   fishTankFilmHistoryProfile,
   pariahFilmHistoryProfile,
@@ -301,6 +303,7 @@ assignGroup("american_independent_genre_resourcefulness", [
   metropolitanFilmHistoryProfile.scenarioId,
   reservoirDogsFilmHistoryProfile.scenarioId,
   elMariachiFilmHistoryProfile.scenarioId,
+  goodTimeFilmHistoryProfile.scenarioId,
 ]);
 assignGroup("independent_desire_identity_authorship", [
   poisonFilmHistoryProfile.scenarioId,
@@ -398,6 +401,14 @@ export function getIndependentStorytellingDonors(
     ];
   }
 
+  if (profile.scenarioId === goodTimeFilmHistoryProfile.scenarioId) {
+    return [
+      bloodSimpleFilmHistoryProfile,
+      reservoirDogsFilmHistoryProfile,
+      elMariachiFilmHistoryProfile,
+    ];
+  }
+
   if (profile.scenarioId === anomalisaFilmHistoryProfile.scenarioId) {
     return [
       beingJohnMalkovichFilmHistoryProfile,
@@ -426,6 +437,7 @@ export function getIndependentStorytellingDonors(
   return profiles
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
     .filter((candidate) => candidate.scenarioId !== callMeByYourNameFilmHistoryProfile.scenarioId)
+    .filter((candidate) => candidate.scenarioId !== goodTimeFilmHistoryProfile.scenarioId)
     .filter((candidate) => getIndependentStorytellingProfileGroup(candidate.scenarioId) === group)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
 }
