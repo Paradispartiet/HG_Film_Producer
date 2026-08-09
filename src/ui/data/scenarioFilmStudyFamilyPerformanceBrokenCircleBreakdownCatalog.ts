@@ -1,5 +1,7 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import { theStraightStoryFilmHistoryProfile } from "./scenarioFilmStudyAmericanRegionalStraightStory";
 import { dancerInTheDarkFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceDancerDark";
+import { manchesterByTheSeaFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceManchesterByTheSea";
 import { scenesFromAMarriageFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceScenesMarriage";
 import { theSonsRoomFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceSonsRoom";
 
@@ -38,10 +40,18 @@ const donors = [
   theSonsRoomFilmHistoryProfile,
 ] as const satisfies readonly FilmHistoryProfile[];
 
+const manchesterByTheSeaDonors = [
+  theSonsRoomFilmHistoryProfile,
+  brokenCircleBreakdownFilmHistoryProfile,
+  theStraightStoryFilmHistoryProfile,
+] as const satisfies readonly FilmHistoryProfile[];
+
 export function getBrokenCircleBreakdownFilmHistoryProfile(scenarioId: string): FilmHistoryProfile | undefined {
+  if (scenarioId === manchesterByTheSeaFilmHistoryProfile.scenarioId) return manchesterByTheSeaFilmHistoryProfile;
   return scenarioId === brokenCircleBreakdownFilmHistoryProfile.scenarioId ? brokenCircleBreakdownFilmHistoryProfile : undefined;
 }
 
 export function getBrokenCircleBreakdownFilmHistoryDonors(profile: FilmHistoryProfile): readonly FilmHistoryProfile[] | undefined {
+  if (profile.scenarioId === manchesterByTheSeaFilmHistoryProfile.scenarioId) return manchesterByTheSeaDonors;
   return profile.scenarioId === brokenCircleBreakdownFilmHistoryProfile.scenarioId ? donors : undefined;
 }
