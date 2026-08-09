@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { nerveProductionCaseVerification } from "./scenarioProductionVerificationNerve";
 
 export const theGameVerificationRecords = [
   {
@@ -88,5 +89,6 @@ export const theGameVerificationRecords = [
         note: "Roger Ebert's contemporary review identifies Michael Douglas's controlled, gradual performance, the sustained paranoid viewpoint and the film's commitment to withholding emotional and narrative release until its final sequence of reversals."
       }
     ]
-  }
+  },
+  nerveProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
