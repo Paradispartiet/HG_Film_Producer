@@ -9,7 +9,7 @@ import {
 } from "./scenarioProductionVerificationRegistry.js";
 
 const verificationGroups = [
-  ["silent cinema foundations", ["scenario_a_trip_to_the_moon_1902", "scenario_the_cabinet_dr_caligari_1920", "scenario_nosferatu_1922", "scenario_battleship_potemkin_1925"], 4],
+  ["silent cinema foundations", ["scenario_a_trip_to_the_moon_1902", "scenario_the_cabinet_of_dr_caligari_1920", "scenario_nosferatu_1922", "scenario_battleship_potemkin_1925"], 4],
   ["silent and early studio systems", ["scenario_the_general_1926", "scenario_the_phantom_carriage_1921", "scenario_metropolis_1927", "scenario_frankenstein_1931"], 5],
   ["late silent and early sound systems", ["scenario_the_passion_of_joan_of_arc_1928", "scenario_man_with_a_movie_camera_1929", "scenario_m_1931", "scenario_city_lights_1931"], 4],
   ["1930s production systems", ["scenario_king_kong_1933", "scenario_modern_times_1936", "scenario_snow_white_and_the_seven_dwarfs_1937", "scenario_the_rules_of_the_game_1939"], 4],
