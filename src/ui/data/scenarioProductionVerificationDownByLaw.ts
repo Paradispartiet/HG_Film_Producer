@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { patersonProductionCaseVerification } from "./scenarioProductionVerificationPaterson";
 
 export const downByLawVerificationRecords = [
   {
@@ -48,5 +49,6 @@ export const downByLawVerificationRecords = [
         note: "Jarmusch explains that he deliberately avoids expected dramatic peaks and is specifically proud of skipping the jailbreak mechanics in Down by Law; the interview also describes his blueprint-like scripts, adaptable shot planning and collaborator-led process."
       }
     ]
-  }
+  },
+  patersonProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
