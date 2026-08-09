@@ -7,14 +7,6 @@ export const filmworkerProductionCaseVerification = {
   summary: "Tony Zierra's Filmworker is verified as an archive-and-witness cinema-history documentary built around Leon Vitali's largely invisible production labor for Stanley Kubrick: long-form testimony, collaborator interviews, film excerpts and production artifacts are edited into a biography of casting, actor coaching, location work, print checking, color timing, sound, marketing and restoration. Eleven inspectable sources from eleven publishers support the production method, credits, festival history and legacy.",
   sources: [
     {
-      title: "Filmworker, behind the scenes with Stanley Kubrick",
-      publisher: "Festival de Cannes",
-      url: "https://www.festival-cannes.com/en/2017/filmworker-behind-the-scenes-with-stanley-kubrick/",
-      sourceKind: "filmmaker_interview",
-      supports: ["overall", "screenplay", "editing"],
-      note: "Tony Zierra explains that he met Vitali while making a broader Kubrick documentary and rebuilt the project around their complex working relationship and the principle of doing whatever was necessary to make and maintain the films."
-    },
-    {
       title: "FILMWORKER",
       publisher: "Festival de Cannes",
       url: "https://www.festival-cannes.com/en/f/filmworker/",
@@ -85,6 +77,14 @@ export const filmworkerProductionCaseVerification = {
       sourceKind: "filmmaker_interview",
       supports: ["overall", "screenplay", "editing"],
       note: "The Cannes interview documents Zierra's multi-year Kubrick project changing direction after he met Vitali and saw boxes of notebooks, props, photographs and artifacts, while Vitali details his shifting work as casting agent, editor, translator, color corrector and production aide."
+    },
+    {
+      title: "Filmworker review - Stanley Kubrick's right-hand man gets his moment in the limelight",
+      publisher: "The Guardian",
+      url: "https://www.theguardian.com/film/2017/may/19/filmworker-review-stanley-kubrick-leon-vitali-cannes-2017",
+      sourceKind: "archive_feature",
+      supports: ["overall", "screenplay", "sound"],
+      note: "The Cannes review describes Vitali's work spanning production assistance, acting coaching, sound engineering, driving, tailoring, casting and later digital restoration, supporting the film's shift from auteur celebration toward otherwise unacknowledged labor."
     },
     {
       title: "Cannes 2017: Claire's Camera, Filmworker, Unforgiven",
