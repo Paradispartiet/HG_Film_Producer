@@ -61,6 +61,7 @@ import { daysOfBeingWildFilmHistoryProfile } from "./scenarioFilmStudyEastAsianD
 import { goodbyeDragonInnFilmHistoryProfile } from "./scenarioFilmStudyEastAsianGoodbyeDragonInn";
 import { millenniumMamboFilmHistoryProfile } from "./scenarioFilmStudyEastAsianMillenniumMambo";
 import { viveLAmourFilmHistoryProfile } from "./scenarioFilmStudyEastAsianViveLAmour";
+import { callMeByYourNameFilmHistoryProfile } from "./scenarioFilmStudyIndependentDesireCallMeByYourName";
 import { fishTankFilmHistoryProfile } from "./scenarioFilmStudyIndependentDesireFishTank";
 import { pariahFilmHistoryProfile } from "./scenarioFilmStudyIndependentDesirePariah";
 import { poisonFilmHistoryProfile } from "./scenarioFilmStudyIndependentDesirePoison";
@@ -202,6 +203,7 @@ const profiles = [
   fishTankFilmHistoryProfile,
   pariahFilmHistoryProfile,
   theSouvenirFilmHistoryProfile,
+  callMeByYourNameFilmHistoryProfile,
   chameleonStreetFilmHistoryProfile,
   mississippiMasalaFilmHistoryProfile,
   gasFoodLodgingFilmHistoryProfile,
@@ -305,6 +307,7 @@ assignGroup("independent_desire_identity_authorship", [
   fishTankFilmHistoryProfile.scenarioId,
   pariahFilmHistoryProfile.scenarioId,
   theSouvenirFilmHistoryProfile.scenarioId,
+  callMeByYourNameFilmHistoryProfile.scenarioId,
 ]);
 assignGroup("american_regional_identity_place_belonging", [
   chameleonStreetFilmHistoryProfile.scenarioId,
@@ -387,6 +390,14 @@ export function getIndependentStorytellingDonors(
   const theSavagesDonors = getTheSavagesFilmHistoryDonors(profile);
   if (theSavagesDonors) return theSavagesDonors;
 
+  if (profile.scenarioId === callMeByYourNameFilmHistoryProfile.scenarioId) {
+    return [
+      pariahFilmHistoryProfile,
+      theSouvenirFilmHistoryProfile,
+      fishTankFilmHistoryProfile,
+    ];
+  }
+
   if (profile.scenarioId === anomalisaFilmHistoryProfile.scenarioId) {
     return [
       beingJohnMalkovichFilmHistoryProfile,
@@ -414,6 +425,7 @@ export function getIndependentStorytellingDonors(
   const group = getIndependentStorytellingProfileGroup(profile.scenarioId);
   return profiles
     .filter((candidate) => candidate.scenarioId !== profile.scenarioId)
+    .filter((candidate) => candidate.scenarioId !== callMeByYourNameFilmHistoryProfile.scenarioId)
     .filter((candidate) => getIndependentStorytellingProfileGroup(candidate.scenarioId) === group)
     .sort((left, right) => left.scenarioId.localeCompare(right.scenarioId));
 }
