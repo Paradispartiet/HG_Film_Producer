@@ -28,6 +28,9 @@ if [[ ! -r "$CA_FILE" ]]; then
   exit 1
 fi
 
+echo "[codespaces] Ensuring GitHub CLI..."
+bash .devcontainer/ensure-gh.sh
+
 sudo tee "$PROFILE_FILE" >/dev/null <<'EOF'
 export NODE_EXTRA_CA_CERTS="/etc/ssl/certs/ca-certificates.crt"
 export SSL_CERT_FILE="/etc/ssl/certs/ca-certificates.crt"
