@@ -4,6 +4,7 @@ import { blindnessProductionCaseVerification } from "./scenarioProductionVerific
 import { eyesWideShutProductionCaseVerification } from "./scenarioProductionVerificationEyesWideShut";
 import { onBodyAndSoulProductionCaseVerification } from "./scenarioProductionVerificationOnBodyAndSoul";
 import { roomProductionCaseVerification } from "./scenarioProductionVerificationRoom";
+import { terrifiedProductionCaseVerification } from "./scenarioProductionVerificationTerrified";
 import { theGameVerificationRecords } from "./scenarioProductionVerificationTheGame";
 
 export const subjectiveEnclosurePerformanceVerificationRecords = [
@@ -171,6 +172,7 @@ export const subjectiveEnclosurePerformanceVerificationRecords = [
   blindnessProductionCaseVerification,
   ...theGameVerificationRecords,
   onBodyAndSoulProductionCaseVerification,
+  terrifiedProductionCaseVerification,
   beingJohnMalkovichProductionCaseVerification,
   eyesWideShutProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
