@@ -66,7 +66,7 @@ Loveless is added to the existing `family_performance_grief_power` group with an
 
 The sequence is intentional: `Winter Sleep` supplies contemporary social pressure and engineered family/class space, `Scenes from a Marriage` the core marital-disintegration lineage, and `The Son's Room` the family system reorganized by a child's absence and grief.
 
-The new Loveless profile is explicitly excluded from the group's generic donor pool so existing donor behavior does not change.
+The Loveless profile is resolved through the existing family specialty catalog rather than inserted into the generic donor pool, so existing donor behavior does not change.
 
 ## Verification sources
 
@@ -95,4 +95,4 @@ This case does not modify:
 - the playable scenario catalogue;
 - global Film Study resolver ordering.
 
-Only the existing independent-storytelling catalog, its already-wired verification batch, permanent count/audit and dedicated Loveless files are changed.
+Only the existing family-performance specialty catalog, its already-wired family verification batch, permanent count/audit and dedicated Loveless files are changed.
