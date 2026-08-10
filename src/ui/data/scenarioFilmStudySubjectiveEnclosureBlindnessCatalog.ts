@@ -1,13 +1,17 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
 import { soundOfMetalFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecaritySoundOfMetal";
 import { mySkinnySisterFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceMySkinnySister";
+import { tropicalMaladyFilmHistoryProfile } from "./scenarioFilmStudyAsianLandscapeTropicalMalady";
 import { elephantFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingElephant";
 import { safeFilmHistoryProfile } from "./scenarioFilmStudyQueerIndependentSafe";
+import { threeIronFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanThreeIron";
 import { theHostFilmHistoryProfile } from "./scenarioFilmStudySouthKoreanTheHost";
 import { theImpossibleFilmHistoryProfile } from "./scenarioFilmStudyConstructedWorldsTheImpossibleCatalog";
+import { anomalisaFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureAnomalisa";
 import { beingJohnMalkovichFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureBeingJohnMalkovich";
 import { blindnessFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureBlindness";
 import { nerveFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureNerve";
+import { onBodyAndSoulFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureOnBodyAndSoul";
 import { roomFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureRoom";
 import { theGameFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureTheGame";
 
@@ -29,10 +33,17 @@ const nerveDonors = [
   beingJohnMalkovichFilmHistoryProfile,
 ] as const satisfies readonly FilmHistoryProfile[];
 
+const onBodyAndSoulDonors = [
+  anomalisaFilmHistoryProfile,
+  threeIronFilmHistoryProfile,
+  tropicalMaladyFilmHistoryProfile,
+] as const satisfies readonly FilmHistoryProfile[];
+
 export function getBlindnessFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
   if (scenarioId === nerveFilmHistoryProfile.scenarioId) return nerveFilmHistoryProfile;
+  if (scenarioId === onBodyAndSoulFilmHistoryProfile.scenarioId) return onBodyAndSoulFilmHistoryProfile;
   if (scenarioId === roomFilmHistoryProfile.scenarioId) return roomFilmHistoryProfile;
   return scenarioId === blindnessFilmHistoryProfile.scenarioId
     ? blindnessFilmHistoryProfile
@@ -43,6 +54,7 @@ export function getBlindnessFilmHistoryDonors(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryProfile[] | undefined {
   if (profile.scenarioId === nerveFilmHistoryProfile.scenarioId) return nerveDonors;
+  if (profile.scenarioId === onBodyAndSoulFilmHistoryProfile.scenarioId) return onBodyAndSoulDonors;
   if (profile.scenarioId === roomFilmHistoryProfile.scenarioId) return roomDonors;
   return profile.scenarioId === blindnessFilmHistoryProfile.scenarioId
     ? blindnessDonors
