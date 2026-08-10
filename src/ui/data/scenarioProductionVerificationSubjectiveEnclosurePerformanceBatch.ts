@@ -2,6 +2,7 @@ import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerif
 import { beingJohnMalkovichProductionCaseVerification } from "./scenarioProductionVerificationBeingJohnMalkovich";
 import { blindnessProductionCaseVerification } from "./scenarioProductionVerificationBlindness";
 import { eyesWideShutProductionCaseVerification } from "./scenarioProductionVerificationEyesWideShut";
+import { onBodyAndSoulProductionCaseVerification } from "./scenarioProductionVerificationOnBodyAndSoul";
 import { roomProductionCaseVerification } from "./scenarioProductionVerificationRoom";
 import { theGameVerificationRecords } from "./scenarioProductionVerificationTheGame";
 
@@ -169,6 +170,7 @@ export const subjectiveEnclosurePerformanceVerificationRecords = [
   roomProductionCaseVerification,
   blindnessProductionCaseVerification,
   ...theGameVerificationRecords,
+  onBodyAndSoulProductionCaseVerification,
   beingJohnMalkovichProductionCaseVerification,
   eyesWideShutProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
