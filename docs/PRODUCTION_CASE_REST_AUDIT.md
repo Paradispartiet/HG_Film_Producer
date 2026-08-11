@@ -7,14 +7,14 @@ Audit date: **2026-08-11**
 | Measure | Count |
 |---|---:|
 | Playable scenarios | 378 |
-| Source-verified Production Cases | 363 |
-| Remaining unverified Production Cases | 15 |
-| Source-backed Film Study profiles | 363 |
+| Source-verified Production Cases | 364 |
+| Remaining unverified Production Cases | 14 |
+| Source-backed Film Study profiles | 364 |
 | Film-specific production briefs | 378 |
 | Seed fallback briefs | 0 |
-| Scenarios without source-backed profile | 15 |
+| Scenarios without source-backed profile | 14 |
 
-The audit previously found and corrected one registry mismatch: the Jeanne Dielman profile and verification used `scenario_jeanne_dielman_1975`, while the playable catalog uses `scenario_jeanne_dielman_23_quai_du_commerce_1080_bruxelles_1975`. With The Florida Project materialized, all 363 verified records and profiles point to playable scenarios.
+The audit previously found and corrected one registry mismatch: the Jeanne Dielman profile and verification used `scenario_jeanne_dielman_1975`, while the playable catalog uses `scenario_jeanne_dielman_23_quai_du_commerce_1080_bruxelles_1975`. With The Killing of a Sacred Deer materialized, all 364 verified records and profiles point to playable scenarios.
 
 ## Integrity
 
@@ -29,14 +29,14 @@ The audit previously found and corrected one registry mismatch: the Jeanne Dielm
 
 | Catalog origin | Remaining |
 |---|---:|
-| `film_scenarios_seed.json` | 13 |
+| `film_scenarios_seed.json` | 12 |
 | `italyFranceGermanyBeneluxExpansion.ts` | 2 |
 
 ## Remaining work by decade
 
 | Decade | Remaining |
 |---|---:|
-| 2010s | 13 |
+| 2010s | 12 |
 | 2020s | 2 |
 
 ## Remaining work by genre
@@ -45,13 +45,13 @@ A film can belong to more than one genre.
 
 | Genre | Remaining |
 |---|---:|
-| Drama | 14 |
+| Drama | 13 |
 | Crime | 4 |
 | Comedy | 3 |
-| Thriller | 3 |
+| Thriller | 2 |
 | Romance | 2 |
-| Horror | 2 |
-| Mystery | 2 |
+| Horror | 1 |
+| Mystery | 1 |
 | Fantasy | 1 |
 | Documentary | 1 |
 | Sci-Fi | 1 |
@@ -60,21 +60,20 @@ A film can belong to more than one genre.
 
 | # | Year | Film | Scenario ID |
 |---:|---:|---|---|
-| 1 | 2017 | The Killing of a Sacred Deer | `scenario_the_killing_of_a_sacred_deer_2017` |
-| 2 | 2017 | The Square | `scenario_the_square_2017` |
-| 3 | 2017 | Trädgårdsgatan | `scenario_tradgardsgatan_2017` |
-| 4 | 2018 | Birds of Passage | `scenario_birds_of_passage_2018` |
-| 5 | 2018 | Capernaum | `scenario_capernaum_2018` |
-| 6 | 2018 | Happy as Lazzaro | `scenario_happy_as_lazzaro_2018` |
-| 7 | 2018 | Shoplifters | `scenario_shoplifters_2018` |
-| 8 | 2018 | The Guilty | `scenario_the_guilty_2018` |
-| 9 | 2018 | The House That Jack Built | `scenario_the_house_that_jack_built_2018` |
-| 10 | 2019 | Leaving Neverland | `scenario_leaving_neverland_2019` |
-| 11 | 2019 | Once Upon a Time in... Hollywood | `scenario_once_upon_a_time_in_hollywood_2019` |
-| 12 | 2019 | Portrait of a Lady on Fire | `scenario_portrait_of_a_lady_on_fire_2019` |
-| 13 | 2019 | Psychobitch | `scenario_psychobitch_2019` |
-| 14 | 2021 | Don't Look Up | `scenario_don_t_look_up_2021` |
-| 15 | 2022 | Close | `scenario_close_2022` |
+| 1 | 2017 | The Square | `scenario_the_square_2017` |
+| 2 | 2017 | Trädgårdsgatan | `scenario_tradgardsgatan_2017` |
+| 3 | 2018 | Birds of Passage | `scenario_birds_of_passage_2018` |
+| 4 | 2018 | Capernaum | `scenario_capernaum_2018` |
+| 5 | 2018 | Happy as Lazzaro | `scenario_happy_as_lazzaro_2018` |
+| 6 | 2018 | Shoplifters | `scenario_shoplifters_2018` |
+| 7 | 2018 | The Guilty | `scenario_the_guilty_2018` |
+| 8 | 2018 | The House That Jack Built | `scenario_the_house_that_jack_built_2018` |
+| 9 | 2019 | Leaving Neverland | `scenario_leaving_neverland_2019` |
+| 10 | 2019 | Once Upon a Time in... Hollywood | `scenario_once_upon_a_time_in_hollywood_2019` |
+| 11 | 2019 | Portrait of a Lady on Fire | `scenario_portrait_of_a_lady_on_fire_2019` |
+| 12 | 2019 | Psychobitch | `scenario_psychobitch_2019` |
+| 13 | 2021 | Don't Look Up | `scenario_don_t_look_up_2021` |
+| 14 | 2022 | Close | `scenario_close_2022` |
 
 ## Audit method
 

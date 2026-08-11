@@ -89,6 +89,7 @@ import { postwarEuropeanModernismVerificationRecords } from "./scenarioProductio
 import { priorityIndieFinalVerificationRecords } from "./scenarioProductionVerificationPriorityIndieFinalBatch";
 import { queerIndependentBodyCommunityArchiveVerificationRecords } from "./scenarioProductionVerificationQueerIndependentBodyCommunityArchiveBatch";
 import { rumbleFishVerificationRecords } from "./scenarioProductionVerificationRumbleFish";
+import { sacredDeerProductionCaseVerification } from "./scenarioProductionVerificationSacredDeer";
 import { silentFoundationsVerificationRecords } from "./scenarioProductionVerificationSilentFoundationsBatch";
 import { silentStudioSystemsVerificationRecords } from "./scenarioProductionVerificationSilentStudioSystemsBatch";
 import { southKoreanGenreSystemsVerificationRecords } from "./scenarioProductionVerificationSouthKoreanGenreSystemsBatch";
@@ -152,6 +153,7 @@ const additionalVerificationRecords = [
   ...chineseLanguageModernityMemoryVerificationRecords,
   ...asianLandscapeGriefAttentionVerificationRecords,
   ...subjectiveEnclosurePerformanceVerificationRecords,
+  sacredDeerProductionCaseVerification,
   ...familyPerformanceGriefPowerVerificationRecords,
   ...final1970sVerificationRecords,
   ...bodyArchiveRestitutionPerspectiveVerificationRecords,
