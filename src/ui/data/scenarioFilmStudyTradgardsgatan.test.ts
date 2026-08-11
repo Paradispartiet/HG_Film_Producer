@@ -43,7 +43,7 @@ test("Trädgårdsgatan resolves as a source-backed collective Swedish family-mem
     study?.historyProfile.period,
     study?.historyProfile.moment,
     study?.historyProfile.after,
-    ...study?.historyProfile.technicalHighlights.map((item) => item.note) ?? [],
+    ...(study?.historyProfile.technicalHighlights.map((item) => item.note) ?? []),
   ].join(" ");
   assert.match(profileText, /Köpingebro/);
   assert.match(profileText, /Sofie Palage/);
