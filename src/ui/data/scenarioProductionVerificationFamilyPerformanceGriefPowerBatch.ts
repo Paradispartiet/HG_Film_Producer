@@ -6,6 +6,7 @@ import { mommyProductionCaseVerification } from "./scenarioProductionVerificatio
 import { mySkinnySisterProductionCaseVerification } from "./scenarioProductionVerificationMySkinnySister";
 import { ramsProductionCaseVerification } from "./scenarioProductionVerificationRams";
 import { theBigSickProductionCaseVerification } from "./scenarioProductionVerificationTheBigSick";
+import { tradgardsgatanProductionCaseVerification } from "./scenarioProductionVerificationTradgardsgatan";
 import { theSavagesVerificationRecords } from "./scenarioProductionVerificationTheSavages";
 
 export const familyPerformanceGriefPowerVerificationRecords = [
@@ -175,6 +176,7 @@ export const familyPerformanceGriefPowerVerificationRecords = [
   manchesterByTheSeaProductionCaseVerification,
   lovelessProductionCaseVerification,
   theBigSickProductionCaseVerification,
+  tradgardsgatanProductionCaseVerification,
   ...theSavagesVerificationRecords,
   ...blueJasmineVerificationRecords,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
