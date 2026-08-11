@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { theSquareProductionCaseVerification } from "./scenarioProductionVerificationTheSquare";
 
 export const modernNordicBehaviorSystemsVerificationRecords = [
   {
@@ -160,5 +161,6 @@ export const modernNordicBehaviorSystemsVerificationRecords = [
         note: "NFI records the Oslo-trilogy placement, Trier and Vogt screenplay, Oslo Pictures producers, Cannes-to-Oscar circulation, national audience and nominations for International Feature and Original Screenplay."
       }
     ]
-  }
+  },
+  theSquareProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
