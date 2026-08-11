@@ -30,7 +30,7 @@ import { contemporaryEuropeanSocialCareVerificationRecords } from "./scenarioPro
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
 import { czechoslovakNewWaveVerificationRecords } from "./scenarioProductionVerificationCzechoslovakNewWaveBatch";
-import { early1960sProductionSystemsVerificationRecords } from "./scenarioProductionVerificationEarly1960sScaleIndependentBatch";
+import { early1960sProductionSystemsVerificationRecords } from "./scenarioProductionVerificationEarly1960sProductionSystemsBatch";
 import { european1960sSpaceVerificationRecords } from "./scenarioProductionVerificationEuropean1960sSpaceSystemsBatch";
 import { europeanModernistProductionVerificationRecords } from "./scenarioProductionVerificationEuropeanModernistProductionBatch";
 import { europeanPoeticMemoryVerificationRecords } from "./scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch";
