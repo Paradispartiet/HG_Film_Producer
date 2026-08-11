@@ -150,7 +150,7 @@ const verificationGroups = [
   ["Japanese ambiguity and dialogue systems", ["scenario_cure_1997", "scenario_wheel_of_fortune_and_fantasy_2021", "scenario_monster_kore_eda_2023", "scenario_evil_does_not_exist_2023"], 4],
 ] as const;
 
-const expectedVerifiedCount = 361;
+const expectedVerifiedCount = 362;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();

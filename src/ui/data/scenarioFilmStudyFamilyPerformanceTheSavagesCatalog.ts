@@ -1,5 +1,7 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import { mississippiMasalaFilmHistoryProfile } from "./scenarioFilmStudyAmericanRegionalMississippiMasala";
 import { allTheBeautyAndTheBloodshedFilmHistoryProfile } from "./scenarioFilmStudyBodyArchiveAllBeauty";
+import { beforeSunriseFilmHistoryProfile } from "./scenarioFilmStudyFestivalUrbanIntimacyBeforeSunrise";
 import { safeFilmHistoryProfile } from "./scenarioFilmStudyQueerIndependentSafe";
 import { blueJasmineFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceBlueJasmine";
 import {
@@ -9,6 +11,7 @@ import {
 import { lovelessFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceLoveless";
 import { scenesFromAMarriageFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceScenesMarriage";
 import { secretsAndLiesFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceSecretsLies";
+import { theBigSickFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceTheBigSick";
 import { theSavagesFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceTheSavages";
 import { theSonsRoomFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceSonsRoom";
 import { winterSleepFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceWinterSleep";
@@ -40,6 +43,12 @@ const lovelessDonors = [
   theSonsRoomFilmHistoryProfile,
 ] as const satisfies readonly FilmHistoryProfile[];
 
+const theBigSickDonors = [
+  theSavagesFilmHistoryProfile,
+  mississippiMasalaFilmHistoryProfile,
+  beforeSunriseFilmHistoryProfile,
+] as const satisfies readonly FilmHistoryProfile[];
+
 export function getTheSavagesFilmHistoryProfile(
   scenarioId: string,
 ): FilmHistoryProfile | undefined {
@@ -48,6 +57,7 @@ export function getTheSavagesFilmHistoryProfile(
   if (scenarioId === blueJasmineFilmHistoryProfile.scenarioId) return blueJasmineFilmHistoryProfile;
   if (scenarioId === brothersFilmHistoryProfile.scenarioId) return brothersFilmHistoryProfile;
   if (scenarioId === lovelessFilmHistoryProfile.scenarioId) return lovelessFilmHistoryProfile;
+  if (scenarioId === theBigSickFilmHistoryProfile.scenarioId) return theBigSickFilmHistoryProfile;
   return scenarioId === theSavagesFilmHistoryProfile.scenarioId
     ? theSavagesFilmHistoryProfile
     : undefined;
@@ -61,6 +71,7 @@ export function getTheSavagesFilmHistoryDonors(
   if (profile.scenarioId === blueJasmineFilmHistoryProfile.scenarioId) return blueJasmineDonors;
   if (profile.scenarioId === brothersFilmHistoryProfile.scenarioId) return brothersDonors;
   if (profile.scenarioId === lovelessFilmHistoryProfile.scenarioId) return lovelessDonors;
+  if (profile.scenarioId === theBigSickFilmHistoryProfile.scenarioId) return theBigSickDonors;
   return profile.scenarioId === theSavagesFilmHistoryProfile.scenarioId
     ? theSavagesDonors
     : undefined;
