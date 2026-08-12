@@ -1,6 +1,7 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
 import { birdsOfPassageFilmHistoryProfile } from "./scenarioFilmStudyBirdsOfPassage";
 import { capernaumFilmHistoryProfile } from "./scenarioFilmStudyCapernaum";
+import { happyAsLazzaroFilmHistoryProfile } from "./scenarioFilmStudyHappyAsLazzaro";
 import { scenesFromAMarriageFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceScenesMarriage";
 import { bloodSimpleFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreBloodSimple";
 import { theBigLebowskiFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreBigLebowski";
@@ -336,6 +337,7 @@ assignGroup("japanese_ambiguity_dialogue", [
 
 export function getIndependentStorytellingCatalogProfile(scenarioId: string): FilmHistoryProfile | undefined {
   if (scenarioId === capernaumFilmHistoryProfile.scenarioId) return capernaumFilmHistoryProfile;
+  if (scenarioId === happyAsLazzaroFilmHistoryProfile.scenarioId) return happyAsLazzaroFilmHistoryProfile;
   if (scenarioId === birdsOfPassageFilmHistoryProfile.scenarioId) return birdsOfPassageFilmHistoryProfile;
   return getMommyFilmHistoryProfile(scenarioId)
     ?? getThreeIronFilmHistoryProfile(scenarioId)
@@ -382,6 +384,14 @@ export function getIndependentStorytellingDonors(
       theChildFilmHistoryProfile,
       fishTankFilmHistoryProfile,
       rosettaFilmHistoryProfile,
+    ];
+  }
+
+  if (profile.scenarioId === happyAsLazzaroFilmHistoryProfile.scenarioId) {
+    return [
+      tropicalMaladyFilmHistoryProfile,
+      daughtersOfTheDustFilmHistoryProfile,
+      satantangoFilmHistoryProfile,
     ];
   }
 
