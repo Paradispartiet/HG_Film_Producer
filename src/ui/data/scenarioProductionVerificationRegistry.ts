@@ -48,6 +48,7 @@ import { independentDesireIdentityAuthorshipVerificationRecords } from "./scenar
 import { independentStorytellingVerificationRecords } from "./scenarioProductionVerificationIndependentStorytellingBatch";
 import { birdsOfPassageProductionCaseVerification } from "./scenarioProductionVerificationBirdsOfPassage";
 import { capernaumProductionCaseVerification } from "./scenarioProductionVerificationCapernaum";
+import { happyAsLazzaroProductionCaseVerification } from "./scenarioProductionVerificationHappyAsLazzaro";
 import { iDanielBlakeProductionCaseVerification } from "./scenarioProductionVerificationIDanielBlake";
 import { nextFour2008_2009VerificationRecords } from "./scenarioProductionVerificationNextFour2008_2009Batch";
 import { nextFour2010_2011VerificationRecords } from "./scenarioProductionVerificationNextFour2010_2011Batch";
@@ -119,6 +120,7 @@ const additionalVerificationRecords = [
   ...independentStorytellingVerificationRecords,
   birdsOfPassageProductionCaseVerification,
   capernaumProductionCaseVerification,
+  happyAsLazzaroProductionCaseVerification,
   iDanielBlakeProductionCaseVerification,
   ...nextFour2008_2009VerificationRecords,
   ...nextFour2010_2011VerificationRecords,
