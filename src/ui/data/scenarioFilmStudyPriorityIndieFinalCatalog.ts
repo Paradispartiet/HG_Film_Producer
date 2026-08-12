@@ -1,6 +1,10 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import { reservoirDogsFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreReservoirDogs";
+import { soundOfMetalFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecaritySoundOfMetal";
+import { bartonFinkFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureBartonFink";
 import { capernaumFilmHistoryProfile } from "./scenarioFilmStudyCapernaum";
 import { shopliftersFilmHistoryProfile } from "./scenarioFilmStudyShoplifters";
+import { theGuiltyFilmHistoryProfile } from "./scenarioFilmStudyTheGuilty";
 import { stillWalkingFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryStillWalking";
 import { theChildFilmHistoryProfile } from "./scenarioFilmStudySocialRealismTheChild";
 import { columbusFilmHistoryProfile } from "./scenarioFilmStudyPriorityIndieColumbus";
@@ -19,6 +23,7 @@ const profilesByScenarioId = new Map<string, FilmHistoryProfile>(
 
 export function getPriorityIndieFinalProfile(scenarioId: string): FilmHistoryProfile | undefined {
   if (scenarioId === shopliftersFilmHistoryProfile.scenarioId) return shopliftersFilmHistoryProfile;
+  if (scenarioId === theGuiltyFilmHistoryProfile.scenarioId) return theGuiltyFilmHistoryProfile;
   return profilesByScenarioId.get(scenarioId);
 }
 
@@ -30,6 +35,13 @@ export function getPriorityIndieFinalDonors(
       stillWalkingFilmHistoryProfile,
       theChildFilmHistoryProfile,
       capernaumFilmHistoryProfile,
+    ];
+  }
+  if (profile.scenarioId === theGuiltyFilmHistoryProfile.scenarioId) {
+    return [
+      reservoirDogsFilmHistoryProfile,
+      soundOfMetalFilmHistoryProfile,
+      bartonFinkFilmHistoryProfile,
     ];
   }
   if (!profilesByScenarioId.has(profile.scenarioId)) return undefined;
