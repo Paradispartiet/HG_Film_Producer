@@ -1,5 +1,6 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
 import { shopliftersProductionCaseVerification } from "./scenarioProductionVerificationShoplifters";
+import { theGuiltyProductionCaseVerification } from "./scenarioProductionVerificationTheGuilty";
 
 export const priorityIndieFinalVerificationRecords = [
   {
@@ -123,4 +124,5 @@ export const priorityIndieFinalVerificationRecords = [
     ]
   },
   shopliftersProductionCaseVerification,
+  theGuiltyProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
