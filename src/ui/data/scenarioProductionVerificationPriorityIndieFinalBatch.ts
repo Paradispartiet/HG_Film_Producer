@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { shopliftersProductionCaseVerification } from "./scenarioProductionVerificationShoplifters";
 
 export const priorityIndieFinalVerificationRecords = [
   {
@@ -120,5 +121,6 @@ export const priorityIndieFinalVerificationRecords = [
         note: "Baker and Daniels document the Arriflex 16SR3, 1.44x anamorphic lenses, 2.39 image, 23-day shoot, minimal mobile crew, tripod-led coverage, shot listing, colour strategy and edit-conscious camera planning."
       }
     ]
-  }
+  },
+  shopliftersProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
