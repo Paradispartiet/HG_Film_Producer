@@ -1,4 +1,5 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import { birdsOfPassageFilmHistoryProfile } from "./scenarioFilmStudyBirdsOfPassage";
 import { scenesFromAMarriageFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceScenesMarriage";
 import { bloodSimpleFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreBloodSimple";
 import { theBigLebowskiFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreBigLebowski";
@@ -332,6 +333,7 @@ assignGroup("japanese_ambiguity_dialogue", [
 ]);
 
 export function getIndependentStorytellingCatalogProfile(scenarioId: string): FilmHistoryProfile | undefined {
+  if (scenarioId === birdsOfPassageFilmHistoryProfile.scenarioId) return birdsOfPassageFilmHistoryProfile;
   return getMommyFilmHistoryProfile(scenarioId)
     ?? getThreeIronFilmHistoryProfile(scenarioId)
     ?? getLastLifeInTheUniverseFilmHistoryProfile(scenarioId)
@@ -372,6 +374,14 @@ export function getIndependentStorytellingProfileGroup(
 export function getIndependentStorytellingDonors(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryProfile[] {
+  if (profile.scenarioId === birdsOfPassageFilmHistoryProfile.scenarioId) {
+    return [
+      daughtersOfTheDustFilmHistoryProfile,
+      aTouchOfSinFilmHistoryProfile,
+      marlinaFilmHistoryProfile,
+    ];
+  }
+
   const mommyDonors = getMommyFilmHistoryDonors(profile);
   if (mommyDonors) return mommyDonors;
 
