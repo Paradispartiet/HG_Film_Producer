@@ -46,6 +46,7 @@ import { hongKongTaiwanUrbanTimeVerificationRecords } from "./scenarioProduction
 import { iberianPortugueseMemoryVerificationRecords } from "./scenarioProductionVerificationIberianPortugueseMemorySystemsBatch";
 import { independentDesireIdentityAuthorshipVerificationRecords } from "./scenarioProductionVerificationIndependentDesireIdentityAuthorshipBatch";
 import { independentStorytellingVerificationRecords } from "./scenarioProductionVerificationIndependentStorytellingBatch";
+import { birdsOfPassageProductionCaseVerification } from "./scenarioProductionVerificationBirdsOfPassage";
 import { iDanielBlakeProductionCaseVerification } from "./scenarioProductionVerificationIDanielBlake";
 import { nextFour2008_2009VerificationRecords } from "./scenarioProductionVerificationNextFour2008_2009Batch";
 import { nextFour2010_2011VerificationRecords } from "./scenarioProductionVerificationNextFour2010_2011Batch";
@@ -115,6 +116,7 @@ const additionalVerificationRecords = [
   ...minimalistRoadVerificationRecords,
   ...europeanPressureVerificationRecords,
   ...independentStorytellingVerificationRecords,
+  birdsOfPassageProductionCaseVerification,
   iDanielBlakeProductionCaseVerification,
   ...nextFour2008_2009VerificationRecords,
   ...nextFour2010_2011VerificationRecords,
