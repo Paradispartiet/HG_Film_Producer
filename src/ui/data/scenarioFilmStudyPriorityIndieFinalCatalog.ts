@@ -5,6 +5,7 @@ import { bartonFinkFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclo
 import { capernaumFilmHistoryProfile } from "./scenarioFilmStudyCapernaum";
 import { shopliftersFilmHistoryProfile } from "./scenarioFilmStudyShoplifters";
 import { theGuiltyFilmHistoryProfile } from "./scenarioFilmStudyTheGuilty";
+import { theHouseThatJackBuiltFilmHistoryProfile } from "./scenarioFilmStudyTheHouseThatJackBuilt";
 import { stillWalkingFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryStillWalking";
 import { theChildFilmHistoryProfile } from "./scenarioFilmStudySocialRealismTheChild";
 import { columbusFilmHistoryProfile } from "./scenarioFilmStudyPriorityIndieColumbus";
@@ -24,6 +25,7 @@ const profilesByScenarioId = new Map<string, FilmHistoryProfile>(
 export function getPriorityIndieFinalProfile(scenarioId: string): FilmHistoryProfile | undefined {
   if (scenarioId === shopliftersFilmHistoryProfile.scenarioId) return shopliftersFilmHistoryProfile;
   if (scenarioId === theGuiltyFilmHistoryProfile.scenarioId) return theGuiltyFilmHistoryProfile;
+  if (scenarioId === theHouseThatJackBuiltFilmHistoryProfile.scenarioId) return theHouseThatJackBuiltFilmHistoryProfile;
   return profilesByScenarioId.get(scenarioId);
 }
 
@@ -42,6 +44,13 @@ export function getPriorityIndieFinalDonors(
       reservoirDogsFilmHistoryProfile,
       soundOfMetalFilmHistoryProfile,
       bartonFinkFilmHistoryProfile,
+    ];
+  }
+  if (profile.scenarioId === theHouseThatJackBuiltFilmHistoryProfile.scenarioId) {
+    return [
+      bartonFinkFilmHistoryProfile,
+      reservoirDogsFilmHistoryProfile,
+      theGuiltyFilmHistoryProfile,
     ];
   }
   if (!profilesByScenarioId.has(profile.scenarioId)) return undefined;
