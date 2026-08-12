@@ -1,5 +1,6 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
 import { birdsOfPassageFilmHistoryProfile } from "./scenarioFilmStudyBirdsOfPassage";
+import { capernaumFilmHistoryProfile } from "./scenarioFilmStudyCapernaum";
 import { scenesFromAMarriageFilmHistoryProfile } from "./scenarioFilmStudyFamilyPerformanceScenesMarriage";
 import { bloodSimpleFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreBloodSimple";
 import { theBigLebowskiFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenreBigLebowski";
@@ -81,6 +82,7 @@ import { slackerFilmHistoryProfile } from "./scenarioFilmStudyIndependentStoryte
 import { smokeFilmHistoryProfile } from "./scenarioFilmStudyIndependentStorytellingSmoke";
 import { satantangoFilmHistoryProfile } from "./scenarioFilmStudyEuropeanTimeIdentitySatantango";
 import { rosettaFilmHistoryProfile } from "./scenarioFilmStudySocialRealismRosetta";
+import { theChildFilmHistoryProfile } from "./scenarioFilmStudySocialRealismTheChild";
 import { cureFilmHistoryProfile } from "./scenarioFilmStudyJapaneseAmbiguityCure";
 import { evilDoesNotExistFilmHistoryProfile } from "./scenarioFilmStudyJapaneseAmbiguityEvilDoesNotExist";
 import { monsterKoreedaFilmHistoryProfile } from "./scenarioFilmStudyJapaneseAmbiguityMonster";
@@ -333,6 +335,7 @@ assignGroup("japanese_ambiguity_dialogue", [
 ]);
 
 export function getIndependentStorytellingCatalogProfile(scenarioId: string): FilmHistoryProfile | undefined {
+  if (scenarioId === capernaumFilmHistoryProfile.scenarioId) return capernaumFilmHistoryProfile;
   if (scenarioId === birdsOfPassageFilmHistoryProfile.scenarioId) return birdsOfPassageFilmHistoryProfile;
   return getMommyFilmHistoryProfile(scenarioId)
     ?? getThreeIronFilmHistoryProfile(scenarioId)
@@ -374,6 +377,14 @@ export function getIndependentStorytellingProfileGroup(
 export function getIndependentStorytellingDonors(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryProfile[] {
+  if (profile.scenarioId === capernaumFilmHistoryProfile.scenarioId) {
+    return [
+      theChildFilmHistoryProfile,
+      fishTankFilmHistoryProfile,
+      rosettaFilmHistoryProfile,
+    ];
+  }
+
   if (profile.scenarioId === birdsOfPassageFilmHistoryProfile.scenarioId) {
     return [
       daughtersOfTheDustFilmHistoryProfile,
