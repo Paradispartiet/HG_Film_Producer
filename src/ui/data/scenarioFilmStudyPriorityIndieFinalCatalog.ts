@@ -6,6 +6,8 @@ import { capernaumFilmHistoryProfile } from "./scenarioFilmStudyCapernaum";
 import { shopliftersFilmHistoryProfile } from "./scenarioFilmStudyShoplifters";
 import { theGuiltyFilmHistoryProfile } from "./scenarioFilmStudyTheGuilty";
 import { theHouseThatJackBuiltFilmHistoryProfile } from "./scenarioFilmStudyTheHouseThatJackBuilt";
+import { leavingNeverlandFilmHistoryProfile } from "./scenarioFilmStudyLeavingNeverland";
+import { onceUponATimeInHollywoodFilmHistoryProfile } from "./scenarioFilmStudyOnceUponATimeInHollywood";
 import { stillWalkingFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryStillWalking";
 import { theChildFilmHistoryProfile } from "./scenarioFilmStudySocialRealismTheChild";
 import { columbusFilmHistoryProfile } from "./scenarioFilmStudyPriorityIndieColumbus";
@@ -26,6 +28,8 @@ export function getPriorityIndieFinalProfile(scenarioId: string): FilmHistoryPro
   if (scenarioId === shopliftersFilmHistoryProfile.scenarioId) return shopliftersFilmHistoryProfile;
   if (scenarioId === theGuiltyFilmHistoryProfile.scenarioId) return theGuiltyFilmHistoryProfile;
   if (scenarioId === theHouseThatJackBuiltFilmHistoryProfile.scenarioId) return theHouseThatJackBuiltFilmHistoryProfile;
+  if (scenarioId === leavingNeverlandFilmHistoryProfile.scenarioId) return leavingNeverlandFilmHistoryProfile;
+  if (scenarioId === onceUponATimeInHollywoodFilmHistoryProfile.scenarioId) return onceUponATimeInHollywoodFilmHistoryProfile;
   return profilesByScenarioId.get(scenarioId);
 }
 
@@ -33,25 +37,19 @@ export function getPriorityIndieFinalDonors(
   profile: FilmHistoryProfile,
 ): readonly FilmHistoryProfile[] | undefined {
   if (profile.scenarioId === shopliftersFilmHistoryProfile.scenarioId) {
-    return [
-      stillWalkingFilmHistoryProfile,
-      theChildFilmHistoryProfile,
-      capernaumFilmHistoryProfile,
-    ];
+    return [stillWalkingFilmHistoryProfile, theChildFilmHistoryProfile, capernaumFilmHistoryProfile];
   }
   if (profile.scenarioId === theGuiltyFilmHistoryProfile.scenarioId) {
-    return [
-      reservoirDogsFilmHistoryProfile,
-      soundOfMetalFilmHistoryProfile,
-      bartonFinkFilmHistoryProfile,
-    ];
+    return [reservoirDogsFilmHistoryProfile, soundOfMetalFilmHistoryProfile, bartonFinkFilmHistoryProfile];
   }
   if (profile.scenarioId === theHouseThatJackBuiltFilmHistoryProfile.scenarioId) {
-    return [
-      bartonFinkFilmHistoryProfile,
-      reservoirDogsFilmHistoryProfile,
-      theGuiltyFilmHistoryProfile,
-    ];
+    return [bartonFinkFilmHistoryProfile, reservoirDogsFilmHistoryProfile, theGuiltyFilmHistoryProfile];
+  }
+  if (profile.scenarioId === leavingNeverlandFilmHistoryProfile.scenarioId) {
+    return [theGuiltyFilmHistoryProfile, soundOfMetalFilmHistoryProfile, capernaumFilmHistoryProfile];
+  }
+  if (profile.scenarioId === onceUponATimeInHollywoodFilmHistoryProfile.scenarioId) {
+    return [reservoirDogsFilmHistoryProfile, bartonFinkFilmHistoryProfile, columbusFilmHistoryProfile];
   }
   if (!profilesByScenarioId.has(profile.scenarioId)) return undefined;
   return profiles
