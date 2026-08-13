@@ -9,6 +9,7 @@ import { theHouseThatJackBuiltFilmHistoryProfile } from "./scenarioFilmStudyTheH
 import { leavingNeverlandFilmHistoryProfile } from "./scenarioFilmStudyLeavingNeverland";
 import { onceUponATimeInHollywoodFilmHistoryProfile } from "./scenarioFilmStudyOnceUponATimeInHollywood";
 import { portraitOfALadyOnFireFilmHistoryProfile } from "./scenarioFilmStudyPortraitOfALadyOnFire";
+import { psychobitchFilmHistoryProfile } from "./scenarioFilmStudyPsychobitch";
 import { stillWalkingFilmHistoryProfile } from "./scenarioFilmStudyJapaneseEverydayMemoryStillWalking";
 import { theChildFilmHistoryProfile } from "./scenarioFilmStudySocialRealismTheChild";
 import { columbusFilmHistoryProfile } from "./scenarioFilmStudyPriorityIndieColumbus";
@@ -32,6 +33,7 @@ export function getPriorityIndieFinalProfile(scenarioId: string): FilmHistoryPro
   if (scenarioId === leavingNeverlandFilmHistoryProfile.scenarioId) return leavingNeverlandFilmHistoryProfile;
   if (scenarioId === onceUponATimeInHollywoodFilmHistoryProfile.scenarioId) return onceUponATimeInHollywoodFilmHistoryProfile;
   if (scenarioId === portraitOfALadyOnFireFilmHistoryProfile.scenarioId) return portraitOfALadyOnFireFilmHistoryProfile;
+  if (scenarioId === psychobitchFilmHistoryProfile.scenarioId) return psychobitchFilmHistoryProfile;
   return profilesByScenarioId.get(scenarioId);
 }
 
@@ -55,6 +57,9 @@ export function getPriorityIndieFinalDonors(
   }
   if (profile.scenarioId === portraitOfALadyOnFireFilmHistoryProfile.scenarioId) {
     return [columbusFilmHistoryProfile, stillWalkingFilmHistoryProfile, soundOfMetalFilmHistoryProfile];
+  }
+  if (profile.scenarioId === psychobitchFilmHistoryProfile.scenarioId) {
+    return [ghostWorldFilmHistoryProfile, columbusFilmHistoryProfile, capernaumFilmHistoryProfile];
   }
   if (!profilesByScenarioId.has(profile.scenarioId)) return undefined;
   return profiles
