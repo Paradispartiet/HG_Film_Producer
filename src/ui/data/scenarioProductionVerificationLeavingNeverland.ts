@@ -1,0 +1,16 @@
+import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+
+export const leavingNeverlandProductionCaseVerification = {
+  scenarioId: "scenario_leaving_neverland_2019",
+  status: "verified",
+  verifiedAt: "2026-08-13",
+  summary: "Leaving Neverland's four-hour, two-part witness-centred documentary structure, Channel 4/HBO/AMOS production context, Sundance premiere, extended family testimony, archival construction and Dan Reed's deliberately restrained authorial stance are supported by institutional, broadcaster, film-database and contemporary reception sources.",
+  sources: [
+    { title: "Channel 4 and HBO to air Leaving Neverland", publisher: "Channel 4", url: "https://www.channel4.com/press/news/channel-4-and-hbo-air-leaving-neverland-wt", sourceKind: "film_institute", supports: ["overall", "screenplay", "editing", "sound"], note: "The commissioning release identifies Dan Reed, AMOS Pictures, Channel 4 and HBO, the two-part format, the two principal witnesses and the family-interview method." },
+    { title: "Final Additions to 2019 Sundance Film Festival Lineup", publisher: "Sundance Institute", url: "https://www.sundance.org/blogs/final-additions-to-2019-sundance-film-festival-lineup-3/", sourceKind: "film_institute", supports: ["overall", "screenplay"], note: "Sundance verifies the 2019 Special Events premiere, Dan Reed as producer-director and the US/UK production identity." },
+    { title: "Leaving Neverland", publisher: "British Council UK Films Database", url: "https://filmsandfestivals.britishcouncil.org/projects/leaving-neverland", sourceKind: "film_institute", supports: ["overall", "cinematography", "editing", "sound"], note: "The institutional database verifies Dan Reed as director and cinematographer, Jules Cornell as editor, Chad Hobson as composer and AMOS Pictures as production company." },
+    { title: "Leaving Neverland", publisher: "Apple TV", url: "https://tv.apple.com/no/show/leaving-neverland/umc.cmc.3hzfths3b4sbp7650g5lwsnm7", sourceKind: "archive_feature", supports: ["overall", "screenplay", "editing"], note: "The platform record verifies the two-episode structure, HBO studio identity, 2019 release and interview-led parallel accounts." },
+    { title: "Emmys 2019: Leaving Neverland Wins Outstanding Documentary or Nonfiction Special", publisher: "Pitchfork", url: "https://pitchfork.com/news/emmys-2019-leaving-neverland-wins-outstanding-documentary-or-nonfiction-special/", sourceKind: "trade_feature", supports: ["overall", "editing", "sound"], note: "Contemporary reporting records the documentary/nonfiction Emmy win and nominations for directing, picture editing, sound editing and sound mixing." },
+    { title: "Dan Reed on the fallout from his Michael Jackson films", publisher: "The Guardian", url: "https://www.theguardian.com/tv-and-radio/2025/mar/14/dan-reed-fallout-michael-jackson-films-neverland", sourceKind: "filmmaker_interview", supports: ["overall", "screenplay"], note: "Reed retrospectively discusses the witness-centred purpose of the film and his neutral off-camera interview stance, providing a filmmaker cross-check of the documentary method." }
+  ]
+} as const satisfies ProductionCaseVerificationRecord;
