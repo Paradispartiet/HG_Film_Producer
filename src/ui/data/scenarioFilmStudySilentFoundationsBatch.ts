@@ -9,6 +9,7 @@ import type { FilmHistoryChoice, FilmHistoryProfile, ScenarioFilmStudyMap } from
 import { blacksmithSceneFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsBlacksmith";
 import { workersLeavingLumiereFactoryFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsWorkersLeaving";
 import { fire1901FilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsFire";
+import { lifeAmericanFiremanFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsLifeAmericanFireman";
 import { greatTrainRobberyFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsGreatTrainRobbery";
 import { tripToTheMoonFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsTripToMoon";
 import { caligariFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsCaligari";
@@ -21,6 +22,7 @@ const silentFoundationsProfiles = {
   [blacksmithSceneFilmHistoryProfile.scenarioId]: blacksmithSceneFilmHistoryProfile,
   [workersLeavingLumiereFactoryFilmHistoryProfile.scenarioId]: workersLeavingLumiereFactoryFilmHistoryProfile,
   [fire1901FilmHistoryProfile.scenarioId]: fire1901FilmHistoryProfile,
+  [lifeAmericanFiremanFilmHistoryProfile.scenarioId]: lifeAmericanFiremanFilmHistoryProfile,
   [greatTrainRobberyFilmHistoryProfile.scenarioId]: greatTrainRobberyFilmHistoryProfile,
   [tripToTheMoonFilmHistoryProfile.scenarioId]: tripToTheMoonFilmHistoryProfile,
   [caligariFilmHistoryProfile.scenarioId]: caligariFilmHistoryProfile,
