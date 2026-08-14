@@ -27,6 +27,7 @@ import { cinemaParadisoVerificationRecords } from "./scenarioProductionVerificat
 import { contemporaryDissentRuralVerificationRecords } from "./scenarioProductionVerificationContemporaryDissentRuralSystemsBatch";
 import { taxiProductionCaseVerification } from "./scenarioProductionVerificationTaxi";
 import { contemporaryEuropeanSocialCareVerificationRecords } from "./scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch";
+import { corbettFitzsimmonsProductionCaseVerification } from "./scenarioProductionVerificationCorbettFitzsimmons";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
 import { czechoslovakNewWaveVerificationRecords } from "./scenarioProductionVerificationCzechoslovakNewWaveBatch";
@@ -170,6 +171,7 @@ const additionalVerificationRecords = [
   ...japaneseAmbiguityDialogueVerificationRecords,
   ...silentFoundationsVerificationRecords,
   rescuedByRoverProductionCaseVerification,
+  corbettFitzsimmonsProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
   ...productionSystems1930sVerificationRecords,
