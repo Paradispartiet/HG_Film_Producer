@@ -1,4 +1,5 @@
 import { filmHistoryChapterOne } from "./filmHistoryChapterOne.js";
+import { filmHistoryChapterTwo } from "./filmHistoryChapterTwo.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -89,15 +90,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     thesis: "Cinema becomes a reproducible public medium through intertwined changes in apparatus, exhibition, film form, production and distribution.",
     chapters: [
       filmHistoryChapterOne,
-      outline(
-        "projection-programmes-audiences",
-        2,
-        "Projection, programmes and audiences",
-        "1895–1907",
-        "How itinerant exhibition, fairgrounds, music halls, storefront theatres and early purpose-built cinemas turned moving pictures into a recurring public habit.",
-        ["Compare major early exhibition settings.", "Explain how programmes shaped meaning before feature-film dominance.", "Relate exhibition economics to demand for film production."],
-        ["exhibitor", "programme", "fairground cinema", "music hall", "nickelodeon"],
-      ),
+      filmHistoryChapterTwo,
       outline(
         "fiction-editing-narrative",
         3,
