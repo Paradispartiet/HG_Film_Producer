@@ -4,9 +4,9 @@ Audit date: **2026-08-14**
 
 ## Executable baseline
 
-The canonical playable Film Atlas now contains **385 scenarios** after materializing the Film History Chapter 2 P0 case *The Corbett–Fitzsimmons Fight (1897)*. The runtime verification-registry gate is **378 source-verified Production Cases**.
+The canonical playable Film Atlas now contains **386 scenarios** after materializing *Employees Leaving Brown's Atlas Works, Sheffield (1901)*. The runtime verification-registry gate is **379 source-verified Production Cases**.
 
-Chapter 1 remains complete at 3/3 P0 and 3/3 P1. Chapter 2 has now materialized its single P0 Anchor Film and retains exactly two P1 cases.
+Chapter 1 remains complete at 3/3 P0 and 3/3 P1. Chapter 2 has its P0 complete and has now materialized one of its two P1 cases.
 
 ## Chapter 2 Atlas state
 
@@ -18,9 +18,12 @@ Chapter 1 remains complete at 3/3 P0 and 3/3 P1. Chapter 2 has now materialized 
 
 ### P1
 
-**0/2 complete — exactly 2 remaining**
+**1/2 complete — exactly 1 remaining**
 
-- *Employees Leaving Brown's Atlas Works, Sheffield* (1901)
+Completed:
+- `scenario_employees_leaving_browns_atlas_works_sheffield_1901`
+
+Remaining:
 - *Uncle Josh at the Moving Picture Show* (1902)
 
 ### P2 — book reference only
@@ -30,13 +33,13 @@ Chapter 1 remains complete at 3/3 P0 and 3/3 P1. Chapter 2 has now materialized 
 
 P2 remains intentionally outside the Production Case queue unless a later explicit source/value review changes that decision.
 
-**Exact required new Chapter 2 Production Cases remaining: 2.**
+**Exact required new Chapter 2 Production Cases remaining: 1.**
 
 ## Integrity
 
 The permanent rest audit rejects structural drift in expected playable count, duplicate playable IDs, duplicate verification/profile IDs, orphan records, verified cases without profiles and profiles without verification. It also reports film-specific brief coverage, fallback briefs and remaining unverified scenarios.
 
-The Chapter 1 and Chapter 2 companion audits independently reconstruct the same canonical expansion chain. Chapter 1 still hard-requires its P0/P1 queues to be empty; Chapter 2 locks the exact remaining P1 titles and P2 book-only titles.
+The Chapter 1 and Chapter 2 companion audits reconstruct the same canonical expansion chain. Chapter 1 still hard-requires its P0/P1 queues to be empty; Chapter 2 now hard-locks *Uncle Josh at the Moving Picture Show* as the single remaining P1 title and preserves both P2 titles as book-only.
 
 ## Audit method
 
