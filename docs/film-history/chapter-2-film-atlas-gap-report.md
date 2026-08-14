@@ -10,54 +10,52 @@ The executable audit is `scripts/film-history-chapter-two-atlas-audit.mjs` and i
 
 > Cinema became a mass medium not only because films could be made, but because exhibitors assembled programmes, adapted presentation to particular venues and cultivated audiences whose demand reshaped production and distribution.
 
-## Atlas control
+## Final Atlas control
 
-- Canonical playable Atlas after materializing Brown's Atlas Works: **386 films**.
-- Chapter 2 P0 is complete.
+- Canonical playable Atlas after materializing all required Chapter 2 cases: **387 films**.
+- Chapter 2 P0 is complete: **0 remaining**.
+- Chapter 2 P1 is complete: **0 remaining**.
 - `The Corbett–Fitzsimmons Fight (1897)` → `scenario_the_corbett_fitzsimmons_fight_1897`.
 - `Employees Leaving Brown's Atlas Works, Sheffield (1901)` → `scenario_employees_leaving_browns_atlas_works_sheffield_1901`.
+- `Uncle Josh at the Moving Picture Show (1902)` → `scenario_uncle_josh_at_the_moving_picture_show_1902`.
 - The exact P0/P1/P2/USE_EXISTING sets are permanent audit requirements.
 
-## Existing Atlas cases to reuse
+## Existing Atlas cases used by Chapter 2
 
 | Film | Year | Chapter role | Atlas decision | Why it belongs here |
 | --- | ---: | --- | --- | --- |
 | *Workers Leaving the Lumière Factory* | 1895 | Anchor Film | **Use existing case** | Connect Lumière production to projected-programme history and collective exhibition. |
 | *The Corbett–Fitzsimmons Fight* | 1897 | Anchor Film | **Use existing case** | Proprietary capture/projection, event duration, live commentary, rights and ticket economics make production and exhibition one system. |
 | *Employees Leaving Brown's Atlas Works, Sheffield* | 1901 | Comparative Film | **Use existing case** | Local crowd staging, recognizable faces and showman commissioning turn the filmed community into the prospective paying audience. |
+| *Uncle Josh at the Moving Picture Show* | 1902 | Comparative Film | **Use existing case** | The screen, fictional spectator and revealed operator make projection itself playable while the case explicitly rejects the naïve-audience myth shortcut. |
 | *A Trip to the Moon* | 1902 | Comparative Film | **Use existing case** | International circulation and programme value show the commercial afterlife of an exportable attraction film. |
 | *The Great Train Robbery* | 1903 | Comparative Film | **Use existing case** | Flexible presentation of the bandit shot demonstrates exhibitor agency over the projected programme. |
 
-## P0 — complete
+## Required Production Case queue — complete
 
-**0 remaining.** *The Corbett–Fitzsimmons Fight* is materialized and source verified.
+The original audit recommended exactly **3 new Production Cases**:
 
-## P1 — exactly one Production Case remains
+1. **P0 — *The Corbett–Fitzsimmons Fight* (1897)** — complete.
+2. **P1 — *Employees Leaving Brown's Atlas Works, Sheffield* (1901)** — complete.
+3. **P1 — *Uncle Josh at the Moving Picture Show* (1902)** — complete.
 
-### *Uncle Josh at the Moving Picture Show* (1902)
+**Required Chapter 2 Production Cases remaining: 0.**
 
-This Edison/Porter comedy stages a spectator, projected images, a screen and the operator behind it. Its value is precisely that it lets the chapter distinguish **historical audience practice from a comic construction of the naïve spectator**. The Production Case should make film-within-film staging, projection-space design and spectator performance playable without using fiction as documentary proof that real early audiences literally mistook projected images for physical events.
+## Uncle Josh safeguards now locked
 
-**Important number: exactly 1 new Chapter 2 Production Case remains.**
-
-Production order is now simply:
-
-1. **Uncle Josh at the Moving Picture Show (1902)**
-
-## Brown's Atlas Works safeguards now locked
-
-- The factory-gate crowd is not treated as untouched reality: BFI explicitly records active marshaling/staging.
-- Local recognition is treated as a production and exhibition strategy: the filmed community was commercially valuable because it could become the paying audience.
-- The possible A. D. Thomas identification remains **uncertain**, not canonical fact.
-- Mitchell and Kenyon remain the canonical makers without pretending the surviving record establishes a modern auteur/director division for this individual actuality.
-- Silent photographed capture remains separate from variable live exhibition accompaniment.
+- The film is treated as a scripted Edison/Porter rube comedy, not documentary evidence of actual audience behaviour.
+- Charles Manley's reactions are the comic performance system, not a proxy for a universal 1902 spectator.
+- The dancer, express train and country-couple projections create a controlled escalation ending in the screen/operator reveal.
+- The projection screen and operator space are treated as production design and exhibition apparatus, not merely story props.
+- Photographed silent capture remains distinct from any variable live exhibition accompaniment.
+- The anti-myth framing is source-backed by early-cinema spectatorship historiography, including the (in)credulous spectator debate.
 
 ## P2 — book reference only
 
 - *May Irwin Kiss* (1896)
 - *Sedgwick's Bioscope Showfront at Pendlebury Wakes* (1901)
 
-These remain outside the Production Case queue.
+These remain intentionally outside the Production Case queue. Their historical value is retained at book/reference level without inflating Film Atlas with cases whose marginal gameplay value did not meet the production threshold.
 
 ## Historical objects and practices — explicitly not Production Cases
 
@@ -81,12 +79,11 @@ These remain outside the Production Case queue.
 7. Do not force programmes, projectors, posters, showfronts or theatre interiors into Film Atlas as fake film productions.
 8. Do not collapse *The Corbett–Fitzsimmons Fight* into Lubin's later reproduction.
 
-## Exact recommendation after the second materialization
+## Final Chapter 2 recommendation
 
-The original Chapter 2 audit recommended **3 new Production Cases**. Two are now complete.
+**No additional Production Cases are required for Chapter 2.**
 
-The exact remaining recommendation is **1 new Production Case**:
+P0 = `[]`  
+P1 = `[]`
 
-- **P1 — *Uncle Josh at the Moving Picture Show* (1902)**
-
-P2 remains book-reference-only.
+P2 remains book-reference-only until an explicit future audit demonstrates genuinely distinct gameplay value.

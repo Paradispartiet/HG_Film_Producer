@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 386;
+const EXPECTED_ATLAS_COUNT = 387;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -72,10 +72,11 @@ const candidates = [
   {
     title: "Uncle Josh at the Moving Picture Show",
     year: 1902,
-    aliases: ["Uncle Josh at the moving picture show"],
+    aliases: ["Uncle Josh at the moving picture show", "Uncle Josh and the Moving Picture Show"],
     role: "comparative_film",
     decisionIfMissing: "P1",
-    chapterFunction: "A reflexive comedy that stages spectator behaviour, a projection screen and the projectionist, allowing the chapter to distinguish real audience history from later myths about naïve spectators.",
+    expectedScenarioId: "scenario_uncle_josh_at_the_moving_picture_show_1902",
+    chapterFunction: "A reflexive comedy that stages spectator behaviour, a projection screen and the projectionist, allowing the chapter to distinguish fictional audience stereotypes from documented audience history.",
   },
   {
     title: "A Trip to the Moon",
@@ -112,10 +113,11 @@ const expectedDecisions = {
     "Employees Leaving Brown's Atlas Works, Sheffield",
     "The Corbett-Fitzsimmons Fight",
     "The Great Train Robbery",
+    "Uncle Josh at the Moving Picture Show",
     "Workers Leaving the Lumière Factory",
   ],
   P0: [],
-  P1: ["Uncle Josh at the Moving Picture Show"],
+  P1: [],
   P2: ["May Irwin Kiss", "Sedgwick's Bioscope Showfront at Pendlebury Wakes"],
 };
 
@@ -244,7 +246,7 @@ for (const [decision, expectedTitles] of Object.entries(expectedDecisions)) {
 if ((byDecision.AMBIGUOUS ?? []).length > 0) structuralProblems.push(`Ambiguous candidates: ${byDecision.AMBIGUOUS.join(", ")}`);
 
 const report = {
-  schemaVersion: "1.2",
+  schemaVersion: "1.3",
   auditDate: "2026-08-14",
   chapter: {
     number: 2,

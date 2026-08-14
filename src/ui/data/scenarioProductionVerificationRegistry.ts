@@ -29,6 +29,7 @@ import { taxiProductionCaseVerification } from "./scenarioProductionVerification
 import { contemporaryEuropeanSocialCareVerificationRecords } from "./scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch";
 import { corbettFitzsimmonsProductionCaseVerification } from "./scenarioProductionVerificationCorbettFitzsimmons";
 import { brownsAtlasWorksProductionCaseVerification } from "./scenarioProductionVerificationBrownsAtlasWorks";
+import { uncleJoshProductionCaseVerification } from "./scenarioProductionVerificationUncleJosh";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
 import { czechoslovakNewWaveVerificationRecords } from "./scenarioProductionVerificationCzechoslovakNewWaveBatch";
@@ -174,6 +175,7 @@ const additionalVerificationRecords = [
   rescuedByRoverProductionCaseVerification,
   corbettFitzsimmonsProductionCaseVerification,
   brownsAtlasWorksProductionCaseVerification,
+  uncleJoshProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
   ...productionSystems1930sVerificationRecords,
