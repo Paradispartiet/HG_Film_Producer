@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 392;
+const EXPECTED_ATLAS_COUNT = 393;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -69,6 +69,7 @@ const candidates = [
     aliases: ["Les Amours de la reine Élisabeth", "Les Amours de la reine Elisabeth", "The Loves of Queen Elizabeth"],
     role: "comparative_film",
     decisionIfMissing: "P1",
+    expectedScenarioId: "scenario_queen_elizabeth_1912",
     chapterFunction: "Prestige performer, imported multi-reel feature and distribution entrepreneurship at the moment longer films became commercially viable in the United States.",
   },
   {
@@ -108,9 +109,9 @@ const historicalObjects = [
 ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
 const expectedDecisions = {
-  USE_EXISTING: ["Rescued by Rover", "The Lonely Villa", "The Story of the Kelly Gang"],
+  USE_EXISTING: ["Queen Elizabeth", "Rescued by Rover", "The Lonely Villa", "The Story of the Kelly Gang"],
   P0: [],
-  P1: ["Queen Elizabeth", "Traffic in Souls"],
+  P1: ["Traffic in Souls"],
   P2: ["Cabiria", "L'Assassinat du duc de Guise", "Quo Vadis?"],
 };
 
