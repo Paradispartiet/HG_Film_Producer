@@ -6,7 +6,7 @@
 
 This audit separates film Production Cases from the industrial systems that made longer and more regular production possible. The chapter is about the reorganization of production, distribution and exhibition through film exchanges, rental, permanent theatres, patent/licensing systems, company consolidation, independent competition and the transition toward multi-reel features.
 
-Canonical Atlas baseline after the Queen Elizabeth materialization: **393 playable films**.
+Canonical Atlas baseline after the Traffic in Souls materialization: **394 playable films**.
 
 ## Decision matrix
 
@@ -28,15 +28,19 @@ Canonical Atlas baseline after the Queen Elizabeth materialization: **393 playab
    - Covers Le Film d'Art production, Bernhardt's star authority, Moreau's stage adaptation, Poiret's stylized costumes and multi-reel tableau construction.
    - Keeps French production distinct from Zukor's United States rights/presentation role and preserves the 47/45/36-minute print-version boundary.
 
+5. **Traffic in Souls (1913)** → `scenario_traffic_in_souls_1913`
+   - Materialized as the contemporary American feature-economy and independent-production case.
+   - Covers IMP production, Universal distribution, real New York locations, secret production and a documented six-reel collaborative post-production completion.
+   - Keeps reform publicity and period “white slavery” discourse distinct from documentary evidence and Rockefeller authorization.
+   - Preserves the six-to-seven-reel release record, 88-minute Library of Congress preservation presentation and screening-specific accompaniment as separate evidence layers.
+
 ### P0 – must be produced
 
 **None.** The Chapter 4 P0 backlog is now closed.
 
 ### P1 – should be produced
 
-1. **Traffic in Souls (1913)**
-   - Comparative case for early American feature economics, independent production and sustained feature booking around a contemporary sensational subject rather than a prestige literary adaptation.
-   - Planned canonical scenario ID: `scenario_traffic_in_souls_1913`.
+**2/2 complete — 0 remaining.** Both planned P1 films now resolve as canonical `USE_EXISTING` Production Cases.
 
 ### P2 – book-only for Chapter 4
 
@@ -95,12 +99,18 @@ These are required chapter evidence but **must not** be converted into fake film
   https://test.nypl.org/research/research-catalog/bib/b15562649
 - British Film Institute / Sight and Sound, **The long take: Great footage** – feature-length transition context including *Traffic in Souls*.  
   https://www.bfi.org.uk/sight-and-sound/features/long-take-great-footage
+- UCLA Film & Television Archive, **Traffic in Souls / Where Are My Children?** – 88-minute preservation presentation, IMP production, secret filming, real New York locations, six-reel completion, feature economics and exhibition history.  
+  https://cinema.ucla.edu/events/traffic-in-souls-1913-where-are-my-children-1916-2012-05-10/
+- American Film Institute Catalog, **Traffic in Souls** – IMP/Universal functions, Tucker/MacNamara credits, six-to-seven reels, silent presentation, narrative and Rockefeller-advertising controversy.  
+  https://catalog.afi.com/Film/2111-TRAFFIC-IN-SOULS
+- Library of Congress, **Traffic in Souls copyright description** – Universal claimant, 1913 and registration LU 1767.  
+  https://www.loc.gov/item/s1229l01767/
+- Library of Congress, **National Film Registry 2006** – official preservation-list inclusion.  
+  https://www.loc.gov/loc/lcib/07012/film.html
 
 ## Exact production queue
 
-The remaining Chapter 4 Atlas queue is intentionally explicit:
-
-1. **P1 – Traffic in Souls (1913)**
+The required Chapter 4 Production Case queue is now **complete**.
 
 Do **not** auto-produce the P2 titles.
 
@@ -116,10 +126,10 @@ Chapter 4 Atlas is not complete until:
 - historical objects remain `NO_PRODUCTION_CASE`;
 - the permanent Chapter 4 audit passes inside `verify:v0.1`.
 
-After Queen Elizabeth, the expected decision counts are:
+After Traffic in Souls, the expected decision counts are:
 
-- **USE_EXISTING: 4**
+- **USE_EXISTING: 5**
 - **P0: 0**
-- **P1: 1**
+- **P1: 0**
 - **P2: 3**
 - **NO_PRODUCTION_CASE historical objects/systems: 7**
