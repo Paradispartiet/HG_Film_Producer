@@ -91,6 +91,7 @@ import { norwegianPostwarGenreSystemsVerificationRecords } from "./scenarioProdu
 import { postwarEuropeanModernismVerificationRecords } from "./scenarioProductionVerificationPostwarEuropeanModernismBatch";
 import { priorityIndieFinalVerificationRecords } from "./scenarioProductionVerificationPriorityIndieFinalBatch";
 import { queerIndependentBodyCommunityArchiveVerificationRecords } from "./scenarioProductionVerificationQueerIndependentBodyCommunityArchiveBatch";
+import { rescuedByRoverProductionCaseVerification } from "./scenarioProductionVerificationRescuedByRover";
 import { rumbleFishVerificationRecords } from "./scenarioProductionVerificationRumbleFish";
 import { sacredDeerProductionCaseVerification } from "./scenarioProductionVerificationSacredDeer";
 import { silentFoundationsVerificationRecords } from "./scenarioProductionVerificationSilentFoundationsBatch";
@@ -168,6 +169,7 @@ const additionalVerificationRecords = [
   ...asianTransnationalUrbanIdentityVerificationRecords,
   ...japaneseAmbiguityDialogueVerificationRecords,
   ...silentFoundationsVerificationRecords,
+  rescuedByRoverProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
   ...productionSystems1930sVerificationRecords,

@@ -4,16 +4,18 @@ Audit date: **2026-08-14**
 
 ## Executable baseline
 
-The canonical Production Case audit now reconstructs **382 playable Film Atlas scenarios**. The verification-registry test is gated at **375 source-verified Production Cases** after materializing *Fire! (1901)*.
+The canonical playable Film Atlas now contains **384 scenarios** after the complete Film History Chapter 1 P0/P1 materialization. The runtime verification-registry gate is **377 source-verified Production Cases**.
 
-The Chapter 1 early-cinema expansion now contributes the three completed P0 cases plus the first completed P1 case:
+The Chapter 1 early-cinema work now includes all six cases ordered by the original gap report:
 
 - `scenario_blacksmith_scene_1893`
 - `scenario_workers_leaving_lumiere_factory_1895`
-- `scenario_fire_1901`
 - `scenario_the_great_train_robbery_1903`
+- `scenario_fire_1901`
+- `scenario_life_of_an_american_fireman_1903`
+- `scenario_rescued_by_rover_1905`
 
-The executable audit remains the source of truth for exact distributions of any other unfinished Production Cases.
+The executable rest audit separately reconstructs the playable catalog and checks every literal verification/profile artifact for structural integrity. Its file-level verification count is therefore an integrity measure and should not be confused with the runtime registry gate above.
 
 ## Integrity
 
@@ -21,20 +23,15 @@ The permanent audit rejects structural drift in expected playable count, duplica
 
 ## Chapter 1 Atlas state
 
-The separate Chapter 1 audit now resolves all four Anchor Films plus the first P1 Comparative Film to canonical Atlas cases:
+The Chapter 1 audit now resolves all required P0 and P1 films to canonical Atlas cases.
 
-- *Blacksmith Scene* (1893)
-- *Workers Leaving the Lumière Factory* (1895)
-- *Fire!* (1901)
-- *A Trip to the Moon* (1902)
-- *The Great Train Robbery* (1903)
+### P0
 
-P0 is complete. **Exactly two Chapter 1 Production Cases remain:**
+**3/3 complete — 0 remaining**
 
 ### P1
 
-- *Life of an American Fireman* (1903)
-- *Rescued by Rover* (1905)
+**3/3 complete — 0 remaining**
 
 ### P2 — book reference only
 
@@ -44,6 +41,8 @@ P0 is complete. **Exactly two Chapter 1 Production Cases remain:**
 - *The Big Swallow* (1901)
 
 P2 remains intentionally outside the Production Case queue unless a later explicit source/value review changes that decision.
+
+**Exact required new Chapter 1 Production Cases remaining: 0.**
 
 ## Audit method
 
