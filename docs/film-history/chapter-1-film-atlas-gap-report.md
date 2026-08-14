@@ -8,17 +8,18 @@ The audit is executable in `scripts/film-history-chapter-one-atlas-audit.mjs` an
 
 ## Atlas control
 
-- Canonical Atlas count after the second P0 materialization: **380 films**.
+- Canonical Atlas count after the third P0 materialization: **381 films**.
 - Catalogue construction: seed file followed by the same **13 expansion modules in canonical runtime order** used by Film Atlas.
 - Matching checks title, original title and aliases after normalization, including diacritics.
 - Ambiguous multiple matches are a hard failure.
 - `Blacksmith Scene (1893)` is a hard required existing link to `scenario_blacksmith_scene_1893`.
 - `Workers Leaving the Lumière Factory (1895)` is a hard required existing link to `scenario_workers_leaving_lumiere_factory_1895`.
+- `The Great Train Robbery (1903)` is a hard required existing link to `scenario_the_great_train_robbery_1903`.
 - `A Trip to the Moon (1902)` remains a hard required existing link to `scenario_a_trip_to_the_moon_1902`.
 
 ### Result
 
-The complete 380-film audit now finds **three** existing Chapter 1 candidates and **eight** genuine gaps. No candidate may produce an ambiguous alias match.
+The complete 381-film audit now finds **four** existing Chapter 1 candidates and **seven** genuine gaps. All **P0 Anchor Film gaps are complete**. No candidate may produce an ambiguous alias match.
 
 ## Existing Atlas cases
 
@@ -27,16 +28,19 @@ The complete 380-film audit now finds **three** existing Chapter 1 candidates an
 | *Blacksmith Scene* | 1893 | Anchor Film | **Use existing case** | Staged Edison-laboratory performance, Kinetograph/Kinetoscope apparatus, fixed single-take construction and Black Maria natural-light production. |
 | *Workers Leaving the Lumière Factory* | 1895 | Anchor Film | **Use existing case** | Portable actuality production, fixed factory-gate framing, event timing, crowd movement and multiple filmed versions. |
 | *A Trip to the Moon* | 1902 | Anchor Film | **Use existing case** | Principal close reading for theatrical staging, designed screen space, trick-film production and transformation effects. |
+| *The Great Train Robbery* | 1903 | Anchor Film | **Use existing case** | Edison studio/location hybrid, railway action, photographic effects, multi-scene production and historically specific temporal organization without an inventor-of-editing claim. |
 
-## P0 — mandatory before the chapter's Atlas layer can be called complete
+## P0 — complete
 
-| Film | Year | Chapter role | Distinct production question |
-| --- | ---: | --- | --- | --- |
-| *The Great Train Robbery* | 1903 | Anchor Film | How studio work, locations, multiple scenes, action, effects and causal organization were coordinated without claiming that one film invented narrative editing. |
+There are **no remaining P0 Production Cases**. The three originally missing P0 Anchor Films are now materialized and source verified:
 
-`Blacksmith Scene` and `Workers Leaving the Lumière Factory` have moved out of the P0 backlog because both Production Cases are now materialized and source verified. The Great Train Robbery is the **one remaining P0 case**.
+1. *Blacksmith Scene* (1893)
+2. *Workers Leaving the Lumière Factory* (1895)
+3. *The Great Train Robbery* (1903)
 
-## P1 — high-value comparative Production Cases
+Together with the pre-existing *A Trip to the Moon* (1902), all four Chapter 1 Anchor Films now resolve to canonical Atlas cases.
+
+## P1 — high-value comparative Production Cases still to build
 
 | Film | Year | Chapter role | Distinct production question |
 | --- | ---: | --- | --- |
@@ -44,7 +48,7 @@ The complete 380-film audit now finds **three** existing Chapter 1 candidates an
 | *Life of an American Fireman* | 1903 | Comparative Film | How the original multi-shot organization differs from the later cross-cut re-edit once mistaken for Porter's original, making version history part of production analysis. |
 | *Rescued by Rover* | 1905 | Comparative Film | How repeated routes, stable locations and causal clarity approach more systematic continuity; its popularity also exposes the material problem of a negative wearing out and being re-shot. |
 
-## P2 — useful historical examples; Production Cases only if the source pack justifies the marginal value
+## P2 — book reference only; not in the Production Case queue
 
 | Film | Year | Chapter role | Distinct chapter function |
 | --- | ---: | --- | --- |
@@ -53,7 +57,7 @@ The complete 380-film audit now finds **three** existing Chapter 1 candidates an
 | *Arrival of a Train at La Ciotat* | 1896 | Comparative Film | Movement through depth and a historiographic test case for the weakly documented audience-panic legend. |
 | *The Big Swallow* | 1901 | Comparative Film | Extreme camera proximity, scale change and reflexive play with the spectator-camera relationship. |
 
-P2 means the chapter may discuss the film without requiring a standalone Film Producer scenario. A new scenario should only be commissioned if its production sources are strong enough and its gameplay/learning value remains distinct after P0 and P1 are built.
+P2 means the chapter may discuss the film without requiring a standalone Film Producer scenario. A new scenario should only be commissioned if a later source/value review changes that decision; P2 is **not** part of the current three-film Production Case backlog.
 
 ## Historical Objects — explicitly not Production Cases
 
@@ -74,20 +78,23 @@ Chapter 1 and any future Production Cases should preserve these constraints:
 2. **No train-panic story as established fact.** Institutional sources describe the dramatic panic account as unverified, mythical or exaggerated.
 3. **No claim that Méliès single-handedly invented film tricks.** His historical importance can be grounded in a sustained production system for staging and photographic transformation without relying on priority legends.
 4. **No claim that Alice Guy's earliest fiction date is uncontested.** Her production importance is larger than the disputed priority claim around *La Fée aux choux*.
-5. **No claim that *The Great Train Robbery* invented narrative editing.** It is treated as an unusually strong convergence of production and formal practices already developing internationally.
-6. **No use of the later cross-cut re-edit of *Life of an American Fireman* as evidence of Porter's original 1903 editing.** Library of Congress registry material explicitly records the historiographic correction.
-7. **No description of *Blacksmith Scene* as an untouched workplace actuality.** The performers were Edison laboratory employees staging the blacksmith action for the camera.
-8. **No Edison-as-director shortcut.** The source-backed case credits the making to Dickson/Heise while keeping Edison in the laboratory/company context.
-9. **No actuality-equals-transparent-reality shortcut for *Workers Leaving the Lumière Factory*.** Apparatus placement, framing and event timing are production choices even when the subject is everyday life.
-10. **No collapsing the surviving Workers versions into one uncontested original.** Version history remains explicit in both the Film Study profile and the Production Case verification.
+5. **No claim that *The Great Train Robbery* invented narrative editing.** Its importance lies in a strong convergence of production and formal practices already developing internationally.
+6. **Do not retrofit later continuity cross-cutting onto *The Great Train Robbery*.** Its robbers/posse organization is treated as historically specific pre-1908 temporal construction rather than Griffith-era continuity grammar.
+7. **Do not force the direct-address bandit shot into a modern fixed-ending model.** Contemporary catalog/exhibition evidence allows the attraction to be understood as flexibly placed rather than proof of a later narrative rule.
+8. **No use of the later cross-cut re-edit of *Life of an American Fireman* as evidence of Porter's original 1903 editing.** Library of Congress registry material explicitly records the historiographic correction.
+9. **No description of *Blacksmith Scene* as an untouched workplace actuality.** The performers were Edison laboratory employees staging the blacksmith action for the camera.
+10. **No Edison-as-director shortcut.** The source-backed Blacksmith case credits the making to Dickson/Heise while keeping Edison in the laboratory/company context.
+11. **No actuality-equals-transparent-reality shortcut for *Workers Leaving the Lumière Factory*.** Apparatus placement, framing and event timing are production choices even when the subject is everyday life.
+12. **No collapsing the surviving Workers versions into one uncontested original.** Version history remains explicit in both the Film Study profile and Production Case verification.
 
 ## Recommendation
 
-Continue the missing cases in this order:
+The P0 sequence is complete. Continue the remaining Production Cases in exactly this order:
 
-1. **P0:** *The Great Train Robbery*.
-2. **P1:** *Fire!* → *Life of an American Fireman* → *Rescued by Rover*.
-3. Re-run the complete Atlas audit after every new case; each materialization must move exactly one audited gap into `USE_EXISTING`.
-4. Re-evaluate P2 only after the **four** stronger remaining cases exist; do not add P2 cases merely to make a canonical list look complete.
+1. **P1:** *Fire!* (1901)
+2. **P1:** *Life of an American Fireman* (1903)
+3. **P1:** *Rescued by Rover* (1905)
+4. Re-run the complete Atlas audit after every new case; each materialization must move exactly one audited P1 gap into `USE_EXISTING`.
+5. Re-evaluate P2 only after all three P1 cases exist; do not add P2 cases merely to make a canonical list look complete.
 
-The chapter itself remains editorially complete independently of Film Atlas. What is not allowed is to describe the Chapter-1 Atlas layer as complete while the audited P0/P1 gaps remain.
+The chapter itself remains editorially complete independently of Film Atlas. The Chapter 1 Atlas layer is **P0-complete but not yet P1-complete** until the three named comparative cases above are materialized.
