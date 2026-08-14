@@ -6,6 +6,7 @@ import {
 } from "../../core/filmStudyCoverage";
 import type { FilmScenarioSeed } from "./filmScenarios";
 import type { FilmHistoryChoice, FilmHistoryProfile, ScenarioFilmStudyMap } from "./scenarioFilmStudyMap";
+import { blacksmithSceneFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsBlacksmith";
 import { tripToTheMoonFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsTripToMoon";
 import { caligariFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsCaligari";
 import { nosferatuFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsNosferatu";
@@ -14,6 +15,7 @@ import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 import { getProductionCaseVerification } from "./scenarioProductionVerificationRegistry";
 
 const silentFoundationsProfiles = {
+  [blacksmithSceneFilmHistoryProfile.scenarioId]: blacksmithSceneFilmHistoryProfile,
   [tripToTheMoonFilmHistoryProfile.scenarioId]: tripToTheMoonFilmHistoryProfile,
   [caligariFilmHistoryProfile.scenarioId]: caligariFilmHistoryProfile,
   [nosferatuFilmHistoryProfile.scenarioId]: nosferatuFilmHistoryProfile,
