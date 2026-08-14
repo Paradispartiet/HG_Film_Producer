@@ -1,0 +1,34 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const greatTrainRobberyFilmHistoryProfile = {
+  scenarioId: "scenario_the_great_train_robbery_1903",
+  period: "1903 Edison narrative production at the point when longer one-reel fiction joined studio sets, real railway locations, action staging, effects and multi-scene temporal organization",
+  traditions: [
+    "Early American crime and Western fiction",
+    "Edison studio-location hybrid production",
+    "Pre-1908 multi-scene narrative organization",
+  ],
+  before: "Porter and other filmmakers were already developing multi-shot fiction before 1903, including Life of an American Fireman and British crime films. The Great Train Robbery therefore belongs inside an international and cumulative development of screen narrative rather than a single-film invention story.",
+  moment: "The Great Train Robbery coordinates a robbery, escape and pursuit across Edison studio interiors and New Jersey railway and park locations. Porter and collaborators use set-built train and office interiors, double exposure for moving exterior views, photography from a moving train, staged gunfire and practical action, hand-applied color in some prints, and a succession of distinct scenes that carry the robbers' line of action before the posse catches up. The famous bandit shot functions as a separate attraction that exhibitors could place at either end rather than as proof of later continuity grammar.",
+  after: "The film became a major commercial success for Edison and a durable reference point for action, crime and Western cinema. Its strongest historical lesson is the convergence of production scale, location logistics, effects and temporal organization already developing across early cinema, not a claim that Porter single-handedly invented narrative film or editing.",
+  historyQuestion: "How can studio sets, real railway locations, staged violence, photographic effects and multiple scenes be coordinated into a legible action story while preserving the historically specific pre-continuity logic of 1903?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Library of Congress records the Edison Manufacturing Company production and December 1903 copyright, while BFI places Porter inside an already developing field of British, American and European narrative practice rather than treating the film as cinema's singular narrative beginning." },
+    { area: "movement_and_tradition", status: "source_verified", note: "The case belongs to early American crime and Western fiction and to the pre-1908 method of representation; BFI specifically warns that labels such as 'inventor of editing' erase contemporary contributions." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Library of Congress documents November 1903 filming at Edison's New York studio, Essex County Park and along the Lackawanna Railroad, establishing a production system that combines controlled interiors with railway-location logistics." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Library of Congress records National Film Registry selection, while its Edison history and BFI describe the film as a major commercial success that was quickly imitated and remade." },
+    { area: "screenplay", status: "source_verified", note: "Library of Congress records that the film was based partly on Scott Marble's play and preserves the Edison-catalog narrative; the production organizes robbery, escape, alarm and pursuit as successive dramatic units rather than a single tableau." },
+    { area: "directing", status: "source_verified", note: "Library of Congress credits Edwin S. Porter with production and camera, and MoMA identifies him as director; the case treats direction as coordination of locations, staged action, effects and scene progression rather than a modern auteur-only workflow." },
+    { area: "performance", status: "mapped", note: "Library of Congress identifies Justus D. Barnes, G. M. Anderson and other cast roles, but the inspected sources do not document a detailed rehearsal or acting method strongly enough for source-verified performance workflow." },
+    { area: "production_design", status: "source_verified", note: "MoMA documents studio-built train and railroad-office interiors combined with exterior locations, making the contrast between constructed interior action and photographed railway geography part of the production system." },
+    { area: "costume_makeup", status: "mapped", note: "Bandit, passenger and posse clothing clearly differentiates roles and genre identity, but the inspected institutional sources do not document a dedicated costume, hair or makeup workflow." },
+    { area: "cinematography", status: "source_verified", note: "Library of Congress credits Porter, J. B. Smith and others on camera; MoMA documents exterior railway photography and a camera mounted on top of a moving train, while the final direct-address gunshot changes the spectator-camera relation." },
+    { area: "lighting", status: "mapped", note: "Studio and exterior photography required different exposure conditions, but the inspected sources do not provide a sufficiently detailed lighting workflow for source-verified status." },
+    { area: "camera_format", status: "source_verified", note: "Library of Congress preserves 35mm paper-print and film holdings and gives an 11:54 reference duration at 18 fps, while National Gallery of Art programs the film as a 35mm silent work of roughly twelve minutes." },
+    { area: "editing", status: "source_verified", note: "MoMA describes cuts across disparate shots, shifting locations and partially simultaneous action; BFI emphasizes the successive presentation of two lines of action. The case explicitly avoids claiming that Porter invented editing or later continuity cross-cutting." },
+    { area: "sound_design", status: "not_central", note: "The 1903 photographed production is a silent case; synchronized production sound and modern sound-design categories are not projected backward onto it." },
+    { area: "music", status: "not_central", note: "Later musical accompaniment belongs to exhibition and restoration practice rather than a documented synchronized score created as part of the original production." },
+    { area: "effects_animation", status: "source_verified", note: "MoMA documents double exposure to place moving scenery beyond studio windows and hand-painted color in selected prints, while gunfire and dynamite effects contribute practical spectacle." },
+    { area: "documentary_method", status: "not_central", note: "Although real railway and park locations give the film physical specificity, this is staged fiction rather than an actuality or documentary-production case." },
+  ],
+} as const satisfies FilmHistoryProfile;

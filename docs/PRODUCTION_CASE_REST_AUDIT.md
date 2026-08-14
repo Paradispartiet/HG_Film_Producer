@@ -4,12 +4,13 @@ Audit date: **2026-08-14**
 
 ## Executable baseline
 
-The canonical Production Case audit now reconstructs **380 playable Film Atlas scenarios**. The verification-registry test is gated at **373 source-verified Production Cases** after materializing *Workers Leaving the Lumière Factory (1895)*.
+The canonical Production Case audit now reconstructs **381 playable Film Atlas scenarios**. The verification-registry test is gated at **374 source-verified Production Cases** after materializing *The Great Train Robbery (1903)*.
 
-The current Chapter 1 early-cinema expansion contributes two source-backed P0 materializations:
+The current Chapter 1 early-cinema expansion contributes all three source-backed P0 materializations:
 
 - `scenario_blacksmith_scene_1893`
 - `scenario_workers_leaving_lumiere_factory_1895`
+- `scenario_the_great_train_robbery_1903`
 
 The executable audit remains the source of truth for exact distributions of any other unfinished Production Cases; this document intentionally does not preserve an older static “remaining catalog” snapshot after the Film History Atlas began adding new scenarios.
 
@@ -29,17 +30,14 @@ The audit also reports film-specific production-brief coverage, fallback briefs 
 
 ## Chapter 1 Atlas state
 
-The separate Chapter 1 audit now resolves three of its eleven film candidates to canonical Atlas cases:
+The separate Chapter 1 audit now resolves all four Anchor Films to canonical Atlas cases:
 
 - *Blacksmith Scene* (1893)
 - *Workers Leaving the Lumière Factory* (1895)
 - *A Trip to the Moon* (1902)
-
-The exact remaining Chapter 1 Production Case queue is:
-
-### P0
-
 - *The Great Train Robbery* (1903)
+
+The Chapter 1 **P0 backlog is complete**. The exact remaining Production Case queue is now only the three P1 comparative cases:
 
 ### P1
 

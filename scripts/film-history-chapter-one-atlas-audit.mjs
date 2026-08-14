@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 380;
+const EXPECTED_ATLAS_COUNT = 381;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -102,10 +102,11 @@ const candidates = [
   {
     title: "The Great Train Robbery",
     year: 1903,
-    aliases: [],
+    aliases: ["Great Train Robbery"],
     role: "anchor_film",
     decisionIfMissing: "P0",
-    chapterFunction: "Narrative scale, multiple locations, action, shot construction and the myth that one film suddenly invented narrative editing.",
+    expectedScenarioId: "scenario_the_great_train_robbery_1903",
+    chapterFunction: "Narrative scale, multiple locations, action, effects, shot construction and historically specific pre-continuity organization without an inventor-of-editing myth.",
   },
   {
     title: "Rescued by Rover",

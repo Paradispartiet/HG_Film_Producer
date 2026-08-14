@@ -8,6 +8,7 @@ import type { FilmScenarioSeed } from "./filmScenarios";
 import type { FilmHistoryChoice, FilmHistoryProfile, ScenarioFilmStudyMap } from "./scenarioFilmStudyMap";
 import { blacksmithSceneFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsBlacksmith";
 import { workersLeavingLumiereFactoryFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsWorkersLeaving";
+import { greatTrainRobberyFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsGreatTrainRobbery";
 import { tripToTheMoonFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsTripToMoon";
 import { caligariFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsCaligari";
 import { nosferatuFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsNosferatu";
@@ -18,6 +19,7 @@ import { getProductionCaseVerification } from "./scenarioProductionVerificationR
 const silentFoundationsProfiles = {
   [blacksmithSceneFilmHistoryProfile.scenarioId]: blacksmithSceneFilmHistoryProfile,
   [workersLeavingLumiereFactoryFilmHistoryProfile.scenarioId]: workersLeavingLumiereFactoryFilmHistoryProfile,
+  [greatTrainRobberyFilmHistoryProfile.scenarioId]: greatTrainRobberyFilmHistoryProfile,
   [tripToTheMoonFilmHistoryProfile.scenarioId]: tripToTheMoonFilmHistoryProfile,
   [caligariFilmHistoryProfile.scenarioId]: caligariFilmHistoryProfile,
   [nosferatuFilmHistoryProfile.scenarioId]: nosferatuFilmHistoryProfile,
