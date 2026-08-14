@@ -2,6 +2,38 @@ import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerif
 
 export const silentFoundationsVerificationRecords = [
   {
+    scenarioId: "scenario_blacksmith_scene_1893",
+    status: "verified",
+    verifiedAt: "2026-08-14",
+    summary: "Blacksmith Scene's staged laboratory performance, fixed single-take photography, Kinetograph/Kinetoscope system, Black Maria sunlight architecture and 1893 exhibition context are supported by MoMA, Library of Congress and National Park Service records.",
+    sources: [
+      {
+        title: "Blacksmithing Scene", publisher: "Museum of Modern Art",
+        url: "https://www.moma.org/collection/works/316644", sourceKind: "film_institute",
+        supports: ["overall", "cinematography", "editing"],
+        note: "MoMA documents the three Edison laboratory employees performing the blacksmith action, the fixed camera, single unedited roughly 35-second take, William Heise and William K. L. Dickson as makers, Kinetograph capture, Kinetoscope viewing and Black Maria production environment."
+      },
+      {
+        title: "Blacksmith Scene (1893)", publisher: "Library of Congress",
+        url: "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/", sourceKind: "film_institute",
+        supports: ["overall", "cinematography"],
+        note: "The National Film Registry description identifies Charles Kayser, John Ott and a third Edison employee as the staged performers, attributes the late-April 1893 photography to W. K. L. Dickson and records the May 9 Brooklyn Kinetoscope demonstration."
+      },
+      {
+        title: "Black Maria Grand Reopening", publisher: "National Park Service",
+        url: "https://www.nps.gov/edis/learn/news/black-maria-reopening.htm", sourceKind: "film_institute",
+        supports: ["overall", "cinematography"],
+        note: "Thomas Edison National Historical Park documents the original Black Maria's February 1893 completion, pivot around a circular track, opening roof for maximum sunlight and the Dickson-Heise production work carried out inside it."
+      },
+      {
+        title: "Complete National Film Registry Listing", publisher: "Library of Congress",
+        url: "https://www.loc.gov/programs/national-film-preservation-board/film-registry/complete-national-film-registry-listing/", sourceKind: "film_institute",
+        supports: ["overall"],
+        note: "The complete National Film Registry listing records Blacksmith Scene as an 1893 film selected for the Registry in 1995, providing an institutional preservation and legacy cross-check for the case."
+      }
+    ]
+  },
+  {
     scenarioId: "scenario_a_trip_to_the_moon_1902",
     status: "verified",
     verifiedAt: "2026-07-20",
