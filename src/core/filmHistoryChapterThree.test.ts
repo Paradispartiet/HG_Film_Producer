@@ -118,7 +118,7 @@ test("Chapter 3 keeps the required historiographic safeguards visible in prose",
 test("canonical book resolves Chapters 1–3 as full and preserves the six-part thirty-chapter architecture", () => {
   assert.equal(filmHistoryBookParts.length, 6);
   assert.equal(filmHistoryBookParts.flatMap((part) => part.chapters).length, 30);
-  assert.equal(getFilmHistoryBookChapter("motion-to-cinema")?.status, "full");
+  assert.equal(getFilmHistoryBookChapter("motion-before-cinema")?.status, "full");
   assert.equal(getFilmHistoryBookChapter("projection-programmes-audiences")?.status, "full");
   const canonicalChapterThree = getFilmHistoryBookChapter("fiction-editing-narrative");
   assert.equal(canonicalChapterThree, filmHistoryChapterThree);
