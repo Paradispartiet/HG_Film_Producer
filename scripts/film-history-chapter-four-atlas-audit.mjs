@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 393;
+const EXPECTED_ATLAS_COUNT = 394;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -75,9 +75,10 @@ const candidates = [
   {
     title: "Traffic in Souls",
     year: 1913,
-    aliases: [],
+    aliases: ["While New York Sleeps", "While New York Sleeps: A Photodrama of Today"],
     role: "comparative_film",
     decisionIfMissing: "P1",
+    expectedScenarioId: "scenario_traffic_in_souls_1913",
     chapterFunction: "Early American feature economics: independent production, sustained feature booking and a non-literary sensational subject that tested the commercial logic of longer films.",
   },
   {
@@ -109,9 +110,9 @@ const historicalObjects = [
 ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
 const expectedDecisions = {
-  USE_EXISTING: ["Queen Elizabeth", "Rescued by Rover", "The Lonely Villa", "The Story of the Kelly Gang"],
+  USE_EXISTING: ["Queen Elizabeth", "Rescued by Rover", "The Lonely Villa", "The Story of the Kelly Gang", "Traffic in Souls"],
   P0: [],
-  P1: ["Traffic in Souls"],
+  P1: [],
   P2: ["Cabiria", "L'Assassinat du duc de Guise", "Quo Vadis?"],
 };
 

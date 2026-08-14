@@ -4,9 +4,9 @@ Audit date: **2026-08-14**
 
 ## Executable baseline
 
-The canonical playable Film Atlas contains **393 scenarios**. The runtime verification-registry gate contains **386 source-verified Production Cases**.
+The canonical playable Film Atlas contains **394 scenarios**. The runtime verification-registry gate contains **387 source-verified Production Cases**.
 
-Chapter 1 remains complete at 3/3 P0 and 3/3 P1. Chapter 2 remains complete at 1/1 P0 and 2/2 P1. Chapter 3 remains complete at **2/2 P0 and 2/2 P1**, with no required Production Cases remaining. Chapter 4 has its P0 backlog closed and now has **1/2 P1 cases complete** after materializing *Queen Elizabeth (1912)*; its only remaining required case is *Traffic in Souls (1913)*.
+Chapter 1 remains complete at 3/3 P0 and 3/3 P1. Chapter 2 remains complete at 1/1 P0 and 2/2 P1. Chapter 3 remains complete at **2/2 P0 and 2/2 P1**. Chapter 4 is now complete at **1/1 P0 and 2/2 P1**, with no required Production Cases remaining.
 
 ## Chapter 4 Atlas state
 
@@ -29,6 +29,14 @@ Chapter 1 remains complete at 3/3 P0 and 3/3 P1. Chapter 2 remains complete at 1
   - 47/45/36-minute institutional records retained as a print/version boundary
   - 17-area source-backed Film Study and four-source Production Verification
 
+- `scenario_traffic_in_souls_1913` — *Traffic in Souls* (1913), George Loane Tucker / IMP / Universal
+  - six-reel contemporary American feature model and 88-minute Library of Congress preservation presentation
+  - IMP production kept distinct from Universal distribution
+  - real New York location work, parallel investigation/rescue structure and collaborative post-production completion
+  - period vice discourse, reform publicity and Rockefeller denial kept distinct from documentary evidence
+  - silent photographed film kept distinct from screening-specific accompaniment
+  - 17-area source-backed Film Study and five-source Production Verification
+
 ### P0
 
 **1/1 complete — 0 remaining**
@@ -37,10 +45,10 @@ Chapter 1 remains complete at 3/3 P0 and 3/3 P1. Chapter 2 remains complete at 1
 
 ### P1
 
-**1/2 complete — 1 remaining**
+**2/2 complete — 0 remaining**
 
 - `scenario_queen_elizabeth_1912`
-- *Traffic in Souls* (1913) → planned `scenario_traffic_in_souls_1913`
+- `scenario_traffic_in_souls_1913`
 
 ### P2 — book reference only
 
@@ -50,7 +58,7 @@ Chapter 1 remains complete at 3/3 P0 and 3/3 P1. Chapter 2 remains complete at 1
 
 P2 remains intentionally outside the Chapter 4 Production Case queue. `Quo Vadis?` and `Cabiria` are preserved for the later Chapter 5 international-cinema audit rather than being auto-produced here.
 
-**Exact required new Chapter 4 Production Cases remaining: 1.**
+**Exact required new Chapter 4 Production Cases remaining: 0.**
 
 ## Chapter 3 Atlas state
 
@@ -119,7 +127,7 @@ P0 and P1 remain empty. Its six canonical film cases remain `USE_EXISTING`, whil
 
 The permanent rest audit reconstructs the playable catalogue from the seed plus every registered expansion in runtime order. It rejects structural drift in expected playable count, duplicate playable IDs, duplicate verification/profile IDs, orphan records, verified cases without profiles and profiles without verification. It also reports film-specific brief coverage, fallback briefs and remaining unverified scenarios.
 
-The Chapter 1, Chapter 2, Chapter 3 and Chapter 4 companion audits reconstruct the same canonical expansion chain. Their expected playable count is now **393**. Chapters 1–3 keep their completed decision matrices locked at **P0 = 0 / P1 = 0**. Chapter 4 locks Kelly and Queen Elizabeth to their canonical scenario IDs, requires **P0 = 0**, and leaves exactly one P1 title: *Traffic in Souls*.
+The Chapter 1, Chapter 2, Chapter 3 and Chapter 4 companion audits reconstruct the same canonical expansion chain. Their expected playable count is now **394**. Chapters 1–3 keep their completed decision matrices locked at **P0 = 0 / P1 = 0**. Chapter 4 locks Kelly, Queen Elizabeth and Traffic in Souls to their canonical scenario IDs and now has **P0 = 0 / P1 = 0**.
 
 ## Audit method
 

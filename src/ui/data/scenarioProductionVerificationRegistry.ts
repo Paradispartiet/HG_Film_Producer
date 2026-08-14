@@ -34,6 +34,7 @@ import { grandmasReadingGlassProductionCaseVerification } from "./scenarioProduc
 import { histoireDUnCrimeProductionCaseVerification } from "./scenarioProductionVerificationHistoireDUnCrime";
 import { storyOfTheKellyGangProductionCaseVerification } from "./scenarioProductionVerificationStoryOfTheKellyGang";
 import { queenElizabethProductionCaseVerification } from "./scenarioProductionVerificationQueenElizabeth";
+import { trafficInSoulsProductionCaseVerification } from "./scenarioProductionVerificationTrafficInSouls";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -185,6 +186,7 @@ const additionalVerificationRecords = [
   histoireDUnCrimeProductionCaseVerification,
   storyOfTheKellyGangProductionCaseVerification,
   queenElizabethProductionCaseVerification,
+  trafficInSoulsProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
