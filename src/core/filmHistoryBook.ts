@@ -1,5 +1,6 @@
 import { filmHistoryChapterOne } from "./filmHistoryChapterOne.js";
 import { filmHistoryChapterTwo } from "./filmHistoryChapterTwo.js";
+import { filmHistoryChapterThree } from "./filmHistoryChapterThree.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -91,15 +92,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     chapters: [
       filmHistoryChapterOne,
       filmHistoryChapterTwo,
-      outline(
-        "fiction-editing-narrative",
-        3,
-        "From views to stories",
-        "1896–1912",
-        "The growth of staged fiction, trick film, multi-shot construction, continuity devices and more sustained narrative organization.",
-        ["Identify major steps in multi-shot storytelling.", "Distinguish attraction from later continuity norms.", "Explain how editing became a narrative system."],
-        ["tableau", "continuity", "cross-cutting", "match", "narrative integration"],
-      ),
+      filmHistoryChapterThree,
       outline(
         "industry-feature-transition",
         4,
