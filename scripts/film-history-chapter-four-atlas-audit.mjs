@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 391;
+const EXPECTED_ATLAS_COUNT = 392;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -13,6 +13,7 @@ const expansionFiles = [
   "chapterOneRescuedByRoverExpansion.ts",
   "chapterTwoExhibitionExpansion.ts",
   "chapterThreeNarrativeExpansion.ts",
+  "chapterFourIndustryExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -42,6 +43,7 @@ const candidates = [
     aliases: ["Story of the Kelly Gang"],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_the_story_of_the_kelly_gang_1906",
     chapterFunction: "Feature-length transition: exhibitor-producers, multi-reel scale, location production, touring circulation and the economics of a film designed to sustain an hour-long dramatic attraction.",
   },
   {
@@ -106,8 +108,8 @@ const historicalObjects = [
 ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
 const expectedDecisions = {
-  USE_EXISTING: ["Rescued by Rover", "The Lonely Villa"],
-  P0: ["The Story of the Kelly Gang"],
+  USE_EXISTING: ["Rescued by Rover", "The Lonely Villa", "The Story of the Kelly Gang"],
+  P0: [],
   P1: ["Queen Elizabeth", "Traffic in Souls"],
   P2: ["Cabiria", "L'Assassinat du duc de Guise", "Quo Vadis?"],
 };
