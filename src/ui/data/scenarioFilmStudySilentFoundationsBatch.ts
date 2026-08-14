@@ -12,6 +12,7 @@ import { grandmasReadingGlassFilmHistoryProfile } from "./scenarioFilmStudySilen
 import { attackChinaMissionFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsAttackChinaMission";
 import { histoireDUnCrimeFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsHistoireDUnCrime";
 import { storyOfTheKellyGangFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsStoryOfTheKellyGang";
+import { queenElizabethFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsQueenElizabeth";
 import { lonelyVillaFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsLonelyVilla";
 import { corbettFitzsimmonsFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsCorbettFitzsimmons";
 import { brownsAtlasWorksFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsBrownsAtlasWorks";
@@ -34,6 +35,7 @@ const silentFoundationsProfiles = {
   [attackChinaMissionFilmHistoryProfile.scenarioId]: attackChinaMissionFilmHistoryProfile,
   [histoireDUnCrimeFilmHistoryProfile.scenarioId]: histoireDUnCrimeFilmHistoryProfile,
   [storyOfTheKellyGangFilmHistoryProfile.scenarioId]: storyOfTheKellyGangFilmHistoryProfile,
+  [queenElizabethFilmHistoryProfile.scenarioId]: queenElizabethFilmHistoryProfile,
   [lonelyVillaFilmHistoryProfile.scenarioId]: lonelyVillaFilmHistoryProfile,
   [corbettFitzsimmonsFilmHistoryProfile.scenarioId]: corbettFitzsimmonsFilmHistoryProfile,
   [brownsAtlasWorksFilmHistoryProfile.scenarioId]: brownsAtlasWorksFilmHistoryProfile,

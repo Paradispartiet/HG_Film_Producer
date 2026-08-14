@@ -6,7 +6,7 @@
 
 This audit separates film Production Cases from the industrial systems that made longer and more regular production possible. The chapter is about the reorganization of production, distribution and exhibition through film exchanges, rental, permanent theatres, patent/licensing systems, company consolidation, independent competition and the transition toward multi-reel features.
 
-Canonical Atlas baseline after the Kelly materialization: **392 playable films**.
+Canonical Atlas baseline after the Queen Elizabeth materialization: **393 playable films**.
 
 ## Decision matrix
 
@@ -23,17 +23,18 @@ Canonical Atlas baseline after the Kelly materialization: **392 playable films**
    - Covers producer-exhibitor organization, multi-reel scale, location production, touring circulation and lecturer/live-effects exhibition while keeping photographed production silent.
    - Surviving fragments and later reconstruction/restoration remain explicitly distinct from the lost complete 1906 original.
 
+4. **Queen Elizabeth (1912)** / *Les Amours de la reine Élisabeth* → `scenario_queen_elizabeth_1912`
+   - Materialized as the prestige-performance and imported-feature case.
+   - Covers Le Film d'Art production, Bernhardt's star authority, Moreau's stage adaptation, Poiret's stylized costumes and multi-reel tableau construction.
+   - Keeps French production distinct from Zukor's United States rights/presentation role and preserves the 47/45/36-minute print-version boundary.
+
 ### P0 – must be produced
 
 **None.** The Chapter 4 P0 backlog is now closed.
 
 ### P1 – should be produced
 
-1. **Queen Elizabeth (1912)** / *Les Amours de la reine Élisabeth*
-   - Comparative case for prestige performance, imported multi-reel features and the distribution entrepreneurship that helped make longer films commercially viable in the United States.
-   - Planned canonical scenario ID: `scenario_queen_elizabeth_1912`.
-
-2. **Traffic in Souls (1913)**
+1. **Traffic in Souls (1913)**
    - Comparative case for early American feature economics, independent production and sustained feature booking around a contemporary sensational subject rather than a prestige literary adaptation.
    - Planned canonical scenario ID: `scenario_traffic_in_souls_1913`.
 
@@ -84,8 +85,14 @@ These are required chapter evidence but **must not** be converted into fake film
   https://www.bfi.org.uk/film/e8572cbd-21d7-593c-9ca5-7364ea3fc6e6/the-story-of-the-kelly-gang
 - Library of Congress, **Fictional Films Dominate** – Edison litigation, licensing and formation of the Motion Picture Patents Company.  
   https://www.loc.gov/collections/edison-company-motion-pictures-and-sound-recordings/articles-and-essays/history-of-edison-motion-pictures/fictional-films-dominate/
-- Museum of Modern Art, **Modern Matinees: Iris Barry's History of Film** – *Queen Elizabeth* and the emergence of commercially viable longer features.  
+- Fondation Jérôme Seydoux-Pathé, **La Reine Elisabeth** – 1912, 47 minutes, fuller directing credits, Moreau, Clément-Maurice, Le Film d'Art and principal cast.  
+  https://www.fondation-jeromeseydoux-pathe.com/event/2251
+- BFI Sight and Sound, **Strike a pose: fashion and film through the ages** – Zukor's United States rights investment, commercial importance and Poiret's costume system.  
+  https://www.bfi.org.uk/sight-and-sound/features/strike-pose-fashion-film-through-ages
+- Museum of Modern Art, **Modern Matinees: Iris Barry's History of Film** – Bernhardt's prestige, a 36-minute silent print and the emergence of commercially viable longer features.  
   https://www.moma.org/calendar/events/5818
+- New York Public Library, **Queen Elizabeth, Research Catalog** – Moreau adaptation, Mercanton/Desfontaines, Poiret, Bernhardt/Tellegen, Zukor presentation and a 45-minute video manifestation.  
+  https://test.nypl.org/research/research-catalog/bib/b15562649
 - British Film Institute / Sight and Sound, **The long take: Great footage** – feature-length transition context including *Traffic in Souls*.  
   https://www.bfi.org.uk/sight-and-sound/features/long-take-great-footage
 
@@ -93,8 +100,7 @@ These are required chapter evidence but **must not** be converted into fake film
 
 The remaining Chapter 4 Atlas queue is intentionally explicit:
 
-1. **P1 – Queen Elizabeth (1912)**
-2. **P1 – Traffic in Souls (1913)**
+1. **P1 – Traffic in Souls (1913)**
 
 Do **not** auto-produce the P2 titles.
 
@@ -103,17 +109,17 @@ Do **not** auto-produce the P2 titles.
 Chapter 4 Atlas is not complete until:
 
 - `The Story of the Kelly Gang` remains a verified canonical Production Case at its exact scenario ID;
-- `Queen Elizabeth` exists as a verified canonical Production Case;
+- `Queen Elizabeth` remains a verified canonical Production Case at its exact scenario ID;
 - `Traffic in Souls` exists as a verified canonical Production Case;
 - the two reused earlier cases continue to resolve to their exact canonical scenario IDs;
 - P2 remains explicitly book-only;
 - historical objects remain `NO_PRODUCTION_CASE`;
 - the permanent Chapter 4 audit passes inside `verify:v0.1`.
 
-After Kelly, the expected decision counts are:
+After Queen Elizabeth, the expected decision counts are:
 
-- **USE_EXISTING: 3**
+- **USE_EXISTING: 4**
 - **P0: 0**
-- **P1: 2**
+- **P1: 1**
 - **P2: 3**
 - **NO_PRODUCTION_CASE historical objects/systems: 7**
