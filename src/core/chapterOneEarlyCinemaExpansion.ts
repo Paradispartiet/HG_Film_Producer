@@ -17,6 +17,16 @@ export type ChapterOneEarlyCinemaExpansionDefinition = {
   readonly editing: string;
   readonly sound: string;
   readonly learning: string;
+  readonly sourceId: string;
+  readonly sourceUrl: string;
+  readonly scenarioType: string;
+  readonly requiredChoicesSeed: Readonly<Record<string, readonly string[]>>;
+  readonly learningGoals: readonly string[];
+  readonly phases: readonly {
+    readonly id: string;
+    readonly label: string;
+    readonly player_task: string;
+  }[];
 };
 
 export const chapterOneEarlyCinemaExpansionDefinitions = [
@@ -36,6 +46,78 @@ export const chapterOneEarlyCinemaExpansionDefinitions = [
     editing: "Preserve the action as one continuous take; do not retrofit later continuity editing onto the 1893 production method.",
     sound: "Treat the case as silent capture and distinguish any modern accompaniment from the original photographed production.",
     learning: "Understand Blacksmith Scene as a production-system case joining performers, Kinetograph, Kinetoscope, Black Maria architecture, natural light and single-take staging.",
+    sourceId: "manual_blacksmith_scene_1893",
+    sourceUrl: "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/",
+    scenarioType: "documentary_production",
+    requiredChoicesSeed: {
+      screenplay: ["single_action_structure", "staged_work_performance", "period_form"],
+      camera: ["fixed_kinetograph_viewpoint", "black_maria_space", "natural_light_control"],
+      editing: ["single_continuous_take", "no_retroactive_continuity"],
+      sound: ["silent_capture", "modern_accompaniment_separation"],
+      themes: ["film_history", "production_system", "apparatus_and_performance"],
+    },
+    learningGoals: [
+      "Connect the Black Maria's architecture and sunlight control to the image that could be photographed in 1893.",
+      "Distinguish staged early-film performance from a claim that the camera simply captured untouched reality.",
+    ],
+    phases: [
+      { id: "pitch", label: "Pitch", player_task: "Define the sub-minute production promise without importing later cinema grammar." },
+      { id: "research", label: "Research", player_task: "Separate sourced 1893 production history from later first-film mythology." },
+      { id: "screenplay", label: "Screenplay", player_task: "Build the staged work-pause-work action as one concise performance unit." },
+      { id: "casting", label: "Casting", player_task: "Use a small ensemble whose actions remain readable in a fixed full-body frame." },
+      { id: "production_design", label: "Production design", player_task: "Treat the Black Maria, forge action and props as one apparatus-dependent production environment." },
+      { id: "cinematography", label: "Cinematography", player_task: "Choose fixed framing and controllable natural light appropriate to Kinetograph capture." },
+      { id: "editing", label: "Editing", player_task: "Preserve a single continuous take rather than simulating later continuity systems." },
+      { id: "sound", label: "Sound", player_task: "Keep original silent capture distinct from later or present-day accompaniment." },
+      { id: "release", label: "Release", player_task: "Place the film in the 1893 Kinetoscope/public-demonstration context without a single-inventor claim." },
+    ],
+  },
+  {
+    id: "scenario_workers_leaving_lumiere_factory_1895",
+    title: "Workers Leaving the Lumière Factory",
+    originalTitle: "La Sortie de l'usine Lumière à Lyon",
+    aliases: [
+      "Workers Leaving the Lumiere Factory",
+      "La Sortie de l'Usine Lumière à Lyon",
+      "La Sortie des usines Lumière",
+      "Sortie d'usine",
+    ],
+    year: 1895,
+    directors: ["Louis Lumière"],
+    genres: ["Documentary", "Short"],
+    tradition: "Lumière actuality, portable location filmmaking and single-shot event framing",
+    tone: "Observational, spatial and event-driven",
+    premise: "Build a short actuality around a real factory-gate event, using portable apparatus, fixed framing, depth and precise start timing so a crowd's movement becomes the production structure.",
+    screenplay: "Replace fictional scene construction with event design: decide which threshold to record, when the flow begins and how the short roll can contain a legible progression of workers, bicycles, animals and vehicles.",
+    image: "Place the Cinématographe outside the factory gate and compose enough foreground, depth and lateral room for people and vehicles to organize the image through movement.",
+    editing: "Treat each filmed version as a separate single-view production iteration; do not collapse surviving variants into one imaginary original or retrofit continuity montage onto the case.",
+    sound: "Treat the photographed case as silent capture and keep later accompaniment separate from the 1895 production evidence.",
+    learning: "Understand actuality as produced through apparatus, location, framing, timing and repeatability rather than as an automatic transparent record of reality.",
+    sourceId: "manual_workers_leaving_lumiere_factory_1895",
+    sourceUrl: "https://www.institut-lumiere.org/le-cinematographe-lumiere",
+    scenarioType: "documentary_production",
+    requiredChoicesSeed: {
+      screenplay: ["event_structure", "factory_gate_timing", "actuality_without_fictional_plot"],
+      camera: ["portable_cinematographe", "fixed_location_viewpoint", "depth_and_crowd_flow"],
+      editing: ["single_view", "version_separation", "no_retroactive_continuity"],
+      sound: ["silent_capture", "modern_accompaniment_separation"],
+      themes: ["film_history", "actuality", "labor_and_modernity", "version_history"],
+    },
+    learningGoals: [
+      "Connect the Cinématographe's portability and short roll to location choice, framing and event timing.",
+      "Use multiple surviving versions to distinguish actuality from the idea of one untouched, transparent record.",
+    ],
+    phases: [
+      { id: "pitch", label: "Pitch", player_task: "Define the everyday event and why its movement can sustain a complete short actuality." },
+      { id: "research", label: "Research", player_task: "Separate sourced Lumière production and exhibition history from single-birthday cinema myths." },
+      { id: "screenplay", label: "Screenplay", player_task: "Design event timing rather than fictional plot: gate, crowd flow, start point and end point." },
+      { id: "casting", label: "Casting", player_task: "Treat the workers and passers-by as real-world participants whose density and movement must remain legible without inventing character roles." },
+      { id: "production_design", label: "Production design", player_task: "Use the real factory gate, street and depth as the physical production environment rather than converting the actuality into a studio set." },
+      { id: "cinematography", label: "Cinematography", player_task: "Place a fixed portable Cinématographe viewpoint that can contain bodies, bicycles and vehicles through the full short roll." },
+      { id: "editing", label: "Editing", player_task: "Preserve each version as its own single-view iteration and do not fake later continuity construction." },
+      { id: "sound", label: "Sound", player_task: "Keep 1895 silent capture distinct from later accompaniment or restoration sound." },
+      { id: "release", label: "Release", player_task: "Place the view inside the 1895 demonstration and projection history without claiming one film single-handedly invented cinema." },
+    ],
   },
 ] as const satisfies readonly ChapterOneEarlyCinemaExpansionDefinition[];
 
@@ -73,8 +155,8 @@ function createChapterOneEarlyCinemaScenario(
     source: {
       list_id: "manual_chapter_one_early_cinema_expansion_2026",
       position,
-      imdb_id: "manual_blacksmith_scene_1893",
-      url: "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/",
+      imdb_id: definition.sourceId,
+      url: definition.sourceUrl,
     },
     film: {
       title: definition.title,
@@ -88,21 +170,11 @@ function createChapterOneEarlyCinemaScenario(
       imdb_rating: 0,
       user_rating: 0,
     },
-    scenario_type: "documentary_production",
+    scenario_type: definition.scenarioType,
     production_challenge: definition.premise,
-    required_choices_seed: {
-      screenplay: ["single_action_structure", "staged_work_performance", "period_form"],
-      camera: ["fixed_kinetograph_viewpoint", "black_maria_space", "natural_light_control"],
-      editing: ["single_continuous_take", "no_retroactive_continuity"],
-      sound: ["silent_capture", "modern_accompaniment_separation"],
-      themes: ["film_history", "production_system", "apparatus_and_performance"],
-    },
-    phases: sharedProductionCasePhases,
-    learning_goals_seed: [
-      definition.learning,
-      "Connect the Black Maria's architecture and sunlight control to the image that could be photographed in 1893.",
-      "Distinguish staged early-film performance from a claim that the camera simply captured untouched reality.",
-    ],
+    required_choices_seed: definition.requiredChoicesSeed,
+    phases: definition.phases,
+    learning_goals_seed: [definition.learning, ...definition.learningGoals],
     manual_enrichment_needed: [],
   };
 }
@@ -110,15 +182,3 @@ function createChapterOneEarlyCinemaScenario(
 function toGenreKey(genre: string): string {
   return genre.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
 }
-
-const sharedProductionCasePhases = [
-  { id: "pitch", label: "Pitch", player_task: "Define the sub-minute production promise without importing later cinema grammar." },
-  { id: "research", label: "Research", player_task: "Separate sourced 1893 production history from later first-film mythology." },
-  { id: "screenplay", label: "Screenplay", player_task: "Build the staged work-pause-work action as one concise performance unit." },
-  { id: "casting", label: "Casting", player_task: "Use a small ensemble whose actions remain readable in a fixed full-body frame." },
-  { id: "production_design", label: "Production design", player_task: "Treat the Black Maria, forge action and props as one apparatus-dependent production environment." },
-  { id: "cinematography", label: "Cinematography", player_task: "Choose fixed framing and controllable natural light appropriate to Kinetograph capture." },
-  { id: "editing", label: "Editing", player_task: "Preserve a single continuous take rather than simulating later continuity systems." },
-  { id: "sound", label: "Sound", player_task: "Keep original silent capture distinct from later or present-day accompaniment." },
-  { id: "release", label: "Release", player_task: "Place the film in the 1893 Kinetoscope/public-demonstration context without a single-inventor claim." },
-] as const;
