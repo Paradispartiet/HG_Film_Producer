@@ -9,7 +9,7 @@ import {
 } from "./scenarioProductionVerificationRegistry.js";
 
 const verificationGroups = [
-  ["silent cinema foundations", ["scenario_blacksmith_scene_1893", "scenario_workers_leaving_lumiere_factory_1895", "scenario_the_corbett_fitzsimmons_fight_1897", "scenario_employees_leaving_browns_atlas_works_sheffield_1901", "scenario_fire_1901", "scenario_life_of_an_american_fireman_1903", "scenario_rescued_by_rover_1905", "scenario_the_great_train_robbery_1903", "scenario_a_trip_to_the_moon_1902", "scenario_the_cabinet_of_dr_caligari_1920", "scenario_nosferatu_1922", "scenario_battleship_potemkin_1925"], 4],
+  ["silent cinema foundations", ["scenario_blacksmith_scene_1893", "scenario_workers_leaving_lumiere_factory_1895", "scenario_the_corbett_fitzsimmons_fight_1897", "scenario_employees_leaving_browns_atlas_works_sheffield_1901", "scenario_uncle_josh_at_the_moving_picture_show_1902", "scenario_fire_1901", "scenario_life_of_an_american_fireman_1903", "scenario_rescued_by_rover_1905", "scenario_the_great_train_robbery_1903", "scenario_a_trip_to_the_moon_1902", "scenario_the_cabinet_of_dr_caligari_1920", "scenario_nosferatu_1922", "scenario_battleship_potemkin_1925"], 4],
   ["silent and early studio systems", ["scenario_the_general_1926", "scenario_the_phantom_carriage_1921", "scenario_metropolis_1927", "scenario_frankenstein_1931"], 5],
   ["late silent and early sound systems", ["scenario_the_passion_of_joan_of_arc_1928", "scenario_man_with_a_movie_camera_1929", "scenario_m_1931", "scenario_city_lights_1931"], 4],
   ["1930s production systems", ["scenario_king_kong_1933", "scenario_modern_times_1936", "scenario_snow_white_and_the_seven_dwarfs_1937", "scenario_the_rules_of_the_game_1939"], 4],
@@ -155,7 +155,7 @@ const verificationGroups = [
   ["Japanese ambiguity and dialogue systems", ["scenario_cure_1997", "scenario_wheel_of_fortune_and_fantasy_2021", "scenario_monster_kore_eda_2023", "scenario_evil_does_not_exist_2023"], 4],
 ] as const;
 
-const expectedVerifiedCount = 379;
+const expectedVerifiedCount = 380;
 
 test("verification records are sourced and refer to playable scenarios", () => {
   const records = getProductionCaseVerificationRecords();
