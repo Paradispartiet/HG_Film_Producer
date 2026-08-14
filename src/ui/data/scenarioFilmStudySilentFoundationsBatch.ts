@@ -9,6 +9,7 @@ import type { FilmHistoryChoice, FilmHistoryProfile, ScenarioFilmStudyMap } from
 import { blacksmithSceneFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsBlacksmith";
 import { workersLeavingLumiereFactoryFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsWorkersLeaving";
 import { grandmasReadingGlassFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsGrandmasReadingGlass";
+import { attackChinaMissionFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsAttackChinaMission";
 import { lonelyVillaFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsLonelyVilla";
 import { corbettFitzsimmonsFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsCorbettFitzsimmons";
 import { brownsAtlasWorksFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsBrownsAtlasWorks";
@@ -28,6 +29,7 @@ const silentFoundationsProfiles = {
   [blacksmithSceneFilmHistoryProfile.scenarioId]: blacksmithSceneFilmHistoryProfile,
   [workersLeavingLumiereFactoryFilmHistoryProfile.scenarioId]: workersLeavingLumiereFactoryFilmHistoryProfile,
   [grandmasReadingGlassFilmHistoryProfile.scenarioId]: grandmasReadingGlassFilmHistoryProfile,
+  [attackChinaMissionFilmHistoryProfile.scenarioId]: attackChinaMissionFilmHistoryProfile,
   [lonelyVillaFilmHistoryProfile.scenarioId]: lonelyVillaFilmHistoryProfile,
   [corbettFitzsimmonsFilmHistoryProfile.scenarioId]: corbettFitzsimmonsFilmHistoryProfile,
   [brownsAtlasWorksFilmHistoryProfile.scenarioId]: brownsAtlasWorksFilmHistoryProfile,
