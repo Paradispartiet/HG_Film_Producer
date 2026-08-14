@@ -66,6 +66,38 @@ export const silentFoundationsVerificationRecords = [
     ]
   },
   {
+    scenarioId: "scenario_the_great_train_robbery_1903",
+    status: "verified",
+    verifiedAt: "2026-08-14",
+    summary: "The Great Train Robbery's Edison studio-location production, railway action, multi-scene temporal organization, moving-train photography, double exposure, hand-applied color and flexible direct-address bandit shot are supported by Library of Congress, MoMA, BFI and National Gallery of Art records.",
+    sources: [
+      {
+        title: "The great train robbery", publisher: "Library of Congress",
+        url: "https://www.loc.gov/item/00694220/", sourceKind: "film_institute",
+        supports: ["overall", "screenplay", "cinematography", "editing"],
+        note: "The Library catalog credits Edwin S. Porter with production and camera, J. B. Smith and others with camera work, records the Edison Manufacturing Company production, a partial basis in Scott Marble's play, November 1903 studio and New Jersey location filming, 35mm holdings and an 11:54 reference duration at 18 fps."
+      },
+      {
+        title: "Edwin S. Porter. The Great Train Robbery. 1903", publisher: "Museum of Modern Art",
+        url: "https://www.moma.org/collection/works/304708", sourceKind: "film_institute",
+        supports: ["overall", "screenplay", "cinematography", "editing"],
+        note: "MoMA documents studio interiors, New Jersey exterior action, photography from a moving train, double exposure for moving views beyond set windows, hand-painted color in selected prints, and editing across disparate shots, locations and partially simultaneous action."
+      },
+      {
+        title: "The Innovators 1900-1910: Time After Time", publisher: "British Film Institute",
+        url: "https://old.bfi.org.uk/sightandsound/feature/145", sourceKind: "film_institute",
+        supports: ["overall", "screenplay", "editing"],
+        note: "Film historian Charles Musser explicitly rejects reductive claims that Porter was the inventor of editing and instead analyzes The Great Train Robbery's successive depiction of the robbers and posse as historically specific pre-1908 temporal organization."
+      },
+      {
+        title: "Cine-Concert: The Great Train Robbery followed by Sand!", publisher: "National Gallery of Art",
+        url: "https://www.nga.gov/calendar/treasures-american-cinema-westerns-reel-americana/cine-concert-great-train-robbery-followed-sand?evd=202604191800", sourceKind: "film_institute",
+        supports: ["overall", "cinematography", "sound"],
+        note: "The National Gallery of Art cross-checks the November 1903 Edison-studio and Essex County Park production, Edwin S. Porter credit, 35mm silent presentation, approximately twelve-minute duration and the direct-address Justus D. Barnes gunshot image."
+      }
+    ]
+  },
+  {
     scenarioId: "scenario_a_trip_to_the_moon_1902",
     status: "verified",
     verifiedAt: "2026-07-20",
