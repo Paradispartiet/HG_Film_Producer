@@ -7,6 +7,7 @@ export type ChapterTwoExhibitionExpansionDefinition = {
   readonly originalTitle: string;
   readonly aliases?: readonly string[];
   readonly year: number;
+  readonly titleType: string;
   readonly runtimeMins: number;
   readonly directors: readonly string[];
   readonly genres: readonly string[];
@@ -35,6 +36,7 @@ export const chapterTwoExhibitionExpansionDefinitions = [
       "Corbett and Fitzsimmons Fight",
     ],
     year: 1897,
+    titleType: "Feature",
     runtimeMins: 100,
     directors: ["Enoch J. Rector"],
     genres: ["Documentary", "Sport"],
@@ -64,6 +66,44 @@ export const chapterTwoExhibitionExpansionDefinitions = [
       { id: "editing", label: "Assembly", player_task: "Preserve event chronology across camera changes and fragments; do not replace the original with Lubin's condensed reenactment." },
       { id: "sound", label: "Exhibition performance", player_task: "Keep original silent capture distinct from the documented live expert commentary delivered beside the projected film." },
       { id: "release", label: "Rights and exhibition", player_task: "Pair proprietary Veriscope projection with territorial exhibition agreements, local theatre deals and event-style ticket economics." },
+    ],
+  },
+  {
+    id: "scenario_employees_leaving_browns_atlas_works_sheffield_1901",
+    title: "Employees Leaving Brown's Atlas Works, Sheffield",
+    originalTitle: "Employees Leaving Brown's Atlas Works, Sheffield",
+    aliases: ["Employees Leaving Brown's Atlas Works", "Employees Leaving Brown’s Atlas Works, Sheffield"],
+    year: 1901,
+    titleType: "Short",
+    runtimeMins: 2,
+    directors: ["Sagar Mitchell", "James Kenyon"],
+    genres: ["Documentary", "Short"],
+    premise: "Build a two-minute local factory-gate actuality whose staging, crowd density and recognizable faces are designed for a known Sheffield audience and a showman's later paid screening, making audience recruitment part of the production plan.",
+    sourceId: "manual_employees_leaving_browns_atlas_works_sheffield_1901",
+    sourceUrl: "https://player.bfi.org.uk/free/film/watch-employees-leaving-browns-atlas-works-sheffield-1901-1901-online",
+    scenarioType: "documentary_production",
+    requiredChoicesSeed: {
+      screenplay: ["shift_exit_event", "recognition_driven_structure", "concluding_camera_acknowledgement"],
+      camera: ["fixed_factory_gate_viewpoint", "maximize_recognizable_faces", "outdoor_daylight", "crowd_flow_control"],
+      editing: ["short_actuality_structure", "preserve_local_event", "no_fictional_continuity_retrofit"],
+      sound: ["silent_capture", "exhibition_accompaniment_separation"],
+      themes: ["film_history", "local_audience", "factory_gate_business_model", "showman_commission", "staged_actuality"],
+    },
+    learningGoals: [
+      "Treat the local audience as a production input: recognizable workers and children create the commercial reason to attend the later screening.",
+      "Distinguish staged crowd management from a claim that actuality is an untouched transparent record.",
+      "Connect Mitchell and Kenyon's filmmaking to fairground/showman commissioning and regional paid exhibition without pretending that a modern director-credit model maps perfectly onto every surviving local film.",
+    ],
+    phases: [
+      { id: "pitch", label: "Local audience promise", player_task: "Define why people from the same workplace and neighbourhood will pay to see this exact local event projected." },
+      { id: "research", label: "Commission and audience", player_task: "Ground the factory, Mitchell and Kenyon practice, possible Thomas showman connection and local exhibition logic without upgrading uncertain attribution to fact." },
+      { id: "screenplay", label: "Event structure", player_task: "Plan shift-end crowd release and a readable concluding camera acknowledgement rather than fictional plot." },
+      { id: "casting", label: "Real participants", player_task: "Work with the actual factory crowd while avoiding invented character roles; recognition, density and movement carry the film." },
+      { id: "production_design", label: "Factory gate", player_task: "Use the real Atlas Works gate and street as the recognizable production environment rather than reconstructing it in a studio." },
+      { id: "cinematography", label: "Cinematography", player_task: "Choose a fixed outdoor viewpoint that can record a large flow of workers while retaining enough proximity for recognizable faces." },
+      { id: "editing", label: "Assembly", player_task: "Keep the short local actuality legible and event-based without importing later continuity grammar." },
+      { id: "sound", label: "Exhibition layer", player_task: "Keep photographed silent capture distinct from whatever live music, lecture or audience response may accompany a particular screening." },
+      { id: "release", label: "Local screening", player_task: "Plan the showman's later paid exhibition around local recognition—the filmed crowd is also the most valuable prospective audience." },
     ],
   },
 ] as const satisfies readonly ChapterTwoExhibitionExpansionDefinition[];
@@ -98,7 +138,7 @@ export function mergeChapterTwoExhibitionExpansion(
         title: definition.title,
         original_title: definition.originalTitle,
         year: definition.year,
-        title_type: "Feature",
+        title_type: definition.titleType,
         runtime_mins: definition.runtimeMins,
         directors: definition.directors,
         genres: definition.genres,

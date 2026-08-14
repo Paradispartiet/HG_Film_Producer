@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 385;
+const EXPECTED_ATLAS_COUNT = 386;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -58,6 +58,7 @@ const candidates = [
     aliases: ["Employees Leaving Brown's Atlas Works", "Employees Leaving Brown’s Atlas Works, Sheffield"],
     role: "comparative_film",
     decisionIfMissing: "P1",
+    expectedScenarioId: "scenario_employees_leaving_browns_atlas_works_sheffield_1901",
     chapterFunction: "Mitchell and Kenyon's local-film business model turns the people photographed into the paying audience and makes commissioning, staging and exhibition inseparable.",
   },
   {
@@ -108,12 +109,13 @@ const historicalObjects = [
 const expectedDecisions = {
   USE_EXISTING: [
     "A Trip to the Moon",
+    "Employees Leaving Brown's Atlas Works, Sheffield",
     "The Corbett-Fitzsimmons Fight",
     "The Great Train Robbery",
     "Workers Leaving the Lumière Factory",
   ],
   P0: [],
-  P1: ["Employees Leaving Brown's Atlas Works, Sheffield", "Uncle Josh at the Moving Picture Show"],
+  P1: ["Uncle Josh at the Moving Picture Show"],
   P2: ["May Irwin Kiss", "Sedgwick's Bioscope Showfront at Pendlebury Wakes"],
 };
 
@@ -242,7 +244,7 @@ for (const [decision, expectedTitles] of Object.entries(expectedDecisions)) {
 if ((byDecision.AMBIGUOUS ?? []).length > 0) structuralProblems.push(`Ambiguous candidates: ${byDecision.AMBIGUOUS.join(", ")}`);
 
 const report = {
-  schemaVersion: "1.1",
+  schemaVersion: "1.2",
   auditDate: "2026-08-14",
   chapter: {
     number: 2,

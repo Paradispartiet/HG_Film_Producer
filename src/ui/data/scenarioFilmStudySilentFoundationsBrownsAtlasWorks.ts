@@ -1,0 +1,35 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const brownsAtlasWorksFilmHistoryProfile = {
+  scenarioId: "scenario_employees_leaving_browns_atlas_works_sheffield_1901",
+  period: "1901 local actuality at the height of Mitchell and Kenyon's northern British factory-gate and showman-commissioned film business",
+  traditions: [
+    "Mitchell and Kenyon local actuality",
+    "Factory-gate film",
+    "Showman-commissioned local cinema",
+    "Recognition-driven regional exhibition",
+  ],
+  before: "Factory-gate views existed from the Lumière period, but by 1900–1901 Mitchell and Kenyon had turned the form into a regional business practice. Their films were made for fairground operators and other showmen, often promising local spectators the chance to see themselves and people they knew on screen.",
+  moment: "At John Brown & Co.'s Atlas Works in Sheffield, the filmmakers recorded a large shift-end crowd in a roughly two-minute silent actuality. BFI records that the workers are visibly marshalled past the camera by a smartly dressed man, possibly connected to regular commissioner A. D. Thomas, and that workers and children acknowledge the camera in the concluding view. The production therefore depends on event timing, outdoor light, crowd management and face recognition rather than passive observation.",
+  after: "The rediscovered Mitchell and Kenyon collection changed the historical picture of early British cinema by revealing a thriving regional nonfiction economy. The factory-gate films now preserve labour and social history, but their original commercial logic also matters: local people were valuable subjects because they could become the paying audience for later screenings.",
+  historyQuestion: "How do you produce a local actuality when the people in front of the camera are also the most valuable prospective audience for the later screening?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "BFI dates the film to 1901 in Sheffield and places it within Mitchell and Kenyon's Edwardian local-film practice at John Brown & Co.'s Atlas Works." },
+    { area: "movement_and_tradition", status: "source_verified", note: "BFI Replay identifies factory-gate filming as a recurring genre and business model; the wider collection records Mitchell and Kenyon travelling for showmen and making locally recognizable films for paying audiences." },
+    { area: "industry_and_production_context", status: "source_verified", note: "The Mitchell and Kenyon collection describes films made for fairground operators and other showmen, while this film's page notes a possible link to the Thomas commissioning network. The possible identity is preserved as uncertain rather than upgraded to fact." },
+    { area: "reception_and_legacy", status: "source_verified", note: "BFI's collection history says the rediscovery of the Mitchell and Kenyon negatives materially revised understanding of a thriving regional nonfiction cinema; Sheffield Libraries also uses this surviving film as a local social-history source." },
+    { area: "screenplay", status: "mapped", note: "There is no fictional screenplay. The playable structure is a shift-end event: release the crowd, maximize recognizable faces and finish with direct acknowledgement of the camera." },
+    { area: "directing", status: "mapped", note: "Mitchell and Kenyon are the canonical makers in Atlas metadata, but the exact division of camera/directorial labour for this individual actuality is not asserted beyond the surviving institutional record." },
+    { area: "performance", status: "source_verified", note: "The crowd consists of real workers and children, yet BFI explicitly notes visible marshaling and camera acknowledgement. Their behaviour is therefore real-world participation shaped by the filming situation, not untouched observation or fictional acting." },
+    { area: "production_design", status: "source_verified", note: "The real Atlas Works gate and surrounding street are the production environment. The recognizable workplace is commercially valuable because the later audience can identify both place and people." },
+    { area: "costume_makeup", status: "not_central", note: "Clothing is valuable historical evidence of the workers and period, but no source-backed costume or makeup department is central to the production method." },
+    { area: "cinematography", status: "source_verified", note: "The camera is positioned outside the factory to contain a large exiting crowd while keeping bodies and faces close enough for local recognition. Crowd flow is actively managed past the viewpoint." },
+    { area: "lighting", status: "mapped", note: "Outdoor filming avoids the severe low-light limits of early film stock, but the inspected sources do not document a separate controllable lighting plan for this title." },
+    { area: "camera_format", status: "mapped", note: "The surviving BFI record establishes early silent-film capture but does not justify a film-specific gauge, stock or camera-brand claim beyond the Mitchell and Kenyon production context." },
+    { area: "editing", status: "mapped", note: "The case preserves a short event-based actuality rather than imposing later continuity grammar. Its production logic comes from crowd timing, viewpoint and local recognition more than complex assembly." },
+    { area: "sound_design", status: "not_central", note: "The photographed film is silent. General early-cinema evidence allows live exhibition accompaniment and audience response, but no fixed film-specific sound design is claimed." },
+    { area: "music", status: "not_central", note: "No fixed score is established for the photographed production; music belongs to the variable exhibition layer unless a specific screening source documents otherwise." },
+    { area: "effects_animation", status: "not_central", note: "No photographic trick or animation system is central; the attraction is local recognition and crowd movement." },
+    { area: "documentary_method", status: "source_verified", note: "This is nonfiction with an active production intervention. BFI explicitly notes marshaling/staging, making it a strong case against the idea that actuality equals transparent, untouched reality." },
+  ],
+} as const satisfies FilmHistoryProfile;
