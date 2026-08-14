@@ -35,7 +35,7 @@ export const rescuedByRoverProductionCaseVerification = {
       publisher: "Science Museum",
       url: "https://blog.sciencemuseum.org.uk/dog-detective-fairies-sherlock-holmes-dressing-gown/",
       sourceKind: "archive_feature",
-      supports: ["overall", "performance", "editing"],
+      supports: ["overall", "screenplay", "editing"],
       note: "Science Museum history identifies Blair as the canine lead and records that exceptional popularity forced Rescued by Rover to be re-shot multiple times after negatives wore out, making version history a material production issue."
     }
   ]
