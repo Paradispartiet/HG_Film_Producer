@@ -3,6 +3,8 @@ import { reservoirDogsFilmHistoryProfile } from "./scenarioFilmStudyAmericanGenr
 import { soundOfMetalFilmHistoryProfile } from "./scenarioFilmStudyAmericanPrecaritySoundOfMetal";
 import { bartonFinkFilmHistoryProfile } from "./scenarioFilmStudySubjectiveEnclosureBartonFink";
 import { capernaumFilmHistoryProfile } from "./scenarioFilmStudyCapernaum";
+import { closeFilmHistoryProfile } from "./scenarioFilmStudyClose";
+import { dontLookUpFilmHistoryProfile } from "./scenarioFilmStudyDontLookUp";
 import { shopliftersFilmHistoryProfile } from "./scenarioFilmStudyShoplifters";
 import { theGuiltyFilmHistoryProfile } from "./scenarioFilmStudyTheGuilty";
 import { theHouseThatJackBuiltFilmHistoryProfile } from "./scenarioFilmStudyTheHouseThatJackBuilt";
@@ -34,6 +36,8 @@ export function getPriorityIndieFinalProfile(scenarioId: string): FilmHistoryPro
   if (scenarioId === onceUponATimeInHollywoodFilmHistoryProfile.scenarioId) return onceUponATimeInHollywoodFilmHistoryProfile;
   if (scenarioId === portraitOfALadyOnFireFilmHistoryProfile.scenarioId) return portraitOfALadyOnFireFilmHistoryProfile;
   if (scenarioId === psychobitchFilmHistoryProfile.scenarioId) return psychobitchFilmHistoryProfile;
+  if (scenarioId === dontLookUpFilmHistoryProfile.scenarioId) return dontLookUpFilmHistoryProfile;
+  if (scenarioId === closeFilmHistoryProfile.scenarioId) return closeFilmHistoryProfile;
   return profilesByScenarioId.get(scenarioId);
 }
 
@@ -60,6 +64,12 @@ export function getPriorityIndieFinalDonors(
   }
   if (profile.scenarioId === psychobitchFilmHistoryProfile.scenarioId) {
     return [ghostWorldFilmHistoryProfile, columbusFilmHistoryProfile, capernaumFilmHistoryProfile];
+  }
+  if (profile.scenarioId === dontLookUpFilmHistoryProfile.scenarioId) {
+    return [bartonFinkFilmHistoryProfile, onceUponATimeInHollywoodFilmHistoryProfile, theGuiltyFilmHistoryProfile];
+  }
+  if (profile.scenarioId === closeFilmHistoryProfile.scenarioId) {
+    return [psychobitchFilmHistoryProfile, capernaumFilmHistoryProfile, portraitOfALadyOnFireFilmHistoryProfile];
   }
   if (!profilesByScenarioId.has(profile.scenarioId)) return undefined;
   return profiles
