@@ -1,73 +1,75 @@
 # Film Producer — full Production Case rest audit
 
-Audit date: **2026-08-13**
+Audit date: **2026-08-14**
 
-## Result
+## Executable baseline
 
-| Measure | Count |
-|---|---:|
-| Playable scenarios | 378 |
-| Source-verified Production Cases | 372 |
-| Remaining unverified Production Cases | 6 |
-| Source-backed Film Study profiles | 372 |
-| Film-specific production briefs | 378 |
-| Seed fallback briefs | 0 |
-| Scenarios without source-backed profile | 6 |
+The canonical Production Case audit now reconstructs **380 playable Film Atlas scenarios**. The verification-registry test is gated at **373 source-verified Production Cases** after materializing *Workers Leaving the Lumière Factory (1895)*.
 
-The audit previously found and corrected one registry mismatch: the Jeanne Dielman profile and verification used `scenario_jeanne_dielman_1975`, while the playable catalog uses `scenario_jeanne_dielman_23_quai_du_commerce_1080_bruxelles_1975`. With The House That Jack Built materialized, all 372 verified records and profiles point to playable scenarios.
+The current Chapter 1 early-cinema expansion contributes two source-backed P0 materializations:
+
+- `scenario_blacksmith_scene_1893`
+- `scenario_workers_leaving_lumiere_factory_1895`
+
+The executable audit remains the source of truth for exact distributions of any other unfinished Production Cases; this document intentionally does not preserve an older static “remaining catalog” snapshot after the Film History Atlas began adding new scenarios.
 
 ## Integrity
 
-- No duplicate playable scenario IDs.
-- No duplicate verification IDs.
-- No duplicate source-backed profile IDs.
-- No orphan verification records or profiles.
-- No verified cases without a profile, and no profiles without verification.
-- Every playable scenario resolves to a film-specific production brief; no seed fallback remains.
+The permanent audit rejects structural drift in:
 
-## Remaining work by origin
+- expected playable-scenario count;
+- duplicate playable scenario IDs;
+- duplicate verification IDs;
+- duplicate source-backed profile IDs;
+- orphan verification records or profiles;
+- verified cases without profiles;
+- profiles without verification.
 
-| Catalog origin | Remaining |
-|---|---:|
-| `film_scenarios_seed.json` | 4 |
-| `italyFranceGermanyBeneluxExpansion.ts` | 2 |
+The audit also reports film-specific production-brief coverage, fallback briefs and all remaining unverified scenarios so those can be reviewed from the current source tree rather than a stale manual list.
 
-## Remaining work by decade
+## Chapter 1 Atlas state
 
-| Decade | Remaining |
-|---|---:|
-| 2010s | 4 |
-| 2020s | 2 |
+The separate Chapter 1 audit now resolves three of its eleven film candidates to canonical Atlas cases:
 
-## Remaining work by genre
+- *Blacksmith Scene* (1893)
+- *Workers Leaving the Lumière Factory* (1895)
+- *A Trip to the Moon* (1902)
 
-A film can belong to more than one genre.
+The exact remaining Chapter 1 Production Case queue is:
 
-| Genre | Remaining |
-|---|---:|
-| Drama | 6 |
-| Comedy | 2 |
-| Romance | 1 |
-| Documentary | 1 |
-| Sci-Fi | 1 |
+### P0
 
-## Complete remaining catalog
+- *The Great Train Robbery* (1903)
 
-| # | Year | Film | Scenario ID |
-|---:|---:|---|---|
-| 1 | 2019 | Leaving Neverland | `scenario_leaving_neverland_2019` |
-| 2 | 2019 | Once Upon a Time in... Hollywood | `scenario_once_upon_a_time_in_hollywood_2019` |
-| 3 | 2019 | Portrait of a Lady on Fire | `scenario_portrait_of_a_lady_on_fire_2019` |
-| 4 | 2019 | Psychobitch | `scenario_psychobitch_2019` |
-| 5 | 2021 | Don't Look Up | `scenario_don_t_look_up_2021` |
-| 6 | 2022 | Close | `scenario_close_2022` |
+### P1
+
+- *Fire!* (1901)
+- *Life of an American Fireman* (1903)
+- *Rescued by Rover* (1905)
+
+### P2 — book reference only
+
+- *L'Arroseur arrosé* (1895)
+- *Arrival of a Train at La Ciotat* (1896)
+- *Annabelle Serpentine Dance* (1895)
+- *The Big Swallow* (1901)
+
+P2 remains intentionally outside the Production Case queue unless a later source/value review explicitly changes that decision.
 
 ## Audit method
 
-The permanent audit script reconstructs the playable catalog from the 161-film seed and the ordered expansion files used by `filmScenarios.ts`. It applies ID and normalized title/year matching, then compares the resulting playable IDs with all verification records, Film Study profiles and production-brief coverage in the source tree.
+The permanent rest audit reconstructs the playable catalog from the seed and the ordered expansion files used by `filmScenarios.ts`. It applies ID and normalized title/year matching, then compares the resulting playable IDs with verification records, Film Study profiles and production-brief coverage in the source tree.
 
 Run:
 
 ```bash
 npm run audit:production-cases
 ```
+
+The Chapter 1 companion audit runs through:
+
+```bash
+npm run audit:film-history-ch1
+```
+
+Both are part of `npm run verify:v0.1`.
