@@ -34,6 +34,38 @@ export const silentFoundationsVerificationRecords = [
     ]
   },
   {
+    scenarioId: "scenario_workers_leaving_lumiere_factory_1895",
+    status: "verified",
+    verifiedAt: "2026-08-14",
+    summary: "Workers Leaving the Lumière Factory's portable Cinématographe context, factory-gate actuality method, fixed event framing, short-roll production limits, 1895 demonstration history and multiple surviving versions are supported by Institut Lumière, BFI, Library of Congress and ACMI records.",
+    sources: [
+      {
+        title: "Le Cinématographe Lumière", publisher: "Institut Lumière",
+        url: "https://www.institut-lumiere.org/le-cinematographe-lumiere", sourceKind: "film_institute",
+        supports: ["overall", "cinematography", "editing"],
+        note: "Institut Lumière documents the Cinématographe development, the restricted 22 March 1895 Paris demonstration using Sortie d'usine, subsequent 1895 projections and the 28 December commercial programme, grounding the case in apparatus and exhibition rather than a single-birthday myth."
+      },
+      {
+        title: "In the beginning: cinema's murky origin story", publisher: "British Film Institute",
+        url: "https://www.bfi.org.uk/sight-and-sound/features/origins-cinema-early-inventors-pioneers", sourceKind: "film_institute",
+        supports: ["overall", "cinematography", "editing"],
+        note: "BFI places the Lumière work among competing early cinema systems and describes the Cinématographe as compact and reliable, with a short film capacity that makes apparatus, duration and event timing concrete production constraints."
+      },
+      {
+        title: "Documentary and Actuality Films", publisher: "Library of Congress",
+        url: "https://guides.loc.gov/french-and-francophone-film/movements-and-genres/documentary-and-actuality", sourceKind: "film_institute",
+        supports: ["overall", "cinematography"],
+        note: "The Library of Congress places Workers Leaving the Lumière Factory among foundational actuality films and defines actuality as short nonfiction recording everyday movement while recognizing that early nonfiction images are produced forms rather than automatic neutral evidence."
+      },
+      {
+        title: "Workers Leaving the Lumiere Factory", publisher: "Australian Centre for the Moving Image",
+        url: "https://www.acmi.net.au/works/5476--workers-leaving-the-lumiere-factory/", sourceKind: "film_institute",
+        supports: ["overall", "cinematography", "editing"],
+        note: "ACMI's collection record identifies the 1895 French Lumière production and explicitly catalogues three distinct surviving versions with visible differences, supporting version history as a production issue instead of collapsing all circulation into one supposed original."
+      }
+    ]
+  },
+  {
     scenarioId: "scenario_a_trip_to_the_moon_1902",
     status: "verified",
     verifiedAt: "2026-07-20",
