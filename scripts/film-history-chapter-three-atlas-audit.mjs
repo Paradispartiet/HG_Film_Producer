@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 390;
+const EXPECTED_ATLAS_COUNT = 391;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -30,7 +30,7 @@ const candidates = [
   { title: "Cendrillon", year: 1899, aliases: ["Cinderella"], role: "comparative_film", decisionIfMissing: "P2", chapterFunction: "Book-level comparison for Méliès's early multiple-tableau fairy-tale construction." },
   { title: "Grandma's Reading Glass", year: 1900, aliases: ["Grandmother's Reading Glass", "Grandmas Reading Glass"], role: "anchor_film", decisionIfMissing: "P0", expectedScenarioId: "scenario_grandmas_reading_glass_1900", chapterFunction: "Analytical viewpoint and motivated magnified inserts." },
   { title: "Attack on a China Mission - Bluejackets to the Rescue", year: 1900, aliases: ["Attack on a China Mission", "Attack on a China Mission – Bluejackets to the Rescue", "Attack on a China Mission: Bluejackets to the Rescue", "Attack on a China Mission (Bluejackets to the Rescue)"], role: "comparative_film", decisionIfMissing: "P1", expectedScenarioId: "scenario_attack_on_a_china_mission_bluejackets_to_the_rescue_1900", chapterFunction: "Version history, connected screen space, archive provenance and imperial representation." },
-  { title: "Histoire d'un crime", year: 1901, aliases: ["History of a Crime", "The Story of a Crime", "Story of a Crime"], role: "comparative_film", decisionIfMissing: "P1", chapterFunction: "Pathé crime drama using multiple tableaux and represented recollection to organize narrative time." },
+  { title: "Histoire d'un crime", year: 1901, aliases: ["History of a Crime", "The Story of a Crime", "Story of a Crime"], role: "comparative_film", decisionIfMissing: "P1", expectedScenarioId: "scenario_histoire_d_un_crime_1901", chapterFunction: "Pathé crime drama using multiple tableaux and represented recollection to organize narrative time." },
   { title: "Stop Thief!", year: 1901, aliases: ["Stop Thief"], role: "comparative_film", decisionIfMissing: "P2", chapterFunction: "Book-level chase comparison." },
   { title: "Fire!", year: 1901, aliases: ["Fire"], role: "anchor_film", decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_fire_1901", chapterFunction: "Connected multi-shot action and constructed space." },
   { title: "A Trip to the Moon", year: 1902, aliases: ["Le voyage dans la lune"], role: "anchor_film", decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_a_trip_to_the_moon_1902", chapterFunction: "Multiple tableaux, theatrical staging and sustained fantasy construction." },
@@ -57,13 +57,14 @@ const expectedDecisions = {
     "Attack on a China Mission - Bluejackets to the Rescue",
     "Fire!",
     "Grandma's Reading Glass",
+    "Histoire d'un crime",
     "Life of an American Fireman",
     "Rescued by Rover",
     "The Great Train Robbery",
     "The Lonely Villa",
   ],
   P0: [],
-  P1: ["Histoire d'un crime"],
+  P1: [],
   P2: ["Cendrillon", "Mary Jane's Mishap", "Stop Thief!", "The Lonedale Operator"],
 };
 
@@ -183,7 +184,7 @@ for (const [decision, expectedTitles] of Object.entries(expectedDecisions)) {
 if ((byDecision.AMBIGUOUS ?? []).length > 0) structuralProblems.push(`Ambiguous candidates: ${byDecision.AMBIGUOUS.join(", ")}`);
 
 const report = {
-  schemaVersion: "1.2",
+  schemaVersion: "1.3",
   auditDate: "2026-08-14",
   chapter: {
     number: 3,

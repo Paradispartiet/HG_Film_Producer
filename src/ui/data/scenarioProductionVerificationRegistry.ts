@@ -31,6 +31,7 @@ import { corbettFitzsimmonsProductionCaseVerification } from "./scenarioProducti
 import { brownsAtlasWorksProductionCaseVerification } from "./scenarioProductionVerificationBrownsAtlasWorks";
 import { uncleJoshProductionCaseVerification } from "./scenarioProductionVerificationUncleJosh";
 import { grandmasReadingGlassProductionCaseVerification } from "./scenarioProductionVerificationGrandmasReadingGlass";
+import { histoireDUnCrimeProductionCaseVerification } from "./scenarioProductionVerificationHistoireDUnCrime";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -179,6 +180,7 @@ const additionalVerificationRecords = [
   brownsAtlasWorksProductionCaseVerification,
   uncleJoshProductionCaseVerification,
   grandmasReadingGlassProductionCaseVerification,
+  histoireDUnCrimeProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
