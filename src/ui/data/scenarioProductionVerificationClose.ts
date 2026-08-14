@@ -1,0 +1,16 @@
+import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+
+export const closeProductionCaseVerification = {
+  scenarioId: "scenario_close_2022",
+  status: "verified",
+  verifiedAt: "2026-08-14",
+  summary: "Close's research-led adolescent-intimacy screenplay, chemistry-first casting, body-centred direction, ALEXA Mini/SUMMILUX-C camera system, documentary-style long-take production and seven-month edit are supported by Cannes, filmmaker interviews and manufacturer records.",
+  sources: [
+    { title: "CLOSE", publisher: "Festival de Cannes", url: "https://www.festival-cannes.com/en/f/close/", sourceKind: "film_institute", supports: ["overall", "screenplay", "cinematography", "editing", "sound"], note: "Cannes verifies the 2022 Competition selection and joint Grand Prix, the Belgium-France-Netherlands production, Lukas Dhont and Angelo Tijssens' screenplay, Frank van den Eeden's cinematography, Alain Dessauvage's editing, Eve Martin's production design, Valentin Hadjadj's music and the principal sound and cast credits." },
+    { title: "Lukas Dhont on Close, the Backlash to Girl, and Male Intimacy", publisher: "Them", url: "https://www.them.us/story/lukas-dhont-close-interview-oscars", sourceKind: "filmmaker_interview", supports: ["overall", "screenplay", "cinematography"], note: "Dhont explains the Niobe Way research and personal origins, his choreographic body-first writing method, the physical-intention approach to closeness and grief, and the collaborative process that let first-time actors Eden Dambrine and Gustav De Waele remain vulnerable and responsive." },
+    { title: "Lukas Dhont breaks down his Oscar-nominated movie, 'Close'", publisher: "Los Angeles Times", url: "https://www.latimes.com/entertainment-arts/movies/story/2023-01-27/lukas-dhont-close-oscar-nominee", sourceKind: "filmmaker_interview", supports: ["overall", "screenplay"], note: "Dhont describes scouting nonprofessional young performers, discovering Dambrine, finding De Waele through a school visit and using a group workshop to test chemistry before casting the central friendship." },
+    { title: "I need to know why a director wants to tell a story", publisher: "Stockfish Film Festival", url: "https://stockfishfestival.is/alain-dessauvage-in-interview/", sourceKind: "filmmaker_interview", supports: ["overall", "editing"], note: "Editor Alain Dessauvage explains his returning collaboration with Dhont, the documentary-style and improvisation-friendly shooting method, long takes, roughly 110 hours of footage and a seven-month edit for Close." },
+    { title: "ARRI technology behind the scenes of Cannes 2022", publisher: "ARRI", url: "https://www.arri.com/news-en/arri-technology-in-cannes-2022/275124-275124", sourceKind: "trade_feature", supports: ["overall", "cinematography"], note: "ARRI identifies Close as a 2022 Cannes Grand Prix production photographed by Frank van den Eeden with the ALEXA Mini." },
+    { title: "Close 2022", publisher: "Leitz Cine", url: "https://www.leitz-cine.com/production/close-2022", sourceKind: "trade_feature", supports: ["overall", "cinematography"], note: "Leitz's production record verifies Frank van den Eeden, Lukas Dhont, the principal production companies and the use of SUMMILUX-C lenses." }
+  ]
+} as const satisfies ProductionCaseVerificationRecord;
