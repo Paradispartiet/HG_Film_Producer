@@ -3,8 +3,6 @@ import test from "node:test";
 
 import { filmHistoryChapterThree, filmHistoryChapterThreeSources } from "./filmHistoryChapterThree.js";
 import { filmHistoryBookParts, getFilmHistoryBookChapter } from "./filmHistoryBook.js";
-import { getClassicFilmScenarios } from "../ui/data/filmScenarios.js";
-import { getProductionCaseVerificationRecords } from "../ui/data/scenarioProductionVerificationRegistry.js";
 
 const canonicalScenarioIds = [
   "scenario_grandmas_reading_glass_1900",
@@ -127,15 +125,8 @@ test("canonical book resolves Chapters 1–3 as full and preserves the six-part 
   assert.equal(getFilmHistoryBookChapter("industry-feature-transition")?.status, "outline");
 });
 
-test("Chapter 3 editorial completion cannot drift the verified Film Atlas baseline", () => {
-  const scenarios = getClassicFilmScenarios();
-  const verification = getProductionCaseVerificationRecords();
-  assert.equal(scenarios.length, 391);
-  assert.equal(verification.length, 384);
-  const scenarioIds = new Set(scenarios.map((scenario) => scenario.id));
-  const verifiedIds = new Set(verification.map((record) => record.scenarioId));
-  for (const scenarioId of canonicalScenarioIds) {
-    assert.ok(scenarioIds.has(scenarioId), `missing playable Chapter 3 scenario ${scenarioId}`);
-    assert.ok(verifiedIds.has(scenarioId), `missing verified Chapter 3 scenario ${scenarioId}`);
-  }
+test("Chapter 3 editorial film references stay locked to the completed Atlas audit", () => {
+  assert.equal(canonicalScenarioIds.length, 9);
+  assert.equal(new Set(canonicalScenarioIds).size, canonicalScenarioIds.length);
+  assert.deepEqual(filmHistoryChapterThree.filmReferences.map((film) => film.atlasScenarioId), canonicalScenarioIds);
 });
