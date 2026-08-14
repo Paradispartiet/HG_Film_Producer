@@ -20,6 +20,8 @@ import "./filmSchoolEditingSoundCourse.css";
 import "./filmCraftLibrary.css";
 import "./filmCraftLibraryFilmLens.css";
 import "./filmResearchControlRoom.css";
+import "./filmHistoryBook.css";
+import "./filmAtlasTimeline.css";
 import "./productionCaseDensity.css";
 import "./productionCaseVerification.css";
 import "./productionCaseVerificationLibrary.css";
