@@ -66,6 +66,38 @@ export const silentFoundationsVerificationRecords = [
     ]
   },
   {
+    scenarioId: "scenario_fire_1901",
+    status: "verified",
+    verifiedAt: "2026-08-14",
+    summary: "Fire!'s five-tableau rescue structure, Hove Fire Station and Ivy Lodge geography, matching movement between locations, 35mm silent material and role in early multi-shot narrative are supported by BFI, Screen Archive South East, Science Museum Group and George Eastman Museum records.",
+    sources: [
+      {
+        title: "Fire! (1901)", publisher: "British Film Institute",
+        url: "https://www.screenonline.org.uk/film/id/520632/index.html", sourceKind: "film_institute",
+        supports: ["overall", "screenplay", "cinematography", "editing"],
+        note: "BFI Screenonline credits James Williamson and the Williamson Kinematograph Company, records 35mm black-and-white silent material at 281 feet, identifies Hove Fire Station and Ivy Lodge, and analyzes the five tableaux, suspense structure and chronological multi-shot construction."
+      },
+      {
+        title: "Fire! — Title ID 8389", publisher: "Screen Archive South East",
+        url: "https://screenarchive.brighton.ac.uk/detail/8389/", sourceKind: "film_institute",
+        supports: ["overall", "screenplay", "cinematography"],
+        note: "The regional archive identifies the 1901 James Williamson production and director credit and describes the policeman, Hove fire-station mobilization, horse-drawn response and staged burning-room rescue, providing a location-specific institutional cross-check."
+      },
+      {
+        title: "Four frames of silent 35mm positive film taken from Fire!", publisher: "Science Museum Group",
+        url: "https://collection.sciencemuseumgroup.org.uk/objects/co8588481/four-frames-of-silent-35mm-tinted-positive-film-taken-from-fire-by-r-w-paul", sourceKind: "film_institute",
+        supports: ["overall", "cinematography"],
+        note: "Science Museum Group preserves nitrate 35mm positive frames identified with James Williamson's 1901 Fire!, including fire-service action, providing a material-format and preservation cross-check without using later accompaniment as production evidence."
+      },
+      {
+        title: "James Card Program #2: Development of the Narrative", publisher: "George Eastman Museum",
+        url: "https://www.eastman.org/event/film-screenings/james-card-program-2-development-narrative-35mm-16mm", sourceKind: "film_institute",
+        supports: ["overall", "editing"],
+        note: "George Eastman Museum programs Fire! as a 1901 James Williamson film in a historical sequence devoted to the development of narrative through larger casts, multiple sets and clear editing across multiple scenes, independently confirming its comparative teaching role."
+      }
+    ]
+  },
+  {
     scenarioId: "scenario_the_great_train_robbery_1903",
     status: "verified",
     verifiedAt: "2026-08-14",
