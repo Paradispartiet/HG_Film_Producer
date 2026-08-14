@@ -5,11 +5,12 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 383;
+const EXPECTED_ATLAS_COUNT = 384;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
   "chapterOneEarlyCinemaExpansion.ts",
+  "chapterOneRescuedByRoverExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -34,7 +35,7 @@ const candidates = [
   { title: "A Trip to the Moon", year: 1902, aliases: ["Le voyage dans la lune"], role: "anchor_film", decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_a_trip_to_the_moon_1902", chapterFunction: "The chapter's principal close reading of trick film, theatrical staging, designed screen space and transformation effects." },
   { title: "Life of an American Fireman", year: 1903, aliases: ["The Life of an American Fireman"], role: "comparative_film", decisionIfMissing: "P1", expectedScenarioId: "scenario_life_of_an_american_fireman_1903", chapterFunction: "Original scene-based rescue construction and the version-history problem created by a later cross-cut re-edit once mistaken for Porter's original." },
   { title: "The Great Train Robbery", year: 1903, aliases: ["Great Train Robbery"], role: "anchor_film", decisionIfMissing: "P0", expectedScenarioId: "scenario_the_great_train_robbery_1903", chapterFunction: "Narrative scale, multiple locations, action, effects, shot construction and historically specific pre-continuity organization without an inventor-of-editing myth." },
-  { title: "Rescued by Rover", year: 1905, aliases: [], role: "comparative_film", decisionIfMissing: "P1", chapterFunction: "A bridge from early multi-shot experimentation toward more systematic spatial and causal continuity." },
+  { title: "Rescued by Rover", year: 1905, aliases: [], role: "comparative_film", decisionIfMissing: "P1", expectedScenarioId: "scenario_rescued_by_rover_1905", chapterFunction: "Repeated routes, stable landmarks, animal performance and causal shot order as a bridge toward more systematic spatial continuity." },
 ];
 
 const historicalObjects = [
@@ -140,6 +141,8 @@ for (const result of candidateResults) {
   if (result.decision === "AMBIGUOUS") structuralProblems.push(`${result.title} matched ${result.matches} Atlas scenarios`);
   if (result.expectedScenarioId && result.scenarioId !== result.expectedScenarioId) structuralProblems.push(`${result.title} must resolve to ${result.expectedScenarioId}, found ${result.scenarioId ?? result.decision}`);
 }
+if (byDecision.P0.length > 0) structuralProblems.push(`P0 backlog must be empty: ${byDecision.P0.join(", ")}`);
+if (byDecision.P1.length > 0) structuralProblems.push(`P1 backlog must be empty: ${byDecision.P1.join(", ")}`);
 
 const report = {
   schemaVersion: "1.1", auditDate: "2026-08-14",
