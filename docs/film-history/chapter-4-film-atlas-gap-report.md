@@ -6,7 +6,7 @@
 
 This audit separates film Production Cases from the industrial systems that made longer and more regular production possible. The chapter is about the reorganization of production, distribution and exhibition through film exchanges, rental, permanent theatres, patent/licensing systems, company consolidation, independent competition and the transition toward multi-reel features.
 
-Canonical Atlas baseline for this audit: **391 playable films**.
+Canonical Atlas baseline after the Kelly materialization: **392 playable films**.
 
 ## Decision matrix
 
@@ -14,19 +14,18 @@ Canonical Atlas baseline for this audit: **391 playable films**.
 
 1. **Rescued by Rover (1905)** → `scenario_rescued_by_rover_1905`
    - Reused as a comparative case for company-scale repeatability and replacement-negative history.
-   - No duplicate Production Case should be created.
 
 2. **The Lonely Villa (1909)** → `scenario_the_lonely_villa_1909`
    - Reused as a comparative case for Biograph-era studio/location workflow inside a rapidly consolidating company system.
-   - No duplicate Production Case should be created.
+
+3. **The Story of the Kelly Gang (1906)** → `scenario_the_story_of_the_kelly_gang_1906`
+   - Materialized as the Chapter 4 feature-transition anchor.
+   - Covers producer-exhibitor organization, multi-reel scale, location production, touring circulation and lecturer/live-effects exhibition while keeping photographed production silent.
+   - Surviving fragments and later reconstruction/restoration remain explicitly distinct from the lost complete 1906 original.
 
 ### P0 – must be produced
 
-1. **The Story of the Kelly Gang (1906)**
-   - Required anchor for the feature-length transition.
-   - Production value: exhibitor-producers, multi-reel scale, location production, touring circulation and the economics of sustaining an hour-long dramatic attraction.
-   - Preservation value: surviving fragments must not be silently presented as a complete surviving original.
-   - Planned canonical scenario ID: `scenario_the_story_of_the_kelly_gang_1906`.
+**None.** The Chapter 4 P0 backlog is now closed.
 
 ### P1 – should be produced
 
@@ -65,9 +64,9 @@ These are required chapter evidence but **must not** be converted into fake film
 
 ## Historiographic safeguards
 
-1. **Feature length is not a single-inventor story.** *The Story of the Kelly Gang* is an essential early feature-length landmark, but Chapter 4 must describe a broader transition in length, production and circulation rather than claiming that one film invented the feature.
-2. **Preservation status is part of the evidence.** Only fragments of *The Story of the Kelly Gang* survive; reconstructed/restored material must not be described as an intact original print.
-3. **Patents are industrial history, not Edison hero/villain shorthand.** The chapter must distinguish litigation, licensing, the Association of Edison Licensees, the MPPC and the General Film Company rather than collapsing them into one vague “Trust”.
+1. **Feature length is not a single-inventor story.** *The Story of the Kelly Gang* is an essential early feature-length landmark, but Chapter 4 describes a broader international transition in length, production and circulation rather than claiming that one film invented the feature.
+2. **Preservation status is part of the evidence.** Only fragments of *The Story of the Kelly Gang* survive; reconstructed/restored material is not described as an intact original print.
+3. **Patents are industrial history, not Edison hero/villain shorthand.** The chapter distinguishes litigation, licensing, the Association of Edison Licensees, the MPPC and the General Film Company rather than collapsing them into one vague “Trust”.
 4. **Rental and exchanges matter structurally.** The transition from print sales toward exchange/rental systems changed programme supply and helped permanent theatres operate continuously.
 5. **Feature transition changed risk.** Longer films concentrated cost and booking risk in one title and altered the relationship among producer, distributor and exhibitor.
 6. **International pressure stays visible.** European and Australian feature-scale production influenced the American transition; Chapter 4 must not be written as an isolated U.S.-only evolution.
@@ -75,28 +74,27 @@ These are required chapter evidence but **must not** be converted into fake film
 
 ## Source basis for the audit
 
-- National Film and Sound Archive of Australia, **The Story of the Kelly Gang**: identifies the 1906 production as an over-hour Australian film, documents exhibitor-producer collaboration, touring success, restoration and fragmentary survival.  
+- National Film and Sound Archive of Australia, **The Story of the Kelly Gang** – over-hour 1906 production, touring success, reconstruction and fragmentary survival.  
   https://www.nfsa.gov.au/stories/articles/story-kelly-gang
-- NFSA collection/professional records for **The Story of the Kelly Gang**: surviving fragment, original five-reel/approximately 4,000-foot scale, location work and presentation context.  
+- NFSA Pro, **The Story of the Kelly Gang [1906] – Pordenone restoration** – roughly 4,000 feet/five reels, Heidelberg location work, lecturer/live-effects exhibition and incomplete surviving material.  
   https://pro.nfsa.gov.au/titles/RSKFBH59
-- British Film Institute, **The Story of the Kelly Gang (1906)**.  
+- UNESCO Memory of the World, **The Story of the Kelly Gang (1906)** – Charles Tait, over-hour feature-scale production and surviving heritage material.  
+  https://www.unesco.org/en/memory-world/story-kelly-gang-1906
+- British Film Institute, **The Story of the Kelly Gang (1906)** – independent institutional identity/director cross-check.  
   https://www.bfi.org.uk/film/e8572cbd-21d7-593c-9ca5-7364ea3fc6e6/the-story-of-the-kelly-gang
-- Library of Congress, **Fictional Films Dominate**: Edison litigation, Association of Edison Licensees and formation of the Motion Picture Patents Company in December 1908.  
+- Library of Congress, **Fictional Films Dominate** – Edison litigation, licensing and formation of the Motion Picture Patents Company.  
   https://www.loc.gov/collections/edison-company-motion-pictures-and-sound-recordings/articles-and-essays/history-of-edison-motion-pictures/fictional-films-dominate/
-- Library of Congress, **American Silent Feature Film Database**: feature-era production-company context and preservation infrastructure.  
-  https://www.loc.gov/programs/national-film-preservation-board/preservation-research/silent-film-database/
-- Museum of Modern Art, **Modern Matinees: Iris Barry's History of Film**: *Queen Elizabeth* (1912) and the role of its success, alongside *Quo Vadis?*, in establishing the longer feature.  
+- Museum of Modern Art, **Modern Matinees: Iris Barry's History of Film** – *Queen Elizabeth* and the emergence of commercially viable longer features.  
   https://www.moma.org/calendar/events/5818
-- British Film Institute / Sight and Sound, **The long take: Great footage**: Kelly as an early feature-length outlier, European multi-reel features, *Traffic in Souls* and the commercial uncertainty around longer films by 1914.  
+- British Film Institute / Sight and Sound, **The long take: Great footage** – feature-length transition context including *Traffic in Souls*.  
   https://www.bfi.org.uk/sight-and-sound/features/long-take-great-footage
 
 ## Exact production queue
 
-The Chapter 4 Atlas queue is intentionally explicit:
+The remaining Chapter 4 Atlas queue is intentionally explicit:
 
-1. **P0 – The Story of the Kelly Gang (1906)**
-2. **P1 – Queen Elizabeth (1912)**
-3. **P1 – Traffic in Souls (1913)**
+1. **P1 – Queen Elizabeth (1912)**
+2. **P1 – Traffic in Souls (1913)**
 
 Do **not** auto-produce the P2 titles.
 
@@ -104,18 +102,18 @@ Do **not** auto-produce the P2 titles.
 
 Chapter 4 Atlas is not complete until:
 
-- `The Story of the Kelly Gang` exists as a verified canonical Production Case;
+- `The Story of the Kelly Gang` remains a verified canonical Production Case at its exact scenario ID;
 - `Queen Elizabeth` exists as a verified canonical Production Case;
 - `Traffic in Souls` exists as a verified canonical Production Case;
-- the two existing cases resolve to their exact canonical scenario IDs;
+- the two reused earlier cases continue to resolve to their exact canonical scenario IDs;
 - P2 remains explicitly book-only;
 - historical objects remain `NO_PRODUCTION_CASE`;
 - the permanent Chapter 4 audit passes inside `verify:v0.1`.
 
-At this audit baseline the expected decision counts are:
+After Kelly, the expected decision counts are:
 
-- **USE_EXISTING: 2**
-- **P0: 1**
+- **USE_EXISTING: 3**
+- **P0: 0**
 - **P1: 2**
 - **P2: 3**
 - **NO_PRODUCTION_CASE historical objects/systems: 7**
