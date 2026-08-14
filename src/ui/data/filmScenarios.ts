@@ -1,6 +1,7 @@
 import seedData from "../../../data/film/scenarios/film_scenarios_seed.json";
 import { mergeEarlyCinemaExpansion } from "../../core/earlyCinemaExpansion.js";
 import { mergeChapterOneEarlyCinemaExpansion } from "../../core/chapterOneEarlyCinemaExpansion.js";
+import { mergeChapterOneRescuedByRoverExpansion } from "../../core/chapterOneRescuedByRoverExpansion.js";
 import { mergeEastAsianAuteurExpansion } from "../../core/eastAsianAuteurExpansion.js";
 import { mergeEasternIberianBritishExpansion } from "../../core/easternIberianBritishExpansion.js";
 import { mergeFestivalWinners1981To2009Expansion } from "../../core/festivalWinners1981To2009Expansion.js";
@@ -57,7 +58,8 @@ export type FilmScenarioSeedFile = {
 const importedSeedData = seedData as FilmScenarioSeedFile;
 const historicalScenarios = mergeEarlyCinemaExpansion(importedSeedData.scenarios);
 const chapterOneEarlyCinemaScenarios = mergeChapterOneEarlyCinemaExpansion(historicalScenarios);
-const modernCanonScenarios = mergeModernCanonExpansion(chapterOneEarlyCinemaScenarios);
+const chapterOneCompleteScenarios = mergeChapterOneRescuedByRoverExpansion(chapterOneEarlyCinemaScenarios);
+const modernCanonScenarios = mergeModernCanonExpansion(chapterOneCompleteScenarios);
 const priorityIndieScenarios = mergePriorityIndieExpansion(modernCanonScenarios);
 const eastAsianAuteurScenarios = mergeEastAsianAuteurExpansion(priorityIndieScenarios);
 const japaneseAuteurScenarios = mergeJapaneseAuteurExpansion(eastAsianAuteurScenarios);
