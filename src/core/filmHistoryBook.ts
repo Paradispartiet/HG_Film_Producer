@@ -1,6 +1,7 @@
 import { filmHistoryChapterOne } from "./filmHistoryChapterOne.js";
 import { filmHistoryChapterTwo } from "./filmHistoryChapterTwo.js";
 import { filmHistoryChapterThree } from "./filmHistoryChapterThree.js";
+import { filmHistoryChapterFour } from "./filmHistoryChapterFour.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -93,15 +94,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
       filmHistoryChapterOne,
       filmHistoryChapterTwo,
       filmHistoryChapterThree,
-      outline(
-        "industry-feature-transition",
-        4,
-        "Companies, patents and the feature transition",
-        "1905–1914",
-        "How expanding companies, rental systems, patents, purpose-built theatres and longer films reorganized production and distribution.",
-        ["Explain the shift from selling prints to rental and distribution networks.", "Connect industrial organization to feature-length production.", "Compare competing national industries before World War I."],
-        ["film exchange", "rental", "patent", "feature film", "vertical integration"],
-      ),
+      filmHistoryChapterFour,
       outline(
         "global-before-wwi",
         5,
