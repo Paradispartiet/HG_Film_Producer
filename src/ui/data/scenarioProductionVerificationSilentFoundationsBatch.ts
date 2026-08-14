@@ -1,4 +1,5 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+import { attackChinaMissionProductionCaseVerification } from "./scenarioProductionVerificationAttackChinaMission";
 
 export const silentFoundationsVerificationRecords = [
   {
@@ -25,6 +26,7 @@ export const silentFoundationsVerificationRecords = [
       { title: "Workers Leaving the Lumiere Factory", publisher: "Australian Centre for the Moving Image", url: "https://www.acmi.net.au/works/5476--workers-leaving-the-lumiere-factory/", sourceKind: "film_institute", supports: ["overall", "cinematography", "editing"], note: "ACMI identifies the 1895 Lumière production and catalogues distinct surviving versions, supporting version history as a production issue." }
     ]
   },
+  attackChinaMissionProductionCaseVerification,
   {
     scenarioId: "scenario_fire_1901",
     status: "verified",
