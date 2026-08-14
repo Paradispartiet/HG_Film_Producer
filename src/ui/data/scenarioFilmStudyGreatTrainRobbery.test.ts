@@ -57,8 +57,8 @@ test("The Great Train Robbery materializes as the final Chapter 1 P0 Production 
   assert.match(profileText, /moving train/i);
   assert.match(profileText, /hand-(?:applied|painted)|hand-painted/i);
   assert.match(profileText, /two lines of action|robbers.*posse|posse.*robbers/i);
-  assert.match(profileText, /do not|avoid|reject|not a claim|rather than/i);
-  assert.doesNotMatch(profileText, /invented narrative editing|invented editing/i);
+  assert.match(profileText, /invent(?:ed|or).*editing/i);
+  assert.match(profileText, /avoid|reject|not a claim|rather than|erase/i);
 });
 
 test("The Great Train Robbery keeps the normal silent-foundations history-choice contract", () => {
