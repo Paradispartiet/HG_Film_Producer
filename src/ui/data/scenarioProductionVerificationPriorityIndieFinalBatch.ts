@@ -6,6 +6,8 @@ import { leavingNeverlandProductionCaseVerification } from "./scenarioProduction
 import { onceUponATimeInHollywoodProductionCaseVerification } from "./scenarioProductionVerificationOnceUponATimeInHollywood";
 import { portraitOfALadyOnFireProductionCaseVerification } from "./scenarioProductionVerificationPortraitOfALadyOnFire";
 import { psychobitchProductionCaseVerification } from "./scenarioProductionVerificationPsychobitch";
+import { dontLookUpProductionCaseVerification } from "./scenarioProductionVerificationDontLookUp";
+import { closeProductionCaseVerification } from "./scenarioProductionVerificationClose";
 
 export const priorityIndieFinalVerificationRecords = [
   {
@@ -51,4 +53,6 @@ export const priorityIndieFinalVerificationRecords = [
   onceUponATimeInHollywoodProductionCaseVerification,
   portraitOfALadyOnFireProductionCaseVerification,
   psychobitchProductionCaseVerification,
+  dontLookUpProductionCaseVerification,
+  closeProductionCaseVerification,
 ] as const satisfies readonly ProductionCaseVerificationRecord[];
