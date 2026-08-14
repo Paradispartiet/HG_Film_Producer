@@ -11,7 +11,7 @@ export const storyOfTheKellyGangProductionCaseVerification = {
       publisher: "National Film and Sound Archive of Australia (NFSA)",
       url: "https://www.nfsa.gov.au/stories/articles/story-kelly-gang",
       sourceKind: "film_institute",
-      supports: ["overall", "production_design", "cinematography", "editing"],
+      supports: ["overall", "cinematography", "editing"],
       note: "NFSA documents the Boxing Day 1906 Melbourne opening, the over-hour Australian production, commercial/touring success, loss of complete prints and the 2006 reconstruction of nearly a quarter of the film. This source anchors feature scale and preservation boundaries rather than an intact-film claim."
     },
     {
@@ -19,7 +19,7 @@ export const storyOfTheKellyGangProductionCaseVerification = {
       publisher: "NFSA Pro",
       url: "https://pro.nfsa.gov.au/titles/RSKFBH59",
       sourceKind: "archive_feature",
-      supports: ["overall", "cinematography", "sound_design"],
+      supports: ["overall", "cinematography", "sound"],
       note: "NFSA Pro records that the film was chiefly shot on the Veitch family estate at Heidelberg, that the original presentation used an onstage lecturer with behind-the-scenes sound effects, and that the original was about 4000 feet on five reels. It also explicitly labels the surviving material incomplete."
     },
     {
