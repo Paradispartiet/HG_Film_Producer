@@ -1,0 +1,42 @@
+name: Materialize Queen Elizabeth 1912
+
+on:
+  push:
+    branches:
+      - agent/queen-elizabeth-1912
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Apply Queen Elizabeth materialization
+        run: python3 scripts/.queen_elizabeth_materializer.py
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify full v0.1 and Pages artifact
+        run: npm run verify:v0.1
+
+      - name: Commit verified delivery and remove transport files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm scripts/.queen_elizabeth_materializer.py .github/workflows/queen-elizabeth-materialize.yml
+          git add -A
+          git commit -m "feat: materialize Queen Elizabeth for Film History Chapter 4"
+          git push origin HEAD:agent/queen-elizabeth-1912
