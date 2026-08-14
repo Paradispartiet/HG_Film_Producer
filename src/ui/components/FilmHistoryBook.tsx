@@ -21,8 +21,11 @@ export function FilmHistoryBook({
   const filmLookup = useMemo(() => new Map(
     scenarios.map((scenario) => [`${scenario.film.title}::${scenario.film.year}`, scenario] as const),
   ), [scenarios]);
+  const scenarioLookup = useMemo(() => new Map(scenarios.map((scenario) => [scenario.id, scenario] as const)), [scenarios]);
 
   if (!activeChapter) return null;
+
+  const sourceLookup = new Map(activeChapter.sources.map((source) => [source.id, source] as const));
 
   return (
     <main className="filmverket-page film-history-book-page">
@@ -96,26 +99,50 @@ export function FilmHistoryBook({
                   <section id={`history-${section.id}`} key={section.id}>
                     <h3>{section.title}</h3>
                     {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                    <small>
+                      Sources:{" "}
+                      {section.sourceIds.map((sourceId, index) => {
+                        const source = sourceLookup.get(sourceId);
+                        if (!source) return null;
+                        return (
+                          <span key={sourceId}>
+                            {index > 0 ? " · " : ""}
+                            <a href={source.url} rel="noreferrer" target="_blank">{source.publisher}</a>
+                          </span>
+                        );
+                      })}
+                    </small>
                   </section>
                 ))}
               </div>
 
               {activeChapter.filmReferences.length > 0 && (
                 <section className="film-history-atlas-links">
-                  <div><span className="filmverket-card-kicker">Study the films</span><h3>Open the historical argument in Film Atlas</h3></div>
+                  <div><span className="filmverket-card-kicker">Film Atlas audit</span><h3>Study the films — and see which Production Cases are still missing</h3></div>
                   <div>
                     {activeChapter.filmReferences.map((reference) => {
-                      const scenario = filmLookup.get(`${reference.title}::${reference.year}`);
+                      const scenario = reference.atlasScenarioId
+                        ? scenarioLookup.get(reference.atlasScenarioId)
+                        : filmLookup.get(`${reference.title}::${reference.year}`);
+                      const roleLabel = reference.role === "anchor_film" ? "Anchor Film" : reference.role === "comparative_film" ? "Comparative Film" : "Historical Object";
+                      const atlasLabel = reference.atlasDecision === "use_existing_atlas_case" ? "Existing Atlas case" : `${reference.atlasDecision} Atlas gap`;
                       return (
                         <article key={`${reference.title}-${reference.year}`}>
-                          <span>{reference.year}</span>
+                          <span>{reference.year} · {roleLabel} · {atlasLabel}</span>
                           <strong>{reference.title}</strong>
                           <p>{reference.note}</p>
-                          {scenario ? <button onClick={() => onOpenFilm(scenario)} type="button">Open Film Atlas analysis →</button> : <small>Not yet linked in the Atlas catalogue.</small>}
+                          {scenario ? <button onClick={() => onOpenFilm(scenario)} type="button">Open Film Atlas analysis →</button> : <small>No standalone Production Case is linked yet.</small>}
                         </article>
                       );
                     })}
                   </div>
+                </section>
+              )}
+
+              {activeChapter.historicalObjects.length > 0 && (
+                <section className="film-history-key-terms">
+                  <div><span className="filmverket-card-kicker">Historical objects</span><h3>Essential context, deliberately not Production Cases</h3></div>
+                  <div>{activeChapter.historicalObjects.map((item) => <span key={item.label}>{item.label}</span>)}</div>
                 </section>
               )}
 
@@ -126,7 +153,7 @@ export function FilmHistoryBook({
 
               <section className="film-history-sources">
                 <div><span className="filmverket-card-kicker">Research basis</span><h3>Sources for this chapter</h3></div>
-                <ol>{activeChapter.sources.map((source) => <li key={source.url}><a href={source.url} rel="noreferrer" target="_blank"><strong>{source.title}</strong><span>{source.publisher}</span></a></li>)}</ol>
+                <ol>{activeChapter.sources.map((source) => <li key={source.id}><a href={source.url} rel="noreferrer" target="_blank"><strong>{source.title}</strong><span>{source.publisher}</span></a></li>)}</ol>
               </section>
             </>
           ) : (
