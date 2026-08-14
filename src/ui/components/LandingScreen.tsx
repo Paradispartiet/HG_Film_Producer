@@ -6,8 +6,10 @@ import { useFilmverketHashRoute } from "../routing/useFilmverketHashRoute";
 import { DirectorCourseAssignmentBanner } from "./DirectorCourseAssignmentBanner";
 import { DirectorKnowledgeDesk } from "./DirectorKnowledgeDesk";
 import { DirectorPracticeCoach } from "./DirectorPracticeCoach";
+import { FilmAtlasExperience } from "./FilmAtlasExperience";
 import { FilmCraftLibraryOverlay } from "./FilmCraftLibraryOverlay";
 import { FilmDirectorExperience } from "./FilmDirectorExperience";
+import { FilmHistoryExperience } from "./FilmHistoryExperience";
 import { FilmResearchControlRoom } from "./FilmResearchControlRoom";
 import { FilmSchoolCameraCourse } from "./FilmSchoolCameraCourse";
 import { FilmSchoolCourseNavigation, type FilmSchoolCourseId } from "./FilmSchoolCourseNavigation";
@@ -97,6 +99,10 @@ export function LandingScreen(props: LandingScreenProps) {
         <FilmDirectorExperience navigate={navigate} route={directorRoute} />
       ) : route.section === "school" ? (
         renderFilmSchool()
+      ) : route.section === "atlas" ? (
+        <FilmAtlasExperience navigate={navigate} onProductionCases={props.onProductionCases} route={route} />
+      ) : route.section === "history" ? (
+        <FilmHistoryExperience navigate={navigate} />
       ) : (
         <RoutedFilmverketPlatform {...props} navigate={navigate} route={route} />
       )}
