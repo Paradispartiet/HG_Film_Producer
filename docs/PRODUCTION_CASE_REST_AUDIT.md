@@ -4,9 +4,9 @@ Audit date: **2026-08-14**
 
 ## Executable baseline
 
-The canonical playable Film Atlas now contains **388 scenarios** after materializing *Grandma's Reading Glass (1900)*. The runtime verification-registry gate is **381 source-verified Production Cases**.
+The canonical playable Film Atlas now contains **389 scenarios** after materializing *Grandma's Reading Glass (1900)* and *The Lonely Villa (1909)* for Chapter 3. The runtime verification-registry gate is **382 source-verified Production Cases**.
 
-Chapter 1 remains complete at 3/3 P0 and 3/3 P1. Chapter 2 remains complete at 1/1 P0 and 2/2 P1. Chapter 3 has now materialized its first required anchor and has **1 P0 + 2 P1** new Production Cases remaining.
+Chapter 1 remains complete at 3/3 P0 and 3/3 P1. Chapter 2 remains complete at 1/1 P0 and 2/2 P1. Chapter 3 has now completed **2/2 P0** and has **2 P1** new Production Cases remaining.
 
 ## Chapter 3 Atlas state
 
@@ -19,12 +19,19 @@ Chapter 1 remains complete at 3/3 P0 and 3/3 P1. Chapter 2 remains complete at 1
   - runtime Production Verification is registered globally, not left as a local profile
   - the historiographic safeguard rejects both a single-inventor claim and the anachronistic assumption that the film's early gaze construction is identical to later classical subjective POV
 
+- `scenario_the_lonely_villa_1909` — *The Lonely Villa* (1909), D. W. Griffith / Biograph
+  - three simultaneous action lines are kept spatially distinct: threatened family, burglars and husband/police rescue
+  - telephone communication connects separated spaces and the cut line becomes both a dramatic and formal rupture
+  - Library of Congress production dates, Fort Lee/New York locations, paper-print survival and Bitzer/Marvin camera credits are preserved
+  - source-backed Film Study covers all 17 areas and runtime Production Verification is registered globally
+  - Griffith is treated as a major consolidator of sustained parallel narrative, not the inventor of cross-cutting
+
 ### P0
 
-**1/2 complete — 1 remaining**
+**2/2 complete — 0 remaining**
 
 - complete: `scenario_grandmas_reading_glass_1900`
-- remaining: *The Lonely Villa* (1909)
+- complete: `scenario_the_lonely_villa_1909`
 
 ### P1
 
@@ -42,7 +49,7 @@ Chapter 1 remains complete at 3/3 P0 and 3/3 P1. Chapter 2 remains complete at 1
 
 P2 remains intentionally outside the Production Case queue unless a later explicit source/value review demonstrates genuinely distinct gameplay value.
 
-**Exact required new Chapter 3 Production Cases remaining: 3.**
+**Exact required new Chapter 3 Production Cases remaining: 2.**
 
 ## Earlier chapter invariants
 
@@ -58,7 +65,7 @@ P0 and P1 remain empty. The six canonical Chapter 2 film cases remain `USE_EXIST
 
 The permanent rest audit reconstructs the playable catalogue from the seed plus every registered expansion in runtime order. It rejects structural drift in expected playable count, duplicate playable IDs, duplicate verification/profile IDs, orphan records, verified cases without profiles and profiles without verification. It also reports film-specific brief coverage, fallback briefs and remaining unverified scenarios.
 
-The Chapter 1, Chapter 2 and Chapter 3 companion audits reconstruct that same canonical expansion chain. The expected playable count is now **388** in all of them. Chapter 3 additionally hard-locks the exact remaining decision matrix rather than allowing a generic backlog count.
+The Chapter 1, Chapter 2 and Chapter 3 companion audits reconstruct that same canonical expansion chain. The expected playable count is now **389** in all of them. Chapter 3 additionally hard-locks the exact remaining decision matrix rather than allowing a generic backlog count.
 
 ## Audit method
 
