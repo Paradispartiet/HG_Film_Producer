@@ -5,12 +5,13 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 384;
+const EXPECTED_ATLAS_COUNT = 385;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
   "chapterOneEarlyCinemaExpansion.ts",
   "chapterOneRescuedByRoverExpansion.ts",
+  "chapterTwoExhibitionExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -45,9 +46,10 @@ const candidates = [
   {
     title: "The Corbett-Fitzsimmons Fight",
     year: 1897,
-    aliases: ["Corbett-Fitzsimmons Fight", "Corbett Fitzsimmons Fight", "The Corbett and Fitzsimmons Fight"],
+    aliases: ["The Corbett–Fitzsimmons Fight", "Corbett-Fitzsimmons Fight", "Corbett Fitzsimmons Fight", "The Corbett and Fitzsimmons Fight"],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_the_corbett_fitzsimmons_fight_1897",
     chapterFunction: "A feature-length event whose proprietary Veriscope format, controlled projection, live commentary, territorial distribution and ticket economics make exhibition part of the production system.",
   },
   {
@@ -95,47 +97,22 @@ const candidates = [
 ];
 
 const historicalObjects = [
-  {
-    label: "Lumière Grand Café programme, 28 December 1895",
-    role: "historical_object",
-    atlasDecision: "NO_PRODUCTION_CASE",
-    chapterFunction: "Programme composition matters more than treating one title as a self-sufficient modern screening.",
-  },
-  {
-    label: "Vitascope / Koster and Bial's Music Hall exhibition, 23 April 1896",
-    role: "historical_object",
-    atlasDecision: "NO_PRODUCTION_CASE",
-    chapterFunction: "Projection machinery entered an existing variety-theatre bill rather than instantly creating a standalone cinema institution.",
-  },
-  {
-    label: "Vitascope advertising poster and exhibitor publicity",
-    role: "historical_object",
-    atlasDecision: "NO_PRODUCTION_CASE",
-    chapterFunction: "Advertising sold projection itself as an attraction and made the watching audience part of the spectacle's public image.",
-  },
-  {
-    label: "Edison film catalogues and exhibitor-selected programme order",
-    role: "historical_object",
-    atlasDecision: "NO_PRODUCTION_CASE",
-    chapterFunction: "Exhibitors selected and sequenced short subjects, so the programme—not an individual film alone—was a key unit of early cinema experience.",
-  },
-  {
-    label: "Fairground and travelling-show bioscope exhibition",
-    role: "historical_object",
-    atlasDecision: "NO_PRODUCTION_CASE",
-    chapterFunction: "Travelling exhibitors, showfronts and local commissioning connected filmmaking to seasonal leisure economies and geographically specific audiences.",
-  },
-  {
-    label: "Nickelodeon storefront theatre, c. 1905–1908",
-    role: "historical_object",
-    atlasDecision: "NO_PRODUCTION_CASE",
-    chapterFunction: "Dedicated, frequent low-cost screenings changed audience access and helped make film exhibition a stable urban institution.",
-  },
-];
+  ["Lumière Grand Café programme, 28 December 1895", "Programme composition matters more than treating one title as a self-sufficient modern screening."],
+  ["Vitascope / Koster and Bial's Music Hall exhibition, 23 April 1896", "Projection machinery entered an existing variety-theatre bill rather than instantly creating a standalone cinema institution."],
+  ["Vitascope advertising poster and exhibitor publicity", "Advertising sold projection itself as an attraction and made the watching audience part of the spectacle's public image."],
+  ["Edison film catalogues and exhibitor-selected programme order", "Exhibitors selected and sequenced short subjects, so the programme—not an individual film alone—was a key unit of early cinema experience."],
+  ["Fairground and travelling-show bioscope exhibition", "Travelling exhibitors, showfronts and local commissioning connected filmmaking to seasonal leisure economies and geographically specific audiences."],
+  ["Nickelodeon storefront theatre, c. 1905–1908", "Dedicated, frequent low-cost screenings changed audience access and helped make film exhibition a stable urban institution."],
+].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
 const expectedDecisions = {
-  USE_EXISTING: ["A Trip to the Moon", "The Great Train Robbery", "Workers Leaving the Lumière Factory"],
-  P0: ["The Corbett-Fitzsimmons Fight"],
+  USE_EXISTING: [
+    "A Trip to the Moon",
+    "The Corbett-Fitzsimmons Fight",
+    "The Great Train Robbery",
+    "Workers Leaving the Lumière Factory",
+  ],
+  P0: [],
   P1: ["Employees Leaving Brown's Atlas Works, Sheffield", "Uncle Josh at the Moving Picture Show"],
   P2: ["May Irwin Kiss", "Sedgwick's Bioscope Showfront at Pendlebury Wakes"],
 };
@@ -151,7 +128,9 @@ function parseQuotedStrings(value) {
   return result;
 }
 function findMatchingBracket(source, startIndex, openCharacter, closeCharacter) {
-  let depth = 0, quote = null, escaped = false;
+  let depth = 0;
+  let quote = null;
+  let escaped = false;
   for (let index = startIndex; index < source.length; index += 1) {
     const character = source[index];
     if (quote) {
@@ -212,9 +191,7 @@ function matches(left, right) {
   const rightTitles = new Set(acceptedTitles(right));
   return acceptedTitles(left).some((title) => rightTitles.has(title));
 }
-function sameList(left, right) {
-  return JSON.stringify([...left].sort()) === JSON.stringify([...right].sort());
-}
+function sameList(left, right) { return JSON.stringify([...left].sort()) === JSON.stringify([...right].sort()); }
 
 const seed = JSON.parse(readText(seedPath));
 const atlas = seed.scenarios.map((scenario) => ({
@@ -227,7 +204,8 @@ const atlas = seed.scenarios.map((scenario) => ({
 }));
 const expansionSummary = [];
 for (const fileName of expansionFiles) {
-  let appended = 0, matchedExisting = 0;
+  let appended = 0;
+  let matchedExisting = 0;
   for (const definition of parseExpansion(fileName)) {
     if (atlas.some((scenario) => matches(scenario, definition))) { matchedExisting += 1; continue; }
     atlas.push({ ...definition, origin: fileName });
@@ -264,7 +242,7 @@ for (const [decision, expectedTitles] of Object.entries(expectedDecisions)) {
 if ((byDecision.AMBIGUOUS ?? []).length > 0) structuralProblems.push(`Ambiguous candidates: ${byDecision.AMBIGUOUS.join(", ")}`);
 
 const report = {
-  schemaVersion: "1.0",
+  schemaVersion: "1.1",
   auditDate: "2026-08-14",
   chapter: {
     number: 2,
