@@ -6,13 +6,14 @@ const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const dataDirectory = path.join(root, "src", "ui", "data");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_PLAYABLE_SCENARIOS = 387;
+const EXPECTED_PLAYABLE_SCENARIOS = 388;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
   "chapterOneEarlyCinemaExpansion.ts",
   "chapterOneRescuedByRoverExpansion.ts",
   "chapterTwoExhibitionExpansion.ts",
+  "chapterThreeNarrativeExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -287,7 +288,7 @@ for (const scenario of unverified) {
 }
 
 const report = {
-  schemaVersion: "1.1",
+  schemaVersion: "1.2",
   auditDate: "2026-08-14",
   catalogConstruction: {
     expectedPlayableScenarios: EXPECTED_PLAYABLE_SCENARIOS,

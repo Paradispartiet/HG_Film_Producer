@@ -5,13 +5,14 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 387;
+const EXPECTED_ATLAS_COUNT = 388;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
   "chapterOneEarlyCinemaExpansion.ts",
   "chapterOneRescuedByRoverExpansion.ts",
   "chapterTwoExhibitionExpansion.ts",
+  "chapterThreeNarrativeExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -40,6 +41,7 @@ const candidates = [
     aliases: ["Grandmother's Reading Glass", "Grandmas Reading Glass"],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_grandmas_reading_glass_1900",
     chapterFunction: "G. A. Smith alternates the boy's viewing situation with magnified point-of-view inserts, making viewpoint and analytical shot relation a distinct playable problem not covered by the existing multi-scene cases.",
   },
   {
@@ -150,11 +152,12 @@ const expectedDecisions = {
   USE_EXISTING: [
     "A Trip to the Moon",
     "Fire!",
+    "Grandma's Reading Glass",
     "Life of an American Fireman",
     "Rescued by Rover",
     "The Great Train Robbery",
   ],
-  P0: ["Grandma's Reading Glass", "The Lonely Villa"],
+  P0: ["The Lonely Villa"],
   P1: ["Attack on a China Mission - Bluejackets to the Rescue", "Histoire d'un crime"],
   P2: ["Cendrillon", "Mary Jane's Mishap", "Stop Thief!", "The Lonedale Operator"],
 };
@@ -284,7 +287,7 @@ for (const [decision, expectedTitles] of Object.entries(expectedDecisions)) {
 if ((byDecision.AMBIGUOUS ?? []).length > 0) structuralProblems.push(`Ambiguous candidates: ${byDecision.AMBIGUOUS.join(", ")}`);
 
 const report = {
-  schemaVersion: "1.0",
+  schemaVersion: "1.1",
   auditDate: "2026-08-14",
   chapter: {
     number: 3,

@@ -4,39 +4,61 @@ Audit date: **2026-08-14**
 
 ## Executable baseline
 
-The canonical playable Film Atlas now contains **387 scenarios** after materializing *Uncle Josh at the Moving Picture Show (1902)*. The runtime verification-registry gate is **380 source-verified Production Cases**.
+The canonical playable Film Atlas now contains **388 scenarios** after materializing *Grandma's Reading Glass (1900)*. The runtime verification-registry gate is **381 source-verified Production Cases**.
 
-Chapter 1 remains complete at 3/3 P0 and 3/3 P1. Chapter 2 is now complete at 1/1 P0 and 2/2 P1.
+Chapter 1 remains complete at 3/3 P0 and 3/3 P1. Chapter 2 remains complete at 1/1 P0 and 2/2 P1. Chapter 3 has now materialized its first required anchor and has **1 P0 + 2 P1** new Production Cases remaining.
 
-## Chapter 2 Atlas state
+## Chapter 3 Atlas state
+
+### Materialized in this round
+
+- `scenario_grandmas_reading_glass_1900` — *Grandma's Reading Glass* (1900), G. A. Smith
+  - exact looking sequence preserved: newspaper → watch mechanism → canary → grandmother's eye → kitten
+  - circular magnified inserts and return-to-base-view structure are the core production problem
+  - source-backed Film Study profile covers all 17 areas
+  - runtime Production Verification is registered globally, not left as a local profile
+  - the historiographic safeguard rejects both a single-inventor claim and the anachronistic assumption that the film's early gaze construction is identical to later classical subjective POV
 
 ### P0
 
-**1/1 complete — 0 remaining**
+**1/2 complete — 1 remaining**
 
-- `scenario_the_corbett_fitzsimmons_fight_1897`
+- complete: `scenario_grandmas_reading_glass_1900`
+- remaining: *The Lonely Villa* (1909)
 
 ### P1
 
-**2/2 complete — 0 remaining**
+**0/2 complete — 2 remaining**
 
-- `scenario_employees_leaving_browns_atlas_works_sheffield_1901`
-- `scenario_uncle_josh_at_the_moving_picture_show_1902`
+- *Attack on a China Mission – Bluejackets to the Rescue* (1900)
+- *Histoire d'un crime* (1901)
 
 ### P2 — book reference only
 
-- *May Irwin Kiss* (1896)
-- *Sedgwick's Bioscope Showfront at Pendlebury Wakes* (1901)
+- *Cendrillon* (1899)
+- *Stop Thief!* (1901)
+- *Mary Jane's Mishap* (1903)
+- *The Lonedale Operator* (1911)
 
 P2 remains intentionally outside the Production Case queue unless a later explicit source/value review demonstrates genuinely distinct gameplay value.
 
-**Exact required new Chapter 2 Production Cases remaining: 0.**
+**Exact required new Chapter 3 Production Cases remaining: 3.**
+
+## Earlier chapter invariants
+
+### Chapter 1
+
+P0 and P1 remain empty. Its canonical early-cinema cases must continue to resolve to their exact scenario IDs even while later chapters add new Atlas films.
+
+### Chapter 2
+
+P0 and P1 remain empty. The six canonical Chapter 2 film cases remain `USE_EXISTING`, while *May Irwin Kiss* (1896) and *Sedgwick's Bioscope Showfront at Pendlebury Wakes* (1901) remain P2/book-only.
 
 ## Integrity
 
-The permanent rest audit rejects structural drift in expected playable count, duplicate playable IDs, duplicate verification/profile IDs, orphan records, verified cases without profiles and profiles without verification. It also reports film-specific brief coverage, fallback briefs and remaining unverified scenarios.
+The permanent rest audit reconstructs the playable catalogue from the seed plus every registered expansion in runtime order. It rejects structural drift in expected playable count, duplicate playable IDs, duplicate verification/profile IDs, orphan records, verified cases without profiles and profiles without verification. It also reports film-specific brief coverage, fallback briefs and remaining unverified scenarios.
 
-The Chapter 1 and Chapter 2 companion audits reconstruct the same canonical expansion chain. Chapter 1 hard-requires its P0/P1 queues to remain empty. Chapter 2 now hard-requires P0 and P1 to remain empty while preserving *May Irwin Kiss* and *Sedgwick's Bioscope Showfront at Pendlebury Wakes* as P2/book-only references.
+The Chapter 1, Chapter 2 and Chapter 3 companion audits reconstruct that same canonical expansion chain. The expected playable count is now **388** in all of them. Chapter 3 additionally hard-locks the exact remaining decision matrix rather than allowing a generic backlog count.
 
 ## Audit method
 
@@ -46,6 +68,7 @@ Run:
 npm run audit:production-cases
 npm run audit:film-history-ch1
 npm run audit:film-history-ch2
+npm run audit:film-history-ch3
 ```
 
-All three are part of `npm run verify:v0.1`.
+All four are part of `npm run verify:v0.1`.
