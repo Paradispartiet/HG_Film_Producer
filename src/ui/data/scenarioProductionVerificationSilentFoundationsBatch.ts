@@ -1,5 +1,6 @@
 import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
 import { attackChinaMissionProductionCaseVerification } from "./scenarioProductionVerificationAttackChinaMission";
+import { queenElizabethProductionCaseVerification } from "./scenarioProductionVerificationQueenElizabeth";
 
 export const silentFoundationsVerificationRecords = [
   {
@@ -27,6 +28,7 @@ export const silentFoundationsVerificationRecords = [
     ]
   },
   attackChinaMissionProductionCaseVerification,
+  queenElizabethProductionCaseVerification,
   {
     scenarioId: "scenario_fire_1901",
     status: "verified",
