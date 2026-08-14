@@ -8,6 +8,7 @@ import type { FilmScenarioSeed } from "./filmScenarios";
 import type { FilmHistoryChoice, FilmHistoryProfile, ScenarioFilmStudyMap } from "./scenarioFilmStudyMap";
 import { blacksmithSceneFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsBlacksmith";
 import { workersLeavingLumiereFactoryFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsWorkersLeaving";
+import { grandmasReadingGlassFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsGrandmasReadingGlass";
 import { corbettFitzsimmonsFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsCorbettFitzsimmons";
 import { brownsAtlasWorksFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsBrownsAtlasWorks";
 import { uncleJoshFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsUncleJosh";
@@ -25,6 +26,7 @@ import { getProductionCaseVerification } from "./scenarioProductionVerificationR
 const silentFoundationsProfiles = {
   [blacksmithSceneFilmHistoryProfile.scenarioId]: blacksmithSceneFilmHistoryProfile,
   [workersLeavingLumiereFactoryFilmHistoryProfile.scenarioId]: workersLeavingLumiereFactoryFilmHistoryProfile,
+  [grandmasReadingGlassFilmHistoryProfile.scenarioId]: grandmasReadingGlassFilmHistoryProfile,
   [corbettFitzsimmonsFilmHistoryProfile.scenarioId]: corbettFitzsimmonsFilmHistoryProfile,
   [brownsAtlasWorksFilmHistoryProfile.scenarioId]: brownsAtlasWorksFilmHistoryProfile,
   [uncleJoshFilmHistoryProfile.scenarioId]: uncleJoshFilmHistoryProfile,
