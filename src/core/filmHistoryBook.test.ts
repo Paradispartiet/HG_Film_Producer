@@ -23,7 +23,7 @@ test("the first Film History chapter is fully materialized and sourced", () => {
   assert.ok(chapter.keyTerms.length >= 8);
   assert.ok(chapter.sources.length >= 6);
   assert.ok(chapter.filmReferences.some((reference) => reference.title === "A Trip to the Moon" && reference.year === 1902));
-  assert.match(chapter.summary, /single inventor/i);
+  assert.match(chapter.summary, /one inventor/i);
 });
 
 test("remaining chapters are explicit outlines rather than pretending to be finished prose", () => {
