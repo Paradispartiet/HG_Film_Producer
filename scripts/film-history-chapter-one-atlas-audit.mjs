@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 381;
+const EXPECTED_ATLAS_COUNT = 382;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -77,10 +77,11 @@ const candidates = [
   {
     title: "Fire!",
     year: 1901,
-    aliases: [],
+    aliases: ["Fire"],
     role: "comparative_film",
     decisionIfMissing: "P1",
-    chapterFunction: "Multi-shot action, matching movement and the construction of film space in early British cinema.",
+    expectedScenarioId: "scenario_fire_1901",
+    chapterFunction: "Multi-shot action, matching movement and the construction of connected film space in early British cinema.",
   },
   {
     title: "A Trip to the Moon",
