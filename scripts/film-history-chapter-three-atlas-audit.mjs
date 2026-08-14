@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 388;
+const EXPECTED_ATLAS_COUNT = 389;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -127,6 +127,7 @@ const candidates = [
     aliases: ["Lonely Villa"],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_the_lonely_villa_1909",
     chapterFunction: "Biograph's home-invasion rescue provides the necessary later-period anchor for sustained parallel action among threatened family, absent husband and rescuers, showing systematic narrative integration without claiming Griffith invented cross-cutting.",
   },
   {
@@ -156,8 +157,9 @@ const expectedDecisions = {
     "Life of an American Fireman",
     "Rescued by Rover",
     "The Great Train Robbery",
+    "The Lonely Villa",
   ],
-  P0: ["The Lonely Villa"],
+  P0: [],
   P1: ["Attack on a China Mission - Bluejackets to the Rescue", "Histoire d'un crime"],
   P2: ["Cendrillon", "Mary Jane's Mishap", "Stop Thief!", "The Lonedale Operator"],
 };
