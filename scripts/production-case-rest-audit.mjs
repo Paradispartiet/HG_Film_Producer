@@ -6,9 +6,11 @@ const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const dataDirectory = path.join(root, "src", "ui", "data");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
+const EXPECTED_PLAYABLE_SCENARIOS = 379;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
+  "chapterOneEarlyCinemaExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -39,37 +41,8 @@ function normalizeTitle(value) {
 function parseQuotedStrings(value) {
   const strings = [];
   const pattern = /"((?:\\.|[^"\\])*)"/g;
-  for (const match of value.matchAll(pattern)) {
-    strings.push(JSON.parse(`"${match[1]}"`));
-  }
+  for (const match of value.matchAll(pattern)) strings.push(JSON.parse(`"${match[1]}"`));
   return strings;
-}
-
-function stringField(objectSource, fieldName, required = true) {
-  const pattern = new RegExp(`\\b${fieldName}\\s*:\\s*"((?:\\\\.|[^"\\\\])*)"`);
-  const match = objectSource.match(pattern);
-  if (!match) {
-    if (!required) return undefined;
-    throw new Error(`Missing ${fieldName} in expansion definition: ${objectSource.slice(0, 160)}`);
-  }
-  return JSON.parse(`"${match[1]}"`);
-}
-
-function numberField(objectSource, fieldName) {
-  const pattern = new RegExp(`\\b${fieldName}\\s*:\\s*(\\d+)`);
-  const match = objectSource.match(pattern);
-  if (!match) throw new Error(`Missing ${fieldName} in expansion definition: ${objectSource.slice(0, 160)}`);
-  return Number(match[1]);
-}
-
-function stringArrayField(objectSource, fieldName, required = true) {
-  const pattern = new RegExp(`\\b${fieldName}\\s*:\\s*\\[([^\\]]*)\\]`);
-  const match = objectSource.match(pattern);
-  if (!match) {
-    if (!required) return [];
-    throw new Error(`Missing ${fieldName} in expansion definition: ${objectSource.slice(0, 160)}`);
-  }
-  return parseQuotedStrings(match[1]);
 }
 
 function findMatchingBracket(source, startIndex, openCharacter, closeCharacter) {
@@ -79,16 +52,12 @@ function findMatchingBracket(source, startIndex, openCharacter, closeCharacter) 
   for (let index = startIndex; index < source.length; index += 1) {
     const character = source[index];
     if (quote) {
-      if (escaped) {
-        escaped = false;
-      } else if (character === "\\") {
-        escaped = true;
-      } else if (character === quote) {
-        quote = null;
-      }
+      if (escaped) escaped = false;
+      else if (character === "\\") escaped = true;
+      else if (character === quote) quote = null;
       continue;
     }
-    if (character === "\"" || character === "'" || character === "`") {
+    if (character === '"' || character === "'" || character === "`") {
       quote = character;
       continue;
     }
@@ -116,18 +85,39 @@ function extractTopLevelObjects(arraySource) {
   return objects;
 }
 
+function stringField(objectSource, fieldName, required = true) {
+  const match = objectSource.match(new RegExp(`\\b${fieldName}\\s*:\\s*"((?:\\\\.|[^"\\\\])*)"`));
+  if (!match) {
+    if (!required) return undefined;
+    throw new Error(`Missing ${fieldName}: ${objectSource.slice(0, 160)}`);
+  }
+  return JSON.parse(`"${match[1]}"`);
+}
+
+function numberField(objectSource, fieldName) {
+  const match = objectSource.match(new RegExp(`\\b${fieldName}\\s*:\\s*(\\d+)`));
+  if (!match) throw new Error(`Missing ${fieldName}: ${objectSource.slice(0, 160)}`);
+  return Number(match[1]);
+}
+
+function stringArrayField(objectSource, fieldName, required = true) {
+  const match = objectSource.match(new RegExp(`\\b${fieldName}\\s*:\\s*\\[([^\\]]*)\\]`));
+  if (!match) {
+    if (!required) return [];
+    throw new Error(`Missing ${fieldName}: ${objectSource.slice(0, 160)}`);
+  }
+  return parseQuotedStrings(match[1]);
+}
+
 function parseExpansion(fileName) {
   const source = readText(path.join(coreDirectory, fileName));
   const declaration = source.match(/export const\s+\w+Definitions\s*=\s*\[/);
-  if (!declaration || declaration.index === undefined) {
-    throw new Error(`Could not locate definitions array in ${fileName}`);
-  }
+  if (!declaration || declaration.index === undefined) throw new Error(`Could not locate definitions array in ${fileName}`);
   const arrayStart = source.indexOf("[", declaration.index);
   const arrayEnd = findMatchingBracket(source, arrayStart, "[", "]");
   const objectSources = extractTopLevelObjects(source.slice(arrayStart + 1, arrayEnd));
   const status = source.match(/\bstatus\s*:\s*"([^"]+)"/)?.[1] ?? "manual_expansion_needs_source_verification";
   const sourceListId = source.match(/\blist_id\s*:\s*"([^"]+)"/)?.[1] ?? fileName.replace(/\.ts$/, "");
-
   return {
     fileName,
     status,
@@ -175,23 +165,20 @@ function collectLiteralScenarioIds(fileNames) {
   for (const fileName of fileNames) {
     const source = readText(path.join(dataDirectory, fileName));
     for (const match of source.matchAll(pattern)) {
-      const scenarioId = match[1];
-      const files = origins.get(scenarioId) ?? [];
+      const files = origins.get(match[1]) ?? [];
       if (!files.includes(fileName)) files.push(fileName);
-      origins.set(scenarioId, files);
+      origins.set(match[1], files);
     }
   }
   return origins;
 }
 
-function sortedObject(counts) {
-  return Object.fromEntries(
-    [...counts.entries()].sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0])),
-  );
-}
-
 function increment(counts, key) {
   counts.set(key, (counts.get(key) ?? 0) + 1);
+}
+
+function sortedObject(counts) {
+  return Object.fromEntries([...counts.entries()].sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0])));
 }
 
 function decade(year) {
@@ -240,20 +227,12 @@ for (const fileName of expansionFiles) {
     expansionBriefScenarioIds.add(definition.id);
     appended += 1;
   }
-  expansionSummaries.push({
-    fileName,
-    definitions: expansion.definitions.length,
-    appended,
-    matchedExisting,
-    status: expansion.status,
-    sourceListId: expansion.sourceListId,
-  });
+  expansionSummaries.push({ fileName, definitions: expansion.definitions.length, appended, matchedExisting, status: expansion.status, sourceListId: expansion.sourceListId });
 }
 
 const finalScenarioIds = scenarios.map((scenario) => scenario.id);
 const finalScenarioIdSet = new Set(finalScenarioIds);
 const finalScenarioDuplicates = duplicateValues(finalScenarioIds);
-
 const dataFiles = readdirSync(dataDirectory).filter((fileName) => fileName.endsWith(".ts")).sort();
 const verificationFiles = dataFiles
   .filter((fileName) => fileName.startsWith("scenarioProductionVerification"))
@@ -269,11 +248,8 @@ const verificationIds = [...verificationOrigins.keys()].sort();
 const profileIds = [...profileOrigins.keys()].sort();
 const verificationIdSet = new Set(verificationIds);
 const profileIdSet = new Set(profileIds);
-
 const manualBriefSource = readText(path.join(dataDirectory, "scenarioProductionBriefs.ts"));
-const manualBriefIds = new Set(
-  [...manualBriefSource.matchAll(/^\s*(scenario_[a-z0-9_]+)\s*:\s*\{/gm)].map((match) => match[1]),
-);
+const manualBriefIds = new Set([...manualBriefSource.matchAll(/^\s*(scenario_[a-z0-9_]+)\s*:\s*\{/gm)].map((match) => match[1]));
 const filmSpecificBriefIds = new Set([...manualBriefIds, ...expansionBriefScenarioIds]);
 
 const unverified = scenarios
@@ -284,23 +260,14 @@ const unverified = scenarios
     profileStatus: profileIdSet.has(scenario.id) ? "source_backed_profile" : "missing_profile",
   }))
   .sort((left, right) => left.year - right.year || left.title.localeCompare(right.title));
-const fallbackBriefs = scenarios
-  .filter((scenario) => !filmSpecificBriefIds.has(scenario.id))
-  .sort((left, right) => left.year - right.year || left.title.localeCompare(right.title));
-const missingProfiles = scenarios
-  .filter((scenario) => !profileIdSet.has(scenario.id))
-  .sort((left, right) => left.year - right.year || left.title.localeCompare(right.title));
-
+const fallbackBriefs = scenarios.filter((scenario) => !filmSpecificBriefIds.has(scenario.id));
+const missingProfiles = scenarios.filter((scenario) => !profileIdSet.has(scenario.id));
 const orphanVerificationIds = verificationIds.filter((scenarioId) => !finalScenarioIdSet.has(scenarioId));
 const orphanProfileIds = profileIds.filter((scenarioId) => !finalScenarioIdSet.has(scenarioId));
 const verifiedWithoutProfile = verificationIds.filter((scenarioId) => !profileIdSet.has(scenarioId));
 const profilesWithoutVerification = profileIds.filter((scenarioId) => !verificationIdSet.has(scenarioId));
-const duplicateVerificationIds = [...verificationOrigins.entries()]
-  .filter(([, files]) => files.length > 1)
-  .map(([scenarioId, files]) => ({ scenarioId, files }));
-const duplicateProfileIds = [...profileOrigins.entries()]
-  .filter(([, files]) => files.length > 1)
-  .map(([scenarioId, files]) => ({ scenarioId, files }));
+const duplicateVerificationIds = [...verificationOrigins.entries()].filter(([, files]) => files.length > 1).map(([scenarioId, files]) => ({ scenarioId, files }));
+const duplicateProfileIds = [...profileOrigins.entries()].filter(([, files]) => files.length > 1).map(([scenarioId, files]) => ({ scenarioId, files }));
 
 const byOrigin = new Map();
 const bySourceList = new Map();
@@ -318,9 +285,10 @@ for (const scenario of unverified) {
 }
 
 const report = {
-  schemaVersion: "1.0",
-  auditDate: "2026-07-24",
+  schemaVersion: "1.1",
+  auditDate: "2026-08-14",
   catalogConstruction: {
+    expectedPlayableScenarios: EXPECTED_PLAYABLE_SCENARIOS,
     seedDeclaredCount: seedFile.scenario_count,
     seedActualCount: seedFile.scenarios.length,
     expansionOrder: expansionSummaries,
@@ -354,12 +322,7 @@ const report = {
     byBriefType: sortedObject(byBriefType),
   },
   unverified,
-  seedFallbackBriefs: fallbackBriefs.map((scenario) => ({
-    id: scenario.id,
-    title: scenario.title,
-    year: scenario.year,
-    origin: scenario.origin,
-  })),
+  seedFallbackBriefs: fallbackBriefs.map((scenario) => ({ id: scenario.id, title: scenario.title, year: scenario.year, origin: scenario.origin })),
   profilesWithoutVerification,
   verifiedWithoutProfile,
 };
@@ -377,10 +340,15 @@ console.log(json.trimEnd());
 console.log("HG_FILM_PRODUCER_REST_AUDIT_END");
 
 const structuralProblems = [
+  ...(scenarios.length === EXPECTED_PLAYABLE_SCENARIOS ? [] : [`catalog_count:${scenarios.length}`]),
   ...seedDuplicates,
   ...finalScenarioDuplicates,
   ...duplicateVerificationIds.map((item) => item.scenarioId),
+  ...duplicateProfileIds.map((item) => item.scenarioId),
   ...orphanVerificationIds,
+  ...orphanProfileIds,
+  ...verifiedWithoutProfile,
+  ...profilesWithoutVerification,
 ];
 if (process.argv.includes("--capture")) {
   console.error("Controlled audit capture run");

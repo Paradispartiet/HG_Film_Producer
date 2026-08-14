@@ -5,11 +5,11 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-
-const EXPECTED_ATLAS_COUNT = 378;
+const EXPECTED_ATLAS_COUNT = 379;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
+  "chapterOneEarlyCinemaExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -27,10 +27,11 @@ const candidates = [
   {
     title: "Blacksmith Scene",
     year: 1893,
-    aliases: ["The Blacksmith Shop", "Blacksmithing Scene"],
+    aliases: ["Blacksmithing Scene", "The Blacksmith Shop"],
     role: "anchor_film",
     decisionIfMissing: "P0",
-    chapterFunction: "Edison/Dickson, Black Maria, Kinetoscope-era production and the emergence of a repeatable production environment.",
+    expectedScenarioId: "scenario_blacksmith_scene_1893",
+    chapterFunction: "Dickson/Heise, Black Maria, Kinetograph/Kinetoscope-era production and a repeatable natural-light studio system.",
   },
   {
     title: "Workers Leaving the Lumière Factory",
@@ -38,7 +39,7 @@ const candidates = [
     aliases: ["Workers Leaving the Lumiere Factory", "La Sortie de l'Usine Lumière à Lyon", "Sortie d'usine"],
     role: "anchor_film",
     decisionIfMissing: "P0",
-    chapterFunction: "Actuality, Lumière production practice, framing, depth and modern life as moving-image subject.",
+    chapterFunction: "Actuality, Lumière production practice, framing, event timing and multiple versions.",
   },
   {
     title: "L'Arroseur arrosé",
@@ -95,7 +96,7 @@ const candidates = [
     aliases: ["The Life of an American Fireman"],
     role: "comparative_film",
     decisionIfMissing: "P1",
-    chapterFunction: "Multi-shot construction and the historiographic problem created by a later cross-cut re-edit once mistaken for the original.",
+    chapterFunction: "Multi-shot construction and the version-history problem created by a later cross-cut re-edit.",
   },
   {
     title: "The Great Train Robbery",
@@ -116,31 +117,11 @@ const candidates = [
 ];
 
 const historicalObjects = [
-  {
-    label: "Eadweard Muybridge motion studies",
-    role: "historical_object",
-    atlasDecision: "NO_PRODUCTION_CASE",
-    chapterFunction: "Sequential photography as a way to analyse movement over time.",
-  },
-  {
-    label: "Étienne-Jules Marey chronophotography",
-    role: "historical_object",
-    atlasDecision: "NO_PRODUCTION_CASE",
-    chapterFunction: "Chronophotographic analysis and the technical/conceptual prehistory of recording movement.",
-  },
-  {
-    label: "Kinetograph / Kinetoscope / Black Maria",
-    role: "historical_object",
-    atlasDecision: "NO_PRODUCTION_CASE",
-    chapterFunction: "Apparatus and production environment needed to explain cinema as a system rather than a single film.",
-  },
-  {
-    label: "Cinématographe and competing projection systems",
-    role: "historical_object",
-    atlasDecision: "NO_PRODUCTION_CASE",
-    chapterFunction: "Projection and portability as system changes, while detailed exhibition history remains reserved for Chapter 2.",
-  },
-];
+  "Eadweard Muybridge motion studies",
+  "Étienne-Jules Marey chronophotography",
+  "Kinetograph / Kinetoscope / Black Maria",
+  "Cinématographe and competing projection systems",
+].map((label) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE" }));
 
 function readText(filePath) {
   return readFileSync(filePath, "utf8");
@@ -157,37 +138,10 @@ function normalizeTitle(value) {
 }
 
 function parseQuotedStrings(value) {
-  const strings = [];
+  const result = [];
   const pattern = /"((?:\\.|[^"\\])*)"/g;
-  for (const match of value.matchAll(pattern)) strings.push(JSON.parse(`"${match[1]}"`));
-  return strings;
-}
-
-function stringField(objectSource, fieldName, required = true) {
-  const pattern = new RegExp(`\\b${fieldName}\\s*:\\s*"((?:\\\\.|[^"\\\\])*)"`);
-  const match = objectSource.match(pattern);
-  if (!match) {
-    if (!required) return undefined;
-    throw new Error(`Missing ${fieldName} in expansion definition: ${objectSource.slice(0, 160)}`);
-  }
-  return JSON.parse(`"${match[1]}"`);
-}
-
-function numberField(objectSource, fieldName) {
-  const pattern = new RegExp(`\\b${fieldName}\\s*:\\s*(\\d+)`);
-  const match = objectSource.match(pattern);
-  if (!match) throw new Error(`Missing ${fieldName} in expansion definition: ${objectSource.slice(0, 160)}`);
-  return Number(match[1]);
-}
-
-function stringArrayField(objectSource, fieldName, required = true) {
-  const pattern = new RegExp(`\\b${fieldName}\\s*:\\s*\\[([^\\]]*)\\]`);
-  const match = objectSource.match(pattern);
-  if (!match) {
-    if (!required) return [];
-    throw new Error(`Missing ${fieldName} in expansion definition: ${objectSource.slice(0, 160)}`);
-  }
-  return parseQuotedStrings(match[1]);
+  for (const match of value.matchAll(pattern)) result.push(JSON.parse(`"${match[1]}"`));
+  return result;
 }
 
 function findMatchingBracket(source, startIndex, openCharacter, closeCharacter) {
@@ -202,7 +156,7 @@ function findMatchingBracket(source, startIndex, openCharacter, closeCharacter) 
       else if (character === quote) quote = null;
       continue;
     }
-    if (character === "\"" || character === "'" || character === "`") {
+    if (character === '"' || character === "'" || character === "`") {
       quote = character;
       continue;
     }
@@ -230,140 +184,121 @@ function extractTopLevelObjects(arraySource) {
   return objects;
 }
 
+function stringField(objectSource, fieldName) {
+  const match = objectSource.match(new RegExp(`\\b${fieldName}\\s*:\\s*"((?:\\\\.|[^"\\\\])*)"`));
+  if (!match) throw new Error(`Missing ${fieldName}: ${objectSource.slice(0, 160)}`);
+  return JSON.parse(`"${match[1]}"`);
+}
+
+function numberField(objectSource, fieldName) {
+  const match = objectSource.match(new RegExp(`\\b${fieldName}\\s*:\\s*(\\d+)`));
+  if (!match) throw new Error(`Missing ${fieldName}: ${objectSource.slice(0, 160)}`);
+  return Number(match[1]);
+}
+
+function aliasesField(objectSource) {
+  const match = objectSource.match(/\baliases\s*:\s*\[([^\]]*)\]/);
+  return match ? parseQuotedStrings(match[1]) : [];
+}
+
 function parseExpansion(fileName) {
   const source = readText(path.join(coreDirectory, fileName));
   const declaration = source.match(/export const\s+\w+Definitions\s*=\s*\[/);
   if (!declaration || declaration.index === undefined) throw new Error(`Could not locate definitions array in ${fileName}`);
   const arrayStart = source.indexOf("[", declaration.index);
   const arrayEnd = findMatchingBracket(source, arrayStart, "[", "]");
-  const objectSources = extractTopLevelObjects(source.slice(arrayStart + 1, arrayEnd));
-  return objectSources.map((objectSource) => ({
+  return extractTopLevelObjects(source.slice(arrayStart + 1, arrayEnd)).map((objectSource) => ({
     id: stringField(objectSource, "id"),
     title: stringField(objectSource, "title"),
     originalTitle: stringField(objectSource, "originalTitle"),
-    aliases: stringArrayField(objectSource, "aliases", false),
+    aliases: aliasesField(objectSource),
     year: numberField(objectSource, "year"),
-    origin: fileName,
   }));
 }
 
-function acceptedScenarioTitles(scenario) {
-  return [scenario.title, scenario.originalTitle, ...(scenario.aliases ?? [])]
-    .filter(Boolean)
-    .map(normalizeTitle);
+function acceptedTitles(item) {
+  return [item.title, item.originalTitle, ...(item.aliases ?? [])].filter(Boolean).map(normalizeTitle);
 }
 
-function matchesDefinition(scenario, definition) {
-  if (scenario.id === definition.id) return true;
-  if (scenario.year !== definition.year) return false;
-  const accepted = new Set(acceptedScenarioTitles(definition));
-  return acceptedScenarioTitles(scenario).some((title) => accepted.has(title));
+function matches(left, right) {
+  if (left.id && right.id && left.id === right.id) return true;
+  if (left.year !== right.year) return false;
+  const rightTitles = new Set(acceptedTitles(right));
+  return acceptedTitles(left).some((title) => rightTitles.has(title));
 }
 
-function buildAtlasCatalog() {
-  const seedFile = JSON.parse(readText(seedPath));
-  const scenarios = seedFile.scenarios.map((scenario) => ({
-    id: scenario.id,
-    title: scenario.film.title,
-    originalTitle: scenario.film.original_title,
-    aliases: [],
-    year: scenario.film.year,
-    origin: "film_scenarios_seed.json",
-  }));
-  const expansionSummary = [];
+const seed = JSON.parse(readText(seedPath));
+const atlas = seed.scenarios.map((scenario) => ({
+  id: scenario.id,
+  title: scenario.film.title,
+  originalTitle: scenario.film.original_title,
+  aliases: [],
+  year: scenario.film.year,
+  origin: "film_scenarios_seed.json",
+}));
+const expansionSummary = [];
 
-  for (const fileName of expansionFiles) {
-    const definitions = parseExpansion(fileName);
-    let appended = 0;
-    let matchedExisting = 0;
-    for (const definition of definitions) {
-      const existing = scenarios.find((scenario) => matchesDefinition(scenario, definition));
-      if (existing) {
-        matchedExisting += 1;
-        continue;
-      }
-      scenarios.push(definition);
-      appended += 1;
+for (const fileName of expansionFiles) {
+  let appended = 0;
+  let matchedExisting = 0;
+  for (const definition of parseExpansion(fileName)) {
+    if (atlas.some((scenario) => matches(scenario, definition))) {
+      matchedExisting += 1;
+      continue;
     }
-    expansionSummary.push({ fileName, definitions: definitions.length, appended, matchedExisting });
+    atlas.push({ ...definition, origin: fileName });
+    appended += 1;
   }
-
-  return { scenarios, expansionSummary, seedDeclaredCount: seedFile.scenario_count, seedActualCount: seedFile.scenarios.length };
+  expansionSummary.push({ fileName, appended, matchedExisting });
 }
 
-function auditCandidate(candidate, scenarios) {
-  const accepted = new Set([candidate.title, ...candidate.aliases].map(normalizeTitle));
-  const matches = scenarios.filter((scenario) => {
-    if (scenario.year !== candidate.year) return false;
-    return acceptedScenarioTitles(scenario).some((title) => accepted.has(title));
-  });
-  const atlasStatus = matches.length === 0 ? "missing" : matches.length === 1 ? "existing" : "ambiguous_multiple_matches";
-  const decision = atlasStatus === "existing" ? "USE_EXISTING_ATLAS_CASE" : candidate.decisionIfMissing;
-  return {
-    title: candidate.title,
-    year: candidate.year,
-    role: candidate.role,
-    atlasStatus,
-    decision,
-    chapterFunction: candidate.chapterFunction,
-    matches: matches.map((match) => ({ id: match.id, title: match.title, originalTitle: match.originalTitle, year: match.year, origin: match.origin })),
-  };
-}
-
-const catalog = buildAtlasCatalog();
-const candidateAudit = candidates.map((candidate) => auditCandidate(candidate, catalog.scenarios));
-const existing = candidateAudit.filter((candidate) => candidate.atlasStatus === "existing");
-const missing = candidateAudit.filter((candidate) => candidate.atlasStatus === "missing");
-const ambiguous = candidateAudit.filter((candidate) => candidate.atlasStatus === "ambiguous_multiple_matches");
-const requiredExisting = candidates.filter((candidate) => candidate.decisionIfMissing === "EXISTING_REQUIRED");
-const missingRequiredExisting = requiredExisting.filter((candidate) => {
-  const result = candidateAudit.find((item) => item.title === candidate.title && item.year === candidate.year);
-  return !result || result.atlasStatus !== "existing" || result.matches[0]?.id !== candidate.expectedScenarioId;
+const candidateResults = candidates.map((candidate) => {
+  const found = atlas.filter((scenario) => matches(scenario, candidate));
+  if (found.length === 0) return { ...candidate, decision: candidate.decisionIfMissing, scenarioId: null, matches: 0 };
+  if (found.length > 1) return { ...candidate, decision: "AMBIGUOUS", scenarioId: null, matches: found.length };
+  return { ...candidate, decision: "USE_EXISTING", scenarioId: found[0].id, matches: 1, origin: found[0].origin };
 });
 
 const byDecision = Object.fromEntries(
-  ["P0", "P1", "P2", "USE_EXISTING_ATLAS_CASE"].map((decision) => [
+  ["USE_EXISTING", "P0", "P1", "P2", "AMBIGUOUS", "EXISTING_REQUIRED"].map((decision) => [
     decision,
-    candidateAudit.filter((candidate) => candidate.decision === decision).map((candidate) => `${candidate.title} (${candidate.year})`),
+    candidateResults.filter((candidate) => candidate.decision === decision).map((candidate) => candidate.title),
   ]),
 );
 
+const structuralProblems = [];
+if (atlas.length !== EXPECTED_ATLAS_COUNT) structuralProblems.push(`Expected ${EXPECTED_ATLAS_COUNT} Atlas films, found ${atlas.length}`);
+for (const result of candidateResults) {
+  if (result.decision === "AMBIGUOUS") structuralProblems.push(`${result.title} matched ${result.matches} Atlas scenarios`);
+  if (result.expectedScenarioId && result.scenarioId !== result.expectedScenarioId) {
+    structuralProblems.push(`${result.title} must resolve to ${result.expectedScenarioId}, found ${result.scenarioId ?? result.decision}`);
+  }
+}
+
 const report = {
-  schemaVersion: "1.0",
-  chapter: {
-    id: "motion-before-cinema",
-    number: 1,
-    title: "From motion studies to cinema",
-    period: "1870s–1905",
-  },
+  schemaVersion: "1.1",
+  auditDate: "2026-08-14",
   atlas: {
     expectedCount: EXPECTED_ATLAS_COUNT,
-    actualCount: catalog.scenarios.length,
-    seedDeclaredCount: catalog.seedDeclaredCount,
-    seedActualCount: catalog.seedActualCount,
-    expansionOrder: catalog.expansionSummary,
+    actualCount: atlas.length,
+    expansionOrder: expansionSummary,
   },
-  totals: {
-    candidates: candidateAudit.length,
-    existing: existing.length,
-    missing: missing.length,
-    ambiguous: ambiguous.length,
-  },
+  candidates: candidateResults,
   byDecision,
-  candidates: candidateAudit,
   historicalObjects,
+  remainingProductionCases: {
+    P0: byDecision.P0,
+    P1: byDecision.P1,
+    P2BookReferenceOnly: byDecision.P2,
+  },
+  structuralProblems,
 };
 
 console.log("HG_FILM_HISTORY_CHAPTER_ONE_ATLAS_AUDIT_START");
 console.log(JSON.stringify(report, null, 2));
 console.log("HG_FILM_HISTORY_CHAPTER_ONE_ATLAS_AUDIT_END");
 
-const structuralProblems = [];
-if (catalog.scenarios.length !== EXPECTED_ATLAS_COUNT) structuralProblems.push(`Expected ${EXPECTED_ATLAS_COUNT} Atlas films, found ${catalog.scenarios.length}`);
-if (ambiguous.length > 0) structuralProblems.push(`${ambiguous.length} candidate(s) matched more than one Atlas film`);
-if (missingRequiredExisting.length > 0) structuralProblems.push(`Required existing Atlas case missing or moved: ${missingRequiredExisting.map((candidate) => candidate.title).join(", ")}`);
-
 if (structuralProblems.length > 0) {
-  for (const problem of structuralProblems) console.error(problem);
+  console.error(`Film History Chapter 1 Atlas audit found ${structuralProblems.length} structural problem(s).`);
   process.exitCode = 1;
 }
