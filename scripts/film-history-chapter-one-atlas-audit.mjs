@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 379;
+const EXPECTED_ATLAS_COUNT = 380;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -39,6 +39,7 @@ const candidates = [
     aliases: ["Workers Leaving the Lumiere Factory", "La Sortie de l'Usine Lumière à Lyon", "Sortie d'usine"],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_workers_leaving_lumiere_factory_1895",
     chapterFunction: "Actuality, Lumière production practice, framing, event timing and multiple versions.",
   },
   {
