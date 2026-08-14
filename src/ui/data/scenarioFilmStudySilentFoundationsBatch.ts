@@ -8,6 +8,7 @@ import type { FilmScenarioSeed } from "./filmScenarios";
 import type { FilmHistoryChoice, FilmHistoryProfile, ScenarioFilmStudyMap } from "./scenarioFilmStudyMap";
 import { blacksmithSceneFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsBlacksmith";
 import { workersLeavingLumiereFactoryFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsWorkersLeaving";
+import { corbettFitzsimmonsFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsCorbettFitzsimmons";
 import { fire1901FilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsFire";
 import { lifeAmericanFiremanFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsLifeAmericanFireman";
 import { rescuedByRoverFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsRescuedByRover";
@@ -22,6 +23,7 @@ import { getProductionCaseVerification } from "./scenarioProductionVerificationR
 const silentFoundationsProfiles = {
   [blacksmithSceneFilmHistoryProfile.scenarioId]: blacksmithSceneFilmHistoryProfile,
   [workersLeavingLumiereFactoryFilmHistoryProfile.scenarioId]: workersLeavingLumiereFactoryFilmHistoryProfile,
+  [corbettFitzsimmonsFilmHistoryProfile.scenarioId]: corbettFitzsimmonsFilmHistoryProfile,
   [fire1901FilmHistoryProfile.scenarioId]: fire1901FilmHistoryProfile,
   [lifeAmericanFiremanFilmHistoryProfile.scenarioId]: lifeAmericanFiremanFilmHistoryProfile,
   [rescuedByRoverFilmHistoryProfile.scenarioId]: rescuedByRoverFilmHistoryProfile,
