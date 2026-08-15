@@ -39,6 +39,7 @@ import { fantomasProductionCaseVerification } from "./scenarioProductionVerifica
 import { cabiriaProductionCaseVerification } from "./scenarioProductionVerificationCabiria";
 import { afgrundenProductionCaseVerification } from "./scenarioProductionVerificationAfgrunden";
 import { atlantisProductionCaseVerification } from "./scenarioProductionVerificationAtlantis";
+import { goldRushProductionCaseVerification } from "./scenarioProductionVerificationGoldRush";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -195,6 +196,7 @@ const additionalVerificationRecords = [
   cabiriaProductionCaseVerification,
   afgrundenProductionCaseVerification,
   atlantisProductionCaseVerification,
+  goldRushProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
