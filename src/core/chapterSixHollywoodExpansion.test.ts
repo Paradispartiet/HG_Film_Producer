@@ -3,12 +3,11 @@ import test from "node:test";
 
 import { chapterSixHollywoodExpansionDefinitions } from "./chapterSixHollywoodExpansion.js";
 
-test("Chapter 6 materializes The Gold Rush as the first Hollywood studio-system expansion case", () => {
-  assert.equal(chapterSixHollywoodExpansionDefinitions.length, 1);
-  const goldRush = chapterSixHollywoodExpansionDefinitions[0];
-  assert.equal(goldRush.id, "scenario_the_gold_rush_1925");
-  assert.equal(goldRush.title, "The Gold Rush");
-  assert.equal(goldRush.year, 1925);
+test("Chapter 6 materializes The Gold Rush and The Crowd as distinct Hollywood-system cases", () => {
+  assert.equal(chapterSixHollywoodExpansionDefinitions.length, 2);
+
+  const goldRush = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_the_gold_rush_1925");
+  assert.ok(goldRush);
   assert.equal(goldRush.runtimeMins, 88);
   assert.equal(goldRush.scenarioType, "star_producer_feature_comedy");
   assert.equal(goldRush.sourceId, "manual_the_gold_rush_1925");
@@ -18,6 +17,23 @@ test("Chapter 6 materializes The Gold Rush as the first Hollywood studio-system 
   assert.ok(goldRush.requiredChoicesSeed.editing.includes("1925_1942_version_boundary"));
   assert.ok(goldRush.requiredChoicesSeed.sound.includes("silent_1925_release"));
   assert.ok(goldRush.requiredChoicesSeed.sound.includes("exclude_1942_narration_and_score"));
-  assert.ok(goldRush.learningGoals.length >= 6);
-  assert.ok(goldRush.phases.length >= 9);
+
+  const crowd = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_the_crowd_1928");
+  assert.ok(crowd);
+  assert.equal(crowd.title, "The Crowd");
+  assert.equal(crowd.year, 1928);
+  assert.equal(crowd.runtimeMins, 98);
+  assert.equal(crowd.scenarioType, "studio_social_realism_production");
+  assert.equal(crowd.sourceId, "manual_the_crowd_1928");
+  assert.ok(crowd.aliases.includes("The Mob"));
+  assert.ok(crowd.premise.includes("Metro-Goldwyn-Mayer"));
+  assert.ok(crowd.premise.includes("two release endings"));
+  assert.ok(crowd.premise.includes("1981 Brownlow-Gill restoration"));
+  assert.ok(crowd.requiredChoicesSeed.camera.includes("concealed_camera_new_york_exteriors"));
+  assert.ok(crowd.requiredChoicesSeed.editing.includes("preview_tested_endings"));
+  assert.ok(crowd.requiredChoicesSeed.editing.includes("exhibitor_ending_version_control"));
+  assert.ok(crowd.requiredChoicesSeed.sound.includes("silent_1928_release"));
+  assert.ok(crowd.requiredChoicesSeed.sound.includes("1981_restoration_score_not_original"));
+  assert.ok(crowd.learningGoals.length >= 6);
+  assert.ok(crowd.phases.length >= 9);
 });
