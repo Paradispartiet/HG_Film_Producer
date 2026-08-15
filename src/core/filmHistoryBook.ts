@@ -2,6 +2,7 @@ import { filmHistoryChapterOne } from "./filmHistoryChapterOne.js";
 import { filmHistoryChapterTwo } from "./filmHistoryChapterTwo.js";
 import { filmHistoryChapterThree } from "./filmHistoryChapterThree.js";
 import { filmHistoryChapterFour } from "./filmHistoryChapterFour.js";
+import { filmHistoryChapterFive } from "./filmHistoryChapterFive.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -95,15 +96,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
       filmHistoryChapterTwo,
       filmHistoryChapterThree,
       filmHistoryChapterFour,
-      outline(
-        "global-before-wwi",
-        5,
-        "Cinema becomes international",
-        "1907–1914",
-        "France, Italy, Denmark, the United States and other production centers compete as stars, genres and feature films travel across borders.",
-        ["Map leading prewar production centers.", "Explain why national cinema was international from the beginning.", "Connect star, genre and feature systems to export markets."],
-        ["national cinema", "export market", "star system", "genre", "feature"],
-      ),
+      filmHistoryChapterFive,
     ],
   },
   {

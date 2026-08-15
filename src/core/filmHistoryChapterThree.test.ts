@@ -113,7 +113,7 @@ test("Chapter 3 keeps the required historiographic safeguards visible in prose",
   assert.match(text, /represented memory|narrative time/i);
 });
 
-test("canonical book resolves Chapters 1–4 as full and preserves the six-part thirty-chapter architecture", () => {
+test("canonical book resolves Chapters 1–5 as full and preserves the six-part thirty-chapter architecture", () => {
   assert.equal(filmHistoryBookParts.length, 6);
   assert.equal(filmHistoryBookParts.flatMap((part) => part.chapters).length, 30);
   assert.equal(getFilmHistoryBookChapter("motion-before-cinema")?.status, "full");
@@ -123,7 +123,8 @@ test("canonical book resolves Chapters 1–4 as full and preserves the six-part 
   assert.equal(canonicalChapterThree?.status, "full");
   assert.equal(canonicalChapterThree?.sections.length, 15);
   assert.equal(getFilmHistoryBookChapter("industry-feature-transition")?.status, "full");
-  assert.equal(getFilmHistoryBookChapter("global-before-wwi")?.status, "outline");
+  assert.equal(getFilmHistoryBookChapter("global-before-wwi")?.status, "full");
+  assert.equal(getFilmHistoryBookChapter("classical-hollywood")?.status, "outline");
 });
 
 test("Chapter 3 editorial film references stay locked to the completed Atlas audit", () => {
