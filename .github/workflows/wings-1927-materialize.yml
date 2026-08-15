@@ -1,0 +1,153 @@
+name: Materialize Wings 1927 production case
+
+on:
+  push:
+    branches:
+      - agent/wings-1927
+    paths:
+      - .github/workflows/wings-1927-materialize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/wings-1927
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Materialize reviewed Wings case
+        shell: bash
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          wings = '''  {
+            id: "scenario_wings_1927",
+            title: "Wings",
+            originalTitle: "Wings",
+            aliases: [],
+            year: 1927,
+            titleType: "Feature",
+            runtimeMins: 139,
+            directors: ["William A. Wellman"],
+            genres: ["Drama", "Romance", "War"],
+            premise: "Build Wings as a 1927 Paramount Famous Lasky production problem in large-scale aviation logistics rather than as an awards-history quiz. Coordinate William A. Wellman's direction and Lucien Hubbard's production with John Monk Saunders' story, Hope Loring and Louis D. Lighton's screenplay, Harry Perry's chief cinematography and a broad specialist camera team, E. Lloyd Sheldon's editorial department, Roy Pomeroy's engineering effects, and extensive United States War Department cooperation around Camp Stanley, Kelly Field and Brooks Field. Use real aircraft, military pilots and servicemen, constructed trench systems, ground explosives and aerial photography as interdependent production resources whose footage still has to cut into readable character geography. Preserve the version boundary between the 1927 premiere/roadshow film and the 1929 national release with added musical score and sound effects, and keep modern restoration tinting, recreated Handschiegl color effects and live accompaniment distinct from original synchronized production claims.",
+            sourceId: "manual_wings_1927",
+            sourceUrl: "https://catalog.afi.com/Film/13362-WINGS",
+            scenarioType: "studio_aviation_logistics_production",
+            requiredChoicesSeed: {
+              screenplay: ["saunders_loring_lighton_war_story", "jack_david_mary_triangle", "air_ground_parallel_war_progression"],
+              camera: ["aerial_camera_team_coordination", "cockpit_and_aircraft_geography", "ground_air_scale_matching"],
+              editing: ["air_ground_action_legibility", "multi_unit_continuity", "preview_release_version_control"],
+              sound: ["silent_1927_roadshow", "1929_score_effects_release_boundary", "modern_accompaniment_not_original_1927"],
+              themes: ["film_history", "paramount", "aviation", "military_cooperation", "studio_logistics", "engineering_effects"],
+            },
+            learningGoals: [
+              "Plan aviation spectacle as a coordination system in which studio production, military access, aircraft, pilots, ground units, effects and camera crews solve different parts of the same screen problem.",
+              "Use real aerial photography and cockpit-scale character views to preserve aircraft direction, altitude relationships and dramatic objectives instead of treating spectacular footage as self-explanatory coverage.",
+              "Coordinate Camp Stanley ground construction, servicemen, trench systems and explosives with aerial material so ground and air action belong to one causal geography rather than two unrelated units.",
+              "Preserve collaborative craft: Wellman's direction, Hubbard's production, Perry's camera leadership, the wider photography team, Sheldon's editorial department and Pomeroy's engineering effects remain distinct documented responsibilities.",
+              "Treat United States War Department cooperation as a production-resource and institutional-dependency question, not as proof that staged battle scenes are documentary records of World War I combat.",
+              "Keep versions separate: the 1927 premiere/roadshow history, the 1929 national release with added score and sound effects, and modern restoration/presentation choices are different historical objects.",
+            ],
+            phases: [
+              { id: "pitch", label: "Aviation-scale studio pitch", player_task: "Define why an expensive World War I aviation feature needs character stakes, aircraft access and legible action strongly enough to justify Paramount-scale coordination." },
+              { id: "research", label: "Military and craft evidence", player_task: "Ground Wellman, Hubbard, the writers, Perry's camera unit, Sheldon, Pomeroy, San Antonio locations and War Department cooperation in institutional sources before planning spectacle." },
+              { id: "screenplay", label: "Air and ground causality", player_task: "Structure Jack, David and Mary so training, rivalry, friendship, combat and loss give the aerial material dramatic objectives rather than functioning as disconnected demonstration footage." },
+              { id: "casting", label: "Characters inside scale", player_task: "Keep Bow, Rogers, Arlen and the ensemble readable through behavior, costume and reaction even when aircraft, crowds and effects dominate the production." },
+              { id: "production_design", label: "Military ground system", player_task: "Coordinate documented trench construction, battlefield routes, airfields, equipment and effects zones so ground action can connect safely and intelligibly to the aerial units." },
+              { id: "cinematography", label: "Aerial unit coordination", player_task: "Plan Perry's chief-camera role and the wider specialist team around cockpit views, aircraft trajectories, Akeley coverage and ground-air scale relationships without a lone-cameraman myth." },
+              { id: "editing", label: "Make flight readable", player_task: "Use Sheldon's editorial system to turn multi-unit aerial, cockpit and ground material into causal direction and escalating action while tracking preview-versus-release changes." },
+              { id: "sound", label: "1927/1929 release boundary", player_task: "Keep the 1927 production and roadshow history distinct from the score and sound effects added for the 1929 national release and from modern live accompaniment." },
+              { id: "release", label: "Roadshow, national release and legacy", player_task: "Model how Paramount's roadshow exhibition, later national release and awards/preservation history change presentation without rewriting what was photographed in 1927." },
+            ],
+          },
+          '''
+
+          def replace_once(path, old, new):
+              p = Path(path)
+              text = p.read_text(encoding='utf-8')
+              if text.count(old) != 1:
+                  raise SystemExit(f'{path}: expected one marker, got {text.count(old)}: {old!r}')
+              p.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          p = Path('src/core/chapterSixHollywoodExpansion.ts')
+          text = p.read_text(encoding='utf-8')
+          marker = '\n] as const;\n\nexport function mergeChapterSixHollywoodExpansion('
+          if text.count(marker) != 1:
+              raise SystemExit(f'chapterSix marker count={text.count(marker)}')
+          p.write_text(text.replace(marker, '\n' + wings + '] as const;\n\nexport function mergeChapterSixHollywoodExpansion(', 1), encoding='utf-8')
+
+          p = Path('src/core/chapterSixHollywoodExpansion.test.ts')
+          text = p.read_text(encoding='utf-8')
+          text = text.replace('Gold Rush, The Crowd, The Cheat and It as distinct Hollywood-system cases', 'Gold Rush, The Crowd, The Cheat, It and Wings as distinct Hollywood-system cases', 1)
+          text = text.replace('assert.equal(chapterSixHollywoodExpansionDefinitions.length, 4);', 'assert.equal(chapterSixHollywoodExpansionDefinitions.length, 5);', 1)
+          wings_test = '''\n\n  const wings = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_wings_1927");
+            assert.ok(wings);
+            assert.equal(wings.title, "Wings");
+            assert.equal(wings.year, 1927);
+            assert.equal(wings.runtimeMins, 139);
+            assert.equal(wings.scenarioType, "studio_aviation_logistics_production");
+            assert.equal(wings.sourceId, "manual_wings_1927");
+            assert.equal(wings.sourceUrl, "https://catalog.afi.com/Film/13362-WINGS");
+            assert.ok(wings.requiredChoicesSeed.camera.includes("aerial_camera_team_coordination"));
+            assert.ok(wings.requiredChoicesSeed.editing.includes("multi_unit_continuity"));
+            assert.ok(wings.requiredChoicesSeed.sound.includes("1929_score_effects_release_boundary"));
+            assert.ok(wings.learningGoals.some((goal) => goal.includes("different historical objects")));
+            assert.ok(wings.learningGoals.length >= 6);
+            assert.ok(wings.phases.length >= 9);'''
+          if text.count('\n});') != 1:
+              raise SystemExit(f'test close count={text.count(chr(10) + "});")}')
+          p.write_text(text.replace('\n});', wings_test + '\n});', 1), encoding='utf-8')
+
+          replace_once(
+              'src/ui/data/scenarioFilmStudyMap.ts',
+              'import { itFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsIt";\n',
+              'import { itFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsIt";\nimport { wingsFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsWings";\n',
+          )
+          replace_once(
+              'src/ui/data/scenarioFilmStudyMap.ts',
+              '  [itFilmHistoryProfile.scenarioId]: itFilmHistoryProfile,\n',
+              '  [itFilmHistoryProfile.scenarioId]: itFilmHistoryProfile,\n  [wingsFilmHistoryProfile.scenarioId]: wingsFilmHistoryProfile,\n',
+          )
+
+          replace_once(
+              'src/ui/data/scenarioProductionVerificationRegistry.ts',
+              'import { itProductionCaseVerification } from "./scenarioProductionVerificationIt";\n',
+              'import { itProductionCaseVerification } from "./scenarioProductionVerificationIt";\nimport { wingsProductionCaseVerification } from "./scenarioProductionVerificationWings";\n',
+          )
+          replace_once(
+              'src/ui/data/scenarioProductionVerificationRegistry.ts',
+              '  itProductionCaseVerification,\n',
+              '  itProductionCaseVerification,\n  wingsProductionCaseVerification,\n',
+          )
+
+          replace_once('scripts/film-history-chapter-six-atlas-audit.mjs', 'const EXPECTED_ATLAS_COUNT = 402;', 'const EXPECTED_ATLAS_COUNT = 403;')
+          replace_once(
+              'scripts/film-history-chapter-six-atlas-audit.mjs',
+              '  USE_EXISTING: ["It", "The Cheat", "The Crowd", "The General", "The Gold Rush"],\n',
+              '  USE_EXISTING: ["It", "The Cheat", "The Crowd", "The General", "The Gold Rush", "Wings"],\n',
+          )
+          replace_once('scripts/film-history-chapter-six-atlas-audit.mjs', '  P1: ["Wings"],\n', '  P1: [],\n')
+          replace_once('scripts/production-case-rest-audit.mjs', 'const EXPECTED_PLAYABLE_SCENARIOS = 402;', 'const EXPECTED_PLAYABLE_SCENARIOS = 403;')
+          replace_once('scripts/production-case-rest-audit.mjs', 'const EXPECTED_VERIFIED_PRODUCTION_CASES = 402;', 'const EXPECTED_VERIFIED_PRODUCTION_CASES = 403;')
+          PY
+      - name: Full v0.1 verification
+        run: npm run verify:v0.1
+      - name: Commit verified Wings materialization and remove temporary workflow
+        shell: bash
+        run: |
+          rm .github/workflows/wings-1927-materialize.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Complete Wings 1927 production case"
+          git push origin HEAD:agent/wings-1927
