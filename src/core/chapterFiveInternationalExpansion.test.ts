@@ -3,8 +3,8 @@ import test from "node:test";
 
 import { chapterFiveInternationalExpansionDefinitions } from "./chapterFiveInternationalExpansion.js";
 
-test("Chapter 5 keeps Fantômas and Cabiria as materialized international expansion cases", () => {
-  assert.equal(chapterFiveInternationalExpansionDefinitions.length, 2);
+test("Chapter 5 keeps Fantômas, Cabiria and Afgrunden as materialized international expansion cases", () => {
+  assert.equal(chapterFiveInternationalExpansionDefinitions.length, 3);
 
   const fantomas = chapterFiveInternationalExpansionDefinitions.find((item) => item.id === "scenario_fantomas_1913");
   assert.ok(fantomas);
@@ -25,4 +25,15 @@ test("Chapter 5 keeps Fantômas and Cabiria as materialized international expans
   assert.ok(cabiria.requiredChoicesSeed.camera.includes("moving_camera_spatial_discovery"));
   assert.ok(cabiria.learningGoals.length >= 6);
   assert.ok(cabiria.phases.length >= 9);
+
+  const afgrunden = chapterFiveInternationalExpansionDefinitions.find((item) => item.id === "scenario_afgrunden_1910");
+  assert.ok(afgrunden);
+  assert.equal(afgrunden.title, "Afgrunden");
+  assert.equal(afgrunden.year, 1910);
+  assert.equal(afgrunden.scenarioType, "erotic_melodrama_production");
+  assert.equal(afgrunden.runtimeMins, 38);
+  assert.equal(afgrunden.sourceId, "manual_afgrunden_1910");
+  assert.ok(afgrunden.requiredChoicesSeed.camera.includes("performance_centered_framing"));
+  assert.ok(afgrunden.learningGoals.length >= 6);
+  assert.ok(afgrunden.phases.length >= 9);
 });
