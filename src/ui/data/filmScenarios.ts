@@ -5,6 +5,7 @@ import { mergeChapterOneRescuedByRoverExpansion } from "../../core/chapterOneRes
 import { mergeChapterTwoExhibitionExpansion } from "../../core/chapterTwoExhibitionExpansion.js";
 import { mergeChapterThreeNarrativeExpansion } from "../../core/chapterThreeNarrativeExpansion.js";
 import { mergeChapterFourIndustryExpansion } from "../../core/chapterFourIndustryExpansion.js";
+import { mergeChapterFiveInternationalExpansion } from "../../core/chapterFiveInternationalExpansion.js";
 import { mergeEastAsianAuteurExpansion } from "../../core/eastAsianAuteurExpansion.js";
 import { mergeEasternIberianBritishExpansion } from "../../core/easternIberianBritishExpansion.js";
 import { mergeFestivalWinners1981To2009Expansion } from "../../core/festivalWinners1981To2009Expansion.js";
@@ -65,7 +66,8 @@ const chapterOneCompleteScenarios = mergeChapterOneRescuedByRoverExpansion(chapt
 const chapterTwoExhibitionScenarios = mergeChapterTwoExhibitionExpansion(chapterOneCompleteScenarios);
 const chapterThreeNarrativeScenarios = mergeChapterThreeNarrativeExpansion(chapterTwoExhibitionScenarios);
 const chapterFourIndustryScenarios = mergeChapterFourIndustryExpansion(chapterThreeNarrativeScenarios);
-const modernCanonScenarios = mergeModernCanonExpansion(chapterFourIndustryScenarios);
+const chapterFiveInternationalScenarios = mergeChapterFiveInternationalExpansion(chapterFourIndustryScenarios);
+const modernCanonScenarios = mergeModernCanonExpansion(chapterFiveInternationalScenarios);
 const priorityIndieScenarios = mergePriorityIndieExpansion(modernCanonScenarios);
 const eastAsianAuteurScenarios = mergeEastAsianAuteurExpansion(priorityIndieScenarios);
 const japaneseAuteurScenarios = mergeJapaneseAuteurExpansion(eastAsianAuteurScenarios);
@@ -79,9 +81,9 @@ const mergedScenarios = mergeItalyFranceGermanyBeneluxExpansion(easternIberianBr
 
 export const filmScenarioSeedData: FilmScenarioSeedFile = {
   ...importedSeedData,
-  source_list_id: `${importedSeedData.source_list_id}+manual_early_cinema_expansion_2026+manual_chapter_one_early_cinema_expansion_2026+manual_chapter_two_exhibition_expansion_2026+manual_chapter_three_narrative_expansion_2026+manual_chapter_four_industry_expansion_2026+manual_modern_indie_asian_prize_expansion_2026+manual_priority_indie_completion_2026+manual_east_asian_auteur_expansion_2026+manual_japanese_auteur_expansion_2026+manual_south_korean_cinema_expansion_2026+manual_south_southeast_asian_expansion_2026+manual_festival_winners_1981_2009_expansion_2026+manual_festival_winner_2010_2024_expansion_2026+manual_scandinavian_european_expansion_2026+manual_eastern_iberian_british_expansion_2026+manual_italy_france_germany_benelux_expansion_2026`,
+  source_list_id: `${importedSeedData.source_list_id}+manual_early_cinema_expansion_2026+manual_chapter_one_early_cinema_expansion_2026+manual_chapter_two_exhibition_expansion_2026+manual_chapter_three_narrative_expansion_2026+manual_chapter_four_industry_expansion_2026+manual_chapter_five_international_expansion_2026+manual_modern_indie_asian_prize_expansion_2026+manual_priority_indie_completion_2026+manual_east_asian_auteur_expansion_2026+manual_japanese_auteur_expansion_2026+manual_south_korean_cinema_expansion_2026+manual_south_southeast_asian_expansion_2026+manual_festival_winners_1981_2009_expansion_2026+manual_festival_winner_2010_2024_expansion_2026+manual_scandinavian_european_expansion_2026+manual_eastern_iberian_british_expansion_2026+manual_italy_france_germany_benelux_expansion_2026`,
   scenario_count: mergedScenarios.length,
-  note: `${importedSeedData.note} The requested historical expansion, Chapter 1 early-cinema Atlas completion, Chapter 2 exhibition-system expansion, Chapter 3 narrative-form expansion, Chapter 4 company/patent/feature-transition expansion, modern independent/Asian/prize-cinema expansion, 20-film priority-indie completion, 11-film East Asian auteur expansion, seven-film Japanese auteur expansion, four-film South Korean cinema expansion, seven-film South and Southeast Asian expansion, eleven-film 1981-2009 festival-winner expansion, final eleven-film 2010-2024 festival-winner expansion, 22-film Scandinavian and European balancing round, 24-film Eastern, Iberian, Balkan, British and Irish round, and 28-film Italy, France, Germany and Benelux round reuse matching entries and append only missing titles. The agreed 98-film correction remains complete.`,
+  note: `${importedSeedData.note} The requested historical expansion, Chapter 1 early-cinema Atlas completion, Chapter 2 exhibition-system expansion, Chapter 3 narrative-form expansion, Chapter 4 company/patent/feature-transition expansion, Chapter 5 international/series expansion, modern independent/Asian/prize-cinema expansion, 20-film priority-indie completion, 11-film East Asian auteur expansion, seven-film Japanese auteur expansion, four-film South Korean cinema expansion, seven-film South and Southeast Asian expansion, eleven-film 1981-2009 festival-winner expansion, final eleven-film 2010-2024 festival-winner expansion, 22-film Scandinavian and European balancing round, 24-film Eastern, Iberian, Balkan, British and Irish round, and 28-film Italy, France, Germany and Benelux round reuse matching entries and append only missing titles. The agreed 98-film correction remains complete.`,
   scenarios: mergedScenarios,
 };
 
