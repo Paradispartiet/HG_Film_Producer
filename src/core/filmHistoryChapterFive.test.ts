@@ -124,7 +124,7 @@ test("Chapter 5 keeps international and historiographic safeguards visible in pr
   assert.match(text, /1914[\s\S]{0,1800}rupture|First World War[\s\S]{0,1800}reorganiz/i);
 });
 
-test("canonical book resolves Chapters 1–5 as full and preserves the six-part thirty-chapter architecture", () => {
+test("canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture", () => {
   assert.equal(filmHistoryBookParts.length, 6);
   assert.equal(filmHistoryBookParts.flatMap((part) => part.chapters).length, 30);
   assert.equal(getFilmHistoryBookChapter("motion-before-cinema")?.status, "full");
@@ -135,5 +135,5 @@ test("canonical book resolves Chapters 1–5 as full and preserves the six-part 
   assert.equal(canonicalChapterFive, filmHistoryChapterFive);
   assert.equal(canonicalChapterFive?.status, "full");
   assert.equal(canonicalChapterFive?.sections.length, 15);
-  assert.equal(getFilmHistoryBookChapter("classical-hollywood")?.status, "outline");
+  assert.equal(getFilmHistoryBookChapter("classical-hollywood")?.status, "full");
 });

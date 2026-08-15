@@ -3,6 +3,7 @@ import { filmHistoryChapterTwo } from "./filmHistoryChapterTwo.js";
 import { filmHistoryChapterThree } from "./filmHistoryChapterThree.js";
 import { filmHistoryChapterFour } from "./filmHistoryChapterFour.js";
 import { filmHistoryChapterFive } from "./filmHistoryChapterFive.js";
+import { filmHistoryChapterSix } from "./filmHistoryChapterSix.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -106,15 +107,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     period: "1914–1929",
     thesis: "During and after World War I, industrial consolidation and radical modernist alternatives transform what films look like, how they are edited and how national cinemas define themselves.",
     chapters: [
-      outline(
-        "classical-hollywood",
-        6,
-        "Classical continuity and the Hollywood system",
-        "1914–1929",
-        "Hollywood consolidates an industrial and stylistic system built around stars, genres, continuity editing, studios and national distribution.",
-        ["Describe classical continuity as a system.", "Explain studio organization and vertical integration.", "Relate stars and genres to industrial planning."],
-        ["continuity editing", "studio system", "vertical integration", "star system", "genre"],
-      ),
+      filmHistoryChapterSix,
       outline(
         "weimar-expressionism",
         7,
