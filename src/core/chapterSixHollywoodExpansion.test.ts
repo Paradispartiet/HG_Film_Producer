@@ -12,8 +12,11 @@ test("Chapter 6 materializes The Gold Rush as the first Hollywood studio-system 
   assert.equal(goldRush.runtimeMins, 88);
   assert.equal(goldRush.scenarioType, "star_producer_feature_comedy");
   assert.equal(goldRush.sourceId, "manual_the_gold_rush_1925");
+  assert.ok(goldRush.premise.includes("United Artists"));
+  assert.ok(goldRush.premise.includes("1942 reissue"));
   assert.ok(goldRush.requiredChoicesSeed.camera.includes("hollywood_miniature_landscape"));
   assert.ok(goldRush.requiredChoicesSeed.editing.includes("1925_1942_version_boundary"));
+  assert.ok(goldRush.requiredChoicesSeed.sound.includes("silent_1925_release"));
   assert.ok(goldRush.requiredChoicesSeed.sound.includes("exclude_1942_narration_and_score"));
   assert.ok(goldRush.learningGoals.length >= 6);
   assert.ok(goldRush.phases.length >= 9);
