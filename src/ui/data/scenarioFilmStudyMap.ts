@@ -12,6 +12,7 @@ import {
   getProductionCaseVerification,
   type ProductionCaseVerificationRecord,
 } from "./scenarioProductionVerificationRegistry";
+import { fantomasFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsFantomas";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -46,6 +47,7 @@ export type FilmHistoryChoice = {
 };
 
 const sourceBackedFilmHistoryProfiles = {
+  [fantomasFilmHistoryProfile.scenarioId]: fantomasFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",

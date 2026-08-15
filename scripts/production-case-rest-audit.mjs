@@ -6,7 +6,8 @@ const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const dataDirectory = path.join(root, "src", "ui", "data");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_PLAYABLE_SCENARIOS = 394;
+const EXPECTED_PLAYABLE_SCENARIOS = 395;
+const EXPECTED_VERIFIED_PRODUCTION_CASES = 388;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -15,6 +16,7 @@ const expansionFiles = [
   "chapterTwoExhibitionExpansion.ts",
   "chapterThreeNarrativeExpansion.ts",
   "chapterFourIndustryExpansion.ts",
+  "chapterFiveInternationalExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -290,9 +292,10 @@ for (const scenario of unverified) {
 
 const report = {
   schemaVersion: "1.2",
-  auditDate: "2026-08-14",
+  auditDate: "2026-08-15",
   catalogConstruction: {
     expectedPlayableScenarios: EXPECTED_PLAYABLE_SCENARIOS,
+    expectedVerifiedProductionCases: EXPECTED_VERIFIED_PRODUCTION_CASES,
     seedDeclaredCount: seedFile.scenario_count,
     seedActualCount: seedFile.scenarios.length,
     expansionOrder: expansionSummaries,
@@ -345,6 +348,7 @@ console.log("HG_FILM_PRODUCER_REST_AUDIT_END");
 
 const structuralProblems = [
   ...(scenarios.length === EXPECTED_PLAYABLE_SCENARIOS ? [] : [`catalog_count:${scenarios.length}`]),
+  ...(verificationIds.length === EXPECTED_VERIFIED_PRODUCTION_CASES ? [] : [`verification_count:${verificationIds.length}`]),
   ...seedDuplicates,
   ...finalScenarioDuplicates,
   ...duplicateVerificationIds.map((item) => item.scenarioId),

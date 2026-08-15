@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 394;
+const EXPECTED_ATLAS_COUNT = 395;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -14,6 +14,7 @@ const expansionFiles = [
   "chapterTwoExhibitionExpansion.ts",
   "chapterThreeNarrativeExpansion.ts",
   "chapterFourIndustryExpansion.ts",
+  "chapterFiveInternationalExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -147,8 +148,8 @@ const historicalObjects = [
 ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
 const expectedDecisions = {
-  USE_EXISTING: ["Queen Elizabeth", "Traffic in Souls"],
-  P0: ["Cabiria", "Fantômas"],
+  USE_EXISTING: ["Fantômas", "Queen Elizabeth", "Traffic in Souls"],
+  P0: ["Cabiria"],
   P1: ["Afgrunden", "Atlantis"],
   P2: ["Ingeborg Holm", "L'Assassinat du duc de Guise", "L'Inferno", "Quo Vadis?", "Raja Harishchandra", "The Student of Prague", "The White Slave Trade"],
 };
@@ -270,7 +271,7 @@ if ((byDecision.AMBIGUOUS ?? []).length > 0) structuralProblems.push(`Ambiguous 
 
 const report = {
   schemaVersion: "1.0",
-  auditDate: "2026-08-14",
+  auditDate: "2026-08-15",
   chapter: {
     number: 5,
     title: "Cinema becomes international",
