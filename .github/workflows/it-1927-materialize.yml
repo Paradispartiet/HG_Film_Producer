@@ -1,0 +1,260 @@
+name: Materialize It 1927 production case
+
+on:
+  push:
+    branches:
+      - agent/it-1927
+    paths:
+      - .github/workflows/it-1927-materialize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/it-1927
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Write It case and guarded registry updates
+        shell: bash
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          def write(path, content):
+              target = Path(path)
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_text(content, encoding="utf-8")
+
+          def replace_once(path, old, new):
+              target = Path(path)
+              text = target.read_text(encoding="utf-8")
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"Expected exactly one marker in {path}, found {count}: {old[:120]!r}")
+              target.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+          it_definition = '''  {
+            id: "scenario_it_1927",
+            title: "It",
+            originalTitle: "It",
+            aliases: [],
+            year: 1927,
+            titleType: "Feature",
+            runtimeMins: 72,
+            directors: ["Clarence Badger", "Josef von Sternberg"],
+            genres: ["Comedy", "Romance"],
+            premise: "Build It as a 1927 Paramount Famous Lasky star-vehicle and media-coordination problem rather than as celebrity trivia. Paramount's agreement with Elinor Glyn connected a forthcoming Cosmopolitan/Hearst story, Glyn's screen supervision and publicity presence, Clara Bow's star image, Famous Lasky production and Paramount distribution into one marketable system. Coordinate Hope Loring and Louis D. Lighton's scenario work, Glyn's adaptation, Clarence Badger's principal direction, Josef von Sternberg's documented additional direction during Badger's illness, H. Kinley Martin's cinematography and E. Lloyd Sheldon's editing around Betty Lou's active comic pursuit across department-store, leisure and yacht spaces. Treat the historical language of 'It' and Bow's sex appeal as evidence of how studios and media manufactured a star persona, not as an instruction to objectify the performer or reduce a woman-led star vehicle to appearance. Preserve the original 1927 black-and-white silent release as distinct from later live or recorded accompaniments.",
+            sourceId: "manual_it_1927",
+            sourceUrl: "https://catalog.afi.com/Film/9977-IT",
+            scenarioType: "star_vehicle_media_publicity_production",
+            requiredChoicesSeed: {
+              screenplay: ["media_tie_in_adaptation", "shopgirl_class_romance", "active_star_persona_arc"],
+              camera: ["performance_centered_comedy", "retail_space_class_contrast", "yacht_climax_spatial_legibility"],
+              editing: ["feature_comedy_continuity", "badger_sternberg_production_continuity", "publicity_story_release_alignment"],
+              sound: ["silent_1927_release", "no_fixed_synchronized_dialogue", "later_accompaniment_not_original"],
+              themes: ["film_history", "paramount", "clara_bow", "star_system", "media_tie_in", "consumer_modernity"],
+            },
+            learningGoals: [
+              "Model the star system as coordinated production and circulation: literary rights, magazine publicity, performer casting, studio labor and Paramount distribution reinforce one another but remain distinct jobs and evidence layers.",
+              "Build Betty Lou as an active comic protagonist whose timing, initiative and social intelligence drive scenes, rather than treating Clara Bow's historically marketed sex appeal as a substitute for performance direction.",
+              "Use department-store hierarchy, consumption and leisure spaces to make class mobility and consumer modernity legible through blocking, framing and causal action without turning the film into a simple celebration of wealth.",
+              "Preserve collaborative authorship: Loring, Lighton, Glyn, Badger, von Sternberg, Martin and Sheldon each occupy documented roles, and the temporary directing handoff during Badger's illness is a production-continuity problem rather than an excuse to invent hidden authorship.",
+              "Treat Glyn's definition of 'It' and Paramount's publicity linkage to Bow as historical star-manufacturing evidence, while keeping the player focused on performance, story, media strategy and audience address instead of appearance scoring.",
+              "Preserve format history: It is documented as a 72-minute, 35mm, black-and-white silent film; later live or recorded musical accompaniment belongs to exhibition and preservation history rather than original synchronized production sound.",
+            ],
+            phases: [
+              { id: "pitch", label: "Star-vehicle media pitch", player_task: "Define why Paramount should connect Glyn's media property, Bow's screen persona and a shopgirl comedy-romance into one feature campaign without making the performer's body the sole product." },
+              { id: "research", label: "Rights, credits and publicity research", player_task: "Ground Famous Lasky, Paramount, Glyn's deal, Cosmopolitan/Hearst publication, Bow, Badger, von Sternberg, Martin and Sheldon in institutional sources before designing the production system." },
+              { id: "screenplay", label: "Agency, class and comic pursuit", player_task: "Structure Betty Lou's initiative, mistaken assumptions, class contrast and reversals so the star vehicle is driven by choices and comic causality rather than passive display." },
+              { id: "casting", label: "Persona without objectification", player_task: "Translate Bow's documented charisma into timing, confidence, reaction and scene control while treating period publicity language as historical evidence rather than an appearance-ranking mechanic." },
+              { id: "production_design", label: "Retail and leisure hierarchy", player_task: "Use department-store, restaurant and yacht spaces to clarify class position, consumption and movement, while avoiding unsupported claims about unverified set-construction departments." },
+              { id: "cinematography", label: "Performance-centered legibility", player_task: "Coordinate Martin's credited photography with readable bodies, reactions and social geography so Bow's performance remains active within group scenes and changing status spaces." },
+              { id: "editing", label: "Continuity across production handoff", player_task: "Maintain clear comic cause and effect across a feature assembled by Sheldon while treating von Sternberg's additional direction during Badger's illness as documented production continuity, not as a secret replacement-author theory." },
+              { id: "sound", label: "Silent release and accompaniment boundary", player_task: "Keep the 1927 production silent and separate any later live or recorded accompaniment from claims about synchronized original dialogue, effects or score." },
+              { id: "release", label: "Paramount publicity feedback loop", player_task: "Coordinate the Glyn/Cosmopolitan publicity concept, Bow's promoted persona and Paramount distribution as a release strategy, then distinguish marketing claims from what the film's performance and craft actually demonstrate." },
+            ],
+          },
+          '''
+
+          replace_once(
+              "src/core/chapterSixHollywoodExpansion.ts",
+              "  },\n] as const;\n\nexport function mergeChapterSixHollywoodExpansion(",
+              "  },\n" + it_definition + "] as const;\n\nexport function mergeChapterSixHollywoodExpansion(",
+          )
+
+          write("src/ui/data/scenarioFilmStudySilentFoundationsIt.ts", '''import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+          export const itFilmHistoryProfile = {
+            scenarioId: "scenario_it_1927",
+            period: "1927 mature Paramount Famous Lasky silent production: a Clara Bow star vehicle in which a magazine-linked Elinor Glyn property, studio writing and direction, performance, editing and Paramount distribution operate as one coordinated publicity-production system",
+            traditions: ["American silent romantic comedy", "Paramount star vehicle", "flapper-era consumer modernity", "media tie-in production", "studio publicity and star construction"],
+            before: "Clara Bow was already an ascendant Paramount performer, while Elinor Glyn had an established reputation for romantic fiction. AFI records that Paramount Famous Lasky signed Glyn to a film-adaptation arrangement and announced It as the first project, promoted around Bow; the film therefore belongs to an existing studio and publicity system rather than inventing stardom or the flapper image from nothing.",
+            moment: "Hope Loring and Louis D. Lighton write the scenario, Glyn adapts and appears as herself, Clarence Badger directs with Josef von Sternberg taking some scenes during Badger's illness, H. Kinley Martin photographs and E. Lloyd Sheldon edits. The feature connects Betty Lou's active shopgirl comedy-romance to department-store class hierarchy, consumer space and a publicity concept that explicitly links Glyn's definition of 'It' to Bow's screen persona.",
+            after: "The Library of Congress identifies It as the film best remembered for Bow's star presence and records its National Film Registry status. The production became a durable example of how a studio could amplify a performer through literary/media linkage, publicity and distribution; that legacy should be analyzed as industrial star construction without reducing Bow's performance to the period's language of sex appeal.",
+            historyQuestion: "How did Paramount coordinate a Glyn/Cosmopolitan media property, Clara Bow's active performance, studio craft and national distribution into a star vehicle, and how can we study that star-making machinery without turning publicity-era objectification into a gameplay goal?",
+            technicalHighlights: [
+              { area: "historical_context", status: "source_verified", note: "AFI dates release to 5 February 1927 and records production in late 1926; the Library of Congress places the film's Glyn/Cosmopolitan concept and Bow publicity squarely inside late-silent star culture." },
+              { area: "movement_and_tradition", status: "mapped", note: "It belongs to late American silent romantic comedy and flapper-era consumer culture. The profile does not claim the film invented the flapper, romantic comedy, star vehicles or media tie-ins." },
+              { area: "industry_and_production_context", status: "source_verified", note: "AFI identifies Paramount Famous Lasky Corp. as production company and Paramount Pictures Corp. as distributor, and documents Paramount's agreement with Glyn to make supervised adaptations beginning with It." },
+              { area: "reception_and_legacy", status: "source_verified", note: "The Library of Congress says Paramount capitalized on Glyn's popularity and Bow's promoted embodiment of 'It'; the complete Registry listing records It as added to the National Film Registry in 2001." },
+              { area: "screenplay", status: "source_verified", note: "AFI credits Hope Loring and Louis D. Lighton for scenario, Elinor Glyn for adaptation and George Marion Jr. for titles; trade-history material in the AFI record links the property to Hearst/Cosmopolitan publication." },
+              { area: "directing", status: "source_verified", note: "AFI credits Clarence Badger as director, Josef von Sternberg for additional direction and Vernon Keays as assistant director, and documents that von Sternberg handled some scenes when Badger became ill." },
+              { area: "performance", status: "source_verified", note: "The Library of Congress centers Bow's star presence and Paramount's publicity linkage between Bow and Glyn's idea of 'It'; UCLA describes the role as Bow's defining flapper-era screen vehicle. Gameplay translates this into agency, timing and scene control rather than appearance scoring." },
+              { area: "production_design", status: "mapped", note: "Department-store, restaurant, domestic and yacht spaces organize class and consumer hierarchy on screen, but the institutional sources used here do not establish a sufficiently detailed art-department workflow to justify invented set-construction claims." },
+              { area: "costume_makeup", status: "mapped", note: "Fashion and social presentation are inseparable from the film's star image and class comedy, but the sources used here do not provide a verified costume or makeup department process. The case therefore analyzes image construction without inventing a wardrobe credit or recipe." },
+              { area: "cinematography", status: "source_verified", note: "AFI and UCLA credit H. Kinley Martin as cinematographer/director of photography. The gameplay maps his documented role to performance-centered framing and social-space legibility without attributing unsupported lens or lighting specifications." },
+              { area: "lighting", status: "mapped", note: "Readable faces, bodies and group geography are central to the comedy, but the available institutional sources do not justify a film-specific lamp package or a claim that It introduced a distinctive lighting system." },
+              { area: "camera_format", status: "source_verified", note: "UCLA identifies the preserved presentation as 35mm, black-and-white, silent and 72 minutes; AFI also lists 72 minutes. Runtime is treated as a presentation value rather than proof of one immutable projection speed." },
+              { area: "editing", status: "source_verified", note: "AFI credits E. Lloyd Sheldon as editor in chief. The case uses that documented role to teach clear feature continuity and the need to absorb a temporary directing handoff without inventing an undocumented editorial intervention." },
+              { area: "sound_design", status: "source_verified", note: "UCLA identifies It as silent. No synchronized dialogue or production-effects track is assigned to the 1927 original." },
+              { area: "music", status: "mapped", note: "UCLA documents live musical accompaniment for a modern archival screening, which demonstrates exhibition practice but not a single fixed original 1927 synchronized score. The gameplay preserves that distinction." },
+              { area: "effects_animation", status: "not_central", note: "The Production Case is driven by star performance, social space, continuity and publicity coordination rather than effects or animation spectacle." },
+              { area: "documentary_method", status: "not_central", note: "It is a staged romantic comedy. Its department-store and consumer imagery can be analyzed historically, but the fiction is not treated as documentary evidence of all working women's lives in 1927." },
+            ],
+          } as const satisfies FilmHistoryProfile;
+          '''.replace("          ", ""))
+
+          write("src/ui/data/scenarioProductionVerificationIt.ts", '''import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+
+          export const itProductionCaseVerification = {
+            scenarioId: "scenario_it_1927",
+            status: "verified",
+            verifiedAt: "2026-08-15",
+            summary: "AFI, the Library of Congress and UCLA Film & Television Archive support It as a 1927 Paramount Famous Lasky star vehicle produced within Paramount's coordinated Glyn adaptation/publicity strategy. AFI credits Hope Loring and Louis D. Lighton for scenario, Elinor Glyn for adaptation, Clarence Badger for direction, Josef von Sternberg for additional direction during Badger's illness, H. Kinley Martin for photography and E. Lloyd Sheldon for editing, and documents Paramount production/distribution and the Glyn media arrangement. The Library of Congress explicitly describes Paramount's effort to capitalize on Glyn's popularity and Bow's promoted embodiment of 'It,' while UCLA confirms the 72-minute 35mm black-and-white silent presentation and core craft credits. The Production Case therefore teaches star construction as media, performance and studio coordination while refusing to turn period publicity objectification into an appearance-scoring mechanic.",
+            sources: [
+              {
+                title: "It — AFI Catalog",
+                publisher: "American Film Institute",
+                url: "https://catalog.afi.com/Film/9977-IT",
+                sourceKind: "film_institute",
+                supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
+                note: "AFI documents Paramount Famous Lasky production and Paramount distribution, the Glyn adaptation deal and Hearst/Cosmopolitan publication context, Loring/Lighton/Glyn/Marion writing credits, Badger/von Sternberg/Keays direction credits, H. Kinley Martin photography, E. Lloyd Sheldon editing, the late-1926 production history and 72-minute 1927 release."
+              },
+              {
+                title: "It (1927) — National Film Registry description",
+                publisher: "Library of Congress",
+                url: "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/",
+                sourceKind: "archive_feature",
+                supports: ["overall", "screenplay"],
+                note: "The Library of Congress describes Glyn's Cosmopolitan concept, Paramount's decision to capitalize on her popularity, the publicity claim that Bow personified 'It,' and Bow's central star presence, supporting the case's media-and-star-system framing."
+              },
+              {
+                title: "It / Children of Divorce",
+                publisher: "UCLA Film & Television Archive",
+                url: "https://cinema.ucla.edu/events/it-1927-children-of-divorce-1927-01-11-13/",
+                sourceKind: "archive_feature",
+                supports: ["overall", "cinematography", "editing", "sound"],
+                note: "UCLA identifies It as a 1927, 72-minute, 35mm, black-and-white silent film and confirms Famous Players-Lasky, Clarence Badger, Loring/Lighton, H. Kinley Martin and E. Lloyd Sheldon credits while presenting Bow's role as a defining star vehicle."
+              }
+            ]
+          } as const satisfies ProductionCaseVerificationRecord;
+          '''.replace("          ", ""))
+
+          write("src/core/chapterSixHollywoodExpansion.test.ts", '''import assert from "node:assert/strict";
+          import test from "node:test";
+
+          import { chapterSixHollywoodExpansionDefinitions } from "./chapterSixHollywoodExpansion.js";
+
+          test("Chapter 6 materializes Gold Rush, The Crowd, The Cheat and It as distinct Hollywood-system cases", () => {
+            assert.equal(chapterSixHollywoodExpansionDefinitions.length, 4);
+
+            const goldRush = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_the_gold_rush_1925");
+            assert.ok(goldRush);
+            assert.equal(goldRush.scenarioType, "star_producer_feature_comedy");
+            assert.ok(goldRush.requiredChoicesSeed.sound.includes("exclude_1942_narration_and_score"));
+
+            const crowd = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_the_crowd_1928");
+            assert.ok(crowd);
+            assert.equal(crowd.scenarioType, "studio_social_realism_production");
+            assert.ok(crowd.premise.includes("two release endings"));
+            assert.ok(crowd.requiredChoicesSeed.sound.includes("1981_restoration_score_not_original"));
+
+            const cheat = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_the_cheat_1915");
+            assert.ok(cheat);
+            assert.equal(cheat.scenarioType, "studio_melodrama_star_style_production");
+            assert.ok(cheat.requiredChoicesSeed.themes.includes("representation_ethics"));
+            assert.ok(cheat.premise.includes("Hishuru Tori"));
+            assert.ok(cheat.premise.includes("Burmese Haka Arakau"));
+
+            const itFilm = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_it_1927");
+            assert.ok(itFilm);
+            assert.equal(itFilm.title, "It");
+            assert.equal(itFilm.year, 1927);
+            assert.equal(itFilm.runtimeMins, 72);
+            assert.equal(itFilm.scenarioType, "star_vehicle_media_publicity_production");
+            assert.equal(itFilm.sourceId, "manual_it_1927");
+            assert.ok(itFilm.premise.includes("Paramount Famous Lasky"));
+            assert.ok(itFilm.premise.includes("Cosmopolitan/Hearst"));
+            assert.ok(itFilm.premise.includes("Clara Bow"));
+            assert.ok(itFilm.premise.includes("Josef von Sternberg"));
+            assert.ok(itFilm.premise.includes("not as an instruction to objectify"));
+            assert.ok(itFilm.requiredChoicesSeed.screenplay.includes("media_tie_in_adaptation"));
+            assert.ok(itFilm.requiredChoicesSeed.editing.includes("badger_sternberg_production_continuity"));
+            assert.ok(itFilm.requiredChoicesSeed.sound.includes("silent_1927_release"));
+            assert.ok(itFilm.requiredChoicesSeed.sound.includes("later_accompaniment_not_original"));
+            assert.ok(itFilm.requiredChoicesSeed.themes.includes("star_system"));
+            assert.ok(itFilm.learningGoals.some((goal) => goal.includes("instead of appearance scoring")));
+            assert.ok(itFilm.learningGoals.length >= 6);
+            assert.ok(itFilm.phases.length >= 9);
+          });
+          '''.replace("          ", ""))
+
+          replace_once(
+              "src/ui/data/scenarioFilmStudyMap.ts",
+              'import { theCheatFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsTheCheat";\n',
+              'import { theCheatFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsTheCheat";\nimport { itFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsIt";\n',
+          )
+          replace_once(
+              "src/ui/data/scenarioFilmStudyMap.ts",
+              '  [theCheatFilmHistoryProfile.scenarioId]: theCheatFilmHistoryProfile,\n',
+              '  [theCheatFilmHistoryProfile.scenarioId]: theCheatFilmHistoryProfile,\n  [itFilmHistoryProfile.scenarioId]: itFilmHistoryProfile,\n',
+          )
+
+          replace_once(
+              "src/ui/data/scenarioProductionVerificationRegistry.ts",
+              'import { theCheatProductionCaseVerification } from "./scenarioProductionVerificationTheCheat";\n',
+              'import { theCheatProductionCaseVerification } from "./scenarioProductionVerificationTheCheat";\nimport { itProductionCaseVerification } from "./scenarioProductionVerificationIt";\n',
+          )
+          replace_once(
+              "src/ui/data/scenarioProductionVerificationRegistry.ts",
+              '  theCheatProductionCaseVerification,\n',
+              '  theCheatProductionCaseVerification,\n  itProductionCaseVerification,\n',
+          )
+
+          replace_once(
+              "scripts/film-history-chapter-six-atlas-audit.mjs",
+              'const EXPECTED_ATLAS_COUNT = 401;',
+              'const EXPECTED_ATLAS_COUNT = 402;',
+          )
+          replace_once(
+              "scripts/film-history-chapter-six-atlas-audit.mjs",
+              '  USE_EXISTING: ["The Cheat", "The Crowd", "The General", "The Gold Rush"],\n  P0: [],\n  P1: ["It", "Wings"],',
+              '  USE_EXISTING: ["It", "The Cheat", "The Crowd", "The General", "The Gold Rush"],\n  P0: [],\n  P1: ["Wings"],',
+          )
+
+          replace_once(
+              "scripts/production-case-rest-audit.mjs",
+              'const EXPECTED_PLAYABLE_SCENARIOS = 401;\nconst EXPECTED_VERIFIED_PRODUCTION_CASES = 401;',
+              'const EXPECTED_PLAYABLE_SCENARIOS = 402;\nconst EXPECTED_VERIFIED_PRODUCTION_CASES = 402;',
+          )
+          PY
+      - name: Full v0.1 verification
+        run: npm run verify:v0.1
+      - name: Commit verified materialization and remove temporary workflow
+        shell: bash
+        run: |
+          rm .github/workflows/it-1927-materialize.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Complete It 1927 production case"
+          git push origin HEAD:agent/it-1927
