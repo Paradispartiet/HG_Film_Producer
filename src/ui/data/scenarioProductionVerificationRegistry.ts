@@ -36,6 +36,7 @@ import { storyOfTheKellyGangProductionCaseVerification } from "./scenarioProduct
 import { queenElizabethProductionCaseVerification } from "./scenarioProductionVerificationQueenElizabeth";
 import { trafficInSoulsProductionCaseVerification } from "./scenarioProductionVerificationTrafficInSouls";
 import { fantomasProductionCaseVerification } from "./scenarioProductionVerificationFantomas";
+import { cabiriaProductionCaseVerification } from "./scenarioProductionVerificationCabiria";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -189,6 +190,7 @@ const additionalVerificationRecords = [
   queenElizabethProductionCaseVerification,
   trafficInSoulsProductionCaseVerification,
   fantomasProductionCaseVerification,
+  cabiriaProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
