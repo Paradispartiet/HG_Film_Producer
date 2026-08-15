@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   materialize:
-    if: github.actor != 'github-actions[bot]'
+    if: ${{ github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,8 +24,13 @@ jobs:
       - run: npm ci
       - name: Materialize Cabiria and permanent gates
         shell: bash
+        env:
+          CABIRIA_BLOCK_B64: ICB9LAogIHsKICAgIGlkOiAic2NlbmFyaW9fY2FiaXJpYV8xOTE0IiwKICAgIHRpdGxlOiAiQ2FiaXJpYSIsCiAgICBvcmlnaW5hbFRpdGxlOiAiQ2FiaXJpYSIsCiAgICBhbGlhc2VzOiBbXSwKICAgIHllYXI6IDE5MTQsCiAgICB0aXRsZVR5cGU6ICJGZWF0dXJlIiwKICAgIHJ1bnRpbWVNaW5zOiAxNjksCiAgICBkaXJlY3RvcnM6IFsiR2lvdmFubmkgUGFzdHJvbmUiXSwKICAgIGdlbnJlczogWyJBZHZlbnR1cmUiLCAiRHJhbWEiLCAiSGlzdG9yeSIsICJXYXIiXSwKICAgIHByZW1pc2U6ICJCdWlsZCBDYWJpcmlhIGFzIGEgMTkxNCBJdGFsYSBGaWxtIHByb2R1Y3Rpb24gcHJvYmxlbSBpbiBmZWF0dXJlLXNjYWxlIGhpc3RvcmljYWwgc3BlY3RhY2xlOiBjb29yZGluYXRlIG1vbnVtZW50YWwgYXJjaGl0ZWN0dXJlLCBjcm93ZHMsIHBlcmZvcm1hbmNlLCBtb2JpbGUgY2FtZXJhIHdvcmssIGVmZmVjdHMsIGxpdGVyYXJ5LXByZXN0aWdlIGludGVydGl0bGVzLCBvcmlnaW5hbCBtdXNpYyBhbmQgaW50ZXJuYXRpb25hbCBleHBvcnQgYW1iaXRpb24gYWNyb3NzIGEgbG9uZyBtdWx0aS1yZWVsIG5hcnJhdGl2ZS4gS2VlcCBHaW92YW5uaSBQYXN0cm9uZSdzIHByb2R1Y3Rpb24gYXV0aG9yc2hpcCBkaXN0aW5jdCBmcm9tIEdhYnJpZWxlIEQnQW5udW56aW8ncyBjcmVkaXRlZCBwcmVzdGlnZSBjb250cmlidXRpb24sIHVzZSB0aGUgZG9jdW1lbnRlZCBtdWx0aS1wZXJzb24gY2luZW1hdG9ncmFwaHkgdGVhbSBpbmNsdWRpbmcgU2VndW5kbyBkZSBDaG9tw7NuIHJhdGhlciB0aGFuIGEgbG9uZS1nZW5pdXMgY2FtZXJhIG15dGgsIGFuZCBwcmVzZXJ2ZSB0aGUgYXJjaGl2YWwgYm91bmRhcnkgYmV0d2VlbiB0aGUgcmVjb25zdHJ1Y3RlZCAxOTE0IGVkaXRpb24gYW5kIFBhc3Ryb25lJ3Mgc3Vic3RhbnRpYWxseSBhbHRlcmVkIDE5MzEgc291bmQgcmVpc3N1ZS4iLAogICAgc291cmNlSWQ6ICJtYW51YWxfY2FiaXJpYV8xOTE0IiwKICAgIHNvdXJjZVVybDogImh0dHBzOi8vd3d3Mi5tdXNlb2NpbmVtYS5pdC9yZXN0YXVyaS9tdXRpX3Jlc3RhdXJhdGkucGhwP2lkPTM0Jmw9ZW4iLAogICAgc2NlbmFyaW9UeXBlOiAiaGlzdG9yaWNhbF9lcGljX3Byb2R1Y3Rpb24iLAogICAgcmVxdWlyZWRDaG9pY2VzU2VlZDoge1xuICAgICAgc2NyZWVucGxheTogWyJzZWNvbmRfcHVuaWNfd2FyX2VwaWNfc3RydWN0dXJlIiwgImNhYmlyaWFfZnVsdmlvX21hY2lzdGVfcGFyYWxsZWxfYXJjcyIsICJkYW5udW56aW9fcHJlc3RpZ2VfaW50ZXJ0aXRsZXMiXSwKICAgICAgY2FtZXJhOiBbIm1vbnVtZW50YWxfc2V0X3JldmVsYXRpb24iLCAibW92aW5nX2NhbWVyYV9zcGF0aWFsX2Rpc2NvdmVyeSIsICJjcm93ZF9hbmRfYXJjaGl0ZWN0dXJlX3NjYWxlIl0sCiAgICAgIGVkaXRpbmc6IFsibXVsdGlfcmVlbF9lcGljX3Byb2dyZXNzaW9uIiwgInBhcmFsbGVsX2hpc3RvcmljYWxfc3RvcnlsaW5lcyIsICIxOTE0XzE5MzFfdmVyc2lvbl9ib3VuZGFyeSJdLAogICAgICBzb3VuZDogWyJzaWxlbnRfcGhvdG9ncmFwaGVkX3Byb2R1Y3Rpb24iLCAicGl6emV0dGlfbWF6emFfb3JpZ2luYWxfbXVzaWMiLCAibGl2ZV9leGhpYml0aW9uX25vdF8xOTMxX3N5bmNfc291bmQiXSwKICAgICAgdGhlbWVzOiBbImZpbG1faGlzdG9yeSIsICJpdGFsaWFuX3NpbGVudF9jaW5lbWEiLCAiaXRhbGFfZmlsbSIsICJoaXN0b3JpY2FsX3NwZWN0YWNsZSIsICJpbnRlcm5hdGlvbmFsX2V4cG9ydCJdLAogICAgfSwKICAgIGxlYXJuaW5nR29hbHM6IFtcbiAgICAgICJQbGFuIGEgaGlzdG9yaWNhbCBmZWF0dXJlIHdob3NlIHNjYWxlIGNvbWVzIGZyb20gY29vcmRpbmF0ZWQgYXJjaGl0ZWN0dXJlLCBjcm93ZHMsIHBlcmZvcm1hbmNlLCBjYW1lcmEgbW92ZW1lbnQgYW5kIGVmZmVjdHMgcmF0aGVyIHRoYW4gZnJvbSBsYXJnZSBzZXRzIHRyZWF0ZWQgYXMgZGVjb3JhdGlvbiBhbG9uZS4iLAogICAgICAiVXNlIG1vYmlsZSBjYW1lcmEgd29yayB0byByZXZlYWwgc3BhdGlhbCByZWxhdGlvbnNoaXBzIGluc2lkZSBtb251bWVudGFsIHN0YWdpbmcgd2hpbGUgYXZvaWRpbmcgdGhlIGZhbHNlIGNsYWltIHRoYXQgQ2FiaXJpYSBvciBvbmUgY2luZW1hdG9ncmFwaGVyIHNpbmdsZS1oYW5kZWRseSBpbnZlbnRlZCBjYW1lcmEgbW92ZW1lbnQuIiwKICAgICAgIktlZXAgUGFzdHJvbmUncyBkaXJlY3Rpb24sIHByb2R1Y3Rpb24gYW5kIGRlc2lnbiByZXNwb25zaWJpbGl0aWVzIGRpc3RpbmN0IGZyb20gRCdBbm51bnppbydzIGNyZWRpdGVkIHNjcmVlbnBsYXkvaW50ZXJ0aXRsZSBwcmVzdGlnZSBjb250cmlidXRpb24uIiwKICAgICAgIkludGVncmF0ZSB0aGUgZG9jdW1lbnRlZCBjaW5lbWF0b2dyYXBoeSB0ZWFtIGFuZCBTZWd1bmRvIGRlIENob23Ds24ncyBlZmZlY3RzIHJvbGUgaW50byBvbmUgcHJvZHVjdGlvbiBzeXN0ZW0gaW5zdGVhZCBvZiBjb2xsYXBzaW5nIHRoZSBmaWxtIGludG8gYSBzaW5nbGUtYXV0aG9yIGxlZ2VuZC4iLAogICAgICAiVHJlYXQgUGl6emV0dGkgYW5kIE1henphJ3Mgb3JpZ2luYWwgbXVzaWNhbCBwcm9ncmFtbWUgYXMgZXhoaWJpdGlvbi1zY2FsZSBkZXNpZ24gd2hpbGUga2VlcGluZyBwaG90b2dyYXBoZWQgcHJvZHVjdGlvbiBzaWxlbnQgYW5kIGxhdGVyIHN5bmNocm9uaXplZCBzb3VuZCBzZXBhcmF0ZS4iLAogICAgICAiUHJlc2VydmUgdmVyc2lvbiBjcml0aWNpc206IHRoZSByZWNvbnN0cnVjdGVkIDE5MTQgZWRpdGlvbiBhbmQgUGFzdHJvbmUncyBhbHRlcmVkIDE5MzEgc291bmQgcmVpc3N1ZSBhcmUgZGlmZmVyZW50IGhpc3RvcmljYWwgb2JqZWN0cyBhbmQgbXVzdCBub3QgYmUgc2lsZW50bHkgbWVyZ2VkLiIsCiAgICBdLAogICAgcGhhc2VzOiBbXG4gICAgICB7IGlkOiAicGl0Y2giLCBsYWJlbDogIkludGVybmF0aW9uYWwgZXBpYyBwaXRjaCIsIHBsYXllcl90YXNrOiAiRGVmaW5lIHdoeSBhIGxvbmcgUHVuaWMgV2FyIHNwZWN0YWNsZSBjYW4ganVzdGlmeSBjb25jZW50cmF0ZWQgSXRhbGEgRmlsbSByZXNvdXJjZXMgYW5kIGV4cG9ydCBhbWJpdGlvbiB0aHJvdWdoIGludGVncmF0ZWQgc2NhbGUsIHN0b3J5IGFuZCBwcmVzdGlnZS4iIH0sCiAgICAgIHsgaWQ6ICJyZXNlYXJjaCIsIGxhYmVsOiAiQXJjaGl2ZSBhbmQgdmVyc2lvbiByZXNlYXJjaCIsIHBsYXllcl90YXNrOiAiR3JvdW5kIFBhc3Ryb25lLCBJdGFsYSBGaWxtLCBEJ0FubnVuemlvLCB0aGUgY2luZW1hdG9ncmFwaHkgdGVhbSwgQ2hvbcOzbiwgUGl6emV0dGkvTWF6emEgYW5kIHRoZSAxOTE0LzE5MzEgdmVyc2lvbiBib3VuZGFyeSBpbiBpbnN0aXR1dGlvbmFsIGV2aWRlbmNlLiIgfSwKICAgICAgeyBpZDogInNjcmVlbnBsYXkiLCBsYWJlbDogIk11bHRpLXJlZWwgaGlzdG9yaWNhbCBzdHJ1Y3R1cmUiLCBwbGF5ZXJfdGFzazogIkNvb3JkaW5hdGUgQ2FiaXJpYSdzIGZhdGUsIEZ1bHZpbyBhbmQgTWFjaXN0ZSdzIHJlc2N1ZSBhY3Rpb25zIGFuZCBsYXJnZSBoaXN0b3JpY2FsIGV2ZW50cyBzbyB0aGUgZmVhdHVyZSBkZXZlbG9wcyByYXRoZXIgdGhhbiBiZWNvbWluZyBhIGNoYWluIG9mIGRpc2Nvbm5lY3RlZCB0YWJsZWF1eC4iIH0sCiAgICAgIHsgaWQ6ICJjYXN0aW5nIiwgbGFiZWw6ICJCb2RpZXMgaW5zaWRlIHNwZWN0YWNsZSIsIHBsYXllcl90YXNrOiAiS2VlcCBDYWJpcmlhLCBGdWx2aW8sIE1hY2lzdGUsIFNvZmluaXNiYSBhbmQgcG9saXRpY2FsIGZpZ3VyZXMgcmVjb2duaXphYmxlIGFuZCBkcmFtYXRpY2FsbHkgZnVuY3Rpb25hbCBldmVuIHdoZW4gYXJjaGl0ZWN0dXJlIGFuZCBjcm93ZHMgZG9taW5hdGUgdGhlIGZyYW1lLiIgfSwKICAgICAgeyBpZDogInByb2R1Y3Rpb25fZGVzaWduIiwgbGFiZWw6ICJNb251bWVudGFsIGhpc3RvcmljYWwgd29ybGQiLCBwbGF5ZXJfdGFzazogIkRlc2lnbiB0ZW1wbGVzLCBwYWxhY2VzLCBzdHJlZXRzIGFuZCBtYXNzLWFjdGlvbiByb3V0ZXMgYXMgcGxheWFibGUgZHJhbWF0aWMgc3BhY2VzIHdob3NlIHNjYWxlIGNhbiBiZSByZXZlYWxlZCBieSBib2RpZXMgYW5kIGNhbWVyYSBtb3ZlbWVudC4iIH0sCiAgICAgIHsgaWQ6ICJjaW5lbWF0b2dyYXBoeSIsIGxhYmVsOiAiTW9iaWxlIHNwYXRpYWwgcmV2ZWxhdGlvbiIsIHBsYXllcl90YXNrOiAiQ29vcmRpbmF0ZSB0aGUgZG9jdW1lbnRlZCBtdWx0aS1wZXJzb24gY2FtZXJhIHVuaXQgYXJvdW5kIGRlZXAgc3RhZ2luZyBhbmQgbW92aW5nIHZpZXdzIHRoYXQgZGlzY2xvc2UgYXJjaGl0ZWN0dXJlLCBlbnRyYW5jZXMsIGNyb3dkcyBhbmQgY2hhbmdpbmcgcG93ZXIgcmVsYXRpb25zaGlwcy4iIH0sCiAgICAgIHsgaWQ6ICJlZGl0aW5nIiwgbGFiZWw6ICJFcGljIHByb2dyZXNzaW9uIGFuZCB2ZXJzaW9ucyIsIHBsYXllcl90YXNrOiAiU3VzdGFpbiBtdWx0aXBsZSBzdG9yeWxpbmVzIGFjcm9zcyBhIGxvbmcgZmVhdHVyZSB3aGlsZSBtYXJraW5nIHRoZSByZWNvbnN0cnVjdGVkIDE5MTQgZWRpdGlvbiBhbmQgMTkzMSBzb3VuZCByZWlzc3VlIGFzIHNlcGFyYXRlIHZlcnNpb24gaGlzdG9yaWVzLiIgfSwKICAgICAgeyBpZDogInNvdW5kIiwgbGFiZWw6ICJTaWxlbnQgaW1hZ2UsIGRlc2lnbmVkIG11c2ljIiwgcGxheWVyX3Rhc2s6ICJLZWVwIHByb2R1Y3Rpb24gc2lsZW50LCBpbnRlZ3JhdGUgdGhlIGRvY3VtZW50ZWQgUGl6emV0dGkvTWF6emEgbXVzaWNhbCBwcm9ncmFtbWUgYXMgZXhoaWJpdGlvbiBkZXNpZ24sIGFuZCBleGNsdWRlIGxhdGVyIHN5bmNocm9uaXplZCBtYXRlcmlhbCBmcm9tIHRoZSAxOTE0IHByb2R1Y3Rpb24gbW9kZWwuIiB9LAogICAgICB7IGlkOiAicmVsZWFzZSIsIGxhYmVsOiAiUHJlc3RpZ2UgZXhwb3J0IGVjb25vbXkiLCBwbGF5ZXJfdGFzazogIk1vZGVsIENhYmlyaWEgYXMgYW4gaW50ZXJuYXRpb25hbCBwcmVzdGlnZSBwcm9kdWN0IHdob3NlIHVudXN1YWwgc2NhbGUsIG11c2ljLCBhdXRob3JzaGlwIGJyYW5kaW5nIGFuZCBmZWF0dXJlIGxlbmd0aCBoYWQgdG8ganVzdGlmeSBoaWdoZXIgcHJvZHVjdGlvbiBhbmQgZXhoaWJpdGlvbiByaXNrLiIgfSwKICAgIF0sCg==
+          CH5_TEST_B64: aW1wb3J0IGFzc2VydCBmcm9tICJub2RlOmFzc2VydC9zdHJpY3QiOwppbXBvcnQgdGVzdCBmcm9tICJub2RlOnRlc3QiOwoKaW1wb3J0IHsgY2hhcHRlckZpdmVJbnRlcm5hdGlvbmFsRXhwYW5zaW9uRGVmaW5pdGlvbnMgfSBmcm9tICIuL2NoYXB0ZXJGaXZlSW50ZXJuYXRpb25hbEV4cGFuc2lvbi5qcyI7Cgp0ZXN0KCJDaGFwdGVyIDUga2VlcHMgRmFudMO0bWFzIGFuZCBDYWJpcmlhIGFzIG1hdGVyaWFsaXplZCBpbnRlcm5hdGlvbmFsIGV4cGFuc2lvbiBjYXNlcyIsICgpID0+IHsKICBhc3NlcnQuZXF1YWwoY2hhcHRlckZpdmVJbnRlcm5hdGlvbmFsRXhwYW5zaW9uRGVmaW5pdGlvbnMubGVuZ3RoLCAyKTsKCiAgY29uc3QgZmFudG9tYXMgPSBjaGFwdGVyRml2ZUludGVybmF0aW9uYWxFeHBhbnNpb25EZWZpbml0aW9ucy5maW5kKChpdGVtKSA9PiBpdGVtLmlkID09PSAic2NlbmFyaW9fZmFudG9tYXNfMTkxMyIpOwogIGFzc2VydC5vayhmYW50b21hcyk7CiAgYXNzZXJ0LmVxdWFsKGZhbnRvbWFzLnRpdGxlLCAiRmFudMO0bWFzIik7CiAgYXNzZXJ0LmVxdWFsKGZhbnRvbWFzLnllYXIsIDE5MTMpOwogIGFzc2VydC5lcXVhbChmYW50b21hcy5zY2VuYXJpb1R5cGUsICJjcmltZV90aHJpbGxlcl9wcm9kdWN0aW9uIik7CiAgYXNzZXJ0Lm9rKGZhbnRvbWFzLmFsaWFzZXMuaW5jbHVkZXMoIkZhbnRvbWFzIikpOwogIGFzc2VydC5vayhmYW50b21hcy5sZWFybmluZ0dvYWxzLmxlbmd0aCA+PSA1KTsKICBhc3NlcnQub2soZmFudG9tYXMucGhhc2VzLmxlbmd0aCA+PSA5KTsKCiAgY29uc3QgY2FiaXJpYSA9IGNoYXB0ZXJGaXZlSW50ZXJuYXRpb25hbEV4cGFuc2lvbkRlZmluaXRpb25zLmZpbmQoKGl0ZW0pID0+IGl0ZW0uaWQgPT09ICJzY2VuYXJpb19jYWJpcmlhXzE5MTQiKTsKICBhc3NlcnQub2soY2FiaXJpYSk7CiAgYXNzZXJ0LmVxdWFsKGNhYmlyaWEudGl0bGUsICJDYWJpcmlhIik7CiAgYXNzZXJ0LmVxdWFsKGNhYmlyaWEueWVhciwgMTkxNCk7CiAgYXNzZXJ0LmVxdWFsKGNhYmlyaWEuc2NlbmFyaW9UeXBlLCAiaGlzdG9yaWNhbF9lcGljX3Byb2R1Y3Rpb24iKTsKICBhc3NlcnQuZXF1YWwoY2FiaXJpYS5ydW50aW1lTWlucywgMTY5KTsKICBhc3NlcnQub2soY2FiaXJpYS5sZWFybmluZ0dvYWxzLmxlbmd0aCA+PSA2KTsKICBhc3NlcnQub2soY2FiaXJpYS5waGFzZXMubGVuZ3RoID49IDkpOwp9KTsK
         run: |
-          python3 <<'PY'
+          python3 - <<'PY'
+          import base64
+          import os
           from pathlib import Path
 
           def replace_once(path, old, new):
@@ -40,51 +45,12 @@ jobs:
           marker = "  },\n] as const;"
           if marker not in text:
               raise SystemExit("Cabiria insertion marker missing")
-          cabiria = '''  },
-  {
-    id: "scenario_cabiria_1914",
-    title: "Cabiria",
-    originalTitle: "Cabiria",
-    aliases: [],
-    year: 1914,
-    titleType: "Feature",
-    runtimeMins: 169,
-    directors: ["Giovanni Pastrone"],
-    genres: ["Adventure", "Drama", "History", "War"],
-    premise: "Build Cabiria as a 1914 Itala Film production problem in feature-scale historical spectacle: coordinate monumental architecture, crowds, performance, mobile camera work, effects, literary-prestige intertitles, original music and international export ambition across a long multi-reel narrative. Keep Giovanni Pastrone's production authorship distinct from Gabriele D'Annunzio's credited prestige contribution, use the documented multi-person cinematography team including Segundo de Chomón rather than a lone-genius camera myth, and preserve the archival boundary between the reconstructed 1914 edition and Pastrone's substantially altered 1931 sound reissue.",
-    sourceId: "manual_cabiria_1914",
-    sourceUrl: "https://www2.museocinema.it/restauri/muti_restaurati.php?id=34&l=en",
-    scenarioType: "historical_epic_production",
-    requiredChoicesSeed: {
-      screenplay: ["second_punic_war_epic_structure", "cabiria_fulvio_maciste_parallel_arcs", "dannunzio_prestige_intertitles"],
-      camera: ["monumental_set_revelation", "moving_camera_spatial_discovery", "crowd_and_architecture_scale"],
-      editing: ["multi_reel_epic_progression", "parallel_historical_storylines", "1914_1931_version_boundary"],
-      sound: ["silent_photographed_production", "pizzetti_mazza_original_music", "live_exhibition_not_1931_sync_sound"],
-      themes: ["film_history", "italian_silent_cinema", "itala_film", "historical_spectacle", "international_export"],
-    },
-    learningGoals: [
-      "Plan a historical feature whose scale comes from coordinated architecture, crowds, performance, camera movement and effects rather than from large sets treated as decoration alone.",
-      "Use mobile camera work to reveal spatial relationships inside monumental staging while avoiding the false claim that Cabiria or one cinematographer single-handedly invented camera movement.",
-      "Keep Pastrone's direction, production and design responsibilities distinct from D'Annunzio's credited screenplay/intertitle prestige contribution.",
-      "Integrate the documented cinematography team and Segundo de Chomón's effects role into one production system instead of collapsing the film into a single-author legend.",
-      "Treat Pizzetti and Mazza's original musical programme as exhibition-scale design while keeping photographed production silent and later synchronized sound separate.",
-      "Preserve version criticism: the reconstructed 1914 edition and Pastrone's altered 1931 sound reissue are different historical objects and must not be silently merged.",
-    ],
-    phases: [
-      { id: "pitch", label: "International epic pitch", player_task: "Define why a long Punic War spectacle can justify concentrated Itala Film resources and export ambition through integrated scale, story and prestige." },
-      { id: "research", label: "Archive and version research", player_task: "Ground Pastrone, Itala Film, D'Annunzio, the cinematography team, Chomón, Pizzetti/Mazza and the 1914/1931 version boundary in institutional evidence." },
-      { id: "screenplay", label: "Multi-reel historical structure", player_task: "Coordinate Cabiria's fate, Fulvio and Maciste's rescue actions and large historical events so the feature develops rather than becoming a chain of disconnected tableaux." },
-      { id: "casting", label: "Bodies inside spectacle", player_task: "Keep Cabiria, Fulvio, Maciste, Sofonisba and political figures recognizable and dramatically functional even when architecture and crowds dominate the frame." },
-      { id: "production_design", label: "Monumental historical world", player_task: "Design temples, palaces, streets and mass-action routes as playable dramatic spaces whose scale can be revealed by bodies and camera movement." },
-      { id: "cinematography", label: "Mobile spatial revelation", player_task: "Coordinate the documented multi-person camera unit around deep staging and moving views that disclose architecture, entrances, crowds and changing power relationships." },
-      { id: "editing", label: "Epic progression and versions", player_task: "Sustain multiple storylines across a long feature while marking the reconstructed 1914 edition and 1931 sound reissue as separate version histories." },
-      { id: "sound", label: "Silent image, designed music", player_task: "Keep production silent, integrate the documented Pizzetti/Mazza musical programme as exhibition design, and exclude later synchronized material from the 1914 production model." },
-      { id: "release", label: "Prestige export economy", player_task: "Model Cabiria as an international prestige product whose unusual scale, music, authorship branding and feature length had to justify higher production and exhibition risk." },
-    ],
-'''
+          cabiria = base64.b64decode(os.environ["CABIRIA_BLOCK_B64"]).decode()
           chapter.write_text(text.replace(marker, cabiria + "] as const;", 1))
 
-          Path("src/core/chapterFiveInternationalExpansion.test.ts").write_text('''import assert from "node:assert/strict";\nimport test from "node:test";\n\nimport { chapterFiveInternationalExpansionDefinitions } from "./chapterFiveInternationalExpansion.js";\n\ntest("Chapter 5 keeps Fantômas and Cabiria as materialized international expansion cases", () => {\n  assert.equal(chapterFiveInternationalExpansionDefinitions.length, 2);\n\n  const fantomas = chapterFiveInternationalExpansionDefinitions.find((item) => item.id === "scenario_fantomas_1913");\n  assert.ok(fantomas);\n  assert.equal(fantomas.title, "Fantômas");\n  assert.equal(fantomas.year, 1913);\n  assert.equal(fantomas.scenarioType, "crime_thriller_production");\n  assert.ok(fantomas.aliases.includes("Fantomas"));\n  assert.ok(fantomas.learningGoals.length >= 5);\n  assert.ok(fantomas.phases.length >= 9);\n\n  const cabiria = chapterFiveInternationalExpansionDefinitions.find((item) => item.id === "scenario_cabiria_1914");\n  assert.ok(cabiria);\n  assert.equal(cabiria.title, "Cabiria");\n  assert.equal(cabiria.year, 1914);\n  assert.equal(cabiria.scenarioType, "historical_epic_production");\n  assert.equal(cabiria.runtimeMins, 169);\n  assert.ok(cabiria.learningGoals.length >= 6);\n  assert.ok(cabiria.phases.length >= 9);\n});\n''')
+          Path("src/core/chapterFiveInternationalExpansion.test.ts").write_text(
+              base64.b64decode(os.environ["CH5_TEST_B64"]).decode()
+          )
 
           replace_once(
               "src/ui/data/scenarioFilmStudyMap.ts",
@@ -114,7 +80,7 @@ jobs:
               '  USE_EXISTING: ["Fantômas", "Queen Elizabeth", "Traffic in Souls"],',
               '  USE_EXISTING: ["Cabiria", "Fantômas", "Queen Elizabeth", "Traffic in Souls"],'
           )
-          replace_once("scripts/film-history-chapter-five-atlas-audit.mjs", '  P0: ["Cabiria"],', '  P0: [],')
+          replace_once("scripts/film-history-chapter-five-atlas-audit.mjs", '  P0: ["Cabiria"],', '  P0: []')
           PY
       - name: Verify complete Cabiria branch
         run: npm run verify:v0.1
@@ -124,6 +90,6 @@ jobs:
           rm .github/workflows/cabiria-materialize.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/core/chapterFiveInternationalExpansion.ts src/core/chapterFiveInternationalExpansion.test.ts src/ui/data/scenarioFilmStudyMap.ts src/ui/data/scenarioProductionVerificationRegistry.ts scripts/production-case-rest-audit.mjs scripts/film-history-chapter-five-atlas-audit.mjs .github/workflows/cabiria-materialize.yml
+          git add -A
           git commit -m "Materialize Cabiria Chapter 5 production case"
           git push origin HEAD:agent/cabiria-1914
