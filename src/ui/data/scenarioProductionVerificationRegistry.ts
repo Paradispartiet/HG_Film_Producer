@@ -38,6 +38,7 @@ import { trafficInSoulsProductionCaseVerification } from "./scenarioProductionVe
 import { fantomasProductionCaseVerification } from "./scenarioProductionVerificationFantomas";
 import { cabiriaProductionCaseVerification } from "./scenarioProductionVerificationCabiria";
 import { afgrundenProductionCaseVerification } from "./scenarioProductionVerificationAfgrunden";
+import { atlantisProductionCaseVerification } from "./scenarioProductionVerificationAtlantis";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -193,6 +194,7 @@ const additionalVerificationRecords = [
   fantomasProductionCaseVerification,
   cabiriaProductionCaseVerification,
   afgrundenProductionCaseVerification,
+  atlantisProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

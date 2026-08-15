@@ -3,8 +3,8 @@ import test from "node:test";
 
 import { chapterFiveInternationalExpansionDefinitions } from "./chapterFiveInternationalExpansion.js";
 
-test("Chapter 5 keeps Fantômas, Cabiria and Afgrunden as materialized international expansion cases", () => {
-  assert.equal(chapterFiveInternationalExpansionDefinitions.length, 3);
+test("Chapter 5 keeps Fantômas, Cabiria, Afgrunden and Atlantis as materialized international expansion cases", () => {
+  assert.equal(chapterFiveInternationalExpansionDefinitions.length, 4);
 
   const fantomas = chapterFiveInternationalExpansionDefinitions.find((item) => item.id === "scenario_fantomas_1913");
   assert.ok(fantomas);
@@ -36,4 +36,16 @@ test("Chapter 5 keeps Fantômas, Cabiria and Afgrunden as materialized internati
   assert.ok(afgrunden.requiredChoicesSeed.camera.includes("performance_centered_framing"));
   assert.ok(afgrunden.learningGoals.length >= 6);
   assert.ok(afgrunden.phases.length >= 9);
+
+  const atlantis = chapterFiveInternationalExpansionDefinitions.find((item) => item.id === "scenario_atlantis_1913");
+  assert.ok(atlantis);
+  assert.equal(atlantis.title, "Atlantis");
+  assert.equal(atlantis.year, 1913);
+  assert.equal(atlantis.scenarioType, "international_literary_feature_production");
+  assert.equal(atlantis.runtimeMins, 114);
+  assert.equal(atlantis.sourceId, "manual_atlantis_1913");
+  assert.ok(atlantis.requiredChoicesSeed.editing.includes("market_specific_ending_strategy"));
+  assert.ok(atlantis.requiredChoicesSeed.camera.includes("two_cinematographer_scale_coordination"));
+  assert.ok(atlantis.learningGoals.length >= 6);
+  assert.ok(atlantis.phases.length >= 9);
 });
