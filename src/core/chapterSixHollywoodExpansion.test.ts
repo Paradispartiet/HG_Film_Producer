@@ -27,7 +27,10 @@ test("Chapter 6 materializes The Gold Rush and The Crowd as distinct Hollywood-s
   assert.equal(crowd.sourceId, "manual_the_crowd_1928");
   assert.ok(crowd.aliases.includes("The Mob"));
   assert.ok(crowd.premise.includes("Metro-Goldwyn-Mayer"));
+  assert.ok(crowd.premise.includes("two release endings"));
+  assert.ok(crowd.premise.includes("1981 Brownlow-Gill restoration"));
   assert.ok(crowd.requiredChoicesSeed.camera.includes("concealed_camera_new_york_exteriors"));
+  assert.ok(crowd.requiredChoicesSeed.editing.includes("preview_tested_endings"));
   assert.ok(crowd.requiredChoicesSeed.editing.includes("exhibitor_ending_version_control"));
   assert.ok(crowd.requiredChoicesSeed.sound.includes("silent_1928_release"));
   assert.ok(crowd.requiredChoicesSeed.sound.includes("1981_restoration_score_not_original"));
