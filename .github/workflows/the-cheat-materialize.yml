@@ -1,0 +1,267 @@
+name: Materialize The Cheat production case
+
+on:
+  push:
+    branches:
+      - agent/the-cheat-1915
+    paths:
+      - .github/workflows/the-cheat-materialize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/the-cheat-1915
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Write The Cheat case and guarded registry updates
+        shell: bash
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          def write(path, content):
+              target = Path(path)
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_text(content, encoding="utf-8")
+
+          def replace_once(path, old, new):
+              target = Path(path)
+              text = target.read_text(encoding="utf-8")
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"Expected exactly one marker in {path}, found {count}: {old[:120]!r}")
+              target.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+          cheat_definition = '''  {
+            id: "scenario_the_cheat_1915",
+            title: "The Cheat",
+            originalTitle: "The Cheat",
+            aliases: [],
+            year: 1915,
+            titleType: "Feature",
+            runtimeMins: 59,
+            directors: ["Cecil B. DeMille"],
+            genres: ["Drama"],
+            premise: "Build The Cheat as a 1915 Jesse L. Lasky Feature Play Company melodrama distributed by Paramount, where company organization and a distinctive visual house style become part of the same production system. Coordinate Hector Turnbull and Jeanie Macpherson's scenario work, Cecil B. DeMille's direction, Alvin Wyckoff's cinematography and Wilfred Buckland's art direction across a five-reel silent feature whose selective low-key lighting, elaborate interiors and restrained Hayakawa performance became central to its impact. Treat Sessue Hayakawa's star-making performance and the film's racialized villain construction as two inseparable historical facts: analyze how craft manufactured fascination and threat without asking the player to reproduce anti-Asian stereotype or sexualized coercion as a creative target. Keep the original 1915 Hishuru Tori version distinct from Paramount's 1918 reissue, which renamed and re-identified the character as Burmese Haka Arakau, and keep Robert Israel's 1994 restoration score outside claims about original synchronized production sound.",
+            sourceId: "manual_the_cheat_1915",
+            sourceUrl: "https://catalog.afi.com/Catalog/moviedetails/1815",
+            scenarioType: "studio_melodrama_star_style_production",
+            requiredChoicesSeed: {
+              screenplay: ["society_melodrama_debt_and_coercion", "causal_pressure_without_racial_othering", "courtroom_disclosure_arc"],
+              camera: ["low_key_selective_lighting", "shadow_and_frame_storytelling", "performance_design_integration"],
+              editing: ["five_reel_causal_progression", "intertitle_economy", "1915_1918_version_boundary"],
+              sound: ["silent_1915_release", "variable_exhibition_accompaniment", "1994_restoration_score_not_original"],
+              themes: ["film_history", "lasky_paramount", "sessue_hayakawa", "star_system", "representation_ethics"],
+            },
+            learningGoals: [
+              "Model a 1915 feature as coordinated company production: Lasky production, Paramount distribution, DeMille direction, Wyckoff cinematography and Buckland art direction are complementary industrial roles rather than one auteur doing everything.",
+              "Use selective low-key illumination, shadow and designed interiors to control attention and tension while refusing to treat racialized darkness, decor or bodily threat as a neutral recipe for making an Asian character seem dangerous.",
+              "Understand Hayakawa's restrained performance as a documented source of the film's impact and star-making power, while separating his craft from the anti-Asian stereotype that the surrounding narrative and imagery mobilize.",
+              "Build causal melodrama through money, secrecy, coercion, concealment and courtroom disclosure without making branding or sexualized violence into a player reward or an imitable production objective.",
+              "Teach early Hollywood stardom as an industrial outcome of performance, visual style, publicity, distribution and audience response rather than as celebrity trivia detached from production.",
+              "Preserve version criticism: the 1915 Japanese Hishuru Tori characterization, the 1918 Paramount reissue's Burmese Haka Arakau identity, and the 1994 Robert Israel restoration score belong to distinct historical layers.",
+            ],
+            phases: [
+              { id: "pitch", label: "Lasky-Paramount melodrama pitch", player_task: "Define a five-reel society melodrama whose production value comes from controlled image, performance and company coordination, not from racialized sensationalism as a selling instruction." },
+              { id: "research", label: "Credits, protest and version research", player_task: "Ground the Lasky/Paramount company structure, DeMille, Turnbull, Macpherson, Wyckoff, Buckland, Hayakawa, the 1916 Japanese American protest and the 1915/1918 version boundary in institutional sources." },
+              { id: "screenplay", label: "Debt, coercion and disclosure", player_task: "Organize financial risk, secrecy and courtroom revelation as the causal spine while explicitly identifying the period's anti-Asian stereotype instead of reproducing it as an unquestioned dramatic shortcut." },
+              { id: "casting", label: "Performance and star construction", player_task: "Use Hayakawa's documented restraint and Fannie Ward's contrasting performance styles as historical evidence for screen presence without equating racial stereotype with acting quality." },
+              { id: "production_design", label: "Designed interiors under scrutiny", player_task: "Coordinate Buckland's credited art direction and the documented imported carved furniture while distinguishing production-design evidence from the film's Orientalist coding." },
+              { id: "cinematography", label: "Selective light and shadow", player_task: "Coordinate Wyckoff's credited photography with low-key selective lighting and silhouette effects to control attention, then analyze how the same craft choices were used to racialize threat." },
+              { id: "editing", label: "Five-reel pressure and version boundary", player_task: "Maintain lucid causal progression with economical titles, then preserve the 1915 and 1918 identity/title-card states as separate versions rather than silently merging them." },
+              { id: "sound", label: "Silent release, later restoration music", player_task: "Treat the original as silent cinema with exhibition accompaniment and keep Robert Israel's 1994 restoration score outside the 1915 synchronized-production model." },
+              { id: "release", label: "Paramount circulation and contested reception", player_task: "Model national distribution and star-making while including the documented Japanese American protest as evidence that circulation and reception are part of industrial history, not an afterthought." },
+            ],
+          },
+          '''
+
+          replace_once(
+              "src/core/chapterSixHollywoodExpansion.ts",
+              "  },\n] as const;\n\nexport function mergeChapterSixHollywoodExpansion(",
+              "  },\n" + cheat_definition + "] as const;\n\nexport function mergeChapterSixHollywoodExpansion(",
+          )
+
+          write("src/ui/data/scenarioFilmStudySilentFoundationsTheCheat.ts", '''import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+          export const theCheatFilmHistoryProfile = {
+            scenarioId: "scenario_the_cheat_1915",
+            period: "1915 American feature production at Jesse L. Lasky Feature Play Company under Paramount distribution: early Hollywood melodrama joining concentrated visual style, designed interiors, performer differentiation and national circulation while exposing the racial politics through which screen stardom was also produced",
+            traditions: ["American silent feature melodrama", "Lasky-Paramount production", "selective low-key lighting", "star construction", "racialized popular melodrama"],
+            before: "The Cheat comes from DeMille's early Lasky period, when feature production, specialized cinematography and art direction, and Paramount distribution were already forming repeatable company practice. Its lighting and design should therefore be studied as collaborative industrial craft, not as a single isolated invention.",
+            moment: "Hector Turnbull and Jeanie Macpherson supply scenario work; Cecil B. DeMille directs; Alvin Wyckoff photographs; Wilfred Buckland handles art direction; Jesse L. Lasky Feature Play Company produces and Paramount distributes. The film's selective lighting, elaborate interiors and Hayakawa's restrained performance intensify melodrama, but that craft is entangled with a racialized construction of an Asian sexual threat that provoked Japanese American protest.",
+            after: "Hayakawa's performance helped make him a major screen star, while the film entered the National Film Registry and remained influential in accounts of DeMille's early visual style. Paramount's 1918 reissue changed Hayakawa's character from Japanese Hishuru Tori to Burmese Haka Arakau, so surviving prints and later restorations require explicit version criticism.",
+            historyQuestion: "How did an expanding Lasky-Paramount production system combine lighting, design, performance and distribution to create a powerful star vehicle, and how can we analyze that achievement without normalizing the anti-Asian stereotype used to manufacture danger?",
+            technicalHighlights: [
+              { area: "historical_context", status: "source_verified", note: "AFI dates production to 20 October-10 November 1915 and release to 13 December 1915. The Library of Congress records the film's later National Film Registry status and its importance among DeMille's early silent melodramas." },
+              { area: "movement_and_tradition", status: "mapped", note: "The film belongs to early American feature melodrama and emerging Hollywood company style. The profile avoids claiming that DeMille or The Cheat single-handedly invented low-key lighting, screen stardom or classical narrative." },
+              { area: "industry_and_production_context", status: "source_verified", note: "AFI identifies Jesse L. Lasky Feature Play Co. as production company and Paramount Pictures Corp. as distributor, making company organization and circulation documented parts of the production model." },
+              { area: "reception_and_legacy", status: "source_verified", note: "The Library of Congress says Hayakawa's performance made him a cinema star; AFI records Japanese Association of Southern California protest in 1916 and the 1918 reissue; MoMA explicitly identifies both Hayakawa's ascent and the film's exploitation of racial-mixing taboo and racialized corruption." },
+              { area: "screenplay", status: "source_verified", note: "AFI credits Hector Turnbull for story/scenario and Jeanie Macpherson for scenario. Gameplay maps the documented plot's financial risk, coercion and courtroom disclosure while refusing to make racialized threat or sexual violence an optimization target." },
+              { area: "directing", status: "source_verified", note: "AFI credits Cecil B. DeMille as producer/director. Direction is treated as coordination across writing, cinematography, design, performance and distribution rather than a lone-genius explanation." },
+              { area: "performance", status: "source_verified", note: "The Library of Congress highlights Hayakawa's subtle, menacing performance as central to his stardom. The profile separates that documented restraint and screen presence from the racist villain stereotype framing the character." },
+              { area: "production_design", status: "source_verified", note: "AFI credits Wilfred Buckland as art director and records imported Chinese carved wood furniture in Tori's home; the Library of Congress notes elaborate production design. The profile distinguishes material design evidence from Orientalist coding." },
+              { area: "costume_makeup", status: "mapped", note: "Clothing and social display matter to the society melodrama, but the institutional sources used here do not support a detailed costume or makeup workflow, so no department-specific recipe is invented." },
+              { area: "cinematography", status: "source_verified", note: "AFI and UCLA credit Alvin Wyckoff. Film Foundation archival programming and contemporary review evidence emphasize low-key, Rembrandt-like selective illumination, silhouettes and shadow as central visual devices." },
+              { area: "lighting", status: "source_verified", note: "Institutional and preservation sources document the film's striking low-key/Rembrandt-like lighting. The case also makes explicit that these techniques were used to racialize Hayakawa's character as threatening, so formal analysis includes representational consequence." },
+              { area: "camera_format", status: "source_verified", note: "AFI records a silent black-and-white five-reel release at 4,243 feet; UCLA screens the preserved film in 35mm at 59 minutes. Runtime is therefore treated as a presentational value rather than proof of one immutable 1915 projection speed." },
+              { area: "editing", status: "mapped", note: "The preserved film's causal compression and limited title dependence can support gameplay about five-reel narrative economy, but AFI does not provide a securely credited original editor here. The profile therefore avoids assigning undocumented editorial authorship." },
+              { area: "sound_design", status: "source_verified", note: "AFI and UCLA identify the film as silent. No synchronized dialogue or effects track belongs to the 1915 production object." },
+              { area: "music", status: "source_verified", note: "AFI states that the print it viewed was a restoration of the 1918 reissue with a new Robert Israel score composed in 1994. That score is explicitly excluded from claims about original 1915 production music." },
+              { area: "effects_animation", status: "not_central", note: "The production case is driven by lighting, set design, performance, framing and melodramatic construction rather than effects or animation spectacle." },
+              { area: "documentary_method", status: "not_central", note: "The Cheat is a staged society melodrama. Its importance for representation history does not make its racial stereotype documentary evidence about Japanese or Burmese people." },
+            ],
+          } as const satisfies FilmHistoryProfile;
+          '''.replace("          ", ""))
+
+          write("src/ui/data/scenarioProductionVerificationTheCheat.ts", '''import type { ProductionCaseVerificationRecord } from "./scenarioProductionVerification";
+
+          export const theCheatProductionCaseVerification = {
+            scenarioId: "scenario_the_cheat_1915",
+            status: "verified",
+            verifiedAt: "2026-08-15",
+            summary: "AFI, the Library of Congress, UCLA Film & Television Archive, The Film Foundation and MoMA support The Cheat as a 1915 Jesse L. Lasky Feature Play Company feature distributed by Paramount, directed by Cecil B. DeMille, written by Hector Turnbull and Jeanie Macpherson, photographed by Alvin Wyckoff and art-directed by Wilfred Buckland. The sources support its selective low-key visual style, elaborate interiors, Hayakawa's star-making restrained performance and the need to treat its anti-Asian sexual-threat construction critically rather than as neutral craft. AFI also documents the 1918 Paramount reissue that renamed and re-identified Hayakawa's character and identifies the Robert Israel score on the restored reissue print as a 1994 addition. The Production Case therefore teaches company style, star construction and version history while explicitly refusing to reproduce racialized coercion as a gameplay objective.",
+            sources: [
+              {
+                title: "The Cheat — AFI Catalog",
+                publisher: "American Film Institute",
+                url: "https://catalog.afi.com/Catalog/moviedetails/1815",
+                sourceKind: "film_institute",
+                supports: ["overall", "screenplay", "cinematography", "sound"],
+                note: "AFI documents the Lasky production and Paramount distribution companies, DeMille, Turnbull, Macpherson, Wyckoff and Buckland credits, 1915 production/release dates, silent black-and-white five-reel properties, imported carved furniture, the 1916 Japanese American protest, the 1918 character re-identification and the 1994 Robert Israel score on the restored reissue print."
+              },
+              {
+                title: "The Cheat (1915) — National Film Registry description",
+                publisher: "Library of Congress",
+                url: "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/",
+                sourceKind: "archive_feature",
+                supports: ["overall"],
+                note: "The Library of Congress characterizes the film as an early DeMille silent melodrama with elaborate production design and identifies Hayakawa's subtle, menacing performance as the work that made him a cinema star."
+              },
+              {
+                title: "The Cheat / The Golden Chance",
+                publisher: "UCLA Film & Television Archive",
+                url: "https://cinema.ucla.edu/events/the-cheat-the-golden-chance-02-07-15/",
+                sourceKind: "archive_feature",
+                supports: ["overall", "cinematography", "sound"],
+                note: "UCLA's archive program records The Cheat as a 59-minute 35mm black-and-white silent presentation and confirms the Lasky company, DeMille, Turnbull, Macpherson and Wyckoff production credits."
+              },
+              {
+                title: "Out of the Vaults: Cecil B. deMille's The Cheat, 1915",
+                publisher: "The Film Foundation",
+                url: "https://www.film-foundation.org/hfpa-cheat",
+                sourceKind: "archive_feature",
+                supports: ["overall", "cinematography", "editing"],
+                note: "The Film Foundation discusses the film's Rembrandt-like low-key illumination, silhouettes and shadows, Hayakawa's restrained screen performance, the racist construction surrounding his role, and restoration work rebuilding a 1915-oriented version from surviving reissue material."
+              },
+              {
+                title: "D. W. Griffith's Competitors: Ince and DeMille",
+                publisher: "Museum of Modern Art",
+                url: "https://www.moma.org/explore/inside_out/2009/12/01/d-w-griffiths-competitors-ince-and-demille/",
+                sourceKind: "film_institute",
+                supports: ["overall"],
+                note: "MoMA places The Cheat within DeMille's early visually distinctive work, notes its role in Hayakawa's ascent to stardom, and explicitly identifies its exploitation of racial-mixing taboo and racialized perversity/corruption."
+              }
+            ]
+          } as const satisfies ProductionCaseVerificationRecord;
+          '''.replace("          ", ""))
+
+          write("src/core/chapterSixHollywoodExpansion.test.ts", '''import assert from "node:assert/strict";
+          import test from "node:test";
+
+          import { chapterSixHollywoodExpansionDefinitions } from "./chapterSixHollywoodExpansion.js";
+
+          test("Chapter 6 materializes Gold Rush, The Crowd and The Cheat as distinct Hollywood-system cases", () => {
+            assert.equal(chapterSixHollywoodExpansionDefinitions.length, 3);
+
+            const goldRush = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_the_gold_rush_1925");
+            assert.ok(goldRush);
+            assert.equal(goldRush.scenarioType, "star_producer_feature_comedy");
+            assert.ok(goldRush.requiredChoicesSeed.sound.includes("exclude_1942_narration_and_score"));
+
+            const crowd = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_the_crowd_1928");
+            assert.ok(crowd);
+            assert.equal(crowd.scenarioType, "studio_social_realism_production");
+            assert.ok(crowd.premise.includes("two release endings"));
+            assert.ok(crowd.requiredChoicesSeed.sound.includes("1981_restoration_score_not_original"));
+
+            const cheat = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_the_cheat_1915");
+            assert.ok(cheat);
+            assert.equal(cheat.title, "The Cheat");
+            assert.equal(cheat.year, 1915);
+            assert.equal(cheat.runtimeMins, 59);
+            assert.equal(cheat.scenarioType, "studio_melodrama_star_style_production");
+            assert.equal(cheat.sourceId, "manual_the_cheat_1915");
+            assert.ok(cheat.premise.includes("Jesse L. Lasky Feature Play Company"));
+            assert.ok(cheat.premise.includes("Paramount"));
+            assert.ok(cheat.premise.includes("anti-Asian stereotype"));
+            assert.ok(cheat.premise.includes("1918 reissue"));
+            assert.ok(cheat.requiredChoicesSeed.camera.includes("low_key_selective_lighting"));
+            assert.ok(cheat.requiredChoicesSeed.editing.includes("1915_1918_version_boundary"));
+            assert.ok(cheat.requiredChoicesSeed.sound.includes("silent_1915_release"));
+            assert.ok(cheat.requiredChoicesSeed.sound.includes("1994_restoration_score_not_original"));
+            assert.ok(cheat.requiredChoicesSeed.themes.includes("representation_ethics"));
+            assert.ok(cheat.learningGoals.length >= 6);
+            assert.ok(cheat.phases.length >= 9);
+          });
+          '''.replace("          ", ""))
+
+          replace_once(
+              "src/ui/data/scenarioFilmStudyMap.ts",
+              'import { theCrowdFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsTheCrowd";\n',
+              'import { theCrowdFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsTheCrowd";\nimport { theCheatFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsTheCheat";\n',
+          )
+          replace_once(
+              "src/ui/data/scenarioFilmStudyMap.ts",
+              '  [theCrowdFilmHistoryProfile.scenarioId]: theCrowdFilmHistoryProfile,\n',
+              '  [theCrowdFilmHistoryProfile.scenarioId]: theCrowdFilmHistoryProfile,\n  [theCheatFilmHistoryProfile.scenarioId]: theCheatFilmHistoryProfile,\n',
+          )
+
+          replace_once(
+              "src/ui/data/scenarioProductionVerificationRegistry.ts",
+              'import { theCrowdProductionCaseVerification } from "./scenarioProductionVerificationTheCrowd";\n',
+              'import { theCrowdProductionCaseVerification } from "./scenarioProductionVerificationTheCrowd";\nimport { theCheatProductionCaseVerification } from "./scenarioProductionVerificationTheCheat";\n',
+          )
+          replace_once(
+              "src/ui/data/scenarioProductionVerificationRegistry.ts",
+              '  theCrowdProductionCaseVerification,\n',
+              '  theCrowdProductionCaseVerification,\n  theCheatProductionCaseVerification,\n',
+          )
+
+          replace_once(
+              "scripts/film-history-chapter-six-atlas-audit.mjs",
+              'const EXPECTED_ATLAS_COUNT = 400;',
+              'const EXPECTED_ATLAS_COUNT = 401;',
+          )
+          replace_once(
+              "scripts/film-history-chapter-six-atlas-audit.mjs",
+              '  USE_EXISTING: ["The Crowd", "The General", "The Gold Rush"],\n  P0: [],\n  P1: ["It", "The Cheat", "Wings"],',
+              '  USE_EXISTING: ["The Cheat", "The Crowd", "The General", "The Gold Rush"],\n  P0: [],\n  P1: ["It", "Wings"],',
+          )
+
+          replace_once(
+              "scripts/production-case-rest-audit.mjs",
+              'const EXPECTED_PLAYABLE_SCENARIOS = 400;\nconst EXPECTED_VERIFIED_PRODUCTION_CASES = 400;',
+              'const EXPECTED_PLAYABLE_SCENARIOS = 401;\nconst EXPECTED_VERIFIED_PRODUCTION_CASES = 401;',
+          )
+          PY
+      - name: Full v0.1 verification
+        run: npm run verify:v0.1
+      - name: Commit verified materialization and remove temporary workflow
+        shell: bash
+        run: |
+          rm .github/workflows/the-cheat-materialize.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Complete The Cheat 1915 production case"
+          git push origin HEAD:agent/the-cheat-1915
