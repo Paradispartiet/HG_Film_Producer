@@ -27,12 +27,16 @@ test("Chapter 6 materializes Gold Rush, The Crowd and The Cheat as distinct Holl
   assert.ok(cheat.premise.includes("Jesse L. Lasky Feature Play Company"));
   assert.ok(cheat.premise.includes("Paramount"));
   assert.ok(cheat.premise.includes("anti-Asian stereotype"));
+  assert.ok(cheat.premise.includes("Hishuru Tori"));
+  assert.ok(cheat.premise.includes("Burmese Haka Arakau"));
   assert.ok(cheat.premise.includes("1918 reissue"));
   assert.ok(cheat.requiredChoicesSeed.camera.includes("low_key_selective_lighting"));
   assert.ok(cheat.requiredChoicesSeed.editing.includes("1915_1918_version_boundary"));
   assert.ok(cheat.requiredChoicesSeed.sound.includes("silent_1915_release"));
   assert.ok(cheat.requiredChoicesSeed.sound.includes("1994_restoration_score_not_original"));
   assert.ok(cheat.requiredChoicesSeed.themes.includes("representation_ethics"));
+  assert.ok(cheat.learningGoals.some((goal) => goal.includes("without making branding or sexualized violence into a player reward")));
+  assert.ok(cheat.phases.some((phase) => phase.id === "research" && phase.player_task.includes("Japanese American protest")));
   assert.ok(cheat.learningGoals.length >= 6);
   assert.ok(cheat.phases.length >= 9);
 });
