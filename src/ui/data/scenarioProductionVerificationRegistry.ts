@@ -37,6 +37,7 @@ import { queenElizabethProductionCaseVerification } from "./scenarioProductionVe
 import { trafficInSoulsProductionCaseVerification } from "./scenarioProductionVerificationTrafficInSouls";
 import { fantomasProductionCaseVerification } from "./scenarioProductionVerificationFantomas";
 import { cabiriaProductionCaseVerification } from "./scenarioProductionVerificationCabiria";
+import { afgrundenProductionCaseVerification } from "./scenarioProductionVerificationAfgrunden";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -191,6 +192,7 @@ const additionalVerificationRecords = [
   trafficInSoulsProductionCaseVerification,
   fantomasProductionCaseVerification,
   cabiriaProductionCaseVerification,
+  afgrundenProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
