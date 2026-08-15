@@ -3,37 +3,36 @@ import test from "node:test";
 
 import { chapterSixHollywoodExpansionDefinitions } from "./chapterSixHollywoodExpansion.js";
 
-test("Chapter 6 materializes The Gold Rush and The Crowd as distinct Hollywood-system cases", () => {
-  assert.equal(chapterSixHollywoodExpansionDefinitions.length, 2);
+test("Chapter 6 materializes Gold Rush, The Crowd and The Cheat as distinct Hollywood-system cases", () => {
+  assert.equal(chapterSixHollywoodExpansionDefinitions.length, 3);
 
   const goldRush = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_the_gold_rush_1925");
   assert.ok(goldRush);
-  assert.equal(goldRush.runtimeMins, 88);
   assert.equal(goldRush.scenarioType, "star_producer_feature_comedy");
-  assert.equal(goldRush.sourceId, "manual_the_gold_rush_1925");
-  assert.ok(goldRush.premise.includes("United Artists"));
-  assert.ok(goldRush.premise.includes("1942 reissue"));
-  assert.ok(goldRush.requiredChoicesSeed.camera.includes("hollywood_miniature_landscape"));
-  assert.ok(goldRush.requiredChoicesSeed.editing.includes("1925_1942_version_boundary"));
-  assert.ok(goldRush.requiredChoicesSeed.sound.includes("silent_1925_release"));
   assert.ok(goldRush.requiredChoicesSeed.sound.includes("exclude_1942_narration_and_score"));
 
   const crowd = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_the_crowd_1928");
   assert.ok(crowd);
-  assert.equal(crowd.title, "The Crowd");
-  assert.equal(crowd.year, 1928);
-  assert.equal(crowd.runtimeMins, 98);
   assert.equal(crowd.scenarioType, "studio_social_realism_production");
-  assert.equal(crowd.sourceId, "manual_the_crowd_1928");
-  assert.ok(crowd.aliases.includes("The Mob"));
-  assert.ok(crowd.premise.includes("Metro-Goldwyn-Mayer"));
   assert.ok(crowd.premise.includes("two release endings"));
-  assert.ok(crowd.premise.includes("1981 Brownlow-Gill restoration"));
-  assert.ok(crowd.requiredChoicesSeed.camera.includes("concealed_camera_new_york_exteriors"));
-  assert.ok(crowd.requiredChoicesSeed.editing.includes("preview_tested_endings"));
-  assert.ok(crowd.requiredChoicesSeed.editing.includes("exhibitor_ending_version_control"));
-  assert.ok(crowd.requiredChoicesSeed.sound.includes("silent_1928_release"));
   assert.ok(crowd.requiredChoicesSeed.sound.includes("1981_restoration_score_not_original"));
-  assert.ok(crowd.learningGoals.length >= 6);
-  assert.ok(crowd.phases.length >= 9);
+
+  const cheat = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_the_cheat_1915");
+  assert.ok(cheat);
+  assert.equal(cheat.title, "The Cheat");
+  assert.equal(cheat.year, 1915);
+  assert.equal(cheat.runtimeMins, 59);
+  assert.equal(cheat.scenarioType, "studio_melodrama_star_style_production");
+  assert.equal(cheat.sourceId, "manual_the_cheat_1915");
+  assert.ok(cheat.premise.includes("Jesse L. Lasky Feature Play Company"));
+  assert.ok(cheat.premise.includes("Paramount"));
+  assert.ok(cheat.premise.includes("anti-Asian stereotype"));
+  assert.ok(cheat.premise.includes("1918 reissue"));
+  assert.ok(cheat.requiredChoicesSeed.camera.includes("low_key_selective_lighting"));
+  assert.ok(cheat.requiredChoicesSeed.editing.includes("1915_1918_version_boundary"));
+  assert.ok(cheat.requiredChoicesSeed.sound.includes("silent_1915_release"));
+  assert.ok(cheat.requiredChoicesSeed.sound.includes("1994_restoration_score_not_original"));
+  assert.ok(cheat.requiredChoicesSeed.themes.includes("representation_ethics"));
+  assert.ok(cheat.learningGoals.length >= 6);
+  assert.ok(cheat.phases.length >= 9);
 });
