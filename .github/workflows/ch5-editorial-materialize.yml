@@ -20,12 +20,13 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - name: Wire canonical Chapter 5 into the book
+      - name: Wire canonical Chapter 5 and migrate completion assertions
         run: |
           python - <<'PY'
           from pathlib import Path
-          p = Path('src/core/filmHistoryBook.ts')
-          text = p.read_text()
+
+          book = Path('src/core/filmHistoryBook.ts')
+          text = book.read_text()
           import_old = 'import { filmHistoryChapterFour } from "./filmHistoryChapterFour.js";\n'
           import_new = import_old + 'import { filmHistoryChapterFive } from "./filmHistoryChapterFive.js";\n'
           if 'filmHistoryChapterFive } from "./filmHistoryChapterFive.js"' not in text:
@@ -50,8 +51,39 @@ jobs:
                   raise SystemExit('Chapter 5 outline end missing')
               end += len('      ),')
               text = text[:start] + '      filmHistoryChapterFive,' + text[end:]
+          book.write_text(text)
 
-          p.write_text(text)
+          def patch(path, replacements):
+              p = Path(path)
+              value = p.read_text()
+              for old, new in replacements:
+                  if old not in value:
+                      raise SystemExit(f'{path}: assertion anchor missing: {old[:80]}')
+                  value = value.replace(old, new, 1)
+              p.write_text(value)
+
+          patch('src/core/filmHistoryBook.test.ts', [
+              ('test("only Chapters 5–30 remain explicit outlines after Chapter 4 completion", () => {',
+               'test("only Chapters 6–30 remain explicit outlines after Chapter 5 completion", () => {'),
+              ('const completed = filmHistoryBookChapters.filter((chapter) => chapter.number <= 4);\n  assert.equal(completed.length, 4);',
+               'const completed = filmHistoryBookChapters.filter((chapter) => chapter.number <= 5);\n  assert.equal(completed.length, 5);'),
+              ('const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 4);\n  assert.equal(remaining.length, 26);',
+               'const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 5);\n  assert.equal(remaining.length, 25);'),
+          ])
+
+          patch('src/core/filmHistoryChapterFour.test.ts', [
+              ('test("canonical book resolves Chapters 1–4 as full and preserves the six-part thirty-chapter architecture", () => {',
+               'test("canonical book resolves Chapters 1–5 as full and preserves the six-part thirty-chapter architecture", () => {'),
+              ('assert.equal(getFilmHistoryBookChapter("global-before-wwi")?.status, "outline");',
+               'assert.equal(getFilmHistoryBookChapter("global-before-wwi")?.status, "full");\n  assert.equal(getFilmHistoryBookChapter("classical-hollywood")?.status, "outline");'),
+          ])
+
+          patch('src/core/filmHistoryChapterThree.test.ts', [
+              ('test("canonical book resolves Chapters 1–4 as full and preserves the six-part thirty-chapter architecture", () => {',
+               'test("canonical book resolves Chapters 1–5 as full and preserves the six-part thirty-chapter architecture", () => {'),
+              ('assert.equal(getFilmHistoryBookChapter("global-before-wwi")?.status, "outline");',
+               'assert.equal(getFilmHistoryBookChapter("global-before-wwi")?.status, "full");\n  assert.equal(getFilmHistoryBookChapter("classical-hollywood")?.status, "outline");'),
+          ])
           PY
           git rm .github/workflows/ch5-editorial-materialize.yml
       - name: Verify full v0.1 with canonical Chapter 5
@@ -69,6 +101,7 @@ jobs:
       - name: Commit verified Chapter 5 book integration
         if: success()
         run: |
+          rm -f verify-ch5-output.txt
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
