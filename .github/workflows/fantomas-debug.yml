@@ -1,0 +1,38 @@
+name: Capture Fantomas verify output
+
+on:
+  push:
+    branches: [agent/fantomas-1913]
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/fantomas-1913
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Capture verification output
+        shell: bash
+        run: |
+          set +e
+          npm run verify:v0.1 > fantomas-ci-debug.txt 2>&1
+          status=$?
+          echo "EXIT_STATUS=$status" >> fantomas-ci-debug.txt
+          rm .github/workflows/fantomas-debug.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git add -f fantomas-ci-debug.txt
+          git commit -m "Capture Fantomas verification output"
+          git push origin HEAD:agent/fantomas-1913
+          exit 0
