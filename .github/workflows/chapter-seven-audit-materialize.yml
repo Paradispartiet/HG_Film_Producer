@@ -1,0 +1,174 @@
+name: Materialize Film History Chapter 7 audit
+
+on:
+  push:
+    branches:
+      - agent/film-history-chapter-seven-audit
+    paths:
+      - .github/workflows/chapter-seven-audit-materialize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/film-history-chapter-seven-audit
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Build Chapter 7 audit from permanent audit framework
+        shell: bash
+        run: |
+          cp scripts/film-history-chapter-six-atlas-audit.mjs scripts/film-history-chapter-seven-atlas-audit.mjs
+          python3 <<'PY'
+          from pathlib import Path
+
+          p = Path('scripts/film-history-chapter-seven-atlas-audit.mjs')
+          text = p.read_text(encoding='utf-8')
+          text = text.replace('const EXPECTED_ATLAS_COUNT = 403;', 'const EXPECTED_ATLAS_COUNT = 403;', 1)
+
+          candidates = '''const candidates = [
+            {
+              title: "The Cabinet of Dr. Caligari", year: 1920, aliases: ["Das Cabinet des Dr. Caligari"], role: "anchor_film",
+              decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_the_cabinet_of_dr_caligari_1920",
+              chapterFunction: "Expressionist production-design anchor: Decla studio construction, painted light and shadow, angular architecture, stylized performance and the frame-story problem make design itself a narrative and psychological system."
+            },
+            {
+              title: "Nosferatu", year: 1922, aliases: ["Nosferatu: A Symphony of Horror", "Nosferatu, eine Symphonie des Grauens"], role: "anchor_film",
+              decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_nosferatu_1922",
+              chapterFunction: "Prana-Film location-and-design counterpoint to Caligari: unauthorized Dracula adaptation, Albin Grau design, Fritz Arno Wagner photography and uncanny use of real architecture show that Weimar horror was not synonymous with painted studio Expressionism."
+            },
+            {
+              title: "The Last Laugh", year: 1924, aliases: ["Der letzte Mann", "The Last Man"], role: "anchor_film",
+              decisionIfMissing: "P0",
+              chapterFunction: "Kammerspielfilm and the unchained-camera problem are explicit canonical Chapter 7 requirements. Murnau, Carl Mayer, Emil Jannings and Karl Freund turn a socially compressed hotel story into mobile-camera subjectivity, making this the clearest missing Production Case rather than another Expressionist-design duplicate."
+            },
+            {
+              title: "Dr. Mabuse, the Gambler", year: 1922, aliases: ["Dr. Mabuse, der Spieler", "Dr. Mabuse the Gambler"], role: "comparative_film",
+              decisionIfMissing: "P2",
+              chapterFunction: "Lang's two-part crime epic is essential book evidence for Weimar modernity, disguise, finance, surveillance and serial-scale urban control, but its crime/identity gameplay overlaps existing Fantômas and later Lang cases more than it adds a new Chapter 7 production problem."
+            },
+            {
+              title: "Warning Shadows", year: 1923, aliases: ["Schatten", "Warning Shadows: A Nocturnal Hallucination"], role: "comparative_film",
+              decisionIfMissing: "P2",
+              chapterFunction: "Arthur Robison's shadow-driven chamber experiment broadens Expressionist lighting and psychological-space analysis, but Caligari and Nosferatu already provide stronger playable design/horror anchors."
+            },
+            {
+              title: "Die Nibelungen", year: 1924, aliases: ["Die Nibelungen: Siegfried"], role: "comparative_film",
+              decisionIfMissing: "P2",
+              chapterFunction: "UFA prestige, monumental design, mass choreography and mythic national imagery are major industrial evidence, while Metropolis already supplies the more production-distinct UFA-scale design/effects case."
+            },
+            {
+              title: "The Joyless Street", year: 1925, aliases: ["Die freudlose Gasse"], role: "comparative_film",
+              decisionIfMissing: "P2",
+              chapterFunction: "Pabst's urban social melodrama is useful for distinguishing street realism and social observation from Expressionism, but Pandora's Box gives the chapter a cleaner non-Expressionist Production Case around performance, modernity and New Objectivity-era tendencies."
+            },
+            {
+              title: "Variety", year: 1925, aliases: ["Varieté", "Vaudeville"], role: "comparative_film",
+              decisionIfMissing: "P2",
+              chapterFunction: "E. A. Dupont and Karl Freund make mobile camera and circus space central to desire and spectacle; retained as comparison because The Last Laugh is the stronger canonical unchained-camera teaching case."
+            },
+            {
+              title: "Faust", year: 1926, aliases: ["Faust: A German Folktale", "Faust – Eine deutsche Volkssage"], role: "comparative_film",
+              decisionIfMissing: "P2",
+              chapterFunction: "Murnau's UFA fantasy extends monumental design, lighting, miniatures and effects, but those functions overlap the existing Metropolis and Nosferatu production cases."
+            },
+            {
+              title: "Metropolis", year: 1927, aliases: [], role: "anchor_film",
+              decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_metropolis_1927",
+              chapterFunction: "Existing UFA anchor for industrial scale, architectural design, mass choreography, Schüfftan/miniature effects, multiple cinematographers, Huppertz's score and severe version/reconstruction history."
+            },
+            {
+              title: "Pandora's Box", year: 1929, aliases: ["Die Büchse der Pandora", "Pandora's Box"], role: "anchor_film",
+              decisionIfMissing: "P1",
+              chapterFunction: "Pabst and Louise Brooks provide the chapter's strongest playable counterweight to Expressionism: performance-centered modernity, sexual economy, social observation and New Objectivity-era tendencies show why Weimar cinema cannot be reduced to distorted sets and horror."
+            },
+            {
+              title: "Asphalt", year: 1929, aliases: [], role: "comparative_film",
+              decisionIfMissing: "P2",
+              chapterFunction: "UFA street-film production and elaborate constructed urban space are valuable evidence for late-Weimar realism and studio artifice working together, but the design/modernity function is sufficiently covered by Metropolis plus Pandora's Box."
+            },
+            {
+              title: "Diary of a Lost Girl", year: 1929, aliases: ["Tagebuch einer Verlorenen"], role: "comparative_film",
+              decisionIfMissing: "P2",
+              chapterFunction: "Pabst/Brooks social melodrama extends the chapter's gender, institutional and New Objectivity-era comparison, while Pandora's Box is the more distinct Production Case for the same performer-director axis."
+            },
+          ];
+
+          '''
+          historical = '''const historicalObjects = [
+            ["UFA and vertically scaled German studio infrastructure", "UFA concentrated studios, capital, specialist labor and international ambitions across multiple production modes; the company is infrastructure rather than a film scenario."],
+            ["Decla-Bioscop, Decla and postwar company consolidation", "Caligari's production context and subsequent consolidation show a changing company landscape before and around UFA dominance; corporate history is not reducible to one title."],
+            ["Expressionist design culture across film, theatre and visual art", "Distorted architecture, painted light, graphic surfaces and stylized bodies circulated across arts and productions; Expressionism is a historical tendency, not one reproducible preset."],
+            ["Kammerspielfilm and chamber-scale social drama", "Small casts, concentrated spaces, psychological pressure and everyday social status form a tendency distinct from monumental Expressionist spectacle; the category exceeds any single film."],
+            ["Entfesselte Kamera / unchained-camera practice", "Mobile camera rigs, elevators, tracks and motivated movement made camera subjectivity a collaborative technical practice; the method is infrastructure across productions rather than an invention owned by one shot."],
+            ["Film architecture, studio construction and artificial city space", "Weimar productions used both real locations and increasingly ambitious constructed environments; designers, builders, cinematographers and effects workers jointly made architecture perform narrative work."],
+            ["Inflation, stabilization and changing production economics", "Hyperinflation, currency stabilization and shifting export conditions changed costs, financing and international strategy during the 1920s; macroeconomic conditions are historical context, not a Production Case."],
+            ["Transatlantic circulation of Weimar labor and style", "Directors, cinematographers, actors and designers moved between German and American production, carrying techniques without making influence a one-way national transfer."],
+            ["Censorship, adaptation rights and legal vulnerability", "Nosferatu's Dracula litigation and wider censorship/rights regimes show that production and circulation depended on legal permissions and surviving versions; legal infrastructure is not a film scenario."],
+          ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
+
+          '''
+          expected = '''const expectedDecisions = {
+            USE_EXISTING: ["Metropolis", "Nosferatu", "The Cabinet of Dr. Caligari"],
+            P0: ["The Last Laugh"],
+            P1: ["Pandora's Box"],
+            P2: ["Asphalt", "Diary of a Lost Girl", "Die Nibelungen", "Dr. Mabuse, the Gambler", "Faust", "The Joyless Street", "Variety", "Warning Shadows"],
+          };
+
+          '''
+
+          a = text.index('const candidates = [')
+          b = text.index('const historicalObjects = [', a)
+          text = text[:a] + candidates + text[b:]
+          a = text.index('const historicalObjects = [')
+          b = text.index('const expectedDecisions = {', a)
+          text = text[:a] + historical + text[b:]
+          a = text.index('const expectedDecisions = {')
+          b = text.index('function readText', a)
+          text = text[:a] + expected + text[b:]
+
+          text = text.replace('number: 6,', 'number: 7,', 1)
+          text = text.replace('title: "Classical continuity and the Hollywood system",', 'title: "Weimar cinema and Expressionism",', 1)
+          text = text.replace('period: "1914–1929",', 'period: "1919–1929",', 1)
+          old_scope = 'scope: "Mature silent Hollywood as both a narrative system and an industrial system: continuity practices, studios, distribution and exhibition power, stars, genres, labor organization and countermodels to vertical integration.",'
+          new_scope = 'scope: "German studios, Expressionist design, Kammerspielfilm, mobile camera work and competing realist/modern tendencies in Weimar cinema, with UFA as an industrial axis rather than a synonym for the whole period.",'
+          text = text.replace(old_scope, new_scope, 1)
+          old_thesis = 'thesis: "Classical Hollywood was not invented by one director or one film. It emerged as repeatable collaborative practice tied to industrial consolidation: films became legible across large markets while studios coordinated labor, stars, genres, publicity, distribution and exhibition at increasing scale.",'
+          new_thesis = 'thesis: "Weimar cinema cannot be reduced to Expressionist horror. Distorted design, chamber drama, mobile camera subjectivity, UFA-scale production and more observational late-1920s tendencies coexisted and competed, while German labor and style circulated internationally.",'
+          text = text.replace(old_thesis, new_thesis, 1)
+          text = text.replace('HG_FILM_HISTORY_CHAPTER_SIX_ATLAS_AUDIT_START', 'HG_FILM_HISTORY_CHAPTER_SEVEN_ATLAS_AUDIT_START')
+          text = text.replace('HG_FILM_HISTORY_CHAPTER_SIX_ATLAS_AUDIT_END', 'HG_FILM_HISTORY_CHAPTER_SEVEN_ATLAS_AUDIT_END')
+          text = text.replace('Film History Chapter 6 Atlas audit', 'Film History Chapter 7 Atlas audit')
+          p.write_text(text, encoding='utf-8')
+
+          pkg = Path('package.json')
+          s = pkg.read_text(encoding='utf-8')
+          old = '    "audit:film-history-ch6": "node scripts/film-history-chapter-six-atlas-audit.mjs",\n'
+          new = old + '    "audit:film-history-ch7": "node scripts/film-history-chapter-seven-atlas-audit.mjs",\n'
+          if s.count(old) != 1: raise SystemExit('package ch6 audit marker mismatch')
+          s = s.replace(old, new, 1)
+          oldv = 'npm run audit:film-history-ch5 && npm run audit:film-history-ch6 && npm run typecheck'
+          newv = 'npm run audit:film-history-ch5 && npm run audit:film-history-ch6 && npm run audit:film-history-ch7 && npm run typecheck'
+          if s.count(oldv) != 1: raise SystemExit('verify chain marker mismatch')
+          s = s.replace(oldv, newv, 1)
+          pkg.write_text(s, encoding='utf-8')
+          PY
+      - name: Run Chapter 7 audit and full verification
+        run: npm run verify:v0.1
+      - name: Commit verified Chapter 7 audit and remove temporary workflow
+        shell: bash
+        run: |
+          rm .github/workflows/chapter-seven-audit-materialize.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add Film History Chapter 7 Atlas audit"
+          git push origin HEAD:agent/film-history-chapter-seven-audit
