@@ -15,6 +15,7 @@ import {
 import { fantomasFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsFantomas";
 import { cabiriaFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsCabiria";
 import { afgrundenFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsAfgrunden";
+import { atlantisFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsAtlantis";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -52,6 +53,7 @@ const sourceBackedFilmHistoryProfiles = {
   [fantomasFilmHistoryProfile.scenarioId]: fantomasFilmHistoryProfile,
   [cabiriaFilmHistoryProfile.scenarioId]: cabiriaFilmHistoryProfile,
   [afgrundenFilmHistoryProfile.scenarioId]: afgrundenFilmHistoryProfile,
+  [atlantisFilmHistoryProfile.scenarioId]: atlantisFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
