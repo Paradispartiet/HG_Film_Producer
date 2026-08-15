@@ -1,0 +1,59 @@
+name: Materialize Film History Chapter 5 editorial integration
+
+on:
+  push:
+    branches:
+      - agent/complete-film-history-chapter-five-text
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Wire canonical Chapter 5 into the book
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('src/core/filmHistoryBook.ts')
+          text = p.read_text()
+          import_old = 'import { filmHistoryChapterFour } from "./filmHistoryChapterFour.js";\n'
+          import_new = import_old + 'import { filmHistoryChapterFive } from "./filmHistoryChapterFive.js";\n'
+          if 'filmHistoryChapterFive } from "./filmHistoryChapterFive.js"' not in text:
+              if import_old not in text:
+                  raise SystemExit('Chapter 4 import anchor missing')
+              text = text.replace(import_old, import_new, 1)
+          old = '''      outline(
+            "global-before-wwi",
+            5,
+            "Cinema becomes international",
+            "1907–1914",
+            "France, Italy, Denmark, the United States and other production centers compete as stars, genres and feature films travel across borders.",
+            ["Map leading prewar production centers.", "Explain why national cinema was international from the beginning.", "Connect star, genre and feature systems to export markets."],
+            ["national cinema", "export market", "star system", "genre", "feature"],
+          ),'''
+          if old in text:
+              text = text.replace(old, '      filmHistoryChapterFive,', 1)
+          elif '      filmHistoryChapterFive,' not in text:
+              raise SystemExit('Chapter 5 outline anchor missing')
+          p.write_text(text)
+          PY
+          git rm .github/workflows/ch5-editorial-materialize.yml
+      - name: Verify full v0.1 with canonical Chapter 5
+        run: npm run verify:v0.1
+      - name: Commit verified Chapter 5 book integration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Complete Film History Chapter 5 full text"
+          git push origin HEAD:agent/complete-film-history-chapter-five-text
