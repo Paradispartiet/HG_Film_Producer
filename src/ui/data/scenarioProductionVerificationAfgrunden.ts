@@ -19,7 +19,7 @@ export const afgrundenProductionCaseVerification = {
       publisher: "British Film Institute / Sight and Sound",
       url: "https://www.bfi.org.uk/sight-and-sound/features/asta-nielsen-silent-muse",
       sourceKind: "film_institute",
-      supports: ["overall", "performance", "industry_and_production_context", "production_design"],
+      supports: ["overall", "cinematography"],
       note: "BFI's historical feature describes the 8,000-kroner backing, eight-day shoot, deserted jail yard, Copenhagen streets and Frederiksberg Gardens, and analyzes Nielsen's restrained performance style and the rope dance as central to the film's impact."
     },
     {
@@ -27,7 +27,7 @@ export const afgrundenProductionCaseVerification = {
       publisher: "Det Danske Filminstitut / Stumfilm.dk",
       url: "https://www.stumfilm.dk/stumfilm/streaming/film/afgrunden",
       sourceKind: "archive_feature",
-      supports: ["overall", "editing", "performance"],
+      supports: ["overall", "editing"],
       note: "The archival streaming record identifies the 38-minute surviving presentation and explains that the preserved material shows chemical deterioration, while the famous dance scene benefits from material recovered from Swedish censorship holdings. This makes preservation/version boundaries explicit rather than treating the digital presentation as an untouched 1910 master."
     },
     {
@@ -35,7 +35,7 @@ export const afgrundenProductionCaseVerification = {
       publisher: "Det Danske Filminstitut",
       url: "https://www.dfi.dk/viden-om-film/filmhistorie/dansk-filmhistorie-1910-1919",
       sourceKind: "film_institute",
-      supports: ["overall", "performance", "reception_and_legacy"],
+      supports: ["overall"],
       note: "DFI situates Afgrunden within Danish erotic melodrama, describes Nielsen's intense and psychologically realistic performance, and connects the film's success to her subsequent international career in Germany."
     }
   ]
