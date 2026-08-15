@@ -21,6 +21,8 @@ test("Chapter 5 keeps Fantômas and Cabiria as materialized international expans
   assert.equal(cabiria.year, 1914);
   assert.equal(cabiria.scenarioType, "historical_epic_production");
   assert.equal(cabiria.runtimeMins, 169);
+  assert.equal(cabiria.sourceId, "manual_cabiria_1914");
+  assert.ok(cabiria.requiredChoicesSeed.camera.includes("moving_camera_spatial_discovery"));
   assert.ok(cabiria.learningGoals.length >= 6);
   assert.ok(cabiria.phases.length >= 9);
 });
