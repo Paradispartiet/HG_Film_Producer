@@ -31,10 +31,13 @@ test("Chapter 6 materializes Gold Rush, The Crowd, The Cheat and It as distinct 
   assert.equal(itFilm.runtimeMins, 72);
   assert.equal(itFilm.scenarioType, "star_vehicle_media_publicity_production");
   assert.equal(itFilm.sourceId, "manual_it_1927");
+  assert.equal(itFilm.sourceUrl, "https://catalog.afi.com/Film/9977-IT");
+  assert.equal(itFilm.directors[0], "Clarence Badger");
+  assert.ok(itFilm.directors.includes("Josef von Sternberg"));
   assert.ok(itFilm.premise.includes("Paramount Famous Lasky"));
   assert.ok(itFilm.premise.includes("Cosmopolitan/Hearst"));
   assert.ok(itFilm.premise.includes("Clara Bow"));
-  assert.ok(itFilm.premise.includes("Josef von Sternberg"));
+  assert.ok(itFilm.premise.includes("Josef von Sternberg's documented additional direction during Badger's illness"));
   assert.ok(itFilm.premise.includes("not as an instruction to objectify"));
   assert.ok(itFilm.requiredChoicesSeed.screenplay.includes("media_tie_in_adaptation"));
   assert.ok(itFilm.requiredChoicesSeed.editing.includes("badger_sternberg_production_continuity"));
