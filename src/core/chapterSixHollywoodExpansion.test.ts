@@ -56,8 +56,14 @@ test("Chapter 6 materializes Gold Rush, The Crowd, The Cheat, It and Wings as di
   assert.equal(wings.scenarioType, "studio_aviation_logistics_production");
   assert.equal(wings.sourceId, "manual_wings_1927");
   assert.equal(wings.sourceUrl, "https://catalog.afi.com/Film/13362-WINGS");
+  assert.deepEqual(wings.directors, ["William A. Wellman"]);
+  assert.ok(wings.premise.includes("United States War Department cooperation"));
+  assert.ok(wings.premise.includes("Camp Stanley, Kelly Field and Brooks Field"));
+  assert.ok(wings.premise.includes("Roy Pomeroy's engineering effects"));
+  assert.ok(wings.premise.includes("1929 national release with added musical score and sound effects"));
   assert.ok(wings.requiredChoicesSeed.camera.includes("aerial_camera_team_coordination"));
   assert.ok(wings.requiredChoicesSeed.editing.includes("multi_unit_continuity"));
+  assert.ok(wings.requiredChoicesSeed.sound.includes("silent_1927_roadshow"));
   assert.ok(wings.requiredChoicesSeed.sound.includes("1929_score_effects_release_boundary"));
   assert.ok(wings.learningGoals.some((goal) => goal.includes("different historical objects")));
   assert.ok(wings.learningGoals.length >= 6);
