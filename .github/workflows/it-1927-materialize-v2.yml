@@ -1,0 +1,58 @@
+name: Materialize It 1927 production case v2
+
+on:
+  push:
+    branches:
+      - agent/it-1927
+    paths:
+      - .github/workflows/it-1927-materialize-v2.yml
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/it-1927
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Recover and correct reviewed It materializer
+        shell: bash
+        run: |
+          git show f348ca3040a77d699f8833b1d739b29a78a1007a:.github/workflows/it-1927-materialize.yml > /tmp/it-old.yml
+          awk '
+            /python3 <<'"'"'PY'"'"'/ { inpy=1; next }
+            inpy && /^          PY$/ { exit }
+            inpy { sub(/^          /, ""); print }
+          ' /tmp/it-old.yml > /tmp/materialize.py
+          python3 <<'PY'
+          from pathlib import Path
+          path = Path('/tmp/materialize.py')
+          text = path.read_text(encoding='utf-8')
+          old_a = '"  },\\n] as const;\\n\\nexport function mergeChapterSixHollywoodExpansion("'
+          new_a = '"\\n] as const;\\n\\nexport function mergeChapterSixHollywoodExpansion("'
+          old_b = '"  },\\n" + it_definition + "] as const;\\n\\nexport function mergeChapterSixHollywoodExpansion("'
+          new_b = '"\\n" + it_definition + "] as const;\\n\\nexport function mergeChapterSixHollywoodExpansion("'
+          if text.count(old_a) != 1 or text.count(old_b) != 1:
+              raise SystemExit(f'Unexpected recovered marker counts: old_a={text.count(old_a)}, old_b={text.count(old_b)}')
+          path.write_text(text.replace(old_a, new_a, 1).replace(old_b, new_b, 1), encoding='utf-8')
+          PY
+          python3 /tmp/materialize.py
+      - name: Full v0.1 verification
+        run: npm run verify:v0.1
+      - name: Commit verified materialization and remove temporary workflow
+        shell: bash
+        run: |
+          rm .github/workflows/it-1927-materialize-v2.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Complete It 1927 production case"
+          git push origin HEAD:agent/it-1927
