@@ -81,9 +81,6 @@ jobs:
 
           rm .github/workflows/fantomas-finalize.yml
 
-      - name: Verify complete branch
-        run: npm ci && npm run verify:v0.1
-
       - name: Commit completion patch and restore workflow set
         shell: bash
         run: |
@@ -93,3 +90,6 @@ jobs:
           git add -A
           git commit -m "Complete Fantomas runtime and audit gates"
           git push origin HEAD:agent/fantomas-1913
+
+      - name: Verify committed branch
+        run: npm ci && npm run verify:v0.1
