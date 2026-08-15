@@ -55,8 +55,19 @@ jobs:
           PY
           git rm .github/workflows/ch5-editorial-materialize.yml
       - name: Verify full v0.1 with canonical Chapter 5
-        run: npm run verify:v0.1
+        id: verify
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run verify:v0.1 2>&1 | tee verify-ch5-output.txt
+      - name: Upload failed Chapter 5 verification diagnostics
+        if: failure() && steps.verify.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ch5-verification-diagnostics
+          path: verify-ch5-output.txt
       - name: Commit verified Chapter 5 book integration
+        if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
