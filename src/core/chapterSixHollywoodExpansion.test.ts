@@ -3,8 +3,8 @@ import test from "node:test";
 
 import { chapterSixHollywoodExpansionDefinitions } from "./chapterSixHollywoodExpansion.js";
 
-test("Chapter 6 materializes Gold Rush, The Crowd, The Cheat and It as distinct Hollywood-system cases", () => {
-  assert.equal(chapterSixHollywoodExpansionDefinitions.length, 4);
+test("Chapter 6 materializes Gold Rush, The Crowd, The Cheat, It and Wings as distinct Hollywood-system cases", () => {
+  assert.equal(chapterSixHollywoodExpansionDefinitions.length, 5);
 
   const goldRush = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_the_gold_rush_1925");
   assert.ok(goldRush);
@@ -47,4 +47,25 @@ test("Chapter 6 materializes Gold Rush, The Crowd, The Cheat and It as distinct 
   assert.ok(itFilm.learningGoals.some((goal) => goal.includes("instead of appearance scoring")));
   assert.ok(itFilm.learningGoals.length >= 6);
   assert.ok(itFilm.phases.length >= 9);
+
+  const wings = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_wings_1927");
+  assert.ok(wings);
+  assert.equal(wings.title, "Wings");
+  assert.equal(wings.year, 1927);
+  assert.equal(wings.runtimeMins, 139);
+  assert.equal(wings.scenarioType, "studio_aviation_logistics_production");
+  assert.equal(wings.sourceId, "manual_wings_1927");
+  assert.equal(wings.sourceUrl, "https://catalog.afi.com/Film/13362-WINGS");
+  assert.deepEqual(wings.directors, ["William A. Wellman"]);
+  assert.ok(wings.premise.includes("United States War Department cooperation"));
+  assert.ok(wings.premise.includes("Camp Stanley, Kelly Field and Brooks Field"));
+  assert.ok(wings.premise.includes("Roy Pomeroy's engineering effects"));
+  assert.ok(wings.premise.includes("1929 national release with added musical score and sound effects"));
+  assert.ok(wings.requiredChoicesSeed.camera.includes("aerial_camera_team_coordination"));
+  assert.ok(wings.requiredChoicesSeed.editing.includes("multi_unit_continuity"));
+  assert.ok(wings.requiredChoicesSeed.sound.includes("silent_1927_roadshow"));
+  assert.ok(wings.requiredChoicesSeed.sound.includes("1929_score_effects_release_boundary"));
+  assert.ok(wings.learningGoals.some((goal) => goal.includes("different historical objects")));
+  assert.ok(wings.learningGoals.length >= 6);
+  assert.ok(wings.phases.length >= 9);
 });
