@@ -10,7 +10,7 @@ export const fantomasProductionCaseVerification = {
       title: "Fantômas (Feuillade)",
       publisher: "Gaumont",
       url: "https://www.gaumont.com/en/movie/fantomas-0",
-      sourceKind: "studio_archive",
+      sourceKind: "archive_feature",
       supports: ["overall", "screenplay", "sound"],
       note: "Gaumont dates the work to 1913, credits Louis Feuillade as director and writer, lists René Navarre and the recurring ensemble, identifies French origin and silent sound, and currently presents the restored programme at 320 minutes."
     },
@@ -26,7 +26,7 @@ export const fantomasProductionCaseVerification = {
       title: "Juve contre Fantômas — conventional title record",
       publisher: "Bibliothèque nationale de France",
       url: "https://catalogue.bnf.fr/ark:/12148/cb16462208q",
-      sourceKind: "national_library",
+      sourceKind: "archive_feature",
       supports: ["overall", "screenplay", "sound"],
       note: "BnF dates the film to 1913, identifies Gaumont production and silent form, credits Feuillade, connects the adaptation to Marcel Allain, and explicitly calls it the second film in a series of five films."
     },
@@ -34,7 +34,7 @@ export const fantomasProductionCaseVerification = {
       title: "Le Mort qui tue — conventional title record",
       publisher: "Bibliothèque nationale de France",
       url: "https://catalogue.bnf.fr/ark:/12148/cb16472192c",
-      sourceKind: "national_library",
+      sourceKind: "archive_feature",
       supports: ["overall", "screenplay", "sound"],
       note: "BnF dates the third Fantômas film to 1913, identifies Gaumont production, silent fiction and Feuillade direction, and explicitly calls it the third film in the five-film series, corroborating the cycle structure without imposing a later chapter-serial template."
     }
