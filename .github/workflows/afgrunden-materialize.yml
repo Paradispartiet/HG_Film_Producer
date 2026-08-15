@@ -1,0 +1,128 @@
+name: Materialize Afgrunden production case
+
+on:
+  push:
+    branches:
+      - agent/afgrunden-1910
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/afgrunden-1910
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Wire Afgrunden into Chapter 5 and permanent gates
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          def replace_once(path, old, new):
+              p = Path(path)
+              text = p.read_text()
+              if old not in text:
+                  raise SystemExit(f"Missing expected text in {path}: {old[:120]!r}")
+              p.write_text(text.replace(old, new, 1))
+
+          block = '''  {
+            id: "scenario_afgrunden_1910",
+            title: "Afgrunden",
+            originalTitle: "Afgrunden",
+            aliases: ["The Abyss", "Der Abgrund", "Woman Always Pays"],
+            year: 1910,
+            titleType: "Feature",
+            runtimeMins: 38,
+            directors: ["Urban Gad"],
+            genres: ["Drama", "Melodrama", "Romance"],
+            premise: "Build Afgrunden as a compact 1910 Kosmorama production problem in performance-led erotic melodrama and international star formation. Urban Gad writes and directs around Asta Nielsen's screen debut, Alfred Lind photographs a short production using controlled spaces and Copenhagen-area locations, and the rope dance concentrates choreography, framing, costume, gesture and scandal into one exportable performance event. Keep the film inside the existing Danish melodrama tradition rather than claiming it invented naturalistic screen acting, and distinguish the surviving/restored presentation from an untouched 1910 master.",
+            sourceId: "manual_afgrunden_1910",
+            sourceUrl: "https://www.dfi.dk/viden-om-film/filmdatabasen/film/afgrunden-0",
+            scenarioType: "erotic_melodrama_production",
+            requiredChoicesSeed: {
+              screenplay: ["magda_social_descent_arc", "erotic_melodrama_concentration", "decisive_scene_structure"],
+              camera: ["performance_centered_framing", "body_and_face_legibility", "location_and_controlled_space_balance"],
+              editing: ["sustained_performance_moments", "decisive_scene_progression", "restoration_boundary_awareness"],
+              sound: ["silent_photographed_production", "screening_specific_accompaniment", "no_invented_original_score"],
+              themes: ["film_history", "danish_silent_cinema", "asta_nielsen", "erotic_melodrama", "transnational_star_circulation"],
+            },
+            learningGoals: [
+              "Concentrate a small production around a performer whose face, gesture and bodily rhythm carry narrative and commercial value without treating acting style as a lone-person invention.",
+              "Design the rope dance as an integrated production event involving choreography, partner performance, framing, costume and audience provocation rather than as an isolated anecdote.",
+              "Use a limited mix of controlled spaces and real Copenhagen-area locations to expand production value without pretending the film had a large studio infrastructure.",
+              "Connect Kosmorama, Hjalmar Davidsen, Urban Gad, Alfred Lind and Asta Nielsen as a production network whose success could generate international star circulation.",
+              "Preserve original-format and restoration boundaries: 35 mm silent production, later digital presentations, recovered censorship material and modern accompaniment are different evidence layers.",
+              "Place Afgrunden inside Danish erotic melodrama and pre-war European export cinema instead of falsely presenting it as a singular origin point for screen realism or star culture.",
+            ],
+            phases: [
+              { id: "pitch", label: "Performance-led melodrama pitch", player_task: "Define why one intense central performance and a dangerous erotic choice can carry a compact feature-scale attraction beyond its home market." },
+              { id: "research", label: "Kosmorama and preservation research", player_task: "Ground Gad, Nielsen, Lind, Davidsen, Kosmorama, 35 mm format, premiere data, surviving material and later restoration evidence in institutional sources." },
+              { id: "screenplay", label: "Decisive social descent", player_task: "Concentrate Magda's engagement, attraction, circus life, exploitation and fatal confrontation into a progression of decisive dramatic situations." },
+              { id: "casting", label: "Screen presence over stage rank", player_task: "Build the film around Nielsen's ability to communicate through face, stillness, gesture and bodily intensity while keeping Reumert and Dinesen dramatically legible as competing social worlds." },
+              { id: "production_design", label: "Small-scale world building", player_task: "Use controlled interiors, the jail-yard space, streets and Frederiksberg Gardens as economical dramatic environments rather than simulating an undocumented large studio build." },
+              { id: "cinematography", label: "Hold the performance", player_task: "Coordinate Alfred Lind's camera around readable bodies, faces, entrances and relationships so performance can develop inside the frame without unsupported lens or coverage assumptions." },
+              { id: "editing", label: "Scene concentration", player_task: "Protect sustained acting moments while moving efficiently between the story's decisive situations, and keep later restoration choices distinct from original negative assembly." },
+              { id: "sound", label: "Silent image, variable accompaniment", player_task: "Treat the photographed production as silent and modern live accompaniment as presentation practice rather than assigning an undocumented fixed 1910 score." },
+              { id: "release", label: "From local production to star export", player_task: "Model how a memorable performance, erotic controversy and concentrated melodrama could turn a Kosmorama release into the launch point for Nielsen's transnational screen career." },
+            ],
+          },'''
+
+          p = Path('src/core/chapterFiveInternationalExpansion.ts')
+          text = p.read_text()
+          marker = '\n] as const;'
+          if marker not in text:
+              raise SystemExit('Chapter 5 insertion marker missing')
+          p.write_text(text.replace(marker, '\n' + block + marker, 1))
+
+          test_path = Path('src/core/chapterFiveInternationalExpansion.test.ts')
+          test_text = test_path.read_text()
+          test_text = test_text.replace('Chapter 5 keeps Fantômas and Cabiria as materialized international expansion cases', 'Chapter 5 keeps Fantômas, Cabiria and Afgrunden as materialized international expansion cases', 1)
+          test_text = test_text.replace('assert.equal(chapterFiveInternationalExpansionDefinitions.length, 2);', 'assert.equal(chapterFiveInternationalExpansionDefinitions.length, 3);', 1)
+          closing = '''  assert.ok(cabiria.phases.length >= 9);\n});'''
+          replacement = '''  assert.ok(cabiria.phases.length >= 9);\n\n  const afgrunden = chapterFiveInternationalExpansionDefinitions.find((item) => item.id === "scenario_afgrunden_1910");\n  assert.ok(afgrunden);\n  assert.equal(afgrunden.title, "Afgrunden");\n  assert.equal(afgrunden.year, 1910);\n  assert.equal(afgrunden.scenarioType, "erotic_melodrama_production");\n  assert.equal(afgrunden.runtimeMins, 38);\n  assert.equal(afgrunden.sourceId, "manual_afgrunden_1910");\n  assert.ok(afgrunden.requiredChoicesSeed.camera.includes("performance_centered_framing"));\n  assert.ok(afgrunden.learningGoals.length >= 6);\n  assert.ok(afgrunden.phases.length >= 9);\n});'''
+          if closing not in test_text:
+              raise SystemExit('Chapter 5 test marker missing')
+          test_path.write_text(test_text.replace(closing, replacement, 1))
+
+          replace_once('src/ui/data/scenarioFilmStudyMap.ts',
+              'import { cabiriaFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsCabiria";',
+              'import { cabiriaFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsCabiria";\nimport { afgrundenFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsAfgrunden";')
+          replace_once('src/ui/data/scenarioFilmStudyMap.ts',
+              '  [cabiriaFilmHistoryProfile.scenarioId]: cabiriaFilmHistoryProfile,',
+              '  [cabiriaFilmHistoryProfile.scenarioId]: cabiriaFilmHistoryProfile,\n  [afgrundenFilmHistoryProfile.scenarioId]: afgrundenFilmHistoryProfile,')
+
+          replace_once('src/ui/data/scenarioProductionVerificationRegistry.ts',
+              'import { cabiriaProductionCaseVerification } from "./scenarioProductionVerificationCabiria";',
+              'import { cabiriaProductionCaseVerification } from "./scenarioProductionVerificationCabiria";\nimport { afgrundenProductionCaseVerification } from "./scenarioProductionVerificationAfgrunden";')
+          replace_once('src/ui/data/scenarioProductionVerificationRegistry.ts',
+              '  fantomasProductionCaseVerification,\n  cabiriaProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,',
+              '  fantomasProductionCaseVerification,\n  cabiriaProductionCaseVerification,\n  afgrundenProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,')
+
+          replace_once('scripts/production-case-rest-audit.mjs', 'const EXPECTED_PLAYABLE_SCENARIOS = 396;', 'const EXPECTED_PLAYABLE_SCENARIOS = 397;')
+          replace_once('scripts/production-case-rest-audit.mjs', 'const EXPECTED_VERIFIED_PRODUCTION_CASES = 396;', 'const EXPECTED_VERIFIED_PRODUCTION_CASES = 397;')
+          replace_once('scripts/film-history-chapter-five-atlas-audit.mjs', 'const EXPECTED_ATLAS_COUNT = 396;', 'const EXPECTED_ATLAS_COUNT = 397;')
+          replace_once('scripts/film-history-chapter-five-atlas-audit.mjs',
+              '  USE_EXISTING: ["Cabiria", "Fantômas", "Queen Elizabeth", "Traffic in Souls"],',
+              '  USE_EXISTING: ["Afgrunden", "Cabiria", "Fantômas", "Queen Elizabeth", "Traffic in Souls"],')
+          replace_once('scripts/film-history-chapter-five-atlas-audit.mjs', '  P1: ["Afgrunden", "Atlantis"],', '  P1: ["Atlantis"],')
+          PY
+      - name: Verify complete Afgrunden branch
+        run: npm run verify:v0.1
+      - name: Commit verified Afgrunden materialization
+        shell: bash
+        run: |
+          rm .github/workflows/afgrunden-materialize.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/core/chapterFiveInternationalExpansion.ts src/core/chapterFiveInternationalExpansion.test.ts src/ui/data/scenarioFilmStudyMap.ts src/ui/data/scenarioProductionVerificationRegistry.ts scripts/production-case-rest-audit.mjs scripts/film-history-chapter-five-atlas-audit.mjs .github/workflows/afgrunden-materialize.yml
+          git commit -m "Complete Afgrunden runtime and audit gates"
+          git push origin HEAD:agent/afgrunden-1910
