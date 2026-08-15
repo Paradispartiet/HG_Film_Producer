@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 399;
+const EXPECTED_ATLAS_COUNT = 400;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -191,8 +191,8 @@ const historicalObjects = [
 ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
 const expectedDecisions = {
-  USE_EXISTING: ["The General", "The Gold Rush"],
-  P0: ["The Crowd"],
+  USE_EXISTING: ["The Crowd", "The General", "The Gold Rush"],
+  P0: [],
   P1: ["It", "The Cheat", "Wings"],
   P2: [
     "Ben-Hur: A Tale of the Christ",
