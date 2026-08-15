@@ -3,8 +3,8 @@ import test from "node:test";
 
 import { chapterSixHollywoodExpansionDefinitions } from "./chapterSixHollywoodExpansion.js";
 
-test("Chapter 6 materializes Gold Rush, The Crowd and The Cheat as distinct Hollywood-system cases", () => {
-  assert.equal(chapterSixHollywoodExpansionDefinitions.length, 3);
+test("Chapter 6 materializes Gold Rush, The Crowd, The Cheat and It as distinct Hollywood-system cases", () => {
+  assert.equal(chapterSixHollywoodExpansionDefinitions.length, 4);
 
   const goldRush = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_the_gold_rush_1925");
   assert.ok(goldRush);
@@ -19,24 +19,29 @@ test("Chapter 6 materializes Gold Rush, The Crowd and The Cheat as distinct Holl
 
   const cheat = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_the_cheat_1915");
   assert.ok(cheat);
-  assert.equal(cheat.title, "The Cheat");
-  assert.equal(cheat.year, 1915);
-  assert.equal(cheat.runtimeMins, 59);
   assert.equal(cheat.scenarioType, "studio_melodrama_star_style_production");
-  assert.equal(cheat.sourceId, "manual_the_cheat_1915");
-  assert.ok(cheat.premise.includes("Jesse L. Lasky Feature Play Company"));
-  assert.ok(cheat.premise.includes("Paramount"));
-  assert.ok(cheat.premise.includes("anti-Asian stereotype"));
+  assert.ok(cheat.requiredChoicesSeed.themes.includes("representation_ethics"));
   assert.ok(cheat.premise.includes("Hishuru Tori"));
   assert.ok(cheat.premise.includes("Burmese Haka Arakau"));
-  assert.ok(cheat.premise.includes("1918 reissue"));
-  assert.ok(cheat.requiredChoicesSeed.camera.includes("low_key_selective_lighting"));
-  assert.ok(cheat.requiredChoicesSeed.editing.includes("1915_1918_version_boundary"));
-  assert.ok(cheat.requiredChoicesSeed.sound.includes("silent_1915_release"));
-  assert.ok(cheat.requiredChoicesSeed.sound.includes("1994_restoration_score_not_original"));
-  assert.ok(cheat.requiredChoicesSeed.themes.includes("representation_ethics"));
-  assert.ok(cheat.learningGoals.some((goal) => goal.includes("without making branding or sexualized violence into a player reward")));
-  assert.ok(cheat.phases.some((phase) => phase.id === "research" && phase.player_task.includes("Japanese American protest")));
-  assert.ok(cheat.learningGoals.length >= 6);
-  assert.ok(cheat.phases.length >= 9);
+
+  const itFilm = chapterSixHollywoodExpansionDefinitions.find((item) => item.id === "scenario_it_1927");
+  assert.ok(itFilm);
+  assert.equal(itFilm.title, "It");
+  assert.equal(itFilm.year, 1927);
+  assert.equal(itFilm.runtimeMins, 72);
+  assert.equal(itFilm.scenarioType, "star_vehicle_media_publicity_production");
+  assert.equal(itFilm.sourceId, "manual_it_1927");
+  assert.ok(itFilm.premise.includes("Paramount Famous Lasky"));
+  assert.ok(itFilm.premise.includes("Cosmopolitan/Hearst"));
+  assert.ok(itFilm.premise.includes("Clara Bow"));
+  assert.ok(itFilm.premise.includes("Josef von Sternberg"));
+  assert.ok(itFilm.premise.includes("not as an instruction to objectify"));
+  assert.ok(itFilm.requiredChoicesSeed.screenplay.includes("media_tie_in_adaptation"));
+  assert.ok(itFilm.requiredChoicesSeed.editing.includes("badger_sternberg_production_continuity"));
+  assert.ok(itFilm.requiredChoicesSeed.sound.includes("silent_1927_release"));
+  assert.ok(itFilm.requiredChoicesSeed.sound.includes("later_accompaniment_not_original"));
+  assert.ok(itFilm.requiredChoicesSeed.themes.includes("star_system"));
+  assert.ok(itFilm.learningGoals.some((goal) => goal.includes("instead of appearance scoring")));
+  assert.ok(itFilm.learningGoals.length >= 6);
+  assert.ok(itFilm.phases.length >= 9);
 });

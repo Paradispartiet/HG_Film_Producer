@@ -19,6 +19,7 @@ import { atlantisFilmHistoryProfile } from "./scenarioFilmStudySilentFoundations
 import { goldRushFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsGoldRush";
 import { theCrowdFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsTheCrowd";
 import { theCheatFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsTheCheat";
+import { itFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsIt";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -60,6 +61,7 @@ const sourceBackedFilmHistoryProfiles = {
   [goldRushFilmHistoryProfile.scenarioId]: goldRushFilmHistoryProfile,
   [theCrowdFilmHistoryProfile.scenarioId]: theCrowdFilmHistoryProfile,
   [theCheatFilmHistoryProfile.scenarioId]: theCheatFilmHistoryProfile,
+  [itFilmHistoryProfile.scenarioId]: itFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
