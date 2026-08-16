@@ -3,8 +3,8 @@ import test from "node:test";
 
 import { chapterEightFrenchAvantGardeExpansionDefinitions } from "./chapterEightFrenchAvantGardeExpansion.js";
 
-test("Chapter 8 materializes Coeur fidele and Napoleon as distinct French avant-garde production cases", () => {
-  assert.equal(chapterEightFrenchAvantGardeExpansionDefinitions.length, 2);
+test("Chapter 8 materializes Coeur fidele, Napoleon and Un Chien Andalou as distinct French avant-garde production cases", () => {
+  assert.equal(chapterEightFrenchAvantGardeExpansionDefinitions.length, 3);
 
   const coeur = chapterEightFrenchAvantGardeExpansionDefinitions.find((item) => item.id === "scenario_coeur_fidele_1923");
   assert.ok(coeur);
@@ -53,4 +53,26 @@ test("Chapter 8 materializes Coeur fidele and Napoleon as distinct French avant-
   assert.ok(napoleon.learningGoals.some((goal) => goal.includes("never be mislabeled")));
   assert.ok(napoleon.learningGoals.length >= 6);
   assert.ok(napoleon.phases.length >= 9);
+
+  const chien = chapterEightFrenchAvantGardeExpansionDefinitions.find((item) => item.id === "scenario_un_chien_andalou_1929");
+  assert.ok(chien);
+  assert.equal(chien.title, "Un Chien Andalou");
+  assert.equal(chien.originalTitle, "Un chien andalou");
+  assert.equal(chien.year, 1929);
+  assert.equal(chien.runtimeMins, 17);
+  assert.equal(chien.scenarioType, "surrealist_discontinuous_association_production");
+  assert.equal(chien.sourceId, "manual_un_chien_andalou_1929");
+  assert.equal(chien.sourceUrl, "https://www.cinematheque.fr/film/47197.html");
+  assert.ok(chien.premise.includes("Luis Buñuel and Salvador Dalí"));
+  assert.ok(chien.premise.includes("Studio-Films"));
+  assert.ok(chien.premise.includes("Albert Duverger"));
+  assert.ok(chien.premise.includes("Studio des Ursulines"));
+  assert.ok(chien.premise.includes("must never instruct the player to injure a person or animal"));
+  assert.ok(chien.requiredChoicesSeed.editing.includes("discontinuous_associative_montage"));
+  assert.ok(chien.requiredChoicesSeed.camera.includes("safe_substitution_for_harm_images"));
+  assert.ok(chien.requiredChoicesSeed.themes.includes("representation_ethics"));
+  assert.ok(chien.learningGoals.some((goal) => goal.includes("never reproduce injury")));
+  assert.ok(chien.learningGoals.some((goal) => goal.includes("distinct historical layers")));
+  assert.ok(chien.learningGoals.length >= 6);
+  assert.ok(chien.phases.length >= 9);
 });
