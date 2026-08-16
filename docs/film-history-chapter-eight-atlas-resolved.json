@@ -10,8 +10,8 @@
     "thesis": "French avant-garde cinema was not one anti-commercial style: feature producers, critics, artists, patrons, specialist venues and independent filmmakers used different production scales to make perception, rhythm, abstraction and Surrealist association into cinema-specific problems."
   },
   "atlas": {
-    "expectedCount": 405,
-    "actualCount": 405,
+    "expectedCount": 406,
+    "actualCount": 406,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -56,6 +56,11 @@
       {
         "fileName": "chapterSevenWeimarExpansion.ts",
         "appended": 2,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
+        "appended": 1,
         "matchedExisting": 0
       },
       {
@@ -144,9 +149,10 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Jean Epstein's central French Impressionist case for photogénie, subjective camera, rhythmic editing and the fairground sequence: a distinct production problem in turning perception and emotion into image rhythm rather than classical continuity alone.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_coeur_fidele_1923",
+      "matches": 1,
+      "origin": "chapterEightFrenchAvantGardeExpansion.ts"
     },
     {
       "title": "Napoléon",
@@ -339,10 +345,10 @@
   ],
   "byDecision": {
     "USE_EXISTING": [
-      "The Passion of Joan of Arc"
+      "The Passion of Joan of Arc",
+      "Cœur fidèle"
     ],
     "P0": [
-      "Cœur fidèle",
       "Napoléon",
       "Un Chien Andalou"
     ],
@@ -426,7 +432,6 @@
     }
   ],
   "recommendedNewProductionCases": [
-    "Cœur fidèle",
     "Napoléon",
     "Un Chien Andalou",
     "The Smiling Madame Beudet",
