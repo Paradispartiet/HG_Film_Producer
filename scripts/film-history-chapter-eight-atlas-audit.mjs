@@ -182,6 +182,13 @@ const historicalObjects = [
   ["Restoration, alternate cuts and reconstructed accompaniment", "La Roue, Napoléon and many shorts survive through complex restoration histories. Modern runtimes, music and reconstructed versions must remain distinct from original production and exhibition states."],
 ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
+const expectedDecisions = {
+  USE_EXISTING: ["The Passion of Joan of Arc"],
+  P0: ["Cœur fidèle", "Napoléon", "Un Chien Andalou"],
+  P1: ["Entr'acte", "The Smiling Madame Beudet"],
+  P2: ["Ballet mécanique", "Emak-Bakia", "L'Inhumaine", "L'Âge d'Or", "L'Étoile de mer", "La Coquille et le Clergyman", "La Roue", "Ménilmontant", "The Fall of the House of Usher"],
+};
+
 function readText(filePath) { return readFileSync(filePath, "utf8"); }
 function normalizeTitle(value) { return String(value ?? "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, " ").trim(); }
 function parseQuotedStrings(value) {
@@ -250,6 +257,7 @@ function matches(left, right) {
   const rightTitles = new Set(acceptedTitles(right));
   return acceptedTitles(left).some((title) => rightTitles.has(title));
 }
+function sameList(left, right) { return JSON.stringify([...left].sort()) === JSON.stringify([...right].sort()); }
 
 const seed = JSON.parse(readText(seedPath));
 const atlas = seed.scenarios.map((scenario) => ({ id: scenario.id, title: scenario.film.title, originalTitle: scenario.film.original_title, aliases: [], year: scenario.film.year, origin: "film_scenarios_seed.json" }));
@@ -277,6 +285,11 @@ for (const result of candidateResults) {
   if (result.expectedScenarioId && result.scenarioId !== result.expectedScenarioId) throw new Error(`${result.title} must resolve to ${result.expectedScenarioId}, found ${result.scenarioId ?? result.decision}`);
 }
 const byDecision = Object.fromEntries(["USE_EXISTING", "P0", "P1", "P2", "EXISTING_REQUIRED"].map((decision) => [decision, candidateResults.filter((candidate) => candidate.decision === decision).map((candidate) => candidate.title)]));
+const structuralProblems = [];
+for (const [decision, expectedTitles] of Object.entries(expectedDecisions)) {
+  if (!sameList(byDecision[decision] ?? [], expectedTitles)) structuralProblems.push(`${decision} must equal ${expectedTitles.join(" | ")}; found ${(byDecision[decision] ?? []).join(" | ")}`);
+}
+if ((byDecision.EXISTING_REQUIRED ?? []).length > 0) structuralProblems.push(`Required existing candidates are missing: ${byDecision.EXISTING_REQUIRED.join(", ")}`);
 const report = {
   schemaVersion: "1.0",
   auditDate: "2026-08-16",
@@ -294,10 +307,16 @@ const report = {
   historicalObjects,
   recommendedNewProductionCases: [...byDecision.P0, ...byDecision.P1],
   remainingBookReferenceOnlyFilms: byDecision.P2,
+  structuralProblems,
 };
 
 mkdirSync(path.join(root, "docs"), { recursive: true });
 writeFileSync(path.join(root, "docs", "film-history-chapter-eight-atlas-resolved.json"), `${JSON.stringify(report, null, 2)}\n`, "utf8");
-console.log("HG_FILM_HISTORY_CHAPTER_EIGHT_ATLAS_RESOLVER_START");
+console.log("HG_FILM_HISTORY_CHAPTER_EIGHT_ATLAS_AUDIT_START");
 console.log(JSON.stringify(report, null, 2));
-console.log("HG_FILM_HISTORY_CHAPTER_EIGHT_ATLAS_RESOLVER_END");
+console.log("HG_FILM_HISTORY_CHAPTER_EIGHT_ATLAS_AUDIT_END");
+
+if (structuralProblems.length > 0) {
+  console.error(`Film History Chapter 8 Atlas audit found ${structuralProblems.length} structural problem(s).`);
+  process.exitCode = 1;
+}
