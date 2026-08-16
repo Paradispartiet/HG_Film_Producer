@@ -1,0 +1,39 @@
+name: Materialize Smiling Madame Beudet 1923 production case
+
+on:
+  push:
+    branches:
+      - agent/ch8-smiling-madame-beudet-1923
+    paths:
+      - .github/workflows/smiling-madame-beudet-1923-materialize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/ch8-smiling-madame-beudet-1923
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Integrate reviewed Smiling Madame Beudet case
+        run: python3 scripts/materialize-smiling-madame-beudet-1923.py
+      - name: Full v0.1 verification
+        run: npm run verify:v0.1
+      - name: Commit verified materialization and remove temporary files
+        shell: bash
+        run: |
+          rm .github/workflows/smiling-madame-beudet-1923-materialize.yml
+          rm scripts/materialize-smiling-madame-beudet-1923.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Complete The Smiling Madame Beudet 1923 production case"
+          git push origin HEAD:agent/ch8-smiling-madame-beudet-1923
