@@ -26,7 +26,7 @@ export const smilingMadameBeudetProductionCaseVerification = {
       title: "La Souriante Madame Beudet",
       publisher: "Centre Pompidou",
       url: "https://www.centrepompidou.fr/fr/ressources/oeuvre/cnykazR",
-      sourceKind: "museum_archive",
+      sourceKind: "archive_feature",
       supports: ["overall", "cinematography", "sound"],
       note: "Museum collection record identifying the work as 1922–1923, 35 mm, black-and-white and silent, with a 39-minute-30-second preserved object and later accompaniment recommendations. Used to make copy/runtime/music history explicit rather than to invent a single original projection state."
     },
