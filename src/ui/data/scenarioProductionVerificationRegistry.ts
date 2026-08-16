@@ -45,6 +45,7 @@ import { theCheatProductionCaseVerification } from "./scenarioProductionVerifica
 import { itProductionCaseVerification } from "./scenarioProductionVerificationIt";
 import { wingsProductionCaseVerification } from "./scenarioProductionVerificationWings";
 import { theLastLaughProductionCaseVerification } from "./scenarioProductionVerificationTheLastLaugh";
+import { pandorasBoxProductionCaseVerification } from "./scenarioProductionVerificationPandorasBox";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -207,6 +208,7 @@ const additionalVerificationRecords = [
   itProductionCaseVerification,
   wingsProductionCaseVerification,
   theLastLaughProductionCaseVerification,
+  pandorasBoxProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
