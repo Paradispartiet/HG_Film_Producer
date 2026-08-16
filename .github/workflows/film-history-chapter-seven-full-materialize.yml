@@ -67,6 +67,14 @@ jobs:
               '  const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 6);\n  assert.equal(remaining.length, 24);',
               '  const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 7);\n  assert.equal(remaining.length, 23);',
           )
+
+          # Chapter 6 permanently asserted that Chapter 7 was still an outline.
+          # Once Chapter 7 is canonical full content, that downstream status assertion must move with the book.
+          replace_once(
+              'src/core/filmHistoryChapterSix.test.ts',
+              '  assert.equal(getFilmHistoryBookChapter("weimar-expressionism")?.status, "outline");',
+              '  assert.equal(getFilmHistoryBookChapter("weimar-expressionism")?.status, "full");',
+          )
           PY
       - name: Full v0.1 verification
         run: npm run verify:v0.1
