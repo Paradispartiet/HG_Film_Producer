@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 407;
+const EXPECTED_ATLAS_COUNT = 408;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -184,8 +184,8 @@ const historicalObjects = [
 ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
 const expectedDecisions = {
-  USE_EXISTING: ["Cœur fidèle", "Napoléon", "The Passion of Joan of Arc"],
-  P0: ["Un Chien Andalou"],
+  USE_EXISTING: ["Cœur fidèle", "Napoléon", "The Passion of Joan of Arc", "Un Chien Andalou"],
+  P0: [],
   P1: ["Entr'acte", "The Smiling Madame Beudet"],
   P2: ["Ballet mécanique", "Emak-Bakia", "L'Inhumaine", "L'Âge d'Or", "L'Étoile de mer", "La Coquille et le Clergyman", "La Roue", "Ménilmontant", "The Fall of the House of Usher"],
 };
