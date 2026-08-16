@@ -96,6 +96,7 @@ export const filmHistoryChapterSeven: FilmHistoryBookChapter = {
     "Weimar cinema", "German Expressionism", "Neue Sachlichkeit", "Kammerspielfilm", "Decla", "Decla-Bioscop", "UFA", "Babelsberg", "prestige production", "international export", "graphic set design", "painted shadow", "location horror", "adaptation rights", "censorship", "Reichslichtspielgesetz", "entfesselte Kamera", "unchained camera", "subjective camera", "camera mobility", "studio construction", "mass choreography", "miniatures", "optical effects", "version history", "restoration", "tinting", "silent accompaniment", "hyperinflation", "stabilization", "street film", "social melodrama", "star circulation", "performance-centered framing", "sexual modernity", "transatlantic labor", "sound transition",
   ],
   sections,
+  sources: filmHistoryChapterSevenSources,
   filmReferences: [
     { title: "The Cabinet of Dr. Caligari", year: 1920, role: "anchor_film", atlasDecision: "use_existing_atlas_case", atlasScenarioId: "scenario_the_cabinet_of_dr_caligari_1920", note: "Existing Atlas anchor for Decla studio production, graphic Expressionist design, stylized performance, framing, tinted silent presentation and restoration-aware version history." },
     { title: "Nosferatu", year: 1922, role: "anchor_film", atlasDecision: "use_existing_atlas_case", atlasScenarioId: "scenario_nosferatu_1922", note: "Existing Prana-Film anchor for location-based uncanny production, Albin Grau design, Fritz Arno Wagner photography, unauthorized Dracula adaptation and rights/survival history." },

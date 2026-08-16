@@ -4,6 +4,7 @@ import { filmHistoryChapterThree } from "./filmHistoryChapterThree.js";
 import { filmHistoryChapterFour } from "./filmHistoryChapterFour.js";
 import { filmHistoryChapterFive } from "./filmHistoryChapterFive.js";
 import { filmHistoryChapterSix } from "./filmHistoryChapterSix.js";
+import { filmHistoryChapterSeven } from "./filmHistoryChapterSeven.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -108,15 +109,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     thesis: "During and after World War I, industrial consolidation and radical modernist alternatives transform what films look like, how they are edited and how national cinemas define themselves.",
     chapters: [
       filmHistoryChapterSix,
-      outline(
-        "weimar-expressionism",
-        7,
-        "Weimar cinema and Expressionism",
-        "1919–1929",
-        "German studios, Expressionist design, chamber drama and mobile camera work turn instability, architecture and subjectivity into film form.",
-        ["Distinguish Expressionism from other Weimar tendencies.", "Analyze production design as narrative form.", "Explain UFA's industrial importance."],
-        ["Expressionism", "Kammerspielfilm", "UFA", "unchained camera", "mise-en-scène"],
-      ),
+      filmHistoryChapterSeven,
       outline(
         "french-avant-gardes",
         8,
