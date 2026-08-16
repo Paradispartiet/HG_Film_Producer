@@ -1,4 +1,4 @@
-# Rerun after verification source-kind correction
+# Diagnostic rerun with named verification gates
 name: Materialize Smiling Madame Beudet 1923 production case
 
 on:
@@ -26,8 +26,34 @@ jobs:
       - run: npm ci
       - name: Integrate reviewed Smiling Madame Beudet case
         run: python3 scripts/materialize-smiling-madame-beudet-1923.py
-      - name: Full v0.1 verification
-        run: npm run verify:v0.1
+      - name: Preflight
+        run: npm run preflight:v0.1
+      - name: Global production-case audit
+        run: npm run audit:production-cases
+      - name: Chapter 1 audit
+        run: npm run audit:film-history-ch1
+      - name: Chapter 2 audit
+        run: npm run audit:film-history-ch2
+      - name: Chapter 3 audit
+        run: npm run audit:film-history-ch3
+      - name: Chapter 4 audit
+        run: npm run audit:film-history-ch4
+      - name: Chapter 5 audit
+        run: npm run audit:film-history-ch5
+      - name: Chapter 6 audit
+        run: npm run audit:film-history-ch6
+      - name: Chapter 7 audit
+        run: npm run audit:film-history-ch7
+      - name: Chapter 8 audit
+        run: npm run audit:film-history-ch8
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Build core tests
+        run: npm run build
+      - name: All core tests
+        run: node --test dist/core/*.test.js
+      - name: UI build
+        run: npm run build:ui
       - name: Commit verified materialization and remove temporary files
         shell: bash
         run: |
