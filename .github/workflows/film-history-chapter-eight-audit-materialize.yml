@@ -117,8 +117,12 @@ jobs:
         run: npm run audit:film-history-ch8
       - name: Typecheck
         run: npm run typecheck
-      - name: Core tests
-        run: npm test
+      - name: Build core tests
+        run: npm run build
+      - name: Chapter 8 audit contract test
+        run: node --test dist/core/filmHistoryChapterEightAuditContract.test.js
+      - name: All core tests
+        run: node --test dist/core/*.test.js
       - name: UI build
         run: npm run build:ui
       - name: Commit permanent audit and remove temporary workflow
