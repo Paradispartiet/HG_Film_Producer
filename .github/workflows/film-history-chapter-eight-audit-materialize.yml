@@ -1,0 +1,136 @@
+name: Materialize permanent Film History Chapter 8 Atlas audit
+
+on:
+  push:
+    branches:
+      - agent/film-history-chapter-eight-atlas-audit
+    paths:
+      - .github/workflows/film-history-chapter-eight-audit-materialize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/film-history-chapter-eight-atlas-audit
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Lock resolved Chapter 8 matrix as permanent audit
+        shell: bash
+        run: |
+          cp scripts/film-history-chapter-eight-atlas-resolver.mjs scripts/film-history-chapter-eight-atlas-audit.mjs
+          python3 <<'PY'
+          from pathlib import Path
+
+          audit_path = Path('scripts/film-history-chapter-eight-atlas-audit.mjs')
+          text = audit_path.read_text(encoding='utf-8')
+
+          historical_marker = '].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));\n\nfunction readText'
+          expected_block = '''].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
+
+const expectedDecisions = {
+  USE_EXISTING: ["The Passion of Joan of Arc"],
+  P0: ["Cœur fidèle", "Napoléon", "Un Chien Andalou"],
+  P1: ["Entr'acte", "The Smiling Madame Beudet"],
+  P2: ["Ballet mécanique", "Emak-Bakia", "L'Inhumaine", "L'Âge d'Or", "L'Étoile de mer", "La Coquille et le Clergyman", "La Roue", "Ménilmontant", "The Fall of the House of Usher"],
+};
+
+function readText'''
+          if text.count(historical_marker) != 1:
+              raise SystemExit('historical marker mismatch')
+          text = text.replace(historical_marker, expected_block, 1)
+
+          match_marker = '''function matches(left, right) {
+  if (left.id && right.id && left.id === right.id) return true;
+  if (left.year !== right.year) return false;
+  const rightTitles = new Set(acceptedTitles(right));
+  return acceptedTitles(left).some((title) => rightTitles.has(title));
+}
+'''
+          match_replacement = match_marker + 'function sameList(left, right) { return JSON.stringify([...left].sort()) === JSON.stringify([...right].sort()); }\n'
+          if text.count(match_marker) != 1:
+              raise SystemExit('matches marker mismatch')
+          text = text.replace(match_marker, match_replacement, 1)
+
+          result_marker = '''for (const result of candidateResults) {
+  if (result.decision === "AMBIGUOUS") throw new Error(`${result.title} matched ${result.matches} Atlas scenarios`);
+  if (result.expectedScenarioId && result.scenarioId !== result.expectedScenarioId) throw new Error(`${result.title} must resolve to ${result.expectedScenarioId}, found ${result.scenarioId ?? result.decision}`);
+}
+const byDecision = Object.fromEntries(["USE_EXISTING", "P0", "P1", "P2", "EXISTING_REQUIRED"].map((decision) => [decision, candidateResults.filter((candidate) => candidate.decision === decision).map((candidate) => candidate.title)]));
+const report = {
+'''
+          result_replacement = '''for (const result of candidateResults) {
+  if (result.decision === "AMBIGUOUS") throw new Error(`${result.title} matched ${result.matches} Atlas scenarios`);
+  if (result.expectedScenarioId && result.scenarioId !== result.expectedScenarioId) throw new Error(`${result.title} must resolve to ${result.expectedScenarioId}, found ${result.scenarioId ?? result.decision}`);
+}
+const byDecision = Object.fromEntries(["USE_EXISTING", "P0", "P1", "P2", "EXISTING_REQUIRED"].map((decision) => [decision, candidateResults.filter((candidate) => candidate.decision === decision).map((candidate) => candidate.title)]));
+const structuralProblems = [];
+for (const [decision, expectedTitles] of Object.entries(expectedDecisions)) {
+  if (!sameList(byDecision[decision] ?? [], expectedTitles)) structuralProblems.push(`${decision} must equal ${expectedTitles.join(" | ")}; found ${(byDecision[decision] ?? []).join(" | ")}`);
+}
+if ((byDecision.EXISTING_REQUIRED ?? []).length > 0) structuralProblems.push(`Required existing candidates are missing: ${byDecision.EXISTING_REQUIRED.join(", ")}`);
+const report = {
+'''
+          if text.count(result_marker) != 1:
+              raise SystemExit('result marker mismatch')
+          text = text.replace(result_marker, result_replacement, 1)
+
+          report_marker = '''  historicalObjects,
+  recommendedNewProductionCases: [...byDecision.P0, ...byDecision.P1],
+  remainingBookReferenceOnlyFilms: byDecision.P2,
+};
+'''
+          report_replacement = '''  historicalObjects,
+  recommendedNewProductionCases: [...byDecision.P0, ...byDecision.P1],
+  remainingBookReferenceOnlyFilms: byDecision.P2,
+  structuralProblems,
+};
+'''
+          if text.count(report_marker) != 1:
+              raise SystemExit('report marker mismatch')
+          text = text.replace(report_marker, report_replacement, 1)
+
+          text = text.replace('HG_FILM_HISTORY_CHAPTER_EIGHT_ATLAS_RESOLVER_START', 'HG_FILM_HISTORY_CHAPTER_EIGHT_ATLAS_AUDIT_START')
+          text = text.replace('HG_FILM_HISTORY_CHAPTER_EIGHT_ATLAS_RESOLVER_END', 'HG_FILM_HISTORY_CHAPTER_EIGHT_ATLAS_AUDIT_END')
+          text += '''
+if (structuralProblems.length > 0) {
+  console.error(`Film History Chapter 8 Atlas audit found ${structuralProblems.length} structural problem(s).`);
+  process.exitCode = 1;
+}
+'''
+          audit_path.write_text(text, encoding='utf-8')
+
+          package_path = Path('package.json')
+          package_text = package_path.read_text(encoding='utf-8')
+          old_script = '    "audit:film-history-ch7": "node scripts/film-history-chapter-seven-atlas-audit.mjs",\n'
+          new_script = old_script + '    "audit:film-history-ch8": "node scripts/film-history-chapter-eight-atlas-audit.mjs",\n'
+          if package_text.count(old_script) != 1:
+              raise SystemExit('package script marker mismatch')
+          package_text = package_text.replace(old_script, new_script, 1)
+          old_verify = 'npm run audit:film-history-ch6 && npm run audit:film-history-ch7 && npm run typecheck'
+          new_verify = 'npm run audit:film-history-ch6 && npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run typecheck'
+          if package_text.count(old_verify) != 1:
+              raise SystemExit('verify marker mismatch')
+          package_text = package_text.replace(old_verify, new_verify, 1)
+          package_path.write_text(package_text, encoding='utf-8')
+          PY
+          rm scripts/film-history-chapter-eight-atlas-resolver.mjs
+      - name: Full v0.1 verification
+        run: npm run verify:v0.1
+      - name: Commit permanent audit and remove temporary workflow
+        shell: bash
+        run: |
+          rm .github/workflows/film-history-chapter-eight-audit-materialize.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Lock Film History Chapter 8 Atlas audit"
+          git push origin HEAD:agent/film-history-chapter-eight-atlas-audit
