@@ -55,8 +55,8 @@ jobs:
           )
           replace_once(
               'src/ui/data/filmScenarios.ts',
-              'Chapter 6 Hollywood-system expansion, modern independent/Asian/prize-cinema expansion',
-              'Chapter 6 Hollywood-system expansion, Chapter 7 Weimar-cinema expansion, modern independent/Asian/prize-cinema expansion',
+              'Chapter 6 Hollywood studio/star-system expansion, modern independent/Asian/prize-cinema expansion',
+              'Chapter 6 Hollywood studio/star-system expansion, Chapter 7 Weimar-cinema expansion, modern independent/Asian/prize-cinema expansion',
           )
 
           # Film Study runtime registration
