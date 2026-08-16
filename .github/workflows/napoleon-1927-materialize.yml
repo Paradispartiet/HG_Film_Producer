@@ -1,0 +1,104 @@
+name: Materialize Napoleon 1927 production case
+
+on:
+  push:
+    branches:
+      - agent/ch8-napoleon-1927
+    paths:
+      - .github/workflows/napoleon-1927-materialize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/ch8-napoleon-1927
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Integrate Napoleon into Atlas
+        shell: bash
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          def replace_once(path, old, new):
+              p = Path(path)
+              text = p.read_text(encoding='utf-8')
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'{path}: expected one marker, got {count}: {old!r}')
+              p.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          # Film Study runtime registration.
+          replace_once(
+              'src/ui/data/scenarioFilmStudyMap.ts',
+              'import { coeurFideleFilmHistoryProfile } from "./scenarioFilmStudyFrenchAvantGardeCoeurFidele";\n',
+              'import { coeurFideleFilmHistoryProfile } from "./scenarioFilmStudyFrenchAvantGardeCoeurFidele";\nimport { napoleonFilmHistoryProfile } from "./scenarioFilmStudyFrenchAvantGardeNapoleon";\n',
+          )
+          replace_once(
+              'src/ui/data/scenarioFilmStudyMap.ts',
+              '  [coeurFideleFilmHistoryProfile.scenarioId]: coeurFideleFilmHistoryProfile,\n',
+              '  [coeurFideleFilmHistoryProfile.scenarioId]: coeurFideleFilmHistoryProfile,\n  [napoleonFilmHistoryProfile.scenarioId]: napoleonFilmHistoryProfile,\n',
+          )
+
+          # Production Verification runtime registration.
+          replace_once(
+              'src/ui/data/scenarioProductionVerificationRegistry.ts',
+              'import { coeurFideleProductionCaseVerification } from "./scenarioProductionVerificationCoeurFidele";\n',
+              'import { coeurFideleProductionCaseVerification } from "./scenarioProductionVerificationCoeurFidele";\nimport { napoleonProductionCaseVerification } from "./scenarioProductionVerificationNapoleon";\n',
+          )
+          replace_once(
+              'src/ui/data/scenarioProductionVerificationRegistry.ts',
+              '  coeurFideleProductionCaseVerification,\n',
+              '  coeurFideleProductionCaseVerification,\n  napoleonProductionCaseVerification,\n',
+          )
+
+          # Chapter 8 gap state: Napoléon moves from P0 to USE_EXISTING.
+          replace_once('scripts/film-history-chapter-eight-atlas-audit.mjs', 'const EXPECTED_ATLAS_COUNT = 406;', 'const EXPECTED_ATLAS_COUNT = 407;')
+          replace_once(
+              'scripts/film-history-chapter-eight-atlas-audit.mjs',
+              '  USE_EXISTING: ["Cœur fidèle", "The Passion of Joan of Arc"],\n  P0: ["Napoléon", "Un Chien Andalou"],',
+              '  USE_EXISTING: ["Cœur fidèle", "Napoléon", "The Passion of Joan of Arc"],\n  P0: ["Un Chien Andalou"],',
+          )
+
+          # Global production-case integrity.
+          replace_once('scripts/production-case-rest-audit.mjs', 'const EXPECTED_PLAYABLE_SCENARIOS = 406;', 'const EXPECTED_PLAYABLE_SCENARIOS = 407;')
+          replace_once('scripts/production-case-rest-audit.mjs', 'const EXPECTED_VERIFIED_PRODUCTION_CASES = 406;', 'const EXPECTED_VERIFIED_PRODUCTION_CASES = 407;')
+
+          # Permanent Chapter 8 matrix contract follows the materialized state.
+          p = Path('src/core/filmHistoryChapterEightAuditContract.test.ts')
+          text = p.read_text(encoding='utf-8')
+          replacements = [
+              ('assert.match(audit, /const EXPECTED_ATLAS_COUNT = 406;/);', 'assert.match(audit, /const EXPECTED_ATLAS_COUNT = 407;/);'),
+              ('assert.match(audit, /USE_EXISTING: \\["Cœur fidèle", "The Passion of Joan of Arc"\\]/);', 'assert.match(audit, /USE_EXISTING: \\["Cœur fidèle", "Napoléon", "The Passion of Joan of Arc"\\]/);'),
+              ('assert.match(audit, /P0: \\["Napoléon", "Un Chien Andalou"\\]/);', 'assert.match(audit, /P0: \\["Un Chien Andalou"\\]/);'),
+              ('assert.deepEqual(resolved.byDecision.USE_EXISTING, ["The Passion of Joan of Arc", "Cœur fidèle"]);', 'assert.deepEqual(resolved.byDecision.USE_EXISTING, ["The Passion of Joan of Arc", "Cœur fidèle", "Napoléon"]);'),
+              ('assert.deepEqual(resolved.byDecision.P0, ["Napoléon", "Un Chien Andalou"]);', 'assert.deepEqual(resolved.byDecision.P0, ["Un Chien Andalou"]);'),
+              ('assert.deepEqual(resolved.recommendedNewProductionCases, ["Napoléon", "Un Chien Andalou", "The Smiling Madame Beudet", "Entr\'acte"]);', 'assert.deepEqual(resolved.recommendedNewProductionCases, ["Un Chien Andalou", "The Smiling Madame Beudet", "Entr\'acte"]);'),
+          ]
+          for old, new in replacements:
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'Chapter 8 contract marker mismatch {count}: {old!r}')
+              text = text.replace(old, new, 1)
+          p.write_text(text, encoding='utf-8')
+          PY
+      - name: Full v0.1 verification
+        run: npm run verify:v0.1
+      - name: Commit verified Napoleon materialization and remove temporary workflow
+        shell: bash
+        run: |
+          rm .github/workflows/napoleon-1927-materialize.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Complete Napoleon 1927 production case"
+          git push origin HEAD:agent/ch8-napoleon-1927
