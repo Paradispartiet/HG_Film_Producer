@@ -142,5 +142,5 @@ test("canonical book resolves Chapters 1–6 as full and preserves the six-part 
   assert.equal(canonicalChapterSix, filmHistoryChapterSix);
   assert.equal(canonicalChapterSix?.status, "full");
   assert.equal(canonicalChapterSix?.sections.length, 15);
-  assert.equal(getFilmHistoryBookChapter("weimar-expressionism")?.status, "outline");
+  assert.equal(getFilmHistoryBookChapter("weimar-expressionism")?.status, "full");
 });
