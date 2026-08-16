@@ -6,14 +6,14 @@ const audit = readFileSync("scripts/film-history-chapter-seven-atlas-audit.mjs",
 const packageJson = readFileSync("package.json", "utf8");
 
 test("Chapter 7 audit locks the reviewed Weimar production-case matrix", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 404;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 405;/);
   assert.match(audit, /number: 7,/);
   assert.match(audit, /title: "Weimar cinema and Expressionism"/);
   assert.match(audit, /period: "1919–1929"/);
 
-  assert.match(audit, /USE_EXISTING: \["Metropolis", "Nosferatu", "The Cabinet of Dr\. Caligari", "The Last Laugh"\]/);
+  assert.match(audit, /USE_EXISTING: \["Metropolis", "Nosferatu", "Pandora\'s Box", "The Cabinet of Dr\. Caligari", "The Last Laugh"\]/);
   assert.match(audit, /P0: \[\]/);
-  assert.match(audit, /P1: \["Pandora's Box"\]/);
+  assert.match(audit, /P1: \[\]/);
   assert.match(audit, /P2: \["Asphalt", "Diary of a Lost Girl", "Die Nibelungen", "Dr\. Mabuse, the Gambler", "Faust", "The Joyless Street", "Variety", "Warning Shadows"\]/);
 
   assert.match(audit, /Kammerspielfilm and the unchained-camera problem are explicit canonical Chapter 7 requirements/);

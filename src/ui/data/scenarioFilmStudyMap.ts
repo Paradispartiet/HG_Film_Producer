@@ -22,6 +22,7 @@ import { theCheatFilmHistoryProfile } from "./scenarioFilmStudySilentFoundations
 import { itFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsIt";
 import { wingsFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsWings";
 import { theLastLaughFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsTheLastLaugh";
+import { pandorasBoxFilmHistoryProfile } from "./scenarioFilmStudySilentFoundationsPandorasBox";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -66,6 +67,7 @@ const sourceBackedFilmHistoryProfiles = {
   [itFilmHistoryProfile.scenarioId]: itFilmHistoryProfile,
   [wingsFilmHistoryProfile.scenarioId]: wingsFilmHistoryProfile,
   [theLastLaughFilmHistoryProfile.scenarioId]: theLastLaughFilmHistoryProfile,
+  [pandorasBoxFilmHistoryProfile.scenarioId]: pandorasBoxFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
