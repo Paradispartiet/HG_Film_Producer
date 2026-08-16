@@ -1,0 +1,446 @@
+{
+  "schemaVersion": "1.0",
+  "auditDate": "2026-08-16",
+  "chapter": {
+    "number": 8,
+    "id": "french-avant-gardes",
+    "title": "French Impressionism, Surrealism and the avant-gardes",
+    "period": "1918–1930",
+    "scope": "Photogénie, subjective vision, French Impressionist feature practice, Dada and Surrealist networks, cinéma pur, cross-art collaboration, alternative financing/exhibition and version-aware preservation.",
+    "thesis": "French avant-garde cinema was not one anti-commercial style: feature producers, critics, artists, patrons, specialist venues and independent filmmakers used different production scales to make perception, rhythm, abstraction and Surrealist association into cinema-specific problems."
+  },
+  "atlas": {
+    "expectedCount": 405,
+    "actualCount": 405,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "appended": 56,
+        "matchedExisting": 2
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFiveInternationalExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSixHollywoodExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSevenWeimarExpansion.ts",
+        "appended": 2,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "appended": 27,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "appended": 20,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "appended": 15,
+        "matchedExisting": 7
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "appended": 23,
+        "matchedExisting": 1
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "appended": 25,
+        "matchedExisting": 3
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "The Passion of Joan of Arc",
+      "originalTitle": "La Passion de Jeanne d'Arc",
+      "year": 1928,
+      "aliases": [
+        "The Passion of Joan of Arc"
+      ],
+      "role": "comparative_anchor",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_passion_of_joan_of_arc_1928",
+      "chapterFunction": "Existing French-produced silent anchor for radical close-up, sparse design, discontinuous eyelines and performance intensity. It broadens the French production field without being falsely relabeled as a core Impressionist or Surrealist manifesto.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_passion_of_joan_of_arc_1928",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Cœur fidèle",
+      "originalTitle": "Cœur fidèle",
+      "year": 1923,
+      "aliases": [
+        "Coeur fidèle",
+        "Coeur fidele",
+        "Faithful Heart"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Jean Epstein's central French Impressionist case for photogénie, subjective camera, rhythmic editing and the fairground sequence: a distinct production problem in turning perception and emotion into image rhythm rather than classical continuity alone.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Napoléon",
+      "originalTitle": "Napoléon vu par Abel Gance",
+      "year": 1927,
+      "aliases": [
+        "Napoleon",
+        "Napoléon"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Abel Gance's large-scale production and exhibition experiment connects mobile camera work, rapid montage, multiple-image techniques, tinting and the Polyvision triptych to feature-scale logistics and version history.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Un Chien Andalou",
+      "originalTitle": "Un chien andalou",
+      "year": 1929,
+      "aliases": [
+        "An Andalusian Dog"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Buñuel and Dalí's Surrealist collaboration provides a distinct low-budget production problem in automatic-writing logic, discontinuous association, alternative exhibition and provocative imagery, with explicit safeguards against reenacting animal or bodily harm as gameplay.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Smiling Madame Beudet",
+      "originalTitle": "La Souriante Madame Beudet",
+      "year": 1923,
+      "aliases": [
+        "La souriante Madame Beudet",
+        "The Smiling Mme Beudet"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Germaine Dulac's domestic subjectivity makes superimposition, fantasy insert, gesture and restricted social space serve a woman's interior life, widening Impressionist gameplay beyond a male-only canon and beyond spectacle.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Entr'acte",
+      "originalTitle": "Entr'acte",
+      "year": 1924,
+      "aliases": [
+        "Entr’acte"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "René Clair, Francis Picabia and Erik Satie connect Dada, ballet, commissioned intermission cinema, variable-speed imagery and cross-art collaboration to alternative institutions and event-based exhibition rather than normal feature distribution.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "La Roue",
+      "originalTitle": "La Roue",
+      "year": 1923,
+      "aliases": [
+        "The Wheel"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Gance's long-form railway melodrama is crucial for accelerated montage, multi-camera production and extreme version history, but Napoléon carries the more distinct Gance Production Case while La Roue remains indispensable book evidence.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Ballet mécanique",
+      "originalTitle": "Ballet mécanique",
+      "year": 1924,
+      "aliases": [
+        "Ballet Mecanique",
+        "Ballet mécanique"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Léger and Murphy's machine-body abstraction is a core pure-cinema comparison, but its nonnarrative rhythmic function can remain book-level beside Entr'acte and the later experimental-film chapter rather than generating redundant gameplay.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "La Coquille et le Clergyman",
+      "originalTitle": "La Coquille et le Clergyman",
+      "year": 1928,
+      "aliases": [
+        "The Seashell and the Clergyman",
+        "La Coquille et le clergyman"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Dulac and Artaud's contested Surrealist/psychological collaboration is essential for authorship, dream logic and gendered interpretation, but Un Chien Andalou and Madame Beudet provide clearer distinct gameplay poles without duplicating Dulac.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Fall of the House of Usher",
+      "originalTitle": "La Chute de la maison Usher",
+      "year": 1928,
+      "aliases": [
+        "La Chute de la maison Usher"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Epstein's Poe adaptation extends photogénie through slow motion, superimposition, rhythm and material atmosphere, but Cœur fidèle already supplies the stronger foundational Epstein Production Case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Ménilmontant",
+      "originalTitle": "Ménilmontant",
+      "year": 1926,
+      "aliases": [
+        "Menilmontant"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Kirsanoff's independent urban melodrama is valuable for title-light visual narration, location texture and subjective editing but overlaps the Impressionist perception problem already assigned to Cœur fidèle.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Emak-Bakia",
+      "originalTitle": "Emak-Bakia",
+      "year": 1926,
+      "aliases": [
+        "Emak Bakia"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Man Ray's cinegraphic experiment broadens abstraction, rayograph-like imagery and artist-film production, but belongs as book-level pure-cinema evidence rather than another short-form Production Case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "L'Étoile de mer",
+      "originalTitle": "L'Étoile de mer",
+      "year": 1928,
+      "aliases": [
+        "L'Etoile de mer",
+        "The Starfish"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Man Ray's collaboration with Robert Desnos expands distorted vision, poetic text and Surrealist association while overlapping the short-form experimental production functions of the stronger anchor cases.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "L'Inhumaine",
+      "originalTitle": "L'Inhumaine",
+      "year": 1924,
+      "aliases": [
+        "The Inhuman Woman"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Marcel L'Herbier's cross-art feature is important for modernist architecture, design and international artistic collaboration, but those production-design functions overlap existing large-scale design cases and can remain book-level here.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "L'Âge d'Or",
+      "originalTitle": "L'Âge d'Or",
+      "year": 1930,
+      "aliases": [
+        "L'Age d'Or",
+        "The Golden Age"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Buñuel's patron-funded 1930 Surrealist feature is vital for sound-era provocation, censorship and alternative patronage, but Un Chien Andalou is the cleaner silent-era Surrealist Production Case and Chapter 11 owns the sound transition.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "The Passion of Joan of Arc"
+    ],
+    "P0": [
+      "Cœur fidèle",
+      "Napoléon",
+      "Un Chien Andalou"
+    ],
+    "P1": [
+      "The Smiling Madame Beudet",
+      "Entr'acte"
+    ],
+    "P2": [
+      "La Roue",
+      "Ballet mécanique",
+      "La Coquille et le Clergyman",
+      "The Fall of the House of Usher",
+      "Ménilmontant",
+      "Emak-Bakia",
+      "L'Étoile de mer",
+      "L'Inhumaine",
+      "L'Âge d'Or"
+    ],
+    "EXISTING_REQUIRED": []
+  },
+  "historicalObjects": [
+    {
+      "label": "Photogénie and French Impressionist film theory",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Delluc, Epstein, Dulac and others theorized cinema's capacity to transform objects, faces, movement and duration. Photogénie is a contested critical concept, not a camera preset or measurable gameplay score."
+    },
+    {
+      "label": "Film criticism, journals, ciné-clubs and specialist cinemas",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Writing, clubs and venues helped define audiences and vocabularies for film art outside mainstream commercial circulation; these institutions enabled movements but are not films."
+    },
+    {
+      "label": "Independent producers, patrons and alternative financing",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Avant-garde work depended on small companies, private money, artist networks and sometimes wealthy patrons, creating different freedoms and dependencies from vertically integrated studios."
+    },
+    {
+      "label": "Dada and Surrealist artist networks",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Film intersected with poetry, painting, performance and anti-bourgeois artistic movements. Those networks shaped collaboration and exhibition but should not be converted into a single reproducible style recipe."
+    },
+    {
+      "label": "Cinéma pur and abstract moving-image practice",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Artists explored rhythm, shape, repetition, speed and photographic transformation without conventional narrative obligations; the practice spans many shorts rather than one canonical Production Case."
+    },
+    {
+      "label": "Alternative exhibition and event cinema",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Studio des Ursulines, Studio 28, theatre/ballet programs and ciné-club screenings created contexts where short experimental works could circulate and provoke audiences outside standard feature programs."
+    },
+    {
+      "label": "Cross-art production design and modernist collaboration",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Architects, painters, musicians, poets and designers entered film production, making French avant-garde cinema a collaborative art-world system rather than a director-only phenomenon."
+    },
+    {
+      "label": "Gender, authorship and unequal canon formation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Germaine Dulac and other women were central to French avant-garde production and theory; later canons and attribution disputes can obscure that labor and must be handled explicitly."
+    },
+    {
+      "label": "Censorship, scandal and representational harm",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Provocation could trigger censorship or political reaction, while shocking images may involve real harm or vulnerable bodies. Historical analysis does not turn dangerous or exploitative acts into player objectives."
+    },
+    {
+      "label": "Restoration, alternate cuts and reconstructed accompaniment",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "La Roue, Napoléon and many shorts survive through complex restoration histories. Modern runtimes, music and reconstructed versions must remain distinct from original production and exhibition states."
+    }
+  ],
+  "recommendedNewProductionCases": [
+    "Cœur fidèle",
+    "Napoléon",
+    "Un Chien Andalou",
+    "The Smiling Madame Beudet",
+    "Entr'acte"
+  ],
+  "remainingBookReferenceOnlyFilms": [
+    "La Roue",
+    "Ballet mécanique",
+    "La Coquille et le Clergyman",
+    "The Fall of the House of Usher",
+    "Ménilmontant",
+    "Emak-Bakia",
+    "L'Étoile de mer",
+    "L'Inhumaine",
+    "L'Âge d'Or"
+  ]
+}
