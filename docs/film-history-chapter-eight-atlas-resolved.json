@@ -10,8 +10,8 @@
     "thesis": "French avant-garde cinema was not one anti-commercial style: feature producers, critics, artists, patrons, specialist venues and independent filmmakers used different production scales to make perception, rhythm, abstraction and Surrealist association into cinema-specific problems."
   },
   "atlas": {
-    "expectedCount": 406,
-    "actualCount": 406,
+    "expectedCount": 407,
+    "actualCount": 407,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -60,7 +60,7 @@
       },
       {
         "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
-        "appended": 1,
+        "appended": 2,
         "matchedExisting": 0
       },
       {
@@ -165,9 +165,10 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Abel Gance's large-scale production and exhibition experiment connects mobile camera work, rapid montage, multiple-image techniques, tinting and the Polyvision triptych to feature-scale logistics and version history.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_napoleon_1927",
+      "matches": 1,
+      "origin": "chapterEightFrenchAvantGardeExpansion.ts"
     },
     {
       "title": "Un Chien Andalou",
@@ -346,10 +347,10 @@
   "byDecision": {
     "USE_EXISTING": [
       "The Passion of Joan of Arc",
-      "Cœur fidèle"
+      "Cœur fidèle",
+      "Napoléon"
     ],
     "P0": [
-      "Napoléon",
       "Un Chien Andalou"
     ],
     "P1": [
@@ -432,7 +433,6 @@
     }
   ],
   "recommendedNewProductionCases": [
-    "Napoléon",
     "Un Chien Andalou",
     "The Smiling Madame Beudet",
     "Entr'acte"
