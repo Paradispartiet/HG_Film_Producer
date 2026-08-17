@@ -5,6 +5,7 @@ import { filmHistoryChapterFour } from "./filmHistoryChapterFour.js";
 import { filmHistoryChapterFive } from "./filmHistoryChapterFive.js";
 import { filmHistoryChapterSix } from "./filmHistoryChapterSix.js";
 import { filmHistoryChapterSeven } from "./filmHistoryChapterSeven.js";
+import { filmHistoryChapterEight } from "./filmHistoryChapterEight.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -110,15 +111,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     chapters: [
       filmHistoryChapterSix,
       filmHistoryChapterSeven,
-      outline(
-        "french-avant-gardes",
-        8,
-        "French Impressionism, Surrealism and the avant-gardes",
-        "1918–1930",
-        "French filmmakers and artists pursue photogénie, subjective vision, abstraction, Surrealism and alternatives to commercial narrative norms.",
-        ["Define photogénie in historical context.", "Compare Impressionist and Surrealist strategies.", "Connect avant-garde production to alternative institutions."],
-        ["photogénie", "French Impressionism", "Surrealism", "pure cinema", "avant-garde"],
-      ),
+      filmHistoryChapterEight,
       outline(
         "soviet-montage",
         9,
