@@ -22,5 +22,5 @@ test("Chapter 7 audit locks the reviewed Weimar production-case matrix", () => {
   assert.match(audit, /Transatlantic circulation of Weimar labor and style/);
 
   assert.match(packageJson, /"audit:film-history-ch7": "node scripts\/film-history-chapter-seven-atlas-audit\.mjs"/);
-  assert.match(packageJson, /npm run audit:film-history-ch6 && npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run typecheck/);
+  assert.match(packageJson, /npm run audit:film-history-ch6 && npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run audit:film-history-ch9 && npm run typecheck/);
 });
