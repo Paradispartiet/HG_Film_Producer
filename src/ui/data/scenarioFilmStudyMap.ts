@@ -26,6 +26,7 @@ import { pandorasBoxFilmHistoryProfile } from "./scenarioFilmStudySilentFoundati
 import { coeurFideleFilmHistoryProfile } from "./scenarioFilmStudyFrenchAvantGardeCoeurFidele";
 import { napoleonFilmHistoryProfile } from "./scenarioFilmStudyFrenchAvantGardeNapoleon";
 import { unChienAndalouFilmHistoryProfile } from "./scenarioFilmStudyFrenchAvantGardeUnChienAndalou";
+import { entrActeFilmHistoryProfile } from "./scenarioFilmStudyFrenchAvantGardeEntrActe";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -74,6 +75,7 @@ const sourceBackedFilmHistoryProfiles = {
   [coeurFideleFilmHistoryProfile.scenarioId]: coeurFideleFilmHistoryProfile,
   [napoleonFilmHistoryProfile.scenarioId]: napoleonFilmHistoryProfile,
   [unChienAndalouFilmHistoryProfile.scenarioId]: unChienAndalouFilmHistoryProfile,
+  [entrActeFilmHistoryProfile.scenarioId]: entrActeFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",

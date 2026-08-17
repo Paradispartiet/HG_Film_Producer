@@ -10,8 +10,8 @@
     "thesis": "French avant-garde cinema was not one anti-commercial style: feature producers, critics, artists, patrons, specialist venues and independent filmmakers used different production scales to make perception, rhythm, abstraction and Surrealist association into cinema-specific problems."
   },
   "atlas": {
-    "expectedCount": 408,
-    "actualCount": 408,
+    "expectedCount": 409,
+    "actualCount": 409,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -60,7 +60,7 @@
       },
       {
         "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
-        "appended": 3,
+        "appended": 4,
         "matchedExisting": 0
       },
       {
@@ -210,9 +210,10 @@
       "role": "anchor_film",
       "decisionIfMissing": "P1",
       "chapterFunction": "René Clair, Francis Picabia and Erik Satie connect Dada, ballet, commissioned intermission cinema, variable-speed imagery and cross-art collaboration to alternative institutions and event-based exhibition rather than normal feature distribution.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_entr_acte_1924",
+      "matches": 1,
+      "origin": "chapterEightFrenchAvantGardeExpansion.ts"
     },
     {
       "title": "La Roue",
@@ -350,12 +351,12 @@
       "The Passion of Joan of Arc",
       "Cœur fidèle",
       "Napoléon",
-      "Un Chien Andalou"
+      "Un Chien Andalou",
+      "Entr'acte"
     ],
     "P0": [],
     "P1": [
-      "The Smiling Madame Beudet",
-      "Entr'acte"
+      "The Smiling Madame Beudet"
     ],
     "P2": [
       "La Roue",
@@ -433,8 +434,7 @@
     }
   ],
   "recommendedNewProductionCases": [
-    "The Smiling Madame Beudet",
-    "Entr'acte"
+    "The Smiling Madame Beudet"
   ],
   "remainingBookReferenceOnlyFilms": [
     "La Roue",
