@@ -51,6 +51,7 @@ import { napoleonProductionCaseVerification } from "./scenarioProductionVerifica
 import { unChienAndalouProductionCaseVerification } from "./scenarioProductionVerificationUnChienAndalou";
 import { entrActeProductionCaseVerification } from "./scenarioProductionVerificationEntrActe";
 import { smilingMadameBeudetProductionCaseVerification } from "./scenarioProductionVerificationSmilingMadameBeudet";
+import { sovietMontageProductionVerificationRecords } from "./scenarioProductionVerificationSovietMontageBatch";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -219,6 +220,7 @@ const additionalVerificationRecords = [
   unChienAndalouProductionCaseVerification,
   entrActeProductionCaseVerification,
   smilingMadameBeudetProductionCaseVerification,
+  ...sovietMontageProductionVerificationRecords,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

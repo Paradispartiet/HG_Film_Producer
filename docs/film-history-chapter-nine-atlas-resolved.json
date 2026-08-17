@@ -10,8 +10,8 @@
     "thesis": "Soviet montage was not one editing recipe: Kuleshov, Eisenstein, Pudovkin, Vertov, Shub, Dovzhenko and others worked through different institutions and theories to make editing a site of perception, political argument, historical construction and documentary authorship."
   },
   "atlas": {
-    "expectedCount": 410,
-    "actualCount": 410,
+    "expectedCount": 415,
+    "actualCount": 415,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -60,6 +60,11 @@
       },
       {
         "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterNineSovietMontageExpansion.ts",
         "appended": 5,
         "matchedExisting": 0
       },
@@ -164,10 +169,12 @@
       ],
       "role": "anchor_film",
       "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_mother_1926",
       "chapterFunction": "Pudovkin provides the essential contrast to Eisenstein: linkage and accumulation of shots build character, emotion and revolutionary causality through a feature-scale adaptation rather than collision alone.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_mother_1926",
+      "matches": 1,
+      "origin": "chapterNineSovietMontageExpansion.ts"
     },
     {
       "title": "The Fall of the Romanov Dynasty",
@@ -178,10 +185,12 @@
       ],
       "role": "anchor_film",
       "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_the_fall_of_the_romanov_dynasty_1927",
       "chapterFunction": "Esfir Shub makes archival search, found-footage selection, recontextualization, intertitles, preservation and editorial authorship into a distinct compilation-montage production problem.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_fall_of_the_romanov_dynasty_1927",
+      "matches": 1,
+      "origin": "chapterNineSovietMontageExpansion.ts"
     },
     {
       "title": "Earth",
@@ -192,10 +201,12 @@
       ],
       "role": "anchor_film",
       "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_earth_1930",
       "chapterFunction": "Dovzhenko adds Ukrainian production context, lyrical and associative montage, landscape, collectivization propaganda and the need to distinguish a film's commission from the historical catastrophe understood in hindsight.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_earth_1930",
+      "matches": 1,
+      "origin": "chapterNineSovietMontageExpansion.ts"
     },
     {
       "title": "October",
@@ -207,10 +218,12 @@
       ],
       "role": "major_comparison",
       "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_october_1928",
       "chapterFunction": "A state anniversary commission turns historical reconstruction, nonprofessional casting, intellectual montage and politically compelled recutting into a production problem distinct from Potemkin's 1905 mass-action model.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_october_1928",
+      "matches": 1,
+      "origin": "chapterNineSovietMontageExpansion.ts"
     },
     {
       "title": "The Extraordinary Adventures of Mr. West in the Land of the Bolsheviks",
@@ -222,10 +235,12 @@
       ],
       "role": "major_comparison",
       "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_mr_west_bolsheviks_1924",
       "chapterFunction": "Kuleshov's workshop turns American genre borrowing, rapid constructive editing, physical performance, satire and pedagogy into a practical counterpart to the abstract Kuleshov-effect discussion.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_mr_west_bolsheviks_1924",
+      "matches": 1,
+      "origin": "chapterNineSovietMontageExpansion.ts"
     },
     {
       "title": "Strike",
@@ -440,17 +455,15 @@
   "byDecision": {
     "USE_EXISTING": [
       "Battleship Potemkin",
-      "Man with a Movie Camera"
-    ],
-    "P0": [
+      "Man with a Movie Camera",
       "Mother",
       "The Fall of the Romanov Dynasty",
-      "Earth"
-    ],
-    "P1": [
+      "Earth",
       "October",
       "The Extraordinary Adventures of Mr. West in the Land of the Bolsheviks"
     ],
+    "P0": [],
+    "P1": [],
     "P2": [
       "Strike",
       "The General Line",
@@ -543,13 +556,7 @@
     "State commission, propaganda purpose, censorship and archival alteration must remain distinct historical claims; the game never rewards falsifying evidence or endorsing political violence.",
     "Esfir Shub's archival research and editing labor must be credited as authorship rather than reduced to anonymous reuse of existing footage."
   ],
-  "recommendedNewProductionCases": [
-    "Mother",
-    "The Fall of the Romanov Dynasty",
-    "Earth",
-    "October",
-    "The Extraordinary Adventures of Mr. West in the Land of the Bolsheviks"
-  ],
+  "recommendedNewProductionCases": [],
   "remainingBookReferenceOnlyFilms": [
     "Strike",
     "The General Line",

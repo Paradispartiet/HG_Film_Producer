@@ -28,6 +28,7 @@ import { napoleonFilmHistoryProfile } from "./scenarioFilmStudyFrenchAvantGardeN
 import { unChienAndalouFilmHistoryProfile } from "./scenarioFilmStudyFrenchAvantGardeUnChienAndalou";
 import { entrActeFilmHistoryProfile } from "./scenarioFilmStudyFrenchAvantGardeEntrActe";
 import { smilingMadameBeudetFilmHistoryProfile } from "./scenarioFilmStudyFrenchAvantGardeSmilingMadameBeudet";
+import { motherFilmHistoryProfile, fallRomanovDynastyFilmHistoryProfile, earthFilmHistoryProfile, octoberFilmHistoryProfile, mrWestFilmHistoryProfile } from "./scenarioFilmStudySovietMontageBatch";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -78,6 +79,11 @@ const sourceBackedFilmHistoryProfiles = {
   [unChienAndalouFilmHistoryProfile.scenarioId]: unChienAndalouFilmHistoryProfile,
   [entrActeFilmHistoryProfile.scenarioId]: entrActeFilmHistoryProfile,
   [smilingMadameBeudetFilmHistoryProfile.scenarioId]: smilingMadameBeudetFilmHistoryProfile,
+  [motherFilmHistoryProfile.scenarioId]: motherFilmHistoryProfile,
+  [fallRomanovDynastyFilmHistoryProfile.scenarioId]: fallRomanovDynastyFilmHistoryProfile,
+  [earthFilmHistoryProfile.scenarioId]: earthFilmHistoryProfile,
+  [octoberFilmHistoryProfile.scenarioId]: octoberFilmHistoryProfile,
+  [mrWestFilmHistoryProfile.scenarioId]: mrWestFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
