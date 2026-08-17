@@ -25,6 +25,28 @@ jobs:
       - run: npm ci
       - name: Integrate reviewed Madame Beudet case
         run: python3 scripts/materialize-smiling-madame-beudet-1923.py
+      - name: Reconcile exact Chapter 8 regression expectations
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          expansion = Path("src/core/chapterEightFrenchAvantGardeExpansion.ts")
+          text = expansion.read_text(encoding="utf-8")
+          old = "Germaine Dulac's 1923 Film d'Art - Vandal et Delac adaptation"
+          new = "Germaine Dulac's 1923 Le Film d'Art - Vandal et Delac adaptation"
+          if text.count(old) != 1:
+              raise SystemExit(f"premise marker mismatch: {text.count(old)}")
+          expansion.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+          contract = Path("src/core/filmHistoryChapterEightAuditContract.test.ts")
+          text = contract.read_text(encoding="utf-8")
+          old = 'assert.deepEqual(resolved.byDecision.USE_EXISTING, ["The Passion of Joan of Arc", "Cœur fidèle", "Napoléon", "Un Chien Andalou", "Entr\'acte", "The Smiling Madame Beudet"]);'
+          new = 'assert.deepEqual(resolved.byDecision.USE_EXISTING, ["The Passion of Joan of Arc", "Cœur fidèle", "Napoléon", "Un Chien Andalou", "The Smiling Madame Beudet", "Entr\'acte"]);'
+          if text.count(old) != 1:
+              raise SystemExit(f"resolved-order marker mismatch: {text.count(old)}")
+          contract.write_text(text.replace(old, new, 1), encoding="utf-8")
+          PY
       - name: Full v0.1 verification with captured output
         id: verify
         shell: bash
