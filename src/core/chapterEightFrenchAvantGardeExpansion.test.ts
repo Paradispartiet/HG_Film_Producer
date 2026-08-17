@@ -3,8 +3,8 @@ import test from "node:test";
 
 import { chapterEightFrenchAvantGardeExpansionDefinitions } from "./chapterEightFrenchAvantGardeExpansion.js";
 
-test("Chapter 8 materializes Coeur fidele, Napoleon and Un Chien Andalou as distinct French avant-garde production cases", () => {
-  assert.equal(chapterEightFrenchAvantGardeExpansionDefinitions.length, 3);
+test("Chapter 8 materializes Coeur fidele, Napoleon, Un Chien Andalou and Entr'acte as distinct French avant-garde production cases", () => {
+  assert.equal(chapterEightFrenchAvantGardeExpansionDefinitions.length, 4);
 
   const coeur = chapterEightFrenchAvantGardeExpansionDefinitions.find((item) => item.id === "scenario_coeur_fidele_1923");
   assert.ok(coeur);
@@ -75,4 +75,27 @@ test("Chapter 8 materializes Coeur fidele, Napoleon and Un Chien Andalou as dist
   assert.ok(chien.learningGoals.some((goal) => goal.includes("distinct historical layers")));
   assert.ok(chien.learningGoals.length >= 6);
   assert.ok(chien.phases.length >= 9);
+
+  const entrActe = chapterEightFrenchAvantGardeExpansionDefinitions.find((item) => item.id === "scenario_entr_acte_1924");
+  assert.ok(entrActe);
+  assert.equal(entrActe.title, "Entr'acte");
+  assert.equal(entrActe.year, 1924);
+  assert.equal(entrActe.runtimeMins, 23);
+  assert.equal(entrActe.scenarioType, "dada_ballet_interval_trick_montage_production");
+  assert.equal(entrActe.sourceId, "manual_entr_acte_1924");
+  assert.equal(entrActe.sourceUrl, "https://www.fondation-jeromeseydoux-pathe.com/cms/restaurations");
+  assert.ok(entrActe.premise.includes("Rolf de Maré"));
+  assert.ok(entrActe.premise.includes("Francis Picabia"));
+  assert.ok(entrActe.premise.includes("Jimmy Berliet"));
+  assert.ok(entrActe.premise.includes("Erik Satie"));
+  assert.ok(entrActe.premise.includes("4 December 1924"));
+  assert.ok(entrActe.premise.includes("1967"));
+  assert.ok(entrActe.premise.includes("representative restoration value"));
+  assert.ok(entrActe.requiredChoicesSeed.camera.includes("frame_by_frame_stop_motion"));
+  assert.ok(entrActe.requiredChoicesSeed.editing.includes("version_1924_1967_restoration_control"));
+  assert.ok(entrActe.requiredChoicesSeed.sound.includes("satie_original_accompaniment"));
+  assert.ok(entrActe.learningGoals.some((goal) => goal.includes("trick-film and chase-comedy inheritance")));
+  assert.ok(entrActe.learningGoals.some((goal) => goal.includes("version tree")));
+  assert.ok(entrActe.learningGoals.length >= 6);
+  assert.ok(entrActe.phases.length >= 9);
 });
