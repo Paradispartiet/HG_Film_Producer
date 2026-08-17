@@ -1,0 +1,378 @@
+{
+  "schemaVersion": "diagnostic-1.0",
+  "auditDate": "2026-08-17",
+  "chapter": {
+    "number": 9,
+    "id": "soviet-montage",
+    "title": "Soviet montage: revolution, form and propaganda",
+    "period": "1917–1934"
+  },
+  "atlas": {
+    "expectedCount": 410,
+    "actualCount": 410,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "appended": 56,
+        "matchedExisting": 2
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFiveInternationalExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSixHollywoodExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSevenWeimarExpansion.ts",
+        "appended": 2,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "appended": 27,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "appended": 20,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "appended": 15,
+        "matchedExisting": 7
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "appended": 23,
+        "matchedExisting": 1
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "appended": 25,
+        "matchedExisting": 3
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "Strike",
+      "originalTitle": "Stachka",
+      "year": 1925,
+      "aliases": [
+        "Стачка"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "Battleship Potemkin",
+      "originalTitle": "Bronenosets Potemkin",
+      "year": 1925,
+      "aliases": [
+        "The Battleship Potemkin",
+        "Броненосец Потёмкин"
+      ],
+      "matches": 1,
+      "found": [
+        {
+          "id": "scenario_battleship_potemkin_1925",
+          "title": "Battleship Potemkin",
+          "originalTitle": "Bronenosets Potemkin",
+          "year": 1925,
+          "origin": "earlyCinemaExpansion.ts"
+        }
+      ]
+    },
+    {
+      "title": "October",
+      "originalTitle": "Oktyabr",
+      "year": 1928,
+      "aliases": [
+        "October: Ten Days That Shook the World",
+        "Октябрь"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "The General Line",
+      "originalTitle": "Staroye i novoye",
+      "year": 1929,
+      "aliases": [
+        "Old and New",
+        "The Old and the New",
+        "Старое и новое"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "Mother",
+      "originalTitle": "Mat",
+      "year": 1926,
+      "aliases": [
+        "Мать"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "The End of St. Petersburg",
+      "originalTitle": "Konets Sankt-Peterburga",
+      "year": 1927,
+      "aliases": [
+        "The End of Saint Petersburg",
+        "Конец Санкт-Петербурга"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "Storm over Asia",
+      "originalTitle": "Potomok Chingis-Khana",
+      "year": 1928,
+      "aliases": [
+        "The Heir to Genghis Khan",
+        "Потомок Чингисхана"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "The Extraordinary Adventures of Mr. West in the Land of the Bolsheviks",
+      "originalTitle": "Neobychainye priklyucheniya mistera Vesta v strane bolshevikov",
+      "year": 1924,
+      "aliases": [
+        "Mr. West in the Land of the Bolsheviks",
+        "The Extraordinary Adventures of Mr West in the Land of the Bolsheviks"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "By the Law",
+      "originalTitle": "Po zakonu",
+      "year": 1926,
+      "aliases": [
+        "According to the Law",
+        "Dura Lex",
+        "По закону"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "Kino-Eye",
+      "originalTitle": "Kinoglaz",
+      "year": 1924,
+      "aliases": [
+        "Kino Eye",
+        "Киноглаз"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "A Sixth Part of the World",
+      "originalTitle": "Shestaya chast mira",
+      "year": 1926,
+      "aliases": [
+        "The Sixth Part of the World",
+        "Шестая часть мира"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "The Eleventh Year",
+      "originalTitle": "Odinnadtsatyy",
+      "year": 1928,
+      "aliases": [
+        "The Eleventh",
+        "Одиннадцатый"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "Man with a Movie Camera",
+      "originalTitle": "Chelovek s kinoapparatom",
+      "year": 1929,
+      "aliases": [
+        "The Man with a Movie Camera",
+        "Человек с киноаппаратом"
+      ],
+      "matches": 1,
+      "found": [
+        {
+          "id": "scenario_man_with_a_movie_camera_1929",
+          "title": "Man with a Movie Camera",
+          "originalTitle": "Chelovek s kino-apparatom",
+          "year": 1929,
+          "origin": "earlyCinemaExpansion.ts"
+        }
+      ]
+    },
+    {
+      "title": "Enthusiasm",
+      "originalTitle": "Entuziazm: Simfoniya Donbassa",
+      "year": 1931,
+      "aliases": [
+        "Enthusiasm: Symphony of the Donbas",
+        "Symphony of the Donbas"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "Zvenigora",
+      "originalTitle": "Zvenyhora",
+      "year": 1928,
+      "aliases": [
+        "Звенигора"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "Arsenal",
+      "originalTitle": "Arsenal",
+      "year": 1929,
+      "aliases": [
+        "Арсенал"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "Earth",
+      "originalTitle": "Zemlya",
+      "year": 1930,
+      "aliases": [
+        "Земля"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "The Fall of the Romanov Dynasty",
+      "originalTitle": "Padenie dinastii Romanovykh",
+      "year": 1927,
+      "aliases": [
+        "The Fall of the Romanov Dynasty",
+        "Падение династии Романовых"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "The Great Road",
+      "originalTitle": "Velikiy put",
+      "year": 1927,
+      "aliases": [
+        "The Great Way",
+        "Великий путь"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "The New Babylon",
+      "originalTitle": "Novyy Vavilon",
+      "year": 1929,
+      "aliases": [
+        "New Babylon",
+        "Новый Вавилон"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "Bed and Sofa",
+      "originalTitle": "Tretya Meshchanskaya",
+      "year": 1927,
+      "aliases": [
+        "Third Meshchanskaya",
+        "Третья Мещанская"
+      ],
+      "matches": 0,
+      "found": []
+    },
+    {
+      "title": "Fragment of an Empire",
+      "originalTitle": "Oblomok imperii",
+      "year": 1929,
+      "aliases": [
+        "A Fragment of an Empire",
+        "Обломок империи"
+      ],
+      "matches": 0,
+      "found": []
+    }
+  ]
+}
