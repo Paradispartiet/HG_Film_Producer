@@ -10,8 +10,8 @@
     "thesis": "French avant-garde cinema was not one anti-commercial style: feature producers, critics, artists, patrons, specialist venues and independent filmmakers used different production scales to make perception, rhythm, abstraction and Surrealist association into cinema-specific problems."
   },
   "atlas": {
-    "expectedCount": 409,
-    "actualCount": 409,
+    "expectedCount": 410,
+    "actualCount": 410,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -60,7 +60,7 @@
       },
       {
         "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
-        "appended": 4,
+        "appended": 5,
         "matchedExisting": 0
       },
       {
@@ -196,9 +196,10 @@
       "role": "anchor_film",
       "decisionIfMissing": "P1",
       "chapterFunction": "Germaine Dulac's domestic subjectivity makes superimposition, fantasy insert, gesture and restricted social space serve a woman's interior life, widening Impressionist gameplay beyond a male-only canon and beyond spectacle.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_smiling_madame_beudet_1923",
+      "matches": 1,
+      "origin": "chapterEightFrenchAvantGardeExpansion.ts"
     },
     {
       "title": "Entr'acte",
@@ -352,12 +353,11 @@
       "Cœur fidèle",
       "Napoléon",
       "Un Chien Andalou",
+      "The Smiling Madame Beudet",
       "Entr'acte"
     ],
     "P0": [],
-    "P1": [
-      "The Smiling Madame Beudet"
-    ],
+    "P1": [],
     "P2": [
       "La Roue",
       "Ballet mécanique",
@@ -433,9 +433,7 @@
       "chapterFunction": "La Roue, Napoléon and many shorts survive through complex restoration histories. Modern runtimes, music and reconstructed versions must remain distinct from original production and exhibition states."
     }
   ],
-  "recommendedNewProductionCases": [
-    "The Smiling Madame Beudet"
-  ],
+  "recommendedNewProductionCases": [],
   "remainingBookReferenceOnlyFilms": [
     "La Roue",
     "Ballet mécanique",

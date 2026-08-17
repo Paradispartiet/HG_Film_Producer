@@ -3,8 +3,8 @@ import test from "node:test";
 
 import { chapterEightFrenchAvantGardeExpansionDefinitions } from "./chapterEightFrenchAvantGardeExpansion.js";
 
-test("Chapter 8 materializes Coeur fidele, Napoleon, Un Chien Andalou and Entr'acte as distinct French avant-garde production cases", () => {
-  assert.equal(chapterEightFrenchAvantGardeExpansionDefinitions.length, 4);
+test("Chapter 8 materializes Coeur fidele, Napoleon, Un Chien Andalou, Entr'acte and The Smiling Madame Beudet as distinct French avant-garde production cases", () => {
+  assert.equal(chapterEightFrenchAvantGardeExpansionDefinitions.length, 5);
 
   const coeur = chapterEightFrenchAvantGardeExpansionDefinitions.find((item) => item.id === "scenario_coeur_fidele_1923");
   assert.ok(coeur);
@@ -98,4 +98,27 @@ test("Chapter 8 materializes Coeur fidele, Napoleon, Un Chien Andalou and Entr'a
   assert.ok(entrActe.learningGoals.some((goal) => goal.includes("version tree")));
   assert.ok(entrActe.learningGoals.length >= 6);
   assert.ok(entrActe.phases.length >= 9);
+
+  const beudet = chapterEightFrenchAvantGardeExpansionDefinitions.find((item) => item.id === "scenario_the_smiling_madame_beudet_1923");
+  assert.ok(beudet);
+  assert.equal(beudet.title, "The Smiling Madame Beudet");
+  assert.equal(beudet.originalTitle, "La Souriante madame Beudet");
+  assert.equal(beudet.year, 1923);
+  assert.equal(beudet.runtimeMins, 36);
+  assert.equal(beudet.scenarioType, "feminist_impressionist_subjective_marriage_adaptation");
+  assert.equal(beudet.sourceId, "manual_the_smiling_madame_beudet_1923");
+  assert.equal(beudet.sourceUrl, "https://www.cinematheque.fr/film/57083.html");
+  assert.ok(beudet.premise.includes("Germaine Dulac"));
+  assert.ok(beudet.premise.includes("Le Film d'Art - Vandal et Delac"));
+  assert.ok(beudet.premise.includes("Maurice Forster and Paul Parguel"));
+  assert.ok(beudet.premise.includes("36-minute"));
+  assert.ok(beudet.premise.includes("38-minute"));
+  assert.ok(beudet.premise.includes("must never ask the player or performers to handle a functional firearm"));
+  assert.ok(beudet.requiredChoicesSeed.editing.includes("associative_montage"));
+  assert.ok(beudet.requiredChoicesSeed.camera.includes("safe_inert_weapon_substitution"));
+  assert.ok(beudet.requiredChoicesSeed.themes.includes("feminist_film_history"));
+  assert.ok(beudet.learningGoals.some((goal) => goal.includes("uncontested first")));
+  assert.ok(beudet.learningGoals.some((goal) => goal.includes("36-minute Cinémathèque presentation")));
+  assert.ok(beudet.learningGoals.length >= 6);
+  assert.ok(beudet.phases.length >= 9);
 });
