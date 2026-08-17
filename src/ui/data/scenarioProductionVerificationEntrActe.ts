@@ -18,7 +18,7 @@ export const entrActeProductionCaseVerification = {
       title: "Restaurations — Entr'acte, René Clair, 1924",
       publisher: "Fondation Jérôme Seydoux-Pathé",
       url: "https://www.fondation-jeromeseydoux-pathe.com/cms/restaurations",
-      sourceKind: "film_archive",
+      sourceKind: "archive_feature",
       supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
       note: "Primary restoration/context source documenting the Rolf de Maré commission, spring 1924 production, Relâche function, Jean Börlin/Inge Fries and artist participants, frame-by-frame and accelerated-image practice, Méliès/Pathé comic-film inheritance, Satie's original accompaniment, Clair's 1967 removals and restoration of first-version material from Pathé negative and original-print elements."
     },
@@ -26,7 +26,7 @@ export const entrActeProductionCaseVerification = {
       title: "Entr'acte",
       publisher: "Centre Pompidou",
       url: "https://www.centrepompidou.fr/fr/ressources/oeuvre/cByj8A",
-      sourceKind: "museum",
+      sourceKind: "film_institute",
       supports: ["overall", "screenplay", "cinematography", "sound"],
       note: "Museum collection record tying the film to the Ballets Suédois Relâche presentation at Théâtre des Champs-Élysées on 4 December 1924, crediting Picabia's scenario, Jimmy Berliet's photography and Satie's music history, and identifying the film as 35 mm black-and-white."
     },
