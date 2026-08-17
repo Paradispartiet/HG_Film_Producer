@@ -25,11 +25,31 @@ jobs:
       - run: npm ci
       - name: Integrate reviewed Entr'acte case
         run: python3 scripts/materialize-entr-acte-1924.py
-      - name: Full v0.1 verification
-        run: npm run verify:v0.1
-      - name: Commit verified materialization and remove temporary files
+      - name: Full v0.1 verification with captured output
+        id: verify
         shell: bash
         run: |
+          set +e
+          npm run verify:v0.1 > verify-output.log 2>&1
+          status=$?
+          cat verify-output.log
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Persist verification failure for diagnosis
+        if: steps.verify.outputs.status != '0'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add verify-output.log
+          git commit -m "Capture Entr'acte verification failure"
+          git push origin HEAD:agent/ch8-entr-acte-1924
+          exit 1
+      - name: Commit verified materialization and remove temporary files
+        if: steps.verify.outputs.status == '0'
+        shell: bash
+        run: |
+          rm -f verify-output.log
           rm .github/workflows/entr-acte-1924-materialize.yml
           rm scripts/materialize-entr-acte-1924.py
           git config user.name "github-actions[bot]"
