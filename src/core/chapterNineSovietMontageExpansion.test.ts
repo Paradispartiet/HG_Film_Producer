@@ -64,7 +64,7 @@ test("October remains staged reconstruction with intellectual-montage and recut 
   assert.equal(item.scenarioType, "eisenstein_intellectual_montage_anniversary_reconstruction");
   assert.match(item.premise, /Grigori Aleksandrov/);
   assert.match(item.premise, /Leon Trotsky/);
-  assert.match(item.premise, /not documentary news footage/);
+  assert.match(item.premise, /rather than documentary news footage/);
 });
 
 test("Mr West turns the Kuleshov workshop into constructive genre production, not a magic effect", () => {
