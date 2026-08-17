@@ -1,4 +1,5 @@
 name: Materialize Entr'acte 1924 production case
+# verification rerun after source-kind contract repair
 
 on:
   push:
