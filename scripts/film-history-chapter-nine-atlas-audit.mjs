@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 410;
+const EXPECTED_ATLAS_COUNT = 415;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -18,6 +18,7 @@ const expansionFiles = [
   "chapterSixHollywoodExpansion.ts",
   "chapterSevenWeimarExpansion.ts",
   "chapterEightFrenchAvantGardeExpansion.ts",
+  "chapterNineSovietMontageExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -59,6 +60,7 @@ const candidates = [
     aliases: ["Мать"],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_mother_1926",
     chapterFunction: "Pudovkin provides the essential contrast to Eisenstein: linkage and accumulation of shots build character, emotion and revolutionary causality through a feature-scale adaptation rather than collision alone.",
   },
   {
@@ -68,6 +70,7 @@ const candidates = [
     aliases: ["Падение династии Романовых"],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_the_fall_of_the_romanov_dynasty_1927",
     chapterFunction: "Esfir Shub makes archival search, found-footage selection, recontextualization, intertitles, preservation and editorial authorship into a distinct compilation-montage production problem.",
   },
   {
@@ -77,6 +80,7 @@ const candidates = [
     aliases: ["Земля"],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_earth_1930",
     chapterFunction: "Dovzhenko adds Ukrainian production context, lyrical and associative montage, landscape, collectivization propaganda and the need to distinguish a film's commission from the historical catastrophe understood in hindsight.",
   },
   {
@@ -86,6 +90,7 @@ const candidates = [
     aliases: ["October: Ten Days That Shook the World", "Октябрь"],
     role: "major_comparison",
     decisionIfMissing: "P1",
+    expectedScenarioId: "scenario_october_1928",
     chapterFunction: "A state anniversary commission turns historical reconstruction, nonprofessional casting, intellectual montage and politically compelled recutting into a production problem distinct from Potemkin's 1905 mass-action model.",
   },
   {
@@ -95,6 +100,7 @@ const candidates = [
     aliases: ["Mr. West in the Land of the Bolsheviks", "The Extraordinary Adventures of Mr West in the Land of the Bolsheviks"],
     role: "major_comparison",
     decisionIfMissing: "P1",
+    expectedScenarioId: "scenario_mr_west_bolsheviks_1924",
     chapterFunction: "Kuleshov's workshop turns American genre borrowing, rapid constructive editing, physical performance, satire and pedagogy into a practical counterpart to the abstract Kuleshov-effect discussion.",
   },
   { title: "Strike", originalTitle: "Stachka", year: 1925, aliases: ["Стачка"], role: "comparative_film", decisionIfMissing: "P2", chapterFunction: "Eisenstein's first feature is important for montage of attractions and collective protagonist, but Potemkin already carries the core playable collision-montage problem." },
@@ -127,9 +133,9 @@ const historicalObjects = [
 ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
 const expectedDecisions = {
-  USE_EXISTING: ["Battleship Potemkin", "Man with a Movie Camera"],
-  P0: ["Earth", "Mother", "The Fall of the Romanov Dynasty"],
-  P1: ["October", "The Extraordinary Adventures of Mr. West in the Land of the Bolsheviks"],
+  USE_EXISTING: ["Battleship Potemkin", "Earth", "Man with a Movie Camera", "Mother", "October", "The Extraordinary Adventures of Mr. West in the Land of the Bolsheviks", "The Fall of the Romanov Dynasty"],
+  P0: [],
+  P1: [],
   P2: ["A Sixth Part of the World", "Arsenal", "Bed and Sofa", "By the Law", "Fragment of an Empire", "Kino-Eye", "Strike", "Storm over Asia", "The Eleventh Year", "The End of St. Petersburg", "The General Line", "The Great Road", "The New Babylon", "Zvenigora"],
 };
 
@@ -159,7 +165,7 @@ function parseExpansion(fileName) {
   const arrayEnd = findMatchingBracket(source, arrayStart, "[", "]");
   return extractTopLevelObjects(source.slice(arrayStart + 1, arrayEnd)).map((objectSource) => ({ id: stringField(objectSource, "id"), title: stringField(objectSource, "title"), originalTitle: stringField(objectSource, "originalTitle"), aliases: aliasesField(objectSource), year: numberField(objectSource, "year") }));
 }
-function acceptedTitles(item) { return [item.title, item.originalTitle, ...(item.aliases ?? [])].filter(Boolean).map(normalizeTitle); }
+function acceptedTitles(item) { return [item.title, item.originalTitle, ...(item.aliases ?? [])].filter(Boolean).map(normalizeTitle).filter(Boolean); }
 function matches(left, right) { if (left.id && right.id && left.id === right.id) return true; if (left.year !== right.year) return false; const rightTitles = new Set(acceptedTitles(right)); return acceptedTitles(left).some((title) => rightTitles.has(title)); }
 function sameList(left, right) { return JSON.stringify([...left].sort()) === JSON.stringify([...right].sort()); }
 

@@ -13,21 +13,18 @@ const resolved = JSON.parse(readFileSync("docs/film-history-chapter-nine-atlas-r
 const packageJson = readFileSync("package.json", "utf8");
 
 test("Chapter 9 audit locks the reviewed Soviet montage Production Case matrix", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 410;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 415;/);
   assert.match(audit, /number: 9,/);
   assert.match(audit, /title: "Revolution and Soviet Montage"/);
   assert.match(audit, /period: "1917–1930"/);
+  assert.match(audit, /USE_EXISTING: \["Battleship Potemkin", "Earth", "Man with a Movie Camera", "Mother", "October", "The Extraordinary Adventures of Mr\. West in the Land of the Bolsheviks", "The Fall of the Romanov Dynasty"\]/);
+  assert.match(audit, /P0: \[\]/);
+  assert.match(audit, /P1: \[\]/);
 
-  assert.deepEqual(resolved.byDecision.USE_EXISTING, ["Battleship Potemkin", "Man with a Movie Camera"]);
-  assert.deepEqual(resolved.byDecision.P0, ["Mother", "The Fall of the Romanov Dynasty", "Earth"]);
-  assert.deepEqual(resolved.byDecision.P1, ["October", "The Extraordinary Adventures of Mr. West in the Land of the Bolsheviks"]);
-  assert.deepEqual(resolved.recommendedNewProductionCases, [
-    "Mother",
-    "The Fall of the Romanov Dynasty",
-    "Earth",
-    "October",
-    "The Extraordinary Adventures of Mr. West in the Land of the Bolsheviks",
-  ]);
+  assert.deepEqual(resolved.byDecision.USE_EXISTING, ["Battleship Potemkin", "Man with a Movie Camera", "Mother", "The Fall of the Romanov Dynasty", "Earth", "October", "The Extraordinary Adventures of Mr. West in the Land of the Bolsheviks"]);
+  assert.deepEqual(resolved.byDecision.P0, []);
+  assert.deepEqual(resolved.byDecision.P1, []);
+  assert.deepEqual(resolved.recommendedNewProductionCases, []);
   assert.deepEqual(resolved.byDecision.P2, [
     "Strike",
     "The General Line",
