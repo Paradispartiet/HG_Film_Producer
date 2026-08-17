@@ -66,6 +66,13 @@ replace_once(
     '  "chapterEightFrenchAvantGardeExpansion.ts",\n',
     '  "chapterEightFrenchAvantGardeExpansion.ts",\n  "chapterNineSovietMontageExpansion.ts",\n',
 )
+# Non-Latin aliases such as Cyrillic normalize to an empty ASCII key in this audit.
+# Drop empty normalized keys so same-year films can never match through "".
+replace_once(
+    "scripts/film-history-chapter-nine-atlas-audit.mjs",
+    'function acceptedTitles(item) { return [item.title, item.originalTitle, ...(item.aliases ?? [])].filter(Boolean).map(normalizeTitle); }',
+    'function acceptedTitles(item) { return [item.title, item.originalTitle, ...(item.aliases ?? [])].filter(Boolean).map(normalizeTitle).filter(Boolean); }',
+)
 
 p = Path("scripts/film-history-chapter-nine-atlas-audit.mjs")
 text = p.read_text()
