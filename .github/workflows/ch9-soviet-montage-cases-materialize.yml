@@ -27,8 +27,18 @@ jobs:
       - name: Regenerate Chapter 9 report
         run: npm run audit:film-history-ch9
       - name: Full v0.1 verification
-        run: npm run verify:v0.1
+        run: |
+          set -o pipefail
+          npm run verify:v0.1 2>&1 | tee /tmp/ch9-verify.log
+      - name: Upload verification log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ch9-verify-log
+          path: /tmp/ch9-verify.log
+          if-no-files-found: ignore
       - name: Commit verified state
+        if: success()
         run: |
           rm -f .github/workflows/ch9-soviet-montage-cases-materialize.yml scripts/materialize-ch9-cases.py scripts/fix-ch9-case-contract.py
           git config user.name "github-actions[bot]"
