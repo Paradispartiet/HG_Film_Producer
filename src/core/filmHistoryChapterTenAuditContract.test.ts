@@ -94,6 +94,15 @@ test("Chapter 10 permanently preserves survival, benshi, transnational and sound
 });
 
 test("Chapter 10 audit is permanent in the v0.1 verification chain", () => {
-  assert.match(packageJson, /"audit:film-history-ch10": "node scripts\/film-history-chapter-ten-atlas-audit\.mjs"/);
-  assert.match(packageJson, /npm run audit:film-history-ch9 && npm run audit:film-history-ch10 && npm run typecheck/);
+  const scripts = (JSON.parse(packageJson) as { scripts: Record<string, string> }).scripts;
+  assert.equal(scripts["audit:film-history-ch10"], "node scripts/film-history-chapter-ten-atlas-audit.mjs");
+
+  const verify = scripts["verify:v0.1"];
+  assert.ok(verify, "verify:v0.1 must remain defined");
+  const chapterNine = verify.indexOf("npm run audit:film-history-ch9");
+  const chapterTen = verify.indexOf("npm run audit:film-history-ch10");
+  const typecheck = verify.indexOf("npm run typecheck");
+  assert.ok(chapterNine >= 0, "Chapter 9 audit must remain in verify:v0.1");
+  assert.ok(chapterTen > chapterNine, "Chapter 10 audit must remain after Chapter 9 in verify:v0.1");
+  assert.ok(typecheck > chapterTen, "Chapter 10 audit must remain before typecheck even as later chapter audits are appended");
 });
