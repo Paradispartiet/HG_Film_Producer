@@ -1,0 +1,45 @@
+name: Materialize Chapter 11 Jazz Singer
+
+on:
+  push:
+    branches:
+      - agent/ch11-jazz-singer-production-case
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ch11-jazz-singer-materialize
+  cancel-in-progress: false
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Materialize, verify, clean and commit
+        shell: bash
+        run: |
+          set -o pipefail
+          python scripts/materialize-ch11-jazz-singer.py 2>&1 | tee ch11-jazz-singer-materialize.log
+
+      - name: Upload failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ch11-jazz-singer-materialize-diagnostics
+          path: ch11-jazz-singer-materialize.log
