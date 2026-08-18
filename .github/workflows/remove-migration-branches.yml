@@ -1,0 +1,32 @@
+name: One-shot remove migration branches
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/remove-migration-branches.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete migration-only branches
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          branches=(
+            'agent/bootstrap-public-previews-2026-08-18'
+            'agent/inspect-preview-cleanup-2026-08-18'
+            'chore/public-preview-pipeline-2026-08-18'
+            'agent/restore-public-repos-2026-08-18'
+            'agent/public-ci-token-handoff-2026-08-18'
+          )
+          for branch in "${branches[@]}"; do
+            encoded="$(jq -rn --arg x "$branch" '$x|@uri')"
+            gh api --method DELETE "repos/${GITHUB_REPOSITORY}/git/refs/heads/${encoded}" >/dev/null 2>&1 || true
+          done
