@@ -10,8 +10,8 @@
     "thesis": "Recorded sound reorganized cinema through competing technologies, capital investment, new crew roles, language markets and changing film form; the transition was uneven, and creative filmmakers quickly turned technical constraints into expressive sound-image systems."
   },
   "atlas": {
-    "expectedCount": 423,
-    "actualCount": 423,
+    "expectedCount": 424,
+    "actualCount": 424,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -166,6 +166,14 @@
         "sourceListId": "manual_chapter_eleven_jazz_singer_expansion_2026"
       },
       {
+        "fileName": "chapterElevenBlackmailExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_blackmail_verified",
+        "sourceListId": "manual_chapter_eleven_blackmail_expansion_2026"
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -308,11 +316,12 @@
       "aliases": [],
       "role": "anchor_film",
       "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_blackmail_1929",
       "chapterFunction": "Hitchcock's dual silent/sound production anchors transition economics, version comparison, location/studio strategy, psychological sound and live off-camera dubbing for Anny Ondra.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_blackmail_1929",
+      "matches": 1,
+      "origin": "chapterElevenBlackmailExpansion.ts"
     },
     {
       "title": "Applause",
@@ -642,10 +651,10 @@
       "M",
       "City Lights",
       "The Jazz Singer",
+      "Blackmail",
       "King Kong"
     ],
     "P0": [
-      "Blackmail",
       "Applause",
       "The Neighbor's Wife and Mine"
     ],
@@ -675,7 +684,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Blackmail",
     "Applause",
     "The Neighbor's Wife and Mine",
     "The Broadway Melody",

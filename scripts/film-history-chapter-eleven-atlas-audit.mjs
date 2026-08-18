@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 423;
+const EXPECTED_ATLAS_COUNT = 424;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -27,6 +27,7 @@ const expansionFiles = [
   "chapterTenRedHeroineExpansion.ts",
   "chapterTenHaxanExpansion.ts",
   "chapterElevenJazzSingerExpansion.ts",
+  "chapterElevenBlackmailExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -78,6 +79,7 @@ const candidates = [
     aliases: [],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_blackmail_1929",
     chapterFunction: "Hitchcock's dual silent/sound production anchors transition economics, version comparison, location/studio strategy, psychological sound and live off-camera dubbing for Anny Ondra.",
   },
   {

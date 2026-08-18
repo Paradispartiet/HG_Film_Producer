@@ -60,6 +60,7 @@ import { orochiProductionCaseVerification } from "./scenarioProductionVerificati
 import { redHeroineProductionCaseVerification } from "./scenarioProductionVerificationRedHeroine";
 import { haxanProductionCaseVerification } from "./scenarioProductionVerificationHaxan";
 import { jazzSingerProductionCaseVerification } from "./scenarioProductionVerificationJazzSinger";
+import { blackmailProductionCaseVerification } from "./scenarioProductionVerificationBlackmail";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -237,6 +238,7 @@ const additionalVerificationRecords = [
   redHeroineProductionCaseVerification,
   haxanProductionCaseVerification,
   jazzSingerProductionCaseVerification,
+  blackmailProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
