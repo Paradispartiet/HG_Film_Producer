@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 420;
+const EXPECTED_ATLAS_COUNT = 421;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -24,6 +24,7 @@ const expansionFiles = [
   "chapterTenAThrowOfDiceExpansion.ts",
   "chapterTenGrowthOfTheSoilExpansion.ts",
   "chapterTenOrochiExpansion.ts",
+  "chapterTenRedHeroineExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -92,9 +93,10 @@ const candidates = [
     title: "The Red Heroine",
     originalTitle: "Hongxia",
     year: 1929,
-    aliases: ["Red Heroine"],
+    aliases: ["Red Heroine", "Hong xia", "The Red Errant Knight", "红侠", "紅俠"],
     role: "major_comparison",
     decisionIfMissing: "P1",
+    expectedScenarioId: "scenario_the_red_heroine_1929",
     chapterFunction: "The only surviving section of the Red Knight-Errant serial provides a playable route into late-1920s Shanghai wuxia serial production, female action stardom, practical/trick effects, tinting and the ethics of treating a fragment as a fragment rather than a complete serial.",
   },
   {
@@ -157,9 +159,9 @@ const historicalObjects = [
 ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
 const expectedDecisions = {
-  USE_EXISTING: ["A Page of Madness", "A Throw of Dice", "Afgrunden", "Growth of the Soil", "Laborer's Love", "Orochi", "The Phantom Carriage"],
+  USE_EXISTING: ["A Page of Madness", "A Throw of Dice", "Afgrunden", "Growth of the Soil", "Laborer's Love", "Orochi", "The Red Heroine", "The Phantom Carriage"],
   P0: [],
-  P1: ["Häxan", "The Red Heroine"],
+  P1: ["Häxan"],
   P2: ["Crossroads", "El automóvil gris", "Erotikon", "Gösta Berling's Saga", "Ingeborg Holm", "Kaliya Mardan", "Raja Harishchandra", "Shiraz", "Sir Arne's Treasure", "Souls on the Road", "The Burning of the Red Lotus Temple", "The Light of Asia", "The Outlaw and His Wife", "The Romance of the Western Chamber", "The Sentimental Bloke"],
 };
 

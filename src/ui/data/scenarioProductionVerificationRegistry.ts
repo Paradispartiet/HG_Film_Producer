@@ -57,6 +57,7 @@ import { laborersLoveProductionCaseVerification } from "./scenarioProductionVeri
 import { aThrowOfDiceProductionCaseVerification } from "./scenarioProductionVerificationAThrowOfDice";
 import { growthOfTheSoilProductionCaseVerification } from "./scenarioProductionVerificationGrowthOfTheSoil";
 import { orochiProductionCaseVerification } from "./scenarioProductionVerificationOrochi";
+import { redHeroineProductionCaseVerification } from "./scenarioProductionVerificationRedHeroine";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -231,6 +232,7 @@ const additionalVerificationRecords = [
   aThrowOfDiceProductionCaseVerification,
   growthOfTheSoilProductionCaseVerification,
   orochiProductionCaseVerification,
+  redHeroineProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
