@@ -1,4 +1,4 @@
-name: Verify and deploy HG Film Producer
+name: Verify HG Film Producer
 
 on:
   pull_request:
@@ -9,90 +9,47 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: hg-film-producer-${{ github.event_name }}-${{ github.ref }}
+  group: hg-film-producer-verify-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Verify, build, and prepare Pages
+  verify:
+    name: Verify and build
     runs-on: ubuntu-latest
     timeout-minutes: 20
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-
-      - name: Configure GitHub Pages
-        if: github.event_name != 'pull_request'
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
       - name: Install dependencies
         run: npm ci
-
       - name: Full v0.1 verification
         shell: bash
         run: |
           set -o pipefail
           npm run verify:v0.1 2>&1 | tee verify-v0.1-output.txt
-
       - name: Upload failed verification diagnostics
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: verify-v0.1-diagnostics
           path: verify-v0.1-output.txt
-
-      - name: Verify Pages artifact
+      - name: Verify production artifact
         shell: bash
         run: |
           set -euxo pipefail
-
-          echo "Contents of dist:"
-          find dist -maxdepth 3 -type f -print | sort
-
-          echo "Generated dist/index.html:"
-          cat dist/index.html
-
+          test -f dist/index.html
           if grep -Fq '/src/ui/main.tsx' dist/index.html; then
-            echo "::error file=dist/index.html::Vite source entrypoint is still present in the Pages artifact."
+            echo "::error file=dist/index.html::Vite source entrypoint is still present in the production artifact."
             exit 1
           fi
-
           if ! grep -Fq '/HG_Film_Producer/assets/' dist/index.html; then
-            echo "::error file=dist/index.html::Expected repository-prefixed Vite asset path was not found."
+            echo "::error file=dist/index.html::Expected production asset path was not found."
             exit 1
           fi
-
-          echo "Verified dist/index.html uses the built HG_Film_Producer asset bundle."
-
-      - name: Upload Pages artifact
-        if: github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: ./dist
-
-  deploy:
-    if: github.event_name != 'pull_request'
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
