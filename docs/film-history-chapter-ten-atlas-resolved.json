@@ -10,8 +10,8 @@
     "thesis": "Silent cinema was never one Hollywood-European system: production companies, live narration, genres, colonial and transnational finance, literary adaptation, location practices and archive survival created distinct film cultures whose differences must remain visible rather than being flattened into a generic world-cinema supplement."
   },
   "atlas": {
-    "expectedCount": 421,
-    "actualCount": 421,
+    "expectedCount": 422,
+    "actualCount": 422,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -95,6 +95,11 @@
       },
       {
         "fileName": "chapterTenRedHeroineExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTenHaxanExpansion.ts",
         "appended": 1,
         "matchedExisting": 0
       },
@@ -269,14 +274,18 @@
       "year": 1922,
       "aliases": [
         "Haxan",
+        "Heksen",
+        "The Witches",
         "Witchcraft Through the Ages"
       ],
       "role": "major_comparison",
       "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_haxan_1922",
       "chapterFunction": "Benjamin Christensen's Scandinavian production makes research, lecture form, staged reenactment, elaborate design/effects, censorship and the ethics of pseudo-documentary authority into a production problem distinct from The Phantom Carriage.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_haxan_1922",
+      "matches": 1,
+      "origin": "chapterTenHaxanExpansion.ts"
     },
     {
       "title": "Afgrunden",
@@ -527,13 +536,12 @@
       "Growth of the Soil",
       "Orochi",
       "The Red Heroine",
+      "Häxan",
       "Afgrunden",
       "The Phantom Carriage"
     ],
     "P0": [],
-    "P1": [
-      "Häxan"
-    ],
+    "P1": [],
     "P2": [
       "Crossroads",
       "Souls on the Road",
@@ -629,9 +637,7 @@
     "Colonial and transnational co-production must identify who financed, produced, performed, photographed and circulated a film rather than assigning pure national ownership by location alone.",
     "Modern restoration scores, reconstructed tints and archive assemblies remain distinct from original production elements and are labeled as later presentation/restoration work."
   ],
-  "recommendedNewProductionCases": [
-    "Häxan"
-  ],
+  "recommendedNewProductionCases": [],
   "remainingBookReferenceOnlyFilms": [
     "Crossroads",
     "Souls on the Road",
