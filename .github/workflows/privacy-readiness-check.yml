@@ -1,0 +1,34 @@
+name: Privacy readiness check
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.REPO_ADMIN_TOKEN }}
+    steps:
+      - name: Verify admin token and account plan
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${GH_TOKEN:-}"
+          echo "Authenticated user: $(gh api user --jq '.login')"
+          echo "Account plan: $(gh api user --jq '.plan.name // "unknown"')"
+      - name: Inspect target repositories
+        shell: bash
+        run: |
+          set -euo pipefail
+          for repo in \
+            Paradispartiet/HG_Film_Producer \
+            Paradispartiet/HistoryGo-FootballManager \
+            Paradispartiet/History-Go \
+            Paradispartiet/AHA-EchoNet
+          do
+            gh api "repos/$repo" --jq '[.full_name, .visibility, (.has_pages|tostring), (.forks_count|tostring)] | @tsv'
+          done
