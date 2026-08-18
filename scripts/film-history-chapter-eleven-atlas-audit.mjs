@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 426;
+const EXPECTED_ATLAS_COUNT = 427;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -30,6 +30,7 @@ const expansionFiles = [
   "chapterElevenBlackmailExpansion.ts",
   "chapterElevenApplauseExpansion.ts",
   "chapterElevenNeighborsWifeExpansion.ts",
+  "chapterElevenBroadwayMelodyExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -111,6 +112,7 @@ const candidates = [
     aliases: ["Broadway Melody"],
     role: "major_comparison",
     decisionIfMissing: "P1",
+    expectedScenarioId: "scenario_the_broadway_melody_1929",
     chapterFunction: "MGM's all-talkie backstage musical exposes soundstage conversion, live orchestral balance, two-strip Technicolor and the emergence of playback/post-production synchronization.",
   },
   {

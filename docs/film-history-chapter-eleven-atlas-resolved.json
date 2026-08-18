@@ -10,8 +10,8 @@
     "thesis": "Recorded sound reorganized cinema through competing technologies, capital investment, new crew roles, language markets and changing film form; the transition was uneven, and creative filmmakers quickly turned technical constraints into expressive sound-image systems."
   },
   "atlas": {
-    "expectedCount": 426,
-    "actualCount": 426,
+    "expectedCount": 427,
+    "actualCount": 427,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -188,6 +188,14 @@
         "matchedExisting": 0,
         "status": "manual_chapter_eleven_neighbors_wife_verified",
         "sourceListId": "manual_chapter_eleven_neighbors_wife_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenBroadwayMelodyExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_broadway_melody_verified",
+        "sourceListId": "manual_chapter_eleven_broadway_melody_expansion_2026"
       },
       {
         "fileName": "modernCanonExpansion.ts",
@@ -380,11 +388,12 @@
       ],
       "role": "major_comparison",
       "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_the_broadway_melody_1929",
       "chapterFunction": "MGM's all-talkie backstage musical exposes soundstage conversion, live orchestral balance, two-strip Technicolor and the emergence of playback/post-production synchronization.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_broadway_melody_1929",
+      "matches": 1,
+      "origin": "chapterElevenBroadwayMelodyExpansion.ts"
     },
     {
       "title": "Sous les toits de Paris",
@@ -672,11 +681,11 @@
       "Blackmail",
       "Applause",
       "The Neighbor's Wife and Mine",
+      "The Broadway Melody",
       "King Kong"
     ],
     "P0": [],
     "P1": [
-      "The Broadway Melody",
       "Sous les toits de Paris",
       "Enthusiasm",
       "The Blue Angel"
@@ -701,7 +710,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "The Broadway Melody",
     "Sous les toits de Paris",
     "Enthusiasm",
     "The Blue Angel"

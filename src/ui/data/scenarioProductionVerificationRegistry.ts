@@ -63,6 +63,7 @@ import { jazzSingerProductionCaseVerification } from "./scenarioProductionVerifi
 import { blackmailProductionCaseVerification } from "./scenarioProductionVerificationBlackmail";
 import { applauseProductionCaseVerification } from "./scenarioProductionVerificationApplause";
 import { neighborsWifeProductionCaseVerification } from "./scenarioProductionVerificationNeighborsWife";
+import { broadwayMelodyProductionCaseVerification } from "./scenarioProductionVerificationBroadwayMelody";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -243,6 +244,7 @@ const additionalVerificationRecords = [
   blackmailProductionCaseVerification,
   applauseProductionCaseVerification,
   neighborsWifeProductionCaseVerification,
+  broadwayMelodyProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
