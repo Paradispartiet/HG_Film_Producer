@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 432;
+const EXPECTED_ATLAS_COUNT = 433;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -36,6 +36,7 @@ const expansionFiles = [
   "chapterElevenBlueAngelExpansion.ts",
   "chapterTwelvePublicEnemyExpansion.ts",
   "chapterTwelveDraculaExpansion.ts",
+  "chapterTwelve42ndStreetExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -61,7 +62,7 @@ const candidates = [
 
   { title: "The Public Enemy", originalTitle: "The Public Enemy", year: 1931, aliases: [], role: "missing_core_case", decisionIfMissing: "P0", expectedScenarioId: "scenario_the_public_enemy_1931", chapterFunction: "Warner gangster production is the clearest missing case for genre cycles, star voice/persona, urban violence, studio economy and the pre-Code/Code boundary." },
   { title: "Dracula", originalTitle: "Dracula", year: 1931, aliases: ["Drácula"], role: "missing_core_case", decisionIfMissing: "P0", expectedScenarioId: "scenario_dracula_1931", chapterFunction: "Universal horror and the English/Spanish parallel-production history make studio house style, night-shift versioning, performance, sets, sound and genre branding concrete." },
-  { title: "42nd Street", originalTitle: "42nd Street", year: 1933, aliases: [], role: "missing_core_case", decisionIfMissing: "P0", chapterFunction: "Warner's backstage musical and Busby Berkeley production system expose choreography for camera, studio scheduling, song recording, massed bodies, editing and Depression-era genre economics." },
+  { title: "42nd Street", originalTitle: "42nd Street", year: 1933, aliases: ["Forty-Second Street"], role: "missing_core_case", decisionIfMissing: "P0", expectedScenarioId: "scenario_42nd_street_1933", chapterFunction: "Warner's backstage musical and Busby Berkeley production system expose choreography for camera, studio scheduling, song recording, massed bodies, editing and Depression-era genre economics." },
 
   { title: "Frankenstein", originalTitle: "Frankenstein", year: 1931, aliases: [], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "Universal's monster cycle broadens horror into makeup, laboratory design, performance iconography, censorship and reusable studio genre infrastructure." },
   { title: "Scarface", originalTitle: "Scarface", year: 1932, aliases: ["Scarface: The Shame of the Nation"], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "Howard Hawks/Howard Hughes production sharpens the relation among gangster-cycle competition, censorship negotiation, violence, star image and release delay." },
