@@ -10,8 +10,8 @@
     "thesis": "Recorded sound reorganized cinema through competing technologies, capital investment, new crew roles, language markets and changing film form; the transition was uneven, and creative filmmakers quickly turned technical constraints into expressive sound-image systems."
   },
   "atlas": {
-    "expectedCount": 429,
-    "actualCount": 429,
+    "expectedCount": 430,
+    "actualCount": 430,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -212,6 +212,14 @@
         "matchedExisting": 0,
         "status": "manual_chapter_eleven_enthusiasm_verified",
         "sourceListId": "manual_chapter_eleven_enthusiasm_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenBlueAngelExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_blue_angel_verified",
+        "sourceListId": "manual_chapter_eleven_blue_angel_expansion_2026"
       },
       {
         "fileName": "modernCanonExpansion.ts",
@@ -454,11 +462,12 @@
       ],
       "role": "major_comparison",
       "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_the_blue_angel_1930",
       "chapterFunction": "UFA, Erich Pommer, Tobis-Klangfilm and German/English version production make language markets, studio recording, star performance and version control into a distinct sound-transition problem.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_blue_angel_1930",
+      "matches": 1,
+      "origin": "chapterElevenBlueAngelExpansion.ts"
     },
     {
       "title": "Lights of New York",
@@ -702,12 +711,11 @@
       "The Broadway Melody",
       "Sous les toits de Paris",
       "Enthusiasm",
+      "The Blue Angel",
       "King Kong"
     ],
     "P0": [],
-    "P1": [
-      "The Blue Angel"
-    ],
+    "P1": [],
     "P2": [
       "Lights of New York",
       "Hallelujah",
@@ -727,9 +735,7 @@
     ],
     "EXISTING_REQUIRED": []
   },
-  "recommendedNewProductionCases": [
-    "The Blue Angel"
-  ],
+  "recommendedNewProductionCases": [],
   "historicalObjects": [
     {
       "label": "Vitaphone and sound-on-disc synchronization",
