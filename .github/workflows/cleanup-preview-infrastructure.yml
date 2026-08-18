@@ -56,3 +56,5 @@ jobs:
           args=(--method PUT "repos/${GITHUB_REPOSITORY}/contents/.preview-cleanup-success.txt" -f message="Record preview cleanup ${GITHUB_RUN_ID}" -f content="$encoded" -f branch=main)
           if [[ -n "$current" ]]; then args+=(-f sha="$current"); fi
           gh api "${args[@]}" >/dev/null
+
+# Temporary branch change only to expose the one-shot cleanup run for inspection.
