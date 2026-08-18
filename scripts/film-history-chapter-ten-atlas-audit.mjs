@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 418;
+const EXPECTED_ATLAS_COUNT = 419;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -22,6 +22,7 @@ const expansionFiles = [
   "chapterTenSilentCinemasExpansion.ts",
   "chapterTenLaborersLoveExpansion.ts",
   "chapterTenAThrowOfDiceExpansion.ts",
+  "chapterTenGrowthOfTheSoilExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -73,6 +74,7 @@ const candidates = [
     aliases: ["Markens grode", "Segen der Erde", "The Growth of the Soil"],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_growth_of_the_soil_1921",
     chapterFunction: "The Norwegian Hamsun adaptation supplies a distinct national production problem in long-form literary adaptation, landscape/location work, tinting/toning, local exhibition and the tension between prestigious source material and a still-developing domestic film industry.",
   },
   {
@@ -153,8 +155,8 @@ const historicalObjects = [
 ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
 const expectedDecisions = {
-  USE_EXISTING: ["A Page of Madness", "A Throw of Dice", "Afgrunden", "Laborer's Love", "The Phantom Carriage"],
-  P0: ["Growth of the Soil"],
+  USE_EXISTING: ["A Page of Madness", "A Throw of Dice", "Afgrunden", "Growth of the Soil", "Laborer's Love", "The Phantom Carriage"],
+  P0: [],
   P1: ["Häxan", "Orochi", "The Red Heroine"],
   P2: ["Crossroads", "El automóvil gris", "Erotikon", "Gösta Berling's Saga", "Ingeborg Holm", "Kaliya Mardan", "Raja Harishchandra", "Shiraz", "Sir Arne's Treasure", "Souls on the Road", "The Burning of the Red Lotus Temple", "The Light of Asia", "The Outlaw and His Wife", "The Romance of the Western Chamber", "The Sentimental Bloke"],
 };
