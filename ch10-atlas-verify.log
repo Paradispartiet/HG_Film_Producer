@@ -4389,4 +4389,2311 @@ HG_FILM_HISTORY_CHAPTER_TEN_ATLAS_AUDIT_END
 > hg-film-producer@0.1.0 typecheck
 > tsc --noEmit && tsc -p tsconfig.app.json
 
-src/core/filmHistoryChapterTenAuditContract.test.ts(57,24): error TS2488: Type 'string[] | undefined' must have a '[Symbol.iterator]()' method that returns an iterator.
+
+> hg-film-producer@0.1.0 test
+> npm run build && node --test dist/core/*.test.js
+
+
+> hg-film-producer@0.1.0 build
+> tsc
+
+TAP version 13
+# Subtest: applyDueStudioExpenses charges recurring and one-time expenses due in year 1
+ok 1 - applyDueStudioExpenses charges recurring and one-time expenses due in year 1
+  ---
+  duration_ms: 2.135726
+  ...
+# Subtest: applyDueStudioExpenses skips one-time expenses after year 1 but keeps charging recurring ones
+ok 2 - applyDueStudioExpenses skips one-time expenses after year 1 but keeps charging recurring ones
+  ---
+  duration_ms: 0.362893
+  ...
+# Subtest: applyDueStudioExpenses ignores expenses due in a different quarter
+ok 3 - applyDueStudioExpenses ignores expenses due in a different quarter
+  ---
+  duration_ms: 0.185618
+  ...
+# Subtest: applyCrewRosterGrowth leaves a crew member unchanged with no roster history
+ok 4 - applyCrewRosterGrowth leaves a crew member unchanged with no roster history
+  ---
+  duration_ms: 1.111713
+  ...
+# Subtest: applyCrewRosterGrowth raises experience but withholds the studio-regular tag below the threshold
+ok 5 - applyCrewRosterGrowth raises experience but withholds the studio-regular tag below the threshold
+  ---
+  duration_ms: 0.310825
+  ...
+# Subtest: applyCrewRosterGrowth adds the studio-regular tag once at the threshold
+ok 6 - applyCrewRosterGrowth adds the studio-regular tag once at the threshold
+  ---
+  duration_ms: 0.125407
+  ...
+# Subtest: applyCrewRosterGrowth clamps experience at 100 and does not duplicate the tag
+ok 7 - applyCrewRosterGrowth clamps experience at 100 and does not duplicate the tag
+  ---
+  duration_ms: 0.150736
+  ...
+# Subtest: applyActorRosterGrowth leaves an actor unchanged with no roster history
+ok 8 - applyActorRosterGrowth leaves an actor unchanged with no roster history
+  ---
+  duration_ms: 0.125868
+  ...
+# Subtest: applyActorRosterGrowth raises experience and adds the studio-regular chemistry tag at the threshold
+ok 9 - applyActorRosterGrowth raises experience and adds the studio-regular chemistry tag at the threshold
+  ---
+  duration_ms: 0.117505
+  ...
+# Subtest: applyRosterGrowth does not mutate the original crew member or actor
+ok 10 - applyRosterGrowth does not mutate the original crew member or actor
+  ---
+  duration_ms: 0.133349
+  ...
+# Subtest: Production Case phase cannot complete before a choice is selected
+ok 11 - Production Case phase cannot complete before a choice is selected
+  ---
+  duration_ms: 1.305403
+  ...
+# Subtest: Production Case phase can complete after a valid choice is selected
+ok 12 - Production Case phase can complete after a valid choice is selected
+  ---
+  duration_ms: 0.187871
+  ...
+# Subtest: a choice for another phase does not unlock this phase
+ok 13 - a choice for another phase does not unlock this phase
+  ---
+  duration_ms: 0.155253
+  ...
+# Subtest: a stale saved choice does not count as a completed phase
+ok 14 - a stale saved choice does not count as a completed phase
+  ---
+  duration_ms: 0.164707
+  ...
+# Subtest: career cashflow and filmography remain immutable and feed evaluations
+ok 15 - career cashflow and filmography remain immutable and feed evaluations
+  ---
+  duration_ms: 7.528254
+  ...
+# Subtest: quarter advancement opens a single next-year snapshot
+ok 16 - quarter advancement opens a single next-year snapshot
+  ---
+  duration_ms: 0.636161
+  ...
+# Subtest: milestones apply rewards once after requirements are met
+ok 17 - milestones apply rewards once after requirements are met
+  ---
+  duration_ms: 0.32751
+  ...
+# Subtest: career seed catalogues provide stable gameplay coverage
+ok 18 - career seed catalogues provide stable gameplay coverage
+  ---
+  duration_ms: 2.452249
+  ...
+# Subtest: strategic goals activate only once
+ok 19 - strategic goals activate only once
+  ---
+  duration_ms: 1.565232
+  ...
+# Subtest: Chapter 8 materializes Coeur fidele, Napoleon, Un Chien Andalou, Entr'acte and The Smiling Madame Beudet as distinct French avant-garde production cases
+ok 20 - Chapter 8 materializes Coeur fidele, Napoleon, Un Chien Andalou, Entr'acte and The Smiling Madame Beudet as distinct French avant-garde production cases
+  ---
+  duration_ms: 1.770529
+  ...
+# Subtest: Chapter 5 keeps Fantômas, Cabiria, Afgrunden and Atlantis as materialized international expansion cases
+ok 21 - Chapter 5 keeps Fantômas, Cabiria, Afgrunden and Atlantis as materialized international expansion cases
+  ---
+  duration_ms: 1.575857
+  ...
+# Subtest: Chapter 9 materializes five distinct missing Soviet montage production cases
+ok 22 - Chapter 9 materializes five distinct missing Soviet montage production cases
+  ---
+  duration_ms: 1.315818
+  ...
+# Subtest: Mother preserves Pudovkin linkage, collaborative craft and version boundaries
+ok 23 - Mother preserves Pudovkin linkage, collaborative craft and version boundaries
+  ---
+  duration_ms: 0.238557
+  ...
+# Subtest: Shub case treats archival provenance and compilation editing as production authorship
+ok 24 - Shub case treats archival provenance and compilation editing as production authorship
+  ---
+  duration_ms: 0.126539
+  ...
+# Subtest: Earth keeps Ukrainian VUFKU context and hindsight safeguards explicit
+ok 25 - Earth keeps Ukrainian VUFKU context and hindsight safeguards explicit
+  ---
+  duration_ms: 0.12054
+  ...
+# Subtest: October remains staged reconstruction with intellectual-montage and recut version control
+ok 26 - October remains staged reconstruction with intellectual-montage and recut version control
+  ---
+  duration_ms: 0.130074
+  ...
+# Subtest: Mr West turns the Kuleshov workshop into constructive genre production, not a magic effect
+ok 27 - Mr West turns the Kuleshov workshop into constructive genre production, not a magic effect
+  ---
+  duration_ms: 0.103344
+  ...
+# Subtest: Chapter 7 materializes The Last Laugh and Pandora's Box as distinct Weimar production cases
+ok 28 - Chapter 7 materializes The Last Laugh and Pandora's Box as distinct Weimar production cases
+  ---
+  duration_ms: 1.507435
+  ...
+# Subtest: Chapter 6 materializes Gold Rush, The Crowd, The Cheat, It and Wings as distinct Hollywood-system cases
+ok 29 - Chapter 6 materializes Gold Rush, The Crowd, The Cheat, It and Wings as distinct Hollywood-system cases
+  ---
+  duration_ms: 2.133682
+  ...
+# Subtest: crew and actor seed rosters meet the first-engine coverage requirements
+ok 30 - crew and actor seed rosters meet the first-engine coverage requirements
+  ---
+  duration_ms: 4.508706
+  ...
+# Subtest: crew scoring is explainable, clamped, and rewards matching style tags
+ok 31 - crew scoring is explainable, clamped, and rewards matching style tags
+  ---
+  duration_ms: 0.40779
+  ...
+# Subtest: hiring and casting return copied projects and prevent duplicate IDs
+ok 32 - hiring and casting return copied projects and prevent duplicate IDs
+  ---
+  duration_ms: 0.933046
+  ...
+# Subtest: casting chemistry rewards shared tags and ignores duplicate actors
+ok 33 - casting chemistry rewards shared tags and ignores duplicate actors
+  ---
+  duration_ms: 0.553989
+  ...
+# Subtest: production-team evaluation uses attached people, collaboration, reliability, and fees
+ok 34 - production-team evaluation uses attached people, collaboration, reliability, and fees
+  ---
+  duration_ms: 0.596353
+  ...
+# Subtest: an empty production team evaluates to zero rather than gaining free budget health
+ok 35 - an empty production team evaluates to zero rather than gaining free budget health
+  ---
+  duration_ms: 0.185568
+  ...
+# Subtest: film results preserve the legacy API and improve with a strong evaluated team
+ok 36 - film results preserve the legacy API and improve with a strong evaluated team
+  ---
+  duration_ms: 0.367269
+  ...
+# Subtest: film results reject a production-team evaluation for another project
+ok 37 - film results reject a production-team evaluation for another project
+  ---
+  duration_ms: 0.431596
+  ...
+# Subtest: developer tools stay hidden by default
+ok 38 - developer tools stay hidden by default
+  ---
+  duration_ms: 1.564631
+  ...
+# Subtest: developer tools require the explicit dev=1 query parameter
+ok 39 - developer tools require the explicit dev=1 query parameter
+  ---
+  duration_ms: 0.254681
+  ...
+# Subtest: covers every scene-brief and shot-card decision with an applied learning guide
+ok 40 - covers every scene-brief and shot-card decision with an applied learning guide
+  ---
+  duration_ms: 2.88103
+  ...
+# Subtest: gives every applied guide a practical exercise, checklist and resolved terminology
+ok 41 - gives every applied guide a practical exercise, checklist and resolved terminology
+  ---
+  duration_ms: 0.324976
+  ...
+# Subtest: connects important film terms back to the Director decisions where they are used
+ok 42 - connects important film terms back to the Director decisions where they are used
+  ---
+  duration_ms: 0.175883
+  ...
+# Subtest: creates an empty directing brief for one reference film
+ok 43 - creates an empty directing brief for one reference film
+  ---
+  duration_ms: 1.032354
+  ...
+# Subtest: coerces persisted data without accepting invalid values
+ok 44 - coerces persisted data without accepting invalid values
+  ---
+  duration_ms: 0.38767
+  ...
+# Subtest: uses a stable storage key per film
+ok 45 - uses a stable storage key per film
+  ---
+  duration_ms: 0.113981
+  ...
+# Subtest: exports a readable complete director brief
+ok 46 - exports a readable complete director brief
+  ---
+  duration_ms: 0.275543
+  ...
+# Subtest: provides a broad canonical directing vocabulary
+ok 47 - provides a broad canonical directing vocabulary
+  ---
+  duration_ms: 1.361137
+  ...
+# Subtest: covers every directing craft category with a substantial vocabulary
+ok 48 - covers every directing craft category with a substantial vocabulary
+  ---
+  duration_ms: 0.303694
+  ...
+# Subtest: uses only registered phases, levels, categories and sources
+ok 49 - uses only registered phases, levels, categories and sources
+  ---
+  duration_ms: 1.691226
+  ...
+# Subtest: models the director workflow from script interpretation through finishing
+ok 50 - models the director workflow from script interpretation through finishing
+  ---
+  duration_ms: 1.28965
+  ...
+# Subtest: searches English terms, Norwegian terminology and explanations
+ok 51 - searches English terms, Norwegian terminology and explanations
+  ---
+  duration_ms: 2.423716
+  ...
+# Subtest: creates a project with one active scene
+ok 52 - creates a project with one active scene
+  ---
+  duration_ms: 1.736989
+  ...
+# Subtest: adds scenes and keeps the new scene active
+ok 53 - adds scenes and keeps the new scene active
+  ---
+  duration_ms: 0.20081
+  ...
+# Subtest: does not allow deleting the final scene
+ok 54 - does not allow deleting the final scene
+  ---
+  duration_ms: 0.274451
+  ...
+# Subtest: duplicates a scene with independent shot ids
+ok 55 - duplicates a scene with independent shot ids
+  ---
+  duration_ms: 0.553899
+  ...
+# Subtest: creates, duplicates, updates, and reorders shot cards
+ok 56 - creates, duplicates, updates, and reorders shot cards
+  ---
+  duration_ms: 0.550364
+  ...
+# Subtest: coerces malformed saved data to a usable project
+ok 57 - coerces malformed saved data to a usable project
+  ---
+  duration_ms: 0.520008
+  ...
+# Subtest: exports the complete scene project and shot list
+ok 58 - exports the complete scene project and shot list
+  ---
+  duration_ms: 0.411235
+  ...
+# Subtest: uses stable project storage keys and entity ids
+ok 59 - uses stable project storage keys and entity ids
+  ---
+  duration_ms: 0.209143
+  ...
+# Subtest: the requested historical expansion contains exactly 58 unique films
+ok 60 - the requested historical expansion contains exactly 58 unique films
+  ---
+  duration_ms: 2.017048
+  ...
+# Subtest: the expansion reuses two existing films and appends 56 missing films
+ok 61 - the expansion reuses two existing films and appends 56 missing films
+  ---
+  duration_ms: 9.842756
+  ...
+# Subtest: every requested film resolves once and has a complete playable brief blueprint
+ok 62 - every requested film resolves once and has a complete playable brief blueprint
+  ---
+  duration_ms: 22.577739
+  ...
+# Subtest: the merged catalogue contains 217 unique Production Cases
+ok 63 - the merged catalogue contains 217 unique Production Cases
+  ---
+  duration_ms: 18.039049
+  ...
+# Subtest: East Asian auteur expansion contains exactly 11 unique missing films
+ok 64 - East Asian auteur expansion contains exactly 11 unique missing films
+  ---
+  duration_ms: 1.432012
+  ...
+# Subtest: all 11 films are new to the 264-case catalogue
+ok 65 - all 11 films are new to the 264-case catalogue
+  ---
+  duration_ms: 30.352111
+  ...
+# Subtest: every East Asian auteur film resolves once and has a playable brief blueprint
+ok 66 - every East Asian auteur film resolves once and has a playable brief blueprint
+  ---
+  duration_ms: 32.358302
+  ...
+# Subtest: the requested Taiwan, Hong Kong and China block is complete exactly once
+ok 67 - the requested Taiwan, Hong Kong and China block is complete exactly once
+  ---
+  duration_ms: 13.756241
+  ...
+# Subtest: the merged catalogue contains 275 unique Production Cases
+ok 68 - the merged catalogue contains 275 unique Production Cases
+  ---
+  duration_ms: 11.390477
+  ...
+# [eastern-iberian-british-expansion] prior=330 missing=23 final=353
+# Subtest: Eastern, Iberian, and British-Irish expansion contains exactly 24 unique targets
+ok 69 - Eastern, Iberian, and British-Irish expansion contains exactly 24 unique targets
+  ---
+  duration_ms: 1.099676
+  ...
+# Subtest: the expansion adds only genuinely missing films and preserves unique catalogue IDs
+ok 70 - the expansion adds only genuinely missing films and preserves unique catalogue IDs
+  ---
+  duration_ms: 44.545856
+  ...
+# Subtest: all 24 requested films resolve exactly once and have playable production blueprints
+ok 71 - all 24 requested films resolve exactly once and have playable production blueprints
+  ---
+  duration_ms: 50.950268
+  ...
+# Subtest: the complete requested regional block resolves exactly once by title and year
+ok 72 - the complete requested regional block resolves exactly once by title and year
+  ---
+  duration_ms: 29.655312
+  ...
+# Subtest: generic translated titles reject unrelated same-year films
+ok 73 - generic translated titles reject unrelated same-year films
+  ---
+  duration_ms: 17.796025
+  ...
+# Subtest: 1981-2009 festival winner expansion contains exactly eleven unique films
+ok 74 - 1981-2009 festival winner expansion contains exactly eleven unique films
+  ---
+  duration_ms: 1.48389
+  ...
+# Subtest: all eleven festival winners are new to the preceding 293-case catalogue
+ok 75 - all eleven festival winners are new to the preceding 293-case catalogue
+  ---
+  duration_ms: 30.009142
+  ...
+# Subtest: every festival winner resolves once and has a playable brief blueprint
+ok 76 - every festival winner resolves once and has a playable brief blueprint
+  ---
+  duration_ms: 31.659962
+  ...
+# Subtest: the complete requested 1981-2009 festival block resolves exactly once
+ok 77 - the complete requested 1981-2009 festival block resolves exactly once
+  ---
+  duration_ms: 16.778608
+  ...
+# Subtest: generic festival winner titles do not match unrelated same-year films
+ok 78 - generic festival winner titles do not match unrelated same-year films
+  ---
+  duration_ms: 12.549225
+  ...
+# Subtest: the merged catalogue contains 304 unique Production Cases
+ok 79 - the merged catalogue contains 304 unique Production Cases
+  ---
+  duration_ms: 12.437884
+  ...
+# Subtest: 2010-2024 festival winner expansion contains exactly eleven unique films
+ok 80 - 2010-2024 festival winner expansion contains exactly eleven unique films
+  ---
+  duration_ms: 1.05655
+  ...
+# Subtest: all eleven final festival winners are new to the preceding 304-case catalogue
+ok 81 - all eleven final festival winners are new to the preceding 304-case catalogue
+  ---
+  duration_ms: 22.410844
+  ...
+# Subtest: every final festival winner resolves once and has a playable brief blueprint
+ok 82 - every final festival winner resolves once and has a playable brief blueprint
+  ---
+  duration_ms: 16.833495
+  ...
+# Subtest: the complete requested 2010-2024 festival block resolves exactly once
+ok 83 - the complete requested 2010-2024 festival block resolves exactly once
+  ---
+  duration_ms: 14.586743
+  ...
+# Subtest: generic final festival titles do not match unrelated same-year films
+ok 84 - generic final festival titles do not match unrelated same-year films
+  ---
+  duration_ms: 20.641597
+  ...
+# Subtest: the final merged catalogue contains 315 unique Production Cases
+ok 85 - the final merged catalogue contains 315 unique Production Cases
+  ---
+  duration_ms: 10.255854
+  ...
+# Subtest: the complete agreed correction contains all 98 films exactly once
+ok 86 - the complete agreed correction contains all 98 films exactly once
+  ---
+  duration_ms: 11.852903
+  ...
+# Subtest: Film History book has six parts and thirty canonical chapters
+ok 87 - Film History book has six parts and thirty canonical chapters
+  ---
+  duration_ms: 1.604691
+  ...
+# Subtest: Chapter 1 satisfies the full editorial definition rather than the old baseline
+ok 88 - Chapter 1 satisfies the full editorial definition rather than the old baseline
+  ---
+  duration_ms: 5.241608
+  ...
+# Subtest: every Chapter 1 section has resolvable source provenance
+ok 89 - every Chapter 1 section has resolvable source provenance
+  ---
+  duration_ms: 0.351035
+  ...
+# Subtest: Chapter 1 keeps the audited Film Atlas role and gap matrix
+ok 90 - Chapter 1 keeps the audited Film Atlas role and gap matrix
+  ---
+  duration_ms: 0.329343
+  ...
+# Subtest: pre-cinema apparatus and motion studies remain Historical Objects, not fake Production Cases
+ok 91 - pre-cinema apparatus and motion studies remain Historical Objects, not fake Production Cases
+  ---
+  duration_ms: 0.370384
+  ...
+# Subtest: Chapter 2 is a full source-backed exhibition-history chapter
+ok 92 - Chapter 2 is a full source-backed exhibition-history chapter
+  ---
+  duration_ms: 5.537985
+  ...
+# Subtest: every Chapter 2 section has dense resolvable source provenance
+ok 93 - every Chapter 2 section has dense resolvable source provenance
+  ---
+  duration_ms: 0.48738
+  ...
+# Subtest: Chapter 2 keeps the completed audited Film Atlas matrix
+ok 94 - Chapter 2 keeps the completed audited Film Atlas matrix
+  ---
+  duration_ms: 0.384305
+  ...
+# Subtest: Chapter 2 keeps exhibition infrastructure outside fake Production Cases
+ok 95 - Chapter 2 keeps exhibition infrastructure outside fake Production Cases
+  ---
+  duration_ms: 3.498704
+  ...
+# Subtest: only Chapters 10–30 remain explicit outlines after Chapter 9 completion
+ok 96 - only Chapters 10–30 remain explicit outlines after Chapter 9 completion
+  ---
+  duration_ms: 0.345516
+  ...
+# Subtest: Chapter 8 is canonical full book content with fifteen substantive sections
+ok 97 - Chapter 8 is canonical full book content with fifteen substantive sections
+  ---
+  duration_ms: 1.628396
+  ...
+# Subtest: Chapter 8 source bank is complete, unique, HTTPS and actually used
+ok 98 - Chapter 8 source bank is complete, unique, HTTPS and actually used
+  ---
+  duration_ms: 0.699066
+  ...
+# Subtest: Chapter 8 preserves the completed six-case Atlas matrix and nine P2 comparisons
+ok 99 - Chapter 8 preserves the completed six-case Atlas matrix and nine P2 comparisons
+  ---
+  duration_ms: 9.303259
+  ...
+# Subtest: Chapter 8 theory and institutions remain historical context, never fake Production Cases
+ok 100 - Chapter 8 theory and institutions remain historical context, never fake Production Cases
+  ---
+  duration_ms: 0.217576
+  ...
+# Subtest: Chapter 8 keeps historiographic, ethical, authorship and version safeguards visible in prose
+ok 101 - Chapter 8 keeps historiographic, ethical, authorship and version safeguards visible in prose
+  ---
+  duration_ms: 3.289371
+  ...
+# Subtest: canonical book resolves Chapter 8 as full without changing the thirty-chapter architecture
+ok 102 - canonical book resolves Chapter 8 as full without changing the thirty-chapter architecture
+  ---
+  duration_ms: 0.208051
+  ...
+# Subtest: Chapter 8 audit locks the reviewed French avant-garde Production Case matrix
+not ok 103 - Chapter 8 audit locks the reviewed French avant-garde Production Case matrix
+  ---
+  duration_ms: 4.085302
+  location: '/home/runner/work/HG_Film_Producer/HG_Film_Producer/dist/core/filmHistoryChapterEightAuditContract.test.js:7:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run audit:film-history-ch9 && npm run typecheck/. Input:
+    
+    '{\n' +
+      '  "name": "hg-film-producer",\n' +
+      '  "version": "0.1.0",\n' +
+      '  "private": true,\n' +
+      '  "description": "Filmverket: a shared film platform containing the Film Producer game, Film Atlas, Director Lab, Film School, and Film History.",\n' +
+      '  "type": "module",\n' +
+      '  "scripts": {\n' +
+      '    "dev": "vite",\n' +
+      '    "build": "tsc",\n' +
+      '    "build:ui": "tsc -p tsconfig.app.json && vite build",\n' +
+      '    "preview": "vite preview",\n' +
+      '    "typecheck": "tsc --noEmit && tsc -p tsconfig.app.json",\n' +
+      '    "start": "node dist/index.js",\n' +
+      '    "test": "npm run build && node --test dist/core/*.test.js",\n' +
+      '    "audit:production-cases": "node scripts/production-case-rest-audit.mjs",\n' +
+      '    "audit:film-history-ch1": "node scripts/film-history-chapter-one-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch2": "node scripts/film-history-chapter-two-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch3": "node scripts/film-history-chapter-three-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch4": "node scripts/film-history-chapter-four-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch5": "node scripts/film-history-chapter-five-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch6": "node scripts/film-history-chapter-six-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch7": "node scripts/film-history-chapter-seven-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch8": "node scripts/film-history-chapter-eight-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch9": "node scripts/film-history-chapter-nine-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch10": "node scripts/film-history-chapter-ten-atlas-audit.mjs",\n' +
+      '    "preflight:v0.1": "node scripts/preflight-v0.1.mjs",\n' +
+      '    "verify:v0.1": "npm run preflight:v0.1 && npm run audit:production-cases && npm run audit:film-history-ch1 && npm run audit:film-history-ch2 && npm run audit:film-history-ch3 && npm run audit:film-history-ch4 && npm run audit:film-history-ch5 && npm run audit:film-history-ch6 && npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run audit:film-history-ch9 && npm run audit:film-history-ch10 && npm run typecheck && npm test && npm run build:ui",\n' +
+      '    "qa:manual": "node scripts/qa-manual.mjs",\n' +
+      '    "qa:manual:preview": "node scripts/qa-manual.mjs --preview"\n' +
+      '  },\n' +
+      '  "engines": {\n' +
+      '    "node": ">=20.0.0"\n' +
+      '  },\n' +
+      '  "dependencies": {\n' +
+      '    "react": "^19.1.1",\n' +
+      '    "react-dom": "^19.1.1"\n' +
+      '  },\n' +
+      '  "devDependencies": {\n' +
+      '    "@types/node": "^20.19.43",\n' +
+      '    "@types/react": "^19.1.16",\n' +
+      '    "@types/react-dom": "^19.1.9",\n' +
+      '    "@vitejs/plugin-react": "^5.0.4",\n' +
+      '    "typescript": "^5.5.4",\n' +
+      '    "vite": "^7.1.7"\n' +
+      '  }\n' +
+      '}\n'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    {
+      "name": "hg-film-producer",
+      "version": "0.1.0",
+      "private": true,
+      "description": "Filmverket: a shared film platform containing the Film Producer game, Film Atlas, Director Lab, Film School, and Film History.",
+      "type": "module",
+      "scripts": {
+        "dev": "vite",
+        "build": "tsc",
+        "build:ui": "tsc -p tsconfig.app.json && vite build",
+        "preview": "vite preview",
+        "typecheck": "tsc --noEmit && tsc -p tsconfig.app.json",
+        "start": "node dist/index.js",
+        "test": "npm run build && node --test dist/core/*.test.js",
+        "audit:production-cases": "node scripts/production-case-rest-audit.mjs",
+        "audit:film-history-ch1": "node scripts/film-history-chapter-one-atlas-audit.mjs",
+        "audit:film-history-ch2": "node scripts/film-history-chapter-two-atlas-audit.mjs",
+        "audit:film-history-ch3": "node scripts/film-history-chapter-three-atlas-audit.mjs",
+        "audit:film-history-ch4": "node scripts/film-history-chapter-four-atlas-audit.mjs",
+        "audit:film-history-ch5": "node scripts/film-history-chapter-five-atlas-audit.mjs",
+        "audit:film-history-ch6": "node scripts/film-history-chapter-six-atlas-audit.mjs",
+        "audit:film-history-ch7": "node scripts/film-history-chapter-seven-atlas-audit.mjs",
+        "audit:film-history-ch8": "node scripts/film-history-chapter-eight-atlas-audit.mjs",
+        "audit:film-history-ch9": "node scripts/film-history-chapter-nine-atlas-audit.mjs",
+        "audit:film-history-ch10": "node scripts/film-history-chapter-ten-atlas-audit.mjs",
+        "preflight:v0.1": "node scripts/preflight-v0.1.mjs",
+        "verify:v0.1": "npm run preflight:v0.1 && npm run audit:production-cases && npm run audit:film-history-ch1 && npm run audit:film-history-ch2 && npm run audit:film-history-ch3 && npm run audit:film-history-ch4 && npm run audit:film-history-ch5 && npm run audit:film-history-ch6 && npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run audit:film-history-ch9 && npm run audit:film-history-ch10 && npm run typecheck && npm test && npm run build:ui",
+        "qa:manual": "node scripts/qa-manual.mjs",
+        "qa:manual:preview": "node scripts/qa-manual.mjs --preview"
+      },
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "dependencies": {
+        "react": "^19.1.1",
+        "react-dom": "^19.1.1"
+      },
+      "devDependencies": {
+        "@types/node": "^20.19.43",
+        "@types/react": "^19.1.16",
+        "@types/react-dom": "^19.1.9",
+        "@vitejs/plugin-react": "^5.0.4",
+        "typescript": "^5.5.4",
+        "vite": "^7.1.7"
+      }
+    }
+    
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///home/runner/work/HG_Film_Producer/HG_Film_Producer/dist/core/filmHistoryChapterEightAuditContract.test.js:25:12)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    node:internal/test_runner/harness:255:12
+    node:internal/process/task_queues:140:7
+    AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    AsyncResource.runMicrotask (node:internal/process/task_queues:137:8)
+  ...
+# Subtest: Chapter 5 is canonical full book content with fifteen substantive sections
+ok 104 - Chapter 5 is canonical full book content with fifteen substantive sections
+  ---
+  duration_ms: 1.426274
+  ...
+# Subtest: Chapter 5 source bank is complete, unique, HTTPS and actually used
+ok 105 - Chapter 5 source bank is complete, unique, HTTPS and actually used
+  ---
+  duration_ms: 0.701099
+  ...
+# Subtest: Chapter 5 preserves the completed Atlas matrix and P2 book references
+ok 106 - Chapter 5 preserves the completed Atlas matrix and P2 book references
+  ---
+  duration_ms: 0.812335
+  ...
+# Subtest: Chapter 5 industrial systems remain infrastructure, never fake Production Cases
+ok 107 - Chapter 5 industrial systems remain infrastructure, never fake Production Cases
+  ---
+  duration_ms: 0.202483
+  ...
+# Subtest: Chapter 5 keeps international and historiographic safeguards visible in prose
+ok 108 - Chapter 5 keeps international and historiographic safeguards visible in prose
+  ---
+  duration_ms: 2.325349
+  ...
+# Subtest: canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+ok 109 - canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+  ---
+  duration_ms: 0.176224
+  ...
+# Subtest: Chapter 4 is canonical full book content with fifteen substantive sections
+ok 110 - Chapter 4 is canonical full book content with fifteen substantive sections
+  ---
+  duration_ms: 1.68436
+  ...
+# Subtest: Chapter 4 source bank is complete, unique, HTTPS and fully referenced
+ok 111 - Chapter 4 source bank is complete, unique, HTTPS and fully referenced
+  ---
+  duration_ms: 0.573678
+  ...
+# Subtest: Chapter 4 preserves the completed Atlas matrix and the three P2 book references
+ok 112 - Chapter 4 preserves the completed Atlas matrix and the three P2 book references
+  ---
+  duration_ms: 0.74222
+  ...
+# Subtest: Chapter 4 historical systems remain infrastructure, never fake Production Cases
+ok 113 - Chapter 4 historical systems remain infrastructure, never fake Production Cases
+  ---
+  duration_ms: 0.204356
+  ...
+# Subtest: Chapter 4 keeps the required industrial and historiographic safeguards visible in prose
+ok 114 - Chapter 4 keeps the required industrial and historiographic safeguards visible in prose
+  ---
+  duration_ms: 2.662563
+  ...
+# Subtest: canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+ok 115 - canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+  ---
+  duration_ms: 0.214021
+  ...
+# Subtest: Chapter 4 editorial references stay locked to the completed Atlas audit
+ok 116 - Chapter 4 editorial references stay locked to the completed Atlas audit
+  ---
+  duration_ms: 0.276694
+  ...
+# Subtest: Chapter 9 is canonical full book content with fifteen substantive sections
+ok 117 - Chapter 9 is canonical full book content with fifteen substantive sections
+  ---
+  duration_ms: 1.185503
+  ...
+# Subtest: Chapter 9 source bank is complete, unique, HTTPS and actually used
+ok 118 - Chapter 9 source bank is complete, unique, HTTPS and actually used
+  ---
+  duration_ms: 0.458636
+  ...
+# Subtest: Chapter 9 preserves the completed seven-case Atlas matrix and fourteen P2 comparisons
+ok 119 - Chapter 9 preserves the completed seven-case Atlas matrix and fourteen P2 comparisons
+  ---
+  duration_ms: 6.45018
+  ...
+# Subtest: Chapter 9 theory and institutions remain historical context, never fake Production Cases
+ok 120 - Chapter 9 theory and institutions remain historical context, never fake Production Cases
+  ---
+  duration_ms: 0.223375
+  ...
+# Subtest: Chapter 9 keeps theoretical, historiographic, archival, political and version safeguards visible in prose
+ok 121 - Chapter 9 keeps theoretical, historiographic, archival, political and version safeguards visible in prose
+  ---
+  duration_ms: 2.702393
+  ...
+# Subtest: canonical book resolves Chapter 9 as full without changing the thirty-chapter architecture
+ok 122 - canonical book resolves Chapter 9 as full without changing the thirty-chapter architecture
+  ---
+  duration_ms: 0.219368
+  ...
+# Subtest: Chapter 9 audit locks the reviewed Soviet montage Production Case matrix
+ok 123 - Chapter 9 audit locks the reviewed Soviet montage Production Case matrix
+  ---
+  duration_ms: 3.213328
+  ...
+# Subtest: Chapter 9 audit permanently preserves theory, Ukrainian, archival and political safeguards
+ok 124 - Chapter 9 audit permanently preserves theory, Ukrainian, archival and political safeguards
+  ---
+  duration_ms: 0.273389
+  ...
+# Subtest: Chapter 9 audit is permanent in the v0.1 verification chain
+not ok 125 - Chapter 9 audit is permanent in the v0.1 verification chain
+  ---
+  duration_ms: 2.148575
+  location: '/home/runner/work/HG_Film_Producer/HG_Film_Producer/dist/core/filmHistoryChapterNineAuditContract.test.js:60:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /npm run audit:film-history-ch8 && npm run audit:film-history-ch9 && npm run typecheck/. Input:
+    
+    '{\n' +
+      '  "name": "hg-film-producer",\n' +
+      '  "version": "0.1.0",\n' +
+      '  "private": true,\n' +
+      '  "description": "Filmverket: a shared film platform containing the Film Producer game, Film Atlas, Director Lab, Film School, and Film History.",\n' +
+      '  "type": "module",\n' +
+      '  "scripts": {\n' +
+      '    "dev": "vite",\n' +
+      '    "build": "tsc",\n' +
+      '    "build:ui": "tsc -p tsconfig.app.json && vite build",\n' +
+      '    "preview": "vite preview",\n' +
+      '    "typecheck": "tsc --noEmit && tsc -p tsconfig.app.json",\n' +
+      '    "start": "node dist/index.js",\n' +
+      '    "test": "npm run build && node --test dist/core/*.test.js",\n' +
+      '    "audit:production-cases": "node scripts/production-case-rest-audit.mjs",\n' +
+      '    "audit:film-history-ch1": "node scripts/film-history-chapter-one-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch2": "node scripts/film-history-chapter-two-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch3": "node scripts/film-history-chapter-three-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch4": "node scripts/film-history-chapter-four-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch5": "node scripts/film-history-chapter-five-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch6": "node scripts/film-history-chapter-six-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch7": "node scripts/film-history-chapter-seven-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch8": "node scripts/film-history-chapter-eight-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch9": "node scripts/film-history-chapter-nine-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch10": "node scripts/film-history-chapter-ten-atlas-audit.mjs",\n' +
+      '    "preflight:v0.1": "node scripts/preflight-v0.1.mjs",\n' +
+      '    "verify:v0.1": "npm run preflight:v0.1 && npm run audit:production-cases && npm run audit:film-history-ch1 && npm run audit:film-history-ch2 && npm run audit:film-history-ch3 && npm run audit:film-history-ch4 && npm run audit:film-history-ch5 && npm run audit:film-history-ch6 && npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run audit:film-history-ch9 && npm run audit:film-history-ch10 && npm run typecheck && npm test && npm run build:ui",\n' +
+      '    "qa:manual": "node scripts/qa-manual.mjs",\n' +
+      '    "qa:manual:preview": "node scripts/qa-manual.mjs --preview"\n' +
+      '  },\n' +
+      '  "engines": {\n' +
+      '    "node": ">=20.0.0"\n' +
+      '  },\n' +
+      '  "dependencies": {\n' +
+      '    "react": "^19.1.1",\n' +
+      '    "react-dom": "^19.1.1"\n' +
+      '  },\n' +
+      '  "devDependencies": {\n' +
+      '    "@types/node": "^20.19.43",\n' +
+      '    "@types/react": "^19.1.16",\n' +
+      '    "@types/react-dom": "^19.1.9",\n' +
+      '    "@vitejs/plugin-react": "^5.0.4",\n' +
+      '    "typescript": "^5.5.4",\n' +
+      '    "vite": "^7.1.7"\n' +
+      '  }\n' +
+      '}\n'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    {
+      "name": "hg-film-producer",
+      "version": "0.1.0",
+      "private": true,
+      "description": "Filmverket: a shared film platform containing the Film Producer game, Film Atlas, Director Lab, Film School, and Film History.",
+      "type": "module",
+      "scripts": {
+        "dev": "vite",
+        "build": "tsc",
+        "build:ui": "tsc -p tsconfig.app.json && vite build",
+        "preview": "vite preview",
+        "typecheck": "tsc --noEmit && tsc -p tsconfig.app.json",
+        "start": "node dist/index.js",
+        "test": "npm run build && node --test dist/core/*.test.js",
+        "audit:production-cases": "node scripts/production-case-rest-audit.mjs",
+        "audit:film-history-ch1": "node scripts/film-history-chapter-one-atlas-audit.mjs",
+        "audit:film-history-ch2": "node scripts/film-history-chapter-two-atlas-audit.mjs",
+        "audit:film-history-ch3": "node scripts/film-history-chapter-three-atlas-audit.mjs",
+        "audit:film-history-ch4": "node scripts/film-history-chapter-four-atlas-audit.mjs",
+        "audit:film-history-ch5": "node scripts/film-history-chapter-five-atlas-audit.mjs",
+        "audit:film-history-ch6": "node scripts/film-history-chapter-six-atlas-audit.mjs",
+        "audit:film-history-ch7": "node scripts/film-history-chapter-seven-atlas-audit.mjs",
+        "audit:film-history-ch8": "node scripts/film-history-chapter-eight-atlas-audit.mjs",
+        "audit:film-history-ch9": "node scripts/film-history-chapter-nine-atlas-audit.mjs",
+        "audit:film-history-ch10": "node scripts/film-history-chapter-ten-atlas-audit.mjs",
+        "preflight:v0.1": "node scripts/preflight-v0.1.mjs",
+        "verify:v0.1": "npm run preflight:v0.1 && npm run audit:production-cases && npm run audit:film-history-ch1 && npm run audit:film-history-ch2 && npm run audit:film-history-ch3 && npm run audit:film-history-ch4 && npm run audit:film-history-ch5 && npm run audit:film-history-ch6 && npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run audit:film-history-ch9 && npm run audit:film-history-ch10 && npm run typecheck && npm test && npm run build:ui",
+        "qa:manual": "node scripts/qa-manual.mjs",
+        "qa:manual:preview": "node scripts/qa-manual.mjs --preview"
+      },
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "dependencies": {
+        "react": "^19.1.1",
+        "react-dom": "^19.1.1"
+      },
+      "devDependencies": {
+        "@types/node": "^20.19.43",
+        "@types/react": "^19.1.16",
+        "@types/react-dom": "^19.1.9",
+        "@vitejs/plugin-react": "^5.0.4",
+        "typescript": "^5.5.4",
+        "vite": "^7.1.7"
+      }
+    }
+    
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///home/runner/work/HG_Film_Producer/HG_Film_Producer/dist/core/filmHistoryChapterNineAuditContract.test.js:62:12)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: Chapter 7 is canonical full book content with fifteen substantive sections
+ok 126 - Chapter 7 is canonical full book content with fifteen substantive sections
+  ---
+  duration_ms: 1.250721
+  ...
+# Subtest: Chapter 7 source bank is complete, unique, HTTPS and actually used
+ok 127 - Chapter 7 source bank is complete, unique, HTTPS and actually used
+  ---
+  duration_ms: 0.460569
+  ...
+# Subtest: Chapter 7 preserves the completed five-case Atlas matrix and P2-only comparisons
+ok 128 - Chapter 7 preserves the completed five-case Atlas matrix and P2-only comparisons
+  ---
+  duration_ms: 6.428678
+  ...
+# Subtest: Chapter 7 infrastructure remains historical context, never fake Production Cases
+ok 129 - Chapter 7 infrastructure remains historical context, never fake Production Cases
+  ---
+  duration_ms: 0.155352
+  ...
+# Subtest: Chapter 7 keeps historiographic, ethical, legal and version safeguards visible in prose
+ok 130 - Chapter 7 keeps historiographic, ethical, legal and version safeguards visible in prose
+  ---
+  duration_ms: 1.803699
+  ...
+# Subtest: canonical book can resolve Chapter 7 as full without changing the thirty-chapter architecture
+ok 131 - canonical book can resolve Chapter 7 as full without changing the thirty-chapter architecture
+  ---
+  duration_ms: 0.156974
+  ...
+# Subtest: Chapter 7 audit locks the reviewed Weimar production-case matrix
+not ok 132 - Chapter 7 audit locks the reviewed Weimar production-case matrix
+  ---
+  duration_ms: 3.398304
+  location: '/home/runner/work/HG_Film_Producer/HG_Film_Producer/dist/core/filmHistoryChapterSevenAuditContract.test.js:6:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /npm run audit:film-history-ch6 && npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run audit:film-history-ch9 && npm run typecheck/. Input:
+    
+    '{\n' +
+      '  "name": "hg-film-producer",\n' +
+      '  "version": "0.1.0",\n' +
+      '  "private": true,\n' +
+      '  "description": "Filmverket: a shared film platform containing the Film Producer game, Film Atlas, Director Lab, Film School, and Film History.",\n' +
+      '  "type": "module",\n' +
+      '  "scripts": {\n' +
+      '    "dev": "vite",\n' +
+      '    "build": "tsc",\n' +
+      '    "build:ui": "tsc -p tsconfig.app.json && vite build",\n' +
+      '    "preview": "vite preview",\n' +
+      '    "typecheck": "tsc --noEmit && tsc -p tsconfig.app.json",\n' +
+      '    "start": "node dist/index.js",\n' +
+      '    "test": "npm run build && node --test dist/core/*.test.js",\n' +
+      '    "audit:production-cases": "node scripts/production-case-rest-audit.mjs",\n' +
+      '    "audit:film-history-ch1": "node scripts/film-history-chapter-one-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch2": "node scripts/film-history-chapter-two-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch3": "node scripts/film-history-chapter-three-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch4": "node scripts/film-history-chapter-four-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch5": "node scripts/film-history-chapter-five-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch6": "node scripts/film-history-chapter-six-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch7": "node scripts/film-history-chapter-seven-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch8": "node scripts/film-history-chapter-eight-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch9": "node scripts/film-history-chapter-nine-atlas-audit.mjs",\n' +
+      '    "audit:film-history-ch10": "node scripts/film-history-chapter-ten-atlas-audit.mjs",\n' +
+      '    "preflight:v0.1": "node scripts/preflight-v0.1.mjs",\n' +
+      '    "verify:v0.1": "npm run preflight:v0.1 && npm run audit:production-cases && npm run audit:film-history-ch1 && npm run audit:film-history-ch2 && npm run audit:film-history-ch3 && npm run audit:film-history-ch4 && npm run audit:film-history-ch5 && npm run audit:film-history-ch6 && npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run audit:film-history-ch9 && npm run audit:film-history-ch10 && npm run typecheck && npm test && npm run build:ui",\n' +
+      '    "qa:manual": "node scripts/qa-manual.mjs",\n' +
+      '    "qa:manual:preview": "node scripts/qa-manual.mjs --preview"\n' +
+      '  },\n' +
+      '  "engines": {\n' +
+      '    "node": ">=20.0.0"\n' +
+      '  },\n' +
+      '  "dependencies": {\n' +
+      '    "react": "^19.1.1",\n' +
+      '    "react-dom": "^19.1.1"\n' +
+      '  },\n' +
+      '  "devDependencies": {\n' +
+      '    "@types/node": "^20.19.43",\n' +
+      '    "@types/react": "^19.1.16",\n' +
+      '    "@types/react-dom": "^19.1.9",\n' +
+      '    "@vitejs/plugin-react": "^5.0.4",\n' +
+      '    "typescript": "^5.5.4",\n' +
+      '    "vite": "^7.1.7"\n' +
+      '  }\n' +
+      '}\n'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    {
+      "name": "hg-film-producer",
+      "version": "0.1.0",
+      "private": true,
+      "description": "Filmverket: a shared film platform containing the Film Producer game, Film Atlas, Director Lab, Film School, and Film History.",
+      "type": "module",
+      "scripts": {
+        "dev": "vite",
+        "build": "tsc",
+        "build:ui": "tsc -p tsconfig.app.json && vite build",
+        "preview": "vite preview",
+        "typecheck": "tsc --noEmit && tsc -p tsconfig.app.json",
+        "start": "node dist/index.js",
+        "test": "npm run build && node --test dist/core/*.test.js",
+        "audit:production-cases": "node scripts/production-case-rest-audit.mjs",
+        "audit:film-history-ch1": "node scripts/film-history-chapter-one-atlas-audit.mjs",
+        "audit:film-history-ch2": "node scripts/film-history-chapter-two-atlas-audit.mjs",
+        "audit:film-history-ch3": "node scripts/film-history-chapter-three-atlas-audit.mjs",
+        "audit:film-history-ch4": "node scripts/film-history-chapter-four-atlas-audit.mjs",
+        "audit:film-history-ch5": "node scripts/film-history-chapter-five-atlas-audit.mjs",
+        "audit:film-history-ch6": "node scripts/film-history-chapter-six-atlas-audit.mjs",
+        "audit:film-history-ch7": "node scripts/film-history-chapter-seven-atlas-audit.mjs",
+        "audit:film-history-ch8": "node scripts/film-history-chapter-eight-atlas-audit.mjs",
+        "audit:film-history-ch9": "node scripts/film-history-chapter-nine-atlas-audit.mjs",
+        "audit:film-history-ch10": "node scripts/film-history-chapter-ten-atlas-audit.mjs",
+        "preflight:v0.1": "node scripts/preflight-v0.1.mjs",
+        "verify:v0.1": "npm run preflight:v0.1 && npm run audit:production-cases && npm run audit:film-history-ch1 && npm run audit:film-history-ch2 && npm run audit:film-history-ch3 && npm run audit:film-history-ch4 && npm run audit:film-history-ch5 && npm run audit:film-history-ch6 && npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run audit:film-history-ch9 && npm run audit:film-history-ch10 && npm run typecheck && npm test && npm run build:ui",
+        "qa:manual": "node scripts/qa-manual.mjs",
+        "qa:manual:preview": "node scripts/qa-manual.mjs --preview"
+      },
+      "engines": {
+        "node": ">=20.0.0"
+      },
+      "dependencies": {
+        "react": "^19.1.1",
+        "react-dom": "^19.1.1"
+      },
+      "devDependencies": {
+        "@types/node": "^20.19.43",
+        "@types/react": "^19.1.16",
+        "@types/react-dom": "^19.1.9",
+        "@vitejs/plugin-react": "^5.0.4",
+        "typescript": "^5.5.4",
+        "vite": "^7.1.7"
+      }
+    }
+    
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///home/runner/work/HG_Film_Producer/HG_Film_Producer/dist/core/filmHistoryChapterSevenAuditContract.test.js:20:12)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    node:internal/test_runner/harness:255:12
+    node:internal/process/task_queues:140:7
+    AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    AsyncResource.runMicrotask (node:internal/process/task_queues:137:8)
+  ...
+# Subtest: Chapter 6 is canonical full book content with fifteen substantive sections
+ok 133 - Chapter 6 is canonical full book content with fifteen substantive sections
+  ---
+  duration_ms: 1.231503
+  ...
+# Subtest: Chapter 6 source bank is complete, unique, HTTPS and actually used
+ok 134 - Chapter 6 source bank is complete, unique, HTTPS and actually used
+  ---
+  duration_ms: 0.635581
+  ...
+# Subtest: Chapter 6 preserves the completed six-case Atlas matrix and P2-only comparisons
+ok 135 - Chapter 6 preserves the completed six-case Atlas matrix and P2-only comparisons
+  ---
+  duration_ms: 9.015759
+  ...
+# Subtest: Chapter 6 industrial systems remain infrastructure, never fake Production Cases
+ok 136 - Chapter 6 industrial systems remain infrastructure, never fake Production Cases
+  ---
+  duration_ms: 0.203725
+  ...
+# Subtest: Chapter 6 keeps historiographic, ethical and version safeguards visible in prose
+ok 137 - Chapter 6 keeps historiographic, ethical and version safeguards visible in prose
+  ---
+  duration_ms: 3.320137
+  ...
+# Subtest: canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+ok 138 - canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+  ---
+  duration_ms: 0.233149
+  ...
+# Subtest: Chapter 6 keeps the reviewed 37-source contract and closed production gap
+ok 139 - Chapter 6 keeps the reviewed 37-source contract and closed production gap
+  ---
+  duration_ms: 1.372103
+  ...
+# Subtest: Chapter 10 audit locks the reviewed silent-cinemas Atlas matrix
+ok 140 - Chapter 10 audit locks the reviewed silent-cinemas Atlas matrix
+  ---
+  duration_ms: 2.654542
+  ...
+# Subtest: Chapter 10 keeps exhibition systems, institutions and archive loss outside fake Production Cases
+ok 141 - Chapter 10 keeps exhibition systems, institutions and archive loss outside fake Production Cases
+  ---
+  duration_ms: 0.247099
+  ...
+# Subtest: Chapter 10 permanently preserves survival, benshi, transnational and sound-boundary safeguards
+ok 142 - Chapter 10 permanently preserves survival, benshi, transnational and sound-boundary safeguards
+  ---
+  duration_ms: 0.282032
+  ...
+# Subtest: Chapter 10 audit is permanent in the v0.1 verification chain
+ok 143 - Chapter 10 audit is permanent in the v0.1 verification chain
+  ---
+  duration_ms: 0.153791
+  ...
+# Subtest: Chapter 3 is canonical full book content with fifteen substantive sections
+ok 144 - Chapter 3 is canonical full book content with fifteen substantive sections
+  ---
+  duration_ms: 1.182349
+  ...
+# Subtest: Chapter 3 source bank is complete, unique, HTTPS and fully referenced
+ok 145 - Chapter 3 source bank is complete, unique, HTTPS and fully referenced
+  ---
+  duration_ms: 0.491496
+  ...
+# Subtest: Chapter 3 uses exactly the nine completed Atlas cases and no P0/P1 film references
+ok 146 - Chapter 3 uses exactly the nine completed Atlas cases and no P0/P1 film references
+  ---
+  duration_ms: 0.706026
+  ...
+# Subtest: Chapter 3 historical objects remain practices and evidence, never fake Production Cases
+ok 147 - Chapter 3 historical objects remain practices and evidence, never fake Production Cases
+  ---
+  duration_ms: 0.194341
+  ...
+# Subtest: Chapter 3 keeps the required historiographic safeguards visible in prose
+ok 148 - Chapter 3 keeps the required historiographic safeguards visible in prose
+  ---
+  duration_ms: 1.665532
+  ...
+# Subtest: canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+ok 149 - canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+  ---
+  duration_ms: 0.216634
+  ...
+# Subtest: Chapter 3 editorial film references stay locked to the completed Atlas audit
+ok 150 - Chapter 3 editorial film references stay locked to the completed Atlas audit
+  ---
+  duration_ms: 0.226219
+  ...
+# Subtest: movements and historical films load with unique ids
+ok 151 - movements and historical films load with unique ids
+  ---
+  duration_ms: 3.299697
+  ...
+# Subtest: every historical film's movement, when set, exists in movements.json
+ok 152 - every historical film's movement, when set, exists in movements.json
+  ---
+  duration_ms: 2.351959
+  ...
+# Subtest: every technique resolves through its knowledge entry to a real historical film
+ok 153 - every technique resolves through its knowledge entry to a real historical film
+  ---
+  duration_ms: 1.409539
+  ...
+# Subtest: camera course has five complete and unique lessons
+ok 154 - camera course has five complete and unique lessons
+  ---
+  duration_ms: 1.419203
+  ...
+# Subtest: all camera course terminology links resolve
+ok 155 - all camera course terminology links resolve
+  ---
+  duration_ms: 0.269132
+  ...
+# Subtest: all five camera course film examples resolve exactly once in Film Atlas
+ok 156 - all five camera course film examples resolve exactly once in Film Atlas
+  ---
+  duration_ms: 42.515207
+  ...
+# Subtest: camera quiz grading accepts only the configured answer
+ok 157 - camera quiz grading accepts only the configured answer
+  ---
+  duration_ms: 0.249593
+  ...
+# Subtest: camera progress coercion removes unknown lesson IDs and preserves valid notes
+ok 158 - camera progress coercion removes unknown lesson IDs and preserves valid notes
+  ---
+  duration_ms: 0.378306
+  ...
+# Subtest: camera mastery and completion require seen, understood, and used for every lesson
+ok 159 - camera mastery and completion require seen, understood, and used for every lesson
+  ---
+  duration_ms: 0.372938
+  ...
+# Subtest: final camera assignment links to valid Director brief fields
+ok 160 - final camera assignment links to valid Director brief fields
+  ---
+  duration_ms: 0.258167
+  ...
+# Subtest: capstone validation requires the matching film, all sixteen brief fields, and three complete shots
+ok 161 - capstone validation requires the matching film, all sixteen brief fields, and three complete shots
+  ---
+  duration_ms: 2.201434
+  ...
+# Subtest: capstone validation does not count incomplete shot cards as completed coverage
+ok 162 - capstone validation does not count incomplete shot cards as completed coverage
+  ---
+  duration_ms: 0.854698
+  ...
+# Subtest: capstone submission stores the delivered scene and project version
+ok 163 - capstone submission stores the delivered scene and project version
+  ---
+  duration_ms: 0.40053
+  ...
+# Subtest: submission coercion rejects partial or fabricated completion records
+ok 164 - submission coercion rejects partial or fabricated completion records
+  ---
+  duration_ms: 0.561651
+  ...
+# Subtest: editing, sound, and finishing course has five complete and unique lessons
+ok 165 - editing, sound, and finishing course has five complete and unique lessons
+  ---
+  duration_ms: 1.412724
+  ...
+# Subtest: all editing, sound, and finishing terminology links resolve
+ok 166 - all editing, sound, and finishing terminology links resolve
+  ---
+  duration_ms: 0.40107
+  ...
+# Subtest: all five editing and sound film examples resolve exactly once in Film Atlas
+ok 167 - all five editing and sound film examples resolve exactly once in Film Atlas
+  ---
+  duration_ms: 37.501537
+  ...
+# Subtest: editing and sound quiz grading accepts only the configured answer
+ok 168 - editing and sound quiz grading accepts only the configured answer
+  ---
+  duration_ms: 0.243584
+  ...
+# Subtest: editing and sound progress coercion removes unknown lesson IDs and preserves valid notes
+ok 169 - editing and sound progress coercion removes unknown lesson IDs and preserves valid notes
+  ---
+  duration_ms: 0.390094
+  ...
+# Subtest: editing and sound mastery requires seen, understood, and used for every lesson
+ok 170 - editing and sound mastery requires seen, understood, and used for every lesson
+  ---
+  duration_ms: 0.392617
+  ...
+# Subtest: final editing and sound assignment links to valid Director brief fields
+ok 171 - final editing and sound assignment links to valid Director brief fields
+  ---
+  duration_ms: 0.264176
+  ...
+# Subtest: ground course contains five chapters and twenty-five lessons
+ok 172 - ground course contains five chapters and twenty-five lessons
+  ---
+  duration_ms: 1.453194
+  ...
+# Subtest: course summary counts only known unique milestones
+ok 173 - course summary counts only known unique milestones
+  ---
+  duration_ms: 0.225999
+  ...
+# Subtest: ground course unlocks only when all seventy-five milestones are complete
+ok 174 - ground course unlocks only when all seventy-five milestones are complete
+  ---
+  duration_ms: 0.404966
+  ...
+# Subtest: capstone assignment uses every Director brief field exactly once
+ok 175 - capstone assignment uses every Director brief field exactly once
+  ---
+  duration_ms: 0.206529
+  ...
+# Subtest: lighting and design course has five complete and unique lessons
+ok 176 - lighting and design course has five complete and unique lessons
+  ---
+  duration_ms: 1.769147
+  ...
+# Subtest: all lighting and design terminology links resolve
+ok 177 - all lighting and design terminology links resolve
+  ---
+  duration_ms: 0.391276
+  ...
+# Subtest: all five lighting and design film examples resolve exactly once in Film Atlas
+ok 178 - all five lighting and design film examples resolve exactly once in Film Atlas
+  ---
+  duration_ms: 37.459164
+  ...
+# Subtest: lighting and design quiz grading accepts only the configured answer
+ok 179 - lighting and design quiz grading accepts only the configured answer
+  ---
+  duration_ms: 0.276885
+  ...
+# Subtest: lighting and design progress coercion removes unknown lesson IDs and preserves valid notes
+ok 180 - lighting and design progress coercion removes unknown lesson IDs and preserves valid notes
+  ---
+  duration_ms: 0.406868
+  ...
+# Subtest: lighting and design mastery requires seen, understood, and used for every lesson
+ok 181 - lighting and design mastery requires seen, understood, and used for every lesson
+  ---
+  duration_ms: 0.385146
+  ...
+# Subtest: final lighting and design assignment links to valid Director brief fields
+ok 182 - final lighting and design assignment links to valid Director brief fields
+  ---
+  duration_ms: 0.283985
+  ...
+# Subtest: performance course has five complete and unique lessons
+ok 183 - performance course has five complete and unique lessons
+  ---
+  duration_ms: 1.975827
+  ...
+# Subtest: all performance course terminology links resolve
+ok 184 - all performance course terminology links resolve
+  ---
+  duration_ms: 0.345837
+  ...
+# Subtest: all five performance course film examples resolve exactly once in Film Atlas
+ok 185 - all five performance course film examples resolve exactly once in Film Atlas
+  ---
+  duration_ms: 47.556846
+  ...
+# Subtest: quiz grading accepts only the configured answer
+ok 186 - quiz grading accepts only the configured answer
+  ---
+  duration_ms: 0.28702
+  ...
+# Subtest: progress coercion removes unknown lesson IDs and preserves valid notes
+ok 187 - progress coercion removes unknown lesson IDs and preserves valid notes
+  ---
+  duration_ms: 0.451265
+  ...
+# Subtest: mastery and completion require seen, understood, and used for every lesson
+ok 188 - mastery and completion require seen, understood, and used for every lesson
+  ---
+  duration_ms: 0.332928
+  ...
+# Subtest: final performance assignment links to valid Director brief fields
+ok 189 - final performance assignment links to valid Director brief fields
+  ---
+  duration_ms: 0.269924
+  ...
+# Subtest: screenplay course contains five complete and unique lessons
+ok 190 - screenplay course contains five complete and unique lessons
+  ---
+  duration_ms: 1.517891
+  ...
+# Subtest: progress is coerced to known lessons and calculates four learning stages
+ok 191 - progress is coerced to known lessons and calculates four learning stages
+  ---
+  duration_ms: 1.2369
+  ...
+# Subtest: all course milestones produce full mastery
+ok 192 - all course milestones produce full mastery
+  ---
+  duration_ms: 0.265878
+  ...
+# Subtest: director assignment uses valid brief fields and preserves film identity
+ok 193 - director assignment uses valid brief fields and preserves film identity
+  ---
+  duration_ms: 0.261361
+  ...
+# Subtest: film study coverage always contains every history and craft area
+ok 194 - film study coverage always contains every history and craft area
+  ---
+  duration_ms: 1.20988
+  ...
+# Subtest: coverage summary distinguishes verified, mapped, pending, and not-central work
+ok 195 - coverage summary distinguishes verified, mapped, pending, and not-central work
+  ---
+  duration_ms: 0.202634
+  ...
+# Subtest: historical eras provide stable broad placement without pretending to be a movement label
+ok 196 - historical eras provide stable broad placement without pretending to be a movement label
+  ---
+  duration_ms: 0.143004
+  ...
+# Subtest: creates stable film slugs with year
+ok 197 - creates stable film slugs with year
+  ---
+  duration_ms: 1.543159
+  ...
+# Subtest: parses platform section routes
+ok 198 - parses platform section routes
+  ---
+  duration_ms: 0.902851
+  ...
+# Subtest: parses canonical and legacy film routes
+ok 199 - parses canonical and legacy film routes
+  ---
+  duration_ms: 0.227701
+  ...
+# Subtest: formats canonical hash routes
+ok 200 - formats canonical hash routes
+  ---
+  duration_ms: 0.195483
+  ...
+# Subtest: falls back safely for invalid hashes
+ok 201 - falls back safely for invalid hashes
+  ---
+  duration_ms: 1.011283
+  ...
+# Subtest: compares routes including selected films
+ok 202 - compares routes including selected films
+  ---
+  duration_ms: 0.189503
+  ...
+# [italy-france-germany-benelux-expansion] prior=353 missing=25 final=378
+# Subtest: Italy, France, Germany, and Benelux expansion contains exactly 28 unique targets
+ok 203 - Italy, France, Germany, and Benelux expansion contains exactly 28 unique targets
+  ---
+  duration_ms: 1.487556
+  ...
+# Subtest: the expansion adds only genuinely missing films and preserves unique catalogue IDs
+ok 204 - the expansion adds only genuinely missing films and preserves unique catalogue IDs
+  ---
+  duration_ms: 56.596605
+  ...
+# Subtest: all 28 requested films resolve exactly once and have playable production blueprints
+ok 205 - all 28 requested films resolve exactly once and have playable production blueprints
+  ---
+  duration_ms: 50.421592
+  ...
+# Subtest: the complete requested regional block resolves exactly once by title and year
+ok 206 - the complete requested regional block resolves exactly once by title and year
+  ---
+  duration_ms: 33.329529
+  ...
+# Subtest: generic translated titles reject unrelated same-year films
+ok 207 - generic translated titles reject unrelated same-year films
+  ---
+  duration_ms: 17.694933
+  ...
+# Subtest: Japanese auteur expansion contains exactly seven unique missing films
+ok 208 - Japanese auteur expansion contains exactly seven unique missing films
+  ---
+  duration_ms: 1.362278
+  ...
+# Subtest: all seven Japanese auteur films are new to the 275-case catalogue
+ok 209 - all seven Japanese auteur films are new to the 275-case catalogue
+  ---
+  duration_ms: 26.065032
+  ...
+# Subtest: every Japanese auteur film resolves once and has a playable brief blueprint
+ok 210 - every Japanese auteur film resolves once and has a playable brief blueprint
+  ---
+  duration_ms: 32.050957
+  ...
+# Subtest: the full requested Japanese block resolves exactly once
+ok 211 - the full requested Japanese block resolves exactly once
+  ---
+  duration_ms: 18.90194
+  ...
+# Subtest: Black Rain is disambiguated from the Ridley Scott film released in the same year
+ok 212 - Black Rain is disambiguated from the Ridley Scott film released in the same year
+  ---
+  duration_ms: 11.114649
+  ...
+# Subtest: the merged catalogue contains 282 unique Production Cases
+ok 213 - the merged catalogue contains 282 unique Production Cases
+  ---
+  duration_ms: 17.533732
+  ...
+# Subtest: the first modern canon expansion contains exactly 27 unique films
+ok 214 - the first modern canon expansion contains exactly 27 unique films
+  ---
+  duration_ms: 1.751511
+  ...
+# Subtest: all 27 requested films are new to the 217-case catalogue
+ok 215 - all 27 requested films are new to the 217-case catalogue
+  ---
+  duration_ms: 16.302991
+  ...
+# Subtest: every requested film resolves once and has a complete playable brief blueprint
+ok 216 - every requested film resolves once and has a complete playable brief blueprint
+  ---
+  duration_ms: 36.811028
+  ...
+# Subtest: the merged catalogue contains 244 unique Production Cases
+ok 217 - the merged catalogue contains 244 unique Production Cases
+  ---
+  duration_ms: 11.395379
+  ...
+# Subtest: post-production seed catalogues provide stable professional coverage
+ok 218 - post-production seed catalogues provide stable professional coverage
+  ---
+  duration_ms: 1.705923
+  ...
+# Subtest: craft decisions apply immutably and duplicate applications have no second cost
+ok 219 - craft decisions apply immutably and duplicate applications have no second cost
+  ---
+  duration_ms: 15.748977
+  ...
+# Subtest: screening, trailer, and post evaluation are deterministic and bounded
+ok 220 - screening, trailer, and post evaluation are deterministic and bounded
+  ---
+  duration_ms: 1.231412
+  ...
+# Subtest: film results remain backward compatible and account for post cost and quality
+ok 221 - film results remain backward compatible and account for post cost and quality
+  ---
+  duration_ms: 0.519057
+  ...
+# Subtest: priority indie completion contains exactly 20 unique missing films
+ok 222 - priority indie completion contains exactly 20 unique missing films
+  ---
+  duration_ms: 1.683679
+  ...
+# Subtest: all 20 completion films are new to the 244-case catalogue
+ok 223 - all 20 completion films are new to the 244-case catalogue
+  ---
+  duration_ms: 18.663146
+  ...
+# Subtest: every completion film resolves once and has a playable brief blueprint
+ok 224 - every completion film resolves once and has a playable brief blueprint
+  ---
+  duration_ms: 24.007818
+  ...
+# Subtest: the originally prioritized 27-film list is now complete exactly once
+ok 225 - the originally prioritized 27-film list is now complete exactly once
+  ---
+  duration_ms: 9.461255
+  ...
+# Subtest: the merged catalogue contains 264 unique Production Cases
+ok 226 - the merged catalogue contains 264 unique Production Cases
+  ---
+  duration_ms: 9.494731
+  ...
+# Subtest: production case report and best result are gated until all phases are complete
+ok 227 - production case report and best result are gated until all phases are complete
+  ---
+  duration_ms: 2.411428
+  ...
+# Subtest: production case continuation helpers reset runs without deleting best results and resolve next case safely
+ok 228 - production case continuation helpers reset runs without deleting best results and resolve next case safely
+  ---
+  duration_ms: 1.658792
+  ...
+# Subtest: production case first-session and next-action logic tolerate empty and returning-player state
+ok 229 - production case first-session and next-action logic tolerate empty and returning-player state
+  ---
+  duration_ms: 0.333119
+  ...
+# Subtest: production case score and report invariants are bounded and deterministic for missing selections
+ok 230 - production case score and report invariants are bounded and deterministic for missing selections
+  ---
+  duration_ms: 0.47104
+  ...
+# Subtest: learning status tracks only not started, in progress, and completed
+ok 231 - learning status tracks only not started, in progress, and completed
+  ---
+  duration_ms: 1.277125
+  ...
+# Subtest: learning hints use qualities for explanation without calculating points
+ok 232 - learning hints use qualities for explanation without calculating points
+  ---
+  duration_ms: 0.284245
+  ...
+# Subtest: next action guides study rather than score improvement
+ok 233 - next action guides study rather than score improvement
+  ---
+  duration_ms: 0.408141
+  ...
+# Subtest: completed report groups understanding without score or rank fields
+ok 234 - completed report groups understanding without score or rank fields
+  ---
+  duration_ms: 0.355392
+  ...
+# Subtest: production case progress starts at 0/6 for Taxi Driver
+ok 235 - production case progress starts at 0/6 for Taxi Driver
+  ---
+  duration_ms: 0.960527
+  ...
+# Subtest: one mission can be marked complete and counted in the summary
+ok 236 - one mission can be marked complete and counted in the summary
+  ---
+  duration_ms: 0.544735
+  ...
+# Subtest: production case progress is saved per scenario id
+ok 237 - production case progress is saved per scenario id
+  ---
+  duration_ms: 0.292447
+  ...
+# Subtest: reset clears only the current scenario progress
+ok 238 - reset clears only the current scenario progress
+  ---
+  duration_ms: 0.869732
+  ...
+# Subtest: production case progress export includes version, timestamp, progress, best results, and controls
+ok 239 - production case progress export includes version, timestamp, progress, best results, and controls
+  ---
+  duration_ms: 0.631775
+  ...
+# Subtest: production case progress export uses safe defaults for empty storage
+ok 240 - production case progress export uses safe defaults for empty storage
+  ---
+  duration_ms: 0.121382
+  ...
+# Subtest: production case progress export does not crash on corrupt storage
+ok 241 - production case progress export does not crash on corrupt storage
+  ---
+  duration_ms: 0.223725
+  ...
+# Subtest: production case progress backup preview summarizes a valid export without storage writes
+ok 242 - production case progress backup preview summarizes a valid export without storage writes
+  ---
+  duration_ms: 0.426258
+  ...
+# Subtest: production case progress backup preview fails safely for invalid JSON and wrong version
+ok 243 - production case progress backup preview fails safely for invalid JSON and wrong version
+  ---
+  duration_ms: 0.237966
+  ...
+# Subtest: production case progress import restores a valid export from storage
+ok 244 - production case progress import restores a valid export from storage
+  ---
+  duration_ms: 0.343024
+  ...
+# Subtest: production case progress import fails safely for invalid backups
+ok 245 - production case progress import fails safely for invalid backups
+  ---
+  duration_ms: 0.296964
+  ...
+# Subtest: production case library controls default when storage is empty
+ok 246 - production case library controls default when storage is empty
+  ---
+  duration_ms: 0.110085
+  ...
+# Subtest: production case library controls default when storage JSON is invalid
+ok 247 - production case library controls default when storage JSON is invalid
+  ---
+  duration_ms: 0.094191
+  ...
+# Subtest: production case library controls default unknown filter and sort values
+ok 248 - production case library controls default unknown filter and sort values
+  ---
+  duration_ms: 0.174692
+  ...
+# Subtest: production case library result summary reports default counts without active controls
+ok 249 - production case library result summary reports default counts without active controls
+  ---
+  duration_ms: 0.204937
+  ...
+# Subtest: production case library result summary lists only non-default controls
+ok 250 - production case library result summary lists only non-default controls
+  ---
+  duration_ms: 0.270715
+  ...
+# Subtest: production case library result summary labels status and mastery filters
+ok 251 - production case library result summary labels status and mastery filters
+  ---
+  duration_ms: 0.118067
+  ...
+# Subtest: production case library result summary uses empty-result label
+ok 252 - production case library result summary uses empty-result label
+  ---
+  duration_ms: 0.188482
+  ...
+# Subtest: production case library result summary reset removes active controls
+ok 253 - production case library result summary reset removes active controls
+  ---
+  duration_ms: 0.110124
+  ...
+# Subtest: production case library controls read and write valid controls
+ok 254 - production case library controls read and write valid controls
+  ---
+  duration_ms: 0.173289
+  ...
+# Subtest: production case library controls reset writes defaults
+ok 255 - production case library controls reset writes defaults
+  ---
+  duration_ms: 0.224185
+  ...
+# Subtest: production case library controls, export helper, and UI copy avoid forbidden language
+ok 256 - production case library controls, export helper, and UI copy avoid forbidden language
+  ---
+  duration_ms: 0.498556
+  ...
+# Subtest: FilmScenarioLibrary exposes learning progress without best-result or score UI
+ok 257 - FilmScenarioLibrary exposes learning progress without best-result or score UI
+  ---
+  duration_ms: 0.230465
+  ...
+# Subtest: production case MVP loop preserves the learning-only UI
+ok 258 - production case MVP loop preserves the learning-only UI
+  ---
+  duration_ms: 0.59502
+  ...
+# Subtest: FilmScenarioLibrary preserves learning progress controls and backup
+ok 259 - FilmScenarioLibrary preserves learning progress controls and backup
+  ---
+  duration_ms: 0.292989
+  ...
+# Subtest: production case library controls parse legacy and invalid search query safely
+ok 260 - production case library controls parse legacy and invalid search query safely
+  ---
+  duration_ms: 0.198277
+  ...
+# Subtest: FilmScenarioLibrary search includes title, year, director, and brief logline fields
+ok 261 - FilmScenarioLibrary search includes title, year, director, and brief logline fields
+  ---
+  duration_ms: 0.199228
+  ...
+# Subtest: FilmScenarioLibrary search combines before status, mastery, and sorting
+ok 262 - FilmScenarioLibrary search combines before status, mastery, and sorting
+  ---
+  duration_ms: 6.324452
+  ...
+# Subtest: progress writes to the v1 localStorage key and can be read back
+ok 263 - progress writes to the v1 localStorage key and can be read back
+  ---
+  duration_ms: 0.17379
+  ...
+# Subtest: selectedChoicesByMissionId is saved per scenario id
+ok 264 - selectedChoicesByMissionId is saved per scenario id
+  ---
+  duration_ms: 0.19344
+  ...
+# Subtest: old progress without selectedChoicesByMissionId parses safely
+ok 265 - old progress without selectedChoicesByMissionId parses safely
+  ---
+  duration_ms: 0.183935
+  ...
+# Subtest: Case-match counts selected match choices only
+ok 266 - Case-match counts selected match choices only
+  ---
+  duration_ms: 0.277626
+  ...
+# Subtest: reset clears selected choices for the current scenario
+ok 267 - reset clears selected choices for the current scenario
+  ---
+  duration_ms: 0.221692
+  ...
+# Subtest: production case next phase action recommends missing choice first
+ok 268 - production case next phase action recommends missing choice first
+  ---
+  duration_ms: 0.275222
+  ...
+# Subtest: production case next phase action recommends completing a selected unfinished phase
+ok 269 - production case next phase action recommends completing a selected unfinished phase
+  ---
+  duration_ms: 0.165327
+  ...
+# Subtest: production case next phase action recommends improving the first weak completed phase
+ok 270 - production case next phase action recommends improving the first weak completed phase
+  ---
+  duration_ms: 0.315141
+  ...
+# Subtest: production case next phase action is hidden for seed fallback and full match cases
+ok 271 - production case next phase action is hidden for seed fallback and full match cases
+  ---
+  duration_ms: 0.154541
+  ...
+# Subtest: ScenarioProductionBriefPanel shows a score-free learning report
+ok 272 - ScenarioProductionBriefPanel shows a score-free learning report
+  ---
+  duration_ms: 0.384595
+  ...
+# Subtest: production case tier target helper and UI copy avoid forbidden language
+ok 273 - production case tier target helper and UI copy avoid forbidden language
+  ---
+  duration_ms: 0.677504
+  ...
+# Subtest: ScenarioProductionBriefPanel exposes clickable learning review focus
+ok 274 - ScenarioProductionBriefPanel exposes clickable learning review focus
+  ---
+  duration_ms: 1.235559
+  ...
+# Subtest: ScenarioProductionBriefPanel focus helper copy avoids forbidden language
+ok 275 - ScenarioProductionBriefPanel focus helper copy avoids forbidden language
+  ---
+  duration_ms: 0.295382
+  ...
+# Subtest: production case improvement hint is undefined for seed fallback and full match scores
+ok 276 - production case improvement hint is undefined for seed fallback and full match scores
+  ---
+  duration_ms: 0.138127
+  ...
+# Subtest: production case improvement hint recommends choosing an unselected mission first
+ok 277 - production case improvement hint recommends choosing an unselected mission first
+  ---
+  duration_ms: 0.162633
+  ...
+# Subtest: production case improvement hint recommends rethinking misses before partials
+ok 278 - production case improvement hint recommends rethinking misses before partials
+  ---
+  duration_ms: 0.152869
+  ...
+# Subtest: production case improvement hint recommends sharpening partial choices
+ok 279 - production case improvement hint recommends sharpening partial choices
+  ---
+  duration_ms: 0.136103
+  ...
+# Subtest: production case improvement hint copy avoids forbidden language
+ok 280 - production case improvement hint copy avoids forbidden language
+  ---
+  duration_ms: 0.648065
+  ...
+# Subtest: production case report is undefined for seed fallback or missing missions
+ok 281 - production case report is undefined for seed fallback or missing missions
+  ---
+  duration_ms: 0.195022
+  ...
+# Subtest: production case report summarizes score, matches, weak phases, and improvement hint
+ok 282 - production case report summarizes score, matches, weak phases, and improvement hint
+  ---
+  duration_ms: 0.325938
+  ...
+# Subtest: production case report has no weak phases when every choice is a match
+ok 283 - production case report has no weak phases when every choice is a match
+  ---
+  duration_ms: 0.203405
+  ...
+# Subtest: production case report learning summary changes for low, medium, and high scores
+ok 284 - production case report learning summary changes for low, medium, and high scores
+  ---
+  duration_ms: 0.301711
+  ...
+# Subtest: production case report copy avoids forbidden language
+ok 285 - production case report copy avoids forbidden language
+  ---
+  duration_ms: 0.14715
+  ...
+# Subtest: production case mission score maps choice quality to points
+ok 286 - production case mission score maps choice quality to points
+  ---
+  duration_ms: 0.078077
+  ...
+# Subtest: Taxi Driver with six match choices scores 12/12
+ok 287 - Taxi Driver with six match choices scores 12/12
+  ---
+  duration_ms: 0.152508
+  ...
+# Subtest: mixed production case choices score match, partial, miss, and unselected missions
+ok 288 - mixed production case choices score match, partial, miss, and unselected missions
+  ---
+  duration_ms: 0.098107
+  ...
+# Subtest: reset makes score 0 for the current scenario without affecting completion helpers
+ok 289 - reset makes score 0 for the current scenario without affecting completion helpers
+  ---
+  duration_ms: 0.152708
+  ...
+# Subtest: seed fallback without production case missions gets no scoring total
+ok 290 - seed fallback without production case missions gets no scoring total
+  ---
+  duration_ms: 0.147821
+  ...
+# Subtest: production case scoring helpers avoid forbidden copy
+ok 291 - production case scoring helpers avoid forbidden copy
+  ---
+  duration_ms: 0.127421
+  ...
+# Subtest: production case tier target shows assistant target for not started and in progress
+ok 292 - production case tier target shows assistant target for not started and in progress
+  ---
+  duration_ms: 0.135213
+  ...
+# Subtest: production case tier target advances assistant to producer with threshold points
+ok 293 - production case tier target advances assistant to producer with threshold points
+  ---
+  duration_ms: 0.144416
+  ...
+# Subtest: production case tier target advances producer to auteur with threshold points
+ok 294 - production case tier target advances producer to auteur with threshold points
+  ---
+  duration_ms: 0.161181
+  ...
+# Subtest: production case tier target marks auteur as max tier
+ok 295 - production case tier target marks auteur as max tier
+  ---
+  duration_ms: 0.144697
+  ...
+# Subtest: production case tier target is undefined for missing score or seed fallback
+ok 296 - production case tier target is undefined for missing score or seed fallback
+  ---
+  duration_ms: 0.125037
+  ...
+# Subtest: production case result tier is not_started at 0 score and 0 completed phases
+ok 297 - production case result tier is not_started at 0 score and 0 completed phases
+  ---
+  duration_ms: 0.106559
+  ...
+# Subtest: production case result tier is in_progress when score exists but not all phases are completed
+ok 298 - production case result tier is in_progress when score exists but not all phases are completed
+  ---
+  duration_ms: 0.143465
+  ...
+# Subtest: production case result tier is assistant when all phases are completed below 50 percent score
+ok 299 - production case result tier is assistant when all phases are completed below 50 percent score
+  ---
+  duration_ms: 0.126539
+  ...
+# Subtest: production case result tier is producer when all phases are completed from 50 through 83 percent score
+ok 300 - production case result tier is producer when all phases are completed from 50 through 83 percent score
+  ---
+  duration_ms: 0.095903
+  ...
+# Subtest: production case result tier is auteur when all phases are completed at 84 percent score or higher
+ok 301 - production case result tier is auteur when all phases are completed at 84 percent score or higher
+  ---
+  duration_ms: 0.094782
+  ...
+# Subtest: 12/12 score without completed phases does not give auteur
+ok 302 - 12/12 score without completed phases does not give auteur
+  ---
+  duration_ms: 0.088151
+  ...
+# Subtest: reset gives not_started result tier for the current scenario
+ok 303 - reset gives not_started result tier for the current scenario
+  ---
+  duration_ms: 0.604584
+  ...
+# Subtest: seed fallback without production case missions gets no result tier
+ok 304 - seed fallback without production case missions gets no result tier
+  ---
+  duration_ms: 0.116514
+  ...
+# Subtest: production case result tier helper avoids forbidden copy
+ok 305 - production case result tier helper avoids forbidden copy
+  ---
+  duration_ms: 0.120561
+  ...
+# Subtest: library status shows Not started at 0/6 phases
+ok 306 - library status shows Not started at 0/6 phases
+  ---
+  duration_ms: 0.156605
+  ...
+# Subtest: library status shows In progress with partial phase completion
+ok 307 - library status shows In progress with partial phase completion
+  ---
+  duration_ms: 0.163946
+  ...
+# Subtest: library status shows Assistant, Producer, and Auteur for completed cases
+ok 308 - library status shows Assistant, Producer, and Auteur for completed cases
+  ---
+  duration_ms: 0.250815
+  ...
+# Subtest: library status shows 6/6 phases and Case-score when choices exist
+ok 309 - library status shows 6/6 phases and Case-score when choices exist
+  ---
+  duration_ms: 0.178868
+  ...
+# Subtest: library status is absent for seed fallback mission lists
+ok 310 - library status is absent for seed fallback mission lists
+  ---
+  duration_ms: 0.099759
+  ...
+# Subtest: production case collection summary counts statuses, tiers, and scores
+ok 311 - production case collection summary counts statuses, tiers, and scores
+  ---
+  duration_ms: 0.413869
+  ...
+# Subtest: production case career summary counts completed cases, tiers, and score from best results
+ok 312 - production case career summary counts completed cases, tiers, and score from best results
+  ---
+  duration_ms: 0.375191
+  ...
+# Subtest: production case career summary excludes seed fallback-only statuses
+ok 313 - production case career summary excludes seed fallback-only statuses
+  ---
+  duration_ms: 0.141962
+  ...
+# Subtest: production case career summary and achievements survive current-progress reset
+ok 314 - production case career summary and achievements survive current-progress reset
+  ---
+  duration_ms: 0.699566
+  ...
+# Subtest: production case achievements unlock from career best-results thresholds
+ok 315 - production case achievements unlock from career best-results thresholds
+  ---
+  duration_ms: 0.306619
+  ...
+# Subtest: production case achievement copy avoids forbidden language
+ok 316 - production case achievement copy avoids forbidden language
+  ---
+  duration_ms: 0.149634
+  ...
+# Subtest: library status filters include the expected case cards
+ok 317 - library status filters include the expected case cards
+  ---
+  duration_ms: 0.258207
+  ...
+# Subtest: production case mastery filters match best-result tiers and improvement candidates
+ok 318 - production case mastery filters match best-result tiers and improvement candidates
+  ---
+  duration_ms: 0.299689
+  ...
+# Subtest: production case status and mastery filters combine and exclude seed fallback from mastery
+ok 319 - production case status and mastery filters combine and exclude seed fallback from mastery
+  ---
+  duration_ms: 0.410945
+  ...
+# Subtest: production case library sorting orders filtered cards
+ok 320 - production case library sorting orders filtered cards
+  ---
+  duration_ms: 0.798425
+  ...
+# Subtest: production case mastery filter UI copy and empty state avoid forbidden language
+ok 321 - production case mastery filter UI copy and empty state avoid forbidden language
+  ---
+  duration_ms: 0.139118
+  ...
+# Subtest: library status copy avoids forbidden language
+ok 322 - library status copy avoids forbidden language
+  ---
+  duration_ms: 0.107441
+  ...
+# Subtest: production case next action prioritizes in-progress cases first
+ok 323 - production case next action prioritizes in-progress cases first
+  ---
+  duration_ms: 0.191877
+  ...
+# Subtest: production case next action recommends assistant result improvement when no case is in progress
+ok 324 - production case next action recommends assistant result improvement when no case is in progress
+  ---
+  duration_ms: 0.097145
+  ...
+# Subtest: production case next action recommends first not-started case when there is no progress or assistant result
+ok 325 - production case next action recommends first not-started case when there is no progress or assistant result
+  ---
+  duration_ms: 0.090105
+  ...
+# Subtest: production case next action recommends producer mastery when all cases are completed but not all are auteur
+ok 326 - production case next action recommends producer mastery when all cases are completed but not all are auteur
+  ---
+  duration_ms: 0.088693
+  ...
+# Subtest: production case next action reports catalogue completion when all cases are auteur
+ok 327 - production case next action reports catalogue completion when all cases are auteur
+  ---
+  duration_ms: 0.089674
+  ...
+# Subtest: production case next action excludes seed fallback and avoids forbidden language
+ok 328 - production case next action excludes seed fallback and avoids forbidden language
+  ---
+  duration_ms: 0.07972
+  ...
+# Subtest: best result feedback returns first_best for first completed case
+ok 329 - best result feedback returns first_best for first completed case
+  ---
+  duration_ms: 0.208281
+  ...
+# Subtest: best result feedback returns score_improved for higher score
+ok 330 - best result feedback returns score_improved for higher score
+  ---
+  duration_ms: 0.164546
+  ...
+# Subtest: best result feedback returns tier_improved for higher tier
+ok 331 - best result feedback returns tier_improved for higher tier
+  ---
+  duration_ms: 0.154311
+  ...
+# Subtest: best result feedback returns maxed for Auteur max score
+ok 332 - best result feedback returns maxed for Auteur max score
+  ---
+  duration_ms: 0.131998
+  ...
+# Subtest: best result feedback is undefined when current result does not beat previous best
+ok 333 - best result feedback is undefined when current result does not beat previous best
+  ---
+  duration_ms: 0.132818
+  ...
+# Subtest: best result feedback is undefined for incomplete reports and zero max score fallback
+ok 334 - best result feedback is undefined for incomplete reports and zero max score fallback
+  ---
+  duration_ms: 0.173269
+  ...
+# Subtest: best result is stored when all production case phases are completed
+ok 335 - best result is stored when all production case phases are completed
+  ---
+  duration_ms: 0.186579
+  ...
+# Subtest: best result is not stored when the case is not completed
+ok 336 - best result is not stored when the case is not completed
+  ---
+  duration_ms: 0.150595
+  ...
+# Subtest: higher score replaces lower best result
+ok 337 - higher score replaces lower best result
+  ---
+  duration_ms: 2.49972
+  ...
+# Subtest: lower score does not replace higher best result
+ok 338 - lower score does not replace higher best result
+  ---
+  duration_ms: 0.232408
+  ...
+# Subtest: resetting case progress does not delete best result
+ok 339 - resetting case progress does not delete best result
+  ---
+  duration_ms: 0.262983
+  ...
+# Subtest: seed fallback gets no best result because reports are unavailable
+ok 340 - seed fallback gets no best result because reports are unavailable
+  ---
+  duration_ms: 0.124747
+  ...
+# Subtest: best result can be read per scenarioId
+ok 341 - best result can be read per scenarioId
+  ---
+  duration_ms: 0.145969
+  ...
+# Subtest: Taxi Driver and The Lighthouse keep separate best results
+ok 342 - Taxi Driver and The Lighthouse keep separate best results
+  ---
+  duration_ms: 0.213139
+  ...
+# Subtest: best-result helpers and UI copy avoid banned phrasing
+ok 343 - best-result helpers and UI copy avoid banned phrasing
+  ---
+  duration_ms: 0.16709
+  ...
+# Subtest: best result parser ignores malformed storage
+ok 344 - best result parser ignores malformed storage
+  ---
+  duration_ms: 0.147711
+  ...
+# Subtest: recordCareerRosterFilm adds first-time collaborators with a film count of one
+ok 345 - recordCareerRosterFilm adds first-time collaborators with a film count of one
+  ---
+  duration_ms: 2.118019
+  ...
+# Subtest: recordCareerRosterFilm increments returning collaborators across films
+ok 346 - recordCareerRosterFilm increments returning collaborators across films
+  ---
+  duration_ms: 0.271707
+  ...
+# Subtest: recordCareerRosterFilm does not mutate the original career state
+ok 347 - recordCareerRosterFilm does not mutate the original career state
+  ---
+  duration_ms: 0.228903
+  ...
+# Subtest: release seed catalogues provide stable IDs and requested coverage
+ok 348 - release seed catalogues provide stable IDs and requested coverage
+  ---
+  duration_ms: 1.16977
+  ...
+# Subtest: release planning and strategy scoring are deterministic and immutable
+ok 349 - release planning and strategy scoring are deterministic and immutable
+  ---
+  duration_ms: 0.700398
+  ...
+# Subtest: festivals, critics, and audiences resolve without randomness
+ok 350 - festivals, critics, and audiences resolve without randomness
+  ---
+  duration_ms: 0.669702
+  ...
+# Subtest: a moderate film can receive recognition without sweeping the awards
+ok 351 - a moderate film can receive recognition without sweeping the awards
+  ---
+  duration_ms: 10.915361
+  ...
+# Subtest: an exceptional film can win several awards but still has a ranked slate
+ok 352 - an exceptional film can win several awards but still has a ranked slate
+  ---
+  duration_ms: 0.431555
+  ...
+# Subtest: award wins require an accepted festival
+ok 353 - award wins require an accepted festival
+  ---
+  duration_ms: 0.198236
+  ...
+# Subtest: revenue, awards, evaluation, and studio application form one immutable pipeline
+ok 354 - revenue, awards, evaluation, and studio application form one immutable pipeline
+  ---
+  duration_ms: 19.970569
+  ...
+# Subtest: Scandinavian and European round contains exactly twenty-two unique target films
+ok 355 - Scandinavian and European round contains exactly twenty-two unique target films
+  ---
+  duration_ms: 1.578722
+  ...
+# Subtest: every Scandinavian and European target resolves exactly once with a playable brief
+ok 356 - every Scandinavian and European target resolves exactly once with a playable brief
+  ---
+  duration_ms: 1.680038
+  ...
+# Subtest: the complete requested Scandinavian and European block resolves exactly once
+ok 357 - the complete requested Scandinavian and European block resolves exactly once
+  ---
+  duration_ms: 0.905604
+  ...
+# Subtest: generic translated titles do not absorb unrelated same-year films
+ok 358 - generic translated titles do not absorb unrelated same-year films
+  ---
+  duration_ms: 0.352858
+  ...
+# Subtest: Scandinavian and European round adds 15 cases and produces 330 unique Production Cases
+ok 359 - Scandinavian and European round adds 15 cases and produces 330 unique Production Cases
+  ---
+  duration_ms: 0.236824
+  ...
+# Subtest: calculateScenarioAlignmentScore handles empty target lists
+ok 360 - calculateScenarioAlignmentScore handles empty target lists
+  ---
+  duration_ms: 1.775206
+  ...
+# Subtest: calculateScenarioAlignmentScore handles no selected targets
+ok 361 - calculateScenarioAlignmentScore handles no selected targets
+  ---
+  duration_ms: 0.184296
+  ...
+# Subtest: calculateScenarioAlignmentScore marks loose alignment below 35 percent
+ok 362 - calculateScenarioAlignmentScore marks loose alignment below 35 percent
+  ---
+  duration_ms: 0.193329
+  ...
+# Subtest: calculateScenarioAlignmentScore marks focused alignment from 35 to 69 percent
+ok 363 - calculateScenarioAlignmentScore marks focused alignment from 35 to 69 percent
+  ---
+  duration_ms: 0.171536
+  ...
+# Subtest: calculateScenarioAlignmentScore marks strong alignment at 70 percent and above
+ok 364 - calculateScenarioAlignmentScore marks strong alignment at 70 percent and above
+  ---
+  duration_ms: 0.172869
+  ...
+# Subtest: getScenarioAlignmentSummary describes no scenario target commitment
+ok 365 - getScenarioAlignmentSummary describes no scenario target commitment
+  ---
+  duration_ms: 1.228308
+  ...
+# Subtest: getScenarioAlignmentSummary describes loose scenario alignment
+ok 366 - getScenarioAlignmentSummary describes loose scenario alignment
+  ---
+  duration_ms: 0.118147
+  ...
+# Subtest: getScenarioAlignmentSummary describes focused scenario alignment
+ok 367 - getScenarioAlignmentSummary describes focused scenario alignment
+  ---
+  duration_ms: 0.15356
+  ...
+# Subtest: getScenarioAlignmentSummary describes strong scenario alignment
+ok 368 - getScenarioAlignmentSummary describes strong scenario alignment
+  ---
+  duration_ms: 0.134411
+  ...
+# Subtest: production event seeds cover the required first shoot scenarios
+ok 369 - production event seeds cover the required first shoot scenarios
+  ---
+  duration_ms: 5.019369
+  ...
+# Subtest: schedules group scenes, allocate the project budget, and do not mutate scenes
+ok 370 - schedules group scenes, allocate the project budget, and do not mutate scenes
+  ---
+  duration_ms: 0.914488
+  ...
+# Subtest: difficulty responds to dramatic, technical, location, and cast pressure
+ok 371 - difficulty responds to dramatic, technical, location, and cast pressure
+  ---
+  duration_ms: 0.355452
+  ...
+# Subtest: events are applied immutably and duplicate applications have no second cost
+ok 372 - events are applied immutably and duplicate applications have no second cost
+  ---
+  duration_ms: 1.663839
+  ...
+# Subtest: shoot resolution and evaluation account for event cost, delay, and upside
+ok 373 - shoot resolution and evaluation account for event cost, delay, and upside
+  ---
+  duration_ms: 1.947233
+  ...
+# Subtest: South Korean cinema expansion contains exactly four unique missing films
+ok 374 - South Korean cinema expansion contains exactly four unique missing films
+  ---
+  duration_ms: 1.7711
+  ...
+# Subtest: all four South Korean films are new to the preceding 282-case catalogue
+ok 375 - all four South Korean films are new to the preceding 282-case catalogue
+  ---
+  duration_ms: 26.914408
+  ...
+# Subtest: every South Korean expansion film resolves once and has a playable brief blueprint
+ok 376 - every South Korean expansion film resolves once and has a playable brief blueprint
+  ---
+  duration_ms: 16.524087
+  ...
+# Subtest: the complete requested South Korean block resolves exactly once
+ok 377 - the complete requested South Korean block resolves exactly once
+  ---
+  duration_ms: 19.476679
+  ...
+# Subtest: ambiguous English titles do not match unrelated same-year films
+ok 378 - ambiguous English titles do not match unrelated same-year films
+  ---
+  duration_ms: 12.690557
+  ...
+# Subtest: the merged catalogue contains 286 unique Production Cases
+ok 379 - the merged catalogue contains 286 unique Production Cases
+  ---
+  duration_ms: 9.315577
+  ...
+# Subtest: South and Southeast Asian expansion contains exactly seven unique films
+ok 380 - South and Southeast Asian expansion contains exactly seven unique films
+  ---
+  duration_ms: 1.414426
+  ...
+# Subtest: all seven films are new to the preceding 286-case catalogue
+ok 381 - all seven films are new to the preceding 286-case catalogue
+  ---
+  duration_ms: 33.309885
+  ...
+# Subtest: every expansion film resolves once and has a playable brief blueprint
+ok 382 - every expansion film resolves once and has a playable brief blueprint
+  ---
+  duration_ms: 36.849462
+  ...
+# Subtest: the complete requested seven-film block resolves exactly once
+ok 383 - the complete requested seven-film block resolves exactly once
+  ---
+  duration_ms: 8.968468
+  ...
+# Subtest: generic English titles do not match unrelated same-year films
+ok 384 - generic English titles do not match unrelated same-year films
+  ---
+  duration_ms: 10.2439
+  ...
+# Subtest: the merged catalogue contains 293 unique Production Cases
+ok 385 - the merged catalogue contains 293 unique Production Cases
+  ---
+  duration_ms: 7.949679
+  ...
+# Subtest: studio career pipeline order advances from development through career review only after release
+ok 386 - studio career pipeline order advances from development through career review only after release
+  ---
+  duration_ms: 0.998644
+  ...
+# Subtest: studio career active targets keep post, release, and career review distinct
+ok 387 - studio career active targets keep post, release, and career review distinct
+  ---
+  duration_ms: 0.146929
+  ...
+# Subtest: studio career completed project collapse keeps latest project actionable
+ok 388 - studio career completed project collapse keeps latest project actionable
+  ---
+  duration_ms: 0.149083
+  ...
+# Subtest: studio career project-scoped release control names are unique per project
+ok 389 - studio career project-scoped release control names are unique per project
+  ---
+  duration_ms: 0.174271
+  ...
+# Subtest: studio career application invariants tolerate missing optional project details
+ok 390 - studio career application invariants tolerate missing optional project details
+  ---
+  duration_ms: 0.687879
+  ...
+1..390
+# tests 390
+# suites 0
+# pass 387
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1978.199666
