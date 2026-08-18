@@ -72,6 +72,7 @@ import { draculaProductionCaseVerification } from "./scenarioProductionVerificat
 import { fortySecondStreetProductionCaseVerification } from "./scenarioProductionVerification42ndStreet";
 import { scarfaceProductionCaseVerification } from "./scenarioProductionVerificationScarface";
 import { itHappenedOneNightProductionCaseVerification } from "./scenarioProductionVerificationItHappenedOneNight";
+import { topHatProductionCaseVerification } from "./scenarioProductionVerificationTopHat";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -261,6 +262,7 @@ const additionalVerificationRecords = [
   fortySecondStreetProductionCaseVerification,
   scarfaceProductionCaseVerification,
   itHappenedOneNightProductionCaseVerification,
+  topHatProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

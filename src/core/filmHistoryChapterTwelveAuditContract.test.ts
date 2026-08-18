@@ -29,6 +29,7 @@ const requiredExisting = [
   "42nd Street",
   "Scarface",
   "It Happened One Night",
+  "Top Hat",
 ];
 const explicitHandoffP0: string[] = [];
 
@@ -46,18 +47,19 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 12 audit locks the reviewed studio-and-genre Atlas matrix", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 435;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 436;/);
   assert.match(audit, /expectedScenarioId: "scenario_the_public_enemy_1931"/);
   assert.match(audit, /expectedScenarioId: "scenario_dracula_1931"/);
   assert.match(audit, /expectedScenarioId: "scenario_42nd_street_1933"/);
   assert.match(audit, /expectedScenarioId: "scenario_scarface_1932"/);
   assert.match(audit, /expectedScenarioId: "scenario_it_happened_one_night_1934"/);
+  assert.match(audit, /expectedScenarioId: "scenario_top_hat_1935"/);
   assert.equal(resolved.chapter.number, 12);
   assert.equal(resolved.chapter.id, "studio-genre-system");
   assert.equal(resolved.chapter.title, "The studio and genre system");
   assert.equal(resolved.chapter.period, "1930–1945");
-  assert.equal(resolved.atlas.expectedCount, 435);
-  assert.equal(resolved.atlas.actualCount, 435);
+  assert.equal(resolved.atlas.expectedCount, 436);
+  assert.equal(resolved.atlas.actualCount, 436);
   assert.equal(resolved.candidates.length, 24);
   assert.deepEqual(resolved.byDecision.P0, explicitHandoffP0);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
@@ -80,6 +82,7 @@ test("Chapter 12 existing anchors resolve to exact canonical scenario IDs", () =
   assert.equal(byTitle.get("42nd Street")?.scenarioId, "scenario_42nd_street_1933");
   assert.equal(byTitle.get("Scarface")?.scenarioId, "scenario_scarface_1932");
   assert.equal(byTitle.get("It Happened One Night")?.scenarioId, "scenario_it_happened_one_night_1934");
+  assert.equal(byTitle.get("Top Hat")?.scenarioId, "scenario_top_hat_1935");
 });
 
 test("Chapter 12 keeps industrial systems outside fake Production Cases", () => {
