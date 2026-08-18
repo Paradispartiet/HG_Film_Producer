@@ -1,0 +1,54 @@
+name: One-shot preview infrastructure cleanup
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/cleanup-preview-infrastructure.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      ADMIN_TOKEN: ${{ secrets.REPO_ADMIN_TOKEN }}
+    steps:
+      - name: Delete obsolete preview infrastructure
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.REPO_ADMIN_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "${ADMIN_TOKEN:-}"
+
+          for repo in \
+            Paradispartiet/HG_Film_Producer \
+            Paradispartiet/HistoryGo-FootballManager \
+            Paradispartiet/History-Go; do
+            gh secret delete PUBLIC_DEPLOY_TOKEN --repo "$repo" >/dev/null 2>&1 || true
+          done
+
+          for repo in \
+            Paradispartiet/HG_Film_Producer-preview \
+            Paradispartiet/HistoryGo-FootballManager-preview \
+            Paradispartiet/History-Go-preview; do
+            if gh api "repos/${repo}" >/dev/null 2>&1; then
+              gh api --method DELETE "repos/${repo}" >/dev/null
+            fi
+          done
+
+      - name: Record cleanup success
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          printf 'preview_cleanup=success\nrun_id=%s\n' "$GITHUB_RUN_ID" > /tmp/cleanup.txt
+          encoded="$(base64 -w0 /tmp/cleanup.txt)"
+          current="$(gh api "repos/${GITHUB_REPOSITORY}/contents/.preview-cleanup-success.txt?ref=main" --jq .sha 2>/dev/null || true)"
+          args=(--method PUT "repos/${GITHUB_REPOSITORY}/contents/.preview-cleanup-success.txt" -f message="Record preview cleanup ${GITHUB_RUN_ID}" -f content="$encoded" -f branch=main)
+          if [[ -n "$current" ]]; then args+=(-f sha="$current"); fi
+          gh api "${args[@]}" >/dev/null
