@@ -4401,518 +4401,518 @@ TAP version 13
 # Subtest: applyDueStudioExpenses charges recurring and one-time expenses due in year 1
 ok 1 - applyDueStudioExpenses charges recurring and one-time expenses due in year 1
   ---
-  duration_ms: 2.135726
+  duration_ms: 2.988984
   ...
 # Subtest: applyDueStudioExpenses skips one-time expenses after year 1 but keeps charging recurring ones
 ok 2 - applyDueStudioExpenses skips one-time expenses after year 1 but keeps charging recurring ones
   ---
-  duration_ms: 0.362893
+  duration_ms: 0.476258
   ...
 # Subtest: applyDueStudioExpenses ignores expenses due in a different quarter
 ok 3 - applyDueStudioExpenses ignores expenses due in a different quarter
   ---
-  duration_ms: 0.185618
+  duration_ms: 0.264456
   ...
 # Subtest: applyCrewRosterGrowth leaves a crew member unchanged with no roster history
 ok 4 - applyCrewRosterGrowth leaves a crew member unchanged with no roster history
   ---
-  duration_ms: 1.111713
+  duration_ms: 1.323249
   ...
 # Subtest: applyCrewRosterGrowth raises experience but withholds the studio-regular tag below the threshold
 ok 5 - applyCrewRosterGrowth raises experience but withholds the studio-regular tag below the threshold
   ---
-  duration_ms: 0.310825
+  duration_ms: 0.367807
   ...
 # Subtest: applyCrewRosterGrowth adds the studio-regular tag once at the threshold
 ok 6 - applyCrewRosterGrowth adds the studio-regular tag once at the threshold
   ---
-  duration_ms: 0.125407
+  duration_ms: 0.173268
   ...
 # Subtest: applyCrewRosterGrowth clamps experience at 100 and does not duplicate the tag
 ok 7 - applyCrewRosterGrowth clamps experience at 100 and does not duplicate the tag
   ---
-  duration_ms: 0.150736
+  duration_ms: 0.175655
   ...
 # Subtest: applyActorRosterGrowth leaves an actor unchanged with no roster history
 ok 8 - applyActorRosterGrowth leaves an actor unchanged with no roster history
   ---
-  duration_ms: 0.125868
+  duration_ms: 0.183171
   ...
 # Subtest: applyActorRosterGrowth raises experience and adds the studio-regular chemistry tag at the threshold
 ok 9 - applyActorRosterGrowth raises experience and adds the studio-regular chemistry tag at the threshold
   ---
-  duration_ms: 0.117505
+  duration_ms: 0.146024
   ...
 # Subtest: applyRosterGrowth does not mutate the original crew member or actor
 ok 10 - applyRosterGrowth does not mutate the original crew member or actor
   ---
-  duration_ms: 0.133349
+  duration_ms: 0.180763
   ...
 # Subtest: Production Case phase cannot complete before a choice is selected
 ok 11 - Production Case phase cannot complete before a choice is selected
   ---
-  duration_ms: 1.305403
+  duration_ms: 1.739254
   ...
 # Subtest: Production Case phase can complete after a valid choice is selected
 ok 12 - Production Case phase can complete after a valid choice is selected
   ---
-  duration_ms: 0.187871
+  duration_ms: 0.230445
   ...
 # Subtest: a choice for another phase does not unlock this phase
 ok 13 - a choice for another phase does not unlock this phase
   ---
-  duration_ms: 0.155253
+  duration_ms: 0.225632
   ...
 # Subtest: a stale saved choice does not count as a completed phase
 ok 14 - a stale saved choice does not count as a completed phase
   ---
-  duration_ms: 0.164707
+  duration_ms: 0.211667
   ...
 # Subtest: career cashflow and filmography remain immutable and feed evaluations
 ok 15 - career cashflow and filmography remain immutable and feed evaluations
   ---
-  duration_ms: 7.528254
+  duration_ms: 15.465207
   ...
 # Subtest: quarter advancement opens a single next-year snapshot
 ok 16 - quarter advancement opens a single next-year snapshot
   ---
-  duration_ms: 0.636161
+  duration_ms: 1.183912
   ...
 # Subtest: milestones apply rewards once after requirements are met
 ok 17 - milestones apply rewards once after requirements are met
   ---
-  duration_ms: 0.32751
+  duration_ms: 0.577718
   ...
 # Subtest: career seed catalogues provide stable gameplay coverage
 ok 18 - career seed catalogues provide stable gameplay coverage
   ---
-  duration_ms: 2.452249
+  duration_ms: 4.082753
   ...
 # Subtest: strategic goals activate only once
 ok 19 - strategic goals activate only once
   ---
-  duration_ms: 1.565232
+  duration_ms: 2.04881
   ...
 # Subtest: Chapter 8 materializes Coeur fidele, Napoleon, Un Chien Andalou, Entr'acte and The Smiling Madame Beudet as distinct French avant-garde production cases
 ok 20 - Chapter 8 materializes Coeur fidele, Napoleon, Un Chien Andalou, Entr'acte and The Smiling Madame Beudet as distinct French avant-garde production cases
   ---
-  duration_ms: 1.770529
+  duration_ms: 1.572865
   ...
 # Subtest: Chapter 5 keeps Fantômas, Cabiria, Afgrunden and Atlantis as materialized international expansion cases
 ok 21 - Chapter 5 keeps Fantômas, Cabiria, Afgrunden and Atlantis as materialized international expansion cases
   ---
-  duration_ms: 1.575857
+  duration_ms: 1.974531
   ...
 # Subtest: Chapter 9 materializes five distinct missing Soviet montage production cases
 ok 22 - Chapter 9 materializes five distinct missing Soviet montage production cases
   ---
-  duration_ms: 1.315818
+  duration_ms: 1.635384
   ...
 # Subtest: Mother preserves Pudovkin linkage, collaborative craft and version boundaries
 ok 23 - Mother preserves Pudovkin linkage, collaborative craft and version boundaries
   ---
-  duration_ms: 0.238557
+  duration_ms: 0.269872
   ...
 # Subtest: Shub case treats archival provenance and compilation editing as production authorship
 ok 24 - Shub case treats archival provenance and compilation editing as production authorship
   ---
-  duration_ms: 0.126539
+  duration_ms: 0.14427
   ...
 # Subtest: Earth keeps Ukrainian VUFKU context and hindsight safeguards explicit
 ok 25 - Earth keeps Ukrainian VUFKU context and hindsight safeguards explicit
   ---
-  duration_ms: 0.12054
+  duration_ms: 0.170884
   ...
 # Subtest: October remains staged reconstruction with intellectual-montage and recut version control
 ok 26 - October remains staged reconstruction with intellectual-montage and recut version control
   ---
-  duration_ms: 0.130074
+  duration_ms: 0.149853
   ...
 # Subtest: Mr West turns the Kuleshov workshop into constructive genre production, not a magic effect
 ok 27 - Mr West turns the Kuleshov workshop into constructive genre production, not a magic effect
   ---
-  duration_ms: 0.103344
+  duration_ms: 0.141821
   ...
 # Subtest: Chapter 7 materializes The Last Laugh and Pandora's Box as distinct Weimar production cases
 ok 28 - Chapter 7 materializes The Last Laugh and Pandora's Box as distinct Weimar production cases
   ---
-  duration_ms: 1.507435
+  duration_ms: 1.989768
   ...
 # Subtest: Chapter 6 materializes Gold Rush, The Crowd, The Cheat, It and Wings as distinct Hollywood-system cases
 ok 29 - Chapter 6 materializes Gold Rush, The Crowd, The Cheat, It and Wings as distinct Hollywood-system cases
   ---
-  duration_ms: 2.133682
+  duration_ms: 2.73093
   ...
 # Subtest: crew and actor seed rosters meet the first-engine coverage requirements
 ok 30 - crew and actor seed rosters meet the first-engine coverage requirements
   ---
-  duration_ms: 4.508706
+  duration_ms: 5.678509
   ...
 # Subtest: crew scoring is explainable, clamped, and rewards matching style tags
 ok 31 - crew scoring is explainable, clamped, and rewards matching style tags
   ---
-  duration_ms: 0.40779
+  duration_ms: 0.602089
   ...
 # Subtest: hiring and casting return copied projects and prevent duplicate IDs
 ok 32 - hiring and casting return copied projects and prevent duplicate IDs
   ---
-  duration_ms: 0.933046
+  duration_ms: 1.256402
   ...
 # Subtest: casting chemistry rewards shared tags and ignores duplicate actors
 ok 33 - casting chemistry rewards shared tags and ignores duplicate actors
   ---
-  duration_ms: 0.553989
+  duration_ms: 0.472267
   ...
 # Subtest: production-team evaluation uses attached people, collaboration, reliability, and fees
 ok 34 - production-team evaluation uses attached people, collaboration, reliability, and fees
   ---
-  duration_ms: 0.596353
+  duration_ms: 0.557923
   ...
 # Subtest: an empty production team evaluates to zero rather than gaining free budget health
 ok 35 - an empty production team evaluates to zero rather than gaining free budget health
   ---
-  duration_ms: 0.185568
+  duration_ms: 0.145645
   ...
 # Subtest: film results preserve the legacy API and improve with a strong evaluated team
 ok 36 - film results preserve the legacy API and improve with a strong evaluated team
   ---
-  duration_ms: 0.367269
+  duration_ms: 0.3024
   ...
 # Subtest: film results reject a production-team evaluation for another project
 ok 37 - film results reject a production-team evaluation for another project
   ---
-  duration_ms: 0.431596
+  duration_ms: 0.411403
   ...
 # Subtest: developer tools stay hidden by default
 ok 38 - developer tools stay hidden by default
   ---
-  duration_ms: 1.564631
+  duration_ms: 2.059443
   ...
 # Subtest: developer tools require the explicit dev=1 query parameter
 ok 39 - developer tools require the explicit dev=1 query parameter
   ---
-  duration_ms: 0.254681
+  duration_ms: 0.32012
   ...
 # Subtest: covers every scene-brief and shot-card decision with an applied learning guide
 ok 40 - covers every scene-brief and shot-card decision with an applied learning guide
   ---
-  duration_ms: 2.88103
+  duration_ms: 3.259754
   ...
 # Subtest: gives every applied guide a practical exercise, checklist and resolved terminology
 ok 41 - gives every applied guide a practical exercise, checklist and resolved terminology
   ---
-  duration_ms: 0.324976
+  duration_ms: 0.608306
   ...
 # Subtest: connects important film terms back to the Director decisions where they are used
 ok 42 - connects important film terms back to the Director decisions where they are used
   ---
-  duration_ms: 0.175883
+  duration_ms: 0.337561
   ...
 # Subtest: creates an empty directing brief for one reference film
 ok 43 - creates an empty directing brief for one reference film
   ---
-  duration_ms: 1.032354
+  duration_ms: 1.391387
   ...
 # Subtest: coerces persisted data without accepting invalid values
 ok 44 - coerces persisted data without accepting invalid values
   ---
-  duration_ms: 0.38767
+  duration_ms: 0.42023
   ...
 # Subtest: uses a stable storage key per film
 ok 45 - uses a stable storage key per film
   ---
-  duration_ms: 0.113981
+  duration_ms: 0.155921
   ...
 # Subtest: exports a readable complete director brief
 ok 46 - exports a readable complete director brief
   ---
-  duration_ms: 0.275543
+  duration_ms: 0.297665
   ...
 # Subtest: provides a broad canonical directing vocabulary
 ok 47 - provides a broad canonical directing vocabulary
   ---
-  duration_ms: 1.361137
+  duration_ms: 1.842145
   ...
 # Subtest: covers every directing craft category with a substantial vocabulary
 ok 48 - covers every directing craft category with a substantial vocabulary
   ---
-  duration_ms: 0.303694
+  duration_ms: 0.398983
   ...
 # Subtest: uses only registered phases, levels, categories and sources
 ok 49 - uses only registered phases, levels, categories and sources
   ---
-  duration_ms: 1.691226
+  duration_ms: 1.85015
   ...
 # Subtest: models the director workflow from script interpretation through finishing
 ok 50 - models the director workflow from script interpretation through finishing
   ---
-  duration_ms: 1.28965
+  duration_ms: 1.649519
   ...
 # Subtest: searches English terms, Norwegian terminology and explanations
 ok 51 - searches English terms, Norwegian terminology and explanations
   ---
-  duration_ms: 2.423716
+  duration_ms: 4.566498
   ...
 # Subtest: creates a project with one active scene
 ok 52 - creates a project with one active scene
   ---
-  duration_ms: 1.736989
+  duration_ms: 2.379953
   ...
 # Subtest: adds scenes and keeps the new scene active
 ok 53 - adds scenes and keeps the new scene active
   ---
-  duration_ms: 0.20081
+  duration_ms: 0.338415
   ...
 # Subtest: does not allow deleting the final scene
 ok 54 - does not allow deleting the final scene
   ---
-  duration_ms: 0.274451
+  duration_ms: 0.308543
   ...
 # Subtest: duplicates a scene with independent shot ids
 ok 55 - duplicates a scene with independent shot ids
   ---
-  duration_ms: 0.553899
+  duration_ms: 0.759713
   ...
 # Subtest: creates, duplicates, updates, and reorders shot cards
 ok 56 - creates, duplicates, updates, and reorders shot cards
   ---
-  duration_ms: 0.550364
+  duration_ms: 0.713596
   ...
 # Subtest: coerces malformed saved data to a usable project
 ok 57 - coerces malformed saved data to a usable project
   ---
-  duration_ms: 0.520008
+  duration_ms: 0.734317
   ...
 # Subtest: exports the complete scene project and shot list
 ok 58 - exports the complete scene project and shot list
   ---
-  duration_ms: 0.411235
+  duration_ms: 0.583044
   ...
 # Subtest: uses stable project storage keys and entity ids
 ok 59 - uses stable project storage keys and entity ids
   ---
-  duration_ms: 0.209143
+  duration_ms: 0.291047
   ...
 # Subtest: the requested historical expansion contains exactly 58 unique films
 ok 60 - the requested historical expansion contains exactly 58 unique films
   ---
-  duration_ms: 2.017048
+  duration_ms: 2.915439
   ...
 # Subtest: the expansion reuses two existing films and appends 56 missing films
 ok 61 - the expansion reuses two existing films and appends 56 missing films
   ---
-  duration_ms: 9.842756
+  duration_ms: 11.380469
   ...
 # Subtest: every requested film resolves once and has a complete playable brief blueprint
 ok 62 - every requested film resolves once and has a complete playable brief blueprint
   ---
-  duration_ms: 22.577739
+  duration_ms: 22.654949
   ...
 # Subtest: the merged catalogue contains 217 unique Production Cases
 ok 63 - the merged catalogue contains 217 unique Production Cases
   ---
-  duration_ms: 18.039049
+  duration_ms: 12.789727
   ...
 # Subtest: East Asian auteur expansion contains exactly 11 unique missing films
 ok 64 - East Asian auteur expansion contains exactly 11 unique missing films
   ---
-  duration_ms: 1.432012
+  duration_ms: 1.981176
   ...
 # Subtest: all 11 films are new to the 264-case catalogue
 ok 65 - all 11 films are new to the 264-case catalogue
   ---
-  duration_ms: 30.352111
+  duration_ms: 26.636516
   ...
 # Subtest: every East Asian auteur film resolves once and has a playable brief blueprint
 ok 66 - every East Asian auteur film resolves once and has a playable brief blueprint
   ---
-  duration_ms: 32.358302
+  duration_ms: 48.424567
   ...
 # Subtest: the requested Taiwan, Hong Kong and China block is complete exactly once
 ok 67 - the requested Taiwan, Hong Kong and China block is complete exactly once
   ---
-  duration_ms: 13.756241
+  duration_ms: 28.811904
   ...
 # Subtest: the merged catalogue contains 275 unique Production Cases
 ok 68 - the merged catalogue contains 275 unique Production Cases
   ---
-  duration_ms: 11.390477
+  duration_ms: 31.987297
   ...
 # [eastern-iberian-british-expansion] prior=330 missing=23 final=353
 # Subtest: Eastern, Iberian, and British-Irish expansion contains exactly 24 unique targets
 ok 69 - Eastern, Iberian, and British-Irish expansion contains exactly 24 unique targets
   ---
-  duration_ms: 1.099676
+  duration_ms: 2.198081
   ...
 # Subtest: the expansion adds only genuinely missing films and preserves unique catalogue IDs
 ok 70 - the expansion adds only genuinely missing films and preserves unique catalogue IDs
   ---
-  duration_ms: 44.545856
+  duration_ms: 59.359243
   ...
 # Subtest: all 24 requested films resolve exactly once and have playable production blueprints
 ok 71 - all 24 requested films resolve exactly once and have playable production blueprints
   ---
-  duration_ms: 50.950268
+  duration_ms: 69.413849
   ...
 # Subtest: the complete requested regional block resolves exactly once by title and year
 ok 72 - the complete requested regional block resolves exactly once by title and year
   ---
-  duration_ms: 29.655312
+  duration_ms: 41.026934
   ...
 # Subtest: generic translated titles reject unrelated same-year films
 ok 73 - generic translated titles reject unrelated same-year films
   ---
-  duration_ms: 17.796025
+  duration_ms: 29.399284
   ...
 # Subtest: 1981-2009 festival winner expansion contains exactly eleven unique films
 ok 74 - 1981-2009 festival winner expansion contains exactly eleven unique films
   ---
-  duration_ms: 1.48389
+  duration_ms: 1.899625
   ...
 # Subtest: all eleven festival winners are new to the preceding 293-case catalogue
 ok 75 - all eleven festival winners are new to the preceding 293-case catalogue
   ---
-  duration_ms: 30.009142
+  duration_ms: 31.927155
   ...
 # Subtest: every festival winner resolves once and has a playable brief blueprint
 ok 76 - every festival winner resolves once and has a playable brief blueprint
   ---
-  duration_ms: 31.659962
+  duration_ms: 20.162253
   ...
 # Subtest: the complete requested 1981-2009 festival block resolves exactly once
 ok 77 - the complete requested 1981-2009 festival block resolves exactly once
   ---
-  duration_ms: 16.778608
+  duration_ms: 37.560843
   ...
 # Subtest: generic festival winner titles do not match unrelated same-year films
 ok 78 - generic festival winner titles do not match unrelated same-year films
   ---
-  duration_ms: 12.549225
+  duration_ms: 32.435933
   ...
 # Subtest: the merged catalogue contains 304 unique Production Cases
 ok 79 - the merged catalogue contains 304 unique Production Cases
   ---
-  duration_ms: 12.437884
+  duration_ms: 31.99341
   ...
 # Subtest: 2010-2024 festival winner expansion contains exactly eleven unique films
 ok 80 - 2010-2024 festival winner expansion contains exactly eleven unique films
   ---
-  duration_ms: 1.05655
+  duration_ms: 1.976721
   ...
 # Subtest: all eleven final festival winners are new to the preceding 304-case catalogue
 ok 81 - all eleven final festival winners are new to the preceding 304-case catalogue
   ---
-  duration_ms: 22.410844
+  duration_ms: 34.825184
   ...
 # Subtest: every final festival winner resolves once and has a playable brief blueprint
 ok 82 - every final festival winner resolves once and has a playable brief blueprint
   ---
-  duration_ms: 16.833495
+  duration_ms: 40.274671
   ...
 # Subtest: the complete requested 2010-2024 festival block resolves exactly once
 ok 83 - the complete requested 2010-2024 festival block resolves exactly once
   ---
-  duration_ms: 14.586743
+  duration_ms: 23.501736
   ...
 # Subtest: generic final festival titles do not match unrelated same-year films
 ok 84 - generic final festival titles do not match unrelated same-year films
   ---
-  duration_ms: 20.641597
+  duration_ms: 18.976343
   ...
 # Subtest: the final merged catalogue contains 315 unique Production Cases
 ok 85 - the final merged catalogue contains 315 unique Production Cases
   ---
-  duration_ms: 10.255854
+  duration_ms: 18.694909
   ...
 # Subtest: the complete agreed correction contains all 98 films exactly once
 ok 86 - the complete agreed correction contains all 98 films exactly once
   ---
-  duration_ms: 11.852903
+  duration_ms: 19.608638
   ...
 # Subtest: Film History book has six parts and thirty canonical chapters
 ok 87 - Film History book has six parts and thirty canonical chapters
   ---
-  duration_ms: 1.604691
+  duration_ms: 5.533171
   ...
 # Subtest: Chapter 1 satisfies the full editorial definition rather than the old baseline
 ok 88 - Chapter 1 satisfies the full editorial definition rather than the old baseline
   ---
-  duration_ms: 5.241608
+  duration_ms: 5.878071
   ...
 # Subtest: every Chapter 1 section has resolvable source provenance
 ok 89 - every Chapter 1 section has resolvable source provenance
   ---
-  duration_ms: 0.351035
+  duration_ms: 0.503392
   ...
 # Subtest: Chapter 1 keeps the audited Film Atlas role and gap matrix
 ok 90 - Chapter 1 keeps the audited Film Atlas role and gap matrix
   ---
-  duration_ms: 0.329343
+  duration_ms: 0.403727
   ...
 # Subtest: pre-cinema apparatus and motion studies remain Historical Objects, not fake Production Cases
 ok 91 - pre-cinema apparatus and motion studies remain Historical Objects, not fake Production Cases
   ---
-  duration_ms: 0.370384
+  duration_ms: 0.46108
   ...
 # Subtest: Chapter 2 is a full source-backed exhibition-history chapter
 ok 92 - Chapter 2 is a full source-backed exhibition-history chapter
   ---
-  duration_ms: 5.537985
+  duration_ms: 2.358208
   ...
 # Subtest: every Chapter 2 section has dense resolvable source provenance
 ok 93 - every Chapter 2 section has dense resolvable source provenance
   ---
-  duration_ms: 0.48738
+  duration_ms: 0.627294
   ...
 # Subtest: Chapter 2 keeps the completed audited Film Atlas matrix
 ok 94 - Chapter 2 keeps the completed audited Film Atlas matrix
   ---
-  duration_ms: 0.384305
+  duration_ms: 0.538378
   ...
 # Subtest: Chapter 2 keeps exhibition infrastructure outside fake Production Cases
 ok 95 - Chapter 2 keeps exhibition infrastructure outside fake Production Cases
   ---
-  duration_ms: 3.498704
+  duration_ms: 0.57769
   ...
 # Subtest: only Chapters 10–30 remain explicit outlines after Chapter 9 completion
 ok 96 - only Chapters 10–30 remain explicit outlines after Chapter 9 completion
   ---
-  duration_ms: 0.345516
+  duration_ms: 0.510125
   ...
 # Subtest: Chapter 8 is canonical full book content with fifteen substantive sections
 ok 97 - Chapter 8 is canonical full book content with fifteen substantive sections
   ---
-  duration_ms: 1.628396
+  duration_ms: 1.449669
   ...
 # Subtest: Chapter 8 source bank is complete, unique, HTTPS and actually used
 ok 98 - Chapter 8 source bank is complete, unique, HTTPS and actually used
   ---
-  duration_ms: 0.699066
+  duration_ms: 0.560011
   ...
 # Subtest: Chapter 8 preserves the completed six-case Atlas matrix and nine P2 comparisons
 ok 99 - Chapter 8 preserves the completed six-case Atlas matrix and nine P2 comparisons
   ---
-  duration_ms: 9.303259
+  duration_ms: 11.538527
   ...
 # Subtest: Chapter 8 theory and institutions remain historical context, never fake Production Cases
 ok 100 - Chapter 8 theory and institutions remain historical context, never fake Production Cases
   ---
-  duration_ms: 0.217576
+  duration_ms: 0.316765
   ...
 # Subtest: Chapter 8 keeps historiographic, ethical, authorship and version safeguards visible in prose
 ok 101 - Chapter 8 keeps historiographic, ethical, authorship and version safeguards visible in prose
   ---
-  duration_ms: 3.289371
+  duration_ms: 3.348389
   ...
 # Subtest: canonical book resolves Chapter 8 as full without changing the thirty-chapter architecture
 ok 102 - canonical book resolves Chapter 8 as full without changing the thirty-chapter architecture
   ---
-  duration_ms: 0.208051
+  duration_ms: 1.390029
   ...
 # Subtest: Chapter 8 audit locks the reviewed French avant-garde Production Case matrix
 not ok 103 - Chapter 8 audit locks the reviewed French avant-garde Production Case matrix
   ---
-  duration_ms: 4.085302
+  duration_ms: 5.138048
   location: '/home/runner/work/HG_Film_Producer/HG_Film_Producer/dist/core/filmHistoryChapterEightAuditContract.test.js:7:1'
   failureType: 'testCodeFailure'
   error: |-
@@ -5030,112 +5030,112 @@ not ok 103 - Chapter 8 audit locks the reviewed French avant-garde Production Ca
 # Subtest: Chapter 5 is canonical full book content with fifteen substantive sections
 ok 104 - Chapter 5 is canonical full book content with fifteen substantive sections
   ---
-  duration_ms: 1.426274
+  duration_ms: 3.332864
   ...
 # Subtest: Chapter 5 source bank is complete, unique, HTTPS and actually used
 ok 105 - Chapter 5 source bank is complete, unique, HTTPS and actually used
   ---
-  duration_ms: 0.701099
+  duration_ms: 0.899397
   ...
 # Subtest: Chapter 5 preserves the completed Atlas matrix and P2 book references
 ok 106 - Chapter 5 preserves the completed Atlas matrix and P2 book references
   ---
-  duration_ms: 0.812335
+  duration_ms: 1.035856
   ...
 # Subtest: Chapter 5 industrial systems remain infrastructure, never fake Production Cases
 ok 107 - Chapter 5 industrial systems remain infrastructure, never fake Production Cases
   ---
-  duration_ms: 0.202483
+  duration_ms: 0.272413
   ...
 # Subtest: Chapter 5 keeps international and historiographic safeguards visible in prose
 ok 108 - Chapter 5 keeps international and historiographic safeguards visible in prose
   ---
-  duration_ms: 2.325349
+  duration_ms: 3.481891
   ...
 # Subtest: canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
 ok 109 - canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
   ---
-  duration_ms: 0.176224
+  duration_ms: 0.354051
   ...
 # Subtest: Chapter 4 is canonical full book content with fifteen substantive sections
 ok 110 - Chapter 4 is canonical full book content with fifteen substantive sections
   ---
-  duration_ms: 1.68436
+  duration_ms: 2.236402
   ...
 # Subtest: Chapter 4 source bank is complete, unique, HTTPS and fully referenced
 ok 111 - Chapter 4 source bank is complete, unique, HTTPS and fully referenced
   ---
-  duration_ms: 0.573678
+  duration_ms: 0.759478
   ...
 # Subtest: Chapter 4 preserves the completed Atlas matrix and the three P2 book references
 ok 112 - Chapter 4 preserves the completed Atlas matrix and the three P2 book references
   ---
-  duration_ms: 0.74222
+  duration_ms: 0.977153
   ...
 # Subtest: Chapter 4 historical systems remain infrastructure, never fake Production Cases
 ok 113 - Chapter 4 historical systems remain infrastructure, never fake Production Cases
   ---
-  duration_ms: 0.204356
+  duration_ms: 0.289402
   ...
 # Subtest: Chapter 4 keeps the required industrial and historiographic safeguards visible in prose
 ok 114 - Chapter 4 keeps the required industrial and historiographic safeguards visible in prose
   ---
-  duration_ms: 2.662563
+  duration_ms: 3.536473
   ...
 # Subtest: canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
 ok 115 - canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
   ---
-  duration_ms: 0.214021
+  duration_ms: 0.306033
   ...
 # Subtest: Chapter 4 editorial references stay locked to the completed Atlas audit
 ok 116 - Chapter 4 editorial references stay locked to the completed Atlas audit
   ---
-  duration_ms: 0.276694
+  duration_ms: 0.318345
   ...
 # Subtest: Chapter 9 is canonical full book content with fifteen substantive sections
 ok 117 - Chapter 9 is canonical full book content with fifteen substantive sections
   ---
-  duration_ms: 1.185503
+  duration_ms: 1.457566
   ...
 # Subtest: Chapter 9 source bank is complete, unique, HTTPS and actually used
 ok 118 - Chapter 9 source bank is complete, unique, HTTPS and actually used
   ---
-  duration_ms: 0.458636
+  duration_ms: 0.55238
   ...
 # Subtest: Chapter 9 preserves the completed seven-case Atlas matrix and fourteen P2 comparisons
 ok 119 - Chapter 9 preserves the completed seven-case Atlas matrix and fourteen P2 comparisons
   ---
-  duration_ms: 6.45018
+  duration_ms: 7.510426
   ...
 # Subtest: Chapter 9 theory and institutions remain historical context, never fake Production Cases
 ok 120 - Chapter 9 theory and institutions remain historical context, never fake Production Cases
   ---
-  duration_ms: 0.223375
+  duration_ms: 0.185315
   ...
 # Subtest: Chapter 9 keeps theoretical, historiographic, archival, political and version safeguards visible in prose
 ok 121 - Chapter 9 keeps theoretical, historiographic, archival, political and version safeguards visible in prose
   ---
-  duration_ms: 2.702393
+  duration_ms: 2.804692
   ...
 # Subtest: canonical book resolves Chapter 9 as full without changing the thirty-chapter architecture
 ok 122 - canonical book resolves Chapter 9 as full without changing the thirty-chapter architecture
   ---
-  duration_ms: 0.219368
+  duration_ms: 0.17453
   ...
 # Subtest: Chapter 9 audit locks the reviewed Soviet montage Production Case matrix
 ok 123 - Chapter 9 audit locks the reviewed Soviet montage Production Case matrix
   ---
-  duration_ms: 3.213328
+  duration_ms: 2.886231
   ...
 # Subtest: Chapter 9 audit permanently preserves theory, Ukrainian, archival and political safeguards
 ok 124 - Chapter 9 audit permanently preserves theory, Ukrainian, archival and political safeguards
   ---
-  duration_ms: 0.273389
+  duration_ms: 0.368081
   ...
 # Subtest: Chapter 9 audit is permanent in the v0.1 verification chain
 not ok 125 - Chapter 9 audit is permanent in the v0.1 verification chain
   ---
-  duration_ms: 2.148575
+  duration_ms: 2.069767
   location: '/home/runner/work/HG_Film_Producer/HG_Film_Producer/dist/core/filmHistoryChapterNineAuditContract.test.js:60:1'
   failureType: 'testCodeFailure'
   error: |-
@@ -5252,37 +5252,37 @@ not ok 125 - Chapter 9 audit is permanent in the v0.1 verification chain
 # Subtest: Chapter 7 is canonical full book content with fifteen substantive sections
 ok 126 - Chapter 7 is canonical full book content with fifteen substantive sections
   ---
-  duration_ms: 1.250721
+  duration_ms: 1.956529
   ...
 # Subtest: Chapter 7 source bank is complete, unique, HTTPS and actually used
 ok 127 - Chapter 7 source bank is complete, unique, HTTPS and actually used
   ---
-  duration_ms: 0.460569
+  duration_ms: 0.798631
   ...
 # Subtest: Chapter 7 preserves the completed five-case Atlas matrix and P2-only comparisons
 ok 128 - Chapter 7 preserves the completed five-case Atlas matrix and P2-only comparisons
   ---
-  duration_ms: 6.428678
+  duration_ms: 14.30529
   ...
 # Subtest: Chapter 7 infrastructure remains historical context, never fake Production Cases
 ok 129 - Chapter 7 infrastructure remains historical context, never fake Production Cases
   ---
-  duration_ms: 0.155352
+  duration_ms: 0.2804
   ...
 # Subtest: Chapter 7 keeps historiographic, ethical, legal and version safeguards visible in prose
 ok 130 - Chapter 7 keeps historiographic, ethical, legal and version safeguards visible in prose
   ---
-  duration_ms: 1.803699
+  duration_ms: 2.459724
   ...
 # Subtest: canonical book can resolve Chapter 7 as full without changing the thirty-chapter architecture
 ok 131 - canonical book can resolve Chapter 7 as full without changing the thirty-chapter architecture
   ---
-  duration_ms: 0.156974
+  duration_ms: 0.270219
   ...
 # Subtest: Chapter 7 audit locks the reviewed Weimar production-case matrix
 not ok 132 - Chapter 7 audit locks the reviewed Weimar production-case matrix
   ---
-  duration_ms: 3.398304
+  duration_ms: 4.51083
   location: '/home/runner/work/HG_Film_Producer/HG_Film_Producer/dist/core/filmHistoryChapterSevenAuditContract.test.js:6:1'
   failureType: 'testCodeFailure'
   error: |-
@@ -5400,1293 +5400,1293 @@ not ok 132 - Chapter 7 audit locks the reviewed Weimar production-case matrix
 # Subtest: Chapter 6 is canonical full book content with fifteen substantive sections
 ok 133 - Chapter 6 is canonical full book content with fifteen substantive sections
   ---
-  duration_ms: 1.231503
+  duration_ms: 1.462888
   ...
 # Subtest: Chapter 6 source bank is complete, unique, HTTPS and actually used
 ok 134 - Chapter 6 source bank is complete, unique, HTTPS and actually used
   ---
-  duration_ms: 0.635581
+  duration_ms: 0.557346
   ...
 # Subtest: Chapter 6 preserves the completed six-case Atlas matrix and P2-only comparisons
 ok 135 - Chapter 6 preserves the completed six-case Atlas matrix and P2-only comparisons
   ---
-  duration_ms: 9.015759
+  duration_ms: 12.106972
   ...
 # Subtest: Chapter 6 industrial systems remain infrastructure, never fake Production Cases
 ok 136 - Chapter 6 industrial systems remain infrastructure, never fake Production Cases
   ---
-  duration_ms: 0.203725
+  duration_ms: 0.295188
   ...
 # Subtest: Chapter 6 keeps historiographic, ethical and version safeguards visible in prose
 ok 137 - Chapter 6 keeps historiographic, ethical and version safeguards visible in prose
   ---
-  duration_ms: 3.320137
+  duration_ms: 3.867099
   ...
 # Subtest: canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
 ok 138 - canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
   ---
-  duration_ms: 0.233149
+  duration_ms: 0.317904
   ...
 # Subtest: Chapter 6 keeps the reviewed 37-source contract and closed production gap
 ok 139 - Chapter 6 keeps the reviewed 37-source contract and closed production gap
   ---
-  duration_ms: 1.372103
+  duration_ms: 2.292756
   ...
 # Subtest: Chapter 10 audit locks the reviewed silent-cinemas Atlas matrix
 ok 140 - Chapter 10 audit locks the reviewed silent-cinemas Atlas matrix
   ---
-  duration_ms: 2.654542
+  duration_ms: 4.106487
   ...
 # Subtest: Chapter 10 keeps exhibition systems, institutions and archive loss outside fake Production Cases
 ok 141 - Chapter 10 keeps exhibition systems, institutions and archive loss outside fake Production Cases
   ---
-  duration_ms: 0.247099
+  duration_ms: 0.322759
   ...
 # Subtest: Chapter 10 permanently preserves survival, benshi, transnational and sound-boundary safeguards
 ok 142 - Chapter 10 permanently preserves survival, benshi, transnational and sound-boundary safeguards
   ---
-  duration_ms: 0.282032
+  duration_ms: 0.442541
   ...
 # Subtest: Chapter 10 audit is permanent in the v0.1 verification chain
 ok 143 - Chapter 10 audit is permanent in the v0.1 verification chain
   ---
-  duration_ms: 0.153791
+  duration_ms: 0.209262
   ...
 # Subtest: Chapter 3 is canonical full book content with fifteen substantive sections
 ok 144 - Chapter 3 is canonical full book content with fifteen substantive sections
   ---
-  duration_ms: 1.182349
+  duration_ms: 2.285116
   ...
 # Subtest: Chapter 3 source bank is complete, unique, HTTPS and fully referenced
 ok 145 - Chapter 3 source bank is complete, unique, HTTPS and fully referenced
   ---
-  duration_ms: 0.491496
+  duration_ms: 0.696461
   ...
 # Subtest: Chapter 3 uses exactly the nine completed Atlas cases and no P0/P1 film references
 ok 146 - Chapter 3 uses exactly the nine completed Atlas cases and no P0/P1 film references
   ---
-  duration_ms: 0.706026
+  duration_ms: 0.88242
   ...
 # Subtest: Chapter 3 historical objects remain practices and evidence, never fake Production Cases
 ok 147 - Chapter 3 historical objects remain practices and evidence, never fake Production Cases
   ---
-  duration_ms: 0.194341
+  duration_ms: 0.218095
   ...
 # Subtest: Chapter 3 keeps the required historiographic safeguards visible in prose
 ok 148 - Chapter 3 keeps the required historiographic safeguards visible in prose
   ---
-  duration_ms: 1.665532
+  duration_ms: 2.216875
   ...
 # Subtest: canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
 ok 149 - canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
   ---
-  duration_ms: 0.216634
+  duration_ms: 0.303662
   ...
 # Subtest: Chapter 3 editorial film references stay locked to the completed Atlas audit
 ok 150 - Chapter 3 editorial film references stay locked to the completed Atlas audit
   ---
-  duration_ms: 0.226219
+  duration_ms: 0.288203
   ...
 # Subtest: movements and historical films load with unique ids
 ok 151 - movements and historical films load with unique ids
   ---
-  duration_ms: 3.299697
+  duration_ms: 5.642284
   ...
 # Subtest: every historical film's movement, when set, exists in movements.json
 ok 152 - every historical film's movement, when set, exists in movements.json
   ---
-  duration_ms: 2.351959
+  duration_ms: 6.008953
   ...
 # Subtest: every technique resolves through its knowledge entry to a real historical film
 ok 153 - every technique resolves through its knowledge entry to a real historical film
   ---
-  duration_ms: 1.409539
+  duration_ms: 1.914737
   ...
 # Subtest: camera course has five complete and unique lessons
 ok 154 - camera course has five complete and unique lessons
   ---
-  duration_ms: 1.419203
+  duration_ms: 2.423572
   ...
 # Subtest: all camera course terminology links resolve
 ok 155 - all camera course terminology links resolve
   ---
-  duration_ms: 0.269132
+  duration_ms: 0.454547
   ...
 # Subtest: all five camera course film examples resolve exactly once in Film Atlas
 ok 156 - all five camera course film examples resolve exactly once in Film Atlas
   ---
-  duration_ms: 42.515207
+  duration_ms: 61.612505
   ...
 # Subtest: camera quiz grading accepts only the configured answer
 ok 157 - camera quiz grading accepts only the configured answer
   ---
-  duration_ms: 0.249593
+  duration_ms: 0.3896
   ...
 # Subtest: camera progress coercion removes unknown lesson IDs and preserves valid notes
 ok 158 - camera progress coercion removes unknown lesson IDs and preserves valid notes
   ---
-  duration_ms: 0.378306
+  duration_ms: 0.515407
   ...
 # Subtest: camera mastery and completion require seen, understood, and used for every lesson
 ok 159 - camera mastery and completion require seen, understood, and used for every lesson
   ---
-  duration_ms: 0.372938
+  duration_ms: 0.458839
   ...
 # Subtest: final camera assignment links to valid Director brief fields
 ok 160 - final camera assignment links to valid Director brief fields
   ---
-  duration_ms: 0.258167
+  duration_ms: 0.336109
   ...
 # Subtest: capstone validation requires the matching film, all sixteen brief fields, and three complete shots
 ok 161 - capstone validation requires the matching film, all sixteen brief fields, and three complete shots
   ---
-  duration_ms: 2.201434
+  duration_ms: 2.959236
   ...
 # Subtest: capstone validation does not count incomplete shot cards as completed coverage
 ok 162 - capstone validation does not count incomplete shot cards as completed coverage
   ---
-  duration_ms: 0.854698
+  duration_ms: 1.185212
   ...
 # Subtest: capstone submission stores the delivered scene and project version
 ok 163 - capstone submission stores the delivered scene and project version
   ---
-  duration_ms: 0.40053
+  duration_ms: 0.581361
   ...
 # Subtest: submission coercion rejects partial or fabricated completion records
 ok 164 - submission coercion rejects partial or fabricated completion records
   ---
-  duration_ms: 0.561651
+  duration_ms: 0.6376
   ...
 # Subtest: editing, sound, and finishing course has five complete and unique lessons
 ok 165 - editing, sound, and finishing course has five complete and unique lessons
   ---
-  duration_ms: 1.412724
+  duration_ms: 2.76476
   ...
 # Subtest: all editing, sound, and finishing terminology links resolve
 ok 166 - all editing, sound, and finishing terminology links resolve
   ---
-  duration_ms: 0.40107
+  duration_ms: 0.653438
   ...
 # Subtest: all five editing and sound film examples resolve exactly once in Film Atlas
 ok 167 - all five editing and sound film examples resolve exactly once in Film Atlas
   ---
-  duration_ms: 37.501537
+  duration_ms: 40.152717
   ...
 # Subtest: editing and sound quiz grading accepts only the configured answer
 ok 168 - editing and sound quiz grading accepts only the configured answer
   ---
-  duration_ms: 0.243584
+  duration_ms: 0.377343
   ...
 # Subtest: editing and sound progress coercion removes unknown lesson IDs and preserves valid notes
 ok 169 - editing and sound progress coercion removes unknown lesson IDs and preserves valid notes
   ---
-  duration_ms: 0.390094
+  duration_ms: 0.521503
   ...
 # Subtest: editing and sound mastery requires seen, understood, and used for every lesson
 ok 170 - editing and sound mastery requires seen, understood, and used for every lesson
   ---
-  duration_ms: 0.392617
+  duration_ms: 0.473852
   ...
 # Subtest: final editing and sound assignment links to valid Director brief fields
 ok 171 - final editing and sound assignment links to valid Director brief fields
   ---
-  duration_ms: 0.264176
+  duration_ms: 0.307043
   ...
 # Subtest: ground course contains five chapters and twenty-five lessons
 ok 172 - ground course contains five chapters and twenty-five lessons
   ---
-  duration_ms: 1.453194
+  duration_ms: 2.41693
   ...
 # Subtest: course summary counts only known unique milestones
 ok 173 - course summary counts only known unique milestones
   ---
-  duration_ms: 0.225999
+  duration_ms: 0.422731
   ...
 # Subtest: ground course unlocks only when all seventy-five milestones are complete
 ok 174 - ground course unlocks only when all seventy-five milestones are complete
   ---
-  duration_ms: 0.404966
+  duration_ms: 3.708043
   ...
 # Subtest: capstone assignment uses every Director brief field exactly once
 ok 175 - capstone assignment uses every Director brief field exactly once
   ---
-  duration_ms: 0.206529
+  duration_ms: 0.375708
   ...
 # Subtest: lighting and design course has five complete and unique lessons
 ok 176 - lighting and design course has five complete and unique lessons
   ---
-  duration_ms: 1.769147
+  duration_ms: 1.662564
   ...
 # Subtest: all lighting and design terminology links resolve
 ok 177 - all lighting and design terminology links resolve
   ---
-  duration_ms: 0.391276
+  duration_ms: 0.329624
   ...
 # Subtest: all five lighting and design film examples resolve exactly once in Film Atlas
 ok 178 - all five lighting and design film examples resolve exactly once in Film Atlas
   ---
-  duration_ms: 37.459164
+  duration_ms: 46.333788
   ...
 # Subtest: lighting and design quiz grading accepts only the configured answer
 ok 179 - lighting and design quiz grading accepts only the configured answer
   ---
-  duration_ms: 0.276885
+  duration_ms: 0.324148
   ...
 # Subtest: lighting and design progress coercion removes unknown lesson IDs and preserves valid notes
 ok 180 - lighting and design progress coercion removes unknown lesson IDs and preserves valid notes
   ---
-  duration_ms: 0.406868
+  duration_ms: 6.080022
   ...
 # Subtest: lighting and design mastery requires seen, understood, and used for every lesson
 ok 181 - lighting and design mastery requires seen, understood, and used for every lesson
   ---
-  duration_ms: 0.385146
+  duration_ms: 0.516007
   ...
 # Subtest: final lighting and design assignment links to valid Director brief fields
 ok 182 - final lighting and design assignment links to valid Director brief fields
   ---
-  duration_ms: 0.283985
+  duration_ms: 0.235072
   ...
 # Subtest: performance course has five complete and unique lessons
 ok 183 - performance course has five complete and unique lessons
   ---
-  duration_ms: 1.975827
+  duration_ms: 2.583214
   ...
 # Subtest: all performance course terminology links resolve
 ok 184 - all performance course terminology links resolve
   ---
-  duration_ms: 0.345837
+  duration_ms: 0.476287
   ...
 # Subtest: all five performance course film examples resolve exactly once in Film Atlas
 ok 185 - all five performance course film examples resolve exactly once in Film Atlas
   ---
-  duration_ms: 47.556846
+  duration_ms: 43.78869
   ...
 # Subtest: quiz grading accepts only the configured answer
 ok 186 - quiz grading accepts only the configured answer
   ---
-  duration_ms: 0.28702
+  duration_ms: 0.305066
   ...
 # Subtest: progress coercion removes unknown lesson IDs and preserves valid notes
 ok 187 - progress coercion removes unknown lesson IDs and preserves valid notes
   ---
-  duration_ms: 0.451265
+  duration_ms: 3.568627
   ...
 # Subtest: mastery and completion require seen, understood, and used for every lesson
 ok 188 - mastery and completion require seen, understood, and used for every lesson
   ---
-  duration_ms: 0.332928
+  duration_ms: 0.462687
   ...
 # Subtest: final performance assignment links to valid Director brief fields
 ok 189 - final performance assignment links to valid Director brief fields
   ---
-  duration_ms: 0.269924
+  duration_ms: 0.350273
   ...
 # Subtest: screenplay course contains five complete and unique lessons
 ok 190 - screenplay course contains five complete and unique lessons
   ---
-  duration_ms: 1.517891
+  duration_ms: 1.99048
   ...
 # Subtest: progress is coerced to known lessons and calculates four learning stages
 ok 191 - progress is coerced to known lessons and calculates four learning stages
   ---
-  duration_ms: 1.2369
+  duration_ms: 1.594205
   ...
 # Subtest: all course milestones produce full mastery
 ok 192 - all course milestones produce full mastery
   ---
-  duration_ms: 0.265878
+  duration_ms: 0.306971
   ...
 # Subtest: director assignment uses valid brief fields and preserves film identity
 ok 193 - director assignment uses valid brief fields and preserves film identity
   ---
-  duration_ms: 0.261361
+  duration_ms: 0.326354
   ...
 # Subtest: film study coverage always contains every history and craft area
 ok 194 - film study coverage always contains every history and craft area
   ---
-  duration_ms: 1.20988
+  duration_ms: 2.394475
   ...
 # Subtest: coverage summary distinguishes verified, mapped, pending, and not-central work
 ok 195 - coverage summary distinguishes verified, mapped, pending, and not-central work
   ---
-  duration_ms: 0.202634
+  duration_ms: 0.36723
   ...
 # Subtest: historical eras provide stable broad placement without pretending to be a movement label
 ok 196 - historical eras provide stable broad placement without pretending to be a movement label
   ---
-  duration_ms: 0.143004
+  duration_ms: 0.231152
   ...
 # Subtest: creates stable film slugs with year
 ok 197 - creates stable film slugs with year
   ---
-  duration_ms: 1.543159
+  duration_ms: 1.445533
   ...
 # Subtest: parses platform section routes
 ok 198 - parses platform section routes
   ---
-  duration_ms: 0.902851
+  duration_ms: 0.936827
   ...
 # Subtest: parses canonical and legacy film routes
 ok 199 - parses canonical and legacy film routes
   ---
-  duration_ms: 0.227701
+  duration_ms: 0.230212
   ...
 # Subtest: formats canonical hash routes
 ok 200 - formats canonical hash routes
   ---
-  duration_ms: 0.195483
+  duration_ms: 0.192981
   ...
 # Subtest: falls back safely for invalid hashes
 ok 201 - falls back safely for invalid hashes
   ---
-  duration_ms: 1.011283
+  duration_ms: 0.950648
   ...
 # Subtest: compares routes including selected films
 ok 202 - compares routes including selected films
   ---
-  duration_ms: 0.189503
+  duration_ms: 0.187962
   ...
 # [italy-france-germany-benelux-expansion] prior=353 missing=25 final=378
 # Subtest: Italy, France, Germany, and Benelux expansion contains exactly 28 unique targets
 ok 203 - Italy, France, Germany, and Benelux expansion contains exactly 28 unique targets
   ---
-  duration_ms: 1.487556
+  duration_ms: 1.930347
   ...
 # Subtest: the expansion adds only genuinely missing films and preserves unique catalogue IDs
 ok 204 - the expansion adds only genuinely missing films and preserves unique catalogue IDs
   ---
-  duration_ms: 56.596605
+  duration_ms: 76.934291
   ...
 # Subtest: all 28 requested films resolve exactly once and have playable production blueprints
 ok 205 - all 28 requested films resolve exactly once and have playable production blueprints
   ---
-  duration_ms: 50.421592
+  duration_ms: 70.427602
   ...
 # Subtest: the complete requested regional block resolves exactly once by title and year
 ok 206 - the complete requested regional block resolves exactly once by title and year
   ---
-  duration_ms: 33.329529
+  duration_ms: 35.452671
   ...
 # Subtest: generic translated titles reject unrelated same-year films
 ok 207 - generic translated titles reject unrelated same-year films
   ---
-  duration_ms: 17.694933
+  duration_ms: 24.62292
   ...
 # Subtest: Japanese auteur expansion contains exactly seven unique missing films
 ok 208 - Japanese auteur expansion contains exactly seven unique missing films
   ---
-  duration_ms: 1.362278
+  duration_ms: 1.936411
   ...
 # Subtest: all seven Japanese auteur films are new to the 275-case catalogue
 ok 209 - all seven Japanese auteur films are new to the 275-case catalogue
   ---
-  duration_ms: 26.065032
+  duration_ms: 32.196625
   ...
 # Subtest: every Japanese auteur film resolves once and has a playable brief blueprint
 ok 210 - every Japanese auteur film resolves once and has a playable brief blueprint
   ---
-  duration_ms: 32.050957
+  duration_ms: 39.62626
   ...
 # Subtest: the full requested Japanese block resolves exactly once
 ok 211 - the full requested Japanese block resolves exactly once
   ---
-  duration_ms: 18.90194
+  duration_ms: 31.049286
   ...
 # Subtest: Black Rain is disambiguated from the Ridley Scott film released in the same year
 ok 212 - Black Rain is disambiguated from the Ridley Scott film released in the same year
   ---
-  duration_ms: 11.114649
+  duration_ms: 6.942935
   ...
 # Subtest: the merged catalogue contains 282 unique Production Cases
 ok 213 - the merged catalogue contains 282 unique Production Cases
   ---
-  duration_ms: 17.533732
+  duration_ms: 22.19549
   ...
 # Subtest: the first modern canon expansion contains exactly 27 unique films
 ok 214 - the first modern canon expansion contains exactly 27 unique films
   ---
-  duration_ms: 1.751511
+  duration_ms: 2.684558
   ...
 # Subtest: all 27 requested films are new to the 217-case catalogue
 ok 215 - all 27 requested films are new to the 217-case catalogue
   ---
-  duration_ms: 16.302991
+  duration_ms: 23.472199
   ...
 # Subtest: every requested film resolves once and has a complete playable brief blueprint
 ok 216 - every requested film resolves once and has a complete playable brief blueprint
   ---
-  duration_ms: 36.811028
+  duration_ms: 31.03322
   ...
 # Subtest: the merged catalogue contains 244 unique Production Cases
 ok 217 - the merged catalogue contains 244 unique Production Cases
   ---
-  duration_ms: 11.395379
+  duration_ms: 16.290444
   ...
 # Subtest: post-production seed catalogues provide stable professional coverage
 ok 218 - post-production seed catalogues provide stable professional coverage
   ---
-  duration_ms: 1.705923
+  duration_ms: 1.752205
   ...
 # Subtest: craft decisions apply immutably and duplicate applications have no second cost
 ok 219 - craft decisions apply immutably and duplicate applications have no second cost
   ---
-  duration_ms: 15.748977
+  duration_ms: 23.280283
   ...
 # Subtest: screening, trailer, and post evaluation are deterministic and bounded
 ok 220 - screening, trailer, and post evaluation are deterministic and bounded
   ---
-  duration_ms: 1.231412
+  duration_ms: 1.1973
   ...
 # Subtest: film results remain backward compatible and account for post cost and quality
 ok 221 - film results remain backward compatible and account for post cost and quality
   ---
-  duration_ms: 0.519057
+  duration_ms: 0.550297
   ...
 # Subtest: priority indie completion contains exactly 20 unique missing films
 ok 222 - priority indie completion contains exactly 20 unique missing films
   ---
-  duration_ms: 1.683679
+  duration_ms: 1.836846
   ...
 # Subtest: all 20 completion films are new to the 244-case catalogue
 ok 223 - all 20 completion films are new to the 244-case catalogue
   ---
-  duration_ms: 18.663146
+  duration_ms: 23.089928
   ...
 # Subtest: every completion film resolves once and has a playable brief blueprint
 ok 224 - every completion film resolves once and has a playable brief blueprint
   ---
-  duration_ms: 24.007818
+  duration_ms: 25.138416
   ...
 # Subtest: the originally prioritized 27-film list is now complete exactly once
 ok 225 - the originally prioritized 27-film list is now complete exactly once
   ---
-  duration_ms: 9.461255
+  duration_ms: 11.198696
   ...
 # Subtest: the merged catalogue contains 264 unique Production Cases
 ok 226 - the merged catalogue contains 264 unique Production Cases
   ---
-  duration_ms: 9.494731
+  duration_ms: 8.222523
   ...
 # Subtest: production case report and best result are gated until all phases are complete
 ok 227 - production case report and best result are gated until all phases are complete
   ---
-  duration_ms: 2.411428
+  duration_ms: 3.30647
   ...
 # Subtest: production case continuation helpers reset runs without deleting best results and resolve next case safely
 ok 228 - production case continuation helpers reset runs without deleting best results and resolve next case safely
   ---
-  duration_ms: 1.658792
+  duration_ms: 1.8542
   ...
 # Subtest: production case first-session and next-action logic tolerate empty and returning-player state
 ok 229 - production case first-session and next-action logic tolerate empty and returning-player state
   ---
-  duration_ms: 0.333119
+  duration_ms: 0.538387
   ...
 # Subtest: production case score and report invariants are bounded and deterministic for missing selections
 ok 230 - production case score and report invariants are bounded and deterministic for missing selections
   ---
-  duration_ms: 0.47104
+  duration_ms: 0.69932
   ...
 # Subtest: learning status tracks only not started, in progress, and completed
 ok 231 - learning status tracks only not started, in progress, and completed
   ---
-  duration_ms: 1.277125
+  duration_ms: 1.669415
   ...
 # Subtest: learning hints use qualities for explanation without calculating points
 ok 232 - learning hints use qualities for explanation without calculating points
   ---
-  duration_ms: 0.284245
+  duration_ms: 0.339147
   ...
 # Subtest: next action guides study rather than score improvement
 ok 233 - next action guides study rather than score improvement
   ---
-  duration_ms: 0.408141
+  duration_ms: 0.37786
   ...
 # Subtest: completed report groups understanding without score or rank fields
 ok 234 - completed report groups understanding without score or rank fields
   ---
-  duration_ms: 0.355392
+  duration_ms: 0.286465
   ...
 # Subtest: production case progress starts at 0/6 for Taxi Driver
 ok 235 - production case progress starts at 0/6 for Taxi Driver
   ---
-  duration_ms: 0.960527
+  duration_ms: 1.157499
   ...
 # Subtest: one mission can be marked complete and counted in the summary
 ok 236 - one mission can be marked complete and counted in the summary
   ---
-  duration_ms: 0.544735
+  duration_ms: 0.642812
   ...
 # Subtest: production case progress is saved per scenario id
 ok 237 - production case progress is saved per scenario id
   ---
-  duration_ms: 0.292447
+  duration_ms: 0.340001
   ...
 # Subtest: reset clears only the current scenario progress
 ok 238 - reset clears only the current scenario progress
   ---
-  duration_ms: 0.869732
+  duration_ms: 0.198901
   ...
 # Subtest: production case progress export includes version, timestamp, progress, best results, and controls
 ok 239 - production case progress export includes version, timestamp, progress, best results, and controls
   ---
-  duration_ms: 0.631775
+  duration_ms: 0.72606
   ...
 # Subtest: production case progress export uses safe defaults for empty storage
 ok 240 - production case progress export uses safe defaults for empty storage
   ---
-  duration_ms: 0.121382
+  duration_ms: 0.139383
   ...
 # Subtest: production case progress export does not crash on corrupt storage
 ok 241 - production case progress export does not crash on corrupt storage
   ---
-  duration_ms: 0.223725
+  duration_ms: 0.294453
   ...
 # Subtest: production case progress backup preview summarizes a valid export without storage writes
 ok 242 - production case progress backup preview summarizes a valid export without storage writes
   ---
-  duration_ms: 0.426258
+  duration_ms: 0.480397
   ...
 # Subtest: production case progress backup preview fails safely for invalid JSON and wrong version
 ok 243 - production case progress backup preview fails safely for invalid JSON and wrong version
   ---
-  duration_ms: 0.237966
+  duration_ms: 0.312504
   ...
 # Subtest: production case progress import restores a valid export from storage
 ok 244 - production case progress import restores a valid export from storage
   ---
-  duration_ms: 0.343024
+  duration_ms: 0.422753
   ...
 # Subtest: production case progress import fails safely for invalid backups
 ok 245 - production case progress import fails safely for invalid backups
   ---
-  duration_ms: 0.296964
+  duration_ms: 0.303896
   ...
 # Subtest: production case library controls default when storage is empty
 ok 246 - production case library controls default when storage is empty
   ---
-  duration_ms: 0.110085
+  duration_ms: 0.161857
   ...
 # Subtest: production case library controls default when storage JSON is invalid
 ok 247 - production case library controls default when storage JSON is invalid
   ---
-  duration_ms: 0.094191
+  duration_ms: 0.108712
   ...
 # Subtest: production case library controls default unknown filter and sort values
 ok 248 - production case library controls default unknown filter and sort values
   ---
-  duration_ms: 0.174692
+  duration_ms: 0.196871
   ...
 # Subtest: production case library result summary reports default counts without active controls
 ok 249 - production case library result summary reports default counts without active controls
   ---
-  duration_ms: 0.204937
+  duration_ms: 0.231959
   ...
 # Subtest: production case library result summary lists only non-default controls
 ok 250 - production case library result summary lists only non-default controls
   ---
-  duration_ms: 0.270715
+  duration_ms: 0.247847
   ...
 # Subtest: production case library result summary labels status and mastery filters
 ok 251 - production case library result summary labels status and mastery filters
   ---
-  duration_ms: 0.118067
+  duration_ms: 0.15095
   ...
 # Subtest: production case library result summary uses empty-result label
 ok 252 - production case library result summary uses empty-result label
   ---
-  duration_ms: 0.188482
+  duration_ms: 0.21131
   ...
 # Subtest: production case library result summary reset removes active controls
 ok 253 - production case library result summary reset removes active controls
   ---
-  duration_ms: 0.110124
+  duration_ms: 0.125959
   ...
 # Subtest: production case library controls read and write valid controls
 ok 254 - production case library controls read and write valid controls
   ---
-  duration_ms: 0.173289
+  duration_ms: 0.187053
   ...
 # Subtest: production case library controls reset writes defaults
 ok 255 - production case library controls reset writes defaults
   ---
-  duration_ms: 0.224185
+  duration_ms: 0.188821
   ...
 # Subtest: production case library controls, export helper, and UI copy avoid forbidden language
 ok 256 - production case library controls, export helper, and UI copy avoid forbidden language
   ---
-  duration_ms: 0.498556
+  duration_ms: 0.622654
   ...
 # Subtest: FilmScenarioLibrary exposes learning progress without best-result or score UI
 ok 257 - FilmScenarioLibrary exposes learning progress without best-result or score UI
   ---
-  duration_ms: 0.230465
+  duration_ms: 0.288706
   ...
 # Subtest: production case MVP loop preserves the learning-only UI
 ok 258 - production case MVP loop preserves the learning-only UI
   ---
-  duration_ms: 0.59502
+  duration_ms: 0.664394
   ...
 # Subtest: FilmScenarioLibrary preserves learning progress controls and backup
 ok 259 - FilmScenarioLibrary preserves learning progress controls and backup
   ---
-  duration_ms: 0.292989
+  duration_ms: 0.353859
   ...
 # Subtest: production case library controls parse legacy and invalid search query safely
 ok 260 - production case library controls parse legacy and invalid search query safely
   ---
-  duration_ms: 0.198277
+  duration_ms: 0.204504
   ...
 # Subtest: FilmScenarioLibrary search includes title, year, director, and brief logline fields
 ok 261 - FilmScenarioLibrary search includes title, year, director, and brief logline fields
   ---
-  duration_ms: 0.199228
+  duration_ms: 0.332684
   ...
 # Subtest: FilmScenarioLibrary search combines before status, mastery, and sorting
 ok 262 - FilmScenarioLibrary search combines before status, mastery, and sorting
   ---
-  duration_ms: 6.324452
+  duration_ms: 8.518468
   ...
 # Subtest: progress writes to the v1 localStorage key and can be read back
 ok 263 - progress writes to the v1 localStorage key and can be read back
   ---
-  duration_ms: 0.17379
+  duration_ms: 0.298834
   ...
 # Subtest: selectedChoicesByMissionId is saved per scenario id
 ok 264 - selectedChoicesByMissionId is saved per scenario id
   ---
-  duration_ms: 0.19344
+  duration_ms: 0.250642
   ...
 # Subtest: old progress without selectedChoicesByMissionId parses safely
 ok 265 - old progress without selectedChoicesByMissionId parses safely
   ---
-  duration_ms: 0.183935
+  duration_ms: 0.238647
   ...
 # Subtest: Case-match counts selected match choices only
 ok 266 - Case-match counts selected match choices only
   ---
-  duration_ms: 0.277626
+  duration_ms: 0.34696
   ...
 # Subtest: reset clears selected choices for the current scenario
 ok 267 - reset clears selected choices for the current scenario
   ---
-  duration_ms: 0.221692
+  duration_ms: 0.259702
   ...
 # Subtest: production case next phase action recommends missing choice first
 ok 268 - production case next phase action recommends missing choice first
   ---
-  duration_ms: 0.275222
+  duration_ms: 3.341161
   ...
 # Subtest: production case next phase action recommends completing a selected unfinished phase
 ok 269 - production case next phase action recommends completing a selected unfinished phase
   ---
-  duration_ms: 0.165327
+  duration_ms: 0.213551
   ...
 # Subtest: production case next phase action recommends improving the first weak completed phase
 ok 270 - production case next phase action recommends improving the first weak completed phase
   ---
-  duration_ms: 0.315141
+  duration_ms: 0.412298
   ...
 # Subtest: production case next phase action is hidden for seed fallback and full match cases
 ok 271 - production case next phase action is hidden for seed fallback and full match cases
   ---
-  duration_ms: 0.154541
+  duration_ms: 0.280245
   ...
 # Subtest: ScenarioProductionBriefPanel shows a score-free learning report
 ok 272 - ScenarioProductionBriefPanel shows a score-free learning report
   ---
-  duration_ms: 0.384595
+  duration_ms: 0.451673
   ...
 # Subtest: production case tier target helper and UI copy avoid forbidden language
 ok 273 - production case tier target helper and UI copy avoid forbidden language
   ---
-  duration_ms: 0.677504
+  duration_ms: 2.077303
   ...
 # Subtest: ScenarioProductionBriefPanel exposes clickable learning review focus
 ok 274 - ScenarioProductionBriefPanel exposes clickable learning review focus
   ---
-  duration_ms: 1.235559
+  duration_ms: 0.666205
   ...
 # Subtest: ScenarioProductionBriefPanel focus helper copy avoids forbidden language
 ok 275 - ScenarioProductionBriefPanel focus helper copy avoids forbidden language
   ---
-  duration_ms: 0.295382
+  duration_ms: 0.550497
   ...
 # Subtest: production case improvement hint is undefined for seed fallback and full match scores
 ok 276 - production case improvement hint is undefined for seed fallback and full match scores
   ---
-  duration_ms: 0.138127
+  duration_ms: 0.166348
   ...
 # Subtest: production case improvement hint recommends choosing an unselected mission first
 ok 277 - production case improvement hint recommends choosing an unselected mission first
   ---
-  duration_ms: 0.162633
+  duration_ms: 0.185145
   ...
 # Subtest: production case improvement hint recommends rethinking misses before partials
 ok 278 - production case improvement hint recommends rethinking misses before partials
   ---
-  duration_ms: 0.152869
+  duration_ms: 0.241686
   ...
 # Subtest: production case improvement hint recommends sharpening partial choices
 ok 279 - production case improvement hint recommends sharpening partial choices
   ---
-  duration_ms: 0.136103
+  duration_ms: 0.183712
   ...
 # Subtest: production case improvement hint copy avoids forbidden language
 ok 280 - production case improvement hint copy avoids forbidden language
   ---
-  duration_ms: 0.648065
+  duration_ms: 0.155533
   ...
 # Subtest: production case report is undefined for seed fallback or missing missions
 ok 281 - production case report is undefined for seed fallback or missing missions
   ---
-  duration_ms: 0.195022
+  duration_ms: 0.213517
   ...
 # Subtest: production case report summarizes score, matches, weak phases, and improvement hint
 ok 282 - production case report summarizes score, matches, weak phases, and improvement hint
   ---
-  duration_ms: 0.325938
+  duration_ms: 0.620193
   ...
 # Subtest: production case report has no weak phases when every choice is a match
 ok 283 - production case report has no weak phases when every choice is a match
   ---
-  duration_ms: 0.203405
+  duration_ms: 0.354804
   ...
 # Subtest: production case report learning summary changes for low, medium, and high scores
 ok 284 - production case report learning summary changes for low, medium, and high scores
   ---
-  duration_ms: 0.301711
+  duration_ms: 0.499701
   ...
 # Subtest: production case report copy avoids forbidden language
 ok 285 - production case report copy avoids forbidden language
   ---
-  duration_ms: 0.14715
+  duration_ms: 0.271365
   ...
 # Subtest: production case mission score maps choice quality to points
 ok 286 - production case mission score maps choice quality to points
   ---
-  duration_ms: 0.078077
+  duration_ms: 0.116242
   ...
 # Subtest: Taxi Driver with six match choices scores 12/12
 ok 287 - Taxi Driver with six match choices scores 12/12
   ---
-  duration_ms: 0.152508
+  duration_ms: 0.290321
   ...
 # Subtest: mixed production case choices score match, partial, miss, and unselected missions
 ok 288 - mixed production case choices score match, partial, miss, and unselected missions
   ---
-  duration_ms: 0.098107
+  duration_ms: 0.187126
   ...
 # Subtest: reset makes score 0 for the current scenario without affecting completion helpers
 ok 289 - reset makes score 0 for the current scenario without affecting completion helpers
   ---
-  duration_ms: 0.152708
+  duration_ms: 3.044645
   ...
 # Subtest: seed fallback without production case missions gets no scoring total
 ok 290 - seed fallback without production case missions gets no scoring total
   ---
-  duration_ms: 0.147821
+  duration_ms: 0.15789
   ...
 # Subtest: production case scoring helpers avoid forbidden copy
 ok 291 - production case scoring helpers avoid forbidden copy
   ---
-  duration_ms: 0.127421
+  duration_ms: 0.13458
   ...
 # Subtest: production case tier target shows assistant target for not started and in progress
 ok 292 - production case tier target shows assistant target for not started and in progress
   ---
-  duration_ms: 0.135213
+  duration_ms: 0.139213
   ...
 # Subtest: production case tier target advances assistant to producer with threshold points
 ok 293 - production case tier target advances assistant to producer with threshold points
   ---
-  duration_ms: 0.144416
+  duration_ms: 0.130474
   ...
 # Subtest: production case tier target advances producer to auteur with threshold points
 ok 294 - production case tier target advances producer to auteur with threshold points
   ---
-  duration_ms: 0.161181
+  duration_ms: 0.147831
   ...
 # Subtest: production case tier target marks auteur as max tier
 ok 295 - production case tier target marks auteur as max tier
   ---
-  duration_ms: 0.144697
+  duration_ms: 0.157932
   ...
 # Subtest: production case tier target is undefined for missing score or seed fallback
 ok 296 - production case tier target is undefined for missing score or seed fallback
   ---
-  duration_ms: 0.125037
+  duration_ms: 0.105488
   ...
 # Subtest: production case result tier is not_started at 0 score and 0 completed phases
 ok 297 - production case result tier is not_started at 0 score and 0 completed phases
   ---
-  duration_ms: 0.106559
+  duration_ms: 0.094355
   ...
 # Subtest: production case result tier is in_progress when score exists but not all phases are completed
 ok 298 - production case result tier is in_progress when score exists but not all phases are completed
   ---
-  duration_ms: 0.143465
+  duration_ms: 0.142412
   ...
 # Subtest: production case result tier is assistant when all phases are completed below 50 percent score
 ok 299 - production case result tier is assistant when all phases are completed below 50 percent score
   ---
-  duration_ms: 0.126539
+  duration_ms: 0.109128
   ...
 # Subtest: production case result tier is producer when all phases are completed from 50 through 83 percent score
 ok 300 - production case result tier is producer when all phases are completed from 50 through 83 percent score
   ---
-  duration_ms: 0.095903
+  duration_ms: 0.096238
   ...
 # Subtest: production case result tier is auteur when all phases are completed at 84 percent score or higher
 ok 301 - production case result tier is auteur when all phases are completed at 84 percent score or higher
   ---
-  duration_ms: 0.094782
+  duration_ms: 0.100149
   ...
 # Subtest: 12/12 score without completed phases does not give auteur
 ok 302 - 12/12 score without completed phases does not give auteur
   ---
-  duration_ms: 0.088151
+  duration_ms: 0.108543
   ...
 # Subtest: reset gives not_started result tier for the current scenario
 ok 303 - reset gives not_started result tier for the current scenario
   ---
-  duration_ms: 0.604584
+  duration_ms: 0.170294
   ...
 # Subtest: seed fallback without production case missions gets no result tier
 ok 304 - seed fallback without production case missions gets no result tier
   ---
-  duration_ms: 0.116514
+  duration_ms: 0.09331
   ...
 # Subtest: production case result tier helper avoids forbidden copy
 ok 305 - production case result tier helper avoids forbidden copy
   ---
-  duration_ms: 0.120561
+  duration_ms: 0.113428
   ...
 # Subtest: library status shows Not started at 0/6 phases
 ok 306 - library status shows Not started at 0/6 phases
   ---
-  duration_ms: 0.156605
+  duration_ms: 0.135995
   ...
 # Subtest: library status shows In progress with partial phase completion
 ok 307 - library status shows In progress with partial phase completion
   ---
-  duration_ms: 0.163946
+  duration_ms: 0.132017
   ...
 # Subtest: library status shows Assistant, Producer, and Auteur for completed cases
 ok 308 - library status shows Assistant, Producer, and Auteur for completed cases
   ---
-  duration_ms: 0.250815
+  duration_ms: 1.499463
   ...
 # Subtest: library status shows 6/6 phases and Case-score when choices exist
 ok 309 - library status shows 6/6 phases and Case-score when choices exist
   ---
-  duration_ms: 0.178868
+  duration_ms: 0.236806
   ...
 # Subtest: library status is absent for seed fallback mission lists
 ok 310 - library status is absent for seed fallback mission lists
   ---
-  duration_ms: 0.099759
+  duration_ms: 0.125109
   ...
 # Subtest: production case collection summary counts statuses, tiers, and scores
 ok 311 - production case collection summary counts statuses, tiers, and scores
   ---
-  duration_ms: 0.413869
+  duration_ms: 0.510839
   ...
 # Subtest: production case career summary counts completed cases, tiers, and score from best results
 ok 312 - production case career summary counts completed cases, tiers, and score from best results
   ---
-  duration_ms: 0.375191
+  duration_ms: 0.481947
   ...
 # Subtest: production case career summary excludes seed fallback-only statuses
 ok 313 - production case career summary excludes seed fallback-only statuses
   ---
-  duration_ms: 0.141962
+  duration_ms: 0.19568
   ...
 # Subtest: production case career summary and achievements survive current-progress reset
 ok 314 - production case career summary and achievements survive current-progress reset
   ---
-  duration_ms: 0.699566
+  duration_ms: 0.83655
   ...
 # Subtest: production case achievements unlock from career best-results thresholds
 ok 315 - production case achievements unlock from career best-results thresholds
   ---
-  duration_ms: 0.306619
+  duration_ms: 0.382009
   ...
 # Subtest: production case achievement copy avoids forbidden language
 ok 316 - production case achievement copy avoids forbidden language
   ---
-  duration_ms: 0.149634
+  duration_ms: 0.178533
   ...
 # Subtest: library status filters include the expected case cards
 ok 317 - library status filters include the expected case cards
   ---
-  duration_ms: 0.258207
+  duration_ms: 0.286242
   ...
 # Subtest: production case mastery filters match best-result tiers and improvement candidates
 ok 318 - production case mastery filters match best-result tiers and improvement candidates
   ---
-  duration_ms: 0.299689
+  duration_ms: 0.343572
   ...
 # Subtest: production case status and mastery filters combine and exclude seed fallback from mastery
 ok 319 - production case status and mastery filters combine and exclude seed fallback from mastery
   ---
-  duration_ms: 0.410945
+  duration_ms: 0.457435
   ...
 # Subtest: production case library sorting orders filtered cards
 ok 320 - production case library sorting orders filtered cards
   ---
-  duration_ms: 0.798425
+  duration_ms: 0.524936
   ...
 # Subtest: production case mastery filter UI copy and empty state avoid forbidden language
 ok 321 - production case mastery filter UI copy and empty state avoid forbidden language
   ---
-  duration_ms: 0.139118
+  duration_ms: 0.137175
   ...
 # Subtest: library status copy avoids forbidden language
 ok 322 - library status copy avoids forbidden language
   ---
-  duration_ms: 0.107441
+  duration_ms: 0.120362
   ...
 # Subtest: production case next action prioritizes in-progress cases first
 ok 323 - production case next action prioritizes in-progress cases first
   ---
-  duration_ms: 0.191877
+  duration_ms: 0.317938
   ...
 # Subtest: production case next action recommends assistant result improvement when no case is in progress
 ok 324 - production case next action recommends assistant result improvement when no case is in progress
   ---
-  duration_ms: 0.097145
+  duration_ms: 0.202012
   ...
 # Subtest: production case next action recommends first not-started case when there is no progress or assistant result
 ok 325 - production case next action recommends first not-started case when there is no progress or assistant result
   ---
-  duration_ms: 0.090105
+  duration_ms: 0.163816
   ...
 # Subtest: production case next action recommends producer mastery when all cases are completed but not all are auteur
 ok 326 - production case next action recommends producer mastery when all cases are completed but not all are auteur
   ---
-  duration_ms: 0.088693
+  duration_ms: 0.151626
   ...
 # Subtest: production case next action reports catalogue completion when all cases are auteur
 ok 327 - production case next action reports catalogue completion when all cases are auteur
   ---
-  duration_ms: 0.089674
+  duration_ms: 0.144596
   ...
 # Subtest: production case next action excludes seed fallback and avoids forbidden language
 ok 328 - production case next action excludes seed fallback and avoids forbidden language
   ---
-  duration_ms: 0.07972
+  duration_ms: 1.078406
   ...
 # Subtest: best result feedback returns first_best for first completed case
 ok 329 - best result feedback returns first_best for first completed case
   ---
-  duration_ms: 0.208281
+  duration_ms: 0.318928
   ...
 # Subtest: best result feedback returns score_improved for higher score
 ok 330 - best result feedback returns score_improved for higher score
   ---
-  duration_ms: 0.164546
+  duration_ms: 0.192576
   ...
 # Subtest: best result feedback returns tier_improved for higher tier
 ok 331 - best result feedback returns tier_improved for higher tier
   ---
-  duration_ms: 0.154311
+  duration_ms: 0.153566
   ...
 # Subtest: best result feedback returns maxed for Auteur max score
 ok 332 - best result feedback returns maxed for Auteur max score
   ---
-  duration_ms: 0.131998
+  duration_ms: 0.142926
   ...
 # Subtest: best result feedback is undefined when current result does not beat previous best
 ok 333 - best result feedback is undefined when current result does not beat previous best
   ---
-  duration_ms: 0.132818
+  duration_ms: 0.137821
   ...
 # Subtest: best result feedback is undefined for incomplete reports and zero max score fallback
 ok 334 - best result feedback is undefined for incomplete reports and zero max score fallback
   ---
-  duration_ms: 0.173269
+  duration_ms: 0.169404
   ...
 # Subtest: best result is stored when all production case phases are completed
 ok 335 - best result is stored when all production case phases are completed
   ---
-  duration_ms: 0.186579
+  duration_ms: 0.205774
   ...
 # Subtest: best result is not stored when the case is not completed
 ok 336 - best result is not stored when the case is not completed
   ---
-  duration_ms: 0.150595
+  duration_ms: 0.158118
   ...
 # Subtest: higher score replaces lower best result
 ok 337 - higher score replaces lower best result
   ---
-  duration_ms: 2.49972
+  duration_ms: 0.201101
   ...
 # Subtest: lower score does not replace higher best result
 ok 338 - lower score does not replace higher best result
   ---
-  duration_ms: 0.232408
+  duration_ms: 0.272875
   ...
 # Subtest: resetting case progress does not delete best result
 ok 339 - resetting case progress does not delete best result
   ---
-  duration_ms: 0.262983
+  duration_ms: 0.38638
   ...
 # Subtest: seed fallback gets no best result because reports are unavailable
 ok 340 - seed fallback gets no best result because reports are unavailable
   ---
-  duration_ms: 0.124747
+  duration_ms: 0.148251
   ...
 # Subtest: best result can be read per scenarioId
 ok 341 - best result can be read per scenarioId
   ---
-  duration_ms: 0.145969
+  duration_ms: 0.175725
   ...
 # Subtest: Taxi Driver and The Lighthouse keep separate best results
 ok 342 - Taxi Driver and The Lighthouse keep separate best results
   ---
-  duration_ms: 0.213139
+  duration_ms: 0.272968
   ...
 # Subtest: best-result helpers and UI copy avoid banned phrasing
 ok 343 - best-result helpers and UI copy avoid banned phrasing
   ---
-  duration_ms: 0.16709
+  duration_ms: 0.195895
   ...
 # Subtest: best result parser ignores malformed storage
 ok 344 - best result parser ignores malformed storage
   ---
-  duration_ms: 0.147711
+  duration_ms: 0.180379
   ...
 # Subtest: recordCareerRosterFilm adds first-time collaborators with a film count of one
 ok 345 - recordCareerRosterFilm adds first-time collaborators with a film count of one
   ---
-  duration_ms: 2.118019
+  duration_ms: 2.719881
   ...
 # Subtest: recordCareerRosterFilm increments returning collaborators across films
 ok 346 - recordCareerRosterFilm increments returning collaborators across films
   ---
-  duration_ms: 0.271707
+  duration_ms: 0.352927
   ...
 # Subtest: recordCareerRosterFilm does not mutate the original career state
 ok 347 - recordCareerRosterFilm does not mutate the original career state
   ---
-  duration_ms: 0.228903
+  duration_ms: 0.243294
   ...
 # Subtest: release seed catalogues provide stable IDs and requested coverage
 ok 348 - release seed catalogues provide stable IDs and requested coverage
   ---
-  duration_ms: 1.16977
+  duration_ms: 1.517255
   ...
 # Subtest: release planning and strategy scoring are deterministic and immutable
 ok 349 - release planning and strategy scoring are deterministic and immutable
   ---
-  duration_ms: 0.700398
+  duration_ms: 1.316927
   ...
 # Subtest: festivals, critics, and audiences resolve without randomness
 ok 350 - festivals, critics, and audiences resolve without randomness
   ---
-  duration_ms: 0.669702
+  duration_ms: 0.971012
   ...
 # Subtest: a moderate film can receive recognition without sweeping the awards
 ok 351 - a moderate film can receive recognition without sweeping the awards
   ---
-  duration_ms: 10.915361
+  duration_ms: 12.732103
   ...
 # Subtest: an exceptional film can win several awards but still has a ranked slate
 ok 352 - an exceptional film can win several awards but still has a ranked slate
   ---
-  duration_ms: 0.431555
+  duration_ms: 0.473575
   ...
 # Subtest: award wins require an accepted festival
 ok 353 - award wins require an accepted festival
   ---
-  duration_ms: 0.198236
+  duration_ms: 0.180464
   ...
 # Subtest: revenue, awards, evaluation, and studio application form one immutable pipeline
 ok 354 - revenue, awards, evaluation, and studio application form one immutable pipeline
   ---
-  duration_ms: 19.970569
+  duration_ms: 8.421703
   ...
 # Subtest: Scandinavian and European round contains exactly twenty-two unique target films
 ok 355 - Scandinavian and European round contains exactly twenty-two unique target films
   ---
-  duration_ms: 1.578722
+  duration_ms: 5.178625
   ...
 # Subtest: every Scandinavian and European target resolves exactly once with a playable brief
 ok 356 - every Scandinavian and European target resolves exactly once with a playable brief
   ---
-  duration_ms: 1.680038
+  duration_ms: 3.860689
   ...
 # Subtest: the complete requested Scandinavian and European block resolves exactly once
 ok 357 - the complete requested Scandinavian and European block resolves exactly once
   ---
-  duration_ms: 0.905604
+  duration_ms: 0.739043
   ...
 # Subtest: generic translated titles do not absorb unrelated same-year films
 ok 358 - generic translated titles do not absorb unrelated same-year films
   ---
-  duration_ms: 0.352858
+  duration_ms: 0.375693
   ...
 # Subtest: Scandinavian and European round adds 15 cases and produces 330 unique Production Cases
 ok 359 - Scandinavian and European round adds 15 cases and produces 330 unique Production Cases
   ---
-  duration_ms: 0.236824
+  duration_ms: 0.311391
   ...
 # Subtest: calculateScenarioAlignmentScore handles empty target lists
 ok 360 - calculateScenarioAlignmentScore handles empty target lists
   ---
-  duration_ms: 1.775206
+  duration_ms: 5.585223
   ...
 # Subtest: calculateScenarioAlignmentScore handles no selected targets
 ok 361 - calculateScenarioAlignmentScore handles no selected targets
   ---
-  duration_ms: 0.184296
+  duration_ms: 0.244138
   ...
 # Subtest: calculateScenarioAlignmentScore marks loose alignment below 35 percent
 ok 362 - calculateScenarioAlignmentScore marks loose alignment below 35 percent
   ---
-  duration_ms: 0.193329
+  duration_ms: 0.288074
   ...
 # Subtest: calculateScenarioAlignmentScore marks focused alignment from 35 to 69 percent
 ok 363 - calculateScenarioAlignmentScore marks focused alignment from 35 to 69 percent
   ---
-  duration_ms: 0.171536
+  duration_ms: 1.791686
   ...
 # Subtest: calculateScenarioAlignmentScore marks strong alignment at 70 percent and above
 ok 364 - calculateScenarioAlignmentScore marks strong alignment at 70 percent and above
   ---
-  duration_ms: 0.172869
+  duration_ms: 0.44424
   ...
 # Subtest: getScenarioAlignmentSummary describes no scenario target commitment
 ok 365 - getScenarioAlignmentSummary describes no scenario target commitment
   ---
-  duration_ms: 1.228308
+  duration_ms: 1.522216
   ...
 # Subtest: getScenarioAlignmentSummary describes loose scenario alignment
 ok 366 - getScenarioAlignmentSummary describes loose scenario alignment
   ---
-  duration_ms: 0.118147
+  duration_ms: 0.172696
   ...
 # Subtest: getScenarioAlignmentSummary describes focused scenario alignment
 ok 367 - getScenarioAlignmentSummary describes focused scenario alignment
   ---
-  duration_ms: 0.15356
+  duration_ms: 0.161036
   ...
 # Subtest: getScenarioAlignmentSummary describes strong scenario alignment
 ok 368 - getScenarioAlignmentSummary describes strong scenario alignment
   ---
-  duration_ms: 0.134411
+  duration_ms: 0.150066
   ...
 # Subtest: production event seeds cover the required first shoot scenarios
 ok 369 - production event seeds cover the required first shoot scenarios
   ---
-  duration_ms: 5.019369
+  duration_ms: 4.865069
   ...
 # Subtest: schedules group scenes, allocate the project budget, and do not mutate scenes
 ok 370 - schedules group scenes, allocate the project budget, and do not mutate scenes
   ---
-  duration_ms: 0.914488
+  duration_ms: 1.19362
   ...
 # Subtest: difficulty responds to dramatic, technical, location, and cast pressure
 ok 371 - difficulty responds to dramatic, technical, location, and cast pressure
   ---
-  duration_ms: 0.355452
+  duration_ms: 0.470978
   ...
 # Subtest: events are applied immutably and duplicate applications have no second cost
 ok 372 - events are applied immutably and duplicate applications have no second cost
   ---
-  duration_ms: 1.663839
+  duration_ms: 1.313307
   ...
 # Subtest: shoot resolution and evaluation account for event cost, delay, and upside
 ok 373 - shoot resolution and evaluation account for event cost, delay, and upside
   ---
-  duration_ms: 1.947233
+  duration_ms: 1.915099
   ...
 # Subtest: South Korean cinema expansion contains exactly four unique missing films
 ok 374 - South Korean cinema expansion contains exactly four unique missing films
   ---
-  duration_ms: 1.7711
+  duration_ms: 3.146998
   ...
 # Subtest: all four South Korean films are new to the preceding 282-case catalogue
 ok 375 - all four South Korean films are new to the preceding 282-case catalogue
   ---
-  duration_ms: 26.914408
+  duration_ms: 30.429542
   ...
 # Subtest: every South Korean expansion film resolves once and has a playable brief blueprint
 ok 376 - every South Korean expansion film resolves once and has a playable brief blueprint
   ---
-  duration_ms: 16.524087
+  duration_ms: 29.996136
   ...
 # Subtest: the complete requested South Korean block resolves exactly once
 ok 377 - the complete requested South Korean block resolves exactly once
   ---
-  duration_ms: 19.476679
+  duration_ms: 14.692423
   ...
 # Subtest: ambiguous English titles do not match unrelated same-year films
 ok 378 - ambiguous English titles do not match unrelated same-year films
   ---
-  duration_ms: 12.690557
+  duration_ms: 16.355306
   ...
 # Subtest: the merged catalogue contains 286 unique Production Cases
 ok 379 - the merged catalogue contains 286 unique Production Cases
   ---
-  duration_ms: 9.315577
+  duration_ms: 14.485563
   ...
 # Subtest: South and Southeast Asian expansion contains exactly seven unique films
 ok 380 - South and Southeast Asian expansion contains exactly seven unique films
   ---
-  duration_ms: 1.414426
+  duration_ms: 1.885762
   ...
 # Subtest: all seven films are new to the preceding 286-case catalogue
 ok 381 - all seven films are new to the preceding 286-case catalogue
   ---
-  duration_ms: 33.309885
+  duration_ms: 23.848337
   ...
 # Subtest: every expansion film resolves once and has a playable brief blueprint
 ok 382 - every expansion film resolves once and has a playable brief blueprint
   ---
-  duration_ms: 36.849462
+  duration_ms: 26.00369
   ...
 # Subtest: the complete requested seven-film block resolves exactly once
 ok 383 - the complete requested seven-film block resolves exactly once
   ---
-  duration_ms: 8.968468
+  duration_ms: 22.392426
   ...
 # Subtest: generic English titles do not match unrelated same-year films
 ok 384 - generic English titles do not match unrelated same-year films
   ---
-  duration_ms: 10.2439
+  duration_ms: 13.226655
   ...
 # Subtest: the merged catalogue contains 293 unique Production Cases
 ok 385 - the merged catalogue contains 293 unique Production Cases
   ---
-  duration_ms: 7.949679
+  duration_ms: 11.461423
   ...
 # Subtest: studio career pipeline order advances from development through career review only after release
 ok 386 - studio career pipeline order advances from development through career review only after release
   ---
-  duration_ms: 0.998644
+  duration_ms: 1.855679
   ...
 # Subtest: studio career active targets keep post, release, and career review distinct
 ok 387 - studio career active targets keep post, release, and career review distinct
   ---
-  duration_ms: 0.146929
+  duration_ms: 0.28455
   ...
 # Subtest: studio career completed project collapse keeps latest project actionable
 ok 388 - studio career completed project collapse keeps latest project actionable
   ---
-  duration_ms: 0.149083
+  duration_ms: 0.275476
   ...
 # Subtest: studio career project-scoped release control names are unique per project
 ok 389 - studio career project-scoped release control names are unique per project
   ---
-  duration_ms: 0.174271
+  duration_ms: 0.292583
   ...
 # Subtest: studio career application invariants tolerate missing optional project details
 ok 390 - studio career application invariants tolerate missing optional project details
   ---
-  duration_ms: 0.687879
+  duration_ms: 1.582195
   ...
 1..390
 # tests 390
@@ -6696,4 +6696,4 @@ ok 390 - studio career application invariants tolerate missing optional project 
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 1978.199666
+# duration_ms 2391.455029
