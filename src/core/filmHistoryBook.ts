@@ -7,6 +7,7 @@ import { filmHistoryChapterSix } from "./filmHistoryChapterSix.js";
 import { filmHistoryChapterSeven } from "./filmHistoryChapterSeven.js";
 import { filmHistoryChapterEight } from "./filmHistoryChapterEight.js";
 import { filmHistoryChapterNine } from "./filmHistoryChapterNine.js";
+import { filmHistoryChapterTen } from "./filmHistoryChapterTen.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -114,15 +115,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
       filmHistoryChapterSeven,
       filmHistoryChapterEight,
       filmHistoryChapterNine,
-      outline(
-        "silent-beyond-west",
-        10,
-        "Silent cinemas beyond the usual canon",
-        "1910s–1929",
-        "Japan, China, India, Scandinavia and other film cultures develop distinctive performance, exhibition, genre and production traditions while exchanging forms internationally.",
-        ["Compare at least three silent-era film cultures outside Hollywood and central Europe.", "Explain the role of local exhibition practices.", "Recognize uneven archival survival as a historiographic problem."],
-        ["benshi", "studio culture", "mythological", "archival survival", "transnational cinema"],
-      ),
+      filmHistoryChapterTen,
     ],
   },
   {
