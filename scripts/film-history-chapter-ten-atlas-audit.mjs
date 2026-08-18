@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 421;
+const EXPECTED_ATLAS_COUNT = 422;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -25,6 +25,7 @@ const expansionFiles = [
   "chapterTenGrowthOfTheSoilExpansion.ts",
   "chapterTenOrochiExpansion.ts",
   "chapterTenRedHeroineExpansion.ts",
+  "chapterTenHaxanExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -103,9 +104,10 @@ const candidates = [
     title: "Häxan",
     originalTitle: "Häxan",
     year: 1922,
-    aliases: ["Haxan", "Witchcraft Through the Ages"],
+    aliases: ["Haxan", "Heksen", "The Witches", "Witchcraft Through the Ages"],
     role: "major_comparison",
     decisionIfMissing: "P1",
+    expectedScenarioId: "scenario_haxan_1922",
     chapterFunction: "Benjamin Christensen's Scandinavian production makes research, lecture form, staged reenactment, elaborate design/effects, censorship and the ethics of pseudo-documentary authority into a production problem distinct from The Phantom Carriage.",
   },
   {
@@ -159,9 +161,9 @@ const historicalObjects = [
 ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
 const expectedDecisions = {
-  USE_EXISTING: ["A Page of Madness", "A Throw of Dice", "Afgrunden", "Growth of the Soil", "Laborer's Love", "Orochi", "The Red Heroine", "The Phantom Carriage"],
+  USE_EXISTING: ["A Page of Madness", "A Throw of Dice", "Afgrunden", "Growth of the Soil", "Häxan", "Laborer's Love", "Orochi", "The Red Heroine", "The Phantom Carriage"],
   P0: [],
-  P1: ["Häxan"],
+  P1: [],
   P2: ["Crossroads", "El automóvil gris", "Erotikon", "Gösta Berling's Saga", "Ingeborg Holm", "Kaliya Mardan", "Raja Harishchandra", "Shiraz", "Sir Arne's Treasure", "Souls on the Road", "The Burning of the Red Lotus Temple", "The Light of Asia", "The Outlaw and His Wife", "The Romance of the Western Chamber", "The Sentimental Bloke"],
 };
 
