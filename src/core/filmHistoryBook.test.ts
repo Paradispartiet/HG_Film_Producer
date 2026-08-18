@@ -157,14 +157,14 @@ test("Chapter 2 keeps exhibition infrastructure outside fake Production Cases", 
   assert.ok(chapter.historicalObjects.some((item) => /Nickelodeon/i.test(item.label)));
 });
 
-test("only Chapters 10–30 remain explicit outlines after Chapter 9 completion", () => {
-  const completed = filmHistoryBookChapters.filter((chapter) => chapter.number <= 9);
-  assert.equal(completed.length, 9);
+test("only Chapters 11–30 remain explicit outlines after Chapter 10 completion", () => {
+  const completed = filmHistoryBookChapters.filter((chapter) => chapter.number <= 10);
+  assert.equal(completed.length, 10);
   assert.ok(completed.every((chapter) => chapter.status === "full"));
   assert.ok(completed.every((chapter) => chapter.sections.length > 0));
 
-  const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 9);
-  assert.equal(remaining.length, 21);
+  const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 10);
+  assert.equal(remaining.length, 20);
   assert.ok(remaining.every((chapter) => chapter.status === "outline"));
   assert.ok(remaining.every((chapter) => chapter.sections.length === 0));
   assert.ok(remaining.every((chapter) => chapter.summary.length > 40));
