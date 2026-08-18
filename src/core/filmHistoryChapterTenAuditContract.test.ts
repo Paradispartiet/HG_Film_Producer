@@ -19,7 +19,7 @@ const resolved = JSON.parse(readFileSync("docs/film-history-chapter-ten-atlas-re
 };
 const packageJson = readFileSync("package.json", "utf8");
 
-const p0 = ["A Page of Madness", "A Throw of Dice", "Growth of the Soil", "Laborer's Love"];
+const p0 = ["A Throw of Dice", "Growth of the Soil", "Laborer's Love"];
 const p1 = ["Häxan", "Orochi", "The Red Heroine"];
 const p2 = [
   "Crossroads",
@@ -53,13 +53,14 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 10 audit locks the reviewed silent-cinemas Atlas matrix", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 415;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 416;/);
+  assert.match(audit, /expectedScenarioId: "scenario_a_page_of_madness_1926"/);
   assert.match(audit, /number: 10,/);
   assert.match(audit, /title: "Silent cinemas beyond the usual canon"/);
   assert.match(audit, /period: "1910s–1929"/);
-  assert.equal(resolved.atlas.expectedCount, 415);
-  assert.equal(resolved.atlas.actualCount, 415);
-  assert.deepEqual(resolved.byDecision.USE_EXISTING, ["Afgrunden", "The Phantom Carriage"]);
+  assert.equal(resolved.atlas.expectedCount, 416);
+  assert.equal(resolved.atlas.actualCount, 416);
+  assert.deepEqual(resolved.byDecision.USE_EXISTING, ["A Page of Madness", "Afgrunden", "The Phantom Carriage"]);
   assert.deepEqual([...resolved.byDecision.P0].sort(), [...p0].sort());
   assert.deepEqual([...resolved.byDecision.P1].sort(), [...p1].sort());
   assert.deepEqual([...resolved.byDecision.P2].sort(), [...p2].sort());
