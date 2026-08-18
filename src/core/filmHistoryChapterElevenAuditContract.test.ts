@@ -21,8 +21,8 @@ const resolved = JSON.parse(readFileSync("docs/film-history-chapter-eleven-atlas
 };
 const packageJson = readFileSync("package.json", "utf8");
 
-const useExisting = ["M", "City Lights", "The Jazz Singer", "King Kong"];
-const p0 = ["Blackmail", "Applause", "The Neighbor's Wife and Mine"];
+const useExisting = ["M", "City Lights", "The Jazz Singer", "Blackmail", "King Kong"];
+const p0 = ["Applause", "The Neighbor's Wife and Mine"];
 const p1 = ["The Broadway Melody", "Sous les toits de Paris", "Enthusiasm", "The Blue Angel"];
 const p2 = [
   "Lights of New York",
@@ -56,14 +56,15 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 11 audit locks the reviewed sound-transition Atlas matrix", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 423;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 424;/);
   assert.match(audit, /expectedScenarioId: "scenario_the_jazz_singer_1927"/);
+  assert.match(audit, /expectedScenarioId: "scenario_blackmail_1929"/);
   assert.equal(resolved.chapter.number, 11);
   assert.equal(resolved.chapter.id, "sound-transition");
   assert.equal(resolved.chapter.title, "The sound transition");
   assert.equal(resolved.chapter.period, "1927–1934");
-  assert.equal(resolved.atlas.expectedCount, 423);
-  assert.equal(resolved.atlas.actualCount, 423);
+  assert.equal(resolved.atlas.expectedCount, 424);
+  assert.equal(resolved.atlas.actualCount, 424);
   assert.equal(resolved.candidates.length, 26);
   assert.deepEqual(resolved.byDecision.USE_EXISTING, useExisting);
   assert.deepEqual(resolved.byDecision.P0, p0);
@@ -79,7 +80,7 @@ test("Chapter 11 existing anchors resolve to the exact canonical scenario IDs", 
   assert.equal(byTitle.get("City Lights")?.scenarioId, "scenario_city_lights_1931");
   assert.equal(byTitle.get("King Kong")?.scenarioId, "scenario_king_kong_1933");
   assert.equal(byTitle.get("The Jazz Singer")?.scenarioId, "scenario_the_jazz_singer_1927");
-  assert.equal(byTitle.get("Blackmail")?.scenarioId, null);
+  assert.equal(byTitle.get("Blackmail")?.scenarioId, "scenario_blackmail_1929");
 });
 
 test("Chapter 11 keeps sound infrastructure and uneven conversion outside fake Production Cases", () => {
