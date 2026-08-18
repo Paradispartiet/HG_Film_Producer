@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 424;
+const EXPECTED_ATLAS_COUNT = 425;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -28,6 +28,7 @@ const expansionFiles = [
   "chapterTenHaxanExpansion.ts",
   "chapterElevenJazzSingerExpansion.ts",
   "chapterElevenBlackmailExpansion.ts",
+  "chapterElevenApplauseExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -89,6 +90,7 @@ const candidates = [
     aliases: [],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_applause_1929",
     chapterFunction: "Mamoulian's early Paramount talkie anchors mobile-camera ambition, separated microphone recording, post-combination, offscreen cues and sound bridges rather than treating early sound as inherently static.",
   },
   {

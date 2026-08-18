@@ -10,8 +10,8 @@
     "thesis": "Recorded sound reorganized cinema through competing technologies, capital investment, new crew roles, language markets and changing film form; the transition was uneven, and creative filmmakers quickly turned technical constraints into expressive sound-image systems."
   },
   "atlas": {
-    "expectedCount": 424,
-    "actualCount": 424,
+    "expectedCount": 425,
+    "actualCount": 425,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -174,6 +174,14 @@
         "sourceListId": "manual_chapter_eleven_blackmail_expansion_2026"
       },
       {
+        "fileName": "chapterElevenApplauseExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_applause_verified",
+        "sourceListId": "manual_chapter_eleven_applause_expansion_2026"
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -330,11 +338,12 @@
       "aliases": [],
       "role": "anchor_film",
       "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_applause_1929",
       "chapterFunction": "Mamoulian's early Paramount talkie anchors mobile-camera ambition, separated microphone recording, post-combination, offscreen cues and sound bridges rather than treating early sound as inherently static.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_applause_1929",
+      "matches": 1,
+      "origin": "chapterElevenApplauseExpansion.ts"
     },
     {
       "title": "The Neighbor's Wife and Mine",
@@ -652,10 +661,10 @@
       "City Lights",
       "The Jazz Singer",
       "Blackmail",
+      "Applause",
       "King Kong"
     ],
     "P0": [
-      "Applause",
       "The Neighbor's Wife and Mine"
     ],
     "P1": [
@@ -684,7 +693,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Applause",
     "The Neighbor's Wife and Mine",
     "The Broadway Melody",
     "Sous les toits de Paris",
