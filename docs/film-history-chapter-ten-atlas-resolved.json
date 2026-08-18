@@ -10,8 +10,8 @@
     "thesis": "Silent cinema was never one Hollywood-European system: production companies, live narration, genres, colonial and transnational finance, literary adaptation, location practices and archive survival created distinct film cultures whose differences must remain visible rather than being flattened into a generic world-cinema supplement."
   },
   "atlas": {
-    "expectedCount": 418,
-    "actualCount": 418,
+    "expectedCount": 419,
+    "actualCount": 419,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -80,6 +80,11 @@
       },
       {
         "fileName": "chapterTenAThrowOfDiceExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTenGrowthOfTheSoilExpansion.ts",
         "appended": 1,
         "matchedExisting": 0
       },
@@ -203,10 +208,12 @@
       ],
       "role": "anchor_film",
       "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_growth_of_the_soil_1921",
       "chapterFunction": "The Norwegian Hamsun adaptation supplies a distinct national production problem in long-form literary adaptation, landscape/location work, tinting/toning, local exhibition and the tension between prestigious source material and a still-developing domestic film industry.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_growth_of_the_soil_1921",
+      "matches": 1,
+      "origin": "chapterTenGrowthOfTheSoilExpansion.ts"
     },
     {
       "title": "Orochi",
@@ -497,12 +504,11 @@
       "A Page of Madness",
       "Laborer's Love",
       "A Throw of Dice",
+      "Growth of the Soil",
       "Afgrunden",
       "The Phantom Carriage"
     ],
-    "P0": [
-      "Growth of the Soil"
-    ],
+    "P0": [],
     "P1": [
       "Orochi",
       "The Red Heroine",
@@ -604,7 +610,6 @@
     "Modern restoration scores, reconstructed tints and archive assemblies remain distinct from original production elements and are labeled as later presentation/restoration work."
   ],
   "recommendedNewProductionCases": [
-    "Growth of the Soil",
     "Orochi",
     "The Red Heroine",
     "Häxan"
