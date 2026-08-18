@@ -1,0 +1,421 @@
+{
+  "schemaVersion": "diagnostic-1.0",
+  "chapter": {
+    "number": 10,
+    "id": "silent-beyond-west",
+    "title": "Silent cinemas beyond the usual canon",
+    "period": "1910s–1929"
+  },
+  "atlas": {
+    "expectedCount": 415,
+    "actualCount": 415,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "appended": 56,
+        "matchedExisting": 2
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFiveInternationalExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSixHollywoodExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSevenWeimarExpansion.ts",
+        "appended": 2,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterNineSovietMontageExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "appended": 27,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "appended": 20,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "appended": 15,
+        "matchedExisting": 7
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "appended": 23,
+        "matchedExisting": 1
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "appended": 25,
+        "matchedExisting": 3
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "Orochi",
+      "originalTitle": "Orochi",
+      "year": 1925,
+      "aliases": [
+        "Serpent"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "A Page of Madness",
+      "originalTitle": "Kurutta ichipeiji",
+      "year": 1926,
+      "aliases": [
+        "Kurutta ippēji",
+        "Kurutta Ichipeiji"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "Crossroads",
+      "originalTitle": "Jūjiro",
+      "year": 1928,
+      "aliases": [
+        "Jujiro",
+        "Crossways"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "Souls on the Road",
+      "originalTitle": "Rojō no Reikon",
+      "year": 1921,
+      "aliases": [
+        "Rojo no Reikon"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "Laborer's Love",
+      "originalTitle": "Laogong zhi aiqing",
+      "year": 1922,
+      "aliases": [
+        "Labourer's Love",
+        "Romance of a Fruit Peddler"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "The Romance of the Western Chamber",
+      "originalTitle": "Xixiang ji",
+      "year": 1927,
+      "aliases": [
+        "Romance of the Western Chamber"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "The Red Heroine",
+      "originalTitle": "Hongxia",
+      "year": 1929,
+      "aliases": [
+        "Red Heroine"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "The Burning of the Red Lotus Temple",
+      "originalTitle": "Huoshao Hongliansi",
+      "year": 1928,
+      "aliases": [
+        "Burning of the Red Lotus Temple"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "Raja Harishchandra",
+      "originalTitle": "Raja Harishchandra",
+      "year": 1913,
+      "aliases": [],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "Kaliya Mardan",
+      "originalTitle": "Kaliya Mardan",
+      "year": 1919,
+      "aliases": [
+        "Kaliya Mardan (The Childhood of Krishna)"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "The Light of Asia",
+      "originalTitle": "Prem Sanyas",
+      "year": 1925,
+      "aliases": [
+        "Prem Sanyas",
+        "Die Leuchte Asiens"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "Shiraz",
+      "originalTitle": "Shiraz: A Romance of India",
+      "year": 1928,
+      "aliases": [
+        "Shiraz: A Romance of India"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "A Throw of Dice",
+      "originalTitle": "Prapancha Pash",
+      "year": 1929,
+      "aliases": [
+        "Prapancha Pash"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "Afgrunden",
+      "originalTitle": "Afgrunden",
+      "year": 1910,
+      "aliases": [
+        "The Abyss"
+      ],
+      "matches": 1,
+      "scenarioId": "scenario_afgrunden_1910",
+      "origin": "chapterFiveInternationalExpansion.ts"
+    },
+    {
+      "title": "Ingeborg Holm",
+      "originalTitle": "Ingeborg Holm",
+      "year": 1913,
+      "aliases": [],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "The Outlaw and His Wife",
+      "originalTitle": "Berg-Ejvind och hans hustru",
+      "year": 1918,
+      "aliases": [
+        "The Outlaw and His Wife (Berg-Ejvind och hans hustru)"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "Sir Arne's Treasure",
+      "originalTitle": "Herr Arnes pengar",
+      "year": 1919,
+      "aliases": [
+        "Sir Arne's Treasure (Herr Arnes pengar)"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "Erotikon",
+      "originalTitle": "Erotikon",
+      "year": 1920,
+      "aliases": [],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "The Phantom Carriage",
+      "originalTitle": "Körkarlen",
+      "year": 1921,
+      "aliases": [
+        "Korkarlen",
+        "The Phantom Chariot"
+      ],
+      "matches": 1,
+      "scenarioId": "scenario_the_phantom_carriage_1921",
+      "origin": "scandinavianEuropeanExpansion.ts"
+    },
+    {
+      "title": "Häxan",
+      "originalTitle": "Häxan",
+      "year": 1922,
+      "aliases": [
+        "Haxan",
+        "Witchcraft Through the Ages"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "Gösta Berling's Saga",
+      "originalTitle": "Gösta Berlings saga",
+      "year": 1924,
+      "aliases": [
+        "Gosta Berling's Saga",
+        "The Saga of Gosta Berling"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "Growth of the Soil",
+      "originalTitle": "Markens grøde",
+      "year": 1921,
+      "aliases": [
+        "Markens grode"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "The Sentimental Bloke",
+      "originalTitle": "The Sentimental Bloke",
+      "year": 1919,
+      "aliases": [],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    },
+    {
+      "title": "El automóvil gris",
+      "originalTitle": "El automóvil gris",
+      "year": 1919,
+      "aliases": [
+        "The Grey Automobile",
+        "The Gray Automobile",
+        "El automovil gris"
+      ],
+      "matches": 0,
+      "scenarioId": null,
+      "origin": null
+    }
+  ],
+  "existing": [
+    "Afgrunden",
+    "The Phantom Carriage"
+  ],
+  "missing": [
+    "Orochi",
+    "A Page of Madness",
+    "Crossroads",
+    "Souls on the Road",
+    "Laborer's Love",
+    "The Romance of the Western Chamber",
+    "The Red Heroine",
+    "The Burning of the Red Lotus Temple",
+    "Raja Harishchandra",
+    "Kaliya Mardan",
+    "The Light of Asia",
+    "Shiraz",
+    "A Throw of Dice",
+    "Ingeborg Holm",
+    "The Outlaw and His Wife",
+    "Sir Arne's Treasure",
+    "Erotikon",
+    "Häxan",
+    "Gösta Berling's Saga",
+    "Growth of the Soil",
+    "The Sentimental Bloke",
+    "El automóvil gris"
+  ],
+  "ambiguous": []
+}
