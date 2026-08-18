@@ -39,7 +39,7 @@ export const filmHistoryChapterNineMovementThree: readonly FilmHistoryBookSectio
       "Distribution changes the answer. Mobile projectors and workers' clubs brought film to audiences far from metropolitan theatres, while specialist film societies abroad created different interpretive settings. BFI's history of the British Film Society shows Soviet works becoming objects of censorship battles and cinephile debate; Potemkin, Mother and The End of St. Petersburg encountered restrictions precisely because officials feared political effects. Once a film crossed borders, translated intertitles, censorship cuts, musical accompaniment and programme context could alter how it functioned. Reception history therefore belongs beside production history whenever the chapter makes claims about influence or persuasion.",
       "The game safeguard is strict: players never gain points for political violence, falsifying archival evidence or stripping context to maximize persuasion. They may be asked to recognize that a commission has political goals, that censorship can demand changes, or that a mobile exhibition strategy changes audience reach. But the system evaluates historical and production reasoning, not ideological agreement. Propaganda is studied as a relation among institutions, evidence, rhetoric, circulation and power, which is more demanding—and more accurate—than attaching a red 'propaganda' label to a finished film.",
     ],
-    sourceIds: ["ch9_field_bfi", "ch9_film_society_bfi", "ch9_kinopravda_9", "ch9_kinopravda_21", "ch9_kinopravda_23", "ch9_1952_bfi"],
+    sourceIds: ["ch9_field_bfi", "ch9_film_society_bfi", "ch9_kinopravda_1_9", "ch9_kinopravda_21", "ch9_kinopravda_23", "ch9_1952_bfi"],
   },
   {
     id: "ch9_1930_sound_boundary_legacy",
