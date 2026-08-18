@@ -5,7 +5,13 @@ import test from "node:test";
 const audit = readFileSync("scripts/film-history-chapter-ten-atlas-audit.mjs", "utf8");
 const resolved = JSON.parse(readFileSync("docs/film-history-chapter-ten-atlas-resolved.json", "utf8")) as {
   atlas: { expectedCount: number; actualCount: number };
-  byDecision: Record<string, string[]>;
+  byDecision: {
+    USE_EXISTING: string[];
+    P0: string[];
+    P1: string[];
+    P2: string[];
+    EXISTING_REQUIRED: string[];
+  };
   recommendedNewProductionCases: string[];
   historicalObjects: Array<{ label: string; atlasDecision: string }>;
   boundaryNotes: string[];
@@ -57,6 +63,7 @@ test("Chapter 10 audit locks the reviewed silent-cinemas Atlas matrix", () => {
   assert.deepEqual([...resolved.byDecision.P0].sort(), [...p0].sort());
   assert.deepEqual([...resolved.byDecision.P1].sort(), [...p1].sort());
   assert.deepEqual([...resolved.byDecision.P2].sort(), [...p2].sort());
+  assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
   assert.deepEqual([...resolved.recommendedNewProductionCases].sort(), [...p0, ...p1].sort());
 });
 
