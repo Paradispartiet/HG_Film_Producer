@@ -49,6 +49,7 @@ import { draculaFilmHistoryProfile } from "./scenarioFilmStudyStudioGenreDracula
 import { fortySecondStreetFilmHistoryProfile } from "./scenarioFilmStudyStudioGenre42ndStreet";
 import { scarfaceFilmHistoryProfile } from "./scenarioFilmStudyStudioGenreScarface";
 import { itHappenedOneNightFilmHistoryProfile } from "./scenarioFilmStudyStudioGenreItHappenedOneNight";
+import { topHatFilmHistoryProfile } from "./scenarioFilmStudyStudioGenreTopHat";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -124,6 +125,7 @@ const sourceBackedFilmHistoryProfiles = {
   [fortySecondStreetFilmHistoryProfile.scenarioId]: fortySecondStreetFilmHistoryProfile,
   [scarfaceFilmHistoryProfile.scenarioId]: scarfaceFilmHistoryProfile,
   [itHappenedOneNightFilmHistoryProfile.scenarioId]: itHappenedOneNightFilmHistoryProfile,
+  [topHatFilmHistoryProfile.scenarioId]: topHatFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
