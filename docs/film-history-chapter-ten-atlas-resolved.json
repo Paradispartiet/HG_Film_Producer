@@ -10,8 +10,8 @@
     "thesis": "Silent cinema was never one Hollywood-European system: production companies, live narration, genres, colonial and transnational finance, literary adaptation, location practices and archive survival created distinct film cultures whose differences must remain visible rather than being flattened into a generic world-cinema supplement."
   },
   "atlas": {
-    "expectedCount": 419,
-    "actualCount": 419,
+    "expectedCount": 420,
+    "actualCount": 420,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -85,6 +85,11 @@
       },
       {
         "fileName": "chapterTenGrowthOfTheSoilExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTenOrochiExpansion.ts",
         "appended": 1,
         "matchedExisting": 0
       },
@@ -220,14 +225,18 @@
       "originalTitle": "Orochi",
       "year": 1925,
       "aliases": [
-        "Serpent"
+        "Serpent",
+        "The Serpent",
+        "雄呂血"
       ],
       "role": "major_comparison",
       "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_orochi_1925",
       "chapterFunction": "Buntaro Futagawa and star-producer Tsumasaburo Bando add independent star-company economics, chanbara action choreography, print preservation by a performer-producer and the later continuity of benshi presentation.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_orochi_1925",
+      "matches": 1,
+      "origin": "chapterTenOrochiExpansion.ts"
     },
     {
       "title": "The Red Heroine",
@@ -505,12 +514,12 @@
       "Laborer's Love",
       "A Throw of Dice",
       "Growth of the Soil",
+      "Orochi",
       "Afgrunden",
       "The Phantom Carriage"
     ],
     "P0": [],
     "P1": [
-      "Orochi",
       "The Red Heroine",
       "Häxan"
     ],
@@ -610,7 +619,6 @@
     "Modern restoration scores, reconstructed tints and archive assemblies remain distinct from original production elements and are labeled as later presentation/restoration work."
   ],
   "recommendedNewProductionCases": [
-    "Orochi",
     "The Red Heroine",
     "Häxan"
   ],

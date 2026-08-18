@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 419;
+const EXPECTED_ATLAS_COUNT = 420;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -23,6 +23,7 @@ const expansionFiles = [
   "chapterTenLaborersLoveExpansion.ts",
   "chapterTenAThrowOfDiceExpansion.ts",
   "chapterTenGrowthOfTheSoilExpansion.ts",
+  "chapterTenOrochiExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -81,9 +82,10 @@ const candidates = [
     title: "Orochi",
     originalTitle: "Orochi",
     year: 1925,
-    aliases: ["Serpent"],
+    aliases: ["Serpent", "The Serpent", "雄呂血"],
     role: "major_comparison",
     decisionIfMissing: "P1",
+    expectedScenarioId: "scenario_orochi_1925",
     chapterFunction: "Buntaro Futagawa and star-producer Tsumasaburo Bando add independent star-company economics, chanbara action choreography, print preservation by a performer-producer and the later continuity of benshi presentation.",
   },
   {
@@ -155,9 +157,9 @@ const historicalObjects = [
 ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
 const expectedDecisions = {
-  USE_EXISTING: ["A Page of Madness", "A Throw of Dice", "Afgrunden", "Growth of the Soil", "Laborer's Love", "The Phantom Carriage"],
+  USE_EXISTING: ["A Page of Madness", "A Throw of Dice", "Afgrunden", "Growth of the Soil", "Laborer's Love", "Orochi", "The Phantom Carriage"],
   P0: [],
-  P1: ["Häxan", "Orochi", "The Red Heroine"],
+  P1: ["Häxan", "The Red Heroine"],
   P2: ["Crossroads", "El automóvil gris", "Erotikon", "Gösta Berling's Saga", "Ingeborg Holm", "Kaliya Mardan", "Raja Harishchandra", "Shiraz", "Sir Arne's Treasure", "Souls on the Road", "The Burning of the Red Lotus Temple", "The Light of Asia", "The Outlaw and His Wife", "The Romance of the Western Chamber", "The Sentimental Bloke"],
 };
 
