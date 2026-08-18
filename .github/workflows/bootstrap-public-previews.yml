@@ -103,3 +103,16 @@ jobs:
             fi
             echo "Preview available: ${url}"
           done
+
+      - name: Publish bootstrap success marker
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.REPO_ADMIN_TOKEN }}
+        run: |
+          set -euo pipefail
+          status="{\"status\":\"success\",\"run_id\":\"${GITHUB_RUN_ID}\",\"source_sha\":\"${GITHUB_SHA}\"}"
+          encoded="$(printf '%s\n' "$status" | base64 -w0)"
+          gh api --method PUT \
+            "repos/Paradispartiet/HG_Film_Producer-preview/contents/.bootstrap/status-${GITHUB_RUN_ID}.json" \
+            -f message="Record public preview bootstrap ${GITHUB_RUN_ID}" \
+            -f content="$encoded" >/dev/null
