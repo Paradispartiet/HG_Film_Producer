@@ -6,6 +6,7 @@ import { filmHistoryChapterFive } from "./filmHistoryChapterFive.js";
 import { filmHistoryChapterSix } from "./filmHistoryChapterSix.js";
 import { filmHistoryChapterSeven } from "./filmHistoryChapterSeven.js";
 import { filmHistoryChapterEight } from "./filmHistoryChapterEight.js";
+import { filmHistoryChapterNine } from "./filmHistoryChapterNine.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -112,15 +113,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
       filmHistoryChapterSix,
       filmHistoryChapterSeven,
       filmHistoryChapterEight,
-      outline(
-        "soviet-montage",
-        9,
-        "Revolution and Soviet Montage",
-        "1917–1930",
-        "Kuleshov, Eisenstein, Vertov, Pudovkin and others make editing a site of political theory, perception and formal experiment.",
-        ["Compare major montage theories.", "Analyze editing as argument rather than continuity alone.", "Place Soviet production inside revolutionary institutions."],
-        ["montage", "Kuleshov effect", "collision", "kino-eye", "constructivism"],
-      ),
+      filmHistoryChapterNine,
       outline(
         "silent-beyond-west",
         10,
