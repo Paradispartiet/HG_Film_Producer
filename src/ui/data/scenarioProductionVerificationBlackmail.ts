@@ -11,7 +11,7 @@ export const blackmailProductionCaseVerification = {
       publisher: "British Film Institute",
       url: "https://www.bfi.org.uk/film/bc5f7958-d424-517f-b707-791d7bc8ed55/blackmail",
       sourceKind: "film_institute",
-      supports: ["overall", "screenplay", "directing", "performance", "editing", "sound"],
+      supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
       note: "BFI identifies the film as made in both silent and sound versions; credits Hitchcock, John Maxwell and the principal writers/cast; lists the sound version at 82 minutes; describes it as Britain's first talkie; and records Joan Barry as the voice heard for Anny Ondra's heroine in the sound version."
     },
     {
@@ -19,7 +19,7 @@ export const blackmailProductionCaseVerification = {
       publisher: "British Film Institute National Archive",
       url: "https://www.bfi.org.uk/features/object-week-alfred-hitchcock-sound-test-blackmail",
       sourceKind: "archive_feature",
-      supports: ["overall", "performance", "sound"],
+      supports: ["overall", "sound"],
       note: "BFI National Archive documents the 1929 sound test, Elstree experimentation, British International Pictures provenance and the fact that Ondra did not provide Alice's audible English dialogue in the sound version."
     },
     {
@@ -27,7 +27,7 @@ export const blackmailProductionCaseVerification = {
       publisher: "British Film Institute",
       url: "https://www.bfi.org.uk/lists/10-great-early-sound-films",
       sourceKind: "film_institute",
-      supports: ["overall", "editing", "sound", "performance"],
+      supports: ["overall", "editing", "sound"],
       note: "BFI compares the silent and sound versions, emphasizes their formal differences, discusses the psychologically expressive repeated 'knife' cue and describes Joan Barry's live off-camera dialogue while Ondra mimed the lines."
     },
     {
@@ -35,7 +35,7 @@ export const blackmailProductionCaseVerification = {
       publisher: "British Film Institute",
       url: "https://www.bfi.org.uk/bfi-distribution/bfi-international-distribution/touring-programmes/hitchcock-9",
       sourceKind: "film_institute",
-      supports: ["overall", "camera_format", "editing"],
+      supports: ["overall", "editing"],
       note: "BFI treats silent Blackmail as a distinct 75-minute late-silent film and describes the project as commissioned across silent and part-talkie/sound conditions, supporting explicit version separation."
     },
     {
@@ -43,7 +43,7 @@ export const blackmailProductionCaseVerification = {
       publisher: "British Film Institute",
       url: "https://www.bfi.org.uk/features/set-alfred-hitchcock",
       sourceKind: "archive_feature",
-      supports: ["overall", "cinematography", "effects_animation", "sound"],
+      supports: ["overall", "cinematography", "sound"],
       note: "BFI documents the production beginning as a silent in spring 1929, the later sound conversion, Joan Barry's off-camera speaking solution, cameraman Jack Cox at the British Museum and special-effects reconstruction because interior museum filming permission was unavailable."
     },
     {
