@@ -44,6 +44,7 @@ import { broadwayMelodyFilmHistoryProfile } from "./scenarioFilmStudySoundTransi
 import { sousLesToitsFilmHistoryProfile } from "./scenarioFilmStudySoundTransitionSousLesToits";
 import { enthusiasmFilmHistoryProfile } from "./scenarioFilmStudySoundTransitionEnthusiasm";
 import { blueAngelFilmHistoryProfile } from "./scenarioFilmStudySoundTransitionBlueAngel";
+import { publicEnemyFilmHistoryProfile } from "./scenarioFilmStudyStudioGenrePublicEnemy";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -114,6 +115,7 @@ const sourceBackedFilmHistoryProfiles = {
   [sousLesToitsFilmHistoryProfile.scenarioId]: sousLesToitsFilmHistoryProfile,
   [enthusiasmFilmHistoryProfile.scenarioId]: enthusiasmFilmHistoryProfile,
   [blueAngelFilmHistoryProfile.scenarioId]: blueAngelFilmHistoryProfile,
+  [publicEnemyFilmHistoryProfile.scenarioId]: publicEnemyFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
