@@ -98,6 +98,7 @@ test("Chapter 10 audit is permanent in the v0.1 verification chain", () => {
   assert.equal(scripts["audit:film-history-ch10"], "node scripts/film-history-chapter-ten-atlas-audit.mjs");
 
   const verify = scripts["verify:v0.1"];
+  assert.ok(verify, "verify:v0.1 must remain defined");
   const chapterNine = verify.indexOf("npm run audit:film-history-ch9");
   const chapterTen = verify.indexOf("npm run audit:film-history-ch10");
   const typecheck = verify.indexOf("npm run typecheck");
