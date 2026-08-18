@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 425;
+const EXPECTED_ATLAS_COUNT = 426;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -29,6 +29,7 @@ const expansionFiles = [
   "chapterElevenJazzSingerExpansion.ts",
   "chapterElevenBlackmailExpansion.ts",
   "chapterElevenApplauseExpansion.ts",
+  "chapterElevenNeighborsWifeExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -100,6 +101,7 @@ const candidates = [
     aliases: ["Madamu to Nyobo", "Madame and Wife", "マダムと女房"],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_the_neighbors_wife_and_mine_1931",
     chapterFunction: "Gosho and Shochiku Kamata provide the essential Japanese sound-transition case: domestic sound recording, 24fps-era workflow, popular music/noise, everyday performance and an industry still sharing space with benshi-era silent practice.",
   },
   {

@@ -21,7 +21,7 @@ export const chapterElevenNeighborsWifeExpansionDefinitions = [
       camera: ["mizutani_three_camera_sync_coverage", "movement_with_simultaneous_recording", "kamata_space_and_continuity"],
       editing: ["continuous_sound_across_camera_changes", "multi_camera_sync_selection", "original_talkie_version_provenance"],
       sound: ["tsuchihashi_shochiku_phone_sync", "radio_jazz_clock_cat_everyday_sound", "dialogue_music_noise_balance"],
-      themes: ["film_history", "sound_transition", "sho­chiku_kamata", "tsuchihashi_system", "japanese_talkie", "three_camera_sync", "everyday_sound", "benshi_transition"],
+      themes: ["film_history", "sound_transition", "shochiku_kamata", "tsuchihashi_system", "japanese_talkie", "three_camera_sync", "everyday_sound", "benshi_transition"],
     },
     learningGoals: [
       "Model The Neighbor's Wife and Mine as a successful Japanese full-talkie built around synchronous recording rather than as a claim that Japanese cinema instantly abandoned silence in 1931.",
