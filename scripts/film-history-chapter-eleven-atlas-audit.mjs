@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 422;
+const EXPECTED_ATLAS_COUNT = 423;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -26,6 +26,7 @@ const expansionFiles = [
   "chapterTenOrochiExpansion.ts",
   "chapterTenRedHeroineExpansion.ts",
   "chapterTenHaxanExpansion.ts",
+  "chapterElevenJazzSingerExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -67,6 +68,7 @@ const candidates = [
     aliases: [],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_the_jazz_singer_1927",
     chapterFunction: "Warner Bros.' Vitaphone part-talkie makes sound-on-disc synchronization, theatre wiring, music-and-dialogue bursts, industrial adoption and blackface/Jewish-performance ethics unavoidable production questions.",
   },
   {
