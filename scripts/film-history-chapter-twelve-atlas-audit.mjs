@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 436;
+const EXPECTED_ATLAS_COUNT = 437;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -40,6 +40,7 @@ const expansionFiles = [
   "chapterTwelveScarfaceExpansion.ts",
   "chapterTwelveItHappenedOneNightExpansion.ts",
   "chapterTwelveTopHatExpansion.ts",
+  "chapterTwelveGoneWithTheWindExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -71,7 +72,7 @@ const candidates = [
   { title: "Scarface", originalTitle: "Scarface", year: 1932, aliases: ["Scarface: The Shame of the Nation", "Scarface, The Shame of a Nation", "The Menace", "The Scar"], role: "major_comparison", decisionIfMissing: "P1", expectedScenarioId: "scenario_scarface_1932", chapterFunction: "Howard Hawks/Howard Hughes production sharpens the relation among gangster-cycle competition, censorship negotiation, violence, star image and release delay." },
   { title: "It Happened One Night", originalTitle: "It Happened One Night", year: 1934, aliases: ["Night Bus"], role: "major_comparison", decisionIfMissing: "P1", expectedScenarioId: "scenario_it_happened_one_night_1934", chapterFunction: "Columbia's screwball breakthrough tests how a smaller studio could organize stars, location work, dialogue rhythm and genre formula into prestige success." },
   { title: "Top Hat", originalTitle: "Top Hat", year: 1935, aliases: [], role: "major_comparison", decisionIfMissing: "P1", expectedScenarioId: "scenario_top_hat_1935", chapterFunction: "RKO's Astaire-Rogers musical provides a contrasting musical system built around full-body dance, art-deco space, song, rehearsal, camera duration and star pairing." },
-  { title: "Gone with the Wind", originalTitle: "Gone with the Wind", year: 1939, aliases: [], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "Selznick's prestige epic exposes producer-centered package production, Technicolor, multiple directors, large-scale design and effects while requiring explicit critique of Lost Cause mythology and racist representation." },
+  { title: "Gone with the Wind", originalTitle: "Gone with the Wind", year: 1939, aliases: [], role: "major_comparison", decisionIfMissing: "P1", expectedScenarioId: "scenario_gone_with_the_wind_1939", chapterFunction: "Selznick's prestige epic exposes producer-centered package production, Technicolor, multiple directors, large-scale design and effects while requiring explicit critique of Lost Cause mythology and racist representation." },
 
   { title: "Duck Soup", originalTitle: "Duck Soup", year: 1933, aliases: [], role: "comparative_film", decisionIfMissing: "P2", chapterFunction: "Paramount/Marx comedy broadens studio comedy, dialogue, music and anarchic performance without duplicating the core studio-system cases." },
   { title: "Bride of Frankenstein", originalTitle: "Bride of Frankenstein", year: 1935, aliases: [], role: "comparative_film", decisionIfMissing: "P2", chapterFunction: "Universal's sequel shows genre-cycle refinement, returning departments and house style after Frankenstein." },
