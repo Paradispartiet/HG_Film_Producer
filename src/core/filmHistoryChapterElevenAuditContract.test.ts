@@ -21,9 +21,9 @@ const resolved = JSON.parse(readFileSync("docs/film-history-chapter-eleven-atlas
 };
 const packageJson = readFileSync("package.json", "utf8");
 
-const useExisting = ["M", "City Lights", "The Jazz Singer", "Blackmail", "Applause", "The Neighbor's Wife and Mine", "The Broadway Melody", "King Kong"];
+const useExisting = ["M", "City Lights", "The Jazz Singer", "Blackmail", "Applause", "The Neighbor's Wife and Mine", "The Broadway Melody", "Sous les toits de Paris", "King Kong"];
 const p0: string[] = [];
-const p1 = ["Sous les toits de Paris", "Enthusiasm", "The Blue Angel"];
+const p1 = ["Enthusiasm", "The Blue Angel"];
 const p2 = [
   "Lights of New York",
   "Hallelujah",
@@ -56,18 +56,19 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 11 audit locks the reviewed sound-transition Atlas matrix", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 427;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 428;/);
   assert.match(audit, /expectedScenarioId: "scenario_the_jazz_singer_1927"/);
   assert.match(audit, /expectedScenarioId: "scenario_blackmail_1929"/);
   assert.match(audit, /expectedScenarioId: "scenario_applause_1929"/);
   assert.match(audit, /expectedScenarioId: "scenario_the_neighbors_wife_and_mine_1931"/);
   assert.match(audit, /expectedScenarioId: "scenario_the_broadway_melody_1929"/);
+  assert.match(audit, /expectedScenarioId: "scenario_sous_les_toits_de_paris_1930"/);
   assert.equal(resolved.chapter.number, 11);
   assert.equal(resolved.chapter.id, "sound-transition");
   assert.equal(resolved.chapter.title, "The sound transition");
   assert.equal(resolved.chapter.period, "1927–1934");
-  assert.equal(resolved.atlas.expectedCount, 427);
-  assert.equal(resolved.atlas.actualCount, 427);
+  assert.equal(resolved.atlas.expectedCount, 428);
+  assert.equal(resolved.atlas.actualCount, 428);
   assert.equal(resolved.candidates.length, 26);
   assert.deepEqual(resolved.byDecision.USE_EXISTING, useExisting);
   assert.deepEqual(resolved.byDecision.P0, p0);
@@ -87,6 +88,7 @@ test("Chapter 11 existing anchors resolve to the exact canonical scenario IDs", 
   assert.equal(byTitle.get("Applause")?.scenarioId, "scenario_applause_1929");
   assert.equal(byTitle.get("The Neighbor's Wife and Mine")?.scenarioId, "scenario_the_neighbors_wife_and_mine_1931");
   assert.equal(byTitle.get("The Broadway Melody")?.scenarioId, "scenario_the_broadway_melody_1929");
+  assert.equal(byTitle.get("Sous les toits de Paris")?.scenarioId, "scenario_sous_les_toits_de_paris_1930");
 });
 
 test("Chapter 11 keeps sound infrastructure and uneven conversion outside fake Production Cases", () => {
