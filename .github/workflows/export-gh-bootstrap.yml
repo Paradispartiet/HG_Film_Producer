@@ -1,0 +1,32 @@
+name: Export GitHub CLI bootstrap
+
+on:
+  push:
+    branches:
+      - chore/gh-bootstrap-export
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export-gh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Capture GitHub CLI
+        shell: bash
+        run: |
+          set -euo pipefail
+          command -v gh
+          gh --version
+          mkdir -p artifact
+          cp "$(command -v gh)" artifact/gh
+          chmod 0755 artifact/gh
+          sha256sum artifact/gh > artifact/gh.sha256
+      - name: Upload GitHub CLI artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: gh-linux-amd64-bootstrap
+          path: artifact
+          if-no-files-found: error
+          retention-days: 1
