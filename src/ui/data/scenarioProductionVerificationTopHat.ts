@@ -19,7 +19,7 @@ export const topHatProductionCaseVerification = {
       publisher: "Academy of Motion Picture Arts and Sciences",
       url: "https://www.oscars.org/oscars/ceremonies/1936",
       sourceKind: "film_institute",
-      supports: ["overall", "music"],
+      supports: ["overall"],
       note: "The Academy records Top Hat nominations for Outstanding Production, Art Direction, Dance Direction and Cheek to Cheek for Music (Song), keeping awards as later reception evidence."
     },
     {
