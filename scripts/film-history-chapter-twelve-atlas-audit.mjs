@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 430;
+const EXPECTED_ATLAS_COUNT = 431;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -34,6 +34,7 @@ const expansionFiles = [
   "chapterElevenSousLesToitsExpansion.ts",
   "chapterElevenEnthusiasmExpansion.ts",
   "chapterElevenBlueAngelExpansion.ts",
+  "chapterTwelvePublicEnemyExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -57,7 +58,7 @@ const candidates = [
   { title: "Citizen Kane", originalTitle: "Citizen Kane", year: 1941, aliases: [], role: "anchor_film", decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_citizen_kane_1941", chapterFunction: "RKO/Mercury production reveals how unusual contractual autonomy can work inside studio infrastructure across screenplay, deep focus, sets, optical work, editing, overlapping dialogue and score." },
   { title: "Casablanca", originalTitle: "Casablanca", year: 1942, aliases: [], role: "anchor_film", decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_casablanca_1942", chapterFunction: "Warner Bros. wartime production anchors collaborative studio authorship, continuing script revision, lot construction, multinational casting, continuity departments, music and topical release." },
 
-  { title: "The Public Enemy", originalTitle: "The Public Enemy", year: 1931, aliases: [], role: "missing_core_case", decisionIfMissing: "P0", chapterFunction: "Warner gangster production is the clearest missing case for genre cycles, star voice/persona, urban violence, studio economy and the pre-Code/Code boundary." },
+  { title: "The Public Enemy", originalTitle: "The Public Enemy", year: 1931, aliases: [], role: "missing_core_case", decisionIfMissing: "P0", expectedScenarioId: "scenario_the_public_enemy_1931", chapterFunction: "Warner gangster production is the clearest missing case for genre cycles, star voice/persona, urban violence, studio economy and the pre-Code/Code boundary." },
   { title: "Dracula", originalTitle: "Dracula", year: 1931, aliases: [], role: "missing_core_case", decisionIfMissing: "P0", chapterFunction: "Universal horror and the English/Spanish parallel-production history make studio house style, night-shift versioning, performance, sets, sound and genre branding concrete." },
   { title: "42nd Street", originalTitle: "42nd Street", year: 1933, aliases: [], role: "missing_core_case", decisionIfMissing: "P0", chapterFunction: "Warner's backstage musical and Busby Berkeley production system expose choreography for camera, studio scheduling, song recording, massed bodies, editing and Depression-era genre economics." },
 

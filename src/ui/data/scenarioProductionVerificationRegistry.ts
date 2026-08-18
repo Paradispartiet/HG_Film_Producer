@@ -67,6 +67,7 @@ import { broadwayMelodyProductionCaseVerification } from "./scenarioProductionVe
 import { sousLesToitsProductionCaseVerification } from "./scenarioProductionVerificationSousLesToits";
 import { enthusiasmProductionCaseVerification } from "./scenarioProductionVerificationEnthusiasm";
 import { blueAngelProductionCaseVerification } from "./scenarioProductionVerificationBlueAngel";
+import { publicEnemyProductionCaseVerification } from "./scenarioProductionVerificationPublicEnemy";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -251,6 +252,7 @@ const additionalVerificationRecords = [
   sousLesToitsProductionCaseVerification,
   enthusiasmProductionCaseVerification,
   blueAngelProductionCaseVerification,
+  publicEnemyProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
