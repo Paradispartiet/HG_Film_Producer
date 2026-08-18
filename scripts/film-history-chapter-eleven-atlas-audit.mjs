@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 428;
+const EXPECTED_ATLAS_COUNT = 429;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -32,6 +32,7 @@ const expansionFiles = [
   "chapterElevenNeighborsWifeExpansion.ts",
   "chapterElevenBroadwayMelodyExpansion.ts",
   "chapterElevenSousLesToitsExpansion.ts",
+  "chapterElevenEnthusiasmExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -133,6 +134,7 @@ const candidates = [
     aliases: ["Enthusiasm: Symphony of the Donbas", "Symphony of the Donbas", "Entuziazm"],
     role: "major_comparison",
     decisionIfMissing: "P1",
+    expectedScenarioId: "scenario_enthusiasm_1930",
     chapterFunction: "Vertov's Soviet sound experiment turns industrial and location recording, non-synchronization, voice/machinery montage and political documentary construction into a distinct early-sound workflow.",
   },
   {
