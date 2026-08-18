@@ -10,8 +10,8 @@
     "thesis": "Silent cinema was never one Hollywood-European system: production companies, live narration, genres, colonial and transnational finance, literary adaptation, location practices and archive survival created distinct film cultures whose differences must remain visible rather than being flattened into a generic world-cinema supplement."
   },
   "atlas": {
-    "expectedCount": 415,
-    "actualCount": 415,
+    "expectedCount": 416,
+    "actualCount": 416,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -66,6 +66,11 @@
       {
         "fileName": "chapterNineSovietMontageExpansion.ts",
         "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTenSilentCinemasExpansion.ts",
+        "appended": 1,
         "matchedExisting": 0
       },
       {
@@ -136,10 +141,12 @@
       ],
       "role": "anchor_film",
       "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_a_page_of_madness_1926",
       "chapterFunction": "Kinugasa and the New Perceptions circle provide the chapter's essential Japanese avant-garde anchor: independent production, subjective modernism, rediscovery after loss and exhibition whose original intelligibility depended partly on benshi performance rather than intertitles alone.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_a_page_of_madness_1926",
+      "matches": 1,
+      "origin": "chapterTenSilentCinemasExpansion.ts"
     },
     {
       "title": "Laborer's Love",
@@ -473,11 +480,11 @@
   ],
   "byDecision": {
     "USE_EXISTING": [
+      "A Page of Madness",
       "Afgrunden",
       "The Phantom Carriage"
     ],
     "P0": [
-      "A Page of Madness",
       "Laborer's Love",
       "A Throw of Dice",
       "Growth of the Soil"
@@ -583,7 +590,6 @@
     "Modern restoration scores, reconstructed tints and archive assemblies remain distinct from original production elements and are labeled as later presentation/restoration work."
   ],
   "recommendedNewProductionCases": [
-    "A Page of Madness",
     "Laborer's Love",
     "A Throw of Dice",
     "Growth of the Soil",

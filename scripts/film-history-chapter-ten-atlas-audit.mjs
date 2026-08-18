@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 415;
+const EXPECTED_ATLAS_COUNT = 416;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -19,6 +19,7 @@ const expansionFiles = [
   "chapterSevenWeimarExpansion.ts",
   "chapterEightFrenchAvantGardeExpansion.ts",
   "chapterNineSovietMontageExpansion.ts",
+  "chapterTenSilentCinemasExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -40,6 +41,7 @@ const candidates = [
     aliases: ["Kurutta ippēji", "Kurutta Ichipeiji"],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_a_page_of_madness_1926",
     chapterFunction: "Kinugasa and the New Perceptions circle provide the chapter's essential Japanese avant-garde anchor: independent production, subjective modernism, rediscovery after loss and exhibition whose original intelligibility depended partly on benshi performance rather than intertitles alone.",
   },
   {
@@ -147,8 +149,8 @@ const historicalObjects = [
 ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
 const expectedDecisions = {
-  USE_EXISTING: ["Afgrunden", "The Phantom Carriage"],
-  P0: ["A Page of Madness", "A Throw of Dice", "Growth of the Soil", "Laborer's Love"],
+  USE_EXISTING: ["A Page of Madness", "Afgrunden", "The Phantom Carriage"],
+  P0: ["A Throw of Dice", "Growth of the Soil", "Laborer's Love"],
   P1: ["Häxan", "Orochi", "The Red Heroine"],
   P2: ["Crossroads", "El automóvil gris", "Erotikon", "Gösta Berling's Saga", "Ingeborg Holm", "Kaliya Mardan", "Raja Harishchandra", "Shiraz", "Sir Arne's Treasure", "Souls on the Road", "The Burning of the Red Lotus Temple", "The Light of Asia", "The Outlaw and His Wife", "The Romance of the Western Chamber", "The Sentimental Bloke"],
 };
