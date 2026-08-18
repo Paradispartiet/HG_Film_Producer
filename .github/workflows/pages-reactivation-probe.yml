@@ -1,0 +1,36 @@
+name: Pages reactivation probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/pages-reactivation-probe.yml
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure Pages
+        id: configure
+        continue-on-error: true
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Record result
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OUTCOME: ${{ steps.configure.outcome }}
+        run: |
+          set -euo pipefail
+          printf 'configure=%s\nrun_id=%s\n' "$OUTCOME" "$GITHUB_RUN_ID" > /tmp/status
+          encoded="$(base64 -w0 /tmp/status)"
+          gh api --method PUT "repos/${GITHUB_REPOSITORY}/contents/.pages-reactivation-probe.txt" \
+            -f message="Record Pages reactivation probe ${GITHUB_RUN_ID}" \
+            -f content="$encoded" -f branch=main >/dev/null
