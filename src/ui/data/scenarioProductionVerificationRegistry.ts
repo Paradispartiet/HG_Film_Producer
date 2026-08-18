@@ -70,6 +70,7 @@ import { blueAngelProductionCaseVerification } from "./scenarioProductionVerific
 import { publicEnemyProductionCaseVerification } from "./scenarioProductionVerificationPublicEnemy";
 import { draculaProductionCaseVerification } from "./scenarioProductionVerificationDracula";
 import { fortySecondStreetProductionCaseVerification } from "./scenarioProductionVerification42ndStreet";
+import { scarfaceProductionCaseVerification } from "./scenarioProductionVerificationScarface";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -257,6 +258,7 @@ const additionalVerificationRecords = [
   publicEnemyProductionCaseVerification,
   draculaProductionCaseVerification,
   fortySecondStreetProductionCaseVerification,
+  scarfaceProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

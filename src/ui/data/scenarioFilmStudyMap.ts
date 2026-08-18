@@ -47,6 +47,7 @@ import { blueAngelFilmHistoryProfile } from "./scenarioFilmStudySoundTransitionB
 import { publicEnemyFilmHistoryProfile } from "./scenarioFilmStudyStudioGenrePublicEnemy";
 import { draculaFilmHistoryProfile } from "./scenarioFilmStudyStudioGenreDracula";
 import { fortySecondStreetFilmHistoryProfile } from "./scenarioFilmStudyStudioGenre42ndStreet";
+import { scarfaceFilmHistoryProfile } from "./scenarioFilmStudyStudioGenreScarface";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -120,6 +121,7 @@ const sourceBackedFilmHistoryProfiles = {
   [publicEnemyFilmHistoryProfile.scenarioId]: publicEnemyFilmHistoryProfile,
   [draculaFilmHistoryProfile.scenarioId]: draculaFilmHistoryProfile,
   [fortySecondStreetFilmHistoryProfile.scenarioId]: fortySecondStreetFilmHistoryProfile,
+  [scarfaceFilmHistoryProfile.scenarioId]: scarfaceFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
