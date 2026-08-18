@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 429;
+const EXPECTED_ATLAS_COUNT = 430;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -33,6 +33,7 @@ const expansionFiles = [
   "chapterElevenBroadwayMelodyExpansion.ts",
   "chapterElevenSousLesToitsExpansion.ts",
   "chapterElevenEnthusiasmExpansion.ts",
+  "chapterElevenBlueAngelExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -144,6 +145,7 @@ const candidates = [
     aliases: ["Der blaue Engel"],
     role: "major_comparison",
     decisionIfMissing: "P1",
+    expectedScenarioId: "scenario_the_blue_angel_1930",
     chapterFunction: "UFA, Erich Pommer, Tobis-Klangfilm and German/English version production make language markets, studio recording, star performance and version control into a distinct sound-transition problem.",
   },
   { title: "Lights of New York", originalTitle: "Lights of New York", year: 1928, aliases: [], role: "comparative_film", decisionIfMissing: "P2", chapterFunction: "The first all-talking feature broadens Warner/Vitaphone transition history beyond the part-talkie Jazz Singer without requiring a second closely overlapping disc-sound case." },
