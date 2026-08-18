@@ -50,6 +50,7 @@ import { fortySecondStreetFilmHistoryProfile } from "./scenarioFilmStudyStudioGe
 import { scarfaceFilmHistoryProfile } from "./scenarioFilmStudyStudioGenreScarface";
 import { itHappenedOneNightFilmHistoryProfile } from "./scenarioFilmStudyStudioGenreItHappenedOneNight";
 import { topHatFilmHistoryProfile } from "./scenarioFilmStudyStudioGenreTopHat";
+import { goneWithTheWindFilmHistoryProfile } from "./scenarioFilmStudyStudioGenreGoneWithTheWind";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -126,6 +127,7 @@ const sourceBackedFilmHistoryProfiles = {
   [scarfaceFilmHistoryProfile.scenarioId]: scarfaceFilmHistoryProfile,
   [itHappenedOneNightFilmHistoryProfile.scenarioId]: itHappenedOneNightFilmHistoryProfile,
   [topHatFilmHistoryProfile.scenarioId]: topHatFilmHistoryProfile,
+  [goneWithTheWindFilmHistoryProfile.scenarioId]: goneWithTheWindFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
