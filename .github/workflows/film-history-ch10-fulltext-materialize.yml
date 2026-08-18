@@ -1,0 +1,54 @@
+name: Materialize Film History Chapter 10 full text
+
+on:
+  push:
+    branches:
+      - agent/ch10-silent-beyond-west-fulltext
+    paths:
+      - .github/workflows/film-history-ch10-fulltext-materialize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch10-silent-beyond-west-fulltext
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Materialize Chapter 10 book cutover
+        run: python3 scripts/materialize-film-history-ch10-fulltext.py
+      - name: Install dependencies
+        run: npm ci
+      - name: Full v0.1 verification
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run verify:v0.1 2>&1 | tee verify.log
+      - name: Upload failed verification diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: film-history-ch10-fulltext-verify-diagnostics
+          path: verify.log
+          if-no-files-found: ignore
+      - name: Commit clean permanent result
+        if: success()
+        shell: bash
+        run: |
+          rm -f verify.log
+          git rm .github/workflows/film-history-ch10-fulltext-materialize.yml scripts/materialize-film-history-ch10-fulltext.py
+          git add src/core/filmHistoryBook.ts src/core/filmHistoryBook.test.ts src/core/filmHistoryChapterTen.ts src/core/filmHistoryChapterTen.test.ts src/core/filmHistoryChapterTenMovementOne.ts src/core/filmHistoryChapterTenMovementTwo.ts src/core/filmHistoryChapterTenMovementThree.ts
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Materialize Film History Chapter 10 full text"
+          git push origin HEAD:agent/ch10-silent-beyond-west-fulltext
