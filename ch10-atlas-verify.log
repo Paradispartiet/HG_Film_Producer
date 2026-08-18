@@ -1,0 +1,4392 @@
+
+> hg-film-producer@0.1.0 verify:v0.1
+> npm run preflight:v0.1 && npm run audit:production-cases && npm run audit:film-history-ch1 && npm run audit:film-history-ch2 && npm run audit:film-history-ch3 && npm run audit:film-history-ch4 && npm run audit:film-history-ch5 && npm run audit:film-history-ch6 && npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run audit:film-history-ch9 && npm run audit:film-history-ch10 && npm run typecheck && npm test && npm run build:ui
+
+
+> hg-film-producer@0.1.0 preflight:v0.1
+> node scripts/preflight-v0.1.mjs
+
+v0.1 preflight source/documentation checks passed.
+
+> hg-film-producer@0.1.0 audit:production-cases
+> node scripts/production-case-rest-audit.mjs
+
+HG_FILM_PRODUCER_REST_AUDIT_START
+{
+  "schemaVersion": "1.2",
+  "auditDate": "2026-08-15",
+  "catalogConstruction": {
+    "expectedPlayableScenarios": 415,
+    "expectedVerifiedProductionCases": 415,
+    "seedDeclaredCount": 161,
+    "seedActualCount": 161,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "definitions": 58,
+        "appended": 56,
+        "matchedExisting": 2,
+        "status": "manual_early_cinema_case_needs_source_verification",
+        "sourceListId": "manual_early_cinema_expansion_2026"
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_one_early_cinema_verified",
+        "sourceListId": "manual_chapter_one_early_cinema_expansion_2026"
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_one_early_cinema_verified",
+        "sourceListId": "manual_chapter_one_early_cinema_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "definitions": 3,
+        "appended": 3,
+        "matchedExisting": 0,
+        "status": "manual_chapter_two_exhibition_verified",
+        "sourceListId": "manual_chapter_two_exhibition_expansion_2026"
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_chapter_three_narrative_verified",
+        "sourceListId": "manual_chapter_three_narrative_expansion_2026"
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "definitions": 3,
+        "appended": 3,
+        "matchedExisting": 0,
+        "status": "manual_chapter_four_industry_verified",
+        "sourceListId": "manual_chapter_four_industry_expansion_2026"
+      },
+      {
+        "fileName": "chapterFiveInternationalExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_chapter_five_international_verified",
+        "sourceListId": "manual_chapter_five_international_expansion_2026"
+      },
+      {
+        "fileName": "chapterSixHollywoodExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_six_hollywood_verified",
+        "sourceListId": "manual_chapter_six_hollywood_expansion_2026"
+      },
+      {
+        "fileName": "chapterSevenWeimarExpansion.ts",
+        "definitions": 2,
+        "appended": 2,
+        "matchedExisting": 0,
+        "status": "manual_chapter_seven_weimar_verified",
+        "sourceListId": "manual_chapter_seven_weimar_expansion_2026"
+      },
+      {
+        "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eight_french_avant_garde_verified",
+        "sourceListId": "manual_chapter_eight_french_avant_garde_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineSovietMontageExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nine_soviet_montage_verified",
+        "sourceListId": "manual_chapter_nine_soviet_montage_expansion_2026"
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "definitions": 27,
+        "appended": 27,
+        "matchedExisting": 0,
+        "status": "manual_modern_canon_case_needs_source_verification",
+        "sourceListId": "manual_modern_indie_asian_prize_expansion_2026"
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "definitions": 20,
+        "appended": 20,
+        "matchedExisting": 0,
+        "status": "manual_priority_indie_case_needs_source_verification",
+        "sourceListId": "manual_priority_indie_completion_2026"
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_east_asian_auteur_case_needs_source_verification",
+        "sourceListId": "manual_east_asian_auteur_expansion_2026"
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0,
+        "status": "manual_japanese_auteur_case_needs_source_verification",
+        "sourceListId": "manual_japanese_auteur_expansion_2026"
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_south_korean_cinema_case_needs_source_verification",
+        "sourceListId": "manual_south_korean_cinema_expansion_2026"
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0,
+        "status": "manual_south_southeast_asian_case_needs_source_verification",
+        "sourceListId": "manual_south_southeast_asian_expansion_2026"
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_festival_winner_1981_2009_case_needs_source_verification",
+        "sourceListId": "manual_festival_winners_1981_2009_expansion_2026"
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_festival_winner_2010_2024_case_needs_source_verification",
+        "sourceListId": "manual_festival_winner_2010_2024_expansion_2026"
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "definitions": 22,
+        "appended": 15,
+        "matchedExisting": 7,
+        "status": "manual_scandinavian_european_case_needs_source_verification",
+        "sourceListId": "manual_scandinavian_european_expansion_2026"
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "definitions": 24,
+        "appended": 23,
+        "matchedExisting": 1,
+        "status": "manual_eastern_iberian_british_case_needs_source_verification",
+        "sourceListId": "manual_eastern_iberian_british_expansion_2026"
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "definitions": 28,
+        "appended": 25,
+        "matchedExisting": 3,
+        "status": "manual_italy_france_germany_benelux_case_needs_source_verification",
+        "sourceListId": "manual_italy_france_germany_benelux_expansion_2026"
+      }
+    ]
+  },
+  "totals": {
+    "playableScenarios": 415,
+    "verifiedProductionCases": 415,
+    "unverifiedProductionCases": 0,
+    "sourceBackedProfiles": 415,
+    "filmSpecificProductionBriefs": 415,
+    "seedFallbackProductionBriefs": 0,
+    "scenariosWithoutSourceBackedProfile": 0,
+    "scenariosMissingVerificationAndProfile": 0
+  },
+  "integrity": {
+    "seedDuplicateScenarioIds": [],
+    "finalDuplicateScenarioIds": [],
+    "duplicateVerificationIds": [],
+    "duplicateProfileIds": [],
+    "orphanVerificationIds": [],
+    "orphanProfileIds": [],
+    "verifiedWithoutProfile": [],
+    "profilesWithoutVerification": []
+  },
+  "unverifiedDistributions": {
+    "byOrigin": {},
+    "bySourceList": {},
+    "byStatus": {},
+    "byDecade": {},
+    "byGenre": {},
+    "byBriefType": {}
+  },
+  "unverified": [],
+  "seedFallbackBriefs": [],
+  "profilesWithoutVerification": [],
+  "verifiedWithoutProfile": []
+}
+HG_FILM_PRODUCER_REST_AUDIT_END
+
+> hg-film-producer@0.1.0 audit:film-history-ch1
+> node scripts/film-history-chapter-one-atlas-audit.mjs
+
+HG_FILM_HISTORY_CHAPTER_ONE_ATLAS_AUDIT_START
+{
+  "schemaVersion": "1.1",
+  "auditDate": "2026-08-14",
+  "atlas": {
+    "expectedCount": 394,
+    "actualCount": 394,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "appended": 56,
+        "matchedExisting": 2
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "appended": 27,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "appended": 20,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "appended": 15,
+        "matchedExisting": 7
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "appended": 23,
+        "matchedExisting": 1
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "appended": 25,
+        "matchedExisting": 3
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "Blacksmith Scene",
+      "year": 1893,
+      "aliases": [
+        "Blacksmithing Scene",
+        "The Blacksmith Shop"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_blacksmith_scene_1893",
+      "chapterFunction": "Dickson/Heise, Black Maria, Kinetograph/Kinetoscope-era production and a repeatable natural-light studio system.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_blacksmith_scene_1893",
+      "matches": 1,
+      "origin": "chapterOneEarlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Workers Leaving the Lumière Factory",
+      "year": 1895,
+      "aliases": [
+        "Workers Leaving the Lumiere Factory",
+        "La Sortie de l'Usine Lumière à Lyon",
+        "Sortie d'usine"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_workers_leaving_lumiere_factory_1895",
+      "chapterFunction": "Actuality, Lumière production practice, framing, event timing and multiple versions.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_workers_leaving_lumiere_factory_1895",
+      "matches": 1,
+      "origin": "chapterOneEarlyCinemaExpansion.ts"
+    },
+    {
+      "title": "L'Arroseur arrosé",
+      "year": 1895,
+      "aliases": [
+        "L'Arroseur arrose",
+        "The Sprinkler Sprinkled"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "A compact staged gag demonstrating that early Lumière cinema was not limited to actuality.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Arrival of a Train at La Ciotat",
+      "year": 1896,
+      "aliases": [
+        "The Arrival of a Train at La Ciotat",
+        "Arrival of a Train",
+        "L'Arrivée d'un train en gare de La Ciotat"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Actuality, depth, movement through the frame and the historiography of early spectatorship myths.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Annabelle Serpentine Dance",
+      "year": 1895,
+      "aliases": [
+        "Annabelle's Serpentine Dance",
+        "Serpentine Dance by Annabelle"
+      ],
+      "role": "historical_object",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Performance, attraction and the relationship between recorded movement, stage culture and applied colour.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Big Swallow",
+      "year": 1901,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Camera proximity, scale change and direct experimentation with the spectator-camera relationship.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Fire!",
+      "year": 1901,
+      "aliases": [
+        "Fire"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_fire_1901",
+      "chapterFunction": "Multi-shot action, matching movement and the construction of connected film space in early British cinema.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_fire_1901",
+      "matches": 1,
+      "origin": "chapterOneEarlyCinemaExpansion.ts"
+    },
+    {
+      "title": "A Trip to the Moon",
+      "year": 1902,
+      "aliases": [
+        "Le voyage dans la lune"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_a_trip_to_the_moon_1902",
+      "chapterFunction": "The chapter's principal close reading of trick film, theatrical staging, designed screen space and transformation effects.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_a_trip_to_the_moon_1902",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Life of an American Fireman",
+      "year": 1903,
+      "aliases": [
+        "The Life of an American Fireman"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_life_of_an_american_fireman_1903",
+      "chapterFunction": "Original scene-based rescue construction and the version-history problem created by a later cross-cut re-edit once mistaken for Porter's original.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_life_of_an_american_fireman_1903",
+      "matches": 1,
+      "origin": "chapterOneEarlyCinemaExpansion.ts"
+    },
+    {
+      "title": "The Great Train Robbery",
+      "year": 1903,
+      "aliases": [
+        "Great Train Robbery"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_the_great_train_robbery_1903",
+      "chapterFunction": "Narrative scale, multiple locations, action, effects, shot construction and historically specific pre-continuity organization without an inventor-of-editing myth.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_great_train_robbery_1903",
+      "matches": 1,
+      "origin": "chapterOneEarlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Rescued by Rover",
+      "year": 1905,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_rescued_by_rover_1905",
+      "chapterFunction": "Repeated routes, stable landmarks, animal performance and causal shot order as a bridge toward more systematic spatial continuity.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_rescued_by_rover_1905",
+      "matches": 1,
+      "origin": "chapterOneRescuedByRoverExpansion.ts"
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "Blacksmith Scene",
+      "Workers Leaving the Lumière Factory",
+      "Fire!",
+      "A Trip to the Moon",
+      "Life of an American Fireman",
+      "The Great Train Robbery",
+      "Rescued by Rover"
+    ],
+    "P0": [],
+    "P1": [],
+    "P2": [
+      "L'Arroseur arrosé",
+      "Arrival of a Train at La Ciotat",
+      "Annabelle Serpentine Dance",
+      "The Big Swallow"
+    ],
+    "AMBIGUOUS": [],
+    "EXISTING_REQUIRED": []
+  },
+  "historicalObjects": [
+    {
+      "label": "Eadweard Muybridge motion studies",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE"
+    },
+    {
+      "label": "Étienne-Jules Marey chronophotography",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE"
+    },
+    {
+      "label": "Kinetograph / Kinetoscope / Black Maria",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE"
+    },
+    {
+      "label": "Cinématographe and competing projection systems",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE"
+    }
+  ],
+  "remainingProductionCases": {
+    "P0": [],
+    "P1": [],
+    "P2BookReferenceOnly": [
+      "L'Arroseur arrosé",
+      "Arrival of a Train at La Ciotat",
+      "Annabelle Serpentine Dance",
+      "The Big Swallow"
+    ]
+  },
+  "structuralProblems": []
+}
+HG_FILM_HISTORY_CHAPTER_ONE_ATLAS_AUDIT_END
+
+> hg-film-producer@0.1.0 audit:film-history-ch2
+> node scripts/film-history-chapter-two-atlas-audit.mjs
+
+HG_FILM_HISTORY_CHAPTER_TWO_ATLAS_AUDIT_START
+{
+  "schemaVersion": "1.3",
+  "auditDate": "2026-08-14",
+  "chapter": {
+    "number": 2,
+    "title": "Projection, programmes and audiences",
+    "scope": "Overlapping the late 1890s and early 1900s: projection venues, programme construction, exhibition economics, showmanship and the emergence of dedicated film audiences before the book turns fully to narrative form in Chapter 3.",
+    "thesis": "Cinema became a mass medium not only because films could be made, but because exhibitors assembled programmes, adapted presentation to specific venues and cultivated audiences whose demand reshaped production and distribution."
+  },
+  "atlas": {
+    "expectedCount": 394,
+    "actualCount": 394,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "appended": 56,
+        "matchedExisting": 2
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "appended": 27,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "appended": 20,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "appended": 15,
+        "matchedExisting": 7
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "appended": 23,
+        "matchedExisting": 1
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "appended": 25,
+        "matchedExisting": 3
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "Workers Leaving the Lumière Factory",
+      "year": 1895,
+      "aliases": [
+        "Workers Leaving the Lumiere Factory",
+        "La Sortie de l'Usine Lumière à Lyon",
+        "Sortie d'usine"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_workers_leaving_lumiere_factory_1895",
+      "chapterFunction": "Connect the Lumière projected-programme breakthrough to a film already produced for the 1895 demonstration and exhibition system.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_workers_leaving_lumiere_factory_1895",
+      "matches": 1,
+      "origin": "chapterOneEarlyCinemaExpansion.ts"
+    },
+    {
+      "title": "May Irwin Kiss",
+      "year": 1896,
+      "aliases": [
+        "May Irwin kiss",
+        "The May Irwin Kiss",
+        "The Kiss",
+        "Kiss"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Vaudeville celebrity, newspaper promotion and a highly popular Vitascope subject show how familiar stage performance was repackaged for projected film audiences.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Corbett-Fitzsimmons Fight",
+      "year": 1897,
+      "aliases": [
+        "The Corbett–Fitzsimmons Fight",
+        "Corbett-Fitzsimmons Fight",
+        "Corbett Fitzsimmons Fight",
+        "The Corbett and Fitzsimmons Fight"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_the_corbett_fitzsimmons_fight_1897",
+      "chapterFunction": "A feature-length event whose proprietary Veriscope format, controlled projection, live commentary, territorial distribution and ticket economics make exhibition part of the production system.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_corbett_fitzsimmons_fight_1897",
+      "matches": 1,
+      "origin": "chapterTwoExhibitionExpansion.ts"
+    },
+    {
+      "title": "Employees Leaving Brown's Atlas Works, Sheffield",
+      "year": 1901,
+      "aliases": [
+        "Employees Leaving Brown's Atlas Works",
+        "Employees Leaving Brown’s Atlas Works, Sheffield"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_employees_leaving_browns_atlas_works_sheffield_1901",
+      "chapterFunction": "Mitchell and Kenyon's local-film business model turns the people photographed into the paying audience and makes commissioning, staging and exhibition inseparable.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_employees_leaving_browns_atlas_works_sheffield_1901",
+      "matches": 1,
+      "origin": "chapterTwoExhibitionExpansion.ts"
+    },
+    {
+      "title": "Sedgwick's Bioscope Showfront at Pendlebury Wakes",
+      "year": 1901,
+      "aliases": [
+        "Sedgwick’s Bioscope Showfront at Pendlebury Wakes",
+        "Sedgwicks Bioscope Showfront at Pendlebury Wakes"
+      ],
+      "role": "historical_object",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Direct evidence of fairground showmanship, repeated daily screenings and the relationship between filmmakers and travelling bioscope exhibitors; book-level use is sufficient.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Uncle Josh at the Moving Picture Show",
+      "year": 1902,
+      "aliases": [
+        "Uncle Josh at the moving picture show",
+        "Uncle Josh and the Moving Picture Show"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_uncle_josh_at_the_moving_picture_show_1902",
+      "chapterFunction": "A reflexive comedy that stages spectator behaviour, a projection screen and the projectionist, allowing the chapter to distinguish fictional audience stereotypes from documented audience history.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_uncle_josh_at_the_moving_picture_show_1902",
+      "matches": 1,
+      "origin": "chapterTwoExhibitionExpansion.ts"
+    },
+    {
+      "title": "A Trip to the Moon",
+      "year": 1902,
+      "aliases": [
+        "Le voyage dans la lune"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_a_trip_to_the_moon_1902",
+      "chapterFunction": "Reuse the existing case for international circulation, programme value and the commercial afterlife of a highly exportable attraction film.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_a_trip_to_the_moon_1902",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "The Great Train Robbery",
+      "year": 1903,
+      "aliases": [
+        "Great Train Robbery"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_great_train_robbery_1903",
+      "chapterFunction": "Reuse the existing case to show how exhibitors retained agency over presentation, including the flexible placement of the direct-address bandit shot.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_great_train_robbery_1903",
+      "matches": 1,
+      "origin": "chapterOneEarlyCinemaExpansion.ts"
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "Workers Leaving the Lumière Factory",
+      "The Corbett-Fitzsimmons Fight",
+      "Employees Leaving Brown's Atlas Works, Sheffield",
+      "Uncle Josh at the Moving Picture Show",
+      "A Trip to the Moon",
+      "The Great Train Robbery"
+    ],
+    "P0": [],
+    "P1": [],
+    "P2": [
+      "May Irwin Kiss",
+      "Sedgwick's Bioscope Showfront at Pendlebury Wakes"
+    ],
+    "AMBIGUOUS": [],
+    "EXISTING_REQUIRED": []
+  },
+  "historicalObjects": [
+    {
+      "label": "Lumière Grand Café programme, 28 December 1895",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Programme composition matters more than treating one title as a self-sufficient modern screening."
+    },
+    {
+      "label": "Vitascope / Koster and Bial's Music Hall exhibition, 23 April 1896",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Projection machinery entered an existing variety-theatre bill rather than instantly creating a standalone cinema institution."
+    },
+    {
+      "label": "Vitascope advertising poster and exhibitor publicity",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Advertising sold projection itself as an attraction and made the watching audience part of the spectacle's public image."
+    },
+    {
+      "label": "Edison film catalogues and exhibitor-selected programme order",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Exhibitors selected and sequenced short subjects, so the programme—not an individual film alone—was a key unit of early cinema experience."
+    },
+    {
+      "label": "Fairground and travelling-show bioscope exhibition",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Travelling exhibitors, showfronts and local commissioning connected filmmaking to seasonal leisure economies and geographically specific audiences."
+    },
+    {
+      "label": "Nickelodeon storefront theatre, c. 1905–1908",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Dedicated, frequent low-cost screenings changed audience access and helped make film exhibition a stable urban institution."
+    }
+  ],
+  "recommendedNewProductionCases": [],
+  "remainingBookReferenceOnlyFilms": [
+    "May Irwin Kiss",
+    "Sedgwick's Bioscope Showfront at Pendlebury Wakes"
+  ],
+  "structuralProblems": []
+}
+HG_FILM_HISTORY_CHAPTER_TWO_ATLAS_AUDIT_END
+
+> hg-film-producer@0.1.0 audit:film-history-ch3
+> node scripts/film-history-chapter-three-atlas-audit.mjs
+
+HG_FILM_HISTORY_CHAPTER_THREE_ATLAS_AUDIT_START
+{
+  "schemaVersion": "1.3",
+  "auditDate": "2026-08-14",
+  "chapter": {
+    "number": 3,
+    "title": "From views to stories",
+    "period": "1896–1912",
+    "scope": "The transition from single-view staging and attraction toward analytical viewpoint, linked scenes, narrative time, route continuity and increasingly systematic parallel action.",
+    "thesis": "Narrative cinema did not replace attractions in one breakthrough; filmmakers gradually organized viewpoint, space, causality and time across shots while retaining earlier forms."
+  },
+  "atlas": {
+    "expectedCount": 394,
+    "actualCount": 394,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "appended": 56,
+        "matchedExisting": 2
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "appended": 27,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "appended": 20,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "appended": 15,
+        "matchedExisting": 7
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "appended": 23,
+        "matchedExisting": 1
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "appended": 25,
+        "matchedExisting": 3
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "Cendrillon",
+      "year": 1899,
+      "aliases": [
+        "Cinderella"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Book-level comparison for Méliès's early multiple-tableau fairy-tale construction.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Grandma's Reading Glass",
+      "year": 1900,
+      "aliases": [
+        "Grandmother's Reading Glass",
+        "Grandmas Reading Glass"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_grandmas_reading_glass_1900",
+      "chapterFunction": "Analytical viewpoint and motivated magnified inserts.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_grandmas_reading_glass_1900",
+      "matches": 1,
+      "origin": "chapterThreeNarrativeExpansion.ts"
+    },
+    {
+      "title": "Attack on a China Mission - Bluejackets to the Rescue",
+      "year": 1900,
+      "aliases": [
+        "Attack on a China Mission",
+        "Attack on a China Mission – Bluejackets to the Rescue",
+        "Attack on a China Mission: Bluejackets to the Rescue",
+        "Attack on a China Mission (Bluejackets to the Rescue)"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_attack_on_a_china_mission_bluejackets_to_the_rescue_1900",
+      "chapterFunction": "Version history, connected screen space, archive provenance and imperial representation.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_attack_on_a_china_mission_bluejackets_to_the_rescue_1900",
+      "matches": 1,
+      "origin": "chapterThreeNarrativeExpansion.ts"
+    },
+    {
+      "title": "Histoire d'un crime",
+      "year": 1901,
+      "aliases": [
+        "History of a Crime",
+        "The Story of a Crime",
+        "Story of a Crime"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_histoire_d_un_crime_1901",
+      "chapterFunction": "Pathé crime drama using multiple tableaux and represented recollection to organize narrative time.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_histoire_d_un_crime_1901",
+      "matches": 1,
+      "origin": "chapterThreeNarrativeExpansion.ts"
+    },
+    {
+      "title": "Stop Thief!",
+      "year": 1901,
+      "aliases": [
+        "Stop Thief"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Book-level chase comparison.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Fire!",
+      "year": 1901,
+      "aliases": [
+        "Fire"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_fire_1901",
+      "chapterFunction": "Connected multi-shot action and constructed space.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_fire_1901",
+      "matches": 1,
+      "origin": "chapterOneEarlyCinemaExpansion.ts"
+    },
+    {
+      "title": "A Trip to the Moon",
+      "year": 1902,
+      "aliases": [
+        "Le voyage dans la lune"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_a_trip_to_the_moon_1902",
+      "chapterFunction": "Multiple tableaux, theatrical staging and sustained fantasy construction.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_a_trip_to_the_moon_1902",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Life of an American Fireman",
+      "year": 1903,
+      "aliases": [
+        "The Life of an American Fireman"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_life_of_an_american_fireman_1903",
+      "chapterFunction": "Original repeated rescue action and later re-edit historiography.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_life_of_an_american_fireman_1903",
+      "matches": 1,
+      "origin": "chapterOneEarlyCinemaExpansion.ts"
+    },
+    {
+      "title": "The Great Train Robbery",
+      "year": 1903,
+      "aliases": [
+        "Great Train Robbery"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_great_train_robbery_1903",
+      "chapterFunction": "Causal multi-scene action without an inventor-of-editing myth.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_great_train_robbery_1903",
+      "matches": 1,
+      "origin": "chapterOneEarlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Mary Jane's Mishap",
+      "year": 1903,
+      "aliases": [
+        "Mary Jane’s Mishap",
+        "Mary Jane's Mishap; or, Don't Fool with the Paraffin",
+        "Mary Jane’s Mishap; or, Don’t Fool with the Paraffin"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Book-level analytical-cutting comparison.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Rescued by Rover",
+      "year": 1905,
+      "aliases": [
+        "Rover"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_rescued_by_rover_1905",
+      "chapterFunction": "Repeated routes, stable geography, causal order and version history.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_rescued_by_rover_1905",
+      "matches": 1,
+      "origin": "chapterOneRescuedByRoverExpansion.ts"
+    },
+    {
+      "title": "The Lonely Villa",
+      "year": 1909,
+      "aliases": [
+        "Lonely Villa"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_the_lonely_villa_1909",
+      "chapterFunction": "Sustained parallel action and narrative convergence without a Griffith-invented-cross-cutting myth.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_lonely_villa_1909",
+      "matches": 1,
+      "origin": "chapterThreeNarrativeExpansion.ts"
+    },
+    {
+      "title": "The Lonedale Operator",
+      "year": 1911,
+      "aliases": [
+        "Lonedale Operator"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Book-level later comparison for denser parallel editing and suspense.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "Grandma's Reading Glass",
+      "Attack on a China Mission - Bluejackets to the Rescue",
+      "Histoire d'un crime",
+      "Fire!",
+      "A Trip to the Moon",
+      "Life of an American Fireman",
+      "The Great Train Robbery",
+      "Rescued by Rover",
+      "The Lonely Villa"
+    ],
+    "P0": [],
+    "P1": [],
+    "P2": [
+      "Cendrillon",
+      "Stop Thief!",
+      "Mary Jane's Mishap",
+      "The Lonedale Operator"
+    ],
+    "AMBIGUOUS": [],
+    "EXISTING_REQUIRED": []
+  },
+  "historicalObjects": [
+    {
+      "label": "Magic-lantern and theatrical tableau traditions",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Narrative staging and sequential visual culture predate cinema."
+    },
+    {
+      "label": "Film catalogues, synopses and shot descriptions",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Sales descriptions are evidence but not neutral formal analysis."
+    },
+    {
+      "label": "Paper-print copyright deposits",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Version evidence can distinguish original structures from later re-edits."
+    },
+    {
+      "label": "Intertitles, lecturers and other narrative framing",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Narrative information could exist outside photographed dramatic action."
+    },
+    {
+      "label": "Remakes, replacement negatives and re-edited versions",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Version history must remain explicit."
+    },
+    {
+      "label": "Editing conventions as historical practices",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Point-of-view inserts, analytical cutting, represented memory, scene linkage and parallel editing are methods, not fake Production Cases."
+    }
+  ],
+  "recommendedNewProductionCases": [],
+  "remainingBookReferenceOnlyFilms": [
+    "Cendrillon",
+    "Stop Thief!",
+    "Mary Jane's Mishap",
+    "The Lonedale Operator"
+  ],
+  "structuralProblems": []
+}
+HG_FILM_HISTORY_CHAPTER_THREE_ATLAS_AUDIT_END
+
+> hg-film-producer@0.1.0 audit:film-history-ch4
+> node scripts/film-history-chapter-four-atlas-audit.mjs
+
+HG_FILM_HISTORY_CHAPTER_FOUR_ATLAS_AUDIT_START
+{
+  "schemaVersion": "1.2",
+  "auditDate": "2026-08-14",
+  "chapter": {
+    "number": 4,
+    "title": "Companies, patents and the feature transition",
+    "period": "1905–1914",
+    "scope": "The reorganization of production and circulation through film exchanges, rental, permanent theatres, patent/licensing systems, company consolidation, independent competition and the move toward multi-reel features.",
+    "thesis": "The feature transition was an industrial reorganization as well as a change in film length: longer films became viable through new relations among production, distribution, exhibition, capital, stars and market power."
+  },
+  "atlas": {
+    "expectedCount": 394,
+    "actualCount": 394,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "appended": 56,
+        "matchedExisting": 2
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "appended": 27,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "appended": 20,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "appended": 15,
+        "matchedExisting": 7
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "appended": 23,
+        "matchedExisting": 1
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "appended": 25,
+        "matchedExisting": 3
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "Rescued by Rover",
+      "year": 1905,
+      "aliases": [
+        "Rover"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_rescued_by_rover_1905",
+      "chapterFunction": "Company-scale repeatability, replacement negatives and a commercially successful production whose reproducibility was an industrial problem as well as a formal one.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_rescued_by_rover_1905",
+      "matches": 1,
+      "origin": "chapterOneRescuedByRoverExpansion.ts"
+    },
+    {
+      "title": "The Story of the Kelly Gang",
+      "year": 1906,
+      "aliases": [
+        "Story of the Kelly Gang"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_the_story_of_the_kelly_gang_1906",
+      "chapterFunction": "Feature-length transition: exhibitor-producers, multi-reel scale, location production, touring circulation and the economics of a film designed to sustain an hour-long dramatic attraction.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_story_of_the_kelly_gang_1906",
+      "matches": 1,
+      "origin": "chapterFourIndustryExpansion.ts"
+    },
+    {
+      "title": "L'Assassinat du duc de Guise",
+      "year": 1908,
+      "aliases": [
+        "The Assassination of the Duke of Guise",
+        "The Assassination of the Duc de Guise"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Book-level Film d'Art comparison for prestige culture and the movement toward longer, higher-status programmes without requiring a separate Production Case here.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Lonely Villa",
+      "year": 1909,
+      "aliases": [
+        "Lonely Villa"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_lonely_villa_1909",
+      "chapterFunction": "Biograph studio/location organization as a company workflow during rapid industrial consolidation.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_lonely_villa_1909",
+      "matches": 1,
+      "origin": "chapterThreeNarrativeExpansion.ts"
+    },
+    {
+      "title": "Queen Elizabeth",
+      "year": 1912,
+      "aliases": [
+        "La Reine Elisabeth",
+        "La Reine Élisabeth",
+        "Les Amours de la reine Élisabeth",
+        "Les Amours de la reine Elisabeth",
+        "The Loves of Queen Elizabeth"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_queen_elizabeth_1912",
+      "chapterFunction": "Prestige performer, imported multi-reel feature and distribution entrepreneurship at the moment longer films became commercially viable in the United States.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_queen_elizabeth_1912",
+      "matches": 1,
+      "origin": "chapterFourIndustryExpansion.ts"
+    },
+    {
+      "title": "Traffic in Souls",
+      "year": 1913,
+      "aliases": [
+        "While New York Sleeps",
+        "While New York Sleeps: A Photodrama of Today"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_traffic_in_souls_1913",
+      "chapterFunction": "Early American feature economics: independent production, sustained feature booking and a non-literary sensational subject that tested the commercial logic of longer films.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_traffic_in_souls_1913",
+      "matches": 1,
+      "origin": "chapterFourIndustryExpansion.ts"
+    },
+    {
+      "title": "Quo Vadis?",
+      "year": 1913,
+      "aliases": [
+        "Quo Vadis"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Book-level evidence for the imported European epic and the international pressure behind feature-length exhibition; stronger Production Case priority belongs to the Chapter 5 international-cinema audit.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Cabiria",
+      "year": 1914,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Book-level terminal comparison for feature spectacle and international circulation at the Chapter 4/5 boundary; do not auto-produce before the Chapter 5 audit.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "Rescued by Rover",
+      "The Story of the Kelly Gang",
+      "The Lonely Villa",
+      "Queen Elizabeth",
+      "Traffic in Souls"
+    ],
+    "P0": [],
+    "P1": [],
+    "P2": [
+      "L'Assassinat du duc de Guise",
+      "Quo Vadis?",
+      "Cabiria"
+    ],
+    "AMBIGUOUS": [],
+    "EXISTING_REQUIRED": []
+  },
+  "historicalObjects": [
+    {
+      "label": "Film exchanges and print rental",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "The shift from print sales toward rental distribution changed how exhibitors accessed programmes and how producers could regularize circulation."
+    },
+    {
+      "label": "Nickelodeons and purpose-built theatres",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Permanent venues created daily demand and a stable exhibition market; they are institutions, not film Production Cases."
+    },
+    {
+      "label": "Edison patent litigation and license agreements",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Patent claims and licensing shaped competition before and during the formation of the Motion Picture Patents Company."
+    },
+    {
+      "label": "Motion Picture Patents Company (MPPC)",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "The 1908 patent pool linked producers, exchanges, theatres and film-stock supply in an attempt to regulate the American market."
+    },
+    {
+      "label": "General Film Company",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "The MPPC-linked distribution company consolidated licensed exchanges and made distribution structure itself a site of industrial power."
+    },
+    {
+      "label": "Independent producers and distributors",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "The independent sector challenged licensed-company control and helped create alternative feature-production and distribution strategies."
+    },
+    {
+      "label": "Multi-reel and feature booking practices",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Feature length was not only an aesthetic category: longer films changed pricing, programme structure, risk, touring and theatre booking."
+    }
+  ],
+  "recommendedNewProductionCases": [],
+  "remainingBookReferenceOnlyFilms": [
+    "L'Assassinat du duc de Guise",
+    "Quo Vadis?",
+    "Cabiria"
+  ],
+  "structuralProblems": []
+}
+HG_FILM_HISTORY_CHAPTER_FOUR_ATLAS_AUDIT_END
+
+> hg-film-producer@0.1.0 audit:film-history-ch5
+> node scripts/film-history-chapter-five-atlas-audit.mjs
+
+HG_FILM_HISTORY_CHAPTER_FIVE_ATLAS_AUDIT_START
+{
+  "schemaVersion": "1.0",
+  "auditDate": "2026-08-15",
+  "chapter": {
+    "number": 5,
+    "title": "Cinema becomes international",
+    "period": "1907–1914",
+    "scope": "Prewar cinema as a transnational system in which French, Italian, Danish, American and other production centres competed through export networks, stars, genres and increasingly long feature-scale attractions.",
+    "thesis": "National cinemas were international from the start: companies, performers, stories, rights, prints and exhibition practices moved across borders, and feature scale became one of several strategies for winning export markets."
+  },
+  "atlas": {
+    "expectedCount": 398,
+    "actualCount": 398,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "appended": 56,
+        "matchedExisting": 2
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFiveInternationalExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "appended": 27,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "appended": 20,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "appended": 15,
+        "matchedExisting": 7
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "appended": 23,
+        "matchedExisting": 1
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "appended": 25,
+        "matchedExisting": 3
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "Queen Elizabeth",
+      "year": 1912,
+      "aliases": [
+        "La Reine Elisabeth",
+        "La Reine Élisabeth",
+        "Les Amours de la reine Élisabeth",
+        "Les Amours de la reine Elisabeth",
+        "The Loves of Queen Elizabeth"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_queen_elizabeth_1912",
+      "chapterFunction": "French prestige production and Sarah Bernhardt's transatlantic star value, coupled to the United States import-rights business that helped normalize multi-reel features.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_queen_elizabeth_1912",
+      "matches": 1,
+      "origin": "chapterFourIndustryExpansion.ts"
+    },
+    {
+      "title": "Traffic in Souls",
+      "year": 1913,
+      "aliases": [
+        "While New York Sleeps",
+        "While New York Sleeps: A Photodrama of Today"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_traffic_in_souls_1913",
+      "chapterFunction": "American independent feature production and distribution as a comparison with the European export systems transforming the same market.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_traffic_in_souls_1913",
+      "matches": 1,
+      "origin": "chapterFourIndustryExpansion.ts"
+    },
+    {
+      "title": "Fantômas",
+      "year": 1913,
+      "aliases": [
+        "Fantomas"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Gaumont-scale French genre production: recurring criminal identity, popular-literary adaptation, serial continuity and international circulation inside an established company system.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_fantomas_1913",
+      "matches": 1,
+      "origin": "chapterFiveInternationalExpansion.ts"
+    },
+    {
+      "title": "Cabiria",
+      "year": 1914,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Italian feature spectacle at export scale: large production design, historical epic form, prestige authorship, music and worldwide circulation immediately before World War I.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_cabiria_1914",
+      "matches": 1,
+      "origin": "chapterFiveInternationalExpansion.ts"
+    },
+    {
+      "title": "Afgrunden",
+      "year": 1910,
+      "aliases": [
+        "The Abyss",
+        "Der Abgrund",
+        "Woman Always Pays"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Danish erotic melodrama and Asta Nielsen's screen-star breakthrough, showing how performance style and star identity could travel beyond a small national production market.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_afgrunden_1910",
+      "matches": 1,
+      "origin": "chapterFiveInternationalExpansion.ts"
+    },
+    {
+      "title": "Atlantis",
+      "year": 1913,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Nordisk Film's ambitious international feature strategy: literary prestige, transatlantic narrative scale, differentiated endings and a production designed for export markets.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_atlantis_1913",
+      "matches": 1,
+      "origin": "chapterFiveInternationalExpansion.ts"
+    },
+    {
+      "title": "L'Assassinat du duc de Guise",
+      "year": 1908,
+      "aliases": [
+        "The Assassination of the Duke of Guise",
+        "The Assassination of the Duc de Guise"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Film d'Art prestige culture and Pathé-linked circulation remain important book evidence, but Queen Elizabeth and Fantômas carry stronger distinct Production Case functions.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The White Slave Trade",
+      "year": 1910,
+      "aliases": [
+        "Den hvide Slavehandel"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Danish multi-reel competition and rapid imitation are valuable for the chapter text, but Afgrunden and Atlantis provide less version-confused Production Case anchors.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "L'Inferno",
+      "year": 1911,
+      "aliases": [
+        "Inferno",
+        "Dante's Inferno"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Italian feature-length literary spectacle before Cabiria; retained as book-level evidence so the chapter does not create redundant epic Production Cases.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Quo Vadis?",
+      "year": 1913,
+      "aliases": [
+        "Quo Vadis"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "A major Italian epic-export comparison that demonstrates the cycle Cabiria crowns; Chapter 5 resolves the Chapter 4 deferral by keeping it book-only rather than duplicating the same gameplay function.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Student of Prague",
+      "year": 1913,
+      "aliases": [
+        "Der Student von Prag"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "German prewar art-film and star/auteur organization provide a bridge toward later German cinema without pre-empting the dedicated German silent chapter.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Ingeborg Holm",
+      "year": 1913,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Swedish social drama broadens the prewar map while remaining better suited to the later chapter on silent cinemas beyond the usual canon.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Raja Harishchandra",
+      "year": 1913,
+      "aliases": [
+        "Raja Harischandra"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Essential evidence that prewar feature production was not confined to Europe and the United States, but its fuller production/exhibition history belongs to Chapter 10 rather than a tokenized case here.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "Queen Elizabeth",
+      "Traffic in Souls",
+      "Fantômas",
+      "Cabiria",
+      "Afgrunden",
+      "Atlantis"
+    ],
+    "P0": [],
+    "P1": [],
+    "P2": [
+      "L'Assassinat du duc de Guise",
+      "The White Slave Trade",
+      "L'Inferno",
+      "Quo Vadis?",
+      "The Student of Prague",
+      "Ingeborg Holm",
+      "Raja Harishchandra"
+    ],
+    "AMBIGUOUS": [],
+    "EXISTING_REQUIRED": []
+  },
+  "historicalObjects": [
+    {
+      "label": "Pathé Frères production-distribution network",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "A vertically coordinated international company and catalogue system; the institution itself is not a film Production Case."
+    },
+    {
+      "label": "Gaumont production and serial infrastructure",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Company organization made recurring characters and regular genre production scalable across markets."
+    },
+    {
+      "label": "Nordisk Film export network",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Branch offices and foreign distribution made a small national industry unusually international before World War I."
+    },
+    {
+      "label": "Italian historical-epic production centres",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Turin and Rome companies concentrated capital, sets, crowds and prestige around long-form spectacle."
+    },
+    {
+      "label": "Transnational star circulation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Performers such as Sarah Bernhardt, Asta Nielsen and Valdemar Psilander became marketable identities across national borders."
+    },
+    {
+      "label": "Territorial rights, intertitles and versioning",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "International circulation depended on rights sales, translated intertitles, local exhibition and sometimes market-specific versions or endings."
+    },
+    {
+      "label": "Film catalogues, trade press and export advertising",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "International markets were built through industrial information systems as well as through the films themselves."
+    }
+  ],
+  "recommendedNewProductionCases": [],
+  "remainingBookReferenceOnlyFilms": [
+    "L'Assassinat du duc de Guise",
+    "The White Slave Trade",
+    "L'Inferno",
+    "Quo Vadis?",
+    "The Student of Prague",
+    "Ingeborg Holm",
+    "Raja Harishchandra"
+  ],
+  "structuralProblems": []
+}
+HG_FILM_HISTORY_CHAPTER_FIVE_ATLAS_AUDIT_END
+
+> hg-film-producer@0.1.0 audit:film-history-ch6
+> node scripts/film-history-chapter-six-atlas-audit.mjs
+
+HG_FILM_HISTORY_CHAPTER_SIX_ATLAS_AUDIT_START
+{
+  "schemaVersion": "1.0",
+  "auditDate": "2026-08-15",
+  "chapter": {
+    "number": 6,
+    "title": "Classical continuity and the Hollywood system",
+    "period": "1914–1929",
+    "scope": "Mature silent Hollywood as both a narrative system and an industrial system: continuity practices, studios, distribution and exhibition power, stars, genres, labor organization and countermodels to vertical integration.",
+    "thesis": "Classical Hollywood was not invented by one director or one film. It emerged as repeatable collaborative practice tied to industrial consolidation: films became legible across large markets while studios coordinated labor, stars, genres, publicity, distribution and exhibition at increasing scale."
+  },
+  "atlas": {
+    "expectedCount": 403,
+    "actualCount": 403,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "appended": 56,
+        "matchedExisting": 2
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFiveInternationalExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSixHollywoodExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "appended": 27,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "appended": 20,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "appended": 15,
+        "matchedExisting": 7
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "appended": 23,
+        "matchedExisting": 1
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "appended": 25,
+        "matchedExisting": 3
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "The Birth of a Nation",
+      "year": 1915,
+      "aliases": [
+        "The Clansman"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Essential critical evidence for feature-scale continuity, national road-show circulation, censorship conflict and the commercial power of racist historical propaganda. Chapter 3 already carries Griffith parallel editing through The Lonely Villa, so this remains book-level analysis rather than a redundant or ethically misleading imitate-this-film Production Case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Cheat",
+      "year": 1915,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Famous Players-Lasky feature production under Cecil B. DeMille: controlled studio lighting, selective framing and performance staging show classical legibility becoming compatible with a distinctive house style inside an expanding company system.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_cheat_1915",
+      "matches": 1,
+      "origin": "chapterSixHollywoodExpansion.ts"
+    },
+    {
+      "title": "Intolerance",
+      "year": 1916,
+      "aliases": [
+        "Intolerance: Love's Struggle Throughout the Ages"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Large-scale parallel construction and independent road-show ambition are indispensable formal comparisons, but the editing function overlaps Chapter 3 and does not need another dedicated Production Case here.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Kid",
+      "year": 1921,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Chaplin's feature-length integration of comedy and pathos is important star-producer evidence, but The Gold Rush provides a later and more production-distinct case for the same independent star-author model.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Safety Last!",
+      "year": 1923,
+      "aliases": [
+        "Safety Last"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Harold Lloyd's star comedy and carefully engineered urban stunt geography broaden the star-system comparison, while the existing The General already carries silent physical-action gameplay strongly enough to keep this book-only.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Covered Wagon",
+      "year": 1923,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Paramount-scale western production and location spectacle are useful evidence for genre planning and national distribution, but the chapter can teach those industrial systems without creating a redundant spectacle case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Greed",
+      "year": 1924,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "A crucial case for authorship, studio control, post-production power and surviving-version historiography during the Metro-to-MGM transition; retained as analysis rather than a gameplay model that would falsely imply one canonical director-approved release version.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Gold Rush",
+      "year": 1925,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Chaplin's star-producer model and United Artists distribution provide the chapter's strongest counterexample to the vertically integrated majors while combining feature-scale comedy, controlled studio production, location material and internationally marketable star authorship.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_gold_rush_1925",
+      "matches": 1,
+      "origin": "chapterSixHollywoodExpansion.ts"
+    },
+    {
+      "title": "The Big Parade",
+      "year": 1925,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "MGM prestige production, war genre and mass-market success are major studio-system evidence, but Wings provides a more distinct production-logistics case while The Crowd provides a stronger MGM continuity-and-organization case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Ben-Hur: A Tale of the Christ",
+      "year": 1925,
+      "aliases": [
+        "Ben-Hur"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "MGM spectacle, costly location work and production transfer show consolidation and managerial intervention at scale, but the production function overlaps other large studio spectacles and remains book-level evidence.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The General",
+      "year": 1926,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_general_1926",
+      "chapterFunction": "Existing Atlas anchor for readable action geography, practical stunt planning, feature comedy and causal continuity in the mature silent period.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_general_1926",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Flesh and the Devil",
+      "year": 1926,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "MGM melodrama and the marketable Garbo-Gilbert star pairing make star construction and studio style visible, but It offers a cleaner Production Case around star image, publicity and modern consumer culture.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "It",
+      "year": 1927,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Paramount star-vehicle production around Clara Bow connects performance, costume, publicity, consumer modernity and national distribution, giving the chapter a Production Case where the star system is a production-and-marketing system rather than celebrity trivia.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_it_1927",
+      "matches": 1,
+      "origin": "chapterSixHollywoodExpansion.ts"
+    },
+    {
+      "title": "Wings",
+      "year": 1927,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Paramount feature logistics at blockbuster scale: aerial photography, second-unit coordination, military cooperation, effects, continuity and genre spectacle provide a distinct studio-planning Production Case.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_wings_1927",
+      "matches": 1,
+      "origin": "chapterSixHollywoodExpansion.ts"
+    },
+    {
+      "title": "Sunrise: A Song of Two Humans",
+      "year": 1927,
+      "aliases": [
+        "Sunrise"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Fox's importation of F. W. Murnau and European-influenced camera, design and effects practices demonstrates transatlantic labor and style transfer, but its fuller formal genealogy belongs beside the dedicated Weimar chapter.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Crowd",
+      "year": 1928,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "MGM studio organization, large-scale urban staging, effects and location integration serve an unusually ordinary protagonist through lucid classical continuity, making the film a strong case for how an industrial system can support rather than erase stylistic and social specificity.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_crowd_1928",
+      "matches": 1,
+      "origin": "chapterSixHollywoodExpansion.ts"
+    },
+    {
+      "title": "The Cameraman",
+      "year": 1928,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Keaton's move into MGM is valuable evidence for the absorption of independent comic authorship into studio procedure, but the existing The General already supplies the stronger Keaton gameplay case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Show People",
+      "year": 1928,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Hollywood's self-representation, studio labor, stardom and genre hierarchy make useful reflexive book evidence without requiring another standalone Production Case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "The Cheat",
+      "The Gold Rush",
+      "The General",
+      "It",
+      "Wings",
+      "The Crowd"
+    ],
+    "P0": [],
+    "P1": [],
+    "P2": [
+      "The Birth of a Nation",
+      "Intolerance",
+      "The Kid",
+      "Safety Last!",
+      "The Covered Wagon",
+      "Greed",
+      "The Big Parade",
+      "Ben-Hur: A Tale of the Christ",
+      "Flesh and the Devil",
+      "Sunrise: A Song of Two Humans",
+      "The Cameraman",
+      "Show People"
+    ],
+    "AMBIGUOUS": [],
+    "EXISTING_REQUIRED": []
+  },
+  "historicalObjects": [
+    {
+      "label": "Hollywood production cluster and specialist service firms",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Studios depended on laboratories, equipment suppliers, craftspeople and other specialist firms concentrated in Southern California; the industrial cluster is infrastructure, not a film Production Case."
+    },
+    {
+      "label": "Famous Players-Lasky and Paramount distribution",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "National distribution, standardized publicity and increasingly coordinated production tied individual features to a company-wide market system rather than to isolated producers."
+    },
+    {
+      "label": "Loew's and MGM vertical integration",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "The merger and theater-owning corporate structure linked production, distribution and exhibition while managerial systems coordinated stars, units, facilities and release planning."
+    },
+    {
+      "label": "First National exhibitor-distributor network",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "The exhibitor-backed company demonstrates that consolidation was contested and that access to screens could organize production power from the exhibition side."
+    },
+    {
+      "label": "United Artists distribution consortium",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Chaplin, Pickford, Fairbanks and Griffith created a distribution vehicle for independently controlled productions; it is an institutional countermodel, not itself a Production Case."
+    },
+    {
+      "label": "Run-zone-clearance, block booking and theater chains",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Release sequencing, territorial clearance, packages of films and theater ownership shaped where and how pictures earned money; these are distribution/exhibition systems rather than film scenarios."
+    },
+    {
+      "label": "Continuity as collaborative production practice",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Script breakdown, coverage, eyeline and directional consistency, matching action and editorial selection became repeatable labor practices across departments, not inventions attributable to one director or one film."
+    },
+    {
+      "label": "Contract stars, publicity departments and fan culture",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Studios and distributors manufactured recognizable screen identities through casting, contracts, still photography, advertising, press relations and repeated genre association."
+    },
+    {
+      "label": "Genre cycles and production planning",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Westerns, comedies, melodramas, war films and other recurring forms allowed companies to coordinate audience expectation, stars, sets, crews and marketing without making every film identical."
+    },
+    {
+      "label": "MPPDA and industry self-regulation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "The Motion Picture Producers and Distributors of America, founded in 1922, coordinated industry policy and public legitimacy; the institution belongs to industrial history rather than Production Case gameplay."
+    }
+  ],
+  "recommendedNewProductionCases": [],
+  "remainingBookReferenceOnlyFilms": [
+    "The Birth of a Nation",
+    "Intolerance",
+    "The Kid",
+    "Safety Last!",
+    "The Covered Wagon",
+    "Greed",
+    "The Big Parade",
+    "Ben-Hur: A Tale of the Christ",
+    "Flesh and the Devil",
+    "Sunrise: A Song of Two Humans",
+    "The Cameraman",
+    "Show People"
+  ],
+  "structuralProblems": []
+}
+HG_FILM_HISTORY_CHAPTER_SIX_ATLAS_AUDIT_END
+
+> hg-film-producer@0.1.0 audit:film-history-ch7
+> node scripts/film-history-chapter-seven-atlas-audit.mjs
+
+HG_FILM_HISTORY_CHAPTER_SEVEN_ATLAS_AUDIT_START
+{
+  "schemaVersion": "1.0",
+  "auditDate": "2026-08-15",
+  "chapter": {
+    "number": 7,
+    "title": "Weimar cinema and Expressionism",
+    "period": "1919–1929",
+    "scope": "German studios, Expressionist design, Kammerspielfilm, mobile camera work and competing realist/modern tendencies in Weimar cinema, with UFA as an industrial axis rather than a synonym for the whole period.",
+    "thesis": "Weimar cinema cannot be reduced to Expressionist horror. Distorted design, chamber drama, mobile camera subjectivity, UFA-scale production and more observational late-1920s tendencies coexisted and competed, while German labor and style circulated internationally."
+  },
+  "atlas": {
+    "expectedCount": 405,
+    "actualCount": 405,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "appended": 56,
+        "matchedExisting": 2
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFiveInternationalExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSixHollywoodExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSevenWeimarExpansion.ts",
+        "appended": 2,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "appended": 27,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "appended": 20,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "appended": 15,
+        "matchedExisting": 7
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "appended": 23,
+        "matchedExisting": 1
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "appended": 25,
+        "matchedExisting": 3
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "The Cabinet of Dr. Caligari",
+      "year": 1920,
+      "aliases": [
+        "Das Cabinet des Dr. Caligari"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_cabinet_of_dr_caligari_1920",
+      "chapterFunction": "Expressionist production-design anchor: Decla studio construction, painted light and shadow, angular architecture, stylized performance and the frame-story problem make design itself a narrative and psychological system.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_cabinet_of_dr_caligari_1920",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Nosferatu",
+      "year": 1922,
+      "aliases": [
+        "Nosferatu: A Symphony of Horror",
+        "Nosferatu, eine Symphonie des Grauens"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_nosferatu_1922",
+      "chapterFunction": "Prana-Film location-and-design counterpoint to Caligari: unauthorized Dracula adaptation, Albin Grau design, Fritz Arno Wagner photography and uncanny use of real architecture show that Weimar horror was not synonymous with painted studio Expressionism.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_nosferatu_1922",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "The Last Laugh",
+      "year": 1924,
+      "aliases": [
+        "Der letzte Mann",
+        "The Last Man"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Kammerspielfilm and the unchained-camera problem are explicit canonical Chapter 7 requirements. Murnau, Carl Mayer, Emil Jannings and Karl Freund turn a socially compressed hotel story into mobile-camera subjectivity, making this the clearest missing Production Case rather than another Expressionist-design duplicate.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_last_laugh_1924",
+      "matches": 1,
+      "origin": "chapterSevenWeimarExpansion.ts"
+    },
+    {
+      "title": "Dr. Mabuse, the Gambler",
+      "year": 1922,
+      "aliases": [
+        "Dr. Mabuse, der Spieler",
+        "Dr. Mabuse the Gambler"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Lang's two-part crime epic is essential book evidence for Weimar modernity, disguise, finance, surveillance and serial-scale urban control, but its crime/identity gameplay overlaps existing Fantômas and later Lang cases more than it adds a new Chapter 7 production problem.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Warning Shadows",
+      "year": 1923,
+      "aliases": [
+        "Schatten",
+        "Warning Shadows: A Nocturnal Hallucination"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Arthur Robison's shadow-driven chamber experiment broadens Expressionist lighting and psychological-space analysis, but Caligari and Nosferatu already provide stronger playable design/horror anchors.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Die Nibelungen",
+      "year": 1924,
+      "aliases": [
+        "Die Nibelungen: Siegfried"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "UFA prestige, monumental design, mass choreography and mythic national imagery are major industrial evidence, while Metropolis already supplies the more production-distinct UFA-scale design/effects case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Joyless Street",
+      "year": 1925,
+      "aliases": [
+        "Die freudlose Gasse"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Pabst's urban social melodrama is useful for distinguishing street realism and social observation from Expressionism, but Pandora's Box gives the chapter a cleaner non-Expressionist Production Case around performance, modernity and New Objectivity-era tendencies.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Variety",
+      "year": 1925,
+      "aliases": [
+        "Varieté",
+        "Vaudeville"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "E. A. Dupont and Karl Freund make mobile camera and circus space central to desire and spectacle; retained as comparison because The Last Laugh is the stronger canonical unchained-camera teaching case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Faust",
+      "year": 1926,
+      "aliases": [
+        "Faust: A German Folktale",
+        "Faust – Eine deutsche Volkssage"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Murnau's UFA fantasy extends monumental design, lighting, miniatures and effects, but those functions overlap the existing Metropolis and Nosferatu production cases.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Metropolis",
+      "year": 1927,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_metropolis_1927",
+      "chapterFunction": "Existing UFA anchor for industrial scale, architectural design, mass choreography, Schüfftan/miniature effects, multiple cinematographers, Huppertz's score and severe version/reconstruction history.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_metropolis_1927",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Pandora's Box",
+      "year": 1929,
+      "aliases": [
+        "Die Büchse der Pandora",
+        "Pandora's Box"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Pabst and Louise Brooks provide the chapter's strongest playable counterweight to Expressionism: performance-centered modernity, sexual economy, social observation and New Objectivity-era tendencies show why Weimar cinema cannot be reduced to distorted sets and horror.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_pandoras_box_1929",
+      "matches": 1,
+      "origin": "chapterSevenWeimarExpansion.ts"
+    },
+    {
+      "title": "Asphalt",
+      "year": 1929,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "UFA street-film production and elaborate constructed urban space are valuable evidence for late-Weimar realism and studio artifice working together, but the design/modernity function is sufficiently covered by Metropolis plus Pandora's Box.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Diary of a Lost Girl",
+      "year": 1929,
+      "aliases": [
+        "Tagebuch einer Verlorenen"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Pabst/Brooks social melodrama extends the chapter's gender, institutional and New Objectivity-era comparison, while Pandora's Box is the more distinct Production Case for the same performer-director axis.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "The Cabinet of Dr. Caligari",
+      "Nosferatu",
+      "The Last Laugh",
+      "Metropolis",
+      "Pandora's Box"
+    ],
+    "P0": [],
+    "P1": [],
+    "P2": [
+      "Dr. Mabuse, the Gambler",
+      "Warning Shadows",
+      "Die Nibelungen",
+      "The Joyless Street",
+      "Variety",
+      "Faust",
+      "Asphalt",
+      "Diary of a Lost Girl"
+    ],
+    "AMBIGUOUS": [],
+    "EXISTING_REQUIRED": []
+  },
+  "historicalObjects": [
+    {
+      "label": "UFA and vertically scaled German studio infrastructure",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "UFA concentrated studios, capital, specialist labor and international ambitions across multiple production modes; the company is infrastructure rather than a film scenario."
+    },
+    {
+      "label": "Decla-Bioscop, Decla and postwar company consolidation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Caligari's production context and subsequent consolidation show a changing company landscape before and around UFA dominance; corporate history is not reducible to one title."
+    },
+    {
+      "label": "Expressionist design culture across film, theatre and visual art",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Distorted architecture, painted light, graphic surfaces and stylized bodies circulated across arts and productions; Expressionism is a historical tendency, not one reproducible preset."
+    },
+    {
+      "label": "Kammerspielfilm and chamber-scale social drama",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Small casts, concentrated spaces, psychological pressure and everyday social status form a tendency distinct from monumental Expressionist spectacle; the category exceeds any single film."
+    },
+    {
+      "label": "Entfesselte Kamera / unchained-camera practice",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Mobile camera rigs, elevators, tracks and motivated movement made camera subjectivity a collaborative technical practice; the method is infrastructure across productions rather than an invention owned by one shot."
+    },
+    {
+      "label": "Film architecture, studio construction and artificial city space",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Weimar productions used both real locations and increasingly ambitious constructed environments; designers, builders, cinematographers and effects workers jointly made architecture perform narrative work."
+    },
+    {
+      "label": "Inflation, stabilization and changing production economics",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Hyperinflation, currency stabilization and shifting export conditions changed costs, financing and international strategy during the 1920s; macroeconomic conditions are historical context, not a Production Case."
+    },
+    {
+      "label": "Transatlantic circulation of Weimar labor and style",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Directors, cinematographers, actors and designers moved between German and American production, carrying techniques without making influence a one-way national transfer."
+    },
+    {
+      "label": "Censorship, adaptation rights and legal vulnerability",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Nosferatu's Dracula litigation and wider censorship/rights regimes show that production and circulation depended on legal permissions and surviving versions; legal infrastructure is not a film scenario."
+    }
+  ],
+  "recommendedNewProductionCases": [],
+  "remainingBookReferenceOnlyFilms": [
+    "Dr. Mabuse, the Gambler",
+    "Warning Shadows",
+    "Die Nibelungen",
+    "The Joyless Street",
+    "Variety",
+    "Faust",
+    "Asphalt",
+    "Diary of a Lost Girl"
+  ],
+  "structuralProblems": []
+}
+HG_FILM_HISTORY_CHAPTER_SEVEN_ATLAS_AUDIT_END
+
+> hg-film-producer@0.1.0 audit:film-history-ch8
+> node scripts/film-history-chapter-eight-atlas-audit.mjs
+
+HG_FILM_HISTORY_CHAPTER_EIGHT_ATLAS_AUDIT_START
+{
+  "schemaVersion": "1.0",
+  "auditDate": "2026-08-16",
+  "chapter": {
+    "number": 8,
+    "id": "french-avant-gardes",
+    "title": "French Impressionism, Surrealism and the avant-gardes",
+    "period": "1918–1930",
+    "scope": "Photogénie, subjective vision, French Impressionist feature practice, Dada and Surrealist networks, cinéma pur, cross-art collaboration, alternative financing/exhibition and version-aware preservation.",
+    "thesis": "French avant-garde cinema was not one anti-commercial style: feature producers, critics, artists, patrons, specialist venues and independent filmmakers used different production scales to make perception, rhythm, abstraction and Surrealist association into cinema-specific problems."
+  },
+  "atlas": {
+    "expectedCount": 410,
+    "actualCount": 410,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "appended": 56,
+        "matchedExisting": 2
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFiveInternationalExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSixHollywoodExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSevenWeimarExpansion.ts",
+        "appended": 2,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "appended": 27,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "appended": 20,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "appended": 15,
+        "matchedExisting": 7
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "appended": 23,
+        "matchedExisting": 1
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "appended": 25,
+        "matchedExisting": 3
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "The Passion of Joan of Arc",
+      "originalTitle": "La Passion de Jeanne d'Arc",
+      "year": 1928,
+      "aliases": [
+        "The Passion of Joan of Arc"
+      ],
+      "role": "comparative_anchor",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_passion_of_joan_of_arc_1928",
+      "chapterFunction": "Existing French-produced silent anchor for radical close-up, sparse design, discontinuous eyelines and performance intensity. It broadens the French production field without being falsely relabeled as a core Impressionist or Surrealist manifesto.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_passion_of_joan_of_arc_1928",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Cœur fidèle",
+      "originalTitle": "Cœur fidèle",
+      "year": 1923,
+      "aliases": [
+        "Coeur fidèle",
+        "Coeur fidele",
+        "Faithful Heart"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Jean Epstein's central French Impressionist case for photogénie, subjective camera, rhythmic editing and the fairground sequence: a distinct production problem in turning perception and emotion into image rhythm rather than classical continuity alone.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_coeur_fidele_1923",
+      "matches": 1,
+      "origin": "chapterEightFrenchAvantGardeExpansion.ts"
+    },
+    {
+      "title": "Napoléon",
+      "originalTitle": "Napoléon vu par Abel Gance",
+      "year": 1927,
+      "aliases": [
+        "Napoleon",
+        "Napoléon"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Abel Gance's large-scale production and exhibition experiment connects mobile camera work, rapid montage, multiple-image techniques, tinting and the Polyvision triptych to feature-scale logistics and version history.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_napoleon_1927",
+      "matches": 1,
+      "origin": "chapterEightFrenchAvantGardeExpansion.ts"
+    },
+    {
+      "title": "Un Chien Andalou",
+      "originalTitle": "Un chien andalou",
+      "year": 1929,
+      "aliases": [
+        "An Andalusian Dog"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Buñuel and Dalí's Surrealist collaboration provides a distinct low-budget production problem in automatic-writing logic, discontinuous association, alternative exhibition and provocative imagery, with explicit safeguards against reenacting animal or bodily harm as gameplay.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_un_chien_andalou_1929",
+      "matches": 1,
+      "origin": "chapterEightFrenchAvantGardeExpansion.ts"
+    },
+    {
+      "title": "The Smiling Madame Beudet",
+      "originalTitle": "La Souriante Madame Beudet",
+      "year": 1923,
+      "aliases": [
+        "La souriante Madame Beudet",
+        "The Smiling Mme Beudet"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Germaine Dulac's domestic subjectivity makes superimposition, fantasy insert, gesture and restricted social space serve a woman's interior life, widening Impressionist gameplay beyond a male-only canon and beyond spectacle.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_smiling_madame_beudet_1923",
+      "matches": 1,
+      "origin": "chapterEightFrenchAvantGardeExpansion.ts"
+    },
+    {
+      "title": "Entr'acte",
+      "originalTitle": "Entr'acte",
+      "year": 1924,
+      "aliases": [
+        "Entr’acte"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "René Clair, Francis Picabia and Erik Satie connect Dada, ballet, commissioned intermission cinema, variable-speed imagery and cross-art collaboration to alternative institutions and event-based exhibition rather than normal feature distribution.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_entr_acte_1924",
+      "matches": 1,
+      "origin": "chapterEightFrenchAvantGardeExpansion.ts"
+    },
+    {
+      "title": "La Roue",
+      "originalTitle": "La Roue",
+      "year": 1923,
+      "aliases": [
+        "The Wheel"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Gance's long-form railway melodrama is crucial for accelerated montage, multi-camera production and extreme version history, but Napoléon carries the more distinct Gance Production Case while La Roue remains indispensable book evidence.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Ballet mécanique",
+      "originalTitle": "Ballet mécanique",
+      "year": 1924,
+      "aliases": [
+        "Ballet Mecanique",
+        "Ballet mécanique"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Léger and Murphy's machine-body abstraction is a core pure-cinema comparison, but its nonnarrative rhythmic function can remain book-level beside Entr'acte and the later experimental-film chapter rather than generating redundant gameplay.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "La Coquille et le Clergyman",
+      "originalTitle": "La Coquille et le Clergyman",
+      "year": 1928,
+      "aliases": [
+        "The Seashell and the Clergyman",
+        "La Coquille et le clergyman"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Dulac and Artaud's contested Surrealist/psychological collaboration is essential for authorship, dream logic and gendered interpretation, but Un Chien Andalou and Madame Beudet provide clearer distinct gameplay poles without duplicating Dulac.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Fall of the House of Usher",
+      "originalTitle": "La Chute de la maison Usher",
+      "year": 1928,
+      "aliases": [
+        "La Chute de la maison Usher"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Epstein's Poe adaptation extends photogénie through slow motion, superimposition, rhythm and material atmosphere, but Cœur fidèle already supplies the stronger foundational Epstein Production Case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Ménilmontant",
+      "originalTitle": "Ménilmontant",
+      "year": 1926,
+      "aliases": [
+        "Menilmontant"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Kirsanoff's independent urban melodrama is valuable for title-light visual narration, location texture and subjective editing but overlaps the Impressionist perception problem already assigned to Cœur fidèle.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Emak-Bakia",
+      "originalTitle": "Emak-Bakia",
+      "year": 1926,
+      "aliases": [
+        "Emak Bakia"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Man Ray's cinegraphic experiment broadens abstraction, rayograph-like imagery and artist-film production, but belongs as book-level pure-cinema evidence rather than another short-form Production Case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "L'Étoile de mer",
+      "originalTitle": "L'Étoile de mer",
+      "year": 1928,
+      "aliases": [
+        "L'Etoile de mer",
+        "The Starfish"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Man Ray's collaboration with Robert Desnos expands distorted vision, poetic text and Surrealist association while overlapping the short-form experimental production functions of the stronger anchor cases.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "L'Inhumaine",
+      "originalTitle": "L'Inhumaine",
+      "year": 1924,
+      "aliases": [
+        "The Inhuman Woman"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Marcel L'Herbier's cross-art feature is important for modernist architecture, design and international artistic collaboration, but those production-design functions overlap existing large-scale design cases and can remain book-level here.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "L'Âge d'Or",
+      "originalTitle": "L'Âge d'Or",
+      "year": 1930,
+      "aliases": [
+        "L'Age d'Or",
+        "The Golden Age"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Buñuel's patron-funded 1930 Surrealist feature is vital for sound-era provocation, censorship and alternative patronage, but Un Chien Andalou is the cleaner silent-era Surrealist Production Case and Chapter 11 owns the sound transition.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "The Passion of Joan of Arc",
+      "Cœur fidèle",
+      "Napoléon",
+      "Un Chien Andalou",
+      "The Smiling Madame Beudet",
+      "Entr'acte"
+    ],
+    "P0": [],
+    "P1": [],
+    "P2": [
+      "La Roue",
+      "Ballet mécanique",
+      "La Coquille et le Clergyman",
+      "The Fall of the House of Usher",
+      "Ménilmontant",
+      "Emak-Bakia",
+      "L'Étoile de mer",
+      "L'Inhumaine",
+      "L'Âge d'Or"
+    ],
+    "EXISTING_REQUIRED": []
+  },
+  "historicalObjects": [
+    {
+      "label": "Photogénie and French Impressionist film theory",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Delluc, Epstein, Dulac and others theorized cinema's capacity to transform objects, faces, movement and duration. Photogénie is a contested critical concept, not a camera preset or measurable gameplay score."
+    },
+    {
+      "label": "Film criticism, journals, ciné-clubs and specialist cinemas",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Writing, clubs and venues helped define audiences and vocabularies for film art outside mainstream commercial circulation; these institutions enabled movements but are not films."
+    },
+    {
+      "label": "Independent producers, patrons and alternative financing",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Avant-garde work depended on small companies, private money, artist networks and sometimes wealthy patrons, creating different freedoms and dependencies from vertically integrated studios."
+    },
+    {
+      "label": "Dada and Surrealist artist networks",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Film intersected with poetry, painting, performance and anti-bourgeois artistic movements. Those networks shaped collaboration and exhibition but should not be converted into a single reproducible style recipe."
+    },
+    {
+      "label": "Cinéma pur and abstract moving-image practice",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Artists explored rhythm, shape, repetition, speed and photographic transformation without conventional narrative obligations; the practice spans many shorts rather than one canonical Production Case."
+    },
+    {
+      "label": "Alternative exhibition and event cinema",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Studio des Ursulines, Studio 28, theatre/ballet programs and ciné-club screenings created contexts where short experimental works could circulate and provoke audiences outside standard feature programs."
+    },
+    {
+      "label": "Cross-art production design and modernist collaboration",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Architects, painters, musicians, poets and designers entered film production, making French avant-garde cinema a collaborative art-world system rather than a director-only phenomenon."
+    },
+    {
+      "label": "Gender, authorship and unequal canon formation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Germaine Dulac and other women were central to French avant-garde production and theory; later canons and attribution disputes can obscure that labor and must be handled explicitly."
+    },
+    {
+      "label": "Censorship, scandal and representational harm",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Provocation could trigger censorship or political reaction, while shocking images may involve real harm or vulnerable bodies. Historical analysis does not turn dangerous or exploitative acts into player objectives."
+    },
+    {
+      "label": "Restoration, alternate cuts and reconstructed accompaniment",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "La Roue, Napoléon and many shorts survive through complex restoration histories. Modern runtimes, music and reconstructed versions must remain distinct from original production and exhibition states."
+    }
+  ],
+  "recommendedNewProductionCases": [],
+  "remainingBookReferenceOnlyFilms": [
+    "La Roue",
+    "Ballet mécanique",
+    "La Coquille et le Clergyman",
+    "The Fall of the House of Usher",
+    "Ménilmontant",
+    "Emak-Bakia",
+    "L'Étoile de mer",
+    "L'Inhumaine",
+    "L'Âge d'Or"
+  ],
+  "structuralProblems": []
+}
+HG_FILM_HISTORY_CHAPTER_EIGHT_ATLAS_AUDIT_END
+
+> hg-film-producer@0.1.0 audit:film-history-ch9
+> node scripts/film-history-chapter-nine-atlas-audit.mjs
+
+HG_FILM_HISTORY_CHAPTER_NINE_ATLAS_AUDIT_START
+{
+  "schemaVersion": "1.0",
+  "auditDate": "2026-08-17",
+  "chapter": {
+    "number": 9,
+    "id": "soviet-montage",
+    "title": "Revolution and Soviet Montage",
+    "period": "1917–1930",
+    "scope": "Kuleshov pedagogy, competing montage theories, revolutionary fiction, kino-eye documentary, compilation film, Ukrainian Soviet production, state institutions, propaganda and political/historical reconstruction.",
+    "thesis": "Soviet montage was not one editing recipe: Kuleshov, Eisenstein, Pudovkin, Vertov, Shub, Dovzhenko and others worked through different institutions and theories to make editing a site of perception, political argument, historical construction and documentary authorship."
+  },
+  "atlas": {
+    "expectedCount": 415,
+    "actualCount": 415,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "appended": 56,
+        "matchedExisting": 2
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFiveInternationalExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSixHollywoodExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSevenWeimarExpansion.ts",
+        "appended": 2,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterNineSovietMontageExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "appended": 27,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "appended": 20,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "appended": 15,
+        "matchedExisting": 7
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "appended": 23,
+        "matchedExisting": 1
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "appended": 25,
+        "matchedExisting": 3
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "Battleship Potemkin",
+      "originalTitle": "Bronenosets Potemkin",
+      "year": 1925,
+      "aliases": [
+        "The Battleship Potemkin",
+        "Броненосец Потёмкин"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_battleship_potemkin_1925",
+      "chapterFunction": "Eisenstein's existing anchor for collision montage, mass action, temporal expansion/compression, political persuasion and the difference between historical event and constructed revolutionary representation.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_battleship_potemkin_1925",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Man with a Movie Camera",
+      "originalTitle": "Chelovek s kinoapparatom",
+      "year": 1929,
+      "aliases": [
+        "The Man with a Movie Camera",
+        "Человек с киноаппаратом"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_man_with_a_movie_camera_1929",
+      "chapterFunction": "Vertov, Elizaveta Svilova and Mikhail Kaufman's existing anchor for kino-eye, documentary construction, self-reflexive production, urban montage and collective authorship.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_man_with_a_movie_camera_1929",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Mother",
+      "originalTitle": "Mat",
+      "year": 1926,
+      "aliases": [
+        "Мать"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_mother_1926",
+      "chapterFunction": "Pudovkin provides the essential contrast to Eisenstein: linkage and accumulation of shots build character, emotion and revolutionary causality through a feature-scale adaptation rather than collision alone.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_mother_1926",
+      "matches": 1,
+      "origin": "chapterNineSovietMontageExpansion.ts"
+    },
+    {
+      "title": "The Fall of the Romanov Dynasty",
+      "originalTitle": "Padenie dinastii Romanovykh",
+      "year": 1927,
+      "aliases": [
+        "Падение династии Романовых"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_the_fall_of_the_romanov_dynasty_1927",
+      "chapterFunction": "Esfir Shub makes archival search, found-footage selection, recontextualization, intertitles, preservation and editorial authorship into a distinct compilation-montage production problem.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_fall_of_the_romanov_dynasty_1927",
+      "matches": 1,
+      "origin": "chapterNineSovietMontageExpansion.ts"
+    },
+    {
+      "title": "Earth",
+      "originalTitle": "Zemlya",
+      "year": 1930,
+      "aliases": [
+        "Земля"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_earth_1930",
+      "chapterFunction": "Dovzhenko adds Ukrainian production context, lyrical and associative montage, landscape, collectivization propaganda and the need to distinguish a film's commission from the historical catastrophe understood in hindsight.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_earth_1930",
+      "matches": 1,
+      "origin": "chapterNineSovietMontageExpansion.ts"
+    },
+    {
+      "title": "October",
+      "originalTitle": "Oktyabr",
+      "year": 1928,
+      "aliases": [
+        "October: Ten Days That Shook the World",
+        "Октябрь"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_october_1928",
+      "chapterFunction": "A state anniversary commission turns historical reconstruction, nonprofessional casting, intellectual montage and politically compelled recutting into a production problem distinct from Potemkin's 1905 mass-action model.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_october_1928",
+      "matches": 1,
+      "origin": "chapterNineSovietMontageExpansion.ts"
+    },
+    {
+      "title": "The Extraordinary Adventures of Mr. West in the Land of the Bolsheviks",
+      "originalTitle": "Neobychainye priklyucheniya mistera Vesta v strane bolshevikov",
+      "year": 1924,
+      "aliases": [
+        "Mr. West in the Land of the Bolsheviks",
+        "The Extraordinary Adventures of Mr West in the Land of the Bolsheviks"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_mr_west_bolsheviks_1924",
+      "chapterFunction": "Kuleshov's workshop turns American genre borrowing, rapid constructive editing, physical performance, satire and pedagogy into a practical counterpart to the abstract Kuleshov-effect discussion.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_mr_west_bolsheviks_1924",
+      "matches": 1,
+      "origin": "chapterNineSovietMontageExpansion.ts"
+    },
+    {
+      "title": "Strike",
+      "originalTitle": "Stachka",
+      "year": 1925,
+      "aliases": [
+        "Стачка"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Eisenstein's first feature is important for montage of attractions and collective protagonist, but Potemkin already carries the core playable collision-montage problem.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The General Line",
+      "originalTitle": "Staroye i novoye",
+      "year": 1929,
+      "aliases": [
+        "Old and New",
+        "The Old and the New",
+        "Старое и новое"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Eisenstein's collectivization film extends intellectual and sensuous montage, but Earth supplies the more distinct Ukrainian and propaganda-versus-poetics Production Case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The End of St. Petersburg",
+      "originalTitle": "Konets Sankt-Peterburga",
+      "year": 1927,
+      "aliases": [
+        "The End of Saint Petersburg",
+        "Конец Санкт-Петербурга"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Pudovkin's revolutionary trilogy broadens historical scale after Mother without requiring a second linkage-centered Production Case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Storm over Asia",
+      "originalTitle": "Potomok Chingis-Khana",
+      "year": 1928,
+      "aliases": [
+        "The Heir to Genghis Khan",
+        "Потомок Чингисхана"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Pudovkin's colonial-border narrative raises imperial and ethnographic representation questions, but Mother remains the cleaner anchor for his montage theory.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "By the Law",
+      "originalTitle": "Po zakonu",
+      "year": 1926,
+      "aliases": [
+        "According to the Law",
+        "Dura Lex",
+        "По закону"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Kuleshov's chamber adaptation is useful for constructive geography and resource economy; Mr. West provides the broader workshop, genre and political-satire gameplay case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Kino-Eye",
+      "originalTitle": "Kinoglaz",
+      "year": 1924,
+      "aliases": [
+        "Kino Eye",
+        "Киноглаз"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Vertov's early feature-like nonfiction statement establishes kino-eye principles, while Man with a Movie Camera already carries the mature collective documentary-production case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "A Sixth Part of the World",
+      "originalTitle": "Shestaya chast mira",
+      "year": 1926,
+      "aliases": [
+        "The Sixth Part of the World",
+        "Шестая часть мира"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Vertov's geographically expansive commission develops interval montage and state-economic representation without needing a second Vertov scenario.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Eleventh Year",
+      "originalTitle": "Odinnadtsatyy",
+      "year": 1928,
+      "aliases": [
+        "The Eleventh",
+        "Одиннадцатый"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Industrial imagery and rhythmic construction lead directly toward Man with a Movie Camera and remain book-level comparative evidence.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Zvenigora",
+      "originalTitle": "Zvenyhora",
+      "year": 1928,
+      "aliases": [
+        "Звенигора"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "The first part of Dovzhenko's Ukrainian trilogy supplies myth-history comparison; Earth carries the distinct playable culmination.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Arsenal",
+      "originalTitle": "Arsenal",
+      "year": 1929,
+      "aliases": [
+        "Арсенал"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Dovzhenko's anti-war tension, speed and stillness deepen the Ukrainian trilogy, but Earth remains the stronger separate production/propaganda problem.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Great Road",
+      "originalTitle": "Velikiy put",
+      "year": 1927,
+      "aliases": [
+        "The Great Way",
+        "Великий путь"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Shub's additional compilation work broadens archival montage after The Fall of the Romanov Dynasty without requiring redundant found-footage gameplay.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The New Babylon",
+      "originalTitle": "Novyy Vavilon",
+      "year": 1929,
+      "aliases": [
+        "New Babylon",
+        "Новый Вавилон"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "FEKS, constructivist performance and Shostakovich's score expand the field beyond the canonical montage theorists and remain book-level comparison.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Bed and Sofa",
+      "originalTitle": "Tretya Meshchanskaya",
+      "year": 1927,
+      "aliases": [
+        "Third Meshchanskaya",
+        "Третья Мещанская"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Abram Room's social satire prevents Soviet cinema from collapsing into revolutionary epics while remaining outside the core montage-production queue.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Fragment of an Empire",
+      "originalTitle": "Oblomok imperii",
+      "year": 1929,
+      "aliases": [
+        "A Fragment of an Empire",
+        "Обломок империи"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Fridrikh Ermler's memory and social transformation provide an additional montage-era comparison rather than a required distinct Production Case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "Battleship Potemkin",
+      "Man with a Movie Camera",
+      "Mother",
+      "The Fall of the Romanov Dynasty",
+      "Earth",
+      "October",
+      "The Extraordinary Adventures of Mr. West in the Land of the Bolsheviks"
+    ],
+    "P0": [],
+    "P1": [],
+    "P2": [
+      "Strike",
+      "The General Line",
+      "The End of St. Petersburg",
+      "Storm over Asia",
+      "By the Law",
+      "Kino-Eye",
+      "A Sixth Part of the World",
+      "The Eleventh Year",
+      "Zvenigora",
+      "Arsenal",
+      "The Great Road",
+      "The New Babylon",
+      "Bed and Sofa",
+      "Fragment of an Empire"
+    ],
+    "EXISTING_REQUIRED": []
+  },
+  "historicalObjects": [
+    {
+      "label": "Kuleshov workshop, VGIK and the Kuleshov effect",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "The workshop and editing experiment belong to pedagogy and theory; the Kuleshov effect is not a magic reaction preset or a claim that one surviving shot pair explains all montage."
+    },
+    {
+      "label": "Competing montage theories: collision, linkage, intervals and intellectual montage",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Eisenstein, Pudovkin, Vertov and others theorized editing differently; the chapter must compare their arguments rather than turn 'Soviet montage' into one universal cut formula."
+    },
+    {
+      "label": "Nationalization, Narkompros, Goskino, Sovkino and Mezhrabpom production institutions",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Revolutionary film culture depended on changing state, semi-state and cooperative production/distribution structures; institutions are production context, not fake films."
+    },
+    {
+      "label": "Agit-trains, agit-trucks, newsreels and mobile exhibition",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Film circulated as political information and education through non-theatrical infrastructures reaching workers, soldiers and rural audiences; distribution practice is not a Production Case by itself."
+    },
+    {
+      "label": "Proletkult, theatre of attractions, constructivism and FEKS",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Theatre, design, circus, eccentric performance and constructivist practice fed film form across several groups without constituting one reusable visual style preset."
+    },
+    {
+      "label": "Kino-Pravda, kino-eye and collective documentary labor",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Vertov's program depended on camera operators and editors including Mikhail Kaufman and Elizaveta Svilova; documentary construction and collective labor must remain visible rather than being reduced to a lone-director myth."
+    },
+    {
+      "label": "VUFKU and Ukrainian Soviet cinema",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Kyiv, Odesa and Kharkiv production institutions and filmmakers including Dovzhenko and Vertov complicate the habit of treating every Soviet film as culturally or institutionally Russian."
+    },
+    {
+      "label": "State commissions, censorship and political recutting",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Anniversary films and propaganda commissions could be altered as official politics changed; October's removal of Trotsky material is a history/evidence problem, not a gameplay instruction to falsify archives."
+    },
+    {
+      "label": "Import re-editing, film-stock scarcity and archival reuse",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Soviet editors including Esfir Shub transformed imported and inherited footage under material and ideological constraints; re-editing is labor and institutional practice, not automatically creative consent from the original makers."
+    },
+    {
+      "label": "Propaganda, collectivization, violence and historical hindsight",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Political purpose must be distinguished from later historical knowledge: films about revolution, class conflict and collectivization are evidence of production and ideology, not neutral records or templates for endorsing state violence."
+    }
+  ],
+  "boundaryNotes": [
+    "Enthusiasm / Symphony of the Donbas (1931) is intentionally deferred to the sound-transition chapter because Chapter 9's canonical period ends in 1930 and its key production problem is asynchronous/contrapuntal recorded sound.",
+    "The Odessa Steps sequence in Battleship Potemkin is analyzed as constructed revolutionary representation, not treated as neutral documentary footage of a historical massacre on those steps.",
+    "Earth's collectivization commission is kept distinct from later knowledge of forced collectivization and the Holodomor; historical hindsight constrains interpretation but is not back-projected as Dovzhenko's documented production intention."
+  ],
+  "safeguards": [
+    "The Kuleshov effect is a contested pedagogical/theoretical construct, not a universal viewer-response formula or gameplay multiplier.",
+    "Eisenstein collision, Pudovkin linkage and Vertov interval/kino-eye theories must remain distinguishable rather than becoming one Soviet montage preset.",
+    "Soviet does not mean Russian: VUFKU, Ukrainian locations and Ukrainian filmmakers must remain institutionally and culturally visible where supported by evidence.",
+    "State commission, propaganda purpose, censorship and archival alteration must remain distinct historical claims; the game never rewards falsifying evidence or endorsing political violence.",
+    "Esfir Shub's archival research and editing labor must be credited as authorship rather than reduced to anonymous reuse of existing footage."
+  ],
+  "recommendedNewProductionCases": [],
+  "remainingBookReferenceOnlyFilms": [
+    "Strike",
+    "The General Line",
+    "The End of St. Petersburg",
+    "Storm over Asia",
+    "By the Law",
+    "Kino-Eye",
+    "A Sixth Part of the World",
+    "The Eleventh Year",
+    "Zvenigora",
+    "Arsenal",
+    "The Great Road",
+    "The New Babylon",
+    "Bed and Sofa",
+    "Fragment of an Empire"
+  ],
+  "structuralProblems": []
+}
+HG_FILM_HISTORY_CHAPTER_NINE_ATLAS_AUDIT_END
+
+> hg-film-producer@0.1.0 audit:film-history-ch10
+> node scripts/film-history-chapter-ten-atlas-audit.mjs
+
+HG_FILM_HISTORY_CHAPTER_TEN_ATLAS_AUDIT_START
+{
+  "schemaVersion": "1.0",
+  "auditDate": "2026-08-18",
+  "chapter": {
+    "number": 10,
+    "id": "silent-beyond-west",
+    "title": "Silent cinemas beyond the usual canon",
+    "period": "1910s–1929",
+    "scope": "Japanese benshi/studio/independent production, Shanghai Chinese studios and wuxia serials, Indian indigenous and transnational silent production, Scandinavian and Norwegian film systems, and the archival survival problem that shapes the modern canon.",
+    "thesis": "Silent cinema was never one Hollywood-European system: production companies, live narration, genres, colonial and transnational finance, literary adaptation, location practices and archive survival created distinct film cultures whose differences must remain visible rather than being flattened into a generic world-cinema supplement."
+  },
+  "atlas": {
+    "expectedCount": 415,
+    "actualCount": 415,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "appended": 56,
+        "matchedExisting": 2
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFiveInternationalExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSixHollywoodExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSevenWeimarExpansion.ts",
+        "appended": 2,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterNineSovietMontageExpansion.ts",
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "appended": 27,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "appended": 20,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "appended": 15,
+        "matchedExisting": 7
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "appended": 23,
+        "matchedExisting": 1
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "appended": 25,
+        "matchedExisting": 3
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "A Page of Madness",
+      "originalTitle": "Kurutta ichipeiji",
+      "year": 1926,
+      "aliases": [
+        "Kurutta ippēji",
+        "Kurutta Ichipeiji"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Kinugasa and the New Perceptions circle provide the chapter's essential Japanese avant-garde anchor: independent production, subjective modernism, rediscovery after loss and exhibition whose original intelligibility depended partly on benshi performance rather than intertitles alone.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Laborer's Love",
+      "originalTitle": "Laogong zhi aiqing",
+      "year": 1922,
+      "aliases": [
+        "Labourer's Love",
+        "Romance of a Fruit Peddler"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "The surviving Mingxing short anchors early Shanghai studio practice, urban comedy, May Fourth-era social modernity and the problem of reconstructing a film culture from an exceptionally small surviving corpus.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "A Throw of Dice",
+      "originalTitle": "Prapancha Pash",
+      "year": 1929,
+      "aliases": [
+        "Prapancha Pash",
+        "Schicksalswürfel"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Himansu Rai and Franz Osten's India/Germany/United Kingdom collaboration anchors transnational silent production in India: location shooting, star-producer agency, international finance/circulation and the need to keep modern restoration scores distinct from original production sound.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Growth of the Soil",
+      "originalTitle": "Markens grøde",
+      "year": 1921,
+      "aliases": [
+        "Markens grode",
+        "Segen der Erde",
+        "The Growth of the Soil"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "The Norwegian Hamsun adaptation supplies a distinct national production problem in long-form literary adaptation, landscape/location work, tinting/toning, local exhibition and the tension between prestigious source material and a still-developing domestic film industry.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Orochi",
+      "originalTitle": "Orochi",
+      "year": 1925,
+      "aliases": [
+        "Serpent"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Buntaro Futagawa and star-producer Tsumasaburo Bando add independent star-company economics, chanbara action choreography, print preservation by a performer-producer and the later continuity of benshi presentation.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Red Heroine",
+      "originalTitle": "Hongxia",
+      "year": 1929,
+      "aliases": [
+        "Red Heroine"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "The only surviving section of the Red Knight-Errant serial provides a playable route into late-1920s Shanghai wuxia serial production, female action stardom, practical/trick effects, tinting and the ethics of treating a fragment as a fragment rather than a complete serial.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Häxan",
+      "originalTitle": "Häxan",
+      "year": 1922,
+      "aliases": [
+        "Haxan",
+        "Witchcraft Through the Ages"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Benjamin Christensen's Scandinavian production makes research, lecture form, staged reenactment, elaborate design/effects, censorship and the ethics of pseudo-documentary authority into a production problem distinct from The Phantom Carriage.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Afgrunden",
+      "originalTitle": "Afgrunden",
+      "year": 1910,
+      "aliases": [
+        "The Abyss"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_afgrunden_1910",
+      "chapterFunction": "The existing Danish Production Case supplies Asta Nielsen, Nordisk-era performance and international circulation at the opening edge of the chapter's silent-system history.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_afgrunden_1910",
+      "matches": 1,
+      "origin": "chapterFiveInternationalExpansion.ts"
+    },
+    {
+      "title": "The Phantom Carriage",
+      "originalTitle": "Körkarlen",
+      "year": 1921,
+      "aliases": [
+        "Korkarlen",
+        "The Phantom Chariot"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_phantom_carriage_1921",
+      "chapterFunction": "The existing Swedish Production Case anchors literary adaptation, location-based visual culture, in-camera multiple exposure and the international prestige of the Swedish silent golden age.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_phantom_carriage_1921",
+      "matches": 1,
+      "origin": "scandinavianEuropeanExpansion.ts"
+    },
+    {
+      "title": "Crossroads",
+      "originalTitle": "Jūjiro",
+      "year": 1928,
+      "aliases": [
+        "Jujiro",
+        "Crossways"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Kinugasa's second avant-garde feature extends psychological jidaigeki and international art-cinema circulation; A Page of Madness already carries the distinct Japanese experimental Production Case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Souls on the Road",
+      "originalTitle": "Rojō no Reikon",
+      "year": 1921,
+      "aliases": [
+        "Rojo no Reikon"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "An early Japanese feature connects Shochiku-era modernization, Western dramatic influence and emerging studio practice without requiring a second broad institutional case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Romance of the Western Chamber",
+      "originalTitle": "Xixiang ji",
+      "year": 1927,
+      "aliases": [
+        "Romance of the Western Chamber"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "The surviving fragment of Minxin's lavish costume production broadens Chinese studio scale, tinting and literary adaptation while Laborer's Love and Red Heroine cover the more distinct playable production problems.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Burning of the Red Lotus Temple",
+      "originalTitle": "Huoshao Hongliansi",
+      "year": 1928,
+      "aliases": [
+        "Burning of the Red Lotus Temple"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "The lost multi-part wuxia phenomenon remains essential book evidence for serial economics, special-effects spectacle, censorship and survival bias but cannot support a fabricated complete Production Case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Raja Harishchandra",
+      "originalTitle": "Raja Harishchandra",
+      "year": 1913,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Dadasaheb Phalke's landmark Indian production is indispensable to industrial history, but only fragments survive; the chapter treats surviving material and historical documentation without inventing a full-film playable reconstruction.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Kaliya Mardan",
+      "originalTitle": "Kaliya Mardan",
+      "year": 1919,
+      "aliases": [
+        "Kaliya Mardan (The Childhood of Krishna)"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Phalke's mythological production broadens performance, effects and indigenous production practice while the chapter avoids reducing Indian silent cinema to a single origin story.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Light of Asia",
+      "originalTitle": "Prem Sanyas",
+      "year": 1925,
+      "aliases": [
+        "Die Leuchte Asiens"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "The first Rai/Osten transnational feature establishes the collaboration later continued by Shiraz and A Throw of Dice; the latter supplies the canonical playable endpoint.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Shiraz",
+      "originalTitle": "Shiraz: A Romance of India",
+      "year": 1928,
+      "aliases": [
+        "Shiraz",
+        "Shiraz: A Romance of India"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Rai and Osten's Indian/British/German location epic broadens design, costume and co-production history while A Throw of Dice carries the distinct transnational Production Case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Ingeborg Holm",
+      "originalTitle": "Ingeborg Holm",
+      "year": 1913,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Sjöström's social melodrama expands Swedish realism and performance history before the prestige-era supernatural techniques represented by The Phantom Carriage.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Outlaw and His Wife",
+      "originalTitle": "Berg-Ejvind och hans hustru",
+      "year": 1918,
+      "aliases": [
+        "The Outlaw and His Wife (Berg-Ejvind och hans hustru)"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Sjöström's elemental landscape production is a major Swedish comparison, but The Phantom Carriage already supplies a distinct playable Swedish production problem.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Sir Arne's Treasure",
+      "originalTitle": "Herr Arnes pengar",
+      "year": 1919,
+      "aliases": [
+        "Sir Arne's Treasure (Herr Arnes pengar)"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Mauritz Stiller, Selma Lagerlöf adaptation and Julius Jaenzon's landscape photography broaden the Swedish golden age without requiring another closely overlapping Production Case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Erotikon",
+      "originalTitle": "Erotikon",
+      "year": 1920,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Stiller's sophisticated comedy broadens genre, performance and urban modernity beyond the landscape-heavy image of Swedish silent cinema.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "Gösta Berling's Saga",
+      "originalTitle": "Gösta Berlings saga",
+      "year": 1924,
+      "aliases": [
+        "Gosta Berling's Saga",
+        "The Saga of Gosta Berling"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Stiller's large-scale Lagerlöf adaptation and Greta Garbo's breakthrough broaden star formation and prestige production while existing/P1 Scandinavian cases cover distinct gameplay.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "The Sentimental Bloke",
+      "originalTitle": "The Sentimental Bloke",
+      "year": 1919,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "The Australian feature broadens vernacular performance, location work and a film culture often omitted from canonical silent-era narratives.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    },
+    {
+      "title": "El automóvil gris",
+      "originalTitle": "El automóvil gris",
+      "year": 1919,
+      "aliases": [
+        "The Grey Automobile",
+        "The Gray Automobile",
+        "El automovil gris"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "The Mexican crime serial broadens location, actuality/fiction mixture and Latin American silent production while remaining book-level comparison in this chapter.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "Afgrunden",
+      "The Phantom Carriage"
+    ],
+    "P0": [
+      "A Page of Madness",
+      "Laborer's Love",
+      "A Throw of Dice",
+      "Growth of the Soil"
+    ],
+    "P1": [
+      "Orochi",
+      "The Red Heroine",
+      "Häxan"
+    ],
+    "P2": [
+      "Crossroads",
+      "Souls on the Road",
+      "The Romance of the Western Chamber",
+      "The Burning of the Red Lotus Temple",
+      "Raja Harishchandra",
+      "Kaliya Mardan",
+      "The Light of Asia",
+      "Shiraz",
+      "Ingeborg Holm",
+      "The Outlaw and His Wife",
+      "Sir Arne's Treasure",
+      "Erotikon",
+      "Gösta Berling's Saga",
+      "The Sentimental Bloke",
+      "El automóvil gris"
+    ],
+    "EXISTING_REQUIRED": []
+  },
+  "historicalObjects": [
+    {
+      "label": "Benshi, live narration, intertitles and silent-era accompaniment",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Japanese silent exhibition often relied on benshi performance, while other territories used different combinations of intertitles and live music; 'silent' must not be treated as one universal mute presentation format."
+    },
+    {
+      "label": "Japanese studios, independent star companies, jidaigeki and chanbara production",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Shochiku-era modernization and independent performer-producers such as Tsumasaburo Bando created different production and distribution models; genres and companies are institutional context rather than fake films."
+    },
+    {
+      "label": "Shanghai studios, Mingxing/Minxin networks and urban Chinese modernity",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Early Chinese production grew through rapidly changing companies, writers, performers and urban exhibition circuits; a tiny surviving corpus must not be mistaken for the whole industry."
+    },
+    {
+      "label": "Wuxia serial culture, special effects, censorship and fragment survival",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Late-1920s martial-arts serials could run across many installments and later face official bans; surviving fragments such as Red Heroine require explicit limits on what historians can reconstruct."
+    },
+    {
+      "label": "Phalke, mythological production and early Indian studio formation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Indian silent production developed indigenous entrepreneurship, mythological genres and performance practices before sound; origin stories remain contextual history rather than a single founder preset."
+    },
+    {
+      "label": "Himansu Rai, Franz Osten and transnational Indian-European co-production",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Light of Asia, Shiraz and A Throw of Dice combined Indian star-producer agency, German direction/technical collaboration and international finance/circulation; co-production is not evidence of national purity."
+    },
+    {
+      "label": "Swedish golden-age studios, literary adaptation and landscape aesthetics",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Sjöström, Stiller, cinematographers, companies and authors such as Selma Lagerlöf built prestige through adaptation, performance and location work; the production system matters beyond auteur labels."
+    },
+    {
+      "label": "Danish Nordisk, Asta Nielsen and Scandinavian transnational circulation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Danish companies and performers were major international forces before and during the 1910s, linking national production to export markets and mobile careers rather than isolated national canons."
+    },
+    {
+      "label": "Norwegian silent production, literary prestige and location culture",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Norwegian features such as Growth of the Soil developed through small domestic companies, literary adaptation and demanding location work; preservation and later restoration shape what can now be studied."
+    },
+    {
+      "label": "Nitrate loss, incomplete survival, archive reconstruction and canon bias",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Most silent films from several chapter regions are lost or incomplete. Surviving titles are evidence conditioned by preservation, rediscovery and archive policy, not a statistically representative sample of historical production."
+    }
+  ],
+  "boundaryNotes": [
+    "The Burning of the Red Lotus Temple is historically central to wuxia serial production but no complete film survives; the book may analyze documented production and reception, while gameplay must not fabricate a complete surviving Production Case.",
+    "Only fragments of Raja Harishchandra survive. Its industrial importance is preserved without pretending the extant footage supplies a complete feature-level production record.",
+    "Red Heroine is the only surviving section of a larger serial; any Production Case must model the surviving self-contained section and explicitly preserve the missing-series boundary.",
+    "A Page of Madness was originally exhibited in a culture of benshi narration. Lack of conventional intertitles must not be interpreted as evidence that historical audiences were meant to receive the surviving image track without live interpretive performance.",
+    "Major sound-era landmarks including Alam Ara (1931) and later Japanese/Chinese sound transitions are deferred to the sound-transition chapter rather than pulled backward into a chapter ending in 1929."
+  ],
+  "safeguards": [
+    "Archive survival is not representativeness: a surviving film receives no automatic claim to typify its national cinema, and lost works remain visible as documented absences.",
+    "Japan, China, India, Denmark, Sweden, Norway, Australia and Mexico remain distinct production contexts; 'non-Western' or 'world cinema' is never used as a substitute for institutional specificity.",
+    "Benshi, live music, translated intertitles and touring exhibition are historical presentation systems, not missing-data defects or synchronized production sound.",
+    "Colonial and transnational co-production must identify who financed, produced, performed, photographed and circulated a film rather than assigning pure national ownership by location alone.",
+    "Modern restoration scores, reconstructed tints and archive assemblies remain distinct from original production elements and are labeled as later presentation/restoration work."
+  ],
+  "recommendedNewProductionCases": [
+    "A Page of Madness",
+    "Laborer's Love",
+    "A Throw of Dice",
+    "Growth of the Soil",
+    "Orochi",
+    "The Red Heroine",
+    "Häxan"
+  ],
+  "remainingBookReferenceOnlyFilms": [
+    "Crossroads",
+    "Souls on the Road",
+    "The Romance of the Western Chamber",
+    "The Burning of the Red Lotus Temple",
+    "Raja Harishchandra",
+    "Kaliya Mardan",
+    "The Light of Asia",
+    "Shiraz",
+    "Ingeborg Holm",
+    "The Outlaw and His Wife",
+    "Sir Arne's Treasure",
+    "Erotikon",
+    "Gösta Berling's Saga",
+    "The Sentimental Bloke",
+    "El automóvil gris"
+  ],
+  "structuralProblems": []
+}
+HG_FILM_HISTORY_CHAPTER_TEN_ATLAS_AUDIT_END
+
+> hg-film-producer@0.1.0 typecheck
+> tsc --noEmit && tsc -p tsconfig.app.json
+
+src/core/filmHistoryChapterTenAuditContract.test.ts(57,24): error TS2488: Type 'string[] | undefined' must have a '[Symbol.iterator]()' method that returns an iterator.
