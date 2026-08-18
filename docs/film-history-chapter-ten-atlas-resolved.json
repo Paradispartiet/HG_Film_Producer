@@ -10,8 +10,8 @@
     "thesis": "Silent cinema was never one Hollywood-European system: production companies, live narration, genres, colonial and transnational finance, literary adaptation, location practices and archive survival created distinct film cultures whose differences must remain visible rather than being flattened into a generic world-cinema supplement."
   },
   "atlas": {
-    "expectedCount": 416,
-    "actualCount": 416,
+    "expectedCount": 417,
+    "actualCount": 417,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -70,6 +70,11 @@
       },
       {
         "fileName": "chapterTenSilentCinemasExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTenLaborersLoveExpansion.ts",
         "appended": 1,
         "matchedExisting": 0
       },
@@ -158,10 +163,12 @@
       ],
       "role": "anchor_film",
       "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_laborers_love_1922",
       "chapterFunction": "The surviving Mingxing short anchors early Shanghai studio practice, urban comedy, May Fourth-era social modernity and the problem of reconstructing a film culture from an exceptionally small surviving corpus.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_laborers_love_1922",
+      "matches": 1,
+      "origin": "chapterTenLaborersLoveExpansion.ts"
     },
     {
       "title": "A Throw of Dice",
@@ -481,11 +488,11 @@
   "byDecision": {
     "USE_EXISTING": [
       "A Page of Madness",
+      "Laborer's Love",
       "Afgrunden",
       "The Phantom Carriage"
     ],
     "P0": [
-      "Laborer's Love",
       "A Throw of Dice",
       "Growth of the Soil"
     ],
@@ -590,7 +597,6 @@
     "Modern restoration scores, reconstructed tints and archive assemblies remain distinct from original production elements and are labeled as later presentation/restoration work."
   ],
   "recommendedNewProductionCases": [
-    "Laborer's Love",
     "A Throw of Dice",
     "Growth of the Soil",
     "Orochi",

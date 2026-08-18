@@ -30,6 +30,7 @@ import { entrActeFilmHistoryProfile } from "./scenarioFilmStudyFrenchAvantGardeE
 import { smilingMadameBeudetFilmHistoryProfile } from "./scenarioFilmStudyFrenchAvantGardeSmilingMadameBeudet";
 import { motherFilmHistoryProfile, fallRomanovDynastyFilmHistoryProfile, earthFilmHistoryProfile, octoberFilmHistoryProfile, mrWestFilmHistoryProfile } from "./scenarioFilmStudySovietMontageBatch";
 import { aPageOfMadnessFilmHistoryProfile } from "./scenarioFilmStudySilentCinemasAPageOfMadness";
+import { laborersLoveFilmHistoryProfile } from "./scenarioFilmStudySilentCinemasLaborersLove";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -86,6 +87,7 @@ const sourceBackedFilmHistoryProfiles = {
   [octoberFilmHistoryProfile.scenarioId]: octoberFilmHistoryProfile,
   [mrWestFilmHistoryProfile.scenarioId]: mrWestFilmHistoryProfile,
   [aPageOfMadnessFilmHistoryProfile.scenarioId]: aPageOfMadnessFilmHistoryProfile,
+  [laborersLoveFilmHistoryProfile.scenarioId]: laborersLoveFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
