@@ -1,9 +1,6 @@
 name: Materialize Chapter 11 Jazz Singer
 
 on:
-  push:
-    branches:
-      - agent/ch11-jazz-singer-production-case
   pull_request:
     branches:
       - main
@@ -12,8 +9,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: ch11-jazz-singer-materialize
-  cancel-in-progress: false
+  group: ch11-jazz-singer-materialize-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
   materialize:
