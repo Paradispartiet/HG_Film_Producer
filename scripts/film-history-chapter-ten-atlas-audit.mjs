@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 417;
+const EXPECTED_ATLAS_COUNT = 418;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -21,6 +21,7 @@ const expansionFiles = [
   "chapterNineSovietMontageExpansion.ts",
   "chapterTenSilentCinemasExpansion.ts",
   "chapterTenLaborersLoveExpansion.ts",
+  "chapterTenAThrowOfDiceExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -62,6 +63,7 @@ const candidates = [
     aliases: ["Prapancha Pash", "Schicksalswürfel"],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_a_throw_of_dice_1929",
     chapterFunction: "Himansu Rai and Franz Osten's India/Germany/United Kingdom collaboration anchors transnational silent production in India: location shooting, star-producer agency, international finance/circulation and the need to keep modern restoration scores distinct from original production sound.",
   },
   {
@@ -151,8 +153,8 @@ const historicalObjects = [
 ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
 const expectedDecisions = {
-  USE_EXISTING: ["A Page of Madness", "Afgrunden", "Laborer's Love", "The Phantom Carriage"],
-  P0: ["A Throw of Dice", "Growth of the Soil"],
+  USE_EXISTING: ["A Page of Madness", "A Throw of Dice", "Afgrunden", "Laborer's Love", "The Phantom Carriage"],
+  P0: ["Growth of the Soil"],
   P1: ["Häxan", "Orochi", "The Red Heroine"],
   P2: ["Crossroads", "El automóvil gris", "Erotikon", "Gösta Berling's Saga", "Ingeborg Holm", "Kaliya Mardan", "Raja Harishchandra", "Shiraz", "Sir Arne's Treasure", "Souls on the Road", "The Burning of the Red Lotus Temple", "The Light of Asia", "The Outlaw and His Wife", "The Romance of the Western Chamber", "The Sentimental Bloke"],
 };

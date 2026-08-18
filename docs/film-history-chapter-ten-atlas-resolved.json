@@ -10,8 +10,8 @@
     "thesis": "Silent cinema was never one Hollywood-European system: production companies, live narration, genres, colonial and transnational finance, literary adaptation, location practices and archive survival created distinct film cultures whose differences must remain visible rather than being flattened into a generic world-cinema supplement."
   },
   "atlas": {
-    "expectedCount": 417,
-    "actualCount": 417,
+    "expectedCount": 418,
+    "actualCount": 418,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -75,6 +75,11 @@
       },
       {
         "fileName": "chapterTenLaborersLoveExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTenAThrowOfDiceExpansion.ts",
         "appended": 1,
         "matchedExisting": 0
       },
@@ -180,10 +185,12 @@
       ],
       "role": "anchor_film",
       "decisionIfMissing": "P0",
+      "expectedScenarioId": "scenario_a_throw_of_dice_1929",
       "chapterFunction": "Himansu Rai and Franz Osten's India/Germany/United Kingdom collaboration anchors transnational silent production in India: location shooting, star-producer agency, international finance/circulation and the need to keep modern restoration scores distinct from original production sound.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_a_throw_of_dice_1929",
+      "matches": 1,
+      "origin": "chapterTenAThrowOfDiceExpansion.ts"
     },
     {
       "title": "Growth of the Soil",
@@ -489,11 +496,11 @@
     "USE_EXISTING": [
       "A Page of Madness",
       "Laborer's Love",
+      "A Throw of Dice",
       "Afgrunden",
       "The Phantom Carriage"
     ],
     "P0": [
-      "A Throw of Dice",
       "Growth of the Soil"
     ],
     "P1": [
@@ -597,7 +604,6 @@
     "Modern restoration scores, reconstructed tints and archive assemblies remain distinct from original production elements and are labeled as later presentation/restoration work."
   ],
   "recommendedNewProductionCases": [
-    "A Throw of Dice",
     "Growth of the Soil",
     "Orochi",
     "The Red Heroine",
