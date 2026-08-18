@@ -130,8 +130,16 @@ replace_once(
     '  assert.equal(byTitle.get("The Jazz Singer")?.scenarioId, "scenario_the_jazz_singer_1927");',
 )
 
-# Generate the canonical resolved report from the patched permanent audit.
-subprocess.run(["node", "scripts/film-history-chapter-eleven-atlas-audit.mjs"], cwd=ROOT, check=True)
+# Generate and persist the canonical resolved report from the patched permanent audit.
+subprocess.run(
+    [
+        "node",
+        "scripts/film-history-chapter-eleven-atlas-audit.mjs",
+        "--write=docs/film-history-chapter-eleven-atlas-resolved.json",
+    ],
+    cwd=ROOT,
+    check=True,
+)
 
 resolved = json.loads((ROOT / "docs/film-history-chapter-eleven-atlas-resolved.json").read_text(encoding="utf-8"))
 if resolved["atlas"]["expectedCount"] != 423 or resolved["atlas"]["actualCount"] != 423:
