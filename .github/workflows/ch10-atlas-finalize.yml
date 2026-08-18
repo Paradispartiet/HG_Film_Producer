@@ -22,7 +22,7 @@ jobs:
       - run: npm ci
       - name: Generate canonical Chapter 10 resolved report
         run: npm run audit:film-history-ch10
-      - name: Full v0.1 verification
+      - name: Full v0.1 verification after explicit audit decision-shape repair
         shell: bash
         run: |
           set -o pipefail
