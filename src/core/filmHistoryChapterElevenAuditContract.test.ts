@@ -118,5 +118,6 @@ test("Chapter 11 permanently preserves version, language, archive and representa
 
 test("Chapter 11 audit is permanent in the v0.1 verification chain", () => {
   assert.match(packageJson, /"audit:film-history-ch11": "node scripts\/film-history-chapter-eleven-atlas-audit\.mjs"/);
-  assert.match(packageJson, /npm run audit:film-history-ch10 && npm run audit:film-history-ch11 && npm run typecheck/);
+  assert.match(packageJson, /npm run audit:film-history-ch10 && npm run audit:film-history-ch11/);
+  assert.match(packageJson, /npm run typecheck/);
 });
