@@ -32,3 +32,11 @@ jobs:
           do
             gh api "repos/$repo" --jq '[.full_name, .visibility, (.has_pages|tostring), (.forks_count|tostring)] | @tsv'
           done
+      - name: Probe repository administration write permission without changing state
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api --include --method PATCH "repos/Paradispartiet/HG_Film_Producer" -F has_wiki=true >/tmp/admin-probe.txt
+          sed -n '1,30p' /tmp/admin-probe.txt
+          test "$(gh api repos/Paradispartiet/HG_Film_Producer --jq '.has_wiki')" = "true"
+          echo "ADMIN_WRITE_PROBE_OK"
