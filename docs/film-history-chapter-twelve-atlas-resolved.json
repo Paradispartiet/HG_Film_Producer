@@ -1,0 +1,767 @@
+{
+  "schemaVersion": "1.0",
+  "auditDate": "2026-08-18",
+  "chapter": {
+    "number": 12,
+    "id": "studio-genre-system",
+    "title": "The studio and genre system",
+    "period": "1930–1945",
+    "scope": "The consolidation of classical studio production after the sound transition: vertical integration, departmental labor, stars and contracts, genre cycles, censorship, sound stages and locations, Technicolor, animation, special effects, music, continuity practice and wartime studio production, with explicit non-Hollywood comparison.",
+    "thesis": "Classical studio cinema was not a single style but an industrial coordination system: companies managed recurring genres, stars, departments, technologies, censorship and distribution at scale while individual productions negotiated those systems differently."
+  },
+  "atlas": {
+    "expectedCount": 430,
+    "actualCount": 430,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "definitions": 58,
+        "appended": 56,
+        "matchedExisting": 2,
+        "status": "manual_early_cinema_case_needs_source_verification",
+        "sourceListId": "manual_early_cinema_expansion_2026"
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_one_early_cinema_verified",
+        "sourceListId": "manual_chapter_one_early_cinema_expansion_2026"
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_one_early_cinema_verified",
+        "sourceListId": "manual_chapter_one_early_cinema_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "definitions": 3,
+        "appended": 3,
+        "matchedExisting": 0,
+        "status": "manual_chapter_two_exhibition_verified",
+        "sourceListId": "manual_chapter_two_exhibition_expansion_2026"
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_chapter_three_narrative_verified",
+        "sourceListId": "manual_chapter_three_narrative_expansion_2026"
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "definitions": 3,
+        "appended": 3,
+        "matchedExisting": 0,
+        "status": "manual_chapter_four_industry_verified",
+        "sourceListId": "manual_chapter_four_industry_expansion_2026"
+      },
+      {
+        "fileName": "chapterFiveInternationalExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_chapter_five_international_verified",
+        "sourceListId": "manual_chapter_five_international_expansion_2026"
+      },
+      {
+        "fileName": "chapterSixHollywoodExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_six_hollywood_verified",
+        "sourceListId": "manual_chapter_six_hollywood_expansion_2026"
+      },
+      {
+        "fileName": "chapterSevenWeimarExpansion.ts",
+        "definitions": 2,
+        "appended": 2,
+        "matchedExisting": 0,
+        "status": "manual_chapter_seven_weimar_verified",
+        "sourceListId": "manual_chapter_seven_weimar_expansion_2026"
+      },
+      {
+        "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eight_french_avant_garde_verified",
+        "sourceListId": "manual_chapter_eight_french_avant_garde_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineSovietMontageExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nine_soviet_montage_verified",
+        "sourceListId": "manual_chapter_nine_soviet_montage_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenSilentCinemasExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_silent_cinemas_verified",
+        "sourceListId": "manual_chapter_ten_silent_cinemas_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenLaborersLoveExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_laborers_love_verified",
+        "sourceListId": "manual_chapter_ten_laborers_love_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenAThrowOfDiceExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_a_throw_of_dice_verified",
+        "sourceListId": "manual_chapter_ten_a_throw_of_dice_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenGrowthOfTheSoilExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_growth_of_the_soil_verified",
+        "sourceListId": "manual_chapter_ten_growth_of_the_soil_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenOrochiExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_orochi_verified",
+        "sourceListId": "manual_chapter_ten_orochi_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenRedHeroineExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_red_heroine_verified",
+        "sourceListId": "manual_chapter_ten_red_heroine_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenHaxanExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_haxan_verified",
+        "sourceListId": "manual_chapter_ten_haxan_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenJazzSingerExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_jazz_singer_verified",
+        "sourceListId": "manual_chapter_eleven_jazz_singer_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenBlackmailExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_blackmail_verified",
+        "sourceListId": "manual_chapter_eleven_blackmail_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenApplauseExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_applause_verified",
+        "sourceListId": "manual_chapter_eleven_applause_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenNeighborsWifeExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_neighbors_wife_verified",
+        "sourceListId": "manual_chapter_eleven_neighbors_wife_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenBroadwayMelodyExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_broadway_melody_verified",
+        "sourceListId": "manual_chapter_eleven_broadway_melody_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenSousLesToitsExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_sous_les_toits_verified",
+        "sourceListId": "manual_chapter_eleven_sous_les_toits_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenEnthusiasmExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_enthusiasm_verified",
+        "sourceListId": "manual_chapter_eleven_enthusiasm_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenBlueAngelExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_blue_angel_verified",
+        "sourceListId": "manual_chapter_eleven_blue_angel_expansion_2026"
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "definitions": 27,
+        "appended": 27,
+        "matchedExisting": 0,
+        "status": "manual_modern_canon_case_needs_source_verification",
+        "sourceListId": "manual_modern_indie_asian_prize_expansion_2026"
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "definitions": 20,
+        "appended": 20,
+        "matchedExisting": 0,
+        "status": "manual_priority_indie_case_needs_source_verification",
+        "sourceListId": "manual_priority_indie_completion_2026"
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_east_asian_auteur_case_needs_source_verification",
+        "sourceListId": "manual_east_asian_auteur_expansion_2026"
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0,
+        "status": "manual_japanese_auteur_case_needs_source_verification",
+        "sourceListId": "manual_japanese_auteur_expansion_2026"
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_south_korean_cinema_case_needs_source_verification",
+        "sourceListId": "manual_south_korean_cinema_expansion_2026"
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0,
+        "status": "manual_south_southeast_asian_case_needs_source_verification",
+        "sourceListId": "manual_south_southeast_asian_expansion_2026"
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_festival_winner_1981_2009_case_needs_source_verification",
+        "sourceListId": "manual_festival_winners_1981_2009_expansion_2026"
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_festival_winner_2010_2024_case_needs_source_verification",
+        "sourceListId": "manual_festival_winner_2010_2024_expansion_2026"
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "definitions": 22,
+        "appended": 15,
+        "matchedExisting": 7,
+        "status": "manual_scandinavian_european_case_needs_source_verification",
+        "sourceListId": "manual_scandinavian_european_expansion_2026"
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "definitions": 24,
+        "appended": 23,
+        "matchedExisting": 1,
+        "status": "manual_eastern_iberian_british_case_needs_source_verification",
+        "sourceListId": "manual_eastern_iberian_british_expansion_2026"
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "definitions": 28,
+        "appended": 25,
+        "matchedExisting": 3,
+        "status": "manual_italy_france_germany_benelux_case_needs_source_verification",
+        "sourceListId": "manual_italy_france_germany_benelux_expansion_2026"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "King Kong",
+      "originalTitle": "King Kong",
+      "year": 1933,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_king_kong_1933",
+      "chapterFunction": "RKO special-effects adventure integrates miniature/stop-motion work, composite photography, score and synchronized effects inside a mature studio pipeline.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_king_kong_1933",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Modern Times",
+      "originalTitle": "Modern Times",
+      "year": 1936,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_modern_times_1936",
+      "chapterFunction": "Chaplin's independent production tests the classical system from its edge: long production, constructed factory space, synchronized score/effects and selective resistance to dialogue.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_modern_times_1936",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Snow White and the Seven Dwarfs",
+      "originalTitle": "Snow White and the Seven Dwarfs",
+      "year": 1937,
+      "aliases": [
+        "Snow White"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_snow_white_and_the_seven_dwarfs_1937",
+      "chapterFunction": "Disney's feature-animation pipeline exposes departmental specialization, personality animation, multiplane photography, Technicolor, music and industrial scale.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_snow_white_and_the_seven_dwarfs_1937",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "The Rules of the Game",
+      "originalTitle": "La Règle du jeu",
+      "year": 1939,
+      "aliases": [
+        "La Regle du jeu",
+        "Rules of the Game"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_rules_of_the_game_1939",
+      "chapterFunction": "Renoir's independent French production provides a necessary comparison to Hollywood continuity and studio hierarchy through ensemble staging, deep space, long takes and reconstruction history.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_rules_of_the_game_1939",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Stagecoach",
+      "originalTitle": "Stagecoach",
+      "year": 1939,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_stagecoach_1939",
+      "chapterFunction": "Walter Wanger/Ford western production connects genre, stars, Monument Valley location work, stunt specialization, continuity editing and prestige distribution.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_stagecoach_1939",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "The Wizard of Oz",
+      "originalTitle": "The Wizard of Oz",
+      "year": 1939,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_wizard_of_oz_1939",
+      "chapterFunction": "MGM's musical-fantasy pipeline integrates adaptation, pre-scoring, Technicolor, art direction, costume, makeup, effects, editing and star performance.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_wizard_of_oz_1939",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Citizen Kane",
+      "originalTitle": "Citizen Kane",
+      "year": 1941,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_citizen_kane_1941",
+      "chapterFunction": "RKO/Mercury production reveals how unusual contractual autonomy can work inside studio infrastructure across screenplay, deep focus, sets, optical work, editing, overlapping dialogue and score.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_citizen_kane_1941",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Casablanca",
+      "originalTitle": "Casablanca",
+      "year": 1942,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_casablanca_1942",
+      "chapterFunction": "Warner Bros. wartime production anchors collaborative studio authorship, continuing script revision, lot construction, multinational casting, continuity departments, music and topical release.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_casablanca_1942",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "The Public Enemy",
+      "originalTitle": "The Public Enemy",
+      "year": 1931,
+      "aliases": [],
+      "role": "missing_core_case",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Warner gangster production is the clearest missing case for genre cycles, star voice/persona, urban violence, studio economy and the pre-Code/Code boundary.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Dracula",
+      "originalTitle": "Dracula",
+      "year": 1931,
+      "aliases": [],
+      "role": "missing_core_case",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Universal horror and the English/Spanish parallel-production history make studio house style, night-shift versioning, performance, sets, sound and genre branding concrete.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "42nd Street",
+      "originalTitle": "42nd Street",
+      "year": 1933,
+      "aliases": [],
+      "role": "missing_core_case",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Warner's backstage musical and Busby Berkeley production system expose choreography for camera, studio scheduling, song recording, massed bodies, editing and Depression-era genre economics.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Frankenstein",
+      "originalTitle": "Frankenstein",
+      "year": 1931,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Universal's monster cycle broadens horror into makeup, laboratory design, performance iconography, censorship and reusable studio genre infrastructure.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_frankenstein_1931",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Scarface",
+      "originalTitle": "Scarface",
+      "year": 1932,
+      "aliases": [
+        "Scarface: The Shame of the Nation"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Howard Hawks/Howard Hughes production sharpens the relation among gangster-cycle competition, censorship negotiation, violence, star image and release delay.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "It Happened One Night",
+      "originalTitle": "It Happened One Night",
+      "year": 1934,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Columbia's screwball breakthrough tests how a smaller studio could organize stars, location work, dialogue rhythm and genre formula into prestige success.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Top Hat",
+      "originalTitle": "Top Hat",
+      "year": 1935,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "RKO's Astaire-Rogers musical provides a contrasting musical system built around full-body dance, art-deco space, song, rehearsal, camera duration and star pairing.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Gone with the Wind",
+      "originalTitle": "Gone with the Wind",
+      "year": 1939,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Selznick's prestige epic exposes producer-centered package production, Technicolor, multiple directors, large-scale design and effects while requiring explicit critique of Lost Cause mythology and racist representation.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Duck Soup",
+      "originalTitle": "Duck Soup",
+      "year": 1933,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Paramount/Marx comedy broadens studio comedy, dialogue, music and anarchic performance without duplicating the core studio-system cases.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Bride of Frankenstein",
+      "originalTitle": "Bride of Frankenstein",
+      "year": 1935,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Universal's sequel shows genre-cycle refinement, returning departments and house style after Frankenstein.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Swing Time",
+      "originalTitle": "Swing Time",
+      "year": 1936,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "A second Astaire-Rogers musical remains comparison-level unless Top Hat leaves an unresolved production-system gap.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Bringing Up Baby",
+      "originalTitle": "Bringing Up Baby",
+      "year": 1938,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "RKO screwball production extends dialogue timing, star pairing, animal work and controlled chaos without requiring another core comedy case.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "The Adventures of Robin Hood",
+      "originalTitle": "The Adventures of Robin Hood",
+      "year": 1938,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Warner's Technicolor adventure broadens color, action, costume, scoring and prestige genre production.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "His Girl Friday",
+      "originalTitle": "His Girl Friday",
+      "year": 1940,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Columbia/Hawks rapid dialogue and overlapping performance provide a mature continuity-era sound comparison after the sound transition is complete.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "The Maltese Falcon",
+      "originalTitle": "The Maltese Falcon",
+      "year": 1941,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Warner's crime production helps bridge gangster and emerging noir systems, but noir's mature cycle belongs primarily in the following chapter.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_maltese_falcon_1941",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Meet Me in St. Louis",
+      "originalTitle": "Meet Me in St. Louis",
+      "year": 1944,
+      "aliases": [],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "MGM's integrated musical-family production demonstrates the mature studio musical after the 1930s transition and genre consolidation.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "King Kong",
+      "Modern Times",
+      "Snow White and the Seven Dwarfs",
+      "The Rules of the Game",
+      "Stagecoach",
+      "The Wizard of Oz",
+      "Citizen Kane",
+      "Casablanca",
+      "Frankenstein",
+      "The Maltese Falcon"
+    ],
+    "P0": [
+      "The Public Enemy",
+      "Dracula",
+      "42nd Street"
+    ],
+    "P1": [
+      "Scarface",
+      "It Happened One Night",
+      "Top Hat",
+      "Gone with the Wind"
+    ],
+    "P2": [
+      "Duck Soup",
+      "Bride of Frankenstein",
+      "Swing Time",
+      "Bringing Up Baby",
+      "The Adventures of Robin Hood",
+      "His Girl Friday",
+      "Meet Me in St. Louis"
+    ],
+    "EXISTING_REQUIRED": []
+  },
+  "recommendedNewProductionCases": [
+    "The Public Enemy",
+    "Dracula",
+    "42nd Street",
+    "Scarface",
+    "It Happened One Night",
+    "Top Hat",
+    "Gone with the Wind"
+  ],
+  "historicalObjects": [
+    {
+      "label": "Vertically integrated studios, the Big Five and the Little Three",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Production, distribution and exhibition power shaped budgets, release access and house practices; corporate structure is an institutional object, not a fake film."
+    },
+    {
+      "label": "Block booking, theatre ownership and the A/B-picture economy",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Packages, owned theatres, double features and supporting pictures structured demand and production volume beyond individual prestige films."
+    },
+    {
+      "label": "The Production Code Administration and censorship negotiation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "The PCA influenced scripts, representation, violence and sexuality after 1934, but Code enforcement varied by film and must not become a universal causal preset."
+    },
+    {
+      "label": "Long-term contracts, stars and studio labor allocation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Actors, directors, writers and craftspeople worked through contracts, loans and assignments; the star system is labor organization as well as publicity."
+    },
+    {
+      "label": "Departmental specialization and continuity production",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Art, camera, costume, makeup, editing, sound, music, effects and production management formed coordinated pipelines whose authorship must remain attributable."
+    },
+    {
+      "label": "Genre cycles, house styles and audience expectation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Gangster, horror, musical, western, screwball, animation and prestige cycles organized risk and reuse without making genre a deterministic recipe."
+    },
+    {
+      "label": "Backlots, sound stages, location units and standing sets",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Studio space enabled controlled continuity and reuse while location work remained a significant alternative; neither mode is inherently more authentic."
+    },
+    {
+      "label": "Technicolor, animation and special-effects pipelines",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Color separation, animation departments, miniatures, optical composites and effects photography are industrial systems with specialized labor, not generic spectacle buttons."
+    },
+    {
+      "label": "Guilds, unions, credits and invisible labor",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Growing specialization and collective organization changed bargaining and attribution; credited authorship never exhausts the workforce behind a studio film."
+    },
+    {
+      "label": "Race, gender, class, colonial myth and representational constraint",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Studio genres circulated stereotypes and exclusions alongside formal innovation; racist, sexist or colonial conventions are historical structures to analyze critically, never quality presets."
+    }
+  ],
+  "boundaryNotes": [
+    "Chapter 12 begins after the sound-transition problem: synchronized sound is now infrastructure, while studio organization, genre cycles and departmental coordination become the primary production questions.",
+    "The Public Enemy, Dracula and 42nd Street are explicit Chapter 11 handoffs whose primary genre-system analysis belongs here; they are P0 rather than newly invented priorities.",
+    "King Kong, Modern Times, Snow White and the Seven Dwarfs, Stagecoach, The Wizard of Oz, Citizen Kane and Casablanca already exist as verified Production Cases and must be reused, not rematerialized.",
+    "The Rules of the Game remains a deliberate non-Hollywood comparison: Chapter 12 must not mistake classical Hollywood practice for a universal global norm.",
+    "Gone with the Wind can only be used with explicit critique of Lost Cause mythology, slavery erasure and racist representation; production scale never neutralizes ideology.",
+    "No genre label is a complete production explanation: studio, producer, department, labor, technology, censorship, budget and release evidence remain film-specific."
+  ],
+  "safeguards": [
+    "Studio-system gameplay must preserve company and departmental attribution; a generic Hollywood preset cannot replace producer, craft, labor or technology evidence.",
+    "Production Code enforcement is historically bounded and negotiated. The PCA must not be treated as a single switch that explains every narrative or representational choice after 1934.",
+    "Genre cycles organize expectation and reuse but do not determine one correct style; gangster, horror, musical, western, screwball, animation and prestige films require distinct evidence-backed workflows.",
+    "Star images are produced through contracts, publicity, performance, costume, camera, writing and distribution; later fame must not be projected backward as the sole cause of production decisions.",
+    "Technicolor, animation, miniatures, optical composites and stunt work are specialized labor systems. Spectacle must never erase credited and uncredited craft contributions.",
+    "Race, gender, class, disability, sexuality and colonial mythology must be analyzed as historical representational structures, never rewarded as authentic genre stereotypes.",
+    "Archive, reissue, restoration and modern presentation states remain separate from original production and release evidence.",
+    "Classical Hollywood is not world cinema's universal baseline; comparative films and non-Hollywood production systems must remain visible where the chapter makes broader claims."
+  ]
+}
