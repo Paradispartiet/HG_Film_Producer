@@ -34,6 +34,7 @@ import { laborersLoveFilmHistoryProfile } from "./scenarioFilmStudySilentCinemas
 import { aThrowOfDiceFilmHistoryProfile } from "./scenarioFilmStudySilentCinemasAThrowOfDice";
 import { growthOfTheSoilFilmHistoryProfile } from "./scenarioFilmStudySilentCinemasGrowthOfTheSoil";
 import { orochiFilmHistoryProfile } from "./scenarioFilmStudySilentCinemasOrochi";
+import { redHeroineFilmHistoryProfile } from "./scenarioFilmStudySilentCinemasRedHeroine";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -94,6 +95,7 @@ const sourceBackedFilmHistoryProfiles = {
   [aThrowOfDiceFilmHistoryProfile.scenarioId]: aThrowOfDiceFilmHistoryProfile,
   [growthOfTheSoilFilmHistoryProfile.scenarioId]: growthOfTheSoilFilmHistoryProfile,
   [orochiFilmHistoryProfile.scenarioId]: orochiFilmHistoryProfile,
+  [redHeroineFilmHistoryProfile.scenarioId]: redHeroineFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",

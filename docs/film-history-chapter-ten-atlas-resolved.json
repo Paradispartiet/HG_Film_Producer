@@ -10,8 +10,8 @@
     "thesis": "Silent cinema was never one Hollywood-European system: production companies, live narration, genres, colonial and transnational finance, literary adaptation, location practices and archive survival created distinct film cultures whose differences must remain visible rather than being flattened into a generic world-cinema supplement."
   },
   "atlas": {
-    "expectedCount": 420,
-    "actualCount": 420,
+    "expectedCount": 421,
+    "actualCount": 421,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -90,6 +90,11 @@
       },
       {
         "fileName": "chapterTenOrochiExpansion.ts",
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTenRedHeroineExpansion.ts",
         "appended": 1,
         "matchedExisting": 0
       },
@@ -243,14 +248,20 @@
       "originalTitle": "Hongxia",
       "year": 1929,
       "aliases": [
-        "Red Heroine"
+        "Red Heroine",
+        "Hong xia",
+        "The Red Errant Knight",
+        "红侠",
+        "紅俠"
       ],
       "role": "major_comparison",
       "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_the_red_heroine_1929",
       "chapterFunction": "The only surviving section of the Red Knight-Errant serial provides a playable route into late-1920s Shanghai wuxia serial production, female action stardom, practical/trick effects, tinting and the ethics of treating a fragment as a fragment rather than a complete serial.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_red_heroine_1929",
+      "matches": 1,
+      "origin": "chapterTenRedHeroineExpansion.ts"
     },
     {
       "title": "Häxan",
@@ -515,12 +526,12 @@
       "A Throw of Dice",
       "Growth of the Soil",
       "Orochi",
+      "The Red Heroine",
       "Afgrunden",
       "The Phantom Carriage"
     ],
     "P0": [],
     "P1": [
-      "The Red Heroine",
       "Häxan"
     ],
     "P2": [
@@ -619,7 +630,6 @@
     "Modern restoration scores, reconstructed tints and archive assemblies remain distinct from original production elements and are labeled as later presentation/restoration work."
   ],
   "recommendedNewProductionCases": [
-    "The Red Heroine",
     "Häxan"
   ],
   "remainingBookReferenceOnlyFilms": [
