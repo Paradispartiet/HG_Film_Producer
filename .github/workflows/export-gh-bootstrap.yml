@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - chore/gh-bootstrap-export
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
@@ -32,4 +29,4 @@ jobs:
           name: gh-linux-amd64-bootstrap
           path: artifact
           if-no-files-found: error
-          retention-days: 1
+          retention-days: 90
