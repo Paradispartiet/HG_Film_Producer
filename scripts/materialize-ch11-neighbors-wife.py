@@ -9,6 +9,9 @@ def replace_once(path: str, old: str, new: str) -> None:
         raise SystemExit(f"{path}: expected exactly one match, found {count}: {old!r}")
     p.write_text(text.replace(old, new, 1))
 
+# Normalize one accidental hidden soft-hyphen in the new permanent theme key.
+replace_once("src/core/chapterElevenNeighborsWifeExpansion.ts", '"sho­chiku_kamata"', '"shochiku_kamata"')
+
 # Runtime Atlas wiring.
 replace_once("src/ui/data/filmScenarios.ts", 'import { mergeChapterElevenApplauseExpansion } from "../../core/chapterElevenApplauseExpansion.js";\n', 'import { mergeChapterElevenApplauseExpansion } from "../../core/chapterElevenApplauseExpansion.js";\nimport { mergeChapterElevenNeighborsWifeExpansion } from "../../core/chapterElevenNeighborsWifeExpansion.js";\n')
 replace_once("src/ui/data/filmScenarios.ts", "const modernCanonScenarios = mergeModernCanonExpansion(chapterElevenApplauseScenarios);", "const chapterElevenNeighborsWifeScenarios = mergeChapterElevenNeighborsWifeExpansion(chapterElevenApplauseScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterElevenNeighborsWifeScenarios);")
