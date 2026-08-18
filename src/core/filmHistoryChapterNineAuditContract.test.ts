@@ -71,5 +71,5 @@ test("Chapter 9 audit permanently preserves theory, Ukrainian, archival and poli
 
 test("Chapter 9 audit is permanent in the v0.1 verification chain", () => {
   assert.match(packageJson, /"audit:film-history-ch9": "node scripts\/film-history-chapter-nine-atlas-audit\.mjs"/);
-  assert.match(packageJson, /npm run audit:film-history-ch8 && npm run audit:film-history-ch9 && npm run typecheck/);
+  assert.match(packageJson, /npm run audit:film-history-ch8 && npm run audit:film-history-ch9(?: && npm run audit:film-history-ch\d+)* && npm run typecheck/);
 });
