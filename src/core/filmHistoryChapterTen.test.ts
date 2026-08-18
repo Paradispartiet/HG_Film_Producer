@@ -4,6 +4,7 @@ import test from "node:test";
 import { filmHistoryChapterTen, filmHistoryChapterTenSources } from "./filmHistoryChapterTen.js";
 import { filmHistoryBookParts, getFilmHistoryBookChapter } from "./filmHistoryBook.js";
 
+// This permanent contract is also the exact-head PR gate for Chapter 10 completion.
 const canonicalUseExistingScenarioIds = [
   "scenario_a_page_of_madness_1926",
   "scenario_laborers_love_1922",
