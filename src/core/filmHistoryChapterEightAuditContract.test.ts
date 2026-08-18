@@ -31,5 +31,5 @@ test("Chapter 8 audit locks the reviewed French avant-garde Production Case matr
   assert.match(audit, /Modern runtimes, music and reconstructed versions must remain distinct from original production and exhibition states/);
 
   assert.match(packageJson, /"audit:film-history-ch8": "node scripts\/film-history-chapter-eight-atlas-audit\.mjs"/);
-  assert.match(packageJson, /npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run audit:film-history-ch9 && npm run typecheck/);
+  assert.match(packageJson, /npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run audit:film-history-ch9(?: && npm run audit:film-history-ch\d+)* && npm run typecheck/);
 });
