@@ -1,0 +1,58 @@
+name: Materialize Chapter 10 The Red Heroine
+
+on:
+  push:
+    branches:
+      - agent/ch10-red-heroine-production-case
+    paths:
+      - .github/workflows/ch10-red-heroine-materialize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch10-red-heroine-production-case
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Materialize runtime wiring
+        run: python3 scripts/materialize-ch10-red-heroine-runtime.py
+      - name: Materialize audit cutover
+        run: python3 scripts/materialize-ch10-red-heroine-audits.py
+      - name: Regenerate Chapter 10 resolved report
+        run: node scripts/film-history-chapter-ten-atlas-audit.mjs
+      - name: Install dependencies
+        run: npm ci
+      - name: Full v0.1 verification
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run verify:v0.1 2>&1 | tee verify.log
+      - name: Upload failed verification diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ch10-red-heroine-verify-diagnostics
+          path: verify.log
+          if-no-files-found: ignore
+      - name: Commit clean permanent result
+        if: success()
+        shell: bash
+        run: |
+          rm -f verify.log
+          git rm .github/workflows/ch10-red-heroine-materialize.yml scripts/materialize-ch10-red-heroine-runtime.py scripts/materialize-ch10-red-heroine-audits.py
+          git add scripts/production-case-rest-audit.mjs scripts/film-history-chapter-ten-atlas-audit.mjs docs/film-history-chapter-ten-atlas-resolved.json src/core/filmHistoryChapterTenAuditContract.test.ts src/ui/data/filmScenarios.ts src/ui/data/scenarioFilmStudyMap.ts src/ui/data/scenarioProductionVerificationRegistry.ts
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Materialize The Red Heroine as Chapter 10 Production Case"
+          git push origin HEAD:agent/ch10-red-heroine-production-case
