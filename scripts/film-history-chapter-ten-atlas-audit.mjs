@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 416;
+const EXPECTED_ATLAS_COUNT = 417;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -20,6 +20,7 @@ const expansionFiles = [
   "chapterEightFrenchAvantGardeExpansion.ts",
   "chapterNineSovietMontageExpansion.ts",
   "chapterTenSilentCinemasExpansion.ts",
+  "chapterTenLaborersLoveExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -51,6 +52,7 @@ const candidates = [
     aliases: ["Labourer's Love", "Romance of a Fruit Peddler"],
     role: "anchor_film",
     decisionIfMissing: "P0",
+    expectedScenarioId: "scenario_laborers_love_1922",
     chapterFunction: "The surviving Mingxing short anchors early Shanghai studio practice, urban comedy, May Fourth-era social modernity and the problem of reconstructing a film culture from an exceptionally small surviving corpus.",
   },
   {
@@ -149,8 +151,8 @@ const historicalObjects = [
 ].map(([label, chapterFunction]) => ({ label, role: "historical_object", atlasDecision: "NO_PRODUCTION_CASE", chapterFunction }));
 
 const expectedDecisions = {
-  USE_EXISTING: ["A Page of Madness", "Afgrunden", "The Phantom Carriage"],
-  P0: ["A Throw of Dice", "Growth of the Soil", "Laborer's Love"],
+  USE_EXISTING: ["A Page of Madness", "Afgrunden", "Laborer's Love", "The Phantom Carriage"],
+  P0: ["A Throw of Dice", "Growth of the Soil"],
   P1: ["Häxan", "Orochi", "The Red Heroine"],
   P2: ["Crossroads", "El automóvil gris", "Erotikon", "Gösta Berling's Saga", "Ingeborg Holm", "Kaliya Mardan", "Raja Harishchandra", "Shiraz", "Sir Arne's Treasure", "Souls on the Road", "The Burning of the Red Lotus Temple", "The Light of Asia", "The Outlaw and His Wife", "The Romance of the Western Chamber", "The Sentimental Bloke"],
 };

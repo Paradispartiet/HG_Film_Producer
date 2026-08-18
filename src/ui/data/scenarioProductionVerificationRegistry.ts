@@ -53,6 +53,7 @@ import { entrActeProductionCaseVerification } from "./scenarioProductionVerifica
 import { smilingMadameBeudetProductionCaseVerification } from "./scenarioProductionVerificationSmilingMadameBeudet";
 import { sovietMontageProductionVerificationRecords } from "./scenarioProductionVerificationSovietMontageBatch";
 import { aPageOfMadnessProductionCaseVerification } from "./scenarioProductionVerificationAPageOfMadness";
+import { laborersLoveProductionCaseVerification } from "./scenarioProductionVerificationLaborersLove";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -223,6 +224,7 @@ const additionalVerificationRecords = [
   smilingMadameBeudetProductionCaseVerification,
   ...sovietMontageProductionVerificationRecords,
   aPageOfMadnessProductionCaseVerification,
+  laborersLoveProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
