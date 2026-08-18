@@ -10,8 +10,8 @@
     "thesis": "Classical studio cinema was not a single style but an industrial coordination system: companies managed recurring genres, stars, departments, technologies, censorship and distribution at scale while individual productions negotiated those systems differently."
   },
   "atlas": {
-    "expectedCount": 434,
-    "actualCount": 434,
+    "expectedCount": 435,
+    "actualCount": 435,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -252,6 +252,14 @@
         "matchedExisting": 0,
         "status": "manual_chapter_twelve_scarface_verified",
         "sourceListId": "manual_chapter_twelve_scarface_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveItHappenedOneNightExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_it_happened_one_night_verified",
+        "sourceListId": "manual_chapter_twelve_it_happened_one_night_expansion_2026"
       },
       {
         "fileName": "modernCanonExpansion.ts",
@@ -543,14 +551,17 @@
       "title": "It Happened One Night",
       "originalTitle": "It Happened One Night",
       "year": 1934,
-      "aliases": [],
+      "aliases": [
+        "Night Bus"
+      ],
       "role": "major_comparison",
       "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_it_happened_one_night_1934",
       "chapterFunction": "Columbia's screwball breakthrough tests how a smaller studio could organize stars, location work, dialogue rhythm and genre formula into prestige success.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_it_happened_one_night_1934",
+      "matches": 1,
+      "origin": "chapterTwelveItHappenedOneNightExpansion.ts"
     },
     {
       "title": "Top Hat",
@@ -698,11 +709,11 @@
       "42nd Street",
       "Frankenstein",
       "Scarface",
+      "It Happened One Night",
       "The Maltese Falcon"
     ],
     "P0": [],
     "P1": [
-      "It Happened One Night",
       "Top Hat",
       "Gone with the Wind"
     ],
@@ -718,7 +729,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "It Happened One Night",
     "Top Hat",
     "Gone with the Wind"
   ],

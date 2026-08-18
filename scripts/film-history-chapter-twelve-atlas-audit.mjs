@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 434;
+const EXPECTED_ATLAS_COUNT = 435;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -38,6 +38,7 @@ const expansionFiles = [
   "chapterTwelveDraculaExpansion.ts",
   "chapterTwelve42ndStreetExpansion.ts",
   "chapterTwelveScarfaceExpansion.ts",
+  "chapterTwelveItHappenedOneNightExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -67,7 +68,7 @@ const candidates = [
 
   { title: "Frankenstein", originalTitle: "Frankenstein", year: 1931, aliases: [], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "Universal's monster cycle broadens horror into makeup, laboratory design, performance iconography, censorship and reusable studio genre infrastructure." },
   { title: "Scarface", originalTitle: "Scarface", year: 1932, aliases: ["Scarface: The Shame of the Nation", "Scarface, The Shame of a Nation", "The Menace", "The Scar"], role: "major_comparison", decisionIfMissing: "P1", expectedScenarioId: "scenario_scarface_1932", chapterFunction: "Howard Hawks/Howard Hughes production sharpens the relation among gangster-cycle competition, censorship negotiation, violence, star image and release delay." },
-  { title: "It Happened One Night", originalTitle: "It Happened One Night", year: 1934, aliases: [], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "Columbia's screwball breakthrough tests how a smaller studio could organize stars, location work, dialogue rhythm and genre formula into prestige success." },
+  { title: "It Happened One Night", originalTitle: "It Happened One Night", year: 1934, aliases: ["Night Bus"], role: "major_comparison", decisionIfMissing: "P1", expectedScenarioId: "scenario_it_happened_one_night_1934", chapterFunction: "Columbia's screwball breakthrough tests how a smaller studio could organize stars, location work, dialogue rhythm and genre formula into prestige success." },
   { title: "Top Hat", originalTitle: "Top Hat", year: 1935, aliases: [], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "RKO's Astaire-Rogers musical provides a contrasting musical system built around full-body dance, art-deco space, song, rehearsal, camera duration and star pairing." },
   { title: "Gone with the Wind", originalTitle: "Gone with the Wind", year: 1939, aliases: [], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "Selznick's prestige epic exposes producer-centered package production, Technicolor, multiple directors, large-scale design and effects while requiring explicit critique of Lost Cause mythology and racist representation." },
 
