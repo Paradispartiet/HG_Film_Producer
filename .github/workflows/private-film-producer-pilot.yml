@@ -1,0 +1,90 @@
+name: Private Film Producer pilot
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  private-pilot:
+    runs-on: ubuntu-latest
+    env:
+      ADMIN_TOKEN: ${{ secrets.REPO_ADMIN_TOKEN }}
+      ACTIONS_TOKEN: ${{ github.token }}
+    steps:
+      - name: Make repository private and verify Pages
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+
+          repo="$GITHUB_REPOSITORY"
+          test "$repo" = "Paradispartiet/HG_Film_Producer"
+          test -n "${ADMIN_TOKEN:-}"
+
+          visibility="$(GH_TOKEN="$ADMIN_TOKEN" gh api "repos/$repo" --jq '.visibility')"
+          forks="$(GH_TOKEN="$ADMIN_TOKEN" gh api "repos/$repo" --jq '.forks_count')"
+          has_pages="$(GH_TOKEN="$ADMIN_TOKEN" gh api "repos/$repo" --jq '.has_pages')"
+          test "$visibility" = "public"
+          test "$forks" = "0"
+          test "$has_pages" = "true"
+
+          before_run="$(GH_TOKEN="$ACTIONS_TOKEN" gh run list --repo "$repo" --workflow deploy.yml --event workflow_dispatch --branch main --limit 1 --json databaseId --jq '.[0].databaseId // 0')"
+
+          rollback() {
+            status=$?
+            trap - ERR
+            echo "Private pilot failed; restoring repository visibility to public."
+            GH_TOKEN="$ADMIN_TOKEN" gh api --method PATCH "repos/$repo" -f visibility=public >/dev/null || true
+            for i in $(seq 1 20); do
+              current="$(GH_TOKEN="$ADMIN_TOKEN" gh api "repos/$repo" --jq '.visibility' 2>/dev/null || true)"
+              [ "$current" = "public" ] && break
+              sleep 2
+            done
+            GH_TOKEN="$ACTIONS_TOKEN" gh workflow run deploy.yml --repo "$repo" --ref main || true
+            exit "$status"
+          }
+          trap rollback ERR
+
+          echo "Changing $repo to private."
+          GH_TOKEN="$ADMIN_TOKEN" gh api --method PATCH "repos/$repo" -f visibility=private >/dev/null
+
+          for i in $(seq 1 20); do
+            current="$(GH_TOKEN="$ADMIN_TOKEN" gh api "repos/$repo" --jq '.visibility')"
+            [ "$current" = "private" ] && break
+            sleep 2
+          done
+          test "$(GH_TOKEN="$ADMIN_TOKEN" gh api "repos/$repo" --jq '.visibility')" = "private"
+
+          echo "Dispatching the existing Pages workflow from main."
+          GH_TOKEN="$ACTIONS_TOKEN" gh workflow run deploy.yml --repo "$repo" --ref main
+
+          new_run=0
+          for i in $(seq 1 40); do
+            new_run="$(GH_TOKEN="$ACTIONS_TOKEN" gh run list --repo "$repo" --workflow deploy.yml --event workflow_dispatch --branch main --limit 1 --json databaseId --jq '.[0].databaseId // 0')"
+            if [ "$new_run" != "0" ] && [ "$new_run" != "$before_run" ]; then
+              break
+            fi
+            sleep 3
+          done
+          test "$new_run" != "0"
+          test "$new_run" != "$before_run"
+          GH_TOKEN="$ACTIONS_TOKEN" gh run watch "$new_run" --repo "$repo" --exit-status
+
+          page_url="$(GH_TOKEN="$ADMIN_TOKEN" gh api "repos/$repo/pages" --jq '.html_url')"
+          test -n "$page_url"
+          echo "Verifying public Pages URL: $page_url"
+          ok=false
+          for i in $(seq 1 60); do
+            if curl --location --fail --silent --show-error --max-time 20 "$page_url" >/dev/null; then
+              ok=true
+              break
+            fi
+            sleep 5
+          done
+          test "$ok" = "true"
+
+          echo "PRIVATE_PILOT_OK repository=$repo pages=$page_url"
+          trap - ERR
