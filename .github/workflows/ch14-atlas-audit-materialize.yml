@@ -2,7 +2,7 @@ name: Materialize Film History Chapter 14 Atlas audit
 
 on:
   pull_request:
-    types: [opened, reopened]
+    types: [opened, reopened, synchronize]
 
 permissions:
   contents: write
@@ -28,6 +28,8 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Apply verified Chapter 14 reconciliation
+        run: node scripts/materialize-ch14-atlas-audit-fixes.mjs
       - name: Generate canonical Chapter 14 Atlas report
         run: node scripts/film-history-chapter-fourteen-atlas-audit.mjs --write=docs/film-history-chapter-fourteen-atlas-resolved.json
       - name: Full v0.1 verification
@@ -51,6 +53,7 @@ jobs:
         shell: bash
         run: |
           rm -f .github/workflows/ch14-atlas-audit-materialize.yml
+          rm -f scripts/materialize-ch14-atlas-audit-fixes.mjs
           rm -f ch14-atlas-audit-verify.log
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
