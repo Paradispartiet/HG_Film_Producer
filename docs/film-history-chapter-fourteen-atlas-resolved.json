@@ -10,8 +10,8 @@
     "thesis": "The 1960s did not replace classical cinema with one New Wave style. New production systems emerged through criticism, first-feature economics, location practice, changing equipment, state support, co-production, decolonization, censorship and modernist experiments in time, space, performance and sound; their similarities matter only when their different institutions and material conditions remain visible."
   },
   "atlas": {
-    "expectedCount": 444,
-    "actualCount": 444,
+    "expectedCount": 445,
+    "actualCount": 445,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -332,6 +332,14 @@
         "matchedExisting": 0,
         "status": "manual_chapter_fourteen_black_girl_verified",
         "sourceListId": "manual_chapter_fourteen_black_girl_expansion_2026"
+      },
+      {
+        "fileName": "chapterFourteenMemoriesUnderdevelopmentExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_fourteen_memories_underdevelopment_verified",
+        "sourceListId": "manual_chapter_fourteen_memories_underdevelopment_expansion_2026"
       },
       {
         "fileName": "modernCanonExpansion.ts",
@@ -720,11 +728,12 @@
       ],
       "role": "major_comparison",
       "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_memories_of_underdevelopment_1968",
       "chapterFunction": "Alea's Cuban case is the strongest missing revolutionary-cinema counterweight: post-revolution institutions, archival material, essayistic montage and decolonial modernity expand the chapter beyond Europe and Algeria.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_memories_of_underdevelopment_1968",
+      "matches": 1,
+      "origin": "chapterFourteenMemoriesUnderdevelopmentExpansion.ts"
     }
   ],
   "byDecision": {
@@ -745,18 +754,15 @@
       "Closely Watched Trains",
       "Daisies",
       "The Firemen's Ball",
-      "PlayTime"
-    ],
-    "P0": [],
-    "P1": [
+      "PlayTime",
       "Memories of Underdevelopment"
     ],
+    "P0": [],
+    "P1": [],
     "P2": [],
     "EXISTING_REQUIRED": []
   },
-  "recommendedNewProductionCases": [
-    "Memories of Underdevelopment"
-  ],
+  "recommendedNewProductionCases": [],
   "historicalObjects": [
     {
       "label": "French New Wave as a critical and industrial formation",

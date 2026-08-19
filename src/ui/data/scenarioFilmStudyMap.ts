@@ -58,6 +58,7 @@ import { losOlvidadosFilmHistoryProfile } from "./scenarioFilmStudyPostwarLosOlv
 import { ugetsuFilmHistoryProfile } from "./scenarioFilmStudyPostwarUgetsu";
 import { aManEscapedFilmHistoryProfile } from "./scenarioFilmStudyPostwarAManEscaped";
 import { blackGirlFilmHistoryProfile } from "./scenarioFilmStudyNewWavesBlackGirl";
+import { memoriesUnderdevelopmentFilmHistoryProfile } from "./scenarioFilmStudyNewWavesMemoriesUnderdevelopment";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -142,6 +143,7 @@ const sourceBackedFilmHistoryProfiles = {
   [ugetsuFilmHistoryProfile.scenarioId]: ugetsuFilmHistoryProfile,
   [aManEscapedFilmHistoryProfile.scenarioId]: aManEscapedFilmHistoryProfile,
   [blackGirlFilmHistoryProfile.scenarioId]: blackGirlFilmHistoryProfile,
+  [memoriesUnderdevelopmentFilmHistoryProfile.scenarioId]: memoriesUnderdevelopmentFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",

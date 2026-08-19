@@ -33,9 +33,10 @@ const requiredExisting = [
   "Daisies",
   "The Firemen's Ball",
   "PlayTime",
+  "Memories of Underdevelopment",
 ];
 const exactP0Queue: string[] = [];
-const exactP1Queue = ["Memories of Underdevelopment"];
+const exactP1Queue: string[] = [];
 
 const historicalObjectLabels = [
   "French New Wave as a critical and industrial formation",
@@ -51,13 +52,13 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 14 audit locks the New Waves-modernism-decolonization Atlas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 444;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 445;/);
   assert.equal(resolved.chapter.number, 14);
   assert.equal(resolved.chapter.id, "new-waves-modernism-decolonization");
   assert.equal(resolved.chapter.title, "New Waves, modernism and decolonization");
   assert.equal(resolved.chapter.period, "1959–1968");
-  assert.equal(resolved.atlas.expectedCount, 444);
-  assert.equal(resolved.atlas.actualCount, 444);
+  assert.equal(resolved.atlas.expectedCount, 445);
+  assert.equal(resolved.atlas.actualCount, 445);
   assert.equal(resolved.candidates.length, 18);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
   assert.deepEqual(resolved.byDecision.P0, exactP0Queue);
@@ -85,6 +86,7 @@ test("Chapter 14 existing anchors resolve to exact canonical scenario IDs", () =
   assert.equal(byTitle.get("Daisies")?.scenarioId, "scenario_daisies_1966");
   assert.equal(byTitle.get("The Firemen's Ball")?.scenarioId, "scenario_the_firemens_ball_1967");
   assert.equal(byTitle.get("PlayTime")?.scenarioId, "scenario_playtime_1967");
+  assert.equal(byTitle.get("Memories of Underdevelopment")?.scenarioId, "scenario_memories_of_underdevelopment_1968");
 });
 
 test("Chapter 14 keeps historical systems outside fake Production Cases", () => {
