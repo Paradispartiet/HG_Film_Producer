@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 438;
+const EXPECTED_ATLAS_COUNT = 439;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -42,6 +42,7 @@ const expansionFiles = [
   "chapterTwelveTopHatExpansion.ts",
   "chapterTwelveGoneWithTheWindExpansion.ts",
   "chapterThirteenPaisanExpansion.ts",
+  "chapterThirteenRedShoesExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -78,7 +79,7 @@ const candidates = [
   { title: "Out of the Past", originalTitle: "Out of the Past", year: 1947, aliases: ["Build My Gallows High"], role: "missing_core_probe", decisionIfMissing: "P0", chapterFunction: "RKO fatalist noir is the strongest gap probe for mature postwar noir: location-studio hybridity, flashback construction, low-key photography, star persona and fatalism." },
   { title: "The Lost Weekend", originalTitle: "The Lost Weekend", year: 1945, aliases: [], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "Paramount's researched social-problem noir broadens postwar darkness beyond crime into addiction, urban location work, subjective effects and institutional representation." },
   { title: "Paisan", originalTitle: "Paisà", year: 1946, aliases: ["Paisa", "Paisan"], role: "major_comparison", decisionIfMissing: "P1", expectedScenarioId: "scenario_paisan_1946", chapterFunction: "Rossellini's episodic liberation film tests whether Rome, Open City alone is enough to teach multilingual location production, regional movement and Allied/civilian encounters." },
-  { title: "The Red Shoes", originalTitle: "The Red Shoes", year: 1948, aliases: [], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "Powell and Pressburger's British Technicolor ballet production prevents postwar cinema from becoming synonymous with monochrome scarcity by integrating performance, design, color, optical work, dance and music." },
+  { title: "The Red Shoes", originalTitle: "The Red Shoes", year: 1948, aliases: [], role: "major_comparison", decisionIfMissing: "P1", expectedScenarioId: "scenario_the_red_shoes_1948", chapterFunction: "Powell and Pressburger's British Technicolor ballet production prevents postwar cinema from becoming synonymous with monochrome scarcity by integrating performance, design, color, optical work, dance and music." },
   { title: "Sunset Boulevard", originalTitle: "Sunset Blvd.", year: 1950, aliases: ["Sunset Boulevard", "Sunset Blvd"], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "Wilder's Paramount production extends noir into self-reflexive studio history, voice-over death narration, location/studio contrast and industrial memory." },
   { title: "Los olvidados", originalTitle: "Los olvidados", year: 1950, aliases: ["The Young and the Damned"], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "Buñuel's Mexico City production is a deliberate non-European social-realist comparison joining location poverty, professional and nonprofessional performance, dream imagery and postwar urban modernity." },
   { title: "Ugetsu", originalTitle: "Ugetsu monogatari", year: 1953, aliases: ["Ugetsu"], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "Mizoguchi and Daiei provide a postwar Japanese alternative to Kurosawa through long-take staging, period reconstruction, spectral transitions and studio-location integration." },
