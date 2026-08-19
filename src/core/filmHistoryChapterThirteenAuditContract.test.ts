@@ -33,9 +33,9 @@ const requiredExisting = [
   "Ashes and Diamonds",
   "Touch of Evil",
   "Vertigo",
+  "Paisan",
 ];
 const exactP1Queue = [
-  "Paisan",
   "The Red Shoes",
   "Sunset Boulevard",
   "Los olvidados",
@@ -57,13 +57,13 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 13 audit locks the postwar noir-realism-reconstruction Atlas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 437;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 438;/);
   assert.equal(resolved.chapter.number, 13);
   assert.equal(resolved.chapter.id, "postwar-noir-realism-reconstruction");
   assert.equal(resolved.chapter.title, "Postwar noir, realism and reconstruction");
   assert.equal(resolved.chapter.period, "1944–1959");
-  assert.equal(resolved.atlas.expectedCount, 437);
-  assert.equal(resolved.atlas.actualCount, 437);
+  assert.equal(resolved.atlas.expectedCount, 438);
+  assert.equal(resolved.atlas.actualCount, 438);
   assert.equal(resolved.candidates.length, 31);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
   assert.deepEqual(resolved.byDecision.P0, []);
@@ -91,6 +91,7 @@ test("Chapter 13 required anchors resolve to exact canonical scenario IDs", () =
   assert.equal(byTitle.get("Ashes and Diamonds")?.scenarioId, "scenario_ashes_and_diamonds_1958");
   assert.equal(byTitle.get("Touch of Evil")?.scenarioId, "scenario_touch_of_evil_1958");
   assert.equal(byTitle.get("Vertigo")?.scenarioId, "scenario_vertigo_1958");
+  assert.equal(byTitle.get("Paisan")?.scenarioId, "scenario_paisan_1946");
 });
 
 test("Chapter 13 keeps historical systems outside fake Production Cases", () => {
