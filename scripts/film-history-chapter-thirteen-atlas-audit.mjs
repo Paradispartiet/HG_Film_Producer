@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 443;
+const EXPECTED_ATLAS_COUNT = 444;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -47,6 +47,7 @@ const expansionFiles = [
   "chapterThirteenLosOlvidadosExpansion.ts",
   "chapterThirteenUgetsuExpansion.ts",
   "chapterThirteenAManEscapedExpansion.ts",
+  "chapterFourteenBlackGirlExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",

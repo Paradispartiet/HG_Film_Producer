@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 443;
+const EXPECTED_ATLAS_COUNT = 444;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -47,6 +47,7 @@ const expansionFiles = [
   "chapterThirteenLosOlvidadosExpansion.ts",
   "chapterThirteenUgetsuExpansion.ts",
   "chapterThirteenAManEscapedExpansion.ts",
+  "chapterFourteenBlackGirlExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -72,7 +73,7 @@ const candidates = [
   { title: "Contempt", originalTitle: "Le Mépris", year: 1963, aliases: ["Le Mepris", "Contempt"], role: "anchor_film", decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_contempt_1963", chapterFunction: "Godard's prestige co-production exposes producer pressure, star image, widescreen color, adaptation and film-industry self-reflexivity inside rather than outside commercial production." },
   { title: "The Leopard", originalTitle: "Il Gattopardo", year: 1963, aliases: ["Il gattopardo", "The Leopard"], role: "major_comparison", decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_the_leopard_1963", chapterFunction: "Visconti's large-scale historical production prevents modernism from collapsing into small crews: large-format color, elaborate design, political history and international co-production coexist with New Wave economies." },
   { title: "The Umbrellas of Cherbourg", originalTitle: "Les Parapluies de Cherbourg", year: 1964, aliases: ["Umbrellas of Cherbourg"], role: "anchor_film", decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_the_umbrellas_of_cherbourg_1964", chapterFunction: "Demy and Legrand make continuous singing, color design, studio discipline and social time into a modernist musical system rather than a rejection of genre craft." },
-  { title: "Black Girl", originalTitle: "La Noire de…", year: 1966, aliases: ["La Noire de...", "La Noire de", "Black Girl"], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "Sembène is the essential missing decolonization case: Senegal-France relations, migration, labor, voice, authorship and African production history cannot be represented only through European films about empire." },
+  { title: "Black Girl", originalTitle: "La Noire de…", year: 1966, aliases: ["La Noire de...", "La Noire de", "Black Girl"], role: "major_comparison", decisionIfMissing: "P1", expectedScenarioId: "scenario_black_girl_1966", chapterFunction: "Sembène is the essential missing decolonization case: Senegal-France relations, migration, labor, voice, authorship and African production history cannot be represented only through European films about empire." },
   { title: "The Battle of Algiers", originalTitle: "La battaglia di Algeri", year: 1966, aliases: ["La Bataille d Alger", "The Battle of Algiers"], role: "anchor_film", decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_the_battle_of_algiers_1966", chapterFunction: "Pontecorvo, Solinas and Yacef join Algerian-Italian financing, nonprofessional casting, Algiers locations and newsreel-like craft to anti-colonial political reconstruction." },
   { title: "Closely Watched Trains", originalTitle: "Ostře sledované vlaky", year: 1966, aliases: ["Ostre sledovane vlaky", "Closely Observed Trains"], role: "anchor_film", decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_closely_watched_trains_1966", chapterFunction: "Menzel and Hrabal anchor the Czechoslovak New Wave through state-studio production, ordinary wartime space, comic performance and anti-heroic resistance." },
   { title: "Daisies", originalTitle: "Sedmikrásky", year: 1966, aliases: ["Sedmikrasky", "Daisies"], role: "anchor_film", decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_daisies_1966", chapterFunction: "Chytilová is the missing experimental and feminist Czechoslovak countercase: color, collage, performance, material destruction and censorship broaden the chapter beyond male-centered realist New Waves." },
