@@ -1,0 +1,832 @@
+{
+  "schemaVersion": "1.0",
+  "auditDate": "2026-08-19",
+  "chapter": {
+    "number": 14,
+    "id": "new-waves-modernism-decolonization",
+    "title": "New Waves, modernism and decolonization",
+    "period": "1959–1968",
+    "scope": "Cinema from the 1959 French breakthrough through the late-1960s expansion of modernist and politically transformed production: Cahiers and Left Bank practices, Italian modernism, Czechoslovak New Wave, decolonization and revolutionary cinema, changing location technologies, state and co-production systems, and art-cinema circulation.",
+    "thesis": "The 1960s did not replace classical cinema with one New Wave style. New production systems emerged through criticism, first-feature economics, location practice, changing equipment, state support, co-production, decolonization, censorship and modernist experiments in time, space, performance and sound; their similarities matter only when their different institutions and material conditions remain visible."
+  },
+  "atlas": {
+    "expectedCount": 443,
+    "actualCount": 443,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "definitions": 58,
+        "appended": 56,
+        "matchedExisting": 2,
+        "status": "manual_early_cinema_case_needs_source_verification",
+        "sourceListId": "manual_early_cinema_expansion_2026"
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_one_early_cinema_verified",
+        "sourceListId": "manual_chapter_one_early_cinema_expansion_2026"
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_one_early_cinema_verified",
+        "sourceListId": "manual_chapter_one_early_cinema_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "definitions": 3,
+        "appended": 3,
+        "matchedExisting": 0,
+        "status": "manual_chapter_two_exhibition_verified",
+        "sourceListId": "manual_chapter_two_exhibition_expansion_2026"
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_chapter_three_narrative_verified",
+        "sourceListId": "manual_chapter_three_narrative_expansion_2026"
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "definitions": 3,
+        "appended": 3,
+        "matchedExisting": 0,
+        "status": "manual_chapter_four_industry_verified",
+        "sourceListId": "manual_chapter_four_industry_expansion_2026"
+      },
+      {
+        "fileName": "chapterFiveInternationalExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_chapter_five_international_verified",
+        "sourceListId": "manual_chapter_five_international_expansion_2026"
+      },
+      {
+        "fileName": "chapterSixHollywoodExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_six_hollywood_verified",
+        "sourceListId": "manual_chapter_six_hollywood_expansion_2026"
+      },
+      {
+        "fileName": "chapterSevenWeimarExpansion.ts",
+        "definitions": 2,
+        "appended": 2,
+        "matchedExisting": 0,
+        "status": "manual_chapter_seven_weimar_verified",
+        "sourceListId": "manual_chapter_seven_weimar_expansion_2026"
+      },
+      {
+        "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eight_french_avant_garde_verified",
+        "sourceListId": "manual_chapter_eight_french_avant_garde_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineSovietMontageExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nine_soviet_montage_verified",
+        "sourceListId": "manual_chapter_nine_soviet_montage_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenSilentCinemasExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_silent_cinemas_verified",
+        "sourceListId": "manual_chapter_ten_silent_cinemas_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenLaborersLoveExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_laborers_love_verified",
+        "sourceListId": "manual_chapter_ten_laborers_love_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenAThrowOfDiceExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_a_throw_of_dice_verified",
+        "sourceListId": "manual_chapter_ten_a_throw_of_dice_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenGrowthOfTheSoilExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_growth_of_the_soil_verified",
+        "sourceListId": "manual_chapter_ten_growth_of_the_soil_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenOrochiExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_orochi_verified",
+        "sourceListId": "manual_chapter_ten_orochi_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenRedHeroineExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_red_heroine_verified",
+        "sourceListId": "manual_chapter_ten_red_heroine_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenHaxanExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_haxan_verified",
+        "sourceListId": "manual_chapter_ten_haxan_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenJazzSingerExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_jazz_singer_verified",
+        "sourceListId": "manual_chapter_eleven_jazz_singer_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenBlackmailExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_blackmail_verified",
+        "sourceListId": "manual_chapter_eleven_blackmail_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenApplauseExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_applause_verified",
+        "sourceListId": "manual_chapter_eleven_applause_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenNeighborsWifeExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_neighbors_wife_verified",
+        "sourceListId": "manual_chapter_eleven_neighbors_wife_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenBroadwayMelodyExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_broadway_melody_verified",
+        "sourceListId": "manual_chapter_eleven_broadway_melody_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenSousLesToitsExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_sous_les_toits_verified",
+        "sourceListId": "manual_chapter_eleven_sous_les_toits_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenEnthusiasmExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_enthusiasm_verified",
+        "sourceListId": "manual_chapter_eleven_enthusiasm_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenBlueAngelExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_blue_angel_verified",
+        "sourceListId": "manual_chapter_eleven_blue_angel_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelvePublicEnemyExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_public_enemy_verified",
+        "sourceListId": "manual_chapter_twelve_public_enemy_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveDraculaExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_dracula_verified",
+        "sourceListId": "manual_chapter_twelve_dracula_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelve42ndStreetExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_42nd_street_verified",
+        "sourceListId": "manual_chapter_twelve_42nd_street_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveScarfaceExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_scarface_verified",
+        "sourceListId": "manual_chapter_twelve_scarface_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveItHappenedOneNightExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_it_happened_one_night_verified",
+        "sourceListId": "manual_chapter_twelve_it_happened_one_night_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveTopHatExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_top_hat_verified",
+        "sourceListId": "manual_chapter_twelve_top_hat_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveGoneWithTheWindExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_gone_with_the_wind_verified",
+        "sourceListId": "manual_chapter_twelve_gone_with_the_wind_expansion_2026"
+      },
+      {
+        "fileName": "chapterThirteenPaisanExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_thirteen_paisan_verified",
+        "sourceListId": "manual_chapter_thirteen_paisan_expansion_2026"
+      },
+      {
+        "fileName": "chapterThirteenRedShoesExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_thirteen_red_shoes_verified",
+        "sourceListId": "manual_chapter_thirteen_red_shoes_expansion_2026"
+      },
+      {
+        "fileName": "chapterThirteenSunsetBoulevardExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_thirteen_sunset_boulevard_verified",
+        "sourceListId": "manual_chapter_thirteen_sunset_boulevard_expansion_2026"
+      },
+      {
+        "fileName": "chapterThirteenLosOlvidadosExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_thirteen_los_olvidados_verified",
+        "sourceListId": "manual_chapter_thirteen_los_olvidados_expansion_2026"
+      },
+      {
+        "fileName": "chapterThirteenUgetsuExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_thirteen_ugetsu_verified",
+        "sourceListId": "manual_chapter_thirteen_ugetsu_expansion_2026"
+      },
+      {
+        "fileName": "chapterThirteenAManEscapedExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_thirteen_a_man_escaped_verified",
+        "sourceListId": "manual_chapter_thirteen_a_man_escaped_expansion_2026"
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "definitions": 27,
+        "appended": 27,
+        "matchedExisting": 0,
+        "status": "manual_modern_canon_case_needs_source_verification",
+        "sourceListId": "manual_modern_indie_asian_prize_expansion_2026"
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "definitions": 20,
+        "appended": 20,
+        "matchedExisting": 0,
+        "status": "manual_priority_indie_case_needs_source_verification",
+        "sourceListId": "manual_priority_indie_completion_2026"
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_east_asian_auteur_case_needs_source_verification",
+        "sourceListId": "manual_east_asian_auteur_expansion_2026"
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0,
+        "status": "manual_japanese_auteur_case_needs_source_verification",
+        "sourceListId": "manual_japanese_auteur_expansion_2026"
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_south_korean_cinema_case_needs_source_verification",
+        "sourceListId": "manual_south_korean_cinema_expansion_2026"
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0,
+        "status": "manual_south_southeast_asian_case_needs_source_verification",
+        "sourceListId": "manual_south_southeast_asian_expansion_2026"
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_festival_winner_1981_2009_case_needs_source_verification",
+        "sourceListId": "manual_festival_winners_1981_2009_expansion_2026"
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_festival_winner_2010_2024_case_needs_source_verification",
+        "sourceListId": "manual_festival_winner_2010_2024_expansion_2026"
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "definitions": 22,
+        "appended": 15,
+        "matchedExisting": 7,
+        "status": "manual_scandinavian_european_case_needs_source_verification",
+        "sourceListId": "manual_scandinavian_european_expansion_2026"
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "definitions": 24,
+        "appended": 23,
+        "matchedExisting": 1,
+        "status": "manual_eastern_iberian_british_case_needs_source_verification",
+        "sourceListId": "manual_eastern_iberian_british_expansion_2026"
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "definitions": 28,
+        "appended": 25,
+        "matchedExisting": 3,
+        "status": "manual_italy_france_germany_benelux_case_needs_source_verification",
+        "sourceListId": "manual_italy_france_germany_benelux_expansion_2026"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "Hiroshima mon amour",
+      "originalTitle": "Hiroshima mon amour",
+      "year": 1959,
+      "aliases": [],
+      "role": "chapter_thirteen_handoff",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_hiroshima_mon_amour_1959",
+      "chapterFunction": "Resnais and Duras turn a documentary commission into a Franco-Japanese fiction about memory, war and representation; it is the Left Bank handoff from Chapter 13 into modernist production.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_hiroshima_mon_amour_1959",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "The 400 Blows",
+      "originalTitle": "Les quatre cents coups",
+      "year": 1959,
+      "aliases": [
+        "Les 400 coups",
+        "The 400 Blows"
+      ],
+      "role": "chapter_thirteen_handoff",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_400_blows_1959",
+      "chapterFunction": "Truffaut's debut is the indispensable Cahiers-side New Wave case: youth production, Paris locations, a new performer, mobile observation and the industrial break represented by a first feature.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_400_blows_1959",
+      "matches": 1,
+      "origin": "film_scenarios_seed.json"
+    },
+    {
+      "title": "Breathless",
+      "originalTitle": "À bout de souffle",
+      "year": 1960,
+      "aliases": [
+        "A bout de souffle",
+        "Breathless"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_breathless_1960",
+      "chapterFunction": "Godard's first feature tests the most consequential production-language break in the early New Wave: location shooting, small-unit practice, direct address, discontinuous cutting and post-synchronized sound.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_breathless_1960",
+      "matches": 1,
+      "origin": "film_scenarios_seed.json"
+    },
+    {
+      "title": "L'Avventura",
+      "originalTitle": "L'avventura",
+      "year": 1960,
+      "aliases": [
+        "L Avventura",
+        "The Adventure"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_l_avventura_1960",
+      "chapterFunction": "Antonioni's troubled island production shifts modernism toward duration, landscape, missing causality and precarious location logistics without treating Italian cinema as a French New Wave derivative.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_l_avventura_1960",
+      "matches": 1,
+      "origin": "italyFranceGermanyBeneluxExpansion.ts"
+    },
+    {
+      "title": "Last Year at Marienbad",
+      "originalTitle": "L'Année dernière à Marienbad",
+      "year": 1961,
+      "aliases": [
+        "L Annee derniere a Marienbad",
+        "Last Year in Marienbad"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_last_year_at_marienbad_1961",
+      "chapterFunction": "Resnais and Robbe-Grillet make writing, découpage, architecture, studio-location control and unstable time the material system of Left Bank modernism.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_last_year_at_marienbad_1961",
+      "matches": 1,
+      "origin": "italyFranceGermanyBeneluxExpansion.ts"
+    },
+    {
+      "title": "Jules and Jim",
+      "originalTitle": "Jules et Jim",
+      "year": 1962,
+      "aliases": [
+        "Jules & Jim"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_jules_and_jim_1962",
+      "chapterFunction": "Truffaut's Carrosse production develops New Wave mobility through adaptation, Raoul Coutard photography, narration, archival material and accelerated historical montage.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_jules_and_jim_1962",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Cléo from 5 to 7",
+      "originalTitle": "Cléo de 5 à 7",
+      "year": 1962,
+      "aliases": [
+        "Cleo from 5 to 7",
+        "Cleo de 5 a 7"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_cleo_from_5_to_7_1962",
+      "chapterFunction": "Varda's Paris-time structure is the strongest missing Left Bank/feminist counterweight: urban location work, duration, gendered spectatorship, performance and documentary-fiction observation.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_cleo_from_5_to_7_1962",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "8½",
+      "originalTitle": "8½",
+      "year": 1963,
+      "aliases": [
+        "8 1/2",
+        "8 1 2",
+        "Eight and a Half"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_8_1_2_1963",
+      "chapterFunction": "Fellini's Italian-French production turns creative blockage, studio labor, spectacle, memory and dream into a self-reflexive production system.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_8_1_2_1963",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Contempt",
+      "originalTitle": "Le Mépris",
+      "year": 1963,
+      "aliases": [
+        "Le Mepris",
+        "Contempt"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_contempt_1963",
+      "chapterFunction": "Godard's prestige co-production exposes producer pressure, star image, widescreen color, adaptation and film-industry self-reflexivity inside rather than outside commercial production.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_contempt_1963",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "The Leopard",
+      "originalTitle": "Il Gattopardo",
+      "year": 1963,
+      "aliases": [
+        "Il gattopardo",
+        "The Leopard"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_leopard_1963",
+      "chapterFunction": "Visconti's large-scale historical production prevents modernism from collapsing into small crews: large-format color, elaborate design, political history and international co-production coexist with New Wave economies.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_leopard_1963",
+      "matches": 1,
+      "origin": "italyFranceGermanyBeneluxExpansion.ts"
+    },
+    {
+      "title": "The Umbrellas of Cherbourg",
+      "originalTitle": "Les Parapluies de Cherbourg",
+      "year": 1964,
+      "aliases": [
+        "Umbrellas of Cherbourg"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_umbrellas_of_cherbourg_1964",
+      "chapterFunction": "Demy and Legrand make continuous singing, color design, studio discipline and social time into a modernist musical system rather than a rejection of genre craft.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_umbrellas_of_cherbourg_1964",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Black Girl",
+      "originalTitle": "La Noire de…",
+      "year": 1966,
+      "aliases": [
+        "La Noire de...",
+        "La Noire de",
+        "Black Girl"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Sembène is the essential missing decolonization case: Senegal-France relations, migration, labor, voice, authorship and African production history cannot be represented only through European films about empire.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "The Battle of Algiers",
+      "originalTitle": "La battaglia di Algeri",
+      "year": 1966,
+      "aliases": [
+        "La Bataille d Alger",
+        "The Battle of Algiers"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_battle_of_algiers_1966",
+      "chapterFunction": "Pontecorvo, Solinas and Yacef join Algerian-Italian financing, nonprofessional casting, Algiers locations and newsreel-like craft to anti-colonial political reconstruction.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_battle_of_algiers_1966",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Closely Watched Trains",
+      "originalTitle": "Ostře sledované vlaky",
+      "year": 1966,
+      "aliases": [
+        "Ostre sledovane vlaky",
+        "Closely Observed Trains"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_closely_watched_trains_1966",
+      "chapterFunction": "Menzel and Hrabal anchor the Czechoslovak New Wave through state-studio production, ordinary wartime space, comic performance and anti-heroic resistance.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_closely_watched_trains_1966",
+      "matches": 1,
+      "origin": "easternIberianBritishExpansion.ts"
+    },
+    {
+      "title": "Daisies",
+      "originalTitle": "Sedmikrásky",
+      "year": 1966,
+      "aliases": [
+        "Sedmikrasky",
+        "Daisies"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_daisies_1966",
+      "chapterFunction": "Chytilová is the missing experimental and feminist Czechoslovak countercase: color, collage, performance, material destruction and censorship broaden the chapter beyond male-centered realist New Waves.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_daisies_1966",
+      "matches": 1,
+      "origin": "easternIberianBritishExpansion.ts"
+    },
+    {
+      "title": "The Firemen's Ball",
+      "originalTitle": "Hoří, má panenko",
+      "year": 1967,
+      "aliases": [
+        "Hori ma panenko",
+        "The Firemens Ball",
+        "The Firemen's Ball"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_firemens_ball_1967",
+      "chapterFunction": "Forman's Czech-Italian location production, nonprofessional ensemble and censorship history make institutional satire a concrete production system.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_firemens_ball_1967",
+      "matches": 1,
+      "origin": "easternIberianBritishExpansion.ts"
+    },
+    {
+      "title": "PlayTime",
+      "originalTitle": "PlayTime",
+      "year": 1967,
+      "aliases": [
+        "Playtime"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_playtime_1967",
+      "chapterFunction": "Tati's Tativille, 65/70 mm scale and constructed sound world prove that 1960s formal modernism also operated through enormous purpose-built infrastructure and financial risk.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_playtime_1967",
+      "matches": 1,
+      "origin": "italyFranceGermanyBeneluxExpansion.ts"
+    },
+    {
+      "title": "Memories of Underdevelopment",
+      "originalTitle": "Memorias del subdesarrollo",
+      "year": 1968,
+      "aliases": [
+        "Memorias del subdesarrollo",
+        "Memories of Underdevelopment"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Alea's Cuban case is the strongest missing revolutionary-cinema counterweight: post-revolution institutions, archival material, essayistic montage and decolonial modernity expand the chapter beyond Europe and Algeria.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "Hiroshima mon amour",
+      "The 400 Blows",
+      "Breathless",
+      "L'Avventura",
+      "Last Year at Marienbad",
+      "Jules and Jim",
+      "Cléo from 5 to 7",
+      "8½",
+      "Contempt",
+      "The Leopard",
+      "The Umbrellas of Cherbourg",
+      "The Battle of Algiers",
+      "Closely Watched Trains",
+      "Daisies",
+      "The Firemen's Ball",
+      "PlayTime"
+    ],
+    "P0": [],
+    "P1": [
+      "Black Girl",
+      "Memories of Underdevelopment"
+    ],
+    "P2": [],
+    "EXISTING_REQUIRED": []
+  },
+  "recommendedNewProductionCases": [
+    "Black Girl",
+    "Memories of Underdevelopment"
+  ],
+  "historicalObjects": [
+    {
+      "label": "French New Wave as a critical and industrial formation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "The label groups overlapping but non-identical careers, producers, critics and first-feature conditions; Cahiers filmmakers and the Left Bank are compared rather than collapsed into one aesthetic recipe."
+    },
+    {
+      "label": "Auteur criticism and production authorship",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Director-centered criticism changed reception and practice, but producers, writers, performers and craftspeople remain material authors of each production."
+    },
+    {
+      "label": "Lightweight cameras, faster stocks and portable sound",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "New equipment could reduce crew size and increase location mobility, but every film must prove its actual camera, stock, sound and post-synchronization practice rather than inherit a generic New Wave kit."
+    },
+    {
+      "label": "Location production and the transformed city",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Paris, Rome, Hiroshima, Algiers, Prague and other cities become production environments through permits, traffic, weather, labor, architecture and social observation, not merely spontaneous backdrops."
+    },
+    {
+      "label": "Modernist time, space and narration",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Ellipsis, duration, discontinuity, direct address, ambiguity and self-reflexivity are constructed through screenplay, staging, camera, editing and sound rather than treated as abstract style tags."
+    },
+    {
+      "label": "Festivals, cinematheques, subtitling and art-cinema distribution",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Cannes, Venice, archives, critics and distributors accelerated transnational circulation, but international recognition remains downstream from production and never creates a national cinema retroactively."
+    },
+    {
+      "label": "State support, television and co-production",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Public finance, national studios, television partners and cross-border co-productions shape access to equipment, labor, locations and distribution differently across countries."
+    },
+    {
+      "label": "Decolonization and revolutionary cinema",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Independence struggles, anti-colonial movements and new national institutions changed who could produce, represent and circulate images; these histories are not exotic subject matter or aesthetic bonuses."
+    },
+    {
+      "label": "New Waves beyond France",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Italian, Czechoslovak, African, Cuban and other modernisms have distinct institutions and genealogies; resemblance to France is never the criterion for historical importance."
+    },
+    {
+      "label": "Censorship, gender, race and political conflict",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "State censorship, colonial hierarchy, gendered labor and political repression materially affect scripts, casting, production and circulation and require historically specific evidence."
+    }
+  ],
+  "boundaryNotes": [
+    "Chapter 14 begins at the explicit Chapter 13 handoff year 1959. The 400 Blows and Hiroshima mon amour are boundary films, but they represent different French production formations rather than one unified New Wave method.",
+    "Cahiers critics-turned-directors and the Left Bank overlap in period and circulation but not in identical production practice; Resnais, Varda, Truffaut and Godard must remain film-specific.",
+    "Italian modernism, Czechoslovak New Wave, Senegalese and Cuban cinema, and Algerian anti-colonial production are not branches of a French template. Each enters through its own institutions, labor, politics and craft evidence.",
+    "The chapter runs through 1968 because the political and production shocks around decolonization, censorship, Prague Spring and the wider 1968 crisis form a coherent endpoint before later New Hollywood and 1970s political-industrial systems become the organizing problem.",
+    "Large-scale films such as The Leopard and PlayTime remain inside the chapter to prevent a false equation between modernism and cheap handheld production."
+  ],
+  "safeguards": [
+    "New Wave is not a camera preset. Handheld work, lightweight gear, natural light, direct sound, post-synchronization and jump cutting require title-specific production evidence.",
+    "Auteur analysis never erases producers, writers, performers, cinematographers, editors, designers, sound workers or public institutions from production history.",
+    "The Left Bank and Cahiers groups remain analytically distinct even when festivals and later criticism group them under a broader French New Wave moment.",
+    "Modernist ambiguity is constructed craft: screenplay, blocking, camera movement, duration, editing, sound and performance must explain how uncertainty is made.",
+    "Decolonization is a material political history, not an aesthetic theme. African, Algerian and Cuban cases are assessed through production ownership, institutions, labor, representation and circulation.",
+    "Festivals and later canonization are downstream circulation layers. Cannes or Venice recognition never substitutes for production evidence or imply Western discovery created the cinema being recognized.",
+    "State-supported and commercial systems coexist with independent and low-budget work; no simple freedom-versus-studio narrative is allowed.",
+    "Gender, race, colonial hierarchy and censorship are production conditions where evidenced, not symbolic diversity tags or quality bonuses.",
+    "Restorations, reissues and current aspect-ratio or soundtrack presentations remain separate from original production and release evidence."
+  ]
+}
