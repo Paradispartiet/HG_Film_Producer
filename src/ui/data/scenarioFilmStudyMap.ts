@@ -53,6 +53,7 @@ import { topHatFilmHistoryProfile } from "./scenarioFilmStudyStudioGenreTopHat";
 import { goneWithTheWindFilmHistoryProfile } from "./scenarioFilmStudyStudioGenreGoneWithTheWind";
 import { paisanFilmHistoryProfile } from "./scenarioFilmStudyPostwarPaisan";
 import { redShoesFilmHistoryProfile } from "./scenarioFilmStudyPostwarRedShoes";
+import { sunsetBoulevardFilmHistoryProfile } from "./scenarioFilmStudyPostwarSunsetBoulevard";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -132,6 +133,7 @@ const sourceBackedFilmHistoryProfiles = {
   [goneWithTheWindFilmHistoryProfile.scenarioId]: goneWithTheWindFilmHistoryProfile,
   [paisanFilmHistoryProfile.scenarioId]: paisanFilmHistoryProfile,
   [redShoesFilmHistoryProfile.scenarioId]: redShoesFilmHistoryProfile,
+  [sunsetBoulevardFilmHistoryProfile.scenarioId]: sunsetBoulevardFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
