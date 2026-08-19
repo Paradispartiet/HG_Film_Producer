@@ -27,7 +27,7 @@ export const memoriesUnderdevelopmentProductionCaseVerification = {
       publisher: "The Criterion Collection",
       url: "https://www.criterion.com/current/posts/5893-10-things-i-learned-memories-of-underdevelopment",
       sourceKind: "archive_feature",
-      supports: ["overall", "screenplay", "performance"],
+      supports: ["overall", "screenplay"],
       note: "Criterion production notes document Gutiérrez Alea's ICAIC founding role, the Desnoes co-adaptation and feedback loop between film and later novel translation, and Sergio Corrieri's deliberate aging for the role." 
     },
     {
