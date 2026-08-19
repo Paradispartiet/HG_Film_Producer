@@ -104,7 +104,7 @@ test("Chapter 12 permanently preserves labor, Code, genre and representation saf
   assert.ok(resolved.safeguards.some((item) => item.includes("Race") && item.includes("never rewarded")));
 });
 
-test("Chapter 12 audit is permanent in the v0.1 verification chain", () => {
+test("Chapter 12 audit remains permanent as newer chapter audits extend the v0.1 chain", () => {
   assert.match(packageJson, /"audit:film-history-ch12": "node scripts\/film-history-chapter-twelve-atlas-audit\.mjs"/);
-  assert.match(packageJson, /npm run audit:film-history-ch11 && npm run audit:film-history-ch12 && npm run typecheck/);
+  assert.match(packageJson, /npm run audit:film-history-ch11 && npm run audit:film-history-ch12 && npm run audit:film-history-ch13 && npm run typecheck/);
 });
