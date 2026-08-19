@@ -16,7 +16,7 @@ test("Chapter 13 materializes The Red Shoes as an Archers Technicolor ballet Pro
   assert.ok(film.premise.includes("Reginald Mills"));
   assert.ok(film.premise.includes("Brian Easdale"));
   assert.ok(film.learningGoals.some((goal) => goal.includes("postwar British cinema") && goal.includes("Technicolor")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("soundtrack first") && goal.includes("whole feature")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("soundtrack first") && goal.includes("complete feature")));
   assert.ok(film.requiredChoicesSeed.camera.includes("no_invented_camera_lens_stock_package"));
   assert.ok(film.learningGoals.length >= 12);
   assert.ok(film.phases.length >= 9);
