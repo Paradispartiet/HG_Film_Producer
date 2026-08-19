@@ -15,36 +15,36 @@ export const losOlvidadosProductionCaseVerification = {
       note: "UNESCO documents the two-year research/writing period, Buñuel's negotiation with Óscar Dancigers over stylistic and ideological freedom, Dancigers' censorship/conservative-reaction fears, the secretly filmed alternate ending, survival of the original negative and Memory of the World recognition."
     },
     {
-      title: "Tercer Ciclo Restaurados: Los olvidados",
+      title: "Tercer Ciclo Restaurados por el valor y la memoria audiovisual",
       publisher: "Filmoteca UNAM",
-      url: "https://www.filmoteca.unam.mx/ciclos/tercer-ciclo-restaurados-los-olvidados/",
+      url: "https://www.filmoteca.unam.mx/tercer-ciclo-restaurados-por-el-valor-y-la-memoria-audiovisual/",
       sourceKind: "film_institute",
       supports: ["overall", "cinematography"],
-      note: "Filmoteca UNAM identifies production at Estudios Tepeyac and on Mexico City locations, grounding the case's location-studio hybridity in the archive that preserves the film's materials."
+      note: "Filmoteca UNAM identifies Los olvidados as filmed at Estudios Tepeyac and on Mexico City locations and lists an 81-minute form, grounding the case's location-studio hybridity and one runtime variant."
     },
     {
-      title: "Modernización en la gran ciudad: Los olvidados",
-      publisher: "Instituto Cervantes",
-      url: "https://cultura.cervantes.es/estocolmo/es/los-olvidados/164951",
+      title: "Modernización en la gran ciudad. Los olvidados (Luis Buñuel, 1950)",
+      publisher: "Instituto Cervantes / Centro Virtual Cervantes",
+      url: "https://cvc.cervantes.es/artes/cine/mexico_ilustrado/olvidados.htm",
       sourceKind: "film_institute",
       supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
-      note: "Instituto Cervantes supplies the detailed production credits, including Ultramar Films, Buñuel/Alcoriza, Dancigers/Menasce, Figueroa, Romero, Fitzgerald, Meyer, Savage with Buñuel's uncredited editing participation, Carles/González Gancy, Halffter/Pittaluga, monaural sound and an 80-minute runtime."
+      note: "Centro Virtual Cervantes supplies the detailed production credits, including Ultramar Films, Buñuel/Alcoriza, Dancigers/Menasce, Figueroa, Romero, Fitzgerald, Meyer, Savage with Buñuel's uncredited editing participation, Carles/González Gancy, Halffter/Pittaluga, monaural sound and an 80-minute runtime."
     },
     {
       title: "Los Olvidados",
       publisher: "The Film Foundation / World Cinema Project",
-      url: "https://www.film-foundation.org/los-olvidados",
+      url: "https://www.film-foundation.org/world-cinema?page=4&sortBy=title&sortOrder=1",
       sourceKind: "archive_feature",
       supports: ["overall", "cinematography", "sound"],
-      note: "The Film Foundation records the 1950 Mexican 80-minute black-and-white film and documents the later 4K restoration from camera and soundtrack nitrate negatives preserved in Mexico, keeping preservation evidence distinct from original-production claims."
+      note: "The Film Foundation records the 1950 Mexican 80-minute black-and-white film, credits Savage, Figueroa, Dancigers/Kogan/Menasce and Halffter, and documents the later 4K restoration from camera and soundtrack nitrate negatives preserved at Filmoteca UNAM."
     },
     {
-      title: "LOS OLVIDADOS",
+      title: "LOS OLVIDADOS — 1951 Competition",
       publisher: "Festival de Cannes",
-      url: "https://www.festival-cannes.com/en/f/los-olvidados/",
+      url: "https://www.festival-cannes.com/en/f/los-olvidados-3/",
       sourceKind: "film_institute",
       supports: ["overall", "screenplay", "cinematography"],
-      note: "Festival de Cannes records Los olvidados in the 1951 competition, the principal creative credits and Luis Buñuel's directing prize, preserving international reception as a downstream layer rather than a production cause."
+      note: "Festival de Cannes records Los olvidados in the 1951 competition, credits Buñuel, Alcoriza and Figueroa, and records Luis Buñuel's Award for Best Director, preserving international reception as a downstream layer rather than a production cause."
     }
   ]
 } as const satisfies ProductionCaseVerificationRecord;
