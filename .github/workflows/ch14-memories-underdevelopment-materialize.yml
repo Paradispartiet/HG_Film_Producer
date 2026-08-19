@@ -1,0 +1,67 @@
+name: Materialize Chapter 14 Memories of Underdevelopment
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ch14-memories-underdevelopment-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  materialize:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'agent/ch14-memories-underdevelopment-production-case'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Materialize Memories of Underdevelopment into canonical Atlas
+        run: node scripts/materialize-ch14-memories-underdevelopment.mjs
+      - name: Regenerate Chapter 12 Atlas report
+        run: node scripts/film-history-chapter-twelve-atlas-audit.mjs --write=docs/film-history-chapter-twelve-atlas-resolved.json
+      - name: Regenerate Chapter 13 Atlas report
+        run: node scripts/film-history-chapter-thirteen-atlas-audit.mjs --write=docs/film-history-chapter-thirteen-atlas-resolved.json
+      - name: Regenerate Chapter 14 Atlas report
+        run: node scripts/film-history-chapter-fourteen-atlas-audit.mjs --write=docs/film-history-chapter-fourteen-atlas-resolved.json
+      - name: Full v0.1 verification
+        id: verify
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run verify:v0.1 2>&1 | tee ch14-memories-underdevelopment-verify.log
+      - name: Upload failed verification diagnostics
+        if: steps.verify.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ch14-memories-underdevelopment-diagnostics
+          path: ch14-memories-underdevelopment-verify.log
+      - name: Fail on verification error
+        if: steps.verify.outcome == 'failure'
+        run: exit 1
+      - name: Commit permanent clean Memories of Underdevelopment case
+        if: steps.verify.outcome == 'success'
+        shell: bash
+        run: |
+          rm -f .github/workflows/ch14-memories-underdevelopment-materialize.yml
+          rm -f scripts/materialize-ch14-memories-underdevelopment.mjs
+          rm -f ch14-memories-underdevelopment-verify.log
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && { echo "No permanent Memories of Underdevelopment diff to commit"; exit 1; }
+          git commit -m "Materialize Memories of Underdevelopment Chapter 14 Production Case"
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
