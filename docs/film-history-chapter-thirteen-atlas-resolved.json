@@ -1,0 +1,965 @@
+{
+  "schemaVersion": "1.0",
+  "auditDate": "2026-08-19",
+  "chapter": {
+    "number": 13,
+    "id": "postwar-noir-realism-reconstruction",
+    "title": "Postwar noir, realism and reconstruction",
+    "period": "1944–1959",
+    "scope": "Cinema across the end of the Second World War and the first postwar decade-and-a-half: mature film noir, British wartime-end and postwar production, Italian neorealism, occupation and reconstruction, location practice, postwar studio continuity, emerging art-cinema circulation, and globally distinct Japanese, Indian, Nordic, East-European and Latin American production systems.",
+    "thesis": "Postwar cinema did not replace studio craft with one new realism. It multiplied production systems: noir reworked studio and location crime traditions; neorealism rebuilt cinema around streets, social observation and constrained infrastructure; national studios, independent packages and state systems developed distinct responses to war, reconstruction and decolonization; and international circulation connected these practices without making them stylistically uniform."
+  },
+  "atlas": {
+    "expectedCount": 437,
+    "actualCount": 437,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "definitions": 58,
+        "appended": 56,
+        "matchedExisting": 2,
+        "status": "manual_early_cinema_case_needs_source_verification",
+        "sourceListId": "manual_early_cinema_expansion_2026"
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_one_early_cinema_verified",
+        "sourceListId": "manual_chapter_one_early_cinema_expansion_2026"
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_one_early_cinema_verified",
+        "sourceListId": "manual_chapter_one_early_cinema_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "definitions": 3,
+        "appended": 3,
+        "matchedExisting": 0,
+        "status": "manual_chapter_two_exhibition_verified",
+        "sourceListId": "manual_chapter_two_exhibition_expansion_2026"
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_chapter_three_narrative_verified",
+        "sourceListId": "manual_chapter_three_narrative_expansion_2026"
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "definitions": 3,
+        "appended": 3,
+        "matchedExisting": 0,
+        "status": "manual_chapter_four_industry_verified",
+        "sourceListId": "manual_chapter_four_industry_expansion_2026"
+      },
+      {
+        "fileName": "chapterFiveInternationalExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_chapter_five_international_verified",
+        "sourceListId": "manual_chapter_five_international_expansion_2026"
+      },
+      {
+        "fileName": "chapterSixHollywoodExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_six_hollywood_verified",
+        "sourceListId": "manual_chapter_six_hollywood_expansion_2026"
+      },
+      {
+        "fileName": "chapterSevenWeimarExpansion.ts",
+        "definitions": 2,
+        "appended": 2,
+        "matchedExisting": 0,
+        "status": "manual_chapter_seven_weimar_verified",
+        "sourceListId": "manual_chapter_seven_weimar_expansion_2026"
+      },
+      {
+        "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eight_french_avant_garde_verified",
+        "sourceListId": "manual_chapter_eight_french_avant_garde_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineSovietMontageExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nine_soviet_montage_verified",
+        "sourceListId": "manual_chapter_nine_soviet_montage_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenSilentCinemasExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_silent_cinemas_verified",
+        "sourceListId": "manual_chapter_ten_silent_cinemas_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenLaborersLoveExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_laborers_love_verified",
+        "sourceListId": "manual_chapter_ten_laborers_love_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenAThrowOfDiceExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_a_throw_of_dice_verified",
+        "sourceListId": "manual_chapter_ten_a_throw_of_dice_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenGrowthOfTheSoilExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_growth_of_the_soil_verified",
+        "sourceListId": "manual_chapter_ten_growth_of_the_soil_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenOrochiExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_orochi_verified",
+        "sourceListId": "manual_chapter_ten_orochi_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenRedHeroineExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_red_heroine_verified",
+        "sourceListId": "manual_chapter_ten_red_heroine_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenHaxanExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_haxan_verified",
+        "sourceListId": "manual_chapter_ten_haxan_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenJazzSingerExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_jazz_singer_verified",
+        "sourceListId": "manual_chapter_eleven_jazz_singer_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenBlackmailExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_blackmail_verified",
+        "sourceListId": "manual_chapter_eleven_blackmail_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenApplauseExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_applause_verified",
+        "sourceListId": "manual_chapter_eleven_applause_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenNeighborsWifeExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_neighbors_wife_verified",
+        "sourceListId": "manual_chapter_eleven_neighbors_wife_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenBroadwayMelodyExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_broadway_melody_verified",
+        "sourceListId": "manual_chapter_eleven_broadway_melody_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenSousLesToitsExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_sous_les_toits_verified",
+        "sourceListId": "manual_chapter_eleven_sous_les_toits_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenEnthusiasmExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_enthusiasm_verified",
+        "sourceListId": "manual_chapter_eleven_enthusiasm_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenBlueAngelExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_blue_angel_verified",
+        "sourceListId": "manual_chapter_eleven_blue_angel_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelvePublicEnemyExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_public_enemy_verified",
+        "sourceListId": "manual_chapter_twelve_public_enemy_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveDraculaExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_dracula_verified",
+        "sourceListId": "manual_chapter_twelve_dracula_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelve42ndStreetExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_42nd_street_verified",
+        "sourceListId": "manual_chapter_twelve_42nd_street_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveScarfaceExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_scarface_verified",
+        "sourceListId": "manual_chapter_twelve_scarface_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveItHappenedOneNightExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_it_happened_one_night_verified",
+        "sourceListId": "manual_chapter_twelve_it_happened_one_night_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveTopHatExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_top_hat_verified",
+        "sourceListId": "manual_chapter_twelve_top_hat_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveGoneWithTheWindExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_gone_with_the_wind_verified",
+        "sourceListId": "manual_chapter_twelve_gone_with_the_wind_expansion_2026"
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "definitions": 27,
+        "appended": 27,
+        "matchedExisting": 0,
+        "status": "manual_modern_canon_case_needs_source_verification",
+        "sourceListId": "manual_modern_indie_asian_prize_expansion_2026"
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "definitions": 20,
+        "appended": 20,
+        "matchedExisting": 0,
+        "status": "manual_priority_indie_case_needs_source_verification",
+        "sourceListId": "manual_priority_indie_completion_2026"
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_east_asian_auteur_case_needs_source_verification",
+        "sourceListId": "manual_east_asian_auteur_expansion_2026"
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0,
+        "status": "manual_japanese_auteur_case_needs_source_verification",
+        "sourceListId": "manual_japanese_auteur_expansion_2026"
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_south_korean_cinema_case_needs_source_verification",
+        "sourceListId": "manual_south_korean_cinema_expansion_2026"
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0,
+        "status": "manual_south_southeast_asian_case_needs_source_verification",
+        "sourceListId": "manual_south_southeast_asian_expansion_2026"
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_festival_winner_1981_2009_case_needs_source_verification",
+        "sourceListId": "manual_festival_winners_1981_2009_expansion_2026"
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_festival_winner_2010_2024_case_needs_source_verification",
+        "sourceListId": "manual_festival_winner_2010_2024_expansion_2026"
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "definitions": 22,
+        "appended": 15,
+        "matchedExisting": 7,
+        "status": "manual_scandinavian_european_case_needs_source_verification",
+        "sourceListId": "manual_scandinavian_european_expansion_2026"
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "definitions": 24,
+        "appended": 23,
+        "matchedExisting": 1,
+        "status": "manual_eastern_iberian_british_case_needs_source_verification",
+        "sourceListId": "manual_eastern_iberian_british_expansion_2026"
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "definitions": 28,
+        "appended": 25,
+        "matchedExisting": 3,
+        "status": "manual_italy_france_germany_benelux_case_needs_source_verification",
+        "sourceListId": "manual_italy_france_germany_benelux_expansion_2026"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "The Maltese Falcon",
+      "originalTitle": "The Maltese Falcon",
+      "year": 1941,
+      "aliases": [],
+      "role": "handoff_precursor",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_maltese_falcon_1941",
+      "chapterFunction": "Warner hard-boiled production is the Chapter 12 handoff into the mature noir cycle; it remains a precursor rather than moving the whole 1941 studio system into Chapter 13.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_maltese_falcon_1941",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Double Indemnity",
+      "originalTitle": "Double Indemnity",
+      "year": 1944,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_double_indemnity_1944",
+      "chapterFunction": "Paramount noir joins Production Code negotiation, fatalist adaptation, voice-recorded confession, studio craft and a visual system later grouped under film noir.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_double_indemnity_1944",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Brief Encounter",
+      "originalTitle": "Brief Encounter",
+      "year": 1945,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_brief_encounter_1945",
+      "chapterFunction": "Cineguild's wartime-end melodrama contrasts railway-location production, restrained performance, memory structure and recorded music with American noir and Italian street realism.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_brief_encounter_1945",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Rome, Open City",
+      "originalTitle": "Roma città aperta",
+      "year": 1945,
+      "aliases": [
+        "Roma citta aperta",
+        "Rome Open City"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_rome_open_city_1945",
+      "chapterFunction": "Rossellini's post-liberation Rome production anchors occupation history, damaged infrastructure, street locations, mixed stock and the emergence of Italian neorealism.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_rome_open_city_1945",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Bicycle Thieves",
+      "originalTitle": "Ladri di biciclette",
+      "year": 1948,
+      "aliases": [
+        "The Bicycle Thief",
+        "Bicycle Thieves"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_bicycle_thieves_1948",
+      "chapterFunction": "De Sica's postwar Rome production makes location work, nonprofessional casting, economic precarity and controlled découpage concrete without treating realism as uncrafted immediacy.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_bicycle_thieves_1948",
+      "matches": 1,
+      "origin": "film_scenarios_seed.json"
+    },
+    {
+      "title": "The Third Man",
+      "originalTitle": "The Third Man",
+      "year": 1949,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_third_man_1949",
+      "chapterFunction": "Occupied Vienna turns postwar ruins, multinational production, multiple location units, expressionist-noir photography and source-like zither music into a reconstruction-era production system.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_third_man_1949",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Rashomon",
+      "originalTitle": "Rashōmon",
+      "year": 1950,
+      "aliases": [
+        "Rashomon"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_rashomon_1950",
+      "chapterFunction": "Daiei's postwar Japanese production expands the chapter beyond Euro-American realism through contradictory testimony, monumental set construction, forest photography and international festival circulation.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_rashomon_1950",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Tokyo Story",
+      "originalTitle": "Tōkyō monogatari",
+      "year": 1953,
+      "aliases": [
+        "Tokyo monogatari"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_tokyo_story_1953",
+      "chapterFunction": "Shochiku's mature postwar studio practice shows that postwar cinema also included highly controlled domestic minimalism, fixed camera height and understated ensemble production.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_tokyo_story_1953",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Seven Samurai",
+      "originalTitle": "Shichinin no samurai",
+      "year": 1954,
+      "aliases": [
+        "Seven Samurai"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_seven_samurai_1954",
+      "chapterFunction": "Toho's large postwar production combines historical research, constructed village space, location weather, multiple cameras, horse action and editorial geography at industrial scale.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_seven_samurai_1954",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "La Strada",
+      "originalTitle": "La strada",
+      "year": 1954,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_la_strada_1954",
+      "chapterFunction": "Fellini's road production marks a documented move from neorealist inheritance toward poetic fable, performance stylization and a recurring musical theme.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_la_strada_1954",
+      "matches": 1,
+      "origin": "film_scenarios_seed.json"
+    },
+    {
+      "title": "Pather Panchali",
+      "originalTitle": "Pather Panchali",
+      "year": 1955,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_pather_panchali_1955",
+      "chapterFunction": "Ray's intermittent Bengal location production makes funding scarcity, government support, non-star casting, location observation and transnational art-cinema circulation visible outside Europe and Japan.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_pather_panchali_1955",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Ordet",
+      "originalTitle": "Ordet",
+      "year": 1955,
+      "aliases": [
+        "The Word"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_ordet_1955",
+      "chapterFunction": "Dreyer's Danish long-take chamber production counters any assumption that postwar realism required handheld location spontaneity or rapid cutting.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_ordet_1955",
+      "matches": 1,
+      "origin": "scandinavianEuropeanExpansion.ts"
+    },
+    {
+      "title": "The Night of the Hunter",
+      "originalTitle": "The Night of the Hunter",
+      "year": 1955,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_night_of_the_hunter_1955",
+      "chapterFunction": "Paul Gregory and Charles Laughton's independent American production shows postwar expressionism, child viewpoint and studio-built moral fable alongside noir and social realism.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_night_of_the_hunter_1955",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "The Seventh Seal",
+      "originalTitle": "Det sjunde inseglet",
+      "year": 1957,
+      "aliases": [
+        "The Seventh Seal"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_the_seventh_seal_1957",
+      "chapterFunction": "Svensk Filmindustri's limited-budget production links theatre ensemble, medieval source imagery, controlled black-and-white photography and the international postwar art-cinema circuit.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_seventh_seal_1957",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Ashes and Diamonds",
+      "originalTitle": "Popiół i diament",
+      "year": 1958,
+      "aliases": [
+        "Popiol i diament"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_ashes_and_diamonds_1958",
+      "chapterFunction": "The Polish Film School case places liberation, political transition, one-day structure, state production and expressive black-and-white design inside the chapter's reconstruction problem.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_ashes_and_diamonds_1958",
+      "matches": 1,
+      "origin": "easternIberianBritishExpansion.ts"
+    },
+    {
+      "title": "Touch of Evil",
+      "originalTitle": "Touch of Evil",
+      "year": 1958,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_touch_of_evil_1958",
+      "chapterFunction": "Universal/Welles border noir provides a late-cycle studio comparison through location streets, mobile staging, source-music conception and contested postproduction.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_touch_of_evil_1958",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Vertigo",
+      "originalTitle": "Vertigo",
+      "year": 1958,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "expectedScenarioId": "scenario_vertigo_1958",
+      "chapterFunction": "Hitchcock's VistaVision studio-location production shows mature postwar Hollywood color, optical effects, subjective camera engineering and score-driven obsession without reducing the era to realism.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_vertigo_1958",
+      "matches": 1,
+      "origin": "film_scenarios_seed.json"
+    },
+    {
+      "title": "Out of the Past",
+      "originalTitle": "Out of the Past",
+      "year": 1947,
+      "aliases": [
+        "Build My Gallows High"
+      ],
+      "role": "missing_core_probe",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "RKO fatalist noir is the strongest gap probe for mature postwar noir: location-studio hybridity, flashback construction, low-key photography, star persona and fatalism.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_out_of_the_past_1947",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "The Lost Weekend",
+      "originalTitle": "The Lost Weekend",
+      "year": 1945,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Paramount's researched social-problem noir broadens postwar darkness beyond crime into addiction, urban location work, subjective effects and institutional representation.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_lost_weekend_1945",
+      "matches": 1,
+      "origin": "film_scenarios_seed.json"
+    },
+    {
+      "title": "Paisan",
+      "originalTitle": "Paisà",
+      "year": 1946,
+      "aliases": [
+        "Paisa",
+        "Paisan"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Rossellini's episodic liberation film tests whether Rome, Open City alone is enough to teach multilingual location production, regional movement and Allied/civilian encounters.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "The Red Shoes",
+      "originalTitle": "The Red Shoes",
+      "year": 1948,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Powell and Pressburger's British Technicolor ballet production prevents postwar cinema from becoming synonymous with monochrome scarcity by integrating performance, design, color, optical work, dance and music.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Sunset Boulevard",
+      "originalTitle": "Sunset Blvd.",
+      "year": 1950,
+      "aliases": [
+        "Sunset Boulevard",
+        "Sunset Blvd"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Wilder's Paramount production extends noir into self-reflexive studio history, voice-over death narration, location/studio contrast and industrial memory.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Los olvidados",
+      "originalTitle": "Los olvidados",
+      "year": 1950,
+      "aliases": [
+        "The Young and the Damned"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Buñuel's Mexico City production is a deliberate non-European social-realist comparison joining location poverty, professional and nonprofessional performance, dream imagery and postwar urban modernity.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Ugetsu",
+      "originalTitle": "Ugetsu monogatari",
+      "year": 1953,
+      "aliases": [
+        "Ugetsu"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Mizoguchi and Daiei provide a postwar Japanese alternative to Kurosawa through long-take staging, period reconstruction, spectral transitions and studio-location integration.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Gategutter",
+      "originalTitle": "Gategutter",
+      "year": 1949,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Norwegian east-Oslo social cinema tests postwar reconstruction through local streets, youth experience and national production conditions rather than importing Italian neorealism as a universal template.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_gategutter_1949",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "A Man Escaped",
+      "originalTitle": "Un condamné à mort s'est échappé",
+      "year": 1956,
+      "aliases": [
+        "Un condamne a mort s'est echappe",
+        "A Man Escaped"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Bresson's resistance-prison production adds materially precise gesture, offscreen sound, non-star performance and controlled repetition to the postwar realism spectrum.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Germany Year Zero",
+      "originalTitle": "Germania anno zero",
+      "year": 1948,
+      "aliases": [
+        "Germany Year Zero"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Rossellini's Berlin ruins extend reconstruction geography but remain comparison-level because Rome, Open City and Paisan already test the core neorealist production problem.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Nights of Cabiria",
+      "originalTitle": "Le notti di Cabiria",
+      "year": 1957,
+      "aliases": [
+        "Nights of Cabiria"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Fellini's Rome location-performance system shows post-neorealist continuity after La Strada without requiring another core case unless a later audit exposes a gap.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Wild Strawberries",
+      "originalTitle": "Smultronstället",
+      "year": 1957,
+      "aliases": [
+        "Smultronstallet",
+        "Wild Strawberries"
+      ],
+      "role": "comparative_film",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Bergman's road-memory drama broadens subjective postwar modernism but stays comparison-level beside The Seventh Seal and Ordet.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Hiroshima mon amour",
+      "originalTitle": "Hiroshima mon amour",
+      "year": 1959,
+      "aliases": [],
+      "role": "chapter_fourteen_handoff",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Resnais and Duras join documentary memory, international co-production and fractured modernism at the exit boundary; primary New Wave/modernist analysis belongs in Chapter 14.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_hiroshima_mon_amour_1959",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "The 400 Blows",
+      "originalTitle": "Les quatre cents coups",
+      "year": 1959,
+      "aliases": [
+        "The 400 Blows",
+        "Les 400 coups"
+      ],
+      "role": "chapter_fourteen_handoff",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Truffaut's Paris location debut marks the New Wave boundary and is retained as a handoff rather than allowing Chapter 13 to absorb the next production regime.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_400_blows_1959",
+      "matches": 1,
+      "origin": "film_scenarios_seed.json"
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "The Maltese Falcon",
+      "Double Indemnity",
+      "Brief Encounter",
+      "Rome, Open City",
+      "Bicycle Thieves",
+      "The Third Man",
+      "Rashomon",
+      "Tokyo Story",
+      "Seven Samurai",
+      "La Strada",
+      "Pather Panchali",
+      "Ordet",
+      "The Night of the Hunter",
+      "The Seventh Seal",
+      "Ashes and Diamonds",
+      "Touch of Evil",
+      "Vertigo",
+      "Out of the Past",
+      "The Lost Weekend",
+      "Gategutter",
+      "Hiroshima mon amour",
+      "The 400 Blows"
+    ],
+    "P0": [],
+    "P1": [
+      "Paisan",
+      "The Red Shoes",
+      "Sunset Boulevard",
+      "Los olvidados",
+      "Ugetsu",
+      "A Man Escaped"
+    ],
+    "P2": [
+      "Germany Year Zero",
+      "Nights of Cabiria",
+      "Wild Strawberries"
+    ],
+    "EXISTING_REQUIRED": []
+  },
+  "recommendedNewProductionCases": [
+    "Paisan",
+    "The Red Shoes",
+    "Sunset Boulevard",
+    "Los olvidados",
+    "Ugetsu",
+    "A Man Escaped"
+  ],
+  "historicalObjects": [
+    {
+      "label": "War, occupation, liberation and reconstruction",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Destroyed infrastructure, displaced populations, occupation regimes and rebuilding changed access to streets, studios, labor, materials and stories; these are historical conditions, not atmosphere presets."
+    },
+    {
+      "label": "Film noir as a retrospective critical category",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "The films now grouped as noir were produced through distinct studios, crime traditions, wartime/postwar pressures and craft systems; the later label cannot substitute for film-specific evidence."
+    },
+    {
+      "label": "Italian neorealism and the politics of realism",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Location work, nonprofessional performers, social observation and postwar conditions mattered, but neorealism was crafted, heterogeneous and never a universal recipe for authenticity."
+    },
+    {
+      "label": "Postwar studio continuity and independent production",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Classical studios did not disappear after 1945; studio assignments, independent packages, national companies and state systems coexisted with location-centered production."
+    },
+    {
+      "label": "Location production, post-synchronization and mobile units",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Street access, weather, transport, lightweight practice and post-synced sound altered workflows differently by country; scarcity and mobility must remain production-specific."
+    },
+    {
+      "label": "Festivals, subtitling, export and art-cinema circulation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Venice, Cannes, distributors, cinematheques and subtitled prints changed international visibility, but festival recognition is downstream from production and must not be mistaken for authorship."
+    },
+    {
+      "label": "Decolonization, national cinemas and transnational exchange",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Postwar cinema expanded through colonial breakdown, new states, public funding, co-production and cross-border circulation; Europe and Hollywood are not universal baselines."
+    },
+    {
+      "label": "Black-and-white, color, widescreen and special-process coexistence",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Monochrome realism, Technicolor spectacle, VistaVision and optical work coexisted; technological chronology must not become a simple progress ladder."
+    },
+    {
+      "label": "Cold War institutions, censorship and social-problem filmmaking",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "State systems, the PCA, occupation authorities, anti-communism and national censorship affected scripts, labor and circulation differently and require film-specific attribution."
+    },
+    {
+      "label": "Race, class, gender, empire, trauma and memory",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Postwar representation includes poverty, genocide, colonialism, migration, gendered labor and racial hierarchy; historical harm is analyzed critically rather than rewarded as period authenticity."
+    }
+  ],
+  "boundaryNotes": [
+    "Chapter 13 begins where Chapter 12 explicitly hands off mature noir: the classical studio system persists, but wartime endings, occupation, reconstruction, location practice and new national/transnational production conditions become the primary questions.",
+    "The Maltese Falcon remains a Chapter 12-era precursor and bridge. Double Indemnity and Out of the Past test the mature noir cycle without pretending that noir was a single contemporary studio movement or visual recipe.",
+    "Rome, Open City and Bicycle Thieves anchor Italian neorealism, but the chapter must compare rather than universalize their location, casting and social-observation practices.",
+    "Rashomon, Tokyo Story, Seven Samurai and Pather Panchali make the postwar story explicitly global; festival discovery must not be narrated as the moment these cinemas came into existence.",
+    "The Seventh Seal, Ordet and Ashes and Diamonds demonstrate distinct Nordic and East-European institutions and styles rather than one generic European art-cinema preset.",
+    "Hiroshima mon amour and The 400 Blows sit at the exit boundary. Their primary New Wave and modernist production analysis belongs in Chapter 14.",
+    "Chapter 13 ends before portable-camera/recorder New Wave practice becomes the organizing problem; 1959 is a boundary year, not a claim that all cinema changed at once."
+  ],
+  "safeguards": [
+    "Realism is a production strategy, not the absence of craft. Location shooting, nonprofessional casting, long takes, available light, post-synchronization and sparse design require film-specific evidence and deliberate organization.",
+    "Film noir is a retrospective category with contested boundaries. It must never trigger a generic low-key-lighting, venetian-blind or fatalism preset without evidence from the individual production.",
+    "Postwar scarcity is not universal: Technicolor, VistaVision, studio sets, optical effects, large crews and costly productions coexist with damaged infrastructure and small location units.",
+    "Nonprofessional performance is not automatic authenticity. Casting, rehearsal, direction, labor conditions and the relation between professional and nonprofessional performers remain attributable choices.",
+    "Festivals, prizes, subtitling and later canonization are circulation and reception history, not proof that a film was created for international prestige or discovered by Western institutions.",
+    "Decolonization, occupation, genocide, class poverty, race and empire require historically specific framing. Trauma or deprivation must never become an aesthetic quality bonus.",
+    "Postwar world cinema is not defined by distance from Hollywood. Japanese, Indian, Nordic, Polish, Mexican, British, Italian and American systems are compared on their own institutional and production terms.",
+    "Original release, censorship, alternate versions, reissues, restorations and modern digital presentations remain distinct evidence layers."
+  ]
+}
