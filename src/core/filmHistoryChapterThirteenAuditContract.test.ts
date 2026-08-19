@@ -34,6 +34,14 @@ const requiredExisting = [
   "Touch of Evil",
   "Vertigo",
 ];
+const exactP1Queue = [
+  "Paisan",
+  "The Red Shoes",
+  "Sunset Boulevard",
+  "Los olvidados",
+  "Ugetsu",
+  "A Man Escaped",
+];
 
 const historicalObjectLabels = [
   "War, occupation, liberation and reconstruction",
@@ -58,9 +66,10 @@ test("Chapter 13 audit locks the postwar noir-realism-reconstruction Atlas scope
   assert.equal(resolved.atlas.actualCount, 437);
   assert.equal(resolved.candidates.length, 31);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
+  assert.deepEqual(resolved.byDecision.P0, []);
+  assert.deepEqual(resolved.byDecision.P1, exactP1Queue);
+  assert.deepEqual(resolved.recommendedNewProductionCases, exactP1Queue);
   for (const title of requiredExisting) assert.ok(resolved.byDecision.USE_EXISTING.includes(title), `${title} must remain an existing anchor`);
-  for (const title of [...resolved.byDecision.P0, ...resolved.byDecision.P1]) assert.ok(resolved.recommendedNewProductionCases.includes(title));
-  assert.ok(resolved.byDecision.P0.every((title) => title === "Out of the Past"));
 });
 
 test("Chapter 13 required anchors resolve to exact canonical scenario IDs", () => {
