@@ -97,7 +97,7 @@ test("Chapter 13 permanently preserves realism, noir, circulation and decoloniza
   assert.ok(resolved.safeguards.some((item) => item.includes("Realism") && item.includes("craft")));
   assert.ok(resolved.safeguards.some((item) => item.includes("Film noir") && item.includes("retrospective")));
   assert.ok(resolved.safeguards.some((item) => item.includes("Festivals") && item.includes("canonization")));
-  assert.ok(resolved.safeguards.some((item) => item.includes("Decolonization") && item.includes("trauma")));
+  assert.ok(resolved.safeguards.some((item) => item.includes("Decolonization") && item.includes("Trauma")));
 });
 
 test("Chapter 13 audit is permanent in the v0.1 verification chain", () => {
