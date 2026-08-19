@@ -10,8 +10,8 @@
     "thesis": "Postwar cinema did not replace studio craft with one new realism. It multiplied production systems: noir reworked studio and location crime traditions; neorealism rebuilt cinema around streets, social observation and constrained infrastructure; national studios, independent packages and state systems developed distinct responses to war, reconstruction and decolonization; and international circulation connected these practices without making them stylistically uniform."
   },
   "atlas": {
-    "expectedCount": 442,
-    "actualCount": 442,
+    "expectedCount": 443,
+    "actualCount": 443,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -316,6 +316,14 @@
         "matchedExisting": 0,
         "status": "manual_chapter_thirteen_ugetsu_verified",
         "sourceListId": "manual_chapter_thirteen_ugetsu_expansion_2026"
+      },
+      {
+        "fileName": "chapterThirteenAManEscapedExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_thirteen_a_man_escaped_verified",
+        "sourceListId": "manual_chapter_thirteen_a_man_escaped_expansion_2026"
       },
       {
         "fileName": "modernCanonExpansion.ts",
@@ -795,11 +803,12 @@
       ],
       "role": "major_comparison",
       "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_a_man_escaped_1956",
       "chapterFunction": "Bresson's resistance-prison production adds materially precise gesture, offscreen sound, non-star performance and controlled repetition to the postwar realism spectrum.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_a_man_escaped_1956",
+      "matches": 1,
+      "origin": "chapterThirteenAManEscapedExpansion.ts"
     },
     {
       "title": "Germany Year Zero",
@@ -904,13 +913,12 @@
       "Los olvidados",
       "Ugetsu",
       "Gategutter",
+      "A Man Escaped",
       "Hiroshima mon amour",
       "The 400 Blows"
     ],
     "P0": [],
-    "P1": [
-      "A Man Escaped"
-    ],
+    "P1": [],
     "P2": [
       "Germany Year Zero",
       "Nights of Cabiria",
@@ -918,9 +926,7 @@
     ],
     "EXISTING_REQUIRED": []
   },
-  "recommendedNewProductionCases": [
-    "A Man Escaped"
-  ],
+  "recommendedNewProductionCases": [],
   "historicalObjects": [
     {
       "label": "War, occupation, liberation and reconstruction",
