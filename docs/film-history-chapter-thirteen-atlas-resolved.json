@@ -10,8 +10,8 @@
     "thesis": "Postwar cinema did not replace studio craft with one new realism. It multiplied production systems: noir reworked studio and location crime traditions; neorealism rebuilt cinema around streets, social observation and constrained infrastructure; national studios, independent packages and state systems developed distinct responses to war, reconstruction and decolonization; and international circulation connected these practices without making them stylistically uniform."
   },
   "atlas": {
-    "expectedCount": 439,
-    "actualCount": 439,
+    "expectedCount": 440,
+    "actualCount": 440,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -292,6 +292,14 @@
         "matchedExisting": 0,
         "status": "manual_chapter_thirteen_red_shoes_verified",
         "sourceListId": "manual_chapter_thirteen_red_shoes_expansion_2026"
+      },
+      {
+        "fileName": "chapterThirteenSunsetBoulevardExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_thirteen_sunset_boulevard_verified",
+        "sourceListId": "manual_chapter_thirteen_sunset_boulevard_expansion_2026"
       },
       {
         "fileName": "modernCanonExpansion.ts",
@@ -709,11 +717,12 @@
       ],
       "role": "major_comparison",
       "decisionIfMissing": "P1",
+      "expectedScenarioId": "scenario_sunset_boulevard_1950",
       "chapterFunction": "Wilder's Paramount production extends noir into self-reflexive studio history, voice-over death narration, location/studio contrast and industrial memory.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_sunset_boulevard_1950",
+      "matches": 1,
+      "origin": "chapterThirteenSunsetBoulevardExpansion.ts"
     },
     {
       "title": "Los olvidados",
@@ -873,13 +882,13 @@
       "The Lost Weekend",
       "Paisan",
       "The Red Shoes",
+      "Sunset Boulevard",
       "Gategutter",
       "Hiroshima mon amour",
       "The 400 Blows"
     ],
     "P0": [],
     "P1": [
-      "Sunset Boulevard",
       "Los olvidados",
       "Ugetsu",
       "A Man Escaped"
@@ -892,7 +901,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Sunset Boulevard",
     "Los olvidados",
     "Ugetsu",
     "A Man Escaped"

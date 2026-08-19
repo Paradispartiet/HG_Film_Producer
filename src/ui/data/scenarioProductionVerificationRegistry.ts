@@ -76,6 +76,7 @@ import { topHatProductionCaseVerification } from "./scenarioProductionVerificati
 import { goneWithTheWindProductionCaseVerification } from "./scenarioProductionVerificationGoneWithTheWind";
 import { paisanProductionCaseVerification } from "./scenarioProductionVerificationPaisan";
 import { redShoesProductionCaseVerification } from "./scenarioProductionVerificationRedShoes";
+import { sunsetBoulevardProductionCaseVerification } from "./scenarioProductionVerificationSunsetBoulevard";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -269,6 +270,7 @@ const additionalVerificationRecords = [
   goneWithTheWindProductionCaseVerification,
   paisanProductionCaseVerification,
   redShoesProductionCaseVerification,
+  sunsetBoulevardProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
