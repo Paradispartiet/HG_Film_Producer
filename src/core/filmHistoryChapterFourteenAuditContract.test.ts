@@ -27,6 +27,7 @@ const requiredExisting = [
   "Contempt",
   "The Leopard",
   "The Umbrellas of Cherbourg",
+  "Black Girl",
   "The Battle of Algiers",
   "Closely Watched Trains",
   "Daisies",
@@ -34,7 +35,7 @@ const requiredExisting = [
   "PlayTime",
 ];
 const exactP0Queue: string[] = [];
-const exactP1Queue = ["Black Girl", "Memories of Underdevelopment"];
+const exactP1Queue = ["Memories of Underdevelopment"];
 
 const historicalObjectLabels = [
   "French New Wave as a critical and industrial formation",
@@ -50,13 +51,13 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 14 audit locks the New Waves-modernism-decolonization Atlas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 443;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 444;/);
   assert.equal(resolved.chapter.number, 14);
   assert.equal(resolved.chapter.id, "new-waves-modernism-decolonization");
   assert.equal(resolved.chapter.title, "New Waves, modernism and decolonization");
   assert.equal(resolved.chapter.period, "1959–1968");
-  assert.equal(resolved.atlas.expectedCount, 443);
-  assert.equal(resolved.atlas.actualCount, 443);
+  assert.equal(resolved.atlas.expectedCount, 444);
+  assert.equal(resolved.atlas.actualCount, 444);
   assert.equal(resolved.candidates.length, 18);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
   assert.deepEqual(resolved.byDecision.P0, exactP0Queue);
@@ -78,6 +79,7 @@ test("Chapter 14 existing anchors resolve to exact canonical scenario IDs", () =
   assert.equal(byTitle.get("Contempt")?.scenarioId, "scenario_contempt_1963");
   assert.equal(byTitle.get("The Leopard")?.scenarioId, "scenario_the_leopard_1963");
   assert.equal(byTitle.get("The Umbrellas of Cherbourg")?.scenarioId, "scenario_the_umbrellas_of_cherbourg_1964");
+  assert.equal(byTitle.get("Black Girl")?.scenarioId, "scenario_black_girl_1966");
   assert.equal(byTitle.get("The Battle of Algiers")?.scenarioId, "scenario_the_battle_of_algiers_1966");
   assert.equal(byTitle.get("Closely Watched Trains")?.scenarioId, "scenario_closely_watched_trains_1966");
   assert.equal(byTitle.get("Daisies")?.scenarioId, "scenario_daisies_1966");
