@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 444;
+const EXPECTED_ATLAS_COUNT = 445;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -48,6 +48,7 @@ const expansionFiles = [
   "chapterThirteenUgetsuExpansion.ts",
   "chapterThirteenAManEscapedExpansion.ts",
   "chapterFourteenBlackGirlExpansion.ts",
+  "chapterFourteenMemoriesUnderdevelopmentExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -79,7 +80,7 @@ const candidates = [
   { title: "Daisies", originalTitle: "Sedmikrásky", year: 1966, aliases: ["Sedmikrasky", "Daisies"], role: "anchor_film", decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_daisies_1966", chapterFunction: "Chytilová is the missing experimental and feminist Czechoslovak countercase: color, collage, performance, material destruction and censorship broaden the chapter beyond male-centered realist New Waves." },
   { title: "The Firemen's Ball", originalTitle: "Hoří, má panenko", year: 1967, aliases: ["Hori ma panenko", "The Firemens Ball", "The Firemen's Ball"], role: "anchor_film", decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_the_firemens_ball_1967", chapterFunction: "Forman's Czech-Italian location production, nonprofessional ensemble and censorship history make institutional satire a concrete production system." },
   { title: "PlayTime", originalTitle: "PlayTime", year: 1967, aliases: ["Playtime"], role: "anchor_film", decisionIfMissing: "EXISTING_REQUIRED", expectedScenarioId: "scenario_playtime_1967", chapterFunction: "Tati's Tativille, 65/70 mm scale and constructed sound world prove that 1960s formal modernism also operated through enormous purpose-built infrastructure and financial risk." },
-  { title: "Memories of Underdevelopment", originalTitle: "Memorias del subdesarrollo", year: 1968, aliases: ["Memorias del subdesarrollo", "Memories of Underdevelopment"], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "Alea's Cuban case is the strongest missing revolutionary-cinema counterweight: post-revolution institutions, archival material, essayistic montage and decolonial modernity expand the chapter beyond Europe and Algeria." },
+  { title: "Memories of Underdevelopment", originalTitle: "Memorias del subdesarrollo", year: 1968, aliases: ["Memorias del subdesarrollo", "Memories of Underdevelopment"], role: "major_comparison", decisionIfMissing: "P1", expectedScenarioId: "scenario_memories_of_underdevelopment_1968", chapterFunction: "Alea's Cuban case is the strongest missing revolutionary-cinema counterweight: post-revolution institutions, archival material, essayistic montage and decolonial modernity expand the chapter beyond Europe and Algeria." },
 ];
 
 const historicalObjects = [
