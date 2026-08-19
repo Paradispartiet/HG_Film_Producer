@@ -79,6 +79,7 @@ import { redShoesProductionCaseVerification } from "./scenarioProductionVerifica
 import { sunsetBoulevardProductionCaseVerification } from "./scenarioProductionVerificationSunsetBoulevard";
 import { losOlvidadosProductionCaseVerification } from "./scenarioProductionVerificationLosOlvidados";
 import { ugetsuProductionCaseVerification } from "./scenarioProductionVerificationUgetsu";
+import { aManEscapedProductionCaseVerification } from "./scenarioProductionVerificationAManEscaped";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -275,6 +276,7 @@ const additionalVerificationRecords = [
   sunsetBoulevardProductionCaseVerification,
   losOlvidadosProductionCaseVerification,
   ugetsuProductionCaseVerification,
+  aManEscapedProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

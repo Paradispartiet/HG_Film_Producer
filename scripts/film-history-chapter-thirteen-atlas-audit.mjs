@@ -5,7 +5,7 @@ import process from "node:process";
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 442;
+const EXPECTED_ATLAS_COUNT = 443;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -46,6 +46,7 @@ const expansionFiles = [
   "chapterThirteenSunsetBoulevardExpansion.ts",
   "chapterThirteenLosOlvidadosExpansion.ts",
   "chapterThirteenUgetsuExpansion.ts",
+  "chapterThirteenAManEscapedExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
@@ -87,7 +88,7 @@ const candidates = [
   { title: "Los olvidados", originalTitle: "Los olvidados", year: 1950, aliases: ["The Young and the Damned"], role: "major_comparison", decisionIfMissing: "P1", expectedScenarioId: "scenario_los_olvidados_1950", chapterFunction: "Buñuel's Mexico City production is a deliberate non-European social-realist comparison joining location poverty, professional and nonprofessional performance, dream imagery and postwar urban modernity." },
   { title: "Ugetsu", originalTitle: "Ugetsu monogatari", year: 1953, aliases: ["Ugetsu"], role: "major_comparison", decisionIfMissing: "P1", expectedScenarioId: "scenario_ugetsu_1953", chapterFunction: "Mizoguchi and Daiei provide a postwar Japanese alternative to Kurosawa through long-take staging, period reconstruction, spectral transitions and studio-location integration." },
   { title: "Gategutter", originalTitle: "Gategutter", year: 1949, aliases: [], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "Norwegian east-Oslo social cinema tests postwar reconstruction through local streets, youth experience and national production conditions rather than importing Italian neorealism as a universal template." },
-  { title: "A Man Escaped", originalTitle: "Un condamné à mort s'est échappé", year: 1956, aliases: ["Un condamne a mort s'est echappe", "A Man Escaped"], role: "major_comparison", decisionIfMissing: "P1", chapterFunction: "Bresson's resistance-prison production adds materially precise gesture, offscreen sound, non-star performance and controlled repetition to the postwar realism spectrum." },
+  { title: "A Man Escaped", originalTitle: "Un condamné à mort s'est échappé", year: 1956, aliases: ["Un condamne a mort s'est echappe", "A Man Escaped"], role: "major_comparison", decisionIfMissing: "P1", expectedScenarioId: "scenario_a_man_escaped_1956", chapterFunction: "Bresson's resistance-prison production adds materially precise gesture, offscreen sound, non-star performance and controlled repetition to the postwar realism spectrum." },
 
   { title: "Germany Year Zero", originalTitle: "Germania anno zero", year: 1948, aliases: ["Germany Year Zero"], role: "comparative_film", decisionIfMissing: "P2", chapterFunction: "Rossellini's Berlin ruins extend reconstruction geography but remain comparison-level because Rome, Open City and Paisan already test the core neorealist production problem." },
   { title: "Nights of Cabiria", originalTitle: "Le notti di Cabiria", year: 1957, aliases: ["Nights of Cabiria"], role: "comparative_film", decisionIfMissing: "P2", chapterFunction: "Fellini's Rome location-performance system shows post-neorealist continuity after La Strada without requiring another core case unless a later audit exposes a gap." },
