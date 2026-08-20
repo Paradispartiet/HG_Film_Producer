@@ -10,8 +10,8 @@
     "thesis": "The 1980s cannot be explained as blockbuster excess followed by an indie correction. Franchise coordination, conglomerate finance, home video and cable, effects and sound specialization, public/broadcast funding, regional independent production, political transition and several distinct global new-cinema formations reorganized who could make films, how they circulated and which versions later became canonical."
   },
   "atlas": {
-    "expectedCount": 454,
-    "actualCount": 454,
+    "expectedCount": 455,
+    "actualCount": 455,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -314,6 +314,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSixteenDoTheRightThingExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -382,7 +388,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 454
+    "literalVerifiedScenarioIds": 455
   },
   "candidates": [
     {
@@ -863,11 +869,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Spike Lee's Brooklyn production connects Black independent practice, studio distribution, location control, music and race politics at the decade's endpoint.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_do_the_right_thing_1989",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSixteenDoTheRightThingExpansion.ts"
     },
     {
       "title": "sex, lies, and videotape",
@@ -922,12 +928,11 @@
       "Landscape in the Mist",
       "Cinema Paradiso",
       "A City of Sadness",
+      "Do the Right Thing",
       "sex, lies, and videotape",
       "Black Rain"
     ],
-    "P0": [
-      "Do the Right Thing"
-    ],
+    "P0": [],
     "P1": [
       "Mephisto",
       "Missing",
@@ -961,8 +966,7 @@
     "She's Gotta Have It",
     "A Better Tomorrow",
     "RoboCop",
-    "Salaam Bombay!",
-    "Do the Right Thing"
+    "Salaam Bombay!"
   ],
   "historicalObjects": [
     {

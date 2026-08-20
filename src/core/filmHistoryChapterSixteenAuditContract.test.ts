@@ -34,12 +34,11 @@ const exactExisting = [
   "Landscape in the Mist",
   "Cinema Paradiso",
   "A City of Sadness",
+  "Do the Right Thing",
   "sex, lies, and videotape",
   "Black Rain",
 ];
-const exactP0Queue = [
-  "Do the Right Thing",
-];
+const exactP0Queue: string[] = [];
 const exactP1Queue = [
   "Mephisto",
   "Missing",
@@ -69,14 +68,14 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 16 audit locks the 1980s franchise-video-global-new-cinemas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 454;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 455;/);
   assert.equal(resolved.chapter.number, 16);
   assert.equal(resolved.chapter.id, "franchise-video-global-new-cinemas");
   assert.equal(resolved.chapter.title, "Franchise consolidation, video and global new cinemas");
   assert.equal(resolved.chapter.period, "1980–1989");
-  assert.equal(resolved.atlas.expectedCount, 454);
-  assert.equal(resolved.atlas.actualCount, 454);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 454);
+  assert.equal(resolved.atlas.expectedCount, 455);
+  assert.equal(resolved.atlas.actualCount, 455);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 455);
 });
 
 test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
@@ -99,7 +98,6 @@ test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
     "A Better Tomorrow",
     "RoboCop",
     "Salaam Bombay!",
-    "Do the Right Thing",
   ]);
 });
 
@@ -123,6 +121,7 @@ test("Chapter 16 existing anchors resolve to exact verified scenario IDs", () =>
     "Landscape in the Mist": "scenario_landscape_in_the_mist_1988",
     "Cinema Paradiso": "scenario_cinema_paradiso_1988",
     "A City of Sadness": "scenario_a_city_of_sadness_1989",
+    "Do the Right Thing": "scenario_do_the_right_thing_1989",
     "sex, lies, and videotape": "scenario_sex_lies_and_videotape_1989",
     "Black Rain": "scenario_black_rain_imamura_1989",
   };
