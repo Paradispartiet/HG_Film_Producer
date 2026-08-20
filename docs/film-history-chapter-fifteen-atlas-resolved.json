@@ -10,8 +10,8 @@
     "thesis": "The 1970s were not a single auteur decade followed by the blockbuster. Corporate restructuring, independent and university production, public television and film funds, postcolonial and revolutionary institutions, feminist formal practice, location labor, new sound and effects systems, changing censorship and new release strategies produced several overlapping cinemas whose conflicts are visible only when production, labor and circulation remain as important as style."
   },
   "atlas": {
-    "expectedCount": 449,
-    "actualCount": 449,
+    "expectedCount": 450,
+    "actualCount": 450,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -372,6 +372,14 @@
         "matchedExisting": 0,
         "status": "manual_chapter_sixteen_raiders_lost_ark_verified",
         "sourceListId": "manual_chapter_sixteen_raiders_lost_ark_expansion_2026"
+      },
+      {
+        "fileName": "chapterSixteenYellowEarthExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_sixteen_yellow_earth_verified",
+        "sourceListId": "manual_chapter_sixteen_yellow_earth_expansion_2026"
       },
       {
         "fileName": "modernCanonExpansion.ts",
