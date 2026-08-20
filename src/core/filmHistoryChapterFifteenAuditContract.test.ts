@@ -33,6 +33,7 @@ const requiredExisting = [
   "Jeanne Dielman, 23 Quai du Commerce, 1080 Bruxelles",
   "Jaws",
   "Dog Day Afternoon",
+  "Manila in the Claws of Light",
   "Cría cuervos",
   "Taxi Driver",
   "Killer of Sheep",
@@ -40,7 +41,7 @@ const requiredExisting = [
   "The Marriage of Maria Braun",
 ];
 const exactP0Queue: string[] = [];
-const exactP1Queue = ["Manila in the Claws of Light", "The Battle of Chile: Part I"];
+const exactP1Queue = ["The Battle of Chile: Part I"];
 
 const historicalObjectLabels = [
   "New Hollywood as an industrial transition",
@@ -56,13 +57,13 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 15 audit locks the New Hollywood-political cinemas-blockbuster Atlas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 446;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 447;/);
   assert.equal(resolved.chapter.number, 15);
   assert.equal(resolved.chapter.id, "new-hollywood-political-cinemas-blockbuster-transformation");
   assert.equal(resolved.chapter.title, "New Hollywood, political cinemas and blockbuster transformation");
   assert.equal(resolved.chapter.period, "1969–1979");
-  assert.equal(resolved.atlas.expectedCount, 446);
-  assert.equal(resolved.atlas.actualCount, 446);
+  assert.equal(resolved.atlas.expectedCount, 447);
+  assert.equal(resolved.atlas.actualCount, 447);
   assert.equal(resolved.candidates.length, 28);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
   assert.deepEqual(resolved.byDecision.P0, exactP0Queue);
@@ -90,6 +91,7 @@ test("Chapter 15 existing anchors resolve to exact canonical scenario IDs", () =
   assert.equal(byTitle.get("Jeanne Dielman, 23 Quai du Commerce, 1080 Bruxelles")?.scenarioId, "scenario_jeanne_dielman_23_quai_du_commerce_1080_bruxelles_1975");
   assert.equal(byTitle.get("Jaws")?.scenarioId, "scenario_jaws_1975");
   assert.equal(byTitle.get("Dog Day Afternoon")?.scenarioId, "scenario_dog_day_afternoon_1975");
+  assert.equal(byTitle.get("Manila in the Claws of Light")?.scenarioId, "scenario_manila_in_the_claws_of_light_1975");
   assert.equal(byTitle.get("Cría cuervos")?.scenarioId, "scenario_cria_cuervos_1976");
   assert.equal(byTitle.get("Taxi Driver")?.scenarioId, "scenario_taxi_driver_1976");
   assert.equal(byTitle.get("Killer of Sheep")?.scenarioId, "scenario_killer_of_sheep_1977");

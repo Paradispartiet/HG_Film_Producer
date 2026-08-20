@@ -60,6 +60,7 @@ import { aManEscapedFilmHistoryProfile } from "./scenarioFilmStudyPostwarAManEsc
 import { blackGirlFilmHistoryProfile } from "./scenarioFilmStudyNewWavesBlackGirl";
 import { memoriesUnderdevelopmentFilmHistoryProfile } from "./scenarioFilmStudyNewWavesMemoriesUnderdevelopment";
 import { toukiBoukiFilmHistoryProfile } from "./scenarioFilmStudyNewHollywoodToukiBouki";
+import { manilaClawsLightFilmHistoryProfile } from "./scenarioFilmStudyNewHollywoodManilaClawsLight";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -146,6 +147,7 @@ const sourceBackedFilmHistoryProfiles = {
   [blackGirlFilmHistoryProfile.scenarioId]: blackGirlFilmHistoryProfile,
   [memoriesUnderdevelopmentFilmHistoryProfile.scenarioId]: memoriesUnderdevelopmentFilmHistoryProfile,
   [toukiBoukiFilmHistoryProfile.scenarioId]: toukiBoukiFilmHistoryProfile,
+  [manilaClawsLightFilmHistoryProfile.scenarioId]: manilaClawsLightFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
