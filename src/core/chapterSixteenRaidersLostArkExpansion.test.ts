@@ -16,7 +16,9 @@ test("Chapter 16 materializes Raiders of the Lost Ark as the first franchise-era
   assert.ok(film.premise.includes("Michael D. Moore"));
   assert.ok(film.premise.includes("Douglas Slocombe"));
   assert.ok(film.premise.includes("Industrial Light & Magic") || film.premise.includes("ILM"));
+  assert.ok(film.premise.includes("more than fifty passes"));
   assert.ok(film.premise.includes("Dolby Stereo"));
+  assert.ok(film.premise.includes("later restoration, 4K and Dolby Atmos remixes"));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Lucasfilm-Paramount")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("second-unit") || goal.includes("second unit")));
   assert.ok(film.requiredChoicesSeed.camera.includes("no_invented_camera_lens_stock_or_exposure_package"));
