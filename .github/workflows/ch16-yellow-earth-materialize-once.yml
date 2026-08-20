@@ -1,0 +1,214 @@
+name: TEMP Materialize Yellow Earth Chapter 16
+
+on:
+  push:
+    branches:
+      - agent/ch16-yellow-earth-production-case
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: agent/ch16-yellow-earth-production-case
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Integrate Yellow Earth permanently
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          def read(path):
+              return Path(path).read_text()
+
+          def write(path, text):
+              Path(path).write_text(text)
+
+          def replace_once(text, old, new, label):
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"{label}: expected exactly one match, found {count}")
+              return text.replace(old, new, 1)
+
+          # Runtime scenario chain.
+          path = "src/ui/data/filmScenarios.ts"
+          text = read(path)
+          text = replace_once(
+              text,
+              'import { mergeChapterSixteenRaidersLostArkExpansion } from "../../core/chapterSixteenRaidersLostArkExpansion.js";\n',
+              'import { mergeChapterSixteenRaidersLostArkExpansion } from "../../core/chapterSixteenRaidersLostArkExpansion.js";\nimport { mergeChapterSixteenYellowEarthExpansion } from "../../core/chapterSixteenYellowEarthExpansion.js";\n',
+              "filmScenarios import",
+          )
+          text = replace_once(
+              text,
+              'const chapterSixteenRaidersLostArkScenarios = mergeChapterSixteenRaidersLostArkExpansion(chapterFifteenBattleChilePartOneScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSixteenRaidersLostArkScenarios);',
+              'const chapterSixteenRaidersLostArkScenarios = mergeChapterSixteenRaidersLostArkExpansion(chapterFifteenBattleChilePartOneScenarios);\nconst chapterSixteenYellowEarthScenarios = mergeChapterSixteenYellowEarthExpansion(chapterSixteenRaidersLostArkScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSixteenYellowEarthScenarios);',
+              "filmScenarios merge chain",
+          )
+          text = replace_once(
+              text,
+              '+manual_chapter_sixteen_raiders_lost_ark_expansion_2026',
+              '+manual_chapter_sixteen_raiders_lost_ark_expansion_2026+manual_chapter_sixteen_yellow_earth_expansion_2026',
+              "filmScenarios source list",
+          )
+          write(path, text)
+
+          # Film Study authority map.
+          path = "src/ui/data/scenarioFilmStudyMap.ts"
+          text = read(path)
+          text = replace_once(
+              text,
+              'import { raidersLostArkFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenRaiders";\n',
+              'import { raidersLostArkFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenRaiders";\nimport { yellowEarthFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenYellowEarth";\n',
+              "Film Study import",
+          )
+          text = replace_once(
+              text,
+              '  [raidersLostArkFilmHistoryProfile.scenarioId]: raidersLostArkFilmHistoryProfile,\n',
+              '  [raidersLostArkFilmHistoryProfile.scenarioId]: raidersLostArkFilmHistoryProfile,\n  [yellowEarthFilmHistoryProfile.scenarioId]: yellowEarthFilmHistoryProfile,\n',
+              "Film Study profile map",
+          )
+          write(path, text)
+
+          # Production Verification registry.
+          path = "src/ui/data/scenarioProductionVerificationRegistry.ts"
+          text = read(path)
+          text = replace_once(
+              text,
+              'import { raidersLostArkProductionCaseVerification } from "./scenarioProductionVerificationRaidersLostArk";\n',
+              'import { raidersLostArkProductionCaseVerification } from "./scenarioProductionVerificationRaidersLostArk";\nimport { yellowEarthProductionCaseVerification } from "./scenarioProductionVerificationYellowEarth";\n',
+              "verification import",
+          )
+          text = replace_once(
+              text,
+              '  raidersLostArkProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,',
+              '  raidersLostArkProductionCaseVerification,\n  yellowEarthProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,',
+              "verification registry record",
+          )
+          write(path, text)
+
+          # Every Atlas reconstruction and the production-case audit must know the new permanent expansion.
+          atlas_scripts = [
+              "scripts/film-history-chapter-twelve-atlas-audit.mjs",
+              "scripts/film-history-chapter-thirteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fourteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fifteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-sixteen-atlas-audit.mjs",
+          ]
+          for path in atlas_scripts:
+              text = read(path)
+              text = replace_once(text, "const EXPECTED_ATLAS_COUNT = 449;", "const EXPECTED_ATLAS_COUNT = 450;", f"{path} count")
+              text = replace_once(
+                  text,
+                  '  "chapterSixteenRaidersLostArkExpansion.ts",\n',
+                  '  "chapterSixteenRaidersLostArkExpansion.ts",\n  "chapterSixteenYellowEarthExpansion.ts",\n',
+                  f"{path} expansion",
+              )
+              write(path, text)
+
+          path = "scripts/production-case-rest-audit.mjs"
+          text = read(path)
+          text = replace_once(text, "const EXPECTED_PLAYABLE_SCENARIOS = 449;", "const EXPECTED_PLAYABLE_SCENARIOS = 450;", "production audit playable count")
+          text = replace_once(text, "const EXPECTED_VERIFIED_PRODUCTION_CASES = 449;", "const EXPECTED_VERIFIED_PRODUCTION_CASES = 450;", "production audit verified count")
+          text = replace_once(
+              text,
+              '  "chapterSixteenRaidersLostArkExpansion.ts",\n',
+              '  "chapterSixteenRaidersLostArkExpansion.ts",\n  "chapterSixteenYellowEarthExpansion.ts",\n',
+              "production audit expansion",
+          )
+          write(path, text)
+
+          # Historical chapter contract counts.
+          for path in [
+              "src/core/filmHistoryChapterTwelveAuditContract.test.ts",
+              "src/core/filmHistoryChapterThirteenAuditContract.test.ts",
+              "src/core/filmHistoryChapterFourteenAuditContract.test.ts",
+              "src/core/filmHistoryChapterFifteenAuditContract.test.ts",
+          ]:
+              text = read(path)
+              count = text.count("449")
+              if count < 3:
+                  raise SystemExit(f"{path}: expected at least three 449 count locks, found {count}")
+              write(path, text.replace("449", "450"))
+
+          # Chapter 16 exact queue/authority contract.
+          path = "src/core/filmHistoryChapterSixteenAuditContract.test.ts"
+          text = read(path)
+          count = text.count("449")
+          if count < 4:
+              raise SystemExit(f"Chapter 16 contract: expected count locks, found {count}")
+          text = text.replace("449", "450")
+          yellow_line = '  "Yellow Earth",\n'
+          if text.count(yellow_line) != 2:
+              raise SystemExit(f"Chapter 16 contract: expected Yellow Earth in P0 and recommended queues exactly twice, found {text.count(yellow_line)}")
+          text = text.replace(yellow_line, "")
+          text = replace_once(
+              text,
+              '  "Paris, Texas",\n  "Tampopo",',
+              '  "Paris, Texas",\n  "Yellow Earth",\n  "Tampopo",',
+              "Chapter 16 existing queue",
+          )
+          text = replace_once(
+              text,
+              '    "Paris, Texas": "scenario_paris_texas_1984",\n    "Tampopo":',
+              '    "Paris, Texas": "scenario_paris_texas_1984",\n    "Yellow Earth": "scenario_yellow_earth_1984",\n    "Tampopo":',
+              "Chapter 16 exact ID map",
+          )
+          write(path, text)
+          PY
+
+      - name: Regenerate Chapter 12-16 Atlas reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/film-history-chapter-twelve-atlas-audit.mjs --write=docs/film-history-chapter-twelve-atlas-resolved.json
+          node scripts/film-history-chapter-thirteen-atlas-audit.mjs --write=docs/film-history-chapter-thirteen-atlas-resolved.json
+          node scripts/film-history-chapter-fourteen-atlas-audit.mjs --write=docs/film-history-chapter-fourteen-atlas-resolved.json
+          node scripts/film-history-chapter-fifteen-atlas-audit.mjs --write=docs/film-history-chapter-fifteen-atlas-resolved.json
+          node scripts/film-history-chapter-sixteen-atlas-audit.mjs --write=docs/film-history-chapter-sixteen-atlas-resolved.json
+
+      - name: Assert canonical Yellow Earth result
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const report = JSON.parse(readFileSync('docs/film-history-chapter-sixteen-atlas-resolved.json', 'utf8'));
+          if (report.atlas.expectedCount !== 450 || report.atlas.actualCount !== 450) throw new Error(`Atlas count mismatch: ${report.atlas.expectedCount}/${report.atlas.actualCount}`);
+          if (report.verificationIndex.literalVerifiedScenarioIds !== 450) throw new Error(`Verification count mismatch: ${report.verificationIndex.literalVerifiedScenarioIds}`);
+          const yellow = report.candidates.find((item) => item.title === 'Yellow Earth');
+          if (!yellow) throw new Error('Yellow Earth candidate missing');
+          if (yellow.decision !== 'USE_EXISTING') throw new Error(`Yellow Earth decision ${yellow.decision}`);
+          if (yellow.scenarioId !== 'scenario_yellow_earth_1984') throw new Error(`Yellow Earth id ${yellow.scenarioId}`);
+          if (yellow.productionVerified !== true) throw new Error('Yellow Earth is not production verified');
+          const expectedP0 = ['My Beautiful Laundrette', 'Police Story', 'The Official Story', 'Yeelen', 'Do the Right Thing'];
+          if (JSON.stringify(report.byDecision.P0) !== JSON.stringify(expectedP0)) throw new Error(`P0 mismatch: ${JSON.stringify(report.byDecision.P0)}`);
+          const expectedP1 = ['Mephisto','Missing','Blade Runner','E.T. the Extra-Terrestrial','Sugar Cane Alley','The Terminator','Come and See','Back to the Future','Aliens',"She's Gotta Have It",'A Better Tomorrow','RoboCop','Salaam Bombay!'];
+          if (JSON.stringify(report.byDecision.P1) !== JSON.stringify(expectedP1)) throw new Error(`P1 mismatch: ${JSON.stringify(report.byDecision.P1)}`);
+          NODE
+
+      - name: Verify full v0.1
+        run: npm run verify:v0.1
+
+      - name: Commit permanent integration and self-clean
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/ch16-yellow-earth-materialize-once.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Materialize Yellow Earth Chapter 16 Production Case"
+          git push origin HEAD:agent/ch16-yellow-earth-production-case
