@@ -20,6 +20,10 @@ test("Chapter 16 materializes Mephisto as the first P1 Central European co-produ
   assert.ok(film.premise.includes("140-minute") && film.premise.includes("154-minute"));
   assert.ok(film.learningGoals.some((goal) => goal.includes("original 35mm/1.66/Eastmancolor") && goal.includes("2018 4K restoration")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Cannes") && goal.includes("Academy") && goal.includes("downstream")));
+  const screenplayPhase = film.phases.find((phase) => phase.id === "screenplay");
+  assert.ok(screenplayPhase?.player_task.includes("Mann") && screenplayPhase.player_task.includes("Szabó/Dobai") && screenplayPhase.player_task.includes("dramaturgy"));
+  const releasePhase = film.phases.find((phase) => phase.id === "release");
+  assert.ok(releasePhase?.player_task.includes("1981 original 35mm") && releasePhase.player_task.includes("1982 Academy") && releasePhase.player_task.includes("2018 4K restoration"));
   assert.ok(film.requiredChoicesSeed.camera.includes("no_invented_camera_lens_stock_or_exposure_package"));
   assert.ok(film.requiredChoicesSeed.sound.includes("no_invented_recorder_microphone_dub_or_mix_chain"));
   assert.ok(film.learningGoals.length >= 12);
