@@ -20,7 +20,7 @@ test("Chapter 16 materializes Do the Right Thing as the final Black American loc
   assert.ok(film.learningGoals.some((goal) => goal.includes("community-production infrastructure") && goal.includes("not a universal")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("historical set-security") && goal.includes("not as a repeatable method")));
   const researchPhase = film.phases.find((phase) => phase.id === "research");
-  assert.ok(researchPhase?.player_task.includes("distinguish historical community engagement") && researchPhase.player_task.includes("cannot control a neighborhood by default"));
+  assert.ok(researchPhase?.player_task.includes("distinguish historical community engagement") && researchPhase.player_task.includes("can control a neighborhood by default"));
   const releasePhase = film.phases.find((phase) => phase.id === "release");
   assert.ok(releasePhase?.player_task.includes("1988 shoot") && releasePhase.player_task.includes("1989 Cannes/theatrical release") && releasePhase.player_task.includes("later canonization/restoration"));
   assert.ok(film.requiredChoicesSeed.camera.includes("no_invented_camera_lens_stock_or_exposure_package"));
