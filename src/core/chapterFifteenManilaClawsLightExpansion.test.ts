@@ -17,6 +17,7 @@ test("Chapter 15 materializes Manila in the Claws of Light as a Philippine marti
   assert.ok(film.premise.includes("124 minutes"));
   assert.ok(film.premise.includes("125"));
   assert.ok(film.premise.includes("126"));
+  assert.ok(film.premise.includes("2013") && film.premise.includes("separate from original production"));
   assert.ok(film.learningGoals.some((goal) => goal.includes("pre-martial-law") && goal.includes("1975")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("shortened international") && goal.includes("version")));
   assert.ok(film.requiredChoicesSeed.camera.includes("no_invented_camera_lens_stock_lighting_package"));
