@@ -20,7 +20,8 @@ test("Chapter 16 materializes Missing as a source-first transnational political-
   assert.ok(film.premise.includes("Françoise Bonnot") && film.premise.includes("Vangelis"));
   assert.ok(film.premise.includes("Albert Whitlock") && film.premise.includes("Euro-Titres"));
   assert.ok(film.premise.includes("Do not present the film's allegation") && film.premise.includes("production fact"));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("Ivan Moffat") && goal.includes("John Nichols") && goal.includes("final credited")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("Ivan Moffat") && goal.includes("John Nichols") && goal.includes("uncredited development participation")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("Costa-Gavras/Donald Stewart") && goal.includes("credited screenplay")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Mexico City") && goal.includes("Acapulco") && goal.includes("Churubusco")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("PG-rating appeal") && goal.includes("Cannes") && goal.includes("Academy") && goal.includes("downstream")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("dramatized argument") && goal.includes("production facts")));
