@@ -108,7 +108,9 @@ const exportPaths = [
 const bundle = Object.fromEntries(exportPaths.map((path) => [path, read(path)]));
 const payload = gzipSync(Buffer.from(JSON.stringify(bundle), "utf8"), { level: 9 }).toString("base64");
 console.log("HG_MISSING_MATERIALIZATION_EXPORT_BEGIN");
-console.log(payload);
+for (let offset = 0; offset < payload.length; offset += 3000) {
+  console.log(payload.slice(offset, offset + 3000));
+}
 console.log("HG_MISSING_MATERIALIZATION_EXPORT_END");
 console.error("Controlled Missing materialization export run");
 process.exit(91);
