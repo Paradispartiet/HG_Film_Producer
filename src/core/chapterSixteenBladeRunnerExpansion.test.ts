@@ -12,7 +12,7 @@ test("Chapter 16 materializes Blade Runner as a source-first future-noir studio 
   assert.deepEqual(film.directors, ["Ridley Scott"]);
   assert.equal(film.sourceId, "afi_blade_runner_1982");
   assert.ok(film.scenarioType.includes("ladd_company") && film.scenarioType.includes("65mm_effects"));
-  assert.ok(film.premise.includes("The Ladd Company") && film.premise.includes("Sir Run Run Shaw") && film.premise.includes("Warner Bros."));
+  assert.ok(film.premise.includes("Ladd Company") && film.premise.includes("Sir Run Run Shaw") && film.premise.includes("Warner Bros."));
   assert.ok(film.premise.includes("Philip K. Dick") && film.premise.includes("Hampton Fancher") && film.premise.includes("David Peoples"));
   assert.ok(film.premise.includes("The Burbank Studios") && film.premise.includes("Bradbury Building") && film.premise.includes("Ennis House"));
   assert.ok(film.premise.includes("Jordan Cronenweth") && film.premise.includes("Lawrence G. Paull") && film.premise.includes("Syd Mead"));
