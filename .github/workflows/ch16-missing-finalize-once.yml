@@ -1,0 +1,139 @@
+name: TEMP Finalize Missing Chapter 16
+
+on:
+  push:
+    branches:
+      - agent/ch16-missing-production-case
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ch16-missing-finalize-once
+  cancel-in-progress: false
+
+jobs:
+  finalize:
+    if: github.actor != 'github-actions[bot]' && (github.event_name == 'push' || github.event.pull_request.head.ref == 'agent/ch16-missing-production-case')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: agent/ch16-missing-production-case
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Materialize canonical Missing projections
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          def rep(path, old, new, label):
+              p = Path(path); text = p.read_text(); count = text.count(old)
+              if count != 1: raise SystemExit(f"{label}: expected 1 match, found {count}")
+              p.write_text(text.replace(old, new, 1))
+
+          rep("src/ui/data/filmScenarios.ts",
+              'import { mergeChapterSixteenMephistoExpansion } from "../../core/chapterSixteenMephistoExpansion.js";\n',
+              'import { mergeChapterSixteenMephistoExpansion } from "../../core/chapterSixteenMephistoExpansion.js";\nimport { mergeChapterSixteenMissingExpansion } from "../../core/chapterSixteenMissingExpansion.js";\n', "filmScenarios import")
+          rep("src/ui/data/filmScenarios.ts",
+              'const chapterSixteenMephistoScenarios = mergeChapterSixteenMephistoExpansion(chapterSixteenDoTheRightThingScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSixteenMephistoScenarios);',
+              'const chapterSixteenMephistoScenarios = mergeChapterSixteenMephistoExpansion(chapterSixteenDoTheRightThingScenarios);\nconst chapterSixteenMissingScenarios = mergeChapterSixteenMissingExpansion(chapterSixteenMephistoScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSixteenMissingScenarios);', "filmScenarios chain")
+          rep("src/ui/data/filmScenarios.ts", '+manual_chapter_sixteen_mephisto_expansion_2026', '+manual_chapter_sixteen_mephisto_expansion_2026+manual_chapter_sixteen_missing_expansion_2026', "filmScenarios source list")
+
+          rep("src/ui/data/scenarioFilmStudyMap.ts",
+              'import { mephistoFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenMephisto";\n',
+              'import { mephistoFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenMephisto";\nimport { missingFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenMissing";\n', "Film Study import")
+          rep("src/ui/data/scenarioFilmStudyMap.ts",
+              '  [mephistoFilmHistoryProfile.scenarioId]: mephistoFilmHistoryProfile,\n',
+              '  [mephistoFilmHistoryProfile.scenarioId]: mephistoFilmHistoryProfile,\n  [missingFilmHistoryProfile.scenarioId]: missingFilmHistoryProfile,\n', "Film Study map")
+
+          rep("src/ui/data/scenarioProductionVerificationRegistry.ts",
+              'import { mephistoProductionCaseVerification } from "./scenarioProductionVerificationMephisto";\n',
+              'import { mephistoProductionCaseVerification } from "./scenarioProductionVerificationMephisto";\nimport { missingProductionCaseVerification } from "./scenarioProductionVerificationMissing";\n', "verification import")
+          rep("src/ui/data/scenarioProductionVerificationRegistry.ts",
+              '  mephistoProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,',
+              '  mephistoProductionCaseVerification,\n  missingProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,', "verification registry")
+
+          atlas = [
+              "scripts/film-history-chapter-twelve-atlas-audit.mjs",
+              "scripts/film-history-chapter-thirteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fourteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fifteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-sixteen-atlas-audit.mjs",
+          ]
+          for path in atlas:
+              rep(path, "const EXPECTED_ATLAS_COUNT = 456;", "const EXPECTED_ATLAS_COUNT = 457;", f"{path} count")
+              rep(path, '  "chapterSixteenMephistoExpansion.ts",\n', '  "chapterSixteenMephistoExpansion.ts",\n  "chapterSixteenMissingExpansion.ts",\n', f"{path} expansion")
+
+          rep("scripts/production-case-rest-audit.mjs", "const EXPECTED_PLAYABLE_SCENARIOS = 456;", "const EXPECTED_PLAYABLE_SCENARIOS = 457;", "production playable")
+          rep("scripts/production-case-rest-audit.mjs", "const EXPECTED_VERIFIED_PRODUCTION_CASES = 456;", "const EXPECTED_VERIFIED_PRODUCTION_CASES = 457;", "production verified")
+          rep("scripts/production-case-rest-audit.mjs", '  "chapterSixteenMephistoExpansion.ts",\n', '  "chapterSixteenMephistoExpansion.ts",\n  "chapterSixteenMissingExpansion.ts",\n', "production expansion")
+
+          for path in [
+              "src/core/filmHistoryChapterTwelveAuditContract.test.ts",
+              "src/core/filmHistoryChapterThirteenAuditContract.test.ts",
+              "src/core/filmHistoryChapterFourteenAuditContract.test.ts",
+              "src/core/filmHistoryChapterFifteenAuditContract.test.ts",
+          ]:
+              p = Path(path); text = p.read_text()
+              if text.count("456") < 3: raise SystemExit(f"{path}: missing count locks")
+              p.write_text(text.replace("456", "457"))
+
+          p = Path("src/core/filmHistoryChapterSixteenAuditContract.test.ts"); text = p.read_text()
+          if text.count("456") < 4: raise SystemExit("Chapter 16 contract missing count locks")
+          text = text.replace("456", "457")
+          pairs = [
+              ('  "Mephisto",\n  "Raiders of the Lost Ark",\n  "Rumble Fish",', '  "Mephisto",\n  "Raiders of the Lost Ark",\n  "Missing",\n  "Rumble Fish",', "existing queue"),
+              ('const exactP1Queue = [\n  "Missing",\n', 'const exactP1Queue = [\n', "P1 removal"),
+              ('    "Missing",\n', '', "recommended removal"),
+              ('    "Mephisto": "scenario_mephisto_1981",\n    "Raiders of the Lost Ark": "scenario_raiders_of_the_lost_ark_1981",\n    "Rumble Fish":', '    "Mephisto": "scenario_mephisto_1981",\n    "Raiders of the Lost Ark": "scenario_raiders_of_the_lost_ark_1981",\n    "Missing": "scenario_missing_1982",\n    "Rumble Fish":', "exact ID"),
+              ('for (const title of ["Missing", "Come and See"]) {', 'for (const title of ["Come and See"]) {', "authority gap"),
+          ]
+          for old, new, label in pairs:
+              if text.count(old) != 1: raise SystemExit(f"Chapter 16 {label}: expected 1 match, found {text.count(old)}")
+              text = text.replace(old, new, 1)
+          p.write_text(text)
+
+          p = Path("src/core/chapterSixteenMissingExpansion.test.ts")
+          p.write_text(p.read_text().replace("\n// TEMP workflow retrigger; remove after self-clean materialization.\n", "\n"))
+          PY
+
+          node scripts/film-history-chapter-twelve-atlas-audit.mjs --write=docs/film-history-chapter-twelve-atlas-resolved.json >/dev/null
+          node scripts/film-history-chapter-thirteen-atlas-audit.mjs --write=docs/film-history-chapter-thirteen-atlas-resolved.json >/dev/null
+          node scripts/film-history-chapter-fourteen-atlas-audit.mjs --write=docs/film-history-chapter-fourteen-atlas-resolved.json >/dev/null
+          node scripts/film-history-chapter-fifteen-atlas-audit.mjs --write=docs/film-history-chapter-fifteen-atlas-resolved.json >/dev/null
+          node scripts/film-history-chapter-sixteen-atlas-audit.mjs --write=docs/film-history-chapter-sixteen-atlas-resolved.json >/dev/null
+
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const r = JSON.parse(readFileSync('docs/film-history-chapter-sixteen-atlas-resolved.json', 'utf8'));
+          const m = r.candidates.find((x) => x.title === 'Missing');
+          const p1 = ['Blade Runner','E.T. the Extra-Terrestrial','Sugar Cane Alley','The Terminator','Come and See','Back to the Future','Aliens',"She's Gotta Have It",'A Better Tomorrow','RoboCop','Salaam Bombay!'];
+          if (r.atlas.expectedCount !== 457 || r.atlas.actualCount !== 457 || r.verificationIndex.literalVerifiedScenarioIds !== 457) throw new Error('count lock failed');
+          if (!m || m.decision !== 'USE_EXISTING' || m.scenarioId !== 'scenario_missing_1982' || m.productionVerified !== true) throw new Error('Missing resolution failed');
+          if (r.byDecision.P0.length || JSON.stringify(r.byDecision.P1) !== JSON.stringify(p1)) throw new Error('queue lock failed');
+          NODE
+
+      - name: Commit permanent state and self-clean
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rm .github/workflows/ch16-missing-materialize-once.yml .github/workflows/ch16-missing-finalize-once.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/film-history-chapter-{twelve,thirteen,fourteen,fifteen,sixteen}-atlas-resolved.json \
+            scripts/film-history-chapter-{twelve,thirteen,fourteen,fifteen,sixteen}-atlas-audit.mjs \
+            scripts/production-case-rest-audit.mjs \
+            src/core/filmHistoryChapter{Twelve,Thirteen,Fourteen,Fifteen,Sixteen}AuditContract.test.ts \
+            src/core/chapterSixteenMissingExpansion.test.ts \
+            src/ui/data/filmScenarios.ts src/ui/data/scenarioFilmStudyMap.ts src/ui/data/scenarioProductionVerificationRegistry.ts
+          git diff --cached --check
+          git commit -m "Materialize Missing Chapter 16 Production Case"
+          git push origin HEAD:agent/ch16-missing-production-case
