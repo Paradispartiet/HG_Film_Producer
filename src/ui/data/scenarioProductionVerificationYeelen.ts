@@ -49,7 +49,7 @@ export const yeelenProductionCaseVerification = {
     {
       title: "Souleymane Cissé: The Work, the Wind, and the Light",
       publisher: "MUBI Notebook",
-      url: "https://mubi.com/en/notebook/posts/souleymane-cisse-the-work-the-wind-and-the-light",
+      url: "https://mubi.com/de/notebook/posts/souleymane-cisse-the-work-the-wind-and-the-light",
       sourceKind: "filmmaker_interview",
       supports: ["overall", "screenplay"],
       note: "Cissé recalls Yeelen's funding and natural-production difficulties and the death of the lead actor, while discussing his image-centered filmmaking practice; used only as firsthand retrospective evidence, not to fill undocumented technical details."
