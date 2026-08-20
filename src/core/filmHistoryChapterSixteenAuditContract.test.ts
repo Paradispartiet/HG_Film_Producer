@@ -25,6 +25,7 @@ const exactExisting = [
   "Paris, Texas",
   "Yellow Earth",
   "Tampopo",
+  "My Beautiful Laundrette",
   "Down by Law",
   "Pelle the Conqueror",
   "Landscape in the Mist",
@@ -34,7 +35,6 @@ const exactExisting = [
   "Black Rain",
 ];
 const exactP0Queue = [
-  "My Beautiful Laundrette",
   "Police Story",
   "The Official Story",
   "Yeelen",
@@ -69,14 +69,14 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 16 audit locks the 1980s franchise-video-global-new-cinemas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 450;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 451;/);
   assert.equal(resolved.chapter.number, 16);
   assert.equal(resolved.chapter.id, "franchise-video-global-new-cinemas");
   assert.equal(resolved.chapter.title, "Franchise consolidation, video and global new cinemas");
   assert.equal(resolved.chapter.period, "1980–1989");
-  assert.equal(resolved.atlas.expectedCount, 450);
-  assert.equal(resolved.atlas.actualCount, 450);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 450);
+  assert.equal(resolved.atlas.expectedCount, 451);
+  assert.equal(resolved.atlas.actualCount, 451);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 451);
 });
 
 test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
@@ -91,10 +91,9 @@ test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
     "Blade Runner",
     "E.T. the Extra-Terrestrial",
     "Sugar Cane Alley",
-      "The Terminator",
+    "The Terminator",
     "Come and See",
-    "My Beautiful Laundrette",
-    "Police Story",
+      "Police Story",
     "The Official Story",
     "Back to the Future",
     "Aliens",
@@ -118,6 +117,7 @@ test("Chapter 16 existing anchors resolve to exact verified scenario IDs", () =>
     "Paris, Texas": "scenario_paris_texas_1984",
     "Yellow Earth": "scenario_yellow_earth_1984",
     "Tampopo": "scenario_tampopo_1985",
+    "My Beautiful Laundrette": "scenario_my_beautiful_laundrette_1985",
     "Down by Law": "scenario_down_by_law_1986",
     "Pelle the Conqueror": "scenario_pelle_the_conqueror_1987",
     "Landscape in the Mist": "scenario_landscape_in_the_mist_1988",
