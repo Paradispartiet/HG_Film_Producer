@@ -18,6 +18,7 @@ test("Chapter 16 materializes Yellow Earth as the Mainland Fifth Generation P0 P
   assert.ok(film.premise.includes("natural lighting"));
   assert.ok(film.premise.includes("Zhao Jiping"));
   assert.ok(film.premise.includes("86/89/91"));
+  assert.ok(film.premise.includes("late-1930s/early-1940s") && film.premise.includes("1984 Reform-era production context"));
   assert.ok(film.learningGoals.some((goal) => goal.includes("state-studio") || goal.includes("Guangxi Film Studio")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("screenplay-credit provenance")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Hong Kong") && goal.includes("Taiwan")));
