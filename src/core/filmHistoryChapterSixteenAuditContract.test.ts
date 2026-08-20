@@ -18,6 +18,7 @@ const packageJson = readFileSync("package.json", "utf8");
 
 const exactExisting = [
   "The Shining",
+  "Raiders of the Lost Ark",
   "Rumble Fish",
   "The Ballad of Narayama",
   "Blood Simple",
@@ -32,7 +33,6 @@ const exactExisting = [
   "Black Rain",
 ];
 const exactP0Queue = [
-  "Raiders of the Lost Ark",
   "Yellow Earth",
   "My Beautiful Laundrette",
   "Police Story",
@@ -69,14 +69,14 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 16 audit locks the 1980s franchise-video-global-new-cinemas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 448;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 449;/);
   assert.equal(resolved.chapter.number, 16);
   assert.equal(resolved.chapter.id, "franchise-video-global-new-cinemas");
   assert.equal(resolved.chapter.title, "Franchise consolidation, video and global new cinemas");
   assert.equal(resolved.chapter.period, "1980–1989");
-  assert.equal(resolved.atlas.expectedCount, 448);
-  assert.equal(resolved.atlas.actualCount, 448);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 448);
+  assert.equal(resolved.atlas.expectedCount, 449);
+  assert.equal(resolved.atlas.actualCount, 449);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 449);
 });
 
 test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
@@ -87,7 +87,6 @@ test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
   assert.deepEqual(resolved.recommendedNewProductionCases, [
     "Mephisto",
-    "Raiders of the Lost Ark",
     "Missing",
     "Blade Runner",
     "E.T. the Extra-Terrestrial",
@@ -113,6 +112,7 @@ test("Chapter 16 existing anchors resolve to exact verified scenario IDs", () =>
   const byTitle = new Map(resolved.candidates.map((candidate) => [candidate.title, candidate]));
   const exactIds: Record<string, string> = {
     "The Shining": "scenario_the_shining_1980",
+    "Raiders of the Lost Ark": "scenario_raiders_of_the_lost_ark_1981",
     "Rumble Fish": "scenario_rumble_fish_1983",
     "The Ballad of Narayama": "scenario_the_ballad_of_narayama_1983",
     "Blood Simple": "scenario_blood_simple_1984",
