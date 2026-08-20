@@ -20,6 +20,7 @@ const exactExisting = [
   "The Shining",
   "Mephisto",
   "Raiders of the Lost Ark",
+  "Missing",
   "Rumble Fish",
   "The Ballad of Narayama",
   "Blood Simple",
@@ -41,7 +42,6 @@ const exactExisting = [
 ];
 const exactP0Queue: string[] = [];
 const exactP1Queue = [
-  "Missing",
   "Blade Runner",
   "E.T. the Extra-Terrestrial",
   "Sugar Cane Alley",
@@ -68,14 +68,14 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 16 audit locks the 1980s franchise-video-global-new-cinemas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 456;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 457;/);
   assert.equal(resolved.chapter.number, 16);
   assert.equal(resolved.chapter.id, "franchise-video-global-new-cinemas");
   assert.equal(resolved.chapter.title, "Franchise consolidation, video and global new cinemas");
   assert.equal(resolved.chapter.period, "1980–1989");
-  assert.equal(resolved.atlas.expectedCount, 456);
-  assert.equal(resolved.atlas.actualCount, 456);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 456);
+  assert.equal(resolved.atlas.expectedCount, 457);
+  assert.equal(resolved.atlas.actualCount, 457);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 457);
 });
 
 test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
@@ -85,7 +85,6 @@ test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
   assert.deepEqual(resolved.byDecision.P2, ["Raging Bull"]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
   assert.deepEqual(resolved.recommendedNewProductionCases, [
-    "Missing",
     "Blade Runner",
     "E.T. the Extra-Terrestrial",
     "Sugar Cane Alley",
@@ -106,6 +105,7 @@ test("Chapter 16 existing anchors resolve to exact verified scenario IDs", () =>
     "The Shining": "scenario_the_shining_1980",
     "Mephisto": "scenario_mephisto_1981",
     "Raiders of the Lost Ark": "scenario_raiders_of_the_lost_ark_1981",
+    "Missing": "scenario_missing_1982",
     "Rumble Fish": "scenario_rumble_fish_1983",
     "The Ballad of Narayama": "scenario_the_ballad_of_narayama_1983",
     "Blood Simple": "scenario_blood_simple_1984",
@@ -133,7 +133,7 @@ test("Chapter 16 existing anchors resolve to exact verified scenario IDs", () =>
 
 test("Chapter 16 authority gaps remain candidates instead of fake verified anchors", () => {
   const byTitle = new Map(resolved.candidates.map((candidate) => [candidate.title, candidate]));
-  for (const title of ["Missing", "Come and See"]) {
+  for (const title of ["Come and See"]) {
     assert.equal(byTitle.get(title)?.decision, "P1");
     assert.equal(byTitle.get(title)?.scenarioId, null);
     assert.equal(byTitle.get(title)?.productionVerified, false);

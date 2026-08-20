@@ -93,6 +93,7 @@ import { officialStoryProductionCaseVerification } from "./scenarioProductionVer
 import { yeelenProductionCaseVerification } from "./scenarioProductionVerificationYeelen";
 import { doTheRightThingProductionCaseVerification } from "./scenarioProductionVerificationDoTheRightThing";
 import { mephistoProductionCaseVerification } from "./scenarioProductionVerificationMephisto";
+import { missingProductionCaseVerification } from "./scenarioProductionVerificationMissing";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -303,6 +304,7 @@ const additionalVerificationRecords = [
   yeelenProductionCaseVerification,
   doTheRightThingProductionCaseVerification,
   mephistoProductionCaseVerification,
+  missingProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
