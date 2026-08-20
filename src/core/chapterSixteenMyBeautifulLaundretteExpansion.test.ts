@@ -15,6 +15,8 @@ test("Chapter 16 materializes My Beautiful Laundrette as the broadcaster-backed 
   assert.ok(film.premise.includes("six-week"));
   assert.ok(film.premise.includes("16 mm"));
   assert.ok(film.premise.includes("35 mm"));
+  assert.ok(film.premise.includes("made for television") || film.premise.includes("conceived for television"));
+  assert.ok(film.premise.includes("blown up to 35 mm") || film.premise.includes("35 mm for cinema prints"));
   assert.ok(film.premise.includes("Edinburgh"));
   assert.ok(film.premise.includes("97/98"));
   assert.ok(film.learningGoals.some((goal) => goal.includes("made for television") || goal.includes("television")));
