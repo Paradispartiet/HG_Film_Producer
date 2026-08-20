@@ -27,8 +27,9 @@
     "audit:film-history-ch12": "node scripts/film-history-chapter-twelve-atlas-audit.mjs",
     "audit:film-history-ch13": "node scripts/film-history-chapter-thirteen-atlas-audit.mjs",
     "audit:film-history-ch14": "node scripts/film-history-chapter-fourteen-atlas-audit.mjs",
+    "audit:film-history-ch15": "node scripts/film-history-chapter-fifteen-atlas-audit.mjs",
     "preflight:v0.1": "node scripts/preflight-v0.1.mjs",
-    "verify:v0.1": "npm run preflight:v0.1 && npm run audit:production-cases && npm run audit:film-history-ch1 && npm run audit:film-history-ch2 && npm run audit:film-history-ch3 && npm run audit:film-history-ch4 && npm run audit:film-history-ch5 && npm run audit:film-history-ch6 && npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run audit:film-history-ch9 && npm run audit:film-history-ch10 && npm run audit:film-history-ch11 && npm run audit:film-history-ch12 && npm run audit:film-history-ch13 && npm run audit:film-history-ch14 && npm run typecheck && npm test && npm run build:ui",
+    "verify:v0.1": "npm run preflight:v0.1 && npm run audit:production-cases && npm run audit:film-history-ch1 && npm run audit:film-history-ch2 && npm run audit:film-history-ch3 && npm run audit:film-history-ch4 && npm run audit:film-history-ch5 && npm run audit:film-history-ch6 && npm run audit:film-history-ch7 && npm run audit:film-history-ch8 && npm run audit:film-history-ch9 && npm run audit:film-history-ch10 && npm run audit:film-history-ch11 && npm run audit:film-history-ch12 && npm run audit:film-history-ch13 && npm run audit:film-history-ch14 && npm run audit:film-history-ch15 && npm run typecheck && npm test && npm run build:ui",
     "qa:manual": "node scripts/qa-manual.mjs",
     "qa:manual:preview": "node scripts/qa-manual.mjs --preview"
   },

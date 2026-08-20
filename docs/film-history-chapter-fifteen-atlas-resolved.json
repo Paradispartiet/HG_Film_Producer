@@ -1,0 +1,955 @@
+{
+  "schemaVersion": "1.0",
+  "auditDate": "2026-08-20",
+  "chapter": {
+    "number": 15,
+    "id": "new-hollywood-political-cinemas-blockbuster-transformation",
+    "title": "New Hollywood, political cinemas and blockbuster transformation",
+    "period": "1969–1979",
+    "scope": "Cinema from the post-1968 industrial and political break through the end of the 1970s: New Hollywood and its corporate conditions, Black American independent production, feminist modernism, New German Cinema, European and Spanish political memory, African and Latin American political production, Southeast Asian urban cinema, television and public funding, and the distribution-effects-sound infrastructures of blockbuster transformation.",
+    "thesis": "The 1970s were not a single auteur decade followed by the blockbuster. Corporate restructuring, independent and university production, public television and film funds, postcolonial and revolutionary institutions, feminist formal practice, location labor, new sound and effects systems, changing censorship and new release strategies produced several overlapping cinemas whose conflicts are visible only when production, labor and circulation remain as important as style."
+  },
+  "atlas": {
+    "expectedCount": 445,
+    "actualCount": 445,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "definitions": 58,
+        "appended": 56,
+        "matchedExisting": 2,
+        "status": "manual_early_cinema_case_needs_source_verification",
+        "sourceListId": "manual_early_cinema_expansion_2026"
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_one_early_cinema_verified",
+        "sourceListId": "manual_chapter_one_early_cinema_expansion_2026"
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_one_early_cinema_verified",
+        "sourceListId": "manual_chapter_one_early_cinema_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "definitions": 3,
+        "appended": 3,
+        "matchedExisting": 0,
+        "status": "manual_chapter_two_exhibition_verified",
+        "sourceListId": "manual_chapter_two_exhibition_expansion_2026"
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_chapter_three_narrative_verified",
+        "sourceListId": "manual_chapter_three_narrative_expansion_2026"
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "definitions": 3,
+        "appended": 3,
+        "matchedExisting": 0,
+        "status": "manual_chapter_four_industry_verified",
+        "sourceListId": "manual_chapter_four_industry_expansion_2026"
+      },
+      {
+        "fileName": "chapterFiveInternationalExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_chapter_five_international_verified",
+        "sourceListId": "manual_chapter_five_international_expansion_2026"
+      },
+      {
+        "fileName": "chapterSixHollywoodExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_six_hollywood_verified",
+        "sourceListId": "manual_chapter_six_hollywood_expansion_2026"
+      },
+      {
+        "fileName": "chapterSevenWeimarExpansion.ts",
+        "definitions": 2,
+        "appended": 2,
+        "matchedExisting": 0,
+        "status": "manual_chapter_seven_weimar_verified",
+        "sourceListId": "manual_chapter_seven_weimar_expansion_2026"
+      },
+      {
+        "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eight_french_avant_garde_verified",
+        "sourceListId": "manual_chapter_eight_french_avant_garde_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineSovietMontageExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nine_soviet_montage_verified",
+        "sourceListId": "manual_chapter_nine_soviet_montage_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenSilentCinemasExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_silent_cinemas_verified",
+        "sourceListId": "manual_chapter_ten_silent_cinemas_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenLaborersLoveExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_laborers_love_verified",
+        "sourceListId": "manual_chapter_ten_laborers_love_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenAThrowOfDiceExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_a_throw_of_dice_verified",
+        "sourceListId": "manual_chapter_ten_a_throw_of_dice_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenGrowthOfTheSoilExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_growth_of_the_soil_verified",
+        "sourceListId": "manual_chapter_ten_growth_of_the_soil_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenOrochiExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_orochi_verified",
+        "sourceListId": "manual_chapter_ten_orochi_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenRedHeroineExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_red_heroine_verified",
+        "sourceListId": "manual_chapter_ten_red_heroine_expansion_2026"
+      },
+      {
+        "fileName": "chapterTenHaxanExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_ten_haxan_verified",
+        "sourceListId": "manual_chapter_ten_haxan_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenJazzSingerExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_jazz_singer_verified",
+        "sourceListId": "manual_chapter_eleven_jazz_singer_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenBlackmailExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_blackmail_verified",
+        "sourceListId": "manual_chapter_eleven_blackmail_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenApplauseExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_applause_verified",
+        "sourceListId": "manual_chapter_eleven_applause_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenNeighborsWifeExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_neighbors_wife_verified",
+        "sourceListId": "manual_chapter_eleven_neighbors_wife_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenBroadwayMelodyExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_broadway_melody_verified",
+        "sourceListId": "manual_chapter_eleven_broadway_melody_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenSousLesToitsExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_sous_les_toits_verified",
+        "sourceListId": "manual_chapter_eleven_sous_les_toits_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenEnthusiasmExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_enthusiasm_verified",
+        "sourceListId": "manual_chapter_eleven_enthusiasm_expansion_2026"
+      },
+      {
+        "fileName": "chapterElevenBlueAngelExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eleven_blue_angel_verified",
+        "sourceListId": "manual_chapter_eleven_blue_angel_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelvePublicEnemyExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_public_enemy_verified",
+        "sourceListId": "manual_chapter_twelve_public_enemy_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveDraculaExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_dracula_verified",
+        "sourceListId": "manual_chapter_twelve_dracula_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelve42ndStreetExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_42nd_street_verified",
+        "sourceListId": "manual_chapter_twelve_42nd_street_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveScarfaceExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_scarface_verified",
+        "sourceListId": "manual_chapter_twelve_scarface_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveItHappenedOneNightExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_it_happened_one_night_verified",
+        "sourceListId": "manual_chapter_twelve_it_happened_one_night_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveTopHatExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_top_hat_verified",
+        "sourceListId": "manual_chapter_twelve_top_hat_expansion_2026"
+      },
+      {
+        "fileName": "chapterTwelveGoneWithTheWindExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_twelve_gone_with_the_wind_verified",
+        "sourceListId": "manual_chapter_twelve_gone_with_the_wind_expansion_2026"
+      },
+      {
+        "fileName": "chapterThirteenPaisanExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_thirteen_paisan_verified",
+        "sourceListId": "manual_chapter_thirteen_paisan_expansion_2026"
+      },
+      {
+        "fileName": "chapterThirteenRedShoesExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_thirteen_red_shoes_verified",
+        "sourceListId": "manual_chapter_thirteen_red_shoes_expansion_2026"
+      },
+      {
+        "fileName": "chapterThirteenSunsetBoulevardExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_thirteen_sunset_boulevard_verified",
+        "sourceListId": "manual_chapter_thirteen_sunset_boulevard_expansion_2026"
+      },
+      {
+        "fileName": "chapterThirteenLosOlvidadosExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_thirteen_los_olvidados_verified",
+        "sourceListId": "manual_chapter_thirteen_los_olvidados_expansion_2026"
+      },
+      {
+        "fileName": "chapterThirteenUgetsuExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_thirteen_ugetsu_verified",
+        "sourceListId": "manual_chapter_thirteen_ugetsu_expansion_2026"
+      },
+      {
+        "fileName": "chapterThirteenAManEscapedExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_thirteen_a_man_escaped_verified",
+        "sourceListId": "manual_chapter_thirteen_a_man_escaped_expansion_2026"
+      },
+      {
+        "fileName": "chapterFourteenBlackGirlExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_fourteen_black_girl_verified",
+        "sourceListId": "manual_chapter_fourteen_black_girl_expansion_2026"
+      },
+      {
+        "fileName": "chapterFourteenMemoriesUnderdevelopmentExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_fourteen_memories_underdevelopment_verified",
+        "sourceListId": "manual_chapter_fourteen_memories_underdevelopment_expansion_2026"
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "definitions": 27,
+        "appended": 27,
+        "matchedExisting": 0,
+        "status": "manual_modern_canon_case_needs_source_verification",
+        "sourceListId": "manual_modern_indie_asian_prize_expansion_2026"
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "definitions": 20,
+        "appended": 20,
+        "matchedExisting": 0,
+        "status": "manual_priority_indie_case_needs_source_verification",
+        "sourceListId": "manual_priority_indie_completion_2026"
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_east_asian_auteur_case_needs_source_verification",
+        "sourceListId": "manual_east_asian_auteur_expansion_2026"
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0,
+        "status": "manual_japanese_auteur_case_needs_source_verification",
+        "sourceListId": "manual_japanese_auteur_expansion_2026"
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_south_korean_cinema_case_needs_source_verification",
+        "sourceListId": "manual_south_korean_cinema_expansion_2026"
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0,
+        "status": "manual_south_southeast_asian_case_needs_source_verification",
+        "sourceListId": "manual_south_southeast_asian_expansion_2026"
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_festival_winner_1981_2009_case_needs_source_verification",
+        "sourceListId": "manual_festival_winners_1981_2009_expansion_2026"
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_festival_winner_2010_2024_case_needs_source_verification",
+        "sourceListId": "manual_festival_winner_2010_2024_expansion_2026"
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "definitions": 22,
+        "appended": 15,
+        "matchedExisting": 7,
+        "status": "manual_scandinavian_european_case_needs_source_verification",
+        "sourceListId": "manual_scandinavian_european_expansion_2026"
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "definitions": 24,
+        "appended": 23,
+        "matchedExisting": 1,
+        "status": "manual_eastern_iberian_british_case_needs_source_verification",
+        "sourceListId": "manual_eastern_iberian_british_expansion_2026"
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "definitions": 28,
+        "appended": 25,
+        "matchedExisting": 3,
+        "status": "manual_italy_france_germany_benelux_case_needs_source_verification",
+        "sourceListId": "manual_italy_france_germany_benelux_expansion_2026"
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "title": "Bonnie and Clyde",
+      "originalTitle": "Bonnie and Clyde",
+      "year": 1967,
+      "aliases": [],
+      "role": "chapter_fourteen_handoff",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Pre-1969 American handoff: producer-star leverage, location work, ratings-era violence and studio distribution establish New Hollywood as an industrial transition.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_bonnie_and_clyde_1967",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Memories of Underdevelopment",
+      "originalTitle": "Memorias del subdesarrollo",
+      "year": 1968,
+      "aliases": [
+        "Memorias del subdesarrollo"
+      ],
+      "role": "chapter_fourteen_handoff",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "ICAIC carries revolutionary institutional cinema across the boundary and prevents American counterculture from becoming the chapter's only genealogy.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_memories_of_underdevelopment_1968",
+      "matches": 1,
+      "origin": "chapterFourteenMemoriesUnderdevelopmentExpansion.ts"
+    },
+    {
+      "title": "The Cremator",
+      "originalTitle": "Spalovač mrtvol",
+      "year": 1969,
+      "aliases": [
+        "Spalovac mrtvol"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Czechoslovak political pressure, grotesque subjectivity and institutional complicity mark the 1969 threshold.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_cremator_1969",
+      "matches": 1,
+      "origin": "easternIberianBritishExpansion.ts"
+    },
+    {
+      "title": "Kes",
+      "originalTitle": "Kes",
+      "year": 1969,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Regional labor, education, dialect and location realism keep British social production inside a decade often narrated through American auteurism.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_kes_1969",
+      "matches": 1,
+      "origin": "easternIberianBritishExpansion.ts"
+    },
+    {
+      "title": "Easy Rider",
+      "originalTitle": "Easy Rider",
+      "year": 1969,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Independent-to-studio distribution, road production and youth-market economics are useful comparisons, but stronger verified New Hollywood anchors already carry the core industrial thesis.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "The Conformist",
+      "originalTitle": "Il conformista",
+      "year": 1970,
+      "aliases": [
+        "Il Conformista"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Political memory, European co-production, modernist design and mobile color cinematography anchor transnational 1970s production grammar.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_conformist_1970",
+      "matches": 1,
+      "origin": "scandinavianEuropeanExpansion.ts"
+    },
+    {
+      "title": "Wanda",
+      "originalTitle": "Wanda",
+      "year": 1970,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Female-authored American independent production is a valuable countercase, while Jeanne Dielman remains the indispensable feminist-modernist production anchor.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "A Clockwork Orange",
+      "originalTitle": "A Clockwork Orange",
+      "year": 1971,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "British-based Warner production joins controlled craft, violence controversy, music and studio distribution in the ratings era.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_a_clockwork_orange_1971",
+      "matches": 1,
+      "origin": "film_scenarios_seed.json"
+    },
+    {
+      "title": "The Godfather",
+      "originalTitle": "The Godfather",
+      "year": 1972,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Paramount, Coppola, Puzo, Willis and the ensemble make producer-director conflict, location work, period design and prestige scale concrete.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_godfather_1972",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Aguirre, the Wrath of God",
+      "originalTitle": "Aguirre, der Zorn Gottes",
+      "year": 1972,
+      "aliases": [
+        "Aguirre Wrath of God"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Small-company and broadcaster finance, extreme locations and physical logistics anchor New German Cinema outside the American studio model.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_aguirre_the_wrath_of_god_1972",
+      "matches": 1,
+      "origin": "italyFranceGermanyBeneluxExpansion.ts"
+    },
+    {
+      "title": "Mean Streets",
+      "originalTitle": "Mean Streets",
+      "year": 1973,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Small-budget finance, neighborhood specificity, popular-music licensing and distribution transition make a distinct New Hollywood production system.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_mean_streets_1973",
+      "matches": 1,
+      "origin": "film_scenarios_seed.json"
+    },
+    {
+      "title": "Amarcord",
+      "originalTitle": "Amarcord",
+      "year": 1973,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Cinecittà reconstruction keeps studio design, memory and fascist history visible alongside the decade's location-realism narratives.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_amarcord_1973",
+      "matches": 1,
+      "origin": "italyFranceGermanyBeneluxExpansion.ts"
+    },
+    {
+      "title": "The Spirit of the Beehive",
+      "originalTitle": "El espíritu de la colmena",
+      "year": 1973,
+      "aliases": [
+        "El espiritu de la colmena"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Spanish censorship-era memory, childhood perception and rural production provide an independent national production history.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_spirit_of_the_beehive_1973",
+      "matches": 1,
+      "origin": "easternIberianBritishExpansion.ts"
+    },
+    {
+      "title": "Touki Bouki",
+      "originalTitle": "Touki Bouki",
+      "year": 1973,
+      "aliases": [
+        "Journey of the Hyena"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Mambéty is the strongest African 1970s gap candidate: Senegalese space, postcolonial desire, montage, music and independent production prevent Africa from disappearing after Chapter 14.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Scenes from a Marriage",
+      "originalTitle": "Scener ur ett äktenskap",
+      "year": 1974,
+      "aliases": [
+        "Scener ur ett aktenskap"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Television-to-theatrical production makes broadcaster finance, 16 mm economics, serial form and alternate distribution windows explicit.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_scenes_from_a_marriage_1974",
+      "matches": 1,
+      "origin": "film_scenarios_seed.json"
+    },
+    {
+      "title": "Ali: Fear Eats the Soul",
+      "originalTitle": "Angst essen Seele auf",
+      "year": 1974,
+      "aliases": [
+        "Fear Eats the Soul"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Rapid Tango-Film production joins television-era New German Cinema, melodrama, migration, racism and location interiors.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_ali_fear_eats_the_soul_1974",
+      "matches": 1,
+      "origin": "italyFranceGermanyBeneluxExpansion.ts"
+    },
+    {
+      "title": "Jeanne Dielman, 23 Quai du Commerce, 1080 Bruxelles",
+      "originalTitle": "Jeanne Dielman, 23 quai du Commerce, 1080 Bruxelles",
+      "year": 1975,
+      "aliases": [
+        "Jeanne Dielman"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Domestic labor, feminist authorship, fixed framing, duration, direct sound and Belgian institutional support are indispensable to 1970s modernism.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_jeanne_dielman_23_quai_du_commerce_1080_bruxelles_1975",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Jaws",
+      "originalTitle": "Jaws",
+      "year": 1975,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Universal's ocean production connects practical-effects failure, location risk, editorial withholding, music and wide-release marketing to blockbuster emergence.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_jaws_1975",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Dog Day Afternoon",
+      "originalTitle": "Dog Day Afternoon",
+      "year": 1975,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Brooklyn rehearsal, practical geography, media feedback, near-real-time editing and scoreless institutional sound form another New Hollywood system.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_dog_day_afternoon_1975",
+      "matches": 1,
+      "origin": "film_scenarios_seed.json"
+    },
+    {
+      "title": "Manila in the Claws of Light",
+      "originalTitle": "Maynila sa mga Kuko ng Liwanag",
+      "year": 1975,
+      "aliases": [
+        "Manila in the Claws of Neon",
+        "Maynila sa mga kuko ng liwanag"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Brocka is the strongest Southeast Asian 1970s gap candidate: Manila labor, urban exploitation, location realism and Philippine production history cannot be represented by post-2000 Asian cases.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "The Battle of Chile: Part I",
+      "originalTitle": "La batalla de Chile: La insurrección de la burguesía",
+      "year": 1975,
+      "aliases": [
+        "The Battle of Chile",
+        "The Battle of Chile, Part I",
+        "La batalla de Chile",
+        "La insurreccion de la burguesia"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Guzmán is the strongest Latin American political-production gap candidate: collective documentary labor, coup-era risk, portable nonfiction practice and transnational post-production make politics material.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Cría cuervos",
+      "originalTitle": "Cría cuervos",
+      "year": 1976,
+      "aliases": [
+        "Cria cuervos"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Transition-era Spain links domestic space, childhood subjectivity, memory and censorship to political transformation.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_cria_cuervos_1976",
+      "matches": 1,
+      "origin": "easternIberianBritishExpansion.ts"
+    },
+    {
+      "title": "Taxi Driver",
+      "originalTitle": "Taxi Driver",
+      "year": 1976,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "New York location production, antihero subjectivity, optical color intervention and post-Vietnam urban politics become one integrated production system.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_taxi_driver_1976",
+      "matches": 1,
+      "origin": "film_scenarios_seed.json"
+    },
+    {
+      "title": "Killer of Sheep",
+      "originalTitle": "Killer of Sheep",
+      "year": 1977,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "UCLA/L.A. Rebellion production anchors Black American independent cinema through 16 mm weekend labor, Watts locations, multi-role authorship, music rights and delayed circulation.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_killer_of_sheep_1977",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "Star Wars",
+      "originalTitle": "Star Wars",
+      "year": 1977,
+      "aliases": [
+        "Star Wars: Episode IV - A New Hope",
+        "Star Wars Episode IV A New Hope"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Lucasfilm, Fox and ILM make blockbuster transformation an infrastructure history of effects R&D, British stage production, editing, sound, licensing and distribution.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_star_wars_1977",
+      "matches": 1,
+      "origin": "earlyCinemaExpansion.ts"
+    },
+    {
+      "title": "The Marriage of Maria Braun",
+      "originalTitle": "Die Ehe der Maria Braun",
+      "year": 1979,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Broadcaster participation, international sales, postwar economic history and melodrama close the decade through New German Cinema's production institutions.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_marriage_of_maria_braun_1979",
+      "matches": 1,
+      "origin": "italyFranceGermanyBeneluxExpansion.ts"
+    },
+    {
+      "title": "Apocalypse Now",
+      "originalTitle": "Apocalypse Now",
+      "year": 1979,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Large-scale independent-studio production crisis is useful for auteur power, location risk, sound and long post-production, but is not a chapter blocker once the core systems are covered.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    },
+    {
+      "title": "Alien",
+      "originalTitle": "Alien",
+      "year": 1979,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Late-1970s studio science fiction is useful for design, effects and sound comparison, while Star Wars already carries the indispensable effects-infrastructure function.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0,
+      "origin": null
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "Bonnie and Clyde",
+      "Memories of Underdevelopment",
+      "The Cremator",
+      "Kes",
+      "The Conformist",
+      "A Clockwork Orange",
+      "The Godfather",
+      "Aguirre, the Wrath of God",
+      "Mean Streets",
+      "Amarcord",
+      "The Spirit of the Beehive",
+      "Scenes from a Marriage",
+      "Ali: Fear Eats the Soul",
+      "Jeanne Dielman, 23 Quai du Commerce, 1080 Bruxelles",
+      "Jaws",
+      "Dog Day Afternoon",
+      "Cría cuervos",
+      "Taxi Driver",
+      "Killer of Sheep",
+      "Star Wars",
+      "The Marriage of Maria Braun"
+    ],
+    "P0": [],
+    "P1": [
+      "Touki Bouki",
+      "Manila in the Claws of Light",
+      "The Battle of Chile: Part I"
+    ],
+    "P2": [
+      "Easy Rider",
+      "Wanda",
+      "Apocalypse Now",
+      "Alien"
+    ],
+    "EXISTING_REQUIRED": []
+  },
+  "recommendedNewProductionCases": [
+    "Touki Bouki",
+    "Manila in the Claws of Light",
+    "The Battle of Chile: Part I"
+  ],
+  "historicalObjects": [
+    {
+      "label": "New Hollywood as an industrial transition",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Studio restructuring, youth markets, producer-star packages, location production and director leverage changed American filmmaking unevenly; no single auteur style defines the formation."
+    },
+    {
+      "label": "Ratings, censorship and contested representation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "The post-Code ratings environment altered what could be shown and marketed, but violence, sexuality, race and politics remain title-specific production and circulation questions."
+    },
+    {
+      "label": "Conglomerates, packages and producer power",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Corporate ownership, agencies, producers, stars and distributors shape development, budgets, casting, final cut and release alongside directors."
+    },
+    {
+      "label": "Location production and regional specificity",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "New York, Yorkshire, Dakar, Manila, Brussels, Bavaria, Peru and other sites are production environments with labor, weather, access, sound and social histories, not generic realism backdrops."
+    },
+    {
+      "label": "Television, public funding and co-production",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Broadcasters, public funds and cross-border partners underpin New German Cinema, Scandinavian television work and European modernism in ways distinct from Hollywood finance."
+    },
+    {
+      "label": "Feminist modernism and gendered labor",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Domestic work, duration, authorship, performance and production labor make feminist film history material rather than a checklist of themes or filmmaker identities."
+    },
+    {
+      "label": "Black American independent production and the L.A. Rebellion",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "University infrastructure, 16 mm economies, community casting, labor, music rights, restoration and delayed distribution form a production history distinct from the New Hollywood studio story."
+    },
+    {
+      "label": "Third Cinema, revolutionary documentary and political circulation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Collective production, portable nonfiction technology, censorship, state violence, exile, solidarity networks and alternative circulation shape political cinema beyond textual ideology."
+    },
+    {
+      "label": "Blockbuster production, distribution and exhibition",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Jaws and Star Wars connect location or effects risk to marketing, release scale, exhibition capacity, merchandising and repeatable franchise economics; blockbuster is not a synonym for a successful film."
+    },
+    {
+      "label": "Special effects, sound and post-production infrastructure",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Motion-control photography, optical work, practical effects, multitrack sound, music and increasingly specialized post-production labor reshape what studios can build, mix and distribute."
+    }
+  ],
+  "boundaryNotes": [
+    "Chapter 15 is organized as 1969–1979. Bonnie and Clyde (1967) and Memories of Underdevelopment (1968) remain explicit Chapter 14 handoffs because they establish two different preconditions for the decade: American studio transition and revolutionary institutional cinema.",
+    "New Hollywood is one axis, not the chapter's synonym. European modernism, New German Cinema, Black American independent production, African postcolonial cinema, Latin American political documentary and Southeast Asian urban political cinema retain separate institutions and genealogies.",
+    "The 1975–1977 Jaws-Star Wars transition is treated as a production-distribution-exhibition shift, not as a claim that the blockbuster abruptly replaced personal or political filmmaking.",
+    "The chapter ends in 1979 before 1980s franchise consolidation, home video, intensified conglomeration and a different independent/festival ecology become the next organizing problem.",
+    "Television films, 16 mm independent work, documentaries, studio features and international co-productions remain comparable only at the level of production systems; their formats, labor relations, audiences and circulation routes are never flattened into one scale."
+  ],
+  "safeguards": [
+    "New Hollywood is not auteur freedom versus the studio system. Producers, corporations, agencies, stars, craftspeople, unions, distributors and exhibitors remain causal production actors.",
+    "Blockbuster is not a box-office adjective. Release pattern, marketing, exhibition, effects or location infrastructure, sound, merchandising and repeatable corporate strategy require title-specific evidence.",
+    "No generic 1970s look is allowed. Film stock, lenses, handheld work, zooms, available light, widescreen, color processing and sound practices require film-specific sources.",
+    "Political cinema is production history as well as ideology: finance, collective labor, censorship, state violence, exile, equipment, post-production and circulation must be documented.",
+    "Third Cinema is not a catch-all label for films from Latin America, Africa or Asia. Movements, manifestos, national institutions and individual productions remain historically specific.",
+    "Black American independent cinema and the L.A. Rebellion are not diversity supplements to New Hollywood; their university infrastructure, community relations, finance, labor and circulation form distinct production histories.",
+    "Feminist film history is not reduced to director identity or themes. Authorship, domestic and professional labor, performance, framing, duration, sound, finance and institutional access must remain visible.",
+    "National cinemas are not branches of American or French movements. Senegalese, Philippine, Cuban, Chilean, Spanish, West German and other cases enter through their own institutions and production conditions.",
+    "Festival recognition, restoration and later canonization are downstream circulation layers. They never substitute for original production evidence or imply that later Western recognition created the film's historical importance.",
+    "Restored runtimes, aspect ratios, color grades and sound presentations remain separate from original production and release evidence unless provenance is explicit."
+  ]
+}
