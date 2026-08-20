@@ -1,0 +1,203 @@
+name: TEMP Materialize Mephisto Chapter 16
+
+on:
+  push:
+    branches:
+      - agent/ch16-mephisto-production-case
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: agent/ch16-mephisto-production-case
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Integrate Mephisto permanently
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          def read(path): return Path(path).read_text()
+          def write(path, text): Path(path).write_text(text)
+          def replace_once(text, old, new, label):
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"{label}: expected exactly one match, found {count}")
+              return text.replace(old, new, 1)
+
+          path = "src/ui/data/filmScenarios.ts"
+          text = read(path)
+          text = replace_once(text,
+              'import { mergeChapterSixteenDoTheRightThingExpansion } from "../../core/chapterSixteenDoTheRightThingExpansion.js";\n',
+              'import { mergeChapterSixteenDoTheRightThingExpansion } from "../../core/chapterSixteenDoTheRightThingExpansion.js";\nimport { mergeChapterSixteenMephistoExpansion } from "../../core/chapterSixteenMephistoExpansion.js";\n',
+              "filmScenarios import")
+          text = replace_once(text,
+              'const chapterSixteenDoTheRightThingScenarios = mergeChapterSixteenDoTheRightThingExpansion(chapterSixteenYeelenScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSixteenDoTheRightThingScenarios);',
+              'const chapterSixteenDoTheRightThingScenarios = mergeChapterSixteenDoTheRightThingExpansion(chapterSixteenYeelenScenarios);\nconst chapterSixteenMephistoScenarios = mergeChapterSixteenMephistoExpansion(chapterSixteenDoTheRightThingScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSixteenMephistoScenarios);',
+              "filmScenarios merge chain")
+          text = replace_once(text,
+              '+manual_chapter_sixteen_do_the_right_thing_expansion_2026',
+              '+manual_chapter_sixteen_do_the_right_thing_expansion_2026+manual_chapter_sixteen_mephisto_expansion_2026',
+              "filmScenarios source list")
+          write(path, text)
+
+          path = "src/ui/data/scenarioFilmStudyMap.ts"
+          text = read(path)
+          text = replace_once(text,
+              'import { doTheRightThingFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenDoTheRightThing";\n',
+              'import { doTheRightThingFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenDoTheRightThing";\nimport { mephistoFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenMephisto";\n',
+              "Film Study import")
+          text = replace_once(text,
+              '  [doTheRightThingFilmHistoryProfile.scenarioId]: doTheRightThingFilmHistoryProfile,\n',
+              '  [doTheRightThingFilmHistoryProfile.scenarioId]: doTheRightThingFilmHistoryProfile,\n  [mephistoFilmHistoryProfile.scenarioId]: mephistoFilmHistoryProfile,\n',
+              "Film Study map")
+          write(path, text)
+
+          path = "src/ui/data/scenarioProductionVerificationRegistry.ts"
+          text = read(path)
+          text = replace_once(text,
+              'import { doTheRightThingProductionCaseVerification } from "./scenarioProductionVerificationDoTheRightThing";\n',
+              'import { doTheRightThingProductionCaseVerification } from "./scenarioProductionVerificationDoTheRightThing";\nimport { mephistoProductionCaseVerification } from "./scenarioProductionVerificationMephisto";\n',
+              "verification import")
+          text = replace_once(text,
+              '  doTheRightThingProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,',
+              '  doTheRightThingProductionCaseVerification,\n  mephistoProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,',
+              "verification registry")
+          write(path, text)
+
+          atlas_scripts = [
+              "scripts/film-history-chapter-twelve-atlas-audit.mjs",
+              "scripts/film-history-chapter-thirteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fourteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fifteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-sixteen-atlas-audit.mjs",
+          ]
+          for path in atlas_scripts:
+              text = read(path)
+              text = replace_once(text, "const EXPECTED_ATLAS_COUNT = 455;", "const EXPECTED_ATLAS_COUNT = 456;", f"{path} count")
+              text = replace_once(text,
+                  '  "chapterSixteenDoTheRightThingExpansion.ts",\n',
+                  '  "chapterSixteenDoTheRightThingExpansion.ts",\n  "chapterSixteenMephistoExpansion.ts",\n',
+                  f"{path} expansion")
+              write(path, text)
+
+          path = "scripts/production-case-rest-audit.mjs"
+          text = read(path)
+          text = replace_once(text, "const EXPECTED_PLAYABLE_SCENARIOS = 455;", "const EXPECTED_PLAYABLE_SCENARIOS = 456;", "production playable")
+          text = replace_once(text, "const EXPECTED_VERIFIED_PRODUCTION_CASES = 455;", "const EXPECTED_VERIFIED_PRODUCTION_CASES = 456;", "production verified")
+          text = replace_once(text,
+              '  "chapterSixteenDoTheRightThingExpansion.ts",\n',
+              '  "chapterSixteenDoTheRightThingExpansion.ts",\n  "chapterSixteenMephistoExpansion.ts",\n',
+              "production expansion")
+          write(path, text)
+
+          for path in [
+              "src/core/filmHistoryChapterTwelveAuditContract.test.ts",
+              "src/core/filmHistoryChapterThirteenAuditContract.test.ts",
+              "src/core/filmHistoryChapterFourteenAuditContract.test.ts",
+              "src/core/filmHistoryChapterFifteenAuditContract.test.ts",
+          ]:
+              text = read(path)
+              if text.count("455") < 3:
+                  raise SystemExit(f"{path}: missing 455 count locks")
+              write(path, text.replace("455", "456"))
+
+          path = "src/core/filmHistoryChapterSixteenAuditContract.test.ts"
+          text = read(path)
+          if text.count("455") < 4:
+              raise SystemExit("Chapter 16 contract missing 455 count locks")
+          text = text.replace("455", "456")
+          text = replace_once(text,
+              '  "The Shining",\n  "Raiders of the Lost Ark",',
+              '  "The Shining",\n  "Mephisto",\n  "Raiders of the Lost Ark",',
+              "Chapter 16 existing queue")
+          text = replace_once(text,
+              'const exactP1Queue = [\n  "Mephisto",\n',
+              'const exactP1Queue = [\n',
+              "Chapter 16 P1 removal")
+          text = replace_once(text,
+              '    "Mephisto",\n',
+              '',
+              "Chapter 16 recommended removal")
+          text = replace_once(text,
+              '    "The Shining": "scenario_the_shining_1980",\n    "Raiders of the Lost Ark":',
+              '    "The Shining": "scenario_the_shining_1980",\n    "Mephisto": "scenario_mephisto_1981",\n    "Raiders of the Lost Ark":',
+              "Chapter 16 exact ID")
+          text = replace_once(text,
+              'for (const title of ["Mephisto", "Missing", "Come and See"]) {',
+              'for (const title of ["Missing", "Come and See"]) {',
+              "Chapter 16 authority gap list")
+          write(path, text)
+          PY
+
+      - name: Regenerate Chapter 12-16 Atlas reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/film-history-chapter-twelve-atlas-audit.mjs --write=docs/film-history-chapter-twelve-atlas-resolved.json
+          node scripts/film-history-chapter-thirteen-atlas-audit.mjs --write=docs/film-history-chapter-thirteen-atlas-resolved.json
+          node scripts/film-history-chapter-fourteen-atlas-audit.mjs --write=docs/film-history-chapter-fourteen-atlas-resolved.json
+          node scripts/film-history-chapter-fifteen-atlas-audit.mjs --write=docs/film-history-chapter-fifteen-atlas-resolved.json
+          node scripts/film-history-chapter-sixteen-atlas-audit.mjs --write=docs/film-history-chapter-sixteen-atlas-resolved.json
+
+      - name: Assert canonical Mephisto result
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const report = JSON.parse(readFileSync('docs/film-history-chapter-sixteen-atlas-resolved.json', 'utf8'));
+          if (report.atlas.expectedCount !== 456 || report.atlas.actualCount !== 456) throw new Error(`Atlas ${report.atlas.expectedCount}/${report.atlas.actualCount}`);
+          if (report.verificationIndex.literalVerifiedScenarioIds !== 456) throw new Error(`Verification ${report.verificationIndex.literalVerifiedScenarioIds}`);
+          const film = report.candidates.find((item) => item.title === 'Mephisto');
+          if (!film || film.decision !== 'USE_EXISTING' || film.scenarioId !== 'scenario_mephisto_1981' || film.productionVerified !== true) throw new Error(`Mephisto resolution ${JSON.stringify(film)}`);
+          if (report.byDecision.P0.length !== 0) throw new Error(`P0 ${JSON.stringify(report.byDecision.P0)}`);
+          const p1 = ['Missing','Blade Runner','E.T. the Extra-Terrestrial','Sugar Cane Alley','The Terminator','Come and See','Back to the Future','Aliens',"She's Gotta Have It",'A Better Tomorrow','RoboCop','Salaam Bombay!'];
+          if (JSON.stringify(report.byDecision.P1) !== JSON.stringify(p1)) throw new Error(`P1 ${JSON.stringify(report.byDecision.P1)}`);
+          NODE
+
+      - name: Verify full v0.1
+        run: npm run verify:v0.1
+
+      - name: Commit permanent integration and self-clean
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rm .github/workflows/ch16-mephisto-materialize-once.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            docs/film-history-chapter-twelve-atlas-resolved.json \
+            docs/film-history-chapter-thirteen-atlas-resolved.json \
+            docs/film-history-chapter-fourteen-atlas-resolved.json \
+            docs/film-history-chapter-fifteen-atlas-resolved.json \
+            docs/film-history-chapter-sixteen-atlas-resolved.json \
+            scripts/film-history-chapter-twelve-atlas-audit.mjs \
+            scripts/film-history-chapter-thirteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fourteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fifteen-atlas-audit.mjs \
+            scripts/film-history-chapter-sixteen-atlas-audit.mjs \
+            scripts/production-case-rest-audit.mjs \
+            src/core/filmHistoryChapterTwelveAuditContract.test.ts \
+            src/core/filmHistoryChapterThirteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFourteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFifteenAuditContract.test.ts \
+            src/core/filmHistoryChapterSixteenAuditContract.test.ts \
+            src/ui/data/filmScenarios.ts \
+            src/ui/data/scenarioFilmStudyMap.ts \
+            src/ui/data/scenarioProductionVerificationRegistry.ts
+          git diff --cached --check
+          git commit -m "Materialize Mephisto Chapter 16 Production Case"
+          git push origin HEAD:agent/ch16-mephisto-production-case
