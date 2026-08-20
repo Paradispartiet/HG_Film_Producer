@@ -22,7 +22,7 @@ test("Chapter 16 materializes E.T. as a source-first suburban creature-effects P
   assert.ok(film.premise.includes("Gene Cantamessa") && film.premise.includes("Ben Burtt") && film.premise.includes("Pat Welsh") && film.premise.includes("John Williams"));
   assert.ok(film.learningGoals.some((goal) => goal.includes("mechanical creature") && goal.includes("embodied movement")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("roughly forty-five") && goal.includes("storyboarded")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("115/120-minute") && goal.includes("downstream")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("115/120-minute") && goal.includes("distribution/reception history")));
   const cinematography = film.phases.find((phase) => phase.id === "cinematography");
   assert.ok(cinematography?.player_task.includes("Eastman 5247") && cinematography.player_task.includes("1.85/1.66") && cinematography.player_task.includes("scene-specific"));
   const creature = film.phases.find((phase) => phase.id === "creature");
