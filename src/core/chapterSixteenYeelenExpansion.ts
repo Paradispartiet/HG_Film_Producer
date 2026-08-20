@@ -17,11 +17,11 @@ export const chapterSixteenYeelenExpansionDefinitions = [
     sourceUrl: "https://bfidatadigipres.github.io/in%20the%20black%20fantastic/2022/07/03/yeelen/",
     scenarioType: "mali_burkina_france_west_germany_cisse_bambara_location_light_long_disrupted_coproduction",
     requiredChoicesSeed: {
-      screenplay: ["soulemane_cisse_bambara_authorship", "rewrite_after_ismaïla_sarr_death", "do_not_reconstruct_restricted_ritual_knowledge"],
+      screenplay: ["souleymane_cisse_bambara_authorship", "rewrite_after_ismaïla_sarr_death", "do_not_reconstruct_restricted_ritual_knowledge"],
       camera: ["ferragut_humeau_landscape_light_authorship", "season_and_daylight_constraints_as_sourced_history", "no_invented_camera_lens_stock_or_exposure_package"],
       editing: ["multi_editor_long_production_reconstruction", "surviving_footage_after_rewrite", "105_canonical_preserve_106_catalog_variance"],
       sound: ["ollivier_mellier_sound_authorship", "portal_salif_keita_music_distinct_from_sound", "no_invented_recorder_microphone_or_mix_chain"],
-      themes: ["film_history", "1980s", "mali", "burkina_faso", "france", "west_germany", "soulemane_cisse", "bambara_language", "co_production", "films_cisse", "wdr", "landscape", "bandiagara", "production_interruption", "screenplay_rewrite", "cinematography", "light", "editing", "sound", "music", "cultural_knowledge_boundary", "cannes_circulation"],
+      themes: ["film_history", "1980s", "mali", "burkina_faso", "france", "west_germany", "souleymane_cisse", "bambara_language", "co_production", "films_cisse", "wdr", "landscape", "bandiagara", "production_interruption", "screenplay_rewrite", "cinematography", "light", "editing", "sound", "music", "cultural_knowledge_boundary", "cannes_circulation"],
     },
     learningGoals: [
       "Model Yeelen as a Malian-led international co-production rather than treating Cannes recognition as the source of its authorship or legitimacy.",
