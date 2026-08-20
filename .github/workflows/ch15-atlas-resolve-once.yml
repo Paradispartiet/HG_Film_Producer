@@ -28,14 +28,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Correct A Clockwork Orange contract id
-        shell: bash
-        run: |
-          set -euo pipefail
-          sed -i 's/scenario_a_clockwork_orange_1971/scenario_clockwork_orange_1971/g' scripts/film-history-chapter-fifteen-atlas-audit.mjs
-          ! grep -q 'scenario_a_clockwork_orange_1971' scripts/film-history-chapter-fifteen-atlas-audit.mjs
-          grep -q 'scenario_clockwork_orange_1971' scripts/film-history-chapter-fifteen-atlas-audit.mjs
-
       - name: Resolve Chapter 15 Atlas
         run: node scripts/film-history-chapter-fifteen-atlas-audit.mjs --write=docs/film-history-chapter-fifteen-atlas-resolved.json
 
@@ -49,7 +41,7 @@ jobs:
           rm .github/workflows/ch15-atlas-resolve-once.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/film-history-chapter-fifteen-atlas-audit.mjs docs/film-history-chapter-fifteen-atlas-resolved.json .github/workflows/ch15-atlas-resolve-once.yml
+          git add docs/film-history-chapter-fifteen-atlas-resolved.json .github/workflows/ch15-atlas-resolve-once.yml
           if git diff --cached --quiet; then
             echo "No resolver changes to commit"
             exit 0
