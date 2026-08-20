@@ -23,7 +23,8 @@ test("Chapter 16 materializes Missing as a source-first transnational political-
   assert.ok(film.learningGoals.some((goal) => goal.includes("Ivan Moffat") && goal.includes("John Nichols") && goal.includes("uncredited development participation")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Costa-Gavras/Donald Stewart") && goal.includes("credited screenplay")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Mexico City") && goal.includes("Acapulco") && goal.includes("Churubusco")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("PG-rating appeal") && goal.includes("Cannes") && goal.includes("Academy") && goal.includes("downstream")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("PG-rating appeal") && goal.includes("Cannes") && goal.includes("Academy") && goal.includes("reception/legal history")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("release/award history") && goal.includes("downstream")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("dramatized argument") && goal.includes("production facts")));
   const locationsPhase = film.phases.find((phase) => phase.id === "locations");
   assert.ok(locationsPhase?.player_task.includes("Mexico City") && locationsPhase.player_task.includes("Churubusco") && locationsPhase.player_task.includes("substitution"));
