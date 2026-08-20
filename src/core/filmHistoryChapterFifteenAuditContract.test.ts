@@ -27,6 +27,7 @@ const requiredExisting = [
   "Mean Streets",
   "Amarcord",
   "The Spirit of the Beehive",
+  "Touki Bouki",
   "Scenes from a Marriage",
   "Ali: Fear Eats the Soul",
   "Jeanne Dielman, 23 Quai du Commerce, 1080 Bruxelles",
@@ -39,7 +40,7 @@ const requiredExisting = [
   "The Marriage of Maria Braun",
 ];
 const exactP0Queue: string[] = [];
-const exactP1Queue = ["Touki Bouki", "Manila in the Claws of Light", "The Battle of Chile: Part I"];
+const exactP1Queue = ["Manila in the Claws of Light", "The Battle of Chile: Part I"];
 
 const historicalObjectLabels = [
   "New Hollywood as an industrial transition",
@@ -55,13 +56,13 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 15 audit locks the New Hollywood-political cinemas-blockbuster Atlas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 445;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 446;/);
   assert.equal(resolved.chapter.number, 15);
   assert.equal(resolved.chapter.id, "new-hollywood-political-cinemas-blockbuster-transformation");
   assert.equal(resolved.chapter.title, "New Hollywood, political cinemas and blockbuster transformation");
   assert.equal(resolved.chapter.period, "1969–1979");
-  assert.equal(resolved.atlas.expectedCount, 445);
-  assert.equal(resolved.atlas.actualCount, 445);
+  assert.equal(resolved.atlas.expectedCount, 446);
+  assert.equal(resolved.atlas.actualCount, 446);
   assert.equal(resolved.candidates.length, 28);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
   assert.deepEqual(resolved.byDecision.P0, exactP0Queue);
@@ -83,6 +84,7 @@ test("Chapter 15 existing anchors resolve to exact canonical scenario IDs", () =
   assert.equal(byTitle.get("Mean Streets")?.scenarioId, "scenario_mean_streets_1973");
   assert.equal(byTitle.get("Amarcord")?.scenarioId, "scenario_amarcord_1973");
   assert.equal(byTitle.get("The Spirit of the Beehive")?.scenarioId, "scenario_the_spirit_of_the_beehive_1973");
+  assert.equal(byTitle.get("Touki Bouki")?.scenarioId, "scenario_touki_bouki_1973");
   assert.equal(byTitle.get("Scenes from a Marriage")?.scenarioId, "scenario_scenes_from_a_marriage_1974");
   assert.equal(byTitle.get("Ali: Fear Eats the Soul")?.scenarioId, "scenario_ali_fear_eats_the_soul_1974");
   assert.equal(byTitle.get("Jeanne Dielman, 23 Quai du Commerce, 1080 Bruxelles")?.scenarioId, "scenario_jeanne_dielman_23_quai_du_commerce_1080_bruxelles_1975");
