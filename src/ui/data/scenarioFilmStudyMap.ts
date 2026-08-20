@@ -69,6 +69,7 @@ import { policeStoryFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteen
 import { officialStoryFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenOfficialStory";
 import { yeelenFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenYeelen";
 import { doTheRightThingFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenDoTheRightThing";
+import { mephistoFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenMephisto";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -164,6 +165,7 @@ const sourceBackedFilmHistoryProfiles = {
   [officialStoryFilmHistoryProfile.scenarioId]: officialStoryFilmHistoryProfile,
   [yeelenFilmHistoryProfile.scenarioId]: yeelenFilmHistoryProfile,
   [doTheRightThingFilmHistoryProfile.scenarioId]: doTheRightThingFilmHistoryProfile,
+  [mephistoFilmHistoryProfile.scenarioId]: mephistoFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
