@@ -1,0 +1,66 @@
+name: TEMP Diagnose Chapter 16 Existing Required Gaps
+
+on:
+  push:
+    branches:
+      - agent/ch16-franchise-video-global-new-cinemas-atlas-audit
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/ch16-franchise-video-global-new-cinemas-atlas-audit
+          fetch-depth: 0
+      - name: Materialize authority gaps without weakening permanent audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp scripts/film-history-chapter-sixteen-atlas-audit.mjs /tmp/ch16-audit-original.mjs
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('scripts/film-history-chapter-sixteen-atlas-audit.mjs')
+          text = p.read_text()
+          old = 'if (candidate.decisionIfMissing === "EXISTING_REQUIRED" && (!match || !productionVerified)) throw new Error(`${candidate.title}: required verified Production Case is missing`);'
+          new = 'if (candidate.decisionIfMissing === "EXISTING_REQUIRED" && (!match || !productionVerified)) console.error(`DIAGNOSTIC_REQUIRED_GAP:${candidate.title}`);'
+          if old not in text:
+              raise SystemExit('Expected required-verification guard not found')
+          p.write_text(text.replace(old, new, 1))
+          PY
+          node scripts/film-history-chapter-sixteen-atlas-audit.mjs --write=/tmp/ch16-report.json >/tmp/ch16-report.stdout 2>/tmp/ch16-report.stderr
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('/tmp/ch16-report.json').read_text())
+          gaps = []
+          for item in report['candidates']:
+              if item['decision'] == 'EXISTING_REQUIRED':
+                  gaps.append({
+                      'title': item['title'],
+                      'year': item['year'],
+                      'scenarioId': item['scenarioId'],
+                      'matches': item['matches'],
+                      'productionVerified': item['productionVerified'],
+                      'origin': item['origin'],
+                  })
+          out = {
+              'atlasExpected': report['atlas']['expectedCount'],
+              'atlasActual': report['atlas']['actualCount'],
+              'literalVerifiedScenarioIds': report['verificationIndex']['literalVerifiedScenarioIds'],
+              'existingRequiredGaps': gaps,
+          }
+          Path('docs/.tmp-ch16-existing-required-gaps.json').write_text(json.dumps(out, indent=2, ensure_ascii=False) + '\n')
+          PY
+          cp /tmp/ch16-audit-original.mjs scripts/film-history-chapter-sixteen-atlas-audit.mjs
+          rm .github/workflows/ch16-existing-required-diagnostic-once.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/.tmp-ch16-existing-required-gaps.json .github/workflows/ch16-existing-required-diagnostic-once.yml
+          git diff --cached --check
+          git commit -m "Diagnose Chapter 16 existing-required gaps"
+          git push origin HEAD:agent/ch16-franchise-video-global-new-cinemas-atlas-audit
