@@ -23,6 +23,10 @@ test("Chapter 16 materializes Yeelen as the Malian-led transnational P0 Producti
   assert.ok(film.learningGoals.some((goal) => goal.includes("Cannes") && goal.includes("authorship")));
   assert.ok(film.requiredChoicesSeed.camera.includes("no_invented_camera_lens_stock_or_exposure_package"));
   assert.ok(film.requiredChoicesSeed.sound.includes("no_invented_recorder_microphone_or_mix_chain"));
+  const researchPhase = film.phases.find((phase) => phase.id === "research");
+  assert.ok(researchPhase?.player_task.includes("leaving restricted ritual knowledge un-reconstructed"));
+  const designPhase = film.phases.find((phase) => phase.id === "design");
+  assert.ok(designPhase?.player_task.includes("avoid turning protected symbolic material into game instructions"));
   assert.ok(film.learningGoals.length >= 12);
   assert.ok(film.phases.length >= 9);
 });
