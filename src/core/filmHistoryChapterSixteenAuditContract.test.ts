@@ -27,6 +27,7 @@ const exactExisting = [
   "Tampopo",
   "My Beautiful Laundrette",
   "Police Story",
+  "The Official Story",
   "Down by Law",
   "Pelle the Conqueror",
   "Landscape in the Mist",
@@ -36,7 +37,6 @@ const exactExisting = [
   "Black Rain",
 ];
 const exactP0Queue = [
-  "The Official Story",
   "Yeelen",
   "Do the Right Thing",
 ];
@@ -69,14 +69,14 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 16 audit locks the 1980s franchise-video-global-new-cinemas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 452;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 453;/);
   assert.equal(resolved.chapter.number, 16);
   assert.equal(resolved.chapter.id, "franchise-video-global-new-cinemas");
   assert.equal(resolved.chapter.title, "Franchise consolidation, video and global new cinemas");
   assert.equal(resolved.chapter.period, "1980–1989");
-  assert.equal(resolved.atlas.expectedCount, 452);
-  assert.equal(resolved.atlas.actualCount, 452);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 452);
+  assert.equal(resolved.atlas.expectedCount, 453);
+  assert.equal(resolved.atlas.actualCount, 453);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 453);
 });
 
 test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
@@ -93,7 +93,6 @@ test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
     "Sugar Cane Alley",
     "The Terminator",
     "Come and See",
-        "The Official Story",
     "Back to the Future",
     "Aliens",
     "She's Gotta Have It",
@@ -118,6 +117,7 @@ test("Chapter 16 existing anchors resolve to exact verified scenario IDs", () =>
     "Tampopo": "scenario_tampopo_1985",
     "My Beautiful Laundrette": "scenario_my_beautiful_laundrette_1985",
     "Police Story": "scenario_police_story_1985",
+    "The Official Story": "scenario_the_official_story_1985",
     "Down by Law": "scenario_down_by_law_1986",
     "Pelle the Conqueror": "scenario_pelle_the_conqueror_1987",
     "Landscape in the Mist": "scenario_landscape_in_the_mist_1988",
