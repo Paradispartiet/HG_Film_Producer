@@ -1,0 +1,116 @@
+name: TEMP Materialize Battle of Chile Chapter 15
+
+on:
+  push:
+    branches:
+      - agent/ch15-battle-chile-part-one-production-case
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: agent/ch15-battle-chile-part-one-production-case
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Integrate Battle of Chile atomically
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_once(path, old, new):
+              p = Path(path)
+              text = p.read_text()
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"{path}: expected one occurrence, found {count}: {old!r}")
+              p.write_text(text.replace(old, new, 1))
+
+          for path in [
+              "scripts/film-history-chapter-twelve-atlas-audit.mjs",
+              "scripts/film-history-chapter-thirteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fourteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fifteen-atlas-audit.mjs",
+          ]:
+              replace_once(path, "const EXPECTED_ATLAS_COUNT = 447;", "const EXPECTED_ATLAS_COUNT = 448;")
+              replace_once(path, '  "chapterFifteenManilaClawsLightExpansion.ts",\n', '  "chapterFifteenManilaClawsLightExpansion.ts",\n  "chapterFifteenBattleChilePartOneExpansion.ts",\n')
+
+          path = "scripts/production-case-rest-audit.mjs"
+          replace_once(path, "const EXPECTED_PLAYABLE_SCENARIOS = 447;", "const EXPECTED_PLAYABLE_SCENARIOS = 448;")
+          replace_once(path, "const EXPECTED_VERIFIED_PRODUCTION_CASES = 447;", "const EXPECTED_VERIFIED_PRODUCTION_CASES = 448;")
+          replace_once(path, '  "chapterFifteenManilaClawsLightExpansion.ts",\n', '  "chapterFifteenManilaClawsLightExpansion.ts",\n  "chapterFifteenBattleChilePartOneExpansion.ts",\n')
+
+          path = "src/ui/data/filmScenarios.ts"
+          replace_once(path, 'import { mergeChapterFifteenManilaClawsLightExpansion } from "../../core/chapterFifteenManilaClawsLightExpansion.js";\n', 'import { mergeChapterFifteenManilaClawsLightExpansion } from "../../core/chapterFifteenManilaClawsLightExpansion.js";\nimport { mergeChapterFifteenBattleChilePartOneExpansion } from "../../core/chapterFifteenBattleChilePartOneExpansion.js";\n')
+          replace_once(path, 'const modernCanonScenarios = mergeModernCanonExpansion(chapterFifteenManilaClawsLightScenarios);', 'const chapterFifteenBattleChilePartOneScenarios = mergeChapterFifteenBattleChilePartOneExpansion(chapterFifteenManilaClawsLightScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterFifteenBattleChilePartOneScenarios);')
+          replace_once(path, '+manual_chapter_fifteen_manila_claws_light_expansion_2026+manual_modern_indie_asian_prize_expansion_2026', '+manual_chapter_fifteen_manila_claws_light_expansion_2026+manual_chapter_fifteen_battle_chile_part_one_expansion_2026+manual_modern_indie_asian_prize_expansion_2026')
+
+          path = "src/ui/data/scenarioFilmStudyMap.ts"
+          replace_once(path, 'import { manilaClawsLightFilmHistoryProfile } from "./scenarioFilmStudyNewHollywoodManilaClawsLight";\n', 'import { manilaClawsLightFilmHistoryProfile } from "./scenarioFilmStudyNewHollywoodManilaClawsLight";\nimport { battleChilePartOneFilmHistoryProfile } from "./scenarioFilmStudyNewHollywoodBattleChilePartOne";\n')
+          replace_once(path, '  [manilaClawsLightFilmHistoryProfile.scenarioId]: manilaClawsLightFilmHistoryProfile,\n', '  [manilaClawsLightFilmHistoryProfile.scenarioId]: manilaClawsLightFilmHistoryProfile,\n  [battleChilePartOneFilmHistoryProfile.scenarioId]: battleChilePartOneFilmHistoryProfile,\n')
+
+          path = "src/ui/data/scenarioProductionVerificationRegistry.ts"
+          replace_once(path, 'import { manilaClawsLightProductionCaseVerification } from "./scenarioProductionVerificationManilaClawsLight";\n', 'import { manilaClawsLightProductionCaseVerification } from "./scenarioProductionVerificationManilaClawsLight";\nimport { battleChilePartOneProductionCaseVerification } from "./scenarioProductionVerificationBattleChilePartOne";\n')
+          replace_once(path, '  manilaClawsLightProductionCaseVerification,\n', '  manilaClawsLightProductionCaseVerification,\n  battleChilePartOneProductionCaseVerification,\n')
+
+          for chapter in ("Twelve", "Thirteen", "Fourteen"):
+              path = f"src/core/filmHistoryChapter{chapter}AuditContract.test.ts"
+              p = Path(path)
+              text = p.read_text()
+              text2 = text.replace("EXPECTED_ATLAS_COUNT = 447", "EXPECTED_ATLAS_COUNT = 448")
+              text2 = text2.replace("resolved.atlas.expectedCount, 447", "resolved.atlas.expectedCount, 448")
+              text2 = text2.replace("resolved.atlas.actualCount, 447", "resolved.atlas.actualCount, 448")
+              if text2 == text:
+                  raise SystemExit(f"{path}: expected Atlas-count assertions not found")
+              p.write_text(text2)
+
+          path = "src/core/filmHistoryChapterFifteenAuditContract.test.ts"
+          p = Path(path)
+          text = p.read_text()
+          changes = [
+              ("EXPECTED_ATLAS_COUNT = 447", "EXPECTED_ATLAS_COUNT = 448"),
+              ("resolved.atlas.expectedCount, 447", "resolved.atlas.expectedCount, 448"),
+              ("resolved.atlas.actualCount, 447", "resolved.atlas.actualCount, 448"),
+              ('  "Manila in the Claws of Light",\n  "Cría cuervos",', '  "Manila in the Claws of Light",\n  "The Battle of Chile: Part I",\n  "Cría cuervos",'),
+              ('const exactP1Queue = ["The Battle of Chile: Part I"];', 'const exactP1Queue: string[] = [];'),
+              ('  assert.equal(byTitle.get("Manila in the Claws of Light")?.scenarioId, "scenario_manila_in_the_claws_of_light_1975");\n', '  assert.equal(byTitle.get("Manila in the Claws of Light")?.scenarioId, "scenario_manila_in_the_claws_of_light_1975");\n  assert.equal(byTitle.get("The Battle of Chile: Part I")?.scenarioId, "scenario_the_battle_of_chile_part_i_1975");\n'),
+          ]
+          for old, new in changes:
+              if old not in text:
+                  raise SystemExit(f"{path}: missing expected fragment {old!r}")
+              text = text.replace(old, new, 1)
+          p.write_text(text)
+          PY
+      - name: Regenerate Chapter 12-15 reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/film-history-chapter-twelve-atlas-audit.mjs --write=docs/film-history-chapter-twelve-atlas-resolved.json >/tmp/ch12.json
+          node scripts/film-history-chapter-thirteen-atlas-audit.mjs --write=docs/film-history-chapter-thirteen-atlas-resolved.json >/tmp/ch13.json
+          node scripts/film-history-chapter-fourteen-atlas-audit.mjs --write=docs/film-history-chapter-fourteen-atlas-resolved.json >/tmp/ch14.json
+          node scripts/film-history-chapter-fifteen-atlas-audit.mjs --write=docs/film-history-chapter-fifteen-atlas-resolved.json >/tmp/ch15.json
+          node -e 'const r=require("./docs/film-history-chapter-fifteen-atlas-resolved.json"); if(r.atlas.actualCount!==448) process.exit(1); if(r.byDecision.P0.length!==0) process.exit(2); if(r.byDecision.P1.length!==0) process.exit(3); if(r.recommendedNewProductionCases.length!==0) process.exit(4); const t=r.candidates.find(x=>x.title==="The Battle of Chile: Part I"); if(!t||t.scenarioId!=="scenario_the_battle_of_chile_part_i_1975"||t.decision!=="USE_EXISTING") process.exit(5);'
+      - name: Verify full v0.1
+        run: npm run verify:v0.1
+      - name: Commit integration and self-clean
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/ch15-battle-chile-materialize-once.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Materialize Battle of Chile Chapter 15 Production Case"
+          git push origin HEAD:agent/ch15-battle-chile-part-one-production-case
