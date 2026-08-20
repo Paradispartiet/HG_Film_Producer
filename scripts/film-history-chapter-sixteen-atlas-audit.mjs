@@ -69,7 +69,7 @@ const expansionFiles = [
 const candidates = [
   ["Raging Bull", "Raging Bull", 1980, [], "chapter_fifteen_handoff", "P2", "The late-New-Hollywood studio-auteur model is useful as a boundary comparison, but it does not alone define the new decade."],
   ["The Shining", "The Shining", 1980, [], "major_comparison", "P2", "Large-scale horror, Steadicam-era movement and long production control are useful comparisons without becoming the chapter's sole technology story."],
-  ["Mephisto", "Mephisto", 1981, [], "anchor_film", "P1", "Hungarian-West German-Austrian co-production, fascism, performance and Lajos Koltai's verified production system anchor European political cinema."],
+  ["Mephisto", "Mephisto", 1981, [], "anchor_film", "P1", "Hungarian-West German-Austrian co-production, fascism, performance and Lajos Koltai's production system makes Mephisto a useful European political-cinema gap candidate."],
   ["Raiders of the Lost Ark", "Raiders of the Lost Ark", 1981, [], "anchor_film", "P0", "Paramount, Lucasfilm, Spielberg, stunt/effects infrastructure and sequel-ready intellectual property make franchise-era studio coordination materially visible."],
   ["Missing", "Missing", 1982, [], "anchor_film", "P1", "Costa-Gavras, Universal/PolyGram-era finance, Mexico-for-Chile production and political investigation anchor transnational studio political cinema."],
   ["Blade Runner", "Blade Runner", 1982, [], "anchor_film", "P1", "Design, optical-effects labor, corporate finance and later version/home-media history make one title useful for separating original production from downstream recutting and canonization."],
