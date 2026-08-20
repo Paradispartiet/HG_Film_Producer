@@ -10,8 +10,8 @@
     "thesis": "Classical studio cinema was not a single style but an industrial coordination system: companies managed recurring genres, stars, departments, technologies, censorship and distribution at scale while individual productions negotiated those systems differently."
   },
   "atlas": {
-    "expectedCount": 447,
-    "actualCount": 447,
+    "expectedCount": 448,
+    "actualCount": 448,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -356,6 +356,14 @@
         "matchedExisting": 0,
         "status": "manual_chapter_fifteen_manila_claws_light_verified",
         "sourceListId": "manual_chapter_fifteen_manila_claws_light_expansion_2026"
+      },
+      {
+        "fileName": "chapterFifteenBattleChilePartOneExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_fifteen_battle_chile_part_one_verified",
+        "sourceListId": "manual_chapter_fifteen_battle_chile_part_one_expansion_2026"
       },
       {
         "fileName": "modernCanonExpansion.ts",

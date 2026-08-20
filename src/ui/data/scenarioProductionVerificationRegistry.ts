@@ -84,6 +84,7 @@ import { blackGirlProductionCaseVerification } from "./scenarioProductionVerific
 import { memoriesUnderdevelopmentProductionCaseVerification } from "./scenarioProductionVerificationMemoriesUnderdevelopment";
 import { toukiBoukiProductionCaseVerification } from "./scenarioProductionVerificationToukiBouki";
 import { manilaClawsLightProductionCaseVerification } from "./scenarioProductionVerificationManilaClawsLight";
+import { battleChilePartOneProductionCaseVerification } from "./scenarioProductionVerificationBattleChilePartOne";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -285,6 +286,7 @@ const additionalVerificationRecords = [
   memoriesUnderdevelopmentProductionCaseVerification,
   toukiBoukiProductionCaseVerification,
   manilaClawsLightProductionCaseVerification,
+  battleChilePartOneProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
