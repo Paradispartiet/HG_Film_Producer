@@ -89,6 +89,7 @@ import { raidersLostArkProductionCaseVerification } from "./scenarioProductionVe
 import { yellowEarthProductionCaseVerification } from "./scenarioProductionVerificationYellowEarth";
 import { myBeautifulLaundretteProductionCaseVerification } from "./scenarioProductionVerificationMyBeautifulLaundrette";
 import { policeStoryProductionCaseVerification } from "./scenarioProductionVerificationPoliceStory";
+import { officialStoryProductionCaseVerification } from "./scenarioProductionVerificationOfficialStory";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -295,6 +296,7 @@ const additionalVerificationRecords = [
   yellowEarthProductionCaseVerification,
   myBeautifulLaundretteProductionCaseVerification,
   policeStoryProductionCaseVerification,
+  officialStoryProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

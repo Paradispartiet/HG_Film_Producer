@@ -66,6 +66,7 @@ import { raidersLostArkFilmHistoryProfile } from "./scenarioFilmStudyChapterSixt
 import { yellowEarthFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenYellowEarth";
 import { myBeautifulLaundretteFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenMyBeautifulLaundrette";
 import { policeStoryFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenPoliceStory";
+import { officialStoryFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenOfficialStory";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -158,6 +159,7 @@ const sourceBackedFilmHistoryProfiles = {
   [yellowEarthFilmHistoryProfile.scenarioId]: yellowEarthFilmHistoryProfile,
   [myBeautifulLaundretteFilmHistoryProfile.scenarioId]: myBeautifulLaundretteFilmHistoryProfile,
   [policeStoryFilmHistoryProfile.scenarioId]: policeStoryFilmHistoryProfile,
+  [officialStoryFilmHistoryProfile.scenarioId]: officialStoryFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
