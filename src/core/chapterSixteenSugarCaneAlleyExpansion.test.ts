@@ -24,10 +24,12 @@ test("Chapter 16 materializes Sugar Cane Alley as a source-first Martinican colo
   assert.ok(film.premise.includes("specially composed") && film.premise.includes("traditional workers' songs"));
   assert.ok(film.premise.includes("4,000 children") && film.premise.includes("filmmaker testimony"));
   assert.ok(film.premise.includes("103 minutes") && film.premise.includes("106") && film.premise.includes("107"));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("Truffaut") && goal.includes("mentor") && goal.includes("authorship")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("Truffaut") && goal.includes("mentorship") && goal.includes("credited adaptation")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("flat conventional period imagery") && goal.includes("sepia")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("camera model") && goal.includes("lens package") && goal.includes("stock emulsion number")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("103/106/107-minute") && goal.includes("catalog")));
+  const development = film.phases.find((phase) => phase.id === "development");
+  assert.ok(development?.player_task.includes("Truffaut") && development.player_task.includes("authorship"));
   const financing = film.phases.find((phase) => phase.id === "financing");
   assert.ok(financing?.player_task.includes("CNC") && financing.player_task.includes("Martinican institutional backing") && financing.player_task.includes("unsupported financing shares"));
   const cinematography = film.phases.find((phase) => phase.id === "cinematography");
