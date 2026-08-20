@@ -16,6 +16,7 @@ test("Chapter 16 materializes The Official Story as the Argentine democratic-tra
   assert.ok(film.premise.includes("3 April 1985"));
   assert.ok(film.premise.includes("two or three weeks") && film.premise.includes("resumed secretly"));
   assert.ok(film.premise.includes("not afraid of censors"));
+  assert.ok(film.premise.includes("film-specific production history") && film.premise.includes("not as a repeatable clandestine workflow"));
   assert.ok(film.premise.includes("110 minutes") && film.premise.includes("112- and 114-minute"));
   assert.ok(film.learningGoals.some((goal) => goal.includes("formal censorship") && goal.includes("Analía Castro")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("secret restart") && goal.includes("not as a safe or repeatable")));
