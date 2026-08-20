@@ -10,8 +10,8 @@
     "thesis": "The 1980s cannot be explained as blockbuster excess followed by an indie correction. Franchise coordination, conglomerate finance, home video and cable, effects and sound specialization, public/broadcast funding, regional independent production, political transition and several distinct global new-cinema formations reorganized who could make films, how they circulated and which versions later became canonical."
   },
   "atlas": {
-    "expectedCount": 450,
-    "actualCount": 450,
+    "expectedCount": 451,
+    "actualCount": 451,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -290,6 +290,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSixteenMyBeautifulLaundretteExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -358,7 +364,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 450
+    "literalVerifiedScenarioIds": 451
   },
   "candidates": [
     {
@@ -607,11 +613,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Channel 4 finance, television/cinema windowing, queer British-Asian authorship and Thatcher-era production make broadcaster-backed independent cinema indispensable.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_my_beautiful_laundrette_1985",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSixteenMyBeautifulLaundretteExpansion.ts"
     },
     {
       "title": "Police Story",
@@ -889,6 +895,7 @@
       "Paris, Texas",
       "Yellow Earth",
       "Tampopo",
+      "My Beautiful Laundrette",
       "Down by Law",
       "Pelle the Conqueror",
       "Landscape in the Mist",
@@ -898,7 +905,6 @@
       "Black Rain"
     ],
     "P0": [
-      "My Beautiful Laundrette",
       "Police Story",
       "The Official Story",
       "Yeelen",
@@ -932,7 +938,6 @@
     "Sugar Cane Alley",
     "The Terminator",
     "Come and See",
-    "My Beautiful Laundrette",
     "Police Story",
     "The Official Story",
     "Back to the Future",
