@@ -197,3 +197,5 @@ jobs:
           git diff --cached --check
           git commit -m "Materialize Blade Runner Chapter 16 Production Case"
           git push origin HEAD:agent/ch16-blade-runner-production-case
+
+# retrigger 2026-08-20
