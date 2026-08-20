@@ -1,0 +1,43 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+
+import { chapterSixteenSugarCaneAlleyExpansionDefinitions } from "./chapterSixteenSugarCaneAlleyExpansion.js";
+
+test("Chapter 16 materializes Sugar Cane Alley as a source-first Martinican colonial-memory Production Case", () => {
+  assert.equal(chapterSixteenSugarCaneAlleyExpansionDefinitions.length, 1);
+  const film = chapterSixteenSugarCaneAlleyExpansionDefinitions[0];
+  assert.equal(film.id, "scenario_sugar_cane_alley_1983");
+  assert.equal(film.title, "Sugar Cane Alley");
+  assert.equal(film.originalTitle, "Rue Cases-Nègres");
+  assert.equal(film.year, 1983);
+  assert.equal(film.runtimeMins, 103);
+  assert.deepEqual(film.directors, ["Euzhan Palcy"]);
+  assert.equal(film.sourceId, "cnc_rue_cases_negres_1983");
+  assert.ok(film.scenarioType.includes("martinique") && film.scenarioType.includes("35mm_fujicolor"));
+  assert.ok(film.premise.includes("Joseph Zobel") && film.premise.includes("François Truffaut") && film.premise.includes("Aimé Césaire"));
+  assert.ok(film.premise.includes("Sumafa Productions") && film.premise.includes("Orca Productions") && film.premise.includes("Nouvelles Éditions de Films"));
+  assert.ok(film.premise.includes("Martinique") && film.premise.includes("Fort-de-France") && film.premise.includes("1930–31"));
+  assert.ok(film.premise.includes("Dominique Chapuis") && film.premise.includes("Marie-Josèphe Yoyotte") && film.premise.includes("Thanh/At Hoang") && film.premise.includes("Isabelle Filleul"));
+  assert.ok(film.premise.includes("35mm Fujicolor") && film.premise.includes("French and Creole"));
+  assert.ok(film.premise.includes("rejected both flat conventional period imagery and sepia nostalgia") && film.premise.includes("grading"));
+  assert.ok(film.premise.includes("wood-aging and patina") && film.premise.includes("fabrics and colors"));
+  assert.ok(film.premise.includes("specially composed") && film.premise.includes("traditional workers' songs"));
+  assert.ok(film.premise.includes("4,000 children") && film.premise.includes("filmmaker testimony"));
+  assert.ok(film.premise.includes("103 minutes") && film.premise.includes("106") && film.premise.includes("107"));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("Truffaut") && goal.includes("mentorship") && goal.includes("credited adaptation")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("flat conventional period imagery") && goal.includes("sepia")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("camera model") && goal.includes("lens package") && goal.includes("stock emulsion number")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("103/106/107-minute") && goal.includes("catalog")));
+  const development = film.phases.find((phase) => phase.id === "development");
+  assert.ok(development?.player_task.includes("Truffaut") && development.player_task.includes("authorship"));
+  const financing = film.phases.find((phase) => phase.id === "financing");
+  assert.ok(financing?.player_task.includes("CNC") && financing.player_task.includes("Martinican institutional backing") && financing.player_task.includes("unsupported financing shares"));
+  const cinematography = film.phases.find((phase) => phase.id === "cinematography");
+  assert.ok(cinematography?.player_task.includes("35mm Fujicolor") && cinematography.player_task.includes("unsupported camera, lens, stock-number or exposure claims"));
+  const design = film.phases.find((phase) => phase.id === "design_costume");
+  assert.ok(design?.player_task.includes("patina") && design.player_task.includes("fabrics/colors"));
+  assert.ok(film.requiredChoicesSeed.camera.includes("no_invented_camera_lens_stock_number_or_exposure_recipe"));
+  assert.ok(film.requiredChoicesSeed.sound.includes("no_invented_recorder_microphone_or_mix_hardware"));
+  assert.ok(film.learningGoals.length >= 15);
+  assert.ok(film.phases.length >= 10);
+});

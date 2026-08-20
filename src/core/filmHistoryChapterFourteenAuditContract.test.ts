@@ -52,13 +52,13 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 14 audit locks the New Waves-modernism-decolonization Atlas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 459;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 460;/);
   assert.equal(resolved.chapter.number, 14);
   assert.equal(resolved.chapter.id, "new-waves-modernism-decolonization");
   assert.equal(resolved.chapter.title, "New Waves, modernism and decolonization");
   assert.equal(resolved.chapter.period, "1959–1968");
-  assert.equal(resolved.atlas.expectedCount, 459);
-  assert.equal(resolved.atlas.actualCount, 459);
+  assert.equal(resolved.atlas.expectedCount, 460);
+  assert.equal(resolved.atlas.actualCount, 460);
   assert.equal(resolved.candidates.length, 18);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
   assert.deepEqual(resolved.byDecision.P0, exactP0Queue);

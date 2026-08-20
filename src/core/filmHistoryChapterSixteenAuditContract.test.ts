@@ -25,6 +25,7 @@ const exactExisting = [
   "E.T. the Extra-Terrestrial",
   "Rumble Fish",
   "The Ballad of Narayama",
+  "Sugar Cane Alley",
   "Blood Simple",
   "Paris, Texas",
   "Yellow Earth",
@@ -44,7 +45,6 @@ const exactExisting = [
 ];
 const exactP0Queue: string[] = [];
 const exactP1Queue = [
-  "Sugar Cane Alley",
   "The Terminator",
   "Come and See",
   "Back to the Future",
@@ -68,14 +68,14 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 16 audit locks the 1980s franchise-video-global-new-cinemas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 459;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 460;/);
   assert.equal(resolved.chapter.number, 16);
   assert.equal(resolved.chapter.id, "franchise-video-global-new-cinemas");
   assert.equal(resolved.chapter.title, "Franchise consolidation, video and global new cinemas");
   assert.equal(resolved.chapter.period, "1980–1989");
-  assert.equal(resolved.atlas.expectedCount, 459);
-  assert.equal(resolved.atlas.actualCount, 459);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 459);
+  assert.equal(resolved.atlas.expectedCount, 460);
+  assert.equal(resolved.atlas.actualCount, 460);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 460);
 });
 
 test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
@@ -85,7 +85,6 @@ test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
   assert.deepEqual(resolved.byDecision.P2, ["Raging Bull"]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
   assert.deepEqual(resolved.recommendedNewProductionCases, [
-    "Sugar Cane Alley",
     "The Terminator",
     "Come and See",
     "Back to the Future",
@@ -106,6 +105,7 @@ test("Chapter 16 existing anchors resolve to exact verified scenario IDs", () =>
     "Missing": "scenario_missing_1982",
     "Blade Runner": "scenario_blade_runner_1982",
     "E.T. the Extra-Terrestrial": "scenario_et_the_extra_terrestrial_1982",
+    "Sugar Cane Alley": "scenario_sugar_cane_alley_1983",
     "Rumble Fish": "scenario_rumble_fish_1983",
     "The Ballad of Narayama": "scenario_the_ballad_of_narayama_1983",
     "Blood Simple": "scenario_blood_simple_1984",
