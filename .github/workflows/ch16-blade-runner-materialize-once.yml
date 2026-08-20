@@ -1,0 +1,199 @@
+name: TEMP Materialize Blade Runner Chapter 16
+
+on:
+  push:
+    branches:
+      - agent/ch16-blade-runner-production-case
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: agent/ch16-blade-runner-production-case
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Integrate Blade Runner permanently
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          def read(path): return Path(path).read_text()
+          def write(path, text): Path(path).write_text(text)
+          def replace_once(text, old, new, label):
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"{label}: expected exactly one match, found {count}")
+              return text.replace(old, new, 1)
+
+          path = "src/ui/data/filmScenarios.ts"
+          text = read(path)
+          text = replace_once(text,
+              'import { mergeChapterSixteenMissingExpansion } from "../../core/chapterSixteenMissingExpansion.js";\n',
+              'import { mergeChapterSixteenMissingExpansion } from "../../core/chapterSixteenMissingExpansion.js";\nimport { mergeChapterSixteenBladeRunnerExpansion } from "../../core/chapterSixteenBladeRunnerExpansion.js";\n',
+              "filmScenarios import")
+          text = replace_once(text,
+              'const chapterSixteenMissingScenarios = mergeChapterSixteenMissingExpansion(chapterSixteenMephistoScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSixteenMissingScenarios);',
+              'const chapterSixteenMissingScenarios = mergeChapterSixteenMissingExpansion(chapterSixteenMephistoScenarios);\nconst chapterSixteenBladeRunnerScenarios = mergeChapterSixteenBladeRunnerExpansion(chapterSixteenMissingScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSixteenBladeRunnerScenarios);',
+              "filmScenarios merge chain")
+          text = replace_once(text,
+              '+manual_chapter_sixteen_missing_expansion_2026',
+              '+manual_chapter_sixteen_missing_expansion_2026+manual_chapter_sixteen_blade_runner_expansion_2026',
+              "filmScenarios source list")
+          write(path, text)
+
+          path = "src/ui/data/scenarioFilmStudyMap.ts"
+          text = read(path)
+          text = replace_once(text,
+              'import { missingFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenMissing";\n',
+              'import { missingFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenMissing";\nimport { bladeRunnerFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenBladeRunner";\n',
+              "Film Study import")
+          text = replace_once(text,
+              '  [missingFilmHistoryProfile.scenarioId]: missingFilmHistoryProfile,\n',
+              '  [missingFilmHistoryProfile.scenarioId]: missingFilmHistoryProfile,\n  [bladeRunnerFilmHistoryProfile.scenarioId]: bladeRunnerFilmHistoryProfile,\n',
+              "Film Study map")
+          write(path, text)
+
+          path = "src/ui/data/scenarioProductionVerificationRegistry.ts"
+          text = read(path)
+          text = replace_once(text,
+              'import { missingProductionCaseVerification } from "./scenarioProductionVerificationMissing";\n',
+              'import { missingProductionCaseVerification } from "./scenarioProductionVerificationMissing";\nimport { bladeRunnerProductionCaseVerification } from "./scenarioProductionVerificationBladeRunner";\n',
+              "verification import")
+          text = replace_once(text,
+              '  missingProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,',
+              '  missingProductionCaseVerification,\n  bladeRunnerProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,',
+              "verification registry")
+          write(path, text)
+
+          atlas_scripts = [
+              "scripts/film-history-chapter-twelve-atlas-audit.mjs",
+              "scripts/film-history-chapter-thirteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fourteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fifteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-sixteen-atlas-audit.mjs",
+          ]
+          for path in atlas_scripts:
+              text = read(path)
+              text = replace_once(text, "const EXPECTED_ATLAS_COUNT = 457;", "const EXPECTED_ATLAS_COUNT = 458;", f"{path} count")
+              text = replace_once(text,
+                  '  "chapterSixteenMissingExpansion.ts",\n',
+                  '  "chapterSixteenMissingExpansion.ts",\n  "chapterSixteenBladeRunnerExpansion.ts",\n',
+                  f"{path} expansion")
+              write(path, text)
+
+          path = "scripts/production-case-rest-audit.mjs"
+          text = read(path)
+          text = replace_once(text, "const EXPECTED_PLAYABLE_SCENARIOS = 457;", "const EXPECTED_PLAYABLE_SCENARIOS = 458;", "production playable")
+          text = replace_once(text, "const EXPECTED_VERIFIED_PRODUCTION_CASES = 457;", "const EXPECTED_VERIFIED_PRODUCTION_CASES = 458;", "production verified")
+          text = replace_once(text,
+              '  "chapterSixteenMissingExpansion.ts",\n',
+              '  "chapterSixteenMissingExpansion.ts",\n  "chapterSixteenBladeRunnerExpansion.ts",\n',
+              "production expansion")
+          write(path, text)
+
+          for path in [
+              "src/core/filmHistoryChapterTwelveAuditContract.test.ts",
+              "src/core/filmHistoryChapterThirteenAuditContract.test.ts",
+              "src/core/filmHistoryChapterFourteenAuditContract.test.ts",
+              "src/core/filmHistoryChapterFifteenAuditContract.test.ts",
+          ]:
+              text = read(path)
+              if text.count("457") < 3:
+                  raise SystemExit(f"{path}: missing 457 count locks")
+              write(path, text.replace("457", "458"))
+
+          path = "src/core/filmHistoryChapterSixteenAuditContract.test.ts"
+          text = read(path)
+          if text.count("457") < 4:
+              raise SystemExit("Chapter 16 contract missing 457 count locks")
+          text = text.replace("457", "458")
+          text = replace_once(text,
+              '  "Missing",\n  "Rumble Fish",',
+              '  "Missing",\n  "Blade Runner",\n  "Rumble Fish",',
+              "Chapter 16 existing queue")
+          text = replace_once(text,
+              'const exactP1Queue = [\n  "Blade Runner",\n',
+              'const exactP1Queue = [\n',
+              "Chapter 16 P1 removal")
+          text = replace_once(text,
+              '    "Blade Runner",\n',
+              '',
+              "Chapter 16 recommended removal")
+          text = replace_once(text,
+              '    "Missing": "scenario_missing_1982",\n    "Rumble Fish":',
+              '    "Missing": "scenario_missing_1982",\n    "Blade Runner": "scenario_blade_runner_1982",\n    "Rumble Fish":',
+              "Chapter 16 exact ID")
+          write(path, text)
+          PY
+
+      - name: Regenerate Chapter 12-16 Atlas reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/film-history-chapter-twelve-atlas-audit.mjs --write=docs/film-history-chapter-twelve-atlas-resolved.json
+          node scripts/film-history-chapter-thirteen-atlas-audit.mjs --write=docs/film-history-chapter-thirteen-atlas-resolved.json
+          node scripts/film-history-chapter-fourteen-atlas-audit.mjs --write=docs/film-history-chapter-fourteen-atlas-resolved.json
+          node scripts/film-history-chapter-fifteen-atlas-audit.mjs --write=docs/film-history-chapter-fifteen-atlas-resolved.json
+          node scripts/film-history-chapter-sixteen-atlas-audit.mjs --write=docs/film-history-chapter-sixteen-atlas-resolved.json
+
+      - name: Assert canonical Blade Runner result
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const report = JSON.parse(readFileSync('docs/film-history-chapter-sixteen-atlas-resolved.json', 'utf8'));
+          if (report.atlas.expectedCount !== 458 || report.atlas.actualCount !== 458) throw new Error(`Atlas ${report.atlas.expectedCount}/${report.atlas.actualCount}`);
+          if (report.verificationIndex.literalVerifiedScenarioIds !== 458) throw new Error(`Verification ${report.verificationIndex.literalVerifiedScenarioIds}`);
+          const film = report.candidates.find((item) => item.title === 'Blade Runner');
+          if (!film || film.decision !== 'USE_EXISTING' || film.scenarioId !== 'scenario_blade_runner_1982' || film.productionVerified !== true) throw new Error(`Blade Runner resolution ${JSON.stringify(film)}`);
+          if (report.byDecision.P0.length !== 0) throw new Error(`P0 ${JSON.stringify(report.byDecision.P0)}`);
+          const p1 = ['E.T. the Extra-Terrestrial','Sugar Cane Alley','The Terminator','Come and See','Back to the Future','Aliens',"She's Gotta Have It",'A Better Tomorrow','RoboCop','Salaam Bombay!'];
+          if (JSON.stringify(report.byDecision.P1) !== JSON.stringify(p1)) throw new Error(`P1 ${JSON.stringify(report.byDecision.P1)}`);
+          NODE
+
+      - name: Verify full v0.1
+        run: npm run verify:v0.1
+
+      - name: Commit permanent integration and self-clean
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rm .github/workflows/ch16-blade-runner-materialize-once.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            docs/film-history-chapter-twelve-atlas-resolved.json \
+            docs/film-history-chapter-thirteen-atlas-resolved.json \
+            docs/film-history-chapter-fourteen-atlas-resolved.json \
+            docs/film-history-chapter-fifteen-atlas-resolved.json \
+            docs/film-history-chapter-sixteen-atlas-resolved.json \
+            scripts/film-history-chapter-twelve-atlas-audit.mjs \
+            scripts/film-history-chapter-thirteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fourteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fifteen-atlas-audit.mjs \
+            scripts/film-history-chapter-sixteen-atlas-audit.mjs \
+            scripts/production-case-rest-audit.mjs \
+            src/core/filmHistoryChapterTwelveAuditContract.test.ts \
+            src/core/filmHistoryChapterThirteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFourteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFifteenAuditContract.test.ts \
+            src/core/filmHistoryChapterSixteenAuditContract.test.ts \
+            src/ui/data/filmScenarios.ts \
+            src/ui/data/scenarioFilmStudyMap.ts \
+            src/ui/data/scenarioProductionVerificationRegistry.ts
+          git diff --cached --check
+          git commit -m "Materialize Blade Runner Chapter 16 Production Case"
+          git push origin HEAD:agent/ch16-blade-runner-production-case
