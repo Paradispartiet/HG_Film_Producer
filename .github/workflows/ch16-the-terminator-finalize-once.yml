@@ -1,0 +1,196 @@
+name: TEMP Finalize The Terminator Chapter 16
+
+on:
+  push:
+    branches:
+      - agent/ch16-the-terminator-production-case
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: agent/ch16-the-terminator-production-case
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Materialize The Terminator permanently
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          def read(path): return Path(path).read_text()
+          def write(path, text): Path(path).write_text(text)
+          def replace_once(text, old, new, label):
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"{label}: expected exactly one match, found {count}")
+              return text.replace(old, new, 1)
+
+          path = "src/ui/data/filmScenarios.ts"
+          text = read(path)
+          text = replace_once(text,
+              'import { mergeChapterSixteenSugarCaneAlleyExpansion } from "../../core/chapterSixteenSugarCaneAlleyExpansion.js";\n',
+              'import { mergeChapterSixteenSugarCaneAlleyExpansion } from "../../core/chapterSixteenSugarCaneAlleyExpansion.js";\nimport { mergeChapterSixteenTerminatorExpansion } from "../../core/chapterSixteenTerminatorExpansion.js";\n',
+              "filmScenarios import")
+          text = replace_once(text,
+              'const chapterSixteenSugarCaneAlleyScenarios = mergeChapterSixteenSugarCaneAlleyExpansion(chapterSixteenETExtraTerrestrialScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSixteenSugarCaneAlleyScenarios);',
+              'const chapterSixteenSugarCaneAlleyScenarios = mergeChapterSixteenSugarCaneAlleyExpansion(chapterSixteenETExtraTerrestrialScenarios);\nconst chapterSixteenTerminatorScenarios = mergeChapterSixteenTerminatorExpansion(chapterSixteenSugarCaneAlleyScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSixteenTerminatorScenarios);',
+              "filmScenarios chain")
+          text = replace_once(text,
+              '+manual_chapter_sixteen_sugar_cane_alley_expansion_2026',
+              '+manual_chapter_sixteen_sugar_cane_alley_expansion_2026+manual_chapter_sixteen_terminator_expansion_2026',
+              "filmScenarios source list")
+          write(path, text)
+
+          path = "src/ui/data/scenarioFilmStudyMap.ts"
+          text = read(path)
+          text = replace_once(text,
+              'import { sugarCaneAlleyFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenSugarCaneAlley";\n',
+              'import { sugarCaneAlleyFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenSugarCaneAlley";\nimport { terminatorFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenTerminator";\n',
+              "Film Study import")
+          text = replace_once(text,
+              '  [sugarCaneAlleyFilmHistoryProfile.scenarioId]: sugarCaneAlleyFilmHistoryProfile,\n',
+              '  [sugarCaneAlleyFilmHistoryProfile.scenarioId]: sugarCaneAlleyFilmHistoryProfile,\n  [terminatorFilmHistoryProfile.scenarioId]: terminatorFilmHistoryProfile,\n',
+              "Film Study map")
+          write(path, text)
+
+          path = "src/ui/data/scenarioProductionVerificationRegistry.ts"
+          text = read(path)
+          text = replace_once(text,
+              'import { sugarCaneAlleyProductionCaseVerification } from "./scenarioProductionVerificationSugarCaneAlley";\n',
+              'import { sugarCaneAlleyProductionCaseVerification } from "./scenarioProductionVerificationSugarCaneAlley";\nimport { terminatorProductionCaseVerification } from "./scenarioProductionVerificationTerminator";\n',
+              "verification import")
+          text = replace_once(text,
+              '  sugarCaneAlleyProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,',
+              '  sugarCaneAlleyProductionCaseVerification,\n  terminatorProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,',
+              "verification registry")
+          write(path, text)
+
+          atlas_scripts = [
+              "scripts/film-history-chapter-twelve-atlas-audit.mjs",
+              "scripts/film-history-chapter-thirteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fourteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fifteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-sixteen-atlas-audit.mjs",
+          ]
+          for path in atlas_scripts:
+              text = read(path)
+              text = replace_once(text, "const EXPECTED_ATLAS_COUNT = 460;", "const EXPECTED_ATLAS_COUNT = 461;", f"{path} count")
+              text = replace_once(text,
+                  '  "chapterSixteenSugarCaneAlleyExpansion.ts",\n',
+                  '  "chapterSixteenSugarCaneAlleyExpansion.ts",\n  "chapterSixteenTerminatorExpansion.ts",\n',
+                  f"{path} expansion")
+              write(path, text)
+
+          path = "scripts/production-case-rest-audit.mjs"
+          text = read(path)
+          text = replace_once(text, "const EXPECTED_PLAYABLE_SCENARIOS = 460;", "const EXPECTED_PLAYABLE_SCENARIOS = 461;", "production playable")
+          text = replace_once(text, "const EXPECTED_VERIFIED_PRODUCTION_CASES = 460;", "const EXPECTED_VERIFIED_PRODUCTION_CASES = 461;", "production verified")
+          text = replace_once(text,
+              '  "chapterSixteenSugarCaneAlleyExpansion.ts",\n',
+              '  "chapterSixteenSugarCaneAlleyExpansion.ts",\n  "chapterSixteenTerminatorExpansion.ts",\n',
+              "production expansion")
+          write(path, text)
+
+          for path in [
+              "src/core/filmHistoryChapterTwelveAuditContract.test.ts",
+              "src/core/filmHistoryChapterThirteenAuditContract.test.ts",
+              "src/core/filmHistoryChapterFourteenAuditContract.test.ts",
+              "src/core/filmHistoryChapterFifteenAuditContract.test.ts",
+          ]:
+              text = read(path)
+              if text.count("460") < 3:
+                  raise SystemExit(f"{path}: missing 460 count locks")
+              write(path, text.replace("460", "461"))
+
+          path = "src/core/filmHistoryChapterSixteenAuditContract.test.ts"
+          text = read(path)
+          if text.count("460") < 4:
+              raise SystemExit("Chapter 16 contract missing 460 count locks")
+          text = text.replace("460", "461")
+          text = replace_once(text,
+              '  "Yellow Earth",\n  "Tampopo",',
+              '  "Yellow Earth",\n  "The Terminator",\n  "Tampopo",',
+              "Chapter 16 existing")
+          text = replace_once(text,
+              'const exactP1Queue = [\n  "The Terminator",\n',
+              'const exactP1Queue = [\n',
+              "Chapter 16 P1")
+          text = replace_once(text,
+              '    "The Terminator",\n',
+              '',
+              "Chapter 16 recommended")
+          text = replace_once(text,
+              '    "Yellow Earth": "scenario_yellow_earth_1984",\n    "Tampopo":',
+              '    "Yellow Earth": "scenario_yellow_earth_1984",\n    "The Terminator": "scenario_the_terminator_1984",\n    "Tampopo":',
+              "Chapter 16 exact ID")
+          write(path, text)
+          PY
+
+      - name: Regenerate Chapter 12-16 Atlas reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/film-history-chapter-twelve-atlas-audit.mjs --write=docs/film-history-chapter-twelve-atlas-resolved.json
+          node scripts/film-history-chapter-thirteen-atlas-audit.mjs --write=docs/film-history-chapter-thirteen-atlas-resolved.json
+          node scripts/film-history-chapter-fourteen-atlas-audit.mjs --write=docs/film-history-chapter-fourteen-atlas-resolved.json
+          node scripts/film-history-chapter-fifteen-atlas-audit.mjs --write=docs/film-history-chapter-fifteen-atlas-resolved.json
+          node scripts/film-history-chapter-sixteen-atlas-audit.mjs --write=docs/film-history-chapter-sixteen-atlas-resolved.json
+
+      - name: Assert canonical The Terminator result
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const report = JSON.parse(readFileSync('docs/film-history-chapter-sixteen-atlas-resolved.json', 'utf8'));
+          if (report.atlas.expectedCount !== 461 || report.atlas.actualCount !== 461) throw new Error(`Atlas ${report.atlas.expectedCount}/${report.atlas.actualCount}`);
+          if (report.verificationIndex.literalVerifiedScenarioIds !== 461) throw new Error(`Verification ${report.verificationIndex.literalVerifiedScenarioIds}`);
+          const film = report.candidates.find((item) => item.title === 'The Terminator');
+          if (!film || film.decision !== 'USE_EXISTING' || film.scenarioId !== 'scenario_the_terminator_1984' || film.productionVerified !== true) throw new Error(`The Terminator ${JSON.stringify(film)}`);
+          if (report.byDecision.P0.length !== 0) throw new Error(`P0 ${JSON.stringify(report.byDecision.P0)}`);
+          const p1 = ['Come and See','Back to the Future','Aliens',"She's Gotta Have It",'A Better Tomorrow','RoboCop','Salaam Bombay!'];
+          if (JSON.stringify(report.byDecision.P1) !== JSON.stringify(p1)) throw new Error(`P1 ${JSON.stringify(report.byDecision.P1)}`);
+          NODE
+
+      - name: Commit permanent state and self-clean
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rm .github/workflows/ch16-the-terminator-finalize-once.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            docs/film-history-chapter-twelve-atlas-resolved.json \
+            docs/film-history-chapter-thirteen-atlas-resolved.json \
+            docs/film-history-chapter-fourteen-atlas-resolved.json \
+            docs/film-history-chapter-fifteen-atlas-resolved.json \
+            docs/film-history-chapter-sixteen-atlas-resolved.json \
+            scripts/film-history-chapter-twelve-atlas-audit.mjs \
+            scripts/film-history-chapter-thirteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fourteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fifteen-atlas-audit.mjs \
+            scripts/film-history-chapter-sixteen-atlas-audit.mjs \
+            scripts/production-case-rest-audit.mjs \
+            src/core/filmHistoryChapterTwelveAuditContract.test.ts \
+            src/core/filmHistoryChapterThirteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFourteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFifteenAuditContract.test.ts \
+            src/core/filmHistoryChapterSixteenAuditContract.test.ts \
+            src/ui/data/filmScenarios.ts \
+            src/ui/data/scenarioFilmStudyMap.ts \
+            src/ui/data/scenarioProductionVerificationRegistry.ts
+          git diff --cached --check
+          git commit -m "Materialize The Terminator Chapter 16 Production Case"
+          git push origin HEAD:agent/ch16-the-terminator-production-case
