@@ -96,6 +96,7 @@ import { mephistoProductionCaseVerification } from "./scenarioProductionVerifica
 import { missingProductionCaseVerification } from "./scenarioProductionVerificationMissing";
 import { bladeRunnerProductionCaseVerification } from "./scenarioProductionVerificationBladeRunner";
 import { etExtraTerrestrialProductionCaseVerification } from "./scenarioProductionVerificationETExtraTerrestrial";
+import { sugarCaneAlleyProductionCaseVerification } from "./scenarioProductionVerificationSugarCaneAlley";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -309,6 +310,7 @@ const additionalVerificationRecords = [
   missingProductionCaseVerification,
   bladeRunnerProductionCaseVerification,
   etExtraTerrestrialProductionCaseVerification,
+  sugarCaneAlleyProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
