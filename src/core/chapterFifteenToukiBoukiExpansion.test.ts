@@ -10,6 +10,8 @@ test("Chapter 15 materializes Touki Bouki as a Senegalese postcolonial-modernism
   assert.equal(film.year, 1973);
   assert.equal(film.runtimeMins, 88);
   assert.deepEqual(film.directors, ["Djibril Diop Mambéty"]);
+  assert.equal(film.sourceId, "film_foundation_touki_bouki_1973");
+  assert.ok(film.scenarioType.includes("senegalese_postcolonial_modernism"));
   assert.ok(film.premise.includes("Cinegrit"));
   assert.ok(film.premise.includes("Pap Samba Sow"));
   assert.ok(film.premise.includes("Georges Bracher"));
