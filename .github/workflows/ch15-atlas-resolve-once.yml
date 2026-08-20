@@ -1,0 +1,50 @@
+name: TEMP Resolve Chapter 15 Film History Atlas
+
+on:
+  push:
+    branches:
+      - agent/ch15-new-hollywood-political-blockbuster-atlas-audit
+
+permissions:
+  contents: write
+
+jobs:
+  resolve:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: agent/ch15-new-hollywood-political-blockbuster-atlas-audit
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Resolve Chapter 15 Atlas
+        run: node scripts/film-history-chapter-fifteen-atlas-audit.mjs --write=docs/film-history-chapter-fifteen-atlas-resolved.json
+
+      - name: Verify full v0.1
+        run: npm run verify:v0.1
+
+      - name: Commit resolved report and self-clean
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/ch15-atlas-resolve-once.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/film-history-chapter-fifteen-atlas-resolved.json .github/workflows/ch15-atlas-resolve-once.yml
+          if git diff --cached --quiet; then
+            echo "No resolver changes to commit"
+            exit 0
+          fi
+          git commit -m "Resolve Chapter 15 Film History Atlas audit"
+          git push origin HEAD:agent/ch15-new-hollywood-political-blockbuster-atlas-audit
