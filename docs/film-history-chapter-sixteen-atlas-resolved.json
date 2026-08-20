@@ -10,8 +10,8 @@
     "thesis": "The 1980s cannot be explained as blockbuster excess followed by an indie correction. Franchise coordination, conglomerate finance, home video and cable, effects and sound specialization, public/broadcast funding, regional independent production, political transition and several distinct global new-cinema formations reorganized who could make films, how they circulated and which versions later became canonical."
   },
   "atlas": {
-    "expectedCount": 449,
-    "actualCount": 449,
+    "expectedCount": 450,
+    "actualCount": 450,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -284,6 +284,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSixteenYellowEarthExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -352,7 +358,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 449
+    "literalVerifiedScenarioIds": 450
   },
   "candidates": [
     {
@@ -541,11 +547,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Chen Kaige and Fifth Generation production are indispensable to any account of Mainland Chinese cinema's institutional and aesthetic transformation.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_yellow_earth_1984",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSixteenYellowEarthExpansion.ts"
     },
     {
       "title": "The Terminator",
@@ -881,6 +887,7 @@
       "The Ballad of Narayama",
       "Blood Simple",
       "Paris, Texas",
+      "Yellow Earth",
       "Tampopo",
       "Down by Law",
       "Pelle the Conqueror",
@@ -891,7 +898,6 @@
       "Black Rain"
     ],
     "P0": [
-      "Yellow Earth",
       "My Beautiful Laundrette",
       "Police Story",
       "The Official Story",
@@ -924,7 +930,6 @@
     "Blade Runner",
     "E.T. the Extra-Terrestrial",
     "Sugar Cane Alley",
-    "Yellow Earth",
     "The Terminator",
     "Come and See",
     "My Beautiful Laundrette",
