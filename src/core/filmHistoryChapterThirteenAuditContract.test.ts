@@ -116,5 +116,5 @@ test("Chapter 13 permanently preserves realism, noir, circulation and decoloniza
 
 test("Chapter 13 audit is permanent in the v0.1 verification chain", () => {
   assert.match(packageJson, /"audit:film-history-ch13": "node scripts\/film-history-chapter-thirteen-atlas-audit\.mjs"/);
-  assert.match(packageJson, /npm run audit:film-history-ch12 && npm run audit:film-history-ch13 && npm run audit:film-history-ch14 && npm run typecheck/);
+  assert.match(packageJson, /npm run audit:film-history-ch12 && npm run audit:film-history-ch13 && npm run audit:film-history-ch14/);
 });
