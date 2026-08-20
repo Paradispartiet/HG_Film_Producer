@@ -16,7 +16,7 @@ test("Chapter 16 materializes Police Story as the Hong Kong commercial-action P0
   assert.ok(film.premise.includes("Jackie Chan Stunt Team"));
   assert.ok(film.premise.includes("multi-storey shopping mall"));
   assert.ok(film.premise.includes("100/101"));
-  assert.ok(film.premise.includes("historical risk evidence") && film.premise.includes("refusing to turn it into a repeatable production method"));
+  assert.ok(film.premise.includes("historical evidence of the production's risk culture") && film.premise.includes("refusing to turn it into a repeatable production method"));
   assert.ok(film.premise.includes("Modern production simulation must use safety engineering"));
   assert.ok(film.learningGoals.some((goal) => goal.includes("modern") && goal.includes("safety")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Mainland") && goal.includes("Taiwan")));
