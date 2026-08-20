@@ -1,0 +1,1090 @@
+{
+  "schemaVersion": "1.0",
+  "auditDate": "2026-08-20",
+  "chapter": {
+    "number": 16,
+    "id": "franchise-video-global-new-cinemas",
+    "title": "Franchise consolidation, video and global new cinemas",
+    "period": "1980–1989",
+    "scope": "Cinema across the 1980s as studio franchises and ancillary markets expand while broadcast-backed, independent, socialist, post-dictatorship, African and East Asian production systems create distinct alternatives and overlaps.",
+    "thesis": "The 1980s cannot be explained as blockbuster excess followed by an indie correction. Franchise coordination, conglomerate finance, home video and cable, effects and sound specialization, public/broadcast funding, regional independent production, political transition and several distinct global new-cinema formations reorganized who could make films, how they circulated and which versions later became canonical."
+  },
+  "atlas": {
+    "expectedCount": 448,
+    "actualCount": 448,
+    "expansionOrder": [
+      {
+        "fileName": "earlyCinemaExpansion.ts",
+        "definitions": 58,
+        "appended": 56,
+        "matchedExisting": 2
+      },
+      {
+        "fileName": "chapterOneEarlyCinemaExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterOneRescuedByRoverExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwoExhibitionExpansion.ts",
+        "definitions": 3,
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThreeNarrativeExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourIndustryExpansion.ts",
+        "definitions": 3,
+        "appended": 3,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFiveInternationalExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSixHollywoodExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterSevenWeimarExpansion.ts",
+        "definitions": 2,
+        "appended": 2,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterEightFrenchAvantGardeExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterNineSovietMontageExpansion.ts",
+        "definitions": 5,
+        "appended": 5,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTenSilentCinemasExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTenLaborersLoveExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTenAThrowOfDiceExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTenGrowthOfTheSoilExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTenOrochiExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTenRedHeroineExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTenHaxanExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterElevenJazzSingerExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterElevenBlackmailExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterElevenApplauseExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterElevenNeighborsWifeExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterElevenBroadwayMelodyExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterElevenSousLesToitsExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterElevenEnthusiasmExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterElevenBlueAngelExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwelvePublicEnemyExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwelveDraculaExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwelve42ndStreetExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwelveScarfaceExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwelveItHappenedOneNightExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwelveTopHatExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterTwelveGoneWithTheWindExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThirteenPaisanExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThirteenRedShoesExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThirteenSunsetBoulevardExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThirteenLosOlvidadosExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThirteenUgetsuExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterThirteenAManEscapedExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourteenBlackGirlExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFourteenMemoriesUnderdevelopmentExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFifteenToukiBoukiExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFifteenManilaClawsLightExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "chapterFifteenBattleChilePartOneExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "definitions": 27,
+        "appended": 27,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "definitions": 20,
+        "appended": 20,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "definitions": 22,
+        "appended": 15,
+        "matchedExisting": 7
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "definitions": 24,
+        "appended": 23,
+        "matchedExisting": 1
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "definitions": 28,
+        "appended": 25,
+        "matchedExisting": 3
+      }
+    ]
+  },
+  "verificationIndex": {
+    "literalVerifiedScenarioIds": 448
+  },
+  "candidates": [
+    {
+      "title": "Raging Bull",
+      "originalTitle": "Raging Bull",
+      "year": 1980,
+      "aliases": [],
+      "role": "chapter_fifteen_handoff",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "The late-New-Hollywood studio-auteur model is useful as a boundary comparison, but it does not alone define the new decade.",
+      "decision": "P2",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "The Shining",
+      "originalTitle": "The Shining",
+      "year": 1980,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Large-scale horror, Steadicam-era movement and long production control are useful comparisons without becoming the chapter's sole technology story.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_shining_1980",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "film_scenarios_seed.json"
+    },
+    {
+      "title": "Mephisto",
+      "originalTitle": "Mephisto",
+      "year": 1981,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Hungarian-West German-Austrian co-production, fascism, performance and Lajos Koltai's verified production system anchor European political cinema.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "Raiders of the Lost Ark",
+      "originalTitle": "Raiders of the Lost Ark",
+      "year": 1981,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Paramount, Lucasfilm, Spielberg, stunt/effects infrastructure and sequel-ready intellectual property make franchise-era studio coordination materially visible.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "Missing",
+      "originalTitle": "Missing",
+      "year": 1982,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Costa-Gavras, Universal/PolyGram-era finance, Mexico-for-Chile production and political investigation anchor transnational studio political cinema.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "Blade Runner",
+      "originalTitle": "Blade Runner",
+      "year": 1982,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Design, optical-effects labor, corporate finance and later version/home-media history make one title useful for separating original production from downstream recutting and canonization.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "E.T. the Extra-Terrestrial",
+      "originalTitle": "E.T. the Extra-Terrestrial",
+      "year": 1982,
+      "aliases": [
+        "E.T.",
+        "E.T. the Extra Terrestrial"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Family blockbuster scale, Amblin/Universal production, effects, music, licensing and unusually managed home-video afterlife broaden the blockbuster system beyond action franchises.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "Rumble Fish",
+      "originalTitle": "Rumble Fish",
+      "year": 1983,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Coppola's verified Tulsa production, electronic rehearsal, expressive black-and-white craft and studio distribution preserve an auteur-industrial countercurrent.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_rumble_fish_1983",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "film_scenarios_seed.json"
+    },
+    {
+      "title": "The Ballad of Narayama",
+      "originalTitle": "Narayama bushikō",
+      "year": 1983,
+      "aliases": [
+        "Narayama Bushiko"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Imamura's Japanese production and Cannes circulation offer a stronger 1980s national-industry countercase than treating Japan only through late Kurosawa exports.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_ballad_of_narayama_1983",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "festivalWinners1981To2009Expansion.ts"
+    },
+    {
+      "title": "Sugar Cane Alley",
+      "originalTitle": "Rue Cases-Nègres",
+      "year": 1983,
+      "aliases": [
+        "Rue Cases Negres",
+        "Sugar Cane Alley"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Euzhan Palcy's Martinique-France production connects colonial memory, literary adaptation, Black authorship and international circulation.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "Blood Simple",
+      "originalTitle": "Blood Simple",
+      "year": 1984,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "River Road, Texas locations, Sundance and verified department craft anchor the emerging American independent-specialty ecology.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_blood_simple_1984",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "priorityIndieExpansion.ts"
+    },
+    {
+      "title": "Paris, Texas",
+      "originalTitle": "Paris, Texas",
+      "year": 1984,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Road Movies/Argos, Robby Müller, transatlantic finance and Cannes circulation make co-production and art-cinema distribution concrete.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_paris_texas_1984",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "film_scenarios_seed.json"
+    },
+    {
+      "title": "Yellow Earth",
+      "originalTitle": "Huang tu di",
+      "year": 1984,
+      "aliases": [
+        "Huang Tudi"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Chen Kaige and Fifth Generation production are indispensable to any account of Mainland Chinese cinema's institutional and aesthetic transformation.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "The Terminator",
+      "originalTitle": "The Terminator",
+      "year": 1984,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Independent financing, practical/optical effects and later franchise expansion make a useful bridge between resourcefulness and scalable intellectual property.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "Come and See",
+      "originalTitle": "Idi i smotri",
+      "year": 1985,
+      "aliases": [
+        "Idi i smotri"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Belarusfilm/Mosfilm, large-scale destruction, handheld optics and Soviet war memory anchor state-studio political production.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "Tampopo",
+      "originalTitle": "Tanpopo",
+      "year": 1985,
+      "aliases": [
+        "Tanpopo"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Itami's genre-parody production provides a specifically Japanese commercial/auteur system rather than a festival-only national cinema.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_tampopo_1985",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "japaneseAuteurExpansion.ts"
+    },
+    {
+      "title": "My Beautiful Laundrette",
+      "originalTitle": "My Beautiful Laundrette",
+      "year": 1985,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Channel 4 finance, television/cinema windowing, queer British-Asian authorship and Thatcher-era production make broadcaster-backed independent cinema indispensable.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "Police Story",
+      "originalTitle": "Ging chaat goo si",
+      "year": 1985,
+      "aliases": [
+        "Police Story 1",
+        "Ging Chaat Goo Si"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Hong Kong location action, stunt labor, star-producer authorship and commercial studio infrastructure prevent the decade's Asian history from collapsing into art cinema.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "The Official Story",
+      "originalTitle": "La historia oficial",
+      "year": 1985,
+      "aliases": [
+        "La Historia Oficial"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Argentina's post-dictatorship memory cinema makes censorship, democratic transition, production risk and international circulation part of the decade.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "Back to the Future",
+      "originalTitle": "Back to the Future",
+      "year": 1985,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Amblin/Universal production, effects, music, marketing and sequel architecture sharpen the difference between a hit film and a reproducible franchise system.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "Down by Law",
+      "originalTitle": "Down by Law",
+      "year": 1986,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Jarmusch, Robby Müller and an all-Louisiana independent production anchor regional low-budget circulation outside Hollywood's franchise logic.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_down_by_law_1986",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "film_scenarios_seed.json"
+    },
+    {
+      "title": "Aliens",
+      "originalTitle": "Aliens",
+      "year": 1986,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "A sequel rebuilt through British stages, miniatures, creature/effects labor and intensified action production tests how franchises change production systems across installments.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "She's Gotta Have It",
+      "originalTitle": "She's Gotta Have It",
+      "year": 1986,
+      "aliases": [
+        "Shes Gotta Have It"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Spike Lee's microbudget feature is the clearest production bridge into the late-decade New Black Cinema and Do the Right Thing.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "A Better Tomorrow",
+      "originalTitle": "Ying hung boon sik",
+      "year": 1986,
+      "aliases": [
+        "Ying Hung Boon Sik"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "John Woo's crime-action production and heroic-bloodshed cycle complement Police Story's stunt-centered Hong Kong commercial system.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "Yeelen",
+      "originalTitle": "Yeelen",
+      "year": 1987,
+      "aliases": [
+        "Brightness"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Souleymane Cissé's Mali/Burkina Faso/France/GDR co-production and unprecedented international circulation make African production history structurally necessary.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "RoboCop",
+      "originalTitle": "RoboCop",
+      "year": 1987,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Orion-era finance, practical effects, stop-motion, makeup and corporate satire provide a compact alternative to vertically scaled studio franchise production.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "Pelle the Conqueror",
+      "originalTitle": "Pelle Erobreren",
+      "year": 1987,
+      "aliases": [
+        "Pelle erobreren"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Nordic historical production and Cannes circulation broaden European public/co-production structures beyond Britain and West Germany.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_pelle_the_conqueror_1987",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "festivalWinners1981To2009Expansion.ts"
+    },
+    {
+      "title": "Landscape in the Mist",
+      "originalTitle": "Topio stin omichli",
+      "year": 1988,
+      "aliases": [
+        "Topio stin omihli"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Angelopoulos's Greek-European co-production and long-take road production preserve another model of continental art-cinema infrastructure.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_landscape_in_the_mist_1988",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "easternIberianBritishExpansion.ts"
+    },
+    {
+      "title": "Cinema Paradiso",
+      "originalTitle": "Nuovo Cinema Paradiso",
+      "year": 1988,
+      "aliases": [
+        "Nuovo cinema Paradiso"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Italian-French production, projection labor, alternate cuts and international circulation make exhibition and home-media versioning historically legible.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_cinema_paradiso_1988",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "italyFranceGermanyBeneluxExpansion.ts"
+    },
+    {
+      "title": "Salaam Bombay!",
+      "originalTitle": "Salaam Bombay!",
+      "year": 1988,
+      "aliases": [
+        "Salaam Bombay"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Indian location production, child performance, transnational finance and festival circulation keep South Asia inside the global decade.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "A City of Sadness",
+      "originalTitle": "Bei qing cheng shi",
+      "year": 1989,
+      "aliases": [
+        "A City of Sadness",
+        "Beiqing chengshi"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Taiwan New Cinema, political liberalization, location history and festival circulation are indispensable to the decade's East Asian transformation.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_a_city_of_sadness_1989",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "modernCanonExpansion.ts"
+    },
+    {
+      "title": "Do the Right Thing",
+      "originalTitle": "Do the Right Thing",
+      "year": 1989,
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Spike Lee's Brooklyn production connects Black independent practice, studio distribution, location control, music and race politics at the decade's endpoint.",
+      "decision": "P0",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "sex, lies, and videotape",
+      "originalTitle": "sex, lies, and videotape",
+      "year": 1989,
+      "aliases": [
+        "Sex, Lies, and Videotape"
+      ],
+      "role": "anchor_film",
+      "decisionIfMissing": "EXISTING_REQUIRED",
+      "chapterFunction": "Outlaw Productions, Sundance, Cannes and Miramax acquisition anchor the specialty-distribution model that hands directly into the 1990s indie boom.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_sex_lies_and_videotape_1989",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "modernCanonExpansion.ts"
+    },
+    {
+      "title": "Black Rain",
+      "originalTitle": "Kuroi ame",
+      "year": 1989,
+      "aliases": [
+        "Kuroi Ame",
+        "Black Rain (Imamura)"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Imamura's postwar-memory production keeps Japanese historical cinema distinct from both commercial genre and festival export narratives.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_black_rain_imamura_1989",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "japaneseAuteurExpansion.ts"
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "The Shining",
+      "Rumble Fish",
+      "The Ballad of Narayama",
+      "Blood Simple",
+      "Paris, Texas",
+      "Tampopo",
+      "Down by Law",
+      "Pelle the Conqueror",
+      "Landscape in the Mist",
+      "Cinema Paradiso",
+      "A City of Sadness",
+      "sex, lies, and videotape",
+      "Black Rain"
+    ],
+    "P0": [
+      "Raiders of the Lost Ark",
+      "Yellow Earth",
+      "My Beautiful Laundrette",
+      "Police Story",
+      "The Official Story",
+      "Yeelen",
+      "Do the Right Thing"
+    ],
+    "P1": [
+      "Mephisto",
+      "Missing",
+      "Blade Runner",
+      "E.T. the Extra-Terrestrial",
+      "Sugar Cane Alley",
+      "The Terminator",
+      "Come and See",
+      "Back to the Future",
+      "Aliens",
+      "She's Gotta Have It",
+      "A Better Tomorrow",
+      "RoboCop",
+      "Salaam Bombay!"
+    ],
+    "P2": [
+      "Raging Bull"
+    ],
+    "EXISTING_REQUIRED": []
+  },
+  "recommendedNewProductionCases": [
+    "Mephisto",
+    "Raiders of the Lost Ark",
+    "Missing",
+    "Blade Runner",
+    "E.T. the Extra-Terrestrial",
+    "Sugar Cane Alley",
+    "Yellow Earth",
+    "The Terminator",
+    "Come and See",
+    "My Beautiful Laundrette",
+    "Police Story",
+    "The Official Story",
+    "Back to the Future",
+    "Aliens",
+    "She's Gotta Have It",
+    "A Better Tomorrow",
+    "Yeelen",
+    "RoboCop",
+    "Salaam Bombay!",
+    "Do the Right Thing"
+  ],
+  "historicalObjects": [
+    {
+      "label": "Franchise, sequel and intellectual-property consolidation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Studios increasingly coordinated sequels, recognizable properties, stars, merchandising and release strategy across multiple films; franchise is an industrial relation, not a genre label."
+    },
+    {
+      "label": "Home video, cable and the expanding aftermarket",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "VHS/Betamax, rental and cable changed circulation, catalog value, censorship disputes and audience access; downstream video masters and cuts remain separate from original production evidence."
+    },
+    {
+      "label": "High-concept marketing, saturation release and ancillary value",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Trailers, posters, music, licensing, release scale and simple-to-communicate premises became increasingly coordinated with production, without making every successful film a high-concept blockbuster."
+    },
+    {
+      "label": "Effects, sound and post-production specialization",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Optical houses, creature and makeup effects, motion-control, miniatures, Dolby-era sound and increasingly specialized post-production labor changed both spectacle and mid-budget genre production."
+    },
+    {
+      "label": "Broadcast finance and new British production institutions",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Channel 4 and related public/private television structures opened feature-production space for subjects, writers and filmmakers poorly served by older studio systems."
+    },
+    {
+      "label": "American independent and specialty-distribution ecology",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Regional production, Sundance, Cannes, specialty distributors and modest budgets created new routes from local filmmaking to national and international theatrical circulation."
+    },
+    {
+      "label": "Mainland Chinese, Hong Kong and Taiwan transformations",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Fifth Generation, Hong Kong New Wave/action industry and Taiwan New Cinema developed through distinct institutions, labor systems, censorship histories and commercial/festival relations and must never be treated as one Chinese movement."
+    },
+    {
+      "label": "Political memory under socialism, dictatorship and democratization",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Soviet-bloc, Latin American and other political cinemas negotiated state studios, censorship, historical trauma and changing political institutions through production-specific conditions."
+    },
+    {
+      "label": "African and transnational co-production circuits",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "African filmmakers combined national cultural institutions, cross-border finance, European partners and festival distribution under unequal access conditions; international recognition is downstream from local authorship and production."
+    },
+    {
+      "label": "Preservation, color fading, alternate cuts and restoration",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "The decade's films often circulate today through restored, recut or home-media versions; preservation history is essential but must never overwrite original capture, release or labor evidence."
+    }
+  ],
+  "researchSources": [
+    {
+      "title": "All about... videotape",
+      "publisher": "BFI",
+      "url": "https://www.bfi.org.uk/features/all-about-videotape",
+      "supports": [
+        "home_video",
+        "production_access",
+        "channel4_workshops"
+      ]
+    },
+    {
+      "title": "The many voices behind Taiwan New Cinema",
+      "publisher": "BFI",
+      "url": "https://www.bfi.org.uk/features/many-voices-behind-taiwan-new-cinema",
+      "supports": [
+        "taiwan_new_cinema",
+        "collaborative_labor",
+        "institutional_history"
+      ]
+    },
+    {
+      "title": "10 great Hong Kong action films of the 1980s",
+      "publisher": "BFI",
+      "url": "https://www.bfi.org.uk/news/10-great-hong-kong-action-films-1980s",
+      "supports": [
+        "hong_kong_new_wave",
+        "action_industry",
+        "commercial_transformation"
+      ]
+    },
+    {
+      "title": "A Century of Chinese Cinema: an introduction",
+      "publisher": "BFI",
+      "url": "https://www.bfi.org.uk/features/century-chinese-cinema-introduction",
+      "supports": [
+        "mainland_fifth_generation",
+        "hong_kong",
+        "taiwan",
+        "distinct_production_centres"
+      ]
+    },
+    {
+      "title": "Acting hard: working-class men and British cinema",
+      "publisher": "BFI",
+      "url": "https://www.bfi.org.uk/features/acting-hard-working-class-men-british-cinema",
+      "supports": [
+        "channel4",
+        "british_independent_finance",
+        "1980s_policy"
+      ]
+    },
+    {
+      "title": "10 great African films",
+      "publisher": "BFI",
+      "url": "https://www.bfi.org.uk/lists/10-great-african-films",
+      "supports": [
+        "yeelen",
+        "african_cinema",
+        "international_distribution"
+      ]
+    },
+    {
+      "title": "A short history of Black US indie cinema",
+      "publisher": "BFI",
+      "url": "https://www.bfi.org.uk/features/short-history-black-us-indie-cinema",
+      "supports": [
+        "spike_lee",
+        "new_black_cinema",
+        "independent_ecology"
+      ]
+    }
+  ],
+  "boundaryNotes": [
+    "Chapter 16 is organized as 1980–1989 and follows Chapter 15's explicit handoff into franchise consolidation, home video, intensified conglomeration and a changed independent/festival ecology.",
+    "Hollywood blockbuster and franchise systems are one axis, not the chapter's synonym. British broadcast finance, American independent production, socialist and post-dictatorship political cinema, African co-production and distinct East Asian industries retain separate institutions and genealogies.",
+    "Home video and cable are circulation and economic systems, not visual styles. A VHS, laserdisc, television or restored master never substitutes for original production evidence.",
+    "The chapter ends in 1989 as specialty distribution, Sundance-era American independent expansion, New Black Cinema, East Asian festival recognition and changing geopolitical conditions hand into the 1990s."
+  ],
+  "safeguards": [
+    "Franchise is not a synonym for sequel or hit. Rights ownership, production partners, repeatable characters/worlds, merchandising, release strategy and follow-up infrastructure require title-specific evidence.",
+    "High concept is not a quality judgment and is never inferred from box office alone.",
+    "Home video, cable and alternate cuts are downstream circulation layers unless original production documents show they affected manufacture.",
+    "Effects history must preserve vendors, craftspeople, practical/optical boundaries and sound labor rather than becoming a director-only technology story.",
+    "Independent does not mean microbudget, anti-studio or festival film. Financing, ownership, distribution and labor structures remain title-specific.",
+    "Channel 4-backed cinema is not automatically made-for-television; commissioning, theatrical windows and production formats require film-specific evidence.",
+    "Mainland China, Hong Kong and Taiwan are never flattened into one national-new-wave story.",
+    "African, Latin American and South Asian films are not diversity supplements to Euro-American cinema; their own institutions, languages, finance and circulation histories are causal.",
+    "Festival prizes and restoration are downstream recognition/preservation layers and never substitute for original production evidence.",
+    "No generic 1980s look is allowed. Film stocks, lenses, diffusion, neon, Steadicam, zooms, video texture, Dolby and effects practices require title-specific sources."
+  ]
+}
