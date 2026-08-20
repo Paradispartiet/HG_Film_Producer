@@ -35,3 +35,5 @@ test("Chapter 16 materializes Missing as a source-first transnational political-
   assert.ok(film.learningGoals.length >= 14);
   assert.ok(film.phases.length >= 10);
 });
+
+// TEMP workflow retrigger; remove after self-clean materialization.
