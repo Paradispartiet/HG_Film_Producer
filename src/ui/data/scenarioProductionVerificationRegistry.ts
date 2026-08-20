@@ -90,6 +90,7 @@ import { yellowEarthProductionCaseVerification } from "./scenarioProductionVerif
 import { myBeautifulLaundretteProductionCaseVerification } from "./scenarioProductionVerificationMyBeautifulLaundrette";
 import { policeStoryProductionCaseVerification } from "./scenarioProductionVerificationPoliceStory";
 import { officialStoryProductionCaseVerification } from "./scenarioProductionVerificationOfficialStory";
+import { yeelenProductionCaseVerification } from "./scenarioProductionVerificationYeelen";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -297,6 +298,7 @@ const additionalVerificationRecords = [
   myBeautifulLaundretteProductionCaseVerification,
   policeStoryProductionCaseVerification,
   officialStoryProductionCaseVerification,
+  yeelenProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
