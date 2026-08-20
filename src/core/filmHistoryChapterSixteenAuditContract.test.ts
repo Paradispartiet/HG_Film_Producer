@@ -3,30 +3,152 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 const audit = readFileSync("scripts/film-history-chapter-sixteen-atlas-audit.mjs", "utf8");
+const resolved = JSON.parse(readFileSync("docs/film-history-chapter-sixteen-atlas-resolved.json", "utf8")) as {
+  chapter: { number: number; id: string; title: string; period: string };
+  atlas: { expectedCount: number; actualCount: number };
+  verificationIndex: { literalVerifiedScenarioIds: number };
+  candidates: Array<{ title: string; decision: string; scenarioId: string | null; productionVerified: boolean }>;
+  byDecision: { USE_EXISTING: string[]; P0: string[]; P1: string[]; P2: string[]; EXISTING_REQUIRED: string[] };
+  recommendedNewProductionCases: string[];
+  historicalObjects: Array<{ label: string; atlasDecision: string }>;
+  boundaryNotes: string[];
+  safeguards: string[];
+};
 const packageJson = readFileSync("package.json", "utf8");
+
+const exactExisting = [
+  "The Shining",
+  "Rumble Fish",
+  "The Ballad of Narayama",
+  "Blood Simple",
+  "Paris, Texas",
+  "Tampopo",
+  "Down by Law",
+  "Pelle the Conqueror",
+  "Landscape in the Mist",
+  "Cinema Paradiso",
+  "A City of Sadness",
+  "sex, lies, and videotape",
+  "Black Rain",
+];
+const exactP0Queue = [
+  "Raiders of the Lost Ark",
+  "Yellow Earth",
+  "My Beautiful Laundrette",
+  "Police Story",
+  "The Official Story",
+  "Yeelen",
+  "Do the Right Thing",
+];
+const exactP1Queue = [
+  "Mephisto",
+  "Missing",
+  "Blade Runner",
+  "E.T. the Extra-Terrestrial",
+  "Sugar Cane Alley",
+  "The Terminator",
+  "Come and See",
+  "Back to the Future",
+  "Aliens",
+  "She's Gotta Have It",
+  "A Better Tomorrow",
+  "RoboCop",
+  "Salaam Bombay!",
+];
+const historicalObjectLabels = [
+  "Franchise, sequel and intellectual-property consolidation",
+  "Home video, cable and the expanding aftermarket",
+  "High-concept marketing, saturation release and ancillary value",
+  "Effects, sound and post-production specialization",
+  "Broadcast finance and new British production institutions",
+  "American independent and specialty-distribution ecology",
+  "Mainland Chinese, Hong Kong and Taiwan transformations",
+  "Political memory under socialism, dictatorship and democratization",
+  "African and transnational co-production circuits",
+  "Preservation, color fading, alternate cuts and restoration",
+];
 
 test("Chapter 16 audit locks the 1980s franchise-video-global-new-cinemas scope", () => {
   assert.match(audit, /const EXPECTED_ATLAS_COUNT = 448;/);
-  assert.match(audit, /number: 16/);
-  assert.match(audit, /id: "franchise-video-global-new-cinemas"/);
-  assert.match(audit, /title: "Franchise consolidation, video and global new cinemas"/);
-  assert.match(audit, /period: "1980–1989"/);
+  assert.equal(resolved.chapter.number, 16);
+  assert.equal(resolved.chapter.id, "franchise-video-global-new-cinemas");
+  assert.equal(resolved.chapter.title, "Franchise consolidation, video and global new cinemas");
+  assert.equal(resolved.chapter.period, "1980–1989");
+  assert.equal(resolved.atlas.expectedCount, 448);
+  assert.equal(resolved.atlas.actualCount, 448);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 448);
 });
 
-test("Chapter 16 keeps plural production systems and downstream media history explicit", () => {
-  assert.match(audit, /Franchise, sequel and intellectual-property consolidation/);
-  assert.match(audit, /Home video, cable and the expanding aftermarket/);
-  assert.match(audit, /Broadcast finance and new British production institutions/);
-  assert.match(audit, /American independent and specialty-distribution ecology/);
-  assert.match(audit, /Mainland Chinese, Hong Kong and Taiwan transformations/);
-  assert.match(audit, /African and transnational co-production circuits/);
-  assert.match(audit, /Home video, cable and alternate cuts are downstream circulation layers/);
+test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
+  assert.deepEqual(resolved.byDecision.USE_EXISTING, exactExisting);
+  assert.deepEqual(resolved.byDecision.P0, exactP0Queue);
+  assert.deepEqual(resolved.byDecision.P1, exactP1Queue);
+  assert.deepEqual(resolved.byDecision.P2, ["Raging Bull"]);
+  assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
+  assert.deepEqual(resolved.recommendedNewProductionCases, [
+    "Mephisto",
+    "Raiders of the Lost Ark",
+    "Missing",
+    "Blade Runner",
+    "E.T. the Extra-Terrestrial",
+    "Sugar Cane Alley",
+    "Yellow Earth",
+    "The Terminator",
+    "Come and See",
+    "My Beautiful Laundrette",
+    "Police Story",
+    "The Official Story",
+    "Back to the Future",
+    "Aliens",
+    "She's Gotta Have It",
+    "A Better Tomorrow",
+    "Yeelen",
+    "RoboCop",
+    "Salaam Bombay!",
+    "Do the Right Thing",
+  ]);
+});
+
+test("Chapter 16 existing anchors resolve to exact verified scenario IDs", () => {
+  const byTitle = new Map(resolved.candidates.map((candidate) => [candidate.title, candidate]));
+  const exactIds: Record<string, string> = {
+    "The Shining": "scenario_the_shining_1980",
+    "Rumble Fish": "scenario_rumble_fish_1983",
+    "The Ballad of Narayama": "scenario_the_ballad_of_narayama_1983",
+    "Blood Simple": "scenario_blood_simple_1984",
+    "Paris, Texas": "scenario_paris_texas_1984",
+    "Tampopo": "scenario_tampopo_1985",
+    "Down by Law": "scenario_down_by_law_1986",
+    "Pelle the Conqueror": "scenario_pelle_the_conqueror_1987",
+    "Landscape in the Mist": "scenario_landscape_in_the_mist_1988",
+    "Cinema Paradiso": "scenario_cinema_paradiso_1988",
+    "A City of Sadness": "scenario_a_city_of_sadness_1989",
+    "sex, lies, and videotape": "scenario_sex_lies_and_videotape_1989",
+    "Black Rain": "scenario_black_rain_imamura_1989",
+  };
+  for (const [title, scenarioId] of Object.entries(exactIds)) {
+    assert.equal(byTitle.get(title)?.scenarioId, scenarioId);
+    assert.equal(byTitle.get(title)?.productionVerified, true);
+  }
 });
 
 test("Chapter 16 authority gaps remain candidates instead of fake verified anchors", () => {
-  assert.ok(audit.includes('["Mephisto", "Mephisto", 1981, [], "anchor_film", "P1"'));
-  assert.ok(audit.includes('["Missing", "Missing", 1982, [], "anchor_film", "P1"'));
-  assert.ok(audit.includes('["Come and See", "Idi i smotri", 1985, ["Idi i smotri"], "anchor_film", "P1"'));
+  const byTitle = new Map(resolved.candidates.map((candidate) => [candidate.title, candidate]));
+  for (const title of ["Mephisto", "Missing", "Come and See"]) {
+    assert.equal(byTitle.get(title)?.decision, "P1");
+    assert.equal(byTitle.get(title)?.scenarioId, null);
+    assert.equal(byTitle.get(title)?.productionVerified, false);
+  }
+});
+
+test("Chapter 16 keeps plural production systems and downstream media history explicit", () => {
+  assert.deepEqual(resolved.historicalObjects.map((item) => item.label), historicalObjectLabels);
+  assert.ok(resolved.historicalObjects.every((item) => item.atlasDecision === "NO_PRODUCTION_CASE"));
+  assert.ok(resolved.boundaryNotes.some((item) => item.includes("Hollywood blockbuster") && item.includes("one axis")));
+  assert.ok(resolved.boundaryNotes.some((item) => item.includes("Home video") && item.includes("circulation")));
+  assert.ok(resolved.safeguards.some((item) => item.includes("Channel 4") && item.includes("film-specific evidence")));
+  assert.ok(resolved.safeguards.some((item) => item.includes("Mainland China") && item.includes("Hong Kong") && item.includes("Taiwan")));
+  assert.ok(resolved.safeguards.some((item) => item.includes("African") && item.includes("Latin American") && item.includes("South Asian")));
 });
 
 test("Chapter 16 audit is permanent in the v0.1 verification chain", () => {
