@@ -24,12 +24,12 @@ test("Chapter 16 keeps plural production systems and downstream media history ex
 });
 
 test("Chapter 16 authority gaps remain candidates instead of fake verified anchors", () => {
-  assert.match(audit, /\["Mephisto", "Mephisto", 1981, \[\], "anchor_film", "P1"/);
-  assert.match(audit, /\["Missing", "Missing", 1982, \[\], "anchor_film", "P1"/);
-  assert.match(audit, /\["Come and See", "Idi i smotri", 1985, \["Idi i smotri"\], "anchor_film", "P1"/);
+  assert.ok(audit.includes('["Mephisto", "Mephisto", 1981, [], "anchor_film", "P1"'));
+  assert.ok(audit.includes('["Missing", "Missing", 1982, [], "anchor_film", "P1"'));
+  assert.ok(audit.includes('["Come and See", "Idi i smotri", 1985, ["Idi i smotri"], "anchor_film", "P1"'));
 });
 
 test("Chapter 16 audit is permanent in the v0.1 verification chain", () => {
-  assert.match(packageJson, /"audit:film-history-ch16": "node scripts\\/film-history-chapter-sixteen-atlas-audit\\.mjs"/);
-  assert.match(packageJson, /npm run audit:film-history-ch15 && npm run audit:film-history-ch16/);
+  assert.ok(packageJson.includes('"audit:film-history-ch16": "node scripts/film-history-chapter-sixteen-atlas-audit.mjs"'));
+  assert.ok(packageJson.includes("npm run audit:film-history-ch15 && npm run audit:film-history-ch16"));
 });
