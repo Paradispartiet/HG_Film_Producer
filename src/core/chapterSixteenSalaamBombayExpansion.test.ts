@@ -21,7 +21,7 @@ test("Chapter 16 materializes Salaam Bombay! as a source-first research, worksho
   assert.ok(film.premise.includes("Sandi Sissel") && film.premise.includes("Barry Alexander Brown") && film.premise.includes("Juan Rodriguez") && film.premise.includes("L. Subramaniam") && film.premise.includes("Mitch Epstein"));
   assert.ok(film.premise.includes("Mirabai Films") && film.premise.includes("Channel Four") && film.premise.includes("Cadrage SA") && film.premise.includes("La Sept") && film.premise.includes("National Film Development Corporation") && film.premise.includes("Doordarshan"));
   assert.ok(film.premise.includes("35 mm") && film.premise.includes("1.66:1") && film.premise.includes("presentation data"));
-  assert.ok(film.premise.includes("113/114/115-minute") && film.premise.includes("edition/catalog variance"));
+  assert.ok(film.premise.includes("114 minutes") && film.premise.includes("115") && film.premise.includes("113") && film.premise.includes("edition/catalog variance"));
   assert.ok(film.premise.includes("Caméra d'Or") && film.premise.includes("Foreign Language Film nomination"));
   assert.ok(film.premise.includes("paid historical workshop participation") && film.premise.includes("guardianship, welfare, education, labor, privacy or safety"));
 
