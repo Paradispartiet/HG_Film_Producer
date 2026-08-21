@@ -1,0 +1,51 @@
+name: TEMP Chapter 17 1990s audit materialize
+
+on:
+  push:
+    branches:
+      - agent/ch17-1990s-atlas-audit
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/ch17-1990s-atlas-audit
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Materialize Chapter 17 resolved audit
+        run: |
+          node scripts/film-history-chapter-seventeen-atlas-audit.mjs --write=docs/film-history-chapter-seventeen-atlas-resolved.json > /tmp/ch17-report.json
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const r = JSON.parse(fs.readFileSync('docs/film-history-chapter-seventeen-atlas-resolved.json', 'utf8'));
+          if (r.atlas.expectedCount !== 469 || r.atlas.actualCount !== 469) throw new Error('Chapter 17 atlas count is not 469/469');
+          if (r.verificationIndex.literalVerifiedScenarioIds !== 469) throw new Error('Chapter 17 verification index is not 469');
+          if (r.candidates.length !== 51) throw new Error(`Expected 51 Chapter 17 candidates, found ${r.candidates.length}`);
+          if (r.byDecision.EXISTING_REQUIRED.length !== 0) throw new Error('Unexpected EXISTING_REQUIRED candidates');
+          console.log(JSON.stringify({
+            existing: r.byDecision.USE_EXISTING,
+            p0: r.byDecision.P0,
+            p1: r.byDecision.P1,
+            p2: r.byDecision.P2,
+            recommended: r.recommendedNewProductionCases,
+          }, null, 2));
+          NODE
+      - name: Commit permanent resolved report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/film-history-chapter-seventeen-atlas-resolved.json
+          if git diff --cached --quiet; then
+            echo "No report change"
+            exit 0
+          fi
+          git commit -m "Materialize Chapter 17 1990s atlas audit"
+          git push origin HEAD:agent/ch17-1990s-atlas-audit
