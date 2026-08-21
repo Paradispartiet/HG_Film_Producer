@@ -38,7 +38,7 @@ test("Chapter 16 materializes RoboCop as a source-first Orion effects-and-perfor
   const suit = film.phases.find((phase) => phase.id === "suit_performance");
   assert.ok(suit?.player_task.includes("Bottin") && suit.player_task.includes("Weller/Yakim") && suit.player_task.includes("four-month"));
   const ed209 = film.phases.find((phase) => phase.id === "ed209_effects");
-  assert.ok(ed209?.player_task.includes("full-size puppetry") && ed209.player_task.includes("stop-motion miniature") && ed209.player_task.includes("rear-screen"));
+  assert.ok(ed209?.player_task.includes("actor-interaction hardware") && ed209.player_task.includes("stop-motion miniature") && ed209.player_task.includes("rear-screen"));
   const sound = film.phases.find((phase) => phase.id === "sound_music");
   assert.ok(sound?.player_task.includes("production recording") && sound.player_task.includes("Foley") && sound.player_task.includes("Flick/Pospisil") && sound.player_task.includes("Poledouris"));
 
