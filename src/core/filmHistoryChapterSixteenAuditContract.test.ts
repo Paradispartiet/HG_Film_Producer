@@ -18,6 +18,7 @@ const packageJson = readFileSync("package.json", "utf8");
 
 const exactExisting = [
   "The Shining",
+  "Raging Bull",
   "Mephisto",
   "Raiders of the Lost Ark",
   "Missing",
@@ -67,21 +68,21 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 16 audit locks the 1980s franchise-video-global-new-cinemas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 468;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 469;/);
   assert.equal(resolved.chapter.number, 16);
   assert.equal(resolved.chapter.id, "franchise-video-global-new-cinemas");
   assert.equal(resolved.chapter.title, "Franchise consolidation, video and global new cinemas");
   assert.equal(resolved.chapter.period, "1980–1989");
-  assert.equal(resolved.atlas.expectedCount, 468);
-  assert.equal(resolved.atlas.actualCount, 468);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 468);
+  assert.equal(resolved.atlas.expectedCount, 469);
+  assert.equal(resolved.atlas.actualCount, 469);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 469);
 });
 
 test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
   assert.deepEqual(resolved.byDecision.USE_EXISTING, exactExisting);
   assert.deepEqual(resolved.byDecision.P0, exactP0Queue);
   assert.deepEqual(resolved.byDecision.P1, exactP1Queue);
-  assert.deepEqual(resolved.byDecision.P2, ["Raging Bull"]);
+  assert.deepEqual(resolved.byDecision.P2, []);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
   assert.deepEqual(resolved.recommendedNewProductionCases, []);
 });
@@ -90,6 +91,7 @@ test("Chapter 16 existing anchors resolve to exact verified scenario IDs", () =>
   const byTitle = new Map(resolved.candidates.map((candidate) => [candidate.title, candidate]));
   const exactIds: Record<string, string> = {
     "The Shining": "scenario_the_shining_1980",
+    "Raging Bull": "scenario_raging_bull_1980",
     "Mephisto": "scenario_mephisto_1981",
     "Raiders of the Lost Ark": "scenario_raiders_of_the_lost_ark_1981",
     "Missing": "scenario_missing_1982",
