@@ -101,6 +101,7 @@ import { terminatorProductionCaseVerification } from "./scenarioProductionVerifi
 import { comeAndSeeProductionCaseVerification } from "./scenarioProductionVerificationComeAndSee";
 import { backToTheFutureProductionCaseVerification } from "./scenarioProductionVerificationBackToTheFuture";
 import { aliensProductionCaseVerification } from "./scenarioProductionVerificationAliens";
+import { shesGottaHaveItProductionCaseVerification } from "./scenarioProductionVerificationShesGottaHaveIt";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -319,6 +320,7 @@ const additionalVerificationRecords = [
   comeAndSeeProductionCaseVerification,
   backToTheFutureProductionCaseVerification,
   aliensProductionCaseVerification,
+  shesGottaHaveItProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
