@@ -20,7 +20,7 @@ test("Chapter 16 materializes She's Gotta Have It as a source-first Brooklyn mic
   assert.ok(film.premise.includes("non-union crew") && film.premise.includes("without film permits or insurance") && film.premise.includes("never recommend unpermitted, uninsured or labor-noncompliant production"));
   assert.ok(film.premise.includes("San Francisco Film Festival") && film.premise.includes("Island Pictures") && film.premise.includes("8 August 1986"));
   assert.ok(film.learningGoals.some((goal) => goal.includes("twelve-day") && goal.includes("not as a recommended universal pace")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("Super 16") && goal.includes("one color sequence") && goal.includes("unsupported camera body")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("Super 16") && goal.includes("single color sequence") && goal.includes("unsupported camera body")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("35mm blow-up") && goal.includes("original capture format")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("unpermitted") && goal.includes("uninsured") && goal.includes("contemporary production recommendation")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("questionnaire") && goal.includes("fictional character")));
