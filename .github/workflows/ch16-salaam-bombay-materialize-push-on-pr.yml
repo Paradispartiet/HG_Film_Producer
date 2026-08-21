@@ -1,0 +1,201 @@
+name: TEMP Materialize Salaam Bombay Chapter 16
+
+on:
+  pull_request:
+    types: [synchronize]
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.event.pull_request.head.ref == 'agent/ch16-salaam-bombay-production-case'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: agent/ch16-salaam-bombay-production-case
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Materialize Salaam Bombay permanently
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          def read(path): return Path(path).read_text()
+          def write(path, text): Path(path).write_text(text)
+          def replace_once(text, old, new, label):
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"{label}: expected exactly one match, found {count}")
+              return text.replace(old, new, 1)
+
+          # Correct one source-first internal theme tag before permanent verification.
+          path = "src/core/chapterSixteenSalaamBombayExpansion.ts"
+          text = read(path)
+          text = replace_once(text, '"nfcd_india"', '"nfdc_india"', "Salaam Bombay NFDC theme tag")
+          write(path, text)
+
+          path = "src/ui/data/filmScenarios.ts"
+          text = read(path)
+          text = replace_once(text,
+              'import { mergeChapterSixteenRoboCopExpansion } from "../../core/chapterSixteenRoboCopExpansion.js";\n',
+              'import { mergeChapterSixteenRoboCopExpansion } from "../../core/chapterSixteenRoboCopExpansion.js";\nimport { mergeChapterSixteenSalaamBombayExpansion } from "../../core/chapterSixteenSalaamBombayExpansion.js";\n',
+              "filmScenarios import")
+          text = replace_once(text,
+              'const chapterSixteenRoboCopScenarios = mergeChapterSixteenRoboCopExpansion(chapterSixteenABetterTomorrowScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSixteenRoboCopScenarios);',
+              'const chapterSixteenRoboCopScenarios = mergeChapterSixteenRoboCopExpansion(chapterSixteenABetterTomorrowScenarios);\nconst chapterSixteenSalaamBombayScenarios = mergeChapterSixteenSalaamBombayExpansion(chapterSixteenRoboCopScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSixteenSalaamBombayScenarios);',
+              "filmScenarios chain")
+          text = replace_once(text,
+              '+manual_chapter_sixteen_robocop_expansion_2026+manual_modern_indie_asian_prize_expansion_2026',
+              '+manual_chapter_sixteen_robocop_expansion_2026+manual_chapter_sixteen_salaam_bombay_expansion_2026+manual_modern_indie_asian_prize_expansion_2026',
+              "filmScenarios source list")
+          write(path, text)
+
+          path = "src/ui/data/scenarioFilmStudyMap.ts"
+          text = read(path)
+          text = replace_once(text,
+              'import { roboCopFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenRoboCop";\n',
+              'import { roboCopFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenRoboCop";\nimport { salaamBombayFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenSalaamBombay";\n',
+              "Film Study import")
+          text = replace_once(text,
+              '  [roboCopFilmHistoryProfile.scenarioId]: roboCopFilmHistoryProfile,\n',
+              '  [roboCopFilmHistoryProfile.scenarioId]: roboCopFilmHistoryProfile,\n  [salaamBombayFilmHistoryProfile.scenarioId]: salaamBombayFilmHistoryProfile,\n',
+              "Film Study map")
+          write(path, text)
+
+          path = "src/ui/data/scenarioProductionVerificationRegistry.ts"
+          text = read(path)
+          text = replace_once(text,
+              'import { roboCopProductionCaseVerification } from "./scenarioProductionVerificationRoboCop";\n',
+              'import { roboCopProductionCaseVerification } from "./scenarioProductionVerificationRoboCop";\nimport { salaamBombayProductionCaseVerification } from "./scenarioProductionVerificationSalaamBombay";\n',
+              "verification import")
+          text = replace_once(text,
+              '  roboCopProductionCaseVerification,\n',
+              '  roboCopProductionCaseVerification,\n  salaamBombayProductionCaseVerification,\n',
+              "verification registry")
+          write(path, text)
+
+          atlas_scripts = [
+              "scripts/film-history-chapter-twelve-atlas-audit.mjs",
+              "scripts/film-history-chapter-thirteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fourteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fifteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-sixteen-atlas-audit.mjs",
+          ]
+          for path in atlas_scripts:
+              text = read(path)
+              text = replace_once(text, "const EXPECTED_ATLAS_COUNT = 467;", "const EXPECTED_ATLAS_COUNT = 468;", f"{path} count")
+              text = replace_once(text,
+                  '  "chapterSixteenRoboCopExpansion.ts",\n',
+                  '  "chapterSixteenRoboCopExpansion.ts",\n  "chapterSixteenSalaamBombayExpansion.ts",\n',
+                  f"{path} expansion")
+              write(path, text)
+
+          path = "scripts/production-case-rest-audit.mjs"
+          text = read(path)
+          text = replace_once(text, "const EXPECTED_PLAYABLE_SCENARIOS = 467;", "const EXPECTED_PLAYABLE_SCENARIOS = 468;", "production playable")
+          text = replace_once(text, "const EXPECTED_VERIFIED_PRODUCTION_CASES = 467;", "const EXPECTED_VERIFIED_PRODUCTION_CASES = 468;", "production verified")
+          text = replace_once(text,
+              '  "chapterSixteenRoboCopExpansion.ts",\n',
+              '  "chapterSixteenRoboCopExpansion.ts",\n  "chapterSixteenSalaamBombayExpansion.ts",\n',
+              "production expansion")
+          write(path, text)
+
+          for path in [
+              "src/core/filmHistoryChapterTwelveAuditContract.test.ts",
+              "src/core/filmHistoryChapterThirteenAuditContract.test.ts",
+              "src/core/filmHistoryChapterFourteenAuditContract.test.ts",
+              "src/core/filmHistoryChapterFifteenAuditContract.test.ts",
+          ]:
+              text = read(path)
+              if text.count("467") < 3:
+                  raise SystemExit(f"{path}: missing 467 count locks")
+              write(path, text.replace("467", "468"))
+
+          path = "src/core/filmHistoryChapterSixteenAuditContract.test.ts"
+          text = read(path)
+          if text.count("467") < 4:
+              raise SystemExit("Chapter 16 contract missing 467 count locks")
+          text = text.replace("467", "468")
+          text = replace_once(text,
+              '  "Landscape in the Mist",\n  "Cinema Paradiso",\n  "A City of Sadness",',
+              '  "Landscape in the Mist",\n  "Cinema Paradiso",\n  "Salaam Bombay!",\n  "A City of Sadness",',
+              "Chapter 16 existing")
+          text = replace_once(text,
+              'const exactP1Queue = [\n  "Salaam Bombay!",\n];',
+              'const exactP1Queue: string[] = [];',
+              "Chapter 16 P1")
+          text = replace_once(text,
+              '  assert.deepEqual(resolved.recommendedNewProductionCases, [\n    "Salaam Bombay!",\n  ]);',
+              '  assert.deepEqual(resolved.recommendedNewProductionCases, []);',
+              "Chapter 16 recommended")
+          text = replace_once(text,
+              '    "Cinema Paradiso": "scenario_cinema_paradiso_1988",\n    "A City of Sadness":',
+              '    "Cinema Paradiso": "scenario_cinema_paradiso_1988",\n    "Salaam Bombay!": "scenario_salaam_bombay_1988",\n    "A City of Sadness":',
+              "Chapter 16 exact ID")
+          write(path, text)
+          PY
+
+      - name: Regenerate Chapter 12-16 Atlas reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/film-history-chapter-twelve-atlas-audit.mjs --write=docs/film-history-chapter-twelve-atlas-resolved.json
+          node scripts/film-history-chapter-thirteen-atlas-audit.mjs --write=docs/film-history-chapter-thirteen-atlas-resolved.json
+          node scripts/film-history-chapter-fourteen-atlas-audit.mjs --write=docs/film-history-chapter-fourteen-atlas-resolved.json
+          node scripts/film-history-chapter-fifteen-atlas-audit.mjs --write=docs/film-history-chapter-fifteen-atlas-resolved.json
+          node scripts/film-history-chapter-sixteen-atlas-audit.mjs --write=docs/film-history-chapter-sixteen-atlas-resolved.json
+
+      - name: Assert canonical Salaam Bombay result
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const report = JSON.parse(readFileSync('docs/film-history-chapter-sixteen-atlas-resolved.json', 'utf8'));
+          if (report.atlas.expectedCount !== 468 || report.atlas.actualCount !== 468) throw new Error(`Atlas ${report.atlas.expectedCount}/${report.atlas.actualCount}`);
+          if (report.verificationIndex.literalVerifiedScenarioIds !== 468) throw new Error(`Verification ${report.verificationIndex.literalVerifiedScenarioIds}`);
+          const film = report.candidates.find((item) => item.title === 'Salaam Bombay!');
+          if (!film || film.decision !== 'USE_EXISTING' || film.scenarioId !== 'scenario_salaam_bombay_1988' || film.productionVerified !== true) throw new Error(`Salaam Bombay ${JSON.stringify(film)}`);
+          if (report.byDecision.P0.length !== 0) throw new Error(`P0 ${JSON.stringify(report.byDecision.P0)}`);
+          if (report.byDecision.P1.length !== 0) throw new Error(`P1 ${JSON.stringify(report.byDecision.P1)}`);
+          if (report.recommendedNewProductionCases.length !== 0) throw new Error(`recommended ${JSON.stringify(report.recommendedNewProductionCases)}`);
+          NODE
+
+      - name: Commit only permanent Salaam Bombay materialization
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- \
+            src/core/chapterSixteenSalaamBombayExpansion.ts \
+            docs/film-history-chapter-twelve-atlas-resolved.json \
+            docs/film-history-chapter-thirteen-atlas-resolved.json \
+            docs/film-history-chapter-fourteen-atlas-resolved.json \
+            docs/film-history-chapter-fifteen-atlas-resolved.json \
+            docs/film-history-chapter-sixteen-atlas-resolved.json \
+            scripts/film-history-chapter-twelve-atlas-audit.mjs \
+            scripts/film-history-chapter-thirteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fourteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fifteen-atlas-audit.mjs \
+            scripts/film-history-chapter-sixteen-atlas-audit.mjs \
+            scripts/production-case-rest-audit.mjs \
+            src/core/filmHistoryChapterTwelveAuditContract.test.ts \
+            src/core/filmHistoryChapterThirteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFourteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFifteenAuditContract.test.ts \
+            src/core/filmHistoryChapterSixteenAuditContract.test.ts \
+            src/ui/data/filmScenarios.ts \
+            src/ui/data/scenarioFilmStudyMap.ts \
+            src/ui/data/scenarioProductionVerificationRegistry.ts
+          git diff --cached --check
+          git commit -m "Materialize Salaam Bombay Chapter 16 Production Case"
+          git push origin HEAD:agent/ch16-salaam-bombay-production-case
