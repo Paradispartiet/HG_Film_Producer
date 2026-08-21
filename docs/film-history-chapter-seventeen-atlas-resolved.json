@@ -10,8 +10,8 @@
     "thesis": "The 1990s are not a simple march from film to digital or from Hollywood to indie. Specialty acquisition, queer and Black independent production, public and transnational finance, post-socialist restructuring, regionally distinct Asian industries, Iranian and African production networks, CGI and software animation, consumer video and global blockbuster infrastructure developed simultaneously and unevenly."
   },
   "atlas": {
-    "expectedCount": 469,
-    "actualCount": 469,
+    "expectedCount": 470,
+    "actualCount": 470,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -404,6 +404,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSeventeenHyenasExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -472,7 +478,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 469
+    "literalVerifiedScenarioIds": 470
   },
   "candidates": [
     {
@@ -655,11 +661,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Djibril Diop Mambéty's Senegalese-European co-production keeps African authorship, local production and unequal transnational finance inside the decade's causal history.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_hyenas_1992",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSeventeenHyenasExpansion.ts"
     },
     {
       "title": "The Living End",
@@ -1238,6 +1244,7 @@
       "Raise the Red Lantern",
       "Reservoir Dogs",
       "El Mariachi",
+      "Hyenas",
       "Farewell My Concubine",
       "Naked",
       "Vive L'Amour",
@@ -1258,7 +1265,6 @@
       "All About My Mother"
     ],
     "P0": [
-      "Hyenas",
       "Sankofa",
       "Chungking Express",
       "Bandit Queen",
@@ -1292,7 +1298,6 @@
   "recommendedNewProductionCases": [
     "My Own Private Idaho",
     "Boyz n the Hood",
-    "Hyenas",
     "The Living End",
     "Sankofa",
     "The Piano",

@@ -83,6 +83,7 @@ import { aBetterTomorrowFilmHistoryProfile } from "./scenarioFilmStudyChapterSix
 import { roboCopFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenRoboCop";
 import { salaamBombayFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenSalaamBombay";
 import { ragingBullFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenRagingBull";
+import { hyenasFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenHyenas";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -192,6 +193,7 @@ const sourceBackedFilmHistoryProfiles = {
   [roboCopFilmHistoryProfile.scenarioId]: roboCopFilmHistoryProfile,
   [salaamBombayFilmHistoryProfile.scenarioId]: salaamBombayFilmHistoryProfile,
   [ragingBullFilmHistoryProfile.scenarioId]: ragingBullFilmHistoryProfile,
+  [hyenasFilmHistoryProfile.scenarioId]: hyenasFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
