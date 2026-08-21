@@ -10,8 +10,8 @@
     "thesis": "The 1960s did not replace classical cinema with one New Wave style. New production systems emerged through criticism, first-feature economics, location practice, changing equipment, state support, co-production, decolonization, censorship and modernist experiments in time, space, performance and sound; their similarities matter only when their different institutions and material conditions remain visible."
   },
   "atlas": {
-    "expectedCount": 464,
-    "actualCount": 464,
+    "expectedCount": 465,
+    "actualCount": 465,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -492,6 +492,14 @@
         "matchedExisting": 0,
         "status": "manual_chapter_sixteen_aliens_verified",
         "sourceListId": "manual_chapter_sixteen_aliens_expansion_2026"
+      },
+      {
+        "fileName": "chapterSixteenShesGottaHaveItExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_sixteen_shes_gotta_have_it_verified",
+        "sourceListId": "manual_chapter_sixteen_shes_gotta_have_it_expansion_2026"
       },
       {
         "fileName": "modernCanonExpansion.ts",
