@@ -82,6 +82,91 @@ const exactCandidateTitles = [
   "Boys Don't Cry",
   "Shiri"
 ] as const;
+const exactExisting = [
+  "Paris Is Burning",
+  "Slacker",
+  "Metropolitan",
+  "Days of Being Wild",
+  "Daughters of the Dust",
+  "Poison",
+  "Raise the Red Lantern",
+  "Reservoir Dogs",
+  "El Mariachi",
+  "Farewell My Concubine",
+  "Naked",
+  "Vive L'Amour",
+  "Safe",
+  "La Haine",
+  "Underground",
+  "Secrets & Lies",
+  "The Watermelon Woman",
+  "Fargo",
+  "Trainspotting",
+  "Taste of Cherry",
+  "Happy Together",
+  "Cure",
+  "Festen",
+  "Central Station",
+  "Beau Travail",
+  "Rosetta",
+  "All About My Mother"
+] as const;
+const exactP0Queue = [
+  "Hyenas",
+  "Sankofa",
+  "Chungking Express",
+  "Bandit Queen",
+  "Toy Story",
+  "The Matrix",
+  "Shiri"
+] as const;
+const exactP1Queue = [
+  "My Own Private Idaho",
+  "Boyz n the Hood",
+  "The Living End",
+  "The Piano",
+  "Three Colours: Red",
+  "Pulp Fiction",
+  "Hoop Dreams",
+  "The White Balloon",
+  "Fire",
+  "Titanic",
+  "Princess Mononoke",
+  "Eve's Bayou",
+  "The Idiots",
+  "Ringu",
+  "The Blair Witch Project",
+  "Boys Don't Cry"
+] as const;
+const exactP2Queue = [
+  "Goodfellas"
+] as const;
+const exactRecommended = [
+  "My Own Private Idaho",
+  "Boyz n the Hood",
+  "Hyenas",
+  "The Living End",
+  "Sankofa",
+  "The Piano",
+  "Three Colours: Red",
+  "Chungking Express",
+  "Pulp Fiction",
+  "Bandit Queen",
+  "Hoop Dreams",
+  "Toy Story",
+  "The White Balloon",
+  "Fire",
+  "Titanic",
+  "Princess Mononoke",
+  "Eve's Bayou",
+  "The Idiots",
+  "Ringu",
+  "The Matrix",
+  "The Blair Witch Project",
+  "Boys Don't Cry",
+  "Shiri"
+] as const;
+
 const exactHistoricalObjectLabels = [
   "Specialty distributors, mini-majors and the indie acquisition economy",
   "New Queer Cinema and identity-driven independent circuits",
@@ -114,27 +199,25 @@ test("Chapter 17 locks the exact candidate census and allows no duplicate Atlas 
   assert.ok(resolved.candidates.every((item) => item.matches === 0 || item.matches === 1));
 });
 
-test("Chapter 17 decisions are evidence-derived from verified Production Cases", () => {
+test("Chapter 17 locks the exact evidence-derived Production Case queues", () => {
+  assert.deepEqual(resolved.byDecision.USE_EXISTING, [...exactExisting]);
+  assert.deepEqual(resolved.byDecision.P0, [...exactP0Queue]);
+  assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
+  assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
+  assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
+  assert.deepEqual(resolved.recommendedNewProductionCases, [...exactRecommended]);
+
   for (const candidate of resolved.candidates) {
     if (candidate.decision === "USE_EXISTING") {
       assert.equal(candidate.matches, 1);
       assert.equal(candidate.productionVerified, true);
       assert.ok(candidate.scenarioId);
     } else {
-      assert.ok(["P0", "P1", "P2"].includes(candidate.decision));
+      assert.equal(candidate.matches, 0);
+      assert.equal(candidate.productionVerified, false);
+      assert.equal(candidate.scenarioId, null);
     }
   }
-  assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  for (const decision of ["USE_EXISTING", "P0", "P1", "P2"] as const) {
-    assert.deepEqual(
-      resolved.byDecision[decision],
-      resolved.candidates.filter((item) => item.decision === decision).map((item) => item.title),
-    );
-  }
-  assert.deepEqual(
-    resolved.recommendedNewProductionCases,
-    resolved.candidates.filter((item) => item.decision === "P0" || item.decision === "P1").map((item) => item.title),
-  );
 });
 
 test("Chapter 17 keeps plural production systems explicit instead of a film-to-digital master narrative", () => {
