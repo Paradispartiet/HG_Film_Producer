@@ -1,0 +1,194 @@
+name: TEMP Materialize A Better Tomorrow Chapter 16
+
+on:
+  pull_request:
+    types: [synchronize]
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.event.pull_request.head.ref == 'agent/ch16-a-better-tomorrow-production-case'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: agent/ch16-a-better-tomorrow-production-case
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Materialize A Better Tomorrow permanently
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          def read(path): return Path(path).read_text()
+          def write(path, text): Path(path).write_text(text)
+          def replace_once(text, old, new, label):
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"{label}: expected exactly one match, found {count}")
+              return text.replace(old, new, 1)
+
+          path = "src/ui/data/filmScenarios.ts"
+          text = read(path)
+          text = replace_once(text,
+              'import { mergeChapterSixteenShesGottaHaveItExpansion } from "../../core/chapterSixteenShesGottaHaveItExpansion.js";\n',
+              'import { mergeChapterSixteenShesGottaHaveItExpansion } from "../../core/chapterSixteenShesGottaHaveItExpansion.js";\nimport { mergeChapterSixteenABetterTomorrowExpansion } from "../../core/chapterSixteenABetterTomorrowExpansion.js";\n',
+              "filmScenarios import")
+          text = replace_once(text,
+              'const chapterSixteenShesGottaHaveItScenarios = mergeChapterSixteenShesGottaHaveItExpansion(chapterSixteenAliensScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSixteenShesGottaHaveItScenarios);',
+              'const chapterSixteenShesGottaHaveItScenarios = mergeChapterSixteenShesGottaHaveItExpansion(chapterSixteenAliensScenarios);\nconst chapterSixteenABetterTomorrowScenarios = mergeChapterSixteenABetterTomorrowExpansion(chapterSixteenShesGottaHaveItScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSixteenABetterTomorrowScenarios);',
+              "filmScenarios chain")
+          text = replace_once(text,
+              '+manual_chapter_sixteen_shes_gotta_have_it_expansion_2026+manual_modern_indie_asian_prize_expansion_2026',
+              '+manual_chapter_sixteen_shes_gotta_have_it_expansion_2026+manual_chapter_sixteen_a_better_tomorrow_expansion_2026+manual_modern_indie_asian_prize_expansion_2026',
+              "filmScenarios source list")
+          write(path, text)
+
+          path = "src/ui/data/scenarioFilmStudyMap.ts"
+          text = read(path)
+          text = replace_once(text,
+              'import { shesGottaHaveItFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenShesGottaHaveIt";\n',
+              'import { shesGottaHaveItFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenShesGottaHaveIt";\nimport { aBetterTomorrowFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenABetterTomorrow";\n',
+              "Film Study import")
+          text = replace_once(text,
+              '  [shesGottaHaveItFilmHistoryProfile.scenarioId]: shesGottaHaveItFilmHistoryProfile,\n',
+              '  [shesGottaHaveItFilmHistoryProfile.scenarioId]: shesGottaHaveItFilmHistoryProfile,\n  [aBetterTomorrowFilmHistoryProfile.scenarioId]: aBetterTomorrowFilmHistoryProfile,\n',
+              "Film Study map")
+          write(path, text)
+
+          path = "src/ui/data/scenarioProductionVerificationRegistry.ts"
+          text = read(path)
+          text = replace_once(text,
+              'import { shesGottaHaveItProductionCaseVerification } from "./scenarioProductionVerificationShesGottaHaveIt";\n',
+              'import { shesGottaHaveItProductionCaseVerification } from "./scenarioProductionVerificationShesGottaHaveIt";\nimport { aBetterTomorrowProductionCaseVerification } from "./scenarioProductionVerificationABetterTomorrow";\n',
+              "verification import")
+          text = replace_once(text,
+              '  shesGottaHaveItProductionCaseVerification,\n',
+              '  shesGottaHaveItProductionCaseVerification,\n  aBetterTomorrowProductionCaseVerification,\n',
+              "verification registry")
+          write(path, text)
+
+          atlas_scripts = [
+              "scripts/film-history-chapter-twelve-atlas-audit.mjs",
+              "scripts/film-history-chapter-thirteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fourteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-fifteen-atlas-audit.mjs",
+              "scripts/film-history-chapter-sixteen-atlas-audit.mjs",
+          ]
+          for path in atlas_scripts:
+              text = read(path)
+              text = replace_once(text, "const EXPECTED_ATLAS_COUNT = 465;", "const EXPECTED_ATLAS_COUNT = 466;", f"{path} count")
+              text = replace_once(text,
+                  '  "chapterSixteenShesGottaHaveItExpansion.ts",\n',
+                  '  "chapterSixteenShesGottaHaveItExpansion.ts",\n  "chapterSixteenABetterTomorrowExpansion.ts",\n',
+                  f"{path} expansion")
+              write(path, text)
+
+          path = "scripts/production-case-rest-audit.mjs"
+          text = read(path)
+          text = replace_once(text, "const EXPECTED_PLAYABLE_SCENARIOS = 465;", "const EXPECTED_PLAYABLE_SCENARIOS = 466;", "production playable")
+          text = replace_once(text, "const EXPECTED_VERIFIED_PRODUCTION_CASES = 465;", "const EXPECTED_VERIFIED_PRODUCTION_CASES = 466;", "production verified")
+          text = replace_once(text,
+              '  "chapterSixteenShesGottaHaveItExpansion.ts",\n',
+              '  "chapterSixteenShesGottaHaveItExpansion.ts",\n  "chapterSixteenABetterTomorrowExpansion.ts",\n',
+              "production expansion")
+          write(path, text)
+
+          for path in [
+              "src/core/filmHistoryChapterTwelveAuditContract.test.ts",
+              "src/core/filmHistoryChapterThirteenAuditContract.test.ts",
+              "src/core/filmHistoryChapterFourteenAuditContract.test.ts",
+              "src/core/filmHistoryChapterFifteenAuditContract.test.ts",
+          ]:
+              text = read(path)
+              if text.count("465") < 3:
+                  raise SystemExit(f"{path}: missing 465 count locks")
+              write(path, text.replace("465", "466"))
+
+          path = "src/core/filmHistoryChapterSixteenAuditContract.test.ts"
+          text = read(path)
+          if text.count("465") < 4:
+              raise SystemExit("Chapter 16 contract missing 465 count locks")
+          text = text.replace("465", "466")
+          text = replace_once(text,
+              '  "Aliens",\n  "She\'s Gotta Have It",\n  "Yeelen",',
+              '  "Aliens",\n  "She\'s Gotta Have It",\n  "A Better Tomorrow",\n  "Yeelen",',
+              "Chapter 16 existing")
+          text = replace_once(text,
+              'const exactP1Queue = [\n  "A Better Tomorrow",\n',
+              'const exactP1Queue = [\n',
+              "Chapter 16 P1")
+          text = replace_once(text,
+              '    "A Better Tomorrow",\n',
+              '',
+              "Chapter 16 recommended")
+          text = replace_once(text,
+              '    "She\'s Gotta Have It": "scenario_shes_gotta_have_it_1986",\n    "Yeelen":',
+              '    "She\'s Gotta Have It": "scenario_shes_gotta_have_it_1986",\n    "A Better Tomorrow": "scenario_a_better_tomorrow_1986",\n    "Yeelen":',
+              "Chapter 16 exact ID")
+          write(path, text)
+          PY
+
+      - name: Regenerate Chapter 12-16 Atlas reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/film-history-chapter-twelve-atlas-audit.mjs --write=docs/film-history-chapter-twelve-atlas-resolved.json
+          node scripts/film-history-chapter-thirteen-atlas-audit.mjs --write=docs/film-history-chapter-thirteen-atlas-resolved.json
+          node scripts/film-history-chapter-fourteen-atlas-audit.mjs --write=docs/film-history-chapter-fourteen-atlas-resolved.json
+          node scripts/film-history-chapter-fifteen-atlas-audit.mjs --write=docs/film-history-chapter-fifteen-atlas-resolved.json
+          node scripts/film-history-chapter-sixteen-atlas-audit.mjs --write=docs/film-history-chapter-sixteen-atlas-resolved.json
+
+      - name: Assert canonical A Better Tomorrow result
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const report = JSON.parse(readFileSync('docs/film-history-chapter-sixteen-atlas-resolved.json', 'utf8'));
+          if (report.atlas.expectedCount !== 466 || report.atlas.actualCount !== 466) throw new Error(`Atlas ${report.atlas.expectedCount}/${report.atlas.actualCount}`);
+          if (report.verificationIndex.literalVerifiedScenarioIds !== 466) throw new Error(`Verification ${report.verificationIndex.literalVerifiedScenarioIds}`);
+          const film = report.candidates.find((item) => item.title === 'A Better Tomorrow');
+          if (!film || film.decision !== 'USE_EXISTING' || film.scenarioId !== 'scenario_a_better_tomorrow_1986' || film.productionVerified !== true) throw new Error(`A Better Tomorrow ${JSON.stringify(film)}`);
+          if (report.byDecision.P0.length !== 0) throw new Error(`P0 ${JSON.stringify(report.byDecision.P0)}`);
+          const p1 = ['RoboCop','Salaam Bombay!'];
+          if (JSON.stringify(report.byDecision.P1) !== JSON.stringify(p1)) throw new Error(`P1 ${JSON.stringify(report.byDecision.P1)}`);
+          NODE
+
+      - name: Commit only permanent A Better Tomorrow materialization
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- \
+            docs/film-history-chapter-twelve-atlas-resolved.json \
+            docs/film-history-chapter-thirteen-atlas-resolved.json \
+            docs/film-history-chapter-fourteen-atlas-resolved.json \
+            docs/film-history-chapter-fifteen-atlas-resolved.json \
+            docs/film-history-chapter-sixteen-atlas-resolved.json \
+            scripts/film-history-chapter-twelve-atlas-audit.mjs \
+            scripts/film-history-chapter-thirteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fourteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fifteen-atlas-audit.mjs \
+            scripts/film-history-chapter-sixteen-atlas-audit.mjs \
+            scripts/production-case-rest-audit.mjs \
+            src/core/filmHistoryChapterTwelveAuditContract.test.ts \
+            src/core/filmHistoryChapterThirteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFourteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFifteenAuditContract.test.ts \
+            src/core/filmHistoryChapterSixteenAuditContract.test.ts \
+            src/ui/data/filmScenarios.ts \
+            src/ui/data/scenarioFilmStudyMap.ts \
+            src/ui/data/scenarioProductionVerificationRegistry.ts
+          git diff --cached --check
+          git commit -m "Materialize A Better Tomorrow Chapter 16 Production Case"
+          git push origin HEAD:agent/ch16-a-better-tomorrow-production-case
