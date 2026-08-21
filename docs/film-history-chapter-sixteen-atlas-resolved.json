@@ -10,8 +10,8 @@
     "thesis": "The 1980s cannot be explained as blockbuster excess followed by an indie correction. Franchise coordination, conglomerate finance, home video and cable, effects and sound specialization, public/broadcast funding, regional independent production, political transition and several distinct global new-cinema formations reorganized who could make films, how they circulated and which versions later became canonical."
   },
   "atlas": {
-    "expectedCount": 461,
-    "actualCount": 461,
+    "expectedCount": 462,
+    "actualCount": 462,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -356,6 +356,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSixteenComeAndSeeExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -424,7 +430,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 461
+    "literalVerifiedScenarioIds": 462
   },
   "candidates": [
     {
@@ -643,11 +649,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P1",
       "chapterFunction": "Belarusfilm/Mosfilm, large-scale destruction, handheld optics and Soviet war memory anchor state-studio political production.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_come_and_see_1985",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSixteenComeAndSeeExpansion.ts"
     },
     {
       "title": "Tampopo",
@@ -960,6 +966,7 @@
       "Paris, Texas",
       "Yellow Earth",
       "The Terminator",
+      "Come and See",
       "Tampopo",
       "My Beautiful Laundrette",
       "Police Story",
@@ -976,7 +983,6 @@
     ],
     "P0": [],
     "P1": [
-      "Come and See",
       "Back to the Future",
       "Aliens",
       "She's Gotta Have It",
@@ -990,7 +996,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Come and See",
     "Back to the Future",
     "Aliens",
     "She's Gotta Have It",

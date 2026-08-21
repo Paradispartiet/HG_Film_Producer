@@ -75,6 +75,7 @@ import { bladeRunnerFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteen
 import { etExtraTerrestrialFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenETExtraTerrestrial";
 import { sugarCaneAlleyFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenSugarCaneAlley";
 import { terminatorFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenTerminator";
+import { comeAndSeeFilmHistoryProfile } from "./scenarioFilmStudyChapterSixteenComeAndSee";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -176,6 +177,7 @@ const sourceBackedFilmHistoryProfiles = {
   [etExtraTerrestrialFilmHistoryProfile.scenarioId]: etExtraTerrestrialFilmHistoryProfile,
   [sugarCaneAlleyFilmHistoryProfile.scenarioId]: sugarCaneAlleyFilmHistoryProfile,
   [terminatorFilmHistoryProfile.scenarioId]: terminatorFilmHistoryProfile,
+  [comeAndSeeFilmHistoryProfile.scenarioId]: comeAndSeeFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
