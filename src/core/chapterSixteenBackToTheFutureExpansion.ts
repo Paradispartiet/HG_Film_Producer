@@ -5,6 +5,7 @@ export const chapterSixteenBackToTheFutureExpansionDefinitions = [
   {
     id: "scenario_back_to_the_future_1985",
     title: "Back to the Future",
+    originalTitle: "Back to the Future",
     year: 1985,
     titleType: "Movie",
     runtimeMins: 116,
@@ -57,14 +58,14 @@ export function mergeChapterSixteenBackToTheFutureExpansion(baseScenarios: reado
   const merged = [...baseScenarios];
   let nextPosition = Math.max(0, ...baseScenarios.map((scenario) => scenario.source.position)) + 1;
   for (const definition of chapterSixteenBackToTheFutureExpansionDefinitions) {
-    const acceptedTitles = [definition.title].map(normalizeEarlyCinemaTitle);
+    const acceptedTitles = [definition.title, definition.originalTitle].map(normalizeEarlyCinemaTitle);
     const exists = merged.some((scenario) => scenario.id === definition.id || (scenario.film.year === definition.year && [scenario.film.title, scenario.film.original_title].map(normalizeEarlyCinemaTitle).some((title) => acceptedTitles.includes(title))));
     if (exists) continue;
     merged.push({
       id: definition.id,
       status: "manual_chapter_sixteen_back_to_the_future_verified",
       source: { list_id: "manual_chapter_sixteen_back_to_the_future_expansion_2026", position: nextPosition, imdb_id: definition.sourceId, url: definition.sourceUrl },
-      film: { title: definition.title, original_title: definition.title, year: definition.year, title_type: definition.titleType, runtime_mins: definition.runtimeMins, directors: definition.directors, genres: definition.genres, genre_keys: definition.genres.map((genre) => genre.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")), imdb_rating: 0, user_rating: 0 },
+      film: { title: definition.title, original_title: definition.originalTitle, year: definition.year, title_type: definition.titleType, runtime_mins: definition.runtimeMins, directors: definition.directors, genres: definition.genres, genre_keys: definition.genres.map((genre) => genre.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")), imdb_rating: 0, user_rating: 0 },
       scenario_type: definition.scenarioType,
       production_challenge: definition.premise,
       required_choices_seed: definition.requiredChoicesSeed,
