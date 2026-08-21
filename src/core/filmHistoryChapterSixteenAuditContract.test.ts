@@ -30,6 +30,7 @@ const exactExisting = [
   "Paris, Texas",
   "Yellow Earth",
   "The Terminator",
+  "Come and See",
   "Tampopo",
   "My Beautiful Laundrette",
   "Police Story",
@@ -46,7 +47,6 @@ const exactExisting = [
 ];
 const exactP0Queue: string[] = [];
 const exactP1Queue = [
-  "Come and See",
   "Back to the Future",
   "Aliens",
   "She's Gotta Have It",
@@ -68,14 +68,14 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 16 audit locks the 1980s franchise-video-global-new-cinemas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 461;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 462;/);
   assert.equal(resolved.chapter.number, 16);
   assert.equal(resolved.chapter.id, "franchise-video-global-new-cinemas");
   assert.equal(resolved.chapter.title, "Franchise consolidation, video and global new cinemas");
   assert.equal(resolved.chapter.period, "1980–1989");
-  assert.equal(resolved.atlas.expectedCount, 461);
-  assert.equal(resolved.atlas.actualCount, 461);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 461);
+  assert.equal(resolved.atlas.expectedCount, 462);
+  assert.equal(resolved.atlas.actualCount, 462);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 462);
 });
 
 test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
@@ -85,7 +85,6 @@ test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
   assert.deepEqual(resolved.byDecision.P2, ["Raging Bull"]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
   assert.deepEqual(resolved.recommendedNewProductionCases, [
-    "Come and See",
     "Back to the Future",
     "Aliens",
     "She's Gotta Have It",
@@ -111,6 +110,7 @@ test("Chapter 16 existing anchors resolve to exact verified scenario IDs", () =>
     "Paris, Texas": "scenario_paris_texas_1984",
     "Yellow Earth": "scenario_yellow_earth_1984",
     "The Terminator": "scenario_the_terminator_1984",
+    "Come and See": "scenario_come_and_see_1985",
     "Tampopo": "scenario_tampopo_1985",
     "My Beautiful Laundrette": "scenario_my_beautiful_laundrette_1985",
     "Police Story": "scenario_police_story_1985",
@@ -133,7 +133,7 @@ test("Chapter 16 existing anchors resolve to exact verified scenario IDs", () =>
 
 test("Chapter 16 authority gaps remain candidates instead of fake verified anchors", () => {
   const byTitle = new Map(resolved.candidates.map((candidate) => [candidate.title, candidate]));
-  for (const title of ["Come and See"]) {
+  for (const title of exactP1Queue) {
     assert.equal(byTitle.get(title)?.decision, "P1");
     assert.equal(byTitle.get(title)?.scenarioId, null);
     assert.equal(byTitle.get(title)?.productionVerified, false);

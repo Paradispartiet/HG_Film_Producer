@@ -98,6 +98,7 @@ import { bladeRunnerProductionCaseVerification } from "./scenarioProductionVerif
 import { etExtraTerrestrialProductionCaseVerification } from "./scenarioProductionVerificationETExtraTerrestrial";
 import { sugarCaneAlleyProductionCaseVerification } from "./scenarioProductionVerificationSugarCaneAlley";
 import { terminatorProductionCaseVerification } from "./scenarioProductionVerificationTerminator";
+import { comeAndSeeProductionCaseVerification } from "./scenarioProductionVerificationComeAndSee";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -313,6 +314,7 @@ const additionalVerificationRecords = [
   etExtraTerrestrialProductionCaseVerification,
   sugarCaneAlleyProductionCaseVerification,
   terminatorProductionCaseVerification,
+  comeAndSeeProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
