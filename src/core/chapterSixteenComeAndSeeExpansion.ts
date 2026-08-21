@@ -27,7 +27,7 @@ export const chapterSixteenComeAndSeeExpansionDefinitions = [
       "Model Come and See as a Mosfilm-Belarusfilm production grounded in Belarusian wartime testimony and Soviet institutional history rather than as free-floating antiwar iconography.",
       "Trace Adamovich's Khatyn and Out of the Fire witness-based source work into the Adamovich-Klimov screenplay while keeping testimony, adaptation and fictional reconstruction distinct.",
       "Separate the 1977-ready screenplay, Goskino objection and post-1982 approval from the actual nine-month 1984 production chronology.",
-      "Preserve Janus's documented in-sequence, nine-month shoot on Belorussian soil instead of inventing a shorter or differently ordered schedule.",
+      "Preserve Janus's documented in-sequence, nine-month 1984 shoot on Belorussian soil instead of inventing a shorter or differently ordered schedule.",
       "Treat the Belorussian location base as a production system involving landscape, settlements, weather, performers and design, not as automatic documentary truth.",
       "Use Rodionov's sourced naturalistic color, long Steadicam movement and extreme close-ups as formal strategies without inventing unsupported camera, lens, stock, focal-length or exposure specifications.",
       "Understand the 1.37:1 presentation as an institutionally documented format while avoiding unsupported claims about the exact camera package used to achieve it.",
