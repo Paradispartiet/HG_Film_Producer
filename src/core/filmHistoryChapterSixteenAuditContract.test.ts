@@ -17,8 +17,8 @@ const resolved = JSON.parse(readFileSync("docs/film-history-chapter-sixteen-atla
 const packageJson = readFileSync("package.json", "utf8");
 
 const exactExisting = [
-  "The Shining",
   "Raging Bull",
+  "The Shining",
   "Mephisto",
   "Raiders of the Lost Ark",
   "Missing",
@@ -151,6 +151,6 @@ test("Chapter 16 keeps plural production systems and downstream media history ex
 });
 
 test("Chapter 16 audit is permanent in the v0.1 verification chain", () => {
-  assert.ok(packageJson.includes('"audit:film-history-ch16": "node scripts/film-history-chapter-sixteen-atlas-audit.mjs"'));
+  assert.ok(packageJson.includes('\"audit:film-history-ch16\": \"node scripts/film-history-chapter-sixteen-atlas-audit.mjs\"'));
   assert.ok(packageJson.includes("npm run audit:film-history-ch15 && npm run audit:film-history-ch16"));
 });
