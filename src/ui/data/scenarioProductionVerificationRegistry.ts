@@ -99,6 +99,7 @@ import { etExtraTerrestrialProductionCaseVerification } from "./scenarioProducti
 import { sugarCaneAlleyProductionCaseVerification } from "./scenarioProductionVerificationSugarCaneAlley";
 import { terminatorProductionCaseVerification } from "./scenarioProductionVerificationTerminator";
 import { comeAndSeeProductionCaseVerification } from "./scenarioProductionVerificationComeAndSee";
+import { backToTheFutureProductionCaseVerification } from "./scenarioProductionVerificationBackToTheFuture";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -315,6 +316,7 @@ const additionalVerificationRecords = [
   sugarCaneAlleyProductionCaseVerification,
   terminatorProductionCaseVerification,
   comeAndSeeProductionCaseVerification,
+  backToTheFutureProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
