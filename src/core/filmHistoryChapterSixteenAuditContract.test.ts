@@ -45,15 +45,14 @@ const exactExisting = [
   "Pelle the Conqueror",
   "Landscape in the Mist",
   "Cinema Paradiso",
+  "Salaam Bombay!",
   "A City of Sadness",
   "Do the Right Thing",
   "sex, lies, and videotape",
   "Black Rain",
 ];
 const exactP0Queue: string[] = [];
-const exactP1Queue = [
-  "Salaam Bombay!",
-];
+const exactP1Queue: string[] = [];
 const historicalObjectLabels = [
   "Franchise, sequel and intellectual-property consolidation",
   "Home video, cable and the expanding aftermarket",
@@ -68,14 +67,14 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 16 audit locks the 1980s franchise-video-global-new-cinemas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 467;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 468;/);
   assert.equal(resolved.chapter.number, 16);
   assert.equal(resolved.chapter.id, "franchise-video-global-new-cinemas");
   assert.equal(resolved.chapter.title, "Franchise consolidation, video and global new cinemas");
   assert.equal(resolved.chapter.period, "1980–1989");
-  assert.equal(resolved.atlas.expectedCount, 467);
-  assert.equal(resolved.atlas.actualCount, 467);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 467);
+  assert.equal(resolved.atlas.expectedCount, 468);
+  assert.equal(resolved.atlas.actualCount, 468);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 468);
 });
 
 test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
@@ -84,9 +83,7 @@ test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
   assert.deepEqual(resolved.byDecision.P1, exactP1Queue);
   assert.deepEqual(resolved.byDecision.P2, ["Raging Bull"]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.deepEqual(resolved.recommendedNewProductionCases, [
-    "Salaam Bombay!",
-  ]);
+  assert.deepEqual(resolved.recommendedNewProductionCases, []);
 });
 
 test("Chapter 16 existing anchors resolve to exact verified scenario IDs", () => {
@@ -120,6 +117,7 @@ test("Chapter 16 existing anchors resolve to exact verified scenario IDs", () =>
     "Pelle the Conqueror": "scenario_pelle_the_conqueror_1987",
     "Landscape in the Mist": "scenario_landscape_in_the_mist_1988",
     "Cinema Paradiso": "scenario_cinema_paradiso_1988",
+    "Salaam Bombay!": "scenario_salaam_bombay_1988",
     "A City of Sadness": "scenario_a_city_of_sadness_1989",
     "Do the Right Thing": "scenario_do_the_right_thing_1989",
     "sex, lies, and videotape": "scenario_sex_lies_and_videotape_1989",
