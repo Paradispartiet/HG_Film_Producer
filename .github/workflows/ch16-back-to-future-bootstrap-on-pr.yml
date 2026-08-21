@@ -64,6 +64,36 @@ jobs:
           if (JSON.stringify(report.byDecision.P1) !== JSON.stringify(p1)) throw new Error(`P1 ${JSON.stringify(report.byDecision.P1)}`);
           NODE
 
+      - name: Package exact permanent materialization
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar -czf /tmp/back-to-future-materialized-permanent.tar.gz \
+            docs/film-history-chapter-twelve-atlas-resolved.json \
+            docs/film-history-chapter-thirteen-atlas-resolved.json \
+            docs/film-history-chapter-fourteen-atlas-resolved.json \
+            docs/film-history-chapter-fifteen-atlas-resolved.json \
+            docs/film-history-chapter-sixteen-atlas-resolved.json \
+            scripts/film-history-chapter-twelve-atlas-audit.mjs \
+            scripts/film-history-chapter-thirteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fourteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fifteen-atlas-audit.mjs \
+            scripts/film-history-chapter-sixteen-atlas-audit.mjs \
+            scripts/production-case-rest-audit.mjs \
+            src/core/filmHistoryChapterTwelveAuditContract.test.ts \
+            src/core/filmHistoryChapterThirteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFourteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFifteenAuditContract.test.ts \
+            src/core/filmHistoryChapterSixteenAuditContract.test.ts \
+            src/ui/data/filmScenarios.ts \
+            src/ui/data/scenarioFilmStudyMap.ts \
+            src/ui/data/scenarioProductionVerificationRegistry.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: back-to-future-materialized-permanent
+          path: /tmp/back-to-future-materialized-permanent.tar.gz
+          if-no-files-found: error
+
       - name: Commit permanent state and self-clean
         shell: bash
         run: |
