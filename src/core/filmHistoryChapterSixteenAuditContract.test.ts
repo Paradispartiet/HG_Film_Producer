@@ -37,6 +37,7 @@ const exactExisting = [
   "The Official Story",
   "Back to the Future",
   "Down by Law",
+  "Aliens",
   "Yeelen",
   "Pelle the Conqueror",
   "Landscape in the Mist",
@@ -48,7 +49,6 @@ const exactExisting = [
 ];
 const exactP0Queue: string[] = [];
 const exactP1Queue = [
-  "Aliens",
   "She's Gotta Have It",
   "A Better Tomorrow",
   "RoboCop",
@@ -68,14 +68,14 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 16 audit locks the 1980s franchise-video-global-new-cinemas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 463;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 464;/);
   assert.equal(resolved.chapter.number, 16);
   assert.equal(resolved.chapter.id, "franchise-video-global-new-cinemas");
   assert.equal(resolved.chapter.title, "Franchise consolidation, video and global new cinemas");
   assert.equal(resolved.chapter.period, "1980–1989");
-  assert.equal(resolved.atlas.expectedCount, 463);
-  assert.equal(resolved.atlas.actualCount, 463);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 463);
+  assert.equal(resolved.atlas.expectedCount, 464);
+  assert.equal(resolved.atlas.actualCount, 464);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 464);
 });
 
 test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
@@ -85,7 +85,6 @@ test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
   assert.deepEqual(resolved.byDecision.P2, ["Raging Bull"]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
   assert.deepEqual(resolved.recommendedNewProductionCases, [
-    "Aliens",
     "She's Gotta Have It",
     "A Better Tomorrow",
     "RoboCop",
@@ -116,6 +115,7 @@ test("Chapter 16 existing anchors resolve to exact verified scenario IDs", () =>
     "The Official Story": "scenario_the_official_story_1985",
     "Back to the Future": "scenario_back_to_the_future_1985",
     "Down by Law": "scenario_down_by_law_1986",
+    "Aliens": "scenario_aliens_1986",
     "Yeelen": "scenario_yeelen_1987",
     "Pelle the Conqueror": "scenario_pelle_the_conqueror_1987",
     "Landscape in the Mist": "scenario_landscape_in_the_mist_1988",

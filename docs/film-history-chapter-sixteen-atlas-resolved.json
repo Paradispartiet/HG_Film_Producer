@@ -10,8 +10,8 @@
     "thesis": "The 1980s cannot be explained as blockbuster excess followed by an indie correction. Franchise coordination, conglomerate finance, home video and cable, effects and sound specialization, public/broadcast funding, regional independent production, political transition and several distinct global new-cinema formations reorganized who could make films, how they circulated and which versions later became canonical."
   },
   "atlas": {
-    "expectedCount": 463,
-    "actualCount": 463,
+    "expectedCount": 464,
+    "actualCount": 464,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -368,6 +368,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSixteenAliensExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -436,7 +442,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 463
+    "literalVerifiedScenarioIds": 464
   },
   "candidates": [
     {
@@ -760,11 +766,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P1",
       "chapterFunction": "A sequel rebuilt through British stages, miniatures, creature/effects labor and intensified action production tests how franchises change production systems across installments.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_aliens_1986",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSixteenAliensExpansion.ts"
     },
     {
       "title": "She's Gotta Have It",
@@ -979,6 +985,7 @@
       "The Official Story",
       "Back to the Future",
       "Down by Law",
+      "Aliens",
       "Yeelen",
       "Pelle the Conqueror",
       "Landscape in the Mist",
@@ -990,7 +997,6 @@
     ],
     "P0": [],
     "P1": [
-      "Aliens",
       "She's Gotta Have It",
       "A Better Tomorrow",
       "RoboCop",
@@ -1002,7 +1008,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Aliens",
     "She's Gotta Have It",
     "A Better Tomorrow",
     "RoboCop",
