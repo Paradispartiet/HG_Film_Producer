@@ -29,6 +29,7 @@ const exactExisting = [
   "Blood Simple",
   "Paris, Texas",
   "Yellow Earth",
+  "The Terminator",
   "Tampopo",
   "My Beautiful Laundrette",
   "Police Story",
@@ -45,7 +46,6 @@ const exactExisting = [
 ];
 const exactP0Queue: string[] = [];
 const exactP1Queue = [
-  "The Terminator",
   "Come and See",
   "Back to the Future",
   "Aliens",
@@ -68,14 +68,14 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 16 audit locks the 1980s franchise-video-global-new-cinemas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 460;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 461;/);
   assert.equal(resolved.chapter.number, 16);
   assert.equal(resolved.chapter.id, "franchise-video-global-new-cinemas");
   assert.equal(resolved.chapter.title, "Franchise consolidation, video and global new cinemas");
   assert.equal(resolved.chapter.period, "1980–1989");
-  assert.equal(resolved.atlas.expectedCount, 460);
-  assert.equal(resolved.atlas.actualCount, 460);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 460);
+  assert.equal(resolved.atlas.expectedCount, 461);
+  assert.equal(resolved.atlas.actualCount, 461);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 461);
 });
 
 test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
@@ -85,7 +85,6 @@ test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {
   assert.deepEqual(resolved.byDecision.P2, ["Raging Bull"]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
   assert.deepEqual(resolved.recommendedNewProductionCases, [
-    "The Terminator",
     "Come and See",
     "Back to the Future",
     "Aliens",
@@ -111,6 +110,7 @@ test("Chapter 16 existing anchors resolve to exact verified scenario IDs", () =>
     "Blood Simple": "scenario_blood_simple_1984",
     "Paris, Texas": "scenario_paris_texas_1984",
     "Yellow Earth": "scenario_yellow_earth_1984",
+    "The Terminator": "scenario_the_terminator_1984",
     "Tampopo": "scenario_tampopo_1985",
     "My Beautiful Laundrette": "scenario_my_beautiful_laundrette_1985",
     "Police Story": "scenario_police_story_1985",
