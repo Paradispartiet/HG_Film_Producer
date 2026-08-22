@@ -20,12 +20,25 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Materialize deterministic 472 tree
-        run: node scripts/TEMP-ch17-chungking-materialize.mjs
-      - name: Commit only permanent materialization
+      - name: Materialize deterministic 472 tree or persist exact failure
+        shell: bash
         run: |
+          set +e
+          node scripts/TEMP-ch17-chungking-materialize.mjs > /tmp/chungking-materialize.log 2>&1
+          status=$?
+          set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ "$status" -ne 0 ]; then
+            cat /tmp/chungking-materialize.log
+            git reset --hard HEAD
+            cp /tmp/chungking-materialize.log TEMP-ch17-chungking-materialize-error.log
+            git add TEMP-ch17-chungking-materialize-error.log
+            git commit -m "Record Chungking materializer failure"
+            git push origin HEAD:agent/ch17-chungking-express-production-case
+            exit 0
+          fi
+          cat /tmp/chungking-materialize.log
           git add \
             src/ui/data/filmScenarios.ts \
             src/ui/data/scenarioFilmStudyMap.ts \
