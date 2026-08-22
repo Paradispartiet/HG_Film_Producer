@@ -27,7 +27,8 @@ test("Chapter 17 materializes Boyz n the Hood as a source-first Columbia/South C
   assert.ok(film.learningGoals.some((goal) => goal.includes("Columbia-financed") && goal.includes("South Central")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("three gang-member consultants") && goal.includes("authenticity")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("informed consent") && goal.includes("compensation")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("Arriflex/Clairmont") && goal.includes("equipment-supply")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("Arriflex/Clairmont")));
+  assert.ok(film.requiredChoicesSeed.camera.includes("charles_mills_arriflex_clairmont_source_boundary"));
   assert.ok(film.learningGoals.some((goal) => goal.includes("$5.7-$6 million") && goal.includes("reported budget range")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("New Black cinema") && goal.includes("plural")));
 
