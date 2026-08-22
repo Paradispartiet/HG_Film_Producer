@@ -10,8 +10,8 @@
     "thesis": "The 1990s are not a simple march from film to digital or from Hollywood to indie. Specialty acquisition, queer and Black independent production, public and transnational finance, post-socialist restructuring, regionally distinct Asian industries, Iranian and African production networks, CGI and software animation, consumer video and global blockbuster infrastructure developed simultaneously and unevenly."
   },
   "atlas": {
-    "expectedCount": 476,
-    "actualCount": 476,
+    "expectedCount": 477,
+    "actualCount": 477,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -446,6 +446,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSeventeenMyOwnPrivateIdahoExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -514,7 +520,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 476
+    "literalVerifiedScenarioIds": 477
   },
   "candidates": [
     {
@@ -639,11 +645,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P1",
       "chapterFunction": "Independent queer road production and literary adaptation broaden New Queer Cinema beyond one aesthetic or budget model.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_my_own_private_idaho_1991",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSeventeenMyOwnPrivateIdahoExpansion.ts"
     },
     {
       "title": "Boyz n the Hood",
@@ -1278,6 +1284,7 @@
       "Daughters of the Dust",
       "Poison",
       "Raise the Red Lantern",
+      "My Own Private Idaho",
       "Reservoir Dogs",
       "El Mariachi",
       "Hyenas",
@@ -1308,7 +1315,6 @@
     ],
     "P0": [],
     "P1": [
-      "My Own Private Idaho",
       "Boyz n the Hood",
       "The Living End",
       "The Piano",
@@ -1331,7 +1337,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "My Own Private Idaho",
     "Boyz n the Hood",
     "The Living End",
     "The Piano",

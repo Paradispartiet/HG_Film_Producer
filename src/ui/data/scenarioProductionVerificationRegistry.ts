@@ -113,6 +113,7 @@ import { banditQueenProductionCaseVerification } from "./scenarioProductionVerif
 import { toyStoryProductionCaseVerification } from "./scenarioProductionVerificationToyStory";
 import { theMatrixProductionCaseVerification } from "./scenarioProductionVerificationTheMatrix";
 import { shiriProductionCaseVerification } from "./scenarioProductionVerificationShiri";
+import { myOwnPrivateIdahoProductionCaseVerification } from "./scenarioProductionVerificationMyOwnPrivateIdaho";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -343,6 +344,7 @@ const additionalVerificationRecords = [
   toyStoryProductionCaseVerification,
   theMatrixProductionCaseVerification,
   shiriProductionCaseVerification,
+  myOwnPrivateIdahoProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

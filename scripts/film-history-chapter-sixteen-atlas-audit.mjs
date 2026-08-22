@@ -6,7 +6,7 @@ const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const dataDirectory = path.join(root, "src", "ui", "data");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_ATLAS_COUNT = 476;
+const EXPECTED_ATLAS_COUNT = 477;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -81,6 +81,7 @@ const expansionFiles = [
   "chapterSeventeenToyStoryExpansion.ts",
   "chapterSeventeenTheMatrixExpansion.ts",
   "chapterSeventeenShiriExpansion.ts",
+  "chapterSeventeenMyOwnPrivateIdahoExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
