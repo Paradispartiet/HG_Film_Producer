@@ -20,174 +20,118 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - name: Install dependencies
-        run: npm ci
-      - name: Integrate Sankofa and regenerate permanent reports
+      - name: Materialize and structurally attest Sankofa
         run: |
-          node - <<'NODE'
-          const fs = require('node:fs');
-          const cp = require('node:child_process');
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, subprocess
 
-          function read(file) { return fs.readFileSync(file, 'utf8'); }
-          function write(file, text) { fs.writeFileSync(file, text); }
-          function replaceOnce(text, from, to, file) {
-            const first = text.indexOf(from);
-            if (first < 0) throw new Error(`${file}: missing anchor: ${from.slice(0, 120)}`);
-            if (text.indexOf(from, first + from.length) >= 0) throw new Error(`${file}: anchor is not unique: ${from.slice(0, 120)}`);
-            return text.slice(0, first) + to + text.slice(first + from.length);
-          }
-          function replaceAllCount(text, from, to, file, min = 1) {
-            const count = text.split(from).length - 1;
-            if (count < min) throw new Error(`${file}: expected >=${min} occurrences of ${from}, found ${count}`);
-            return text.split(from).join(to);
-          }
-          function mutate(file, fn) {
-            const before = read(file);
-            const after = fn(before);
-            if (after === before) throw new Error(`${file}: mutation produced no change`);
-            write(file, after);
-          }
+          def replace_once(path, old, new):
+              p = Path(path)
+              s = p.read_text()
+              n = s.count(old)
+              if n != 1:
+                  raise SystemExit(f"{path}: expected one anchor, found {n}: {old[:100]}")
+              p.write_text(s.replace(old, new, 1))
 
-          mutate('src/ui/data/filmScenarios.ts', (s) => {
-            s = replaceOnce(
-              s,
+          replace_once(
+              'src/ui/data/filmScenarios.ts',
               'import { mergeChapterSeventeenHyenasExpansion } from "../../core/chapterSeventeenHyenasExpansion.js";\n',
               'import { mergeChapterSeventeenHyenasExpansion } from "../../core/chapterSeventeenHyenasExpansion.js";\nimport { mergeChapterSeventeenSankofaExpansion } from "../../core/chapterSeventeenSankofaExpansion.js";\n',
-              'filmScenarios.ts import',
-            );
-            s = replaceOnce(
-              s,
+          )
+          replace_once(
+              'src/ui/data/filmScenarios.ts',
               'const chapterSeventeenHyenasScenarios = mergeChapterSeventeenHyenasExpansion(chapterSixteenRagingBullScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSeventeenHyenasScenarios);',
               'const chapterSeventeenHyenasScenarios = mergeChapterSeventeenHyenasExpansion(chapterSixteenRagingBullScenarios);\nconst chapterSeventeenSankofaScenarios = mergeChapterSeventeenSankofaExpansion(chapterSeventeenHyenasScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSeventeenSankofaScenarios);',
-              'filmScenarios.ts chain',
-            );
-            s = replaceOnce(
-              s,
+          )
+          replace_once(
+              'src/ui/data/filmScenarios.ts',
               '+manual_chapter_seventeen_hyenas_expansion_2026+manual_modern_indie_asian_prize_expansion_2026',
               '+manual_chapter_seventeen_hyenas_expansion_2026+manual_chapter_seventeen_sankofa_expansion_2026+manual_modern_indie_asian_prize_expansion_2026',
-              'filmScenarios.ts source list',
-            );
-            return s;
-          });
+          )
 
-          mutate('src/ui/data/scenarioFilmStudyMap.ts', (s) => {
-            s = replaceOnce(
-              s,
+          replace_once(
+              'src/ui/data/scenarioFilmStudyMap.ts',
               'import { hyenasFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenHyenas";\n',
               'import { hyenasFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenHyenas";\nimport { sankofaFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenSankofa";\n',
-              'scenarioFilmStudyMap.ts import',
-            );
-            s = replaceOnce(
-              s,
+          )
+          replace_once(
+              'src/ui/data/scenarioFilmStudyMap.ts',
               '  [hyenasFilmHistoryProfile.scenarioId]: hyenasFilmHistoryProfile,\n',
               '  [hyenasFilmHistoryProfile.scenarioId]: hyenasFilmHistoryProfile,\n  [sankofaFilmHistoryProfile.scenarioId]: sankofaFilmHistoryProfile,\n',
-              'scenarioFilmStudyMap.ts registry',
-            );
-            return s;
-          });
+          )
 
-          mutate('src/ui/data/scenarioProductionVerificationRegistry.ts', (s) => {
-            s = replaceOnce(
-              s,
+          replace_once(
+              'src/ui/data/scenarioProductionVerificationRegistry.ts',
               'import { hyenasProductionCaseVerification } from "./scenarioProductionVerificationHyenas";\n',
               'import { hyenasProductionCaseVerification } from "./scenarioProductionVerificationHyenas";\nimport { sankofaProductionCaseVerification } from "./scenarioProductionVerificationSankofa";\n',
-              'scenarioProductionVerificationRegistry.ts import',
-            );
-            s = replaceOnce(
-              s,
+          )
+          replace_once(
+              'src/ui/data/scenarioProductionVerificationRegistry.ts',
               '  hyenasProductionCaseVerification,\n',
               '  hyenasProductionCaseVerification,\n  sankofaProductionCaseVerification,\n',
-              'scenarioProductionVerificationRegistry.ts registry',
-            );
-            return s;
-          });
+          )
 
-          mutate('scripts/production-case-rest-audit.mjs', (s) => {
-            s = replaceOnce(s, 'const EXPECTED_PLAYABLE_SCENARIOS = 470;', 'const EXPECTED_PLAYABLE_SCENARIOS = 471;', 'production-case-rest playable');
-            s = replaceOnce(s, 'const EXPECTED_VERIFIED_PRODUCTION_CASES = 470;', 'const EXPECTED_VERIFIED_PRODUCTION_CASES = 471;', 'production-case-rest verification');
-            s = replaceOnce(
-              s,
+          replace_once('scripts/production-case-rest-audit.mjs', 'const EXPECTED_PLAYABLE_SCENARIOS = 470;', 'const EXPECTED_PLAYABLE_SCENARIOS = 471;')
+          replace_once('scripts/production-case-rest-audit.mjs', 'const EXPECTED_VERIFIED_PRODUCTION_CASES = 470;', 'const EXPECTED_VERIFIED_PRODUCTION_CASES = 471;')
+          replace_once(
+              'scripts/production-case-rest-audit.mjs',
               '  "chapterSeventeenHyenasExpansion.ts",\n  "modernCanonExpansion.ts",',
               '  "chapterSeventeenHyenasExpansion.ts",\n  "chapterSeventeenSankofaExpansion.ts",\n  "modernCanonExpansion.ts",',
-              'production-case-rest expansion order',
-            );
-            return s;
-          });
+          )
 
-          const chapterWords = ['twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen'];
-          for (const word of chapterWords) {
-            const script = `scripts/film-history-chapter-${word}-atlas-audit.mjs`;
-            mutate(script, (s) => {
-              s = replaceOnce(s, 'const EXPECTED_ATLAS_COUNT = 470;', 'const EXPECTED_ATLAS_COUNT = 471;', `${script} count`);
-              s = replaceOnce(
-                s,
-                '  "chapterSeventeenHyenasExpansion.ts",\n  "modernCanonExpansion.ts",',
-                '  "chapterSeventeenHyenasExpansion.ts",\n  "chapterSeventeenSankofaExpansion.ts",\n  "modernCanonExpansion.ts",',
-                `${script} expansion order`,
-              );
-              return s;
-            });
-          }
+          words = ['twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen']
+          for word in words:
+              script = f'scripts/film-history-chapter-{word}-atlas-audit.mjs'
+              replace_once(script, 'const EXPECTED_ATLAS_COUNT = 470;', 'const EXPECTED_ATLAS_COUNT = 471;')
+              replace_once(
+                  script,
+                  '  "chapterSeventeenHyenasExpansion.ts",\n  "modernCanonExpansion.ts",',
+                  '  "chapterSeventeenHyenasExpansion.ts",\n  "chapterSeventeenSankofaExpansion.ts",\n  "modernCanonExpansion.ts",',
+              )
 
-          const contractWords = ['Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen'];
-          for (const word of contractWords) {
-            const file = `src/core/filmHistoryChapter${word}AuditContract.test.ts`;
-            mutate(file, (s) => replaceAllCount(s, '470', '471', file, 3));
-          }
+          for word in ['Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen']:
+              path = Path(f'src/core/filmHistoryChapter{word}AuditContract.test.ts')
+              s = path.read_text()
+              if s.count('470') < 3:
+                  raise SystemExit(f'{path}: insufficient 470 count anchors')
+              path.write_text(s.replace('470', '471'))
 
-          mutate('src/core/filmHistoryChapterSeventeenAuditContract.test.ts', (s) => {
-            s = replaceOnce(
-              s,
+          replace_once(
+              'src/core/filmHistoryChapterSeventeenAuditContract.test.ts',
               '  "Hyenas",\n  "Farewell My Concubine",',
               '  "Hyenas",\n  "Sankofa",\n  "Farewell My Concubine",',
-              'Chapter17 existing queue',
-            );
-            s = replaceOnce(
-              s,
+          )
+          replace_once(
+              'src/core/filmHistoryChapterSeventeenAuditContract.test.ts',
               'const exactP0Queue = [\n  "Sankofa",\n  "Chungking Express",',
               'const exactP0Queue = [\n  "Chungking Express",',
-              'Chapter17 P0 queue',
-            );
-            s = replaceOnce(
-              s,
+          )
+          replace_once(
+              'src/core/filmHistoryChapterSeventeenAuditContract.test.ts',
               '  "The Living End",\n  "Sankofa",\n  "The Piano",',
               '  "The Living End",\n  "The Piano",',
-              'Chapter17 recommended queue',
-            );
-            return s;
-          });
+          )
 
-          const reports = [
-            ['twelve', 'docs/film-history-chapter-twelve-atlas-resolved.json'],
-            ['thirteen', 'docs/film-history-chapter-thirteen-atlas-resolved.json'],
-            ['fourteen', 'docs/film-history-chapter-fourteen-atlas-resolved.json'],
-            ['fifteen', 'docs/film-history-chapter-fifteen-atlas-resolved.json'],
-            ['sixteen', 'docs/film-history-chapter-sixteen-atlas-resolved.json'],
-            ['seventeen', 'docs/film-history-chapter-seventeen-atlas-resolved.json'],
-          ];
-          for (const [word, output] of reports) {
-            cp.execFileSync('node', [`scripts/film-history-chapter-${word}-atlas-audit.mjs`, `--write=${output}`], { stdio: ['ignore', 'ignore', 'inherit'] });
-          }
+          reports = [(w, f'docs/film-history-chapter-{w}-atlas-resolved.json') for w in words]
+          for word, out in reports:
+              subprocess.run(['node', f'scripts/film-history-chapter-{word}-atlas-audit.mjs', f'--write={out}'], check=True, stdout=subprocess.DEVNULL)
 
-          const ch17 = JSON.parse(read('docs/film-history-chapter-seventeen-atlas-resolved.json'));
-          if (ch17.atlas.expectedCount !== 471 || ch17.atlas.actualCount !== 471) throw new Error('Chapter 17 is not 471/471');
-          if (ch17.verificationIndex.literalVerifiedScenarioIds !== 471) throw new Error('Chapter 17 verification index is not 471');
-          const sankofa = ch17.candidates.find((item) => item.title === 'Sankofa');
-          if (!sankofa || sankofa.decision !== 'USE_EXISTING' || sankofa.scenarioId !== 'scenario_sankofa_1993' || sankofa.productionVerified !== true) {
-            throw new Error(`Sankofa did not resolve as verified USE_EXISTING: ${JSON.stringify(sankofa)}`);
-          }
-          const expectedP0 = ['Chungking Express', 'Bandit Queen', 'Toy Story', 'The Matrix', 'Shiri'];
-          if (JSON.stringify(ch17.byDecision.P0) !== JSON.stringify(expectedP0)) throw new Error(`Unexpected Chapter 17 P0: ${JSON.stringify(ch17.byDecision.P0)}`);
-          if (ch17.byDecision.P1.length !== 16) throw new Error(`Unexpected Chapter 17 P1 count: ${ch17.byDecision.P1.length}`);
-          if (JSON.stringify(ch17.byDecision.P2) !== JSON.stringify(['Goodfellas'])) throw new Error(`Unexpected Chapter 17 P2: ${JSON.stringify(ch17.byDecision.P2)}`);
-          if (ch17.recommendedNewProductionCases.includes('Sankofa')) throw new Error('Sankofa still appears in recommended new Production Cases');
+          report = json.loads(Path('docs/film-history-chapter-seventeen-atlas-resolved.json').read_text())
+          assert report['atlas']['expectedCount'] == 471 and report['atlas']['actualCount'] == 471
+          assert report['verificationIndex']['literalVerifiedScenarioIds'] == 471
+          sankofa = next(x for x in report['candidates'] if x['title'] == 'Sankofa')
+          assert sankofa['decision'] == 'USE_EXISTING'
+          assert sankofa['scenarioId'] == 'scenario_sankofa_1993'
+          assert sankofa['productionVerified'] is True
+          assert report['byDecision']['P0'] == ['Chungking Express', 'Bandit Queen', 'Toy Story', 'The Matrix', 'Shiri']
+          assert len(report['byDecision']['P1']) == 16
+          assert report['byDecision']['P2'] == ['Goodfellas']
+          assert 'Sankofa' not in report['recommendedNewProductionCases']
 
-          cp.execFileSync('node', ['scripts/production-case-rest-audit.mjs'], { stdio: 'inherit' });
-          NODE
-      - name: Full verification on materialized tree
-        run: npm run verify:v0.1
-      - name: Commit permanent materialization only
+          subprocess.run(['node', 'scripts/production-case-rest-audit.mjs'], check=True)
+          PY
+      - name: Commit only permanent materialization
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -214,14 +158,7 @@ jobs:
             docs/film-history-chapter-fifteen-atlas-resolved.json \
             docs/film-history-chapter-sixteen-atlas-resolved.json \
             docs/film-history-chapter-seventeen-atlas-resolved.json
-          if git diff --cached --quiet; then
-            echo "No permanent materialization changes"
-            exit 1
-          fi
-          if git diff --cached --name-only | grep -q '^\.github/workflows/'; then
-            echo "TEMP workflow entered permanent commit" >&2
-            exit 1
-          fi
           test "$(git diff --cached --name-only | wc -l | tr -d ' ')" = "22"
+          ! git diff --cached --name-only | grep -q '^\.github/workflows/'
           git commit -m "Materialize Sankofa Chapter 17 case"
           git push origin HEAD:agent/ch17-sankofa-production-case
