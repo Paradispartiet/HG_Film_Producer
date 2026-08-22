@@ -10,8 +10,8 @@
     "thesis": "The 1990s are not a simple march from film to digital or from Hollywood to indie. Specialty acquisition, queer and Black independent production, public and transnational finance, post-socialist restructuring, regionally distinct Asian industries, Iranian and African production networks, CGI and software animation, consumer video and global blockbuster infrastructure developed simultaneously and unevenly."
   },
   "atlas": {
-    "expectedCount": 472,
-    "actualCount": 472,
+    "expectedCount": 473,
+    "actualCount": 473,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -422,6 +422,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSeventeenBanditQueenExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -490,7 +496,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 472
+    "literalVerifiedScenarioIds": 473
   },
   "candidates": [
     {
@@ -822,11 +828,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Indian-British co-production, location shooting and censorship controversy make South Asian production, rights and international circulation structurally visible.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_bandit_queen_1994",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSeventeenBanditQueenExpansion.ts"
     },
     {
       "title": "Hoop Dreams",
@@ -1262,6 +1268,7 @@
       "Naked",
       "Chungking Express",
       "Vive L'Amour",
+      "Bandit Queen",
       "Safe",
       "La Haine",
       "Underground",
@@ -1279,7 +1286,6 @@
       "All About My Mother"
     ],
     "P0": [
-      "Bandit Queen",
       "Toy Story",
       "The Matrix",
       "Shiri"
@@ -1314,7 +1320,6 @@
     "The Piano",
     "Three Colours: Red",
     "Pulp Fiction",
-    "Bandit Queen",
     "Hoop Dreams",
     "Toy Story",
     "The White Balloon",
