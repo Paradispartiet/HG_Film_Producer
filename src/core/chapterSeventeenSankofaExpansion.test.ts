@@ -38,7 +38,7 @@ test("Chapter 17 materializes Sankofa as a source-first Black independent diaspo
   const finance = film.phases.find((phase) => phase.id === "finance_and_package");
   assert.ok(finance?.player_task.includes("grants") && finance.player_task.includes("barter") && finance.player_task.includes("finance percentages"));
   const jamaica = film.phases.find((phase) => phase.id === "jamaica_production");
-  assert.ok(jamaica?.player_task.includes("Louisiana") && jamaica.player_task.includes("Jamaica") && jamaica.player_task.includes("rate cards"));
+  assert.ok(jamaica?.label.includes("Louisiana") && jamaica.player_task.includes("Jamaica") && jamaica.player_task.includes("rate cards"));
   const ghana = film.phases.find((phase) => phase.id === "ghana_production");
   assert.ok(ghana?.player_task.includes("roughly-one-year") && ghana.player_task.includes("three-week") && ghana.player_task.includes("call sheets"));
   const camera = film.phases.find((phase) => phase.id === "camera_and_format");
