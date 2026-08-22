@@ -10,8 +10,8 @@
     "thesis": "The 1990s are not a simple march from film to digital or from Hollywood to indie. Specialty acquisition, queer and Black independent production, public and transnational finance, post-socialist restructuring, regionally distinct Asian industries, Iranian and African production networks, CGI and software animation, consumer video and global blockbuster infrastructure developed simultaneously and unevenly."
   },
   "atlas": {
-    "expectedCount": 475,
-    "actualCount": 475,
+    "expectedCount": 476,
+    "actualCount": 476,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -440,6 +440,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSeventeenShiriExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -508,7 +514,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 475
+    "literalVerifiedScenarioIds": 476
   },
   "candidates": [
     {
@@ -1256,11 +1262,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "South Korea's large domestic action production and box-office breakthrough make the emerging Korean commercial industry visible before the 2000s festival boom.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_shiri_1999",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSeventeenShiriExpansion.ts"
     }
   ],
   "byDecision": {
@@ -1297,11 +1303,10 @@
       "The Matrix",
       "Beau Travail",
       "Rosetta",
-      "All About My Mother"
-    ],
-    "P0": [
+      "All About My Mother",
       "Shiri"
     ],
+    "P0": [],
     "P1": [
       "My Own Private Idaho",
       "Boyz n the Hood",
@@ -1341,8 +1346,7 @@
     "The Idiots",
     "Ringu",
     "The Blair Witch Project",
-    "Boys Don't Cry",
-    "Shiri"
+    "Boys Don't Cry"
   ],
   "historicalObjects": [
     {

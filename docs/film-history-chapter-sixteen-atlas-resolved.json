@@ -10,8 +10,8 @@
     "thesis": "The 1980s cannot be explained as blockbuster excess followed by an indie correction. Franchise coordination, conglomerate finance, home video and cable, effects and sound specialization, public/broadcast funding, regional independent production, political transition and several distinct global new-cinema formations reorganized who could make films, how they circulated and which versions later became canonical."
   },
   "atlas": {
-    "expectedCount": 475,
-    "actualCount": 475,
+    "expectedCount": 476,
+    "actualCount": 476,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -440,6 +440,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSeventeenShiriExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -508,7 +514,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 475
+    "literalVerifiedScenarioIds": 476
   },
   "candidates": [
     {

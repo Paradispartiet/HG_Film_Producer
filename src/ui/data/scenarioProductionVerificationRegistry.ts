@@ -112,6 +112,7 @@ import { chungkingExpressProductionCaseVerification } from "./scenarioProduction
 import { banditQueenProductionCaseVerification } from "./scenarioProductionVerificationBanditQueen";
 import { toyStoryProductionCaseVerification } from "./scenarioProductionVerificationToyStory";
 import { theMatrixProductionCaseVerification } from "./scenarioProductionVerificationTheMatrix";
+import { shiriProductionCaseVerification } from "./scenarioProductionVerificationShiri";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -341,6 +342,7 @@ const additionalVerificationRecords = [
   banditQueenProductionCaseVerification,
   toyStoryProductionCaseVerification,
   theMatrixProductionCaseVerification,
+  shiriProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
