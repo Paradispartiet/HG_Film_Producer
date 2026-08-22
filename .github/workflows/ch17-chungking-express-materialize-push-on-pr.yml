@@ -1,0 +1,163 @@
+name: TEMP Chungking Express Chapter 17 materialize
+
+on:
+  push:
+    branches:
+      - agent/ch17-chungking-express-production-case
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/ch17-chungking-express-production-case
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Materialize and structurally attest Chungking Express
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, subprocess
+
+          def replace_once(path, old, new):
+              p = Path(path)
+              s = p.read_text()
+              n = s.count(old)
+              if n != 1:
+                  raise SystemExit(f"{path}: expected one anchor, found {n}: {old[:100]}")
+              p.write_text(s.replace(old, new, 1))
+
+          replace_once(
+              'src/ui/data/filmScenarios.ts',
+              'import { mergeChapterSeventeenSankofaExpansion } from "../../core/chapterSeventeenSankofaExpansion.js";\n',
+              'import { mergeChapterSeventeenSankofaExpansion } from "../../core/chapterSeventeenSankofaExpansion.js";\nimport { mergeChapterSeventeenChungkingExpressExpansion } from "../../core/chapterSeventeenChungkingExpressExpansion.js";\n',
+          )
+          replace_once(
+              'src/ui/data/filmScenarios.ts',
+              'const chapterSeventeenSankofaScenarios = mergeChapterSeventeenSankofaExpansion(chapterSeventeenHyenasScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSeventeenSankofaScenarios);',
+              'const chapterSeventeenSankofaScenarios = mergeChapterSeventeenSankofaExpansion(chapterSeventeenHyenasScenarios);\nconst chapterSeventeenChungkingExpressScenarios = mergeChapterSeventeenChungkingExpressExpansion(chapterSeventeenSankofaScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSeventeenChungkingExpressScenarios);',
+          )
+          replace_once(
+              'src/ui/data/filmScenarios.ts',
+              '+manual_chapter_seventeen_sankofa_expansion_2026+manual_modern_indie_asian_prize_expansion_2026',
+              '+manual_chapter_seventeen_sankofa_expansion_2026+manual_chapter_seventeen_chungking_express_expansion_2026+manual_modern_indie_asian_prize_expansion_2026',
+          )
+
+          replace_once(
+              'src/ui/data/scenarioFilmStudyMap.ts',
+              'import { sankofaFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenSankofa";\n',
+              'import { sankofaFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenSankofa";\nimport { chungkingExpressFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenChungkingExpress";\n',
+          )
+          replace_once(
+              'src/ui/data/scenarioFilmStudyMap.ts',
+              '  [sankofaFilmHistoryProfile.scenarioId]: sankofaFilmHistoryProfile,\n',
+              '  [sankofaFilmHistoryProfile.scenarioId]: sankofaFilmHistoryProfile,\n  [chungkingExpressFilmHistoryProfile.scenarioId]: chungkingExpressFilmHistoryProfile,\n',
+          )
+
+          replace_once(
+              'src/ui/data/scenarioProductionVerificationRegistry.ts',
+              'import { sankofaProductionCaseVerification } from "./scenarioProductionVerificationSankofa";\n',
+              'import { sankofaProductionCaseVerification } from "./scenarioProductionVerificationSankofa";\nimport { chungkingExpressProductionCaseVerification } from "./scenarioProductionVerificationChungkingExpress";\n',
+          )
+          replace_once(
+              'src/ui/data/scenarioProductionVerificationRegistry.ts',
+              '  sankofaProductionCaseVerification,\n',
+              '  sankofaProductionCaseVerification,\n  chungkingExpressProductionCaseVerification,\n',
+          )
+
+          replace_once('scripts/production-case-rest-audit.mjs', 'const EXPECTED_PLAYABLE_SCENARIOS = 471;', 'const EXPECTED_PLAYABLE_SCENARIOS = 472;')
+          replace_once('scripts/production-case-rest-audit.mjs', 'const EXPECTED_VERIFIED_PRODUCTION_CASES = 471;', 'const EXPECTED_VERIFIED_PRODUCTION_CASES = 472;')
+          replace_once(
+              'scripts/production-case-rest-audit.mjs',
+              '  "chapterSeventeenSankofaExpansion.ts",\n  "modernCanonExpansion.ts",',
+              '  "chapterSeventeenSankofaExpansion.ts",\n  "chapterSeventeenChungkingExpressExpansion.ts",\n  "modernCanonExpansion.ts",',
+          )
+
+          words = ['twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen']
+          for word in words:
+              script = f'scripts/film-history-chapter-{word}-atlas-audit.mjs'
+              replace_once(script, 'const EXPECTED_ATLAS_COUNT = 471;', 'const EXPECTED_ATLAS_COUNT = 472;')
+              replace_once(
+                  script,
+                  '  "chapterSeventeenSankofaExpansion.ts",\n  "modernCanonExpansion.ts",',
+                  '  "chapterSeventeenSankofaExpansion.ts",\n  "chapterSeventeenChungkingExpressExpansion.ts",\n  "modernCanonExpansion.ts",',
+              )
+
+          for word in ['Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen']:
+              path = Path(f'src/core/filmHistoryChapter{word}AuditContract.test.ts')
+              s = path.read_text()
+              if s.count('471') < 3:
+                  raise SystemExit(f'{path}: insufficient 471 count anchors')
+              path.write_text(s.replace('471', '472'))
+
+          replace_once(
+              'src/core/filmHistoryChapterSeventeenAuditContract.test.ts',
+              '  "Naked",\n  "Vive L\'Amour",',
+              '  "Naked",\n  "Chungking Express",\n  "Vive L\'Amour",',
+          )
+          replace_once(
+              'src/core/filmHistoryChapterSeventeenAuditContract.test.ts',
+              'const exactP0Queue = [\n  "Chungking Express",\n  "Bandit Queen",',
+              'const exactP0Queue = [\n  "Bandit Queen",',
+          )
+          replace_once(
+              'src/core/filmHistoryChapterSeventeenAuditContract.test.ts',
+              '  "Three Colours: Red",\n  "Chungking Express",\n  "Pulp Fiction",',
+              '  "Three Colours: Red",\n  "Pulp Fiction",',
+          )
+
+          for word in words:
+              out = f'docs/film-history-chapter-{word}-atlas-resolved.json'
+              subprocess.run(['node', f'scripts/film-history-chapter-{word}-atlas-audit.mjs', f'--write={out}'], check=True, stdout=subprocess.DEVNULL)
+
+          report = json.loads(Path('docs/film-history-chapter-seventeen-atlas-resolved.json').read_text())
+          assert report['atlas']['expectedCount'] == 472 and report['atlas']['actualCount'] == 472
+          assert report['verificationIndex']['literalVerifiedScenarioIds'] == 472
+          item = next(x for x in report['candidates'] if x['title'] == 'Chungking Express')
+          assert item['decision'] == 'USE_EXISTING'
+          assert item['scenarioId'] == 'scenario_chungking_express_1994'
+          assert item['productionVerified'] is True
+          assert report['byDecision']['P0'] == ['Bandit Queen', 'Toy Story', 'The Matrix', 'Shiri']
+          assert len(report['byDecision']['P1']) == 16
+          assert report['byDecision']['P2'] == ['Goodfellas']
+          assert 'Chungking Express' not in report['recommendedNewProductionCases']
+          subprocess.run(['node', 'scripts/production-case-rest-audit.mjs'], check=True)
+          PY
+      - name: Commit only permanent materialization
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/ui/data/filmScenarios.ts \
+            src/ui/data/scenarioFilmStudyMap.ts \
+            src/ui/data/scenarioProductionVerificationRegistry.ts \
+            scripts/production-case-rest-audit.mjs \
+            scripts/film-history-chapter-twelve-atlas-audit.mjs \
+            scripts/film-history-chapter-thirteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fourteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fifteen-atlas-audit.mjs \
+            scripts/film-history-chapter-sixteen-atlas-audit.mjs \
+            scripts/film-history-chapter-seventeen-atlas-audit.mjs \
+            src/core/filmHistoryChapterTwelveAuditContract.test.ts \
+            src/core/filmHistoryChapterThirteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFourteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFifteenAuditContract.test.ts \
+            src/core/filmHistoryChapterSixteenAuditContract.test.ts \
+            src/core/filmHistoryChapterSeventeenAuditContract.test.ts \
+            docs/film-history-chapter-twelve-atlas-resolved.json \
+            docs/film-history-chapter-thirteen-atlas-resolved.json \
+            docs/film-history-chapter-fourteen-atlas-resolved.json \
+            docs/film-history-chapter-fifteen-atlas-resolved.json \
+            docs/film-history-chapter-sixteen-atlas-resolved.json \
+            docs/film-history-chapter-seventeen-atlas-resolved.json
+          test "$(git diff --cached --name-only | wc -l | tr -d ' ')" = "22"
+          ! git diff --cached --name-only | grep -q '^\.github/workflows/'
+          git commit -m "Materialize Chungking Express Chapter 17 case"
+          git push origin HEAD:agent/ch17-chungking-express-production-case
