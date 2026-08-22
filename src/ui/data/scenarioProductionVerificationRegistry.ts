@@ -108,6 +108,7 @@ import { salaamBombayProductionCaseVerification } from "./scenarioProductionVeri
 import { ragingBullProductionCaseVerification } from "./scenarioProductionVerificationRagingBull";
 import { hyenasProductionCaseVerification } from "./scenarioProductionVerificationHyenas";
 import { sankofaProductionCaseVerification } from "./scenarioProductionVerificationSankofa";
+import { chungkingExpressProductionCaseVerification } from "./scenarioProductionVerificationChungkingExpress";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -333,6 +334,7 @@ const additionalVerificationRecords = [
   ragingBullProductionCaseVerification,
   hyenasProductionCaseVerification,
   sankofaProductionCaseVerification,
+  chungkingExpressProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
