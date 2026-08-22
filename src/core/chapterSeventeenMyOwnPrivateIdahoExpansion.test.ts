@@ -17,7 +17,7 @@ test("Chapter 17 materializes My Own Private Idaho as a source-first independent
   assert.ok(film.premise.includes("1 November 1990") && film.premise.includes("Portland") && film.premise.includes("Seattle") && film.premise.includes("Rome"));
   assert.ok(film.premise.includes("three previously separate projects") && film.premise.includes("Prince Hal") && film.premise.includes("Drugstore Cowboy"));
   assert.ok(film.premise.includes("River Phoenix") && film.premise.includes("campfire") && film.premise.includes("Keanu Reeves"));
-  assert.ok(film.premise.includes("New Queer Cinema") && film.premise.includes("not proof that queer films shared one production model"));
+  assert.ok(film.premise.includes("New Queer Cinema") && film.premise.includes("rather than proof that queer films shared one production model"));
   assert.ok(film.premise.includes("$2.5-million") && film.premise.includes("$3.5 million") && film.premise.includes("cost-report variance"));
   assert.ok(film.premise.includes("104 minutes") && film.premise.includes("105 minutes") && film.premise.includes("canonical gameplay runtime"));
   assert.ok(film.premise.includes("35mm") && film.premise.includes("camera bodies") && film.premise.includes("laboratory process"));
