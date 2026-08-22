@@ -88,6 +88,7 @@ import { sankofaFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenSa
 import { chungkingExpressFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenChungkingExpress";
 import { banditQueenFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenBanditQueen";
 import { toyStoryFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenToyStory";
+import { theMatrixFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenTheMatrix";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -202,6 +203,7 @@ const sourceBackedFilmHistoryProfiles = {
   [chungkingExpressFilmHistoryProfile.scenarioId]: chungkingExpressFilmHistoryProfile,
   [banditQueenFilmHistoryProfile.scenarioId]: banditQueenFilmHistoryProfile,
   [toyStoryFilmHistoryProfile.scenarioId]: toyStoryFilmHistoryProfile,
+  [theMatrixFilmHistoryProfile.scenarioId]: theMatrixFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",

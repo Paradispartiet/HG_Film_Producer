@@ -10,8 +10,8 @@
     "thesis": "The 1990s are not a simple march from film to digital or from Hollywood to indie. Specialty acquisition, queer and Black independent production, public and transnational finance, post-socialist restructuring, regionally distinct Asian industries, Iranian and African production networks, CGI and software animation, consumer video and global blockbuster infrastructure developed simultaneously and unevenly."
   },
   "atlas": {
-    "expectedCount": 474,
-    "actualCount": 474,
+    "expectedCount": 475,
+    "actualCount": 475,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -434,6 +434,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSeventeenTheMatrixExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -502,7 +508,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 474
+    "literalVerifiedScenarioIds": 475
   },
   "candidates": [
     {
@@ -1162,11 +1168,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Australia-based studio production, Hong Kong action choreography, digital compositing and bullet-time workflows crystallize late-1990s transnational VFX labor.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_matrix_1999",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSeventeenTheMatrixExpansion.ts"
     },
     {
       "title": "Beau Travail",
@@ -1288,12 +1294,12 @@
       "Cure",
       "Festen",
       "Central Station",
+      "The Matrix",
       "Beau Travail",
       "Rosetta",
       "All About My Mother"
     ],
     "P0": [
-      "The Matrix",
       "Shiri"
     ],
     "P1": [
@@ -1334,7 +1340,6 @@
     "Eve's Bayou",
     "The Idiots",
     "Ringu",
-    "The Matrix",
     "The Blair Witch Project",
     "Boys Don't Cry",
     "Shiri"
