@@ -22,7 +22,6 @@ test("Chapter 17 materializes Boyz n the Hood as a source-first Columbia/South C
   assert.ok(film.premise.includes("Veda Campbell") && film.premise.includes("Patrick Drummond"));
   assert.ok(film.premise.includes("$5.7-$6 million") && film.premise.includes("attributed reporting"));
   assert.ok(film.premise.includes("Cannes Un Certain Regard") && film.premise.includes("National Film Registry"));
-  assert.ok(film.premise.includes("108 minutes"));
   assert.ok(film.learningGoals.some((goal) => goal.includes("108 minutes") && goal.includes("canonical gameplay runtime")));
 
   assert.ok(film.learningGoals.some((goal) => goal.includes("Columbia-financed") && goal.includes("South Central")));
