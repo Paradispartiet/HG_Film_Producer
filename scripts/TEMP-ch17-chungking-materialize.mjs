@@ -90,8 +90,8 @@ replaceOnce(
 );
 replaceOnce(
   "src/core/filmHistoryChapterSeventeenAuditContract.test.ts",
-  '  "Three Colours: Red",\n  "Chungking Express",\n  "Pulp Fiction",',
-  '  "Three Colours: Red",\n  "Pulp Fiction",',
+  'const exactRecommended = [\n  "My Own Private Idaho",\n  "Boyz n the Hood",\n  "The Living End",\n  "The Piano",\n  "Three Colours: Red",\n  "Chungking Express",\n  "Pulp Fiction",',
+  'const exactRecommended = [\n  "My Own Private Idaho",\n  "Boyz n the Hood",\n  "The Living End",\n  "The Piano",\n  "Three Colours: Red",\n  "Pulp Fiction",',
 );
 
 for (const word of chapterWords) {
