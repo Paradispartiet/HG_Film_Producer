@@ -48,7 +48,7 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 12 audit locks the reviewed studio-and-genre Atlas matrix", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 471;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 472;/);
   assert.match(audit, /expectedScenarioId: "scenario_the_public_enemy_1931"/);
   assert.match(audit, /expectedScenarioId: "scenario_dracula_1931"/);
   assert.match(audit, /expectedScenarioId: "scenario_42nd_street_1933"/);
@@ -60,8 +60,8 @@ test("Chapter 12 audit locks the reviewed studio-and-genre Atlas matrix", () => 
   assert.equal(resolved.chapter.id, "studio-genre-system");
   assert.equal(resolved.chapter.title, "The studio and genre system");
   assert.equal(resolved.chapter.period, "1930–1945");
-  assert.equal(resolved.atlas.expectedCount, 471);
-  assert.equal(resolved.atlas.actualCount, 471);
+  assert.equal(resolved.atlas.expectedCount, 472);
+  assert.equal(resolved.atlas.actualCount, 472);
   assert.equal(resolved.candidates.length, 24);
   assert.deepEqual(resolved.byDecision.P0, explicitHandoffP0);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
