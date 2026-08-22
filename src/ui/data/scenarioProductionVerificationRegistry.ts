@@ -116,6 +116,7 @@ import { shiriProductionCaseVerification } from "./scenarioProductionVerificatio
 import { myOwnPrivateIdahoProductionCaseVerification } from "./scenarioProductionVerificationMyOwnPrivateIdaho";
 import { boyzNTheHoodProductionCaseVerification } from "./scenarioProductionVerificationBoyzNTheHood";
 import { theLivingEndProductionCaseVerification } from "./scenarioProductionVerificationTheLivingEnd";
+import { thePianoProductionCaseVerification } from "./scenarioProductionVerificationThePiano";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -349,6 +350,7 @@ const additionalVerificationRecords = [
   myOwnPrivateIdahoProductionCaseVerification,
   boyzNTheHoodProductionCaseVerification,
   theLivingEndProductionCaseVerification,
+  thePianoProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
