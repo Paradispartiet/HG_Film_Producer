@@ -20,7 +20,7 @@ test("Chapter 17 materializes Bandit Queen as a source-first contested living-bi
   assert.ok(film.premise.includes("$1.4-million") && film.premise.includes("not an audited"));
   assert.ok(film.premise.includes("Chambal ravines") && film.premise.includes("exact locations") && film.premise.includes("permits"));
   assert.ok(film.premise.includes("Seema Biswas") && film.premise.includes("body double") && film.premise.includes("performer negotiation"));
-  assert.ok(film.premise.includes("Phoolan Devi") && film.premise.includes("adaptation agreement") && film.premise.includes("violated her privacy"));
+  assert.ok(film.premise.includes("Phoolan Devi") && film.premise.includes("an agreement existed") && film.premise.includes("authorized adaptation") && film.premise.includes("violated privacy"));
   assert.ok(film.premise.includes("rough or final edited version") && film.premise.includes("competing claims"));
   assert.ok(film.premise.includes("true story") && film.premise.includes("not claimed as an authentic version"));
   assert.ok(film.premise.includes("CBFC") && film.premise.includes("version/censorship history"));
