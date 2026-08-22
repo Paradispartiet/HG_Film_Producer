@@ -32,7 +32,7 @@ test("Chapter 17 materializes My Own Private Idaho as a source-first independent
   assert.ok(film.learningGoals.some((goal) => goal.includes("4K") && goal.includes("downstream")));
 
   const writing = film.phases.find((phase) => phase.id === "writing_synthesis");
-  assert.ok(writing?.player_task.includes("three") && writing.player_task.includes("Prince Hal/Shakespeare"));
+  assert.ok(writing?.player_task.includes("street-youth") && writing.player_task.includes("Prince Hal/Shakespeare"));
   const finance = film.phases.find((phase) => phase.id === "package_and_finance");
   assert.ok(finance?.player_task.includes("$2.5m/$3.5m") && finance.player_task.includes("Fine Line"));
   const actor = film.phases.find((phase) => phase.id === "actor_character_development");
