@@ -11,7 +11,7 @@ export const thePianoProductionCaseVerification = {
       publisher: "British Film Institute",
       url: "https://www.bfi.org.uk/interviews/piano-jane-campion-jan-chapman",
       sourceKind: "filmmaker_interview",
-      supports: ["overall", "screenplay", "directing", "production_design"],
+      supports: ["overall", "screenplay"],
       note: "Producer Jan Chapman's first-person account of the treatment, failed U.S. financing attempts, Pierre Rissient/Francis Bouygues/Ciby 2000 finance path, creative freedom, roughly $9m budget, casting and Campion's storyboard preparation."
     },
     {
@@ -19,7 +19,7 @@ export const thePianoProductionCaseVerification = {
       publisher: "Festival de Cannes",
       url: "https://www.festival-cannes.com/f/the-piano/",
       sourceKind: "film_institute",
-      supports: ["overall", "screenplay", "cinematography", "editing", "music"],
+      supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
       note: "Institutional record for 1993 New Zealand/Australia/France, 121 minutes, Campion, Stuart Dryburgh, Michael Nyman, Veronika Jenet and Andrew McAlpine. Awards are treated only as downstream reception."
     },
     {
@@ -27,7 +27,7 @@ export const thePianoProductionCaseVerification = {
       publisher: "NZ On Screen",
       url: "https://www.nzonscreen.com/videos/the-piano-1993/",
       sourceKind: "film_institute",
-      supports: ["overall", "cinematography", "editing", "production_design", "music"],
+      supports: ["overall", "cinematography", "editing", "sound"],
       note: "New Zealand screen archive record confirming Jan Chapman, Jane Campion, Stuart Dryburgh, Veronika Jenet, Andrew McAlpine, Gregory Keen, Michael Nyman and principal cast."
     },
     {
@@ -35,7 +35,7 @@ export const thePianoProductionCaseVerification = {
       publisher: "National Film and Sound Archive of Australia",
       url: "https://www.nfsa.gov.au/collection/item/piano-ada-makes-deal",
       sourceKind: "film_institute",
-      supports: ["overall", "screenplay", "music"],
+      supports: ["overall", "screenplay", "sound"],
       note: "Institutional collection record for Saddleback Productions, Jan Chapman, Alain Depardieu, Jane Campion, Michael Nyman and a 121-minute feature record."
     },
     {
@@ -43,7 +43,7 @@ export const thePianoProductionCaseVerification = {
       publisher: "NZ On Screen",
       url: "https://www.nzonscreen.com/all-series/marae/marae-the-piano-story-1993/",
       sourceKind: "archive_feature",
-      supports: ["overall", "production_design"],
+      supports: ["overall"],
       note: "Contemporaneous set report documenting Karekare Beach, Māori extras, adviser Waihoroi Shortland, ta moko artist Gordon Hatfield and Pete Smith's historical makeup process. Used to establish participation, not blanket cultural authorization or a modern makeup recipe."
     },
     {
