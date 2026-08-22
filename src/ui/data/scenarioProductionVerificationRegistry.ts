@@ -110,6 +110,7 @@ import { hyenasProductionCaseVerification } from "./scenarioProductionVerificati
 import { sankofaProductionCaseVerification } from "./scenarioProductionVerificationSankofa";
 import { chungkingExpressProductionCaseVerification } from "./scenarioProductionVerificationChungkingExpress";
 import { banditQueenProductionCaseVerification } from "./scenarioProductionVerificationBanditQueen";
+import { toyStoryProductionCaseVerification } from "./scenarioProductionVerificationToyStory";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -337,6 +338,7 @@ const additionalVerificationRecords = [
   sankofaProductionCaseVerification,
   chungkingExpressProductionCaseVerification,
   banditQueenProductionCaseVerification,
+  toyStoryProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
