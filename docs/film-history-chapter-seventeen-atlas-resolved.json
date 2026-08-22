@@ -10,8 +10,8 @@
     "thesis": "The 1990s are not a simple march from film to digital or from Hollywood to indie. Specialty acquisition, queer and Black independent production, public and transnational finance, post-socialist restructuring, regionally distinct Asian industries, Iranian and African production networks, CGI and software animation, consumer video and global blockbuster infrastructure developed simultaneously and unevenly."
   },
   "atlas": {
-    "expectedCount": 470,
-    "actualCount": 470,
+    "expectedCount": 471,
+    "actualCount": 471,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -410,6 +410,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSeventeenSankofaExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -478,7 +484,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 470
+    "literalVerifiedScenarioIds": 471
   },
   "candidates": [
     {
@@ -689,11 +695,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Haile Gerima's independently financed transatlantic historical production links Black diasporic authorship, Ghana location work and alternative exhibition.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_sankofa_1993",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSeventeenSankofaExpansion.ts"
     },
     {
       "title": "Farewell My Concubine",
@@ -1245,6 +1251,7 @@
       "Reservoir Dogs",
       "El Mariachi",
       "Hyenas",
+      "Sankofa",
       "Farewell My Concubine",
       "Naked",
       "Vive L'Amour",
@@ -1265,7 +1272,6 @@
       "All About My Mother"
     ],
     "P0": [
-      "Sankofa",
       "Chungking Express",
       "Bandit Queen",
       "Toy Story",
@@ -1299,7 +1305,6 @@
     "My Own Private Idaho",
     "Boyz n the Hood",
     "The Living End",
-    "Sankofa",
     "The Piano",
     "Three Colours: Red",
     "Chungking Express",
