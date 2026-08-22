@@ -91,6 +91,7 @@ import { toyStoryFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenT
 import { theMatrixFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenTheMatrix";
 import { shiriFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenShiri";
 import { myOwnPrivateIdahoFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenMyOwnPrivateIdaho";
+import { boyzNTheHoodFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenBoyzNTheHood";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -208,6 +209,7 @@ const sourceBackedFilmHistoryProfiles = {
   [theMatrixFilmHistoryProfile.scenarioId]: theMatrixFilmHistoryProfile,
   [shiriFilmHistoryProfile.scenarioId]: shiriFilmHistoryProfile,
   [myOwnPrivateIdahoFilmHistoryProfile.scenarioId]: myOwnPrivateIdahoFilmHistoryProfile,
+  [boyzNTheHoodFilmHistoryProfile.scenarioId]: boyzNTheHoodFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
