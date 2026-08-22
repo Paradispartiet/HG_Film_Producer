@@ -20,7 +20,7 @@ test("Chapter 17 materializes Boyz n the Hood as a source-first Columbia/South C
   assert.ok(film.premise.includes("Charles Mills") && film.premise.includes("Eli Harris") && film.premise.includes("Arriflex") && film.premise.includes("Clairmont"));
   assert.ok(film.premise.includes("Bruce Bellamy") && film.premise.includes("Bruce Cannon") && film.premise.includes("Stanley Clarke"));
   assert.ok(film.premise.includes("Veda Campbell") && film.premise.includes("Patrick Drummond"));
-  assert.ok(film.premise.includes("$5.7-$6 million") && film.premise.includes("reported budget range"));
+  assert.ok(film.premise.includes("$5.7-$6 million") && film.premise.includes("attributed reporting"));
   assert.ok(film.premise.includes("Cannes Un Certain Regard") && film.premise.includes("National Film Registry"));
   assert.ok(film.premise.includes("108 minutes") && film.premise.includes("canonical gameplay runtime"));
 
