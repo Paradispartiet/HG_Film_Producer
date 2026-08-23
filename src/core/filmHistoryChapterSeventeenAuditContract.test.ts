@@ -115,6 +115,7 @@ const exactExisting = [
   "The Watermelon Woman",
   "Fargo",
   "Trainspotting",
+  "Fire",
   "Taste of Cherry",
   "Happy Together",
   "Cure",
@@ -128,7 +129,6 @@ const exactExisting = [
 ] as const;
 const exactP0Queue = [] as const;
 const exactP1Queue = [
-  "Fire",
   "Titanic",
   "Princess Mononoke",
   "Eve's Bayou",
@@ -141,7 +141,6 @@ const exactP2Queue = [
   "Goodfellas"
 ] as const;
 const exactRecommended = [
-  "Fire",
   "Titanic",
   "Princess Mononoke",
   "Eve's Bayou",
@@ -167,14 +166,14 @@ const exactHistoricalObjectLabels = [
 ] as const;
 
 test("Chapter 17 audit locks the 1990s specialty-digital-global-production scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 484;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 485;/);
   assert.equal(resolved.chapter.number, 17);
   assert.equal(resolved.chapter.id, "specialty-digital-global-production");
   assert.equal(resolved.chapter.title, "Specialty cinema, digital transition and globalized production");
   assert.equal(resolved.chapter.period, "1990–1999");
-  assert.equal(resolved.atlas.expectedCount, 484);
-  assert.equal(resolved.atlas.actualCount, 484);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 484);
+  assert.equal(resolved.atlas.expectedCount, 485);
+  assert.equal(resolved.atlas.actualCount, 485);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 485);
 });
 
 test("Chapter 17 locks the exact candidate census and allows no duplicate Atlas matches", () => {
