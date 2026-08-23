@@ -118,6 +118,7 @@ import { boyzNTheHoodProductionCaseVerification } from "./scenarioProductionVeri
 import { theLivingEndProductionCaseVerification } from "./scenarioProductionVerificationTheLivingEnd";
 import { thePianoProductionCaseVerification } from "./scenarioProductionVerificationThePiano";
 import { threeColoursRedProductionCaseVerification } from "./scenarioProductionVerificationThreeColoursRed";
+import { pulpFictionProductionCaseVerification } from "./scenarioProductionVerificationPulpFiction";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -353,6 +354,7 @@ const additionalVerificationRecords = [
   theLivingEndProductionCaseVerification,
   thePianoProductionCaseVerification,
   threeColoursRedProductionCaseVerification,
+  pulpFictionProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
