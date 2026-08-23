@@ -1,0 +1,32 @@
+name: TEMP sync Film History craft mapping status
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: github.event.pull_request.head.ref == 'agent/sync-film-history-craft-mapping-status' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/sync-film-history-craft-mapping-status
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Sync current implementation status
+        run: node scripts/TEMP-sync-film-history-craft-mapping-status.mjs
+      - name: Commit permanent documentation only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/FILM_HISTORY_AND_CRAFT_MAPPING.md
+          test "$(git diff --cached --name-only | wc -l | tr -d ' ')" = "1"
+          git diff --cached --name-only | grep -qx 'docs/FILM_HISTORY_AND_CRAFT_MAPPING.md'
+          git commit -m "Sync Film History craft mapping status"
+          git push origin HEAD:agent/sync-film-history-craft-mapping-status
