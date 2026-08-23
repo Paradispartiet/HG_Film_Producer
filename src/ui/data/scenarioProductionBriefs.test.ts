@@ -402,9 +402,8 @@ test("empty production case progress summarizes 161 manual cases and excludes se
   assert.equal(summary.notStartedCount, 161);
   assert.equal(summary.inProgressCount, 0);
   assert.equal(summary.completedCount, 0);
-  assert.equal(summary.auteurCount, 0);
-  assert.equal(summary.totalScore, 0);
-  assert.equal(summary.maxScore, 1932);
+  assert.equal("totalScore" in summary, false);
+  assert.equal("auteurCount" in summary, false);
   assert.equal(fallbackBrief.briefType, "seed_fallback");
   assert.equal(fallbackStatus, undefined);
 });
