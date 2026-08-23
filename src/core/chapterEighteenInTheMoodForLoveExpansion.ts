@@ -19,7 +19,7 @@ export const chapterEighteenInTheMoodForLoveExpansionDefinitions = [
       screenplay: ["iterative_project_sculpting", "shot_material_distinct_from_final_structure", "absence_as_authored_editing_choice"],
       camera: ["doyle_to_lee_cinematography_handoff", "photochemical_capture_boundary", "music_guided_camera_rhythm", "no_invented_camera_lens_stock_package"],
       editing: ["william_chang_editorial_authorship", "ming_iam_wong_cannes_credit_variance", "late_cannes_deadline_cutting", "deleted_1970s_and_sex_scene_bounded"],
-      sound: ["music_as_temporal_memory_structure", "umeabayashi_and_nat_king_cole_layers", "cannes_mono_premiere_copy_boundary", "no_invented_sound_post_chain"],
+      sound: ["music_as_temporal_memory_structure", "umebayashi_and_nat_king_cole_layers", "cannes_mono_premiere_copy_boundary", "no_invented_sound_post_chain"],
       themes: ["film_history", "2000s", "in_the_mood_for_love", "wong_kar_wai", "maggie_cheung", "tony_leung", "christopher_doyle", "mark_lee_ping_bing", "william_chang", "hong_kong_cinema", "transnational_production", "bangkok_production", "long_shoot", "iterative_screenwriting", "production_design", "costume", "editing", "repetition", "memory", "music", "shigeru_umebayashi", "nat_king_cole", "cannes_deadline", "35mm_negative", "runtime_variance", "deleted_material"],
     },
     learningGoals: [

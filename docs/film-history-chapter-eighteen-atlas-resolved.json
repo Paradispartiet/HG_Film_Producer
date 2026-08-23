@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 494,
-    "actualCount": 494,
+    "expectedCount": 495,
+    "actualCount": 495,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -554,6 +554,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenInTheMoodForLoveExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -622,7 +628,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 494
+    "literalVerifiedScenarioIds": 495
   },
   "candidates": [
     {
@@ -681,11 +687,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Hong Kong transnational production, iterative location work and post-production structure anchor a major regional auteur system crossing the millennium.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_in_the_mood_for_love_2000",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenInTheMoodForLoveExpansion.ts"
     },
     {
       "title": "Yi Yi",
@@ -1878,6 +1884,7 @@
       "The Gleaners and I",
       "Platform",
       "Dancer in the Dark",
+      "In the Mood for Love",
       "The Son's Room",
       "Millennium Mambo",
       "Lost in Translation",
@@ -1914,7 +1921,6 @@
       "Portrait of a Lady on Fire"
     ],
     "P0": [
-      "In the Mood for Love",
       "Atanarjuat: The Fast Runner",
       "Spirited Away",
       "Russian Ark",
@@ -1967,7 +1973,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "In the Mood for Love",
     "Yi Yi",
     "Crouching Tiger, Hidden Dragon",
     "Atanarjuat: The Fast Runner",
