@@ -10,8 +10,8 @@
     "thesis": "The 1990s are not a simple march from film to digital or from Hollywood to indie. Specialty acquisition, queer and Black independent production, public and transnational finance, post-socialist restructuring, regionally distinct Asian industries, Iranian and African production networks, CGI and software animation, consumer video and global blockbuster infrastructure developed simultaneously and unevenly."
   },
   "atlas": {
-    "expectedCount": 485,
-    "actualCount": 485,
+    "expectedCount": 486,
+    "actualCount": 486,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -500,6 +500,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSeventeenTitanicExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -568,7 +574,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 485
+    "literalVerifiedScenarioIds": 486
   },
   "candidates": [
     {
@@ -1120,11 +1126,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P1",
       "chapterFunction": "Large-scale studio co-finance, practical builds, digital effects and global distribution provide the blockbuster-scale counterpoint to the decade's independent expansion.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_titanic_1997",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSeventeenTitanicExpansion.ts"
     },
     {
       "title": "Princess Mononoke",
@@ -1361,6 +1367,7 @@
       "Taste of Cherry",
       "Happy Together",
       "Cure",
+      "Titanic",
       "Festen",
       "Central Station",
       "The Matrix",
@@ -1371,7 +1378,6 @@
     ],
     "P0": [],
     "P1": [
-      "Titanic",
       "Princess Mononoke",
       "Eve's Bayou",
       "The Idiots",
@@ -1385,7 +1391,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Titanic",
     "Princess Mononoke",
     "Eve's Bayou",
     "The Idiots",
