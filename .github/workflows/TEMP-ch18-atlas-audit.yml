@@ -10,13 +10,15 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   materialize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: agent/ch18-digital-convergence-atlas-audit
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -24,6 +26,17 @@ jobs:
         run: |
           node scripts/film-history-chapter-eighteen-atlas-audit.mjs --write=docs/film-history-chapter-eighteen-atlas-resolved.json > /tmp/ch18-report.json
           node -e 'const r=require("./docs/film-history-chapter-eighteen-atlas-resolved.json"); console.log(JSON.stringify({atlas:r.atlas.actualCount,verified:r.verificationIndex.literalVerifiedScenarioIds,useExisting:r.byDecision.USE_EXISTING,p0:r.byDecision.P0,p1:r.byDecision.P1,p2:r.byDecision.P2,recommended:r.recommendedNewProductionCases},null,2))'
+      - name: Commit resolved audit
+        run: |
+          if git diff --quiet -- docs/film-history-chapter-eighteen-atlas-resolved.json; then
+            echo "Resolved audit already committed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/film-history-chapter-eighteen-atlas-resolved.json
+          git commit -m "Materialize Chapter 18 atlas resolution"
+          git push origin HEAD:agent/ch18-digital-convergence-atlas-audit
       - uses: actions/upload-artifact@v4
         with:
           name: chapter-18-resolved-audit
