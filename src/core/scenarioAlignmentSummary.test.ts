@@ -1,24 +1,29 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { getScenarioAlignmentSummary } from "../ui/data/scenarioAlignmentSummary.js";
-import type { ScenarioAlignmentScore } from "../ui/data/scenarioAlignmentScore.js";
+import type { ScenarioAlignmentAssessment, ScenarioAlignmentFeedback } from "../ui/data/scenarioAlignmentScore.js";
 
-function score(tier: ScenarioAlignmentScore["tier"]): ScenarioAlignmentScore {
-  return { selectedCount: 0, totalCount: 0, percentage: 0, tier, label: tier };
+function feedback(assessment: ScenarioAlignmentAssessment): ScenarioAlignmentFeedback {
+  return { selectedCount: 0, totalCount: 0, assessment };
 }
 
-test("getScenarioAlignmentSummary describes no scenario target commitment", () => {
-  assert.equal(getScenarioAlignmentSummary(score("none")), "The production did not commit to the classic scenario targets.");
+test("getScenarioAlignmentSummary guides reconsideration without score language", () => {
+  assert.equal(
+    getScenarioAlignmentSummary(feedback("reconsider")),
+    "Compare the selected approaches with the documented film method and revisit the explanations that do not fit yet."
+  );
 });
 
-test("getScenarioAlignmentSummary describes loose scenario alignment", () => {
-  assert.equal(getScenarioAlignmentSummary(score("loose")), "The film borrows from the classic brief, but the direction is still broad.");
+test("getScenarioAlignmentSummary describes a partial method connection", () => {
+  assert.equal(
+    getScenarioAlignmentSummary(feedback("partial")),
+    "Some selected approaches connect to the documented film method. Compare the remaining approaches to see where the film works differently."
+  );
 });
 
-test("getScenarioAlignmentSummary describes focused scenario alignment", () => {
-  assert.equal(getScenarioAlignmentSummary(score("focused")), "The production has a clear relationship to the classic scenario brief.");
-});
-
-test("getScenarioAlignmentSummary describes strong scenario alignment", () => {
-  assert.equal(getScenarioAlignmentSummary(score("strong")), "The production strongly follows the classic scenario’s craft direction.");
+test("getScenarioAlignmentSummary describes a clear method connection", () => {
+  assert.equal(
+    getScenarioAlignmentSummary(feedback("clear")),
+    "The selected approaches connect closely to the documented film method. Use the explanations to identify why those methods fit this film."
+  );
 });
