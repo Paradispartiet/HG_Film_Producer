@@ -98,6 +98,7 @@ import { threeColoursRedFilmHistoryProfile } from "./scenarioFilmStudyChapterSev
 import { pulpFictionFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenPulpFiction";
 import { hoopDreamsFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenHoopDreams";
 import { theWhiteBalloonFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenTheWhiteBalloon";
+import { fireFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenFire";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -222,6 +223,7 @@ const sourceBackedFilmHistoryProfiles = {
   [pulpFictionFilmHistoryProfile.scenarioId]: pulpFictionFilmHistoryProfile,
   [hoopDreamsFilmHistoryProfile.scenarioId]: hoopDreamsFilmHistoryProfile,
   [theWhiteBalloonFilmHistoryProfile.scenarioId]: theWhiteBalloonFilmHistoryProfile,
+  [fireFilmHistoryProfile.scenarioId]: fireFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",

@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const fireFilmHistoryProfile = {
+  scenarioId: "scenario_fire_1996",
+  period: "1990s India-Canada transnational independent production, contemporary Delhi drama and international specialty circulation",
+  traditions: ["Indo-Canadian cinema", "independent drama", "queer cinema", "diasporic authorship", "35mm production", "festival and specialty circulation"],
+  before: "Deepa Mehta entered Fire after Canadian film and television work and Camilla, while maintaining a creative and personal relationship to India. Contemporary and later first-person accounts show that Fire emerged as a project she felt compelled to write rather than as a preplanned trilogy installment. Bobby Bedi joined as the Indian producer and Giles Nuttgens as cinematographer before the shoot.",
+  moment: "TIFF's Canadian Film Encyclopedia records Trial by Fire Films, 35mm colour, Bobby Bedi and Deepa Mehta producing, Giles Nuttgens photographing, Barry Farrell editing, Konrad Skreta handling sound and A.R. Rahman composing. UCLA adds Aradhana Seth as production designer. Contemporary reporting documents a late decision to return from a planned Hindi version toward Mehta's original English dialogue, while current distribution metadata lists both Hindi and English. Mehta's own statements foreground contemporary middle-class India and a deliberately visual script/design process, but no unsupported camera, lens, stock or lighting recipe is inferred.",
+  after: "Fire's festival success and later Indian release controversy became central to its public history. TIFF records violent protests and withdrawal from Indian distribution after initial successful screenings. Those events matter to circulation, censorship and reception, but they remain downstream from how the film was originally written, photographed, designed, edited and mixed. Most institutional records give 104 minutes; FemFilm gives 108, so duration remains version-sensitive.",
+  historyQuestion: "How did Fire combine a Canada-India production network, a consciously designed contemporary-Delhi setting and intimate family drama before later circulation controversy transformed its public meaning?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "TIFF and Mehta's own statements place Fire within 1990s Indo-Canadian authorship and contemporary middle-class Indian social change." },
+    { area: "movement_and_tradition", status: "mapped", note: "The film belongs in queer, diasporic and independent-cinema histories, but no movement label substitutes for title-specific finance, labor or craft evidence." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Trial by Fire Films is the principal TIFF production-company record; FemFilm also preserves Kaleidoscope India association, while BFI expands the producer record." },
+    { area: "reception_and_legacy", status: "source_verified", note: "TIFF and later institutional records document festival recognition and subsequent Indian release controversy; these are kept downstream from production." },
+    { area: "screenplay", status: "source_verified", note: "Deepa Mehta is the credited writer. Contemporary reporting records a late language decision, and her director statement defines the contemporary middle-class focus." },
+    { area: "directing", status: "source_verified", note: "Mehta is the credited director; later interviews describe her visualizing colour, sets and lighting during writing without establishing a complete technical recipe." },
+    { area: "performance", status: "source_verified", note: "Shabana Azmi and Nandita Das lead the ensemble. Current sensitive-performance work should use explicit consent and appropriate professional safeguards; no undocumented 1996 protocol is invented." },
+    { area: "production_design", status: "source_verified", note: "UCLA credits Aradhana Seth with production design; Mehta's detailed visual scripting remains a complementary authorship layer rather than a replacement credit." },
+    { area: "costume_makeup", status: "mapped", note: "Costume and makeup contribute to the contemporary family world, but the reviewed sources do not support detailed department workflows." },
+    { area: "cinematography", status: "source_verified", note: "Giles Nuttgens is consistently credited. Mehta praises his contribution and later describes a Fire red palette, but exact lenses, exposure and lighting ratios remain unset." },
+    { area: "lighting", status: "mapped", note: "Mehta's interviews establish lighting as part of the planned visual system, while reviewed sources do not justify a shot-level lighting package." },
+    { area: "camera_format", status: "source_verified", note: "TIFF and UCLA identify 35mm colour. Film stock, camera body, lens package and laboratory chain are not inferred." },
+    { area: "editing", status: "source_verified", note: "Barry Farrell is the credited editor. Original editorial construction is separated from later censorship and release history." },
+    { area: "sound_design", status: "source_verified", note: "TIFF credits Konrad Skreta for sound; recorder, ADR, Foley and mix hardware remain unset where unsourced." },
+    { area: "music", status: "source_verified", note: "A.R. Rahman is consistently credited as composer, kept distinct from production sound and editorial decisions." },
+    { area: "effects_animation", status: "not_central", note: "Effects are not a central verified production-history axis for this case and are not invented from the film's climax or imagery." },
+    { area: "documentary_method", status: "not_central", note: "Mehta's contemporary social intent does not make Fire a documentary; its setting and themes are shaped through scripted fiction and designed production." },
+  ],
+} as const satisfies FilmHistoryProfile;

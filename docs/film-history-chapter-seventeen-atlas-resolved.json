@@ -10,8 +10,8 @@
     "thesis": "The 1990s are not a simple march from film to digital or from Hollywood to indie. Specialty acquisition, queer and Black independent production, public and transnational finance, post-socialist restructuring, regionally distinct Asian industries, Iranian and African production networks, CGI and software animation, consumer video and global blockbuster infrastructure developed simultaneously and unevenly."
   },
   "atlas": {
-    "expectedCount": 484,
-    "actualCount": 484,
+    "expectedCount": 485,
+    "actualCount": 485,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -494,6 +494,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSeventeenFireExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -562,7 +568,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 484
+    "literalVerifiedScenarioIds": 485
   },
   "candidates": [
     {
@@ -1054,11 +1060,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P1",
       "chapterFunction": "Deepa Mehta's Indo-Canadian transnational production and censorship controversy make diasporic finance and South Asian queer representation materially visible.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_fire_1996",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSeventeenFireExpansion.ts"
     },
     {
       "title": "Taste of Cherry",
@@ -1351,6 +1357,7 @@
       "The Watermelon Woman",
       "Fargo",
       "Trainspotting",
+      "Fire",
       "Taste of Cherry",
       "Happy Together",
       "Cure",
@@ -1364,7 +1371,6 @@
     ],
     "P0": [],
     "P1": [
-      "Fire",
       "Titanic",
       "Princess Mononoke",
       "Eve's Bayou",
@@ -1379,7 +1385,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Fire",
     "Titanic",
     "Princess Mononoke",
     "Eve's Bayou",
