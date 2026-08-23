@@ -53,19 +53,13 @@ Production Cases must not show or use as advancement mechanics:
 
 Internal qualitative distinctions may be used only to choose explanatory feedback and review suggestions. They must remain subordinate to film understanding.
 
-## Residual technical cleanup
+## Core no-score cleanup completed
 
-The current player-facing direction has moved beyond an older score/best-result implementation, but legacy helpers still remain in `src/core/productionCaseProgress.ts` and are still exercised by `src/core/productionCaseFlowSmoke.test.ts`.
+The remaining legacy scoring core has been removed. `src/core/productionCaseProgress.ts` now handles learning progress, selected choices, phase completion, qualitative library status, next-case navigation, library controls and progress backup/restore without numerical score totals, prestige tiers or best-result comparison.
 
-Those helpers are not part of the target MVP contract. A focused follow-up should remove:
+The associated smoke/preflight contract now verifies qualitative learning-report gating and instructional continuation. Old v1 progress backups remain readable for their learning-progress fields; any historical `bestResults` payload is ignored rather than migrated into a new score system. Legacy local best-result storage is inert and is cleared when progress is next written or restored.
 
-- score totals and score-summary helpers;
-- Assistant / Producer / Auteur result tiers;
-- best-result persistence and comparison logic;
-- score-improvement feedback;
-- stale smoke/preflight assertions that require that model.
-
-The cleanup must preserve ordinary case/phase progress, selected mission choices, qualitative learning feedback, continuation, and progress backup/restore.
+This closes the previously documented technical mismatch between the stable Production Cases direction and its core persistence model.
 
 ## Studio Career boundary
 
