@@ -10,8 +10,8 @@
     "thesis": "The 1990s are not a simple march from film to digital or from Hollywood to indie. Specialty acquisition, queer and Black independent production, public and transnational finance, post-socialist restructuring, regionally distinct Asian industries, Iranian and African production networks, CGI and software animation, consumer video and global blockbuster infrastructure developed simultaneously and unevenly."
   },
   "atlas": {
-    "expectedCount": 481,
-    "actualCount": 481,
+    "expectedCount": 482,
+    "actualCount": 482,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -476,6 +476,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSeventeenPulpFictionExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -544,7 +550,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 481
+    "literalVerifiedScenarioIds": 482
   },
   "candidates": [
     {
@@ -846,11 +852,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P1",
       "chapterFunction": "Independent financing, Miramax distribution and nonlinear genre packaging show specialty cinema becoming a major commercial force.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_pulp_fiction_1994",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSeventeenPulpFictionExpansion.ts"
     },
     {
       "title": "Vive L'Amour",
@@ -1320,6 +1326,7 @@
       "Naked",
       "Three Colours: Red",
       "Chungking Express",
+      "Pulp Fiction",
       "Vive L'Amour",
       "Bandit Queen",
       "Toy Story",
@@ -1343,7 +1350,6 @@
     ],
     "P0": [],
     "P1": [
-      "Pulp Fiction",
       "Hoop Dreams",
       "The White Balloon",
       "Fire",
@@ -1361,7 +1367,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Pulp Fiction",
     "Hoop Dreams",
     "The White Balloon",
     "Fire",

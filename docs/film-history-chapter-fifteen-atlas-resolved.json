@@ -10,8 +10,8 @@
     "thesis": "The 1970s were not a single auteur decade followed by the blockbuster. Corporate restructuring, independent and university production, public television and film funds, postcolonial and revolutionary institutions, feminist formal practice, location labor, new sound and effects systems, changing censorship and new release strategies produced several overlapping cinemas whose conflicts are visible only when production, labor and circulation remain as important as style."
   },
   "atlas": {
-    "expectedCount": 481,
-    "actualCount": 481,
+    "expectedCount": 482,
+    "actualCount": 482,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -628,6 +628,14 @@
         "matchedExisting": 0,
         "status": "manual_chapter_seventeen_three_colours_red_verified",
         "sourceListId": "manual_chapter_seventeen_three_colours_red_expansion_2026"
+      },
+      {
+        "fileName": "chapterSeventeenPulpFictionExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_seventeen_pulp_fiction_verified",
+        "sourceListId": "manual_chapter_seventeen_pulp_fiction_expansion_2026"
       },
       {
         "fileName": "modernCanonExpansion.ts",
