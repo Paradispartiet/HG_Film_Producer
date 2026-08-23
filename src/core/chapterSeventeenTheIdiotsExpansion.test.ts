@@ -18,7 +18,7 @@ test("Chapter 17 materializes The Idiots as a source-first Dogme 95 production c
   assert.ok(film.premise.includes("normative evidence") && film.premise.includes("stated rule") && film.premise.includes("proof"));
   assert.ok(film.premise.includes("Vibeke Windeløv") && film.premise.includes("Molly Malene Stensgaard"));
   assert.ok(film.premise.includes("video-origin") && film.premise.includes("handheld") && film.premise.includes("location-driven"));
-  assert.ok(film.premise.includes("no special lighting") && film.premise.includes("Academy 35 mm"));
+  assert.ok(film.premise.includes("without special lighting") && film.premise.includes("Academy 35 mm"));
   assert.ok(film.premise.includes("117-minute") && film.premise.includes("Cannes 1998"));
   assert.ok(film.premise.includes("Do not invent the exact camera model") && film.premise.includes("transfer facility"));
 
