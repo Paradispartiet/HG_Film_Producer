@@ -135,6 +135,7 @@ import { inTheMoodForLoveProductionCaseVerification } from "./scenarioProduction
 import { atanarjuatProductionCaseVerification } from "./scenarioProductionVerificationAtanarjuat";
 import { spiritedAwayProductionCaseVerification } from "./scenarioProductionVerificationSpiritedAway";
 import { russianArkProductionCaseVerification } from "./scenarioProductionVerificationRussianArk";
+import { cityOfGodProductionCaseVerification } from "./scenarioProductionVerificationCityOfGod";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -387,6 +388,7 @@ const additionalVerificationRecords = [
   atanarjuatProductionCaseVerification,
   spiritedAwayProductionCaseVerification,
   russianArkProductionCaseVerification,
+  cityOfGodProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
