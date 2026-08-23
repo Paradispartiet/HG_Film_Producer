@@ -1,3 +1,4 @@
+import type { ScenarioAlignmentAssessment } from "./scenarioAlignmentScore";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
 
 export type ScenarioLearningRecap = {
@@ -13,30 +14,29 @@ export function createScenarioLearningRecap(args: {
   readonly verificationStatus: ScenarioProductionBrief["verificationStatus"];
   readonly selectedTargetLabels: readonly string[];
   readonly unselectedTargetLabels: readonly string[];
-  readonly alignmentTier: "none" | "loose" | "focused" | "strong";
+  readonly alignmentAssessment: ScenarioAlignmentAssessment;
 }): ScenarioLearningRecap {
   const learned = args.selectedTargetLabels.length > 0
     ? args.selectedTargetLabels.slice(0, 6)
-    : args.unselectedTargetLabels.slice(0, 3).map((label) => `Recognize target: ${label}`);
+    : args.unselectedTargetLabels.slice(0, 3).map((label) => `Compare method: ${label}`);
 
   const nextFocus = args.unselectedTargetLabels.length > 0
     ? args.unselectedTargetLabels.slice(0, 4)
-    : ["Try the same scenario with a different production scale."];
+    : ["Revisit one phase and compare why the documented method works for this film."];
 
   return {
-    title: "What this scenario trained",
-    intro: introByAlignmentTier[args.alignmentTier],
+    title: "What this case explored",
+    intro: introByAssessment[args.alignmentAssessment],
     learned,
     nextFocus,
     verificationNote: verificationNoteByStatus[args.verificationStatus]
   };
 }
 
-const introByAlignmentTier: Record<"none" | "loose" | "focused" | "strong", string> = {
-  none: "This run stayed broad, so the learning recap focuses on what the scenario was asking for.",
-  loose: "This run touched the classic brief, but left several craft targets open.",
-  focused: "This run built a clear production direction around the classic brief.",
-  strong: "This run strongly committed to the classic scenario’s craft direction."
+const introByAssessment: Record<ScenarioAlignmentAssessment, string> = {
+  reconsider: "The report highlights production methods worth comparing again with the film-specific explanations.",
+  partial: "The report separates methods you identified from methods worth comparing again.",
+  clear: "The report gathers the methods you identified and the film-specific explanations that support them."
 };
 
 const verificationNoteByStatus: Record<ScenarioProductionBrief["verificationStatus"], string> = {
