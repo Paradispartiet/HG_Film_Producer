@@ -44,7 +44,7 @@ test("Chapter 18 materializes Collateral as a source-first hybrid HD and 35mm pr
   const taxi = film.phases.find((phase) => phase.id === "taxi_rig_build");
   assert.ok(taxi?.player_task.includes("four functioning taxis") && taxi.player_task.includes("three") && taxi.player_task.includes("sound"));
   const signal = film.phases.find((phase) => phase.id === "signal_noise");
-  assert.ok(signal?.player_task.includes("waveform") && signal.player_task.includes("film-out") && signal.player_task.includes("noise"));
+  assert.ok(signal?.label.includes("film-out") && signal.player_task.includes("waveform") && signal.player_task.includes("noise"));
   const di = film.phases.find((phase) => phase.id === "di_filmout");
   assert.ok(di?.player_task.includes("Company 3") && di.player_task.includes("Laser Pacific") && di.player_task.includes("35mm"));
 
