@@ -1,0 +1,55 @@
+name: TEMP Fire Chapter 17 materialize
+
+on:
+  pull_request:
+    types: [synchronize]
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.event.pull_request.head.ref == 'agent/ch17-fire-production-case' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/ch17-fire-production-case
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Materialize deterministic 485 tree
+        run: node scripts/TEMP-ch17-fire-materialize.mjs
+      - name: Commit permanent materialization only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/ui/data/filmScenarios.ts \
+            src/ui/data/scenarioFilmStudyMap.ts \
+            src/ui/data/scenarioProductionVerificationRegistry.ts \
+            scripts/production-case-rest-audit.mjs \
+            scripts/film-history-chapter-twelve-atlas-audit.mjs \
+            scripts/film-history-chapter-thirteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fourteen-atlas-audit.mjs \
+            scripts/film-history-chapter-fifteen-atlas-audit.mjs \
+            scripts/film-history-chapter-sixteen-atlas-audit.mjs \
+            scripts/film-history-chapter-seventeen-atlas-audit.mjs \
+            src/core/filmHistoryChapterTwelveAuditContract.test.ts \
+            src/core/filmHistoryChapterThirteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFourteenAuditContract.test.ts \
+            src/core/filmHistoryChapterFifteenAuditContract.test.ts \
+            src/core/filmHistoryChapterSixteenAuditContract.test.ts \
+            src/core/filmHistoryChapterSeventeenAuditContract.test.ts \
+            docs/film-history-chapter-twelve-atlas-resolved.json \
+            docs/film-history-chapter-thirteen-atlas-resolved.json \
+            docs/film-history-chapter-fourteen-atlas-resolved.json \
+            docs/film-history-chapter-fifteen-atlas-resolved.json \
+            docs/film-history-chapter-sixteen-atlas-resolved.json \
+            docs/film-history-chapter-seventeen-atlas-resolved.json
+          test "$(git diff --cached --name-only | wc -l | tr -d ' ')" = "22"
+          ! git diff --cached --name-only | grep -q '^\.github/workflows/'
+          ! git diff --cached --name-only | grep -q '^scripts/TEMP-'
+          git commit -m "Materialize Fire Chapter 17 case"
+          git push origin HEAD:agent/ch17-fire-production-case
