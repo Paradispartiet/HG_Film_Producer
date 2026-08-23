@@ -129,6 +129,7 @@ import { theIdiotsProductionCaseVerification } from "./scenarioProductionVerific
 import { ringuProductionCaseVerification } from "./scenarioProductionVerificationRingu";
 import { blairWitchProjectProductionCaseVerification } from "./scenarioProductionVerificationBlairWitchProject";
 import { boysDontCryProductionCaseVerification } from "./scenarioProductionVerificationBoysDontCry";
+import { goodfellasProductionCaseVerification } from "./scenarioProductionVerificationGoodfellas";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -375,6 +376,7 @@ const additionalVerificationRecords = [
   ringuProductionCaseVerification,
   blairWitchProjectProductionCaseVerification,
   boysDontCryProductionCaseVerification,
+  goodfellasProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

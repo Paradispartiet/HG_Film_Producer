@@ -10,8 +10,8 @@
     "thesis": "The 1990s are not a simple march from film to digital or from Hollywood to indie. Specialty acquisition, queer and Black independent production, public and transnational finance, post-socialist restructuring, regionally distinct Asian industries, Iranian and African production networks, CGI and software animation, consumer video and global blockbuster infrastructure developed simultaneously and unevenly."
   },
   "atlas": {
-    "expectedCount": 492,
-    "actualCount": 492,
+    "expectedCount": 493,
+    "actualCount": 493,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -542,6 +542,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSeventeenGoodfellasExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -610,7 +616,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 492
+    "literalVerifiedScenarioIds": 493
   },
   "candidates": [
     {
@@ -679,11 +685,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P2",
       "chapterFunction": "A large American studio auteur production offers a useful boundary case for prestige genre production before digital-effects-driven blockbuster workflows dominate the decade's technology story.",
-      "decision": "P2",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_goodfellas_1990",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSeventeenGoodfellasExpansion.ts"
     },
     {
       "title": "Daughters of the Dust",
@@ -1371,6 +1377,7 @@
       "Slacker",
       "Metropolitan",
       "Days of Being Wild",
+      "Goodfellas",
       "Daughters of the Dust",
       "Poison",
       "Raise the Red Lantern",
@@ -1420,9 +1427,7 @@
     ],
     "P0": [],
     "P1": [],
-    "P2": [
-      "Goodfellas"
-    ],
+    "P2": [],
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [],
