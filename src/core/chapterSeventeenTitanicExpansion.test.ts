@@ -15,7 +15,7 @@ test("Chapter 17 materializes Titanic as a source-first multi-system blockbuster
 
   assert.ok(film.premise.includes("Caleb Deschanel") && film.premise.includes("Russell Carpenter") && film.premise.includes("Fox Baja"));
   assert.ok(film.premise.includes("Panavision") && film.premise.includes("Super 35") && film.premise.includes("Primo") && film.premise.includes("5279"));
-  assert.ok(film.premise.includes("Mir") && film.premise.includes("35mm two-perf") && film.premise.includes("separate acquisition system"));
+  assert.ok(film.premise.includes("Mir") && film.premise.includes("35mm two-perf") && film.premise.includes("distinct acquisition system"));
   assert.ok(film.premise.includes("Digital Domain") && film.premise.includes("CG water") && film.premise.includes("digital stunt people"));
   assert.ok(film.premise.includes("qualified stunt and aquatic-safety leadership") && film.premise.includes("hypothermia") && film.premise.includes("rescue capability"));
   assert.ok(film.premise.includes("Gary Rydstrom") && film.premise.includes("James Horner") && film.premise.includes("Dolby Digital"));
