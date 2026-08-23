@@ -33,7 +33,8 @@ test("Chapter 17 materializes The Blair Witch Project as a source-first found-fo
   const training = film.phases.find((phase) => phase.id === "casting_and_equipment_training");
   assert.ok(training?.player_task.includes("film/video") && training.player_task.includes("field sound"));
   const capture = film.phases.find((phase) => phase.id === "dual_format_capture");
-  assert.ok(capture?.player_task.includes("16mm") && capture.player_task.includes("Hi-8"));
+  assert.ok(capture?.label.includes("16mm") && capture.label.includes("Hi-8"));
+  assert.ok(capture?.player_task.includes("two documented Phase 1 image streams"));
   const sound = film.phases.find((phase) => phase.id === "field_sound_and_dat");
   assert.ok(sound?.player_task.includes("DAT") && sound.player_task.includes("microphone"));
   const discarded = film.phases.find((phase) => phase.id === "discarded_phase_two");
