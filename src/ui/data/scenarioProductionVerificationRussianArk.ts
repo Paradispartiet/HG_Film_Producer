@@ -41,7 +41,7 @@ export const russianArkProductionCaseVerification = {
     {
       title: "Russian Ark: Tilman Büttner interview",
       publisher: "DFF — Deutsches Filminstitut & Filmmuseum",
-      url: "https://www.dff.film/en/film/russian-ark/",
+      url: "https://www.dff.film/video/entfesselte-bilder-gespraech-mit-kameramann-tilman-buettner-von-russian-ark-2002/",
       sourceKind: "film_institute",
       supports: ["overall", "cinematography"],
       note: "Institutional framing of Russian Ark as a feature realized in one uninterrupted sequence and a production of exceptional performer and spatial scale; used as contextual corroboration rather than to overwrite differently defined official headcounts."
