@@ -114,6 +114,7 @@ import { spiritedAwayFilmHistoryProfile } from "./scenarioFilmStudyChapterEighte
 import { russianArkFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenRussianArk";
 import { cityOfGodFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenCityOfGod";
 import { attackOfTheClonesFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenAttackOfTheClones";
+import { collateralFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenCollateral";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -254,6 +255,7 @@ const sourceBackedFilmHistoryProfiles = {
   [russianArkFilmHistoryProfile.scenarioId]: russianArkFilmHistoryProfile,
   [cityOfGodFilmHistoryProfile.scenarioId]: cityOfGodFilmHistoryProfile,
   [attackOfTheClonesFilmHistoryProfile.scenarioId]: attackOfTheClonesFilmHistoryProfile,
+  [collateralFilmHistoryProfile.scenarioId]: collateralFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
