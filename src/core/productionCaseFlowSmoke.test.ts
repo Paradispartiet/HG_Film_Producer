@@ -53,12 +53,12 @@ test("qualitative learning report is gated until all phases are complete", () =>
 
 test("phase completion requires an explicit valid choice and next action stays instructional", () => {
   const empty = { completedMissionIds: [], selectedChoicesByMissionId: {} };
-  assert.equal(canCompleteProductionCaseMission(empty, "orientation", missions[0].choices), false);
+  assert.equal(canCompleteProductionCaseMission({ selectedChoicesByMissionId: {} }, "orientation", missions[0].choices), false);
   assert.equal(getProductionCaseLearningNextAction(missions, empty)?.actionType, "choose");
 
   const chosen = { completedMissionIds: [], selectedChoicesByMissionId: { orientation: "orientation-match" } };
-  assert.equal(canCompleteProductionCaseMission(chosen, "orientation", missions[0].choices), true);
-  assert.equal(canCompleteProductionCaseMission({ completedMissionIds: [], selectedChoicesByMissionId: { orientation: "missing" } }, "orientation", missions[0].choices), false);
+  assert.equal(canCompleteProductionCaseMission({ selectedChoicesByMissionId: chosen.selectedChoicesByMissionId }, "orientation", missions[0].choices), true);
+  assert.equal(canCompleteProductionCaseMission({ selectedChoicesByMissionId: { orientation: "missing" } }, "orientation", missions[0].choices), false);
   assert.equal(getProductionCaseLearningNextAction(missions, chosen)?.actionType, "choose");
 
   const allChosen = {
