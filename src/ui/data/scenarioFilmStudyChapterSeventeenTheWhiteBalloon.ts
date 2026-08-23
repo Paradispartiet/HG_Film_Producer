@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const theWhiteBalloonFilmHistoryProfile = {
+  scenarioId: "scenario_the_white_balloon_1995",
+  period: "1990s Iranian real-time street cinema and first-feature production",
+  traditions: ["Iranian cinema", "real-time narrative", "street filmmaking", "quest narrative", "festival circulation"],
+  before: "Jafar Panahi reached his first feature after television and short-film work and after assisting Abbas Kiarostami on Through the Olive Trees. The production emerged through Iranian television, Ferdos Films and Farabi-linked production and sales structures rather than from one isolated auteur company.",
+  moment: "The film turns a small New Year errand into an 85-minute real-time dramatic chain. IFFR and Torino credit Abbas Kiarostami for the screenplay, Panahi for direction, editing and production design, Farzad Jodat for cinematography and Mehdi Dejbodi for sound. BFI records a performance approach designed to preserve spontaneity. Present-day work with minor performers must follow applicable guardian, welfare, hours, education and labor requirements.",
+  after: "The film won the Caméra d'Or and became Panahi's international breakthrough. Those awards and Panahi's later political history are reception context, not substitutes for evidence about the 1995 shoot. Most institutional records give 85 minutes, while ACMI preserves an 82-minute holding, so runtime remains version-sensitive.",
+  historyQuestion: "How did The White Balloon combine a real-time street structure, a small institutional production network and tightly controlled authorship into an internationally successful debut?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes and BFI establish Panahi's debut status and his prior assistant-director work with Kiarostami." },
+    { area: "movement_and_tradition", status: "mapped", note: "The film belongs in Iranian realist and child-centered traditions without turning those labels into a fixed production recipe." },
+    { area: "industry_and_production_context", status: "source_verified", note: "IFFR, Torino and Celluloid Dreams preserve Ferdos Films, IRIB Channel Two and Farabi roles that should remain distinct." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes records the Caméra d'Or; later canonization remains downstream from production evidence." },
+    { area: "screenplay", status: "source_verified", note: "Kiarostami is credited for the screenplay, while Torino also preserves Panahi and Parviz Shahbazi as the original-idea source." },
+    { area: "directing", status: "source_verified", note: "Panahi directs the production and the reviewed sources document a deliberately fresh performance method." },
+    { area: "performance", status: "source_verified", note: "Aida Mohammadkhani's performance is central. Current productions must follow all rules governing minor performers." },
+    { area: "production_design", status: "source_verified", note: "Panahi is credited with production design; street realism does not mean the production lacked design choices." },
+    { area: "costume_makeup", status: "not_central", note: "No reviewed source makes costume or makeup a central production-history axis for this case." },
+    { area: "cinematography", status: "source_verified", note: "Farzad Jodat/Jadat is the credited director of photography; no camera, lens, stock, exposure or lighting package is invented." },
+    { area: "lighting", status: "mapped", note: "The visual record implies lighting decisions, but the reviewed sources do not support a technical lighting specification." },
+    { area: "camera_format", status: "mapped", note: "Later access formats are not projected backward as original capture specifications." },
+    { area: "editing", status: "source_verified", note: "Panahi is the credited editor; real-time structure is editorial organization, not proof of one continuous take." },
+    { area: "sound_design", status: "source_verified", note: "Torino credits Mehdi Dejbodi for sound; hardware and post workflows remain unset where unsourced." },
+    { area: "music", status: "not_central", note: "The reviewed sources do not establish music as a central production-history system for this case." },
+    { area: "effects_animation", status: "not_central", note: "Effects are not a central verified production axis and are not inferred from the film's realism." },
+    { area: "documentary_method", status: "mapped", note: "Street observation and real-time form can resemble documentary practice, but the film is a scripted fiction with designed performance and editing." },
+  ],
+} as const satisfies FilmHistoryProfile;
