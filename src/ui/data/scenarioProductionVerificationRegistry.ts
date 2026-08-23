@@ -125,6 +125,7 @@ import { fireProductionCaseVerification } from "./scenarioProductionVerification
 import { titanicProductionCaseVerification } from "./scenarioProductionVerificationTitanic";
 import { princessMononokeProductionCaseVerification } from "./scenarioProductionVerificationPrincessMononoke";
 import { evesBayouProductionCaseVerification } from "./scenarioProductionVerificationEvesBayou";
+import { theIdiotsProductionCaseVerification } from "./scenarioProductionVerificationTheIdiots";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -367,6 +368,7 @@ const additionalVerificationRecords = [
   titanicProductionCaseVerification,
   princessMononokeProductionCaseVerification,
   evesBayouProductionCaseVerification,
+  theIdiotsProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
