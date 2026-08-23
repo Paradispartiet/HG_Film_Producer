@@ -1,0 +1,28 @@
+name: TEMP Chapter 18 Atlas audit
+
+on:
+  push:
+    branches:
+      - agent/ch18-digital-convergence-atlas-audit
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Materialize Chapter 18 resolved audit
+        run: |
+          node scripts/film-history-chapter-eighteen-atlas-audit.mjs --write=docs/film-history-chapter-eighteen-atlas-resolved.json > /tmp/ch18-report.json
+          node -e 'const r=require("./docs/film-history-chapter-eighteen-atlas-resolved.json"); console.log(JSON.stringify({atlas:r.atlas.actualCount,verified:r.verificationIndex.literalVerifiedScenarioIds,useExisting:r.byDecision.USE_EXISTING,p0:r.byDecision.P0,p1:r.byDecision.P1,p2:r.byDecision.P2,recommended:r.recommendedNewProductionCases},null,2))'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chapter-18-resolved-audit
+          path: docs/film-history-chapter-eighteen-atlas-resolved.json
+          if-no-files-found: error
