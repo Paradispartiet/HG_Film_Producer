@@ -199,9 +199,13 @@ export function readProductionCaseLibraryControls(storage: Pick<StorageLike, "ge
 
 export function writeProductionCaseLibraryControls(
   storage: Pick<StorageLike, "setItem">,
-  controls: ProductionCaseLibraryControls,
+  controls: ProductionCaseLibraryControls & { readonly masteryFilter?: unknown },
 ): void {
-  storage.setItem(productionCaseLibraryControlsStorageKey, JSON.stringify(controls));
+  storage.setItem(productionCaseLibraryControlsStorageKey, JSON.stringify({
+    caseStatusFilter: controls.caseStatusFilter,
+    sortMode: controls.sortMode,
+    searchQuery: controls.searchQuery,
+  } satisfies ProductionCaseLibraryControls));
 }
 
 export type ProductionCaseLearningStatus = "not_started" | "in_progress" | "completed";
