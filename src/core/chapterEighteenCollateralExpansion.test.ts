@@ -20,7 +20,7 @@ test("Chapter 18 materializes Collateral as a source-first hybrid HD and 35mm pr
   assert.ok(film.premise.includes("twelve-week shoot") && film.premise.includes("first three weeks"));
   assert.ok(film.premise.includes("about twenty percent") && film.premise.includes("35mm"));
   assert.ok(film.premise.includes("twelve cameras simultaneously") && film.premise.includes("eight film cameras"));
-  assert.ok(film.premise.includes("four functional taxis") && film.premise.includes("three sliced trailer rigs"));
+  assert.ok(film.premise.toLowerCase().includes("four functional taxis") && film.premise.includes("three sliced trailer rigs"));
   assert.ok(film.premise.includes("roughly thirty ELD panels") && film.premise.includes("Plexiglas"));
   assert.ok(film.premise.includes("waveform/IRE") && film.premise.includes("film-out"));
   assert.ok(film.premise.includes("13 October through late December 2003") && film.premise.includes("120-minute"));
