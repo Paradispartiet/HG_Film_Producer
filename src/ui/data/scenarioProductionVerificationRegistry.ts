@@ -120,6 +120,7 @@ import { thePianoProductionCaseVerification } from "./scenarioProductionVerifica
 import { threeColoursRedProductionCaseVerification } from "./scenarioProductionVerificationThreeColoursRed";
 import { pulpFictionProductionCaseVerification } from "./scenarioProductionVerificationPulpFiction";
 import { hoopDreamsProductionCaseVerification } from "./scenarioProductionVerificationHoopDreams";
+import { theWhiteBalloonProductionCaseVerification } from "./scenarioProductionVerificationTheWhiteBalloon";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -357,6 +358,7 @@ const additionalVerificationRecords = [
   threeColoursRedProductionCaseVerification,
   pulpFictionProductionCaseVerification,
   hoopDreamsProductionCaseVerification,
+  theWhiteBalloonProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
