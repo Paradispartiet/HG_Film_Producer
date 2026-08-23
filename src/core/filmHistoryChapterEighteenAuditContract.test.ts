@@ -138,7 +138,7 @@ test("Chapter 18 keeps asynchronous production systems explicit", () => {
   assert.deepEqual(resolved.historicalObjects.map((item) => item.label), [...exactHistoricalObjectLabels]);
   assert.ok(resolved.historicalObjects.every((item) => item.atlasDecision === "NO_PRODUCTION_CASE"));
   assert.ok(resolved.safeguards.some((item) => item.includes("Digital is never treated as one switch")));
-  assert.ok(resolved.safeguards.some((item) => item.includes("digital intermediate") && item.includes("digital principal photography")));
+  assert.ok(resolved.safeguards.some((item) => item.includes("digital intermediate") && item.includes("principal photography was digital")));
   assert.ok(resolved.safeguards.some((item) => item.includes("DCI") && item.includes("distribution") && item.includes("exhibition")));
   assert.ok(resolved.safeguards.some((item) => item.includes("Mainland China") && item.includes("Hong Kong") && item.includes("South Korea")));
   assert.ok(resolved.safeguards.some((item) => item.includes("Streaming") && item.includes("financed")));
