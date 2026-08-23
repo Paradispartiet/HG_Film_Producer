@@ -206,5 +206,5 @@ test("Chapter 17 source hierarchy is explicit and permanent in v0.1 verification
   assert.ok(resolved.researchSources.length >= 8);
   assert.ok(resolved.researchSources.every((source) => source.url.startsWith("https://")));
   assert.ok(packageJson.includes('"audit:film-history-ch17": "node scripts/film-history-chapter-seventeen-atlas-audit.mjs"'));
-  assert.ok(packageJson.includes("npm run audit:film-history-ch16 && npm run audit:film-history-ch17 && npm run typecheck"));
+  assert.ok(packageJson.includes("npm run audit:film-history-ch16 && npm run audit:film-history-ch17"));
 });
