@@ -30,3 +30,5 @@ jobs:
           git add src scripts docs
           git commit -m "Integrate Collateral into Chapter 18 Atlas"
           git push origin HEAD:agent/ch18-collateral-production-case
+
+# User-authored no-op change to run permanent PR verification on the materialized 501/501 head.
