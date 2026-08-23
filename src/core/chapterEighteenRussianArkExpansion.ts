@@ -38,7 +38,7 @@ export const chapterEighteenRussianArkExpansionDefinitions = [
       "Recognize Sokurov and Anatoly Nikiforov's screenplay credit and the additional dialogue credits while studying route timing and room-by-room staging as production dramaturgy.",
       "Keep art direction, costume design and makeup preparation as independent departments whose work had to survive continuous camera movement through the museum.",
       "Treat Valery Gergiev and the Mariinsky Theatre Orchestra's ballroom performance as live event coordination within the take, while leaving undocumented sound-sync methodology unset.",
-      "Distinguish an acquisition with no editorial cuts from post-production: the official credits explicitly include digital imaging, colour correction and VFX.",
+      "Distinguish image post-production from editorial cutting: the official credits explicitly include digital imaging, colour correction and VFX even though the acquisition has no cuts.",
       "Use Büttner's account of colour/brightness adjustment, object removal and electronic reframing as bounded evidence that a one-take film can still undergo substantial image post-production.",
       "Keep digital cleanup and reframing separate from editing in the sense of cutting between takes or shots; Russian Ark preserves temporal continuity while modifying image content and framing.",
       "Use Cannes' 96-minute runtime as the gameplay duration while preserving source-specific production recollections of an approximately 90–92-minute recording task rather than forcing all figures to match.",
