@@ -23,7 +23,7 @@ test("Chapter 17 materializes Princess Mononoke as a source-first hybrid animati
   assert.ok(film.premise.includes("133 minutes") && film.premise.includes("Miramax") && film.premise.includes("Neil Gaiman"));
 
   assert.ok(film.learningGoals.some((goal) => goal.includes("hybrid transitional") && goal.includes("fully digital")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("storyboard") && goal.includes("over 130 minutes")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("storyboard") && goal.includes("exceeded 130 minutes")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("part of finishing shifted to digital paint")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Silicon Graphics") && goal.includes("software")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("digital-paint, CG and photography departments")));
