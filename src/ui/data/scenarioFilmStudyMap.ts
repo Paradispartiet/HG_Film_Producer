@@ -108,6 +108,7 @@ import { blairWitchProjectFilmHistoryProfile } from "./scenarioFilmStudyChapterS
 import { boysDontCryFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenBoysDontCry";
 import { goodfellasFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenGoodfellas";
 import { gleanersFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenGleaners";
+import { inTheMoodForLoveFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenInTheMoodForLove";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -242,6 +243,7 @@ const sourceBackedFilmHistoryProfiles = {
   [boysDontCryFilmHistoryProfile.scenarioId]: boysDontCryFilmHistoryProfile,
   [goodfellasFilmHistoryProfile.scenarioId]: goodfellasFilmHistoryProfile,
   [gleanersFilmHistoryProfile.scenarioId]: gleanersFilmHistoryProfile,
+  [inTheMoodForLoveFilmHistoryProfile.scenarioId]: inTheMoodForLoveFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
