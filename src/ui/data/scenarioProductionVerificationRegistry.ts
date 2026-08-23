@@ -136,6 +136,7 @@ import { atanarjuatProductionCaseVerification } from "./scenarioProductionVerifi
 import { spiritedAwayProductionCaseVerification } from "./scenarioProductionVerificationSpiritedAway";
 import { russianArkProductionCaseVerification } from "./scenarioProductionVerificationRussianArk";
 import { cityOfGodProductionCaseVerification } from "./scenarioProductionVerificationCityOfGod";
+import { attackOfTheClonesProductionCaseVerification } from "./scenarioProductionVerificationAttackOfTheClones";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -389,6 +390,7 @@ const additionalVerificationRecords = [
   spiritedAwayProductionCaseVerification,
   russianArkProductionCaseVerification,
   cityOfGodProductionCaseVerification,
+  attackOfTheClonesProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

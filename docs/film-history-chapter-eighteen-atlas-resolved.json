@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 499,
-    "actualCount": 499,
+    "expectedCount": 500,
+    "actualCount": 500,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -584,6 +584,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenAttackOfTheClonesExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -652,7 +658,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 499
+    "literalVerifiedScenarioIds": 500
   },
   "candidates": [
     {
@@ -857,11 +863,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Big-budget digital acquisition and effects-heavy studio production make end-to-end digital ambitions visible at blockbuster scale.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_star_wars_episode_ii_attack_of_the_clones_2002",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenAttackOfTheClonesExpansion.ts"
     },
     {
       "title": "28 Days Later",
@@ -1915,6 +1921,7 @@
       "Millennium Mambo",
       "Russian Ark",
       "City of God",
+      "Star Wars: Episode II - Attack of the Clones",
       "Lost in Translation",
       "The Return",
       "Tropical Malady",
@@ -1949,7 +1956,6 @@
       "Portrait of a Lady on Fire"
     ],
     "P0": [
-      "Star Wars: Episode II - Attack of the Clones",
       "Collateral",
       "Inland Empire",
       "Zodiac",
@@ -1999,7 +2005,6 @@
   "recommendedNewProductionCases": [
     "Yi Yi",
     "Crouching Tiger, Hidden Dragon",
-    "Star Wars: Episode II - Attack of the Clones",
     "28 Days Later",
     "Unknown Pleasures",
     "Oldboy",
