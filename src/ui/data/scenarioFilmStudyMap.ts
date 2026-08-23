@@ -105,6 +105,7 @@ import { evesBayouFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeen
 import { theIdiotsFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenTheIdiots";
 import { ringuFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenRingu";
 import { blairWitchProjectFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenBlairWitchProject";
+import { boysDontCryFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenBoysDontCry";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -236,6 +237,7 @@ const sourceBackedFilmHistoryProfiles = {
   [theIdiotsFilmHistoryProfile.scenarioId]: theIdiotsFilmHistoryProfile,
   [ringuFilmHistoryProfile.scenarioId]: ringuFilmHistoryProfile,
   [blairWitchProjectFilmHistoryProfile.scenarioId]: blairWitchProjectFilmHistoryProfile,
+  [boysDontCryFilmHistoryProfile.scenarioId]: boysDontCryFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
