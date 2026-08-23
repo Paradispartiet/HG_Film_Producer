@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 493,
-    "actualCount": 493,
+    "expectedCount": 494,
+    "actualCount": 494,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -548,6 +548,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenGleanersExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -616,7 +622,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 493
+    "literalVerifiedScenarioIds": 494
   },
   "candidates": [
     {
@@ -629,11 +635,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Handheld DV essay filmmaking makes small-camera authorship, self-reflexive documentary practice and low-cost digital mobility visible at the start of the decade.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_gleaners_and_i_2000",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenGleanersExpansion.ts"
     },
     {
       "title": "Platform",
@@ -1869,6 +1875,7 @@
   ],
   "byDecision": {
     "USE_EXISTING": [
+      "The Gleaners and I",
       "Platform",
       "Dancer in the Dark",
       "The Son's Room",
@@ -1907,7 +1914,6 @@
       "Portrait of a Lady on Fire"
     ],
     "P0": [
-      "The Gleaners and I",
       "In the Mood for Love",
       "Atanarjuat: The Fast Runner",
       "Spirited Away",
@@ -1961,7 +1967,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "The Gleaners and I",
     "In the Mood for Love",
     "Yi Yi",
     "Crouching Tiger, Hidden Dragon",
