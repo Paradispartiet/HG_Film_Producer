@@ -1,35 +1,31 @@
-export type ScenarioAlignmentScore = {
+export type ScenarioAlignmentAssessment = "reconsider" | "partial" | "clear";
+
+export type ScenarioAlignmentFeedback = {
   readonly selectedCount: number;
   readonly totalCount: number;
-  readonly percentage: number;
-  readonly tier: "none" | "loose" | "focused" | "strong";
-  readonly label: string;
+  readonly assessment: ScenarioAlignmentAssessment;
 };
 
-export function calculateScenarioAlignmentScore(args: {
+export function assessScenarioAlignment(args: {
   readonly selectedTargetIds: readonly string[];
   readonly totalTargets: number;
-}): ScenarioAlignmentScore {
+}): ScenarioAlignmentFeedback {
   const totalCount = Math.max(0, args.totalTargets);
-  const selectedCount = args.selectedTargetIds.length;
+  const selectedCount = Math.min(args.selectedTargetIds.length, totalCount);
 
-  if (totalCount === 0) {
-    return { selectedCount, totalCount, percentage: 0, tier: "none", label: "No classic alignment yet" };
+  if (totalCount === 0 || selectedCount === 0) {
+    return { selectedCount, totalCount, assessment: "reconsider" };
   }
 
-  const percentage = Math.min(100, Math.round((selectedCount / totalCount) * 100));
+  const selectedShare = selectedCount / totalCount;
 
-  if (selectedCount === 0) {
-    return { selectedCount, totalCount, percentage, tier: "none", label: "No classic alignment yet" };
+  if (selectedShare < 0.35) {
+    return { selectedCount, totalCount, assessment: "reconsider" };
   }
 
-  if (percentage < 35) {
-    return { selectedCount, totalCount, percentage, tier: "loose", label: "Loose classic alignment" };
+  if (selectedShare < 0.7) {
+    return { selectedCount, totalCount, assessment: "partial" };
   }
 
-  if (percentage < 70) {
-    return { selectedCount, totalCount, percentage, tier: "focused", label: "Focused classic alignment" };
-  }
-
-  return { selectedCount, totalCount, percentage, tier: "strong", label: "Strong classic alignment" };
+  return { selectedCount, totalCount, assessment: "clear" };
 }
