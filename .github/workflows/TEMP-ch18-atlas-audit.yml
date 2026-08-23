@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - agent/ch18-digital-convergence-atlas-audit
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
