@@ -10,8 +10,8 @@
     "thesis": "The 1960s did not replace classical cinema with one New Wave style. New production systems emerged through criticism, first-feature economics, location practice, changing equipment, state support, co-production, decolonization, censorship and modernist experiments in time, space, performance and sound; their similarities matter only when their different institutions and material conditions remain visible."
   },
   "atlas": {
-    "expectedCount": 489,
-    "actualCount": 489,
+    "expectedCount": 490,
+    "actualCount": 490,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -692,6 +692,14 @@
         "matchedExisting": 0,
         "status": "manual_chapter_seventeen_the_idiots_verified",
         "sourceListId": "manual_chapter_seventeen_the_idiots_expansion_2026"
+      },
+      {
+        "fileName": "chapterSeventeenRinguExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_seventeen_ringu_verified",
+        "sourceListId": "manual_chapter_seventeen_ringu_expansion_2026"
       },
       {
         "fileName": "modernCanonExpansion.ts",
