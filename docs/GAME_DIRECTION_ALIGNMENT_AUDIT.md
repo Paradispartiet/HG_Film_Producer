@@ -6,7 +6,7 @@
 
 The current Production Case mission flow already follows that direction through qualitative choice feedback, completion state, review hints and a learning report. This audit was refreshed after finding a contradictory legacy alignment layer that still exposed percentage scores, public alignment tiers and score-like report language.
 
-The current cleanup removes those public scoring signals from the target/reflection/report surfaces. One residual technical-debt area remains: `src/core/productionCaseProgress.ts` still contains older score, result-tier and best-result helpers, and `src/core/productionCaseFlowSmoke.test.ts` still tests that obsolete contract. Those helpers must be removed in a separate focused cleanup rather than treated as part of the stable Production Cases design.
+The public scoring signals have now been removed from the target/reflection/report surfaces and from the remaining Production Cases core contract. `src/core/productionCaseProgress.ts` now stores only learning progress, selected choices, library controls and backup/restore state; qualitative interpretation remains in `src/core/productionCaseLearning.ts`.
 
 ## Authoritative Production Cases contract
 
@@ -60,31 +60,21 @@ The older alignment surfaces previously exposed percentage and tier output. They
 
 The implementation may still use a small internal `reconsider / partial / clear` assessment solely to choose useful explanatory copy. That is permitted by the pedagogical-assessment section of `GAME_DIRECTION.md` because it is not exposed as a rank or reward.
 
-## Residual mismatch: legacy score and best-result core
+## Core cleanup completed
 
-### Where it remains
+The legacy Production Cases score / result-tier / best-result contract has been removed from `src/core/productionCaseProgress.ts`. The core now preserves only:
 
-- `src/core/productionCaseProgress.ts`
-- `src/core/productionCaseFlowSmoke.test.ts`
-- the preflight assertion that currently requires the old “report and best result are gated” smoke-test wording
-
-### Why it is a mismatch
-
-The legacy core still defines score totals, result tiers, best-score persistence and best-result comparison logic. Those concepts directly contradict the current rule that Production Cases has no numerical score, prestige tier or best-score chase.
-
-### Required follow-up
-
-Remove the obsolete score / tier / best-result core contract while preserving:
-
-- per-case progress;
+- per-case learning progress;
 - selected mission choices;
 - phase completion;
-- qualitative learning feedback;
-- learning report generation;
+- qualitative library status (`not_started`, `in_progress`, `completed`);
 - next-case navigation;
-- progress export/import compatibility where it concerns learning progress.
+- search/status library controls;
+- progress export/import.
 
-If obsolete best-result storage exists in a player browser, the cleanup should ignore or remove it safely without making the old score data part of the new progress model.
+`src/core/productionCaseFlowSmoke.test.ts` now verifies qualitative report gating and instructional continuation instead of score or best-result behavior, and the v0.1 preflight checks that contract.
+
+Backward compatibility is intentionally one-way: old v1 backups that contain `bestResults` can still restore their learning progress, but the score payload is ignored. Existing legacy best-result local-storage data is inert and is removed the next time progress is written or restored. It is not migrated into a replacement ranking system.
 
 ## Studio Career boundary
 
@@ -119,16 +109,12 @@ Do not add these as the next response to the scoring cleanup:
 - new playable modes;
 - generic simulator depth without a film-learning justification.
 
-## Recommended next PRs
+## Recommended next work
 
-### PR 1 — Remove legacy Production Case score / best-result core
-
-Delete the obsolete scoring, tier and best-result persistence contract from `productionCaseProgress`, replace stale smoke-test expectations with qualitative learning/progress invariants, and update preflight wording accordingly.
-
-### PR 2 — Verify player-facing mode hierarchy copy
+### PR 1 — Verify player-facing mode hierarchy copy
 
 Check the title screen and shared navigation for clear “Production Cases = stable reference model / Studio Career = experimental” framing. Keep this copy-focused unless a real routing defect is found.
 
-### PR 3 — Manual Production Cases browser playtest
+### PR 2 — Manual Production Cases browser playtest
 
 Validate new-player, returning-player, review, next-case, persistence, source inspection and fallback-to-library paths in a real browser. The playtest should evaluate whether the player understands *why* film methods work, not whether a numeric result improves.
