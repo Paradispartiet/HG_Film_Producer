@@ -28,7 +28,7 @@ jobs:
           node -e 'const r=require("./docs/film-history-chapter-eighteen-atlas-resolved.json"); console.log(JSON.stringify({atlas:r.atlas.actualCount,verified:r.verificationIndex.literalVerifiedScenarioIds,useExisting:r.byDecision.USE_EXISTING,p0:r.byDecision.P0,p1:r.byDecision.P1,p2:r.byDecision.P2,recommended:r.recommendedNewProductionCases},null,2))'
       - name: Commit resolved audit
         run: |
-          if git diff --quiet -- docs/film-history-chapter-eighteen-atlas-resolved.json; then
+          if [ -z "$(git status --porcelain -- docs/film-history-chapter-eighteen-atlas-resolved.json)" ]; then
             echo "Resolved audit already committed."
             exit 0
           fi
