@@ -132,6 +132,7 @@ import { boysDontCryProductionCaseVerification } from "./scenarioProductionVerif
 import { goodfellasProductionCaseVerification } from "./scenarioProductionVerificationGoodfellas";
 import { gleanersProductionCaseVerification } from "./scenarioProductionVerificationGleaners";
 import { inTheMoodForLoveProductionCaseVerification } from "./scenarioProductionVerificationInTheMoodForLove";
+import { atanarjuatProductionCaseVerification } from "./scenarioProductionVerificationAtanarjuat";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -381,6 +382,7 @@ const additionalVerificationRecords = [
   goodfellasProductionCaseVerification,
   gleanersProductionCaseVerification,
   inTheMoodForLoveProductionCaseVerification,
+  atanarjuatProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

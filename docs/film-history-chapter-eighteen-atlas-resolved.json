@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 495,
-    "actualCount": 495,
+    "expectedCount": 496,
+    "actualCount": 496,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -560,6 +560,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenAtanarjuatExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -628,7 +634,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 495
+    "literalVerifiedScenarioIds": 496
   },
   "candidates": [
     {
@@ -736,11 +742,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Inuit-led digital production and Inuktitut-language feature filmmaking make Indigenous authorship, remote location production and community knowledge central.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_atanarjuat_the_fast_runner_2001",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenAtanarjuatExpansion.ts"
     },
     {
       "title": "Spirited Away",
@@ -1885,6 +1891,7 @@
       "Platform",
       "Dancer in the Dark",
       "In the Mood for Love",
+      "Atanarjuat: The Fast Runner",
       "The Son's Room",
       "Millennium Mambo",
       "Lost in Translation",
@@ -1921,7 +1928,6 @@
       "Portrait of a Lady on Fire"
     ],
     "P0": [
-      "Atanarjuat: The Fast Runner",
       "Spirited Away",
       "Russian Ark",
       "City of God",
@@ -1975,7 +1981,6 @@
   "recommendedNewProductionCases": [
     "Yi Yi",
     "Crouching Tiger, Hidden Dragon",
-    "Atanarjuat: The Fast Runner",
     "Spirited Away",
     "Russian Ark",
     "City of God",

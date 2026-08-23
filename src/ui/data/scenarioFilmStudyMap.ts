@@ -109,6 +109,7 @@ import { boysDontCryFilmHistoryProfile } from "./scenarioFilmStudyChapterSevente
 import { goodfellasFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenGoodfellas";
 import { gleanersFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenGleaners";
 import { inTheMoodForLoveFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenInTheMoodForLove";
+import { atanarjuatFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenAtanarjuat";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -244,6 +245,7 @@ const sourceBackedFilmHistoryProfiles = {
   [goodfellasFilmHistoryProfile.scenarioId]: goodfellasFilmHistoryProfile,
   [gleanersFilmHistoryProfile.scenarioId]: gleanersFilmHistoryProfile,
   [inTheMoodForLoveFilmHistoryProfile.scenarioId]: inTheMoodForLoveFilmHistoryProfile,
+  [atanarjuatFilmHistoryProfile.scenarioId]: atanarjuatFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
