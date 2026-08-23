@@ -10,8 +10,8 @@
     "thesis": "The 1960s did not replace classical cinema with one New Wave style. New production systems emerged through criticism, first-feature economics, location practice, changing equipment, state support, co-production, decolonization, censorship and modernist experiments in time, space, performance and sound; their similarities matter only when their different institutions and material conditions remain visible."
   },
   "atlas": {
-    "expectedCount": 496,
-    "actualCount": 496,
+    "expectedCount": 497,
+    "actualCount": 497,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -748,6 +748,14 @@
         "matchedExisting": 0,
         "status": "manual_chapter_eighteen_atanarjuat_verified",
         "sourceListId": "manual_chapter_eighteen_atanarjuat_expansion_2026"
+      },
+      {
+        "fileName": "chapterEighteenSpiritedAwayExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eighteen_spirited_away_verified",
+        "sourceListId": "manual_chapter_eighteen_spirited_away_expansion_2026"
       },
       {
         "fileName": "modernCanonExpansion.ts",
