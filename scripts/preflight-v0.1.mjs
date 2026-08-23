@@ -75,10 +75,10 @@ for (const path of [
 }
 
 await requireText("src/core/productionCaseFlowSmoke.test.ts", [
-  "report and best result are gated",
+  "qualitative learning report is gated",
   "getNextProductionCaseId",
-  "isProductionCaseFirstSession",
-  "getProductionCaseNextAction",
+  "getProductionCaseLearningNextAction",
+  "legacy v1 backup imports learning progress",
 ]);
 
 await requireText("src/core/studioCareerFlowSmoke.test.ts", [
