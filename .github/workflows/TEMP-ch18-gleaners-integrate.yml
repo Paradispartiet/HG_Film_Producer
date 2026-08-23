@@ -1,0 +1,195 @@
+name: TEMP Chapter 18 Gleaners integration
+
+on:
+  push:
+    branches:
+      - agent/ch18-gleaners-production-case
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/ch18-gleaners-production-case
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Integrate Gleaners into Atlas registries and audits
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const cp = require('node:child_process');
+
+          function read(path) { return fs.readFileSync(path, 'utf8'); }
+          function write(path, text) { fs.writeFileSync(path, text); }
+          function replaceRequired(text, from, to, label) {
+            if (text.includes(to)) return text;
+            if (!text.includes(from)) throw new Error(`Missing expected pattern for ${label}`);
+            return text.replace(from, to);
+          }
+
+          // Runtime scenario chain.
+          {
+            const path = 'src/ui/data/filmScenarios.ts';
+            let t = read(path);
+            t = replaceRequired(
+              t,
+              'import { mergeChapterSeventeenGoodfellasExpansion } from "../../core/chapterSeventeenGoodfellasExpansion.js";\n',
+              'import { mergeChapterSeventeenGoodfellasExpansion } from "../../core/chapterSeventeenGoodfellasExpansion.js";\nimport { mergeChapterEighteenGleanersExpansion } from "../../core/chapterEighteenGleanersExpansion.js";\n',
+              'filmScenarios import',
+            );
+            t = replaceRequired(
+              t,
+              'const chapterSeventeenGoodfellasScenarios = mergeChapterSeventeenGoodfellasExpansion(chapterSeventeenBoysDontCryScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterSeventeenGoodfellasScenarios);',
+              'const chapterSeventeenGoodfellasScenarios = mergeChapterSeventeenGoodfellasExpansion(chapterSeventeenBoysDontCryScenarios);\nconst chapterEighteenGleanersScenarios = mergeChapterEighteenGleanersExpansion(chapterSeventeenGoodfellasScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterEighteenGleanersScenarios);',
+              'filmScenarios merge chain',
+            );
+            t = replaceRequired(
+              t,
+              '+manual_chapter_seventeen_goodfellas_expansion_2026+manual_modern_indie_asian_prize_expansion_2026',
+              '+manual_chapter_seventeen_goodfellas_expansion_2026+manual_chapter_eighteen_gleaners_expansion_2026+manual_modern_indie_asian_prize_expansion_2026',
+              'filmScenarios source list',
+            );
+            t = replaceRequired(
+              t,
+              'The agreed 98-film correction remains complete.',
+              'Chapter 18 now begins with the source-first The Gleaners and I production case, preserving DV acquisition, documentary encounter, artisan editing, theatrical presentation, restoration and circulation as distinct evidence layers. The agreed 98-film correction remains complete.',
+              'filmScenarios note',
+            );
+            write(path, t);
+          }
+
+          // Verification registry.
+          {
+            const path = 'src/ui/data/scenarioProductionVerificationRegistry.ts';
+            let t = read(path);
+            t = replaceRequired(
+              t,
+              'import { goodfellasProductionCaseVerification } from "./scenarioProductionVerificationGoodfellas";\n',
+              'import { goodfellasProductionCaseVerification } from "./scenarioProductionVerificationGoodfellas";\nimport { gleanersProductionCaseVerification } from "./scenarioProductionVerificationGleaners";\n',
+              'verification import',
+            );
+            t = replaceRequired(
+              t,
+              '  goodfellasProductionCaseVerification,\n',
+              '  goodfellasProductionCaseVerification,\n  gleanersProductionCaseVerification,\n',
+              'verification registry entry',
+            );
+            write(path, t);
+          }
+
+          // Film Study registry.
+          {
+            const path = 'src/ui/data/scenarioFilmStudyMap.ts';
+            let t = read(path);
+            t = replaceRequired(
+              t,
+              'import { goodfellasFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenGoodfellas";\n',
+              'import { goodfellasFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenGoodfellas";\nimport { gleanersFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenGleaners";\n',
+              'Film Study import',
+            );
+            t = replaceRequired(
+              t,
+              '  [goodfellasFilmHistoryProfile.scenarioId]: goodfellasFilmHistoryProfile,\n',
+              '  [goodfellasFilmHistoryProfile.scenarioId]: goodfellasFilmHistoryProfile,\n  [gleanersFilmHistoryProfile.scenarioId]: gleanersFilmHistoryProfile,\n',
+              'Film Study registry entry',
+            );
+            write(path, t);
+          }
+
+          // Canonical production-case audit.
+          {
+            const path = 'scripts/production-case-rest-audit.mjs';
+            let t = read(path);
+            t = replaceRequired(t, 'const EXPECTED_PLAYABLE_SCENARIOS = 493;', 'const EXPECTED_PLAYABLE_SCENARIOS = 494;', 'playable count');
+            t = replaceRequired(t, 'const EXPECTED_VERIFIED_PRODUCTION_CASES = 493;', 'const EXPECTED_VERIFIED_PRODUCTION_CASES = 494;', 'verified count');
+            t = replaceRequired(
+              t,
+              '  "chapterSeventeenGoodfellasExpansion.ts",\n',
+              '  "chapterSeventeenGoodfellasExpansion.ts",\n  "chapterEighteenGleanersExpansion.ts",\n',
+              'production audit expansion list',
+            );
+            write(path, t);
+          }
+
+          const chapters = ['twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen'];
+          for (const chapter of chapters) {
+            const script = `scripts/film-history-chapter-${chapter}-atlas-audit.mjs`;
+            let t = read(script);
+            t = replaceRequired(t, 'const EXPECTED_ATLAS_COUNT = 493;', 'const EXPECTED_ATLAS_COUNT = 494;', `${chapter} atlas count`);
+            t = replaceRequired(
+              t,
+              '  "chapterSeventeenGoodfellasExpansion.ts",\n',
+              '  "chapterSeventeenGoodfellasExpansion.ts",\n  "chapterEighteenGleanersExpansion.ts",\n',
+              `${chapter} expansion list`,
+            );
+            write(script, t);
+          }
+
+          // Existing chapter contracts track the current canonical Atlas count.
+          const contractNames = ['Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen'];
+          for (const chapter of contractNames) {
+            const path = `src/core/filmHistoryChapter${chapter}AuditContract.test.ts`;
+            let t = read(path);
+            t = t.replaceAll('493', '494');
+            write(path, t);
+          }
+
+          // Chapter 18 queue transition: Gleaners moves from P0 to USE_EXISTING.
+          {
+            const path = 'src/core/filmHistoryChapterEighteenAuditContract.test.ts';
+            let t = read(path);
+            t = replaceRequired(
+              t,
+              'const exactExisting = [\n  "Platform",',
+              'const exactExisting = [\n  "The Gleaners and I", "Platform",',
+              'Chapter 18 existing queue',
+            );
+            t = replaceRequired(
+              t,
+              'const exactP0Queue = [\n  "The Gleaners and I", "In the Mood for Love",',
+              'const exactP0Queue = [\n  "In the Mood for Love",',
+              'Chapter 18 P0 queue',
+            );
+            t = replaceRequired(t, 'assert.equal(exactExisting.length, 36);', 'assert.equal(exactExisting.length, 37);', 'Chapter 18 existing count');
+            t = replaceRequired(t, 'assert.equal(exactP0Queue.length, 22);', 'assert.equal(exactP0Queue.length, 21);', 'Chapter 18 P0 count');
+            t = replaceRequired(t, 'assert.equal(resolved.recommendedNewProductionCases.length, 45);', 'assert.equal(resolved.recommendedNewProductionCases.length, 44);', 'Chapter 18 recommended count');
+            write(path, t);
+          }
+
+          // Regenerate resolved audit snapshots from the now-current 494-case Atlas.
+          for (const chapter of chapters) {
+            const doc = `docs/film-history-chapter-${chapter}-atlas-resolved.json`;
+            cp.execFileSync('node', [`scripts/film-history-chapter-${chapter}-atlas-audit.mjs`, `--write=${doc}`], { stdio: 'inherit' });
+          }
+
+          // Fast structural checks before committing materialized state.
+          cp.execFileSync('node', ['scripts/production-case-rest-audit.mjs'], { stdio: 'inherit' });
+          const ch18 = JSON.parse(read('docs/film-history-chapter-eighteen-atlas-resolved.json'));
+          if (ch18.atlas.actualCount !== 494) throw new Error(`Chapter 18 atlas=${ch18.atlas.actualCount}, expected 494`);
+          if (!ch18.byDecision.USE_EXISTING.includes('The Gleaners and I')) throw new Error('Gleaners did not move to USE_EXISTING');
+          if (ch18.byDecision.P0.includes('The Gleaners and I')) throw new Error('Gleaners remains in P0 unexpectedly');
+          if (ch18.byDecision.USE_EXISTING.length !== 37 || ch18.byDecision.P0.length !== 21 || ch18.recommendedNewProductionCases.length !== 44) {
+            throw new Error(`Unexpected Chapter 18 queues existing=${ch18.byDecision.USE_EXISTING.length} p0=${ch18.byDecision.P0.length} recommended=${ch18.recommendedNewProductionCases.length}`);
+          }
+          console.log(JSON.stringify({ atlas: ch18.atlas.actualCount, verified: ch18.verificationIndex.literalVerifiedScenarioIds, useExisting: ch18.byDecision.USE_EXISTING.length, p0: ch18.byDecision.P0.length, p1: ch18.byDecision.P1.length, p2: ch18.byDecision.P2.length, recommended: ch18.recommendedNewProductionCases.length }, null, 2));
+          NODE
+      - name: Commit deterministic integration
+        shell: bash
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No integration changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src scripts docs
+          git commit -m "Integrate Gleaners into Chapter 18 Atlas"
+          git push origin HEAD:agent/ch18-gleaners-production-case
