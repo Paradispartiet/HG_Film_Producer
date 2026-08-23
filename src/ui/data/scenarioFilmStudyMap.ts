@@ -101,6 +101,7 @@ import { theWhiteBalloonFilmHistoryProfile } from "./scenarioFilmStudyChapterSev
 import { fireFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenFire";
 import { titanicFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenTitanic";
 import { princessMononokeFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenPrincessMononoke";
+import { evesBayouFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenEvesBayou";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -228,6 +229,7 @@ const sourceBackedFilmHistoryProfiles = {
   [fireFilmHistoryProfile.scenarioId]: fireFilmHistoryProfile,
   [titanicFilmHistoryProfile.scenarioId]: titanicFilmHistoryProfile,
   [princessMononokeFilmHistoryProfile.scenarioId]: princessMononokeFilmHistoryProfile,
+  [evesBayouFilmHistoryProfile.scenarioId]: evesBayouFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
