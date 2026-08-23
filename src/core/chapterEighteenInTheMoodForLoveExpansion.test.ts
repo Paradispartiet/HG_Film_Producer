@@ -26,7 +26,7 @@ test("Chapter 18 materializes In the Mood for Love as a source-first transnation
   assert.ok(film.learningGoals.some((goal) => goal.includes("Doyle") && goal.includes("roughly 80%")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("15-month") && goal.includes("financing disruption")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Bangkok") && goal.includes("Hong Kong")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("William Chang") && goal.includes("three credits")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("William Chang") && goal.includes("production design") && goal.includes("costume")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Umebayashi") && goal.includes("Nat King Cole")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("mono sound") && goal.includes("later release")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("98-minute") && goal.includes("90-minute")));
