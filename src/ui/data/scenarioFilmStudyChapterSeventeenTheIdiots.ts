@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const theIdiotsFilmHistoryProfile = {
+  scenarioId: "scenario_the_idiots_1998",
+  period: "late-1990s Dogme 95: Danish location production, handheld video-origin capture, synchronized sound constraints and performance-centered anti-polish aesthetics",
+  traditions: ["Dogme 95", "Danish cinema", "European independent cinema", "video-origin feature production", "handheld location filmmaking", "performance-centered fiction"],
+  before: "The Idiots followed the 1995 Dogme 95 manifesto and arrived beside Festen as the movement became a practical production challenge rather than only a declaration. The Vow of Chastity attacked studio control, elaborate lighting, detached sound/music practices, optical manipulation and conventional authorship prestige by imposing a deliberately restrictive rule set.",
+  moment: "The production should be understood through the tension between rule and implementation. Von Trier's feature uses a mobile, video-origin, handheld and location-driven production system to pursue immediacy and volatile ensemble performance. Yet the manifesto itself is not proof of perfect compliance. Producer Vibeke Windeløv, editor Molly Malene Stensgaard, performance labor, camera work and production sound remain separate systems, and the film's rough immediacy still depends on selection, ordering and finishing.",
+  after: "Its 1998 Cannes circulation and later place in Dogme retrospectives made The Idiots part of a wider debate about cheap video production, realism, authorship and institutional rule-making. Later prints, transfers, restorations or home-video masters are downstream presentation objects and must not be used to reconstruct unsupported acquisition hardware or postproduction specifications.",
+  historyQuestion: "How did The Idiots turn Dogme 95 from a manifesto into a practical production constraint while showing why stated rules, actual production practice and later presentation formats must remain separate evidence layers?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "The film is a 1998 Danish feature associated with Dogme 95 and commonly identified as the movement's second certified film after Festen." },
+    { area: "movement_and_tradition", status: "source_verified", note: "Dogme 95 is treated as a production movement and rule system. The manifesto is normative evidence, not automatic proof of film-specific compliance." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Lars von Trier's writer-director role and Vibeke Windeløv's producer role remain distinct; Dogme's anti-auteur rhetoric does not erase credited industrial labor." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Cannes 1998 and later Dogme retrospectives belong to circulation/legacy. They do not establish the original camera or transfer chain." },
+    { area: "screenplay", status: "source_verified", note: "Von Trier wrote and directed the feature. The case distinguishes fictional performance structures from documentary truth despite the production's intentionally immediate surface." },
+    { area: "directing", status: "source_verified", note: "Direction is modeled as management of rules, performance, location and mobile camera response rather than as conventional coverage polished by technical control." },
+    { area: "performance", status: "mapped", note: "Ensemble volatility and apparent spontaneity are central production pressures; exact rehearsal, improvisation and take-count claims are left unset without direct production evidence." },
+    { area: "production_design", status: "mapped", note: "Dogme's location/prop constraints turn found spaces into a production system. The case does not invent construction, dressing or permission records." },
+    { area: "costume_makeup", status: "mapped", note: "Costume/makeup are constrained by the anti-artifice program, but exact wardrobe and makeup procedures are not inferred from manifesto language alone." },
+    { area: "cinematography", status: "source_verified", note: "Handheld, video-origin location capture is historically central. Exact camera, lens, tape/codec, frame rate, exposure and filtration specifications remain unset absent direct craft documentation." },
+    { area: "lighting", status: "source_verified", note: "The Dogme rule rejects special lighting; gameplay treats this as a constraint while refusing to turn the rule itself into fabricated fixture or exposure data." },
+    { area: "camera_format", status: "source_verified", note: "Acquisition and presentation are separated. Video-origin capture, theatrical film presentation and later digital masters are different format layers; no exact transfer path is invented." },
+    { area: "editing", status: "source_verified", note: "Molly Malene Stensgaard is the credited editor. Rough handheld continuity still depends on selection, duration and ordering rather than bypassing editorial authorship." },
+    { area: "sound_design", status: "source_verified", note: "Dogme links sound recording to the photographed event and restricts added music. Dialogue, room tone, environment, noise and source music remain distinguishable production elements." },
+    { area: "music", status: "mapped", note: "The manifesto's rule against separately added music is treated as a production constraint; exact source-music capture and postproduction treatment are not invented." },
+    { area: "effects_animation", status: "not_central", note: "Dogme rejects optical work and filters. The case records the rule without inventing a postproduction-effects ledger or assuming every frame demonstrates perfect compliance." },
+    { area: "documentary_method", status: "not_central", note: "The Idiots is fiction using documentary-like production immediacy. Handheld video and apparent spontaneity do not convert staged performance into documentary evidence." },
+  ],
+} as const satisfies FilmHistoryProfile;
