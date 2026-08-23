@@ -10,8 +10,8 @@
     "thesis": "The 1990s are not a simple march from film to digital or from Hollywood to indie. Specialty acquisition, queer and Black independent production, public and transnational finance, post-socialist restructuring, regionally distinct Asian industries, Iranian and African production networks, CGI and software animation, consumer video and global blockbuster infrastructure developed simultaneously and unevenly."
   },
   "atlas": {
-    "expectedCount": 490,
-    "actualCount": 490,
+    "expectedCount": 491,
+    "actualCount": 491,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -530,6 +530,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSeventeenBlairWitchProjectExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -598,7 +604,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 490
+    "literalVerifiedScenarioIds": 491
   },
   "candidates": [
     {
@@ -1316,11 +1322,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P1",
       "chapterFunction": "Microbudget mixed-format production and internet-era marketing show how production method and distribution publicity could be tightly coupled without equating virality with authorship.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_blair_witch_project_1999",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSeventeenBlairWitchProjectExpansion.ts"
     },
     {
       "title": "Boys Don't Cry",
@@ -1402,11 +1408,11 @@
       "Beau Travail",
       "Rosetta",
       "All About My Mother",
+      "The Blair Witch Project",
       "Shiri"
     ],
     "P0": [],
     "P1": [
-      "The Blair Witch Project",
       "Boys Don't Cry"
     ],
     "P2": [
@@ -1415,7 +1421,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "The Blair Witch Project",
     "Boys Don't Cry"
   ],
   "historicalObjects": [
