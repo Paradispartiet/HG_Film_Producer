@@ -10,8 +10,8 @@
     "thesis": "The 1990s are not a simple march from film to digital or from Hollywood to indie. Specialty acquisition, queer and Black independent production, public and transnational finance, post-socialist restructuring, regionally distinct Asian industries, Iranian and African production networks, CGI and software animation, consumer video and global blockbuster infrastructure developed simultaneously and unevenly."
   },
   "atlas": {
-    "expectedCount": 488,
-    "actualCount": 488,
+    "expectedCount": 489,
+    "actualCount": 489,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -518,6 +518,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterSeventeenTheIdiotsExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -586,7 +592,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 488
+    "literalVerifiedScenarioIds": 489
   },
   "candidates": [
     {
@@ -1216,11 +1222,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P1",
       "chapterFunction": "A second Dogme title tests the manifesto as a production system rather than treating Festen as a one-film anomaly.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_idiots_1998",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterSeventeenTheIdiotsExpansion.ts"
     },
     {
       "title": "Ringu",
@@ -1384,6 +1390,7 @@
       "Eve's Bayou",
       "Festen",
       "Central Station",
+      "The Idiots",
       "The Matrix",
       "Beau Travail",
       "Rosetta",
@@ -1392,7 +1399,6 @@
     ],
     "P0": [],
     "P1": [
-      "The Idiots",
       "Ringu",
       "The Blair Witch Project",
       "Boys Don't Cry"
@@ -1403,7 +1409,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "The Idiots",
     "Ringu",
     "The Blair Witch Project",
     "Boys Don't Cry"
