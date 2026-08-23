@@ -1,60 +1,93 @@
 # Production Cases MVP checkpoint
 
-Production Cases now has a closed playable MVP loop. This checkpoint exists to keep the project focused on manually playing and evaluating that loop before expanding into new simulator systems. Automated checks are green, but the full browser-based manual playthrough is still the next validation step.
+Production Cases is the stable playable MVP and reference model for HG Film Producer. The loop is centered on studying real films through film-specific choices, explanations, source-backed context and a qualitative learning report. It is not a score, rank or best-result loop.
+
+Automated verification remains required for every change. Manual browser playtesting is still useful for product validation, but it is not a blocker for source-first case production or focused correctness fixes.
 
 ## Current MVP loop
-
-The current Production Cases MVP loop is:
 
 ```text
 Title screen
 → Start Production Cases
-→ Start here / Start first case
-→ choose production case
-→ make production choices
-→ complete all missions
-→ Case report
-→ Play again / Next case
-→ progress / best result
+→ choose a film case
+→ place the film historically
+→ inspect the film-study mapping
+→ work through each production phase
+→ compare plausible approaches
+→ choose the explanation that best fits
+→ read immediate film-specific feedback
+→ complete the phase
+→ unlock the learning report
+→ review this case / continue to next case / return to library
 ```
 
-In practical terms, the player should be able to enter Production Cases from the title screen, receive first-session guidance, pick or start a case, make the required production choices, finish every mission in that case, view the gated case report, continue with either Play again or Next case, and see progress / best-result tracking reflected afterward.
+Progress records whether a case is not started, in progress or completed and which phases have been studied. A completed case does not produce a numerical score, prestige tier, best result or threshold for advancement.
 
 ## What is done
 
-- Production Cases is the primary playable MVP.
-- First-session guidance exists, including a Start first case path for new Production Cases players.
-- A production case catalogue exists.
-- Production choices and missions exist.
-- A completion-gated report exists, so report and best-result actions are only available after all missions are complete.
-- Best result and progress tracking exists.
-- Play again and Next case continuation actions exist.
-- Basic dashboard, Next Action, achievements, and recent best results exist.
-- Build, test, and UI-build checks are green.
+- Production Cases is the primary stable MVP/reference mode.
+- First-session guidance and a direct first-case path exist.
+- The film-case library supports search, learning-status filtering and continuation.
+- Every playable case is covered by the executable production-case verification contract.
+- Film History chapters 1–17 have completed their Production Case rollout; there are no remaining P0/P1 production-case gaps in that rollout.
+- Each Production Case uses the complete 17-area Film Study mapping, with evidence state preserved as `source_verified`, `mapped`, `research_pending` or `not_central`.
+- Film-specific missions and plausible alternative choices exist.
+- Immediate feedback explains why an approach fits, partly fits or should be reconsidered.
+- A completion-gated qualitative learning report exists.
+- The report identifies methods understood clearly and phases worth comparing again.
+- Source evidence is inspectable for verified cases.
+- Review-this-case, next-case and back-to-library continuation paths exist.
+- Learning progress can be exported and restored without requiring a score model.
+- `npm run verify:v0.1` and the production artifact are the automated release gates.
 
-## What is intentionally not done yet
+## No-score contract
 
-- The full studio simulator is not the current playable MVP.
-- Studio Career has since become an experimental playable branch and is documented separately in [`docs/STUDIO_CAREER_EXPERIMENTAL_STATUS.md`](STUDIO_CAREER_EXPERIMENTAL_STATUS.md).
-- Manusrom is not active gameplay yet.
-- Casting, crew, and economy systems should not be expanded yet.
-- Film history atlas and locations should not be expanded yet.
-- Advanced recommendation logic should wait.
-- More content and more cases should wait until the current Production Cases loop has been manually tested.
+Production Cases must not show or use as advancement mechanics:
 
-## Do not expand before manual browser test
+- numerical points or percentage scores;
+- Assistant / Producer / Auteur or other prestige tiers;
+- best scores or “improve your best result” loops;
+- public performance labels;
+- score thresholds;
+- badges, streaks, currency or simulated economy as learning rewards.
 
-**2026-07-18 owner decision: this freeze is lifted** (see
-`docs/PLAYABLE_MODES_QA_STATUS.md`). The manual browser test remains an open
-QA item, not a build blocker. The guidance below is preserved for the record.
+Internal qualitative distinctions may be used only to choose explanatory feedback and review suggestions. They must remain subordinate to film understanding.
 
-Before adding major features or broadening the project into full studio-simulator work, someone should manually play the existing loop in a browser and evaluate at least these paths:
+## Residual technical cleanup
 
-- New player path.
-- Returning player path.
-- Play again.
-- Next case.
-- Progress / best-result persistence.
-- Fallback back to the Production Cases library.
+The current player-facing direction has moved beyond an older score/best-result implementation, but legacy helpers still remain in `src/core/productionCaseProgress.ts` and are still exercised by `src/core/productionCaseFlowSmoke.test.ts`.
 
-Until those paths have been manually played and evaluated in a real browser, avoid scope creep into new gameplay systems, larger simulator mechanics, expanded content catalogues, casting / crew / economy expansions, atlas / location expansions, or advanced recommendation layers. The next checkpoint should be based on how this closed loop feels in real browser play, not on adding more systems before the loop is validated.
+Those helpers are not part of the target MVP contract. A focused follow-up should remove:
+
+- score totals and score-summary helpers;
+- Assistant / Producer / Auteur result tiers;
+- best-result persistence and comparison logic;
+- score-improvement feedback;
+- stale smoke/preflight assertions that require that model.
+
+The cleanup must preserve ordinary case/phase progress, selected mission choices, qualitative learning feedback, continuation, and progress backup/restore.
+
+## Studio Career boundary
+
+Studio Career is an experimental playable branch documented separately in [`docs/STUDIO_CAREER_EXPERIMENTAL_STATUS.md`](STUDIO_CAREER_EXPERIMENTAL_STATUS.md). Its studio-state mechanics must not redefine Production Cases or leak score/prestige logic into the stable learning loop.
+
+Budget, time, technology, location and working conditions can appear in Production Cases when they are documented facts that explain how a real film was made. They must not become a universal resource-management game.
+
+## Manual browser validation
+
+The earlier expansion freeze tied to manual browser testing was lifted on 2026-07-18; see `docs/PLAYABLE_MODES_QA_STATUS.md`. Manual playtesting remains an open QA activity rather than a build blocker.
+
+A useful browser playthrough should still evaluate:
+
+- new-player entry to Production Cases;
+- returning-player continuation;
+- film search and status filtering;
+- case/phase progress persistence;
+- choice feedback and explanation clarity;
+- learning-report gating;
+- review-this-case and next-case continuation;
+- source inspection;
+- export/import of learning progress;
+- fallback to the Production Cases library.
+
+The success question is whether the player understands the film's historical and production methods more clearly after the case — not whether a numeric result improved.

@@ -1,4 +1,4 @@
-import { calculateScenarioAlignmentScore } from "../data/scenarioAlignmentScore";
+import { assessScenarioAlignment } from "../data/scenarioAlignmentScore";
 import { getScenarioAlignmentSummary } from "../data/scenarioAlignmentSummary";
 
 interface ScenarioAlignmentResultPanelProps {
@@ -6,33 +6,20 @@ interface ScenarioAlignmentResultPanelProps {
   readonly totalTargets: number;
 }
 
-const resultMeaningByTier = {
-  none: "You released the film, but did not lock onto the production case yet.",
-  loose: "You found parts of the case, but the production logic is still broad.",
-  focused: "You built a recognizable production direction.",
-  strong: "You closely matched the production case’s craft direction."
-} as const;
-
 export function ScenarioAlignmentResultPanel({ selectedTargetIds, totalTargets }: ScenarioAlignmentResultPanelProps) {
-  const score = calculateScenarioAlignmentScore({ selectedTargetIds, totalTargets });
-  const summary = getScenarioAlignmentSummary(score);
+  const feedback = assessScenarioAlignment({ selectedTargetIds, totalTargets });
+  const summary = getScenarioAlignmentSummary(feedback);
 
   return (
     <section className="scenario-alignment-result" aria-labelledby="scenario-alignment-result-title">
       <div className="scenario-alignment-result-header">
         <div>
-          <span className="eyebrow">Release consequence</span>
-          <h3 id="scenario-alignment-result-title">Production case result</h3>
-        </div>
-        <div className="scenario-alignment-result-badges" aria-label={`Result tier: ${score.tier}. Result label: ${score.label}`}>
-          <span className="scenario-alignment-result-badge">{score.tier}</span>
-          <span className="scenario-alignment-result-label">{score.label}</span>
+          <span className="eyebrow">Release reflection</span>
+          <h3 id="scenario-alignment-result-title">Production case reflection</h3>
         </div>
       </div>
-      <div className="scenario-alignment-result-score">{score.percentage}%</div>
-      <p className="scenario-alignment-result-meaning"><strong>Result meaning:</strong> {resultMeaningByTier[score.tier]}</p>
-      <p className="scenario-alignment-result-summary">{summary}</p>
-      <p className="scenario-alignment-meta">{score.selectedCount} / {score.totalCount} targets selected</p>
+      <p className="scenario-alignment-result-meaning"><strong>What to review:</strong> {summary}</p>
+      <p className="scenario-alignment-result-summary">Use the explanations to compare your choices with the documented film method before continuing.</p>
     </section>
   );
 }

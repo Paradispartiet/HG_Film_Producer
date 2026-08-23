@@ -3,7 +3,6 @@ import type { ScenarioProductionBrief } from "../data/scenarioProductionBriefs";
 import {
   createScenarioTargetChecklist,
   getScenarioTargetCategoryLabel,
-  getScenarioTargetCount,
   type ScenarioTargetCategory,
 } from "../data/scenarioTargetChecklist";
 
@@ -32,8 +31,6 @@ export function ScenarioTargetChecklistPanel({
     () => createScenarioTargetChecklist(brief),
     [brief],
   );
-  const targetCount = getScenarioTargetCount(checklist);
-  const selectedCount = selectedTargetIds.length;
 
   function toggleTarget(targetId: string) {
     onChangeSelectedTargetIds(
@@ -50,16 +47,13 @@ export function ScenarioTargetChecklistPanel({
     >
       <div className="scenario-target-header">
         <div>
-          <span className="eyebrow">Playable target board</span>
-          <h3 id="scenario-target-title">Scenario target checklist</h3>
+          <span className="eyebrow">Film-craft comparison</span>
+          <h3 id="scenario-target-title">Production method checklist</h3>
           <p>
-            Pick the craft targets to master while reconstructing this specific
-            film as a production case.
+            Mark the film methods you want to compare while studying this case.
+            These notes guide reflection and do not create a score or rank.
           </p>
         </div>
-        <span className="scenario-target-progress">
-          {selectedCount} / {targetCount} targets selected
-        </span>
       </div>
       <div className="scenario-target-grid">
         {categories.map((category) => {
@@ -86,16 +80,6 @@ export function ScenarioTargetChecklistPanel({
           );
         })}
       </div>
-      <p className="scenario-target-status">
-        {getProgressStatus(selectedCount)}
-      </p>
     </section>
   );
-}
-
-function getProgressStatus(selectedCount: number) {
-  if (selectedCount === 0) return "No targets selected yet";
-  if (selectedCount <= 3) return "Early production intent";
-  if (selectedCount <= 7) return "Focused production-case direction";
-  return "Strong production-case alignment";
 }

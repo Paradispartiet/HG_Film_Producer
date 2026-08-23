@@ -7,41 +7,41 @@ const baseArgs = {
   verificationStatus: "seeded" as const,
   selectedTargetLabels: [] as readonly string[],
   unselectedTargetLabels: ["Genre control", "Tone control", "Script control", "Camera control", "Edit control"] as readonly string[],
-  alignmentTier: "none" as const
+  alignmentAssessment: "reconsider" as const
 };
 
-test("createScenarioLearningRecap handles none without selected targets", () => {
+test("createScenarioLearningRecap guides reconsideration without selected methods", () => {
   const recap = createScenarioLearningRecap(baseArgs);
 
-  assert.equal(recap.intro, "This run stayed broad, so the learning recap focuses on what the scenario was asking for.");
-  assert.deepEqual(recap.learned, ["Recognize target: Genre control", "Recognize target: Tone control", "Recognize target: Script control"]);
+  assert.equal(recap.intro, "The report highlights production methods worth comparing again with the film-specific explanations.");
+  assert.deepEqual(recap.learned, ["Compare method: Genre control", "Compare method: Tone control", "Compare method: Script control"]);
   assert.deepEqual(recap.nextFocus, ["Genre control", "Tone control", "Script control", "Camera control"]);
 });
 
-test("createScenarioLearningRecap handles loose with selected and unselected targets", () => {
+test("createScenarioLearningRecap handles a partial qualitative assessment", () => {
   const recap = createScenarioLearningRecap({
     ...baseArgs,
     selectedTargetLabels: ["Genre control", "Tone control"],
     unselectedTargetLabels: ["Script control", "Camera control"],
-    alignmentTier: "loose"
+    alignmentAssessment: "partial"
   });
 
-  assert.equal(recap.intro, "This run touched the classic brief, but left several craft targets open.");
+  assert.equal(recap.intro, "The report separates methods you identified from methods worth comparing again.");
   assert.deepEqual(recap.learned, ["Genre control", "Tone control"]);
   assert.deepEqual(recap.nextFocus, ["Script control", "Camera control"]);
 });
 
-test("createScenarioLearningRecap handles strong with all targets selected", () => {
+test("createScenarioLearningRecap handles a clear qualitative assessment with all methods selected", () => {
   const recap = createScenarioLearningRecap({
     ...baseArgs,
     selectedTargetLabels: ["Genre control", "Tone control", "Script control"],
     unselectedTargetLabels: [],
-    alignmentTier: "strong"
+    alignmentAssessment: "clear"
   });
 
-  assert.equal(recap.intro, "This run strongly committed to the classic scenario’s craft direction.");
+  assert.equal(recap.intro, "The report gathers the methods you identified and the film-specific explanations that support them.");
   assert.deepEqual(recap.learned, ["Genre control", "Tone control", "Script control"]);
-  assert.deepEqual(recap.nextFocus, ["Try the same scenario with a different production scale."]);
+  assert.deepEqual(recap.nextFocus, ["Revisit one phase and compare why the documented method works for this film."]);
 });
 
 test("createScenarioLearningRecap shows needs_research verification note", () => {

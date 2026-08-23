@@ -1,18 +1,16 @@
-import type { ScenarioAlignmentScore } from "./scenarioAlignmentScore.js";
+import type { ScenarioAlignmentFeedback } from "./scenarioAlignmentScore.js";
 
-export function getScenarioAlignmentSummary(score: ScenarioAlignmentScore): string {
-  switch (score.tier) {
-    case "none":
-      return "The production did not commit to the classic scenario targets.";
-    case "loose":
-      return "The film borrows from the classic brief, but the direction is still broad.";
-    case "focused":
-      return "The production has a clear relationship to the classic scenario brief.";
-    case "strong":
-      return "The production strongly follows the classic scenario’s craft direction.";
+export function getScenarioAlignmentSummary(feedback: ScenarioAlignmentFeedback): string {
+  switch (feedback.assessment) {
+    case "reconsider":
+      return "Compare the selected approaches with the documented film method and revisit the explanations that do not fit yet.";
+    case "partial":
+      return "Some selected approaches connect to the documented film method. Compare the remaining approaches to see where the film works differently.";
+    case "clear":
+      return "The selected approaches connect closely to the documented film method. Use the explanations to identify why those methods fit this film.";
     default: {
-      const exhaustiveTier: never = score.tier;
-      return exhaustiveTier;
+      const exhaustiveAssessment: never = feedback.assessment;
+      return exhaustiveAssessment;
     }
   }
 }
