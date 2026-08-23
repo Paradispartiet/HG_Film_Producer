@@ -45,8 +45,10 @@ test("The White Balloon refuses unsupported technical precision and preserves ve
 test("The White Balloon merge is deterministic and deduplicates title aliases", () => {
   const merged = mergeChapterSeventeenTheWhiteBalloonExpansion([]);
   assert.equal(merged.length, 1);
-  assert.equal(merged[0].id, "scenario_the_white_balloon_1995");
-  assert.equal(merged[0].status, "manual_chapter_seventeen_the_white_balloon_verified");
+  const first = merged[0];
+  assert.ok(first);
+  assert.equal(first.id, "scenario_the_white_balloon_1995");
+  assert.equal(first.status, "manual_chapter_seventeen_the_white_balloon_verified");
   const second = mergeChapterSeventeenTheWhiteBalloonExpansion(merged);
   assert.equal(second.length, 1);
 });
