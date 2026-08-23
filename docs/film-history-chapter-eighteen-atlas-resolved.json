@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 498,
-    "actualCount": 498,
+    "expectedCount": 499,
+    "actualCount": 499,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -578,6 +578,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenCityOfGodExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -646,7 +652,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 498
+    "literalVerifiedScenarioIds": 499
   },
   "candidates": [
     {
@@ -834,11 +840,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Brazilian location production, nonprofessional/community casting and international post/distribution make regional production scale and representation central.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_city_of_god_2002",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenCityOfGodExpansion.ts"
     },
     {
       "title": "Star Wars: Episode II - Attack of the Clones",
@@ -1908,6 +1914,7 @@
       "The Son's Room",
       "Millennium Mambo",
       "Russian Ark",
+      "City of God",
       "Lost in Translation",
       "The Return",
       "Tropical Malady",
@@ -1942,7 +1949,6 @@
       "Portrait of a Lady on Fire"
     ],
     "P0": [
-      "City of God",
       "Star Wars: Episode II - Attack of the Clones",
       "Collateral",
       "Inland Empire",
@@ -1993,7 +1999,6 @@
   "recommendedNewProductionCases": [
     "Yi Yi",
     "Crouching Tiger, Hidden Dragon",
-    "City of God",
     "Star Wars: Episode II - Attack of the Clones",
     "28 Days Later",
     "Unknown Pleasures",
