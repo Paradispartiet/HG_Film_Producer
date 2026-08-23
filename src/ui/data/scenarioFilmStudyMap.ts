@@ -111,6 +111,7 @@ import { gleanersFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenGl
 import { inTheMoodForLoveFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenInTheMoodForLove";
 import { atanarjuatFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenAtanarjuat";
 import { spiritedAwayFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenSpiritedAway";
+import { russianArkFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenRussianArk";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -248,6 +249,7 @@ const sourceBackedFilmHistoryProfiles = {
   [inTheMoodForLoveFilmHistoryProfile.scenarioId]: inTheMoodForLoveFilmHistoryProfile,
   [atanarjuatFilmHistoryProfile.scenarioId]: atanarjuatFilmHistoryProfile,
   [spiritedAwayFilmHistoryProfile.scenarioId]: spiritedAwayFilmHistoryProfile,
+  [russianArkFilmHistoryProfile.scenarioId]: russianArkFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
