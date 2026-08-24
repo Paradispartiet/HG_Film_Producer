@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 507,
-    "actualCount": 507,
+    "expectedCount": 508,
+    "actualCount": 508,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -632,6 +632,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenGravityExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -700,7 +706,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 507
+    "literalVerifiedScenarioIds": 508
   },
   "candidates": [
     {
@@ -1534,11 +1540,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Previsualization, LED light-box systems, virtual cinematography and extensive CG environments make post-led production design and performance integration central.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_gravity_2013",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenGravityExpansion.ts"
     },
     {
       "title": "Ida",
@@ -1990,6 +1996,7 @@
       "Somewhere",
       "A Separation",
       "Pietà",
+      "Gravity",
       "Blue Is the Warmest Colour",
       "Birdman",
       "Boyhood",
@@ -2005,7 +2012,6 @@
       "Portrait of a Lady on Fire"
     ],
     "P0": [
-      "Gravity",
       "Son of Saul",
       "Moonlight",
       "Dunkirk",
@@ -2061,7 +2067,6 @@
     "Pina",
     "Amour",
     "Holy Motors",
-    "Gravity",
     "Ida",
     "Son of Saul",
     "The Revenant",
