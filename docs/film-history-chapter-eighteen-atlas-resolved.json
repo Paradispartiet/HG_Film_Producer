@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 510,
-    "actualCount": 510,
+    "expectedCount": 511,
+    "actualCount": 511,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -650,6 +650,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenDunkirkExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -718,7 +724,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 510
+    "literalVerifiedScenarioIds": 511
   },
   "candidates": [
     {
@@ -1778,11 +1784,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "65mm and IMAX photochemical production at blockbuster scale makes large-format film persistence a direct counterexample to digital inevitability.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_dunkirk_2017",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenDunkirkExpansion.ts"
     },
     {
       "title": "Get Out",
@@ -2020,13 +2026,13 @@
       "From Afar",
       "Moonlight",
       "Toni Erdmann",
+      "Dunkirk",
       "Burning",
       "An Elephant Sitting Still",
       "Synonyms",
       "Portrait of a Lady on Fire"
     ],
     "P0": [
-      "Dunkirk",
       "Roma",
       "Spider-Man: Into the Spider-Verse",
       "Parasite",
@@ -2082,7 +2088,6 @@
     "Ida",
     "The Revenant",
     "I Am Not Your Negro",
-    "Dunkirk",
     "Get Out",
     "Roma",
     "Spider-Man: Into the Spider-Verse",
