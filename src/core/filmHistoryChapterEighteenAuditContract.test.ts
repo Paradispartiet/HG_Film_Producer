@@ -47,14 +47,14 @@ const exactCandidateTitles = [
 const exactExisting = [
   "The Gleaners and I", "Platform", "Dancer in the Dark", "In the Mood for Love", "Atanarjuat: The Fast Runner", "Spirited Away", "The Son's Room", "Millennium Mambo", "Russian Ark", "City of God", "Star Wars: Episode II - Attack of the Clones", "Lost in Translation", "The Return", "Collateral", "Tropical Malady",
   "Head-On", "Vera Drake", "Inland Empire", "Still Life", "Zodiac", "Secret Sunshine", "No Country for Old Men", "4 Months, 3 Weeks and 2 Days", "Slumdog Millionaire",
-  "Waltz with Bashir", "Wendy and Lucy", "The Wrestler", "Hunger", "Avatar", "A Prophet", "The White Ribbon", "The Milk of Sorrow",
+  "Waltz with Bashir", "Wendy and Lucy", "The Wrestler", "Hunger", "Avatar", "A Prophet", "The White Ribbon", "The Milk of Sorrow", "The Social Network",
   "Poetry", "Somewhere", "Pietà", "Blue Is the Warmest Colour", "Birdman", "Boyhood", "Winter Sleep", "Black Coal, Thin Ice",
   "Tangerine", "Mad Max: Fury Road", "From Afar", "Toni Erdmann", "Burning", "An Elephant Sitting Still", "Synonyms",
   "Portrait of a Lady on Fire",
 ] as const;
 
 const exactP0Queue = [
-  "The Social Network", "A Separation", "Gravity", "Son of Saul", "Moonlight", "Dunkirk", "Roma",
+  "A Separation", "Gravity", "Son of Saul", "Moonlight", "Dunkirk", "Roma",
   "Spider-Man: Into the Spider-Verse", "Parasite", "The Irishman",
 ] as const;
 
@@ -84,14 +84,14 @@ const exactHistoricalObjectLabels = [
 ] as const;
 
 test("Chapter 18 audit locks the 2000–2019 digital-convergence scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 505;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 506;/);
   assert.equal(resolved.chapter.number, 18);
   assert.equal(resolved.chapter.id, "digital-convergence-transnational-production");
   assert.equal(resolved.chapter.title, "Digital convergence, transnational production and platform-era cinema");
   assert.equal(resolved.chapter.period, "2000–2019");
-  assert.equal(resolved.atlas.expectedCount, 505);
-  assert.equal(resolved.atlas.actualCount, 505);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 505);
+  assert.equal(resolved.atlas.expectedCount, 506);
+  assert.equal(resolved.atlas.actualCount, 506);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 506);
 });
 
 test("Chapter 18 locks the exact candidate census without duplicate Atlas matches", () => {
@@ -107,11 +107,11 @@ test("Chapter 18 locks the exact evidence-derived Production Case queues", () =>
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactExisting.length, 48);
-  assert.equal(exactP0Queue.length, 10);
+  assert.equal(exactExisting.length, 49);
+  assert.equal(exactP0Queue.length, 9);
   assert.equal(exactP1Queue.length, 23);
   assert.equal(exactP2Queue.length, 1);
-  assert.equal(resolved.recommendedNewProductionCases.length, 33);
+  assert.equal(resolved.recommendedNewProductionCases.length, 32);
   assert.deepEqual(
     resolved.recommendedNewProductionCases,
     resolved.candidates

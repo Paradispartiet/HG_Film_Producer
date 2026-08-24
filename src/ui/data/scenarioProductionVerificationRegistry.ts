@@ -142,6 +142,7 @@ import { inlandEmpireProductionCaseVerification } from "./scenarioProductionVeri
 import { zodiacProductionCaseVerification } from "./scenarioProductionVerificationZodiac";
 import { slumdogMillionaireProductionCaseVerification } from "./scenarioProductionVerificationSlumdogMillionaire";
 import { avatarProductionCaseVerification } from "./scenarioProductionVerificationAvatar";
+import { theSocialNetworkProductionCaseVerification } from "./scenarioProductionVerificationTheSocialNetwork";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -401,6 +402,7 @@ const additionalVerificationRecords = [
   zodiacProductionCaseVerification,
   slumdogMillionaireProductionCaseVerification,
   avatarProductionCaseVerification,
+  theSocialNetworkProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
