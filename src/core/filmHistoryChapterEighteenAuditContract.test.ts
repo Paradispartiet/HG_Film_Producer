@@ -46,8 +46,8 @@ const exactCandidateTitles = [
 
 const exactExisting = [
   "The Gleaners and I", "Platform", "Dancer in the Dark", "In the Mood for Love", "Atanarjuat: The Fast Runner", "Spirited Away", "The Son's Room", "Millennium Mambo", "Russian Ark", "City of God", "Star Wars: Episode II - Attack of the Clones", "Lost in Translation", "The Return", "Collateral", "Tropical Malady",
-  "Head-On", "Vera Drake", "Inland Empire", "Still Life", "Zodiac", "Secret Sunshine", "No Country for Old Men", "4 Months, 3 Weeks and 2 Days", "Slumdog Millionaire", "Avatar",
-  "Waltz with Bashir", "Wendy and Lucy", "The Wrestler", "Hunger", "A Prophet", "The White Ribbon", "The Milk of Sorrow",
+  "Head-On", "Vera Drake", "Inland Empire", "Still Life", "Zodiac", "Secret Sunshine", "No Country for Old Men", "4 Months, 3 Weeks and 2 Days", "Slumdog Millionaire",
+  "Waltz with Bashir", "Wendy and Lucy", "The Wrestler", "Hunger", "Avatar", "A Prophet", "The White Ribbon", "The Milk of Sorrow",
   "Poetry", "Somewhere", "Pietà", "Blue Is the Warmest Colour", "Birdman", "Boyhood", "Winter Sleep", "Black Coal, Thin Ice",
   "Tangerine", "Mad Max: Fury Road", "From Afar", "Toni Erdmann", "Burning", "An Elephant Sitting Still", "Synonyms",
   "Portrait of a Lady on Fire",
