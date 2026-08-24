@@ -137,6 +137,7 @@ import { spiritedAwayProductionCaseVerification } from "./scenarioProductionVeri
 import { russianArkProductionCaseVerification } from "./scenarioProductionVerificationRussianArk";
 import { cityOfGodProductionCaseVerification } from "./scenarioProductionVerificationCityOfGod";
 import { attackOfTheClonesProductionCaseVerification } from "./scenarioProductionVerificationAttackOfTheClones";
+import { collateralProductionCaseVerification } from "./scenarioProductionVerificationCollateral";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -391,6 +392,7 @@ const additionalVerificationRecords = [
   russianArkProductionCaseVerification,
   cityOfGodProductionCaseVerification,
   attackOfTheClonesProductionCaseVerification,
+  collateralProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

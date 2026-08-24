@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 500,
-    "actualCount": 500,
+    "expectedCount": 501,
+    "actualCount": 501,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -590,6 +590,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenCollateralExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -658,7 +664,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 500
+    "literalVerifiedScenarioIds": 501
   },
   "candidates": [
     {
@@ -955,11 +961,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Mixed HD and 35mm night production makes digital sensitivity, early camera limitations and hybrid finishing concrete rather than abstract.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_collateral_2004",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenCollateralExpansion.ts"
     },
     {
       "title": "Tropical Malady",
@@ -1924,6 +1930,7 @@
       "Star Wars: Episode II - Attack of the Clones",
       "Lost in Translation",
       "The Return",
+      "Collateral",
       "Tropical Malady",
       "Head-On",
       "Vera Drake",
@@ -1956,7 +1963,6 @@
       "Portrait of a Lady on Fire"
     ],
     "P0": [
-      "Collateral",
       "Inland Empire",
       "Zodiac",
       "Slumdog Millionaire",
@@ -2008,7 +2014,6 @@
     "28 Days Later",
     "Unknown Pleasures",
     "Oldboy",
-    "Collateral",
     "Brokeback Mountain",
     "Caché",
     "Inland Empire",
