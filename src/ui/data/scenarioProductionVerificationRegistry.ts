@@ -146,6 +146,7 @@ import { theSocialNetworkProductionCaseVerification } from "./scenarioProduction
 import { aSeparationProductionCaseVerification } from "./scenarioProductionVerificationASeparation";
 import { gravityProductionCaseVerification } from "./scenarioProductionVerificationGravity";
 import { sonOfSaulProductionCaseVerification } from "./scenarioProductionVerificationSonOfSaul";
+import { moonlightProductionCaseVerification } from "./scenarioProductionVerificationMoonlight";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -409,6 +410,7 @@ const additionalVerificationRecords = [
   aSeparationProductionCaseVerification,
   gravityProductionCaseVerification,
   sonOfSaulProductionCaseVerification,
+  moonlightProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

@@ -123,6 +123,7 @@ import { theSocialNetworkFilmHistoryProfile } from "./scenarioFilmStudyChapterEi
 import { aSeparationFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenASeparation";
 import { gravityFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenGravity";
 import { sonOfSaulFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenSonOfSaul";
+import { moonlightFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenMoonlight";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -272,6 +273,7 @@ const sourceBackedFilmHistoryProfiles = {
   [aSeparationFilmHistoryProfile.scenarioId]: aSeparationFilmHistoryProfile,
   [gravityFilmHistoryProfile.scenarioId]: gravityFilmHistoryProfile,
   [sonOfSaulFilmHistoryProfile.scenarioId]: sonOfSaulFilmHistoryProfile,
+  [moonlightFilmHistoryProfile.scenarioId]: moonlightFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
