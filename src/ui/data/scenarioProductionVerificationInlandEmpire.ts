@@ -19,7 +19,7 @@ export const inlandEmpireProductionCaseVerification = {
       publisher: "BAFTA",
       url: "https://www.bafta.org/media-centre/press-releases/david-lean-lecture-david-lynch/",
       sourceKind: "filmmaker_interview",
-      supports: ["overall", "screenplay", "directing"],
+      supports: ["overall", "screenplay"],
       note: "Lynch explicitly corrects the idea that actors simply improvised without scripts: scenes were written before shooting even though the feature grew from initially unrelated ideas. Also connects Polish material to Camerimage visits and the atmosphere of Lodz."
     },
     {
@@ -27,7 +27,7 @@ export const inlandEmpireProductionCaseVerification = {
       publisher: "BFI Sight and Sound",
       url: "https://www.bfi.org.uk/sight-and-sound/features/attack-zeros-ones-early-years-digital-cinema-told-david-lynch-miranda-july-michael-mann-more",
       sourceKind: "film_institute",
-      supports: ["overall", "cinematography", "performance"],
+      supports: ["overall", "cinematography"],
       note: "Digital-cinema history quoting Lynch on the PD-150's intentionally low quality, speed and freedom, and documenting his own handheld camera operation, close performer proximity and approximately 40-minute takes."
     },
     {
@@ -43,7 +43,7 @@ export const inlandEmpireProductionCaseVerification = {
       publisher: "Rushprint",
       url: "https://rushprint.no/2005/08/norsk-fotograf-pa-lynchfilm/",
       sourceKind: "trade_feature",
-      supports: ["overall", "cinematography", "lighting", "production_design"],
+      supports: ["overall", "cinematography"],
       note: "Contemporary Odd-Geir Saether production account describing lightweight handheld DV cameras, an extremely small crew, little lighting equipment, Lynch frequently taking a camera himself, and continued emphasis on decoration and detail."
     },
     {
