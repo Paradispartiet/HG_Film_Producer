@@ -46,3 +46,4 @@ jobs:
           git push origin HEAD:agent/ch18-the-social-network-production-case
 
 # TEMP repair preserves the strict After Effects to Light Iron learning boundary.
+# User-authored no-op change to verify the repaired materialized 506/506 head.
