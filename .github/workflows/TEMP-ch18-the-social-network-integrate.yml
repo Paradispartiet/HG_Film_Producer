@@ -38,6 +38,12 @@ jobs:
             if (!t.includes(vfxFrom)) throw new Error('Expected Social Network VFX-count learning goal not found');
             t = t.replace(vfxFrom, vfxTo);
           }
+          const penceFrom = 'Do not erase Josh Pence from the performance history simply because facial replacement hides him in many finished shots.';
+          const penceTo = 'Do not erase Josh Pence or his physical performance from the performance history simply because facial replacement hides him in many finished shots.';
+          if (!t.includes(penceTo)) {
+            if (!t.includes(penceFrom)) throw new Error('Expected Josh Pence learning goal not found');
+            t = t.replace(penceFrom, penceTo);
+          }
           fs.writeFileSync(p, t);
           NODE
       - name: Materialize integration
@@ -51,5 +57,4 @@ jobs:
           git commit -m "Normalize Social Network learning contracts"
           git push origin HEAD:agent/ch18-the-social-network-production-case
 
-# TEMP repair preserves strict conform and source-count boundaries.
-# User-authored no-op change to verify the normalized materialized 506/506 head.
+# TEMP repair preserves strict conform, source-count and distributed-performance boundaries.
