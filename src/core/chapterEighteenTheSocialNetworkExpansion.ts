@@ -40,7 +40,7 @@ export const chapterEighteenTheSocialNetworkExpansionDefinitions = [
       "Treat split screens, stabilization, reframing and selective-focus work as invisible VFX that can reshape ostensibly realistic dialogue scenes.",
       "Preserve the VFX-count discrepancy: contemporary reports place the film near-1,000 effects shots while an HPA presentation cites about 1,200.",
       "Explain the Winklevoss solution as a combination of Armie Hammer's performance, Josh Pence's full-body performance, face reprojection/replacement and split-screen techniques.",
-      "Do not erase Josh Pence from the performance history simply because facial replacement hides him in many finished shots.",
+      "Do not erase Josh Pence or his physical performance from the performance history simply because facial replacement hides him in many finished shots.",
       "Explain why an 85-day shoot generating 324 hours of material and 281 hours selected for editorial creates a metadata and editorial-management problem, not just a large number of takes.",
       "Use those 85-day/324-hour/281-hour figures as bounded retrospective reports, not as a universal rule for Fincher productions.",
       "Explain how Angus Wall and Kirk Baxter could work in parallel while sharing a disciplined editorial organization.",
