@@ -45,4 +45,4 @@ jobs:
           git commit -m "Repair Slumdog Millionaire format-map task"
           git push origin HEAD:agent/ch18-slumdog-millionaire-production-case
 
-# Permanent verification is triggered again after the repaired bot head lands.
+# User-authored no-op change to verify repaired materialized 504/504 head.
