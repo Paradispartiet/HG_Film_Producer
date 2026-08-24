@@ -1,0 +1,99 @@
+import type { HistoricalFilmScenario } from "./earlyCinemaExpansion.js";
+import { normalizeEarlyCinemaTitle } from "./earlyCinemaExpansion.js";
+
+export const chapterEighteenInlandEmpireExpansionDefinitions = [
+  {
+    id: "scenario_inland_empire_2006",
+    title: "Inland Empire",
+    originalTitle: "Inland Empire",
+    year: 2006,
+    titleType: "Movie",
+    runtimeMins: 180,
+    directors: ["David Lynch"],
+    genres: ["Drama", "Mystery", "Experimental"],
+    premise: "Build Inland Empire as a Chapter 18 anchor for deliberately low-resolution, lightweight digital feature production rather than treating every 2000s digital transition as a march toward higher definition. David Lynch told Post Magazine that he shot the film on the low-cost Sony PD-150 because he had already been experimenting with that camera for davidlynch.com. He began by receiving an idea, writing a scene and shooting it, then repeated the process until relations between the pieces revealed a feature. Preserve an important source boundary: this does not mean the actors simply improvised an unscripted movie. In his BAFTA David Lean Lecture Lynch explicitly rejected that account and said he always had a written script for the material before going out to shoot, even though the complete feature screenplay did not exist at the beginning. The PD-150 was standard-definition DV rather than HD. Lynch valued its light weight, automatic focus, long approximately 40-minute tape runs, immediate image feedback and ability to work in low light; BFI's digital-cinema history records that the small camera also let Lynch operate it himself, move very close to performers and keep rolling while directing them through repetitions. Contemporary Norwegian crew accounts describe an extremely small team and little lighting equipment while insisting that decoration and detail still mattered; AFI separately credits Odd Geir Saether as director of photography, so do not erase the distinction between formal cinematography credit and Lynch's documented direct camera operation on parts of the production. The project crossed Los Angeles and Lodz, Poland. Lynch connected the Polish material to his visits to the Camerimage festival and the atmosphere, factories, architecture, winter light and collaborators he encountered in Lodz. Post Magazine records that a lot of the time three cameras were running, creating a large volume of material. Lynch then edited the film himself in Apple Final Cut Pro at his home office for more than six months because the evolving structure was difficult to hand to a conventional editor. The digital workflow did not eliminate downstream technical work. Lynch says he tried to do as much as possible in-camera, but used Apple Shake for blurred-face effects, with assistant editor Noriko Miyakawa finishing shots; after up-res artifacts appeared, some blurs had to be rebuilt in high definition, and Adobe After Effects was used for other bounded effects work. Post supervisor Greg Spence handled FotoKem delivery, Polish subtitles and coordination with re-recording mixer Dean Hurley. The low-resolution footage was passed through the Snell & Wilcox Alchemist at FotoKem for up-res, then judged through telecine/DI color work against the eventual film result. Lynch describes controlling blacks, mid-range, whites and colors shot by shot and then checking/tweaking the film version with the colorist. Theatrical delivery therefore still required a bridge from low-resolution DV through higher-resolution post to film, even though capture and editing were digital. Sound remained a separate authored system: Lynch says he did the sound design at his home studio, Steve Tushar worked on sound effects, the mix was also done there, and Pro Tools enabled rapid experimentation; BFI later records Dean Hurley finding the previously recorded song 'Polish Poem' on a hard drive during the long production and bringing it into the film. Preserve runtime metadata as a catalogue/version boundary rather than pretending every institution agrees: AFI records 179 minutes, Criterion and current BFI Southbank materials use 180 minutes, the main BFI film page currently lists 189 minutes, and a StudioCanal/BFI home-media listing gives 172 minutes. Use 180 minutes for gameplay because it matches the director-approved Criterion edition and current BFI exhibition listing, while retaining the divergent institutional records. Do not invent a fixed three-year principal-photography schedule, a single universal camera crew, an exact number of MiniDV tapes, an HD acquisition claim, an exact lens/focal-length package, a precise lighting ratio, an all-improvised screenplay, a claim that Lynch alone photographed every frame, a complete VFX recipe Lynch explicitly declined to disclose, or a claim that digital capture eliminated film-out and delivery work.",
+    sourceId: "postmag_inland_empire_2007",
+    sourceUrl: "https://www.postmagazine.com/Publications/Post-Magazine/2007/February-1-2007/DIRECTORS-CHAIR-DAVID-LYNCH-INLAND-EMPIRE.aspx",
+    scenarioType: "standard_definition_sony_pd150_lightweight_dv_iterative_script_final_cut_alchemist_di_filmout_2006",
+    requiredChoicesSeed: {
+      screenplay: ["scene_by_scene_written_before_shooting", "feature_structure_emerges_during_production", "no_false_unscripted_improvisation_claim"],
+      camera: ["sony_pd150_standard_definition_dv", "lightweight_direct_camera_operation", "long_tape_runs", "low_light_small_crew", "no_false_hd_claim"],
+      editing: ["lynch_final_cut_pro_home_edit", "six_plus_month_edit", "snell_wilcox_alchemist_upres", "fotokem_di_color", "filmout_version_boundary"],
+      sound: ["lynch_home_studio_sound_design", "steve_tushar_sound_effects", "dean_hurley_rerecording", "pro_tools_experimentation", "no_invented_sound_topology"],
+      themes: ["film_history", "2000s", "inland_empire", "david_lynch", "laura_dern", "odd_geir_saether", "sony_pd150", "standard_definition", "digital_video", "minidv", "lightweight_camera", "long_takes", "automatic_focus", "small_crew", "low_light", "iterative_writing", "script_boundary", "los_angeles", "lodz", "poland", "camerimage", "three_camera_capture", "final_cut_pro", "home_editing", "apple_shake", "after_effects", "noriko_miyakawa", "greg_spence", "fotokem", "snell_wilcox_alchemist", "upres", "digital_intermediate", "telecine", "filmout", "sound_design", "steve_tushar", "dean_hurley", "pro_tools", "runtime_discrepancy", "low_resolution_aesthetic"],
+    },
+    learningGoals: [
+      "Place Inland Empire as a standard-definition DV production milestone whose historical importance comes from lightweight low-resolution freedom, not from higher-definition image quality.",
+      "Identify the Sony PD-150 as the camera Lynch carried forward from experiments for davidlynch.com rather than as a state-of-the-art theatrical digital-cinema system.",
+      "Keep standard-definition DV separate from HD and from later 2K/4K restoration; the original production deliberately began with low-resolution digital capture.",
+      "Explain why camera familiarity became a path dependency: once early scenes had been shot on the PD-150 and the feature began to emerge, Lynch chose not to switch formats midstream.",
+      "Correct the common 'no script' simplification: Lynch wrote each scene before shooting it, while the complete feature structure emerged progressively rather than existing as a finished screenplay at the start.",
+      "Treat the approximately 40-minute recording runs, light weight, automatic focus and immediate image feedback as production affordances that changed how long Lynch could stay with actors and a scene.",
+      "Use BFI's account of Lynch operating the small camera himself as evidence of a changed director-performer-camera relationship without claiming he was the only cinematography worker on every setup.",
+      "Preserve AFI's formal Odd Geir Saether director-of-photography credit alongside contemporary accounts of Lynch and a small camera team sharing practical image-making work.",
+      "Keep the tiny crew and limited lighting package visible without turning the film into a no-design/no-craft myth; contemporary crew testimony says decoration and detail remained important.",
+      "Connect Lodz to production development through Lynch's Camerimage visits, factories, architecture, winter atmosphere and Polish collaborators instead of treating Poland as an interchangeable foreign backdrop.",
+      "Preserve Los Angeles and Poland as distinct production environments whose languages, locations, subtitle requirements and crew networks had to converge in post-production.",
+      "Use Lynch's statement that three cameras often ran simultaneously as evidence for the editorial burden created by cheap, long digital recording rather than assuming low-cost capture automatically simplifies post.",
+      "Explain why Lynch edited the material himself in Final Cut Pro at his home office for more than six months: the evolving associative structure made conventional handoff unusually difficult.",
+      "Keep digital editing separate from capture and from finishing; Final Cut Pro solved editorial access but did not by itself produce the theatrical film master.",
+      "Treat Lynch's preference for low detail as an aesthetic choice that he compared to older, less crisp film images, not as proof that poor technical quality is inherently superior.",
+      "Use the mostly in-camera strategy as a bounded effects principle while retaining the documented Apple Shake blurred-face work and Adobe After Effects use.",
+      "Explain the up-res artifact problem: some low-resolution blurs generated line artifacts after conversion and had to be rebuilt in higher resolution, showing that format conversion can expose new defects.",
+      "Model Noriko Miyakawa's assistant-editor contribution to finishing blurred-face shots rather than collapsing all post work into a lone-auteur narrative.",
+      "Use Greg Spence's FotoKem supervision to connect Polish subtitles, delivery requirements, digital and film versions, and sound finishing inside one coordination role.",
+      "Explain the Snell & Wilcox Alchemist as an up-resolution stage applied to low-resolution source footage, not as a retroactive claim that the movie was originally captured in HD.",
+      "Keep telecine/DI color work as a shot-by-shot finishing process for blacks, mid-range, whites and color that was judged against the eventual film result.",
+      "Preserve the film-out boundary: a digitally captured and edited feature still needed a film version for theatrical circulation, so digital production did not yet imply digital-only exhibition.",
+      "Treat Lynch's home-studio sound design, Steve Tushar's sound-effects work, Dean Hurley's re-recording role and Pro Tools experimentation as a separate sound-production chain.",
+      "Use 'Polish Poem' as a documented example of production-long sound/music discovery: Dean Hurley found an earlier recording on a hard drive and it was incorporated into the finished film.",
+      "Keep the film's limited visual-effects work distinct from its pervasive digital texture; a low-resolution image is not itself a visual effect.",
+      "Use 180 minutes for gameplay while preserving AFI's 179, BFI's 189 and home-media 172-minute records as metadata/version discrepancies rather than silently normalizing them.",
+      "Do not invent a precise tape count, complete VFX recipe, universal lighting setup, exact principal-photography length, fixed camera operator for every shot or a false claim that the film was improvised without written scenes.",
+      "Compare Inland Empire with Attack of the Clones and Collateral to show that 'digital cinema' in Chapter 18 includes divergent systems: high-end 24p HD, hybrid HD/35mm and intentionally low-resolution DV.",
+    ],
+    phases: [
+      { id: "website_camera_path", label: "Carry a familiar website-experiment camera into feature production", player_task: "Start with the Sony PD-150 already tested for small digital experiments, then decide whether continuity of look and working method matters more than upgrading once the scenes begin forming a feature." },
+      { id: "script_emergence", label: "Write every shootable scene while allowing the whole script to emerge", player_task: "Require written scene material before each shoot while keeping the feature structure open enough for later ideas to connect previously separate scenes; do not substitute unscripted improvisation for the documented process." },
+      { id: "long_take_performance", label: "Use long DV recording runs to stay inside the performance", player_task: "Exploit roughly 40-minute tape capacity, light weight and fast reset to repeat and deepen actor work without turning long takes into an automatic aesthetic rule for every scene." },
+      { id: "camera_operator_boundary", label: "Let the director operate while preserving the cinematography team", player_task: "Use Lynch's documented handheld/self-operated camera work where proximity helps performance, while retaining Odd Geir Saether's formal photography credit and other camera collaborators instead of creating a lone-camera myth." },
+      { id: "small_crew_lighting", label: "Build with a tiny crew and little lighting without abandoning design", player_task: "Keep equipment and lighting light enough for spontaneous DV work while protecting decoration, texture, continuity and crafted environments that contemporary crew accounts say remained important." },
+      { id: "lodz_network", label: "Turn a festival relationship and a city into production infrastructure", player_task: "Use Camerimage contacts, Lodz locations, local performers and crew while responding to the city's factories, architecture, winter atmosphere and language rather than treating Poland as generic production value." },
+      { id: "multi_camera_volume", label: "Accept that cheap capture can create expensive editorial complexity", player_task: "Run multiple PD-150 cameras when the scene benefits, but log the resulting volume carefully because long recordings and three-camera coverage shift cost from stock and resets into review and editing." },
+      { id: "home_edit", label: "Edit the evolving feature in Final Cut Pro at home", player_task: "Keep the director close to every recorded fragment through a six-plus-month self-edit, testing connections and removals while maintaining enough organization that associative discovery does not become lost media." },
+      { id: "in_camera_first", label: "Solve effects physically or in-camera where possible", player_task: "Prefer capture-time solutions when they serve the idea, then reserve Shake and After Effects for bounded image manipulations rather than assuming digital acquisition requires a VFX-heavy film." },
+      { id: "upres_effect_repair", label: "Rebuild effects that break when low-resolution footage is enlarged", player_task: "Inspect blurred-face shots after up-resolution, identify line artifacts introduced by the conversion chain and re-create affected blurs at higher resolution with editorial/VFX support." },
+      { id: "fotokem_upres", label: "Convert low-resolution DV through the Alchemist for finishing", player_task: "Route the standard-definition source through the Snell & Wilcox Alchemist at FotoKem, treating up-resolution as a conversion stage whose success must be judged rather than as new source detail magically created." },
+      { id: "di_color", label: "Use telecine and DI controls to shape the film-version image", player_task: "Adjust blacks, mid-range, whites and color shot by shot against calibrated expectations for the film result, preserving the deliberately rough source texture while preventing avoidable finishing errors." },
+      { id: "subtitles_delivery", label: "Coordinate Polish subtitles and multiple delivery versions", player_task: "Use the post supervisor to keep translated/subtitled material, digital masters, film version and downstream delivery requirements synchronized across Los Angeles and Polish-origin footage." },
+      { id: "sound_design_home", label: "Build sound as a parallel home-studio authorship system", player_task: "Develop Lynch's sound design with Steve Tushar's effects work, Dean Hurley's re-recording support and Pro Tools experimentation while keeping sound decisions independent from picture up-resolution." },
+      { id: "music_discovery", label: "Keep a searchable archive of sound and music experiments", player_task: "Allow previously recorded material such as 'Polish Poem' to re-enter the film when it proves structurally useful, with provenance and rights/delivery handled rather than treating discovery as accidental chaos." },
+      { id: "filmout", label: "Deliver a film version from a deliberately low-resolution digital source", player_task: "Carry the finished digital image through the film-output path, compare the print to the intended color and texture, and correct mismatches without pretending digital capture removes photochemical exhibition dependencies." },
+      { id: "runtime_boundary", label: "Keep conflicting institutional runtimes inspectable", player_task: "Use 180 minutes for gameplay because Criterion and current BFI exhibition materials converge there, while retaining AFI 179, BFI catalogue 189 and BFI/StudioCanal home-media 172 as version/catalogue evidence." },
+    ],
+  },
+] as const;
+
+export function mergeChapterEighteenInlandEmpireExpansion(baseScenarios: readonly HistoricalFilmScenario[]): readonly HistoricalFilmScenario[] {
+  const merged = [...baseScenarios];
+  let nextPosition = Math.max(0, ...baseScenarios.map((scenario) => scenario.source.position)) + 1;
+  for (const definition of chapterEighteenInlandEmpireExpansionDefinitions) {
+    const acceptedTitles = [definition.title, definition.originalTitle].map(normalizeEarlyCinemaTitle);
+    const exists = merged.some((scenario) => scenario.id === definition.id || (scenario.film.year === definition.year && [scenario.film.title, scenario.film.original_title].map(normalizeEarlyCinemaTitle).some((title) => acceptedTitles.includes(title))));
+    if (exists) continue;
+    merged.push({
+      id: definition.id,
+      status: "manual_chapter_eighteen_inland_empire_verified",
+      source: { list_id: "manual_chapter_eighteen_inland_empire_expansion_2026", position: nextPosition, imdb_id: definition.sourceId, url: definition.sourceUrl },
+      film: { title: definition.title, original_title: definition.originalTitle, year: definition.year, title_type: definition.titleType, runtime_mins: definition.runtimeMins, directors: definition.directors, genres: definition.genres, genre_keys: definition.genres.map((genre) => genre.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")), imdb_rating: 0, user_rating: 0 },
+      scenario_type: definition.scenarioType,
+      production_challenge: definition.premise,
+      required_choices_seed: definition.requiredChoicesSeed,
+      phases: definition.phases,
+      learning_goals_seed: definition.learningGoals,
+      manual_enrichment_needed: [],
+    });
+    nextPosition += 1;
+  }
+  return merged;
+}

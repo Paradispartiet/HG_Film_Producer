@@ -6,8 +6,8 @@ const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
 const dataDirectory = path.join(root, "src", "ui", "data");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
-const EXPECTED_PLAYABLE_SCENARIOS = 501;
-const EXPECTED_VERIFIED_PRODUCTION_CASES = 501;
+const EXPECTED_PLAYABLE_SCENARIOS = 502;
+const EXPECTED_VERIFIED_PRODUCTION_CASES = 502;
 
 const expansionFiles = [
   "earlyCinemaExpansion.ts",
@@ -107,6 +107,7 @@ const expansionFiles = [
   "chapterEighteenCityOfGodExpansion.ts",
   "chapterEighteenAttackOfTheClonesExpansion.ts",
   "chapterEighteenCollateralExpansion.ts",
+  "chapterEighteenInlandEmpireExpansion.ts",
   "modernCanonExpansion.ts",
   "priorityIndieExpansion.ts",
   "eastAsianAuteurExpansion.ts",
