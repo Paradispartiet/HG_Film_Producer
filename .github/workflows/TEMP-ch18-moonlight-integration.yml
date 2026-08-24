@@ -1,0 +1,34 @@
+name: TEMP Chapter 18 Moonlight integration
+
+on:
+  push:
+    branches:
+      - agent/ch18-moonlight-production-case
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/ch18-moonlight-production-case
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Materialize Moonlight integration
+        run: node scripts/TEMP-ch18-moonlight-integrate.mjs
+      - name: Commit deterministic integration
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src scripts docs
+          git commit -m "Materialize Moonlight as Production Case 510"
+          git push origin HEAD:agent/ch18-moonlight-production-case
+
+# User-authored no-op change to run permanent verification on the materialized 510/510 head.

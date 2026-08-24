@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 509,
-    "actualCount": 509,
+    "expectedCount": 510,
+    "actualCount": 510,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -644,6 +644,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenMoonlightExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -712,7 +718,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 509
+    "literalVerifiedScenarioIds": 510
   },
   "candidates": [
     {
@@ -1730,11 +1736,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "American independent financing, digital capture and expressive color finishing connect low-budget production with specialty distribution and awards-era circulation.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_moonlight_2016",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenMoonlightExpansion.ts"
     },
     {
       "title": "Toni Erdmann",
@@ -2012,6 +2018,7 @@
       "Mad Max: Fury Road",
       "Son of Saul",
       "From Afar",
+      "Moonlight",
       "Toni Erdmann",
       "Burning",
       "An Elephant Sitting Still",
@@ -2019,7 +2026,6 @@
       "Portrait of a Lady on Fire"
     ],
     "P0": [
-      "Moonlight",
       "Dunkirk",
       "Roma",
       "Spider-Man: Into the Spider-Verse",
@@ -2075,7 +2081,6 @@
     "Holy Motors",
     "Ida",
     "The Revenant",
-    "Moonlight",
     "I Am Not Your Negro",
     "Dunkirk",
     "Get Out",
