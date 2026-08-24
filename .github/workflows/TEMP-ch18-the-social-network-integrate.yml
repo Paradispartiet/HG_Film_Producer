@@ -20,6 +20,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Repair conform-to-grade learning contract
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const p = 'src/core/chapterEighteenTheSocialNetworkExpansion.ts';
+          let t = fs.readFileSync(p, 'utf8');
+          const from = 'Keep conform distinct from color grading: editorial assembled the DI while Light Iron/Ian Vertovec performed the final grade on Quantel Pablo.';
+          const to = 'Keep conform distinct from color grading: editorial assembled the DI in After Effects while Light Iron/Ian Vertovec performed the final grade on Quantel Pablo.';
+          if (!t.includes(to)) {
+            if (!t.includes(from)) throw new Error('Expected Social Network conform learning goal not found');
+            t = t.replace(from, to);
+            fs.writeFileSync(p, t);
+          }
+          NODE
       - name: Materialize integration
         run: node scripts/TEMP-ch18-the-social-network-integrate.mjs
       - name: Commit deterministic integration
@@ -28,7 +42,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src scripts docs
-          git commit -m "Integrate The Social Network into Chapter 18 Atlas"
+          git commit -m "Repair Social Network conform-to-grade learning contract"
           git push origin HEAD:agent/ch18-the-social-network-production-case
 
-# User-authored no-op change to run permanent verification on the materialized 506/506 head.
+# TEMP repair preserves the strict After Effects to Light Iron learning boundary.
