@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 502,
-    "actualCount": 502,
+    "expectedCount": 503,
+    "actualCount": 503,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -602,6 +602,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenZodiacExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -670,7 +676,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 502
+    "literalVerifiedScenarioIds": 503
   },
   "candidates": [
     {
@@ -1146,11 +1152,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Uncompressed Viper-to-drive acquisition and tapeless workflow make digital negative, on-set monitoring and data post-production concrete.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_zodiac_2007",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenZodiacExpansion.ts"
     },
     {
       "title": "Secret Sunshine",
@@ -1942,6 +1948,7 @@
       "Vera Drake",
       "Inland Empire",
       "Still Life",
+      "Zodiac",
       "Secret Sunshine",
       "No Country for Old Men",
       "4 Months, 3 Weeks and 2 Days",
@@ -1970,7 +1977,6 @@
       "Portrait of a Lady on Fire"
     ],
     "P0": [
-      "Zodiac",
       "Slumdog Millionaire",
       "Avatar",
       "The Social Network",
@@ -2025,7 +2031,6 @@
     "Children of Men",
     "Pan's Labyrinth",
     "Apocalypto",
-    "Zodiac",
     "There Will Be Blood",
     "Slumdog Millionaire",
     "Avatar",
