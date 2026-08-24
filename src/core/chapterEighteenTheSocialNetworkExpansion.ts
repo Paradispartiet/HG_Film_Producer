@@ -34,7 +34,7 @@ export const chapterEighteenTheSocialNetworkExpansionDefinitions = [
       "Explain how FileMaker Pro linked footage, editorial decisions and VFX records into a master metadata system.",
       "Explain why near-real-time RED Rocket transcodes changed the relationship between camera wrap and editorial access without replacing the original R3D masters.",
       "Explain how a Final Cut EDL, Premiere bridge and After Effects conform could preserve frame-accurate editorial decisions while reconnecting to DPX derived from camera originals.",
-      "Keep conform distinct from color grading: editorial assembled the DI while Light Iron/Ian Vertovec performed the final grade on Quantel Pablo.",
+      "Keep conform distinct from color grading: editorial assembled the DI in After Effects while Light Iron/Ian Vertovec performed the final grade on Quantel Pablo.",
       "Preserve the 4K-to-2K boundary: 4K acquisition and selected processing do not mean the final DCP was 4K.",
       "Explain why 35mm release prints for non-digital theatres are an exhibition-output fact, not evidence of photochemical principal photography.",
       "Treat split screens, stabilization, reframing and selective-focus work as invisible VFX that can reshape ostensibly realistic dialogue scenes.",
