@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 504,
-    "actualCount": 504,
+    "expectedCount": 505,
+    "actualCount": 505,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -614,6 +614,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenAvatarExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -682,7 +688,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 504
+    "literalVerifiedScenarioIds": 505
   },
   "candidates": [
     {
@@ -1305,11 +1311,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Performance capture, virtual camera work, SimulCam, extensive CG and live-action production make virtual production a distinct system rather than generic VFX.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_avatar_2009",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenAvatarExpansion.ts"
     },
     {
       "title": "A Prophet",
@@ -1963,6 +1969,7 @@
       "Wendy and Lucy",
       "The Wrestler",
       "Hunger",
+      "Avatar",
       "A Prophet",
       "The White Ribbon",
       "The Milk of Sorrow",
@@ -1984,7 +1991,6 @@
       "Portrait of a Lady on Fire"
     ],
     "P0": [
-      "Avatar",
       "The Social Network",
       "A Separation",
       "Gravity",
@@ -2038,7 +2044,6 @@
     "Pan's Labyrinth",
     "Apocalypto",
     "There Will Be Blood",
-    "Avatar",
     "The Social Network",
     "Uncle Boonmee Who Can Recall His Past Lives",
     "A Separation",
