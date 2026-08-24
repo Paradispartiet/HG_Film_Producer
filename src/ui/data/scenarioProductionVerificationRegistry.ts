@@ -145,6 +145,7 @@ import { avatarProductionCaseVerification } from "./scenarioProductionVerificati
 import { theSocialNetworkProductionCaseVerification } from "./scenarioProductionVerificationTheSocialNetwork";
 import { aSeparationProductionCaseVerification } from "./scenarioProductionVerificationASeparation";
 import { gravityProductionCaseVerification } from "./scenarioProductionVerificationGravity";
+import { sonOfSaulProductionCaseVerification } from "./scenarioProductionVerificationSonOfSaul";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -407,6 +408,7 @@ const additionalVerificationRecords = [
   theSocialNetworkProductionCaseVerification,
   aSeparationProductionCaseVerification,
   gravityProductionCaseVerification,
+  sonOfSaulProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
