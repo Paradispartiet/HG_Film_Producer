@@ -140,6 +140,7 @@ import { attackOfTheClonesProductionCaseVerification } from "./scenarioProductio
 import { collateralProductionCaseVerification } from "./scenarioProductionVerificationCollateral";
 import { inlandEmpireProductionCaseVerification } from "./scenarioProductionVerificationInlandEmpire";
 import { zodiacProductionCaseVerification } from "./scenarioProductionVerificationZodiac";
+import { slumdogMillionaireProductionCaseVerification } from "./scenarioProductionVerificationSlumdogMillionaire";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -397,6 +398,7 @@ const additionalVerificationRecords = [
   collateralProductionCaseVerification,
   inlandEmpireProductionCaseVerification,
   zodiacProductionCaseVerification,
+  slumdogMillionaireProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

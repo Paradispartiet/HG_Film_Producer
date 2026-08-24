@@ -117,6 +117,7 @@ import { attackOfTheClonesFilmHistoryProfile } from "./scenarioFilmStudyChapterE
 import { collateralFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenCollateral";
 import { inlandEmpireFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenInlandEmpire";
 import { zodiacFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenZodiac";
+import { slumdogMillionaireFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenSlumdogMillionaire";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -260,6 +261,7 @@ const sourceBackedFilmHistoryProfiles = {
   [collateralFilmHistoryProfile.scenarioId]: collateralFilmHistoryProfile,
   [inlandEmpireFilmHistoryProfile.scenarioId]: inlandEmpireFilmHistoryProfile,
   [zodiacFilmHistoryProfile.scenarioId]: zodiacFilmHistoryProfile,
+  [slumdogMillionaireFilmHistoryProfile.scenarioId]: slumdogMillionaireFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
