@@ -21,7 +21,7 @@ test("Chapter 18 materializes A Separation as a source-first 35mm rehearsal, han
   assert.ok(film.premise.includes("narrator or third eye"));
   assert.ok(film.premise.includes("35mm") && film.premise.includes("do not invent a camera body"));
   assert.ok(film.premise.includes("editing as the stage where the amount and timing of information"));
-  assert.ok(film.premise.includes("edited A Separation while Farhadi was still shooting"));
+  assert.ok(film.premise.includes("recalled editing A Separation while Farhadi was still shooting"));
   assert.ok(film.premise.includes("no music during the film itself") && film.premise.includes("closing credits"));
   assert.ok(film.premise.includes("123 minutes") && film.premise.includes("122"));
 
