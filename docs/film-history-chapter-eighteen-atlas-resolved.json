@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 506,
-    "actualCount": 506,
+    "expectedCount": 507,
+    "actualCount": 507,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -626,6 +626,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenASeparationExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -694,7 +700,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 506
+    "literalVerifiedScenarioIds": 507
   },
   "candidates": [
     {
@@ -1442,11 +1448,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Iranian production under national regulation and global festival/distribution circulation makes local institutions and international reception distinct.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_a_separation_2011",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenASeparationExpansion.ts"
     },
     {
       "title": "The Tree of Life",
@@ -1982,6 +1988,7 @@
       "The Social Network",
       "Poetry",
       "Somewhere",
+      "A Separation",
       "Pietà",
       "Blue Is the Warmest Colour",
       "Birdman",
@@ -1998,7 +2005,6 @@
       "Portrait of a Lady on Fire"
     ],
     "P0": [
-      "A Separation",
       "Gravity",
       "Son of Saul",
       "Moonlight",
@@ -2051,7 +2057,6 @@
     "Apocalypto",
     "There Will Be Blood",
     "Uncle Boonmee Who Can Recall His Past Lives",
-    "A Separation",
     "The Tree of Life",
     "Pina",
     "Amour",
