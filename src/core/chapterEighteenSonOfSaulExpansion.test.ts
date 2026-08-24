@@ -22,7 +22,7 @@ test("Chapter 18 materializes Son of Saul as a source-first 35mm photochemical, 
   assert.ok(film.premise.includes("one-stop push processing") && film.premise.includes("projected film dailies each day"));
   assert.ok(film.premise.includes("did not rebuild Auschwitz") && film.premise.includes("near-360-degree movement"));
   assert.ok(film.premise.includes("did not use a digital intermediate") && film.premise.includes("negative cutting") && film.premise.includes("DCP matched to the 35mm print"));
-  assert.ok(film.premise.includes("cutting in camera") && film.premise.includes("substantial later editorial labor"));
+  assert.ok(film.premise.includes("cutting in camera") && film.premise.includes("difficult editorial work for Taponier"));
   assert.ok(film.premise.includes("sound can replace missing images") && film.premise.includes("sensational effects showcase"));
   assert.ok(film.premise.includes("Do not claim 35mm is inherently more truthful than digital"));
 
