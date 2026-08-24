@@ -115,6 +115,7 @@ import { russianArkFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteen
 import { cityOfGodFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenCityOfGod";
 import { attackOfTheClonesFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenAttackOfTheClones";
 import { collateralFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenCollateral";
+import { inlandEmpireFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenInlandEmpire";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -256,6 +257,7 @@ const sourceBackedFilmHistoryProfiles = {
   [cityOfGodFilmHistoryProfile.scenarioId]: cityOfGodFilmHistoryProfile,
   [attackOfTheClonesFilmHistoryProfile.scenarioId]: attackOfTheClonesFilmHistoryProfile,
   [collateralFilmHistoryProfile.scenarioId]: collateralFilmHistoryProfile,
+  [inlandEmpireFilmHistoryProfile.scenarioId]: inlandEmpireFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
