@@ -119,6 +119,7 @@ import { inlandEmpireFilmHistoryProfile } from "./scenarioFilmStudyChapterEighte
 import { zodiacFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenZodiac";
 import { slumdogMillionaireFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenSlumdogMillionaire";
 import { avatarFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenAvatar";
+import { theSocialNetworkFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenTheSocialNetwork";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -264,6 +265,7 @@ const sourceBackedFilmHistoryProfiles = {
   [zodiacFilmHistoryProfile.scenarioId]: zodiacFilmHistoryProfile,
   [slumdogMillionaireFilmHistoryProfile.scenarioId]: slumdogMillionaireFilmHistoryProfile,
   [avatarFilmHistoryProfile.scenarioId]: avatarFilmHistoryProfile,
+  [theSocialNetworkFilmHistoryProfile.scenarioId]: theSocialNetworkFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
