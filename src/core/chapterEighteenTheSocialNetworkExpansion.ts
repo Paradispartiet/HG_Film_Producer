@@ -38,7 +38,7 @@ export const chapterEighteenTheSocialNetworkExpansionDefinitions = [
       "Preserve the 4K-to-2K boundary: 4K acquisition and selected processing do not mean the final DCP was 4K.",
       "Explain why 35mm release prints for non-digital theatres are an exhibition-output fact, not evidence of photochemical principal photography.",
       "Treat split screens, stabilization, reframing and selective-focus work as invisible VFX that can reshape ostensibly realistic dialogue scenes.",
-      "Preserve the VFX-count discrepancy: contemporary reports say nearly 1,000 effects shots while an HPA presentation cites about 1,200.",
+      "Preserve the VFX-count discrepancy: contemporary reports place the film near-1,000 effects shots while an HPA presentation cites about 1,200.",
       "Explain the Winklevoss solution as a combination of Armie Hammer's performance, Josh Pence's full-body performance, face reprojection/replacement and split-screen techniques.",
       "Do not erase Josh Pence from the performance history simply because facial replacement hides him in many finished shots.",
       "Explain why an 85-day shoot generating 324 hours of material and 281 hours selected for editorial creates a metadata and editorial-management problem, not just a large number of takes.",
