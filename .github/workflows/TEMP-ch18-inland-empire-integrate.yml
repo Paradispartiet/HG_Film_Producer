@@ -20,6 +20,27 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Repair permanent Inland Empire scenario shape
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const p = 'src/core/chapterEighteenInlandEmpireExpansion.ts';
+          let t = fs.readFileSync(p, 'utf8');
+          const from = `      film: { title: definition.title, original_title: definition.originalTitle, year: definition.year, title_type: definition.titleType, runtime_mins: definition.runtimeMins, directors: definition.directors, genres: definition.genres, genre_keys: definition.genres.map((genre) => genre.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")) },
+      scenario: { type: definition.scenarioType, premise: definition.premise, required_choices_seed: definition.requiredChoicesSeed, learning_goals: definition.learningGoals, phases: definition.phases },`;
+          const to = `      film: { title: definition.title, original_title: definition.originalTitle, year: definition.year, title_type: definition.titleType, runtime_mins: definition.runtimeMins, directors: definition.directors, genres: definition.genres, genre_keys: definition.genres.map((genre) => genre.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")), imdb_rating: 0, user_rating: 0 },
+      scenario_type: definition.scenarioType,
+      production_challenge: definition.premise,
+      required_choices_seed: definition.requiredChoicesSeed,
+      phases: definition.phases,
+      learning_goals_seed: definition.learningGoals,
+      manual_enrichment_needed: [],`;
+          if (!t.includes(to)) {
+            if (!t.includes(from)) throw new Error('Expected Inland Empire scenario block not found');
+            t = t.replace(from, to);
+            fs.writeFileSync(p, t);
+          }
+          NODE
       - name: Materialize integration
         run: node scripts/TEMP-ch18-inland-empire-integrate.mjs
       - name: Commit deterministic integration
@@ -28,7 +49,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src scripts docs
-          git commit -m "Integrate Inland Empire into Chapter 18 Atlas"
+          git commit -m "Repair and integrate Inland Empire into Chapter 18 Atlas"
           git push origin HEAD:agent/ch18-inland-empire-production-case
 
-# User-authored no-op change to run permanent PR verification on the materialized 502/502 head.
+# Permanent verification is triggered again after the repaired bot head lands.
