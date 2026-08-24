@@ -143,6 +143,7 @@ import { zodiacProductionCaseVerification } from "./scenarioProductionVerificati
 import { slumdogMillionaireProductionCaseVerification } from "./scenarioProductionVerificationSlumdogMillionaire";
 import { avatarProductionCaseVerification } from "./scenarioProductionVerificationAvatar";
 import { theSocialNetworkProductionCaseVerification } from "./scenarioProductionVerificationTheSocialNetwork";
+import { aSeparationProductionCaseVerification } from "./scenarioProductionVerificationASeparation";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -403,6 +404,7 @@ const additionalVerificationRecords = [
   slumdogMillionaireProductionCaseVerification,
   avatarProductionCaseVerification,
   theSocialNetworkProductionCaseVerification,
+  aSeparationProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
