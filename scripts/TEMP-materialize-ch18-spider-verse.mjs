@@ -121,8 +121,8 @@ patch("src/core/filmHistoryChapterEighteenAuditContract.test.ts", (source) => {
   let next = source;
   next = replaceOnce(
     next,
-    '"Toni Erdmann", "Dunkirk", "Roma", "Burning", "An Elephant Sitting Still", "Synonyms",',
-    '"Toni Erdmann", "Dunkirk", "Roma", "Burning", "Spider-Man: Into the Spider-Verse", "An Elephant Sitting Still", "Synonyms",',
+    '"Dunkirk", "Roma", "Burning", "An Elephant Sitting Still", "Synonyms",',
+    '"Dunkirk", "Roma", "Burning", "Spider-Man: Into the Spider-Verse", "An Elephant Sitting Still", "Synonyms",',
     "Chapter 18 exact existing queue",
   );
   next = replaceOnce(
