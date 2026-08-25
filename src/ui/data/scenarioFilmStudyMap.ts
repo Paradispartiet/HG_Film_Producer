@@ -127,6 +127,7 @@ import { moonlightFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenM
 import { dunkirkFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenDunkirk";
 import { romaFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenRoma";
 import { spiderVerseFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenSpiderVerse";
+import { parasiteFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenParasite";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -280,6 +281,7 @@ const sourceBackedFilmHistoryProfiles = {
   [dunkirkFilmHistoryProfile.scenarioId]: dunkirkFilmHistoryProfile,
   [romaFilmHistoryProfile.scenarioId]: romaFilmHistoryProfile,
   [spiderVerseFilmHistoryProfile.scenarioId]: spiderVerseFilmHistoryProfile,
+  [parasiteFilmHistoryProfile.scenarioId]: parasiteFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",

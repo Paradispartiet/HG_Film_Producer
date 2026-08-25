@@ -10,8 +10,8 @@
     "thesis": "Postwar cinema did not replace studio craft with one new realism. It multiplied production systems: noir reworked studio and location crime traditions; neorealism rebuilt cinema around streets, social observation and constrained infrastructure; national studios, independent packages and state systems developed distinct responses to war, reconstruction and decolonization; and international circulation connected these practices without making them stylistically uniform."
   },
   "atlas": {
-    "expectedCount": 513,
-    "actualCount": 513,
+    "expectedCount": 514,
+    "actualCount": 514,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -884,6 +884,14 @@
         "matchedExisting": 0,
         "status": "manual_chapter_eighteen_spider_verse_verified",
         "sourceListId": "manual_chapter_eighteen_spider_verse_expansion_2026"
+      },
+      {
+        "fileName": "chapterEighteenParasiteExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eighteen_parasite_verified",
+        "sourceListId": "manual_chapter_eighteen_parasite_expansion_2026"
       },
       {
         "fileName": "modernCanonExpansion.ts",
