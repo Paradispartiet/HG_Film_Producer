@@ -149,6 +149,7 @@ import { sonOfSaulProductionCaseVerification } from "./scenarioProductionVerific
 import { moonlightProductionCaseVerification } from "./scenarioProductionVerificationMoonlight";
 import { dunkirkProductionCaseVerification } from "./scenarioProductionVerificationDunkirk";
 import { romaProductionCaseVerification } from "./scenarioProductionVerificationRoma";
+import { spiderVerseProductionCaseVerification } from "./scenarioProductionVerificationSpiderVerse";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -415,6 +416,7 @@ const additionalVerificationRecords = [
   moonlightProductionCaseVerification,
   dunkirkProductionCaseVerification,
   romaProductionCaseVerification,
+  spiderVerseProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
