@@ -150,6 +150,7 @@ import { moonlightProductionCaseVerification } from "./scenarioProductionVerific
 import { dunkirkProductionCaseVerification } from "./scenarioProductionVerificationDunkirk";
 import { romaProductionCaseVerification } from "./scenarioProductionVerificationRoma";
 import { spiderVerseProductionCaseVerification } from "./scenarioProductionVerificationSpiderVerse";
+import { parasiteProductionCaseVerification } from "./scenarioProductionVerificationParasite";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -417,6 +418,7 @@ const additionalVerificationRecords = [
   dunkirkProductionCaseVerification,
   romaProductionCaseVerification,
   spiderVerseProductionCaseVerification,
+  parasiteProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
