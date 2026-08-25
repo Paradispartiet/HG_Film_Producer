@@ -50,12 +50,12 @@ jobs:
           set -euxo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add TEMP-spider-verse-verify.log
+          git add -f TEMP-spider-verse-verify.log
           git commit -m "Capture Spider-Verse verification failure [diagnostic]"
           git push origin HEAD:agent/ch18-spider-verse-production-case
 
       - name: Enforce verification result
-        if: ${{ steps.verify.outputs.status != '0' }}
+        if: ${{ always() && steps.verify.outputs.status != '0' }}
         run: exit 1
 
       - name: Commit materialized permanent state
