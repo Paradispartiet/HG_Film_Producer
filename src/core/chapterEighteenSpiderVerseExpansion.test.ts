@@ -13,7 +13,7 @@ test("Chapter 18 materializes Spider-Verse as a source-first stylized-animation,
 
   assert.ok(film.scenarioType.includes("cg_2d_hybrid") && film.scenarioType.includes("frame_modulation") && film.scenarioType.includes("atmos"));
   assert.ok(film.premise.includes("artist intention over photoreal accuracy") && film.premise.includes("changes to both technology and workflow"));
-  assert.ok(film.premise.includes("converted to geometry and rigged") && film.premise.includes("algorithmically assisted"));
+  assert.ok(film.premise.includes("converted to geometry and rigged") && film.premise.includes("assisted algorithmically"));
   assert.ok(film.premise.includes("modulation between twos and ones") && film.premise.includes("not a blanket claim"));
   assert.ok(film.premise.includes("motion blur") && film.premise.includes("geometry smears"));
   assert.ok(film.premise.includes("more than twenty-five compositor tools") && film.premise.includes("Hatcher and Thresher"));
