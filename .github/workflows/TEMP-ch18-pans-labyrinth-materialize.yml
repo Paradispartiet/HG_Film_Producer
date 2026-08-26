@@ -1,4 +1,5 @@
 name: TEMP materialize Chapter 18 Pans Labyrinth
+# Retrigger after switching the temporary materialization gate to macos-latest.
 
 on:
   push:
