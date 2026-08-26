@@ -157,6 +157,7 @@ import { crouchingTigerHiddenDragonProductionCaseVerification } from "./scenario
 import { twentyEightDaysLaterProductionCaseVerification } from "./scenarioProductionVerificationTwentyEightDaysLater";
 import { unknownPleasuresProductionCaseVerification } from "./scenarioProductionVerificationUnknownPleasures";
 import { oldboyProductionCaseVerification } from "./scenarioProductionVerificationOldboy";
+import { brokebackMountainProductionCaseVerification } from "./scenarioProductionVerificationBrokebackMountain";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -431,6 +432,7 @@ const additionalVerificationRecords = [
   twentyEightDaysLaterProductionCaseVerification,
   unknownPleasuresProductionCaseVerification,
   oldboyProductionCaseVerification,
+  brokebackMountainProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
