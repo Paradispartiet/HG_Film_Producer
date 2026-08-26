@@ -34,7 +34,7 @@ export const chapterEighteenYiYiExpansionDefinitions = [
       "Record Taiwan and Japan as part of the transnational production context without turning country labels into aesthetic explanations.",
       "Identify 35mm as the documented acquisition medium in festival and preservation records.",
       "Explain why a surviving 35mm negative is strong preservation evidence but not a complete camera-package specification.",
-      "Avoid inventing stock, lenses, filtration or processing details when the cited sources do not establish them.",
+      "When documenting the 35mm production, avoid inventing stock, lenses, filtration or processing details when the cited sources do not establish them.",
       "Explain why reflective glass can create exposure, camera-reflection and eyeline problems that require active planning.",
       "Distinguish a mirror reflection from rear projection or superimposition unless the source or shot analysis actually supports the technique.",
       "Describe Criterion's reflection/rear-projection/superimposition discussion as finished-film analysis rather than an original production log.",
