@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - agent/ch18-pans-labyrinth-production-case
+  pull_request:
+    branches:
+      - main
 
 permissions:
   contents: write
