@@ -154,6 +154,7 @@ import { parasiteProductionCaseVerification } from "./scenarioProductionVerifica
 import { theIrishmanProductionCaseVerification } from "./scenarioProductionVerificationTheIrishman";
 import { yiYiProductionCaseVerification } from "./scenarioProductionVerificationYiYi";
 import { crouchingTigerHiddenDragonProductionCaseVerification } from "./scenarioProductionVerificationCrouchingTigerHiddenDragon";
+import { twentyEightDaysLaterProductionCaseVerification } from "./scenarioProductionVerificationTwentyEightDaysLater";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -425,6 +426,7 @@ const additionalVerificationRecords = [
   theIrishmanProductionCaseVerification,
   yiYiProductionCaseVerification,
   crouchingTigerHiddenDragonProductionCaseVerification,
+  twentyEightDaysLaterProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

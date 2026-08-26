@@ -10,8 +10,8 @@
     "thesis": "The 1990s are not a simple march from film to digital or from Hollywood to indie. Specialty acquisition, queer and Black independent production, public and transnational finance, post-socialist restructuring, regionally distinct Asian industries, Iranian and African production networks, CGI and software animation, consumer video and global blockbuster infrastructure developed simultaneously and unevenly."
   },
   "atlas": {
-    "expectedCount": 517,
-    "actualCount": 517,
+    "expectedCount": 518,
+    "actualCount": 518,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -692,6 +692,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenTwentyEightDaysLaterExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -760,7 +766,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 517
+    "literalVerifiedScenarioIds": 518
   },
   "candidates": [
     {
