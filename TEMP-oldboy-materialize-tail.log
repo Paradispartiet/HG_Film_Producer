@@ -1,0 +1,160 @@
+        "matchedExisting": 0,
+        "status": "manual_chapter_eighteen_crouching_tiger_hidden_dragon_verified",
+        "sourceListId": "manual_chapter_eighteen_crouching_tiger_hidden_dragon_expansion_2026"
+      },
+      {
+        "fileName": "chapterEighteenTwentyEightDaysLaterExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eighteen_28_days_later_verified",
+        "sourceListId": "manual_chapter_eighteen_28_days_later_expansion_2026"
+      },
+      {
+        "fileName": "chapterEighteenUnknownPleasuresExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eighteen_unknown_pleasures_verified",
+        "sourceListId": "manual_chapter_eighteen_unknown_pleasures_expansion_2026"
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "definitions": 27,
+        "appended": 27,
+        "matchedExisting": 0,
+        "status": "manual_modern_canon_case_needs_source_verification",
+        "sourceListId": "manual_modern_indie_asian_prize_expansion_2026"
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "definitions": 20,
+        "appended": 20,
+        "matchedExisting": 0,
+        "status": "manual_priority_indie_case_needs_source_verification",
+        "sourceListId": "manual_priority_indie_completion_2026"
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_east_asian_auteur_case_needs_source_verification",
+        "sourceListId": "manual_east_asian_auteur_expansion_2026"
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0,
+        "status": "manual_japanese_auteur_case_needs_source_verification",
+        "sourceListId": "manual_japanese_auteur_expansion_2026"
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_south_korean_cinema_case_needs_source_verification",
+        "sourceListId": "manual_south_korean_cinema_expansion_2026"
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0,
+        "status": "manual_south_southeast_asian_case_needs_source_verification",
+        "sourceListId": "manual_south_southeast_asian_expansion_2026"
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_festival_winner_1981_2009_case_needs_source_verification",
+        "sourceListId": "manual_festival_winners_1981_2009_expansion_2026"
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_festival_winner_2010_2024_case_needs_source_verification",
+        "sourceListId": "manual_festival_winner_2010_2024_expansion_2026"
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "definitions": 22,
+        "appended": 15,
+        "matchedExisting": 7,
+        "status": "manual_scandinavian_european_case_needs_source_verification",
+        "sourceListId": "manual_scandinavian_european_expansion_2026"
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "definitions": 24,
+        "appended": 23,
+        "matchedExisting": 1,
+        "status": "manual_eastern_iberian_british_case_needs_source_verification",
+        "sourceListId": "manual_eastern_iberian_british_expansion_2026"
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "definitions": 28,
+        "appended": 25,
+        "matchedExisting": 3,
+        "status": "manual_italy_france_germany_benelux_case_needs_source_verification",
+        "sourceListId": "manual_italy_france_germany_benelux_expansion_2026"
+      }
+    ]
+  },
+  "totals": {
+    "playableScenarios": 519,
+    "verifiedProductionCases": 520,
+    "unverifiedProductionCases": 0,
+    "sourceBackedProfiles": 520,
+    "filmSpecificProductionBriefs": 519,
+    "seedFallbackProductionBriefs": 0,
+    "scenariosWithoutSourceBackedProfile": 0,
+    "scenariosMissingVerificationAndProfile": 0
+  },
+  "integrity": {
+    "seedDuplicateScenarioIds": [],
+    "finalDuplicateScenarioIds": [],
+    "duplicateVerificationIds": [],
+    "duplicateProfileIds": [],
+    "orphanVerificationIds": [
+      "scenario_oldboy_2003"
+    ],
+    "orphanProfileIds": [
+      "scenario_oldboy_2003"
+    ],
+    "verifiedWithoutProfile": [],
+    "profilesWithoutVerification": []
+  },
+  "unverifiedDistributions": {
+    "byOrigin": {},
+    "bySourceList": {},
+    "byStatus": {},
+    "byDecade": {},
+    "byGenre": {},
+    "byBriefType": {}
+  },
+  "unverified": [],
+  "seedFallbackBriefs": [],
+  "profilesWithoutVerification": [],
+  "verifiedWithoutProfile": []
+}
+HG_FILM_PRODUCER_REST_AUDIT_END
+Production Case rest audit found 3 structural problem(s).
+file:///home/runner/work/HG_Film_Producer/HG_Film_Producer/scripts/TEMP-materialize-ch18-oldboy.mjs:141
+  if (result.status !== 0) throw new Error(`audit:production-cases failed with ${result.status}`);
+                                 ^
+
+Error: audit:production-cases failed with 1
+    at file:///home/runner/work/HG_Film_Producer/HG_Film_Producer/scripts/TEMP-materialize-ch18-oldboy.mjs:141:34
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.2
