@@ -158,6 +158,7 @@ import { twentyEightDaysLaterProductionCaseVerification } from "./scenarioProduc
 import { unknownPleasuresProductionCaseVerification } from "./scenarioProductionVerificationUnknownPleasures";
 import { oldboyProductionCaseVerification } from "./scenarioProductionVerificationOldboy";
 import { brokebackMountainProductionCaseVerification } from "./scenarioProductionVerificationBrokebackMountain";
+import { cacheProductionCaseVerification } from "./scenarioProductionVerificationCache";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -433,6 +434,7 @@ const additionalVerificationRecords = [
   unknownPleasuresProductionCaseVerification,
   oldboyProductionCaseVerification,
   brokebackMountainProductionCaseVerification,
+  cacheProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
