@@ -17842,69 +17842,2741 @@ HG_FILM_HISTORY_CHAPTER_TEN_ATLAS_AUDIT_END
 > hg-film-producer@0.1.0 typecheck
 > tsc --noEmit && tsc -p tsconfig.app.json
 
-src/ui/data/scenarioProductionVerificationRegistry.ts(468,12): error TS1360: Type 'readonly [{ readonly scenarioId: "scenario_one_flew_over_the_cuckoo_s_nest_1975"; readonly status: "verified"; readonly verifiedAt: "2026-07-19"; readonly summary: "The brief's institutional pressure, ensemble realism, group-therapy conflict, performance-led escalation, and location-shaped atmosphere are supported b...' does not satisfy the expected type 'readonly ProductionCaseVerificationRecord[]'.
-  Type '{ readonly scenarioId: "scenario_man_of_iron_1981"; readonly status: "verified"; readonly verifiedAt: "2026-07-20"; readonly summary: "The case's Solidarity-era investigation, Gdańsk shipyard setting, archive-and-fiction structure, Edward Kłosiński photography, Allan Starski design, Halina Prugar-Ketling editing, Pi...' is not assignable to type 'ProductionCaseVerificationRecord'.
-    Type '{ readonly scenarioId: "scenario_unknown_pleasures_2002"; readonly status: "verified"; readonly verifiedAt: "2026-08-26"; readonly summary: "Unknown Pleasures is verified as a 2002 digital-video production case whose small-camera public-space access, nineteen-day schedule, long-take performance geometry, deliberatel...' is not assignable to type 'ProductionCaseVerificationRecord'.
-      Types of property 'sources' are incompatible.
-        Type 'readonly [{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the ...' is not assignable to type 'readonly ProductionCaseVerificationSource[]'.
-          Type '{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the 113-minute...' is not assignable to type 'ProductionCaseVerificationSource'.
-            Type '{ readonly title: "Interview: Jia Zhang-ke on Ash Is Purest White and the Evolution of China"; readonly publisher: "Slant Magazine"; readonly url: "https://www.slantmagazine.com/film/interview-jia-zhang-ke-on-ash-is-purest-white-censorship-and-the-evolution-of-china/"; readonly sourceKind: "filmmaker_interview"; rea...' is not assignable to type 'ProductionCaseVerificationSource'.
-              Types of property 'supports' are incompatible.
-                Type 'readonly ["overall", "cinematography", "performance"]' is not assignable to type 'readonly ProductionCaseVerificationArea[]'.
-                  Type '"cinematography" | "performance" | "overall"' is not assignable to type 'ProductionCaseVerificationArea'.
-                    Type '"performance"' is not assignable to type 'ProductionCaseVerificationArea'.
-src/ui/data/scenarioProductionVerificationRegistry.ts(471,3): error TS2769: No overload matches this call.
-  Overload 1 of 4, '(iterable?: Iterable<readonly [string, ProductionCaseVerificationRecord]> | null | undefined): Map<string, ProductionCaseVerificationRecord>', gave the following error.
-    Argument of type '["scenario_a_trip_to_the_moon_1902" | "scenario_the_cabinet_of_dr_caligari_1920" | "scenario_nosferatu_1922" | "scenario_battleship_potemkin_1925" | "scenario_the_general_1926" | ... 505 more ... | "scenario_where_is_the_friend_s_house_1987", { ...; } | ... 509 more ... | { ...; }][]' is not assignable to parameter of type 'Iterable<readonly [string, ProductionCaseVerificationRecord]>'.
-      The types returned by '[Symbol.iterator]().next(...)' are incompatible between these types.
-        Type 'IteratorResult<["scenario_a_trip_to_the_moon_1902" | "scenario_the_cabinet_of_dr_caligari_1920" | "scenario_nosferatu_1922" | "scenario_battleship_potemkin_1925" | "scenario_the_general_1926" | ... 505 more ... | "scenario_where_is_the_friend_s_house_1987", { ...; } | ... 509 more ... | { ...; }], undefined>' is not assignable to type 'IteratorResult<readonly [string, ProductionCaseVerificationRecord], any>' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
-          Type 'IteratorYieldResult<["scenario_a_trip_to_the_moon_1902" | "scenario_the_cabinet_of_dr_caligari_1920" | "scenario_nosferatu_1922" | "scenario_battleship_potemkin_1925" | "scenario_the_general_1926" | ... 505 more ... | "scenario_where_is_the_friend_s_house_1987", { ...; } | ... 509 more ... | { ...; }]>' is not assignable to type 'IteratorResult<readonly [string, ProductionCaseVerificationRecord], any>' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
-            Type 'IteratorYieldResult<["scenario_a_trip_to_the_moon_1902" | "scenario_the_cabinet_of_dr_caligari_1920" | "scenario_nosferatu_1922" | "scenario_battleship_potemkin_1925" | "scenario_the_general_1926" | ... 505 more ... | "scenario_where_is_the_friend_s_house_1987", { ...; } | ... 509 more ... | { ...; }]>' is not assignable to type 'IteratorYieldResult<readonly [string, ProductionCaseVerificationRecord]>' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
-              Type '["scenario_a_trip_to_the_moon_1902" | "scenario_the_cabinet_of_dr_caligari_1920" | "scenario_nosferatu_1922" | "scenario_battleship_potemkin_1925" | "scenario_the_general_1926" | ... 505 more ... | "scenario_where_is_the_friend_s_house_1987", { ...; } | ... 509 more ... | { ...; }]' is not assignable to type 'readonly [string, ProductionCaseVerificationRecord]'.
-                Type at position 1 in source is not compatible with type at position 1 in target.
-                  Type '{ readonly scenarioId: "scenario_man_of_iron_1981"; readonly status: "verified"; readonly verifiedAt: "2026-07-20"; readonly summary: "The case's Solidarity-era investigation, Gdańsk shipyard setting, archive-and-fiction structure, Edward Kłosiński photography, Allan Starski design, Halina Prugar-Ketling editing, Pi...' is not assignable to type 'ProductionCaseVerificationRecord'.
-                    Type '{ readonly scenarioId: "scenario_unknown_pleasures_2002"; readonly status: "verified"; readonly verifiedAt: "2026-08-26"; readonly summary: "Unknown Pleasures is verified as a 2002 digital-video production case whose small-camera public-space access, nineteen-day schedule, long-take performance geometry, deliberatel...' is not assignable to type 'ProductionCaseVerificationRecord'.
-                      Types of property 'sources' are incompatible.
-                        Type 'readonly [{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the ...' is not assignable to type 'readonly ProductionCaseVerificationSource[]'.
-                          Type '{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the 113-minute...' is not assignable to type 'ProductionCaseVerificationSource'.
-                            Type '{ readonly title: "Interview: Jia Zhang-ke on Ash Is Purest White and the Evolution of China"; readonly publisher: "Slant Magazine"; readonly url: "https://www.slantmagazine.com/film/interview-jia-zhang-ke-on-ash-is-purest-white-censorship-and-the-evolution-of-china/"; readonly sourceKind: "filmmaker_interview"; rea...' is not assignable to type 'ProductionCaseVerificationSource'.
-                              Types of property 'supports' are incompatible.
-                                Type 'readonly ["overall", "cinematography", "performance"]' is not assignable to type 'readonly ProductionCaseVerificationArea[]'.
-                                  Type '"cinematography" | "performance" | "overall"' is not assignable to type 'ProductionCaseVerificationArea'.
-                                    Type '"performance"' is not assignable to type 'ProductionCaseVerificationArea'.
-  Overload 2 of 4, '(entries?: readonly (readonly [string, ProductionCaseVerificationRecord])[] | null | undefined): Map<string, ProductionCaseVerificationRecord>', gave the following error.
-    Argument of type '["scenario_a_trip_to_the_moon_1902" | "scenario_the_cabinet_of_dr_caligari_1920" | "scenario_nosferatu_1922" | "scenario_battleship_potemkin_1925" | "scenario_the_general_1926" | ... 505 more ... | "scenario_where_is_the_friend_s_house_1987", { ...; } | ... 509 more ... | { ...; }][]' is not assignable to parameter of type 'readonly (readonly [string, ProductionCaseVerificationRecord])[]'.
-      Type '["scenario_a_trip_to_the_moon_1902" | "scenario_the_cabinet_of_dr_caligari_1920" | "scenario_nosferatu_1922" | "scenario_battleship_potemkin_1925" | "scenario_the_general_1926" | ... 505 more ... | "scenario_where_is_the_friend_s_house_1987", { ...; } | ... 509 more ... | { ...; }]' is not assignable to type 'readonly [string, ProductionCaseVerificationRecord]'.
-        Type at position 1 in source is not compatible with type at position 1 in target.
-          Type '{ readonly scenarioId: "scenario_man_of_iron_1981"; readonly status: "verified"; readonly verifiedAt: "2026-07-20"; readonly summary: "The case's Solidarity-era investigation, Gdańsk shipyard setting, archive-and-fiction structure, Edward Kłosiński photography, Allan Starski design, Halina Prugar-Ketling editing, Pi...' is not assignable to type 'ProductionCaseVerificationRecord'.
-            Type '{ readonly scenarioId: "scenario_unknown_pleasures_2002"; readonly status: "verified"; readonly verifiedAt: "2026-08-26"; readonly summary: "Unknown Pleasures is verified as a 2002 digital-video production case whose small-camera public-space access, nineteen-day schedule, long-take performance geometry, deliberatel...' is not assignable to type 'ProductionCaseVerificationRecord'.
-              Types of property 'sources' are incompatible.
-                Type 'readonly [{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the ...' is not assignable to type 'readonly ProductionCaseVerificationSource[]'.
-                  Type '{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the 113-minute...' is not assignable to type 'ProductionCaseVerificationSource'.
-                    Type '{ readonly title: "Interview: Jia Zhang-ke on Ash Is Purest White and the Evolution of China"; readonly publisher: "Slant Magazine"; readonly url: "https://www.slantmagazine.com/film/interview-jia-zhang-ke-on-ash-is-purest-white-censorship-and-the-evolution-of-china/"; readonly sourceKind: "filmmaker_interview"; rea...' is not assignable to type 'ProductionCaseVerificationSource'.
-                      Types of property 'supports' are incompatible.
-                        Type 'readonly ["overall", "cinematography", "performance"]' is not assignable to type 'readonly ProductionCaseVerificationArea[]'.
-                          Type '"cinematography" | "performance" | "overall"' is not assignable to type 'ProductionCaseVerificationArea'.
-                            Type '"performance"' is not assignable to type 'ProductionCaseVerificationArea'.
-src/ui/data/scenarioProductionVerificationRegistry.ts(483,5): error TS2322: Type 'ProductionCaseVerificationRecord | { readonly scenarioId: "scenario_man_of_iron_1981"; readonly status: "verified"; readonly verifiedAt: "2026-07-20"; readonly summary: "The case's Solidarity-era investigation, Gdańsk shipyard setting, archive-and-fiction structure, Edward Kłosiński photography, Allan Starski design...' is not assignable to type 'ProductionCaseVerificationRecord'.
-  Type '{ readonly scenarioId: "scenario_unknown_pleasures_2002"; readonly status: "verified"; readonly verifiedAt: "2026-08-26"; readonly summary: "Unknown Pleasures is verified as a 2002 digital-video production case whose small-camera public-space access, nineteen-day schedule, long-take performance geometry, deliberatel...' is not assignable to type 'ProductionCaseVerificationRecord'.
-    Types of property 'sources' are incompatible.
-      Type 'readonly [{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the ...' is not assignable to type 'readonly ProductionCaseVerificationSource[]'.
-        Type '{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the 113-minute...' is not assignable to type 'ProductionCaseVerificationSource'.
-          Type '{ readonly title: "Interview: Jia Zhang-ke on Ash Is Purest White and the Evolution of China"; readonly publisher: "Slant Magazine"; readonly url: "https://www.slantmagazine.com/film/interview-jia-zhang-ke-on-ash-is-purest-white-censorship-and-the-evolution-of-china/"; readonly sourceKind: "filmmaker_interview"; rea...' is not assignable to type 'ProductionCaseVerificationSource'.
-            Types of property 'supports' are incompatible.
-              Type 'readonly ["overall", "cinematography", "performance"]' is not assignable to type 'readonly ProductionCaseVerificationArea[]'.
-                Type '"cinematography" | "performance" | "overall"' is not assignable to type 'ProductionCaseVerificationArea'.
-                  Type '"performance"' is not assignable to type 'ProductionCaseVerificationArea'.
-src/ui/data/scenarioProductionVerificationRegistry.ts(484,5): error TS2322: Type '{ readonly scenarioId: "scenario_man_of_iron_1981"; readonly status: "verified"; readonly verifiedAt: "2026-07-20"; readonly summary: "The case's Solidarity-era investigation, Gdańsk shipyard setting, archive-and-fiction structure, Edward Kłosiński photography, Allan Starski design, Halina Prugar-Ketling editing, Pi...' is not assignable to type 'ProductionCaseVerificationRecord'.
-  Type '{ readonly scenarioId: "scenario_unknown_pleasures_2002"; readonly status: "verified"; readonly verifiedAt: "2026-08-26"; readonly summary: "Unknown Pleasures is verified as a 2002 digital-video production case whose small-camera public-space access, nineteen-day schedule, long-take performance geometry, deliberatel...' is not assignable to type 'ProductionCaseVerificationRecord'.
-    Types of property 'sources' are incompatible.
-      Type 'readonly [{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the ...' is not assignable to type 'readonly ProductionCaseVerificationSource[]'.
-        Type '{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the 113-minute...' is not assignable to type 'ProductionCaseVerificationSource'.
-          Type '{ readonly title: "Interview: Jia Zhang-ke on Ash Is Purest White and the Evolution of China"; readonly publisher: "Slant Magazine"; readonly url: "https://www.slantmagazine.com/film/interview-jia-zhang-ke-on-ash-is-purest-white-censorship-and-the-evolution-of-china/"; readonly sourceKind: "filmmaker_interview"; rea...' is not assignable to type 'ProductionCaseVerificationSource'.
-            Types of property 'supports' are incompatible.
-              Type 'readonly ["overall", "cinematography", "performance"]' is not assignable to type 'readonly ProductionCaseVerificationArea[]'.
-                Type '"cinematography" | "performance" | "overall"' is not assignable to type 'ProductionCaseVerificationArea'.
-                  Type '"performance"' is not assignable to type 'ProductionCaseVerificationArea'.
-src/ui/data/scenarioProductionVerificationUnknownPleasures.ts(38,47): error TS2322: Type '"performance"' is not assignable to type 'ProductionCaseVerificationArea'.
-src/ui/data/scenarioProductionVerificationUnknownPleasures.ts(45,7): error TS2322: Type '"academic_source"' is not assignable to type '"filmmaker_interview" | "trade_feature" | "film_institute" | "archive_feature"'.
+
+> hg-film-producer@0.1.0 test
+> npm run build && node --test dist/core/*.test.js
+
+
+> hg-film-producer@0.1.0 build
+> tsc
+
+TAP version 13
+# Subtest: applyDueStudioExpenses charges recurring and one-time expenses due in year 1
+ok 1 - applyDueStudioExpenses charges recurring and one-time expenses due in year 1
+  ---
+  duration_ms: 4.272071
+  type: 'test'
+  ...
+# Subtest: applyDueStudioExpenses skips one-time expenses after year 1 but keeps charging recurring ones
+ok 2 - applyDueStudioExpenses skips one-time expenses after year 1 but keeps charging recurring ones
+  ---
+  duration_ms: 0.496366
+  type: 'test'
+  ...
+# Subtest: applyDueStudioExpenses ignores expenses due in a different quarter
+ok 3 - applyDueStudioExpenses ignores expenses due in a different quarter
+  ---
+  duration_ms: 0.267589
+  type: 'test'
+  ...
+# Subtest: applyCrewRosterGrowth leaves a crew member unchanged with no roster history
+ok 4 - applyCrewRosterGrowth leaves a crew member unchanged with no roster history
+  ---
+  duration_ms: 1.576882
+  type: 'test'
+  ...
+# Subtest: applyCrewRosterGrowth raises experience but withholds the studio-regular tag below the threshold
+ok 5 - applyCrewRosterGrowth raises experience but withholds the studio-regular tag below the threshold
+  ---
+  duration_ms: 0.957035
+  type: 'test'
+  ...
+# Subtest: applyCrewRosterGrowth adds the studio-regular tag once at the threshold
+ok 6 - applyCrewRosterGrowth adds the studio-regular tag once at the threshold
+  ---
+  duration_ms: 1.196092
+  type: 'test'
+  ...
+# Subtest: applyCrewRosterGrowth clamps experience at 100 and does not duplicate the tag
+ok 7 - applyCrewRosterGrowth clamps experience at 100 and does not duplicate the tag
+  ---
+  duration_ms: 0.247762
+  type: 'test'
+  ...
+# Subtest: applyActorRosterGrowth leaves an actor unchanged with no roster history
+ok 8 - applyActorRosterGrowth leaves an actor unchanged with no roster history
+  ---
+  duration_ms: 0.276376
+  type: 'test'
+  ...
+# Subtest: applyActorRosterGrowth raises experience and adds the studio-regular chemistry tag at the threshold
+ok 9 - applyActorRosterGrowth raises experience and adds the studio-regular chemistry tag at the threshold
+  ---
+  duration_ms: 0.249445
+  type: 'test'
+  ...
+# Subtest: applyRosterGrowth does not mutate the original crew member or actor
+ok 10 - applyRosterGrowth does not mutate the original crew member or actor
+  ---
+  duration_ms: 0.223006
+  type: 'test'
+  ...
+# Subtest: Production Case phase cannot complete before a choice is selected
+ok 11 - Production Case phase cannot complete before a choice is selected
+  ---
+  duration_ms: 0.949211
+  type: 'test'
+  ...
+# Subtest: Production Case phase can complete after a valid choice is selected
+ok 12 - Production Case phase can complete after a valid choice is selected
+  ---
+  duration_ms: 0.163514
+  type: 'test'
+  ...
+# Subtest: a choice for another phase does not unlock this phase
+ok 13 - a choice for another phase does not unlock this phase
+  ---
+  duration_ms: 0.142716
+  type: 'test'
+  ...
+# Subtest: a stale saved choice does not count as a completed phase
+ok 14 - a stale saved choice does not count as a completed phase
+  ---
+  duration_ms: 0.142636
+  type: 'test'
+  ...
+# Subtest: career cashflow and filmography remain immutable and feed evaluations
+ok 15 - career cashflow and filmography remain immutable and feed evaluations
+  ---
+  duration_ms: 16.023224
+  type: 'test'
+  ...
+# Subtest: quarter advancement opens a single next-year snapshot
+ok 16 - quarter advancement opens a single next-year snapshot
+  ---
+  duration_ms: 1.196533
+  type: 'test'
+  ...
+# Subtest: milestones apply rewards once after requirements are met
+ok 17 - milestones apply rewards once after requirements are met
+  ---
+  duration_ms: 0.614156
+  type: 'test'
+  ...
+# Subtest: career seed catalogues provide stable gameplay coverage
+ok 18 - career seed catalogues provide stable gameplay coverage
+  ---
+  duration_ms: 3.542559
+  type: 'test'
+  ...
+# Subtest: strategic goals activate only once
+ok 19 - strategic goals activate only once
+  ---
+  duration_ms: 1.087759
+  type: 'test'
+  ...
+# Subtest: Chapter 8 materializes Coeur fidele, Napoleon, Un Chien Andalou, Entr'acte and The Smiling Madame Beudet as distinct French avant-garde production cases
+ok 20 - Chapter 8 materializes Coeur fidele, Napoleon, Un Chien Andalou, Entr'acte and The Smiling Madame Beudet as distinct French avant-garde production cases
+  ---
+  duration_ms: 1.525907
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes A Separation as a source-first 35mm rehearsal, handheld, information-control production case
+ok 21 - Chapter 18 materializes A Separation as a source-first 35mm rehearsal, handheld, information-control production case
+  ---
+  duration_ms: 1.829323
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Atanarjuat as a source-first Inuit community production case
+ok 22 - Chapter 18 materializes Atanarjuat as a source-first Inuit community production case
+  ---
+  duration_ms: 1.571441
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Attack of the Clones as a source-first all-digital 24p blockbuster production case
+ok 23 - Chapter 18 materializes Attack of the Clones as a source-first all-digital 24p blockbuster production case
+  ---
+  duration_ms: 2.61594
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Avatar as a source-first virtual-production and stereoscopic production case
+ok 24 - Chapter 18 materializes Avatar as a source-first virtual-production and stereoscopic production case
+  ---
+  duration_ms: 2.082576
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes City of God as a source-first mixed-gauge digital-convergence production case
+ok 25 - Chapter 18 materializes City of God as a source-first mixed-gauge digital-convergence production case
+  ---
+  duration_ms: 1.62419
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Collateral as a source-first hybrid HD and 35mm production case
+ok 26 - Chapter 18 materializes Collateral as a source-first hybrid HD and 35mm production case
+  ---
+  duration_ms: 2.281807
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Crouching Tiger as a source-first Super 35, wire-work and selective-digital-post transnational case
+ok 27 - Chapter 18 materializes Crouching Tiger as a source-first Super 35, wire-work and selective-digital-post transnational case
+  ---
+  duration_ms: 1.566582
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Dunkirk as a source-first large-format photochemical, practical/VFX and temporal-sound production case
+ok 28 - Chapter 18 materializes Dunkirk as a source-first large-format photochemical, practical/VFX and temporal-sound production case
+  ---
+  duration_ms: 2.233056
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes The Gleaners and I as a source-first small-camera digital documentary case
+ok 29 - Chapter 18 materializes The Gleaners and I as a source-first small-camera digital documentary case
+  ---
+  duration_ms: 1.488947
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Gravity as a source-first previs, Light Box, robotics, CG and spatial-sound production case
+ok 30 - Chapter 18 materializes Gravity as a source-first previs, Light Box, robotics, CG and spatial-sound production case
+  ---
+  duration_ms: 2.14386
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes In the Mood for Love as a source-first transnational auteur production case
+ok 31 - Chapter 18 materializes In the Mood for Love as a source-first transnational auteur production case
+  ---
+  duration_ms: 1.550312
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Inland Empire as a source-first low-resolution DV production case
+ok 32 - Chapter 18 materializes Inland Empire as a source-first low-resolution DV production case
+  ---
+  duration_ms: 2.478304
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Moonlight as a source-first single-camera digital performance and post-production case
+ok 33 - Chapter 18 materializes Moonlight as a source-first single-camera digital performance and post-production case
+  ---
+  duration_ms: 2.252101
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Parasite as a source-first constructed-space, large-format, storyboard-led editorial and Atmos case
+ok 34 - Chapter 18 materializes Parasite as a source-first constructed-space, large-format, storyboard-led editorial and Atmos case
+  ---
+  duration_ms: 1.872774
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Roma as a source-first memory, large-format digital, long-take, spatial-sound and circulation case
+ok 35 - Chapter 18 materializes Roma as a source-first memory, large-format digital, long-take, spatial-sound and circulation case
+  ---
+  duration_ms: 2.360434
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Russian Ark as a source-first single-take digital production case
+ok 36 - Chapter 18 materializes Russian Ark as a source-first single-take digital production case
+  ---
+  duration_ms: 2.107713
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Slumdog Millionaire as a source-first mobile hybrid SI-2K and 35mm production case
+ok 37 - Chapter 18 materializes Slumdog Millionaire as a source-first mobile hybrid SI-2K and 35mm production case
+  ---
+  duration_ms: 1.498486
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Son of Saul as a source-first 35mm photochemical, restricted-viewpoint and offscreen-sound production case
+ok 38 - Chapter 18 materializes Son of Saul as a source-first 35mm photochemical, restricted-viewpoint and offscreen-sound production case
+  ---
+  duration_ms: 1.648846
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Spider-Verse as a source-first stylized-animation, compositing, editorial and Atmos case
+ok 39 - Chapter 18 materializes Spider-Verse as a source-first stylized-animation, compositing, editorial and Atmos case
+  ---
+  duration_ms: 2.323284
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Spirited Away as a source-first hand-drawn/digital-finishing animation case
+ok 40 - Chapter 18 materializes Spirited Away as a source-first hand-drawn/digital-finishing animation case
+  ---
+  duration_ms: 2.496127
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes The Irishman as a source-first hybrid-capture, markerless-VFX, longform-edit and restrained-sound case
+ok 41 - Chapter 18 materializes The Irishman as a source-first hybrid-capture, markerless-VFX, longform-edit and restrained-sound case
+  ---
+  duration_ms: 2.200655
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes The Social Network as a source-first mature RED file-based production case
+ok 42 - Chapter 18 materializes The Social Network as a source-first mature RED file-based production case
+  ---
+  duration_ms: 2.393045
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes 28 Days Later as a source-first MiniDV, multi-camera London and digital-to-film post case
+ok 43 - Chapter 18 materializes 28 Days Later as a source-first MiniDV, multi-camera London and digital-to-film post case
+  ---
+  duration_ms: 2.202058
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Unknown Pleasures as a source-first DV, public-space and digital-to-celluloid case
+not ok 44 - Chapter 18 materializes Unknown Pleasures as a source-first DV, public-space and digital-to-celluloid case
+  ---
+  duration_ms: 8.760916
+  type: 'test'
+  location: '/home/runner/work/HG_Film_Producer/HG_Film_Producer/dist/core/chapterEighteenUnknownPleasuresExpansion.test.js:4:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(film.learningGoals.some((goal) => goal.includes("bright exterior") && goal.includes("limitations")))
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///home/runner/work/HG_Film_Producer/HG_Film_Producer/dist/core/chapterEighteenUnknownPleasuresExpansion.test.js:22:12)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: Chapter 18 materializes Yi Yi as a source-first 35mm architectural-framing, ensemble-duration and restoration-provenance case
+ok 45 - Chapter 18 materializes Yi Yi as a source-first 35mm architectural-framing, ensemble-duration and restoration-provenance case
+  ---
+  duration_ms: 1.467548
+  type: 'test'
+  ...
+# Subtest: Chapter 18 materializes Zodiac as a source-first tapeless digital-negative production case
+ok 46 - Chapter 18 materializes Zodiac as a source-first tapeless digital-negative production case
+  ---
+  duration_ms: 2.376253
+  type: 'test'
+  ...
+# Subtest: Chapter 11 materializes Applause as a mobile early-sound Production Case
+ok 47 - Chapter 11 materializes Applause as a mobile early-sound Production Case
+  ---
+  duration_ms: 0.850276
+  type: 'test'
+  ...
+# Subtest: Chapter 11 materializes Blackmail as a dual silent/sound Production Case
+ok 48 - Chapter 11 materializes Blackmail as a dual silent/sound Production Case
+  ---
+  duration_ms: 1.281821
+  type: 'test'
+  ...
+# Subtest: Chapter 11 materializes The Blue Angel as a multilingual UFA/Tobis Production Case
+ok 49 - Chapter 11 materializes The Blue Angel as a multilingual UFA/Tobis Production Case
+  ---
+  duration_ms: 1.047484
+  type: 'test'
+  ...
+# Subtest: Chapter 11 materializes The Broadway Melody as an MGM early-sound musical Production Case
+ok 50 - Chapter 11 materializes The Broadway Melody as an MGM early-sound musical Production Case
+  ---
+  duration_ms: 1.210989
+  type: 'test'
+  ...
+# Subtest: Chapter 11 materializes Enthusiasm as a non-synchronous industrial-sound Production Case
+ok 51 - Chapter 11 materializes Enthusiasm as a non-synchronous industrial-sound Production Case
+  ---
+  duration_ms: 1.282382
+  type: 'test'
+  ...
+# Subtest: Chapter 11 materializes The Jazz Singer as a Vitaphone part-talkie Production Case
+ok 52 - Chapter 11 materializes The Jazz Singer as a Vitaphone part-talkie Production Case
+  ---
+  duration_ms: 0.949351
+  type: 'test'
+  ...
+# Subtest: Chapter 11 materializes The Neighbor's Wife and Mine as a Shochiku synchronous-sound Production Case
+ok 53 - Chapter 11 materializes The Neighbor's Wife and Mine as a Shochiku synchronous-sound Production Case
+  ---
+  duration_ms: 0.962997
+  type: 'test'
+  ...
+# Subtest: Chapter 11 materializes Sous les toits de Paris as a selective-sound Production Case
+ok 54 - Chapter 11 materializes Sous les toits de Paris as a selective-sound Production Case
+  ---
+  duration_ms: 1.257907
+  type: 'test'
+  ...
+# Subtest: Chapter 15 materializes The Battle of Chile: Part I as a coup-era collective documentary Production Case
+ok 55 - Chapter 15 materializes The Battle of Chile: Part I as a coup-era collective documentary Production Case
+  ---
+  duration_ms: 1.94021
+  type: 'test'
+  ...
+# Subtest: Chapter 15 materializes Manila in the Claws of Light as a Philippine martial-law Production Case
+ok 56 - Chapter 15 materializes Manila in the Claws of Light as a Philippine martial-law Production Case
+  ---
+  duration_ms: 1.619422
+  type: 'test'
+  ...
+# Subtest: Chapter 15 materializes Touki Bouki as a Senegalese postcolonial-modernism Production Case
+ok 57 - Chapter 15 materializes Touki Bouki as a Senegalese postcolonial-modernism Production Case
+  ---
+  duration_ms: 1.348966
+  type: 'test'
+  ...
+# Subtest: Chapter 5 keeps Fantômas, Cabiria, Afgrunden and Atlantis as materialized international expansion cases
+ok 58 - Chapter 5 keeps Fantômas, Cabiria, Afgrunden and Atlantis as materialized international expansion cases
+  ---
+  duration_ms: 1.24863
+  type: 'test'
+  ...
+# Subtest: Chapter 14 materializes Black Girl as a Senegalese post-independence Production Case
+ok 59 - Chapter 14 materializes Black Girl as a Senegalese post-independence Production Case
+  ---
+  duration_ms: 1.38815
+  type: 'test'
+  ...
+# Subtest: Chapter 14 materializes Memories of Underdevelopment as an ICAIC revolutionary-modernism Production Case
+ok 60 - Chapter 14 materializes Memories of Underdevelopment as an ICAIC revolutionary-modernism Production Case
+  ---
+  duration_ms: 1.530155
+  type: 'test'
+  ...
+# Subtest: Chapter 9 materializes five distinct missing Soviet montage production cases
+ok 61 - Chapter 9 materializes five distinct missing Soviet montage production cases
+  ---
+  duration_ms: 2.311192
+  type: 'test'
+  ...
+# Subtest: Mother preserves Pudovkin linkage, collaborative craft and version boundaries
+ok 62 - Mother preserves Pudovkin linkage, collaborative craft and version boundaries
+  ---
+  duration_ms: 0.433579
+  type: 'test'
+  ...
+# Subtest: Shub case treats archival provenance and compilation editing as production authorship
+ok 63 - Shub case treats archival provenance and compilation editing as production authorship
+  ---
+  duration_ms: 0.237533
+  type: 'test'
+  ...
+# Subtest: Earth keeps Ukrainian VUFKU context and hindsight safeguards explicit
+ok 64 - Earth keeps Ukrainian VUFKU context and hindsight safeguards explicit
+  ---
+  duration_ms: 0.27885
+  type: 'test'
+  ...
+# Subtest: October remains staged reconstruction with intellectual-montage and recut version control
+ok 65 - October remains staged reconstruction with intellectual-montage and recut version control
+  ---
+  duration_ms: 0.335946
+  type: 'test'
+  ...
+# Subtest: Mr West turns the Kuleshov workshop into constructive genre production, not a magic effect
+ok 66 - Mr West turns the Kuleshov workshop into constructive genre production, not a magic effect
+  ---
+  duration_ms: 0.252331
+  type: 'test'
+  ...
+# Subtest: Chapter 7 materializes The Last Laugh and Pandora's Box as distinct Weimar production cases
+ok 67 - Chapter 7 materializes The Last Laugh and Pandora's Box as distinct Weimar production cases
+  ---
+  duration_ms: 1.526859
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Bandit Queen as a source-first contested living-biography production
+ok 68 - Chapter 17 materializes Bandit Queen as a source-first contested living-biography production
+  ---
+  duration_ms: 2.296575
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes The Blair Witch Project as a source-first found-footage production case
+ok 69 - Chapter 17 materializes The Blair Witch Project as a source-first found-footage production case
+  ---
+  duration_ms: 1.686206
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Boys Don't Cry as a source-first researched biographical independent production case
+ok 70 - Chapter 17 materializes Boys Don't Cry as a source-first researched biographical independent production case
+  ---
+  duration_ms: 2.269244
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Boyz n the Hood as a source-first Columbia/South Central production
+ok 71 - Chapter 17 materializes Boyz n the Hood as a source-first Columbia/South Central production
+  ---
+  duration_ms: 1.598532
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Chungking Express as a source-first Jet Tone rapid Hong Kong production
+ok 72 - Chapter 17 materializes Chungking Express as a source-first Jet Tone rapid Hong Kong production
+  ---
+  duration_ms: 2.391962
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Eve's Bayou as a source-first Black independent regional production case
+ok 73 - Chapter 17 materializes Eve's Bayou as a source-first Black independent regional production case
+  ---
+  duration_ms: 2.184275
+  type: 'test'
+  ...
+# Subtest: Fire source-first definition locks identity and runtime
+ok 74 - Fire source-first definition locks identity and runtime
+  ---
+  duration_ms: 1.846846
+  type: 'test'
+  ...
+# Subtest: Fire preserves production-company, craft and language boundaries
+ok 75 - Fire preserves production-company, craft and language boundaries
+  ---
+  duration_ms: 0.333011
+  type: 'test'
+  ...
+# Subtest: Fire refuses unsupported camera and intimacy-process precision
+ok 76 - Fire refuses unsupported camera and intimacy-process precision
+  ---
+  duration_ms: 0.439801
+  type: 'test'
+  ...
+# Subtest: Fire keeps production separate from downstream controversy and runtime variance
+ok 77 - Fire keeps production separate from downstream controversy and runtime variance
+  ---
+  duration_ms: 0.241981
+  type: 'test'
+  ...
+# Subtest: Fire merge is deterministic
+ok 78 - Fire merge is deterministic
+  ---
+  duration_ms: 0.930847
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Goodfellas as a source-first studio-auteur boundary production case
+ok 79 - Chapter 17 materializes Goodfellas as a source-first studio-auteur boundary production case
+  ---
+  duration_ms: 2.179346
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Hoop Dreams as a source-first longitudinal documentary production
+ok 80 - Chapter 17 materializes Hoop Dreams as a source-first longitudinal documentary production
+  ---
+  duration_ms: 2.00491
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Hyenas as a source-first Senegalese transnational two-period production
+ok 81 - Chapter 17 materializes Hyenas as a source-first Senegalese transnational two-period production
+  ---
+  duration_ms: 2.486119
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes My Own Private Idaho as a source-first independent queer road production
+ok 82 - Chapter 17 materializes My Own Private Idaho as a source-first independent queer road production
+  ---
+  duration_ms: 1.676818
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Princess Mononoke as a source-first hybrid animation transition
+ok 83 - Chapter 17 materializes Princess Mononoke as a source-first hybrid animation transition
+  ---
+  duration_ms: 2.052469
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Pulp Fiction as a source-first specialty production
+ok 84 - Chapter 17 materializes Pulp Fiction as a source-first specialty production
+  ---
+  duration_ms: 1.508685
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Ringu as a source-first Japanese horror and analog-media production case
+ok 85 - Chapter 17 materializes Ringu as a source-first Japanese horror and analog-media production case
+  ---
+  duration_ms: 2.984357
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Sankofa as a source-first Black independent diasporic production and self-distribution case
+ok 86 - Chapter 17 materializes Sankofa as a source-first Black independent diasporic production and self-distribution case
+  ---
+  duration_ms: 2.235622
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Shiri as a source-first South Korean blockbuster production
+ok 87 - Chapter 17 materializes Shiri as a source-first South Korean blockbuster production
+  ---
+  duration_ms: 1.525306
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes The Idiots as a source-first Dogme 95 production case
+ok 88 - Chapter 17 materializes The Idiots as a source-first Dogme 95 production case
+  ---
+  duration_ms: 2.215433
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes The Living End as a source-first New Queer Cinema microbudget production
+ok 89 - Chapter 17 materializes The Living End as a source-first New Queer Cinema microbudget production
+  ---
+  duration_ms: 2.147206
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes The Matrix as a source-first Sydney live-action/VFX production
+ok 90 - Chapter 17 materializes The Matrix as a source-first Sydney live-action/VFX production
+  ---
+  duration_ms: 1.989813
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes The Piano as a source-first transnational New Zealand production
+ok 91 - Chapter 17 materializes The Piano as a source-first transnational New Zealand production
+  ---
+  duration_ms: 2.126147
+  type: 'test'
+  ...
+# Subtest: The White Balloon source-first definition locks identity and runtime
+ok 92 - The White Balloon source-first definition locks identity and runtime
+  ---
+  duration_ms: 1.337816
+  type: 'test'
+  ...
+# Subtest: The White Balloon preserves institutional and authorship boundaries
+ok 93 - The White Balloon preserves institutional and authorship boundaries
+  ---
+  duration_ms: 0.238345
+  type: 'test'
+  ...
+# Subtest: The White Balloon keeps child-performance evidence inside modern welfare safeguards
+ok 94 - The White Balloon keeps child-performance evidence inside modern welfare safeguards
+  ---
+  duration_ms: 0.289591
+  type: 'test'
+  ...
+# Subtest: The White Balloon refuses unsupported technical precision and preserves version variance
+ok 95 - The White Balloon refuses unsupported technical precision and preserves version variance
+  ---
+  duration_ms: 0.204462
+  type: 'test'
+  ...
+# Subtest: The White Balloon merge is deterministic and deduplicates title aliases
+ok 96 - The White Balloon merge is deterministic and deduplicates title aliases
+  ---
+  duration_ms: 0.615659
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Three Colours Red as a source-first transnational production
+ok 97 - Chapter 17 materializes Three Colours Red as a source-first transnational production
+  ---
+  duration_ms: 2.179647
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Titanic as a source-first multi-system blockbuster production
+ok 98 - Chapter 17 materializes Titanic as a source-first multi-system blockbuster production
+  ---
+  duration_ms: 1.523322
+  type: 'test'
+  ...
+# Subtest: Chapter 17 materializes Toy Story as a source-first software-driven feature-animation production
+ok 99 - Chapter 17 materializes Toy Story as a source-first software-driven feature-animation production
+  ---
+  duration_ms: 2.209022
+  type: 'test'
+  ...
+# Subtest: Chapter 6 materializes Gold Rush, The Crowd, The Cheat, It and Wings as distinct Hollywood-system cases
+ok 100 - Chapter 6 materializes Gold Rush, The Crowd, The Cheat, It and Wings as distinct Hollywood-system cases
+  ---
+  duration_ms: 2.023635
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes A Better Tomorrow as a source-first Cinema City / Film Workshop action-melodrama production
+ok 101 - Chapter 16 materializes A Better Tomorrow as a source-first Cinema City / Film Workshop action-melodrama production
+  ---
+  duration_ms: 1.463601
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes Aliens as a source-first British sequel, creature and miniature-effects production
+ok 102 - Chapter 16 materializes Aliens as a source-first British sequel, creature and miniature-effects production
+  ---
+  duration_ms: 2.07953
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes Back to the Future as a source-first studio reshoot and selective-effects production
+ok 103 - Chapter 16 materializes Back to the Future as a source-first studio reshoot and selective-effects production
+  ---
+  duration_ms: 1.464613
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes Blade Runner as a source-first future-noir studio Production Case
+ok 104 - Chapter 16 materializes Blade Runner as a source-first future-noir studio Production Case
+  ---
+  duration_ms: 2.217707
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes Come and See as a source-first witness-based chronological Belarus production
+ok 105 - Chapter 16 materializes Come and See as a source-first witness-based chronological Belarus production
+  ---
+  duration_ms: 1.623579
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes Do the Right Thing as the final Black American location-production P0 Production Case
+ok 106 - Chapter 16 materializes Do the Right Thing as the final Black American location-production P0 Production Case
+  ---
+  duration_ms: 1.904924
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes E.T. as a source-first suburban creature-effects Production Case
+ok 107 - Chapter 16 materializes E.T. as a source-first suburban creature-effects Production Case
+  ---
+  duration_ms: 1.989512
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes Mephisto as the first P1 Central European co-production Production Case
+ok 108 - Chapter 16 materializes Mephisto as the first P1 Central European co-production Production Case
+  ---
+  duration_ms: 1.384864
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes Missing as a source-first transnational political-studio Production Case
+ok 109 - Chapter 16 materializes Missing as a source-first transnational political-studio Production Case
+  ---
+  duration_ms: 2.039826
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes My Beautiful Laundrette as the broadcaster-backed British P0 Production Case
+ok 110 - Chapter 16 materializes My Beautiful Laundrette as the broadcaster-backed British P0 Production Case
+  ---
+  duration_ms: 1.841445
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes The Official Story as the Argentine democratic-transition P0 Production Case
+ok 111 - Chapter 16 materializes The Official Story as the Argentine democratic-transition P0 Production Case
+  ---
+  duration_ms: 1.406544
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes Police Story as the Hong Kong commercial-action P0 Production Case
+ok 112 - Chapter 16 materializes Police Story as the Hong Kong commercial-action P0 Production Case
+  ---
+  duration_ms: 1.848509
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes Raging Bull as a source-first two-period black-and-white boxing production
+ok 113 - Chapter 16 materializes Raging Bull as a source-first two-period black-and-white boxing production
+  ---
+  duration_ms: 2.040297
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes Raiders of the Lost Ark as the first franchise-era P0 Production Case
+ok 114 - Chapter 16 materializes Raiders of the Lost Ark as the first franchise-era P0 Production Case
+  ---
+  duration_ms: 1.481624
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes RoboCop as a source-first Orion effects-and-performance production
+ok 115 - Chapter 16 materializes RoboCop as a source-first Orion effects-and-performance production
+  ---
+  duration_ms: 2.375061
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes Salaam Bombay! as a source-first research, workshop and Bombay-location fiction production
+ok 116 - Chapter 16 materializes Salaam Bombay! as a source-first research, workshop and Bombay-location fiction production
+  ---
+  duration_ms: 2.288459
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes She's Gotta Have It as a source-first Brooklyn microbudget production
+ok 117 - Chapter 16 materializes She's Gotta Have It as a source-first Brooklyn microbudget production
+  ---
+  duration_ms: 2.418051
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes Sugar Cane Alley as a source-first Martinican colonial-memory Production Case
+ok 118 - Chapter 16 materializes Sugar Cane Alley as a source-first Martinican colonial-memory Production Case
+  ---
+  duration_ms: 1.488768
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes The Terminator as a source-first low-budget night-and-effects Production Case
+ok 119 - Chapter 16 materializes The Terminator as a source-first low-budget night-and-effects Production Case
+  ---
+  duration_ms: 2.273963
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes Yeelen as the Malian-led transnational P0 Production Case
+ok 120 - Chapter 16 materializes Yeelen as the Malian-led transnational P0 Production Case
+  ---
+  duration_ms: 2.065162
+  type: 'test'
+  ...
+# Subtest: Chapter 16 materializes Yellow Earth as the Mainland Fifth Generation P0 Production Case
+ok 121 - Chapter 16 materializes Yellow Earth as the Mainland Fifth Generation P0 Production Case
+  ---
+  duration_ms: 2.064201
+  type: 'test'
+  ...
+# Subtest: Chapter 10 materializes A Throw of Dice as a transnational India-location Production Case
+ok 122 - Chapter 10 materializes A Throw of Dice as a transnational India-location Production Case
+  ---
+  duration_ms: 0.867118
+  type: 'test'
+  ...
+# Subtest: Chapter 10 materializes Growth of the Soil as a Norwegian literary-location Production Case
+ok 123 - Chapter 10 materializes Growth of the Soil as a Norwegian literary-location Production Case
+  ---
+  duration_ms: 1.204137
+  type: 'test'
+  ...
+# Subtest: Chapter 10 materializes Häxan as a research-lecture reenactment Production Case
+ok 124 - Chapter 10 materializes Häxan as a research-lecture reenactment Production Case
+  ---
+  duration_ms: 1.3555
+  type: 'test'
+  ...
+# Subtest: Chapter 10 materializes Laborer's Love as a bilingual Shanghai trick-comedy Production Case
+ok 125 - Chapter 10 materializes Laborer's Love as a bilingual Shanghai trick-comedy Production Case
+  ---
+  duration_ms: 0.881896
+  type: 'test'
+  ...
+# Subtest: Chapter 10 materializes Orochi as an independent star-company chanbara Production Case
+ok 126 - Chapter 10 materializes Orochi as an independent star-company chanbara Production Case
+  ---
+  duration_ms: 1.28113
+  type: 'test'
+  ...
+# Subtest: Chapter 10 materializes The Red Heroine as a surviving wuxia-serial-section Production Case
+ok 127 - Chapter 10 materializes The Red Heroine as a surviving wuxia-serial-section Production Case
+  ---
+  duration_ms: 1.026174
+  type: 'test'
+  ...
+# Subtest: Chapter 10 materializes A Page of Madness as a version-aware Japanese avant-garde Production Case
+ok 128 - Chapter 10 materializes A Page of Madness as a version-aware Japanese avant-garde Production Case
+  ---
+  duration_ms: 1.269679
+  type: 'test'
+  ...
+# Subtest: Chapter 13 materializes A Man Escaped as a Montluc process-and-sound Production Case
+ok 129 - Chapter 13 materializes A Man Escaped as a Montluc process-and-sound Production Case
+  ---
+  duration_ms: 1.342024
+  type: 'test'
+  ...
+# Subtest: Chapter 13 materializes Los olvidados as a Mexico City postwar social-realism/surrealism Production Case
+ok 130 - Chapter 13 materializes Los olvidados as a Mexico City postwar social-realism/surrealism Production Case
+  ---
+  duration_ms: 1.876541
+  type: 'test'
+  ...
+# Subtest: Chapter 13 materializes Paisan as a six-episode multilingual postwar location Production Case
+ok 131 - Chapter 13 materializes Paisan as a six-episode multilingual postwar location Production Case
+  ---
+  duration_ms: 2.056988
+  type: 'test'
+  ...
+# Subtest: Chapter 13 materializes The Red Shoes as an Archers Technicolor ballet Production Case
+ok 132 - Chapter 13 materializes The Red Shoes as an Archers Technicolor ballet Production Case
+  ---
+  duration_ms: 1.979052
+  type: 'test'
+  ...
+# Subtest: Chapter 13 materializes Sunset Boulevard as a Paramount self-reflexive postwar noir Production Case
+ok 133 - Chapter 13 materializes Sunset Boulevard as a Paramount self-reflexive postwar noir Production Case
+  ---
+  duration_ms: 1.593333
+  type: 'test'
+  ...
+# Subtest: Chapter 13 materializes Ugetsu as a Daiei postwar period-fantasy Production Case
+ok 134 - Chapter 13 materializes Ugetsu as a Daiei postwar period-fantasy Production Case
+  ---
+  duration_ms: 1.918941
+  type: 'test'
+  ...
+# Subtest: Chapter 12 materializes 42nd Street as a Warner backstage-musical Production Case
+ok 135 - Chapter 12 materializes 42nd Street as a Warner backstage-musical Production Case
+  ---
+  duration_ms: 1.392408
+  type: 'test'
+  ...
+# Subtest: Chapter 12 materializes Dracula as a paired Universal English/Spanish Production Case
+ok 136 - Chapter 12 materializes Dracula as a paired Universal English/Spanish Production Case
+  ---
+  duration_ms: 1.846846
+  type: 'test'
+  ...
+# Subtest: Chapter 12 materializes Gone with the Wind as a Selznick multi-unit Technicolor Production Case
+ok 137 - Chapter 12 materializes Gone with the Wind as a Selznick multi-unit Technicolor Production Case
+  ---
+  duration_ms: 1.375666
+  type: 'test'
+  ...
+# Subtest: Chapter 12 materializes It Happened One Night as a Columbia screwball/star-loan Production Case
+ok 138 - Chapter 12 materializes It Happened One Night as a Columbia screwball/star-loan Production Case
+  ---
+  duration_ms: 1.858016
+  type: 'test'
+  ...
+# Subtest: Chapter 12 materializes The Public Enemy as a Warner studio-and-gangster Production Case
+ok 139 - Chapter 12 materializes The Public Enemy as a Warner studio-and-gangster Production Case
+  ---
+  duration_ms: 0.881405
+  type: 'test'
+  ...
+# Subtest: Chapter 12 materializes Scarface as an independent gangster/censorship Production Case
+ok 140 - Chapter 12 materializes Scarface as an independent gangster/censorship Production Case
+  ---
+  duration_ms: 2.049473
+  type: 'test'
+  ...
+# Subtest: Chapter 12 materializes Top Hat as an RKO Astaire-Rogers musical Production Case
+ok 141 - Chapter 12 materializes Top Hat as an RKO Astaire-Rogers musical Production Case
+  ---
+  duration_ms: 1.854199
+  type: 'test'
+  ...
+# Subtest: crew and actor seed rosters meet the first-engine coverage requirements
+ok 142 - crew and actor seed rosters meet the first-engine coverage requirements
+  ---
+  duration_ms: 3.898724
+  type: 'test'
+  ...
+# Subtest: crew scoring is explainable, clamped, and rewards matching style tags
+ok 143 - crew scoring is explainable, clamped, and rewards matching style tags
+  ---
+  duration_ms: 0.505052
+  type: 'test'
+  ...
+# Subtest: hiring and casting return copied projects and prevent duplicate IDs
+ok 144 - hiring and casting return copied projects and prevent duplicate IDs
+  ---
+  duration_ms: 1.197785
+  type: 'test'
+  ...
+# Subtest: casting chemistry rewards shared tags and ignores duplicate actors
+ok 145 - casting chemistry rewards shared tags and ignores duplicate actors
+  ---
+  duration_ms: 0.550668
+  type: 'test'
+  ...
+# Subtest: production-team evaluation uses attached people, collaboration, reliability, and fees
+ok 146 - production-team evaluation uses attached people, collaboration, reliability, and fees
+  ---
+  duration_ms: 0.684577
+  type: 'test'
+  ...
+# Subtest: an empty production team evaluates to zero rather than gaining free budget health
+ok 147 - an empty production team evaluates to zero rather than gaining free budget health
+  ---
+  duration_ms: 0.163465
+  type: 'test'
+  ...
+# Subtest: film results preserve the legacy API and improve with a strong evaluated team
+ok 148 - film results preserve the legacy API and improve with a strong evaluated team
+  ---
+  duration_ms: 0.429421
+  type: 'test'
+  ...
+# Subtest: film results reject a production-team evaluation for another project
+ok 149 - film results reject a production-team evaluation for another project
+  ---
+  duration_ms: 0.399997
+  type: 'test'
+  ...
+# Subtest: developer tools stay hidden by default
+ok 150 - developer tools stay hidden by default
+  ---
+  duration_ms: 1.385455
+  type: 'test'
+  ...
+# Subtest: developer tools require the explicit dev=1 query parameter
+ok 151 - developer tools require the explicit dev=1 query parameter
+  ---
+  duration_ms: 0.325878
+  type: 'test'
+  ...
+# Subtest: covers every scene-brief and shot-card decision with an applied learning guide
+ok 152 - covers every scene-brief and shot-card decision with an applied learning guide
+  ---
+  duration_ms: 2.774195
+  type: 'test'
+  ...
+# Subtest: gives every applied guide a practical exercise, checklist and resolved terminology
+ok 153 - gives every applied guide a practical exercise, checklist and resolved terminology
+  ---
+  duration_ms: 0.709844
+  type: 'test'
+  ...
+# Subtest: connects important film terms back to the Director decisions where they are used
+ok 154 - connects important film terms back to the Director decisions where they are used
+  ---
+  duration_ms: 1.290347
+  type: 'test'
+  ...
+# Subtest: creates an empty directing brief for one reference film
+ok 155 - creates an empty directing brief for one reference film
+  ---
+  duration_ms: 1.201872
+  type: 'test'
+  ...
+# Subtest: coerces persisted data without accepting invalid values
+ok 156 - coerces persisted data without accepting invalid values
+  ---
+  duration_ms: 0.476539
+  type: 'test'
+  ...
+# Subtest: uses a stable storage key per film
+ok 157 - uses a stable storage key per film
+  ---
+  duration_ms: 0.197388
+  type: 'test'
+  ...
+# Subtest: exports a readable complete director brief
+ok 158 - exports a readable complete director brief
+  ---
+  duration_ms: 0.347558
+  type: 'test'
+  ...
+# Subtest: provides a broad canonical directing vocabulary
+ok 159 - provides a broad canonical directing vocabulary
+  ---
+  duration_ms: 1.320934
+  type: 'test'
+  ...
+# Subtest: covers every directing craft category with a substantial vocabulary
+ok 160 - covers every directing craft category with a substantial vocabulary
+  ---
+  duration_ms: 0.449759
+  type: 'test'
+  ...
+# Subtest: uses only registered phases, levels, categories and sources
+ok 161 - uses only registered phases, levels, categories and sources
+  ---
+  duration_ms: 2.25097
+  type: 'test'
+  ...
+# Subtest: models the director workflow from script interpretation through finishing
+ok 162 - models the director workflow from script interpretation through finishing
+  ---
+  duration_ms: 1.717123
+  type: 'test'
+  ...
+# Subtest: searches English terms, Norwegian terminology and explanations
+ok 163 - searches English terms, Norwegian terminology and explanations
+  ---
+  duration_ms: 4.227807
+  type: 'test'
+  ...
+# Subtest: creates a project with one active scene
+ok 164 - creates a project with one active scene
+  ---
+  duration_ms: 2.907342
+  type: 'test'
+  ...
+# Subtest: adds scenes and keeps the new scene active
+ok 165 - adds scenes and keeps the new scene active
+  ---
+  duration_ms: 0.25506
+  type: 'test'
+  ...
+# Subtest: does not allow deleting the final scene
+ok 166 - does not allow deleting the final scene
+  ---
+  duration_ms: 0.235635
+  type: 'test'
+  ...
+# Subtest: duplicates a scene with independent shot ids
+ok 167 - duplicates a scene with independent shot ids
+  ---
+  duration_ms: 0.784938
+  type: 'test'
+  ...
+# Subtest: creates, duplicates, updates, and reorders shot cards
+ok 168 - creates, duplicates, updates, and reorders shot cards
+  ---
+  duration_ms: 0.620644
+  type: 'test'
+  ...
+# Subtest: coerces malformed saved data to a usable project
+ok 169 - coerces malformed saved data to a usable project
+  ---
+  duration_ms: 0.74846
+  type: 'test'
+  ...
+# Subtest: exports the complete scene project and shot list
+ok 170 - exports the complete scene project and shot list
+  ---
+  duration_ms: 0.691154
+  type: 'test'
+  ...
+# Subtest: uses stable project storage keys and entity ids
+ok 171 - uses stable project storage keys and entity ids
+  ---
+  duration_ms: 0.239953
+  type: 'test'
+  ...
+# Subtest: the requested historical expansion contains exactly 58 unique films
+ok 172 - the requested historical expansion contains exactly 58 unique films
+  ---
+  duration_ms: 2.43463
+  type: 'test'
+  ...
+# Subtest: the expansion reuses two existing films and appends 56 missing films
+ok 173 - the expansion reuses two existing films and appends 56 missing films
+  ---
+  duration_ms: 9.056491
+  type: 'test'
+  ...
+# Subtest: every requested film resolves once and has a complete playable brief blueprint
+ok 174 - every requested film resolves once and has a complete playable brief blueprint
+  ---
+  duration_ms: 18.054574
+  type: 'test'
+  ...
+# Subtest: the merged catalogue contains 217 unique Production Cases
+ok 175 - the merged catalogue contains 217 unique Production Cases
+  ---
+  duration_ms: 13.693626
+  type: 'test'
+  ...
+# Subtest: East Asian auteur expansion contains exactly 11 unique missing films
+ok 176 - East Asian auteur expansion contains exactly 11 unique missing films
+  ---
+  duration_ms: 1.470181
+  type: 'test'
+  ...
+# Subtest: all 11 films are new to the 264-case catalogue
+ok 177 - all 11 films are new to the 264-case catalogue
+  ---
+  duration_ms: 32.076729
+  type: 'test'
+  ...
+# Subtest: every East Asian auteur film resolves once and has a playable brief blueprint
+ok 178 - every East Asian auteur film resolves once and has a playable brief blueprint
+  ---
+  duration_ms: 21.3905
+  type: 'test'
+  ...
+# Subtest: the requested Taiwan, Hong Kong and China block is complete exactly once
+ok 179 - the requested Taiwan, Hong Kong and China block is complete exactly once
+  ---
+  duration_ms: 12.80866
+  type: 'test'
+  ...
+# Subtest: the merged catalogue contains 275 unique Production Cases
+ok 180 - the merged catalogue contains 275 unique Production Cases
+  ---
+  duration_ms: 12.707334
+  type: 'test'
+  ...
+# [eastern-iberian-british-expansion] prior=330 missing=23 final=353
+# Subtest: Eastern, Iberian, and British-Irish expansion contains exactly 24 unique targets
+ok 181 - Eastern, Iberian, and British-Irish expansion contains exactly 24 unique targets
+  ---
+  duration_ms: 1.586946
+  type: 'test'
+  ...
+# Subtest: the expansion adds only genuinely missing films and preserves unique catalogue IDs
+ok 182 - the expansion adds only genuinely missing films and preserves unique catalogue IDs
+  ---
+  duration_ms: 71.308903
+  type: 'test'
+  ...
+# Subtest: all 24 requested films resolve exactly once and have playable production blueprints
+ok 183 - all 24 requested films resolve exactly once and have playable production blueprints
+  ---
+  duration_ms: 61.220827
+  type: 'test'
+  ...
+# Subtest: the complete requested regional block resolves exactly once by title and year
+ok 184 - the complete requested regional block resolves exactly once by title and year
+  ---
+  duration_ms: 40.664429
+  type: 'test'
+  ...
+# Subtest: generic translated titles reject unrelated same-year films
+ok 185 - generic translated titles reject unrelated same-year films
+  ---
+  duration_ms: 39.475496
+  type: 'test'
+  ...
+# Subtest: 1981-2009 festival winner expansion contains exactly eleven unique films
+ok 186 - 1981-2009 festival winner expansion contains exactly eleven unique films
+  ---
+  duration_ms: 4.168146
+  type: 'test'
+  ...
+# Subtest: all eleven festival winners are new to the preceding 293-case catalogue
+ok 187 - all eleven festival winners are new to the preceding 293-case catalogue
+  ---
+  duration_ms: 34.741324
+  type: 'test'
+  ...
+# Subtest: every festival winner resolves once and has a playable brief blueprint
+ok 188 - every festival winner resolves once and has a playable brief blueprint
+  ---
+  duration_ms: 54.320123
+  type: 'test'
+  ...
+# Subtest: the complete requested 1981-2009 festival block resolves exactly once
+ok 189 - the complete requested 1981-2009 festival block resolves exactly once
+  ---
+  duration_ms: 19.871955
+  type: 'test'
+  ...
+# Subtest: generic festival winner titles do not match unrelated same-year films
+ok 190 - generic festival winner titles do not match unrelated same-year films
+  ---
+  duration_ms: 17.207891
+  type: 'test'
+  ...
+# Subtest: the merged catalogue contains 304 unique Production Cases
+ok 191 - the merged catalogue contains 304 unique Production Cases
+  ---
+  duration_ms: 28.892721
+  type: 'test'
+  ...
+# Subtest: 2010-2024 festival winner expansion contains exactly eleven unique films
+ok 192 - 2010-2024 festival winner expansion contains exactly eleven unique films
+  ---
+  duration_ms: 1.425329
+  type: 'test'
+  ...
+# Subtest: all eleven final festival winners are new to the preceding 304-case catalogue
+ok 193 - all eleven final festival winners are new to the preceding 304-case catalogue
+  ---
+  duration_ms: 45.276815
+  type: 'test'
+  ...
+# Subtest: every final festival winner resolves once and has a playable brief blueprint
+ok 194 - every final festival winner resolves once and has a playable brief blueprint
+  ---
+  duration_ms: 71.74255
+  type: 'test'
+  ...
+# Subtest: the complete requested 2010-2024 festival block resolves exactly once
+ok 195 - the complete requested 2010-2024 festival block resolves exactly once
+  ---
+  duration_ms: 20.392449
+  type: 'test'
+  ...
+# Subtest: generic final festival titles do not match unrelated same-year films
+ok 196 - generic final festival titles do not match unrelated same-year films
+  ---
+  duration_ms: 18.538937
+  type: 'test'
+  ...
+# Subtest: the final merged catalogue contains 315 unique Production Cases
+ok 197 - the final merged catalogue contains 315 unique Production Cases
+  ---
+  duration_ms: 38.436213
+  type: 'test'
+  ...
+# Subtest: the complete agreed correction contains all 98 films exactly once
+ok 198 - the complete agreed correction contains all 98 films exactly once
+  ---
+  duration_ms: 22.952306
+  type: 'test'
+  ...
+# Subtest: Film History book has six parts and thirty canonical chapters
+ok 199 - Film History book has six parts and thirty canonical chapters
+  ---
+  duration_ms: 2.525828
+  type: 'test'
+  ...
+# Subtest: Chapter 1 satisfies the full editorial definition rather than the old baseline
+ok 200 - Chapter 1 satisfies the full editorial definition rather than the old baseline
+  ---
+  duration_ms: 4.164129
+  type: 'test'
+  ...
+# Subtest: every Chapter 1 section has resolvable source provenance
+ok 201 - every Chapter 1 section has resolvable source provenance
+  ---
+  duration_ms: 0.556035
+  type: 'test'
+  ...
+# Subtest: Chapter 1 keeps the audited Film Atlas role and gap matrix
+ok 202 - Chapter 1 keeps the audited Film Atlas role and gap matrix
+  ---
+  duration_ms: 0.483511
+  type: 'test'
+  ...
+# Subtest: pre-cinema apparatus and motion studies remain Historical Objects, not fake Production Cases
+ok 203 - pre-cinema apparatus and motion studies remain Historical Objects, not fake Production Cases
+  ---
+  duration_ms: 0.683
+  type: 'test'
+  ...
+# Subtest: Chapter 2 is a full source-backed exhibition-history chapter
+ok 204 - Chapter 2 is a full source-backed exhibition-history chapter
+  ---
+  duration_ms: 4.984422
+  type: 'test'
+  ...
+# Subtest: every Chapter 2 section has dense resolvable source provenance
+ok 205 - every Chapter 2 section has dense resolvable source provenance
+  ---
+  duration_ms: 0.673873
+  type: 'test'
+  ...
+# Subtest: Chapter 2 keeps the completed audited Film Atlas matrix
+ok 206 - Chapter 2 keeps the completed audited Film Atlas matrix
+  ---
+  duration_ms: 0.487609
+  type: 'test'
+  ...
+# Subtest: Chapter 2 keeps exhibition infrastructure outside fake Production Cases
+ok 207 - Chapter 2 keeps exhibition infrastructure outside fake Production Cases
+  ---
+  duration_ms: 0.78052
+  type: 'test'
+  ...
+# Subtest: only Chapters 11–30 remain explicit outlines after Chapter 10 completion
+ok 208 - only Chapters 11–30 remain explicit outlines after Chapter 10 completion
+  ---
+  duration_ms: 0.682178
+  type: 'test'
+  ...
+# Subtest: Chapter 8 is canonical full book content with fifteen substantive sections
+ok 209 - Chapter 8 is canonical full book content with fifteen substantive sections
+  ---
+  duration_ms: 5.154932
+  type: 'test'
+  ...
+# Subtest: Chapter 8 source bank is complete, unique, HTTPS and actually used
+ok 210 - Chapter 8 source bank is complete, unique, HTTPS and actually used
+  ---
+  duration_ms: 1.042843
+  type: 'test'
+  ...
+# Subtest: Chapter 8 preserves the completed six-case Atlas matrix and nine P2 comparisons
+ok 211 - Chapter 8 preserves the completed six-case Atlas matrix and nine P2 comparisons
+  ---
+  duration_ms: 18.560601
+  type: 'test'
+  ...
+# Subtest: Chapter 8 theory and institutions remain historical context, never fake Production Cases
+ok 212 - Chapter 8 theory and institutions remain historical context, never fake Production Cases
+  ---
+  duration_ms: 0.303901
+  type: 'test'
+  ...
+# Subtest: Chapter 8 keeps historiographic, ethical, authorship and version safeguards visible in prose
+ok 213 - Chapter 8 keeps historiographic, ethical, authorship and version safeguards visible in prose
+  ---
+  duration_ms: 3.419736
+  type: 'test'
+  ...
+# Subtest: canonical book resolves Chapter 8 as full without changing the thirty-chapter architecture
+ok 214 - canonical book resolves Chapter 8 as full without changing the thirty-chapter architecture
+  ---
+  duration_ms: 0.300053
+  type: 'test'
+  ...
+# Subtest: Chapter 8 audit locks the reviewed French avant-garde Production Case matrix
+ok 215 - Chapter 8 audit locks the reviewed French avant-garde Production Case matrix
+  ---
+  duration_ms: 3.314553
+  type: 'test'
+  ...
+# Subtest: Chapter 18 audit locks the 2000–2019 digital-convergence scope
+ok 216 - Chapter 18 audit locks the 2000–2019 digital-convergence scope
+  ---
+  duration_ms: 1.553706
+  type: 'test'
+  ...
+# Subtest: Chapter 18 locks the exact candidate census without duplicate Atlas matches
+ok 217 - Chapter 18 locks the exact candidate census without duplicate Atlas matches
+  ---
+  duration_ms: 1.28502
+  type: 'test'
+  ...
+# Subtest: Chapter 18 locks the exact evidence-derived Production Case queues
+ok 218 - Chapter 18 locks the exact evidence-derived Production Case queues
+  ---
+  duration_ms: 0.411149
+  type: 'test'
+  ...
+# Subtest: Chapter 18 keeps asynchronous production systems explicit
+ok 219 - Chapter 18 keeps asynchronous production systems explicit
+  ---
+  duration_ms: 0.62386
+  type: 'test'
+  ...
+# Subtest: Chapter 18 source hierarchy is inspectable and permanent in v0.1 verification
+ok 220 - Chapter 18 source hierarchy is inspectable and permanent in v0.1 verification
+  ---
+  duration_ms: 0.349976
+  type: 'test'
+  ...
+# Subtest: Chapter 11 audit locks the reviewed sound-transition Atlas matrix
+ok 221 - Chapter 11 audit locks the reviewed sound-transition Atlas matrix
+  ---
+  duration_ms: 1.797895
+  type: 'test'
+  ...
+# Subtest: Chapter 11 existing anchors resolve to the exact canonical scenario IDs
+ok 222 - Chapter 11 existing anchors resolve to the exact canonical scenario IDs
+  ---
+  duration_ms: 0.315231
+  type: 'test'
+  ...
+# Subtest: Chapter 11 keeps sound infrastructure and uneven conversion outside fake Production Cases
+ok 223 - Chapter 11 keeps sound infrastructure and uneven conversion outside fake Production Cases
+  ---
+  duration_ms: 0.302768
+  type: 'test'
+  ...
+# Subtest: Chapter 11 permanently preserves version, language, archive and representation safeguards
+ok 224 - Chapter 11 permanently preserves version, language, archive and representation safeguards
+  ---
+  duration_ms: 0.344285
+  type: 'test'
+  ...
+# Subtest: Chapter 11 audit is permanent in the v0.1 verification chain
+ok 225 - Chapter 11 audit is permanent in the v0.1 verification chain
+  ---
+  duration_ms: 0.170624
+  type: 'test'
+  ...
+# Subtest: Chapter 15 audit locks the New Hollywood-political cinemas-blockbuster Atlas scope
+ok 226 - Chapter 15 audit locks the New Hollywood-political cinemas-blockbuster Atlas scope
+  ---
+  duration_ms: 2.314348
+  type: 'test'
+  ...
+# Subtest: Chapter 15 existing anchors resolve to exact canonical scenario IDs
+ok 227 - Chapter 15 existing anchors resolve to exact canonical scenario IDs
+  ---
+  duration_ms: 0.49905
+  type: 'test'
+  ...
+# Subtest: Chapter 15 keeps industrial and political systems outside fake Production Cases
+ok 228 - Chapter 15 keeps industrial and political systems outside fake Production Cases
+  ---
+  duration_ms: 0.388566
+  type: 'test'
+  ...
+# Subtest: Chapter 15 permanently preserves plurality, labor, politics and blockbuster safeguards
+ok 229 - Chapter 15 permanently preserves plurality, labor, politics and blockbuster safeguards
+  ---
+  duration_ms: 0.370283
+  type: 'test'
+  ...
+# Subtest: Chapter 15 audit is permanent in the v0.1 verification chain
+ok 230 - Chapter 15 audit is permanent in the v0.1 verification chain
+  ---
+  duration_ms: 0.248458
+  type: 'test'
+  ...
+# Subtest: Chapter 5 is canonical full book content with fifteen substantive sections
+ok 231 - Chapter 5 is canonical full book content with fifteen substantive sections
+  ---
+  duration_ms: 1.749015
+  type: 'test'
+  ...
+# Subtest: Chapter 5 source bank is complete, unique, HTTPS and actually used
+ok 232 - Chapter 5 source bank is complete, unique, HTTPS and actually used
+  ---
+  duration_ms: 0.890111
+  type: 'test'
+  ...
+# Subtest: Chapter 5 preserves the completed Atlas matrix and P2 book references
+ok 233 - Chapter 5 preserves the completed Atlas matrix and P2 book references
+  ---
+  duration_ms: 1.102874
+  type: 'test'
+  ...
+# Subtest: Chapter 5 industrial systems remain infrastructure, never fake Production Cases
+ok 234 - Chapter 5 industrial systems remain infrastructure, never fake Production Cases
+  ---
+  duration_ms: 0.290726
+  type: 'test'
+  ...
+# Subtest: Chapter 5 keeps international and historiographic safeguards visible in prose
+ok 235 - Chapter 5 keeps international and historiographic safeguards visible in prose
+  ---
+  duration_ms: 3.649019
+  type: 'test'
+  ...
+# Subtest: canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+ok 236 - canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+  ---
+  duration_ms: 0.287491
+  type: 'test'
+  ...
+# Subtest: Chapter 4 is canonical full book content with fifteen substantive sections
+ok 237 - Chapter 4 is canonical full book content with fifteen substantive sections
+  ---
+  duration_ms: 1.379654
+  type: 'test'
+  ...
+# Subtest: Chapter 4 source bank is complete, unique, HTTPS and fully referenced
+ok 238 - Chapter 4 source bank is complete, unique, HTTPS and fully referenced
+  ---
+  duration_ms: 0.675125
+  type: 'test'
+  ...
+# Subtest: Chapter 4 preserves the completed Atlas matrix and the three P2 book references
+ok 239 - Chapter 4 preserves the completed Atlas matrix and the three P2 book references
+  ---
+  duration_ms: 0.978324
+  type: 'test'
+  ...
+# Subtest: Chapter 4 historical systems remain infrastructure, never fake Production Cases
+ok 240 - Chapter 4 historical systems remain infrastructure, never fake Production Cases
+  ---
+  duration_ms: 0.288732
+  type: 'test'
+  ...
+# Subtest: Chapter 4 keeps the required industrial and historiographic safeguards visible in prose
+ok 241 - Chapter 4 keeps the required industrial and historiographic safeguards visible in prose
+  ---
+  duration_ms: 2.81959
+  type: 'test'
+  ...
+# Subtest: canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+ok 242 - canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+  ---
+  duration_ms: 0.311204
+  type: 'test'
+  ...
+# Subtest: Chapter 4 editorial references stay locked to the completed Atlas audit
+ok 243 - Chapter 4 editorial references stay locked to the completed Atlas audit
+  ---
+  duration_ms: 0.269567
+  type: 'test'
+  ...
+# Subtest: Chapter 14 audit locks the New Waves-modernism-decolonization Atlas scope
+ok 244 - Chapter 14 audit locks the New Waves-modernism-decolonization Atlas scope
+  ---
+  duration_ms: 1.610781
+  type: 'test'
+  ...
+# Subtest: Chapter 14 existing anchors resolve to exact canonical scenario IDs
+ok 245 - Chapter 14 existing anchors resolve to exact canonical scenario IDs
+  ---
+  duration_ms: 0.367026
+  type: 'test'
+  ...
+# Subtest: Chapter 14 keeps historical systems outside fake Production Cases
+ok 246 - Chapter 14 keeps historical systems outside fake Production Cases
+  ---
+  duration_ms: 0.248929
+  type: 'test'
+  ...
+# Subtest: Chapter 14 permanently preserves plurality, production labor and decolonization safeguards
+ok 247 - Chapter 14 permanently preserves plurality, production labor and decolonization safeguards
+  ---
+  duration_ms: 0.19485
+  type: 'test'
+  ...
+# Subtest: Chapter 14 audit is permanent in the v0.1 verification chain
+ok 248 - Chapter 14 audit is permanent in the v0.1 verification chain
+  ---
+  duration_ms: 0.19559
+  type: 'test'
+  ...
+# Subtest: Chapter 9 is canonical full book content with fifteen substantive sections
+ok 249 - Chapter 9 is canonical full book content with fifteen substantive sections
+  ---
+  duration_ms: 1.287154
+  type: 'test'
+  ...
+# Subtest: Chapter 9 source bank is complete, unique, HTTPS and actually used
+ok 250 - Chapter 9 source bank is complete, unique, HTTPS and actually used
+  ---
+  duration_ms: 0.642425
+  type: 'test'
+  ...
+# Subtest: Chapter 9 preserves the completed seven-case Atlas matrix and fourteen P2 comparisons
+ok 251 - Chapter 9 preserves the completed seven-case Atlas matrix and fourteen P2 comparisons
+  ---
+  duration_ms: 8.566317
+  type: 'test'
+  ...
+# Subtest: Chapter 9 theory and institutions remain historical context, never fake Production Cases
+ok 252 - Chapter 9 theory and institutions remain historical context, never fake Production Cases
+  ---
+  duration_ms: 0.196423
+  type: 'test'
+  ...
+# Subtest: Chapter 9 keeps theoretical, historiographic, archival, political and version safeguards visible in prose
+ok 253 - Chapter 9 keeps theoretical, historiographic, archival, political and version safeguards visible in prose
+  ---
+  duration_ms: 2.210997
+  type: 'test'
+  ...
+# Subtest: canonical book resolves Chapter 9 as full without changing the thirty-chapter architecture
+ok 254 - canonical book resolves Chapter 9 as full without changing the thirty-chapter architecture
+  ---
+  duration_ms: 0.242738
+  type: 'test'
+  ...
+# Subtest: Chapter 9 audit locks the reviewed Soviet montage Production Case matrix
+ok 255 - Chapter 9 audit locks the reviewed Soviet montage Production Case matrix
+  ---
+  duration_ms: 2.170313
+  type: 'test'
+  ...
+# Subtest: Chapter 9 audit permanently preserves theory, Ukrainian, archival and political safeguards
+ok 256 - Chapter 9 audit permanently preserves theory, Ukrainian, archival and political safeguards
+  ---
+  duration_ms: 0.532913
+  type: 'test'
+  ...
+# Subtest: Chapter 9 audit is permanent in the v0.1 verification chain
+ok 257 - Chapter 9 audit is permanent in the v0.1 verification chain
+  ---
+  duration_ms: 0.330369
+  type: 'test'
+  ...
+# Subtest: Chapter 7 is canonical full book content with fifteen substantive sections
+ok 258 - Chapter 7 is canonical full book content with fifteen substantive sections
+  ---
+  duration_ms: 1.916674
+  type: 'test'
+  ...
+# Subtest: Chapter 7 source bank is complete, unique, HTTPS and actually used
+ok 259 - Chapter 7 source bank is complete, unique, HTTPS and actually used
+  ---
+  duration_ms: 0.939923
+  type: 'test'
+  ...
+# Subtest: Chapter 7 preserves the completed five-case Atlas matrix and P2-only comparisons
+ok 260 - Chapter 7 preserves the completed five-case Atlas matrix and P2-only comparisons
+  ---
+  duration_ms: 15.008246
+  type: 'test'
+  ...
+# Subtest: Chapter 7 infrastructure remains historical context, never fake Production Cases
+ok 261 - Chapter 7 infrastructure remains historical context, never fake Production Cases
+  ---
+  duration_ms: 0.314049
+  type: 'test'
+  ...
+# Subtest: Chapter 7 keeps historiographic, ethical, legal and version safeguards visible in prose
+ok 262 - Chapter 7 keeps historiographic, ethical, legal and version safeguards visible in prose
+  ---
+  duration_ms: 3.144999
+  type: 'test'
+  ...
+# Subtest: canonical book can resolve Chapter 7 as full without changing the thirty-chapter architecture
+ok 263 - canonical book can resolve Chapter 7 as full without changing the thirty-chapter architecture
+  ---
+  duration_ms: 0.333075
+  type: 'test'
+  ...
+# Subtest: Chapter 7 audit locks the reviewed Weimar production-case matrix
+ok 264 - Chapter 7 audit locks the reviewed Weimar production-case matrix
+  ---
+  duration_ms: 0.985838
+  type: 'test'
+  ...
+# Subtest: Chapter 17 audit locks the 1990s specialty-digital-global-production scope
+ok 265 - Chapter 17 audit locks the 1990s specialty-digital-global-production scope
+  ---
+  duration_ms: 1.470331
+  type: 'test'
+  ...
+# Subtest: Chapter 17 locks the exact candidate census and allows no duplicate Atlas matches
+ok 266 - Chapter 17 locks the exact candidate census and allows no duplicate Atlas matches
+  ---
+  duration_ms: 1.385204
+  type: 'test'
+  ...
+# Subtest: Chapter 17 locks the exact evidence-derived Production Case queues
+ok 267 - Chapter 17 locks the exact evidence-derived Production Case queues
+  ---
+  duration_ms: 0.439039
+  type: 'test'
+  ...
+# Subtest: Chapter 17 keeps plural production systems explicit instead of a film-to-digital master narrative
+ok 268 - Chapter 17 keeps plural production systems explicit instead of a film-to-digital master narrative
+  ---
+  duration_ms: 0.34691
+  type: 'test'
+  ...
+# Subtest: Chapter 17 source hierarchy is explicit and permanent in v0.1 verification
+ok 269 - Chapter 17 source hierarchy is explicit and permanent in v0.1 verification
+  ---
+  duration_ms: 0.274446
+  type: 'test'
+  ...
+# Subtest: Chapter 6 is canonical full book content with fifteen substantive sections
+ok 270 - Chapter 6 is canonical full book content with fifteen substantive sections
+  ---
+  duration_ms: 1.933306
+  type: 'test'
+  ...
+# Subtest: Chapter 6 source bank is complete, unique, HTTPS and actually used
+ok 271 - Chapter 6 source bank is complete, unique, HTTPS and actually used
+  ---
+  duration_ms: 0.892405
+  type: 'test'
+  ...
+# Subtest: Chapter 6 preserves the completed six-case Atlas matrix and P2-only comparisons
+ok 272 - Chapter 6 preserves the completed six-case Atlas matrix and P2-only comparisons
+  ---
+  duration_ms: 12.690652
+  type: 'test'
+  ...
+# Subtest: Chapter 6 industrial systems remain infrastructure, never fake Production Cases
+ok 273 - Chapter 6 industrial systems remain infrastructure, never fake Production Cases
+  ---
+  duration_ms: 0.261111
+  type: 'test'
+  ...
+# Subtest: Chapter 6 keeps historiographic, ethical and version safeguards visible in prose
+ok 274 - Chapter 6 keeps historiographic, ethical and version safeguards visible in prose
+  ---
+  duration_ms: 3.474378
+  type: 'test'
+  ...
+# Subtest: canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+ok 275 - canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+  ---
+  duration_ms: 0.218763
+  type: 'test'
+  ...
+# Subtest: Chapter 6 keeps the reviewed 37-source contract and closed production gap
+ok 276 - Chapter 6 keeps the reviewed 37-source contract and closed production gap
+  ---
+  duration_ms: 0.888648
+  type: 'test'
+  ...
+# Subtest: Chapter 16 audit locks the 1980s franchise-video-global-new-cinemas scope
+ok 277 - Chapter 16 audit locks the 1980s franchise-video-global-new-cinemas scope
+  ---
+  duration_ms: 1.338458
+  type: 'test'
+  ...
+# Subtest: Chapter 16 locks the exact existing, P0 and P1 queues
+ok 278 - Chapter 16 locks the exact existing, P0 and P1 queues
+  ---
+  duration_ms: 1.229047
+  type: 'test'
+  ...
+# Subtest: Chapter 16 existing anchors resolve to exact verified scenario IDs
+ok 279 - Chapter 16 existing anchors resolve to exact verified scenario IDs
+  ---
+  duration_ms: 0.559031
+  type: 'test'
+  ...
+# Subtest: Chapter 16 authority gaps remain candidates instead of fake verified anchors
+ok 280 - Chapter 16 authority gaps remain candidates instead of fake verified anchors
+  ---
+  duration_ms: 0.267172
+  type: 'test'
+  ...
+# Subtest: Chapter 16 keeps plural production systems and downstream media history explicit
+ok 281 - Chapter 16 keeps plural production systems and downstream media history explicit
+  ---
+  duration_ms: 0.492648
+  type: 'test'
+  ...
+# Subtest: Chapter 16 audit is permanent in the v0.1 verification chain
+ok 282 - Chapter 16 audit is permanent in the v0.1 verification chain
+  ---
+  duration_ms: 0.20572
+  type: 'test'
+  ...
+# Subtest: Chapter 10 is canonical full book content with fifteen substantive sections
+ok 283 - Chapter 10 is canonical full book content with fifteen substantive sections
+  ---
+  duration_ms: 1.861903
+  type: 'test'
+  ...
+# Subtest: Chapter 10 source bank is complete, unique, HTTPS and actually used
+ok 284 - Chapter 10 source bank is complete, unique, HTTPS and actually used
+  ---
+  duration_ms: 1.876841
+  type: 'test'
+  ...
+# Subtest: Chapter 10 preserves the completed nine-case Atlas matrix and fifteen P2 comparisons
+ok 285 - Chapter 10 preserves the completed nine-case Atlas matrix and fifteen P2 comparisons
+  ---
+  duration_ms: 14.944338
+  type: 'test'
+  ...
+# Subtest: Chapter 10 institutions and archive conditions remain historical context, never fake Production Cases
+ok 286 - Chapter 10 institutions and archive conditions remain historical context, never fake Production Cases
+  ---
+  duration_ms: 0.306205
+  type: 'test'
+  ...
+# Subtest: Chapter 10 keeps survival, exhibition, national, archival and ethical safeguards visible in prose
+ok 287 - Chapter 10 keeps survival, exhibition, national, archival and ethical safeguards visible in prose
+  ---
+  duration_ms: 4.922758
+  type: 'test'
+  ...
+# Subtest: canonical book resolves Chapter 10 as full without changing the thirty-chapter architecture
+ok 288 - canonical book resolves Chapter 10 as full without changing the thirty-chapter architecture
+  ---
+  duration_ms: 0.318036
+  type: 'test'
+  ...
+# Subtest: Chapter 10 audit locks the reviewed silent-cinemas Atlas matrix
+ok 289 - Chapter 10 audit locks the reviewed silent-cinemas Atlas matrix
+  ---
+  duration_ms: 2.199546
+  type: 'test'
+  ...
+# Subtest: Chapter 10 keeps exhibition systems, institutions and archive loss outside fake Production Cases
+ok 290 - Chapter 10 keeps exhibition systems, institutions and archive loss outside fake Production Cases
+  ---
+  duration_ms: 0.240132
+  type: 'test'
+  ...
+# Subtest: Chapter 10 permanently preserves survival, benshi, transnational and sound-boundary safeguards
+ok 291 - Chapter 10 permanently preserves survival, benshi, transnational and sound-boundary safeguards
+  ---
+  duration_ms: 0.384028
+  type: 'test'
+  ...
+# Subtest: Chapter 10 audit is permanent in the v0.1 verification chain
+ok 292 - Chapter 10 audit is permanent in the v0.1 verification chain
+  ---
+  duration_ms: 0.215888
+  type: 'test'
+  ...
+# Subtest: Chapter 13 audit locks the postwar noir-realism-reconstruction Atlas scope
+ok 293 - Chapter 13 audit locks the postwar noir-realism-reconstruction Atlas scope
+  ---
+  duration_ms: 2.030805
+  type: 'test'
+  ...
+# Subtest: Chapter 13 required anchors resolve to exact canonical scenario IDs
+ok 294 - Chapter 13 required anchors resolve to exact canonical scenario IDs
+  ---
+  duration_ms: 0.413112
+  type: 'test'
+  ...
+# Subtest: Chapter 13 keeps historical systems outside fake Production Cases
+ok 295 - Chapter 13 keeps historical systems outside fake Production Cases
+  ---
+  duration_ms: 0.356828
+  type: 'test'
+  ...
+# Subtest: Chapter 13 permanently preserves realism, noir, circulation and decolonization safeguards
+ok 296 - Chapter 13 permanently preserves realism, noir, circulation and decolonization safeguards
+  ---
+  duration_ms: 0.279897
+  type: 'test'
+  ...
+# Subtest: Chapter 13 audit is permanent in the v0.1 verification chain
+ok 297 - Chapter 13 audit is permanent in the v0.1 verification chain
+  ---
+  duration_ms: 0.217131
+  type: 'test'
+  ...
+# Subtest: Chapter 3 is canonical full book content with fifteen substantive sections
+ok 298 - Chapter 3 is canonical full book content with fifteen substantive sections
+  ---
+  duration_ms: 1.773882
+  type: 'test'
+  ...
+# Subtest: Chapter 3 source bank is complete, unique, HTTPS and fully referenced
+ok 299 - Chapter 3 source bank is complete, unique, HTTPS and fully referenced
+  ---
+  duration_ms: 0.838136
+  type: 'test'
+  ...
+# Subtest: Chapter 3 uses exactly the nine completed Atlas cases and no P0/P1 film references
+ok 300 - Chapter 3 uses exactly the nine completed Atlas cases and no P0/P1 film references
+  ---
+  duration_ms: 1.079922
+  type: 'test'
+  ...
+# Subtest: Chapter 3 historical objects remain practices and evidence, never fake Production Cases
+ok 301 - Chapter 3 historical objects remain practices and evidence, never fake Production Cases
+  ---
+  duration_ms: 0.360745
+  type: 'test'
+  ...
+# Subtest: Chapter 3 keeps the required historiographic safeguards visible in prose
+ok 302 - Chapter 3 keeps the required historiographic safeguards visible in prose
+  ---
+  duration_ms: 4.217382
+  type: 'test'
+  ...
+# Subtest: canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+ok 303 - canonical book resolves Chapters 1–6 as full and preserves the six-part thirty-chapter architecture
+  ---
+  duration_ms: 0.30901
+  type: 'test'
+  ...
+# Subtest: Chapter 3 editorial film references stay locked to the completed Atlas audit
+ok 304 - Chapter 3 editorial film references stay locked to the completed Atlas audit
+  ---
+  duration_ms: 0.303609
+  type: 'test'
+  ...
+# Subtest: Chapter 12 audit locks the reviewed studio-and-genre Atlas matrix
+ok 305 - Chapter 12 audit locks the reviewed studio-and-genre Atlas matrix
+  ---
+  duration_ms: 1.793216
+  type: 'test'
+  ...
+# Subtest: Chapter 12 existing anchors resolve to exact canonical scenario IDs
+ok 306 - Chapter 12 existing anchors resolve to exact canonical scenario IDs
+  ---
+  duration_ms: 0.411319
+  type: 'test'
+  ...
+# Subtest: Chapter 12 keeps industrial systems outside fake Production Cases
+ok 307 - Chapter 12 keeps industrial systems outside fake Production Cases
+  ---
+  duration_ms: 0.26005
+  type: 'test'
+  ...
+# Subtest: Chapter 12 permanently preserves labor, Code, genre and representation safeguards
+ok 308 - Chapter 12 permanently preserves labor, Code, genre and representation safeguards
+  ---
+  duration_ms: 0.222871
+  type: 'test'
+  ...
+# Subtest: Chapter 12 audit remains permanent as newer chapter audits extend the v0.1 chain
+ok 309 - Chapter 12 audit remains permanent as newer chapter audits extend the v0.1 chain
+  ---
+  duration_ms: 0.279465
+  type: 'test'
+  ...
+# Subtest: movements and historical films load with unique ids
+ok 310 - movements and historical films load with unique ids
+  ---
+  duration_ms: 3.737603
+  type: 'test'
+  ...
+# Subtest: every historical film's movement, when set, exists in movements.json
+ok 311 - every historical film's movement, when set, exists in movements.json
+  ---
+  duration_ms: 3.539396
+  type: 'test'
+  ...
+# Subtest: every technique resolves through its knowledge entry to a real historical film
+ok 312 - every technique resolves through its knowledge entry to a real historical film
+  ---
+  duration_ms: 1.801121
+  type: 'test'
+  ...
+# Subtest: camera course has five complete and unique lessons
+ok 313 - camera course has five complete and unique lessons
+  ---
+  duration_ms: 2.170102
+  type: 'test'
+  ...
+# Subtest: all camera course terminology links resolve
+ok 314 - all camera course terminology links resolve
+  ---
+  duration_ms: 0.434822
+  type: 'test'
+  ...
+# Subtest: all five camera course film examples resolve exactly once in Film Atlas
+ok 315 - all five camera course film examples resolve exactly once in Film Atlas
+  ---
+  duration_ms: 60.413909
+  type: 'test'
+  ...
+# Subtest: camera quiz grading accepts only the configured answer
+ok 316 - camera quiz grading accepts only the configured answer
+  ---
+  duration_ms: 0.353692
+  type: 'test'
+  ...
+# Subtest: camera progress coercion removes unknown lesson IDs and preserves valid notes
+ok 317 - camera progress coercion removes unknown lesson IDs and preserves valid notes
+  ---
+  duration_ms: 0.69959
+  type: 'test'
+  ...
+# Subtest: camera mastery and completion require seen, understood, and used for every lesson
+ok 318 - camera mastery and completion require seen, understood, and used for every lesson
+  ---
+  duration_ms: 0.47706
+  type: 'test'
+  ...
+# Subtest: final camera assignment links to valid Director brief fields
+ok 319 - final camera assignment links to valid Director brief fields
+  ---
+  duration_ms: 0.475858
+  type: 'test'
+  ...
+# Subtest: capstone validation requires the matching film, all sixteen brief fields, and three complete shots
+ok 320 - capstone validation requires the matching film, all sixteen brief fields, and three complete shots
+  ---
+  duration_ms: 2.58111
+  type: 'test'
+  ...
+# Subtest: capstone validation does not count incomplete shot cards as completed coverage
+ok 321 - capstone validation does not count incomplete shot cards as completed coverage
+  ---
+  duration_ms: 1.424226
+  type: 'test'
+  ...
+# Subtest: capstone submission stores the delivered scene and project version
+ok 322 - capstone submission stores the delivered scene and project version
+  ---
+  duration_ms: 0.511182
+  type: 'test'
+  ...
+# Subtest: submission coercion rejects partial or fabricated completion records
+ok 323 - submission coercion rejects partial or fabricated completion records
+  ---
+  duration_ms: 0.668232
+  type: 'test'
+  ...
+# Subtest: editing, sound, and finishing course has five complete and unique lessons
+ok 324 - editing, sound, and finishing course has five complete and unique lessons
+  ---
+  duration_ms: 1.659671
+  type: 'test'
+  ...
+# Subtest: all editing, sound, and finishing terminology links resolve
+ok 325 - all editing, sound, and finishing terminology links resolve
+  ---
+  duration_ms: 0.631414
+  type: 'test'
+  ...
+# Subtest: all five editing and sound film examples resolve exactly once in Film Atlas
+ok 326 - all five editing and sound film examples resolve exactly once in Film Atlas
+  ---
+  duration_ms: 58.574798
+  type: 'test'
+  ...
+# Subtest: editing and sound quiz grading accepts only the configured answer
+ok 327 - editing and sound quiz grading accepts only the configured answer
+  ---
+  duration_ms: 0.327504
+  type: 'test'
+  ...
+# Subtest: editing and sound progress coercion removes unknown lesson IDs and preserves valid notes
+ok 328 - editing and sound progress coercion removes unknown lesson IDs and preserves valid notes
+  ---
+  duration_ms: 0.713916
+  type: 'test'
+  ...
+# Subtest: editing and sound mastery requires seen, understood, and used for every lesson
+ok 329 - editing and sound mastery requires seen, understood, and used for every lesson
+  ---
+  duration_ms: 0.471059
+  type: 'test'
+  ...
+# Subtest: final editing and sound assignment links to valid Director brief fields
+ok 330 - final editing and sound assignment links to valid Director brief fields
+  ---
+  duration_ms: 0.459738
+  type: 'test'
+  ...
+# Subtest: ground course contains five chapters and twenty-five lessons
+ok 331 - ground course contains five chapters and twenty-five lessons
+  ---
+  duration_ms: 2.41856
+  type: 'test'
+  ...
+# Subtest: course summary counts only known unique milestones
+ok 332 - course summary counts only known unique milestones
+  ---
+  duration_ms: 0.299192
+  type: 'test'
+  ...
+# Subtest: ground course unlocks only when all seventy-five milestones are complete
+ok 333 - ground course unlocks only when all seventy-five milestones are complete
+  ---
+  duration_ms: 0.501625
+  type: 'test'
+  ...
+# Subtest: capstone assignment uses every Director brief field exactly once
+ok 334 - capstone assignment uses every Director brief field exactly once
+  ---
+  duration_ms: 0.367718
+  type: 'test'
+  ...
+# Subtest: lighting and design course has five complete and unique lessons
+ok 335 - lighting and design course has five complete and unique lessons
+  ---
+  duration_ms: 1.609889
+  type: 'test'
+  ...
+# Subtest: all lighting and design terminology links resolve
+ok 336 - all lighting and design terminology links resolve
+  ---
+  duration_ms: 0.507646
+  type: 'test'
+  ...
+# Subtest: all five lighting and design film examples resolve exactly once in Film Atlas
+ok 337 - all five lighting and design film examples resolve exactly once in Film Atlas
+  ---
+  duration_ms: 38.997357
+  type: 'test'
+  ...
+# Subtest: lighting and design quiz grading accepts only the configured answer
+ok 338 - lighting and design quiz grading accepts only the configured answer
+  ---
+  duration_ms: 0.42842
+  type: 'test'
+  ...
+# Subtest: lighting and design progress coercion removes unknown lesson IDs and preserves valid notes
+ok 339 - lighting and design progress coercion removes unknown lesson IDs and preserves valid notes
+  ---
+  duration_ms: 0.662332
+  type: 'test'
+  ...
+# Subtest: lighting and design mastery requires seen, understood, and used for every lesson
+ok 340 - lighting and design mastery requires seen, understood, and used for every lesson
+  ---
+  duration_ms: 0.410147
+  type: 'test'
+  ...
+# Subtest: final lighting and design assignment links to valid Director brief fields
+ok 341 - final lighting and design assignment links to valid Director brief fields
+  ---
+  duration_ms: 0.459738
+  type: 'test'
+  ...
+# Subtest: performance course has five complete and unique lessons
+ok 342 - performance course has five complete and unique lessons
+  ---
+  duration_ms: 2.287078
+  type: 'test'
+  ...
+# Subtest: all performance course terminology links resolve
+ok 343 - all performance course terminology links resolve
+  ---
+  duration_ms: 0.493931
+  type: 'test'
+  ...
+# Subtest: all five performance course film examples resolve exactly once in Film Atlas
+ok 344 - all five performance course film examples resolve exactly once in Film Atlas
+  ---
+  duration_ms: 42.831212
+  type: 'test'
+  ...
+# Subtest: quiz grading accepts only the configured answer
+ok 345 - quiz grading accepts only the configured answer
+  ---
+  duration_ms: 0.370213
+  type: 'test'
+  ...
+# Subtest: progress coercion removes unknown lesson IDs and preserves valid notes
+ok 346 - progress coercion removes unknown lesson IDs and preserves valid notes
+  ---
+  duration_ms: 0.679884
+  type: 'test'
+  ...
+# Subtest: mastery and completion require seen, understood, and used for every lesson
+ok 347 - mastery and completion require seen, understood, and used for every lesson
+  ---
+  duration_ms: 0.497207
+  type: 'test'
+  ...
+# Subtest: final performance assignment links to valid Director brief fields
+ok 348 - final performance assignment links to valid Director brief fields
+  ---
+  duration_ms: 0.416237
+  type: 'test'
+  ...
+# Subtest: screenplay course contains five complete and unique lessons
+ok 349 - screenplay course contains five complete and unique lessons
+  ---
+  duration_ms: 1.640796
+  type: 'test'
+  ...
+# Subtest: progress is coerced to known lessons and calculates four learning stages
+ok 350 - progress is coerced to known lessons and calculates four learning stages
+  ---
+  duration_ms: 1.809727
+  type: 'test'
+  ...
+# Subtest: all course milestones produce full mastery
+ok 351 - all course milestones produce full mastery
+  ---
+  duration_ms: 0.300965
+  type: 'test'
+  ...
+# Subtest: director assignment uses valid brief fields and preserves film identity
+ok 352 - director assignment uses valid brief fields and preserves film identity
+  ---
+  duration_ms: 0.397643
+  type: 'test'
+  ...
+# Subtest: film study coverage always contains every history and craft area
+ok 353 - film study coverage always contains every history and craft area
+  ---
+  duration_ms: 2.328524
+  type: 'test'
+  ...
+# Subtest: coverage summary distinguishes verified, mapped, pending, and not-central work
+ok 354 - coverage summary distinguishes verified, mapped, pending, and not-central work
+  ---
+  duration_ms: 0.716772
+  type: 'test'
+  ...
+# Subtest: historical eras provide stable broad placement without pretending to be a movement label
+ok 355 - historical eras provide stable broad placement without pretending to be a movement label
+  ---
+  duration_ms: 0.376113
+  type: 'test'
+  ...
+# Subtest: creates stable film slugs with year
+ok 356 - creates stable film slugs with year
+  ---
+  duration_ms: 1.205463
+  type: 'test'
+  ...
+# Subtest: parses platform section routes
+ok 357 - parses platform section routes
+  ---
+  duration_ms: 1.002138
+  type: 'test'
+  ...
+# Subtest: parses canonical and legacy film routes
+ok 358 - parses canonical and legacy film routes
+  ---
+  duration_ms: 0.267163
+  type: 'test'
+  ...
+# Subtest: formats canonical hash routes
+ok 359 - formats canonical hash routes
+  ---
+  duration_ms: 1.179956
+  type: 'test'
+  ...
+# Subtest: falls back safely for invalid hashes
+ok 360 - falls back safely for invalid hashes
+  ---
+  duration_ms: 0.279956
+  type: 'test'
+  ...
+# Subtest: compares routes including selected films
+ok 361 - compares routes including selected films
+  ---
+  duration_ms: 0.18422
+  type: 'test'
+  ...
+# [italy-france-germany-benelux-expansion] prior=353 missing=25 final=378
+# Subtest: Italy, France, Germany, and Benelux expansion contains exactly 28 unique targets
+ok 362 - Italy, France, Germany, and Benelux expansion contains exactly 28 unique targets
+  ---
+  duration_ms: 1.742303
+  type: 'test'
+  ...
+# Subtest: the expansion adds only genuinely missing films and preserves unique catalogue IDs
+ok 363 - the expansion adds only genuinely missing films and preserves unique catalogue IDs
+  ---
+  duration_ms: 79.70308
+  type: 'test'
+  ...
+# Subtest: all 28 requested films resolve exactly once and have playable production blueprints
+ok 364 - all 28 requested films resolve exactly once and have playable production blueprints
+  ---
+  duration_ms: 67.516027
+  type: 'test'
+  ...
+# Subtest: the complete requested regional block resolves exactly once by title and year
+ok 365 - the complete requested regional block resolves exactly once by title and year
+  ---
+  duration_ms: 22.977136
+  type: 'test'
+  ...
+# Subtest: generic translated titles reject unrelated same-year films
+ok 366 - generic translated titles reject unrelated same-year films
+  ---
+  duration_ms: 33.074819
+  type: 'test'
+  ...
+# Subtest: Japanese auteur expansion contains exactly seven unique missing films
+ok 367 - Japanese auteur expansion contains exactly seven unique missing films
+  ---
+  duration_ms: 2.410785
+  type: 'test'
+  ...
+# Subtest: all seven Japanese auteur films are new to the 275-case catalogue
+ok 368 - all seven Japanese auteur films are new to the 275-case catalogue
+  ---
+  duration_ms: 31.768872
+  type: 'test'
+  ...
+# Subtest: every Japanese auteur film resolves once and has a playable brief blueprint
+ok 369 - every Japanese auteur film resolves once and has a playable brief blueprint
+  ---
+  duration_ms: 22.506795
+  type: 'test'
+  ...
+# Subtest: the full requested Japanese block resolves exactly once
+ok 370 - the full requested Japanese block resolves exactly once
+  ---
+  duration_ms: 21.297896
+  type: 'test'
+  ...
+# Subtest: Black Rain is disambiguated from the Ridley Scott film released in the same year
+ok 371 - Black Rain is disambiguated from the Ridley Scott film released in the same year
+  ---
+  duration_ms: 7.680794
+  type: 'test'
+  ...
+# Subtest: the merged catalogue contains 282 unique Production Cases
+ok 372 - the merged catalogue contains 282 unique Production Cases
+  ---
+  duration_ms: 21.767701
+  type: 'test'
+  ...
+# Subtest: the first modern canon expansion contains exactly 27 unique films
+ok 373 - the first modern canon expansion contains exactly 27 unique films
+  ---
+  duration_ms: 2.167617
+  type: 'test'
+  ...
+# Subtest: all 27 requested films are new to the 217-case catalogue
+ok 374 - all 27 requested films are new to the 217-case catalogue
+  ---
+  duration_ms: 17.524503
+  type: 'test'
+  ...
+# Subtest: every requested film resolves once and has a complete playable brief blueprint
+ok 375 - every requested film resolves once and has a complete playable brief blueprint
+  ---
+  duration_ms: 41.560926
+  type: 'test'
+  ...
+# Subtest: the merged catalogue contains 244 unique Production Cases
+ok 376 - the merged catalogue contains 244 unique Production Cases
+  ---
+  duration_ms: 28.563884
+  type: 'test'
+  ...
+# Subtest: post-production seed catalogues provide stable professional coverage
+ok 377 - post-production seed catalogues provide stable professional coverage
+  ---
+  duration_ms: 2.191161
+  type: 'test'
+  ...
+# Subtest: craft decisions apply immutably and duplicate applications have no second cost
+ok 378 - craft decisions apply immutably and duplicate applications have no second cost
+  ---
+  duration_ms: 20.252766
+  type: 'test'
+  ...
+# Subtest: screening, trailer, and post evaluation are deterministic and bounded
+ok 379 - screening, trailer, and post evaluation are deterministic and bounded
+  ---
+  duration_ms: 1.389056
+  type: 'test'
+  ...
+# Subtest: film results remain backward compatible and account for post cost and quality
+ok 380 - film results remain backward compatible and account for post cost and quality
+  ---
+  duration_ms: 0.6395
+  type: 'test'
+  ...
+# Subtest: priority indie completion contains exactly 20 unique missing films
+ok 381 - priority indie completion contains exactly 20 unique missing films
+  ---
+  duration_ms: 1.721927
+  type: 'test'
+  ...
+# Subtest: all 20 completion films are new to the 244-case catalogue
+ok 382 - all 20 completion films are new to the 244-case catalogue
+  ---
+  duration_ms: 33.325188
+  type: 'test'
+  ...
+# Subtest: every completion film resolves once and has a playable brief blueprint
+ok 383 - every completion film resolves once and has a playable brief blueprint
+  ---
+  duration_ms: 25.84947
+  type: 'test'
+  ...
+# Subtest: the originally prioritized 27-film list is now complete exactly once
+ok 384 - the originally prioritized 27-film list is now complete exactly once
+  ---
+  duration_ms: 15.405844
+  type: 'test'
+  ...
+# Subtest: the merged catalogue contains 264 unique Production Cases
+ok 385 - the merged catalogue contains 264 unique Production Cases
+  ---
+  duration_ms: 13.81157
+  type: 'test'
+  ...
+# Subtest: qualitative learning report is gated until all phases are complete
+ok 386 - qualitative learning report is gated until all phases are complete
+  ---
+  duration_ms: 1.618374
+  type: 'test'
+  ...
+# Subtest: phase completion requires an explicit valid choice and next action stays instructional
+ok 387 - phase completion requires an explicit valid choice and next action stays instructional
+  ---
+  duration_ms: 1.279041
+  type: 'test'
+  ...
+# Subtest: production case continuation resets only the selected case and resolves catalogue navigation
+ok 388 - production case continuation resets only the selected case and resolves catalogue navigation
+  ---
+  duration_ms: 1.110588
+  type: 'test'
+  ...
+# Subtest: legacy v1 backup imports learning progress while ignoring historical best-result scoring
+ok 389 - legacy v1 backup imports learning progress while ignoring historical best-result scoring
+  ---
+  duration_ms: 0.800311
+  type: 'test'
+  ...
+# Subtest: learning status tracks only not started, in progress, and completed
+ok 390 - learning status tracks only not started, in progress, and completed
+  ---
+  duration_ms: 1.526692
+  type: 'test'
+  ...
+# Subtest: learning hints use qualities for explanation without calculating points
+ok 391 - learning hints use qualities for explanation without calculating points
+  ---
+  duration_ms: 0.395306
+  type: 'test'
+  ...
+# Subtest: next action guides study rather than score improvement
+ok 392 - next action guides study rather than score improvement
+  ---
+  duration_ms: 0.635394
+  type: 'test'
+  ...
+# Subtest: completed report groups understanding without score or rank fields
+ok 393 - completed report groups understanding without score or rank fields
+  ---
+  duration_ms: 0.420804
+  type: 'test'
+  ...
+# Subtest: progress parsing normalizes scenario identity, duplicate completions, choices, and malformed input
+ok 394 - progress parsing normalizes scenario identity, duplicate completions, choices, and malformed input
+  ---
+  duration_ms: 3.064457
+  type: 'test'
+  ...
+# Subtest: progress helpers preserve choices while completing phases and reset only the selected case
+ok 395 - progress helpers preserve choices while completing phases and reset only the selected case
+  ---
+  duration_ms: 0.564472
+  type: 'test'
+  ...
+# Subtest: writing learning progress removes inert legacy score storage and removes empty progress
+ok 396 - writing learning progress removes inert legacy score storage and removes empty progress
+  ---
+  duration_ms: 0.319335
+  type: 'test'
+  ...
+# Subtest: library status is qualitative and depends only on choices and phase completion
+ok 397 - library status is qualitative and depends only on choices and phase completion
+  ---
+  duration_ms: 0.345413
+  type: 'test'
+  ...
+# Subtest: collection summary counts learning states without performance ranks
+ok 398 - collection summary counts learning states without performance ranks
+  ---
+  duration_ms: 0.273629
+  type: 'test'
+  ...
+# Subtest: library controls preserve useful filters and normalize obsolete score sorts
+ok 399 - library controls preserve useful filters and normalize obsolete score sorts
+  ---
+  duration_ms: 0.348458
+  type: 'test'
+  ...
+# Subtest: progress export v2 contains learning progress and controls only
+ok 400 - progress export v2 contains learning progress and controls only
+  ---
+  duration_ms: 0.390617
+  type: 'test'
+  ...
+# Subtest: v2 backup preview and import restore learning progress and clear legacy score storage
+ok 401 - v2 backup preview and import restore learning progress and clear legacy score storage
+  ---
+  duration_ms: 0.505732
+  type: 'test'
+  ...
+# Subtest: legacy v1 backups remain importable but legacy best-result payloads are ignored
+ok 402 - legacy v1 backups remain importable but legacy best-result payloads are ignored
+  ---
+  duration_ms: 0.596981
+  type: 'test'
+  ...
+# Subtest: backup validation rejects malformed progress without accepting score-only legacy state as progress
+ok 403 - backup validation rejects malformed progress without accepting score-only legacy state as progress
+  ---
+  duration_ms: 0.465216
+  type: 'test'
+  ...
+# Subtest: next-case navigation is deterministic at catalogue boundaries
+ok 404 - next-case navigation is deterministic at catalogue boundaries
+  ---
+  duration_ms: 0.224408
+  type: 'test'
+  ...
+# Subtest: recordCareerRosterFilm adds first-time collaborators with a film count of one
+ok 405 - recordCareerRosterFilm adds first-time collaborators with a film count of one
+  ---
+  duration_ms: 2.640577
+  type: 'test'
+  ...
+# Subtest: recordCareerRosterFilm increments returning collaborators across films
+ok 406 - recordCareerRosterFilm increments returning collaborators across films
+  ---
+  duration_ms: 1.881223
+  type: 'test'
+  ...
+# Subtest: recordCareerRosterFilm does not mutate the original career state
+ok 407 - recordCareerRosterFilm does not mutate the original career state
+  ---
+  duration_ms: 0.482278
+  type: 'test'
+  ...
+# Subtest: release seed catalogues provide stable IDs and requested coverage
+ok 408 - release seed catalogues provide stable IDs and requested coverage
+  ---
+  duration_ms: 1.367857
+  type: 'test'
+  ...
+# Subtest: release planning and strategy scoring are deterministic and immutable
+ok 409 - release planning and strategy scoring are deterministic and immutable
+  ---
+  duration_ms: 1.585933
+  type: 'test'
+  ...
+# Subtest: festivals, critics, and audiences resolve without randomness
+ok 410 - festivals, critics, and audiences resolve without randomness
+  ---
+  duration_ms: 1.026572
+  type: 'test'
+  ...
+# Subtest: a moderate film can receive recognition without sweeping the awards
+ok 411 - a moderate film can receive recognition without sweeping the awards
+  ---
+  duration_ms: 13.125612
+  type: 'test'
+  ...
+# Subtest: an exceptional film can win several awards but still has a ranked slate
+ok 412 - an exceptional film can win several awards but still has a ranked slate
+  ---
+  duration_ms: 0.554322
+  type: 'test'
+  ...
+# Subtest: award wins require an accepted festival
+ok 413 - award wins require an accepted festival
+  ---
+  duration_ms: 0.328412
+  type: 'test'
+  ...
+# Subtest: revenue, awards, evaluation, and studio application form one immutable pipeline
+ok 414 - revenue, awards, evaluation, and studio application form one immutable pipeline
+  ---
+  duration_ms: 12.401434
+  type: 'test'
+  ...
+# Subtest: Scandinavian and European round contains exactly twenty-two unique target films
+ok 415 - Scandinavian and European round contains exactly twenty-two unique target films
+  ---
+  duration_ms: 1.736072
+  type: 'test'
+  ...
+# Subtest: every Scandinavian and European target resolves exactly once with a playable brief
+ok 416 - every Scandinavian and European target resolves exactly once with a playable brief
+  ---
+  duration_ms: 5.272255
+  type: 'test'
+  ...
+# Subtest: the complete requested Scandinavian and European block resolves exactly once
+ok 417 - the complete requested Scandinavian and European block resolves exactly once
+  ---
+  duration_ms: 3.552476
+  type: 'test'
+  ...
+# Subtest: generic translated titles do not absorb unrelated same-year films
+ok 418 - generic translated titles do not absorb unrelated same-year films
+  ---
+  duration_ms: 0.426925
+  type: 'test'
+  ...
+# Subtest: Scandinavian and European round adds 15 cases and produces 330 unique Production Cases
+ok 419 - Scandinavian and European round adds 15 cases and produces 330 unique Production Cases
+  ---
+  duration_ms: 0.296011
+  type: 'test'
+  ...
+# Subtest: assessScenarioAlignment handles empty target lists without exposing a score
+ok 420 - assessScenarioAlignment handles empty target lists without exposing a score
+  ---
+  duration_ms: 1.476189
+  type: 'test'
+  ...
+# Subtest: assessScenarioAlignment asks for reconsideration when no targets are selected
+ok 421 - assessScenarioAlignment asks for reconsideration when no targets are selected
+  ---
+  duration_ms: 0.25789
+  type: 'test'
+  ...
+# Subtest: assessScenarioAlignment keeps sparse selections qualitative
+ok 422 - assessScenarioAlignment keeps sparse selections qualitative
+  ---
+  duration_ms: 0.18275
+  type: 'test'
+  ...
+# Subtest: assessScenarioAlignment marks a meaningful subset as partial
+ok 423 - assessScenarioAlignment marks a meaningful subset as partial
+  ---
+  duration_ms: 0.141153
+  type: 'test'
+  ...
+# Subtest: assessScenarioAlignment marks broad method identification as clear
+ok 424 - assessScenarioAlignment marks broad method identification as clear
+  ---
+  duration_ms: 0.249084
+  type: 'test'
+  ...
+# Subtest: assessScenarioAlignment caps selectedCount at the available target count
+ok 425 - assessScenarioAlignment caps selectedCount at the available target count
+  ---
+  duration_ms: 0.160398
+  type: 'test'
+  ...
+# Subtest: getScenarioAlignmentSummary guides reconsideration without score language
+ok 426 - getScenarioAlignmentSummary guides reconsideration without score language
+  ---
+  duration_ms: 1.430103
+  type: 'test'
+  ...
+# Subtest: getScenarioAlignmentSummary describes a partial method connection
+ok 427 - getScenarioAlignmentSummary describes a partial method connection
+  ---
+  duration_ms: 0.212185
+  type: 'test'
+  ...
+# Subtest: getScenarioAlignmentSummary describes a clear method connection
+ok 428 - getScenarioAlignmentSummary describes a clear method connection
+  ---
+  duration_ms: 0.228175
+  type: 'test'
+  ...
+# Subtest: production event seeds cover the required first shoot scenarios
+ok 429 - production event seeds cover the required first shoot scenarios
+  ---
+  duration_ms: 6.492604
+  type: 'test'
+  ...
+# Subtest: schedules group scenes, allocate the project budget, and do not mutate scenes
+ok 430 - schedules group scenes, allocate the project budget, and do not mutate scenes
+  ---
+  duration_ms: 1.469366
+  type: 'test'
+  ...
+# Subtest: difficulty responds to dramatic, technical, location, and cast pressure
+ok 431 - difficulty responds to dramatic, technical, location, and cast pressure
+  ---
+  duration_ms: 0.377333
+  type: 'test'
+  ...
+# Subtest: events are applied immutably and duplicate applications have no second cost
+ok 432 - events are applied immutably and duplicate applications have no second cost
+  ---
+  duration_ms: 2.719164
+  type: 'test'
+  ...
+# Subtest: shoot resolution and evaluation account for event cost, delay, and upside
+ok 433 - shoot resolution and evaluation account for event cost, delay, and upside
+  ---
+  duration_ms: 2.315142
+  type: 'test'
+  ...
+# Subtest: South Korean cinema expansion contains exactly four unique missing films
+ok 434 - South Korean cinema expansion contains exactly four unique missing films
+  ---
+  duration_ms: 1.459598
+  type: 'test'
+  ...
+# Subtest: all four South Korean films are new to the preceding 282-case catalogue
+ok 435 - all four South Korean films are new to the preceding 282-case catalogue
+  ---
+  duration_ms: 28.982924
+  type: 'test'
+  ...
+# Subtest: every South Korean expansion film resolves once and has a playable brief blueprint
+ok 436 - every South Korean expansion film resolves once and has a playable brief blueprint
+  ---
+  duration_ms: 21.599472
+  type: 'test'
+  ...
+# Subtest: the complete requested South Korean block resolves exactly once
+ok 437 - the complete requested South Korean block resolves exactly once
+  ---
+  duration_ms: 14.360923
+  type: 'test'
+  ...
+# Subtest: ambiguous English titles do not match unrelated same-year films
+ok 438 - ambiguous English titles do not match unrelated same-year films
+  ---
+  duration_ms: 11.757324
+  type: 'test'
+  ...
+# Subtest: the merged catalogue contains 286 unique Production Cases
+ok 439 - the merged catalogue contains 286 unique Production Cases
+  ---
+  duration_ms: 16.746642
+  type: 'test'
+  ...
+# Subtest: South and Southeast Asian expansion contains exactly seven unique films
+ok 440 - South and Southeast Asian expansion contains exactly seven unique films
+  ---
+  duration_ms: 1.388515
+  type: 'test'
+  ...
+# Subtest: all seven films are new to the preceding 286-case catalogue
+ok 441 - all seven films are new to the preceding 286-case catalogue
+  ---
+  duration_ms: 42.355861
+  type: 'test'
+  ...
+# Subtest: every expansion film resolves once and has a playable brief blueprint
+ok 442 - every expansion film resolves once and has a playable brief blueprint
+  ---
+  duration_ms: 36.284469
+  type: 'test'
+  ...
+# Subtest: the complete requested seven-film block resolves exactly once
+ok 443 - the complete requested seven-film block resolves exactly once
+  ---
+  duration_ms: 20.341849
+  type: 'test'
+  ...
+# Subtest: generic English titles do not match unrelated same-year films
+ok 444 - generic English titles do not match unrelated same-year films
+  ---
+  duration_ms: 11.14815
+  type: 'test'
+  ...
+# Subtest: the merged catalogue contains 293 unique Production Cases
+ok 445 - the merged catalogue contains 293 unique Production Cases
+  ---
+  duration_ms: 14.98541
+  type: 'test'
+  ...
+# Subtest: studio career pipeline order advances from development through career review only after release
+ok 446 - studio career pipeline order advances from development through career review only after release
+  ---
+  duration_ms: 1.585091
+  type: 'test'
+  ...
+# Subtest: studio career active targets keep post, release, and career review distinct
+ok 447 - studio career active targets keep post, release, and career review distinct
+  ---
+  duration_ms: 0.309947
+  type: 'test'
+  ...
+# Subtest: studio career completed project collapse keeps latest project actionable
+ok 448 - studio career completed project collapse keeps latest project actionable
+  ---
+  duration_ms: 0.284641
+  type: 'test'
+  ...
+# Subtest: studio career project-scoped release control names are unique per project
+ok 449 - studio career project-scoped release control names are unique per project
+  ---
+  duration_ms: 0.330315
+  type: 'test'
+  ...
+# Subtest: studio career application invariants tolerate missing optional project details
+ok 450 - studio career application invariants tolerate missing optional project details
+  ---
+  duration_ms: 1.725974
+  type: 'test'
+  ...
+1..450
+# tests 450
+# suites 0
+# pass 449
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4990.027655
