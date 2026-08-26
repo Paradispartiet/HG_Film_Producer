@@ -67,7 +67,28 @@ jobs:
           rm -f scripts/TEMP-debug-oldboy-ch18.mjs
 
       - name: Materialize deterministic integration
-        run: node scripts/TEMP-materialize-ch18-oldboy.mjs
+        id: materialize
+        shell: bash
+        run: |
+          set +e
+          node scripts/TEMP-materialize-ch18-oldboy.mjs > TEMP-oldboy-materialize.log 2>&1
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          cat TEMP-oldboy-materialize.log
+          exit 0
+
+      - name: Commit materialization diagnostic
+        if: steps.materialize.outputs.exit_code != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f TEMP-oldboy-materialize.log
+          git commit -m "Capture Oldboy materialization failure [diagnostic]"
+          git push origin HEAD:agent/ch18-oldboy-production-case
+
+      - name: Enforce materialization result
+        if: steps.materialize.outputs.exit_code != '0'
+        run: exit 1
 
       - name: Full v0.1 verification
         id: verify
