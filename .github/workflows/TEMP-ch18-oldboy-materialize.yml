@@ -40,32 +40,6 @@ jobs:
           p.write_text(s.replace(old, ''))
           PY
 
-      - name: Diagnose Chapter 18 Oldboy parsing
-        run: |
-          cp scripts/film-history-chapter-eighteen-atlas-audit.mjs scripts/TEMP-debug-oldboy-ch18.mjs
-          python - <<'PY'
-          from pathlib import Path
-          p = Path('scripts/TEMP-debug-oldboy-ch18.mjs')
-          s = p.read_text()
-          s = s.replace('const EXPECTED_ATLAS_COUNT = 519;', 'const EXPECTED_ATLAS_COUNT = 520;', 1)
-          old = '  "chapterEighteenUnknownPleasuresExpansion.ts",\n  "modernCanonExpansion.ts",'
-          new = '  "chapterEighteenUnknownPleasuresExpansion.ts",\n  "chapterEighteenOldboyExpansion.ts",\n  "modernCanonExpansion.ts",'
-          if s.count(old) != 1:
-              raise SystemExit(f'Expected one expansion-list anchor, found {s.count(old)}')
-          s = s.replace(old, new, 1)
-          anchor = '    const definitions = parseExpansion(fileName);'
-          if s.count(anchor) != 1:
-              raise SystemExit(f'Expected one parseExpansion anchor, found {s.count(anchor)}')
-          s = s.replace(anchor, anchor + '\n    if (fileName === "chapterEighteenOldboyExpansion.ts") console.log("OLD_BOY_PARSED", definitions);', 1)
-          push_anchor = '    expansionStats.push({ fileName, definitions: definitions.length, appended, matchedExisting });'
-          if s.count(push_anchor) != 1:
-              raise SystemExit(f'Expected one expansionStats anchor, found {s.count(push_anchor)}')
-          s = s.replace(push_anchor, '    if (fileName === "chapterEighteenOldboyExpansion.ts") console.log("OLD_BOY_EXPANSION_RESULT", { appended, matchedExisting, scenarios: scenarios.filter((scenario) => scenario.year === 2003 && ["oldboy", "oldeuboi"].includes(normalize(scenario.title)) || scenario.year === 2003 && ["oldboy", "oldeuboi"].includes(normalize(scenario.originalTitle))) });\n' + push_anchor, 1)
-          p.write_text(s)
-          PY
-          node scripts/TEMP-debug-oldboy-ch18.mjs || true
-          rm -f scripts/TEMP-debug-oldboy-ch18.mjs
-
       - name: Materialize deterministic integration
         id: materialize
         shell: bash
@@ -73,8 +47,9 @@ jobs:
           set +e
           node scripts/TEMP-materialize-ch18-oldboy.mjs > TEMP-oldboy-materialize.log 2>&1
           code=$?
+          tail -n 160 TEMP-oldboy-materialize.log > TEMP-oldboy-materialize-tail.log
           echo "exit_code=$code" >> "$GITHUB_OUTPUT"
-          cat TEMP-oldboy-materialize.log
+          cat TEMP-oldboy-materialize-tail.log
           exit 0
 
       - name: Commit materialization diagnostic
@@ -82,8 +57,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f TEMP-oldboy-materialize.log
-          git commit -m "Capture Oldboy materialization failure [diagnostic]"
+          git add -f TEMP-oldboy-materialize-tail.log
+          git commit -m "Capture Oldboy materialization tail [diagnostic]"
           git push origin HEAD:agent/ch18-oldboy-production-case
 
       - name: Enforce materialization result
@@ -97,9 +72,9 @@ jobs:
           set +e
           npm run verify:v0.1 > TEMP-oldboy-verify.log 2>&1
           code=$?
-          tail -n 600 TEMP-oldboy-verify.log > TEMP-oldboy-verify-tail.log
+          tail -n 240 TEMP-oldboy-verify.log > TEMP-oldboy-verify-tail.log
           echo "exit_code=$code" >> "$GITHUB_OUTPUT"
-          cat TEMP-oldboy-verify.log
+          cat TEMP-oldboy-verify-tail.log
           exit 0
 
       - name: Commit verification diagnostic
@@ -107,8 +82,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f TEMP-oldboy-verify.log TEMP-oldboy-verify-tail.log
-          git commit -m "Capture Oldboy verification failure [diagnostic]"
+          git add -f TEMP-oldboy-verify-tail.log
+          git commit -m "Capture Oldboy verification tail [diagnostic]"
           git push origin HEAD:agent/ch18-oldboy-production-case
 
       - name: Enforce verification result
