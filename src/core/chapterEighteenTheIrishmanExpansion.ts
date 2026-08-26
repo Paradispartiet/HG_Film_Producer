@@ -63,7 +63,7 @@ export const chapterEighteenTheIrishmanExpansionDefinitions = [
       "Compare The Irishman with Spider-Verse: both redesign pipelines around performance intent, but one preserves photographed acting through markerless VFX while the other reshapes CG animation around illustration-led intervention.",
       "Compare The Irishman with Zodiac: both use digital postproduction to manage period crime narratives, while their capture technologies and temporal structures differ.",
       "Keep awards, reviews and later influence downstream from evidence about how a shot, face, cut or sound element was made.",
-      "Reject claims that the film invented digital de-aging, markerless capture, hybrid film/digital cinematography, long-form editing or sparse sound design.",
+      "Reject claims that the film invented digital de-aging, markerless capture, infrared witness cameras, hybrid film/digital cinematography, long-form editing or sparse sound design.",
       "Audit every novelty claim against whether the source is a practitioner account, institutional record, vendor case study, trade report or later interpretation.",
     ],
     phases: [
@@ -82,7 +82,7 @@ export const chapterEighteenTheIrishmanExpansionDefinitions = [
       { id: "flux_solve", label: "Run the Flux reconstruction", player_task: "Use Flux and related facial tools to reconstruct the photographed expression while keeping the distinction between captured performance data and artist-built younger geometry." },
       { id: "younger_face_build", label: "Build age-specific faces", player_task: "Create age-specific facial models and surface responses without erasing individual asymmetry, muscle movement or expression cues from the actor." },
       { id: "render_comp", label: "Render and composite", player_task: "Integrate younger facial renders into the plate while matching lighting, grain, lens behavior and surrounding skin/body continuity." },
-      { id: "vfx_scope_audit", label: "Audit the 1,750-shot figure", player_task: "Tag which VFX shots actually contain facial age work and which serve other invisible-effects tasks so the global shot count is not misrepresented." },
+      { id: "vfx_scope_audit", label: "Audit the 1,750-shot figure", player_task: "Audit ILM's 1,750-shot overall VFX figure by tagging which shots actually contain facial age work and which serve other invisible-effects tasks, so the global count is not misrepresented as 1,750 de-aging shots." },
       { id: "period_environment_plan", label: "Schedule the period world", player_task: "Coordinate hundreds of locations and set states across decades, prioritizing spaces that need repeatable camera, lighting, reset or vehicle control." },
       { id: "stage_builds", label: "Build repeatable interiors", player_task: "Use stage-built restaurants, homes and car interiors where repeatability or camera access justifies construction, and label found locations separately." },
       { id: "editorial_longform_map", label: "Map the long-form edit", player_task: "Track chronology, flashback position, recurring faces and emotional information across the 209-minute structure before polishing local transitions." },
