@@ -1,0 +1,90 @@
+name: TEMP materialize Chapter 18 28 Days Later
+
+on:
+  push:
+    branches:
+      - agent/ch18-twenty-eight-days-later-production-case
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch18-twenty-eight-days-later-production-case
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Materialize deterministic integration
+        run: node scripts/TEMP-materialize-ch18-28-days-later.mjs
+
+      - name: Full v0.1 verification
+        id: verify
+        shell: bash
+        run: |
+          set +e
+          npm run verify:v0.1 > TEMP-28-days-later-verify.log 2>&1
+          code=$?
+          tail -n 400 TEMP-28-days-later-verify.log > TEMP-28-days-later-verify-tail.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          cat TEMP-28-days-later-verify.log
+          exit 0
+
+      - name: Commit verification diagnostic
+        if: steps.verify.outputs.exit_code != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f TEMP-28-days-later-verify.log TEMP-28-days-later-verify-tail.log
+          git commit -m "Capture 28 Days Later verification failure [diagnostic]"
+          git push origin HEAD:agent/ch18-twenty-eight-days-later-production-case
+
+      - name: Enforce verification result
+        if: steps.verify.outputs.exit_code != '0'
+        run: exit 1
+
+      - name: Commit materialized permanent state
+        if: steps.verify.outputs.exit_code == '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/film-history-chapter-twelve-atlas-resolved.json \
+                  docs/film-history-chapter-thirteen-atlas-resolved.json \
+                  docs/film-history-chapter-fourteen-atlas-resolved.json \
+                  docs/film-history-chapter-fifteen-atlas-resolved.json \
+                  docs/film-history-chapter-sixteen-atlas-resolved.json \
+                  docs/film-history-chapter-seventeen-atlas-resolved.json \
+                  docs/film-history-chapter-eighteen-atlas-resolved.json \
+                  scripts/film-history-chapter-twelve-atlas-audit.mjs \
+                  scripts/film-history-chapter-thirteen-atlas-audit.mjs \
+                  scripts/film-history-chapter-fourteen-atlas-audit.mjs \
+                  scripts/film-history-chapter-fifteen-atlas-audit.mjs \
+                  scripts/film-history-chapter-sixteen-atlas-audit.mjs \
+                  scripts/film-history-chapter-seventeen-atlas-audit.mjs \
+                  scripts/film-history-chapter-eighteen-atlas-audit.mjs \
+                  scripts/production-case-rest-audit.mjs \
+                  src/core/filmHistoryChapterTwelveAuditContract.test.ts \
+                  src/core/filmHistoryChapterThirteenAuditContract.test.ts \
+                  src/core/filmHistoryChapterFourteenAuditContract.test.ts \
+                  src/core/filmHistoryChapterFifteenAuditContract.test.ts \
+                  src/core/filmHistoryChapterSixteenAuditContract.test.ts \
+                  src/core/filmHistoryChapterSeventeenAuditContract.test.ts \
+                  src/core/filmHistoryChapterEighteenAuditContract.test.ts \
+                  src/ui/data/filmScenarios.ts \
+                  src/ui/data/scenarioProductionVerificationRegistry.ts \
+                  src/ui/data/scenarioFilmStudyMap.ts
+          git commit -m "Materialize Chapter 18 28 Days Later integration [materialized]"
+          git push origin HEAD:agent/ch18-twenty-eight-days-later-production-case
