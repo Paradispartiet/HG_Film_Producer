@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 525,
-    "actualCount": 525,
+    "expectedCount": 526,
+    "actualCount": 526,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -740,6 +740,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenThereWillBeBloodExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -808,7 +814,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 525
+    "literalVerifiedScenarioIds": 526
   },
   "candidates": [
     {
@@ -1328,11 +1334,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P1",
       "chapterFunction": "Large-format and 35mm-origin period production makes photochemical persistence and complex location craft explicit inside the digital era.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_there_will_be_blood_2007",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenThereWillBeBloodExpansion.ts"
     },
     {
       "title": "4 Months, 3 Weeks and 2 Days",
@@ -2093,6 +2099,7 @@
       "Zodiac",
       "Secret Sunshine",
       "No Country for Old Men",
+      "There Will Be Blood",
       "4 Months, 3 Weeks and 2 Days",
       "Slumdog Millionaire",
       "Waltz with Bashir",
@@ -2132,7 +2139,6 @@
     ],
     "P0": [],
     "P1": [
-      "There Will Be Blood",
       "Uncle Boonmee Who Can Recall His Past Lives",
       "The Tree of Life",
       "Pina",
@@ -2152,7 +2158,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "There Will Be Blood",
     "Uncle Boonmee Who Can Recall His Past Lives",
     "The Tree of Life",
     "Pina",
