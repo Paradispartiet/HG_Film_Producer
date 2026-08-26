@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 518,
-    "actualCount": 518,
+    "expectedCount": 519,
+    "actualCount": 519,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -698,6 +698,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenUnknownPleasuresExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -766,7 +772,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 518
+    "literalVerifiedScenarioIds": 519
   },
   "candidates": [
     {
@@ -1003,11 +1009,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P1",
       "chapterFunction": "Small-camera digital production in China makes low-cost mobility, public-space access and independent production constraints explicit.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_unknown_pleasures_2002",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenUnknownPleasuresExpansion.ts"
     },
     {
       "title": "Oldboy",
@@ -2033,6 +2039,7 @@
       "City of God",
       "Star Wars: Episode II - Attack of the Clones",
       "28 Days Later",
+      "Unknown Pleasures",
       "Lost in Translation",
       "The Return",
       "Collateral",
@@ -2083,7 +2090,6 @@
     ],
     "P0": [],
     "P1": [
-      "Unknown Pleasures",
       "Oldboy",
       "Brokeback Mountain",
       "Caché",
@@ -2110,7 +2116,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Unknown Pleasures",
     "Oldboy",
     "Brokeback Mountain",
     "Caché",

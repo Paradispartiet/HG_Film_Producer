@@ -155,6 +155,7 @@ import { theIrishmanProductionCaseVerification } from "./scenarioProductionVerif
 import { yiYiProductionCaseVerification } from "./scenarioProductionVerificationYiYi";
 import { crouchingTigerHiddenDragonProductionCaseVerification } from "./scenarioProductionVerificationCrouchingTigerHiddenDragon";
 import { twentyEightDaysLaterProductionCaseVerification } from "./scenarioProductionVerificationTwentyEightDaysLater";
+import { unknownPleasuresProductionCaseVerification } from "./scenarioProductionVerificationUnknownPleasures";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -427,6 +428,7 @@ const additionalVerificationRecords = [
   yiYiProductionCaseVerification,
   crouchingTigerHiddenDragonProductionCaseVerification,
   twentyEightDaysLaterProductionCaseVerification,
+  unknownPleasuresProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
