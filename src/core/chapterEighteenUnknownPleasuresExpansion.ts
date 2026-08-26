@@ -36,7 +36,7 @@ export const chapterEighteenUnknownPleasuresExpansionDefinitions = [
       "Explain how DV mobility made unexpected environmental events easier to incorporate when they aligned with the scene.",
       "Use Jia's highway/thunderstorm example as a title-specific case of production flexibility rather than a universal digital rule.",
       "Explain why digital flexibility did not remove exposure, color or highlight limitations.",
-      "Record that bright exterior conditions were problematic enough to reduce some exterior work.",
+      "Record that bright exterior limitations were problematic enough to reduce some exterior work.",
       "Explain why Yu Lik-wai and Jia treated digital texture as an authored image property rather than an error to hide.",
       "Record Jia's later account that an overly clean digital image could feel artificial for this project.",
       "Explain resolution modification as a deliberate texture decision without inventing undocumented numeric settings.",
