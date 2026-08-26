@@ -22,7 +22,8 @@ test("Chapter 18 materializes Caché as a source-first HD surveillance-image and
   assert.ok(film.requiredChoicesSeed.camera.includes("crls_reflected_light"));
   assert.ok(film.requiredChoicesSeed.editing.includes("tape_playback_reveal"));
   assert.ok(film.requiredChoicesSeed.sound.includes("re_recording"));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("mixed film/digital") && goal.includes("all-digital")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("mixed film/digital") && goal.includes("tested and rejected")));
+  assert.ok(film.premise.includes("all-digital acquisition"));
   assert.ok(film.learningGoals.some((goal) => goal.includes("six camera bodies") && goal.includes("simultaneously")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("da Vinci 2K") && goal.includes("Sony")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Éclair") && goal.includes("Listo")));
