@@ -1,0 +1,122 @@
+import type { HistoricalFilmScenario } from "./earlyCinemaExpansion.js";
+import { normalizeEarlyCinemaTitle } from "./earlyCinemaExpansion.js";
+
+export const chapterEighteenCrouchingTigerHiddenDragonExpansionDefinitions = [
+  {
+    id: "scenario_crouching_tiger_hidden_dragon_2000",
+    title: "Crouching Tiger, Hidden Dragon",
+    originalTitle: "Wo hu cang long",
+    year: 2000,
+    titleType: "Movie",
+    runtimeMins: 120,
+    directors: ["Ang Lee"],
+    genres: ["Action", "Drama"],
+    sourceId: "bfi_crouching_tiger_hidden_dragon_2000",
+    sourceUrl: "https://www.bfi.org.uk/film/c1c5ce3b-f398-5864-a681-96eb0cb1f1d7/crouching-tiger-hidden-dragon",
+    scenarioType: "china_taiwan_usa_hong_kong_wuxia_super35_wirework_digital_wire_removal_transnational_production_2000",
+    premise: "Build Crouching Tiger, Hidden Dragon as Chapter 18's next P1 production case about the coordination of a Chinese-language transnational co-production, Super 35 photochemical capture, action choreography, physical wire work, selective digital cleanup, location/studio logistics, editorial rhythm and score. The British Film Institute records the 2000 film as a People's Republic of China, Taiwan, USA and Hong Kong production, directed by Ang Lee, produced by Bill Kong, Hsu Li-kong and Ang Lee, written by James Schamus, Wang Hui-ling and Tsai Kuo-jung, and running 120 minutes. The Academy credits Peter Pau for cinematography, Tim Yip for art direction and costume design, Tim Squyres for film editing and Tan Dun for original score. American Cinematographer's January 2001 production account documents a five-month shoot beginning in August 1999, location work in China including Xinjiang, later work at Beijing Film Studios, Peter Pau's Super 35 strategy, a Moviecam Compact A-camera and Arri 435ES for high-speed and visual-effects work with Zeiss primes, and Kodak 5277, 5245 and 5246 stocks processed normally at Technicolor New York. Pau chose Super 35 to preserve widescreen geography and usable depth of field in action and night work, and CFI performed the optical blowup. He tested a scan-and-record digital blowup but did not have the time or budget to use that path for the production, so the case must not rewrite the film as an original digital-intermediate production. The same account documents Yuen Woo-ping's wire-based action choreography, a two-camera limit shaped by budget and choreography, digital wire removal, more than 300 shots handled at Asia Cine Digital including wire removal and sky replacement, roughly 60 more ambitious shots at Manex L.A., and shot-by-shot digital color correction for difficult continuity such as the bamboo sequence. Ang Lee's DGA account reinforces that the apparent flight remained physically performed wire work: scores of crew members manipulated actors and rigs, with computer correction used selectively rather than replacing performers with digital characters. Tim Yip's production/costume design and Pau's lighting/color strategy were coordinated around a restrained Chinese-watercolor concept rather than generic martial-arts spectacle. Tan Dun's later account describes music as pre-conceptualized with Lee years before shooting and the martial-arts sequences as ballet-like synchronization problems; Yo-Yo Ma's cello performance belongs to the score process, not to production sound. Keep every boundary explicit: wire work is not CGI character replacement, Super 35 optical blowup is not proof of a digital intermediate, digital wire removal does not make principal photography digital, action choreography does not erase camera/lighting/editing authorship, and international distribution success does not itself prove how the film was financed or shot. The player should be able to trace one action scene from screenplay intent and choreography through performer safety, wire rigs, camera position, Super 35 exposure, lighting, set/location constraints, editorial continuity, selective digital cleanup, score synchronization and final photochemical release while preserving what the cited sources actually establish.",
+    requiredChoicesSeed: {
+      screenplay: ["transnational_wuxia_adaptation", "character_action_alignment", "romance_action_balance", "dialogue_translation_boundary", "scene_information_map"],
+      camera: ["super35_capture", "moviecam_arri_two_unit_plan", "zeiss_prime_package", "night_action_depth_of_field", "power_pod_action_camera", "optical_blowup_boundary"],
+      editing: ["action_geography", "choreography_coverage", "two_camera_constraint", "performance_refinement", "dialogue_scene_restructure", "digital_cleanup_handoff"],
+      sound: ["dialogue_music_separation", "tan_dun_score_sync", "yo_yo_ma_cello", "action_effects_boundary", "production_sound_unknowns", "score_not_production_sound"],
+      themes: ["film_history", "2000", "crouching_tiger_hidden_dragon", "ang_lee", "peter_pau", "yuen_woo_ping", "tim_yip", "tim_squyres", "tan_dun", "bill_kong", "hsu_li_kong", "james_schamus", "wang_hui_ling", "tsai_kuo_jung", "china", "taiwan", "hong_kong", "usa", "super35", "moviecam_compact", "arri_435es", "zeiss_primes", "kodak_5277", "kodak_5245", "kodak_5246", "wire_work", "digital_wire_removal", "asia_cine_digital", "manex", "optical_blowup", "beijing_film_studios", "xinjiang", "transnational_production", "120_minutes"],
+    },
+    learningGoals: [
+      "Explain Crouching Tiger, Hidden Dragon as a coordinated transnational production system rather than a generic martial-arts success story.",
+      "Identify Ang Lee as director and one of the credited producers while keeping Bill Kong and Hsu Li-kong visible as producers.",
+      "Identify James Schamus, Wang Hui-ling and Tsai Kuo-jung as the credited screenwriters in the BFI record.",
+      "Identify Peter Pau as cinematographer, Tim Yip as art-direction/costume-design credit, Tim Squyres as editor and Tan Dun as composer.",
+      "Record the BFI country set—People's Republic of China, Taiwan, USA and Hong Kong—as production metadata without treating it as a full financing ledger.",
+      "Preserve the 120-minute runtime as release metadata rather than a measure of production scale.",
+      "Explain why Super 35 was chosen to combine a 2.35:1 release frame with usable depth of field and action geography.",
+      "Identify the Moviecam Compact as the A-camera and the Arri 435ES as the high-speed/visual-effects camera documented by Peter Pau.",
+      "Identify Zeiss primes as the documented lens family without inventing focal lengths for shots where the source does not specify them.",
+      "Identify Kodak Vision 320T 5277 as Pau's primary stock, with EXR 5245 and Vision 250D 5246 used for documented daylight/low-light conditions.",
+      "Explain why rating 5277 at 250 ASA and aiming for at least T4 were production exposure choices rather than universal rules for Super 35.",
+      "Record normal processing at Technicolor New York and keep lab problems and later retiming as separate production/post events.",
+      "Explain the CFI optical Super 35 blowup and reject the inference that Pau's digital-blowup test became the production's finishing workflow.",
+      "Distinguish principal photochemical photography from selective digital post-production.",
+      "Identify Yuen Woo-ping's action choreography as a distinct authorship and safety/logistics system alongside Lee's direction and Pau's cinematography.",
+      "Explain why wire work required performer rehearsal, rigging, crew coordination and safety decisions before digital cleanup could occur.",
+      "Distinguish physical wire-assisted performance from CGI character replacement.",
+      "Explain why digital wire removal can be extensive while the underlying action remains physically performed and photographed.",
+      "Record Asia Cine Digital's more-than-300-shot work as documented digital post including wire removal, sky replacement and color correction.",
+      "Record Manex L.A.'s roughly 60 more ambitious shots without treating every shot in the film as a visual-effects shot.",
+      "Explain why Peter Pau's assumption of visual-effects supervision duties reflected the production's budget structure rather than a universal cinematographer role.",
+      "Explain why a two-camera limit changed coverage strategy, action geography and reset costs.",
+      "Describe the Power Pod/crane approach as a way to move the camera with performers when handheld instability conflicted with the intended gracefulness.",
+      "Explain how action choreography, camera trajectory and performer timing must be rehearsed together when shots are designed around one privileged angle.",
+      "Use the graveyard sequence to connect night exterior lighting, wire rigging, repeated takes and schedule overrun without assuming all sequences behaved the same way.",
+      "Use the bamboo sequence to connect weather continuity, wire performance, crane work and later shot-by-shot digital color correction.",
+      "Explain how Tim Yip's production/costume design and Pau's restrained color strategy support a coordinated Chinese-watercolor visual concept.",
+      "Distinguish color created through sets, costumes and lighting from color timing performed later in post-production.",
+      "Explain why location work in Xinjiang and studio work at Beijing Film Studios create different logistics, control and continuity problems.",
+      "Record the five-month shoot beginning in August 1999 as documented production chronology rather than infer exact dates for every sequence.",
+      "Explain how Tim Squyres' editorial authorship remains central even when choreography is designed for longer action phrases and strong spatial continuity.",
+      "Keep dialogue restructuring and action continuity as editorial decisions rather than assuming the screenplay fixed final scene order.",
+      "Identify Tan Dun's score as a production/post collaboration developed conceptually before shooting, not as evidence about location sound recording.",
+      "Identify Yo-Yo Ma's cello performance as part of the score process and keep it separate from dialogue, effects and production sound.",
+      "Explain how ballet-like score synchronization can shape perceived action rhythm without proving that every cut was determined by music.",
+      "Do not infer undocumented microphone, recorder, ADR, Foley or final-mix procedures from the score sources.",
+      "Compare Crouching Tiger with The Matrix: both use wire-assisted action and digital cleanup, but their industrial contexts, visual strategies and production systems remain distinct.",
+      "Compare Crouching Tiger with In the Mood for Love: both are 2000 Chinese-language transnational productions, but their production geometries and action/performance systems differ sharply.",
+      "Compare Crouching Tiger with Spider-Verse: both combine handcrafted performance/design with digital intervention, but one begins with Super 35 live action and the other with an animation pipeline.",
+      "Keep awards, box office and international breakthrough claims downstream from production evidence.",
+      "Separate practitioner testimony, institutional credits, historical production reporting and later retrospective interpretation.",
+      "Reject claims that the film invented wire work, Super 35 action photography, digital wire removal, transnational Chinese-language production or music-driven action.",
+      "Audit every novelty, influence, financing and representation claim independently from the documented craft facts.",
+    ],
+    phases: [
+      { id: "evidence_map", label: "Map the evidence hierarchy", player_task: "Separate BFI credits, Academy credits, Peter Pau's production account, Ang Lee's DGA recollection and later music interviews before turning any statement into a production fact." },
+      { id: "release_record", label: "Lock the release record", player_task: "Record 2000, 120 minutes, Ang Lee and the BFI production-country set without using later awards or box office as production evidence." },
+      { id: "producer_writer_map", label: "Map producers and writers", player_task: "Keep Bill Kong, Hsu Li-kong and Ang Lee's producer credits distinct from the three credited screenwriters and from later distributors." },
+      { id: "transnational_boundary", label: "Set the transnational boundary", player_task: "Use China/Taiwan/USA/Hong Kong as documented production metadata while leaving detailed financing shares unknown unless separately sourced." },
+      { id: "action_intent", label: "Define action intent", player_task: "Translate character and dramatic intent into a choreography brief before choosing wires, camera path or digital cleanup." },
+      { id: "wire_safety_plan", label: "Plan wire safety", player_task: "Map performer harnesses, pull teams, cranes, landing zones, rehearsal limits and stop conditions before treating flight as a visual-effects problem." },
+      { id: "choreography_camera_map", label: "Map choreography to camera", player_task: "Coordinate Yuen Woo-ping's physical action with Ang Lee's dramatic emphasis and Peter Pau's camera position so a privileged angle still preserves geography." },
+      { id: "super35_format", label: "Lock Super 35 format", player_task: "Record Super 35 as the documented production format and 2.35:1 as the release framing problem without rewriting the shoot as anamorphic capture." },
+      { id: "camera_package", label: "Lock camera package", player_task: "Assign the Moviecam Compact to A-camera work and the Arri 435ES to high-speed/VFX duties while keeping undocumented shot-specific substitutions out of the record." },
+      { id: "lens_boundary", label: "Respect lens evidence", player_task: "Record Zeiss primes as the documented family and leave shot-by-shot focal lengths unknown unless a source establishes them." },
+      { id: "stock_exposure_map", label: "Map stock and exposure", player_task: "Track 5277, 5245 and 5246 by documented lighting condition, including Pau's 250-ASA rating for 5277 and T4 depth-of-field target." },
+      { id: "night_action_light", label: "Design night action light", player_task: "Build soft-source coverage that keeps faces, wire-assisted motion and geography readable without assuming smoke and hard light will hide wires." },
+      { id: "two_camera_budget", label: "Budget two-camera coverage", player_task: "Plan resets and alternate coverage around the documented two-camera limit instead of assuming unlimited simultaneous angles." },
+      { id: "power_pod_path", label: "Design the moving camera", player_task: "Coordinate Power Pod/crane paths with performer trajectories so camera movement feels graceful while respecting rigging and focus constraints." },
+      { id: "graveyard_schedule", label: "Stress-test the graveyard", player_task: "Model how night lighting, wire setup, repeated performance refinement and weather can turn an eight-day plan into a longer schedule." },
+      { id: "bamboo_weather", label: "Protect bamboo continuity", player_task: "Track changing sun, cloud and rain across the bamboo sequence and flag what can be solved in lighting, timing or later digital correction." },
+      { id: "design_color_system", label: "Coordinate design and color", player_task: "Align Tim Yip's sets/costumes with Pau's restrained palette so production color and later timing are documented as separate layers." },
+      { id: "location_studio_handoff", label: "Move from location to studio", player_task: "Separate Xinjiang and other location constraints from Beijing Film Studios interiors/exteriors, preserving control, travel and continuity differences." },
+      { id: "action_edit_map", label: "Map action editorially", player_task: "Preserve spatial cause-and-effect across wire-assisted action while marking which beats need alternate angles, inserts or reaction coverage." },
+      { id: "dialogue_edit_boundary", label: "Keep dialogue editable", player_task: "Allow dialogue scenes to be restructured without pretending final scene order was locked by the shooting script." },
+      { id: "wire_removal_handoff", label: "Handoff wire removal", player_task: "Tag the exact frames requiring wire cleanup and keep the physical performance plate distinct from the digital removal task." },
+      { id: "asia_cine_digital_map", label: "Map Hong Kong digital post", player_task: "Record Asia Cine Digital's documented wire removal, sky replacement and color-correction work without inflating the count into a claim that every shot was digitally altered." },
+      { id: "manex_boundary", label: "Map Manex work", player_task: "Reserve the roughly 60 more ambitious Manex shots for the documented effects scope instead of using Manex as a catch-all label for all post work." },
+      { id: "optical_blowup", label: "Protect optical finishing", player_task: "Track the CFI Super 35 optical blowup separately from Pau's unused digital-blowup test and from later release retiming." },
+      { id: "lab_retime", label: "Track lab and retiming", player_task: "Keep Technicolor processing, Cannes timing dissatisfaction and later Deluxe retiming as distinct stages with separate decisions." },
+      { id: "score_concept", label: "Map score concept", player_task: "Track Tan Dun's pre-conceptual score collaboration and Yo-Yo Ma's cello contribution without converting score evidence into claims about production sound." },
+      { id: "action_score_sync", label: "Test action-score synchronization", player_task: "Evaluate where choreographic beats and music benefit from synchronization while preserving editorial freedom when drama requires a different rhythm." },
+      { id: "sound_boundary", label: "Respect sound unknowns", player_task: "Keep dialogue, effects, Foley, ADR, production recording and final mixing unknown unless separately sourced; score documentation does not establish those workflows." },
+      { id: "comparison_audit", label: "Compare without flattening", player_task: "Compare The Matrix, In the Mood for Love and later digital-convergence cases through specific production constraints rather than generic East/West or analog/digital binaries." },
+      { id: "method_audit", label: "Audit production versus legacy", player_task: "Review every technology, authorship, financing, representation, novelty and influence claim against whether it comes from credits, practitioner testimony, trade reporting or later reception." },
+    ],
+  },
+] as const;
+
+export function mergeChapterEighteenCrouchingTigerHiddenDragonExpansion(baseScenarios: readonly HistoricalFilmScenario[]): readonly HistoricalFilmScenario[] {
+  const merged = [...baseScenarios];
+  let nextPosition = Math.max(0, ...baseScenarios.map((scenario) => scenario.source.position)) + 1;
+  for (const definition of chapterEighteenCrouchingTigerHiddenDragonExpansionDefinitions) {
+    const acceptedTitles = [definition.title, definition.originalTitle, "Crouching Tiger Hidden Dragon"].map(normalizeEarlyCinemaTitle);
+    const exists = merged.some((scenario) => scenario.id === definition.id || (scenario.film.year === definition.year && [scenario.film.title, scenario.film.original_title].map(normalizeEarlyCinemaTitle).some((title) => acceptedTitles.includes(title))));
+    if (exists) continue;
+    merged.push({
+      id: definition.id,
+      status: "manual_chapter_eighteen_crouching_tiger_hidden_dragon_verified",
+      source: { list_id: "manual_chapter_eighteen_crouching_tiger_hidden_dragon_expansion_2026", position: nextPosition, imdb_id: definition.sourceId, url: definition.sourceUrl },
+      film: { title: definition.title, original_title: definition.originalTitle, year: definition.year, title_type: definition.titleType, runtime_mins: definition.runtimeMins, directors: definition.directors, genres: definition.genres, genre_keys: definition.genres.map((genre) => genre.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")) },
+      scenario: { scenario_type: definition.scenarioType, premise: definition.premise, required_choices_seed: definition.requiredChoicesSeed, learning_goals: definition.learningGoals, phases: definition.phases },
+    });
+    nextPosition += 1;
+  }
+  return merged;
+}
