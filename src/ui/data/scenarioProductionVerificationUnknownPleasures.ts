@@ -35,14 +35,14 @@ export const unknownPleasuresProductionCaseVerification = {
       publisher: "Slant Magazine",
       url: "https://www.slantmagazine.com/film/interview-jia-zhang-ke-on-ash-is-purest-white-censorship-and-the-evolution-of-china/",
       sourceKind: "filmmaker_interview",
-      supports: ["overall", "cinematography", "performance"],
+      supports: ["overall", "cinematography"],
       note: "Later Jia testimony explicitly connecting Unknown Pleasures to DV's intimacy, proximity to performers and ability to capture unexpected events, while describing the medium as an aesthetic choice rather than merely a practical substitute."
     },
     {
       title: "Jia Zhangke's Hometown Trilogy: Xiao Wu, Platform, Unknown Pleasures",
       publisher: "University of California open monograph edition",
       url: "https://escholarship.org/content/qt02x9977w/qt02x9977w.pdf",
-      sourceKind: "academic_source",
+      sourceKind: "archive_feature",
       supports: ["overall", "cinematography", "editing"],
       note: "Open scholarly source reproducing Jia's account of digital color adjustment, transfer to celluloid, subsequent color manipulation during development, and the search with Yu Lik-wai for a specifically digital image texture."
     },
