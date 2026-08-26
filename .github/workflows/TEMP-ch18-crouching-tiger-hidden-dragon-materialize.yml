@@ -47,8 +47,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f TEMP-crouching-tiger-hidden-dragon-verify.log
-          git commit -m "Capture Crouching Tiger verification failure [diagnostic]"
+          tail -n 240 TEMP-crouching-tiger-hidden-dragon-verify.log > TEMP-crouching-tiger-hidden-dragon-verify-tail.log
+          git add -f TEMP-crouching-tiger-hidden-dragon-verify.log TEMP-crouching-tiger-hidden-dragon-verify-tail.log
+          git commit -m "Capture Crouching Tiger verification failure tail [diagnostic]"
           git push origin HEAD:agent/ch18-crouching-tiger-hidden-dragon-production-case
 
       - name: Enforce verification result
