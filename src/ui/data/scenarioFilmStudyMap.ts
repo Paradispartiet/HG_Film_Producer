@@ -129,6 +129,7 @@ import { romaFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenRoma";
 import { spiderVerseFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenSpiderVerse";
 import { parasiteFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenParasite";
 import { theIrishmanFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenTheIrishman";
+import { yiYiFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenYiYi";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -284,6 +285,7 @@ const sourceBackedFilmHistoryProfiles = {
   [spiderVerseFilmHistoryProfile.scenarioId]: spiderVerseFilmHistoryProfile,
   [parasiteFilmHistoryProfile.scenarioId]: parasiteFilmHistoryProfile,
   [theIrishmanFilmHistoryProfile.scenarioId]: theIrishmanFilmHistoryProfile,
+  [yiYiFilmHistoryProfile.scenarioId]: yiYiFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",

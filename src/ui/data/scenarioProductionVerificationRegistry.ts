@@ -152,6 +152,7 @@ import { romaProductionCaseVerification } from "./scenarioProductionVerification
 import { spiderVerseProductionCaseVerification } from "./scenarioProductionVerificationSpiderVerse";
 import { parasiteProductionCaseVerification } from "./scenarioProductionVerificationParasite";
 import { theIrishmanProductionCaseVerification } from "./scenarioProductionVerificationTheIrishman";
+import { yiYiProductionCaseVerification } from "./scenarioProductionVerificationYiYi";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -421,6 +422,7 @@ const additionalVerificationRecords = [
   spiderVerseProductionCaseVerification,
   parasiteProductionCaseVerification,
   theIrishmanProductionCaseVerification,
+  yiYiProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
