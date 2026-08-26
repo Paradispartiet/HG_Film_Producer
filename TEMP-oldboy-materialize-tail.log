@@ -1,6 +1,3 @@
-        "matchedExisting": 0,
-        "status": "manual_chapter_eighteen_crouching_tiger_hidden_dragon_verified",
-        "sourceListId": "manual_chapter_eighteen_crouching_tiger_hidden_dragon_expansion_2026"
       },
       {
         "fileName": "chapterEighteenTwentyEightDaysLaterExpansion.ts",
@@ -17,6 +14,14 @@
         "matchedExisting": 0,
         "status": "manual_chapter_eighteen_unknown_pleasures_verified",
         "sourceListId": "manual_chapter_eighteen_unknown_pleasures_expansion_2026"
+      },
+      {
+        "fileName": "chapterEighteenOldboyExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eighteen_oldboy_verified",
+        "sourceListId": "manual_chapter_eighteen_oldboy_expansion_2026"
       },
       {
         "fileName": "modernCanonExpansion.ts",
@@ -109,11 +114,11 @@
     ]
   },
   "totals": {
-    "playableScenarios": 519,
+    "playableScenarios": 520,
     "verifiedProductionCases": 520,
     "unverifiedProductionCases": 0,
     "sourceBackedProfiles": 520,
-    "filmSpecificProductionBriefs": 519,
+    "filmSpecificProductionBriefs": 520,
     "seedFallbackProductionBriefs": 0,
     "scenariosWithoutSourceBackedProfile": 0,
     "scenariosMissingVerificationAndProfile": 0
@@ -123,12 +128,8 @@
     "finalDuplicateScenarioIds": [],
     "duplicateVerificationIds": [],
     "duplicateProfileIds": [],
-    "orphanVerificationIds": [
-      "scenario_oldboy_2003"
-    ],
-    "orphanProfileIds": [
-      "scenario_oldboy_2003"
-    ],
+    "orphanVerificationIds": [],
+    "orphanProfileIds": [],
     "verifiedWithoutProfile": [],
     "profilesWithoutVerification": []
   },
@@ -146,13 +147,12 @@
   "verifiedWithoutProfile": []
 }
 HG_FILM_PRODUCER_REST_AUDIT_END
-Production Case rest audit found 3 structural problem(s).
-file:///home/runner/work/HG_Film_Producer/HG_Film_Producer/scripts/TEMP-materialize-ch18-oldboy.mjs:141
-  if (result.status !== 0) throw new Error(`audit:production-cases failed with ${result.status}`);
-                                 ^
+file:///home/runner/work/HG_Film_Producer/HG_Film_Producer/scripts/TEMP-materialize-ch18-oldboy.mjs:151
+if (resolved.atlas?.expectedCount !== 520 || resolved.atlas?.actualCount !== 520) throw new Error("Chapter 18 did not materialize 520/520");
+                                                                                        ^
 
-Error: audit:production-cases failed with 1
-    at file:///home/runner/work/HG_Film_Producer/HG_Film_Producer/scripts/TEMP-materialize-ch18-oldboy.mjs:141:34
+Error: Chapter 18 did not materialize 520/520
+    at file:///home/runner/work/HG_Film_Producer/HG_Film_Producer/scripts/TEMP-materialize-ch18-oldboy.mjs:151:89
     at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
