@@ -32,6 +32,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Remove previous diagnostic
+        run: rm -f TEMP-apocalypto-verify.log
+
+      - name: Apply Apocalypto premise contract fix
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path('src/core/chapterEighteenApocalyptoExpansion.ts')
+          source = path.read_text()
+          before = 'Historical consultant Richard D. Hansen'
+          after = 'historical consultant Richard D. Hansen'
+          if source.count(before) != 1:
+              raise SystemExit(f'Expected one premise anchor, found {source.count(before)}')
+          path.write_text(source.replace(before, after, 1))
+          PY
+
       - name: Materialize deterministic integration
         run: node scripts/TEMP-materialize-ch18-apocalypto.mjs
 
@@ -87,6 +104,7 @@ jobs:
                   scripts/film-history-chapter-seventeen-atlas-audit.mjs \
                   scripts/film-history-chapter-eighteen-atlas-audit.mjs \
                   scripts/production-case-rest-audit.mjs \
+                  src/core/chapterEighteenApocalyptoExpansion.ts \
                   src/core/filmHistoryChapterTwelveAuditContract.test.ts \
                   src/core/filmHistoryChapterThirteenAuditContract.test.ts \
                   src/core/filmHistoryChapterFourteenAuditContract.test.ts \
