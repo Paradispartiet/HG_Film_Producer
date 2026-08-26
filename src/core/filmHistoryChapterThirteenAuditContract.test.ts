@@ -56,13 +56,13 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 13 audit locks the postwar noir-realism-reconstruction Atlas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 520;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 521;/);
   assert.equal(resolved.chapter.number, 13);
   assert.equal(resolved.chapter.id, "postwar-noir-realism-reconstruction");
   assert.equal(resolved.chapter.title, "Postwar noir, realism and reconstruction");
   assert.equal(resolved.chapter.period, "1944–1959");
-  assert.equal(resolved.atlas.expectedCount, 520);
-  assert.equal(resolved.atlas.actualCount, 520);
+  assert.equal(resolved.atlas.expectedCount, 521);
+  assert.equal(resolved.atlas.actualCount, 521);
   assert.equal(resolved.candidates.length, 31);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
   assert.deepEqual(resolved.byDecision.P0, []);
