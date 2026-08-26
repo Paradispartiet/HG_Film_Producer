@@ -136,9 +136,15 @@ for (const chapter of ["Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "
 }
 
 // Regenerate resolved audit documents in dependency order.
+const chapterWords = new Map([
+  [12, "twelve"], [13, "thirteen"], [14, "fourteen"], [15, "fifteen"],
+  [16, "sixteen"], [17, "seventeen"], [18, "eighteen"],
+]);
 for (const chapter of [12, 13, 14, 15, 16, 17, 18]) {
-  const result = spawnSync("npm", ["run", `audit:film-history-ch${chapter}`], { encoding: "utf8", stdio: "inherit" });
-  if (result.status !== 0) throw new Error(`audit:film-history-ch${chapter} failed with ${result.status}`);
+  const word = chapterWords.get(chapter);
+  const output = `docs/film-history-chapter-${word}-atlas-resolved.json`;
+  const result = spawnSync("node", [`scripts/film-history-chapter-${word}-atlas-audit.mjs`, `--write=${output}`], { encoding: "utf8", stdio: "inherit" });
+  if (result.status !== 0) throw new Error(`film-history chapter ${chapter} audit failed with ${result.status}`);
 }
 
 // The production-case audit itself must already pass before CI.
