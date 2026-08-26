@@ -131,6 +131,7 @@ import { parasiteFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenPa
 import { theIrishmanFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenTheIrishman";
 import { yiYiFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenYiYi";
 import { crouchingTigerHiddenDragonFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenCrouchingTigerHiddenDragon";
+import { twentyEightDaysLaterFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenTwentyEightDaysLater";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -288,6 +289,7 @@ const sourceBackedFilmHistoryProfiles = {
   [theIrishmanFilmHistoryProfile.scenarioId]: theIrishmanFilmHistoryProfile,
   [yiYiFilmHistoryProfile.scenarioId]: yiYiFilmHistoryProfile,
   [crouchingTigerHiddenDragonFilmHistoryProfile.scenarioId]: crouchingTigerHiddenDragonFilmHistoryProfile,
+  [twentyEightDaysLaterFilmHistoryProfile.scenarioId]: twentyEightDaysLaterFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
