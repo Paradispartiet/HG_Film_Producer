@@ -28,6 +28,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Strengthen bright-exterior learning contract
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('src/core/chapterEighteenUnknownPleasuresExpansion.ts')
+          s = p.read_text()
+          old = 'Record that bright exterior conditions were problematic enough to reduce some exterior work.'
+          new = 'Record that bright exterior limitations were problematic enough to reduce some exterior work.'
+          if s.count(old) != 1:
+              raise SystemExit(f'Expected one bright-exterior learning-goal anchor, found {s.count(old)}')
+          p.write_text(s.replace(old, new))
+          PY
+
       - name: Materialize deterministic integration
         run: node scripts/TEMP-materialize-ch18-unknown-pleasures.mjs
 
@@ -76,6 +89,7 @@ jobs:
                   scripts/film-history-chapter-seventeen-atlas-audit.mjs \
                   scripts/film-history-chapter-eighteen-atlas-audit.mjs \
                   scripts/production-case-rest-audit.mjs \
+                  src/core/chapterEighteenUnknownPleasuresExpansion.ts \
                   src/core/filmHistoryChapterTwelveAuditContract.test.ts \
                   src/core/filmHistoryChapterThirteenAuditContract.test.ts \
                   src/core/filmHistoryChapterFourteenAuditContract.test.ts \
