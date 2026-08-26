@@ -53,10 +53,14 @@ jobs:
           if s.count(old) != 1:
               raise SystemExit(f'Expected one expansion-list anchor, found {s.count(old)}')
           s = s.replace(old, new, 1)
-          anchor = 'const definitions = parseExpansionFile(join(coreDir, fileName));'
+          anchor = '    const definitions = parseExpansion(fileName);'
           if s.count(anchor) != 1:
-              raise SystemExit(f'Expected one parseExpansionFile anchor, found {s.count(anchor)}')
-          s = s.replace(anchor, anchor + '\n  console.log("OLD_BOY_PARSE_DIAGNOSTIC", fileName, definitions.length, definitions.map((item) => ({ id: item.id, title: item.title, year: item.year })));', 1)
+              raise SystemExit(f'Expected one parseExpansion anchor, found {s.count(anchor)}')
+          s = s.replace(anchor, anchor + '\n    if (fileName === "chapterEighteenOldboyExpansion.ts") console.log("OLD_BOY_PARSED", definitions);', 1)
+          push_anchor = '    expansionStats.push({ fileName, definitions: definitions.length, appended, matchedExisting });'
+          if s.count(push_anchor) != 1:
+              raise SystemExit(f'Expected one expansionStats anchor, found {s.count(push_anchor)}')
+          s = s.replace(push_anchor, '    if (fileName === "chapterEighteenOldboyExpansion.ts") console.log("OLD_BOY_EXPANSION_RESULT", { appended, matchedExisting, scenarios: scenarios.filter((scenario) => scenario.year === 2003 && ["oldboy", "oldeuboi"].includes(normalize(scenario.title)) || scenario.year === 2003 && ["oldboy", "oldeuboi"].includes(normalize(scenario.originalTitle))) });\n' + push_anchor, 1)
           p.write_text(s)
           PY
           node scripts/TEMP-debug-oldboy-ch18.mjs || true
