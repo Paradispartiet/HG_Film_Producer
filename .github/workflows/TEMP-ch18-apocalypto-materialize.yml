@@ -36,7 +36,28 @@ jobs:
         run: node scripts/TEMP-materialize-ch18-apocalypto.mjs
 
       - name: Full v0.1 verification
-        run: npm run verify:v0.1
+        shell: bash
+        run: |
+          set +e
+          npm run verify:v0.1 2>&1 | tee TEMP-apocalypto-verify.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -eq 0 ]; then
+            rm -f TEMP-apocalypto-verify.log
+          fi
+          exit "$status"
+
+      - name: Capture verification failure diagnostic
+        if: failure()
+        shell: bash
+        run: |
+          if [ ! -f TEMP-apocalypto-verify.log ]; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f TEMP-apocalypto-verify.log
+          git commit -m "Capture Apocalypto verification failure [diagnostic]"
+          git push origin HEAD:agent/ch18-apocalypto-production-case
 
       - name: Assert temporary diagnostics are absent
         shell: bash
