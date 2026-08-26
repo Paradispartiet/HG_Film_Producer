@@ -28,18 +28,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Remove obsolete REST expansion-order anchor
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          p = Path('scripts/TEMP-materialize-ch18-oldboy.mjs')
-          s = p.read_text()
-          old = '''  s = replaceOnce(\n    s,\n    '  "chapterEighteenUnknownPleasuresExpansion.ts",\\n  "modernCanonExpansion.ts",',\n    '  "chapterEighteenUnknownPleasuresExpansion.ts",\\n  "chapterEighteenOldboyExpansion.ts",\\n  "modernCanonExpansion.ts",',\n    "REST expansion order",\n  );\n'''
-          if s.count(old) != 1:
-              raise SystemExit(f'Expected one obsolete REST-order block, found {s.count(old)}')
-          p.write_text(s.replace(old, ''))
-          PY
-
       - name: Materialize deterministic integration
         id: materialize
         shell: bash
