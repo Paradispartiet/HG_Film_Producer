@@ -113,8 +113,13 @@ export function mergeChapterEighteenCrouchingTigerHiddenDragonExpansion(baseScen
       id: definition.id,
       status: "manual_chapter_eighteen_crouching_tiger_hidden_dragon_verified",
       source: { list_id: "manual_chapter_eighteen_crouching_tiger_hidden_dragon_expansion_2026", position: nextPosition, imdb_id: definition.sourceId, url: definition.sourceUrl },
-      film: { title: definition.title, original_title: definition.originalTitle, year: definition.year, title_type: definition.titleType, runtime_mins: definition.runtimeMins, directors: definition.directors, genres: definition.genres, genre_keys: definition.genres.map((genre) => genre.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")) },
-      scenario: { scenario_type: definition.scenarioType, premise: definition.premise, required_choices_seed: definition.requiredChoicesSeed, learning_goals: definition.learningGoals, phases: definition.phases },
+      film: { title: definition.title, original_title: definition.originalTitle, year: definition.year, title_type: definition.titleType, runtime_mins: definition.runtimeMins, directors: definition.directors, genres: definition.genres, genre_keys: definition.genres.map((genre) => genre.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")), imdb_rating: 0, user_rating: 0 },
+      scenario_type: definition.scenarioType,
+      production_challenge: definition.premise,
+      required_choices_seed: definition.requiredChoicesSeed,
+      phases: definition.phases,
+      learning_goals_seed: definition.learningGoals,
+      manual_enrichment_needed: [],
     });
     nextPosition += 1;
   }
