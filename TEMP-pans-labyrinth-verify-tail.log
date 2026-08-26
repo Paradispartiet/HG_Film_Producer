@@ -3,590 +3,590 @@
 # Subtest: film study coverage always contains every history and craft area
 ok 358 - film study coverage always contains every history and craft area
   ---
-  duration_ms: 0.583792
+  duration_ms: 0.567542
   type: 'test'
   ...
 # Subtest: coverage summary distinguishes verified, mapped, pending, and not-central work
 ok 359 - coverage summary distinguishes verified, mapped, pending, and not-central work
   ---
-  duration_ms: 0.202833
+  duration_ms: 0.204709
   type: 'test'
   ...
 # Subtest: historical eras provide stable broad placement without pretending to be a movement label
 ok 360 - historical eras provide stable broad placement without pretending to be a movement label
   ---
-  duration_ms: 0.083041
+  duration_ms: 0.072042
   type: 'test'
   ...
 # Subtest: creates stable film slugs with year
 ok 361 - creates stable film slugs with year
   ---
-  duration_ms: 0.734417
+  duration_ms: 0.58775
   type: 'test'
   ...
 # Subtest: parses platform section routes
 ok 362 - parses platform section routes
   ---
-  duration_ms: 0.628125
+  duration_ms: 0.520625
   type: 'test'
   ...
 # Subtest: parses canonical and legacy film routes
 ok 363 - parses canonical and legacy film routes
   ---
-  duration_ms: 0.151542
+  duration_ms: 0.141042
   type: 'test'
   ...
 # Subtest: formats canonical hash routes
 ok 364 - formats canonical hash routes
   ---
-  duration_ms: 0.572208
+  duration_ms: 0.563708
   type: 'test'
   ...
 # Subtest: falls back safely for invalid hashes
 ok 365 - falls back safely for invalid hashes
   ---
-  duration_ms: 0.179
+  duration_ms: 0.2045
   type: 'test'
   ...
 # Subtest: compares routes including selected films
 ok 366 - compares routes including selected films
   ---
-  duration_ms: 0.074375
+  duration_ms: 0.081125
   type: 'test'
   ...
 # [italy-france-germany-benelux-expansion] prior=353 missing=25 final=378
 # Subtest: Italy, France, Germany, and Benelux expansion contains exactly 28 unique targets
 ok 367 - Italy, France, Germany, and Benelux expansion contains exactly 28 unique targets
   ---
-  duration_ms: 0.686042
+  duration_ms: 2.14375
   type: 'test'
   ...
 # Subtest: the expansion adds only genuinely missing films and preserves unique catalogue IDs
 ok 368 - the expansion adds only genuinely missing films and preserves unique catalogue IDs
   ---
-  duration_ms: 20.347083
+  duration_ms: 23.948125
   type: 'test'
   ...
 # Subtest: all 28 requested films resolve exactly once and have playable production blueprints
 ok 369 - all 28 requested films resolve exactly once and have playable production blueprints
   ---
-  duration_ms: 13.89925
+  duration_ms: 19.841208
   type: 'test'
   ...
 # Subtest: the complete requested regional block resolves exactly once by title and year
 ok 370 - the complete requested regional block resolves exactly once by title and year
   ---
-  duration_ms: 11.044584
+  duration_ms: 18.526959
   type: 'test'
   ...
 # Subtest: generic translated titles reject unrelated same-year films
 ok 371 - generic translated titles reject unrelated same-year films
   ---
-  duration_ms: 8.983042
+  duration_ms: 7.832709
   type: 'test'
   ...
 # Subtest: Japanese auteur expansion contains exactly seven unique missing films
 ok 372 - Japanese auteur expansion contains exactly seven unique missing films
   ---
-  duration_ms: 2.035875
+  duration_ms: 1.632958
   type: 'test'
   ...
 # Subtest: all seven Japanese auteur films are new to the 275-case catalogue
 ok 373 - all seven Japanese auteur films are new to the 275-case catalogue
   ---
-  duration_ms: 12.756875
+  duration_ms: 11.854042
   type: 'test'
   ...
 # Subtest: every Japanese auteur film resolves once and has a playable brief blueprint
 ok 374 - every Japanese auteur film resolves once and has a playable brief blueprint
   ---
-  duration_ms: 9.37075
+  duration_ms: 11.613375
   type: 'test'
   ...
 # Subtest: the full requested Japanese block resolves exactly once
 ok 375 - the full requested Japanese block resolves exactly once
   ---
-  duration_ms: 9.253417
+  duration_ms: 5.676792
   type: 'test'
   ...
 # Subtest: Black Rain is disambiguated from the Ridley Scott film released in the same year
 ok 376 - Black Rain is disambiguated from the Ridley Scott film released in the same year
   ---
-  duration_ms: 4.993083
+  duration_ms: 2.592875
   type: 'test'
   ...
 # Subtest: the merged catalogue contains 282 unique Production Cases
 ok 377 - the merged catalogue contains 282 unique Production Cases
   ---
-  duration_ms: 5.871
+  duration_ms: 14.059584
   type: 'test'
   ...
 # Subtest: the first modern canon expansion contains exactly 27 unique films
 ok 378 - the first modern canon expansion contains exactly 27 unique films
   ---
-  duration_ms: 1.027083
+  duration_ms: 2.853792
   type: 'test'
   ...
 # Subtest: all 27 requested films are new to the 217-case catalogue
 ok 379 - all 27 requested films are new to the 217-case catalogue
   ---
-  duration_ms: 6.043792
+  duration_ms: 11.765167
   type: 'test'
   ...
 # Subtest: every requested film resolves once and has a complete playable brief blueprint
 ok 380 - every requested film resolves once and has a complete playable brief blueprint
   ---
-  duration_ms: 5.993417
+  duration_ms: 11.853375
   type: 'test'
   ...
 # Subtest: the merged catalogue contains 244 unique Production Cases
 ok 381 - the merged catalogue contains 244 unique Production Cases
   ---
-  duration_ms: 6.72825
+  duration_ms: 7.325084
   type: 'test'
   ...
 # Subtest: post-production seed catalogues provide stable professional coverage
 ok 382 - post-production seed catalogues provide stable professional coverage
   ---
-  duration_ms: 1.420917
+  duration_ms: 1.904458
   type: 'test'
   ...
 # Subtest: craft decisions apply immutably and duplicate applications have no second cost
 ok 383 - craft decisions apply immutably and duplicate applications have no second cost
   ---
-  duration_ms: 21.509917
+  duration_ms: 21.779166
   type: 'test'
   ...
 # Subtest: screening, trailer, and post evaluation are deterministic and bounded
 ok 384 - screening, trailer, and post evaluation are deterministic and bounded
   ---
-  duration_ms: 0.726791
+  duration_ms: 0.767458
   type: 'test'
   ...
 # Subtest: film results remain backward compatible and account for post cost and quality
 ok 385 - film results remain backward compatible and account for post cost and quality
   ---
-  duration_ms: 0.317
+  duration_ms: 0.346834
   type: 'test'
   ...
 # Subtest: priority indie completion contains exactly 20 unique missing films
 ok 386 - priority indie completion contains exactly 20 unique missing films
   ---
-  duration_ms: 0.76525
+  duration_ms: 0.748833
   type: 'test'
   ...
 # Subtest: all 20 completion films are new to the 244-case catalogue
 ok 387 - all 20 completion films are new to the 244-case catalogue
   ---
-  duration_ms: 7.845709
+  duration_ms: 11.227083
   type: 'test'
   ...
 # Subtest: every completion film resolves once and has a playable brief blueprint
 ok 388 - every completion film resolves once and has a playable brief blueprint
   ---
-  duration_ms: 5.697208
+  duration_ms: 9.406417
   type: 'test'
   ...
 # Subtest: the originally prioritized 27-film list is now complete exactly once
 ok 389 - the originally prioritized 27-film list is now complete exactly once
   ---
-  duration_ms: 4.821416
+  duration_ms: 9.036292
   type: 'test'
   ...
 # Subtest: the merged catalogue contains 264 unique Production Cases
 ok 390 - the merged catalogue contains 264 unique Production Cases
   ---
-  duration_ms: 4.397458
+  duration_ms: 4.734
   type: 'test'
   ...
 # Subtest: qualitative learning report is gated until all phases are complete
 ok 391 - qualitative learning report is gated until all phases are complete
   ---
-  duration_ms: 0.622792
+  duration_ms: 1.73925
   type: 'test'
   ...
 # Subtest: phase completion requires an explicit valid choice and next action stays instructional
 ok 392 - phase completion requires an explicit valid choice and next action stays instructional
   ---
-  duration_ms: 1.108084
+  duration_ms: 1.393833
   type: 'test'
   ...
 # Subtest: production case continuation resets only the selected case and resolves catalogue navigation
 ok 393 - production case continuation resets only the selected case and resolves catalogue navigation
   ---
-  duration_ms: 0.703959
+  duration_ms: 1.135541
   type: 'test'
   ...
 # Subtest: legacy v1 backup imports learning progress while ignoring historical best-result scoring
 ok 394 - legacy v1 backup imports learning progress while ignoring historical best-result scoring
   ---
-  duration_ms: 0.362542
+  duration_ms: 0.489709
   type: 'test'
   ...
 # Subtest: learning status tracks only not started, in progress, and completed
 ok 395 - learning status tracks only not started, in progress, and completed
   ---
-  duration_ms: 0.711166
+  duration_ms: 1.507834
   type: 'test'
   ...
 # Subtest: learning hints use qualities for explanation without calculating points
 ok 396 - learning hints use qualities for explanation without calculating points
   ---
-  duration_ms: 0.139625
+  duration_ms: 0.466417
   type: 'test'
   ...
 # Subtest: next action guides study rather than score improvement
 ok 397 - next action guides study rather than score improvement
   ---
-  duration_ms: 0.269125
+  duration_ms: 0.65875
   type: 'test'
   ...
 # Subtest: completed report groups understanding without score or rank fields
 ok 398 - completed report groups understanding without score or rank fields
   ---
-  duration_ms: 0.157583
+  duration_ms: 0.363041
   type: 'test'
   ...
 # Subtest: progress parsing normalizes scenario identity, duplicate completions, choices, and malformed input
 ok 399 - progress parsing normalizes scenario identity, duplicate completions, choices, and malformed input
   ---
-  duration_ms: 2.009709
+  duration_ms: 1.784625
   type: 'test'
   ...
 # Subtest: progress helpers preserve choices while completing phases and reset only the selected case
 ok 400 - progress helpers preserve choices while completing phases and reset only the selected case
   ---
-  duration_ms: 0.465084
+  duration_ms: 0.399292
   type: 'test'
   ...
 # Subtest: writing learning progress removes inert legacy score storage and removes empty progress
 ok 401 - writing learning progress removes inert legacy score storage and removes empty progress
   ---
-  duration_ms: 0.424459
+  duration_ms: 0.166541
   type: 'test'
   ...
 # Subtest: library status is qualitative and depends only on choices and phase completion
 ok 402 - library status is qualitative and depends only on choices and phase completion
   ---
-  duration_ms: 0.25225
+  duration_ms: 0.308583
   type: 'test'
   ...
 # Subtest: collection summary counts learning states without performance ranks
 ok 403 - collection summary counts learning states without performance ranks
   ---
-  duration_ms: 0.200125
+  duration_ms: 0.187834
   type: 'test'
   ...
 # Subtest: library controls preserve useful filters and normalize obsolete score sorts
 ok 404 - library controls preserve useful filters and normalize obsolete score sorts
   ---
-  duration_ms: 0.378166
+  duration_ms: 0.209916
   type: 'test'
   ...
 # Subtest: progress export v2 contains learning progress and controls only
 ok 405 - progress export v2 contains learning progress and controls only
   ---
-  duration_ms: 0.249167
+  duration_ms: 0.229083
   type: 'test'
   ...
 # Subtest: v2 backup preview and import restore learning progress and clear legacy score storage
 ok 406 - v2 backup preview and import restore learning progress and clear legacy score storage
   ---
-  duration_ms: 0.305
+  duration_ms: 0.266291
   type: 'test'
   ...
 # Subtest: legacy v1 backups remain importable but legacy best-result payloads are ignored
 ok 407 - legacy v1 backups remain importable but legacy best-result payloads are ignored
   ---
-  duration_ms: 0.472166
+  duration_ms: 0.394333
   type: 'test'
   ...
 # Subtest: backup validation rejects malformed progress without accepting score-only legacy state as progress
 ok 408 - backup validation rejects malformed progress without accepting score-only legacy state as progress
   ---
-  duration_ms: 0.577583
+  duration_ms: 0.391333
   type: 'test'
   ...
 # Subtest: next-case navigation is deterministic at catalogue boundaries
 ok 409 - next-case navigation is deterministic at catalogue boundaries
   ---
-  duration_ms: 0.233209
+  duration_ms: 0.141834
   type: 'test'
   ...
 # Subtest: recordCareerRosterFilm adds first-time collaborators with a film count of one
 ok 410 - recordCareerRosterFilm adds first-time collaborators with a film count of one
   ---
-  duration_ms: 1.377666
+  duration_ms: 1.162458
   type: 'test'
   ...
 # Subtest: recordCareerRosterFilm increments returning collaborators across films
 ok 411 - recordCareerRosterFilm increments returning collaborators across films
   ---
-  duration_ms: 1.529666
+  duration_ms: 2.099542
   type: 'test'
   ...
 # Subtest: recordCareerRosterFilm does not mutate the original career state
 ok 412 - recordCareerRosterFilm does not mutate the original career state
   ---
-  duration_ms: 0.27275
+  duration_ms: 0.251292
   type: 'test'
   ...
 # Subtest: release seed catalogues provide stable IDs and requested coverage
 ok 413 - release seed catalogues provide stable IDs and requested coverage
   ---
-  duration_ms: 0.556791
+  duration_ms: 1.494167
   type: 'test'
   ...
 # Subtest: release planning and strategy scoring are deterministic and immutable
 ok 414 - release planning and strategy scoring are deterministic and immutable
   ---
-  duration_ms: 0.840083
+  duration_ms: 1.065083
   type: 'test'
   ...
 # Subtest: festivals, critics, and audiences resolve without randomness
 ok 415 - festivals, critics, and audiences resolve without randomness
   ---
-  duration_ms: 0.46575
+  duration_ms: 0.664959
   type: 'test'
   ...
 # Subtest: a moderate film can receive recognition without sweeping the awards
 ok 416 - a moderate film can receive recognition without sweeping the awards
   ---
-  duration_ms: 11.466166
+  duration_ms: 11.004
   type: 'test'
   ...
 # Subtest: an exceptional film can win several awards but still has a ranked slate
 ok 417 - an exceptional film can win several awards but still has a ranked slate
   ---
-  duration_ms: 0.558708
+  duration_ms: 0.300416
   type: 'test'
   ...
 # Subtest: award wins require an accepted festival
 ok 418 - award wins require an accepted festival
   ---
-  duration_ms: 0.297292
+  duration_ms: 0.0935
   type: 'test'
   ...
 # Subtest: revenue, awards, evaluation, and studio application form one immutable pipeline
 ok 419 - revenue, awards, evaluation, and studio application form one immutable pipeline
   ---
-  duration_ms: 7.410125
+  duration_ms: 10.473375
   type: 'test'
   ...
 # Subtest: Scandinavian and European round contains exactly twenty-two unique target films
 ok 420 - Scandinavian and European round contains exactly twenty-two unique target films
   ---
-  duration_ms: 0.599917
+  duration_ms: 3.593
   type: 'test'
   ...
 # Subtest: every Scandinavian and European target resolves exactly once with a playable brief
 ok 421 - every Scandinavian and European target resolves exactly once with a playable brief
   ---
-  duration_ms: 1.780583
+  duration_ms: 1.811459
   type: 'test'
   ...
 # Subtest: the complete requested Scandinavian and European block resolves exactly once
 ok 422 - the complete requested Scandinavian and European block resolves exactly once
   ---
-  duration_ms: 0.506
+  duration_ms: 0.4775
   type: 'test'
   ...
 # Subtest: generic translated titles do not absorb unrelated same-year films
 ok 423 - generic translated titles do not absorb unrelated same-year films
   ---
-  duration_ms: 0.144125
+  duration_ms: 0.134708
   type: 'test'
   ...
 # Subtest: Scandinavian and European round adds 15 cases and produces 330 unique Production Cases
 ok 424 - Scandinavian and European round adds 15 cases and produces 330 unique Production Cases
   ---
-  duration_ms: 0.107834
+  duration_ms: 0.101208
   type: 'test'
   ...
 # Subtest: assessScenarioAlignment handles empty target lists without exposing a score
 ok 425 - assessScenarioAlignment handles empty target lists without exposing a score
   ---
-  duration_ms: 0.768125
+  duration_ms: 1.733541
   type: 'test'
   ...
 # Subtest: assessScenarioAlignment asks for reconsideration when no targets are selected
 ok 426 - assessScenarioAlignment asks for reconsideration when no targets are selected
   ---
-  duration_ms: 0.141875
+  duration_ms: 0.239042
   type: 'test'
   ...
 # Subtest: assessScenarioAlignment keeps sparse selections qualitative
 ok 427 - assessScenarioAlignment keeps sparse selections qualitative
   ---
-  duration_ms: 0.072958
+  duration_ms: 0.100083
   type: 'test'
   ...
 # Subtest: assessScenarioAlignment marks a meaningful subset as partial
 ok 428 - assessScenarioAlignment marks a meaningful subset as partial
   ---
-  duration_ms: 0.053958
+  duration_ms: 0.058417
   type: 'test'
   ...
 # Subtest: assessScenarioAlignment marks broad method identification as clear
 ok 429 - assessScenarioAlignment marks broad method identification as clear
   ---
-  duration_ms: 0.106042
+  duration_ms: 0.076208
   type: 'test'
   ...
 # Subtest: assessScenarioAlignment caps selectedCount at the available target count
 ok 430 - assessScenarioAlignment caps selectedCount at the available target count
   ---
-  duration_ms: 0.06
+  duration_ms: 0.059
   type: 'test'
   ...
 # Subtest: getScenarioAlignmentSummary guides reconsideration without score language
 ok 431 - getScenarioAlignmentSummary guides reconsideration without score language
   ---
-  duration_ms: 0.512291
+  duration_ms: 0.514292
   type: 'test'
   ...
 # Subtest: getScenarioAlignmentSummary describes a partial method connection
 ok 432 - getScenarioAlignmentSummary describes a partial method connection
   ---
-  duration_ms: 0.080875
+  duration_ms: 0.066583
   type: 'test'
   ...
 # Subtest: getScenarioAlignmentSummary describes a clear method connection
 ok 433 - getScenarioAlignmentSummary describes a clear method connection
   ---
-  duration_ms: 0.05475
+  duration_ms: 0.07475
   type: 'test'
   ...
 # Subtest: production event seeds cover the required first shoot scenarios
 ok 434 - production event seeds cover the required first shoot scenarios
   ---
-  duration_ms: 3.853375
+  duration_ms: 3.484666
   type: 'test'
   ...
 # Subtest: schedules group scenes, allocate the project budget, and do not mutate scenes
 ok 435 - schedules group scenes, allocate the project budget, and do not mutate scenes
   ---
-  duration_ms: 0.655667
+  duration_ms: 0.70525
   type: 'test'
   ...
 # Subtest: difficulty responds to dramatic, technical, location, and cast pressure
 ok 436 - difficulty responds to dramatic, technical, location, and cast pressure
   ---
-  duration_ms: 0.2525
+  duration_ms: 0.142916
   type: 'test'
   ...
 # Subtest: events are applied immutably and duplicate applications have no second cost
 ok 437 - events are applied immutably and duplicate applications have no second cost
   ---
-  duration_ms: 1.922041
+  duration_ms: 1.078875
   type: 'test'
   ...
 # Subtest: shoot resolution and evaluation account for event cost, delay, and upside
 ok 438 - shoot resolution and evaluation account for event cost, delay, and upside
   ---
-  duration_ms: 1.265125
+  duration_ms: 1.288
   type: 'test'
   ...
 # Subtest: South Korean cinema expansion contains exactly four unique missing films
 ok 439 - South Korean cinema expansion contains exactly four unique missing films
   ---
-  duration_ms: 1.3515
+  duration_ms: 1.018667
   type: 'test'
   ...
 # Subtest: all four South Korean films are new to the preceding 282-case catalogue
 ok 440 - all four South Korean films are new to the preceding 282-case catalogue
   ---
-  duration_ms: 18.829292
+  duration_ms: 11.624208
   type: 'test'
   ...
 # Subtest: every South Korean expansion film resolves once and has a playable brief blueprint
 ok 441 - every South Korean expansion film resolves once and has a playable brief blueprint
   ---
-  duration_ms: 13.246458
+  duration_ms: 10.774125
   type: 'test'
   ...
 # Subtest: the complete requested South Korean block resolves exactly once
 ok 442 - the complete requested South Korean block resolves exactly once
   ---
-  duration_ms: 6.311625
+  duration_ms: 8.045583
   type: 'test'
   ...
 # Subtest: ambiguous English titles do not match unrelated same-year films
 ok 443 - ambiguous English titles do not match unrelated same-year films
   ---
-  duration_ms: 19.060333
+  duration_ms: 7.958791
   type: 'test'
   ...
 # Subtest: the merged catalogue contains 286 unique Production Cases
 ok 444 - the merged catalogue contains 286 unique Production Cases
   ---
-  duration_ms: 34.352208
+  duration_ms: 8.847709
   type: 'test'
   ...
 # Subtest: South and Southeast Asian expansion contains exactly seven unique films
 ok 445 - South and Southeast Asian expansion contains exactly seven unique films
   ---
-  duration_ms: 0.585167
+  duration_ms: 0.554458
   type: 'test'
   ...
 # Subtest: all seven films are new to the preceding 286-case catalogue
 ok 446 - all seven films are new to the preceding 286-case catalogue
   ---
-  duration_ms: 12.3685
+  duration_ms: 9.145875
   type: 'test'
   ...
 # Subtest: every expansion film resolves once and has a playable brief blueprint
 ok 447 - every expansion film resolves once and has a playable brief blueprint
   ---
-  duration_ms: 14.11225
+  duration_ms: 13.582583
   type: 'test'
   ...
 # Subtest: the complete requested seven-film block resolves exactly once
 ok 448 - the complete requested seven-film block resolves exactly once
   ---
-  duration_ms: 6.489667
+  duration_ms: 14.170292
   type: 'test'
   ...
 # Subtest: generic English titles do not match unrelated same-year films
 ok 449 - generic English titles do not match unrelated same-year films
   ---
-  duration_ms: 10.452542
+  duration_ms: 11.405666
   type: 'test'
   ...
 # Subtest: the merged catalogue contains 293 unique Production Cases
 ok 450 - the merged catalogue contains 293 unique Production Cases
   ---
-  duration_ms: 16.694917
+  duration_ms: 6.0895
   type: 'test'
   ...
 # Subtest: studio career pipeline order advances from development through career review only after release
 ok 451 - studio career pipeline order advances from development through career review only after release
   ---
-  duration_ms: 0.590875
+  duration_ms: 0.621459
   type: 'test'
   ...
 # Subtest: studio career active targets keep post, release, and career review distinct
 ok 452 - studio career active targets keep post, release, and career review distinct
   ---
-  duration_ms: 0.170916
+  duration_ms: 0.280208
   type: 'test'
   ...
 # Subtest: studio career completed project collapse keeps latest project actionable
 ok 453 - studio career completed project collapse keeps latest project actionable
   ---
-  duration_ms: 0.105792
+  duration_ms: 0.224542
   type: 'test'
   ...
 # Subtest: studio career project-scoped release control names are unique per project
 ok 454 - studio career project-scoped release control names are unique per project
   ---
-  duration_ms: 0.11325
+  duration_ms: 0.208
   type: 'test'
   ...
 # Subtest: studio career application invariants tolerate missing optional project details
 ok 455 - studio career application invariants tolerate missing optional project details
   ---
-  duration_ms: 1.117792
+  duration_ms: 0.817
   type: 'test'
   ...
 1..455
@@ -597,4 +597,4 @@ ok 455 - studio career application invariants tolerate missing optional project 
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 5180.978916
+# duration_ms 5696.177875
