@@ -136,6 +136,7 @@ import { unknownPleasuresFilmHistoryProfile } from "./scenarioFilmStudyChapterEi
 import { oldboyFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenOldboy";
 import { brokebackMountainFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenBrokebackMountain";
 import { cacheFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenCache";
+import { childrenOfMenFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenChildrenOfMen";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -298,6 +299,7 @@ const sourceBackedFilmHistoryProfiles = {
   [oldboyFilmHistoryProfile.scenarioId]: oldboyFilmHistoryProfile,
   [brokebackMountainFilmHistoryProfile.scenarioId]: brokebackMountainFilmHistoryProfile,
   [cacheFilmHistoryProfile.scenarioId]: cacheFilmHistoryProfile,
+  [childrenOfMenFilmHistoryProfile.scenarioId]: childrenOfMenFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
