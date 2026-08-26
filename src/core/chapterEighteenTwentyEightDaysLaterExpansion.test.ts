@@ -21,6 +21,7 @@ test("Chapter 18 materializes 28 Days Later as a source-first MiniDV, multi-came
   assert.ok(film.premise.includes("Linux Shake") && film.premise.includes("FilmTel") && film.premise.includes("2K"));
   assert.ok(film.premise.includes("Kodak Vision Color Intermediate 5242") && film.premise.includes("Fuji HiCon 3519D") && film.premise.includes("Vision 2383"));
   assert.ok(film.premise.includes("upconversion and 2K interpolation did not create original image detail"));
+  assert.ok(film.premise.includes("microphones, recorders") && film.premise.includes("track counts"));
 
   assert.ok(film.requiredChoicesSeed.camera.includes("pal_canon_xl1_minidv"));
   assert.ok(film.requiredChoicesSeed.editing.includes("d1_conform"));
@@ -30,7 +31,7 @@ test("Chapter 18 materializes 28 Days Later as a source-first MiniDV, multi-came
   assert.ok(film.learningGoals.some((goal) => goal.includes("eight Canon XL1")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("D-1 4:2:2") && goal.includes("MiniDV")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Arrilaser") && goal.includes("5242")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("microphones") && goal.includes("recorders")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("sound") && goal.includes("equipment")));
 
   assert.ok(film.phases.find((phase) => phase.id === "minidv_format")?.player_task.includes("native 2K"));
   assert.ok(film.phases.find((phase) => phase.id === "eight_camera_plan")?.player_task.includes("traffic-controlled"));
