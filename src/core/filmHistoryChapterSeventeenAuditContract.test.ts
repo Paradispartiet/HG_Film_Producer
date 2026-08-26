@@ -156,14 +156,14 @@ const exactHistoricalObjectLabels = [
 ] as const;
 
 test("Chapter 17 audit locks the 1990s specialty-digital-global-production scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 523;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 524;/);
   assert.equal(resolved.chapter.number, 17);
   assert.equal(resolved.chapter.id, "specialty-digital-global-production");
   assert.equal(resolved.chapter.title, "Specialty cinema, digital transition and globalized production");
   assert.equal(resolved.chapter.period, "1990–1999");
-  assert.equal(resolved.atlas.expectedCount, 523);
-  assert.equal(resolved.atlas.actualCount, 523);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 523);
+  assert.equal(resolved.atlas.expectedCount, 524);
+  assert.equal(resolved.atlas.actualCount, 524);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 524);
 });
 
 test("Chapter 17 locks the exact candidate census and allows no duplicate Atlas matches", () => {

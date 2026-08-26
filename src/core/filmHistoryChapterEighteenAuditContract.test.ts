@@ -46,7 +46,7 @@ const exactCandidateTitles = [
 
 const exactExisting = [
   "The Gleaners and I", "Platform", "Dancer in the Dark", "In the Mood for Love", "Yi Yi", "Crouching Tiger, Hidden Dragon", "Atanarjuat: The Fast Runner", "Spirited Away", "The Son's Room", "Millennium Mambo", "Russian Ark", "City of God", "Star Wars: Episode II - Attack of the Clones", "28 Days Later", "Unknown Pleasures", "Oldboy", "Lost in Translation", "The Return", "Collateral", "Tropical Malady",
-  "Head-On", "Vera Drake", "Brokeback Mountain", "Caché", "Inland Empire", "Still Life", "Children of Men", "Zodiac", "Secret Sunshine", "No Country for Old Men", "4 Months, 3 Weeks and 2 Days", "Slumdog Millionaire",
+  "Head-On", "Vera Drake", "Brokeback Mountain", "Caché", "Inland Empire", "Still Life", "Children of Men", "Pan's Labyrinth", "Zodiac", "Secret Sunshine", "No Country for Old Men", "4 Months, 3 Weeks and 2 Days", "Slumdog Millionaire",
   "Waltz with Bashir", "Wendy and Lucy", "The Wrestler", "Hunger", "Avatar", "A Prophet", "The White Ribbon", "The Milk of Sorrow", "The Social Network",
   "Poetry", "Somewhere", "A Separation", "Pietà", "Gravity", "Blue Is the Warmest Colour", "Birdman", "Boyhood", "Winter Sleep", "Black Coal, Thin Ice",
   "Tangerine", "Mad Max: Fury Road", "Son of Saul", "From Afar", "Moonlight", "Toni Erdmann", "Dunkirk", "Roma", "Burning", "Spider-Man: Into the Spider-Verse", "An Elephant Sitting Still", "Parasite", "The Irishman", "Synonyms",
@@ -56,7 +56,7 @@ const exactExisting = [
 const exactP0Queue = [] as const;
 
 const exactP1Queue = [
-  "Pan's Labyrinth", "Apocalypto", "There Will Be Blood", "Uncle Boonmee Who Can Recall His Past Lives",
+  "Apocalypto", "There Will Be Blood", "Uncle Boonmee Who Can Recall His Past Lives",
   "The Tree of Life", "Pina", "Amour", "Holy Motors", "Ida", "The Revenant", "I Am Not Your Negro", "Get Out", "Cold War",
   "1917", "Atlantics",
 ] as const;
@@ -80,14 +80,14 @@ const exactHistoricalObjectLabels = [
 ] as const;
 
 test("Chapter 18 audit locks the 2000–2019 digital-convergence scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 523;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 524;/);
   assert.equal(resolved.chapter.number, 18);
   assert.equal(resolved.chapter.id, "digital-convergence-transnational-production");
   assert.equal(resolved.chapter.title, "Digital convergence, transnational production and platform-era cinema");
   assert.equal(resolved.chapter.period, "2000–2019");
-  assert.equal(resolved.atlas.expectedCount, 523);
-  assert.equal(resolved.atlas.actualCount, 523);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 523);
+  assert.equal(resolved.atlas.expectedCount, 524);
+  assert.equal(resolved.atlas.actualCount, 524);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 524);
 });
 
 test("Chapter 18 locks the exact candidate census without duplicate Atlas matches", () => {
@@ -103,11 +103,11 @@ test("Chapter 18 locks the exact evidence-derived Production Case queues", () =>
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactExisting.length, 66);
+  assert.equal(exactExisting.length, 67);
   assert.equal(exactP0Queue.length, 0);
-  assert.equal(exactP1Queue.length, 15);
+  assert.equal(exactP1Queue.length, 14);
   assert.equal(exactP2Queue.length, 1);
-  assert.equal(resolved.recommendedNewProductionCases.length, 15);
+  assert.equal(resolved.recommendedNewProductionCases.length, 14);
   assert.deepEqual(
     resolved.recommendedNewProductionCases,
     resolved.candidates
