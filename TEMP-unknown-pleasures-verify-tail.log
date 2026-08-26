@@ -1,0 +1,500 @@
+      "aliases": [],
+      "role": "anchor_film",
+      "decisionIfMissing": "P0",
+      "chapterFunction": "Digital de-aging, camera/data capture and streaming-backed financing/distribution make performance-preserving VFX and platform production intersect.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_irishman_2019",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenTheIrishmanExpansion.ts"
+    },
+    {
+      "title": "1917",
+      "originalTitle": "1917",
+      "year": 2019,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Digital large-format capture, extensive rehearsal and hidden transitions make apparent continuity a coordinated production/post system.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "Atlantics",
+      "originalTitle": "Atlantique",
+      "year": 2019,
+      "aliases": [
+        "Atlantique"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Senegalese-French production and supernatural social realism make African authorship and European co-production infrastructure visible together.",
+      "decision": "P1",
+      "scenarioId": null,
+      "matches": 0,
+      "productionVerified": false,
+      "origin": null
+    },
+    {
+      "title": "Synonyms",
+      "originalTitle": "Synonymes",
+      "year": 2019,
+      "aliases": [
+        "Synonymes"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P2",
+      "chapterFunction": "Israeli-French transnational production makes language, migration and European co-production a late-decade art-cinema comparison.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_synonyms_2019",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "festivalWinners2010To2024Expansion.ts"
+    },
+    {
+      "title": "Portrait of a Lady on Fire",
+      "originalTitle": "Portrait de la jeune fille en feu",
+      "year": 2019,
+      "aliases": [
+        "Portrait de la jeune fille en feu"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "French historical production and digital cinematography make performance, naturalistic lighting design and contemporary production ethics central.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_portrait_of_a_lady_on_fire_2019",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "italyFranceGermanyBeneluxExpansion.ts"
+    }
+  ],
+  "byDecision": {
+    "USE_EXISTING": [
+      "The Gleaners and I",
+      "Platform",
+      "Dancer in the Dark",
+      "In the Mood for Love",
+      "Yi Yi",
+      "Crouching Tiger, Hidden Dragon",
+      "Atanarjuat: The Fast Runner",
+      "Spirited Away",
+      "The Son's Room",
+      "Millennium Mambo",
+      "Russian Ark",
+      "City of God",
+      "Star Wars: Episode II - Attack of the Clones",
+      "28 Days Later",
+      "Unknown Pleasures",
+      "Lost in Translation",
+      "The Return",
+      "Collateral",
+      "Tropical Malady",
+      "Head-On",
+      "Vera Drake",
+      "Inland Empire",
+      "Still Life",
+      "Zodiac",
+      "Secret Sunshine",
+      "No Country for Old Men",
+      "4 Months, 3 Weeks and 2 Days",
+      "Slumdog Millionaire",
+      "Waltz with Bashir",
+      "Wendy and Lucy",
+      "The Wrestler",
+      "Hunger",
+      "Avatar",
+      "A Prophet",
+      "The White Ribbon",
+      "The Milk of Sorrow",
+      "The Social Network",
+      "Poetry",
+      "Somewhere",
+      "A Separation",
+      "Pietà",
+      "Gravity",
+      "Blue Is the Warmest Colour",
+      "Birdman",
+      "Boyhood",
+      "Winter Sleep",
+      "Black Coal, Thin Ice",
+      "Tangerine",
+      "Mad Max: Fury Road",
+      "Son of Saul",
+      "From Afar",
+      "Moonlight",
+      "Toni Erdmann",
+      "Dunkirk",
+      "Roma",
+      "Burning",
+      "Spider-Man: Into the Spider-Verse",
+      "An Elephant Sitting Still",
+      "Parasite",
+      "The Irishman",
+      "Synonyms",
+      "Portrait of a Lady on Fire"
+    ],
+    "P0": [],
+    "P1": [
+      "Oldboy",
+      "Brokeback Mountain",
+      "Caché",
+      "Children of Men",
+      "Pan's Labyrinth",
+      "Apocalypto",
+      "There Will Be Blood",
+      "Uncle Boonmee Who Can Recall His Past Lives",
+      "The Tree of Life",
+      "Pina",
+      "Amour",
+      "Holy Motors",
+      "Ida",
+      "The Revenant",
+      "I Am Not Your Negro",
+      "Get Out",
+      "Cold War",
+      "1917",
+      "Atlantics"
+    ],
+    "P2": [
+      "The New World"
+    ],
+    "EXISTING_REQUIRED": []
+  },
+  "recommendedNewProductionCases": [
+    "Oldboy",
+    "Brokeback Mountain",
+    "Caché",
+    "Children of Men",
+    "Pan's Labyrinth",
+    "Apocalypto",
+    "There Will Be Blood",
+    "Uncle Boonmee Who Can Recall His Past Lives",
+    "The Tree of Life",
+    "Pina",
+    "Amour",
+    "Holy Motors",
+    "Ida",
+    "The Revenant",
+    "I Am Not Your Negro",
+    "Get Out",
+    "Cold War",
+    "1917",
+    "Atlantics"
+  ],
+  "historicalObjects": [
+    {
+      "label": "Digital intermediate, color grading and data-centric post-production",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Scanning, conforming, grading, visual-effects integration and film-out moved increasingly into digital pipelines, but a digital intermediate does not imply digital acquisition and adoption remained uneven."
+    },
+    {
+      "label": "Digital acquisition from DV and CineAlta to Viper, Genesis, RED and Alexa",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Small DV cameras, early HD systems, uncompressed data cameras and later large-sensor cinema cameras enabled different production practices; they are separate technical generations rather than one device-neutral digital format."
+    },
+    {
+      "label": "DCI standardization and digital theatrical exhibition",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Digital Cinema Initiatives standardized interoperable mastering, distribution and projection requirements during the 2000s, changing exhibition infrastructure independently from how a film was photographed."
+    },
+    {
+      "label": "Performance capture, previs, virtual cameras and post-led production design",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Effects-heavy productions increasingly used performance capture, previs, virtual sets, virtual cameras and simulation as production-planning systems, but these practices remained distinct from ordinary compositing and from live-action cinematography."
+    },
+    {
+      "label": "Digital feature animation and deliberately non-photoreal pipelines",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Computer animation expanded through specialized modeling, rigging, lighting, rendering and compositing labor while hand-drawn and hybrid animation persisted; animation history is not a linear replacement story."
+    },
+    {
+      "label": "Lightweight DV, HD, DSLR and smartphone production",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Cheaper and smaller cameras reduced some barriers to location access and crew scale, enabling documentary, independent and regional production models that differed materially from high-end digital cinema."
+    },
+    {
+      "label": "Transnational co-production, public funds, sales agents and festival circulation",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Cross-border co-production and public funding remained structural to many films, especially in Europe and international art cinema; finance, production ownership, sales and festival recognition must remain separate evidence layers."
+    },
+    {
+      "label": "Distinct East Asian industrial expansions and export systems",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Mainland Chinese, Hong Kong, Taiwanese, Japanese and South Korean industries followed distinct combinations of state regulation, commercial scale, independent production, animation, festivals and global distribution."
+    },
+    {
+      "label": "African, Latin American, Middle Eastern and diasporic production networks",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Regional and diasporic filmmakers used national institutions, public funds, private finance, digital tools and transnational partners under unequal conditions; location and subject matter never substitute for production ownership evidence."
+    },
+    {
+      "label": "Hybrid documentary, archive, animation and staged nonfiction",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Documentary production increasingly combined digital observation, archival material, animation, reenactment and essay structures, requiring careful separation of source evidence from formal reconstruction."
+    },
+    {
+      "label": "Platform and streaming distribution emerging beside theatrical systems",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Online and streaming distribution became increasingly important in the 2010s, but platform financing, original production ownership, festival premieres and theatrical release windows are separate institutional facts."
+    },
+    {
+      "label": "Photochemical persistence, 65mm and IMAX countercurrents",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "35mm, Super 16, 65mm and IMAX production continued throughout the period for aesthetic, archival and technical reasons; digital dominance never means film disappeared."
+    },
+    {
+      "label": "Stereoscopic 3D and premium-format exhibition",
+      "role": "historical_object",
+      "atlasDecision": "NO_PRODUCTION_CASE",
+      "chapterFunction": "Native or converted stereoscopic 3D and premium formats changed selected capture, post and exhibition workflows, but 3D is neither synonymous with digital cinema nor a universal production norm."
+    }
+  ],
+  "researchSources": [
+    {
+      "title": "Attack of the zeros and ones: the early years of digital cinema, as told by David Lynch, Miranda July, Michael Mann and more",
+      "publisher": "BFI / Sight and Sound",
+      "url": "https://www.bfi.org.uk/sight-and-sound/features/attack-zeros-ones-early-years-digital-cinema-told-david-lynch-miranda-july-michael-mann-more",
+      "supports": [
+        "early_digital_capture",
+        "dv",
+        "cinealta",
+        "russian_ark",
+        "inland_empire",
+        "industry_transition"
+      ]
+    },
+    {
+      "title": "10 great early digital films",
+      "publisher": "BFI",
+      "url": "https://www.bfi.org.uk/lists/10-great-early-digital-films",
+      "supports": [
+        "early_digital_features",
+        "russian_ark",
+        "dv",
+        "slumdog_millionaire"
+      ]
+    },
+    {
+      "title": "Digital Cinema Initiatives announces final overall system requirements and specifications for digital cinema",
+      "publisher": "Digital Cinema Initiatives",
+      "url": "https://www.dcimovies.com/press/",
+      "supports": [
+        "dci",
+        "digital_exhibition",
+        "interoperability",
+        "distribution"
+      ]
+    },
+    {
+      "title": "Digital Cinema System Specification",
+      "publisher": "Digital Cinema Initiatives",
+      "url": "https://www.dcimovies.com/dci-specification/",
+      "supports": [
+        "digital_cinema_mastering",
+        "distribution",
+        "theatrical_playback",
+        "standardization"
+      ]
+    },
+    {
+      "title": "Scientific & Technical Awards 2016 | 2017",
+      "publisher": "Academy of Motion Picture Arts and Sciences",
+      "url": "https://www.oscars.org/sci-tech/ceremonies/2017",
+      "supports": [
+        "viper",
+        "genesis",
+        "arri_alexa",
+        "red_epic",
+        "sony_f65",
+        "digital_camera_adoption"
+      ]
+    },
+    {
+      "title": "Escaping From Chains: O Brother, Where Art Thou?",
+      "publisher": "American Society of Cinematographers",
+      "url": "https://theasc.com/article/o-brother-cinematography-deakins/",
+      "supports": [
+        "digital_intermediate",
+        "digital_color_grading",
+        "film_origin",
+        "film_out"
+      ]
+    },
+    {
+      "title": "Hell on Wheels: Collateral",
+      "publisher": "American Society of Cinematographers",
+      "url": "https://theasc.com/articles/hell-on-wheels-collateral",
+      "supports": [
+        "collateral",
+        "hybrid_hd_35mm",
+        "viper",
+        "f900",
+        "digital_intermediate"
+      ]
+    },
+    {
+      "title": "Zodiac: Cold Case File",
+      "publisher": "American Society of Cinematographers",
+      "url": "https://theasc.com/article/flashback-zodiac/",
+      "supports": [
+        "zodiac",
+        "viper",
+        "uncompressed_hd",
+        "tapeless_workflow",
+        "digital_negative"
+      ]
+    },
+    {
+      "title": "Conquering New Worlds: Avatar",
+      "publisher": "American Society of Cinematographers",
+      "url": "https://theasc.com/article/avatar/",
+      "supports": [
+        "avatar",
+        "performance_capture",
+        "virtual_camera",
+        "simulcam",
+        "virtual_scouting"
+      ]
+    },
+    {
+      "title": "Co-production funding history",
+      "publisher": "Council of Europe / Eurimages",
+      "url": "https://www.coe.int/en/web/eurimages/co-production-funding-history",
+      "supports": [
+        "international_coproduction",
+        "public_funding",
+        "european_cinema",
+        "2000s_2010s"
+      ]
+    },
+    {
+      "title": "About Eurimages - European Cinema Support Fund",
+      "publisher": "Council of Europe / Eurimages",
+      "url": "https://www.coe.int/en/web/eurimages/about",
+      "supports": [
+        "public_funding",
+        "international_coproduction",
+        "features_documentary_animation"
+      ]
+    },
+    {
+      "title": "Syndromes of a new century: introducing the best films of the 2000s",
+      "publisher": "BFI / Sight and Sound",
+      "url": "https://www.bfi.org.uk/sight-and-sound/syndromes-new-century-introducing-best-films-2000s",
+      "supports": [
+        "2000s_digital_cinema",
+        "russian_ark",
+        "kiarostami",
+        "jia_zhangke",
+        "regional_digital_practice"
+      ]
+    }
+  ],
+  "boundaryNotes": [
+    "Chapter 18 begins in 2000 after Chapter 17's late-1990s convergence of consumer video, software animation, digital compositing and global specialty circulation; none of those systems begin from zero at the millennium.",
+    "Digital capture is only one part of the period. Digital intermediate, color grading, VFX, sound, animation and nonlinear editing were already changing production before high-end digital cameras became dominant.",
+    "DCI's 2000s standardization changed theatrical mastering, distribution and projection separately from original camera capture, while streaming later added another distribution layer rather than replacing theatrical cinema in one step.",
+    "The chapter ends in 2019 with high-end digital capture widespread, platform financing/distribution increasingly consequential, virtual-production techniques expanding and photochemical/large-format production still deliberately active; 2020s pandemic and mature streaming-era production belong to the next chapter."
+  ],
+  "safeguards": [
+    "Digital is never treated as one switch: capture, digital intermediate, editing, sound, VFX, animation, mastering, distribution and exhibition changed on different schedules.",
+    "A digital intermediate or digitally graded release never proves that principal photography was digital.",
+    "DCI standardization concerns digital cinema mastering, distribution and exhibition; it does not prove any title's camera, lens, recording or on-set workflow.",
+    "Performance capture, motion capture, previs, virtual cameras, SimulCam, CGI, compositing and ordinary live-action cinematography remain distinct systems unless title-specific sources connect them.",
+    "Small-camera access is not romanticized as automatically safer, cheaper, more ethical or more democratic; permissions, labor, safeguarding, privacy and public safety remain independent requirements.",
+    "Festival selection, prizes and sales-agent activity are circulation evidence, not substitutes for financing, production-company, ownership or labor evidence.",
+    "Mainland China, Hong Kong, Taiwan, Japan and South Korea are never collapsed into one East Asian digital wave.",
+    "African, Latin American, Middle Eastern and diasporic films retain title-specific national, regional and transnational production structures; subject matter and location do not determine production ownership.",
+    "Streaming or platform distribution does not by itself establish who financed, produced or controlled a film, and a festival premiere does not make a film platform-produced.",
+    "Photochemical capture, Super 16, 35mm, 65mm and IMAX remain valid period practices; digital dominance does not license a claim that film disappeared.",
+    "Claims of a technical first, industry first, invention or decisive influence require direct high-authority evidence and are never inferred from popularity or awards.",
+    "Camera bodies, lenses, codecs, data rates, recording media, LUTs, color spaces, VFX software, render architecture, storage topology and finishing paths require film-specific evidence.",
+    "Documentary footage, archive, animation, reenactment and staged material retain different evidentiary status; formal hybridity never turns reconstruction into historical proof.",
+    "Stunts, weapons, pyrotechnics, water work, extreme locations, child performance, intimacy and physical transformation remain historical production evidence, not present-day procedural instruction."
+  ]
+}
+
+> hg-film-producer@0.1.0 typecheck
+> tsc --noEmit && tsc -p tsconfig.app.json
+
+src/ui/data/scenarioProductionVerificationRegistry.ts(468,12): error TS1360: Type 'readonly [{ readonly scenarioId: "scenario_one_flew_over_the_cuckoo_s_nest_1975"; readonly status: "verified"; readonly verifiedAt: "2026-07-19"; readonly summary: "The brief's institutional pressure, ensemble realism, group-therapy conflict, performance-led escalation, and location-shaped atmosphere are supported b...' does not satisfy the expected type 'readonly ProductionCaseVerificationRecord[]'.
+  Type '{ readonly scenarioId: "scenario_man_of_iron_1981"; readonly status: "verified"; readonly verifiedAt: "2026-07-20"; readonly summary: "The case's Solidarity-era investigation, Gdańsk shipyard setting, archive-and-fiction structure, Edward Kłosiński photography, Allan Starski design, Halina Prugar-Ketling editing, Pi...' is not assignable to type 'ProductionCaseVerificationRecord'.
+    Type '{ readonly scenarioId: "scenario_unknown_pleasures_2002"; readonly status: "verified"; readonly verifiedAt: "2026-08-26"; readonly summary: "Unknown Pleasures is verified as a 2002 digital-video production case whose small-camera public-space access, nineteen-day schedule, long-take performance geometry, deliberatel...' is not assignable to type 'ProductionCaseVerificationRecord'.
+      Types of property 'sources' are incompatible.
+        Type 'readonly [{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the ...' is not assignable to type 'readonly ProductionCaseVerificationSource[]'.
+          Type '{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the 113-minute...' is not assignable to type 'ProductionCaseVerificationSource'.
+            Type '{ readonly title: "Interview: Jia Zhang-ke on Ash Is Purest White and the Evolution of China"; readonly publisher: "Slant Magazine"; readonly url: "https://www.slantmagazine.com/film/interview-jia-zhang-ke-on-ash-is-purest-white-censorship-and-the-evolution-of-china/"; readonly sourceKind: "filmmaker_interview"; rea...' is not assignable to type 'ProductionCaseVerificationSource'.
+              Types of property 'supports' are incompatible.
+                Type 'readonly ["overall", "cinematography", "performance"]' is not assignable to type 'readonly ProductionCaseVerificationArea[]'.
+                  Type '"cinematography" | "performance" | "overall"' is not assignable to type 'ProductionCaseVerificationArea'.
+                    Type '"performance"' is not assignable to type 'ProductionCaseVerificationArea'.
+src/ui/data/scenarioProductionVerificationRegistry.ts(471,3): error TS2769: No overload matches this call.
+  Overload 1 of 4, '(iterable?: Iterable<readonly [string, ProductionCaseVerificationRecord]> | null | undefined): Map<string, ProductionCaseVerificationRecord>', gave the following error.
+    Argument of type '["scenario_a_trip_to_the_moon_1902" | "scenario_the_cabinet_of_dr_caligari_1920" | "scenario_nosferatu_1922" | "scenario_battleship_potemkin_1925" | "scenario_the_general_1926" | ... 505 more ... | "scenario_where_is_the_friend_s_house_1987", { ...; } | ... 509 more ... | { ...; }][]' is not assignable to parameter of type 'Iterable<readonly [string, ProductionCaseVerificationRecord]>'.
+      The types returned by '[Symbol.iterator]().next(...)' are incompatible between these types.
+        Type 'IteratorResult<["scenario_a_trip_to_the_moon_1902" | "scenario_the_cabinet_of_dr_caligari_1920" | "scenario_nosferatu_1922" | "scenario_battleship_potemkin_1925" | "scenario_the_general_1926" | ... 505 more ... | "scenario_where_is_the_friend_s_house_1987", { ...; } | ... 509 more ... | { ...; }], undefined>' is not assignable to type 'IteratorResult<readonly [string, ProductionCaseVerificationRecord], any>' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+          Type 'IteratorYieldResult<["scenario_a_trip_to_the_moon_1902" | "scenario_the_cabinet_of_dr_caligari_1920" | "scenario_nosferatu_1922" | "scenario_battleship_potemkin_1925" | "scenario_the_general_1926" | ... 505 more ... | "scenario_where_is_the_friend_s_house_1987", { ...; } | ... 509 more ... | { ...; }]>' is not assignable to type 'IteratorResult<readonly [string, ProductionCaseVerificationRecord], any>' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+            Type 'IteratorYieldResult<["scenario_a_trip_to_the_moon_1902" | "scenario_the_cabinet_of_dr_caligari_1920" | "scenario_nosferatu_1922" | "scenario_battleship_potemkin_1925" | "scenario_the_general_1926" | ... 505 more ... | "scenario_where_is_the_friend_s_house_1987", { ...; } | ... 509 more ... | { ...; }]>' is not assignable to type 'IteratorYieldResult<readonly [string, ProductionCaseVerificationRecord]>' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+              Type '["scenario_a_trip_to_the_moon_1902" | "scenario_the_cabinet_of_dr_caligari_1920" | "scenario_nosferatu_1922" | "scenario_battleship_potemkin_1925" | "scenario_the_general_1926" | ... 505 more ... | "scenario_where_is_the_friend_s_house_1987", { ...; } | ... 509 more ... | { ...; }]' is not assignable to type 'readonly [string, ProductionCaseVerificationRecord]'.
+                Type at position 1 in source is not compatible with type at position 1 in target.
+                  Type '{ readonly scenarioId: "scenario_man_of_iron_1981"; readonly status: "verified"; readonly verifiedAt: "2026-07-20"; readonly summary: "The case's Solidarity-era investigation, Gdańsk shipyard setting, archive-and-fiction structure, Edward Kłosiński photography, Allan Starski design, Halina Prugar-Ketling editing, Pi...' is not assignable to type 'ProductionCaseVerificationRecord'.
+                    Type '{ readonly scenarioId: "scenario_unknown_pleasures_2002"; readonly status: "verified"; readonly verifiedAt: "2026-08-26"; readonly summary: "Unknown Pleasures is verified as a 2002 digital-video production case whose small-camera public-space access, nineteen-day schedule, long-take performance geometry, deliberatel...' is not assignable to type 'ProductionCaseVerificationRecord'.
+                      Types of property 'sources' are incompatible.
+                        Type 'readonly [{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the ...' is not assignable to type 'readonly ProductionCaseVerificationSource[]'.
+                          Type '{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the 113-minute...' is not assignable to type 'ProductionCaseVerificationSource'.
+                            Type '{ readonly title: "Interview: Jia Zhang-ke on Ash Is Purest White and the Evolution of China"; readonly publisher: "Slant Magazine"; readonly url: "https://www.slantmagazine.com/film/interview-jia-zhang-ke-on-ash-is-purest-white-censorship-and-the-evolution-of-china/"; readonly sourceKind: "filmmaker_interview"; rea...' is not assignable to type 'ProductionCaseVerificationSource'.
+                              Types of property 'supports' are incompatible.
+                                Type 'readonly ["overall", "cinematography", "performance"]' is not assignable to type 'readonly ProductionCaseVerificationArea[]'.
+                                  Type '"cinematography" | "performance" | "overall"' is not assignable to type 'ProductionCaseVerificationArea'.
+                                    Type '"performance"' is not assignable to type 'ProductionCaseVerificationArea'.
+  Overload 2 of 4, '(entries?: readonly (readonly [string, ProductionCaseVerificationRecord])[] | null | undefined): Map<string, ProductionCaseVerificationRecord>', gave the following error.
+    Argument of type '["scenario_a_trip_to_the_moon_1902" | "scenario_the_cabinet_of_dr_caligari_1920" | "scenario_nosferatu_1922" | "scenario_battleship_potemkin_1925" | "scenario_the_general_1926" | ... 505 more ... | "scenario_where_is_the_friend_s_house_1987", { ...; } | ... 509 more ... | { ...; }][]' is not assignable to parameter of type 'readonly (readonly [string, ProductionCaseVerificationRecord])[]'.
+      Type '["scenario_a_trip_to_the_moon_1902" | "scenario_the_cabinet_of_dr_caligari_1920" | "scenario_nosferatu_1922" | "scenario_battleship_potemkin_1925" | "scenario_the_general_1926" | ... 505 more ... | "scenario_where_is_the_friend_s_house_1987", { ...; } | ... 509 more ... | { ...; }]' is not assignable to type 'readonly [string, ProductionCaseVerificationRecord]'.
+        Type at position 1 in source is not compatible with type at position 1 in target.
+          Type '{ readonly scenarioId: "scenario_man_of_iron_1981"; readonly status: "verified"; readonly verifiedAt: "2026-07-20"; readonly summary: "The case's Solidarity-era investigation, Gdańsk shipyard setting, archive-and-fiction structure, Edward Kłosiński photography, Allan Starski design, Halina Prugar-Ketling editing, Pi...' is not assignable to type 'ProductionCaseVerificationRecord'.
+            Type '{ readonly scenarioId: "scenario_unknown_pleasures_2002"; readonly status: "verified"; readonly verifiedAt: "2026-08-26"; readonly summary: "Unknown Pleasures is verified as a 2002 digital-video production case whose small-camera public-space access, nineteen-day schedule, long-take performance geometry, deliberatel...' is not assignable to type 'ProductionCaseVerificationRecord'.
+              Types of property 'sources' are incompatible.
+                Type 'readonly [{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the ...' is not assignable to type 'readonly ProductionCaseVerificationSource[]'.
+                  Type '{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the 113-minute...' is not assignable to type 'ProductionCaseVerificationSource'.
+                    Type '{ readonly title: "Interview: Jia Zhang-ke on Ash Is Purest White and the Evolution of China"; readonly publisher: "Slant Magazine"; readonly url: "https://www.slantmagazine.com/film/interview-jia-zhang-ke-on-ash-is-purest-white-censorship-and-the-evolution-of-china/"; readonly sourceKind: "filmmaker_interview"; rea...' is not assignable to type 'ProductionCaseVerificationSource'.
+                      Types of property 'supports' are incompatible.
+                        Type 'readonly ["overall", "cinematography", "performance"]' is not assignable to type 'readonly ProductionCaseVerificationArea[]'.
+                          Type '"cinematography" | "performance" | "overall"' is not assignable to type 'ProductionCaseVerificationArea'.
+                            Type '"performance"' is not assignable to type 'ProductionCaseVerificationArea'.
+src/ui/data/scenarioProductionVerificationRegistry.ts(483,5): error TS2322: Type 'ProductionCaseVerificationRecord | { readonly scenarioId: "scenario_man_of_iron_1981"; readonly status: "verified"; readonly verifiedAt: "2026-07-20"; readonly summary: "The case's Solidarity-era investigation, Gdańsk shipyard setting, archive-and-fiction structure, Edward Kłosiński photography, Allan Starski design...' is not assignable to type 'ProductionCaseVerificationRecord'.
+  Type '{ readonly scenarioId: "scenario_unknown_pleasures_2002"; readonly status: "verified"; readonly verifiedAt: "2026-08-26"; readonly summary: "Unknown Pleasures is verified as a 2002 digital-video production case whose small-camera public-space access, nineteen-day schedule, long-take performance geometry, deliberatel...' is not assignable to type 'ProductionCaseVerificationRecord'.
+    Types of property 'sources' are incompatible.
+      Type 'readonly [{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the ...' is not assignable to type 'readonly ProductionCaseVerificationSource[]'.
+        Type '{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the 113-minute...' is not assignable to type 'ProductionCaseVerificationSource'.
+          Type '{ readonly title: "Interview: Jia Zhang-ke on Ash Is Purest White and the Evolution of China"; readonly publisher: "Slant Magazine"; readonly url: "https://www.slantmagazine.com/film/interview-jia-zhang-ke-on-ash-is-purest-white-censorship-and-the-evolution-of-china/"; readonly sourceKind: "filmmaker_interview"; rea...' is not assignable to type 'ProductionCaseVerificationSource'.
+            Types of property 'supports' are incompatible.
+              Type 'readonly ["overall", "cinematography", "performance"]' is not assignable to type 'readonly ProductionCaseVerificationArea[]'.
+                Type '"cinematography" | "performance" | "overall"' is not assignable to type 'ProductionCaseVerificationArea'.
+                  Type '"performance"' is not assignable to type 'ProductionCaseVerificationArea'.
+src/ui/data/scenarioProductionVerificationRegistry.ts(484,5): error TS2322: Type '{ readonly scenarioId: "scenario_man_of_iron_1981"; readonly status: "verified"; readonly verifiedAt: "2026-07-20"; readonly summary: "The case's Solidarity-era investigation, Gdańsk shipyard setting, archive-and-fiction structure, Edward Kłosiński photography, Allan Starski design, Halina Prugar-Ketling editing, Pi...' is not assignable to type 'ProductionCaseVerificationRecord'.
+  Type '{ readonly scenarioId: "scenario_unknown_pleasures_2002"; readonly status: "verified"; readonly verifiedAt: "2026-08-26"; readonly summary: "Unknown Pleasures is verified as a 2002 digital-video production case whose small-camera public-space access, nineteen-day schedule, long-take performance geometry, deliberatel...' is not assignable to type 'ProductionCaseVerificationRecord'.
+    Types of property 'sources' are incompatible.
+      Type 'readonly [{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the ...' is not assignable to type 'readonly ProductionCaseVerificationSource[]'.
+        Type '{ readonly title: "REN XIAO YAO (UNKNOWN PLEASURES)"; readonly publisher: "Festival de Cannes"; readonly url: "https://www.festival-cannes.com/en/f/ren-xiao-yao/"; readonly sourceKind: "film_institute"; readonly supports: readonly [...]; readonly note: "Institutional 2002 competition record supporting the 113-minute...' is not assignable to type 'ProductionCaseVerificationSource'.
+          Type '{ readonly title: "Interview: Jia Zhang-ke on Ash Is Purest White and the Evolution of China"; readonly publisher: "Slant Magazine"; readonly url: "https://www.slantmagazine.com/film/interview-jia-zhang-ke-on-ash-is-purest-white-censorship-and-the-evolution-of-china/"; readonly sourceKind: "filmmaker_interview"; rea...' is not assignable to type 'ProductionCaseVerificationSource'.
+            Types of property 'supports' are incompatible.
+              Type 'readonly ["overall", "cinematography", "performance"]' is not assignable to type 'readonly ProductionCaseVerificationArea[]'.
+                Type '"cinematography" | "performance" | "overall"' is not assignable to type 'ProductionCaseVerificationArea'.
+                  Type '"performance"' is not assignable to type 'ProductionCaseVerificationArea'.
+src/ui/data/scenarioProductionVerificationUnknownPleasures.ts(38,47): error TS2322: Type '"performance"' is not assignable to type 'ProductionCaseVerificationArea'.
+src/ui/data/scenarioProductionVerificationUnknownPleasures.ts(45,7): error TS2322: Type '"academic_source"' is not assignable to type '"filmmaker_interview" | "trade_feature" | "film_institute" | "archive_feature"'.
