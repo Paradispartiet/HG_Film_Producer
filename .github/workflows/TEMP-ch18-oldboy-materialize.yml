@@ -40,6 +40,28 @@ jobs:
           p.write_text(s.replace(old, ''))
           PY
 
+      - name: Diagnose Chapter 18 Oldboy parsing
+        run: |
+          cp scripts/film-history-chapter-eighteen-atlas-audit.mjs scripts/TEMP-debug-oldboy-ch18.mjs
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('scripts/TEMP-debug-oldboy-ch18.mjs')
+          s = p.read_text()
+          s = s.replace('const EXPECTED_ATLAS_COUNT = 519;', 'const EXPECTED_ATLAS_COUNT = 520;', 1)
+          old = '  "chapterEighteenUnknownPleasuresExpansion.ts",\n  "modernCanonExpansion.ts",'
+          new = '  "chapterEighteenUnknownPleasuresExpansion.ts",\n  "chapterEighteenOldboyExpansion.ts",\n  "modernCanonExpansion.ts",'
+          if s.count(old) != 1:
+              raise SystemExit(f'Expected one expansion-list anchor, found {s.count(old)}')
+          s = s.replace(old, new, 1)
+          anchor = 'const definitions = parseExpansionFile(join(coreDir, fileName));'
+          if s.count(anchor) != 1:
+              raise SystemExit(f'Expected one parseExpansionFile anchor, found {s.count(anchor)}')
+          s = s.replace(anchor, anchor + '\n  console.log("OLD_BOY_PARSE_DIAGNOSTIC", fileName, definitions.length, definitions.map((item) => ({ id: item.id, title: item.title, year: item.year })));', 1)
+          p.write_text(s)
+          PY
+          node scripts/TEMP-debug-oldboy-ch18.mjs || true
+          rm -f scripts/TEMP-debug-oldboy-ch18.mjs
+
       - name: Materialize deterministic integration
         run: node scripts/TEMP-materialize-ch18-oldboy.mjs
 
