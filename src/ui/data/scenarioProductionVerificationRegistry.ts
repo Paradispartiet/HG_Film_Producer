@@ -161,6 +161,7 @@ import { brokebackMountainProductionCaseVerification } from "./scenarioProductio
 import { cacheProductionCaseVerification } from "./scenarioProductionVerificationCache";
 import { childrenOfMenProductionCaseVerification } from "./scenarioProductionVerificationChildrenOfMen";
 import { pansLabyrinthProductionCaseVerification } from "./scenarioProductionVerificationPansLabyrinth";
+import { apocalyptoProductionCaseVerification } from "./scenarioProductionVerificationApocalypto";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -439,6 +440,7 @@ const additionalVerificationRecords = [
   cacheProductionCaseVerification,
   childrenOfMenProductionCaseVerification,
   pansLabyrinthProductionCaseVerification,
+  apocalyptoProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
