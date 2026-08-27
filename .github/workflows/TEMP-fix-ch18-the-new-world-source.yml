@@ -44,31 +44,16 @@ jobs:
               raise SystemExit(f'Expected exactly one source anchor, found {text.count(before)}')
           path.write_text(text.replace(before, after, 1))
 
-      - name: Full v0.1 verification
-        shell: bash
-        run: |
-          set +e
-          npm run verify:v0.1 > /tmp/the-new-world-verify.log 2>&1
-          status=$?
-          cat /tmp/the-new-world-verify.log
-          if [ "$status" -ne 0 ]; then
-            cp /tmp/the-new-world-verify.log TEMP-the-new-world-verify.log
-            exit "$status"
-          fi
+      - name: Build focused test target
+        run: npm run build
 
-      - name: Publish verifier failure diagnostic only
-        if: failure()
-        shell: bash
-        run: |
-          test -f TEMP-the-new-world-verify.log || exit 0
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add TEMP-the-new-world-verify.log
-          git commit -m "TEMP capture The New World verifier failure"
-          git push origin HEAD:agent/ch18-the-new-world-production-case
+      - name: The New World strict test
+        run: node --test dist/core/chapterEighteenTheNewWorldExpansion.test.js
+
+      - name: Full v0.1 verification
+        run: npm run verify:v0.1
 
       - name: Commit source fix and self-remove TEMP workflow
-        if: success()
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
