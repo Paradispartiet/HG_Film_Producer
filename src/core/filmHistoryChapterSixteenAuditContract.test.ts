@@ -68,14 +68,14 @@ const historicalObjectLabels = [
 ];
 
 test("Chapter 16 audit locks the 1980s franchise-video-global-new-cinemas scope", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 532;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 533;/);
   assert.equal(resolved.chapter.number, 16);
   assert.equal(resolved.chapter.id, "franchise-video-global-new-cinemas");
   assert.equal(resolved.chapter.title, "Franchise consolidation, video and global new cinemas");
   assert.equal(resolved.chapter.period, "1980–1989");
-  assert.equal(resolved.atlas.expectedCount, 532);
-  assert.equal(resolved.atlas.actualCount, 532);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 532);
+  assert.equal(resolved.atlas.expectedCount, 533);
+  assert.equal(resolved.atlas.actualCount, 533);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 533);
 });
 
 test("Chapter 16 locks the exact existing, P0 and P1 queues", () => {

@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 532,
-    "actualCount": 532,
+    "expectedCount": 533,
+    "actualCount": 533,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -782,6 +782,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenTheRevenantExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -850,7 +856,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 532
+    "literalVerifiedScenarioIds": 533
   },
   "candidates": [
     {
@@ -1838,11 +1844,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P1",
       "chapterFunction": "Large-format digital capture, natural-light strategy and extreme location logistics make high-end digital acquisition inseparable from physical production constraints.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_revenant_2015",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenTheRevenantExpansion.ts"
     },
     {
       "title": "From Afar",
@@ -2166,6 +2172,7 @@
       "Tangerine",
       "Mad Max: Fury Road",
       "Son of Saul",
+      "The Revenant",
       "From Afar",
       "Moonlight",
       "Toni Erdmann",
@@ -2181,7 +2188,6 @@
     ],
     "P0": [],
     "P1": [
-      "The Revenant",
       "I Am Not Your Negro",
       "Get Out",
       "Cold War",
@@ -2194,7 +2200,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "The Revenant",
     "I Am Not Your Negro",
     "Get Out",
     "Cold War",
