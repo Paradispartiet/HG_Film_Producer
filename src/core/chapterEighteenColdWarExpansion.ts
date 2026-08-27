@@ -69,7 +69,7 @@ export const chapterEighteenColdWarExpansionDefinitions = [
       "Explain how Pawlikowski and Żal continually adjusted camera height, angle, objects and light to find a single concentrated 'micro film' shot rather than defaulting to conventional coverage.",
       "Treat repeated takes and on-set rewriting as part of performance/image refinement without asserting an exact average take count for the production.",
       "Explain why the Poland opening can borrow documentary observation while the film remains a staged fiction production.",
-      "Explain the East/West Berlin transition as a hybrid in-camera/VFX construction using large greenscreens, real people/cars/decoration and substantial post extension.",
+      "Explain the East/West Berlin transition as a hybrid in-camera/VFX construction using large greenscreens, real people/cars/decoration and substantial post extension, with the documented shot-specific 70-percent-generated-in-post boundary kept local to that transition.",
       "Keep the roughly 70-percent-generated-in-post claim local to the documented Berlin shot rather than generalizing heavy VFX to the whole film.",
       "Keep exact greenscreen dimensions and lighting details attached to the documented Berlin setup instead of turning them into a film-wide effects recipe.",
       "Identify Jarosław Kamiński as editor and explain how ellipses, black-screen duration and scene-to-scene contrast carry time without explanatory connective scenes.",
