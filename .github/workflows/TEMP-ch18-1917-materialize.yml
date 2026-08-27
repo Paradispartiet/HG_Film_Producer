@@ -1,0 +1,107 @@
+name: TEMP materialize Chapter 18 1917
+
+on:
+  push:
+    branches:
+      - agent/ch18-1917-production-case
+
+permissions:
+  contents: write
+
+concurrency:
+  group: temp-ch18-1917-materialize
+  cancel-in-progress: true
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch18-1917-production-case
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Remove previous diagnostic
+        run: rm -f TEMP-1917-verify.log
+
+      - name: Materialize deterministic integration
+        run: node scripts/TEMP-materialize-ch18-1917.mjs
+
+      - name: Full v0.1 verification
+        shell: bash
+        run: |
+          set +e
+          npm run verify:v0.1 2>&1 | tee TEMP-1917-verify.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -eq 0 ]; then
+            rm -f TEMP-1917-verify.log
+          fi
+          exit "$status"
+
+      - name: Capture verification failure diagnostic
+        if: failure()
+        shell: bash
+        run: |
+          if [ ! -f TEMP-1917-verify.log ]; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f TEMP-1917-verify.log
+          git commit -m "Capture 1917 verification failure [diagnostic]"
+          git push origin HEAD:agent/ch18-1917-production-case
+
+      - name: Assert temporary diagnostics are absent
+        shell: bash
+        run: |
+          if find . -maxdepth 1 -type f -name 'TEMP-*.log' | grep -q .; then
+            echo 'Unexpected TEMP diagnostic logs in working tree'
+            exit 1
+          fi
+
+      - name: Commit materialized permanent state
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/film-history-chapter-twelve-atlas-resolved.json \
+                  docs/film-history-chapter-thirteen-atlas-resolved.json \
+                  docs/film-history-chapter-fourteen-atlas-resolved.json \
+                  docs/film-history-chapter-fifteen-atlas-resolved.json \
+                  docs/film-history-chapter-sixteen-atlas-resolved.json \
+                  docs/film-history-chapter-seventeen-atlas-resolved.json \
+                  docs/film-history-chapter-eighteen-atlas-resolved.json \
+                  scripts/film-history-chapter-twelve-atlas-audit.mjs \
+                  scripts/film-history-chapter-thirteen-atlas-audit.mjs \
+                  scripts/film-history-chapter-fourteen-atlas-audit.mjs \
+                  scripts/film-history-chapter-fifteen-atlas-audit.mjs \
+                  scripts/film-history-chapter-sixteen-atlas-audit.mjs \
+                  scripts/film-history-chapter-seventeen-atlas-audit.mjs \
+                  scripts/film-history-chapter-eighteen-atlas-audit.mjs \
+                  scripts/production-case-rest-audit.mjs \
+                  src/core/filmHistoryChapterTwelveAuditContract.test.ts \
+                  src/core/filmHistoryChapterThirteenAuditContract.test.ts \
+                  src/core/filmHistoryChapterFourteenAuditContract.test.ts \
+                  src/core/filmHistoryChapterFifteenAuditContract.test.ts \
+                  src/core/filmHistoryChapterSixteenAuditContract.test.ts \
+                  src/core/filmHistoryChapterSeventeenAuditContract.test.ts \
+                  src/core/filmHistoryChapterEighteenAuditContract.test.ts \
+                  src/ui/data/filmScenarios.ts \
+                  src/ui/data/scenarioProductionVerificationRegistry.ts \
+                  src/ui/data/scenarioProductionVerification1917.ts \
+                  src/ui/data/scenarioFilmStudyMap.ts \
+                  src/ui/data/scenarioFilmStudyChapterEighteen1917.ts
+          git diff --cached --quiet && { echo 'Materializer produced no permanent changes'; exit 1; }
+          git commit -m "Materialize Chapter 18 1917 integration [materialized]"
+          git push origin HEAD:agent/ch18-1917-production-case
