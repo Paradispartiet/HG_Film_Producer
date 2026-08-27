@@ -1,0 +1,147 @@
+import type { HistoricalFilmScenario } from "./earlyCinemaExpansion.js";
+import { normalizeEarlyCinemaTitle } from "./earlyCinemaExpansion.js";
+
+export const chapterEighteenAmourExpansionDefinitions = [
+  {
+    id: "scenario_amour_2012",
+    title: "Amour",
+    originalTitle: "Amour",
+    aliases: [],
+    year: 2012,
+    titleType: "Movie",
+    runtimeMins: 127,
+    directors: ["Michael Haneke"],
+    genres: ["Drama"],
+    sourceId: "cannes_amour_2012",
+    sourceUrl: "https://www.festival-cannes.com/f/amour/",
+    scenarioType: "france_germany_austria_public_funding_coproduction_chamber_staging_studio_apartment_arri_alexa_arriraw_codex_previs_chronological_lighting_2012",
+    premise: "Build Amour as a source-first Chapter 18 Production Case about a 2012 France-Germany-Austria co-production in which Michael Haneke turned an intimate chamber drama into a tightly preplanned studio, performance, digital-capture and public-financing system. Festival de Cannes and its bilingual press kit anchor the competition version at 127 minutes, credit Haneke as writer-director, Darius Khondji as cinematographer, Jean-Vincent Puzos as production designer, Monika Willi and Nadine Muse as editors, Guillaume Sciama and Jean-Pierre Laforce for sound, and producers Margaret Menegoz in Paris, Stefan Arndt in Berlin, and Veit Heiduschka and Michael Katz in Vienna. The same official material documents France 3 Cinéma, ARD Degeto, Bayerischer Rundfunk and Westdeutscher Rundfunk as co-production partners, participation from France Télévisions, Canal+, Ciné+ and ORF, and support spanning French, German, Austrian and European public institutions including CNC, Région Île-de-France, FFA, Medienboard Berlin-Brandenburg, the CNC/FFA mini-treaty, the Austrian Film Institute, Vienna Film Fund and Eurimages. Haneke's own Austrian Films interview states that after the opening theatre scenes and bus scene, the film was shot in studio outside Paris; he used the floor plan of his parents' Vienna apartment as a spatial writing and staging reference, then reconstructed it as a French interior with a deliberately accumulated, lived-in history. British Cinematographer reports eight weeks of prep and principal photography on sets at Éclair Studios in Épinay-sur-Seine from February to April 2011 on five-day weeks, with Haneke and camera operator Jörg Widmer following sketched storyboards and computer previsualisation closely. The apartment's parquet was flattened and camera/lens tested for smooth dolly movement. Khondji reports ARRI Alexa acquisition, ARRIRAW recorded to Codex, 35 mm Master Primes plus 40 mm and 50 mm Cooke S4/S5 lenses in the working package, TSF rental and Digimage dailies/transfers; this case treats those as reported production tools without inventing an exact shot-to-lens map, Alexa submodel, Codex recorder model or unsupported capture-resolution claim. The studio set was oriented and lit to model the passage of days and seasons: Haneke wanted direct sunlight in the kitchen while other rooms relied on reflected or bounced light, with Khondji describing 20Ks through windows, spacelights or daylight ambience, bounced Lekos and practicals. The film was shot almost entirely in chronological order, making lighting continuity, progressive performance state, set continuity and the physical needs of Jean-Louis Trintignant and Emmanuelle Riva interdependent scheduling problems. The official press kit also documents a physiotherapy consultant, nursing consultant, stand-ins and a piano coach, while contemporary Haneke reporting describes special mechanical adjustments to the bed for a physically difficult scene; these are evidence for care, rehearsal and performer-safety planning rather than license to infer undisclosed medical procedures. The player must therefore coordinate transnational financing and reporting, studio construction, spatial previs, dolly geometry, digital negative custody, naturalistic lighting continuity, performance chronology, care-oriented staging, editorial and sound handoff while refusing unsupported budget amounts, exact financing shares, exact set dimensions, exact shot-lens assignments, exact exposure values, exact camera submodel, exact Codex hardware, undocumented sound equipment, undocumented DI settings or claims that all public-support bodies exercised the same creative authority.",
+    requiredChoicesSeed: {
+      screenplay: ["chamber_geography", "parents_apartment_reference", "care_progression", "chronological_performance_state", "spatial_thresholds"],
+      camera: ["arri_alexa_arriraw", "codex_recording", "storyboard_previs", "dolly_floor_control", "reported_lens_package", "south_aspect_lighting", "practical_bounce_strategy", "camera_submodel_unknown"],
+      editing: ["monika_willi_nadine_muse", "chronological_continuity_handoff", "digital_negative_provenance", "digimage_dailies", "shot_lens_unknowns", "di_unknowns"],
+      sound: ["guillaume_sciama_credit", "jean_pierre_laforce_credit", "chamber_sound_continuity", "piano_performance_boundary", "sound_equipment_unknowns"],
+      themes: ["film_history", "2012", "amour", "michael_haneke", "darius_khondji", "jean_vincent_puzos", "france_germany_austria", "public_funding", "coproduction", "studio_apartment", "eclair_studios", "arri_alexa", "arriraw", "codex", "previsualisation", "storyboard", "dolly", "chronological_shoot", "practicals", "20k", "spacelights", "lekos", "performance_care", "digital_negative", "eurimages"]
+    },
+    learningGoals: [
+      "Explain Amour as a coordinated co-production, studio, performance, camera, lighting, editorial and sound system rather than reducing it to an austere chamber drama.",
+      "Identify Michael Haneke as writer-director and distinguish authorship from the financing, production and craft responsibilities distributed across the French, German and Austrian partners.",
+      "Use the Cannes 127-minute 2012 version as the canonical case anchor while preserving conflicting later catalogue runtimes as version metadata rather than silently normalizing them.",
+      "Identify Margaret Menegoz, Stefan Arndt, Veit Heiduschka and Michael Katz as the principal credited producers and preserve their Paris, Berlin and Vienna production contexts.",
+      "Identify France 3 Cinéma, ARD Degeto, Bayerischer Rundfunk and Westdeutscher Rundfunk as documented co-production partners without treating them as interchangeable institutions.",
+      "Identify France Télévisions, Canal+, Ciné+ and ORF participation separately from grant and fund support.",
+      "Identify CNC, Région Île-de-France, FFA, Medienboard Berlin-Brandenburg, the CNC/FFA mini-treaty, the Austrian Film Institute, Vienna Film Fund and Eurimages as documented support layers without inventing financing shares.",
+      "Explain why a European public-funding package creates contractual, delivery and reporting dependencies in addition to creative production work.",
+      "Keep co-production nationality, financing source, broadcaster participation and creative authority as separate concepts.",
+      "Identify Darius Khondji as cinematographer and Jörg Widmer as documented camera operator without inventing a shot-by-shot division of authorship.",
+      "Identify Jean-Vincent Puzos as production designer and explain how the apartment itself functioned as a production system for blocking, camera position, light and narrative time.",
+      "Use Haneke's own account that the floor plan came from his parents' Vienna apartment while noting that secondary reporting differs, rather than collapsing conflicting provenance into false certainty.",
+      "Explain why reconstructing a familiar Vienna floor plan as a French interior helped turn writing geography into repeatable staging geography.",
+      "Explain how accumulated books, furniture and technology were selected to make the studio apartment feel lived in across decades rather than generically dressed.",
+      "Distinguish the opening theatre and bus material from the later studio-dominated chamber production.",
+      "Identify Éclair Studios at Épinay-sur-Seine as the documented principal studio base and February-April 2011 as the reported principal-photography period.",
+      "Identify eight weeks of prep and five-day shooting weeks as reported schedule facts without extrapolating an unsupported total shooting-day count.",
+      "Explain why Haneke's sketched storyboards and computer previsualisation moved major camera and blocking decisions upstream of the shooting day.",
+      "Explain how precise previs can reduce improvisational freedom while improving spatial continuity, departmental preparation and actor accommodation.",
+      "Explain why sanding the parquet flat and testing camera/lens movement on the dolly was a production-control decision rather than a cosmetic set detail.",
+      "Identify ARRI Alexa as the documented camera family while keeping the exact Alexa submodel unresolved.",
+      "Identify ARRIRAW recorded to Codex as the documented digital-negative path without inventing an exact Codex recorder model or unsupported sensor-resolution claim.",
+      "Identify Digimage in Paris as the documented dailies and transfer facility in the reported workflow.",
+      "Identify TSF as the reported camera-rental supplier without treating rental provenance as evidence for every accessory used on set.",
+      "Identify 35 mm Master Primes plus 40 mm and 50 mm Cooke S4/S5 lenses as the reported working lens package while refusing an exact shot-to-lens map.",
+      "Explain why lens tests on the set mattered when Haneke wanted highly repeatable framing and smooth movement in a constrained apartment geometry.",
+      "Separate lens-package evidence from claims about which focal length was used in any individual scene.",
+      "Explain why ARRIRAW's latitude supported a practical-light-oriented naturalistic strategy without converting that testimony into unsupported exposure numbers.",
+      "Explain how the studio set's orientation was designed around sunrise, day, sunset and nighttime rather than treating windows as neutral scenic elements.",
+      "Explain Haneke's rule that direct sunlight should enter the kitchen while other rooms relied primarily on reflected or bounced illumination.",
+      "Identify 20K sources through windows, spacelights or daylight ambience, bounced Lekos and practicals as Khondji's documented lighting toolkit.",
+      "Keep fixture names distinct from exact placement, output, diffusion, dimmer and exposure settings that the current evidence does not establish.",
+      "Explain why changing daylight and seasons across a mostly single-apartment film created a demanding lighting-continuity problem.",
+      "Explain how shooting almost the whole film in chronological order connected lighting continuity to progressive performance and set-state continuity.",
+      "Treat chronological shooting as a scheduling choice with production consequences rather than a guarantee that every scene was filmed strictly in script order.",
+      "Explain why the physical needs of elderly performers could justify deviations from a previsualised plan without undermining the overall precision of the production system.",
+      "Identify the physiotherapy consultant and nursing consultant in the official crew record as evidence of care expertise without inferring undocumented medical interventions.",
+      "Identify stand-ins as part of the documented production structure and explain how they can support lighting and camera preparation while reducing unnecessary performer load.",
+      "Identify the piano coach for Emmanuelle Riva as a documented performance-support role and distinguish coaching from assumptions about how every musical passage was recorded.",
+      "Explain why a mechanically adapted bed for a difficult care scene belongs to performer safety and staging engineering rather than spectacle effects.",
+      "Treat blocking, camera movement and care choreography as one shared safety problem in physically demanding intimate scenes.",
+      "Identify Monika Willi and Nadine Muse as credited editors and avoid assigning individual scenes to either editor without title-specific evidence.",
+      "Explain how a highly previsualised, mostly chronological shoot still requires editorial control over duration, omission, ellipsis and the viewer's access to the apartment.",
+      "Preserve ARRIRAW/Codex source identity, dailies lineage and editorial references as distinct data objects in a digital-negative workflow.",
+      "Explain why dailies and transfer media must not be confused with the camera-original digital negative or final master.",
+      "Keep exact conform, grading, DI resolution and mastering settings unresolved unless title-specific evidence establishes them.",
+      "Identify Guillaume Sciama and Jean-Pierre Laforce as the principal credited sound names and keep microphone models, recorder models and detailed track architecture unresolved.",
+      "Explain why the chamber setting makes room tone, offscreen space, doors, footsteps, music and silence important continuity elements even when the exact equipment chain is undocumented.",
+      "Distinguish diegetic piano performance, playback, production recording and final rerecording as potentially different workflow layers rather than assuming a single sound source.",
+      "Explain why the apartment's doors, thresholds and room distances are simultaneously narrative devices, blocking constraints and sound-perspective variables.",
+      "Explain how a single dominant interior can increase rather than reduce continuity complexity because small spatial and temporal inconsistencies become visible.",
+      "Relate public-funding and broadcaster participation to the film's transnational production architecture without claiming that funding institutions dictated the film's style.",
+      "Explain why a France-Germany-Austria structure requires explicit ownership of contracts, cost reporting, rights, deliverables and national participation obligations.",
+      "Keep exact national spend, subsidy amounts, recoupment terms and financing percentages outside the verified layer unless primary production documents establish them.",
+      "Reject unsupported exact set dimensions, exact shot counts, exact lens assignments, exact exposure values, exact Alexa submodel, exact Codex model and undocumented sound-chain details.",
+      "Maintain an uncertainty register that distinguishes official credits, Haneke testimony, Khondji testimony and secondary technical reporting.",
+      "Explain Amour's Chapter 18 significance as evidence that digital convergence coexisted with mature European public co-production, controlled studio craft and performance-centered minimalism.",
+      "Compare Amour's digital-negative system with contemporaneous spectacle-oriented digital productions without treating technological complexity as proportional to visible spectacle.",
+      "Build a production plan that protects financing provenance, studio geography, performer care, digital-negative custody, lighting continuity, editorial lineage and sound boundaries before the case can close."
+    ],
+    phases: [
+      { id: "evidence_hierarchy", label: "Map the Amour evidence hierarchy", player_task: "Separate Cannes credits and press-kit data, Haneke's production testimony, Khondji's cinematography testimony and secondary reporting before promoting any detail to verified production fact." },
+      { id: "released_version", label: "Lock the Cannes version", player_task: "Use the 127-minute Cannes/press-kit version as the canonical case anchor and keep conflicting catalogue runtimes explicitly versioned." },
+      { id: "coproduction_map", label: "Map the three-country co-production", player_task: "Assign France, Germany and Austria production partners, producers and national reporting responsibilities without collapsing them into one generic company." },
+      { id: "funding_stack", label: "Build the public-financing stack", player_task: "Track broadcaster participation, national funds, regional funds, treaty support and Eurimages separately while leaving unsupported financing percentages unresolved." },
+      { id: "rights_reporting", label: "Assign rights and reporting ownership", player_task: "Give each producer a clear owner for contracts, eligible costs, delivery obligations, rights records and cross-border reporting." },
+      { id: "chamber_geography", label: "Lock the chamber geography", player_task: "Translate the parents-apartment floor plan into the French studio interior so writing geography, actor travel, camera position and sound perspective remain coherent." },
+      { id: "set_history", label: "Give the apartment a lived history", player_task: "Coordinate books, furniture and technology so the studio set reads as an accumulated home rather than freshly dressed scenery." },
+      { id: "studio_boundary", label: "Separate location and studio layers", player_task: "Keep the opening theatre and bus material provenance-distinct from the studio-dominated apartment production." },
+      { id: "previs", label: "Previsualise before the shooting day", player_task: "Convert Haneke's storyboard and computer-previs decisions into camera, blocking, art and lighting plans while documenting any actor-driven deviations." },
+      { id: "floor_dolly", label: "Engineer smooth dolly travel", player_task: "Flatten and test the parquet movement path so the constrained apartment supports repeatable camera travel without vibration or unplanned bumps." },
+      { id: "camera_package", label: "Configure Alexa and ARRIRAW", player_task: "Use the documented ARRI Alexa family and ARRIRAW path while leaving the exact camera submodel and unsupported capture-resolution claims unresolved." },
+      { id: "codex_custody", label: "Protect Codex digital negatives", player_task: "Maintain clear media identity and verified handoff for ARRIRAW recorded to Codex without inventing the recorder model or storage topology." },
+      { id: "lens_package", label: "Test the reported lens package", player_task: "Prepare 35 mm Master Primes plus 40 mm and 50 mm Cooke S4/S5 options and record tests without assigning a focal length to an individual shot without evidence." },
+      { id: "dailies", label: "Hand off to Digimage", player_task: "Create dailies and transfers with traceable links back to camera originals so editorial media never becomes confused with the digital negative." },
+      { id: "sun_path", label: "Design the apartment sun path", player_task: "Orient the set and schedule scenes around the intended progression of daylight and seasons before finalizing fixture and camera plans." },
+      { id: "kitchen_sun", label: "Protect the direct-sun rule", player_task: "Reserve direct sunlight for the kitchen and build reflected or bounced strategies for the other rooms to preserve Haneke's spatial light logic." },
+      { id: "lighting_package", label: "Build the naturalistic lighting package", player_task: "Coordinate documented 20Ks, spacelights/daylight ambience, bounced Lekos and practicals while leaving unsupported exposure and diffusion values open." },
+      { id: "lighting_continuity", label: "Track seasonal light continuity", player_task: "Log time of day, season, practical state, window direction and scene continuity so chronological progression remains credible across the studio schedule." },
+      { id: "chronological_schedule", label: "Schedule near-chronologically", player_task: "Preserve the documented almost-chronological strategy where feasible and record any actor, set or production constraint that forces a deviation." },
+      { id: "performance_state", label: "Track progressive performance state", player_task: "Coordinate costume, makeup, props, mobility, blocking and emotional progression with the near-chronological schedule." },
+      { id: "standins", label: "Use stand-ins to reduce load", player_task: "Complete lighting and camera preparation with documented stand-ins when possible before bringing principal performers into a demanding setup." },
+      { id: "care_consultants", label: "Integrate care expertise", player_task: "Use the documented physiotherapy and nursing consultants for believable and safe care staging without inventing undisclosed medical procedures." },
+      { id: "bed_engineering", label: "Engineer the difficult bed scene", player_task: "Test mechanical support and blocking for the physically demanding bed sequence before asking performers to execute it." },
+      { id: "piano_coaching", label: "Coordinate piano performance", player_task: "Use the documented piano coach to align hand action and musical performance while keeping recording/playback specifics evidence-bounded." },
+      { id: "actor_accommodation", label: "Allow evidence-based deviations", player_task: "Adapt storyboarded blocking when performer needs require it while recording the change so camera, lighting, continuity and editorial teams stay synchronized." },
+      { id: "editing_handoff", label: "Hand off the previsualised material", player_task: "Give Monika Willi and Nadine Muse traceable scene, take and digital-negative provenance while preserving room geography and progressive chronology." },
+      { id: "ellipsis", label: "Build chamber ellipsis", player_task: "Use editorial duration and omission to shape time without breaking the apartment's spatial logic or the care progression." },
+      { id: "sound_geography", label: "Map chamber sound perspective", player_task: "Track doors, room distance, offscreen movement, room tone, footsteps and music as spatial cues through production and post sound." },
+      { id: "sound_boundary", label: "Bound the sound chain", player_task: "Credit Guillaume Sciama and Jean-Pierre Laforce while keeping microphones, recorders, track layouts and detailed rerecording architecture unresolved." },
+      { id: "di_boundary", label: "Protect postproduction unknowns", player_task: "Keep exact conform, colour-grade, DI-resolution and mastering details outside the verified layer until title-specific technical evidence establishes them." },
+      { id: "unknowns_register", label: "Maintain the Amour unknowns register", player_task: "Track unresolved financing shares, set dimensions, camera submodel, Codex model, shot-lens map, exposure values, sound equipment and DI settings explicitly." },
+      { id: "chapter18_position", label: "Position Amour in Chapter 18", player_task: "Explain how digital capture and public co-production supported a highly controlled, performance-centered chamber film rather than only technology-forward spectacle." },
+      { id: "delivery_review", label: "Review the complete production system", player_task: "Audit co-production provenance, funding boundaries, studio geography, performer care, camera-original custody, lighting continuity, editorial lineage and sound evidence before closure." }
+    ]
+  }
+] as const;
+
+export function mergeChapterEighteenAmourExpansion(baseScenarios: readonly HistoricalFilmScenario[]): readonly HistoricalFilmScenario[] {
+  const merged = [...baseScenarios];
+  let nextPosition = Math.max(0, ...baseScenarios.map((scenario) => scenario.source.position)) + 1;
+  for (const definition of chapterEighteenAmourExpansionDefinitions) {
+    const acceptedTitles = [definition.title, definition.originalTitle, ...definition.aliases].map(normalizeEarlyCinemaTitle);
+    const exists = merged.some((scenario) => scenario.id === definition.id || (scenario.film.year === definition.year && [scenario.film.title, scenario.film.original_title].map(normalizeEarlyCinemaTitle).some((title) => acceptedTitles.includes(title))));
+    if (exists) continue;
+    merged.push({
+      id: definition.id,
+      status: "manual_chapter_eighteen_amour_verified",
+      source: { list_id: "manual_chapter_eighteen_amour_expansion_2026", position: nextPosition, imdb_id: definition.sourceId, url: definition.sourceUrl },
+      film: { title: definition.title, original_title: definition.originalTitle, year: definition.year, title_type: definition.titleType, runtime_mins: definition.runtimeMins, directors: definition.directors, genres: definition.genres, genre_keys: definition.genres.map((genre) => genre.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")), imdb_rating: 0, user_rating: 0 },
+      scenario_type: definition.scenarioType,
+      production_challenge: definition.premise,
+      required_choices_seed: definition.requiredChoicesSeed,
+      phases: definition.phases,
+      learning_goals_seed: definition.learningGoals,
+      manual_enrichment_needed: [],
+    });
+    nextPosition += 1;
+  }
+  return merged;
+}
