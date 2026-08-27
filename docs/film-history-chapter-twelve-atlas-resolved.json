@@ -10,8 +10,8 @@
     "thesis": "Classical studio cinema was not a single style but an industrial coordination system: companies managed recurring genres, stars, departments, technologies, censorship and distribution at scale while individual productions negotiated those systems differently."
   },
   "atlas": {
-    "expectedCount": 528,
-    "actualCount": 528,
+    "expectedCount": 529,
+    "actualCount": 529,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1004,6 +1004,14 @@
         "matchedExisting": 0,
         "status": "manual_chapter_eighteen_tree_of_life_verified",
         "sourceListId": "manual_chapter_eighteen_tree_of_life_expansion_2026"
+      },
+      {
+        "fileName": "chapterEighteenPinaExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_eighteen_pina_verified",
+        "sourceListId": "manual_chapter_eighteen_pina_expansion_2026"
       },
       {
         "fileName": "modernCanonExpansion.ts",
