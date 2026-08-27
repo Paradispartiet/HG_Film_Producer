@@ -141,6 +141,7 @@ import { pansLabyrinthFilmHistoryProfile } from "./scenarioFilmStudyChapterEight
 import { apocalyptoFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenApocalypto";
 import { thereWillBeBloodFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenThereWillBeBlood";
 import { uncleBoonmeeFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenUncleBoonmee";
+import { treeOfLifeFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenTreeOfLife";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -308,6 +309,7 @@ const sourceBackedFilmHistoryProfiles = {
   [apocalyptoFilmHistoryProfile.scenarioId]: apocalyptoFilmHistoryProfile,
   [thereWillBeBloodFilmHistoryProfile.scenarioId]: thereWillBeBloodFilmHistoryProfile,
   [uncleBoonmeeFilmHistoryProfile.scenarioId]: uncleBoonmeeFilmHistoryProfile,
+  [treeOfLifeFilmHistoryProfile.scenarioId]: treeOfLifeFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",

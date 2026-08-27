@@ -29,7 +29,7 @@ export const chapterEighteenTreeOfLifeExpansionDefinitions = [
       "Use the Cannes 138-minute record as the released-version anchor and keep later alternate or extended cuts outside this production case unless separately versioned.",
       "Identify Emmanuel Lubezki as director of photography and distinguish his title-specific testimony from generic descriptions of the later Malick-Lubezki style.",
       "Explain why the film belongs inside Chapter 18 even though principal live-action capture remained substantially photochemical during accelerating digital convergence.",
-      "Identify the documented mix of 35 mm, regular 65 mm and IMAX acquisition without assigning individual shots or sequences to a format unless a source does so.",
+      "Identify the documented mix of 35 mm, regular 65 mm and IMAX acquisition while keeping shot-level format allocation unknown unless a source establishes it.",
       "Identify ARRI LT and 235 cameras as documented tools for the 35 mm work and avoid extending that hardware claim to every unit or effects element.",
       "Identify a Panavision camera as documented for 65 mm scenes while keeping the exact body model unknown unless a title-specific source establishes it.",
       "Identify ARRI Master Primes as the generally used spherical lens family and distinguish a general lens package from exact lens-to-shot mapping.",
