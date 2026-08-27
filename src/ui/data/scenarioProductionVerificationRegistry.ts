@@ -167,6 +167,7 @@ import { uncleBoonmeeProductionCaseVerification } from "./scenarioProductionVeri
 import { treeOfLifeProductionCaseVerification } from "./scenarioProductionVerificationTreeOfLife";
 import { pinaProductionCaseVerification } from "./scenarioProductionVerificationPina";
 import { amourProductionCaseVerification } from "./scenarioProductionVerificationAmour";
+import { holyMotorsProductionCaseVerification } from "./scenarioProductionVerificationHolyMotors";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -451,6 +452,7 @@ const additionalVerificationRecords = [
   treeOfLifeProductionCaseVerification,
   pinaProductionCaseVerification,
   amourProductionCaseVerification,
+  holyMotorsProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
