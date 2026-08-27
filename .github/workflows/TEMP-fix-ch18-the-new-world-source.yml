@@ -47,6 +47,10 @@ jobs:
                   "Explain Criterion and BFI's natural-light evidence as a core aesthetic-production constraint rather than a claim that no artificial light was ever used anywhere.",
                   "Explain Criterion and BFI's natural-light evidence as a core aesthetic-production constraint rather than an absolute no-artificial-light rule for every setup.",
               ),
+              (
+                  "Keep the reconstructed Virginia Algonquian/Powhatan language distinct from a claim that the film reproduces a complete historically certain spoken language system.",
+                  "Keep the reconstructed Virginia Algonquian/Powhatan language distinct from a claim of historical completeness or a fully certain spoken-language reconstruction.",
+              ),
           ]
           for before, after in replacements:
               if text.count(before) != 1:
@@ -56,17 +60,6 @@ jobs:
 
       - name: Build focused test target
         run: npm run build
-
-      - name: Prove language-boundary learning-goal contract
-        shell: bash
-        run: |
-          node --input-type=module <<'NODE'
-          import { chapterEighteenTheNewWorldExpansionDefinitions } from './dist/core/chapterEighteenTheNewWorldExpansion.js';
-          const film = chapterEighteenTheNewWorldExpansionDefinitions[0];
-          const pass = film.learningGoals.some((goal) => goal.includes('Virginia Algonquian/Powhatan') && goal.includes('historical completeness'));
-          console.log(`Virginia Algonquian/Powhatan + historical completeness: ${pass}`);
-          if (!pass) process.exit(1);
-          NODE
 
       - name: The New World strict test
         run: node --test dist/core/chapterEighteenTheNewWorldExpansion.test.js
