@@ -35,7 +35,7 @@ export const chapterEighteenHolyMotorsExpansionDefinitions = [
       "Explain Carax's self-imposed production brief: inexpensive film, quick execution and a pre-selected actor.",
       "Explain why Denis Lavant's availability and range were production infrastructure, not merely casting, when one performer had to sustain radically different identities across the schedule.",
       "Explain why shooting in Paris with little money and a small digital footprint could reduce some barriers while increasing location, continuity and reset pressure.",
-      "Treat Carax's no-dailies rule as a documented directing/workflow choice rather than evidence that no one on the production ever reviewed recorded material.",
+      "Treat Carax's no-dailies rule as a documented directing/workflow choice while keeping technical QC and data-integrity review as separate production responsibilities rather than evidence that Carax watched recorded material.",
       "Identify RED Epic as the documented digital camera platform and keep unsupported RED submodel, sensor and firmware claims outside the verified layer.",
       "Explain why the RED Epic's low-light capability mattered to a production with extensive nocturnal work.",
       "Preserve the reported 640 ISO night and 800 ISO day choices as attributed Champetier testimony rather than universal settings for every Holy Motors shot.",
