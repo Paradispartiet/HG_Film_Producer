@@ -145,6 +145,7 @@ import { treeOfLifeFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteen
 import { pinaFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenPina";
 import { amourFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenAmour";
 import { holyMotorsFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenHolyMotors";
+import { idaFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenIda";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -316,6 +317,7 @@ const sourceBackedFilmHistoryProfiles = {
   [pinaFilmHistoryProfile.scenarioId]: pinaFilmHistoryProfile,
   [amourFilmHistoryProfile.scenarioId]: amourFilmHistoryProfile,
   [holyMotorsFilmHistoryProfile.scenarioId]: holyMotorsFilmHistoryProfile,
+  [idaFilmHistoryProfile.scenarioId]: idaFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
