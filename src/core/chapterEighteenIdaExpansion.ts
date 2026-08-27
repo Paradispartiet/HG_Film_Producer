@@ -62,7 +62,7 @@ export const chapterEighteenIdaExpansionDefinitions = [
       "Explain why the camera, design and costume departments need shared grayscale tests when final color relationships will be discarded.",
       "Explain Żal's stated preference for simple, motivated and natural-light logic without misdescribing the production as available-light-only.",
       "Use the documented kitchen and chapel setups as scene-specific evidence that a visually simple result can require multiple controlled fixtures, diffusion, bounce, smoke and negative fill.",
-      "Keep the documented 6K, 1.2K, 575W, Kino Flo, Octodome and Dedolight examples tied to the scenes for which they are actually described.",
+      "Keep the documented 6K, 1.2K, 575W, Kino Flo, Octodome and Dedolight examples as scene-specific evidence tied to the scenes for which they are actually described.",
       "Explain how a motivated single-source illusion can be constructed from several units while still reading as natural window, fire or practical light.",
       "Distinguish lighting intention from exact exposure: fixture identity does not prove stop, EI, shutter, filtration or dimmer level for every shot.",
       "Explain how smoke, bounce and negative fill can shape grayscale separation without treating them as universal rules across the whole film.",
