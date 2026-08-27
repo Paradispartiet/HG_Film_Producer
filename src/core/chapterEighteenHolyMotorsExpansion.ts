@@ -44,7 +44,7 @@ export const chapterEighteenHolyMotorsExpansionDefinitions = [
       "Identify the Angénieux 25-250 HR zoom as independently documented title-specific equipment without assigning it to unsupported individual shots.",
       "Keep the exact Zeiss prime package and shot-to-lens map as lower-confidence technical metadata unless stronger title-specific primary evidence is recovered.",
       "Explain how a camera package for Holy Motors had to tolerate fast changes between streets, interiors, staged tableaux, motion capture and night work.",
-      "Explain why the limousine functions operationally as transport, mobile dressing room, prop/costume store, continuity reset zone and narrative transition space.",
+      "Explain why the stretch limousine functions operationally as transport, mobile dressing room, prop/costume store, continuity reset zone and narrative transition space.",
       "Map each appointment as its own mini-production with a discrete role, costume, make-up, props, location, performance mode, camera strategy and sound world.",
       "Explain how the appointment structure allows radically different genres and image strategies without losing whole-film schedule control.",
       "Identify Bernard Floch as make-up/hair design and supervision and Jean-Christophe Spadaccini and Denis Gastou as credited SFX make-up artists.",
