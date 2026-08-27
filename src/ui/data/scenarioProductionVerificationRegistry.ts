@@ -163,6 +163,7 @@ import { childrenOfMenProductionCaseVerification } from "./scenarioProductionVer
 import { pansLabyrinthProductionCaseVerification } from "./scenarioProductionVerificationPansLabyrinth";
 import { apocalyptoProductionCaseVerification } from "./scenarioProductionVerificationApocalypto";
 import { thereWillBeBloodProductionCaseVerification } from "./scenarioProductionVerificationThereWillBeBlood";
+import { uncleBoonmeeProductionCaseVerification } from "./scenarioProductionVerificationUncleBoonmee";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -443,6 +444,7 @@ const additionalVerificationRecords = [
   pansLabyrinthProductionCaseVerification,
   apocalyptoProductionCaseVerification,
   thereWillBeBloodProductionCaseVerification,
+  uncleBoonmeeProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

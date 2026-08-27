@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 526,
-    "actualCount": 526,
+    "expectedCount": 527,
+    "actualCount": 527,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -746,6 +746,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenUncleBoonmeeExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -814,7 +820,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 526
+    "literalVerifiedScenarioIds": 527
   },
   "candidates": [
     {
@@ -1545,11 +1551,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P1",
       "chapterFunction": "Thai-European co-production, regional locations and practical/spiritual effects make festival circulation and transnational finance visible without becoming production proof.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_uncle_boonmee_2010",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenUncleBoonmeeExpansion.ts"
     },
     {
       "title": "A Separation",
@@ -2113,6 +2119,7 @@
       "The Social Network",
       "Poetry",
       "Somewhere",
+      "Uncle Boonmee Who Can Recall His Past Lives",
       "A Separation",
       "Pietà",
       "Gravity",
@@ -2139,7 +2146,6 @@
     ],
     "P0": [],
     "P1": [
-      "Uncle Boonmee Who Can Recall His Past Lives",
       "The Tree of Life",
       "Pina",
       "Amour",
@@ -2158,7 +2164,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Uncle Boonmee Who Can Recall His Past Lives",
     "The Tree of Life",
     "Pina",
     "Amour",
