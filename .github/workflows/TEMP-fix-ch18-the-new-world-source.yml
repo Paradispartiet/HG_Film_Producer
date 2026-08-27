@@ -45,9 +45,30 @@ jobs:
           path.write_text(text.replace(before, after, 1))
 
       - name: Full v0.1 verification
-        run: npm run verify:v0.1
+        shell: bash
+        run: |
+          set +e
+          npm run verify:v0.1 > /tmp/the-new-world-verify.log 2>&1
+          status=$?
+          cat /tmp/the-new-world-verify.log
+          if [ "$status" -ne 0 ]; then
+            cp /tmp/the-new-world-verify.log TEMP-the-new-world-verify.log
+            exit "$status"
+          fi
+
+      - name: Publish verifier failure diagnostic only
+        if: failure()
+        shell: bash
+        run: |
+          test -f TEMP-the-new-world-verify.log || exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add TEMP-the-new-world-verify.log
+          git commit -m "TEMP capture The New World verifier failure"
+          git push origin HEAD:agent/ch18-the-new-world-production-case
 
       - name: Commit source fix and self-remove TEMP workflow
+        if: success()
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
