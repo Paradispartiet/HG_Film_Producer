@@ -148,6 +148,7 @@ import { holyMotorsFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteen
 import { idaFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenIda";
 import { theRevenantFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenTheRevenant";
 import { iAmNotYourNegroFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenIAmNotYourNegro";
+import { getOutFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenGetOut";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -322,6 +323,7 @@ const sourceBackedFilmHistoryProfiles = {
   [idaFilmHistoryProfile.scenarioId]: idaFilmHistoryProfile,
   [theRevenantFilmHistoryProfile.scenarioId]: theRevenantFilmHistoryProfile,
   [iAmNotYourNegroFilmHistoryProfile.scenarioId]: iAmNotYourNegroFilmHistoryProfile,
+  [getOutFilmHistoryProfile.scenarioId]: getOutFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
