@@ -172,6 +172,7 @@ import { idaProductionCaseVerification } from "./scenarioProductionVerificationI
 import { theRevenantProductionCaseVerification } from "./scenarioProductionVerificationTheRevenant";
 import { iAmNotYourNegroProductionCaseVerification } from "./scenarioProductionVerificationIAmNotYourNegro";
 import { getOutProductionCaseVerification } from "./scenarioProductionVerificationGetOut";
+import { coldWarProductionCaseVerification } from "./scenarioProductionVerificationColdWar";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -461,6 +462,7 @@ const additionalVerificationRecords = [
   theRevenantProductionCaseVerification,
   iAmNotYourNegroProductionCaseVerification,
   getOutProductionCaseVerification,
+  coldWarProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
