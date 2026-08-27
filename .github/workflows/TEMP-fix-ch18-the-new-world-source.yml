@@ -57,6 +57,17 @@ jobs:
       - name: Build focused test target
         run: npm run build
 
+      - name: Prove language-boundary learning-goal contract
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import { chapterEighteenTheNewWorldExpansionDefinitions } from './dist/core/chapterEighteenTheNewWorldExpansion.js';
+          const film = chapterEighteenTheNewWorldExpansionDefinitions[0];
+          const pass = film.learningGoals.some((goal) => goal.includes('Virginia Algonquian/Powhatan') && goal.includes('historical completeness'));
+          console.log(`Virginia Algonquian/Powhatan + historical completeness: ${pass}`);
+          if (!pass) process.exit(1);
+          NODE
+
       - name: The New World strict test
         run: node --test dist/core/chapterEighteenTheNewWorldExpansion.test.js
 
