@@ -78,7 +78,7 @@ export const chapterEighteenAtlanticsExpansionDefinitions = [
       "Identify Netflix's post-Cannes acquisition of broad international rights as platform-era circulation evidence, not proof that Netflix financed or controlled principal photography.",
       "Explain how festival recognition can enable international platform circulation while preserving the earlier France-Senegal-Belgium production network as the production-history layer.",
       "Separate reception from craft evidence: Grand Prix and CST recognition do not prove camera settings, budget, casting duration or sound hardware.",
-      "Maintain an uncertainty register for exact budget, financing shares, shooting days, full casting census, rehearsal days, camera-body discrepancy, full lens map, exposure, lighting kit, codecs/media, LUT/CDL, VFX totals/software, edit software, sound hardware, DI nodes and final mix topology.",
+      "Maintain an uncertainty register for exact budget, financing shares, shooting days, full casting census, rehearsal days, VariCam body discrepancy, full lens map, exposure, lighting kit, codecs/media, LUT/CDL, VFX totals/software, edit software, sound hardware, DI nodes and final mix topology.",
       "Explain Atlantics' Chapter 18 significance as a case where digital low-light tools, transnational co-production and later platform circulation amplify a locally specific Wolof-language authorship instead of erasing it.",
       "Build a closing production audit that checks runtime/version provenance, co-production roles, Wolof dialogue, casting provenance, RED/VariCam day-night evidence, VariCam body discrepancy, 1.66/5.1 delivery, late-written text, music authorship, sound boundaries and platform-rights timing before verification."
     ],
