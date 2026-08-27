@@ -10,8 +10,8 @@
     "thesis": "The period is not one digital revolution. Capture, post-production, animation, VFX, distribution, exhibition, financing and platform circulation changed asynchronously, while 35mm, Super 16, 65mm and IMAX persisted and regionally distinct production systems continued to matter."
   },
   "atlas": {
-    "expectedCount": 535,
-    "actualCount": 535,
+    "expectedCount": 536,
+    "actualCount": 536,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -800,6 +800,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterEighteenColdWarExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -868,7 +874,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 535
+    "literalVerifiedScenarioIds": 536
   },
   "candidates": [
     {
@@ -2020,11 +2026,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P1",
       "chapterFunction": "European digital monochrome and Academy-ratio period production provide a formal co-production counterpoint.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_cold_war_2018",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterEighteenColdWarExpansion.ts"
     },
     {
       "title": "Parasite",
@@ -2195,6 +2201,7 @@
       "Burning",
       "Spider-Man: Into the Spider-Verse",
       "An Elephant Sitting Still",
+      "Cold War",
       "Parasite",
       "The Irishman",
       "Synonyms",
@@ -2202,7 +2209,6 @@
     ],
     "P0": [],
     "P1": [
-      "Cold War",
       "1917",
       "Atlantics"
     ],
@@ -2212,7 +2218,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Cold War",
     "1917",
     "Atlantics"
   ],
