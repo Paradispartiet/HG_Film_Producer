@@ -1,0 +1,147 @@
+import type { HistoricalFilmScenario } from "./earlyCinemaExpansion.js";
+import { normalizeEarlyCinemaTitle } from "./earlyCinemaExpansion.js";
+
+export const chapterEighteenAtlanticsExpansionDefinitions = [
+  {
+    id: "scenario_atlantics_2019",
+    title: "Atlantics",
+    originalTitle: "Atlantique",
+    aliases: ["Atlantique"],
+    year: 2019,
+    titleType: "Movie",
+    runtimeMins: 104,
+    directors: ["Mati Diop"],
+    genres: ["Drama", "Fantasy"],
+    sourceId: "cannes_atlantics_2019",
+    sourceUrl: "https://www.festival-cannes.com/en/f/atlantique/",
+    scenarioType: "senegalese_french_belgian_first_feature_supernatural_social_realism_dakar_location_street_cast_wolof_red_epic_varicam_day_night_long_lens_1_66_platform_circulation_2019",
+    premise: "Build Atlantics as a source-first Chapter 18 Production Case about how Senegalese authorship, a France-Senegal-Belgium co-production, Dakar location work, street casting, Wolof performance, a deliberately split day/night digital-camera strategy, long-lens observational mobility, supernatural social realism, late editorial writing, Fatima Al Qadiri's score and post-Cannes platform circulation became one production system. Festival de Cannes anchors the 2019 feature at 104 minutes and credits Mati Diop as director/co-writer, Olivier Demangel as co-writer, Claire Mathon as cinematographer, Toma Baqueni as production designer, Aël Dallier Vega as editor, Fatima Al Qadiri as composer, Benoit De Clerck and Emmanuel de Boissieu for sound, and Rachèle Raoult plus Salimata Ndiaye for costumes. Ad Vitam documents France-Senegal-Belgium production, Wolof, 1.66 and 5.1 delivery metadata, Les Films du Bal with Judith Lou Lévy and Eve Robin, Senegalese executive production through Cinekap/Oumar Sall, Belgian co-production through Frakas, and ARTE France Cinéma plus Canal+ International co-production. Its 1h45 catalogue timing is preserved as version metadata rather than overriding the 104-minute Cannes anchor. Diop and Mathon describe discovering the visual system through Dakar itself: local night lighting, darkness, dust, humidity, ocean spray and the need to react quickly to life. Mathon identifies RED Epic for daytime and a high-sensitivity Panasonic VariCam for night, with long focal lengths around 85-135 mm and the long end of an Angénieux Optimo 45-120 mm. Panavision/AFC's equipment record specifies RED Epic Dragon, Panasonic VariCam LT and Zeiss G.O. T1.3, while Mathon's cinematography interviews identify the night camera as VariCam 35; the player must preserve that body-label discrepancy instead of silently harmonizing it. The production used a mostly light/mobile observational approach so the image could remain grounded in Dakar while shifting toward ghostly night imagery. Diop's casting process searched the same social environments as the characters: Souleiman was found on a construction site, Dior in a nightclub and Ada on the streets of Thiaroye, making casting geography and trust part of authorship rather than generic nonprofessional casting. Diop describes Wolof as indispensable to the film's location and cultural address. The screenplay took years to develop with Olivier Demangel, but writing continued through post: Diop states that the final poetic words between Ada and Souleiman were written at the very end of editing by Violaine Huisman and were not recorded during principal photography, so the player must preserve the distinction between scripted action, late-written text and final editorial construction. Fatima Al Qadiri's music was already part of Diop's writing environment; Diop describes choosing her as specifically as an actor or cinematographer because the score's ancient/futuristic, electronic and culturally hybrid language belonged to the film's supernatural-political world. Netflix acquired broad international rights after Cannes, making platform circulation part of the Chapter 18 industrial afterlife without turning Netflix into evidence for production authorship. The player must coordinate co-production entities and funding, local executive production, Dakar casting and rehearsal, Wolof dialogue, location permissions, day/night camera separation, body-label provenance, long-lens coverage, local/practical light, black-skin night exposure, weather/sea atmosphere, production design, costume, sound capture, supernatural transitions, editing, late text recording, music, finishing, festival delivery and later platform rights while refusing unsupported exact total budget, exact financing shares, shooting-day count, full actor-search census, exact rehearsal days, complete camera-unit ownership, a fabricated resolution of VariCam LT versus VariCam 35, full lens-by-shot map, universal exposure values, complete lighting inventory, exact codecs/media by shot, LUT/CDL recipes, full VFX vendor/shot list, edit software/version, production-sound hardware, DI node graph, final mix topology or a claim that Netflix financed or controlled principal photography unless stronger title-specific records establish them.",
+    requiredChoicesSeed: {
+      screenplay: ["mati_diop_olivier_demangel", "years_long_development", "wolof", "supernatural_social_realism", "late_poetic_text", "violaine_huisman", "editing_continues_writing"],
+      camera: ["claire_mathon", "red_epic_day", "varicam_night", "varicam_body_discrepancy", "1_66", "long_lenses_85_135", "optimo_45_120", "zeiss_t1_3", "dakar_available_light"],
+      editing: ["ael_dallier_vega", "late_text_in_edit", "day_night_transition", "social_realism_to_fantasy", "festival_delivery", "version_metadata"],
+      sound: ["benoit_de_clerck", "emmanuel_de_boissieu", "fatima_al_qadiri", "wolof_dialogue", "5_1_delivery", "production_hardware_unknown"],
+      themes: ["film_history", "2019", "atlantics", "atlantique", "mati_diop", "senegal", "dakar", "france", "belgium", "first_feature", "african_authorship", "european_coproduction", "les_films_du_bal", "cinekap", "frakas", "arte_france_cinema", "canal_plus_international", "street_casting", "nonprofessional_performance", "wolof", "claire_mathon", "red_epic", "varicam", "long_lens", "1_66", "supernatural_social_realism", "fatima_al_qadiri", "netflix_distribution"]
+    },
+    learningGoals: [
+      "Explain Atlantics as a coordinated Senegalese-authorship, transnational-financing, casting, location, camera, performance, sound, editing and circulation system rather than only as a supernatural drama.",
+      "Use Festival de Cannes' 104-minute record as the canonical runtime anchor while preserving Ad Vitam's 1h45 and other catalogue timings as version metadata.",
+      "Identify Mati Diop as director and co-writer with Olivier Demangel while keeping Claire Mathon, Aël Dallier Vega, Fatima Al Qadiri and other department authors distinct.",
+      "Explain the Chapter 18 function: Senegalese-French production and supernatural social realism make African authorship and European co-production infrastructure visible together.",
+      "Identify France, Senegal and Belgium as the documented production countries without reducing Senegalese authorship to a location-services label.",
+      "Identify Les Films du Bal, Cinekap and Frakas as documented production entities and preserve their different national/production roles.",
+      "Identify Les Films du Bal/Judith Lou Lévy and Eve Robin as delegated production and Cinekap/Oumar Sall as Senegalese executive-production infrastructure where documented.",
+      "Identify ARTE France Cinéma and Canal+ International as documented co-production layers without inventing exact financing percentages or editorial-control rights.",
+      "Treat public, regional, international and broadcaster financing as production infrastructure whose exact shares remain unknown unless primary financing records establish them.",
+      "Explain why Dakar is an active production system of labor, architecture, migration, nightlife, coastline, light and social geography rather than a generic exotic backdrop.",
+      "Explain why Diop first needed Claire Mathon to experience Dakar at night before fixing the film's visual approach.",
+      "Treat local night lighting as cultural and economic evidence as well as illumination, while avoiding unsupported fixture-by-fixture inventories.",
+      "Identify the film's original spoken language as Wolof and explain why Diop treated language as inseparable from place and authorship.",
+      "Explain street casting as situated research: actors were sought in social environments corresponding to the characters rather than only through conventional agency lists.",
+      "Identify the documented discovery contexts for Souleiman on a construction site, Dior in a nightclub and Ada on the streets of Thiaroye without turning those anecdotes into a complete casting census.",
+      "Explain why recognizing the character in a nonprofessional performer is different from claiming the performer simply plays themself.",
+      "Treat rehearsal and trust-building with first-time performers as directing infrastructure while keeping exact rehearsal-day totals unresolved unless stronger records establish them.",
+      "Explain why a larger first-feature crew and limited time per scene can increase the need for prior trust, casting precision and flexible cinematography.",
+      "Identify Claire Mathon as cinematographer and preserve her stated goal of a real but lyrical Dakar whose fantastic dimension emerges from existing light and atmosphere.",
+      "Identify RED Epic as the documented daytime camera choice and explain how its daytime rendering supported sun, dust and documentary immediacy.",
+      "Identify a high-sensitivity Panasonic VariCam as the documented night strategy and explain why sensitivity allowed neighborhoods in deep darkness to remain visible.",
+      "Preserve the camera-body source conflict: Panavision/AFC records VariCam LT, while Mathon interview/survey material identifies VariCam 35; do not silently convert one into the other.",
+      "Treat the RED/VariCam split as a title-specific day/night strategy rather than a universal rule for digital cinematography.",
+      "Identify 1.66 as the documented presentation aspect ratio and keep it distinct from each camera sensor's native raster.",
+      "Preserve the documented 2K post-production/master context without inventing an unsupported per-shot finishing pipeline.",
+      "Identify long focal lengths around 85-135 mm as a documented part of the visual method and distinguish them from a complete lens-by-shot map.",
+      "Identify the high end of the Angénieux Optimo 45-120 mm as a documented working range while keeping other focal assignments bounded.",
+      "Use Panavision/AFC's Zeiss G.O. T1.3 equipment record as package evidence without assuming every shot used a Zeiss prime.",
+      "Explain why lightweight shoulder/Easyrig and mobile long-lens operation supported a documentary ability to react to life in Dakar.",
+      "Explain how long lenses can make observational distance and visual compression coexist with improvisational response.",
+      "Treat dust, humidity and ocean spray as image-making conditions that affect texture, flare, contrast and equipment protection rather than as poetic description alone.",
+      "Explain why rendering dark skin at night was a stated visual priority and must be treated as exposure/color responsibility rather than an automatic property of a sensitive sensor.",
+      "Keep exact ISO, aperture, shutter, filtration, white balance, noise reduction and exposure index unresolved unless title-specific camera records establish them.",
+      "Keep exact recording media, codec settings and data-management hardware bounded because equipment-package evidence does not prove every recording setting.",
+      "Explain supernatural social realism as a production transition built from performance, light, framing, sound, editing and design rather than a separate effects-only layer.",
+      "Identify Toma Baqueni as production designer and preserve Oumar Sall's documented décor/production role where distributor credits specify it.",
+      "Explain how the futuristic tower, workers' spaces, family interiors, nightclub and coastline organize class, desire, labor and haunting through physical geography.",
+      "Identify Rachèle Raoult and Salimata Ndiaye as costume designers and keep costume authorship distinct from nonprofessional performers' personal clothing.",
+      "Identify Aël Dallier Vega as editor and explain why a film built across social realism and supernatural possession requires editorial control of when the genre shift becomes legible.",
+      "Explain that writing continued into post: Diop says the final poetic Ada/Souleiman words were written at the very end of editing rather than recorded during principal photography.",
+      "Identify Violaine Huisman as the writer Diop invited to create those late poetic words and distinguish that collaboration from the principal screenplay credit.",
+      "Explain why late-written words can require voice recording, timing, sound, picture and subtitle changes even after principal photography is complete.",
+      "Do not retroactively label late-written text as principal-photography dialogue when Diop explicitly says it was not recorded during the shoot.",
+      "Identify Benoit De Clerck and Emmanuel de Boissieu as documented sound credits while keeping production-recording versus post/final-mix responsibility bounded where credits do not fully resolve it.",
+      "Identify 5.1 as documented delivery metadata without inventing channel-by-channel mix topology or loudness settings.",
+      "Identify Fatima Al Qadiri as the official composer and reject conflicting secondary metadata that assigns the composition credit elsewhere.",
+      "Explain Diop's choice of Al Qadiri as a creative-collaborator decision already embedded in writing, not music added only after picture lock.",
+      "Explain how Al Qadiri's ancient/futuristic and electronic palette supports the film's political and supernatural dimensions without reducing Senegalese culture to a generic mystical sound.",
+      "Separate original score, production sound, source music, ambience and final rerecording rather than treating all audio as one layer.",
+      "Keep exact music stems, recording instruments, synth patches, plug-ins, reverbs and final automation outside the locked layer unless title-specific records establish them.",
+      "Treat the Cannes 104-minute premiere record, Ad Vitam theatrical record and later platform version as distinct distribution/delivery evidence rather than assuming one file or runtime everywhere.",
+      "Identify Netflix's post-Cannes acquisition of broad international rights as platform-era circulation evidence, not proof that Netflix financed or controlled principal photography.",
+      "Explain how festival recognition can enable international platform circulation while preserving the earlier France-Senegal-Belgium production network as the production-history layer.",
+      "Separate reception from craft evidence: Grand Prix and CST recognition do not prove camera settings, budget, casting duration or sound hardware.",
+      "Maintain an uncertainty register for exact budget, financing shares, shooting days, full casting census, rehearsal days, VariCam body discrepancy, full lens map, exposure, lighting kit, codecs/media, LUT/CDL, VFX totals/software, edit software, sound hardware, DI nodes and final mix topology.",
+      "Explain Atlantics' Chapter 18 significance as a case where digital low-light tools, transnational co-production and later platform circulation amplify a locally specific Wolof-language authorship instead of erasing it.",
+      "Build a closing production audit that checks runtime/version provenance, co-production roles, Wolof dialogue, casting provenance, RED/VariCam day-night evidence, VariCam body discrepancy, 1.66/5.1 delivery, late-written text, music authorship, sound boundaries and platform-rights timing before verification."
+    ],
+    phases: [
+      { id: "evidence_hierarchy", label: "Map the Atlantics evidence hierarchy", player_task: "Separate Cannes and distributor metadata, cinematographer/director interviews, equipment records, casting accounts and platform announcements before promoting production claims." },
+      { id: "released_version", label: "Lock the 104-minute Cannes anchor", player_task: "Use the 104-minute Cannes record as canonical and preserve 1h45/other catalogue timings only as version-specific metadata." },
+      { id: "coproduction_map", label: "Map the France-Senegal-Belgium co-production", player_task: "Keep Les Films du Bal, Cinekap, Frakas, ARTE France Cinéma and Canal+ International in distinct documented production layers." },
+      { id: "finance_unknowns", label: "Bound financing claims", player_task: "Record confirmed funds and entities without inventing contribution percentages, recoupment terms or editorial-control rights." },
+      { id: "dakar_geography", label: "Map Dakar as production geography", player_task: "Track Thiaroye, construction, nightlife, coastline, family space and the tower against permits, access, transport, time of day and story function." },
+      { id: "wolof", label: "Protect Wolof authorship", player_task: "Keep dialogue, performance direction, subtitles and ADR decisions traceable to Wolof rather than silently normalizing the production into French or English." },
+      { id: "street_casting", label: "Run situated street casting", player_task: "Search social environments corresponding to the characters while preserving consent, contact, audition and safeguarding records." },
+      { id: "cast_provenance", label: "Log performer discovery contexts", player_task: "Preserve the construction-site, nightclub and Thiaroye discovery accounts as documented examples rather than a complete casting census." },
+      { id: "trust_rehearsal", label: "Build trust and rehearsal", player_task: "Rehearse text, blocking and camera presence with first-time performers while keeping exact rehearsal duration unresolved." },
+      { id: "night_scout", label: "Scout Dakar at night", player_task: "Study darkness, imported street/interior lighting, skin rendering, traffic, nightlife and coastal atmosphere before fixing a technical recipe." },
+      { id: "day_camera", label: "Assign RED Epic daytime work", player_task: "Use the documented RED Epic daytime strategy for sun, dust and responsive observational photography while keeping per-shot body ownership traceable." },
+      { id: "night_camera", label: "Assign the high-sensitivity VariCam night strategy", player_task: "Use the documented VariCam night method to work in deep available/practical darkness without claiming one exact body label where sources conflict." },
+      { id: "varicam_discrepancy", label: "Preserve the VariCam body discrepancy", player_task: "Record Panavision/AFC's VariCam LT equipment entry beside Mathon interview/survey references to VariCam 35 and leave the conflict explicit." },
+      { id: "aspect_ratio", label: "Lock 1.66 presentation", player_task: "Protect the documented 1.66 frame as delivery/composition metadata without confusing it with sensor-native dimensions." },
+      { id: "long_lenses", label: "Build the long-lens observational method", player_task: "Test 85-135 mm and the long end of the Optimo 45-120 mm for distance, compression, movement and focus without fabricating a shot-by-shot map." },
+      { id: "equipment_record", label: "Reconcile camera-package records", player_task: "Keep RED Epic Dragon, VariCam package and Zeiss G.O. T1.3 evidence source-labeled instead of using rental records as proof of every shot." },
+      { id: "mobile_operation", label: "Protect mobile observational operation", player_task: "Keep shoulder/Easyrig and responsive long-lens movement available so location life can enter the frame without losing planned dramatic beats." },
+      { id: "black_skin_night", label: "Audit dark-skin night rendering", player_task: "Evaluate exposure, flare, practical sources and skin separation without promoting unsupported universal ISO or lighting values." },
+      { id: "atmosphere", label: "Track dust, humidity and sea spray", player_task: "Treat environmental atmosphere as both image texture and equipment/logistics risk across day and night units." },
+      { id: "production_design", label: "Map class and haunting through space", player_task: "Coordinate tower, workers' spaces, homes, club and coastline with camera distance, performer blocking and supernatural transitions." },
+      { id: "costume", label: "Coordinate documented costume authorship", player_task: "Keep Rachèle Raoult and Salimata Ndiaye's costume work distinct from performers' personal wardrobes and continuity records." },
+      { id: "genre_transition", label: "Stage supernatural social realism", player_task: "Build the shift from labor/migration realism to possession through performance, image, sound, editing and design rather than effects exposition alone." },
+      { id: "editing_structure", label: "Shape the genre turn in editorial", player_task: "Use Aël Dallier Vega's picture-editing layer to control revelation, possession, absence and Ada's perspective across the transition." },
+      { id: "late_poem", label: "Integrate the late Ada/Souleiman poem", player_task: "Preserve Diop's account that Violaine Huisman's final words arrived at the very end of editing and were not principal-photography dialogue." },
+      { id: "late_recording", label: "Version late-written dialogue", player_task: "Track recording, synchronization, subtitles, picture timing and mix revisions caused by words added after the shoot." },
+      { id: "production_sound", label: "Protect sound-role boundaries", player_task: "Keep Benoit De Clerck and Emmanuel de Boissieu's documented sound credits while leaving unsupported recorder/microphone topology unresolved." },
+      { id: "score_concept", label: "Integrate Fatima Al Qadiri from writing onward", player_task: "Use the composer's hybrid ancient/futuristic electronic language as a structural reference while preserving score, source and ambience as separate layers." },
+      { id: "music_credit", label: "Resolve composer-credit conflicts", player_task: "Use Cannes/Ad Vitam's Fatima Al Qadiri credit as canonical and quarantine conflicting secondary metadata unless stronger evidence overturns it." },
+      { id: "finish", label: "Protect 2K/1.66 finishing boundaries", player_task: "Track documented 2K post and 1.66 presentation while keeping LUTs, CDLs, DI nodes and per-shot transforms unresolved." },
+      { id: "sound_delivery", label: "Lock 5.1 delivery metadata", player_task: "Verify 5.1 delivery without fabricating channel layout decisions, loudness targets or final-dub automation." },
+      { id: "cannes_delivery", label: "Separate festival delivery from later releases", player_task: "Preserve the Cannes 104-minute record separately from theatrical catalogue timing and later platform deliverables." },
+      { id: "platform_rights", label: "Map post-Cannes platform circulation", player_task: "Record Netflix's broad international rights acquisition as later distribution evidence, not principal-photography financing or authorship." },
+      { id: "unknowns_register", label: "Maintain the Atlantics unknowns register", player_task: "Track budget, financing shares, shoot/rehearsal days, casting census, VariCam body conflict, lens map, exposure, lighting, codec/media, LUT/CDL, VFX, edit/sound hardware, DI and mix topology explicitly." },
+      { id: "chapter18_position", label: "Position Atlantics in digital convergence", player_task: "Explain how low-light digital cameras, European-African co-production and global platform circulation support rather than replace locally specific Senegalese/Wolof authorship." },
+      { id: "delivery_review", label: "Audit the complete Atlantics production system", player_task: "Verify runtime/version, co-production roles, Dakar/casting provenance, Wolof, camera day-night split, body discrepancy, 1.66/5.1, late text, composer credit, sound boundaries and platform-rights timing before closure." }
+    ]
+  }
+] as const;
+
+export function mergeChapterEighteenAtlanticsExpansion(baseScenarios: readonly HistoricalFilmScenario[]): readonly HistoricalFilmScenario[] {
+  const merged = [...baseScenarios];
+  let nextPosition = Math.max(0, ...baseScenarios.map((scenario) => scenario.source.position)) + 1;
+  for (const definition of chapterEighteenAtlanticsExpansionDefinitions) {
+    const acceptedTitles = [definition.title, definition.originalTitle, ...definition.aliases].map(normalizeEarlyCinemaTitle);
+    const exists = merged.some((scenario) => scenario.id === definition.id || (scenario.film.year === definition.year && [scenario.film.title, scenario.film.original_title].map(normalizeEarlyCinemaTitle).some((title) => acceptedTitles.includes(title))));
+    if (exists) continue;
+    merged.push({
+      id: definition.id,
+      status: "manual_chapter_eighteen_atlantics_verified",
+      source: { list_id: "manual_chapter_eighteen_atlantics_expansion_2026", position: nextPosition, imdb_id: definition.sourceId, url: definition.sourceUrl },
+      film: { title: definition.title, original_title: definition.originalTitle, year: definition.year, title_type: definition.titleType, runtime_mins: definition.runtimeMins, directors: definition.directors, genres: definition.genres, genre_keys: definition.genres.map((genre) => genre.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")), imdb_rating: 0, user_rating: 0 },
+      scenario_type: definition.scenarioType,
+      production_challenge: definition.premise,
+      required_choices_seed: definition.requiredChoicesSeed,
+      phases: definition.phases,
+      learning_goals_seed: definition.learningGoals,
+      manual_enrichment_needed: [],
+    });
+    nextPosition += 1;
+  }
+  return merged;
+}

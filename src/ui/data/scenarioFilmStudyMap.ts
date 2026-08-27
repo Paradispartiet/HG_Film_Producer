@@ -151,6 +151,7 @@ import { iAmNotYourNegroFilmHistoryProfile } from "./scenarioFilmStudyChapterEig
 import { getOutFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenGetOut";
 import { coldWarFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenColdWar";
 import { nineteenSeventeenFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteen1917";
+import { atlanticsFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenAtlantics";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -328,6 +329,7 @@ const sourceBackedFilmHistoryProfiles = {
   [getOutFilmHistoryProfile.scenarioId]: getOutFilmHistoryProfile,
   [coldWarFilmHistoryProfile.scenarioId]: coldWarFilmHistoryProfile,
   [nineteenSeventeenFilmHistoryProfile.scenarioId]: nineteenSeventeenFilmHistoryProfile,
+  [atlanticsFilmHistoryProfile.scenarioId]: atlanticsFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
