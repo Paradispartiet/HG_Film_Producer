@@ -17,6 +17,20 @@ function replaceAllCount(source, from, to, label) {
 }
 
 {
+  const path = "src/core/chapterEighteenTreeOfLifeExpansion.ts";
+  let s = read(path);
+  s = replaceOnce(
+    s,
+    '      "Identify the documented mix of 35 mm, regular 65 mm and IMAX acquisition without assigning individual shots or sequences to a format unless a source does so.",',
+    '      "Identify the documented mix of 35 mm, regular 65 mm and IMAX acquisition while keeping shot-level format allocation unknown unless a source establishes it.",',
+    "Tree of Life shot-level format boundary",
+  );
+  write(path, s);
+  const stage = spawnSync("git", ["add", "-A", "--", path, "TEMP-tree-of-life-verify.log"], { encoding: "utf8", stdio: "inherit" });
+  if (stage.status !== 0) throw new Error(`Failed to stage Tree of Life source normalization with ${stage.status}`);
+}
+
+{
   const path = "src/ui/data/filmScenarios.ts";
   let s = read(path);
   s = replaceOnce(s,
