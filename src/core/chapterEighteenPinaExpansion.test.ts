@@ -1,0 +1,40 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+
+import { chapterEighteenPinaExpansionDefinitions } from "./chapterEighteenPinaExpansion.js";
+
+test("Chapter 18 materializes Pina as a source-first native-stereo dance documentary and live-performance production case", () => {
+  assert.equal(chapterEighteenPinaExpansionDefinitions.length, 1);
+  const film = chapterEighteenPinaExpansionDefinitions[0];
+  assert.equal(film.id, "scenario_pina_2011");
+  assert.equal(film.year, 2011);
+  assert.equal(film.runtimeMins, 103);
+  assert.deepEqual(film.directors, ["Wim Wenders"]);
+  assert.ok(film.scenarioType.includes("native_stereo_3d") && film.scenarioType.includes("dance_documentary"));
+  assert.ok(film.scenarioType.includes("sony_hdc1500") && film.scenarioType.includes("sony_hdc_p1"));
+  assert.ok(film.premise.includes("Café Müller") && film.premise.includes("Le Sacre du printemps") && film.premise.includes("Vollmond") && film.premise.includes("Kontakthof"));
+  assert.ok(film.premise.includes("Bausch died") && film.premise.includes("reconceived"));
+  assert.ok(film.premise.includes("Alain Derobe") && film.premise.includes("prototype mirror rigs"));
+  assert.ok(film.premise.includes("Sony HDC-1500") && film.premise.includes("Sony HDC-P1") && film.premise.includes("Transvideo"));
+  assert.ok(film.premise.includes("10, 14 and 20 mm DigiPrimes") && film.premise.includes("overwhelmingly on a 10 mm Zeiss prime") && film.premise.includes("very few closer shots on 14 mm"));
+  assert.ok(film.premise.includes("final-shot use of 20 mm") && film.premise.includes("unresolved"));
+  assert.ok(film.premise.includes("sold-out audiences") && film.premise.includes("Wuppertal"));
+  assert.ok(film.premise.includes("HDCAM-SR") && film.premise.includes("Codex") && film.premise.includes("Avid") && film.premise.includes("Das Werk"));
+  assert.ok(film.premise.includes("2D archival imagery") && film.premise.includes("native stereo material"));
+  assert.ok(film.requiredChoicesSeed.camera.includes("stereo_parameter_unknowns"));
+  assert.ok(film.requiredChoicesSeed.editing.includes("archive_native3d_provenance"));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("Bausch's death") && goal.includes("production redesign")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("10, 14 and 20 mm DigiPrimes") && goal.includes("tested lens package")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("10 mm Zeiss prime") && goal.includes("very few") && goal.includes("14 mm")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("20 mm") && goal.includes("current evidence") && goal.includes("allocation")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("HDCAM-SR") && goal.includes("Codex")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("2D archival") && goal.includes("every frame")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("interaxial") && goal.includes("convergence") && goal.includes("unresolved")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("André Rigaut") && goal.includes("Matthias Lempert")));
+  assert.ok(film.phases.find((phase) => phase.id === "final_lens_boundary")?.player_task.includes("20 mm"));
+  assert.ok(film.phases.find((phase) => phase.id === "archive_boundary")?.player_task.includes("2D"));
+  assert.ok(film.phases.find((phase) => phase.id === "audience_performance")?.player_task.includes("limited reset"));
+  assert.ok(film.phases.find((phase) => phase.id === "unknowns_register")?.player_task.includes("interaxial"));
+  assert.ok(film.learningGoals.length >= 50);
+  assert.ok(film.phases.length >= 30);
+});
