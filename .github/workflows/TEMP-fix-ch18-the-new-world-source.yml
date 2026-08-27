@@ -32,31 +32,30 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Apply exact source-only stock-name fix
+      - name: Apply proven source-only fixes
         shell: python
         run: |
           from pathlib import Path
           path = Path('src/core/chapterEighteenTheNewWorldExpansion.ts')
           text = path.read_text()
-          before = 'Kodak Vision2 200T 5217 and 500T 5218'
-          after = 'Kodak Vision2 200T 5217 and Vision2 500T 5218'
-          if text.count(before) != 1:
-              raise SystemExit(f'Expected exactly one source anchor, found {text.count(before)}')
-          path.write_text(text.replace(before, after, 1))
+          replacements = [
+              (
+                  'Kodak Vision2 200T 5217 and 500T 5218',
+                  'Kodak Vision2 200T 5217 and Vision2 500T 5218',
+              ),
+              (
+                  "Explain Criterion and BFI's natural-light evidence as a core aesthetic-production constraint rather than a claim that no artificial light was ever used anywhere.",
+                  "Explain Criterion and BFI's natural-light evidence as a core aesthetic-production constraint rather than an absolute no-artificial-light rule for every setup.",
+              ),
+          ]
+          for before, after in replacements:
+              if text.count(before) != 1:
+                  raise SystemExit(f'Expected exactly one source anchor for {before!r}, found {text.count(before)}')
+              text = text.replace(before, after, 1)
+          path.write_text(text)
 
       - name: Build focused test target
         run: npm run build
-
-      - name: Prove natural-light learning-goal contract
-        shell: bash
-        run: |
-          node --input-type=module <<'NODE'
-          import { chapterEighteenTheNewWorldExpansionDefinitions } from './dist/core/chapterEighteenTheNewWorldExpansion.js';
-          const film = chapterEighteenTheNewWorldExpansionDefinitions[0];
-          const pass = film.learningGoals.some((goal) => goal.includes('natural-light') && goal.includes('absolute no-artificial-light'));
-          console.log(`natural-light + absolute no-artificial-light: ${pass}`);
-          if (!pass) process.exit(1);
-          NODE
 
       - name: The New World strict test
         run: node --test dist/core/chapterEighteenTheNewWorldExpansion.test.js
@@ -64,13 +63,13 @@ jobs:
       - name: Full v0.1 verification
         run: npm run verify:v0.1
 
-      - name: Commit source fix and self-remove TEMP workflow
+      - name: Commit source fixes and self-remove TEMP workflow
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git rm .github/workflows/TEMP-fix-ch18-the-new-world-source.yml
           git add src/core/chapterEighteenTheNewWorldExpansion.ts
-          git diff --cached --quiet && { echo 'Expected source fix/self-removal changes'; exit 1; }
+          git diff --cached --quiet && { echo 'Expected source fixes/self-removal changes'; exit 1; }
           git commit -m "Fix The New World source contracts"
           git push origin HEAD:agent/ch18-the-new-world-production-case
