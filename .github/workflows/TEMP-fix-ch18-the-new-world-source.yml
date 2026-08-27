@@ -47,6 +47,17 @@ jobs:
       - name: Build focused test target
         run: npm run build
 
+      - name: Prove natural-light learning-goal contract
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import { chapterEighteenTheNewWorldExpansionDefinitions } from './dist/core/chapterEighteenTheNewWorldExpansion.js';
+          const film = chapterEighteenTheNewWorldExpansionDefinitions[0];
+          const pass = film.learningGoals.some((goal) => goal.includes('natural-light') && goal.includes('absolute no-artificial-light'));
+          console.log(`natural-light + absolute no-artificial-light: ${pass}`);
+          if (!pass) process.exit(1);
+          NODE
+
       - name: The New World strict test
         run: node --test dist/core/chapterEighteenTheNewWorldExpansion.test.js
 
@@ -61,5 +72,5 @@ jobs:
           git rm .github/workflows/TEMP-fix-ch18-the-new-world-source.yml
           git add src/core/chapterEighteenTheNewWorldExpansion.ts
           git diff --cached --quiet && { echo 'Expected source fix/self-removal changes'; exit 1; }
-          git commit -m "Fix The New World film-stock source contract"
+          git commit -m "Fix The New World source contracts"
           git push origin HEAD:agent/ch18-the-new-world-production-case
