@@ -38,6 +38,21 @@ jobs:
       - name: Materialize deterministic integration
         run: node scripts/TEMP-materialize-ch18-holy-motors.mjs
 
+      - name: Normalize Chapter 18 canonical order
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync, writeFileSync } from 'node:fs';
+          const path = 'src/core/filmHistoryChapterEighteenAuditContract.test.ts';
+          let source = readFileSync(path, 'utf8');
+          const wrong = '"Amour", "Holy Motors", "Pietà", "Gravity"';
+          const canonical = '"Amour", "Pietà", "Holy Motors", "Gravity"';
+          const matches = source.split(wrong).length - 1;
+          if (matches !== 1) throw new Error(`Expected one generated Holy Motors order anchor, got ${matches}`);
+          source = source.replace(wrong, canonical);
+          writeFileSync(path, source);
+          NODE
+
       - name: Full v0.1 verification
         shell: bash
         run: |
