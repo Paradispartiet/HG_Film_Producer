@@ -169,6 +169,7 @@ import { pinaProductionCaseVerification } from "./scenarioProductionVerification
 import { amourProductionCaseVerification } from "./scenarioProductionVerificationAmour";
 import { holyMotorsProductionCaseVerification } from "./scenarioProductionVerificationHolyMotors";
 import { idaProductionCaseVerification } from "./scenarioProductionVerificationIda";
+import { theRevenantProductionCaseVerification } from "./scenarioProductionVerificationTheRevenant";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -455,6 +456,7 @@ const additionalVerificationRecords = [
   amourProductionCaseVerification,
   holyMotorsProductionCaseVerification,
   idaProductionCaseVerification,
+  theRevenantProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
