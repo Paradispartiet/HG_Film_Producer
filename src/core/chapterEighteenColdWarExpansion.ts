@@ -93,7 +93,7 @@ export const chapterEighteenColdWarExpansionDefinitions = [
       { id: "coproduction_map", label: "Map the transnational co-production", player_task: "Separate Polish, French and UK production companies, funds, broadcasters, executive producers, sales and distribution roles without inventing financing shares." },
       { id: "script_versions", label: "Track the moving screenplay", player_task: "Preserve Pawlikowski's iterative screenplay process, elliptical deletions and financing-script boundary through version control." },
       { id: "music_structure", label: "Design music as the third character", player_task: "Map folk, ensemble, jazz and popular-music transformations to relationship, geography and historical change." },
-      { id: "prep_lock", label: "Lock six months of prep", player_task: "Coordinate camera, design, costume, locations and monochrome testing across the documented long preparation period." },
+      { id: "prep_lock", label: "Lock six months of prep", player_task: "Coordinate camera, design, costume, locations and monochrome testing across the documented six months of preparation." },
       { id: "recce_lock", label: "Lock the recce process", player_task: "Use roughly thirty recce days to test positions, design and logistics while preserving exact daily records as unknown." },
       { id: "calendar_schedule", label: "Build the seven-month production calendar", player_task: "Model January-to-August 2017 with weather and ensemble breaks rather than pretending it was continuous daily shooting." },
       { id: "location_geography", label: "Reconcile filming and story geography", player_task: "Track Poland, Croatia and Paris filming separately from Poland, Berlin, Yugoslavia and Paris story locations." },
