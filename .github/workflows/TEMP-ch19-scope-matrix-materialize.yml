@@ -1,0 +1,45 @@
+name: TEMP Chapter 19 scope matrix materialize
+
+on:
+  push:
+    branches:
+      - agent/ch19-scope-candidate-matrix
+    paths:
+      - scripts/film-history-chapter-nineteen-atlas-audit.mjs
+      - .github/workflows/TEMP-ch19-scope-matrix-materialize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch19-scope-candidate-matrix
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Materialize Chapter 19 resolved matrix
+        run: node scripts/film-history-chapter-nineteen-atlas-audit.mjs --write=docs/film-history-chapter-nineteen-atlas-resolved.json > /tmp/ch19-audit-output.json
+
+      - name: Validate generated JSON
+        run: node -e 'const fs=require("fs"); const p="docs/film-history-chapter-nineteen-atlas-resolved.json"; const d=JSON.parse(fs.readFileSync(p,"utf8")); if(d.chapter?.number!==19 || d.candidates?.length!==60) process.exit(1); console.log(JSON.stringify({chapter:d.chapter.number,candidates:d.candidates.length,byDecision:Object.fromEntries(Object.entries(d.byDecision).map(([k,v])=>[k,v.length]))},null,2));'
+
+      - name: Commit deterministic snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/film-history-chapter-nineteen-atlas-resolved.json
+          if git diff --cached --quiet; then
+            echo "Chapter 19 snapshot already materialized."
+            exit 0
+          fi
+          git commit -m "Materialize Chapter 19 candidate matrix"
+          git push origin HEAD:agent/ch19-scope-candidate-matrix
