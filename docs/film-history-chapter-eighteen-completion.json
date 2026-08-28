@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0",
+  "status": "complete",
+  "completedOn": "2026-08-28",
+  "chapter": {
+    "number": 18,
+    "id": "digital-convergence-transnational-production",
+    "title": "Digital convergence, transnational production and platform-era cinema",
+    "period": "2000–2019"
+  },
+  "baseline": {
+    "mainCommitBeforeClosure": "a2568689cb4414ebeaea7764aeb0dc6194a8d09a",
+    "lastCandidateClosedBy": "The New World (2005)",
+    "lastCandidatePullRequest": 592
+  },
+  "proof": {
+    "atlas": "539/539",
+    "candidateCount": 82,
+    "useExistingCount": 82,
+    "productionVerifiedScenarioIds": 539,
+    "filmStudyAreaCount": 17,
+    "unresolved": {
+      "P0": 0,
+      "P1": 0,
+      "P2": 0,
+      "EXISTING_REQUIRED": 0
+    },
+    "recommendedNewProductionCases": 0,
+    "allCandidatesProductionVerified": true,
+    "allCandidatesHaveFilmStudy": true,
+    "temporaryArtifacts": 0
+  },
+  "closurePolicy": {
+    "chapter18ProductionQueueClosed": true,
+    "newChapter18ProductionCaseRequiresAuditReopen": true,
+    "doNotContinueFilmByFilmQueueAfterClosure": true
+  },
+  "nextPhase": {
+    "chapter": 19,
+    "period": "2020–present",
+    "status": "not_started",
+    "firstDeliverable": "source-first scope and candidate matrix",
+    "productionCasesMayStartAfterMatrix": true
+  }
+}
