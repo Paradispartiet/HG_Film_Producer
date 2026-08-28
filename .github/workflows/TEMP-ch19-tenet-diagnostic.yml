@@ -6,6 +6,7 @@ on:
       - agent/ch19-tenet-production-case
     paths:
       - .github/workflows/TEMP-ch19-tenet-diagnostic.yml
+      - src/core/chapterNineteenTenetExpansion.test.ts
 
 jobs:
   diagnose:
