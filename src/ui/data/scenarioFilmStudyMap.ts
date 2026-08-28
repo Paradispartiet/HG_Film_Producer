@@ -153,6 +153,7 @@ import { coldWarFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenCol
 import { nineteenSeventeenFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteen1917";
 import { atlanticsFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenAtlantics";
 import { theNewWorldFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenTheNewWorld";
+import { tenetFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenTenet";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -332,6 +333,7 @@ const sourceBackedFilmHistoryProfiles = {
   [nineteenSeventeenFilmHistoryProfile.scenarioId]: nineteenSeventeenFilmHistoryProfile,
   [atlanticsFilmHistoryProfile.scenarioId]: atlanticsFilmHistoryProfile,
   [theNewWorldFilmHistoryProfile.scenarioId]: theNewWorldFilmHistoryProfile,
+  [tenetFilmHistoryProfile.scenarioId]: tenetFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
