@@ -53,7 +53,8 @@ test("Chapter 19 materializes Tenet as a source-first large-format photochemical
   assert.ok(film.learningGoals.some((goal) => goal.includes("747 hit a set-built structure") && goal.includes("cable removal")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Andrew Jackson") && goal.includes("Andy Lockley")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("roughly 300-person") && goal.includes("company testimony")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("photography and LIDAR") && goal.includes("contingency")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("photography and LIDAR")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("VFX reference capture") && goal.includes("contingency infrastructure")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("6.3K") && goal.includes("every scan")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("photochemical-finish") && goal.includes("digital intermediate")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Jennifer Lame") && goal.includes("forward and inverted action")));
