@@ -1,4 +1,4 @@
-name: TEMP Chapter 19 Tenet materialize v2
+name: TEMP Chapter 19 Tenet materialize v3
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
 
           function replaceExact(file, before, after) {
             const source = fs.readFileSync(file, 'utf8');
-            if (!source.includes(before)) throw new Error(`${file}: missing exact anchor: ${before.slice(0, 120)}`);
+            if (!source.includes(before)) throw new Error(`${file}: missing exact anchor: ${before.slice(0, 140)}`);
             fs.writeFileSync(file, source.replace(before, after));
           }
 
@@ -88,7 +88,22 @@ jobs:
           replaceExact(
             'scripts/film-history-chapter-nineteen-atlas-audit.mjs',
             'const EXPECTED_ATLAS_COUNT = 539;',
-            'const EXPECTED_ATLAS_COUNT = 540;',
+            'const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;\nconst EXPECTED_ATLAS_COUNT = 540;',
+          );
+          replaceExact(
+            'scripts/film-history-chapter-nineteen-atlas-audit.mjs',
+            'throw new Error(`Chapter 19 audit expected the closed Chapter 18 baseline of ${EXPECTED_ATLAS_COUNT} Atlas scenarios, found ${atlas.scenarios.length}`);',
+            'throw new Error(`Chapter 19 audit expected the current Atlas count of ${EXPECTED_ATLAS_COUNT} scenarios after preserving the closed Chapter 18 baseline of ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT}, found ${atlas.scenarios.length}`);',
+          );
+          replaceExact(
+            'scripts/film-history-chapter-nineteen-atlas-audit.mjs',
+            'throw new Error(`Chapter 19 audit expected ${EXPECTED_ATLAS_COUNT} literal Production Verification IDs at baseline, found ${verifiedIds.size}`);',
+            'throw new Error(`Chapter 19 audit expected ${EXPECTED_ATLAS_COUNT} literal Production Verification IDs in the live registry, found ${verifiedIds.size}`);',
+          );
+          replaceExact(
+            'scripts/film-history-chapter-nineteen-atlas-audit.mjs',
+            'baselineFromClosedChapter18: EXPECTED_ATLAS_COUNT,\n    expectedCount: EXPECTED_ATLAS_COUNT,',
+            'baselineFromClosedChapter18: CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT,\n    expectedCount: EXPECTED_ATLAS_COUNT,',
           );
 
           replaceExact(
@@ -104,7 +119,7 @@ jobs:
           replaceExact(
             'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
             'test("Chapter 19 keeps the closed Chapter 18 Atlas read-only at foundation", () => {\n  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 539;/);\n  assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);\n  assert.equal(resolved.atlas.expectedCount, 539);\n  assert.equal(resolved.atlas.actualCount, 539);\n  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 539);\n});',
-            'test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {\n  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 540;/);\n  assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);\n  assert.equal(resolved.atlas.expectedCount, 540);\n  assert.equal(resolved.atlas.actualCount, 540);\n  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 540);\n});',
+            'test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {\n  assert.match(audit, /const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;/);\n  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 540;/);\n  assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);\n  assert.equal(resolved.atlas.expectedCount, 540);\n  assert.equal(resolved.atlas.actualCount, 540);\n  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 540);\n});',
           );
           replaceExact(
             'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
@@ -123,20 +138,29 @@ jobs:
           );
           NODE
 
-      - name: Materialize Chapter 19 canonical snapshot in working tree
-        run: node scripts/film-history-chapter-nineteen-atlas-audit.mjs --write=docs/film-history-chapter-nineteen-atlas-resolved.json > /tmp/ch19-tenet.json
+      - name: Generate and materialize canonical Chapter 19 snapshot
+        run: |
+          node scripts/film-history-chapter-nineteen-atlas-audit.mjs > /tmp/ch19-tenet.json
+          cp /tmp/ch19-tenet.json docs/film-history-chapter-nineteen-atlas-resolved.json
 
-      - name: Assert Tenet transition before full verification
+      - name: Assert generated output and canonical snapshot before install
         run: |
           node - <<'NODE'
           const fs = require('fs');
-          const data = JSON.parse(fs.readFileSync('/tmp/ch19-tenet.json','utf8'));
-          const tenet = data.candidates.find((candidate) => candidate.title === 'Tenet');
-          const counts = Object.fromEntries(Object.entries(data.byDecision).map(([key, value]) => [key, value.length]));
-          if (data.atlas.actualCount !== 540 || data.verificationIndex.literalVerifiedScenarioIds !== 540) throw new Error(JSON.stringify({ atlas: data.atlas, verificationIndex: data.verificationIndex }));
-          if (!tenet || tenet.decision !== 'USE_EXISTING' || tenet.scenarioId !== 'scenario_tenet_2020' || tenet.matches !== 1 || tenet.productionVerified !== true) throw new Error(JSON.stringify(tenet));
-          if (counts.USE_EXISTING !== 8 || counts.P0 !== 21 || counts.P1 !== 27 || counts.P2 !== 4 || counts.EXISTING_REQUIRED !== 0) throw new Error(JSON.stringify(counts));
-          console.log(JSON.stringify({ atlas: data.atlas.actualCount, verification: data.verificationIndex.literalVerifiedScenarioIds, tenet, counts }, null, 2));
+          function inspect(path) {
+            const data = JSON.parse(fs.readFileSync(path, 'utf8'));
+            const tenet = data.candidates.find((candidate) => candidate.title === 'Tenet');
+            const counts = Object.fromEntries(Object.entries(data.byDecision).map(([key, value]) => [key, value.length]));
+            if (data.atlas.baselineFromClosedChapter18 !== 539 || data.atlas.expectedCount !== 540 || data.atlas.actualCount !== 540) throw new Error(`${path}: ${JSON.stringify(data.atlas)}`);
+            if (data.verificationIndex.literalVerifiedScenarioIds !== 540) throw new Error(`${path}: ${JSON.stringify(data.verificationIndex)}`);
+            if (!tenet || tenet.decision !== 'USE_EXISTING' || tenet.scenarioId !== 'scenario_tenet_2020' || tenet.matches !== 1 || tenet.productionVerified !== true) throw new Error(`${path}: ${JSON.stringify(tenet)}`);
+            if (counts.USE_EXISTING !== 8 || counts.P0 !== 21 || counts.P1 !== 27 || counts.P2 !== 4 || counts.EXISTING_REQUIRED !== 0) throw new Error(`${path}: ${JSON.stringify(counts)}`);
+            return { atlas: data.atlas.actualCount, baseline: data.atlas.baselineFromClosedChapter18, verification: data.verificationIndex.literalVerifiedScenarioIds, tenet, counts };
+          }
+          const generated = inspect('/tmp/ch19-tenet.json');
+          const canonical = inspect('docs/film-history-chapter-nineteen-atlas-resolved.json');
+          if (fs.readFileSync('/tmp/ch19-tenet.json', 'utf8') !== fs.readFileSync('docs/film-history-chapter-nineteen-atlas-resolved.json', 'utf8')) throw new Error('Generated output and canonical Chapter 19 snapshot differ.');
+          console.log(JSON.stringify({ generated, canonical }, null, 2));
           NODE
 
       - name: Remove TEMP workflows from verification working tree
@@ -145,8 +169,33 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Assert canonical snapshot survived install
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('docs/film-history-chapter-nineteen-atlas-resolved.json', 'utf8'));
+          const tenet = data.candidates.find((candidate) => candidate.title === 'Tenet');
+          const counts = Object.fromEntries(Object.entries(data.byDecision).map(([key, value]) => [key, value.length]));
+          if (data.atlas.baselineFromClosedChapter18 !== 539 || data.atlas.expectedCount !== 540 || data.atlas.actualCount !== 540 || data.verificationIndex.literalVerifiedScenarioIds !== 540) throw new Error(JSON.stringify({ atlas: data.atlas, verificationIndex: data.verificationIndex }));
+          if (!tenet || tenet.decision !== 'USE_EXISTING' || tenet.scenarioId !== 'scenario_tenet_2020' || tenet.matches !== 1 || tenet.productionVerified !== true) throw new Error(JSON.stringify(tenet));
+          if (counts.USE_EXISTING !== 8 || counts.P0 !== 21 || counts.P1 !== 27 || counts.P2 !== 4 || counts.EXISTING_REQUIRED !== 0) throw new Error(JSON.stringify(counts));
+          console.log(JSON.stringify({ atlas: data.atlas.actualCount, baseline: data.atlas.baselineFromClosedChapter18, verification: data.verificationIndex.literalVerifiedScenarioIds, tenet, counts }, null, 2));
+          NODE
+
       - name: Full fail-closed v0.1 verification
         run: npm run verify:v0.1
+
+      - name: Assert canonical snapshot survived full verification
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('docs/film-history-chapter-nineteen-atlas-resolved.json', 'utf8'));
+          const tenet = data.candidates.find((candidate) => candidate.title === 'Tenet');
+          const counts = Object.fromEntries(Object.entries(data.byDecision).map(([key, value]) => [key, value.length]));
+          if (data.atlas.baselineFromClosedChapter18 !== 539 || data.atlas.expectedCount !== 540 || data.atlas.actualCount !== 540 || data.verificationIndex.literalVerifiedScenarioIds !== 540) throw new Error(JSON.stringify({ atlas: data.atlas, verificationIndex: data.verificationIndex }));
+          if (!tenet || tenet.decision !== 'USE_EXISTING' || tenet.scenarioId !== 'scenario_tenet_2020' || tenet.matches !== 1 || tenet.productionVerified !== true) throw new Error(JSON.stringify(tenet));
+          if (counts.USE_EXISTING !== 8 || counts.P0 !== 21 || counts.P1 !== 27 || counts.P2 !== 4 || counts.EXISTING_REQUIRED !== 0) throw new Error(JSON.stringify(counts));
+          NODE
 
       - name: Commit permanent materialization only after green gate
         run: |
