@@ -6,6 +6,7 @@ const root = process.cwd();
 const dataDirectory = path.join(root, "src", "ui", "data");
 const resolvedPath = path.join(root, "docs", "film-history-chapter-eighteen-atlas-resolved.json");
 const completionPath = path.join(root, "docs", "film-history-chapter-eighteen-completion.json");
+const chapter19ResolvedPath = path.join(root, "docs", "film-history-chapter-nineteen-atlas-resolved.json");
 const filmStudyCoveragePath = path.join(root, "src", "core", "filmStudyCoverage.ts");
 const filmStudyMapPath = path.join(dataDirectory, "scenarioFilmStudyMap.ts");
 
@@ -37,6 +38,7 @@ function listNames(directory) {
 
 const resolved = readJson(resolvedPath);
 const completion = readJson(completionPath);
+const chapter19 = readJson(chapter19ResolvedPath);
 
 invariant(resolved.chapter?.number === 18, "Chapter 18 completion audit must read the Chapter 18 resolved Atlas.");
 invariant(resolved.chapter?.period === "2000–2019", "Chapter 18 period drifted from 2000–2019.");
@@ -78,7 +80,7 @@ const inspectedPermanentPaths = [
 const forbiddenTemporaryPaths = inspectedPermanentPaths.filter((filePath) =>
   /(?:^|\/)TEMP-|chapter[-_ ]?18.*(?:materializ|diagnostic)|ch18.*(?:materializ|diagnostic)|the[-_ ]new[-_ ]world.*diagnostic/i.test(filePath),
 );
-invariant(forbiddenTemporaryPaths.length === 0, `Temporary Chapter 18 artifacts remain: ${forbiddenTemporaryPaths.join(", ")}`);
+invariant(forbiddenTemporaryPaths.length === 0, `Temporary artifacts remain: ${forbiddenTemporaryPaths.join(", ")}`);
 
 invariant(completion.schemaVersion === "1.0", "Chapter 18 completion schemaVersion must remain 1.0.");
 invariant(completion.status === "complete", "Chapter 18 canonical completion status is not complete.");
@@ -93,7 +95,17 @@ invariant(completion.proof?.unresolved?.P0 === 0 && completion.proof?.unresolved
 invariant(completion.proof?.allCandidatesProductionVerified === true, "Chapter 18 completion proof must require Production Verification for every candidate.");
 invariant(completion.proof?.allCandidatesHaveFilmStudy === true, "Chapter 18 completion proof must require Film Study coverage for every candidate.");
 invariant(completion.proof?.temporaryArtifacts === 0, "Chapter 18 completion proof must require zero temporary artifacts.");
-invariant(completion.nextPhase?.status === "not_started" && completion.nextPhase?.chapter === 19 && completion.nextPhase?.firstDeliverable === "source-first scope and candidate matrix", "Chapter 19 must remain explicitly unstarted until its source-first scope and candidate matrix exists.");
+
+invariant(chapter19.status === "foundation_established", "Chapter 19 source-first foundation is not established.");
+invariant(chapter19.chapter?.number === 19 && chapter19.chapter?.period === "2020–present" && chapter19.chapter?.candidateBaseline === "2020–2025", "Chapter 19 scope or candidate baseline drifted.");
+invariant(chapter19.governance?.openCurrentPeriod === true && chapter19.governance?.currentYearExcludedFromFrozenBaseline === 2026, "Chapter 19 must remain an open current-period chapter with 2026 excluded from the frozen baseline.");
+invariant(chapter19.atlas?.baselineFromClosedChapter18 === 539 && chapter19.atlas?.actualCount === 539, "Chapter 19 foundation must begin from the closed 539-scenario Chapter 18 Atlas.");
+invariant(Array.isArray(chapter19.candidates) && chapter19.candidates.length === 60, "Chapter 19 foundation must contain exactly 60 baseline candidates.");
+invariant(chapter19.byDecision?.USE_EXISTING?.length === 7 && chapter19.byDecision?.P0?.length === 22 && chapter19.byDecision?.P1?.length === 27 && chapter19.byDecision?.P2?.length === 4 && chapter19.byDecision?.EXISTING_REQUIRED?.length === 0, "Chapter 19 resolved queue census drifted from 7 USE_EXISTING / 22 P0 / 27 P1 / 4 P2 / 0 EXISTING_REQUIRED.");
+
+invariant(completion.nextPhase?.status === "foundation_established" && completion.nextPhase?.chapter === 19 && completion.nextPhase?.firstDeliverable === "source-first scope and candidate matrix", "Chapter 18 handoff must point to the established Chapter 19 source-first matrix.");
+invariant(completion.nextPhase?.firstDeliverablePath === "docs/film-history-chapter-nineteen-atlas-resolved.json", "Chapter 18 handoff must point to the canonical Chapter 19 resolved matrix.");
+invariant(completion.nextPhase?.productionCasesMayStartAfterMatrix === true, "Chapter 19 Production Cases must remain gated on the established matrix.");
 
 console.log(JSON.stringify({
   chapter: 18,
@@ -106,4 +118,9 @@ console.log(JSON.stringify({
   unresolved: completion.proof.unresolved,
   temporaryArtifacts: forbiddenTemporaryPaths.length,
   nextPhase: completion.nextPhase,
+  chapter19Foundation: {
+    status: chapter19.status,
+    candidates: chapter19.candidates.length,
+    byDecision: Object.fromEntries(Object.entries(chapter19.byDecision).map(([key, value]) => [key, value.length])),
+  },
 }, null, 2));
