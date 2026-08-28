@@ -175,6 +175,7 @@ import { getOutProductionCaseVerification } from "./scenarioProductionVerificati
 import { coldWarProductionCaseVerification } from "./scenarioProductionVerificationColdWar";
 import { nineteenSeventeenProductionCaseVerification } from "./scenarioProductionVerification1917";
 import { atlanticsProductionCaseVerification } from "./scenarioProductionVerificationAtlantics";
+import { theNewWorldProductionCaseVerification } from "./scenarioProductionVerificationTheNewWorld";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -467,6 +468,7 @@ const additionalVerificationRecords = [
   coldWarProductionCaseVerification,
   nineteenSeventeenProductionCaseVerification,
   atlanticsProductionCaseVerification,
+  theNewWorldProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
