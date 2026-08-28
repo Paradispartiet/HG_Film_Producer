@@ -80,7 +80,7 @@ const inspectedPermanentPaths = [
 const forbiddenTemporaryPaths = inspectedPermanentPaths.filter((filePath) =>
   /(?:^|\/)TEMP-|chapter[-_ ]?18.*(?:materializ|diagnostic)|ch18.*(?:materializ|diagnostic)|the[-_ ]new[-_ ]world.*diagnostic/i.test(filePath),
 );
-invariant(forbiddenTemporaryPaths.filter((filePath) => /chapter[-_ ]?18|ch18|the[-_ ]new[-_ ]world/i.test(filePath)).length === 0, `Temporary Chapter 18 artifacts remain: ${forbiddenTemporaryPaths.join(", ")}`);
+invariant(forbiddenTemporaryPaths.length === 0, `Temporary artifacts remain: ${forbiddenTemporaryPaths.join(", ")}`);
 
 invariant(completion.schemaVersion === "1.0", "Chapter 18 completion schemaVersion must remain 1.0.");
 invariant(completion.status === "complete", "Chapter 18 canonical completion status is not complete.");
@@ -94,7 +94,7 @@ invariant(completion.proof?.filmStudyAreaCount === 17, "Chapter 18 completion pr
 invariant(completion.proof?.unresolved?.P0 === 0 && completion.proof?.unresolved?.P1 === 0 && completion.proof?.unresolved?.P2 === 0 && completion.proof?.unresolved?.EXISTING_REQUIRED === 0, "Chapter 18 completion proof contains an unresolved queue.");
 invariant(completion.proof?.allCandidatesProductionVerified === true, "Chapter 18 completion proof must require Production Verification for every candidate.");
 invariant(completion.proof?.allCandidatesHaveFilmStudy === true, "Chapter 18 completion proof must require Film Study coverage for every candidate.");
-invariant(completion.proof?.temporaryArtifacts === 0, "Chapter 18 completion proof must require zero temporary Chapter 18 artifacts.");
+invariant(completion.proof?.temporaryArtifacts === 0, "Chapter 18 completion proof must require zero temporary artifacts.");
 
 invariant(chapter19.status === "foundation_established", "Chapter 19 source-first foundation is not established.");
 invariant(chapter19.chapter?.number === 19 && chapter19.chapter?.period === "2020–present" && chapter19.chapter?.candidateBaseline === "2020–2025", "Chapter 19 scope or candidate baseline drifted.");
@@ -116,7 +116,7 @@ console.log(JSON.stringify({
   productionVerifiedScenarioIds: verificationIds.size,
   filmStudyAreaCount: filmStudyAreaIds.length,
   unresolved: completion.proof.unresolved,
-  temporaryChapter18Artifacts: forbiddenTemporaryPaths.filter((filePath) => /chapter[-_ ]?18|ch18|the[-_ ]new[-_ ]world/i.test(filePath)).length,
+  temporaryArtifacts: forbiddenTemporaryPaths.length,
   nextPhase: completion.nextPhase,
   chapter19Foundation: {
     status: chapter19.status,
