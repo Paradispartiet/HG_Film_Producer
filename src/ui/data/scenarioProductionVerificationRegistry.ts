@@ -177,6 +177,7 @@ import { nineteenSeventeenProductionCaseVerification } from "./scenarioProductio
 import { atlanticsProductionCaseVerification } from "./scenarioProductionVerificationAtlantics";
 import { theNewWorldProductionCaseVerification } from "./scenarioProductionVerificationTheNewWorld";
 import { tenetProductionCaseVerification } from "./scenarioProductionVerificationTenet";
+import { soulProductionCaseVerification } from "./scenarioProductionVerificationSoul";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -471,6 +472,7 @@ const additionalVerificationRecords = [
   atlanticsProductionCaseVerification,
   theNewWorldProductionCaseVerification,
   tenetProductionCaseVerification,
+  soulProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

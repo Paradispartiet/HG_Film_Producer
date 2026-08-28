@@ -21,8 +21,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 540,
-    "actualCount": 540,
+    "expectedCount": 541,
+    "actualCount": 541,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -841,6 +841,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenSoulExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -909,7 +915,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 540
+    "literalVerifiedScenarioIds": 541
   },
   "candidates": [
     {
@@ -948,11 +954,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Pixar feature animation and a pandemic-era direct-to-streaming release make mature CG production and disrupted theatrical circulation visible without treating distribution as production authorship.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_soul_2020",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenSoulExpansion.ts"
     },
     {
       "title": "Collective",
@@ -1866,6 +1872,7 @@
   "byDecision": {
     "USE_EXISTING": [
       "Tenet",
+      "Soul",
       "Quo Vadis, Aida?",
       "Another Round",
       "Never Rarely Sometimes Always",
@@ -1875,7 +1882,6 @@
       "Dahomey"
     ],
     "P0": [
-      "Soul",
       "Wolfwalkers",
       "Dune",
       "Flee",
@@ -1936,7 +1942,6 @@
   },
   "recommendedNewProductionCases": [
     "Nomadland",
-    "Soul",
     "Collective",
     "Wolfwalkers",
     "Dune",

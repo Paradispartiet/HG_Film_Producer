@@ -8,7 +8,7 @@ const dataDirectory = path.join(root, "src", "ui", "data");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
 const filmScenariosPath = path.join(dataDirectory, "filmScenarios.ts");
 const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;
-const EXPECTED_ATLAS_COUNT = 540;
+const EXPECTED_ATLAS_COUNT = 541;
 
 const candidates = [
   {
