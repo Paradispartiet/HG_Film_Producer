@@ -176,6 +176,7 @@ import { coldWarProductionCaseVerification } from "./scenarioProductionVerificat
 import { nineteenSeventeenProductionCaseVerification } from "./scenarioProductionVerification1917";
 import { atlanticsProductionCaseVerification } from "./scenarioProductionVerificationAtlantics";
 import { theNewWorldProductionCaseVerification } from "./scenarioProductionVerificationTheNewWorld";
+import { tenetProductionCaseVerification } from "./scenarioProductionVerificationTenet";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -469,6 +470,7 @@ const additionalVerificationRecords = [
   nineteenSeventeenProductionCaseVerification,
   atlanticsProductionCaseVerification,
   theNewWorldProductionCaseVerification,
+  tenetProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

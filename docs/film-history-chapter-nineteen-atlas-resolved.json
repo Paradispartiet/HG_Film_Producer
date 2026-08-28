@@ -21,8 +21,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 539,
-    "actualCount": 539,
+    "expectedCount": 540,
+    "actualCount": 540,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -835,6 +835,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenTenetExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -903,7 +909,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 539
+    "literalVerifiedScenarioIds": 540
   },
   "candidates": [
     {
@@ -914,11 +920,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Photochemical 65mm/IMAX production and a pandemic-era theatrical release make production-format persistence and the release-window crisis visible as separate systems.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_tenet_2020",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenTenetExpansion.ts"
     },
     {
       "title": "Nomadland",
@@ -1859,6 +1865,7 @@
   },
   "byDecision": {
     "USE_EXISTING": [
+      "Tenet",
       "Quo Vadis, Aida?",
       "Another Round",
       "Never Rarely Sometimes Always",
@@ -1868,7 +1875,6 @@
       "Dahomey"
     ],
     "P0": [
-      "Tenet",
       "Soul",
       "Wolfwalkers",
       "Dune",
@@ -1929,7 +1935,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Tenet",
     "Nomadland",
     "Soul",
     "Collective",

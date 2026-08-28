@@ -171,6 +171,7 @@ const exactP2Priority = [
 ] as const;
 
 const exactUseExisting = [
+  "Tenet",
   "Quo Vadis, Aida?",
   "Another Round",
   "Never Rarely Sometimes Always",
@@ -181,7 +182,6 @@ const exactUseExisting = [
 ] as const;
 
 const exactP0Queue = [
-  "Tenet",
   "Soul",
   "Wolfwalkers",
   "Dune",
@@ -276,12 +276,13 @@ test("Chapter 19 locks the open 2020-present scope without freezing 2026", () =>
   assert.ok(resolved.boundaryNotes.some((item) => item.includes("2026+") && item.includes("source-mature")));
 });
 
-test("Chapter 19 keeps the closed Chapter 18 Atlas read-only at foundation", () => {
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 539;/);
+test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {
+  assert.match(audit, /const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 540;/);
   assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);
-  assert.equal(resolved.atlas.expectedCount, 539);
-  assert.equal(resolved.atlas.actualCount, 539);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 539);
+  assert.equal(resolved.atlas.expectedCount, 540);
+  assert.equal(resolved.atlas.actualCount, 540);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 540);
 });
 
 test("Chapter 19 locks exactly sixty candidates across 2020-2025", () => {
@@ -306,15 +307,22 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 7);
-  assert.equal(exactP0Queue.length, 22);
+  assert.equal(exactUseExisting.length, 8);
+  assert.equal(exactP0Queue.length, 21);
   assert.equal(exactP1Queue.length, 27);
   assert.equal(exactP2Queue.length, 4);
-  assert.equal(resolved.recommendedNewProductionCases.length, 49);
+  assert.equal(resolved.recommendedNewProductionCases.length, 48);
   assert.deepEqual(
     resolved.recommendedNewProductionCases,
     resolved.candidates.filter((item) => item.decision === "P0" || item.decision === "P1").map((item) => item.title),
   );
+
+  const tenet = resolved.candidates.find((candidate) => candidate.title === "Tenet");
+  assert.ok(tenet);
+  assert.equal(tenet.decision, "USE_EXISTING");
+  assert.equal(tenet.scenarioId, "scenario_tenet_2020");
+  assert.equal(tenet.matches, 1);
+  assert.equal(tenet.productionVerified, true);
 
   for (const candidate of resolved.candidates) {
     if (candidate.decision === "USE_EXISTING") {

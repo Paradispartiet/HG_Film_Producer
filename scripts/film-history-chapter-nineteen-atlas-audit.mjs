@@ -7,7 +7,8 @@ const coreDirectory = path.join(root, "src", "core");
 const dataDirectory = path.join(root, "src", "ui", "data");
 const seedPath = path.join(root, "data", "film", "scenarios", "film_scenarios_seed.json");
 const filmScenariosPath = path.join(dataDirectory, "filmScenarios.ts");
-const EXPECTED_ATLAS_COUNT = 539;
+const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;
+const EXPECTED_ATLAS_COUNT = 540;
 
 const candidates = [
   {
@@ -1043,12 +1044,12 @@ function matchesCandidate(scenario, candidate) {
 
 const atlas = buildAtlas();
 if (atlas.scenarios.length !== EXPECTED_ATLAS_COUNT) {
-  throw new Error(`Chapter 19 audit expected the closed Chapter 18 baseline of ${EXPECTED_ATLAS_COUNT} Atlas scenarios, found ${atlas.scenarios.length}`);
+  throw new Error(`Chapter 19 audit expected the current Atlas count of ${EXPECTED_ATLAS_COUNT} scenarios after preserving the closed Chapter 18 baseline of ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT}, found ${atlas.scenarios.length}`);
 }
 
 const verifiedIds = buildVerifiedScenarioIds();
 if (verifiedIds.size !== EXPECTED_ATLAS_COUNT) {
-  throw new Error(`Chapter 19 audit expected ${EXPECTED_ATLAS_COUNT} literal Production Verification IDs at baseline, found ${verifiedIds.size}`);
+  throw new Error(`Chapter 19 audit expected ${EXPECTED_ATLAS_COUNT} literal Production Verification IDs in the live registry, found ${verifiedIds.size}`);
 }
 
 const resolvedCandidates = candidates.map((candidate) => {
@@ -1091,7 +1092,7 @@ const report = {
     candidateFunctionsAreRoadmapHypotheses: true
   },
   atlas: {
-    baselineFromClosedChapter18: EXPECTED_ATLAS_COUNT,
+    baselineFromClosedChapter18: CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT,
     expectedCount: EXPECTED_ATLAS_COUNT,
     actualCount: atlas.scenarios.length,
     expansionOrder: atlas.expansionStats
