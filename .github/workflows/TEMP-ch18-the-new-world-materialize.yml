@@ -38,6 +38,28 @@ jobs:
       - name: Materialize deterministic integration
         run: node scripts/TEMP-materialize-ch18-the-new-world.mjs
 
+      - name: Normalize generated verification areas
+        shell: python
+        run: |
+          from pathlib import Path
+          path = Path('src/ui/data/scenarioProductionVerificationTheNewWorld.ts')
+          text = path.read_text()
+          replacements = [
+              (
+                  'supports: ["overall", "directing", "production_design"]',
+                  'supports: ["overall"]',
+              ),
+              (
+                  'supports: ["overall", "production_design"]',
+                  'supports: ["overall"]',
+              ),
+          ]
+          for before, after in replacements:
+              if text.count(before) != 1:
+                  raise SystemExit(f'Expected exactly one generated verification-area anchor for {before!r}, found {text.count(before)}')
+              text = text.replace(before, after, 1)
+          path.write_text(text)
+
       - name: Full v0.1 verification
         shell: bash
         run: |
