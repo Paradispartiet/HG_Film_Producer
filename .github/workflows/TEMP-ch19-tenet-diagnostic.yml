@@ -1,0 +1,31 @@
+name: TEMP Chapter 19 Tenet diagnostic
+
+on:
+  push:
+    branches:
+      - agent/ch19-tenet-production-case
+    paths:
+      - .github/workflows/TEMP-ch19-tenet-diagnostic.yml
+      - scripts/film-history-chapter-nineteen-atlas-audit.mjs
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/ch19-tenet-production-case
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Inspect Tenet baseline
+        run: |
+          node scripts/film-history-chapter-nineteen-atlas-audit.mjs > /tmp/ch19.json
+          node - <<'NODE'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('/tmp/ch19.json','utf8'));
+          const tenet = data.candidates.find((candidate) => candidate.title === 'Tenet');
+          if (!tenet) throw new Error('Tenet candidate missing');
+          console.log(JSON.stringify({ atlas: data.atlas.actualCount, tenet, byDecision: Object.fromEntries(Object.entries(data.byDecision).map(([k,v])=>[k,v.length])) }, null, 2));
+          NODE
