@@ -44,7 +44,7 @@ test("Chapter 19 materializes Tenet as a source-first large-format photochemical
   assert.ok(film.learningGoals.some((goal) => goal.includes("ARRI 65") && goal.includes("Logmar Magellan")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("15-perf 70mm IMAX") && goal.includes("expanded")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("exact Kodak stock") && goal.includes("unresolved")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("forward and backward directions") && goal.includes("not generalizing")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("forward and backward directions") && goal.includes("without generalizing")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Nathan Crowley") && goal.includes("two temporal directions")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Denmark") && goal.includes("Estonia") && goal.includes("India") && goal.includes("Norway")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Scott Fisher") && goal.includes("DNEG")));
@@ -54,7 +54,7 @@ test("Chapter 19 materializes Tenet as a source-first large-format photochemical
   assert.ok(film.learningGoals.some((goal) => goal.includes("Andrew Jackson") && goal.includes("Andy Lockley")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("roughly 300-person") && goal.includes("company testimony")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("photography and LIDAR") && goal.includes("contingency")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("6.3K") && goal.includes("not") === false) || film.learningGoals.some((goal) => goal.includes("6.3K") && goal.includes("every scan")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("6.3K") && goal.includes("full scan-resolution lineage unresolved")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("photochemical-finish") && goal.includes("digital intermediate")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Jennifer Lame") && goal.includes("forward and inverted action")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Richard King") && goal.includes("sound-design")));
