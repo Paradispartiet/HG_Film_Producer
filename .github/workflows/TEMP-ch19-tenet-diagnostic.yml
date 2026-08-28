@@ -1,4 +1,4 @@
-name: TEMP Chapter 19 Tenet diagnostic
+name: TEMP Chapter 19 Tenet materialize
 
 on:
   push:
@@ -6,26 +6,180 @@ on:
       - agent/ch19-tenet-production-case
     paths:
       - .github/workflows/TEMP-ch19-tenet-diagnostic.yml
-      - scripts/film-history-chapter-nineteen-atlas-audit.mjs
+
+permissions:
+  contents: write
 
 jobs:
-  inspect:
+  materialize:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout exact branch
+        uses: actions/checkout@v4
         with:
           ref: agent/ch19-tenet-production-case
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Inspect Tenet baseline
+
+      - name: Patch permanent runtime and audit gates in working tree
         run: |
-          node scripts/film-history-chapter-nineteen-atlas-audit.mjs > /tmp/ch19.json
           node - <<'NODE'
           const fs = require('fs');
-          const data = JSON.parse(fs.readFileSync('/tmp/ch19.json','utf8'));
-          const tenet = data.candidates.find((candidate) => candidate.title === 'Tenet');
-          if (!tenet) throw new Error('Tenet candidate missing');
-          console.log(JSON.stringify({ atlas: data.atlas.actualCount, tenet, byDecision: Object.fromEntries(Object.entries(data.byDecision).map(([k,v])=>[k,v.length])) }, null, 2));
+
+          function replaceExact(file, before, after) {
+            const source = fs.readFileSync(file, 'utf8');
+            if (!source.includes(before)) throw new Error(`${file}: missing exact anchor: ${before.slice(0, 120)}`);
+            fs.writeFileSync(file, source.replace(before, after));
+          }
+
+          replaceExact(
+            'src/ui/data/filmScenarios.ts',
+            'import { mergeChapterEighteenTheNewWorldExpansion } from "../../core/chapterEighteenTheNewWorldExpansion.js";\n',
+            'import { mergeChapterEighteenTheNewWorldExpansion } from "../../core/chapterEighteenTheNewWorldExpansion.js";\nimport { mergeChapterNineteenTenetExpansion } from "../../core/chapterNineteenTenetExpansion.js";\n',
+          );
+          replaceExact(
+            'src/ui/data/filmScenarios.ts',
+            'const chapterEighteenTheNewWorldScenarios = mergeChapterEighteenTheNewWorldExpansion(chapterEighteenAtlanticsScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterEighteenTheNewWorldScenarios);',
+            'const chapterEighteenTheNewWorldScenarios = mergeChapterEighteenTheNewWorldExpansion(chapterEighteenAtlanticsScenarios);\nconst chapterNineteenTenetScenarios = mergeChapterNineteenTenetExpansion(chapterEighteenTheNewWorldScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterNineteenTenetScenarios);',
+          );
+          replaceExact(
+            'src/ui/data/filmScenarios.ts',
+            '+manual_chapter_eighteen_the_new_world_expansion_2026+manual_modern_indie_asian_prize_expansion_2026',
+            '+manual_chapter_eighteen_the_new_world_expansion_2026+manual_chapter_nineteen_tenet_expansion_2026+manual_modern_indie_asian_prize_expansion_2026',
+          );
+
+          replaceExact(
+            'src/ui/data/scenarioProductionVerificationRegistry.ts',
+            'import { theNewWorldProductionCaseVerification } from "./scenarioProductionVerificationTheNewWorld";\n',
+            'import { theNewWorldProductionCaseVerification } from "./scenarioProductionVerificationTheNewWorld";\nimport { tenetProductionCaseVerification } from "./scenarioProductionVerificationTenet";\n',
+          );
+          replaceExact(
+            'src/ui/data/scenarioProductionVerificationRegistry.ts',
+            '  theNewWorldProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,',
+            '  theNewWorldProductionCaseVerification,\n  tenetProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,',
+          );
+
+          replaceExact(
+            'src/ui/data/scenarioFilmStudyMap.ts',
+            'import { theNewWorldFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenTheNewWorld";\n',
+            'import { theNewWorldFilmHistoryProfile } from "./scenarioFilmStudyChapterEighteenTheNewWorld";\nimport { tenetFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenTenet";\n',
+          );
+          replaceExact(
+            'src/ui/data/scenarioFilmStudyMap.ts',
+            '  [theNewWorldFilmHistoryProfile.scenarioId]: theNewWorldFilmHistoryProfile,\n',
+            '  [theNewWorldFilmHistoryProfile.scenarioId]: theNewWorldFilmHistoryProfile,\n  [tenetFilmHistoryProfile.scenarioId]: tenetFilmHistoryProfile,\n',
+          );
+
+          replaceExact(
+            'scripts/production-case-rest-audit.mjs',
+            'const EXPECTED_PLAYABLE_SCENARIOS = 539;\nconst EXPECTED_VERIFIED_PRODUCTION_CASES = 539;',
+            'const EXPECTED_PLAYABLE_SCENARIOS = 540;\nconst EXPECTED_VERIFIED_PRODUCTION_CASES = 540;',
+          );
+          replaceExact(
+            'scripts/production-case-rest-audit.mjs',
+            '  "chapterEighteenTheNewWorldExpansion.ts",\n  "modernCanonExpansion.ts",',
+            '  "chapterEighteenTheNewWorldExpansion.ts",\n  "chapterNineteenTenetExpansion.ts",\n  "modernCanonExpansion.ts",',
+          );
+
+          replaceExact(
+            'scripts/film-history-chapter-nineteen-atlas-audit.mjs',
+            'const EXPECTED_ATLAS_COUNT = 539;',
+            'const EXPECTED_ATLAS_COUNT = 540;',
+          );
+
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            'const exactUseExisting = [\n  "Quo Vadis, Aida?",',
+            'const exactUseExisting = [\n  "Tenet",\n  "Quo Vadis, Aida?",',
+          );
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            'const exactP0Queue = [\n  "Tenet",\n  "Soul",',
+            'const exactP0Queue = [\n  "Soul",',
+          );
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            'test("Chapter 19 keeps the closed Chapter 18 Atlas read-only at foundation", () => {\n  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 539;/);\n  assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);\n  assert.equal(resolved.atlas.expectedCount, 539);\n  assert.equal(resolved.atlas.actualCount, 539);\n  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 539);\n});',
+            'test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {\n  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 540;/);\n  assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);\n  assert.equal(resolved.atlas.expectedCount, 540);\n  assert.equal(resolved.atlas.actualCount, 540);\n  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 540);\n});',
+          );
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            '  assert.equal(exactUseExisting.length, 7);\n  assert.equal(exactP0Queue.length, 22);',
+            '  assert.equal(exactUseExisting.length, 8);\n  assert.equal(exactP0Queue.length, 21);',
+          );
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            '  assert.equal(resolved.recommendedNewProductionCases.length, 49);',
+            '  assert.equal(resolved.recommendedNewProductionCases.length, 48);',
+          );
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            '  for (const candidate of resolved.candidates) {',
+            '  const tenet = resolved.candidates.find((candidate) => candidate.title === "Tenet");\n  assert.ok(tenet);\n  assert.equal(tenet.decision, "USE_EXISTING");\n  assert.equal(tenet.scenarioId, "scenario_tenet_2020");\n  assert.equal(tenet.matches, 1);\n  assert.equal(tenet.productionVerified, true);\n\n  for (const candidate of resolved.candidates) {',
+          );
+
+          replaceExact(
+            'scripts/film-history-chapter-eighteen-completion-audit.mjs',
+            'invariant(verificationIds.size === 539, `Literal Production Verification registry drifted from 539 unique scenarioIds: ${verificationIds.size}`);',
+            'invariant(verificationIds.size === 540, `Global Production Verification registry must advance to 540 after the first Chapter 19 case: ${verificationIds.size}`);',
+          );
+          replaceExact(
+            'scripts/film-history-chapter-eighteen-completion-audit.mjs',
+            'invariant(chapter19.atlas?.baselineFromClosedChapter18 === 539 && chapter19.atlas?.actualCount === 539, "Chapter 19 foundation must begin from the closed 539-scenario Chapter 18 Atlas.");',
+            'invariant(chapter19.atlas?.baselineFromClosedChapter18 === 539 && chapter19.atlas?.actualCount === 540, "Chapter 19 must preserve the closed 539-scenario Chapter 18 baseline while advancing the current Atlas to 540.");',
+          );
+          replaceExact(
+            'scripts/film-history-chapter-eighteen-completion-audit.mjs',
+            'invariant(chapter19.byDecision?.USE_EXISTING?.length === 7 && chapter19.byDecision?.P0?.length === 22 && chapter19.byDecision?.P1?.length === 27 && chapter19.byDecision?.P2?.length === 4 && chapter19.byDecision?.EXISTING_REQUIRED?.length === 0, "Chapter 19 resolved queue census drifted from 7 USE_EXISTING / 22 P0 / 27 P1 / 4 P2 / 0 EXISTING_REQUIRED.");',
+            'invariant(chapter19.byDecision?.USE_EXISTING?.length === 8 && chapter19.byDecision?.P0?.length === 21 && chapter19.byDecision?.P1?.length === 27 && chapter19.byDecision?.P2?.length === 4 && chapter19.byDecision?.EXISTING_REQUIRED?.length === 0, "Chapter 19 resolved queue census drifted from 8 USE_EXISTING / 21 P0 / 27 P1 / 4 P2 / 0 EXISTING_REQUIRED.");\nconst tenet = chapter19.candidates.find((candidate) => candidate.title === "Tenet");\ninvariant(tenet?.decision === "USE_EXISTING" && tenet?.scenarioId === "scenario_tenet_2020" && tenet?.matches === 1 && tenet?.productionVerified === true, "Tenet is not closed as the first production-verified Chapter 19 USE_EXISTING case.");',
+          );
           NODE
+
+      - name: Materialize Chapter 19 canonical snapshot in working tree
+        run: node scripts/film-history-chapter-nineteen-atlas-audit.mjs --write=docs/film-history-chapter-nineteen-atlas-resolved.json > /tmp/ch19-tenet.json
+
+      - name: Assert Tenet transition before full verification
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('/tmp/ch19-tenet.json','utf8'));
+          const tenet = data.candidates.find((candidate) => candidate.title === 'Tenet');
+          const counts = Object.fromEntries(Object.entries(data.byDecision).map(([key, value]) => [key, value.length]));
+          if (data.atlas.actualCount !== 540 || data.verificationIndex.literalVerifiedScenarioIds !== 540) throw new Error(JSON.stringify({ atlas: data.atlas, verificationIndex: data.verificationIndex }));
+          if (!tenet || tenet.decision !== 'USE_EXISTING' || tenet.scenarioId !== 'scenario_tenet_2020' || tenet.matches !== 1 || tenet.productionVerified !== true) throw new Error(JSON.stringify(tenet));
+          if (counts.USE_EXISTING !== 8 || counts.P0 !== 21 || counts.P1 !== 27 || counts.P2 !== 4 || counts.EXISTING_REQUIRED !== 0) throw new Error(JSON.stringify(counts));
+          console.log(JSON.stringify({ atlas: data.atlas.actualCount, verification: data.verificationIndex.literalVerifiedScenarioIds, tenet, counts }, null, 2));
+          NODE
+
+      - name: Remove TEMP workflow from verification working tree
+        run: rm .github/workflows/TEMP-ch19-tenet-diagnostic.yml
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Full fail-closed v0.1 verification
+        run: npm run verify:v0.1
+
+      - name: Commit permanent materialization only after green gate
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/ui/data/filmScenarios.ts \
+            src/ui/data/scenarioProductionVerificationRegistry.ts \
+            src/ui/data/scenarioFilmStudyMap.ts \
+            scripts/production-case-rest-audit.mjs \
+            scripts/film-history-chapter-nineteen-atlas-audit.mjs \
+            scripts/film-history-chapter-eighteen-completion-audit.mjs \
+            src/core/filmHistoryChapterNineteenAuditContract.test.ts \
+            docs/film-history-chapter-nineteen-atlas-resolved.json
+          if git diff --cached --quiet; then
+            echo "No permanent Tenet materialization changes to commit."
+            exit 0
+          fi
+          git commit -m "Materialize Chapter 19 Tenet production case"
+          git push origin HEAD:agent/ch19-tenet-production-case
