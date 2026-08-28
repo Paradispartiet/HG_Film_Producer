@@ -21,7 +21,7 @@ test("Chapter 19 materializes Soul as a source-first dual-world animation, repre
   assert.ok(film.premise.includes("Ian Megibben") && film.premise.includes("Steve Pilcher") && film.premise.includes("Kevin Nolting"));
   assert.ok(film.premise.includes("March 16, 2020") && film.premise.includes("approximately seven weeks") && film.premise.includes("completed on time the following month"));
   assert.ok(film.premise.includes("remote completion") && film.premise.includes("not that the whole film was produced remotely"));
-  assert.ok(film.premise.includes("New York") && film.premise.includes("Great Before") && film.premise.includes("created from scratch"));
+  assert.ok(film.premise.includes("New York") && film.premise.includes("Great Before") && film.premise.includes("had to be invented"));
   assert.ok(film.premise.includes("Bradford Young") && film.premise.includes("Black skin") && film.premise.includes("Roy DeCarava"));
   assert.ok(film.premise.includes("2.39:1") && film.premise.includes("new line-work technique") && film.premise.includes("living-line"));
   assert.ok(film.premise.includes("culture trust") && film.premise.includes("Black hair") && film.premise.includes("barbershop"));
