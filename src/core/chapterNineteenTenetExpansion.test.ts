@@ -41,7 +41,8 @@ test("Chapter 19 materializes Tenet as a source-first large-format photochemical
   assert.ok(film.learningGoals.some((goal) => goal.includes("BFI 149-minute") && goal.includes("playable runtime anchor")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("six IMAX camera packages") && goal.includes("shot-by-shot")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("System 65 Studio") && goal.includes("Sphero 65")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("ARRI 65") && goal.includes("Logmar Magellan")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("ARRI 65") && goal.includes("documented production inventory")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("Logmar Magellan") && goal.includes("several scenes")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("15-perf 70mm IMAX") && goal.includes("expanded")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("exact Kodak stock") && goal.includes("unresolved")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("forward and backward directions") && goal.includes("without generalizing")));
