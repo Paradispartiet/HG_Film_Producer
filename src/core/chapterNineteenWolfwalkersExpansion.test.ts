@@ -39,7 +39,7 @@ test("Chapter 19 materializes Wolfwalkers as a source-first hand-drawn, graphic-
 
   assert.ok(film.learningGoals.some((goal) => goal.includes("third Chapter 19 Production Case") && goal.includes("hand-drawn 2D")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("BFI 103-minute") && goal.includes("runtime anchor")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("BFI labels its catalogue record 2019") && goal.includes("2020 release-year convention")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("BFI labels its catalogue record 2019") && goal.includes("2020 as its release-year convention")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Apple-listed production companies") && goal.includes("financing shares")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("hand drawing") && goal.includes("anti-CG slogan")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("block-print-like") && goal.includes("Kilkenny")));
