@@ -15,7 +15,7 @@
     "audit:production-cases": "node scripts/production-case-rest-audit.mjs",
     "audit:film-history-ch1": "node scripts/film-history-chapter-one-atlas-audit.mjs",
     "audit:film-history-ch2": "node scripts/film-history-chapter-two-atlas-audit.mjs",
-    "audit:film-history-ch3": "node scripts/film-history-chapter-three-narrative-audit.mjs",
+    "audit:film-history-ch3": "node scripts/film-history-chapter-three-atlas-audit.mjs",
     "audit:film-history-ch4": "node scripts/film-history-chapter-four-atlas-audit.mjs",
     "audit:film-history-ch5": "node scripts/film-history-chapter-five-atlas-audit.mjs",
     "audit:film-history-ch6": "node scripts/film-history-chapter-six-atlas-audit.mjs",
