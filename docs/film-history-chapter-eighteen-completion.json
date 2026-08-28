@@ -38,8 +38,9 @@
   "nextPhase": {
     "chapter": 19,
     "period": "2020–present",
-    "status": "not_started",
+    "status": "foundation_established",
     "firstDeliverable": "source-first scope and candidate matrix",
+    "firstDeliverablePath": "docs/film-history-chapter-nineteen-atlas-resolved.json",
     "productionCasesMayStartAfterMatrix": true
   }
 }
