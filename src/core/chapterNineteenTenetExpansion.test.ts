@@ -54,7 +54,7 @@ test("Chapter 19 materializes Tenet as a source-first large-format photochemical
   assert.ok(film.learningGoals.some((goal) => goal.includes("Andrew Jackson") && goal.includes("Andy Lockley")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("roughly 300-person") && goal.includes("company testimony")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("photography and LIDAR") && goal.includes("contingency")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("6.3K") && goal.includes("full scan-resolution lineage unresolved")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("6.3K") && goal.includes("every scan")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("photochemical-finish") && goal.includes("digital intermediate")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Jennifer Lame") && goal.includes("forward and inverted action")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Richard King") && goal.includes("sound-design")));
@@ -69,7 +69,7 @@ test("Chapter 19 materializes Tenet as a source-first large-format photochemical
   assert.ok(film.phases.find((phase) => phase.id === "chronology_boundary")?.player_task.includes("2019"));
   assert.ok(film.phases.find((phase) => phase.id === "large_format_strategy")?.player_task.includes("IMAX 15-perf 70mm") && film.phases.find((phase) => phase.id === "large_format_strategy")?.player_task.includes("65mm"));
   assert.ok(film.phases.find((phase) => phase.id === "system65")?.player_task.includes("Sphero 65"));
-  assert.ok(film.phases.find((phase) => phase.id === "dual_direction_capture")?.player_task.includes("key inversion sequences") && film.phases.find((phase) => phase.id === "dual_direction_capture")?.player_task.includes("not claiming every"));
+  assert.ok(film.phases.find((phase) => phase.id === "dual_direction_capture")?.player_task.includes("key inversion sequences") && film.phases.find((phase) => phase.id === "dual_direction_capture")?.player_task.includes("without claiming every"));
   assert.ok(film.phases.find((phase) => phase.id === "sfx_vfx_boundary")?.player_task.includes("Scott Fisher") && film.phases.find((phase) => phase.id === "sfx_vfx_boundary")?.player_task.includes("Andrew Jackson/DNEG"));
   assert.ok(film.phases.find((phase) => phase.id === "plane_sequence")?.player_task.includes("full-size aircraft") && film.phases.find((phase) => phase.id === "plane_sequence")?.player_task.includes("cable removal"));
   assert.ok(film.phases.find((phase) => phase.id === "photochemical_finish")?.player_task.includes("photochemical finishing"));
