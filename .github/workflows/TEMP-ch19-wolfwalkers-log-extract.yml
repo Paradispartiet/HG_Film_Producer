@@ -29,22 +29,22 @@ jobs:
           gh run view 33259099722 \
             --repo Paradispartiet/HG_Film_Producer \
             --job 99117855062 \
-            --log > TEMP-wolfwalkers-verify-failure.log 2>&1
+            --log > TEMP-wolfwalkers-verify-failure.txt 2>&1
           status=$?
-          if [ "$status" -ne 0 ] || [ ! -s TEMP-wolfwalkers-verify-failure.log ]; then
-            echo "gh run view failed with status $status; falling back to gh api" > TEMP-wolfwalkers-verify-failure.log
+          if [ "$status" -ne 0 ] || [ ! -s TEMP-wolfwalkers-verify-failure.txt ]; then
+            echo "gh run view failed with status $status; falling back to gh api" > TEMP-wolfwalkers-verify-failure.txt
             gh api \
               -H "Accept: application/vnd.github+json" \
               -H "X-GitHub-Api-Version: 2022-11-28" \
               /repos/Paradispartiet/HG_Film_Producer/actions/jobs/99117855062/logs \
-              >> TEMP-wolfwalkers-verify-failure.log 2>&1
+              >> TEMP-wolfwalkers-verify-failure.txt 2>&1
           fi
-          test -s TEMP-wolfwalkers-verify-failure.log
+          test -s TEMP-wolfwalkers-verify-failure.txt
 
       - name: Persist TEMP diagnostic only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add TEMP-wolfwalkers-verify-failure.log
+          git add TEMP-wolfwalkers-verify-failure.txt
           git commit --no-verify -m "Capture Wolfwalkers verify log"
           git push origin HEAD:agent/ch19-wolfwalkers-production-case
