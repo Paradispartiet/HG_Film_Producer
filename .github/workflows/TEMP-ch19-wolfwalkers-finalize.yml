@@ -1,0 +1,121 @@
+name: TEMP Chapter 19 Wolfwalkers finalize
+
+on:
+  push:
+    branches:
+      - agent/ch19-wolfwalkers-production-case
+    paths:
+      - .github/workflows/TEMP-ch19-wolfwalkers-finalize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch19-wolfwalkers-production-case
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Apply exact Wolfwalkers integration patch
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const text = fs.readFileSync('.github/workflows/TEMP-ch19-wolfwalkers-materialize.yml', 'utf8');
+          const startMarker = "          node - <<'NODE'\n";
+          const endMarker = "\n          NODE\n";
+          const start = text.indexOf(startMarker);
+          if (start < 0) throw new Error('materializer patch start marker not found');
+          const end = text.indexOf(endMarker, start + startMarker.length);
+          if (end < 0) throw new Error('materializer patch end marker not found');
+          const body = text.slice(start + startMarker.length, end)
+            .split('\n')
+            .map((line) => line.startsWith('          ') ? line.slice(10) : line)
+            .join('\n');
+          fs.writeFileSync('/tmp/wolfwalkers-patch.js', body);
+          NODE
+          node /tmp/wolfwalkers-patch.js
+
+      - name: Correct strict USE_EXISTING order
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const file = 'src/core/filmHistoryChapterNineteenAuditContract.test.ts';
+          const source = fs.readFileSync(file, 'utf8');
+          const before = 'const exactUseExisting = [\n  "Tenet",\n  "Soul",\n  "Wolfwalkers",\n  "Quo Vadis, Aida?",\n  "Another Round",\n  "Never Rarely Sometimes Always",\n  "The Disciple",';
+          const after = 'const exactUseExisting = [\n  "Tenet",\n  "Soul",\n  "Quo Vadis, Aida?",\n  "Another Round",\n  "Never Rarely Sometimes Always",\n  "Wolfwalkers",\n  "The Disciple",';
+          if (!source.includes(before)) throw new Error('strict USE_EXISTING order anchor missing');
+          fs.writeFileSync(file, source.replace(before, after));
+          NODE
+
+      - name: Generate canonical Chapter 19 snapshot
+        run: |
+          node scripts/film-history-chapter-nineteen-atlas-audit.mjs > /tmp/ch19-wolfwalkers.json
+          cp /tmp/ch19-wolfwalkers.json docs/film-history-chapter-nineteen-atlas-resolved.json
+
+      - name: Assert Wolfwalkers transition
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('docs/film-history-chapter-nineteen-atlas-resolved.json', 'utf8'));
+          const wolf = data.candidates.find((candidate) => candidate.title === 'Wolfwalkers');
+          const counts = Object.fromEntries(Object.entries(data.byDecision).map(([key, value]) => [key, value.length]));
+          const expectedUseExisting = ['Tenet','Soul','Quo Vadis, Aida?','Another Round','Never Rarely Sometimes Always','Wolfwalkers','The Disciple','The Worst Person in the World','Nickel Boys','Dahomey'];
+          if (data.atlas.baselineFromClosedChapter18 !== 539 || data.atlas.expectedCount !== 542 || data.atlas.actualCount !== 542) throw new Error(JSON.stringify(data.atlas));
+          if (data.verificationIndex.literalVerifiedScenarioIds !== 542) throw new Error(JSON.stringify(data.verificationIndex));
+          if (!wolf || wolf.decision !== 'USE_EXISTING' || wolf.scenarioId !== 'scenario_wolfwalkers_2020' || wolf.matches !== 1 || wolf.productionVerified !== true) throw new Error(JSON.stringify(wolf));
+          if (counts.USE_EXISTING !== 10 || counts.P0 !== 19 || counts.P1 !== 27 || counts.P2 !== 4 || counts.EXISTING_REQUIRED !== 0) throw new Error(JSON.stringify(counts));
+          if (JSON.stringify(data.byDecision.USE_EXISTING) !== JSON.stringify(expectedUseExisting)) throw new Error(`USE_EXISTING order drift: ${JSON.stringify(data.byDecision.USE_EXISTING)}`);
+          NODE
+
+      - name: Remove TEMP surfaces from verification working tree
+        run: |
+          rm -f .github/workflows/TEMP-ch19-wolfwalkers-*.yml
+          rm -f TEMP-wolfwalkers-*.txt TEMP-wolfwalkers-*.log
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Full fail-closed v0.1 verification
+        run: npm run verify:v0.1
+
+      - name: Assert snapshot survived full verification
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('docs/film-history-chapter-nineteen-atlas-resolved.json', 'utf8'));
+          const wolf = data.candidates.find((candidate) => candidate.title === 'Wolfwalkers');
+          const counts = Object.fromEntries(Object.entries(data.byDecision).map(([key, value]) => [key, value.length]));
+          if (data.atlas.baselineFromClosedChapter18 !== 539 || data.atlas.expectedCount !== 542 || data.atlas.actualCount !== 542 || data.verificationIndex.literalVerifiedScenarioIds !== 542) throw new Error(JSON.stringify({atlas:data.atlas, verificationIndex:data.verificationIndex}));
+          if (!wolf || wolf.decision !== 'USE_EXISTING' || wolf.scenarioId !== 'scenario_wolfwalkers_2020' || wolf.matches !== 1 || wolf.productionVerified !== true) throw new Error(JSON.stringify(wolf));
+          if (counts.USE_EXISTING !== 10 || counts.P0 !== 19 || counts.P1 !== 27 || counts.P2 !== 4 || counts.EXISTING_REQUIRED !== 0) throw new Error(JSON.stringify(counts));
+          NODE
+
+      - name: Commit permanent materialization after green gate
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/ui/data/filmScenarios.ts \
+            src/ui/data/scenarioProductionVerificationRegistry.ts \
+            src/ui/data/scenarioFilmStudyMap.ts \
+            scripts/production-case-rest-audit.mjs \
+            scripts/film-history-chapter-nineteen-atlas-audit.mjs \
+            scripts/film-history-chapter-eighteen-completion-audit.mjs \
+            src/core/filmHistoryChapterNineteenAuditContract.test.ts \
+            docs/film-history-chapter-nineteen-atlas-resolved.json
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo "No permanent Wolfwalkers materialization changes to commit."
+            exit 0
+          fi
+          git commit -m "Materialize Chapter 19 Wolfwalkers production case"
+          git push origin HEAD:agent/ch19-wolfwalkers-production-case
