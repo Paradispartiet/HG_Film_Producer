@@ -172,7 +172,24 @@ jobs:
         run: npm ci
 
       - name: Full fail-closed v0.1 verification
-        run: npm run verify:v0.1
+        run: |
+          set +e
+          npm run verify:v0.1 2>&1 | tee /tmp/wolfwalkers-verify.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            {
+              echo "head=$(git rev-parse HEAD)"
+              echo "status=$status"
+              echo "--- verify tail ---"
+              tail -n 400 /tmp/wolfwalkers-verify.log
+            } > TEMP-wolfwalkers-verify-failure.log
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add TEMP-wolfwalkers-verify-failure.log
+            git commit -m "Capture Wolfwalkers verify failure"
+            git push origin HEAD:agent/ch19-wolfwalkers-production-case
+          fi
+          exit "$status"
 
       - name: Assert Wolfwalkers snapshot survived full verification
         run: |
