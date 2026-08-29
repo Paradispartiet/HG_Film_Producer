@@ -21,30 +21,27 @@ jobs:
           ref: agent/ch19-wolfwalkers-production-case
           fetch-depth: 0
 
-      - name: Extract failed verify log
+      - name: Extract focused verify failure
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          set +e
+          set -e
           gh run view 33259099722 \
             --repo Paradispartiet/HG_Film_Producer \
             --job 99117855062 \
-            --log > TEMP-wolfwalkers-verify-failure.txt 2>&1
-          status=$?
-          if [ "$status" -ne 0 ] || [ ! -s TEMP-wolfwalkers-verify-failure.txt ]; then
-            echo "gh run view failed with status $status; falling back to gh api" > TEMP-wolfwalkers-verify-failure.txt
-            gh api \
-              -H "Accept: application/vnd.github+json" \
-              -H "X-GitHub-Api-Version: 2022-11-28" \
-              /repos/Paradispartiet/HG_Film_Producer/actions/jobs/99117855062/logs \
-              >> TEMP-wolfwalkers-verify-failure.txt 2>&1
-          fi
+            --log > /tmp/wolfwalkers-full-verify.txt 2>&1
+          {
+            echo "=== focused failure markers ==="
+            grep -nEi -C 18 '(AssertionError|ERR_ASSERTION|not ok|Error:|npm error|npm ERR|failed|failure|must contain|must preserve|drifted|expected.*actual|actual.*expected|exit code)' /tmp/wolfwalkers-full-verify.txt | tail -n 900 || true
+            echo "=== final 700 lines ==="
+            tail -n 700 /tmp/wolfwalkers-full-verify.txt
+          } > TEMP-wolfwalkers-verify-failure.txt
           test -s TEMP-wolfwalkers-verify-failure.txt
 
-      - name: Persist TEMP diagnostic only
+      - name: Persist focused TEMP diagnostic only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add TEMP-wolfwalkers-verify-failure.txt
-          git commit --no-verify -m "Capture Wolfwalkers verify log"
+          git commit --no-verify -m "Reduce Wolfwalkers verify log"
           git push origin HEAD:agent/ch19-wolfwalkers-production-case
