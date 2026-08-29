@@ -179,6 +179,7 @@ import { theNewWorldProductionCaseVerification } from "./scenarioProductionVerif
 import { tenetProductionCaseVerification } from "./scenarioProductionVerificationTenet";
 import { soulProductionCaseVerification } from "./scenarioProductionVerificationSoul";
 import { wolfwalkersProductionCaseVerification } from "./scenarioProductionVerificationWolfwalkers";
+import { duneProductionCaseVerification } from "./scenarioProductionVerificationDune";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -475,6 +476,7 @@ const additionalVerificationRecords = [
   tenetProductionCaseVerification,
   soulProductionCaseVerification,
   wolfwalkersProductionCaseVerification,
+  duneProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

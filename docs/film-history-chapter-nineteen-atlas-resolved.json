@@ -21,8 +21,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 542,
-    "actualCount": 542,
+    "expectedCount": 543,
+    "actualCount": 543,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -853,6 +853,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenDuneExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -921,7 +927,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 542
+    "literalVerifiedScenarioIds": 543
   },
   "candidates": [
     {
@@ -1078,11 +1084,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Large-format digital cinematography, extensive VFX, location/stage integration and premium theatrical exhibition make blockbuster production and post interdependence explicit.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_dune_2021",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenDuneExpansion.ts"
     },
     {
       "title": "The Power of the Dog",
@@ -1884,12 +1890,12 @@
       "Never Rarely Sometimes Always",
       "Wolfwalkers",
       "The Disciple",
+      "Dune",
       "The Worst Person in the World",
       "Nickel Boys",
       "Dahomey"
     ],
     "P0": [
-      "Dune",
       "Flee",
       "Avatar: The Way of Water",
       "Top Gun: Maverick",
@@ -1949,7 +1955,6 @@
   "recommendedNewProductionCases": [
     "Nomadland",
     "Collective",
-    "Dune",
     "The Power of the Dog",
     "Drive My Car",
     "Flee",
