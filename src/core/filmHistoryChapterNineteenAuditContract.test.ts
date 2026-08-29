@@ -176,6 +176,7 @@ const exactUseExisting = [
   "Quo Vadis, Aida?",
   "Another Round",
   "Never Rarely Sometimes Always",
+  "Wolfwalkers",
   "The Disciple",
   "The Worst Person in the World",
   "Nickel Boys",
@@ -183,7 +184,6 @@ const exactUseExisting = [
 ] as const;
 
 const exactP0Queue = [
-  "Wolfwalkers",
   "Dune",
   "Flee",
   "Avatar: The Way of Water",
@@ -278,11 +278,11 @@ test("Chapter 19 locks the open 2020-present scope without freezing 2026", () =>
 
 test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {
   assert.match(audit, /const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;/);
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 541;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 542;/);
   assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);
-  assert.equal(resolved.atlas.expectedCount, 541);
-  assert.equal(resolved.atlas.actualCount, 541);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 541);
+  assert.equal(resolved.atlas.expectedCount, 542);
+  assert.equal(resolved.atlas.actualCount, 542);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 542);
 });
 
 test("Chapter 19 locks exactly sixty candidates across 2020-2025", () => {
@@ -307,11 +307,11 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 9);
-  assert.equal(exactP0Queue.length, 20);
+  assert.equal(exactUseExisting.length, 10);
+  assert.equal(exactP0Queue.length, 19);
   assert.equal(exactP1Queue.length, 27);
   assert.equal(exactP2Queue.length, 4);
-  assert.equal(resolved.recommendedNewProductionCases.length, 47);
+  assert.equal(resolved.recommendedNewProductionCases.length, 46);
   assert.deepEqual(
     resolved.recommendedNewProductionCases,
     resolved.candidates.filter((item) => item.decision === "P0" || item.decision === "P1").map((item) => item.title),
@@ -330,6 +330,13 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(soul.scenarioId, "scenario_soul_2020");
   assert.equal(soul.matches, 1);
   assert.equal(soul.productionVerified, true);
+
+  const wolfwalkers = resolved.candidates.find((candidate) => candidate.title === "Wolfwalkers");
+  assert.ok(wolfwalkers);
+  assert.equal(wolfwalkers.decision, "USE_EXISTING");
+  assert.equal(wolfwalkers.scenarioId, "scenario_wolfwalkers_2020");
+  assert.equal(wolfwalkers.matches, 1);
+  assert.equal(wolfwalkers.productionVerified, true);
 
   for (const candidate of resolved.candidates) {
     if (candidate.decision === "USE_EXISTING") {
