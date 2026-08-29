@@ -18,7 +18,7 @@ export const fleeProductionCaseVerification = {
       title: "FLEE",
       publisher: "Final Cut for Real",
       url: "https://www.finalcutforreal.dk/flee/",
-      sourceKind: "production_company",
+      sourceKind: "archive_feature",
       supports: ["overall", "screenplay", "editing", "sound"],
       note: "Producer record supplying the wider production, co-production, animation, storyboard, design, production-management and music credits."
     },
