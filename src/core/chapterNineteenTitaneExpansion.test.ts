@@ -41,7 +41,7 @@ test("Chapter 19 materializes Titane as the auteur-festival rotation case", () =
   assert.ok(film.learningGoals.some((goal) => goal.includes("exact VFX shot count") && goal.includes("unresolved")));
 
   assert.ok(film.phases.find((phase) => phase.id === "opening_oner")?.player_task.includes("Technocrane"));
-  assert.ok(film.phases.find((phase) => phase.id === "materials_tests")?.player_task.includes("silicone and latex"));
+  assert.ok(film.phases.find((phase) => phase.id === "materials_tests")?.player_task.includes("Compare materials"));
   assert.ok(film.phases.find((phase) => phase.id === "nose_gag")?.player_task.includes("VFX"));
   assert.ok(film.phases.find((phase) => phase.id === "editorial_structure")?.player_task.includes("Jean-Christophe Bouzy"));
   assert.ok(film.phases.find((phase) => phase.id === "delivery_review")?.player_task.includes("bounded unknowns"));
