@@ -191,6 +191,7 @@ const exactUseExisting = [
   "Wolfwalkers",
   "The Disciple",
   "Dune",
+  "Drive My Car",
   "Flee",
   "The Worst Person in the World",
   "Avatar: The Way of Water",
@@ -220,7 +221,6 @@ const exactP0Queue = [
 const exactP1Queue = [
   "Collective",
   "The Power of the Dog",
-  "Drive My Car",
   "Titane",
   "Memoria",
   "CODA",
@@ -291,11 +291,11 @@ test("Chapter 19 locks the open 2020-present scope without freezing 2026", () =>
 
 test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {
   assert.match(audit, /const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;/);
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 546;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 547;/);
   assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);
-  assert.equal(resolved.atlas.expectedCount, 546);
-  assert.equal(resolved.atlas.actualCount, 546);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 546);
+  assert.equal(resolved.atlas.expectedCount, 547);
+  assert.equal(resolved.atlas.actualCount, 547);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 547);
 });
 
 test("Chapter 19 locks exactly sixty candidates across 2020-2025", () => {
@@ -320,11 +320,11 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 14);
+  assert.equal(exactUseExisting.length, 15);
   assert.equal(exactP0Queue.length, 16);
-  assert.equal(exactP1Queue.length, 26);
+  assert.equal(exactP1Queue.length, 25);
   assert.equal(exactP2Queue.length, 4);
-  assert.equal(resolved.recommendedNewProductionCases.length, 42);
+  assert.equal(resolved.recommendedNewProductionCases.length, 41);
   assert.equal(resolved.productionStrategy.mode, "balanced_rotation");
   assert.equal(resolved.productionStrategy.priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder, true);
   assert.deepEqual(resolved.productionStrategy.laneOrder, [
@@ -334,21 +334,22 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
     "regional_global",
     "industrial_scale_technical",
   ]);
-  assert.equal(resolved.productionStrategy.nextRecommendedCase, "Drive My Car");
-  assert.equal(resolved.productionStrategy.nextRecommendedLane, "auteur_festival");
+  assert.equal(resolved.productionStrategy.nextRecommendedCase, "Collective");
+  assert.equal(resolved.productionStrategy.nextRecommendedLane, "nonfiction_hybrid");
   assert.deepEqual(resolved.recommendedNewProductionCases.slice(0, 5), [
-    "Drive My Car",
     "Collective",
     "RRR",
     "Top Gun: Maverick",
     "Titane",
+    "Everything Everywhere All at Once",
   ]);
   assert.deepEqual(
     resolved.productionStrategy.remainingSequence.slice(0, 5).map((item) => item.lane),
-    ["auteur_festival", "nonfiction_hybrid", "regional_global", "industrial_scale_technical", "auteur_festival"],
+    ["nonfiction_hybrid", "regional_global", "industrial_scale_technical", "auteur_festival", "independent_low_mid_budget"],
   );
   assert.ok(!resolved.recommendedNewProductionCases.includes("Nomadland"));
-  assert.ok(resolved.recommendedNewProductionCases.indexOf("Top Gun: Maverick") > resolved.recommendedNewProductionCases.indexOf("Drive My Car"));
+  assert.ok(!resolved.recommendedNewProductionCases.includes("Drive My Car"));
+  assert.ok(resolved.recommendedNewProductionCases.indexOf("Top Gun: Maverick") > resolved.recommendedNewProductionCases.indexOf("Collective"));
   assert.equal(new Set(resolved.recommendedNewProductionCases).size, resolved.recommendedNewProductionCases.length);
   assert.ok(resolved.productionStrategy.safeguards.some((item) => item.includes("P1 case may precede a P0 case")));
   for (const title of resolved.recommendedNewProductionCases) {
@@ -391,6 +392,13 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(dune.scenarioId, "scenario_dune_2021");
   assert.equal(dune.matches, 1);
   assert.equal(dune.productionVerified, true);
+
+  const driveMyCar = resolved.candidates.find((candidate) => candidate.title === "Drive My Car");
+  assert.ok(driveMyCar);
+  assert.equal(driveMyCar.decision, "USE_EXISTING");
+  assert.equal(driveMyCar.scenarioId, "scenario_drive_my_car_2021");
+  assert.equal(driveMyCar.matches, 1);
+  assert.equal(driveMyCar.productionVerified, true);
 
   const flee = resolved.candidates.find((candidate) => candidate.title === "Flee");
   assert.ok(flee);
