@@ -42,7 +42,7 @@ test("Chapter 19 materializes Nomadland as the first balanced-rotation productio
   assert.ok(film.learningGoals.some((goal) => goal.includes("four-month fall-2018 road production")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Rubber Tramp Rendezvous") && goal.includes("Amazon fulfillment center")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("broad shot-list") && goal.includes("responsive observation")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("Alexa Mini") && goal.includes("Alexa Amira")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("Alexa Mini") && goal.includes("Arri Amira")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("32mm Ultra Prime") && goal.includes("environmental context")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Ronin 2") && goal.includes("EasyRig")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("90 percent available light and practicals") && goal.includes("lighting department")));
