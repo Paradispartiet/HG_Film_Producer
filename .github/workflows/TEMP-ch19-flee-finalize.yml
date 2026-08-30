@@ -174,7 +174,82 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Full fail-closed v0.1 verification
+      - name: Verify preflight
+        run: npm run preflight:v0.1
+
+      - name: Verify production cases
+        run: npm run audit:production-cases
+
+      - name: Verify Film History chapter 1
+        run: npm run audit:film-history-ch1
+
+      - name: Verify Film History chapter 2
+        run: npm run audit:film-history-ch2
+
+      - name: Verify Film History chapter 3
+        run: npm run audit:film-history-ch3
+
+      - name: Verify Film History chapter 4
+        run: npm run audit:film-history-ch4
+
+      - name: Verify Film History chapter 5
+        run: npm run audit:film-history-ch5
+
+      - name: Verify Film History chapter 6
+        run: npm run audit:film-history-ch6
+
+      - name: Verify Film History chapter 7
+        run: npm run audit:film-history-ch7
+
+      - name: Verify Film History chapter 8
+        run: npm run audit:film-history-ch8
+
+      - name: Verify Film History chapter 9
+        run: npm run audit:film-history-ch9
+
+      - name: Verify Film History chapter 10
+        run: npm run audit:film-history-ch10
+
+      - name: Verify Film History chapter 11
+        run: npm run audit:film-history-ch11
+
+      - name: Verify Film History chapter 12
+        run: npm run audit:film-history-ch12
+
+      - name: Verify Film History chapter 13
+        run: npm run audit:film-history-ch13
+
+      - name: Verify Film History chapter 14
+        run: npm run audit:film-history-ch14
+
+      - name: Verify Film History chapter 15
+        run: npm run audit:film-history-ch15
+
+      - name: Verify Film History chapter 16
+        run: npm run audit:film-history-ch16
+
+      - name: Verify Film History chapter 17
+        run: npm run audit:film-history-ch17
+
+      - name: Verify Film History chapter 18
+        run: npm run audit:film-history-ch18
+
+      - name: Verify typecheck
+        run: npm run typecheck
+
+      - name: Verify Chapter 18 completion contract
+        run: npm run audit:film-history-ch18-completion
+
+      - name: Verify Chapter 19 audit
+        run: npm run audit:film-history-ch19
+
+      - name: Verify core tests
+        run: npm test
+
+      - name: Verify UI build
+        run: npm run build:ui
+
+      - name: Full fail-closed v0.1 verification confirmation
         run: npm run verify:v0.1
 
       - name: Assert Flee snapshot survived full verification
