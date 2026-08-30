@@ -56,7 +56,7 @@ test("Chapter 19 materializes Drive My Car as the auteur-festival rotation case"
   assert.ok(film.learningGoals.some((goal) => goal.includes("ALEXA Mini") && goal.includes("Ultra Prime")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("mainly single-camera") && goal.includes("Ryuichi Shimokawa")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("two ALEXA Minis") && goal.includes("synchronized dialogue")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("no dedicated grip") && goal.includes("Saab-rigging")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("absence of a dedicated grip") && goal.includes("Saab-rigging")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("yellow convertible") && goal.includes("closed red Saab")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("roof reduced wind-noise risk") && goal.includes("later sound work")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("90 percent of car scenes") && goal.includes("whole film")));
