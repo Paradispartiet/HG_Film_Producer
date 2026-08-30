@@ -35,7 +35,7 @@ test("Chapter 19 materializes Nope as the industrial-scale technical rotation ca
   assert.ok(film.premise.includes("Sky Dancers") && film.premise.includes("food-grade blood"));
   assert.ok(film.premise.includes("near four hours") && film.premise.includes("Nicholas Monsour"));
   assert.ok(film.premise.includes("Johnnie Burn") && film.premise.includes("wind/scream"));
-  assert.ok(film.premise.includes("Exact budget") && film.premise.includes("distribution economics"));
+  assert.ok(film.premise.includes("exact budget line items") && film.premise.includes("distribution economics"));
 
   assert.ok(film.requiredChoicesSeed.camera.includes("imax_15perf_65mm"));
   assert.ok(film.requiredChoicesSeed.camera.includes("system65_5perf"));
