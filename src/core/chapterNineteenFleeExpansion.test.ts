@@ -58,7 +58,7 @@ test("Chapter 19 materializes Flee as a source-first animated-documentary produc
   assert.ok(film.phases.find((phase) => phase.id === "anonymity_strategy")?.player_task.includes("pseudonym"));
   assert.ok(film.phases.find((phase) => phase.id === "storyboard_camera")?.player_task.includes("framing"));
   assert.ok(film.phases.find((phase) => phase.id === "exact_length_animatic")?.player_task.includes("workload"));
-  assert.ok(film.phases.find((phase) => phase.id === "abstract_memory_layer")?.player_task.includes("uncertainty"));
+  assert.ok(film.phases.find((phase) => phase.id === "abstract_memory_layer")?.player_task.includes("uncertain"));
   assert.ok(film.phases.find((phase) => phase.id === "rennes_background_comp")?.player_task.includes("Vivement Lundi"));
   assert.ok(film.phases.find((phase) => phase.id === "archive_animation_cut")?.player_task.includes("archive footage"));
   assert.ok(film.phases.find((phase) => phase.id === "sound_bridge")?.player_task.includes("archive"));
