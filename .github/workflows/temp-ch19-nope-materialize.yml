@@ -1,0 +1,103 @@
+name: TEMP Chapter 19 Nope materialize
+
+on:
+  push:
+    branches:
+      - agent/ch19-nope-production-case
+    paths:
+      - .github/workflows/temp-ch19-nope-materialize.yml
+      - scripts/temp-materialize-nope.mjs
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch19-nope-production-case
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Apply deterministic canonical patch
+        run: node scripts/temp-materialize-nope.mjs
+
+      - name: Remove Nope TEMP artifacts before full verification
+        run: |
+          rm -f \
+            .github/workflows/temp-ch19-nope-materialize.yml \
+            .github/workflows/temp-ch19-nope-source-first.yml \
+            scripts/temp-materialize-nope.mjs
+
+      - name: Generate Chapter 19 resolved state
+        run: node scripts/film-history-chapter-nineteen-atlas-audit.mjs --write=docs/film-history-chapter-nineteen-atlas-resolved.json > /tmp/nope-ch19-resolved.json
+
+      - name: Full fail-closed verification
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run verify:v0.1 2>&1 | tee verify-v0.1-output.txt
+
+      - name: Verify post-gate canonical snapshot
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync } from "node:fs";
+          const r = JSON.parse(readFileSync("docs/film-history-chapter-nineteen-atlas-resolved.json", "utf8"));
+          const film = r.candidates.find((x) => x.title === "Nope");
+          if (r.atlas.actualCount !== 555 || r.atlas.expectedCount !== 555) throw new Error(`Atlas is not 555/555: ${r.atlas.actualCount}/${r.atlas.expectedCount}`);
+          if (r.verificationIndex.literalVerifiedScenarioIds !== 555) throw new Error(`Production Verification count is ${r.verificationIndex.literalVerifiedScenarioIds}`);
+          if (!film || film.decision !== "USE_EXISTING" || film.scenarioId !== "scenario_nope_2022" || film.matches !== 1 || film.productionVerified !== true) throw new Error(`Nope state invalid: ${JSON.stringify(film)}`);
+          if (r.byDecision.USE_EXISTING.length !== 23 || r.byDecision.P0.length !== 12 || r.byDecision.P1.length !== 21 || r.byDecision.P2.length !== 4 || r.byDecision.EXISTING_REQUIRED.length !== 0) throw new Error(`Queue census invalid: ${JSON.stringify(Object.fromEntries(Object.entries(r.byDecision).map(([k,v]) => [k,v.length])))}`);
+          if (r.recommendedNewProductionCases.length !== 33) throw new Error(`Recommended production case count is ${r.recommendedNewProductionCases.length}`);
+          if (r.productionStrategy.nextRecommendedCase !== "Saint Omer" || r.productionStrategy.nextRecommendedLane !== "auteur_festival") throw new Error(`Scheduler did not advance to Saint Omer/auteur_festival: ${JSON.stringify(r.productionStrategy)}`);
+          const firstFive = r.recommendedNewProductionCases.slice(0, 5);
+          const expectedFirstFive = ["Saint Omer", "CODA", "All We Imagine as Light", "Oppenheimer", "The Power of the Dog"];
+          if (JSON.stringify(firstFive) !== JSON.stringify(expectedFirstFive)) throw new Error(`First remaining sequence drifted: ${JSON.stringify(firstFive)}`);
+          console.log(JSON.stringify({atlas: r.atlas.actualCount, verified: r.verificationIndex.literalVerifiedScenarioIds, film, queue: Object.fromEntries(Object.entries(r.byDecision).map(([k,v]) => [k,v.length])), next: r.productionStrategy.remainingSequence.slice(0,5)}, null, 2));
+          NODE
+
+      - name: Upload diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nope-materialization-diagnostics
+          path: |
+            verify-v0.1-output.txt
+            /tmp/nope-ch19-resolved.json
+          if-no-files-found: ignore
+
+      - name: Commit verified canonical state and TEMP cleanup
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git config user.name "Paradispartiet"
+          git config user.email "paradispartiet@gmail.com"
+          git add \
+            docs/film-history-chapter-nineteen-atlas-resolved.json \
+            scripts/film-history-chapter-eighteen-completion-audit.mjs \
+            scripts/film-history-chapter-nineteen-atlas-audit.mjs \
+            scripts/production-case-rest-audit.mjs \
+            src/core/filmHistoryChapterNineteenAuditContract.test.ts \
+            src/ui/data/filmScenarios.ts \
+            src/ui/data/scenarioFilmStudyMap.ts \
+            src/ui/data/scenarioProductionVerificationRegistry.ts
+          git add -u -- \
+            .github/workflows/temp-ch19-nope-materialize.yml \
+            .github/workflows/temp-ch19-nope-source-first.yml \
+            scripts/temp-materialize-nope.mjs
+          git diff --cached --check
+          git diff --cached --stat
+          git commit -m "Materialize Nope Chapter 19 production case"
+          git push origin HEAD:agent/ch19-nope-production-case
