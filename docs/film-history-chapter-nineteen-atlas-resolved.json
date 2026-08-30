@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 554,
-    "actualCount": 554,
+    "expectedCount": 555,
+    "actualCount": 555,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -927,6 +927,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenNopeExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -995,7 +1001,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 554
+    "literalVerifiedScenarioIds": 555
   },
   "candidates": [
     {
@@ -1340,11 +1346,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Large-format capture, day-for-night imaging development, practical location design and VFX integration make contemporary image engineering and physical production inseparable.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_nope_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenNopeExpansion.ts"
     },
     {
       "title": "RRR",
@@ -1967,13 +1973,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "Nope",
-    "nextRecommendedLane": "industrial_scale_technical",
+    "nextRecommendedCase": "Saint Omer",
+    "nextRecommendedLane": "auteur_festival",
     "remainingSequence": [
-      {
-        "title": "Nope",
-        "lane": "industrial_scale_technical"
-      },
       {
         "title": "Saint Omer",
         "lane": "auteur_festival"
@@ -2127,6 +2129,7 @@
       "Avatar: The Way of Water",
       "Top Gun: Maverick",
       "Everything Everywhere All at Once",
+      "Nope",
       "RRR",
       "Decision to Leave",
       "Four Daughters",
@@ -2134,7 +2137,6 @@
       "Dahomey"
     ],
     "P0": [
-      "Nope",
       "Oppenheimer",
       "Killers of the Flower Moon",
       "Poor Things",
@@ -2180,7 +2182,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Nope",
     "Saint Omer",
     "CODA",
     "All We Imagine as Light",

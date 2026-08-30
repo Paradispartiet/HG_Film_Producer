@@ -199,6 +199,7 @@ const exactUseExisting = [
   "Avatar: The Way of Water",
   "Top Gun: Maverick",
   "Everything Everywhere All at Once",
+  "Nope",
   "RRR",
   "Decision to Leave",
   "Four Daughters",
@@ -207,7 +208,6 @@ const exactUseExisting = [
 ] as const;
 
 const exactP0Queue = [
-  "Nope",
   "Oppenheimer",
   "Killers of the Flower Moon",
   "Poor Things",
@@ -291,11 +291,11 @@ test("Chapter 19 locks the open 2020-present scope without freezing 2026", () =>
 
 test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {
   assert.match(audit, /const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;/);
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 554;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 555;/);
   assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);
-  assert.equal(resolved.atlas.expectedCount, 554);
-  assert.equal(resolved.atlas.actualCount, 554);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 554);
+  assert.equal(resolved.atlas.expectedCount, 555);
+  assert.equal(resolved.atlas.actualCount, 555);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 555);
 });
 
 test("Chapter 19 locks exactly sixty candidates across 2020-2025", () => {
@@ -320,11 +320,11 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 22);
-  assert.equal(exactP0Queue.length, 13);
+  assert.equal(exactUseExisting.length, 23);
+  assert.equal(exactP0Queue.length, 12);
   assert.equal(exactP1Queue.length, 21);
   assert.equal(exactP2Queue.length, 4);
-  assert.equal(resolved.recommendedNewProductionCases.length, 34);
+  assert.equal(resolved.recommendedNewProductionCases.length, 33);
   assert.equal(resolved.productionStrategy.mode, "balanced_rotation");
   assert.equal(resolved.productionStrategy.priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder, true);
   assert.deepEqual(resolved.productionStrategy.laneOrder, [
@@ -334,18 +334,18 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
     "regional_global",
     "industrial_scale_technical",
   ]);
-  assert.equal(resolved.productionStrategy.nextRecommendedCase, "Nope");
-  assert.equal(resolved.productionStrategy.nextRecommendedLane, "industrial_scale_technical");
+  assert.equal(resolved.productionStrategy.nextRecommendedCase, "Saint Omer");
+  assert.equal(resolved.productionStrategy.nextRecommendedLane, "auteur_festival");
   assert.deepEqual(resolved.recommendedNewProductionCases.slice(0, 5), [
-    "Nope",
     "Saint Omer",
     "CODA",
     "All We Imagine as Light",
     "Oppenheimer",
+    "Memoria",
   ]);
   assert.deepEqual(
     resolved.productionStrategy.remainingSequence.slice(0, 5).map((item) => item.lane),
-    ["industrial_scale_technical", "auteur_festival", "independent_low_mid_budget", "regional_global", "industrial_scale_technical"],
+    ["auteur_festival", "independent_low_mid_budget", "regional_global", "industrial_scale_technical", "auteur_festival"],
   );
   assert.ok(!resolved.recommendedNewProductionCases.includes("Nomadland"));
   assert.ok(!resolved.recommendedNewProductionCases.includes("Drive My Car"));
@@ -356,7 +356,8 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.ok(!resolved.recommendedNewProductionCases.includes("Everything Everywhere All at Once"));
   assert.ok(!resolved.recommendedNewProductionCases.includes("Four Daughters"));
   assert.ok(!resolved.recommendedNewProductionCases.includes("Decision to Leave"));
-  assert.ok(resolved.recommendedNewProductionCases.indexOf("Saint Omer") > resolved.recommendedNewProductionCases.indexOf("Nope"));
+  assert.ok(!resolved.recommendedNewProductionCases.includes("Nope"));
+  assert.ok(resolved.recommendedNewProductionCases.indexOf("CODA") > resolved.recommendedNewProductionCases.indexOf("Saint Omer"));
   assert.equal(new Set(resolved.recommendedNewProductionCases).size, resolved.recommendedNewProductionCases.length);
   assert.ok(resolved.productionStrategy.safeguards.some((item) => item.includes("P1 case may precede a P0 case")));
   for (const title of resolved.recommendedNewProductionCases) {
@@ -434,6 +435,13 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(decisionToLeave.scenarioId, "scenario_decision_to_leave_2022");
   assert.equal(decisionToLeave.matches, 1);
   assert.equal(decisionToLeave.productionVerified, true);
+
+  const nope = resolved.candidates.find((candidate) => candidate.title === "Nope");
+  assert.ok(nope);
+  assert.equal(nope.decision, "USE_EXISTING");
+  assert.equal(nope.scenarioId, "scenario_nope_2022");
+  assert.equal(nope.matches, 1);
+  assert.equal(nope.productionVerified, true);
 
   const wolfwalkers = resolved.candidates.find((candidate) => candidate.title === "Wolfwalkers");
   assert.ok(wolfwalkers);
