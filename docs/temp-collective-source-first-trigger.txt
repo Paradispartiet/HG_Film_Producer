@@ -1,0 +1,1 @@
+Trigger isolated Collective source-first verification on branch agent/ch19-collective-production-case.
