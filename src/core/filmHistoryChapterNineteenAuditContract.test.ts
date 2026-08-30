@@ -13,6 +13,8 @@ const resolved = JSON.parse(readFileSync("docs/film-history-chapter-nineteen-atl
     laterCandidateExpansionRequiresSourceFirstAudit: boolean;
     productionCasesMayStartAfterThisMatrix: boolean;
     candidateFunctionsAreRoadmapHypotheses: boolean;
+    balancedProductionRotation: boolean;
+    priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder: boolean;
   };
   atlas: { baselineFromClosedChapter18: number; expectedCount: number; actualCount: number };
   verificationIndex: { literalVerifiedScenarioIds: number };
@@ -26,6 +28,15 @@ const resolved = JSON.parse(readFileSync("docs/film-history-chapter-nineteen-atl
     productionVerified: boolean;
   }>;
   candidatePrioritiesIfMissing: { P0: string[]; P1: string[]; P2: string[] };
+  productionStrategy: {
+    mode: string;
+    priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder: boolean;
+    laneOrder: string[];
+    nextRecommendedCase: string | null;
+    nextRecommendedLane: string | null;
+    remainingSequence: Array<{ title: string; lane: string }>;
+    safeguards: string[];
+  };
   byDecision: { USE_EXISTING: string[]; P0: string[]; P1: string[]; P2: string[]; EXISTING_REQUIRED: string[] };
   recommendedNewProductionCases: string[];
   historicalObjects: Array<{ label: string; atlasDecision: string }>;
@@ -273,6 +284,8 @@ test("Chapter 19 locks the open 2020-present scope without freezing 2026", () =>
   assert.equal(resolved.governance.laterCandidateExpansionRequiresSourceFirstAudit, true);
   assert.equal(resolved.governance.productionCasesMayStartAfterThisMatrix, true);
   assert.equal(resolved.governance.candidateFunctionsAreRoadmapHypotheses, true);
+  assert.equal(resolved.governance.balancedProductionRotation, true);
+  assert.equal(resolved.governance.priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder, true);
   assert.ok(resolved.boundaryNotes.some((item) => item.includes("2026+") && item.includes("source-mature")));
 });
 
@@ -312,10 +325,36 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(exactP1Queue.length, 27);
   assert.equal(exactP2Queue.length, 4);
   assert.equal(resolved.recommendedNewProductionCases.length, 43);
+  assert.equal(resolved.productionStrategy.mode, "balanced_rotation");
+  assert.equal(resolved.productionStrategy.priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder, true);
+  assert.deepEqual(resolved.productionStrategy.laneOrder, [
+    "independent_low_mid_budget",
+    "auteur_festival",
+    "nonfiction_hybrid",
+    "regional_global",
+    "industrial_scale_technical",
+  ]);
+  assert.equal(resolved.productionStrategy.nextRecommendedCase, "Nomadland");
+  assert.equal(resolved.productionStrategy.nextRecommendedLane, "independent_low_mid_budget");
+  assert.deepEqual(resolved.recommendedNewProductionCases.slice(0, 5), [
+    "Nomadland",
+    "Drive My Car",
+    "Collective",
+    "RRR",
+    "Top Gun: Maverick",
+  ]);
   assert.deepEqual(
-    resolved.recommendedNewProductionCases,
-    resolved.candidates.filter((item) => item.decision === "P0" || item.decision === "P1").map((item) => item.title),
+    resolved.productionStrategy.remainingSequence.slice(0, 5).map((item) => item.lane),
+    ["independent_low_mid_budget", "auteur_festival", "nonfiction_hybrid", "regional_global", "industrial_scale_technical"],
   );
+  assert.ok(resolved.recommendedNewProductionCases.indexOf("Top Gun: Maverick") > resolved.recommendedNewProductionCases.indexOf("Nomadland"));
+  assert.equal(new Set(resolved.recommendedNewProductionCases).size, resolved.recommendedNewProductionCases.length);
+  assert.ok(resolved.productionStrategy.safeguards.some((item) => item.includes("P1 case may precede a P0 case")));
+  for (const title of resolved.recommendedNewProductionCases) {
+    const candidate = resolved.candidates.find((item) => item.title === title);
+    assert.ok(candidate);
+    assert.ok(candidate.decision === "P0" || candidate.decision === "P1");
+  }
 
   const tenet = resolved.candidates.find((candidate) => candidate.title === "Tenet");
   assert.ok(tenet);
