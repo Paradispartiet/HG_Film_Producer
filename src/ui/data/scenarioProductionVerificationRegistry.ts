@@ -181,6 +181,7 @@ import { soulProductionCaseVerification } from "./scenarioProductionVerification
 import { wolfwalkersProductionCaseVerification } from "./scenarioProductionVerificationWolfwalkers";
 import { duneProductionCaseVerification } from "./scenarioProductionVerificationDune";
 import { fleeProductionCaseVerification } from "./scenarioProductionVerificationFlee";
+import { avatarWayOfWaterProductionCaseVerification } from "./scenarioProductionVerificationAvatarWayOfWater";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -479,6 +480,7 @@ const additionalVerificationRecords = [
   wolfwalkersProductionCaseVerification,
   duneProductionCaseVerification,
   fleeProductionCaseVerification,
+  avatarWayOfWaterProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
