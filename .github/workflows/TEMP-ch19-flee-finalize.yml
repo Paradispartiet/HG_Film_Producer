@@ -1,4 +1,4 @@
-# retrigger after exact Flee core-test assertion correction
+# retrigger after exact Flee core-test assertion corrections
 name: TEMP Chapter 19 Flee finalize
 
 on:
@@ -38,6 +38,12 @@ jobs:
             if (next === source) throw new Error(`${file}: replacement produced no change`);
             fs.writeFileSync(file, next);
           }
+
+          replaceExact(
+            'src/core/chapterNineteenFleeExpansion.ts',
+            'player_task: "Use simplified, expressive monochrome/abstract imagery where memory is fragmented without inventing precise factual detail."',
+            'player_task: "Use simplified, expressive monochrome/abstract imagery where memory is fragmented or uncertain without inventing precise factual detail."',
+          );
 
           replaceExact(
             'src/ui/data/filmScenarios.ts',
@@ -281,6 +287,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add \
+            src/core/chapterNineteenFleeExpansion.ts \
             src/ui/data/filmScenarios.ts \
             src/ui/data/scenarioProductionVerificationRegistry.ts \
             src/ui/data/scenarioFilmStudyMap.ts \
