@@ -184,6 +184,7 @@ import { fleeProductionCaseVerification } from "./scenarioProductionVerification
 import { avatarWayOfWaterProductionCaseVerification } from "./scenarioProductionVerificationAvatarWayOfWater";
 import { nomadlandProductionCaseVerification } from "./scenarioProductionVerificationNomadland";
 import { driveMyCarProductionCaseVerification } from "./scenarioProductionVerificationDriveMyCar";
+import { collectiveProductionCaseVerification } from "./scenarioProductionVerificationCollective";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -485,6 +486,7 @@ const additionalVerificationRecords = [
   avatarWayOfWaterProductionCaseVerification,
   nomadlandProductionCaseVerification,
   driveMyCarProductionCaseVerification,
+  collectiveProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
