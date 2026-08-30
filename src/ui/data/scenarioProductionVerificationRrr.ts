@@ -26,9 +26,9 @@ export const rrrProductionCaseVerification = {
       title: "ARRI ALEXA LF, Signature Primes, and SkyPanels on RRR",
       publisher: "ARRI",
       url: "https://www.arri.com/en/learn-help/learn-help-camera-system/camera-workflows/rrr",
-      sourceKind: "manufacturer_technical",
+      sourceKind: "trade_feature",
       supports: ["overall", "cinematography"],
-      note: "Manufacturer interview with cinematographer K. K. Senthil Kumar supporting ALEXA LF, Signature Primes, SkyPanel use, COVID-era continuity problems and his detailed camera-report workflow."
+      note: "Manufacturer-hosted interview with cinematographer K. K. Senthil Kumar supporting ALEXA LF, Signature Primes, SkyPanel use, COVID-era continuity problems and his detailed camera-report workflow."
     },
     {
       title: "RRR cinematography: K. K. Senthil Kumar",
@@ -51,7 +51,7 @@ export const rrrProductionCaseVerification = {
       publisher: "Cinema Express",
       url: "https://www.cinemaexpress.com/telugu/interviews/2022/mar/31/sabu-cyril-on-designing-rrr-30615.html",
       sourceKind: "filmmaker_interview",
-      supports: ["overall", "production_design"],
+      supports: ["overall"],
       note: "Production-designer interview supporting Hyderabad production infrastructure, practical sets and extensions, rigs, miniatures, roughly three months of action work and department-level crowd/crew scale."
     },
     {
@@ -75,7 +75,7 @@ export const rrrProductionCaseVerification = {
       publisher: "RogerEbert.com",
       url: "https://www.rogerebert.com/interviews/ss-rajamouli-rrr-interview",
       sourceKind: "filmmaker_interview",
-      supports: ["overall", "production_design", "cinematography"],
+      supports: ["overall", "cinematography"],
       note: "Director interview supporting the bridge rescue as hybrid construction combining full-size upper/lower bridge sets, miniature elements and VFX that required matching scale and light."
     }
   ]
