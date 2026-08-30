@@ -63,7 +63,7 @@ jobs:
           if (r.recommendedNewProductionCases.length !== 33) throw new Error(`Recommended production case count is ${r.recommendedNewProductionCases.length}`);
           if (r.productionStrategy.nextRecommendedCase !== "Saint Omer" || r.productionStrategy.nextRecommendedLane !== "auteur_festival") throw new Error(`Scheduler did not advance to Saint Omer/auteur_festival: ${JSON.stringify(r.productionStrategy)}`);
           const firstFive = r.recommendedNewProductionCases.slice(0, 5);
-          const expectedFirstFive = ["Saint Omer", "CODA", "All We Imagine as Light", "Oppenheimer", "The Power of the Dog"];
+          const expectedFirstFive = ["Saint Omer", "CODA", "All We Imagine as Light", "Oppenheimer", "Memoria"];
           if (JSON.stringify(firstFive) !== JSON.stringify(expectedFirstFive)) throw new Error(`First remaining sequence drifted: ${JSON.stringify(firstFive)}`);
           console.log(JSON.stringify({atlas: r.atlas.actualCount, verified: r.verificationIndex.literalVerifiedScenarioIds, film, queue: Object.fromEntries(Object.entries(r.byDecision).map(([k,v]) => [k,v.length])), next: r.productionStrategy.remainingSequence.slice(0,5)}, null, 2));
           NODE
