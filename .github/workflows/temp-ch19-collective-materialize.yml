@@ -31,6 +31,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Repair known TEMP strict-contract anchor
+        run: |
+          sed -i 's|EXPECTED_ATLAS_COUNT = 547/);|EXPECTED_ATLAS_COUNT = 547;/);|; s|EXPECTED_ATLAS_COUNT = 548/);|EXPECTED_ATLAS_COUNT = 548;/);|' scripts/temp-materialize-collective.mjs
+
       - name: Apply deterministic canonical patch
         run: node scripts/temp-materialize-collective.mjs
 
