@@ -38,6 +38,14 @@ jobs:
       - name: Apply deterministic canonical patch
         run: node scripts/temp-materialize-collective.mjs
 
+      - name: Remove TEMP artifacts before full verification
+        run: |
+          rm -f \
+            .github/workflows/temp-ch19-collective-materialize.yml \
+            .github/workflows/temp-ch19-collective-source-first.yml \
+            scripts/temp-materialize-collective.mjs \
+            docs/temp-collective-source-first-trigger.txt
+
       - name: Generate Chapter 19 resolved state
         run: node scripts/film-history-chapter-nineteen-atlas-audit.mjs --write=docs/film-history-chapter-nineteen-atlas-resolved.json > /tmp/collective-ch19-resolved.json
 
@@ -71,7 +79,7 @@ jobs:
             /tmp/collective-ch19-resolved.json
           if-no-files-found: ignore
 
-      - name: Commit verified canonical state
+      - name: Commit verified canonical state and TEMP cleanup
         shell: bash
         run: |
           set -euxo pipefail
@@ -86,6 +94,11 @@ jobs:
             src/ui/data/filmScenarios.ts \
             src/ui/data/scenarioFilmStudyMap.ts \
             src/ui/data/scenarioProductionVerificationRegistry.ts
+          git add -u -- \
+            .github/workflows/temp-ch19-collective-materialize.yml \
+            .github/workflows/temp-ch19-collective-source-first.yml \
+            scripts/temp-materialize-collective.mjs \
+            docs/temp-collective-source-first-trigger.txt
           git diff --cached --check
           git diff --cached --stat
           git commit -m "Materialize Collective Chapter 19 production case"
