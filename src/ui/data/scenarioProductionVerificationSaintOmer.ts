@@ -11,7 +11,7 @@ export const saintOmerProductionCaseVerification = {
       publisher: "La Biennale di Venezia",
       url: "https://www.labiennale.org/en/cinema/2022/venezia-79-competition/saint-omer",
       sourceKind: "film_institute",
-      supports: ["overall", "screenplay", "cinematography", "editing", "sound", "distribution"],
+      supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
       note: "Festival institutional record supporting France, 2022, 123-minute runtime, Srab Films / Arte France Cinema / Pictanovo production context and principal screenplay, cinematography, editing, design, costume and sound credits."
     },
     {
@@ -19,7 +19,7 @@ export const saintOmerProductionCaseVerification = {
       publisher: "Centre national du cinéma et de l'image animée (CNC)",
       url: "https://www.cnc.fr/cinema/actualites/alice-diop-du-documentaire-a-la-fiction_1835264",
       sourceKind: "archive_feature",
-      supports: ["overall", "screenplay", "distribution"],
+      supports: ["overall", "screenplay"],
       note: "French national-film-body feature supporting the fiction/documentary transition, centrality of language, Srab Films production, regional/public support, Les Films du Losange distribution, Wild Bunch International sales and CNC support."
     },
     {
