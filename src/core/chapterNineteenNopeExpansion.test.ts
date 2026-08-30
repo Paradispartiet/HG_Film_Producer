@@ -15,7 +15,7 @@ test("Chapter 19 materializes Nope as the industrial-scale technical rotation ca
   assert.ok(film.scenarioType.includes("industrial_scale_technical"));
   assert.ok(film.scenarioType.includes("imax_15perf") && film.scenarioType.includes("65mm_5perf"));
   assert.ok(film.scenarioType.includes("alexa65_infrared") && film.scenarioType.includes("dual_camera_day_for_night"));
-  assert.ok(film.scenarioType.includes("vision3_250d") && film.scenarioType.includes("vision3_500t") && film.scenarioType.includes("vision3_50d"));
+  assert.ok(film.scenarioType.includes("kodak_vision3_250d_500t_50d"));
   assert.ok(film.scenarioType.includes("jupiters_claim") && film.scenarioType.includes("practical_360_sets"));
   assert.ok(film.scenarioType.includes("675_vfx_shots") && film.scenarioType.includes("cg_cloudscape"));
   assert.ok(film.scenarioType.includes("first_cut_four_hours") && film.scenarioType.includes("sound_design_negative_space"));
