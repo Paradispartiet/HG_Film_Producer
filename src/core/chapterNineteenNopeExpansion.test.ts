@@ -74,7 +74,7 @@ test("Chapter 19 materializes Nope as the industrial-scale technical rotation ca
   assert.ok(film.phases.find((phase) => phase.id === "jupiters_claim")?.player_task.includes("360-degree"));
   assert.ok(film.phases.find((phase) => phase.id === "blood_rain")?.player_task.includes("food-grade blood"));
   assert.ok(film.phases.find((phase) => phase.id === "cloud_system")?.player_task.includes("IMAX resolution"));
-  assert.ok(film.phases.find((phase) => phase.id === "vfx_delivery")?.player_task.includes("675-plus"));
+  assert.ok(film.phases.find((phase) => phase.id === "vfx_delivery")?.player_task.includes("Separate creature"));
   assert.ok(film.phases.find((phase) => phase.id === "assembly")?.player_task.includes("near-four-hour cut"));
   assert.ok(film.phases.find((phase) => phase.id === "silence_score")?.player_task.includes("negative space"));
   assert.ok(film.phases.find((phase) => phase.id === "unknowns_register")?.player_task.includes("IR calibration"));
