@@ -1,0 +1,222 @@
+name: TEMP Chapter 19 Avatar Way of Water finalize
+
+on:
+  push:
+    branches:
+      - agent/ch19-avatar-way-of-water-production-case
+    paths:
+      - .github/workflows/TEMP-ch19-avatar-way-of-water-finalize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch19-avatar-way-of-water-production-case
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Apply exact Avatar Way of Water integration patch
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+
+          function replaceExact(file, before, after) {
+            const source = fs.readFileSync(file, 'utf8');
+            if (!source.includes(before)) throw new Error(`${file}: missing exact anchor: ${before.slice(0, 240)}`);
+            const next = source.replace(before, after);
+            if (next === source) throw new Error(`${file}: replacement produced no change`);
+            fs.writeFileSync(file, next);
+          }
+
+          replaceExact(
+            'src/ui/data/filmScenarios.ts',
+            'import { mergeChapterNineteenFleeExpansion } from "../../core/chapterNineteenFleeExpansion.js";\n',
+            'import { mergeChapterNineteenFleeExpansion } from "../../core/chapterNineteenFleeExpansion.js";\nimport { mergeChapterNineteenAvatarWayOfWaterExpansion } from "../../core/chapterNineteenAvatarWayOfWaterExpansion.js";\n',
+          );
+          replaceExact(
+            'src/ui/data/filmScenarios.ts',
+            'const chapterNineteenFleeScenarios = mergeChapterNineteenFleeExpansion(chapterNineteenDuneScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterNineteenFleeScenarios);',
+            'const chapterNineteenFleeScenarios = mergeChapterNineteenFleeExpansion(chapterNineteenDuneScenarios);\nconst chapterNineteenAvatarWayOfWaterScenarios = mergeChapterNineteenAvatarWayOfWaterExpansion(chapterNineteenFleeScenarios);\nconst modernCanonScenarios = mergeModernCanonExpansion(chapterNineteenAvatarWayOfWaterScenarios);',
+          );
+          replaceExact(
+            'src/ui/data/filmScenarios.ts',
+            'manual_chapter_nineteen_dune_expansion_2026+manual_chapter_nineteen_flee_expansion_2026+manual_modern_indie_asian_prize_expansion_2026',
+            'manual_chapter_nineteen_dune_expansion_2026+manual_chapter_nineteen_flee_expansion_2026+manual_chapter_nineteen_avatar_way_of_water_expansion_2026+manual_modern_indie_asian_prize_expansion_2026',
+          );
+
+          replaceExact(
+            'src/ui/data/scenarioProductionVerificationRegistry.ts',
+            'import { fleeProductionCaseVerification } from "./scenarioProductionVerificationFlee";\n',
+            'import { fleeProductionCaseVerification } from "./scenarioProductionVerificationFlee";\nimport { avatarWayOfWaterProductionCaseVerification } from "./scenarioProductionVerificationAvatarWayOfWater";\n',
+          );
+          replaceExact(
+            'src/ui/data/scenarioProductionVerificationRegistry.ts',
+            '  duneProductionCaseVerification,\n  fleeProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,',
+            '  duneProductionCaseVerification,\n  fleeProductionCaseVerification,\n  avatarWayOfWaterProductionCaseVerification,\n  lonelyVillaProductionCaseVerification,',
+          );
+
+          replaceExact(
+            'src/ui/data/scenarioFilmStudyMap.ts',
+            'import { fleeFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenFlee";\n',
+            'import { fleeFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenFlee";\nimport { avatarWayOfWaterFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAvatarWayOfWater";\n',
+          );
+          replaceExact(
+            'src/ui/data/scenarioFilmStudyMap.ts',
+            '  [duneFilmHistoryProfile.scenarioId]: duneFilmHistoryProfile,\n  [fleeFilmHistoryProfile.scenarioId]: fleeFilmHistoryProfile,\n  scenario_the_machinist_2004:',
+            '  [duneFilmHistoryProfile.scenarioId]: duneFilmHistoryProfile,\n  [fleeFilmHistoryProfile.scenarioId]: fleeFilmHistoryProfile,\n  [avatarWayOfWaterFilmHistoryProfile.scenarioId]: avatarWayOfWaterFilmHistoryProfile,\n  scenario_the_machinist_2004:',
+          );
+
+          replaceExact(
+            'scripts/production-case-rest-audit.mjs',
+            'const EXPECTED_PLAYABLE_SCENARIOS = 544;\nconst EXPECTED_VERIFIED_PRODUCTION_CASES = 544;',
+            'const EXPECTED_PLAYABLE_SCENARIOS = 545;\nconst EXPECTED_VERIFIED_PRODUCTION_CASES = 545;',
+          );
+          replaceExact(
+            'scripts/production-case-rest-audit.mjs',
+            '  "chapterNineteenFleeExpansion.ts",\n  "modernCanonExpansion.ts",',
+            '  "chapterNineteenFleeExpansion.ts",\n  "chapterNineteenAvatarWayOfWaterExpansion.ts",\n  "modernCanonExpansion.ts",',
+          );
+
+          replaceExact(
+            'scripts/film-history-chapter-nineteen-atlas-audit.mjs',
+            'const EXPECTED_ATLAS_COUNT = 544;',
+            'const EXPECTED_ATLAS_COUNT = 545;',
+          );
+
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            '  "Flee",\n  "The Worst Person in the World",\n  "Nickel Boys",',
+            '  "Flee",\n  "The Worst Person in the World",\n  "Avatar: The Way of Water",\n  "Nickel Boys",',
+          );
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            'const exactP0Queue = [\n  "Avatar: The Way of Water",\n  "Top Gun: Maverick",',
+            'const exactP0Queue = [\n  "Top Gun: Maverick",',
+          );
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            '  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 544;/);\n  assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);\n  assert.equal(resolved.atlas.expectedCount, 544);\n  assert.equal(resolved.atlas.actualCount, 544);\n  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 544);',
+            '  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 545;/);\n  assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);\n  assert.equal(resolved.atlas.expectedCount, 545);\n  assert.equal(resolved.atlas.actualCount, 545);\n  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 545);',
+          );
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            '  assert.equal(exactUseExisting.length, 12);\n  assert.equal(exactP0Queue.length, 17);',
+            '  assert.equal(exactUseExisting.length, 13);\n  assert.equal(exactP0Queue.length, 16);',
+          );
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            '  assert.equal(resolved.recommendedNewProductionCases.length, 44);',
+            '  assert.equal(resolved.recommendedNewProductionCases.length, 43);',
+          );
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            '  assert.equal(flee.productionVerified, true);\n\n  for (const candidate of resolved.candidates) {',
+            '  assert.equal(flee.productionVerified, true);\n\n  const avatarWayOfWater = resolved.candidates.find((candidate) => candidate.title === "Avatar: The Way of Water");\n  assert.ok(avatarWayOfWater);\n  assert.equal(avatarWayOfWater.decision, "USE_EXISTING");\n  assert.equal(avatarWayOfWater.scenarioId, "scenario_avatar_the_way_of_water_2022");\n  assert.equal(avatarWayOfWater.matches, 1);\n  assert.equal(avatarWayOfWater.productionVerified, true);\n\n  for (const candidate of resolved.candidates) {',
+          );
+
+          replaceExact(
+            'scripts/film-history-chapter-eighteen-completion-audit.mjs',
+            'invariant(verificationIds.size === 544, `Global Production Verification registry must contain exactly 544 unique scenarioIds after the fifth Chapter 19 case: ${verificationIds.size}`);',
+            'invariant(verificationIds.size === 545, `Global Production Verification registry must contain exactly 545 unique scenarioIds after the sixth Chapter 19 case: ${verificationIds.size}`);',
+          );
+          replaceExact(
+            'scripts/film-history-chapter-eighteen-completion-audit.mjs',
+            'invariant(chapter19.atlas?.baselineFromClosedChapter18 === 539 && chapter19.atlas?.actualCount === 544, "Chapter 19 must preserve the closed 539-scenario Chapter 18 baseline while advancing the current Atlas to 544.");',
+            'invariant(chapter19.atlas?.baselineFromClosedChapter18 === 539 && chapter19.atlas?.actualCount === 545, "Chapter 19 must preserve the closed 539-scenario Chapter 18 baseline while advancing the current Atlas to 545.");',
+          );
+          replaceExact(
+            'scripts/film-history-chapter-eighteen-completion-audit.mjs',
+            'invariant(chapter19.byDecision?.USE_EXISTING?.length === 12 && chapter19.byDecision?.P0?.length === 17 && chapter19.byDecision?.P1?.length === 27 && chapter19.byDecision?.P2?.length === 4 && chapter19.byDecision?.EXISTING_REQUIRED?.length === 0, "Chapter 19 resolved queue census drifted from 12 USE_EXISTING / 17 P0 / 27 P1 / 4 P2 / 0 EXISTING_REQUIRED.");',
+            'invariant(chapter19.byDecision?.USE_EXISTING?.length === 13 && chapter19.byDecision?.P0?.length === 16 && chapter19.byDecision?.P1?.length === 27 && chapter19.byDecision?.P2?.length === 4 && chapter19.byDecision?.EXISTING_REQUIRED?.length === 0, "Chapter 19 resolved queue census drifted from 13 USE_EXISTING / 16 P0 / 27 P1 / 4 P2 / 0 EXISTING_REQUIRED.");',
+          );
+          replaceExact(
+            'scripts/film-history-chapter-eighteen-completion-audit.mjs',
+            'const flee = chapter19.candidates.find((candidate) => candidate.title === "Flee");\ninvariant(flee?.decision === "USE_EXISTING" && flee?.scenarioId === "scenario_flee_2021" && flee?.matches === 1 && flee?.productionVerified === true, "Flee is not closed as the fifth production-verified Chapter 19 USE_EXISTING case.");',
+            'const flee = chapter19.candidates.find((candidate) => candidate.title === "Flee");\ninvariant(flee?.decision === "USE_EXISTING" && flee?.scenarioId === "scenario_flee_2021" && flee?.matches === 1 && flee?.productionVerified === true, "Flee is not closed as the fifth production-verified Chapter 19 USE_EXISTING case.");\nconst avatarWayOfWater = chapter19.candidates.find((candidate) => candidate.title === "Avatar: The Way of Water");\ninvariant(avatarWayOfWater?.decision === "USE_EXISTING" && avatarWayOfWater?.scenarioId === "scenario_avatar_the_way_of_water_2022" && avatarWayOfWater?.matches === 1 && avatarWayOfWater?.productionVerified === true, "Avatar: The Way of Water is not closed as the sixth production-verified Chapter 19 USE_EXISTING case.");',
+          );
+          NODE
+
+      - name: Generate canonical Chapter 19 snapshot
+        run: |
+          node scripts/film-history-chapter-nineteen-atlas-audit.mjs > /tmp/ch19-avatar-way-of-water.json
+          cp /tmp/ch19-avatar-way-of-water.json docs/film-history-chapter-nineteen-atlas-resolved.json
+
+      - name: Assert Avatar Way of Water transition
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('docs/film-history-chapter-nineteen-atlas-resolved.json', 'utf8'));
+          const avatar = data.candidates.find((candidate) => candidate.title === 'Avatar: The Way of Water');
+          const counts = Object.fromEntries(Object.entries(data.byDecision).map(([key, value]) => [key, value.length]));
+          const expectedUseExisting = ['Tenet','Soul','Quo Vadis, Aida?','Another Round','Never Rarely Sometimes Always','Wolfwalkers','The Disciple','Dune','Flee','The Worst Person in the World','Avatar: The Way of Water','Nickel Boys','Dahomey'];
+          if (data.atlas.baselineFromClosedChapter18 !== 539 || data.atlas.expectedCount !== 545 || data.atlas.actualCount !== 545) throw new Error(JSON.stringify(data.atlas));
+          if (data.verificationIndex.literalVerifiedScenarioIds !== 545) throw new Error(JSON.stringify(data.verificationIndex));
+          if (!avatar || avatar.decision !== 'USE_EXISTING' || avatar.scenarioId !== 'scenario_avatar_the_way_of_water_2022' || avatar.matches !== 1 || avatar.productionVerified !== true) throw new Error(JSON.stringify(avatar));
+          if (counts.USE_EXISTING !== 13 || counts.P0 !== 16 || counts.P1 !== 27 || counts.P2 !== 4 || counts.EXISTING_REQUIRED !== 0) throw new Error(JSON.stringify(counts));
+          if (JSON.stringify(data.byDecision.USE_EXISTING) !== JSON.stringify(expectedUseExisting)) throw new Error(`USE_EXISTING order drift: ${JSON.stringify(data.byDecision.USE_EXISTING)}`);
+          NODE
+
+      - name: Remove TEMP surfaces from verification working tree
+        run: |
+          rm -f .github/workflows/TEMP-ch19-avatar-way-of-water-*.yml
+          rm -f TEMP-avatar-way-of-water-*.txt TEMP-avatar-way-of-water-*.log
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify full v0.1 fail-closed gate with diagnostics
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run verify:v0.1 2>&1 | tee /tmp/avatar-way-of-water-verify.log
+
+      - name: Upload full verification diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: avatar-way-of-water-verify-${{ github.run_attempt }}
+          path: /tmp/avatar-way-of-water-verify.log
+          if-no-files-found: error
+
+      - name: Assert Avatar snapshot survived full verification
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('docs/film-history-chapter-nineteen-atlas-resolved.json', 'utf8'));
+          const avatar = data.candidates.find((candidate) => candidate.title === 'Avatar: The Way of Water');
+          const counts = Object.fromEntries(Object.entries(data.byDecision).map(([key, value]) => [key, value.length]));
+          if (data.atlas.baselineFromClosedChapter18 !== 539 || data.atlas.expectedCount !== 545 || data.atlas.actualCount !== 545 || data.verificationIndex.literalVerifiedScenarioIds !== 545) throw new Error(JSON.stringify({ atlas: data.atlas, verificationIndex: data.verificationIndex }));
+          if (!avatar || avatar.decision !== 'USE_EXISTING' || avatar.scenarioId !== 'scenario_avatar_the_way_of_water_2022' || avatar.matches !== 1 || avatar.productionVerified !== true) throw new Error(JSON.stringify(avatar));
+          if (counts.USE_EXISTING !== 13 || counts.P0 !== 16 || counts.P1 !== 27 || counts.P2 !== 4 || counts.EXISTING_REQUIRED !== 0) throw new Error(JSON.stringify(counts));
+          NODE
+
+      - name: Commit permanent materialization after green gate
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/ui/data/filmScenarios.ts \
+            src/ui/data/scenarioProductionVerificationRegistry.ts \
+            src/ui/data/scenarioFilmStudyMap.ts \
+            scripts/production-case-rest-audit.mjs \
+            scripts/film-history-chapter-nineteen-atlas-audit.mjs \
+            scripts/film-history-chapter-eighteen-completion-audit.mjs \
+            src/core/filmHistoryChapterNineteenAuditContract.test.ts \
+            docs/film-history-chapter-nineteen-atlas-resolved.json
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo "No permanent Avatar Way of Water materialization changes to commit."
+            exit 0
+          fi
+          git commit -m "Materialize Chapter 19 Avatar Way of Water production case"
+          git push origin HEAD:agent/ch19-avatar-way-of-water-production-case
