@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 546,
-    "actualCount": 546,
+    "expectedCount": 547,
+    "actualCount": 547,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -879,6 +879,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenDriveMyCarExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -947,7 +953,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 546
+    "literalVerifiedScenarioIds": 547
   },
   "candidates": [
     {
@@ -1134,11 +1140,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P1",
       "chapterFunction": "Japanese location production and multilingual performance connect regional authorship, adaptation and global festival/distribution circulation.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_drive_my_car_2021",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenDriveMyCarExpansion.ts"
     },
     {
       "title": "Flee",
@@ -1919,13 +1925,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "Drive My Car",
-    "nextRecommendedLane": "auteur_festival",
+    "nextRecommendedCase": "Collective",
+    "nextRecommendedLane": "nonfiction_hybrid",
     "remainingSequence": [
-      {
-        "title": "Drive My Car",
-        "lane": "auteur_festival"
-      },
       {
         "title": "Collective",
         "lane": "nonfiction_hybrid"
@@ -2103,6 +2105,7 @@
       "Wolfwalkers",
       "The Disciple",
       "Dune",
+      "Drive My Car",
       "Flee",
       "The Worst Person in the World",
       "Avatar: The Way of Water",
@@ -2130,7 +2133,6 @@
     "P1": [
       "Collective",
       "The Power of the Dog",
-      "Drive My Car",
       "Titane",
       "Memoria",
       "CODA",
@@ -2164,7 +2166,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Drive My Car",
     "Collective",
     "RRR",
     "Top Gun: Maverick",

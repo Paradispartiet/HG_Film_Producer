@@ -160,6 +160,7 @@ import { duneFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenDune";
 import { fleeFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenFlee";
 import { avatarWayOfWaterFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAvatarWayOfWater";
 import { nomadlandFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenNomadland";
+import { driveMyCarFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenDriveMyCar";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -346,6 +347,7 @@ const sourceBackedFilmHistoryProfiles = {
   [fleeFilmHistoryProfile.scenarioId]: fleeFilmHistoryProfile,
   [avatarWayOfWaterFilmHistoryProfile.scenarioId]: avatarWayOfWaterFilmHistoryProfile,
   [nomadlandFilmHistoryProfile.scenarioId]: nomadlandFilmHistoryProfile,
+  [driveMyCarFilmHistoryProfile.scenarioId]: driveMyCarFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
