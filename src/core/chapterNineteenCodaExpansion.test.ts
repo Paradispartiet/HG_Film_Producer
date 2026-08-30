@@ -16,7 +16,7 @@ test("CODA source-first production case is complete and evidence-bounded", () =>
   assert.match(film.scenarioType, /sony_venice_6k/);
   assert.match(film.scenarioType, /asl_masters/);
   assert.match(film.scenarioType, /formosa/);
-  assert.ok(film.premise.includes("independently financed and made without a distributor in place"));
+  assert.ok(film.premise.includes("independently financed production made without a distributor in place"));
   assert.ok(film.premise.includes("Alexandria Wailes and Anne Tomasetti"));
   assert.ok(film.premise.includes("Sony VENICE 6K"));
   assert.ok(film.premise.includes("ARRI Signature LF"));
@@ -29,7 +29,7 @@ test("CODA source-first production case is complete and evidence-bounded", () =>
   assert.ok(film.premise.includes("Flashcut"));
   assert.ok(film.premise.includes("Mels"));
   assert.ok(film.premise.includes("Formosa Group"));
-  assert.ok(film.premise.includes("Apple therefore belongs to distribution/circulation history"));
+  assert.ok(film.premise.includes("Apple's later Sundance acquisition therefore belongs to distribution/circulation history"));
   assert.ok(film.premise.includes("Those remain unresolved"));
   assert.ok(film.learningGoals.length >= 45);
   assert.ok(film.phases.length >= 28);
