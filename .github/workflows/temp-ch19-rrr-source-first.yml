@@ -1,0 +1,39 @@
+name: TEMP Chapter 19 RRR source-first
+
+on:
+  push:
+    branches:
+      - agent/ch19-rrr-production-case
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-first:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build core
+        run: npm run build
+
+      - name: Strict RRR contract
+        run: node --test dist/core/chapterNineteenRrrExpansion.test.js
+
+      - name: Build UI
+        run: npm run build:ui
