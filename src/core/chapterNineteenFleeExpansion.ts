@@ -87,7 +87,7 @@ export const chapterNineteenFleeExpansionDefinitions = [
       { id: "animatic_edit_loop", label: "Iterate edit and animatic together", player_task: "Move repeatedly between dialogue, storyboard imagery, rough animation and editorial timing until the structure is production-ready." },
       { id: "exact_length_animatic", label: "Lock production timing", player_task: "Deliver an animatic whose duration is stable enough to control downstream animation workload and cost." },
       { id: "color_2d_layer", label: "Produce the primary 2D layer", player_task: "Use restrained full-color hand-drawn animation for testimony and reconstructed past while maintaining documentary tone." },
-      { id: "abstract_memory_layer", label: "Visualize traumatic uncertainty", player_task: "Use simplified, expressive monochrome/abstract imagery where memory is fragmented without inventing precise factual detail." },
+      { id: "abstract_memory_layer", label: "Visualize traumatic uncertainty", player_task: "Use simplified, expressive monochrome/abstract imagery where memory is fragmented or uncertain without inventing precise factual detail." },
       { id: "background_research", label: "Reconstruct places from evidence", player_task: "Use archival and contextual research to ground environments while keeping reconstruction limits visible." },
       { id: "art_direction", label: "Unify framing, light and design", player_task: "Coordinate backgrounds, composition, set dressing, color and quality control under the documented art-direction role." },
       { id: "animation_acting", label: "Direct restrained animated performance", player_task: "Control gesture, timing and emotional acting so animated characters remain subtle enough for documentary testimony." },
