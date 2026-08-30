@@ -1,0 +1,44 @@
+name: TEMP Chapter 19 Decision to Leave source-first
+
+on:
+  push:
+    branches:
+      - agent/ch19-decision-to-leave-production-case
+    paths:
+      - .github/workflows/temp-ch19-decision-to-leave-source-first.yml
+      - src/core/chapterNineteenDecisionToLeaveExpansion.ts
+      - src/core/chapterNineteenDecisionToLeaveExpansion.test.ts
+      - src/ui/data/scenarioFilmStudyChapterNineteenDecisionToLeave.ts
+      - src/ui/data/scenarioProductionVerificationDecisionToLeave.ts
+
+permissions:
+  contents: read
+
+jobs:
+  source-first:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build core
+        run: npm run build
+
+      - name: Strict Decision to Leave contract
+        run: node --test dist/core/chapterNineteenDecisionToLeaveExpansion.test.js
+
+      - name: Build UI
+        run: npm run build:ui
