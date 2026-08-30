@@ -30,7 +30,7 @@ test("Chapter 19 materializes Saint Omer as the auteur-festival rotation case", 
   assert.ok(film.premise.includes("1.85:1") && film.premise.includes("single-camera shoot"));
   assert.ok(film.premise.includes("twenty-minute single takes") && film.premise.includes("three-week Saint-Omer shoot"));
   assert.ok(film.premise.includes("ARRI SkyPanels") && film.premise.includes("Rosco DMG SL1s"));
-  assert.ok(film.premise.includes("mostly natural light") && film.premise.includes("hand on the iris"));
+  assert.ok(film.premise.includes("natural light through the windows") && film.premise.includes("kept a hand on the iris"));
   assert.ok(film.premise.includes("Yov Moor") && film.premise.includes("Mathilde Delacroix"));
   assert.ok(film.premise.includes("M141 in Paris") && film.premise.includes("skin tones"));
   assert.ok(film.premise.includes("internal breathing") && film.premise.includes("flashback structure"));
