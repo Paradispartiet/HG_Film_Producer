@@ -192,6 +192,7 @@ import { everythingEverywhereAllAtOnceProductionCaseVerification } from "./scena
 import { fourDaughtersProductionCaseVerification } from "./scenarioProductionVerificationFourDaughters";
 import { decisionToLeaveProductionCaseVerification } from "./scenarioProductionVerificationDecisionToLeave";
 import { nopeProductionCaseVerification } from "./scenarioProductionVerificationNope";
+import { saintOmerProductionCaseVerification } from "./scenarioProductionVerificationSaintOmer";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -501,6 +502,7 @@ const additionalVerificationRecords = [
   fourDaughtersProductionCaseVerification,
   decisionToLeaveProductionCaseVerification,
   nopeProductionCaseVerification,
+  saintOmerProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
