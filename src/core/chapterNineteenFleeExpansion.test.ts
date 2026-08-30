@@ -45,7 +45,7 @@ test("Chapter 19 materializes Flee as a source-first animated-documentary produc
   assert.ok(film.learningGoals.some((goal) => goal.includes("audio-first") && goal.includes("narrative spine")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("exact-length animatic") && goal.includes("economically")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("three principal visual evidence modes") && goal.includes("archival footage")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("located recognized real footage") && goal.includes("editing")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("locating recognized real footage") && goal.includes("editing")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Sun Creature") && goal.includes("Copenhagen")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Vivement Lundi") && goal.includes("Rennes")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("Studio Train-Train") && goal.includes("Lille")));
