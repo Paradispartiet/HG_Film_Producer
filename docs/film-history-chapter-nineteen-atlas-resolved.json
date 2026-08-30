@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 549,
-    "actualCount": 549,
+    "expectedCount": 550,
+    "actualCount": 550,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -897,6 +897,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenTopGunMaverickExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -965,7 +971,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 549
+    "literalVerifiedScenarioIds": 550
   },
   "candidates": [
     {
@@ -1282,11 +1288,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Aviation location work, compact cockpit camera systems and delayed event-theatrical release connect physical production risk, imaging engineering and exhibition recovery.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_top_gun_maverick_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenTopGunMaverickExpansion.ts"
     },
     {
       "title": "Everything Everywhere All at Once",
@@ -1937,13 +1943,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "Top Gun: Maverick",
-    "nextRecommendedLane": "industrial_scale_technical",
+    "nextRecommendedCase": "Titane",
+    "nextRecommendedLane": "auteur_festival",
     "remainingSequence": [
-      {
-        "title": "Top Gun: Maverick",
-        "lane": "industrial_scale_technical"
-      },
       {
         "title": "Titane",
         "lane": "auteur_festival"
@@ -2114,12 +2116,12 @@
       "Flee",
       "The Worst Person in the World",
       "Avatar: The Way of Water",
+      "Top Gun: Maverick",
       "RRR",
       "Nickel Boys",
       "Dahomey"
     ],
     "P0": [
-      "Top Gun: Maverick",
       "Everything Everywhere All at Once",
       "Nope",
       "Oppenheimer",
@@ -2170,7 +2172,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Top Gun: Maverick",
     "Titane",
     "Everything Everywhere All at Once",
     "Four Daughters",
