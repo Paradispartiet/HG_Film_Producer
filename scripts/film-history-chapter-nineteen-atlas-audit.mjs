@@ -1,6 +1,7 @@
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import process from "node:process";
+import { buildChapterNineteenBalancedProductionStrategy } from "./chapter-nineteen-balanced-production-strategy.mjs";
 
 const root = process.cwd();
 const coreDirectory = path.join(root, "src", "core");
@@ -1067,6 +1068,8 @@ const resolvedCandidates = candidates.map((candidate) => {
   };
 });
 
+const productionStrategy = buildChapterNineteenBalancedProductionStrategy(resolvedCandidates);
+
 const byDecision = { USE_EXISTING: [], P0: [], P1: [], P2: [], EXISTING_REQUIRED: [] };
 for (const candidate of resolvedCandidates) byDecision[candidate.decision].push(candidate.title);
 
@@ -1089,7 +1092,9 @@ const report = {
     currentYearExcludedFromFrozenBaseline: 2026,
     laterCandidateExpansionRequiresSourceFirstAudit: true,
     productionCasesMayStartAfterThisMatrix: true,
-    candidateFunctionsAreRoadmapHypotheses: true
+    candidateFunctionsAreRoadmapHypotheses: true,
+    balancedProductionRotation: true,
+    priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder: true
   },
   atlas: {
     baselineFromClosedChapter18: CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT,
@@ -1104,10 +1109,9 @@ const report = {
     P1: candidates.filter((item) => item.decisionIfMissing === "P1").map((item) => item.title),
     P2: candidates.filter((item) => item.decisionIfMissing === "P2").map((item) => item.title)
   },
+  productionStrategy,
   byDecision,
-  recommendedNewProductionCases: resolvedCandidates
-    .filter((item) => item.decision === "P0" || item.decision === "P1")
-    .map((item) => item.title),
+  recommendedNewProductionCases: productionStrategy.remainingSequence.map((item) => item.title),
   historicalObjects,
   researchSources,
   boundaryNotes,
