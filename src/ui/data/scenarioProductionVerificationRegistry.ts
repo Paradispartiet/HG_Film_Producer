@@ -186,6 +186,7 @@ import { nomadlandProductionCaseVerification } from "./scenarioProductionVerific
 import { driveMyCarProductionCaseVerification } from "./scenarioProductionVerificationDriveMyCar";
 import { collectiveProductionCaseVerification } from "./scenarioProductionVerificationCollective";
 import { rrrProductionCaseVerification } from "./scenarioProductionVerificationRrr";
+import { topGunMaverickProductionCaseVerification } from "./scenarioProductionVerificationTopGunMaverick";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -489,6 +490,7 @@ const additionalVerificationRecords = [
   driveMyCarProductionCaseVerification,
   collectiveProductionCaseVerification,
   rrrProductionCaseVerification,
+  topGunMaverickProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
