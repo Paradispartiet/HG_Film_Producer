@@ -55,7 +55,7 @@ test("Chapter 19 materializes Four Daughters as the nonfiction-hybrid rotation c
   assert.ok(film.learningGoals.some((goal) => goal.includes("2016/2017 observational footage") && goal.includes("provenance")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("roughly four-week principal shoot") && goal.includes("development history")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("5.1 presentation") && goal.includes("microphone")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("offered the opportunity to join the edit") && goal.includes("declined")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("participant offer to join the edit") && goal.includes("declined")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("France-Tunisia-Germany-Saudi Arabia") && goal.includes("international documentary")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("uncertainty register") && goal.includes("psychological-support")));
 
