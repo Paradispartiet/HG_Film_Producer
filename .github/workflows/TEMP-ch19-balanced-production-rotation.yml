@@ -1,0 +1,140 @@
+name: TEMP Chapter 19 balanced production rotation
+
+on:
+  push:
+    branches:
+      - agent/ch19-balanced-production-rotation
+    paths:
+      - .github/workflows/TEMP-ch19-balanced-production-rotation.yml
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch19-balanced-production-rotation
+          fetch-depth: 0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Apply balanced scheduler integration
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+
+          function replaceExact(file, before, after) {
+            const source = fs.readFileSync(file, 'utf8');
+            if (!source.includes(before)) throw new Error(`${file}: missing exact anchor: ${before.slice(0, 240)}`);
+            const next = source.replace(before, after);
+            if (next === source) throw new Error(`${file}: replacement produced no change`);
+            fs.writeFileSync(file, next);
+          }
+
+          replaceExact(
+            'scripts/film-history-chapter-nineteen-atlas-audit.mjs',
+            'import process from "node:process";\n',
+            'import process from "node:process";\nimport { buildChapterNineteenBalancedProductionStrategy } from "./chapter-nineteen-balanced-production-strategy.mjs";\n',
+          );
+
+          replaceExact(
+            'scripts/film-history-chapter-nineteen-atlas-audit.mjs',
+            'const byDecision = { USE_EXISTING: [], P0: [], P1: [], P2: [], EXISTING_REQUIRED: [] };',
+            'const productionStrategy = buildChapterNineteenBalancedProductionStrategy(resolvedCandidates);\n\nconst byDecision = { USE_EXISTING: [], P0: [], P1: [], P2: [], EXISTING_REQUIRED: [] };',
+          );
+
+          replaceExact(
+            'scripts/film-history-chapter-nineteen-atlas-audit.mjs',
+            '    candidateFunctionsAreRoadmapHypotheses: true\n  },',
+            '    candidateFunctionsAreRoadmapHypotheses: true,\n    balancedProductionRotation: true,\n    priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder: true\n  },',
+          );
+
+          replaceExact(
+            'scripts/film-history-chapter-nineteen-atlas-audit.mjs',
+            '  },\n  byDecision,\n  recommendedNewProductionCases: resolvedCandidates\n    .filter((item) => item.decision === "P0" || item.decision === "P1")\n    .map((item) => item.title),',
+            '  },\n  productionStrategy,\n  byDecision,\n  recommendedNewProductionCases: productionStrategy.remainingSequence.map((item) => item.title),',
+          );
+
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            '    candidateFunctionsAreRoadmapHypotheses: boolean;\n  };',
+            '    candidateFunctionsAreRoadmapHypotheses: boolean;\n    balancedProductionRotation: boolean;\n    priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder: boolean;\n  };',
+          );
+
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            '  candidatePrioritiesIfMissing: { P0: string[]; P1: string[]; P2: string[] };\n  byDecision:',
+            '  candidatePrioritiesIfMissing: { P0: string[]; P1: string[]; P2: string[] };\n  productionStrategy: {\n    mode: string;\n    priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder: boolean;\n    laneOrder: string[];\n    nextRecommendedCase: string | null;\n    nextRecommendedLane: string | null;\n    remainingSequence: Array<{ title: string; lane: string }>;\n    safeguards: string[];\n  };\n  byDecision:',
+          );
+
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            '  assert.equal(resolved.governance.candidateFunctionsAreRoadmapHypotheses, true);\n  assert.ok(resolved.boundaryNotes.some((item) => item.includes("2026+") && item.includes("source-mature")));',
+            '  assert.equal(resolved.governance.candidateFunctionsAreRoadmapHypotheses, true);\n  assert.equal(resolved.governance.balancedProductionRotation, true);\n  assert.equal(resolved.governance.priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder, true);\n  assert.ok(resolved.boundaryNotes.some((item) => item.includes("2026+") && item.includes("source-mature")));',
+          );
+
+          replaceExact(
+            'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+            '  assert.equal(resolved.recommendedNewProductionCases.length, 43);\n  assert.deepEqual(\n    resolved.recommendedNewProductionCases,\n    resolved.candidates.filter((item) => item.decision === "P0" || item.decision === "P1").map((item) => item.title),\n  );',
+            '  assert.equal(resolved.recommendedNewProductionCases.length, 43);\n  assert.equal(resolved.productionStrategy.mode, "balanced_rotation");\n  assert.equal(resolved.productionStrategy.priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder, true);\n  assert.deepEqual(resolved.productionStrategy.laneOrder, [\n    "independent_low_mid_budget",\n    "auteur_festival",\n    "nonfiction_hybrid",\n    "regional_global",\n    "industrial_scale_technical",\n  ]);\n  assert.equal(resolved.productionStrategy.nextRecommendedCase, "Nomadland");\n  assert.equal(resolved.productionStrategy.nextRecommendedLane, "independent_low_mid_budget");\n  assert.deepEqual(resolved.recommendedNewProductionCases.slice(0, 5), [\n    "Nomadland",\n    "Drive My Car",\n    "Collective",\n    "RRR",\n    "Top Gun: Maverick",\n  ]);\n  assert.deepEqual(\n    resolved.productionStrategy.remainingSequence.slice(0, 5).map((item) => item.lane),\n    ["independent_low_mid_budget", "auteur_festival", "nonfiction_hybrid", "regional_global", "industrial_scale_technical"],\n  );\n  assert.ok(resolved.recommendedNewProductionCases.indexOf("Top Gun: Maverick") > resolved.recommendedNewProductionCases.indexOf("Nomadland"));\n  assert.equal(new Set(resolved.recommendedNewProductionCases).size, resolved.recommendedNewProductionCases.length);\n  assert.ok(resolved.productionStrategy.safeguards.some((item) => item.includes("P1 case may precede a P0 case")));\n  for (const title of resolved.recommendedNewProductionCases) {\n    const candidate = resolved.candidates.find((item) => item.title === title);\n    assert.ok(candidate);\n    assert.ok(candidate.decision === "P0" || candidate.decision === "P1");\n  }',
+          );
+          NODE
+
+      - name: Regenerate canonical Chapter 19 snapshot
+        run: node scripts/film-history-chapter-nineteen-atlas-audit.mjs --write=docs/film-history-chapter-nineteen-atlas-resolved.json > /tmp/ch19-balanced.json
+
+      - name: Assert balanced transition before full verification
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('docs/film-history-chapter-nineteen-atlas-resolved.json', 'utf8'));
+          const expected = ['Nomadland','Drive My Car','Collective','RRR','Top Gun: Maverick'];
+          if (data.atlas.actualCount !== 545 || data.verificationIndex.literalVerifiedScenarioIds !== 545) throw new Error(JSON.stringify({atlas:data.atlas, verificationIndex:data.verificationIndex}));
+          if (data.governance.balancedProductionRotation !== true || data.governance.priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder !== true) throw new Error(JSON.stringify(data.governance));
+          if (data.productionStrategy.mode !== 'balanced_rotation') throw new Error(JSON.stringify(data.productionStrategy));
+          if (data.productionStrategy.nextRecommendedCase !== 'Nomadland') throw new Error(JSON.stringify(data.productionStrategy));
+          if (JSON.stringify(data.recommendedNewProductionCases.slice(0,5)) !== JSON.stringify(expected)) throw new Error(JSON.stringify(data.recommendedNewProductionCases.slice(0,5)));
+          if (data.byDecision.USE_EXISTING.length !== 13 || data.byDecision.P0.length !== 16 || data.byDecision.P1.length !== 27 || data.byDecision.P2.length !== 4) throw new Error(JSON.stringify(Object.fromEntries(Object.entries(data.byDecision).map(([k,v])=>[k,v.length]))));
+          NODE
+
+      - name: Remove TEMP surfaces from verification working tree
+        run: rm -f .github/workflows/TEMP-ch19-balanced-production-rotation.yml
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Full fail-closed v0.1 verification
+        run: npm run verify:v0.1
+
+      - name: Assert balanced snapshot survived full verification
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('docs/film-history-chapter-nineteen-atlas-resolved.json', 'utf8'));
+          if (data.productionStrategy.nextRecommendedCase !== 'Nomadland') throw new Error(JSON.stringify(data.productionStrategy));
+          if (data.recommendedNewProductionCases[0] !== 'Nomadland' || data.recommendedNewProductionCases[4] !== 'Top Gun: Maverick') throw new Error(JSON.stringify(data.recommendedNewProductionCases.slice(0,5)));
+          NODE
+
+      - name: Commit permanent balance migration after green gate
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            scripts/chapter-nineteen-balanced-production-strategy.mjs \
+            scripts/film-history-chapter-nineteen-atlas-audit.mjs \
+            src/core/filmHistoryChapterNineteenAuditContract.test.ts \
+            docs/film-history-chapter-nineteen-atlas-resolved.json
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo "No permanent balanced-rotation changes to commit."
+            exit 0
+          fi
+          git commit -m "Balance Chapter 19 production rotation"
+          git push origin HEAD:agent/ch19-balanced-production-rotation
