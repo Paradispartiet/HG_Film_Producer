@@ -47,7 +47,7 @@ test("Chapter 19 materializes Everything Everywhere All at Once as the independe
 
   assert.ok(film.phases.find((phase) => phase.id === "mini_studio")?.player_task.includes("Simi Valley"));
   assert.ok(film.phases.find((phase) => phase.id === "fight_previs")?.player_task.includes("Le brothers"));
-  assert.ok(film.phases.find((phase) => phase.id === "small_vfx_team")?.player_task.includes("five-person"));
+  assert.ok(film.phases.find((phase) => phase.id === "small_vfx_team")?.player_task.includes("small responsive team"));
   assert.ok(film.phases.find((phase) => phase.id === "editorial_system")?.player_task.includes("Premiere"));
   assert.ok(film.phases.find((phase) => phase.id === "atmos_mix")?.player_task.includes("Signature Post"));
   assert.ok(film.learningGoals.length >= 40);
