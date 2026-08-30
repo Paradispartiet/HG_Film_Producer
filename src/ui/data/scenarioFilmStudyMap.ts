@@ -169,6 +169,7 @@ import { everythingEverywhereAllAtOnceFilmHistoryProfile } from "./scenarioFilmS
 import { fourDaughtersFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenFourDaughters";
 import { decisionToLeaveFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenDecisionToLeave";
 import { nopeFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenNope";
+import { saintOmerFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenSaintOmer";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -364,6 +365,7 @@ const sourceBackedFilmHistoryProfiles = {
   [fourDaughtersFilmHistoryProfile.scenarioId]: fourDaughtersFilmHistoryProfile,
   [decisionToLeaveFilmHistoryProfile.scenarioId]: decisionToLeaveFilmHistoryProfile,
   [nopeFilmHistoryProfile.scenarioId]: nopeFilmHistoryProfile,
+  [saintOmerFilmHistoryProfile.scenarioId]: saintOmerFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",

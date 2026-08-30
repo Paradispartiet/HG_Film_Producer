@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 555,
-    "actualCount": 555,
+    "expectedCount": 556,
+    "actualCount": 556,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -933,6 +933,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenSaintOmerExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1001,7 +1007,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 555
+    "literalVerifiedScenarioIds": 556
   },
   "candidates": [
     {
@@ -1406,11 +1412,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P1",
       "chapterFunction": "French courtroom-centered production makes legal observation, performance restraint and documentary-derived research a low-scale countercurrent.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_saint_omer_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenSaintOmerExpansion.ts"
     },
     {
       "title": "Guillermo del Toro's Pinocchio",
@@ -1973,13 +1979,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "Saint Omer",
-    "nextRecommendedLane": "auteur_festival",
+    "nextRecommendedCase": "CODA",
+    "nextRecommendedLane": "independent_low_mid_budget",
     "remainingSequence": [
-      {
-        "title": "Saint Omer",
-        "lane": "auteur_festival"
-      },
       {
         "title": "CODA",
         "lane": "independent_low_mid_budget"
@@ -2132,6 +2134,7 @@
       "Nope",
       "RRR",
       "Decision to Leave",
+      "Saint Omer",
       "Four Daughters",
       "Nickel Boys",
       "Dahomey"
@@ -2156,7 +2159,6 @@
       "CODA",
       "The Mitchells vs. the Machines",
       "All Quiet on the Western Front",
-      "Saint Omer",
       "Guillermo del Toro's Pinocchio",
       "Barbie",
       "Anatomy of a Fall",
@@ -2182,7 +2184,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Saint Omer",
     "CODA",
     "All We Imagine as Light",
     "Oppenheimer",
