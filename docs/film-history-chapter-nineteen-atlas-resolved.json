@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 548,
-    "actualCount": 548,
+    "expectedCount": 549,
+    "actualCount": 549,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -891,6 +891,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenRrrExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -959,7 +965,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 548
+    "literalVerifiedScenarioIds": 549
   },
   "candidates": [
     {
@@ -1318,11 +1324,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Telugu-language industrial-scale production and global circulation make Indian regional industry, action spectacle and transnational distribution visible without collapsing Indian cinemas into one system.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_rrr_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenRrrExpansion.ts"
     },
     {
       "title": "Decision to Leave",
@@ -1931,13 +1937,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "RRR",
-    "nextRecommendedLane": "regional_global",
+    "nextRecommendedCase": "Top Gun: Maverick",
+    "nextRecommendedLane": "industrial_scale_technical",
     "remainingSequence": [
-      {
-        "title": "RRR",
-        "lane": "regional_global"
-      },
       {
         "title": "Top Gun: Maverick",
         "lane": "industrial_scale_technical"
@@ -2112,6 +2114,7 @@
       "Flee",
       "The Worst Person in the World",
       "Avatar: The Way of Water",
+      "RRR",
       "Nickel Boys",
       "Dahomey"
     ],
@@ -2119,7 +2122,6 @@
       "Top Gun: Maverick",
       "Everything Everywhere All at Once",
       "Nope",
-      "RRR",
       "Oppenheimer",
       "Killers of the Flower Moon",
       "Poor Things",
@@ -2168,7 +2170,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "RRR",
     "Top Gun: Maverick",
     "Titane",
     "Everything Everywhere All at Once",
