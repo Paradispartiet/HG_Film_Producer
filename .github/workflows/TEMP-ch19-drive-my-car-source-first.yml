@@ -1,0 +1,39 @@
+name: TEMP Chapter 19 Drive My Car source-first gate
+
+on:
+  push:
+    branches:
+      - agent/ch19-drive-my-car-production-case
+    paths:
+      - src/core/chapterNineteenDriveMyCarExpansion.ts
+      - src/core/chapterNineteenDriveMyCarExpansion.test.ts
+      - src/ui/data/scenarioProductionVerificationDriveMyCar.ts
+      - src/ui/data/scenarioFilmStudyChapterNineteenDriveMyCar.ts
+      - .github/workflows/TEMP-ch19-drive-my-car-source-first.yml
+
+permissions:
+  contents: read
+
+jobs:
+  verify-source-first:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch19-drive-my-car-production-case
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Core build
+        run: npm run build
+      - name: Strict Drive My Car contract
+        run: node --test dist/core/chapterNineteenDriveMyCarExpansion.test.js
+      - name: UI build
+        run: npm run build:ui
