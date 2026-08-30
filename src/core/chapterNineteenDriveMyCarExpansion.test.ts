@@ -30,7 +30,7 @@ test("Chapter 19 materializes Drive My Car as the auteur-festival rotation case"
   assert.ok(film.premise.includes("single LUT") && film.premise.includes("Imagica Tokyo"));
   assert.ok(film.premise.includes("two ALEXA Minis") && film.premise.includes("90 percent of car scenes"));
   assert.ok(film.premise.includes("emotionally neutral script readings") && film.premise.includes("Korean Sign Language"));
-  assert.ok(film.premise.includes("wind noise") && film.premise.includes("record the sound in sync"));
+  assert.ok(film.premise.includes("wind noise") && film.premise.includes("synchronized dialogue recording"));
   assert.ok(film.premise.includes("Azusa Yamazaki") && film.premise.includes("watching rushes"));
   assert.ok(film.premise.includes("exact budget") && film.premise.includes("sign-language consultation"));
 
