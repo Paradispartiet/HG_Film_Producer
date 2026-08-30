@@ -50,7 +50,8 @@ test("Chapter 19 materializes Drive My Car as the auteur-festival rotation case"
   assert.ok(film.learningGoals.some((goal) => goal.includes("sign-language coaching") && goal.includes("unresolved")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("40-day shoot") && goal.includes("March 2020")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("coronavirus shutdown") && goal.includes("nearly half a year")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("Pusan/Busan") && goal.includes("Hiroshima")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("Pusan/Busan") && goal.includes("overseas-travel restrictions")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("relocating the story to Hiroshima") && goal.includes("visual redesign")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("all-real-location production") && goal.includes("production design")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("ALEXA Mini") && goal.includes("Ultra Prime")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("mainly single-camera") && goal.includes("Ryuichi Shimokawa")));
