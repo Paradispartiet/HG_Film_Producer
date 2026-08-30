@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 551,
-    "actualCount": 551,
+    "expectedCount": 552,
+    "actualCount": 552,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -909,6 +909,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenEverythingEverywhereAllAtOnceExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -977,7 +983,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 551
+    "literalVerifiedScenarioIds": 552
   },
   "candidates": [
     {
@@ -1308,11 +1314,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Independent-scale production with dense visual-effects work makes small-team post, practical effects and rapid iteration a counterpoint to blockbuster VFX scale.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_everything_everywhere_all_at_once_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenEverythingEverywhereAllAtOnceExpansion.ts"
     },
     {
       "title": "Nope",
@@ -1949,13 +1955,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "Everything Everywhere All at Once",
-    "nextRecommendedLane": "independent_low_mid_budget",
+    "nextRecommendedCase": "Four Daughters",
+    "nextRecommendedLane": "nonfiction_hybrid",
     "remainingSequence": [
-      {
-        "title": "Everything Everywhere All at Once",
-        "lane": "independent_low_mid_budget"
-      },
       {
         "title": "Four Daughters",
         "lane": "nonfiction_hybrid"
@@ -2120,12 +2122,12 @@
       "The Worst Person in the World",
       "Avatar: The Way of Water",
       "Top Gun: Maverick",
+      "Everything Everywhere All at Once",
       "RRR",
       "Nickel Boys",
       "Dahomey"
     ],
     "P0": [
-      "Everything Everywhere All at Once",
       "Nope",
       "Oppenheimer",
       "Killers of the Flower Moon",
@@ -2174,7 +2176,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Everything Everywhere All at Once",
     "Four Daughters",
     "Decision to Leave",
     "Nope",
