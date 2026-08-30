@@ -56,7 +56,7 @@ test("Chapter 19 materializes Avatar: The Way of Water as an integrated virtual-
   assert.ok(film.learningGoals.some((goal) => goal.includes("cable-cam eyeline system") && goal.includes("correct spatial position")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("select performance-capture takes") && goal.includes("virtual-camera shots")));
   assert.ok(film.learningGoals.some((goal) => goal.includes("clarity is king") && goal.includes("visual density")));
-  assert.ok(film.learningGoals.some((goal) => goal.includes("uncertainty register") && goal.includes("proprietary marker specifications")));
+  assert.ok(film.learningGoals.some((goal) => goal.includes("uncertainty register") && goal.includes("capture-marker specifications")));
 
   assert.ok(film.phases.find((phase) => phase.id === "marker_visibility")?.player_task.includes("near-ultraviolet"));
   assert.ok(film.phases.find((phase) => phase.id === "reflection_control")?.player_task.includes("floating-bead"));
