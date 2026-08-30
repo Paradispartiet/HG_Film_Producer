@@ -164,6 +164,7 @@ import { driveMyCarFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteen
 import { collectiveFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenCollective";
 import { rrrFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenRrr";
 import { topGunMaverickFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenTopGunMaverick";
+import { titaneFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenTitane";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -354,6 +355,7 @@ const sourceBackedFilmHistoryProfiles = {
   [collectiveFilmHistoryProfile.scenarioId]: collectiveFilmHistoryProfile,
   [rrrFilmHistoryProfile.scenarioId]: rrrFilmHistoryProfile,
   [topGunMaverickFilmHistoryProfile.scenarioId]: topGunMaverickFilmHistoryProfile,
+  [titaneFilmHistoryProfile.scenarioId]: titaneFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
