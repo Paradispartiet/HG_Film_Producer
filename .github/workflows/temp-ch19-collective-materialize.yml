@@ -1,0 +1,88 @@
+name: TEMP Chapter 19 Collective materialize
+
+on:
+  push:
+    branches:
+      - agent/ch19-collective-production-case
+    paths:
+      - .github/workflows/temp-ch19-collective-materialize.yml
+      - scripts/temp-materialize-collective.mjs
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch19-collective-production-case
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Apply deterministic canonical patch
+        run: node scripts/temp-materialize-collective.mjs
+
+      - name: Generate Chapter 19 resolved state
+        run: node scripts/film-history-chapter-nineteen-atlas-audit.mjs --write=docs/film-history-chapter-nineteen-atlas-resolved.json > /tmp/collective-ch19-resolved.json
+
+      - name: Full fail-closed verification
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run verify:v0.1 2>&1 | tee verify-v0.1-output.txt
+
+      - name: Verify post-gate canonical snapshot
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync } from "node:fs";
+          const r = JSON.parse(readFileSync("docs/film-history-chapter-nineteen-atlas-resolved.json", "utf8"));
+          const collective = r.candidates.find((x) => x.title === "Collective");
+          if (r.atlas.actualCount !== 548 || r.atlas.expectedCount !== 548) throw new Error(`Atlas is not 548/548: ${r.atlas.actualCount}/${r.atlas.expectedCount}`);
+          if (r.verificationIndex.literalVerifiedScenarioIds !== 548) throw new Error(`Production Verification count is ${r.verificationIndex.literalVerifiedScenarioIds}`);
+          if (!collective || collective.decision !== "USE_EXISTING" || collective.scenarioId !== "scenario_collective_2020" || collective.matches !== 1 || collective.productionVerified !== true) throw new Error(`Collective state invalid: ${JSON.stringify(collective)}`);
+          if (r.byDecision.USE_EXISTING.length !== 16 || r.byDecision.P0.length !== 16 || r.byDecision.P1.length !== 24 || r.byDecision.P2.length !== 4 || r.byDecision.EXISTING_REQUIRED.length !== 0) throw new Error(`Queue census invalid: ${JSON.stringify(Object.fromEntries(Object.entries(r.byDecision).map(([k,v]) => [k,v.length])))}`);
+          if (r.productionStrategy.nextRecommendedCase !== "RRR" || r.productionStrategy.nextRecommendedLane !== "regional_global") throw new Error(`Scheduler did not advance to RRR/regional_global: ${JSON.stringify(r.productionStrategy)}`);
+          console.log(JSON.stringify({atlas: r.atlas.actualCount, verified: r.verificationIndex.literalVerifiedScenarioIds, collective, queue: Object.fromEntries(Object.entries(r.byDecision).map(([k,v]) => [k,v.length])), next: r.productionStrategy.remainingSequence.slice(0,5)}, null, 2));
+          NODE
+
+      - name: Upload diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: collective-materialization-diagnostics
+          path: |
+            verify-v0.1-output.txt
+            /tmp/collective-ch19-resolved.json
+          if-no-files-found: ignore
+
+      - name: Commit verified canonical state
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git config user.name "Paradispartiet"
+          git config user.email "paradispartiet@gmail.com"
+          git add \
+            docs/film-history-chapter-nineteen-atlas-resolved.json \
+            scripts/film-history-chapter-eighteen-completion-audit.mjs \
+            scripts/film-history-chapter-nineteen-atlas-audit.mjs \
+            scripts/production-case-rest-audit.mjs \
+            src/core/filmHistoryChapterNineteenAuditContract.test.ts \
+            src/ui/data/filmScenarios.ts \
+            src/ui/data/scenarioFilmStudyMap.ts \
+            src/ui/data/scenarioProductionVerificationRegistry.ts
+          git diff --cached --check
+          git diff --cached --stat
+          git commit -m "Materialize Collective Chapter 19 production case"
+          git push origin HEAD:agent/ch19-collective-production-case
