@@ -185,6 +185,7 @@ const exactUseExisting = [
   "Tenet",
   "Nomadland",
   "Soul",
+  "Collective",
   "Quo Vadis, Aida?",
   "Another Round",
   "Never Rarely Sometimes Always",
@@ -219,7 +220,6 @@ const exactP0Queue = [
 ] as const;
 
 const exactP1Queue = [
-  "Collective",
   "The Power of the Dog",
   "Titane",
   "Memoria",
@@ -291,11 +291,11 @@ test("Chapter 19 locks the open 2020-present scope without freezing 2026", () =>
 
 test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {
   assert.match(audit, /const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;/);
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 547;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 548;/);
   assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);
-  assert.equal(resolved.atlas.expectedCount, 547);
-  assert.equal(resolved.atlas.actualCount, 547);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 547);
+  assert.equal(resolved.atlas.expectedCount, 548);
+  assert.equal(resolved.atlas.actualCount, 548);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 548);
 });
 
 test("Chapter 19 locks exactly sixty candidates across 2020-2025", () => {
@@ -320,11 +320,11 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 15);
+  assert.equal(exactUseExisting.length, 16);
   assert.equal(exactP0Queue.length, 16);
-  assert.equal(exactP1Queue.length, 25);
+  assert.equal(exactP1Queue.length, 24);
   assert.equal(exactP2Queue.length, 4);
-  assert.equal(resolved.recommendedNewProductionCases.length, 41);
+  assert.equal(resolved.recommendedNewProductionCases.length, 40);
   assert.equal(resolved.productionStrategy.mode, "balanced_rotation");
   assert.equal(resolved.productionStrategy.priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder, true);
   assert.deepEqual(resolved.productionStrategy.laneOrder, [
@@ -334,22 +334,23 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
     "regional_global",
     "industrial_scale_technical",
   ]);
-  assert.equal(resolved.productionStrategy.nextRecommendedCase, "Collective");
-  assert.equal(resolved.productionStrategy.nextRecommendedLane, "nonfiction_hybrid");
+  assert.equal(resolved.productionStrategy.nextRecommendedCase, "RRR");
+  assert.equal(resolved.productionStrategy.nextRecommendedLane, "regional_global");
   assert.deepEqual(resolved.recommendedNewProductionCases.slice(0, 5), [
-    "Collective",
     "RRR",
     "Top Gun: Maverick",
     "Titane",
     "Everything Everywhere All at Once",
+    "Four Daughters",
   ]);
   assert.deepEqual(
     resolved.productionStrategy.remainingSequence.slice(0, 5).map((item) => item.lane),
-    ["nonfiction_hybrid", "regional_global", "industrial_scale_technical", "auteur_festival", "independent_low_mid_budget"],
+    ["regional_global", "industrial_scale_technical", "auteur_festival", "independent_low_mid_budget", "nonfiction_hybrid"],
   );
   assert.ok(!resolved.recommendedNewProductionCases.includes("Nomadland"));
   assert.ok(!resolved.recommendedNewProductionCases.includes("Drive My Car"));
-  assert.ok(resolved.recommendedNewProductionCases.indexOf("Top Gun: Maverick") > resolved.recommendedNewProductionCases.indexOf("Collective"));
+  assert.ok(!resolved.recommendedNewProductionCases.includes("Collective"));
+  assert.ok(resolved.recommendedNewProductionCases.indexOf("Top Gun: Maverick") > resolved.recommendedNewProductionCases.indexOf("RRR"));
   assert.equal(new Set(resolved.recommendedNewProductionCases).size, resolved.recommendedNewProductionCases.length);
   assert.ok(resolved.productionStrategy.safeguards.some((item) => item.includes("P1 case may precede a P0 case")));
   for (const title of resolved.recommendedNewProductionCases) {
@@ -378,6 +379,13 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(soul.scenarioId, "scenario_soul_2020");
   assert.equal(soul.matches, 1);
   assert.equal(soul.productionVerified, true);
+
+  const collective = resolved.candidates.find((candidate) => candidate.title === "Collective");
+  assert.ok(collective);
+  assert.equal(collective.decision, "USE_EXISTING");
+  assert.equal(collective.scenarioId, "scenario_collective_2020");
+  assert.equal(collective.matches, 1);
+  assert.equal(collective.productionVerified, true);
 
   const wolfwalkers = resolved.candidates.find((candidate) => candidate.title === "Wolfwalkers");
   assert.ok(wolfwalkers);
