@@ -21,8 +21,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 544,
-    "actualCount": 544,
+    "expectedCount": 545,
+    "actualCount": 545,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -865,6 +865,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenAvatarWayOfWaterExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -933,7 +939,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 544
+    "literalVerifiedScenarioIds": 545
   },
   "candidates": [
     {
@@ -1236,11 +1242,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Performance capture, virtual cinematography, underwater performance systems and stereoscopic exhibition make virtual production a mature integrated workflow.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_avatar_the_way_of_water_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenAvatarWayOfWaterExpansion.ts"
     },
     {
       "title": "Top Gun: Maverick",
@@ -1899,11 +1905,11 @@
       "Dune",
       "Flee",
       "The Worst Person in the World",
+      "Avatar: The Way of Water",
       "Nickel Boys",
       "Dahomey"
     ],
     "P0": [
-      "Avatar: The Way of Water",
       "Top Gun: Maverick",
       "Everything Everywhere All at Once",
       "Nope",
@@ -1967,7 +1973,6 @@
     "Memoria",
     "CODA",
     "The Mitchells vs. the Machines",
-    "Avatar: The Way of Water",
     "Top Gun: Maverick",
     "Everything Everywhere All at Once",
     "Nope",
