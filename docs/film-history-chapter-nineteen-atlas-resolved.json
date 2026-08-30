@@ -21,8 +21,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 543,
-    "actualCount": 543,
+    "expectedCount": 544,
+    "actualCount": 544,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -859,6 +859,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenFleeExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -927,7 +933,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 543
+    "literalVerifiedScenarioIds": 544
   },
   "candidates": [
     {
@@ -1130,11 +1136,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Animated documentary makes recorded testimony, anonymity, archive, reconstruction and animation labor separate evidentiary and production systems.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_flee_2021",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenFleeExpansion.ts"
     },
     {
       "title": "Titane",
@@ -1891,12 +1897,12 @@
       "Wolfwalkers",
       "The Disciple",
       "Dune",
+      "Flee",
       "The Worst Person in the World",
       "Nickel Boys",
       "Dahomey"
     ],
     "P0": [
-      "Flee",
       "Avatar: The Way of Water",
       "Top Gun: Maverick",
       "Everything Everywhere All at Once",
@@ -1957,7 +1963,6 @@
     "Collective",
     "The Power of the Dog",
     "Drive My Car",
-    "Flee",
     "Titane",
     "Memoria",
     "CODA",
