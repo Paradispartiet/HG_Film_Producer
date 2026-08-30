@@ -182,6 +182,7 @@ import { wolfwalkersProductionCaseVerification } from "./scenarioProductionVerif
 import { duneProductionCaseVerification } from "./scenarioProductionVerificationDune";
 import { fleeProductionCaseVerification } from "./scenarioProductionVerificationFlee";
 import { avatarWayOfWaterProductionCaseVerification } from "./scenarioProductionVerificationAvatarWayOfWater";
+import { nomadlandProductionCaseVerification } from "./scenarioProductionVerificationNomadland";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -481,6 +482,7 @@ const additionalVerificationRecords = [
   duneProductionCaseVerification,
   fleeProductionCaseVerification,
   avatarWayOfWaterProductionCaseVerification,
+  nomadlandProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

@@ -183,6 +183,7 @@ const exactP2Priority = [
 
 const exactUseExisting = [
   "Tenet",
+  "Nomadland",
   "Soul",
   "Quo Vadis, Aida?",
   "Another Round",
@@ -217,7 +218,6 @@ const exactP0Queue = [
 ] as const;
 
 const exactP1Queue = [
-  "Nomadland",
   "Collective",
   "The Power of the Dog",
   "Drive My Car",
@@ -291,11 +291,11 @@ test("Chapter 19 locks the open 2020-present scope without freezing 2026", () =>
 
 test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {
   assert.match(audit, /const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;/);
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 545;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 546;/);
   assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);
-  assert.equal(resolved.atlas.expectedCount, 545);
-  assert.equal(resolved.atlas.actualCount, 545);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 545);
+  assert.equal(resolved.atlas.expectedCount, 546);
+  assert.equal(resolved.atlas.actualCount, 546);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 546);
 });
 
 test("Chapter 19 locks exactly sixty candidates across 2020-2025", () => {
@@ -320,11 +320,11 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 13);
+  assert.equal(exactUseExisting.length, 14);
   assert.equal(exactP0Queue.length, 16);
-  assert.equal(exactP1Queue.length, 27);
+  assert.equal(exactP1Queue.length, 26);
   assert.equal(exactP2Queue.length, 4);
-  assert.equal(resolved.recommendedNewProductionCases.length, 43);
+  assert.equal(resolved.recommendedNewProductionCases.length, 42);
   assert.equal(resolved.productionStrategy.mode, "balanced_rotation");
   assert.equal(resolved.productionStrategy.priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder, true);
   assert.deepEqual(resolved.productionStrategy.laneOrder, [
@@ -334,20 +334,21 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
     "regional_global",
     "industrial_scale_technical",
   ]);
-  assert.equal(resolved.productionStrategy.nextRecommendedCase, "Nomadland");
-  assert.equal(resolved.productionStrategy.nextRecommendedLane, "independent_low_mid_budget");
+  assert.equal(resolved.productionStrategy.nextRecommendedCase, "Drive My Car");
+  assert.equal(resolved.productionStrategy.nextRecommendedLane, "auteur_festival");
   assert.deepEqual(resolved.recommendedNewProductionCases.slice(0, 5), [
-    "Nomadland",
     "Drive My Car",
     "Collective",
     "RRR",
     "Top Gun: Maverick",
+    "Titane",
   ]);
   assert.deepEqual(
     resolved.productionStrategy.remainingSequence.slice(0, 5).map((item) => item.lane),
-    ["independent_low_mid_budget", "auteur_festival", "nonfiction_hybrid", "regional_global", "industrial_scale_technical"],
+    ["auteur_festival", "nonfiction_hybrid", "regional_global", "industrial_scale_technical", "auteur_festival"],
   );
-  assert.ok(resolved.recommendedNewProductionCases.indexOf("Top Gun: Maverick") > resolved.recommendedNewProductionCases.indexOf("Nomadland"));
+  assert.ok(!resolved.recommendedNewProductionCases.includes("Nomadland"));
+  assert.ok(resolved.recommendedNewProductionCases.indexOf("Top Gun: Maverick") > resolved.recommendedNewProductionCases.indexOf("Drive My Car"));
   assert.equal(new Set(resolved.recommendedNewProductionCases).size, resolved.recommendedNewProductionCases.length);
   assert.ok(resolved.productionStrategy.safeguards.some((item) => item.includes("P1 case may precede a P0 case")));
   for (const title of resolved.recommendedNewProductionCases) {
@@ -362,6 +363,13 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(tenet.scenarioId, "scenario_tenet_2020");
   assert.equal(tenet.matches, 1);
   assert.equal(tenet.productionVerified, true);
+
+  const nomadland = resolved.candidates.find((candidate) => candidate.title === "Nomadland");
+  assert.ok(nomadland);
+  assert.equal(nomadland.decision, "USE_EXISTING");
+  assert.equal(nomadland.scenarioId, "scenario_nomadland_2020");
+  assert.equal(nomadland.matches, 1);
+  assert.equal(nomadland.productionVerified, true);
 
   const soul = resolved.candidates.find((candidate) => candidate.title === "Soul");
   assert.ok(soul);
