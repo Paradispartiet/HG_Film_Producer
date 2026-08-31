@@ -116,18 +116,28 @@ export const chapterNineteenPoorThingsExpansionDefinitions = [
       { id: "production_verification", label: "Close Production Verification", player_task: "Close only when the permanent source record, 17-area Film Study and playable choices agree on both documented craft and unresolved boundaries." }
     ]
   }
-] as const satisfies readonly HistoricalFilmScenario[];
+] as const;
 
-export function mergeChapterNineteenPoorThingsExpansion(
-  scenarios: readonly HistoricalFilmScenario[]
-): HistoricalFilmScenario[] {
-  const merged = [...scenarios];
-  const seen = new Set(merged.map((scenario) => normalizeEarlyCinemaTitle(scenario.title)));
+export function mergeChapterNineteenPoorThingsExpansion(baseScenarios: readonly HistoricalFilmScenario[]): readonly HistoricalFilmScenario[] {
+  const merged = [...baseScenarios];
+  let nextPosition = Math.max(0, ...baseScenarios.map((scenario) => scenario.source.position)) + 1;
   for (const definition of chapterNineteenPoorThingsExpansionDefinitions) {
-    const key = normalizeEarlyCinemaTitle(definition.title);
-    if (seen.has(key)) continue;
-    merged.push(definition);
-    seen.add(key);
+    const acceptedTitles = [definition.title, definition.originalTitle, ...definition.aliases].map(normalizeEarlyCinemaTitle);
+    const exists = merged.some((scenario) => scenario.id === definition.id || (scenario.film.year === definition.year && [scenario.film.title, scenario.film.original_title].map(normalizeEarlyCinemaTitle).some((title) => acceptedTitles.includes(title))));
+    if (exists) continue;
+    merged.push({
+      id: definition.id,
+      status: "manual_chapter_nineteen_poor_things_verified",
+      source: { list_id: "manual_chapter_nineteen_poor_things_expansion_2026", position: nextPosition, imdb_id: definition.sourceId, url: definition.sourceUrl },
+      film: { title: definition.title, original_title: definition.originalTitle, year: definition.year, title_type: definition.titleType, runtime_mins: definition.runtimeMins, directors: definition.directors, genres: definition.genres, genre_keys: definition.genres.map((genre) => genre.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")), imdb_rating: 0, user_rating: 0 },
+      scenario_type: definition.scenarioType,
+      production_challenge: definition.premise,
+      required_choices_seed: definition.requiredChoicesSeed,
+      phases: definition.phases,
+      learning_goals_seed: definition.learningGoals,
+      manual_enrichment_needed: [],
+    });
+    nextPosition += 1;
   }
   return merged;
 }
