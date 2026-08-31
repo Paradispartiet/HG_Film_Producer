@@ -1,0 +1,53 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { chapterNineteenMemoriaExpansionDefinitions, mergeChapterNineteenMemoriaExpansion } from "./chapterNineteenMemoriaExpansion.js";
+
+test("Memoria source-first production case is complete and evidence-bounded", () => {
+  assert.equal(chapterNineteenMemoriaExpansionDefinitions.length, 1);
+  const film = chapterNineteenMemoriaExpansionDefinitions[0];
+  assert.equal(film.id, "scenario_memoria_2021");
+  assert.equal(film.title, "Memoria");
+  assert.equal(film.year, 2021);
+  assert.equal(film.runtimeMins, 136);
+  assert.deepEqual(film.directors, ["Apichatpong Weerasethakul"]);
+  assert.equal(film.sourceId, "festival_cannes_memoria_2021");
+  assert.equal(film.sourceUrl, "https://www.festival-cannes.com/en/f/memoria/");
+  assert.match(film.scenarioType, /auteur_festival/);
+  assert.match(film.scenarioType, /35mm/);
+  assert.match(film.scenarioType, /kodak_vision3_500t_5219/);
+  assert.match(film.scenarioType, /single_arricam_lt/);
+  assert.match(film.scenarioType, /cooke_s4/);
+  assert.match(film.scenarioType, /71_51_atmos/);
+  assert.ok(film.premise.includes("136 minutes"));
+  assert.ok(film.premise.includes("40-day principal-photography schedule"));
+  assert.ok(film.premise.includes("single ARRICAM LT"));
+  assert.ok(film.premise.includes("KODAK VISION3 500T Color Negative Film 5219"));
+  assert.ok(film.premise.includes("about 14 minutes 50 seconds"));
+  assert.ok(film.premise.includes("roughly twelve-minute take"));
+  assert.ok(film.premise.includes("HMIs and sometimes 20K tungsten"));
+  assert.ok(film.premise.includes("230-metre dolly shot"));
+  assert.ok(film.premise.includes("exact development route unresolved"));
+  assert.ok(film.premise.includes("Raúl Locatelli"));
+  assert.ok(film.premise.includes("Javier Umpierrez"));
+  assert.ok(film.premise.includes("Lee Chatametikool"));
+  assert.ok(film.premise.includes("7.1, 5.1 and Atmos"));
+  assert.ok(film.premise.includes("about two weeks"));
+  assert.ok(film.premise.includes("remain unresolved"));
+  assert.ok(film.learningGoals.length >= 50);
+  assert.ok(film.phases.length >= 30);
+  assert.equal(film.phases.at(-1)?.id, "production_verification");
+  assert.ok(film.phases.find((phase) => phase.id === "negative_custody")?.player_task.includes("X-ray avoidance"));
+  assert.ok(film.phases.find((phase) => phase.id === "covid_mix_move")?.player_task.includes("Thailand"));
+  assert.ok(film.phases.find((phase) => phase.id === "theatrical_formats")?.label.includes("7.1, 5.1 and Atmos"));
+  assert.ok(film.requiredChoicesSeed.camera.includes("single_arricam_lt"));
+  assert.ok(film.requiredChoicesSeed.editing.includes("mexico_thailand_post_handoff"));
+  assert.ok(film.requiredChoicesSeed.sound.includes("two_week_final_mix"));
+});
+
+test("Memoria expansion merges idempotently by normalized title", () => {
+  const once = mergeChapterNineteenMemoriaExpansion([]);
+  assert.equal(once.length, 1);
+  const twice = mergeChapterNineteenMemoriaExpansion(once);
+  assert.equal(twice.length, 1);
+  assert.equal(twice[0]?.id, "scenario_memoria_2021");
+});

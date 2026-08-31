@@ -196,6 +196,7 @@ import { saintOmerProductionCaseVerification } from "./scenarioProductionVerific
 import { codaProductionCaseVerification } from "./scenarioProductionVerificationCoda";
 import { allWeImagineAsLightProductionCaseVerification } from "./scenarioProductionVerificationAllWeImagineAsLight";
 import { oppenheimerProductionCaseVerification } from "./scenarioProductionVerificationOppenheimer";
+import { memoriaProductionCaseVerification } from "./scenarioProductionVerificationMemoria";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -509,6 +510,7 @@ const additionalVerificationRecords = [
   codaProductionCaseVerification,
   allWeImagineAsLightProductionCaseVerification,
   oppenheimerProductionCaseVerification,
+  memoriaProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
