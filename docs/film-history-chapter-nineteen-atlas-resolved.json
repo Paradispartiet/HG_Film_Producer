@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 558,
-    "actualCount": 558,
+    "expectedCount": 559,
+    "actualCount": 559,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -951,6 +951,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenOppenheimerExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1019,7 +1025,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 558
+    "literalVerifiedScenarioIds": 559
   },
   "candidates": [
     {
@@ -1468,11 +1474,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "65mm and IMAX photochemical production, including large-format black-and-white work, makes film-stock and premium-format persistence central to 2020s production history.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_oppenheimer_2023",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenOppenheimerExpansion.ts"
     },
     {
       "title": "Barbie",
@@ -1991,13 +1997,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "Oppenheimer",
-    "nextRecommendedLane": "industrial_scale_technical",
+    "nextRecommendedCase": "Memoria",
+    "nextRecommendedLane": "auteur_festival",
     "remainingSequence": [
-      {
-        "title": "Oppenheimer",
-        "lane": "industrial_scale_technical"
-      },
       {
         "title": "Memoria",
         "lane": "auteur_festival"
@@ -2140,13 +2142,13 @@
       "RRR",
       "Decision to Leave",
       "Saint Omer",
+      "Oppenheimer",
       "Four Daughters",
       "Nickel Boys",
       "All We Imagine as Light",
       "Dahomey"
     ],
     "P0": [
-      "Oppenheimer",
       "Killers of the Flower Moon",
       "Poor Things",
       "The Zone of Interest",
@@ -2188,7 +2190,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Oppenheimer",
     "Memoria",
     "Anora",
     "The Seed of the Sacred Fig",
