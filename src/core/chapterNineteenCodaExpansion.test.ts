@@ -1,0 +1,51 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { chapterNineteenCodaExpansionDefinitions, mergeChapterNineteenCodaExpansion } from "./chapterNineteenCodaExpansion.js";
+
+test("CODA source-first production case is complete and evidence-bounded", () => {
+  assert.equal(chapterNineteenCodaExpansionDefinitions.length, 1);
+  const film = chapterNineteenCodaExpansionDefinitions[0];
+  assert.equal(film.id, "scenario_coda_2021");
+  assert.equal(film.title, "CODA");
+  assert.equal(film.year, 2021);
+  assert.equal(film.runtimeMins, 111);
+  assert.deepEqual(film.directors, ["Siân Heder"]);
+  assert.equal(film.sourceId, "afi_coda_2021");
+  assert.equal(film.sourceUrl, "https://watch.afi.com/movie/coda-4");
+  assert.match(film.scenarioType, /independent_low_mid_budget/);
+  assert.match(film.scenarioType, /sony_venice_6k/);
+  assert.match(film.scenarioType, /asl_masters/);
+  assert.match(film.scenarioType, /formosa/);
+  assert.ok(film.premise.includes("independently financed production made without a distributor in place"));
+  assert.ok(film.premise.includes("Alexandria Wailes and Anne Tomasetti"));
+  assert.ok(film.premise.includes("Sony VENICE 6K"));
+  assert.ok(film.premise.includes("ARRI Signature LF"));
+  assert.ok(film.premise.includes("40mm"));
+  assert.ok(film.premise.includes("Jared Detsikas"));
+  assert.ok(film.premise.includes("Martin Pinsonnault"));
+  assert.ok(film.premise.includes("Alexandra Fehrman"));
+  assert.ok(film.premise.includes("interpreter guide track"));
+  assert.ok(film.premise.includes("three hours"));
+  assert.ok(film.premise.includes("Flashcut"));
+  assert.ok(film.premise.includes("Mels"));
+  assert.ok(film.premise.includes("Formosa Group"));
+  assert.ok(film.premise.includes("Apple's later Sundance acquisition therefore belongs to distribution/circulation history"));
+  assert.ok(film.premise.includes("Those remain unresolved"));
+  assert.ok(film.learningGoals.length >= 45);
+  assert.ok(film.phases.length >= 28);
+  assert.equal(film.phases.at(-1)?.id, "production_verification");
+  assert.ok(film.phases.find((phase) => phase.id === "sign_framing")?.player_task.includes("faces, hands and upper bodies"));
+  assert.ok(film.phases.find((phase) => phase.id === "production_sound")?.player_task.includes("vocalizations"));
+  assert.ok(film.phases.find((phase) => phase.id === "distribution_boundary")?.player_task.includes("not retrospective production financing"));
+  assert.ok(film.requiredChoicesSeed.camera.includes("sony_venice_6k"));
+  assert.ok(film.requiredChoicesSeed.editing.includes("asl_interpreter_guide_track"));
+  assert.ok(film.requiredChoicesSeed.sound.includes("live_singing"));
+});
+
+test("CODA expansion merges idempotently by normalized title", () => {
+  const once = mergeChapterNineteenCodaExpansion([]);
+  assert.equal(once.length, 1);
+  const twice = mergeChapterNineteenCodaExpansion(once);
+  assert.equal(twice.length, 1);
+  assert.equal(twice[0]?.id, "scenario_coda_2021");
+});

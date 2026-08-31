@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 556,
-    "actualCount": 556,
+    "expectedCount": 557,
+    "actualCount": 557,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -939,6 +939,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenCodaExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1007,7 +1013,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 556
+    "literalVerifiedScenarioIds": 557
   },
   "candidates": [
     {
@@ -1268,11 +1274,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P1",
       "chapterFunction": "Independent production followed by major platform acquisition makes accessibility, signed/spoken performance and financing-versus-distribution boundaries visible.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_coda_2021",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenCodaExpansion.ts"
     },
     {
       "title": "The Green Knight",
@@ -1979,13 +1985,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "CODA",
-    "nextRecommendedLane": "independent_low_mid_budget",
+    "nextRecommendedCase": "All We Imagine as Light",
+    "nextRecommendedLane": "regional_global",
     "remainingSequence": [
-      {
-        "title": "CODA",
-        "lane": "independent_low_mid_budget"
-      },
       {
         "title": "All We Imagine as Light",
         "lane": "regional_global"
@@ -2128,6 +2130,7 @@
       "Flee",
       "Titane",
       "The Worst Person in the World",
+      "CODA",
       "Avatar: The Way of Water",
       "Top Gun: Maverick",
       "Everything Everywhere All at Once",
@@ -2156,7 +2159,6 @@
     "P1": [
       "The Power of the Dog",
       "Memoria",
-      "CODA",
       "The Mitchells vs. the Machines",
       "All Quiet on the Western Front",
       "Guillermo del Toro's Pinocchio",
@@ -2184,7 +2186,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "CODA",
     "All We Imagine as Light",
     "Oppenheimer",
     "Memoria",
