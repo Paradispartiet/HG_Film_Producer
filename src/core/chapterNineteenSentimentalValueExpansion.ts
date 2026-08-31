@@ -1,0 +1,147 @@
+import type { HistoricalFilmScenario } from "./earlyCinemaExpansion.js";
+import { normalizeEarlyCinemaTitle } from "./earlyCinemaExpansion.js";
+
+export const chapterNineteenSentimentalValueExpansionDefinitions = [
+  {
+    id: "scenario_sentimental_value_2025",
+    title: "Sentimental Value",
+    originalTitle: "Affeksjonsverdi",
+    aliases: ["Sentimental Value", "Affeksjonsverdi"],
+    year: 2025,
+    titleType: "Movie",
+    runtimeMins: 135,
+    directors: ["Joachim Trier"],
+    genres: ["Drama"],
+    sourceId: "nfi_sentimental_value_2025",
+    sourceUrl: "https://www.nfi.no/en/films-and-series/sentimental-value",
+    scenarioType: "auteur_festival_joachim_trier_eskil_vogt_mer_film_eye_eye_norway_france_germany_sweden_denmark_coproduction_oslo_frogner_house_gateway_studios_drammen_virtual_production_led_time_layers_kasper_tuxen_arricam_lt_35mm_arriflex_416_16mm_arriflex_435_cooke_5i_varotal_super_baltar_zeiss_super_speed_angenieux_24_290_185_vision3_250d_5207_500t_5219_50d_5203_push_processing_2k_scan_cinelab_storyline_julian_alary_mainly_single_camera_handheld_dolly_long_oner_olivier_bugge_coutte_hania_rani_gisle_tveito_2025",
+    premise: "Build Sentimental Value as Chapter 19's auteur/festival case by treating Joachim Trier's 2025 film not as generic prestige cinema but as a tightly governed European co-production in which a long-running director-writer-editor collaboration, an unusually specific Oslo house, analog capture, virtual-production reconstruction and performance-led editorial choices all serve one temporal family system. The Norwegian Film Institute identifies Trier as director, Eskil Vogt and Trier as screenwriters, Mer Film as production company, Maria Ekerhovd and Andrea Berentsen Ottmar as producers, and the principal cast as Renate Reinsve, Stellan Skarsgård, Elle Fanning and Inga Ibsdotter Lilleaas. NFI records a 135-minute version and the original title Affeksjonsverdi. Public institutional runtime records vary across territories and releases, so 135 minutes is used here as the NFI canonical runtime rather than pretending every catalog reports one identical version. NFI also records the film as a Norwegian-French-German-Swedish-Danish co-production, with Zentropa, Lumen, MK Production and Komplizen among the co-production partners. NFI states that the institute granted NOK 20.5 million in development and production funding. That grant is not the film's total production budget. Current locked sources do not establish an audited final negative cost, a complete financing waterfall, partner percentages, department allocations or recoupment terms, so those remain unresolved. Production took place principally in and around Oslo in autumn 2024, with additional work in Deauville, France and Sweden. Cinematographer Kasper Tuxen DFF told Kodak that he first heard Trier's outline in summer 2022 and later had roughly eight months of cinematography preparation. Kodak describes principal photography from August through November 2024 at about 63 shooting days; a later editor-side source reports 65 days, so the case treats the schedule as roughly 63–65 days depending on source/count convention and does not force a false exact consensus. The family house is the production's central coordination object. The real Dragestil villa in Frogner supplies exterior and selected interior geography, while a substantial replica of the house's upper spaces was built at Gateway Studios in Drammen. Production designer Jørgen Stangebye Larsen and the team used historical research to redress the replica across decades; testimony describes layered wallpapers that could be peeled back physically as the production moved backward through time. Norwegian Film Commission documentation describes 3D/Lidar/reference reconstruction of the house surroundings, with VP Nordic environments on LED walls showing changes in gardens, buildings, cars, seasons and historical eras. Trier describes this as mapping time through both the house and its exterior. The case therefore treats virtual production as a historical-continuity and controllability tool, not as an all-purpose substitute for location photography. Kodak states that stage material used LED screens except the final scene, where traditional bluescreen replaced them. The production also used the real villa, so it should not be described as entirely stage-bound. Tuxen and Trier retained analog capture as a foundational image rule. Kodak records that analog capture was stipulated in Trier's contract. Contemporary material used ARRICAM LT 35mm photography in 1.85:1, principally with Cooke 5/i lenses. Kodak records KODAK VISION3 250D 5207 for most day exteriors and brighter interiors, VISION3 500T 5219 for low-light/night work and VISION3 50D 5203 for bright summer exteriors. Cinelab London processed the negative, often with push-processing, and produced 2K scans after Tuxen and Trier tested 2K versus 4K and preferred the softer 2K result. Storyline Studios supplied the camera package and later hosted the final grade by freelance colorist Julian Alary. Historical image states are deliberately differentiated rather than assigned one generic vintage filter. The 1920s/30s flashbacks used ARRIFLEX 416 16mm with an old 16mm 16–40mm zoom. Other flashbacks used lenses including Super Baltars and ZEISS Super Speeds; Gustav's fictional film excerpt used vintage Cooke Varotal zooms and bleach bypass on the negative. Definition also records an ARRIFLEX 435 for selected slow-motion material and an Angénieux 24–290mm T2.8 for present-day zoom work. These combinations are local storytelling tools, not evidence that every decade was recreated with a mechanically exact historical camera package. The film's camera movement is similarly divided by dramatic function. Tuxen describes present-day sisters' material as more handheld and intimate, while Gustav's filmmaking language leans toward mise-en-scène, dolly and composed movement. The production was mainly single-camera with Tuxen operating, but occasional B-camera and Steadicam were used. The final long take required Peewee-dolly choreography through doorways, actors and camera paths. The Deauville beach sequence shows why auteur intimacy still requires industrial lighting and scheduling discipline: Tuxen describes avoiding a generic Hollywood moonlight look and using approximately 40 Astera AX10 fixtures along the promenade plus larger off-camera units while balancing dusk, night and early-morning continuity. Complete fixture inventories and lighting plots remain unresolved beyond directly documented examples. Performance conditions were supported by the house geography and Trier's preference for preparation without rigidly freezing spontaneous discoveries. The New Yorker records Trier's desire to make actors comfortable enough to make mistakes. Production-design and camera testimony show how the replicated house allowed repeated spatial relationships while still supporting opportunistic observations, including an unscripted Oslo establishing pan discovered during production. The case should therefore not mistake extensive preparation for shot-by-shot predetermination. Editing is a second core governance layer. Longtime editor Olivier Bugge Coutté says he deliberately does not read the screenplay until roughly one month before principal photography, despite knowing the project exists earlier, so he is not anchored to obsolete script drafts. He begins from the shooting draft and later works with Trier in a continuous dialogue after photography. Coutté describes a first assembly around three and a half hours and a reduction process based not on arbitrary runtime targets but on preserving emotional consequence and removing doubled information. Rachel's material was reduced because it pulled attention away from the sisters/father triangle. A dialogue scene between Nora and Gustav became a nearly silent exchange because performance and looks carried the relationship more strongly than explanation. The Nora montage remained one of the last sequences closed, showing that small connective structures can be editorially harder than apparently larger set pieces. Another editor interview reports that the pivotal sister-reading scene was moved later because its emotional peak arrived too early. The case therefore treats editing as structural argument, not cleanup. Hania Rani's score also entered through interpretation rather than literal synchronization. Rani describes first composing from the screenplay without picture; her initial reading was darker and more nostalgic, and the music changed as Trier's filmed tone introduced movement, lightness and contradiction. She visited Oslo/the house during research with sound engineer Agata Dankowska. Her account makes the first edit a reinterpretive stage in which music can be reshaped by the actual film rather than merely applied to a fixed script. Current locked sources identify Rani as composer and Gisle Tveito as sound designer/re-recording mixer/supervising sound editor through institutional credits, but do not establish the complete microphone/recorder package, Foley chain, stem layout, mix-stage specification, score-session roster or exact spotting chronology. Those remain unresolved. Sentimental Value's Chapter 19 lesson is therefore coordination across durable collaboration and layered infrastructures: NFI-backed transnational financing enables production but does not define the film artistically; the real villa anchors geography while a replica and LED environments create historical control; analog 35mm/16mm and period-specific optics differentiate time without becoming a museum exercise; a mainly single-camera method protects intimacy while selective industrial tools solve scale; and editorial/music choices preserve emotional causality by removing explanation when performance and structure carry more meaning. The player closes the case only when co-production evidence, house geography, VP boundaries, photochemical formats, movement language, performance conditions, editing, music/sound and uncertainty registers agree.",
+    requiredChoicesSeed: {
+      screenplay: ["trier_vogt_longterm_collaboration", "family_house_memory_structure", "nfi_20_5m_support_not_total_budget", "coproduction_finance_boundary", "runtime_source_boundary"],
+      camera: ["arricam_lt_35mm_185", "arriflex_416_16mm_flashbacks", "vision3_250d_5207", "vision3_500t_5219", "vision3_50d_5203", "cooke_5i_present_day", "historical_lens_states", "mainly_single_camera", "gateway_led_house_replica", "2k_scan_choice"],
+      editing: ["coutte_shooting_draft_entry", "three_and_half_hour_assembly", "emotional_consequence_trim", "rachel_reduction", "silent_nora_gustav_scene", "nora_montage_late_lock", "sister_scene_restructure"],
+      sound: ["gisle_tveito_sound_credit", "hania_rani_script_first_score", "music_reinterpreted_by_picture", "full_sound_chain_unresolved", "score_session_details_unresolved"],
+      themes: ["film_history", "2025", "sentimental_value", "affeksjonsverdi", "auteur_festival", "european_coproduction", "house_as_temporal_system", "analog_virtual_production_hybrid", "chapter19"]
+    },
+    learningGoals: [
+      "Explain Sentimental Value as Chapter 19's auteur/festival case after Poor Things.",
+      "Identify Joachim Trier as director and Eskil Vogt/Trier as screenwriters.",
+      "Identify Affeksjonsverdi as the original Norwegian title.",
+      "Use NFI's 135-minute record as the canonical runtime while acknowledging public territorial/version variation.",
+      "Identify Mer Film and Eye Eye Pictures within the documented Norwegian production structure.",
+      "Identify the Norwegian-French-German-Swedish-Danish co-production structure without inventing partner percentages.",
+      "Distinguish NFI's NOK 20.5 million development/production support from the film's total budget.",
+      "Keep final negative cost, financing waterfall, partner percentages and recoupment unresolved.",
+      "Explain why the Frogner family house is a production system rather than a background location.",
+      "Distinguish the real villa from the Gateway Studios replica.",
+      "Identify Jørgen Stangebye Larsen as production designer.",
+      "Explain decade-by-decade redressing of the replica as temporal production design.",
+      "Explain layered wallpaper as a physical method for moving backward through the house's history.",
+      "Explain VP Nordic's reconstructed surroundings as historical/seasonal continuity support.",
+      "Explain why LED walls here are a controlled exterior-history tool rather than proof the feature was entirely virtual production.",
+      "Preserve the documented final-scene bluescreen exception to the stage LED workflow.",
+      "Identify Kasper Tuxen DFF as cinematographer.",
+      "Explain the roughly eight-month cinematography preparation period.",
+      "Keep the principal shoot at roughly 63–65 days because direct production/editor sources use slightly different counts.",
+      "Identify August–November 2024 as the principal photography span documented by Kodak.",
+      "Identify Oslo, Deauville and Sweden as documented production geographies.",
+      "Explain why Deauville timing around the American Film Festival mattered to the Gustav/Rachel material.",
+      "Identify 1.85:1 framing and ARRICAM LT 35mm as the contemporary image foundation.",
+      "Identify Cooke 5/i lenses for contemporary material.",
+      "Identify VISION3 250D 5207 as the principal daylight/brighter-interior stock.",
+      "Identify VISION3 500T 5219 for low-light/night work.",
+      "Identify VISION3 50D 5203 for bright summer exteriors.",
+      "Explain analog capture as a contractual/directorial production rule rather than an incidental aesthetic choice.",
+      "Explain Cinelab London processing and frequent push-processing without generalizing one push level to all stock.",
+      "Explain the deliberate 2K-scan choice after testing 2K against 4K.",
+      "Identify Julian Alary's final grade at Storyline Studios.",
+      "Explain 16mm ARRIFLEX 416 capture for selected 1920s/30s flashbacks.",
+      "Identify Super Baltars and other historical optics as differentiated temporal tools rather than exact period reenactment.",
+      "Explain Gustav's fictional-film excerpt through vintage Cooke Varotal zooms and bleach-bypass treatment.",
+      "Preserve the ARRIFLEX 435 slow-motion use as selected material, not the default camera.",
+      "Explain present-day Angénieux zoom use as part of a broader optical vocabulary.",
+      "Explain the contrast between handheld intimate contemporary movement and Gustav's more composed dolly/mise-en-scène language.",
+      "Keep the production mainly single-camera while preserving documented B-camera and Steadicam exceptions.",
+      "Explain the final long take as a grip/blocking/doorway choreography problem.",
+      "Explain Deauville night photography as continuity across dusk, night and early morning rather than generic blue moonlight.",
+      "Use the roughly 40 Astera AX10 promenade fixtures only as a documented example, not a complete lighting inventory.",
+      "Explain how extensive preparation and opportunistic observation coexist in Trier's directing method.",
+      "Use the unscripted Oslo pan as evidence that a prepared production can still discover shots on location.",
+      "Explain Olivier Bugge Coutté's deliberate late screenplay entry as protection against obsolete draft assumptions.",
+      "Explain the three-and-a-half-hour assembly as an editorial starting point, not a preferred release length.",
+      "Explain reduction of Rachel material as protection of the sisters/father emotional triangle.",
+      "Explain the silent Nora/Gustav cigarette scene as an example of removing dialogue when performance carries more.",
+      "Explain the Nora montage's late lock as evidence that small connective structures can be editorially complex.",
+      "Explain moving the sister-reading scene later as structural control of emotional peaks.",
+      "Identify Hania Rani as composer.",
+      "Explain Rani's script-first composition process without falsely claiming the score was locked before picture.",
+      "Explain how picture tone forced Rani's initially darker interpretation to evolve.",
+      "Identify Gisle Tveito's sound-design/re-recording/supervising credit without inventing the complete technical chain.",
+      "Keep microphone/recorder, Foley, mix-stem, mix-stage and score-session details unresolved without direct evidence.",
+      "Separate Cannes/Oscar/awards reception from proof of production workflow.",
+      "Close the case only when co-production, house/VP, analog formats, camera movement, performance, edit, sound/music and uncertainty boundaries agree."
+    ],
+    phases: [
+      { id: "evidence_hierarchy", label: "Map the Sentimental Value evidence hierarchy", player_task: "Separate NFI/DFI institutional credits from Kodak craft testimony and later interviews before promoting production claims." },
+      { id: "finance_boundary", label: "Lock the co-production finance boundary", player_task: "Record NFI support and named partners without turning partial public funding data into a total-budget or partner-percentage claim." },
+      { id: "runtime_boundary", label: "Freeze the runtime convention", player_task: "Use NFI's 135-minute record canonically while keeping public catalog/version variation visible as a source boundary." },
+      { id: "house_research", label: "Research the real Frogner house", player_task: "Map rooms, sightlines, facade, historical images and neighborhood changes before deciding what must remain location-based or be rebuilt." },
+      { id: "replica_plan", label: "Build the Gateway house replica", player_task: "Recreate the upper-house geography so repeated family blocking and historical redressing remain spatially coherent." },
+      { id: "wallpaper_layers", label: "Engineer reversible decades", player_task: "Layer surfaces and dressing so the art department can move through periods without rebuilding the whole house for every flashback." },
+      { id: "vp_reconstruction", label: "Reconstruct Frogner outside the windows", player_task: "Coordinate 3D/Lidar/photo research into period-appropriate gardens, buildings, cars, seasons and foliage for VP backgrounds." },
+      { id: "led_boundary", label: "Define LED and bluescreen boundaries", player_task: "Use LED walls for the documented stage-history work while preserving the final-scene bluescreen exception and real-location material." },
+      { id: "camera_prep", label: "Run the long camera-prep cycle", player_task: "Use the extended prep period to test stocks, lenses, 2K/4K scans, LED interaction and historical image states before principal photography." },
+      { id: "schedule_boundary", label: "Protect the shooting-day uncertainty", player_task: "Plan around the documented August–November span without forcing the conflicting 63/65-day sources into a false exact count." },
+      { id: "contemporary_package", label: "Lock contemporary 35mm", player_task: "Use ARRICAM LT, 1.85 and Cooke 5/i as the present-day foundation." },
+      { id: "day_stock", label: "Use 250D for daylight and bright interiors", player_task: "Route 5207 to the documented daylight/brighter-interior conditions while preserving stock-specific exposure discipline." },
+      { id: "night_stock", label: "Use 500T for low light", player_task: "Route 5219 to low-light and night work rather than flattening every scene into one stock." },
+      { id: "summer_stock", label: "Reserve 50D for bright summer", player_task: "Use 5203 where the bright summer exterior state requires its documented response." },
+      { id: "historical_16mm", label: "Build the 1920s/30s 16mm state", player_task: "Use ARRIFLEX 416 and vintage 16mm zoom behavior for selected early-house memories." },
+      { id: "historical_optics", label: "Differentiate later flashbacks", player_task: "Use Super Baltars, Super Speeds and related period-flavored optics without claiming mechanically exact decade recreation." },
+      { id: "gustav_film", label: "Photograph Gustav's fictional film", player_task: "Use vintage Cooke Varotal zooms and bleach bypass so the film-within-the-film has its own authored material state." },
+      { id: "slow_motion", label: "Reserve ARRIFLEX 435 for selected slow motion", player_task: "Keep the 435 as an exception rather than quietly redefining the main camera package." },
+      { id: "mainly_single_camera", label: "Protect the mainly single-camera method", player_task: "Let Tuxen operate the dominant camera while deploying B-camera or Steadicam only for documented/necessary exceptions." },
+      { id: "movement_dialectic", label: "Separate movement languages", player_task: "Use controlled handheld intimacy for the sisters and more composed dolly/mise-en-scène language when Gustav's filmmaking perspective takes over." },
+      { id: "deauville", label: "Capture Deauville as event and location", player_task: "Coordinate festival timing, performer access and public-space continuity for Gustav/Rachel material without treating the event as generic background." },
+      { id: "deauville_night", label: "Light the beach through changing night states", player_task: "Balance promenade practical augmentation and larger off-camera sources across dusk, darkness and early morning without default blue-moonlight shorthand." },
+      { id: "long_oner", label: "Choreograph the final oner", player_task: "Coordinate Peewee dolly, doors, performers and camera timing so emotional continuity survives the technically demanding movement." },
+      { id: "performance_space", label: "Protect actor freedom inside prepared spaces", player_task: "Use repeatable house geography and lighting control to give performers room for variation rather than forcing the set to dominate them." },
+      { id: "opportunistic_shot", label: "Keep room for discovered images", player_task: "Allow a production-ready crew to capture an unscripted Oslo observation when location and story suddenly align." },
+      { id: "process_scan", label: "Process and scan at Cinelab", player_task: "Track stock and push-processing choices through London lab handling and preserve the intentional 2K scan decision." },
+      { id: "grade", label: "Finish the analog/VP palette", player_task: "Grade with Julian Alary at Storyline while retaining meaningful differences among contemporary 35mm, flashback 16mm and fictional-film material." },
+      { id: "editor_entry", label: "Bring Coutté in from the shooting draft", player_task: "Protect the editor from stale draft assumptions while giving him enough pre-shoot context to understand current structure." },
+      { id: "assembly", label: "Build the long first assembly", player_task: "Let entrances, exits and full scene material exist before using emotional consequence—not an arbitrary stopwatch—to find compression." },
+      { id: "family_triangle", label: "Recenter the family triangle", player_task: "Reduce Rachel material when it weakens the sisters/father structure even if individual scenes work in isolation." },
+      { id: "remove_explanation", label: "Replace explanation with performance", player_task: "Test whether dialogue can be removed when looks, silence and shot order communicate the relationship more strongly." },
+      { id: "late_structure", label: "Hold difficult connective sequences open", player_task: "Keep the Nora montage and emotional-peak placement adjustable until the whole film's causal rhythm is visible." },
+      { id: "script_first_score", label: "Let Rani score from the script", player_task: "Allow an independent musical interpretation before picture while expecting it to evolve when filmed tone contradicts the first reading." },
+      { id: "sound_boundary", label: "Protect the sound evidence boundary", player_task: "Credit Gisle Tveito's documented role but keep unsourced microphone, Foley, stem and mix-stage details out of canonical truth." },
+      { id: "anti_prestige_audit", label: "Reject prestige-film shortcuts", player_task: "Prove the case through co-production, spatial systems, film/VP capture, performance and editorial evidence rather than awards or festival status alone." },
+      { id: "production_verification", label: "Close Production Verification", player_task: "Close only when the permanent source record, full Film Study and playable choices agree on documented craft and unresolved boundaries." }
+    ]
+  }
+] as const;
+
+export function mergeChapterNineteenSentimentalValueExpansion(baseScenarios: readonly HistoricalFilmScenario[]): readonly HistoricalFilmScenario[] {
+  const merged = [...baseScenarios];
+  let nextPosition = Math.max(0, ...baseScenarios.map((scenario) => scenario.source.position)) + 1;
+  for (const definition of chapterNineteenSentimentalValueExpansionDefinitions) {
+    const acceptedTitles = [definition.title, definition.originalTitle, ...definition.aliases].map(normalizeEarlyCinemaTitle);
+    const exists = merged.some((scenario) => scenario.id === definition.id || (scenario.film.year === definition.year && [scenario.film.title, scenario.film.original_title].map(normalizeEarlyCinemaTitle).some((title) => acceptedTitles.includes(title))));
+    if (exists) continue;
+    merged.push({
+      id: definition.id,
+      status: "manual_chapter_nineteen_sentimental_value_verified",
+      source: { list_id: "manual_chapter_nineteen_sentimental_value_expansion_2026", position: nextPosition, imdb_id: definition.sourceId, url: definition.sourceUrl },
+      film: { title: definition.title, original_title: definition.originalTitle, year: definition.year, title_type: definition.titleType, runtime_mins: definition.runtimeMins, directors: definition.directors, genres: definition.genres, genre_keys: definition.genres.map((genre) => genre.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")), imdb_rating: 0, user_rating: 0 },
+      scenario_type: definition.scenarioType,
+      production_challenge: definition.premise,
+      required_choices_seed: definition.requiredChoicesSeed,
+      phases: definition.phases,
+      learning_goals_seed: definition.learningGoals,
+      manual_enrichment_needed: [],
+    });
+    nextPosition += 1;
+  }
+  return merged;
+}
