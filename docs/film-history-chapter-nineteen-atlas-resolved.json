@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 564,
-    "actualCount": 564,
+    "expectedCount": 565,
+    "actualCount": 565,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -987,6 +987,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenFlowExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1055,7 +1061,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 564
+    "literalVerifiedScenarioIds": 565
   },
   "candidates": [
     {
@@ -1684,11 +1690,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Latvian independent feature animation built with a compact team and Blender-centered workflow makes small-scale software production globally visible.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_flow_2024",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenFlowExpansion.ts"
     },
     {
       "title": "The Substance",
@@ -2027,13 +2033,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "Flow",
-    "nextRecommendedLane": "independent_low_mid_budget",
+    "nextRecommendedCase": "Godzilla Minus One",
+    "nextRecommendedLane": "regional_global",
     "remainingSequence": [
-      {
-        "title": "Flow",
-        "lane": "independent_low_mid_budget"
-      },
       {
         "title": "Godzilla Minus One",
         "lane": "regional_global"
@@ -2157,6 +2159,7 @@
       "Killers of the Flower Moon",
       "Four Daughters",
       "Anatomy of a Fall",
+      "Flow",
       "Nickel Boys",
       "The Seed of the Sacred Fig",
       "All We Imagine as Light",
@@ -2170,7 +2173,6 @@
       "The Boy and the Heron",
       "Spider-Man: Across the Spider-Verse",
       "Dune: Part Two",
-      "Flow",
       "The Substance",
       "Sinners",
       "F1"
@@ -2200,7 +2202,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Flow",
     "Godzilla Minus One",
     "Poor Things",
     "Sentimental Value",
