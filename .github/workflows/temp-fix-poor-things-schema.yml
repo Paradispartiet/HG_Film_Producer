@@ -19,56 +19,9 @@ jobs:
           ref: agent/ch19-poor-things-production-case
           fetch-depth: 0
       - name: Patch expansion adapter
-        run: |
-          node --input-type=module <<'NODE'
-          import { readFileSync, writeFileSync } from "node:fs";
-          const path = "src/core/chapterNineteenPoorThingsExpansion.ts";
-          let s = readFileSync(path, "utf8");
-          const before = `] as const satisfies readonly HistoricalFilmScenario[];
-
-export function mergeChapterNineteenPoorThingsExpansion(
-  scenarios: readonly HistoricalFilmScenario[]
-): HistoricalFilmScenario[] {
-  const merged = [...scenarios];
-  const seen = new Set(merged.map((scenario) => normalizeEarlyCinemaTitle(scenario.title)));
-  for (const definition of chapterNineteenPoorThingsExpansionDefinitions) {
-    const key = normalizeEarlyCinemaTitle(definition.title);
-    if (seen.has(key)) continue;
-    merged.push(definition);
-    seen.add(key);
-  }
-  return merged;
-}`;
-          const after = `] as const;
-
-export function mergeChapterNineteenPoorThingsExpansion(baseScenarios: readonly HistoricalFilmScenario[]): readonly HistoricalFilmScenario[] {
-  const merged = [...baseScenarios];
-  let nextPosition = Math.max(0, ...baseScenarios.map((scenario) => scenario.source.position)) + 1;
-  for (const definition of chapterNineteenPoorThingsExpansionDefinitions) {
-    const acceptedTitles = [definition.title, definition.originalTitle, ...definition.aliases].map(normalizeEarlyCinemaTitle);
-    const exists = merged.some((scenario) => scenario.id === definition.id || (scenario.film.year === definition.year && [scenario.film.title, scenario.film.original_title].map(normalizeEarlyCinemaTitle).some((title) => acceptedTitles.includes(title))));
-    if (exists) continue;
-    merged.push({
-      id: definition.id,
-      status: "manual_chapter_nineteen_poor_things_verified",
-      source: { list_id: "manual_chapter_nineteen_poor_things_expansion_2026", position: nextPosition, imdb_id: definition.sourceId, url: definition.sourceUrl },
-      film: { title: definition.title, original_title: definition.originalTitle, year: definition.year, title_type: definition.titleType, runtime_mins: definition.runtimeMins, directors: definition.directors, genres: definition.genres, genre_keys: definition.genres.map((genre) => genre.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")), imdb_rating: 0, user_rating: 0 },
-      scenario_type: definition.scenarioType,
-      production_challenge: definition.premise,
-      required_choices_seed: definition.requiredChoicesSeed,
-      phases: definition.phases,
-      learning_goals_seed: definition.learningGoals,
-      manual_enrichment_needed: [],
-    });
-    nextPosition += 1;
-  }
-  return merged;
-}`;
-          if (!s.includes(before)) throw new Error("Poor Things adapter anchor not found exactly");
-          s = s.replace(before, after);
-          writeFileSync(path, s);
-          NODE
-          rm .github/workflows/temp-fix-poor-things-schema.yml
+        run: python3 -c 'import base64,pathlib; p=pathlib.Path("src/core/chapterNineteenPoorThingsExpansion.ts"); s=p.read_text(); marker="] as const satisfies readonly HistoricalFilmScenario[];"; i=s.index(marker); tail=base64.b64decode("XSBhcyBjb25zdDsKCmV4cG9ydCBmdW5jdGlvbiBtZXJnZUNoYXB0ZXJOaW5ldGVlblBvb3JUaGluZ3NFeHBhbnNpb24oYmFzZVNjZW5hcmlvczogcmVhZG9ubHkgSGlzdG9yaWNhbEZpbG1TY2VuYXJpb1tdKTogcmVhZG9ubHkgSGlzdG9yaWNhbEZpbG1TY2VuYXJpb1tdIHsKICBjb25zdCBtZXJnZWQgPSBbLi4uYmFzZVNjZW5hcmlvc107CiAgbGV0IG5leHRQb3NpdGlvbiA9IE1hdGgubWF4KDAsIC4uLmJhc2VTY2VuYXJpb3MubWFwKChzY2VuYXJpbykgPT4gc2NlbmFyaW8uc291cmNlLnBvc2l0aW9uKSkgKyAxOwogIGZvciAoY29uc3QgZGVmaW5pdGlvbiBvZiBjaGFwdGVyTmluZXRlZW5Qb29yVGhpbmdzRXhwYW5zaW9uRGVmaW5pdGlvbnMpIHsKICAgIGNvbnN0IGFjY2VwdGVkVGl0bGVzID0gW2RlZmluaXRpb24udGl0bGUsIGRlZmluaXRpb24ub3JpZ2luYWxUaXRsZSwgLi4uZGVmaW5pdGlvbi5hbGlhc2VzXS5tYXAobm9ybWFsaXplRWFybHlDaW5lbWFUaXRsZSk7CiAgICBjb25zdCBleGlzdHMgPSBtZXJnZWQuc29tZSgoc2NlbmFyaW8pID0+IHNjZW5hcmlvLmlkID09PSBkZWZpbml0aW9uLmlkIHx8IChzY2VuYXJpby5maWxtLnllYXIgPT09IGRlZmluaXRpb24ueWVhciAmJiBbc2NlbmFyaW8uZmlsbS50aXRsZSwgc2NlbmFyaW8uZmlsbS5vcmlnaW5hbF90aXRsZV0ubWFwKG5vcm1hbGl6ZUVhcmx5Q2luZW1hVGl0bGUpLnNvbWUoKHRpdGxlKSA9PiBhY2NlcHRlZFRpdGxlcy5pbmNsdWRlcyh0aXRsZSkpKSk7CiAgICBpZiAoZXhpc3RzKSBjb250aW51ZTsKICAgIG1lcmdlZC5wdXNoKHsKICAgICAgaWQ6IGRlZmluaXRpb24uaWQsCiAgICAgIHN0YXR1czogIm1hbnVhbF9jaGFwdGVyX25pbmV0ZWVuX3Bvb3JfdGhpbmdzX3ZlcmlmaWVkIiwKICAgICAgc291cmNlOiB7IGxpc3RfaWQ6ICJtYW51YWxfY2hhcHRlcl9uaW5ldGVlbl9wb29yX3RoaW5nc19leHBhbnNpb25fMjAyNiIsIHBvc2l0aW9uOiBuZXh0UG9zaXRpb24sIGltZGJfaWQ6IGRlZmluaXRpb24uc291cmNlSWQsIHVybDogZGVmaW5pdGlvbi5zb3VyY2VVcmwgfSwKICAgICAgZmlsbTogeyB0aXRsZTogZGVmaW5pdGlvbi50aXRsZSwgb3JpZ2luYWxfdGl0bGU6IGRlZmluaXRpb24ub3JpZ2luYWxUaXRsZSwgeWVhcjogZGVmaW5pdGlvbi55ZWFyLCB0aXRsZV90eXBlOiBkZWZpbml0aW9uLnRpdGxlVHlwZSwgcnVudGltZV9taW5zOiBkZWZpbml0aW9uLnJ1bnRpbWVNaW5zLCBkaXJlY3RvcnM6IGRlZmluaXRpb24uZGlyZWN0b3JzLCBnZW5yZXM6IGRlZmluaXRpb24uZ2VucmVzLCBnZW5yZV9rZXlzOiBkZWZpbml0aW9uLmdlbnJlcy5tYXAoKGdlbnJlKSA9PiBnZW5yZS50b0xvd2VyQ2FzZSgpLnJlcGxhY2UoLyYvZywgImFuZCIpLnJlcGxhY2UoL1teYS16MC05XSsvZywgIl8iKS5yZXBsYWNlKC9eXyt8XyskL2csICIiKSksIGltZGJfcmF0aW5nOiAwLCB1c2VyX3JhdGluZzogMCB9LAogICAgICBzY2VuYXJpb190eXBlOiBkZWZpbml0aW9uLnNjZW5hcmlvVHlwZSwKICAgICAgcHJvZHVjdGlvbl9jaGFsbGVuZ2U6IGRlZmluaXRpb24ucHJlbWlzZSwKICAgICAgcmVxdWlyZWRfY2hvaWNlc19zZWVkOiBkZWZpbml0aW9uLnJlcXVpcmVkQ2hvaWNlc1NlZWQsCiAgICAgIHBoYXNlczogZGVmaW5pdGlvbi5waGFzZXMsCiAgICAgIGxlYXJuaW5nX2dvYWxzX3NlZWQ6IGRlZmluaXRpb24ubGVhcm5pbmdHb2FscywKICAgICAgbWFudWFsX2VucmljaG1lbnRfbmVlZGVkOiBbXSwKICAgIH0pOwogICAgbmV4dFBvc2l0aW9uICs9IDE7CiAgfQogIHJldHVybiBtZXJnZWQ7Cn0K").decode(); p.write_text(s[:i]+tail)'
+      - name: Remove TEMP fixer
+        run: rm .github/workflows/temp-fix-poor-things-schema.yml
       - name: Commit adapter fix and TEMP cleanup
         run: |
           git config user.name "Paradispartiet"
