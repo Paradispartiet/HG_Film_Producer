@@ -11,7 +11,7 @@ export const oppenheimerProductionCaseVerification = {
       publisher: "American Film Institute",
       url: "https://watch.afi.com/movie/oppenheimer?whereToWatch=all",
       sourceKind: "film_institute",
-      supports: ["overall", "screenplay", "cinematography", "editing", "sound", "distribution"],
+      supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
       note: "Institutional record supporting the 181-minute runtime, UK/US country record, July 2023 release and extensive principal production/craft credits."
     },
     {
@@ -27,7 +27,7 @@ export const oppenheimerProductionCaseVerification = {
       publisher: "FotoKem",
       url: "https://fotokem.com/oppenheimer-hoytema-fotokem/",
       sourceKind: "filmmaker_interview",
-      supports: ["overall", "cinematography", "editing", "distribution"],
+      supports: ["overall", "cinematography", "editing"],
       note: "Direct lab/cinematography testimony supporting 65mm B&W process development, chemistry switching, printing all footage, Avid/keycode/workprint/negative-cut integration and matching digital deliverables to the photochemical master."
     },
     {
