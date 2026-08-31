@@ -29,7 +29,7 @@ test("Oppenheimer source-first production case is complete and evidence-bounded"
   assert.ok(film.premise.includes("waterproof snorkel lens"));
   assert.ok(film.premise.includes("Ghost Ranch"));
   assert.ok(film.premise.includes("just over 100 final visual-effects shots"));
-  assert.ok(film.premise.includes("no CGI-generated imagery"));
+  assert.ok(film.premise.includes("did not rely on CGI-generated imagery"));
   assert.ok(film.premise.includes("does not mean there were no digital visual effects"));
   assert.ok(film.premise.includes("Avid"));
   assert.ok(film.premise.includes("Toluca Lake"));
