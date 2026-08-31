@@ -180,6 +180,7 @@ import { killersOfTheFlowerMoonFilmHistoryProfile } from "./scenarioFilmStudyCha
 import { anatomyOfAFallFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAnatomyOfAFall";
 import { flowFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenFlow";
 import { godzillaMinusOneFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenGodzillaMinusOne";
+import { poorThingsFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenPoorThings";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -386,6 +387,7 @@ const sourceBackedFilmHistoryProfiles = {
   [anatomyOfAFallFilmHistoryProfile.scenarioId]: anatomyOfAFallFilmHistoryProfile,
   [flowFilmHistoryProfile.scenarioId]: flowFilmHistoryProfile,
   [godzillaMinusOneFilmHistoryProfile.scenarioId]: godzillaMinusOneFilmHistoryProfile,
+  [poorThingsFilmHistoryProfile.scenarioId]: poorThingsFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",

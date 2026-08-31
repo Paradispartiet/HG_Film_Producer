@@ -203,6 +203,7 @@ import { killersOfTheFlowerMoonProductionCaseVerification } from "./scenarioProd
 import { anatomyOfAFallProductionCaseVerification } from "./scenarioProductionVerificationAnatomyOfAFall";
 import { flowProductionCaseVerification } from "./scenarioProductionVerificationFlow";
 import { godzillaMinusOneProductionCaseVerification } from "./scenarioProductionVerificationGodzillaMinusOne";
+import { poorThingsProductionCaseVerification } from "./scenarioProductionVerificationPoorThings";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -523,6 +524,7 @@ const additionalVerificationRecords = [
   anatomyOfAFallProductionCaseVerification,
   flowProductionCaseVerification,
   godzillaMinusOneProductionCaseVerification,
+  poorThingsProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
