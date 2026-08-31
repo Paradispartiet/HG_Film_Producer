@@ -1,0 +1,54 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { chapterNineteenAnoraExpansionDefinitions, mergeChapterNineteenAnoraExpansion } from "./chapterNineteenAnoraExpansion.js";
+
+test("Anora source-first production case is complete and evidence-bounded", () => {
+  assert.equal(chapterNineteenAnoraExpansionDefinitions.length, 1);
+  const film = chapterNineteenAnoraExpansionDefinitions[0];
+  assert.equal(film.id, "scenario_anora_2024");
+  assert.equal(film.title, "Anora");
+  assert.equal(film.year, 2024);
+  assert.equal(film.runtimeMins, 138);
+  assert.deepEqual(film.directors, ["Sean Baker"]);
+  assert.equal(film.sourceId, "festival_cannes_anora_2024");
+  assert.equal(film.sourceUrl, "https://www.festival-cannes.com/en/f/anora/");
+  assert.match(film.scenarioType, /independent_low_mid_budget/);
+  assert.match(film.scenarioType, /arricam_lt_35mm/);
+  assert.match(film.scenarioType, /4perf_240_anamorphic/);
+  assert.match(film.scenarioType, /vision3_200t_5213_500t_5219/);
+  assert.match(film.scenarioType, /varicon_push_process/);
+  assert.match(film.scenarioType, /chronological_fine_cut/);
+  assert.ok(film.premise.includes("40 shooting days"));
+  assert.ok(film.premise.includes("ARRICAM LT 35mm"));
+  assert.ok(film.premise.includes("4-perf 2.40:1 anamorphic"));
+  assert.ok(film.premise.includes("VISION3 200T 5213"));
+  assert.ok(film.premise.includes("VISION3 500T 5219"));
+  assert.ok(film.premise.includes("Kodak Film Lab New York"));
+  assert.ok(film.premise.includes("4K scanning"));
+  assert.ok(film.premise.includes("ARRI Varicon"));
+  assert.ok(film.premise.includes("roughly seven hours of usable daylight"));
+  assert.ok(film.premise.includes("20x20 diffusion"));
+  assert.ok(film.premise.includes("Creamsource Vortex"));
+  assert.ok(film.premise.includes("documentary-like conditions"));
+  assert.ok(film.premise.includes("There is no traditional composed score"));
+  assert.ok(film.premise.includes("roughly three months"));
+  assert.ok(film.premise.includes("does not make an assembly cut"));
+  assert.ok(film.premise.includes("Those remain unresolved"));
+  assert.ok(film.learningGoals.length >= 50);
+  assert.ok(film.phases.length >= 30);
+  assert.equal(film.phases.at(-1)?.id, "production_verification");
+  assert.ok(film.phases.find((phase) => phase.id === "mansion_source_discrepancy")?.player_task.includes("ten-day") && film.phases.find((phase) => phase.id === "mansion_source_discrepancy")?.player_task.includes("eight-day"));
+  assert.ok(film.phases.find((phase) => phase.id === "dialogue_rack_focus")?.player_task.includes("gain/EQ/fader"));
+  assert.ok(film.phases.find((phase) => phase.id === "chronological_edit")?.player_task.includes("assembly cut"));
+  assert.ok(film.requiredChoicesSeed.camera.includes("arricam_lt_35mm"));
+  assert.ok(film.requiredChoicesSeed.editing.includes("chronological_fine_cut"));
+  assert.ok(film.requiredChoicesSeed.sound.includes("overlapping_dialogue"));
+});
+
+test("Anora expansion merges idempotently by normalized title", () => {
+  const once = mergeChapterNineteenAnoraExpansion([]);
+  assert.equal(once.length, 1);
+  const twice = mergeChapterNineteenAnoraExpansion(once);
+  assert.equal(twice.length, 1);
+  assert.equal(twice[0]?.id, "scenario_anora_2024");
+});

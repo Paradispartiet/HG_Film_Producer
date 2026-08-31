@@ -197,6 +197,7 @@ import { codaProductionCaseVerification } from "./scenarioProductionVerification
 import { allWeImagineAsLightProductionCaseVerification } from "./scenarioProductionVerificationAllWeImagineAsLight";
 import { oppenheimerProductionCaseVerification } from "./scenarioProductionVerificationOppenheimer";
 import { memoriaProductionCaseVerification } from "./scenarioProductionVerificationMemoria";
+import { anoraProductionCaseVerification } from "./scenarioProductionVerificationAnora";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -511,6 +512,7 @@ const additionalVerificationRecords = [
   allWeImagineAsLightProductionCaseVerification,
   oppenheimerProductionCaseVerification,
   memoriaProductionCaseVerification,
+  anoraProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
