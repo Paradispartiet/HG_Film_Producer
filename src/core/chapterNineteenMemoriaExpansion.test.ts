@@ -22,7 +22,7 @@ test("Memoria source-first production case is complete and evidence-bounded", ()
   assert.ok(film.premise.includes("40-day principal-photography schedule"));
   assert.ok(film.premise.includes("single ARRICAM LT"));
   assert.ok(film.premise.includes("KODAK VISION3 500T Color Negative Film 5219"));
-  assert.ok(film.premise.includes("roughly 14 minutes 50 seconds"));
+  assert.ok(film.premise.includes("about 14 minutes 50 seconds"));
   assert.ok(film.premise.includes("roughly twelve-minute take"));
   assert.ok(film.premise.includes("HMIs and sometimes 20K tungsten"));
   assert.ok(film.premise.includes("230-metre dolly shot"));
