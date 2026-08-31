@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 557,
-    "actualCount": 557,
+    "expectedCount": 558,
+    "actualCount": 558,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -945,6 +945,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenAllWeImagineAsLightExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1013,7 +1019,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 557
+    "literalVerifiedScenarioIds": 558
   },
   "candidates": [
     {
@@ -1700,11 +1706,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P1",
       "chapterFunction": "Indian-led international co-production makes Mumbai location work, public/private financing and festival circulation visible without treating international partners as authorship.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_all_we_imagine_as_light_2024",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenAllWeImagineAsLightExpansion.ts"
     },
     {
       "title": "Dahomey",
@@ -1985,13 +1991,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "All We Imagine as Light",
-    "nextRecommendedLane": "regional_global",
+    "nextRecommendedCase": "Oppenheimer",
+    "nextRecommendedLane": "industrial_scale_technical",
     "remainingSequence": [
-      {
-        "title": "All We Imagine as Light",
-        "lane": "regional_global"
-      },
       {
         "title": "Oppenheimer",
         "lane": "industrial_scale_technical"
@@ -2140,6 +2142,7 @@
       "Saint Omer",
       "Four Daughters",
       "Nickel Boys",
+      "All We Imagine as Light",
       "Dahomey"
     ],
     "P0": [
@@ -2166,7 +2169,6 @@
       "Anatomy of a Fall",
       "The Brutalist",
       "The Seed of the Sacred Fig",
-      "All We Imagine as Light",
       "Anora",
       "Furiosa: A Mad Max Saga",
       "One Battle After Another",
@@ -2186,7 +2188,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "All We Imagine as Light",
     "Oppenheimer",
     "Memoria",
     "Anora",
