@@ -200,6 +200,7 @@ import { memoriaProductionCaseVerification } from "./scenarioProductionVerificat
 import { anoraProductionCaseVerification } from "./scenarioProductionVerificationAnora";
 import { theSeedOfTheSacredFigProductionCaseVerification } from "./scenarioProductionVerificationTheSeedOfTheSacredFig";
 import { killersOfTheFlowerMoonProductionCaseVerification } from "./scenarioProductionVerificationKillersOfTheFlowerMoon";
+import { anatomyOfAFallProductionCaseVerification } from "./scenarioProductionVerificationAnatomyOfAFall";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -517,6 +518,7 @@ const additionalVerificationRecords = [
   anoraProductionCaseVerification,
   theSeedOfTheSacredFigProductionCaseVerification,
   killersOfTheFlowerMoonProductionCaseVerification,
+  anatomyOfAFallProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
