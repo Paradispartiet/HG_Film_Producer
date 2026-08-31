@@ -202,6 +202,7 @@ import { theSeedOfTheSacredFigProductionCaseVerification } from "./scenarioProdu
 import { killersOfTheFlowerMoonProductionCaseVerification } from "./scenarioProductionVerificationKillersOfTheFlowerMoon";
 import { anatomyOfAFallProductionCaseVerification } from "./scenarioProductionVerificationAnatomyOfAFall";
 import { flowProductionCaseVerification } from "./scenarioProductionVerificationFlow";
+import { godzillaMinusOneProductionCaseVerification } from "./scenarioProductionVerificationGodzillaMinusOne";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -521,6 +522,7 @@ const additionalVerificationRecords = [
   killersOfTheFlowerMoonProductionCaseVerification,
   anatomyOfAFallProductionCaseVerification,
   flowProductionCaseVerification,
+  godzillaMinusOneProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
