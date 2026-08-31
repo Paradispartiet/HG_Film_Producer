@@ -41,12 +41,15 @@ jobs:
           git rm -f --ignore-unmatch \
             .github/workflows/temp-ch19-poor-things-materialize.yml \
             .github/workflows/temp-ch19-poor-things-source-first.yml \
+            .github/workflows/temp-fix-poor-things-schema.yml \
             scripts/temp-materialize-poor-things.mjs
           test ! -e .github/workflows/temp-ch19-poor-things-materialize.yml
           test ! -e .github/workflows/temp-ch19-poor-things-source-first.yml
+          test ! -e .github/workflows/temp-fix-poor-things-schema.yml
           test ! -e scripts/temp-materialize-poor-things.mjs
           if find .github/workflows scripts -maxdepth 1 -type f -iname '*temp*poor*things*' -print | grep -q .; then
             echo "Poor Things TEMP artifacts still exist after cleanup" >&2
+            find .github/workflows scripts -maxdepth 1 -type f -iname '*temp*poor*things*' -print >&2
             exit 1
           fi
           git status --short
@@ -109,6 +112,7 @@ jobs:
           git add -u -- \
             .github/workflows/temp-ch19-poor-things-materialize.yml \
             .github/workflows/temp-ch19-poor-things-source-first.yml \
+            .github/workflows/temp-fix-poor-things-schema.yml \
             scripts/temp-materialize-poor-things.mjs
           git diff --cached --check
           git diff --cached --stat
