@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 565,
-    "actualCount": 565,
+    "expectedCount": 566,
+    "actualCount": 566,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -993,6 +993,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenGodzillaMinusOneExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1061,7 +1067,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 565
+    "literalVerifiedScenarioIds": 566
   },
   "candidates": [
     {
@@ -1582,11 +1588,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Japanese studio production with a comparatively compact VFX team makes regional effects infrastructure and resource scale visible beside Hollywood models.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_godzilla_minus_one_2023",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenGodzillaMinusOneExpansion.ts"
     },
     {
       "title": "The Boy and the Heron",
@@ -2033,13 +2039,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "Godzilla Minus One",
-    "nextRecommendedLane": "regional_global",
+    "nextRecommendedCase": "Poor Things",
+    "nextRecommendedLane": "industrial_scale_technical",
     "remainingSequence": [
-      {
-        "title": "Godzilla Minus One",
-        "lane": "regional_global"
-      },
       {
         "title": "Poor Things",
         "lane": "industrial_scale_technical"
@@ -2157,6 +2159,7 @@
       "Saint Omer",
       "Oppenheimer",
       "Killers of the Flower Moon",
+      "Godzilla Minus One",
       "Four Daughters",
       "Anatomy of a Fall",
       "Flow",
@@ -2169,7 +2172,6 @@
     "P0": [
       "Poor Things",
       "The Zone of Interest",
-      "Godzilla Minus One",
       "The Boy and the Heron",
       "Spider-Man: Across the Spider-Verse",
       "Dune: Part Two",
@@ -2202,7 +2204,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Godzilla Minus One",
     "Poor Things",
     "Sentimental Value",
     "The Substance",
