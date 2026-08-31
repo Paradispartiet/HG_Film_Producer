@@ -35,11 +35,21 @@ jobs:
         run: node scripts/temp-materialize-poor-things.mjs
 
       - name: Remove Poor Things TEMP artifacts before full verification
+        shell: bash
         run: |
-          rm -f \
+          set -euxo pipefail
+          git rm -f --ignore-unmatch \
             .github/workflows/temp-ch19-poor-things-materialize.yml \
             .github/workflows/temp-ch19-poor-things-source-first.yml \
             scripts/temp-materialize-poor-things.mjs
+          test ! -e .github/workflows/temp-ch19-poor-things-materialize.yml
+          test ! -e .github/workflows/temp-ch19-poor-things-source-first.yml
+          test ! -e scripts/temp-materialize-poor-things.mjs
+          if find .github/workflows scripts -maxdepth 1 -type f -iname '*temp*poor*things*' -print | grep -q .; then
+            echo "Poor Things TEMP artifacts still exist after cleanup" >&2
+            exit 1
+          fi
+          git status --short
 
       - name: Generate Chapter 19 resolved state
         run: node scripts/film-history-chapter-nineteen-atlas-audit.mjs --write=docs/film-history-chapter-nineteen-atlas-resolved.json > /tmp/poor-things-ch19-resolved.json
