@@ -1,0 +1,56 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { chapterNineteenOppenheimerExpansionDefinitions, mergeChapterNineteenOppenheimerExpansion } from "./chapterNineteenOppenheimerExpansion.js";
+
+test("Oppenheimer source-first production case is complete and evidence-bounded", () => {
+  assert.equal(chapterNineteenOppenheimerExpansionDefinitions.length, 1);
+  const film = chapterNineteenOppenheimerExpansionDefinitions[0];
+  assert.equal(film.id, "scenario_oppenheimer_2023");
+  assert.equal(film.title, "Oppenheimer");
+  assert.equal(film.year, 2023);
+  assert.equal(film.runtimeMins, 181);
+  assert.deepEqual(film.directors, ["Christopher Nolan"]);
+  assert.equal(film.sourceId, "afi_oppenheimer_2023");
+  assert.equal(film.sourceUrl, "https://watch.afi.com/movie/oppenheimer");
+  assert.match(film.scenarioType, /industrial_scale_technical/);
+  assert.match(film.scenarioType, /imax_15perf/);
+  assert.match(film.scenarioType, /system65_5perf/);
+  assert.match(film.scenarioType, /double_x_5222/);
+  assert.match(film.scenarioType, /fotokem/);
+  assert.match(film.scenarioType, /dneg_digital_compositing/);
+  assert.ok(film.premise.includes("IMAX 15-perf"));
+  assert.ok(film.premise.includes("Panavision System 65 5-perf"));
+  assert.ok(film.premise.includes("VISION3 250D 5207"));
+  assert.ok(film.premise.includes("VISION3 500T 5219"));
+  assert.ok(film.premise.includes("DOUBLE-X 5222"));
+  assert.ok(film.premise.includes("65mm specifically for the production"));
+  assert.ok(film.premise.includes("pressure plates"));
+  assert.ok(film.premise.includes("switch the lab between black-and-white and color chemistry"));
+  assert.ok(film.premise.includes("waterproof snorkel lens"));
+  assert.ok(film.premise.includes("Ghost Ranch"));
+  assert.ok(film.premise.includes("just over 100 final visual-effects shots"));
+  assert.ok(film.premise.includes("did not rely on CGI-generated imagery"));
+  assert.ok(film.premise.includes("does not mean there were no digital visual effects"));
+  assert.ok(film.premise.includes("Avid"));
+  assert.ok(film.premise.includes("Toluca Lake"));
+  assert.ok(film.premise.includes("very little ADR"));
+  assert.ok(film.premise.includes("57-day principal-photography schedule"));
+  assert.ok(film.premise.includes("remain unresolved"));
+  assert.ok(film.learningGoals.length >= 50);
+  assert.ok(film.phases.length >= 30);
+  assert.equal(film.phases.at(-1)?.id, "production_verification");
+  assert.ok(film.phases.find((phase) => phase.id === "vfx_boundary")?.player_task.includes("DNEG digital compositing"));
+  assert.ok(film.phases.find((phase) => phase.id === "film_workprint")?.player_task.includes("Toluca Lake"));
+  assert.ok(film.phases.find((phase) => phase.id === "imax_sound_tradeoff")?.player_task.includes("dialogue intelligibility"));
+  assert.ok(film.requiredChoicesSeed.camera.includes("double_x_5222_65mm"));
+  assert.ok(film.requiredChoicesSeed.editing.includes("parallel_physical_workprint"));
+  assert.ok(film.requiredChoicesSeed.sound.includes("minimal_adr"));
+});
+
+test("Oppenheimer expansion merges idempotently by normalized title", () => {
+  const once = mergeChapterNineteenOppenheimerExpansion([]);
+  assert.equal(once.length, 1);
+  const twice = mergeChapterNineteenOppenheimerExpansion(once);
+  assert.equal(twice.length, 1);
+  assert.equal(twice[0]?.id, "scenario_oppenheimer_2023");
+});

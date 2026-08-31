@@ -172,6 +172,7 @@ import { nopeFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenNope";
 import { saintOmerFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenSaintOmer";
 import { codaFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenCoda";
 import { allWeImagineAsLightFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAllWeImagineAsLight";
+import { oppenheimerFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenOppenheimer";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -370,6 +371,7 @@ const sourceBackedFilmHistoryProfiles = {
   [saintOmerFilmHistoryProfile.scenarioId]: saintOmerFilmHistoryProfile,
   [codaFilmHistoryProfile.scenarioId]: codaFilmHistoryProfile,
   [allWeImagineAsLightFilmHistoryProfile.scenarioId]: allWeImagineAsLightFilmHistoryProfile,
+  [oppenheimerFilmHistoryProfile.scenarioId]: oppenheimerFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
