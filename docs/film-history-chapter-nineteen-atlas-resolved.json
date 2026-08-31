@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 566,
-    "actualCount": 566,
+    "expectedCount": 567,
+    "actualCount": 567,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -999,6 +999,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenPoorThingsExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1067,7 +1073,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 566
+    "literalVerifiedScenarioIds": 567
   },
   "candidates": [
     {
@@ -1558,11 +1564,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Purpose-built environments, miniature/optical traditions and contemporary digital post make stylized physical design and effects integration a major production case.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_poor_things_2023",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenPoorThingsExpansion.ts"
     },
     {
       "title": "The Zone of Interest",
@@ -2039,13 +2045,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "Poor Things",
-    "nextRecommendedLane": "industrial_scale_technical",
+    "nextRecommendedCase": "Sentimental Value",
+    "nextRecommendedLane": "auteur_festival",
     "remainingSequence": [
-      {
-        "title": "Poor Things",
-        "lane": "industrial_scale_technical"
-      },
       {
         "title": "Sentimental Value",
         "lane": "auteur_festival"
@@ -2159,6 +2161,7 @@
       "Saint Omer",
       "Oppenheimer",
       "Killers of the Flower Moon",
+      "Poor Things",
       "Godzilla Minus One",
       "Four Daughters",
       "Anatomy of a Fall",
@@ -2170,7 +2173,6 @@
       "Anora"
     ],
     "P0": [
-      "Poor Things",
       "The Zone of Interest",
       "The Boy and the Heron",
       "Spider-Man: Across the Spider-Verse",
@@ -2204,7 +2206,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Poor Things",
     "Sentimental Value",
     "The Substance",
     "The Boy and the Heron",
