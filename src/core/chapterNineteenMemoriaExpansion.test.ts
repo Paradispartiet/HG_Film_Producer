@@ -38,7 +38,7 @@ test("Memoria source-first production case is complete and evidence-bounded", ()
   assert.equal(film.phases.at(-1)?.id, "production_verification");
   assert.ok(film.phases.find((phase) => phase.id === "negative_custody")?.player_task.includes("X-ray avoidance"));
   assert.ok(film.phases.find((phase) => phase.id === "covid_mix_move")?.player_task.includes("Thailand"));
-  assert.ok(film.phases.find((phase) => phase.id === "theatrical_formats")?.player_task.includes("7.1, 5.1 and Atmos"));
+  assert.ok(film.phases.find((phase) => phase.id === "theatrical_formats")?.label.includes("7.1, 5.1 and Atmos"));
   assert.ok(film.requiredChoicesSeed.camera.includes("single_arricam_lt"));
   assert.ok(film.requiredChoicesSeed.editing.includes("mexico_thailand_post_handoff"));
   assert.ok(film.requiredChoicesSeed.sound.includes("two_week_final_mix"));
