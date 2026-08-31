@@ -21,7 +21,7 @@ test("Godzilla Minus One source-first production case is complete and evidence-b
   assert.ok(film.premise.includes("35-person VFX team"));
   assert.ok(film.premise.includes("one petabyte"));
   assert.ok(film.premise.includes("did not use motion capture"));
-  assert.ok(film.premise.includes("remain unresolved"));
+  assert.ok(film.premise.includes("remains unresolved"));
   assert.ok(film.learningGoals.length >= 50);
   assert.ok(film.phases.length >= 32);
   assert.equal(film.phases.at(-1)?.id, "production_verification");
