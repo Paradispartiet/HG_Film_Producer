@@ -177,6 +177,7 @@ import { memoriaFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenMem
 import { anoraFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAnora";
 import { theSeedOfTheSacredFigFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenTheSeedOfTheSacredFig";
 import { killersOfTheFlowerMoonFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenKillersOfTheFlowerMoon";
+import { anatomyOfAFallFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAnatomyOfAFall";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -380,6 +381,7 @@ const sourceBackedFilmHistoryProfiles = {
   [anoraFilmHistoryProfile.scenarioId]: anoraFilmHistoryProfile,
   [theSeedOfTheSacredFigFilmHistoryProfile.scenarioId]: theSeedOfTheSacredFigFilmHistoryProfile,
   [killersOfTheFlowerMoonFilmHistoryProfile.scenarioId]: killersOfTheFlowerMoonFilmHistoryProfile,
+  [anatomyOfAFallFilmHistoryProfile.scenarioId]: anatomyOfAFallFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
