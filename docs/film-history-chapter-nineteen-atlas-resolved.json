@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 562,
-    "actualCount": 562,
+    "expectedCount": 563,
+    "actualCount": 563,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -975,6 +975,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenKillersOfTheFlowerMoonExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1043,7 +1049,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 562
+    "literalVerifiedScenarioIds": 563
   },
   "candidates": [
     {
@@ -1520,11 +1526,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Platform-backed financing with substantial theatrical release and community-situated historical production makes ownership, representation, location and distribution distinct.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_killers_of_the_flower_moon_2023",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenKillersOfTheFlowerMoonExpansion.ts"
     },
     {
       "title": "Poor Things",
@@ -2015,13 +2021,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "Killers of the Flower Moon",
-    "nextRecommendedLane": "industrial_scale_technical",
+    "nextRecommendedCase": "Anatomy of a Fall",
+    "nextRecommendedLane": "auteur_festival",
     "remainingSequence": [
-      {
-        "title": "Killers of the Flower Moon",
-        "lane": "industrial_scale_technical"
-      },
       {
         "title": "Anatomy of a Fall",
         "lane": "auteur_festival"
@@ -2150,6 +2152,7 @@
       "Decision to Leave",
       "Saint Omer",
       "Oppenheimer",
+      "Killers of the Flower Moon",
       "Four Daughters",
       "Nickel Boys",
       "The Seed of the Sacred Fig",
@@ -2158,7 +2161,6 @@
       "Anora"
     ],
     "P0": [
-      "Killers of the Flower Moon",
       "Poor Things",
       "The Zone of Interest",
       "Godzilla Minus One",
@@ -2196,7 +2198,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Killers of the Flower Moon",
     "Anatomy of a Fall",
     "Flow",
     "Godzilla Minus One",
