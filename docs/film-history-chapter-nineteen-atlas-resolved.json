@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 561,
-    "actualCount": 561,
+    "expectedCount": 562,
+    "actualCount": 562,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -969,6 +969,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenTheSeedOfTheSacredFigExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1037,7 +1043,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 561
+    "literalVerifiedScenarioIds": 562
   },
   "candidates": [
     {
@@ -1710,11 +1716,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P1",
       "chapterFunction": "Iranian production under severe institutional constraints makes authorship, safety, legal risk, location and later international circulation distinct evidence layers.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_seed_of_the_sacred_fig_2024",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenTheSeedOfTheSacredFigExpansion.ts"
     },
     {
       "title": "All We Imagine as Light",
@@ -2009,13 +2015,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "The Seed of the Sacred Fig",
-    "nextRecommendedLane": "regional_global",
+    "nextRecommendedCase": "Killers of the Flower Moon",
+    "nextRecommendedLane": "industrial_scale_technical",
     "remainingSequence": [
-      {
-        "title": "The Seed of the Sacred Fig",
-        "lane": "regional_global"
-      },
       {
         "title": "Killers of the Flower Moon",
         "lane": "industrial_scale_technical"
@@ -2150,6 +2152,7 @@
       "Oppenheimer",
       "Four Daughters",
       "Nickel Boys",
+      "The Seed of the Sacred Fig",
       "All We Imagine as Light",
       "Dahomey",
       "Anora"
@@ -2175,7 +2178,6 @@
       "Barbie",
       "Anatomy of a Fall",
       "The Brutalist",
-      "The Seed of the Sacred Fig",
       "Furiosa: A Mad Max Saga",
       "One Battle After Another",
       "KPop Demon Hunters",
@@ -2194,7 +2196,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "The Seed of the Sacred Fig",
     "Killers of the Flower Moon",
     "Anatomy of a Fall",
     "Flow",

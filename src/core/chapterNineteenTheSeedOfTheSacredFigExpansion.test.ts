@@ -1,0 +1,51 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { chapterNineteenTheSeedOfTheSacredFigExpansionDefinitions, mergeChapterNineteenTheSeedOfTheSacredFigExpansion } from "./chapterNineteenTheSeedOfTheSacredFigExpansion.js";
+
+test("The Seed of the Sacred Fig source-first production case is complete and evidence-bounded", () => {
+  assert.equal(chapterNineteenTheSeedOfTheSacredFigExpansionDefinitions.length, 1);
+  const film = chapterNineteenTheSeedOfTheSacredFigExpansionDefinitions[0];
+  assert.equal(film.id, "scenario_the_seed_of_the_sacred_fig_2024");
+  assert.equal(film.title, "The Seed of the Sacred Fig");
+  assert.equal(film.originalTitle, "Dane-ye anjir-e ma'abed");
+  assert.equal(film.year, 2024);
+  assert.equal(film.runtimeMins, 168);
+  assert.deepEqual(film.directors, ["Mohammad Rasoulof"]);
+  assert.equal(film.sourceId, "festival_cannes_the_seed_of_the_sacred_fig_2024");
+  assert.equal(film.sourceUrl, "https://www.festival-cannes.com/en/f/the-seed-of-the-sacred-fig/");
+  assert.match(film.scenarioType, /regional_global/);
+  assert.match(film.scenarioType, /clandestine_iranian_production/);
+  assert.match(film.scenarioType, /remote_direction/);
+  assert.match(film.scenarioType, /sony_fx3_fx6/);
+  assert.match(film.scenarioType, /natural_light_first/);
+  assert.match(film.scenarioType, /security_sensitive_edit/);
+  assert.ok(film.premise.includes("168-minute"));
+  assert.ok(film.premise.includes("Germany/France/Iran"));
+  assert.ok(film.premise.includes("monitor and secure audio connection"));
+  assert.ok(film.premise.includes("keep the crew small"));
+  assert.ok(film.premise.includes("Sony FX3"));
+  assert.ok(film.premise.includes("Sony FX6"));
+  assert.ok(film.premise.includes("single-camera operating method"));
+  assert.ok(film.premise.includes("golden hour"));
+  assert.ok(film.premise.includes("Andrew Bird"));
+  assert.ok(film.premise.includes("ending changed substantially"));
+  assert.ok(film.premise.includes("Those remain unresolved"));
+  assert.ok(film.learningGoals.length >= 45);
+  assert.ok(film.phases.length >= 30);
+  assert.equal(film.phases.at(-1)?.id, "production_verification");
+  assert.ok(film.phases.find((phase) => phase.id === "single_camera_boundary")?.player_task.includes("one-body"));
+  assert.ok(film.phases.find((phase) => phase.id === "risk_boundary")?.player_task.includes("evasion manual"));
+  assert.ok(film.phases.find((phase) => phase.id === "archive_boundary")?.player_task.includes("clip-by-clip"));
+  assert.ok(film.requiredChoicesSeed.camera.includes("sony_fx3_handheld"));
+  assert.ok(film.requiredChoicesSeed.camera.includes("sony_fx6_stabilized"));
+  assert.ok(film.requiredChoicesSeed.editing.includes("substantially_changed_ending"));
+  assert.ok(film.requiredChoicesSeed.themes.includes("production_security"));
+});
+
+test("The Seed of the Sacred Fig expansion merges idempotently by normalized title", () => {
+  const once = mergeChapterNineteenTheSeedOfTheSacredFigExpansion([]);
+  assert.equal(once.length, 1);
+  const twice = mergeChapterNineteenTheSeedOfTheSacredFigExpansion(once);
+  assert.equal(twice.length, 1);
+  assert.equal(twice[0]?.id, "scenario_the_seed_of_the_sacred_fig_2024");
+});

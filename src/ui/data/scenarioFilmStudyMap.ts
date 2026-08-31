@@ -175,6 +175,7 @@ import { allWeImagineAsLightFilmHistoryProfile } from "./scenarioFilmStudyChapte
 import { oppenheimerFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenOppenheimer";
 import { memoriaFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenMemoria";
 import { anoraFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAnora";
+import { theSeedOfTheSacredFigFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenTheSeedOfTheSacredFig";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -376,6 +377,7 @@ const sourceBackedFilmHistoryProfiles = {
   [oppenheimerFilmHistoryProfile.scenarioId]: oppenheimerFilmHistoryProfile,
   [memoriaFilmHistoryProfile.scenarioId]: memoriaFilmHistoryProfile,
   [anoraFilmHistoryProfile.scenarioId]: anoraFilmHistoryProfile,
+  [theSeedOfTheSacredFigFilmHistoryProfile.scenarioId]: theSeedOfTheSacredFigFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
