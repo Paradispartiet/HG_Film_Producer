@@ -20,7 +20,7 @@ export const chapterNineteenTheSubstanceExpansionDefinitions = [
       screenplay: ["fargeat_writer_director", "minimal_dialogue_visual_structure", "custom_production_model", "budget_unresolved_boundary", "practical_digital_not_binary"],
       camera: ["alexa_mini_lf", "canon_k35_spherical", "thalia_24_close_focus", "cooke_90_macro", "arri_macro_200", "239_delivery", "softdrop_not_led", "prosthetic_show_lut", "fluorescent_liquid_lut"],
       editing: ["fargeat_on_set_key_sequence_edit", "eltabet_four_handed_edit", "300_plus_hours", "230_sequences", "premiere_pro", "sound_led_rhythm", "long_iterative_post"],
-      sound: ["vill​​ard_production_sound", "deloof_sound_edit", "raffertie_january_2024", "elisabeth_organic_sue_synthetic", "substance_sound_motif", "music_sound_blur", "full_sound_chain_unresolved"],
+      sound: ["villard_production_sound", "deloof_sound_edit", "raffertie_january_2024", "elisabeth_organic_sue_synthetic", "substance_sound_motif", "music_sound_blur", "full_sound_chain_unresolved"],
       themes: ["film_history", "2024", "the_substance", "independent_low_mid_budget", "body_horror", "practical_prosthetics", "practical_digital_hybrid", "performance_effects_scheduling", "chapter19"]
     },
     learningGoals: [
