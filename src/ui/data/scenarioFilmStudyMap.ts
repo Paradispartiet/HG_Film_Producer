@@ -181,6 +181,7 @@ import { anatomyOfAFallFilmHistoryProfile } from "./scenarioFilmStudyChapterNine
 import { flowFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenFlow";
 import { godzillaMinusOneFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenGodzillaMinusOne";
 import { poorThingsFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenPoorThings";
+import { sentimentalValueFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenSentimentalValue";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -388,6 +389,7 @@ const sourceBackedFilmHistoryProfiles = {
   [flowFilmHistoryProfile.scenarioId]: flowFilmHistoryProfile,
   [godzillaMinusOneFilmHistoryProfile.scenarioId]: godzillaMinusOneFilmHistoryProfile,
   [poorThingsFilmHistoryProfile.scenarioId]: poorThingsFilmHistoryProfile,
+  [sentimentalValueFilmHistoryProfile.scenarioId]: sentimentalValueFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
