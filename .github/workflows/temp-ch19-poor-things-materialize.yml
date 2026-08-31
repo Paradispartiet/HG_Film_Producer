@@ -109,11 +109,10 @@ jobs:
             src/ui/data/filmScenarios.ts \
             src/ui/data/scenarioFilmStudyMap.ts \
             src/ui/data/scenarioProductionVerificationRegistry.ts
-          git add -u -- \
-            .github/workflows/temp-ch19-poor-things-materialize.yml \
-            .github/workflows/temp-ch19-poor-things-source-first.yml \
-            .github/workflows/temp-fix-poor-things-schema.yml \
-            scripts/temp-materialize-poor-things.mjs
+          test ! -e .github/workflows/temp-ch19-poor-things-materialize.yml
+          test ! -e .github/workflows/temp-ch19-poor-things-source-first.yml
+          test ! -e .github/workflows/temp-fix-poor-things-schema.yml
+          test ! -e scripts/temp-materialize-poor-things.mjs
           git diff --cached --check
           git diff --cached --stat
           git commit -m "Materialize Poor Things Chapter 19 production case"
