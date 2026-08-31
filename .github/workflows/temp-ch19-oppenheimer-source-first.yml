@@ -1,0 +1,44 @@
+name: TEMP Chapter 19 Oppenheimer source-first
+
+on:
+  push:
+    branches:
+      - agent/ch19-oppenheimer-production-case
+    paths:
+      - .github/workflows/temp-ch19-oppenheimer-source-first.yml
+      - src/core/chapterNineteenOppenheimerExpansion.ts
+      - src/core/chapterNineteenOppenheimerExpansion.test.ts
+      - src/ui/data/scenarioFilmStudyChapterNineteenOppenheimer.ts
+      - src/ui/data/scenarioProductionVerificationOppenheimer.ts
+
+permissions:
+  contents: read
+
+jobs:
+  source-first:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build core
+        run: npm run build
+
+      - name: Strict Oppenheimer contract
+        run: node --test dist/core/chapterNineteenOppenheimerExpansion.test.js
+
+      - name: Build UI
+        run: npm run build:ui
