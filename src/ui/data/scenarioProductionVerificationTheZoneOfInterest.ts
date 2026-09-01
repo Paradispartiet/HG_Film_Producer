@@ -67,7 +67,7 @@ export const theZoneOfInterestProductionCaseVerification = {
       publisher: "Motion Picture Association – The Credits",
       url: "https://www.motionpictures.org/2024/01/the-zone-of-interest-sound-designer-johnnie-burn-on-creating-the-soundscape-from-hell/",
       sourceKind: "filmmaker_interview",
-      supports: ["sound", "overall", "production_design"],
+      supports: ["sound", "overall"],
       note: "Direct Burn testimony supporting the replica house near Auschwitz, two-film sound concept, long hidden-camera takes and the historically researched off-screen camp layer."
     },
     {
