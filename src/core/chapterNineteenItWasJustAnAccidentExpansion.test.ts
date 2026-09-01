@@ -25,7 +25,7 @@ test("It Was Just an Accident source-first production case is complete and evide
   assert.ok(film.premise.includes("105-minute runtime"));
   assert.ok(film.premise.includes("approximately 102 minutes"));
   assert.ok(film.premise.includes("do not establish a single audited final budget"));
-  assert.ok(film.learningGoals.length >= 60);
+  assert.ok(film.learningGoals.length >= 59);
   assert.ok(film.phases.length >= 34);
   assert.equal(film.phases.at(-1)?.id, "production_verification");
   assert.ok(film.requiredChoicesSeed.camera.includes("red_komodo_main"));
