@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 568,
-    "actualCount": 568,
+    "expectedCount": 569,
+    "actualCount": 569,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1011,6 +1011,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenTheSubstanceExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1079,7 +1085,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 568
+    "literalVerifiedScenarioIds": 569
   },
   "candidates": [
     {
@@ -1722,11 +1728,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Practical prosthetic/body-effects work integrated with digital effects makes material transformation craft and post-production boundaries visible.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_substance_2024",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenTheSubstanceExpansion.ts"
     },
     {
       "title": "Nickel Boys",
@@ -2051,13 +2057,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "The Substance",
-    "nextRecommendedLane": "independent_low_mid_budget",
+    "nextRecommendedCase": "The Boy and the Heron",
+    "nextRecommendedLane": "regional_global",
     "remainingSequence": [
-      {
-        "title": "The Substance",
-        "lane": "independent_low_mid_budget"
-      },
       {
         "title": "The Boy and the Heron",
         "lane": "regional_global"
@@ -2168,6 +2170,7 @@
       "Four Daughters",
       "Anatomy of a Fall",
       "Flow",
+      "The Substance",
       "Nickel Boys",
       "The Seed of the Sacred Fig",
       "All We Imagine as Light",
@@ -2180,7 +2183,6 @@
       "The Boy and the Heron",
       "Spider-Man: Across the Spider-Verse",
       "Dune: Part Two",
-      "The Substance",
       "Sinners",
       "F1"
     ],
@@ -2208,7 +2210,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "The Substance",
     "The Boy and the Heron",
     "Spider-Man: Across the Spider-Verse",
     "The Power of the Dog",
