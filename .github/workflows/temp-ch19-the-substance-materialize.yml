@@ -36,7 +36,7 @@ jobs:
           test ! -e .github/workflows/temp-ch19-the-substance-materialize.yml
           test ! -e scripts/temp-materialize-the-substance.mjs
       - name: Generate Chapter 19 resolved state
-        run: node scripts/film-history-chapter-nineteen-atlas-audit.mjs
+        run: node scripts/film-history-chapter-nineteen-atlas-audit.mjs --write=docs/film-history-chapter-nineteen-atlas-resolved.json
       - name: Full fail-closed verification
         run: npm run verify:v0.1
       - name: Verify post-gate canonical snapshot
