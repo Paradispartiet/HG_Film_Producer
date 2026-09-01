@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 569,
-    "actualCount": 569,
+    "expectedCount": 570,
+    "actualCount": 570,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1017,6 +1017,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenTheZoneOfInterestExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1085,7 +1091,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 569
+    "literalVerifiedScenarioIds": 570
   },
   "candidates": [
     {
@@ -1590,11 +1596,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Distributed fixed-camera observation, remote monitoring and offscreen sound design make production method and ethics of historical representation structurally linked but distinct.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_zone_of_interest_2023",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenTheZoneOfInterestExpansion.ts"
     },
     {
       "title": "Godzilla Minus One",
@@ -2117,10 +2123,6 @@
         "lane": "industrial_scale_technical"
       },
       {
-        "title": "The Zone of Interest",
-        "lane": "auteur_festival"
-      },
-      {
         "title": "Barbie",
         "lane": "industrial_scale_technical"
       },
@@ -2166,6 +2168,7 @@
       "Oppenheimer",
       "Killers of the Flower Moon",
       "Poor Things",
+      "The Zone of Interest",
       "Godzilla Minus One",
       "Four Daughters",
       "Anatomy of a Fall",
@@ -2179,7 +2182,6 @@
       "Sentimental Value"
     ],
     "P0": [
-      "The Zone of Interest",
       "The Boy and the Heron",
       "Spider-Man: Across the Spider-Verse",
       "Dune: Part Two",
@@ -2224,7 +2226,6 @@
     "Sinners",
     "Resurrection",
     "F1",
-    "The Zone of Interest",
     "Barbie",
     "All Quiet on the Western Front",
     "One Battle After Another",
