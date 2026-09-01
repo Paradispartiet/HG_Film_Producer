@@ -205,6 +205,7 @@ import { flowProductionCaseVerification } from "./scenarioProductionVerification
 import { godzillaMinusOneProductionCaseVerification } from "./scenarioProductionVerificationGodzillaMinusOne";
 import { poorThingsProductionCaseVerification } from "./scenarioProductionVerificationPoorThings";
 import { sentimentalValueProductionCaseVerification } from "./scenarioProductionVerificationSentimentalValue";
+import { theSubstanceProductionCaseVerification } from "./scenarioProductionVerificationTheSubstance";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -527,6 +528,7 @@ const additionalVerificationRecords = [
   godzillaMinusOneProductionCaseVerification,
   poorThingsProductionCaseVerification,
   sentimentalValueProductionCaseVerification,
+  theSubstanceProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
