@@ -1,0 +1,148 @@
+import type { HistoricalFilmScenario } from "./earlyCinemaExpansion.js";
+import { normalizeEarlyCinemaTitle } from "./earlyCinemaExpansion.js";
+
+export const chapterNineteenItWasJustAnAccidentExpansionDefinitions = [
+  {
+    id: "scenario_it_was_just_an_accident_2025",
+    title: "It Was Just an Accident",
+    originalTitle: "Un simple accident",
+    aliases: ["It Was Just an Accident", "Un simple accident", "Yek Tasadef Sadeh"],
+    year: 2025,
+    titleType: "Movie",
+    runtimeMins: 105,
+    directors: ["Jafar Panahi"],
+    genres: ["Drama", "Thriller"],
+    sourceId: "cannes_it_was_just_an_accident_2025",
+    sourceUrl: "https://www.festival-cannes.com/en/f/un-simple-accident/",
+    scenarioType: "award_priority_palme_dor_auteur_festival_jafar_panahi_iran_france_luxembourg_clandestine_no_official_permits_tiny_crew_low_profile_location_shooting_red_komodo_samyang_alexa_mini_ultra_primes_opening_only_natural_available_light_battery_led_astera_helios_portable_softbox_studio_opening_composite_invisible_crew_long_take_static_interrogation_editor_on_set_mobile_dit_macbook_air_ssd_proxy_parallel_editing_sound_recordist_reza_heidari_2025",
+    premise: "Build It Was Just an Accident as Chapter 19's award-priority auteur/festival production case by treating Jafar Panahi's 2025 Palme d'Or winner as a production system shaped simultaneously by political constraint, physical invisibility, minimalist digital tools and unusually close integration between directing, cinematography, sound and editing during the shoot. Festival de Cannes records the film as a 2025 Iran-France-Luxembourg feature, credits Panahi as director/screenwriter, Amin Jafari as cinematographer and Leila Naghdi as production designer, and awards it the 2025 Palme d'Or. Cannes currently lists a 105-minute runtime, while European Film Academy and production-facing materials commonly record approximately 102 minutes; the playable case therefore preserves the institutional runtime variance instead of manufacturing a false single-source certainty. Awards establish priority and reception, not production method. Production method is locked through direct testimony. Cinematographer Amin Jafari states that the film was made without official permits and with a tiny crew because safety, flexibility and speed required a low-profile mode. He describes realism as both a stylistic choice and a production necessity: real locations, available light and compact equipment allowed the crew to behave like a very small documentary team whose camera presence had to remain physically imperceptible in public. The principal camera for almost the entire film was a RED Komodo with Samyang lenses. The opening sequence was an exception, using an ARRI Alexa Mini with Ultra Primes. Panahi explains that the opening road scene could not be filmed conventionally on public streets because a larger process vehicle and visible camera rig risked police attention; it was therefore shot in a studio and assembled from multiple image components so the final movement reads as one continuous shot. That makes the opening a sequence-specific controlled reconstruction rather than evidence that the rest of the film used studio or composited capture. Jafari's lighting package was correspondingly small: one compact kit of battery-operated Astera Helios tubes plus two or three portable softbox lamps, with extensive reliance on practical and natural sources. For the prolonged nighttime interrogation sequence east of Tehran, the car's rear lights became the principal visible source, slightly reinforced and adjusted, while compact battery fixtures supported exposure without breaking the low-profile method. The camera remained essentially static at the captive's eye level through a prolonged uninterrupted passage. Jafari describes the central fixed section as roughly ten minutes; editor Amir Etminan and Panahi describe the broader climactic take as approximately thirteen minutes. Those statements are preserved as descriptions of overlapping production/editorial units rather than forced into one false exact duration. The long-take method was performance-led. Jafari says Panahi normally carries an unusually complete decoupage in his head, but the interrogation sequence was one of the rare cases where the mise-en-scene emerged through rehearsals and multiple filmed approaches. Performers were given defined movement zones while camera tilt and framing remained soft enough to respond to emotional movement instead of forcing marks to dominate performance. Location scouting itself was part of the political production method. The interrogation site was found east of Tehran in an extremely quiet area with little traffic, near a landscape Panahi associated with Abbas Kiarostami's Taste of Cherry. Low traffic reduced public visibility and allowed the long nighttime work to continue with limited intrusion. The film's editorial system was integrated into principal photography. Editor Amir Etminan was physically present through shooting and gave immediate feedback after takes. He describes Panahi asking whether sufficient material had been captured and, when the image and story were already present, stopping rather than accumulating conventional coverage. Etminan's own car functioned as DIT workstation, wardrobe/makeup support and small-prop carrier. When cards filled, he transferred footage to SSDs on a small MacBook Air and generated proxies while continuing to assist the set. At the end of shooting days he collected camera and sound cards, drove home carefully, transferred media to main hard drives, made backups and generated proxies. Editing therefore began in parallel with photography rather than after a clean production/post handoff. This must not be romanticized as an informal workflow without controls: media handling, backup, proxy generation and approval discipline became more important precisely because the production could not rely on conventional visible infrastructure. The editor, cinematographer and production sound recordist Reza Heidari participated in take approval around Panahi, creating a compact decision loop. Etminan describes his editing method as 'invisible editing': cuts should not advertise themselves, and sustained takes should feel like an extension of the same observational language rather than a separate formal stunt. Sound was fundamental from development onward. The story turns on the possible recognition of a former interrogator through the squeak or cadence of a prosthetic leg before certainty exists. Etminan states that sound had an important place from the beginning and that he collaborated continuously with the sound recordist and cinematographer during photography. The European Film Academy credits Abdoreza Heidari, Valerie Deloof, Nicolas Leroy, Cyril Holtz and Angelo Dos Santos across the sound team. Current locked sources do not establish a complete microphone inventory, wireless channel plan, Foley ledger, ADR exception list, premix/stem architecture or final mix routing, so those remain unresolved. The screenplay itself was informed by lived experience. European Film Academy credits Panahi as writer in collaboration with Nader Saeivar, Shadmehr Rastin and Mehdi Mahmoudian. Panahi has said Mahmoudian's long experience of imprisonment and human-rights fieldwork made him a key dialogue and judicial/prison-life consultant. Panahi also describes bringing Mahmoudian to the difficult nighttime interrogation shoot after an earlier attempt failed, so practical knowledge of interrogation behavior directly affected performance detail and the successful take. That is a documented case of research/consultation moving from screenplay into production rather than remaining only development background. The international production structure also matters. European Film Academy identifies Jafar Panahi Productions, Les Films Pelleas, Bidibul Productions, Pio & Co and Arte France Cinema within an Iran-France-Luxembourg production network, with Philippe Martin, Jafar Panahi, Christel Henon and Sandrine Dumas among the credited producers. Current locked sources do not establish a complete financing waterfall, audited negative cost, national funding percentages, insurance structure, distribution recoupment or department budgets, so the case does not invent them. The production's political conditions must remain evidence-bounded. Cannes describes Panahi's history of detention, imprisonment, house arrest, travel bans and prohibition from filming, and notes that he continued making work sometimes clandestinely with limited means. Jafari directly states that this film itself operated without official permits and had to remain unseen in public. The case therefore treats secrecy as an organizational constraint affecting crew size, camera choice, lighting, location scouting, transport, media handling and public-space technique. It does not generalize every undocumented security procedure or assume that every scene was filmed illegally in the same way. The Palme d'Or gives the film major historical significance, but its production lesson is more precise: constraint reshaped the entire workflow into a compact network in which a tiny crew, small digital cameras, natural light, battery power, editor/DIT overlap, live sound, careful location choice and long-take performance could function as one system. The player must preserve uncertainty boundaries. Current locked sources do not establish a single audited final budget, complete financing percentages, total crew census, exact shooting-day count, full camera-body/lens inventory beyond the documented principal systems, complete codec/media settings, complete lighting inventory, all location permits or security procedures, full VFX vendor/shot ledger beyond documented opening reconstruction and credited VFX team, complete editing software/version history, full sound-recording chain, exact ADR/Foley/stem/mix architecture, music/score session documentation or distribution economics.",
+    requiredChoicesSeed: {
+      screenplay: ["panahi_prison_experience", "mahmoudian_dialogue_consultation", "palme_dor_priority_not_workflow_evidence", "runtime_variance_105_102", "finance_unresolved_boundary"],
+      camera: ["red_komodo_main", "samyang_lenses", "alexa_mini_opening_only", "ultra_primes_opening_only", "natural_available_light", "battery_led_minimalism", "car_taillight_interrogation", "studio_opening_composite", "physical_invisibility"],
+      editing: ["amir_etminan_on_set", "mobile_dit_car", "macbook_air_ssd_proxy", "parallel_editing", "invisible_editing", "long_take_minimal_coverage", "daily_backup"],
+      sound: ["reza_heidari_production_sound", "prosthetic_leg_sound_motif", "sound_from_beginning", "compact_take_approval_loop", "full_sound_chain_unresolved"],
+      themes: ["film_history", "2025", "it_was_just_an_accident", "palme_dor", "auteur_festival", "clandestine_production", "minimal_crew", "political_constraint", "chapter19"]
+    },
+    learningGoals: [
+      "Explain why It Was Just an Accident is prioritized by the 2025 Palme d'Or rather than lane rotation alone.",
+      "Separate Palme d'Or reception evidence from evidence about how the film was physically produced.",
+      "Identify Jafar Panahi as director and principal screenwriter.",
+      "Identify Amin Jafari as cinematographer and Leila Naghdi as production designer.",
+      "Preserve the Cannes 105-minute runtime and the approximately 102-minute production/EFA record as a documented variance.",
+      "Identify Iran, France and Luxembourg as the institutional production-country record.",
+      "Explain why the film's lack of official permits affected production organization.",
+      "Explain tiny-crew operation as a safety, speed and visibility decision rather than an aesthetic slogan.",
+      "Explain physical invisibility in public as a camera-department requirement.",
+      "Identify RED Komodo as the principal camera for almost the whole film.",
+      "Identify Samyang lenses as the documented principal lens family.",
+      "Identify ARRI Alexa Mini as a sequence-specific opening camera.",
+      "Identify Ultra Primes as tied to the opening system rather than the whole film.",
+      "Reject the claim that the entire film used the Alexa Mini.",
+      "Explain why the opening road scene could not be shot with a conventional visible process rig.",
+      "Explain the opening studio/composite solution as a security-driven production workaround.",
+      "Reject the claim that the whole film was studio-shot or virtual-production based.",
+      "Explain natural and available light as both a visual method and a low-profile production method.",
+      "Identify Astera Helios tubes as part of the compact battery-powered lighting kit.",
+      "Preserve the documented two-or-three portable softbox lamps without expanding that into a full invented package.",
+      "Explain battery power as a mobility and concealment advantage.",
+      "Explain the car's rear lights as the principal visible source in the nighttime interrogation sequence.",
+      "Explain slight reinforcement of practical light without falsely calling the scene unlit.",
+      "Explain the east-of-Tehran quiet location as part of production risk management.",
+      "Connect Panahi's location scouting near a Taste of Cherry landscape to practical site discovery rather than an unsupported homage claim.",
+      "Explain why low traffic and limited movement mattered to a clandestine shoot.",
+      "Explain Panahi's usual preplanned decoupage as distinct from the exploratory interrogation sequence.",
+      "Explain rehearsal and multiple filmed approaches as the method that discovered the final interrogation mise-en-scene.",
+      "Preserve the DP's roughly ten-minute static section and editor/director references to a broader roughly thirteen-minute take as overlapping descriptions.",
+      "Explain eye-level static framing as a performance and moral-attention decision.",
+      "Explain defined actor movement zones without turning performance into rigid marks.",
+      "Explain responsive tilt/framing as a way to protect emotional performance.",
+      "Identify Amir Etminan as editor.",
+      "Explain the editor's physical presence during principal photography.",
+      "Explain immediate editor/cinematographer/sound feedback as a compact take-approval loop.",
+      "Explain why Panahi could stop shooting when the necessary image and story were already captured.",
+      "Explain 'invisible editing' as a continuity of observational style rather than absence of editorial craft.",
+      "Explain why long takes do not eliminate editing decisions elsewhere in the film.",
+      "Identify the editor's car as a mobile DIT/proxy/support workspace.",
+      "Identify MacBook Air and SSD transfer/proxy generation as directly documented mobile post tools.",
+      "Explain daily card collection, home transfer, backup and proxy creation as a media-security workflow.",
+      "Explain editing during shooting as an iterative production/post relationship.",
+      "Reject the idea that a tiny crew means informal or careless data management.",
+      "Identify Reza/Abdoreza Heidari as the documented production-sound lead in current sources.",
+      "Explain why sound mattered from the beginning of the project rather than only in post.",
+      "Explain the prosthetic-leg sound as a narrative recognition mechanism without inventing its full Foley chain.",
+      "Explain editor/sound/camera collaboration during photography.",
+      "Identify Nader Saeivar, Shadmehr Rastin and Mehdi Mahmoudian as credited screenplay collaborators in the EFA record.",
+      "Explain Mahmoudian's prison and human-rights experience as a documented dialogue/judicial consultation source.",
+      "Explain Mahmoudian's presence at the difficult night shoot as production consultation affecting performance detail.",
+      "Identify Jafar Panahi Productions and Les Films Pelleas within the documented production structure.",
+      "Identify Bidibul Productions, Pio & Co and Arte France Cinema as documented co-production partners without inventing financing shares.",
+      "Keep audited final budget, national financing percentages and recoupment unresolved.",
+      "Keep total crew census, exact shooting-day count and complete security procedures unresolved.",
+      "Keep full camera/codec/media inventory beyond documented systems unresolved.",
+      "Keep complete lighting inventory and all location-permit details unresolved.",
+      "Keep complete VFX shot/vendor ledger unresolved beyond documented opening reconstruction and credited VFX personnel.",
+      "Keep complete editing software/version history and sound stem/mix architecture unresolved.",
+      "Close the case only when award context, political constraint, compact capture, lighting, location, performance, media handling, editing and sound evidence agree."
+    ],
+    phases: [
+      { id: "award_priority", label: "Lock Palme d'Or priority", player_task: "Use the 2025 Palme d'Or to justify case selection while keeping award status separate from production-method evidence." },
+      { id: "evidence_hierarchy", label: "Map the evidence hierarchy", player_task: "Separate Cannes/EFA institutional records from direct Panahi, Jafari and Etminan production testimony." },
+      { id: "runtime_variance", label: "Preserve runtime variance", player_task: "Record Cannes 105 minutes and the roughly 102-minute production/EFA record without forcing an unsupported reconciliation." },
+      { id: "finance_boundary", label: "Freeze unresolved finance", player_task: "Do not canonicalize budget, financing percentages or recoupment without locked authoritative evidence." },
+      { id: "security_model", label: "Define the low-profile security model", player_task: "Translate no-permit production into crew-size, mobility, visibility and public-space constraints without inventing undocumented procedures." },
+      { id: "tiny_crew", label: "Build the compact crew", player_task: "Keep only the personnel needed for safe, fast capture and immediate decision-making." },
+      { id: "camera_visibility", label: "Make the camera physically invisible", player_task: "Choose body size, operating position and movement so public shooting does not advertise a film production." },
+      { id: "komodo_package", label: "Lock the RED Komodo package", player_task: "Use RED Komodo and Samyang lenses as the principal system across the main body of the film." },
+      { id: "opening_exception", label: "Isolate the Alexa opening", player_task: "Reserve Alexa Mini and Ultra Primes for the documented opening sequence instead of generalizing them to the feature." },
+      { id: "opening_reconstruction", label: "Rebuild the road opening safely", player_task: "Use controlled studio/composite construction when a conventional process rig would create unacceptable public visibility." },
+      { id: "available_light", label: "Design with available light", player_task: "Treat real-world sources as the baseline image system rather than adding visible production infrastructure by default." },
+      { id: "battery_lighting", label: "Keep lighting mobile", player_task: "Use compact battery-powered Astera/softbox support only where natural/practical sources need reinforcement." },
+      { id: "location_scouting", label: "Scout quiet locations", player_task: "Favor spaces where low traffic and limited public movement reduce exposure and interruption." },
+      { id: "east_tehran_site", label: "Lock the interrogation site", player_task: "Use the quiet east-Tehran location for extended nighttime performance without turning location history into unsupported symbolism." },
+      { id: "tail_light", label: "Shape the red taillight", player_task: "Use the car's rear lights as the dominant visible interrogation source and reinforce them minimally when exposure requires it." },
+      { id: "decoupage", label: "Protect Panahi's planned decoupage", player_task: "Enter most scenes with clear shot logic so a tiny crew does not compensate by overshooting." },
+      { id: "rehearsal_discovery", label: "Discover the interrogation mise-en-scene", player_task: "Allow rehearsals and multiple approaches to override the initial plan when performance evidence demands it." },
+      { id: "movement_zones", label: "Define actor movement zones", player_task: "Give performers spatial freedom within known camera limits rather than forcing precision marks to dominate acting." },
+      { id: "responsive_frame", label: "Keep the frame responsive", player_task: "Allow subtle tilt or framing response when emotional performance moves beyond a rigid static composition." },
+      { id: "long_take", label: "Sustain the interrogation take", player_task: "Protect uninterrupted duration where cuts would weaken concentration, while preserving source variance around the exact measured unit." },
+      { id: "editor_on_set", label: "Keep the editor beside production", player_task: "Use Amir Etminan's on-set feedback to judge whether necessary story material already exists before shooting more coverage." },
+      { id: "take_approval", label: "Close the compact approval loop", player_task: "Have director, editor, cinematographer and sound agree when a take is sufficient." },
+      { id: "mobile_dit", label: "Turn the car into a mobile DIT station", player_task: "Transfer full cards to SSDs and generate proxies on a small laptop without creating a visible post-production footprint." },
+      { id: "daily_backup", label: "Secure the day's media", player_task: "Collect camera/sound cards, transfer to main drives, make backups and generate proxies before the next shooting day." },
+      { id: "parallel_edit", label: "Edit while shooting", player_task: "Use early assemblies and editor feedback to reduce unnecessary coverage and discover missing material while production is still active." },
+      { id: "invisible_editing", label: "Preserve invisible cutting", player_task: "Shape rhythm without making cuts compete with Panahi's observational directing language." },
+      { id: "sound_from_start", label: "Design sound from the beginning", player_task: "Treat recognition cues, dialogue, ambience and silence as production decisions rather than a late post layer." },
+      { id: "prosthetic_leg_sound", label: "Protect the recognition sound", player_task: "Make the prosthetic-leg cue legible without inventing unsupported Foley or processing details." },
+      { id: "prison_consultation", label: "Use lived prison knowledge", player_task: "Bring Mahmoudian's documented judicial/prison experience into dialogue and performance detail without generalizing beyond his contribution." },
+      { id: "night_consultation", label: "Refine the difficult night take", player_task: "Use specialist lived knowledge when the first filmed attempt fails to capture interrogation behavior credibly." },
+      { id: "coproduction", label: "Map the international co-production", player_task: "Track Iran-France-Luxembourg producer/company roles while leaving financing percentages unresolved." },
+      { id: "anti_romanticism", label: "Reject the guerrilla-romance myth", player_task: "Treat secrecy as risk-management and workflow pressure, not as proof that less infrastructure is automatically better." },
+      { id: "uncertainty_audit", label: "Audit unresolved ledgers", player_task: "Keep unsupported budget, crew, day-count, complete camera/light, VFX, edit-software, sound-chain and distribution details outside canonical truth." },
+      { id: "production_verification", label: "Close Production Verification", player_task: "Close only when Palme d'Or context, clandestine organization, camera/lighting, long-take performance, media handling, editing, sound and uncertainty boundaries agree." }
+    ]
+  }
+] as const;
+
+export function mergeChapterNineteenItWasJustAnAccidentExpansion(baseScenarios: readonly HistoricalFilmScenario[]): readonly HistoricalFilmScenario[] {
+  const merged = [...baseScenarios];
+  let nextPosition = Math.max(0, ...baseScenarios.map((scenario) => scenario.source.position)) + 1;
+  for (const definition of chapterNineteenItWasJustAnAccidentExpansionDefinitions) {
+    const acceptedTitles = [definition.title, definition.originalTitle, ...definition.aliases].map(normalizeEarlyCinemaTitle);
+    const exists = merged.some((scenario) => scenario.id === definition.id || (scenario.film.year === definition.year && [scenario.film.title, scenario.film.original_title].map(normalizeEarlyCinemaTitle).some((title) => acceptedTitles.includes(title))));
+    if (exists) continue;
+    merged.push({
+      id: definition.id,
+      status: "manual_chapter_nineteen_it_was_just_an_accident_verified",
+      source: { list_id: "manual_chapter_nineteen_it_was_just_an_accident_expansion_2026", position: nextPosition, imdb_id: definition.sourceId, url: definition.sourceUrl },
+      film: { title: definition.title, original_title: definition.originalTitle, year: definition.year, title_type: definition.titleType, runtime_mins: definition.runtimeMins, directors: definition.directors, genres: definition.genres, genre_keys: definition.genres.map((genre) => genre.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")), imdb_rating: 0, user_rating: 0 },
+      scenario_type: definition.scenarioType,
+      production_challenge: definition.premise,
+      required_choices_seed: definition.requiredChoicesSeed,
+      phases: definition.phases,
+      learning_goals_seed: definition.learningGoals,
+      manual_enrichment_needed: [],
+    });
+    nextPosition += 1;
+  }
+  return merged;
+}
