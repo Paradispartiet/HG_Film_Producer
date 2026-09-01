@@ -35,7 +35,7 @@ jobs:
         run: npm run typecheck
 
       - name: Build core
-        run: npm run build:core
+        run: npm run build
 
       - name: Strict It Was Just an Accident contract
         run: node --test dist/core/chapterNineteenItWasJustAnAccidentExpansion.test.js
