@@ -1,0 +1,115 @@
+name: TEMP Chapter 19 The Zone of Interest materialize
+
+on:
+  push:
+    branches:
+      - agent/ch19-the-zone-of-interest-production-case
+    paths:
+      - .github/workflows/temp-ch19-the-zone-of-interest-materialize.yml
+      - scripts/temp-materialize-the-zone-of-interest.mjs
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch19-the-zone-of-interest-production-case
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Apply deterministic canonical patch
+        run: node scripts/temp-materialize-the-zone-of-interest.mjs
+
+      - name: Remove The Zone of Interest TEMP artifacts before full verification
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git rm -f --ignore-unmatch \
+            .github/workflows/temp-ch19-the-zone-of-interest-materialize.yml \
+            .github/workflows/temp-ch19-the-zone-of-interest-source-first.yml \
+            .github/workflows/temp-ch19-the-zone-of-interest-source-first-v2.yml \
+            scripts/temp-materialize-the-zone-of-interest.mjs
+          test ! -e .github/workflows/temp-ch19-the-zone-of-interest-materialize.yml
+          test ! -e .github/workflows/temp-ch19-the-zone-of-interest-source-first.yml
+          test ! -e .github/workflows/temp-ch19-the-zone-of-interest-source-first-v2.yml
+          test ! -e scripts/temp-materialize-the-zone-of-interest.mjs
+          if find .github/workflows scripts -maxdepth 1 -type f -iname '*temp*zone*interest*' -print | grep -q .; then
+            echo "The Zone of Interest TEMP artifacts still exist after cleanup" >&2
+            find .github/workflows scripts -maxdepth 1 -type f -iname '*temp*zone*interest*' -print >&2
+            exit 1
+          fi
+          git status --short
+
+      - name: Generate Chapter 19 resolved state
+        run: node scripts/film-history-chapter-nineteen-atlas-audit.mjs --write=docs/film-history-chapter-nineteen-atlas-resolved.json > /tmp/the-zone-of-interest-ch19-resolved.json
+
+      - name: Full fail-closed verification
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run verify:v0.1 2>&1 | tee verify-v0.1-output.txt
+
+      - name: Verify post-gate canonical snapshot
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync } from "node:fs";
+          const r = JSON.parse(readFileSync("docs/film-history-chapter-nineteen-atlas-resolved.json", "utf8"));
+          const film = r.candidates.find((x) => x.title === "The Zone of Interest");
+          if (r.atlas.actualCount !== 570 || r.atlas.expectedCount !== 570) throw new Error(`Atlas is not 570/570: ${r.atlas.actualCount}/${r.atlas.expectedCount}`);
+          if (r.verificationIndex.literalVerifiedScenarioIds !== 570) throw new Error(`Production Verification count is ${r.verificationIndex.literalVerifiedScenarioIds}`);
+          if (!film || film.decision !== "USE_EXISTING" || film.scenarioId !== "scenario_the_zone_of_interest_2023" || film.matches !== 1 || film.productionVerified !== true) throw new Error(`The Zone of Interest state invalid: ${JSON.stringify(film)}`);
+          if (r.byDecision.USE_EXISTING.length !== 38 || r.byDecision.P0.length !== 5 || r.byDecision.P1.length !== 13 || r.byDecision.P2.length !== 4 || r.byDecision.EXISTING_REQUIRED.length !== 0) throw new Error(`Queue census invalid: ${JSON.stringify(Object.fromEntries(Object.entries(r.byDecision).map(([k,v]) => [k,v.length])))}`);
+          if (r.recommendedNewProductionCases.length !== 18) throw new Error(`Recommended production case count is ${r.recommendedNewProductionCases.length}`);
+          if (r.productionStrategy.nextRecommendedCase !== "The Boy and the Heron" || r.productionStrategy.nextRecommendedLane !== "regional_global") throw new Error(`Balanced scheduler drifted unexpectedly: ${JSON.stringify(r.productionStrategy)}`);
+          const firstFive = r.recommendedNewProductionCases.slice(0, 5);
+          const expectedFirstFive = ["The Boy and the Heron", "Spider-Man: Across the Spider-Verse", "The Power of the Dog", "Guillermo del Toro's Pinocchio", "The Secret Agent"];
+          if (JSON.stringify(firstFive) !== JSON.stringify(expectedFirstFive)) throw new Error(`First remaining sequence drifted: ${JSON.stringify(firstFive)}`);
+          const firstFiveLanes = r.productionStrategy.remainingSequence.slice(0, 5).map((x) => x.lane);
+          const expectedLanes = ["regional_global", "industrial_scale_technical", "auteur_festival", "independent_low_mid_budget", "regional_global"];
+          if (JSON.stringify(firstFiveLanes) !== JSON.stringify(expectedLanes)) throw new Error(`First five lane sequence drifted: ${JSON.stringify(firstFiveLanes)}`);
+          console.log(JSON.stringify({atlas: r.atlas.actualCount, verified: r.verificationIndex.literalVerifiedScenarioIds, film, queue: Object.fromEntries(Object.entries(r.byDecision).map(([k,v]) => [k,v.length])), balancedScheduler: r.productionStrategy.remainingSequence.slice(0,5)}, null, 2));
+          NODE
+
+      - name: Upload diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: the-zone-of-interest-materialization-diagnostics
+          path: |
+            verify-v0.1-output.txt
+            /tmp/the-zone-of-interest-ch19-resolved.json
+          if-no-files-found: ignore
+
+      - name: Commit verified canonical state and TEMP cleanup
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git config user.name "Paradispartiet"
+          git config user.email "paradispartiet@gmail.com"
+          git add \
+            docs/film-history-chapter-nineteen-atlas-resolved.json \
+            scripts/film-history-chapter-eighteen-completion-audit.mjs \
+            scripts/film-history-chapter-nineteen-atlas-audit.mjs \
+            scripts/production-case-rest-audit.mjs \
+            src/core/filmHistoryChapterNineteenAuditContract.test.ts \
+            src/ui/data/filmScenarios.ts \
+            src/ui/data/scenarioFilmStudyMap.ts \
+            src/ui/data/scenarioProductionVerificationRegistry.ts
+          git diff --cached --check
+          git diff --cached --stat
+          git commit -m "Materialize The Zone of Interest Chapter 19 production case"
+          git push origin HEAD:agent/ch19-the-zone-of-interest-production-case
