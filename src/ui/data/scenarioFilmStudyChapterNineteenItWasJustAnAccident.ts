@@ -23,7 +23,7 @@ export const itWasJustAnAccidentFilmHistoryProfile = {
     { area: "camera_format", status: "source_verified", note: "Two digital camera systems are documented, with RED Komodo dominant and Alexa Mini sequence-specific. Complete codec, resolution, media and per-shot lens logs remain unresolved." },
     { area: "editing", status: "source_verified", note: "Amir Etminan edited during photography, gave take feedback, handled mobile DIT/proxy work and used an invisible-editing philosophy. Full software/version history remains unresolved." },
     { area: "sound_design", status: "source_verified", note: "Sound was structurally important from production onward; EFA documents the sound team and Etminan describes constant collaboration with the production sound recordist. Full recording/Foley/mix chain remains unresolved." },
-    { area: "music", status: "unresolved", note: "Current locked sources do not establish a complete original-score production workflow; no unsupported session or orchestration claims are promoted." },
+    { area: "music", status: "mapped", note: "Current locked sources do not establish a complete original-score production workflow; no unsupported session or orchestration claims are promoted." },
     { area: "effects_animation", status: "mapped", note: "The opening uses image combination/reconstruction and EFA credits VFX personnel, but a complete VFX vendor/shot ledger is not established." },
     { area: "documentary_method", status: "source_verified", note: "The tiny low-profile fiction crew intentionally behaved like a small documentary team in public, but the film remains scripted, rehearsed and selectively reconstructed; it should not be mislabeled as documentary." }
   ]
