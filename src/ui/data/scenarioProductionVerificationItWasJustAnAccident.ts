@@ -67,7 +67,7 @@ export const itWasJustAnAccidentProductionCaseVerification = {
       publisher: "Variety Australia",
       url: "https://au.variety.com/2026/film/news/it-was-just-an-accident-co-writer-arrested-iran-32570/",
       sourceKind: "filmmaker_interview",
-      supports: ["screenplay", "performance", "overall"],
+      supports: ["screenplay", "overall"],
       note: "Panahi's direct statement supporting Mahmoudian's prison/judicial consultation and his contribution to the difficult nighttime interrogation shoot."
     }
   ]
