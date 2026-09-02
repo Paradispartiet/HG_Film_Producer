@@ -223,6 +223,7 @@ import { resurrectionProductionCaseVerification } from "./scenarioProductionVeri
 import { theSecretAgentProductionCaseVerification } from "./scenarioProductionVerificationTheSecretAgent";
 import { soundOfFallingProductionCaseVerification } from "./scenarioProductionVerificationSoundOfFalling";
 import { eoProductionCaseVerification } from "./scenarioProductionVerificationEo";
+import { barbieProductionCaseVerification } from "./scenarioProductionVerificationBarbie";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -563,6 +564,7 @@ const additionalVerificationRecords = [
   theSecretAgentProductionCaseVerification,
   soundOfFallingProductionCaseVerification,
   eoProductionCaseVerification,
+  barbieProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
