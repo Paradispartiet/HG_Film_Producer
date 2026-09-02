@@ -185,6 +185,7 @@ import { sentimentalValueFilmHistoryProfile } from "./scenarioFilmStudyChapterNi
 import { theSubstanceFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenTheSubstance";
 import { theZoneOfInterestFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenTheZoneOfInterest";
 import { itWasJustAnAccidentFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenItWasJustAnAccident";
+import { oneBattleAfterAnotherFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenOneBattleAfterAnother";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -396,6 +397,7 @@ const sourceBackedFilmHistoryProfiles = {
   [theSubstanceFilmHistoryProfile.scenarioId]: theSubstanceFilmHistoryProfile,
   [theZoneOfInterestFilmHistoryProfile.scenarioId]: theZoneOfInterestFilmHistoryProfile,
   [itWasJustAnAccidentFilmHistoryProfile.scenarioId]: itWasJustAnAccidentFilmHistoryProfile,
+  [oneBattleAfterAnotherFilmHistoryProfile.scenarioId]: oneBattleAfterAnotherFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
