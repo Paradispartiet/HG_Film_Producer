@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 577,
-    "actualCount": 577,
+    "expectedCount": 578,
+    "actualCount": 578,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1065,6 +1065,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenSinnersExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1133,7 +1139,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 577
+    "literalVerifiedScenarioIds": 578
   },
   "candidates": [
     {
@@ -1876,11 +1882,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Large-format photochemical capture and premium IMAX exhibition make 65mm-format expansion and film-origin spectacle a continuing 2020s production system.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_sinners_2025",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenSinnersExpansion.ts"
     },
     {
       "title": "One Battle After Another",
@@ -2133,10 +2139,6 @@
         "lane": "auteur_festival"
       },
       {
-        "title": "Sinners",
-        "lane": "independent_low_mid_budget"
-      },
-      {
         "title": "Resurrection",
         "lane": "regional_global"
       },
@@ -2198,6 +2200,7 @@
       "All We Imagine as Light",
       "Dahomey",
       "Anora",
+      "Sinners",
       "One Battle After Another",
       "Sentimental Value",
       "It Was Just an Accident"
@@ -2205,7 +2208,6 @@
     "P0": [
       "Spider-Man: Across the Spider-Verse",
       "Dune: Part Two",
-      "Sinners",
       "F1"
     ],
     "P1": [
@@ -2232,7 +2234,6 @@
     "KPop Demon Hunters",
     "Furiosa: A Mad Max Saga",
     "Sirāt",
-    "Sinners",
     "Resurrection",
     "F1",
     "Barbie",

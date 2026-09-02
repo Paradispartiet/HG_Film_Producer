@@ -191,6 +191,7 @@ import { thePowerOfTheDogFilmHistoryProfile } from "./scenarioFilmStudyChapterNi
 import { theBoyAndTheHeronFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenTheBoyAndTheHeron";
 import { guillermoDelTorosPinocchioFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenGuillermoDelTorosPinocchio";
 import { theBrutalistFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenTheBrutalist";
+import { sinnersFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenSinners";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -408,6 +409,7 @@ const sourceBackedFilmHistoryProfiles = {
   [theBoyAndTheHeronFilmHistoryProfile.scenarioId]: theBoyAndTheHeronFilmHistoryProfile,
   [guillermoDelTorosPinocchioFilmHistoryProfile.scenarioId]: guillermoDelTorosPinocchioFilmHistoryProfile,
   [theBrutalistFilmHistoryProfile.scenarioId]: theBrutalistFilmHistoryProfile,
+  [sinnersFilmHistoryProfile.scenarioId]: sinnersFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
