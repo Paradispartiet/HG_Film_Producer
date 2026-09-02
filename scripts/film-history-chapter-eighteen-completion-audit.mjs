@@ -59,7 +59,7 @@ invariant(resolved.candidates.every((candidate) => candidate.decision === "USE_E
 
 const literalVerificationIds = collectLiteralScenarioIds("scenarioProductionVerification");
 const verificationIds = new Set(literalVerificationIds);
-invariant(verificationIds.size === 586, `Global Production Verification registry must contain exactly 586 unique scenarioIds after the forty-seventh Chapter 19 case: ${verificationIds.size}`);
+invariant(verificationIds.size === 587, `Global Production Verification registry must contain exactly 587 unique scenarioIds after the forty-eighth Chapter 19 case: ${verificationIds.size}`);
 invariant(candidateScenarioIds.every((scenarioId) => verificationIds.has(scenarioId)), "At least one Chapter 18 candidate is missing its Production Verification record.");
 
 const literalFilmStudyIds = collectLiteralScenarioIds("scenarioFilmStudy");
@@ -99,9 +99,9 @@ invariant(completion.proof?.temporaryArtifacts === 0, "Chapter 18 completion pro
 invariant(chapter19.status === "foundation_established", "Chapter 19 source-first foundation is not established.");
 invariant(chapter19.chapter?.number === 19 && chapter19.chapter?.period === "2020–present" && chapter19.chapter?.candidateBaseline === "2020–2025", "Chapter 19 scope or candidate baseline drifted.");
 invariant(chapter19.governance?.openCurrentPeriod === true && chapter19.governance?.currentYearExcludedFromFrozenBaseline === 2026, "Chapter 19 must remain an open current-period chapter with 2026 excluded from the frozen baseline.");
-invariant(chapter19.atlas?.baselineFromClosedChapter18 === 539 && chapter19.atlas?.actualCount === 586, "Chapter 19 must preserve the closed 539-scenario Chapter 18 baseline while advancing the current Atlas to 586.");
+invariant(chapter19.atlas?.baselineFromClosedChapter18 === 539 && chapter19.atlas?.actualCount === 587, "Chapter 19 must preserve the closed 539-scenario Chapter 18 baseline while advancing the current Atlas to 587.");
 invariant(Array.isArray(chapter19.candidates) && chapter19.candidates.length === 60, "Chapter 19 foundation must contain exactly 60 baseline candidates.");
-invariant(chapter19.byDecision?.USE_EXISTING?.length === 54 && chapter19.byDecision?.P0?.length === 1 && chapter19.byDecision?.P1?.length === 3 && chapter19.byDecision?.P2?.length === 2 && chapter19.byDecision?.EXISTING_REQUIRED?.length === 0, "Chapter 19 resolved queue census drifted from 54 USE_EXISTING / 1 P0 / 3 P1 / 2 P2 / 0 EXISTING_REQUIRED.");
+invariant(chapter19.byDecision?.USE_EXISTING?.length === 55 && chapter19.byDecision?.P0?.length === 1 && chapter19.byDecision?.P1?.length === 2 && chapter19.byDecision?.P2?.length === 2 && chapter19.byDecision?.EXISTING_REQUIRED?.length === 0, "Chapter 19 resolved queue census drifted from 55 USE_EXISTING / 1 P0 / 2 P1 / 2 P2 / 0 EXISTING_REQUIRED.");
 const tenet = chapter19.candidates.find((candidate) => candidate.title === "Tenet");
 invariant(tenet?.decision === "USE_EXISTING" && tenet?.scenarioId === "scenario_tenet_2020" && tenet?.matches === 1 && tenet?.productionVerified === true, "Tenet is not closed as the first production-verified Chapter 19 USE_EXISTING case.");
 const soul = chapter19.candidates.find((candidate) => candidate.title === "Soul");
@@ -196,7 +196,9 @@ const soundOfFalling = chapter19.candidates.find((candidate) => candidate.title 
 invariant(soundOfFalling?.decision === "USE_EXISTING" && soundOfFalling?.scenarioId === "scenario_sound_of_falling_2025" && soundOfFalling?.matches === 1 && soundOfFalling?.productionVerified === true, "Sound of Falling is not closed as the forty-sixth production-verified Chapter 19 USE_EXISTING case.");
 const eo = chapter19.candidates.find((candidate) => candidate.title === "EO");
 invariant(eo?.decision === "USE_EXISTING" && eo?.scenarioId === "scenario_eo_2022" && eo?.matches === 1 && eo?.productionVerified === true, "EO is not closed as the forty-seventh production-verified Chapter 19 USE_EXISTING case.");
-invariant(chapter19.productionStrategy?.nextRecommendedCase === "Spider-Man: Across the Spider-Verse" && chapter19.productionStrategy?.nextRecommendedLane === "industrial_scale_technical", "Chapter 19 balanced scheduler must remain at Spider-Man: Across the Spider-Verse after the award-priority EO case closes outside scheduler order.");
+const barbie = chapter19.candidates.find((candidate) => candidate.title === "Barbie");
+invariant(barbie?.decision === "USE_EXISTING" && barbie?.scenarioId === "scenario_barbie_2023" && barbie?.matches === 1 && barbie?.productionVerified === true, "Barbie is not closed as the forty-eighth production-verified Chapter 19 USE_EXISTING case.");
+invariant(chapter19.productionStrategy?.nextRecommendedCase === "Spider-Man: Across the Spider-Verse" && chapter19.productionStrategy?.nextRecommendedLane === "industrial_scale_technical", "Chapter 19 balanced scheduler must remain at Spider-Man: Across the Spider-Verse after the award-priority Barbie case closes outside scheduler order.");
 
 invariant(completion.nextPhase?.status === "foundation_established" && completion.nextPhase?.chapter === 19 && completion.nextPhase?.firstDeliverable === "source-first scope and candidate matrix", "Chapter 18 handoff must point to the established Chapter 19 source-first matrix.");
 invariant(completion.nextPhase?.firstDeliverablePath === "docs/film-history-chapter-nineteen-atlas-resolved.json", "Chapter 18 handoff must point to the canonical Chapter 19 resolved matrix.");
