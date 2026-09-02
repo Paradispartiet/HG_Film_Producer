@@ -220,6 +220,7 @@ import { dunePartTwoProductionCaseVerification } from "./scenarioProductionVerif
 import { f1ProductionCaseVerification } from "./scenarioProductionVerificationF1";
 import { siratProductionCaseVerification } from "./scenarioProductionVerificationSirat";
 import { resurrectionProductionCaseVerification } from "./scenarioProductionVerificationResurrection";
+import { theSecretAgentProductionCaseVerification } from "./scenarioProductionVerificationTheSecretAgent";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -557,6 +558,7 @@ const additionalVerificationRecords = [
   f1ProductionCaseVerification,
   siratProductionCaseVerification,
   resurrectionProductionCaseVerification,
+  theSecretAgentProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

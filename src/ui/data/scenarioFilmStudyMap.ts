@@ -197,6 +197,7 @@ import { dunePartTwoFilmHistoryProfile } from "./scenarioFilmStudyChapterNinetee
 import { f1FilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenF1";
 import { siratFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenSirat";
 import { resurrectionFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenResurrection";
+import { theSecretAgentFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenTheSecretAgent";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -420,6 +421,7 @@ const sourceBackedFilmHistoryProfiles = {
   [f1FilmHistoryProfile.scenarioId]: f1FilmHistoryProfile,
   [siratFilmHistoryProfile.scenarioId]: siratFilmHistoryProfile,
   [resurrectionFilmHistoryProfile.scenarioId]: resurrectionFilmHistoryProfile,
+  [theSecretAgentFilmHistoryProfile.scenarioId]: theSecretAgentFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
