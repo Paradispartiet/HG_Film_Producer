@@ -1,0 +1,44 @@
+name: TEMP Chapter 19 The Boy and the Heron source-first
+
+on:
+  push:
+    branches:
+      - agent/ch19-the-boy-and-the-heron-production-case
+    paths:
+      - .github/workflows/temp-ch19-the-boy-and-the-heron-source-first.yml
+      - src/core/chapterNineteenTheBoyAndTheHeronExpansion.ts
+      - src/core/chapterNineteenTheBoyAndTheHeronExpansion.test.ts
+      - src/ui/data/scenarioProductionVerificationTheBoyAndTheHeron.ts
+      - src/ui/data/scenarioFilmStudyChapterNineteenTheBoyAndTheHeron.ts
+
+jobs:
+  source-first:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch19-the-boy-and-the-heron-production-case
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build core
+        run: npm run build
+
+      - name: Strict The Boy and the Heron contract
+        run: node --test dist/core/chapterNineteenTheBoyAndTheHeronExpansion.test.js
+
+      - name: Build UI
+        run: npm run build:ui
