@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 581,
-    "actualCount": 581,
+    "expectedCount": 582,
+    "actualCount": 582,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1089,6 +1089,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenSiratExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1157,7 +1163,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 581
+    "literalVerifiedScenarioIds": 582
   },
   "candidates": [
     {
@@ -2006,11 +2012,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P1",
       "chapterFunction": "Spanish-led desert location production and international co-production make extreme-location logistics, sound/music culture and regional financing visible.",
-      "decision": "P1",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_sirat_2025",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenSiratExpansion.ts"
     },
     {
       "title": "Resurrection",
@@ -2145,10 +2151,6 @@
         "lane": "industrial_scale_technical"
       },
       {
-        "title": "Sirāt",
-        "lane": "auteur_festival"
-      },
-      {
         "title": "Resurrection",
         "lane": "regional_global"
       },
@@ -2212,7 +2214,8 @@
       "F1",
       "KPop Demon Hunters",
       "Sentimental Value",
-      "It Was Just an Accident"
+      "It Was Just an Accident",
+      "Sirāt"
     ],
     "P0": [
       "Spider-Man: Across the Spider-Verse"
@@ -2222,7 +2225,6 @@
       "Barbie",
       "Furiosa: A Mad Max Saga",
       "The Secret Agent",
-      "Sirāt",
       "Resurrection"
     ],
     "P2": [
@@ -2237,7 +2239,6 @@
     "Spider-Man: Across the Spider-Verse",
     "The Secret Agent",
     "Furiosa: A Mad Max Saga",
-    "Sirāt",
     "Resurrection",
     "Barbie",
     "The Mitchells vs. the Machines"

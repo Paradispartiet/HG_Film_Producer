@@ -218,6 +218,7 @@ import { sinnersProductionCaseVerification } from "./scenarioProductionVerificat
 import { kPopDemonHuntersProductionCaseVerification } from "./scenarioProductionVerificationKPopDemonHunters";
 import { dunePartTwoProductionCaseVerification } from "./scenarioProductionVerificationDunePartTwo";
 import { f1ProductionCaseVerification } from "./scenarioProductionVerificationF1";
+import { siratProductionCaseVerification } from "./scenarioProductionVerificationSirat";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -553,6 +554,7 @@ const additionalVerificationRecords = [
   kPopDemonHuntersProductionCaseVerification,
   dunePartTwoProductionCaseVerification,
   f1ProductionCaseVerification,
+  siratProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
