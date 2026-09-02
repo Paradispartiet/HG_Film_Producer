@@ -35,7 +35,7 @@ jobs:
         run: npm run typecheck
 
       - name: Build core
-        run: npm run build:core
+        run: npm run build
 
       - name: Strict One Battle After Another contract
         run: node --test dist/core/chapterNineteenOneBattleAfterAnotherExpansion.test.js
