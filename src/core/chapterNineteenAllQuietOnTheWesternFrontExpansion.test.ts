@@ -1,0 +1,51 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { chapterNineteenAllQuietOnTheWesternFrontExpansionDefinitions, mergeChapterNineteenAllQuietOnTheWesternFrontExpansion } from "./chapterNineteenAllQuietOnTheWesternFrontExpansion.js";
+
+test("All Quiet on the Western Front source-first production case is complete and evidence-bounded", () => {
+  assert.equal(chapterNineteenAllQuietOnTheWesternFrontExpansionDefinitions.length, 1);
+  const film = chapterNineteenAllQuietOnTheWesternFrontExpansionDefinitions[0];
+  assert.equal(film.id, "scenario_all_quiet_on_the_western_front_2022");
+  assert.equal(film.title, "All Quiet on the Western Front");
+  assert.equal(film.originalTitle, "Im Westen nichts Neues");
+  assert.equal(film.year, 2022);
+  assert.equal(film.runtimeMins, 147);
+  assert.deepEqual(film.directors, ["Edward Berger"]);
+  assert.equal(film.sourceId, "arri_all_quiet_on_the_western_front_2022");
+  assert.match(film.scenarioType, /bafta_best_film/);
+  assert.match(film.scenarioType, /alexa65/);
+  assert.match(film.scenarioType, /alexa_mini_lf/);
+  assert.match(film.scenarioType, /hexatron/);
+  assert.match(film.scenarioType, /viktor_prasil/);
+  assert.ok(film.premise.includes("2023 Best Film winner"));
+  assert.ok(film.premise.includes("147 minutes 15 seconds"));
+  assert.ok(film.premise.includes("148-minute-48-second VOD version"));
+  assert.ok(film.premise.includes("ALEXA 65"));
+  assert.ok(film.premise.includes("ALEXA Mini LF"));
+  assert.ok(film.premise.includes("DNA and Prime 65 S lenses"));
+  assert.ok(film.premise.includes("HEXATRON"));
+  assert.ok(film.premise.includes("roughly two months"));
+  assert.ok(film.premise.includes("800 to 900 costumes"));
+  assert.ok(film.premise.includes("more than 40 GB"));
+  assert.ok(film.premise.includes("eight-plus hours of wild tracks"));
+  assert.ok(film.premise.includes("tank crossing a trench"));
+  assert.ok(film.premise.includes("Sven Budelmann"));
+  assert.ok(film.premise.includes("Volker Bertelmann"));
+  assert.ok(film.premise.includes("do not establish a single audited final negative cost"));
+  assert.ok(film.learningGoals.length >= 55);
+  assert.ok(film.phases.length >= 30);
+  assert.equal(film.phases.at(-1)?.id, "production_verification");
+  assert.ok(film.requiredChoicesSeed.camera.includes("alexa_65_principal"));
+  assert.ok(film.requiredChoicesSeed.camera.includes("hexatron_all_terrain_crane"));
+  assert.ok(film.requiredChoicesSeed.editing.includes("sven_budelmann_documentary_realism"));
+  assert.ok(film.requiredChoicesSeed.sound.includes("forty_gb_audio_material"));
+  assert.ok(film.requiredChoicesSeed.screenplay.includes("award_priority_not_workflow_evidence"));
+});
+
+test("All Quiet on the Western Front expansion merges idempotently by normalized title", () => {
+  const once = mergeChapterNineteenAllQuietOnTheWesternFrontExpansion([]);
+  assert.equal(once.length, 1);
+  assert.equal(once[0]?.id, "scenario_all_quiet_on_the_western_front_2022");
+  const twice = mergeChapterNineteenAllQuietOnTheWesternFrontExpansion(once);
+  assert.equal(twice.length, 1);
+});
