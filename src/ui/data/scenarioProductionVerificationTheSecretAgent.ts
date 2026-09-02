@@ -26,7 +26,7 @@ export const theSecretAgentProductionCaseVerification = {
       title: "Evgenia Alexandrova AFC shoots The Secret Agent with ARRI's ALEXA 35",
       publisher: "ARRI",
       url: "https://www.arri.com/news-en/evgenia-alexandrova-afc-the-secret-agent-with-arri-alexa-35",
-      sourceKind: "trade_press",
+      sourceKind: "trade_feature",
       supports: ["overall", "cinematography", "editing"],
       note: "Direct cinematographer interview locking ALEXA 35/Mini, Panavision B Series and 100 mm L Series, LUT, tracking/car work, ten-week/180-page pressure, two grading sessions and distributed international post."
     },
@@ -42,7 +42,7 @@ export const theSecretAgentProductionCaseVerification = {
       title: "Thales Junqueira: O Agente Secreto",
       publisher: "ABCine",
       url: "https://abcine.org.br/entrevistas/thales-junqueira-o-agente-secreto/",
-      sourceKind: "trade_press",
+      sourceKind: "trade_feature",
       supports: ["overall", "cinematography"],
       note: "Direct production-design interview supporting roughly 30 art crew, 2–3 weeks of preparation, preserved Recife locations, purpose-built gas station, IML studio build, crowd-periodization and vibrant 1977 design."
     },
@@ -50,7 +50,7 @@ export const theSecretAgentProductionCaseVerification = {
       title: "Editing: The Secret Agent",
       publisher: "Post Magazine",
       url: "https://www.postmagazine.com/Publications/Post-Magazine/2026/January-February-2026/Editing-I-The-Secret-Agent-I-.aspx",
-      sourceKind: "trade_press",
+      sourceKind: "trade_feature",
       supports: ["overall", "editing", "sound"],
       note: "Direct editor interviews supporting eleven months of editing, two-editor Cannes-deadline structure, VFX-heavy sequence division, Avid/PostLab collaboration and editorial sound-perspective practice."
     },
@@ -66,7 +66,7 @@ export const theSecretAgentProductionCaseVerification = {
       title: "Evgenia Alexandrova AFC / The Secret Agent",
       publisher: "British Cinematographer",
       url: "https://britishcinematographer.co.uk/evgenia-alexandrova-afc-the-secret-agent/",
-      sourceKind: "trade_press",
+      sourceKind: "trade_feature",
       supports: ["cinematography", "overall"],
       note: "Direct cinematographer reporting supporting ten-week location pressure, strict shot-list planning, negative fill, Dinos/SkyPanels/Asteras/HMIs and period-compatible night-location lighting choices."
     }
