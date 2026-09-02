@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 587,
-    "actualCount": 587,
+    "expectedCount": 588,
+    "actualCount": 588,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1125,6 +1125,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenAcrossTheSpiderVerseExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1193,7 +1199,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 587
+    "literalVerifiedScenarioIds": 588
   },
   "candidates": [
     {
@@ -1778,11 +1784,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Large-scale stylized animation extends mixed rendering, linework, frame modulation and multi-world visual systems while making pipeline scale and labor coordination visible.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_spider_man_across_the_spider_verse_2023",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenAcrossTheSpiderVerseExpansion.ts"
     },
     {
       "title": "Dune: Part Two",
@@ -2165,13 +2171,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "Spider-Man: Across the Spider-Verse",
+    "nextRecommendedCase": "Furiosa: A Mad Max Saga",
     "nextRecommendedLane": "industrial_scale_technical",
     "remainingSequence": [
-      {
-        "title": "Spider-Man: Across the Spider-Verse",
-        "lane": "industrial_scale_technical"
-      },
       {
         "title": "Furiosa: A Mad Max Saga",
         "lane": "industrial_scale_technical"
@@ -2220,6 +2222,7 @@
       "The Boy and the Heron",
       "Four Daughters",
       "Anatomy of a Fall",
+      "Spider-Man: Across the Spider-Verse",
       "Dune: Part Two",
       "The Brutalist",
       "Flow",
@@ -2240,9 +2243,7 @@
       "Resurrection",
       "Sound of Falling"
     ],
-    "P0": [
-      "Spider-Man: Across the Spider-Verse"
-    ],
+    "P0": [],
     "P1": [
       "The Mitchells vs. the Machines",
       "Furiosa: A Mad Max Saga"
@@ -2254,7 +2255,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "Spider-Man: Across the Spider-Verse",
     "Furiosa: A Mad Max Saga",
     "The Mitchells vs. the Machines"
   ],
