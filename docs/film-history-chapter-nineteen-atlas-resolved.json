@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 584,
-    "actualCount": 584,
+    "expectedCount": 585,
+    "actualCount": 585,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1107,6 +1107,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenSoundOfFallingExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1175,7 +1181,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 584
+    "literalVerifiedScenarioIds": 585
   },
   "candidates": [
     {
@@ -2054,11 +2060,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P2",
       "chapterFunction": "German-European co-production and multi-period ensemble staging provide a low-effects, formally ambitious festival-cinema counterpoint to technology-led 2020s histories.",
-      "decision": "P2",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_sound_of_falling_2025",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenSoundOfFallingExpansion.ts"
     }
   ],
   "candidatePrioritiesIfMissing": {
@@ -2221,7 +2227,8 @@
       "The Secret Agent",
       "It Was Just an Accident",
       "Sirāt",
-      "Resurrection"
+      "Resurrection",
+      "Sound of Falling"
     ],
     "P0": [
       "Spider-Man: Across the Spider-Verse"
@@ -2234,8 +2241,7 @@
     "P2": [
       "Days",
       "The Green Knight",
-      "EO",
-      "Sound of Falling"
+      "EO"
     ],
     "EXISTING_REQUIRED": []
   },

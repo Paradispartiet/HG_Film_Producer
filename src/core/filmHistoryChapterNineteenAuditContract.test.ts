@@ -234,6 +234,7 @@ const exactUseExisting = [
   "It Was Just an Accident",
   "Sirāt",
   "Resurrection",
+  "Sound of Falling",
 ] as const;
 
 const exactP0Queue = [
@@ -250,7 +251,6 @@ const exactP2Queue = [
   "Days",
   "The Green Knight",
   "EO",
-  "Sound of Falling",
 ] as const;
 
 const exactHistoricalObjectLabels = [
@@ -291,11 +291,11 @@ test("Chapter 19 locks the open 2020-present scope without freezing 2026", () =>
 
 test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {
   assert.match(audit, /const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;/);
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 584;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 585;/);
   assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);
-  assert.equal(resolved.atlas.expectedCount, 584);
-  assert.equal(resolved.atlas.actualCount, 584);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 584);
+  assert.equal(resolved.atlas.expectedCount, 585);
+  assert.equal(resolved.atlas.actualCount, 585);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 585);
 });
 
 test("Chapter 19 locks exactly sixty candidates across 2020-2025", () => {
@@ -320,10 +320,10 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 52);
+  assert.equal(exactUseExisting.length, 53);
   assert.equal(exactP0Queue.length, 1);
   assert.equal(exactP1Queue.length, 3);
-  assert.equal(exactP2Queue.length, 4);
+  assert.equal(exactP2Queue.length, 3);
   assert.equal(resolved.recommendedNewProductionCases.length, 4);
   assert.equal(resolved.productionStrategy.mode, "balanced_rotation");
   assert.equal(resolved.productionStrategy.priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder, true);
@@ -385,6 +385,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.ok(!resolved.recommendedNewProductionCases.includes("Sirāt"));
   assert.ok(!resolved.recommendedNewProductionCases.includes("Resurrection"));
   assert.ok(!resolved.recommendedNewProductionCases.includes("The Secret Agent"));
+  assert.ok(!resolved.recommendedNewProductionCases.includes("Sound of Falling"));
   assert.equal(new Set(resolved.recommendedNewProductionCases).size, resolved.recommendedNewProductionCases.length);
   assert.ok(resolved.productionStrategy.safeguards.some((item) => item.includes("P1 case may precede a P0 case")));
   for (const title of resolved.recommendedNewProductionCases) {
@@ -707,6 +708,13 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(theSecretAgent.scenarioId, "scenario_the_secret_agent_2025");
   assert.equal(theSecretAgent.matches, 1);
   assert.equal(theSecretAgent.productionVerified, true);
+
+  const soundOfFalling = resolved.candidates.find((candidate) => candidate.title === "Sound of Falling");
+  assert.ok(soundOfFalling);
+  assert.equal(soundOfFalling.decision, "USE_EXISTING");
+  assert.equal(soundOfFalling.scenarioId, "scenario_sound_of_falling_2025");
+  assert.equal(soundOfFalling.matches, 1);
+  assert.equal(soundOfFalling.productionVerified, true);
 
   for (const candidate of resolved.candidates) {
     if (candidate.decision === "USE_EXISTING") {
