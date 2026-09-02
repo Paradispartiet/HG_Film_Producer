@@ -232,6 +232,7 @@ const exactUseExisting = [
   "Sentimental Value",
   "It Was Just an Accident",
   "Sirāt",
+  "Resurrection",
 ] as const;
 
 const exactP0Queue = [
@@ -243,7 +244,6 @@ const exactP1Queue = [
   "Barbie",
   "Furiosa: A Mad Max Saga",
   "The Secret Agent",
-  "Resurrection",
 ] as const;
 
 const exactP2Queue = [
@@ -291,11 +291,11 @@ test("Chapter 19 locks the open 2020-present scope without freezing 2026", () =>
 
 test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {
   assert.match(audit, /const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;/);
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 582;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 583;/);
   assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);
-  assert.equal(resolved.atlas.expectedCount, 582);
-  assert.equal(resolved.atlas.actualCount, 582);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 582);
+  assert.equal(resolved.atlas.expectedCount, 583);
+  assert.equal(resolved.atlas.actualCount, 583);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 583);
 });
 
 test("Chapter 19 locks exactly sixty candidates across 2020-2025", () => {
@@ -320,11 +320,11 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 50);
+  assert.equal(exactUseExisting.length, 51);
   assert.equal(exactP0Queue.length, 1);
-  assert.equal(exactP1Queue.length, 5);
+  assert.equal(exactP1Queue.length, 4);
   assert.equal(exactP2Queue.length, 4);
-  assert.equal(resolved.recommendedNewProductionCases.length, 6);
+  assert.equal(resolved.recommendedNewProductionCases.length, 5);
   assert.equal(resolved.productionStrategy.mode, "balanced_rotation");
   assert.equal(resolved.productionStrategy.priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder, true);
   assert.deepEqual(resolved.productionStrategy.laneOrder, [
@@ -340,12 +340,12 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
     "Spider-Man: Across the Spider-Verse",
     "The Secret Agent",
     "Furiosa: A Mad Max Saga",
-    "Resurrection",
     "Barbie",
+    "The Mitchells vs. the Machines",
   ]);
   assert.deepEqual(
     resolved.productionStrategy.remainingSequence.slice(0, 5).map((item) => item.lane),
-    ["industrial_scale_technical", "regional_global", "industrial_scale_technical", "regional_global", "industrial_scale_technical"],
+    ["industrial_scale_technical", "regional_global", "industrial_scale_technical", "industrial_scale_technical", "industrial_scale_technical"],
   );
   assert.ok(!resolved.recommendedNewProductionCases.includes("Nomadland"));
   assert.ok(!resolved.recommendedNewProductionCases.includes("Drive My Car"));
@@ -384,6 +384,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.ok(!resolved.recommendedNewProductionCases.includes("Dune: Part Two"));
   assert.ok(!resolved.recommendedNewProductionCases.includes("F1"));
   assert.ok(!resolved.recommendedNewProductionCases.includes("Sirāt"));
+  assert.ok(!resolved.recommendedNewProductionCases.includes("Resurrection"));
   assert.equal(new Set(resolved.recommendedNewProductionCases).size, resolved.recommendedNewProductionCases.length);
   assert.ok(resolved.productionStrategy.safeguards.some((item) => item.includes("P1 case may precede a P0 case")));
   for (const title of resolved.recommendedNewProductionCases) {
@@ -692,6 +693,13 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(sirat.scenarioId, "scenario_sirat_2025");
   assert.equal(sirat.matches, 1);
   assert.equal(sirat.productionVerified, true);
+
+  const resurrection = resolved.candidates.find((candidate) => candidate.title === "Resurrection");
+  assert.ok(resurrection);
+  assert.equal(resurrection.decision, "USE_EXISTING");
+  assert.equal(resurrection.scenarioId, "scenario_resurrection_2025");
+  assert.equal(resurrection.matches, 1);
+  assert.equal(resurrection.productionVerified, true);
 
   for (const candidate of resolved.candidates) {
     if (candidate.decision === "USE_EXISTING") {
