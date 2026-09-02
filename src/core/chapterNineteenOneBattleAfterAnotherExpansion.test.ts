@@ -28,7 +28,7 @@ test("One Battle After Another source-first production case is complete and evid
   assert.ok(film.premise.includes("Texas Dip"));
   assert.ok(film.premise.includes("daily raw-footage screenings"));
   assert.ok(film.premise.includes("London Contemporary Orchestra"));
-  assert.ok(film.premise.includes("does not establish a single audited final negative cost"));
+  assert.ok(film.premise.includes("do not establish a single audited final negative cost"));
   assert.ok(film.learningGoals.length >= 55);
   assert.ok(film.phases.length >= 30);
   assert.equal(film.phases.at(-1)?.id, "production_verification");
