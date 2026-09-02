@@ -226,6 +226,7 @@ import { eoProductionCaseVerification } from "./scenarioProductionVerificationEo
 import { barbieProductionCaseVerification } from "./scenarioProductionVerificationBarbie";
 import { acrossTheSpiderVerseProductionCaseVerification } from "./scenarioProductionVerificationAcrossTheSpiderVerse";
 import { furiosaProductionCaseVerification } from "./scenarioProductionVerificationFuriosa";
+import { mitchellsVsTheMachinesProductionCaseVerification } from "./scenarioProductionVerificationMitchellsVsTheMachines";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -569,6 +570,7 @@ const additionalVerificationRecords = [
   barbieProductionCaseVerification,
   acrossTheSpiderVerseProductionCaseVerification,
   furiosaProductionCaseVerification,
+  mitchellsVsTheMachinesProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
