@@ -1,0 +1,37 @@
+name: TEMP Chapter 19 Across the Spider-Verse source-first
+
+on:
+  push:
+    branches:
+      - agent/ch19-across-the-spider-verse-production-case
+    paths:
+      - .github/workflows/temp-ch19-across-the-spider-verse-source-first.yml
+      - src/core/chapterNineteenAcrossTheSpiderVerseExpansion.ts
+      - src/core/chapterNineteenAcrossTheSpiderVerseExpansion.test.ts
+      - src/ui/data/scenarioProductionVerificationAcrossTheSpiderVerse.ts
+      - src/ui/data/scenarioFilmStudyChapterNineteenAcrossTheSpiderVerse.ts
+
+jobs:
+  source-first:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch19-across-the-spider-verse-production-case
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Build core
+        run: npm run build
+      - name: Strict Across the Spider-Verse contract
+        run: node --test dist/core/chapterNineteenAcrossTheSpiderVerseExpansion.test.js
+      - name: Build UI
+        run: npm run build:ui
