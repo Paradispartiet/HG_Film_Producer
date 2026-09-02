@@ -1,0 +1,44 @@
+name: TEMP Chapter 19 The Brutalist source-first
+
+on:
+  push:
+    branches:
+      - agent/ch19-the-brutalist-production-case
+    paths:
+      - .github/workflows/temp-ch19-the-brutalist-source-first.yml
+      - src/core/chapterNineteenTheBrutalistExpansion.ts
+      - src/core/chapterNineteenTheBrutalistExpansion.test.ts
+      - src/ui/data/scenarioProductionVerificationTheBrutalist.ts
+      - src/ui/data/scenarioFilmStudyChapterNineteenTheBrutalist.ts
+
+jobs:
+  source-first:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch19-the-brutalist-production-case
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build core
+        run: npm run build
+
+      - name: Strict The Brutalist contract
+        run: node --test dist/core/chapterNineteenTheBrutalistExpansion.test.js
+
+      - name: Build UI
+        run: npm run build:ui
