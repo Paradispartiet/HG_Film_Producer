@@ -211,6 +211,7 @@ import { itWasJustAnAccidentProductionCaseVerification } from "./scenarioProduct
 import { oneBattleAfterAnotherProductionCaseVerification } from "./scenarioProductionVerificationOneBattleAfterAnother";
 import { allQuietOnTheWesternFrontProductionCaseVerification } from "./scenarioProductionVerificationAllQuietOnTheWesternFront";
 import { thePowerOfTheDogProductionCaseVerification } from "./scenarioProductionVerificationThePowerOfTheDog";
+import { theBoyAndTheHeronProductionCaseVerification } from "./scenarioProductionVerificationTheBoyAndTheHeron";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -539,6 +540,7 @@ const additionalVerificationRecords = [
   oneBattleAfterAnotherProductionCaseVerification,
   allQuietOnTheWesternFrontProductionCaseVerification,
   thePowerOfTheDogProductionCaseVerification,
+  theBoyAndTheHeronProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

@@ -188,6 +188,7 @@ import { itWasJustAnAccidentFilmHistoryProfile } from "./scenarioFilmStudyChapte
 import { oneBattleAfterAnotherFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenOneBattleAfterAnother";
 import { allQuietOnTheWesternFrontFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAllQuietOnTheWesternFront";
 import { thePowerOfTheDogFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenThePowerOfTheDog";
+import { theBoyAndTheHeronFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenTheBoyAndTheHeron";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -402,6 +403,7 @@ const sourceBackedFilmHistoryProfiles = {
   [oneBattleAfterAnotherFilmHistoryProfile.scenarioId]: oneBattleAfterAnotherFilmHistoryProfile,
   [allQuietOnTheWesternFrontFilmHistoryProfile.scenarioId]: allQuietOnTheWesternFrontFilmHistoryProfile,
   [thePowerOfTheDogFilmHistoryProfile.scenarioId]: thePowerOfTheDogFilmHistoryProfile,
+  [theBoyAndTheHeronFilmHistoryProfile.scenarioId]: theBoyAndTheHeronFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
