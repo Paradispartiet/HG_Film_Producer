@@ -193,6 +193,7 @@ import { guillermoDelTorosPinocchioFilmHistoryProfile } from "./scenarioFilmStud
 import { theBrutalistFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenTheBrutalist";
 import { sinnersFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenSinners";
 import { kPopDemonHuntersFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenKPopDemonHunters";
+import { dunePartTwoFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenDunePartTwo";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -412,6 +413,7 @@ const sourceBackedFilmHistoryProfiles = {
   [theBrutalistFilmHistoryProfile.scenarioId]: theBrutalistFilmHistoryProfile,
   [sinnersFilmHistoryProfile.scenarioId]: sinnersFilmHistoryProfile,
   [kPopDemonHuntersFilmHistoryProfile.scenarioId]: kPopDemonHuntersFilmHistoryProfile,
+  [dunePartTwoFilmHistoryProfile.scenarioId]: dunePartTwoFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",

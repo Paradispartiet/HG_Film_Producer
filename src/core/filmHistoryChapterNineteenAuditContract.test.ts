@@ -216,6 +216,7 @@ const exactUseExisting = [
   "The Boy and the Heron",
   "Four Daughters",
   "Anatomy of a Fall",
+  "Dune: Part Two",
   "The Brutalist",
   "Flow",
   "The Substance",
@@ -233,7 +234,6 @@ const exactUseExisting = [
 
 const exactP0Queue = [
   "Spider-Man: Across the Spider-Verse",
-  "Dune: Part Two",
   "F1",
 ] as const;
 
@@ -291,11 +291,11 @@ test("Chapter 19 locks the open 2020-present scope without freezing 2026", () =>
 
 test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {
   assert.match(audit, /const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;/);
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 579;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 580;/);
   assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);
-  assert.equal(resolved.atlas.expectedCount, 579);
-  assert.equal(resolved.atlas.actualCount, 579);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 579);
+  assert.equal(resolved.atlas.expectedCount, 580);
+  assert.equal(resolved.atlas.actualCount, 580);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 580);
 });
 
 test("Chapter 19 locks exactly sixty candidates across 2020-2025", () => {
@@ -320,11 +320,11 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 47);
-  assert.equal(exactP0Queue.length, 3);
+  assert.equal(exactUseExisting.length, 48);
+  assert.equal(exactP0Queue.length, 2);
   assert.equal(exactP1Queue.length, 6);
   assert.equal(exactP2Queue.length, 4);
-  assert.equal(resolved.recommendedNewProductionCases.length, 9);
+  assert.equal(resolved.recommendedNewProductionCases.length, 8);
   assert.equal(resolved.productionStrategy.mode, "balanced_rotation");
   assert.equal(resolved.productionStrategy.priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder, true);
   assert.deepEqual(resolved.productionStrategy.laneOrder, [
@@ -339,13 +339,13 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.recommendedNewProductionCases.slice(0, 5), [
     "Spider-Man: Across the Spider-Verse",
     "The Secret Agent",
-    "Dune: Part Two",
     "Furiosa: A Mad Max Saga",
     "Sirāt",
+    "Resurrection",
   ]);
   assert.deepEqual(
     resolved.productionStrategy.remainingSequence.slice(0, 5).map((item) => item.lane),
-    ["industrial_scale_technical", "regional_global", "industrial_scale_technical", "industrial_scale_technical", "auteur_festival"],
+    ["industrial_scale_technical", "regional_global", "industrial_scale_technical", "auteur_festival", "regional_global"],
   );
   assert.ok(!resolved.recommendedNewProductionCases.includes("Nomadland"));
   assert.ok(!resolved.recommendedNewProductionCases.includes("Drive My Car"));
@@ -381,6 +381,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.ok(!resolved.recommendedNewProductionCases.includes("The Brutalist"));
   assert.ok(!resolved.recommendedNewProductionCases.includes("Sinners"));
   assert.ok(!resolved.recommendedNewProductionCases.includes("KPop Demon Hunters"));
+  assert.ok(!resolved.recommendedNewProductionCases.includes("Dune: Part Two"));
   assert.equal(new Set(resolved.recommendedNewProductionCases).size, resolved.recommendedNewProductionCases.length);
   assert.ok(resolved.productionStrategy.safeguards.some((item) => item.includes("P1 case may precede a P0 case")));
   for (const title of resolved.recommendedNewProductionCases) {
@@ -507,6 +508,13 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(kPopDemonHunters.scenarioId, "scenario_kpop_demon_hunters_2025");
   assert.equal(kPopDemonHunters.matches, 1);
   assert.equal(kPopDemonHunters.productionVerified, true);
+
+  const dunePartTwo = resolved.candidates.find((candidate) => candidate.title === "Dune: Part Two");
+  assert.ok(dunePartTwo);
+  assert.equal(dunePartTwo.decision, "USE_EXISTING");
+  assert.equal(dunePartTwo.scenarioId, "scenario_dune_part_two_2024");
+  assert.equal(dunePartTwo.matches, 1);
+  assert.equal(dunePartTwo.productionVerified, true);
 
   const coda = resolved.candidates.find((candidate) => candidate.title === "CODA");
   assert.ok(coda);

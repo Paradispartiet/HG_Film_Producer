@@ -216,6 +216,7 @@ import { guillermoDelTorosPinocchioProductionCaseVerification } from "./scenario
 import { theBrutalistProductionCaseVerification } from "./scenarioProductionVerificationTheBrutalist";
 import { sinnersProductionCaseVerification } from "./scenarioProductionVerificationSinners";
 import { kPopDemonHuntersProductionCaseVerification } from "./scenarioProductionVerificationKPopDemonHunters";
+import { dunePartTwoProductionCaseVerification } from "./scenarioProductionVerificationDunePartTwo";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -549,6 +550,7 @@ const additionalVerificationRecords = [
   theBrutalistProductionCaseVerification,
   sinnersProductionCaseVerification,
   kPopDemonHuntersProductionCaseVerification,
+  dunePartTwoProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,

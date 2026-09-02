@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 579,
-    "actualCount": 579,
+    "expectedCount": 580,
+    "actualCount": 580,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1077,6 +1077,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenDunePartTwoExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1145,7 +1151,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 579
+    "literalVerifiedScenarioIds": 580
   },
   "candidates": [
     {
@@ -1744,11 +1750,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Large-format digital capture, location/stage production, extensive VFX and premium-format exhibition show mature blockbuster coordination after the pandemic disruption.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_dune_part_two_2024",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenDunePartTwoExpansion.ts"
     },
     {
       "title": "The Brutalist",
@@ -2129,10 +2135,6 @@
         "lane": "regional_global"
       },
       {
-        "title": "Dune: Part Two",
-        "lane": "industrial_scale_technical"
-      },
-      {
         "title": "Furiosa: A Mad Max Saga",
         "lane": "industrial_scale_technical"
       },
@@ -2194,6 +2196,7 @@
       "The Boy and the Heron",
       "Four Daughters",
       "Anatomy of a Fall",
+      "Dune: Part Two",
       "The Brutalist",
       "Flow",
       "The Substance",
@@ -2210,7 +2213,6 @@
     ],
     "P0": [
       "Spider-Man: Across the Spider-Verse",
-      "Dune: Part Two",
       "F1"
     ],
     "P1": [
@@ -2232,7 +2234,6 @@
   "recommendedNewProductionCases": [
     "Spider-Man: Across the Spider-Verse",
     "The Secret Agent",
-    "Dune: Part Two",
     "Furiosa: A Mad Max Saga",
     "Sirāt",
     "Resurrection",
