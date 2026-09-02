@@ -96,7 +96,7 @@ replaceOnce("src/core/filmHistoryChapterNineteenAuditContract.test.ts", "assert.
 replaceOnce(
   "src/core/filmHistoryChapterNineteenAuditContract.test.ts",
   '  assert.equal(resolved.productionStrategy.nextRecommendedCase, "The Mitchells vs. the Machines");\n  assert.equal(resolved.productionStrategy.nextRecommendedLane, "industrial_scale_technical");\n  assert.deepEqual(resolved.recommendedNewProductionCases.slice(0, 1), [\n    "The Mitchells vs. the Machines",\n  ]);\n  assert.deepEqual(\n    resolved.productionStrategy.remainingSequence.slice(0, 1).map((item) => item.lane),\n    ["industrial_scale_technical"],\n  );',
-  '  assert.equal(resolved.productionStrategy.nextRecommendedCase, null);\n  assert.equal(resolved.productionStrategy.nextRecommendedLane, null);\n  assert.deepEqual(resolved.recommendedNewProductionCases, []);\n  assert.deepEqual(resolved.productionStrategy.remainingSequence, []);',
+  '  assert.equal(resolved.productionStrategy.nextRecommendedCase, null);\n  assert.equal(resolved.productionStrategy.nextRecommendedLane, null);\n  assert.equal(resolved.recommendedNewProductionCases.length, 0);\n  assert.deepEqual(resolved.productionStrategy.remainingSequence, []);',
 );
 replaceOnce(
   "src/core/filmHistoryChapterNineteenAuditContract.test.ts",
