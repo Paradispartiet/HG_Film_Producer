@@ -203,6 +203,7 @@ import { eoFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenEo";
 import { barbieFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenBarbie";
 import { acrossTheSpiderVerseFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAcrossTheSpiderVerse";
 import { furiosaFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenFuriosa";
+import { mitchellsVsTheMachinesFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenMitchellsVsTheMachines";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -432,6 +433,7 @@ const sourceBackedFilmHistoryProfiles = {
   [barbieFilmHistoryProfile.scenarioId]: barbieFilmHistoryProfile,
   [acrossTheSpiderVerseFilmHistoryProfile.scenarioId]: acrossTheSpiderVerseFilmHistoryProfile,
   [furiosaFilmHistoryProfile.scenarioId]: furiosaFilmHistoryProfile,
+  [mitchellsVsTheMachinesFilmHistoryProfile.scenarioId]: mitchellsVsTheMachinesFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
