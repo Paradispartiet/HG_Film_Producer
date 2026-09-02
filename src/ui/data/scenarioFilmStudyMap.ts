@@ -196,6 +196,7 @@ import { kPopDemonHuntersFilmHistoryProfile } from "./scenarioFilmStudyChapterNi
 import { dunePartTwoFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenDunePartTwo";
 import { f1FilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenF1";
 import { siratFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenSirat";
+import { resurrectionFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenResurrection";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -418,6 +419,7 @@ const sourceBackedFilmHistoryProfiles = {
   [dunePartTwoFilmHistoryProfile.scenarioId]: dunePartTwoFilmHistoryProfile,
   [f1FilmHistoryProfile.scenarioId]: f1FilmHistoryProfile,
   [siratFilmHistoryProfile.scenarioId]: siratFilmHistoryProfile,
+  [resurrectionFilmHistoryProfile.scenarioId]: resurrectionFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",

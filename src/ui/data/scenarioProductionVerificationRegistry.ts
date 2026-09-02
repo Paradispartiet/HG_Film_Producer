@@ -219,6 +219,7 @@ import { kPopDemonHuntersProductionCaseVerification } from "./scenarioProduction
 import { dunePartTwoProductionCaseVerification } from "./scenarioProductionVerificationDunePartTwo";
 import { f1ProductionCaseVerification } from "./scenarioProductionVerificationF1";
 import { siratProductionCaseVerification } from "./scenarioProductionVerificationSirat";
+import { resurrectionProductionCaseVerification } from "./scenarioProductionVerificationResurrection";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -555,6 +556,7 @@ const additionalVerificationRecords = [
   dunePartTwoProductionCaseVerification,
   f1ProductionCaseVerification,
   siratProductionCaseVerification,
+  resurrectionProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
