@@ -20,7 +20,7 @@ test("EO source-first production case is complete and evidence-bounded", () => {
   assert.ok(film.premise.includes("early 2020"));
   assert.ok(film.premise.includes("early March 2022"));
   assert.ok(film.premise.includes("objective master"));
-  assert.ok(film.premise.includes("donkey's POV"));
+  assert.ok(film.premise.includes("EO's POV"));
   assert.ok(film.premise.includes("five different locations and two stages"));
   assert.ok(film.premise.includes("fence-jump"));
   assert.ok(film.premise.includes("inside the donkey's mind"));
