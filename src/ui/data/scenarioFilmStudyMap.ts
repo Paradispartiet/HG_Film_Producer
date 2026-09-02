@@ -202,6 +202,7 @@ import { soundOfFallingFilmHistoryProfile } from "./scenarioFilmStudyChapterNine
 import { eoFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenEo";
 import { barbieFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenBarbie";
 import { acrossTheSpiderVerseFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAcrossTheSpiderVerse";
+import { furiosaFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenFuriosa";
 
 export type FilmHistoryResearchStatus = "source_backed" | "research_pending";
 
@@ -430,6 +431,7 @@ const sourceBackedFilmHistoryProfiles = {
   [eoFilmHistoryProfile.scenarioId]: eoFilmHistoryProfile,
   [barbieFilmHistoryProfile.scenarioId]: barbieFilmHistoryProfile,
   [acrossTheSpiderVerseFilmHistoryProfile.scenarioId]: acrossTheSpiderVerseFilmHistoryProfile,
+  [furiosaFilmHistoryProfile.scenarioId]: furiosaFilmHistoryProfile,
   scenario_the_machinist_2004: {
     scenarioId: "scenario_the_machinist_2004",
     period: "Early-2000s transnational psychological thriller",
