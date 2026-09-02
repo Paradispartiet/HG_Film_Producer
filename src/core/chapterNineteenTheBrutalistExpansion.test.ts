@@ -20,7 +20,7 @@ test("The Brutalist source-first production case is complete and evidence-bounde
   assert.ok(film.premise.includes("34 shooting days"));
   assert.ok(film.premise.includes("8-perf horizontal 35mm VistaVision"));
   assert.ok(film.premise.includes("Leica-S lenses"));
-  assert.ok(film.premise.includes("KODAK VISION3 250D 5207/7207 and 500T 5219/7219"));
+  assert.ok(film.premise.includes("Kodak VISION3 250D 5207/7207 and 500T 5219/7219"));
   assert.ok(film.premise.includes("one to one-and-a-half stops"));
   assert.ok(film.premise.includes("4K/6K source-level pipeline difference"));
   assert.ok(film.premise.includes("more than 700 TB"));
