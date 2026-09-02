@@ -1,0 +1,44 @@
+name: TEMP Chapter 19 Sirat source-first
+
+on:
+  push:
+    branches:
+      - agent/ch19-sirat-production-case
+    paths:
+      - .github/workflows/temp-ch19-sirat-source-first.yml
+      - src/core/chapterNineteenSiratExpansion.ts
+      - src/core/chapterNineteenSiratExpansion.test.ts
+      - src/ui/data/scenarioProductionVerificationSirat.ts
+      - src/ui/data/scenarioFilmStudyChapterNineteenSirat.ts
+
+jobs:
+  source-first:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch19-sirat-production-case
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build core
+        run: npm run build
+
+      - name: Strict Sirat contract
+        run: node --test dist/core/chapterNineteenSiratExpansion.test.js
+
+      - name: Build UI
+        run: npm run build:ui
