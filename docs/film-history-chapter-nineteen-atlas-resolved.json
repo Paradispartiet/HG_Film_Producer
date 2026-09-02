@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 580,
-    "actualCount": 580,
+    "expectedCount": 581,
+    "actualCount": 581,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1083,6 +1083,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenF1Expansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1151,7 +1157,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 580
+    "literalVerifiedScenarioIds": 581
   },
   "candidates": [
     {
@@ -1924,11 +1930,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Embedded motorsport location production and custom compact imaging systems make camera engineering, safety, live-event coordination and platform/studio partnership intersect.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_f1_2025",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenF1Expansion.ts"
     },
     {
       "title": "KPop Demon Hunters",
@@ -2147,10 +2153,6 @@
         "lane": "regional_global"
       },
       {
-        "title": "F1",
-        "lane": "industrial_scale_technical"
-      },
-      {
         "title": "Barbie",
         "lane": "industrial_scale_technical"
       },
@@ -2207,13 +2209,13 @@
       "Anora",
       "Sinners",
       "One Battle After Another",
+      "F1",
       "KPop Demon Hunters",
       "Sentimental Value",
       "It Was Just an Accident"
     ],
     "P0": [
-      "Spider-Man: Across the Spider-Verse",
-      "F1"
+      "Spider-Man: Across the Spider-Verse"
     ],
     "P1": [
       "The Mitchells vs. the Machines",
@@ -2237,7 +2239,6 @@
     "Furiosa: A Mad Max Saga",
     "Sirāt",
     "Resurrection",
-    "F1",
     "Barbie",
     "The Mitchells vs. the Machines"
   ],
