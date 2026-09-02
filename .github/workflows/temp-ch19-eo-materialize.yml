@@ -7,6 +7,7 @@ on:
     paths:
       - .github/workflows/temp-ch19-eo-materialize.yml
       - scripts/temp-materialize-eo.mjs
+      - scripts/temp-fix-eo-use-existing-order.mjs
 
 permissions:
   contents: write
@@ -34,6 +35,9 @@ jobs:
       - name: Apply deterministic canonical patch
         run: node scripts/temp-materialize-eo.mjs
 
+      - name: Correct EO exact USE_EXISTING ordering
+        run: node scripts/temp-fix-eo-use-existing-order.mjs
+
       - name: Remove EO TEMP artifacts before full verification
         shell: bash
         run: |
@@ -41,10 +45,12 @@ jobs:
           git rm -f --ignore-unmatch \
             .github/workflows/temp-ch19-eo-materialize.yml \
             .github/workflows/temp-ch19-eo-source-first.yml \
-            scripts/temp-materialize-eo.mjs
+            scripts/temp-materialize-eo.mjs \
+            scripts/temp-fix-eo-use-existing-order.mjs
           test ! -e .github/workflows/temp-ch19-eo-materialize.yml
           test ! -e .github/workflows/temp-ch19-eo-source-first.yml
           test ! -e scripts/temp-materialize-eo.mjs
+          test ! -e scripts/temp-fix-eo-use-existing-order.mjs
           if find .github/workflows scripts -maxdepth 1 -type f -iname '*temp*eo*' -print | grep -q .; then
             echo "EO TEMP artifacts still exist after cleanup" >&2
             find .github/workflows scripts -maxdepth 1 -type f -iname '*temp*eo*' -print >&2
