@@ -1,0 +1,44 @@
+name: TEMP Chapter 19 All Quiet on the Western Front source-first
+
+on:
+  push:
+    branches:
+      - agent/ch19-all-quiet-on-the-western-front-production-case
+    paths:
+      - .github/workflows/temp-ch19-all-quiet-on-the-western-front-source-first.yml
+      - src/core/chapterNineteenAllQuietOnTheWesternFrontExpansion.ts
+      - src/core/chapterNineteenAllQuietOnTheWesternFrontExpansion.test.ts
+      - src/ui/data/scenarioProductionVerificationAllQuietOnTheWesternFront.ts
+      - src/ui/data/scenarioFilmStudyChapterNineteenAllQuietOnTheWesternFront.ts
+
+jobs:
+  source-first:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch19-all-quiet-on-the-western-front-production-case
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build core
+        run: npm run build
+
+      - name: Strict All Quiet contract
+        run: node --test dist/core/chapterNineteenAllQuietOnTheWesternFrontExpansion.test.js
+
+      - name: Build UI
+        run: npm run build:ui
