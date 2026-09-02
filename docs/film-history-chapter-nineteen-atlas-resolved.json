@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 574,
-    "actualCount": 574,
+    "expectedCount": 575,
+    "actualCount": 575,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1047,6 +1047,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenTheBoyAndTheHeronExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1115,7 +1121,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 574
+    "literalVerifiedScenarioIds": 575
   },
   "candidates": [
     {
@@ -1652,11 +1658,11 @@
       "role": "anchor_film",
       "decisionIfMissing": "P0",
       "chapterFunction": "Studio Ghibli's hand-drawn feature production keeps labor-intensive 2D animation central in a decade of real-time and generative-image discourse.",
-      "decision": "P0",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_boy_and_the_heron_2023",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenTheBoyAndTheHeronExpansion.ts"
     },
     {
       "title": "Four Daughters",
@@ -2087,13 +2093,9 @@
       "Animation is classified by its production system and may appear in independent, regional or industrial lanes rather than being treated as one homogeneous category.",
       "A P1 case may precede a P0 case when the balanced sequence corrects representational or production-system concentration without weakening source-first verification."
     ],
-    "nextRecommendedCase": "The Boy and the Heron",
-    "nextRecommendedLane": "regional_global",
+    "nextRecommendedCase": "Spider-Man: Across the Spider-Verse",
+    "nextRecommendedLane": "industrial_scale_technical",
     "remainingSequence": [
-      {
-        "title": "The Boy and the Heron",
-        "lane": "regional_global"
-      },
       {
         "title": "Spider-Man: Across the Spider-Verse",
         "lane": "industrial_scale_technical"
@@ -2180,6 +2182,7 @@
       "Poor Things",
       "The Zone of Interest",
       "Godzilla Minus One",
+      "The Boy and the Heron",
       "Four Daughters",
       "Anatomy of a Fall",
       "Flow",
@@ -2194,7 +2197,6 @@
       "It Was Just an Accident"
     ],
     "P0": [
-      "The Boy and the Heron",
       "Spider-Man: Across the Spider-Verse",
       "Dune: Part Two",
       "Sinners",
@@ -2220,7 +2222,6 @@
     "EXISTING_REQUIRED": []
   },
   "recommendedNewProductionCases": [
-    "The Boy and the Heron",
     "Spider-Man: Across the Spider-Verse",
     "Guillermo del Toro's Pinocchio",
     "The Secret Agent",
