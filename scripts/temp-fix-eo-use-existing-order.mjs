@@ -8,8 +8,8 @@ const correctedTail = '  "Resurrection",\n  "Sound of Falling",\n] as const;';
 if (!source.includes(misplaced)) throw new Error("EO misplaced tail anchor not found");
 source = source.replace(misplaced, correctedTail);
 
-const insertionAnchor = '  "Drive My Car",\n  "Everything Everywhere All at Once",';
-const ordered = '  "Drive My Car",\n  "EO",\n  "Everything Everywhere All at Once",';
+const insertionAnchor = '  "Guillermo del Toro\'s Pinocchio",\n  "Oppenheimer",';
+const ordered = '  "Guillermo del Toro\'s Pinocchio",\n  "EO",\n  "Oppenheimer",';
 if (!source.includes(insertionAnchor)) throw new Error("EO ordered insertion anchor not found");
 source = source.replace(insertionAnchor, ordered);
 
