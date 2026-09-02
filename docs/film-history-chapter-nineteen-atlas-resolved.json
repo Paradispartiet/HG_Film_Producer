@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 585,
-    "actualCount": 585,
+    "expectedCount": 586,
+    "actualCount": 586,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1113,6 +1113,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenEoExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "modernCanonExpansion.ts",
         "definitions": 27,
         "appended": 27,
@@ -1181,7 +1187,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 585
+    "literalVerifiedScenarioIds": 586
   },
   "candidates": [
     {
@@ -1616,11 +1622,11 @@
       "role": "major_comparison",
       "decisionIfMissing": "P2",
       "chapterFunction": "Polish-European production centered on an animal protagonist makes multi-location logistics, animal-welfare boundaries and subjective image/sound design a distinct production comparison.",
-      "decision": "P2",
-      "scenarioId": null,
-      "matches": 0,
-      "productionVerified": false,
-      "origin": null
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_eo_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenEoExpansion.ts"
     },
     {
       "title": "Oppenheimer",
@@ -2202,6 +2208,7 @@
       "All Quiet on the Western Front",
       "Saint Omer",
       "Guillermo del Toro's Pinocchio",
+      "EO",
       "Oppenheimer",
       "Killers of the Flower Moon",
       "Poor Things",
@@ -2240,8 +2247,7 @@
     ],
     "P2": [
       "Days",
-      "The Green Knight",
-      "EO"
+      "The Green Knight"
     ],
     "EXISTING_REQUIRED": []
   },
