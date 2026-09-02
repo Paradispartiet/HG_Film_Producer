@@ -59,7 +59,7 @@ invariant(resolved.candidates.every((candidate) => candidate.decision === "USE_E
 
 const literalVerificationIds = collectLiteralScenarioIds("scenarioProductionVerification");
 const verificationIds = new Set(literalVerificationIds);
-invariant(verificationIds.size === 573, `Global Production Verification registry must contain exactly 573 unique scenarioIds after the thirty-fourth Chapter 19 case: ${verificationIds.size}`);
+invariant(verificationIds.size === 574, `Global Production Verification registry must contain exactly 574 unique scenarioIds after the thirty-fifth Chapter 19 case: ${verificationIds.size}`);
 invariant(candidateScenarioIds.every((scenarioId) => verificationIds.has(scenarioId)), "At least one Chapter 18 candidate is missing its Production Verification record.");
 
 const literalFilmStudyIds = collectLiteralScenarioIds("scenarioFilmStudy");
@@ -99,9 +99,9 @@ invariant(completion.proof?.temporaryArtifacts === 0, "Chapter 18 completion pro
 invariant(chapter19.status === "foundation_established", "Chapter 19 source-first foundation is not established.");
 invariant(chapter19.chapter?.number === 19 && chapter19.chapter?.period === "2020–present" && chapter19.chapter?.candidateBaseline === "2020–2025", "Chapter 19 scope or candidate baseline drifted.");
 invariant(chapter19.governance?.openCurrentPeriod === true && chapter19.governance?.currentYearExcludedFromFrozenBaseline === 2026, "Chapter 19 must remain an open current-period chapter with 2026 excluded from the frozen baseline.");
-invariant(chapter19.atlas?.baselineFromClosedChapter18 === 539 && chapter19.atlas?.actualCount === 573, "Chapter 19 must preserve the closed 539-scenario Chapter 18 baseline while advancing the current Atlas to 573.");
+invariant(chapter19.atlas?.baselineFromClosedChapter18 === 539 && chapter19.atlas?.actualCount === 574, "Chapter 19 must preserve the closed 539-scenario Chapter 18 baseline while advancing the current Atlas to 574.");
 invariant(Array.isArray(chapter19.candidates) && chapter19.candidates.length === 60, "Chapter 19 foundation must contain exactly 60 baseline candidates.");
-invariant(chapter19.byDecision?.USE_EXISTING?.length === 41 && chapter19.byDecision?.P0?.length === 5 && chapter19.byDecision?.P1?.length === 10 && chapter19.byDecision?.P2?.length === 4 && chapter19.byDecision?.EXISTING_REQUIRED?.length === 0, "Chapter 19 resolved queue census drifted from 41 USE_EXISTING / 5 P0 / 10 P1 / 4 P2 / 0 EXISTING_REQUIRED.");
+invariant(chapter19.byDecision?.USE_EXISTING?.length === 42 && chapter19.byDecision?.P0?.length === 5 && chapter19.byDecision?.P1?.length === 9 && chapter19.byDecision?.P2?.length === 4 && chapter19.byDecision?.EXISTING_REQUIRED?.length === 0, "Chapter 19 resolved queue census drifted from 42 USE_EXISTING / 5 P0 / 9 P1 / 4 P2 / 0 EXISTING_REQUIRED.");
 const tenet = chapter19.candidates.find((candidate) => candidate.title === "Tenet");
 invariant(tenet?.decision === "USE_EXISTING" && tenet?.scenarioId === "scenario_tenet_2020" && tenet?.matches === 1 && tenet?.productionVerified === true, "Tenet is not closed as the first production-verified Chapter 19 USE_EXISTING case.");
 const soul = chapter19.candidates.find((candidate) => candidate.title === "Soul");
@@ -170,6 +170,8 @@ const oneBattleAfterAnother = chapter19.candidates.find((candidate) => candidate
 invariant(oneBattleAfterAnother?.decision === "USE_EXISTING" && oneBattleAfterAnother?.scenarioId === "scenario_one_battle_after_another_2025" && oneBattleAfterAnother?.matches === 1 && oneBattleAfterAnother?.productionVerified === true, "One Battle After Another is not closed as the thirty-third production-verified Chapter 19 USE_EXISTING case.");
 const allQuietOnTheWesternFront = chapter19.candidates.find((candidate) => candidate.title === "All Quiet on the Western Front");
 invariant(allQuietOnTheWesternFront?.decision === "USE_EXISTING" && allQuietOnTheWesternFront?.scenarioId === "scenario_all_quiet_on_the_western_front_2022" && allQuietOnTheWesternFront?.matches === 1 && allQuietOnTheWesternFront?.productionVerified === true, "All Quiet on the Western Front is not closed as the thirty-fourth production-verified Chapter 19 USE_EXISTING case.");
+const thePowerOfTheDog = chapter19.candidates.find((candidate) => candidate.title === "The Power of the Dog");
+invariant(thePowerOfTheDog?.decision === "USE_EXISTING" && thePowerOfTheDog?.scenarioId === "scenario_the_power_of_the_dog_2021" && thePowerOfTheDog?.matches === 1 && thePowerOfTheDog?.productionVerified === true, "The Power of the Dog is not closed as the thirty-fifth production-verified Chapter 19 USE_EXISTING case.");
 invariant(chapter19.productionStrategy?.nextRecommendedCase === "The Boy and the Heron" && chapter19.productionStrategy?.nextRecommendedLane === "regional_global", "Chapter 19 balanced scheduler must remain at The Boy and the Heron after the award-priority BAFTA Best Film case closes outside scheduler order.");
 
 invariant(completion.nextPhase?.status === "foundation_established" && completion.nextPhase?.chapter === 19 && completion.nextPhase?.firstDeliverable === "source-first scope and candidate matrix", "Chapter 18 handoff must point to the established Chapter 19 source-first matrix.");

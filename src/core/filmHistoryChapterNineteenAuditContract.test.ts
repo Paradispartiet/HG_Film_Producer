@@ -192,6 +192,7 @@ const exactUseExisting = [
   "Wolfwalkers",
   "The Disciple",
   "Dune",
+  "The Power of the Dog",
   "Drive My Car",
   "Flee",
   "Titane",
@@ -234,7 +235,6 @@ const exactP0Queue = [
 ] as const;
 
 const exactP1Queue = [
-  "The Power of the Dog",
   "The Mitchells vs. the Machines",
   "Guillermo del Toro's Pinocchio",
   "Barbie",
@@ -291,11 +291,11 @@ test("Chapter 19 locks the open 2020-present scope without freezing 2026", () =>
 
 test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {
   assert.match(audit, /const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;/);
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 573;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 574;/);
   assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);
-  assert.equal(resolved.atlas.expectedCount, 573);
-  assert.equal(resolved.atlas.actualCount, 573);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 573);
+  assert.equal(resolved.atlas.expectedCount, 574);
+  assert.equal(resolved.atlas.actualCount, 574);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 574);
 });
 
 test("Chapter 19 locks exactly sixty candidates across 2020-2025", () => {
@@ -320,11 +320,11 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 41);
+  assert.equal(exactUseExisting.length, 42);
   assert.equal(exactP0Queue.length, 5);
-  assert.equal(exactP1Queue.length, 10);
+  assert.equal(exactP1Queue.length, 9);
   assert.equal(exactP2Queue.length, 4);
-  assert.equal(resolved.recommendedNewProductionCases.length, 15);
+  assert.equal(resolved.recommendedNewProductionCases.length, 14);
   assert.equal(resolved.productionStrategy.mode, "balanced_rotation");
   assert.equal(resolved.productionStrategy.priorityLabelsAreEvidenceUrgencyNotLinearProductionOrder, true);
   assert.deepEqual(resolved.productionStrategy.laneOrder, [
@@ -339,13 +339,13 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.recommendedNewProductionCases.slice(0, 5), [
     "The Boy and the Heron",
     "Spider-Man: Across the Spider-Verse",
-    "The Power of the Dog",
     "Guillermo del Toro's Pinocchio",
     "The Secret Agent",
+    "Dune: Part Two",
   ]);
   assert.deepEqual(
     resolved.productionStrategy.remainingSequence.slice(0, 5).map((item) => item.lane),
-    ["regional_global", "industrial_scale_technical", "auteur_festival", "independent_low_mid_budget", "regional_global"],
+    ["regional_global", "industrial_scale_technical", "independent_low_mid_budget", "regional_global", "industrial_scale_technical"],
   );
   assert.ok(!resolved.recommendedNewProductionCases.includes("Nomadland"));
   assert.ok(!resolved.recommendedNewProductionCases.includes("Drive My Car"));
@@ -375,6 +375,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.ok(!resolved.recommendedNewProductionCases.includes("It Was Just an Accident"));
   assert.ok(!resolved.recommendedNewProductionCases.includes("One Battle After Another"));
   assert.ok(!resolved.recommendedNewProductionCases.includes("All Quiet on the Western Front"));
+  assert.ok(!resolved.recommendedNewProductionCases.includes("The Power of the Dog"));
   assert.equal(new Set(resolved.recommendedNewProductionCases).size, resolved.recommendedNewProductionCases.length);
   assert.ok(resolved.productionStrategy.safeguards.some((item) => item.includes("P1 case may precede a P0 case")));
   for (const title of resolved.recommendedNewProductionCases) {
@@ -599,6 +600,13 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(dune.scenarioId, "scenario_dune_2021");
   assert.equal(dune.matches, 1);
   assert.equal(dune.productionVerified, true);
+
+  const thePowerOfTheDog = resolved.candidates.find((candidate) => candidate.title === "The Power of the Dog");
+  assert.ok(thePowerOfTheDog);
+  assert.equal(thePowerOfTheDog.decision, "USE_EXISTING");
+  assert.equal(thePowerOfTheDog.scenarioId, "scenario_the_power_of_the_dog_2021");
+  assert.equal(thePowerOfTheDog.matches, 1);
+  assert.equal(thePowerOfTheDog.productionVerified, true);
 
   const driveMyCar = resolved.candidates.find((candidate) => candidate.title === "Drive My Car");
   assert.ok(driveMyCar);

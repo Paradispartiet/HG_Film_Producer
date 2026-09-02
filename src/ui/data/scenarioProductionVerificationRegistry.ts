@@ -210,6 +210,7 @@ import { theZoneOfInterestProductionCaseVerification } from "./scenarioProductio
 import { itWasJustAnAccidentProductionCaseVerification } from "./scenarioProductionVerificationItWasJustAnAccident";
 import { oneBattleAfterAnotherProductionCaseVerification } from "./scenarioProductionVerificationOneBattleAfterAnother";
 import { allQuietOnTheWesternFrontProductionCaseVerification } from "./scenarioProductionVerificationAllQuietOnTheWesternFront";
+import { thePowerOfTheDogProductionCaseVerification } from "./scenarioProductionVerificationThePowerOfTheDog";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -537,6 +538,7 @@ const additionalVerificationRecords = [
   itWasJustAnAccidentProductionCaseVerification,
   oneBattleAfterAnotherProductionCaseVerification,
   allQuietOnTheWesternFrontProductionCaseVerification,
+  thePowerOfTheDogProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
