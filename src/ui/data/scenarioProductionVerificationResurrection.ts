@@ -35,7 +35,7 @@ export const resurrectionProductionCaseVerification = {
       publisher: "UK-China Film Collab",
       url: "https://www.ukchinafilm.com/bi-gan-resurrection/",
       sourceKind: "filmmaker_interview",
-      supports: ["overall", "screenplay", "production_design", "editing"],
+      supports: ["overall", "screenplay", "editing"],
       note: "Direct Bi Gan interview supporting post-Cannes VFX completion/re-editing, the chapter-by-chapter set/prop/design reset burden, selective period-material reuse, five-films-inside-one-production framing and production order decisions."
     },
     {
@@ -51,7 +51,7 @@ export const resurrectionProductionCaseVerification = {
       publisher: "MUBI Notebook",
       url: "https://mubi.com/en/notebook/posts/the-dream-machine-bi-gan-on-resurrection",
       sourceKind: "filmmaker_interview",
-      supports: ["overall", "cinematography", "production_design"],
+      supports: ["overall", "cinematography"],
       note: "Direct Bi Gan interview supporting the story-driven continuous-take decision and the production-design advantage of concentrating the long take in one coordinated location system."
     },
     {
@@ -59,7 +59,7 @@ export const resurrectionProductionCaseVerification = {
       publisher: "Screen Slate",
       url: "https://www.screenslate.com/articles/world-building-bi-gan-resurrection",
       sourceKind: "filmmaker_interview",
-      supports: ["overall", "cinematography", "production_design"],
+      supports: ["overall", "cinematography"],
       note: "Direct Bi Gan interview supporting roughly one month of preparation/shooting for the final long-take system, one complete take per night during the final week and Chongqing weather/sunrise dependence."
     },
     {
