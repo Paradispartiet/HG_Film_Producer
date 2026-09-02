@@ -222,6 +222,7 @@ import { siratProductionCaseVerification } from "./scenarioProductionVerificatio
 import { resurrectionProductionCaseVerification } from "./scenarioProductionVerificationResurrection";
 import { theSecretAgentProductionCaseVerification } from "./scenarioProductionVerificationTheSecretAgent";
 import { soundOfFallingProductionCaseVerification } from "./scenarioProductionVerificationSoundOfFalling";
+import { eoProductionCaseVerification } from "./scenarioProductionVerificationEo";
 import { lonelyVillaProductionCaseVerification } from "./scenarioProductionVerificationLonelyVilla";
 import { crimeNoirTransformationsVerificationRecords } from "./scenarioProductionVerificationCrimeNoirTransformationsBatch";
 import { crossEraVerificationRecords } from "./scenarioProductionVerificationCrossEraBatch";
@@ -561,6 +562,7 @@ const additionalVerificationRecords = [
   resurrectionProductionCaseVerification,
   theSecretAgentProductionCaseVerification,
   soundOfFallingProductionCaseVerification,
+  eoProductionCaseVerification,
   lonelyVillaProductionCaseVerification,
   ...silentStudioSystemsVerificationRecords,
   ...lateSilentEarlySoundVerificationRecords,
