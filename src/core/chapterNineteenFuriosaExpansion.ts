@@ -18,7 +18,7 @@ export const chapterNineteenFuriosaExpansionDefinitions = [{
   requiredChoicesSeed: {
     screenplay: ["scheduler_not_award_claim", "bbfc_multi_version_provenance", "regional_finance_projection_boundary", "twenty_year_story_scope", "final_budget_unresolved"],
     camera: ["alexa65_dna_custom_optics", "red_vraptor_komodo_arrays", "unreal_action_previs", "six_18k_hmi_daylight_array", "rotoscope_background_extension", "complete_camera_ledger_unresolved"],
-    editing: ["on_set_first_assembly", "previs_postvis_editorial_loop", "kna pman_sixel_coediting".replace(" ", ""), "edit_infrastructure_unresolved"],
+    editing: ["on_set_first_assembly", "previs_postvis_editorial_loop", "knapman_sixel_coediting", "edit_infrastructure_unresolved"],
     sound: ["first_person_score", "recurring_motifs", "eight_week_atmos_mix", "music_sound_handoffs", "full_audio_ledger_unresolved"],
     themes: ["film_history", "2024", "furiosa", "australian_production", "practical_stunts", "digital_post", "large_format", "chapter19"]
   },
