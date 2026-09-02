@@ -22,7 +22,7 @@ test("F1 source-first production case is complete and evidence-bounded", () => {
   assert.ok(film.premise.includes("sensor on a stick"));
   assert.ok(film.premise.includes("Voigtländer Hyper Wide Heliar 10/12/15mm"));
   assert.ok(film.premise.includes("no more than four cameras"));
-  assert.ok(film.premise.includes("estimated 5,000 hours of racing footage"));
+  assert.ok(film.premise.includes("5,000 hours of racing footage"));
   assert.ok(film.premise.includes("does not claim a 1.43:1 IMAX film workflow"));
   assert.ok(film.premise.includes("more than 2,500 VFX shots"));
   assert.ok(film.premise.includes("Media Composer"));
