@@ -18,7 +18,7 @@ export const theBoyAndTheHeronProductionCaseVerification = {
       title: "The Boy and the Heron",
       publisher: "Studio Ghibli",
       url: "https://studioghibli.jp/films/the-boy-and-the-heron/",
-      sourceKind: "studio_source",
+      sourceKind: "archive_feature",
       supports: ["overall", "screenplay", "cinematography", "editing"],
       note: "Studio production background supporting production beginning around 2016, approximately seven years of work, hand-drawn storyboards, organic story development without a finished-script-first process, primarily hand-drawn animation and digital compositing."
     },
