@@ -1,0 +1,37 @@
+name: TEMP Chapter 19 Mitchells vs the Machines source-first
+
+on:
+  push:
+    branches:
+      - agent/ch19-mitchells-vs-the-machines-production-case
+    paths:
+      - .github/workflows/temp-ch19-mitchells-vs-the-machines-source-first.yml
+      - src/core/chapterNineteenMitchellsVsTheMachinesExpansion.ts
+      - src/core/chapterNineteenMitchellsVsTheMachinesExpansion.test.ts
+      - src/ui/data/scenarioProductionVerificationMitchellsVsTheMachines.ts
+      - src/ui/data/scenarioFilmStudyChapterNineteenMitchellsVsTheMachines.ts
+
+jobs:
+  source-first:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ch19-mitchells-vs-the-machines-production-case
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Build core
+        run: npm run build
+      - name: Strict Mitchells vs the Machines contract
+        run: node --test dist/core/chapterNineteenMitchellsVsTheMachinesExpansion.test.js
+      - name: Build UI
+        run: npm run build:ui
