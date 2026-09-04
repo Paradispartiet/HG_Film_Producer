@@ -180,6 +180,7 @@ import { mergeChapterNineteenSiratExpansion } from "../../core/chapterNineteenSi
 import { mergeChapterNineteenResurrectionExpansion } from "../../core/chapterNineteenResurrectionExpansion.js";
 import { mergeChapterNineteenTheSecretAgentExpansion } from "../../core/chapterNineteenTheSecretAgentExpansion.js";
 import { mergeChapterNineteenSoundOfFallingExpansion } from "../../core/chapterNineteenSoundOfFallingExpansion.js";
+import { mergeChapterNineteenDrommerExpansion } from "../../core/chapterNineteenDrommerExpansion.js";
 import { mergeChapterNineteenEoExpansion } from "../../core/chapterNineteenEoExpansion.js";
 import { mergeChapterNineteenBarbieExpansion } from "../../core/chapterNineteenBarbieExpansion.js";
 import { mergeChapterNineteenAcrossTheSpiderVerseExpansion } from "../../core/chapterNineteenAcrossTheSpiderVerseExpansion.js";
@@ -420,7 +421,8 @@ const chapterNineteenSiratScenarios = mergeChapterNineteenSiratExpansion(chapter
 const chapterNineteenResurrectionScenarios = mergeChapterNineteenResurrectionExpansion(chapterNineteenSiratScenarios);
 const chapterNineteenTheSecretAgentScenarios = mergeChapterNineteenTheSecretAgentExpansion(chapterNineteenResurrectionScenarios);
 const chapterNineteenSoundOfFallingScenarios = mergeChapterNineteenSoundOfFallingExpansion(chapterNineteenTheSecretAgentScenarios);
-const chapterNineteenEoScenarios = mergeChapterNineteenEoExpansion(chapterNineteenSoundOfFallingScenarios);
+const chapterNineteenDrommerScenarios = mergeChapterNineteenDrommerExpansion(chapterNineteenSoundOfFallingScenarios);
+const chapterNineteenEoScenarios = mergeChapterNineteenEoExpansion(chapterNineteenDrommerScenarios);
 const chapterNineteenBarbieScenarios = mergeChapterNineteenBarbieExpansion(chapterNineteenEoScenarios);
 const chapterNineteenAcrossTheSpiderVerseScenarios = mergeChapterNineteenAcrossTheSpiderVerseExpansion(chapterNineteenBarbieScenarios);
 const chapterNineteenFuriosaScenarios = mergeChapterNineteenFuriosaExpansion(chapterNineteenAcrossTheSpiderVerseScenarios);
