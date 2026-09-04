@@ -1,0 +1,56 @@
+name: TEMP Drømmer materialize
+
+on:
+  push:
+    branches:
+      - agent/ch19-drommer-production-case
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Materialize Drømmer
+        run: node scripts/TEMP-ch19-drommer-materialize.mjs
+
+      - name: Full v0.1 verification
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run verify:v0.1 2>&1 | tee /tmp/drommer-verify.log
+
+      - name: Upload failed verification diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: drommer-materialization-diagnostics
+          path: /tmp/drommer-verify.log
+
+      - name: Commit clean Drømmer case
+        if: success()
+        shell: bash
+        run: |
+          test ! -e scripts/TEMP-ch19-drommer-materialize.mjs
+          test ! -e .github/workflows/TEMP-ch19-drommer-materialize.yml
+          git status --short
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add Drømmer Chapter 19 festival production case"
+          git push origin HEAD:agent/ch19-drommer-production-case
