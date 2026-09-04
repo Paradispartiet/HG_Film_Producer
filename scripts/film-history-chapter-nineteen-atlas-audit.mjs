@@ -4,25 +4,39 @@ import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
 
+const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;
+const EXPECTED_ATLAS_COUNT = 590;
+
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const basePath = path.join(scriptDir, "film-history-chapter-nineteen-atlas-audit-base.mjs");
 const insertionMarker = "const candidates = [";
-const triangleNeedle = 'title: "Triangle of Sadness"';
+const triangleNeedles = [
+  '"title": "Triangle of Sadness"',
+  'title: "Triangle of Sadness"',
+];
 
 const triangleCandidate = `
   {
-    year: 2022,
-    title: "Triangle of Sadness",
-    originalTitle: "Triangle of Sadness",
-    aliases: ["Sans filtre"],
-    role: "major_comparison",
-    decisionIfMissing: "P1",
-    chapterFunction:
-      "Cannes 2022 Palme d'Or reconciliation: reuse the existing verified production case rather than materializing a duplicate Atlas scenario.",
+    "title": "Triangle of Sadness",
+    "originalTitle": "Triangle of Sadness",
+    "year": 2022,
+    "aliases": ["Sans filtre"],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Cannes 2022 Palme d'Or reconciliation: reuse the existing verified production case rather than materializing a duplicate Atlas scenario."
   },`;
 
 const baseSource = readFileSync(basePath, "utf8");
-if (baseSource.includes(triangleNeedle)) {
+const requiredBaselineConstants = [
+  `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
+  `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`,
+];
+for (const baselineConstant of requiredBaselineConstants) {
+  if (!baseSource.includes(baselineConstant)) {
+    throw new Error(`Chapter 19 base audit lost required baseline contract: ${baselineConstant}`);
+  }
+}
+if (triangleNeedles.some((needle) => baseSource.includes(needle))) {
   throw new Error("Chapter 19 base audit already contains Triangle of Sadness; remove the reconciliation wrapper and consolidate the candidate directly.");
 }
 if (!baseSource.includes(insertionMarker)) {
