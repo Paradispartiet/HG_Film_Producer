@@ -4,8 +4,8 @@ export const bodyArchiveRestitutionPerspectiveVerificationRecords = [
   {
     scenarioId: "scenario_happening_2021",
     status: "verified",
-    verifiedAt: "2026-07-23",
-    summary: "The film's Annie Ernaux adaptation, 1963 illegal-abortion context, Rectangle and France 3 production, 1.37 subjective image system, week-based procedural structure, credited design-costume-makeup-editing-music-sound departments and Venice legacy are supported by European, French, British and Venetian institutional records.",
+    verifiedAt: "2026-09-04",
+    summary: "Happening / L'Événement remains the existing verified 2021 French Production Case. Venice locks the Golden Lion; Unifrance locks the 2021 production identity, 100-minute runtime, 24 November 2021 French release, 1.37 presentation and 5.1 sound; CNC locks the Diwan/Marcia Romano Ernaux adaptation, principal production entities and advance-on-receipts support; Région Île-de-France separately locks EUR 330,000 in production support to Rectangle; and Laurent Tangy's direct ARRI account locks ALEXA Mini LF, 1.37:1 full-frame shallow-focus logic, Mamiya 45/55 mm, Canon K35 exterior nights, frequent handheld work, long takes and mainly top/practical lighting. Complete budget/recoupment, exact shooting calendar/day count, full lens inventory, codec/data chain, detailed lighting ledger, complete audio/post/VFX infrastructure and master lineage remain unresolved.",
     sources: [
       {
         title: "Happening",
@@ -13,7 +13,7 @@ export const bodyArchiveRestitutionPerspectiveVerificationRecords = [
         url: "https://www.europeanfilmawards.eu/efa-movie/happening/",
         sourceKind: "film_institute",
         supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
-        note: "The EFA record documents the Annie Ernaux adaptation and the principal writing, Laurent Tangy cinematography, Géraldine Mangenot editing, Diéné Bérété design, costume, makeup, music and sound departments."
+        note: "The EFA record documents the Annie Ernaux adaptation and principal writing, Laurent Tangy cinematography, Géraldine Mangenot editing, Diéné Bérété design, costume, makeup, music and sound departments."
       },
       {
         title: "Official awards of the 78th Venice Film Festival",
@@ -21,7 +21,7 @@ export const bodyArchiveRestitutionPerspectiveVerificationRecords = [
         url: "https://www.labiennale.org/en/news/official-awards-78th-venice-film-festival",
         sourceKind: "film_institute",
         supports: ["overall", "screenplay"],
-        note: "The official Venice awards record confirms Audrey Diwan's Happening as the 2021 Golden Lion winner."
+        note: "The official Venice awards record confirms Audrey Diwan's Happening / L'Événement as the 2021 Golden Lion winner."
       },
       {
         title: "Happening",
@@ -29,15 +29,39 @@ export const bodyArchiveRestitutionPerspectiveVerificationRecords = [
         url: "https://player.bfi.org.uk/rentals/film/watch-happening-2021-online",
         sourceKind: "film_institute",
         supports: ["overall", "screenplay", "cinematography", "sound"],
-        note: "The BFI record identifies the early-1960s French setting, illegal-abortion crisis, Annie Ernaux source and the film's close, immediate treatment of Anne's practical danger."
+        note: "The BFI record identifies the early-1960s French setting, illegal-abortion crisis, Annie Ernaux source and the film's close treatment of Anne's practical danger."
       },
       {
-        title: "Happening",
+        title: "L'Événement",
         publisher: "Unifrance",
-        url: "https://en.unifrance.org/movie/51968/happening",
+        url: "https://www.unifrance.org/film/51968/l-evenement",
         sourceKind: "film_institute",
         supports: ["overall", "cinematography", "sound"],
-        note: "Unifrance records the 2021 French feature, 100-minute running time, colour 1.37 presentation, 5.1 sound and major festival recognition."
+        note: "Unifrance records the 2021 French feature, 100-minute running time, 24 November 2021 French release, colour 1.37 presentation and 5.1 sound."
+      },
+      {
+        title: "L'Événement, du livre au film",
+        publisher: "Centre national du cinéma et de l'image animée",
+        url: "https://www.cnc.fr/cinema/actualites/levenement--du-livre-au-film_1582665",
+        sourceKind: "film_institute",
+        supports: ["overall", "screenplay"],
+        note: "CNC supports the Annie Ernaux adaptation, Audrey Diwan/Marcia Romano screenplay, documented production entities and advance-on-receipts support."
+      },
+      {
+        title: "Triomphe des films soutenus : après la Palme d'or à Titane, le Lion d'or à L'Événement",
+        publisher: "Région Île-de-France",
+        url: "https://www.iledefrance.fr/toutes-les-actualites/triomphe-des-films-soutenus-apres-la-palme-dor-titane-le-lion-dor-levenement",
+        sourceKind: "film_institute",
+        supports: ["overall"],
+        note: "The regional institutional record supports EUR 330,000 in production support to Rectangle Productions; it is used only as one bounded financing component."
+      },
+      {
+        title: "Sundance DPs turn to ARRI cameras and lighting – Happening by DP Laurent Tangy",
+        publisher: "ARRI",
+        url: "https://www.arri.com/news-en/sundance-dps-turn-to-arri-cameras-and-lighting/263410-263410",
+        sourceKind: "filmmaker_interview",
+        supports: ["overall", "cinematography"],
+        note: "Tangy's direct craft account supports ALEXA Mini LF, 1.37:1 full frame, shallow focus, Mamiya 45/55 mm, Canon K35 exterior nights, handheld use, long takes and mainly top/practical lighting."
       }
     ]
   },

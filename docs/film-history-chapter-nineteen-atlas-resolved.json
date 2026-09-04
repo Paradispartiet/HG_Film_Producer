@@ -1255,6 +1255,23 @@
       "origin": "chapterNineteenDrommerExpansion.ts"
     },
     {
+      "title": "Happening",
+      "originalTitle": "L'Événement",
+      "year": 2021,
+      "aliases": [
+        "L'Evenement",
+        "L’Evénement"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Venice 2021 Golden Lion reconciliation: reuse the existing canonical scenario_happening_2021 and its Production Verification, while strengthening the established Film Study/PV with direct ARRI, CNC and Île-de-France evidence instead of materializing a duplicate Atlas identity.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_happening_2021",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "modernCanonExpansion.ts"
+    },
+    {
       "title": "Tenet",
       "originalTitle": "Tenet",
       "year": 2020,
@@ -2166,6 +2183,7 @@
     "P1": [
       "Triangle of Sadness",
       "Drømmer",
+      "Happening",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2233,6 +2251,7 @@
     "USE_EXISTING": [
       "Triangle of Sadness",
       "Drømmer",
+      "Happening",
       "Tenet",
       "Nomadland",
       "Soul",

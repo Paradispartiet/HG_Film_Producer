@@ -13,6 +13,7 @@ const basePath = path.join(scriptDir, "film-history-chapter-nineteen-atlas-audit
 const insertionMarker = "const candidates = [";
 const triangleNeedles = ['"title": "Triangle of Sadness"', 'title: "Triangle of Sadness"'];
 const drommerNeedles = ['"title": "Drømmer"', 'title: "Drømmer"'];
+const happeningNeedles = ['"title": "Happening"', 'title: "Happening"'];
 
 const triangleCandidate = `
   {
@@ -36,6 +37,17 @@ const drommerCandidate = `
     "chapterFunction": "Berlinale 2025 Golden Bear corrective case: preserve 2024 as film year, materialize the source-backed Norwegian Production Case, and keep award year separate from production chronology."
   },`;
 
+const happeningCandidate = `
+  {
+    "title": "Happening",
+    "originalTitle": "L'Événement",
+    "year": 2021,
+    "aliases": ["L'Evenement", "L’Evénement"],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Venice 2021 Golden Lion reconciliation: reuse the existing canonical scenario_happening_2021 and its Production Verification, while strengthening the established Film Study/PV with direct ARRI, CNC and Île-de-France evidence instead of materializing a duplicate Atlas identity."
+  },`;
+
 const baseSource = readFileSync(basePath, "utf8");
 const requiredBaselineConstants = [
   `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
@@ -46,12 +58,13 @@ for (const baselineConstant of requiredBaselineConstants) {
 }
 if (triangleNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Triangle of Sadness; consolidate the wrapper deliberately before continuing.");
 if (drommerNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Drømmer; consolidate the wrapper deliberately before continuing.");
+if (happeningNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Happening; consolidate the wrapper deliberately before continuing.");
 if (!baseSource.includes(insertionMarker)) throw new Error("Chapter 19 candidate insertion marker is missing; refusing to run a partially reconciled audit.");
 
 const reconciledSource = baseSource
   .replace(`const EXPECTED_ATLAS_COUNT = ${BASE_EXPECTED_ATLAS_COUNT};`, `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`)
   .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-04"')
-  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}`);
+  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}`);
 const temporaryAuditPath = path.join(scriptDir, `.film-history-chapter-nineteen-atlas-audit-reconciled-${process.pid}.mjs`);
 
 try {

@@ -309,7 +309,7 @@ const topPrizeProductionComplete = obligations.every((item) => item.productionVe
 
 const report = {
   schemaVersion: "1.0",
-  auditDate: "2026-09-03",
+  auditDate: "2026-09-04",
   title: "Chapter 19 Festival & Awards Completion Audit 2020–2025",
   scope: {
     frozenCandidateBaseline: "2020–2025",
