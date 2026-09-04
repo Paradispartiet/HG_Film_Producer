@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "auditDate": "2026-08-28",
+  "auditDate": "2026-09-04",
   "status": "foundation_established",
   "chapter": {
     "number": 19,
@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 590,
-    "actualCount": 590,
+    "expectedCount": 591,
+    "actualCount": 591,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1113,6 +1113,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenDrommerExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1211,9 +1217,43 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 590
+    "literalVerifiedScenarioIds": 591
   },
   "candidates": [
+    {
+      "title": "Triangle of Sadness",
+      "originalTitle": "Triangle of Sadness",
+      "year": 2022,
+      "aliases": [
+        "Sans filtre"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2022 Palme d'Or reconciliation: reuse the existing verified production case rather than materializing a duplicate Atlas scenario.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_triangle_of_sadness_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "festivalWinners2010To2024Expansion.ts"
+    },
+    {
+      "title": "Drømmer",
+      "originalTitle": "Drømmer",
+      "year": 2024,
+      "aliases": [
+        "Dreams",
+        "Dreams (Sex Love)",
+        "Dreams (Sex, Love)"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Berlinale 2025 Golden Bear corrective case: preserve 2024 as film year, materialize the source-backed Norwegian Production Case, and keep award year separate from production chronology.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_drommer_2024",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenDrommerExpansion.ts"
+    },
     {
       "title": "Tenet",
       "originalTitle": "Tenet",
@@ -2124,6 +2164,8 @@
       "F1"
     ],
     "P1": [
+      "Triangle of Sadness",
+      "Drømmer",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2189,6 +2231,8 @@
   },
   "byDecision": {
     "USE_EXISTING": [
+      "Triangle of Sadness",
+      "Drømmer",
       "Tenet",
       "Nomadland",
       "Soul",

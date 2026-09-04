@@ -23,7 +23,8 @@ const officialSources = {
 const topPrizeObligations = [
   {
     festival: "Festival de Cannes",
-    year: 2021,
+    awardYear: 2021,
+    filmYear: 2021,
     award: "Palme d'Or",
     title: "Titane",
     originalTitle: "Titane",
@@ -32,7 +33,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Festival de Cannes",
-    year: 2022,
+    awardYear: 2022,
+    filmYear: 2022,
     award: "Palme d'Or",
     title: "Triangle of Sadness",
     originalTitle: "Triangle of Sadness",
@@ -42,7 +44,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Festival de Cannes",
-    year: 2023,
+    awardYear: 2023,
+    filmYear: 2023,
     award: "Palme d'Or",
     title: "Anatomy of a Fall",
     originalTitle: "Anatomie d'une chute",
@@ -51,7 +54,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Festival de Cannes",
-    year: 2024,
+    awardYear: 2024,
+    filmYear: 2024,
     award: "Palme d'Or",
     title: "Anora",
     originalTitle: "Anora",
@@ -60,7 +64,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Festival de Cannes",
-    year: 2025,
+    awardYear: 2025,
+    filmYear: 2025,
     award: "Palme d'Or",
     title: "It Was Just an Accident",
     originalTitle: "Yek tasadef sadeh",
@@ -69,7 +74,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Venice International Film Festival",
-    year: 2020,
+    awardYear: 2020,
+    filmYear: 2020,
     award: "Golden Lion for Best Film",
     title: "Nomadland",
     originalTitle: "Nomadland",
@@ -78,7 +84,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Venice International Film Festival",
-    year: 2021,
+    awardYear: 2021,
+    filmYear: 2021,
     award: "Golden Lion for Best Film",
     title: "Happening",
     originalTitle: "L'Événement",
@@ -88,7 +95,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Venice International Film Festival",
-    year: 2022,
+    awardYear: 2022,
+    filmYear: 2022,
     award: "Golden Lion for Best Film",
     title: "All the Beauty and the Bloodshed",
     originalTitle: "All the Beauty and the Bloodshed",
@@ -98,7 +106,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Venice International Film Festival",
-    year: 2023,
+    awardYear: 2023,
+    filmYear: 2023,
     award: "Golden Lion for Best Film",
     title: "Poor Things",
     originalTitle: "Poor Things",
@@ -107,7 +116,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Venice International Film Festival",
-    year: 2024,
+    awardYear: 2024,
+    filmYear: 2024,
     award: "Golden Lion for Best Film",
     title: "The Room Next Door",
     originalTitle: "The Room Next Door",
@@ -117,7 +127,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Venice International Film Festival",
-    year: 2025,
+    awardYear: 2025,
+    filmYear: 2025,
     award: "Golden Lion for Best Film",
     title: "Father Mother Sister Brother",
     originalTitle: "Father Mother Sister Brother",
@@ -127,7 +138,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Berlin International Film Festival",
-    year: 2020,
+    awardYear: 2020,
+    filmYear: 2020,
     award: "Golden Bear for Best Film",
     title: "There Is No Evil",
     originalTitle: "Sheytan vojud nadarad",
@@ -137,7 +149,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Berlin International Film Festival",
-    year: 2021,
+    awardYear: 2021,
+    filmYear: 2021,
     award: "Golden Bear for Best Film",
     title: "Bad Luck Banging or Loony Porn",
     originalTitle: "Babardeală cu bucluc sau porno balamuc",
@@ -147,7 +160,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Berlin International Film Festival",
-    year: 2022,
+    awardYear: 2022,
+    filmYear: 2022,
     award: "Golden Bear for Best Film",
     title: "Alcarràs",
     originalTitle: "Alcarràs",
@@ -157,7 +171,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Berlin International Film Festival",
-    year: 2023,
+    awardYear: 2023,
+    filmYear: 2023,
     award: "Golden Bear for Best Film",
     title: "On the Adamant",
     originalTitle: "Sur l'Adamant",
@@ -167,7 +182,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Berlin International Film Festival",
-    year: 2024,
+    awardYear: 2024,
+    filmYear: 2024,
     award: "Golden Bear for Best Film",
     title: "Dahomey",
     originalTitle: "Dahomey",
@@ -176,7 +192,8 @@ const topPrizeObligations = [
   },
   {
     festival: "Berlin International Film Festival",
-    year: 2025,
+    awardYear: 2025,
+    filmYear: 2024,
     award: "Golden Bear for Best Film",
     title: "Drømmer",
     originalTitle: "Drømmer",
@@ -189,7 +206,7 @@ const topPrizeObligations = [
 const knownNoAwardYears = [
   {
     festival: "Festival de Cannes",
-    year: 2020,
+    awardYear: 2020,
     reason: "The 2020 Festival de Cannes was cancelled; there is no Palme d'Or feature-film obligation for that year.",
   },
 ];
@@ -208,7 +225,7 @@ function acceptedTitles(item) {
 }
 
 function matchesObligation(candidate, obligation) {
-  if (candidate.year !== obligation.year) return false;
+  if (candidate.year !== obligation.filmYear) return false;
   const candidateTitles = new Set(acceptedTitles(candidate));
   return acceptedTitles(obligation).some((title) => candidateTitles.has(title));
 }
@@ -217,9 +234,9 @@ function validateManifest() {
   const keys = new Set();
   const correctionOrders = new Set();
   for (const item of topPrizeObligations) {
-    if (item.year < 2020 || item.year > 2025) throw new Error(`${item.title}: award obligation must stay inside the frozen 2020-2025 baseline.`);
+    if (item.awardYear < 2020 || item.awardYear > 2025) throw new Error(`${item.title}: award obligation must stay inside the frozen 2020-2025 baseline.`);
     if (!item.source.startsWith("https://")) throw new Error(`${item.title}: official source URL is required.`);
-    const key = `${item.festival}|${item.year}|${item.award}`;
+    const key = `${item.festival}|${item.awardYear}|${item.award}`;
     if (keys.has(key)) throw new Error(`Duplicate top-prize obligation: ${key}`);
     keys.add(key);
     if (item.correctionOrder !== undefined) {
@@ -279,7 +296,8 @@ const correctiveQueue = unresolved
   .map((item) => ({
     order: item.correctionOrder ?? null,
     title: item.title,
-    year: item.year,
+    filmYear: item.filmYear,
+    awardYear: item.awardYear,
     festival: item.festival,
     award: item.award,
     status: item.status,
@@ -301,7 +319,8 @@ const report = {
     cannes2020NoAward: true,
   },
   semantics: {
-    technicalAtlasCompletion: "The existing 590/590 Atlas count proves completeness only against the already-materialized Atlas and Production Verification registry.",
+    technicalAtlasCompletion: "The current Atlas count proves completeness only against the materialized Atlas and Production Verification registry; it does not prove festival-selection completeness.",
+    awardFilmYearSeparation: "Festival award year and film production/release year are separate fields. Drømmer is a 2024 film whose Golden Bear was awarded in 2025.",
     selectionCompletion: "Festival selection completeness is independently measured against official top-prize obligations for the frozen 2020–2025 baseline.",
     failClosed: "An award obligation cannot become production-complete merely by entering this manifest; it must be present in the Chapter 19 candidate matrix, match exactly one Atlas scenario, and have Production Verification.",
     chapterCompletionRule: "Do not describe Chapter 19 as film-historically complete while this gate or the later awards-expansion phases remain open.",

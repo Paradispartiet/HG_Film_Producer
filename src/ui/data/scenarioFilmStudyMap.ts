@@ -199,6 +199,7 @@ import { siratFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenSirat
 import { resurrectionFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenResurrection";
 import { theSecretAgentFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenTheSecretAgent";
 import { soundOfFallingFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenSoundOfFalling";
+import { drommerFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenDrommer";
 import { eoFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenEo";
 import { barbieFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenBarbie";
 import { acrossTheSpiderVerseFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAcrossTheSpiderVerse";
@@ -429,6 +430,7 @@ const sourceBackedFilmHistoryProfiles = {
   [resurrectionFilmHistoryProfile.scenarioId]: resurrectionFilmHistoryProfile,
   [theSecretAgentFilmHistoryProfile.scenarioId]: theSecretAgentFilmHistoryProfile,
   [soundOfFallingFilmHistoryProfile.scenarioId]: soundOfFallingFilmHistoryProfile,
+  [drommerFilmHistoryProfile.scenarioId]: drommerFilmHistoryProfile,
   [eoFilmHistoryProfile.scenarioId]: eoFilmHistoryProfile,
   [barbieFilmHistoryProfile.scenarioId]: barbieFilmHistoryProfile,
   [acrossTheSpiderVerseFilmHistoryProfile.scenarioId]: acrossTheSpiderVerseFilmHistoryProfile,
