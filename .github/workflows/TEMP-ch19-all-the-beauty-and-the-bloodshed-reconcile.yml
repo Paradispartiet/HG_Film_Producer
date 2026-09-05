@@ -1,0 +1,62 @@
+name: TEMP Beauty reconciliation fail-closed
+
+on:
+  push:
+    branches:
+      - agent/ch19-all-the-beauty-and-the-bloodshed-production-case
+
+permissions:
+  contents: write
+
+concurrency:
+  group: temp-ch19-all-the-beauty-and-the-bloodshed-reconcile
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Materialize Beauty reconciliation
+        run: node scripts/TEMP-ch19-all-the-beauty-and-the-bloodshed-reconcile.mjs
+
+      - name: Full fail-closed verification
+        shell: bash
+        run: |
+          set -euxo pipefail
+          npm run verify:v0.1
+
+      - name: Assert temporary surfaces were removed
+        shell: bash
+        run: |
+          set -euxo pipefail
+          test ! -e scripts/TEMP-ch19-all-the-beauty-and-the-bloodshed-reconcile.mjs
+          test ! -e .github/workflows/TEMP-ch19-all-the-beauty-and-the-bloodshed-reconcile.yml
+          test -f src/ui/data/scenarioFilmStudyChapterNineteenAllTheBeautyAndTheBloodshed.ts
+          test -f docs/film-history-chapter-nineteen-atlas-resolved.json
+
+      - name: Commit permanent Beauty reconciliation only
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git status --short
+          git commit -m "Reconcile All the Beauty and the Bloodshed in Chapter 19"
+          git push origin HEAD:${GITHUB_REF_NAME}
