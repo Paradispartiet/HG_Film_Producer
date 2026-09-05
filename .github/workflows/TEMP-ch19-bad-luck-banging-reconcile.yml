@@ -1,0 +1,99 @@
+name: TEMP Bad Luck Banging reconciliation fail-closed
+
+on:
+  push:
+    branches:
+      - agent/ch19-bad-luck-banging-or-loony-porn-reconciliation
+
+permissions:
+  contents: write
+
+concurrency:
+  group: temp-ch19-bad-luck-banging-reconcile
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lock existing Bad Luck identities
+        shell: bash
+        run: |
+          set -euxo pipefail
+          test "$(git hash-object src/ui/data/scenarioFilmStudyContemporaryDissentBadLuck.ts)" = "0b62aaafee0a097cc67a6617953da9c30b4a11a0"
+          test "$(git hash-object src/ui/data/scenarioProductionVerificationContemporaryDissentRuralSystemsBatch.ts)" = "928ab14eaaaf9b93554040268dd4875c104f02a9"
+
+      - name: Materialize candidate reconciliation
+        run: node scripts/TEMP-ch19-bad-luck-banging-reconcile.mjs
+
+      - name: Full fail-closed verification
+        run: npm run verify:v0.1
+
+      - name: Assert exact permanent result
+        shell: bash
+        run: |
+          set -euxo pipefail
+          test ! -e scripts/TEMP-ch19-bad-luck-banging-reconcile.mjs
+          test ! -e .github/workflows/TEMP-ch19-bad-luck-banging-reconcile.yml
+          test "$(git hash-object src/ui/data/scenarioFilmStudyContemporaryDissentBadLuck.ts)" = "0b62aaafee0a097cc67a6617953da9c30b4a11a0"
+          test "$(git hash-object src/ui/data/scenarioProductionVerificationContemporaryDissentRuralSystemsBatch.ts)" = "928ab14eaaaf9b93554040268dd4875c104f02a9"
+          node - <<'NODE'
+          const fs = require('fs');
+          const r = JSON.parse(fs.readFileSync('docs/film-history-chapter-nineteen-atlas-resolved.json', 'utf8'));
+          const item = r.candidates.find((x) => x.title === 'Bad Luck Banging or Loony Porn');
+          if (r.atlas.actualCount !== 591 || r.atlas.expectedCount !== 591) throw new Error('Atlas must remain 591/591');
+          if (r.verificationIndex.literalVerifiedScenarioIds !== 591) throw new Error('PV count must remain 591');
+          if (r.candidates.length !== 67) throw new Error(`Expected 67 candidates, got ${r.candidates.length}`);
+          if (r.byDecision.USE_EXISTING.length !== 65) throw new Error(`Expected 65 USE_EXISTING, got ${r.byDecision.USE_EXISTING.length}`);
+          if (r.byDecision.P2.length !== 2) throw new Error(`Expected 2 P2, got ${r.byDecision.P2.length}`);
+          if (!item || item.scenarioId !== 'scenario_bad_luck_banging_or_loony_porn_2021' || item.matches !== 1 || item.productionVerified !== true || item.decision !== 'USE_EXISTING') throw new Error('Bad Luck existing identity did not close exactly');
+          NODE
+          node scripts/film-history-chapter-nineteen-festival-awards-completion-audit.mjs > /tmp/festival.json
+          node - <<'NODE'
+          const f = require('/tmp/festival.json');
+          const item = f.obligations.find((x) => x.title === 'Bad Luck Banging or Loony Porn');
+          if (!item || item.status !== 'PRODUCTION_VERIFIED' || item.scenarioId !== 'scenario_bad_luck_banging_or_loony_porn_2021') throw new Error('Festival gate did not close Bad Luck');
+          if (f.correctiveQueue[0]?.order !== 8 || f.correctiveQueue[0]?.title !== 'Alcarràs') throw new Error(`Unexpected next correction: ${f.correctiveQueue[0]?.title}`);
+          NODE
+          python3 - <<'PY'
+          import subprocess
+          expected = {
+              '.github/workflows/TEMP-ch19-bad-luck-banging-reconcile.yml',
+              'docs/film-history-chapter-nineteen-atlas-resolved.json',
+              'scripts/TEMP-ch19-bad-luck-banging-reconcile.mjs',
+              'scripts/film-history-chapter-eighteen-completion-audit.mjs',
+              'scripts/film-history-chapter-nineteen-atlas-audit.mjs',
+              'src/core/filmHistoryChapterNineteenAuditContract.test.ts',
+          }
+          actual = set(filter(None, subprocess.check_output(['git','diff','--name-only'], text=True).splitlines()))
+          if actual != expected:
+              raise SystemExit(f'Unexpected working-tree diff. expected={sorted(expected)} actual={sorted(actual)}')
+          PY
+          git diff --check
+
+      - name: Commit permanent reconciliation only
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git status --short
+          git commit -m "Reconcile Bad Luck Banging or Loony Porn in Chapter 19"
+          git push origin HEAD:${GITHUB_REF_NAME}
