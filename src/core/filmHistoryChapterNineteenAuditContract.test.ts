@@ -54,6 +54,7 @@ const exactCandidateTitles = [
   "Drømmer",
   "Happening",
   "All the Beauty and the Bloodshed",
+  "The Room Next Door",
   "Tenet",
   "Nomadland",
   "Soul",
@@ -147,6 +148,7 @@ const exactP1Priority = [
   "Drømmer",
   "Happening",
   "All the Beauty and the Bloodshed",
+  "The Room Next Door",
   "Nomadland",
   "Collective",
   "Quo Vadis, Aida?",
@@ -194,6 +196,7 @@ const exactUseExisting = [
   "Drømmer",
   "Happening",
   "All the Beauty and the Bloodshed",
+  "The Room Next Door",
   "Tenet",
   "Nomadland",
   "Soul",
@@ -310,11 +313,11 @@ test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the cu
   assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 591);
 });
 
-test("Chapter 19 locks exactly sixty-four candidates across 2020-2025", () => {
+test("Chapter 19 locks exactly sixty-five candidates across 2020-2025", () => {
   assert.deepEqual(resolved.candidates.map((item) => item.title), [...exactCandidateTitles]);
-  assert.equal(new Set(resolved.candidates.map((item) => item.title)).size, 64);
-  assert.equal(resolved.candidates.length, 64);
-  const expectedCandidatesByYear = new Map([[2020, 10], [2021, 11], [2022, 12], [2023, 10], [2024, 11], [2025, 10]]);
+  assert.equal(new Set(resolved.candidates.map((item) => item.title)).size, 65);
+  assert.equal(resolved.candidates.length, 65);
+  const expectedCandidatesByYear = new Map([[2020, 10], [2021, 11], [2022, 12], [2023, 10], [2024, 12], [2025, 10]]);
   for (const [year, expected] of expectedCandidatesByYear) {
     assert.equal(resolved.candidates.filter((item) => item.year === year).length, expected, `Unexpected candidate count for ${year}`);
   }
@@ -325,7 +328,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.candidatePrioritiesIfMissing.P1, [...exactP1Priority]);
   assert.deepEqual(resolved.candidatePrioritiesIfMissing.P2, [...exactP2Priority]);
   assert.equal(exactP0Priority.length, 23);
-  assert.equal(exactP1Priority.length, 37);
+  assert.equal(exactP1Priority.length, 38);
   assert.equal(exactP2Priority.length, 4);
 
   assert.deepEqual(resolved.byDecision.USE_EXISTING, [...exactUseExisting]);
@@ -333,7 +336,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 62);
+  assert.equal(exactUseExisting.length, 63);
   assert.equal(exactP0Queue.length, 0);
   assert.equal(exactP1Queue.length, 0);
   assert.equal(exactP2Queue.length, 2);
@@ -774,6 +777,13 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(allBeauty.scenarioId, "scenario_all_the_beauty_and_the_bloodshed_2022");
   assert.equal(allBeauty.matches, 1);
   assert.equal(allBeauty.productionVerified, true);
+
+  const roomNextDoor = resolved.candidates.find((candidate) => candidate.title === "The Room Next Door");
+  assert.ok(roomNextDoor);
+  assert.equal(roomNextDoor.decision, "USE_EXISTING");
+  assert.equal(roomNextDoor.scenarioId, "scenario_the_room_next_door_2024");
+  assert.equal(roomNextDoor.matches, 1);
+  assert.equal(roomNextDoor.productionVerified, true);
 
   for (const candidate of resolved.candidates) {
     if (candidate.decision === "USE_EXISTING") {
