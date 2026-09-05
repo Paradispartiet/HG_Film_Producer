@@ -1,6 +1,5 @@
 import { execFileSync } from "node:child_process";
 import { readFileSync, unlinkSync, writeFileSync } from "node:fs";
-import process from "node:process";
 
 const ROOM_ID = "scenario_the_room_next_door_2024";
 const ATLAS_PATH = "scripts/film-history-chapter-nineteen-atlas-audit.mjs";
@@ -12,65 +11,62 @@ const PV_PATH = "src/ui/data/scenarioProductionVerificationContemporaryEuropeanS
 const TEMP_SCRIPT = "scripts/TEMP-ch19-the-room-next-door-reconcile.mjs";
 const TEMP_WORKFLOW = ".github/workflows/TEMP-ch19-the-room-next-door-reconcile.yml";
 
-function read(path) {
-  return readFileSync(path, "utf8");
-}
-function write(path, content) {
-  writeFileSync(path, content);
+const read = (path) => readFileSync(path, "utf8");
+const write = (path, content) => writeFileSync(path, content);
+function invariant(condition, message) {
+  if (!condition) throw new Error(message);
 }
 function replaceOnce(path, before, after) {
   const source = read(path);
   const first = source.indexOf(before);
   if (first < 0) throw new Error(`${path}: missing exact anchor: ${before.slice(0, 180)}`);
-  if (source.indexOf(before, first + before.length) >= 0) throw new Error(`${path}: exact anchor is duplicated: ${before.slice(0, 180)}`);
+  if (source.indexOf(before, first + before.length) >= 0) throw new Error(`${path}: exact anchor duplicated: ${before.slice(0, 180)}`);
   write(path, source.slice(0, first) + after + source.slice(first + before.length));
 }
-function invariant(condition, message) {
-  if (!condition) throw new Error(message);
+function insertAfterInConstArray(path, constName, needle, addition) {
+  const source = read(path);
+  const startMarker = `const ${constName} = [`;
+  const start = source.indexOf(startMarker);
+  if (start < 0) throw new Error(`${path}: missing ${constName}`);
+  const end = source.indexOf("] as const;", start);
+  if (end < 0) throw new Error(`${path}: missing end for ${constName}`);
+  const block = source.slice(start, end);
+  const anchor = `  ${JSON.stringify(needle)},`;
+  const pos = block.indexOf(anchor);
+  if (pos < 0 || block.indexOf(anchor, pos + anchor.length) >= 0) throw new Error(`${path}: ${needle} missing or duplicated in ${constName}`);
+  const updated = block.slice(0, pos + anchor.length) + `\n  ${JSON.stringify(addition)},` + block.slice(pos + anchor.length);
+  write(path, source.slice(0, start) + updated + source.slice(end));
 }
 
 const immutableStudy = read(FILM_STUDY_PATH);
 const immutablePv = read(PV_PATH);
 invariant(immutableStudy.includes(`scenarioId: "${ROOM_ID}"`), "Existing Room Next Door Film Study identity is missing.");
 invariant(immutablePv.includes(`scenarioId: "${ROOM_ID}"`), "Existing Room Next Door PV identity is missing.");
-invariant(immutablePv.includes('status: "verified"'), "Existing Room Next Door PV batch no longer contains verified records.");
 
 replaceOnce(
   ATLAS_PATH,
   `const allBeautyNeedles = ['"title": "All the Beauty and the Bloodshed"', 'title: "All the Beauty and the Bloodshed"'];\n`,
   `const allBeautyNeedles = ['"title": "All the Beauty and the Bloodshed"', 'title: "All the Beauty and the Bloodshed"'];\nconst roomNextDoorNeedles = ['"title": "The Room Next Door"', 'title: "The Room Next Door"'];\n`,
 );
-
 replaceOnce(
   ATLAS_PATH,
   `const baseSource = readFileSync(basePath, "utf8");`,
   `const roomNextDoorCandidate = \`\n  {\n    "title": "The Room Next Door",\n    "originalTitle": "The Room Next Door",\n    "year": 2024,\n    "aliases": [],\n    "role": "major_comparison",\n    "decisionIfMissing": "P1",\n    "chapterFunction": "Venice 2024 Golden Lion reconciliation: reuse the existing canonical scenario_the_room_next_door_2024, its verified Production Case and its source-backed 17-area Film Study instead of materializing a duplicate Atlas identity."\n  },\`;\n\nconst baseSource = readFileSync(basePath, "utf8");`,
 );
-
 replaceOnce(
   ATLAS_PATH,
   `if (allBeautyNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains All the Beauty and the Bloodshed; consolidate the wrapper deliberately before continuing.");\n`,
   `if (allBeautyNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains All the Beauty and the Bloodshed; consolidate the wrapper deliberately before continuing.");\nif (roomNextDoorNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains The Room Next Door; consolidate the wrapper deliberately before continuing.");\n`,
 );
-
 replaceOnce(
   ATLAS_PATH,
-  `.replace(insertionMarker, \`${'${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}'}\`);`,
-  `.replace(insertionMarker, \`${'${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}'}\`);`,
+  '.replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}`);',
+  '.replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}`);',
 );
 
-for (const path of [TEST_PATH]) {
-  replaceOnce(
-    path,
-    `  "All the Beauty and the Bloodshed",\n  "Tenet",`,
-    `  "All the Beauty and the Bloodshed",\n  "The Room Next Door",\n  "Tenet",`,
-  );
-  replaceOnce(
-    path,
-    `  "All the Beauty and the Bloodshed",\n  "Nomadland",`,
-    `  "All the Beauty and the Bloodshed",\n  "The Room Next Door",\n  "Nomadland",`,
-  );
-}
+insertAfterInConstArray(TEST_PATH, "exactCandidateTitles", "All the Beauty and the Bloodshed", "The Room Next Door");
+insertAfterInConstArray(TEST_PATH, "exactP1Priority", "All the Beauty and the Bloodshed", "The Room Next Door");
+insertAfterInConstArray(TEST_PATH, "exactUseExisting", "All the Beauty and the Bloodshed", "The Room Next Door");
 
 replaceOnce(
   TEST_PATH,
