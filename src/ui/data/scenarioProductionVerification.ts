@@ -9,7 +9,7 @@ export type ProductionCaseVerificationSource = {
   readonly title: string;
   readonly publisher: string;
   readonly url: string;
-  readonly sourceKind: "filmmaker_interview" | "trade_feature" | "film_institute" | "archive_feature";
+  readonly sourceKind: "filmmaker_interview" | "trade_feature" | "film_institute" | "archive_feature" | "manufacturer_case_study";
   readonly supports: readonly ProductionCaseVerificationArea[];
   readonly note: string;
 };
