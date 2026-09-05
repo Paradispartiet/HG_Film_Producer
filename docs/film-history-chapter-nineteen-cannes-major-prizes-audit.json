@@ -1,0 +1,1824 @@
+{
+  "schemaVersion": "1.0",
+  "auditDate": "2026-09-05",
+  "title": "Chapter 19 Cannes Competition Major-Prizes Audit 2020–2025",
+  "phase": "cannes_major_prizes",
+  "status": "source_first_reconciliation_open",
+  "scope": {
+    "frozenCandidateBaseline": "2020–2025",
+    "competitionAwardYears": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "cannes2020NoCompetitionPalmares": true,
+    "included": [
+      "Palme d'Or",
+      "Grand Prix",
+      "Jury Prize",
+      "Best Director",
+      "Best Screenplay",
+      "Best acting/performance prizes",
+      "Competition-jury special or anniversary prizes explicitly present in the official annual winners list"
+    ],
+    "excluded": [
+      "Honorary Palme d'Or",
+      "Short Films",
+      "Un Certain Regard",
+      "Caméra d'Or",
+      "La Cinef",
+      "CST / Superior Technical Commission",
+      "Independent or parallel-section prizes"
+    ]
+  },
+  "semantics": {
+    "awardObligationVsFilmIdentity": "One film can satisfy more than one award obligation. Award obligations are preserved individually while the corrective queue is deduplicated to one film-level reconciliation task.",
+    "missingCandidateIsNotNewScenarioProof": "MISSING_CANDIDATE means only that the frozen Chapter 19 candidate matrix lacks the film. The next gate must search the existing Atlas, Film Study and Production Verification registry before any new scenario identity is authored.",
+    "reuseFirst": "If exactly one production-verified Atlas identity already exists, reconcile the candidate to USE_EXISTING and enrich evidence in place rather than duplicating the scenario.",
+    "sourceFirstForNewIdentity": "A genuinely absent film requires a source-first Production Case, 17-area Film Study and Production Verification before it can become production-complete.",
+    "chapterCompletionRule": "Closing this Cannes phase still does not prove Chapter 19 film-historical completion; Venice, Berlinale, Academy Awards and relevant regional phases remain separate gates."
+  },
+  "prerequisites": {
+    "topPrizeGateClosed": true,
+    "topPrizeCorrectiveQueue": 0
+  },
+  "technicalBaseline": {
+    "atlasExpected": 593,
+    "atlasActual": 593,
+    "productionVerificationIds": 593,
+    "chapterNineteenCandidates": 70
+  },
+  "officialSources": {
+    "cannes2020": "https://www.festival-cannes.com/en/press/press-releases/the-official-selection-2020/",
+    "cannes2021": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+    "cannes2022": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+    "cannes2023": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
+    "cannes2024": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+    "cannes2025": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/"
+  },
+  "knownNoAwardYears": [
+    {
+      "awardYear": 2020,
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-official-selection-2020/",
+      "reason": "The 2020 Festival de Cannes did not take place in its usual Competition form; the official selection was issued without the normal Competition categories or feature-film jury palmarès."
+    }
+  ],
+  "obligations": [
+    {
+      "awardYear": 2021,
+      "filmYear": 2021,
+      "award": "Palme d'Or",
+      "title": "Titane",
+      "originalTitle": "Titane",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "manifestIndex": 0,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_titane_2021",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2021,
+      "filmYear": 2021,
+      "award": "Grand Prix (joint)",
+      "title": "A Hero",
+      "originalTitle": "Ghahreman",
+      "aliases": [
+        "A Hero (Ghahreman)"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "manifestIndex": 1,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2021,
+      "filmYear": 2021,
+      "award": "Grand Prix (joint)",
+      "title": "Compartment No. 6",
+      "originalTitle": "Hytti nro 6",
+      "aliases": [
+        "Compartment N°6",
+        "Compartment No 6",
+        "Hytti N°6"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "manifestIndex": 2,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2021,
+      "filmYear": 2021,
+      "award": "Best Director",
+      "title": "Annette",
+      "originalTitle": "Annette",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "manifestIndex": 3,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2021,
+      "filmYear": 2021,
+      "award": "Best Screenplay",
+      "title": "Drive My Car",
+      "originalTitle": "Doraibu mai kā",
+      "aliases": [
+        "Drive my car"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "manifestIndex": 4,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_drive_my_car_2021",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2021,
+      "filmYear": 2021,
+      "award": "Jury Prize (joint)",
+      "title": "Memoria",
+      "originalTitle": "Memoria",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "manifestIndex": 5,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_memoria_2021",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2021,
+      "filmYear": 2021,
+      "award": "Jury Prize (joint)",
+      "title": "Ahed's Knee",
+      "originalTitle": "Ha'berech",
+      "aliases": [
+        "Ahed’s Knee",
+        "Ha’berech"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "manifestIndex": 6,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2021,
+      "filmYear": 2021,
+      "award": "Best Performance by an Actress",
+      "title": "The Worst Person in the World",
+      "originalTitle": "Verdens verste menneske",
+      "aliases": [
+        "Julie (en 12 chapitres)"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "manifestIndex": 7,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_the_worst_person_in_the_world_2021",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2021,
+      "filmYear": 2021,
+      "award": "Best Performance by an Actor",
+      "title": "Nitram",
+      "originalTitle": "Nitram",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "manifestIndex": 8,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2022,
+      "filmYear": 2022,
+      "award": "Palme d'Or",
+      "title": "Triangle of Sadness",
+      "originalTitle": "Triangle of Sadness",
+      "aliases": [
+        "Sans filtre"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "manifestIndex": 9,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_triangle_of_sadness_2022",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2022,
+      "filmYear": 2022,
+      "award": "Grand Prix (joint)",
+      "title": "Close",
+      "originalTitle": "Close",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "manifestIndex": 10,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2022,
+      "filmYear": 2022,
+      "award": "Grand Prix (joint)",
+      "title": "Stars at Noon",
+      "originalTitle": "Stars at Noon",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "manifestIndex": 11,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2022,
+      "filmYear": 2022,
+      "award": "Best Director",
+      "title": "Decision to Leave",
+      "originalTitle": "Heojil kyolshim",
+      "aliases": [
+        "Decision to Leave (Heojil kyolshim)"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "manifestIndex": 12,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_decision_to_leave_2022",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2022,
+      "filmYear": 2022,
+      "award": "Best Screenplay",
+      "title": "Boy from Heaven",
+      "originalTitle": "Walad Min Al Janna",
+      "aliases": [
+        "Cairo Conspiracy"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "manifestIndex": 13,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2022,
+      "filmYear": 2022,
+      "award": "Jury Prize (joint)",
+      "title": "EO",
+      "originalTitle": "EO",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "manifestIndex": 14,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_eo_2022",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2022,
+      "filmYear": 2022,
+      "award": "Jury Prize (joint)",
+      "title": "The Eight Mountains",
+      "originalTitle": "Le otto montagne",
+      "aliases": [
+        "Le Otto Montagne"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "manifestIndex": 15,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2022,
+      "filmYear": 2022,
+      "award": "75th Anniversary Prize",
+      "title": "Tori and Lokita",
+      "originalTitle": "Tori et Lokita",
+      "aliases": [
+        "Tori & Lokita"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "manifestIndex": 16,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2022,
+      "filmYear": 2022,
+      "award": "Best Actress",
+      "title": "Holy Spider",
+      "originalTitle": "Holy Spider",
+      "aliases": [
+        "Les nuits de Mashhad"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "manifestIndex": 17,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2022,
+      "filmYear": 2022,
+      "award": "Best Actor",
+      "title": "Broker",
+      "originalTitle": "Beurokeo",
+      "aliases": [
+        "Les bonnes étoiles"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "manifestIndex": 18,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2023,
+      "filmYear": 2023,
+      "award": "Palme d'Or",
+      "title": "Anatomy of a Fall",
+      "originalTitle": "Anatomie d'une chute",
+      "aliases": [
+        "Anatomie d’une chute"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
+      "manifestIndex": 19,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_anatomy_of_a_fall_2023",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2023,
+      "filmYear": 2023,
+      "award": "Grand Prix",
+      "title": "The Zone of Interest",
+      "originalTitle": "The Zone of Interest",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
+      "manifestIndex": 20,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_the_zone_of_interest_2023",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2023,
+      "filmYear": 2023,
+      "award": "Best Director",
+      "title": "The Pot-au-Feu",
+      "originalTitle": "La Passion de Dodin Bouffant",
+      "aliases": [
+        "The Taste of Things",
+        "La passion de Dodin Bouffant"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
+      "manifestIndex": 21,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2023,
+      "filmYear": 2023,
+      "award": "Jury Prize",
+      "title": "Fallen Leaves",
+      "originalTitle": "Kuolleet lehdet",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
+      "manifestIndex": 22,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2023,
+      "filmYear": 2023,
+      "award": "Best Screenplay",
+      "title": "Monster",
+      "originalTitle": "Kaibutsu",
+      "aliases": [
+        "Monster (Kaibutsu)"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
+      "manifestIndex": 23,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2023,
+      "filmYear": 2023,
+      "award": "Best Performance by an Actress",
+      "title": "About Dry Grasses",
+      "originalTitle": "Kuru Otlar Üstüne",
+      "aliases": [
+        "Kuru Otlar Ustune"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
+      "manifestIndex": 24,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2023,
+      "filmYear": 2023,
+      "award": "Best Performance by an Actor",
+      "title": "Perfect Days",
+      "originalTitle": "Perfect Days",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
+      "manifestIndex": 25,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2024,
+      "filmYear": 2024,
+      "award": "Palme d'Or",
+      "title": "Anora",
+      "originalTitle": "Anora",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+      "manifestIndex": 26,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_anora_2024",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2024,
+      "filmYear": 2024,
+      "award": "Grand Prix",
+      "title": "All We Imagine as Light",
+      "originalTitle": "All We Imagine as Light",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+      "manifestIndex": 27,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_all_we_imagine_as_light_2024",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2024,
+      "filmYear": 2024,
+      "award": "Jury Prize",
+      "title": "Emilia Pérez",
+      "originalTitle": "Emilia Pérez",
+      "aliases": [
+        "Emilia Perez"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+      "manifestIndex": 28,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2024,
+      "filmYear": 2024,
+      "award": "Best Director",
+      "title": "Grand Tour",
+      "originalTitle": "Grand Tour",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+      "manifestIndex": 29,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2024,
+      "filmYear": 2024,
+      "award": "Special Award",
+      "title": "The Seed of the Sacred Fig",
+      "originalTitle": "Dāne-ye anjīr-e ma'ābed",
+      "aliases": [
+        "The Seed of the Sacred Figure"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+      "manifestIndex": 30,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_the_seed_of_the_sacred_fig_2024",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2024,
+      "filmYear": 2024,
+      "award": "Best Performance by an Actor",
+      "title": "Kinds of Kindness",
+      "originalTitle": "Kinds of Kindness",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+      "manifestIndex": 31,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2024,
+      "filmYear": 2024,
+      "award": "Best Performance by an Actress",
+      "title": "Emilia Pérez",
+      "originalTitle": "Emilia Pérez",
+      "aliases": [
+        "Emilia Perez"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+      "manifestIndex": 32,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2024,
+      "filmYear": 2024,
+      "award": "Best Screenplay",
+      "title": "The Substance",
+      "originalTitle": "The Substance",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+      "manifestIndex": 33,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_the_substance_2024",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2025,
+      "filmYear": 2025,
+      "award": "Palme d'Or",
+      "title": "It Was Just an Accident",
+      "originalTitle": "Yek tasadef sadeh",
+      "aliases": [
+        "Un simple accident"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "manifestIndex": 34,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_it_was_just_an_accident_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2025,
+      "filmYear": 2025,
+      "award": "Grand Prix",
+      "title": "Sentimental Value",
+      "originalTitle": "Affeksjonsverdi",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "manifestIndex": 35,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_sentimental_value_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2025,
+      "filmYear": 2025,
+      "award": "Jury Prize (joint)",
+      "title": "Sirāt",
+      "originalTitle": "Sirāt",
+      "aliases": [
+        "Sirat"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "manifestIndex": 36,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_sirat_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2025,
+      "filmYear": 2025,
+      "award": "Jury Prize (joint)",
+      "title": "Sound of Falling",
+      "originalTitle": "In die Sonne schauen",
+      "aliases": [],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "manifestIndex": 37,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_sound_of_falling_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2025,
+      "filmYear": 2025,
+      "award": "Best Director",
+      "title": "The Secret Agent",
+      "originalTitle": "O Agente Secreto",
+      "aliases": [
+        "O agente secreto"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "manifestIndex": 38,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_the_secret_agent_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2025,
+      "filmYear": 2025,
+      "award": "Best Screenplay",
+      "title": "Young Mothers",
+      "originalTitle": "Jeunes Mères",
+      "aliases": [
+        "Jeunes Meres"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "manifestIndex": 39,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2025,
+      "filmYear": 2025,
+      "award": "Best Performance by an Actress",
+      "title": "The Little Sister",
+      "originalTitle": "La Petite Dernière",
+      "aliases": [
+        "La Petite Derniere"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "manifestIndex": 40,
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "awardYear": 2025,
+      "filmYear": 2025,
+      "award": "Best Performance by an Actor",
+      "title": "The Secret Agent",
+      "originalTitle": "O Agente Secreto",
+      "aliases": [
+        "O agente secreto"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "manifestIndex": 41,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_the_secret_agent_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "awardYear": 2025,
+      "filmYear": 2025,
+      "award": "Special Award",
+      "title": "Resurrection",
+      "originalTitle": "Kuang Ye Shi Dai",
+      "aliases": [
+        "Resurrection (Kuang Ye Shi Dai)"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "manifestIndex": 42,
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_resurrection_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    }
+  ],
+  "awardedFilms": [
+    {
+      "key": "2021|titane",
+      "title": "Titane",
+      "filmYear": 2021,
+      "aliases": [],
+      "awards": [
+        "Palme d'Or"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_titane_2021",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2021|a hero",
+      "title": "A Hero",
+      "filmYear": 2021,
+      "aliases": [
+        "A Hero (Ghahreman)"
+      ],
+      "awards": [
+        "Grand Prix (joint)"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2021|compartment no 6",
+      "title": "Compartment No. 6",
+      "filmYear": 2021,
+      "aliases": [
+        "Compartment N°6",
+        "Compartment No 6",
+        "Hytti N°6"
+      ],
+      "awards": [
+        "Grand Prix (joint)"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2021|annette",
+      "title": "Annette",
+      "filmYear": 2021,
+      "aliases": [],
+      "awards": [
+        "Best Director"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2021|drive my car",
+      "title": "Drive My Car",
+      "filmYear": 2021,
+      "aliases": [
+        "Drive my car"
+      ],
+      "awards": [
+        "Best Screenplay"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_drive_my_car_2021",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2021|memoria",
+      "title": "Memoria",
+      "filmYear": 2021,
+      "aliases": [],
+      "awards": [
+        "Jury Prize (joint)"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_memoria_2021",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2021|ahed s knee",
+      "title": "Ahed's Knee",
+      "filmYear": 2021,
+      "aliases": [
+        "Ahed’s Knee",
+        "Ha’berech"
+      ],
+      "awards": [
+        "Jury Prize (joint)"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2021|the worst person in the world",
+      "title": "The Worst Person in the World",
+      "filmYear": 2021,
+      "aliases": [
+        "Julie (en 12 chapitres)"
+      ],
+      "awards": [
+        "Best Performance by an Actress"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_the_worst_person_in_the_world_2021",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2021|nitram",
+      "title": "Nitram",
+      "filmYear": 2021,
+      "aliases": [],
+      "awards": [
+        "Best Performance by an Actor"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2022|triangle of sadness",
+      "title": "Triangle of Sadness",
+      "filmYear": 2022,
+      "aliases": [
+        "Sans filtre"
+      ],
+      "awards": [
+        "Palme d'Or"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_triangle_of_sadness_2022",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2022|close",
+      "title": "Close",
+      "filmYear": 2022,
+      "aliases": [],
+      "awards": [
+        "Grand Prix (joint)"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2022|stars at noon",
+      "title": "Stars at Noon",
+      "filmYear": 2022,
+      "aliases": [],
+      "awards": [
+        "Grand Prix (joint)"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2022|decision to leave",
+      "title": "Decision to Leave",
+      "filmYear": 2022,
+      "aliases": [
+        "Decision to Leave (Heojil kyolshim)"
+      ],
+      "awards": [
+        "Best Director"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_decision_to_leave_2022",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2022|boy from heaven",
+      "title": "Boy from Heaven",
+      "filmYear": 2022,
+      "aliases": [
+        "Cairo Conspiracy"
+      ],
+      "awards": [
+        "Best Screenplay"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2022|eo",
+      "title": "EO",
+      "filmYear": 2022,
+      "aliases": [],
+      "awards": [
+        "Jury Prize (joint)"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_eo_2022",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2022|the eight mountains",
+      "title": "The Eight Mountains",
+      "filmYear": 2022,
+      "aliases": [
+        "Le Otto Montagne"
+      ],
+      "awards": [
+        "Jury Prize (joint)"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2022|tori and lokita",
+      "title": "Tori and Lokita",
+      "filmYear": 2022,
+      "aliases": [
+        "Tori & Lokita"
+      ],
+      "awards": [
+        "75th Anniversary Prize"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2022|holy spider",
+      "title": "Holy Spider",
+      "filmYear": 2022,
+      "aliases": [
+        "Les nuits de Mashhad"
+      ],
+      "awards": [
+        "Best Actress"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2022|broker",
+      "title": "Broker",
+      "filmYear": 2022,
+      "aliases": [
+        "Les bonnes étoiles"
+      ],
+      "awards": [
+        "Best Actor"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2023|anatomy of a fall",
+      "title": "Anatomy of a Fall",
+      "filmYear": 2023,
+      "aliases": [
+        "Anatomie d’une chute"
+      ],
+      "awards": [
+        "Palme d'Or"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_anatomy_of_a_fall_2023",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2023|the zone of interest",
+      "title": "The Zone of Interest",
+      "filmYear": 2023,
+      "aliases": [],
+      "awards": [
+        "Grand Prix"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_the_zone_of_interest_2023",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2023|the pot au feu",
+      "title": "The Pot-au-Feu",
+      "filmYear": 2023,
+      "aliases": [
+        "The Taste of Things",
+        "La passion de Dodin Bouffant"
+      ],
+      "awards": [
+        "Best Director"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2023|fallen leaves",
+      "title": "Fallen Leaves",
+      "filmYear": 2023,
+      "aliases": [],
+      "awards": [
+        "Jury Prize"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2023|monster",
+      "title": "Monster",
+      "filmYear": 2023,
+      "aliases": [
+        "Monster (Kaibutsu)"
+      ],
+      "awards": [
+        "Best Screenplay"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2023|about dry grasses",
+      "title": "About Dry Grasses",
+      "filmYear": 2023,
+      "aliases": [
+        "Kuru Otlar Ustune"
+      ],
+      "awards": [
+        "Best Performance by an Actress"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2023|perfect days",
+      "title": "Perfect Days",
+      "filmYear": 2023,
+      "aliases": [],
+      "awards": [
+        "Best Performance by an Actor"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2024|anora",
+      "title": "Anora",
+      "filmYear": 2024,
+      "aliases": [],
+      "awards": [
+        "Palme d'Or"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_anora_2024",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2024|all we imagine as light",
+      "title": "All We Imagine as Light",
+      "filmYear": 2024,
+      "aliases": [],
+      "awards": [
+        "Grand Prix"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_all_we_imagine_as_light_2024",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2024|emilia perez",
+      "title": "Emilia Pérez",
+      "filmYear": 2024,
+      "aliases": [
+        "Emilia Perez"
+      ],
+      "awards": [
+        "Jury Prize",
+        "Best Performance by an Actress"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2024|grand tour",
+      "title": "Grand Tour",
+      "filmYear": 2024,
+      "aliases": [],
+      "awards": [
+        "Best Director"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2024|the seed of the sacred fig",
+      "title": "The Seed of the Sacred Fig",
+      "filmYear": 2024,
+      "aliases": [
+        "The Seed of the Sacred Figure"
+      ],
+      "awards": [
+        "Special Award"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_the_seed_of_the_sacred_fig_2024",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2024|kinds of kindness",
+      "title": "Kinds of Kindness",
+      "filmYear": 2024,
+      "aliases": [],
+      "awards": [
+        "Best Performance by an Actor"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2024|the substance",
+      "title": "The Substance",
+      "filmYear": 2024,
+      "aliases": [],
+      "awards": [
+        "Best Screenplay"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_the_substance_2024",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2025|it was just an accident",
+      "title": "It Was Just an Accident",
+      "filmYear": 2025,
+      "aliases": [
+        "Un simple accident"
+      ],
+      "awards": [
+        "Palme d'Or"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_it_was_just_an_accident_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2025|sentimental value",
+      "title": "Sentimental Value",
+      "filmYear": 2025,
+      "aliases": [],
+      "awards": [
+        "Grand Prix"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_sentimental_value_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2025|sirat",
+      "title": "Sirāt",
+      "filmYear": 2025,
+      "aliases": [
+        "Sirat"
+      ],
+      "awards": [
+        "Jury Prize (joint)"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_sirat_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2025|sound of falling",
+      "title": "Sound of Falling",
+      "filmYear": 2025,
+      "aliases": [],
+      "awards": [
+        "Jury Prize (joint)"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_sound_of_falling_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2025|the secret agent",
+      "title": "The Secret Agent",
+      "filmYear": 2025,
+      "aliases": [
+        "O agente secreto"
+      ],
+      "awards": [
+        "Best Director",
+        "Best Performance by an Actor"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_the_secret_agent_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    },
+    {
+      "key": "2025|young mothers",
+      "title": "Young Mothers",
+      "filmYear": 2025,
+      "aliases": [
+        "Jeunes Meres"
+      ],
+      "awards": [
+        "Best Screenplay"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2025|the little sister",
+      "title": "The Little Sister",
+      "filmYear": 2025,
+      "aliases": [
+        "La Petite Derniere"
+      ],
+      "awards": [
+        "Best Performance by an Actress"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "candidatePresent": false,
+      "candidateDecision": null,
+      "scenarioId": null,
+      "atlasMatches": 0,
+      "productionVerified": false,
+      "status": "MISSING_CANDIDATE"
+    },
+    {
+      "key": "2025|resurrection",
+      "title": "Resurrection",
+      "filmYear": 2025,
+      "aliases": [
+        "Resurrection (Kuang Ye Shi Dai)"
+      ],
+      "awards": [
+        "Special Award"
+      ],
+      "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_resurrection_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
+    }
+  ],
+  "coverageByYear": [
+    {
+      "year": 2021,
+      "obligations": 9,
+      "productionVerifiedObligations": 4,
+      "uniqueAwardedFilms": 9,
+      "productionVerifiedFilms": 4,
+      "unresolvedFilms": 5
+    },
+    {
+      "year": 2022,
+      "obligations": 10,
+      "productionVerifiedObligations": 3,
+      "uniqueAwardedFilms": 10,
+      "productionVerifiedFilms": 3,
+      "unresolvedFilms": 7
+    },
+    {
+      "year": 2023,
+      "obligations": 7,
+      "productionVerifiedObligations": 2,
+      "uniqueAwardedFilms": 7,
+      "productionVerifiedFilms": 2,
+      "unresolvedFilms": 5
+    },
+    {
+      "year": 2024,
+      "obligations": 8,
+      "productionVerifiedObligations": 4,
+      "uniqueAwardedFilms": 7,
+      "productionVerifiedFilms": 4,
+      "unresolvedFilms": 3
+    },
+    {
+      "year": 2025,
+      "obligations": 9,
+      "productionVerifiedObligations": 7,
+      "uniqueAwardedFilms": 8,
+      "productionVerifiedFilms": 6,
+      "unresolvedFilms": 2
+    }
+  ],
+  "summary": {
+    "awardObligations": 43,
+    "productionVerifiedObligations": 20,
+    "uniqueAwardedFilms": 41,
+    "productionVerifiedFilms": 19,
+    "unresolvedFilms": 22,
+    "missingCandidateFilms": 22,
+    "cannesMajorPrizesCompletionProven": false,
+    "filmHistoricalSelectionCompletionProven": false
+  },
+  "correctiveQueue": [
+    {
+      "order": 1,
+      "title": "A Hero",
+      "filmYear": 2021,
+      "awards": [
+        "Grand Prix (joint)"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 2,
+      "title": "Compartment No. 6",
+      "filmYear": 2021,
+      "awards": [
+        "Grand Prix (joint)"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 3,
+      "title": "Annette",
+      "filmYear": 2021,
+      "awards": [
+        "Best Director"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 4,
+      "title": "Ahed's Knee",
+      "filmYear": 2021,
+      "awards": [
+        "Jury Prize (joint)"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 5,
+      "title": "Nitram",
+      "filmYear": 2021,
+      "awards": [
+        "Best Performance by an Actor"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 6,
+      "title": "Close",
+      "filmYear": 2022,
+      "awards": [
+        "Grand Prix (joint)"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 7,
+      "title": "Stars at Noon",
+      "filmYear": 2022,
+      "awards": [
+        "Grand Prix (joint)"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 8,
+      "title": "Boy from Heaven",
+      "filmYear": 2022,
+      "awards": [
+        "Best Screenplay"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 9,
+      "title": "The Eight Mountains",
+      "filmYear": 2022,
+      "awards": [
+        "Jury Prize (joint)"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 10,
+      "title": "Tori and Lokita",
+      "filmYear": 2022,
+      "awards": [
+        "75th Anniversary Prize"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 11,
+      "title": "Holy Spider",
+      "filmYear": 2022,
+      "awards": [
+        "Best Actress"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 12,
+      "title": "Broker",
+      "filmYear": 2022,
+      "awards": [
+        "Best Actor"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 13,
+      "title": "The Pot-au-Feu",
+      "filmYear": 2023,
+      "awards": [
+        "Best Director"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 14,
+      "title": "Fallen Leaves",
+      "filmYear": 2023,
+      "awards": [
+        "Jury Prize"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 15,
+      "title": "Monster",
+      "filmYear": 2023,
+      "awards": [
+        "Best Screenplay"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 16,
+      "title": "About Dry Grasses",
+      "filmYear": 2023,
+      "awards": [
+        "Best Performance by an Actress"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 17,
+      "title": "Perfect Days",
+      "filmYear": 2023,
+      "awards": [
+        "Best Performance by an Actor"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 18,
+      "title": "Emilia Pérez",
+      "filmYear": 2024,
+      "awards": [
+        "Jury Prize",
+        "Best Performance by an Actress"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 19,
+      "title": "Grand Tour",
+      "filmYear": 2024,
+      "awards": [
+        "Best Director"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 20,
+      "title": "Kinds of Kindness",
+      "filmYear": 2024,
+      "awards": [
+        "Best Performance by an Actor"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 21,
+      "title": "Young Mothers",
+      "filmYear": 2025,
+      "awards": [
+        "Best Screenplay"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    },
+    {
+      "order": 22,
+      "title": "The Little Sister",
+      "filmYear": 2025,
+      "awards": [
+        "Best Performance by an Actress"
+      ],
+      "status": "MISSING_CANDIDATE",
+      "scenarioId": null,
+      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
+    }
+  ],
+  "nextPhaseAfterClosure": "Venice main-competition major prizes, 2020–2025"
+}
