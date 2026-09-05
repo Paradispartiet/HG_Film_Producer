@@ -1,4 +1,4 @@
-name: TEMP Beauty documentary contract inspection
+name: TEMP Beauty source-area inspection
 
 on:
   push:
@@ -22,12 +22,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Inspect documentary audit contract and Beauty registration
+      - name: Inspect exact Beauty payload and existing profile
         shell: bash
         run: |
           set -euxo pipefail
-          grep -n -C 16 -E 'documentary|constraints|productionSourceAreas' scripts/production-case-rest-audit.mjs || true
-          printf '\n=== Existing Beauty profile references ===\n'
-          grep -R -n -C 3 'scenario_all_the_beauty_and_the_bloodshed_2022\|allTheBeautyAndTheBloodshedFilmHistoryProfile\|scenarioFilmStudyBodyArchiveAllBeauty' src/ui/data scripts || true
-          printf '\n=== Green documentary profiles with documentary constraints ===\n'
-          grep -R -n -C 8 -E 'documentaryConstraints|constraints:' src/ui/data/scenarioFilmStudy*.ts | head -n 260 || true
+          printf '\n=== TEMP generated Film Study payload ===\n'
+          sed -n '45,120p' scripts/TEMP-ch19-all-the-beauty-and-the-bloodshed-reconcile.mjs
+          printf '\n=== Existing Body Archive Beauty profile ===\n'
+          sed -n '1,260p' src/ui/data/scenarioFilmStudyBodyArchiveAllBeauty.ts
+          printf '\n=== Happening Chapter 19 profile area shape ===\n'
+          sed -n '1,180p' src/ui/data/scenarioFilmStudyChapterNineteenHappening.ts
