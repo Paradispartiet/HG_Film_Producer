@@ -26,6 +26,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Normalize TEMP materializer quoting
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path("scripts/TEMP-materialize-ch19-aheds-knee.mjs")
+          lines = p.read_text(encoding="utf-8").splitlines(keepends=True)
+          out = []
+          for line in lines:
+              if "const ahedsKneeNeedles =" not in line:
+                  line = line.replace(r"Ahed\\'s", r"Ahed\'s")
+              out.append(line)
+          p.write_text("".join(out), encoding="utf-8")
+          PY
+          node --check scripts/TEMP-materialize-ch19-aheds-knee.mjs
+
       - name: Materialize Ahed's Knee
         run: node scripts/TEMP-materialize-ch19-aheds-knee.mjs
 
