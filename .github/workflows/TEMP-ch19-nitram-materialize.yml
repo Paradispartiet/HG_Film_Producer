@@ -26,6 +26,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Normalize Nitram audit marker quoting
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path("scripts/TEMP-materialize-ch19-nitram.mjs")
+          lines = p.read_text().splitlines(keepends=True)
+          out = []
+          touched = 0
+          for line in lines:
+              if "const ahedsKneeNeedles =" in line:
+                  fixed = line.replace(r'\\\"', r'\"')
+                  if fixed != line:
+                      touched += 1
+                  line = fixed
+              out.append(line)
+          if touched != 2:
+              raise SystemExit(f"Expected to normalize exactly 2 Ahed/Nitram marker lines, changed {touched}")
+          p.write_text("".join(out))
+          PY
+
       - name: Parse TEMP materializer
         run: node --check scripts/TEMP-materialize-ch19-nitram.mjs
 
