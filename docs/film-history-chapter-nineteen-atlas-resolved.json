@@ -1501,6 +1501,20 @@
       "origin": "chapterNineteenNitramExpansion.ts"
     },
     {
+      "title": "Close",
+      "originalTitle": "Close",
+      "year": 2022,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2022 joint Grand Prix reconciliation: reuse the existing canonical scenario_close_2022, its source-backed 17-area Film Study and verified Production Case from the Italy/France/Germany/Benelux expansion instead of materializing a duplicate Atlas/PV identity.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_close_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "italyFranceGermanyBeneluxExpansion.ts"
+    },
+    {
       "title": "Tenet",
       "originalTitle": "Tenet",
       "year": 2020,
@@ -2425,6 +2439,7 @@
       "Annette",
       "Ahed's Knee",
       "Nitram",
+      "Close",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2505,6 +2520,7 @@
       "Annette",
       "Ahed's Knee",
       "Nitram",
+      "Close",
       "Tenet",
       "Nomadland",
       "Soul",

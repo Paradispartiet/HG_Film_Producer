@@ -48,7 +48,7 @@
     "atlasExpected": 598,
     "atlasActual": 598,
     "productionVerificationIds": 598,
-    "chapterNineteenCandidates": 75
+    "chapterNineteenCandidates": 76
   },
   "officialSources": {
     "cannes2020": "https://www.festival-cannes.com/en/press/press-releases/the-official-selection-2020/",
@@ -250,12 +250,12 @@
       "aliases": [],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
       "manifestIndex": 10,
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_close_2022",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "awardYear": 2022,
@@ -996,12 +996,12 @@
         "Grand Prix (joint)"
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_close_2022",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "key": "2022|stars at noon",
@@ -1535,10 +1535,10 @@
     {
       "year": 2022,
       "obligations": 10,
-      "productionVerifiedObligations": 3,
+      "productionVerifiedObligations": 4,
       "uniqueAwardedFilms": 10,
-      "productionVerifiedFilms": 3,
-      "unresolvedFilms": 7
+      "productionVerifiedFilms": 4,
+      "unresolvedFilms": 6
     },
     {
       "year": 2023,
@@ -1567,28 +1567,17 @@
   ],
   "summary": {
     "awardObligations": 43,
-    "productionVerifiedObligations": 25,
+    "productionVerifiedObligations": 26,
     "uniqueAwardedFilms": 41,
-    "productionVerifiedFilms": 24,
-    "unresolvedFilms": 17,
-    "missingCandidateFilms": 17,
+    "productionVerifiedFilms": 25,
+    "unresolvedFilms": 16,
+    "missingCandidateFilms": 16,
     "cannesMajorPrizesCompletionProven": false,
     "filmHistoricalSelectionCompletionProven": false
   },
   "correctiveQueue": [
     {
       "order": 1,
-      "title": "Close",
-      "filmYear": 2022,
-      "awards": [
-        "Grand Prix (joint)"
-      ],
-      "status": "MISSING_CANDIDATE",
-      "scenarioId": null,
-      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
-    },
-    {
-      "order": 2,
       "title": "Stars at Noon",
       "filmYear": 2022,
       "awards": [
@@ -1599,7 +1588,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 3,
+      "order": 2,
       "title": "Boy from Heaven",
       "filmYear": 2022,
       "awards": [
@@ -1610,7 +1599,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 4,
+      "order": 3,
       "title": "The Eight Mountains",
       "filmYear": 2022,
       "awards": [
@@ -1621,7 +1610,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 5,
+      "order": 4,
       "title": "Tori and Lokita",
       "filmYear": 2022,
       "awards": [
@@ -1632,7 +1621,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 6,
+      "order": 5,
       "title": "Holy Spider",
       "filmYear": 2022,
       "awards": [
@@ -1643,7 +1632,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 7,
+      "order": 6,
       "title": "Broker",
       "filmYear": 2022,
       "awards": [
@@ -1654,7 +1643,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 8,
+      "order": 7,
       "title": "The Pot-au-Feu",
       "filmYear": 2023,
       "awards": [
@@ -1665,7 +1654,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 9,
+      "order": 8,
       "title": "Fallen Leaves",
       "filmYear": 2023,
       "awards": [
@@ -1676,7 +1665,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 10,
+      "order": 9,
       "title": "Monster",
       "filmYear": 2023,
       "awards": [
@@ -1687,7 +1676,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 11,
+      "order": 10,
       "title": "About Dry Grasses",
       "filmYear": 2023,
       "awards": [
@@ -1698,7 +1687,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 12,
+      "order": 11,
       "title": "Perfect Days",
       "filmYear": 2023,
       "awards": [
@@ -1709,7 +1698,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 13,
+      "order": 12,
       "title": "Emilia Pérez",
       "filmYear": 2024,
       "awards": [
@@ -1721,7 +1710,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 14,
+      "order": 13,
       "title": "Grand Tour",
       "filmYear": 2024,
       "awards": [
@@ -1732,7 +1721,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 15,
+      "order": 14,
       "title": "Kinds of Kindness",
       "filmYear": 2024,
       "awards": [
@@ -1743,7 +1732,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 16,
+      "order": 15,
       "title": "Young Mothers",
       "filmYear": 2025,
       "awards": [
@@ -1754,7 +1743,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 17,
+      "order": 16,
       "title": "The Little Sister",
       "filmYear": 2025,
       "awards": [

@@ -26,6 +26,7 @@ const compartmentNo6Needles = ['"title": "Compartment No. 6"', 'title: "Compartm
 const annetteNeedles = ['"title": "Annette"', 'title: "Annette"', 'scenario_annette_2021'];
 const ahedsKneeNeedles = ['"title": "Ahed\'s Knee"', 'title: "Ahed\'s Knee"', '"originalTitle": "Ha’berech"', 'scenario_aheds_knee_2021'];
 const nitramNeedles = ['"title": "Nitram"', 'title: "Nitram"', 'scenario_nitram_2021'];
+const closeNeedles = ['"title": "Close"', 'title: "Close"', 'scenario_close_2022'];
 
 const triangleCandidate = `
   {
@@ -196,6 +197,17 @@ const nitramCandidate = `
     "chapterFunction": "Cannes 2021 Best Actor source-first case: materialize one new Nitram Atlas/PV identity after strict reuse reconciliation; preserve productionYear 2020 separately from film/award year 2021; lock the sourced 24-day Geelong lockdown production, Alexa Mini S35/Panavision Ultra Speeds workflow and explicit 1.55:1-versus-1.43:1 source discrepancy without inventing unsupported finance, camera, sound, VFX or mastering detail."
   },`;
 
+const closeCandidate = `
+  {
+    "title": "Close",
+    "originalTitle": "Close",
+    "year": 2022,
+    "aliases": [],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Cannes 2022 joint Grand Prix reconciliation: reuse the existing canonical scenario_close_2022, its source-backed 17-area Film Study and verified Production Case from the Italy/France/Germany/Benelux expansion instead of materializing a duplicate Atlas/PV identity."
+  },`;
+
 const baseSource = readFileSync(basePath, "utf8");
 const requiredBaselineConstants = [
   `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
@@ -219,12 +231,13 @@ if (compartmentNo6Needles.some((needle) => baseSource.includes(needle))) throw n
 if (annetteNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Annette; consolidate the wrapper deliberately before continuing.");
 if (ahedsKneeNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Ahed's Knee/Ha’berech; consolidate the wrapper deliberately before continuing.");
 if (nitramNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Nitram; consolidate the wrapper deliberately before continuing.");
+if (closeNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Close; consolidate the wrapper deliberately before continuing.");
 if (!baseSource.includes(insertionMarker)) throw new Error("Chapter 19 candidate insertion marker is missing; refusing to run a partially reconciled audit.");
 
 const reconciledSource = baseSource
   .replace(`const EXPECTED_ATLAS_COUNT = ${BASE_EXPECTED_ATLAS_COUNT};`, `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`)
   .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-05"')
-  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}`);
+  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}`);
 const temporaryAuditPath = path.join(scriptDir, `.film-history-chapter-nineteen-atlas-audit-reconciled-${process.pid}.mjs`);
 
 try {
