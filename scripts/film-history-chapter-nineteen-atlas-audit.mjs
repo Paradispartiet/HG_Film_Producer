@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;
 const BASE_EXPECTED_ATLAS_COUNT = 590;
-const EXPECTED_ATLAS_COUNT = 596;
+const EXPECTED_ATLAS_COUNT = 597;
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const basePath = path.join(scriptDir, "film-history-chapter-nineteen-atlas-audit-base.mjs");
@@ -24,6 +24,7 @@ const fatherMotherNeedles = ['"title": "Father Mother Sister Brother"', 'title: 
 const aHeroNeedles = ['"title": "A Hero"', 'title: "A Hero"', '"originalTitle": "Ghahreman"', 'scenario_a_hero_2021'];
 const compartmentNo6Needles = ['"title": "Compartment No. 6"', 'title: "Compartment No. 6"', '"originalTitle": "Hytti nro 6"', 'scenario_compartment_no_6_2021'];
 const annetteNeedles = ['"title": "Annette"', 'title: "Annette"', 'scenario_annette_2021'];
+const ahedsKneeNeedles = ['"title": "Ahed\'s Knee"', 'title: "Ahed\'s Knee"', '"originalTitle": "Ha’berech"', 'scenario_aheds_knee_2021'];
 
 const triangleCandidate = `
   {
@@ -171,6 +172,18 @@ const annetteCandidate = `
     "chapterFunction": "Cannes 2021 Best Director source-first case: materialize one new Annette Atlas/PV identity after strict reuse reconciliation; preserve film/award year 2021 separately from Cannes productionYear 2020; lock the sourced 16-week transnational production, live-singing method, Sony VENICE/X-OCN ST camera system and practical Charlier/Collinet puppet workflow without inventing unsupported finance, sound-routing or post detail."
   },`;
 
+
+const ahedsKneeCandidate = `
+  {
+    "title": "Ahed's Knee",
+    "originalTitle": "Ha’berech",
+    "year": 2021,
+    "aliases": ["Ha'berech", "Le Genou d'Ahed"],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Cannes 2021 joint Jury Prize source-first case: materialize one new Ahed's Knee/Ha’berech Atlas/PV identity after strict reuse reconciliation; lock the sourced 18-day Arava shoot, schedule-driven risk, camera-as-actor collaboration with Shai Goldman and bounded 2.39:1 exhibition metadata without inventing unsupported camera, lighting, finance, sound, VFX, grade or mastering detail."
+  },`;
+
 const baseSource = readFileSync(basePath, "utf8");
 const requiredBaselineConstants = [
   `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
@@ -192,12 +205,13 @@ if (fatherMotherNeedles.some((needle) => baseSource.includes(needle))) throw new
 if (aHeroNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains A Hero/Ghahreman; consolidate the wrapper deliberately before continuing.");
 if (compartmentNo6Needles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Compartment No. 6/Hytti nro 6; consolidate the wrapper deliberately before continuing.");
 if (annetteNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Annette; consolidate the wrapper deliberately before continuing.");
+if (ahedsKneeNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Ahed's Knee/Ha’berech; consolidate the wrapper deliberately before continuing.");
 if (!baseSource.includes(insertionMarker)) throw new Error("Chapter 19 candidate insertion marker is missing; refusing to run a partially reconciled audit.");
 
 const reconciledSource = baseSource
   .replace(`const EXPECTED_ATLAS_COUNT = ${BASE_EXPECTED_ATLAS_COUNT};`, `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`)
   .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-05"')
-  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}`);
+  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}`);
 const temporaryAuditPath = path.join(scriptDir, `.film-history-chapter-nineteen-atlas-audit-reconciled-${process.pid}.mjs`);
 
 try {

@@ -45,10 +45,10 @@
     "topPrizeCorrectiveQueue": 0
   },
   "technicalBaseline": {
-    "atlasExpected": 596,
-    "atlasActual": 596,
-    "productionVerificationIds": 596,
-    "chapterNineteenCandidates": 73
+    "atlasExpected": 597,
+    "atlasActual": 597,
+    "productionVerificationIds": 597,
+    "chapterNineteenCandidates": 74
   },
   "officialSources": {
     "cannes2020": "https://www.festival-cannes.com/en/press/press-releases/the-official-selection-2020/",
@@ -182,12 +182,12 @@
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
       "manifestIndex": 6,
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_aheds_knee_2021",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "awardYear": 2021,
@@ -928,12 +928,12 @@
         "Jury Prize (joint)"
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/all-the-74th-festival-de-cannes-awards/",
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_aheds_knee_2021",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "key": "2021|the worst person in the world",
@@ -1527,10 +1527,10 @@
     {
       "year": 2021,
       "obligations": 9,
-      "productionVerifiedObligations": 7,
+      "productionVerifiedObligations": 8,
       "uniqueAwardedFilms": 9,
-      "productionVerifiedFilms": 7,
-      "unresolvedFilms": 2
+      "productionVerifiedFilms": 8,
+      "unresolvedFilms": 1
     },
     {
       "year": 2022,
@@ -1567,28 +1567,17 @@
   ],
   "summary": {
     "awardObligations": 43,
-    "productionVerifiedObligations": 23,
+    "productionVerifiedObligations": 24,
     "uniqueAwardedFilms": 41,
-    "productionVerifiedFilms": 22,
-    "unresolvedFilms": 19,
-    "missingCandidateFilms": 19,
+    "productionVerifiedFilms": 23,
+    "unresolvedFilms": 18,
+    "missingCandidateFilms": 18,
     "cannesMajorPrizesCompletionProven": false,
     "filmHistoricalSelectionCompletionProven": false
   },
   "correctiveQueue": [
     {
       "order": 1,
-      "title": "Ahed's Knee",
-      "filmYear": 2021,
-      "awards": [
-        "Jury Prize (joint)"
-      ],
-      "status": "MISSING_CANDIDATE",
-      "scenarioId": null,
-      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
-    },
-    {
-      "order": 2,
       "title": "Nitram",
       "filmYear": 2021,
       "awards": [
@@ -1599,7 +1588,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 3,
+      "order": 2,
       "title": "Close",
       "filmYear": 2022,
       "awards": [
@@ -1610,7 +1599,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 4,
+      "order": 3,
       "title": "Stars at Noon",
       "filmYear": 2022,
       "awards": [
@@ -1621,7 +1610,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 5,
+      "order": 4,
       "title": "Boy from Heaven",
       "filmYear": 2022,
       "awards": [
@@ -1632,7 +1621,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 6,
+      "order": 5,
       "title": "The Eight Mountains",
       "filmYear": 2022,
       "awards": [
@@ -1643,7 +1632,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 7,
+      "order": 6,
       "title": "Tori and Lokita",
       "filmYear": 2022,
       "awards": [
@@ -1654,7 +1643,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 8,
+      "order": 7,
       "title": "Holy Spider",
       "filmYear": 2022,
       "awards": [
@@ -1665,7 +1654,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 9,
+      "order": 8,
       "title": "Broker",
       "filmYear": 2022,
       "awards": [
@@ -1676,7 +1665,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 10,
+      "order": 9,
       "title": "The Pot-au-Feu",
       "filmYear": 2023,
       "awards": [
@@ -1687,7 +1676,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 11,
+      "order": 10,
       "title": "Fallen Leaves",
       "filmYear": 2023,
       "awards": [
@@ -1698,7 +1687,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 12,
+      "order": 11,
       "title": "Monster",
       "filmYear": 2023,
       "awards": [
@@ -1709,7 +1698,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 13,
+      "order": 12,
       "title": "About Dry Grasses",
       "filmYear": 2023,
       "awards": [
@@ -1720,7 +1709,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 14,
+      "order": 13,
       "title": "Perfect Days",
       "filmYear": 2023,
       "awards": [
@@ -1731,7 +1720,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 15,
+      "order": 14,
       "title": "Emilia Pérez",
       "filmYear": 2024,
       "awards": [
@@ -1743,7 +1732,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 16,
+      "order": 15,
       "title": "Grand Tour",
       "filmYear": 2024,
       "awards": [
@@ -1754,7 +1743,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 17,
+      "order": 16,
       "title": "Kinds of Kindness",
       "filmYear": 2024,
       "awards": [
@@ -1765,7 +1754,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 18,
+      "order": 17,
       "title": "Young Mothers",
       "filmYear": 2025,
       "awards": [
@@ -1776,7 +1765,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 19,
+      "order": 18,
       "title": "The Little Sister",
       "filmYear": 2025,
       "awards": [
