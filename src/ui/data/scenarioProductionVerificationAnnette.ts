@@ -18,7 +18,7 @@ export const annetteProductionCaseVerification = {
       title: "Annette - Shot on VENICE",
       publisher: "Sony Cine",
       url: "https://sony-cinematography.com/shot-on-sony/annette/",
-      sourceKind: "trade_feature",
+      sourceKind: "manufacturer_case_study",
       supports: ["overall", "cinematography"],
       note: "Direct manufacturer record supporting Sony VENICE, ZEISS Supreme Prime and Angenieux Optimo lenses, X-OCN ST, Sony a7S II B camera, Caroline Champetier and Leos Carax."
     },
