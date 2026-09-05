@@ -203,6 +203,7 @@ import { drommerFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenDro
 import { onTheAdamantFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenOnTheAdamant";
 import { fatherMotherSisterBrotherFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenFatherMotherSisterBrother";
 import { aHeroFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAHero";
+import { compartmentNo6FilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenCompartmentNo6";
 import { eoFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenEo";
 import { barbieFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenBarbie";
 import { acrossTheSpiderVerseFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAcrossTheSpiderVerse";
@@ -437,6 +438,7 @@ const sourceBackedFilmHistoryProfiles = {
   [onTheAdamantFilmHistoryProfile.scenarioId]: onTheAdamantFilmHistoryProfile,
   [fatherMotherSisterBrotherFilmHistoryProfile.scenarioId]: fatherMotherSisterBrotherFilmHistoryProfile,
   [aHeroFilmHistoryProfile.scenarioId]: aHeroFilmHistoryProfile,
+  [compartmentNo6FilmHistoryProfile.scenarioId]: compartmentNo6FilmHistoryProfile,
   [eoFilmHistoryProfile.scenarioId]: eoFilmHistoryProfile,
   [barbieFilmHistoryProfile.scenarioId]: barbieFilmHistoryProfile,
   [acrossTheSpiderVerseFilmHistoryProfile.scenarioId]: acrossTheSpiderVerseFilmHistoryProfile,
