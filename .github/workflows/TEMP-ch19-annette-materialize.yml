@@ -35,7 +35,10 @@ jobs:
           rm .github/workflows/TEMP-ch19-annette-materialize.yml
 
       - name: Full v0.1 verification
-        run: npm run verify:v0.1
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run verify:v0.1 2>&1 | tee annette-verify.log
 
       - name: Upload failed verification diagnostics
         if: failure()
@@ -43,6 +46,7 @@ jobs:
         with:
           name: annette-verification-diagnostics
           path: |
+            annette-verify.log
             docs/film-history-chapter-nineteen-atlas-resolved.json
             docs/film-history-chapter-nineteen-cannes-major-prizes-audit.json
           if-no-files-found: ignore
