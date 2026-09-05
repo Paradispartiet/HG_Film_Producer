@@ -69,6 +69,7 @@ const exactCandidateTitles = [
   "Stars at Noon",
   "Boy from Heaven",
   "The Eight Mountains",
+  "Tori and Lokita",
   "Tenet",
   "Nomadland",
   "Soul",
@@ -177,6 +178,7 @@ const exactP1Priority = [
   "Stars at Noon",
   "Boy from Heaven",
   "The Eight Mountains",
+  "Tori and Lokita",
   "Nomadland",
   "Collective",
   "Quo Vadis, Aida?",
@@ -239,6 +241,7 @@ const exactUseExisting = [
   "Stars at Noon",
   "Boy from Heaven",
   "The Eight Mountains",
+  "Tori and Lokita",
   "Tenet",
   "Nomadland",
   "Soul",
@@ -348,18 +351,18 @@ test("Chapter 19 locks the open 2020-present scope without freezing 2026", () =>
 
 test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {
   assert.match(audit, /const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;/);
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 601;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 602;/);
   assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);
-  assert.equal(resolved.atlas.expectedCount, 601);
-  assert.equal(resolved.atlas.actualCount, 601);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 601);
+  assert.equal(resolved.atlas.expectedCount, 602);
+  assert.equal(resolved.atlas.actualCount, 602);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 602);
 });
 
-test("Chapter 19 locks exactly seventy-nine candidates across 2020-2025", () => {
+test("Chapter 19 locks exactly eighty candidates across 2020-2025", () => {
   assert.deepEqual(resolved.candidates.map((item) => item.title), [...exactCandidateTitles]);
-  assert.equal(new Set(resolved.candidates.map((item) => item.title)).size, 79);
-  assert.equal(resolved.candidates.length, 79);
-  const expectedCandidatesByYear = new Map([[2020, 11], [2021, 17], [2022, 17], [2023, 11], [2024, 12], [2025, 11]]);
+  assert.equal(new Set(resolved.candidates.map((item) => item.title)).size, 80);
+  assert.equal(resolved.candidates.length, 80);
+  const expectedCandidatesByYear = new Map([[2020, 11], [2021, 17], [2022, 18], [2023, 11], [2024, 12], [2025, 11]]);
   for (const [year, expected] of expectedCandidatesByYear) {
     assert.equal(resolved.candidates.filter((item) => item.year === year).length, expected, `Unexpected candidate count for ${year}`);
   }
@@ -370,7 +373,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.candidatePrioritiesIfMissing.P1, [...exactP1Priority]);
   assert.deepEqual(resolved.candidatePrioritiesIfMissing.P2, [...exactP2Priority]);
   assert.equal(exactP0Priority.length, 23);
-  assert.equal(exactP1Priority.length, 52);
+  assert.equal(exactP1Priority.length, 53);
   assert.equal(exactP2Priority.length, 4);
 
   assert.deepEqual(resolved.byDecision.USE_EXISTING, [...exactUseExisting]);
@@ -378,7 +381,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 77);
+  assert.equal(exactUseExisting.length, 78);
   assert.equal(exactP0Queue.length, 0);
   assert.equal(exactP1Queue.length, 0);
   assert.equal(exactP2Queue.length, 2);
@@ -536,6 +539,14 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(theEightMountains.scenarioId, "scenario_the_eight_mountains_2022");
   assert.equal(theEightMountains.matches, 1);
   assert.equal(theEightMountains.productionVerified, true);
+
+  const toriAndLokita = resolved.candidates.find((candidate) => candidate.title === "Tori and Lokita");
+  assert.ok(toriAndLokita);
+  assert.equal(toriAndLokita.year, 2022);
+  assert.equal(toriAndLokita.decision, "USE_EXISTING");
+  assert.equal(toriAndLokita.scenarioId, "scenario_tori_and_lokita_2022");
+  assert.equal(toriAndLokita.matches, 1);
+  assert.equal(toriAndLokita.productionVerified, true);
 
   const tenet = resolved.candidates.find((candidate) => candidate.title === "Tenet");
   assert.ok(tenet);
