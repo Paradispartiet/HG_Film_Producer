@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 596,
-    "actualCount": 596,
+    "expectedCount": 597,
+    "actualCount": 597,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1149,6 +1149,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenAhedsKneeExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1247,7 +1253,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 596
+    "literalVerifiedScenarioIds": 597
   },
   "candidates": [
     {
@@ -1456,6 +1462,23 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenAnnetteExpansion.ts"
+    },
+    {
+      "title": "Ahed's Knee",
+      "originalTitle": "Ha’berech",
+      "year": 2021,
+      "aliases": [
+        "Ha'berech",
+        "Le Genou d'Ahed"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2021 joint Jury Prize source-first case: materialize one new Ahed's Knee/Ha’berech Atlas/PV identity after strict reuse reconciliation; lock the sourced 18-day Arava shoot, schedule-driven risk, camera-as-actor collaboration with Shai Goldman and bounded 2.39:1 exhibition metadata without inventing unsupported camera, lighting, finance, sound, VFX, grade or mastering detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_aheds_knee_2021",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenAhedsKneeExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2380,6 +2403,7 @@
       "A Hero",
       "Compartment No. 6",
       "Annette",
+      "Ahed's Knee",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2458,6 +2482,7 @@
       "A Hero",
       "Compartment No. 6",
       "Annette",
+      "Ahed's Knee",
       "Tenet",
       "Nomadland",
       "Soul",
