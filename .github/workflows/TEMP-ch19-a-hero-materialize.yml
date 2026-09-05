@@ -27,11 +27,12 @@ jobs:
         run: npm ci
 
       - name: Materialize A Hero
-        run: node scripts/TEMP-materialize-ch19-a-hero.mjs
+        run: node scripts/TEMP-run-ch19-a-hero-materializer-v2.mjs
 
       - name: Stage clean verification tree
         run: |
           rm scripts/TEMP-materialize-ch19-a-hero.mjs
+          rm scripts/TEMP-run-ch19-a-hero-materializer-v2.mjs
           rm .github/workflows/TEMP-ch19-a-hero-materialize.yml
 
       - name: Full v0.1 verification
