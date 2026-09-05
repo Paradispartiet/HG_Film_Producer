@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 595,
-    "actualCount": 595,
+    "expectedCount": 596,
+    "actualCount": 596,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1143,6 +1143,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenAnnetteExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1241,7 +1247,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 595
+    "literalVerifiedScenarioIds": 596
   },
   "candidates": [
     {
@@ -1436,6 +1442,20 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenCompartmentNo6Expansion.ts"
+    },
+    {
+      "title": "Annette",
+      "originalTitle": "Annette",
+      "year": 2021,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2021 Best Director source-first case: materialize one new Annette Atlas/PV identity after strict reuse reconciliation; preserve film/award year 2021 separately from Cannes productionYear 2020; lock the sourced 16-week transnational production, live-singing method, Sony VENICE/X-OCN ST camera system and practical Charlier/Collinet puppet workflow without inventing unsupported finance, sound-routing or post detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_annette_2021",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenAnnetteExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2359,6 +2379,7 @@
       "Father Mother Sister Brother",
       "A Hero",
       "Compartment No. 6",
+      "Annette",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2436,6 +2457,7 @@
       "Father Mother Sister Brother",
       "A Hero",
       "Compartment No. 6",
+      "Annette",
       "Tenet",
       "Nomadland",
       "Soul",
