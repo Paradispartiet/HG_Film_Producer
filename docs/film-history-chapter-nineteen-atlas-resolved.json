@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 592,
-    "actualCount": 592,
+    "expectedCount": 593,
+    "actualCount": 593,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1125,6 +1125,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenFatherMotherSisterBrotherExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1223,7 +1229,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 592
+    "literalVerifiedScenarioIds": 593
   },
   "candidates": [
     {
@@ -1366,6 +1372,20 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenOnTheAdamantExpansion.ts"
+    },
+    {
+      "title": "Father Mother Sister Brother",
+      "originalTitle": "Father Mother Sister Brother",
+      "year": 2025,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Venice 2025 Golden Lion source-first case: materialize the final correctionOrder-10 top-prize obligation as one new Atlas/PV identity and lock its three-country triptych production, approximate ten-day-per-section schedule, split cinematography/design units, 1.85 DCP/5.1 delivery and transnational production boundaries without inventing unsupported technical or financial detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_father_mother_sister_brother_2025",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenFatherMotherSisterBrotherExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2286,6 +2306,7 @@
       "Bad Luck Banging or Loony Porn",
       "Alcarràs",
       "On the Adamant",
+      "Father Mother Sister Brother",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2360,6 +2381,7 @@
       "Bad Luck Banging or Loony Porn",
       "Alcarràs",
       "On the Adamant",
+      "Father Mother Sister Brother",
       "Tenet",
       "Nomadland",
       "Soul",
