@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 601,
-    "actualCount": 601,
+    "expectedCount": 602,
+    "actualCount": 602,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1179,6 +1179,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenToriAndLokitaExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1277,7 +1283,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 601
+    "literalVerifiedScenarioIds": 602
   },
   "candidates": [
     {
@@ -1580,6 +1586,22 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenTheEightMountainsExpansion.ts"
+    },
+    {
+      "title": "Tori and Lokita",
+      "originalTitle": "Tori et Lokita",
+      "year": 2022,
+      "aliases": [
+        "Tori & Lokita"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2022 75th Anniversary Prize source-first case: materialize one new Tori and Lokita/Tori et Lokita Atlas/PV identity after strict alias-aware reuse reconciliation; preserve Cannes productionYear 2022 separately from 2021 principal photography; lock the Liège/Wallonia 11-week location shoot, five-week rehearsal method, actor-height handheld RED Komodo/40mm system, RED Monstro low-light night configuration, sparse naturalistic lighting and diegetic-sound boundaries without inventing unsupported data, sound-hardware, finance or post detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_tori_and_lokita_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenToriAndLokitaExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2510,6 +2532,7 @@
       "Stars at Noon",
       "Boy from Heaven",
       "The Eight Mountains",
+      "Tori and Lokita",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2594,6 +2617,7 @@
       "Stars at Noon",
       "Boy from Heaven",
       "The Eight Mountains",
+      "Tori and Lokita",
       "Tenet",
       "Nomadland",
       "Soul",
