@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 593,
-    "actualCount": 593,
+    "expectedCount": 594,
+    "actualCount": 594,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1131,6 +1131,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenAHeroExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1229,7 +1235,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 593
+    "literalVerifiedScenarioIds": 594
   },
   "candidates": [
     {
@@ -1386,6 +1392,24 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenFatherMotherSisterBrotherExpansion.ts"
+    },
+    {
+      "title": "A Hero",
+      "originalTitle": "Ghahreman",
+      "year": 2021,
+      "aliases": [
+        "GHAHREMAN",
+        "Un héros",
+        "Un Heros"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2021 Grand Prix source-first case: materialize one new A Hero/Ghahreman Atlas/PV identity after strict reuse reconciliation, and lock the documented Shiraz realist-production context, ten-month character-backstory rehearsal, ALEXA Mini LF/Signature Prime photography, 2K 2.39:1/5.1 delivery and Iran/France production network without inventing unsupported technical, financial or post detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_a_hero_2021",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenAHeroExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2307,6 +2331,7 @@
       "Alcarràs",
       "On the Adamant",
       "Father Mother Sister Brother",
+      "A Hero",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2382,6 +2407,7 @@
       "Alcarràs",
       "On the Adamant",
       "Father Mother Sister Brother",
+      "A Hero",
       "Tenet",
       "Nomadland",
       "Soul",

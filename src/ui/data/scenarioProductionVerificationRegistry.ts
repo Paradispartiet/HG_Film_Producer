@@ -225,6 +225,7 @@ import { soundOfFallingProductionCaseVerification } from "./scenarioProductionVe
 import { drommerProductionCaseVerification } from "./scenarioProductionVerificationDrommer";
 import { onTheAdamantProductionCaseVerification } from "./scenarioProductionVerificationOnTheAdamant";
 import { fatherMotherSisterBrotherProductionCaseVerification } from "./scenarioProductionVerificationFatherMotherSisterBrother";
+import { aHeroProductionCaseVerification } from "./scenarioProductionVerificationAHero";
 import { eoProductionCaseVerification } from "./scenarioProductionVerificationEo";
 import { barbieProductionCaseVerification } from "./scenarioProductionVerificationBarbie";
 import { acrossTheSpiderVerseProductionCaseVerification } from "./scenarioProductionVerificationAcrossTheSpiderVerse";
@@ -572,6 +573,7 @@ const additionalVerificationRecords = [
   drommerProductionCaseVerification,
   onTheAdamantProductionCaseVerification,
   fatherMotherSisterBrotherProductionCaseVerification,
+  aHeroProductionCaseVerification,
   eoProductionCaseVerification,
   barbieProductionCaseVerification,
   acrossTheSpiderVerseProductionCaseVerification,

@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;
 const BASE_EXPECTED_ATLAS_COUNT = 590;
-const EXPECTED_ATLAS_COUNT = 593;
+const EXPECTED_ATLAS_COUNT = 594;
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const basePath = path.join(scriptDir, "film-history-chapter-nineteen-atlas-audit-base.mjs");
@@ -21,6 +21,7 @@ const badLuckNeedles = ['"title": "Bad Luck Banging or Loony Porn"', 'title: "Ba
 const alcarrasNeedles = ['"title": "Alcarràs"', 'title: "Alcarràs"'];
 const adamantNeedles = ['"title": "On the Adamant"', 'title: "On the Adamant"', '"originalTitle": "Sur l\'Adamant"'];
 const fatherMotherNeedles = ['"title": "Father Mother Sister Brother"', 'title: "Father Mother Sister Brother"'];
+const aHeroNeedles = ['"title": "A Hero"', 'title: "A Hero"', '"originalTitle": "Ghahreman"', 'scenario_a_hero_2021'];
 
 const triangleCandidate = `
   {
@@ -132,6 +133,18 @@ const fatherMotherCandidate = `
     "chapterFunction": "Venice 2025 Golden Lion source-first case: materialize the final correctionOrder-10 top-prize obligation as one new Atlas/PV identity and lock its three-country triptych production, approximate ten-day-per-section schedule, split cinematography/design units, 1.85 DCP/5.1 delivery and transnational production boundaries without inventing unsupported technical or financial detail."
   },`;
 
+
+const aHeroCandidate = `
+  {
+    "title": "A Hero",
+    "originalTitle": "Ghahreman",
+    "year": 2021,
+    "aliases": ["GHAHREMAN", "Un héros", "Un Heros"],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Cannes 2021 Grand Prix source-first case: materialize one new A Hero/Ghahreman Atlas/PV identity after strict reuse reconciliation, and lock the documented Shiraz realist-production context, ten-month character-backstory rehearsal, ALEXA Mini LF/Signature Prime photography, 2K 2.39:1/5.1 delivery and Iran/France production network without inventing unsupported technical, financial or post detail."
+  },`;
+
 const baseSource = readFileSync(basePath, "utf8");
 const requiredBaselineConstants = [
   `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
@@ -150,12 +163,13 @@ if (badLuckNeedles.some((needle) => baseSource.includes(needle))) throw new Erro
 if (alcarrasNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Alcarràs; consolidate the wrapper deliberately before continuing.");
 if (adamantNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains On the Adamant; consolidate the wrapper deliberately before continuing.");
 if (fatherMotherNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Father Mother Sister Brother; consolidate the wrapper deliberately before continuing.");
+if (aHeroNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains A Hero/Ghahreman; consolidate the wrapper deliberately before continuing.");
 if (!baseSource.includes(insertionMarker)) throw new Error("Chapter 19 candidate insertion marker is missing; refusing to run a partially reconciled audit.");
 
 const reconciledSource = baseSource
   .replace(`const EXPECTED_ATLAS_COUNT = ${BASE_EXPECTED_ATLAS_COUNT};`, `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`)
   .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-05"')
-  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}`);
+  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}`);
 const temporaryAuditPath = path.join(scriptDir, `.film-history-chapter-nineteen-atlas-audit-reconciled-${process.pid}.mjs`);
 
 try {
