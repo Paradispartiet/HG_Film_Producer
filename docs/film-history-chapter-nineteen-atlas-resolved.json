@@ -1330,6 +1330,22 @@
       "origin": "festivalWinners2010To2024Expansion.ts"
     },
     {
+      "title": "Alcarràs",
+      "originalTitle": "Alcarràs",
+      "year": 2022,
+      "aliases": [
+        "Alcarras"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Berlinale 2022 Golden Bear reconciliation: reuse the existing canonical scenario_alcarras_2022, its verified Production Case and its source-backed 17-area Film Study instead of materializing a duplicate Atlas identity.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_alcarras_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "festivalWinners2010To2024Expansion.ts"
+    },
+    {
       "title": "Tenet",
       "originalTitle": "Tenet",
       "year": 2020,
@@ -2246,6 +2262,7 @@
       "The Room Next Door",
       "There Is No Evil",
       "Bad Luck Banging or Loony Porn",
+      "Alcarràs",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2318,6 +2335,7 @@
       "The Room Next Door",
       "There Is No Evil",
       "Bad Luck Banging or Loony Porn",
+      "Alcarràs",
       "Tenet",
       "Nomadland",
       "Soul",
