@@ -1,0 +1,30 @@
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+
+export const ahedsKneeFilmHistoryProfile = {
+  scenarioId: "scenario_aheds_knee_2021",
+  period: "2021 Cannes political auteur cinema: 18-day Arava shoot, schedule-driven risk and camera-as-actor cinematography",
+  traditions: ["political auteur cinema", "autobiographical fiction", "festival cinema", "desert-location production", "destabilized camera grammar"],
+  before: "Ahed's Knee grew from Nadav Lapid's June 2018 encounter with a Ministry of Culture speaking-topic form during a visit to the Arava desert and from the terminal illness of his mother and longtime editor. Cannes describes the resulting feature as partly autobiographical. Lapid later said the screenplay was written with unusual speed and urgency, while the central location search aimed to recover the emotional quality of the non-poetic desert he remembered rather than a conventional sublime landscape.",
+  moment: "Festival de Cannes records Ha’berech (Ahed's Knee) as a 2021 Competition feature and joint Jury Prize winner, 109 minutes, with France/Germany/Israel production participation and Nadav Lapid as director-screenwriter. In a direct Filmmaker Magazine interview Lapid confirms an 18-day shoot and says the compressed schedule forced the filmmakers toward risk and away from neutral coverage. He describes his collaboration with cinematographer Shai Goldman as an effort to turn the camera into another actor that intervenes and obstructs rather than merely observes. European Film Academy credits Shai Goldman, editor Nili Feller, production designer Pascale Consigny, costume designer Khadija Zeggaï, makeup artist Noa Yehonatan, sound Marina Kertesz and VFX artists Dani Cohen and Arnaud Chelet; AFI credits producer Judith Lou Lévy and executive producer Zehava Shekel. Kino Lorber lists 2.39:1 exhibition ratio.",
+  after: "The production is historically useful because its formal volatility can be traced to documented production constraints without pretending every stylistic feature has a named technical cause. The 18-day schedule, Arava geography and camera-as-actor principle are directly sourced; exact camera body, lenses, acquisition medium/codec, rigging, exposure, full lighting package, detailed sound chain, editorial system, grade/color management, effect-shot methodology and mastering lineage are not. Keeping those layers separate prevents aesthetic description from masquerading as technical documentation.",
+  historyQuestion: "How did Ahed's Knee turn an 18-day Arava production and an explicitly non-neutral camera method into a Cannes-winning political fiction without allowing stylistic interpretation to outrun production evidence?",
+  technicalHighlights: [
+    { area: "historical_context", status: "source_verified", note: "Cannes locks the film and award to 2021; the autobiographical trigger derives from Lapid's 2018 Arava censorship encounter and his mother's illness." },
+    { area: "movement_and_tradition", status: "mapped", note: "The film belongs to contemporary political auteur/festival cinema, but the label is interpretive and kept separate from production facts." },
+    { area: "industry_and_production_context", status: "source_verified", note: "Cannes lists France, Germany and Israel plus Pie Films and French/German partners; exact financing shares and recoupment remain unresolved." },
+    { area: "reception_and_legacy", status: "source_verified", note: "Ahed's Knee won the 2021 Cannes Jury Prize ex aequo with Memoria, creating the Chapter 19 reconciliation obligation." },
+    { area: "screenplay", status: "source_verified", note: "Cannes credits Nadav Lapid alone; his direct accounts tie the screenplay to the 2018 censorship episode and maternal loss." },
+    { area: "directing", status: "source_verified", note: "Lapid states the 18-day schedule forced risk and discouraged neutral, prudent coverage." },
+    { area: "performance", status: "mapped", note: "Avshalom Pollak and Nur Fibak anchor the confrontational two-character structure; exact rehearsal and take methodology remain unsourced." },
+    { area: "production_design", status: "source_verified", note: "European Film Academy credits Pascale Consigny; set construction, sourcing and department workflow are not inferred." },
+    { area: "costume_makeup", status: "source_verified", note: "EFA credits Khadija Zeggaï and Noa Yehonatan; process-level wardrobe/makeup claims remain unresolved." },
+    { area: "cinematography", status: "source_verified", note: "Shai Goldman is credited, and Lapid directly describes the camera as an active actor that intervenes, obstructs and refuses neutrality." },
+    { area: "lighting", status: "research_pending", note: "No complete source-backed lighting package or exposure strategy is established, so visual contrast and desert brightness are not reverse-engineered into equipment claims." },
+    { area: "camera_format", status: "research_pending", note: "Kino Lorber lists 2.39:1 exhibition ratio, but camera body, lenses, acquisition medium, sensor/film format, codec and media remain unresolved." },
+    { area: "editing", status: "source_verified", note: "Nili Feller is credited; software, storage, conform and finishing topology are not inferred." },
+    { area: "sound_design", status: "source_verified", note: "EFA credits Marina Kertesz; other institutional listings provide additional sound names, but recorder, microphone, wireless, ADR/Foley and mix routing remain open." },
+    { area: "music", status: "research_pending", note: "Music is present as a strong stylistic element, but the current core production source set does not justify a detailed music-production pipeline." },
+    { area: "effects_animation", status: "source_verified", note: "EFA credits Dani Cohen and Arnaud Chelet for VFX; shot count, techniques and vendor pipeline remain unresolved." },
+    { area: "documentary_method", status: "not_central", note: "Ahed's Knee is scripted fiction with autobiographical roots; direct experience should not be mislabeled documentary production." }
+  ]
+} as const satisfies FilmHistoryProfile;
