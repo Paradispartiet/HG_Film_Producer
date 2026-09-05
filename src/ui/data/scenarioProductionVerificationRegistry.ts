@@ -231,6 +231,7 @@ import { annetteProductionCaseVerification } from "./scenarioProductionVerificat
 import { ahedsKneeProductionCaseVerification } from "./scenarioProductionVerificationAhedsKnee";
 import { nitramProductionCaseVerification } from "./scenarioProductionVerificationNitram";
 import { starsAtNoonProductionCaseVerification } from "./scenarioProductionVerificationStarsAtNoon";
+import { boyFromHeavenProductionCaseVerification } from "./scenarioProductionVerificationBoyFromHeaven";
 import { eoProductionCaseVerification } from "./scenarioProductionVerificationEo";
 import { barbieProductionCaseVerification } from "./scenarioProductionVerificationBarbie";
 import { acrossTheSpiderVerseProductionCaseVerification } from "./scenarioProductionVerificationAcrossTheSpiderVerse";
@@ -584,6 +585,7 @@ const additionalVerificationRecords = [
   ahedsKneeProductionCaseVerification,
   nitramProductionCaseVerification,
   starsAtNoonProductionCaseVerification,
+  boyFromHeavenProductionCaseVerification,
   eoProductionCaseVerification,
   barbieProductionCaseVerification,
   acrossTheSpiderVerseProductionCaseVerification,

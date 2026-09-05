@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 599,
-    "actualCount": 599,
+    "expectedCount": 600,
+    "actualCount": 600,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1167,6 +1167,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenBoyFromHeavenExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1265,7 +1271,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 599
+    "literalVerifiedScenarioIds": 600
   },
   "candidates": [
     {
@@ -1533,6 +1539,24 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenStarsAtNoonExpansion.ts"
+    },
+    {
+      "title": "Boy from Heaven",
+      "originalTitle": "Walad Min Al Janna",
+      "year": 2022,
+      "aliases": [
+        "Cairo Conspiracy",
+        "Walad min al-Janna",
+        "La Conspiration du Caire"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2022 Best Screenplay source-first case: materialize one new Boy from Heaven/Walad Min Al Janna Atlas/PV identity after strict alias-aware reuse reconciliation; preserve Cannes productionYear 2022 separately from 2021 principal photography; lock Covid-delay/Istanbul-Süleymaniye production, €6.5m transnational budget/network, ALEXA LF/4K ARRIRAW/single Scorpio 40mm scope cinematography and runtime-version boundaries without inventing unsupported schedule, equipment, finance or post detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_boy_from_heaven_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenBoyFromHeavenExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2461,6 +2485,7 @@
       "Nitram",
       "Close",
       "Stars at Noon",
+      "Boy from Heaven",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2543,6 +2568,7 @@
       "Nitram",
       "Close",
       "Stars at Noon",
+      "Boy from Heaven",
       "Tenet",
       "Nomadland",
       "Soul",
