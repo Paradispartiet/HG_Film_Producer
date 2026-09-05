@@ -56,6 +56,7 @@ const exactCandidateTitles = [
   "All the Beauty and the Bloodshed",
   "The Room Next Door",
   "There Is No Evil",
+  "Bad Luck Banging or Loony Porn",
   "Tenet",
   "Nomadland",
   "Soul",
@@ -151,6 +152,7 @@ const exactP1Priority = [
   "All the Beauty and the Bloodshed",
   "The Room Next Door",
   "There Is No Evil",
+  "Bad Luck Banging or Loony Porn",
   "Nomadland",
   "Collective",
   "Quo Vadis, Aida?",
@@ -200,6 +202,7 @@ const exactUseExisting = [
   "All the Beauty and the Bloodshed",
   "The Room Next Door",
   "There Is No Evil",
+  "Bad Luck Banging or Loony Porn",
   "Tenet",
   "Nomadland",
   "Soul",
@@ -316,11 +319,11 @@ test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the cu
   assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 591);
 });
 
-test("Chapter 19 locks exactly sixty-six candidates across 2020-2025", () => {
+test("Chapter 19 locks exactly sixty-seven candidates across 2020-2025", () => {
   assert.deepEqual(resolved.candidates.map((item) => item.title), [...exactCandidateTitles]);
-  assert.equal(new Set(resolved.candidates.map((item) => item.title)).size, 66);
-  assert.equal(resolved.candidates.length, 66);
-  const expectedCandidatesByYear = new Map([[2020, 11], [2021, 11], [2022, 12], [2023, 10], [2024, 12], [2025, 10]]);
+  assert.equal(new Set(resolved.candidates.map((item) => item.title)).size, 67);
+  assert.equal(resolved.candidates.length, 67);
+  const expectedCandidatesByYear = new Map([[2020, 11], [2021, 12], [2022, 12], [2023, 10], [2024, 12], [2025, 10]]);
   for (const [year, expected] of expectedCandidatesByYear) {
     assert.equal(resolved.candidates.filter((item) => item.year === year).length, expected, `Unexpected candidate count for ${year}`);
   }
@@ -331,7 +334,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.candidatePrioritiesIfMissing.P1, [...exactP1Priority]);
   assert.deepEqual(resolved.candidatePrioritiesIfMissing.P2, [...exactP2Priority]);
   assert.equal(exactP0Priority.length, 23);
-  assert.equal(exactP1Priority.length, 39);
+  assert.equal(exactP1Priority.length, 40);
   assert.equal(exactP2Priority.length, 4);
 
   assert.deepEqual(resolved.byDecision.USE_EXISTING, [...exactUseExisting]);
@@ -339,7 +342,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 64);
+  assert.equal(exactUseExisting.length, 65);
   assert.equal(exactP0Queue.length, 0);
   assert.equal(exactP1Queue.length, 0);
   assert.equal(exactP2Queue.length, 2);
@@ -794,6 +797,13 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(thereIsNoEvil.scenarioId, "scenario_there_is_no_evil_2020");
   assert.equal(thereIsNoEvil.matches, 1);
   assert.equal(thereIsNoEvil.productionVerified, true);
+
+  const badLuck = resolved.candidates.find((candidate) => candidate.title === "Bad Luck Banging or Loony Porn");
+  assert.ok(badLuck);
+  assert.equal(badLuck.decision, "USE_EXISTING");
+  assert.equal(badLuck.scenarioId, "scenario_bad_luck_banging_or_loony_porn_2021");
+  assert.equal(badLuck.matches, 1);
+  assert.equal(badLuck.productionVerified, true);
 
   for (const candidate of resolved.candidates) {
     if (candidate.decision === "USE_EXISTING") {
