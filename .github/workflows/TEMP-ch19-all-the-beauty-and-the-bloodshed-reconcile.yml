@@ -1,4 +1,4 @@
-name: TEMP Beauty reconciliation fail-closed
+name: TEMP Beauty documentary contract inspection
 
 on:
   push:
@@ -13,69 +13,21 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  reconcile:
+  inspect:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 10
     steps:
       - name: Checkout exact branch head
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Correct TEMP literal-PV diagnostic
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          p = Path('scripts/TEMP-ch19-all-the-beauty-and-the-bloodshed-reconcile.mjs')
-          s = p.read_text()
-          old = 'if (uniquePvIds.size !== 591) throw new Error(`Expected 591 unique literal PV IDs, got ${uniquePvIds.size}`);'
-          new = 'if (uniquePvIds.size !== 583) throw new Error(`Expected 583 directly literal PV IDs in the batch scan, got ${uniquePvIds.size}`);'
-          if s.count(old) != 1:
-              raise SystemExit('TEMP literal-PV assertion anchor drifted')
-          s = s.replace(old, new)
-          old_output = 'productionVerificationIds: uniquePvIds.size'
-          if s.count(old_output) != 1:
-              raise SystemExit('TEMP PV output anchor drifted')
-          s = s.replace(old_output, 'productionVerificationIds: resolved.verificationIndex.literalVerifiedScenarioIds')
-          p.write_text(s)
-          PY
-
-      - name: Materialize Beauty reconciliation
-        run: node scripts/TEMP-ch19-all-the-beauty-and-the-bloodshed-reconcile.mjs
-
-      - name: Full fail-closed verification
+      - name: Inspect documentary audit contract and Beauty registration
         shell: bash
         run: |
           set -euxo pipefail
-          npm run verify:v0.1
-
-      - name: Assert temporary surfaces were removed
-        shell: bash
-        run: |
-          set -euxo pipefail
-          test ! -e scripts/TEMP-ch19-all-the-beauty-and-the-bloodshed-reconcile.mjs
-          test ! -e .github/workflows/TEMP-ch19-all-the-beauty-and-the-bloodshed-reconcile.yml
-          test -f src/ui/data/scenarioFilmStudyChapterNineteenAllTheBeautyAndTheBloodshed.ts
-          test -f docs/film-history-chapter-nineteen-atlas-resolved.json
-
-      - name: Commit permanent Beauty reconciliation only
-        shell: bash
-        run: |
-          set -euxo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git diff --cached --check
-          git status --short
-          git commit -m "Reconcile All the Beauty and the Bloodshed in Chapter 19"
-          git push origin HEAD:${GITHUB_REF_NAME}
+          grep -n -C 16 -E 'documentary|constraints|productionSourceAreas' scripts/production-case-rest-audit.mjs || true
+          printf '\n=== Existing Beauty profile references ===\n'
+          grep -R -n -C 3 'scenario_all_the_beauty_and_the_bloodshed_2022\|allTheBeautyAndTheBloodshedFilmHistoryProfile\|scenarioFilmStudyBodyArchiveAllBeauty' src/ui/data scripts || true
+          printf '\n=== Green documentary profiles with documentary constraints ===\n'
+          grep -R -n -C 8 -E 'documentaryConstraints|constraints:' src/ui/data/scenarioFilmStudy*.ts | head -n 260 || true
