@@ -1300,6 +1300,22 @@
       "origin": "festivalWinners2010To2024Expansion.ts"
     },
     {
+      "title": "There Is No Evil",
+      "originalTitle": "Sheytan vojud nadarad",
+      "year": 2020,
+      "aliases": [
+        "There is no Evil"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Berlinale 2020 Golden Bear reconciliation: reuse the existing canonical scenario_there_is_no_evil_2020, its verified Production Case and its source-backed 17-area Film Study instead of materializing a duplicate Atlas identity.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_there_is_no_evil_2020",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "festivalWinners2010To2024Expansion.ts"
+    },
+    {
       "title": "Tenet",
       "originalTitle": "Tenet",
       "year": 2020,
@@ -2214,6 +2230,7 @@
       "Happening",
       "All the Beauty and the Bloodshed",
       "The Room Next Door",
+      "There Is No Evil",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2284,6 +2301,7 @@
       "Happening",
       "All the Beauty and the Bloodshed",
       "The Room Next Door",
+      "There Is No Evil",
       "Tenet",
       "Nomadland",
       "Soul",
