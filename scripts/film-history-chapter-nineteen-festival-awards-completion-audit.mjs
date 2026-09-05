@@ -309,7 +309,7 @@ const topPrizeProductionComplete = obligations.every((item) => item.productionVe
 
 const report = {
   schemaVersion: "1.0",
-  auditDate: "2026-09-04",
+  auditDate: "2026-09-05",
   title: "Chapter 19 Festival & Awards Completion Audit 2020–2025",
   scope: {
     frozenCandidateBaseline: "2020–2025",
@@ -320,7 +320,8 @@ const report = {
   },
   semantics: {
     technicalAtlasCompletion: "The current Atlas count proves completeness only against the materialized Atlas and Production Verification registry; it does not prove festival-selection completeness.",
-    awardFilmYearSeparation: "Festival award year and film production/release year are separate fields. Drømmer is a 2024 film whose Golden Bear was awarded in 2025.",
+    awardFilmYearSeparation: "Festival award year and film-year classification are separate fields. Drømmer is a 2024 film whose Golden Bear was awarded in 2025.",
+    productionYearFilmYearSeparation: "Production year and Chapter 19 film/festival year may also differ. On the Adamant keeps Unifrance productionYear 2022 while the frozen Chapter 19/Berlinale obligation uses filmYear 2023.",
     selectionCompletion: "Festival selection completeness is independently measured against official top-prize obligations for the frozen 2020–2025 baseline.",
     failClosed: "An award obligation cannot become production-complete merely by entering this manifest; it must be present in the Chapter 19 candidate matrix, match exactly one Atlas scenario, and have Production Verification.",
     chapterCompletionRule: "Do not describe Chapter 19 as film-historically complete while this gate or the later awards-expansion phases remain open.",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "auditDate": "2026-09-04",
+  "auditDate": "2026-09-05",
   "status": "foundation_established",
   "chapter": {
     "number": 19,
@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 591,
-    "actualCount": 591,
+    "expectedCount": 592,
+    "actualCount": 592,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1119,6 +1119,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenOnTheAdamantExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1217,7 +1223,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 591
+    "literalVerifiedScenarioIds": 592
   },
   "candidates": [
     {
@@ -1344,6 +1350,22 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "festivalWinners2010To2024Expansion.ts"
+    },
+    {
+      "title": "On the Adamant",
+      "originalTitle": "Sur l'Adamant",
+      "year": 2023,
+      "aliases": [
+        "Sur l’Adamant"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Berlinale 2023 Golden Bear source-first case: materialize a new documentary Atlas/PV identity, preserve Unifrance productionYear 2022 separately from Chapter 19 filmYear 2023, and lock the documented small-crew observational, editing and sound-production boundaries without inventing unsupported technical detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_on_the_adamant_2023",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenOnTheAdamantExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2263,6 +2285,7 @@
       "There Is No Evil",
       "Bad Luck Banging or Loony Porn",
       "Alcarràs",
+      "On the Adamant",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2336,6 +2359,7 @@
       "There Is No Evil",
       "Bad Luck Banging or Loony Porn",
       "Alcarràs",
+      "On the Adamant",
       "Tenet",
       "Nomadland",
       "Soul",
