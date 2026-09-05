@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 598,
-    "actualCount": 598,
+    "expectedCount": 599,
+    "actualCount": 599,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1161,6 +1161,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenStarsAtNoonExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1259,7 +1265,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 598
+    "literalVerifiedScenarioIds": 599
   },
   "candidates": [
     {
@@ -1513,6 +1519,20 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "italyFranceGermanyBeneluxExpansion.ts"
+    },
+    {
+      "title": "Stars at Noon",
+      "originalTitle": "Stars at Noon",
+      "year": 2022,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2022 joint Grand Prix source-first case: materialize one new Stars at Noon Atlas/PV identity after strict tree-wide reuse reconciliation; lock the sourced Panama-for-Nicaragua production substitution, mixed Panamanian/French production context, ALEXA Mini plus anamorphic TechnoCooke evidence, 2.39/5.1 delivery and explicit 135/137/138-minute catalogue discrepancy without inventing unsupported schedule, finance or post-production detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_stars_at_noon_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenStarsAtNoonExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2440,6 +2460,7 @@
       "Ahed's Knee",
       "Nitram",
       "Close",
+      "Stars at Noon",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2521,6 +2542,7 @@
       "Ahed's Knee",
       "Nitram",
       "Close",
+      "Stars at Noon",
       "Tenet",
       "Nomadland",
       "Soul",
