@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;
 const BASE_EXPECTED_ATLAS_COUNT = 590;
-const EXPECTED_ATLAS_COUNT = 599;
+const EXPECTED_ATLAS_COUNT = 600;
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const basePath = path.join(scriptDir, "film-history-chapter-nineteen-atlas-audit-base.mjs");
@@ -28,6 +28,7 @@ const ahedsKneeNeedles = ['"title": "Ahed\'s Knee"', 'title: "Ahed\'s Knee"', '"
 const nitramNeedles = ['"title": "Nitram"', 'title: "Nitram"', 'scenario_nitram_2021'];
 const closeNeedles = ['"title": "Close"', 'title: "Close"', 'scenario_close_2022'];
 const starsAtNoonNeedles = ['"title": "Stars at Noon"', 'title: "Stars at Noon"', 'scenario_stars_at_noon_2022'];
+const boyFromHeavenNeedles = ['"title": "Boy from Heaven"', 'title: "Boy from Heaven"', '"originalTitle": "Walad Min Al Janna"', 'Cairo Conspiracy', 'scenario_boy_from_heaven_2022'];
 
 const triangleCandidate = `
   {
@@ -220,6 +221,17 @@ const starsAtNoonCandidate = `
     "chapterFunction": "Cannes 2022 joint Grand Prix source-first case: materialize one new Stars at Noon Atlas/PV identity after strict tree-wide reuse reconciliation; lock the sourced Panama-for-Nicaragua production substitution, mixed Panamanian/French production context, ALEXA Mini plus anamorphic TechnoCooke evidence, 2.39/5.1 delivery and explicit 135/137/138-minute catalogue discrepancy without inventing unsupported schedule, finance or post-production detail."
   },`;
 
+const boyFromHeavenCandidate = `
+  {
+    "title": "Boy from Heaven",
+    "originalTitle": "Walad Min Al Janna",
+    "year": 2022,
+    "aliases": ["Cairo Conspiracy", "Walad min al-Janna", "La Conspiration du Caire"],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Cannes 2022 Best Screenplay source-first case: materialize one new Boy from Heaven/Walad Min Al Janna Atlas/PV identity after strict alias-aware reuse reconciliation; preserve Cannes productionYear 2022 separately from 2021 principal photography; lock Covid-delay/Istanbul-Süleymaniye production, €6.5m transnational budget/network, ALEXA LF/4K ARRIRAW/single Scorpio 40mm scope cinematography and runtime-version boundaries without inventing unsupported schedule, equipment, finance or post detail."
+  },`;
+
 const baseSource = readFileSync(basePath, "utf8");
 const requiredBaselineConstants = [
   `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
@@ -245,12 +257,13 @@ if (ahedsKneeNeedles.some((needle) => baseSource.includes(needle))) throw new Er
 if (nitramNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Nitram; consolidate the wrapper deliberately before continuing.");
 if (closeNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Close; consolidate the wrapper deliberately before continuing.");
 if (starsAtNoonNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Stars at Noon; consolidate the wrapper deliberately before continuing.");
+if (boyFromHeavenNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Boy from Heaven/Walad Min Al Janna/Cairo Conspiracy; consolidate the wrapper deliberately before continuing.");
 if (!baseSource.includes(insertionMarker)) throw new Error("Chapter 19 candidate insertion marker is missing; refusing to run a partially reconciled audit.");
 
 const reconciledSource = baseSource
   .replace(`const EXPECTED_ATLAS_COUNT = ${BASE_EXPECTED_ATLAS_COUNT};`, `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`)
   .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-05"')
-  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}`);
+  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}`);
 const temporaryAuditPath = path.join(scriptDir, `.film-history-chapter-nineteen-atlas-audit-reconciled-${process.pid}.mjs`);
 
 try {

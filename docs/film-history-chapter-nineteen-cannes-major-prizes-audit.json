@@ -45,10 +45,10 @@
     "topPrizeCorrectiveQueue": 0
   },
   "technicalBaseline": {
-    "atlasExpected": 599,
-    "atlasActual": 599,
-    "productionVerificationIds": 599,
-    "chapterNineteenCandidates": 77
+    "atlasExpected": 600,
+    "atlasActual": 600,
+    "productionVerificationIds": 600,
+    "chapterNineteenCandidates": 78
   },
   "officialSources": {
     "cannes2020": "https://www.festival-cannes.com/en/press/press-releases/the-official-selection-2020/",
@@ -302,12 +302,12 @@
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
       "manifestIndex": 13,
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_boy_from_heaven_2022",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "awardYear": 2022,
@@ -1048,12 +1048,12 @@
         "Best Screenplay"
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_boy_from_heaven_2022",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "key": "2022|eo",
@@ -1535,10 +1535,10 @@
     {
       "year": 2022,
       "obligations": 10,
-      "productionVerifiedObligations": 5,
+      "productionVerifiedObligations": 6,
       "uniqueAwardedFilms": 10,
-      "productionVerifiedFilms": 5,
-      "unresolvedFilms": 5
+      "productionVerifiedFilms": 6,
+      "unresolvedFilms": 4
     },
     {
       "year": 2023,
@@ -1567,28 +1567,17 @@
   ],
   "summary": {
     "awardObligations": 43,
-    "productionVerifiedObligations": 27,
+    "productionVerifiedObligations": 28,
     "uniqueAwardedFilms": 41,
-    "productionVerifiedFilms": 26,
-    "unresolvedFilms": 15,
-    "missingCandidateFilms": 15,
+    "productionVerifiedFilms": 27,
+    "unresolvedFilms": 14,
+    "missingCandidateFilms": 14,
     "cannesMajorPrizesCompletionProven": false,
     "filmHistoricalSelectionCompletionProven": false
   },
   "correctiveQueue": [
     {
       "order": 1,
-      "title": "Boy from Heaven",
-      "filmYear": 2022,
-      "awards": [
-        "Best Screenplay"
-      ],
-      "status": "MISSING_CANDIDATE",
-      "scenarioId": null,
-      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
-    },
-    {
-      "order": 2,
       "title": "The Eight Mountains",
       "filmYear": 2022,
       "awards": [
@@ -1599,7 +1588,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 3,
+      "order": 2,
       "title": "Tori and Lokita",
       "filmYear": 2022,
       "awards": [
@@ -1610,7 +1599,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 4,
+      "order": 3,
       "title": "Holy Spider",
       "filmYear": 2022,
       "awards": [
@@ -1621,7 +1610,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 5,
+      "order": 4,
       "title": "Broker",
       "filmYear": 2022,
       "awards": [
@@ -1632,7 +1621,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 6,
+      "order": 5,
       "title": "The Pot-au-Feu",
       "filmYear": 2023,
       "awards": [
@@ -1643,7 +1632,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 7,
+      "order": 6,
       "title": "Fallen Leaves",
       "filmYear": 2023,
       "awards": [
@@ -1654,7 +1643,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 8,
+      "order": 7,
       "title": "Monster",
       "filmYear": 2023,
       "awards": [
@@ -1665,7 +1654,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 9,
+      "order": 8,
       "title": "About Dry Grasses",
       "filmYear": 2023,
       "awards": [
@@ -1676,7 +1665,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 10,
+      "order": 9,
       "title": "Perfect Days",
       "filmYear": 2023,
       "awards": [
@@ -1687,7 +1676,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 11,
+      "order": 10,
       "title": "Emilia Pérez",
       "filmYear": 2024,
       "awards": [
@@ -1699,7 +1688,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 12,
+      "order": 11,
       "title": "Grand Tour",
       "filmYear": 2024,
       "awards": [
@@ -1710,7 +1699,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 13,
+      "order": 12,
       "title": "Kinds of Kindness",
       "filmYear": 2024,
       "awards": [
@@ -1721,7 +1710,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 14,
+      "order": 13,
       "title": "Young Mothers",
       "filmYear": 2025,
       "awards": [
@@ -1732,7 +1721,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 15,
+      "order": 14,
       "title": "The Little Sister",
       "filmYear": 2025,
       "awards": [
