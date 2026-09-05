@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;
 const BASE_EXPECTED_ATLAS_COUNT = 590;
-const EXPECTED_ATLAS_COUNT = 592;
+const EXPECTED_ATLAS_COUNT = 593;
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const basePath = path.join(scriptDir, "film-history-chapter-nineteen-atlas-audit-base.mjs");
@@ -20,6 +20,7 @@ const thereIsNoEvilNeedles = ['"title": "There Is No Evil"', 'title: "There Is N
 const badLuckNeedles = ['"title": "Bad Luck Banging or Loony Porn"', 'title: "Bad Luck Banging or Loony Porn"'];
 const alcarrasNeedles = ['"title": "Alcarràs"', 'title: "Alcarràs"'];
 const adamantNeedles = ['"title": "On the Adamant"', 'title: "On the Adamant"', '"originalTitle": "Sur l\'Adamant"'];
+const fatherMotherNeedles = ['"title": "Father Mother Sister Brother"', 'title: "Father Mother Sister Brother"'];
 
 const triangleCandidate = `
   {
@@ -120,6 +121,17 @@ const adamantCandidate = `
     "chapterFunction": "Berlinale 2023 Golden Bear source-first case: materialize a new documentary Atlas/PV identity, preserve Unifrance productionYear 2022 separately from Chapter 19 filmYear 2023, and lock the documented small-crew observational, editing and sound-production boundaries without inventing unsupported technical detail."
   },`;
 
+const fatherMotherCandidate = `
+  {
+    "title": "Father Mother Sister Brother",
+    "originalTitle": "Father Mother Sister Brother",
+    "year": 2025,
+    "aliases": [],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Venice 2025 Golden Lion source-first case: materialize the final correctionOrder-10 top-prize obligation as one new Atlas/PV identity and lock its three-country triptych production, approximate ten-day-per-section schedule, split cinematography/design units, 1.85 DCP/5.1 delivery and transnational production boundaries without inventing unsupported technical or financial detail."
+  },`;
+
 const baseSource = readFileSync(basePath, "utf8");
 const requiredBaselineConstants = [
   `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
@@ -137,12 +149,13 @@ if (thereIsNoEvilNeedles.some((needle) => baseSource.includes(needle))) throw ne
 if (badLuckNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Bad Luck Banging or Loony Porn; consolidate the wrapper deliberately before continuing.");
 if (alcarrasNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Alcarràs; consolidate the wrapper deliberately before continuing.");
 if (adamantNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains On the Adamant; consolidate the wrapper deliberately before continuing.");
+if (fatherMotherNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Father Mother Sister Brother; consolidate the wrapper deliberately before continuing.");
 if (!baseSource.includes(insertionMarker)) throw new Error("Chapter 19 candidate insertion marker is missing; refusing to run a partially reconciled audit.");
 
 const reconciledSource = baseSource
   .replace(`const EXPECTED_ATLAS_COUNT = ${BASE_EXPECTED_ATLAS_COUNT};`, `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`)
   .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-05"')
-  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}`);
+  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}`);
 const temporaryAuditPath = path.join(scriptDir, `.film-history-chapter-nineteen-atlas-audit-reconciled-${process.pid}.mjs`);
 
 try {
