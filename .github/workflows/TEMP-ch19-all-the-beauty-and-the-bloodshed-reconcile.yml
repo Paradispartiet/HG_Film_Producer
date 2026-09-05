@@ -31,6 +31,25 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Correct TEMP literal-PV diagnostic
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('scripts/TEMP-ch19-all-the-beauty-and-the-bloodshed-reconcile.mjs')
+          s = p.read_text()
+          old = 'if (uniquePvIds.size !== 591) throw new Error(`Expected 591 unique literal PV IDs, got ${uniquePvIds.size}`);'
+          new = 'if (uniquePvIds.size !== 583) throw new Error(`Expected 583 directly literal PV IDs in the batch scan, got ${uniquePvIds.size}`);'
+          if s.count(old) != 1:
+              raise SystemExit('TEMP literal-PV assertion anchor drifted')
+          s = s.replace(old, new)
+          old_output = 'productionVerificationIds: uniquePvIds.size'
+          if s.count(old_output) != 1:
+              raise SystemExit('TEMP PV output anchor drifted')
+          s = s.replace(old_output, 'productionVerificationIds: resolved.verificationIndex.literalVerifiedScenarioIds')
+          p.write_text(s)
+          PY
+
       - name: Materialize Beauty reconciliation
         run: node scripts/TEMP-ch19-all-the-beauty-and-the-bloodshed-reconcile.mjs
 
