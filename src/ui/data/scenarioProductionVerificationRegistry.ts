@@ -226,6 +226,7 @@ import { drommerProductionCaseVerification } from "./scenarioProductionVerificat
 import { onTheAdamantProductionCaseVerification } from "./scenarioProductionVerificationOnTheAdamant";
 import { fatherMotherSisterBrotherProductionCaseVerification } from "./scenarioProductionVerificationFatherMotherSisterBrother";
 import { aHeroProductionCaseVerification } from "./scenarioProductionVerificationAHero";
+import { compartmentNo6ProductionCaseVerification } from "./scenarioProductionVerificationCompartmentNo6";
 import { eoProductionCaseVerification } from "./scenarioProductionVerificationEo";
 import { barbieProductionCaseVerification } from "./scenarioProductionVerificationBarbie";
 import { acrossTheSpiderVerseProductionCaseVerification } from "./scenarioProductionVerificationAcrossTheSpiderVerse";
@@ -574,6 +575,7 @@ const additionalVerificationRecords = [
   onTheAdamantProductionCaseVerification,
   fatherMotherSisterBrotherProductionCaseVerification,
   aHeroProductionCaseVerification,
+  compartmentNo6ProductionCaseVerification,
   eoProductionCaseVerification,
   barbieProductionCaseVerification,
   acrossTheSpiderVerseProductionCaseVerification,

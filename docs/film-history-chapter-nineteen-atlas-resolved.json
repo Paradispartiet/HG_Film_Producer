@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 594,
-    "actualCount": 594,
+    "expectedCount": 595,
+    "actualCount": 595,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1137,6 +1137,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenCompartmentNo6Expansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1235,7 +1241,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 594
+    "literalVerifiedScenarioIds": 595
   },
   "candidates": [
     {
@@ -1410,6 +1416,26 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenAHeroExpansion.ts"
+    },
+    {
+      "title": "Compartment No. 6",
+      "originalTitle": "Hytti nro 6",
+      "year": 2021,
+      "aliases": [
+        "Hytti Nro 6",
+        "Hytti Nro. 6",
+        "Hytti No 6",
+        "Compartment No.6",
+        "Compartment No 6"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2021 Grand Prix source-first case: materialize one new Compartment No. 6/Hytti nro 6 Atlas/PV identity after strict reuse reconciliation, lock the documented 28-day Russian production, 2-perf ARRICAM LT/Zeiss Super Speed/VISION3 500T photochemical workflow, train simulation, hidden-mic constraint and explicit runtime/aspect-ratio source discrepancies without inventing unsupported finance or post detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_compartment_no_6_2021",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenCompartmentNo6Expansion.ts"
     },
     {
       "title": "Tenet",
@@ -2332,6 +2358,7 @@
       "On the Adamant",
       "Father Mother Sister Brother",
       "A Hero",
+      "Compartment No. 6",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2408,6 +2435,7 @@
       "On the Adamant",
       "Father Mother Sister Brother",
       "A Hero",
+      "Compartment No. 6",
       "Tenet",
       "Nomadland",
       "Soul",
