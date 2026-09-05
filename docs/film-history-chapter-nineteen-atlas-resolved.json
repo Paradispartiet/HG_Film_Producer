@@ -1316,6 +1316,20 @@
       "origin": "festivalWinners2010To2024Expansion.ts"
     },
     {
+      "title": "Bad Luck Banging or Loony Porn",
+      "originalTitle": "Babardeală cu bucluc sau porno balamuc",
+      "year": 2021,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Berlinale 2021 Golden Bear reconciliation: reuse the existing canonical scenario_bad_luck_banging_or_loony_porn_2021, its verified Production Case and its source-backed 17-area Film Study instead of materializing a duplicate Atlas identity.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_bad_luck_banging_or_loony_porn_2021",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "festivalWinners2010To2024Expansion.ts"
+    },
+    {
       "title": "Tenet",
       "originalTitle": "Tenet",
       "year": 2020,
@@ -2231,6 +2245,7 @@
       "All the Beauty and the Bloodshed",
       "The Room Next Door",
       "There Is No Evil",
+      "Bad Luck Banging or Loony Porn",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2302,6 +2317,7 @@
       "All the Beauty and the Bloodshed",
       "The Room Next Door",
       "There Is No Evil",
+      "Bad Luck Banging or Loony Porn",
       "Tenet",
       "Nomadland",
       "Soul",
