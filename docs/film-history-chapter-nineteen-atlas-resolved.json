@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 600,
-    "actualCount": 600,
+    "expectedCount": 601,
+    "actualCount": 601,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1173,6 +1173,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenTheEightMountainsExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1271,7 +1277,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 600
+    "literalVerifiedScenarioIds": 601
   },
   "candidates": [
     {
@@ -1557,6 +1563,23 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenBoyFromHeavenExpansion.ts"
+    },
+    {
+      "title": "The Eight Mountains",
+      "originalTitle": "Le otto montagne",
+      "year": 2022,
+      "aliases": [
+        "Le Otto Montagne",
+        "Les Huit Montagnes"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2022 joint Jury Prize source-first case: materialize one new The Eight Mountains/Le otto montagne Atlas/PV identity after strict alias-aware reuse reconciliation; preserve Cannes productionYear 2021 separately from film/award year 2022; lock the seasonal Alps/Turin/Nepal location production, no-studio hut strategy, 4:3 spherical ALEXA Mini LF/Zeiss Supreme Prime/Optimo 36-435 cinematography, natural-light method and Cannes-deadline DI boundaries without inventing unsupported budget, data, sound or mastering detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_eight_mountains_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenTheEightMountainsExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2486,6 +2509,7 @@
       "Close",
       "Stars at Noon",
       "Boy from Heaven",
+      "The Eight Mountains",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2569,6 +2593,7 @@
       "Close",
       "Stars at Noon",
       "Boy from Heaven",
+      "The Eight Mountains",
       "Tenet",
       "Nomadland",
       "Soul",

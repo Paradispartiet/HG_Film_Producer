@@ -59,7 +59,7 @@ invariant(resolved.candidates.every((candidate) => candidate.decision === "USE_E
 
 const literalVerificationIds = collectLiteralScenarioIds("scenarioProductionVerification");
 const verificationIds = new Set(literalVerificationIds);
-invariant(verificationIds.size === 600, `Global Production Verification registry must contain exactly 600 unique scenarioIds after Boy from Heaven Chapter 19 materialization: ${verificationIds.size}`);
+invariant(verificationIds.size === 601, `Global Production Verification registry must contain exactly 601 unique scenarioIds after The Eight Mountains Chapter 19 materialization: ${verificationIds.size}`);
 invariant(candidateScenarioIds.every((scenarioId) => verificationIds.has(scenarioId)), "At least one Chapter 18 candidate is missing its Production Verification record.");
 
 const literalFilmStudyIds = collectLiteralScenarioIds("scenarioFilmStudy");
@@ -99,9 +99,9 @@ invariant(completion.proof?.temporaryArtifacts === 0, "Chapter 18 completion pro
 invariant(chapter19.status === "foundation_established", "Chapter 19 source-first foundation is not established.");
 invariant(chapter19.chapter?.number === 19 && chapter19.chapter?.period === "2020–present" && chapter19.chapter?.candidateBaseline === "2020–2025", "Chapter 19 scope or candidate baseline drifted.");
 invariant(chapter19.governance?.openCurrentPeriod === true && chapter19.governance?.currentYearExcludedFromFrozenBaseline === 2026, "Chapter 19 must remain an open current-period chapter with 2026 excluded from the frozen baseline.");
-invariant(chapter19.atlas?.baselineFromClosedChapter18 === 539 && chapter19.atlas?.actualCount === 600, "Chapter 19 must preserve the closed 539-scenario Chapter 18 baseline while advancing the current Atlas to 600.");
-invariant(Array.isArray(chapter19.candidates) && chapter19.candidates.length === 78, "Chapter 19 current candidate set must contain exactly 78 candidates after Cannes major-prizes reconciliation adds Boy from Heaven.");
-invariant(chapter19.byDecision?.USE_EXISTING?.length === 76 && chapter19.byDecision?.P0?.length === 0 && chapter19.byDecision?.P1?.length === 0 && chapter19.byDecision?.P2?.length === 2 && chapter19.byDecision?.EXISTING_REQUIRED?.length === 0, "Chapter 19 resolved queue census drifted from 76 USE_EXISTING / 0 P0 / 0 P1 / 2 P2 / 0 EXISTING_REQUIRED.");
+invariant(chapter19.atlas?.baselineFromClosedChapter18 === 539 && chapter19.atlas?.actualCount === 601, "Chapter 19 must preserve the closed 539-scenario Chapter 18 baseline while advancing the current Atlas to 601.");
+invariant(Array.isArray(chapter19.candidates) && chapter19.candidates.length === 79, "Chapter 19 current candidate set must contain exactly 79 candidates after Cannes major-prizes reconciliation adds The Eight Mountains.");
+invariant(chapter19.byDecision?.USE_EXISTING?.length === 77 && chapter19.byDecision?.P0?.length === 0 && chapter19.byDecision?.P1?.length === 0 && chapter19.byDecision?.P2?.length === 2 && chapter19.byDecision?.EXISTING_REQUIRED?.length === 0, "Chapter 19 resolved queue census drifted from 77 USE_EXISTING / 0 P0 / 0 P1 / 2 P2 / 0 EXISTING_REQUIRED.");
 const happening = chapter19.candidates.find((candidate) => candidate.title === "Happening");
 invariant(happening?.decision === "USE_EXISTING" && happening?.scenarioId === "scenario_happening_2021" && happening?.matches === 1 && happening?.productionVerified === true, "Happening is not closed as one existing production-verified Chapter 19 case.");
 const allTheBeautyAndTheBloodshed = chapter19.candidates.find((candidate) => candidate.title === "All the Beauty and the Bloodshed");
@@ -134,6 +134,8 @@ const starsAtNoon = chapter19.candidates.find((candidate) => candidate.title ===
 invariant(starsAtNoon?.decision === "USE_EXISTING" && starsAtNoon?.scenarioId === "scenario_stars_at_noon_2022" && starsAtNoon?.matches === 1 && starsAtNoon?.productionVerified === true, "Stars at Noon is not closed as one new production-verified Chapter 19 Cannes major-prizes case.");
 const boyFromHeaven = chapter19.candidates.find((candidate) => candidate.title === "Boy from Heaven");
 invariant(boyFromHeaven?.decision === "USE_EXISTING" && boyFromHeaven?.scenarioId === "scenario_boy_from_heaven_2022" && boyFromHeaven?.matches === 1 && boyFromHeaven?.productionVerified === true, "Boy from Heaven is not closed as one new production-verified Chapter 19 Cannes major-prizes case.");
+const theEightMountains = chapter19.candidates.find((candidate) => candidate.title === "The Eight Mountains");
+invariant(theEightMountains?.decision === "USE_EXISTING" && theEightMountains?.scenarioId === "scenario_the_eight_mountains_2022" && theEightMountains?.matches === 1 && theEightMountains?.productionVerified === true, "The Eight Mountains is not closed as one new production-verified Chapter 19 Cannes major-prizes case.");
 const tenet = chapter19.candidates.find((candidate) => candidate.title === "Tenet");
 invariant(tenet?.decision === "USE_EXISTING" && tenet?.scenarioId === "scenario_tenet_2020" && tenet?.matches === 1 && tenet?.productionVerified === true, "Tenet is not closed as the first production-verified Chapter 19 USE_EXISTING case.");
 const soul = chapter19.candidates.find((candidate) => candidate.title === "Soul");

@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;
 const BASE_EXPECTED_ATLAS_COUNT = 590;
-const EXPECTED_ATLAS_COUNT = 600;
+const EXPECTED_ATLAS_COUNT = 601;
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const basePath = path.join(scriptDir, "film-history-chapter-nineteen-atlas-audit-base.mjs");
@@ -29,6 +29,7 @@ const nitramNeedles = ['"title": "Nitram"', 'title: "Nitram"', 'scenario_nitram_
 const closeNeedles = ['"title": "Close"', 'title: "Close"', 'scenario_close_2022'];
 const starsAtNoonNeedles = ['"title": "Stars at Noon"', 'title: "Stars at Noon"', 'scenario_stars_at_noon_2022'];
 const boyFromHeavenNeedles = ['"title": "Boy from Heaven"', 'title: "Boy from Heaven"', '"originalTitle": "Walad Min Al Janna"', 'Cairo Conspiracy', 'scenario_boy_from_heaven_2022'];
+const theEightMountainsNeedles = ['"title": "The Eight Mountains"', 'title: "The Eight Mountains"', '"originalTitle": "Le otto montagne"', 'Les Huit Montagnes', 'scenario_the_eight_mountains_2022'];
 
 const triangleCandidate = `
   {
@@ -232,6 +233,17 @@ const boyFromHeavenCandidate = `
     "chapterFunction": "Cannes 2022 Best Screenplay source-first case: materialize one new Boy from Heaven/Walad Min Al Janna Atlas/PV identity after strict alias-aware reuse reconciliation; preserve Cannes productionYear 2022 separately from 2021 principal photography; lock Covid-delay/Istanbul-Süleymaniye production, €6.5m transnational budget/network, ALEXA LF/4K ARRIRAW/single Scorpio 40mm scope cinematography and runtime-version boundaries without inventing unsupported schedule, equipment, finance or post detail."
   },`;
 
+const theEightMountainsCandidate = `
+  {
+    "title": "The Eight Mountains",
+    "originalTitle": "Le otto montagne",
+    "year": 2022,
+    "aliases": ["Le Otto Montagne", "Les Huit Montagnes"],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Cannes 2022 joint Jury Prize source-first case: materialize one new The Eight Mountains/Le otto montagne Atlas/PV identity after strict alias-aware reuse reconciliation; preserve Cannes productionYear 2021 separately from film/award year 2022; lock the seasonal Alps/Turin/Nepal location production, no-studio hut strategy, 4:3 spherical ALEXA Mini LF/Zeiss Supreme Prime/Optimo 36-435 cinematography, natural-light method and Cannes-deadline DI boundaries without inventing unsupported budget, data, sound or mastering detail."
+  },`;
+
 const baseSource = readFileSync(basePath, "utf8");
 const requiredBaselineConstants = [
   `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
@@ -258,12 +270,13 @@ if (nitramNeedles.some((needle) => baseSource.includes(needle))) throw new Error
 if (closeNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Close; consolidate the wrapper deliberately before continuing.");
 if (starsAtNoonNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Stars at Noon; consolidate the wrapper deliberately before continuing.");
 if (boyFromHeavenNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Boy from Heaven/Walad Min Al Janna/Cairo Conspiracy; consolidate the wrapper deliberately before continuing.");
+if (theEightMountainsNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains The Eight Mountains/Le otto montagne; consolidate the wrapper deliberately before continuing.");
 if (!baseSource.includes(insertionMarker)) throw new Error("Chapter 19 candidate insertion marker is missing; refusing to run a partially reconciled audit.");
 
 const reconciledSource = baseSource
   .replace(`const EXPECTED_ATLAS_COUNT = ${BASE_EXPECTED_ATLAS_COUNT};`, `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`)
   .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-05"')
-  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}`);
+  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}`);
 const temporaryAuditPath = path.join(scriptDir, `.film-history-chapter-nineteen-atlas-audit-reconciled-${process.pid}.mjs`);
 
 try {
