@@ -1272,6 +1272,20 @@
       "origin": "modernCanonExpansion.ts"
     },
     {
+      "title": "All the Beauty and the Bloodshed",
+      "originalTitle": "All the Beauty and the Bloodshed",
+      "year": 2022,
+      "aliases": [],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Venice 2022 Golden Lion reconciliation: reuse the existing canonical scenario_all_the_beauty_and_the_bloodshed_2022 and its single Production Verification identity, while adding the source-backed Film Study and strengthening direct production evidence instead of materializing a duplicate Atlas case.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_all_the_beauty_and_the_bloodshed_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "modernCanonExpansion.ts"
+    },
+    {
       "title": "Tenet",
       "originalTitle": "Tenet",
       "year": 2020,
@@ -2184,6 +2198,7 @@
       "Triangle of Sadness",
       "Drømmer",
       "Happening",
+      "All the Beauty and the Bloodshed",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2252,6 +2267,7 @@
       "Triangle of Sadness",
       "Drømmer",
       "Happening",
+      "All the Beauty and the Bloodshed",
       "Tenet",
       "Nomadland",
       "Soul",
