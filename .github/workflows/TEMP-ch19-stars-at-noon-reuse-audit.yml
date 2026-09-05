@@ -1,0 +1,32 @@
+name: TEMP Stars at Noon reuse audit
+
+on:
+  push:
+    branches:
+      - agent/ch19-stars-at-noon-production-case
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Search tracked repository for pre-existing identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          workflow='.github/workflows/TEMP-ch19-stars-at-noon-reuse-audit.yml'
+          git grep -niE 'Stars at Noon|stars[_ -]at[_ -]noon|Claire Denis' HEAD -- . ":(exclude)$workflow" > stars-at-noon-reuse-hits.txt || true
+          echo "Tracked hits: $(wc -l < stars-at-noon-reuse-hits.txt)"
+          cat stars-at-noon-reuse-hits.txt
+          if [ -s stars-at-noon-reuse-hits.txt ]; then
+            echo 'Pre-existing Stars at Noon / Claire Denis identity evidence found; inspect before authoring.'
+            exit 2
+          fi
+          echo 'No pre-existing Stars at Noon / Claire Denis identity found in tracked files.'
