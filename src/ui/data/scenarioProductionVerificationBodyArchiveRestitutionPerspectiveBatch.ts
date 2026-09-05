@@ -68,44 +68,18 @@ export const bodyArchiveRestitutionPerspectiveVerificationRecords = [
   {
     scenarioId: "scenario_all_the_beauty_and_the_bloodshed_2022",
     status: "verified",
-    verifiedAt: "2026-07-23",
-    summary: "The film's Participant and Praxis production, Nan Goldin archive, chaptered double narrative, P.A.I.N. activist record, credited three-editor montage, Soundwalk Collective music, institutional-accountability structure and Golden Lion legacy are supported by Venice, Film at Lincoln Center and Participant records.",
+    verifiedAt: "2026-09-04",
+    summary: "The existing 2022 All the Beauty and the Bloodshed identity remains the single verified Production Case. Venice fixes the 117-minute competition record and Golden Lion; Praxis fixes Participant/Praxis production context, Goldin photography and slideshows, the three credited editors, Soundwalk Collective, archival roles and named camera contributors; Poitras directly documents pre-existing P.A.I.N. footage, the abandoned on-camera master-interview plan, audio-only interviews over roughly a year and a half, and editorial themes/chapters with past-present convergence. BBFC separately fixes a later 121m53s 2023 VOD/streaming version. Total budget/finance, exact shoot-day ledger, complete camera/lens/media package, archive rights census, edit infrastructure, VFX, full sound-post chain, color pipeline and exact festival-to-release master lineage remain unresolved.",
     sources: [
-      {
-        title: "All the Beauty and the Bloodshed",
-        publisher: "La Biennale di Venezia",
-        url: "https://www.labiennale.org/en/cinema/2022/program-cinema-2022-pass-holders/all-beauty-and-bloodshed-2022-09-02-22-15",
-        sourceKind: "film_institute",
-        supports: ["overall", "screenplay", "cinematography", "editing", "sound"],
-        note: "The official Venice programme records Participant and Praxis Films, the 117-minute documentary, producers, Amy Foote, Joe Bini and Brian A. Kates editing and Soundwalk Collective music."
-      },
-      {
-        title: "Official awards of the 79th Venice Film Festival",
-        publisher: "La Biennale di Venezia",
-        url: "https://www.labiennale.org/en/news/official-awards-79th-venice-film-festival",
-        sourceKind: "film_institute",
-        supports: ["overall"],
-        note: "The official awards record confirms Laura Poitras's documentary as the 2022 Golden Lion winner."
-      },
-      {
-        title: "60th New York Film Festival Main Slate announcement",
-        publisher: "Film at Lincoln Center",
-        url: "https://www.filmlinc.org/nyff2022/daily/60th-new-york-film-festival-main-slate-announcement/",
-        sourceKind: "film_institute",
-        supports: ["overall", "screenplay", "editing"],
-        note: "Film at Lincoln Center identifies the documentary as the NYFF60 Centerpiece and describes its intertwined portrait of Nan Goldin, her communities, P.A.I.N. and institutional complicity."
-      },
-      {
-        title: "All the Beauty and the Bloodshed Academy Award nomination",
-        publisher: "Participant",
-        url: "https://participant.com/all-the-beauty-and-the-bloodshed-academy-award-nomination/",
-        sourceKind: "archive_feature",
-        supports: ["overall", "screenplay", "editing", "sound"],
-        note: "The official production and social-impact page connects Goldin's personal history and artistic archive to the campaign against the Sackler family's opioid profits and museum philanthropy."
-      }
+      { title: "All the Beauty and the Bloodshed", publisher: "La Biennale di Venezia", url: "https://www.labiennale.org/en/cinema/2022/program-cinema-2022-pass-holders/all-beauty-and-bloodshed-2022-09-02-22-15", sourceKind: "film_institute", supports: ["overall", "screenplay", "cinematography", "editing", "sound"], note: "Official Venice programme supporting Participant and Praxis Films, 117-minute documentary, producers, Amy Foote/Joe Bini/Brian A. Kates editing and Soundwalk Collective music." },
+      { title: "Official awards of the 79th Venice Film Festival", publisher: "La Biennale di Venezia", url: "https://www.labiennale.org/en/news/official-awards-79th-venice-film-festival", sourceKind: "film_institute", supports: ["overall"], note: "Official awards record confirming Laura Poitras's documentary as the 2022 Golden Lion winner." },
+      { title: "60th New York Film Festival Main Slate announcement", publisher: "Film at Lincoln Center", url: "https://www.filmlinc.org/nyff2022/daily/60th-new-york-film-festival-main-slate-announcement/", sourceKind: "film_institute", supports: ["overall", "screenplay", "editing"], note: "Institutional festival record describing the intertwined portrait of Nan Goldin, her communities, P.A.I.N. and institutional complicity." },
+      { title: "All the Beauty and the Bloodshed Academy Award nomination", publisher: "Participant", url: "https://participant.com/all-the-beauty-and-the-bloodshed-academy-award-nomination/", sourceKind: "archive_feature", supports: ["overall", "screenplay", "editing", "sound"], note: "Production/social-impact record connecting Goldin's personal and artistic archive to the campaign against Sackler opioid profits and museum philanthropy." },
+      { title: "All the Beauty and the Bloodshed", publisher: "Praxis Films", url: "https://www.praxisfilms.org/films/all-the-beauty-and-the-bloodshed", sourceKind: "archive_feature", supports: ["overall", "cinematography", "editing", "sound"], note: "Official production-site credits supporting Participant in association with HBO Documentary and NEON, Goldin photography/slideshows, producers, editors, music, archival-production roles and camera contributors." },
+      { title: "Laura Poitras on All the Beauty and the Bloodshed and Harnessing Nan Goldin's Fight", publisher: "POV Magazine", url: "https://povmagazine.com/laura-poitras-on-all-the-beauty-and-the-bloodshed-and-harnessing-nan-goldins-fight/", sourceKind: "filmmaker_interview", supports: ["overall", "cinematography", "editing", "sound"], note: "Direct Poitras interview supporting pre-existing Goldin/P.A.I.N. footage, the unused planned camera-and-lighting interview setup, audio-only interviews over roughly a year and a half, editorial themes/chapters and past-present convergence." },
+      { title: "All The Beauty And The Bloodshed", publisher: "British Board of Film Classification", url: "https://www.bbfc.co.uk/release/all-the-beauty-and-the-bloodshed-q29sbgvjdglvbjpwwc0xmda4nzc3", sourceKind: "film_institute", supports: ["overall"], note: "Institutional version record supporting a 121m53s 2023 VOD/streaming master from Altitude Film Distribution, preserved separately from Venice's 117-minute festival record." }
     ]
-  },
-  {
+  },  {
     scenarioId: "scenario_dahomey_2024",
     status: "verified",
     verifiedAt: "2026-07-23",
