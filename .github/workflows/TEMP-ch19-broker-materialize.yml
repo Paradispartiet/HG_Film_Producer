@@ -26,6 +26,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Tighten Broker identity scan
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('scripts/TEMP-materialize-ch19-broker.mjs')
+          s = p.read_text()
+          old = '  if (text.includes(SCENARIO_ID) || text.includes("Broker") || text.includes("Les Bonnes Étoiles") || text.includes("Beurokeo") || text.includes("브로커")) identityHits.push(rel);'
+          new = '  if (text.includes(SCENARIO_ID) || /\\b(?:title|originalTitle)\\s*:\\s*"Broker"/.test(text) || text.includes("\\\"Les Bonnes Étoiles\\\"") || text.includes("\\\"Beurokeo\\\"") || text.includes("\\\"브로커\\\"")) identityHits.push(rel);'
+          if s.count(old) != 1:
+              raise SystemExit('Broker identity-scan marker drifted; refusing runtime patch')
+          p.write_text(s.replace(old, new))
+          PY
+
       - name: Parse TEMP materializer
         run: node --check scripts/TEMP-materialize-ch19-broker.mjs
 
