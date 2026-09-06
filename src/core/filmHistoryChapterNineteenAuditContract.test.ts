@@ -71,6 +71,7 @@ const exactCandidateTitles = [
   "The Eight Mountains",
   "Tori and Lokita",
   "Holy Spider",
+  "Broker",
   "Tenet",
   "Nomadland",
   "Soul",
@@ -181,6 +182,7 @@ const exactP1Priority = [
   "The Eight Mountains",
   "Tori and Lokita",
   "Holy Spider",
+  "Broker",
   "Nomadland",
   "Collective",
   "Quo Vadis, Aida?",
@@ -245,6 +247,7 @@ const exactUseExisting = [
   "The Eight Mountains",
   "Tori and Lokita",
   "Holy Spider",
+  "Broker",
   "Tenet",
   "Nomadland",
   "Soul",
@@ -354,18 +357,18 @@ test("Chapter 19 locks the open 2020-present scope without freezing 2026", () =>
 
 test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {
   assert.match(audit, /const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;/);
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 603;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 604;/);
   assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);
-  assert.equal(resolved.atlas.expectedCount, 603);
-  assert.equal(resolved.atlas.actualCount, 603);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 603);
+  assert.equal(resolved.atlas.expectedCount, 604);
+  assert.equal(resolved.atlas.actualCount, 604);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 604);
 });
 
-test("Chapter 19 locks exactly eighty-one candidates across 2020-2025", () => {
+test("Chapter 19 locks exactly eighty-two candidates across 2020-2025", () => {
   assert.deepEqual(resolved.candidates.map((item) => item.title), [...exactCandidateTitles]);
-  assert.equal(new Set(resolved.candidates.map((item) => item.title)).size, 81);
-  assert.equal(resolved.candidates.length, 81);
-  const expectedCandidatesByYear = new Map([[2020, 11], [2021, 17], [2022, 19], [2023, 11], [2024, 12], [2025, 11]]);
+  assert.equal(new Set(resolved.candidates.map((item) => item.title)).size, 82);
+  assert.equal(resolved.candidates.length, 82);
+  const expectedCandidatesByYear = new Map([[2020, 11], [2021, 17], [2022, 20], [2023, 11], [2024, 12], [2025, 11]]);
   for (const [year, expected] of expectedCandidatesByYear) {
     assert.equal(resolved.candidates.filter((item) => item.year === year).length, expected, `Unexpected candidate count for ${year}`);
   }
@@ -376,7 +379,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.candidatePrioritiesIfMissing.P1, [...exactP1Priority]);
   assert.deepEqual(resolved.candidatePrioritiesIfMissing.P2, [...exactP2Priority]);
   assert.equal(exactP0Priority.length, 23);
-  assert.equal(exactP1Priority.length, 54);
+  assert.equal(exactP1Priority.length, 55);
   assert.equal(exactP2Priority.length, 4);
 
   assert.deepEqual(resolved.byDecision.USE_EXISTING, [...exactUseExisting]);
@@ -384,7 +387,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 79);
+  assert.equal(exactUseExisting.length, 80);
   assert.equal(exactP0Queue.length, 0);
   assert.equal(exactP1Queue.length, 0);
   assert.equal(exactP2Queue.length, 2);
@@ -558,6 +561,14 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(holySpider.scenarioId, "scenario_holy_spider_2022");
   assert.equal(holySpider.matches, 1);
   assert.equal(holySpider.productionVerified, true);
+
+  const broker = resolved.candidates.find((candidate) => candidate.title === "Broker");
+  assert.ok(broker);
+  assert.equal(broker.year, 2022);
+  assert.equal(broker.decision, "USE_EXISTING");
+  assert.equal(broker.scenarioId, "scenario_broker_2022");
+  assert.equal(broker.matches, 1);
+  assert.equal(broker.productionVerified, true);
 
   const tenet = resolved.candidates.find((candidate) => candidate.title === "Tenet");
   assert.ok(tenet);

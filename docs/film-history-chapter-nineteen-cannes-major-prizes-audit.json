@@ -45,10 +45,10 @@
     "topPrizeCorrectiveQueue": 0
   },
   "technicalBaseline": {
-    "atlasExpected": 603,
-    "atlasActual": 603,
-    "productionVerificationIds": 603,
-    "chapterNineteenCandidates": 81
+    "atlasExpected": 604,
+    "atlasActual": 604,
+    "productionVerificationIds": 604,
+    "chapterNineteenCandidates": 82
   },
   "officialSources": {
     "cannes2020": "https://www.festival-cannes.com/en/press/press-releases/the-official-selection-2020/",
@@ -390,12 +390,12 @@
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
       "manifestIndex": 18,
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_broker_2022",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "awardYear": 2023,
@@ -1136,12 +1136,12 @@
         "Best Actor"
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-75th-festival-de-cannes-winners-list/",
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_broker_2022",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "key": "2023|anatomy of a fall",
@@ -1535,10 +1535,10 @@
     {
       "year": 2022,
       "obligations": 10,
-      "productionVerifiedObligations": 9,
+      "productionVerifiedObligations": 10,
       "uniqueAwardedFilms": 10,
-      "productionVerifiedFilms": 9,
-      "unresolvedFilms": 1
+      "productionVerifiedFilms": 10,
+      "unresolvedFilms": 0
     },
     {
       "year": 2023,
@@ -1567,28 +1567,17 @@
   ],
   "summary": {
     "awardObligations": 43,
-    "productionVerifiedObligations": 31,
+    "productionVerifiedObligations": 32,
     "uniqueAwardedFilms": 41,
-    "productionVerifiedFilms": 30,
-    "unresolvedFilms": 11,
-    "missingCandidateFilms": 11,
+    "productionVerifiedFilms": 31,
+    "unresolvedFilms": 10,
+    "missingCandidateFilms": 10,
     "cannesMajorPrizesCompletionProven": false,
     "filmHistoricalSelectionCompletionProven": false
   },
   "correctiveQueue": [
     {
       "order": 1,
-      "title": "Broker",
-      "filmYear": 2022,
-      "awards": [
-        "Best Actor"
-      ],
-      "status": "MISSING_CANDIDATE",
-      "scenarioId": null,
-      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
-    },
-    {
-      "order": 2,
       "title": "The Pot-au-Feu",
       "filmYear": 2023,
       "awards": [
@@ -1599,7 +1588,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 3,
+      "order": 2,
       "title": "Fallen Leaves",
       "filmYear": 2023,
       "awards": [
@@ -1610,7 +1599,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 4,
+      "order": 3,
       "title": "Monster",
       "filmYear": 2023,
       "awards": [
@@ -1621,7 +1610,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 5,
+      "order": 4,
       "title": "About Dry Grasses",
       "filmYear": 2023,
       "awards": [
@@ -1632,7 +1621,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 6,
+      "order": 5,
       "title": "Perfect Days",
       "filmYear": 2023,
       "awards": [
@@ -1643,7 +1632,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 7,
+      "order": 6,
       "title": "Emilia Pérez",
       "filmYear": 2024,
       "awards": [
@@ -1655,7 +1644,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 8,
+      "order": 7,
       "title": "Grand Tour",
       "filmYear": 2024,
       "awards": [
@@ -1666,7 +1655,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 9,
+      "order": 8,
       "title": "Kinds of Kindness",
       "filmYear": 2024,
       "awards": [
@@ -1677,7 +1666,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 10,
+      "order": 9,
       "title": "Young Mothers",
       "filmYear": 2025,
       "awards": [
@@ -1688,7 +1677,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 11,
+      "order": 10,
       "title": "The Little Sister",
       "filmYear": 2025,
       "awards": [
