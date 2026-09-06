@@ -26,17 +26,26 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Correct Film Study cleanup marker casing
+      - name: Correct TEMP materializer markers
         run: |
           python - <<'PY'
           from pathlib import Path
           p = Path('scripts/TEMP-materialize-ch19-the-pot-au-feu.mjs')
           s = p.read_text()
+
           old = "Apart from a late piano transcription from Massenet's Thaïs, the film avoids a conventional score."
           new = "apart from a late piano transcription from Massenet's Thaïs, the film avoids a conventional score."
           if s.count(old) != 1:
               raise SystemExit('The Pot-au-Feu Film Study cleanup marker drifted; refusing runtime patch')
-          p.write_text(s.replace(old, new))
+          s = s.replace(old, new)
+
+          old_concat = "  '${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}`);',\n  '${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}${thePotAuFeuCandidate}`);');"
+          new_concat = "  '${brokerCandidate}`);',\n  '${brokerCandidate}${thePotAuFeuCandidate}`);');"
+          if s.count(old_concat) != 1:
+              raise SystemExit('The Pot-au-Feu Chapter 19 concat materializer marker drifted; refusing runtime patch')
+          s = s.replace(old_concat, new_concat)
+
+          p.write_text(s)
           PY
 
       - name: Parse TEMP materializer
