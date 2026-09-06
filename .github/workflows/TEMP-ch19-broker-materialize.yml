@@ -30,7 +30,10 @@ jobs:
         run: node --check scripts/TEMP-materialize-ch19-broker.mjs
 
       - name: Materialize Broker
-        run: node scripts/TEMP-materialize-ch19-broker.mjs
+        shell: bash
+        run: |
+          set -o pipefail
+          node scripts/TEMP-materialize-ch19-broker.mjs 2>&1 | tee broker-materialize.log
 
       - name: Stage clean verification tree
         run: |
@@ -49,6 +52,7 @@ jobs:
         with:
           name: broker-verification-diagnostics
           path: |
+            broker-materialize.log
             broker-verify.log
             docs/film-history-chapter-nineteen-atlas-resolved.json
             docs/film-history-chapter-nineteen-cannes-major-prizes-audit.json
@@ -57,7 +61,7 @@ jobs:
       - name: Commit clean Broker case
         if: success()
         run: |
-          rm -f broker-verify.log
+          rm -f broker-materialize.log broker-verify.log
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
