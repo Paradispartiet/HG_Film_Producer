@@ -1,7 +1,7 @@
 import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
 
 export const monsterFilmHistoryProfile = {
-  scenarioId: "scenario_monster_2023",
+  scenarioId: "scenario_monster_kore_eda_2023",
   period: "2019 development / 2022 Suwa principal photography / 2023 Cannes Japanese multi-perspective drama: digital capture, perspective-specific camera grammar and Sakamoto-Kore-eda screenplay collaboration",
   traditions: ["Japanese cinema", "multi-perspective narrative", "institutional drama", "child-centered cinema", "festival cinema", "digital cinematography"],
   before: "Monster / Kaibutsu was developed from 2019 after producer Genki Kawamura approached Hirokazu Kore-eda about Yuji Sakamoto's long treatment. The Cannes production notes describe repeated development meetings with Kawamura, Kenji Yamada and Sakamoto, a first screenplay draft whose projected runtime approached three hours, pandemic-delayed revision, and final work continuing until just before filming began in early 2022. It was the first feature since Maborosi that Kore-eda directed from a screenplay he did not write himself.",
