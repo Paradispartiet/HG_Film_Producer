@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 604,
-    "actualCount": 604,
+    "expectedCount": 605,
+    "actualCount": 605,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1197,6 +1197,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenThePotAuFeuExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1295,7 +1301,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 604
+    "literalVerifiedScenarioIds": 605
   },
   "candidates": [
     {
@@ -1650,6 +1656,23 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenBrokerExpansion.ts"
+    },
+    {
+      "title": "The Pot-au-Feu",
+      "originalTitle": "La Passion de Dodin Bouffant",
+      "year": 2023,
+      "aliases": [
+        "The Taste of Things",
+        "La passion de Dodin Bouffant"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2023 Best Director source-first case: materialize one new The Pot-au-Feu/La Passion de Dodin Bouffant/The Taste of Things Atlas/PV identity after strict alias-aware structural reuse reconciliation; preserve Cannes productionYear 2023 separately from the March 31-May 18, 2022 Maine-et-Loire production; lock the Château de Raguin spatial system, real-food/Steadicam choreography, sole Sony Venice plus 35mm Summilux-C evidence, sourced lighting and material-sound method, and 134/135-minute runtime discrepancy without inventing unsupported data, VFX, finance or mastering detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_pot_au_feu_2023",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenThePotAuFeuExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2583,6 +2606,7 @@
       "Tori and Lokita",
       "Holy Spider",
       "Broker",
+      "The Pot-au-Feu",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2670,6 +2694,7 @@
       "Tori and Lokita",
       "Holy Spider",
       "Broker",
+      "The Pot-au-Feu",
       "Tenet",
       "Nomadland",
       "Soul",

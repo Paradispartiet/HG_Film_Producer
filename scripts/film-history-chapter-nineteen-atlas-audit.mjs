@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;
 const BASE_EXPECTED_ATLAS_COUNT = 590;
-const EXPECTED_ATLAS_COUNT = 604;
+const EXPECTED_ATLAS_COUNT = 605;
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const basePath = path.join(scriptDir, "film-history-chapter-nineteen-atlas-audit-base.mjs");
@@ -33,6 +33,7 @@ const theEightMountainsNeedles = ['"title": "The Eight Mountains"', 'title: "The
 const toriAndLokitaNeedles = ['"title": "Tori and Lokita"', 'title: "Tori and Lokita"', '"originalTitle": "Tori et Lokita"', 'Tori & Lokita', 'scenario_tori_and_lokita_2022'];
 const holySpiderNeedles = ['"title": "Holy Spider"', 'title: "Holy Spider"', 'Les Nuits de Mashhad', 'Ankabut-e moqaddas', 'scenario_holy_spider_2022'];
 const brokerNeedles = ['"title": "Broker"', 'title: "Broker"', 'Les Bonnes Étoiles', 'Beurokeo', '브로커', 'scenario_broker_2022'];
+const thePotAuFeuNeedles = ['"title": "The Pot-au-Feu"', 'title: "The Pot-au-Feu"', 'La Passion de Dodin Bouffant', 'The Taste of Things', 'scenario_the_pot_au_feu_2023'];
 
 const triangleCandidate = `
   {
@@ -280,6 +281,17 @@ const brokerCandidate = `
     "chapterFunction": "Cannes 2022 Best Actor source-first case: materialize one new Broker Atlas/PV identity after strict English/French/romanized-Korean/Korean-script reuse reconciliation; preserve Cannes productionYear 2022 separately from the exact April 14-June 22, 2021 production window; lock 98-percent Korean location shooting, Busan/east-coast/Wolmido road-film geography, natural-light/weather method, Kore-eda's write-edit-shoot parallel workflow and bounded Ferris-wheel single-camera constraint without inventing unsupported camera, lens, data, finance, VFX or mastering detail."
   },`;
 
+const thePotAuFeuCandidate = `
+  {
+    "title": "The Pot-au-Feu",
+    "originalTitle": "La Passion de Dodin Bouffant",
+    "year": 2023,
+    "aliases": ["The Taste of Things", "La passion de Dodin Bouffant"],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Cannes 2023 Best Director source-first case: materialize one new The Pot-au-Feu/La Passion de Dodin Bouffant/The Taste of Things Atlas/PV identity after strict alias-aware structural reuse reconciliation; preserve Cannes productionYear 2023 separately from the March 31-May 18, 2022 Maine-et-Loire production; lock the Château de Raguin spatial system, real-food/Steadicam choreography, sole Sony Venice plus 35mm Summilux-C evidence, sourced lighting and material-sound method, and 134/135-minute runtime discrepancy without inventing unsupported data, VFX, finance or mastering detail."
+  },`;
+
 const baseSource = readFileSync(basePath, "utf8");
 const requiredBaselineConstants = [
   `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
@@ -310,12 +322,13 @@ if (theEightMountainsNeedles.some((needle) => baseSource.includes(needle))) thro
 if (toriAndLokitaNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Tori and Lokita/Tori et Lokita; consolidate the wrapper deliberately before continuing.");
 if (holySpiderNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Holy Spider/Les Nuits de Mashhad; consolidate the wrapper deliberately before continuing.");
 if (brokerNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Broker/Les Bonnes Étoiles/Beurokeo; consolidate the wrapper deliberately before continuing.");
+if (thePotAuFeuNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains The Pot-au-Feu/La Passion de Dodin Bouffant/The Taste of Things; consolidate the wrapper deliberately before continuing.");
 if (!baseSource.includes(insertionMarker)) throw new Error("Chapter 19 candidate insertion marker is missing; refusing to run a partially reconciled audit.");
 
 const reconciledSource = baseSource
   .replace(`const EXPECTED_ATLAS_COUNT = ${BASE_EXPECTED_ATLAS_COUNT};`, `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`)
   .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-06"')
-  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}`);
+  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}${thePotAuFeuCandidate}`);
 const temporaryAuditPath = path.join(scriptDir, `.film-history-chapter-nineteen-atlas-audit-reconciled-${process.pid}.mjs`);
 
 try {

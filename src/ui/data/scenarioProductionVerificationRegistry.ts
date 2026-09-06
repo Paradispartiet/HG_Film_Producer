@@ -236,6 +236,7 @@ import { theEightMountainsProductionCaseVerification } from "./scenarioProductio
 import { toriAndLokitaProductionCaseVerification } from "./scenarioProductionVerificationToriAndLokita";
 import { holySpiderProductionCaseVerification } from "./scenarioProductionVerificationHolySpider";
 import { brokerProductionCaseVerification } from "./scenarioProductionVerificationBroker";
+import { thePotAuFeuProductionCaseVerification } from "./scenarioProductionVerificationThePotAuFeu";
 import { eoProductionCaseVerification } from "./scenarioProductionVerificationEo";
 import { barbieProductionCaseVerification } from "./scenarioProductionVerificationBarbie";
 import { acrossTheSpiderVerseProductionCaseVerification } from "./scenarioProductionVerificationAcrossTheSpiderVerse";
@@ -594,6 +595,7 @@ const additionalVerificationRecords = [
   toriAndLokitaProductionCaseVerification,
   holySpiderProductionCaseVerification,
   brokerProductionCaseVerification,
+  thePotAuFeuProductionCaseVerification,
   eoProductionCaseVerification,
   barbieProductionCaseVerification,
   acrossTheSpiderVerseProductionCaseVerification,
