@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;
 const BASE_EXPECTED_ATLAS_COUNT = 590;
-const EXPECTED_ATLAS_COUNT = 602;
+const EXPECTED_ATLAS_COUNT = 603;
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const basePath = path.join(scriptDir, "film-history-chapter-nineteen-atlas-audit-base.mjs");
@@ -31,6 +31,7 @@ const starsAtNoonNeedles = ['"title": "Stars at Noon"', 'title: "Stars at Noon"'
 const boyFromHeavenNeedles = ['"title": "Boy from Heaven"', 'title: "Boy from Heaven"', '"originalTitle": "Walad Min Al Janna"', 'Cairo Conspiracy', 'scenario_boy_from_heaven_2022'];
 const theEightMountainsNeedles = ['"title": "The Eight Mountains"', 'title: "The Eight Mountains"', '"originalTitle": "Le otto montagne"', 'Les Huit Montagnes', 'scenario_the_eight_mountains_2022'];
 const toriAndLokitaNeedles = ['"title": "Tori and Lokita"', 'title: "Tori and Lokita"', '"originalTitle": "Tori et Lokita"', 'Tori & Lokita', 'scenario_tori_and_lokita_2022'];
+const holySpiderNeedles = ['"title": "Holy Spider"', 'title: "Holy Spider"', 'Les Nuits de Mashhad', 'Ankabut-e moqaddas', 'scenario_holy_spider_2022'];
 
 const triangleCandidate = `
   {
@@ -256,6 +257,17 @@ const toriAndLokitaCandidate = `
     "chapterFunction": "Cannes 2022 75th Anniversary Prize source-first case: materialize one new Tori and Lokita/Tori et Lokita Atlas/PV identity after strict alias-aware reuse reconciliation; preserve Cannes productionYear 2022 separately from 2021 principal photography; lock the Liège/Wallonia 11-week location shoot, five-week rehearsal method, actor-height handheld RED Komodo/40mm system, RED Monstro low-light night configuration, sparse naturalistic lighting and diegetic-sound boundaries without inventing unsupported data, sound-hardware, finance or post detail."
   },`;
 
+const holySpiderCandidate = `
+  {
+    "title": "Holy Spider",
+    "originalTitle": "Holy Spider",
+    "year": 2022,
+    "aliases": ["Les Nuits de Mashhad", "Ankabut-e moqaddas", "عنکبوت مقدس"],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Cannes 2022 Best Actress source-first case: materialize one new Holy Spider Atlas/PV identity after strict English/French/Persian alias-aware reuse reconciliation; preserve Cannes productionYear 2022 separately from the documented 35-day Jordan principal photography in 2021; lock the failed Iran/Turkey paths, Amman-for-Mashhad production, ALEXA Mini LF/Signature Prime evidence, 4K/2.39:1 catalogue format and explicit 115/117/118-minute runtime discrepancy without inventing unsupported budget, camera, lighting, sound, VFX or post detail."
+  },`;
+
 const baseSource = readFileSync(basePath, "utf8");
 const requiredBaselineConstants = [
   `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
@@ -284,12 +296,13 @@ if (starsAtNoonNeedles.some((needle) => baseSource.includes(needle))) throw new 
 if (boyFromHeavenNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Boy from Heaven/Walad Min Al Janna/Cairo Conspiracy; consolidate the wrapper deliberately before continuing.");
 if (theEightMountainsNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains The Eight Mountains/Le otto montagne; consolidate the wrapper deliberately before continuing.");
 if (toriAndLokitaNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Tori and Lokita/Tori et Lokita; consolidate the wrapper deliberately before continuing.");
+if (holySpiderNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Holy Spider/Les Nuits de Mashhad; consolidate the wrapper deliberately before continuing.");
 if (!baseSource.includes(insertionMarker)) throw new Error("Chapter 19 candidate insertion marker is missing; refusing to run a partially reconciled audit.");
 
 const reconciledSource = baseSource
   .replace(`const EXPECTED_ATLAS_COUNT = ${BASE_EXPECTED_ATLAS_COUNT};`, `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`)
-  .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-05"')
-  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}`);
+  .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-06"')
+  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}${holySpiderCandidate}`);
 const temporaryAuditPath = path.join(scriptDir, `.film-history-chapter-nineteen-atlas-audit-reconciled-${process.pid}.mjs`);
 
 try {
