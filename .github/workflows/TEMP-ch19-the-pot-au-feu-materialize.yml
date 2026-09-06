@@ -45,6 +45,18 @@ jobs:
               raise SystemExit('The Pot-au-Feu Chapter 19 concat materializer marker drifted; refusing runtime patch')
           s = s.replace(old_concat, new_concat)
 
+          old_atlas = 'execFileSync(process.execPath, [path.join(root, "scripts/film-history-chapter-nineteen-atlas-audit.mjs")], { cwd: root, stdio: "inherit" });'
+          new_atlas = 'execFileSync(process.execPath, [files.chapter19Audit, `--write=${files.chapter19Resolved}`], { cwd: root, stdio: "inherit", maxBuffer: 64 * 1024 * 1024 });'
+          if s.count(old_atlas) != 1:
+              raise SystemExit('The Pot-au-Feu Atlas audit invocation drifted; refusing runtime patch')
+          s = s.replace(old_atlas, new_atlas)
+
+          old_cannes = 'execFileSync(process.execPath, [path.join(root, "scripts/film-history-chapter-nineteen-cannes-major-prizes-audit.mjs")], { cwd: root, stdio: "inherit" });'
+          new_cannes = 'execFileSync(process.execPath, ["scripts/film-history-chapter-nineteen-cannes-major-prizes-audit.mjs", `--write=${files.cannesResolved}`], { cwd: root, stdio: "inherit", maxBuffer: 64 * 1024 * 1024 });'
+          if s.count(old_cannes) != 1:
+              raise SystemExit('The Pot-au-Feu Cannes audit invocation drifted; refusing runtime patch')
+          s = s.replace(old_cannes, new_cannes)
+
           p.write_text(s)
           PY
 
