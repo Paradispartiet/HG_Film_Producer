@@ -71,6 +71,14 @@ export const fallenLeavesProductionCaseVerification = {
       note: "Direct Alma Pöysti set testimony supporting 35mm capture, Kaurismäki's one-take preference, the statement that almost the whole movie was made in one and only take, limited rehearsal and the resulting need for simultaneous precision across performance, light, props and camera."
     },
     {
+      title: "Fallen Leaves, a Finnish Romcom to Rival Notting Hill",
+      publisher: "AnOther",
+      url: "https://www.anothermag.com/design-living/15285/fallen-leaves-film-review-aki-kaurismaki-jussi-vatanen-alma-poysti-interview",
+      sourceKind: "filmmaker_interview",
+      supports: ["overall", "editing"],
+      note: "Direct Alma Pöysti and Jussi Vatanen interview supporting Kaurismäki's one-take preference, minimal conventional rehearsal, long-take staging and the need to preserve rhythm inside the frame."
+    },
+    {
       title: "Fallen Leaves",
       publisher: "Pandora Film Produktion",
       url: "https://www.pandorafilm.com/filmography/fallen-leaves.html",

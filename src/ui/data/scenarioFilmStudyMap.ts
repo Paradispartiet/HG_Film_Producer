@@ -214,6 +214,7 @@ import { toriAndLokitaFilmHistoryProfile } from "./scenarioFilmStudyChapterNinet
 import { holySpiderFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenHolySpider";
 import { brokerFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenBroker";
 import { thePotAuFeuFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenThePotAuFeu";
+import { fallenLeavesFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenFallenLeaves";
 import { eoFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenEo";
 import { barbieFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenBarbie";
 import { acrossTheSpiderVerseFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAcrossTheSpiderVerse";
@@ -459,6 +460,7 @@ const sourceBackedFilmHistoryProfiles = {
   [holySpiderFilmHistoryProfile.scenarioId]: holySpiderFilmHistoryProfile,
   [brokerFilmHistoryProfile.scenarioId]: brokerFilmHistoryProfile,
   [thePotAuFeuFilmHistoryProfile.scenarioId]: thePotAuFeuFilmHistoryProfile,
+  [fallenLeavesFilmHistoryProfile.scenarioId]: fallenLeavesFilmHistoryProfile,
   [eoFilmHistoryProfile.scenarioId]: eoFilmHistoryProfile,
   [barbieFilmHistoryProfile.scenarioId]: barbieFilmHistoryProfile,
   [acrossTheSpiderVerseFilmHistoryProfile.scenarioId]: acrossTheSpiderVerseFilmHistoryProfile,
