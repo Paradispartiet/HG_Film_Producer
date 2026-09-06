@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 605,
-    "actualCount": 605,
+    "expectedCount": 606,
+    "actualCount": 606,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1203,6 +1203,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenFallenLeavesExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1301,7 +1307,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 605
+    "literalVerifiedScenarioIds": 606
   },
   "candidates": [
     {
@@ -1673,6 +1679,23 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenThePotAuFeuExpansion.ts"
+    },
+    {
+      "title": "Fallen Leaves",
+      "originalTitle": "Kuolleet lehdet",
+      "year": 2023,
+      "aliases": [
+        "Les Feuilles mortes",
+        "Fallende Blätter"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2023 Jury Prize source-first case: materialize one new Fallen Leaves/Kuolleet lehdet identity after strict English/Finnish/French alias-aware structural reuse reconciliation; preserve Cannes productionYear 2023 separately from documented second-half-August 2022 Helsinki/Kallio shooting; lock 35mm, ARRI Analog/Ultra Prime/ARRI Fresnel family evidence, one-take/minimal-rehearsal production method, 1.85:1 and Dolby 5.1 catalogue formats, and bounded SES public support without inventing exact camera body, stock/lab, sound hardware, VFX, budget shares or mastering lineage.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_fallen_leaves_2023",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenFallenLeavesExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2607,6 +2630,7 @@
       "Holy Spider",
       "Broker",
       "The Pot-au-Feu",
+      "Fallen Leaves",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2695,6 +2719,7 @@
       "Holy Spider",
       "Broker",
       "The Pot-au-Feu",
+      "Fallen Leaves",
       "Tenet",
       "Nomadland",
       "Soul",

@@ -73,6 +73,7 @@ const exactCandidateTitles = [
   "Holy Spider",
   "Broker",
   "The Pot-au-Feu",
+  "Fallen Leaves",
   "Tenet",
   "Nomadland",
   "Soul",
@@ -185,6 +186,7 @@ const exactP1Priority = [
   "Holy Spider",
   "Broker",
   "The Pot-au-Feu",
+  "Fallen Leaves",
   "Nomadland",
   "Collective",
   "Quo Vadis, Aida?",
@@ -251,6 +253,7 @@ const exactUseExisting = [
   "Holy Spider",
   "Broker",
   "The Pot-au-Feu",
+  "Fallen Leaves",
   "Tenet",
   "Nomadland",
   "Soul",
@@ -360,18 +363,18 @@ test("Chapter 19 locks the open 2020-present scope without freezing 2026", () =>
 
 test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {
   assert.match(audit, /const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;/);
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 605;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 606;/);
   assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);
-  assert.equal(resolved.atlas.expectedCount, 605);
-  assert.equal(resolved.atlas.actualCount, 605);
-  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 605);
+  assert.equal(resolved.atlas.expectedCount, 606);
+  assert.equal(resolved.atlas.actualCount, 606);
+  assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 606);
 });
 
-test("Chapter 19 locks exactly eighty-three candidates across 2020-2025", () => {
+test("Chapter 19 locks exactly eighty-four candidates across 2020-2025", () => {
   assert.deepEqual(resolved.candidates.map((item) => item.title), [...exactCandidateTitles]);
-  assert.equal(new Set(resolved.candidates.map((item) => item.title)).size, 83);
-  assert.equal(resolved.candidates.length, 83);
-  const expectedCandidatesByYear = new Map([[2020, 11], [2021, 17], [2022, 20], [2023, 12], [2024, 12], [2025, 11]]);
+  assert.equal(new Set(resolved.candidates.map((item) => item.title)).size, 84);
+  assert.equal(resolved.candidates.length, 84);
+  const expectedCandidatesByYear = new Map([[2020, 11], [2021, 17], [2022, 20], [2023, 13], [2024, 12], [2025, 11]]);
   for (const [year, expected] of expectedCandidatesByYear) {
     assert.equal(resolved.candidates.filter((item) => item.year === year).length, expected, `Unexpected candidate count for ${year}`);
   }
@@ -382,7 +385,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.candidatePrioritiesIfMissing.P1, [...exactP1Priority]);
   assert.deepEqual(resolved.candidatePrioritiesIfMissing.P2, [...exactP2Priority]);
   assert.equal(exactP0Priority.length, 23);
-  assert.equal(exactP1Priority.length, 56);
+  assert.equal(exactP1Priority.length, 57);
   assert.equal(exactP2Priority.length, 4);
 
   assert.deepEqual(resolved.byDecision.USE_EXISTING, [...exactUseExisting]);
@@ -390,7 +393,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 81);
+  assert.equal(exactUseExisting.length, 82);
   assert.equal(exactP0Queue.length, 0);
   assert.equal(exactP1Queue.length, 0);
   assert.equal(exactP2Queue.length, 2);
@@ -580,6 +583,14 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(thePotAuFeu.scenarioId, "scenario_the_pot_au_feu_2023");
   assert.equal(thePotAuFeu.matches, 1);
   assert.equal(thePotAuFeu.productionVerified, true);
+
+  const fallenLeaves = resolved.candidates.find((candidate) => candidate.title === "Fallen Leaves");
+  assert.ok(fallenLeaves);
+  assert.equal(fallenLeaves.year, 2023);
+  assert.equal(fallenLeaves.decision, "USE_EXISTING");
+  assert.equal(fallenLeaves.scenarioId, "scenario_fallen_leaves_2023");
+  assert.equal(fallenLeaves.matches, 1);
+  assert.equal(fallenLeaves.productionVerified, true);
 
   const tenet = resolved.candidates.find((candidate) => candidate.title === "Tenet");
   assert.ok(tenet);

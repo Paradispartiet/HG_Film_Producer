@@ -45,10 +45,10 @@
     "topPrizeCorrectiveQueue": 0
   },
   "technicalBaseline": {
-    "atlasExpected": 605,
-    "atlasActual": 605,
-    "productionVerificationIds": 605,
-    "chapterNineteenCandidates": 83
+    "atlasExpected": 606,
+    "atlasActual": 606,
+    "productionVerificationIds": 606,
+    "chapterNineteenCandidates": 84
   },
   "officialSources": {
     "cannes2020": "https://www.festival-cannes.com/en/press/press-releases/the-official-selection-2020/",
@@ -459,12 +459,12 @@
       "aliases": [],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
       "manifestIndex": 22,
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_fallen_leaves_2023",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "awardYear": 2023,
@@ -1205,12 +1205,12 @@
         "Jury Prize"
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_fallen_leaves_2023",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "key": "2023|monster",
@@ -1543,10 +1543,10 @@
     {
       "year": 2023,
       "obligations": 7,
-      "productionVerifiedObligations": 3,
+      "productionVerifiedObligations": 4,
       "uniqueAwardedFilms": 7,
-      "productionVerifiedFilms": 3,
-      "unresolvedFilms": 4
+      "productionVerifiedFilms": 4,
+      "unresolvedFilms": 3
     },
     {
       "year": 2024,
@@ -1567,28 +1567,17 @@
   ],
   "summary": {
     "awardObligations": 43,
-    "productionVerifiedObligations": 33,
+    "productionVerifiedObligations": 34,
     "uniqueAwardedFilms": 41,
-    "productionVerifiedFilms": 32,
-    "unresolvedFilms": 9,
-    "missingCandidateFilms": 9,
+    "productionVerifiedFilms": 33,
+    "unresolvedFilms": 8,
+    "missingCandidateFilms": 8,
     "cannesMajorPrizesCompletionProven": false,
     "filmHistoricalSelectionCompletionProven": false
   },
   "correctiveQueue": [
     {
       "order": 1,
-      "title": "Fallen Leaves",
-      "filmYear": 2023,
-      "awards": [
-        "Jury Prize"
-      ],
-      "status": "MISSING_CANDIDATE",
-      "scenarioId": null,
-      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
-    },
-    {
-      "order": 2,
       "title": "Monster",
       "filmYear": 2023,
       "awards": [
@@ -1599,7 +1588,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 3,
+      "order": 2,
       "title": "About Dry Grasses",
       "filmYear": 2023,
       "awards": [
@@ -1610,7 +1599,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 4,
+      "order": 3,
       "title": "Perfect Days",
       "filmYear": 2023,
       "awards": [
@@ -1621,7 +1610,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 5,
+      "order": 4,
       "title": "Emilia Pérez",
       "filmYear": 2024,
       "awards": [
@@ -1633,7 +1622,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 6,
+      "order": 5,
       "title": "Grand Tour",
       "filmYear": 2024,
       "awards": [
@@ -1644,7 +1633,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 7,
+      "order": 6,
       "title": "Kinds of Kindness",
       "filmYear": 2024,
       "awards": [
@@ -1655,7 +1644,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 8,
+      "order": 7,
       "title": "Young Mothers",
       "filmYear": 2025,
       "awards": [
@@ -1666,7 +1655,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 9,
+      "order": 8,
       "title": "The Little Sister",
       "filmYear": 2025,
       "awards": [
