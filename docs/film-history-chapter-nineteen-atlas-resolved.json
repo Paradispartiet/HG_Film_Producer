@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 603,
-    "actualCount": 603,
+    "expectedCount": 604,
+    "actualCount": 604,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1191,6 +1191,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenBrokerExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1289,7 +1295,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 603
+    "literalVerifiedScenarioIds": 604
   },
   "candidates": [
     {
@@ -1626,6 +1632,24 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenHolySpiderExpansion.ts"
+    },
+    {
+      "title": "Broker",
+      "originalTitle": "Broker",
+      "year": 2022,
+      "aliases": [
+        "Les Bonnes Étoiles",
+        "Beurokeo",
+        "브로커"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2022 Best Actor source-first case: materialize one new Broker Atlas/PV identity after strict English/French/romanized-Korean/Korean-script reuse reconciliation; preserve Cannes productionYear 2022 separately from the exact April 14-June 22, 2021 production window; lock 98-percent Korean location shooting, Busan/east-coast/Wolmido road-film geography, natural-light/weather method, Kore-eda's write-edit-shoot parallel workflow and bounded Ferris-wheel single-camera constraint without inventing unsupported camera, lens, data, finance, VFX or mastering detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_broker_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenBrokerExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2558,6 +2582,7 @@
       "The Eight Mountains",
       "Tori and Lokita",
       "Holy Spider",
+      "Broker",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2644,6 +2669,7 @@
       "The Eight Mountains",
       "Tori and Lokita",
       "Holy Spider",
+      "Broker",
       "Tenet",
       "Nomadland",
       "Soul",
