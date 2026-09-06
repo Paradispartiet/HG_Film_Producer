@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "auditDate": "2026-09-05",
+  "auditDate": "2026-09-06",
   "status": "foundation_established",
   "chapter": {
     "number": 19,
@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 602,
-    "actualCount": 602,
+    "expectedCount": 603,
+    "actualCount": 603,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1185,6 +1185,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenHolySpiderExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1283,7 +1289,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 602
+    "literalVerifiedScenarioIds": 603
   },
   "candidates": [
     {
@@ -1602,6 +1608,24 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenToriAndLokitaExpansion.ts"
+    },
+    {
+      "title": "Holy Spider",
+      "originalTitle": "Holy Spider",
+      "year": 2022,
+      "aliases": [
+        "Les Nuits de Mashhad",
+        "Ankabut-e moqaddas",
+        "عنکبوت مقدس"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2022 Best Actress source-first case: materialize one new Holy Spider Atlas/PV identity after strict English/French/Persian alias-aware reuse reconciliation; preserve Cannes productionYear 2022 separately from the documented 35-day Jordan principal photography in 2021; lock the failed Iran/Turkey paths, Amman-for-Mashhad production, ALEXA Mini LF/Signature Prime evidence, 4K/2.39:1 catalogue format and explicit 115/117/118-minute runtime discrepancy without inventing unsupported budget, camera, lighting, sound, VFX or post detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_holy_spider_2022",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenHolySpiderExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2533,6 +2557,7 @@
       "Boy from Heaven",
       "The Eight Mountains",
       "Tori and Lokita",
+      "Holy Spider",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2618,6 +2643,7 @@
       "Boy from Heaven",
       "The Eight Mountains",
       "Tori and Lokita",
+      "Holy Spider",
       "Tenet",
       "Nomadland",
       "Soul",

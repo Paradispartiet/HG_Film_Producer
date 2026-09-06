@@ -234,6 +234,7 @@ import { starsAtNoonProductionCaseVerification } from "./scenarioProductionVerif
 import { boyFromHeavenProductionCaseVerification } from "./scenarioProductionVerificationBoyFromHeaven";
 import { theEightMountainsProductionCaseVerification } from "./scenarioProductionVerificationTheEightMountains";
 import { toriAndLokitaProductionCaseVerification } from "./scenarioProductionVerificationToriAndLokita";
+import { holySpiderProductionCaseVerification } from "./scenarioProductionVerificationHolySpider";
 import { eoProductionCaseVerification } from "./scenarioProductionVerificationEo";
 import { barbieProductionCaseVerification } from "./scenarioProductionVerificationBarbie";
 import { acrossTheSpiderVerseProductionCaseVerification } from "./scenarioProductionVerificationAcrossTheSpiderVerse";
@@ -590,6 +591,7 @@ const additionalVerificationRecords = [
   boyFromHeavenProductionCaseVerification,
   theEightMountainsProductionCaseVerification,
   toriAndLokitaProductionCaseVerification,
+  holySpiderProductionCaseVerification,
   eoProductionCaseVerification,
   barbieProductionCaseVerification,
   acrossTheSpiderVerseProductionCaseVerification,

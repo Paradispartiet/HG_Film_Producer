@@ -211,6 +211,7 @@ import { starsAtNoonFilmHistoryProfile } from "./scenarioFilmStudyChapterNinetee
 import { boyFromHeavenFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenBoyFromHeaven";
 import { theEightMountainsFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenTheEightMountains";
 import { toriAndLokitaFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenToriAndLokita";
+import { holySpiderFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenHolySpider";
 import { eoFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenEo";
 import { barbieFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenBarbie";
 import { acrossTheSpiderVerseFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAcrossTheSpiderVerse";
@@ -453,6 +454,7 @@ const sourceBackedFilmHistoryProfiles = {
   [boyFromHeavenFilmHistoryProfile.scenarioId]: boyFromHeavenFilmHistoryProfile,
   [theEightMountainsFilmHistoryProfile.scenarioId]: theEightMountainsFilmHistoryProfile,
   [toriAndLokitaFilmHistoryProfile.scenarioId]: toriAndLokitaFilmHistoryProfile,
+  [holySpiderFilmHistoryProfile.scenarioId]: holySpiderFilmHistoryProfile,
   [eoFilmHistoryProfile.scenarioId]: eoFilmHistoryProfile,
   [barbieFilmHistoryProfile.scenarioId]: barbieFilmHistoryProfile,
   [acrossTheSpiderVerseFilmHistoryProfile.scenarioId]: acrossTheSpiderVerseFilmHistoryProfile,
