@@ -45,10 +45,10 @@
     "topPrizeCorrectiveQueue": 0
   },
   "technicalBaseline": {
-    "atlasExpected": 611,
-    "atlasActual": 611,
-    "productionVerificationIds": 611,
-    "chapterNineteenCandidates": 90
+    "atlasExpected": 612,
+    "atlasActual": 612,
+    "productionVerificationIds": 612,
+    "chapterNineteenCandidates": 91
   },
   "officialSources": {
     "cannes2020": "https://www.festival-cannes.com/en/press/press-releases/the-official-selection-2020/",
@@ -749,12 +749,12 @@
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
       "manifestIndex": 39,
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_young_mothers_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "awardYear": 2025,
@@ -1479,12 +1479,12 @@
         "Best Screenplay"
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_young_mothers_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "key": "2025|the little sister",
@@ -1559,36 +1559,25 @@
     {
       "year": 2025,
       "obligations": 9,
-      "productionVerifiedObligations": 7,
+      "productionVerifiedObligations": 8,
       "uniqueAwardedFilms": 8,
-      "productionVerifiedFilms": 6,
-      "unresolvedFilms": 2
+      "productionVerifiedFilms": 7,
+      "unresolvedFilms": 1
     }
   ],
   "summary": {
     "awardObligations": 43,
-    "productionVerifiedObligations": 41,
+    "productionVerifiedObligations": 42,
     "uniqueAwardedFilms": 41,
-    "productionVerifiedFilms": 39,
-    "unresolvedFilms": 2,
-    "missingCandidateFilms": 2,
+    "productionVerifiedFilms": 40,
+    "unresolvedFilms": 1,
+    "missingCandidateFilms": 1,
     "cannesMajorPrizesCompletionProven": false,
     "filmHistoricalSelectionCompletionProven": false
   },
   "correctiveQueue": [
     {
       "order": 1,
-      "title": "Young Mothers",
-      "filmYear": 2025,
-      "awards": [
-        "Best Screenplay"
-      ],
-      "status": "MISSING_CANDIDATE",
-      "scenarioId": null,
-      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
-    },
-    {
-      "order": 2,
       "title": "The Little Sister",
       "filmYear": 2025,
       "awards": [

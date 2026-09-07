@@ -243,6 +243,7 @@ import { perfectDaysProductionCaseVerification } from "./scenarioProductionVerif
 import { emiliaPerezProductionCaseVerification } from "./scenarioProductionVerificationEmiliaPerez";
 import { grandTourProductionCaseVerification } from "./scenarioProductionVerificationGrandTour";
 import { kindsOfKindnessProductionCaseVerification } from "./scenarioProductionVerificationKindsOfKindness";
+import { youngMothersProductionCaseVerification } from "./scenarioProductionVerificationYoungMothers";
 import { eoProductionCaseVerification } from "./scenarioProductionVerificationEo";
 import { barbieProductionCaseVerification } from "./scenarioProductionVerificationBarbie";
 import { acrossTheSpiderVerseProductionCaseVerification } from "./scenarioProductionVerificationAcrossTheSpiderVerse";
@@ -608,6 +609,7 @@ const additionalVerificationRecords = [
   emiliaPerezProductionCaseVerification,
   grandTourProductionCaseVerification,
   kindsOfKindnessProductionCaseVerification,
+  youngMothersProductionCaseVerification,
   eoProductionCaseVerification,
   barbieProductionCaseVerification,
   acrossTheSpiderVerseProductionCaseVerification,
