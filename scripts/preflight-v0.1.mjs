@@ -102,4 +102,6 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
+await import("./film-history-representation-coverage-audit-v1.mjs");
+
 console.log("v0.1 preflight source/documentation checks passed.");

@@ -33,6 +33,7 @@
     "audit:film-history-ch18": "node scripts/film-history-chapter-eighteen-atlas-audit.mjs",
     "audit:film-history-ch18-completion": "node scripts/film-history-chapter-eighteen-completion-audit.mjs",
     "audit:film-history-ch19": "node scripts/film-history-chapter-nineteen-atlas-audit.mjs",
+    "audit:film-history-representation": "node scripts/film-history-representation-coverage-audit-v1.mjs",
     "audit:film-history-ch19-festival-awards": "node scripts/film-history-chapter-nineteen-festival-awards-completion-audit.mjs",
     "audit:film-history-ch19-cannes-major-prizes": "node scripts/film-history-chapter-nineteen-cannes-major-prizes-audit.mjs",
     "preflight:v0.1": "node scripts/preflight-v0.1.mjs",
