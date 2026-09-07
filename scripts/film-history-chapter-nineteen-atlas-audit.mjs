@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;
 const BASE_EXPECTED_ATLAS_COUNT = 590;
-const EXPECTED_ATLAS_COUNT = 606;
+const EXPECTED_ATLAS_COUNT = 607;
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const basePath = path.join(scriptDir, "film-history-chapter-nineteen-atlas-audit-base.mjs");
@@ -36,6 +36,7 @@ const brokerNeedles = ['"title": "Broker"', 'title: "Broker"', 'Les Bonnes Étoi
 const thePotAuFeuNeedles = ['"title": "The Pot-au-Feu"', 'title: "The Pot-au-Feu"', 'La Passion de Dodin Bouffant', 'The Taste of Things', 'scenario_the_pot_au_feu_2023'];
 const fallenLeavesNeedles = ['"title": "Fallen Leaves"', 'title: "Fallen Leaves"', 'Kuolleet lehdet', 'Les Feuilles mortes', 'scenario_fallen_leaves_2023'];
 const monsterNeedles = ['"title": "Monster"', 'title: "Monster"', '"originalTitle": "Kaibutsu"', 'Monster (Kaibutsu)', 'scenario_monster_kore_eda_2023'];
+const aboutDryGrassesNeedles = ['"title": "About Dry Grasses"', 'title: "About Dry Grasses"', '"originalTitle": "Kuru Otlar Üstüne"', 'Kuru Otlar Ustune', 'scenario_about_dry_grasses_2023'];
 
 const triangleCandidate = `
   {
@@ -316,6 +317,17 @@ const monsterCandidate = `
     "chapterFunction": "Cannes 2023 Best Screenplay reconciliation: reuse the existing canonical scenario_monster_kore_eda_2023, its source-backed 17-area Film Study and its verified Production Verification instead of materializing a duplicate Atlas or PV identity."
   },`;
 
+const aboutDryGrassesCandidate = `
+  {
+    "title": "About Dry Grasses",
+    "originalTitle": "Kuru Otlar Üstüne",
+    "year": 2023,
+    "aliases": ["Kuru Otlar Ustune"],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Cannes 2023 Best Actress source-first case: materialize one new About Dry Grasses/Kuru Otlar Üstüne identity only after tree-wide reuse checks are negative; preserve 2023 production metadata separately from 2021 Eastern Anatolia photography; lock 4K Sony VENICE/Cooke Anamorphic SF 2X/24fps/Scope, pandemic-winter location production, full-script editorial reduction, credited sound/VFX/grade chains and explicit format provenance without inventing unsupported budget, equipment, VFX-census or mastering detail."
+  },`;
+
 const baseSource = readFileSync(basePath, "utf8");
 const requiredBaselineConstants = [
   `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
@@ -349,12 +361,13 @@ if (brokerNeedles.some((needle) => baseSource.includes(needle))) throw new Error
 if (thePotAuFeuNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains The Pot-au-Feu/La Passion de Dodin Bouffant/The Taste of Things; consolidate the wrapper deliberately before continuing.");
 if (fallenLeavesNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Fallen Leaves/Kuolleet lehdet; consolidate the wrapper deliberately before continuing.");
 if (monsterNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Monster/Kaibutsu; consolidate the wrapper deliberately before continuing.");
+if (aboutDryGrassesNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains About Dry Grasses/Kuru Otlar Üstüne; consolidate the wrapper deliberately before continuing.");
 if (!baseSource.includes(insertionMarker)) throw new Error("Chapter 19 candidate insertion marker is missing; refusing to run a partially reconciled audit.");
 
 const reconciledSource = baseSource
   .replace(`const EXPECTED_ATLAS_COUNT = ${BASE_EXPECTED_ATLAS_COUNT};`, `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`)
   .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-06"')
-  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}${thePotAuFeuCandidate}${fallenLeavesCandidate}${monsterCandidate}`);
+  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}${thePotAuFeuCandidate}${fallenLeavesCandidate}${monsterCandidate}${aboutDryGrassesCandidate}`);
 const temporaryAuditPath = path.join(scriptDir, `.film-history-chapter-nineteen-atlas-audit-reconciled-${process.pid}.mjs`);
 
 try {
