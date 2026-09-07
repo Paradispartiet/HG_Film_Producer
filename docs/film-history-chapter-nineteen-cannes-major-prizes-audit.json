@@ -3,7 +3,7 @@
   "auditDate": "2026-09-05",
   "title": "Chapter 19 Cannes Competition Major-Prizes Audit 2020–2025",
   "phase": "cannes_major_prizes",
-  "status": "source_first_reconciliation_open",
+  "status": "complete",
   "scope": {
     "frozenCandidateBaseline": "2020–2025",
     "competitionAwardYears": [
@@ -45,10 +45,10 @@
     "topPrizeCorrectiveQueue": 0
   },
   "technicalBaseline": {
-    "atlasExpected": 612,
-    "atlasActual": 612,
-    "productionVerificationIds": 612,
-    "chapterNineteenCandidates": 91
+    "atlasExpected": 613,
+    "atlasActual": 613,
+    "productionVerificationIds": 613,
+    "chapterNineteenCandidates": 92
   },
   "officialSources": {
     "cannes2020": "https://www.festival-cannes.com/en/press/press-releases/the-official-selection-2020/",
@@ -767,12 +767,12 @@
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
       "manifestIndex": 40,
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_the_little_sister_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "awardYear": 2025,
@@ -1497,12 +1497,12 @@
         "Best Performance by an Actress"
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-78th-festival-de-cannes-winners-list/",
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_the_little_sister_2025",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "key": "2025|resurrection",
@@ -1559,34 +1559,22 @@
     {
       "year": 2025,
       "obligations": 9,
-      "productionVerifiedObligations": 8,
+      "productionVerifiedObligations": 9,
       "uniqueAwardedFilms": 8,
-      "productionVerifiedFilms": 7,
-      "unresolvedFilms": 1
+      "productionVerifiedFilms": 8,
+      "unresolvedFilms": 0
     }
   ],
   "summary": {
     "awardObligations": 43,
-    "productionVerifiedObligations": 42,
+    "productionVerifiedObligations": 43,
     "uniqueAwardedFilms": 41,
-    "productionVerifiedFilms": 40,
-    "unresolvedFilms": 1,
-    "missingCandidateFilms": 1,
-    "cannesMajorPrizesCompletionProven": false,
+    "productionVerifiedFilms": 41,
+    "unresolvedFilms": 0,
+    "missingCandidateFilms": 0,
+    "cannesMajorPrizesCompletionProven": true,
     "filmHistoricalSelectionCompletionProven": false
   },
-  "correctiveQueue": [
-    {
-      "order": 1,
-      "title": "The Little Sister",
-      "filmYear": 2025,
-      "awards": [
-        "Best Performance by an Actress"
-      ],
-      "status": "MISSING_CANDIDATE",
-      "scenarioId": null,
-      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
-    }
-  ],
+  "correctiveQueue": [],
   "nextPhaseAfterClosure": "Venice main-competition major prizes, 2020–2025"
 }
