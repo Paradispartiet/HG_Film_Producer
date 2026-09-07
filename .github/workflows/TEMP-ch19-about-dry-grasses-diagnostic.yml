@@ -1,30 +1,10 @@
-name: TEMP About Dry Grasses diagnostic
+name: TEMP About Dry Grasses staging
 
 on:
-  push:
-    branches:
-      - agent/ch19-about-dry-grasses-production-case
+  workflow_dispatch:
 
 jobs:
-  diagnose:
+  dormant:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Parse diagnostic
-        run: node --check scripts/TEMP-diagnose-ch19-about-dry-grasses.mjs
-
-      - name: Run tree-wide identity diagnostic
-        shell: bash
-        run: |
-          set -o pipefail
-          node scripts/TEMP-diagnose-ch19-about-dry-grasses.mjs 2>&1 | tee about-dry-grasses-diagnostic.log
-
-      - name: Upload diagnostic
-        uses: actions/upload-artifact@v4
-        with:
-          name: about-dry-grasses-identity-diagnostic
-          path: about-dry-grasses-diagnostic.log
+      - run: echo "Staging source-first About Dry Grasses package; push trigger intentionally disabled."
