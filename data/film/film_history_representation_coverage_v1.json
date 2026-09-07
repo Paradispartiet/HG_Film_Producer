@@ -1,0 +1,354 @@
+{
+  "schema": "hg_film_producer_film_history_representation_coverage_v1",
+  "version": "1.0.0",
+  "audited_at": "2026-09-07",
+  "status": "OPEN_GAPS_FAIL_CLOSED",
+  "owner": "film_history_representation_coverage",
+  "baseline": {
+    "source_main_sha": "cf7f7aad73ab56e304772e6bb2f3801737699aba",
+    "expected_production_verified_core_scenarios": 613,
+    "closed_chapter_18_atlas_count": 539,
+    "core_selection_frozen_during_audit": true,
+    "chapter_19_period": "2020-present",
+    "chapter_19_frozen_observation_baseline": "2020-2025",
+    "important_boundary": "HG_Film_Producer is authoritative for this audit. The audit derives the live Atlas from the seed plus runtime expansion order and derives the Production Verification registry independently. Both sets must contain exactly 613 unique IDs and must be identical before any representation result is accepted."
+  },
+  "research_question": "Finnes det en vesentlig teknologisk, industriell, geografisk, estetisk, distribusjonsmessig eller arbeidsmessig utvikling i filmhistorien som dagens produksjonsverifiserte scenarioer ikke kan lære bort gjennom konkret evidens?",
+  "principles": {
+    "core_first": "Freeze the current 613-scenario core while representation is audited; do not increase the scenario count merely to improve a list.",
+    "topic_is_not_coverage": "Curriculum, chapter, title or Fagverk presence cannot close Atlas coverage by itself. Status 2 or 3 requires an exact production-verified scenario identity and inspectable evidence.",
+    "prestige_is_not_reason": "Awards, festivals, critical consensus, canon status or personal preference are never sufficient admission rationales on their own.",
+    "systems_over_tokens": "Regional cinemas are evaluated as production, financing, labor, distribution and audience systems rather than nationality tokens.",
+    "enrichment_before_addition": "Existing production-verified scenarios must be checked and, where sufficient, enriched in place before any new scenario identity is considered.",
+    "uncertain_mapping_is_unmapped": "A plausible title, geography, genre or period match is not a historical-function mapping. Uncertain mappings remain UNMAPPED.",
+    "no_quota_completion": "Counts by film, region or genre are diagnostics and integrity checks, not completion quotas."
+  },
+  "coverage_scale": {
+    "0": {
+      "label": "uncovered",
+      "definition": "No verified production-scenario evidence mapped in this audit teaches the development adequately."
+    },
+    "1": {
+      "label": "weak",
+      "definition": "The development is present or partially evidenced, but production-historical depth, system coverage or exact scenario anchoring remains insufficient."
+    },
+    "2": {
+      "label": "covered",
+      "definition": "At least one exact production-verified scenario is explicitly mapped with inspectable production, institutional, technology, labor or distribution evidence."
+    },
+    "3": {
+      "label": "triangulated",
+      "definition": "At least two complementary production-verified scenarios are explicitly mapped with inspectable evidence and a documented triangulation dimension such as geography, production scale, institution or workflow."
+    }
+  },
+  "audit_axes": [
+    "technology_and_format",
+    "production_economics_and_organization",
+    "institutions_and_industry_systems",
+    "geography_and_transnational_production",
+    "aesthetics_and_form",
+    "genre_and_popular_cinema",
+    "labor_crew_and_union_history",
+    "distribution_exhibition_and_audience_behavior",
+    "production_scale_studio_midbudget_microbudget_independent",
+    "regulation_power_finance_and_coproduction",
+    "preservation_restoration_and_material_survival",
+    "accessibility_sustainability_and_environmental_production"
+  ],
+  "evidence_layers": {
+    "level_1_curriculum": "Canonical topic or chapter exists; useful for research navigation but not Atlas closure.",
+    "level_2_case": "Inspectable source-bound case evidence exists; useful for enrichment and mapping review.",
+    "level_3_atlas_scenario": "Exact production-verified Atlas scenario identity is explicitly mapped to the historical development with repo-local evidence paths.",
+    "closure_rule": "A final status 2 or 3 requires level_3_atlas_scenario evidence. Fagverk or chapter presence alone cannot close a row."
+  },
+  "development_matrix": [
+    {
+      "development_id": "early_cinema_apparatus_projection_programming",
+      "declared_status": 0,
+      "priority": "P1",
+      "axis_ids": ["technology_and_format", "institutions_and_industry_systems", "distribution_exhibition_and_audience_behavior"],
+      "required_evidence": "Exact early-cinema scenarios must be mapped to apparatus, capture/projection, programming or exhibition evidence before this historical strength is credited in the 613 audit."
+    },
+    {
+      "development_id": "silent_sound_transition",
+      "declared_status": 0,
+      "priority": "P1",
+      "axis_ids": ["technology_and_format", "institutions_and_industry_systems", "distribution_exhibition_and_audience_behavior"],
+      "required_evidence": "Exact scenarios must distinguish synchronized sound systems, production conversion and exhibition transition rather than treating sound as one global switch."
+    },
+    {
+      "development_id": "classical_hollywood_studio_system",
+      "declared_status": 0,
+      "priority": "P1",
+      "axis_ids": ["production_economics_and_organization", "institutions_and_industry_systems", "labor_crew_and_union_history"],
+      "required_evidence": "Exact scenarios must teach studio organization, labor, financing, production management or vertical industrial structure with source-bound evidence."
+    },
+    {
+      "development_id": "modernism_new_waves_alternative_movements",
+      "declared_status": 0,
+      "priority": "P1",
+      "axis_ids": ["aesthetics_and_form", "production_scale_studio_midbudget_microbudget_independent", "geography_and_transnational_production"],
+      "required_evidence": "Exact scenarios must connect formal movements to concrete production scale, institutions, location practice, financing or labor rather than style labels alone."
+    },
+    {
+      "development_id": "decolonial_transnational_historiography",
+      "declared_status": 0,
+      "priority": "P1",
+      "axis_ids": ["geography_and_transnational_production", "institutions_and_industry_systems", "regulation_power_finance_and_coproduction"],
+      "required_evidence": "Exact scenarios must document production, financing, circulation or recovery histories across colonial, postcolonial or transnational systems."
+    },
+    {
+      "development_id": "nordic_norwegian_silent_and_institution_history",
+      "declared_status": 0,
+      "priority": "P1",
+      "axis_ids": ["institutions_and_industry_systems", "geography_and_transnational_production", "distribution_exhibition_and_audience_behavior"],
+      "required_evidence": "Exact Nordic or Norwegian scenarios must be mapped to companies, export, labor, exhibition or film institutions with inspectable production evidence."
+    },
+    {
+      "development_id": "animation_technique_labor_and_delivery_history",
+      "declared_status": 0,
+      "priority": "P1",
+      "axis_ids": ["technology_and_format", "labor_crew_and_union_history", "distribution_exhibition_and_audience_behavior"],
+      "required_evidence": "Exact animation scenarios must teach technique, labor organization, camera/software pipeline or delivery history rather than animation as a single medium category."
+    },
+    {
+      "development_id": "exhibition_and_viewing_history",
+      "declared_status": 0,
+      "priority": "P1",
+      "axis_ids": ["distribution_exhibition_and_audience_behavior", "institutions_and_industry_systems", "technology_and_format"],
+      "required_evidence": "Exact scenarios must map production or circulation evidence to programming, venues, projection, audience practice or changing exhibition systems."
+    },
+    {
+      "development_id": "modern_popular_commercial_cinema_as_industry",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["production_economics_and_organization", "genre_and_popular_cinema", "distribution_exhibition_and_audience_behavior"],
+      "required_evidence": "Existing scenarios must be tested for mass-audience, blockbuster, franchise and commercial mid-budget production, distribution and audience-system evidence."
+    },
+    {
+      "development_id": "genre_industries_horror_action_comedy_romance_exploitation_local_popular",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["genre_and_popular_cinema", "production_economics_and_organization", "geography_and_transnational_production"],
+      "required_evidence": "Complementary exact scenarios must show popular genres as distinct production and distribution systems, not merely aesthetic categories."
+    },
+    {
+      "development_id": "india_modern_industry_system",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["institutions_and_industry_systems", "geography_and_transnational_production", "distribution_exhibition_and_audience_behavior"],
+      "required_evidence": "Exact modern Indian scenarios must teach language markets, financing, star or distribution economics, industrial organization or digital transition."
+    },
+    {
+      "development_id": "china_industry_system",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["institutions_and_industry_systems", "geography_and_transnational_production", "regulation_power_finance_and_coproduction"],
+      "required_evidence": "Exact Mainland Chinese scenarios must teach industrial institutions, regulation, financing, co-production or distribution systems with title-specific production evidence."
+    },
+    {
+      "development_id": "nigeria_nollywood_industry_system",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["institutions_and_industry_systems", "production_scale_studio_midbudget_microbudget_independent", "distribution_exhibition_and_audience_behavior"],
+      "required_evidence": "Exact Nigerian or Nollywood scenarios must teach production scale, financing, video/digital infrastructure, distribution or audience systems."
+    },
+    {
+      "development_id": "south_korea_industry_system",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["institutions_and_industry_systems", "production_economics_and_organization", "distribution_exhibition_and_audience_behavior"],
+      "required_evidence": "Exact South Korean scenarios must teach modern industrial organization, financing, exhibition, distribution or export systems rather than national representation alone."
+    },
+    {
+      "development_id": "japan_industry_system",
+      "declared_status": 0,
+      "priority": "P1",
+      "axis_ids": ["institutions_and_industry_systems", "genre_and_popular_cinema", "geography_and_transnational_production"],
+      "required_evidence": "Exact Japanese scenarios must teach modern studio, independent, genre, financing, labor or distribution systems with production evidence."
+    },
+    {
+      "development_id": "latin_america_beyond_single_movement",
+      "declared_status": 0,
+      "priority": "P1",
+      "axis_ids": ["institutions_and_industry_systems", "geography_and_transnational_production", "regulation_power_finance_and_coproduction"],
+      "required_evidence": "Multiple exact Latin American scenarios must show distinct industry, financing, co-production or distribution systems beyond a single movement or country token."
+    },
+    {
+      "development_id": "mena_industry_systems",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["institutions_and_industry_systems", "geography_and_transnational_production", "regulation_power_finance_and_coproduction"],
+      "required_evidence": "Exact MENA scenarios must teach concrete regional production, censorship/regulation, financing, co-production, labor or distribution systems."
+    },
+    {
+      "development_id": "microbudget_digital_workflows_and_independent_distribution",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["technology_and_format", "production_scale_studio_midbudget_microbudget_independent", "distribution_exhibition_and_audience_behavior"],
+      "required_evidence": "Exact scenarios must connect low-cost digital capture/post tools, microbudget organization and independent or self-directed distribution."
+    },
+    {
+      "development_id": "streaming_native_feature_production_economics",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["production_economics_and_organization", "institutions_and_industry_systems", "distribution_exhibition_and_audience_behavior"],
+      "required_evidence": "Exact scenarios must document platform commissioning, financing, rights, delivery and distribution economics for streaming-native feature production."
+    },
+    {
+      "development_id": "labor_union_vfx_outsourcing_intimacy_coordination_post_history",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["labor_crew_and_union_history", "production_economics_and_organization", "technology_and_format"],
+      "required_evidence": "Exact scenarios must map newer labor history across unions, VFX vendors or outsourcing, emerging crew roles, intimacy coordination and post-production organization."
+    },
+    {
+      "development_id": "preservation_restoration_material_survival_as_history_maker",
+      "declared_status": 0,
+      "priority": "P1",
+      "axis_ids": ["preservation_restoration_and_material_survival", "institutions_and_industry_systems"],
+      "required_evidence": "Exact scenarios must demonstrate how preservation, restoration, archive access or material survival changes what film history can recover and teach."
+    },
+    {
+      "development_id": "pandemic_shutdown_protocol_and_recovery",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["labor_crew_and_union_history", "production_economics_and_organization", "regulation_power_finance_and_coproduction"],
+      "chapter": 19,
+      "required_evidence": "Production shutdown or restart rules, insurance or protocol effects, and schedule, budget or crew consequences mapped to exact scenarios."
+    },
+    {
+      "development_id": "theatrical_windows_and_release_strategy",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["distribution_exhibition_and_audience_behavior", "production_economics_and_organization"],
+      "chapter": 19,
+      "required_evidence": "Cinema/platform window decisions with territory, distributor or platform context and a demonstrated production-economic consequence."
+    },
+    {
+      "development_id": "streaming_native_feature_economics",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["production_economics_and_organization", "institutions_and_industry_systems", "distribution_exhibition_and_audience_behavior"],
+      "chapter": 19,
+      "required_evidence": "Commission, finance, rights and delivery model for an exact feature scenario made primarily for a platform."
+    },
+    {
+      "development_id": "virtual_production_and_in_camera_vfx",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["technology_and_format", "labor_crew_and_union_history", "production_economics_and_organization"],
+      "chapter": 19,
+      "required_evidence": "Exact production scenarios tying LED or in-camera visual-effects workflows to departments, schedule, budget or post pipeline."
+    },
+    {
+      "development_id": "vfx_labor_outsourcing_and_post_pipeline",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["labor_crew_and_union_history", "technology_and_format", "geography_and_transnational_production"],
+      "chapter": 19,
+      "required_evidence": "Vendor or crew geography, labor organization and post/VFX workflow documented as historical production evidence in exact scenarios."
+    },
+    {
+      "development_id": "union_contracts_and_industrial_action",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["labor_crew_and_union_history", "institutions_and_industry_systems", "production_economics_and_organization"],
+      "chapter": 19,
+      "required_evidence": "Collective bargaining, strike or contract changes with demonstrated consequences for exact production scenarios."
+    },
+    {
+      "development_id": "intimacy_coordination_and_new_crew_roles",
+      "declared_status": 0,
+      "priority": "P1",
+      "axis_ids": ["labor_crew_and_union_history", "production_economics_and_organization"],
+      "chapter": 19,
+      "required_evidence": "Documented role or protocol adoption and its effect on rehearsal, blocking, consent or production organization in exact scenarios."
+    },
+    {
+      "development_id": "generative_ai_and_machine_learning_in_production_or_post",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["technology_and_format", "labor_crew_and_union_history", "regulation_power_finance_and_coproduction"],
+      "chapter": 19,
+      "required_evidence": "Specific bounded use or non-use, rights or labor implications and inspectable production evidence in exact scenarios."
+    },
+    {
+      "development_id": "sustainable_production_and_carbon_constraints",
+      "declared_status": 0,
+      "priority": "P1",
+      "axis_ids": ["accessibility_sustainability_and_environmental_production", "production_economics_and_organization"],
+      "chapter": 19,
+      "required_evidence": "Measured or rule-bound production changes affecting travel, energy, materials, sets or procurement in exact scenarios."
+    },
+    {
+      "development_id": "regional_incentives_studios_and_production_infrastructure",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["regulation_power_finance_and_coproduction", "institutions_and_industry_systems", "geography_and_transnational_production"],
+      "chapter": 19,
+      "required_evidence": "Territorial incentives or infrastructure choices linked to location, crew base, budget or vendor ecosystem in exact scenarios."
+    },
+    {
+      "development_id": "microbudget_digital_and_self_distribution",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["technology_and_format", "production_scale_studio_midbudget_microbudget_independent", "distribution_exhibition_and_audience_behavior"],
+      "chapter": 19,
+      "required_evidence": "Low-cost capture or post plus financing and distribution outside conventional studio or platform commissioning, mapped to exact scenarios."
+    },
+    {
+      "development_id": "franchise_blockbuster_and_mass_audience_industrial_model",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["production_economics_and_organization", "genre_and_popular_cinema", "distribution_exhibition_and_audience_behavior"],
+      "chapter": 19,
+      "required_evidence": "Tentpole or franchise production organization, format or exhibition strategy and audience or distribution consequences in exact scenarios."
+    },
+    {
+      "development_id": "contemporary_popular_genres_as_industries",
+      "declared_status": 0,
+      "priority": "P0",
+      "axis_ids": ["genre_and_popular_cinema", "production_economics_and_organization", "geography_and_transnational_production"],
+      "chapter": 19,
+      "required_evidence": "Complementary horror, action, comedy, romance or local-popular exact scenarios whose significance is industrial rather than merely aesthetic."
+    }
+  ],
+  "scenario_reviews": [],
+  "candidate_admission_gate": {
+    "default": "REJECT_NEW_IDENTITY",
+    "allowed_reasons": [
+      "closes_status_0_to_at_least_2",
+      "raises_status_1_to_at_least_2",
+      "raises_status_2_to_3_where_current_coverage_is_geographically_economically_or_institutionally_skewed"
+    ],
+    "required_before_new_identity": [
+      "exact_historical_development_id",
+      "current_coverage_status_with_evidence",
+      "search_for_existing_613_scenarios_that_can_close_gap",
+      "proof_that_in_place_enrichment_is_insufficient",
+      "production_verification_source_set",
+      "explicit_axis_contribution",
+      "distinctiveness_against_existing_cases",
+      "no_award_or_festival_status_as_primary_rationale"
+    ],
+    "hard_reject_reasons": [
+      "important_movie_only",
+      "festival_or_award_winner_only",
+      "critical_consensus_only",
+      "nationality_token_only",
+      "duplicates_an_already_triangulated_development_without_new_system_evidence"
+    ]
+  },
+  "closure_contract": {
+    "selection_may_be_called_representationally_audited": false,
+    "required_to_close": [
+      "review_every_one_of_the_613_exact_production_verified_atlas_scenario_ids",
+      "map_each_relevant_scenario_only_to_evidence_supported_historical_development_ids",
+      "leave_uncertain_historical_function_mappings_unmapped",
+      "recompute_all_development_statuses_from_exact_scenario_evidence",
+      "resolve_or_explicitly_accept_every_P0_status_0_or_1",
+      "prove_no_major_technology_industry_geography_aesthetics_labor_distribution_or_exhibition_development_is_orphaned"
+    ]
+  }
+}
