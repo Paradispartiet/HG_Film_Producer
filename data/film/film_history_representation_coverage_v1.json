@@ -68,7 +68,7 @@
       "priority": "P1",
       "axis_ids": ["technology_and_format", "institutions_and_industry_systems", "distribution_exhibition_and_audience_behavior"],
       "required_evidence": "Exact early-cinema scenarios must be mapped to apparatus, capture/projection, programming or exhibition evidence before this historical strength is credited in the 613 audit.",
-      "triangulation_basis": "Blacksmith Scene and Workers Leaving the Lumière Factory contrast the Edison Kinetograph/Kinetoscope laboratory-viewing system with the portable Lumière Cinématographe projection and programme system; The Corbett–Fitzsimmons Fight adds proprietary Veriscope capture/projection at event scale, while A Trip to the Moon and The Great Train Robbery add camera-transformation and moving-location capture practices."
+      "triangulation_basis": "Blacksmith Scene and Workers Leaving the Lumière Factory contrast the Edison Kinetograph/Kinetoscope laboratory-viewing system with the portable Lumière Cinématographe projection and programme system; The Corbett–Fitzsimmons Fight adds proprietary Veriscope capture/projection at event scale, Grandma's Reading Glass adds Alfred Darling camera and masked analytical-view capture, while A Trip to the Moon and The Great Train Robbery add camera-transformation and moving-location capture practices."
     },
     {
       "development_id": "silent_sound_transition",
@@ -129,7 +129,7 @@
     },
     {
       "development_id": "genre_industries_horror_action_comedy_romance_exploitation_local_popular",
-      "declared_status": 0,
+      "declared_status": 1,
       "priority": "P0",
       "axis_ids": ["genre_and_popular_cinema", "production_economics_and_organization", "geography_and_transnational_production"],
       "required_evidence": "Complementary exact scenarios must show popular genres as distinct production and distribution systems, not merely aesthetic categories."
@@ -210,7 +210,7 @@
       "priority": "P1",
       "axis_ids": ["preservation_restoration_and_material_survival", "institutions_and_industry_systems"],
       "required_evidence": "Exact scenarios must demonstrate how preservation, restoration, archive access or material survival changes what film history can recover and teach.",
-      "triangulation_basis": "A Trip to the Moon documents rediscovery and image-by-image restoration of recovered colour material; Life of an American Fireman shows an original copyright paper print overturning a mistaken later cross-cut reconstruction; Workers Leaving the Lumière Factory and Rescued by Rover add surviving-version and replacement/re-shot histories, triangulating restoration, archive evidence and production-material survival."
+      "triangulation_basis": "A Trip to the Moon documents rediscovery and image-by-image restoration of recovered colour material; Life of an American Fireman shows an original copyright paper print overturning a mistaken later cross-cut reconstruction; Attack on a China Mission shows rediscovered copies and later archive reconstruction changing the apparent editing structure; Workers Leaving the Lumière Factory and Rescued by Rover add surviving-version and replacement/re-shot histories."
     },
     {
       "development_id": "pandemic_shutdown_protocol_and_recovery",
@@ -385,6 +385,33 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "rationale": "The verified case makes a projection screen, projected attractions and operator reveal playable, but it is a scripted rube comedy; the permanent safeguard forbids treating its fictional spectator as documentary evidence of actual early audience practice, and the current matrix has no separate spectatorship-representation row."
+    },
+    {
+      "scenario_id": "scenario_grandmas_reading_glass_1900",
+      "review_state": "MAPPED",
+      "development_ids": ["early_cinema_apparatus_projection_programming"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationGrandmasReadingGlass.ts"],
+      "rationale": "The verified case connects G. A. Smith's Brighton production to Alfred Darling camera apparatus and circularly masked analytical inserts, so capture technology is directly tied to a specific early production method without turning the film into a single-inventor POV myth."
+    },
+    {
+      "scenario_id": "scenario_attack_on_a_china_mission_bluejackets_to_the_rescue_1900",
+      "review_state": "MAPPED",
+      "development_ids": ["preservation_restoration_material_survival_as_history_maker"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationAttackChinaMission.ts"],
+      "rationale": "Peer-reviewed artefact research shows that rediscovered copies and a later reconstructed archive version can materially change the apparent editing structure, so provenance and reconstruction uncertainty directly alter what film history can recover and teach."
+    },
+    {
+      "scenario_id": "scenario_histoire_d_un_crime_1901",
+      "review_state": "MAPPED",
+      "development_ids": ["genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
+      "evidence_paths": ["docs/HISTOIRE_D_UN_CRIME_1901_PRODUCTION_CASE_VERIFICATION.md"],
+      "rationale": "The verified Pathé case links crime fiction to Zecca's organized production leadership, differentiated genre production, longer footage, production-cost and sales testimony and public success. This is concrete genre-industry evidence, but one early French crime case is insufficient for broad genre-system coverage, so the development remains weak."
+    },
+    {
+      "scenario_id": "scenario_the_lonely_villa_1909",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified case strongly teaches sustained alternation among separated action lines, telephone-mediated simultaneity and Biograph production geography, but the current matrix has no early narrative-continuity or parallel-editing development row; preservation holdings alone do not satisfy the stronger history-making requirement."
     }
   ],
   "candidate_admission_gate": {
