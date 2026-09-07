@@ -1,7 +1,7 @@
 {
   "schema": "hg_film_producer_film_history_representation_coverage_v1",
   "version": "1.0.0",
-  "audited_at": "2026-09-07",
+  "audited_at": "2026-09-08",
   "status": "OPEN_GAPS_FAIL_CLOSED",
   "owner": "film_history_representation_coverage",
   "baseline": {
@@ -68,7 +68,7 @@
       "priority": "P1",
       "axis_ids": ["technology_and_format", "institutions_and_industry_systems", "distribution_exhibition_and_audience_behavior"],
       "required_evidence": "Exact early-cinema scenarios must be mapped to apparatus, capture/projection, programming or exhibition evidence before this historical strength is credited in the 613 audit.",
-      "triangulation_basis": "Blacksmith Scene and Workers Leaving the Lumière Factory contrast the Edison Kinetograph/Kinetoscope laboratory-viewing system with the portable Lumière Cinématographe projection and programme system; A Trip to the Moon and The Great Train Robbery add complementary camera-transformation and moving-location capture practices."
+      "triangulation_basis": "Blacksmith Scene and Workers Leaving the Lumière Factory contrast the Edison Kinetograph/Kinetoscope laboratory-viewing system with the portable Lumière Cinématographe projection and programme system; The Corbett–Fitzsimmons Fight adds proprietary Veriscope capture/projection at event scale, while A Trip to the Moon and The Great Train Robbery add camera-transformation and moving-location capture practices."
     },
     {
       "development_id": "silent_sound_transition",
@@ -118,7 +118,7 @@
       "priority": "P1",
       "axis_ids": ["distribution_exhibition_and_audience_behavior", "institutions_and_industry_systems", "technology_and_format"],
       "required_evidence": "Exact scenarios must map production or circulation evidence to programming, venues, projection, audience practice or changing exhibition systems.",
-      "triangulation_basis": "Blacksmith Scene documents Kinetoscope-era individual viewing and the 1893 Brooklyn demonstration, while Workers Leaving the Lumière Factory documents Cinématographe projection demonstrations and the December 1895 commercial programme, giving complementary apparatus, venue and programming evidence across US and French early-cinema systems."
+      "triangulation_basis": "Blacksmith Scene and Workers Leaving the Lumière Factory establish individual-viewing and projected-programme systems; The Corbett–Fitzsimmons Fight adds proprietary projection, live commentary and territorial exhibition, Brown's Atlas Works adds showman commissioning and local paying-audience strategy, and The Great Train Robbery adds exhibitor agency over programme placement."
     },
     {
       "development_id": "modern_popular_commercial_cinema_as_industry",
@@ -355,9 +355,9 @@
     {
       "scenario_id": "scenario_the_great_train_robbery_1903",
       "review_state": "MAPPED",
-      "development_ids": ["early_cinema_apparatus_projection_programming"],
+      "development_ids": ["early_cinema_apparatus_projection_programming", "exhibition_and_viewing_history"],
       "evidence_paths": ["docs/THE_GREAT_TRAIN_ROBBERY_1903_PRODUCTION_CASE_VERIFICATION.md"],
-      "rationale": "The verified case provides exact early capture evidence through studio/location production, moving-train photography, double exposure and hand-applied colour while retaining historically specific pre-1908 production organization."
+      "rationale": "The verified case provides exact early capture evidence through studio/location production, moving-train photography and double exposure, while its flexible direct-address bandit shot documents exhibitor agency over placement within the projected programme."
     },
     {
       "scenario_id": "scenario_rescued_by_rover_1905",
@@ -365,6 +365,26 @@
       "development_ids": ["preservation_restoration_material_survival_as_history_maker"],
       "evidence_paths": ["docs/RESCUED_BY_ROVER_1905_PRODUCTION_CASE_VERIFICATION.md"],
       "rationale": "The verified case makes replacement and re-shot version history explicit: exceptional demand exhausted early negatives or prints and required remaking, so material survival and version differences directly affect reconstruction of the canonical case."
+    },
+    {
+      "scenario_id": "scenario_the_corbett_fitzsimmons_fight_1897",
+      "review_state": "MAPPED",
+      "development_ids": ["early_cinema_apparatus_projection_programming", "exhibition_and_viewing_history"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationCorbettFitzsimmons.ts"],
+      "rationale": "The verified case ties three-camera Veriscope capture to a proprietary projector requirement, a New York premiere, live expert commentary and territorial exhibition, directly joining apparatus, projection and circulation as one event-cinema system."
+    },
+    {
+      "scenario_id": "scenario_employees_leaving_browns_atlas_works_sheffield_1901",
+      "review_state": "MAPPED",
+      "development_ids": ["exhibition_and_viewing_history"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationBrownsAtlasWorks.ts"],
+      "rationale": "The verified case documents showman commissioning, factory-gate staging and a local-recognition business model in which filmed communities became paying fairground or music-hall audiences, directly connecting production to exhibition strategy."
+    },
+    {
+      "scenario_id": "scenario_uncle_josh_at_the_moving_picture_show_1902",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified case makes a projection screen, projected attractions and operator reveal playable, but it is a scripted rube comedy; the permanent safeguard forbids treating its fictional spectator as documentary evidence of actual early audience practice, and the current matrix has no separate spectatorship-representation row."
     }
   ],
   "candidate_admission_gate": {
