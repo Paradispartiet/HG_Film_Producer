@@ -45,10 +45,10 @@
     "topPrizeCorrectiveQueue": 0
   },
   "technicalBaseline": {
-    "atlasExpected": 609,
-    "atlasActual": 609,
-    "productionVerificationIds": 609,
-    "chapterNineteenCandidates": 88
+    "atlasExpected": 610,
+    "atlasActual": 610,
+    "productionVerificationIds": 610,
+    "chapterNineteenCandidates": 89
   },
   "officialSources": {
     "cannes2020": "https://www.festival-cannes.com/en/press/press-releases/the-official-selection-2020/",
@@ -577,12 +577,12 @@
       "aliases": [],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
       "manifestIndex": 29,
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_grand_tour_2024",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "awardYear": 2024,
@@ -1324,12 +1324,12 @@
         "Best Director"
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_grand_tour_2024",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "key": "2024|the seed of the sacred fig",
@@ -1551,10 +1551,10 @@
     {
       "year": 2024,
       "obligations": 8,
-      "productionVerifiedObligations": 6,
+      "productionVerifiedObligations": 7,
       "uniqueAwardedFilms": 7,
-      "productionVerifiedFilms": 5,
-      "unresolvedFilms": 2
+      "productionVerifiedFilms": 6,
+      "unresolvedFilms": 1
     },
     {
       "year": 2025,
@@ -1567,28 +1567,17 @@
   ],
   "summary": {
     "awardObligations": 43,
-    "productionVerifiedObligations": 39,
+    "productionVerifiedObligations": 40,
     "uniqueAwardedFilms": 41,
-    "productionVerifiedFilms": 37,
-    "unresolvedFilms": 4,
-    "missingCandidateFilms": 4,
+    "productionVerifiedFilms": 38,
+    "unresolvedFilms": 3,
+    "missingCandidateFilms": 3,
     "cannesMajorPrizesCompletionProven": false,
     "filmHistoricalSelectionCompletionProven": false
   },
   "correctiveQueue": [
     {
       "order": 1,
-      "title": "Grand Tour",
-      "filmYear": 2024,
-      "awards": [
-        "Best Director"
-      ],
-      "status": "MISSING_CANDIDATE",
-      "scenarioId": null,
-      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
-    },
-    {
-      "order": 2,
       "title": "Kinds of Kindness",
       "filmYear": 2024,
       "awards": [
@@ -1599,7 +1588,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 3,
+      "order": 2,
       "title": "Young Mothers",
       "filmYear": 2025,
       "awards": [
@@ -1610,7 +1599,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 4,
+      "order": 3,
       "title": "The Little Sister",
       "filmYear": 2025,
       "awards": [

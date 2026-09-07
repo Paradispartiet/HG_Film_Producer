@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 609,
-    "actualCount": 609,
+    "expectedCount": 610,
+    "actualCount": 610,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1227,6 +1227,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenGrandTourExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1325,7 +1331,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 609
+    "literalVerifiedScenarioIds": 610
   },
   "candidates": [
     {
@@ -1776,6 +1782,22 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenEmiliaPerezExpansion.ts"
+    },
+    {
+      "title": "Grand Tour",
+      "originalTitle": "Grand Tour",
+      "year": 2024,
+      "aliases": [
+        "Grand Tour (2024)"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2024 Best Director source-first case: materialize one new Grand Tour identity only after tree-wide reuse checks are negative; preserve the 2020 and remotely directed 2022 Asian 16mm phases, the separate Lisbon/Rome black-and-white 16mm actor studios, incandescent-filament lighting and DCP/5.1 delivery without inventing unsupported camera, lens, stock, lab, budget, music, VFX or final-aspect-ratio detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_grand_tour_2024",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenGrandTourExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2715,6 +2737,7 @@
       "About Dry Grasses",
       "Perfect Days",
       "Emilia Pérez",
+      "Grand Tour",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2808,6 +2831,7 @@
       "About Dry Grasses",
       "Perfect Days",
       "Emilia Pérez",
+      "Grand Tour",
       "Tenet",
       "Nomadland",
       "Soul",
