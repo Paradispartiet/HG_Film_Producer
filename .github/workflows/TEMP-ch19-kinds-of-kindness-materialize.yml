@@ -1,0 +1,71 @@
+name: TEMP Kinds of Kindness materialize
+
+on:
+  push:
+    branches:
+      - agent/ch19-kinds-of-kindness-production-case
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Parse TEMP materializer
+        run: node --check scripts/TEMP-materialize-ch19-kinds-of-kindness.mjs
+
+      - name: Materialize Kinds of Kindness
+        shell: bash
+        run: |
+          set -o pipefail
+          node scripts/TEMP-materialize-ch19-kinds-of-kindness.mjs 2>&1 | tee kinds-of-kindness-materialize.log
+
+      - name: Stage clean verification tree
+        run: |
+          rm scripts/TEMP-materialize-ch19-kinds-of-kindness.mjs
+          rm .github/workflows/TEMP-ch19-kinds-of-kindness-materialize.yml
+          git diff --check
+
+      - name: Full v0.1 verification
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run verify:v0.1 2>&1 | tee kinds-of-kindness-verify.log
+
+      - name: Upload failed verification diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kinds-of-kindness-verification-diagnostics
+          path: |
+            kinds-of-kindness-materialize.log
+            kinds-of-kindness-verify.log
+            docs/film-history-chapter-nineteen-atlas-resolved.json
+            docs/film-history-chapter-nineteen-cannes-major-prizes-audit.json
+          if-no-files-found: ignore
+
+      - name: Commit clean Kinds of Kindness case
+        if: success()
+        run: |
+          rm -f kinds-of-kindness-materialize.log kinds-of-kindness-verify.log
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --check
+          git commit -m "Add Kinds of Kindness Chapter 19 production case"
+          git push origin HEAD:agent/ch19-kinds-of-kindness-production-case
