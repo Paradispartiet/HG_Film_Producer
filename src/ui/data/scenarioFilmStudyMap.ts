@@ -217,6 +217,7 @@ import { thePotAuFeuFilmHistoryProfile } from "./scenarioFilmStudyChapterNinetee
 import { fallenLeavesFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenFallenLeaves";
 import { aboutDryGrassesFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAboutDryGrasses";
 import { perfectDaysFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenPerfectDays";
+import { emiliaPerezFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenEmiliaPerez";
 import { eoFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenEo";
 import { barbieFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenBarbie";
 import { acrossTheSpiderVerseFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAcrossTheSpiderVerse";
@@ -465,6 +466,7 @@ const sourceBackedFilmHistoryProfiles = {
   [fallenLeavesFilmHistoryProfile.scenarioId]: fallenLeavesFilmHistoryProfile,
   [aboutDryGrassesFilmHistoryProfile.scenarioId]: aboutDryGrassesFilmHistoryProfile,
   [perfectDaysFilmHistoryProfile.scenarioId]: perfectDaysFilmHistoryProfile,
+  [emiliaPerezFilmHistoryProfile.scenarioId]: emiliaPerezFilmHistoryProfile,
   [eoFilmHistoryProfile.scenarioId]: eoFilmHistoryProfile,
   [barbieFilmHistoryProfile.scenarioId]: barbieFilmHistoryProfile,
   [acrossTheSpiderVerseFilmHistoryProfile.scenarioId]: acrossTheSpiderVerseFilmHistoryProfile,

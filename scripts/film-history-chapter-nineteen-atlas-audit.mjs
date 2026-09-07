@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;
 const BASE_EXPECTED_ATLAS_COUNT = 590;
-const EXPECTED_ATLAS_COUNT = 608;
+const EXPECTED_ATLAS_COUNT = 609;
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const basePath = path.join(scriptDir, "film-history-chapter-nineteen-atlas-audit-base.mjs");
@@ -38,6 +38,7 @@ const fallenLeavesNeedles = ['"title": "Fallen Leaves"', 'title: "Fallen Leaves"
 const monsterNeedles = ['"title": "Monster"', 'title: "Monster"', '"originalTitle": "Kaibutsu"', 'Monster (Kaibutsu)', 'scenario_monster_kore_eda_2023'];
 const aboutDryGrassesNeedles = ['"title": "About Dry Grasses"', 'title: "About Dry Grasses"', '"originalTitle": "Kuru Otlar Üstüne"', 'Kuru Otlar Ustune', 'scenario_about_dry_grasses_2023'];
 const perfectDaysNeedles = ['"title": "Perfect Days"', 'title: "Perfect Days"', 'scenario_perfect_days_2023', 'scenario_perfect_days_wenders_2023'];
+const emiliaPerezNeedles = ['"title": "Emilia Pérez"', 'title: "Emilia Pérez"', 'Emilia Perez', 'scenario_emilia_perez_2024', 'scenario_emilia_perez_audiard_2024'];
 
 const triangleCandidate = `
   {
@@ -340,6 +341,17 @@ const perfectDaysCandidate = `
     "chapterFunction": "Cannes 2023 Best Actor source-first case: materialize one new Perfect Days identity only after seed/tree-wide reuse checks are negative; preserve the October 2022 sixteen-day Tokyo shoot separately from 2023 production metadata; lock the sourced shoulder-camera documentary-like fiction method, Sony VENICE/Canon K35 family evidence, 1.33 DCP/5.1 catalogue record and explicit 123/124/125-minute plus 1.33/1.85 provenance discrepancies without inventing unsupported camera-generation, finance, sound, VFX or mastering detail."
   },`;
 
+const emiliaPerezCandidate = `
+  {
+    "title": "Emilia Pérez",
+    "originalTitle": "Emilia Pérez",
+    "year": 2024,
+    "aliases": ["Emilia Perez"],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Cannes 2024 Jury Prize and ensemble Best Actress source-first case: materialize one new Emilia Pérez identity only after tree-wide reuse checks are negative; preserve Pathé 2023 and Cannes 2024 production-year provenance, lock the sourced 55-day Paris-studio/Mexico City split, Sony VENICE 1/2 full-frame 8K workflow, choreography-led camera, large Bry set/lighting system and approximately 500 effects shots without inventing unsupported finance, data, sound, DI or mastering detail."
+  },`;
+
 const baseSource = readFileSync(basePath, "utf8");
 const requiredBaselineConstants = [
   `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
@@ -375,12 +387,13 @@ if (fallenLeavesNeedles.some((needle) => baseSource.includes(needle))) throw new
 if (monsterNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Monster/Kaibutsu; consolidate the wrapper deliberately before continuing.");
 if (aboutDryGrassesNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains About Dry Grasses/Kuru Otlar Üstüne; consolidate the wrapper deliberately before continuing.");
 if (perfectDaysNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Perfect Days; consolidate the wrapper deliberately before continuing.");
+if (emiliaPerezNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Emilia Pérez; consolidate the wrapper deliberately before continuing.");
 if (!baseSource.includes(insertionMarker)) throw new Error("Chapter 19 candidate insertion marker is missing; refusing to run a partially reconciled audit.");
 
 const reconciledSource = baseSource
   .replace(`const EXPECTED_ATLAS_COUNT = ${BASE_EXPECTED_ATLAS_COUNT};`, `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`)
   .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-07"')
-  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}${thePotAuFeuCandidate}${fallenLeavesCandidate}${monsterCandidate}${aboutDryGrassesCandidate}${perfectDaysCandidate}`);
+  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}${thePotAuFeuCandidate}${fallenLeavesCandidate}${monsterCandidate}${aboutDryGrassesCandidate}${perfectDaysCandidate}${emiliaPerezCandidate}`);
 const temporaryAuditPath = path.join(scriptDir, `.film-history-chapter-nineteen-atlas-audit-reconciled-${process.pid}.mjs`);
 
 try {

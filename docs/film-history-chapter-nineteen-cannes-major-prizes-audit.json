@@ -45,10 +45,10 @@
     "topPrizeCorrectiveQueue": 0
   },
   "technicalBaseline": {
-    "atlasExpected": 608,
-    "atlasActual": 608,
-    "productionVerificationIds": 608,
-    "chapterNineteenCandidates": 87
+    "atlasExpected": 609,
+    "atlasActual": 609,
+    "productionVerificationIds": 609,
+    "chapterNineteenCandidates": 88
   },
   "officialSources": {
     "cannes2020": "https://www.festival-cannes.com/en/press/press-releases/the-official-selection-2020/",
@@ -561,12 +561,12 @@
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
       "manifestIndex": 28,
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_emilia_perez_2024",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "awardYear": 2024,
@@ -629,12 +629,12 @@
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
       "manifestIndex": 32,
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_emilia_perez_2024",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "awardYear": 2024,
@@ -1308,12 +1308,12 @@
         "Best Performance by an Actress"
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_emilia_perez_2024",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "key": "2024|grand tour",
@@ -1551,10 +1551,10 @@
     {
       "year": 2024,
       "obligations": 8,
-      "productionVerifiedObligations": 4,
+      "productionVerifiedObligations": 6,
       "uniqueAwardedFilms": 7,
-      "productionVerifiedFilms": 4,
-      "unresolvedFilms": 3
+      "productionVerifiedFilms": 5,
+      "unresolvedFilms": 2
     },
     {
       "year": 2025,
@@ -1567,29 +1567,17 @@
   ],
   "summary": {
     "awardObligations": 43,
-    "productionVerifiedObligations": 37,
+    "productionVerifiedObligations": 39,
     "uniqueAwardedFilms": 41,
-    "productionVerifiedFilms": 36,
-    "unresolvedFilms": 5,
-    "missingCandidateFilms": 5,
+    "productionVerifiedFilms": 37,
+    "unresolvedFilms": 4,
+    "missingCandidateFilms": 4,
     "cannesMajorPrizesCompletionProven": false,
     "filmHistoricalSelectionCompletionProven": false
   },
   "correctiveQueue": [
     {
       "order": 1,
-      "title": "Emilia Pérez",
-      "filmYear": 2024,
-      "awards": [
-        "Jury Prize",
-        "Best Performance by an Actress"
-      ],
-      "status": "MISSING_CANDIDATE",
-      "scenarioId": null,
-      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
-    },
-    {
-      "order": 2,
       "title": "Grand Tour",
       "filmYear": 2024,
       "awards": [
@@ -1600,7 +1588,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 3,
+      "order": 2,
       "title": "Kinds of Kindness",
       "filmYear": 2024,
       "awards": [
@@ -1611,7 +1599,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 4,
+      "order": 3,
       "title": "Young Mothers",
       "filmYear": 2025,
       "awards": [
@@ -1622,7 +1610,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 5,
+      "order": 4,
       "title": "The Little Sister",
       "filmYear": 2025,
       "awards": [
