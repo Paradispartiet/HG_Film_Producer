@@ -64,10 +64,11 @@
   "development_matrix": [
     {
       "development_id": "early_cinema_apparatus_projection_programming",
-      "declared_status": 0,
+      "declared_status": 3,
       "priority": "P1",
       "axis_ids": ["technology_and_format", "institutions_and_industry_systems", "distribution_exhibition_and_audience_behavior"],
-      "required_evidence": "Exact early-cinema scenarios must be mapped to apparatus, capture/projection, programming or exhibition evidence before this historical strength is credited in the 613 audit."
+      "required_evidence": "Exact early-cinema scenarios must be mapped to apparatus, capture/projection, programming or exhibition evidence before this historical strength is credited in the 613 audit.",
+      "triangulation_basis": "Blacksmith Scene and Workers Leaving the Lumière Factory contrast the Edison Kinetograph/Kinetoscope laboratory-viewing system with the portable Lumière Cinématographe projection and programme system; A Trip to the Moon and The Great Train Robbery add complementary camera-transformation and moving-location capture practices."
     },
     {
       "development_id": "silent_sound_transition",
@@ -113,10 +114,11 @@
     },
     {
       "development_id": "exhibition_and_viewing_history",
-      "declared_status": 0,
+      "declared_status": 3,
       "priority": "P1",
       "axis_ids": ["distribution_exhibition_and_audience_behavior", "institutions_and_industry_systems", "technology_and_format"],
-      "required_evidence": "Exact scenarios must map production or circulation evidence to programming, venues, projection, audience practice or changing exhibition systems."
+      "required_evidence": "Exact scenarios must map production or circulation evidence to programming, venues, projection, audience practice or changing exhibition systems.",
+      "triangulation_basis": "Blacksmith Scene documents Kinetoscope-era individual viewing and the 1893 Brooklyn demonstration, while Workers Leaving the Lumière Factory documents Cinématographe projection demonstrations and the December 1895 commercial programme, giving complementary apparatus, venue and programming evidence across US and French early-cinema systems."
     },
     {
       "development_id": "modern_popular_commercial_cinema_as_industry",
@@ -204,10 +206,11 @@
     },
     {
       "development_id": "preservation_restoration_material_survival_as_history_maker",
-      "declared_status": 0,
+      "declared_status": 3,
       "priority": "P1",
       "axis_ids": ["preservation_restoration_and_material_survival", "institutions_and_industry_systems"],
-      "required_evidence": "Exact scenarios must demonstrate how preservation, restoration, archive access or material survival changes what film history can recover and teach."
+      "required_evidence": "Exact scenarios must demonstrate how preservation, restoration, archive access or material survival changes what film history can recover and teach.",
+      "triangulation_basis": "A Trip to the Moon documents rediscovery and image-by-image restoration of recovered colour material; Life of an American Fireman shows an original copyright paper print overturning a mistaken later cross-cut reconstruction; Workers Leaving the Lumière Factory and Rescued by Rover add surviving-version and replacement/re-shot histories, triangulating restoration, archive evidence and production-material survival."
     },
     {
       "development_id": "pandemic_shutdown_protocol_and_recovery",
@@ -314,7 +317,56 @@
       "required_evidence": "Complementary horror, action, comedy, romance or local-popular exact scenarios whose significance is industrial rather than merely aesthetic."
     }
   ],
-  "scenario_reviews": [],
+  "scenario_reviews": [
+    {
+      "scenario_id": "scenario_blacksmith_scene_1893",
+      "review_state": "MAPPED",
+      "development_ids": ["early_cinema_apparatus_projection_programming", "exhibition_and_viewing_history"],
+      "evidence_paths": ["docs/BLACKSMITH_SCENE_1893_PRODUCTION_CASE_VERIFICATION.md"],
+      "rationale": "The verified case directly couples Kinetograph capture, Kinetoscope viewing, Black Maria studio architecture and the 1893 Brooklyn demonstration, providing exact apparatus and exhibition-system evidence."
+    },
+    {
+      "scenario_id": "scenario_workers_leaving_lumiere_factory_1895",
+      "review_state": "MAPPED",
+      "development_ids": ["early_cinema_apparatus_projection_programming", "exhibition_and_viewing_history", "preservation_restoration_material_survival_as_history_maker"],
+      "evidence_paths": ["docs/WORKERS_LEAVING_LUMIERE_FACTORY_1895_PRODUCTION_CASE_VERIFICATION.md"],
+      "rationale": "The verified case documents portable Cinématographe production, March and December 1895 projection/programming history and distinct surviving filmed versions whose differences must remain visible in production history."
+    },
+    {
+      "scenario_id": "scenario_fire_1901",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified case strongly teaches five-tableau multi-shot rescue construction, matching movement and connected film space, but the present development matrix has no exact early narrative-continuity row and its preserved frames alone do not satisfy the stronger preservation-history requirement."
+    },
+    {
+      "scenario_id": "scenario_a_trip_to_the_moon_1902",
+      "review_state": "MAPPED",
+      "development_ids": ["early_cinema_apparatus_projection_programming", "preservation_restoration_material_survival_as_history_maker"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts"],
+      "rationale": "The verified record documents Méliès's glass-studio camera system and repeatable stoppage, double-exposure and forced-perspective capture practices, plus rediscovery and image-by-image restoration of recovered colour material."
+    },
+    {
+      "scenario_id": "scenario_life_of_an_american_fireman_1903",
+      "review_state": "MAPPED",
+      "development_ids": ["preservation_restoration_material_survival_as_history_maker"],
+      "evidence_paths": ["docs/LIFE_OF_AN_AMERICAN_FIREMAN_1903_PRODUCTION_CASE_VERIFICATION.md"],
+      "rationale": "The Library of Congress copyright paper print changed the accepted historical account by proving that a later cross-cut re-edit was not Porter's original 1903 construction, directly demonstrating archive survival as a history-making force."
+    },
+    {
+      "scenario_id": "scenario_the_great_train_robbery_1903",
+      "review_state": "MAPPED",
+      "development_ids": ["early_cinema_apparatus_projection_programming"],
+      "evidence_paths": ["docs/THE_GREAT_TRAIN_ROBBERY_1903_PRODUCTION_CASE_VERIFICATION.md"],
+      "rationale": "The verified case provides exact early capture evidence through studio/location production, moving-train photography, double exposure and hand-applied colour while retaining historically specific pre-1908 production organization."
+    },
+    {
+      "scenario_id": "scenario_rescued_by_rover_1905",
+      "review_state": "MAPPED",
+      "development_ids": ["preservation_restoration_material_survival_as_history_maker"],
+      "evidence_paths": ["docs/RESCUED_BY_ROVER_1905_PRODUCTION_CASE_VERIFICATION.md"],
+      "rationale": "The verified case makes replacement and re-shot version history explicit: exceptional demand exhausted early negatives or prints and required remaking, so material survival and version differences directly affect reconstruction of the canonical case."
+    }
+  ],
   "candidate_admission_gate": {
     "default": "REJECT_NEW_IDENTITY",
     "allowed_reasons": [
