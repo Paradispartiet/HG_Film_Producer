@@ -1,0 +1,33 @@
+name: TEMP Emilia Perez diagnostic
+
+on:
+  push:
+    branches:
+      - agent/ch19-emilia-perez-production-case
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Parse diagnostic
+        run: node --check scripts/TEMP-diagnose-ch19-emilia-perez.mjs
+
+      - name: Run tree-wide identity diagnostic
+        shell: bash
+        run: |
+          set -o pipefail
+          node scripts/TEMP-diagnose-ch19-emilia-perez.mjs 2>&1 | tee emilia-perez-diagnostic.log
+
+      - name: Upload diagnostic
+        uses: actions/upload-artifact@v4
+        with:
+          name: emilia-perez-identity-diagnostic
+          path: emilia-perez-diagnostic.log
