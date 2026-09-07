@@ -35,6 +35,7 @@ const holySpiderNeedles = ['"title": "Holy Spider"', 'title: "Holy Spider"', 'Le
 const brokerNeedles = ['"title": "Broker"', 'title: "Broker"', 'Les Bonnes Étoiles', 'Beurokeo', '브로커', 'scenario_broker_2022'];
 const thePotAuFeuNeedles = ['"title": "The Pot-au-Feu"', 'title: "The Pot-au-Feu"', 'La Passion de Dodin Bouffant', 'The Taste of Things', 'scenario_the_pot_au_feu_2023'];
 const fallenLeavesNeedles = ['"title": "Fallen Leaves"', 'title: "Fallen Leaves"', 'Kuolleet lehdet', 'Les Feuilles mortes', 'scenario_fallen_leaves_2023'];
+const monsterNeedles = ['"title": "Monster"', 'title: "Monster"', '"originalTitle": "Kaibutsu"', 'Monster (Kaibutsu)', 'scenario_monster_kore_eda_2023'];
 
 const triangleCandidate = `
   {
@@ -304,6 +305,17 @@ const fallenLeavesCandidate = `
     "chapterFunction": "Cannes 2023 Jury Prize source-first case: materialize one new Fallen Leaves/Kuolleet lehdet identity after strict English/Finnish/French alias-aware structural reuse reconciliation; preserve Cannes productionYear 2023 separately from documented second-half-August 2022 Helsinki/Kallio shooting; lock 35mm, ARRI Analog/Ultra Prime/ARRI Fresnel family evidence, one-take/minimal-rehearsal production method, 1.85:1 and Dolby 5.1 catalogue formats, and bounded SES public support without inventing exact camera body, stock/lab, sound hardware, VFX, budget shares or mastering lineage."
   },`;
 
+const monsterCandidate = `
+  {
+    "title": "Monster",
+    "originalTitle": "Kaibutsu",
+    "year": 2023,
+    "aliases": ["Monster (Kaibutsu)"],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Cannes 2023 Best Screenplay reconciliation: reuse the existing canonical scenario_monster_kore_eda_2023, its source-backed 17-area Film Study and its verified Production Verification instead of materializing a duplicate Atlas or PV identity."
+  },`;
+
 const baseSource = readFileSync(basePath, "utf8");
 const requiredBaselineConstants = [
   `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
@@ -336,12 +348,13 @@ if (holySpiderNeedles.some((needle) => baseSource.includes(needle))) throw new E
 if (brokerNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Broker/Les Bonnes Étoiles/Beurokeo; consolidate the wrapper deliberately before continuing.");
 if (thePotAuFeuNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains The Pot-au-Feu/La Passion de Dodin Bouffant/The Taste of Things; consolidate the wrapper deliberately before continuing.");
 if (fallenLeavesNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Fallen Leaves/Kuolleet lehdet; consolidate the wrapper deliberately before continuing.");
+if (monsterNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Monster/Kaibutsu; consolidate the wrapper deliberately before continuing.");
 if (!baseSource.includes(insertionMarker)) throw new Error("Chapter 19 candidate insertion marker is missing; refusing to run a partially reconciled audit.");
 
 const reconciledSource = baseSource
   .replace(`const EXPECTED_ATLAS_COUNT = ${BASE_EXPECTED_ATLAS_COUNT};`, `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`)
   .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-06"')
-  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}${thePotAuFeuCandidate}${fallenLeavesCandidate}`);
+  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}${thePotAuFeuCandidate}${fallenLeavesCandidate}${monsterCandidate}`);
 const temporaryAuditPath = path.join(scriptDir, `.film-history-chapter-nineteen-atlas-audit-reconciled-${process.pid}.mjs`);
 
 try {
