@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;
 const BASE_EXPECTED_ATLAS_COUNT = 590;
-const EXPECTED_ATLAS_COUNT = 607;
+const EXPECTED_ATLAS_COUNT = 608;
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const basePath = path.join(scriptDir, "film-history-chapter-nineteen-atlas-audit-base.mjs");
@@ -37,6 +37,7 @@ const thePotAuFeuNeedles = ['"title": "The Pot-au-Feu"', 'title: "The Pot-au-Feu
 const fallenLeavesNeedles = ['"title": "Fallen Leaves"', 'title: "Fallen Leaves"', 'Kuolleet lehdet', 'Les Feuilles mortes', 'scenario_fallen_leaves_2023'];
 const monsterNeedles = ['"title": "Monster"', 'title: "Monster"', '"originalTitle": "Kaibutsu"', 'Monster (Kaibutsu)', 'scenario_monster_kore_eda_2023'];
 const aboutDryGrassesNeedles = ['"title": "About Dry Grasses"', 'title: "About Dry Grasses"', '"originalTitle": "Kuru Otlar Üstüne"', 'Kuru Otlar Ustune', 'scenario_about_dry_grasses_2023'];
+const perfectDaysNeedles = ['"title": "Perfect Days"', 'title: "Perfect Days"', 'scenario_perfect_days_2023', 'scenario_perfect_days_wenders_2023'];
 
 const triangleCandidate = `
   {
@@ -328,6 +329,17 @@ const aboutDryGrassesCandidate = `
     "chapterFunction": "Cannes 2023 Best Actress source-first case: materialize one new About Dry Grasses/Kuru Otlar Üstüne identity only after tree-wide reuse checks are negative; preserve 2023 production metadata separately from 2021 Eastern Anatolia photography; lock 4K Sony VENICE/Cooke Anamorphic SF 2X/24fps/Scope, pandemic-winter location production, full-script editorial reduction, credited sound/VFX/grade chains and explicit format provenance without inventing unsupported budget, equipment, VFX-census or mastering detail."
   },`;
 
+const perfectDaysCandidate = `
+  {
+    "title": "Perfect Days",
+    "originalTitle": "Perfect Days",
+    "year": 2023,
+    "aliases": [],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Cannes 2023 Best Actor source-first case: materialize one new Perfect Days identity only after seed/tree-wide reuse checks are negative; preserve the October 2022 sixteen-day Tokyo shoot separately from 2023 production metadata; lock the sourced shoulder-camera documentary-like fiction method, Sony VENICE/Canon K35 family evidence, 1.33 DCP/5.1 catalogue record and explicit 123/124/125-minute plus 1.33/1.85 provenance discrepancies without inventing unsupported camera-generation, finance, sound, VFX or mastering detail."
+  },`;
+
 const baseSource = readFileSync(basePath, "utf8");
 const requiredBaselineConstants = [
   `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
@@ -362,12 +374,13 @@ if (thePotAuFeuNeedles.some((needle) => baseSource.includes(needle))) throw new 
 if (fallenLeavesNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Fallen Leaves/Kuolleet lehdet; consolidate the wrapper deliberately before continuing.");
 if (monsterNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Monster/Kaibutsu; consolidate the wrapper deliberately before continuing.");
 if (aboutDryGrassesNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains About Dry Grasses/Kuru Otlar Üstüne; consolidate the wrapper deliberately before continuing.");
+if (perfectDaysNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Perfect Days; consolidate the wrapper deliberately before continuing.");
 if (!baseSource.includes(insertionMarker)) throw new Error("Chapter 19 candidate insertion marker is missing; refusing to run a partially reconciled audit.");
 
 const reconciledSource = baseSource
   .replace(`const EXPECTED_ATLAS_COUNT = ${BASE_EXPECTED_ATLAS_COUNT};`, `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`)
-  .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-06"')
-  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}${thePotAuFeuCandidate}${fallenLeavesCandidate}${monsterCandidate}${aboutDryGrassesCandidate}`);
+  .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-07"')
+  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}${thePotAuFeuCandidate}${fallenLeavesCandidate}${monsterCandidate}${aboutDryGrassesCandidate}${perfectDaysCandidate}`);
 const temporaryAuditPath = path.join(scriptDir, `.film-history-chapter-nineteen-atlas-audit-reconciled-${process.pid}.mjs`);
 
 try {
