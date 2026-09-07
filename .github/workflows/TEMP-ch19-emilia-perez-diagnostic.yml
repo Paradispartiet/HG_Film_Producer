@@ -1,4 +1,4 @@
-name: TEMP Emilia Perez diagnostic
+name: TEMP Emilia Perez materialize
 
 on:
   push:
@@ -6,10 +6,10 @@ on:
       - agent/ch19-emilia-perez-production-case
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  diagnose:
+  materialize:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -17,17 +17,56 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Parse diagnostic
-        run: node --check scripts/TEMP-diagnose-ch19-emilia-perez.mjs
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
 
-      - name: Run tree-wide identity diagnostic
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Parse TEMP materializer
+        run: node --check scripts/TEMP-materialize-ch19-emilia-perez.mjs
+
+      - name: Materialize Emilia Perez
         shell: bash
         run: |
           set -o pipefail
-          node scripts/TEMP-diagnose-ch19-emilia-perez.mjs 2>&1 | tee emilia-perez-diagnostic.log
+          node scripts/TEMP-materialize-ch19-emilia-perez.mjs 2>&1 | tee emilia-perez-materialize.log
 
-      - name: Upload diagnostic
+      - name: Stage clean verification tree
+        run: |
+          rm scripts/TEMP-diagnose-ch19-emilia-perez.mjs
+          rm scripts/TEMP-materialize-ch19-emilia-perez.mjs
+          rm .github/workflows/TEMP-ch19-emilia-perez-diagnostic.yml
+          git diff --check
+
+      - name: Full v0.1 verification
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run verify:v0.1 2>&1 | tee emilia-perez-verify.log
+
+      - name: Upload failed verification diagnostics
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: emilia-perez-identity-diagnostic
-          path: emilia-perez-diagnostic.log
+          name: emilia-perez-verification-diagnostics
+          path: |
+            emilia-perez-materialize.log
+            emilia-perez-verify.log
+            docs/film-history-chapter-nineteen-atlas-resolved.json
+            docs/film-history-chapter-nineteen-cannes-major-prizes-audit.json
+          if-no-files-found: ignore
+
+      - name: Commit clean Emilia Perez case
+        if: success()
+        run: |
+          rm -f emilia-perez-materialize.log emilia-perez-verify.log
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --check
+          git commit -m "Add Emilia Perez Chapter 19 production case"
+          git push origin HEAD:agent/ch19-emilia-perez-production-case
