@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 612,
-    "actualCount": 612,
+    "expectedCount": 613,
+    "actualCount": 613,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1245,6 +1245,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenTheLittleSisterExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1343,7 +1349,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 612
+    "literalVerifiedScenarioIds": 613
   },
   "candidates": [
     {
@@ -1844,6 +1850,24 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenYoungMothersExpansion.ts"
+    },
+    {
+      "title": "The Little Sister",
+      "originalTitle": "La Petite Dernière",
+      "year": 2025,
+      "aliases": [
+        "La Petite Derniere",
+        "The Little Sister (2025)",
+        "La Petite Dernière (2025)"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2025 Best Actress source-first case: materialize one new The Little Sister / La Petite Dernière identity only after tree-wide reuse checks are negative; preserve the more-than-one-year professional/non-professional casting and field-research path, two-season winter/spring structure, three-ALEXA-Mini long-take multicamera handheld method, natural-light/max-prelight strategy, early parallel editorial start, winter-still LUT and Germany-grade chain, and explicit Cannes 106/Cannes-hosted press-kit 107-minute runtime discrepancy without inventing unsupported budget, lens/codec/data, sound-hardware, VFX, safety or mastering detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_the_little_sister_2025",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenTheLittleSisterExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2786,6 +2810,7 @@
       "Grand Tour",
       "Kinds of Kindness",
       "Young Mothers",
+      "The Little Sister",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2882,6 +2907,7 @@
       "Grand Tour",
       "Kinds of Kindness",
       "Young Mothers",
+      "The Little Sister",
       "Tenet",
       "Nomadland",
       "Soul",

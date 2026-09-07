@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;
 const BASE_EXPECTED_ATLAS_COUNT = 590;
-const EXPECTED_ATLAS_COUNT = 612;
+const EXPECTED_ATLAS_COUNT = 613;
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const basePath = path.join(scriptDir, "film-history-chapter-nineteen-atlas-audit-base.mjs");
@@ -42,6 +42,7 @@ const emiliaPerezNeedles = ['"title": "Emilia Pérez"', 'title: "Emilia Pérez"'
 const grandTourNeedles = ['"title": "Grand Tour"', 'title: "Grand Tour"', 'Grand Tour (2024)', 'scenario_grand_tour_2024', 'scenario_grand_tour_miguel_gomes_2024'];
 const kindsOfKindnessNeedles = ['"title": "Kinds of Kindness"', 'title: "Kinds of Kindness"', 'Kinds of Kindness (2024)', 'scenario_kinds_of_kindness_2024', 'scenario_kinds_of_kindness_lanthimos_2024'];
 const youngMothersNeedles = ['"title": "Young Mothers"', 'title: "Young Mothers"', '"originalTitle": "Jeunes Mères"', 'Jeunes Meres', 'Young Mothers (2025)', 'scenario_young_mothers_2025', 'scenario_jeunes_meres_2025'];
+const theLittleSisterNeedles = ['"title": "The Little Sister"', 'title: "The Little Sister"', '"originalTitle": "La Petite Dernière"', 'La Petite Derniere', 'The Little Sister (2025)', 'scenario_the_little_sister_2025', 'scenario_la_petite_derniere_2025'];
 
 const triangleCandidate = `
   {
@@ -388,6 +389,17 @@ const youngMothersCandidate = `
     "chapterFunction": "Cannes 2025 Best Screenplay source-first case: materialize one new Young Mothers / Jeunes Mères identity only after tree-wide reuse checks are negative; preserve the real Liège maternal-home location, Dardenne long-sequence-shot and rehearsal method, RED V-Raptor plus Leitz Hugo 8K full-frame handheld natural-light pipeline, planned 52-day versus actual 38-day infant-sensitive schedule, LUT/DIT/ten-day Resolve-grade chain and explicit Cannes 104/César 105-minute discrepancy without inventing unsupported finance, sound-hardware, editorial, VFX, safety or delivery detail."
   },`;
 
+const theLittleSisterCandidate = `
+  {
+    "title": "The Little Sister",
+    "originalTitle": "La Petite Dernière",
+    "year": 2025,
+    "aliases": ["La Petite Derniere", "The Little Sister (2025)", "La Petite Dernière (2025)"],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Cannes 2025 Best Actress source-first case: materialize one new The Little Sister / La Petite Dernière identity only after tree-wide reuse checks are negative; preserve the more-than-one-year professional/non-professional casting and field-research path, two-season winter/spring structure, three-ALEXA-Mini long-take multicamera handheld method, natural-light/max-prelight strategy, early parallel editorial start, winter-still LUT and Germany-grade chain, and explicit Cannes 106/Cannes-hosted press-kit 107-minute runtime discrepancy without inventing unsupported budget, lens/codec/data, sound-hardware, VFX, safety or mastering detail."
+  },`;
+
 const baseSource = readFileSync(basePath, "utf8");
 const requiredBaselineConstants = [
   `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
@@ -427,12 +439,13 @@ if (emiliaPerezNeedles.some((needle) => baseSource.includes(needle))) throw new 
 if (grandTourNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Grand Tour; consolidate the wrapper deliberately before continuing.");
 if (kindsOfKindnessNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Kinds of Kindness; consolidate the wrapper deliberately before continuing.");
 if (youngMothersNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Young Mothers/Jeunes Mères; consolidate the wrapper deliberately before continuing.");
+if (theLittleSisterNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains The Little Sister/La Petite Dernière; consolidate the wrapper deliberately before continuing.");
 if (!baseSource.includes(insertionMarker)) throw new Error("Chapter 19 candidate insertion marker is missing; refusing to run a partially reconciled audit.");
 
 const reconciledSource = baseSource
   .replace(`const EXPECTED_ATLAS_COUNT = ${BASE_EXPECTED_ATLAS_COUNT};`, `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`)
   .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-07"')
-  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}${thePotAuFeuCandidate}${fallenLeavesCandidate}${monsterCandidate}${aboutDryGrassesCandidate}${perfectDaysCandidate}${emiliaPerezCandidate}${grandTourCandidate}${kindsOfKindnessCandidate}${youngMothersCandidate}`);
+  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}${thePotAuFeuCandidate}${fallenLeavesCandidate}${monsterCandidate}${aboutDryGrassesCandidate}${perfectDaysCandidate}${emiliaPerezCandidate}${grandTourCandidate}${kindsOfKindnessCandidate}${youngMothersCandidate}${theLittleSisterCandidate}`);
 const temporaryAuditPath = path.join(scriptDir, `.film-history-chapter-nineteen-atlas-audit-reconciled-${process.pid}.mjs`);
 
 try {
