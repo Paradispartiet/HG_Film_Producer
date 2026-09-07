@@ -219,6 +219,7 @@ import { aboutDryGrassesFilmHistoryProfile } from "./scenarioFilmStudyChapterNin
 import { perfectDaysFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenPerfectDays";
 import { emiliaPerezFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenEmiliaPerez";
 import { grandTourFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenGrandTour";
+import { kindsOfKindnessFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenKindsOfKindness";
 import { eoFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenEo";
 import { barbieFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenBarbie";
 import { acrossTheSpiderVerseFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAcrossTheSpiderVerse";
@@ -469,6 +470,7 @@ const sourceBackedFilmHistoryProfiles = {
   [perfectDaysFilmHistoryProfile.scenarioId]: perfectDaysFilmHistoryProfile,
   [emiliaPerezFilmHistoryProfile.scenarioId]: emiliaPerezFilmHistoryProfile,
   [grandTourFilmHistoryProfile.scenarioId]: grandTourFilmHistoryProfile,
+  [kindsOfKindnessFilmHistoryProfile.scenarioId]: kindsOfKindnessFilmHistoryProfile,
   [eoFilmHistoryProfile.scenarioId]: eoFilmHistoryProfile,
   [barbieFilmHistoryProfile.scenarioId]: barbieFilmHistoryProfile,
   [acrossTheSpiderVerseFilmHistoryProfile.scenarioId]: acrossTheSpiderVerseFilmHistoryProfile,

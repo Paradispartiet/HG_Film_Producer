@@ -45,10 +45,10 @@
     "topPrizeCorrectiveQueue": 0
   },
   "technicalBaseline": {
-    "atlasExpected": 610,
-    "atlasActual": 610,
-    "productionVerificationIds": 610,
-    "chapterNineteenCandidates": 89
+    "atlasExpected": 611,
+    "atlasActual": 611,
+    "productionVerificationIds": 611,
+    "chapterNineteenCandidates": 90
   },
   "officialSources": {
     "cannes2020": "https://www.festival-cannes.com/en/press/press-releases/the-official-selection-2020/",
@@ -611,12 +611,12 @@
       "aliases": [],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
       "manifestIndex": 31,
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_kinds_of_kindness_2024",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "awardYear": 2024,
@@ -1358,12 +1358,12 @@
         "Best Performance by an Actor"
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-77th-festival-de-cannes-winners-list/",
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_kinds_of_kindness_2024",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "key": "2024|the substance",
@@ -1551,10 +1551,10 @@
     {
       "year": 2024,
       "obligations": 8,
-      "productionVerifiedObligations": 7,
+      "productionVerifiedObligations": 8,
       "uniqueAwardedFilms": 7,
-      "productionVerifiedFilms": 6,
-      "unresolvedFilms": 1
+      "productionVerifiedFilms": 7,
+      "unresolvedFilms": 0
     },
     {
       "year": 2025,
@@ -1567,28 +1567,17 @@
   ],
   "summary": {
     "awardObligations": 43,
-    "productionVerifiedObligations": 40,
+    "productionVerifiedObligations": 41,
     "uniqueAwardedFilms": 41,
-    "productionVerifiedFilms": 38,
-    "unresolvedFilms": 3,
-    "missingCandidateFilms": 3,
+    "productionVerifiedFilms": 39,
+    "unresolvedFilms": 2,
+    "missingCandidateFilms": 2,
     "cannesMajorPrizesCompletionProven": false,
     "filmHistoricalSelectionCompletionProven": false
   },
   "correctiveQueue": [
     {
       "order": 1,
-      "title": "Kinds of Kindness",
-      "filmYear": 2024,
-      "awards": [
-        "Best Performance by an Actor"
-      ],
-      "status": "MISSING_CANDIDATE",
-      "scenarioId": null,
-      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
-    },
-    {
-      "order": 2,
       "title": "Young Mothers",
       "filmYear": 2025,
       "awards": [
@@ -1599,7 +1588,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 3,
+      "order": 2,
       "title": "The Little Sister",
       "filmYear": 2025,
       "awards": [

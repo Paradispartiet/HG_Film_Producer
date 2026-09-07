@@ -242,6 +242,7 @@ import { aboutDryGrassesProductionCaseVerification } from "./scenarioProductionV
 import { perfectDaysProductionCaseVerification } from "./scenarioProductionVerificationPerfectDays";
 import { emiliaPerezProductionCaseVerification } from "./scenarioProductionVerificationEmiliaPerez";
 import { grandTourProductionCaseVerification } from "./scenarioProductionVerificationGrandTour";
+import { kindsOfKindnessProductionCaseVerification } from "./scenarioProductionVerificationKindsOfKindness";
 import { eoProductionCaseVerification } from "./scenarioProductionVerificationEo";
 import { barbieProductionCaseVerification } from "./scenarioProductionVerificationBarbie";
 import { acrossTheSpiderVerseProductionCaseVerification } from "./scenarioProductionVerificationAcrossTheSpiderVerse";
@@ -606,6 +607,7 @@ const additionalVerificationRecords = [
   perfectDaysProductionCaseVerification,
   emiliaPerezProductionCaseVerification,
   grandTourProductionCaseVerification,
+  kindsOfKindnessProductionCaseVerification,
   eoProductionCaseVerification,
   barbieProductionCaseVerification,
   acrossTheSpiderVerseProductionCaseVerification,
