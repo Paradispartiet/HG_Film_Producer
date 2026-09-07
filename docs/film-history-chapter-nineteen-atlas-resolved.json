@@ -1698,6 +1698,22 @@
       "origin": "chapterNineteenFallenLeavesExpansion.ts"
     },
     {
+      "title": "Monster",
+      "originalTitle": "Kaibutsu",
+      "year": 2023,
+      "aliases": [
+        "Monster (Kaibutsu)"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2023 Best Screenplay reconciliation: reuse the existing canonical scenario_monster_kore_eda_2023, its source-backed 17-area Film Study and its verified Production Verification instead of materializing a duplicate Atlas or PV identity.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_monster_kore_eda_2023",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "japaneseAuteurExpansion.ts"
+    },
+    {
       "title": "Tenet",
       "originalTitle": "Tenet",
       "year": 2020,
@@ -2631,6 +2647,7 @@
       "Broker",
       "The Pot-au-Feu",
       "Fallen Leaves",
+      "Monster",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2720,6 +2737,7 @@
       "Broker",
       "The Pot-au-Feu",
       "Fallen Leaves",
+      "Monster",
       "Tenet",
       "Nomadland",
       "Soul",

@@ -74,6 +74,7 @@ const exactCandidateTitles = [
   "Broker",
   "The Pot-au-Feu",
   "Fallen Leaves",
+  "Monster",
   "Tenet",
   "Nomadland",
   "Soul",
@@ -187,6 +188,7 @@ const exactP1Priority = [
   "Broker",
   "The Pot-au-Feu",
   "Fallen Leaves",
+  "Monster",
   "Nomadland",
   "Collective",
   "Quo Vadis, Aida?",
@@ -254,6 +256,7 @@ const exactUseExisting = [
   "Broker",
   "The Pot-au-Feu",
   "Fallen Leaves",
+  "Monster",
   "Tenet",
   "Nomadland",
   "Soul",
@@ -370,11 +373,11 @@ test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the cu
   assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 606);
 });
 
-test("Chapter 19 locks exactly eighty-four candidates across 2020-2025", () => {
+test("Chapter 19 locks exactly eighty-five candidates across 2020-2025", () => {
   assert.deepEqual(resolved.candidates.map((item) => item.title), [...exactCandidateTitles]);
-  assert.equal(new Set(resolved.candidates.map((item) => item.title)).size, 84);
-  assert.equal(resolved.candidates.length, 84);
-  const expectedCandidatesByYear = new Map([[2020, 11], [2021, 17], [2022, 20], [2023, 13], [2024, 12], [2025, 11]]);
+  assert.equal(new Set(resolved.candidates.map((item) => item.title)).size, 85);
+  assert.equal(resolved.candidates.length, 85);
+  const expectedCandidatesByYear = new Map([[2020, 11], [2021, 17], [2022, 20], [2023, 14], [2024, 12], [2025, 11]]);
   for (const [year, expected] of expectedCandidatesByYear) {
     assert.equal(resolved.candidates.filter((item) => item.year === year).length, expected, `Unexpected candidate count for ${year}`);
   }
@@ -385,7 +388,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.candidatePrioritiesIfMissing.P1, [...exactP1Priority]);
   assert.deepEqual(resolved.candidatePrioritiesIfMissing.P2, [...exactP2Priority]);
   assert.equal(exactP0Priority.length, 23);
-  assert.equal(exactP1Priority.length, 57);
+  assert.equal(exactP1Priority.length, 58);
   assert.equal(exactP2Priority.length, 4);
 
   assert.deepEqual(resolved.byDecision.USE_EXISTING, [...exactUseExisting]);
@@ -393,7 +396,7 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.deepEqual(resolved.byDecision.P1, [...exactP1Queue]);
   assert.deepEqual(resolved.byDecision.P2, [...exactP2Queue]);
   assert.deepEqual(resolved.byDecision.EXISTING_REQUIRED, []);
-  assert.equal(exactUseExisting.length, 82);
+  assert.equal(exactUseExisting.length, 83);
   assert.equal(exactP0Queue.length, 0);
   assert.equal(exactP1Queue.length, 0);
   assert.equal(exactP2Queue.length, 2);
@@ -591,6 +594,14 @@ test("Chapter 19 locks the source-first priority model and resolved queues", () 
   assert.equal(fallenLeaves.scenarioId, "scenario_fallen_leaves_2023");
   assert.equal(fallenLeaves.matches, 1);
   assert.equal(fallenLeaves.productionVerified, true);
+
+  const monster = resolved.candidates.find((candidate) => candidate.title === "Monster");
+  assert.ok(monster);
+  assert.equal(monster.year, 2023);
+  assert.equal(monster.decision, "USE_EXISTING");
+  assert.equal(monster.scenarioId, "scenario_monster_kore_eda_2023");
+  assert.equal(monster.matches, 1);
+  assert.equal(monster.productionVerified, true);
 
   const tenet = resolved.candidates.find((candidate) => candidate.title === "Tenet");
   assert.ok(tenet);

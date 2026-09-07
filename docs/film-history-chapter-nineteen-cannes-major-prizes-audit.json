@@ -48,7 +48,7 @@
     "atlasExpected": 606,
     "atlasActual": 606,
     "productionVerificationIds": 606,
-    "chapterNineteenCandidates": 84
+    "chapterNineteenCandidates": 85
   },
   "officialSources": {
     "cannes2020": "https://www.festival-cannes.com/en/press/press-releases/the-official-selection-2020/",
@@ -477,12 +477,12 @@
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
       "manifestIndex": 23,
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_monster_kore_eda_2023",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "awardYear": 2023,
@@ -1223,12 +1223,12 @@
         "Best Screenplay"
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_monster_kore_eda_2023",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "key": "2023|about dry grasses",
@@ -1543,10 +1543,10 @@
     {
       "year": 2023,
       "obligations": 7,
-      "productionVerifiedObligations": 4,
+      "productionVerifiedObligations": 5,
       "uniqueAwardedFilms": 7,
-      "productionVerifiedFilms": 4,
-      "unresolvedFilms": 3
+      "productionVerifiedFilms": 5,
+      "unresolvedFilms": 2
     },
     {
       "year": 2024,
@@ -1567,28 +1567,17 @@
   ],
   "summary": {
     "awardObligations": 43,
-    "productionVerifiedObligations": 34,
+    "productionVerifiedObligations": 35,
     "uniqueAwardedFilms": 41,
-    "productionVerifiedFilms": 33,
-    "unresolvedFilms": 8,
-    "missingCandidateFilms": 8,
+    "productionVerifiedFilms": 34,
+    "unresolvedFilms": 7,
+    "missingCandidateFilms": 7,
     "cannesMajorPrizesCompletionProven": false,
     "filmHistoricalSelectionCompletionProven": false
   },
   "correctiveQueue": [
     {
       "order": 1,
-      "title": "Monster",
-      "filmYear": 2023,
-      "awards": [
-        "Best Screenplay"
-      ],
-      "status": "MISSING_CANDIDATE",
-      "scenarioId": null,
-      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
-    },
-    {
-      "order": 2,
       "title": "About Dry Grasses",
       "filmYear": 2023,
       "awards": [
@@ -1599,7 +1588,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 3,
+      "order": 2,
       "title": "Perfect Days",
       "filmYear": 2023,
       "awards": [
@@ -1610,7 +1599,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 4,
+      "order": 3,
       "title": "Emilia Pérez",
       "filmYear": 2024,
       "awards": [
@@ -1622,7 +1611,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 5,
+      "order": 4,
       "title": "Grand Tour",
       "filmYear": 2024,
       "awards": [
@@ -1633,7 +1622,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 6,
+      "order": 5,
       "title": "Kinds of Kindness",
       "filmYear": 2024,
       "awards": [
@@ -1644,7 +1633,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 7,
+      "order": 6,
       "title": "Young Mothers",
       "filmYear": 2025,
       "awards": [
@@ -1655,7 +1644,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 8,
+      "order": 7,
       "title": "The Little Sister",
       "filmYear": 2025,
       "awards": [
