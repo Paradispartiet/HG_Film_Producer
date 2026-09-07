@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 608,
-    "actualCount": 608,
+    "expectedCount": 609,
+    "actualCount": 609,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1221,6 +1221,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenEmiliaPerezExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1319,7 +1325,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 608
+    "literalVerifiedScenarioIds": 609
   },
   "candidates": [
     {
@@ -1754,6 +1760,22 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenPerfectDaysExpansion.ts"
+    },
+    {
+      "title": "Emilia Pérez",
+      "originalTitle": "Emilia Pérez",
+      "year": 2024,
+      "aliases": [
+        "Emilia Perez"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2024 Jury Prize and ensemble Best Actress source-first case: materialize one new Emilia Pérez identity only after tree-wide reuse checks are negative; preserve Pathé 2023 and Cannes 2024 production-year provenance, lock the sourced 55-day Paris-studio/Mexico City split, Sony VENICE 1/2 full-frame 8K workflow, choreography-led camera, large Bry set/lighting system and approximately 500 effects shots without inventing unsupported finance, data, sound, DI or mastering detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_emilia_perez_2024",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenEmiliaPerezExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2692,6 +2714,7 @@
       "Monster",
       "About Dry Grasses",
       "Perfect Days",
+      "Emilia Pérez",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2784,6 +2807,7 @@
       "Monster",
       "About Dry Grasses",
       "Perfect Days",
+      "Emilia Pérez",
       "Tenet",
       "Nomadland",
       "Soul",
