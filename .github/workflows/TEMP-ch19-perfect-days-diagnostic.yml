@@ -62,8 +62,8 @@ jobs:
             echo "No permanent Perfect Days changes produced" >&2
             exit 1
           fi
-          if git diff --cached --name-only | grep -E '(^|/)TEMP-|scripts/TEMP-' ; then
-            echo "TEMP files remain staged; refusing clean commit" >&2
+          if git ls-files | grep -E '(^|/)TEMP-|scripts/TEMP-' ; then
+            echo "TEMP files remain in final index; refusing clean commit" >&2
             exit 1
           fi
           git commit -m "Add Perfect Days Chapter 19 production case"
