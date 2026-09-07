@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 610,
-    "actualCount": 610,
+    "expectedCount": 611,
+    "actualCount": 611,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1233,6 +1233,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenKindsOfKindnessExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1331,7 +1337,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 610
+    "literalVerifiedScenarioIds": 611
   },
   "candidates": [
     {
@@ -1798,6 +1804,22 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenGrandTourExpansion.ts"
+    },
+    {
+      "title": "Kinds of Kindness",
+      "originalTitle": "Kinds of Kindness",
+      "year": 2024,
+      "aliases": [
+        "Kinds of Kindness (2024)"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2024 Best Actor source-first case: materialize one new Kinds of Kindness identity only after tree-wide reuse checks are negative; preserve the New Orleans location-first triptych production, recurring ensemble, predominantly single-camera ARRICAM ST 35mm anamorphic method, bounded four-camera car-crash exception, VISION3/DOUBLE-X stock allocation, FotoKem 4K scan and Company3/Cinelab post chain, pre-picture piano/choir score development and the explicit Cannes 165/Searchlight 164-minute runtime discrepancy without inventing unsupported finance, exposure, sound-hardware, VFX, safety, underwater-camera, editorial or delivery detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_kinds_of_kindness_2024",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenKindsOfKindnessExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2738,6 +2760,7 @@
       "Perfect Days",
       "Emilia Pérez",
       "Grand Tour",
+      "Kinds of Kindness",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2832,6 +2855,7 @@
       "Perfect Days",
       "Emilia Pérez",
       "Grand Tour",
+      "Kinds of Kindness",
       "Tenet",
       "Nomadland",
       "Soul",
