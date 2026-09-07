@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 611,
-    "actualCount": 611,
+    "expectedCount": 612,
+    "actualCount": 612,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1239,6 +1239,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenYoungMothersExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1337,7 +1343,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 611
+    "literalVerifiedScenarioIds": 612
   },
   "candidates": [
     {
@@ -1820,6 +1826,24 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "chapterNineteenKindsOfKindnessExpansion.ts"
+    },
+    {
+      "title": "Young Mothers",
+      "originalTitle": "Jeunes Mères",
+      "year": 2025,
+      "aliases": [
+        "Jeunes Meres",
+        "Young Mothers (2025)",
+        "Jeunes Mères (2025)"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2025 Best Screenplay source-first case: materialize one new Young Mothers / Jeunes Mères identity only after tree-wide reuse checks are negative; preserve the real Liège maternal-home location, Dardenne long-sequence-shot and rehearsal method, RED V-Raptor plus Leitz Hugo 8K full-frame handheld natural-light pipeline, planned 52-day versus actual 38-day infant-sensitive schedule, LUT/DIT/ten-day Resolve-grade chain and explicit Cannes 104/César 105-minute discrepancy without inventing unsupported finance, sound-hardware, editorial, VFX, safety or delivery detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_young_mothers_2025",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenYoungMothersExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2761,6 +2785,7 @@
       "Emilia Pérez",
       "Grand Tour",
       "Kinds of Kindness",
+      "Young Mothers",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2856,6 +2881,7 @@
       "Emilia Pérez",
       "Grand Tour",
       "Kinds of Kindness",
+      "Young Mothers",
       "Tenet",
       "Nomadland",
       "Soul",

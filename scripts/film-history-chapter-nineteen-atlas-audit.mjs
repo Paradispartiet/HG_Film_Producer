@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;
 const BASE_EXPECTED_ATLAS_COUNT = 590;
-const EXPECTED_ATLAS_COUNT = 611;
+const EXPECTED_ATLAS_COUNT = 612;
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const basePath = path.join(scriptDir, "film-history-chapter-nineteen-atlas-audit-base.mjs");
@@ -41,6 +41,7 @@ const perfectDaysNeedles = ['"title": "Perfect Days"', 'title: "Perfect Days"', 
 const emiliaPerezNeedles = ['"title": "Emilia Pérez"', 'title: "Emilia Pérez"', 'Emilia Perez', 'scenario_emilia_perez_2024', 'scenario_emilia_perez_audiard_2024'];
 const grandTourNeedles = ['"title": "Grand Tour"', 'title: "Grand Tour"', 'Grand Tour (2024)', 'scenario_grand_tour_2024', 'scenario_grand_tour_miguel_gomes_2024'];
 const kindsOfKindnessNeedles = ['"title": "Kinds of Kindness"', 'title: "Kinds of Kindness"', 'Kinds of Kindness (2024)', 'scenario_kinds_of_kindness_2024', 'scenario_kinds_of_kindness_lanthimos_2024'];
+const youngMothersNeedles = ['"title": "Young Mothers"', 'title: "Young Mothers"', '"originalTitle": "Jeunes Mères"', 'Jeunes Meres', 'Young Mothers (2025)', 'scenario_young_mothers_2025', 'scenario_jeunes_meres_2025'];
 
 const triangleCandidate = `
   {
@@ -376,6 +377,17 @@ const kindsOfKindnessCandidate = `
     "chapterFunction": "Cannes 2024 Best Actor source-first case: materialize one new Kinds of Kindness identity only after tree-wide reuse checks are negative; preserve the New Orleans location-first triptych production, recurring ensemble, predominantly single-camera ARRICAM ST 35mm anamorphic method, bounded four-camera car-crash exception, VISION3/DOUBLE-X stock allocation, FotoKem 4K scan and Company3/Cinelab post chain, pre-picture piano/choir score development and the explicit Cannes 165/Searchlight 164-minute runtime discrepancy without inventing unsupported finance, exposure, sound-hardware, VFX, safety, underwater-camera, editorial or delivery detail."
   },`;
 
+const youngMothersCandidate = `
+  {
+    "title": "Young Mothers",
+    "originalTitle": "Jeunes Mères",
+    "year": 2025,
+    "aliases": ["Jeunes Meres", "Young Mothers (2025)", "Jeunes Mères (2025)"],
+    "role": "major_comparison",
+    "decisionIfMissing": "P1",
+    "chapterFunction": "Cannes 2025 Best Screenplay source-first case: materialize one new Young Mothers / Jeunes Mères identity only after tree-wide reuse checks are negative; preserve the real Liège maternal-home location, Dardenne long-sequence-shot and rehearsal method, RED V-Raptor plus Leitz Hugo 8K full-frame handheld natural-light pipeline, planned 52-day versus actual 38-day infant-sensitive schedule, LUT/DIT/ten-day Resolve-grade chain and explicit Cannes 104/César 105-minute discrepancy without inventing unsupported finance, sound-hardware, editorial, VFX, safety or delivery detail."
+  },`;
+
 const baseSource = readFileSync(basePath, "utf8");
 const requiredBaselineConstants = [
   `const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = ${CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT};`,
@@ -414,12 +426,13 @@ if (perfectDaysNeedles.some((needle) => baseSource.includes(needle))) throw new 
 if (emiliaPerezNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Emilia Pérez; consolidate the wrapper deliberately before continuing.");
 if (grandTourNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Grand Tour; consolidate the wrapper deliberately before continuing.");
 if (kindsOfKindnessNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Kinds of Kindness; consolidate the wrapper deliberately before continuing.");
+if (youngMothersNeedles.some((needle) => baseSource.includes(needle))) throw new Error("Chapter 19 base audit already contains Young Mothers/Jeunes Mères; consolidate the wrapper deliberately before continuing.");
 if (!baseSource.includes(insertionMarker)) throw new Error("Chapter 19 candidate insertion marker is missing; refusing to run a partially reconciled audit.");
 
 const reconciledSource = baseSource
   .replace(`const EXPECTED_ATLAS_COUNT = ${BASE_EXPECTED_ATLAS_COUNT};`, `const EXPECTED_ATLAS_COUNT = ${EXPECTED_ATLAS_COUNT};`)
   .replace('auditDate: "2026-08-28"', 'auditDate: "2026-09-07"')
-  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}${thePotAuFeuCandidate}${fallenLeavesCandidate}${monsterCandidate}${aboutDryGrassesCandidate}${perfectDaysCandidate}${emiliaPerezCandidate}${grandTourCandidate}${kindsOfKindnessCandidate}`);
+  .replace(insertionMarker, `${insertionMarker}${triangleCandidate}${drommerCandidate}${happeningCandidate}${allBeautyCandidate}${roomNextDoorCandidate}${thereIsNoEvilCandidate}${badLuckCandidate}${alcarrasCandidate}${adamantCandidate}${fatherMotherCandidate}${aHeroCandidate}${compartmentNo6Candidate}${annetteCandidate}${ahedsKneeCandidate}${nitramCandidate}${closeCandidate}${starsAtNoonCandidate}${boyFromHeavenCandidate}${theEightMountainsCandidate}${toriAndLokitaCandidate}${holySpiderCandidate}${brokerCandidate}${thePotAuFeuCandidate}${fallenLeavesCandidate}${monsterCandidate}${aboutDryGrassesCandidate}${perfectDaysCandidate}${emiliaPerezCandidate}${grandTourCandidate}${kindsOfKindnessCandidate}${youngMothersCandidate}`);
 const temporaryAuditPath = path.join(scriptDir, `.film-history-chapter-nineteen-atlas-audit-reconciled-${process.pid}.mjs`);
 
 try {
