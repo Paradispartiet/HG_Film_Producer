@@ -50,7 +50,7 @@ const baseline = {
   useExisting: atlas.byDecision?.USE_EXISTING?.length ?? null,
   p2: atlas.byDecision?.P2?.length ?? null,
   cannesUnresolved: cannes.summary.unresolvedFilms,
-  cannes2023Unresolved: cannes.byYear?.find((item) => item.year === 2023)?.unresolvedFilms ?? null,
+  cannes2023Unresolved: cannes.coverageByYear?.find((item) => item.year === 2023)?.unresolvedFilms ?? null,
   queueLeader: cannes.correctiveQueue?.[0]?.title ?? null,
 };
 
