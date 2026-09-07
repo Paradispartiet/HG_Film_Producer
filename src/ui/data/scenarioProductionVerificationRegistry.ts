@@ -238,6 +238,7 @@ import { holySpiderProductionCaseVerification } from "./scenarioProductionVerifi
 import { brokerProductionCaseVerification } from "./scenarioProductionVerificationBroker";
 import { thePotAuFeuProductionCaseVerification } from "./scenarioProductionVerificationThePotAuFeu";
 import { fallenLeavesProductionCaseVerification } from "./scenarioProductionVerificationFallenLeaves";
+import { aboutDryGrassesProductionCaseVerification } from "./scenarioProductionVerificationAboutDryGrasses";
 import { eoProductionCaseVerification } from "./scenarioProductionVerificationEo";
 import { barbieProductionCaseVerification } from "./scenarioProductionVerificationBarbie";
 import { acrossTheSpiderVerseProductionCaseVerification } from "./scenarioProductionVerificationAcrossTheSpiderVerse";
@@ -598,6 +599,7 @@ const additionalVerificationRecords = [
   brokerProductionCaseVerification,
   thePotAuFeuProductionCaseVerification,
   fallenLeavesProductionCaseVerification,
+  aboutDryGrassesProductionCaseVerification,
   eoProductionCaseVerification,
   barbieProductionCaseVerification,
   acrossTheSpiderVerseProductionCaseVerification,

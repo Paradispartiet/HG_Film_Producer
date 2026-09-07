@@ -23,8 +23,8 @@
   },
   "atlas": {
     "baselineFromClosedChapter18": 539,
-    "expectedCount": 606,
-    "actualCount": 606,
+    "expectedCount": 607,
+    "actualCount": 607,
     "expansionOrder": [
       {
         "fileName": "earlyCinemaExpansion.ts",
@@ -1209,6 +1209,12 @@
         "matchedExisting": 0
       },
       {
+        "fileName": "chapterNineteenAboutDryGrassesExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0
+      },
+      {
         "fileName": "chapterNineteenEoExpansion.ts",
         "definitions": 1,
         "appended": 1,
@@ -1307,7 +1313,7 @@
     ]
   },
   "verificationIndex": {
-    "literalVerifiedScenarioIds": 606
+    "literalVerifiedScenarioIds": 607
   },
   "candidates": [
     {
@@ -1712,6 +1718,22 @@
       "matches": 1,
       "productionVerified": true,
       "origin": "japaneseAuteurExpansion.ts"
+    },
+    {
+      "title": "About Dry Grasses",
+      "originalTitle": "Kuru Otlar Üstüne",
+      "year": 2023,
+      "aliases": [
+        "Kuru Otlar Ustune"
+      ],
+      "role": "major_comparison",
+      "decisionIfMissing": "P1",
+      "chapterFunction": "Cannes 2023 Best Actress source-first case: materialize one new About Dry Grasses/Kuru Otlar Üstüne identity only after tree-wide reuse checks are negative; preserve 2023 production metadata separately from 2021 Eastern Anatolia photography; lock 4K Sony VENICE/Cooke Anamorphic SF 2X/24fps/Scope, pandemic-winter location production, full-script editorial reduction, credited sound/VFX/grade chains and explicit format provenance without inventing unsupported budget, equipment, VFX-census or mastering detail.",
+      "decision": "USE_EXISTING",
+      "scenarioId": "scenario_about_dry_grasses_2023",
+      "matches": 1,
+      "productionVerified": true,
+      "origin": "chapterNineteenAboutDryGrassesExpansion.ts"
     },
     {
       "title": "Tenet",
@@ -2648,6 +2670,7 @@
       "The Pot-au-Feu",
       "Fallen Leaves",
       "Monster",
+      "About Dry Grasses",
       "Nomadland",
       "Collective",
       "Quo Vadis, Aida?",
@@ -2738,6 +2761,7 @@
       "The Pot-au-Feu",
       "Fallen Leaves",
       "Monster",
+      "About Dry Grasses",
       "Tenet",
       "Nomadland",
       "Soul",
