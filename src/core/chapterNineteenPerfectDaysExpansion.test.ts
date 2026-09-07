@@ -13,7 +13,9 @@ test("Perfect Days source-first case locks chronology, camera method, format pro
   assert.equal(film.principalPhotographyYear, 2022);
   assert.equal(film.runtimeMins, 124);
   assert.deepEqual(film.directors, ["Wim Wenders"]);
-  assert.match(film.premise, /sixteen days/i);
+  assert.match(film.premise, /sixteen-day/i);
+  assert.match(film.premise, /17 days/i);
+  assert.match(film.premise, /16-versus-17-day discrepancy/i);
   assert.match(film.premise, /October 2022/i);
   assert.match(film.premise, /Sony VENICE/);
   assert.match(film.premise, /Canon K35/);

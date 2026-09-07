@@ -216,6 +216,7 @@ import { brokerFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenBrok
 import { thePotAuFeuFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenThePotAuFeu";
 import { fallenLeavesFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenFallenLeaves";
 import { aboutDryGrassesFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAboutDryGrasses";
+import { perfectDaysFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenPerfectDays";
 import { eoFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenEo";
 import { barbieFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenBarbie";
 import { acrossTheSpiderVerseFilmHistoryProfile } from "./scenarioFilmStudyChapterNineteenAcrossTheSpiderVerse";
@@ -463,6 +464,7 @@ const sourceBackedFilmHistoryProfiles = {
   [thePotAuFeuFilmHistoryProfile.scenarioId]: thePotAuFeuFilmHistoryProfile,
   [fallenLeavesFilmHistoryProfile.scenarioId]: fallenLeavesFilmHistoryProfile,
   [aboutDryGrassesFilmHistoryProfile.scenarioId]: aboutDryGrassesFilmHistoryProfile,
+  [perfectDaysFilmHistoryProfile.scenarioId]: perfectDaysFilmHistoryProfile,
   [eoFilmHistoryProfile.scenarioId]: eoFilmHistoryProfile,
   [barbieFilmHistoryProfile.scenarioId]: barbieFilmHistoryProfile,
   [acrossTheSpiderVerseFilmHistoryProfile.scenarioId]: acrossTheSpiderVerseFilmHistoryProfile,

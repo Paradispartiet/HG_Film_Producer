@@ -45,10 +45,10 @@
     "topPrizeCorrectiveQueue": 0
   },
   "technicalBaseline": {
-    "atlasExpected": 607,
-    "atlasActual": 607,
-    "productionVerificationIds": 607,
-    "chapterNineteenCandidates": 86
+    "atlasExpected": 608,
+    "atlasActual": 608,
+    "productionVerificationIds": 608,
+    "chapterNineteenCandidates": 87
   },
   "officialSources": {
     "cannes2020": "https://www.festival-cannes.com/en/press/press-releases/the-official-selection-2020/",
@@ -511,12 +511,12 @@
       "aliases": [],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
       "manifestIndex": 25,
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_perfect_days_2023",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "awardYear": 2024,
@@ -1257,12 +1257,12 @@
         "Best Performance by an Actor"
       ],
       "source": "https://www.festival-cannes.com/en/press/press-releases/the-76th-festival-de-cannes-winners-list/",
-      "candidatePresent": false,
-      "candidateDecision": null,
-      "scenarioId": null,
-      "atlasMatches": 0,
-      "productionVerified": false,
-      "status": "MISSING_CANDIDATE"
+      "candidatePresent": true,
+      "candidateDecision": "USE_EXISTING",
+      "scenarioId": "scenario_perfect_days_2023",
+      "atlasMatches": 1,
+      "productionVerified": true,
+      "status": "PRODUCTION_VERIFIED"
     },
     {
       "key": "2024|anora",
@@ -1543,10 +1543,10 @@
     {
       "year": 2023,
       "obligations": 7,
-      "productionVerifiedObligations": 6,
+      "productionVerifiedObligations": 7,
       "uniqueAwardedFilms": 7,
-      "productionVerifiedFilms": 6,
-      "unresolvedFilms": 1
+      "productionVerifiedFilms": 7,
+      "unresolvedFilms": 0
     },
     {
       "year": 2024,
@@ -1567,28 +1567,17 @@
   ],
   "summary": {
     "awardObligations": 43,
-    "productionVerifiedObligations": 36,
+    "productionVerifiedObligations": 37,
     "uniqueAwardedFilms": 41,
-    "productionVerifiedFilms": 35,
-    "unresolvedFilms": 6,
-    "missingCandidateFilms": 6,
+    "productionVerifiedFilms": 36,
+    "unresolvedFilms": 5,
+    "missingCandidateFilms": 5,
     "cannesMajorPrizesCompletionProven": false,
     "filmHistoricalSelectionCompletionProven": false
   },
   "correctiveQueue": [
     {
       "order": 1,
-      "title": "Perfect Days",
-      "filmYear": 2023,
-      "awards": [
-        "Best Performance by an Actor"
-      ],
-      "status": "MISSING_CANDIDATE",
-      "scenarioId": null,
-      "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
-    },
-    {
-      "order": 2,
       "title": "Emilia Pérez",
       "filmYear": 2024,
       "awards": [
@@ -1600,7 +1589,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 3,
+      "order": 2,
       "title": "Grand Tour",
       "filmYear": 2024,
       "awards": [
@@ -1611,7 +1600,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 4,
+      "order": 3,
       "title": "Kinds of Kindness",
       "filmYear": 2024,
       "awards": [
@@ -1622,7 +1611,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 5,
+      "order": 4,
       "title": "Young Mothers",
       "filmYear": 2025,
       "awards": [
@@ -1633,7 +1622,7 @@
       "nextGate": "candidate_reconciliation_and_atlas_reuse_check"
     },
     {
-      "order": 6,
+      "order": 5,
       "title": "The Little Sister",
       "filmYear": 2025,
       "awards": [
