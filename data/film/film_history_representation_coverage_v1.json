@@ -93,7 +93,7 @@
     },
     {
       "development_id": "decolonial_transnational_historiography",
-      "declared_status": 0,
+      "declared_status": 1,
       "priority": "P1",
       "axis_ids": ["geography_and_transnational_production", "institutions_and_industry_systems", "regulation_power_finance_and_coproduction"],
       "required_evidence": "Exact scenarios must document production, financing, circulation or recovery histories across colonial, postcolonial or transnational systems."
@@ -118,7 +118,7 @@
       "priority": "P1",
       "axis_ids": ["distribution_exhibition_and_audience_behavior", "institutions_and_industry_systems", "technology_and_format"],
       "required_evidence": "Exact scenarios must map production or circulation evidence to programming, venues, projection, audience practice or changing exhibition systems.",
-      "triangulation_basis": "Blacksmith Scene and Workers Leaving the Lumière Factory establish individual-viewing and projected-programme systems; The Corbett–Fitzsimmons Fight adds proprietary projection, live commentary and territorial exhibition, Brown's Atlas Works adds showman commissioning and local paying-audience strategy, and The Great Train Robbery adds exhibitor agency over programme placement."
+      "triangulation_basis": "Blacksmith Scene and Workers Leaving the Lumière Factory establish individual-viewing and projected-programme systems; The Corbett–Fitzsimmons Fight adds proprietary projection and territorial exhibition; Brown's Atlas Works adds showman commissioning and local paying-audience strategy; The Great Train Robbery adds exhibitor agency; The Story of the Kelly Gang adds multi-reel touring, lecturer/live-effects presentation and feature-scale programme pressure; Queen Elizabeth adds imported-feature rights and presentation; Traffic in Souls adds simultaneous feature exhibition across twenty New York theatres."
     },
     {
       "development_id": "modern_popular_commercial_cinema_as_industry",
@@ -129,7 +129,7 @@
     },
     {
       "development_id": "genre_industries_horror_action_comedy_romance_exploitation_local_popular",
-      "declared_status": 1,
+      "declared_status": 2,
       "priority": "P0",
       "axis_ids": ["genre_and_popular_cinema", "production_economics_and_organization", "geography_and_transnational_production"],
       "required_evidence": "Complementary exact scenarios must show popular genres as distinct production and distribution systems, not merely aesthetic categories."
@@ -210,7 +210,7 @@
       "priority": "P1",
       "axis_ids": ["preservation_restoration_and_material_survival", "institutions_and_industry_systems"],
       "required_evidence": "Exact scenarios must demonstrate how preservation, restoration, archive access or material survival changes what film history can recover and teach.",
-      "triangulation_basis": "A Trip to the Moon documents rediscovery and image-by-image restoration of recovered colour material; Life of an American Fireman shows an original copyright paper print overturning a mistaken later cross-cut reconstruction; Attack on a China Mission shows rediscovered copies and later archive reconstruction changing the apparent editing structure; Workers Leaving the Lumière Factory and Rescued by Rover add surviving-version and replacement/re-shot histories."
+      "triangulation_basis": "A Trip to the Moon documents rediscovery and image-by-image restoration of recovered colour material; Life of an American Fireman shows an original copyright paper print overturning a mistaken later cross-cut reconstruction; Attack on a China Mission shows rediscovered copies and later archive reconstruction changing the apparent editing structure; The Story of the Kelly Gang adds fragmentary survival and modern reconstruction/restoration of a lost complete feature; Workers Leaving the Lumière Factory and Rescued by Rover add surviving-version and replacement/re-shot histories."
     },
     {
       "development_id": "pandemic_shutdown_protocol_and_recovery",
@@ -405,13 +405,34 @@
       "review_state": "MAPPED",
       "development_ids": ["genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
       "evidence_paths": ["docs/HISTOIRE_D_UN_CRIME_1901_PRODUCTION_CASE_VERIFICATION.md"],
-      "rationale": "The verified Pathé case links crime fiction to Zecca's organized production leadership, differentiated genre production, longer footage, production-cost and sales testimony and public success. This is concrete genre-industry evidence, but one early French crime case is insufficient for broad genre-system coverage, so the development remains weak."
+      "rationale": "The verified Pathé case links crime fiction to Zecca's organized production leadership, differentiated genre production, longer footage, production-cost and sales testimony and public success. This is concrete genre-industry evidence, but one early French crime case is insufficient for broad genre-system coverage."
     },
     {
       "scenario_id": "scenario_the_lonely_villa_1909",
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "rationale": "The verified case strongly teaches sustained alternation among separated action lines, telephone-mediated simultaneity and Biograph production geography, but the current matrix has no early narrative-continuity or parallel-editing development row; preservation holdings alone do not satisfy the stronger history-making requirement."
+    },
+    {
+      "scenario_id": "scenario_the_story_of_the_kelly_gang_1906",
+      "review_state": "MAPPED",
+      "development_ids": ["exhibition_and_viewing_history", "preservation_restoration_material_survival_as_history_maker"],
+      "evidence_paths": ["docs/THE_STORY_OF_THE_KELLY_GANG_1906_PRODUCTION_CASE_VERIFICATION.md"],
+      "rationale": "The verified case ties five-reel feature scale to producer-exhibitor organization, touring circulation, lecturer/live-effects presentation and changed programme demands, while its fragmentary survival and modern reconstruction make the distinction between surviving evidence and the lost complete original historically consequential."
+    },
+    {
+      "scenario_id": "scenario_queen_elizabeth_1912",
+      "review_state": "MAPPED",
+      "development_ids": ["decolonial_transnational_historiography", "exhibition_and_viewing_history"],
+      "evidence_paths": ["docs/QUEEN_ELIZABETH_1912_PRODUCTION_CASE_VERIFICATION.md"],
+      "rationale": "The verified case separates French Le Film d'Art production from Adolph Zukor's United States rights, financing and presentation role, providing exact transnational production/circulation evidence and imported-feature exhibition history. One France–United States prestige-feature case is not broad enough to close the combined decolonial/transnational row, so that development remains weak."
+    },
+    {
+      "scenario_id": "scenario_traffic_in_souls_1913",
+      "review_state": "MAPPED",
+      "development_ids": ["exhibition_and_viewing_history", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
+      "evidence_paths": ["docs/TRAFFIC_IN_SOULS_1913_PRODUCTION_CASE_VERIFICATION.md"],
+      "rationale": "The verified case distinguishes IMP production from Universal distribution and documents a low-cost contemporary sensational feature, real New York locations, six-reel completion, strong returns and simultaneous exhibition in twenty New York theatres. Together with the Pathé crime case, this supplies exact industrial genre evidence sufficient for coverage, but not the broader genre/geography triangulation required for status 3."
     }
   ],
   "candidate_admission_gate": {
