@@ -27,18 +27,19 @@ jobs:
         run: npm ci
 
       - name: Parse TEMP materializer
-        run: node --check scripts/TEMP-materialize-ch19-about-dry-grasses.mjs
+        run: node --check scripts/TEMP-materialize-ch19-about-dry-grasses-v2.mjs
 
       - name: Materialize About Dry Grasses
         shell: bash
         run: |
           set -o pipefail
-          node scripts/TEMP-materialize-ch19-about-dry-grasses.mjs 2>&1 | tee about-dry-grasses-materialize.log
+          node scripts/TEMP-materialize-ch19-about-dry-grasses-v2.mjs 2>&1 | tee about-dry-grasses-materialize.log
 
       - name: Stage clean verification tree
         run: |
           rm scripts/TEMP-diagnose-ch19-about-dry-grasses.mjs
           rm scripts/TEMP-materialize-ch19-about-dry-grasses.mjs
+          rm scripts/TEMP-materialize-ch19-about-dry-grasses-v2.mjs
           rm .github/workflows/TEMP-ch19-about-dry-grasses-diagnostic.yml
           git diff --check
 
