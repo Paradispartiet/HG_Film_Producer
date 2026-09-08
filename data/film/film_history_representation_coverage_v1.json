@@ -107,7 +107,7 @@
         "geography_and_transnational_production"
       ],
       "required_evidence": "Exact scenarios must connect formal movements to concrete production scale, institutions, location practice, financing or labor rather than style labels alone.",
-      "triangulation_basis": "The Cabinet of Dr. Caligari ties German Expressionism to Decla studio production, named design labor and painted architectural space; Nosferatu contrasts Prana-Film's multi-location production and real landscapes inside the Expressionist current; The Last Laugh connects Kammerspielfilm to UFA/Babelsberg organization and a collaborative mobile-camera system; Metropolis adds UFA's two-year monumental studio and effects production; Pandora's Box adds Nero-Film, Filmwerke Staaken and Pabst's Neue Sachlichkeit and socially critical realist countercurrent. Together the five exact cases triangulate formal movements across studio scale, location practice, institutions and collaborative labor rather than treating movement names as style labels."
+      "triangulation_basis": "The Cabinet of Dr. Caligari ties German Expressionism to Decla studio production, named design labor and painted architectural space; Nosferatu contrasts Prana-Film's multi-location production and real landscapes inside the Expressionist current; The Last Laugh connects Kammerspielfilm to UFA/Babelsberg organization and a collaborative mobile-camera system; Metropolis adds UFA's two-year monumental studio and effects production; Pandora's Box adds Nero-Film, Filmwerke Staaken and Pabst's Neue Sachlichkeit and socially critical realist countercurrent. Chapter 8 broadens this beyond the German cases: Cœur fidèle and The Smiling Madame Beudet tie French Impressionism to Pathé Consortium Cinéma and Film d'Art production with named collaborative camera, writing and producing labor; Un Chien Andalou adds a small family-financed Surrealist collaboration; Entr'acte adds a Ballets Suédois commission embedded in Relâche; and Napoléon adds unusually large specialist labor, multi-camera apparatus and Polyvision. Together the exact cases triangulate alternative movements across national context, studio and independent scale, commission and family financing, institutions, apparatus and collaborative labor rather than treating movement names as style labels."
     },
     {
       "development_id": "decolonial_transnational_historiography",
@@ -154,7 +154,7 @@
         "technology_and_format"
       ],
       "required_evidence": "Exact scenarios must map production or circulation evidence to programming, venues, projection, audience practice or changing exhibition systems.",
-      "triangulation_basis": "Blacksmith Scene and Workers Leaving the Lumière Factory establish individual-viewing and projected-programme systems; The Corbett–Fitzsimmons Fight adds proprietary projection and territorial exhibition; Brown's Atlas Works adds showman commissioning and local paying-audience strategy; The Great Train Robbery adds exhibitor agency; The Story of the Kelly Gang adds multi-reel touring, lecturer/live-effects presentation and feature-scale programme pressure; Queen Elizabeth adds imported-feature rights and presentation; Traffic in Souls adds simultaneous feature exhibition across twenty New York theatres."
+      "triangulation_basis": "Blacksmith Scene and Workers Leaving the Lumière Factory establish individual-viewing and projected-programme systems; The Corbett–Fitzsimmons Fight adds proprietary projection and territorial exhibition; Brown's Atlas Works adds showman commissioning and local paying-audience strategy; The Great Train Robbery adds exhibitor agency; The Story of the Kelly Gang adds multi-reel touring, lecturer/live-effects presentation and feature-scale programme pressure; Queen Elizabeth adds imported-feature rights and presentation; Traffic in Souls adds simultaneous feature exhibition across twenty New York theatres. Chapter 8 adds two distinct avant-garde exhibition systems: Napoléon's three-camera/three-projector Polyvision finale and version-specific Opéra/Apollo presentation history, and Entr'acte's commissioned function inside the Ballets Suédois production Relâche at Théâtre des Champs-Élysées."
     },
     {
       "development_id": "modern_popular_commercial_cinema_as_industry",
@@ -299,7 +299,7 @@
         "institutions_and_industry_systems"
       ],
       "required_evidence": "Exact scenarios must demonstrate how preservation, restoration, archive access or material survival changes what film history can recover and teach.",
-      "triangulation_basis": "A Trip to the Moon documents rediscovery and image-by-image restoration of recovered colour material; Life of an American Fireman shows an original copyright paper print overturning a mistaken later cross-cut reconstruction; Attack on a China Mission shows rediscovered copies and archive reconstruction changing the apparent editing structure; The Story of the Kelly Gang adds fragmentary survival and reconstruction; Cabiria separates reconstructed 1914 material from Pastrone’s altered 1931 sound reissue; Afgrunden adds deteriorated surviving material and a key dance passage recovered from Swedish censorship holdings. Workers Leaving the Lumière Factory and Rescued by Rover retain additional surviving-version and replacement/re-shot evidence."
+      "triangulation_basis": "A Trip to the Moon documents rediscovery and image-by-image restoration of recovered colour material; Life of an American Fireman shows an original copyright paper print overturning a mistaken later cross-cut reconstruction; Attack on a China Mission shows rediscovered copies and archive reconstruction changing the apparent editing structure; The Story of the Kelly Gang adds fragmentary survival and reconstruction; Cabiria separates reconstructed 1914 material from Pastrone’s altered 1931 sound reissue; Afgrunden adds deteriorated surviving material and a key dance passage recovered from Swedish censorship holdings. Workers Leaving the Lumière Factory and Rescued by Rover retain additional surviving-version and replacement/re-shot evidence. Chapter 8 adds Napoléon's materially different 1927 Opéra and Apollo states, MGM export recuts, later sound re-edit and modern Grande Version reconstruction, while Entr'acte documents Clair's 1967 removals and a later restoration that reinstated first-version material from surviving elements."
     },
     {
       "development_id": "pandemic_shutdown_protocol_and_recovery",
@@ -804,6 +804,65 @@
         "src/ui/data/scenarioProductionVerificationPandorasBox.ts"
       ],
       "rationale": "The verified Nero-Film case anchors Pabst's Neue Sachlichkeit and socially critical realism to Seymour Nebenzahl's production, Filmwerke Staaken, Krampf, Andrejew/Heš and Louise Brooks's transatlantic casting. It supplies a documented late-Weimar countercurrent to Expressionism with concrete studio, labor and production context."
+    },
+    {
+      "scenario_id": "scenario_coeur_fidele_1923",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCoeurFidele.ts"
+      ],
+      "rationale": "The verified case ties French Impressionism to Pathé Consortium Cinéma, Jean and Marie Epstein's writing/directing collaboration, Paul Guichard and named camera operators, and perception-led camera/editing practice. This makes the movement legible as a collaborative production system rather than a photogénie style label."
+    },
+    {
+      "scenario_id": "scenario_napoleon_1927",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "exhibition_and_viewing_history",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNapoleon.ts"
+      ],
+      "rationale": "The verified case connects French avant-garde scale to Société du Film Napoléon/Société Générale de Films, broad specialist labor, eighteen cameras and the three-camera/three-projector Polyvision system. Its distinct Opéra and Apollo 1927 states, MGM export cuts, later sound re-edit and modern Grande Version reconstruction make both exhibition infrastructure and version recovery historically consequential."
+    },
+    {
+      "scenario_id": "scenario_un_chien_andalou_1929",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationUnChienAndalou.ts"
+      ],
+      "rationale": "The verified case anchors Surrealism to Buñuel and Dalí's collaboration, Studio-Films, Pierre Braunberger, Albert Duverger and a small family-financing context. Its discontinuous montage is therefore mapped together with an alternative production scale and financing model rather than treated as free-floating formal randomness."
+    },
+    {
+      "scenario_id": "scenario_entr_acte_1924",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "exhibition_and_viewing_history",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEntrActe.ts"
+      ],
+      "rationale": "The verified case ties Dada production to Rolf de Maré's Ballets Suédois commission, Picabia/Clair/Berliet/Satie labor and Entr'acte's programmed function inside Relâche at Théâtre des Champs-Élysées. Clair's 1967 removals and later restoration of first-version material from surviving elements also make preservation and version history part of the exact case."
+    },
+    {
+      "scenario_id": "scenario_the_smiling_madame_beudet_1923",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSmilingMadameBeudet.ts"
+      ],
+      "rationale": "The verified case anchors Germaine Dulac's French Impressionist and explicitly feminist formal practice to Film d'Art - Vandal et Delac, named producers Charles Delac and Marcel Vandal, the Dulac/Obey adaptation and Maurice Forster/Paul Parguel cinematography. Subjective form is therefore tied to production company, adaptation and collaborative labor rather than credited as an isolated auteur style."
     }
   ],
   "candidate_admission_gate": {
