@@ -136,7 +136,7 @@
     },
     {
       "development_id": "animation_technique_labor_and_delivery_history",
-      "declared_status": 0,
+      "declared_status": 2,
       "priority": "P1",
       "axis_ids": [
         "technology_and_format",
@@ -1160,6 +1160,157 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "rationale": "The verified RKO case strongly documents RCA Photophone sound, Max Steiner's score and integrated effects-era production, but those facts describe a matured early-1930s sound/effects system rather than the production conversion or uneven exhibition transition required by silent_sound_transition. Chapter 11 therefore keeps King Kong comparative and unmapped here instead of using a later consequence to pad triangulation."
+    },
+    {
+      "scenario_id": "scenario_modern_times_1936",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified Chaplin case deliberately retains pantomime and selective synchronized sound in 1936, but by this point it documents a mature sound-era authorial choice rather than the conversion, competing systems or uneven exhibition transition required by silent_sound_transition; the present matrix has no separate row for sound-era resistance or selective-dialogue form."
+    },
+    {
+      "scenario_id": "scenario_snow_white_and_the_seven_dwarfs_1937",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "animation_technique_labor_and_delivery_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1930sProductionSystemsBatch.ts"
+      ],
+      "rationale": "The verified Disney case documents feature-scale personality animation, a large departmental labor pipeline, painted backgrounds and layered cel photography together with the multiplane camera, Technicolor and synchronized sound/music delivery. It therefore supplies exact technique, labor-organization and camera-pipeline evidence sufficient to move the animation-development row from uncovered to covered without claiming triangulation from a single case."
+    },
+    {
+      "scenario_id": "scenario_the_rules_of_the_game_1939",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified Renoir case strongly documents French independent production organization, elaborate staging and deep-space ensemble construction, but the current matrix has no dedicated row for deep-focus/deep-space staging or classical-form alternatives, and its formal importance alone is insufficient to force a modernism/movement mapping."
+    },
+    {
+      "scenario_id": "scenario_stagecoach_1939",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts"
+      ],
+      "rationale": "The verified Walter Wanger/United Artists case ties the western to Monument Valley location production, specialist Yakima Canutt stunt labor, action-continuity planning and commercial feature organization. It therefore adds an exact American western production system to the already triangulated genre-industry row rather than treating western as an aesthetic label."
+    },
+    {
+      "scenario_id": "scenario_the_wizard_of_oz_1939",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "classical_hollywood_studio_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts"
+      ],
+      "rationale": "The verified MGM case documents coordinated studio labor across producing, adaptation, pre-scored songs, art direction, costume, makeup, effects, editing, sound and Technicolor cinematography. The exact production therefore strengthens classical studio-system evidence through department-level integration rather than through canon status."
+    },
+    {
+      "scenario_id": "scenario_citizen_kane_1941",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "classical_hollywood_studio_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts"
+      ],
+      "rationale": "The verified RKO/Mercury case documents unusual unit autonomy exercised inside major-studio infrastructure, with producer-director, cinematography, editing, sound, optical and music labor all inspectably tied to the production. It adds a complementary negotiated-autonomy model inside the classical Hollywood studio system."
+    },
+    {
+      "scenario_id": "scenario_casablanca_1942",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "classical_hollywood_studio_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts"
+      ],
+      "rationale": "The verified Warner Bros. case documents lot-based production, continuing screenplay revision, producer oversight, multinational casting and coordinated studio departments in design, camera, editing, sound and music. It therefore teaches collaborative classical studio authorship and production management rather than reducing the film to screenplay or star mythology."
+    },
+    {
+      "scenario_id": "scenario_the_public_enemy_1931",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPublicEnemy.ts"
+      ],
+      "rationale": "The verified Warner Bros. production/distribution record identifies producer, writing, photography, art, editing, wardrobe, makeup, orchestra and sound labor while also placing the title inside the studio's early sound gangster/crime cycle and the 1930–34 pre-enforcement Code interval. This is exact studio-organization and genre-industry evidence without retroactively imposing the later PCA regime."
+    },
+    {
+      "scenario_id": "scenario_dracula_1931",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "silent_sound_transition",
+        "classical_hollywood_studio_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationDracula.ts"
+      ],
+      "rationale": "The verified Universal case documents distinct English- and Spanish-language sound productions sharing sets but using separate crews and day/night scheduling, with different cinematography and runtimes. It therefore adds an exact multiple-language-version workflow produced by early sound market fragmentation while also documenting Universal studio organization and the horror cycle as a concrete genre-production system."
+    },
+    {
+      "scenario_id": "scenario_42nd_street_1933",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification42ndStreet.ts"
+      ],
+      "rationale": "The verified Warner Bros. case documents Zanuck/Wallis production organization, a 28-day schedule, a $340,000 cost, studio camera/editing/design/costume/sound departments and Berkeley's separate dance-and-ensemble labor, including pre-recorded music supporting camera-designed choreography. It therefore maps both classical studio organization and the backstage musical as an industrial genre workflow."
+    },
+    {
+      "scenario_id": "scenario_scarface_1932",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationScarface.ts"
+      ],
+      "rationale": "The verified Caddo/Howard Hughes production with United Artists distribution documents the gangster cycle through an independent production/distribution model and unusually extensive censorship negotiation, retakes, alternate endings and territory-specific versions. It strengthens genre-industry evidence without inventing a censorship development row that the matrix does not contain."
+    },
+    {
+      "scenario_id": "scenario_it_happened_one_night_1934",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationItHappenedOneNight.ts"
+      ],
+      "rationale": "The verified Columbia production/distribution case documents Harry Cohn and Capra/Riskin organization, borrowed MGM and Paramount stars, a bounded 1933–34 schedule, retakes, location work and Western Electric recording. It adds a smaller-studio and inter-studio star-loan model while grounding screwball comedy in a specific production system."
+    },
+    {
+      "scenario_id": "scenario_top_hat_1935",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTopHat.ts"
+      ],
+      "rationale": "The verified RKO case documents producer, screenplay, photography, design, editing, costume, music, recording, effects and dance departments together with extensive Astaire rehearsal, Berlin song integration and PCA-certified production. It therefore teaches the Astaire–Rogers musical as a coordinated studio and genre-production system rather than as star performance alone."
+    },
+    {
+      "scenario_id": "scenario_gone_with_the_wind_1939",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "modern_popular_commercial_cinema_as_industry"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationGoneWithTheWind.ts"
+      ],
+      "rationale": "The verified Selznick International package, made in association with MGM and distributed by Loew's, documents producer-centered coordination across multiple directors and units, design, costume, editing, sound, music, effects and Technicolor at large commercial scale. It therefore adds a package-production countermodel to vertically organized studio production and mass-audience spectacle, while the record's permanent safeguard keeps Lost Cause mythology, plantation nostalgia, slavery erasure and racist representation explicit rather than treating scale or prestige as an ideological alibi."
     }
   ],
   "candidate_admission_gate": {
