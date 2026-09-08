@@ -76,14 +76,15 @@
     },
     {
       "development_id": "silent_sound_transition",
-      "declared_status": 0,
+      "declared_status": 3,
       "priority": "P1",
       "axis_ids": [
         "technology_and_format",
         "institutions_and_industry_systems",
         "distribution_exhibition_and_audience_behavior"
       ],
-      "required_evidence": "Exact scenarios must distinguish synchronized sound systems, production conversion and exhibition transition rather than treating sound as one global switch."
+      "required_evidence": "Exact scenarios must distinguish synchronized sound systems, production conversion and exhibition transition rather than treating sound as one global switch.",
+      "triangulation_basis": "Chapter 11 triangulates the silent-to-sound transition through complementary exact Production Verification cases rather than one milestone film. The Jazz Singer anchors Warner Bros. Vitaphone sound-on-disc and part-talkie adoption; Blackmail and Applause document dual-version or silent-fallback production and early synchronized-recording constraints; The Broadway Melody ties Movietone musical production to a separate silent release for theatres not yet wired for sound; The Neighbor's Wife and Mine adds Shochiku-Phone full-synchronous production inside a Japanese market where benshi-era silent practice persisted; Sous les toits de Paris and M show Tobis-era selective, offscreen and strategically silent sound construction; Enthusiasm adds Soviet non-synchronization and industrial-sound montage; The Blue Angel adds Tobis-Klangfilm multilingual parallel-version management; and City Lights documents Chaplin's deliberate refusal of dialogue while retaining synchronized score and effects after talkies had become dominant. Together these exact cases distinguish competing systems, uneven production conversion, language/version workflows and non-instantaneous exhibition adoption across the United States, Britain, France, Germany, Japan and the Soviet/Ukrainian context."
     },
     {
       "development_id": "classical_hollywood_studio_system",
@@ -1043,6 +1044,122 @@
         "src/ui/data/scenarioProductionVerificationSilentStudioSystemsBatch.ts"
       ],
       "rationale": "The verified Swedish Filmstaden case documents the new-studio production context, Lagerlöf adaptation, named cinematography/art-direction labor, nested flashbacks and layered in-camera double exposure. Institute-supported restoration and versioned musical presentation provide inspectable preservation history, strengthening Nordic institutional coverage without creating a duplicate Production Case identity."
+    },
+    {
+      "scenario_id": "scenario_m_1931",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts"
+      ],
+      "rationale": "The verified Nero-Film case documents Lang's first sound feature, Tobis-Klangfilm recording, offscreen voices, the killer's whistle, strategic silence and sound bridges. It directly shows early sound as a designed production and editing system rather than a simple replacement of silent cinema by dialogue."
+    },
+    {
+      "scenario_id": "scenario_city_lights_1931",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts"
+      ],
+      "rationale": "The verified Chaplin case documents a two-year independent production that deliberately refused spoken dialogue after talkies had become dominant while using a synchronized score and selected sound effects. It is exact evidence that sound adoption was uneven and could be strategically selective rather than an instantaneous industry-wide switch."
+    },
+    {
+      "scenario_id": "scenario_the_jazz_singer_1927",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationJazzSinger.ts"
+      ],
+      "rationale": "The verified Warner Bros. case documents a silent-with-sound-sequences part-talkie built around Vitaphone sound-on-disc, selective synchronized singing and speech, and the industrial and exhibition pressures associated with sound conversion."
+    },
+    {
+      "scenario_id": "scenario_blackmail_1929",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBlackmail.ts"
+      ],
+      "rationale": "The verified Hitchcock case documents parallel silent and sound production/versioning and the recording constraints of conversion-era filmmaking, making the economic and practical overlap between silent and synchronized-sound workflows explicit."
+    },
+    {
+      "scenario_id": "scenario_applause_1929",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationApplause.ts"
+      ],
+      "rationale": "The verified Paramount case documents Movietone-era synchronous recording, soundproof camera constraints and a silent version alongside the all-talking production, directly evidencing both technical conversion pressure and incomplete exhibition conversion."
+    },
+    {
+      "scenario_id": "scenario_the_neighbors_wife_and_mine_1931",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNeighborsWife.ts"
+      ],
+      "rationale": "The verified Shochiku case documents Shochiku-Phone full-synchronous recording and multi-camera production while Japanese exhibition and production still coexisted with benshi-era silent practice, adding a geographically and institutionally distinct uneven-transition system."
+    },
+    {
+      "scenario_id": "scenario_the_broadway_melody_1929",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBroadwayMelody.ts"
+      ],
+      "rationale": "The verified MGM case documents Movietone speech, singing, orchestra and dance coordination together with a separate silent release for theatres not yet equipped for sound, directly linking production conversion to uneven exhibition infrastructure."
+    },
+    {
+      "scenario_id": "scenario_sous_les_toits_de_paris_1930",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSousLesToits.ts"
+      ],
+      "rationale": "The verified Tobis production documents deliberate selective synchronization, offscreen sound, silence and sound perspective as early-sound craft choices, providing a French studio countermodel to dialogue-led conversion."
+    },
+    {
+      "scenario_id": "scenario_enthusiasm_1930",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEnthusiasm.ts"
+      ],
+      "rationale": "The verified Vertov case documents early Soviet sound practice through intentional non-synchronization, complementary and contrapuntal image-sound construction and industrial/machine recording, adding a documentary and montage workflow distinct from studio talkie conversion."
+    },
+    {
+      "scenario_id": "scenario_the_blue_angel_1930",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBlueAngel.ts"
+      ],
+      "rationale": "The verified UFA case documents Tobis-Klangfilm sound production and separate German and English versions, making language-market fragmentation and parallel-version management concrete industrial consequences of synchronized sound."
+    },
+    {
+      "scenario_id": "scenario_king_kong_1933",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified RKO case strongly documents RCA Photophone sound, Max Steiner's score and integrated effects-era production, but those facts describe a matured early-1930s sound/effects system rather than the production conversion or uneven exhibition transition required by silent_sound_transition. Chapter 11 therefore keeps King Kong comparative and unmapped here instead of using a later consequence to pad triangulation."
     }
   ],
   "candidate_admission_gate": {
