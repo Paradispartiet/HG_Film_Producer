@@ -99,14 +99,15 @@
     },
     {
       "development_id": "modernism_new_waves_alternative_movements",
-      "declared_status": 0,
+      "declared_status": 3,
       "priority": "P1",
       "axis_ids": [
         "aesthetics_and_form",
         "production_scale_studio_midbudget_microbudget_independent",
         "geography_and_transnational_production"
       ],
-      "required_evidence": "Exact scenarios must connect formal movements to concrete production scale, institutions, location practice, financing or labor rather than style labels alone."
+      "required_evidence": "Exact scenarios must connect formal movements to concrete production scale, institutions, location practice, financing or labor rather than style labels alone.",
+      "triangulation_basis": "The Cabinet of Dr. Caligari ties German Expressionism to Decla studio production, named design labor and painted architectural space; Nosferatu contrasts Prana-Film's multi-location production and real landscapes inside the Expressionist current; The Last Laugh connects Kammerspielfilm to UFA/Babelsberg organization and a collaborative mobile-camera system; Metropolis adds UFA's two-year monumental studio and effects production; Pandora's Box adds Nero-Film, Filmwerke Staaken and Pabst's Neue Sachlichkeit and socially critical realist countercurrent. Together the five exact cases triangulate formal movements across studio scale, location practice, institutions and collaborative labor rather than treating movement names as style labels."
     },
     {
       "development_id": "decolonial_transnational_historiography",
@@ -746,6 +747,63 @@
         "src/ui/data/scenarioProductionVerificationWings.ts"
       ],
       "rationale": "The verified Paramount case documents producer/scenario organization, multiple camera and effects specialists, military cooperation, actual aircraft, reconstructed battle landscapes and Paramount production/distribution. It therefore teaches large-scale studio labor/logistics and mass-audience spectacle without misclassifying its arranged music/effects presentation as the synchronized-sound transition."
+    },
+    {
+      "scenario_id": "scenario_the_cabinet_of_dr_caligari_1920",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts"
+      ],
+      "rationale": "The verified case connects German Expressionism to concrete Decla studio production, named design and cinematography labor and the constructed angular visual world rather than a style label alone. Deutsche Kinemathek also documents restoration from surviving camera-negative material, replacement of missing material and recovery of original intertitles and tinting, making material survival consequential to what can be taught."
+    },
+    {
+      "scenario_id": "scenario_nosferatu_1922",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts"
+      ],
+      "rationale": "The verified Prana-Film case places Nosferatu inside German Expressionism while documenting real production locations, Fritz Arno Wagner photography and Albin Grau's design; BFI explicitly contrasts its landscapes and architecture with a wholly painted studio world. This directly ties a formal movement to concrete location practice and production organization."
+    },
+    {
+      "scenario_id": "scenario_metropolis_1927",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSilentStudioSystemsBatch.ts"
+      ],
+      "rationale": "The verified UFA case ties Expressionist design and monumental form to a two-year studio production, Pommer/Lang/von Harbou, cinematography, design, miniature and Schüfftan effects labor. Its severe early recutting, three negatives, decades of reconstruction and Buenos Aires rediscovery also show preservation materially changing the recoverable film."
+    },
+    {
+      "scenario_id": "scenario_the_last_laugh_1924",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheLastLaugh.ts"
+      ],
+      "rationale": "The verified case connects Kammerspielfilm and image-led modernism to UFA/Babelsberg organization and the documented Pommer-Murnau-Mayer-Freund-Herlth/Röhrig collaboration. Freund's mobile-camera apparatus and subjective practice are therefore anchored to an institutional and labor system rather than credited as an isolated stylistic invention."
+    },
+    {
+      "scenario_id": "scenario_pandoras_box_1929",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPandorasBox.ts"
+      ],
+      "rationale": "The verified Nero-Film case anchors Pabst's Neue Sachlichkeit and socially critical realism to Seymour Nebenzahl's production, Filmwerke Staaken, Krampf, Andrejew/Heš and Louise Brooks's transatlantic casting. It supplies a documented late-Weimar countercurrent to Expressionism with concrete studio, labor and production context."
     }
   ],
   "candidate_admission_gate": {
