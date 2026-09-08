@@ -107,7 +107,7 @@
         "geography_and_transnational_production"
       ],
       "required_evidence": "Exact scenarios must connect formal movements to concrete production scale, institutions, location practice, financing or labor rather than style labels alone.",
-      "triangulation_basis": "The Cabinet of Dr. Caligari ties German Expressionism to Decla studio production, named design labor and painted architectural space; Nosferatu contrasts Prana-Film's multi-location production and real landscapes inside the Expressionist current; The Last Laugh connects Kammerspielfilm to UFA/Babelsberg organization and a collaborative mobile-camera system; Metropolis adds UFA's two-year monumental studio and effects production; Pandora's Box adds Nero-Film, Filmwerke Staaken and Pabst's Neue Sachlichkeit and socially critical realist countercurrent. Chapter 8 broadens this beyond the German cases: Cœur fidèle and The Smiling Madame Beudet tie French Impressionism to Pathé Consortium Cinéma and Film d'Art production with named collaborative camera, writing and producing labor; Un Chien Andalou adds a small family-financed Surrealist collaboration; Entr'acte adds a Ballets Suédois commission embedded in Relâche; and Napoléon adds unusually large specialist labor, multi-camera apparatus and Polyvision. Together the exact cases triangulate alternative movements across national context, studio and independent scale, commission and family financing, institutions, apparatus and collaborative labor rather than treating movement names as style labels."
+      "triangulation_basis": "The Cabinet of Dr. Caligari ties German Expressionism to Decla studio production, named design labor and painted architectural space; Nosferatu contrasts Prana-Film's multi-location production and real landscapes inside the Expressionist current; The Last Laugh connects Kammerspielfilm to UFA/Babelsberg organization and a collaborative mobile-camera system; Metropolis adds UFA's two-year monumental studio and effects production; Pandora's Box adds Nero-Film, Filmwerke Staaken and Pabst's Neue Sachlichkeit and socially critical realist countercurrent. Chapter 8 broadens this beyond the German cases: Cœur fidèle and The Smiling Madame Beudet tie French Impressionism to Pathé Consortium Cinéma and Film d'Art production with named collaborative camera, writing and producing labor; Un Chien Andalou adds a small family-financed Surrealist collaboration; Entr'acte adds a Ballets Suédois commission embedded in Relâche; and Napoléon adds unusually large specialist labor, multi-camera apparatus and Polyvision. Together the exact cases triangulate alternative movements across national context, studio and independent scale, commission and family financing, institutions, apparatus and collaborative labor rather than treating movement names as style labels. Chapter 9 adds complementary Soviet and Ukrainian montage production systems: Battleship Potemkin anchors Eisensteinian collision and temporal construction to Eduard Tisse's cinematography and deliberate revolutionary reconstruction; Mother contrasts Pudovkin's linkage model inside Mezhrabpom-Russ with named writing, camera and design labor; Man with a Movie Camera anchors Vertov's Kino-Eye and reflexive documentary method to Mikhail Kaufman's cinematography and Elizaveta Svilova's editing; Earth adds VUFKU's distinct Ukrainian production, distribution and education infrastructure; October adds an anniversary commission, Eisenstein/Aleksandrov collaboration and politically compelled recutting; Mr. West adds Kuleshov workshop pedagogy and transnational genre borrowing; and The Fall of the Romanov Dynasty adds Esfir Shub's archival-search and compilation labor inside an anniversary commission. Together the exact cases triangulate Soviet montage as competing, institutionally situated production practices rather than one generic editing style."
     },
     {
       "development_id": "decolonial_transnational_historiography",
@@ -299,7 +299,7 @@
         "institutions_and_industry_systems"
       ],
       "required_evidence": "Exact scenarios must demonstrate how preservation, restoration, archive access or material survival changes what film history can recover and teach.",
-      "triangulation_basis": "A Trip to the Moon documents rediscovery and image-by-image restoration of recovered colour material; Life of an American Fireman shows an original copyright paper print overturning a mistaken later cross-cut reconstruction; Attack on a China Mission shows rediscovered copies and archive reconstruction changing the apparent editing structure; The Story of the Kelly Gang adds fragmentary survival and reconstruction; Cabiria separates reconstructed 1914 material from Pastrone’s altered 1931 sound reissue; Afgrunden adds deteriorated surviving material and a key dance passage recovered from Swedish censorship holdings. Workers Leaving the Lumière Factory and Rescued by Rover retain additional surviving-version and replacement/re-shot evidence. Chapter 8 adds Napoléon's materially different 1927 Opéra and Apollo states, MGM export recuts, later sound re-edit and modern Grande Version reconstruction, while Entr'acte documents Clair's 1967 removals and a later restoration that reinstated first-version material from surviving elements."
+      "triangulation_basis": "A Trip to the Moon documents rediscovery and image-by-image restoration of recovered colour material; Life of an American Fireman shows an original copyright paper print overturning a mistaken later cross-cut reconstruction; Attack on a China Mission shows rediscovered copies and archive reconstruction changing the apparent editing structure; The Story of the Kelly Gang adds fragmentary survival and reconstruction; Cabiria separates reconstructed 1914 material from Pastrone’s altered 1931 sound reissue; Afgrunden adds deteriorated surviving material and a key dance passage recovered from Swedish censorship holdings. Workers Leaving the Lumière Factory and Rescued by Rover retain additional surviving-version and replacement/re-shot evidence. Chapter 8 adds Napoléon's materially different 1927 Opéra and Apollo states, MGM export recuts, later sound re-edit and modern Grande Version reconstruction, while Entr'acte documents Clair's 1967 removals and a later restoration that reinstated first-version material from surviving elements. Chapter 9 adds The Fall of the Romanov Dynasty, where Shub's two-month archival search, reduction of roughly 60,000 metres of source material to about 1,500 metres, and preservation of footage that might otherwise have been lost make archive access, selection and survival part of production authorship and of what later film history can recover."
     },
     {
       "development_id": "pandemic_shutdown_protocol_and_recovery",
@@ -863,6 +863,84 @@
         "src/ui/data/scenarioProductionVerificationSmilingMadameBeudet.ts"
       ],
       "rationale": "The verified case anchors Germaine Dulac's French Impressionist and explicitly feminist formal practice to Film d'Art - Vandal et Delac, named producers Charles Delac and Marcel Vandal, the Dulac/Obey adaptation and Maurice Forster/Paul Parguel cinematography. Subjective form is therefore tied to production company, adaptation and collaborative labor rather than credited as an isolated auteur style."
+    },
+    {
+      "scenario_id": "scenario_battleship_potemkin_1925",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts"
+      ],
+      "rationale": "The verified case anchors Eisensteinian collision montage and temporal expansion to Eduard Tisse's cinematography, a five-movement collective construction and deliberately staged revolutionary reconstruction. This makes Soviet montage legible through named collaborative labor and production practice rather than as a free-floating editing preset."
+    },
+    {
+      "scenario_id": "scenario_man_with_a_movie_camera_1929",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts"
+      ],
+      "rationale": "The verified Ukrainian SSR case ties Vertov's Kino-Eye and reflexive city-film method to Mikhail Kaufman's cinematography, Elizaveta Svilova's editing, split-screen and superimposition practice, making formal innovation a concrete collaborative production system rather than a style label."
+    },
+    {
+      "scenario_id": "scenario_mother_1926",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts"
+      ],
+      "rationale": "The verified Mezhrabpom-Russ case distinguishes Pudovkin's linkage model from Eisensteinian collision while documenting Nathan Zarkhi, Anatoli Golovna and Sergei Kozlovsky alongside Pudovkin. Performance-centered montage is therefore anchored to a production company and named writing, camera and design labor."
+    },
+    {
+      "scenario_id": "scenario_the_fall_of_the_romanov_dynasty_1927",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts"
+      ],
+      "rationale": "The verified Shub case documents a 1927 anniversary commission, a two-month archival search, Mark Tseitlin's research/intertitle collaboration and the transformation of roughly 60,000 metres of source material into about 1,500 metres. It maps compilation montage to concrete archival labor while also showing preservation and provenance directly shaping what historical footage survives and can be taught."
+    },
+    {
+      "scenario_id": "scenario_earth_1930",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts"
+      ],
+      "rationale": "The verified Dovzhenko case anchors lyrical montage and landscape-centered form to VUFKU, the distinct Ukrainian production, distribution and education infrastructure later dissolved under Moscow centralization. It therefore adds an institutionally specific Ukrainian counterpoint inside the broader Soviet field rather than treating Soviet cinema as uniformly Russian."
+    },
+    {
+      "scenario_id": "scenario_october_1928",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts"
+      ],
+      "rationale": "The verified Eisenstein/Aleksandrov case connects intellectual montage to a tenth-anniversary commission and documented political intervention requiring Trotsky references to be removed. Radical form is thus tied to a state-produced commission, collaborative authorship and political recutting rather than treated as autonomous aesthetics."
+    },
+    {
+      "scenario_id": "scenario_mr_west_bolsheviks_1924",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts"
+      ],
+      "rationale": "The verified Kuleshov case places constructive screen geography, physical action and montage inside Kuleshov's workshop pedagogy while documenting transnational borrowing from American slapstick and Griffith-era filmmaking. The case therefore links formal theory to workshop practice, performers and a concrete production-learning environment."
     }
   ],
   "candidate_admission_gate": {
