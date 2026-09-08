@@ -63,13 +63,13 @@ jobs:
           console.log(JSON.stringify({ reviews: contract.scenario_reviews.length, japan: 3, china: 3, india: 0, status: contract.status }, null, 2));
           NODE
 
-      - name: Full v0.1 verification
-        run: npm run verify:v0.1
-
-      - name: Remove temporary materializer
+      - name: Remove temporary artifacts before full verification
         run: |
           rm scripts/TEMP-materialize-chapter-ten-representation.mjs
           rm .github/workflows/TEMP-chapter-ten-representation-materialize.yml
+
+      - name: Full v0.1 verification
+        run: npm run verify:v0.1
 
       - name: Commit permanent audit diff
         shell: bash
