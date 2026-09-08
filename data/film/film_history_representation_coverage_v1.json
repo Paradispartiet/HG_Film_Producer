@@ -66,7 +66,11 @@
       "development_id": "early_cinema_apparatus_projection_programming",
       "declared_status": 3,
       "priority": "P1",
-      "axis_ids": ["technology_and_format", "institutions_and_industry_systems", "distribution_exhibition_and_audience_behavior"],
+      "axis_ids": [
+        "technology_and_format",
+        "institutions_and_industry_systems",
+        "distribution_exhibition_and_audience_behavior"
+      ],
       "required_evidence": "Exact early-cinema scenarios must be mapped to apparatus, capture/projection, programming or exhibition evidence before this historical strength is credited in the 613 audit.",
       "triangulation_basis": "Blacksmith Scene and Workers Leaving the Lumière Factory contrast the Edison Kinetograph/Kinetoscope laboratory-viewing system with the portable Lumière Cinématographe projection and programme system; The Corbett–Fitzsimmons Fight adds proprietary Veriscope capture/projection at event scale, Grandma's Reading Glass adds Alfred Darling camera and masked analytical-view capture, while A Trip to the Moon and The Great Train Robbery add camera-transformation and moving-location capture practices."
     },
@@ -74,49 +78,79 @@
       "development_id": "silent_sound_transition",
       "declared_status": 0,
       "priority": "P1",
-      "axis_ids": ["technology_and_format", "institutions_and_industry_systems", "distribution_exhibition_and_audience_behavior"],
+      "axis_ids": [
+        "technology_and_format",
+        "institutions_and_industry_systems",
+        "distribution_exhibition_and_audience_behavior"
+      ],
       "required_evidence": "Exact scenarios must distinguish synchronized sound systems, production conversion and exhibition transition rather than treating sound as one global switch."
     },
     {
       "development_id": "classical_hollywood_studio_system",
       "declared_status": 0,
       "priority": "P1",
-      "axis_ids": ["production_economics_and_organization", "institutions_and_industry_systems", "labor_crew_and_union_history"],
+      "axis_ids": [
+        "production_economics_and_organization",
+        "institutions_and_industry_systems",
+        "labor_crew_and_union_history"
+      ],
       "required_evidence": "Exact scenarios must teach studio organization, labor, financing, production management or vertical industrial structure with source-bound evidence."
     },
     {
       "development_id": "modernism_new_waves_alternative_movements",
       "declared_status": 0,
       "priority": "P1",
-      "axis_ids": ["aesthetics_and_form", "production_scale_studio_midbudget_microbudget_independent", "geography_and_transnational_production"],
+      "axis_ids": [
+        "aesthetics_and_form",
+        "production_scale_studio_midbudget_microbudget_independent",
+        "geography_and_transnational_production"
+      ],
       "required_evidence": "Exact scenarios must connect formal movements to concrete production scale, institutions, location practice, financing or labor rather than style labels alone."
     },
     {
       "development_id": "decolonial_transnational_historiography",
-      "declared_status": 1,
+      "declared_status": 3,
       "priority": "P1",
-      "axis_ids": ["geography_and_transnational_production", "institutions_and_industry_systems", "regulation_power_finance_and_coproduction"],
-      "required_evidence": "Exact scenarios must document production, financing, circulation or recovery histories across colonial, postcolonial or transnational systems."
+      "axis_ids": [
+        "geography_and_transnational_production",
+        "institutions_and_industry_systems",
+        "regulation_power_finance_and_coproduction"
+      ],
+      "required_evidence": "Exact scenarios must document production, financing, circulation or recovery histories across colonial, postcolonial or transnational systems.",
+      "triangulation_basis": "Queen Elizabeth separates French Le Film d’Art production from United States rights, financing and presentation; Cabiria adds Turin-based Itala Film spectacle with documented worldwide success and export ambition; Atlantis adds Nordisk’s internationally oriented feature production and a Russian-market alternate ending. Together these cases triangulate transnational production, rights/circulation and market-specific versioning across France, Italy, Denmark, the United States and Russia without treating nationality alone as coverage."
     },
     {
       "development_id": "nordic_norwegian_silent_and_institution_history",
-      "declared_status": 0,
+      "declared_status": 3,
       "priority": "P1",
-      "axis_ids": ["institutions_and_industry_systems", "geography_and_transnational_production", "distribution_exhibition_and_audience_behavior"],
-      "required_evidence": "Exact Nordic or Norwegian scenarios must be mapped to companies, export, labor, exhibition or film institutions with inspectable production evidence."
+      "axis_ids": [
+        "institutions_and_industry_systems",
+        "geography_and_transnational_production",
+        "distribution_exhibition_and_audience_behavior"
+      ],
+      "required_evidence": "Exact Nordic or Norwegian scenarios must be mapped to companies, export, labor, exhibition or film institutions with inspectable production evidence.",
+      "triangulation_basis": "Afgrunden documents a compact Kosmorama production around Urban Gad, Alfred Lind and Asta Nielsen, including an eight-day Danish shoot and a star identity that travelled internationally; Atlantis contrasts this with Nordisk Films Kompagni’s biggest and most ambitious prewar feature, longer-film infrastructure, international orientation and market-specific Russian ending. The two exact Danish cases triangulate company scale, workflow, star circulation and export/versioning inside Nordic silent cinema."
     },
     {
       "development_id": "animation_technique_labor_and_delivery_history",
       "declared_status": 0,
       "priority": "P1",
-      "axis_ids": ["technology_and_format", "labor_crew_and_union_history", "distribution_exhibition_and_audience_behavior"],
+      "axis_ids": [
+        "technology_and_format",
+        "labor_crew_and_union_history",
+        "distribution_exhibition_and_audience_behavior"
+      ],
       "required_evidence": "Exact animation scenarios must teach technique, labor organization, camera/software pipeline or delivery history rather than animation as a single medium category."
     },
     {
       "development_id": "exhibition_and_viewing_history",
       "declared_status": 3,
       "priority": "P1",
-      "axis_ids": ["distribution_exhibition_and_audience_behavior", "institutions_and_industry_systems", "technology_and_format"],
+      "axis_ids": [
+        "distribution_exhibition_and_audience_behavior",
+        "institutions_and_industry_systems",
+        "technology_and_format"
+      ],
       "required_evidence": "Exact scenarios must map production or circulation evidence to programming, venues, projection, audience practice or changing exhibition systems.",
       "triangulation_basis": "Blacksmith Scene and Workers Leaving the Lumière Factory establish individual-viewing and projected-programme systems; The Corbett–Fitzsimmons Fight adds proprietary projection and territorial exhibition; Brown's Atlas Works adds showman commissioning and local paying-audience strategy; The Great Train Robbery adds exhibitor agency; The Story of the Kelly Gang adds multi-reel touring, lecturer/live-effects presentation and feature-scale programme pressure; Queen Elizabeth adds imported-feature rights and presentation; Traffic in Souls adds simultaneous feature exhibition across twenty New York theatres."
     },
@@ -124,99 +158,155 @@
       "development_id": "modern_popular_commercial_cinema_as_industry",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["production_economics_and_organization", "genre_and_popular_cinema", "distribution_exhibition_and_audience_behavior"],
+      "axis_ids": [
+        "production_economics_and_organization",
+        "genre_and_popular_cinema",
+        "distribution_exhibition_and_audience_behavior"
+      ],
       "required_evidence": "Existing scenarios must be tested for mass-audience, blockbuster, franchise and commercial mid-budget production, distribution and audience-system evidence."
     },
     {
       "development_id": "genre_industries_horror_action_comedy_romance_exploitation_local_popular",
-      "declared_status": 2,
+      "declared_status": 3,
       "priority": "P0",
-      "axis_ids": ["genre_and_popular_cinema", "production_economics_and_organization", "geography_and_transnational_production"],
-      "required_evidence": "Complementary exact scenarios must show popular genres as distinct production and distribution systems, not merely aesthetic categories."
+      "axis_ids": [
+        "genre_and_popular_cinema",
+        "production_economics_and_organization",
+        "geography_and_transnational_production"
+      ],
+      "required_evidence": "Complementary exact scenarios must show popular genres as distinct production and distribution systems, not merely aesthetic categories.",
+      "triangulation_basis": "Histoire d’un crime and Traffic in Souls establish French Pathé crime production and American IMP/Universal sensational-feature economics; Fantômas adds Gaumont recurring crime-cycle production with stable characters, adaptation and distributor infrastructure; Cabiria adds a distinct Italian historical-epic production system at export scale. The mapped cases now triangulate genre industry across crime, sensational melodrama and epic spectacle, multiple companies and several national production/distribution systems."
     },
     {
       "development_id": "india_modern_industry_system",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["institutions_and_industry_systems", "geography_and_transnational_production", "distribution_exhibition_and_audience_behavior"],
+      "axis_ids": [
+        "institutions_and_industry_systems",
+        "geography_and_transnational_production",
+        "distribution_exhibition_and_audience_behavior"
+      ],
       "required_evidence": "Exact modern Indian scenarios must teach language markets, financing, star or distribution economics, industrial organization or digital transition."
     },
     {
       "development_id": "china_industry_system",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["institutions_and_industry_systems", "geography_and_transnational_production", "regulation_power_finance_and_coproduction"],
+      "axis_ids": [
+        "institutions_and_industry_systems",
+        "geography_and_transnational_production",
+        "regulation_power_finance_and_coproduction"
+      ],
       "required_evidence": "Exact Mainland Chinese scenarios must teach industrial institutions, regulation, financing, co-production or distribution systems with title-specific production evidence."
     },
     {
       "development_id": "nigeria_nollywood_industry_system",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["institutions_and_industry_systems", "production_scale_studio_midbudget_microbudget_independent", "distribution_exhibition_and_audience_behavior"],
+      "axis_ids": [
+        "institutions_and_industry_systems",
+        "production_scale_studio_midbudget_microbudget_independent",
+        "distribution_exhibition_and_audience_behavior"
+      ],
       "required_evidence": "Exact Nigerian or Nollywood scenarios must teach production scale, financing, video/digital infrastructure, distribution or audience systems."
     },
     {
       "development_id": "south_korea_industry_system",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["institutions_and_industry_systems", "production_economics_and_organization", "distribution_exhibition_and_audience_behavior"],
+      "axis_ids": [
+        "institutions_and_industry_systems",
+        "production_economics_and_organization",
+        "distribution_exhibition_and_audience_behavior"
+      ],
       "required_evidence": "Exact South Korean scenarios must teach modern industrial organization, financing, exhibition, distribution or export systems rather than national representation alone."
     },
     {
       "development_id": "japan_industry_system",
       "declared_status": 0,
       "priority": "P1",
-      "axis_ids": ["institutions_and_industry_systems", "genre_and_popular_cinema", "geography_and_transnational_production"],
+      "axis_ids": [
+        "institutions_and_industry_systems",
+        "genre_and_popular_cinema",
+        "geography_and_transnational_production"
+      ],
       "required_evidence": "Exact Japanese scenarios must teach modern studio, independent, genre, financing, labor or distribution systems with production evidence."
     },
     {
       "development_id": "latin_america_beyond_single_movement",
       "declared_status": 0,
       "priority": "P1",
-      "axis_ids": ["institutions_and_industry_systems", "geography_and_transnational_production", "regulation_power_finance_and_coproduction"],
+      "axis_ids": [
+        "institutions_and_industry_systems",
+        "geography_and_transnational_production",
+        "regulation_power_finance_and_coproduction"
+      ],
       "required_evidence": "Multiple exact Latin American scenarios must show distinct industry, financing, co-production or distribution systems beyond a single movement or country token."
     },
     {
       "development_id": "mena_industry_systems",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["institutions_and_industry_systems", "geography_and_transnational_production", "regulation_power_finance_and_coproduction"],
+      "axis_ids": [
+        "institutions_and_industry_systems",
+        "geography_and_transnational_production",
+        "regulation_power_finance_and_coproduction"
+      ],
       "required_evidence": "Exact MENA scenarios must teach concrete regional production, censorship/regulation, financing, co-production, labor or distribution systems."
     },
     {
       "development_id": "microbudget_digital_workflows_and_independent_distribution",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["technology_and_format", "production_scale_studio_midbudget_microbudget_independent", "distribution_exhibition_and_audience_behavior"],
+      "axis_ids": [
+        "technology_and_format",
+        "production_scale_studio_midbudget_microbudget_independent",
+        "distribution_exhibition_and_audience_behavior"
+      ],
       "required_evidence": "Exact scenarios must connect low-cost digital capture/post tools, microbudget organization and independent or self-directed distribution."
     },
     {
       "development_id": "streaming_native_feature_production_economics",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["production_economics_and_organization", "institutions_and_industry_systems", "distribution_exhibition_and_audience_behavior"],
+      "axis_ids": [
+        "production_economics_and_organization",
+        "institutions_and_industry_systems",
+        "distribution_exhibition_and_audience_behavior"
+      ],
       "required_evidence": "Exact scenarios must document platform commissioning, financing, rights, delivery and distribution economics for streaming-native feature production."
     },
     {
       "development_id": "labor_union_vfx_outsourcing_intimacy_coordination_post_history",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["labor_crew_and_union_history", "production_economics_and_organization", "technology_and_format"],
+      "axis_ids": [
+        "labor_crew_and_union_history",
+        "production_economics_and_organization",
+        "technology_and_format"
+      ],
       "required_evidence": "Exact scenarios must map newer labor history across unions, VFX vendors or outsourcing, emerging crew roles, intimacy coordination and post-production organization."
     },
     {
       "development_id": "preservation_restoration_material_survival_as_history_maker",
       "declared_status": 3,
       "priority": "P1",
-      "axis_ids": ["preservation_restoration_and_material_survival", "institutions_and_industry_systems"],
+      "axis_ids": [
+        "preservation_restoration_and_material_survival",
+        "institutions_and_industry_systems"
+      ],
       "required_evidence": "Exact scenarios must demonstrate how preservation, restoration, archive access or material survival changes what film history can recover and teach.",
-      "triangulation_basis": "A Trip to the Moon documents rediscovery and image-by-image restoration of recovered colour material; Life of an American Fireman shows an original copyright paper print overturning a mistaken later cross-cut reconstruction; Attack on a China Mission shows rediscovered copies and later archive reconstruction changing the apparent editing structure; The Story of the Kelly Gang adds fragmentary survival and modern reconstruction/restoration of a lost complete feature; Workers Leaving the Lumière Factory and Rescued by Rover add surviving-version and replacement/re-shot histories."
+      "triangulation_basis": "A Trip to the Moon documents rediscovery and image-by-image restoration of recovered colour material; Life of an American Fireman shows an original copyright paper print overturning a mistaken later cross-cut reconstruction; Attack on a China Mission shows rediscovered copies and archive reconstruction changing the apparent editing structure; The Story of the Kelly Gang adds fragmentary survival and reconstruction; Cabiria separates reconstructed 1914 material from Pastrone’s altered 1931 sound reissue; Afgrunden adds deteriorated surviving material and a key dance passage recovered from Swedish censorship holdings. Workers Leaving the Lumière Factory and Rescued by Rover retain additional surviving-version and replacement/re-shot evidence."
     },
     {
       "development_id": "pandemic_shutdown_protocol_and_recovery",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["labor_crew_and_union_history", "production_economics_and_organization", "regulation_power_finance_and_coproduction"],
+      "axis_ids": [
+        "labor_crew_and_union_history",
+        "production_economics_and_organization",
+        "regulation_power_finance_and_coproduction"
+      ],
       "chapter": 19,
       "required_evidence": "Production shutdown or restart rules, insurance or protocol effects, and schedule, budget or crew consequences mapped to exact scenarios."
     },
@@ -224,7 +314,10 @@
       "development_id": "theatrical_windows_and_release_strategy",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["distribution_exhibition_and_audience_behavior", "production_economics_and_organization"],
+      "axis_ids": [
+        "distribution_exhibition_and_audience_behavior",
+        "production_economics_and_organization"
+      ],
       "chapter": 19,
       "required_evidence": "Cinema/platform window decisions with territory, distributor or platform context and a demonstrated production-economic consequence."
     },
@@ -232,7 +325,11 @@
       "development_id": "streaming_native_feature_economics",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["production_economics_and_organization", "institutions_and_industry_systems", "distribution_exhibition_and_audience_behavior"],
+      "axis_ids": [
+        "production_economics_and_organization",
+        "institutions_and_industry_systems",
+        "distribution_exhibition_and_audience_behavior"
+      ],
       "chapter": 19,
       "required_evidence": "Commission, finance, rights and delivery model for an exact feature scenario made primarily for a platform."
     },
@@ -240,7 +337,11 @@
       "development_id": "virtual_production_and_in_camera_vfx",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["technology_and_format", "labor_crew_and_union_history", "production_economics_and_organization"],
+      "axis_ids": [
+        "technology_and_format",
+        "labor_crew_and_union_history",
+        "production_economics_and_organization"
+      ],
       "chapter": 19,
       "required_evidence": "Exact production scenarios tying LED or in-camera visual-effects workflows to departments, schedule, budget or post pipeline."
     },
@@ -248,7 +349,11 @@
       "development_id": "vfx_labor_outsourcing_and_post_pipeline",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["labor_crew_and_union_history", "technology_and_format", "geography_and_transnational_production"],
+      "axis_ids": [
+        "labor_crew_and_union_history",
+        "technology_and_format",
+        "geography_and_transnational_production"
+      ],
       "chapter": 19,
       "required_evidence": "Vendor or crew geography, labor organization and post/VFX workflow documented as historical production evidence in exact scenarios."
     },
@@ -256,7 +361,11 @@
       "development_id": "union_contracts_and_industrial_action",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["labor_crew_and_union_history", "institutions_and_industry_systems", "production_economics_and_organization"],
+      "axis_ids": [
+        "labor_crew_and_union_history",
+        "institutions_and_industry_systems",
+        "production_economics_and_organization"
+      ],
       "chapter": 19,
       "required_evidence": "Collective bargaining, strike or contract changes with demonstrated consequences for exact production scenarios."
     },
@@ -264,7 +373,10 @@
       "development_id": "intimacy_coordination_and_new_crew_roles",
       "declared_status": 0,
       "priority": "P1",
-      "axis_ids": ["labor_crew_and_union_history", "production_economics_and_organization"],
+      "axis_ids": [
+        "labor_crew_and_union_history",
+        "production_economics_and_organization"
+      ],
       "chapter": 19,
       "required_evidence": "Documented role or protocol adoption and its effect on rehearsal, blocking, consent or production organization in exact scenarios."
     },
@@ -272,7 +384,11 @@
       "development_id": "generative_ai_and_machine_learning_in_production_or_post",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["technology_and_format", "labor_crew_and_union_history", "regulation_power_finance_and_coproduction"],
+      "axis_ids": [
+        "technology_and_format",
+        "labor_crew_and_union_history",
+        "regulation_power_finance_and_coproduction"
+      ],
       "chapter": 19,
       "required_evidence": "Specific bounded use or non-use, rights or labor implications and inspectable production evidence in exact scenarios."
     },
@@ -280,7 +396,10 @@
       "development_id": "sustainable_production_and_carbon_constraints",
       "declared_status": 0,
       "priority": "P1",
-      "axis_ids": ["accessibility_sustainability_and_environmental_production", "production_economics_and_organization"],
+      "axis_ids": [
+        "accessibility_sustainability_and_environmental_production",
+        "production_economics_and_organization"
+      ],
       "chapter": 19,
       "required_evidence": "Measured or rule-bound production changes affecting travel, energy, materials, sets or procurement in exact scenarios."
     },
@@ -288,7 +407,11 @@
       "development_id": "regional_incentives_studios_and_production_infrastructure",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["regulation_power_finance_and_coproduction", "institutions_and_industry_systems", "geography_and_transnational_production"],
+      "axis_ids": [
+        "regulation_power_finance_and_coproduction",
+        "institutions_and_industry_systems",
+        "geography_and_transnational_production"
+      ],
       "chapter": 19,
       "required_evidence": "Territorial incentives or infrastructure choices linked to location, crew base, budget or vendor ecosystem in exact scenarios."
     },
@@ -296,7 +419,11 @@
       "development_id": "microbudget_digital_and_self_distribution",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["technology_and_format", "production_scale_studio_midbudget_microbudget_independent", "distribution_exhibition_and_audience_behavior"],
+      "axis_ids": [
+        "technology_and_format",
+        "production_scale_studio_midbudget_microbudget_independent",
+        "distribution_exhibition_and_audience_behavior"
+      ],
       "chapter": 19,
       "required_evidence": "Low-cost capture or post plus financing and distribution outside conventional studio or platform commissioning, mapped to exact scenarios."
     },
@@ -304,7 +431,11 @@
       "development_id": "franchise_blockbuster_and_mass_audience_industrial_model",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["production_economics_and_organization", "genre_and_popular_cinema", "distribution_exhibition_and_audience_behavior"],
+      "axis_ids": [
+        "production_economics_and_organization",
+        "genre_and_popular_cinema",
+        "distribution_exhibition_and_audience_behavior"
+      ],
       "chapter": 19,
       "required_evidence": "Tentpole or franchise production organization, format or exhibition strategy and audience or distribution consequences in exact scenarios."
     },
@@ -312,7 +443,11 @@
       "development_id": "contemporary_popular_genres_as_industries",
       "declared_status": 0,
       "priority": "P0",
-      "axis_ids": ["genre_and_popular_cinema", "production_economics_and_organization", "geography_and_transnational_production"],
+      "axis_ids": [
+        "genre_and_popular_cinema",
+        "production_economics_and_organization",
+        "geography_and_transnational_production"
+      ],
       "chapter": 19,
       "required_evidence": "Complementary horror, action, comedy, romance or local-popular exact scenarios whose significance is industrial rather than merely aesthetic."
     }
@@ -321,15 +456,26 @@
     {
       "scenario_id": "scenario_blacksmith_scene_1893",
       "review_state": "MAPPED",
-      "development_ids": ["early_cinema_apparatus_projection_programming", "exhibition_and_viewing_history"],
-      "evidence_paths": ["docs/BLACKSMITH_SCENE_1893_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "early_cinema_apparatus_projection_programming",
+        "exhibition_and_viewing_history"
+      ],
+      "evidence_paths": [
+        "docs/BLACKSMITH_SCENE_1893_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified case directly couples Kinetograph capture, Kinetoscope viewing, Black Maria studio architecture and the 1893 Brooklyn demonstration, providing exact apparatus and exhibition-system evidence."
     },
     {
       "scenario_id": "scenario_workers_leaving_lumiere_factory_1895",
       "review_state": "MAPPED",
-      "development_ids": ["early_cinema_apparatus_projection_programming", "exhibition_and_viewing_history", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["docs/WORKERS_LEAVING_LUMIERE_FACTORY_1895_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "early_cinema_apparatus_projection_programming",
+        "exhibition_and_viewing_history",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "docs/WORKERS_LEAVING_LUMIERE_FACTORY_1895_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified case documents portable Cinématographe production, March and December 1895 projection/programming history and distinct surviving filmed versions whose differences must remain visible in production history."
     },
     {
@@ -341,43 +487,70 @@
     {
       "scenario_id": "scenario_a_trip_to_the_moon_1902",
       "review_state": "MAPPED",
-      "development_ids": ["early_cinema_apparatus_projection_programming", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts"],
+      "development_ids": [
+        "early_cinema_apparatus_projection_programming",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts"
+      ],
       "rationale": "The verified record documents Méliès's glass-studio camera system and repeatable stoppage, double-exposure and forced-perspective capture practices, plus rediscovery and image-by-image restoration of recovered colour material."
     },
     {
       "scenario_id": "scenario_life_of_an_american_fireman_1903",
       "review_state": "MAPPED",
-      "development_ids": ["preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["docs/LIFE_OF_AN_AMERICAN_FIREMAN_1903_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "docs/LIFE_OF_AN_AMERICAN_FIREMAN_1903_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The Library of Congress copyright paper print changed the accepted historical account by proving that a later cross-cut re-edit was not Porter's original 1903 construction, directly demonstrating archive survival as a history-making force."
     },
     {
       "scenario_id": "scenario_the_great_train_robbery_1903",
       "review_state": "MAPPED",
-      "development_ids": ["early_cinema_apparatus_projection_programming", "exhibition_and_viewing_history"],
-      "evidence_paths": ["docs/THE_GREAT_TRAIN_ROBBERY_1903_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "early_cinema_apparatus_projection_programming",
+        "exhibition_and_viewing_history"
+      ],
+      "evidence_paths": [
+        "docs/THE_GREAT_TRAIN_ROBBERY_1903_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified case provides exact early capture evidence through studio/location production, moving-train photography and double exposure, while its flexible direct-address bandit shot documents exhibitor agency over placement within the projected programme."
     },
     {
       "scenario_id": "scenario_rescued_by_rover_1905",
       "review_state": "MAPPED",
-      "development_ids": ["preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["docs/RESCUED_BY_ROVER_1905_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "docs/RESCUED_BY_ROVER_1905_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified case makes replacement and re-shot version history explicit: exceptional demand exhausted early negatives or prints and required remaking, so material survival and version differences directly affect reconstruction of the canonical case."
     },
     {
       "scenario_id": "scenario_the_corbett_fitzsimmons_fight_1897",
       "review_state": "MAPPED",
-      "development_ids": ["early_cinema_apparatus_projection_programming", "exhibition_and_viewing_history"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationCorbettFitzsimmons.ts"],
+      "development_ids": [
+        "early_cinema_apparatus_projection_programming",
+        "exhibition_and_viewing_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCorbettFitzsimmons.ts"
+      ],
       "rationale": "The verified case ties three-camera Veriscope capture to a proprietary projector requirement, a New York premiere, live expert commentary and territorial exhibition, directly joining apparatus, projection and circulation as one event-cinema system."
     },
     {
       "scenario_id": "scenario_employees_leaving_browns_atlas_works_sheffield_1901",
       "review_state": "MAPPED",
-      "development_ids": ["exhibition_and_viewing_history"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationBrownsAtlasWorks.ts"],
+      "development_ids": [
+        "exhibition_and_viewing_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBrownsAtlasWorks.ts"
+      ],
       "rationale": "The verified case documents showman commissioning, factory-gate staging and a local-recognition business model in which filmed communities became paying fairground or music-hall audiences, directly connecting production to exhibition strategy."
     },
     {
@@ -389,22 +562,34 @@
     {
       "scenario_id": "scenario_grandmas_reading_glass_1900",
       "review_state": "MAPPED",
-      "development_ids": ["early_cinema_apparatus_projection_programming"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationGrandmasReadingGlass.ts"],
+      "development_ids": [
+        "early_cinema_apparatus_projection_programming"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationGrandmasReadingGlass.ts"
+      ],
       "rationale": "The verified case connects G. A. Smith's Brighton production to Alfred Darling camera apparatus and circularly masked analytical inserts, so capture technology is directly tied to a specific early production method without turning the film into a single-inventor POV myth."
     },
     {
       "scenario_id": "scenario_attack_on_a_china_mission_bluejackets_to_the_rescue_1900",
       "review_state": "MAPPED",
-      "development_ids": ["preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationAttackChinaMission.ts"],
+      "development_ids": [
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAttackChinaMission.ts"
+      ],
       "rationale": "Peer-reviewed artefact research shows that rediscovered copies and a later reconstructed archive version can materially change the apparent editing structure, so provenance and reconstruction uncertainty directly alter what film history can recover and teach."
     },
     {
       "scenario_id": "scenario_histoire_d_un_crime_1901",
       "review_state": "MAPPED",
-      "development_ids": ["genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["docs/HISTOIRE_D_UN_CRIME_1901_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "docs/HISTOIRE_D_UN_CRIME_1901_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified Pathé case links crime fiction to Zecca's organized production leadership, differentiated genre production, longer footage, production-cost and sales testimony and public success. This is concrete genre-industry evidence, but one early French crime case is insufficient for broad genre-system coverage."
     },
     {
@@ -416,23 +601,86 @@
     {
       "scenario_id": "scenario_the_story_of_the_kelly_gang_1906",
       "review_state": "MAPPED",
-      "development_ids": ["exhibition_and_viewing_history", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["docs/THE_STORY_OF_THE_KELLY_GANG_1906_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "exhibition_and_viewing_history",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "docs/THE_STORY_OF_THE_KELLY_GANG_1906_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified case ties five-reel feature scale to producer-exhibitor organization, touring circulation, lecturer/live-effects presentation and changed programme demands, while its fragmentary survival and modern reconstruction make the distinction between surviving evidence and the lost complete original historically consequential."
     },
     {
       "scenario_id": "scenario_queen_elizabeth_1912",
       "review_state": "MAPPED",
-      "development_ids": ["decolonial_transnational_historiography", "exhibition_and_viewing_history"],
-      "evidence_paths": ["docs/QUEEN_ELIZABETH_1912_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "decolonial_transnational_historiography",
+        "exhibition_and_viewing_history"
+      ],
+      "evidence_paths": [
+        "docs/QUEEN_ELIZABETH_1912_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified case separates French Le Film d'Art production from Adolph Zukor's United States rights, financing and presentation role, providing exact transnational production/circulation evidence and imported-feature exhibition history. One France–United States prestige-feature case is not broad enough to close the combined decolonial/transnational row, so that development remains weak."
     },
     {
       "scenario_id": "scenario_traffic_in_souls_1913",
       "review_state": "MAPPED",
-      "development_ids": ["exhibition_and_viewing_history", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["docs/TRAFFIC_IN_SOULS_1913_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "exhibition_and_viewing_history",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "docs/TRAFFIC_IN_SOULS_1913_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified case distinguishes IMP production from Universal distribution and documents a low-cost contemporary sensational feature, real New York locations, six-reel completion, strong returns and simultaneous exhibition in twenty New York theatres. Together with the Pathé crime case, this supplies exact industrial genre evidence sufficient for coverage, but not the broader genre/geography triangulation required for status 3."
+    },
+    {
+      "scenario_id": "scenario_fantomas_1913",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFantomas.ts"
+      ],
+      "rationale": "The verified Gaumont case documents a five-film recurring crime cycle with Feuillade, Souvestre–Allain adaptation, René Navarre and a stable recurring ensemble, plus Comptoir Ciné-Location distribution evidence. This makes recurring popular crime production and return-audience continuity an exact company/genre system rather than a style label."
+    },
+    {
+      "scenario_id": "scenario_cabiria_1914",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "decolonial_transnational_historiography",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCabiria.ts"
+      ],
+      "rationale": "The verified Itala Film case joins Turin-based feature-scale epic production, a multi-person cinematography/effects system, original music and documented worldwide success/export ambition. Its reconstructed 1914 edition and separately restored 1931 sound reissue also make version recovery and preservation history explicit rather than collapsing them into one master."
+    },
+    {
+      "scenario_id": "scenario_afgrunden_1910",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "nordic_norwegian_silent_and_institution_history",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAfgrunden.ts"
+      ],
+      "rationale": "The verified Danish case identifies Kosmorama production, an eight-day shoot, Copenhagen/Frederiksberg locations, 35 mm silent format and Asta Nielsen’s internationally travelling star breakthrough. The archival record also documents chemical deterioration and dance-scene material recovered from Swedish censorship holdings, directly linking Nordic production history to material survival."
+    },
+    {
+      "scenario_id": "scenario_atlantis_1913",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "decolonial_transnational_historiography",
+        "nordic_norwegian_silent_and_institution_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAtlantis.ts"
+      ],
+      "rationale": "The verified Nordisk case documents the company’s biggest and most ambitious prewar feature, 2280 metres of 35 mm production, international orientation and two market-specific endings including an unhappy Russian-market version. This is exact Nordic institutional/export evidence and a concrete transnational versioning strategy."
     }
   ],
   "candidate_admission_gate": {
