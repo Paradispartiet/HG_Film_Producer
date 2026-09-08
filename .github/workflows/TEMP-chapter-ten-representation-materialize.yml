@@ -1,0 +1,86 @@
+name: TEMP materialize Chapter 10 representation
+
+on:
+  push:
+    branches: [audit/chapter-10-representation]
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+        with:
+          ref: audit/chapter-10-representation
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Materialize Chapter 10 representation audit
+        run: node scripts/TEMP-materialize-chapter-ten-representation.mjs
+
+      - name: Fail-closed representation audit
+        run: node scripts/film-history-representation-coverage-audit-v1.mjs
+
+      - name: Assert Chapter 10 representation contract
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const path = 'data/film/film_history_representation_coverage_v1.json';
+          const contract = JSON.parse(readFileSync(path, 'utf8'));
+          const expected = [
+            'scenario_a_page_of_madness_1926',
+            'scenario_laborers_love_1922',
+            'scenario_a_throw_of_dice_1929',
+            'scenario_growth_of_the_soil_1921',
+            'scenario_orochi_1925',
+            'scenario_the_red_heroine_1929',
+            'scenario_haxan_1922',
+            'scenario_afgrunden_1910',
+            'scenario_the_phantom_carriage_1921'
+          ];
+          const reviews = new Map(contract.scenario_reviews.map((review) => [review.scenario_id, review]));
+          if (contract.scenario_reviews.length !== 52) throw new Error(`expected 52 reviews, found ${contract.scenario_reviews.length}`);
+          for (const id of expected) if (!reviews.has(id)) throw new Error(`missing Chapter 10 review: ${id}`);
+          const rows = new Map(contract.development_matrix.map((row) => [row.development_id, row]));
+          if (rows.get('japan_industry_system')?.declared_status !== 3) throw new Error('Japan industry score must be 3');
+          if (rows.get('china_industry_system')?.declared_status !== 3) throw new Error('China industry score must be 3');
+          if (rows.get('india_modern_industry_system')?.declared_status !== 0) throw new Error('modern India score must remain 0');
+          if (contract.status !== 'OPEN_GAPS_FAIL_CLOSED') throw new Error('overall status must remain fail-closed');
+          if (contract.closure_contract?.selection_may_be_called_representationally_audited !== false) throw new Error('closure flag must remain false');
+          console.log(JSON.stringify({ reviews: contract.scenario_reviews.length, japan: 3, china: 3, india: 0, status: contract.status }, null, 2));
+          NODE
+
+      - name: Full v0.1 verification
+        run: npm run verify:v0.1
+
+      - name: Remove temporary materializer
+        run: |
+          rm scripts/TEMP-materialize-chapter-ten-representation.mjs
+          rm .github/workflows/TEMP-chapter-ten-representation-materialize.yml
+
+      - name: Commit permanent audit diff
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          test "$(git diff --cached --name-only | wc -l)" -eq 3
+          test "$(git diff --cached --name-only | grep -Fx 'data/film/film_history_representation_coverage_v1.json' | wc -l)" -eq 1
+          test "$(git diff --cached --name-only | grep -Fx 'scripts/TEMP-materialize-chapter-ten-representation.mjs' | wc -l)" -eq 1
+          test "$(git diff --cached --name-only | grep -Fx '.github/workflows/TEMP-chapter-ten-representation-materialize.yml' | wc -l)" -eq 1
+          git commit -m "Audit Chapter 10 representation coverage"
+          git push origin HEAD:audit/chapter-10-representation
