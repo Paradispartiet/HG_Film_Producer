@@ -1148,6 +1148,131 @@
       "development_ids": ["modernism_new_waves_alternative_movements"],
       "evidence_paths": ["src/ui/data/scenarioProductionVerificationAManEscaped.ts"],
       "rationale": "The verified S.N.E.G./Gaumont and Nouvelles Éditions de Films case documents Devigny-based historical research, real Montluc and studio reconstruction, largely nonprofessional models, a fixed 50 mm lens practice, precise object-centered repetition and studio-rerecorded dialogue/offscreen sound. It anchors Bresson's postwar alternative form to exact production organization and workflow rather than auteur style alone."
+    },
+    {
+      "scenario_id": "scenario_hiroshima_mon_amour_1959",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts"],
+      "rationale": "The verified France-Japan case grows from a documentary commission into a Duras-scripted fiction with separate French and Japanese producing, camera and music participation, then joins public war memory to elliptical personal narration through concrete editing and sound labor. It therefore maps both Left Bank modernism and an exact transnational production system rather than treating Hiroshima as geography or theme alone."
+    },
+    {
+      "scenario_id": "scenario_the_400_blows_1959",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationCrossEraBatch.ts"],
+      "rationale": "The verified inexpensive independent production uses a crew of fewer than twelve, a short schedule, real Paris locations and mobile observational photography around a first-time young lead. Those exact scale, location and labor choices make the Cahiers-side New Wave break production-situated rather than an auteur or style label."
+    },
+    {
+      "scenario_id": "scenario_breathless_1960",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerification.ts"],
+      "rationale": "The verified low-budget Paris production documents handheld and improvised location work, production without scripted dialogue, Raoul Coutard's mobile long takes and Godard's reduction of an overlong first edit through deliberately disruptive jump cuts. It therefore anchors New Wave formal rupture to exact production and postproduction practice."
+    },
+    {
+      "scenario_id": "scenario_l_avventura_1960",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts"],
+      "rationale": "The verified Italy-France production ties Antonioni's modernist duration, landscape and weakened causality to the financially troubled Lisca Bianca location shoot, named image, design, editing and sound labor and a documented French co-production/restoration lineage. It therefore supplies both production-situated modernism and exact cross-border production evidence."
+    },
+    {
+      "scenario_id": "scenario_last_year_at_marienbad_1961",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts"],
+      "rationale": "The verified France-Italy case joins Robbe-Grillet's shot-by-shot découpage to Resnais, Bavarian palace and Paris studio work, Sacha Vierny photography, Jacques Saulnier design and Chasney-Colpi editing. Its unstable time and architecture are therefore tied to a concrete collaborative modernist workflow and cross-border production geography."
+    },
+    {
+      "scenario_id": "scenario_jules_and_jim_1962",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts"],
+      "rationale": "The verified Les Films du Carrosse production binds Roché adaptation, Raoul Coutard's mobile photography, Claudine Bouché montage, narration, historical span and newsreel material to a named collaborative production system. It therefore teaches New Wave mobility and accelerated historical construction through exact labor and workflow."
+    },
+    {
+      "scenario_id": "scenario_cleo_from_5_to_7_1962",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch.ts"],
+      "rationale": "The verified Left Bank case documents a June-July Paris location shoot, near-real-time structure constructed through active photography and editing, black-and-white street observation, a colour tarot prologue and an explicitly feminist shift in viewpoint. It maps feminist modernism to concrete artisanal production practice rather than to representation alone."
+    },
+    {
+      "scenario_id": "scenario_8_1_2_1963",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts"],
+      "rationale": "The verified Italian-French production turns a director's blocked science-fiction project into a self-reflexive system built by four screenwriters, Gianni di Venanzo photography, Piero Gherardi design, Leo Catozzo editing and Nino Rota music. It therefore anchors Fellini's modernism to collaborative production and studio craft rather than creative-genius mythology."
+    },
+    {
+      "scenario_id": "scenario_contempt_1963",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts"],
+      "rationale": "The verified France-Italy prestige co-production documents Godard's largest budget to date, producer pressure around Bardot, Moravia adaptation, Raoul Coutard widescreen colour, multilingual soundtrack history and Capri production. It maps modernist self-reflexivity together with exact cross-border financing and production pressure rather than treating commercial compromise as external to the film."
+    },
+    {
+      "scenario_id": "scenario_the_leopard_1963",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified case strongly documents Titanus-Pathé production, Super Technirama colour, elaborate design and costume labor, the forty-night Gangi Palace ball, alternate release versions and restoration history. Those facts make it a valuable large-scale Chapter 14 comparison, but the current matrix has no dedicated historical-epic or large-format European prestige-production row, and the evidence does not require forcing a modernism or transnational mapping from comparison status alone."
+    },
+    {
+      "scenario_id": "scenario_the_umbrellas_of_cherbourg_1964",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts"],
+      "rationale": "The verified Mag Bodard production makes Demy and Legrand's completely sung structure inseparable from Bernard Evein's colour design, Jacqueline Moreau costumes, Jean Rabier camera and Anne-Marie Cotret editing. It therefore maps a modernist transformation of musical form to coordinated production craft rather than to genre novelty alone."
+    },
+    {
+      "scenario_id": "scenario_black_girl_1966",
+      "review_state": "MAPPED",
+      "development_ids": ["decolonial_transnational_historiography"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationBlackGirl.ts"],
+      "rationale": "The verified Senegal-France case documents post-independence production restrictions, a Ministry cinema-bureau funding rejection, Sembène's mégotage budget-scraping conditions, Dakar-France geography, nonprofessional performance and funding-driven French dubbing of Diouana's interior monologue. It is exact decolonial and transnational production evidence rather than a Senegalese nationality token."
+    },
+    {
+      "scenario_id": "scenario_the_battle_of_algiers_1966",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts"],
+      "rationale": "The verified Algerian-Italian production combines Saadi Yacef participation, Solinas-Pontecorvo writing, nonprofessional casting, Algiers locations, multi-camera crowd staging and tested newsreel-like photography. It therefore ties radical modernist reconstruction to concrete anti-colonial financing, labor and production geography."
+    },
+    {
+      "scenario_id": "scenario_closely_watched_trains_1966",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationCzechoslovakNewWaveBatch.ts"],
+      "rationale": "The verified Czechoslovak New Wave case anchors Menzel-Hrabal adaptation, ordinary railway space, understated black-and-white observation and anti-heroic wartime performance to named cinematography, editing, design, music and sound labor. It is therefore an institutionally situated New Wave production rather than a national-style label."
+    },
+    {
+      "scenario_id": "scenario_daisies_1966",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts"],
+      "rationale": "The verified Barrandov case documents Chytilová-Krumbachová-Juráček writing, nonprofessional performers, Jaroslav Kučera colour experiments, Miroslav Hájek collage editing, improvised dialogue and censorship conflict. It anchors feminist Czechoslovak modernism to state-studio production and material craft rather than treating formal disruption as a free-floating style."
+    },
+    {
+      "scenario_id": "scenario_the_firemens_ball_1967",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationCzechoslovakNewWaveBatch.ts"],
+      "rationale": "The verified case grows from an observed real ball into a Czech-Italian financed Vrchlabí location production with an entirely nonprofessional ensemble, episodic documentary method and a censorship history intensified after the 1968 invasion. It therefore supplies both concrete Czechoslovak New Wave practice and exact cross-border production evidence."
+    },
+    {
+      "scenario_id": "scenario_playtime_1967",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts"],
+      "rationale": "The verified Specta Films case documents purpose-built Tativille, roughly one hundred construction workers, 65/70 mm photography, nonprofessional casting, hundreds of shooting days and a separately composed sound world that contributed to financial collapse. It proves that 1960s formal modernism could be an enormous infrastructure and labor system rather than only small-unit spontaneity."
+    },
+    {
+      "scenario_id": "scenario_memories_of_underdevelopment_1968",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationMemoriesUnderdevelopment.ts"],
+      "rationale": "The verified ICAIC production documents a revolutionary state film institution founded in 1959, collective-production ideals, Gutiérrez Alea-Desnoes adaptation, Havana street material and the integration of ICAIC documentary/newsreel footage through Nelson Rodríguez's fragmented editing. It therefore maps Cuban revolutionary modernism and decolonial institutional history while leaving latin_america_beyond_single_movement fail-closed because one Cuban case cannot establish multiple regional systems."
     }
   ],
   "candidate_admission_gate": {
