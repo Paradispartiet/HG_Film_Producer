@@ -240,14 +240,15 @@
     },
     {
       "development_id": "latin_america_beyond_single_movement",
-      "declared_status": 0,
+      "declared_status": 3,
       "priority": "P1",
       "axis_ids": [
         "institutions_and_industry_systems",
         "geography_and_transnational_production",
         "regulation_power_finance_and_coproduction"
       ],
-      "required_evidence": "Multiple exact Latin American scenarios must show distinct industry, financing, co-production or distribution systems beyond a single movement or country token."
+      "required_evidence": "Multiple exact Latin American scenarios must show distinct industry, financing, co-production or distribution systems beyond a single movement or country token.",
+      "triangulation_basis": "Chapter 15 triangulates two materially distinct Latin American production systems through exact Production Verification cases. Memories of Underdevelopment anchors domestic Cuban revolutionary production in ICAIC, a state film institution integrating fiction, Havana street production and ICAIC documentary/newsreel material. The Battle of Chile: Part I contrasts a five-person Chilean field-documentary system filming the 1973 political crisis with Chris Marker material support and, after the coup, exile-driven completion and long editing in Cuba with ICAIC support/co-production. The pair therefore distinguishes domestic Cuban institutional production from Chile-originating coup-era field production that later depended on transnational Cuban post-production infrastructure, rather than treating Cuba and Chile as nationality tokens."
     },
     {
       "development_id": "mena_industry_systems",
@@ -1133,7 +1134,7 @@
       "review_state": "MAPPED",
       "development_ids": ["modernism_new_waves_alternative_movements"],
       "evidence_paths": ["src/ui/data/scenarioProductionVerificationLosOlvidados.ts"],
-      "rationale": "The verified Mexican case documents two years of social research, Ultramar/Óscar Dancigers production, Estudios Tepeyac and Mexico City locations, Gabriel Figueroa photography, Carlos Savage editing, professional craft and surrealist rupture inside a social-realist project. It supplies exact production-situated alternative-form evidence, while latin_america_beyond_single_movement remains fail-closed because one Mexican case cannot establish multiple regional industry, financing or distribution systems."
+      "rationale": "The verified Mexican case documents two years of social research, Ultramar/Óscar Dancigers production, Estudios Tepeyac and Mexico City locations, Gabriel Figueroa photography, Carlos Savage editing, professional craft and surrealist rupture inside a social-realist project. It supplies exact production-situated alternative-form evidence. At the Chapter 13 stage this single Mexican case was insufficient to establish the multiple regional industry, financing or distribution systems required by latin_america_beyond_single_movement; Chapter 15 closes that separate row only through complementary exact Cuban and Chile-originating system evidence."
     },
     {
       "scenario_id": "scenario_ugetsu_1953",
@@ -1270,9 +1271,166 @@
     {
       "scenario_id": "scenario_memories_of_underdevelopment_1968",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
+      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography", "latin_america_beyond_single_movement"],
       "evidence_paths": ["src/ui/data/scenarioProductionVerificationMemoriesUnderdevelopment.ts"],
-      "rationale": "The verified ICAIC production documents a revolutionary state film institution founded in 1959, collective-production ideals, Gutiérrez Alea-Desnoes adaptation, Havana street material and the integration of ICAIC documentary/newsreel footage through Nelson Rodríguez's fragmented editing. It therefore maps Cuban revolutionary modernism and decolonial institutional history while leaving latin_america_beyond_single_movement fail-closed because one Cuban case cannot establish multiple regional systems."
+      "rationale": "The verified ICAIC production documents a revolutionary state film institution founded in 1959, collective-production ideals, Gutiérrez Alea-Desnoes adaptation, Havana street material and the integration of ICAIC documentary/newsreel footage through Nelson Rodríguez’s fragmented editing. It therefore maps Cuban revolutionary modernism and decolonial institutional history and, paired with the Chile-originating field-production/Cuban-post-production system of The Battle of Chile: Part I, supplies the domestic-institutional half of the exact workflow triangulation required for latin_america_beyond_single_movement."
+    },
+    {
+      "scenario_id": "scenario_bonnie_and_clyde_1967",
+      "review_state": "MAPPED",
+      "development_ids": ["modern_popular_commercial_cinema_as_industry", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts"],
+      "rationale": "The verified Beatty-led case documents producer-star development, Texas and Burbank production, period craft, practical violence and studio distribution at the opening of New Hollywood. It therefore adds an exact commercially distributed crime-production system to the modern-popular and genre-industry rows rather than treating New Hollywood as an auteur label."
+    },
+    {
+      "scenario_id": "scenario_the_cremator_1969",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationCzechoslovakNewWaveBatch.ts"],
+      "rationale": "The verified Czechoslovak case ties Fuks adaptation, wide-angle psychological distortion, associative editing, production design and Liška’s score to a 1968 institutional production whose post-Prague-Spring suppression is documented. BFI places Herz within and at the edge of the Czechoslovak New Wave, so the movement mapping is production-situated rather than stylistic."
+    },
+    {
+      "scenario_id": "scenario_kes_1969",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch.ts"],
+      "rationale": "The verified tiny United Artists-backed 35 mm production documents Barnsley location work, Hines-Loach adaptation, first-time-performer training, Chris Menges photography and distributor resistance to Yorkshire dialect followed by regional release. It anchors British social-realist alternative practice to exact scale, location, labor and circulation choices."
+    },
+    {
+      "scenario_id": "scenario_the_conformist_1970",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch.ts"],
+      "rationale": "The verified Moravia adaptation binds fractured political memory, Fascist architecture, Scarfiotti design, Storaro’s mobile colour-and-shadow system and Delerue’s score to an inspectable production with documented resource constraints. It therefore maps European political modernism through concrete collaborative craft rather than through Bertolucci’s auteur status."
+    },
+    {
+      "scenario_id": "scenario_a_clockwork_orange_1971",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified case strongly documents British-based Warner production, existing modernist locations, controlled camera and editing craft, Wendy Carlos’s music system and exhibition controversy. Those facts are central to Chapter 15, but the current matrix has no dedicated ratings/censorship or 1970s studio-auteur transition row, so the case remains reviewed without forcing a modernism or commercial-industry mapping."
+    },
+    {
+      "scenario_id": "scenario_the_godfather_1972",
+      "review_state": "MAPPED",
+      "development_ids": ["modern_popular_commercial_cinema_as_industry", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts"],
+      "rationale": "The verified Paramount case documents Coppola-Puzo adaptation, producer-director conflict, New York and Sicily locations, period departments, Gordon Willis’s controlled darkness and coordinated editing, sound and music labor. It therefore adds an exact prestige-scale commercial gangster-production system to both the modern-popular and genre-industry rows."
+    },
+    {
+      "scenario_id": "scenario_aguirre_the_wrath_of_god_1972",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewGermanCinemaSystemsBatch.ts"],
+      "rationale": "The verified Werner Herzog Filmproduktion-Hessischer Rundfunk case documents a small-budget, tiny-crew New German Cinema production on difficult Peruvian locations with named camera, editing, sound and music labor. It maps alternative movement history to exact finance, scale and physical production rather than to extreme-location mythology."
+    },
+    {
+      "scenario_id": "scenario_mean_streets_1973",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified approximately $480,000 independent case documents a twenty-seven-day New York/Los Angeles production, practical locations, actor-driven volatility, Scorsese-controlled editing and structural popular-music use. Its strongest historical function is the independent-to-studio New Hollywood transition, for which the current matrix has no dedicated row, so Chapter 15 leaves it reviewed and unmapped."
+    },
+    {
+      "scenario_id": "scenario_amarcord_1973",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationFinal1970sBatch.ts"],
+      "rationale": "The verified case ties Fellini’s episodic memory and Fascist provincial satire to Cinecittà reconstruction, Rotunno colour, Donati design and Rota music. It therefore anchors a 1970s European modernist memory system in studio reconstruction and named craft rather than treating autobiographical style as sufficient evidence."
+    },
+    {
+      "scenario_id": "scenario_the_spirit_of_the_beehive_1973",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch.ts"],
+      "rationale": "The verified Elías Querejeta production places Erice’s child-viewpoint, elliptical sound-image construction and historical allegory inside a late-Franco Spanish production with named writing, camera and editing labor. It therefore maps political modernism to an exact production context rather than to national symbolism alone."
+    },
+    {
+      "scenario_id": "scenario_touki_bouki_1973",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationToukiBouki.ts"],
+      "rationale": "The verified Cinegrit case documents a roughly $30,000 Senegalese production, Mambéty’s producer-writer-director role, named local craft and a production ecology that still depended on French stock, equipment, processing and editing infrastructure. Its associative montage is explicitly situated as Senegalese postcolonial modernism in dialogue with but not reducible to European precedents, supporting both movement and decolonial/transnational mappings."
+    },
+    {
+      "scenario_id": "scenario_scenes_from_a_marriage_1974",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified case strongly documents a six-part television conception, low-cost 16 mm production, accelerated schedule, actor collaboration and later 35 mm theatrical abridgement. The current matrix has no dedicated broadcaster-to-theatrical workflow or pre-platform release-window row for this period, so the case remains reviewed without being forced into a broader movement or commercial category."
+    },
+    {
+      "scenario_id": "scenario_ali_fear_eats_the_soul_1974",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewGermanCinemaSystemsBatch.ts"],
+      "rationale": "The verified fifteen-day Tango-Film production connects Fassbinder’s social melodrama, migration and racism to a compressed New German Cinema workflow with named photography, design, editing and sound labor. It therefore supplies exact production-situated alternative-movement evidence rather than a representation token."
+    },
+    {
+      "scenario_id": "scenario_jeanne_dielman_23_quai_du_commerce_1080_bruxelles_1975",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch.ts"],
+      "rationale": "The verified Belgian case ties complete domestic labor, fixed frontal camera, measured duration, direct household sound and controlled colour to documented financing, production craft and feminist avant-garde context. It therefore maps feminist modernism through exact production organization and material practice rather than through later canon status."
+    },
+    {
+      "scenario_id": "scenario_jaws_1975",
+      "review_state": "MAPPED",
+      "development_ids": ["modern_popular_commercial_cinema_as_industry", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts"],
+      "rationale": "The verified Universal/Zanuck-Brown case documents Martha’s Vineyard open-water production, mechanical-shark failure, specialist marine camera work, Verna Fields editing, John Williams’s score and release history. It makes blockbuster emergence and suspense/horror production an inspectable commercial and genre-industry system rather than a box-office label."
+    },
+    {
+      "scenario_id": "scenario_dog_day_afternoon_1975",
+      "review_state": "MAPPED",
+      "development_ids": ["genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewHollywoodNewYorkBatch.ts"],
+      "rationale": "The verified real-event Brooklyn case documents rehearsal-led ensemble work, practical geography, changing available light, near-real-time editing, media feedback and an almost scoreless institutional sound field. It adds a distinct 1970s American crime-production workflow to the genre-industry row without treating New Hollywood itself as a matrix category."
+    },
+    {
+      "scenario_id": "scenario_manila_in_the_claws_of_light_1975",
+      "review_state": "MAPPED",
+      "development_ids": ["decolonial_transnational_historiography"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationManilaClawsLight.ts"],
+      "rationale": "The verified Philippine case documents De Leon and Manotok production resources, mixed professional/nonprofessional casting, Manila location labor, production and release under Marcos’s martial-law regime and an internationally shortened subplot version. It therefore supplies exact postcolonial production, regulation and circulation evidence without forcing the film into a generic modernism label."
+    },
+    {
+      "scenario_id": "scenario_the_battle_of_chile_part_i_1975",
+      "review_state": "MAPPED",
+      "development_ids": ["decolonial_transnational_historiography", "latin_america_beyond_single_movement"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationBattleChilePartOne.ts"],
+      "rationale": "The verified case documents a five-person Chilean field team filming the 1973 crisis with Éclair 16 mm and Nagra equipment, Chris Marker’s material support and, after the coup, exile-driven completion and long editing in Cuba with ICAIC support/co-production. It therefore supplies exact decolonial/transnational workflow evidence and the Chile-originating counterpart required to distinguish Latin American production systems from the existing Cuban ICAIC case."
+    },
+    {
+      "scenario_id": "scenario_cria_cuervos_1976",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationIberianPortugueseMemorySystemsBatch.ts"],
+      "rationale": "The verified Saura-Querejeta case documents production at the end of the Franco dictatorship, Madrid domestic space, child-centered memory, Teodoro Escamilla photography, Pablo G. del Amo editing and named sound/music labor. It anchors transition-era Spanish political modernism to exact production context and collaborative craft."
+    },
+    {
+      "scenario_id": "scenario_taxi_driver_1976",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified case strongly documents post-Vietnam subjectivity, New York production, unusual slow-motion camera practice, layered urban sound, Herrmann’s score and optical colour intervention. Its Chapter 15 function is an integrated New Hollywood production system, but the current matrix has no exact row for that formation and the evidence does not require a genre-industry mapping from noir lineage alone."
+    },
+    {
+      "scenario_id": "scenario_killer_of_sheep_1977",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationAmericanIndependentBreakthroughsBatch.ts"],
+      "rationale": "The verified UCLA/L.A. Rebellion case documents spare-weekend 16 mm production in Watts, nonprofessional casting, Burnett’s multi-role authorship and a circulation history materially affected by music rights. It therefore anchors Black American independent alternative practice to exact production scale, labor and circulation rather than to identity representation alone."
+    },
+    {
+      "scenario_id": "scenario_star_wars_1977",
+      "review_state": "MAPPED",
+      "development_ids": ["modern_popular_commercial_cinema_as_industry", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts"],
+      "rationale": "The verified Lucasfilm/Fox case documents Tunisia and British-stage production, used-future design, ILM’s custom VistaVision and motion-control effects pipeline, three-editor structure and Ben Burtt’s sound work. It therefore makes blockbuster transformation and science-fiction spectacle concrete as commercial infrastructure, specialist labor and genre production."
+    },
+    {
+      "scenario_id": "scenario_the_marriage_of_maria_braun_1979",
+      "review_state": "MAPPED",
+      "development_ids": ["modernism_new_waves_alternative_movements"],
+      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewGermanCinemaSystemsBatch.ts"],
+      "rationale": "The verified Albatros-Trio-WDR case documents broadcaster participation, West German location production, Märthesheimer-Fröhlich writing, Ballhaus photography, Lorenz-Fassbinder editing and international sales/distribution history. It closes the decade with New German Cinema grounded in production institutions and collaborative labor rather than auteur reputation."
     }
   ],
   "candidate_admission_gate": {
