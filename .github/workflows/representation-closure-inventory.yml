@@ -1,0 +1,52 @@
+name: Inventory representation closure remainder
+
+on:
+  push:
+    branches:
+      - agent/representation-closure-pass-20260910
+
+permissions:
+  contents: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Build representation audit inventory
+        run: node scripts/film-history-representation-coverage-audit-v1.mjs --write=.tmp/representation-closure.json
+      - name: Print exact unreviewed inventory
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync, readdirSync } from 'node:fs';
+          const report = JSON.parse(readFileSync('.tmp/representation-closure.json', 'utf8'));
+          const pvPathsByScenario = new Map();
+          for (const file of readdirSync('src/ui/data')) {
+            if (!file.startsWith('scenarioProductionVerification') || !file.endsWith('.ts')) continue;
+            const source = readFileSync(`src/ui/data/${file}`, 'utf8');
+            for (const match of source.matchAll(/scenarioId\s*:\s*["']([^"']+)["']/g)) {
+              const id = match[1];
+              const paths = pvPathsByScenario.get(id) ?? [];
+              paths.push(`src/ui/data/${file}`);
+              pvPathsByScenario.set(id, paths);
+            }
+          }
+          const unreviewed = report.scenarioInventory.filter((item) => item.reviewState === 'UNMAPPED');
+          console.log(`SUMMARY\treviewed=${report.mapping.reviewedScenarioIds}\tunreviewed=${unreviewed.length}\tp0Open=${report.coverage.p0OpenRows}\tclosure=${report.representationalClosure}`);
+          for (const item of unreviewed) {
+            const pv = (pvPathsByScenario.get(item.scenarioId) ?? []).join(',');
+            console.log(`UNREVIEWED\t${item.scenarioId}\t${item.year}\t${item.title}\t${item.origin}\t${pv}`);
+          }
+          if (unreviewed.length !== 215) throw new Error(`Expected 215 unreviewed scenarios, found ${unreviewed.length}`);
+          if (report.coverage.p0OpenRows !== 0) throw new Error(`Expected 0 open P0 rows, found ${report.coverage.p0OpenRows}`);
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: representation-closure-inventory
+          path: .tmp/representation-closure.json
