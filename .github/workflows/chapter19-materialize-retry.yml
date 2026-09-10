@@ -28,7 +28,6 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           src = Path('.github/workflows/chapter19-materialize.yml').read_text()
-          src = src.replace('coverage.baseline.expected_production_verified_core_scenarios', 'coverage.baseline.expected_production_verified_scenarios')
           src = src.replace('report.productionVerification.literalScenarioIds', 'report.verificationIndex.literalVerifiedScenarioIds')
           marker = "node --input-type=module <<'NODE'\n"
           start = src.index(marker) + len(marker)
