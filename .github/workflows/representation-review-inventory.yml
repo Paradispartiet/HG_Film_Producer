@@ -1,0 +1,67 @@
+name: Inspect unreviewed representation evidence
+
+on:
+  push:
+    branches:
+      - agent/representation-review-closure-20260910
+
+permissions:
+  contents: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Build exact representation inventory
+        run: node scripts/film-history-representation-coverage-audit-v1.mjs --write=.tmp/review-closure.json
+      - name: Print development contract and first evidence batch
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync, readdirSync } from 'node:fs';
+          const report = JSON.parse(readFileSync('.tmp/review-closure.json', 'utf8'));
+          const contract = JSON.parse(readFileSync('data/film/film_history_representation_coverage_v1.json', 'utf8'));
+          for (const row of contract.development_matrix) {
+            console.log(`DEV\t${row.development_id}\tP=${row.priority}\tS=${row.declared_status}\t${row.required_evidence}`);
+          }
+          const pvRecords = [];
+          for (const file of readdirSync('src/ui/data')) {
+            if (!file.startsWith('scenarioProductionVerification') || !file.endsWith('.ts')) continue;
+            const path = `src/ui/data/${file}`;
+            const source = readFileSync(path, 'utf8');
+            const matches = [...source.matchAll(/scenarioId\s*:\s*["']([^"']+)["']/g)];
+            for (let i = 0; i < matches.length; i += 1) {
+              const start = matches[i].index;
+              const end = i + 1 < matches.length ? matches[i + 1].index : source.length;
+              const block = source.slice(start, end);
+              const summaries = [...block.matchAll(/summary\s*:\s*["'`]([^"'`]+)["'`]/g)].map((m) => m[1]);
+              const notes = [...block.matchAll(/note\s*:\s*["'`]([^"'`]+)["'`]/g)].map((m) => m[1]).slice(0, 8);
+              pvRecords.push({ scenarioId: matches[i][1], path, summaries, notes });
+            }
+          }
+          const byScenario = new Map();
+          for (const rec of pvRecords) {
+            const arr = byScenario.get(rec.scenarioId) ?? [];
+            arr.push(rec);
+            byScenario.set(rec.scenarioId, arr);
+          }
+          const unreviewed = report.scenarioInventory.filter((item) => item.reviewState === 'UNMAPPED');
+          console.log(`SUMMARY\treviewed=${report.mapping.reviewedScenarioIds}\tunreviewed=${unreviewed.length}\tp0Open=${report.coverage.p0OpenRows}`);
+          for (const item of unreviewed.slice(0, 72)) {
+            const records = byScenario.get(item.scenarioId) ?? [];
+            console.log(`CASE\t${item.scenarioId}\t${item.year}\t${item.title}\t${item.origin}`);
+            for (const rec of records) {
+              console.log(`PV\t${rec.path}`);
+              for (const summary of rec.summaries) console.log(`SUMMARYTEXT\t${summary}`);
+              for (const note of rec.notes) console.log(`NOTE\t${note}`);
+            }
+          }
+          if (report.mapping.reviewedScenarioIds !== 399) throw new Error(`Expected 399 reviewed, got ${report.mapping.reviewedScenarioIds}`);
+          if (unreviewed.length !== 214) throw new Error(`Expected 214 unreviewed, got ${unreviewed.length}`);
+          NODE
