@@ -38,7 +38,7 @@ export const technologyHistoryVerificationRecords = [
     scenarioId: "scenario_tangerine_2015",
     status: "verified",
     verifiedAt: "2026-07-20",
-    summary: "The case's microbudget street production, iPhone 5s capture, anamorphic adapters, FiLMiC Pro control, saturated grade, discreet public-location shooting, collaborative writing, first-time performers and layered dialogue sound are supported by filmmaker interviews, technical records and Sundance history.",
+    summary: "The case's microbudget street production, iPhone 5s capture, anamorphic adapters, FiLMiC Pro control, saturated grade, discreet public-location shooting, collaborative writing, first-time performers and layered dialogue sound are supported by filmmaker interviews, technical records and Sundance history. Filmmaker Magazine documents the reported USD 100,000 budget as fronted by Duplass Brothers Productions and Through Films, followed by Magnolia’s worldwide-rights acquisition and a four-screen-to-incremental theatrical rollout; this connects the already verified low-cost iPhone/post workflow to independent financing and downstream distribution without recasting Magnolia as the production commissioner.",
     sources: [
       {
         title: "We Didn't Fictionalize Much: Sean Baker on Tangerine",
@@ -71,6 +71,14 @@ export const technologyHistoryVerificationRecords = [
         sourceKind: "trade_feature",
         supports: ["overall", "cinematography", "editing"],
         note: "The equipment maker's project record specifies three iPhone 5s devices, Moondog anamorphic lenses, FiLMiC Pro, Steadicam Smoothee, Final Cut Pro editing and DaVinci Resolve grading."
+      },
+      {
+        title: "Hits & Misses: How Seven Films from Sundance 2015 Performed",
+        publisher: "Filmmaker Magazine",
+        url: "https://filmmakermagazine.com/96898-hits-misses-4/",
+        sourceKind: "trade_feature",
+        supports: ["overall", "cinematography", "editing"],
+        note: "Industry case study documenting the reported USD 100,000 financing from Duplass Brothers Productions and Through Films, Magnolia's worldwide-rights acquisition and the staged theatrical rollout after Sundance."
       }
     ]
   },

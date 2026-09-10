@@ -267,7 +267,7 @@
     },
     {
       "development_id": "microbudget_digital_workflows_and_independent_distribution",
-      "declared_status": 0,
+      "declared_status": 2,
       "priority": "P0",
       "axis_ids": [
         "technology_and_format",
@@ -278,14 +278,15 @@
     },
     {
       "development_id": "streaming_native_feature_production_economics",
-      "declared_status": 0,
+      "declared_status": 3,
       "priority": "P0",
       "axis_ids": [
         "production_economics_and_organization",
         "institutions_and_industry_systems",
         "distribution_exhibition_and_audience_behavior"
       ],
-      "required_evidence": "Exact scenarios must document platform commissioning, financing, rights, delivery and distribution economics for streaming-native feature production."
+      "required_evidence": "Exact scenarios must document platform commissioning, financing, rights, delivery and distribution economics for streaming-native feature production.",
+      "triangulation_basis": "The Power of the Dog documents a producer-assembled negative-pickup structure with Netflix as major financier, territorial-rights allocation and a built-in theatrical window, while Don’t Look Up documents Netflix directly supplying the budget and global reach that a conventional studio declined at the requested production scale. Together they triangulate distinct streaming-feature financing and distribution models without treating later platform acquisition as equivalent to platform-native production."
     },
     {
       "development_id": "labor_union_vfx_outsourcing_intimacy_coordination_post_history",
@@ -324,7 +325,7 @@
     },
     {
       "development_id": "theatrical_windows_and_release_strategy",
-      "declared_status": 0,
+      "declared_status": 2,
       "priority": "P0",
       "axis_ids": [
         "distribution_exhibition_and_audience_behavior",
@@ -335,7 +336,7 @@
     },
     {
       "development_id": "streaming_native_feature_economics",
-      "declared_status": 0,
+      "declared_status": 3,
       "priority": "P0",
       "axis_ids": [
         "production_economics_and_organization",
@@ -343,7 +344,8 @@
         "distribution_exhibition_and_audience_behavior"
       ],
       "chapter": 19,
-      "required_evidence": "Commission, finance, rights and delivery model for an exact feature scenario made primarily for a platform."
+      "required_evidence": "Commission, finance, rights and delivery model for an exact feature scenario made primarily for a platform.",
+      "triangulation_basis": "The Power of the Dog provides an exact negative-pickup, financing, rights and theatrical-window model, while Don’t Look Up provides a complementary platform-backed budget-and-global-reach model after a conventional studio declined the requested scale. The pair establishes two materially different streaming-era feature economics pathways while keeping undisclosed recoupment and rights details bounded."
     },
     {
       "development_id": "virtual_production_and_in_camera_vfx",
@@ -396,7 +398,7 @@
     },
     {
       "development_id": "generative_ai_and_machine_learning_in_production_or_post",
-      "declared_status": 0,
+      "declared_status": 2,
       "priority": "P0",
       "axis_ids": [
         "technology_and_format",
@@ -432,7 +434,7 @@
     },
     {
       "development_id": "microbudget_digital_and_self_distribution",
-      "declared_status": 0,
+      "declared_status": 2,
       "priority": "P0",
       "axis_ids": [
         "technology_and_format",
@@ -444,7 +446,7 @@
     },
     {
       "development_id": "franchise_blockbuster_and_mass_audience_industrial_model",
-      "declared_status": 0,
+      "declared_status": 2,
       "priority": "P0",
       "axis_ids": [
         "production_economics_and_organization",
@@ -3352,12 +3354,15 @@
     },
     {
       "scenario_id": "scenario_tangerine_2015",
-      "review_state": "REVIEWED_NO_MAPPING",
-      "development_ids": [],
+      "review_state": "MAPPED",
+      "development_ids": [
+        "microbudget_digital_workflows_and_independent_distribution",
+        "microbudget_digital_and_self_distribution"
+      ],
       "evidence_paths": [
         "src/ui/data/scenarioProductionVerificationTechnologyBatch.ts"
       ],
-      "rationale": "Tangerine is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Smartphone acquisition with cinema-oriented accessories makes ultra-light digital production and post finishing a major boundary case. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+      "rationale": "Tangerine is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Smartphone acquisition with cinema-oriented accessories makes ultra-light digital production and post finishing a major boundary case. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy. The permanent PV now binds the already verified iPhone/post-production workflow to the reported USD 100,000 independent financing and Magnolia worldwide-rights/theatrical rollout, satisfying both microbudget-digital distribution rows without inventing a self-commissioning studio model."
     },
     {
       "scenario_id": "scenario_mad_max_fury_road_2015",
@@ -3843,12 +3848,14 @@
     },
     {
       "scenario_id": "scenario_tenet_2020",
-      "review_state": "REVIEWED_NO_MAPPING",
-      "development_ids": [],
+      "review_state": "MAPPED",
+      "development_ids": [
+        "theatrical_windows_and_release_strategy"
+      ],
       "evidence_paths": [
         "src/ui/data/scenarioProductionVerificationTenet.ts"
       ],
-      "rationale": "Tenet is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+      "rationale": "Tenet is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING. The enriched PV ties the pandemic theatrical-release decision to a concrete economic concession: Warner Bros. required Nolan to forgo certain fees to proceed with the reopened-cinema strategy, later repaying them, which satisfies the production-economic consequence requirement."
     },
     {
       "scenario_id": "scenario_nomadland_2020",
@@ -3937,12 +3944,14 @@
       "scenario_id": "scenario_the_power_of_the_dog_2021",
       "review_state": "MAPPED",
       "development_ids": [
-        "pandemic_shutdown_protocol_and_recovery"
+        "pandemic_shutdown_protocol_and_recovery",
+        "streaming_native_feature_production_economics",
+        "streaming_native_feature_economics"
       ],
       "evidence_paths": [
         "src/ui/data/scenarioProductionVerificationThePowerOfTheDog.ts"
       ],
-      "rationale": "The exact PV documents several weeks of New Zealand photography followed by an approximately four-month COVID shutdown, a later safe restart, and editing in isolation during the interruption. Those title-specific schedule and post-production consequences directly evidence pandemic shutdown/recovery rather than merely a pandemic-era release."
+      "rationale": "The exact PV documents several weeks of New Zealand photography followed by an approximately four-month COVID shutdown, a later safe restart, and editing in isolation during the interruption. Those title-specific schedule and post-production consequences directly evidence pandemic shutdown/recovery rather than merely a pandemic-era release. The enriched PV documents Netflix as major financier inside a producer-led negative-pickup structure, with international-rights allocation, additional producer-side financing and a built-in theatrical window, so the scenario now maps directly to both streaming-feature economics rows."
     },
     {
       "scenario_id": "scenario_drive_my_car_2021",
@@ -4060,12 +4069,13 @@
         "pandemic_shutdown_protocol_and_recovery",
         "vfx_labor_outsourcing_and_post_pipeline",
         "regional_incentives_studios_and_production_infrastructure",
-        "contemporary_popular_genres_as_industries"
+        "contemporary_popular_genres_as_industries",
+        "franchise_blockbuster_and_mass_audience_industrial_model"
       ],
       "evidence_paths": [
         "src/ui/data/scenarioProductionVerificationRrr.ts"
       ],
-      "rationale": "The exact PV documents COVID stretching production across four years and a continuity system based on detailed camera reports; roughly 2,800 VFX shots coordinated across more than a dozen studios over three and a half years, with Digital Domain separately documenting 213 shots; and a Hyderabad production base with workshops, rehearsal, editing and HOD spaces. Its Telugu large-scale action production therefore maps to pandemic continuity, distributed VFX labor/post organization, regional production infrastructure and contemporary popular genre as an industrial system. It also contributes to the broader newer-labor row, while that row remains below triangulated closure because intimacy/new-role evidence is still incomplete."
+      "rationale": "The exact PV documents COVID stretching production across four years and a continuity system based on detailed camera reports; roughly 2,800 VFX shots coordinated across more than a dozen studios over three and a half years, with Digital Domain separately documenting 213 shots; and a Hyderabad production base with workshops, rehearsal, editing and HOD spaces. Its Telugu large-scale action production therefore maps to pandemic continuity, distributed VFX labor/post organization, regional production infrastructure and contemporary popular genre as an industrial system. It also contributes to the broader newer-labor row, while that row remains below triangulated closure because intimacy/new-role evidence is still incomplete. The existing permanent PV documents industrial-scale production organization, premium IMAX/3D exhibition and subsequent global platform circulation, providing one exact large-scale mass-audience production/distribution case while avoiding unsupported recoupment claims."
     },
     {
       "scenario_id": "scenario_decision_to_leave_2022",
@@ -4219,12 +4229,14 @@
     },
     {
       "scenario_id": "scenario_the_brutalist_2024",
-      "review_state": "REVIEWED_NO_MAPPING",
-      "development_ids": [],
+      "review_state": "MAPPED",
+      "development_ids": [
+        "generative_ai_and_machine_learning_in_production_or_post"
+      ],
       "evidence_paths": [
         "src/ui/data/scenarioProductionVerificationTheBrutalist.ts"
       ],
-      "rationale": "The Brutalist is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+      "rationale": "The Brutalist is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING. The permanent PV now combines bounded Hungarian-only Respeecher use and explicit non-use boundaries with a human-in-the-loop sound workflow and a documented consent policy, satisfying the exact AI-use plus labor/rights implication requirement without claiming generative authorship."
     },
     {
       "scenario_id": "scenario_flow_2024",
@@ -4406,6 +4418,18 @@
         "src/ui/data/scenarioProductionVerificationSoundOfFalling.ts"
       ],
       "rationale": "The exact PV records 34 shooting days entirely in Altmarkkreis Salzwedel/Stendal, €250,000 in MDM production support and additional BKM/DFFF public funding. The direct link between territorial support, shooting geography and the small-budget production maps to regional incentives/infrastructure."
+    },
+    {
+      "scenario_id": "scenario_don_t_look_up_2021",
+      "review_state": "MAPPED",
+      "rationale": "The enriched PV documents Netflix supplying the production budget and global reach after Paramount declined the requested production scale, providing a complementary platform-backed feature-financing model while leaving undisclosed rights and recoupment terms unclaimed.",
+      "development_ids": [
+        "streaming_native_feature_production_economics",
+        "streaming_native_feature_economics"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationDontLookUp.ts"
+      ]
     }
   ],
   "candidate_admission_gate": {
