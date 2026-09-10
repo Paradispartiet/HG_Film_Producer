@@ -30,28 +30,16 @@ jobs:
           const report = JSON.parse(fs.readFileSync('.tmp/chapter19-audit.json', 'utf8'));
           const dataDir = 'src/ui/data';
           const pvFiles = fs.readdirSync(dataDir).filter((name) => name.startsWith('scenarioProductionVerification') && name.endsWith('.ts'));
-          const keyword = /covid|pandem|shutdown|restart|stream|netflix|apple|disney\+|stagecraft|led volume|virtual production|union|guild|wga|sag|iatse|generative ai|artificial intelligence|sustainab|green production|tax credit|incentive|microbudget|self-distribut|intimacy coordinator|franchise|residual/i;
           const fileText = new Map(pvFiles.map((name) => [name, fs.readFileSync(path.join(dataDir, name), 'utf8')]));
-          const candidates = report.candidates.map((candidate) => {
-            const evidenceFiles = candidate.scenarioId ? pvFiles.filter((name) => fileText.get(name).includes(candidate.scenarioId)) : [];
-            const keywordHits = [];
-            for (const name of evidenceFiles) {
-              const lines = fileText.get(name).split(/\r?\n/);
-              lines.forEach((line, index) => {
-                if (keyword.test(line)) keywordHits.push({ file: `src/ui/data/${name}`, line: index + 1, text: line.trim().slice(0, 500) });
-              });
-            }
-            return {
-              title: candidate.title,
-              year: candidate.year,
-              decision: candidate.decision,
-              scenarioId: candidate.scenarioId,
-              productionVerified: candidate.productionVerified,
-              evidenceFiles,
-              keywordHits,
-              chapterFunction: candidate.chapterFunction,
-            };
-          });
+          const candidates = report.candidates.map((candidate) => ({
+            title: candidate.title,
+            year: candidate.year,
+            decision: candidate.decision,
+            scenarioId: candidate.scenarioId,
+            productionVerified: candidate.productionVerified,
+            evidenceFiles: candidate.scenarioId ? pvFiles.filter((name) => fileText.get(name).includes(candidate.scenarioId)) : [],
+            chapterFunction: candidate.chapterFunction,
+          }));
           const output = {
             reviewCount: coverage.scenario_reviews.length,
             lastReviews: coverage.scenario_reviews.slice(-8),
@@ -71,4 +59,13 @@ jobs:
         with:
           name: chapter19-context
           path: .tmp/chapter19-context.json
+          if-no-files-found: error
+      - name: Upload Chapter 19 source context
+        uses: actions/upload-artifact@v4
+        with:
+          name: chapter19-source-context
+          path: |
+            data/film/film_history_representation_coverage_v1.json
+            src/ui/data/filmScenarios.ts
+            src/ui/data/scenarioProductionVerification*.ts
           if-no-files-found: error
