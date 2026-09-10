@@ -219,14 +219,15 @@
     },
     {
       "development_id": "south_korea_industry_system",
-      "declared_status": 2,
+      "declared_status": 3,
       "priority": "P0",
       "axis_ids": [
         "institutions_and_industry_systems",
         "production_economics_and_organization",
         "distribution_exhibition_and_audience_behavior"
       ],
-      "required_evidence": "Exact South Korean scenarios must teach modern industrial organization, financing, exhibition, distribution or export systems rather than national representation alone."
+      "required_evidence": "Exact South Korean scenarios must teach modern industrial organization, financing, exhibition, distribution or export systems rather than national representation alone.",
+      "triangulation_basis": "Chapter 17 established exact modern South Korean industry coverage through Shiri: KangJeGyu Films, Samsung investment/distribution activity, Korea Technology Finance Corporation support, named Korean craft/effects labor and domestic plus overseas circulation. Chapter 18 adds two complementary exact cases rather than nationality tokens. Oldboy documents Eggfilm and ShowEast production, KOFIC release data, Cineclick Asia international sales, producer/line-producer roles and a differentiated post/craft labor structure. Parasite documents Barunson E&A production, CJ Entertainment international sales, purpose-built set infrastructure, large-format production and specialist editorial/sound-post organization. Across 1999, 2003 and 2019 the mapped cases triangulate financing/company organization, domestic release, export/international sales, production scale and changing specialist labor, supporting status 3."
     },
     {
       "development_id": "japan_industry_system",
@@ -2791,6 +2792,748 @@
         "src/ui/data/scenarioProductionVerificationShiri.ts"
       ],
       "rationale": "The exact verified KOFIC-backed record documents KangJeGyu Films, Samsung investment/distribution activity, Korea Technology Finance Corporation support, production economics, named Korean craft/effects labor and domestic plus overseas theatrical circulation. That is exact modern South Korean industry-system evidence sufficient for status 2, while one title remains insufficient for triangulation."
+    },
+    {
+      "scenario_id": "scenario_the_gleaners_and_i_2000",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationGleaners.ts"
+      ],
+      "rationale": "The Gleaners and I is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Handheld DV essay filmmaking makes small-camera authorship, self-reflexive documentary practice and low-cost digital mobility visible at the start of the decade. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_platform_2000",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationChineseLanguageModernityMemoryBatch.ts"
+      ],
+      "rationale": "Platform is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Jia Zhangke's provincial long-duration production anchors Chinese independent cinema, social transition and location-based digital-era realism. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_dancer_in_the_dark_2000",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFamilyPerformanceGriefPowerBatch.ts"
+      ],
+      "rationale": "Dancer in the Dark is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Large-scale multi-camera digital musical production makes the split between handheld realism and digitally coordinated performance capture visible. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_in_the_mood_for_love_2000",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationInTheMoodForLove.ts"
+      ],
+      "rationale": "In the Mood for Love is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Hong Kong transnational production, iterative location work and post-production structure anchor a major regional auteur system crossing the millennium. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_yi_yi_2000",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationYiYi.ts"
+      ],
+      "rationale": "Yi Yi is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Taiwanese urban family production and long-form ensemble staging preserve Taiwan New Cinema's industrial and formal afterlife in the new century. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_crouching_tiger_hidden_dragon_2000",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCrouchingTigerHiddenDragon.ts"
+      ],
+      "rationale": "Crouching Tiger, Hidden Dragon is exact USE_EXISTING and production-verified in the Chapter 18 atlas. A Chinese-language transnational co-production and global release makes action choreography, regional labor and international financing/distribution structurally visible. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_atanarjuat_the_fast_runner_2001",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAtanarjuat.ts"
+      ],
+      "rationale": "Atanarjuat: The Fast Runner is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Inuit-led digital production and Inuktitut-language feature filmmaking make Indigenous authorship, remote location production and community knowledge central. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_spirited_away_2001",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSpiritedAway.ts"
+      ],
+      "rationale": "Spirited Away is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Studio Ghibli provides a major hand-drawn animation countercurrent inside an era often reduced to CGI and digital capture. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_sons_room_2001",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFamilyPerformanceGriefPowerBatch.ts"
+      ],
+      "rationale": "The Son's Room is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Italian intimate auteur production provides a low-effects, performance-centered European comparison inside the digital-convergence period. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_millennium_mambo_2001",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationHongKongTaiwanUrbanTimeBatch.ts"
+      ],
+      "rationale": "Millennium Mambo is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Taiwanese urban production and electronic-night imagery make changing regional youth culture and transnational art-cinema circulation visible. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_russian_ark_2002",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationRussianArk.ts"
+      ],
+      "rationale": "Russian Ark is exact USE_EXISTING and production-verified in the Chapter 18 atlas. A feature-length uncompressed digital take makes capture duration, data recording and museum-scale choreography a production-historical turning point. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_city_of_god_2002",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCityOfGod.ts"
+      ],
+      "rationale": "City of God is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Brazilian location production, nonprofessional/community casting and international post/distribution make regional production scale and representation central. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_star_wars_episode_ii_attack_of_the_clones_2002",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAttackOfTheClones.ts"
+      ],
+      "rationale": "Star Wars: Episode II - Attack of the Clones is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Big-budget digital acquisition and effects-heavy studio production make end-to-end digital ambitions visible at blockbuster scale. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_28_days_later_2002",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTwentyEightDaysLater.ts"
+      ],
+      "rationale": "28 Days Later is exact USE_EXISTING and production-verified in the Chapter 18 atlas. MiniDV-heavy British genre production shows how low-resolution digital capture could be used deliberately inside a studio-distributed feature. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_unknown_pleasures_2002",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationUnknownPleasures.ts"
+      ],
+      "rationale": "Unknown Pleasures is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Small-camera digital production in China makes low-cost mobility, public-space access and independent production constraints explicit. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_oldboy_2003",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "south_korea_industry_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationOldboy.ts"
+      ],
+      "rationale": "The exact KOFIC-backed Production Verification record identifies Eggfilm and ShowEast as production companies, a dated South Korean release, Cineclick Asia international sales, producer/line-producer roles and differentiated cinematography, design, post, sound, VFX and martial-arts labor. It therefore adds a concrete 2003 production/export organization to the existing Shiri industry evidence rather than treating Korean nationality or later canon status as the mapping."
+    },
+    {
+      "scenario_id": "scenario_lost_in_translation_2003",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification.ts"
+      ],
+      "rationale": "Lost in Translation is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Compact international location production and specialty distribution provide a low-scale counterpoint to effects-led globalization. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_return_2003",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheReturn.ts"
+      ],
+      "rationale": "The Return is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Post-Soviet Russian production and festival circulation make regional financing and landscape-centered production visible. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_collateral_2004",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCollateral.ts"
+      ],
+      "rationale": "Collateral is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Mixed HD and 35mm night production makes digital sensitivity, early camera limitations and hybrid finishing concrete rather than abstract. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_tropical_malady_2004",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAsianLandscapeGriefAttentionBatch.ts"
+      ],
+      "rationale": "Tropical Malady is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Thai independent production and bifurcated narrative make regional low-budget art cinema and festival circulation visible outside Euro-American digital histories. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_head_on_2004",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFestivalJourneyDisplacementSystemsBatch.ts"
+      ],
+      "rationale": "Head-On is exact USE_EXISTING and production-verified in the Chapter 18 atlas. German-Turkish transnational production makes migration, music and cross-border production infrastructure visible. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_vera_drake_2004",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch.ts"
+      ],
+      "rationale": "Vera Drake is exact USE_EXISTING and production-verified in the Chapter 18 atlas. British performance-developed historical production provides a craft-centered comparison where digital convergence is not the determining production fact. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_brokeback_mountain_2005",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBrokebackMountain.ts"
+      ],
+      "rationale": "Brokeback Mountain is exact USE_EXISTING and production-verified in the Chapter 18 atlas. American location production, independent-origin financing and specialty-studio distribution make prestige transnational circulation visible. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_cache_2005",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCache.ts"
+      ],
+      "rationale": "Caché is exact USE_EXISTING and production-verified in the Chapter 18 atlas. European co-production and digital-video ambiguity make surveillance aesthetics, authorship and transnational financing a useful comparison. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_new_world_2005",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheNewWorld.ts"
+      ],
+      "rationale": "The New World is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Large-scale photochemical location production provides a deliberate counterexample to claims of a universal digital-capture transition. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_inland_empire_2006",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationInlandEmpire.ts"
+      ],
+      "rationale": "Inland Empire is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Consumer/professional DV used as a primary expressive medium makes digital texture, small crews and iterative production central. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_still_life_2006",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAsianLandscapeGriefAttentionBatch.ts"
+      ],
+      "rationale": "Still Life is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Chinese digital location filmmaking records disappearing built environments and labor through a flexible small-camera production model. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_children_of_men_2006",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationChildrenOfMen.ts"
+      ],
+      "rationale": "Children of Men is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Complex moving-shot staging, practical environments and VFX integration show how digital post can support rather than replace physical production. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_pans_labyrinth_2006",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPansLabyrinth.ts"
+      ],
+      "rationale": "Pan's Labyrinth is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Spanish-Mexican transnational production combines creature work, practical design and digital effects inside a cross-border financing model. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_apocalypto_2006",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationApocalypto.ts"
+      ],
+      "rationale": "Apocalypto is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Early Genesis digital capture in demanding location production makes mainstream digital-camera adoption visible without implying a universal switch. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_zodiac_2007",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationZodiac.ts"
+      ],
+      "rationale": "Zodiac is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Uncompressed Viper-to-drive acquisition and tapeless workflow make digital negative, on-set monitoring and data post-production concrete. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_secret_sunshine_2007",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAsianLandscapeGriefAttentionBatch.ts"
+      ],
+      "rationale": "Secret Sunshine is exact USE_EXISTING and production-verified in the Chapter 18 atlas. South Korean performance-centered production provides an auteur/social-realist countercurrent to technology-led narratives of the decade. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_no_country_for_old_men_2007",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationLandscapeBatch.ts"
+      ],
+      "rationale": "No Country for Old Men is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Photochemical location production and restrained digital post provide a mature studio-independent boundary case. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_there_will_be_blood_2007",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationThereWillBeBlood.ts"
+      ],
+      "rationale": "There Will Be Blood is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Large-format and 35mm-origin period production makes photochemical persistence and complex location craft explicit inside the digital era. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_4_months_3_weeks_and_2_days_2007",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFourMonths.ts"
+      ],
+      "rationale": "4 Months, 3 Weeks and 2 Days is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Romanian New Wave production makes low-budget regional realism, constrained locations and post-socialist film infrastructure visible. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_slumdog_millionaire_2008",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSlumdogMillionaire.ts"
+      ],
+      "rationale": "Slumdog Millionaire is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Mixed digital acquisition, mobile camera systems and transnational India-UK production make digital capture and global co-production intersect visibly. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_waltz_with_bashir_2008",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationMethodBatch.ts"
+      ],
+      "rationale": "Waltz with Bashir is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Animated documentary production makes testimony, recorded interviews, design and animation pipelines interact as separate evidentiary and craft systems. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_wendy_and_lucy_2008",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAmericanPrecarityBodyCareBatch.ts"
+      ],
+      "rationale": "Wendy and Lucy is exact USE_EXISTING and production-verified in the Chapter 18 atlas. American regional microbudget realism anchors a low-scale independent production ecology that coexists with digital blockbuster expansion. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_wrestler_2008",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch.ts"
+      ],
+      "rationale": "The Wrestler is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Handheld Super 16 performance-centered production preserves photochemical low-budget practice inside the digital transition. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_hunger_2008",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch.ts"
+      ],
+      "rationale": "Hunger is exact USE_EXISTING and production-verified in the Chapter 18 atlas. British-Irish art-cinema production and durational staging make formal rigor and public funding/co-production visible. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_avatar_2009",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAvatar.ts"
+      ],
+      "rationale": "Avatar is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Performance capture, virtual camera work, SimulCam, extensive CG and live-action production make virtual production a distinct system rather than generic VFX. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_a_prophet_2009",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNextFour2008_2009Batch.ts"
+      ],
+      "rationale": "A Prophet is exact USE_EXISTING and production-verified in the Chapter 18 atlas. French prison production and European co-production finance provide a regional industry counterpoint to Hollywood technology narratives. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_white_ribbon_2009",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEuropeanTimeIdentitySystemsBatch.ts"
+      ],
+      "rationale": "The White Ribbon is exact USE_EXISTING and production-verified in the Chapter 18 atlas. European photochemical-origin monochrome design and digital finishing make capture and final image treatment distinct production layers. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_milk_of_sorrow_2009",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch.ts"
+      ],
+      "rationale": "The Milk of Sorrow is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Peruvian-European co-production and regional performance/ritual practice extend the chapter beyond high-capital digital infrastructures. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_social_network_2010",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheSocialNetwork.ts"
+      ],
+      "rationale": "The Social Network is exact USE_EXISTING and production-verified in the Chapter 18 atlas. RED digital acquisition and data-centered post make high-end digital capture normalizing within major American production visible. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_poetry_2010",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAsianLandscapeGriefAttentionBatch.ts"
+      ],
+      "rationale": "Poetry is exact USE_EXISTING and production-verified in the Chapter 18 atlas. South Korean location realism and performance-centered authorship provide a low-effects production counterpoint. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_somewhere_2010",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationIntimateFestivalBodyCareSystemsBatch.ts"
+      ],
+      "rationale": "Somewhere is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Minimalist American location production provides a deliberately low-tech comparison within a highly digitized industrial period. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_uncle_boonmee_2010",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationUncleBoonmee.ts"
+      ],
+      "rationale": "Uncle Boonmee Who Can Recall His Past Lives is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Thai-European co-production, regional locations and practical/spiritual effects make festival circulation and transnational finance visible without becoming production proof. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_a_separation_2011",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationASeparation.ts"
+      ],
+      "rationale": "A Separation is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Iranian production under national regulation and global festival/distribution circulation makes local institutions and international reception distinct. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_tree_of_life_2011",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTreeOfLife.ts"
+      ],
+      "rationale": "The Tree of Life is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Photochemical capture, large-format elements and effects-heavy cosmological sequences make hybrid production pipelines explicit. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_pina_2011",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPina.ts"
+      ],
+      "rationale": "Pina is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Native stereoscopic dance documentary production makes 3D capture and embodied performance a distinct exhibition/camera system. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_amour_2012",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAmour.ts"
+      ],
+      "rationale": "Amour is exact USE_EXISTING and production-verified in the Chapter 18 atlas. European co-production and chamber staging provide a mature public-funding/transnational model not reducible to technology change. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_pieta_2012",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFestivalUrbanIntimacySystemsBatch.ts"
+      ],
+      "rationale": "Pietà is exact USE_EXISTING and production-verified in the Chapter 18 atlas. South Korean low-scale auteur production anchors industrial diversity within the 2010s. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_holy_motors_2012",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationHolyMotors.ts"
+      ],
+      "rationale": "Holy Motors is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Digital production and protean performance make camera mobility, changing image regimes and cinephilic production memory visible. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_gravity_2013",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationGravity.ts"
+      ],
+      "rationale": "Gravity is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Previsualization, LED light-box systems, virtual cinematography and extensive CG environments make post-led production design and performance integration central. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_ida_2013",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationIda.ts"
+      ],
+      "rationale": "Ida is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Digital monochrome and 1.37:1 composition show how digital capture can be shaped toward historically inflected formal restraint. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_blue_is_the_warmest_colour_2013",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFestivalUrbanIntimacySystemsBatch.ts"
+      ],
+      "rationale": "Blue Is the Warmest Colour is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Performance-intensive French production and long-form editing provide an authorship/labor comparison beyond technology-led history. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_birdman_or_the_unexpected_virtue_of_ignorance_2014",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationModernBatch.ts"
+      ],
+      "rationale": "Birdman is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Digital acquisition, rehearsed camera choreography and hidden transitions make the long-take illusion a post-and-production coordination problem. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_boyhood_2014",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationModernBatch.ts"
+      ],
+      "rationale": "Boyhood is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Twelve-year recurring production makes continuity of cast, format and production planning across industrial change a unique historical case. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_winter_sleep_2014",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFamilyPerformanceGriefPowerBatch.ts"
+      ],
+      "rationale": "Winter Sleep is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Turkish-European co-production and chamber/landscape staging keep festival art cinema's production ecology visible. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_black_coal_thin_ice_2014",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFestivalUrbanIntimacySystemsBatch.ts"
+      ],
+      "rationale": "Black Coal, Thin Ice is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Chinese commercial-auteur production and international festival circulation keep Mainland production distinct from other East Asian systems. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_tangerine_2015",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTechnologyBatch.ts"
+      ],
+      "rationale": "Tangerine is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Smartphone acquisition with cinema-oriented accessories makes ultra-light digital production and post finishing a major boundary case. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_mad_max_fury_road_2015",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationMethodBatch.ts"
+      ],
+      "rationale": "Mad Max: Fury Road is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Large-scale location stunts, practical vehicles and extensive digital post show physical production and VFX as complementary systems. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_son_of_saul_2015",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSonOfSaul.ts"
+      ],
+      "rationale": "Son of Saul is exact USE_EXISTING and production-verified in the Chapter 18 atlas. 35mm close-subjective historical production provides an explicit photochemical countercurrent and ethics-of-representation case. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_revenant_2015",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheRevenant.ts"
+      ],
+      "rationale": "The Revenant is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Large-format digital capture, natural-light strategy and extreme location logistics make high-end digital acquisition inseparable from physical production constraints. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_from_afar_2015",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFestivalUrbanIntimacySystemsBatch.ts"
+      ],
+      "rationale": "From Afar is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Venezuelan-Mexican production and festival circulation make Latin American transnational art cinema visible without treating festival success as production evidence. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_moonlight_2016",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationMoonlight.ts"
+      ],
+      "rationale": "Moonlight is exact USE_EXISTING and production-verified in the Chapter 18 atlas. American independent financing, digital capture and expressive color finishing connect low-budget production with specialty distribution and awards-era circulation. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_toni_erdmann_2016",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch.ts"
+      ],
+      "rationale": "Toni Erdmann is exact USE_EXISTING and production-verified in the Chapter 18 atlas. German-Austrian-Romanian co-production demonstrates European cross-border production without technology being the defining axis. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_i_am_not_your_negro_2016",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationIAmNotYourNegro.ts"
+      ],
+      "rationale": "I Am Not Your Negro is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Archive-driven documentary production makes rights, archival provenance, narration and montage distinct production systems. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_dunkirk_2017",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationDunkirk.ts"
+      ],
+      "rationale": "Dunkirk is exact USE_EXISTING and production-verified in the Chapter 18 atlas. 65mm and IMAX photochemical production at blockbuster scale makes large-format film persistence a direct counterexample to digital inevitability. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_get_out_2017",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationGetOut.ts"
+      ],
+      "rationale": "Get Out is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Low-budget studio-genre production and culturally specific authorship show how specialty/genre pipelines could scale without blockbuster resources. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_roma_2018",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationRoma.ts"
+      ],
+      "rationale": "Roma is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Large-format digital monochrome capture, complex sound post and streaming-backed distribution make production, post and platform circulation separable layers. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_burning_2018",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSubjectiveEnclosurePerformanceBatch.ts"
+      ],
+      "rationale": "Burning is exact USE_EXISTING and production-verified in the Chapter 18 atlas. South Korean literary adaptation and international co-production/circulation continue regional auteur production inside platform-era globalization. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_spider_man_into_the_spider_verse_2018",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSpiderVerse.ts"
+      ],
+      "rationale": "Spider-Man: Into the Spider-Verse is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Stylized computer animation makes rendering, linework, frame cadence and comic-derived design part of a deliberately non-photoreal feature pipeline. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_an_elephant_sitting_still_2018",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSubjectiveEnclosurePerformanceBatch.ts"
+      ],
+      "rationale": "An Elephant Sitting Still is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Chinese independent durational production makes long-take digital realism and constrained production scale visible. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_cold_war_2018",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationColdWar.ts"
+      ],
+      "rationale": "Cold War is exact USE_EXISTING and production-verified in the Chapter 18 atlas. European digital monochrome and Academy-ratio period production provide a formal co-production counterpoint. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_parasite_2019",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "south_korea_industry_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationParasite.ts"
+      ],
+      "rationale": "The exact Production Verification record identifies Barunson E&A production, CJ Entertainment international sales, the Korean release, purpose-built production infrastructure, large-format capture, editorial workflow and specialist sound-post organization. Together with Shiri and Oldboy, this supplies a later, differently organized South Korean production/distribution system and supports 2→3 triangulation across company structure, export/distribution and production scale."
+    },
+    {
+      "scenario_id": "scenario_the_irishman_2019",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheIrishman.ts"
+      ],
+      "rationale": "The Irishman is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Digital de-aging, camera/data capture and streaming-backed financing/distribution make performance-preserving VFX and platform production intersect. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_1917_2019",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1917.ts"
+      ],
+      "rationale": "1917 is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Digital large-format capture, extensive rehearsal and hidden transitions make apparent continuity a coordinated production/post system. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_atlantics_2019",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAtlantics.ts"
+      ],
+      "rationale": "Atlantics is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Senegalese-French production and supernatural social realism make African authorship and European co-production infrastructure visible together. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_synonyms_2019",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationContemporaryDissentRuralSystemsBatch.ts"
+      ],
+      "rationale": "Synonyms is exact USE_EXISTING and production-verified in the Chapter 18 atlas. Israeli-French transnational production makes language, migration and European co-production a late-decade art-cinema comparison. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_portrait_of_a_lady_on_fire_2019",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPortraitOfALadyOnFire.ts"
+      ],
+      "rationale": "Portrait of a Lady on Fire is exact USE_EXISTING and production-verified in the Chapter 18 atlas. French historical production and digital cinematography make performance, naturalistic lighting design and contemporary production ethics central. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
     }
   ],
   "candidate_admission_gate": {
