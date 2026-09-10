@@ -20,9 +20,55 @@ jobs:
       - run: npm ci
       - name: Run Chapter 19 fail-closed audit
         run: node scripts/film-history-chapter-nineteen-atlas-audit.mjs --write=.tmp/chapter19-audit.json
+      - name: Extract representation and PV context
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import path from 'node:path';
+          const coverage = JSON.parse(fs.readFileSync('data/film/film_history_representation_coverage_v1.json', 'utf8'));
+          const report = JSON.parse(fs.readFileSync('.tmp/chapter19-audit.json', 'utf8'));
+          const dataDir = 'src/ui/data';
+          const pvFiles = fs.readdirSync(dataDir).filter((name) => name.startsWith('scenarioProductionVerification') && name.endsWith('.ts'));
+          const keyword = /covid|pandem|shutdown|restart|stream|netflix|apple|disney\+|stagecraft|led volume|virtual production|union|guild|wga|sag|iatse|generative ai|artificial intelligence|sustainab|green production|tax credit|incentive|microbudget|self-distribut|intimacy coordinator|franchise|residual/i;
+          const fileText = new Map(pvFiles.map((name) => [name, fs.readFileSync(path.join(dataDir, name), 'utf8')]));
+          const candidates = report.candidates.map((candidate) => {
+            const evidenceFiles = candidate.scenarioId ? pvFiles.filter((name) => fileText.get(name).includes(candidate.scenarioId)) : [];
+            const keywordHits = [];
+            for (const name of evidenceFiles) {
+              const lines = fileText.get(name).split(/\r?\n/);
+              lines.forEach((line, index) => {
+                if (keyword.test(line)) keywordHits.push({ file: `src/ui/data/${name}`, line: index + 1, text: line.trim().slice(0, 500) });
+              });
+            }
+            return {
+              title: candidate.title,
+              year: candidate.year,
+              decision: candidate.decision,
+              scenarioId: candidate.scenarioId,
+              productionVerified: candidate.productionVerified,
+              evidenceFiles,
+              keywordHits,
+              chapterFunction: candidate.chapterFunction,
+            };
+          });
+          const output = {
+            reviewCount: coverage.scenario_reviews.length,
+            lastReviews: coverage.scenario_reviews.slice(-8),
+            openOrNonTriangulatedDevelopments: coverage.development_matrix.filter((row) => row.declared_status < 3),
+            candidates,
+          };
+          fs.writeFileSync('.tmp/chapter19-context.json', JSON.stringify(output, null, 2) + '\n');
+          NODE
       - name: Upload Chapter 19 audit
         uses: actions/upload-artifact@v4
         with:
           name: chapter19-audit
           path: .tmp/chapter19-audit.json
+          if-no-files-found: error
+      - name: Upload Chapter 19 context
+        uses: actions/upload-artifact@v4
+        with:
+          name: chapter19-context
+          path: .tmp/chapter19-context.json
           if-no-files-found: error
