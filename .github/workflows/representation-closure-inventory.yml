@@ -1,4 +1,4 @@
-name: Verify representation closure candidates
+name: Materialize verified representation gap enrichments
 
 on:
   push:
@@ -6,56 +6,65 @@ on:
       - agent/representation-closure-pass-20260910
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  verify-candidates:
+  materialize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
       - run: npm ci
-      - name: Build frozen-core representation inventory
-        run: node scripts/film-history-representation-coverage-audit-v1.mjs --write=.tmp/representation-closure.json
-      - name: Prove Nollywood candidate presence or absence
+      - name: Apply verified in-place enrichments
+        run: |
+          sed -i 's/closeIndex - 1/closeIndex/' scripts/.tmp-representation-gap-enrichment.mjs
+          node scripts/.tmp-representation-gap-enrichment.mjs
+      - name: Verify representation contract after enrichment
         shell: bash
         run: |
+          node scripts/film-history-representation-coverage-audit-v1.mjs --write=.tmp/representation-after-enrichment.json
           node --input-type=module <<'NODE'
-          import { readFileSync, readdirSync } from 'node:fs';
-          const report = JSON.parse(readFileSync('.tmp/representation-closure.json', 'utf8'));
-          const terms = /nollywood|nigeria|nigerian|lagos/i;
-          const hits = [];
-          const pvByScenario = new Map();
-          for (const file of readdirSync('src/ui/data')) {
-            if (!file.startsWith('scenarioProductionVerification') || !file.endsWith('.ts')) continue;
-            const path = `src/ui/data/${file}`;
-            const source = readFileSync(path, 'utf8');
-            for (const match of source.matchAll(/scenarioId\s*:\s*["']([^"']+)["']/g)) {
-              const paths = pvByScenario.get(match[1]) ?? [];
-              paths.push({ path, source });
-              pvByScenario.set(match[1], paths);
-            }
+          import { readFileSync } from 'node:fs';
+          const report = JSON.parse(readFileSync('.tmp/representation-after-enrichment.json', 'utf8'));
+          const expected = {
+            reviewedScenarioIds: 399,
+            mappedScenarioIds: 179,
+            reviewedNoMappingScenarioIds: 220,
+            unmappedScenarioIds: 214,
+            p0OpenRows: 1,
+          };
+          for (const [key, value] of Object.entries(expected)) {
+            const actual = key === 'p0OpenRows' ? report.coverage.p0OpenRows : report.mapping[key];
+            if (actual !== value) throw new Error(`${key}: expected ${value}, got ${actual}`);
           }
-          for (const item of report.scenarioInventory) {
-            const identityText = `${item.scenarioId}\n${item.title}\n${item.originalTitle ?? ''}\n${item.origin}`;
-            const pvRecords = pvByScenario.get(item.scenarioId) ?? [];
-            const pvText = pvRecords.map((record) => record.source).join('\n');
-            if (terms.test(identityText) || terms.test(pvText)) {
-              hits.push({
-                scenarioId: item.scenarioId,
-                title: item.title,
-                year: item.year,
-                reviewState: item.reviewState,
-                paths: pvRecords.map((record) => record.path),
-              });
-            }
+          if (report.core.runtimeAtlasScenarios !== 613 || report.core.uniqueProductionVerificationIds !== 613 || !report.core.exactSetEquality) {
+            throw new Error('Frozen 613/613 invariant changed');
           }
-          console.log(`FROZEN_CORE=${report.core.runtimeAtlasScenarios}`);
-          console.log(`PRODUCTION_VERIFIED=${report.core.uniqueProductionVerificationIds}`);
-          console.log(`NOLLYWOOD_NIGERIA_HITS=${hits.length}`);
-          for (const hit of hits) console.log(`NOLLYWOOD_HIT\t${JSON.stringify(hit)}`);
-          if (report.core.runtimeAtlasScenarios !== 613 || report.core.uniqueProductionVerificationIds !== 613) throw new Error('Frozen 613/613 invariant changed');
+          const contract = JSON.parse(readFileSync('data/film/film_history_representation_coverage_v1.json', 'utf8'));
+          const openP0 = contract.development_matrix.filter((row) => row.priority === 'P0' && row.declared_status < 2);
+          if (openP0.length !== 1 || openP0[0].development_id !== 'nigeria_nollywood_industry_system') {
+            throw new Error(`Unexpected remaining P0 rows: ${openP0.map((row) => row.development_id).join(',')}`);
+          }
+          console.log(JSON.stringify({ mapping: report.mapping, coverage: report.coverage, remainingP0: openP0[0].development_id }, null, 2));
           NODE
+      - name: Commit only permanent enrichment files
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            data/film/film_history_representation_coverage_v1.json \
+            src/ui/data/scenarioProductionVerificationThePowerOfTheDog.ts \
+            src/ui/data/scenarioProductionVerificationDontLookUp.ts \
+            src/ui/data/scenarioProductionVerificationTenet.ts \
+            src/ui/data/scenarioProductionVerificationTechnologyBatch.ts \
+            src/ui/data/scenarioProductionVerificationTheBrutalist.ts
+          git diff --cached --check
+          test "$(git diff --cached --name-only | wc -l)" -eq 6
+          git commit -m "Audit representation closure gap enrichments"
+          git push origin HEAD:agent/representation-closure-pass-20260910
