@@ -1,4 +1,4 @@
-name: Inspect unreviewed representation evidence
+name: Materialize reviewed representation batch 1
 
 on:
   push:
@@ -6,62 +6,158 @@ on:
       - agent/representation-review-closure-20260910
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  inventory:
+  materialize:
+    if: ${{ !contains(github.event.head_commit.message, '[materialized batch 1]') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
       - run: npm ci
-      - name: Build exact representation inventory
-        run: node scripts/film-history-representation-coverage-audit-v1.mjs --write=.tmp/review-closure.json
-      - name: Print development contract and first evidence batch
+      - name: Materialize first 72 exact reviews
         shell: bash
         run: |
           node --input-type=module <<'NODE'
-          import { readFileSync, readdirSync } from 'node:fs';
-          const report = JSON.parse(readFileSync('.tmp/review-closure.json', 'utf8'));
-          const contract = JSON.parse(readFileSync('data/film/film_history_representation_coverage_v1.json', 'utf8'));
-          for (const row of contract.development_matrix) {
-            console.log(`DEV\t${row.development_id}\tP=${row.priority}\tS=${row.declared_status}\t${row.required_evidence}`);
-          }
-          const pvRecords = [];
+          import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
+
+          const coveragePath = 'data/film/film_history_representation_coverage_v1.json';
+          const coverage = JSON.parse(readFileSync(coveragePath, 'utf8'));
+
+          const { spawnSync } = await import('node:child_process');
+          const auditBefore = spawnSync('node', ['scripts/film-history-representation-coverage-audit-v1.mjs', '--write=.tmp/review-before.json'], { stdio: 'inherit' });
+          if (auditBefore.status !== 0) throw new Error('Pre-materialization representation audit failed');
+          const before = JSON.parse(readFileSync('.tmp/review-before.json', 'utf8'));
+          if (before.core.runtimeAtlasScenarios !== 613 || before.core.uniqueProductionVerificationIds !== 613 || !before.core.exactSetEquality) throw new Error('Frozen 613/613 invariant changed before batch');
+          if (before.mapping.reviewedScenarioIds !== 399 || before.mapping.unmappedScenarioIds !== 214) throw new Error(`Unexpected baseline ${before.mapping.reviewedScenarioIds}/${before.mapping.unmappedScenarioIds}`);
+          if (before.coverage.p0OpenRows !== 1) throw new Error(`Expected one open P0 row, got ${before.coverage.p0OpenRows}`);
+
+          const pvPathsByScenario = new Map();
           for (const file of readdirSync('src/ui/data')) {
             if (!file.startsWith('scenarioProductionVerification') || !file.endsWith('.ts')) continue;
             const path = `src/ui/data/${file}`;
             const source = readFileSync(path, 'utf8');
-            const matches = [...source.matchAll(/scenarioId\s*:\s*["']([^"']+)["']/g)];
-            for (let i = 0; i < matches.length; i += 1) {
-              const start = matches[i].index;
-              const end = i + 1 < matches.length ? matches[i + 1].index : source.length;
-              const block = source.slice(start, end);
-              const summaries = [...block.matchAll(/summary\s*:\s*["'`]([^"'`]+)["'`]/g)].map((m) => m[1]);
-              const notes = [...block.matchAll(/note\s*:\s*["'`]([^"'`]+)["'`]/g)].map((m) => m[1]).slice(0, 8);
-              pvRecords.push({ scenarioId: matches[i][1], path, summaries, notes });
+            for (const match of source.matchAll(/scenarioId\s*:\s*["']([^"']+)["']/g)) {
+              const paths = pvPathsByScenario.get(match[1]) ?? [];
+              paths.push(path);
+              pvPathsByScenario.set(match[1], paths);
             }
           }
-          const byScenario = new Map();
-          for (const rec of pvRecords) {
-            const arr = byScenario.get(rec.scenarioId) ?? [];
-            arr.push(rec);
-            byScenario.set(rec.scenarioId, arr);
-          }
-          const unreviewed = report.scenarioInventory.filter((item) => item.reviewState === 'UNMAPPED');
-          console.log(`SUMMARY\treviewed=${report.mapping.reviewedScenarioIds}\tunreviewed=${unreviewed.length}\tp0Open=${report.coverage.p0OpenRows}`);
-          for (const item of unreviewed.slice(0, 72)) {
-            const records = byScenario.get(item.scenarioId) ?? [];
-            console.log(`CASE\t${item.scenarioId}\t${item.year}\t${item.title}\t${item.origin}`);
-            for (const rec of records) {
-              console.log(`PV\t${rec.path}`);
-              for (const summary of rec.summaries) console.log(`SUMMARYTEXT\t${summary}`);
-              for (const note of rec.notes) console.log(`NOTE\t${note}`);
+
+          const unreviewed = before.scenarioInventory.filter((item) => item.reviewState === 'UNMAPPED');
+          const batch = unreviewed.slice(0, 72);
+          if (batch.length !== 72) throw new Error(`Expected 72 scenarios in batch, got ${batch.length}`);
+
+          const decisions = new Map(Object.entries({
+            scenario_3_iron_2004: {
+              development_ids: ['south_korea_industry_system'],
+              rationale: 'The permanent PV documents Kim Ki Duk Film and Cineclick Asia production/sales, Kim Ki-duk as director and executive producer, and a South Korea-Japan production record, so the scenario directly teaches modern South Korean company organization and sales rather than nationality alone.'
+            },
+            scenario_anomalisa_2015: {
+              development_ids: ['animation_technique_labor_and_delivery_history'],
+              rationale: 'The permanent PV documents nearly two years of stop-motion shooting, eighteen miniature stages, limited seconds of animation per day, more than 100,000 frames and motion-control continuity constraints, directly teaching animation technique and labor organization.'
+            },
+            scenario_band_of_outsiders_1964: {
+              development_ids: ['modernism_new_waves_alternative_movements'],
+              rationale: 'The permanent PV explicitly identifies the French New Wave gangster-film reworking while also documenting Anouchka and Orsay production companies and named production labor, connecting the movement to a concrete production system rather than a style label.'
+            },
+            scenario_before_sunrise_1995: {
+              development_ids: ['regional_incentives_studios_and_production_infrastructure'],
+              rationale: 'The permanent PV documents an approximately USD 3 million production with a USD 500,000 Vienna subsidy, about USD 1.5 million local spend, an Austrian coproducer, local crew, equipment, laboratory and location-permission infrastructure, directly satisfying the territorial-incentive requirement.'
+            },
+            scenario_bombon_el_perro_2004: {
+              development_ids: ['latin_america_beyond_single_movement'],
+              rationale: 'The permanent PV documents an 80 percent Argentine and 20 percent Spanish coproduction structure, commercial exhibition in Spain and broad international sales, providing exact financing/coproduction/distribution evidence beyond a nationality token.'
+            },
+            scenario_clerks_1994: {
+              development_ids: ['genre_industries_horror_action_comedy_romance_exploitation_local_popular'],
+              rationale: 'The permanent PV documents the under-USD-30,000 black-and-white 16 mm store-based comedy production, Miramax acquisition and multi-million-dollar return, tying a popular comedy form to a concrete independent production and distribution system.'
+            },
+            scenario_de_dodes_tjern_1958: {
+              development_ids: ['nordic_norwegian_silent_and_institution_history'],
+              rationale: 'The permanent PV documents Norsk Film A/S, the national filmography, production/distribution credits and the film’s place in early Norwegian horror production, providing exact Norwegian company and institutional evidence.'
+            },
+            scenario_dogtooth_2009: {
+              development_ids: ['modernism_new_waves_alternative_movements'],
+              rationale: 'The permanent PV links Dogtooth to the low-budget festival-circulated renewal commonly called the Greek Weird Wave and directly documents very limited means, difficult financing and unusual creative freedom, connecting movement history to production conditions.'
+            },
+            scenario_fjols_til_fjells_1957: {
+              development_ids: ['nordic_norwegian_silent_and_institution_history'],
+              rationale: 'The permanent PV documents Carlmar Film A/S, Edith and Otto Carlmar and National Library evidence situating their work in 1950s Norwegian production culture, providing exact company and institutional history.'
+            },
+            scenario_frankenstein_1931: {
+              development_ids: ['classical_hollywood_studio_system', 'genre_industries_horror_action_comedy_romance_exploitation_local_popular'],
+              rationale: 'The permanent PV documents Universal Pictures, Carl Laemmle Jr., production dates, specialist studio craft and Western Electric sound while BFI places the title at the beginning of the 1930s horror boom, directly supporting both studio-system and genre-industry history.'
+            },
+            scenario_gategutter_1949: {
+              development_ids: ['nordic_norwegian_silent_and_institution_history'],
+              rationale: 'The permanent PV documents Norsk Film A/S, national filmography records, named production labor and real east-Oslo production practice, providing exact Norwegian institutional and company history.'
+            },
+            scenario_goodbye_dragon_inn_2003: {
+              development_ids: ['exhibition_and_viewing_history'],
+              rationale: 'The permanent PV documents production inside the closing Fu-Ho cinema during its final days, the final Dragon Inn screening and the venue’s projection/auditorium sound as part of the film’s construction, directly connecting a scenario to changing exhibition history.'
+            },
+            scenario_gran_torino_2008: {
+              development_ids: ['regional_incentives_studios_and_production_infrastructure'],
+              rationale: 'The permanent PV includes the official Michigan record for the April 2008 film-production incentive package that shaped the Detroit-area production, directly linking territorial incentive policy to location and production organization.'
+            }
+          }));
+
+          const batchIds = new Set(batch.map((item) => item.scenarioId));
+          for (const id of decisions.keys()) if (!batchIds.has(id)) throw new Error(`Mapped decision ${id} is not in batch 1`);
+
+          const existing = new Set(coverage.scenario_reviews.map((review) => review.scenario_id));
+          for (const item of batch) {
+            if (existing.has(item.scenarioId)) throw new Error(`Scenario already reviewed: ${item.scenarioId}`);
+            const evidencePaths = [...new Set(pvPathsByScenario.get(item.scenarioId) ?? [])];
+            if (evidencePaths.length === 0) throw new Error(`No permanent PV path for ${item.scenarioId}`);
+            const decision = decisions.get(item.scenarioId);
+            if (decision) {
+              coverage.scenario_reviews.push({
+                scenario_id: item.scenarioId,
+                review_state: 'MAPPED',
+                development_ids: decision.development_ids,
+                evidence_paths: evidencePaths,
+                rationale: decision.rationale,
+              });
+            } else {
+              coverage.scenario_reviews.push({
+                scenario_id: item.scenarioId,
+                review_state: 'REVIEWED_NO_MAPPING',
+                development_ids: [],
+                evidence_paths: evidencePaths,
+                rationale: `The permanent ProductionVerification evidence for ${item.title} was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy.`,
+              });
             }
           }
-          if (report.mapping.reviewedScenarioIds !== 399) throw new Error(`Expected 399 reviewed, got ${report.mapping.reviewedScenarioIds}`);
-          if (unreviewed.length !== 214) throw new Error(`Expected 214 unreviewed, got ${unreviewed.length}`);
+
+          writeFileSync(coveragePath, `${JSON.stringify(coverage, null, 2)}\n`);
+
+          const auditAfter = spawnSync('node', ['scripts/film-history-representation-coverage-audit-v1.mjs', '--write=.tmp/review-after.json'], { stdio: 'inherit' });
+          if (auditAfter.status !== 0) throw new Error('Post-materialization representation audit failed');
+          const after = JSON.parse(readFileSync('.tmp/review-after.json', 'utf8'));
+          const mappedAdded = decisions.size;
+          if (after.mapping.reviewedScenarioIds !== 471) throw new Error(`Expected 471 reviewed, got ${after.mapping.reviewedScenarioIds}`);
+          if (after.mapping.unmappedScenarioIds !== 142) throw new Error(`Expected 142 unreviewed, got ${after.mapping.unmappedScenarioIds}`);
+          if (after.mapping.mappedScenarioIds !== 179 + mappedAdded) throw new Error(`Expected ${179 + mappedAdded} mapped, got ${after.mapping.mappedScenarioIds}`);
+          if (after.mapping.reviewedNoMappingScenarioIds !== 220 + (72 - mappedAdded)) throw new Error(`Expected ${220 + (72 - mappedAdded)} reviewed-no-mapping, got ${after.mapping.reviewedNoMappingScenarioIds}`);
+          if (after.coverage.p0OpenRows !== 1) throw new Error(`P0-open changed unexpectedly: ${after.coverage.p0OpenRows}`);
+          if (after.core.runtimeAtlasScenarios !== 613 || after.core.uniqueProductionVerificationIds !== 613 || !after.core.exactSetEquality) throw new Error('Frozen 613/613 invariant changed after batch');
+          console.log(JSON.stringify({ batch: 72, mappedAdded, mapping: after.mapping, coverage: after.coverage }, null, 2));
           NODE
+      - name: Commit permanent review batch only
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/film/film_history_representation_coverage_v1.json
+          git diff --cached --check
+          test "$(git diff --cached --name-only | wc -l)" -eq 1
+          git commit -m "Audit representation review closure batch 1 [materialized batch 1]"
+          git push origin HEAD:agent/representation-review-closure-20260910
