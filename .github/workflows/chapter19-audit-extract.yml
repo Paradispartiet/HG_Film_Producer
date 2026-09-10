@@ -1,0 +1,28 @@
+name: Chapter 19 audit extract
+
+on:
+  push:
+    branches:
+      - agent/chapter19-audit-extract-20260910
+
+permissions:
+  contents: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Run Chapter 19 fail-closed audit
+        run: node scripts/film-history-chapter-nineteen-atlas-audit.mjs --write=.tmp/chapter19-audit.json
+      - name: Upload Chapter 19 audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: chapter19-audit
+          path: .tmp/chapter19-audit.json
+          if-no-files-found: error
