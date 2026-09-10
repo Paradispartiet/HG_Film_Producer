@@ -8,6 +8,8 @@ const atlas = JSON.parse(fs.readFileSync(atlasPath, 'utf8'));
 if (!Array.isArray(coverage.scenario_reviews) || coverage.scenario_reviews.length !== 141) {
   throw new Error(`Expected 141 existing scenario reviews, got ${coverage.scenario_reviews?.length}`);
 }
+if (!Array.isArray(coverage.development_matrix)) throw new Error('Missing development_matrix');
+const developmentStatusesBefore = new Map(coverage.development_matrix.map((row) => [row.development_id, row.declared_status]));
 
 const collectUseExisting = (value, out = new Set()) => {
   if (Array.isArray(value)) {
@@ -108,7 +110,7 @@ if (!landscapePv.includes('scenarioId: "scenario_landscape_in_the_mist_1988"') |
   throw new Error('Landscape in the Mist permanent PV record is missing or not verified');
 }
 
-const india = coverage.developments.find((row) => row.development_id === INDIA);
+const india = coverage.development_matrix.find((row) => row.development_id === INDIA);
 if (!india || india.declared_status !== 0) throw new Error(`Expected India status 0, got ${india?.declared_status}`);
 india.declared_status = 2;
 
@@ -120,7 +122,13 @@ coverage.scenario_reviews.push(...reviews);
 coverage.audited_at = '2026-09-10';
 
 if (coverage.scenario_reviews.length !== 175) throw new Error(`Expected 175 final reviews, got ${coverage.scenario_reviews.length}`);
-if (coverage.developments.find((row) => row.development_id === INDIA)?.declared_status !== 2) throw new Error('India status failed to materialize at 2');
+if (coverage.development_matrix.find((row) => row.development_id === INDIA)?.declared_status !== 2) throw new Error('India status failed to materialize at 2');
+for (const row of coverage.development_matrix) {
+  const before = developmentStatusesBefore.get(row.development_id);
+  if (before === undefined) throw new Error(`Unexpected development row: ${row.development_id}`);
+  const expected = row.development_id === INDIA ? 2 : before;
+  if (row.declared_status !== expected) throw new Error(`Unexpected status change for ${row.development_id}: ${before} -> ${row.declared_status}`);
+}
 if (coverage.closure_contract?.selection_may_be_called_representationally_audited !== false) throw new Error('Closure must remain fail-closed after Chapter 16');
 
 fs.writeFileSync(coveragePath, `${JSON.stringify(coverage, null, 2)}\n`);
