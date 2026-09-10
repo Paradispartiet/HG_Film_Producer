@@ -1,7 +1,7 @@
 {
   "schema": "hg_film_producer_film_history_representation_coverage_v1",
   "version": "1.0.0",
-  "audited_at": "2026-09-09",
+  "audited_at": "2026-09-10",
   "status": "OPEN_GAPS_FAIL_CLOSED",
   "owner": "film_history_representation_coverage",
   "baseline": {
@@ -183,7 +183,7 @@
     },
     {
       "development_id": "india_modern_industry_system",
-      "declared_status": 0,
+      "declared_status": 2,
       "priority": "P0",
       "axis_ids": [
         "institutions_and_industry_systems",
@@ -463,15 +463,26 @@
     {
       "scenario_id": "scenario_blacksmith_scene_1893",
       "review_state": "MAPPED",
-      "development_ids": ["early_cinema_apparatus_projection_programming", "exhibition_and_viewing_history"],
-      "evidence_paths": ["docs/BLACKSMITH_SCENE_1893_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "early_cinema_apparatus_projection_programming",
+        "exhibition_and_viewing_history"
+      ],
+      "evidence_paths": [
+        "docs/BLACKSMITH_SCENE_1893_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified case directly couples Kinetograph capture, Kinetoscope viewing, Black Maria studio architecture and the 1893 Brooklyn demonstration, providing exact apparatus and exhibition-system evidence."
     },
     {
       "scenario_id": "scenario_workers_leaving_lumiere_factory_1895",
       "review_state": "MAPPED",
-      "development_ids": ["early_cinema_apparatus_projection_programming", "exhibition_and_viewing_history", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["docs/WORKERS_LEAVING_LUMIERE_FACTORY_1895_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "early_cinema_apparatus_projection_programming",
+        "exhibition_and_viewing_history",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "docs/WORKERS_LEAVING_LUMIERE_FACTORY_1895_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified case documents portable Cinématographe production, March and December 1895 projection/programming history and distinct surviving filmed versions whose differences must remain visible in production history."
     },
     {
@@ -483,43 +494,70 @@
     {
       "scenario_id": "scenario_a_trip_to_the_moon_1902",
       "review_state": "MAPPED",
-      "development_ids": ["early_cinema_apparatus_projection_programming", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts"],
+      "development_ids": [
+        "early_cinema_apparatus_projection_programming",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts"
+      ],
       "rationale": "The verified record documents Méliès's glass-studio camera system and repeatable stoppage, double-exposure and forced-perspective capture practices, plus rediscovery and image-by-image restoration of recovered colour material."
     },
     {
       "scenario_id": "scenario_life_of_an_american_fireman_1903",
       "review_state": "MAPPED",
-      "development_ids": ["preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["docs/LIFE_OF_AN_AMERICAN_FIREMAN_1903_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "docs/LIFE_OF_AN_AMERICAN_FIREMAN_1903_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The Library of Congress copyright paper print changed the accepted historical account by proving that a later cross-cut re-edit was not Porter's original 1903 construction, directly demonstrating archive survival as a history-making force."
     },
     {
       "scenario_id": "scenario_the_great_train_robbery_1903",
       "review_state": "MAPPED",
-      "development_ids": ["early_cinema_apparatus_projection_programming", "exhibition_and_viewing_history"],
-      "evidence_paths": ["docs/THE_GREAT_TRAIN_ROBBERY_1903_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "early_cinema_apparatus_projection_programming",
+        "exhibition_and_viewing_history"
+      ],
+      "evidence_paths": [
+        "docs/THE_GREAT_TRAIN_ROBBERY_1903_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified case provides exact early capture evidence through studio/location production, moving-train photography and double exposure, while its flexible direct-address bandit shot documents exhibitor agency over placement within the projected programme."
     },
     {
       "scenario_id": "scenario_rescued_by_rover_1905",
       "review_state": "MAPPED",
-      "development_ids": ["preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["docs/RESCUED_BY_ROVER_1905_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "docs/RESCUED_BY_ROVER_1905_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified case makes replacement and re-shot version history explicit: exceptional demand exhausted early negatives or prints and required remaking, so material survival and version differences directly affect reconstruction of the canonical case."
     },
     {
       "scenario_id": "scenario_the_corbett_fitzsimmons_fight_1897",
       "review_state": "MAPPED",
-      "development_ids": ["early_cinema_apparatus_projection_programming", "exhibition_and_viewing_history"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationCorbettFitzsimmons.ts"],
+      "development_ids": [
+        "early_cinema_apparatus_projection_programming",
+        "exhibition_and_viewing_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCorbettFitzsimmons.ts"
+      ],
       "rationale": "The verified case ties three-camera Veriscope capture to a proprietary projector requirement, a New York premiere, live expert commentary and territorial exhibition, directly joining apparatus, projection and circulation as one event-cinema system."
     },
     {
       "scenario_id": "scenario_employees_leaving_browns_atlas_works_sheffield_1901",
       "review_state": "MAPPED",
-      "development_ids": ["exhibition_and_viewing_history"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationBrownsAtlasWorks.ts"],
+      "development_ids": [
+        "exhibition_and_viewing_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBrownsAtlasWorks.ts"
+      ],
       "rationale": "The verified case documents showman commissioning, factory-gate staging and a local-recognition business model in which filmed communities became paying fairground or music-hall audiences, directly connecting production to exhibition strategy."
     },
     {
@@ -531,22 +569,34 @@
     {
       "scenario_id": "scenario_grandmas_reading_glass_1900",
       "review_state": "MAPPED",
-      "development_ids": ["early_cinema_apparatus_projection_programming"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationGrandmasReadingGlass.ts"],
+      "development_ids": [
+        "early_cinema_apparatus_projection_programming"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationGrandmasReadingGlass.ts"
+      ],
       "rationale": "The verified case connects G. A. Smith's Brighton production to Alfred Darling camera apparatus and circularly masked analytical inserts, so capture technology is directly tied to a specific early production method without turning the film into a single-inventor POV myth."
     },
     {
       "scenario_id": "scenario_attack_on_a_china_mission_bluejackets_to_the_rescue_1900",
       "review_state": "MAPPED",
-      "development_ids": ["preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationAttackChinaMission.ts"],
+      "development_ids": [
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAttackChinaMission.ts"
+      ],
       "rationale": "Peer-reviewed artefact research shows that rediscovered copies and a later reconstructed archive version can materially change the apparent editing structure, so provenance and reconstruction uncertainty directly alter what film history can recover and teach."
     },
     {
       "scenario_id": "scenario_histoire_d_un_crime_1901",
       "review_state": "MAPPED",
-      "development_ids": ["genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["docs/HISTOIRE_D_UN_CRIME_1901_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "docs/HISTOIRE_D_UN_CRIME_1901_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified Pathé case links crime fiction to Zecca's organized production leadership, differentiated genre production, longer footage, production-cost and sales testimony and public success. This is concrete genre-industry evidence, but one early French crime case is insufficient for broad genre-system coverage."
     },
     {
@@ -558,50 +608,85 @@
     {
       "scenario_id": "scenario_the_story_of_the_kelly_gang_1906",
       "review_state": "MAPPED",
-      "development_ids": ["exhibition_and_viewing_history", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["docs/THE_STORY_OF_THE_KELLY_GANG_1906_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "exhibition_and_viewing_history",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "docs/THE_STORY_OF_THE_KELLY_GANG_1906_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified case ties five-reel feature scale to producer-exhibitor organization, touring circulation, lecturer/live-effects presentation and changed programme demands, while its fragmentary survival and modern reconstruction make the distinction between surviving evidence and the lost complete original historically consequential."
     },
     {
       "scenario_id": "scenario_queen_elizabeth_1912",
       "review_state": "MAPPED",
-      "development_ids": ["decolonial_transnational_historiography", "exhibition_and_viewing_history"],
-      "evidence_paths": ["docs/QUEEN_ELIZABETH_1912_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "decolonial_transnational_historiography",
+        "exhibition_and_viewing_history"
+      ],
+      "evidence_paths": [
+        "docs/QUEEN_ELIZABETH_1912_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified case separates French Le Film d'Art production from Adolph Zukor's United States rights, financing and presentation role, providing exact transnational production/circulation evidence and imported-feature exhibition history. One France–United States prestige-feature case is not broad enough to close the combined decolonial/transnational row, so that development remains weak."
     },
     {
       "scenario_id": "scenario_traffic_in_souls_1913",
       "review_state": "MAPPED",
-      "development_ids": ["exhibition_and_viewing_history", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["docs/TRAFFIC_IN_SOULS_1913_PRODUCTION_CASE_VERIFICATION.md"],
+      "development_ids": [
+        "exhibition_and_viewing_history",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "docs/TRAFFIC_IN_SOULS_1913_PRODUCTION_CASE_VERIFICATION.md"
+      ],
       "rationale": "The verified case distinguishes IMP production from Universal distribution and documents a low-cost contemporary sensational feature, real New York locations, six-reel completion, strong returns and simultaneous exhibition in twenty New York theatres. Together with the Pathé crime case, this supplies exact industrial genre evidence sufficient for coverage, but not the broader genre/geography triangulation required for status 3."
     },
     {
       "scenario_id": "scenario_fantomas_1913",
       "review_state": "MAPPED",
-      "development_ids": ["genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationFantomas.ts"],
+      "development_ids": [
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFantomas.ts"
+      ],
       "rationale": "The verified Gaumont case documents a five-film recurring crime cycle with Feuillade, Souvestre–Allain adaptation, René Navarre and a stable recurring ensemble, plus Comptoir Ciné-Location distribution evidence. This makes recurring popular crime production and return-audience continuity an exact company/genre system rather than a style label."
     },
     {
       "scenario_id": "scenario_cabiria_1914",
       "review_state": "MAPPED",
-      "development_ids": ["decolonial_transnational_historiography", "genre_industries_horror_action_comedy_romance_exploitation_local_popular", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationCabiria.ts"],
+      "development_ids": [
+        "decolonial_transnational_historiography",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCabiria.ts"
+      ],
       "rationale": "The verified Itala Film case joins Turin-based feature-scale epic production, a multi-person cinematography/effects system, original music and documented worldwide success/export ambition. Its reconstructed 1914 edition and separately restored 1931 sound reissue also make version recovery and preservation history explicit rather than collapsing them into one master."
     },
     {
       "scenario_id": "scenario_afgrunden_1910",
       "review_state": "MAPPED",
-      "development_ids": ["nordic_norwegian_silent_and_institution_history", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationAfgrunden.ts"],
+      "development_ids": [
+        "nordic_norwegian_silent_and_institution_history",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAfgrunden.ts"
+      ],
       "rationale": "The verified Danish case identifies Kosmorama production, an eight-day shoot, Copenhagen/Frederiksberg locations, 35 mm silent format and Asta Nielsen’s internationally travelling star breakthrough. The archival record also documents chemical deterioration and dance-scene material recovered from Swedish censorship holdings, directly linking Nordic production history to material survival."
     },
     {
       "scenario_id": "scenario_atlantis_1913",
       "review_state": "MAPPED",
-      "development_ids": ["decolonial_transnational_historiography", "nordic_norwegian_silent_and_institution_history"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationAtlantis.ts"],
+      "development_ids": [
+        "decolonial_transnational_historiography",
+        "nordic_norwegian_silent_and_institution_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAtlantis.ts"
+      ],
       "rationale": "The verified Nordisk case documents the company’s biggest and most ambitious prewar feature, 2280 metres of 35 mm production, international orientation and two market-specific endings including an unhappy Russian-market version. This is exact Nordic institutional/export evidence and a concrete transnational versioning strategy."
     },
     {
@@ -613,281 +698,462 @@
     {
       "scenario_id": "scenario_the_crowd_1928",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationTheCrowd.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheCrowd.ts"
+      ],
       "rationale": "The verified MGM case documents Vidor's production latitude inside a major studio, MGM resource coordination, Fox Movietone engineering support and cinematographer/engineer collaboration for technically difficult moving-camera work, directly evidencing studio organization and specialized labor."
     },
     {
       "scenario_id": "scenario_the_gold_rush_1925",
       "review_state": "MAPPED",
-      "development_ids": ["modern_popular_commercial_cinema_as_industry"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationGoldRush.ts"],
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationGoldRush.ts"
+      ],
       "rationale": "The verified Chaplin case documents a more-than-$900,000 feature, hundreds of extras, rail and mountain-location logistics, long production, star-producer control, United Artists distribution and major documented commercial reach, providing a concrete mass-audience commercial-production countermodel to studio vertical integration."
     },
     {
       "scenario_id": "scenario_it_1927",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system", "modern_popular_commercial_cinema_as_industry"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationIt.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "modern_popular_commercial_cinema_as_industry"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationIt.ts"
+      ],
       "rationale": "The verified Paramount case ties story acquisition explicitly to Clara Bow, B. P. Schulberg's cultivation of her star persona, studio publicity, wage growth, box-office dominance, production locations and Paramount distribution, joining studio organization with a mass-audience star-vehicle business model."
     },
     {
       "scenario_id": "scenario_the_cheat_1915",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationTheCheat.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheCheat.ts"
+      ],
       "rationale": "The verified case separates Famous Players Film Company production from Paramount distribution and anchors DeMille, Wyckoff and the Lasky studio facility, providing exact early company, facility, labor and distribution evidence for the emerging American studio system."
     },
     {
       "scenario_id": "scenario_wings_1927",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system", "modern_popular_commercial_cinema_as_industry"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationWings.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "modern_popular_commercial_cinema_as_industry"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationWings.ts"
+      ],
       "rationale": "The verified Paramount case documents producer/scenario organization, multiple camera and effects specialists, military cooperation, actual aircraft, reconstructed battle landscapes and Paramount production/distribution. It therefore teaches large-scale studio labor/logistics and mass-audience spectacle without misclassifying its arranged music/effects presentation as the synchronized-sound transition."
     },
     {
       "scenario_id": "scenario_the_cabinet_of_dr_caligari_1920",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts"
+      ],
       "rationale": "The verified case connects German Expressionism to concrete Decla studio production, named design and cinematography labor and the constructed angular visual world rather than a style label alone. Deutsche Kinemathek also documents restoration from surviving camera-negative material, replacement of missing material and recovery of original intertitles and tinting, making material survival consequential to what can be taught."
     },
     {
       "scenario_id": "scenario_nosferatu_1922",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts"
+      ],
       "rationale": "The verified Prana-Film case places Nosferatu inside German Expressionism while documenting real production locations, Fritz Arno Wagner photography and Albin Grau's design; BFI explicitly contrasts its landscapes and architecture with a wholly painted studio world. This directly ties a formal movement to concrete location practice and production organization."
     },
     {
       "scenario_id": "scenario_metropolis_1927",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSilentStudioSystemsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSilentStudioSystemsBatch.ts"
+      ],
       "rationale": "The verified UFA case ties Expressionist design and monumental form to a two-year studio production, Pommer/Lang/von Harbou, cinematography, design, miniature and Schüfftan effects labor. Its severe early recutting, three negatives, decades of reconstruction and Buenos Aires rediscovery also show preservation materially changing the recoverable film."
     },
     {
       "scenario_id": "scenario_the_last_laugh_1924",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationTheLastLaugh.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheLastLaugh.ts"
+      ],
       "rationale": "The verified case connects Kammerspielfilm and image-led modernism to UFA/Babelsberg organization and the documented Pommer-Murnau-Mayer-Freund-Herlth/Röhrig collaboration. Freund's mobile-camera apparatus and subjective practice are therefore anchored to an institutional and labor system rather than credited as an isolated stylistic invention."
     },
     {
       "scenario_id": "scenario_pandoras_box_1929",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationPandorasBox.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPandorasBox.ts"
+      ],
       "rationale": "The verified Nero-Film case anchors Pabst's Neue Sachlichkeit and socially critical realism to Seymour Nebenzahl's production, Filmwerke Staaken, Krampf, Andrejew/Heš and Louise Brooks's transatlantic casting. It supplies a documented late-Weimar countercurrent to Expressionism with concrete studio, labor and production context."
     },
     {
       "scenario_id": "scenario_coeur_fidele_1923",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationCoeurFidele.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCoeurFidele.ts"
+      ],
       "rationale": "The verified case ties French Impressionism to Pathé Consortium Cinéma, Jean and Marie Epstein's writing/directing collaboration, Paul Guichard and named camera operators, and perception-led camera/editing practice. This makes the movement legible as a collaborative production system rather than a photogénie style label."
     },
     {
       "scenario_id": "scenario_napoleon_1927",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "exhibition_and_viewing_history", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNapoleon.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "exhibition_and_viewing_history",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNapoleon.ts"
+      ],
       "rationale": "The verified case connects French avant-garde scale to Société du Film Napoléon/Société Générale de Films, broad specialist labor, eighteen cameras and the three-camera/three-projector Polyvision system. Its distinct Opéra and Apollo 1927 states, MGM export cuts, later sound re-edit and modern Grande Version reconstruction make both exhibition infrastructure and version recovery historically consequential."
     },
     {
       "scenario_id": "scenario_un_chien_andalou_1929",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationUnChienAndalou.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationUnChienAndalou.ts"
+      ],
       "rationale": "The verified case anchors Surrealism to Buñuel and Dalí's collaboration, Studio-Films, Pierre Braunberger, Albert Duverger and a small family-financing context. Its discontinuous montage is therefore mapped together with an alternative production scale and financing model rather than treated as free-floating formal randomness."
     },
     {
       "scenario_id": "scenario_entr_acte_1924",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "exhibition_and_viewing_history", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEntrActe.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "exhibition_and_viewing_history",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEntrActe.ts"
+      ],
       "rationale": "The verified case ties Dada production to Rolf de Maré's Ballets Suédois commission, Picabia/Clair/Berliet/Satie labor and Entr'acte's programmed function inside Relâche at Théâtre des Champs-Élysées. Clair's 1967 removals and later restoration of first-version material from surviving elements also make preservation and version history part of the exact case."
     },
     {
       "scenario_id": "scenario_the_smiling_madame_beudet_1923",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSmilingMadameBeudet.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSmilingMadameBeudet.ts"
+      ],
       "rationale": "The verified case anchors Germaine Dulac's French Impressionist and explicitly feminist formal practice to Film d'Art - Vandal et Delac, named producers Charles Delac and Marcel Vandal, the Dulac/Obey adaptation and Maurice Forster/Paul Parguel cinematography. Subjective form is therefore tied to production company, adaptation and collaborative labor rather than credited as an isolated auteur style."
     },
     {
       "scenario_id": "scenario_battleship_potemkin_1925",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts"
+      ],
       "rationale": "The verified case anchors Eisensteinian collision montage and temporal expansion to Eduard Tisse's cinematography, a five-movement collective construction and deliberately staged revolutionary reconstruction. This makes Soviet montage legible through named collaborative labor and production practice rather than as a free-floating editing preset."
     },
     {
       "scenario_id": "scenario_man_with_a_movie_camera_1929",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts"
+      ],
       "rationale": "The verified Ukrainian SSR case ties Vertov's Kino-Eye and reflexive city-film method to Mikhail Kaufman's cinematography, Elizaveta Svilova's editing, split-screen and superimposition practice, making formal innovation a concrete collaborative production system rather than a style label."
     },
     {
       "scenario_id": "scenario_mother_1926",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts"
+      ],
       "rationale": "The verified Mezhrabpom-Russ case distinguishes Pudovkin's linkage model from Eisensteinian collision while documenting Nathan Zarkhi, Anatoli Golovna and Sergei Kozlovsky alongside Pudovkin. Performance-centered montage is therefore anchored to a production company and named writing, camera and design labor."
     },
     {
       "scenario_id": "scenario_the_fall_of_the_romanov_dynasty_1927",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts"
+      ],
       "rationale": "The verified Shub case documents a 1927 anniversary commission, a two-month archival search, Mark Tseitlin's research/intertitle collaboration and the transformation of roughly 60,000 metres of source material into about 1,500 metres. It maps compilation montage to concrete archival labor while also showing preservation and provenance directly shaping what historical footage survives and can be taught."
     },
     {
       "scenario_id": "scenario_earth_1930",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts"
+      ],
       "rationale": "The verified Dovzhenko case anchors lyrical montage and landscape-centered form to VUFKU, the distinct Ukrainian production, distribution and education infrastructure later dissolved under Moscow centralization. It therefore adds an institutionally specific Ukrainian counterpoint inside the broader Soviet field rather than treating Soviet cinema as uniformly Russian."
     },
     {
       "scenario_id": "scenario_october_1928",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts"
+      ],
       "rationale": "The verified Eisenstein/Aleksandrov case connects intellectual montage to a tenth-anniversary commission and documented political intervention requiring Trotsky references to be removed. Radical form is thus tied to a state-produced commission, collaborative authorship and political recutting rather than treated as autonomous aesthetics."
     },
     {
       "scenario_id": "scenario_mr_west_bolsheviks_1924",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts"
+      ],
       "rationale": "The verified Kuleshov case places constructive screen geography, physical action and montage inside Kuleshov's workshop pedagogy while documenting transnational borrowing from American slapstick and Griffith-era filmmaking. The case therefore links formal theory to workshop practice, performers and a concrete production-learning environment."
     },
     {
       "scenario_id": "scenario_a_page_of_madness_1926",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "japan_industry_system", "exhibition_and_viewing_history", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationAPageOfMadness.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "japan_industry_system",
+        "exhibition_and_viewing_history",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAPageOfMadness.ts"
+      ],
       "rationale": "The verified Kinugasa case documents independent National Art Film/Shinkankakuha production, named writing/camera/lighting/set labor, rapid cutting and optical modernism, benshi-era presentation without ordinary intertitles, and a rediscovered surviving version that is not identical to the original release. It therefore maps Japanese industry, production-situated modernism, exhibition practice and material survival through exact evidence."
     },
     {
       "scenario_id": "scenario_laborers_love_1922",
       "review_state": "MAPPED",
-      "development_ids": ["china_industry_system", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationLaborersLove.ts"],
+      "development_ids": [
+        "china_industry_system",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationLaborersLove.ts"
+      ],
       "rationale": "The verified 1922 Mingxing case documents the company's Shanghai formation and first short-comedy production phase, original bilingual Chinese-English intertitles and specific production craft. Its status as the earliest-known surviving complete Chinese-made film plus documented digital/4K restoration also makes material survival and archive recovery part of the historical evidence."
     },
     {
       "scenario_id": "scenario_a_throw_of_dice_1929",
       "review_state": "MAPPED",
-      "development_ids": ["decolonial_transnational_historiography"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationAThrowOfDice.ts"],
+      "development_ids": [
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAThrowOfDice.ts"
+      ],
       "rationale": "The verified Rai–Osten case documents an India–Germany–United Kingdom production through Himansu Rai Film, UFA and British Instructional Films, Indian location shooting and cast/design agency alongside German technical collaboration. It is exact transnational co-production evidence, while the separate modern-India industry gap remains fail-closed because this 1929 case does not establish the required modern language-market, financing, distribution or digital system."
     },
     {
       "scenario_id": "scenario_growth_of_the_soil_1921",
       "review_state": "MAPPED",
-      "development_ids": ["nordic_norwegian_silent_and_institution_history", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationGrowthOfTheSoil.ts"],
+      "development_ids": [
+        "nordic_norwegian_silent_and_institution_history",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationGrowthOfTheSoil.ts"
+      ],
       "rationale": "The verified Norwegian Norrøna Film case identifies Gunnar Sommerfeldt's production leadership, George Schnéevoigt's Nordland location cinematography, Leif Halvorsen's 1921 film music and later Danish circulation. The film's long lost status and reconstruction from incomplete archive finds make it direct evidence for both Norwegian/Nordic production history and preservation-shaped historical recovery."
     },
     {
       "scenario_id": "scenario_orochi_1925",
       "review_state": "MAPPED",
-      "development_ids": ["japan_industry_system", "genre_industries_horror_action_comedy_romance_exploitation_local_popular", "exhibition_and_viewing_history", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationOrochi.ts"],
+      "development_ids": [
+        "japan_industry_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular",
+        "exhibition_and_viewing_history",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationOrochi.ts"
+      ],
       "rationale": "The verified Orochi case ties Bando's independent star-company move and subsequent studio infrastructure to the transition toward action-oriented chanbara, named craft labor and specific tracking/editing practice. Benshi presentation history, Bando's preservation of the negative and a later NFAJ-supervised 4K restoration additionally anchor exhibition and material-survival history without confusing later narration with synchronized 1925 sound."
     },
     {
       "scenario_id": "scenario_the_red_heroine_1929",
       "review_state": "MAPPED",
-      "development_ids": ["china_industry_system", "genre_industries_horror_action_comedy_romance_exploitation_local_popular", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationRedHeroine.ts"],
+      "development_ids": [
+        "china_industry_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationRedHeroine.ts"
+      ],
       "rationale": "The verified Youlian Film Company case anchors Chinese wuxia to a concrete thirteen-part serial production, Wen Yimin's direction/writing, named cinematography/design and stunt/set mechanisms. Because only one serial section survives and archive presentations materially differ in runtime and restoration state, the case also demonstrates preservation bias while adding a distinct Chinese industrial institution and popular-genre workflow."
     },
     {
       "scenario_id": "scenario_haxan_1922",
       "review_state": "MAPPED",
-      "development_ids": ["nordic_norwegian_silent_and_institution_history", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationHaxan.ts"],
+      "development_ids": [
+        "nordic_norwegian_silent_and_institution_history",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationHaxan.ts"
+      ],
       "rationale": "The verified Häxan case documents Swedish financing, Danish studio production, Svenska Biografteatern, unusually high silent-era Scandinavian production scale, named craft labor and censorship history. Its restoration from duplicate negatives, interpositive/nitrate evidence and period tinting/toning instructions directly shows how archive materials determine the recoverable historical presentation."
     },
     {
       "scenario_id": "scenario_the_phantom_carriage_1921",
       "review_state": "MAPPED",
-      "development_ids": ["nordic_norwegian_silent_and_institution_history", "preservation_restoration_material_survival_as_history_maker"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSilentStudioSystemsBatch.ts"],
+      "development_ids": [
+        "nordic_norwegian_silent_and_institution_history",
+        "preservation_restoration_material_survival_as_history_maker"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSilentStudioSystemsBatch.ts"
+      ],
       "rationale": "The verified Swedish Filmstaden case documents the new-studio production context, Lagerlöf adaptation, named cinematography/art-direction labor, nested flashbacks and layered in-camera double exposure. Institute-supported restoration and versioned musical presentation provide inspectable preservation history, strengthening Nordic institutional coverage without creating a duplicate Production Case identity."
     },
     {
       "scenario_id": "scenario_m_1931",
       "review_state": "MAPPED",
-      "development_ids": ["silent_sound_transition"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts"],
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts"
+      ],
       "rationale": "The verified Nero-Film case documents Lang's first sound feature, Tobis-Klangfilm recording, offscreen voices, the killer's whistle, strategic silence and sound bridges. It directly shows early sound as a designed production and editing system rather than a simple replacement of silent cinema by dialogue."
     },
     {
       "scenario_id": "scenario_city_lights_1931",
       "review_state": "MAPPED",
-      "development_ids": ["silent_sound_transition"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts"],
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts"
+      ],
       "rationale": "The verified Chaplin case documents a two-year independent production that deliberately refused spoken dialogue after talkies had become dominant while using a synchronized score and selected sound effects. It is exact evidence that sound adoption was uneven and could be strategically selective rather than an instantaneous industry-wide switch."
     },
     {
       "scenario_id": "scenario_the_jazz_singer_1927",
       "review_state": "MAPPED",
-      "development_ids": ["silent_sound_transition"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationJazzSinger.ts"],
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationJazzSinger.ts"
+      ],
       "rationale": "The verified Warner Bros. case documents a silent-with-sound-sequences part-talkie built around Vitaphone sound-on-disc, selective synchronized singing and speech, and the industrial and exhibition pressures associated with sound conversion."
     },
     {
       "scenario_id": "scenario_blackmail_1929",
       "review_state": "MAPPED",
-      "development_ids": ["silent_sound_transition"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationBlackmail.ts"],
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBlackmail.ts"
+      ],
       "rationale": "The verified Hitchcock case documents parallel silent and sound production/versioning and the recording constraints of conversion-era filmmaking, making the economic and practical overlap between silent and synchronized-sound workflows explicit."
     },
     {
       "scenario_id": "scenario_applause_1929",
       "review_state": "MAPPED",
-      "development_ids": ["silent_sound_transition"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationApplause.ts"],
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationApplause.ts"
+      ],
       "rationale": "The verified Paramount case documents Movietone-era synchronous recording, soundproof camera constraints and a silent version alongside the all-talking production, directly evidencing both technical conversion pressure and incomplete exhibition conversion."
     },
     {
       "scenario_id": "scenario_the_neighbors_wife_and_mine_1931",
       "review_state": "MAPPED",
-      "development_ids": ["silent_sound_transition"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNeighborsWife.ts"],
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNeighborsWife.ts"
+      ],
       "rationale": "The verified Shochiku case documents Shochiku-Phone full-synchronous recording and multi-camera production while Japanese exhibition and production still coexisted with benshi-era silent practice, adding a geographically and institutionally distinct uneven-transition system."
     },
     {
       "scenario_id": "scenario_the_broadway_melody_1929",
       "review_state": "MAPPED",
-      "development_ids": ["silent_sound_transition"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationBroadwayMelody.ts"],
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBroadwayMelody.ts"
+      ],
       "rationale": "The verified MGM case documents Movietone speech, singing, orchestra and dance coordination together with a separate silent release for theatres not yet equipped for sound, directly linking production conversion to uneven exhibition infrastructure."
     },
     {
       "scenario_id": "scenario_sous_les_toits_de_paris_1930",
       "review_state": "MAPPED",
-      "development_ids": ["silent_sound_transition"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSousLesToits.ts"],
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSousLesToits.ts"
+      ],
       "rationale": "The verified Tobis production documents deliberate selective synchronization, offscreen sound, silence and sound perspective as early-sound craft choices, providing a French studio countermodel to dialogue-led conversion."
     },
     {
       "scenario_id": "scenario_enthusiasm_1930",
       "review_state": "MAPPED",
-      "development_ids": ["silent_sound_transition"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEnthusiasm.ts"],
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEnthusiasm.ts"
+      ],
       "rationale": "The verified Vertov case documents early Soviet sound practice through intentional non-synchronization, complementary and contrapuntal image-sound construction and industrial/machine recording, adding a documentary and montage workflow distinct from studio talkie conversion."
     },
     {
       "scenario_id": "scenario_the_blue_angel_1930",
       "review_state": "MAPPED",
-      "development_ids": ["silent_sound_transition"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationBlueAngel.ts"],
+      "development_ids": [
+        "silent_sound_transition"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBlueAngel.ts"
+      ],
       "rationale": "The verified UFA case documents Tobis-Klangfilm sound production and separate German and English versions, making language-market fragmentation and parallel-version management concrete industrial consequences of synchronized sound."
     },
     {
@@ -905,8 +1171,12 @@
     {
       "scenario_id": "scenario_snow_white_and_the_seven_dwarfs_1937",
       "review_state": "MAPPED",
-      "development_ids": ["animation_technique_labor_and_delivery_history"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerification1930sProductionSystemsBatch.ts"],
+      "development_ids": [
+        "animation_technique_labor_and_delivery_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1930sProductionSystemsBatch.ts"
+      ],
       "rationale": "The verified Disney case documents feature-scale personality animation, a large departmental labor pipeline, painted backgrounds and layered cel photography together with the multiplane camera, Technicolor and synchronized sound/music delivery. It therefore supplies exact technique, labor-organization and camera-pipeline evidence sufficient to move the animation-development row from uncovered to covered without claiming triangulation from a single case."
     },
     {
@@ -918,92 +1188,153 @@
     {
       "scenario_id": "scenario_stagecoach_1939",
       "review_state": "MAPPED",
-      "development_ids": ["genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts"],
+      "development_ids": [
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts"
+      ],
       "rationale": "The verified Walter Wanger/United Artists case ties the western to Monument Valley location production, specialist Yakima Canutt stunt labor, action-continuity planning and commercial feature organization. It therefore adds an exact American western production system to the already triangulated genre-industry row rather than treating western as an aesthetic label."
     },
     {
       "scenario_id": "scenario_the_wizard_of_oz_1939",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts"
+      ],
       "rationale": "The verified MGM case documents coordinated studio labor across producing, adaptation, pre-scored songs, art direction, costume, makeup, effects, editing, sound and Technicolor cinematography. The exact production therefore strengthens classical studio-system evidence through department-level integration rather than through canon status."
     },
     {
       "scenario_id": "scenario_citizen_kane_1941",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts"
+      ],
       "rationale": "The verified RKO/Mercury case documents unusual unit autonomy exercised inside major-studio infrastructure, with producer-director, cinematography, editing, sound, optical and music labor all inspectably tied to the production. It adds a complementary negotiated-autonomy model inside the classical Hollywood studio system."
     },
     {
       "scenario_id": "scenario_casablanca_1942",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts"
+      ],
       "rationale": "The verified Warner Bros. case documents lot-based production, continuing screenplay revision, producer oversight, multinational casting and coordinated studio departments in design, camera, editing, sound and music. It therefore teaches collaborative classical studio authorship and production management rather than reducing the film to screenplay or star mythology."
     },
     {
       "scenario_id": "scenario_the_public_enemy_1931",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationPublicEnemy.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPublicEnemy.ts"
+      ],
       "rationale": "The verified Warner Bros. production/distribution record identifies producer, writing, photography, art, editing, wardrobe, makeup, orchestra and sound labor while also placing the title inside the studio's early sound gangster/crime cycle and the 1930–34 pre-enforcement Code interval. This is exact studio-organization and genre-industry evidence without retroactively imposing the later PCA regime."
     },
     {
       "scenario_id": "scenario_dracula_1931",
       "review_state": "MAPPED",
-      "development_ids": ["silent_sound_transition", "classical_hollywood_studio_system", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationDracula.ts"],
+      "development_ids": [
+        "silent_sound_transition",
+        "classical_hollywood_studio_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationDracula.ts"
+      ],
       "rationale": "The verified Universal case documents distinct English- and Spanish-language sound productions sharing sets but using separate crews and day/night scheduling, with different cinematography and runtimes. It therefore adds an exact multiple-language-version workflow produced by early sound market fragmentation while also documenting Universal studio organization and the horror cycle as a concrete genre-production system."
     },
     {
       "scenario_id": "scenario_42nd_street_1933",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerification42ndStreet.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification42ndStreet.ts"
+      ],
       "rationale": "The verified Warner Bros. case documents Zanuck/Wallis production organization, a 28-day schedule, a $340,000 cost, studio camera/editing/design/costume/sound departments and Berkeley's separate dance-and-ensemble labor, including pre-recorded music supporting camera-designed choreography. It therefore maps both classical studio organization and the backstage musical as an industrial genre workflow."
     },
     {
       "scenario_id": "scenario_scarface_1932",
       "review_state": "MAPPED",
-      "development_ids": ["genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationScarface.ts"],
+      "development_ids": [
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationScarface.ts"
+      ],
       "rationale": "The verified Caddo/Howard Hughes production with United Artists distribution documents the gangster cycle through an independent production/distribution model and unusually extensive censorship negotiation, retakes, alternate endings and territory-specific versions. It strengthens genre-industry evidence without inventing a censorship development row that the matrix does not contain."
     },
     {
       "scenario_id": "scenario_it_happened_one_night_1934",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationItHappenedOneNight.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationItHappenedOneNight.ts"
+      ],
       "rationale": "The verified Columbia production/distribution case documents Harry Cohn and Capra/Riskin organization, borrowed MGM and Paramount stars, a bounded 1933–34 schedule, retakes, location work and Western Electric recording. It adds a smaller-studio and inter-studio star-loan model while grounding screwball comedy in a specific production system."
     },
     {
       "scenario_id": "scenario_top_hat_1935",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationTopHat.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTopHat.ts"
+      ],
       "rationale": "The verified RKO case documents producer, screenplay, photography, design, editing, costume, music, recording, effects and dance departments together with extensive Astaire rehearsal, Berlin song integration and PCA-certified production. It therefore teaches the Astaire–Rogers musical as a coordinated studio and genre-production system rather than as star performance alone."
     },
     {
       "scenario_id": "scenario_gone_with_the_wind_1939",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system", "modern_popular_commercial_cinema_as_industry"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationGoneWithTheWind.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "modern_popular_commercial_cinema_as_industry"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationGoneWithTheWind.ts"
+      ],
       "rationale": "The verified Selznick International package, made in association with MGM and distributed by Loew's, documents producer-centered coordination across multiple directors and units, design, costume, editing, sound, music, effects and Technicolor at large commercial scale. It therefore adds a package-production countermodel to vertically organized studio production and mass-audience spectacle, while the record's permanent safeguard keeps Lost Cause mythology, plantation nostalgia, slavery erasure and racist representation explicit rather than treating scale or prestige as an ideological alibi."
     },
     {
       "scenario_id": "scenario_the_maltese_falcon_1941",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationCrimeNoirTransformationsBatch.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCrimeNoirTransformationsBatch.ts"
+      ],
       "rationale": "The verified Warner Bros.–First National case documents Hal B. Wallis and Henry Blanke production organization, Huston's close Hammett adaptation and directorial debut, rehearsed ensemble work, Arthur Edeson photography, Robert Haas design and a bounded 1941 studio schedule. It therefore adds an exact major-studio crime/noir production system without treating later noir canonization as the evidence itself."
     },
     {
       "scenario_id": "scenario_double_indemnity_1944",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts"
+      ],
       "rationale": "The verified Paramount case binds Wilder–Chandler adaptation, Production Code negotiation, John F. Seitz photography, Doane Harrison editing, process work and the dictaphone-confession structure to a concrete studio production later grouped within film noir, strengthening both studio-organization and crime/noir genre-industry evidence."
     },
     {
@@ -1015,92 +1346,147 @@
     {
       "scenario_id": "scenario_rome_open_city_1945",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts"
+      ],
       "rationale": "The verified post-liberation case ties emerging Italian neorealism to damaged Cinecittà infrastructure, Rome street locations, scarce electricity, mixed 35 mm stock, resistance-based writing and named camera/editing/music labor. It is therefore production-situated movement evidence rather than a realism style token."
     },
     {
       "scenario_id": "scenario_bicycle_thieves_1948",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerification.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification.ts"
+      ],
       "rationale": "The verified De Sica case documents Rome street production, nonprofessional casting, postwar economic precarity and restrained shot construction. It anchors neorealist practice to location, casting and controlled production decisions instead of treating realism as uncrafted immediacy."
     },
     {
       "scenario_id": "scenario_the_third_man_1949",
       "review_state": "MAPPED",
-      "development_ids": ["decolonial_transnational_historiography", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts"],
+      "development_ids": [
+        "decolonial_transnational_historiography",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts"
+      ],
       "rationale": "The verified Korda–Greene case documents occupied-Vienna research, three location units, Sascha facilities, Shepperton sewer reconstruction, Robert Krasker photography and Anton Karas's zither score. The multinational production geography and postwar noir organization provide exact transnational and genre-system evidence rather than merely a famous location backdrop."
     },
     {
       "scenario_id": "scenario_rashomon_1950",
       "review_state": "MAPPED",
-      "development_ids": ["japan_industry_system"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts"],
+      "development_ids": [
+        "japan_industry_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts"
+      ],
       "rationale": "The verified Daiei case documents Akutagawa adaptation, monumental gate reconstruction, Kazuo Miyagawa photography, lighting, editing and score within a named postwar Japanese studio production. It therefore strengthens Japanese industrial evidence through exact company and department practice rather than nationality alone."
     },
     {
       "scenario_id": "scenario_tokyo_story_1953",
       "review_state": "MAPPED",
-      "development_ids": ["japan_industry_system"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts"],
+      "development_ids": [
+        "japan_industry_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts"
+      ],
       "rationale": "The verified Shochiku Ofuna case identifies Ozu and Kogo Noda's screenplay, Yuharu Atsuta photography, lighting, design, editing and music inside a mature controlled studio practice. It adds a complementary Japanese company/workflow model without converting formal minimalism alone into an industry claim."
     },
     {
       "scenario_id": "scenario_seven_samurai_1954",
       "review_state": "MAPPED",
-      "development_ids": ["japan_industry_system", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts"],
+      "development_ids": [
+        "japan_industry_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts"
+      ],
       "rationale": "The verified Toho case documents an unusually expensive year-long production, researched sets, costumes and weaponry, location weather, horse action and multiple-camera battle coverage. It supplies exact Japanese studio-scale and action/period-genre production evidence rather than a prestige or nationality token."
     },
     {
       "scenario_id": "scenario_la_strada_1954",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts"
+      ],
       "rationale": "The verified Ponti–De Laurentiis/Fellini case ties the move beyond neorealism toward poetic fable to road and provincial production, physical performance, Otello Martelli/Carlo Carlini photography, Leo Catozzo editing and Nino Rota's recurring theme. It therefore maps a post-neorealist formal transition to concrete production practice."
     },
     {
       "scenario_id": "scenario_pather_panchali_1955",
       "review_state": "MAPPED",
-      "development_ids": ["decolonial_transnational_historiography"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts"],
-      "rationale": "The verified case documents intermittent Bengal location production, a three-year funding struggle, Government of West Bengal support, MoMA finishing assistance, imported raw stock, non-star casting and international circulation. These facts supply exact postcolonial/transnational financing and production evidence, while the separate india_modern_industry_system row remains fail-closed because one art-cinema production does not establish modern language-market, distribution or digital industrial organization."
+      "development_ids": [
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts"
+      ],
+      "rationale": "The verified case documents intermittent Bengal location production, a three-year funding struggle, Government of West Bengal support, MoMA finishing assistance, imported raw stock, non-star casting and international circulation. These facts supply exact postcolonial/transnational financing and production evidence. At the Chapter 13 review this case alone did not establish a modern Indian industry system; Chapter 16 later adds Salaam Bombay as separate modern financing and institutional evidence."
     },
     {
       "scenario_id": "scenario_ordet_1955",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts"
+      ],
       "rationale": "The verified Palladium/Dreyer case documents a deliberately controlled 114-shot long-take system with Henning Bendtsen photography, Edith Schlüssel editing, Knud Kristensen sound and Erik Aaes design. It anchors a postwar chamber-modernist alternative to location spontaneity in an exact production organization."
     },
     {
       "scenario_id": "scenario_the_night_of_the_hunter_1955",
       "review_state": "MAPPED",
-      "development_ids": ["genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts"],
+      "development_ids": [
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts"
+      ],
       "rationale": "The verified Paul Gregory independent production with United Artists distribution documents Laughton direction, Agee adaptation, Stanley Cortez photography, Hilyard Brown design, child-centered staging, practical Expressionist imagery and Walter Schumann sound/music. It adds a concrete independent American horror/fable production model to the genre-industry row."
     },
     {
       "scenario_id": "scenario_the_seventh_seal_1957",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts"
+      ],
       "rationale": "The verified Svensk Filmindustri case documents a limited budget, thirty-six-day shoot, theatre-derived ensemble, Gunnar Fischer photography and P. A. Lundgren design behind Bergman's medieval allegory and international postwar art-cinema position. It therefore maps modernist art cinema to bounded institutional production rather than iconography alone."
     },
     {
       "scenario_id": "scenario_ashes_and_diamonds_1958",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts"
+      ],
       "rationale": "The verified Polish Film School case ties Wajda's one-day adaptation and expressive black-and-white construction to Polish production institutions, Wrocław locations, Jerzy Wójcik photography, Roman Mann design and Halina Nawrocka editing. It is exact institutionally situated postwar-modernist evidence."
     },
     {
       "scenario_id": "scenario_touch_of_evil_1958",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts"
+      ],
       "rationale": "The verified Universal-International case documents producer and department organization, Welles's rewrite/direction, Russell Metty photography, Venice locations, mobile staging, source-music conception and contested postproduction. It strengthens both late studio-system and noir/crime genre-production evidence without treating the opening shot alone as the historical claim."
     },
     {
@@ -1112,8 +1498,13 @@
     {
       "scenario_id": "scenario_paisan_1946",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationPaisan.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPaisan.ts"
+      ],
       "rationale": "The verified Rossellini case documents a six-episode location production moving from Sicily to the Po Valley, American money after Rome Open City's success, mixed professional/nonprofessional casting, multilingual Allied–Italian encounters, location-driven story revision and extensive dubbing. It therefore binds neorealist form to production practice while adding exact cross-border financing, language and circulation evidence."
     },
     {
@@ -1125,92 +1516,149 @@
     {
       "scenario_id": "scenario_sunset_boulevard_1950",
       "review_state": "MAPPED",
-      "development_ids": ["classical_hollywood_studio_system", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationSunsetBoulevard.ts"],
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSunsetBoulevard.ts"
+      ],
       "rationale": "The verified Paramount production/distribution case documents Brackett/Wilder/Marshman writing, Seitz photography, Schmidt/Harrison editing, studio departments, Los Angeles/studio locations, preview-driven revision and silent-era personnel/material used as industrial memory. It therefore adds a self-reflexive noir production rooted in exact studio infrastructure and genre organization."
     },
     {
       "scenario_id": "scenario_los_olvidados_1950",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationLosOlvidados.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationLosOlvidados.ts"
+      ],
       "rationale": "The verified Mexican case documents two years of social research, Ultramar/Óscar Dancigers production, Estudios Tepeyac and Mexico City locations, Gabriel Figueroa photography, Carlos Savage editing, professional craft and surrealist rupture inside a social-realist project. It supplies exact production-situated alternative-form evidence. At the Chapter 13 stage this single Mexican case was insufficient to establish the multiple regional industry, financing or distribution systems required by latin_america_beyond_single_movement; Chapter 15 closes that separate row only through complementary exact Cuban and Chile-originating system evidence."
     },
     {
       "scenario_id": "scenario_ugetsu_1953",
       "review_state": "MAPPED",
-      "development_ids": ["japan_industry_system"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationUgetsu.ts"],
+      "development_ids": [
+        "japan_industry_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationUgetsu.ts"
+      ],
       "rationale": "The verified Daiei case identifies producer Masaichi Nagata, Mizoguchi/Yoda/Kawaguchi adaptation, Kazuo Miyagawa photography, art/set/costume departments, editing, sound and music within a controlled postwar period production. It adds a distinct Daiei studio workflow and period-production system to Japanese industry coverage."
     },
     {
       "scenario_id": "scenario_a_man_escaped_1956",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationAManEscaped.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAManEscaped.ts"
+      ],
       "rationale": "The verified S.N.E.G./Gaumont and Nouvelles Éditions de Films case documents Devigny-based historical research, real Montluc and studio reconstruction, largely nonprofessional models, a fixed 50 mm lens practice, precise object-centered repetition and studio-rerecorded dialogue/offscreen sound. It anchors Bresson's postwar alternative form to exact production organization and workflow rather than auteur style alone."
     },
     {
       "scenario_id": "scenario_hiroshima_mon_amour_1959",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts"
+      ],
       "rationale": "The verified France-Japan case grows from a documentary commission into a Duras-scripted fiction with separate French and Japanese producing, camera and music participation, then joins public war memory to elliptical personal narration through concrete editing and sound labor. It therefore maps both Left Bank modernism and an exact transnational production system rather than treating Hiroshima as geography or theme alone."
     },
     {
       "scenario_id": "scenario_the_400_blows_1959",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationCrossEraBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCrossEraBatch.ts"
+      ],
       "rationale": "The verified inexpensive independent production uses a crew of fewer than twelve, a short schedule, real Paris locations and mobile observational photography around a first-time young lead. Those exact scale, location and labor choices make the Cahiers-side New Wave break production-situated rather than an auteur or style label."
     },
     {
       "scenario_id": "scenario_breathless_1960",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerification.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification.ts"
+      ],
       "rationale": "The verified low-budget Paris production documents handheld and improvised location work, production without scripted dialogue, Raoul Coutard's mobile long takes and Godard's reduction of an overlong first edit through deliberately disruptive jump cuts. It therefore anchors New Wave formal rupture to exact production and postproduction practice."
     },
     {
       "scenario_id": "scenario_l_avventura_1960",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts"
+      ],
       "rationale": "The verified Italy-France production ties Antonioni's modernist duration, landscape and weakened causality to the financially troubled Lisca Bianca location shoot, named image, design, editing and sound labor and a documented French co-production/restoration lineage. It therefore supplies both production-situated modernism and exact cross-border production evidence."
     },
     {
       "scenario_id": "scenario_last_year_at_marienbad_1961",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts"
+      ],
       "rationale": "The verified France-Italy case joins Robbe-Grillet's shot-by-shot découpage to Resnais, Bavarian palace and Paris studio work, Sacha Vierny photography, Jacques Saulnier design and Chasney-Colpi editing. Its unstable time and architecture are therefore tied to a concrete collaborative modernist workflow and cross-border production geography."
     },
     {
       "scenario_id": "scenario_jules_and_jim_1962",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts"
+      ],
       "rationale": "The verified Les Films du Carrosse production binds Roché adaptation, Raoul Coutard's mobile photography, Claudine Bouché montage, narration, historical span and newsreel material to a named collaborative production system. It therefore teaches New Wave mobility and accelerated historical construction through exact labor and workflow."
     },
     {
       "scenario_id": "scenario_cleo_from_5_to_7_1962",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch.ts"
+      ],
       "rationale": "The verified Left Bank case documents a June-July Paris location shoot, near-real-time structure constructed through active photography and editing, black-and-white street observation, a colour tarot prologue and an explicitly feminist shift in viewpoint. It maps feminist modernism to concrete artisanal production practice rather than to representation alone."
     },
     {
       "scenario_id": "scenario_8_1_2_1963",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts"
+      ],
       "rationale": "The verified Italian-French production turns a director's blocked science-fiction project into a self-reflexive system built by four screenwriters, Gianni di Venanzo photography, Piero Gherardi design, Leo Catozzo editing and Nino Rota music. It therefore anchors Fellini's modernism to collaborative production and studio craft rather than creative-genius mythology."
     },
     {
       "scenario_id": "scenario_contempt_1963",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts"
+      ],
       "rationale": "The verified France-Italy prestige co-production documents Godard's largest budget to date, producer pressure around Bardot, Moravia adaptation, Raoul Coutard widescreen colour, multilingual soundtrack history and Capri production. It maps modernist self-reflexivity together with exact cross-border financing and production pressure rather than treating commercial compromise as external to the film."
     },
     {
@@ -1222,85 +1670,138 @@
     {
       "scenario_id": "scenario_the_umbrellas_of_cherbourg_1964",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts"
+      ],
       "rationale": "The verified Mag Bodard production makes Demy and Legrand's completely sung structure inseparable from Bernard Evein's colour design, Jacqueline Moreau costumes, Jean Rabier camera and Anne-Marie Cotret editing. It therefore maps a modernist transformation of musical form to coordinated production craft rather than to genre novelty alone."
     },
     {
       "scenario_id": "scenario_black_girl_1966",
       "review_state": "MAPPED",
-      "development_ids": ["decolonial_transnational_historiography"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationBlackGirl.ts"],
+      "development_ids": [
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBlackGirl.ts"
+      ],
       "rationale": "The verified Senegal-France case documents post-independence production restrictions, a Ministry cinema-bureau funding rejection, Sembène's mégotage budget-scraping conditions, Dakar-France geography, nonprofessional performance and funding-driven French dubbing of Diouana's interior monologue. It is exact decolonial and transnational production evidence rather than a Senegalese nationality token."
     },
     {
       "scenario_id": "scenario_the_battle_of_algiers_1966",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts"
+      ],
       "rationale": "The verified Algerian-Italian production combines Saadi Yacef participation, Solinas-Pontecorvo writing, nonprofessional casting, Algiers locations, multi-camera crowd staging and tested newsreel-like photography. It therefore ties radical modernist reconstruction to concrete anti-colonial financing, labor and production geography."
     },
     {
       "scenario_id": "scenario_closely_watched_trains_1966",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationCzechoslovakNewWaveBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCzechoslovakNewWaveBatch.ts"
+      ],
       "rationale": "The verified Czechoslovak New Wave case anchors Menzel-Hrabal adaptation, ordinary railway space, understated black-and-white observation and anti-heroic wartime performance to named cinematography, editing, design, music and sound labor. It is therefore an institutionally situated New Wave production rather than a national-style label."
     },
     {
       "scenario_id": "scenario_daisies_1966",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts"
+      ],
       "rationale": "The verified Barrandov case documents Chytilová-Krumbachová-Juráček writing, nonprofessional performers, Jaroslav Kučera colour experiments, Miroslav Hájek collage editing, improvised dialogue and censorship conflict. It anchors feminist Czechoslovak modernism to state-studio production and material craft rather than treating formal disruption as a free-floating style."
     },
     {
       "scenario_id": "scenario_the_firemens_ball_1967",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationCzechoslovakNewWaveBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCzechoslovakNewWaveBatch.ts"
+      ],
       "rationale": "The verified case grows from an observed real ball into a Czech-Italian financed Vrchlabí location production with an entirely nonprofessional ensemble, episodic documentary method and a censorship history intensified after the 1968 invasion. It therefore supplies both concrete Czechoslovak New Wave practice and exact cross-border production evidence."
     },
     {
       "scenario_id": "scenario_playtime_1967",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts"
+      ],
       "rationale": "The verified Specta Films case documents purpose-built Tativille, roughly one hundred construction workers, 65/70 mm photography, nonprofessional casting, hundreds of shooting days and a separately composed sound world that contributed to financial collapse. It proves that 1960s formal modernism could be an enormous infrastructure and labor system rather than only small-unit spontaneity."
     },
     {
       "scenario_id": "scenario_memories_of_underdevelopment_1968",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography", "latin_america_beyond_single_movement"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationMemoriesUnderdevelopment.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "decolonial_transnational_historiography",
+        "latin_america_beyond_single_movement"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationMemoriesUnderdevelopment.ts"
+      ],
       "rationale": "The verified ICAIC production documents a revolutionary state film institution founded in 1959, collective-production ideals, Gutiérrez Alea-Desnoes adaptation, Havana street material and the integration of ICAIC documentary/newsreel footage through Nelson Rodríguez’s fragmented editing. It therefore maps Cuban revolutionary modernism and decolonial institutional history and, paired with the Chile-originating field-production/Cuban-post-production system of The Battle of Chile: Part I, supplies the domestic-institutional half of the exact workflow triangulation required for latin_america_beyond_single_movement."
     },
     {
       "scenario_id": "scenario_bonnie_and_clyde_1967",
       "review_state": "MAPPED",
-      "development_ids": ["modern_popular_commercial_cinema_as_industry", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts"],
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts"
+      ],
       "rationale": "The verified Beatty-led case documents producer-star development, Texas and Burbank production, period craft, practical violence and studio distribution at the opening of New Hollywood. It therefore adds an exact commercially distributed crime-production system to the modern-popular and genre-industry rows rather than treating New Hollywood as an auteur label."
     },
     {
       "scenario_id": "scenario_the_cremator_1969",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationCzechoslovakNewWaveBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCzechoslovakNewWaveBatch.ts"
+      ],
       "rationale": "The verified Czechoslovak case ties Fuks adaptation, wide-angle psychological distortion, associative editing, production design and Liška’s score to a 1968 institutional production whose post-Prague-Spring suppression is documented. BFI places Herz within and at the edge of the Czechoslovak New Wave, so the movement mapping is production-situated rather than stylistic."
     },
     {
       "scenario_id": "scenario_kes_1969",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch.ts"
+      ],
       "rationale": "The verified tiny United Artists-backed 35 mm production documents Barnsley location work, Hines-Loach adaptation, first-time-performer training, Chris Menges photography and distributor resistance to Yorkshire dialect followed by regional release. It anchors British social-realist alternative practice to exact scale, location, labor and circulation choices."
     },
     {
       "scenario_id": "scenario_the_conformist_1970",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch.ts"
+      ],
       "rationale": "The verified Moravia adaptation binds fractured political memory, Fascist architecture, Scarfiotti design, Storaro’s mobile colour-and-shadow system and Delerue’s score to an inspectable production with documented resource constraints. It therefore maps European political modernism through concrete collaborative craft rather than through Bertolucci’s auteur status."
     },
     {
@@ -1312,15 +1813,24 @@
     {
       "scenario_id": "scenario_the_godfather_1972",
       "review_state": "MAPPED",
-      "development_ids": ["modern_popular_commercial_cinema_as_industry", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts"],
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts"
+      ],
       "rationale": "The verified Paramount case documents Coppola-Puzo adaptation, producer-director conflict, New York and Sicily locations, period departments, Gordon Willis’s controlled darkness and coordinated editing, sound and music labor. It therefore adds an exact prestige-scale commercial gangster-production system to both the modern-popular and genre-industry rows."
     },
     {
       "scenario_id": "scenario_aguirre_the_wrath_of_god_1972",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewGermanCinemaSystemsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNewGermanCinemaSystemsBatch.ts"
+      ],
       "rationale": "The verified Werner Herzog Filmproduktion-Hessischer Rundfunk case documents a small-budget, tiny-crew New German Cinema production on difficult Peruvian locations with named camera, editing, sound and music labor. It maps alternative movement history to exact finance, scale and physical production rather than to extreme-location mythology."
     },
     {
@@ -1332,22 +1842,35 @@
     {
       "scenario_id": "scenario_amarcord_1973",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationFinal1970sBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFinal1970sBatch.ts"
+      ],
       "rationale": "The verified case ties Fellini’s episodic memory and Fascist provincial satire to Cinecittà reconstruction, Rotunno colour, Donati design and Rota music. It therefore anchors a 1970s European modernist memory system in studio reconstruction and named craft rather than treating autobiographical style as sufficient evidence."
     },
     {
       "scenario_id": "scenario_the_spirit_of_the_beehive_1973",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch.ts"
+      ],
       "rationale": "The verified Elías Querejeta production places Erice’s child-viewpoint, elliptical sound-image construction and historical allegory inside a late-Franco Spanish production with named writing, camera and editing labor. It therefore maps political modernism to an exact production context rather than to national symbolism alone."
     },
     {
       "scenario_id": "scenario_touki_bouki_1973",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements", "decolonial_transnational_historiography"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationToukiBouki.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements",
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationToukiBouki.ts"
+      ],
       "rationale": "The verified Cinegrit case documents a roughly $30,000 Senegalese production, Mambéty’s producer-writer-director role, named local craft and a production ecology that still depended on French stock, equipment, processing and editing infrastructure. Its associative montage is explicitly situated as Senegalese postcolonial modernism in dialogue with but not reducible to European precedents, supporting both movement and decolonial/transnational mappings."
     },
     {
@@ -1359,50 +1882,80 @@
     {
       "scenario_id": "scenario_ali_fear_eats_the_soul_1974",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewGermanCinemaSystemsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNewGermanCinemaSystemsBatch.ts"
+      ],
       "rationale": "The verified fifteen-day Tango-Film production connects Fassbinder’s social melodrama, migration and racism to a compressed New German Cinema workflow with named photography, design, editing and sound labor. It therefore supplies exact production-situated alternative-movement evidence rather than a representation token."
     },
     {
       "scenario_id": "scenario_jeanne_dielman_23_quai_du_commerce_1080_bruxelles_1975",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch.ts"
+      ],
       "rationale": "The verified Belgian case ties complete domestic labor, fixed frontal camera, measured duration, direct household sound and controlled colour to documented financing, production craft and feminist avant-garde context. It therefore maps feminist modernism through exact production organization and material practice rather than through later canon status."
     },
     {
       "scenario_id": "scenario_jaws_1975",
       "review_state": "MAPPED",
-      "development_ids": ["modern_popular_commercial_cinema_as_industry", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts"],
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts"
+      ],
       "rationale": "The verified Universal/Zanuck-Brown case documents Martha’s Vineyard open-water production, mechanical-shark failure, specialist marine camera work, Verna Fields editing, John Williams’s score and release history. It makes blockbuster emergence and suspense/horror production an inspectable commercial and genre-industry system rather than a box-office label."
     },
     {
       "scenario_id": "scenario_dog_day_afternoon_1975",
       "review_state": "MAPPED",
-      "development_ids": ["genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewHollywoodNewYorkBatch.ts"],
+      "development_ids": [
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNewHollywoodNewYorkBatch.ts"
+      ],
       "rationale": "The verified real-event Brooklyn case documents rehearsal-led ensemble work, practical geography, changing available light, near-real-time editing, media feedback and an almost scoreless institutional sound field. It adds a distinct 1970s American crime-production workflow to the genre-industry row without treating New Hollywood itself as a matrix category."
     },
     {
       "scenario_id": "scenario_manila_in_the_claws_of_light_1975",
       "review_state": "MAPPED",
-      "development_ids": ["decolonial_transnational_historiography"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationManilaClawsLight.ts"],
+      "development_ids": [
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationManilaClawsLight.ts"
+      ],
       "rationale": "The verified Philippine case documents De Leon and Manotok production resources, mixed professional/nonprofessional casting, Manila location labor, production and release under Marcos’s martial-law regime and an internationally shortened subplot version. It therefore supplies exact postcolonial production, regulation and circulation evidence without forcing the film into a generic modernism label."
     },
     {
       "scenario_id": "scenario_the_battle_of_chile_part_i_1975",
       "review_state": "MAPPED",
-      "development_ids": ["decolonial_transnational_historiography", "latin_america_beyond_single_movement"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationBattleChilePartOne.ts"],
+      "development_ids": [
+        "decolonial_transnational_historiography",
+        "latin_america_beyond_single_movement"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBattleChilePartOne.ts"
+      ],
       "rationale": "The verified case documents a five-person Chilean field team filming the 1973 crisis with Éclair 16 mm and Nagra equipment, Chris Marker’s material support and, after the coup, exile-driven completion and long editing in Cuba with ICAIC support/co-production. It therefore supplies exact decolonial/transnational workflow evidence and the Chile-originating counterpart required to distinguish Latin American production systems from the existing Cuban ICAIC case."
     },
     {
       "scenario_id": "scenario_cria_cuervos_1976",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationIberianPortugueseMemorySystemsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationIberianPortugueseMemorySystemsBatch.ts"
+      ],
       "rationale": "The verified Saura-Querejeta case documents production at the end of the Franco dictatorship, Madrid domestic space, child-centered memory, Teodoro Escamilla photography, Pablo G. del Amo editing and named sound/music labor. It anchors transition-era Spanish political modernism to exact production context and collaborative craft."
     },
     {
@@ -1414,23 +1967,354 @@
     {
       "scenario_id": "scenario_killer_of_sheep_1977",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationAmericanIndependentBreakthroughsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAmericanIndependentBreakthroughsBatch.ts"
+      ],
       "rationale": "The verified UCLA/L.A. Rebellion case documents spare-weekend 16 mm production in Watts, nonprofessional casting, Burnett’s multi-role authorship and a circulation history materially affected by music rights. It therefore anchors Black American independent alternative practice to exact production scale, labor and circulation rather than to identity representation alone."
     },
     {
       "scenario_id": "scenario_star_wars_1977",
       "review_state": "MAPPED",
-      "development_ids": ["modern_popular_commercial_cinema_as_industry", "genre_industries_horror_action_comedy_romance_exploitation_local_popular"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts"],
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts"
+      ],
       "rationale": "The verified Lucasfilm/Fox case documents Tunisia and British-stage production, used-future design, ILM’s custom VistaVision and motion-control effects pipeline, three-editor structure and Ben Burtt’s sound work. It therefore makes blockbuster transformation and science-fiction spectacle concrete as commercial infrastructure, specialist labor and genre production."
     },
     {
       "scenario_id": "scenario_the_marriage_of_maria_braun_1979",
       "review_state": "MAPPED",
-      "development_ids": ["modernism_new_waves_alternative_movements"],
-      "evidence_paths": ["src/ui/data/scenarioProductionVerificationNewGermanCinemaSystemsBatch.ts"],
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNewGermanCinemaSystemsBatch.ts"
+      ],
       "rationale": "The verified Albatros-Trio-WDR case documents broadcaster participation, West German location production, Märthesheimer-Fröhlich writing, Ballhaus photography, Lorenz-Fassbinder editing and international sales/distribution history. It closes the decade with New German Cinema grounded in production institutions and collaborative labor rather than auteur reputation."
+    },
+    {
+      "scenario_id": "scenario_raging_bull_1980",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified United Artists/Chartoff-Winkler case documents controlled black-and-white studio-auteur production, boxing choreography and post-production craft, but the current matrix has no exact 1980s American studio-auteur development and formal prestige alone does not justify a forced mapping."
+    },
+    {
+      "scenario_id": "scenario_the_shining_1980",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification.ts"
+      ],
+      "rationale": "The verified Warner/Elstree production anchors horror to prolonged studio production, controlled set construction and specialist camera/craft work, adding a concrete late-studio horror workflow to the already triangulated genre-industry row."
+    },
+    {
+      "scenario_id": "scenario_mephisto_1981",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationMephisto.ts"
+      ],
+      "rationale": "The verified Hungarian-West German-Austrian production documents cross-border financing, institutions and labor, making an exact European transnational production system rather than a nationality label."
+    },
+    {
+      "scenario_id": "scenario_raiders_of_the_lost_ark_1981",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationRaidersLostArk.ts"
+      ],
+      "rationale": "The verified Lucasfilm/Paramount case documents large-scale multi-country location and stage production, effects infrastructure and studio distribution. It therefore adds exact blockbuster and adventure-genre industrial evidence."
+    },
+    {
+      "scenario_id": "scenario_missing_1982",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationMissing.ts"
+      ],
+      "rationale": "The verified Universal/PolyGram case documents a multinational production using Mexico for Chile and a cross-border institutional production package, supplying exact transnational political-production evidence."
+    },
+    {
+      "scenario_id": "scenario_blade_runner_1982",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBladeRunner.ts"
+      ],
+      "rationale": "The verified Ladd Company/Warner case documents expensive science-fiction worldbuilding, specialist effects/design labor and commercial studio distribution, grounding genre and popular-cinema industry in production infrastructure."
+    },
+    {
+      "scenario_id": "scenario_et_the_extra_terrestrial_1982",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationETExtraTerrestrial.ts"
+      ],
+      "rationale": "The verified Amblin/Universal case documents coordinated commercial studio production and effects-driven family science fiction, adding another exact mass-audience genre-production model."
+    },
+    {
+      "scenario_id": "scenario_rumble_fish_1983",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The scenario is production-verified and useful for 1980s American auteur practice, but the current matrix has no exact development row for this formation and visual style alone is insufficient to force a modernism or genre-system mapping."
+    },
+    {
+      "scenario_id": "scenario_the_ballad_of_narayama_1983",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "japan_industry_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1980sPoliticalPalmeSystemsBatch.ts"
+      ],
+      "rationale": "The verified Toei/Imamura case anchors a distinct 1980s Japanese company, labor and location-production system, extending the already triangulated Japan-industry row with a later institutional model."
+    },
+    {
+      "scenario_id": "scenario_sugar_cane_alley_1983",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSugarCaneAlley.ts"
+      ],
+      "rationale": "The verified Martinique-France case documents postcolonial location production and French-Caribbean production/circulation structures, providing exact transnational production evidence rather than representation by setting alone."
+    },
+    {
+      "scenario_id": "scenario_blood_simple_1984",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified independent American production is important for low-budget production history, but it is photochemical rather than digital and the current matrix has no exact 1980s microbudget-independent row; it is therefore not backfilled into the later microbudget-digital development."
+    },
+    {
+      "scenario_id": "scenario_paris_texas_1984",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The scenario is an important transatlantic art-cinema case, but this Chapter 16 pass does not have an exact permanent PV evidence path for the claimed co-production mechanism. It remains reviewed without mapping rather than relying on a guessed file or nationality proxy."
+    },
+    {
+      "scenario_id": "scenario_yellow_earth_1984",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "china_industry_system",
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationYellowEarth.ts"
+      ],
+      "rationale": "The verified Guangxi Film Studio case documents regional-studio production and the Fifth Generation institutional/formal break, grounding both Mainland Chinese industry history and alternative-movement practice in exact production organization."
+    },
+    {
+      "scenario_id": "scenario_the_terminator_1984",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTerminator.ts"
+      ],
+      "rationale": "The verified Hemdale/Pacific Western/Orion case documents independent financing, tightly constrained genre production and commercial distribution, adding a distinct low-budget-to-mainstream action/science-fiction industry model."
+    },
+    {
+      "scenario_id": "scenario_come_and_see_1985",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified Mosfilm/Belarusfilm case strongly documents Soviet state-studio war production, but the current matrix has no Soviet-state-production development row and war subject matter alone does not justify a generic genre mapping."
+    },
+    {
+      "scenario_id": "scenario_tampopo_1985",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The scenario is production-verified and relevant to 1980s Japanese cinema, but this pass does not establish an exact additional industrial mechanism needed by the already triangulated Japan row. It is kept reviewed without a guessed evidence path or tokenistic nationality mapping."
+    },
+    {
+      "scenario_id": "scenario_my_beautiful_laundrette_1985",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified Channel 4/Film on Four case documents broadcaster-financed 16 mm production and later 35 mm theatrical expansion, but the present matrix has no dedicated broadcaster-to-theatrical workflow row; it is kept reviewed without a forced proxy mapping."
+    },
+    {
+      "scenario_id": "scenario_police_story_1985",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPoliceStory.ts"
+      ],
+      "rationale": "The verified Golden Harvest/Jackie Chan Stunt Team case documents Hong Kong commercial action production, specialist stunt labor and company infrastructure, supplying exact popular-cinema and genre-industry evidence."
+    },
+    {
+      "scenario_id": "scenario_the_official_story_1985",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "latin_america_beyond_single_movement"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationOfficialStory.ts"
+      ],
+      "rationale": "The verified Argentine post-dictatorship production adds a national and institutional production system distinct from the Cuban and Chilean cases already mapped, strengthening Latin America as multiple concrete systems rather than one movement."
+    },
+    {
+      "scenario_id": "scenario_back_to_the_future_1985",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBackToTheFuture.ts"
+      ],
+      "rationale": "The verified Amblin/Universal case documents coordinated commercial studio production, effects work and mass-market science-fiction/comedy organization, supplying exact blockbuster-era genre-industry evidence."
+    },
+    {
+      "scenario_id": "scenario_down_by_law_1986",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The production-verified independent feature is a strong American art-cinema case, but the matrix has no exact 1980s US independent-development row and its alternative style alone is insufficient to force a movement mapping."
+    },
+    {
+      "scenario_id": "scenario_aliens_1986",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAliens.ts"
+      ],
+      "rationale": "The verified Brandywine/20th Century Fox case documents franchise continuation, British studio infrastructure, specialist effects labor and action/science-fiction production at commercial scale."
+    },
+    {
+      "scenario_id": "scenario_shes_gotta_have_it_1986",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified microbudget Super 16 case is crucial independent-production evidence, but the current open matrix row is explicitly microbudget digital workflow and distribution. A photochemical 1986 case cannot close or map to that later digital development by analogy."
+    },
+    {
+      "scenario_id": "scenario_a_better_tomorrow_1986",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationABetterTomorrow.ts"
+      ],
+      "rationale": "The verified Hong Kong case documents commercial crime/action production and a repeatable genre-company system, adding exact non-Hollywood popular-production evidence."
+    },
+    {
+      "scenario_id": "scenario_yeelen_1987",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationYeelen.ts"
+      ],
+      "rationale": "The verified Mali-Burkina Faso-France-GDR case documents cross-border financing, institutions and production labor, supplying exact African-European transnational production-system evidence."
+    },
+    {
+      "scenario_id": "scenario_robocop_1987",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationRoboCop.ts"
+      ],
+      "rationale": "The verified Orion case documents commercial science-fiction/action production, effects and specialist craft inside an industrial genre package, strengthening the mass-market and genre-system rows."
+    },
+    {
+      "scenario_id": "scenario_pelle_the_conqueror_1987",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified Danish-Swedish historical production is relevant Nordic and European co-production history, but the current matrix has no exact modern Nordic co-production row; award status or nationality alone cannot justify a proxy mapping."
+    },
+    {
+      "scenario_id": "scenario_landscape_in_the_mist_1988",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch.ts"
+      ],
+      "rationale": "The permanent Production Verification record directly verifies the Greek-French-Italian 35 mm co-production, named production partners and production crafts. The current matrix still has no dedicated Balkan/Greek transnational row, so the case remains reviewed without mapping rather than being forced into another geography."
+    },
+    {
+      "scenario_id": "scenario_cinema_paradiso_1988",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The film is production-verified, but its projection booth, cinema venue and spectators are fictional narrative content. That cannot be treated as factual exhibition or audience-history evidence, so no viewing-history mapping is made."
+    },
+    {
+      "scenario_id": "scenario_salaam_bombay_1988",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "india_modern_industry_system",
+        "decolonial_transnational_historiography"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSalaamBombay.ts"
+      ],
+      "rationale": "The verified Bombay location production documents Mirabai Films, Channel Four, Cadrage, La Sept, NFDC and Doordarshan across India/UK/France, plus workshop-based child performance and documentary-informed research. This is exact modern Indian financing and industrial-organization evidence sufficient for India status 2, while one case is insufficient for status 3."
+    },
+    {
+      "scenario_id": "scenario_a_city_of_sadness_1989",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The verified Taiwan production is important Chinese-language and Taiwan New Cinema history, but Taiwan is not Mainland China and the current matrix has no Taiwan-industry row. It is therefore not misclassified into china_industry_system."
+    },
+    {
+      "scenario_id": "scenario_do_the_right_thing_1989",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationDoTheRightThing.ts"
+      ],
+      "rationale": "The verified 40 Acres and a Mule/Universal case documents Black-led mid-budget production inside mainstream studio distribution, providing exact commercial-industry evidence without reducing the case to identity representation."
+    },
+    {
+      "scenario_id": "scenario_sex_lies_and_videotape_1989",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modern_popular_commercial_cinema_as_industry"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAmericanIndependentBreakthroughsBatch.ts"
+      ],
+      "rationale": "The verified case documents Sundance market visibility followed by Miramax acquisition and specialty theatrical distribution, making independent-to-commercial distribution economics concrete rather than treating festival prestige as the evidence."
+    },
+    {
+      "scenario_id": "scenario_black_rain_imamura_1989",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "rationale": "The production-verified Imamura feature is relevant to late-1980s Japanese historical cinema, but the current review does not establish a distinct additional industrial mechanism needed by the already triangulated Japan row; it is kept reviewed without tokenistic nationality mapping."
     }
   ],
   "candidate_admission_gate": {
