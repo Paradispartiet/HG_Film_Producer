@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const coveragePath = 'data/film/film_history_representation_coverage_v1.json';
 const atlasPath = 'docs/film-history-chapter-seventeen-atlas-resolved.json';
-const registryPath = 'src/ui/data/scenarioProductionVerificationRegistry.ts';
+const pvDir = 'src/ui/data';
 
 const coverage = JSON.parse(fs.readFileSync(coveragePath, 'utf8'));
 const atlas = JSON.parse(fs.readFileSync(atlasPath, 'utf8'));
@@ -33,22 +33,12 @@ const collectUseExisting = (value, out = new Set()) => {
 const chapter17Ids = collectUseExisting(atlas);
 if (chapter17Ids.size !== 51) throw new Error(`Expected 51 Chapter 17 USE_EXISTING ids, got ${chapter17Ids.size}`);
 
-const registry = fs.readFileSync(registryPath, 'utf8');
-const importedModules = new Set(['./scenarioProductionVerification']);
-for (const match of registry.matchAll(/from\s+["'](\.\/scenarioProductionVerification[^"']*)["']/g)) {
-  importedModules.add(match[1]);
-}
-
-const importedFiles = [];
-for (const moduleName of importedModules) {
-  const relative = moduleName.replace(/^\.\//, '');
-  const filePath = path.posix.join('src/ui/data', `${relative}.ts`);
-  if (!fs.existsSync(filePath)) throw new Error(`Registry-imported PV module missing: ${filePath}`);
-  importedFiles.push(filePath);
-}
+const pvFiles = fs.readdirSync(pvDir)
+  .filter((name) => name.startsWith('scenarioProductionVerification') && name.endsWith('.ts'))
+  .map((name) => path.posix.join(pvDir, name));
 
 const exactDefinitionMap = new Map();
-for (const filePath of importedFiles) {
+for (const filePath of pvFiles) {
   const text = fs.readFileSync(filePath, 'utf8');
   for (const id of chapter17Ids) {
     const escaped = id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -63,7 +53,7 @@ for (const filePath of importedFiles) {
 for (const id of chapter17Ids) {
   const candidates = exactDefinitionMap.get(id) ?? [];
   if (candidates.length !== 1) {
-    throw new Error(`Expected exactly one registry-imported exact PV definition for ${id}, got ${candidates.length}: ${candidates.join(', ')}`);
+    throw new Error(`Expected exactly one exact PV definition for ${id}, got ${candidates.length}: ${candidates.join(', ')}`);
   }
 }
 
@@ -101,4 +91,4 @@ for (const id of chapter17Ids) {
 }
 
 fs.writeFileSync(coveragePath, `${JSON.stringify(coverage, null, 2)}\n`);
-console.log(`Chapter 17 evidence binding repair complete: ${changed} of 51 paths corrected; all 51 now point to exact registry-imported PV definitions.`);
+console.log(`Chapter 17 evidence binding repair complete: ${changed} of 51 paths corrected; all 51 now point to exact PV definitions.`);
