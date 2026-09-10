@@ -136,14 +136,15 @@
     },
     {
       "development_id": "animation_technique_labor_and_delivery_history",
-      "declared_status": 2,
+      "declared_status": 3,
       "priority": "P1",
       "axis_ids": [
         "technology_and_format",
         "labor_crew_and_union_history",
         "distribution_exhibition_and_audience_behavior"
       ],
-      "required_evidence": "Exact animation scenarios must teach technique, labor organization, camera/software pipeline or delivery history rather than animation as a single medium category."
+      "required_evidence": "Exact animation scenarios must teach technique, labor organization, camera/software pipeline or delivery history rather than animation as a single medium category.",
+      "triangulation_basis": "Chapter 17 triangulates two materially different exact animation production systems. Toy Story documents Pixar/Disney feature development, proprietary Menv/Marionette animation, RenderMan rendering, technical-direction labor and a fully computer-generated feature pipeline. Princess Mononoke contrasts Studio Ghibli’s predominantly hand-drawn storyboard-led workflow with partial digital paint, CG, photography/compositing and dedicated digital departments. Together they distinguish fully computer-generated and hybrid hand-drawn/digital workflows across software, rendering, department structure and delivery-era transition rather than treating animation as one technique."
     },
     {
       "development_id": "exhibition_and_viewing_history",
@@ -183,14 +184,15 @@
     },
     {
       "development_id": "india_modern_industry_system",
-      "declared_status": 2,
+      "declared_status": 3,
       "priority": "P0",
       "axis_ids": [
         "institutions_and_industry_systems",
         "geography_and_transnational_production",
         "distribution_exhibition_and_audience_behavior"
       ],
-      "required_evidence": "Exact modern Indian scenarios must teach language markets, financing, star or distribution economics, industrial organization or digital transition."
+      "required_evidence": "Exact modern Indian scenarios must teach language markets, financing, star or distribution economics, industrial organization or digital transition.",
+      "triangulation_basis": "Chapter 16 established exact modern Indian industry coverage through Salaam Bombay: Mirabai Films, Channel Four, Cadrage, La Sept, NFDC and Doordarshan supplied a multi-institution India/UK/France financing and production network. Chapter 17 adds Bandit Queen as a materially different India-UK Film Four/Kaleidoscope production with documented production scale, adaptation-rights litigation and certification/version constraints. The pair triangulates financing/institutional organization against rights/regulation and co-production structure rather than counting two Indian titles."
     },
     {
       "development_id": "china_industry_system",
@@ -217,7 +219,7 @@
     },
     {
       "development_id": "south_korea_industry_system",
-      "declared_status": 0,
+      "declared_status": 2,
       "priority": "P0",
       "axis_ids": [
         "institutions_and_industry_systems",
@@ -252,7 +254,7 @@
     },
     {
       "development_id": "mena_industry_systems",
-      "declared_status": 0,
+      "declared_status": 2,
       "priority": "P0",
       "axis_ids": [
         "institutions_and_industry_systems",
@@ -285,7 +287,7 @@
     },
     {
       "development_id": "labor_union_vfx_outsourcing_intimacy_coordination_post_history",
-      "declared_status": 0,
+      "declared_status": 2,
       "priority": "P0",
       "axis_ids": [
         "labor_crew_and_union_history",
@@ -2280,7 +2282,7 @@
       "evidence_paths": [
         "src/ui/data/scenarioProductionVerificationSalaamBombay.ts"
       ],
-      "rationale": "The verified Bombay location production documents Mirabai Films, Channel Four, Cadrage, La Sept, NFDC and Doordarshan across India/UK/France, plus workshop-based child performance and documentary-informed research. This is exact modern Indian financing and industrial-organization evidence sufficient for India status 2, while one case is insufficient for status 3."
+      "rationale": "The verified Bombay location production documents Mirabai Films, Channel Four, Cadrage, La Sept, NFDC and Doordarshan across India/UK/France, plus workshop-based child performance and documentary-informed research. Chapter 16 used this as exact modern Indian financing and industrial-organization evidence for status 2. Chapter 17 later adds Bandit Queen as a complementary India-UK production with distinct rights, certification and co-production evidence, allowing India to be triangulated at status 3 without treating nationality alone as coverage."
     },
     {
       "scenario_id": "scenario_a_city_of_sadness_1989",
@@ -2315,6 +2317,480 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "rationale": "The production-verified Imamura feature is relevant to late-1980s Japanese historical cinema, but the current review does not establish a distinct additional industrial mechanism needed by the already triangulated Japan row; it is kept reviewed without tokenistic nationality mapping."
+    },
+    {
+      "scenario_id": "scenario_paris_is_burning_1990",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/AMY_2015_PRODUCTION_CASE_VERIFICATION.md"
+      ],
+      "rationale": "Paris Is Burning is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_slacker_1990",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/PATERSON_2016_PRODUCTION_CASE_VERIFICATION.md"
+      ],
+      "rationale": "Slacker is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_metropolitan_1990",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAmericanIndependentGenreResourcefulnessBatch.ts"
+      ],
+      "rationale": "Metropolitan is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_days_of_being_wild_1990",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationHongKongTaiwanUrbanTimeBatch.ts"
+      ],
+      "rationale": "Days of Being Wild is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_goodfellas_1990",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationGoodfellas.ts"
+      ],
+      "rationale": "Goodfellas is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_daughters_of_the_dust_1991",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/ANTONIAS_LINE_PRODUCTION_CASE_VERIFICATION.md"
+      ],
+      "rationale": "Daughters of the Dust is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_poison_1991",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationIndependentDesireIdentityAuthorshipBatch.ts"
+      ],
+      "rationale": "Poison is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_raise_the_red_lantern_1991",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationChineseLanguageSpaceGenreBatch.ts"
+      ],
+      "rationale": "Raise the Red Lantern is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_my_own_private_idaho_1991",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationMyOwnPrivateIdaho.ts"
+      ],
+      "rationale": "My Own Private Idaho is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_boyz_n_the_hood_1991",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBoyzNTheHood.ts"
+      ],
+      "rationale": "Boyz n the Hood is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_reservoir_dogs_1992",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/GOOD_TIME_2017_PRODUCTION_CASE_VERIFICATION.md"
+      ],
+      "rationale": "Reservoir Dogs is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_el_mariachi_1992",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/GOOD_TIME_2017_PRODUCTION_CASE_VERIFICATION.md"
+      ],
+      "rationale": "El Mariachi is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_hyenas_1992",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationHyenas.ts"
+      ],
+      "rationale": "Hyenas is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_living_end_1992",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheLivingEnd.ts"
+      ],
+      "rationale": "The Living End is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_sankofa_1993",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSankofa.ts"
+      ],
+      "rationale": "Sankofa is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_farewell_my_concubine_1993",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationChineseLanguageModernityMemoryBatch.ts"
+      ],
+      "rationale": "Farewell My Concubine is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_piano_1993",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationThePiano.ts"
+      ],
+      "rationale": "The Piano is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_naked_1993",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/PRODUCTION_CASE_VERIFICATION_REGISTRY.md"
+      ],
+      "rationale": "Naked is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_three_colours_red_1994",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationThreeColoursRed.ts"
+      ],
+      "rationale": "Three Colours: Red is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_chungking_express_1994",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationChungkingExpress.ts"
+      ],
+      "rationale": "Chungking Express is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_pulp_fiction_1994",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPulpFiction.ts"
+      ],
+      "rationale": "Pulp Fiction is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_vive_l_amour_1994",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/THREE_IRON_PRODUCTION_CASE_VERIFICATION.md"
+      ],
+      "rationale": "Vive L'Amour is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_bandit_queen_1994",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "india_modern_industry_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBanditQueen.ts"
+      ],
+      "rationale": "The exact verified India-UK Film Four/Kaleidoscope case documents cross-border production, contemporary 35 mm production records, reported financing scale, adaptation-rights litigation and certification/version constraints. Together with the existing Salaam Bombay financing/institution case, it supplies a distinct rights/regulation and co-production dimension sufficient for India 2→3 without treating nationality alone as evidence."
+    },
+    {
+      "scenario_id": "scenario_hoop_dreams_1994",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationHoopDreams.ts"
+      ],
+      "rationale": "Hoop Dreams is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_toy_story_1995",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "animation_technique_labor_and_delivery_history",
+        "labor_union_vfx_outsourcing_intimacy_coordination_post_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationToyStory.ts"
+      ],
+      "rationale": "The exact verified Pixar record documents a Disney/Pixar feature agreement, proprietary Menv/Marionette and RenderMan pipeline, technical direction, rendering, animation, editing and sound as distinct labor layers. It supplies one side of the animation 2→3 triangulation and exact digital-pipeline labor evidence for the broader VFX/post-labor row."
+    },
+    {
+      "scenario_id": "scenario_safe_1995",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/BLINDNESS_2008_PRODUCTION_CASE_VERIFICATION.md"
+      ],
+      "rationale": "Safe is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_la_haine_1995",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/LA_HAINE_PRODUCTION_CASE_VERIFICATION.md"
+      ],
+      "rationale": "La Haine is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_underground_1995",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/PRODUCTION_CASE_VERIFICATION_REGISTRY.md"
+      ],
+      "rationale": "Underground is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_white_balloon_1995",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "mena_industry_systems"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheWhiteBalloon.ts"
+      ],
+      "rationale": "The exact verified Iranian case documents IRIB Channel Two, Ferdos Films, Farabi Cinema Foundation/world-rights roles and source-specific production attribution. Alongside Taste of Cherry it establishes exact Iranian institutional variation, supporting conservative MENA status 2 while regional breadth remains untriangulated."
+    },
+    {
+      "scenario_id": "scenario_secrets_and_lies_1996",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/MOMMY_2014_PRODUCTION_CASE_VERIFICATION.md"
+      ],
+      "rationale": "Secrets & Lies is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_watermelon_woman_1996",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationQueerIndependentBodyCommunityArchiveBatch.ts"
+      ],
+      "rationale": "The Watermelon Woman is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_fargo_1996",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/FARGO_PRODUCTION_CASE_VERIFICATION.md"
+      ],
+      "rationale": "Fargo is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_trainspotting_1996",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/TRAINSPOTTING_PRODUCTION_CASE_VERIFICATION.md"
+      ],
+      "rationale": "Trainspotting is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_fire_1996",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFire.ts"
+      ],
+      "rationale": "Fire is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_taste_of_cherry_1997",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "mena_industry_systems"
+      ],
+      "evidence_paths": [
+        "docs/TAXI_2015_PRODUCTION_CASE_VERIFICATION.md"
+      ],
+      "rationale": "The exact verified Iran-France case documents Abbas Kiarostami Productions, a resource-limited writer-director-editor-producer model, export/censorship difficulty and later specialty acquisition. It is concrete Iranian production/circulation-system evidence for MENA, but not by itself a claim about the whole region."
+    },
+    {
+      "scenario_id": "scenario_happy_together_1997",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/LAST_LIFE_IN_THE_UNIVERSE_PRODUCTION_CASE_VERIFICATION.md"
+      ],
+      "rationale": "Happy Together is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_cure_1997",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/THE_GAME_PRODUCTION_CASE_VERIFICATION.md"
+      ],
+      "rationale": "Cure is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_titanic_1997",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTitanic.ts"
+      ],
+      "rationale": "Titanic is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_princess_mononoke_1997",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "animation_technique_labor_and_delivery_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPrincessMononoke.ts"
+      ],
+      "rationale": "The exact verified Studio Ghibli record documents a predominantly hand-drawn feature with partial digital paint, CG, photography/compositing, dedicated departments and Silicon Graphics infrastructure. Its hybrid transition complements Toy Story’s fully computer-animated pipeline, justifying animation 2→3 by technique and labor organization rather than medium labels."
+    },
+    {
+      "scenario_id": "scenario_eves_bayou_1997",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEvesBayou.ts"
+      ],
+      "rationale": "Eve's Bayou is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_celebration_1998",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/PRODUCTION_CASE_VERIFICATION_REGISTRY.md"
+      ],
+      "rationale": "The Chapter 17 atlas identifies Festen as a decisive consumer-digital-video production case, but the open matrix row requires the combined chain of low-cost digital capture/post, microbudget organization and independent or self-directed distribution. Digital acquisition alone does not prove that full system, so this remains REVIEWED_NO_MAPPING rather than forcing microbudget-digital status."
+    },
+    {
+      "scenario_id": "scenario_central_station_1998",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/PRODUCTION_CASE_VERIFICATION_REGISTRY.md"
+      ],
+      "rationale": "Central Station is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_idiots_1998",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheIdiots.ts"
+      ],
+      "rationale": "The exact verified Dogme 95 record documents video-origin, handheld, location-driven production and keeps acquisition distinct from theatrical presentation, but it does not establish the full required microbudget digital capture/post plus independent/self-directed distribution system. It therefore remains REVIEWED_NO_MAPPING and the microbudget-digital row stays fail-closed."
+    },
+    {
+      "scenario_id": "scenario_ringu_1998",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationRingu.ts"
+      ],
+      "rationale": "Ringu is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_matrix_1999",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "labor_union_vfx_outsourcing_intimacy_coordination_post_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheMatrix.ts"
+      ],
+      "rationale": "The exact verified Warner/Village Roadshow/Silver Pictures case documents Sydney production infrastructure, Australian crews, Manex and Animal Logic VFX work, array-based bullet-time photography and named editing/sound/VFX labor. It supplies exact VFX/post-production labor evidence, but not the union/intimacy breadth required for status 3."
+    },
+    {
+      "scenario_id": "scenario_beau_travail_1999",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/PRODUCTION_CASE_VERIFICATION_REGISTRY.md"
+      ],
+      "rationale": "Beau Travail is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_rosetta_1999",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/ROSETTA_PRODUCTION_CASE_VERIFICATION.md"
+      ],
+      "rationale": "Rosetta is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_all_about_my_mother_1999",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "docs/PRODUCTION_CASE_VERIFICATION_REGISTRY.md"
+      ],
+      "rationale": "All About My Mother is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_the_blair_witch_project_1999",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBlairWitchProject.ts"
+      ],
+      "rationale": "The Blair Witch Project is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_boys_dont_cry_1999",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBoysDontCry.ts"
+      ],
+      "rationale": "Boys Don't Cry is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_shiri_1999",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "south_korea_industry_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationShiri.ts"
+      ],
+      "rationale": "The exact verified KOFIC-backed record documents KangJeGyu Films, Samsung investment/distribution activity, Korea Technology Finance Corporation support, production economics, named Korean craft/effects labor and domestic plus overseas theatrical circulation. That is exact modern South Korean industry-system evidence sufficient for status 2, while one title remains insufficient for triangulation."
     }
   ],
   "candidate_admission_gate": {
