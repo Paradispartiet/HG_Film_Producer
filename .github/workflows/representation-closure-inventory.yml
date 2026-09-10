@@ -1,4 +1,4 @@
-name: Inventory representation closure remainder
+name: Verify representation closure candidates
 
 on:
   push:
@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  inventory:
+  verify-candidates:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,72 +18,44 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - name: Build representation audit inventory
+      - name: Build frozen-core representation inventory
         run: node scripts/film-history-representation-coverage-audit-v1.mjs --write=.tmp/representation-closure.json
-      - name: Print exact closure inventory and evidence shortlist
+      - name: Prove Nollywood candidate presence or absence
         shell: bash
         run: |
           node --input-type=module <<'NODE'
           import { readFileSync, readdirSync } from 'node:fs';
           const report = JSON.parse(readFileSync('.tmp/representation-closure.json', 'utf8'));
-          const contract = JSON.parse(readFileSync('data/film/film_history_representation_coverage_v1.json', 'utf8'));
-          const pvPathsByScenario = new Map();
-          const pvSourceByPath = new Map();
+          const terms = /nollywood|nigeria|nigerian|lagos/i;
+          const hits = [];
+          const pvByScenario = new Map();
           for (const file of readdirSync('src/ui/data')) {
             if (!file.startsWith('scenarioProductionVerification') || !file.endsWith('.ts')) continue;
             const path = `src/ui/data/${file}`;
             const source = readFileSync(path, 'utf8');
-            pvSourceByPath.set(path, source);
             for (const match of source.matchAll(/scenarioId\s*:\s*["']([^"']+)["']/g)) {
-              const id = match[1];
-              const paths = pvPathsByScenario.get(id) ?? [];
-              paths.push(path);
-              pvPathsByScenario.set(id, paths);
+              const paths = pvByScenario.get(match[1]) ?? [];
+              paths.push({ path, source });
+              pvByScenario.set(match[1], paths);
             }
           }
-          const unreviewed = report.scenarioInventory.filter((item) => item.reviewState === 'UNMAPPED');
-          const open = contract.development_matrix.filter((item) => item.declared_status < 2);
-          console.log(`SUMMARY\treviewed=${report.mapping.reviewedScenarioIds}\tunreviewed=${unreviewed.length}\tstatus0=${report.coverage.statusCounts['0']}\tp0Open=${report.coverage.p0OpenRows}\tclosure=${report.representationalClosure}`);
-          for (const item of open) {
-            console.log(`OPEN\t${item.development_id}\tstatus=${item.declared_status}\tpriority=${item.priority}\tchapter=${item.chapter ?? ''}\trequired=${item.required_evidence}`);
-          }
-          for (const item of unreviewed) {
-            const pv = (pvPathsByScenario.get(item.scenarioId) ?? []).join(',');
-            console.log(`UNREVIEWED\t${item.scenarioId}\t${item.year}\t${item.title}\t${item.origin}\t${pv}`);
-          }
-
-          const signals = {
-            nollywood: /nollywood|nigeria|nigerian|lagos/gi,
-            finance_distribution: /financ(?:e|ed|ing)|budget|distribution|distributor|rights|acquisition|commission(?:ed|ing)?|platform|netflix|apple(?: original films| tv\+)?|amazon|hbo|max|disney\+/gi,
-            windows: /theatrical window|release window|day[- ]and[- ]date|simultaneous(?:ly)?|vod|streaming release|cinema release|home[- ]entertainment|theatrical release/gi,
-            microbudget: /microbudget|micro-budget|low[- ]budget|self[- ]distribut|independent distribution|iphone|consumer camera|digital capture/gi,
-            generative_ai: /generative ai|artificial intelligence|machine learning|ai-generated|ai generated|midjourney|stable diffusion|chatgpt|deepfake/gi,
-            intimacy: /intimacy coordinator|intimacy coordination|intimacy professional/gi,
-            sustainability: /sustainable production|sustainability|carbon footprint|carbon accounting|green production|albert certification|eco(?:logical)? production/gi,
-            franchise_exhibition: /franchise|tentpole|imax|premium format|cinema version|home[- ]entertainment version/gi,
-          };
           for (const item of report.scenarioInventory) {
-            const paths = pvPathsByScenario.get(item.scenarioId) ?? [];
-            const source = paths.map((path) => pvSourceByPath.get(path) ?? '').join('\n');
-            const hitNames = [];
-            const hitTerms = [];
-            for (const [name, pattern] of Object.entries(signals)) {
-              pattern.lastIndex = 0;
-              const matches = [...source.matchAll(pattern)].map((m) => m[0]);
-              if (matches.length) {
-                hitNames.push(name);
-                hitTerms.push(`${name}:${[...new Set(matches.map((m) => m.toLowerCase()))].slice(0, 8).join('|')}`);
-              }
-            }
-            if (hitNames.length) {
-              console.log(`CANDIDATE\t${item.reviewState}\t${item.scenarioId}\t${item.year}\t${item.title}\t${hitNames.join(',')}\t${hitTerms.join(';')}\t${paths.join(',')}`);
+            const identityText = `${item.scenarioId}\n${item.title}\n${item.originalTitle ?? ''}\n${item.origin}`;
+            const pvRecords = pvByScenario.get(item.scenarioId) ?? [];
+            const pvText = pvRecords.map((record) => record.source).join('\n');
+            if (terms.test(identityText) || terms.test(pvText)) {
+              hits.push({
+                scenarioId: item.scenarioId,
+                title: item.title,
+                year: item.year,
+                reviewState: item.reviewState,
+                paths: pvRecords.map((record) => record.path),
+              });
             }
           }
-          if (unreviewed.length !== 215) throw new Error(`Expected 215 unreviewed scenarios, found ${unreviewed.length}`);
-          if (open.length !== 10) throw new Error(`Expected 10 open status<2 rows, found ${open.length}`);
-          if (report.coverage.p0OpenRows !== 8) throw new Error(`Expected 8 open P0 rows, found ${report.coverage.p0OpenRows}`);
+          console.log(`FROZEN_CORE=${report.core.runtimeAtlasScenarios}`);
+          console.log(`PRODUCTION_VERIFIED=${report.core.uniqueProductionVerificationIds}`);
+          console.log(`NOLLYWOOD_NIGERIA_HITS=${hits.length}`);
+          for (const hit of hits) console.log(`NOLLYWOOD_HIT\t${JSON.stringify(hit)}`);
+          if (report.core.runtimeAtlasScenarios !== 613 || report.core.uniqueProductionVerificationIds !== 613) throw new Error('Frozen 613/613 invariant changed');
           NODE
-      - uses: actions/upload-artifact@v4
-        with:
-          name: representation-closure-inventory
-          path: .tmp/representation-closure.json
