@@ -2323,7 +2323,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/AMY_2015_PRODUCTION_CASE_VERIFICATION.md"
+        "src/ui/data/scenarioProductionVerificationQueerIndependentBodyCommunityArchiveBatch.ts"
       ],
       "rationale": "Paris Is Burning is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2332,7 +2332,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/PATERSON_2016_PRODUCTION_CASE_VERIFICATION.md"
+        "src/ui/data/scenarioProductionVerificationAmericanIndependentBreakthroughsBatch.ts"
       ],
       "rationale": "Slacker is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2368,7 +2368,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/ANTONIAS_LINE_PRODUCTION_CASE_VERIFICATION.md"
+        "src/ui/data/scenarioProductionVerificationAmericanIndependentBreakthroughsBatch.ts"
       ],
       "rationale": "Daughters of the Dust is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2413,7 +2413,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/GOOD_TIME_2017_PRODUCTION_CASE_VERIFICATION.md"
+        "src/ui/data/scenarioProductionVerificationAmericanIndependentGenreResourcefulnessBatch.ts"
       ],
       "rationale": "Reservoir Dogs is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2422,7 +2422,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/GOOD_TIME_2017_PRODUCTION_CASE_VERIFICATION.md"
+        "src/ui/data/scenarioProductionVerificationAmericanIndependentGenreResourcefulnessBatch.ts"
       ],
       "rationale": "El Mariachi is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2476,7 +2476,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/PRODUCTION_CASE_VERIFICATION_REGISTRY.md"
+        "src/ui/data/scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch.ts"
       ],
       "rationale": "Naked is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2512,7 +2512,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/THREE_IRON_PRODUCTION_CASE_VERIFICATION.md"
+        "src/ui/data/scenarioProductionVerificationHongKongTaiwanUrbanTimeBatch.ts"
       ],
       "rationale": "Vive L'Amour is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2553,7 +2553,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/BLINDNESS_2008_PRODUCTION_CASE_VERIFICATION.md"
+        "src/ui/data/scenarioProductionVerificationQueerIndependentBodyCommunityArchiveBatch.ts"
       ],
       "rationale": "Safe is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2562,7 +2562,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/LA_HAINE_PRODUCTION_CASE_VERIFICATION.md"
+        "src/ui/data/scenarioProductionVerificationLaHaine.ts"
       ],
       "rationale": "La Haine is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2571,7 +2571,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/PRODUCTION_CASE_VERIFICATION_REGISTRY.md"
+        "src/ui/data/scenarioProductionVerificationBalkanWarInstitutionSystemsBatch.ts"
       ],
       "rationale": "Underground is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2591,7 +2591,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/MOMMY_2014_PRODUCTION_CASE_VERIFICATION.md"
+        "src/ui/data/scenarioProductionVerificationFamilyPerformanceGriefPowerBatch.ts"
       ],
       "rationale": "Secrets & Lies is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2609,7 +2609,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/FARGO_PRODUCTION_CASE_VERIFICATION.md"
+        "src/ui/data/scenarioProductionVerificationFargo.ts"
       ],
       "rationale": "Fargo is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2618,7 +2618,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/TRAINSPOTTING_PRODUCTION_CASE_VERIFICATION.md"
+        "src/ui/data/scenarioProductionVerificationTrainspotting.ts"
       ],
       "rationale": "Trainspotting is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2638,7 +2638,7 @@
         "mena_industry_systems"
       ],
       "evidence_paths": [
-        "docs/TAXI_2015_PRODUCTION_CASE_VERIFICATION.md"
+        "src/ui/data/scenarioProductionVerificationTasteOfCherry.ts"
       ],
       "rationale": "The exact verified Iran-France case documents Abbas Kiarostami Productions, a resource-limited writer-director-editor-producer model, export/censorship difficulty and later specialty acquisition. It is concrete Iranian production/circulation-system evidence for MENA, but not by itself a claim about the whole region."
     },
@@ -2647,7 +2647,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/LAST_LIFE_IN_THE_UNIVERSE_PRODUCTION_CASE_VERIFICATION.md"
+        "src/ui/data/scenarioProductionVerificationAsianTransnationalUrbanIdentityBatch.ts"
       ],
       "rationale": "Happy Together is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2656,7 +2656,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/THE_GAME_PRODUCTION_CASE_VERIFICATION.md"
+        "src/ui/data/scenarioProductionVerificationJapaneseAmbiguityDialogueBatch.ts"
       ],
       "rationale": "Cure is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2694,7 +2694,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/PRODUCTION_CASE_VERIFICATION_REGISTRY.md"
+        "src/ui/data/scenarioProductionVerificationMethodBatch.ts"
       ],
       "rationale": "The Chapter 17 atlas identifies Festen as a decisive consumer-digital-video production case, but the open matrix row requires the combined chain of low-cost digital capture/post, microbudget organization and independent or self-directed distribution. Digital acquisition alone does not prove that full system, so this remains REVIEWED_NO_MAPPING rather than forcing microbudget-digital status."
     },
@@ -2703,7 +2703,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/PRODUCTION_CASE_VERIFICATION_REGISTRY.md"
+        "src/ui/data/scenarioProductionVerificationFestivalJourneyDisplacementSystemsBatch.ts"
       ],
       "rationale": "Central Station is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2741,7 +2741,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/PRODUCTION_CASE_VERIFICATION_REGISTRY.md"
+        "src/ui/data/scenarioProductionVerificationEuropeanPoliticalFeministModernismBatch.ts"
       ],
       "rationale": "Beau Travail is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2750,7 +2750,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/ROSETTA_PRODUCTION_CASE_VERIFICATION.md"
+        "src/ui/data/scenarioProductionVerificationRosetta.ts"
       ],
       "rationale": "Rosetta is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
@@ -2759,7 +2759,7 @@
       "review_state": "REVIEWED_NO_MAPPING",
       "development_ids": [],
       "evidence_paths": [
-        "docs/PRODUCTION_CASE_VERIFICATION_REGISTRY.md"
+        "src/ui/data/scenarioProductionVerificationIberianPortugueseMemorySystemsBatch.ts"
       ],
       "rationale": "All About My Mother is exact USE_EXISTING and production-verified in the Chapter 17 atlas, and its permanent PV record has been bound below. This pass does not establish a direct additional mapping from that title to one of the still-open matrix developments beyond the explicitly evidenced Chapter 17 lifts; it remains REVIEWED_NO_MAPPING rather than using period, genre, geography, festival status or chapter placement as a proxy."
     },
