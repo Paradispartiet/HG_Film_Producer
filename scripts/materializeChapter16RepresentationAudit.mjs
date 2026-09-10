@@ -38,10 +38,11 @@ const mapped = (scenario_id, development_ids, evidence_paths, rationale) => ({
   evidence_paths,
   rationale,
 });
-const reviewed = (scenario_id, rationale) => ({
+const reviewed = (scenario_id, rationale, evidence_paths = undefined) => ({
   scenario_id,
   review_state: 'REVIEWED_NO_MAPPING',
   development_ids: [],
+  ...(evidence_paths ? { evidence_paths } : {}),
   rationale,
 });
 
@@ -73,7 +74,7 @@ const reviews = [
   mapped('scenario_yeelen_1987', [TRANSNATIONAL], ['src/ui/data/scenarioProductionVerificationYeelen.ts'], 'The verified Mali-Burkina Faso-France-GDR case documents cross-border financing, institutions and production labor, supplying exact African-European transnational production-system evidence.'),
   mapped('scenario_robocop_1987', [MODERN, GENRE], ['src/ui/data/scenarioProductionVerificationRoboCop.ts'], 'The verified Orion case documents commercial science-fiction/action production, effects and specialist craft inside an industrial genre package, strengthening the mass-market and genre-system rows.'),
   reviewed('scenario_pelle_the_conqueror_1987', 'The verified Danish-Swedish historical production is relevant Nordic and European co-production history, but the current matrix has no exact modern Nordic co-production row; award status or nationality alone cannot justify a proxy mapping.'),
-  reviewed('scenario_landscape_in_the_mist_1988', 'The scenario is relevant to European co-production history, but this Chapter 16 pass does not have an exact permanent PV evidence path for the asserted cross-border production mechanism. It remains reviewed without mapping instead of relying on a guessed file.'),
+  reviewed('scenario_landscape_in_the_mist_1988', 'The permanent Production Verification record directly verifies the Greek-French-Italian 35 mm co-production, named production partners and production crafts. The current matrix still has no dedicated Balkan/Greek transnational row, so the case remains reviewed without mapping rather than being forced into another geography.', ['src/ui/data/scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch.ts']),
   reviewed('scenario_cinema_paradiso_1988', 'The film is production-verified, but its projection booth, cinema venue and spectators are fictional narrative content. That cannot be treated as factual exhibition or audience-history evidence, so no viewing-history mapping is made.'),
   mapped('scenario_salaam_bombay_1988', [INDIA, TRANSNATIONAL], ['src/ui/data/scenarioProductionVerificationSalaamBombay.ts'], 'The verified Bombay location production documents Mirabai Films, Channel Four, Cadrage, La Sept, NFDC and Doordarshan across India/UK/France, plus workshop-based child performance and documentary-informed research. This is exact modern Indian financing and industrial-organization evidence sufficient for India status 2, while one case is insufficient for status 3.'),
   reviewed('scenario_a_city_of_sadness_1989', 'The verified Taiwan production is important Chinese-language and Taiwan New Cinema history, but Taiwan is not Mainland China and the current matrix has no Taiwan-industry row. It is therefore not misclassified into china_industry_system.'),
@@ -91,6 +92,20 @@ for (const id of ids) {
 const existingIds = new Set(coverage.scenario_reviews.map((review) => review.scenario_id));
 for (const id of ids) {
   if (existingIds.has(id)) throw new Error(`Scenario already reviewed before Chapter 16: ${id}`);
+}
+for (const review of reviews) {
+  for (const evidencePath of review.evidence_paths ?? []) {
+    if (!fs.existsSync(evidencePath)) throw new Error(`Missing permanent evidence path for ${review.scenario_id}: ${evidencePath}`);
+  }
+}
+const landscapePath = 'src/ui/data/scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch.ts';
+const landscape = reviews.find((review) => review.scenario_id === 'scenario_landscape_in_the_mist_1988');
+if (!landscape || landscape.review_state !== 'REVIEWED_NO_MAPPING' || landscape.evidence_paths?.length !== 1 || landscape.evidence_paths[0] !== landscapePath) {
+  throw new Error('Landscape in the Mist must remain REVIEWED_NO_MAPPING with its exact permanent PV path');
+}
+const landscapePv = fs.readFileSync(landscapePath, 'utf8');
+if (!landscapePv.includes('scenarioId: "scenario_landscape_in_the_mist_1988"') || !landscapePv.includes('status: "verified"')) {
+  throw new Error('Landscape in the Mist permanent PV record is missing or not verified');
 }
 
 const india = coverage.developments.find((row) => row.development_id === INDIA);
