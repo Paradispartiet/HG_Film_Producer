@@ -1,4 +1,4 @@
-name: Materialize reviewed representation batch 2
+name: Inspect final representation review batch
 
 on:
   push:
@@ -6,105 +6,52 @@ on:
       - agent/representation-review-closure-20260910
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  materialize:
-    if: ${{ !contains(github.event.head_commit.message, '[materialized batch 2]') }}
+  inventory:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
       - run: npm ci
-      - name: Materialize next 72 exact reviews
+      - name: Print final 70 exact PV evidence records
         shell: bash
         run: |
+          node scripts/film-history-representation-coverage-audit-v1.mjs --write=.tmp/review-closure.json
           node --input-type=module <<'NODE'
-          import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
-          import { spawnSync } from 'node:child_process';
-          const coveragePath = 'data/film/film_history_representation_coverage_v1.json';
-          const coverage = JSON.parse(readFileSync(coveragePath, 'utf8'));
-          const runAudit = (out) => {
-            const p = spawnSync('node', ['scripts/film-history-representation-coverage-audit-v1.mjs', `--write=${out}`], { stdio: 'inherit' });
-            if (p.status !== 0) throw new Error(`Representation audit failed for ${out}`);
-            return JSON.parse(readFileSync(out, 'utf8'));
-          };
-          const before = runAudit('.tmp/review-before.json');
-          if (before.mapping.reviewedScenarioIds !== 471 || before.mapping.mappedScenarioIds !== 192 || before.mapping.reviewedNoMappingScenarioIds !== 279 || before.mapping.unmappedScenarioIds !== 142) throw new Error('Unexpected batch-2 baseline');
-          if (before.core.runtimeAtlasScenarios !== 613 || before.core.uniqueProductionVerificationIds !== 613 || !before.core.exactSetEquality || before.coverage.p0OpenRows !== 1) throw new Error('Frozen representation invariant changed');
-
-          const pvPathsByScenario = new Map();
+          import { readFileSync, readdirSync } from 'node:fs';
+          const report = JSON.parse(readFileSync('.tmp/review-closure.json', 'utf8'));
+          if (report.mapping.reviewedScenarioIds !== 543 || report.mapping.unmappedScenarioIds !== 70) throw new Error(`Unexpected baseline ${report.mapping.reviewedScenarioIds}/${report.mapping.unmappedScenarioIds}`);
+          if (report.core.runtimeAtlasScenarios !== 613 || report.core.uniqueProductionVerificationIds !== 613 || !report.core.exactSetEquality) throw new Error('Frozen 613/613 invariant changed');
+          if (report.coverage.p0OpenRows !== 1) throw new Error(`Expected one open P0 row, got ${report.coverage.p0OpenRows}`);
+          const records = new Map();
           for (const file of readdirSync('src/ui/data')) {
             if (!file.startsWith('scenarioProductionVerification') || !file.endsWith('.ts')) continue;
             const path = `src/ui/data/${file}`;
             const source = readFileSync(path, 'utf8');
-            for (const match of source.matchAll(/scenarioId\s*:\s*["']([^"']+)["']/g)) {
-              const arr = pvPathsByScenario.get(match[1]) ?? [];
-              arr.push(path);
-              pvPathsByScenario.set(match[1], arr);
+            const matches = [...source.matchAll(/scenarioId\s*:\s*["']([^"']+)["']/g)];
+            for (let i = 0; i < matches.length; i += 1) {
+              const start = matches[i].index;
+              const end = i + 1 < matches.length ? matches[i + 1].index : source.length;
+              const block = source.slice(start, end);
+              const arr = records.get(matches[i][1]) ?? [];
+              arr.push({ path, summary: [...block.matchAll(/summary\s*:\s*["'`]([^"'`]+)["'`]/g)].map(m => m[1]), notes: [...block.matchAll(/note\s*:\s*["'`]([^"'`]+)["'`]/g)].map(m => m[1]).slice(0, 12) });
+              records.set(matches[i][1], arr);
             }
           }
-
-          const decisions = new Map(Object.entries({
-            scenario_homesick_2015: { development_ids: ['nordic_norwegian_silent_and_institution_history'], rationale: 'The permanent PV combines Norsk filmografi, Maipo production, Nordisk Film distribution, Norwegian release records and Norwegian Film Institute material, so the scenario directly documents modern Norwegian company, distribution and institutional history rather than merely a Norwegian setting.' },
-            scenario_infernal_affairs_2002: { development_ids: ['genre_industries_horror_action_comedy_romance_exploitation_local_popular'], rationale: 'The permanent PV documents Media Asia production, complete production departments, a local industrial boost, trilogy formation, later international remake and blockbuster crime-thriller impact, connecting the genre to a concrete Hong Kong production and circulation system.' },
-            scenario_inside_out_2015: { development_ids: ['animation_technique_labor_and_delivery_history'], rationale: 'The permanent PV documents Pixar’s three-year production, virtual-camera organization, separate visual-world systems, camera-team demonstrations, editorial development and sound-design labor, directly teaching animation technique and pipeline history.' },
-            scenario_insomnia_1997: { development_ids: ['nordic_norwegian_silent_and_institution_history'], rationale: 'The permanent PV combines the national Norwegian filmography, DFI and Cinemateket records with exact production, department and release evidence, placing the film inside the Norwegian institutional and company history required by the row.' },
-            scenario_it_follows_2014: { development_ids: ['genre_industries_horror_action_comedy_romance_exploitation_local_popular'], rationale: 'The permanent PV documents independent financing before casting, production and weather constraints, the planned horror grammar, distributor-side circulation evidence and the title’s place in contemporary horror, tying genre form to an exact independent production and release pathway.' },
-            scenario_kagemusha_1980: { development_ids: ['japan_industry_system'], rationale: 'The permanent PV documents Toho, years of funding difficulty, international executive producers and full Japanese production departments, directly teaching Japanese feature-production organization and financing rather than nationality alone.' },
-            scenario_kitchen_stories_2003: { development_ids: ['nordic_norwegian_silent_and_institution_history'], rationale: 'The permanent PV documents a DKK 18.6 million Norwegian-Swedish public and broadcaster coproduction, Norwegian filmography records, production companies and national craft credits, providing exact Nordic institutional financing and production evidence.' },
-            scenario_marketa_lazarova_1967: { development_ids: ['modernism_new_waves_alternative_movements'], rationale: 'The permanent PV is explicitly bound to the Czechoslovak New Wave evidence set and documents years of period research, a costly 1965–1967 production and large-scale production conditions, connecting the movement to concrete production scale rather than formal style alone.' },
-            scenario_mississippi_masala_1991: { development_ids: ['decolonial_transnational_historiography'], rationale: 'The permanent PV documents Mirabai Films, independent financing, production across Uganda and the American South and a US-UK production structure, providing a concrete transnational financing and location-production history instead of using diaspora subject matter as a proxy.' },
-            scenario_noi_the_albino_2003: { development_ids: ['decolonial_transnational_historiography'], rationale: 'The permanent PV documents a EUR 1.2 million budget, 25 percent Icelandic government support, Icelandic, Danish, German and British production partners and Coproduction Office international sales, providing exact transnational finance, coproduction and distribution evidence.' },
-            scenario_oasis_2002: { development_ids: ['south_korea_industry_system'], rationale: 'The permanent PV uses KOFIC to document East Film and CJ production, principal production departments, release history and Lee Chang-dong’s production context, directly satisfying the South Korean company and labor-system requirement.' },
-            scenario_out_of_the_past_1947: { development_ids: ['classical_hollywood_studio_system', 'genre_industries_horror_action_comedy_romance_exploitation_local_popular'], rationale: 'The permanent PV documents RKO rights acquisition, casting and director changes, Production Code negotiations, studio departments and noir-industry context, directly supporting both classical studio organization and crime/noir genre-industrial history.' },
-            scenario_peppermint_candy_1999: { development_ids: ['south_korea_industry_system'], rationale: 'The permanent PV uses KOFIC production-company and release records and documents the film’s Busan opening and place in the renewal of modern Korean cinema, providing exact South Korean company, circulation and institutional evidence.' },
-            scenario_psychobitch_2019: { development_ids: ['nordic_norwegian_silent_and_institution_history'], rationale: 'The permanent PV documents Ape&Bjørn and Profile Pictures, Norsk filmografi, the principal Norwegian production team and the January 2019 national release, providing exact Norwegian company and institutional film-history evidence.' }
-          }));
-
-          const batch = before.scenarioInventory.filter(item => item.reviewState === 'UNMAPPED').slice(0, 72);
-          if (batch.length !== 72) throw new Error(`Expected 72 cases, got ${batch.length}`);
-          const batchIds = new Set(batch.map(item => item.scenarioId));
-          for (const id of decisions.keys()) if (!batchIds.has(id)) throw new Error(`Mapped decision not in batch: ${id}`);
-          const existing = new Set(coverage.scenario_reviews.map(r => r.scenario_id));
+          const batch = report.scenarioInventory.filter(item => item.reviewState === 'UNMAPPED');
+          console.log(`SUMMARY\treviewed=${report.mapping.reviewedScenarioIds}\tunreviewed=${report.mapping.unmappedScenarioIds}\tbatch=${batch.length}`);
           for (const item of batch) {
-            if (existing.has(item.scenarioId)) throw new Error(`Already reviewed: ${item.scenarioId}`);
-            const evidencePaths = [...new Set(pvPathsByScenario.get(item.scenarioId) ?? [])];
-            if (!evidencePaths.length) throw new Error(`Missing permanent PV path: ${item.scenarioId}`);
-            const decision = decisions.get(item.scenarioId);
-            coverage.scenario_reviews.push(decision ? {
-              scenario_id: item.scenarioId,
-              review_state: 'MAPPED',
-              development_ids: decision.development_ids,
-              evidence_paths: evidencePaths,
-              rationale: decision.rationale,
-            } : {
-              scenario_id: item.scenarioId,
-              review_state: 'REVIEWED_NO_MAPPING',
-              development_ids: [],
-              evidence_paths: evidencePaths,
-              rationale: `The permanent ProductionVerification evidence for ${item.title} was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but does not directly satisfy an additional scoped development row without substituting style, nationality, prestige, narrative subject or generic technical presence for industrial evidence.`,
-            });
+            console.log(`CASE\t${item.scenarioId}\t${item.year}\t${item.title}\t${item.origin}`);
+            for (const rec of records.get(item.scenarioId) ?? []) {
+              console.log(`PV\t${rec.path}`);
+              for (const text of rec.summary) console.log(`SUMMARYTEXT\t${text}`);
+              for (const text of rec.notes) console.log(`NOTE\t${text}`);
+            }
           }
-          writeFileSync(coveragePath, `${JSON.stringify(coverage, null, 2)}\n`);
-          const after = runAudit('.tmp/review-after.json');
-          const mappedAdded = decisions.size;
-          if (after.mapping.reviewedScenarioIds !== 543 || after.mapping.unmappedScenarioIds !== 70 || after.mapping.mappedScenarioIds !== 192 + mappedAdded || after.mapping.reviewedNoMappingScenarioIds !== 279 + (72 - mappedAdded)) throw new Error('Unexpected batch-2 result counts');
-          if (after.core.runtimeAtlasScenarios !== 613 || after.core.uniqueProductionVerificationIds !== 613 || !after.core.exactSetEquality || after.coverage.p0OpenRows !== 1) throw new Error('Frozen representation invariant changed after batch 2');
-          console.log(JSON.stringify({ batch: 72, mappedAdded, mapping: after.mapping, coverage: after.coverage }, null, 2));
+          if (batch.length !== 70) throw new Error(`Expected 70 cases, got ${batch.length}`);
           NODE
-      - name: Commit permanent review batch only
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/film/film_history_representation_coverage_v1.json
-          git diff --cached --check
-          test "$(git diff --cached --name-only | wc -l)" -eq 1
-          git commit -m "Audit representation review closure batch 2 [materialized batch 2]"
-          git push origin HEAD:agent/representation-review-closure-20260910
