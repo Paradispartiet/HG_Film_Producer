@@ -1,0 +1,154 @@
+name: Materialize Chapter 19 representation audit
+
+on:
+  push:
+    branches:
+      - agent/chapter-19-representation-audit
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Build exact Chapter 19 audit report
+        run: node scripts/film-history-chapter-nineteen-atlas-audit.mjs --write=.tmp/chapter19-audit.json
+      - name: Materialize fail-closed representation reviews
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import path from 'node:path';
+
+          const coveragePath = 'data/film/film_history_representation_coverage_v1.json';
+          const coverage = JSON.parse(fs.readFileSync(coveragePath, 'utf8'));
+          const report = JSON.parse(fs.readFileSync('.tmp/chapter19-audit.json', 'utf8'));
+          const useExisting = report.candidates.filter((c) => c.decision === 'USE_EXISTING');
+          const p2 = report.candidates.filter((c) => c.decision === 'P2');
+          if (report.candidates.length !== 92 || useExisting.length !== 90 || p2.length !== 2) throw new Error('Chapter 19 candidate contract changed');
+          if (p2.map((c) => c.title).join('|') !== 'Days|The Green Knight') throw new Error('Unexpected P2 set');
+          if (coverage.scenario_reviews.length !== 308) throw new Error(`Expected 308 existing reviews, got ${coverage.scenario_reviews.length}`);
+          if (coverage.baseline.expected_production_verified_core_scenarios !== 613 || report.atlas.actualCount !== 613 || report.productionVerification.literalScenarioIds !== 613) throw new Error('Frozen 613/613 contract failed');
+
+          const devOrder = new Map(coverage.development_matrix.map((row, i) => [row.development_id, i]));
+          const mapped = {
+            scenario_the_power_of_the_dog_2021: ['pandemic_shutdown_protocol_and_recovery'],
+            scenario_grand_tour_2024: ['pandemic_shutdown_protocol_and_recovery'],
+            scenario_killers_of_the_flower_moon_2023: ['pandemic_shutdown_protocol_and_recovery'],
+            scenario_soul_2020: ['pandemic_shutdown_protocol_and_recovery'],
+            scenario_rrr_2022: ['pandemic_shutdown_protocol_and_recovery','vfx_labor_outsourcing_and_post_pipeline','regional_incentives_studios_and_production_infrastructure','contemporary_popular_genres_as_industries','labor_union_vfx_outsourcing_intimacy_coordination_post_history'],
+            scenario_boy_from_heaven_2022: ['pandemic_shutdown_protocol_and_recovery','mena_industry_systems'],
+            scenario_nitram_2021: ['pandemic_shutdown_protocol_and_recovery'],
+            scenario_coda_2021: ['pandemic_shutdown_protocol_and_recovery','labor_union_vfx_outsourcing_intimacy_coordination_post_history'],
+            scenario_holy_spider_2022: ['pandemic_shutdown_protocol_and_recovery','mena_industry_systems'],
+            scenario_avatar_the_way_of_water_2022: ['virtual_production_and_in_camera_vfx'],
+            scenario_sentimental_value_2025: ['virtual_production_and_in_camera_vfx','regional_incentives_studios_and_production_infrastructure'],
+            scenario_godzilla_minus_one_2023: ['vfx_labor_outsourcing_and_post_pipeline','contemporary_popular_genres_as_industries','labor_union_vfx_outsourcing_intimacy_coordination_post_history'],
+            scenario_furiosa_a_mad_max_saga_2024: ['vfx_labor_outsourcing_and_post_pipeline','regional_incentives_studios_and_production_infrastructure','labor_union_vfx_outsourcing_intimacy_coordination_post_history'],
+            scenario_f1_2025: ['vfx_labor_outsourcing_and_post_pipeline','union_contracts_and_industrial_action','labor_union_vfx_outsourcing_intimacy_coordination_post_history'],
+            scenario_sound_of_falling_2025: ['regional_incentives_studios_and_production_infrastructure'],
+            scenario_everything_everywhere_all_at_once_2022: ['vfx_labor_outsourcing_and_post_pipeline','contemporary_popular_genres_as_industries','labor_union_vfx_outsourcing_intimacy_coordination_post_history'],
+            scenario_the_substance_2024: ['contemporary_popular_genres_as_industries'],
+            scenario_sinners_2025: ['contemporary_popular_genres_as_industries'],
+            scenario_aheds_knee_2021: ['mena_industry_systems'],
+            scenario_the_seed_of_the_sacred_fig_2024: ['mena_industry_systems']
+          };
+
+          const rationale = {
+            scenario_the_power_of_the_dog_2021: 'The exact PV documents several weeks of New Zealand photography followed by an approximately four-month COVID shutdown, a later safe restart, and editing in isolation during the interruption. Those title-specific schedule and post-production consequences directly evidence pandemic shutdown/recovery rather than merely a pandemic-era release.',
+            scenario_grand_tour_2024: 'The exact PV documents a five-week 2020 Southeast Asia production journey interrupted by COVID-19, a remotely directed 2022 continuation and a China unit directed from Lisbon by live feed, followed by separately staged actor photography. The changed unit structure and remote continuation are direct production consequences, so the case maps to pandemic shutdown/recovery.',
+            scenario_killers_of_the_flower_moon_2023: 'The exact PV records Apple COVID-19 controls reducing the Oklahoma headcount and causing Scorsese and Schoonmaker to review dailies remotely from New York over Zoom. That protocol-driven crew and editorial reorganization is direct pandemic production evidence, independent of the later Apple/Paramount release strategy.',
+            scenario_soul_2020: 'The exact PV records Pixar moving employees to work from home on 16 March 2020 with about seven weeks of Soul production remaining and completing the film remotely the following month. That bounded remote-completion change directly maps to pandemic production recovery; the later Disney+ release is not used as production evidence.',
+            scenario_rrr_2022: 'The exact PV documents COVID stretching production across four years and a continuity system based on detailed camera reports; roughly 2,800 VFX shots coordinated across more than a dozen studios over three and a half years, with Digital Domain separately documenting 213 shots; and a Hyderabad production base with workshops, rehearsal, editing and HOD spaces. Its Telugu large-scale action production therefore maps to pandemic continuity, distributed VFX labor/post organization, regional production infrastructure and contemporary popular genre as an industrial system. It also contributes to the broader newer-labor row, while that row remains below triangulated closure because intimacy/new-role evidence is still incomplete.',
+            scenario_boy_from_heaven_2022: 'The exact PV records a €6.5m Sweden/France/Finland/Denmark co-production, a one-year COVID postponement and 2021 photography largely in Istanbul with additional Gothenburg/Cairo production context. It therefore maps both to pandemic schedule consequences and to MENA-related transnational production/financing geography without treating Egyptian subject matter or nationality alone as coverage.',
+            scenario_nitram_2021: 'The exact PV documents a November 2020 lockdown production completed in 24 days across four weeks from a Geelong hub, plus a Super-16 plan abandoned because COVID-era processing supply was unavailable. Those schedule and format consequences are direct pandemic production evidence.',
+            scenario_coda_2021: 'The exact PV separates independent Vendôme/Pathé financing from Apple later acquisition and documents COVID-altered post, including remote color finishing and final sound. It also documents ASL masters, interpreter guidance and ASL-aware editorial organization as concrete newer labor/accessibility roles. The case therefore maps to pandemic production/post adaptation and contributes to the broader newer-labor history, but it does not establish streaming-native economics or intimacy coordination.',
+            scenario_holy_spider_2022: 'The exact PV documents COVID delays, an abandoned Iran path, a blocked Turkey attempt and an eventual 35-day Jordan shoot, alongside Denmark/Germany/Sweden/France production and bounded financing evidence. It maps to pandemic disruption and to MENA production/regulatory geography through documented location substitution and transnational production, not through nationality or subject matter alone.',
+            scenario_avatar_the_way_of_water_2022: 'The exact PV documents the underwater performance-capture volume, separation of performance capture from later virtual-camera decisions, rebuilt Simulcam, Weta FX virtual-camera work, techvis from digital scans of physical sets and an editorial path from captured performance through virtual camera to final VFX. This is direct department- and post-linked virtual-production evidence.',
+            scenario_sentimental_value_2025: 'The exact PV documents a mixed real-house/stage system in which upper-house spaces were replicated at Gateway Studios in Drammen and VP Nordic reconstructed historical/seasonal surroundings for LED-wall virtual production. It also records NOK 20.5m in NFI development/production support and the Norway-led co-production infrastructure. The case therefore maps to LED-based virtual production and regional public/studio infrastructure.',
+            scenario_godzilla_minus_one_2023: 'The exact PV documents a Japanese Toho/Shirogumi production with Shirogumi as sole VFX vendor, a 35-person VFX team, about 610 VFX cuts, roughly eight months of post and same-floor review culture. It maps to VFX labor/post organization and to contemporary popular genre as an industrial Japanese kaiju/VFX system, while also strengthening the broader newer-labor row.',
+            scenario_furiosa_a_mad_max_saga_2024: 'The exact PV documents Screen NSW production context and support mechanisms with projected local jobs/economic impact, plus DNEG vendor-scoped 1,000+ artists/880 shots and Framestore post/VFX work. It maps to regional production infrastructure and to large-vendor VFX labor/post organization, and contributes to the broader newer-labor row without using franchise status itself as evidence.',
+            scenario_f1_2025: 'The exact PV documents production disruption/recovery around the 2023 SAG-AFTRA strike and more than 2,500 largely invisible VFX shots involving Framestore and ILM. Those title-specific consequences map to industrial action and VFX labor/post organization, and strengthen the broader newer-labor row; unresolved contracts and vendor ledgers prevent broader claims.',
+            scenario_sound_of_falling_2025: 'The exact PV records 34 shooting days entirely in Altmarkkreis Salzwedel/Stendal, €250,000 in MDM production support and additional BKM/DFFF public funding. The direct link between territorial support, shooting geography and the small-budget production maps to regional incentives/infrastructure.',
+            scenario_everything_everywhere_all_at_once_2022: 'The exact PV documents an approximately $14m independent production, concentrated location strategy and a five-person core VFX team completing most effects around photographed bases with After Effects and selective Blender work. This maps to small-team VFX/post labor organization and to contemporary action/comedy as an industrial independent-production counterpoint, while also strengthening the broader newer-labor row.',
+            scenario_the_substance_2024: 'The exact PV documents a UK/US/France independent body-horror production with a shoot exceeding 100 days, an approximately 15-person prosthetic team working for about 11 months, practical-first creature/effects construction and a documented VFX chain. Its significance here is industrial—long-form practical/VFX labor and transnational production—not merely genre aesthetics.',
+            scenario_sinners_2025: 'The exact PV documents a 66-day Louisiana studio/location production, large-format 65mm/IMAX format choices, scratch-built period structures and coordinated twin-performance/sound production. It maps as a contemporary studio-scale horror production system, complementing lower-budget and regional popular-genre cases rather than relying on reception or awards.',
+            scenario_aheds_knee_2021: 'The exact PV documents a France/Germany/Israel production network, an 18-day Arava shoot and schedule pressure that directly shaped the production method. It adds an exact Israel-centered transnational production case to MENA system coverage without treating geography alone as sufficient.',
+            scenario_the_seed_of_the_sacred_fig_2024: 'The exact PV documents clandestine photography outside Iran state-permit system, a deliberately small crew/equipment footprint, remote direction for safety and security-sensitive post-production in Germany. This is direct regulation, labor and transnational post-production evidence for the MENA systems row rather than a political-theme proxy.'
+          };
+
+          const status3 = {
+            pandemic_shutdown_protocol_and_recovery: 'Chapter 19 triangulates pandemic production disruption through complementary exact cases rather than release-date association. The Power of the Dog documents an approximately four-month photography shutdown, later safe restart and isolation editing; Grand Tour documents a 2020 Asia journey interrupted by COVID-19 and remotely directed continuation; Killers of the Flower Moon documents Apple COVID controls reducing Oklahoma headcount and moving dailies review to New York over Zoom; Soul documents Pixar moving the remaining roughly seven weeks of production home; RRR documents a four-year continuity burden; Boy from Heaven records a one-year postponement; and Nitram records a lockdown shoot plus a COVID-era processing-supply constraint. Together these exact cases cover shutdown, restart, remote work, protocol/crew, schedule and workflow consequences across production systems.',
+            virtual_production_and_in_camera_vfx: 'Avatar: The Way of Water and Sentimental Value provide complementary exact virtual-production systems at very different scales. Avatar ties performance capture, later virtual-camera decisions, rebuilt Simulcam, scanned-set techvis and the performance-to-virtual-camera-to-final-VFX editorial chain together. Sentimental Value ties a real Frogner house, replicated spaces at Gateway Studios in Drammen and VP Nordic LED-wall historical/seasonal surroundings into a Norway-led drama workflow. The pair triangulates performance-capture/Simulcam and LED-wall production across scale, geography, departments and post.',
+            vfx_labor_outsourcing_and_post_pipeline: 'Chapter 19 triangulates materially different VFX labor organizations through exact PV. Godzilla Minus One documents Shirogumi as sole vendor, a 35-person VFX team, roughly 610 cuts, same-floor review culture and about eight months of post inside a Japanese production; RRR documents roughly 2,800 shots across more than a dozen studios over three and a half years with a separately bounded Digital Domain allocation; Furiosa documents DNEG vendor-scoped 1,000+ artists/880 shots plus Framestore post work; Everything Everywhere All at Once provides the opposite-scale five-person core-team model; and F1 documents more than 2,500 shots involving Framestore and ILM. Together they triangulate sole-vendor, distributed multi-vendor, large-vendor and small-team VFX/post labor systems.',
+            regional_incentives_studios_and_production_infrastructure: 'Chapter 19 triangulates regional production infrastructure through exact territorial support and facility choices. Sound of Falling links €250,000 MDM production support and other German public funding to 34 shooting days entirely in Altmarkkreis Salzwedel/Stendal; Sentimental Value links NOK 20.5m NFI development/production support to Gateway Studios/VP Nordic infrastructure in Drammen; Furiosa documents Screen NSW production context/support mechanisms with projected local jobs/economic impact; and RRR documents a Hyderabad base containing workshops, rehearsal, editing and HOD spaces. Together they distinguish regional funding, studio/virtual-production infrastructure and large-scale local ecosystems across Germany, Norway, Australia and India.',
+            contemporary_popular_genres_as_industries: 'Chapter 19 triangulates contemporary popular genres as production systems rather than aesthetic labels. RRR anchors Telugu large-scale action through DVV production, Hyderabad infrastructure, practical builds, stunt/previs and distributed VFX; Godzilla Minus One anchors Japanese kaiju through Toho/Shirogumi and a compact 35-person VFX organization; Everything Everywhere All at Once provides an approximately $14m independent action/comedy model with concentrated locations and a five-person core VFX team; The Substance adds transnational independent body horror with a roughly 15-person prosthetic team and practical-first effects; and Sinners adds a 66-day Louisiana studio/location horror production using 65mm/IMAX. The cases triangulate action, comedy/hybrid and horror/local-popular production across region and scale.',
+            mena_industry_systems: 'Earlier exact cases established Iranian institutional variation through The White Balloon and Taste of Cherry. Chapter 19 adds complementary regional production/regulation evidence: The Seed of the Sacred Fig documents production outside Iran state-permit system, a deliberately small crew and security-sensitive German post; Holy Spider documents an abandoned Iran path, blocked Turkey attempt and eventual Jordan production base inside a Denmark/Germany/Sweden/France production network; Boy from Heaven documents a €6.5m Sweden/France/Finland/Denmark co-production with Turkey/Gothenburg/Cairo production geography; and Ahed’s Knee documents a France/Germany/Israel production network and an 18-day Arava shoot. Together they triangulate censorship/regulation, transnational co-production, location substitution and labor/safety constraints across multiple MENA production contexts without asserting one uniform regional system.'
+          };
+
+          for (const row of coverage.development_matrix) {
+            if (status3[row.development_id]) {
+              row.declared_status = 3;
+              row.triangulation_basis = status3[row.development_id];
+            }
+            if (row.development_id === 'union_contracts_and_industrial_action') row.declared_status = 2;
+          }
+
+          const pvDir = 'src/ui/data';
+          const pvFiles = fs.readdirSync(pvDir).filter((name) => name.startsWith('scenarioProductionVerification') && name.endsWith('.ts') && !name.endsWith('.test.ts'));
+          const pvText = new Map(pvFiles.map((name) => [name, fs.readFileSync(path.join(pvDir, name), 'utf8')]));
+          const existingIds = new Set(coverage.scenario_reviews.map((r) => r.scenario_id));
+          const generic = (title) => `${title} is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING.`;
+
+          for (const c of useExisting) {
+            if (!c.scenarioId || !c.productionVerified) throw new Error(`Invalid USE_EXISTING candidate ${c.title}`);
+            if (existingIds.has(c.scenarioId)) throw new Error(`Duplicate review ${c.scenarioId}`);
+            const matches = pvFiles.filter((name) => pvText.get(name).includes(c.scenarioId));
+            if (matches.length !== 1) throw new Error(`Expected one exact PV source for ${c.scenarioId}, got ${matches.join(',')}`);
+            const developmentIds = [...(mapped[c.scenarioId] ?? [])].sort((a,b) => devOrder.get(a) - devOrder.get(b));
+            for (const id of developmentIds) if (!devOrder.has(id)) throw new Error(`Unknown development ${id}`);
+            coverage.scenario_reviews.push({
+              scenario_id: c.scenarioId,
+              review_state: developmentIds.length ? 'MAPPED' : 'REVIEWED_NO_MAPPING',
+              development_ids: developmentIds,
+              evidence_paths: [`src/ui/data/${matches[0]}`],
+              rationale: rationale[c.scenarioId] ?? generic(c.title)
+            });
+            existingIds.add(c.scenarioId);
+          }
+
+          if (coverage.scenario_reviews.length !== 398 || new Set(coverage.scenario_reviews.map((r) => r.scenario_id)).size !== 398) throw new Error('Expected 398 unique reviews after Chapter 19');
+          const reviewedNow = new Set(coverage.scenario_reviews.map((r) => r.scenario_id));
+          for (const c of useExisting) if (!reviewedNow.has(c.scenarioId)) throw new Error(`Missing review ${c.scenarioId}`);
+          if (reviewedNow.has('scenario_days_2020') || reviewedNow.has('scenario_the_green_knight_2021')) throw new Error('P2 title incorrectly materialized');
+
+          const mappedCounts = new Map();
+          for (const review of coverage.scenario_reviews) for (const id of review.development_ids ?? []) mappedCounts.set(id, (mappedCounts.get(id) ?? 0) + 1);
+          for (const row of coverage.development_matrix) {
+            const count = mappedCounts.get(row.development_id) ?? 0;
+            if (row.declared_status === 0 && count !== 0) throw new Error(`Status-0 row has mapping: ${row.development_id}`);
+            if (row.declared_status === 3 && count < 2) throw new Error(`Status-3 row lacks triangulation: ${row.development_id}`);
+          }
+          if (coverage.closure_contract.selection_may_be_called_representationally_audited !== false) throw new Error('Overall audit must remain fail-closed');
+          fs.writeFileSync(coveragePath, JSON.stringify(coverage, null, 2) + '\n');
+          NODE
+      - name: Commit clean permanent tree
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/chapter19-materialize.yml
+          git add data/film/film_history_representation_coverage_v1.json
+          git diff --cached --check
+          test "$(git diff --cached --name-only | sort)" = "data/film/film_history_representation_coverage_v1.json"
+          git commit -m 'Audit Chapter 19 representation coverage'
+          git push origin HEAD:agent/chapter-19-representation-audit
