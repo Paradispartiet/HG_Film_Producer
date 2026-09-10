@@ -1,0 +1,32 @@
+name: Materialize Chapter 16 representation audit
+
+on:
+  push:
+    branches:
+      - agent/chapter-16-representation-audit
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: ${{ !contains(github.event.head_commit.message, '[chapter16-materialized]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/chapter-16-representation-audit
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Materialize representation audit
+        run: node scripts/materializeChapter16RepresentationAudit.mjs
+      - name: Commit permanent audit only
+        run: |
+          rm scripts/materializeChapter16RepresentationAudit.mjs
+          rm .github/workflows/materialize-chapter-16-representation-audit.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/film/film_history_representation_coverage_v1.json scripts/materializeChapter16RepresentationAudit.mjs .github/workflows/materialize-chapter-16-representation-audit.yml
+          git commit -m "Audit Chapter 16 representation coverage [chapter16-materialized]"
+          git push origin HEAD:agent/chapter-16-representation-audit
