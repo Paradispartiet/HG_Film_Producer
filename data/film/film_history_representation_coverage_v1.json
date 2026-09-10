@@ -4430,6 +4430,681 @@
       "evidence_paths": [
         "src/ui/data/scenarioProductionVerificationDontLookUp.ts"
       ]
+    },
+    {
+      "scenario_id": "scenario_12_angry_men_1957",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for 12 Angry Men was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_2001_a_space_odyssey_1968",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification1960sScaleIndependentBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for 2001: A Space Odyssey was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_3_iron_2004",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "south_korea_industry_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSouthKoreanGenreSystemsBatch.ts"
+      ],
+      "rationale": "The permanent PV documents Kim Ki Duk Film and Cineclick Asia production/sales, Kim Ki-duk as director and executive producer, and a South Korea-Japan production record, so the scenario directly teaches modern South Korean company organization and sales rather than nationality alone."
+    },
+    {
+      "scenario_id": "scenario_45_years_2015",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerification45Years.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for 45 Years was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_a_monster_calls_2016",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationMonsterCalls.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for A Monster Calls was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_a_pigeon_sat_on_a_branch_reflecting_on_existence_2014",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPigeon.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for A Pigeon Sat on a Branch Reflecting on Existence was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_a_somewhat_gentle_man_2010",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNextFour2010_2011Batch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for A Somewhat Gentle Man was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_a_touch_of_sin_2013",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationChineseLanguageSpaceGenreBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for A Touch of Sin was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_adam_s_apples_2005",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAdamsApples.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Adam's Apples was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_after_life_1998",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationJapaneseEverydayMemoryBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for After Life was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_aftersun_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Aftersun was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_alamar_2009",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNextFour2008_2009Batch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Alamar was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_amelie_2001",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAmelie.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Amélie was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_american_splendor_2003",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationIndependentStorytellingBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for American Splendor was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_amy_2015",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAmy.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Amy was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_anomalisa_2015",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "animation_technique_labor_and_delivery_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAnomalisa.ts"
+      ],
+      "rationale": "The permanent PV documents nearly two years of stop-motion shooting, eighteen miniature stages, limited seconds of animation per day, more than 100,000 frames and motion-control continuity constraints, directly teaching animation technique and labor organization."
+    },
+    {
+      "scenario_id": "scenario_antonia_s_line_1995",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAntoniasLine.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Antonia's Line was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_au_hasard_balthazar_1966",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEuropeanReligiousMoralBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Au Hasard Balthazar was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_band_of_outsiders_1964",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCrimeNoirTransformationsBatch.ts"
+      ],
+      "rationale": "The permanent PV explicitly identifies the French New Wave gangster-film reworking while also documenting Anouchka and Orsay production companies and named production labor, connecting the movement to a concrete production system rather than a style label."
+    },
+    {
+      "scenario_id": "scenario_barton_fink_1991",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSubjectiveEnclosurePerformanceBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Barton Fink was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_beasts_of_the_southern_wild_2012",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationLandscapeBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Beasts of the Southern Wild was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_before_sunrise_1995",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "regional_incentives_studios_and_production_infrastructure"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBeforeSunrise.ts"
+      ],
+      "rationale": "The permanent PV documents an approximately USD 3 million production with a USD 500,000 Vienna subsidy, about USD 1.5 million local spend, an Austrian coproducer, local crew, equipment, laboratory and location-permission infrastructure, directly satisfying the territorial-incentive requirement."
+    },
+    {
+      "scenario_id": "scenario_before_sunset_2004",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBeforeSunset.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Before Sunset was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_before_the_rain_1994",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBalkanWarInstitutionSystemsBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Before the Rain was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_being_john_malkovich_1999",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBeingJohnMalkovich.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Being John Malkovich was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_birds_of_passage_2018",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBirdsOfPassage.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Birds of Passage was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_blindness_2008",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBlindness.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Blindness was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_blue_jasmine_2013",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBlueJasmine.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Blue Jasmine was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_bombon_el_perro_2004",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "latin_america_beyond_single_movement"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBombonElPerro.ts"
+      ],
+      "rationale": "The permanent PV documents an 80 percent Argentine and 20 percent Spanish coproduction structure, commercial exhibition in Spain and broad international sales, providing exact financing/coproduction/distribution evidence beyond a nationality token."
+    },
+    {
+      "scenario_id": "scenario_brazil_1985",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBrazil.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Brazil was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_breakfast_at_tiffany_s_1961",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Breakfast at Tiffany's was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_brothers_2015",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBrothers.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Brothers was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_buffalo_66_1998",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBuffalo66.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Buffalo '66 was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_cafe_society_2016",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCafeSociety.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Café Society was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_call_me_by_your_name_2017",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCallMeByYourName.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Call Me by Your Name was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_capernaum_2018",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCapernaum.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Capernaum was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_chameleon_street_1990",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAmericanRegionalIdentityPlaceBelongingBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Chameleon Street was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_character_1997",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCharacter.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Character was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_clerks_1994",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationClerks.ts"
+      ],
+      "rationale": "The permanent PV documents the under-USD-30,000 black-and-white 16 mm store-based comedy production, Miramax acquisition and multi-million-dollar return, tying a popular comedy form to a concrete independent production and distribution system."
+    },
+    {
+      "scenario_id": "scenario_clockers_1995",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationClockers.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Clockers was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_columbus_2017",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPriorityIndieFinalBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Columbus was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_court_2014",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSouthSoutheastAsianSystemsBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Court was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_crash_2004",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCrash.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Crash was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_cyclo_1995",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAsianTransnationalUrbanIdentityBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Cyclo was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_de_dodes_tjern_1958",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "nordic_norwegian_silent_and_institution_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNorwegianPostwarGenreSystemsBatch.ts"
+      ],
+      "rationale": "The permanent PV documents Norsk Film A/S, the national filmography, production/distribution credits and the film’s place in early Norwegian horror production, providing exact Norwegian company and institutional evidence."
+    },
+    {
+      "scenario_id": "scenario_desert_hearts_1985",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationQueerIndependentBodyCommunityArchiveBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Desert Hearts was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_detachment_2011",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNextFour2010_2011Batch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Detachment was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_dheepan_2015",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationDheepan.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Dheepan was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_district_9_2009",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationModernBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for District 9 was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_dogtooth_2009",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "modernism_new_waves_alternative_movements"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEuropeanPressureBatch.ts"
+      ],
+      "rationale": "The permanent PV links Dogtooth to the low-budget festival-circulated renewal commonly called the Greek Weird Wave and directly documents very limited means, difficult financing and unusual creative freedom, connecting movement history to production conditions."
+    },
+    {
+      "scenario_id": "scenario_dogville_2003",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationDogville.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Dogville was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_dr_strangelove_1964",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Dr. Strangelove was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_drifters_2015",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationDrifters.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Drifters was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_elephant_2003",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationElephant.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Elephant was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_eternity_and_a_day_1998",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFestivalJourneyDisplacementSystemsBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Eternity and a Day was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_evil_does_not_exist_2023",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationJapaneseAmbiguityDialogueBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Evil Does Not Exist was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_ex_machina_2014",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationModernBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Ex Machina was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_eyes_wide_shut_1999",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEyesWideShut.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Eyes Wide Shut was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_filmworker_2017",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFilmworker.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Filmworker was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_fish_tank_2009",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationIndependentDesireIdentityAuthorshipBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Fish Tank was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_fjols_til_fjells_1957",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "nordic_norwegian_silent_and_institution_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNorwegianPostwarGenreSystemsBatch.ts"
+      ],
+      "rationale": "The permanent PV documents Carlmar Film A/S, Edith and Otto Carlmar and National Library evidence situating their work in 1950s Norwegian production culture, providing exact company and institutional history."
+    },
+    {
+      "scenario_id": "scenario_force_majeure_2014",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationModernNordicBehaviorSystemsBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Force Majeure was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_forrest_gump_1994",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationForrestGump.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Forrest Gump was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_frankenstein_1931",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "classical_hollywood_studio_system",
+        "genre_industries_horror_action_comedy_romance_exploitation_local_popular"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSilentStudioSystemsBatch.ts"
+      ],
+      "rationale": "The permanent PV documents Universal Pictures, Carl Laemmle Jr., production dates, specialist studio craft and Western Electric sound while BFI places the title at the beginning of the 1930s horror boom, directly supporting both studio-system and genre-industry history."
+    },
+    {
+      "scenario_id": "scenario_gas_food_lodging_1992",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAmericanRegionalIdentityPlaceBelongingBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Gas Food Lodging was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_gategutter_1949",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "nordic_norwegian_silent_and_institution_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNorwegianPostwarGenreSystemsBatch.ts"
+      ],
+      "rationale": "The permanent PV documents Norsk Film A/S, national filmography records, named production labor and real east-Oslo production practice, providing exact Norwegian institutional and company history."
+    },
+    {
+      "scenario_id": "scenario_george_washington_2000",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAmericanRegionalIdentityPlaceBelongingBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for George Washington was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_ghost_world_2001",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPriorityIndieFinalBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Ghost World was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_good_time_2017",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationGoodTime.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Good Time was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
+    },
+    {
+      "scenario_id": "scenario_goodbye_dragon_inn_2003",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "exhibition_and_viewing_history"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationHongKongTaiwanUrbanTimeBatch.ts"
+      ],
+      "rationale": "The permanent PV documents production inside the closing Fu-Ho cinema during its final days, the final Dragon Inn screening and the venue’s projection/auditorium sound as part of the film’s construction, directly connecting a scenario to changing exhibition history."
+    },
+    {
+      "scenario_id": "scenario_gran_torino_2008",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "regional_incentives_studios_and_production_infrastructure"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationGranTorino.ts"
+      ],
+      "rationale": "The permanent PV includes the official Michigan record for the April 2008 film-production incentive package that shaped the Detroit-area production, directly linking territorial incentive policy to location and production organization."
+    },
+    {
+      "scenario_id": "scenario_groundhog_day_1993",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationConstructedWorldsBatch.ts"
+      ],
+      "rationale": "The permanent ProductionVerification evidence for Groundhog Day was reviewed against all 34 representation-development requirements. It verifies title-specific production and craft history, but this pass does not establish a direct additional development mapping without using style, nationality, prestige, narrative subject or generic technical presence as a proxy."
     }
   ],
   "candidate_admission_gate": {
