@@ -255,14 +255,15 @@
     },
     {
       "development_id": "mena_industry_systems",
-      "declared_status": 2,
+      "declared_status": 3,
       "priority": "P0",
       "axis_ids": [
         "institutions_and_industry_systems",
         "geography_and_transnational_production",
         "regulation_power_finance_and_coproduction"
       ],
-      "required_evidence": "Exact MENA scenarios must teach concrete regional production, censorship/regulation, financing, co-production, labor or distribution systems."
+      "required_evidence": "Exact MENA scenarios must teach concrete regional production, censorship/regulation, financing, co-production, labor or distribution systems.",
+      "triangulation_basis": "Earlier exact cases established Iranian institutional variation through The White Balloon and Taste of Cherry. Chapter 19 adds complementary regional production/regulation evidence: The Seed of the Sacred Fig documents production outside Iran state-permit system, a deliberately small crew and security-sensitive German post; Holy Spider documents an abandoned Iran path, blocked Turkey attempt and eventual Jordan production base inside a Denmark/Germany/Sweden/France production network; Boy from Heaven documents a €6.5m Sweden/France/Finland/Denmark co-production with Turkey/Gothenburg/Cairo production geography; and Ahed’s Knee documents a France/Germany/Israel production network and an 18-day Arava shoot. Together they triangulate censorship/regulation, transnational co-production, location substitution and labor/safety constraints across multiple MENA production contexts without asserting one uniform regional system."
     },
     {
       "development_id": "microbudget_digital_workflows_and_independent_distribution",
@@ -310,7 +311,7 @@
     },
     {
       "development_id": "pandemic_shutdown_protocol_and_recovery",
-      "declared_status": 0,
+      "declared_status": 3,
       "priority": "P0",
       "axis_ids": [
         "labor_crew_and_union_history",
@@ -318,7 +319,8 @@
         "regulation_power_finance_and_coproduction"
       ],
       "chapter": 19,
-      "required_evidence": "Production shutdown or restart rules, insurance or protocol effects, and schedule, budget or crew consequences mapped to exact scenarios."
+      "required_evidence": "Production shutdown or restart rules, insurance or protocol effects, and schedule, budget or crew consequences mapped to exact scenarios.",
+      "triangulation_basis": "Chapter 19 triangulates pandemic production disruption through complementary exact cases rather than release-date association. The Power of the Dog documents an approximately four-month photography shutdown, later safe restart and isolation editing; Grand Tour documents a 2020 Asia journey interrupted by COVID-19 and remotely directed continuation; Killers of the Flower Moon documents Apple COVID controls reducing Oklahoma headcount and moving dailies review to New York over Zoom; Soul documents Pixar moving the remaining roughly seven weeks of production home; RRR documents a four-year continuity burden; Boy from Heaven records a one-year postponement; and Nitram records a lockdown shoot plus a COVID-era processing-supply constraint. Together these exact cases cover shutdown, restart, remote work, protocol/crew, schedule and workflow consequences across production systems."
     },
     {
       "development_id": "theatrical_windows_and_release_strategy",
@@ -345,7 +347,7 @@
     },
     {
       "development_id": "virtual_production_and_in_camera_vfx",
-      "declared_status": 0,
+      "declared_status": 3,
       "priority": "P0",
       "axis_ids": [
         "technology_and_format",
@@ -353,11 +355,12 @@
         "production_economics_and_organization"
       ],
       "chapter": 19,
-      "required_evidence": "Exact production scenarios tying LED or in-camera visual-effects workflows to departments, schedule, budget or post pipeline."
+      "required_evidence": "Exact production scenarios tying LED or in-camera visual-effects workflows to departments, schedule, budget or post pipeline.",
+      "triangulation_basis": "Avatar: The Way of Water and Sentimental Value provide complementary exact virtual-production systems at very different scales. Avatar ties performance capture, later virtual-camera decisions, rebuilt Simulcam, scanned-set techvis and the performance-to-virtual-camera-to-final-VFX editorial chain together. Sentimental Value ties a real Frogner house, replicated spaces at Gateway Studios in Drammen and VP Nordic LED-wall historical/seasonal surroundings into a Norway-led drama workflow. The pair triangulates performance-capture/Simulcam and LED-wall production across scale, geography, departments and post."
     },
     {
       "development_id": "vfx_labor_outsourcing_and_post_pipeline",
-      "declared_status": 0,
+      "declared_status": 3,
       "priority": "P0",
       "axis_ids": [
         "labor_crew_and_union_history",
@@ -365,11 +368,12 @@
         "geography_and_transnational_production"
       ],
       "chapter": 19,
-      "required_evidence": "Vendor or crew geography, labor organization and post/VFX workflow documented as historical production evidence in exact scenarios."
+      "required_evidence": "Vendor or crew geography, labor organization and post/VFX workflow documented as historical production evidence in exact scenarios.",
+      "triangulation_basis": "Chapter 19 triangulates materially different VFX labor organizations through exact PV. Godzilla Minus One documents Shirogumi as sole vendor, a 35-person VFX team, roughly 610 cuts, same-floor review culture and about eight months of post inside a Japanese production; RRR documents roughly 2,800 shots across more than a dozen studios over three and a half years with a separately bounded Digital Domain allocation; Furiosa documents DNEG vendor-scoped 1,000+ artists/880 shots plus Framestore post work; Everything Everywhere All at Once provides the opposite-scale five-person core-team model; and F1 documents more than 2,500 shots involving Framestore and ILM. Together they triangulate sole-vendor, distributed multi-vendor, large-vendor and small-team VFX/post labor systems."
     },
     {
       "development_id": "union_contracts_and_industrial_action",
-      "declared_status": 0,
+      "declared_status": 2,
       "priority": "P0",
       "axis_ids": [
         "labor_crew_and_union_history",
@@ -415,7 +419,7 @@
     },
     {
       "development_id": "regional_incentives_studios_and_production_infrastructure",
-      "declared_status": 0,
+      "declared_status": 3,
       "priority": "P0",
       "axis_ids": [
         "regulation_power_finance_and_coproduction",
@@ -423,7 +427,8 @@
         "geography_and_transnational_production"
       ],
       "chapter": 19,
-      "required_evidence": "Territorial incentives or infrastructure choices linked to location, crew base, budget or vendor ecosystem in exact scenarios."
+      "required_evidence": "Territorial incentives or infrastructure choices linked to location, crew base, budget or vendor ecosystem in exact scenarios.",
+      "triangulation_basis": "Chapter 19 triangulates regional production infrastructure through exact territorial support and facility choices. Sound of Falling links €250,000 MDM production support and other German public funding to 34 shooting days entirely in Altmarkkreis Salzwedel/Stendal; Sentimental Value links NOK 20.5m NFI development/production support to Gateway Studios/VP Nordic infrastructure in Drammen; Furiosa documents Screen NSW production context/support mechanisms with projected local jobs/economic impact; and RRR documents a Hyderabad base containing workshops, rehearsal, editing and HOD spaces. Together they distinguish regional funding, studio/virtual-production infrastructure and large-scale local ecosystems across Germany, Norway, Australia and India."
     },
     {
       "development_id": "microbudget_digital_and_self_distribution",
@@ -451,7 +456,7 @@
     },
     {
       "development_id": "contemporary_popular_genres_as_industries",
-      "declared_status": 0,
+      "declared_status": 3,
       "priority": "P0",
       "axis_ids": [
         "genre_and_popular_cinema",
@@ -459,7 +464,8 @@
         "geography_and_transnational_production"
       ],
       "chapter": 19,
-      "required_evidence": "Complementary horror, action, comedy, romance or local-popular exact scenarios whose significance is industrial rather than merely aesthetic."
+      "required_evidence": "Complementary horror, action, comedy, romance or local-popular exact scenarios whose significance is industrial rather than merely aesthetic.",
+      "triangulation_basis": "Chapter 19 triangulates contemporary popular genres as production systems rather than aesthetic labels. RRR anchors Telugu large-scale action through DVV production, Hyderabad infrastructure, practical builds, stunt/previs and distributed VFX; Godzilla Minus One anchors Japanese kaiju through Toho/Shirogumi and a compact 35-person VFX organization; Everything Everywhere All at Once provides an approximately $14m independent action/comedy model with concentrated locations and a five-person core VFX team; The Substance adds transnational independent body horror with a roughly 15-person prosthetic team and practical-first effects; and Sinners adds a 66-day Louisiana studio/location horror production using 65mm/IMAX. The cases triangulate action, comedy/hybrid and horror/local-popular production across region and scale."
     }
   ],
   "scenario_reviews": [
@@ -3534,6 +3540,872 @@
         "src/ui/data/scenarioProductionVerificationPortraitOfALadyOnFire.ts"
       ],
       "rationale": "Portrait of a Lady on Fire is exact USE_EXISTING and production-verified in the Chapter 18 atlas. French historical production and digital cinematography make performance, naturalistic lighting design and contemporary production ethics central. This pass does not establish a direct additional mapping from the title to an eligible Chapter 18 representation gap beyond the explicitly evidenced South Korea lift; it remains REVIEWED_NO_MAPPING rather than using period, digital format, geography, festival status, platform association or chapter placement as a proxy."
+    },
+    {
+      "scenario_id": "scenario_triangle_of_sadness_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch.ts"
+      ],
+      "rationale": "Triangle of Sadness is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_drommer_2024",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationDrommer.ts"
+      ],
+      "rationale": "Drømmer is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_happening_2021",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBodyArchiveRestitutionPerspectiveBatch.ts"
+      ],
+      "rationale": "Happening is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_all_the_beauty_and_the_bloodshed_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBodyArchiveRestitutionPerspectiveBatch.ts"
+      ],
+      "rationale": "All the Beauty and the Bloodshed is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_the_room_next_door_2024",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch.ts"
+      ],
+      "rationale": "The Room Next Door is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_there_is_no_evil_2020",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationContemporaryDissentRuralSystemsBatch.ts"
+      ],
+      "rationale": "There Is No Evil is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_bad_luck_banging_or_loony_porn_2021",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationContemporaryDissentRuralSystemsBatch.ts"
+      ],
+      "rationale": "Bad Luck Banging or Loony Porn is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_alcarras_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationContemporaryDissentRuralSystemsBatch.ts"
+      ],
+      "rationale": "Alcarràs is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_on_the_adamant_2023",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationOnTheAdamant.ts"
+      ],
+      "rationale": "On the Adamant is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_father_mother_sister_brother_2025",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFatherMotherSisterBrother.ts"
+      ],
+      "rationale": "Father Mother Sister Brother is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_a_hero_2021",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAHero.ts"
+      ],
+      "rationale": "A Hero is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_compartment_no_6_2021",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCompartmentNo6.ts"
+      ],
+      "rationale": "Compartment No. 6 is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_annette_2021",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAnnette.ts"
+      ],
+      "rationale": "Annette is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_aheds_knee_2021",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "mena_industry_systems"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAhedsKnee.ts"
+      ],
+      "rationale": "The exact PV documents a France/Germany/Israel production network, an 18-day Arava shoot and schedule pressure that directly shaped the production method. It adds an exact Israel-centered transnational production case to MENA system coverage without treating geography alone as sufficient."
+    },
+    {
+      "scenario_id": "scenario_nitram_2021",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "pandemic_shutdown_protocol_and_recovery"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNitram.ts"
+      ],
+      "rationale": "The exact PV documents a November 2020 lockdown production completed in 24 days across four weeks from a Geelong hub, plus a Super-16 plan abandoned because COVID-era processing supply was unavailable. Those schedule and format consequences are direct pandemic production evidence."
+    },
+    {
+      "scenario_id": "scenario_close_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationClose.ts"
+      ],
+      "rationale": "Close is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_stars_at_noon_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationStarsAtNoon.ts"
+      ],
+      "rationale": "Stars at Noon is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_boy_from_heaven_2022",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "mena_industry_systems",
+        "pandemic_shutdown_protocol_and_recovery"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBoyFromHeaven.ts"
+      ],
+      "rationale": "The exact PV records a €6.5m Sweden/France/Finland/Denmark co-production, a one-year COVID postponement and 2021 photography largely in Istanbul with additional Gothenburg/Cairo production context. It therefore maps both to pandemic schedule consequences and to MENA-related transnational production/financing geography without treating Egyptian subject matter or nationality alone as coverage."
+    },
+    {
+      "scenario_id": "scenario_the_eight_mountains_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheEightMountains.ts"
+      ],
+      "rationale": "The Eight Mountains is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_tori_and_lokita_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationToriAndLokita.ts"
+      ],
+      "rationale": "Tori and Lokita is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_holy_spider_2022",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "mena_industry_systems",
+        "pandemic_shutdown_protocol_and_recovery"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationHolySpider.ts"
+      ],
+      "rationale": "The exact PV documents COVID delays, an abandoned Iran path, a blocked Turkey attempt and an eventual 35-day Jordan shoot, alongside Denmark/Germany/Sweden/France production and bounded financing evidence. It maps to pandemic disruption and to MENA production/regulatory geography through documented location substitution and transnational production, not through nationality or subject matter alone."
+    },
+    {
+      "scenario_id": "scenario_broker_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBroker.ts"
+      ],
+      "rationale": "Broker is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_the_pot_au_feu_2023",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationThePotAuFeu.ts"
+      ],
+      "rationale": "The Pot-au-Feu is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_fallen_leaves_2023",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFallenLeaves.ts"
+      ],
+      "rationale": "Fallen Leaves is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_monster_kore_eda_2023",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationJapaneseAmbiguityDialogueBatch.ts"
+      ],
+      "rationale": "Monster is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_about_dry_grasses_2023",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAboutDryGrasses.ts"
+      ],
+      "rationale": "About Dry Grasses is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_perfect_days_2023",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPerfectDays.ts"
+      ],
+      "rationale": "Perfect Days is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_emilia_perez_2024",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEmiliaPerez.ts"
+      ],
+      "rationale": "Emilia Pérez is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_grand_tour_2024",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "pandemic_shutdown_protocol_and_recovery"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationGrandTour.ts"
+      ],
+      "rationale": "The exact PV documents a five-week 2020 Southeast Asia production journey interrupted by COVID-19, a remotely directed 2022 continuation and a China unit directed from Lisbon by live feed, followed by separately staged actor photography. The changed unit structure and remote continuation are direct production consequences, so the case maps to pandemic shutdown/recovery."
+    },
+    {
+      "scenario_id": "scenario_kinds_of_kindness_2024",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationKindsOfKindness.ts"
+      ],
+      "rationale": "Kinds of Kindness is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_young_mothers_2025",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationYoungMothers.ts"
+      ],
+      "rationale": "Young Mothers is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_the_little_sister_2025",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheLittleSister.ts"
+      ],
+      "rationale": "The Little Sister is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_tenet_2020",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTenet.ts"
+      ],
+      "rationale": "Tenet is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_nomadland_2020",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNomadland.ts"
+      ],
+      "rationale": "Nomadland is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_soul_2020",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "pandemic_shutdown_protocol_and_recovery"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSoul.ts"
+      ],
+      "rationale": "The exact PV records Pixar moving employees to work from home on 16 March 2020 with about seven weeks of Soul production remaining and completing the film remotely the following month. That bounded remote-completion change directly maps to pandemic production recovery; the later Disney+ release is not used as production evidence."
+    },
+    {
+      "scenario_id": "scenario_collective_2020",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCollective.ts"
+      ],
+      "rationale": "Collective is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_quo_vadis_aida_2020",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBalkanWarInstitutionSystemsBatch.ts"
+      ],
+      "rationale": "Quo Vadis, Aida? is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_another_round_2020",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationModernNordicBehaviorSystemsBatch.ts"
+      ],
+      "rationale": "Another Round is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_never_rarely_sometimes_always_2020",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAmericanPrecarityBodyCareBatch.ts"
+      ],
+      "rationale": "Never Rarely Sometimes Always is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_wolfwalkers_2020",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationWolfwalkers.ts"
+      ],
+      "rationale": "Wolfwalkers is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_the_disciple_2020",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSouthSoutheastAsianSystemsBatch.ts"
+      ],
+      "rationale": "The Disciple is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_dune_2021",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationDune.ts"
+      ],
+      "rationale": "Dune is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_the_power_of_the_dog_2021",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "pandemic_shutdown_protocol_and_recovery"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationThePowerOfTheDog.ts"
+      ],
+      "rationale": "The exact PV documents several weeks of New Zealand photography followed by an approximately four-month COVID shutdown, a later safe restart, and editing in isolation during the interruption. Those title-specific schedule and post-production consequences directly evidence pandemic shutdown/recovery rather than merely a pandemic-era release."
+    },
+    {
+      "scenario_id": "scenario_drive_my_car_2021",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationDriveMyCar.ts"
+      ],
+      "rationale": "Drive My Car is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_flee_2021",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFlee.ts"
+      ],
+      "rationale": "Flee is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_titane_2021",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTitane.ts"
+      ],
+      "rationale": "Titane is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_the_worst_person_in_the_world_2021",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationModernNordicBehaviorSystemsBatch.ts"
+      ],
+      "rationale": "The Worst Person in the World is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_memoria_2021",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationMemoria.ts"
+      ],
+      "rationale": "Memoria is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_coda_2021",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "labor_union_vfx_outsourcing_intimacy_coordination_post_history",
+        "pandemic_shutdown_protocol_and_recovery"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationCoda.ts"
+      ],
+      "rationale": "The exact PV separates independent Vendôme/Pathé financing from Apple later acquisition and documents COVID-altered post, including remote color finishing and final sound. It also documents ASL masters, interpreter guidance and ASL-aware editorial organization as concrete newer labor/accessibility roles. The case therefore maps to pandemic production/post adaptation and contributes to the broader newer-labor history, but it does not establish streaming-native economics or intimacy coordination."
+    },
+    {
+      "scenario_id": "scenario_the_mitchells_vs_the_machines_2021",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationMitchellsVsTheMachines.ts"
+      ],
+      "rationale": "The Mitchells vs. the Machines is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_avatar_the_way_of_water_2022",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "virtual_production_and_in_camera_vfx"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAvatarWayOfWater.ts"
+      ],
+      "rationale": "The exact PV documents the underwater performance-capture volume, separation of performance capture from later virtual-camera decisions, rebuilt Simulcam, Weta FX virtual-camera work, techvis from digital scans of physical sets and an editorial path from captured performance through virtual camera to final VFX. This is direct department- and post-linked virtual-production evidence."
+    },
+    {
+      "scenario_id": "scenario_top_gun_maverick_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTopGunMaverick.ts"
+      ],
+      "rationale": "Top Gun: Maverick is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_everything_everywhere_all_at_once_2022",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "labor_union_vfx_outsourcing_intimacy_coordination_post_history",
+        "vfx_labor_outsourcing_and_post_pipeline",
+        "contemporary_popular_genres_as_industries"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEverythingEverywhereAllAtOnce.ts"
+      ],
+      "rationale": "The exact PV documents an approximately $14m independent production, concentrated location strategy and a five-person core VFX team completing most effects around photographed bases with After Effects and selective Blender work. This maps to small-team VFX/post labor organization and to contemporary action/comedy as an industrial independent-production counterpoint, while also strengthening the broader newer-labor row."
+    },
+    {
+      "scenario_id": "scenario_nope_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationNope.ts"
+      ],
+      "rationale": "Nope is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_rrr_2022",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "labor_union_vfx_outsourcing_intimacy_coordination_post_history",
+        "pandemic_shutdown_protocol_and_recovery",
+        "vfx_labor_outsourcing_and_post_pipeline",
+        "regional_incentives_studios_and_production_infrastructure",
+        "contemporary_popular_genres_as_industries"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationRrr.ts"
+      ],
+      "rationale": "The exact PV documents COVID stretching production across four years and a continuity system based on detailed camera reports; roughly 2,800 VFX shots coordinated across more than a dozen studios over three and a half years, with Digital Domain separately documenting 213 shots; and a Hyderabad production base with workshops, rehearsal, editing and HOD spaces. Its Telugu large-scale action production therefore maps to pandemic continuity, distributed VFX labor/post organization, regional production infrastructure and contemporary popular genre as an industrial system. It also contributes to the broader newer-labor row, while that row remains below triangulated closure because intimacy/new-role evidence is still incomplete."
+    },
+    {
+      "scenario_id": "scenario_decision_to_leave_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationDecisionToLeave.ts"
+      ],
+      "rationale": "Decision to Leave is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_all_quiet_on_the_western_front_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAllQuietOnTheWesternFront.ts"
+      ],
+      "rationale": "All Quiet on the Western Front is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_saint_omer_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSaintOmer.ts"
+      ],
+      "rationale": "Saint Omer is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_guillermo_del_toros_pinocchio_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationGuillermoDelTorosPinocchio.ts"
+      ],
+      "rationale": "Guillermo del Toro's Pinocchio is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_eo_2022",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationEo.ts"
+      ],
+      "rationale": "EO is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_oppenheimer_2023",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationOppenheimer.ts"
+      ],
+      "rationale": "Oppenheimer is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_barbie_2023",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBarbie.ts"
+      ],
+      "rationale": "Barbie is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_killers_of_the_flower_moon_2023",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "pandemic_shutdown_protocol_and_recovery"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationKillersOfTheFlowerMoon.ts"
+      ],
+      "rationale": "The exact PV records Apple COVID-19 controls reducing the Oklahoma headcount and causing Scorsese and Schoonmaker to review dailies remotely from New York over Zoom. That protocol-driven crew and editorial reorganization is direct pandemic production evidence, independent of the later Apple/Paramount release strategy."
+    },
+    {
+      "scenario_id": "scenario_poor_things_2023",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationPoorThings.ts"
+      ],
+      "rationale": "Poor Things is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_the_zone_of_interest_2023",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheZoneOfInterest.ts"
+      ],
+      "rationale": "The Zone of Interest is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_godzilla_minus_one_2023",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "labor_union_vfx_outsourcing_intimacy_coordination_post_history",
+        "vfx_labor_outsourcing_and_post_pipeline",
+        "contemporary_popular_genres_as_industries"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationGodzillaMinusOne.ts"
+      ],
+      "rationale": "The exact PV documents a Japanese Toho/Shirogumi production with Shirogumi as sole VFX vendor, a 35-person VFX team, about 610 VFX cuts, roughly eight months of post and same-floor review culture. It maps to VFX labor/post organization and to contemporary popular genre as an industrial Japanese kaiju/VFX system, while also strengthening the broader newer-labor row."
+    },
+    {
+      "scenario_id": "scenario_the_boy_and_the_heron_2023",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheBoyAndTheHeron.ts"
+      ],
+      "rationale": "The Boy and the Heron is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_four_daughters_2023",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFourDaughters.ts"
+      ],
+      "rationale": "Four Daughters is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_anatomy_of_a_fall_2023",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAnatomyOfAFall.ts"
+      ],
+      "rationale": "Anatomy of a Fall is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_spider_man_across_the_spider_verse_2023",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAcrossTheSpiderVerse.ts"
+      ],
+      "rationale": "Spider-Man: Across the Spider-Verse is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_dune_part_two_2024",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationDunePartTwo.ts"
+      ],
+      "rationale": "Dune: Part Two is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_the_brutalist_2024",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheBrutalist.ts"
+      ],
+      "rationale": "The Brutalist is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_flow_2024",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFlow.ts"
+      ],
+      "rationale": "Flow is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_the_substance_2024",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "contemporary_popular_genres_as_industries"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheSubstance.ts"
+      ],
+      "rationale": "The exact PV documents a UK/US/France independent body-horror production with a shoot exceeding 100 days, an approximately 15-person prosthetic team working for about 11 months, practical-first creature/effects construction and a documented VFX chain. Its significance here is industrial—long-form practical/VFX labor and transnational production—not merely genre aesthetics."
+    },
+    {
+      "scenario_id": "scenario_nickel_boys_2024",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBodyArchiveRestitutionPerspectiveBatch.ts"
+      ],
+      "rationale": "Nickel Boys is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_the_seed_of_the_sacred_fig_2024",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "mena_industry_systems"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheSeedOfTheSacredFig.ts"
+      ],
+      "rationale": "The exact PV documents clandestine photography outside Iran state-permit system, a deliberately small crew/equipment footprint, remote direction for safety and security-sensitive post-production in Germany. This is direct regulation, labor and transnational post-production evidence for the MENA systems row rather than a political-theme proxy."
+    },
+    {
+      "scenario_id": "scenario_all_we_imagine_as_light_2024",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAllWeImagineAsLight.ts"
+      ],
+      "rationale": "All We Imagine as Light is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_dahomey_2024",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationBodyArchiveRestitutionPerspectiveBatch.ts"
+      ],
+      "rationale": "Dahomey is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_anora_2024",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationAnora.ts"
+      ],
+      "rationale": "Anora is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_furiosa_a_mad_max_saga_2024",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "labor_union_vfx_outsourcing_intimacy_coordination_post_history",
+        "vfx_labor_outsourcing_and_post_pipeline",
+        "regional_incentives_studios_and_production_infrastructure"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationFuriosa.ts"
+      ],
+      "rationale": "The exact PV documents Screen NSW production context and support mechanisms with projected local jobs/economic impact, plus DNEG vendor-scoped 1,000+ artists/880 shots and Framestore post/VFX work. It maps to regional production infrastructure and to large-vendor VFX labor/post organization, and contributes to the broader newer-labor row without using franchise status itself as evidence."
+    },
+    {
+      "scenario_id": "scenario_sinners_2025",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "contemporary_popular_genres_as_industries"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSinners.ts"
+      ],
+      "rationale": "The exact PV documents a 66-day Louisiana studio/location production, large-format 65mm/IMAX format choices, scratch-built period structures and coordinated twin-performance/sound production. It maps as a contemporary studio-scale horror production system, complementing lower-budget and regional popular-genre cases rather than relying on reception or awards."
+    },
+    {
+      "scenario_id": "scenario_one_battle_after_another_2025",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationOneBattleAfterAnother.ts"
+      ],
+      "rationale": "One Battle After Another is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_f1_2025",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "labor_union_vfx_outsourcing_intimacy_coordination_post_history",
+        "vfx_labor_outsourcing_and_post_pipeline",
+        "union_contracts_and_industrial_action"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationF1.ts"
+      ],
+      "rationale": "The exact PV documents production disruption/recovery around the 2023 SAG-AFTRA strike and more than 2,500 largely invisible VFX shots involving Framestore and ILM. Those title-specific consequences map to industrial action and VFX labor/post organization, and strengthen the broader newer-labor row; unresolved contracts and vendor ledgers prevent broader claims."
+    },
+    {
+      "scenario_id": "scenario_kpop_demon_hunters_2025",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationKPopDemonHunters.ts"
+      ],
+      "rationale": "KPop Demon Hunters is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_sentimental_value_2025",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "virtual_production_and_in_camera_vfx",
+        "regional_incentives_studios_and_production_infrastructure"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSentimentalValue.ts"
+      ],
+      "rationale": "The exact PV documents a mixed real-house/stage system in which upper-house spaces were replicated at Gateway Studios in Drammen and VP Nordic reconstructed historical/seasonal surroundings for LED-wall virtual production. It also records NOK 20.5m in NFI development/production support and the Norway-led co-production infrastructure. The case therefore maps to LED-based virtual production and regional public/studio infrastructure."
+    },
+    {
+      "scenario_id": "scenario_the_secret_agent_2025",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationTheSecretAgent.ts"
+      ],
+      "rationale": "The Secret Agent is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_it_was_just_an_accident_2025",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationItWasJustAnAccident.ts"
+      ],
+      "rationale": "It Was Just an Accident is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_sirat_2025",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSirat.ts"
+      ],
+      "rationale": "Sirāt is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_resurrection_2025",
+      "review_state": "REVIEWED_NO_MAPPING",
+      "development_ids": [],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationResurrection.ts"
+      ],
+      "rationale": "Resurrection is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+    },
+    {
+      "scenario_id": "scenario_sound_of_falling_2025",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "regional_incentives_studios_and_production_infrastructure"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationSoundOfFalling.ts"
+      ],
+      "rationale": "The exact PV records 34 shooting days entirely in Altmarkkreis Salzwedel/Stendal, €250,000 in MDM production support and additional BKM/DFFF public funding. The direct link between territorial support, shooting geography and the small-budget production maps to regional incentives/infrastructure."
     }
   ],
   "candidate_admission_gate": {
