@@ -1,0 +1,106 @@
+name: TEMP close Barbie sustainability P1
+
+on:
+  push:
+    branches:
+      - agent/sustainability-barbie-p1-materialize-20260911-temp
+    paths:
+      - .github/workflows/temp-sustainability-barbie-p1-closure.yml
+      - scripts/temp-close-sustainability-barbie.mjs
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact branch head
+        uses: actions/checkout@v4
+        with:
+          ref: agent/sustainability-barbie-p1-materialize-20260911-temp
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Apply deterministic in-place closure
+        run: node scripts/temp-close-sustainability-barbie.mjs
+
+      - name: Remove TEMP materialization artifacts
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git rm -f \
+            .github/workflows/temp-sustainability-barbie-p1-closure.yml \
+            scripts/temp-close-sustainability-barbie.mjs
+          test ! -e .github/workflows/temp-sustainability-barbie-p1-closure.yml
+          test ! -e scripts/temp-close-sustainability-barbie.mjs
+
+      - name: Representation closure audit
+        run: npm run audit:film-history-representation
+
+      - name: Full v0.1 verification
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run verify:v0.1 2>&1 | tee verify-v0.1-output.txt
+
+      - name: Verify exact post-gate state
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import { existsSync, readFileSync } from "node:fs";
+          const c = JSON.parse(readFileSync("data/film/film_history_representation_coverage_v1.json", "utf8"));
+          if (c.baseline.expected_production_verified_core_scenarios !== 614) throw new Error(`Core drifted: ${c.baseline.expected_production_verified_core_scenarios}`);
+          const d = c.development_matrix.find((x) => x.development_id === "sustainable_production_and_carbon_constraints");
+          if (!d || d.priority !== "P1" || d.declared_status !== 2) throw new Error(`Sustainability row invalid: ${JSON.stringify(d)}`);
+          if (!String(d.coverage_basis || "").includes("Barbie (2023)")) throw new Error("Sustainability coverage basis is not Barbie-bound");
+          const r = c.scenario_reviews.find((x) => x.scenario_id === "scenario_barbie_2023");
+          if (!r || r.review_state !== "MAPPED" || JSON.stringify(r.development_ids) !== JSON.stringify(["sustainable_production_and_carbon_constraints"])) throw new Error(`Barbie review invalid: ${JSON.stringify(r)}`);
+          const p1Status0 = c.development_matrix.filter((x) => x.priority === "P1" && x.declared_status === 0);
+          if (p1Status0.length) throw new Error(`P1 status-0 rows remain: ${p1Status0.map((x) => x.development_id).join(", ")}`);
+          const pv = readFileSync("src/ui/data/scenarioProductionVerificationBarbie.ts", "utf8");
+          if (!pv.includes("2023 Sustainability Report") || !pv.includes("approximately 85%") || !pv.includes("institutional_report")) throw new Error("Barbie PV lacks institutional sustainability evidence");
+          if (existsSync(".github/workflows/temp-sustainability-barbie-p1-closure.yml") || existsSync("scripts/temp-close-sustainability-barbie.mjs")) throw new Error("TEMP artifacts survived cleanup");
+          console.log(JSON.stringify({core:614,sustainabilityStatus:d.declared_status,barbieReview:r.review_state,p1Status0:p1Status0.length}, null, 2));
+          NODE
+
+      - name: Verify exact permanent scope
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git add data/film/film_history_representation_coverage_v1.json src/ui/data/scenarioProductionVerificationBarbie.ts
+          git diff --cached --check
+          actual="$(git diff --cached --name-only | sort)"
+          expected="$(printf '%s\n' \
+            .github/workflows/temp-sustainability-barbie-p1-closure.yml \
+            data/film/film_history_representation_coverage_v1.json \
+            scripts/temp-close-sustainability-barbie.mjs \
+            src/ui/data/scenarioProductionVerificationBarbie.ts | sort)"
+          test "$actual" = "$expected"
+          git diff --cached --stat
+
+      - name: Commit verified permanent state
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git config user.name "Paradispartiet"
+          git config user.email "paradispartiet@gmail.com"
+          git commit -m "Close sustainable production P1 with Barbie"
+          git push origin HEAD:agent/sustainability-barbie-p1-materialize-20260911-temp
+
+      - name: Upload diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sustainability-barbie-p1-diagnostics
+          path: verify-v0.1-output.txt
+          if-no-files-found: ignore
