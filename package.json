@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit && tsc -p tsconfig.app.json",
     "start": "node dist/index.js",
-    "test": "npm run build && node --test dist/core/*.test.js",
+    "test": "npm run build && bash -c 'for f in dist/core/*.test.js; do echo \"=== TEST $f ===\"; node --test \"$f\" || { s=$?; echo \"FIRST_FAILING_TEST=$f\"; exit $s; }; done'",
     "audit:production-cases": "node scripts/production-case-rest-audit.mjs",
     "audit:film-history-ch1": "node scripts/film-history-chapter-one-atlas-audit.mjs",
     "audit:film-history-ch2": "node scripts/film-history-chapter-two-atlas-audit.mjs",
