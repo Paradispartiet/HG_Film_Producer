@@ -1,10 +1,11 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 export type FilmSchoolCourseId = "overview" | "screenplay" | "performance" | "camera" | "lightingDesign" | "editingSound";
 
 type FilmSchoolCourseNavigationProps = {
   readonly activeCourseId: FilmSchoolCourseId;
-  readonly language: FilmWorkLanguage;
+  readonly language?: FilmWorkLanguage;
   readonly onSelectCourse: (courseId: FilmSchoolCourseId) => void;
 };
 
@@ -28,12 +29,14 @@ const availableCourses = {
 } as const;
 
 export function FilmSchoolCourseNavigation({ activeCourseId, language, onSelectCourse }: FilmSchoolCourseNavigationProps) {
-  const isNorwegian = language === "nb";
+  const [storedLanguage] = useFilmWorkLanguage();
+  const resolvedLanguage = language ?? storedLanguage;
+  const isNorwegian = resolvedLanguage === "nb";
   return (
     <aside className="school-course-selector" aria-label={isNorwegian ? "Film School-kurs" : "Film School courses"}>
       <header><span>Film School</span><strong>{isNorwegian ? "Regi grunnkurs" : "Directing foundations"}</strong></header>
       <div>
-        {availableCourses[language].map((course) => (
+        {availableCourses[resolvedLanguage].map((course) => (
           <button
             className={course.id === activeCourseId ? "is-active" : ""}
             key={course.id}
