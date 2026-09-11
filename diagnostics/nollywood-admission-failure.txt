@@ -1,0 +1,303 @@
+exact_base=b6c24346566bcc88009ba4c9c1101c1fbe491e59
+materialize_exit=1
+--- tail ---
+      },
+      {
+        "fileName": "chapterNineteenNitramExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_nitram_verified",
+        "sourceListId": "manual_chapter_nineteen_nitram_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenStarsAtNoonExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_stars_at_noon_verified",
+        "sourceListId": "manual_chapter_nineteen_stars_at_noon_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenBoyFromHeavenExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_boy_from_heaven_verified",
+        "sourceListId": "manual_chapter_nineteen_boy_from_heaven_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenTheEightMountainsExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_the_eight_mountains_verified",
+        "sourceListId": "manual_chapter_nineteen_the_eight_mountains_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenToriAndLokitaExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_tori_and_lokita_verified",
+        "sourceListId": "manual_chapter_nineteen_tori_and_lokita_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenHolySpiderExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_holy_spider_verified",
+        "sourceListId": "manual_chapter_nineteen_holy_spider_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenBrokerExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_broker_verified",
+        "sourceListId": "manual_chapter_nineteen_broker_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenThePotAuFeuExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_the_pot_au_feu_verified",
+        "sourceListId": "manual_chapter_nineteen_the_pot_au_feu_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenFallenLeavesExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_fallen_leaves_verified",
+        "sourceListId": "manual_chapter_nineteen_fallen_leaves_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenAboutDryGrassesExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_about_dry_grasses_verified",
+        "sourceListId": "manual_chapter_nineteen_about_dry_grasses_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenPerfectDaysExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_perfect_days_verified",
+        "sourceListId": "manual_chapter_nineteen_perfect_days_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenEmiliaPerezExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_emilia_perez_verified",
+        "sourceListId": "manual_chapter_nineteen_emilia_perez_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenGrandTourExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_grand_tour_verified",
+        "sourceListId": "manual_chapter_nineteen_grand_tour_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenKindsOfKindnessExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_kinds_of_kindness_verified",
+        "sourceListId": "manual_chapter_nineteen_kinds_of_kindness_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenYoungMothersExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_young_mothers_verified",
+        "sourceListId": "manual_chapter_nineteen_young_mothers_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenTheLittleSisterExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_the_little_sister_verified",
+        "sourceListId": "manual_chapter_nineteen_the_little_sister_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenEoExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_eo_verified",
+        "sourceListId": "manual_chapter_nineteen_eo_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenBarbieExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_barbie_verified",
+        "sourceListId": "manual_chapter_nineteen_barbie_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenAcrossTheSpiderVerseExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_across_the_spider_verse_verified",
+        "sourceListId": "manual_chapter_nineteen_across_the_spider_verse_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenFuriosaExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_furiosa_verified",
+        "sourceListId": "manual_chapter_nineteen_furiosa_expansion_2026"
+      },
+      {
+        "fileName": "chapterNineteenMitchellsVsTheMachinesExpansion.ts",
+        "definitions": 1,
+        "appended": 1,
+        "matchedExisting": 0,
+        "status": "manual_chapter_nineteen_mitchells_vs_the_machines_verified",
+        "sourceListId": "manual_chapter_nineteen_mitchells_vs_the_machines_expansion_2026"
+      },
+      {
+        "fileName": "modernCanonExpansion.ts",
+        "definitions": 27,
+        "appended": 27,
+        "matchedExisting": 0,
+        "status": "manual_modern_canon_case_needs_source_verification",
+        "sourceListId": "manual_modern_indie_asian_prize_expansion_2026"
+      },
+      {
+        "fileName": "priorityIndieExpansion.ts",
+        "definitions": 20,
+        "appended": 20,
+        "matchedExisting": 0,
+        "status": "manual_priority_indie_case_needs_source_verification",
+        "sourceListId": "manual_priority_indie_completion_2026"
+      },
+      {
+        "fileName": "eastAsianAuteurExpansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_east_asian_auteur_case_needs_source_verification",
+        "sourceListId": "manual_east_asian_auteur_expansion_2026"
+      },
+      {
+        "fileName": "japaneseAuteurExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0,
+        "status": "manual_japanese_auteur_case_needs_source_verification",
+        "sourceListId": "manual_japanese_auteur_expansion_2026"
+      },
+      {
+        "fileName": "southKoreanCinemaExpansion.ts",
+        "definitions": 4,
+        "appended": 4,
+        "matchedExisting": 0,
+        "status": "manual_south_korean_cinema_case_needs_source_verification",
+        "sourceListId": "manual_south_korean_cinema_expansion_2026"
+      },
+      {
+        "fileName": "southSoutheastAsianExpansion.ts",
+        "definitions": 7,
+        "appended": 7,
+        "matchedExisting": 0,
+        "status": "manual_south_southeast_asian_case_needs_source_verification",
+        "sourceListId": "manual_south_southeast_asian_expansion_2026"
+      },
+      {
+        "fileName": "festivalWinners1981To2009Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_festival_winner_1981_2009_case_needs_source_verification",
+        "sourceListId": "manual_festival_winners_1981_2009_expansion_2026"
+      },
+      {
+        "fileName": "festivalWinners2010To2024Expansion.ts",
+        "definitions": 11,
+        "appended": 11,
+        "matchedExisting": 0,
+        "status": "manual_festival_winner_2010_2024_case_needs_source_verification",
+        "sourceListId": "manual_festival_winner_2010_2024_expansion_2026"
+      },
+      {
+        "fileName": "scandinavianEuropeanExpansion.ts",
+        "definitions": 22,
+        "appended": 15,
+        "matchedExisting": 7,
+        "status": "manual_scandinavian_european_case_needs_source_verification",
+        "sourceListId": "manual_scandinavian_european_expansion_2026"
+      },
+      {
+        "fileName": "easternIberianBritishExpansion.ts",
+        "definitions": 24,
+        "appended": 23,
+        "matchedExisting": 1,
+        "status": "manual_eastern_iberian_british_case_needs_source_verification",
+        "sourceListId": "manual_eastern_iberian_british_expansion_2026"
+      },
+      {
+        "fileName": "italyFranceGermanyBeneluxExpansion.ts",
+        "definitions": 28,
+        "appended": 25,
+        "matchedExisting": 3,
+        "status": "manual_italy_france_germany_benelux_case_needs_source_verification",
+        "sourceListId": "manual_italy_france_germany_benelux_expansion_2026"
+      }
+    ]
+  },
+  "totals": {
+    "playableScenarios": 613,
+    "verifiedProductionCases": 614,
+    "unverifiedProductionCases": 0,
+    "sourceBackedProfiles": 613,
+    "filmSpecificProductionBriefs": 613,
+    "seedFallbackProductionBriefs": 0,
+    "scenariosWithoutSourceBackedProfile": 0,
+    "scenariosMissingVerificationAndProfile": 0
+  },
+  "integrity": {
+    "seedDuplicateScenarioIds": [],
+    "finalDuplicateScenarioIds": [],
+    "duplicateVerificationIds": [],
+    "duplicateProfileIds": [],
+    "orphanVerificationIds": [
+      "scenario_living_in_bondage_1992"
+    ],
+    "orphanProfileIds": [],
+    "verifiedWithoutProfile": [
+      "scenario_living_in_bondage_1992"
+    ],
+    "profilesWithoutVerification": []
+  },
+  "unverifiedDistributions": {
+    "byOrigin": {},
+    "bySourceList": {},
+    "byStatus": {},
+    "byDecade": {},
+    "byGenre": {},
+    "byBriefType": {}
+  },
+  "unverified": [],
+  "seedFallbackBriefs": [],
+  "profilesWithoutVerification": [],
+  "verifiedWithoutProfile": [
+    "scenario_living_in_bondage_1992"
+  ]
+}
+HG_FILM_PRODUCER_REST_AUDIT_END
+Production Case rest audit found 3 structural problem(s).
