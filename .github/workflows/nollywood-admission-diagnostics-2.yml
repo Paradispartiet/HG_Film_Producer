@@ -59,16 +59,18 @@ jobs:
           {
             echo "exact_base=e278bf370a308955cd853e8da798d377d9da8c79"
             echo "materialize_exit=$status"
-            echo "--- tail ---"
-            tail -n 400 /tmp/nollywood-admission.log
-          } > /tmp/nollywood-admission-failure-2.txt
+            echo "--- error signatures ---"
+            grep -niE 'error|fail|mismatch|expected|assert|orphan|missing|withoutprofile|violation|invalid|614|613|exit' /tmp/nollywood-admission.log | tail -n 240 || true
+            echo "--- final 80 lines ---"
+            tail -n 80 /tmp/nollywood-admission.log
+          } > /tmp/nollywood-admission-failure-2b.txt
 
           git reset --hard HEAD
           git clean -fd
           mkdir -p diagnostics
-          cp /tmp/nollywood-admission-failure-2.txt diagnostics/nollywood-admission-failure-2.txt
-          git add diagnostics/nollywood-admission-failure-2.txt
+          cp /tmp/nollywood-admission-failure-2b.txt diagnostics/nollywood-admission-failure-2b.txt
+          git add diagnostics/nollywood-admission-failure-2b.txt
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git commit -m "chore: capture second Nollywood admission failure [diagnostic captured]"
+          git commit -m "chore: capture narrowed Nollywood admission failure [diagnostic captured]"
           git push origin HEAD
