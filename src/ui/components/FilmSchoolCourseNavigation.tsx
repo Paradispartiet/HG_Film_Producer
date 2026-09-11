@@ -10,14 +10,6 @@ type FilmSchoolCourseNavigationProps = {
 };
 
 const availableCourses = {
-  nb: [
-    { id: "overview" as const, number: "00", title: "Oversikt og regieksamen" },
-    { id: "screenplay" as const, number: "01", title: "Manus og sceneanalyse" },
-    { id: "performance" as const, number: "02", title: "Skuespillerregi og blocking" },
-    { id: "camera" as const, number: "03", title: "Bilde, kamera og optikk" },
-    { id: "lightingDesign" as const, number: "04", title: "Lys, farge og produksjonsdesign" },
-    { id: "editingSound" as const, number: "05", title: "Klipp, lyd og ferdigstilling" },
-  ],
   en: [
     { id: "overview" as const, number: "00", title: "Overview and directing exam" },
     { id: "screenplay" as const, number: "01", title: "Screenplay and scene analysis" },
@@ -26,15 +18,46 @@ const availableCourses = {
     { id: "lightingDesign" as const, number: "04", title: "Lighting, colour and production design" },
     { id: "editingSound" as const, number: "05", title: "Editing, sound and finishing" },
   ],
+  nb: [
+    { id: "overview" as const, number: "00", title: "Oversikt og regieksamen" },
+    { id: "screenplay" as const, number: "01", title: "Manus og sceneanalyse" },
+    { id: "performance" as const, number: "02", title: "Skuespillerregi og blocking" },
+    { id: "camera" as const, number: "03", title: "Bilde, kamera og optikk" },
+    { id: "lightingDesign" as const, number: "04", title: "Lys, farge og produksjonsdesign" },
+    { id: "editingSound" as const, number: "05", title: "Klipp, lyd og ferdigstilling" },
+  ],
+  fr: [
+    { id: "overview" as const, number: "00", title: "Vue d’ensemble et examen de réalisation" },
+    { id: "screenplay" as const, number: "01", title: "Scénario et analyse de scène" },
+    { id: "performance" as const, number: "02", title: "Direction d’acteurs et mise en place" },
+    { id: "camera" as const, number: "03", title: "Image, caméra et optique" },
+    { id: "lightingDesign" as const, number: "04", title: "Lumière, couleur et décors" },
+    { id: "editingSound" as const, number: "05", title: "Montage, son et finition" },
+  ],
+  pt: [
+    { id: "overview" as const, number: "00", title: "Visão geral e exame de realização" },
+    { id: "screenplay" as const, number: "01", title: "Argumento e análise de cena" },
+    { id: "performance" as const, number: "02", title: "Direção de atores e marcação" },
+    { id: "camera" as const, number: "03", title: "Imagem, câmara e ótica" },
+    { id: "lightingDesign" as const, number: "04", title: "Luz, cor e design de produção" },
+    { id: "editingSound" as const, number: "05", title: "Montagem, som e finalização" },
+  ],
 } as const;
+
+const navigationCopy: Record<FilmWorkLanguage, { readonly ariaLabel: string; readonly foundation: string; readonly open: string; readonly openAction: string }> = {
+  en: { ariaLabel: "Film School courses", foundation: "Directing foundations", open: "Open", openAction: "Open →" },
+  nb: { ariaLabel: "Film School-kurs", foundation: "Regi grunnkurs", open: "Åpent", openAction: "Åpne →" },
+  fr: { ariaLabel: "Cours Film School", foundation: "Fondamentaux de la réalisation", open: "Ouvert", openAction: "Ouvrir →" },
+  pt: { ariaLabel: "Cursos do Film School", foundation: "Fundamentos de realização", open: "Aberto", openAction: "Abrir →" },
+};
 
 export function FilmSchoolCourseNavigation({ activeCourseId, language, onSelectCourse }: FilmSchoolCourseNavigationProps) {
   const [storedLanguage] = useFilmWorkLanguage();
   const resolvedLanguage = language ?? storedLanguage;
-  const isNorwegian = resolvedLanguage === "nb";
+  const copy = navigationCopy[resolvedLanguage];
   return (
-    <aside className="school-course-selector" aria-label={isNorwegian ? "Film School-kurs" : "Film School courses"}>
-      <header><span>Film School</span><strong>{isNorwegian ? "Regi grunnkurs" : "Directing foundations"}</strong></header>
+    <aside className="school-course-selector" aria-label={copy.ariaLabel}>
+      <header><span>Film School</span><strong>{copy.foundation}</strong></header>
       <div>
         {availableCourses[resolvedLanguage].map((course) => (
           <button
@@ -45,7 +68,7 @@ export function FilmSchoolCourseNavigation({ activeCourseId, language, onSelectC
           >
             <span>{course.number}</span>
             <strong>{course.title}</strong>
-            <b>{course.id === activeCourseId ? (isNorwegian ? "Åpent" : "Open") : (isNorwegian ? "Åpne →" : "Open →")}</b>
+            <b>{course.id === activeCourseId ? copy.open : copy.openAction}</b>
           </button>
         ))}
       </div>
