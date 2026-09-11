@@ -105,7 +105,7 @@ export function RoutedFilmverketPlatform({
   if (!selectedScenario) {
     return (
       <main className="filmverket-empty">
-        <span className="filmverket-kicker">Filmverket</span>
+        <span className="filmverket-kicker">FilmWork</span>
         <h1>No films are available yet.</h1>
       </main>
     );
@@ -146,7 +146,7 @@ export function RoutedFilmverketPlatform({
         </>
       )}
       <footer className="filmverket-footer">
-        <span>Filmverket</span>
+        <span>FilmWork</span>
         <span>Film Producer · Film Atlas · Director Lab · Film School · Film History · Research Control</span>
       </footer>
     </div>
@@ -161,7 +161,7 @@ function PlatformHeader({ activeSection, onNavigate }: {
     { id: "home", label: "Front page" },
     { id: "producer", label: "Film Producer" },
     { id: "atlas", label: "Film Atlas" },
-    { id: "director", label: "Director Lab" },
+    { id: "director", label: "Film Director" },
     { id: "school", label: "Film School" },
     { id: "history", label: "Film History" },
     { id: "research", label: "Research" },
@@ -170,10 +170,10 @@ function PlatformHeader({ activeSection, onNavigate }: {
   return (
     <header className="filmverket-header">
       <button className="filmverket-brand" onClick={() => onNavigate("home")} type="button">
-        <span>FV</span>
-        <strong>Filmverket</strong>
+        <span>FW</span>
+        <strong>FilmWork</strong>
       </button>
-      <nav aria-label="Filmverket sections">
+      <nav aria-label="FilmWork sections">
         {items.map((item) => (
           <button
             className={activeSection === item.id ? "filmverket-nav-button filmverket-nav-button--active" : "filmverket-nav-button"}
@@ -207,7 +207,7 @@ function PlatformHome({ onNavigate, scenarios }: {
   }[] = [
     { id: "producer", eyebrow: "The game", title: "Film Producer", description: "Run productions, make pressured choices, complete Production Cases, and build an experimental studio career.", action: "Enter the studio", status: "Playable" },
     { id: "atlas", eyebrow: "The knowledge platform", title: "Film Atlas", description: "Open a film and examine its screenplay, image, editing, sound, tone, learning goals, and historical position.", action: "Explore films", status: `${scenarios.length} films` },
-    { id: "director", eyebrow: "Analysis into practice", title: "Director Lab", description: "Study one film through a chosen craft lens and turn its construction principles into a director's brief.", action: "Open the lab", status: "Working foundation" },
+    { id: "director", eyebrow: "Analysis into practice", title: "Film Director", description: "Study one film through a chosen craft lens and turn its construction principles into a director's brief.", action: "Open the lab", status: "Working foundation" },
     { id: "school", eyebrow: "Structured learning", title: "Film School", description: "Follow film-science learning paths built from the same techniques and works used by the game and atlas.", action: "Browse courses", status: "6 core courses" },
     { id: "history", eyebrow: "Cinema through time", title: "Film History", description: "Browse the catalogue chronologically and move from periods and decades into individual film construction.", action: "Open the timeline", status: `${firstYear}–${lastYear}` },
     { id: "research", eyebrow: "Editorial control", title: "Research Control", description: "Separate verified film knowledge from provisional seeds and prioritize the next research work.", action: "Open control room", status: "Live queue" },
@@ -216,9 +216,9 @@ function PlatformHome({ onNavigate, scenarios }: {
   return (
     <main className="filmverket-home">
       <section className="filmverket-hero">
-        <div className="filmverket-hero-mark" aria-hidden="true"><span>FV</span></div>
+        <div className="filmverket-hero-mark" aria-hidden="true"><span>FW</span></div>
         <span className="filmverket-kicker">A film game and film-science platform</span>
-        <h1>Film<em>verket</em></h1>
+        <h1>Film<em>Work</em></h1>
         <p>Make film. Understand film.</p>
         <div className="filmverket-hero-stats" aria-label="Platform content summary">
           <span><strong>{scenarios.length}</strong> films</span>
@@ -226,7 +226,7 @@ function PlatformHome({ onNavigate, scenarios }: {
           <span><strong>6</strong> connected entrances</span>
         </div>
       </section>
-      <section className="filmverket-gateway-grid" aria-label="Filmverket entrances">
+      <section className="filmverket-gateway-grid" aria-label="FilmWork entrances">
         {gateways.map((gateway, index) => (
           <button className={index === 0 ? "filmverket-gateway filmverket-gateway--primary" : "filmverket-gateway"} key={gateway.id} onClick={() => onNavigate(gateway.id)} type="button">
             <span className="filmverket-gateway-number">{String(index + 1).padStart(2, "0")}</span>
@@ -370,7 +370,7 @@ function DirectorLab({ activeLensId, onChangeLens, onSelectFilm, scenarios, sele
       <section className="director-toolbar"><label><span>Reference film</span><select onChange={(event: ChangeEvent<HTMLSelectElement>) => { const scenario = scenarios.find((candidate) => candidate.id === event.target.value); if (scenario) onSelectFilm(scenario); }} value={selectedScenario.id}>{scenarios.map((scenario) => <option key={scenario.id} value={scenario.id}>{scenario.film.year} · {scenario.film.title}</option>)}</select></label><div className="director-lenses" aria-label="Director craft lens">{craftLenses.map((lens) => <button className={activeLens.id === lens.id ? "director-lens director-lens--active" : "director-lens"} key={lens.id} onClick={() => onChangeLens(lens.id)} type="button">{lens.shortLabel}</button>)}</div></section>
       <section className="director-reference-card"><div className="director-reference-heading"><div><span>{selectedScenario.film.year} · {selectedScenario.film.directors.join(", ")}</span><h2>{selectedScenario.film.title}</h2></div><strong>{activeLens.label}</strong></div><p className="director-question">{activeLens.question}</p><div className="director-principles">{principles.map((principle, index) => <article key={principle}><span>{String(index + 1).padStart(2, "0")}</span><p>{principle}</p></article>)}</div></section>
       <section className="director-brief-grid"><article><span className="filmverket-card-kicker">Audience effect</span><h3>What must the audience experience?</h3><p>{brief.toneTargets.join(" · ")}</p></article><article><span className="filmverket-card-kicker">Formal strategy</span><h3>What must the craft system do?</h3><p>{principles.join(" · ")}</p></article><article><span className="filmverket-card-kicker">Directing test</span><h3>What evidence would prove the choice works?</h3><p>Identify a precise change in attention, spatial pressure, rhythm, information, performance, or emotion that can be observed in the finished scene.</p></article></section>
-      <section className="director-lab-note"><strong>Director is not a replacement name for the whole game.</strong><p>It is a focused artistic workspace inside Filmverket. Film Producer continues to cover the entire project.</p></section>
+      <section className="director-lab-note"><strong>Director is not a replacement name for the whole game.</strong><p>It is a focused artistic workspace inside FilmWork. Film Producer continues to cover the entire project.</p></section>
     </main>
   );
 }
@@ -416,9 +416,9 @@ function routeForSection(section: FilmverketSection): FilmverketRoute {
 }
 
 function createDocumentTitle(section: FilmverketSection, scenario?: FilmScenarioSeed): string {
-  if (section === "atlas" && scenario) return `${scenario.film.title} · Film Atlas · Filmverket`;
-  if (section === "director" && scenario) return `${scenario.film.title} · Director Lab · Filmverket`;
-  const labels: Record<FilmverketSection, string> = { home: "Filmverket", producer: "Film Producer · Filmverket", atlas: "Film Atlas · Filmverket", director: "Director Lab · Filmverket", school: "Film School · Filmverket", history: "Film History · Filmverket", research: "Research Control · Filmverket" };
+  if (section === "atlas" && scenario) return `${scenario.film.title} · Film Atlas · FilmWork`;
+  if (section === "director" && scenario) return `${scenario.film.title} · Director Lab · FilmWork`;
+  const labels: Record<FilmverketSection, string> = { home: "FilmWork", producer: "Film Producer · FilmWork", atlas: "Film Atlas · FilmWork", director: "Director Lab · FilmWork", school: "Film School · FilmWork", history: "Film History · FilmWork", research: "Research Control · FilmWork" };
   return labels[section];
 }
 

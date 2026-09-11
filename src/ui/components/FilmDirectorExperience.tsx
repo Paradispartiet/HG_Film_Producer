@@ -101,7 +101,7 @@ export function FilmDirectorExperience({ navigate, route }: FilmDirectorExperien
   const missingFilm = Boolean(route.filmSlug && !selectedScenario);
 
   useEffect(() => {
-    document.title = selectedScenario ? `${selectedScenario.film.title} · Film Director · Filmverket` : "Film Director · Filmverket";
+    document.title = selectedScenario ? `${selectedScenario.film.title} · Film Director · FilmWork` : "Film Director · FilmWork";
   }, [selectedScenario]);
 
   if (scenarios.length === 0) return <main className="film-director-empty"><h1>No films are available.</h1></main>;
@@ -124,7 +124,7 @@ export function FilmDirectorExperience({ navigate, route }: FilmDirectorExperien
     <div className="filmverket-shell film-director-shell">
       <FilmDirectorHeader navigate={navigate} selectedScenario={selectedScenario} />
       <DirectorProjectEditor key={selectedScenario.id} navigate={navigate} scenarios={scenarios} selectedScenario={selectedScenario} />
-      <footer className="filmverket-footer"><span>Filmverket · Film Director</span><span>Project · scenes · directing briefs · shot cards</span></footer>
+      <footer className="filmverket-footer"><span>FilmWork · Film Director</span><span>Project · scenes · directing briefs · shot cards</span></footer>
     </div>
   );
 }
@@ -141,8 +141,8 @@ function FilmDirectorHeader({ navigate, selectedScenario }: {
   }
   return (
     <header className="filmverket-header">
-      <button className="filmverket-brand" onClick={() => navigate({ section: "home" })} type="button"><span>FV</span><strong>Filmverket</strong></button>
-      <nav aria-label="Filmverket sections">
+      <button className="filmverket-brand" onClick={() => navigate({ section: "home" })} type="button"><span>FW</span><strong>FilmWork</strong></button>
+      <nav aria-label="FilmWork sections">
         {navItems.map((item) => <button className={item.id === "director" ? "filmverket-nav-button filmverket-nav-button--active" : "filmverket-nav-button"} key={item.id} onClick={() => openSection(item.id)} type="button">{item.label}</button>)}
       </nav>
     </header>

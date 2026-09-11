@@ -2,6 +2,13 @@
 
 **HG Film Producer** er en full filmstudio-simulator koblet til History Go-universet.
 
+
+## Navnekontrakt for filmsuiten
+
+**Filmverket** er det norske fellesnavnet for hele filmsuiten. I engelskspråklig UI og prosa heter den samme paraplyen **FilmWork** — med stor W.
+
+Paraplynavnet erstatter ikke navnene på de enkelte spillene og funksjonene. **Film Producer**, **Film Director**, **Film School**, **Film Atlas** og **Film History** beholder sine egne navn under Filmverket / FilmWork.
+
 Spillet kombinerer:
 
 - **Football Manager**: ledelse, økonomi, ansatte, karriere, langsiktig utvikling

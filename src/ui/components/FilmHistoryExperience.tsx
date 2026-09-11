@@ -17,7 +17,7 @@ export function FilmHistoryExperience({
   const scenarios = useMemo(() => getClassicFilmScenarios(), []);
 
   useEffect(() => {
-    document.title = "Film History · Filmverket";
+    document.title = "Film History · FilmWork";
   }, []);
 
   function navigateSection(section: FilmverketSection) {

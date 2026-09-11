@@ -57,9 +57,9 @@ export function FilmResearchControlRoom({
           <section aria-label="Film research control room" aria-modal="true" className="research-control-panel" onMouseDown={(event) => event.stopPropagation()} role="dialog">
             <header className="research-control-header">
               <div>
-                <span>Filmverket editorial control</span>
+                <span>FilmWork editorial control</span>
                 <h2>Research control room</h2>
-                <p>Keep verified film knowledge separate from provisional seeds and unfinished research. Every row now opens the same film directly in Film Atlas or Director Lab.</p>
+                <p>Keep verified film knowledge separate from provisional seeds and unfinished research. Every row now opens the same film directly in Film Atlas or Film Director.</p>
               </div>
               <button aria-label="Close research control room" onClick={onClose} type="button">×</button>
             </header>
@@ -107,7 +107,7 @@ export function FilmResearchControlRoom({
                   <strong className="research-status-label">{labelFilmResearchStatus(item.status)}</strong>
                   <div className="research-film-actions">
                     <button onClick={() => onOpenAtlas(item.scenarioId)} type="button">Film Atlas</button>
-                    <button onClick={() => onOpenDirector(item.scenarioId)} type="button">Director Lab</button>
+                    <button onClick={() => onOpenDirector(item.scenarioId)} type="button">Film Director</button>
                   </div>
                 </article>
               ))}

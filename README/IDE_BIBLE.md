@@ -4,6 +4,11 @@
 
 **HG Film Producer** er en full filmstudio-simulator der spilleren bygger og driver et filmstudio, utvikler filmer fra idé til premiere, og lærer filmhistorie gjennom praktiske produksjonsvalg.
 
+
+### Filmverket / FilmWork
+
+**Filmverket** er paraplynavnet på norsk for den samlede filmsuiten. På engelsk er paraplynavnet **FilmWork**. Dette er et fellesnavn, ikke et nytt navn på hvert enkelt spill: Film Producer, Film Director, Film School, Film Atlas og Film History skal fortsatt fremstå som egne funksjoner/spill under paraplyen.
+
 Spillet kombinerer:
 
 ```text

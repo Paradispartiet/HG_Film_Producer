@@ -6,7 +6,7 @@ const navigationItems: readonly { readonly id: FilmverketSection; readonly label
   { id: "home", label: "Front page" },
   { id: "producer", label: "Film Producer" },
   { id: "atlas", label: "Film Atlas" },
-  { id: "director", label: "Director Lab" },
+  { id: "director", label: "Film Director" },
   { id: "school", label: "Film School" },
   { id: "history", label: "Film History" },
   { id: "research", label: "Research" },
@@ -25,10 +25,10 @@ export function FilmverketKnowledgeShell({
     <div className="filmverket-shell">
       <header className="filmverket-header">
         <button className="filmverket-brand" onClick={() => onNavigate("home")} type="button">
-          <span>FV</span>
-          <strong>Filmverket</strong>
+          <span>FW</span>
+          <strong>FilmWork</strong>
         </button>
-        <nav aria-label="Filmverket sections">
+        <nav aria-label="FilmWork sections">
           {navigationItems.map((item) => (
             <button
               className={activeSection === item.id ? "filmverket-nav-button filmverket-nav-button--active" : "filmverket-nav-button"}
@@ -43,8 +43,8 @@ export function FilmverketKnowledgeShell({
       </header>
       {children}
       <footer className="filmverket-footer">
-        <span>Filmverket</span>
-        <span>Film Producer · Film Atlas · Director Lab · Film School · Film History · Research Control</span>
+        <span>FilmWork</span>
+        <span>Film Producer · Film Atlas · Film Director · Film School · Film History · Research Control</span>
       </footer>
     </div>
   );

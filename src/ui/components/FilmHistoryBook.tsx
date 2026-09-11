@@ -31,7 +31,7 @@ export function FilmHistoryBook({
     <main className="filmverket-page film-history-book-page">
       <section className="film-history-book-hero">
         <div>
-          <span className="filmverket-kicker">The Filmverket textbook</span>
+          <span className="filmverket-kicker">The FilmWork textbook</span>
           <h1>Film History</h1>
           <p>A global history of cinema as form, technology, industry, institution and culture. The book is built from a thirty-chapter canonical structure and connects historical argument directly to films in Film Atlas.</p>
         </div>
