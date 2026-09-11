@@ -1,4 +1,4 @@
-name: Diagnose Nollywood unit test failure
+name: Persist Chapter 19 live-audit contract repair
 
 on:
   push:
@@ -6,27 +6,30 @@ on:
       - agent/nollywood-representation-admission-run-20260911
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  diagnose:
+  repair:
+    if: ${{ !contains(github.event.head_commit.message, '[ch19 contract repaired]') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Materialize exact Living in Bondage admission
+      - name: Reproduce materialized 614 state
         shell: bash
         run: |
           python3 .github/scripts/repair_nollywood_film_study_admission.py
           test "$(grep -c '^const EXPECTED_ATLAS_COUNT = 613;$' scripts/film-history-chapter-nineteen-atlas-audit.mjs)" -eq 1
           sed -i 's/^const EXPECTED_ATLAS_COUNT = 613;$/const EXPECTED_ATLAS_COUNT = 614;/' scripts/film-history-chapter-nineteen-atlas-audit.mjs
           test "$(grep -c '^const EXPECTED_ATLAS_COUNT = 614;$' scripts/film-history-chapter-nineteen-atlas-audit.mjs)" -eq 1
-      - name: Apply candidate Chapter 19 live-audit contract fix
+      - name: Repair only the live-audit assertion
         shell: bash
         run: |
           test "$(grep -c 'assert.match(audit, /const EXPECTED_ATLAS_COUNT = 613;/);' src/core/filmHistoryChapterNineteenAuditContract.test.ts)" -eq 1
@@ -34,31 +37,16 @@ jobs:
           test "$(grep -c 'assert.equal(resolved.atlas.actualCount, 613);' src/core/filmHistoryChapterNineteenAuditContract.test.ts)" -eq 1
           test "$(grep -c 'assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 613);' src/core/filmHistoryChapterNineteenAuditContract.test.ts)" -eq 1
           sed -i 's@assert.match(audit, /const EXPECTED_ATLAS_COUNT = 613;/);@assert.match(audit, /const EXPECTED_ATLAS_COUNT = 614;/);@' src/core/filmHistoryChapterNineteenAuditContract.test.ts
-      - name: Diagnose first failing unit test
+      - name: Verify full unit suite in materialized state
+        run: npm test
+      - name: Commit only Chapter 19 test contract repair
         shell: bash
         run: |
-          set -o pipefail
-          npm run build
-          mkdir -p diagnostics
-          for test_file in dist/core/*.test.js; do
-            tmp_log="$(mktemp)"
-            if node --test "$test_file" >"$tmp_log" 2>&1; then
-              echo "PASS $test_file"
-            else
-              {
-                echo "FAIL_TEST_FILE=$test_file"
-                echo "--- failure tail ---"
-                tail -n 100 "$tmp_log"
-              } | tee diagnostics/nollywood-unit-test-failure.txt
-              rm -f "$tmp_log"
-              exit 1
-            fi
-            rm -f "$tmp_log"
-          done
-      - name: Upload unit test failure diagnostic
-        if: ${{ failure() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: nollywood-unit-test-failure
-          path: diagnostics/nollywood-unit-test-failure.txt
-          if-no-files-found: error
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/core/filmHistoryChapterNineteenAuditContract.test.ts
+          git diff --cached --check
+          test "$(git diff --cached --name-only | wc -l)" -eq 1
+          test "$(git diff --cached --name-only)" = 'src/core/filmHistoryChapterNineteenAuditContract.test.ts'
+          git commit -m 'Align Chapter 19 live Atlas audit contract with 614 [ch19 contract repaired] [nollywood materialized]'
+          git push origin HEAD:agent/nollywood-representation-admission-run-20260911
