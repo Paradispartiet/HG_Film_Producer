@@ -10,6 +10,11 @@ career, economy, staff), production simulation (The Movies–style studio, shoot
 stars), a screenwriting model, a film-history knowledge layer, and a connection
 to the place-based History Go universe.
 
+
+### Suite naming invariant
+
+The umbrella name for the complete film suite is **Filmverket** in Norwegian and **FilmWork** in English (capital W). Treat it as a suite/umbrella only: it must not replace the distinct product names **Film Producer**, **Film Director**, **Film School**, **Film Atlas**, or **Film History**. English player-facing copy uses `FilmWork`; Norwegian player-facing copy uses `Filmverket`. Internal `Filmverket*` TypeScript identifiers and route contracts may remain unchanged unless a separate technical rename is explicitly required.
+
 The project's guiding rule (see `README.md` and `README/IDE_BIBLE.md`): **full
 ambition, modular structure, one game engine at a time.** Do not reduce it to a
 small film quiz. Build breadth-first with clean, small, pure engine functions.

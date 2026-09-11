@@ -50,12 +50,12 @@ export function FilmAtlasExperience({
 
   useEffect(() => {
     if (missingFilm || !selectedScenario) {
-      document.title = "Film Atlas · Filmverket";
+      document.title = "Film Atlas · FilmWork";
       return;
     }
     document.title = activeTab === "timeline"
-      ? "Timeline · Film Atlas · Filmverket"
-      : `${selectedScenario.film.title} · Film Atlas · Filmverket`;
+      ? "Timeline · Film Atlas · FilmWork"
+      : `${selectedScenario.film.title} · Film Atlas · FilmWork`;
   }, [activeTab, missingFilm, selectedScenario]);
 
   function navigateSection(section: FilmverketSection) {
