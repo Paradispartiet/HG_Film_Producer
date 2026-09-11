@@ -21,13 +21,6 @@ import type { FilmScenarioSeed } from "../data/filmScenarios";
 import { FilmSchoolCourseNavigation, type FilmSchoolCourseId } from "./FilmSchoolCourseNavigation";
 
 const courseCopy: Record<FilmWorkLanguage, Record<FilmSchoolGroundCourseId, { readonly title: string; readonly summary: string }>> = {
-  nb: {
-    screenplay: { title: "Manus og sceneanalyse", summary: "Kontekst, mål, konflikt, vendepunkt, undertekst og scenens funksjon." },
-    performance: { title: "Skuespillerregi og blocking", summary: "Spillbar handling, lytting, bevegelse, blikk, prøve og justering." },
-    camera: { title: "Bilde, kamera og optikk", summary: "Utsnitt, perspektiv, brennvidde, kamerabevegelse, fokus og shotplan." },
-    lightingDesign: { title: "Lys, farge og produksjonsdesign", summary: "Lyskilder, kontrast, palett, materialer, rom og visuell kontinuitet." },
-    editingSound: { title: "Klipp, lyd og ferdigstilling", summary: "Rytme, filmisk tid, lydperspektiv, miks, grading og levering." },
-  },
   en: {
     screenplay: { title: "Screenplay and scene analysis", summary: "Context, objective, conflict, turning point, subtext and scene function." },
     performance: { title: "Performance direction and blocking", summary: "Playable action, listening, movement, eyelines, rehearsal and adjustment." },
@@ -35,26 +28,258 @@ const courseCopy: Record<FilmWorkLanguage, Record<FilmSchoolGroundCourseId, { re
     lightingDesign: { title: "Lighting, colour and production design", summary: "Sources, contrast, palette, materials, space and visual continuity." },
     editingSound: { title: "Editing, sound and finishing", summary: "Rhythm, cinematic time, sound perspective, mix, grading and delivery." },
   },
+  nb: {
+    screenplay: { title: "Manus og sceneanalyse", summary: "Kontekst, mål, konflikt, vendepunkt, undertekst og scenens funksjon." },
+    performance: { title: "Skuespillerregi og blocking", summary: "Spillbar handling, lytting, bevegelse, blikk, prøve og justering." },
+    camera: { title: "Bilde, kamera og optikk", summary: "Utsnitt, perspektiv, brennvidde, kamerabevegelse, fokus og shotplan." },
+    lightingDesign: { title: "Lys, farge og produksjonsdesign", summary: "Lyskilder, kontrast, palett, materialer, rom og visuell kontinuitet." },
+    editingSound: { title: "Klipp, lyd og ferdigstilling", summary: "Rytme, filmisk tid, lydperspektiv, miks, grading og levering." },
+  },
+  fr: {
+    screenplay: { title: "Scénario et analyse de scène", summary: "Contexte, objectif, conflit, point de bascule, sous-texte et fonction de la scène." },
+    performance: { title: "Direction d’acteurs et mise en place", summary: "Action jouable, écoute, mouvement, regards, répétition et ajustement." },
+    camera: { title: "Image, caméra et optique", summary: "Cadrage, perspective, focale, mouvement de caméra, mise au point et plan de prises." },
+    lightingDesign: { title: "Lumière, couleur et décors", summary: "Sources, contraste, palette, matériaux, espace et continuité visuelle." },
+    editingSound: { title: "Montage, son et finition", summary: "Rythme, temps filmique, perspective sonore, mixage, étalonnage et livraison." },
+  },
+  pt: {
+    screenplay: { title: "Argumento e análise de cena", summary: "Contexto, objetivo, conflito, ponto de viragem, subtexto e função da cena." },
+    performance: { title: "Direção de atores e marcação", summary: "Ação jogável, escuta, movimento, linhas de olhar, ensaio e ajuste." },
+    camera: { title: "Imagem, câmara e ótica", summary: "Enquadramento, perspetiva, distância focal, movimento de câmara, foco e planeamento de planos." },
+    lightingDesign: { title: "Luz, cor e design de produção", summary: "Fontes, contraste, paleta, materiais, espaço e continuidade visual." },
+    editingSound: { title: "Montagem, som e finalização", summary: "Ritmo, tempo cinematográfico, perspetiva sonora, mistura, correção de cor e entrega." },
+  },
 };
 
-const norwegianDirectorBriefLabels: Record<(typeof DIRECTOR_BRIEF_FIELDS)[number]["id"], string> = {
-  sceneTitle: "Scenetittel",
-  sceneContext: "Scenekontekst",
-  sceneObjective: "Scenemål",
-  audienceEffect: "Publikumseffekt",
-  conflictTurn: "Konflikt og vending",
-  formalStrategy: "Formstrategi",
-  blocking: "Blocking",
-  performanceDirection: "Skuespillerregi",
-  productionDesign: "Produksjonsdesign",
-  shotPlan: "Shotplan",
-  cameraMovementLenses: "Kamera, bevegelse og optikk",
-  lightingPalette: "Lys og palett",
-  editingRhythm: "Klipperytme",
-  soundStrategy: "Lydstrategi",
-  practicalConstraints: "Praktiske begrensninger",
-  proofOfIntent: "Bevis på intensjon",
+type OverviewCopy = {
+  readonly homeLabel: string;
+  readonly navAria: string;
+  readonly foundation: string;
+  readonly heroStart: string;
+  readonly heroEmphasis: string;
+  readonly heroDescription: string;
+  readonly overallProgress: string;
+  readonly progressAria: (percent: number) => string;
+  readonly progressSummary: (masteredCourses: number, totalCourses: number, completedMilestones: number, totalMilestones: number) => string;
+  readonly examSubmitted: string;
+  readonly mastered: string;
+  readonly lessonsMastered: (masteredLessons: number, totalLessons: number) => string;
+  readonly reopenCourse: string;
+  readonly continueCourse: string;
+  readonly finalExam: string;
+  readonly examHeadline: string;
+  readonly examDescription: string;
+  readonly foundationsCompleted: string;
+  readonly foundationCompleted: string;
+  readonly examLocked: string;
+  readonly submitted: string;
+  readonly submissionSummary: (briefFieldCount: number, completeShotCount: number) => string;
+  readonly openSubmittedExam: string;
+  readonly chooseReference: string;
+  readonly remainingCourses: (remaining: number) => string;
+  readonly newOrUpdatedExam: string;
+  readonly chooseReferenceFilm: string;
+  readonly openNewExam: string;
+  readonly startExam: string;
+  readonly footerFlow: string;
 };
+
+const overviewCopy: Record<FilmWorkLanguage, OverviewCopy> = {
+  en: {
+    homeLabel: "Front page",
+    navAria: "FilmWork sections",
+    foundation: "Directing foundations",
+    heroStart: "From scene analysis to a",
+    heroEmphasis: "complete cinematic plan",
+    heroDescription: "Five chapters follow the same scene through screenplay, performance, camera, lighting and design, editing, sound and delivery. The progress below comes directly from your course work.",
+    overallProgress: "Overall progress",
+    progressAria: (percent) => `${percent}% complete`,
+    progressSummary: (masteredCourses, totalCourses, completedMilestones, totalMilestones) => `${masteredCourses} of ${totalCourses} courses mastered · ${completedMilestones} of ${totalMilestones} milestones`,
+    examSubmitted: "Directing exam submitted",
+    mastered: "Mastered",
+    lessonsMastered: (masteredLessons, totalLessons) => `${masteredLessons} of ${totalLessons} lessons mastered`,
+    reopenCourse: "Open course again →",
+    continueCourse: "Continue course →",
+    finalExam: "Final directing exam",
+    examHeadline: "One scene. One coherent directing system.",
+    examDescription: "The exam uses the complete scene brief in Film Director. Every decision must build the same dramatic progression and be assessable in an imagined finished result.",
+    foundationsCompleted: "Directing foundations completed",
+    foundationCompleted: "Foundation course completed",
+    examLocked: "Exam locked",
+    submitted: "Submitted",
+    submissionSummary: (briefFieldCount, completeShotCount) => `${briefFieldCount} directing fields · ${completeShotCount} complete shot cards`,
+    openSubmittedExam: "Open submitted directing exam →",
+    chooseReference: "Choose a film as your craft reference and open the complete assignment in Film Director.",
+    remainingCourses: (remaining) => `Master ${remaining} more courses. All 75 milestones must be completed.`,
+    newOrUpdatedExam: "New or updated exam",
+    chooseReferenceFilm: "Choose reference film",
+    openNewExam: "Open a new exam assignment →",
+    startExam: "Start directing exam in Film Director →",
+    footerFlow: "Screenplay → performance → image → look → post-production",
+  },
+  nb: {
+    homeLabel: "Forside",
+    navAria: "Filmverket-seksjoner",
+    foundation: "Regi grunnkurs",
+    heroStart: "Fra sceneanalyse til",
+    heroEmphasis: "ferdig filmisk plan",
+    heroDescription: "Fem kapitler følger den samme scenen gjennom manus, skuespillerarbeid, kamera, lys og design, klipp, lyd og levering. Progresjonen nedenfor kommer direkte fra kursarbeidet ditt.",
+    overallProgress: "Samlet progresjon",
+    progressAria: (percent) => `${percent}% fullført`,
+    progressSummary: (masteredCourses, totalCourses, completedMilestones, totalMilestones) => `${masteredCourses} av ${totalCourses} kurs mestret · ${completedMilestones} av ${totalMilestones} milepæler`,
+    examSubmitted: "Regieksamen levert",
+    mastered: "Mestret",
+    lessonsMastered: (masteredLessons, totalLessons) => `${masteredLessons} av ${totalLessons} leksjoner mestret`,
+    reopenCourse: "Åpne kurset igjen →",
+    continueCourse: "Fortsett kurset →",
+    finalExam: "Avsluttende regieksamen",
+    examHeadline: "Én scene. Ett sammenhengende regisystem.",
+    examDescription: "Eksamen bruker hele scenebrieffet i Film Director. Alle beslutninger skal bygge den samme dramatiske utviklingen og kunne vurderes i et tenkt ferdig resultat.",
+    foundationsCompleted: "Regi-grunnkurs fullført",
+    foundationCompleted: "Grunnkurset er fullført",
+    examLocked: "Eksamen er låst",
+    submitted: "Levert",
+    submissionSummary: (briefFieldCount, completeShotCount) => `${briefFieldCount} regifelt · ${completeShotCount} komplette shot cards`,
+    openSubmittedExam: "Åpne levert regieksamen →",
+    chooseReference: "Velg en film som faglig referanse og åpne den komplette oppgaven i Film Director.",
+    remainingCourses: (remaining) => `Mestre ${remaining} kurs til. Alle 75 milepæler må være gjennomført.`,
+    newOrUpdatedExam: "Ny eller oppdatert eksamen",
+    chooseReferenceFilm: "Velg referansefilm",
+    openNewExam: "Åpne ny eksamensoppgave →",
+    startExam: "Start regieksamen i Film Director →",
+    footerFlow: "Manus → prestasjon → bilde → look → postproduksjon",
+  },
+  fr: {
+    homeLabel: "Accueil",
+    navAria: "Sections de FilmWork",
+    foundation: "Fondamentaux de la réalisation",
+    heroStart: "De l’analyse de scène à un",
+    heroEmphasis: "plan cinématographique complet",
+    heroDescription: "Cinq chapitres suivent la même scène à travers le scénario, le jeu, la caméra, la lumière et les décors, le montage, le son et la livraison. La progression ci-dessous provient directement de votre travail de cours.",
+    overallProgress: "Progression globale",
+    progressAria: (percent) => `${percent}% terminé`,
+    progressSummary: (masteredCourses, totalCourses, completedMilestones, totalMilestones) => `${masteredCourses} cours maîtrisés sur ${totalCourses} · ${completedMilestones} jalons sur ${totalMilestones}`,
+    examSubmitted: "Examen de réalisation remis",
+    mastered: "Maîtrisé",
+    lessonsMastered: (masteredLessons, totalLessons) => `${masteredLessons} leçons maîtrisées sur ${totalLessons}`,
+    reopenCourse: "Rouvrir le cours →",
+    continueCourse: "Continuer le cours →",
+    finalExam: "Examen final de réalisation",
+    examHeadline: "Une scène. Un système de réalisation cohérent.",
+    examDescription: "L’examen utilise l’intégralité du brief de scène dans Film Director. Chaque décision doit construire la même progression dramatique et pouvoir être évaluée dans un résultat final imaginé.",
+    foundationsCompleted: "Fondamentaux de la réalisation terminés",
+    foundationCompleted: "Cours fondamental terminé",
+    examLocked: "Examen verrouillé",
+    submitted: "Remis",
+    submissionSummary: (briefFieldCount, completeShotCount) => `${briefFieldCount} champs de réalisation · ${completeShotCount} shot cards complètes`,
+    openSubmittedExam: "Ouvrir l’examen remis →",
+    chooseReference: "Choisissez un film comme référence de métier et ouvrez l’exercice complet dans Film Director.",
+    remainingCourses: (remaining) => `Maîtrisez encore ${remaining} cours. Les 75 jalons doivent être terminés.`,
+    newOrUpdatedExam: "Nouvel examen ou mise à jour",
+    chooseReferenceFilm: "Choisir le film de référence",
+    openNewExam: "Ouvrir un nouvel exercice d’examen →",
+    startExam: "Commencer l’examen dans Film Director →",
+    footerFlow: "Scénario → jeu → image → look → postproduction",
+  },
+  pt: {
+    homeLabel: "Início",
+    navAria: "Secções do FilmWork",
+    foundation: "Fundamentos de realização",
+    heroStart: "Da análise de cena a um",
+    heroEmphasis: "plano cinematográfico completo",
+    heroDescription: "Cinco capítulos acompanham a mesma cena através do argumento, interpretação, câmara, luz e design, montagem, som e entrega. O progresso abaixo vem diretamente do seu trabalho no curso.",
+    overallProgress: "Progresso geral",
+    progressAria: (percent) => `${percent}% concluído`,
+    progressSummary: (masteredCourses, totalCourses, completedMilestones, totalMilestones) => `${masteredCourses} de ${totalCourses} cursos dominados · ${completedMilestones} de ${totalMilestones} marcos`,
+    examSubmitted: "Exame de realização entregue",
+    mastered: "Dominado",
+    lessonsMastered: (masteredLessons, totalLessons) => `${masteredLessons} de ${totalLessons} lições dominadas`,
+    reopenCourse: "Abrir o curso novamente →",
+    continueCourse: "Continuar o curso →",
+    finalExam: "Exame final de realização",
+    examHeadline: "Uma cena. Um sistema de realização coerente.",
+    examDescription: "O exame utiliza o brief completo da cena no Film Director. Todas as decisões devem construir a mesma progressão dramática e poder ser avaliadas num resultado final imaginado.",
+    foundationsCompleted: "Fundamentos de realização concluídos",
+    foundationCompleted: "Curso de fundamentos concluído",
+    examLocked: "Exame bloqueado",
+    submitted: "Entregue",
+    submissionSummary: (briefFieldCount, completeShotCount) => `${briefFieldCount} campos de realização · ${completeShotCount} shot cards completos`,
+    openSubmittedExam: "Abrir o exame entregue →",
+    chooseReference: "Escolha um filme como referência técnica e abra o exercício completo no Film Director.",
+    remainingCourses: (remaining) => `Domine mais ${remaining} cursos. Todos os 75 marcos têm de estar concluídos.`,
+    newOrUpdatedExam: "Exame novo ou atualizado",
+    chooseReferenceFilm: "Escolher filme de referência",
+    openNewExam: "Abrir um novo exercício de exame →",
+    startExam: "Iniciar o exame no Film Director →",
+    footerFlow: "Argumento → interpretação → imagem → look → pós-produção",
+  },
+};
+
+type DirectorBriefFieldId = (typeof DIRECTOR_BRIEF_FIELDS)[number]["id"];
+
+const localizedDirectorBriefLabels: Record<Exclude<FilmWorkLanguage, "en">, Record<DirectorBriefFieldId, string>> = {
+  nb: {
+    sceneTitle: "Scenetittel",
+    sceneContext: "Scenekontekst",
+    sceneObjective: "Scenemål",
+    audienceEffect: "Publikumseffekt",
+    conflictTurn: "Konflikt og vending",
+    formalStrategy: "Formstrategi",
+    blocking: "Blocking",
+    performanceDirection: "Skuespillerregi",
+    productionDesign: "Produksjonsdesign",
+    shotPlan: "Shotplan",
+    cameraMovementLenses: "Kamera, bevegelse og optikk",
+    lightingPalette: "Lys og palett",
+    editingRhythm: "Klipperytme",
+    soundStrategy: "Lydstrategi",
+    practicalConstraints: "Praktiske begrensninger",
+    proofOfIntent: "Bevis på intensjon",
+  },
+  fr: {
+    sceneTitle: "Titre de la scène",
+    sceneContext: "Contexte de la scène",
+    sceneObjective: "Objectif de la scène",
+    audienceEffect: "Effet sur le public",
+    conflictTurn: "Conflit et bascule",
+    formalStrategy: "Stratégie formelle",
+    blocking: "Mise en place",
+    performanceDirection: "Direction d’acteurs",
+    productionDesign: "Décors et design de production",
+    shotPlan: "Plan de plans",
+    cameraMovementLenses: "Caméra, mouvement et optiques",
+    lightingPalette: "Lumière et palette",
+    editingRhythm: "Rythme de montage",
+    soundStrategy: "Stratégie sonore",
+    practicalConstraints: "Contraintes pratiques",
+    proofOfIntent: "Preuve d’intention",
+  },
+  pt: {
+    sceneTitle: "Título da cena",
+    sceneContext: "Contexto da cena",
+    sceneObjective: "Objetivo da cena",
+    audienceEffect: "Efeito no público",
+    conflictTurn: "Conflito e viragem",
+    formalStrategy: "Estratégia formal",
+    blocking: "Marcação",
+    performanceDirection: "Direção de atores",
+    productionDesign: "Design de produção",
+    shotPlan: "Plano de planos",
+    cameraMovementLenses: "Câmara, movimento e ótica",
+    lightingPalette: "Luz e paleta",
+    editingRhythm: "Ritmo de montagem",
+    soundStrategy: "Estratégia sonora",
+    practicalConstraints: "Restrições práticas",
+    proofOfIntent: "Prova de intenção",
+  },
+};
+
+const languageOptions: readonly { readonly id: FilmWorkLanguage; readonly label: string; readonly ariaLabel: string }[] = [
+  { id: "en", label: "EN", ariaLabel: "Use English" },
+  { id: "nb", label: "NO", ariaLabel: "Bruk norsk" },
+  { id: "fr", label: "FR", ariaLabel: "Utiliser le français" },
+  { id: "pt", label: "PT", ariaLabel: "Usar português" },
+];
 
 type FilmSchoolOverviewProps = {
   readonly navigate: (route: FilmverketRoute) => void;
@@ -65,13 +290,15 @@ type FilmSchoolOverviewProps = {
 
 export function FilmSchoolOverview({ navigate, onOpenDirector, onSelectCourse, scenarios }: FilmSchoolOverviewProps) {
   const [language, setLanguage] = useFilmWorkLanguage();
-  const isNorwegian = language === "nb";
+  const copy = overviewCopy[language];
+  const productBrand = language === "nb" ? "Filmverket" : "FilmWork";
+  const productMonogram = language === "nb" ? "FV" : "FW";
   const [summary, setSummary] = useState<FilmSchoolGroundCourseSummary>(() => loadSummary());
   const [submission, setSubmission] = useState<FilmSchoolCapstoneSubmission | undefined>(() => loadSubmission());
   const [assignmentFilmId, setAssignmentFilmId] = useState(() => submission?.filmId ?? scenarios[0]?.id ?? "");
   const summaryByCourseId = useMemo(() => new Map(summary.courses.map((course) => [course.courseId, course])), [summary]);
   const navItems: readonly { readonly id: FilmverketSection; readonly label: string }[] = [
-    { id: "home", label: isNorwegian ? "Forside" : "Front page" },
+    { id: "home", label: copy.homeLabel },
     { id: "producer", label: "Film Producer" },
     { id: "atlas", label: "Film Atlas" },
     { id: "director", label: "Film Director" },
@@ -81,8 +308,8 @@ export function FilmSchoolOverview({ navigate, onOpenDirector, onSelectCourse, s
   ];
 
   useEffect(() => {
-    document.title = isNorwegian ? "Regi grunnkurs · Film School · Filmverket" : "Directing foundations · Film School · FilmWork";
-  }, [isNorwegian]);
+    document.title = `${copy.foundation} · Film School · ${productBrand}`;
+  }, [copy.foundation, productBrand]);
 
   useEffect(() => {
     const refresh = () => {
@@ -130,11 +357,10 @@ export function FilmSchoolOverview({ navigate, onOpenDirector, onSelectCourse, s
   return (
     <div className="filmverket-shell school-overview-shell">
       <header className="filmverket-header">
-        <button className="filmverket-brand" onClick={() => navigate({ section: "home" })} type="button"><span>{isNorwegian ? "FV" : "FW"}</span><strong>{isNorwegian ? "Filmverket" : "FilmWork"}</strong></button>
-        <nav aria-label={isNorwegian ? "Filmverket-seksjoner" : "FilmWork sections"}>
+        <button className="filmverket-brand" onClick={() => navigate({ section: "home" })} type="button"><span>{productMonogram}</span><strong>{productBrand}</strong></button>
+        <nav aria-label={copy.navAria}>
           {navItems.map((item) => <button className={item.id === "school" ? "filmverket-nav-button filmverket-nav-button--active" : "filmverket-nav-button"} key={item.id} onClick={() => navigateSection(item.id)} type="button">{item.label}</button>)}
-          <button aria-label="Bruk norsk" aria-pressed={isNorwegian} className={isNorwegian ? "filmverket-nav-button filmverket-nav-button--active" : "filmverket-nav-button"} onClick={() => setLanguage("nb")} type="button">NO</button>
-          <button aria-label="Use English" aria-pressed={!isNorwegian} className={!isNorwegian ? "filmverket-nav-button filmverket-nav-button--active" : "filmverket-nav-button"} onClick={() => setLanguage("en")} type="button">EN</button>
+          {languageOptions.map((option) => <button aria-label={option.ariaLabel} aria-pressed={language === option.id} className={language === option.id ? "filmverket-nav-button filmverket-nav-button--active" : "filmverket-nav-button"} key={option.id} onClick={() => setLanguage(option.id)} type="button">{option.label}</button>)}
         </nav>
       </header>
 
@@ -143,33 +369,33 @@ export function FilmSchoolOverview({ navigate, onOpenDirector, onSelectCourse, s
 
         <section className="school-overview-hero">
           <div>
-            <span className="filmverket-kicker">Film School · {isNorwegian ? "Regi grunnkurs" : "Directing foundations"}</span>
-            <h1>{isNorwegian ? <>Fra sceneanalyse til <em>ferdig filmisk plan</em></> : <>From scene analysis to a <em>complete cinematic plan</em></>}</h1>
-            <p>{isNorwegian ? "Fem kapitler følger den samme scenen gjennom manus, skuespillerarbeid, kamera, lys og design, klipp, lyd og levering. Progresjonen nedenfor kommer direkte fra kursarbeidet ditt." : "Five chapters follow the same scene through screenplay, performance, camera, lighting and design, editing, sound and delivery. The progress below comes directly from your course work."}</p>
+            <span className="filmverket-kicker">Film School · {copy.foundation}</span>
+            <h1>{copy.heroStart} <em>{copy.heroEmphasis}</em></h1>
+            <p>{copy.heroDescription}</p>
           </div>
           <aside>
-            <span>{isNorwegian ? "Samlet progresjon" : "Overall progress"}</span>
+            <span>{copy.overallProgress}</span>
             <strong>{summary.completionPercent}<small>%</small></strong>
-            <div className="school-overview-progress" aria-label={isNorwegian ? `${summary.completionPercent}% fullført` : `${summary.completionPercent}% complete`}><span style={{ width: `${summary.completionPercent}%` }} /></div>
-            <p>{isNorwegian ? `${summary.masteredCourses} av ${FILM_SCHOOL_GROUND_COURSES.length} kurs mestret · ${summary.completedMilestones} av ${summary.totalMilestones} milepæler` : `${summary.masteredCourses} of ${FILM_SCHOOL_GROUND_COURSES.length} courses mastered · ${summary.completedMilestones} of ${summary.totalMilestones} milestones`}</p>
-            {submission ? <p className="school-overview-completion-line">{isNorwegian ? "Regieksamen levert" : "Directing exam submitted"} · {formatDate(submission.submittedAt, language)}</p> : null}
+            <div className="school-overview-progress" aria-label={copy.progressAria(summary.completionPercent)}><span style={{ width: `${summary.completionPercent}%` }} /></div>
+            <p>{copy.progressSummary(summary.masteredCourses, FILM_SCHOOL_GROUND_COURSES.length, summary.completedMilestones, summary.totalMilestones)}</p>
+            {submission ? <p className="school-overview-completion-line">{copy.examSubmitted} · {formatDate(submission.submittedAt, language)}</p> : null}
           </aside>
         </section>
 
-        <section className="school-overview-course-grid" aria-label={isNorwegian ? "Regi grunnkurs" : "Directing foundations"}>
+        <section className="school-overview-course-grid" aria-label={copy.foundation}>
           {FILM_SCHOOL_GROUND_COURSES.map((course) => {
             const courseSummary = summaryByCourseId.get(course.id);
             const complete = courseSummary?.mastered ?? false;
             const display = courseCopy[language][course.id];
             return (
               <article className={complete ? "is-mastered" : ""} key={course.id}>
-                <header><span>{course.number}</span><small>{complete ? (isNorwegian ? "Mestret" : "Mastered") : `${courseSummary?.completionPercent ?? 0}%`}</small></header>
+                <header><span>{course.number}</span><small>{complete ? copy.mastered : `${courseSummary?.completionPercent ?? 0}%`}</small></header>
                 <h2>{display.title}</h2>
                 <p>{display.summary}</p>
                 <div className="school-overview-course-progress"><span style={{ width: `${courseSummary?.completionPercent ?? 0}%` }} /></div>
                 <footer>
-                  <span>{isNorwegian ? `${courseSummary?.masteredLessons ?? 0} av ${courseSummary?.totalLessons ?? 5} leksjoner mestret` : `${courseSummary?.masteredLessons ?? 0} of ${courseSummary?.totalLessons ?? 5} lessons mastered`}</span>
-                  <button onClick={() => onSelectCourse(course.id as FilmSchoolGroundCourseId)} type="button">{complete ? (isNorwegian ? "Åpne kurset igjen →" : "Open course again →") : (isNorwegian ? "Fortsett kurset →" : "Continue course →")}</button>
+                  <span>{copy.lessonsMastered(courseSummary?.masteredLessons ?? 0, courseSummary?.totalLessons ?? 5)}</span>
+                  <button onClick={() => onSelectCourse(course.id as FilmSchoolGroundCourseId)} type="button">{complete ? copy.reopenCourse : copy.continueCourse}</button>
                 </footer>
               </article>
             );
@@ -178,36 +404,40 @@ export function FilmSchoolOverview({ navigate, onOpenDirector, onSelectCourse, s
 
         <section className={submission ? "school-capstone is-unlocked is-completed" : summary.mastered ? "school-capstone is-unlocked" : "school-capstone"}>
           <div>
-            <span className="filmverket-kicker">{isNorwegian ? "Avsluttende regieksamen" : "Final directing exam"}</span>
-            <h2>{isNorwegian ? "Én scene. Ett sammenhengende regisystem." : "One scene. One coherent directing system."}</h2>
-            <p>{isNorwegian ? "Eksamen bruker hele scenebrieffet i Film Director. Alle beslutninger skal bygge den samme dramatiske utviklingen og kunne vurderes i et tenkt ferdig resultat." : "The exam uses the complete scene brief in Film Director. Every decision must build the same dramatic progression and be assessable in an imagined finished result."}</p>
-            <div className="school-capstone-fields">{DIRECTOR_BRIEF_FIELDS.map((field, index) => <span key={field.id}><b>{String(index + 1).padStart(2, "0")}</b>{isNorwegian ? norwegianDirectorBriefLabels[field.id] : field.label}</span>)}</div>
+            <span className="filmverket-kicker">{copy.finalExam}</span>
+            <h2>{copy.examHeadline}</h2>
+            <p>{copy.examDescription}</p>
+            <div className="school-capstone-fields">{DIRECTOR_BRIEF_FIELDS.map((field, index) => <span key={field.id}><b>{String(index + 1).padStart(2, "0")}</b>{getDirectorBriefLabel(field, language)}</span>)}</div>
           </div>
           <aside>
-            <strong>{submission ? (isNorwegian ? "Regi-grunnkurs fullført" : "Directing foundations completed") : summary.mastered ? (isNorwegian ? "Grunnkurset er fullført" : "Foundation course completed") : (isNorwegian ? "Eksamen er låst" : "Exam locked")}</strong>
+            <strong>{submission ? copy.foundationsCompleted : summary.mastered ? copy.foundationCompleted : copy.examLocked}</strong>
             {submission ? (
               <section className="school-capstone-completion">
-                <span>{isNorwegian ? "Levert" : "Submitted"} {formatDateTime(submission.submittedAt, language)}</span>
+                <span>{copy.submitted} {formatDateTime(submission.submittedAt, language)}</span>
                 <h3>{submission.sceneTitle}</h3>
                 <p>{submission.filmYear} · {submission.filmTitle}</p>
-                <small>{isNorwegian ? `${submission.briefFieldCount} regifelt · ${submission.completeShotCount} komplette shot cards` : `${submission.briefFieldCount} directing fields · ${submission.completeShotCount} complete shot cards`}</small>
-                <button onClick={openSubmittedCapstone} type="button">{isNorwegian ? "Åpne levert regieksamen →" : "Open submitted directing exam →"}</button>
+                <small>{copy.submissionSummary(submission.briefFieldCount, submission.completeShotCount)}</small>
+                <button onClick={openSubmittedCapstone} type="button">{copy.openSubmittedExam}</button>
               </section>
-            ) : <p>{summary.mastered ? (isNorwegian ? "Velg en film som faglig referanse og åpne den komplette oppgaven i Film Director." : "Choose a film as your craft reference and open the complete assignment in Film Director.") : (isNorwegian ? `Mestre ${FILM_SCHOOL_GROUND_COURSES.length - summary.masteredCourses} kurs til. Alle 75 milepæler må være gjennomført.` : `Master ${FILM_SCHOOL_GROUND_COURSES.length - summary.masteredCourses} more courses. All 75 milestones must be completed.`)}</p>}
+            ) : <p>{summary.mastered ? copy.chooseReference : copy.remainingCourses(FILM_SCHOOL_GROUND_COURSES.length - summary.masteredCourses)}</p>}
             <label>
-              <span>{submission ? (isNorwegian ? "Ny eller oppdatert eksamen" : "New or updated exam") : (isNorwegian ? "Velg referansefilm" : "Choose reference film")}</span>
+              <span>{submission ? copy.newOrUpdatedExam : copy.chooseReferenceFilm}</span>
               <select disabled={!summary.mastered} onChange={(event: ChangeEvent<HTMLSelectElement>) => setAssignmentFilmId(event.target.value)} value={assignmentFilmId}>
                 {scenarios.map((scenario) => <option key={scenario.id} value={scenario.id}>{scenario.film.year} · {scenario.film.title}</option>)}
               </select>
             </label>
-            <button className="filmverket-primary-action" disabled={!summary.mastered || !assignmentFilmId} onClick={startCapstone} type="button">{submission ? (isNorwegian ? "Åpne ny eksamensoppgave →" : "Open a new exam assignment →") : (isNorwegian ? "Start regieksamen i Film Director →" : "Start directing exam in Film Director →")}</button>
+            <button className="filmverket-primary-action" disabled={!summary.mastered || !assignmentFilmId} onClick={startCapstone} type="button">{submission ? copy.openNewExam : copy.startExam}</button>
           </aside>
         </section>
       </main>
 
-      <footer className="filmverket-footer"><span>{isNorwegian ? "Filmverket" : "FilmWork"} · Film School</span><span>{isNorwegian ? "Manus → prestasjon → bilde → look → postproduksjon" : "Screenplay → performance → image → look → post-production"}</span></footer>
+      <footer className="filmverket-footer"><span>{productBrand} · Film School</span><span>{copy.footerFlow}</span></footer>
     </div>
   );
+}
+
+function getDirectorBriefLabel(field: (typeof DIRECTOR_BRIEF_FIELDS)[number], language: FilmWorkLanguage): string {
+  return language === "en" ? field.label : localizedDirectorBriefLabels[language][field.id];
 }
 
 function loadSummary(): FilmSchoolGroundCourseSummary {
