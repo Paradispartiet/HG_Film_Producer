@@ -1,17 +1,24 @@
 {
   "schema": "hg_film_producer_film_history_representation_coverage_v1",
   "version": "1.0.0",
-  "audited_at": "2026-09-10",
-  "status": "OPEN_GAPS_FAIL_CLOSED",
+  "audited_at": "2026-09-11",
+  "status": "REPRESENTATIONALLY_AUDITED",
   "owner": "film_history_representation_coverage",
   "baseline": {
     "source_main_sha": "cf7f7aad73ab56e304772e6bb2f3801737699aba",
-    "expected_production_verified_core_scenarios": 613,
+    "expected_production_verified_core_scenarios": 614,
     "closed_chapter_18_atlas_count": 539,
     "core_selection_frozen_during_audit": true,
     "chapter_19_period": "2020-present",
     "chapter_19_frozen_observation_baseline": "2020-2025",
-    "important_boundary": "HG_Film_Producer is authoritative for this audit. The audit derives the live Atlas from the seed plus runtime expansion order and derives the Production Verification registry independently. Both sets must contain exactly 613 unique IDs and must be identical before any representation result is accepted."
+    "important_boundary": "HG_Film_Producer is authoritative for this audit. The audit derives the live Atlas from the seed plus runtime expansion order and derives the Production Verification registry independently. Both sets must contain exactly 613 unique IDs and must be identical before any representation result is accepted.",
+    "post_freeze_admission": {
+      "scenario_id": "scenario_living_in_bondage_1992",
+      "reason": "closes_status_0_to_at_least_2",
+      "development_id": "nigeria_nollywood_industry_system",
+      "prior_exact_core_search": "613 reviewed production-verified scenarios; zero Nigeria/Nollywood/Lagos matches",
+      "in_place_enrichment_sufficient": false
+    }
   },
   "research_question": "Finnes det en vesentlig teknologisk, industriell, geografisk, estetisk, distribusjonsmessig eller arbeidsmessig utvikling i filmhistorien som dagens produksjonsverifiserte scenarioer ikke kan lære bort gjennom konkret evidens?",
   "principles": {
@@ -208,14 +215,15 @@
     },
     {
       "development_id": "nigeria_nollywood_industry_system",
-      "declared_status": 0,
+      "declared_status": 2,
       "priority": "P0",
       "axis_ids": [
         "institutions_and_industry_systems",
         "production_scale_studio_midbudget_microbudget_independent",
         "distribution_exhibition_and_audience_behavior"
       ],
-      "required_evidence": "Exact Nigerian or Nollywood scenarios must teach production scale, financing, video/digital infrastructure, distribution or audience systems."
+      "required_evidence": "Exact Nigerian or Nollywood scenarios must teach production scale, financing, video/digital infrastructure, distribution or audience systems.",
+      "coverage_basis": "Living in Bondage (1992) supplies the previously absent exact Nigerian/Nollywood production case: source-bound private/informal financing, low-cost Super VHS production, marketer-led straight-to-home-video circulation and domestic audience infrastructure. One exact case supports status 2; status 3 is not claimed without a complementary second production system."
     },
     {
       "development_id": "south_korea_industry_system",
@@ -6468,6 +6476,18 @@
         "src/ui/data/scenarioProductionVerification1980sPoliticalPalmeSystemsBatch.ts"
       ],
       "rationale": "The permanent PV documents a Turkish-Swiss-French production made through Güney’s prison writing, flight from Turkey and Şerif Gören’s on-the-ground direction, providing exact transnational production, censorship and political-constraint evidence."
+    },
+    {
+      "scenario_id": "scenario_living_in_bondage_1992",
+      "review_state": "MAPPED",
+      "development_ids": [
+        "nigeria_nollywood_industry_system"
+      ],
+      "evidence_paths": [
+        "src/ui/data/scenarioProductionVerificationLivingInBondage.ts",
+        "src/ui/data/scenarioFilmStudyRepresentationLivingInBondage.ts"
+      ],
+      "rationale": "The admitted ProductionVerification directly documents a Nigerian video-film production system through Kenneth Nnebue financing/marketing, an approximately 150,000-naira low-cost production, Super VHS capture, straight-to-home-video distribution and the audience/market infrastructure that opened the Nollywood video-film economy. The admission closes a documented P0 status-0 gap after all prior 613 exact scenarios were reviewed and none could be enriched into a Nigeria/Nollywood case."
     }
   ],
   "candidate_admission_gate": {
@@ -6496,14 +6516,20 @@
     ]
   },
   "closure_contract": {
-    "selection_may_be_called_representationally_audited": false,
+    "selection_may_be_called_representationally_audited": true,
     "required_to_close": [
-      "review_every_one_of_the_613_exact_production_verified_atlas_scenario_ids",
+      "review_every_one_of_the_614_exact_production_verified_atlas_scenario_ids",
       "map_each_relevant_scenario_only_to_evidence_supported_historical_development_ids",
       "leave_uncertain_historical_function_mappings_unmapped",
       "recompute_all_development_statuses_from_exact_scenario_evidence",
       "resolve_or_explicitly_accept_every_P0_status_0_or_1",
       "prove_no_major_technology_industry_geography_aesthetics_labor_distribution_or_exhibition_development_is_orphaned"
-    ]
+    ],
+    "closure_evidence": {
+      "exact_reviewed_scenarios": 614,
+      "unreviewed_scenarios": 0,
+      "open_p0_developments": 0,
+      "admission_that_closed_final_p0": "scenario_living_in_bondage_1992"
+    }
   }
 }
