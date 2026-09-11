@@ -395,14 +395,15 @@
     },
     {
       "development_id": "intimacy_coordination_and_new_crew_roles",
-      "declared_status": 0,
+      "declared_status": 2,
       "priority": "P1",
       "axis_ids": [
         "labor_crew_and_union_history",
         "production_economics_and_organization"
       ],
       "chapter": 19,
-      "required_evidence": "Documented role or protocol adoption and its effect on rehearsal, blocking, consent or production organization in exact scenarios."
+      "required_evidence": "Documented role or protocol adoption and its effect on rehearsal, blocking, consent or production organization in exact scenarios.",
+      "coverage_basis": "Kinds of Kindness (2024) supplies an exact production-verified case in which an intimacy coordinator is documented on the intimate homemade sex-tape sequence. Direct filmmaker/performer interviews document a reduced set, explicit comfort and boundary conversations, and the coordinator's contribution to believable staging; independent performer testimony describes the work as guided conversation and choreography. One exact case supports status 2; status 3 is not claimed without a complementary second production system."
     },
     {
       "development_id": "generative_ai_and_machine_learning_in_production_or_post",
@@ -3829,12 +3830,14 @@
     },
     {
       "scenario_id": "scenario_kinds_of_kindness_2024",
-      "review_state": "REVIEWED_NO_MAPPING",
-      "development_ids": [],
+      "review_state": "MAPPED",
+      "development_ids": [
+        "intimacy_coordination_and_new_crew_roles"
+      ],
       "evidence_paths": [
         "src/ui/data/scenarioProductionVerificationKindsOfKindness.ts"
       ],
-      "rationale": "Kinds of Kindness is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+      "rationale": "The enriched permanent Production Verification documents an intimacy coordinator on the intimate homemade sex-tape sequence, a reduced set limited to the director, performers and coordinator, explicit comfort/boundary conversations before treating the material as a scene, and performer accounts describing the intimate staging as movement/choreography. Those title-specific protocol and production-organization effects directly satisfy the intimacy-coordination/new-crew-role requirement. One exact case supports status 2; no triangulation to 3 is claimed."
     },
     {
       "scenario_id": "scenario_young_mothers_2025",
