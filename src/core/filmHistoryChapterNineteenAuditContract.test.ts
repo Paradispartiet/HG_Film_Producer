@@ -387,7 +387,7 @@ test("Chapter 19 locks the open 2020-present scope without freezing 2026", () =>
 
 test("Chapter 19 preserves the closed Chapter 18 baseline while advancing the current Atlas", () => {
   assert.match(audit, /const CLOSED_CHAPTER_EIGHTEEN_ATLAS_COUNT = 539;/);
-  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 613;/);
+  assert.match(audit, /const EXPECTED_ATLAS_COUNT = 614;/);
   assert.equal(resolved.atlas.baselineFromClosedChapter18, 539);
   assert.equal(resolved.atlas.expectedCount, 613);
   assert.equal(resolved.atlas.actualCount, 613);

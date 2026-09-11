@@ -4,7 +4,7 @@ import process from "node:process";
 import { fileURLToPath } from "node:url";
 
 const EXPECTED_BASELINE_SHA = "cf7f7aad73ab56e304772e6bb2f3801737699aba";
-const EXPECTED_CORE = 613;
+const EXPECTED_CORE = 614;
 const EXPECTED_CHAPTER_18 = 539;
 const REQUIRED_AXES = [
   "technology_and_format",
@@ -209,9 +209,9 @@ function sortedDifference(left, right) {
 function validateContract(contract) {
   assert(contract.schema === "hg_film_producer_film_history_representation_coverage_v1", "schema mismatch");
   assert(contract.version === "1.0.0", "version mismatch");
-  assert(contract.status === "OPEN_GAPS_FAIL_CLOSED", "v1 must remain OPEN_GAPS_FAIL_CLOSED until the closure contract is deliberately revised");
+  assert(contract.status === "REPRESENTATIONALLY_AUDITED", "representation coverage contract must be deliberately closed after all P0 gaps and exact scenario reviews are complete");
   assert(contract.baseline?.source_main_sha === EXPECTED_BASELINE_SHA, "baseline source_main_sha changed without a deliberate audit reset");
-  assert(contract.baseline?.expected_production_verified_core_scenarios === EXPECTED_CORE, "613-scenario core invariant changed");
+  assert(contract.baseline?.expected_production_verified_core_scenarios === EXPECTED_CORE, "614-scenario audited core invariant changed");
   assert(contract.baseline?.closed_chapter_18_atlas_count === EXPECTED_CHAPTER_18, "closed Chapter 18 baseline changed");
   assert(contract.baseline?.core_selection_frozen_during_audit === true, "core must remain frozen while this audit is open");
   assert(contract.baseline?.chapter_19_frozen_observation_baseline === "2020-2025", "Chapter 19 frozen observation baseline changed");
@@ -271,9 +271,9 @@ function validateContract(contract) {
     assert((gate.hard_reject_reasons ?? []).includes(rejection), `missing hard rejection reason: ${rejection}`);
   }
 
-  assert(contract.closure_contract?.selection_may_be_called_representationally_audited === false, "open v1 audit may not claim representational closure");
+  assert(contract.closure_contract?.selection_may_be_called_representationally_audited === true, "closed representation audit must explicitly permit the representationally-audited claim");
   for (const requirement of [
-    "review_every_one_of_the_613_exact_production_verified_atlas_scenario_ids",
+    "review_every_one_of_the_614_exact_production_verified_atlas_scenario_ids",
     "map_each_relevant_scenario_only_to_evidence_supported_historical_development_ids",
     "leave_uncertain_historical_function_mappings_unmapped",
     "recompute_all_development_statuses_from_exact_scenario_evidence",
@@ -361,10 +361,10 @@ const statusCounts = { 0: 0, 1: 0, 2: 0, 3: 0 };
 for (const development of contract.development_matrix) statusCounts[development.declared_status] += 1;
 
 const representationalClosure = reviewedScenarioIds.size === EXPECTED_CORE && p0Open.length === 0;
-assert(representationalClosure === false, "v1 unexpectedly reached closure; revise the closure contract deliberately instead of silently flipping state");
+assert(representationalClosure === true, "representation audit may close only with every exact scenario reviewed and every P0 development at status 2 or 3");
 
 const summary = {
-  status: "PASS_FAIL_CLOSED",
+  status: "PASS_REPRESENTATIONALLY_AUDITED",
   baselineMainSha: contract.baseline.source_main_sha,
   core: {
     expected: EXPECTED_CORE,

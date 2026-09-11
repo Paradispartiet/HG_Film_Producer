@@ -59,7 +59,7 @@ invariant(resolved.candidates.every((candidate) => candidate.decision === "USE_E
 
 const literalVerificationIds = collectLiteralScenarioIds("scenarioProductionVerification");
 const verificationIds = new Set(literalVerificationIds);
-invariant(verificationIds.size === 613, `Global Production Verification registry must contain exactly 613 unique scenarioIds after The Little Sister Chapter 19 materialization: ${verificationIds.size}`);
+invariant(verificationIds.size === 614, `Global Production Verification registry must contain exactly 614 unique scenarioIds after the post-Chapter-19 Nollywood representation admission: ${verificationIds.size}`);
 invariant(candidateScenarioIds.every((scenarioId) => verificationIds.has(scenarioId)), "At least one Chapter 18 candidate is missing its Production Verification record.");
 
 const literalFilmStudyIds = collectLiteralScenarioIds("scenarioFilmStudy");

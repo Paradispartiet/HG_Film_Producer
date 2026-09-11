@@ -90,6 +90,7 @@ import { banditQueenFilmHistoryProfile } from "./scenarioFilmStudyChapterSevente
 import { toyStoryFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenToyStory";
 import { theMatrixFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenTheMatrix";
 import { shiriFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenShiri";
+import { livingInBondageFilmHistoryProfile } from "./scenarioFilmStudyRepresentationLivingInBondage";
 import { myOwnPrivateIdahoFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenMyOwnPrivateIdaho";
 import { boyzNTheHoodFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenBoyzNTheHood";
 import { theLivingEndFilmHistoryProfile } from "./scenarioFilmStudyChapterSeventeenTheLivingEnd";
@@ -343,6 +344,7 @@ const sourceBackedFilmHistoryProfiles = {
   [toyStoryFilmHistoryProfile.scenarioId]: toyStoryFilmHistoryProfile,
   [theMatrixFilmHistoryProfile.scenarioId]: theMatrixFilmHistoryProfile,
   [shiriFilmHistoryProfile.scenarioId]: shiriFilmHistoryProfile,
+  [livingInBondageFilmHistoryProfile.scenarioId]: livingInBondageFilmHistoryProfile,
   [myOwnPrivateIdahoFilmHistoryProfile.scenarioId]: myOwnPrivateIdahoFilmHistoryProfile,
   [boyzNTheHoodFilmHistoryProfile.scenarioId]: boyzNTheHoodFilmHistoryProfile,
   [theLivingEndFilmHistoryProfile.scenarioId]: theLivingEndFilmHistoryProfile,
