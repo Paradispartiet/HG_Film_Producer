@@ -23,7 +23,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Materialize exact Living in Bondage admission
-        run: python3 .github/scripts/repair_nollywood_film_study_admission.py
+        shell: bash
+        run: |
+          python3 .github/scripts/repair_nollywood_film_study_admission.py
+          test "$(grep -c '^const EXPECTED_ATLAS_COUNT = 613;$' scripts/film-history-chapter-nineteen-atlas-audit.mjs)" -eq 1
+          sed -i 's/^const EXPECTED_ATLAS_COUNT = 613;$/const EXPECTED_ATLAS_COUNT = 614;/' scripts/film-history-chapter-nineteen-atlas-audit.mjs
+          test "$(grep -c '^const EXPECTED_ATLAS_COUNT = 614;$' scripts/film-history-chapter-nineteen-atlas-audit.mjs)" -eq 1
       - name: Verify representation closure
         shell: bash
         run: |
@@ -107,8 +112,9 @@ jobs:
             src/ui/data/scenarioFilmStudyMap.ts \
             scripts/film-history-representation-coverage-audit-v1.mjs \
             scripts/film-history-chapter-eighteen-completion-audit.mjs \
+            scripts/film-history-chapter-nineteen-atlas-audit.mjs \
             data/film/film_history_representation_coverage_v1.json
           git diff --cached --check
-          test "$(git diff --cached --name-only | wc -l)" -eq 10
+          test "$(git diff --cached --name-only | wc -l)" -eq 11
           git commit -m 'Close film-history representation audit with Nollywood admission [nollywood materialized]'
           git push origin HEAD:agent/nollywood-representation-admission-run-20260911
