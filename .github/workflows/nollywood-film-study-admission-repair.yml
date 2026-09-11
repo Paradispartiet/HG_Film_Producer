@@ -26,6 +26,19 @@ jobs:
           test "$(grep -c '^const EXPECTED_ATLAS_COUNT = 613;$' scripts/film-history-chapter-nineteen-atlas-audit.mjs)" -eq 1
           sed -i 's/^const EXPECTED_ATLAS_COUNT = 613;$/const EXPECTED_ATLAS_COUNT = 614;/' scripts/film-history-chapter-nineteen-atlas-audit.mjs
           test "$(grep -c '^const EXPECTED_ATLAS_COUNT = 614;$' scripts/film-history-chapter-nineteen-atlas-audit.mjs)" -eq 1
+      - name: Apply candidate Chapter 19 live-census contract fix
+        shell: bash
+        run: |
+          test "$(grep -c 'assert.match(audit, /const EXPECTED_ATLAS_COUNT = 613;/);' src/core/filmHistoryChapterNineteenAuditContract.test.ts)" -eq 1
+          test "$(grep -c 'assert.equal(resolved.atlas.expectedCount, 613);' src/core/filmHistoryChapterNineteenAuditContract.test.ts)" -eq 1
+          test "$(grep -c 'assert.equal(resolved.atlas.actualCount, 613);' src/core/filmHistoryChapterNineteenAuditContract.test.ts)" -eq 1
+          test "$(grep -c 'assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 613);' src/core/filmHistoryChapterNineteenAuditContract.test.ts)" -eq 1
+          sed -i \
+            -e 's@assert.match(audit, /const EXPECTED_ATLAS_COUNT = 613;/);@assert.match(audit, /const EXPECTED_ATLAS_COUNT = 614;/);@' \
+            -e 's/assert.equal(resolved.atlas.expectedCount, 613);/assert.equal(resolved.atlas.expectedCount, 614);/' \
+            -e 's/assert.equal(resolved.atlas.actualCount, 613);/assert.equal(resolved.atlas.actualCount, 614);/' \
+            -e 's/assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 613);/assert.equal(resolved.verificationIndex.literalVerifiedScenarioIds, 614);/' \
+            src/core/filmHistoryChapterNineteenAuditContract.test.ts
       - name: Diagnose first failing unit test
         shell: bash
         run: |
