@@ -1,0 +1,47 @@
+name: Diagnose Nollywood admission unit tests
+
+on:
+  push:
+    branches:
+      - agent/nollywood-unit-test-diagnostic-20260911
+
+permissions:
+  contents: read
+
+jobs:
+  split-unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Build core tests once
+        run: npm run build
+      - name: Run compiled core tests one file at a time
+        shell: bash
+        run: |
+          set -uo pipefail
+          shopt -s nullglob
+          tests=(dist/core/*.test.js)
+          if [ ${#tests[@]} -eq 0 ]; then
+            echo "::error title=No compiled core tests::No files matched dist/core/*.test.js"
+            exit 1
+          fi
+          echo "Discovered ${#tests[@]} compiled core test files"
+          for test_file in "${tests[@]}"; do
+            echo "::group::TEST ${test_file}"
+            if node --test "${test_file}"; then
+              echo "PASS ${test_file}"
+              echo "::endgroup::"
+            else
+              status=$?
+              echo "::endgroup::"
+              echo "::error title=FIRST FAILING UNIT TEST::${test_file}"
+              echo "FIRST_FAILING_TEST=${test_file}"
+              exit "${status}"
+            fi
+          done
+          echo "ALL_SPLIT_UNIT_TESTS_PASS"
