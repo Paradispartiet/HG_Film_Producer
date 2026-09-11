@@ -419,14 +419,15 @@
     },
     {
       "development_id": "sustainable_production_and_carbon_constraints",
-      "declared_status": 0,
+      "declared_status": 2,
       "priority": "P1",
       "axis_ids": [
         "accessibility_sustainability_and_environmental_production",
         "production_economics_and_organization"
       ],
       "chapter": 19,
-      "required_evidence": "Measured or rule-bound production changes affecting travel, energy, materials, sets or procurement in exact scenarios."
+      "required_evidence": "Measured or rule-bound production changes affecting travel, energy, materials, sets or procurement in exact scenarios.",
+      "coverage_basis": "Barbie (2023) supplies one exact production-verified case with measured and rule-bound sustainability evidence from Warner Bros. Discovery's 2023 Sustainability Report. WBD documents that approximately 85% of all power used during the U.K. shoot came from house power, with the vast majority used at Warner Bros. Studios Leavesden on a 100% renewable energy tariff; the same production record documents reuse and donation of production materials and predominantly second-hand costumes returned to charity shops. These are concrete energy, materials and procurement changes inside an exact scenario, satisfying status 2. Status 3 is not claimed without a complementary second production system."
     },
     {
       "development_id": "regional_incentives_studios_and_production_infrastructure",
@@ -4144,12 +4145,14 @@
     },
     {
       "scenario_id": "scenario_barbie_2023",
-      "review_state": "REVIEWED_NO_MAPPING",
-      "development_ids": [],
+      "review_state": "MAPPED",
+      "development_ids": [
+        "sustainable_production_and_carbon_constraints"
+      ],
       "evidence_paths": [
         "src/ui/data/scenarioProductionVerificationBarbie.ts"
       ],
-      "rationale": "Barbie is exact USE_EXISTING and production-verified in the Chapter 19 atlas, with its canonical PV inspected at the listed evidence path. The verified production record is retained in the audit, but it does not independently satisfy any additional still-open development's exact closure requirement in this pass. Period, format, geography, platform or festival association, genre label and chapter placement are not used as substitutes for production-system evidence, so it remains REVIEWED_NO_MAPPING."
+      "rationale": "Barbie is exact USE_EXISTING and production-verified in the Chapter 19 atlas. Its canonical Production Verification now includes Warner Bros. Discovery's institutional sustainability report, which measures approximately 85% house-power use during the U.K. shoot, ties most of that use to Leavesden's 100% renewable energy tariff, and documents production-material reuse/donation and predominantly second-hand costume procurement. This directly satisfies the sustainability development's measured-or-rule-bound energy, materials and procurement requirement, so Barbie is mapped to sustainable_production_and_carbon_constraints at status 2 only."
     },
     {
       "scenario_id": "scenario_killers_of_the_flower_moon_2023",
