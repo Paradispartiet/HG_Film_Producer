@@ -16,7 +16,12 @@ export function coerceFilmWorkLanguage(value: unknown): FilmWorkLanguage | undef
 }
 
 export function resolveFilmWorkLanguage(storedValue: unknown, browserLanguage: unknown): FilmWorkLanguage {
-  return coerceFilmWorkLanguage(storedValue) ?? coerceFilmWorkLanguage(browserLanguage) ?? "en";
+  void browserLanguage;
+  return coerceFilmWorkLanguage(storedValue) ?? "en";
+}
+
+export function getFilmWorkProductName(language: FilmWorkLanguage): string {
+  return language === "nb" ? "Filmverket" : "FILMWORK";
 }
 
 export function getFilmWorkHtmlLanguage(language: FilmWorkLanguage): string {
