@@ -1,0 +1,74 @@
+name: Diagnose Nollywood admission after production-audit repair
+
+on:
+  push:
+    branches:
+      - agent/nollywood-admission-diagnostics-2-20260911
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    if: ${{ !contains(github.event.head_commit.message, '[diagnostic captured]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Reproduce existing admission step and capture exact failure
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('.github/workflows/nollywood-representation-admission.yml')
+          lines = path.read_text().splitlines(True)
+          needle = '- name: Materialize exact Living in Bondage admission'
+          start = next(i for i, line in enumerate(lines) if line.strip() == needle)
+          run_idx = next(i for i in range(start + 1, len(lines)) if lines[i].strip() == 'run: |')
+          run_indent = len(lines[run_idx]) - len(lines[run_idx].lstrip(' '))
+          content_indent = run_indent + 2
+          block = []
+          for line in lines[run_idx + 1:]:
+              if line.strip() and len(line) - len(line.lstrip(' ')) <= run_indent:
+                  break
+              if line.strip():
+                  if not line.startswith(' ' * content_indent):
+                      raise SystemExit(f'unexpected materializer indentation: {line!r}')
+                  block.append(line[content_indent:])
+              else:
+                  block.append('\n')
+          if not block:
+              raise SystemExit('materializer run block was empty')
+          Path('/tmp/nollywood-materialize.sh').write_text(''.join(block))
+          PY
+
+          set +e
+          bash -x /tmp/nollywood-materialize.sh > /tmp/nollywood-admission.log 2>&1
+          status=$?
+          set -e
+          {
+            echo "exact_base=e278bf370a308955cd853e8da798d377d9da8c79"
+            echo "materialize_exit=$status"
+            echo "--- tail ---"
+            tail -n 400 /tmp/nollywood-admission.log
+          } > /tmp/nollywood-admission-failure-2.txt
+
+          git reset --hard HEAD
+          git clean -fd
+          mkdir -p diagnostics
+          cp /tmp/nollywood-admission-failure-2.txt diagnostics/nollywood-admission-failure-2.txt
+          git add diagnostics/nollywood-admission-failure-2.txt
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git commit -m "chore: capture second Nollywood admission failure [diagnostic captured]"
+          git push origin HEAD
