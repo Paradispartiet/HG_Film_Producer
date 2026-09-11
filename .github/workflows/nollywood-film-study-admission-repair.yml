@@ -90,7 +90,13 @@ jobs:
       - name: Verify Film History chapter 19
         run: npm run audit:film-history-ch19
       - name: Verify unit tests
-        run: npm test
+        shell: bash
+        run: |
+          npm run build
+          for f in dist/core/*.test.js; do
+            echo "=== UNIT_TEST_FILE: $f ==="
+            node --test "$f" || exit $?
+          done
       - name: Verify Chapter 19 festival awards
         run: npm run audit:film-history-ch19-festival-awards
       - name: Verify Chapter 19 Cannes major prizes
