@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 
 import { FILM_SCHOOL_COURSE_CHROME } from "../../core/filmSchoolCourseChrome";
 import { FILM_SCHOOL_COURSE_SURFACE_COPY } from "../../core/filmSchoolCourseSurfaceCopy";
+import { getCameraLessonCopy } from "../../core/filmSchoolCameraLessonCopy";
 import {
   CAMERA_COURSE_LESSONS,
   CAMERA_COURSE_PROGRESS_STORAGE_KEY,
@@ -90,6 +91,7 @@ export function FilmSchoolCameraCourse({
   }, [activeLesson]);
 
   if (!activeLesson) return null;
+  const activeCopy = getCameraLessonCopy(language, activeLesson);
 
   function navigateSection(section: FilmverketSection) {
     navigate(routeForSection(section));
@@ -194,16 +196,16 @@ export function FilmSchoolCameraCourse({
         <section className="school-course-workspace">
           <aside className="school-lesson-rail">
             <header><span>{chrome.coursePath}</span><strong>{stageLabels.seen} → {stageLabels.understood} → {stageLabels.used} → {stageLabels.mastered}</strong></header>
-            <div>{CAMERA_COURSE_LESSONS.map((lesson) => { const lessonStage = getCameraLessonMasteryStage(progress, lesson.id); return <button className={lesson.id === activeLesson.id ? "school-lesson-button is-active" : "school-lesson-button"} key={lesson.id} onClick={() => selectLesson(lesson.id)} type="button"><span>{lesson.number}</span><div><strong>{lesson.title}</strong><small className={`stage-${lessonStage}`}>{stageLabels[lessonStage]}</small></div></button>; })}</div>
+            <div>{CAMERA_COURSE_LESSONS.map((lesson) => { const lessonStage = getCameraLessonMasteryStage(progress, lesson.id); const lessonCopy = getCameraLessonCopy(language, lesson); return <button className={lesson.id === activeLesson.id ? "school-lesson-button is-active" : "school-lesson-button"} key={lesson.id} onClick={() => selectLesson(lesson.id)} type="button"><span>{lesson.number}</span><div><strong>{lessonCopy.title}</strong><small className={`stage-${lessonStage}`}>{stageLabels[lessonStage]}</small></div></button>; })}</div>
           </aside>
 
           <article className="school-active-lesson" id="school-active-camera-lesson">
             <header className="school-lesson-heading">
-              <div><span>{chrome.module} {activeLesson.number} · {stageLabels[stage]}</span><h2>{activeLesson.title}</h2><p>{activeLesson.summary}</p></div>
+              <div><span>{chrome.module} {activeLesson.number} · {stageLabels[stage]}</span><h2>{activeCopy.title}</h2><p>{activeCopy.summary}</p></div>
               <strong>{stage === "mastered" ? `✓ ${stageLabels.mastered}` : stageLabels[stage]}</strong>
             </header>
 
-            <section className="school-principle-card"><span className="filmverket-card-kicker">{chrome.corePrinciple}</span><p>{activeLesson.principle}</p></section>
+            <section className="school-principle-card"><span className="filmverket-card-kicker">{chrome.corePrinciple}</span><p>{activeCopy.principle}</p></section>
 
             <section className="school-term-section">
               <header><span className="filmverket-card-kicker">{chrome.terminology}</span><h3>{chrome.termsYouNeed}</h3></header>
@@ -212,21 +214,21 @@ export function FilmSchoolCameraCourse({
 
             <section className="school-film-example">
               <header><div><span className="filmverket-card-kicker">{chrome.seeInFilm}</span><h3>{activeScenario ? `${activeScenario.film.year} · ${activeScenario.film.title}` : `${activeLesson.film.year} · ${activeLesson.film.title}`}</h3></div>{activeScenario ? <button onClick={() => onOpenAtlas(activeScenario)} type="button">{chrome.openInAtlas}</button> : null}</header>
-              <p className="school-film-question">{activeLesson.film.analysisQuestion}</p>
+              <p className="school-film-question">{activeCopy.filmAnalysisQuestion}</p>
               {exampleInsights.length > 0 ? <ul>{exampleInsights.map((target) => <li key={target}>{target}</li>)}</ul> : <p>{chrome.missingFilmExample}</p>}
             </section>
 
             <section className="school-quiz-card">
-              <header><span className="filmverket-card-kicker">{chrome.quiz}</span><h3>{activeLesson.quiz.question}</h3></header>
-              <div>{activeLesson.quiz.options.map((option, optionIndex) => { const selected = selectedAnswer === optionIndex; const correct = selected && isCameraCourseQuizAnswerCorrect(activeLesson, optionIndex); return <button className={selected ? correct ? "is-selected is-correct" : "is-selected is-wrong" : ""} key={option} onClick={() => answerQuiz(activeLesson, optionIndex)} type="button"><span>{String.fromCharCode(65 + optionIndex)}</span>{option}</button>; })}</div>
-              {selectedAnswer !== undefined ? <p className={quizCorrect ? "school-quiz-feedback is-correct" : "school-quiz-feedback is-wrong"}>{quizCorrect ? chrome.correct : chrome.notQuite}{activeLesson.quiz.explanation}</p> : null}
+              <header><span className="filmverket-card-kicker">{chrome.quiz}</span><h3>{activeCopy.quiz.question}</h3></header>
+              <div>{activeCopy.quiz.options.map((option, optionIndex) => { const selected = selectedAnswer === optionIndex; const correct = selected && isCameraCourseQuizAnswerCorrect(activeLesson, optionIndex); return <button className={selected ? correct ? "is-selected is-correct" : "is-selected is-wrong" : ""} key={`${optionIndex}:${option}`} onClick={() => answerQuiz(activeLesson, optionIndex)} type="button"><span>{String.fromCharCode(65 + optionIndex)}</span>{option}</button>; })}</div>
+              {selectedAnswer !== undefined ? <p className={quizCorrect ? "school-quiz-feedback is-correct" : "school-quiz-feedback is-wrong"}>{quizCorrect ? chrome.correct : chrome.notQuite}{activeCopy.quiz.explanation}</p> : null}
             </section>
 
             <section className="school-practice-card">
               <header><div><span className="filmverket-card-kicker">{chrome.useItYourself}</span><h3>{chrome.miniExercise}</h3></div><span>{progress.usedLessonIds.includes(activeLesson.id) ? `✓ ${stageLabels.used}` : chrome.notCompleted}</span></header>
-              <p>{activeLesson.practicePrompt}</p>
+              <p>{activeCopy.practicePrompt}</p>
               <textarea onChange={(event) => updatePracticeNote(activeLesson.id, event.target.value)} placeholder={surface.practicePlaceholder} rows={7} value={practiceNote} />
-              <div className="school-practice-checklist"><strong>{chrome.checkBeforeUsed}</strong>{activeLesson.checklist.map((item) => <label key={item}><input readOnly type="checkbox" checked={progress.usedLessonIds.includes(activeLesson.id)} />{item}</label>)}</div>
+              <div className="school-practice-checklist"><strong>{chrome.checkBeforeUsed}</strong>{activeCopy.checklist.map((item) => <label key={item}><input readOnly type="checkbox" checked={progress.usedLessonIds.includes(activeLesson.id)} />{item}</label>)}</div>
               <button className="filmverket-primary-action" disabled={practiceNote.trim().length < 20 || progress.usedLessonIds.includes(activeLesson.id)} onClick={() => markPracticeUsed(activeLesson.id)} type="button">{progress.usedLessonIds.includes(activeLesson.id) ? chrome.exerciseUsed : chrome.markExerciseUsed}</button>
             </section>
 
