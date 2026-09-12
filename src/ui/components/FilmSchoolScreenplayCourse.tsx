@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 
 import { FILM_SCHOOL_COURSE_CHROME } from "../../core/filmSchoolCourseChrome";
+import { FILM_SCHOOL_COURSE_SURFACE_COPY } from "../../core/filmSchoolCourseSurfaceCopy";
 import {
   SCREENPLAY_COURSE_LESSONS,
   SCREENPLAY_COURSE_PROGRESS_STORAGE_KEY,
@@ -31,13 +32,6 @@ const navItems: readonly { readonly id: FilmverketSection; readonly label: strin
   { id: "research", label: "Research" },
 ];
 
-const futureCourses = [
-  ["02", "Skuespillerregi og blocking", "Spillbar handling, prøver, rom, makt, bevegelse og presise justeringer."],
-  ["03", "Bilde, kamera og optikk", "Utsnitt, komposisjon, perspektiv, brennvidde, bevegelse og fokus."],
-  ["04", "Lys, farge og produksjonsdesign", "Lyskilder, kontrast, eksponering, palett, materialer og kontinuitet."],
-  ["05", "Klipp, lyd og ferdigstilling", "Coverage, rytme, ellipser, lydperspektiv, miks, grading og levering."],
-] as const;
-
 type FilmSchoolScreenplayCourseProps = {
   readonly navigate: (route: FilmverketRoute) => void;
   readonly onOpenAtlas: (scenario: FilmScenarioSeed) => void;
@@ -48,6 +42,7 @@ type FilmSchoolScreenplayCourseProps = {
 export function FilmSchoolScreenplayCourse({ navigate, onOpenAtlas, onOpenDirector, scenarios }: FilmSchoolScreenplayCourseProps) {
   const [language] = useFilmWorkLanguage();
   const chrome = FILM_SCHOOL_COURSE_CHROME[language];
+  const surface = FILM_SCHOOL_COURSE_SURFACE_COPY[language].screenplay;
   const stageLabels = chrome.stage;
   const [progress, setProgress] = useState<ScreenplayCourseProgress>(() => loadProgress());
   const [quizAnswers, setQuizAnswers] = useState<Readonly<Record<string, number>>>({});
@@ -166,8 +161,8 @@ export function FilmSchoolScreenplayCourse({ navigate, onOpenAtlas, onOpenDirect
         <section className="school-course-hero">
           <div>
             <span className="filmverket-kicker">Film School · {chrome.foundation} · 1/5</span>
-            <h1>Manus og <em>sceneanalyse</em></h1>
-            <p>Lær begrepet, se det brukt i en film, løs en kontrolloppgave og bruk det i ditt eget regiarbeid.</p>
+            <h1>{surface.titleLead} <em>{surface.titleEmphasis}</em></h1>
+            <p>{surface.heroIntro}</p>
           </div>
           <aside>
             <span>{chrome.courseProgress}</span>
@@ -219,7 +214,7 @@ export function FilmSchoolScreenplayCourse({ navigate, onOpenAtlas, onOpenDirect
             <section className="school-practice-card">
               <header><div><span className="filmverket-card-kicker">{chrome.useItYourself}</span><h3>{chrome.miniExercise}</h3></div><span>{progress.usedLessonIds.includes(activeLesson.id) ? `✓ ${stageLabels.used}` : chrome.notCompleted}</span></header>
               <p>{activeLesson.practicePrompt}</p>
-              <textarea onChange={(event) => updatePracticeNote(activeLesson.id, event.target.value)} placeholder="Skriv sceneanalysen din her …" rows={7} value={practiceNote} />
+              <textarea onChange={(event) => updatePracticeNote(activeLesson.id, event.target.value)} placeholder={surface.practicePlaceholder} rows={7} value={practiceNote} />
               <div className="school-practice-checklist"><strong>{chrome.checkBeforeUsed}</strong>{activeLesson.checklist.map((item) => <label key={item}><input readOnly type="checkbox" checked={progress.usedLessonIds.includes(activeLesson.id)} />{item}</label>)}</div>
               <button className="filmverket-primary-action" disabled={practiceNote.trim().length < 20 || progress.usedLessonIds.includes(activeLesson.id)} onClick={() => markPracticeUsed(activeLesson.id)} type="button">{progress.usedLessonIds.includes(activeLesson.id) ? chrome.exerciseUsed : chrome.markExerciseUsed}</button>
             </section>
@@ -232,7 +227,7 @@ export function FilmSchoolScreenplayCourse({ navigate, onOpenAtlas, onOpenDirect
         </section>
 
         <section className={mastered ? "school-final-assignment is-unlocked" : "school-final-assignment"}>
-          <div><span className="filmverket-kicker">{chrome.finalAssignment}</span><h2>Fra analyse til regibeslutning</h2><p>Planlegg én scene der synsvinkel, mål, hindring, vendepunkt, undertekst og publikumsinformasjon virker sammen. Oppgaven åpnes i Film Director med fem konkrete leveransefelt.</p></div>
+          <div><span className="filmverket-kicker">{chrome.finalAssignment}</span><h2>{surface.finalTitle}</h2><p>{surface.finalDescription}</p></div>
           <aside>
             <label><span>{chrome.selectReferenceFilm}</span><select disabled={!mastered} onChange={(event: ChangeEvent<HTMLSelectElement>) => setAssignmentFilmId(event.target.value)} value={assignmentFilmId}>{lessonExamples.map((scenario) => <option key={scenario.id} value={scenario.id}>{scenario.film.year} · {scenario.film.title}</option>)}</select></label>
             <button className="filmverket-primary-action" disabled={!mastered || !assignmentFilmId} onClick={startDirectorAssignment} type="button">{mastered ? chrome.startFinalAssignment : chrome.masterFirst(remainingModules)}</button>
@@ -240,12 +235,12 @@ export function FilmSchoolScreenplayCourse({ navigate, onOpenAtlas, onOpenDirect
         </section>
 
         <section className="school-course-roadmap">
-          <header><span className="filmverket-kicker">{chrome.foundation}</span><h2>Neste kurs</h2></header>
-          <div>{futureCourses.map(([number, title, description]) => <article key={number}><span>{number}</span><div><strong>{title}</strong><p>{description}</p></div><small>Kommer senere</small></article>)}</div>
+          <header><span className="filmverket-kicker">{chrome.foundation}</span><h2>{surface.roadmapTitle}</h2></header>
+          <div>{surface.roadmapEntries.map((entry) => <article key={entry.number}><span>{entry.number}</span><div><strong>{entry.title}</strong><p>{entry.description}</p></div><small>{surface.roadmapStatus}</small></article>)}</div>
         </section>
       </main>
 
-      <footer className="filmverket-footer"><span>{chrome.productBrand} · Film School</span><span>Begrep → filmeksempel → quiz → praksis → Film Director</span></footer>
+      <footer className="filmverket-footer"><span>{chrome.productBrand} · Film School</span><span>{surface.footerFlow}</span></footer>
     </div>
   );
 }
