@@ -1,4 +1,4 @@
-import type { FilmWorkLanguage } from "./filmWorkLanguage";
+import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 
 export type FilmSchoolCourseChrome = {
   readonly productBrand: string;
