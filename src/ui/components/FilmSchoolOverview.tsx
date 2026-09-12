@@ -63,7 +63,7 @@ type OverviewCopy = {
   readonly progressSummary: (masteredCourses: number, totalCourses: number, completedMilestones: number, totalMilestones: number) => string;
   readonly examSubmitted: string;
   readonly mastered: string;
-  readonly lessonsMastered: (masteredLessons: number, totalLessons: number) => string;
+  readonly modulesMastered: (masteredModules: number, totalModules: number) => string;
   readonly reopenCourse: string;
   readonly continueCourse: string;
   readonly finalExam: string;
@@ -91,13 +91,13 @@ const overviewCopy: Record<FilmWorkLanguage, OverviewCopy> = {
     foundation: "Directing foundations",
     heroStart: "From scene analysis to a",
     heroEmphasis: "complete cinematic plan",
-    heroDescription: "Five chapters follow the same scene through screenplay, performance, camera, lighting and design, editing, sound and delivery. The progress below comes directly from your course work.",
+    heroDescription: "Five courses follow the same scene through screenplay, performance, camera, lighting and design, editing, sound and delivery. Each course contains five modules, for 25 modules in total. The progress below comes directly from your course work.",
     overallProgress: "Overall progress",
     progressAria: (percent) => `${percent}% complete`,
     progressSummary: (masteredCourses, totalCourses, completedMilestones, totalMilestones) => `${masteredCourses} of ${totalCourses} courses mastered · ${completedMilestones} of ${totalMilestones} milestones`,
     examSubmitted: "Directing exam submitted",
     mastered: "Mastered",
-    lessonsMastered: (masteredLessons, totalLessons) => `${masteredLessons} of ${totalLessons} lessons mastered`,
+    modulesMastered: (masteredModules, totalModules) => `${masteredModules} of ${totalModules} modules mastered`,
     reopenCourse: "Open course again →",
     continueCourse: "Continue course →",
     finalExam: "Final directing exam",
@@ -123,13 +123,13 @@ const overviewCopy: Record<FilmWorkLanguage, OverviewCopy> = {
     foundation: "Regi grunnkurs",
     heroStart: "Fra sceneanalyse til",
     heroEmphasis: "ferdig filmisk plan",
-    heroDescription: "Fem kapitler følger den samme scenen gjennom manus, skuespillerarbeid, kamera, lys og design, klipp, lyd og levering. Progresjonen nedenfor kommer direkte fra kursarbeidet ditt.",
+    heroDescription: "Fem kurs følger den samme scenen gjennom manus, skuespillerarbeid, kamera, lys og design, klipp, lyd og levering. Hvert kurs har fem moduler, totalt 25 moduler. Progresjonen nedenfor kommer direkte fra kursarbeidet ditt.",
     overallProgress: "Samlet progresjon",
     progressAria: (percent) => `${percent}% fullført`,
     progressSummary: (masteredCourses, totalCourses, completedMilestones, totalMilestones) => `${masteredCourses} av ${totalCourses} kurs mestret · ${completedMilestones} av ${totalMilestones} milepæler`,
     examSubmitted: "Regieksamen levert",
     mastered: "Mestret",
-    lessonsMastered: (masteredLessons, totalLessons) => `${masteredLessons} av ${totalLessons} leksjoner mestret`,
+    modulesMastered: (masteredModules, totalModules) => `${masteredModules} av ${totalModules} moduler mestret`,
     reopenCourse: "Åpne kurset igjen →",
     continueCourse: "Fortsett kurset →",
     finalExam: "Avsluttende regieksamen",
@@ -155,13 +155,13 @@ const overviewCopy: Record<FilmWorkLanguage, OverviewCopy> = {
     foundation: "Fondamentaux de la réalisation",
     heroStart: "De l’analyse de scène à un",
     heroEmphasis: "plan cinématographique complet",
-    heroDescription: "Cinq chapitres suivent la même scène à travers le scénario, le jeu, la caméra, la lumière et les décors, le montage, le son et la livraison. La progression ci-dessous provient directement de votre travail de cours.",
+    heroDescription: "Cinq cours suivent la même scène à travers le scénario, le jeu, la caméra, la lumière et les décors, le montage, le son et la livraison. Chaque cours comprend cinq modules, soit 25 modules au total. La progression ci-dessous provient directement de votre travail de cours.",
     overallProgress: "Progression globale",
     progressAria: (percent) => `${percent}% terminé`,
     progressSummary: (masteredCourses, totalCourses, completedMilestones, totalMilestones) => `${masteredCourses} cours maîtrisés sur ${totalCourses} · ${completedMilestones} jalons sur ${totalMilestones}`,
     examSubmitted: "Examen de réalisation remis",
     mastered: "Maîtrisé",
-    lessonsMastered: (masteredLessons, totalLessons) => `${masteredLessons} leçons maîtrisées sur ${totalLessons}`,
+    modulesMastered: (masteredModules, totalModules) => `${masteredModules} modules maîtrisés sur ${totalModules}`,
     reopenCourse: "Rouvrir le cours →",
     continueCourse: "Continuer le cours →",
     finalExam: "Examen final de réalisation",
@@ -187,13 +187,13 @@ const overviewCopy: Record<FilmWorkLanguage, OverviewCopy> = {
     foundation: "Fundamentos de realização",
     heroStart: "Da análise de cena a um",
     heroEmphasis: "plano cinematográfico completo",
-    heroDescription: "Cinco capítulos acompanham a mesma cena através do argumento, interpretação, câmara, luz e design, montagem, som e entrega. O progresso abaixo vem diretamente do seu trabalho no curso.",
+    heroDescription: "Cinco cursos acompanham a mesma cena através do argumento, interpretação, câmara, luz e design, montagem, som e entrega. Cada curso contém cinco módulos, num total de 25 módulos. O progresso abaixo vem diretamente do seu trabalho no curso.",
     overallProgress: "Progresso geral",
     progressAria: (percent) => `${percent}% concluído`,
     progressSummary: (masteredCourses, totalCourses, completedMilestones, totalMilestones) => `${masteredCourses} de ${totalCourses} cursos dominados · ${completedMilestones} de ${totalMilestones} marcos`,
     examSubmitted: "Exame de realização entregue",
     mastered: "Dominado",
-    lessonsMastered: (masteredLessons, totalLessons) => `${masteredLessons} de ${totalLessons} lições dominadas`,
+    modulesMastered: (masteredModules, totalModules) => `${masteredModules} de ${totalModules} módulos dominados`,
     reopenCourse: "Abrir o curso novamente →",
     continueCourse: "Continuar o curso →",
     finalExam: "Exame final de realização",
@@ -394,7 +394,7 @@ export function FilmSchoolOverview({ navigate, onOpenDirector, onSelectCourse, s
                 <p>{display.summary}</p>
                 <div className="school-overview-course-progress"><span style={{ width: `${courseSummary?.completionPercent ?? 0}%` }} /></div>
                 <footer>
-                  <span>{copy.lessonsMastered(courseSummary?.masteredLessons ?? 0, courseSummary?.totalLessons ?? 5)}</span>
+                  <span>{copy.modulesMastered(courseSummary?.masteredLessons ?? 0, courseSummary?.totalLessons ?? 5)}</span>
                   <button onClick={() => onSelectCourse(course.id as FilmSchoolGroundCourseId)} type="button">{complete ? copy.reopenCourse : copy.continueCourse}</button>
                 </footer>
               </article>

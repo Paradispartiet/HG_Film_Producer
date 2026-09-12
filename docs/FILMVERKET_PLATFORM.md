@@ -54,9 +54,9 @@ The current directing ground course is **5 × 5**:
 4. Lighting, colour, and production design
 5. Editing, sound, and finishing
 
-Each chapter has five lessons. The complete ground course therefore contains **5 courses, 25 lessons, and 75 progression milestones** (`seen`, `understood`, `used`). The overview and final directing exam sit above those five chapters; they are not a sixth subject course.
+Each course has five modules. The complete ground course therefore contains **5 courses, 25 modules, and 75 progression milestones** (`seen`, `understood`, `used`). The overview and final directing exam sit above those five courses; they are not a sixth subject course.
 
-Course IDs, lesson IDs, progress storage keys, Director assignment contracts, and the final capstone contract are stable data contracts and must not be changed merely to localize player-facing copy.
+Course IDs, internal lesson IDs, progress storage keys, Director assignment contracts, and the final capstone contract are stable data contracts and must not be changed merely to localize player-facing copy. `Module` is the player-facing ground-course term while existing internal lesson identities remain unchanged.
 
 ## Current user flow
 
@@ -65,7 +65,7 @@ The original title screen is now the FilmWork / Filmverket front page. The conne
 - Film Producer opens Production Cases or Studio Career.
 - Film Atlas opens the searchable film library and a full film analysis page.
 - Film Director opens a selected film as a directing project and craft workspace.
-- Film School opens the five-part, 25-lesson directing ground course plus its overview and final exam.
+- Film School opens one overview/directing-exam entrance plus five core courses. Each course has five modules, for a **5 × 5 / 25-module** ground course in total.
 - Film History opens a decade-based timeline and links every work into Film Atlas.
 - Craft Library opens as a searchable film-science drawer and can filter its technique set through any film in the catalogue.
 - Research Control Room opens as the editorial status surface for the complete catalogue.

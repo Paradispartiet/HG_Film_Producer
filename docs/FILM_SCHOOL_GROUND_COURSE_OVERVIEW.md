@@ -1,6 +1,6 @@
 # Film School: samlet regi-grunnkurs og regieksamen
 
-Film School har fem komplette kurskapitler. Denne oversikten gjør dem til ett sammenhengende grunnkurs og viser faktisk progresjon fra de eksisterende kurslagringene.
+Film School har fem komplette kurs. Denne oversikten gjør dem til ett sammenhengende grunnkurs og viser faktisk progresjon fra de eksisterende kurslagringene.
 
 ## Kursløpet
 
@@ -10,30 +10,32 @@ Film School har fem komplette kurskapitler. Denne oversikten gjør dem til ett s
 4. Lys, farge og produksjonsdesign
 5. Klipp, lyd og ferdigstilling
 
-Hvert kapittel har fem leksjoner. Hver leksjon har tre registrerte milepæler:
+Hvert kurs har fem moduler. Hver modul har tre registrerte milepæler:
 
 - sett
 - forstått
 - brukt
 
-Det samlede grunnkurset består derfor av:
+Det samlede grunnkurset er dermed en 5×5-struktur og består av:
 
 - 5 kurs
-- 25 leksjoner
+- 25 moduler
 - 75 milepæler
+
+De eksisterende interne leksjons-ID-ene og lagringsnøklene beholdes uendret; `modul` er den brukerrettede betegnelsen i grunnkurset.
 
 Oversikten lager ikke et nytt poeng-, badge- eller belønningssystem. Den summerer bare progresjonen som allerede finnes i de fem kursene.
 
 ## Film School-forsiden
 
-Kursvelgeren har inngangen `00 Oversikt og regieksamen`.
+Kursvelgeren har inngangen `00 Oversikt og regieksamen`. Dette er en oversikts- og eksamensinngang, ikke et sjette kurs.
 
 Forsiden viser:
 
 - samlet progresjon i prosent
 - antall fullførte milepæler
 - antall mestrede kurs
-- progresjon og leksjonsstatus for hvert enkelt kapittel
+- progresjon og modulstatus for hvert enkelt kurs
 - direkte åpning av riktig kurs
 - status for den avsluttende regieksamen
 - levert film, scene og innleveringsdato når eksamen er fullført
@@ -115,7 +117,7 @@ Den leverte eksamen lagres i:
 
 Selve Director-prosjektet fortsetter å bruke den eksisterende filmbaserte lagringsnøkkelen. Innleveringsposten kopierer ikke hele prosjektet, men peker på film, scene og prosjektets `updatedAt` ved innlevering.
 
-Director-oppdragskortet velger fortsatt den nyeste oppgaven som matcher aktiv film, men støtter både de fem kapitteloppgavene og den samlede regieksamen.
+Director-oppdragskortet velger fortsatt den nyeste oppgaven som matcher aktiv film, men støtter både de fem kursoppgavene og den samlede regieksamen.
 
 ## Avgrensning
 
