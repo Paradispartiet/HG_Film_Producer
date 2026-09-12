@@ -87,8 +87,8 @@ export function LandingScreen(props: LandingScreenProps) {
     }
     return (
       <>
-        <FilmSchoolScreenplayCourse {...sharedProps} />
         <FilmSchoolCourseNavigation activeCourseId="screenplay" onSelectCourse={selectSchoolCourse} />
+        <FilmSchoolScreenplayCourse {...sharedProps} />
       </>
     );
   }
