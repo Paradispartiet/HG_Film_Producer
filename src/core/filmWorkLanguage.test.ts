@@ -29,15 +29,15 @@ test("language coercion normalizes supported English, Norwegian, French and Port
   assert.equal(coerceFilmWorkLanguage("de-DE"), undefined);
 });
 
-test("stored preference wins and browser language is only a fallback", () => {
+test("stored preference wins and English is the default regardless of browser locale", () => {
   assert.equal(resolveFilmWorkLanguage("en", "nb-NO"), "en");
   assert.equal(resolveFilmWorkLanguage("nb", "en-US"), "nb");
   assert.equal(resolveFilmWorkLanguage("fr", "en-US"), "fr");
   assert.equal(resolveFilmWorkLanguage("pt", "fr-FR"), "pt");
-  assert.equal(resolveFilmWorkLanguage(undefined, "nb-NO"), "nb");
+  assert.equal(resolveFilmWorkLanguage(undefined, "nb-NO"), "en");
   assert.equal(resolveFilmWorkLanguage(undefined, "en-US"), "en");
-  assert.equal(resolveFilmWorkLanguage(undefined, "fr-FR"), "fr");
-  assert.equal(resolveFilmWorkLanguage(undefined, "pt-BR"), "pt");
+  assert.equal(resolveFilmWorkLanguage(undefined, "fr-FR"), "en");
+  assert.equal(resolveFilmWorkLanguage(undefined, "pt-BR"), "en");
   assert.equal(resolveFilmWorkLanguage(undefined, "de-DE"), "en");
 });
 

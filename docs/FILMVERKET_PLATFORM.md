@@ -1,19 +1,23 @@
-# Filmverket platform architecture
+# FilmWork / Filmverket platform architecture
 
-Filmverket is the umbrella platform. Film Producer remains the production game, while the same film catalogue and craft knowledge are exposed through several connected entrances.
+**FilmWork** is the English umbrella name for the complete film suite. **Filmverket** is the Norwegian umbrella name. The umbrella name does not replace the distinct product names **Film Producer**, **Film Atlas**, **Film Director**, **Film School**, or **Film History**.
+
+English is the default interface language. Norwegian, French, and Portuguese are explicit user-selectable alternatives. A stored language choice may override the default; browser locale alone must not silently change a new user's language.
+
+Internal `Filmverket*` TypeScript identifiers, CSS classes, storage contracts, and route types may remain unchanged unless a separate technical rename is explicitly required.
 
 ## Product names
 
-- **Filmverket** — the complete platform and public front page.
+- **FilmWork / Filmverket** — the complete platform and public front page.
 - **Film Producer** — the game covering the whole film project: development, staffing, production, post-production, release, and studio consequences.
 - **Film Atlas** — the film-analysis and film-science platform.
-- **Director Lab** — a focused directing workspace that turns formal analysis into practical artistic briefs.
+- **Film Director** — the focused directing workspace that turns formal analysis into practical artistic briefs.
 - **Film School** — structured learning paths generated from the shared film knowledge.
 - **Film History** — the chronological entrance into the catalogue.
 - **Craft Library** — the shared dictionary of observable film techniques, analytical questions, and practical production uses.
 - **Research Control Room** — the editorial overview of verified, seeded, and unfinished film research.
 
-Film Producer is not renamed Film Director because the game controls more than directing. Director Lab is instead the artistic craft layer inside the wider platform.
+Film Producer is not renamed Film Director because the game controls more than directing. Film Director is the artistic craft layer inside the wider platform.
 
 ## Shared knowledge model
 
@@ -34,42 +38,56 @@ The platform intentionally reuses existing production-case data instead of creat
 5. `createFilmResearchQueue()` turns the shared catalogue into an explicit editorial work queue.
 6. Film Producer uses the film knowledge as playable Production Cases.
 7. Film Atlas renders the same knowledge as analysis.
-8. Director Lab isolates one craft lens and converts the stored principles into a directing brief.
+8. Film Director isolates craft decisions and converts stored principles into directing briefs and projects.
 9. Film School organizes the same material into courses.
 10. Film History orders the shared catalogue chronologically and links back to analysis.
 11. Craft Library allows direct browsing or selection of a film to inspect the techniques detected in its current analysis.
 12. Research Control Room exposes completion, provisional material, and research priorities without changing the underlying film records.
 
+## Film School ground-course contract
+
+The current directing ground course is **5 × 5**:
+
+1. Screenplay and scene analysis
+2. Performance direction and blocking
+3. Image, camera, and optics
+4. Lighting, colour, and production design
+5. Editing, sound, and finishing
+
+Each chapter has five lessons. The complete ground course therefore contains **5 courses, 25 lessons, and 75 progression milestones** (`seen`, `understood`, `used`). The overview and final directing exam sit above those five chapters; they are not a sixth subject course.
+
+Course IDs, lesson IDs, progress storage keys, Director assignment contracts, and the final capstone contract are stable data contracts and must not be changed merely to localize player-facing copy.
+
 ## Current user flow
 
-The original title screen is now the Filmverket front page. The connected entrances are available without changing the existing production simulation:
+The original title screen is now the FilmWork / Filmverket front page. The connected entrances are available without changing the existing production simulation:
 
 - Film Producer opens Production Cases or Studio Career.
 - Film Atlas opens the searchable film library and a full film analysis page.
-- Director Lab opens a selected film through screenplay, image, editing, or sound.
-- Film School opens six initial core courses with linked film examples.
+- Film Director opens a selected film as a directing project and craft workspace.
+- Film School opens the five-part, 25-lesson directing ground course plus its overview and final exam.
 - Film History opens a decade-based timeline and links every work into Film Atlas.
-- Craft Library opens from Filmverket as a searchable film-science drawer and can filter its technique set through any film in the catalogue.
+- Craft Library opens as a searchable film-science drawer and can filter its technique set through any film in the catalogue.
 - Research Control Room opens as the editorial status surface for the complete catalogue.
 
-Returning home from the game returns to Filmverket.
+Returning home from the game returns to the suite front page, rendered as FilmWork in English/French/Portuguese and Filmverket in Norwegian.
 
 ## Canonical hash routes
 
-Filmverket uses hash routing so direct links work on GitHub Pages without server-side rewrite rules. The browser history, refresh, copied links, and back/forward navigation all resolve through the same route model.
+The suite uses hash routing so direct links work on GitHub Pages without server-side rewrite rules. The browser history, refresh, copied links, and back/forward navigation all resolve through the same route model.
 
-- `#/` — Filmverket front page
+- `#/` — suite front page
 - `#/producer` — Film Producer gateway
 - `#/atlas` — Film Atlas catalogue
 - `#/atlas/film/<title-year-slug>` — one permanent Film Atlas page
-- `#/director/<title-year-slug>` — the same film in Director Lab
+- `#/director/<title-year-slug>` — the same film in Film Director
 - `#/school` — Film School
 - `#/history` — Film History
 - `#/research` — Research Control Room
 
 Film slugs are generated deterministically from the stored title and year. For example, `Mulholland Drive` from 2001 becomes `mulholland-drive-2001`. Unknown film slugs show an explicit not-found state rather than silently opening the wrong film.
 
-Research Control Room links every queue item directly to both its Film Atlas route and its Director Lab route. Film Atlas also provides chronological previous/next navigation and a copy-link action for the current film.
+Research Control Room links every queue item directly to both its Film Atlas route and its Film Director route. Film Atlas also provides chronological previous/next navigation and a copy-link action for the current film.
 
 ## Craft glossary rules
 
@@ -100,7 +118,7 @@ Film-specific historical movements, technologies, national cinemas, influences, 
 
 ## Continuous verification
 
-The existing GitHub Pages workflow is the canonical repository verifier. Pull requests and pushes to `main` now use:
+The existing GitHub Pages workflow is the canonical repository verifier. Pull requests and pushes to `main` use:
 
 1. Node 20
 2. `npm ci`
@@ -108,7 +126,7 @@ The existing GitHub Pages workflow is the canonical repository verifier. Pull re
 4. Pages artifact inspection
 5. deployment only after successful verification on non-PR pushes
 
-The workflow cancels obsolete runs for older commits on the same PR so the visible check always represents the latest branch state.
+The workflow cancels obsolete runs for older commits on the same PR so the visible check represents the latest branch state.
 
 ## Next data layers
 
