@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 
+import { FILM_SCHOOL_COURSE_CHROME } from "../../core/filmSchoolCourseChrome";
 import {
   PERFORMANCE_COURSE_LESSONS,
   PERFORMANCE_COURSE_PROGRESS_STORAGE_KEY,
@@ -13,12 +14,12 @@ import {
   isPerformanceCourseMastered,
   isPerformanceCourseQuizAnswerCorrect,
   type PerformanceCourseLesson,
-  type PerformanceCourseMasteryStage,
   type PerformanceCourseProgress,
 } from "../../core/filmSchoolPerformanceCourse";
 import { createFilmSlug, type FilmverketRoute, type FilmverketSection } from "../../core/filmverketRoutes";
 import type { FilmScenarioSeed } from "../data/filmScenarios";
 import { resolveScenarioProductionBrief } from "../data/scenarioProductionBriefs";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { FilmSchoolCourseNavigation, type FilmSchoolCourseId } from "./FilmSchoolCourseNavigation";
 
 const navItems: readonly { readonly id: FilmverketSection; readonly label: string }[] = [
@@ -30,14 +31,6 @@ const navItems: readonly { readonly id: FilmverketSection; readonly label: strin
   { id: "history", label: "Film History" },
   { id: "research", label: "Research" },
 ];
-
-const stageLabels: Record<PerformanceCourseMasteryStage, string> = {
-  not_started: "Ikke startet",
-  seen: "Sett",
-  understood: "Forstått",
-  used: "Brukt",
-  mastered: "Mestret",
-};
 
 const futureCourses = [
   ["03", "Bilde, kamera og optikk", "Utsnitt, komposisjon, perspektiv, brennvidde, bevegelse og fokus."],
@@ -60,6 +53,9 @@ export function FilmSchoolPerformanceCourse({
   onSelectCourse,
   scenarios,
 }: FilmSchoolPerformanceCourseProps) {
+  const [language] = useFilmWorkLanguage();
+  const chrome = FILM_SCHOOL_COURSE_CHROME[language];
+  const stageLabels = chrome.stage;
   const [progress, setProgress] = useState<PerformanceCourseProgress>(() => loadProgress());
   const [quizAnswers, setQuizAnswers] = useState<Readonly<Record<string, number>>>({});
   const lessonExamples = useMemo(
@@ -79,8 +75,8 @@ export function FilmSchoolPerformanceCourse({
     : [];
 
   useEffect(() => {
-    document.title = "Skuespillerregi og blocking · Film School · Filmverket";
-  }, []);
+    document.title = `Film School · ${chrome.productBrand}`;
+  }, [chrome.productBrand]);
 
   useEffect(() => {
     try {
@@ -139,7 +135,7 @@ export function FilmSchoolPerformanceCourse({
   }
 
   function resetCourse() {
-    if (!window.confirm("Nullstill all progresjon og alle notater i dette kurset?")) return;
+    if (!window.confirm(chrome.resetConfirm)) return;
     setProgress(createBlankPerformanceCourseProgress());
     setQuizAnswers({});
   }
@@ -167,100 +163,101 @@ export function FilmSchoolPerformanceCourse({
   const practiceNote = progress.notesByLessonId[activeLesson.id] ?? "";
   const stage = getPerformanceLessonMasteryStage(progress, activeLesson.id);
   const terms = getPerformanceCourseLessonTerms(activeLesson);
+  const remainingModules = PERFORMANCE_COURSE_LESSONS.length - masteredCount;
 
   return (
     <div className="filmverket-shell school-course-shell school-performance-course-shell">
       <header className="filmverket-header">
-        <button className="filmverket-brand" onClick={() => navigate({ section: "home" })} type="button"><span>FV</span><strong>Filmverket</strong></button>
-        <nav aria-label="Filmverket sections">{navItems.map((item) => <button className={item.id === "school" ? "filmverket-nav-button filmverket-nav-button--active" : "filmverket-nav-button"} key={item.id} onClick={() => navigateSection(item.id)} type="button">{item.label}</button>)}</nav>
+        <button className="filmverket-brand" onClick={() => navigate({ section: "home" })} type="button"><span>{chrome.productMonogram}</span><strong>{chrome.productBrand}</strong></button>
+        <nav aria-label={chrome.navAria}>{navItems.map((item) => <button className={item.id === "school" ? "filmverket-nav-button filmverket-nav-button--active" : "filmverket-nav-button"} key={item.id} onClick={() => navigateSection(item.id)} type="button">{item.label}</button>)}</nav>
       </header>
 
       <main className="film-school-course-page">
-        <FilmSchoolCourseNavigation activeCourseId="performance" onSelectCourse={onSelectCourse} />
+        <FilmSchoolCourseNavigation activeCourseId="performance" language={language} onSelectCourse={onSelectCourse} />
 
         <section className="school-course-hero school-course-hero--performance">
           <div>
-            <span className="filmverket-kicker">Film School · Regi grunnkurs · Kapittel 2</span>
+            <span className="filmverket-kicker">Film School · {chrome.foundation} · 2/5</span>
             <h1>Skuespillerregi og <em>blocking</em></h1>
             <p>Oversett sceneanalyse til spillbar handling, organiser kroppene i rommet og gi presise justeringer mellom tagninger.</p>
           </div>
           <aside>
-            <span>Kursprogresjon</span>
+            <span>{chrome.courseProgress}</span>
             <strong>{completionPercent}<small>%</small></strong>
             <div className="school-course-progress" aria-label={`${completionPercent}% complete`}><span style={{ width: `${completionPercent}%` }} /></div>
-            <p>{masteredCount} av {PERFORMANCE_COURSE_LESSONS.length} leksjoner mestret</p>
+            <p>{masteredCount} / {PERFORMANCE_COURSE_LESSONS.length} {chrome.modules}</p>
           </aside>
         </section>
 
         <section className="school-course-summary">
-          <div><strong>{PERFORMANCE_COURSE_LESSONS.length}</strong><span>leksjoner</span></div>
-          <div><strong>{new Set(PERFORMANCE_COURSE_LESSONS.flatMap((lesson) => lesson.termIds)).size}</strong><span>fagbegreper</span></div>
-          <div><strong>{PERFORMANCE_COURSE_LESSONS.length}</strong><span>filmeksempler</span></div>
-          <div><strong>1</strong><span>avsluttende regioppgave</span></div>
-          <button onClick={resetCourse} type="button">Nullstill kurs</button>
+          <div><strong>{PERFORMANCE_COURSE_LESSONS.length}</strong><span>{chrome.modules}</span></div>
+          <div><strong>{new Set(PERFORMANCE_COURSE_LESSONS.flatMap((lesson) => lesson.termIds)).size}</strong><span>{chrome.terms}</span></div>
+          <div><strong>{PERFORMANCE_COURSE_LESSONS.length}</strong><span>{chrome.filmExamples}</span></div>
+          <div><strong>1</strong><span>{chrome.finalAssignment}</span></div>
+          <button onClick={resetCourse} type="button">{chrome.resetCourse}</button>
         </section>
 
         <section className="school-course-workspace">
           <aside className="school-lesson-rail">
-            <header><span>Kursløp</span><strong>Sett → forstått → brukt → mestret</strong></header>
+            <header><span>{chrome.coursePath}</span><strong>{stageLabels.seen} → {stageLabels.understood} → {stageLabels.used} → {stageLabels.mastered}</strong></header>
             <div>{PERFORMANCE_COURSE_LESSONS.map((lesson) => { const lessonStage = getPerformanceLessonMasteryStage(progress, lesson.id); return <button className={lesson.id === activeLesson.id ? "school-lesson-button is-active" : "school-lesson-button"} key={lesson.id} onClick={() => selectLesson(lesson.id)} type="button"><span>{lesson.number}</span><div><strong>{lesson.title}</strong><small className={`stage-${lessonStage}`}>{stageLabels[lessonStage]}</small></div></button>; })}</div>
           </aside>
 
           <article className="school-active-lesson" id="school-active-performance-lesson">
             <header className="school-lesson-heading">
-              <div><span>Leksjon {activeLesson.number} · {stageLabels[stage]}</span><h2>{activeLesson.title}</h2><p>{activeLesson.summary}</p></div>
-              <strong>{stage === "mastered" ? "✓ Mestret" : stageLabels[stage]}</strong>
+              <div><span>{chrome.module} {activeLesson.number} · {stageLabels[stage]}</span><h2>{activeLesson.title}</h2><p>{activeLesson.summary}</p></div>
+              <strong>{stage === "mastered" ? `✓ ${stageLabels.mastered}` : stageLabels[stage]}</strong>
             </header>
 
-            <section className="school-principle-card"><span className="filmverket-card-kicker">Kjerneprinsipp</span><p>{activeLesson.principle}</p></section>
+            <section className="school-principle-card"><span className="filmverket-card-kicker">{chrome.corePrinciple}</span><p>{activeLesson.principle}</p></section>
 
             <section className="school-term-section">
-              <header><span className="filmverket-card-kicker">Fagterminologi</span><h3>Begrepene du må kunne</h3></header>
-              <div className="school-term-grid">{terms.map((term) => <article key={term.id}><header><div><strong>{term.term}</strong><span>{term.norwegian}</span></div><small>{term.level === "foundation" ? "Grunnbegrep" : term.level === "intermediate" ? "Videregående" : "Avansert"}</small></header><p>{term.definition}</p><details><summary>Regissørens bruk</summary><p>{term.directorUse}</p><em>{term.example}</em></details></article>)}</div>
+              <header><span className="filmverket-card-kicker">{chrome.terminology}</span><h3>{chrome.termsYouNeed}</h3></header>
+              <div className="school-term-grid">{terms.map((term) => <article key={term.id}><header><div><strong>{term.term}</strong><span>{term.norwegian}</span></div><small>{term.level === "foundation" ? chrome.foundationLevel : term.level === "intermediate" ? chrome.intermediateLevel : chrome.advancedLevel}</small></header><p>{term.definition}</p><details><summary>{chrome.directorUse}</summary><p>{term.directorUse}</p><em>{term.example}</em></details></article>)}</div>
             </section>
 
             <section className="school-film-example">
-              <header><div><span className="filmverket-card-kicker">Se begrepene i en film</span><h3>{activeScenario ? `${activeScenario.film.year} · ${activeScenario.film.title}` : `${activeLesson.film.year} · ${activeLesson.film.title}`}</h3></div>{activeScenario ? <button onClick={() => onOpenAtlas(activeScenario)} type="button">Åpne i Film Atlas →</button> : null}</header>
+              <header><div><span className="filmverket-card-kicker">{chrome.seeInFilm}</span><h3>{activeScenario ? `${activeScenario.film.year} · ${activeScenario.film.title}` : `${activeLesson.film.year} · ${activeLesson.film.title}`}</h3></div>{activeScenario ? <button onClick={() => onOpenAtlas(activeScenario)} type="button">{chrome.openInAtlas}</button> : null}</header>
               <p className="school-film-question">{activeLesson.film.analysisQuestion}</p>
-              {exampleInsights.length > 0 ? <ul>{exampleInsights.map((target) => <li key={target}>{target}</li>)}</ul> : <p>Filmeksemplet finnes ikke i den aktive katalogen.</p>}
+              {exampleInsights.length > 0 ? <ul>{exampleInsights.map((target) => <li key={target}>{target}</li>)}</ul> : <p>{chrome.missingFilmExample}</p>}
             </section>
 
             <section className="school-quiz-card">
-              <header><span className="filmverket-card-kicker">Kontrollspørsmål</span><h3>{activeLesson.quiz.question}</h3></header>
+              <header><span className="filmverket-card-kicker">{chrome.quiz}</span><h3>{activeLesson.quiz.question}</h3></header>
               <div>{activeLesson.quiz.options.map((option, optionIndex) => { const selected = selectedAnswer === optionIndex; const correct = selected && isPerformanceCourseQuizAnswerCorrect(activeLesson, optionIndex); return <button className={selected ? correct ? "is-selected is-correct" : "is-selected is-wrong" : ""} key={option} onClick={() => answerQuiz(activeLesson, optionIndex)} type="button"><span>{String.fromCharCode(65 + optionIndex)}</span>{option}</button>; })}</div>
-              {selectedAnswer !== undefined ? <p className={quizCorrect ? "school-quiz-feedback is-correct" : "school-quiz-feedback is-wrong"}>{quizCorrect ? "Riktig. " : "Ikke helt. "}{activeLesson.quiz.explanation}</p> : null}
+              {selectedAnswer !== undefined ? <p className={quizCorrect ? "school-quiz-feedback is-correct" : "school-quiz-feedback is-wrong"}>{quizCorrect ? chrome.correct : chrome.notQuite}{activeLesson.quiz.explanation}</p> : null}
             </section>
 
             <section className="school-practice-card">
-              <header><div><span className="filmverket-card-kicker">Bruk begrepene selv</span><h3>Miniøvelse</h3></div><span>{progress.usedLessonIds.includes(activeLesson.id) ? "✓ Brukt" : "Ikke gjennomført"}</span></header>
+              <header><div><span className="filmverket-card-kicker">{chrome.useItYourself}</span><h3>{chrome.miniExercise}</h3></div><span>{progress.usedLessonIds.includes(activeLesson.id) ? `✓ ${stageLabels.used}` : chrome.notCompleted}</span></header>
               <p>{activeLesson.practicePrompt}</p>
               <textarea onChange={(event) => updatePracticeNote(activeLesson.id, event.target.value)} placeholder="Skriv prøve-, blocking- eller justeringsnotatet ditt her …" rows={7} value={practiceNote} />
-              <div className="school-practice-checklist"><strong>Sjekk før du markerer brukt</strong>{activeLesson.checklist.map((item) => <label key={item}><input readOnly type="checkbox" checked={progress.usedLessonIds.includes(activeLesson.id)} />{item}</label>)}</div>
-              <button className="filmverket-primary-action" disabled={practiceNote.trim().length < 20 || progress.usedLessonIds.includes(activeLesson.id)} onClick={() => markPracticeUsed(activeLesson.id)} type="button">{progress.usedLessonIds.includes(activeLesson.id) ? "Øvelsen er brukt" : "Marker øvelsen som brukt"}</button>
+              <div className="school-practice-checklist"><strong>{chrome.checkBeforeUsed}</strong>{activeLesson.checklist.map((item) => <label key={item}><input readOnly type="checkbox" checked={progress.usedLessonIds.includes(activeLesson.id)} />{item}</label>)}</div>
+              <button className="filmverket-primary-action" disabled={practiceNote.trim().length < 20 || progress.usedLessonIds.includes(activeLesson.id)} onClick={() => markPracticeUsed(activeLesson.id)} type="button">{progress.usedLessonIds.includes(activeLesson.id) ? chrome.exerciseUsed : chrome.markExerciseUsed}</button>
             </section>
 
-            <nav className="school-lesson-navigation" aria-label="Course lesson navigation">
-              <button disabled={activeIndex <= 0} onClick={() => { const previous = PERFORMANCE_COURSE_LESSONS[activeIndex - 1]; if (previous) selectLesson(previous.id); }} type="button">← Forrige leksjon</button>
-              <button disabled={activeIndex >= PERFORMANCE_COURSE_LESSONS.length - 1} onClick={() => { const next = PERFORMANCE_COURSE_LESSONS[activeIndex + 1]; if (next) selectLesson(next.id); }} type="button">Neste leksjon →</button>
+            <nav className="school-lesson-navigation" aria-label={chrome.courseModuleNavAria}>
+              <button disabled={activeIndex <= 0} onClick={() => { const previous = PERFORMANCE_COURSE_LESSONS[activeIndex - 1]; if (previous) selectLesson(previous.id); }} type="button">{chrome.previousModule}</button>
+              <button disabled={activeIndex >= PERFORMANCE_COURSE_LESSONS.length - 1} onClick={() => { const next = PERFORMANCE_COURSE_LESSONS[activeIndex + 1]; if (next) selectLesson(next.id); }} type="button">{chrome.nextModule}</button>
             </nav>
           </article>
         </section>
 
         <section className={mastered ? "school-final-assignment is-unlocked" : "school-final-assignment"}>
-          <div><span className="filmverket-kicker">Avsluttende oppgave</span><h2>Fra prøve til ferdig tagning</h2><p>Planlegg én scene med tydelig mål, spillbar handling, blocking, kamerabehov og én konkret justering mellom tagninger. Oppgaven åpnes i Film Director med fem leveransefelt.</p></div>
+          <div><span className="filmverket-kicker">{chrome.finalAssignment}</span><h2>Fra prøve til ferdig tagning</h2><p>Planlegg én scene med tydelig mål, spillbar handling, blocking, kamerabehov og én konkret justering mellom tagninger. Oppgaven åpnes i Film Director med fem leveransefelt.</p></div>
           <aside>
-            <label><span>Velg referansefilm</span><select disabled={!mastered} onChange={(event: ChangeEvent<HTMLSelectElement>) => setAssignmentFilmId(event.target.value)} value={assignmentFilmId}>{lessonExamples.map((scenario) => <option key={scenario.id} value={scenario.id}>{scenario.film.year} · {scenario.film.title}</option>)}</select></label>
-            <button className="filmverket-primary-action" disabled={!mastered || !assignmentFilmId} onClick={startDirectorAssignment} type="button">{mastered ? "Start avsluttende oppgave i Film Director →" : `Mestre ${PERFORMANCE_COURSE_LESSONS.length - masteredCount} leksjon${PERFORMANCE_COURSE_LESSONS.length - masteredCount === 1 ? "" : "er"} først`}</button>
+            <label><span>{chrome.selectReferenceFilm}</span><select disabled={!mastered} onChange={(event: ChangeEvent<HTMLSelectElement>) => setAssignmentFilmId(event.target.value)} value={assignmentFilmId}>{lessonExamples.map((scenario) => <option key={scenario.id} value={scenario.id}>{scenario.film.year} · {scenario.film.title}</option>)}</select></label>
+            <button className="filmverket-primary-action" disabled={!mastered || !assignmentFilmId} onClick={startDirectorAssignment} type="button">{mastered ? chrome.startFinalAssignment : chrome.masterFirst(remainingModules)}</button>
           </aside>
         </section>
 
         <section className="school-course-roadmap">
-          <header><span className="filmverket-kicker">Regi grunnkurs</span><h2>Neste kapitler</h2></header>
+          <header><span className="filmverket-kicker">{chrome.foundation}</span><h2>Neste kurs</h2></header>
           <div>{futureCourses.map(([number, title, description]) => <article key={number}><span>{number}</span><div><strong>{title}</strong><p>{description}</p></div><small>Kommer senere</small></article>)}</div>
         </section>
       </main>
 
-      <footer className="filmverket-footer"><span>Filmverket · Film School</span><span>Handling → prøve → blocking → tagning → justering</span></footer>
+      <footer className="filmverket-footer"><span>{chrome.productBrand} · Film School</span><span>Handling → prøve → blocking → tagning → justering</span></footer>
     </div>
   );
 }

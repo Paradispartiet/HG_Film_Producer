@@ -44,11 +44,19 @@ const availableCourses = {
   ],
 } as const;
 
-const navigationCopy: Record<FilmWorkLanguage, { readonly ariaLabel: string; readonly foundation: string; readonly open: string; readonly openAction: string }> = {
-  en: { ariaLabel: "Film School courses", foundation: "Directing foundations", open: "Open", openAction: "Open →" },
-  nb: { ariaLabel: "Film School-kurs", foundation: "Regi grunnkurs", open: "Åpent", openAction: "Åpne →" },
-  fr: { ariaLabel: "Cours Film School", foundation: "Fondamentaux de la réalisation", open: "Ouvert", openAction: "Ouvrir →" },
-  pt: { ariaLabel: "Cursos do Film School", foundation: "Fundamentos de realização", open: "Aberto", openAction: "Abrir →" },
+type NavigationCopy = {
+  readonly ariaLabel: string;
+  readonly foundation: string;
+  readonly structure: string;
+  readonly open: string;
+  readonly openAction: string;
+};
+
+const navigationCopy: Record<FilmWorkLanguage, NavigationCopy> = {
+  en: { ariaLabel: "Film School ground-course navigation", foundation: "Directing foundations", structure: "5 courses × 5 modules", open: "Open", openAction: "Open →" },
+  nb: { ariaLabel: "Navigasjon for Film School-grunnkurset", foundation: "Regi grunnkurs", structure: "5 kurs × 5 moduler", open: "Åpent", openAction: "Åpne →" },
+  fr: { ariaLabel: "Navigation du cursus fondamental Film School", foundation: "Fondamentaux de la réalisation", structure: "5 cours × 5 modules", open: "Ouvert", openAction: "Ouvrir →" },
+  pt: { ariaLabel: "Navegação do curso fundamental Film School", foundation: "Fundamentos de realização", structure: "5 cursos × 5 módulos", open: "Aberto", openAction: "Abrir →" },
 };
 
 export function FilmSchoolCourseNavigation({ activeCourseId, language, onSelectCourse }: FilmSchoolCourseNavigationProps) {
@@ -57,7 +65,7 @@ export function FilmSchoolCourseNavigation({ activeCourseId, language, onSelectC
   const copy = navigationCopy[resolvedLanguage];
   return (
     <aside className="school-course-selector" aria-label={copy.ariaLabel}>
-      <header><span>Film School</span><strong>{copy.foundation}</strong></header>
+      <header><span>Film School · {copy.structure}</span><strong>{copy.foundation}</strong></header>
       <div>
         {availableCourses[resolvedLanguage].map((course) => (
           <button
