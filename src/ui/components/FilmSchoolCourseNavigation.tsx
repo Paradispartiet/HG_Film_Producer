@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+
+import { FILM_SCHOOL_COURSE_CHROME } from "../../core/filmSchoolCourseChrome";
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
@@ -67,10 +70,24 @@ const languageOptions: readonly { readonly id: FilmWorkLanguage; readonly label:
   { id: "pt", label: "PT", ariaLabel: "Usar português" },
 ];
 
+const headerSectionOrder = ["home", "producer", "atlas", "director", "school", "history", "research"] as const;
+
 export function FilmSchoolCourseNavigation({ activeCourseId, language, onSelectCourse }: FilmSchoolCourseNavigationProps) {
   const [storedLanguage, setStoredLanguage] = useFilmWorkLanguage();
   const resolvedLanguage = language ?? storedLanguage;
   const copy = navigationCopy[resolvedLanguage];
+  const chrome = FILM_SCHOOL_COURSE_CHROME[resolvedLanguage];
+
+  useEffect(() => {
+    const headerNav = document.querySelector<HTMLElement>(".filmverket-shell > .filmverket-header nav");
+    if (!headerNav) return;
+    const buttons = Array.from(headerNav.querySelectorAll<HTMLButtonElement>(":scope > .filmverket-nav-button"));
+    headerSectionOrder.forEach((section, index) => {
+      const button = buttons[index];
+      if (button) button.textContent = chrome.sectionLabels[section];
+    });
+  }, [chrome.sectionLabels]);
+
   return (
     <aside className="school-course-selector" aria-label={copy.ariaLabel}>
       <header><span>Film School · {copy.structure}</span><strong>{copy.foundation}</strong></header>
