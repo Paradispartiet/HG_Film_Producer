@@ -18,6 +18,7 @@ import {
   type CameraCourseLesson,
   type CameraCourseProgress,
 } from "../../core/filmSchoolCameraCourse";
+import { getDirectorTermDisplay } from "../../core/directorDisplay";
 import { createFilmSlug, type FilmverketRoute, type FilmverketSection } from "../../core/filmverketRoutes";
 import type { FilmScenarioSeed } from "../data/filmScenarios";
 import { resolveScenarioProductionBrief } from "../data/scenarioProductionBriefs";
@@ -209,7 +210,10 @@ export function FilmSchoolCameraCourse({
 
             <section className="school-term-section">
               <header><span className="filmverket-card-kicker">{chrome.terminology}</span><h3>{chrome.termsYouNeed}</h3></header>
-              <div className="school-term-grid">{terms.map((term) => <article key={term.id}><header><div><strong>{term.term}</strong><span>{term.norwegian}</span></div><small>{term.level === "foundation" ? chrome.foundationLevel : term.level === "intermediate" ? chrome.intermediateLevel : chrome.advancedLevel}</small></header><p>{term.definition}</p><details><summary>{chrome.directorUse}</summary><p>{term.directorUse}</p><em>{term.example}</em></details></article>)}</div>
+              <div className="school-term-grid">{terms.map((term) => {
+                const display = getDirectorTermDisplay(language, term);
+                return <article key={term.id}><header><div><strong>{display.primaryTerm}</strong><span>{display.localizedTerm}</span></div><small>{term.level === "foundation" ? chrome.foundationLevel : term.level === "intermediate" ? chrome.intermediateLevel : chrome.advancedLevel}</small></header><p>{display.definition}</p><details><summary>{chrome.directorUse}</summary><p>{display.directorUse}</p><em>{display.example}</em></details></article>;
+              })}</div>
             </section>
 
             <section className="school-film-example">

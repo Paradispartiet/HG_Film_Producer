@@ -8,6 +8,9 @@ import {
   type DirectorAppliedLearningKind,
 } from "../../core/directorAppliedLearning";
 import { getDirectorKnowledgeCategory, type DirectorTerm } from "../../core/directorKnowledge";
+import { getDirectorTermDisplay } from "../../core/directorDisplay";
+import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 const PRACTICE_STORAGE_KEY = "hg_director_applied_learning_complete_v1";
 
@@ -21,6 +24,7 @@ const kindLabels: Record<DirectorAppliedLearningKind, string> = {
 };
 
 export function DirectorPracticeCoach({ visible }: DirectorPracticeCoachProps) {
+  const [language] = useFilmWorkLanguage();
   const [expanded, setExpanded] = useState(false);
   const [kind, setKind] = useState<DirectorAppliedLearningKind>("brief");
   const [selectedGuideId, setSelectedGuideId] = useState("brief:sceneObjective");
@@ -143,6 +147,7 @@ export function DirectorPracticeCoach({ visible }: DirectorPracticeCoachProps) {
               <PracticeGuideDetail
                 completed={completedIds.has(selectedGuide.id)}
                 guide={selectedGuide}
+                language={language}
                 onFocusField={() => focusWorkingField(selectedGuide)}
                 onToggleComplete={() => toggleComplete(selectedGuide.id)}
               />
@@ -154,9 +159,10 @@ export function DirectorPracticeCoach({ visible }: DirectorPracticeCoachProps) {
   );
 }
 
-function PracticeGuideDetail({ completed, guide, onFocusField, onToggleComplete }: {
+function PracticeGuideDetail({ completed, guide, language, onFocusField, onToggleComplete }: {
   readonly completed: boolean;
   readonly guide: DirectorAppliedLearningGuide;
+  readonly language: FilmWorkLanguage;
   readonly onFocusField: () => void;
   readonly onToggleComplete: () => void;
 }) {
@@ -190,23 +196,24 @@ function PracticeGuideDetail({ completed, guide, onFocusField, onToggleComplete 
 
       <section className="director-practice-terms">
         <header><h4>Fagbegreper i denne beslutningen</h4><span>{terms.length}</span></header>
-        <div>{terms.map((term) => <PracticeTerm key={term.id} term={term} />)}</div>
+        <div>{terms.map((term) => <PracticeTerm key={term.id} language={language} term={term} />)}</div>
       </section>
     </article>
   );
 }
 
-function PracticeTerm({ term }: { readonly term: DirectorTerm }) {
+function PracticeTerm({ language, term }: { readonly language: FilmWorkLanguage; readonly term: DirectorTerm }) {
   const category = getDirectorKnowledgeCategory(term.category);
+  const display = getDirectorTermDisplay(language, term);
   return (
     <details className="director-practice-term">
       <summary>
-        <div><strong>{term.term}</strong><span>{term.norwegian}</span></div>
+        <div><strong>{display.primaryTerm}</strong><span>{display.localizedTerm}</span></div>
         <small>{category?.label}</small>
       </summary>
-      <section><h5>Definisjon</h5><p>{term.definition}</p></section>
-      <section><h5>I regiarbeidet</h5><p>{term.directorUse}</p></section>
-      <section><h5>Eksempel</h5><p>{term.example}</p></section>
+      <section><h5>Definisjon</h5><p>{display.definition}</p></section>
+      <section><h5>I regiarbeidet</h5><p>{display.directorUse}</p></section>
+      <section><h5>Eksempel</h5><p>{display.example}</p></section>
     </details>
   );
 }
