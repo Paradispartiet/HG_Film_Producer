@@ -13,6 +13,9 @@ import {
   type DirectorKnowledgePhase,
   type DirectorTerm,
 } from "../../core/directorKnowledge";
+import { getDirectorTermDisplay } from "../../core/directorDisplay";
+import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 const LEARNED_STORAGE_KEY = "hg_director_knowledge_learned_v1";
 
@@ -36,6 +39,7 @@ const levelLabels = {
 } as const;
 
 export function DirectorKnowledgeDesk({ visible }: DirectorKnowledgeDeskProps) {
+  const [language] = useFilmWorkLanguage();
   const [expanded, setExpanded] = useState(false);
   const [mode, setMode] = useState<DeskMode>("workflow");
   const [query, setQuery] = useState("");
@@ -125,11 +129,12 @@ export function DirectorKnowledgeDesk({ visible }: DirectorKnowledgeDeskProps) {
           </nav>
 
           {mode === "workflow" ? (
-            <WorkflowView onOpenTerm={openTerm} />
+            <WorkflowView language={language} onOpenTerm={openTerm} />
           ) : (
             <TerminologyView
               category={category}
               filteredTerms={filteredTerms}
+              language={language}
               learnedIds={learnedIds}
               onCategoryChange={setCategory}
               onOpenTerm={openTerm}
@@ -150,7 +155,7 @@ export function DirectorKnowledgeDesk({ visible }: DirectorKnowledgeDeskProps) {
   );
 }
 
-function WorkflowView({ onOpenTerm }: { readonly onOpenTerm: (termId: string) => void }) {
+function WorkflowView({ language, onOpenTerm }: { readonly language: FilmWorkLanguage; readonly onOpenTerm: (termId: string) => void }) {
   const [activeStepId, setActiveStepId] = useState(DIRECTOR_WORKFLOW[0]?.id ?? "");
   const activeStep = DIRECTOR_WORKFLOW.find((step) => step.id === activeStepId) ?? DIRECTOR_WORKFLOW[0];
 
@@ -186,11 +191,14 @@ function WorkflowView({ onOpenTerm }: { readonly onOpenTerm: (termId: string) =>
         <section className="director-workflow-terms">
           <h4>Begreper du må kunne i dette trinnet</h4>
           <div>
-            {getDirectorTermsForWorkflowStep(activeStep).map((term) => (
-              <button key={term.id} onClick={() => onOpenTerm(term.id)} type="button">
-                <strong>{term.term}</strong><span>{term.norwegian}</span>
-              </button>
-            ))}
+            {getDirectorTermsForWorkflowStep(activeStep).map((term) => {
+              const display = getDirectorTermDisplay(language, term);
+              return (
+                <button key={term.id} onClick={() => onOpenTerm(term.id)} type="button">
+                  <strong>{display.primaryTerm}</strong><span>{display.localizedTerm}</span>
+                </button>
+              );
+            })}
           </div>
         </section>
       </article>
@@ -201,6 +209,7 @@ function WorkflowView({ onOpenTerm }: { readonly onOpenTerm: (termId: string) =>
 function TerminologyView({
   category,
   filteredTerms,
+  language,
   learnedIds,
   onCategoryChange,
   onOpenTerm,
@@ -214,6 +223,7 @@ function TerminologyView({
 }: {
   readonly category: DirectorKnowledgeCategoryId | "all";
   readonly filteredTerms: readonly DirectorTerm[];
+  readonly language: FilmWorkLanguage;
   readonly learnedIds: ReadonlySet<string>;
   readonly onCategoryChange: (category: DirectorKnowledgeCategoryId | "all") => void;
   readonly onOpenTerm: (termId: string) => void;
@@ -246,22 +256,25 @@ function TerminologyView({
         <section className="director-term-index">
           <header><strong>{filteredTerms.length}</strong><span>treff</span></header>
           <div>
-            {filteredTerms.length === 0 ? <p className="director-term-no-results">Ingen begreper matcher filtrene.</p> : filteredTerms.map((term) => (
-              <button
-                className={selectedTerm?.id === term.id ? "director-term-index-item is-active" : "director-term-index-item"}
-                key={term.id}
-                onClick={() => onOpenTerm(term.id)}
-                type="button"
-              >
-                <span>{learnedIds.has(term.id) ? "✓" : "·"}</span>
-                <div><strong>{term.term}</strong><small>{term.norwegian}</small></div>
-              </button>
-            ))}
+            {filteredTerms.length === 0 ? <p className="director-term-no-results">Ingen begreper matcher filtrene.</p> : filteredTerms.map((term) => {
+              const display = getDirectorTermDisplay(language, term);
+              return (
+                <button
+                  className={selectedTerm?.id === term.id ? "director-term-index-item is-active" : "director-term-index-item"}
+                  key={term.id}
+                  onClick={() => onOpenTerm(term.id)}
+                  type="button"
+                >
+                  <span>{learnedIds.has(term.id) ? "✓" : "·"}</span>
+                  <div><strong>{display.primaryTerm}</strong><small>{display.localizedTerm}</small></div>
+                </button>
+              );
+            })}
           </div>
         </section>
 
         {selectedTerm ? (
-          <TermDetail learned={learnedIds.has(selectedTerm.id)} onToggleLearned={() => onToggleLearned(selectedTerm.id)} term={selectedTerm} />
+          <TermDetail language={language} learned={learnedIds.has(selectedTerm.id)} onToggleLearned={() => onToggleLearned(selectedTerm.id)} term={selectedTerm} />
         ) : (
           <section className="director-term-detail"><h3>Velg et fagbegrep</h3></section>
         )}
@@ -270,12 +283,14 @@ function TerminologyView({
   );
 }
 
-function TermDetail({ learned, onToggleLearned, term }: {
+function TermDetail({ language, learned, onToggleLearned, term }: {
+  readonly language: FilmWorkLanguage;
   readonly learned: boolean;
   readonly onToggleLearned: () => void;
   readonly term: DirectorTerm;
 }) {
   const category = getDirectorKnowledgeCategory(term.category);
+  const display = getDirectorTermDisplay(language, term);
   const sources = term.sourceIds
     .map((sourceId) => DIRECTOR_KNOWLEDGE_SOURCES.find((source) => source.id === sourceId))
     .filter((source): source is (typeof DIRECTOR_KNOWLEDGE_SOURCES)[number] => Boolean(source));
@@ -283,12 +298,12 @@ function TermDetail({ learned, onToggleLearned, term }: {
   return (
     <article className="director-term-detail">
       <header>
-        <div><span>{category?.label} · {phaseLabels[term.phase]} · {levelLabels[term.level]}</span><h3>{term.term}</h3><p>{term.norwegian}</p></div>
+        <div><span>{category?.label} · {phaseLabels[term.phase]} · {levelLabels[term.level]}</span><h3>{display.primaryTerm}</h3><p>{display.localizedTerm}</p></div>
         <button className={learned ? "is-learned" : ""} onClick={onToggleLearned} type="button">{learned ? "✓ Lært" : "Marker som lært"}</button>
       </header>
-      <section><h4>Definisjon</h4><p>{term.definition}</p></section>
-      <section><h4>Hvorfor regissøren trenger begrepet</h4><p>{term.directorUse}</p></section>
-      <section className="director-term-example"><h4>Eksempel</h4><p>{term.example}</p></section>
+      <section><h4>Definisjon</h4><p>{display.definition}</p></section>
+      <section><h4>Hvorfor regissøren trenger begrepet</h4><p>{display.directorUse}</p></section>
+      <section className="director-term-example"><h4>Eksempel</h4><p>{display.example}</p></section>
       <section className="director-term-sources"><h4>Faglig grunnlag</h4>{sources.map((source) => <a href={source.url} key={source.id} rel="noreferrer" target="_blank"><strong>{source.organization}</strong><span>{source.label}</span></a>)}</section>
     </article>
   );
