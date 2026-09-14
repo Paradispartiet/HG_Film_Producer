@@ -1,6 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { canCompleteProductionCaseMission } from "../../core/canCompleteProductionCaseMission";
 import {
+  formatProductionCaseBriefTitle,
+  getProductionCaseBriefIntro,
+  getProductionCaseVerificationLabel,
+  PRODUCTION_CASE_BRIEF_COPY,
+  type ProductionCaseBriefCopy,
+} from "../../core/productionCaseBriefCopy";
+import {
   getProductionCaseChoiceFeedback,
   getProductionCaseMissionPresentation,
   PRODUCTION_CASE_MISSION_UI_COPY,
@@ -28,7 +35,6 @@ import {
   createProductionCaseMissions,
   resolveScenarioProductionBrief,
   type ProductionCaseMission,
-  type ScenarioProductionBrief,
 } from "../data/scenarioProductionBriefs";
 import {
   getProductionCaseVerification,
@@ -46,6 +52,8 @@ export function ScenarioProductionBriefPanel({
   readonly onStartNextScenario?: (() => void) | undefined;
   readonly scenario: FilmScenarioSeed;
 }) {
+  const [language] = useFilmWorkLanguage();
+  const briefCopy = PRODUCTION_CASE_BRIEF_COPY[language];
   const brief = resolveScenarioProductionBrief(scenario);
   const missions = createProductionCaseMissions(brief);
   const sourceVerification = getProductionCaseVerification(brief.scenarioId);
@@ -57,16 +65,16 @@ export function ScenarioProductionBriefPanel({
         <div>
           <span className="eyebrow">
             {brief.briefType === "seed_fallback"
-              ? "Imported seed fallback"
+              ? briefCopy.header.importedSeedFallback
               : sourceVerification
-                ? "Source-verified film case"
-                : "Film case · research pending"}
+                ? briefCopy.header.sourceVerifiedFilmCase
+                : briefCopy.header.researchPendingFilmCase}
           </span>
-          <h3 id="scenario-brief-title">{brief.title}</h3>
-          <p>{getBriefIntro(brief, scenario.film.title)}</p>
+          <h3 id="scenario-brief-title">{formatProductionCaseBriefTitle(language, brief.title)}</h3>
+          <p>{getProductionCaseBriefIntro(language, brief.briefType, scenario.film.title)}</p>
           <p>{brief.logline}</p>
         </div>
-        <span className="scenario-brief-status">{formatVerificationStatus(verificationStatus)}</span>
+        <span className="scenario-brief-status">{getProductionCaseVerificationLabel(language, verificationStatus)}</span>
       </div>
 
       <ScenarioFilmStudyPanel brief={brief} scenario={scenario} />
@@ -82,13 +90,13 @@ export function ScenarioProductionBriefPanel({
         />
       ) : (
         <div className="scenario-brief-grid">
-          <BriefSection title="Genre targets" items={brief.genreTargets} />
-          <BriefSection title="Tone" items={brief.toneTargets} />
-          <BriefSection title="Screenplay" items={brief.screenplayTargets} />
-          <BriefSection title="Cinematography" items={brief.cinematographyTargets} />
-          <BriefSection title="Editing" items={brief.editingTargets} />
-          <BriefSection title="Sound" items={brief.soundTargets} />
-          <BriefSection title="Learning goals" items={brief.learningGoals} />
+          <BriefSection title={briefCopy.sections.genreTargets} items={brief.genreTargets} />
+          <BriefSection title={briefCopy.sections.toneTargets} items={brief.toneTargets} />
+          <BriefSection title={briefCopy.sections.screenplayTargets} items={brief.screenplayTargets} />
+          <BriefSection title={briefCopy.sections.cinematographyTargets} items={brief.cinematographyTargets} />
+          <BriefSection title={briefCopy.sections.editingTargets} items={brief.editingTargets} />
+          <BriefSection title={briefCopy.sections.soundTargets} items={brief.soundTargets} />
+          <BriefSection title={briefCopy.sections.learningGoals} items={brief.learningGoals} />
         </div>
       )}
     </section>
@@ -111,6 +119,7 @@ function ProductionCaseMissionFlow({
   readonly sourceVerification: ProductionCaseVerificationRecord | undefined;
 }) {
   const [language] = useFilmWorkLanguage();
+  const briefUiCopy = PRODUCTION_CASE_BRIEF_COPY[language];
   const missionUiCopy = PRODUCTION_CASE_MISSION_UI_COPY[language];
   const [progressState, setProgressState] = useState<ProductionCaseProgressState>({});
   const [focusedMissionId, setFocusedMissionId] = useState<string | undefined>();
@@ -186,23 +195,24 @@ function ProductionCaseMissionFlow({
   const activeMissionId = missions.find((mission) => !isMissionComplete(mission))?.id;
 
   return (
-    <div className="scenario-mission-flow" aria-label="Film case learning flow">
+    <div className="scenario-mission-flow" aria-label={briefUiCopy.flow.learningFlowAriaLabel}>
       <div className="scenario-mission-summary">
         <div>
-          <span className="eyebrow">Learning progress</span>
-          <strong>{allComplete ? "Case complete · learning report unlocked" : `${completedCount}/${missions.length} phases complete`}</strong>
-          <span className="scenario-mission-score">{learningStatus.label}</span>
+          <span className="eyebrow">{briefUiCopy.flow.learningProgress}</span>
+          <strong>{allComplete ? briefUiCopy.flow.caseCompleteReportUnlocked : briefUiCopy.flow.phasesComplete(completedCount, missions.length)}</strong>
+          <span className="scenario-mission-score">{briefUiCopy.flow.learningStatus[learningStatus.status]}</span>
         </div>
-        <button onClick={resetCurrentScenario} type="button">Reset case progress</button>
+        <button onClick={resetCurrentScenario} type="button">{briefUiCopy.flow.resetCaseProgress}</button>
       </div>
 
-      <div className="scenario-production-guidance" aria-label="Film case guidance">
-        {nextAction ? <ProductionCaseNextLearningBox action={nextAction} missionTitle={getMissionTitle(nextAction.missionId, nextAction.title)} onFocusMission={focusMission} /> : null}
-        {allComplete && learningHint ? <ProductionCaseLearningHintBox hint={learningHint} missionTitle={getMissionTitle(learningHint.missionId, learningHint.title)} onFocusMission={focusMission} /> : null}
+      <div className="scenario-production-guidance" aria-label={briefUiCopy.flow.guidanceAriaLabel}>
+        {nextAction ? <ProductionCaseNextLearningBox action={nextAction} copy={briefUiCopy} missionTitle={getMissionTitle(nextAction.missionId, nextAction.title)} onFocusMission={focusMission} /> : null}
+        {allComplete && learningHint ? <ProductionCaseLearningHintBox copy={briefUiCopy} hint={learningHint} missionTitle={getMissionTitle(learningHint.missionId, learningHint.title)} onFocusMission={focusMission} /> : null}
       </div>
 
       {learningReport ? (
         <ProductionCaseLearningReportBox
+          copy={briefUiCopy}
           getMissionTitle={getMissionTitle}
           onBackToProductionCases={onBackToProductionCases}
           onReviewAgain={resetCurrentScenario}
@@ -235,10 +245,10 @@ function ProductionCaseMissionFlow({
               <div className="scenario-mission-collapsed-row">
                 <div>
                   <h4>{missionPresentation.title}</h4>
-                  {selectedChoice ? <p>{selectedChoice.label}</p> : <p>No approach chosen yet.</p>}
+                  {selectedChoice ? <p>{selectedChoice.label}</p> : <p>{briefUiCopy.flow.noApproachChosen}</p>}
                 </div>
                 <button onClick={() => toggleMissionExpanded(mission.id)} type="button">
-                  {isComplete ? "Show details" : missionUiCopy.openPhase}
+                  {isComplete ? briefUiCopy.flow.showDetails : missionUiCopy.openPhase}
                 </button>
               </div>
             </article>
@@ -264,8 +274,8 @@ function ProductionCaseMissionFlow({
               <ul className="scenario-brief-list">
                 {mission.targets.map((target) => <li key={target}>{target}</li>)}
               </ul>
-              <div className="scenario-mission-choices" aria-label={`Choose an explanation for ${missionPresentation.title}`}>
-                <strong>Which approach best explains the film?</strong>
+              <div className="scenario-mission-choices" aria-label={briefUiCopy.flow.chooseExplanationAriaLabel(missionPresentation.title)}>
+                <strong>{briefUiCopy.flow.choiceQuestion}</strong>
                 <div className="scenario-mission-choice-grid">
                   {mission.choices.map((choice) => (
                     <button
@@ -293,7 +303,7 @@ function ProductionCaseMissionFlow({
                   {isComplete ? missionUiCopy.undoComplete : missionUiCopy.completePhase}
                 </button>
                 {!isActive ? (
-                  <button className="secondary-button" onClick={() => toggleMissionExpanded(mission.id)} type="button">Hide details</button>
+                  <button className="secondary-button" onClick={() => toggleMissionExpanded(mission.id)} type="button">{briefUiCopy.flow.hideDetails}</button>
                 ) : null}
               </div>
             </div>
@@ -305,6 +315,7 @@ function ProductionCaseMissionFlow({
 }
 
 function ProductionCaseLearningReportBox({
+  copy,
   getMissionTitle,
   onBackToProductionCases,
   onReviewAgain,
@@ -312,6 +323,7 @@ function ProductionCaseLearningReportBox({
   report,
   sourceVerification,
 }: {
+  readonly copy: ProductionCaseBriefCopy;
   readonly getMissionTitle: (missionId: string, fallback: string) => string;
   readonly onBackToProductionCases?: (() => void) | undefined;
   readonly onReviewAgain: () => void;
@@ -321,49 +333,49 @@ function ProductionCaseLearningReportBox({
 }) {
   const reviewPhases = [...report.revisitPhases, ...report.developingPhases];
   return (
-    <section className="scenario-production-report" aria-label="Learning report">
+    <section className="scenario-production-report" aria-label={copy.flow.learningReportAriaLabel}>
       <div className="scenario-production-report-header">
-        <span className="eyebrow">Learning report</span>
+        <span className="eyebrow">{copy.flow.learningReport}</span>
         <strong>{report.learningSummary}</strong>
       </div>
       <div className="scenario-production-report-stats">
-        <span>Phases studied: {report.completedCount}/{report.totalMissions}</span>
-        <span>Clearly identified: {report.clearPhases.length}</span>
-        <span>Worth comparing again: {reviewPhases.length}</span>
+        <span>{copy.flow.phasesStudied(report.completedCount, report.totalMissions)}</span>
+        <span>{copy.flow.clearlyIdentified(report.clearPhases.length)}</span>
+        <span>{copy.flow.worthComparingAgain(reviewPhases.length)}</span>
       </div>
-      <div className="scenario-production-report-actions" aria-label="Case continuation actions">
-        <button className="secondary-button" onClick={onReviewAgain} type="button">Review this case again</button>
+      <div className="scenario-production-report-actions" aria-label={copy.flow.continuationActionsAriaLabel}>
+        <button className="secondary-button" onClick={onReviewAgain} type="button">{copy.flow.reviewThisCaseAgain}</button>
         {onStartNextScenario ? (
-          <button onClick={onStartNextScenario} type="button">Continue to next case</button>
+          <button onClick={onStartNextScenario} type="button">{copy.flow.continueToNextCase}</button>
         ) : (
-          <button className="secondary-button" onClick={onBackToProductionCases} type="button">Back to Production Cases</button>
+          <button className="secondary-button" onClick={onBackToProductionCases} type="button">{copy.flow.backToProductionCases}</button>
         )}
       </div>
       <div className="scenario-production-report-columns">
         <div>
-          <h4>Understood clearly</h4>
+          <h4>{copy.flow.understoodClearly}</h4>
           {report.clearPhases.length > 0 ? (
             <ul>{report.clearPhases.map((phase) => <li key={phase.missionId}><span>{getMissionTitle(phase.missionId, phase.title)}</span><small>{phase.selectedChoiceLabel}</small></li>)}</ul>
-          ) : <p>No phase is marked as clearly identified yet. Review the explanations without penalty.</p>}
+          ) : <p>{copy.flow.noClearlyIdentified}</p>}
         </div>
         <div>
-          <h4>Review and compare</h4>
+          <h4>{copy.flow.reviewAndCompare}</h4>
           {reviewPhases.length > 0 ? (
             <ul>{reviewPhases.map((phase) => <li key={phase.missionId}><span>{getMissionTitle(phase.missionId, phase.title)}</span><small>{phase.selectedChoiceLabel}</small></li>)}</ul>
-          ) : <p>No phase needs special review. Continue when you are ready.</p>}
+          ) : <p>{copy.flow.noSpecialReview}</p>}
         </div>
       </div>
-      {sourceVerification ? <ProductionCaseSources verification={sourceVerification} /> : null}
+      {sourceVerification ? <ProductionCaseSources copy={copy} verification={sourceVerification} /> : null}
     </section>
   );
 }
 
-function ProductionCaseSources({ verification }: { readonly verification: ProductionCaseVerificationRecord }) {
+function ProductionCaseSources({ copy, verification }: { readonly copy: ProductionCaseBriefCopy; readonly verification: ProductionCaseVerificationRecord }) {
   return (
-    <section className="scenario-production-sources" aria-label="Sources for this film case">
+    <section className="scenario-production-sources" aria-label={copy.flow.sourcesAriaLabel}>
       <div>
-        <span className="eyebrow">Source basis</span>
-        <strong>Verified {verification.verifiedAt}</strong>
+        <span className="eyebrow">{copy.flow.sourceBasis}</span>
+        <strong>{copy.flow.verifiedAt(verification.verifiedAt)}</strong>
         <p>{verification.summary}</p>
       </div>
       <ul>
@@ -381,38 +393,42 @@ function ProductionCaseSources({ verification }: { readonly verification: Produc
 
 function ProductionCaseNextLearningBox({
   action,
+  copy,
   missionTitle,
   onFocusMission,
 }: {
   readonly action: ProductionCaseLearningNextAction;
+  readonly copy: ProductionCaseBriefCopy;
   readonly missionTitle: string;
   readonly onFocusMission: (missionId: string) => void;
 }) {
   return (
-    <section className={`scenario-production-next-phase scenario-production-next-phase--${action.actionType}`} aria-label="Next learning step">
-      <span className="eyebrow">Next learning step</span>
+    <section className={`scenario-production-next-phase scenario-production-next-phase--${action.actionType}`} aria-label={copy.flow.nextLearningStepAriaLabel}>
+      <span className="eyebrow">{copy.flow.nextLearningStep}</span>
       <strong>{action.label}: {missionTitle}</strong>
       <p>{action.description}</p>
-      <button onClick={() => onFocusMission(action.missionId)} type="button">Go to phase</button>
+      <button onClick={() => onFocusMission(action.missionId)} type="button">{copy.flow.goToPhase}</button>
     </section>
   );
 }
 
 function ProductionCaseLearningHintBox({
+  copy,
   hint,
   missionTitle,
   onFocusMission,
 }: {
+  readonly copy: ProductionCaseBriefCopy;
   readonly hint: ProductionCaseLearningHint;
   readonly missionTitle: string;
   readonly onFocusMission: (missionId: string) => void;
 }) {
   return (
-    <section className={`scenario-production-improvement scenario-production-improvement--${hint.hintType}`} aria-label="Suggested review">
-      <span className="eyebrow">Suggested review</span>
+    <section className={`scenario-production-improvement scenario-production-improvement--${hint.hintType}`} aria-label={copy.flow.suggestedReviewAriaLabel}>
+      <span className="eyebrow">{copy.flow.suggestedReview}</span>
       <strong>{hint.label}: {missionTitle}</strong>
       <p>{hint.description}</p>
-      <button onClick={() => onFocusMission(hint.missionId)} type="button">Review phase</button>
+      <button onClick={() => onFocusMission(hint.missionId)} type="button">{copy.flow.reviewPhase}</button>
     </section>
   );
 }
@@ -428,15 +444,4 @@ function BriefSection({ title, items }: { readonly title: string; readonly items
 
 function getProductionCaseMissionElementId(missionId: string) {
   return `production-case-mission-${missionId}`;
-}
-
-function getBriefIntro(brief: ScenarioProductionBrief, filmTitle: string) {
-  if (brief.briefType === "production_case") {
-    return `Study the filmmaking choices behind ${filmTitle}. Each phase connects a concrete method to what the finished film does.`;
-  }
-  return "This imported seed still needs film-specific case design; use the fallback targets as provisional craft guidance.";
-}
-
-function formatVerificationStatus(status: ScenarioProductionBrief["verificationStatus"] | "verified") {
-  return status.replace(/_/g, " ");
 }
