@@ -5,6 +5,7 @@ import {
   getFilmStudyAreaLabel,
   getFilmStudyCoverageStatusLabel,
 } from "../../core/filmStudyCopy";
+import { formatFilmStudyHistoryFeedback } from "../../core/filmStudyHistoryFeedbackCopy";
 import type { FilmStudyCoverageItem } from "../../core/filmStudyCoverage";
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
 import type { FilmScenarioSeed } from "../data/filmScenarios";
@@ -425,7 +426,7 @@ export function ScenarioFilmStudyPanel({
             </div>
             {selectedHistoryChoice ? (
               <p className={`scenario-history-feedback scenario-history-feedback--${selectedHistoryChoice.quality}`}>
-                {selectedHistoryChoice.feedback}
+                {formatFilmStudyHistoryFeedback(language, selectedHistoryChoice.feedback)}
               </p>
             ) : (
               <p className="scenario-history-feedback">{copy.noChoiceFeedback}</p>
