@@ -13,6 +13,7 @@ import {
   FILM_DIRECTOR_PRACTICE_COPY,
   getFilmDirectorPracticeFieldLabel,
 } from "../../core/filmDirectorPracticeCopy";
+import { getFilmDirectorPracticeGuideChecklist } from "../../core/filmDirectorPracticeGuideChecklist";
 import { getFilmDirectorPracticeGuideExercise } from "../../core/filmDirectorPracticeGuideExercise";
 import { getFilmDirectorPracticeGuidePurpose } from "../../core/filmDirectorPracticeGuidePurpose";
 import { getFilmDirectorPracticeGuideTitle } from "../../core/filmDirectorPracticeGuideTitle";
@@ -197,7 +198,7 @@ function PracticeGuideDetail({ completed, guide, language, onFocusField, onToggl
 
       <section className="director-practice-checklist">
         <h4>{copy.checklistTitle}</h4>
-        <ul>{guide.checklist.map((item) => <li key={item}>{item}</li>)}</ul>
+        <ul>{getFilmDirectorPracticeGuideChecklist(language, guide).map((item) => <li key={item}>{item}</li>)}</ul>
       </section>
 
       <section className="director-practice-terms">
