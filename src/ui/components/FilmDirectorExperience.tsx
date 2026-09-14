@@ -13,7 +13,6 @@ import {
   DIRECTOR_SHOT_FIELDS,
   addDirectorScene,
   addDirectorShot,
-  buildDirectorProjectText,
   coerceDirectorProject,
   countCompletedDirectorProjectFields,
   countCompletedDirectorShotFields,
@@ -34,6 +33,7 @@ import {
   type DirectorShotFieldId,
 } from "../../core/directorProject";
 import { FILM_DIRECTOR_PROJECT_COPY, formatFilmDirectorProjectSavedTime, type FilmDirectorProjectCopy } from "../../core/filmDirectorProjectCopy";
+import { buildFilmDirectorProjectText, buildFilmDirectorSceneText } from "../../core/filmDirectorProjectText";
 import { FILM_DIRECTOR_SHELL_COPY } from "../../core/filmDirectorShellCopy";
 import { FILM_DIRECTOR_SHOT_COPY, type FilmDirectorShotCopy } from "../../core/filmDirectorShotCopy";
 import { createFilmSlug, type FilmverketRoute, type FilmverketSection } from "../../core/filmverketRoutes";
@@ -264,14 +264,14 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
         <div className="film-director-toolbar-actions">
           <button className="filmverket-secondary-action" onClick={() => navigate({ section: "atlas", filmSlug: getScenarioSlug(selectedScenario) })} type="button">{projectCopy.openFilmAnalysis}</button>
           <button className="filmverket-secondary-action" onClick={resetProject} type="button">{projectCopy.clearProject}</button>
-          <button className="filmverket-primary-action" onClick={() => copyText(buildDirectorProjectText(project), "project")} type="button">{copyState === "project" ? projectCopy.projectCopied : copyState === "failed" ? projectCopy.copyFailed : projectCopy.copyCompleteProject}</button>
+          <button className="filmverket-primary-action" onClick={() => copyText(buildFilmDirectorProjectText(language, project), "project")} type="button">{copyState === "project" ? projectCopy.projectCopied : copyState === "failed" ? projectCopy.copyFailed : projectCopy.copyCompleteProject}</button>
         </div>
       </section>
 
       <section className="director-project-workspace">
         <SceneSidebar activeScene={currentScene} copy={projectCopy} onAdd={addScene} onDelete={deleteActiveScene} onDuplicate={duplicateActiveScene} onSelect={selectScene} project={project} />
         <div className="director-active-scene" id="director-active-scene">
-          <ActiveSceneHeading copy={projectCopy} copyState={copyState} onCopy={() => copyText(buildActiveSceneText(project, currentScene), "scene")} project={project} scene={currentScene} />
+          <ActiveSceneHeading copy={projectCopy} copyState={copyState} onCopy={() => copyText(buildFilmDirectorSceneText(language, project, currentScene), "scene")} project={project} scene={currentScene} />
           <ReferencePanel activeLensId={activeLensId} activePrinciples={activePrinciples} activeQuestion={activeQuestion} brief={referenceBrief} copy={projectCopy} onChangeLens={setActiveLensId} onUseCraft={useCraftStartingPoint} onUsePrinciple={useReferencePrinciple} onUseTone={useToneStartingPoint} scenario={selectedScenario} />
           <SceneBriefForm copy={briefCopy} groups={groups} onChange={updateBriefField} scene={currentScene} />
           <ShotListEditor copy={shotCopy} onAdd={addShot} onChange={changeShot} onDelete={deleteShot} onDuplicate={duplicateShot} onMove={moveShot} scene={currentScene} />
@@ -396,7 +396,6 @@ function ShotTextArea({ field, label, onChange, shot }: { readonly field: Direct
   return <label className="director-shot-field director-shot-field--wide"><span>{label}</span><textarea onChange={(event) => onChange(shot.id, field, event.target.value)} rows={3} value={shot[field]} /></label>;
 }
 
-function buildActiveSceneText(project: DirectorProject, scene: DirectorScene): string { return buildDirectorProjectText({ ...project, activeSceneId: scene.id, scenes: [scene] }); }
 function resolveSelectedScenario(scenarios: readonly FilmScenarioSeed[], filmSlug: string | undefined): FilmScenarioSeed | undefined { return filmSlug ? scenarios.find((scenario) => getScenarioSlug(scenario) === filmSlug) : scenarios[0]; }
 function getScenarioSlug(scenario: FilmScenarioSeed): string { return createFilmSlug(scenario.film.title, scenario.film.year); }
 function simpleRoute(section: FilmverketSection): FilmverketRoute {
