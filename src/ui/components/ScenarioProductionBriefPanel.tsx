@@ -1,6 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { canCompleteProductionCaseMission } from "../../core/canCompleteProductionCaseMission";
 import {
+  getProductionCaseChoiceFeedback,
+  getProductionCaseMissionPresentation,
+  PRODUCTION_CASE_MISSION_UI_COPY,
+} from "../../core/productionCaseMissionCopy";
+import {
   getProductionCaseLearningHint,
   getProductionCaseLearningNextAction,
   getProductionCaseLearningReport,
@@ -29,6 +34,7 @@ import {
   getProductionCaseVerification,
   type ProductionCaseVerificationRecord,
 } from "../data/scenarioProductionVerificationRegistry";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { ScenarioFilmStudyPanel } from "./ScenarioFilmStudyPanel";
 
 export function ScenarioProductionBriefPanel({
@@ -67,6 +73,7 @@ export function ScenarioProductionBriefPanel({
 
       {missions.length > 0 && brief.briefType === "production_case" ? (
         <ProductionCaseMissionFlow
+          caseTitle={brief.title.replace(/ production brief$/i, "")}
           missions={missions}
           onBackToProductionCases={onBackToProductionCases}
           onStartNextScenario={onStartNextScenario}
@@ -89,22 +96,29 @@ export function ScenarioProductionBriefPanel({
 }
 
 function ProductionCaseMissionFlow({
+  caseTitle,
   missions,
   onBackToProductionCases,
   onStartNextScenario,
   scenarioId,
   sourceVerification,
 }: {
+  readonly caseTitle: string;
   readonly missions: readonly ProductionCaseMission[];
   readonly onBackToProductionCases?: (() => void) | undefined;
   readonly onStartNextScenario?: (() => void) | undefined;
   readonly scenarioId: string;
   readonly sourceVerification: ProductionCaseVerificationRecord | undefined;
 }) {
+  const [language] = useFilmWorkLanguage();
+  const missionUiCopy = PRODUCTION_CASE_MISSION_UI_COPY[language];
   const [progressState, setProgressState] = useState<ProductionCaseProgressState>({});
   const [focusedMissionId, setFocusedMissionId] = useState<string | undefined>();
   const [expandedMissionIds, setExpandedMissionIds] = useState<readonly string[]>([]);
   const missionCardRefs = useRef<Record<string, HTMLElement | null>>({});
+  const missionPresentationsById = useMemo(() => new Map(
+    missions.map((mission) => [mission.id, getProductionCaseMissionPresentation(language, mission.phase, caseTitle)]),
+  ), [caseTitle, language, missions]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -129,6 +143,7 @@ function ProductionCaseMissionFlow({
   const learningHint = getProductionCaseLearningHint(missions, progressEntry);
   const nextAction = getProductionCaseLearningNextAction(missions, progressEntry);
   const learningReport = allComplete ? getProductionCaseLearningReport(missions, progressEntry) : undefined;
+  const getMissionTitle = (missionId: string, fallback: string) => missionPresentationsById.get(missionId)?.title ?? fallback;
 
   function updateProgress(nextState: ProductionCaseProgressState) {
     setProgressState(nextState);
@@ -182,12 +197,13 @@ function ProductionCaseMissionFlow({
       </div>
 
       <div className="scenario-production-guidance" aria-label="Film case guidance">
-        {nextAction ? <ProductionCaseNextLearningBox action={nextAction} onFocusMission={focusMission} /> : null}
-        {allComplete && learningHint ? <ProductionCaseLearningHintBox hint={learningHint} onFocusMission={focusMission} /> : null}
+        {nextAction ? <ProductionCaseNextLearningBox action={nextAction} missionTitle={getMissionTitle(nextAction.missionId, nextAction.title)} onFocusMission={focusMission} /> : null}
+        {allComplete && learningHint ? <ProductionCaseLearningHintBox hint={learningHint} missionTitle={getMissionTitle(learningHint.missionId, learningHint.title)} onFocusMission={focusMission} /> : null}
       </div>
 
       {learningReport ? (
         <ProductionCaseLearningReportBox
+          getMissionTitle={getMissionTitle}
           onBackToProductionCases={onBackToProductionCases}
           onReviewAgain={resetCurrentScenario}
           onStartNextScenario={onStartNextScenario}
@@ -202,6 +218,8 @@ function ProductionCaseMissionFlow({
         const selectedChoice = mission.choices.find((choice) => choice.id === selectedChoiceId);
         const isActive = mission.id === activeMissionId;
         const isExpanded = isActive || expandedMissionIds.includes(mission.id);
+        const missionPresentation = missionPresentationsById.get(mission.id)
+          ?? getProductionCaseMissionPresentation(language, mission.phase, caseTitle);
 
         if (!isExpanded) {
           return (
@@ -216,11 +234,11 @@ function ProductionCaseMissionFlow({
               <span className="scenario-mission-step">{isComplete ? "✓" : index + 1}</span>
               <div className="scenario-mission-collapsed-row">
                 <div>
-                  <h4>{mission.title}</h4>
+                  <h4>{missionPresentation.title}</h4>
                   {selectedChoice ? <p>{selectedChoice.label}</p> : <p>No approach chosen yet.</p>}
                 </div>
                 <button onClick={() => toggleMissionExpanded(mission.id)} type="button">
-                  {isComplete ? "Show details" : "Open phase"}
+                  {isComplete ? "Show details" : missionUiCopy.openPhase}
                 </button>
               </div>
             </article>
@@ -239,14 +257,14 @@ function ProductionCaseMissionFlow({
             <span className="scenario-mission-step">{index + 1}</span>
             <div>
               <div className="scenario-mission-card-header">
-                <h4>{mission.title}</h4>
-                <span>{isComplete ? "Complete" : isActive ? "Current phase" : "Open phase"}</span>
+                <h4>{missionPresentation.title}</h4>
+                <span>{isComplete ? missionUiCopy.phaseComplete : isActive ? missionUiCopy.currentPhase : missionUiCopy.openPhase}</span>
               </div>
-              <p>{mission.prompt}</p>
+              <p>{missionPresentation.prompt}</p>
               <ul className="scenario-brief-list">
                 {mission.targets.map((target) => <li key={target}>{target}</li>)}
               </ul>
-              <div className="scenario-mission-choices" aria-label={`Choose an explanation for ${mission.title}`}>
+              <div className="scenario-mission-choices" aria-label={`Choose an explanation for ${missionPresentation.title}`}>
                 <strong>Which approach best explains the film?</strong>
                 <div className="scenario-mission-choice-grid">
                   {mission.choices.map((choice) => (
@@ -262,17 +280,17 @@ function ProductionCaseMissionFlow({
                   ))}
                 </div>
                 {selectedChoice ? (
-                  <p className={`scenario-choice-feedback scenario-choice-feedback--${selectedChoice.quality}`}>{selectedChoice.feedback}</p>
+                  <p className={`scenario-choice-feedback scenario-choice-feedback--${selectedChoice.quality}`}>{getProductionCaseChoiceFeedback(language, selectedChoice.quality, selectedChoice.feedback)}</p>
                 ) : (
-                  <p className="scenario-choice-feedback">Choose an approach before completing this phase.</p>
+                  <p className="scenario-choice-feedback">{missionUiCopy.feedback.chooseBeforeCompleting}</p>
                 )}
               </div>
               <p className="scenario-mission-learning">
-                <strong>What this phase teaches:</strong> {mission.learningFocus}
+                <strong>{missionUiCopy.learningLabel}</strong> {missionPresentation.learningFocus}
               </p>
               <div className="scenario-mission-card-actions">
                 <button disabled={!isComplete && !selectedChoice} onClick={() => toggleMission(mission)} type="button">
-                  {isComplete ? "Undo complete" : "Complete phase"}
+                  {isComplete ? missionUiCopy.undoComplete : missionUiCopy.completePhase}
                 </button>
                 {!isActive ? (
                   <button className="secondary-button" onClick={() => toggleMissionExpanded(mission.id)} type="button">Hide details</button>
@@ -287,12 +305,14 @@ function ProductionCaseMissionFlow({
 }
 
 function ProductionCaseLearningReportBox({
+  getMissionTitle,
   onBackToProductionCases,
   onReviewAgain,
   onStartNextScenario,
   report,
   sourceVerification,
 }: {
+  readonly getMissionTitle: (missionId: string, fallback: string) => string;
   readonly onBackToProductionCases?: (() => void) | undefined;
   readonly onReviewAgain: () => void;
   readonly onStartNextScenario?: (() => void) | undefined;
@@ -323,13 +343,13 @@ function ProductionCaseLearningReportBox({
         <div>
           <h4>Understood clearly</h4>
           {report.clearPhases.length > 0 ? (
-            <ul>{report.clearPhases.map((phase) => <li key={phase.missionId}><span>{phase.title}</span><small>{phase.selectedChoiceLabel}</small></li>)}</ul>
+            <ul>{report.clearPhases.map((phase) => <li key={phase.missionId}><span>{getMissionTitle(phase.missionId, phase.title)}</span><small>{phase.selectedChoiceLabel}</small></li>)}</ul>
           ) : <p>No phase is marked as clearly identified yet. Review the explanations without penalty.</p>}
         </div>
         <div>
           <h4>Review and compare</h4>
           {reviewPhases.length > 0 ? (
-            <ul>{reviewPhases.map((phase) => <li key={phase.missionId}><span>{phase.title}</span><small>{phase.selectedChoiceLabel}</small></li>)}</ul>
+            <ul>{reviewPhases.map((phase) => <li key={phase.missionId}><span>{getMissionTitle(phase.missionId, phase.title)}</span><small>{phase.selectedChoiceLabel}</small></li>)}</ul>
           ) : <p>No phase needs special review. Continue when you are ready.</p>}
         </div>
       </div>
@@ -361,15 +381,17 @@ function ProductionCaseSources({ verification }: { readonly verification: Produc
 
 function ProductionCaseNextLearningBox({
   action,
+  missionTitle,
   onFocusMission,
 }: {
   readonly action: ProductionCaseLearningNextAction;
+  readonly missionTitle: string;
   readonly onFocusMission: (missionId: string) => void;
 }) {
   return (
     <section className={`scenario-production-next-phase scenario-production-next-phase--${action.actionType}`} aria-label="Next learning step">
       <span className="eyebrow">Next learning step</span>
-      <strong>{action.label}: {action.title}</strong>
+      <strong>{action.label}: {missionTitle}</strong>
       <p>{action.description}</p>
       <button onClick={() => onFocusMission(action.missionId)} type="button">Go to phase</button>
     </section>
@@ -378,15 +400,17 @@ function ProductionCaseNextLearningBox({
 
 function ProductionCaseLearningHintBox({
   hint,
+  missionTitle,
   onFocusMission,
 }: {
   readonly hint: ProductionCaseLearningHint;
+  readonly missionTitle: string;
   readonly onFocusMission: (missionId: string) => void;
 }) {
   return (
     <section className={`scenario-production-improvement scenario-production-improvement--${hint.hintType}`} aria-label="Suggested review">
       <span className="eyebrow">Suggested review</span>
-      <strong>{hint.label}: {hint.title}</strong>
+      <strong>{hint.label}: {missionTitle}</strong>
       <p>{hint.description}</p>
       <button onClick={() => onFocusMission(hint.missionId)} type="button">Review phase</button>
     </section>
