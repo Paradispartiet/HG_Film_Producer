@@ -13,6 +13,7 @@ import {
   FILM_DIRECTOR_PRACTICE_COPY,
   getFilmDirectorPracticeFieldLabel,
 } from "../../core/filmDirectorPracticeCopy";
+import { getFilmDirectorPracticeGuideTitle } from "../../core/filmDirectorPracticeGuideTitle";
 import { getDirectorTermDisplay } from "../../core/directorDisplay";
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
@@ -140,7 +141,7 @@ export function DirectorPracticeCoach({ visible }: DirectorPracticeCoachProps) {
                   type="button"
                 >
                   <span>{completedIds.has(guide.id) ? "✓" : String(index + 1).padStart(2, "0")}</span>
-                  <div><strong>{guide.norwegianLabel}</strong><small>{getFilmDirectorPracticeFieldLabel(language, guide)}</small></div>
+                  <div><strong>{getFilmDirectorPracticeGuideTitle(language, guide)}</strong><small>{getFilmDirectorPracticeFieldLabel(language, guide)}</small></div>
                 </button>
               ))}
             </section>
@@ -176,7 +177,7 @@ function PracticeGuideDetail({ completed, guide, language, onFocusField, onToggl
       <header>
         <div>
           <span>{copy.kindLabels[guide.kind]} · {getFilmDirectorPracticeFieldLabel(language, guide)}</span>
-          <h3>{guide.norwegianLabel}</h3>
+          <h3>{getFilmDirectorPracticeGuideTitle(language, guide)}</h3>
           <p>{guide.purpose}</p>
         </div>
         <div className="director-practice-actions">
