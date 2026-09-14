@@ -35,6 +35,7 @@ import {
 } from "../../core/directorProject";
 import { FILM_DIRECTOR_PROJECT_COPY, formatFilmDirectorProjectSavedTime, type FilmDirectorProjectCopy } from "../../core/filmDirectorProjectCopy";
 import { FILM_DIRECTOR_SHELL_COPY } from "../../core/filmDirectorShellCopy";
+import { FILM_DIRECTOR_SHOT_COPY, type FilmDirectorShotCopy } from "../../core/filmDirectorShotCopy";
 import { createFilmSlug, type FilmverketRoute, type FilmverketSection } from "../../core/filmverketRoutes";
 import { getClassicFilmScenarios, type FilmScenarioSeed } from "../data/filmScenarios";
 import { resolveScenarioProductionBrief } from "../data/scenarioProductionBriefs";
@@ -161,6 +162,7 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
   const [language] = useFilmWorkLanguage();
   const projectCopy = FILM_DIRECTOR_PROJECT_COPY[language];
   const briefCopy = FILM_DIRECTOR_BRIEF_COPY[language];
+  const shotCopy = FILM_DIRECTOR_SHOT_COPY[language];
   const referenceBrief = resolveScenarioProductionBrief(selectedScenario);
   const identity = useMemo(() => ({ filmId: selectedScenario.id, filmTitle: selectedScenario.film.title, filmYear: selectedScenario.film.year }), [selectedScenario]);
   const projectStorageKey = getDirectorProjectStorageKey(selectedScenario.id);
@@ -272,7 +274,7 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
           <ActiveSceneHeading copy={projectCopy} copyState={copyState} onCopy={() => copyText(buildActiveSceneText(project, currentScene), "scene")} project={project} scene={currentScene} />
           <ReferencePanel activeLensId={activeLensId} activePrinciples={activePrinciples} activeQuestion={activeQuestion} brief={referenceBrief} copy={projectCopy} onChangeLens={setActiveLensId} onUseCraft={useCraftStartingPoint} onUsePrinciple={useReferencePrinciple} onUseTone={useToneStartingPoint} scenario={selectedScenario} />
           <SceneBriefForm copy={briefCopy} groups={groups} onChange={updateBriefField} scene={currentScene} />
-          <ShotListEditor onAdd={addShot} onChange={changeShot} onDelete={deleteShot} onDuplicate={duplicateShot} onMove={moveShot} scene={currentScene} />
+          <ShotListEditor copy={shotCopy} onAdd={addShot} onChange={changeShot} onDelete={deleteShot} onDuplicate={duplicateShot} onMove={moveShot} scene={currentScene} />
         </div>
       </section>
 
@@ -347,7 +349,8 @@ function SceneBriefForm({ copy, groups, onChange, scene }: {
   return <section className="film-director-form" aria-label={copy.ariaLabel}>{groups.map((group, groupIndex) => <section className="film-director-form-group" key={group}><header><span>{String(groupIndex + 1).padStart(2, "0")}</span><h2>{copy.groups[group]}</h2></header><div className="film-director-fields">{fieldLayout.filter((field) => field.group === group).map((field) => { const fieldCopy = copy.fields[field.id]; const complete = scene.brief[field.id].trim().length > 0; return <label className={complete ? "film-director-field film-director-field--complete" : "film-director-field"} key={field.id}><span><strong>{fieldCopy.label}</strong><small>{complete ? copy.defined : copy.open}</small></span><p>{fieldCopy.prompt}</p>{field.rows === 1 ? <input onChange={(event) => onChange(field.id, event.target.value)} type="text" value={scene.brief[field.id]} /> : <textarea onChange={(event) => onChange(field.id, event.target.value)} rows={field.rows} value={scene.brief[field.id]} />}</label>; })}</div></section>)}</section>;
 }
 
-function ShotListEditor({ onAdd, onChange, onDelete, onDuplicate, onMove, scene }: {
+function ShotListEditor({ copy, onAdd, onChange, onDelete, onDuplicate, onMove, scene }: {
+  readonly copy: FilmDirectorShotCopy;
   readonly onAdd: () => void;
   readonly onChange: (shotId: string, field: DirectorShotFieldId, value: string) => void;
   readonly onDelete: (shotId: string) => void;
@@ -357,13 +360,14 @@ function ShotListEditor({ onAdd, onChange, onDelete, onDuplicate, onMove, scene 
 }) {
   return (
     <section className="director-shot-list-section" id="director-shot-list">
-      <header><div><span className="filmverket-card-kicker">From scene strategy to coverage</span><h2>Shot cards</h2><p>Each card must explain both the production setup and the dramatic reason for the shot.</p></div><button className="filmverket-primary-action" onClick={onAdd} type="button">+ Add shot</button></header>
-      {scene.shots.length === 0 ? <div className="director-shot-empty"><strong>No shot cards yet.</strong><p>Define the scene's coverage rule above, then add the first setup.</p><button onClick={onAdd} type="button">Add first shot</button></div> : <div className="director-shot-list">{scene.shots.map((shot, index) => <ShotCard index={index} key={shot.id} onChange={onChange} onDelete={onDelete} onDuplicate={onDuplicate} onMove={onMove} shot={shot} shotCount={scene.shots.length} />)}</div>}
+      <header><div><span className="filmverket-card-kicker">{copy.kicker}</span><h2>{copy.title}</h2><p>{copy.description}</p></div><button className="filmverket-primary-action" onClick={onAdd} type="button">{copy.addShot}</button></header>
+      {scene.shots.length === 0 ? <div className="director-shot-empty"><strong>{copy.emptyTitle}</strong><p>{copy.emptyDescription}</p><button onClick={onAdd} type="button">{copy.addFirstShot}</button></div> : <div className="director-shot-list">{scene.shots.map((shot, index) => <ShotCard copy={copy} index={index} key={shot.id} onChange={onChange} onDelete={onDelete} onDuplicate={onDuplicate} onMove={onMove} shot={shot} shotCount={scene.shots.length} />)}</div>}
     </section>
   );
 }
 
-function ShotCard({ index, onChange, onDelete, onDuplicate, onMove, shot, shotCount }: {
+function ShotCard({ copy, index, onChange, onDelete, onDuplicate, onMove, shot, shotCount }: {
+  readonly copy: FilmDirectorShotCopy;
   readonly index: number;
   readonly onChange: (shotId: string, field: DirectorShotFieldId, value: string) => void;
   readonly onDelete: (shotId: string) => void;
@@ -374,12 +378,12 @@ function ShotCard({ index, onChange, onDelete, onDuplicate, onMove, shot, shotCo
 }) {
   return (
     <article className="director-shot-card">
-      <header><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{shot.title.trim() || `Shot ${index + 1}`}</strong><small>{countCompletedDirectorShotFields(shot)}/{DIRECTOR_SHOT_FIELDS.length} fields defined</small></div><div className="director-shot-card-actions"><button aria-label="Move shot up" disabled={index === 0} onClick={() => onMove(shot.id, -1)} type="button">↑</button><button aria-label="Move shot down" disabled={index === shotCount - 1} onClick={() => onMove(shot.id, 1)} type="button">↓</button><button onClick={() => onDuplicate(shot.id)} type="button">Duplicate</button><button onClick={() => onDelete(shot.id)} type="button">Delete</button></div></header>
+      <header><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{shot.title.trim() || copy.shotTitleFallback(index + 1)}</strong><small>{copy.fieldsDefined(countCompletedDirectorShotFields(shot), DIRECTOR_SHOT_FIELDS.length)}</small></div><div className="director-shot-card-actions"><button aria-label={copy.moveShotUpAria} disabled={index === 0} onClick={() => onMove(shot.id, -1)} type="button">↑</button><button aria-label={copy.moveShotDownAria} disabled={index === shotCount - 1} onClick={() => onMove(shot.id, 1)} type="button">↓</button><button onClick={() => onDuplicate(shot.id)} type="button">{copy.duplicateShot}</button><button onClick={() => onDelete(shot.id)} type="button">{copy.deleteShot}</button></div></header>
       <div className="director-shot-grid">
-        <ShotInput field="title" label="Shot title" onChange={onChange} shot={shot} />
-        <label className="director-shot-field"><span>Shot size</span><select onChange={(event) => onChange(shot.id, "shotSize", event.target.value)} value={shot.shotSize}><option value="">Choose size…</option>{shotSizeOptions.map((value) => <option key={value} value={value}>{value}</option>)}</select></label>
-        <ShotInput field="cameraPosition" label="Camera position" onChange={onChange} shot={shot} /><ShotInput field="movement" label="Movement" onChange={onChange} shot={shot} /><ShotInput field="lens" label="Lens / focal behavior" onChange={onChange} shot={shot} /><ShotInput field="estimatedDuration" label="Estimated duration" onChange={onChange} shot={shot} />
-        <ShotTextArea field="subjectAction" label="Subject action and blocking" onChange={onChange} shot={shot} /><ShotTextArea field="dramaticPurpose" label="Dramatic purpose" onChange={onChange} shot={shot} /><ShotTextArea field="sound" label="Sound and dialogue priority" onChange={onChange} shot={shot} />
+        <ShotInput field="title" label={copy.fields.title} onChange={onChange} shot={shot} />
+        <label className="director-shot-field"><span>{copy.fields.shotSize}</span><select onChange={(event) => onChange(shot.id, "shotSize", event.target.value)} value={shot.shotSize}><option value="">{copy.chooseSize}</option>{shotSizeOptions.map((value) => <option key={value} value={value}>{copy.shotSizes[value]}</option>)}</select></label>
+        <ShotInput field="cameraPosition" label={copy.fields.cameraPosition} onChange={onChange} shot={shot} /><ShotInput field="movement" label={copy.fields.movement} onChange={onChange} shot={shot} /><ShotInput field="lens" label={copy.fields.lens} onChange={onChange} shot={shot} /><ShotInput field="estimatedDuration" label={copy.fields.estimatedDuration} onChange={onChange} shot={shot} />
+        <ShotTextArea field="subjectAction" label={copy.fields.subjectAction} onChange={onChange} shot={shot} /><ShotTextArea field="dramaticPurpose" label={copy.fields.dramaticPurpose} onChange={onChange} shot={shot} /><ShotTextArea field="sound" label={copy.fields.sound} onChange={onChange} shot={shot} />
       </div>
     </article>
   );
