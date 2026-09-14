@@ -3,6 +3,7 @@ import test from "node:test";
 
 import { FILMWORK_LANGUAGES } from "./filmWorkLanguage.js";
 import {
+  LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK,
   SILENT_FOUNDATIONS_HISTORY_FEEDBACK,
   SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK,
   formatFilmStudyHistoryFeedback,
@@ -12,6 +13,7 @@ const FEEDBACK_KEYS = ["match", "partial", "miss"] as const;
 const FEEDBACK_CONTRACTS = [
   ["Silent Foundations", SILENT_FOUNDATIONS_HISTORY_FEEDBACK],
   ["Silent Studio Systems", SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK],
+  ["Late Silent / Early Sound", LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK],
 ] as const;
 
 test("localized Film Study history feedback contracts cover the exact three canonical outcomes", () => {
