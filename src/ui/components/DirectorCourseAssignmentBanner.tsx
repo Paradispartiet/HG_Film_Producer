@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 
 import { DIRECTOR_BRIEF_FIELDS } from "../../core/directorBrief";
+import {
+  DIRECTOR_COURSE_ASSIGNMENT_BANNER_COPY,
+  buildDirectorCourseAssignmentValidationGuidance,
+} from "../../core/directorCourseAssignmentBannerCopy";
 import { coerceDirectorProject, getDirectorProjectStorageKey, type DirectorProject } from "../../core/directorProject";
 import {
   CAMERA_COURSE_ID,
@@ -25,6 +29,7 @@ import {
   FILM_SCHOOL_GROUND_COURSE_ID,
   type FilmSchoolCapstoneAssignment,
 } from "../../core/filmSchoolGroundCourse";
+import { getFilmWorkIntlLocale, type FilmWorkLanguage } from "../../core/filmWorkLanguage";
 import {
   LIGHTING_DESIGN_COURSE_ID,
   LIGHTING_DESIGN_DIRECTOR_ASSIGNMENT_STORAGE_KEY,
@@ -40,6 +45,7 @@ import {
   SCREENPLAY_DIRECTOR_ASSIGNMENT_STORAGE_KEY,
   type ScreenplayDirectorAssignment,
 } from "../../core/filmSchoolScreenplayCourse";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 type CourseAssignment = ScreenplayDirectorAssignment | PerformanceDirectorAssignment | CameraDirectorAssignment | LightingDesignDirectorAssignment | EditingSoundDirectorAssignment | FilmSchoolCapstoneAssignment;
 type LoadedCourseAssignment = CourseAssignment & { readonly storageKey: string };
@@ -65,6 +71,8 @@ const assignmentSources = [
 ] as const;
 
 export function DirectorCourseAssignmentBanner({ filmSlug, visible }: DirectorCourseAssignmentBannerProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = DIRECTOR_COURSE_ASSIGNMENT_BANNER_COPY[language];
   const [assignment, setAssignment] = useState<LoadedCourseAssignment | undefined>(() => loadAssignment(filmSlug));
   const [, setRevision] = useState(0);
 
@@ -117,49 +125,56 @@ export function DirectorCourseAssignmentBanner({ filmSlug, visible }: DirectorCo
     }
 
     const submissionLabel = submitted && !projectChangedAfterSubmission
-      ? "Regieksamen levert"
+      ? copy.examSubmitted
       : submitted
-        ? "Lever oppdatert versjon"
-        : "Lever regieksamen";
+        ? copy.submitUpdatedVersion
+        : copy.submitExam;
+
+    const validationGuidance = buildDirectorCourseAssignmentValidationGuidance(language, {
+      assignmentMatchesProject: validation.assignmentMatchesProject,
+      missingBriefFields: validation.missingBriefFieldIds.length,
+      missingShotCards: Math.max(0, validation.minimumCompleteShots - validation.completeShotCount),
+    });
 
     return (
-      <aside className={submitted && !projectChangedAfterSubmission ? "director-course-assignment director-course-assignment--capstone is-submitted" : "director-course-assignment director-course-assignment--capstone"} aria-label="Film School final directing exam">
+      <aside className={submitted && !projectChangedAfterSubmission ? "director-course-assignment director-course-assignment--capstone is-submitted" : "director-course-assignment director-course-assignment--capstone"} aria-label={copy.capstoneAria}>
         <header>
-          <div><span>Film School · Regieksamen</span><strong>{capstoneAssignment.title}</strong><small>{capstoneAssignment.filmYear} · {capstoneAssignment.filmTitle}</small></div>
-          <button aria-label="Dismiss course assignment" onClick={dismiss} type="button">×</button>
+          <div><span>{copy.capstoneEyebrow}</span><strong>{capstoneAssignment.title}</strong><small>{capstoneAssignment.filmYear} · {capstoneAssignment.filmTitle}</small></div>
+          <button aria-label={copy.dismissAssignment} onClick={dismiss} type="button">×</button>
         </header>
-        <p>{submitted && !projectChangedAfterSubmission ? `Levert ${formatDateTime(snapshot.submission?.submittedAt)} · ${snapshot.submission?.sceneTitle}` : capstoneAssignment.prompt}</p>
+        <p>{submitted && !projectChangedAfterSubmission ? copy.submitted(formatDateTime(snapshot.submission?.submittedAt, language, copy.unknownTime), snapshot.submission?.sceneTitle) : capstoneAssignment.prompt}</p>
         <section className="director-capstone-requirements" aria-live="polite">
-          <div className={validation.completedBriefFields === validation.totalBriefFields ? "is-complete" : ""}><strong>{validation.completedBriefFields}/{validation.totalBriefFields}</strong><span>regifelt i aktiv scene</span></div>
-          <div className={validation.completeShotCount >= validation.minimumCompleteShots ? "is-complete" : ""}><strong>{validation.completeShotCount}/{validation.minimumCompleteShots}</strong><span>komplette shot cards</span></div>
-          <div className={validation.assignmentMatchesProject ? "is-complete" : ""}><strong>{validation.assignmentMatchesProject ? "Ja" : "Nei"}</strong><span>riktig referansefilm</span></div>
+          <div className={validation.completedBriefFields === validation.totalBriefFields ? "is-complete" : ""}><strong>{validation.completedBriefFields}/{validation.totalBriefFields}</strong><span>{copy.briefFieldsInActiveScene}</span></div>
+          <div className={validation.completeShotCount >= validation.minimumCompleteShots ? "is-complete" : ""}><strong>{validation.completeShotCount}/{validation.minimumCompleteShots}</strong><span>{copy.completeShotCards}</span></div>
+          <div className={validation.assignmentMatchesProject ? "is-complete" : ""}><strong>{validation.assignmentMatchesProject ? copy.yes : copy.no}</strong><span>{copy.correctReferenceFilm}</span></div>
         </section>
         {!submitted || projectChangedAfterSubmission ? (
-          <p className="director-capstone-guidance">{validation.canSubmit ? "Aktiv scene oppfyller kravene og kan leveres." : buildValidationGuidance(validation)}</p>
+          <p className="director-capstone-guidance">{validation.canSubmit ? copy.readyToSubmit : validationGuidance}</p>
         ) : null}
-        {projectChangedAfterSubmission ? <p className="director-capstone-warning">Prosjektet er endret etter innleveringen. Lever på nytt for å registrere siste versjon.</p> : null}
+        {projectChangedAfterSubmission ? <p className="director-capstone-warning">{copy.projectChangedAfterSubmission}</p> : null}
         <section className="director-capstone-actions">
-          <button onClick={() => document.getElementById("director-active-scene")?.scrollIntoView({ behavior: "smooth", block: "start" })} type="button">Gå til scenebrieffet</button>
-          <button onClick={() => document.getElementById("director-shot-list")?.scrollIntoView({ behavior: "smooth", block: "start" })} type="button">Gå til bildeplanen</button>
+          <button onClick={() => document.getElementById("director-active-scene")?.scrollIntoView({ behavior: "smooth", block: "start" })} type="button">{copy.goToSceneBrief}</button>
+          <button onClick={() => document.getElementById("director-shot-list")?.scrollIntoView({ behavior: "smooth", block: "start" })} type="button">{copy.goToShotPlan}</button>
           <button className="is-primary" disabled={!validation.canSubmit || (submitted && !projectChangedAfterSubmission)} onClick={submitCapstone} type="button">{submissionLabel}</button>
         </section>
       </aside>
     );
   }
 
-  const fieldLabels = activeAssignment.fieldIds.map((fieldId) => (
-    DIRECTOR_BRIEF_FIELDS.find((field) => field.id === fieldId)?.label ?? fieldId
-  ));
+  const fieldLabels = activeAssignment.fieldIds.map((fieldId) => {
+    const field = DIRECTOR_BRIEF_FIELDS.find((candidate) => candidate.id === fieldId);
+    return field ? copy.fieldLabels[field.id] : fieldId;
+  });
 
   return (
-    <aside className="director-course-assignment" aria-label="Film School director assignment">
+    <aside className="director-course-assignment" aria-label={copy.assignmentAria}>
       <header>
-        <div><span>Film School-oppgave</span><strong>{activeAssignment.title}</strong><small>{activeAssignment.filmYear} · {activeAssignment.filmTitle}</small></div>
-        <button aria-label="Dismiss course assignment" onClick={dismiss} type="button">×</button>
+        <div><span>{copy.assignmentEyebrow}</span><strong>{activeAssignment.title}</strong><small>{activeAssignment.filmYear} · {activeAssignment.filmTitle}</small></div>
+        <button aria-label={copy.dismissAssignment} onClick={dismiss} type="button">×</button>
       </header>
       <p>{activeAssignment.prompt}</p>
       <div>{fieldLabels.map((label, index) => <span key={`${index}:${label}`}><b>{String(index + 1).padStart(2, "0")}</b>{label}</span>)}</div>
-      <button onClick={() => document.getElementById("director-active-scene")?.scrollIntoView({ behavior: "smooth", block: "start" })} type="button">Gå til scenebrieffet →</button>
+      <button onClick={() => document.getElementById("director-active-scene")?.scrollIntoView({ behavior: "smooth", block: "start" })} type="button">{copy.goToSceneBrief} →</button>
     </aside>
   );
 }
@@ -198,22 +213,12 @@ function loadCapstoneSnapshot(assignment: FilmSchoolCapstoneAssignment): Capston
   return { project, submission };
 }
 
-function buildValidationGuidance(validation: ReturnType<typeof validateFilmSchoolCapstoneProject>): string {
-  const messages: string[] = [];
-  if (!validation.assignmentMatchesProject) messages.push("Åpne filmen som ble valgt i Film School");
-  if (validation.missingBriefFieldIds.length > 0) messages.push(`fyll ${validation.missingBriefFieldIds.length} åpne regifelt`);
-  if (validation.completeShotCount < validation.minimumCompleteShots) messages.push(`fullfør ${validation.minimumCompleteShots - validation.completeShotCount} flere shot cards`);
-  return messages.length > 0 ? `${capitalize(messages.join(", og "))}.` : "Aktiv scene kan ikke leveres ennå.";
-}
-
-function formatDateTime(value: string | undefined): string {
-  if (!value) return "ukjent tidspunkt";
+function formatDateTime(value: string | undefined, language: FilmWorkLanguage, unknownTime: string): string {
+  if (!value) return unknownTime;
   const timestamp = Date.parse(value);
-  return Number.isFinite(timestamp) ? new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" }).format(new Date(timestamp)) : value;
-}
-
-function capitalize(value: string): string {
-  return value ? `${value[0]?.toLocaleUpperCase() ?? ""}${value.slice(1)}` : value;
+  return Number.isFinite(timestamp)
+    ? new Intl.DateTimeFormat(getFilmWorkIntlLocale(language), { dateStyle: "medium", timeStyle: "short" }).format(new Date(timestamp))
+    : value;
 }
 
 function isCapstoneAssignment(value: LoadedCourseAssignment): value is LoadedCapstoneAssignment {
