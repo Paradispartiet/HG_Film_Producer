@@ -22,6 +22,11 @@ import {
   type ProductionCaseLearningReport,
 } from "../../core/productionCaseLearning";
 import {
+  getProductionCaseLearningHintPresentation,
+  getProductionCaseLearningNextActionPresentation,
+  getProductionCaseLearningSummary,
+} from "../../core/productionCaseLearningCopy";
+import {
   getProductionCaseProgressEntry,
   readProductionCaseProgress,
   resetProductionCaseScenarioProgress,
@@ -331,12 +336,13 @@ function ProductionCaseLearningReportBox({
   readonly report: ProductionCaseLearningReport;
   readonly sourceVerification: ProductionCaseVerificationRecord | undefined;
 }) {
+  const [language] = useFilmWorkLanguage();
   const reviewPhases = [...report.revisitPhases, ...report.developingPhases];
   return (
     <section className="scenario-production-report" aria-label={copy.flow.learningReportAriaLabel}>
       <div className="scenario-production-report-header">
         <span className="eyebrow">{copy.flow.learningReport}</span>
-        <strong>{report.learningSummary}</strong>
+        <strong>{getProductionCaseLearningSummary(language, report)}</strong>
       </div>
       <div className="scenario-production-report-stats">
         <span>{copy.flow.phasesStudied(report.completedCount, report.totalMissions)}</span>
@@ -402,11 +408,13 @@ function ProductionCaseNextLearningBox({
   readonly missionTitle: string;
   readonly onFocusMission: (missionId: string) => void;
 }) {
+  const [language] = useFilmWorkLanguage();
+  const presentation = getProductionCaseLearningNextActionPresentation(language, action);
   return (
     <section className={`scenario-production-next-phase scenario-production-next-phase--${action.actionType}`} aria-label={copy.flow.nextLearningStepAriaLabel}>
       <span className="eyebrow">{copy.flow.nextLearningStep}</span>
-      <strong>{action.label}: {missionTitle}</strong>
-      <p>{action.description}</p>
+      <strong>{presentation.label}: {missionTitle}</strong>
+      <p>{presentation.description}</p>
       <button onClick={() => onFocusMission(action.missionId)} type="button">{copy.flow.goToPhase}</button>
     </section>
   );
@@ -423,11 +431,13 @@ function ProductionCaseLearningHintBox({
   readonly missionTitle: string;
   readonly onFocusMission: (missionId: string) => void;
 }) {
+  const [language] = useFilmWorkLanguage();
+  const presentation = getProductionCaseLearningHintPresentation(language, hint);
   return (
     <section className={`scenario-production-improvement scenario-production-improvement--${hint.hintType}`} aria-label={copy.flow.suggestedReviewAriaLabel}>
       <span className="eyebrow">{copy.flow.suggestedReview}</span>
-      <strong>{hint.label}: {missionTitle}</strong>
-      <p>{hint.description}</p>
+      <strong>{presentation.label}: {missionTitle}</strong>
+      <p>{presentation.description}</p>
       <button onClick={() => onFocusMission(hint.missionId)} type="button">{copy.flow.reviewPhase}</button>
     </section>
   );
