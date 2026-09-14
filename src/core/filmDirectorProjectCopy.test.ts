@@ -29,6 +29,11 @@ test("every language provides non-empty project chrome copy", () => {
     "sceneAutosaveNote",
     "sceneCopied",
     "copyActiveScene",
+    "directorNotRegistered",
+    "referenceCraftLensAria",
+    "useInScene",
+    "useToneAsAudienceEffectDraft",
+    "useLensAsFormalStrategyDraft",
     "savedOnThisDevice",
     "lastProjectChange",
     "scenesInProject",
@@ -36,9 +41,15 @@ test("every language provides non-empty project chrome copy", () => {
     "decisionsDefined",
     "notRecorded",
   ] as const;
+  const lensIds = ["screenplay", "cinematography", "editing", "sound"] as const;
   for (const language of FILMWORK_LANGUAGES) {
     const copy = FILM_DIRECTOR_PROJECT_COPY[language];
     for (const key of keys) assert.ok(copy[key].trim().length > 0, `${language}:${key}`);
+    assert.deepEqual(Object.keys(copy.referenceLenses).sort(), [...lensIds].sort(), `${language}:referenceLenses keys`);
+    for (const lensId of lensIds) {
+      assert.ok(copy.referenceLenses[lensId].shortLabel.trim().length > 0, `${language}:${lensId}:shortLabel`);
+      assert.ok(copy.referenceLenses[lensId].question.trim().length > 0, `${language}:${lensId}:question`);
+    }
     assert.ok(copy.progressAria(73).includes("73"), `${language}:progressAria`);
     assert.ok(copy.sceneShotCount(2, 3).includes("2"), `${language}:sceneShotCount scenes`);
     assert.ok(copy.sceneShotCount(2, 3).includes("3"), `${language}:sceneShotCount shots`);
@@ -98,6 +109,54 @@ test("NB, FR and PT localize the scene sidebar and active-scene heading", () => 
     [FILM_DIRECTOR_PROJECT_COPY.pt.projectScenes, FILM_DIRECTOR_PROJECT_COPY.pt.addScene, FILM_DIRECTOR_PROJECT_COPY.pt.duplicateScene, FILM_DIRECTOR_PROJECT_COPY.pt.deleteScene, FILM_DIRECTOR_PROJECT_COPY.pt.copyActiveScene],
     ["Cenas do projeto", "+ Adicionar cena", "Duplicar cena", "Eliminar cena", "Copiar cena ativa"],
   );
+});
+
+test("reference panel chrome localizes lens labels, questions and actions", () => {
+  assert.deepEqual(
+    [
+      FILM_DIRECTOR_PROJECT_COPY.en.referenceLenses.screenplay.shortLabel,
+      FILM_DIRECTOR_PROJECT_COPY.en.referenceLenses.cinematography.shortLabel,
+      FILM_DIRECTOR_PROJECT_COPY.en.referenceLenses.editing.shortLabel,
+      FILM_DIRECTOR_PROJECT_COPY.en.referenceLenses.sound.shortLabel,
+    ],
+    ["Dramaturgy", "Image", "Editing", "Sound"],
+  );
+  assert.deepEqual(
+    [
+      FILM_DIRECTOR_PROJECT_COPY.nb.referenceLenses.screenplay.shortLabel,
+      FILM_DIRECTOR_PROJECT_COPY.nb.referenceLenses.cinematography.shortLabel,
+      FILM_DIRECTOR_PROJECT_COPY.nb.referenceLenses.editing.shortLabel,
+      FILM_DIRECTOR_PROJECT_COPY.nb.referenceLenses.sound.shortLabel,
+      FILM_DIRECTOR_PROJECT_COPY.nb.useInScene,
+    ],
+    ["Dramaturgi", "Bilde", "Klipp", "Lyd", "Bruk i scenen"],
+  );
+  assert.deepEqual(
+    [
+      FILM_DIRECTOR_PROJECT_COPY.fr.referenceLenses.screenplay.shortLabel,
+      FILM_DIRECTOR_PROJECT_COPY.fr.referenceLenses.cinematography.shortLabel,
+      FILM_DIRECTOR_PROJECT_COPY.fr.referenceLenses.editing.shortLabel,
+      FILM_DIRECTOR_PROJECT_COPY.fr.referenceLenses.sound.shortLabel,
+      FILM_DIRECTOR_PROJECT_COPY.fr.useInScene,
+    ],
+    ["Dramaturgie", "Image", "Montage", "Son", "Utiliser dans la scène"],
+  );
+  assert.deepEqual(
+    [
+      FILM_DIRECTOR_PROJECT_COPY.pt.referenceLenses.screenplay.shortLabel,
+      FILM_DIRECTOR_PROJECT_COPY.pt.referenceLenses.cinematography.shortLabel,
+      FILM_DIRECTOR_PROJECT_COPY.pt.referenceLenses.editing.shortLabel,
+      FILM_DIRECTOR_PROJECT_COPY.pt.referenceLenses.sound.shortLabel,
+      FILM_DIRECTOR_PROJECT_COPY.pt.useInScene,
+    ],
+    ["Dramaturgia", "Imagem", "Montagem", "Som", "Usar na cena"],
+  );
+  for (const language of ["nb", "fr", "pt"] as const) {
+    assert.notEqual(FILM_DIRECTOR_PROJECT_COPY[language].referenceLenses.screenplay.question, FILM_DIRECTOR_PROJECT_COPY.en.referenceLenses.screenplay.question, `${language}:screenplay question`);
+    assert.notEqual(FILM_DIRECTOR_PROJECT_COPY[language].referenceLenses.cinematography.question, FILM_DIRECTOR_PROJECT_COPY.en.referenceLenses.cinematography.question, `${language}:cinematography question`);
+    assert.notEqual(FILM_DIRECTOR_PROJECT_COPY[language].referenceLenses.editing.question, FILM_DIRECTOR_PROJECT_COPY.en.referenceLenses.editing.question, `${language}:editing question`);
+    assert.notEqual(FILM_DIRECTOR_PROJECT_COPY[language].referenceLenses.sound.question, FILM_DIRECTOR_PROJECT_COPY.en.referenceLenses.sound.question, `${language}:sound question`);
+  }
 });
 
 test("scene titles, positions and shot counts use language-aware scene chrome", () => {
