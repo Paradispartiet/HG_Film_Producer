@@ -32,6 +32,7 @@ import {
   type DirectorShotCard,
   type DirectorShotFieldId,
 } from "../../core/directorProject";
+import { FILM_DIRECTOR_PROJECT_COPY, formatFilmDirectorProjectSavedTime } from "../../core/filmDirectorProjectCopy";
 import { FILM_DIRECTOR_SHELL_COPY } from "../../core/filmDirectorShellCopy";
 import { createFilmSlug, type FilmverketRoute, type FilmverketSection } from "../../core/filmverketRoutes";
 import { getClassicFilmScenarios, type FilmScenarioSeed } from "../data/filmScenarios";
@@ -160,6 +161,8 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
   readonly scenarios: readonly FilmScenarioSeed[];
   readonly selectedScenario: FilmScenarioSeed;
 }) {
+  const [language] = useFilmWorkLanguage();
+  const projectCopy = FILM_DIRECTOR_PROJECT_COPY[language];
   const referenceBrief = resolveScenarioProductionBrief(selectedScenario);
   const identity = useMemo(() => ({ filmId: selectedScenario.id, filmTitle: selectedScenario.film.title, filmYear: selectedScenario.film.year }), [selectedScenario]);
   const projectStorageKey = getDirectorProjectStorageKey(selectedScenario.id);
@@ -234,7 +237,7 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
   function moveShot(shotId: string, direction: -1 | 1) { setProject((current) => moveDirectorShot(current, current.activeSceneId, shotId, direction)); }
 
   function resetProject() {
-    if (!window.confirm(`Clear every Film Director scene and shot card for ${selectedScenario.film.title}?`)) return;
+    if (!window.confirm(projectCopy.clearProjectConfirm(selectedScenario.film.title))) return;
     setProject(createBlankDirectorProject(identity, createDirectorEntityId("scene")));
     setCopyState("idle");
   }
@@ -252,16 +255,16 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
   return (
     <main className="film-director-page director-project-page">
       <section className="film-director-hero director-project-hero">
-        <div><span className="filmverket-kicker">Multi-scene directing workspace</span><h1>Film <em>Director</em></h1><p>Build one directing project from connected scenes. Give each scene its own dramatic plan, then translate that plan into an ordered shot list.</p></div>
-        <aside className="film-director-progress-card director-project-progress-card"><span>Project progress</span><strong>{completionPercent}<small>%</small></strong><div aria-label={`${completionPercent}% complete`} className="film-director-progress"><span style={{ width: `${completionPercent}%` }} /></div><p>{project.scenes.length} scene{project.scenes.length === 1 ? "" : "s"} · {totalShots} shot{totalShots === 1 ? "" : "s"}</p></aside>
+        <div><span className="filmverket-kicker">{projectCopy.heroKicker}</span><h1>Film <em>Director</em></h1><p>{projectCopy.heroDescription}</p></div>
+        <aside className="film-director-progress-card director-project-progress-card"><span>{projectCopy.projectProgress}</span><strong>{completionPercent}<small>%</small></strong><div aria-label={projectCopy.progressAria(completionPercent)} className="film-director-progress"><span style={{ width: `${completionPercent}%` }} /></div><p>{projectCopy.sceneShotCount(project.scenes.length, totalShots)}</p></aside>
       </section>
 
       <section className="film-director-toolbar director-project-toolbar">
-        <label><span>Reference film</span><select onChange={selectFilm} value={selectedScenario.id}>{scenarios.map((scenario) => <option key={scenario.id} value={scenario.id}>{scenario.film.year} · {scenario.film.title}</option>)}</select></label>
+        <label><span>{projectCopy.referenceFilm}</span><select onChange={selectFilm} value={selectedScenario.id}>{scenarios.map((scenario) => <option key={scenario.id} value={scenario.id}>{scenario.film.year} · {scenario.film.title}</option>)}</select></label>
         <div className="film-director-toolbar-actions">
-          <button className="filmverket-secondary-action" onClick={() => navigate({ section: "atlas", filmSlug: getScenarioSlug(selectedScenario) })} type="button">Open film analysis</button>
-          <button className="filmverket-secondary-action" onClick={resetProject} type="button">Clear project</button>
-          <button className="filmverket-primary-action" onClick={() => copyText(buildDirectorProjectText(project), "project")} type="button">{copyState === "project" ? "Project copied" : copyState === "failed" ? "Copy failed" : "Copy complete project"}</button>
+          <button className="filmverket-secondary-action" onClick={() => navigate({ section: "atlas", filmSlug: getScenarioSlug(selectedScenario) })} type="button">{projectCopy.openFilmAnalysis}</button>
+          <button className="filmverket-secondary-action" onClick={resetProject} type="button">{projectCopy.clearProject}</button>
+          <button className="filmverket-primary-action" onClick={() => copyText(buildDirectorProjectText(project), "project")} type="button">{copyState === "project" ? projectCopy.projectCopied : copyState === "failed" ? projectCopy.copyFailed : projectCopy.copyCompleteProject}</button>
         </div>
       </section>
 
@@ -276,8 +279,8 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
       </section>
 
       <section className="film-director-summary director-project-summary">
-        <div><span className="filmverket-card-kicker">Saved on this device</span><h2>{project.filmTitle}</h2><p>Last project change: {formatSavedTime(project.updatedAt)}</p></div>
-        <div><strong>{project.scenes.length}</strong><span>scenes in project</span></div><div><strong>{totalShots}</strong><span>shot cards planned</span></div><div><strong>{completedFieldCount}</strong><span>decisions defined</span></div>
+        <div><span className="filmverket-card-kicker">{projectCopy.savedOnThisDevice}</span><h2>{project.filmTitle}</h2><p>{projectCopy.lastProjectChange} {formatFilmDirectorProjectSavedTime(language, project.updatedAt)}</p></div>
+        <div><strong>{project.scenes.length}</strong><span>{projectCopy.scenesInProject}</span></div><div><strong>{totalShots}</strong><span>{projectCopy.shotCardsPlanned}</span></div><div><strong>{completedFieldCount}</strong><span>{projectCopy.decisionsDefined}</span></div>
       </section>
     </main>
   );
@@ -407,8 +410,4 @@ function loadProject(projectKey: string, legacyKey: string, identity: { readonly
     if (legacy) return createDirectorProjectFromBrief(coerceDirectorBriefDraft(JSON.parse(legacy) as unknown, identity), createDirectorEntityId("scene"));
   } catch { /* Fall through to a blank project. */ }
   return createBlankDirectorProject(identity, createDirectorEntityId("scene"));
-}
-function formatSavedTime(value: string): string {
-  const timestamp = Date.parse(value);
-  return Number.isFinite(timestamp) ? new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" }).format(new Date(timestamp)) : "not recorded";
 }
