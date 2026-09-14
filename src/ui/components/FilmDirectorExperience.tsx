@@ -8,6 +8,7 @@ import {
   type DirectorBriefDraft,
   type DirectorBriefFieldId,
 } from "../../core/directorBrief";
+import { FILM_DIRECTOR_BRIEF_COPY, type FilmDirectorBriefCopy, type FilmDirectorBriefGroupId } from "../../core/filmDirectorBriefCopy";
 import {
   DIRECTOR_SHOT_FIELDS,
   addDirectorScene,
@@ -61,26 +62,25 @@ const directorLenses: readonly DirectorLens[] = [
 
 const fieldLayout: readonly {
   readonly id: DirectorBriefFieldId;
-  readonly group: "Concept" | "Staging" | "Image" | "Time and sound" | "Feasibility";
-  readonly prompt: string;
+  readonly group: FilmDirectorBriefGroupId;
   readonly rows: number;
 }[] = [
-  { id: "sceneTitle", group: "Concept", prompt: "Give the scene a working title or number.", rows: 1 },
-  { id: "sceneContext", group: "Concept", prompt: "What has happened before, and what does the audience know on entry?", rows: 3 },
-  { id: "sceneObjective", group: "Concept", prompt: "What must change by the end of the scene?", rows: 3 },
-  { id: "audienceEffect", group: "Concept", prompt: "What should the audience feel, notice, fear, expect, or misunderstand?", rows: 3 },
-  { id: "conflictTurn", group: "Concept", prompt: "Where is the resistance, and what is the decisive turn?", rows: 3 },
-  { id: "formalStrategy", group: "Concept", prompt: "State the central formal rule that holds the scene together.", rows: 4 },
-  { id: "blocking", group: "Staging", prompt: "Map entrances, exits, distance, eyelines, power positions, and movement.", rows: 5 },
-  { id: "performanceDirection", group: "Staging", prompt: "What actions, tempo, restraint, subtext, and changes should the actors play?", rows: 5 },
-  { id: "productionDesign", group: "Staging", prompt: "Which objects, surfaces, colors, costume details, and spatial facts carry meaning?", rows: 4 },
-  { id: "shotPlan", group: "Image", prompt: "Define the scene's overall coverage rule before detailing individual shot cards below.", rows: 5 },
-  { id: "cameraMovementLenses", group: "Image", prompt: "Define camera position, movement, distance, lens behavior, and perspective.", rows: 4 },
-  { id: "lightingPalette", group: "Image", prompt: "Define source logic, contrast, exposure priorities, color, and transitions.", rows: 4 },
-  { id: "editingRhythm", group: "Time and sound", prompt: "Describe duration, cut points, reactions, ellipses, overlaps, and rhythm changes.", rows: 5 },
-  { id: "soundStrategy", group: "Time and sound", prompt: "Plan dialogue, ambience, off-screen sound, silence, music, and sonic perspective.", rows: 5 },
-  { id: "practicalConstraints", group: "Feasibility", prompt: "Record time, location, cast, equipment, safety, continuity, and budget limits.", rows: 4 },
-  { id: "proofOfIntent", group: "Feasibility", prompt: "What observable evidence in the finished scene will prove the directing idea worked?", rows: 4 },
+  { id: "sceneTitle", group: "concept", rows: 1 },
+  { id: "sceneContext", group: "concept", rows: 3 },
+  { id: "sceneObjective", group: "concept", rows: 3 },
+  { id: "audienceEffect", group: "concept", rows: 3 },
+  { id: "conflictTurn", group: "concept", rows: 3 },
+  { id: "formalStrategy", group: "concept", rows: 4 },
+  { id: "blocking", group: "staging", rows: 5 },
+  { id: "performanceDirection", group: "staging", rows: 5 },
+  { id: "productionDesign", group: "staging", rows: 4 },
+  { id: "shotPlan", group: "image", rows: 5 },
+  { id: "cameraMovementLenses", group: "image", rows: 4 },
+  { id: "lightingPalette", group: "image", rows: 4 },
+  { id: "editingRhythm", group: "timeSound", rows: 5 },
+  { id: "soundStrategy", group: "timeSound", rows: 5 },
+  { id: "practicalConstraints", group: "feasibility", rows: 4 },
+  { id: "proofOfIntent", group: "feasibility", rows: 4 },
 ];
 
 const navItems: readonly { readonly id: FilmverketSection; readonly label: string }[] = [
@@ -160,6 +160,7 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
 }) {
   const [language] = useFilmWorkLanguage();
   const projectCopy = FILM_DIRECTOR_PROJECT_COPY[language];
+  const briefCopy = FILM_DIRECTOR_BRIEF_COPY[language];
   const referenceBrief = resolveScenarioProductionBrief(selectedScenario);
   const identity = useMemo(() => ({ filmId: selectedScenario.id, filmTitle: selectedScenario.film.title, filmYear: selectedScenario.film.year }), [selectedScenario]);
   const projectStorageKey = getDirectorProjectStorageKey(selectedScenario.id);
@@ -270,7 +271,7 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
         <div className="director-active-scene" id="director-active-scene">
           <ActiveSceneHeading copy={projectCopy} copyState={copyState} onCopy={() => copyText(buildActiveSceneText(project, currentScene), "scene")} project={project} scene={currentScene} />
           <ReferencePanel activeLensId={activeLensId} activePrinciples={activePrinciples} activeQuestion={activeQuestion} brief={referenceBrief} copy={projectCopy} onChangeLens={setActiveLensId} onUseCraft={useCraftStartingPoint} onUsePrinciple={useReferencePrinciple} onUseTone={useToneStartingPoint} scenario={selectedScenario} />
-          <SceneBriefForm groups={groups} onChange={updateBriefField} scene={currentScene} />
+          <SceneBriefForm copy={briefCopy} groups={groups} onChange={updateBriefField} scene={currentScene} />
           <ShotListEditor onAdd={addShot} onChange={changeShot} onDelete={deleteShot} onDuplicate={duplicateShot} onMove={moveShot} scene={currentScene} />
         </div>
       </section>
@@ -337,12 +338,13 @@ function ReferencePanel({ activeLensId, activePrinciples, activeQuestion, brief,
   );
 }
 
-function SceneBriefForm({ groups, onChange, scene }: {
-  readonly groups: readonly (typeof fieldLayout)[number]["group"][];
+function SceneBriefForm({ copy, groups, onChange, scene }: {
+  readonly copy: FilmDirectorBriefCopy;
+  readonly groups: readonly FilmDirectorBriefGroupId[];
   readonly onChange: (fieldId: DirectorBriefFieldId, value: string) => void;
   readonly scene: DirectorScene;
 }) {
-  return <section className="film-director-form" aria-label="Active scene directing brief">{groups.map((group, groupIndex) => <section className="film-director-form-group" key={group}><header><span>{String(groupIndex + 1).padStart(2, "0")}</span><h2>{group}</h2></header><div className="film-director-fields">{fieldLayout.filter((field) => field.group === group).map((field) => { const definition = DIRECTOR_BRIEF_FIELDS.find((candidate) => candidate.id === field.id); const complete = scene.brief[field.id].trim().length > 0; return <label className={complete ? "film-director-field film-director-field--complete" : "film-director-field"} key={field.id}><span><strong>{definition?.label ?? field.id}</strong><small>{complete ? "Defined" : "Open"}</small></span><p>{field.prompt}</p>{field.rows === 1 ? <input onChange={(event) => onChange(field.id, event.target.value)} type="text" value={scene.brief[field.id]} /> : <textarea onChange={(event) => onChange(field.id, event.target.value)} rows={field.rows} value={scene.brief[field.id]} />}</label>; })}</div></section>)}</section>;
+  return <section className="film-director-form" aria-label={copy.ariaLabel}>{groups.map((group, groupIndex) => <section className="film-director-form-group" key={group}><header><span>{String(groupIndex + 1).padStart(2, "0")}</span><h2>{copy.groups[group]}</h2></header><div className="film-director-fields">{fieldLayout.filter((field) => field.group === group).map((field) => { const fieldCopy = copy.fields[field.id]; const complete = scene.brief[field.id].trim().length > 0; return <label className={complete ? "film-director-field film-director-field--complete" : "film-director-field"} key={field.id}><span><strong>{fieldCopy.label}</strong><small>{complete ? copy.defined : copy.open}</small></span><p>{fieldCopy.prompt}</p>{field.rows === 1 ? <input onChange={(event) => onChange(field.id, event.target.value)} type="text" value={scene.brief[field.id]} /> : <textarea onChange={(event) => onChange(field.id, event.target.value)} rows={field.rows} value={scene.brief[field.id]} />}</label>; })}</div></section>)}</section>;
 }
 
 function ShotListEditor({ onAdd, onChange, onDelete, onDuplicate, onMove, scene }: {
