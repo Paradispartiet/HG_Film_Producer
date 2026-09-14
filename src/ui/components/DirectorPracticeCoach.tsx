@@ -13,6 +13,7 @@ import {
   FILM_DIRECTOR_PRACTICE_COPY,
   getFilmDirectorPracticeFieldLabel,
 } from "../../core/filmDirectorPracticeCopy";
+import { getFilmDirectorPracticeGuideExercise } from "../../core/filmDirectorPracticeGuideExercise";
 import { getFilmDirectorPracticeGuidePurpose } from "../../core/filmDirectorPracticeGuidePurpose";
 import { getFilmDirectorPracticeGuideTitle } from "../../core/filmDirectorPracticeGuideTitle";
 import { getDirectorTermDisplay } from "../../core/directorDisplay";
@@ -191,7 +192,7 @@ function PracticeGuideDetail({ completed, guide, language, onFocusField, onToggl
 
       <section className="director-practice-exercise">
         <span>{copy.practicalTask}</span>
-        <p>{guide.exercise}</p>
+        <p>{getFilmDirectorPracticeGuideExercise(language, guide)}</p>
       </section>
 
       <section className="director-practice-checklist">
