@@ -13,6 +13,10 @@ import {
   type DirectorTerm,
 } from "../../core/directorKnowledge";
 import { FILM_DIRECTOR_KNOWLEDGE_COPY } from "../../core/directorKnowledgeDeskCopy";
+import {
+  FILM_DIRECTOR_WORKFLOW_COPY,
+  getDirectorWorkflowNarrative,
+} from "../../core/directorKnowledgeWorkflowCopy";
 import { getDirectorTermDisplay } from "../../core/directorDisplay";
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
@@ -24,13 +28,6 @@ type DirectorKnowledgeDeskProps = {
 };
 
 type DeskMode = "workflow" | "terminology";
-
-const workflowPhaseLabels: Record<DirectorKnowledgePhase, string> = {
-  development: "Utvikling",
-  preproduction: "Forproduksjon",
-  production: "Opptak",
-  postproduction: "Postproduksjon",
-};
 
 export function DirectorKnowledgeDesk({ visible }: DirectorKnowledgeDeskProps) {
   const [language] = useFilmWorkLanguage();
@@ -153,38 +150,45 @@ export function DirectorKnowledgeDesk({ visible }: DirectorKnowledgeDeskProps) {
 function WorkflowView({ language, onOpenTerm }: { readonly language: FilmWorkLanguage; readonly onOpenTerm: (termId: string) => void }) {
   const [activeStepId, setActiveStepId] = useState(DIRECTOR_WORKFLOW[0]?.id ?? "");
   const activeStep = DIRECTOR_WORKFLOW.find((step) => step.id === activeStepId) ?? DIRECTOR_WORKFLOW[0];
+  const workflowCopy = FILM_DIRECTOR_WORKFLOW_COPY[language];
+  const knowledgeCopy = FILM_DIRECTOR_KNOWLEDGE_COPY[language];
 
   if (!activeStep) return null;
 
+  const activeNarrative = getDirectorWorkflowNarrative(language, activeStep);
+
   return (
     <div className="director-workflow-view">
-      <div className="director-workflow-rail" aria-label="Director workflow steps">
-        {DIRECTOR_WORKFLOW.map((step) => (
-          <button
-            className={step.id === activeStep.id ? "director-workflow-step is-active" : "director-workflow-step"}
-            key={step.id}
-            onClick={() => setActiveStepId(step.id)}
-            type="button"
-          >
-            <span>{String(step.order).padStart(2, "0")}</span>
-            <div><strong>{step.title}</strong><small>{workflowPhaseLabels[step.phase]}</small></div>
-          </button>
-        ))}
+      <div className="director-workflow-rail" aria-label={workflowCopy.railAria}>
+        {DIRECTOR_WORKFLOW.map((step) => {
+          const narrative = getDirectorWorkflowNarrative(language, step);
+          return (
+            <button
+              className={step.id === activeStep.id ? "director-workflow-step is-active" : "director-workflow-step"}
+              key={step.id}
+              onClick={() => setActiveStepId(step.id)}
+              type="button"
+            >
+              <span>{String(step.order).padStart(2, "0")}</span>
+              <div><strong>{narrative.title}</strong><small>{knowledgeCopy.phases[step.phase]}</small></div>
+            </button>
+          );
+        })}
       </div>
 
       <article className="director-workflow-detail">
         <header>
-          <span>{workflowPhaseLabels[activeStep.phase]} · trinn {activeStep.order}</span>
-          <h3>{activeStep.title}</h3>
-          <p>{activeStep.goal}</p>
+          <span>{knowledgeCopy.phases[activeStep.phase]} · {workflowCopy.stepLabel} {activeStep.order}</span>
+          <h3>{activeNarrative.title}</h3>
+          <p>{activeNarrative.goal}</p>
         </header>
         <div className="director-workflow-columns">
-          <section><h4>Regissøren gjør</h4><ol>{activeStep.actions.map((action) => <li key={action}>{action}</li>)}</ol></section>
-          <section><h4>Arbeidsresultater</h4><ul>{activeStep.outputs.map((output) => <li key={output}>{output}</li>)}</ul></section>
-          <section><h4>Samarbeider med</h4><ul>{activeStep.collaborators.map((collaborator) => <li key={collaborator}>{collaborator}</li>)}</ul></section>
+          <section><h4>{workflowCopy.directorDoes}</h4><ol>{activeNarrative.actions.map((action) => <li key={action}>{action}</li>)}</ol></section>
+          <section><h4>{workflowCopy.outputs}</h4><ul>{activeNarrative.outputs.map((output) => <li key={output}>{output}</li>)}</ul></section>
+          <section><h4>{workflowCopy.collaborators}</h4><ul>{activeNarrative.collaborators.map((collaborator) => <li key={collaborator}>{collaborator}</li>)}</ul></section>
         </div>
         <section className="director-workflow-terms">
-          <h4>Begreper du må kunne i dette trinnet</h4>
+          <h4>{workflowCopy.terms}</h4>
           <div>
             {getDirectorTermsForWorkflowStep(activeStep).map((term) => {
               const display = getDirectorTermDisplay(language, term);
