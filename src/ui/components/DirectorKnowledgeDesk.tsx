@@ -5,7 +5,6 @@ import {
   DIRECTOR_KNOWLEDGE_SOURCES,
   DIRECTOR_TERMS,
   DIRECTOR_WORKFLOW,
-  getDirectorKnowledgeCategory,
   getDirectorTerm,
   getDirectorTermsForWorkflowStep,
   searchDirectorTerms,
@@ -13,6 +12,7 @@ import {
   type DirectorKnowledgePhase,
   type DirectorTerm,
 } from "../../core/directorKnowledge";
+import { FILM_DIRECTOR_KNOWLEDGE_COPY } from "../../core/directorKnowledgeDeskCopy";
 import { getDirectorTermDisplay } from "../../core/directorDisplay";
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
@@ -25,21 +25,16 @@ type DirectorKnowledgeDeskProps = {
 
 type DeskMode = "workflow" | "terminology";
 
-const phaseLabels: Record<DirectorKnowledgePhase, string> = {
+const workflowPhaseLabels: Record<DirectorKnowledgePhase, string> = {
   development: "Utvikling",
   preproduction: "Forproduksjon",
   production: "Opptak",
   postproduction: "Postproduksjon",
 };
 
-const levelLabels = {
-  foundation: "Grunnbegrep",
-  intermediate: "Videregående",
-  advanced: "Avansert",
-} as const;
-
 export function DirectorKnowledgeDesk({ visible }: DirectorKnowledgeDeskProps) {
   const [language] = useFilmWorkLanguage();
+  const copy = FILM_DIRECTOR_KNOWLEDGE_COPY[language];
   const [expanded, setExpanded] = useState(false);
   const [mode, setMode] = useState<DeskMode>("workflow");
   const [query, setQuery] = useState("");
@@ -100,32 +95,32 @@ export function DirectorKnowledgeDesk({ visible }: DirectorKnowledgeDeskProps) {
         onClick={() => setExpanded((current) => !current)}
         type="button"
       >
-        <span>Regikunnskap</span>
+        <span>{copy.launcherTitle}</span>
         <strong>{DIRECTOR_TERMS.length}</strong>
-        <small>fagbegreper</small>
+        <small>{copy.launcherTerms}</small>
       </button>
 
       {expanded ? (
-        <aside aria-label="Film Director knowledge and terminology" className="director-knowledge-desk">
+        <aside aria-label={copy.deskAria} className="director-knowledge-desk">
           <header className="director-knowledge-header">
             <div>
-              <span className="filmverket-kicker">Film Director learning system</span>
-              <h2>Regissørens arbeidsmåte og filmspråk</h2>
-              <p>Engelsk bransjeterm, norsk forklaring, konkret regibruk og eksempel.</p>
+              <span className="filmverket-kicker">{copy.kicker}</span>
+              <h2>{copy.title}</h2>
+              <p>{copy.description}</p>
             </div>
-            <button aria-label="Close director knowledge" onClick={() => setExpanded(false)} type="button">×</button>
+            <button aria-label={copy.closeAria} onClick={() => setExpanded(false)} type="button">×</button>
           </header>
 
           <section className="director-knowledge-stats">
-            <div><strong>{DIRECTOR_WORKFLOW.length}</strong><span>arbeidsfaser</span></div>
-            <div><strong>{DIRECTOR_TERMS.length}</strong><span>fagbegreper</span></div>
-            <div><strong>{learnedIds.size}</strong><span>markert lært</span></div>
-            <div><strong>{learnedPercent}%</strong><span>begrepsprogresjon</span></div>
+            <div><strong>{DIRECTOR_WORKFLOW.length}</strong><span>{copy.stats.workflowSteps}</span></div>
+            <div><strong>{DIRECTOR_TERMS.length}</strong><span>{copy.stats.terms}</span></div>
+            <div><strong>{learnedIds.size}</strong><span>{copy.stats.learned}</span></div>
+            <div><strong>{learnedPercent}%</strong><span>{copy.stats.progress}</span></div>
           </section>
 
-          <nav aria-label="Director knowledge sections" className="director-knowledge-tabs">
-            <button className={mode === "workflow" ? "is-active" : ""} onClick={() => setMode("workflow")} type="button">Arbeidsflyt</button>
-            <button className={mode === "terminology" ? "is-active" : ""} onClick={() => setMode("terminology")} type="button">Fagterminologi</button>
+          <nav aria-label={copy.tabsAria} className="director-knowledge-tabs">
+            <button className={mode === "workflow" ? "is-active" : ""} onClick={() => setMode("workflow")} type="button">{copy.workflowTab}</button>
+            <button className={mode === "terminology" ? "is-active" : ""} onClick={() => setMode("terminology")} type="button">{copy.terminologyTab}</button>
           </nav>
 
           {mode === "workflow" ? (
@@ -148,7 +143,7 @@ export function DirectorKnowledgeDesk({ visible }: DirectorKnowledgeDeskProps) {
             />
           )}
 
-          <KnowledgeSources />
+          <KnowledgeSources language={language} />
         </aside>
       ) : null}
     </>
@@ -172,14 +167,14 @@ function WorkflowView({ language, onOpenTerm }: { readonly language: FilmWorkLan
             type="button"
           >
             <span>{String(step.order).padStart(2, "0")}</span>
-            <div><strong>{step.title}</strong><small>{phaseLabels[step.phase]}</small></div>
+            <div><strong>{step.title}</strong><small>{workflowPhaseLabels[step.phase]}</small></div>
           </button>
         ))}
       </div>
 
       <article className="director-workflow-detail">
         <header>
-          <span>{phaseLabels[activeStep.phase]} · trinn {activeStep.order}</span>
+          <span>{workflowPhaseLabels[activeStep.phase]} · trinn {activeStep.order}</span>
           <h3>{activeStep.title}</h3>
           <p>{activeStep.goal}</p>
         </header>
@@ -235,6 +230,8 @@ function TerminologyView({
   readonly query: string;
   readonly selectedTerm: DirectorTerm | undefined;
 }) {
+  const copy = FILM_DIRECTOR_KNOWLEDGE_COPY[language];
+
   function changeCategory(event: ChangeEvent<HTMLSelectElement>) {
     onCategoryChange(event.target.value as DirectorKnowledgeCategoryId | "all");
   }
@@ -246,17 +243,17 @@ function TerminologyView({
   return (
     <div className="director-terminology-view">
       <section className="director-term-filters">
-        <label><span>Søk i begreper og forklaringer</span><input onChange={(event) => onQueryChange(event.target.value)} placeholder="Eksempel: blocking, nærbilde, lydperspektiv…" type="search" value={query} /></label>
-        <label><span>Fagområde</span><select onChange={changeCategory} value={category}><option value="all">Alle fagområder</option>{DIRECTOR_KNOWLEDGE_CATEGORIES.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}</select></label>
-        <label><span>Produksjonsfase</span><select onChange={changePhase} value={phase}><option value="all">Alle faser</option>{Object.entries(phaseLabels).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</select></label>
-        <button onClick={onReset} type="button">Nullstill</button>
+        <label><span>{copy.searchLabel}</span><input onChange={(event: ChangeEvent<HTMLInputElement>) => onQueryChange(event.target.value)} placeholder={copy.searchPlaceholder} type="search" value={query} /></label>
+        <label><span>{copy.categoryLabel}</span><select onChange={changeCategory} value={category}><option value="all">{copy.allCategories}</option>{DIRECTOR_KNOWLEDGE_CATEGORIES.map((item) => <option key={item.id} value={item.id}>{copy.categories[item.id]}</option>)}</select></label>
+        <label><span>{copy.phaseLabel}</span><select onChange={changePhase} value={phase}><option value="all">{copy.allPhases}</option>{Object.entries(copy.phases).map(([id, label]) => <option key={id} value={id}>{label}</option>)}</select></label>
+        <button onClick={onReset} type="button">{copy.reset}</button>
       </section>
 
       <div className="director-term-browser">
         <section className="director-term-index">
-          <header><strong>{filteredTerms.length}</strong><span>treff</span></header>
+          <header><strong>{filteredTerms.length}</strong><span>{copy.results}</span></header>
           <div>
-            {filteredTerms.length === 0 ? <p className="director-term-no-results">Ingen begreper matcher filtrene.</p> : filteredTerms.map((term) => {
+            {filteredTerms.length === 0 ? <p className="director-term-no-results">{copy.noResults}</p> : filteredTerms.map((term) => {
               const display = getDirectorTermDisplay(language, term);
               return (
                 <button
@@ -276,7 +273,7 @@ function TerminologyView({
         {selectedTerm ? (
           <TermDetail language={language} learned={learnedIds.has(selectedTerm.id)} onToggleLearned={() => onToggleLearned(selectedTerm.id)} term={selectedTerm} />
         ) : (
-          <section className="director-term-detail"><h3>Velg et fagbegrep</h3></section>
+          <section className="director-term-detail"><h3>{copy.selectTerm}</h3></section>
         )}
       </div>
     </div>
@@ -289,7 +286,7 @@ function TermDetail({ language, learned, onToggleLearned, term }: {
   readonly onToggleLearned: () => void;
   readonly term: DirectorTerm;
 }) {
-  const category = getDirectorKnowledgeCategory(term.category);
+  const copy = FILM_DIRECTOR_KNOWLEDGE_COPY[language];
   const display = getDirectorTermDisplay(language, term);
   const sources = term.sourceIds
     .map((sourceId) => DIRECTOR_KNOWLEDGE_SOURCES.find((source) => source.id === sourceId))
@@ -298,23 +295,24 @@ function TermDetail({ language, learned, onToggleLearned, term }: {
   return (
     <article className="director-term-detail">
       <header>
-        <div><span>{category?.label} · {phaseLabels[term.phase]} · {levelLabels[term.level]}</span><h3>{display.primaryTerm}</h3><p>{display.localizedTerm}</p></div>
-        <button className={learned ? "is-learned" : ""} onClick={onToggleLearned} type="button">{learned ? "✓ Lært" : "Marker som lært"}</button>
+        <div><span>{copy.categories[term.category]} · {copy.phases[term.phase]} · {copy.levels[term.level]}</span><h3>{display.primaryTerm}</h3><p>{display.localizedTerm}</p></div>
+        <button className={learned ? "is-learned" : ""} onClick={onToggleLearned} type="button">{learned ? copy.learned : copy.markLearned}</button>
       </header>
-      <section><h4>Definisjon</h4><p>{display.definition}</p></section>
-      <section><h4>Hvorfor regissøren trenger begrepet</h4><p>{display.directorUse}</p></section>
-      <section className="director-term-example"><h4>Eksempel</h4><p>{display.example}</p></section>
-      <section className="director-term-sources"><h4>Faglig grunnlag</h4>{sources.map((source) => <a href={source.url} key={source.id} rel="noreferrer" target="_blank"><strong>{source.organization}</strong><span>{source.label}</span></a>)}</section>
+      <section><h4>{copy.definition}</h4><p>{display.definition}</p></section>
+      <section><h4>{copy.directorUse}</h4><p>{display.directorUse}</p></section>
+      <section className="director-term-example"><h4>{copy.example}</h4><p>{display.example}</p></section>
+      <section className="director-term-sources"><h4>{copy.evidence}</h4>{sources.map((source) => <a href={source.url} key={source.id} rel="noreferrer" target="_blank"><strong>{source.organization}</strong><span>{source.label}</span></a>)}</section>
     </article>
   );
 }
 
-function KnowledgeSources() {
+function KnowledgeSources({ language }: { readonly language: FilmWorkLanguage }) {
+  const copy = FILM_DIRECTOR_KNOWLEDGE_COPY[language];
   return (
     <details className="director-knowledge-sources">
-      <summary>Kilder og redaksjonell metode</summary>
-      <p>Begrepene er skrevet for Filmverket og kontrollert mot profesjonelle fagorganisasjoner, produsent- og kameraressurser. De er forklaringer, ikke kopiert ordlyd.</p>
-      <div>{DIRECTOR_KNOWLEDGE_SOURCES.map((source) => <a href={source.url} key={source.id} rel="noreferrer" target="_blank"><strong>{source.organization}</strong><span>{source.scope}</span></a>)}</div>
+      <summary>{copy.sourcesSummary}</summary>
+      <p>{copy.sourcesDescription}</p>
+      <div>{DIRECTOR_KNOWLEDGE_SOURCES.map((source) => <a href={source.url} key={source.id} rel="noreferrer" target="_blank"><strong>{source.organization}</strong><span>{copy.sourceScopes[source.id]}</span></a>)}</div>
     </details>
   );
 }
