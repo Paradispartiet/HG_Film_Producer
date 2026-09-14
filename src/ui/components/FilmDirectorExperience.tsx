@@ -32,7 +32,7 @@ import {
   type DirectorShotCard,
   type DirectorShotFieldId,
 } from "../../core/directorProject";
-import { FILM_DIRECTOR_PROJECT_COPY, formatFilmDirectorProjectSavedTime } from "../../core/filmDirectorProjectCopy";
+import { FILM_DIRECTOR_PROJECT_COPY, formatFilmDirectorProjectSavedTime, type FilmDirectorProjectCopy } from "../../core/filmDirectorProjectCopy";
 import { FILM_DIRECTOR_SHELL_COPY } from "../../core/filmDirectorShellCopy";
 import { createFilmSlug, type FilmverketRoute, type FilmverketSection } from "../../core/filmverketRoutes";
 import { getClassicFilmScenarios, type FilmScenarioSeed } from "../data/filmScenarios";
@@ -206,8 +206,7 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
 
   function deleteActiveScene() {
     if (project.scenes.length <= 1) return;
-    const title = currentScene.brief.sceneTitle.trim() || "this scene";
-    if (!window.confirm(`Delete ${title} and all of its shot cards?`)) return;
+    if (!window.confirm(projectCopy.deleteSceneConfirm(currentScene.brief.sceneTitle.trim()))) return;
     setProject((current) => removeDirectorScene(current, currentScene.id, current.scenes[0]?.id ?? ""));
   }
 
@@ -269,9 +268,9 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
       </section>
 
       <section className="director-project-workspace">
-        <SceneSidebar activeScene={currentScene} onAdd={addScene} onDelete={deleteActiveScene} onDuplicate={duplicateActiveScene} onSelect={selectScene} project={project} />
+        <SceneSidebar activeScene={currentScene} copy={projectCopy} onAdd={addScene} onDelete={deleteActiveScene} onDuplicate={duplicateActiveScene} onSelect={selectScene} project={project} />
         <div className="director-active-scene" id="director-active-scene">
-          <ActiveSceneHeading copyState={copyState} onCopy={() => copyText(buildActiveSceneText(project, currentScene), "scene")} project={project} scene={currentScene} />
+          <ActiveSceneHeading copy={projectCopy} copyState={copyState} onCopy={() => copyText(buildActiveSceneText(project, currentScene), "scene")} project={project} scene={currentScene} />
           <ReferencePanel activeLensId={activeLensId} activePrinciples={activePrinciples} activeQuestion={activeLens?.question ?? ""} brief={referenceBrief} onChangeLens={setActiveLensId} onUseCraft={useCraftStartingPoint} onUsePrinciple={useReferencePrinciple} onUseTone={useToneStartingPoint} scenario={selectedScenario} />
           <SceneBriefForm groups={groups} onChange={updateBriefField} scene={currentScene} />
           <ShotListEditor onAdd={addShot} onChange={changeShot} onDelete={deleteShot} onDuplicate={duplicateShot} onMove={moveShot} scene={currentScene} />
@@ -286,8 +285,9 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
   );
 }
 
-function SceneSidebar({ activeScene, onAdd, onDelete, onDuplicate, onSelect, project }: {
+function SceneSidebar({ activeScene, copy, onAdd, onDelete, onDuplicate, onSelect, project }: {
   readonly activeScene: DirectorScene;
+  readonly copy: FilmDirectorProjectCopy;
   readonly onAdd: () => void;
   readonly onDelete: () => void;
   readonly onDuplicate: () => void;
@@ -296,24 +296,25 @@ function SceneSidebar({ activeScene, onAdd, onDelete, onDuplicate, onSelect, pro
 }) {
   return (
     <aside className="director-scene-sidebar">
-      <header><div><span>Project scenes</span><strong>{project.scenes.length}</strong></div><button onClick={onAdd} type="button">+ Add scene</button></header>
+      <header><div><span>{copy.projectScenes}</span><strong>{project.scenes.length}</strong></div><button onClick={onAdd} type="button">{copy.addScene}</button></header>
       <div className="director-scene-list">
-        {project.scenes.map((scene, index) => <button className={scene.id === activeScene.id ? "director-scene-card director-scene-card--active" : "director-scene-card"} key={scene.id} onClick={() => onSelect(scene.id)} type="button"><span>{String(index + 1).padStart(2, "0")}</span><strong>{scene.brief.sceneTitle.trim() || `Scene ${index + 1}`}</strong><small>{countCompletedDirectorBriefFields(scene.brief)}/{DIRECTOR_BRIEF_FIELDS.length} decisions · {scene.shots.length} shots</small></button>)}
+        {project.scenes.map((scene, index) => <button className={scene.id === activeScene.id ? "director-scene-card director-scene-card--active" : "director-scene-card"} key={scene.id} onClick={() => onSelect(scene.id)} type="button"><span>{String(index + 1).padStart(2, "0")}</span><strong>{scene.brief.sceneTitle.trim() || copy.sceneTitleFallback(index + 1)}</strong><small>{copy.sceneCardSummary(countCompletedDirectorBriefFields(scene.brief), DIRECTOR_BRIEF_FIELDS.length, scene.shots.length)}</small></button>)}
       </div>
-      <div className="director-scene-sidebar-actions"><button onClick={onDuplicate} type="button">Duplicate scene</button><button disabled={project.scenes.length <= 1} onClick={onDelete} type="button">Delete scene</button></div>
-      <p>Scenes and shots are saved automatically on this device for this reference film.</p>
+      <div className="director-scene-sidebar-actions"><button onClick={onDuplicate} type="button">{copy.duplicateScene}</button><button disabled={project.scenes.length <= 1} onClick={onDelete} type="button">{copy.deleteScene}</button></div>
+      <p>{copy.sceneAutosaveNote}</p>
     </aside>
   );
 }
 
-function ActiveSceneHeading({ copyState, onCopy, project, scene }: {
+function ActiveSceneHeading({ copy, copyState, onCopy, project, scene }: {
+  readonly copy: FilmDirectorProjectCopy;
   readonly copyState: "idle" | "scene" | "project" | "failed";
   readonly onCopy: () => void;
   readonly project: DirectorProject;
   readonly scene: DirectorScene;
 }) {
   const index = project.scenes.findIndex((candidate) => candidate.id === scene.id);
-  return <section className="director-active-scene-heading"><div><span>Scene {Math.max(1, index + 1)} of {project.scenes.length}</span><h2>{scene.brief.sceneTitle.trim() || `Scene ${index + 1}`}</h2><p>{countCompletedDirectorBriefFields(scene.brief)}/{DIRECTOR_BRIEF_FIELDS.length} directing decisions · {scene.shots.length} shot{scene.shots.length === 1 ? "" : "s"}</p></div><button className="filmverket-secondary-action" onClick={onCopy} type="button">{copyState === "scene" ? "Scene copied" : copyState === "failed" ? "Copy failed" : "Copy active scene"}</button></section>;
+  return <section className="director-active-scene-heading"><div><span>{copy.scenePosition(Math.max(1, index + 1), project.scenes.length)}</span><h2>{scene.brief.sceneTitle.trim() || copy.sceneTitleFallback(index + 1)}</h2><p>{copy.activeSceneSummary(countCompletedDirectorBriefFields(scene.brief), DIRECTOR_BRIEF_FIELDS.length, scene.shots.length)}</p></div><button className="filmverket-secondary-action" onClick={onCopy} type="button">{copyState === "scene" ? copy.sceneCopied : copyState === "failed" ? copy.copyFailed : copy.copyActiveScene}</button></section>;
 }
 
 function ReferencePanel({ activeLensId, activePrinciples, activeQuestion, brief, onChangeLens, onUseCraft, onUsePrinciple, onUseTone, scenario }: {
