@@ -13,6 +13,7 @@ import {
   FILM_DIRECTOR_PRACTICE_COPY,
   getFilmDirectorPracticeFieldLabel,
 } from "../../core/filmDirectorPracticeCopy";
+import { getFilmDirectorPracticeGuidePurpose } from "../../core/filmDirectorPracticeGuidePurpose";
 import { getFilmDirectorPracticeGuideTitle } from "../../core/filmDirectorPracticeGuideTitle";
 import { getDirectorTermDisplay } from "../../core/directorDisplay";
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
@@ -178,7 +179,7 @@ function PracticeGuideDetail({ completed, guide, language, onFocusField, onToggl
         <div>
           <span>{copy.kindLabels[guide.kind]} · {getFilmDirectorPracticeFieldLabel(language, guide)}</span>
           <h3>{getFilmDirectorPracticeGuideTitle(language, guide)}</h3>
-          <p>{guide.purpose}</p>
+          <p>{getFilmDirectorPracticeGuidePurpose(language, guide)}</p>
         </div>
         <div className="director-practice-actions">
           <button onClick={onFocusField} type="button">{copy.goToField}</button>
