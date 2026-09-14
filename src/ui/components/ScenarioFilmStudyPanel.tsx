@@ -1,8 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import {
-  formatFilmStudyCoverageStatus,
-  type FilmStudyCoverageItem,
-} from "../../core/filmStudyCoverage";
+  FILM_STUDY_COPY,
+  formatFilmStudyEra,
+  getFilmStudyAreaLabel,
+  getFilmStudyCoverageStatusLabel,
+} from "../../core/filmStudyCopy";
+import type { FilmStudyCoverageItem } from "../../core/filmStudyCoverage";
+import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
 import type { FilmScenarioSeed } from "../data/filmScenarios";
 import {
   createFilmHistoryChoices,
@@ -199,6 +203,7 @@ import {
   resolveTechnologyFilmStudyMap,
 } from "../data/scenarioFilmStudyTechnologyBatch";
 import type { ScenarioProductionBrief } from "../data/scenarioProductionBriefs";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import "./scenarioFilmStudy.css";
 
 export function ScenarioFilmStudyPanel({
@@ -208,6 +213,8 @@ export function ScenarioFilmStudyPanel({
   readonly brief: ScenarioProductionBrief;
   readonly scenario: FilmScenarioSeed;
 }) {
+  const [language] = useFilmWorkLanguage();
+  const copy = FILM_STUDY_COPY[language];
   const filmStudy = useMemo(
     () => resolveEuropeanTimeIdentitySystemsFilmStudyMap(scenario, brief)
       ?? resolveNewGermanCinemaSystemsFilmStudyMap(scenario, brief)
@@ -382,29 +389,26 @@ export function ScenarioFilmStudyPanel({
     <section className="scenario-film-study" aria-labelledby="scenario-film-study-title">
       <div className="scenario-film-study-header">
         <div>
-          <span className="eyebrow">Film history and complete craft map</span>
-          <h4 id="scenario-film-study-title">Place the film before studying its choices</h4>
-          <p>
-            {scenario.film.title} is placed in {filmStudy.broadEra.toLowerCase()}. The map separates sourced facts,
-            current case mapping, and areas that still need research.
-          </p>
+          <span className="eyebrow">{copy.eyebrow}</span>
+          <h4 id="scenario-film-study-title">{copy.title}</h4>
+          <p>{copy.intro(scenario.film.title, formatFilmStudyEra(language, filmStudy.broadEra))}</p>
         </div>
         <div className={`scenario-film-study-status scenario-film-study-status--${filmStudy.historyStatus}`}>
-          <span>Film history</span>
-          <strong>{filmStudy.historyStatus === "source_backed" ? "Source backed" : "Research pending"}</strong>
-          <small>{filmStudy.coverageSummary.sourceVerified}/{filmStudy.coverageSummary.total} areas source verified</small>
+          <span>{copy.filmHistory}</span>
+          <strong>{filmStudy.historyStatus === "source_backed" ? copy.historyStatus.sourceBacked : copy.historyStatus.researchPending}</strong>
+          <small>{copy.sourceVerifiedAreas(filmStudy.coverageSummary.sourceVerified, filmStudy.coverageSummary.total)}</small>
         </div>
       </div>
 
       {historyProfile ? (
         <>
-          <div className="scenario-history-tags" aria-label="Film-historical traditions">
+          <div className="scenario-history-tags" aria-label={copy.traditionsAriaLabel}>
             <span>{historyProfile.period}</span>
             {historyProfile.traditions.map((tradition) => <span key={tradition}>{tradition}</span>)}
           </div>
 
-          <section className="scenario-history-exercise" aria-label="Film history comparison">
-            <span className="eyebrow">History lens</span>
+          <section className="scenario-history-exercise" aria-label={copy.comparisonAriaLabel}>
+            <span className="eyebrow">{copy.historyLens}</span>
             <strong>{historyProfile.historyQuestion}</strong>
             <div className="scenario-history-choice-grid">
               {historyChoices.map((choice) => (
@@ -424,42 +428,39 @@ export function ScenarioFilmStudyPanel({
                 {selectedHistoryChoice.feedback}
               </p>
             ) : (
-              <p className="scenario-history-feedback">Compare the historical explanations. There are no points or penalties.</p>
+              <p className="scenario-history-feedback">{copy.noChoiceFeedback}</p>
             )}
           </section>
 
-          <div className="scenario-history-arc" aria-label="Before, contemporary moment, and afterlife">
-            <HistoryArcStep label="Before the film" text={historyProfile.before} />
-            <HistoryArcStep label="In its moment" text={historyProfile.moment} />
-            <HistoryArcStep label="What it carries forward" text={historyProfile.after} />
+          <div className="scenario-history-arc" aria-label={copy.arcAriaLabel}>
+            <HistoryArcStep label={copy.arcBefore} text={historyProfile.before} />
+            <HistoryArcStep label={copy.arcMoment} text={historyProfile.moment} />
+            <HistoryArcStep label={copy.arcAfter} text={historyProfile.after} />
           </div>
         </>
       ) : (
         <div className="scenario-history-pending">
-          <strong>Historical interpretation is not yet source verified for this film.</strong>
-          <p>
-            The release year and broad era are mapped, and the existing screenplay, image, editing and sound brief remains available.
-            Movement, production history, directing, performance, design, technology, reception and legacy stay visibly marked as research pending.
-          </p>
+          <strong>{copy.pendingTitle}</strong>
+          <p>{copy.pendingBody}</p>
         </div>
       )}
 
       <details className="scenario-study-coverage" open={Boolean(historyProfile)}>
         <summary>
-          <span>Complete mapping audit</span>
-          <small>{filmStudy.coverageSummary.researchPending} of {filmStudy.coverageSummary.total} areas still need research</small>
+          <span>{copy.auditTitle}</span>
+          <small>{copy.auditPending(filmStudy.coverageSummary.researchPending, filmStudy.coverageSummary.total)}</small>
         </summary>
         <div className="scenario-study-coverage-groups">
-          <CoverageGroup items={historyCoverage} title="Film history" />
-          <CoverageGroup items={craftCoverage} title="Film technique" />
+          <CoverageGroup items={historyCoverage} language={language} title={copy.historyGroupTitle} />
+          <CoverageGroup items={craftCoverage} language={language} title={copy.craftGroupTitle} />
         </div>
       </details>
 
       {filmStudy.verification ? (
         <details className="scenario-history-sources">
           <summary>
-            <span>Inspectable sources</span>
-            <small>{filmStudy.verification.sources.length} sources · verified {filmStudy.verification.verifiedAt}</small>
+            <span>{copy.sourcesTitle}</span>
+            <small>{copy.sourcesMeta(filmStudy.verification.sources.length, filmStudy.verification.verifiedAt)}</small>
           </summary>
           <p>{filmStudy.verification.summary}</p>
           <ul>
@@ -488,11 +489,14 @@ function HistoryArcStep({ label, text }: { readonly label: string; readonly text
 
 function CoverageGroup({
   items,
+  language,
   title,
 }: {
   readonly items: readonly FilmStudyCoverageItem[];
+  readonly language: FilmWorkLanguage;
   readonly title: string;
 }) {
+  const copy = FILM_STUDY_COPY[language];
   return (
     <section>
       <h5>{title}</h5>
@@ -500,10 +504,10 @@ function CoverageGroup({
         {items.map((item) => (
           <li className={`scenario-study-coverage-item scenario-study-coverage-item--${item.status}`} key={item.area}>
             <div>
-              <strong>{item.label}</strong>
-              <span>{formatFilmStudyCoverageStatus(item.status)}</span>
+              <strong>{getFilmStudyAreaLabel(language, item.area)}</strong>
+              <span>{getFilmStudyCoverageStatusLabel(language, item.status)}</span>
             </div>
-            {item.note ? <p>{item.note}</p> : <p>No film-specific research has been recorded yet.</p>}
+            {item.note ? <p>{item.note}</p> : <p>{copy.noResearchNote}</p>}
           </li>
         ))}
       </ul>
