@@ -13,6 +13,18 @@ export type FilmDirectorProjectCopy = {
   readonly projectCopied: string;
   readonly copyFailed: string;
   readonly copyCompleteProject: string;
+  readonly projectScenes: string;
+  readonly addScene: string;
+  readonly sceneTitleFallback: (sceneNumber: number) => string;
+  readonly sceneCardSummary: (decisionCount: number, decisionTotal: number, shotCount: number) => string;
+  readonly duplicateScene: string;
+  readonly deleteScene: string;
+  readonly sceneAutosaveNote: string;
+  readonly deleteSceneConfirm: (sceneTitle: string) => string;
+  readonly scenePosition: (sceneNumber: number, sceneCount: number) => string;
+  readonly activeSceneSummary: (decisionCount: number, decisionTotal: number, shotCount: number) => string;
+  readonly sceneCopied: string;
+  readonly copyActiveScene: string;
   readonly savedOnThisDevice: string;
   readonly lastProjectChange: string;
   readonly scenesInProject: string;
@@ -35,6 +47,18 @@ export const FILM_DIRECTOR_PROJECT_COPY: Record<FilmWorkLanguage, FilmDirectorPr
     projectCopied: "Project copied",
     copyFailed: "Copy failed",
     copyCompleteProject: "Copy complete project",
+    projectScenes: "Project scenes",
+    addScene: "+ Add scene",
+    sceneTitleFallback: (sceneNumber) => `Scene ${sceneNumber}`,
+    sceneCardSummary: (decisionCount, decisionTotal, shotCount) => `${decisionCount}/${decisionTotal} decisions · ${shotCount} shot${shotCount === 1 ? "" : "s"}`,
+    duplicateScene: "Duplicate scene",
+    deleteScene: "Delete scene",
+    sceneAutosaveNote: "Scenes and shots are saved automatically on this device for this reference film.",
+    deleteSceneConfirm: (sceneTitle) => `Delete ${sceneTitle || "this scene"} and all of its shot cards?`,
+    scenePosition: (sceneNumber, sceneCount) => `Scene ${sceneNumber} of ${sceneCount}`,
+    activeSceneSummary: (decisionCount, decisionTotal, shotCount) => `${decisionCount}/${decisionTotal} directing decisions · ${shotCount} shot${shotCount === 1 ? "" : "s"}`,
+    sceneCopied: "Scene copied",
+    copyActiveScene: "Copy active scene",
     savedOnThisDevice: "Saved on this device",
     lastProjectChange: "Last project change:",
     scenesInProject: "scenes in project",
@@ -55,6 +79,18 @@ export const FILM_DIRECTOR_PROJECT_COPY: Record<FilmWorkLanguage, FilmDirectorPr
     projectCopied: "Prosjekt kopiert",
     copyFailed: "Kopiering mislyktes",
     copyCompleteProject: "Kopier hele prosjektet",
+    projectScenes: "Prosjektscener",
+    addScene: "+ Legg til scene",
+    sceneTitleFallback: (sceneNumber) => `Scene ${sceneNumber}`,
+    sceneCardSummary: (decisionCount, decisionTotal, shotCount) => `${decisionCount}/${decisionTotal} beslutninger · ${shotCount} innstilling${shotCount === 1 ? "" : "er"}`,
+    duplicateScene: "Dupliser scene",
+    deleteScene: "Slett scene",
+    sceneAutosaveNote: "Scener og innstillinger lagres automatisk på denne enheten for denne referansefilmen.",
+    deleteSceneConfirm: (sceneTitle) => `Slette ${sceneTitle || "denne scenen"} og alle innstillingskortene?`,
+    scenePosition: (sceneNumber, sceneCount) => `Scene ${sceneNumber} av ${sceneCount}`,
+    activeSceneSummary: (decisionCount, decisionTotal, shotCount) => `${decisionCount}/${decisionTotal} regibeslutninger · ${shotCount} innstilling${shotCount === 1 ? "" : "er"}`,
+    sceneCopied: "Scene kopiert",
+    copyActiveScene: "Kopier aktiv scene",
     savedOnThisDevice: "Lagret på denne enheten",
     lastProjectChange: "Siste prosjektendring:",
     scenesInProject: "scener i prosjektet",
@@ -75,6 +111,18 @@ export const FILM_DIRECTOR_PROJECT_COPY: Record<FilmWorkLanguage, FilmDirectorPr
     projectCopied: "Projet copié",
     copyFailed: "Échec de la copie",
     copyCompleteProject: "Copier le projet complet",
+    projectScenes: "Scènes du projet",
+    addScene: "+ Ajouter une scène",
+    sceneTitleFallback: (sceneNumber) => `Scène ${sceneNumber}`,
+    sceneCardSummary: (decisionCount, decisionTotal, shotCount) => `${decisionCount}/${decisionTotal} décisions · ${shotCount} plan${shotCount === 1 ? "" : "s"}`,
+    duplicateScene: "Dupliquer la scène",
+    deleteScene: "Supprimer la scène",
+    sceneAutosaveNote: "Les scènes et les plans sont enregistrés automatiquement sur cet appareil pour ce film de référence.",
+    deleteSceneConfirm: (sceneTitle) => `Supprimer ${sceneTitle || "cette scène"} et toutes ses fiches de plan ?`,
+    scenePosition: (sceneNumber, sceneCount) => `Scène ${sceneNumber} sur ${sceneCount}`,
+    activeSceneSummary: (decisionCount, decisionTotal, shotCount) => `${decisionCount}/${decisionTotal} décisions de réalisation · ${shotCount} plan${shotCount === 1 ? "" : "s"}`,
+    sceneCopied: "Scène copiée",
+    copyActiveScene: "Copier la scène active",
     savedOnThisDevice: "Enregistré sur cet appareil",
     lastProjectChange: "Dernière modification du projet :",
     scenesInProject: "scènes dans le projet",
@@ -95,6 +143,18 @@ export const FILM_DIRECTOR_PROJECT_COPY: Record<FilmWorkLanguage, FilmDirectorPr
     projectCopied: "Projeto copiado",
     copyFailed: "Falha ao copiar",
     copyCompleteProject: "Copiar projeto completo",
+    projectScenes: "Cenas do projeto",
+    addScene: "+ Adicionar cena",
+    sceneTitleFallback: (sceneNumber) => `Cena ${sceneNumber}`,
+    sceneCardSummary: (decisionCount, decisionTotal, shotCount) => `${decisionCount}/${decisionTotal} decisões · ${shotCount} plano${shotCount === 1 ? "" : "s"}`,
+    duplicateScene: "Duplicar cena",
+    deleteScene: "Eliminar cena",
+    sceneAutosaveNote: "As cenas e os planos são guardados automaticamente neste dispositivo para este filme de referência.",
+    deleteSceneConfirm: (sceneTitle) => `Eliminar ${sceneTitle || "esta cena"} e todos os respetivos cartões de plano?`,
+    scenePosition: (sceneNumber, sceneCount) => `Cena ${sceneNumber} de ${sceneCount}`,
+    activeSceneSummary: (decisionCount, decisionTotal, shotCount) => `${decisionCount}/${decisionTotal} decisões de realização · ${shotCount} plano${shotCount === 1 ? "" : "s"}`,
+    sceneCopied: "Cena copiada",
+    copyActiveScene: "Copiar cena ativa",
     savedOnThisDevice: "Guardado neste dispositivo",
     lastProjectChange: "Última alteração do projeto:",
     scenesInProject: "cenas no projeto",
