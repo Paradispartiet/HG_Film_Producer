@@ -32,9 +32,11 @@ import {
   type DirectorShotCard,
   type DirectorShotFieldId,
 } from "../../core/directorProject";
+import { FILM_DIRECTOR_SHELL_COPY } from "../../core/filmDirectorShellCopy";
 import { createFilmSlug, type FilmverketRoute, type FilmverketSection } from "../../core/filmverketRoutes";
 import { getClassicFilmScenarios, type FilmScenarioSeed } from "../data/filmScenarios";
 import { resolveScenarioProductionBrief } from "../data/scenarioProductionBriefs";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 type FilmDirectorExperienceProps = {
   readonly navigate: (route: FilmverketRoute) => void;
@@ -96,25 +98,27 @@ const navItems: readonly { readonly id: FilmverketSection; readonly label: strin
 const shotSizeOptions = ["Extreme wide", "Wide", "Full", "Medium", "Medium close-up", "Close-up", "Extreme close-up", "Insert", "Point of view"] as const;
 
 export function FilmDirectorExperience({ navigate, route }: FilmDirectorExperienceProps) {
+  const [language] = useFilmWorkLanguage();
+  const shellCopy = FILM_DIRECTOR_SHELL_COPY[language];
   const scenarios = useMemo(() => getClassicFilmScenarios(), []);
   const selectedScenario = resolveSelectedScenario(scenarios, route.filmSlug);
   const missingFilm = Boolean(route.filmSlug && !selectedScenario);
 
   useEffect(() => {
-    document.title = selectedScenario ? `${selectedScenario.film.title} · Film Director · FilmWork` : "Film Director · FilmWork";
-  }, [selectedScenario]);
+    document.title = shellCopy.documentTitle(selectedScenario?.film.title);
+  }, [selectedScenario, shellCopy]);
 
-  if (scenarios.length === 0) return <main className="film-director-empty"><h1>No films are available.</h1></main>;
+  if (scenarios.length === 0) return <main className="film-director-empty"><h1>{shellCopy.noFilmsAvailable}</h1></main>;
 
   if (missingFilm || !selectedScenario) {
     return (
       <div className="filmverket-shell film-director-shell">
         <FilmDirectorHeader navigate={navigate} selectedScenario={scenarios[0]} />
         <main className="film-director-not-found">
-          <span className="filmverket-kicker">Unknown film address</span>
-          <h1>Film not found</h1>
-          <p>No Film Director reference matches <code>{route.filmSlug}</code>.</p>
-          <button className="filmverket-primary-action" onClick={() => navigate({ section: "director" })} type="button">Open Film Director</button>
+          <span className="filmverket-kicker">{shellCopy.unknownFilmAddress}</span>
+          <h1>{shellCopy.filmNotFound}</h1>
+          <p>{shellCopy.noReferenceMatchesPrefix} <code>{route.filmSlug}</code>.</p>
+          <button className="filmverket-primary-action" onClick={() => navigate({ section: "director" })} type="button">{shellCopy.openDirector}</button>
         </main>
       </div>
     );
@@ -124,7 +128,7 @@ export function FilmDirectorExperience({ navigate, route }: FilmDirectorExperien
     <div className="filmverket-shell film-director-shell">
       <FilmDirectorHeader navigate={navigate} selectedScenario={selectedScenario} />
       <DirectorProjectEditor key={selectedScenario.id} navigate={navigate} scenarios={scenarios} selectedScenario={selectedScenario} />
-      <footer className="filmverket-footer"><span>FilmWork · Film Director</span><span>Project · scenes · directing briefs · shot cards</span></footer>
+      <footer className="filmverket-footer"><span>FilmWork · Film Director</span><span>{shellCopy.footerDetail}</span></footer>
     </div>
   );
 }
@@ -133,6 +137,8 @@ function FilmDirectorHeader({ navigate, selectedScenario }: {
   readonly navigate: (route: FilmverketRoute) => void;
   readonly selectedScenario: FilmScenarioSeed | undefined;
 }) {
+  const [language] = useFilmWorkLanguage();
+  const shellCopy = FILM_DIRECTOR_SHELL_COPY[language];
   const selectedSlug = selectedScenario ? getScenarioSlug(selectedScenario) : undefined;
   function openSection(section: FilmverketSection) {
     if (section === "director") return navigate(selectedSlug ? { section: "director", filmSlug: selectedSlug } : { section: "director" });
@@ -142,8 +148,8 @@ function FilmDirectorHeader({ navigate, selectedScenario }: {
   return (
     <header className="filmverket-header">
       <button className="filmverket-brand" onClick={() => navigate({ section: "home" })} type="button"><span>FW</span><strong>FilmWork</strong></button>
-      <nav aria-label="FilmWork sections">
-        {navItems.map((item) => <button className={item.id === "director" ? "filmverket-nav-button filmverket-nav-button--active" : "filmverket-nav-button"} key={item.id} onClick={() => openSection(item.id)} type="button">{item.label}</button>)}
+      <nav aria-label={shellCopy.navAria}>
+        {navItems.map((item) => <button className={item.id === "director" ? "filmverket-nav-button filmverket-nav-button--active" : "filmverket-nav-button"} key={item.id} onClick={() => openSection(item.id)} type="button">{shellCopy.navLabels[item.id]}</button>)}
       </nav>
     </header>
   );
