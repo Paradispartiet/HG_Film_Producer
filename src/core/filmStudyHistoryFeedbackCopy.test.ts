@@ -4,6 +4,7 @@ import test from "node:test";
 import { FILMWORK_LANGUAGES } from "./filmWorkLanguage.js";
 import {
   ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK,
+  CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK,
   LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK,
   NOIR_REALISM_1940S_HISTORY_FEEDBACK,
   POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK,
@@ -22,6 +23,7 @@ const FEEDBACK_CONTRACTS = [
   ["1940s Noir / Realism", NOIR_REALISM_1940S_HISTORY_FEEDBACK],
   ["1950s Asian Postwar", ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK],
   ["Postwar European Modernism", POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK],
+  ["Czechoslovak New Wave", CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK],
 ] as const;
 
 test("localized Film Study history feedback contracts cover the exact three canonical outcomes", () => {

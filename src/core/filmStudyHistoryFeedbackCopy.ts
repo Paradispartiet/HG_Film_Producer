@@ -156,6 +156,30 @@ export const POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK = {
   miss: ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK.miss,
 } as const;
 
+export const CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK = {
+  match: {
+    canonical: "This matches the documented relationship between Czechoslovak production conditions and the film's formal system.",
+    en: "This matches the documented relationship between Czechoslovak production conditions and the film's formal system.",
+    nb: "Dette samsvarer med det dokumenterte forholdet mellom tsjekkoslovakiske produksjonsforhold og filmens formale system.",
+    fr: "Cela correspond à la relation documentée entre les conditions de production tchécoslovaques et le système formel du film.",
+    pt: "Isto corresponde à relação documentada entre as condições de produção checoslovacas e o sistema formal do filme.",
+  },
+  partial: {
+    canonical: "This is a real Czechoslovak 1960s production system, but it organizes performance, space, history, editing and sound differently.",
+    en: "This is a real Czechoslovak 1960s production system, but it organizes performance, space, history, editing and sound differently.",
+    nb: "Dette er et reelt tsjekkoslovakisk produksjonssystem fra 1960-tallet, men det organiserer skuespill, rom, historie, klipp og lyd på en annen måte.",
+    fr: "Il s’agit d’un véritable système de production tchécoslovaque des années 1960, mais il organise différemment le jeu, l’espace, l’histoire, le montage et le son.",
+    pt: "Este é um sistema de produção checoslovaco real dos anos 1960, mas organiza de forma diferente a interpretação, o espaço, a história, a montagem e o som.",
+  },
+  miss: {
+    canonical: "This assigns the film to the wrong Czechoslovak production tradition and craft logic.",
+    en: "This assigns the film to the wrong Czechoslovak production tradition and craft logic.",
+    nb: "Dette plasserer filmen i feil tsjekkoslovakisk produksjonstradisjon og filmfaglig logikk.",
+    fr: "Cela rattache le film à la mauvaise tradition de production tchécoslovaque et à la mauvaise logique des métiers du cinéma.",
+    pt: "Isto associa o filme à tradição de produção checoslovaca errada e à lógica errada dos ofícios cinematográficos.",
+  },
+} as const;
+
 export type SilentFoundationsHistoryFeedbackKey = keyof typeof SILENT_FOUNDATIONS_HISTORY_FEEDBACK;
 export type SilentStudioSystemsHistoryFeedbackKey = keyof typeof SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK;
 export type LateSilentEarlySoundHistoryFeedbackKey = keyof typeof LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK;
@@ -163,6 +187,7 @@ export type ProductionSystems1930sHistoryFeedbackKey = keyof typeof PRODUCTION_S
 export type NoirRealism1940sHistoryFeedbackKey = keyof typeof NOIR_REALISM_1940S_HISTORY_FEEDBACK;
 export type AsianPostwar1950sHistoryFeedbackKey = keyof typeof ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK;
 export type PostwarEuropeanModernismHistoryFeedbackKey = keyof typeof POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK;
+export type CzechoslovakNewWaveHistoryFeedbackKey = keyof typeof CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK;
 
 type FilmStudyHistoryFeedbackEntry =
   | (typeof SILENT_FOUNDATIONS_HISTORY_FEEDBACK)[SilentFoundationsHistoryFeedbackKey]
@@ -171,7 +196,8 @@ type FilmStudyHistoryFeedbackEntry =
   | (typeof PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK)[ProductionSystems1930sHistoryFeedbackKey]
   | (typeof NOIR_REALISM_1940S_HISTORY_FEEDBACK)[NoirRealism1940sHistoryFeedbackKey]
   | (typeof ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK)[AsianPostwar1950sHistoryFeedbackKey]
-  | (typeof POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK)[PostwarEuropeanModernismHistoryFeedbackKey];
+  | (typeof POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK)[PostwarEuropeanModernismHistoryFeedbackKey]
+  | (typeof CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK)[CzechoslovakNewWaveHistoryFeedbackKey];
 
 const FILM_STUDY_HISTORY_FEEDBACK_BY_CANONICAL = new Map<string, FilmStudyHistoryFeedbackEntry>(
   [
@@ -182,6 +208,7 @@ const FILM_STUDY_HISTORY_FEEDBACK_BY_CANONICAL = new Map<string, FilmStudyHistor
     ...Object.values(NOIR_REALISM_1940S_HISTORY_FEEDBACK),
     ...Object.values(ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK),
     ...Object.values(POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK),
+    ...Object.values(CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK),
   ].map((entry) => [entry.canonical, entry]),
 );
 
