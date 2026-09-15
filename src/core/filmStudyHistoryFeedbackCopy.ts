@@ -204,6 +204,30 @@ export const EUROPEAN_POLITICAL_FEMINIST_MODERNISM_HISTORY_FEEDBACK = {
   },
 } as const;
 
+export const EUROPEAN_RELIGIOUS_MORAL_HISTORY_FEEDBACK = {
+  match: {
+    canonical: "This matches the documented relationship between European moral history, belief, institutions and the film's concrete production system.",
+    en: "This matches the documented relationship between European moral history, belief, institutions and the film's concrete production system.",
+    nb: "Dette samsvarer med det dokumenterte forholdet mellom europeisk moralhistorie, tro, institusjoner og filmens konkrete produksjonssystem.",
+    fr: "Cela correspond à la relation documentée entre l’histoire morale européenne, la croyance, les institutions et le système concret de production du film.",
+    pt: "Isto corresponde à relação documentada entre a história moral europeia, a crença, as instituições e o sistema concreto de produção do filme.",
+  },
+  partial: {
+    canonical: "This is another documented European religious or moral modernist system, but it builds ethical pressure through a different relation between institution, performance, landscape, objects, editing and sound.",
+    en: "This is another documented European religious or moral modernist system, but it builds ethical pressure through a different relation between institution, performance, landscape, objects, editing and sound.",
+    nb: "Dette er et annet dokumentert europeisk religiøst eller moralsk modernistisk system, men det bygger etisk press gjennom et annet samspill mellom institusjon, skuespill, landskap, objekter, klipp og lyd.",
+    fr: "Il s’agit d’un autre système moderniste européen religieux ou moral documenté, mais il construit la pression éthique à travers une autre relation entre institution, jeu, paysage, objets, montage et son.",
+    pt: "Este é outro sistema modernista europeu religioso ou moral documentado, mas constrói pressão ética através de uma relação diferente entre instituição, interpretação, paisagem, objetos, montagem e som.",
+  },
+  miss: {
+    canonical: "This assigns the film to the wrong relationship between belief, property, sacred representation, bodily restraint, social institution and audiovisual form.",
+    en: "This assigns the film to the wrong relationship between belief, property, sacred representation, bodily restraint, social institution and audiovisual form.",
+    nb: "Dette plasserer filmen i feil forhold mellom tro, eiendom, hellig representasjon, kroppslig tilbakeholdenhet, sosial institusjon og audiovisuell form.",
+    fr: "Cela rattache le film à la mauvaise relation entre croyance, propriété, représentation sacrée, retenue corporelle, institution sociale et forme audiovisuelle.",
+    pt: "Isto associa o filme à relação errada entre crença, propriedade, representação sagrada, contenção corporal, instituição social e forma audiovisual.",
+  },
+} as const;
+
 export type SilentFoundationsHistoryFeedbackKey = keyof typeof SILENT_FOUNDATIONS_HISTORY_FEEDBACK;
 export type SilentStudioSystemsHistoryFeedbackKey = keyof typeof SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK;
 export type LateSilentEarlySoundHistoryFeedbackKey = keyof typeof LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK;
@@ -213,6 +237,7 @@ export type AsianPostwar1950sHistoryFeedbackKey = keyof typeof ASIAN_POSTWAR_195
 export type PostwarEuropeanModernismHistoryFeedbackKey = keyof typeof POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK;
 export type CzechoslovakNewWaveHistoryFeedbackKey = keyof typeof CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK;
 export type EuropeanPoliticalFeministModernismHistoryFeedbackKey = keyof typeof EUROPEAN_POLITICAL_FEMINIST_MODERNISM_HISTORY_FEEDBACK;
+export type EuropeanReligiousMoralHistoryFeedbackKey = keyof typeof EUROPEAN_RELIGIOUS_MORAL_HISTORY_FEEDBACK;
 
 type FilmStudyHistoryFeedbackEntry =
   | (typeof SILENT_FOUNDATIONS_HISTORY_FEEDBACK)[SilentFoundationsHistoryFeedbackKey]
@@ -223,7 +248,8 @@ type FilmStudyHistoryFeedbackEntry =
   | (typeof ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK)[AsianPostwar1950sHistoryFeedbackKey]
   | (typeof POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK)[PostwarEuropeanModernismHistoryFeedbackKey]
   | (typeof CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK)[CzechoslovakNewWaveHistoryFeedbackKey]
-  | (typeof EUROPEAN_POLITICAL_FEMINIST_MODERNISM_HISTORY_FEEDBACK)[EuropeanPoliticalFeministModernismHistoryFeedbackKey];
+  | (typeof EUROPEAN_POLITICAL_FEMINIST_MODERNISM_HISTORY_FEEDBACK)[EuropeanPoliticalFeministModernismHistoryFeedbackKey]
+  | (typeof EUROPEAN_RELIGIOUS_MORAL_HISTORY_FEEDBACK)[EuropeanReligiousMoralHistoryFeedbackKey];
 
 const FILM_STUDY_HISTORY_FEEDBACK_BY_CANONICAL = new Map<string, FilmStudyHistoryFeedbackEntry>(
   [
@@ -236,6 +262,7 @@ const FILM_STUDY_HISTORY_FEEDBACK_BY_CANONICAL = new Map<string, FilmStudyHistor
     ...Object.values(POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK),
     ...Object.values(CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK),
     ...Object.values(EUROPEAN_POLITICAL_FEMINIST_MODERNISM_HISTORY_FEEDBACK),
+    ...Object.values(EUROPEAN_RELIGIOUS_MORAL_HISTORY_FEEDBACK),
   ].map((entry) => [entry.canonical, entry]),
 );
 
