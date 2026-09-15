@@ -138,12 +138,31 @@ export const ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK = {
   },
 } as const;
 
+export const POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK = {
+  match: {
+    canonical: "This matches the documented relationship between postwar history, production organization and the film's formal system.",
+    en: "This matches the documented relationship between postwar history, production organization and the film's formal system.",
+    nb: "Dette samsvarer med det dokumenterte forholdet mellom etterkrigshistorie, produksjonsorganisering og filmens formale system.",
+    fr: "Cela correspond à la relation documentée entre l’histoire de l’après-guerre, l’organisation de la production et le système formel du film.",
+    pt: "Isto corresponde à relação documentada entre a história do pós-guerra, a organização da produção e o sistema formal do filme.",
+  },
+  partial: {
+    canonical: "This is another real postwar European modernist system, but it organizes duration, performance, politics, image and editing differently.",
+    en: "This is another real postwar European modernist system, but it organizes duration, performance, politics, image and editing differently.",
+    nb: "Dette er et annet reelt europeisk modernistisk system fra etterkrigstiden, men det organiserer varighet, skuespill, politikk, bilde og klipp på en annen måte.",
+    fr: "Il s’agit d’un autre véritable système moderniste européen de l’après-guerre, mais il organise différemment la durée, le jeu, la politique, l’image et le montage.",
+    pt: "Este é outro sistema modernista europeu real do pós-guerra, mas organiza de forma diferente a duração, a interpretação, a política, a imagem e a montagem.",
+  },
+  miss: ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK.miss,
+} as const;
+
 export type SilentFoundationsHistoryFeedbackKey = keyof typeof SILENT_FOUNDATIONS_HISTORY_FEEDBACK;
 export type SilentStudioSystemsHistoryFeedbackKey = keyof typeof SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK;
 export type LateSilentEarlySoundHistoryFeedbackKey = keyof typeof LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK;
 export type ProductionSystems1930sHistoryFeedbackKey = keyof typeof PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK;
 export type NoirRealism1940sHistoryFeedbackKey = keyof typeof NOIR_REALISM_1940S_HISTORY_FEEDBACK;
 export type AsianPostwar1950sHistoryFeedbackKey = keyof typeof ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK;
+export type PostwarEuropeanModernismHistoryFeedbackKey = keyof typeof POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK;
 
 type FilmStudyHistoryFeedbackEntry =
   | (typeof SILENT_FOUNDATIONS_HISTORY_FEEDBACK)[SilentFoundationsHistoryFeedbackKey]
@@ -151,7 +170,8 @@ type FilmStudyHistoryFeedbackEntry =
   | (typeof LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK)[LateSilentEarlySoundHistoryFeedbackKey]
   | (typeof PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK)[ProductionSystems1930sHistoryFeedbackKey]
   | (typeof NOIR_REALISM_1940S_HISTORY_FEEDBACK)[NoirRealism1940sHistoryFeedbackKey]
-  | (typeof ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK)[AsianPostwar1950sHistoryFeedbackKey];
+  | (typeof ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK)[AsianPostwar1950sHistoryFeedbackKey]
+  | (typeof POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK)[PostwarEuropeanModernismHistoryFeedbackKey];
 
 const FILM_STUDY_HISTORY_FEEDBACK_BY_CANONICAL = new Map<string, FilmStudyHistoryFeedbackEntry>(
   [
@@ -161,6 +181,7 @@ const FILM_STUDY_HISTORY_FEEDBACK_BY_CANONICAL = new Map<string, FilmStudyHistor
     ...Object.values(PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK),
     ...Object.values(NOIR_REALISM_1940S_HISTORY_FEEDBACK),
     ...Object.values(ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK),
+    ...Object.values(POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK),
   ].map((entry) => [entry.canonical, entry]),
 );
 
