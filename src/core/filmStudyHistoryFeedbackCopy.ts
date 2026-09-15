@@ -114,18 +114,44 @@ export const NOIR_REALISM_1940S_HISTORY_FEEDBACK = {
   },
 } as const;
 
+export const ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK = {
+  match: {
+    canonical: "This matches the documented relationship between postwar context, production organization and the film's formal system.",
+    en: "This matches the documented relationship between postwar context, production organization and the film's formal system.",
+    nb: "Dette samsvarer med det dokumenterte forholdet mellom etterkrigskontekst, produksjonsorganisering og filmens formale system.",
+    fr: "Cela correspond à la relation documentée entre le contexte de l’après-guerre, l’organisation de la production et le système formel du film.",
+    pt: "Isto corresponde à relação documentada entre o contexto do pós-guerra, a organização da produção e o sistema formal do filme.",
+  },
+  partial: {
+    canonical: "This is a real 1950s Asian production system, but it organizes performance, space, duration, action and realism differently.",
+    en: "This is a real 1950s Asian production system, but it organizes performance, space, duration, action and realism differently.",
+    nb: "Dette er et reelt asiatisk produksjonssystem fra 1950-tallet, men det organiserer skuespill, rom, varighet, handling og realisme på en annen måte.",
+    fr: "Il s’agit d’un véritable système de production asiatique des années 1950, mais il organise différemment le jeu, l’espace, la durée, l’action et le réalisme.",
+    pt: "Este é um sistema de produção asiático real dos anos 1950, mas organiza de forma diferente a interpretação, o espaço, a duração, a ação e o realismo.",
+  },
+  miss: {
+    canonical: "This assigns the film to the wrong postwar production tradition and craft logic.",
+    en: "This assigns the film to the wrong postwar production tradition and craft logic.",
+    nb: "Dette knytter filmen til feil produksjonstradisjon fra etterkrigstiden og feil filmfaglig logikk.",
+    fr: "Cela rattache le film à la mauvaise tradition de production de l’après-guerre et à la mauvaise logique des métiers du cinéma.",
+    pt: "Isto associa o filme à tradição errada de produção do pós-guerra e à lógica errada dos ofícios cinematográficos.",
+  },
+} as const;
+
 export type SilentFoundationsHistoryFeedbackKey = keyof typeof SILENT_FOUNDATIONS_HISTORY_FEEDBACK;
 export type SilentStudioSystemsHistoryFeedbackKey = keyof typeof SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK;
 export type LateSilentEarlySoundHistoryFeedbackKey = keyof typeof LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK;
 export type ProductionSystems1930sHistoryFeedbackKey = keyof typeof PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK;
 export type NoirRealism1940sHistoryFeedbackKey = keyof typeof NOIR_REALISM_1940S_HISTORY_FEEDBACK;
+export type AsianPostwar1950sHistoryFeedbackKey = keyof typeof ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK;
 
 type FilmStudyHistoryFeedbackEntry =
   | (typeof SILENT_FOUNDATIONS_HISTORY_FEEDBACK)[SilentFoundationsHistoryFeedbackKey]
   | (typeof SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK)[SilentStudioSystemsHistoryFeedbackKey]
   | (typeof LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK)[LateSilentEarlySoundHistoryFeedbackKey]
   | (typeof PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK)[ProductionSystems1930sHistoryFeedbackKey]
-  | (typeof NOIR_REALISM_1940S_HISTORY_FEEDBACK)[NoirRealism1940sHistoryFeedbackKey];
+  | (typeof NOIR_REALISM_1940S_HISTORY_FEEDBACK)[NoirRealism1940sHistoryFeedbackKey]
+  | (typeof ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK)[AsianPostwar1950sHistoryFeedbackKey];
 
 const FILM_STUDY_HISTORY_FEEDBACK_BY_CANONICAL = new Map<string, FilmStudyHistoryFeedbackEntry>(
   [
@@ -134,6 +160,7 @@ const FILM_STUDY_HISTORY_FEEDBACK_BY_CANONICAL = new Map<string, FilmStudyHistor
     ...Object.values(LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK),
     ...Object.values(PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK),
     ...Object.values(NOIR_REALISM_1940S_HISTORY_FEEDBACK),
+    ...Object.values(ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK),
   ].map((entry) => [entry.canonical, entry]),
 );
 
