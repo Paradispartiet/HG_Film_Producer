@@ -90,16 +90,42 @@ export const PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK = {
   miss: SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK.miss,
 } as const;
 
+export const NOIR_REALISM_1940S_HISTORY_FEEDBACK = {
+  match: {
+    canonical: "This matches the documented relationship between postwar context, production conditions and the film's formal system.",
+    en: "This matches the documented relationship between postwar context, production conditions and the film's formal system.",
+    nb: "Dette samsvarer med det dokumenterte forholdet mellom etterkrigskontekst, produksjonsforhold og filmens formale system.",
+    fr: "Cela correspond à la relation documentée entre le contexte de l’après-guerre, les conditions de production et le système formel du film.",
+    pt: "Isto corresponde à relação documentada entre o contexto do pós-guerra, as condições de produção e o sistema formal do filme.",
+  },
+  partial: {
+    canonical: "This is a real 1940s production system, but it organizes realism, studio control, location, narration and sound differently.",
+    en: "This is a real 1940s production system, but it organizes realism, studio control, location, narration and sound differently.",
+    nb: "Dette er et reelt produksjonssystem fra 1940-tallet, men det organiserer realisme, studiokontroll, opptakssted, fortelling og lyd på en annen måte.",
+    fr: "Il s’agit d’un véritable système de production des années 1940, mais il organise différemment le réalisme, le contrôle du studio, les lieux de tournage, la narration et le son.",
+    pt: "Este é um sistema de produção real dos anos 1940, mas organiza de forma diferente o realismo, o controlo de estúdio, os locais de rodagem, a narração e o som.",
+  },
+  miss: {
+    canonical: "This assigns the film to the wrong historical production logic.",
+    en: "This assigns the film to the wrong historical production logic.",
+    nb: "Dette plasserer filmen i feil historisk produksjonslogikk.",
+    fr: "Cela rattache le film à la mauvaise logique historique de production.",
+    pt: "Isto associa o filme à lógica histórica de produção errada.",
+  },
+} as const;
+
 export type SilentFoundationsHistoryFeedbackKey = keyof typeof SILENT_FOUNDATIONS_HISTORY_FEEDBACK;
 export type SilentStudioSystemsHistoryFeedbackKey = keyof typeof SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK;
 export type LateSilentEarlySoundHistoryFeedbackKey = keyof typeof LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK;
 export type ProductionSystems1930sHistoryFeedbackKey = keyof typeof PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK;
+export type NoirRealism1940sHistoryFeedbackKey = keyof typeof NOIR_REALISM_1940S_HISTORY_FEEDBACK;
 
 type FilmStudyHistoryFeedbackEntry =
   | (typeof SILENT_FOUNDATIONS_HISTORY_FEEDBACK)[SilentFoundationsHistoryFeedbackKey]
   | (typeof SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK)[SilentStudioSystemsHistoryFeedbackKey]
   | (typeof LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK)[LateSilentEarlySoundHistoryFeedbackKey]
-  | (typeof PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK)[ProductionSystems1930sHistoryFeedbackKey];
+  | (typeof PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK)[ProductionSystems1930sHistoryFeedbackKey]
+  | (typeof NOIR_REALISM_1940S_HISTORY_FEEDBACK)[NoirRealism1940sHistoryFeedbackKey];
 
 const FILM_STUDY_HISTORY_FEEDBACK_BY_CANONICAL = new Map<string, FilmStudyHistoryFeedbackEntry>(
   [
@@ -107,6 +133,7 @@ const FILM_STUDY_HISTORY_FEEDBACK_BY_CANONICAL = new Map<string, FilmStudyHistor
     ...Object.values(SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK),
     ...Object.values(LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK),
     ...Object.values(PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK),
+    ...Object.values(NOIR_REALISM_1940S_HISTORY_FEEDBACK),
   ].map((entry) => [entry.canonical, entry]),
 );
 
