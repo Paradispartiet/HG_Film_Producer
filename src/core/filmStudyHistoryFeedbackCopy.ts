@@ -72,20 +72,41 @@ export const LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK = {
   },
 } as const;
 
+export const PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK = {
+  match: {
+    canonical: "This matches the film's documented 1930s production system and the way its departments create one coherent form.",
+    en: "This matches the film's documented 1930s production system and the way its departments create one coherent form.",
+    nb: "Dette samsvarer med filmens dokumenterte produksjonssystem fra 1930-tallet og måten avdelingene skaper én sammenhengende form på.",
+    fr: "Cela correspond au système de production documenté du film dans les années 1930 et à la manière dont ses départements construisent une forme cohérente.",
+    pt: "Isto corresponde ao sistema de produção documentado do filme nos anos 1930 e à forma como os seus departamentos criam uma forma coerente.",
+  },
+  partial: {
+    canonical: "This is a real 1930s system, but it organizes performance, design, image, sound and industrial labor differently.",
+    en: "This is a real 1930s system, but it organizes performance, design, image, sound and industrial labor differently.",
+    nb: "Dette er et reelt system fra 1930-tallet, men det organiserer skuespill, design, bilde, lyd og industrielt arbeid på en annen måte.",
+    fr: "Il s’agit d’un véritable système des années 1930, mais il organise différemment le jeu, les décors, l’image, le son et le travail industriel.",
+    pt: "Este é um sistema real dos anos 1930, mas organiza de forma diferente a interpretação, a cenografia, a imagem, o som e o trabalho industrial.",
+  },
+  miss: SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK.miss,
+} as const;
+
 export type SilentFoundationsHistoryFeedbackKey = keyof typeof SILENT_FOUNDATIONS_HISTORY_FEEDBACK;
 export type SilentStudioSystemsHistoryFeedbackKey = keyof typeof SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK;
 export type LateSilentEarlySoundHistoryFeedbackKey = keyof typeof LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK;
+export type ProductionSystems1930sHistoryFeedbackKey = keyof typeof PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK;
 
 type FilmStudyHistoryFeedbackEntry =
   | (typeof SILENT_FOUNDATIONS_HISTORY_FEEDBACK)[SilentFoundationsHistoryFeedbackKey]
   | (typeof SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK)[SilentStudioSystemsHistoryFeedbackKey]
-  | (typeof LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK)[LateSilentEarlySoundHistoryFeedbackKey];
+  | (typeof LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK)[LateSilentEarlySoundHistoryFeedbackKey]
+  | (typeof PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK)[ProductionSystems1930sHistoryFeedbackKey];
 
 const FILM_STUDY_HISTORY_FEEDBACK_BY_CANONICAL = new Map<string, FilmStudyHistoryFeedbackEntry>(
   [
     ...Object.values(SILENT_FOUNDATIONS_HISTORY_FEEDBACK),
     ...Object.values(SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK),
     ...Object.values(LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK),
+    ...Object.values(PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK),
   ].map((entry) => [entry.canonical, entry]),
 );
 
