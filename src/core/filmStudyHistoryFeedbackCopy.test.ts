@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import { FILMWORK_LANGUAGES } from "./filmWorkLanguage.js";
+import { FILM_STUDY_HISTORY_FAMILIES } from "./filmStudyHistoryFamily.js";
 import {
   ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK,
   CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK,
@@ -18,16 +19,16 @@ import {
 
 const FEEDBACK_KEYS = ["match", "partial", "miss"] as const;
 const FEEDBACK_CONTRACTS = [
-  ["Silent Foundations", SILENT_FOUNDATIONS_HISTORY_FEEDBACK],
-  ["Silent Studio Systems", SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK],
-  ["Late Silent / Early Sound", LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK],
-  ["1930s Production Systems", PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK],
-  ["1940s Noir / Realism", NOIR_REALISM_1940S_HISTORY_FEEDBACK],
-  ["1950s Asian Postwar", ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK],
-  ["Postwar European Modernism", POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK],
-  ["Czechoslovak New Wave", CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK],
-  ["European Political / Feminist Modernism", EUROPEAN_POLITICAL_FEMINIST_MODERNISM_HISTORY_FEEDBACK],
-  ["European Religious / Moral Modernism", EUROPEAN_RELIGIOUS_MORAL_HISTORY_FEEDBACK],
+  [FILM_STUDY_HISTORY_FAMILIES.silent_foundations.label, SILENT_FOUNDATIONS_HISTORY_FEEDBACK],
+  [FILM_STUDY_HISTORY_FAMILIES.silent_studio_systems.label, SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK],
+  [FILM_STUDY_HISTORY_FAMILIES.late_silent_early_sound.label, LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK],
+  [FILM_STUDY_HISTORY_FAMILIES.production_systems_1930s.label, PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK],
+  [FILM_STUDY_HISTORY_FAMILIES.noir_realism_1940s.label, NOIR_REALISM_1940S_HISTORY_FEEDBACK],
+  [FILM_STUDY_HISTORY_FAMILIES.asian_postwar_1950s.label, ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK],
+  [FILM_STUDY_HISTORY_FAMILIES.postwar_european_modernism.label, POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK],
+  [FILM_STUDY_HISTORY_FAMILIES.czechoslovak_new_wave.label, CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK],
+  [FILM_STUDY_HISTORY_FAMILIES.european_political_feminist_modernism.label, EUROPEAN_POLITICAL_FEMINIST_MODERNISM_HISTORY_FEEDBACK],
+  [FILM_STUDY_HISTORY_FAMILIES.european_religious_moral_modernism.label, EUROPEAN_RELIGIOUS_MORAL_HISTORY_FEEDBACK],
 ] as const;
 
 test("localized Film Study history feedback contracts cover the exact three canonical outcomes", () => {
