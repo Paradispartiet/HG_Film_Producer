@@ -180,6 +180,30 @@ export const CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK = {
   },
 } as const;
 
+export const EUROPEAN_POLITICAL_FEMINIST_MODERNISM_HISTORY_FEEDBACK = {
+  match: {
+    canonical: "This matches the documented relationship between political or feminist history and the film's concrete production system.",
+    en: "This matches the documented relationship between political or feminist history and the film's concrete production system.",
+    nb: "Dette samsvarer med det dokumenterte forholdet mellom politisk eller feministisk historie og filmens konkrete produksjonssystem.",
+    fr: "Cela correspond à la relation documentée entre l’histoire politique ou féministe et le système concret de production du film.",
+    pt: "Isto corresponde à relação documentada entre a história política ou feminista e o sistema concreto de produção do filme.",
+  },
+  partial: {
+    canonical: "This is a real European modernist production system, but it organizes time, bodies, space, memory and sound differently.",
+    en: "This is a real European modernist production system, but it organizes time, bodies, space, memory and sound differently.",
+    nb: "Dette er et reelt europeisk modernistisk produksjonssystem, men det organiserer tid, kropper, rom, minne og lyd på en annen måte.",
+    fr: "Il s’agit d’un véritable système de production moderniste européen, mais il organise différemment le temps, les corps, l’espace, la mémoire et le son.",
+    pt: "Este é um sistema de produção modernista europeu real, mas organiza de forma diferente o tempo, os corpos, o espaço, a memória e o som.",
+  },
+  miss: {
+    canonical: "This assigns the film to the wrong political, feminist and formal production logic.",
+    en: "This assigns the film to the wrong political, feminist and formal production logic.",
+    nb: "Dette plasserer filmen i feil politisk, feministisk og formmessig produksjonslogikk.",
+    fr: "Cela rattache le film à la mauvaise logique de production politique, féministe et formelle.",
+    pt: "Isto associa o filme à lógica errada de produção política, feminista e formal.",
+  },
+} as const;
+
 export type SilentFoundationsHistoryFeedbackKey = keyof typeof SILENT_FOUNDATIONS_HISTORY_FEEDBACK;
 export type SilentStudioSystemsHistoryFeedbackKey = keyof typeof SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK;
 export type LateSilentEarlySoundHistoryFeedbackKey = keyof typeof LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK;
@@ -188,6 +212,7 @@ export type NoirRealism1940sHistoryFeedbackKey = keyof typeof NOIR_REALISM_1940S
 export type AsianPostwar1950sHistoryFeedbackKey = keyof typeof ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK;
 export type PostwarEuropeanModernismHistoryFeedbackKey = keyof typeof POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK;
 export type CzechoslovakNewWaveHistoryFeedbackKey = keyof typeof CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK;
+export type EuropeanPoliticalFeministModernismHistoryFeedbackKey = keyof typeof EUROPEAN_POLITICAL_FEMINIST_MODERNISM_HISTORY_FEEDBACK;
 
 type FilmStudyHistoryFeedbackEntry =
   | (typeof SILENT_FOUNDATIONS_HISTORY_FEEDBACK)[SilentFoundationsHistoryFeedbackKey]
@@ -197,7 +222,8 @@ type FilmStudyHistoryFeedbackEntry =
   | (typeof NOIR_REALISM_1940S_HISTORY_FEEDBACK)[NoirRealism1940sHistoryFeedbackKey]
   | (typeof ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK)[AsianPostwar1950sHistoryFeedbackKey]
   | (typeof POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK)[PostwarEuropeanModernismHistoryFeedbackKey]
-  | (typeof CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK)[CzechoslovakNewWaveHistoryFeedbackKey];
+  | (typeof CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK)[CzechoslovakNewWaveHistoryFeedbackKey]
+  | (typeof EUROPEAN_POLITICAL_FEMINIST_MODERNISM_HISTORY_FEEDBACK)[EuropeanPoliticalFeministModernismHistoryFeedbackKey];
 
 const FILM_STUDY_HISTORY_FEEDBACK_BY_CANONICAL = new Map<string, FilmStudyHistoryFeedbackEntry>(
   [
@@ -209,6 +235,7 @@ const FILM_STUDY_HISTORY_FEEDBACK_BY_CANONICAL = new Map<string, FilmStudyHistor
     ...Object.values(ASIAN_POSTWAR_1950S_HISTORY_FEEDBACK),
     ...Object.values(POSTWAR_EUROPEAN_MODERNISM_HISTORY_FEEDBACK),
     ...Object.values(CZECHOSLOVAK_NEW_WAVE_HISTORY_FEEDBACK),
+    ...Object.values(EUROPEAN_POLITICAL_FEMINIST_MODERNISM_HISTORY_FEEDBACK),
   ].map((entry) => [entry.canonical, entry]),
 );
 
