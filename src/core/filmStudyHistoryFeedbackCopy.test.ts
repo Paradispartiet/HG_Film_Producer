@@ -4,6 +4,7 @@ import test from "node:test";
 import { FILMWORK_LANGUAGES } from "./filmWorkLanguage.js";
 import {
   LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK,
+  PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK,
   SILENT_FOUNDATIONS_HISTORY_FEEDBACK,
   SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK,
   formatFilmStudyHistoryFeedback,
@@ -14,12 +15,17 @@ const FEEDBACK_CONTRACTS = [
   ["Silent Foundations", SILENT_FOUNDATIONS_HISTORY_FEEDBACK],
   ["Silent Studio Systems", SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK],
   ["Late Silent / Early Sound", LATE_SILENT_EARLY_SOUND_HISTORY_FEEDBACK],
+  ["1930s Production Systems", PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK],
 ] as const;
 
 test("localized Film Study history feedback contracts cover the exact three canonical outcomes", () => {
   for (const [label, contract] of FEEDBACK_CONTRACTS) {
     assert.deepEqual(Object.keys(contract).sort(), [...FEEDBACK_KEYS].sort(), label);
   }
+});
+
+test("1930s Production Systems reuses the existing identical miss feedback contract", () => {
+  assert.strictEqual(PRODUCTION_SYSTEMS_1930S_HISTORY_FEEDBACK.miss, SILENT_STUDIO_SYSTEMS_HISTORY_FEEDBACK.miss);
 });
 
 test("English preserves every canonical localized Film Study history feedback string", () => {
