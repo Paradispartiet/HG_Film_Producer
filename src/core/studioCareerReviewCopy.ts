@@ -3,6 +3,15 @@ import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 type ProjectLabel = "first film" | `film ${number}`;
 
 interface CareerReviewCopy {
+  readonly overview: {
+    readonly eyebrow: string;
+    readonly heading: string;
+    readonly scoreAria: (score: number) => string;
+    readonly completedFilms: string;
+    readonly yearEvaluation: string;
+    readonly strategicGoal: string;
+    readonly studioIdentity: string;
+  };
   readonly panel: {
     readonly eyebrow: string;
     readonly heading: (projectLabel: ProjectLabel) => string;
@@ -71,6 +80,15 @@ interface CareerReviewCopy {
 
 export const STUDIO_CAREER_REVIEW_COPY: Readonly<Record<FilmWorkLanguage, CareerReviewCopy>> = {
   en: {
+    overview: {
+      eyebrow: "Long view",
+      heading: "Studio career",
+      scoreAria: (score) => `Career score ${score} out of 100`,
+      completedFilms: "Completed films",
+      yearEvaluation: "Year evaluation",
+      strategicGoal: "Strategic goal",
+      studioIdentity: "Studio identity"
+    },
     panel: {
       eyebrow: "Career review",
       heading: (projectLabel) => `Finish ${formatProjectLabel("en", projectLabel, false)} career review`,
@@ -101,6 +119,15 @@ export const STUDIO_CAREER_REVIEW_COPY: Readonly<Record<FilmWorkLanguage, Career
     goal: { label: "Strategic goal", releaseContributed: "Release contributed", noConfirmedProgress: "No confirmed progress yet", helpfulResult: "Helpful result", trackingPending: "Tracking pending", note: "Full strategic-goal progress tracking is not enabled yet. This review keeps the selected goal visible without inventing a progress percentage." }
   },
   nb: {
+    overview: {
+      eyebrow: "Langt perspektiv",
+      heading: "Studiokarriere",
+      scoreAria: (score) => `Karrierescore ${score} av 100`,
+      completedFilms: "Fullførte filmer",
+      yearEvaluation: "Årsvurdering",
+      strategicGoal: "Strategisk mål",
+      studioIdentity: "Studioidentitet"
+    },
     panel: {
       eyebrow: "Karrieregjennomgang",
       heading: (projectLabel) => `Fullfør karrieregjennomgangen for ${formatProjectLabel("nb", projectLabel, false)}`,
@@ -131,6 +158,15 @@ export const STUDIO_CAREER_REVIEW_COPY: Readonly<Record<FilmWorkLanguage, Career
     goal: { label: "Strategisk mål", releaseContributed: "Lanseringen bidro", noConfirmedProgress: "Ingen bekreftet fremgang ennå", helpfulResult: "Nyttig resultat", trackingPending: "Sporing avventer", note: "Full sporing av fremgang mot strategiske mål er ikke aktivert ennå. Gjennomgangen viser det valgte målet uten å finne på en fremgangsprosent." }
   },
   fr: {
+    overview: {
+      eyebrow: "Vision à long terme",
+      heading: "Carrière du studio",
+      scoreAria: (score) => `Score de carrière ${score} sur 100`,
+      completedFilms: "Films terminés",
+      yearEvaluation: "Évaluation de l’année",
+      strategicGoal: "Objectif stratégique",
+      studioIdentity: "Identité du studio"
+    },
     panel: {
       eyebrow: "Bilan de carrière",
       heading: (projectLabel) => `Finaliser le bilan de carrière de ${formatProjectLabel("fr", projectLabel, false)}`,
@@ -161,6 +197,15 @@ export const STUDIO_CAREER_REVIEW_COPY: Readonly<Record<FilmWorkLanguage, Career
     goal: { label: "Objectif stratégique", releaseContributed: "La sortie a contribué", noConfirmedProgress: "Aucune progression confirmée", helpfulResult: "Résultat favorable", trackingPending: "Suivi en attente", note: "Le suivi complet de la progression des objectifs stratégiques n’est pas encore activé. Ce bilan garde l’objectif sélectionné visible sans inventer de pourcentage de progression." }
   },
   pt: {
+    overview: {
+      eyebrow: "Visão a longo prazo",
+      heading: "Carreira do estúdio",
+      scoreAria: (score) => `Pontuação da carreira ${score} de 100`,
+      completedFilms: "Filmes concluídos",
+      yearEvaluation: "Avaliação do ano",
+      strategicGoal: "Objetivo estratégico",
+      studioIdentity: "Identidade do estúdio"
+    },
     panel: {
       eyebrow: "Revisão de carreira",
       heading: (projectLabel) => `Concluir a revisão de carreira de ${formatProjectLabel("pt", projectLabel, false)}`,
