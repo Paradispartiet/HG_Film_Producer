@@ -162,3 +162,145 @@ test("overlapping learning outcomes never synthesize a prerequisite", () => {
 
   assert.deepEqual(curriculum.prerequisites, []);
 });
+
+test("self prerequisites fail closed", () => {
+  assert.throws(
+    () => createFilmStudyCurriculum({
+      outcomes: [TRANSITION_OUTCOME],
+      familyCurricula: [{ familyId: STUDIO, establishes: [TRANSITION_OUTCOME.id] }],
+      prerequisites: [{
+        prerequisiteFamilyId: STUDIO,
+        dependentFamilyId: STUDIO,
+        requiredOutcomeIds: [TRANSITION_OUTCOME.id],
+        rationale: "fixture",
+      }],
+    }),
+    /self prerequisite/i,
+  );
+});
+
+test("empty required outcome sets fail closed", () => {
+  assert.throws(
+    () => createFilmStudyCurriculum({
+      outcomes: [],
+      familyCurricula: [{ familyId: STUDIO, establishes: [] }],
+      prerequisites: [{
+        prerequisiteFamilyId: STUDIO,
+        dependentFamilyId: SOUND,
+        requiredOutcomeIds: [],
+        rationale: "fixture",
+      }],
+    }),
+    /at least one learning outcome/i,
+  );
+});
+
+test("unknown required outcomes fail closed", () => {
+  assert.throws(
+    () => createFilmStudyCurriculum({
+      outcomes: [],
+      familyCurricula: [{ familyId: STUDIO, establishes: [] }],
+      prerequisites: [{
+        prerequisiteFamilyId: STUDIO,
+        dependentFamilyId: SOUND,
+        requiredOutcomeIds: [TRANSITION_OUTCOME.id],
+        rationale: "fixture",
+      }],
+    }),
+    /unknown learning outcome/i,
+  );
+});
+
+test("required outcomes not established by the prerequisite family fail closed", () => {
+  assert.throws(
+    () => createFilmStudyCurriculum({
+      outcomes: [TRANSITION_OUTCOME],
+      familyCurricula: [
+        { familyId: STUDIO, establishes: [] },
+        { familyId: SOUND, establishes: [TRANSITION_OUTCOME.id] },
+      ],
+      prerequisites: [{
+        prerequisiteFamilyId: STUDIO,
+        dependentFamilyId: SOUND,
+        requiredOutcomeIds: [TRANSITION_OUTCOME.id],
+        rationale: "fixture",
+      }],
+    }),
+    /does not establish required outcome/i,
+  );
+});
+
+test("duplicate ordered family-pair prerequisites fail closed", () => {
+  const prerequisite = {
+    prerequisiteFamilyId: STUDIO,
+    dependentFamilyId: SOUND,
+    requiredOutcomeIds: [TRANSITION_OUTCOME.id],
+    rationale: "fixture",
+  } as const;
+
+  assert.throws(
+    () => createFilmStudyCurriculum({
+      outcomes: [TRANSITION_OUTCOME],
+      familyCurricula: [{ familyId: STUDIO, establishes: [TRANSITION_OUTCOME.id] }],
+      prerequisites: [prerequisite, prerequisite],
+    }),
+    /duplicate curriculum prerequisite/i,
+  );
+});
+
+test("blank prerequisite rationale fails closed", () => {
+  assert.throws(
+    () => createFilmStudyCurriculum({
+      outcomes: [TRANSITION_OUTCOME],
+      familyCurricula: [{ familyId: STUDIO, establishes: [TRANSITION_OUTCOME.id] }],
+      prerequisites: [{
+        prerequisiteFamilyId: STUDIO,
+        dependentFamilyId: SOUND,
+        requiredOutcomeIds: [TRANSITION_OUTCOME.id],
+        rationale: "   ",
+      }],
+    }),
+    /rationale must be non-empty/i,
+  );
+});
+
+test("unknown prerequisite family identities fail closed at runtime", () => {
+  assert.throws(
+    () => createFilmStudyCurriculum({
+      outcomes: [TRANSITION_OUTCOME],
+      familyCurricula: [{ familyId: STUDIO, establishes: [TRANSITION_OUTCOME.id] }],
+      prerequisites: [{
+        prerequisiteFamilyId: "not_a_family" as typeof STUDIO,
+        dependentFamilyId: SOUND,
+        requiredOutcomeIds: [TRANSITION_OUTCOME.id],
+        rationale: "fixture",
+      }],
+    }),
+    /unknown Film Study family in curriculum prerequisite/i,
+  );
+});
+
+test("required outcome identities are normalized deterministically inside prerequisites", () => {
+  const other = {
+    id: "compare_transition_constraints",
+    statement: "Compare constraints across production-system transitions.",
+  } as const;
+  const curriculum = createFilmStudyCurriculum({
+    outcomes: [TRANSITION_OUTCOME, other],
+    familyCurricula: [{
+      familyId: STUDIO,
+      establishes: [TRANSITION_OUTCOME.id, other.id],
+    }],
+    prerequisites: [{
+      prerequisiteFamilyId: STUDIO,
+      dependentFamilyId: SOUND,
+      requiredOutcomeIds: [TRANSITION_OUTCOME.id, other.id, TRANSITION_OUTCOME.id],
+      rationale: "fixture",
+    }],
+  });
+
+  assert.deepEqual(
+    curriculum.prerequisites[0]?.requiredOutcomeIds,
+    [TRANSITION_OUTCOME.id, other.id].sort(),
+  );
+});
