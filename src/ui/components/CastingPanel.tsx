@@ -1,4 +1,7 @@
+import { getFilmWorkIntlLocale } from "../../core/filmWorkLanguage";
+import { STUDIO_CAREER_PRE_PRODUCTION_COPY } from "../../core/studioCareerPreProductionCopy";
 import type { ActorCandidateOption } from "../demo/createPreProductionStepRun.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 interface CastingPanelProps {
   readonly candidates: readonly ActorCandidateOption[];
@@ -7,6 +10,10 @@ interface CastingPanelProps {
 }
 
 export function CastingPanel({ candidates, selectedActorIds, onChange }: CastingPanelProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_PRE_PRODUCTION_COPY[language];
+  const locale = getFilmWorkIntlLocale(language);
+
   function toggleActor(actorId: string) {
     onChange(selectedActorIds.includes(actorId)
       ? selectedActorIds.filter((id) => id !== actorId)
@@ -16,8 +23,8 @@ export function CastingPanel({ candidates, selectedActorIds, onChange }: Casting
   return (
     <section className="production-office-section" aria-labelledby="casting-heading">
       <div className="production-office-heading">
-        <div><span className="office-step">03 · Casting</span><h3 id="casting-heading">Build the principal cast</h3></div>
-        <p>Select at least two actors. Chemistry is calculated when the production plan is locked.</p>
+        <div><span className="office-step">{copy.casting.step}</span><h3 id="casting-heading">{copy.casting.heading}</h3></div>
+        <p>{copy.casting.intro}</p>
       </div>
       <div className="casting-grid">
         {candidates.map((candidate) => (
@@ -26,15 +33,15 @@ export function CastingPanel({ candidates, selectedActorIds, onChange }: Casting
             <div className="candidate-card-title"><strong>{candidate.name}</strong><span>{candidate.score.totalScore}</span></div>
             {candidate.previousFilmsTogether > 0 && (
               <span className="candidate-returning-badge">
-                Worked together on {candidate.previousFilmsTogether} film{candidate.previousFilmsTogether === 1 ? "" : "s"}
-                {candidate.chemistryTags.includes("studio_regular") && " · Studio regular"}
+                {copy.returning.workedTogether(candidate.previousFilmsTogether)}
+                {candidate.chemistryTags.includes("studio_regular") && ` · ${copy.returning.studioRegular}`}
               </span>
             )}
             <p>{candidate.actingStyle} · {candidate.chemistryTags.slice(0, 2).join(" · ")}</p>
             <dl className="candidate-stats">
-              <div><dt>Star power</dt><dd>{candidate.starPower}</dd></div>
-              <div><dt>Reliability</dt><dd>{candidate.reliability}</dd></div>
-              <div><dt>Fee</dt><dd>{formatMoney(candidate.fee)}</dd></div>
+              <div><dt>{copy.casting.starPower}</dt><dd>{candidate.starPower}</dd></div>
+              <div><dt>{copy.casting.reliability}</dt><dd>{candidate.reliability}</dd></div>
+              <div><dt>{copy.casting.fee}</dt><dd>{formatMoney(candidate.fee, locale)}</dd></div>
             </dl>
           </label>
         ))}
@@ -43,6 +50,6 @@ export function CastingPanel({ candidates, selectedActorIds, onChange }: Casting
   );
 }
 
-function formatMoney(value: number): string {
-  return value.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+function formatMoney(value: number, locale: string): string {
+  return value.toLocaleString(locale, { style: "currency", currency: "USD", maximumFractionDigits: 0 });
 }

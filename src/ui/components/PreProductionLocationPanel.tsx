@@ -1,4 +1,6 @@
+import { STUDIO_CAREER_PRE_PRODUCTION_COPY } from "../../core/studioCareerPreProductionCopy";
 import type { PreProductionLocationOption } from "../demo/createPreProductionStepRun.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 interface PreProductionLocationPanelProps {
   readonly options: readonly PreProductionLocationOption[];
@@ -7,11 +9,14 @@ interface PreProductionLocationPanelProps {
 }
 
 export function PreProductionLocationPanel({ options, selectedLocationId, onSelect }: PreProductionLocationPanelProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_PRE_PRODUCTION_COPY[language].location;
+
   return (
     <section className="production-office-section" aria-labelledby="location-heading">
       <div className="production-office-heading">
-        <div><span className="office-step">01 · Location</span><h3 id="location-heading">Confirm the production base</h3></div>
-        <p>Select one of the top locations ranked by the scouting engine.</p>
+        <div><span className="office-step">{copy.step}</span><h3 id="location-heading">{copy.heading}</h3></div>
+        <p>{copy.intro}</p>
       </div>
       <div className="location-option-grid">
         {options.map((option) => (
@@ -24,7 +29,7 @@ export function PreProductionLocationPanel({ options, selectedLocationId, onSele
             <h4>{option.name}</h4>
             <p>{option.summary}</p>
             <div className="option-tags">
-              {option.recommended && <span className="option-tag option-tag--accent">Development pick</span>}
+              {option.recommended && <span className="option-tag option-tag--accent">{copy.developmentPick}</span>}
               {option.notes.slice(0, 2).map((note) => <span className="option-tag" key={note}>{note}</span>)}
             </div>
           </label>
