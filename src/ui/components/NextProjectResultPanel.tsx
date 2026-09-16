@@ -1,3 +1,6 @@
+import { getFilmWorkIntlLocale } from "../../core/filmWorkLanguage.js";
+import { STUDIO_CAREER_SUMMARY_COPY } from "../../core/studioCareerSummaryCopy.js";
+import { STUDIO_SETUP_COPY } from "../../core/studioSetupCopy.js";
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { NextProjectStepResult } from "../demo/createNextProjectStepRun.js";
 import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
@@ -5,6 +8,9 @@ import type { PostProductionStepResult } from "../demo/createPostProductionStepR
 import type { ShootStepResult } from "../demo/createShootStepRun.js";
 import type { ReleaseStepResult } from "../demo/createReleaseStepRun.js";
 import type { CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
+
+type HandoffStage = "initial" | "development" | "preProduction" | "shoot" | "postProduction" | "release" | "career";
 
 interface NextProjectResultPanelProps {
   readonly result: NextProjectStepResult;
@@ -27,7 +33,40 @@ export function NextProjectResultPanel({
   releaseResult = null,
   careerApplicationResult = null,
 }: NextProjectResultPanelProps) {
-  const projectLabel = `Film ${projectNumber}`;
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_SUMMARY_COPY[language].nextProject.result;
+  const setupCopy = STUDIO_SETUP_COPY[language];
+  const locale = getFilmWorkIntlLocale(language);
+  const scaleLabel = setupCopy.project.scales[result.choices.scale];
+  const currentStudio = careerApplicationResult?.updatedStudio ?? result.carriedStudio;
+  const currentCareerState = careerApplicationResult?.updatedCareerState ?? result.carriedCareerState;
+  const stage: HandoffStage = careerApplicationResult
+    ? "career"
+    : releaseResult
+      ? "release"
+      : postProductionResult
+        ? "postProduction"
+        : shootResult
+          ? "shoot"
+          : preProductionResult
+            ? "preProduction"
+            : developmentResult
+              ? "development"
+              : "initial";
+  const status = careerApplicationResult
+    ? copy.status.studioUpdated
+    : releaseResult
+      ? copy.status.filmReleased
+      : postProductionResult
+        ? copy.status.postProductionLocked
+        : shootResult
+          ? copy.status.shootDayResolved
+          : preProductionResult
+            ? copy.status.preProductionLocked
+            : developmentResult
+              ? copy.status.developmentActionCompleted
+              : copy.status.readyForDevelopment;
+
   const developmentPipeline = developmentResult
     ? [...result.pipelineSteps, developmentResult.pipelineStep]
     : result.pipelineSteps;
@@ -46,185 +85,119 @@ export function NextProjectResultPanel({
   const pipelineSteps = careerApplicationResult
     ? [...releasePipeline, careerApplicationResult.pipelineStep]
     : releasePipeline;
+  const localizedBasePipeline = [
+    {
+      label: copy.pipeline.studioCarriedForward,
+      detail: copy.pipeline.moneyAvailable(result.carriedStudio.name, formatMoney(result.carriedStudio.money, locale)),
+    },
+    {
+      label: copy.pipeline.careerContinued,
+      detail: copy.pipeline.careerPeriod(result.carriedCareerState.currentYear, result.carriedCareerState.currentQuarter.toUpperCase()),
+    },
+    {
+      label: copy.pipeline.nextFilmProjectCreated,
+      detail: copy.pipeline.projectCreatedDetail(result.project.genre, scaleLabel),
+    },
+    {
+      label: copy.pipeline.scriptTemplateSelected,
+      detail: result.scriptTemplate.title,
+    },
+    {
+      label: copy.pipeline.readyForDevelopment,
+      detail: copy.pipeline.setupComplete(projectNumber),
+    },
+  ] as const;
 
   return (
     <section className="next-project-result" aria-live="polite">
       <div className="next-project-result-hero">
         <div>
-          <span className="eyebrow">{projectLabel} created</span>
+          <span className="eyebrow">{copy.created(projectNumber)}</span>
           <h3>{result.project.title}</h3>
           <p>{result.project.logline}</p>
         </div>
         <div className="ready-badge">
-          <span>Next status</span>
-          <strong>{careerApplicationResult ? "Studio updated" : releaseResult ? "Film released" : postProductionResult ? "Post-production locked" : shootResult ? "Shoot day resolved" : preProductionResult ? "Pre-production locked" : developmentResult ? "Development action completed" : "Ready for development"}</strong>
+          <span>{copy.nextStatus}</span>
+          <strong>{status}</strong>
         </div>
       </div>
       <div className="next-project-result-grid">
         <div className="project-package-card">
-          <span>New project package</span>
+          <span>{copy.newProjectPackage}</span>
           <dl>
             <div>
-              <dt>Genre</dt>
+              <dt>{copy.genre}</dt>
               <dd>{result.project.genre}</dd>
             </div>
             <div>
-              <dt>Scale</dt>
-              <dd>{formatScale(result.project.scale)}</dd>
+              <dt>{copy.scale}</dt>
+              <dd>{scaleLabel}</dd>
             </div>
             <div>
-              <dt>Script template</dt>
+              <dt>{copy.scriptTemplate}</dt>
               <dd>{result.scriptTemplate.title}</dd>
             </div>
             <div>
-              <dt>Strategic goal</dt>
-              <dd>
-                {result.selectedStrategicGoal?.title ??
-                  "Current slate unchanged"}
-              </dd>
+              <dt>{copy.strategicGoal}</dt>
+              <dd>{result.selectedStrategicGoal?.title ?? copy.currentSlateUnchanged}</dd>
             </div>
           </dl>
         </div>
         <div className="carried-studio-card">
-          <span>{careerApplicationResult ? "Updated studio" : "Carried studio"}</span>
+          <span>{careerApplicationResult ? copy.updatedStudio : copy.carriedStudio}</span>
           <strong>{result.carriedStudio.name}</strong>
           <p>
-            {formatMoney(careerApplicationResult?.updatedStudio.money ?? result.carriedStudio.money)} · Reputation{" "}
-            {careerApplicationResult?.updatedStudio.reputation ?? result.carriedStudio.reputation} · Prestige{" "}
-            {careerApplicationResult?.updatedStudio.prestige ?? result.carriedStudio.prestige}
+            {formatMoney(currentStudio.money, locale)} · {copy.reputation} {currentStudio.reputation} · {copy.prestige} {currentStudio.prestige}
           </p>
           <small>
-            Year {careerApplicationResult?.updatedCareerState.currentYear ?? result.carriedCareerState.currentYear} ·{" "}
-            {(careerApplicationResult?.updatedCareerState.currentQuarter ?? result.carriedCareerState.currentQuarter).toUpperCase()} ·{" "}
-            {careerApplicationResult?.updatedCareerState.completedFilms.length ?? result.carriedCareerState.completedFilms.length} completed films
+            {copy.careerPeriod(
+              currentCareerState.currentYear,
+              currentCareerState.currentQuarter.toUpperCase(),
+              currentCareerState.completedFilms.length,
+            )}
           </small>
         </div>
       </div>
       <div className="next-pipeline">
         <div className="compact-card-heading">
           <div>
-            <span className="eyebrow">{projectLabel} pipeline</span>
-            <h3>New slate opened</h3>
+            <span className="eyebrow">{copy.pipelineHeading(projectNumber)}</span>
+            <h3>{copy.newSlateOpened}</h3>
           </div>
         </div>
         <ol>
-          {pipelineSteps.map((step, index) => (
-            <li
-              className={
-                index === pipelineSteps.length - 1
-                  ? "next-pipeline-current"
-                  : ""
-              }
-              key={step.label}
-            >
-              <span>{index + 1}</span>
-              <div>
-                <strong>{step.label}</strong>
-                <small>{step.detail}</small>
-              </div>
-            </li>
-          ))}
+          {pipelineSteps.map((step, index) => {
+            const localizedStep = index < result.pipelineSteps.length
+              ? localizedBasePipeline[index] ?? step
+              : step;
+            return (
+              <li
+                className={index === pipelineSteps.length - 1 ? "next-pipeline-current" : ""}
+                key={`${index}-${step.label}`}
+              >
+                <span>{index + 1}</span>
+                <div>
+                  <strong>{localizedStep.label}</strong>
+                  <small>{localizedStep.detail}</small>
+                </div>
+              </li>
+            );
+          })}
         </ol>
       </div>
       <div className="development-handoff">
-        <span>
-          {careerApplicationResult
-            ? `${projectLabel} applied`
-            : releaseResult
-              ? `${projectLabel} released`
-              : postProductionResult
-                ? `${projectLabel} cut locked`
-                : shootResult
-                  ? `${projectLabel} shoot complete`
-                  : preProductionResult
-                    ? `${projectLabel} handoff`
-                    : developmentResult
-                      ? `${projectLabel} development`
-                      : "Next action"}
-        </span>
-        <strong>
-          {projectNumber === 4
-            ? preProductionResult
-              ? "Next step: shoot film 4"
-              : developmentResult
-                ? "Start pre-production for film 4"
-                : "Next step: develop film 4"
-            : projectNumber === 3
-            ? careerApplicationResult
-              ? "Next step: start film 4"
-              : releaseResult
-              ? "Next step: apply film 3 to studio/career"
-              : postProductionResult
-              ? "Next step: release film 3"
-              : shootResult
-              ? "Next step: post-production for film 3"
-              : preProductionResult
-              ? "Start shoot for film 3"
-              : developmentResult
-              ? "Start pre-production for film 3"
-              : "Next step: develop film 3"
-            : careerApplicationResult
-              ? "Next step: start film 3"
-              : releaseResult
-                ? "Next step: apply film 2 to studio/career"
-                : postProductionResult
-                  ? "Release film 2"
-                  : shootResult
-                    ? "Start post-production for film 2"
-                    : preProductionResult
-                      ? "Start shoot for film 2"
-                      : developmentResult
-                        ? "Start pre-production for film 2"
-                        : "Reuse the development flow for project 2"}
-        </strong>
-        <p>
-          {projectNumber === 4
-            ? preProductionResult
-              ? "Film 4 has locked its location, required crew and cast through the shared pre-production office. The shoot step is intentionally deferred to a later PR."
-              : developmentResult
-                ? "Film 4 has completed one shared development action and is ready to use the shared pre-production office."
-                : "Film 4 has been created from the updated career after film 3. Choose one shared development action to continue."
-            : projectNumber === 3
-            ? careerApplicationResult
-              ? "Film 3 is recorded in the studio ledger and career filmography. Film 4 can now be created from that updated career."
-              : releaseResult
-              ? "Film 3 has completed the shared release flow. Applying it to the studio and career is intentionally deferred to the next step."
-              : postProductionResult
-              ? "Film 3 has locked post-production through the shared finishing flow. Choose a release strategy and festival to resolve the release."
-              : shootResult
-              ? "Film 3 has resolved its first shoot day through the shared shoot flow. Select all five finishing decisions and lock post-production."
-              : preProductionResult
-              ? "Film 3 has locked its location, required crew and cast. Choose one production event and resolve the shoot day."
-              : developmentResult
-              ? "Film 3 has completed one shared development action and is ready to use the shared pre-production office."
-              : "Film 3 has been created from the updated career after film 2. Choose one shared development action to continue."
-            : careerApplicationResult
-            ? "Film 2 is recorded in the studio ledger and career filmography. Film 3 is intentionally not started here."
-            : releaseResult
-            ? "The film 2 release is complete. Close the film 2 year to update the carried-forward studio and career."
-            : postProductionResult
-            ? "The film 2 cut is locked. Choose a release strategy and festival to resolve the release."
-            : shootResult
-              ? "The first shoot day is resolved. Select all five finishing decisions and lock post-production for film 2."
-            : preProductionResult
-              ? "The location, crew and cast are locked. Choose one production event and resolve the film 2 shoot day."
-            : developmentResult
-              ? "The second film has completed one development action and is ready to reuse the shared pre-production office."
-              : "Choose one development action for film 2. The completed first-film pipeline remains separate."}
-        </p>
+        <span>{copy.handoff.label(projectNumber, stage)}</span>
+        <strong>{copy.handoff.nextStep(projectNumber, stage)}</strong>
+        <p>{copy.handoff.detail(projectNumber, stage)}</p>
       </div>
     </section>
   );
 }
 
-function formatMoney(value: number): string {
-  return value.toLocaleString("en-US", {
+function formatMoney(value: number, locale: string): string {
+  return value.toLocaleString(locale, {
     style: "currency",
     currency: "USD",
     maximumFractionDigits: 0,
   });
-}
-
-function formatScale(value: string): string {
-  return value.replace("_", " ");
 }
