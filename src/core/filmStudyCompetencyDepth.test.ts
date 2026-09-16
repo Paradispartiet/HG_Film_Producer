@@ -4,23 +4,22 @@ import test from "node:test";
 import * as curriculumModule from "./filmStudyCurriculum.js";
 
 const EXPECTED_COMPETENCY_IDS = [
-  "connect_history_context_to_production_form",
   "analyze_performance_and_staging",
   "analyze_space_location_and_design",
-  "analyze_image_lighting_and_camera",
+  "analyze_image_and_lighting",
   "analyze_editing_duration_and_narration",
-  "analyze_sound_music_and_voice",
+  "analyze_sound_and_music",
   "analyze_production_organization_labor_and_institutions",
+  "connect_context_to_production_form",
 ] as const;
 
 const EXPECTED_FAMILY_COMPETENCIES = [
   {
     familyId: "silent_foundations",
     establishes: [
-      "connect_history_context_to_production_form",
+      "analyze_editing_duration_and_narration",
       "analyze_performance_and_staging",
       "analyze_space_location_and_design",
-      "analyze_editing_duration_and_narration",
     ],
     reinforces: [],
     uses: [],
@@ -28,10 +27,11 @@ const EXPECTED_FAMILY_COMPETENCIES = [
   {
     familyId: "silent_studio_systems",
     establishes: [
-      "connect_history_context_to_production_form",
-      "analyze_space_location_and_design",
-      "analyze_image_lighting_and_camera",
+      "analyze_image_and_lighting",
+      "analyze_performance_and_staging",
       "analyze_production_organization_labor_and_institutions",
+      "analyze_sound_and_music",
+      "analyze_space_location_and_design",
     ],
     reinforces: [],
     uses: [],
@@ -39,11 +39,10 @@ const EXPECTED_FAMILY_COMPETENCIES = [
   {
     familyId: "late_silent_early_sound",
     establishes: [
-      "connect_history_context_to_production_form",
-      "analyze_performance_and_staging",
-      "analyze_image_lighting_and_camera",
       "analyze_editing_duration_and_narration",
-      "analyze_sound_music_and_voice",
+      "analyze_image_and_lighting",
+      "analyze_performance_and_staging",
+      "analyze_sound_and_music",
     ],
     reinforces: [],
     uses: [],
@@ -51,10 +50,6 @@ const EXPECTED_FAMILY_COMPETENCIES = [
   {
     familyId: "production_systems_1930s",
     establishes: [
-      "connect_history_context_to_production_form",
-      "analyze_performance_and_staging",
-      "analyze_space_location_and_design",
-      "analyze_sound_music_and_voice",
       "analyze_production_organization_labor_and_institutions",
     ],
     reinforces: [],
@@ -63,25 +58,24 @@ const EXPECTED_FAMILY_COMPETENCIES = [
   {
     familyId: "noir_realism_1940s",
     establishes: [
-      "connect_history_context_to_production_form",
-      "analyze_performance_and_staging",
-      "analyze_space_location_and_design",
-      "analyze_image_lighting_and_camera",
       "analyze_editing_duration_and_narration",
-      "analyze_sound_music_and_voice",
-      "analyze_production_organization_labor_and_institutions",
+      "analyze_image_and_lighting",
+      "analyze_performance_and_staging",
+      "analyze_sound_and_music",
+      "analyze_space_location_and_design",
+      "connect_context_to_production_form",
     ],
     reinforces: [],
     uses: [],
   },
   {
-    familyId: "postwar_asian_cinemas_1950s",
+    familyId: "asian_postwar_1950s",
     establishes: [
-      "connect_history_context_to_production_form",
-      "analyze_performance_and_staging",
-      "analyze_space_location_and_design",
       "analyze_editing_duration_and_narration",
+      "analyze_performance_and_staging",
       "analyze_production_organization_labor_and_institutions",
+      "analyze_space_location_and_design",
+      "connect_context_to_production_form",
     ],
     reinforces: [],
     uses: [],
@@ -89,13 +83,13 @@ const EXPECTED_FAMILY_COMPETENCIES = [
   {
     familyId: "postwar_european_modernism",
     establishes: [
-      "connect_history_context_to_production_form",
-      "analyze_performance_and_staging",
-      "analyze_space_location_and_design",
-      "analyze_image_lighting_and_camera",
       "analyze_editing_duration_and_narration",
-      "analyze_sound_music_and_voice",
+      "analyze_image_and_lighting",
+      "analyze_performance_and_staging",
       "analyze_production_organization_labor_and_institutions",
+      "analyze_sound_and_music",
+      "analyze_space_location_and_design",
+      "connect_context_to_production_form",
     ],
     reinforces: [],
     uses: [],
@@ -103,12 +97,13 @@ const EXPECTED_FAMILY_COMPETENCIES = [
   {
     familyId: "czechoslovak_new_wave",
     establishes: [
-      "connect_history_context_to_production_form",
-      "analyze_performance_and_staging",
-      "analyze_space_location_and_design",
       "analyze_editing_duration_and_narration",
-      "analyze_sound_music_and_voice",
+      "analyze_image_and_lighting",
+      "analyze_performance_and_staging",
       "analyze_production_organization_labor_and_institutions",
+      "analyze_sound_and_music",
+      "analyze_space_location_and_design",
+      "connect_context_to_production_form",
     ],
     reinforces: [],
     uses: [],
@@ -116,12 +111,13 @@ const EXPECTED_FAMILY_COMPETENCIES = [
   {
     familyId: "european_political_feminist_modernism",
     establishes: [
-      "connect_history_context_to_production_form",
-      "analyze_performance_and_staging",
-      "analyze_space_location_and_design",
       "analyze_editing_duration_and_narration",
-      "analyze_sound_music_and_voice",
+      "analyze_image_and_lighting",
+      "analyze_performance_and_staging",
       "analyze_production_organization_labor_and_institutions",
+      "analyze_sound_and_music",
+      "analyze_space_location_and_design",
+      "connect_context_to_production_form",
     ],
     reinforces: [],
     uses: [],
@@ -129,13 +125,13 @@ const EXPECTED_FAMILY_COMPETENCIES = [
   {
     familyId: "european_religious_moral_modernism",
     establishes: [
-      "connect_history_context_to_production_form",
-      "analyze_performance_and_staging",
-      "analyze_space_location_and_design",
-      "analyze_image_lighting_and_camera",
       "analyze_editing_duration_and_narration",
-      "analyze_sound_music_and_voice",
+      "analyze_image_and_lighting",
+      "analyze_performance_and_staging",
       "analyze_production_organization_labor_and_institutions",
+      "analyze_sound_and_music",
+      "analyze_space_location_and_design",
+      "connect_context_to_production_form",
     ],
     reinforces: [],
     uses: [],
