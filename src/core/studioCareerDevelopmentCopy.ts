@@ -277,7 +277,7 @@ export const STUDIO_CAREER_DEVELOPMENT_COPY = {
       apply: "Aplicar lição do mentor",
     },
     location: {
-      required: "Escolha um briefing de repérage antes de procurar localizações.",
+      required: "Escolha um briefing de localização antes de procurar localizações.",
       sectionLabel: "Mesa de localizações",
       heading: "Definir o briefing de localização",
       intro: "O motor avalia todas as localizações disponíveis e associa ao projeto a correspondência mais forte.",
