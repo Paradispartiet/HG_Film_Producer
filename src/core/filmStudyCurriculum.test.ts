@@ -313,13 +313,99 @@ test("required outcome identities are normalized deterministically inside prereq
 
 const RELIGIOUS = FILM_STUDY_HISTORY_FAMILIES.european_religious_moral_modernism.id;
 
-test("canonical curriculum starts empty until source-backed audit admits content", () => {
-  assert.deepEqual(FILM_STUDY_LEARNING_OUTCOMES, []);
-  assert.deepEqual(FILM_STUDY_FAMILY_CURRICULA, []);
+const EXPECTED_CANONICAL_OUTCOMES = [
+  {
+    id: "distinguish_silent_production_systems",
+    statement: "Distinguish documented silent-cinema production systems by how design, location, effects, staging and editing work together.",
+  },
+  {
+    id: "analyze_early_studio_coordination",
+    statement: "Analyze how early studio and departmental organization coordinates performance, architecture, image, effects and sound.",
+  },
+  {
+    id: "analyze_sound_transition_strategies",
+    statement: "Analyze how transition-era production systems reorganize image, performance, editing, silence, recorded sound and music.",
+  },
+  {
+    id: "analyze_integrated_1930s_production_systems",
+    statement: "Analyze how 1930s production systems integrate craft departments and industrial labor into a coherent film form.",
+  },
+  {
+    id: "analyze_noir_realism_production_conditions",
+    statement: "Analyze how 1940s production conditions shape studio or location realism, narration, lighting, sound and performance.",
+  },
+  {
+    id: "analyze_asian_postwar_production_form",
+    statement: "Analyze how Asian postwar production organization and material conditions shape performance, space, duration, action and realism.",
+  },
+  {
+    id: "analyze_postwar_european_modernist_systems",
+    statement: "Analyze how postwar European modernist production systems organize duration, performance, politics, image, editing, sound and space.",
+  },
+  {
+    id: "analyze_czechoslovak_new_wave_conditions",
+    statement: "Analyze how Czechoslovak production and institutional conditions shape performance, space, design, editing, image and sound.",
+  },
+  {
+    id: "analyze_political_feminist_production_form",
+    statement: "Analyze how political or feminist history becomes concrete production choices in time, bodies, location, labor, design, image, sound and editing.",
+  },
+  {
+    id: "analyze_moral_belief_institutions_production_form",
+    statement: "Analyze how moral history, belief and institutions become concrete production choices in performance, space, objects, image, editing, sound and music.",
+  },
+] as const;
+
+const EXPECTED_FAMILY_CURRICULA = [
+  {
+    familyId: FILM_STUDY_HISTORY_FAMILIES.silent_foundations.id,
+    establishes: ["distinguish_silent_production_systems"],
+  },
+  {
+    familyId: FILM_STUDY_HISTORY_FAMILIES.silent_studio_systems.id,
+    establishes: ["analyze_early_studio_coordination"],
+  },
+  {
+    familyId: FILM_STUDY_HISTORY_FAMILIES.late_silent_early_sound.id,
+    establishes: ["analyze_sound_transition_strategies"],
+  },
+  {
+    familyId: FILM_STUDY_HISTORY_FAMILIES.production_systems_1930s.id,
+    establishes: ["analyze_integrated_1930s_production_systems"],
+  },
+  {
+    familyId: FILM_STUDY_HISTORY_FAMILIES.noir_realism_1940s.id,
+    establishes: ["analyze_noir_realism_production_conditions"],
+  },
+  {
+    familyId: FILM_STUDY_HISTORY_FAMILIES.asian_postwar_1950s.id,
+    establishes: ["analyze_asian_postwar_production_form"],
+  },
+  {
+    familyId: FILM_STUDY_HISTORY_FAMILIES.postwar_european_modernism.id,
+    establishes: ["analyze_postwar_european_modernist_systems"],
+  },
+  {
+    familyId: FILM_STUDY_HISTORY_FAMILIES.czechoslovak_new_wave.id,
+    establishes: ["analyze_czechoslovak_new_wave_conditions"],
+  },
+  {
+    familyId: FILM_STUDY_HISTORY_FAMILIES.european_political_feminist_modernism.id,
+    establishes: ["analyze_political_feminist_production_form"],
+  },
+  {
+    familyId: FILM_STUDY_HISTORY_FAMILIES.european_religious_moral_modernism.id,
+    establishes: ["analyze_moral_belief_institutions_production_form"],
+  },
+] as const;
+
+test("canonical curriculum materializes source-backed family outcomes without prerequisites", () => {
+  assert.deepEqual(FILM_STUDY_LEARNING_OUTCOMES, EXPECTED_CANONICAL_OUTCOMES);
+  assert.deepEqual(FILM_STUDY_FAMILY_CURRICULA, EXPECTED_FAMILY_CURRICULA);
   assert.deepEqual(FILM_STUDY_CURRICULUM_PREREQUISITES, []);
   assert.deepEqual(FILM_STUDY_CURRICULUM, {
-    outcomes: [],
-    familyCurricula: [],
+    outcomes: EXPECTED_CANONICAL_OUTCOMES,
+    familyCurricula: EXPECTED_FAMILY_CURRICULA,
     prerequisites: [],
   });
   assert.equal(
