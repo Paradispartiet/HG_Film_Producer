@@ -1,4 +1,4 @@
-import type { FilmWorkLanguage } from "./filmWorkLanguage";
+import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 
 export const PRODUCTION_CASE_LIBRARY_STATUS_IDS = ["all", "not_started", "in_progress", "completed"] as const;
 export type ProductionCaseLibraryStatusId = (typeof PRODUCTION_CASE_LIBRARY_STATUS_IDS)[number];
