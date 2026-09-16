@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { STUDIO_CAREER_DEVELOPMENT_COPY } from "../../core/studioCareerDevelopmentCopy";
 import {
   createLocationDevelopmentResult,
   createMentorDevelopmentResult,
@@ -9,6 +10,7 @@ import {
   type DevelopmentStepResult
 } from "../demo/createDevelopmentStepRun.js";
 import type { ProjectRunContext } from "../demo/createProjectRunContext.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import type { DevelopmentPathOption } from "../types.js";
 import { LocationChoicePanel } from "./LocationChoicePanel.js";
 import { MentorChoicePanel } from "./MentorChoicePanel.js";
@@ -25,12 +27,6 @@ interface DevelopmentPanelProps {
   readonly id?: string | undefined;
 }
 
-const paths: readonly DevelopmentPathOption[] = [
-  { id: "mentor", number: "01", title: "Ask a mentor", description: "Apply one focused lesson to the project.", consequence: "Craft guidance or a technique unlock" },
-  { id: "location", number: "02", title: "Scout locations", description: "Rank real production options against a brief.", consequence: "One top location attached" },
-  { id: "script", number: "03", title: "Shape the script", description: "Build and evaluate three starter scenes.", consequence: "A scored starter draft" }
-];
-
 export function DevelopmentPanel({
   projectContext,
   projectLabel = "Film 1",
@@ -41,6 +37,13 @@ export function DevelopmentPanel({
   onFinishDevelopment,
   id
 }: DevelopmentPanelProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_DEVELOPMENT_COPY[language];
+  const paths: readonly DevelopmentPathOption[] = [
+    { id: "mentor", number: "01", ...copy.paths.mentor },
+    { id: "location", number: "02", ...copy.paths.location },
+    { id: "script", number: "03", ...copy.paths.script },
+  ];
   const [selectedLessonId, setSelectedLessonId] = useState("");
   const [selectedBriefId, setSelectedBriefId] = useState("");
   const [message, setMessage] = useState("");
@@ -57,7 +60,7 @@ export function DevelopmentPanel({
 
   function applyMentorLesson() {
     if (!selectedLessonId) {
-      setMessage("Choose a mentor lesson before applying this path.");
+      setMessage(copy.mentor.required);
       return;
     }
     onApplyAction(createMentorDevelopmentResult(chainedContext, selectedLessonId));
@@ -66,7 +69,7 @@ export function DevelopmentPanel({
 
   function applyLocationBrief() {
     if (!selectedBriefId) {
-      setMessage("Choose a scouting brief before running the location scout.");
+      setMessage(copy.location.required);
       return;
     }
     onApplyAction(createLocationDevelopmentResult(chainedContext, selectedBriefId));
@@ -76,8 +79,8 @@ export function DevelopmentPanel({
   return (
     <section className="panel development-panel" id={id}>
       <div className="development-panel-heading">
-        <div><span className="eyebrow">{projectLabel} development</span><h2>Develop {projectLabel.toLowerCase()}</h2></div>
-        <p>Your producer’s desk can take on any combination of these actions. Finish development when you’re ready to move on.</p>
+        <div><span className="eyebrow">{copy.panel.eyebrow(projectLabel)}</span><h2>{copy.panel.heading(projectLabel)}</h2></div>
+        <p>{copy.panel.intro}</p>
       </div>
       <div className="development-path-grid">
         {paths.map((path) => {
@@ -98,14 +101,14 @@ export function DevelopmentPanel({
             >
               <span className="development-path-number">{done ? "✓" : path.number}</span>
               <strong>{path.title}</strong>
-              <span>{done ? "Applied" : path.description}</span>
+              <span>{done ? copy.panel.applied : path.description}</span>
               <small>{path.consequence}</small>
             </button>
           );
         })}
       </div>
       {!selectedPath && completedResults.length === 0 && (
-        <p className="development-prompt">Select a development path to open its working brief.</p>
+        <p className="development-prompt">{copy.panel.prompt}</p>
       )}
       {selectedPath === "mentor" && (
         <MentorChoicePanel
@@ -130,10 +133,8 @@ export function DevelopmentPanel({
       )}
       {completedResults.length > 0 && (
         <div className="development-actions">
-          <span className="inline-message" role="status">
-            {completedResults.length} of 3 development action{completedResults.length === 1 ? "" : "s"} applied.
-          </span>
-          <button className="primary-button" onClick={onFinishDevelopment} type="button">Finish development</button>
+          <span className="inline-message" role="status">{copy.progress(completedResults.length)}</span>
+          <button className="primary-button" onClick={onFinishDevelopment} type="button">{copy.panel.finish}</button>
         </div>
       )}
     </section>

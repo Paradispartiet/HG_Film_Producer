@@ -1,4 +1,6 @@
+import { STUDIO_CAREER_DEVELOPMENT_COPY } from "../../core/studioCareerDevelopmentCopy";
 import type { MentorLesson } from "../../domain/mentor.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 interface MentorChoicePanelProps {
   readonly lessons: readonly MentorLesson[];
@@ -15,11 +17,14 @@ export function MentorChoicePanel({
   onSelect,
   onApply
 }: MentorChoicePanelProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_DEVELOPMENT_COPY[language].mentor;
+
   return (
     <div className="development-choice-panel">
       <div className="development-choice-heading">
-        <div><span className="section-label">Creative counsel</span><h3>Choose one mentor lesson</h3></div>
-        <p>Bring one focused craft principle into the project before production expands.</p>
+        <div><span className="section-label">{copy.sectionLabel}</span><h3>{copy.heading}</h3></div>
+        <p>{copy.intro}</p>
       </div>
       <div className="development-option-grid development-option-grid--lessons">
         {lessons.map((lesson) => (
@@ -28,24 +33,25 @@ export function MentorChoicePanel({
             <span className="option-kicker">{formatLabel(lesson.focusArea)}</span>
             <strong>{lesson.title}</strong>
             <span>{lesson.advice}</span>
-            <small>{lesson.techniqueId ? "Technique unlock" : "Strategic guidance"}</small>
+            <small>{lesson.techniqueId ? copy.techniqueUnlock : copy.strategicGuidance}</small>
           </label>
         ))}
       </div>
-      <DevelopmentAction message={message} label="Apply mentor lesson" onApply={onApply} />
+      <DevelopmentAction message={message} label={copy.apply} hint={copy.actionHint} onApply={onApply} />
     </div>
   );
 }
 
-function DevelopmentAction({ message, label, onApply }: {
+function DevelopmentAction({ message, label, hint, onApply }: {
   readonly message: string;
   readonly label: string;
+  readonly hint: string;
   readonly onApply: () => void;
 }) {
   return (
     <div className="development-actions">
       <span className={message ? "inline-message inline-message--error" : "inline-message"} aria-live="polite">
-        {message || "One development action completes this step."}
+        {message || hint}
       </span>
       <button className="primary-button" onClick={onApply} type="button">{label}</button>
     </div>
