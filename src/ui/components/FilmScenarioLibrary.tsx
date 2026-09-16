@@ -1,5 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import {
+  PRODUCTION_CASE_LIBRARY_COPY,
+  PRODUCTION_CASE_LIBRARY_SORT_IDS,
+  PRODUCTION_CASE_LIBRARY_STATUS_IDS,
+  getProductionCaseLibraryStatusLabel,
+} from "../../core/productionCaseLibraryCopy";
+import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
+import {
   createProductionCaseProgressExport,
   defaultProductionCaseLibraryControls,
   getProductionCaseProgressEntry,
@@ -14,22 +21,11 @@ import {
   getProductionCaseLearningStatus,
   type ProductionCaseLearningStatusSummary,
 } from "../../core/productionCaseLearning";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { getClassicFilmScenarios, type FilmScenarioSeed } from "../data/filmScenarios";
 import { createProductionCaseMissions, resolveScenarioProductionBrief } from "../data/scenarioProductionBriefs";
 
-const caseStatusFilters = [
-  { value: "all", label: "All" },
-  { value: "not_started", label: "Not started" },
-  { value: "in_progress", label: "In progress" },
-  { value: "completed", label: "Completed" },
-] as const satisfies readonly { readonly value: ProductionCaseLibraryStatusFilter; readonly label: string }[];
-
 type LearningSortMode = "default" | "title_asc";
-
-const sortModeOptions = [
-  { value: "default", label: "Default" },
-  { value: "title_asc", label: "Title A–Z" },
-] as const satisfies readonly { readonly value: LearningSortMode; readonly label: string }[];
 
 function getInitialControls() {
   if (typeof window === "undefined") {
@@ -65,6 +61,10 @@ export function FilmScenarioLibrary({
 }: {
   readonly onStartScenario?: (scenario: FilmScenarioSeed) => void;
 }) {
+  const [language] = useFilmWorkLanguage();
+  const copy = PRODUCTION_CASE_LIBRARY_COPY[language];
+  const caseStatusFilters = PRODUCTION_CASE_LIBRARY_STATUS_IDS.map((value) => ({ value, label: copy.statusFilters[value] }));
+  const sortModeOptions = PRODUCTION_CASE_LIBRARY_SORT_IDS.map((value) => ({ value, label: copy.sortOptions[value] }));
   const initialControls = getInitialControls();
   const [searchQuery, setSearchQuery] = useState(initialControls.searchQuery);
   const [caseStatusFilter, setCaseStatusFilter] = useState<ProductionCaseLibraryStatusFilter>(initialControls.caseStatusFilter);
@@ -208,24 +208,26 @@ export function FilmScenarioLibrary({
     <main className="scenario-library">
       <div className="scenario-library-header">
         <div>
-          <span className="eyebrow">Film learning through concrete cases</span>
-          <h2>Production Cases</h2>
+          <span className="eyebrow">{copy.eyebrow}</span>
+          <h2>{copy.productTitle}</h2>
         </div>
-        <p>Choose a film, study its screenplay, image, editing and sound choices, read the explanations, and continue when the method is clear. There are no points or ranks.</p>
+        <p>{copy.intro}</p>
       </div>
 
       {!hasProgress ? (
         <ProductionCaseStartHereGuidance
           firstScenario={firstScenario}
+          language={language}
           onStartScenario={onStartScenario}
           suggestedScenarios={suggestedFirstScenarios}
         />
       ) : null}
 
       <div className="production-case-dashboard">
-        <ProductionCaseCollectionSummaryCard summary={summary} />
+        <ProductionCaseCollectionSummaryCard language={language} summary={summary} />
         <ProductionCaseNextActionCard
           card={nextCard}
+          language={language}
           onOpenScenario={nextCard ? () => onStartScenario?.(nextCard.scenario) : undefined}
         />
       </div>
@@ -233,68 +235,68 @@ export function FilmScenarioLibrary({
       <div className="scenario-library-controls">
         <div className="scenario-controls-search-row">
           <label className="scenario-search">
-            <span>Search</span>
-            <input value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Search film, year, or case" type="search" />
+            <span>{copy.searchLabel}</span>
+            <input value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder={copy.searchPlaceholder} type="search" />
           </label>
         </div>
         <div className="scenario-controls-filter-row">
           <label className="scenario-status-filter">
-            <span>Learning status</span>
+            <span>{copy.learningStatusLabel}</span>
             <select value={caseStatusFilter} onChange={(event) => setCaseStatusFilter(event.target.value as ProductionCaseLibraryStatusFilter)}>
               {caseStatusFilters.map((filter) => <option key={filter.value} value={filter.value}>{filter.label}</option>)}
             </select>
           </label>
           <label className="scenario-status-filter scenario-sort-control">
-            <span>Sort</span>
+            <span>{copy.sortLabel}</span>
             <select value={sortMode} onChange={(event) => setSortMode(event.target.value as LearningSortMode)}>
               {sortModeOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
             </select>
           </label>
-          <button className="secondary-button scenario-filter-reset" onClick={resetFilters} type="button">Reset filters</button>
+          <button className="secondary-button scenario-filter-reset" onClick={resetFilters} type="button">{copy.resetFilters}</button>
         </div>
 
         <details className="scenario-backup-panel">
-          <summary><span>Learning progress backup</span><small>Save or restore which cases and phases you have studied.</small></summary>
+          <summary><span>{copy.backup.title}</span><small>{copy.backup.description}</small></summary>
           <div className="scenario-backup-content">
-            <button className="secondary-button scenario-export-button" onClick={exportProgress} type="button">Export progress</button>
+            <button className="secondary-button scenario-export-button" onClick={exportProgress} type="button">{copy.backup.exportProgress}</button>
             <div className="scenario-import-control">
               <label>
-                <span>Import progress</span>
+                <span>{copy.backup.importProgress}</span>
                 <textarea
                   value={importJson}
                   onChange={(event) => { setImportJson(event.target.value); setImportStatus(undefined); }}
                   rows={4}
-                  placeholder="Paste JSON backup"
-                  aria-label="Import progress"
+                  placeholder={copy.backup.pasteBackup}
+                  aria-label={copy.backup.importProgress}
                 />
               </label>
-              <p>Importing overwrites local learning progress.</p>
+              <p>{copy.backup.importOverwriteWarning}</p>
               {importPreview ? (
                 <div className={`scenario-import-preview${importPreview.ok ? "" : " scenario-import-preview-invalid"}`} aria-live="polite">
                   {importPreview.ok ? (
-                    <><strong>Backup found</strong><span>Exported: {importPreview.exportedAt}</span><span>Cases with progress: {importPreview.currentProgressCount}</span></>
-                  ) : <strong>Backup cannot be read</strong>}
+                    <><strong>{copy.backup.backupFound}</strong><span>{copy.backup.exportedLabel}: {importPreview.exportedAt}</span><span>{copy.backup.casesWithProgressLabel}: {importPreview.currentProgressCount}</span></>
+                  ) : <strong>{copy.backup.unreadable}</strong>}
                 </div>
               ) : null}
-              <button className="secondary-button scenario-import-button" disabled={!importJson.trim() || importPreview?.ok === false} onClick={confirmImport} type="button">Confirm import</button>
+              <button className="secondary-button scenario-import-button" disabled={!importJson.trim() || importPreview?.ok === false} onClick={confirmImport} type="button">{copy.backup.confirmImport}</button>
             </div>
-            {exportStatus ? <div className="scenario-export-status" aria-live="polite">{exportStatus === "exported" ? "Progress exported" : "Progress ready to copy"}</div> : null}
-            {importStatus ? <div className="scenario-import-status" aria-live="polite">{importStatus === "imported" ? "Progress imported" : "Could not import progress"}</div> : null}
-            {exportFallbackJson ? <textarea className="scenario-export-fallback" readOnly rows={6} value={exportFallbackJson} aria-label="Progress ready to copy" /> : null}
+            {exportStatus ? <div className="scenario-export-status" aria-live="polite">{exportStatus === "exported" ? copy.backup.progressExported : copy.backup.progressReadyToCopy}</div> : null}
+            {importStatus ? <div className="scenario-import-status" aria-live="polite">{importStatus === "imported" ? copy.backup.progressImported : copy.backup.importFailed}</div> : null}
+            {exportFallbackJson ? <textarea className="scenario-export-fallback" readOnly rows={6} value={exportFallbackJson} aria-label={copy.backup.progressReadyToCopy} /> : null}
           </div>
         </details>
       </div>
 
       <div className="scenario-result-summary" aria-live="polite">
-        <span>{filteredCards.length === 0 ? "No film cases match the search or filter" : `Showing ${filteredCards.length} of ${scenarioCards.length} film cases`}</span>
+        <span>{filteredCards.length === 0 ? copy.noMatches : copy.resultSummary(filteredCards.length, scenarioCards.length)}</span>
       </div>
 
       {scenarioEraGroups.map(({ era, cards }) => {
         const isExpanded = expandedEras.includes(era) || cards.length <= eraVisibleLimit;
         const visibleCards = isExpanded ? cards : cards.slice(0, eraVisibleLimit);
         return (
-          <section className="scenario-era" key={era} aria-label={`Film cases from the ${era}`}>
-            <div className="scenario-era-rail"><b>{era}</b><span>{cards.length} {cards.length === 1 ? "case" : "cases"}</span></div>
+          <section className="scenario-era" key={era} aria-label={copy.eraAria(era)}>
+            <div className="scenario-era-rail"><b>{era}</b><span>{copy.caseCount(cards.length)}</span></div>
             <div className="scenario-era-cases">
               <div className="scenario-grid">
                 {visibleCards.map(({ scenario, caseStatus }) => (
@@ -302,22 +304,22 @@ export function FilmScenarioLibrary({
                     <div className="scenario-card-topline"><span>#{scenario.source.position}</span><span>{scenario.scenario_type}</span></div>
                     <h3>{scenario.film.title}</h3>
                     <dl className="scenario-meta">
-                      <div><dt>Year</dt><dd>{scenario.film.year}</dd></div>
-                      <div><dt>Director</dt><dd>{scenario.film.directors.join(", ")}</dd></div>
+                      <div><dt>{copy.yearLabel}</dt><dd>{scenario.film.year}</dd></div>
+                      <div><dt>{copy.directorLabel}</dt><dd>{scenario.film.directors.join(", ")}</dd></div>
                     </dl>
-                    <ScenarioCaseStatusBadge status={caseStatus} />
-                    <div className="scenario-tags" aria-label={`Genres for ${scenario.film.title}`}>
+                    <ScenarioCaseStatusBadge language={language} status={caseStatus} />
+                    <div className="scenario-tags" aria-label={copy.genresAria(scenario.film.title)}>
                       {scenario.film.genres.map((genre) => <span key={genre}>{genre}</span>)}
                     </div>
-                    <p>{getScenarioCardDescription(scenario)}</p>
+                    <p>{getScenarioCardDescription(scenario, language)}</p>
                     <button className="secondary-button" disabled={!onStartScenario} onClick={() => onStartScenario?.(scenario)} type="button">
-                      {caseStatus.status === "completed" ? "Review this case" : caseStatus.status === "in_progress" ? "Continue this case" : "Study this case"}
+                      {caseStatus.status === "completed" ? copy.reviewCase : caseStatus.status === "in_progress" ? copy.continueCase : copy.studyCase}
                     </button>
                   </article>
                 ))}
               </div>
               {!isExpanded ? (
-                <button className="secondary-button scenario-era-show-all" onClick={() => setExpandedEras((current) => [...current, era])} type="button">Show all {cards.length} cases from the {era}</button>
+                <button className="secondary-button scenario-era-show-all" onClick={() => setExpandedEras((current) => [...current, era])} type="button">{copy.showAllCases(cards.length, era)}</button>
               ) : null}
             </div>
           </section>
@@ -331,29 +333,29 @@ const eraVisibleLimit = 6;
 
 function ProductionCaseStartHereGuidance({
   firstScenario,
+  language,
   onStartScenario,
   suggestedScenarios,
 }: {
   readonly firstScenario: FilmScenarioSeed | undefined;
+  readonly language: FilmWorkLanguage;
   readonly onStartScenario: ((scenario: FilmScenarioSeed) => void) | undefined;
   readonly suggestedScenarios: readonly FilmScenarioSeed[];
 }) {
+  const copy = PRODUCTION_CASE_LIBRARY_COPY[language].startHere;
   return (
-    <section className="production-case-start-here" aria-label="Start learning with a film case">
+    <section className="production-case-start-here" aria-label={copy.aria}>
       <div className="production-case-start-here-copy">
-        <span>Start here</span>
-        <h3>Study your first film case</h3>
+        <span>{copy.label}</span>
+        <h3>{copy.heading}</h3>
         <ol>
-          <li>Choose a film.</li>
-          <li>Compare the possible filmmaking approaches.</li>
-          <li>Read why the choice fits, partly fits, or does not fit this film.</li>
-          <li>Finish the phases and read the learning report.</li>
+          {copy.steps.map((step) => <li key={step}>{step}</li>)}
         </ol>
       </div>
       <div className="production-case-start-here-actions">
-        <button className="primary-button" disabled={!firstScenario || !onStartScenario} onClick={() => { if (firstScenario) onStartScenario?.(firstScenario); }} type="button">Start first case</button>
+        <button className="primary-button" disabled={!firstScenario || !onStartScenario} onClick={() => { if (firstScenario) onStartScenario?.(firstScenario); }} type="button">{copy.startFirstCase}</button>
         {suggestedScenarios.length > 0 ? (
-          <div className="production-case-suggested-first-cases"><strong>Suggested first cases</strong><div>{suggestedScenarios.map((scenario) => <button className="secondary-button" disabled={!onStartScenario} key={scenario.id} onClick={() => onStartScenario?.(scenario)} type="button">{scenario.film.title}</button>)}</div></div>
+          <div className="production-case-suggested-first-cases"><strong>{copy.suggestedFirstCases}</strong><div>{suggestedScenarios.map((scenario) => <button className="secondary-button" disabled={!onStartScenario} key={scenario.id} onClick={() => onStartScenario?.(scenario)} type="button">{scenario.film.title}</button>)}</div></div>
         ) : null}
       </div>
     </section>
@@ -361,52 +363,60 @@ function ProductionCaseStartHereGuidance({
 }
 
 function ProductionCaseCollectionSummaryCard({
+  language,
   summary,
 }: {
+  readonly language: FilmWorkLanguage;
   readonly summary: { readonly total: number; readonly completed: number; readonly inProgress: number; readonly notStarted: number };
 }) {
+  const copy = PRODUCTION_CASE_LIBRARY_COPY[language].collectionSummary;
   return (
-    <section className="production-case-summary-card" aria-label="Film case learning progress">
-      <div className="production-case-summary-heading"><span>Cases studied</span><strong>{summary.completed}/{summary.total}</strong></div>
-      <div><span>Completed</span><strong>{summary.completed}</strong></div>
-      <div><span>In progress</span><strong>{summary.inProgress}</strong></div>
-      <div><span>Not started</span><strong>{summary.notStarted}</strong></div>
+    <section className="production-case-summary-card" aria-label={copy.aria}>
+      <div className="production-case-summary-heading"><span>{copy.casesStudied}</span><strong>{summary.completed}/{summary.total}</strong></div>
+      <div><span>{copy.completed}</span><strong>{summary.completed}</strong></div>
+      <div><span>{copy.inProgress}</span><strong>{summary.inProgress}</strong></div>
+      <div><span>{copy.notStarted}</span><strong>{summary.notStarted}</strong></div>
     </section>
   );
 }
 
 function ProductionCaseNextActionCard({
   card,
+  language,
   onOpenScenario,
 }: {
   readonly card: { readonly scenario: FilmScenarioSeed; readonly caseStatus: ScenarioLearningStatus } | undefined;
+  readonly language: FilmWorkLanguage;
   readonly onOpenScenario?: (() => void) | undefined;
 }) {
+  const copy = PRODUCTION_CASE_LIBRARY_COPY[language].nextAction;
   if (!card) {
     return (
-      <section className="production-case-next-action" aria-label="Next learning step">
-        <div><span>Next learning step</span><strong>Choose any completed case to review</strong><small>There is no score to improve. Return when you want to compare the film choices again.</small></div>
+      <section className="production-case-next-action" aria-label={copy.aria}>
+        <div><span>{copy.label}</span><strong>{copy.reviewTitle}</strong><small>{copy.reviewHint}</small></div>
       </section>
     );
   }
   return (
-    <section className="production-case-next-action" aria-label="Next learning step">
+    <section className="production-case-next-action" aria-label={copy.aria}>
       <div>
-        <span>Next learning step</span>
-        <strong>{card.caseStatus.status === "in_progress" ? "Continue" : "Start"}: {card.scenario.film.title}</strong>
-        <small>{card.caseStatus.status === "in_progress" ? `${card.caseStatus.completedCount}/${card.caseStatus.missionCount} phases studied.` : "Open the film and begin with its first craft phase."}</small>
+        <span>{copy.label}</span>
+        <strong>{card.caseStatus.status === "in_progress" ? copy.continueTitle(card.scenario.film.title) : copy.startTitle(card.scenario.film.title)}</strong>
+        <small>{card.caseStatus.status === "in_progress" ? copy.phasesStudied(card.caseStatus.completedCount, card.caseStatus.missionCount) : copy.openFirstPhase}</small>
       </div>
-      <button className="secondary-button" disabled={!onOpenScenario} onClick={onOpenScenario} type="button">Open case</button>
+      <button className="secondary-button" disabled={!onOpenScenario} onClick={onOpenScenario} type="button">{copy.openCase}</button>
     </section>
   );
 }
 
-function ScenarioCaseStatusBadge({ status }: { readonly status: ScenarioLearningStatus }) {
+function ScenarioCaseStatusBadge({ language, status }: { readonly language: FilmWorkLanguage; readonly status: ScenarioLearningStatus }) {
+  const copy = PRODUCTION_CASE_LIBRARY_COPY[language].statusBadge;
+  const statusLabel = getProductionCaseLibraryStatusLabel(language, status.status);
   return (
-    <div className="scenario-case-status" aria-label={`Learning status: ${status.label}`}>
-      <span>Learning status</span>
-      <strong>{status.label}</strong>
-      <small>{status.completedCount}/{status.missionCount} phases studied</small>
+    <div className="scenario-case-status" aria-label={copy.aria(statusLabel)}>
+      <span>{copy.label}</span>
+      <strong>{statusLabel}</strong>
+      <small>{copy.phasesStudied(status.completedCount, status.missionCount)}</small>
     </div>
   );
 }
@@ -430,10 +440,11 @@ export function getScenarioCaseStatus(
   return { ...status, scenarioId: scenario.id, title: scenario.film.title };
 }
 
-function getScenarioCardDescription(scenario: FilmScenarioSeed) {
+function getScenarioCardDescription(scenario: FilmScenarioSeed, language: FilmWorkLanguage) {
   const brief = resolveScenarioProductionBrief(scenario);
+  const copy = PRODUCTION_CASE_LIBRARY_COPY[language];
   if (brief.briefType === "production_case") {
-    return `Study how ${scenario.film.title} uses screenplay, image, editing and sound. The goal is understanding, not a score.`;
+    return copy.productionCaseDescription(scenario.film.title);
   }
-  return `${scenario.production_challenge} This imported seed still needs film-specific case design.`;
+  return copy.seedFallbackDescription(scenario.production_challenge);
 }
