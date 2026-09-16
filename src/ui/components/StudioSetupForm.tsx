@@ -1,5 +1,8 @@
 import type { ChangeEvent } from "react";
+import { getFilmWorkIntlLocale } from "../../core/filmWorkLanguage";
+import { STUDIO_SETUP_COPY } from "../../core/studioSetupCopy";
 import type { StartingStudioPreset } from "../demo/createProjectSetupRun.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import type { StartingMoneyPreset } from "../types.js";
 
 interface StudioSetupFormProps {
@@ -19,37 +22,44 @@ export function StudioSetupForm({
   onStudioNameChange,
   onPresetChange
 }: StudioSetupFormProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_SETUP_COPY[language].studio;
+  const locale = getFilmWorkIntlLocale(language);
+
   return (
     <section className="setup-section">
-      <div className="setup-section-heading"><span>01</span><div><h3>Build the studio</h3><p>Choose the banner and starting position for your career.</p></div></div>
+      <div className="setup-section-heading"><span>01</span><div><h3>{copy.heading}</h3><p>{copy.intro}</p></div></div>
       <label className="text-field">
-        <span>Studio name</span>
+        <span>{copy.nameLabel}</span>
         <input
           aria-invalid={Boolean(studioNameError)}
           onChange={(event: ChangeEvent<HTMLInputElement>) => onStudioNameChange(event.target.value)}
-          placeholder="e.g. Northline Pictures"
+          placeholder={copy.namePlaceholder}
           type="text"
           value={studioName}
         />
         {studioNameError && <small className="field-error">{studioNameError}</small>}
       </label>
       <fieldset className="setup-fieldset">
-        <legend>Starting position</legend>
+        <legend>{copy.startingPosition}</legend>
         <div className="choice-grid choice-grid--presets">
-          {presets.map((option) => (
-            <label className={preset === option.id ? "choice-card choice-card--selected" : "choice-card"} key={option.id}>
-              <input checked={preset === option.id} name="studio-preset" onChange={() => onPresetChange(option.id)} type="radio" />
-              <strong>{option.label}</strong>
-              <span>{option.description}</span>
-              <small>{formatMoney(option.money)} · Rep {option.reputation} · Prestige {option.prestige}</small>
-            </label>
-          ))}
+          {presets.map((option) => {
+            const presetCopy = copy.presets[option.id];
+            return (
+              <label className={preset === option.id ? "choice-card choice-card--selected" : "choice-card"} key={option.id}>
+                <input checked={preset === option.id} name="studio-preset" onChange={() => onPresetChange(option.id)} type="radio" />
+                <strong>{presetCopy.label}</strong>
+                <span>{presetCopy.description}</span>
+                <small>{copy.presetMeta(formatMoney(option.money, locale), option.reputation, option.prestige)}</small>
+              </label>
+            );
+          })}
         </div>
       </fieldset>
     </section>
   );
 }
 
-function formatMoney(value: number): string {
-  return value.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+function formatMoney(value: number, locale: string): string {
+  return value.toLocaleString(locale, { style: "currency", currency: "USD", maximumFractionDigits: 0 });
 }

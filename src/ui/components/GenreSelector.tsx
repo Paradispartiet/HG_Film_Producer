@@ -1,4 +1,6 @@
+import { STUDIO_SETUP_COPY } from "../../core/studioSetupCopy";
 import type { Genre } from "../../domain/knowledge.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 interface GenreSelectorProps {
   readonly genres: readonly Genre[];
@@ -8,9 +10,12 @@ interface GenreSelectorProps {
 }
 
 export function GenreSelector({ genres, value, error, onChange }: GenreSelectorProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_SETUP_COPY[language].genre;
+
   return (
     <fieldset className="setup-fieldset">
-      <legend>Genre</legend>
+      <legend>{copy.legend}</legend>
       <div className="choice-grid choice-grid--genre">
         {genres.map((genre) => (
           <label className={value === genre.id ? "choice-card choice-card--selected" : "choice-card"} key={genre.id}>

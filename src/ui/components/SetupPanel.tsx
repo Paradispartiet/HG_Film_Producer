@@ -1,11 +1,13 @@
 import { useState, type FormEvent } from "react";
 import type { FilmScale } from "../../domain/film.js";
+import { STUDIO_SETUP_COPY } from "../../core/studioSetupCopy";
 import {
   createProjectSetupRun,
   projectSetupData,
   startingStudioPresets,
   type ProjectSetupRun
 } from "../demo/createProjectSetupRun.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import type { ProjectSetupChoices, StartingMoneyPreset } from "../types.js";
 import { ProjectSetupForm } from "./ProjectSetupForm.js";
 import { StrategicGoalSelector } from "./StrategicGoalSelector.js";
@@ -17,6 +19,14 @@ interface SetupErrors {
   readonly projectTitle?: string | undefined;
   readonly genreId?: string | undefined;
   readonly scriptTemplateId?: string | undefined;
+}
+
+interface SetupValidationCopy {
+  readonly studioName: string;
+  readonly strategicGoal: string;
+  readonly projectTitle: string;
+  readonly genre: string;
+  readonly scriptTemplate: string;
 }
 
 interface SetupPanelProps {
@@ -34,6 +44,8 @@ const initialChoices: ProjectSetupChoices = {
 };
 
 export function SetupPanel({ onCreate }: SetupPanelProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_SETUP_COPY[language];
   const [choices, setChoices] = useState<ProjectSetupChoices>(initialChoices);
   const [errors, setErrors] = useState<SetupErrors>({});
 
@@ -54,7 +66,7 @@ export function SetupPanel({ onCreate }: SetupPanelProps) {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const nextErrors = validateChoices(choices);
+    const nextErrors = validateChoices(choices, copy.validation);
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) {
       return;
@@ -65,8 +77,8 @@ export function SetupPanel({ onCreate }: SetupPanelProps) {
   return (
     <section className="panel setup-panel">
       <div className="setup-panel-intro">
-        <div><span className="eyebrow">New studio slate</span><h2>Create your first project</h2></div>
-        <p>Set the studio mandate and package one film. This run stops before development.</p>
+        <div><span className="eyebrow">{copy.panel.kicker}</span><h2>{copy.panel.heading}</h2></div>
+        <p>{copy.panel.intro}</p>
       </div>
       <form onSubmit={handleSubmit} noValidate>
         <StudioSetupForm
@@ -78,7 +90,7 @@ export function SetupPanel({ onCreate }: SetupPanelProps) {
           onPresetChange={(value: StartingMoneyPreset) => updateChoice("startingMoneyPreset", value)}
         />
         <section className="setup-section">
-          <div className="setup-section-heading"><span>02</span><div><h3>Set the mandate</h3><p>Choose the ambition that will guide early decisions.</p></div></div>
+          <div className="setup-section-heading"><span>02</span><div><h3>{copy.panel.mandateHeading}</h3><p>{copy.panel.mandateIntro}</p></div></div>
           <StrategicGoalSelector
             goals={projectSetupData.strategicGoals}
             value={choices.strategicGoalId}
@@ -100,20 +112,20 @@ export function SetupPanel({ onCreate }: SetupPanelProps) {
           onScriptTemplateChange={(value) => updateChoice("scriptTemplateId", value)}
         />
         <div className="setup-actions">
-          <div><strong>Ready when you are</strong><span>Creates an engine-backed career and project state.</span></div>
-          <button className="primary-button" type="submit">Create project</button>
+          <div><strong>{copy.panel.readyHeading}</strong><span>{copy.panel.readyDetail}</span></div>
+          <button className="primary-button" type="submit">{copy.panel.createProject}</button>
         </div>
       </form>
     </section>
   );
 }
 
-function validateChoices(choices: ProjectSetupChoices): SetupErrors {
+function validateChoices(choices: ProjectSetupChoices, validation: SetupValidationCopy): SetupErrors {
   return {
-    ...(choices.studioName.trim() ? {} : { studioName: "Enter a studio name." }),
-    ...(choices.strategicGoalId ? {} : { strategicGoalId: "Select a strategic goal." }),
-    ...(choices.projectTitle.trim() ? {} : { projectTitle: "Enter a project title." }),
-    ...(choices.genreId ? {} : { genreId: "Select a genre." }),
-    ...(choices.scriptTemplateId ? {} : { scriptTemplateId: "Select a script template." })
+    ...(choices.studioName.trim() ? {} : { studioName: validation.studioName }),
+    ...(choices.strategicGoalId ? {} : { strategicGoalId: validation.strategicGoal }),
+    ...(choices.projectTitle.trim() ? {} : { projectTitle: validation.projectTitle }),
+    ...(choices.genreId ? {} : { genreId: validation.genre }),
+    ...(choices.scriptTemplateId ? {} : { scriptTemplateId: validation.scriptTemplate })
   };
 }

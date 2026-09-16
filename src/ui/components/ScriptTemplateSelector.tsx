@@ -1,4 +1,6 @@
+import { STUDIO_SETUP_COPY } from "../../core/studioSetupCopy";
 import type { ScriptTemplate } from "../../domain/script.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 interface ScriptTemplateSelectorProps {
   readonly templates: readonly ScriptTemplate[];
@@ -9,12 +11,14 @@ interface ScriptTemplateSelectorProps {
 }
 
 export function ScriptTemplateSelector({ templates, selectedGenreId, value, error, onChange }: ScriptTemplateSelectorProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_SETUP_COPY[language].scriptTemplate;
   const matchingTemplates = templates.filter((template) => template.genreId === selectedGenreId);
   const visibleTemplates = matchingTemplates.length > 0 ? matchingTemplates : templates;
 
   return (
     <fieldset className="setup-fieldset">
-      <legend>Script template</legend>
+      <legend>{copy.legend}</legend>
       <div className="choice-grid choice-grid--templates">
         {visibleTemplates.map((template) => (
           <label className={value === template.id ? "choice-card choice-card--selected" : "choice-card"} key={template.id}>
@@ -30,9 +34,7 @@ export function ScriptTemplateSelector({ templates, selectedGenreId, value, erro
           </label>
         ))}
       </div>
-      {selectedGenreId && matchingTemplates.length === 0 && (
-        <p className="field-hint">No dedicated template exists for this genre yet. Choose any available structure.</p>
-      )}
+      {selectedGenreId && matchingTemplates.length === 0 && <p className="field-hint">{copy.noDedicatedTemplate}</p>}
       {error && <span className="field-error">{error}</span>}
     </fieldset>
   );
