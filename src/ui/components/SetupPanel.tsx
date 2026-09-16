@@ -21,6 +21,14 @@ interface SetupErrors {
   readonly scriptTemplateId?: string | undefined;
 }
 
+interface SetupValidationCopy {
+  readonly studioName: string;
+  readonly strategicGoal: string;
+  readonly projectTitle: string;
+  readonly genre: string;
+  readonly scriptTemplate: string;
+}
+
 interface SetupPanelProps {
   readonly onCreate: (run: ProjectSetupRun) => void;
 }
@@ -112,10 +120,7 @@ export function SetupPanel({ onCreate }: SetupPanelProps) {
   );
 }
 
-function validateChoices(
-  choices: ProjectSetupChoices,
-  validation: typeof STUDIO_SETUP_COPY.en.validation,
-): SetupErrors {
+function validateChoices(choices: ProjectSetupChoices, validation: SetupValidationCopy): SetupErrors {
   return {
     ...(choices.studioName.trim() ? {} : { studioName: validation.studioName }),
     ...(choices.strategicGoalId ? {} : { strategicGoalId: validation.strategicGoal }),
