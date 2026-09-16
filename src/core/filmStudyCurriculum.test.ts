@@ -2,7 +2,13 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import { FILM_STUDY_HISTORY_FAMILIES } from "./filmStudyHistoryFamily.js";
-import { createFilmStudyCurriculum } from "./filmStudyCurriculum.js";
+import {
+  FILM_STUDY_CURRICULUM,
+  FILM_STUDY_CURRICULUM_PREREQUISITES,
+  FILM_STUDY_FAMILY_CURRICULA,
+  FILM_STUDY_LEARNING_OUTCOMES,
+  createFilmStudyCurriculum,
+} from "./filmStudyCurriculum.js";
 
 const SILENT = FILM_STUDY_HISTORY_FAMILIES.silent_foundations.id;
 const STUDIO = FILM_STUDY_HISTORY_FAMILIES.silent_studio_systems.id;
@@ -302,5 +308,24 @@ test("required outcome identities are normalized deterministically inside prereq
   assert.deepEqual(
     curriculum.prerequisites[0]?.requiredOutcomeIds,
     [TRANSITION_OUTCOME.id, other.id].sort(),
+  );
+});
+
+const RELIGIOUS = FILM_STUDY_HISTORY_FAMILIES.european_religious_moral_modernism.id;
+
+test("canonical curriculum starts empty until source-backed audit admits content", () => {
+  assert.deepEqual(FILM_STUDY_LEARNING_OUTCOMES, []);
+  assert.deepEqual(FILM_STUDY_FAMILY_CURRICULA, []);
+  assert.deepEqual(FILM_STUDY_CURRICULUM_PREREQUISITES, []);
+  assert.deepEqual(FILM_STUDY_CURRICULUM, {
+    outcomes: [],
+    familyCurricula: [],
+    prerequisites: [],
+  });
+  assert.equal(
+    FILM_STUDY_CURRICULUM_PREREQUISITES.some(
+      ({ prerequisiteFamilyId }) => prerequisiteFamilyId === RELIGIOUS,
+    ),
+    false,
   );
 });
