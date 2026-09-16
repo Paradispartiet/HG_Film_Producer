@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { STUDIO_CAREER_CARRYOVER_COPY } from "./studioCareerCarryoverCopy.js";
+import { getStudioIdentityTagLabel, STUDIO_CAREER_CARRYOVER_COPY } from "./studioCareerCarryoverCopy.js";
 
 const languages = ["en", "nb", "fr", "pt"] as const;
 
@@ -27,4 +27,11 @@ test("canonical studio identity tags receive presentation-only localized labels"
   assert.equal(STUDIO_CAREER_CARRYOVER_COPY.fr.identityTags.technical_craft, "savoir-faire technique");
   assert.equal(STUDIO_CAREER_CARRYOVER_COPY.pt.identityTags.talent_lab, "laboratório de talentos");
   assert.equal(STUDIO_CAREER_CARRYOVER_COPY.en.identityTags.international, "international");
+});
+
+test("career result identity tags resolve localized presentation labels fail-closed", () => {
+  assert.equal(getStudioIdentityTagLabel("nb", "low_budget"), "lavbudsjett");
+  assert.equal(getStudioIdentityTagLabel("fr", "technical_craft"), "savoir-faire technique");
+  assert.equal(getStudioIdentityTagLabel("pt", "talent_lab"), "laboratório de talentos");
+  assert.throws(() => getStudioIdentityTagLabel("en", "unknown_tag"), /Unknown studio identity tag: unknown_tag/);
 });

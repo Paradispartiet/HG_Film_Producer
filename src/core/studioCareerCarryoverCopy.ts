@@ -117,6 +117,14 @@ export const STUDIO_CAREER_CARRYOVER_COPY = {
   },
 } as const satisfies Record<FilmWorkLanguage, StudioCareerCarryoverCopy>;
 
+export function getStudioIdentityTagLabel(language: FilmWorkLanguage, tag: string): string {
+  const identityTags = STUDIO_CAREER_CARRYOVER_COPY[language].identityTags;
+  if (!(tag in identityTags)) {
+    throw new Error(`Unknown studio identity tag: ${tag}`);
+  }
+  return identityTags[tag as StudioIdentityTag];
+}
+
 function formatSourceFilmLabel(language: FilmWorkLanguage, sourceFilmLabel: string): string {
   const match = sourceFilmLabel.trim().match(/^film\s+(\d+)$/i);
   if (!match) return sourceFilmLabel;

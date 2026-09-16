@@ -1,4 +1,5 @@
 import type { StrategicGoal } from "../../domain/career";
+import { getStudioIdentityTagLabel } from "../../core/studioCareerCarryoverCopy.js";
 import { STUDIO_CAREER_REVIEW_COPY } from "../../core/studioCareerReviewCopy.js";
 import type { CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun";
 import type { ProjectRunContext } from "../demo/createProjectRunContext";
@@ -29,6 +30,7 @@ export function CareerApplicationResultPanel({
   const copy = STUDIO_CAREER_REVIEW_COPY[language].result;
   const unlockedMilestones = result.milestoneResults.filter((milestone) => milestone.rewardsApplied);
   const projectNumber = projectLabel === "first film" ? 1 : projectLabel === "film 2" ? 2 : 3;
+  const strongestIdentityTags = result.studioIdentityEvaluation.strongestTags;
 
   return (
     <div className="career-application-results">
@@ -47,7 +49,11 @@ export function CareerApplicationResultPanel({
         <ul className="career-check-list">
           <li><span>✓</span> {copy.completedFilmRecorded(result.completedFilmRecord.title)}</li>
           <li><span>✓</span> {copy.careerYearEvaluated(result.careerYearEvaluation.overall)}</li>
-          <li><span>✓</span> {copy.identity}: {formatTags(result.studioIdentityEvaluation.strongestTags, copy.formingIdentity)}</li>
+          <li>
+            <span>✓</span> {copy.identity}: {strongestIdentityTags.length > 0
+              ? strongestIdentityTags.map((tag) => getStudioIdentityTagLabel(language, tag)).join(", ")
+              : copy.formingIdentity}
+          </li>
           <li><span>✓</span> {copy.milestonesUnlocked}: {unlockedMilestones.length > 0 ? unlockedMilestones.map((item) => milestoneTitle(item.note)).join(", ") : copy.noneThisReview}</li>
         </ul>
         <div className="next-project-callout">
@@ -58,10 +64,6 @@ export function CareerApplicationResultPanel({
       </section>
     </div>
   );
-}
-
-function formatTags(tags: readonly string[], fallback: string): string {
-  return tags.length > 0 ? tags.map((tag) => tag.replaceAll("_", " ")).join(", ") : fallback;
 }
 
 function milestoneTitle(note: string): string {
