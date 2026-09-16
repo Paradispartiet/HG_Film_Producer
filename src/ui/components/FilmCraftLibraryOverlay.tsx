@@ -1,19 +1,17 @@
 import { useMemo, useState, type ChangeEvent } from "react";
 
+import { FILM_CRAFT_DOMAIN_FILTER_IDS, FILM_GLOBAL_OVERLAY_COPY } from "../../core/filmGlobalOverlayCopy";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { filmCraftGlossary, getFilmCraftTechniques, type FilmCraftDomain } from "../data/filmCraftGlossary";
 import { getClassicFilmScenarios } from "../data/filmScenarios";
 import { resolveScenarioProductionBrief } from "../data/scenarioProductionBriefs";
 
-const domainLabels: Record<FilmCraftDomain, string> = {
-  screenplay: "Screenplay",
-  cinematography: "Image",
-  editing: "Editing",
-  sound: "Sound",
-};
-
 const filmScenarios = getClassicFilmScenarios();
+const craftDomainIds = FILM_CRAFT_DOMAIN_FILTER_IDS.filter((domainId): domainId is FilmCraftDomain => domainId !== "all");
 
 export function FilmCraftLibraryOverlay() {
+  const [language] = useFilmWorkLanguage();
+  const copy = FILM_GLOBAL_OVERLAY_COPY[language].craft;
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [domain, setDomain] = useState<FilmCraftDomain | "all">("all");
@@ -43,65 +41,67 @@ export function FilmCraftLibraryOverlay() {
   return (
     <>
       <button className="craft-library-trigger" onClick={() => setOpen(true)} type="button">
-        <span>Film science</span>
-        <strong>Craft library</strong>
+        <span>{copy.triggerEyebrow}</span>
+        <strong>{copy.triggerTitle}</strong>
       </button>
 
       {open && (
         <div className="craft-library-backdrop" role="presentation" onMouseDown={() => setOpen(false)}>
-          <section aria-label="Film craft library" aria-modal="true" className="craft-library-panel" onMouseDown={(event) => event.stopPropagation()} role="dialog">
+          <section aria-label={copy.dialogAria} aria-modal="true" className="craft-library-panel" onMouseDown={(event) => event.stopPropagation()} role="dialog">
             <header className="craft-library-header">
               <div>
-                <span>Filmverket knowledge system</span>
-                <h2>Craft library</h2>
-                <p>Formal techniques described as observable construction—not vague style labels.</p>
+                <span>{copy.headerEyebrow}</span>
+                <h2>{copy.title}</h2>
+                <p>{copy.intro}</p>
               </div>
-              <button aria-label="Close craft library" onClick={() => setOpen(false)} type="button">×</button>
+              <button aria-label={copy.closeAria} onClick={() => setOpen(false)} type="button">×</button>
             </header>
 
             <div className="craft-library-controls">
               <div className="craft-library-control-grid">
                 <label>
-                  <span>Film lens</span>
+                  <span>{copy.filmLens}</span>
                   <select onChange={(event: ChangeEvent<HTMLSelectElement>) => setSelectedFilmId(event.target.value)} value={selectedFilmId}>
-                    <option value="all">All registered techniques</option>
+                    <option value="all">{copy.allRegisteredTechniques}</option>
                     {filmScenarios.map((scenario) => <option key={scenario.id} value={scenario.id}>{scenario.film.year} · {scenario.film.title}</option>)}
                   </select>
                 </label>
                 <label>
-                  <span>Search technique or function</span>
-                  <input onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)} placeholder="Example: silence, blocking, rhythm…" type="search" value={query} />
+                  <span>{copy.searchLabel}</span>
+                  <input onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)} placeholder={copy.searchPlaceholder} type="search" value={query} />
                 </label>
               </div>
-              <div aria-label="Filter by craft domain" className="craft-library-domains">
-                <button className={domain === "all" ? "craft-domain-button craft-domain-button--active" : "craft-domain-button"} onClick={() => setDomain("all")} type="button">All</button>
-                {(Object.keys(domainLabels) as FilmCraftDomain[]).map((domainId) => (
+              <div aria-label={copy.filterAria} className="craft-library-domains">
+                <button className={domain === "all" ? "craft-domain-button craft-domain-button--active" : "craft-domain-button"} onClick={() => setDomain("all")} type="button">{copy.domainLabels.all}</button>
+                {craftDomainIds.map((domainId) => (
                   <button className={domain === domainId ? "craft-domain-button craft-domain-button--active" : "craft-domain-button"} key={domainId} onClick={() => setDomain(domainId)} type="button">
-                    {domainLabels[domainId]}
+                    {copy.domainLabels[domainId]}
                   </button>
                 ))}
               </div>
             </div>
 
             <div className="craft-library-summary">
-              <strong>{techniques.length}</strong> {selectedFilm ? `techniques matched to ${selectedFilm.film.title}` : `of ${filmCraftGlossary.length} techniques`}
+              {selectedFilm
+                ? copy.matchedToFilm(techniques.length, selectedFilm.film.title)
+                : copy.ofTechniques(techniques.length, filmCraftGlossary.length)}
             </div>
 
             <div className="craft-library-list">
               {techniques.map((technique) => (
                 <article className="craft-technique-card" key={technique.id}>
                   <div className="craft-technique-heading">
-                    <span>{domainLabels[technique.domain]}</span>
+                    <span>{copy.domainLabels[technique.domain]}</span>
                     <h3>{technique.name}</h3>
                   </div>
                   <p className="craft-technique-definition">{technique.definition}</p>
                   <dl>
-                    <div><dt>Analysis question</dt><dd>{technique.analyticalQuestion}</dd></div>
-                    <div><dt>Production use</dt><dd>{technique.productionUse}</dd></div>
+                    <div><dt>{copy.analysisQuestion}</dt><dd>{technique.analyticalQuestion}</dd></div>
+                    <div><dt>{copy.productionUse}</dt><dd>{technique.productionUse}</dd></div>
                   </dl>
                 </article>
               ))}
-              {techniques.length === 0 && <p className="craft-library-empty">No techniques match this film and filter yet.</p>}
+              {techniques.length === 0 && <p className="craft-library-empty">{copy.empty}</p>}
             </div>
           </section>
         </div>
