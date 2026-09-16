@@ -172,11 +172,91 @@ export function createFilmStudyCurriculum(
   });
 }
 
-export const FILM_STUDY_LEARNING_OUTCOMES =
-  Object.freeze([]) as readonly FilmStudyLearningOutcomeDeclaration[];
+export const FILM_STUDY_LEARNING_OUTCOMES = Object.freeze([
+  Object.freeze({
+    id: "distinguish_silent_production_systems",
+    statement: "Distinguish documented silent-cinema production systems by how design, location, effects, staging and editing work together.",
+  }),
+  Object.freeze({
+    id: "analyze_early_studio_coordination",
+    statement: "Analyze how early studio and departmental organization coordinates performance, architecture, image, effects and sound.",
+  }),
+  Object.freeze({
+    id: "analyze_sound_transition_strategies",
+    statement: "Analyze how transition-era production systems reorganize image, performance, editing, silence, recorded sound and music.",
+  }),
+  Object.freeze({
+    id: "analyze_integrated_1930s_production_systems",
+    statement: "Analyze how 1930s production systems integrate craft departments and industrial labor into a coherent film form.",
+  }),
+  Object.freeze({
+    id: "analyze_noir_realism_production_conditions",
+    statement: "Analyze how 1940s production conditions shape studio or location realism, narration, lighting, sound and performance.",
+  }),
+  Object.freeze({
+    id: "analyze_asian_postwar_production_form",
+    statement: "Analyze how Asian postwar production organization and material conditions shape performance, space, duration, action and realism.",
+  }),
+  Object.freeze({
+    id: "analyze_postwar_european_modernist_systems",
+    statement: "Analyze how postwar European modernist production systems organize duration, performance, politics, image, editing, sound and space.",
+  }),
+  Object.freeze({
+    id: "analyze_czechoslovak_new_wave_conditions",
+    statement: "Analyze how Czechoslovak production and institutional conditions shape performance, space, design, editing, image and sound.",
+  }),
+  Object.freeze({
+    id: "analyze_political_feminist_production_form",
+    statement: "Analyze how political or feminist history becomes concrete production choices in time, bodies, location, labor, design, image, sound and editing.",
+  }),
+  Object.freeze({
+    id: "analyze_moral_belief_institutions_production_form",
+    statement: "Analyze how moral history, belief and institutions become concrete production choices in performance, space, objects, image, editing, sound and music.",
+  }),
+]) as readonly FilmStudyLearningOutcomeDeclaration[];
 
-export const FILM_STUDY_FAMILY_CURRICULA =
-  Object.freeze([]) as readonly FilmStudyFamilyCurriculumDeclaration[];
+export const FILM_STUDY_FAMILY_CURRICULA = Object.freeze([
+  Object.freeze({
+    familyId: "silent_foundations",
+    establishes: Object.freeze(["distinguish_silent_production_systems"]),
+  }),
+  Object.freeze({
+    familyId: "silent_studio_systems",
+    establishes: Object.freeze(["analyze_early_studio_coordination"]),
+  }),
+  Object.freeze({
+    familyId: "late_silent_early_sound",
+    establishes: Object.freeze(["analyze_sound_transition_strategies"]),
+  }),
+  Object.freeze({
+    familyId: "production_systems_1930s",
+    establishes: Object.freeze(["analyze_integrated_1930s_production_systems"]),
+  }),
+  Object.freeze({
+    familyId: "noir_realism_1940s",
+    establishes: Object.freeze(["analyze_noir_realism_production_conditions"]),
+  }),
+  Object.freeze({
+    familyId: "asian_postwar_1950s",
+    establishes: Object.freeze(["analyze_asian_postwar_production_form"]),
+  }),
+  Object.freeze({
+    familyId: "postwar_european_modernism",
+    establishes: Object.freeze(["analyze_postwar_european_modernist_systems"]),
+  }),
+  Object.freeze({
+    familyId: "czechoslovak_new_wave",
+    establishes: Object.freeze(["analyze_czechoslovak_new_wave_conditions"]),
+  }),
+  Object.freeze({
+    familyId: "european_political_feminist_modernism",
+    establishes: Object.freeze(["analyze_political_feminist_production_form"]),
+  }),
+  Object.freeze({
+    familyId: "european_religious_moral_modernism",
+    establishes: Object.freeze(["analyze_moral_belief_institutions_production_form"]),
+  }),
+]) as readonly FilmStudyFamilyCurriculumDeclaration[];
 
 export const FILM_STUDY_CURRICULUM_PREREQUISITES =
   Object.freeze([]) as readonly FilmStudyCurriculumPrerequisiteDeclaration[];
