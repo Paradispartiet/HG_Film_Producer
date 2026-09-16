@@ -1,4 +1,7 @@
+import { getFilmWorkIntlLocale } from "../../core/filmWorkLanguage.js";
+import { STUDIO_CAREER_RELEASE_COPY } from "../../core/studioCareerReleaseCopy.js";
 import type { Festival, FestivalSubmissionResult } from "../../domain/release.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 
 interface FestivalSubmissionPanelProps {
   readonly festivals: readonly Festival[];
@@ -10,11 +13,13 @@ interface FestivalSubmissionPanelProps {
 }
 
 export function FestivalSubmissionPanel({ festivals, selectedId, result, disabled = false, inputName = "festival", onSelect }: FestivalSubmissionPanelProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_RELEASE_COPY[language].festival;
   return (
     <section className="release-choice-section" aria-labelledby="festival-heading">
       <div className="release-section-heading">
-        <div><span className="eyebrow">Premiere circuit</span><h3 id="festival-heading">Choose one festival</h3></div>
-        <p>Every release includes one deterministic submission. Prestige tiers demand stronger films.</p>
+        <div><span className="eyebrow">{copy.eyebrow}</span><h3 id="festival-heading">{copy.heading}</h3></div>
+        <p>{copy.description}</p>
       </div>
       <div className="release-option-grid release-option-grid--festivals">
         {festivals.map((festival) => {
@@ -22,15 +27,15 @@ export function FestivalSubmissionPanel({ festivals, selectedId, result, disable
           return (
             <label className={selectedId === festival.id ? "release-option-card release-option-card--selected release-option-card--festival" : "release-option-card release-option-card--festival"} key={festival.id}>
               <input checked={selectedId === festival.id} disabled={disabled} name={inputName} onChange={() => onSelect(festival.id)} type="radio" />
-              <span className="release-card-kicker">{festival.tier} · {festival.city}</span>
+              <span className="release-card-kicker">{copy.tiers[festival.tier]} · {festival.city}</span>
               <strong>{festival.name}</strong>
               <div className="release-tags">{festival.profileTags.map((tag) => <span key={tag}>{formatLabel(tag)}</span>)}</div>
               <dl className="release-card-metrics release-card-metrics--festival">
-                <Metric label="Prestige" value={`${festival.prestige}/100`} />
-                <Metric label="Audience" value={`${festival.audienceReach}/100`} />
-                <Metric label="Fee" value={formatMoney(festival.submissionCost)} />
+                <Metric label={copy.prestige} value={`${festival.prestige}/100`} />
+                <Metric label={copy.audience} value={`${festival.audienceReach}/100`} />
+                <Metric label={copy.fee} value={formatMoney(language, festival.submissionCost)} />
               </dl>
-              {isResolved && <span className={result.accepted ? "festival-result festival-result--accepted" : "festival-result"}>{result.accepted ? "Selected" : "Not selected"} · {result.selectionScore}/100</span>}
+              {isResolved && <span className={result.accepted ? "festival-result festival-result--accepted" : "festival-result"}>{result.accepted ? copy.selected : copy.notSelected} · {result.selectionScore}/100</span>}
             </label>
           );
         })}
@@ -44,4 +49,4 @@ function Metric({ label, value }: { readonly label: string; readonly value: stri
 }
 
 function formatLabel(value: string): string { return value.replaceAll("_", " "); }
-function formatMoney(value: number): string { return value.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }); }
+function formatMoney(language: Parameters<typeof getFilmWorkIntlLocale>[0], value: number): string { return value.toLocaleString(getFilmWorkIntlLocale(language), { style: "currency", currency: "USD", maximumFractionDigits: 0 }); }
