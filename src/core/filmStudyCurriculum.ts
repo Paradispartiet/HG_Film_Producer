@@ -3,105 +3,116 @@ import {
   type FilmStudyFamilyId,
 } from "./filmStudyHistoryFamily.js";
 
-export type LearningOutcomeId = string;
+export type FilmStudyLearningOutcomeDeclaration = Readonly<{
+  id: string;
+  statement: string;
+}>;
 
-export interface LearningOutcomeDefinition {
-  readonly id: LearningOutcomeId;
-  readonly statement: string;
+export type FilmStudyFamilyCurriculumDeclaration = Readonly<{
+  familyId: FilmStudyFamilyId;
+  establishes: readonly string[];
+}>;
+
+export type FilmStudyCurriculumPrerequisiteDeclaration = Readonly<{
+  prerequisiteFamilyId: FilmStudyFamilyId;
+  dependentFamilyId: FilmStudyFamilyId;
+  requiredOutcomeIds: readonly string[];
+  rationale: string;
+}>;
+
+export type FilmStudyLearningOutcome = Readonly<{
+  id: string;
+  statement: string;
+}>;
+
+export type FilmStudyFamilyCurriculum = Readonly<{
+  familyId: FilmStudyFamilyId;
+  establishes: readonly string[];
+}>;
+
+export type FilmStudyCurriculumPrerequisite = Readonly<{
+  prerequisiteFamilyId: FilmStudyFamilyId;
+  dependentFamilyId: FilmStudyFamilyId;
+  requiredOutcomeIds: readonly string[];
+  rationale: string;
+}>;
+
+export type FilmStudyCurriculumInput = Readonly<{
+  outcomes: readonly FilmStudyLearningOutcomeDeclaration[];
+  familyCurricula: readonly FilmStudyFamilyCurriculumDeclaration[];
+  prerequisites: readonly FilmStudyCurriculumPrerequisiteDeclaration[];
+}>;
+
+export type FilmStudyCurriculum = Readonly<{
+  outcomes: readonly FilmStudyLearningOutcome[];
+  familyCurricula: readonly FilmStudyFamilyCurriculum[];
+  prerequisites: readonly FilmStudyCurriculumPrerequisite[];
+}>;
+
+function freezeStrings(values: readonly string[]): readonly string[] {
+  return Object.freeze([...new Set(values)].sort());
 }
 
-export interface FilmStudyFamilyCurriculum {
-  readonly familyId: FilmStudyFamilyId;
-  readonly establishes: readonly LearningOutcomeId[];
-}
-
-export interface FilmStudyPrerequisite {
-  readonly earlierFamilyId: FilmStudyFamilyId;
-  readonly laterFamilyId: FilmStudyFamilyId;
-  readonly requiredOutcomeIds: readonly LearningOutcomeId[];
-}
-
-export interface FilmStudyCurriculum {
-  readonly outcomes: readonly LearningOutcomeDefinition[];
-  readonly familyCurricula: readonly FilmStudyFamilyCurriculum[];
-  readonly prerequisites: readonly FilmStudyPrerequisite[];
-}
-
-export interface LearningOutcomeDefinitionInput {
-  readonly id: LearningOutcomeId;
-  readonly statement: string;
-}
-
-export interface FilmStudyFamilyCurriculumInput {
-  readonly familyId: FilmStudyFamilyId;
-  readonly establishes: readonly LearningOutcomeId[];
-}
-
-export interface FilmStudyPrerequisiteInput {
-  readonly earlierFamilyId: FilmStudyFamilyId;
-  readonly laterFamilyId: FilmStudyFamilyId;
-  readonly requiredOutcomeIds: readonly LearningOutcomeId[];
-}
-
-export interface FilmStudyCurriculumInput {
-  readonly outcomes: readonly LearningOutcomeDefinitionInput[];
-  readonly familyCurricula: readonly FilmStudyFamilyCurriculumInput[];
-  readonly prerequisites: readonly FilmStudyPrerequisiteInput[];
-}
-
-function fail(message: string): never {
-  throw new Error(message);
+function assertNonEmpty(value: string, field: string): void {
+  if (value.trim().length === 0) {
+    throw new Error(`${field} must be non-empty`);
+  }
 }
 
 export function createFilmStudyCurriculum(
   input: FilmStudyCurriculumInput,
 ): FilmStudyCurriculum {
-  const outcomeById = new Map<LearningOutcomeId, LearningOutcomeDefinition>();
-  const outcomes = input.outcomes.map((item) => {
-    if (outcomeById.has(item.id)) {
-      fail(`Duplicate learning outcome: ${item.id}.`);
-    }
-
-    const outcome = Object.freeze({
-      id: item.id,
-      statement: item.statement,
-    });
-    outcomeById.set(outcome.id, outcome);
-    return outcome;
-  });
-
-  const seenFamilyIds = new Set<FilmStudyFamilyId>();
-  const familyCurricula = input.familyCurricula.map((item) => {
-    if (!isFilmStudyFamilyId(item.familyId)) {
-      fail(`Unknown Film Study family: ${String(item.familyId)}.`);
-    }
-    if (seenFamilyIds.has(item.familyId)) {
-      fail(`Duplicate family curriculum: ${item.familyId}.`);
-    }
-    seenFamilyIds.add(item.familyId);
-
-    const establishes = [...new Set(item.establishes)].sort();
-    for (const outcomeId of establishes) {
-      if (!outcomeById.has(outcomeId)) {
-        fail(`Unknown learning outcome: ${outcomeId}.`);
+  const outcomeIds = new Set<string>();
+  const normalizedOutcomes = Object.freeze(
+    input.outcomes.map((outcome) => {
+      assertNonEmpty(outcome.id, "Learning outcome id");
+      assertNonEmpty(outcome.statement, `Learning outcome ${outcome.id} statement`);
+      if (outcomeIds.has(outcome.id)) {
+        throw new Error(`Duplicate learning outcome: ${outcome.id}`);
       }
-    }
+      outcomeIds.add(outcome.id);
+      return Object.freeze({
+        id: outcome.id,
+        statement: outcome.statement,
+      });
+    }),
+  );
 
-    return Object.freeze({
-      familyId: item.familyId,
-      establishes: Object.freeze(establishes),
-    });
-  });
+  const familyIds = new Set<FilmStudyFamilyId>();
+  const normalizedFamilyCurricula = Object.freeze(
+    input.familyCurricula.map((family) => {
+      if (!isFilmStudyFamilyId(String(family.familyId))) {
+        throw new Error(`Unknown Film Study family: ${String(family.familyId)}`);
+      }
+      if (familyIds.has(family.familyId)) {
+        throw new Error(`Duplicate family curriculum: ${family.familyId}`);
+      }
+      familyIds.add(family.familyId);
 
-  const prerequisites = input.prerequisites.map((item) => Object.freeze({
-    earlierFamilyId: item.earlierFamilyId,
-    laterFamilyId: item.laterFamilyId,
-    requiredOutcomeIds: Object.freeze([...item.requiredOutcomeIds]),
-  }));
+      const establishes = freezeStrings(family.establishes);
+      for (const outcomeId of establishes) {
+        if (!outcomeIds.has(outcomeId)) {
+          throw new Error(`Unknown learning outcome: ${outcomeId}`);
+        }
+      }
+
+      return Object.freeze({
+        familyId: family.familyId,
+        establishes,
+      });
+    }),
+  );
+
+  if (input.prerequisites.length !== 0) {
+    throw new Error("Curriculum prerequisite validation not initialized");
+  }
+
+  const normalizedPrerequisites: readonly FilmStudyCurriculumPrerequisite[] =
+    Object.freeze([]);
 
   return Object.freeze({
-    outcomes: Object.freeze(outcomes),
-    familyCurricula: Object.freeze(familyCurricula),
-    prerequisites: Object.freeze(prerequisites),
+    outcomes: normalizedOutcomes,
+    familyCurricula: normalizedFamilyCurricula,
+    prerequisites: normalizedPrerequisites,
   });
 }
