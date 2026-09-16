@@ -25,3 +25,18 @@ test("pre-production helpers preserve project and selection values", () => {
   assert.equal(STUDIO_CAREER_PRE_PRODUCTION_COPY.pt.returning.workedTogether(1), "Trabalhou em conjunto num filme");
   assert.equal(STUDIO_CAREER_PRE_PRODUCTION_COPY.nb.panel.selectionSummary(2, 3), "2/3 nøkkelcrew · 3 skuespillere valgt");
 });
+
+test("production team result chrome is localized through the pre-production contract", () => {
+  assert.equal(STUDIO_CAREER_PRE_PRODUCTION_COPY.nb.result.report, "Produksjonsteamrapport");
+  assert.equal(STUDIO_CAREER_PRE_PRODUCTION_COPY.fr.result.selectedLocation, "Lieu sélectionné");
+  assert.equal(STUDIO_CAREER_PRE_PRODUCTION_COPY.pt.result.castingChemistry, "Química do elenco");
+  assert.equal(STUDIO_CAREER_PRE_PRODUCTION_COPY.en.result.budgetPressure, "Budget pressure");
+});
+
+test("production team result helpers preserve project, counts, and scores", () => {
+  assert.equal(STUDIO_CAREER_PRE_PRODUCTION_COPY.en.result.lockedEyebrow("Film 2"), "Pre-production locked · Film 2");
+  assert.equal(STUDIO_CAREER_PRE_PRODUCTION_COPY.nb.result.locationNotes(2), "Locationnotater · 2 vedlagt");
+  assert.equal(STUDIO_CAREER_PRE_PRODUCTION_COPY.fr.result.keyCrew(3), "Équipe clé · 3");
+  assert.equal(STUDIO_CAREER_PRE_PRODUCTION_COPY.pt.result.overall(84), "84 global");
+  assert.equal(STUDIO_CAREER_PRE_PRODUCTION_COPY.nb.result.scoreAria("Crewscore", 72), "Crewscore 72 av 100");
+});
