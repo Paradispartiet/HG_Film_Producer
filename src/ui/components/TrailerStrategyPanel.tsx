@@ -3,7 +3,7 @@ import type { TrailerStrategy } from "../../domain/post.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 
 export function TrailerStrategyPanel({ options, selectedId, onSelect }: { readonly options: readonly TrailerStrategy[]; readonly selectedId: string; readonly onSelect: (id: string) => void }) {
-  const language = useFilmWorkLanguage();
+  const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[language].trailer;
   return (
     <section className="post-decision-section">

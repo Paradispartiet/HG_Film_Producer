@@ -3,7 +3,8 @@ import type { TestScreeningResult } from "../../domain/post.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 
 export function TestScreeningPanel({ result }: { readonly result: TestScreeningResult }) {
-  const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[useFilmWorkLanguage()].screening;
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[language].screening;
   const metrics = [
     [copy.metrics.clarity, result.clarityScore], [copy.metrics.pacing, result.pacingScore], [copy.metrics.emotion, result.emotionScore],
     [copy.metrics.audienceHook, result.audienceHookScore], [copy.metrics.confusionRisk, result.confusionRisk]

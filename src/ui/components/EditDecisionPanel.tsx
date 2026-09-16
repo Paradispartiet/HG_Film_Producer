@@ -10,7 +10,8 @@ interface EditDecisionPanelProps {
 }
 
 export function EditDecisionPanel({ options, selectedId, onSelect }: EditDecisionPanelProps) {
-  const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[useFilmWorkLanguage()].edit;
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[language].edit;
   return <DecisionSection eyebrow={copy.eyebrow} title={copy.heading} description={copy.description} options={options.map((option) => ({ option, effects: [`${copy.pacing} ${signed(option.pacingEffect)}`, `${copy.structure} ${signed(option.structureEffect)}`] }))} selectedId={selectedId} onSelect={onSelect} />;
 }
 

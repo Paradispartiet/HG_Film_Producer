@@ -44,7 +44,7 @@ export function PostProductionPanel({
   id
 }: PostProductionPanelProps) {
   const [message, setMessage] = useState("");
-  const language = useFilmWorkLanguage();
+  const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[language];
   const options = getPostProductionOptions();
   const isLaterFilm = projectLabel !== "first film";

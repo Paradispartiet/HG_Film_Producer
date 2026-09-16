@@ -10,7 +10,7 @@ export interface DecisionCardProps {
 }
 
 export function DecisionCard({ option, effects, selected = false, onSelect }: DecisionCardProps) {
-  const language = useFilmWorkLanguage();
+  const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[language].decisionCard;
   return (
     <label className={selected ? "post-option-card post-option-card--selected" : "post-option-card"}>

@@ -10,7 +10,7 @@ interface PostProductionResultPanelProps {
 }
 
 export function PostProductionResultPanel({ result, projectLabel = "first film" }: PostProductionResultPanelProps) {
-  const language = useFilmWorkLanguage();
+  const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[language].result;
   const evaluation = result.postProductionEvaluation;
   const metrics = [
