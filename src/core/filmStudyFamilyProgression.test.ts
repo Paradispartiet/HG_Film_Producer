@@ -1,10 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
+import type { FilmStudyCurriculumPrerequisite } from "./filmStudyCurriculum.js";
+import { FILM_STUDY_CURRICULUM } from "./filmStudyCurriculum.js";
 import { FILM_STUDY_HISTORY_FAMILIES } from "./filmStudyHistoryFamily.js";
 import {
   FILM_STUDY_FAMILY_PROGRESSION_EDGES,
   createFilmStudyFamilyProgression,
+  projectFilmStudyFamilyProgressionEdges,
   successorsOf,
 } from "./filmStudyFamilyProgression.js";
 
@@ -72,6 +75,54 @@ test("returned successor arrays cannot mutate stored relation state", () => {
     (result as string[]).push(SOUND);
   }, TypeError);
   assert.deepEqual(progression.successorsOf(SILENT), [STUDIO]);
+});
+
+test("progression edges are a mechanical projection of explicit prerequisites", () => {
+  const prerequisites: readonly FilmStudyCurriculumPrerequisite[] = [{
+    prerequisiteFamilyId: SILENT,
+    dependentFamilyId: STUDIO,
+    requiredOutcomeIds: ["fixture_outcome"],
+    rationale: "fixture only",
+  }];
+
+  assert.deepEqual(projectFilmStudyFamilyProgressionEdges(prerequisites), [
+    { from: SILENT, to: STUDIO },
+  ]);
+});
+
+test("projection deduplicates ordered family pairs deterministically", () => {
+  const prerequisites: readonly FilmStudyCurriculumPrerequisite[] = [
+    {
+      prerequisiteFamilyId: SILENT,
+      dependentFamilyId: SOUND,
+      requiredOutcomeIds: ["a"],
+      rationale: "fixture one",
+    },
+    {
+      prerequisiteFamilyId: SILENT,
+      dependentFamilyId: STUDIO,
+      requiredOutcomeIds: ["b"],
+      rationale: "fixture two",
+    },
+    {
+      prerequisiteFamilyId: SILENT,
+      dependentFamilyId: STUDIO,
+      requiredOutcomeIds: ["c"],
+      rationale: "fixture duplicate pair",
+    },
+  ];
+
+  assert.deepEqual(projectFilmStudyFamilyProgressionEdges(prerequisites), [
+    { from: SILENT, to: SOUND },
+    { from: SILENT, to: STUDIO },
+  ].sort((a, b) => `${a.from}:${a.to}`.localeCompare(`${b.from}:${b.to}`)));
+});
+
+test("canonical progression edges equal the canonical curriculum prerequisite projection", () => {
+  assert.deepEqual(
+    FILM_STUDY_FAMILY_PROGRESSION_EDGES,
+    projectFilmStudyFamilyProgressionEdges(FILM_STUDY_CURRICULUM.prerequisites),
+  );
 });
 
 test("canonical production progression edge set is exactly empty", () => {
