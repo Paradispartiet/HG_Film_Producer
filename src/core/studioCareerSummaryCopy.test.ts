@@ -23,3 +23,24 @@ test("next-project copy localizes validation and dynamic film labels", () => {
   assert.equal(STUDIO_CAREER_SUMMARY_COPY.pt.nextProject.creator.setupHeading(3), "Configuração do filme 3");
   assert.equal(STUDIO_CAREER_SUMMARY_COPY.nb.nextProject.form.createFilm(4), "Opprett film 4");
 });
+
+test("next-project result chrome and statuses are localized", () => {
+  assert.equal(STUDIO_CAREER_SUMMARY_COPY.nb.nextProject.result.nextStatus, "Neste status");
+  assert.equal(STUDIO_CAREER_SUMMARY_COPY.fr.nextProject.result.status.postProductionLocked, "Postproduction verrouillée");
+  assert.equal(STUDIO_CAREER_SUMMARY_COPY.pt.nextProject.result.newProjectPackage, "Novo pacote de projeto");
+  assert.equal(STUDIO_CAREER_SUMMARY_COPY.en.nextProject.result.status.readyForDevelopment, "Ready for development");
+});
+
+test("next-project result helpers preserve film, career, and handoff values", () => {
+  assert.equal(STUDIO_CAREER_SUMMARY_COPY.en.nextProject.result.created(3), "Film 3 created");
+  assert.equal(STUDIO_CAREER_SUMMARY_COPY.nb.nextProject.result.careerPeriod(2029, "Q3", 2), "År 2029 · Q3 · 2 fullførte filmer");
+  assert.equal(STUDIO_CAREER_SUMMARY_COPY.fr.nextProject.result.pipelineHeading(4), "Pipeline du film 4");
+  assert.equal(STUDIO_CAREER_SUMMARY_COPY.pt.nextProject.result.handoff.nextStep(3, "release"), "Próximo passo: aplicar o filme 3 ao estúdio/carreira");
+});
+
+test("next-project base pipeline copy is localized without changing canonical step data", () => {
+  assert.equal(STUDIO_CAREER_SUMMARY_COPY.nb.nextProject.result.pipeline.studioCarriedForward, "Studio videreført");
+  assert.equal(STUDIO_CAREER_SUMMARY_COPY.fr.nextProject.result.pipeline.scriptTemplateSelected, "Modèle de scénario sélectionné");
+  assert.equal(STUDIO_CAREER_SUMMARY_COPY.pt.nextProject.result.pipeline.setupComplete(3), "Configuração do filme 3 concluída · desenvolvimento ainda não iniciado");
+  assert.equal(STUDIO_CAREER_SUMMARY_COPY.en.nextProject.result.pipeline.moneyAvailable("Northline", "$120,000"), "Northline · $120,000 available");
+});
