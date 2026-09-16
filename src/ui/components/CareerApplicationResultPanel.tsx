@@ -1,7 +1,9 @@
 import type { StrategicGoal } from "../../domain/career";
+import { STUDIO_CAREER_REVIEW_COPY } from "../../core/studioCareerReviewCopy.js";
 import type { CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun";
 import type { ProjectRunContext } from "../demo/createProjectRunContext";
 import type { ReleaseStepResult } from "../demo/createReleaseStepRun";
+import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 import type { ProjectCareerLabel } from "../types";
 import { CareerYearPanel } from "./CareerYearPanel";
 import { CompletedFilmPanel } from "./CompletedFilmPanel";
@@ -23,9 +25,10 @@ export function CareerApplicationResultPanel({
   releaseResult,
   result
 }: CareerApplicationResultPanelProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_REVIEW_COPY[language].result;
   const unlockedMilestones = result.milestoneResults.filter((milestone) => milestone.rewardsApplied);
   const projectNumber = projectLabel === "first film" ? 1 : projectLabel === "film 2" ? 2 : 3;
-  const nextStep = projectNumber === 1 ? "Start next project" : `Start film ${projectNumber + 1}`;
 
   return (
     <div className="career-application-results">
@@ -37,28 +40,28 @@ export function CareerApplicationResultPanel({
       </div>
       <section className="career-final-summary">
         <div>
-          <span className="eyebrow">Studio updated</span>
-          <h3>{projectNumber === 1 ? "Film year closed" : `Film ${projectNumber} year closed`}</h3>
-          <p>{result.completedFilmRecord.title} is now part of the studio ledger, filmography, career evaluation, and identity profile.</p>
+          <span className="eyebrow">{copy.studioUpdated}</span>
+          <h3>{copy.yearClosed(projectNumber)}</h3>
+          <p>{copy.ledgerDescription(result.completedFilmRecord.title)}</p>
         </div>
         <ul className="career-check-list">
-          <li><span>✓</span> Completed film recorded: {result.completedFilmRecord.title}</li>
-          <li><span>✓</span> Career year evaluated at {result.careerYearEvaluation.overall}/100</li>
-          <li><span>✓</span> Identity: {formatTags(result.studioIdentityEvaluation.strongestTags)}</li>
-          <li><span>✓</span> Milestones unlocked: {unlockedMilestones.length > 0 ? unlockedMilestones.map((item) => milestoneTitle(item.note)).join(", ") : "None this review"}</li>
+          <li><span>✓</span> {copy.completedFilmRecorded(result.completedFilmRecord.title)}</li>
+          <li><span>✓</span> {copy.careerYearEvaluated(result.careerYearEvaluation.overall)}</li>
+          <li><span>✓</span> {copy.identity}: {formatTags(result.studioIdentityEvaluation.strongestTags, copy.formingIdentity)}</li>
+          <li><span>✓</span> {copy.milestonesUnlocked}: {unlockedMilestones.length > 0 ? unlockedMilestones.map((item) => milestoneTitle(item.note)).join(", ") : copy.noneThisReview}</li>
         </ul>
         <div className="next-project-callout">
-          <span>Next step</span>
-          <strong>{nextStep}</strong>
-          <p>The next project is not created automatically in this step.</p>
+          <span>{copy.nextStep}</span>
+          <strong>{copy.nextProject(projectNumber)}</strong>
+          <p>{copy.nextProjectNote}</p>
         </div>
       </section>
     </div>
   );
 }
 
-function formatTags(tags: readonly string[]): string {
-  return tags.length > 0 ? tags.map((tag) => tag.replaceAll("_", " ")).join(", ") : "forming";
+function formatTags(tags: readonly string[], fallback: string): string {
+  return tags.length > 0 ? tags.map((tag) => tag.replaceAll("_", " ")).join(", ") : fallback;
 }
 
 function milestoneTitle(note: string): string {

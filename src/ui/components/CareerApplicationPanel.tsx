@@ -1,7 +1,9 @@
 import type { StrategicGoal } from "../../domain/career";
+import { STUDIO_CAREER_REVIEW_COPY } from "../../core/studioCareerReviewCopy.js";
 import type { CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun";
 import type { ProjectRunContext } from "../demo/createProjectRunContext";
 import type { ReleaseStepResult } from "../demo/createReleaseStepRun";
+import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 import type { ProjectCareerLabel } from "../types";
 import { CareerApplicationResultPanel } from "./CareerApplicationResultPanel";
 
@@ -24,29 +26,31 @@ export function CareerApplicationPanel({
   onApply,
   id
 }: CareerApplicationPanelProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_REVIEW_COPY[language].panel;
   return (
     <section className="panel career-application-panel" id={id}>
       <div className="career-application-heading">
         <div>
-          <span className="eyebrow">Experimental career review</span>
-          <h2>Finish {projectLabel} career review</h2>
-          <p>End this film year: post the release outcome, record the completed film, then unlock the next film setup.</p>
+          <span className="eyebrow">{copy.eyebrow}</span>
+          <h2>{copy.heading(projectLabel)}</h2>
+          <p>{copy.description}</p>
         </div>
         {!result && (
           <button className="primary-button" disabled={!releaseResult} onClick={onApply} type="button">
-            Close {projectLabel} year
+            {copy.closeYear(projectLabel)}
           </button>
         )}
       </div>
 
       {!releaseResult && (
-        <p className="inline-validation" role="status">Release {projectLabel} before applying its result to the studio.</p>
+        <p className="inline-validation" role="status">{copy.releaseBeforeApply(projectLabel)}</p>
       )}
       {releaseResult && !result && (
         <div className="career-ready-strip">
-          <span>Release result ready</span>
-          <strong>{projectContext.project.title} · outcome {releaseResult.releaseOutcomeEvaluation.overall}/100</strong>
-          <p>This action updates in-memory studio and career state only. Persistence is not enabled yet.</p>
+          <span>{copy.releaseReady}</span>
+          <strong>{copy.outcome(projectContext.project.title, releaseResult.releaseOutcomeEvaluation.overall)}</strong>
+          <p>{copy.persistenceNotice}</p>
         </div>
       )}
       {releaseResult && result && (

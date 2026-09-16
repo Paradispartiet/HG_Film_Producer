@@ -1,5 +1,7 @@
 import type { StrategicGoal } from "../../domain/career";
+import { STUDIO_CAREER_REVIEW_COPY } from "../../core/studioCareerReviewCopy.js";
 import type { CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun";
+import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 
 interface StrategicGoalProgressPanelProps {
   readonly goal: StrategicGoal;
@@ -7,16 +9,18 @@ interface StrategicGoalProgressPanelProps {
 }
 
 export function StrategicGoalProgressPanel({ goal, result }: StrategicGoalProgressPanelProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_REVIEW_COPY[language].goal;
   const helped = releaseHelpedGoal(goal, result);
   return (
     <section className="career-review-card strategic-progress-card">
-      <div className="career-card-heading"><span className="section-label">Strategic goal</span><strong>{goal.title}</strong></div>
+      <div className="career-card-heading"><span className="section-label">{copy.label}</span><strong>{goal.title}</strong></div>
       <p>{goal.description}</p>
       <div className={helped ? "goal-impact goal-impact--positive" : "goal-impact"}>
-        <span>{helped ? "Release contributed" : "No confirmed progress yet"}</span>
-        <strong>{helped ? "Helpful result" : "Tracking pending"}</strong>
+        <span>{helped ? copy.releaseContributed : copy.noConfirmedProgress}</span>
+        <strong>{helped ? copy.helpfulResult : copy.trackingPending}</strong>
       </div>
-      <p className="career-card-note">Full strategic-goal progress tracking starts next PR. This review keeps the selected goal visible without inventing a progress percentage.</p>
+      <p className="career-card-note">{copy.note}</p>
     </section>
   );
 }
