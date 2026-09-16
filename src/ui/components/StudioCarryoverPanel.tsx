@@ -1,4 +1,7 @@
+import { getFilmWorkIntlLocale } from "../../core/filmWorkLanguage.js";
+import { STUDIO_CAREER_CARRYOVER_COPY } from "../../core/studioCareerCarryoverCopy.js";
 import type { CareerState } from "../../domain/career.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 
 interface StudioCarryoverPanelProps {
   readonly careerState: CareerState;
@@ -9,44 +12,47 @@ export function StudioCarryoverPanel({
   careerState,
   sourceFilmLabel,
 }: StudioCarryoverPanelProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_CARRYOVER_COPY[language];
+  const locale = getFilmWorkIntlLocale(language);
   const studio = careerState.studio;
+
   return (
     <section className="next-project-card carryover-card">
       <div className="compact-card-heading">
         <div>
           <span className="eyebrow">
             {sourceFilmLabel
-              ? `Studio after ${sourceFilmLabel}`
-              : "Studio carryover"}
+              ? copy.afterSourceFilm(sourceFilmLabel)
+              : copy.studioCarryover}
           </span>
           <h3>{studio.name}</h3>
         </div>
         <span className="carryover-period">
-          Year {careerState.currentYear} ·{" "}
-          {careerState.currentQuarter.toUpperCase()}
+          {copy.period(careerState.currentYear, careerState.currentQuarter.toUpperCase())}
         </span>
       </div>
       <dl className="carryover-stats">
-        <CarryoverStat label="Money" value={formatMoney(studio.money)} />
+        <CarryoverStat label={copy.money} value={formatMoney(studio.money, locale)} />
         <CarryoverStat
-          label="Reputation"
+          label={copy.reputation}
           value={`${studio.reputation} / 100`}
         />
-        <CarryoverStat label="Prestige" value={`${studio.prestige} / 100`} />
+        <CarryoverStat label={copy.prestige} value={`${studio.prestige} / 100`} />
         <CarryoverStat
-          label="Completed films"
+          label={copy.completedFilms}
           value={`${careerState.completedFilms.length}`}
         />
       </dl>
       <div className="identity-row">
-        <span>Studio identity</span>
+        <span>{copy.studioIdentity}</span>
         <div className="tag-list">
           {careerState.identityTags.length > 0 ? (
             careerState.identityTags.map((tag) => (
-              <span key={tag}>{formatTag(tag)}</span>
+              <span key={tag}>{copy.identityTags[tag]}</span>
             ))
           ) : (
-            <span className="tag-muted">Still forming</span>
+            <span className="tag-muted">{copy.stillForming}</span>
           )}
         </div>
       </div>
@@ -69,14 +75,10 @@ function CarryoverStat({
   );
 }
 
-function formatMoney(value: number): string {
-  return value.toLocaleString("en-US", {
+function formatMoney(value: number, locale: string): string {
+  return value.toLocaleString(locale, {
     style: "currency",
     currency: "USD",
     maximumFractionDigits: 0,
   });
-}
-
-function formatTag(value: string): string {
-  return value.replaceAll("_", " ");
 }
