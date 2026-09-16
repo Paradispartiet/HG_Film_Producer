@@ -1,5 +1,5 @@
 import { STUDIO_CAREER_SUMMARY_COPY } from "../../core/studioCareerSummaryCopy";
-import { STUDIO_SETUP_COPY } from "../../core/studioSetupCopy";
+import { STUDIO_SETUP_COPY, STUDIO_SETUP_SCALE_IDS, type StudioSetupScaleId } from "../../core/studioSetupCopy";
 import type { CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun";
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { ProjectSetupRun } from "../demo/createProjectSetupRun.js";
@@ -33,7 +33,7 @@ export function RunSummaryPanel({ run, careerApplicationResult, developmentResul
       </div>
       <div className="summary-grid">
         <SummaryItem label={copy.strategicGoal} value={run.strategicGoal.title} detail={run.strategicGoal.description} />
-        <SummaryItem label={copy.project} value={run.project.title} detail={`${run.project.genre} · ${setupCopy.project.scales[run.project.scale]}`} />
+        <SummaryItem label={copy.project} value={run.project.title} detail={`${run.project.genre} · ${formatScaleLabel(run.project.scale, setupCopy.project.scales)}`} />
         <SummaryItem label={copy.scriptTemplate} value={run.scriptTemplate.title} detail={run.scriptTemplate.defaultTheme} />
         <SummaryItem
           label={copy.development.label}
@@ -105,4 +105,9 @@ function SummaryItem({ label, value, detail, accent = false }: {
       <span>{label}</span><strong>{value}</strong><p>{detail}</p>
     </div>
   );
+}
+
+function formatScaleLabel(value: string, labels: Readonly<Record<StudioSetupScaleId, string>>): string {
+  const scaleId = STUDIO_SETUP_SCALE_IDS.find((candidate) => candidate === value);
+  return scaleId ? labels[scaleId] : value.replace("_", " ");
 }
