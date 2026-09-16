@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { StrategicGoal } from "../domain/career";
 import { isDeveloperToolsEnabled } from "../core/developerToolsAccess";
+import { STUDIO_CAREER_APP_SHELL_COPY } from "../core/studioCareerAppShellCopy";
 import { CareerApplicationPanel } from "./components/CareerApplicationPanel";
 import { CareerPanel } from "./components/CareerPanel";
 import { CompletedPhaseRow } from "./components/CompletedPhaseRow";
@@ -35,6 +36,7 @@ import { createScenarioProjectRun } from "./demo/createScenarioProjectRun";
 import { addDevelopmentPipelineStep, type ProjectSetupRun } from "./demo/createProjectSetupRun";
 import { createProjectRunContext } from "./demo/createProjectRunContext";
 import { createNextProjectStepResult, getNextProjectOptions, type NextProjectChoices } from "./demo/createNextProjectStepRun";
+import { useFilmWorkLanguage } from "./filmWorkLanguage";
 import { type AppMode, type NextProjectFormErrors } from "./types";
 import { careerRunActions, createCareerProject, type CareerFilmProjectRun, useCareerRunState } from "./state/careerRunState";
 import { getClassicFilmScenarios, getFilmScenarioById, type FilmScenarioSeed } from "./data/filmScenarios";
@@ -49,6 +51,8 @@ const initialNextProjectChoices: NextProjectChoices = { projectTitle: "", genreI
 const developerToolsEnabled = typeof window !== "undefined" && isDeveloperToolsEnabled(window.location.search);
 
 export function App() {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_APP_SHELL_COPY[language];
   const [view, setView] = useState<"landing" | "game" | "dev" | "scenarios">(developerToolsEnabled ? "dev" : "landing");
   const [mode, setMode] = useState<AppMode>("demo");
   const { state: careerRun, setState: setCareerRun, hasSave } = useCareerRunState();
@@ -70,16 +74,18 @@ export function App() {
   return (
     <div className="app-shell">
       {view === "game" ? (
-        <GameNavigation context={activeProject?.run.project.title ?? "New studio"} onHome={() => setView("landing")} />
-      ) : <nav className="mode-switch" aria-label="Dashboard mode"><div><span className="eyebrow">HG Film Producer</span><strong>Production workspace</strong></div><div className="mode-switch-buttons">{developerToolsEnabled && <button className={mode === "demo" && view === "dev" ? "mode-button mode-button--active" : "mode-button"} onClick={() => { setMode("demo"); setView("dev"); }} type="button">Demo inspection</button>}<button className={view === "scenarios" ? "mode-button mode-button--active" : "mode-button"} onClick={() => setView("scenarios")} type="button">Production Cases</button><button className="mode-button" onClick={() => { setMode("setup"); setView("game"); }} type="button">Experimental Career</button><button className="mode-button" onClick={() => setView("landing")} type="button">Title screen</button></div></nav>}
+        <GameNavigation context={activeProject?.run.project.title ?? copy.newStudioFallback} onHome={() => setView("landing")} />
+      ) : <nav className="mode-switch" aria-label={copy.navigation.ariaLabel}><div><span className="eyebrow">{copy.productName}</span><strong>{copy.navigation.workspace}</strong></div><div className="mode-switch-buttons">{developerToolsEnabled && <button className={mode === "demo" && view === "dev" ? "mode-button mode-button--active" : "mode-button"} onClick={() => { setMode("demo"); setView("dev"); }} type="button">{copy.navigation.demoInspection}</button>}<button className={view === "scenarios" ? "mode-button mode-button--active" : "mode-button"} onClick={() => setView("scenarios")} type="button">{copy.navigation.productionCases}</button><button className="mode-button" onClick={() => { setMode("setup"); setView("game"); }} type="button">{copy.navigation.experimentalCareer}</button><button className="mode-button" onClick={() => setView("landing")} type="button">{copy.navigation.titleScreen}</button></div></nav>}
       {view === "scenarios" ? <FilmScenarioLibrary onStartScenario={startClassicScenario} /> : mode === "demo" ? <DemoDashboard /> : (careerRun.projects.length > 0 ? <CareerDashboard careerRun={careerRun.projects} onOpenProductionCases={() => setView("scenarios")} onResetCareer={resetCareer} onStartScenario={startClassicScenario} setCareerRun={setCareerRun} /> : <main className="setup-workspace"><SetupPanel onCreate={startStudio} /></main>)}
-      <footer><span>HG Film Producer</span><span>{view === "dev" ? "Demo inspection" : view === "scenarios" || (activeProject && "classicScenarioId" in activeProject.run && activeProject.run.classicScenarioId) ? "Stable Production Cases MVP" : "Experimental Studio Career branch"}</span></footer>
+      <footer><span>{copy.productName}</span><span>{view === "dev" ? copy.footer.demoInspection : view === "scenarios" || (activeProject && "classicScenarioId" in activeProject.run && activeProject.run.classicScenarioId) ? copy.footer.productionCases : copy.footer.experimentalCareer}</span></footer>
     </div>
   );
 }
 
 function DemoDashboard() {
-  return <><StudioHeader studio={demo.studio} /><main><div className="dashboard-intro"><div><span className="eyebrow">Portfolio overview</span><h2>Production desk</h2></div><p>One deterministic studio run, live from the HG simulation engine.</p></div><div className="dashboard-grid"><div className="dashboard-main"><ProjectPipeline project={demo.filmProject} steps={demo.pipelineSteps} /><ReleasePanel release={demo.releaseOutcome} /></div><aside className="dashboard-side"><CareerPanel career={demo.careerState} /><FilmResultPanel result={demo.filmResult} /><SystemStatusPanel engines={demo.representedEngines} /></aside></div></main></>;
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_APP_SHELL_COPY[language].demo;
+  return <><StudioHeader studio={demo.studio} /><main><div className="dashboard-intro"><div><span className="eyebrow">{copy.kicker}</span><h2>{copy.heading}</h2></div><p>{copy.intro}</p></div><div className="dashboard-grid"><div className="dashboard-main"><ProjectPipeline project={demo.filmProject} steps={demo.pipelineSteps} /><ReleasePanel release={demo.releaseOutcome} /></div><aside className="dashboard-side"><CareerPanel career={demo.careerState} /><FilmResultPanel result={demo.filmResult} /><SystemStatusPanel engines={demo.representedEngines} /></aside></div></main></>;
 }
 
 function getRunContext(run: ProjectSetupRun | import("./demo/createNextProjectStepRun").NextProjectStepResult) { return createProjectRunContext(run as ProjectSetupRun & import("./demo/createNextProjectStepRun").NextProjectStepResult); }
@@ -92,6 +98,8 @@ function getStrategicGoal(run: ProjectSetupRun | import("./demo/createNextProjec
 }
 
 function CareerDashboard({ careerRun, setCareerRun, onOpenProductionCases, onResetCareer, onStartScenario }: { readonly careerRun: readonly CareerFilmProjectRun[]; readonly setCareerRun: React.Dispatch<React.SetStateAction<{ version: 1; projects: readonly CareerFilmProjectRun[] }>>; readonly onOpenProductionCases: () => void; readonly onResetCareer: () => void; readonly onStartScenario: (scenario: FilmScenarioSeed) => void; }) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_APP_SHELL_COPY[language].career;
   const firstProject = careerRun[0];
   if (!firstProject) return null;
   const latestCareerResult = [...careerRun].reverse().find((project) => project.careerApplicationResult)?.careerApplicationResult;
@@ -100,7 +108,7 @@ function CareerDashboard({ careerRun, setCareerRun, onOpenProductionCases, onRes
   const displayedStudio = latestCareerResult ? { name: latestCareerResult.updatedStudio.name, money: latestCareerResult.updatedStudio.money, reputation: latestCareerResult.updatedStudio.reputation, prestige: latestCareerResult.updatedStudio.prestige, currentYear: latestCareerResult.updatedCareerState.currentYear, currentQuarter: latestCareerResult.updatedCareerState.currentQuarter.toUpperCase() } : getRunStudio(firstProject.run);
   function update(action: Parameters<typeof setCareerRun>[0]) { setCareerRun(action); }
 
-  return <><StudioHeader studio={displayedStudio} /><main><div className="game-section-heading"><div><span className="eyebrow">{isProductionCaseRun ? "Production Cases · stable MVP" : "Experimental Studio Career"}</span><h2>{isProductionCaseRun ? "Your production case" : "Your studio slate"}</h2></div><p>{isProductionCaseRun ? "You are playing a Production Case through the studio pipeline. Make the case choices phase by phase, complete every mission, then read the Case report." : "This branch is playable but not the main MVP. Follow the current phase card, make the next film decision, then use career review to start Film Two."}</p><button className="secondary-button" onClick={onResetCareer} type="button">Reset career</button></div><div className="custom-dashboard-grid"><div className="dashboard-main active-workspace">{careerRun.map((project, index) => <FilmProjectWorkspace isLatest={index === careerRun.length - 1} key={project.id} onOpenProductionCases={onOpenProductionCases} onStartScenario={onStartScenario} previousProject={index > 0 ? careerRun[index - 1] : undefined} project={project} setCareerRun={update} />)}</div><RunSummaryPanel careerApplicationResult={firstProject.careerApplicationResult} developmentResult={firstProject.developmentResult} postProductionResult={firstProject.postProductionResult} preProductionResult={firstProject.preProductionResult} releaseResult={firstProject.releaseResult} run={firstProject.run as ProjectSetupRun} shootResult={firstProject.shootResult} onEdit={onResetCareer} /></div></main></>;
+  return <><StudioHeader studio={displayedStudio} /><main><div className="game-section-heading"><div><span className="eyebrow">{isProductionCaseRun ? copy.productionCasesKicker : copy.experimentalKicker}</span><h2>{isProductionCaseRun ? copy.productionCasesHeading : copy.experimentalHeading}</h2></div><p>{isProductionCaseRun ? copy.productionCasesIntro : copy.experimentalIntro}</p><button className="secondary-button" onClick={onResetCareer} type="button">{copy.reset}</button></div><div className="custom-dashboard-grid"><div className="dashboard-main active-workspace">{careerRun.map((project, index) => <FilmProjectWorkspace isLatest={index === careerRun.length - 1} key={project.id} onOpenProductionCases={onOpenProductionCases} onStartScenario={onStartScenario} previousProject={index > 0 ? careerRun[index - 1] : undefined} project={project} setCareerRun={update} />)}</div><RunSummaryPanel careerApplicationResult={firstProject.careerApplicationResult} developmentResult={firstProject.developmentResult} postProductionResult={firstProject.postProductionResult} preProductionResult={firstProject.preProductionResult} releaseResult={firstProject.releaseResult} run={firstProject.run as ProjectSetupRun} shootResult={firstProject.shootResult} onEdit={onResetCareer} /></div></main></>;
 }
 
 function FilmProjectWorkspace({ project, isLatest, onOpenProductionCases, onStartScenario, previousProject, setCareerRun }: { readonly project: CareerFilmProjectRun; readonly isLatest: boolean; readonly onOpenProductionCases: () => void; readonly onStartScenario: (scenario: FilmScenarioSeed) => void; readonly previousProject: CareerFilmProjectRun | undefined; readonly setCareerRun: React.Dispatch<React.SetStateAction<{ version: 1; projects: readonly CareerFilmProjectRun[] }>>; }) {
