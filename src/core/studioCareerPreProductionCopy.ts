@@ -45,6 +45,28 @@ type StudioCareerPreProductionCopy = {
     readonly workedTogether: (filmCount: number) => string;
     readonly studioRegular: string;
   };
+  readonly result: {
+    readonly lockedEyebrow: (projectLabel?: string) => string;
+    readonly report: string;
+    readonly shootUnlocked: string;
+    readonly ready: string;
+    readonly selectedLocation: string;
+    readonly locationFit: string;
+    readonly locationNotes: (count: number) => string;
+    readonly keyCrew: (count: number) => string;
+    readonly cast: (count: number) => string;
+    readonly actor: string;
+    readonly castingChemistry: string;
+    readonly sharedTags: string;
+    readonly evaluation: string;
+    readonly overall: (score: number) => string;
+    readonly crewScore: string;
+    readonly castScore: string;
+    readonly chemistry: string;
+    readonly reliability: string;
+    readonly budgetPressure: string;
+    readonly scoreAria: (label: string, value: number) => string;
+  };
 };
 
 export const STUDIO_CAREER_PRE_PRODUCTION_COPY = {
@@ -94,6 +116,28 @@ export const STUDIO_CAREER_PRE_PRODUCTION_COPY = {
       workedTogether: (filmCount) => `Worked together on ${filmCount} film${filmCount === 1 ? "" : "s"}`,
       studioRegular: "Studio regular",
     },
+    result: {
+      lockedEyebrow: (projectLabel) => `Pre-production locked${projectLabel ? ` · ${projectLabel}` : ""}`,
+      report: "Production team report",
+      shootUnlocked: "Shoot unlocked",
+      ready: "Ready",
+      selectedLocation: "Selected location",
+      locationFit: "Location fit",
+      locationNotes: (count) => `Location notes · ${count} attached`,
+      keyCrew: (count) => `Key crew · ${count}`,
+      cast: (count) => `Cast · ${count}`,
+      actor: "Actor",
+      castingChemistry: "Casting chemistry",
+      sharedTags: "Shared tags",
+      evaluation: "Production team evaluation",
+      overall: (score) => `${score} overall`,
+      crewScore: "Crew score",
+      castScore: "Cast score",
+      chemistry: "Chemistry",
+      reliability: "Reliability",
+      budgetPressure: "Budget pressure",
+      scoreAria: (label, value) => `${label} ${value} out of 100`,
+    },
   },
   nb: {
     panel: {
@@ -140,6 +184,28 @@ export const STUDIO_CAREER_PRE_PRODUCTION_COPY = {
     returning: {
       workedTogether: (filmCount) => `Jobbet sammen på ${filmCount} film${filmCount === 1 ? "" : "er"}`,
       studioRegular: "Fast i studioet",
+    },
+    result: {
+      lockedEyebrow: (projectLabel) => `Preproduksjon låst${projectLabel ? ` · ${projectLabel}` : ""}`,
+      report: "Produksjonsteamrapport",
+      shootUnlocked: "Innspilling låst opp",
+      ready: "Klar",
+      selectedLocation: "Valgt innspillingssted",
+      locationFit: "Location-treff",
+      locationNotes: (count) => `Locationnotater · ${count} vedlagt`,
+      keyCrew: (count) => `Nøkkelcrew · ${count}`,
+      cast: (count) => `Cast · ${count}`,
+      actor: "Skuespiller",
+      castingChemistry: "Castingkjemi",
+      sharedTags: "Felles tags",
+      evaluation: "Vurdering av produksjonsteam",
+      overall: (score) => `${score} totalt`,
+      crewScore: "Crewscore",
+      castScore: "Castscore",
+      chemistry: "Kjemi",
+      reliability: "Pålitelighet",
+      budgetPressure: "Budsjettpress",
+      scoreAria: (label, value) => `${label} ${value} av 100`,
     },
   },
   fr: {
@@ -188,6 +254,28 @@ export const STUDIO_CAREER_PRE_PRODUCTION_COPY = {
       workedTogether: (filmCount) => `${filmCount} film${filmCount === 1 ? "" : "s"} ensemble`,
       studioRegular: "Collaborateur régulier du studio",
     },
+    result: {
+      lockedEyebrow: (projectLabel) => `Préproduction verrouillée${projectLabel ? ` · ${projectLabel}` : ""}`,
+      report: "Rapport de l’équipe de production",
+      shootUnlocked: "Tournage débloqué",
+      ready: "Prêt",
+      selectedLocation: "Lieu sélectionné",
+      locationFit: "Adéquation du lieu",
+      locationNotes: (count) => `Notes du lieu · ${count} jointe${count === 1 ? "" : "s"}`,
+      keyCrew: (count) => `Équipe clé · ${count}`,
+      cast: (count) => `Distribution · ${count}`,
+      actor: "Interprète",
+      castingChemistry: "Alchimie du casting",
+      sharedTags: "Tags partagés",
+      evaluation: "Évaluation de l’équipe de production",
+      overall: (score) => `${score} au total`,
+      crewScore: "Score de l’équipe",
+      castScore: "Score du casting",
+      chemistry: "Alchimie",
+      reliability: "Fiabilité",
+      budgetPressure: "Pression budgétaire",
+      scoreAria: (label, value) => `${label} ${value} sur 100`,
+    },
   },
   pt: {
     panel: {
@@ -234,6 +322,28 @@ export const STUDIO_CAREER_PRE_PRODUCTION_COPY = {
     returning: {
       workedTogether: (filmCount) => filmCount === 1 ? "Trabalhou em conjunto num filme" : `Trabalhou em conjunto em ${filmCount} filmes`,
       studioRegular: "Colaborador regular do estúdio",
+    },
+    result: {
+      lockedEyebrow: (projectLabel) => `Pré-produção fechada${projectLabel ? ` · ${projectLabel}` : ""}`,
+      report: "Relatório da equipa de produção",
+      shootUnlocked: "Rodagem desbloqueada",
+      ready: "Pronto",
+      selectedLocation: "Localização selecionada",
+      locationFit: "Adequação da localização",
+      locationNotes: (count) => `Notas da localização · ${count} anexada${count === 1 ? "" : "s"}`,
+      keyCrew: (count) => `Equipa principal · ${count}`,
+      cast: (count) => `Elenco · ${count}`,
+      actor: "Intérprete",
+      castingChemistry: "Química do elenco",
+      sharedTags: "Tags partilhadas",
+      evaluation: "Avaliação da equipa de produção",
+      overall: (score) => `${score} global`,
+      crewScore: "Pontuação da equipa",
+      castScore: "Pontuação do elenco",
+      chemistry: "Química",
+      reliability: "Fiabilidade",
+      budgetPressure: "Pressão orçamental",
+      scoreAria: (label, value) => `${label} ${value} de 100`,
     },
   },
 } as const satisfies Record<FilmWorkLanguage, StudioCareerPreProductionCopy>;
