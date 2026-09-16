@@ -1,19 +1,17 @@
 import { useMemo, useState, type ChangeEvent } from "react";
 
+import {
+  FILM_KNOWLEDGE_OVERLAYS_COPY,
+  FILM_RESEARCH_STATUS_IDS,
+  getFilmResearchStatusLabel,
+} from "../../core/filmKnowledgeOverlaysCopy";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { getClassicFilmScenarios } from "../data/filmScenarios";
 import {
   createFilmResearchQueue,
-  labelFilmResearchStatus,
   summarizeFilmResearch,
   type FilmResearchStatus,
 } from "../data/filmResearchStatus";
-
-const statusOptions: readonly { readonly id: FilmResearchStatus | "all"; readonly label: string }[] = [
-  { id: "all", label: "All" },
-  { id: "needs_research", label: "Needs research" },
-  { id: "seeded", label: "Seeded" },
-  { id: "verified", label: "Verified" },
-];
 
 type FilmResearchControlRoomProps = {
   readonly onClose: () => void;
@@ -30,6 +28,8 @@ export function FilmResearchControlRoom({
   onOpenDirector,
   open,
 }: FilmResearchControlRoomProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = FILM_KNOWLEDGE_OVERLAYS_COPY[language].research;
   const [query, setQuery] = useState("");
   const [status, setStatus] = useState<FilmResearchStatus | "all">("all");
   const queue = useMemo(() => createFilmResearchQueue(getClassicFilmScenarios()), []);
@@ -47,49 +47,49 @@ export function FilmResearchControlRoom({
     <>
       {!open && (
         <button className="research-control-trigger" onClick={onOpen} type="button">
-          <span>Editorial system</span>
-          <strong>Research control</strong>
+          <span>{copy.triggerKicker}</span>
+          <strong>{copy.triggerTitle}</strong>
         </button>
       )}
 
       {open && (
         <div className="research-control-backdrop" onMouseDown={onClose} role="presentation">
-          <section aria-label="Film research control room" aria-modal="true" className="research-control-panel" onMouseDown={(event) => event.stopPropagation()} role="dialog">
+          <section aria-label={copy.dialogAria} aria-modal="true" className="research-control-panel" onMouseDown={(event) => event.stopPropagation()} role="dialog">
             <header className="research-control-header">
               <div>
-                <span>FilmWork editorial control</span>
-                <h2>Research control room</h2>
-                <p>Keep verified film knowledge separate from provisional seeds and unfinished research. Every row now opens the same film directly in Film Atlas or Film Director.</p>
+                <span>{copy.kicker}</span>
+                <h2>{copy.heading}</h2>
+                <p>{copy.intro}</p>
               </div>
-              <button aria-label="Close research control room" onClick={onClose} type="button">×</button>
+              <button aria-label={copy.closeAria} onClick={onClose} type="button">×</button>
             </header>
 
-            <section className="research-summary-grid" aria-label="Research status summary">
-              <article><small>Total catalogue</small><strong>{summary.total}</strong><span>films</span></article>
-              <article><small>Verified</small><strong>{summary.verified}</strong><span>{summary.completionPercent}% complete</span></article>
-              <article><small>Seeded</small><strong>{summary.seeded}</strong><span>provisional</span></article>
-              <article><small>Needs research</small><strong>{summary.needsResearch}</strong><span>priority queue</span></article>
+            <section className="research-summary-grid" aria-label={copy.summaryAria}>
+              <article><small>{copy.totalCatalogue}</small><strong>{summary.total}</strong><span>{copy.films}</span></article>
+              <article><small>{copy.verified}</small><strong>{summary.verified}</strong><span>{copy.completePercent(summary.completionPercent)}</span></article>
+              <article><small>{copy.seeded}</small><strong>{summary.seeded}</strong><span>{copy.provisional}</span></article>
+              <article><small>{copy.needsResearch}</small><strong>{summary.needsResearch}</strong><span>{copy.priorityQueue}</span></article>
             </section>
 
-            <div className="research-progress" aria-label={`${summary.completionPercent}% verified`}>
+            <div className="research-progress" aria-label={copy.verifiedProgress(summary.completionPercent)}>
               <span style={{ width: `${summary.completionPercent}%` }} />
             </div>
 
             <div className="research-control-tools">
               <label>
-                <span>Search film, year, or director</span>
-                <input onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)} placeholder="Example: 1970, Bergman, Bicycle…" type="search" value={query} />
+                <span>{copy.searchLabel}</span>
+                <input onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)} placeholder={copy.searchPlaceholder} type="search" value={query} />
               </label>
-              <div aria-label="Filter research status" className="research-status-filters">
-                {statusOptions.map((option) => (
-                  <button className={status === option.id ? "research-status-button research-status-button--active" : "research-status-button"} key={option.id} onClick={() => setStatus(option.id)} type="button">
-                    {option.label}
+              <div aria-label={copy.filterAria} className="research-status-filters">
+                {FILM_RESEARCH_STATUS_IDS.map((statusId) => (
+                  <button className={status === statusId ? "research-status-button research-status-button--active" : "research-status-button"} key={statusId} onClick={() => setStatus(statusId)} type="button">
+                    {getFilmResearchStatusLabel(language, statusId)}
                   </button>
                 ))}
               </div>
             </div>
 
-            <div className="research-queue-summary"><strong>{visibleItems.length}</strong> films shown · unfinished work appears first</div>
+            <div className="research-queue-summary">{copy.queueSummary(visibleItems.length)}</div>
 
             <div className="research-queue">
               {visibleItems.map((item, index) => (
@@ -98,20 +98,20 @@ export function FilmResearchControlRoom({
                   <div className="research-film-identity">
                     <span>{item.year}</span>
                     <h3>{item.title}</h3>
-                    <p>{item.directors.join(", ") || "Director not registered"}</p>
+                    <p>{item.directors.join(", ") || copy.directorNotRegistered}</p>
                   </div>
                   <div className="research-film-density">
-                    <span><strong>{item.craftStatementCount}</strong> craft statements</span>
-                    <span><strong>{item.learningGoalCount}</strong> learning goals</span>
+                    <span>{copy.craftStatements(item.craftStatementCount)}</span>
+                    <span>{copy.learningGoals(item.learningGoalCount)}</span>
                   </div>
-                  <strong className="research-status-label">{labelFilmResearchStatus(item.status)}</strong>
+                  <strong className="research-status-label">{getFilmResearchStatusLabel(language, item.status)}</strong>
                   <div className="research-film-actions">
-                    <button onClick={() => onOpenAtlas(item.scenarioId)} type="button">Film Atlas</button>
-                    <button onClick={() => onOpenDirector(item.scenarioId)} type="button">Film Director</button>
+                    <button onClick={() => onOpenAtlas(item.scenarioId)} type="button">{copy.actions.filmAtlas}</button>
+                    <button onClick={() => onOpenDirector(item.scenarioId)} type="button">{copy.actions.filmDirector}</button>
                   </div>
                 </article>
               ))}
-              {visibleItems.length === 0 && <p className="research-empty">No films match this research filter.</p>}
+              {visibleItems.length === 0 && <p className="research-empty">{copy.noResults}</p>}
             </div>
           </section>
         </div>
