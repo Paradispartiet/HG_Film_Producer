@@ -6,6 +6,23 @@ type DevelopmentPathCopy = {
   readonly consequence: string;
 };
 
+type DevelopmentResultCopy = {
+  readonly actionsApplied: (count: number) => string;
+  readonly advice: string;
+  readonly suggestedAction: string;
+  readonly unlockedTechnique: string;
+  readonly noTechniqueUnlock: string;
+  readonly projectTechniques: string;
+  readonly topLocation: string;
+  readonly totalScore: string;
+  readonly projectLocations: string;
+  readonly structure: string;
+  readonly sceneCount: string;
+  readonly overallScore: string;
+  readonly whereThisComesFrom: string;
+  readonly developmentNotes: string;
+};
+
 type StudioCareerDevelopmentCopy = {
   readonly panel: {
     readonly eyebrow: (projectLabel: string) => string;
@@ -53,6 +70,7 @@ type StudioCareerDevelopmentCopy = {
     readonly actionHint: string;
     readonly shapeScript: string;
   };
+  readonly result: DevelopmentResultCopy;
   readonly progress: (completedCount: number) => string;
 };
 
@@ -116,6 +134,22 @@ export const STUDIO_CAREER_DEVELOPMENT_COPY = {
       actionHint: "This creates a starter draft, not a full scene editor.",
       shapeScript: "Shape starter script",
     },
+    result: {
+      actionsApplied: (count) => `${count} development action${count === 1 ? "" : "s"} applied`,
+      advice: "Advice",
+      suggestedAction: "Suggested action",
+      unlockedTechnique: "Unlocked technique",
+      noTechniqueUnlock: "No technique unlock",
+      projectTechniques: "Project techniques",
+      topLocation: "Top location",
+      totalScore: "Total score",
+      projectLocations: "Project locations",
+      structure: "Structure",
+      sceneCount: "Scene count",
+      overallScore: "Overall score",
+      whereThisComesFrom: "Where this comes from",
+      developmentNotes: "Development notes",
+    },
     progress: (completedCount) => `${completedCount} of 3 development action${completedCount === 1 ? "" : "s"} applied.`,
   },
   nb: {
@@ -176,6 +210,22 @@ export const STUDIO_CAREER_DEVELOPMENT_COPY = {
       engineScored: "Vurdert av motoren",
       actionHint: "Dette lager et førsteutkast, ikke en full sceneditor.",
       shapeScript: "Form førsteutkast",
+    },
+    result: {
+      actionsApplied: (count) => count === 1 ? "1 utviklingshandling gjennomført" : `${count} utviklingshandlinger gjennomført`,
+      advice: "Råd",
+      suggestedAction: "Foreslått handling",
+      unlockedTechnique: "Opplåst teknikk",
+      noTechniqueUnlock: "Ingen teknikk låst opp",
+      projectTechniques: "Prosjektteknikker",
+      topLocation: "Beste innspillingssted",
+      totalScore: "Totalpoeng",
+      projectLocations: "Innspillingssteder i prosjektet",
+      structure: "Struktur",
+      sceneCount: "Antall scener",
+      overallScore: "Totalvurdering",
+      whereThisComesFrom: "Bakgrunnen for dette",
+      developmentNotes: "Utviklingsnotater",
     },
     progress: (completedCount) => `${completedCount} av 3 utviklingshandlinger gjennomført.`,
   },
@@ -238,6 +288,22 @@ export const STUDIO_CAREER_DEVELOPMENT_COPY = {
       actionHint: "Cela crée un premier jet, pas un éditeur de scènes complet.",
       shapeScript: "Façonner le premier jet",
     },
+    result: {
+      actionsApplied: (count) => `${count} action${count === 1 ? "" : "s"} de développement appliquée${count === 1 ? "" : "s"}`,
+      advice: "Conseil",
+      suggestedAction: "Action suggérée",
+      unlockedTechnique: "Technique débloquée",
+      noTechniqueUnlock: "Aucune technique débloquée",
+      projectTechniques: "Techniques du projet",
+      topLocation: "Meilleur lieu",
+      totalScore: "Score total",
+      projectLocations: "Lieux du projet",
+      structure: "Structure",
+      sceneCount: "Nombre de scènes",
+      overallScore: "Score global",
+      whereThisComesFrom: "Origine de cette approche",
+      developmentNotes: "Notes de développement",
+    },
     progress: (completedCount) => `${completedCount} action${completedCount === 1 ? "" : "s"} de développement sur 3 appliquée${completedCount === 1 ? "" : "s"}.`,
   },
   pt: {
@@ -298,6 +364,22 @@ export const STUDIO_CAREER_DEVELOPMENT_COPY = {
       engineScored: "Avaliado pelo motor",
       actionHint: "Isto cria um primeiro rascunho, não um editor de cenas completo.",
       shapeScript: "Moldar argumento inicial",
+    },
+    result: {
+      actionsApplied: (count) => count === 1 ? "1 ação de desenvolvimento aplicada" : `${count} ações de desenvolvimento aplicadas`,
+      advice: "Conselho",
+      suggestedAction: "Ação sugerida",
+      unlockedTechnique: "Técnica desbloqueada",
+      noTechniqueUnlock: "Nenhuma técnica desbloqueada",
+      projectTechniques: "Técnicas do projeto",
+      topLocation: "Melhor localização",
+      totalScore: "Pontuação total",
+      projectLocations: "Localizações do projeto",
+      structure: "Estrutura",
+      sceneCount: "Número de cenas",
+      overallScore: "Pontuação global",
+      whereThisComesFrom: "De onde vem esta abordagem",
+      developmentNotes: "Notas de desenvolvimento",
     },
     progress: (completedCount) => completedCount === 1
       ? "1 de 3 ação de desenvolvimento aplicada."
