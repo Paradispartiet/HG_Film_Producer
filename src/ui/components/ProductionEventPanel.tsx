@@ -1,5 +1,8 @@
+import { getFilmWorkIntlLocale } from "../../core/filmWorkLanguage";
+import { STUDIO_CAREER_SHOOT_COPY } from "../../core/studioCareerShootCopy";
 import type { ProjectShootLabel } from "../types.js";
 import type { ProductionEventOption } from "../demo/createShootStepRun.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 interface ProductionEventPanelProps {
   readonly options: readonly ProductionEventOption[];
@@ -10,23 +13,26 @@ interface ProductionEventPanelProps {
 }
 
 export function ProductionEventPanel({ options, selectedProductionEventId, inputName = "production-event", projectLabel = "first film", onSelect }: ProductionEventPanelProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_SHOOT_COPY[language].event;
+  const locale = getFilmWorkIntlLocale(language);
   return (
     <section className="shoot-desk-section">
       <div className="shoot-section-heading">
-        <div><span className="eyebrow">On-set variable</span><h3>Choose one production event</h3></div>
-        <p>Apply a deterministic event before resolving the {projectLabel} shoot day.</p>
+        <div><span className="eyebrow">{copy.eyebrow}</span><h3>{copy.heading}</h3></div>
+        <p>{copy.intro(projectLabel)}</p>
       </div>
       <div className="production-event-grid">
         {options.map(({ event }) => (
           <label className={event.id === selectedProductionEventId ? "production-event-card production-event-card--selected" : "production-event-card"} key={event.id}>
             <input checked={event.id === selectedProductionEventId} name={inputName} onChange={() => onSelect(event.id)} type="radio" />
-            <span className="event-kicker">{formatLabel(event.type)} · {event.severity}</span>
+            <span className="event-kicker">{copy.types[event.type]} · {copy.severities[event.severity]}</span>
             <strong>{event.title}</strong>
             <p>{event.description}</p>
             <dl className="event-consequences">
-              <div><dt>Cost impact</dt><dd>{formatMoney(event.costImpact)}</dd></div>
-              <div><dt>Delay</dt><dd>{event.delayDays} day{event.delayDays === 1 ? "" : "s"}</dd></div>
-              <div><dt>Upside</dt><dd>{event.possibleUpside ? "Possible" : "No"}</dd></div>
+              <div><dt>{copy.costImpact}</dt><dd>{formatMoney(event.costImpact, locale)}</dd></div>
+              <div><dt>{copy.delay}</dt><dd>{copy.delayDays(event.delayDays)}</dd></div>
+              <div><dt>{copy.upside}</dt><dd>{event.possibleUpside ? copy.possible : copy.no}</dd></div>
             </dl>
           </label>
         ))}
@@ -35,11 +41,7 @@ export function ProductionEventPanel({ options, selectedProductionEventId, input
   );
 }
 
-function formatMoney(value: number): string {
+function formatMoney(value: number, locale: string): string {
   const sign = value > 0 ? "+" : "";
-  return `${sign}${value.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 })}`;
-}
-
-function formatLabel(value: string): string {
-  return value.replaceAll("_", " ");
+  return `${sign}${value.toLocaleString(locale, { style: "currency", currency: "USD", maximumFractionDigits: 0 })}`;
 }

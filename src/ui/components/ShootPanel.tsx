@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { STUDIO_CAREER_SHOOT_COPY } from "../../core/studioCareerShootCopy";
 import type { ProjectShootLabel } from "../types.js";
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { ProjectRunContext } from "../demo/createProjectRunContext.js";
@@ -10,6 +11,7 @@ import {
   type ShootStepResult
 } from "../demo/createShootStepRun.js";
 import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { ProductionEventPanel } from "./ProductionEventPanel.js";
 import { SceneDifficultyPanel } from "./SceneDifficultyPanel.js";
 import { ShootDayResultPanel } from "./ShootDayResultPanel.js";
@@ -41,12 +43,13 @@ export function ShootPanel({
   onResolveShootDay,
   id
 }: ShootPanelProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_SHOOT_COPY[language];
   const preparation = useMemo(
     () => getShootPreparation(projectContext, developmentResult, preProductionResult),
     [projectContext, developmentResult, preProductionResult]
   );
   const numberedProject = projectLabel !== "first film";
-  const displayLabel = projectLabel.replace("film", "Film");
   const totalDays = preparation.productionSchedule.shootDays.length;
   const currentDay = getNextShootDay(preparation, shootDayResults);
 
@@ -59,10 +62,10 @@ export function ShootPanel({
     <section className={numberedProject ? "panel shoot-panel shoot-panel--later-project" : "panel shoot-panel"} id={id}>
       <div className="shoot-panel-heading">
         <div>
-          <span className="eyebrow">{numberedProject ? `Start shoot for ${projectLabel}` : "Start shoot"}</span>
-          <h2>{numberedProject ? `${displayLabel} shoot` : "On-set production desk"}</h2>
+          <span className="eyebrow">{copy.panel.eyebrow(projectLabel)}</span>
+          <h2>{copy.panel.heading(projectLabel)}</h2>
         </div>
-        <p>Work through every scheduled shoot day, applying one event and resolving the result each day, for {projectLabel}.</p>
+        <p>{copy.panel.intro(projectLabel)}</p>
       </div>
       <ShootSchedulePanel currentDay={currentDay} preparation={preparation} projectLabel={projectLabel} resolvedDays={shootDayResults} />
       <SceneDifficultyPanel projectLabel={projectLabel} summaries={preparation.sceneDifficultySummaries} />
@@ -81,11 +84,11 @@ export function ShootPanel({
           <div className="shoot-actions">
             <div>
               <span className="inline-message" role="status">
-                {selectedProductionEventId ? "Production event selected. Ready to resolve." : "Select one production event to continue."}
+                {selectedProductionEventId ? copy.panel.eventSelected : copy.panel.selectEvent}
               </span>
-              <small>Day {currentDay.dayNumber} of {totalDays} for {projectLabel}.</small>
+              <small>{copy.panel.dayProgress(currentDay.dayNumber, totalDays, projectLabel)}</small>
             </div>
-            <button className="primary-button" disabled={!selectedProductionEventId} onClick={resolveDay} type="button">Resolve day {currentDay.dayNumber}</button>
+            <button className="primary-button" disabled={!selectedProductionEventId} onClick={resolveDay} type="button">{copy.panel.resolveDay(currentDay.dayNumber)}</button>
           </div>
         </>
       )}
