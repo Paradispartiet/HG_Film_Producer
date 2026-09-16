@@ -138,6 +138,13 @@ const EXPECTED_FAMILY_COMPETENCIES = [
   },
 ] as const;
 
+type StrengthEvidence = {
+  familyId: string;
+  competencyId: string;
+  relation: "reinforces" | "uses";
+  rationale: string;
+};
+
 type CompetencyDepthModule = typeof curriculumModule & {
   FILM_STUDY_COMPETENCY_DEPTH?: {
     competencies: readonly { id: string; statement: string }[];
@@ -148,6 +155,7 @@ type CompetencyDepthModule = typeof curriculumModule & {
       uses: readonly string[];
     }[];
   };
+  FILM_STUDY_COMPETENCY_STRENGTH_EVIDENCE?: readonly StrengthEvidence[];
   createFilmStudyCompetencyDepth?: (input: {
     competencies: readonly { id: string; statement: string }[];
     familyCompetencies: readonly {
@@ -156,6 +164,7 @@ type CompetencyDepthModule = typeof curriculumModule & {
       reinforces: readonly string[];
       uses: readonly string[];
     }[];
+    strengthEvidence?: readonly StrengthEvidence[];
   }) => unknown;
 };
 
@@ -227,5 +236,36 @@ test("rejects unknown competency references and ambiguous relation strength", ()
         ),
       }),
     /more than one relation/i,
+  );
+});
+
+test("canonical competency strength evidence starts empty", () => {
+  assert.deepEqual(competencyModule.FILM_STUDY_COMPETENCY_STRENGTH_EVIDENCE, []);
+});
+
+test("reinforces and uses require explicit matching evidence", () => {
+  assert.equal(
+    typeof competencyModule.createFilmStudyCompetencyDepth,
+    "function",
+    "expected a competency-depth validator",
+  );
+  const createDepth = competencyModule.createFilmStudyCompetencyDepth;
+  assert.ok(createDepth);
+
+  const familyCompetencies = EXPECTED_FAMILY_COMPETENCIES.map(({ familyId }, index) => ({
+    familyId,
+    establishes: index === 0 ? [] : ["known_competency"],
+    reinforces: index === 0 ? ["known_competency"] : [],
+    uses: [] as string[],
+  }));
+
+  assert.throws(
+    () =>
+      createDepth({
+        competencies: [{ id: "known_competency", statement: "Known competency." }],
+        familyCompetencies,
+        strengthEvidence: [],
+      }),
+    /explicit evidence/i,
   );
 });
