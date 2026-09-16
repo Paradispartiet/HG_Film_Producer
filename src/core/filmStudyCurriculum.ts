@@ -62,6 +62,13 @@ export type FilmStudyFamilyCompetencyDeclaration = Readonly<{
   uses: readonly string[];
 }>;
 
+export type FilmStudyCompetencyStrengthEvidenceDeclaration = Readonly<{
+  familyId: FilmStudyFamilyId;
+  competencyId: string;
+  relation: "reinforces" | "uses";
+  rationale: string;
+}>;
+
 export type FilmStudyCompetencyDepth = Readonly<{
   competencies: readonly FilmStudyCompetencyDeclaration[];
   familyCompetencies: readonly FilmStudyFamilyCompetencyDeclaration[];
@@ -193,6 +200,7 @@ export function createFilmStudyCurriculum(
 export function createFilmStudyCompetencyDepth(input: {
   competencies: readonly FilmStudyCompetencyDeclaration[];
   familyCompetencies: readonly FilmStudyFamilyCompetencyDeclaration[];
+  strengthEvidence?: readonly FilmStudyCompetencyStrengthEvidenceDeclaration[];
 }): FilmStudyCompetencyDepth {
   const competencyIds = new Set<string>();
   const normalizedCompetencies = Object.freeze(
@@ -209,7 +217,37 @@ export function createFilmStudyCompetencyDepth(input: {
     }),
   );
 
+  const strengthEvidenceKeys = new Set<string>();
+  for (const evidence of input.strengthEvidence ?? []) {
+    if (!isFilmStudyFamilyId(String(evidence.familyId))) {
+      throw new Error(
+        `Unknown Film Study family in competency strength evidence: ${String(evidence.familyId)}`,
+      );
+    }
+
+    const competencyId = evidence.competencyId.trim();
+    if (!competencyIds.has(competencyId)) {
+      throw new Error(`Unknown competency in strength evidence: ${competencyId}`);
+    }
+    if (evidence.relation !== "reinforces" && evidence.relation !== "uses") {
+      throw new Error(`Invalid competency strength evidence relation: ${String(evidence.relation)}`);
+    }
+    assertNonEmpty(
+      evidence.rationale,
+      `Competency strength evidence rationale for ${evidence.familyId}/${competencyId}`,
+    );
+
+    const evidenceKey = `${evidence.familyId}\u0000${competencyId}\u0000${evidence.relation}`;
+    if (strengthEvidenceKeys.has(evidenceKey)) {
+      throw new Error(
+        `Duplicate competency strength evidence: ${evidence.familyId}/${competencyId}/${evidence.relation}`,
+      );
+    }
+    strengthEvidenceKeys.add(evidenceKey);
+  }
+
   const familyIds = new Set<FilmStudyFamilyId>();
+  const materializedStrengthKeys = new Set<string>();
   const normalizedFamilyCompetencies = Object.freeze(
     input.familyCompetencies.map((family) => {
       if (!isFilmStudyFamilyId(String(family.familyId))) {
@@ -240,6 +278,25 @@ export function createFilmStudyCompetencyDepth(input: {
         }
       }
 
+      for (const competencyId of reinforces) {
+        const evidenceKey = `${family.familyId}\u0000${competencyId}\u0000reinforces`;
+        if (!strengthEvidenceKeys.has(evidenceKey)) {
+          throw new Error(
+            `Competency ${competencyId} reinforces relation for family ${family.familyId} requires explicit evidence`,
+          );
+        }
+        materializedStrengthKeys.add(evidenceKey);
+      }
+      for (const competencyId of uses) {
+        const evidenceKey = `${family.familyId}\u0000${competencyId}\u0000uses`;
+        if (!strengthEvidenceKeys.has(evidenceKey)) {
+          throw new Error(
+            `Competency ${competencyId} uses relation for family ${family.familyId} requires explicit evidence`,
+          );
+        }
+        materializedStrengthKeys.add(evidenceKey);
+      }
+
       return Object.freeze({
         familyId: family.familyId,
         establishes,
@@ -248,6 +305,12 @@ export function createFilmStudyCompetencyDepth(input: {
       });
     }),
   );
+
+  for (const evidenceKey of strengthEvidenceKeys) {
+    if (!materializedStrengthKeys.has(evidenceKey)) {
+      throw new Error(`Orphan competency strength evidence: ${evidenceKey}`);
+    }
+  }
 
   const canonicalFamilyIds = Object.keys(FILM_STUDY_HISTORY_FAMILIES) as FilmStudyFamilyId[];
   const missingFamilyIds = canonicalFamilyIds.filter((familyId) => !familyIds.has(familyId));
@@ -505,9 +568,13 @@ export const FILM_STUDY_FAMILY_COMPETENCIES = Object.freeze([
   }),
 ]) as readonly FilmStudyFamilyCompetencyDeclaration[];
 
+export const FILM_STUDY_COMPETENCY_STRENGTH_EVIDENCE =
+  Object.freeze([]) as readonly FilmStudyCompetencyStrengthEvidenceDeclaration[];
+
 export const FILM_STUDY_COMPETENCY_DEPTH = createFilmStudyCompetencyDepth({
   competencies: FILM_STUDY_COMPETENCIES,
   familyCompetencies: FILM_STUDY_FAMILY_COMPETENCIES,
+  strengthEvidence: FILM_STUDY_COMPETENCY_STRENGTH_EVIDENCE,
 });
 
 export const FILM_STUDY_CURRICULUM_PREREQUISITES =
