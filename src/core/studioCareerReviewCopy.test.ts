@@ -28,3 +28,11 @@ test("career review next-step and empty-state copy remain explicit", () => {
   assert.equal(STUDIO_CAREER_REVIEW_COPY.fr.result.noneThisReview, "Aucun lors de cette évaluation");
   assert.equal(STUDIO_CAREER_REVIEW_COPY.pt.result.formingIdentity, "em formação");
 });
+
+test("career overview chrome is localized through the review contract", () => {
+  assert.equal(STUDIO_CAREER_REVIEW_COPY.nb.overview.eyebrow, "Langt perspektiv");
+  assert.equal(STUDIO_CAREER_REVIEW_COPY.fr.overview.heading, "Carrière du studio");
+  assert.equal(STUDIO_CAREER_REVIEW_COPY.pt.overview.yearEvaluation, "Avaliação do ano");
+  assert.equal(STUDIO_CAREER_REVIEW_COPY.en.overview.scoreAria(84), "Career score 84 out of 100");
+  assert.equal(STUDIO_CAREER_REVIEW_COPY.nb.overview.studioIdentity, "Studioidentitet");
+});
