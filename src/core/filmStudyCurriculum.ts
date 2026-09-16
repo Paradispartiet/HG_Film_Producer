@@ -171,3 +171,18 @@ export function createFilmStudyCurriculum(
     prerequisites: normalizedPrerequisites,
   });
 }
+
+export const FILM_STUDY_LEARNING_OUTCOMES =
+  Object.freeze([]) as readonly FilmStudyLearningOutcomeDeclaration[];
+
+export const FILM_STUDY_FAMILY_CURRICULA =
+  Object.freeze([]) as readonly FilmStudyFamilyCurriculumDeclaration[];
+
+export const FILM_STUDY_CURRICULUM_PREREQUISITES =
+  Object.freeze([]) as readonly FilmStudyCurriculumPrerequisiteDeclaration[];
+
+export const FILM_STUDY_CURRICULUM = createFilmStudyCurriculum({
+  outcomes: FILM_STUDY_LEARNING_OUTCOMES,
+  familyCurricula: FILM_STUDY_FAMILY_CURRICULA,
+  prerequisites: FILM_STUDY_CURRICULUM_PREREQUISITES,
+});
