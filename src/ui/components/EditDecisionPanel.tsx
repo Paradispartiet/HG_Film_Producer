@@ -1,4 +1,6 @@
+import { STUDIO_CAREER_POST_PRODUCTION_COPY } from "../../core/studioCareerPostProductionCopy.js";
 import type { EditDecision } from "../../domain/post.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 import { DecisionCard, type DecisionCardProps } from "./PostDecisionCard.js";
 
 interface EditDecisionPanelProps {
@@ -8,7 +10,9 @@ interface EditDecisionPanelProps {
 }
 
 export function EditDecisionPanel({ options, selectedId, onSelect }: EditDecisionPanelProps) {
-  return <DecisionSection eyebrow="Editorial" title="Shape the cut" description="Choose the cut strategy that controls rhythm and story structure." options={options.map((option) => ({ option, effects: [`Pacing ${signed(option.pacingEffect)}`, `Structure ${signed(option.structureEffect)}`] }))} selectedId={selectedId} onSelect={onSelect} />;
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[language].edit;
+  return <DecisionSection eyebrow={copy.eyebrow} title={copy.heading} description={copy.description} options={options.map((option) => ({ option, effects: [`${copy.pacing} ${signed(option.pacingEffect)}`, `${copy.structure} ${signed(option.structureEffect)}`] }))} selectedId={selectedId} onSelect={onSelect} />;
 }
 
 function DecisionSection({ eyebrow, title, description, options, selectedId, onSelect }: { readonly eyebrow: string; readonly title: string; readonly description: string; readonly options: readonly DecisionCardProps[]; readonly selectedId: string; readonly onSelect: (id: string) => void }) {
