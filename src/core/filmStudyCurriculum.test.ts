@@ -119,3 +119,46 @@ test("unknown family identities fail closed at runtime", () => {
     /unknown Film Study family/i,
   );
 });
+
+const SOUND = FILM_STUDY_HISTORY_FAMILIES.late_silent_early_sound.id;
+
+const TRANSITION_OUTCOME = {
+  id: "analyze_production_transition",
+  statement: "Analyze how a production-system transition changes film form and craft decisions.",
+} as const;
+
+test("an explicit prerequisite is accepted when its required outcome is established by the prerequisite family", () => {
+  const curriculum = createFilmStudyCurriculum({
+    outcomes: [TRANSITION_OUTCOME],
+    familyCurricula: [
+      { familyId: STUDIO, establishes: [TRANSITION_OUTCOME.id] },
+      { familyId: SOUND, establishes: [] },
+    ],
+    prerequisites: [{
+      prerequisiteFamilyId: STUDIO,
+      dependentFamilyId: SOUND,
+      requiredOutcomeIds: [TRANSITION_OUTCOME.id],
+      rationale: "The dependent analysis assumes the learner can already reason about production-system transition.",
+    }],
+  });
+
+  assert.deepEqual(curriculum.prerequisites, [{
+    prerequisiteFamilyId: STUDIO,
+    dependentFamilyId: SOUND,
+    requiredOutcomeIds: [TRANSITION_OUTCOME.id],
+    rationale: "The dependent analysis assumes the learner can already reason about production-system transition.",
+  }]);
+});
+
+test("overlapping learning outcomes never synthesize a prerequisite", () => {
+  const curriculum = createFilmStudyCurriculum({
+    outcomes: [TRANSITION_OUTCOME],
+    familyCurricula: [
+      { familyId: STUDIO, establishes: [TRANSITION_OUTCOME.id] },
+      { familyId: SOUND, establishes: [TRANSITION_OUTCOME.id] },
+    ],
+    prerequisites: [],
+  });
+
+  assert.deepEqual(curriculum.prerequisites, []);
+});
