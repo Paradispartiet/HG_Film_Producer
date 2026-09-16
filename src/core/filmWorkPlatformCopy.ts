@@ -1,4 +1,4 @@
-import type { FilmWorkLanguage } from "./filmWorkLanguage";
+import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 
 export const FILMWORK_PLATFORM_NAV_IDS = [
   "home",
