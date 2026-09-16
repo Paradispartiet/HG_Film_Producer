@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { StrategicGoal } from "../domain/career";
 import { isDeveloperToolsEnabled } from "../core/developerToolsAccess";
 import { STUDIO_CAREER_APP_SHELL_COPY } from "../core/studioCareerAppShellCopy";
+import { STUDIO_CAREER_SUMMARY_COPY } from "../core/studioCareerSummaryCopy";
 import { STUDIO_CAREER_WORKSPACE_COPY } from "../core/studioCareerWorkspaceCopy";
 import { CareerApplicationPanel } from "./components/CareerApplicationPanel";
 import { CareerPanel } from "./components/CareerPanel";
@@ -153,11 +154,13 @@ function projectPipeline(project: CareerFilmProjectRun) {
 }
 
 function NextProjectCreator({ previousProject, setCareerRun }: { readonly previousProject: CareerFilmProjectRun; readonly setCareerRun: React.Dispatch<React.SetStateAction<{ version: 1; projects: readonly CareerFilmProjectRun[] }>>; }) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_SUMMARY_COPY[language].nextProject;
   const [choices, setChoices] = useState<NextProjectChoices>(initialNextProjectChoices);
   const [errors, setErrors] = useState<NextProjectFormErrors>({});
   if (!previousProject.careerApplicationResult) return null;
   function createProject() {
-    const nextErrors = { ...(!choices.projectTitle.trim() ? { projectTitle: "Enter a title for the next project." } : {}), ...(!choices.genreId ? { genreId: "Select a genre." } : {}), ...(!choices.scriptTemplateId ? { scriptTemplateId: "Select a script template." } : {}) };
+    const nextErrors = { ...(!choices.projectTitle.trim() ? { projectTitle: copy.validation.projectTitle } : {}), ...(!choices.genreId ? { genreId: copy.validation.genre } : {}), ...(!choices.scriptTemplateId ? { scriptTemplateId: copy.validation.scriptTemplate } : {}) };
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0 || !previousProject.careerApplicationResult) return;
     const run = createNextProjectStepResult(getRunContext(previousProject.run), previousProject.careerApplicationResult, choices);
@@ -166,5 +169,5 @@ function NextProjectCreator({ previousProject, setCareerRun }: { readonly previo
     setChoices(initialNextProjectChoices);
     window.setTimeout(() => document.getElementById(nextPanelId)?.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
   }
-  return <section className="next-project-setup-section"><div className="next-project-intro"><div><span className="eyebrow">{`Film ${previousProject.projectNumber} complete`}</span><h2>{`Film ${previousProject.projectNumber + 1} setup`}</h2></div><p>Film One is complete. Set up Film Two from the updated studio and career state, then continue the experimental pipeline.</p></div><NextProjectSetupForm activeStrategicGoalIds={previousProject.careerApplicationResult.updatedCareerState.activeStrategicGoalIds} choices={choices} errors={errors} onChange={(nextChoices) => { setChoices(nextChoices); setErrors({}); }} onSubmit={createProject} options={nextProjectOptions} previousFilmLabel={`Film ${previousProject.projectNumber}`} projectNumber={previousProject.projectNumber + 1} /></section>;
+  return <section className="next-project-setup-section"><div className="next-project-intro"><div><span className="eyebrow">{copy.creator.completeKicker(previousProject.projectNumber)}</span><h2>{copy.creator.setupHeading(previousProject.projectNumber + 1)}</h2></div><p>{copy.creator.intro}</p></div><NextProjectSetupForm activeStrategicGoalIds={previousProject.careerApplicationResult.updatedCareerState.activeStrategicGoalIds} choices={choices} errors={errors} onChange={(nextChoices) => { setChoices(nextChoices); setErrors({}); }} onSubmit={createProject} options={nextProjectOptions} previousFilmLabel={`Film ${previousProject.projectNumber}`} projectNumber={previousProject.projectNumber + 1} /></section>;
 }

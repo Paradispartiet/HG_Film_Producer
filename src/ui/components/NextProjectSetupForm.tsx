@@ -1,21 +1,18 @@
 import type { ChangeEvent, FormEvent } from "react";
+import { STUDIO_CAREER_SUMMARY_COPY } from "../../core/studioCareerSummaryCopy";
+import { STUDIO_SETUP_COPY } from "../../core/studioSetupCopy";
 import type { FilmScale } from "../../domain/film.js";
 import type {
   NextProjectChoices,
   NextProjectOptions,
 } from "../demo/createNextProjectStepRun.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import type { NextProjectFormErrors } from "../types.js";
 import { GenreSelector } from "./GenreSelector.js";
 import { ScriptTemplateSelector } from "./ScriptTemplateSelector.js";
 import { StrategicGoalSelector } from "./StrategicGoalSelector.js";
 
-const scales: readonly { readonly id: FilmScale; readonly label: string }[] = [
-  { id: "micro", label: "Micro" },
-  { id: "indie", label: "Indie" },
-  { id: "mid_budget", label: "Mid budget" },
-  { id: "studio", label: "Studio" },
-  { id: "prestige", label: "Prestige" },
-];
+const scales: readonly FilmScale[] = ["micro", "indie", "mid_budget", "studio", "prestige"];
 
 interface NextProjectSetupFormProps {
   readonly projectNumber: number;
@@ -38,6 +35,10 @@ export function NextProjectSetupForm({
   onChange,
   onSubmit,
 }: NextProjectSetupFormProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_SUMMARY_COPY[language].nextProject.form;
+  const setupCopy = STUDIO_SETUP_COPY[language];
+
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     onSubmit();
@@ -50,19 +51,19 @@ export function NextProjectSetupForm({
           {String(projectNumber).padStart(2, "0")}
         </span>
         <div>
-          <span className="eyebrow">Greenlight film {projectNumber}</span>
-          <h3>Package the next project</h3>
-          <p>Choose the new film. Development remains a separate next step.</p>
+          <span className="eyebrow">{copy.greenlight(projectNumber)}</span>
+          <h3>{copy.heading}</h3>
+          <p>{copy.intro}</p>
         </div>
       </div>
       <label className="text-field">
-        <span>Next project title</span>
+        <span>{copy.titleLabel}</span>
         <input
           aria-invalid={Boolean(errors.projectTitle)}
           onChange={(event: ChangeEvent<HTMLInputElement>) =>
             onChange({ ...choices, projectTitle: event.target.value })
           }
-          placeholder="e.g. Northern Exposure"
+          placeholder={copy.titlePlaceholder}
           type="text"
           value={choices.projectTitle}
         />
@@ -79,24 +80,24 @@ export function NextProjectSetupForm({
         }
       />
       <fieldset className="setup-fieldset">
-        <legend>Production scale</legend>
+        <legend>{setupCopy.project.productionScale}</legend>
         <div className="scale-options">
           {scales.map((scale) => (
             <label
               className={
-                choices.scale === scale.id
+                choices.scale === scale
                   ? "scale-choice scale-choice--selected"
                   : "scale-choice"
               }
-              key={scale.id}
+              key={scale}
             >
               <input
-                checked={choices.scale === scale.id}
+                checked={choices.scale === scale}
                 name="next-project-scale"
-                onChange={() => onChange({ ...choices, scale: scale.id })}
+                onChange={() => onChange({ ...choices, scale })}
                 type="radio"
               />
-              <span>{scale.label}</span>
+              <span>{setupCopy.project.scales[scale]}</span>
             </label>
           ))}
         </div>
@@ -128,14 +129,11 @@ export function NextProjectSetupForm({
       )}
       <div className="next-project-actions">
         <div>
-          <strong>Carry the studio forward</strong>
-          <span>
-            {previousFilmLabel} stays recorded; film {projectNumber} begins at
-            setup only.
-          </span>
+          <strong>{copy.carryHeading}</strong>
+          <span>{copy.carryDetail(previousFilmLabel, projectNumber)}</span>
         </div>
         <button className="primary-button" type="submit">
-          Create film {projectNumber}
+          {copy.createFilm(projectNumber)}
         </button>
       </div>
     </form>

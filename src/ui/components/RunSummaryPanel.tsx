@@ -1,3 +1,5 @@
+import { STUDIO_CAREER_SUMMARY_COPY } from "../../core/studioCareerSummaryCopy";
+import { STUDIO_SETUP_COPY, STUDIO_SETUP_SCALE_IDS, type StudioSetupScaleId } from "../../core/studioSetupCopy";
 import type { CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun";
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { ProjectSetupRun } from "../demo/createProjectSetupRun.js";
@@ -5,6 +7,7 @@ import type { PreProductionStepResult } from "../demo/createPreProductionStepRun
 import type { PostProductionStepResult } from "../demo/createPostProductionStepRun.js";
 import type { ShootStepResult } from "../demo/createShootStepRun.js";
 import type { ReleaseStepResult } from "../demo/createReleaseStepRun.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 interface RunSummaryPanelProps {
   readonly run: ProjectSetupRun;
@@ -18,50 +21,73 @@ interface RunSummaryPanelProps {
 }
 
 export function RunSummaryPanel({ run, careerApplicationResult, developmentResult, preProductionResult, shootResult, postProductionResult, releaseResult, onEdit }: RunSummaryPanelProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_SUMMARY_COPY[language].summary;
+  const setupCopy = STUDIO_SETUP_COPY[language];
+
   return (
     <section className="panel run-summary-panel">
       <div className="panel-heading">
-        <div><span className="eyebrow">Project summary</span><h2>Project brief</h2></div>
-        <button className="secondary-button" onClick={onEdit} type="button">Edit setup</button>
+        <div><span className="eyebrow">{copy.kicker}</span><h2>{copy.heading}</h2></div>
+        <button className="secondary-button" onClick={onEdit} type="button">{copy.editSetup}</button>
       </div>
       <div className="summary-grid">
-        <SummaryItem label="Strategic goal" value={run.strategicGoal.title} detail={run.strategicGoal.description} />
-        <SummaryItem label="Project" value={run.project.title} detail={`${run.project.genre} · ${formatScale(run.project.scale)}`} />
-        <SummaryItem label="Script template" value={run.scriptTemplate.title} detail={run.scriptTemplate.defaultTheme} />
+        <SummaryItem label={copy.strategicGoal} value={run.strategicGoal.title} detail={run.strategicGoal.description} />
+        <SummaryItem label={copy.project} value={run.project.title} detail={`${run.project.genre} · ${formatScaleLabel(run.project.scale, setupCopy.project.scales)}`} />
+        <SummaryItem label={copy.scriptTemplate} value={run.scriptTemplate.title} detail={run.scriptTemplate.defaultTheme} />
         <SummaryItem
-          label="Development status"
-          value={developmentResult ? "Action completed" : "Ready for development"}
-          detail={developmentResult ? `${developmentResult.pathLabel} has been applied.` : "Choose one early development action."}
+          label={copy.development.label}
+          value={developmentResult ? copy.development.completed : copy.development.ready}
+          detail={developmentResult ? copy.development.completedDetail(developmentResult.pathLabel) : copy.development.readyDetail}
           accent
         />
         {developmentResult && (
           <SummaryItem
-            label="Pre-production status"
-            value={preProductionResult ? "Production locked" : "Production office open"}
+            label={copy.preProduction.label}
+            value={preProductionResult ? copy.preProduction.locked : copy.preProduction.open}
             detail={preProductionResult
-              ? `${preProductionResult.crew.projectCrewCount} crew and ${preProductionResult.casting.projectActorCount} actors are attached.`
-              : "Confirm a location, hire key crew and cast at least two actors."}
+              ? copy.preProduction.lockedDetail(preProductionResult.crew.projectCrewCount, preProductionResult.casting.projectActorCount)
+              : copy.preProduction.openDetail}
             accent={Boolean(preProductionResult)}
           />
         )}
         {preProductionResult && (
           <SummaryItem
-            label="Shoot status"
-            value={shootResult ? "Shoot complete" : "Start shoot unlocked"}
+            label={copy.shoot.label}
+            value={shootResult ? copy.shoot.complete : copy.shoot.unlocked}
             detail={shootResult
-              ? `${shootResult.resolvedDays.length} shoot day${shootResult.resolvedDays.length === 1 ? "" : "s"} resolved with ${shootResult.shootEvaluation.averageTakeQuality} average take quality.`
-              : "Choose one production event and resolve each scheduled shoot day."}
+              ? copy.shoot.completedDetail(shootResult.resolvedDays.length, shootResult.shootEvaluation.averageTakeQuality)
+              : copy.shoot.openDetail}
             accent={Boolean(shootResult)}
           />
         )}
         {shootResult && (
-          <SummaryItem label="Post-production status" value={postProductionResult ? "Locked cut complete" : "Edit suite open"} detail={postProductionResult ? `Locked cut quality ${postProductionResult.postProductionEvaluation.lockedCutQuality}. Release is unlocked.` : "Choose edit, sound, music, color and trailer strategies."} accent={Boolean(postProductionResult)} />
+          <SummaryItem
+            label={copy.postProduction.label}
+            value={postProductionResult ? copy.postProduction.complete : copy.postProduction.open}
+            detail={postProductionResult
+              ? copy.postProduction.completedDetail(postProductionResult.postProductionEvaluation.lockedCutQuality)
+              : copy.postProduction.openDetail}
+            accent={Boolean(postProductionResult)}
+          />
         )}
         {postProductionResult && (
-          <SummaryItem label="Release status" value={releaseResult ? "Film released" : "Distribution desk open"} detail={releaseResult ? `Release outcome ${releaseResult.releaseOutcomeEvaluation.overall}/100. ${careerApplicationResult ? "Studio state is updated." : "Studio and career application comes next."}` : "Choose one release strategy and one festival."} accent={Boolean(releaseResult)} />
+          <SummaryItem
+            label={copy.release.label}
+            value={releaseResult ? copy.release.released : copy.release.open}
+            detail={releaseResult
+              ? copy.release.releasedDetail(releaseResult.releaseOutcomeEvaluation.overall, Boolean(careerApplicationResult))
+              : copy.release.openDetail}
+            accent={Boolean(releaseResult)}
+          />
         )}
         {releaseResult && (
-          <SummaryItem label="Career status" value={careerApplicationResult ? "Studio updated" : "Review ready"} detail={careerApplicationResult ? `Year ${careerApplicationResult.careerYearEvaluation.year} evaluated. Next step: start next project.` : "Close the film year to apply the release result."} accent={Boolean(careerApplicationResult)} />
+          <SummaryItem
+            label={copy.career.label}
+            value={careerApplicationResult ? copy.career.updated : copy.career.reviewReady}
+            detail={careerApplicationResult ? copy.career.updatedDetail(careerApplicationResult.careerYearEvaluation.year) : copy.career.readyDetail}
+            accent={Boolean(careerApplicationResult)}
+          />
         )}
       </div>
     </section>
@@ -81,6 +107,7 @@ function SummaryItem({ label, value, detail, accent = false }: {
   );
 }
 
-function formatScale(value: string): string {
-  return value.replace("_", " ");
+function formatScaleLabel(value: string, labels: Readonly<Record<StudioSetupScaleId, string>>): string {
+  const scaleId = STUDIO_SETUP_SCALE_IDS.find((candidate) => candidate === value);
+  return scaleId ? labels[scaleId] : value.replace("_", " ");
 }
