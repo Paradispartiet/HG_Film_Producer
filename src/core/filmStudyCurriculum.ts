@@ -103,14 +103,66 @@ export function createFilmStudyCurriculum(
     }),
   );
 
+  const establishesByFamilyId = new Map<FilmStudyFamilyId, ReadonlySet<string>>();
+  for (const family of normalizedFamilyCurricula) {
+    establishesByFamilyId.set(family.familyId, new Set(family.establishes));
+  }
+
+  const seenPrerequisitePairs = new Set<string>();
   const normalizedPrerequisites: readonly FilmStudyCurriculumPrerequisite[] =
     Object.freeze(
-      input.prerequisites.map((prerequisite) => Object.freeze({
-        prerequisiteFamilyId: prerequisite.prerequisiteFamilyId,
-        dependentFamilyId: prerequisite.dependentFamilyId,
-        requiredOutcomeIds: freezeStrings(prerequisite.requiredOutcomeIds),
-        rationale: prerequisite.rationale,
-      })),
+      input.prerequisites.map((prerequisite) => {
+        if (
+          !isFilmStudyFamilyId(String(prerequisite.prerequisiteFamilyId)) ||
+          !isFilmStudyFamilyId(String(prerequisite.dependentFamilyId))
+        ) {
+          throw new Error(
+            `Unknown Film Study family in curriculum prerequisite: ${String(prerequisite.prerequisiteFamilyId)} -> ${String(prerequisite.dependentFamilyId)}`,
+          );
+        }
+
+        if (prerequisite.prerequisiteFamilyId === prerequisite.dependentFamilyId) {
+          throw new Error(
+            `Self prerequisite is not allowed: ${prerequisite.prerequisiteFamilyId}`,
+          );
+        }
+
+        assertNonEmpty(prerequisite.rationale, "Prerequisite rationale");
+
+        const requiredOutcomeIds = freezeStrings(prerequisite.requiredOutcomeIds);
+        if (requiredOutcomeIds.length === 0) {
+          throw new Error("Curriculum prerequisite requires at least one learning outcome");
+        }
+
+        const establishedOutcomeIds = establishesByFamilyId.get(
+          prerequisite.prerequisiteFamilyId,
+        );
+        for (const outcomeId of requiredOutcomeIds) {
+          if (!outcomeIds.has(outcomeId)) {
+            throw new Error(`Unknown learning outcome: ${outcomeId}`);
+          }
+          if (!establishedOutcomeIds?.has(outcomeId)) {
+            throw new Error(
+              `Prerequisite family ${prerequisite.prerequisiteFamilyId} does not establish required outcome: ${outcomeId}`,
+            );
+          }
+        }
+
+        const pairKey = `${prerequisite.prerequisiteFamilyId}\u0000${prerequisite.dependentFamilyId}`;
+        if (seenPrerequisitePairs.has(pairKey)) {
+          throw new Error(
+            `Duplicate curriculum prerequisite: ${prerequisite.prerequisiteFamilyId} -> ${prerequisite.dependentFamilyId}`,
+          );
+        }
+        seenPrerequisitePairs.add(pairKey);
+
+        return Object.freeze({
+          prerequisiteFamilyId: prerequisite.prerequisiteFamilyId,
+          dependentFamilyId: prerequisite.dependentFamilyId,
+          requiredOutcomeIds,
+          rationale: prerequisite.rationale,
+        });
+      }),
     );
 
   return Object.freeze({
