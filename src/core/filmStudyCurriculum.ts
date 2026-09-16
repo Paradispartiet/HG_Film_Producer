@@ -103,12 +103,15 @@ export function createFilmStudyCurriculum(
     }),
   );
 
-  if (input.prerequisites.length !== 0) {
-    throw new Error("Curriculum prerequisite validation not initialized");
-  }
-
   const normalizedPrerequisites: readonly FilmStudyCurriculumPrerequisite[] =
-    Object.freeze([]);
+    Object.freeze(
+      input.prerequisites.map((prerequisite) => Object.freeze({
+        prerequisiteFamilyId: prerequisite.prerequisiteFamilyId,
+        dependentFamilyId: prerequisite.dependentFamilyId,
+        requiredOutcomeIds: freezeStrings(prerequisite.requiredOutcomeIds),
+        rationale: prerequisite.rationale,
+      })),
+    );
 
   return Object.freeze({
     outcomes: normalizedOutcomes,
