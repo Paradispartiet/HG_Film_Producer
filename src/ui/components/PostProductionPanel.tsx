@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { STUDIO_CAREER_POST_PRODUCTION_COPY } from "../../core/studioCareerPostProductionCopy.js";
 import {
   createPostProductionStepResult,
   getPostProductionOptions,
@@ -8,6 +9,7 @@ import {
 import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
 import type { ProjectRunContext } from "../demo/createProjectRunContext.js";
 import type { ShootStepResult } from "../demo/createShootStepRun.js";
+import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 import type { ProjectPostProductionLabel } from "../types.js";
 import { ColorDecisionPanel } from "./ColorDecisionPanel.js";
 import { EditDecisionPanel } from "./EditDecisionPanel.js";
@@ -28,6 +30,8 @@ interface PostProductionPanelProps {
   readonly id?: string | undefined;
 }
 
+const choiceKeys = ["editDecisionId", "soundDecisionId", "musicDecisionId", "colorDecisionId", "trailerStrategyId"] as const;
+
 export function PostProductionPanel({
   projectContext,
   projectLabel = "first film",
@@ -40,9 +44,17 @@ export function PostProductionPanel({
   id
 }: PostProductionPanelProps) {
   const [message, setMessage] = useState("");
+  const language = useFilmWorkLanguage();
+  const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[language];
   const options = getPostProductionOptions();
   const isLaterFilm = projectLabel !== "first film";
-  const displayLabel = projectLabel === "first film" ? null : projectLabel;
+  const choiceLabels: ReadonlyArray<readonly [keyof PostProductionChoices, string]> = [
+    ["editDecisionId", copy.panel.choiceLabels.edit],
+    ["soundDecisionId", copy.panel.choiceLabels.sound],
+    ["musicDecisionId", copy.panel.choiceLabels.music],
+    ["colorDecisionId", copy.panel.choiceLabels.color],
+    ["trailerStrategyId", copy.panel.choiceLabels.trailer]
+  ];
 
   if (result) {
     return <PostProductionResultPanel projectLabel={projectLabel} result={result} />;
@@ -54,9 +66,9 @@ export function PostProductionPanel({
   }
 
   function lockPostProduction() {
-    const missing = missingChoices(choices);
+    const missing = choiceLabels.filter(([key]) => !choices[key]).map(([, label]) => label);
     if (missing.length > 0) {
-      setMessage(`Choose ${formatList(missing)} before locking post-production.`);
+      setMessage(copy.panel.missingChoices(missing));
       return;
     }
 
@@ -68,10 +80,10 @@ export function PostProductionPanel({
     <section className={`panel post-production-panel${isLaterFilm ? " post-production-panel--later-project" : ""}`} id={id}>
       <div className="post-panel-heading">
         <div>
-          <span className="eyebrow">{displayLabel ? `Start post-production for ${displayLabel}` : "Start post-production"}</span>
-          <h2>{displayLabel ? `Finish ${projectContext.project.title}` : "Edit suite & finishing desk"}</h2>
+          <span className="eyebrow">{copy.panel.startEyebrow(projectLabel)}</span>
+          <h2>{copy.panel.heading(projectLabel, projectContext.project.title)}</h2>
         </div>
-        <p>Shape the locked cut, test it with an audience, and define the trailer promise.</p>
+        <p>{copy.panel.description}</p>
       </div>
       <EditDecisionPanel onSelect={(id) => select("editDecisionId", id)} options={options.editDecisions} selectedId={choices.editDecisionId} />
       <SoundDecisionPanel onSelect={(id) => select("soundDecisionId", id)} options={options.soundDecisions} selectedId={choices.soundDecisionId} />
@@ -81,37 +93,16 @@ export function PostProductionPanel({
       <div className="post-production-actions">
         <div>
           <span className={message ? "inline-message inline-message--error" : "inline-message"} role="status">
-            {message || `${selectedCount(choices)}/5 finishing choices selected`}
+            {message || copy.panel.selectedCount(selectedCount(choices))}
           </span>
-          <small>Locking runs the test screening, trailer cut and post-production evaluation.</small>
+          <small>{copy.panel.lockHint}</small>
         </div>
-        <button className="primary-button" onClick={lockPostProduction} type="button">
-          {displayLabel ? `Lock post-production for ${displayLabel}` : "Lock post-production"}
-        </button>
+        <button className="primary-button" onClick={lockPostProduction} type="button">{copy.panel.lockButton(projectLabel)}</button>
       </div>
     </section>
   );
 }
 
-const choiceLabels: ReadonlyArray<readonly [keyof PostProductionChoices, string]> = [
-  ["editDecisionId", "an edit decision"],
-  ["soundDecisionId", "a sound decision"],
-  ["musicDecisionId", "a music decision"],
-  ["colorDecisionId", "a color decision"],
-  ["trailerStrategyId", "a trailer strategy"]
-];
-
-function missingChoices(choices: PostProductionChoices): readonly string[] {
-  return choiceLabels
-    .filter(([key]) => !choices[key])
-    .map(([, label]) => label);
-}
-
-function formatList(items: readonly string[]): string {
-  if (items.length <= 1) return items[0] ?? "all five finishing choices";
-  return `${items.slice(0, -1).join(", ")}, and ${items.at(-1)}`;
-}
-
 function selectedCount(choices: PostProductionChoices): number {
-  return choiceLabels.filter(([key]) => Boolean(choices[key])).length;
+  return choiceKeys.filter((key) => Boolean(choices[key])).length;
 }
