@@ -1,12 +1,18 @@
 import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 
 import {
+  FILMWORK_PLATFORM_COPY,
+  FILMWORK_PLATFORM_GATEWAY_IDS,
+  FILMWORK_PLATFORM_NAV_IDS,
+} from "../../core/filmWorkPlatformCopy";
+import {
   createFilmSlug,
   type FilmverketRoute,
   type FilmverketSection,
 } from "../../core/filmverketRoutes";
 import { getClassicFilmScenarios, type FilmScenarioSeed } from "../data/filmScenarios";
 import { resolveScenarioProductionBrief, type ScenarioProductionBrief } from "../data/scenarioProductionBriefs";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 type CraftCollectionKey = "screenplayTargets" | "cinematographyTargets" | "editingTargets" | "soundTargets";
 
@@ -81,6 +87,8 @@ export function RoutedFilmverketPlatform({
   route,
 }: RoutedFilmverketPlatformProps) {
   const scenarios = useMemo(() => getClassicFilmScenarios(), []);
+  const [language] = useFilmWorkLanguage();
+  const copy = FILMWORK_PLATFORM_COPY[language];
   const [directorLensId, setDirectorLensId] = useState<CraftLens["id"]>("cinematography");
   const requestedFilmSlug = getRouteFilmSlug(route);
   const requestedScenario = requestedFilmSlug
@@ -105,8 +113,8 @@ export function RoutedFilmverketPlatform({
   if (!selectedScenario) {
     return (
       <main className="filmverket-empty">
-        <span className="filmverket-kicker">FilmWork</span>
-        <h1>No films are available yet.</h1>
+        <span className="filmverket-kicker">{copy.suiteName}</span>
+        <h1>{copy.noFilmsAvailable}</h1>
       </main>
     );
   }
@@ -146,8 +154,8 @@ export function RoutedFilmverketPlatform({
         </>
       )}
       <footer className="filmverket-footer">
-        <span>FilmWork</span>
-        <span>Film Producer · Film Atlas · Director Lab · Film School · Film History · Research Control</span>
+        <span>{copy.suiteName}</span>
+        <span>{copy.footerDetail}</span>
       </footer>
     </div>
   );
@@ -157,23 +165,17 @@ function PlatformHeader({ activeSection, onNavigate }: {
   readonly activeSection: FilmverketSection;
   readonly onNavigate: (section: FilmverketSection) => void;
 }) {
-  const items: readonly { readonly id: FilmverketSection; readonly label: string }[] = [
-    { id: "home", label: "Front page" },
-    { id: "producer", label: "Film Producer" },
-    { id: "atlas", label: "Film Atlas" },
-    { id: "director", label: "Film Director" },
-    { id: "school", label: "Film School" },
-    { id: "history", label: "Film History" },
-    { id: "research", label: "Research" },
-  ];
+  const [language] = useFilmWorkLanguage();
+  const copy = FILMWORK_PLATFORM_COPY[language];
+  const items = FILMWORK_PLATFORM_NAV_IDS.map((id) => ({ id, label: copy.navLabels[id] }));
 
   return (
     <header className="filmverket-header">
       <button className="filmverket-brand" onClick={() => onNavigate("home")} type="button">
         <span>FW</span>
-        <strong>FilmWork</strong>
+        <strong>{copy.suiteName}</strong>
       </button>
-      <nav aria-label="FilmWork sections">
+      <nav aria-label={copy.navAria}>
         {items.map((item) => (
           <button
             className={activeSection === item.id ? "filmverket-nav-button filmverket-nav-button--active" : "filmverket-nav-button"}
@@ -193,40 +195,32 @@ function PlatformHome({ onNavigate, scenarios }: {
   readonly onNavigate: (section: FilmverketSection) => void;
   readonly scenarios: readonly FilmScenarioSeed[];
 }) {
+  const [language] = useFilmWorkLanguage();
+  const copy = FILMWORK_PLATFORM_COPY[language].home;
   const years = scenarios.map((scenario) => scenario.film.year).filter((year) => year > 0);
   const firstYear = years.length > 0 ? Math.min(...years) : 1895;
   const lastYear = years.length > 0 ? Math.max(...years) : new Date().getFullYear();
   const craftCount = countCraftStatements(scenarios);
-  const gateways: readonly {
-    readonly id: FilmverketSection;
-    readonly eyebrow: string;
-    readonly title: string;
-    readonly description: string;
-    readonly action: string;
-    readonly status: string;
-  }[] = [
-    { id: "producer", eyebrow: "The game", title: "Film Producer", description: "Run productions, make pressured choices, complete Production Cases, and build an experimental studio career.", action: "Enter the studio", status: "Playable" },
-    { id: "atlas", eyebrow: "The knowledge platform", title: "Film Atlas", description: "Open a film and examine its screenplay, image, editing, sound, tone, learning goals, and historical position.", action: "Explore films", status: `${scenarios.length} films` },
-    { id: "director", eyebrow: "Analysis into practice", title: "Film Director", description: "Study one film through a chosen craft lens and turn its construction principles into a director's brief.", action: "Open the lab", status: "Working foundation" },
-    { id: "school", eyebrow: "Structured learning", title: "Film School", description: "Follow film-science learning paths built from the same techniques and works used by the game and atlas.", action: "Browse courses", status: "6 core courses" },
-    { id: "history", eyebrow: "Cinema through time", title: "Film History", description: "Browse the catalogue chronologically and move from periods and decades into individual film construction.", action: "Open the timeline", status: `${firstYear}–${lastYear}` },
-    { id: "research", eyebrow: "Editorial control", title: "Research Control", description: "Separate verified film knowledge from provisional seeds and prioritize the next research work.", action: "Open control room", status: "Live queue" },
-  ];
+  const gatewayStats = { filmCount: scenarios.length, firstYear, lastYear };
+  const gateways = FILMWORK_PLATFORM_GATEWAY_IDS.map((id) => {
+    const gateway = copy.gateways[id];
+    return { ...gateway, id, status: gateway.status(gatewayStats) };
+  });
 
   return (
     <main className="filmverket-home">
       <section className="filmverket-hero">
         <div className="filmverket-hero-mark" aria-hidden="true"><span>FW</span></div>
-        <span className="filmverket-kicker">A film game and film-science platform</span>
-        <h1>Film<em>Work</em></h1>
-        <p>Make film. Understand film.</p>
-        <div className="filmverket-hero-stats" aria-label="Platform content summary">
-          <span><strong>{scenarios.length}</strong> films</span>
-          <span><strong>{craftCount}</strong> craft statements</span>
-          <span><strong>6</strong> connected entrances</span>
+        <span className="filmverket-kicker">{copy.kicker}</span>
+        <h1>{copy.titlePrefix}<em>{copy.titleEmphasis}</em></h1>
+        <p>{copy.tagline}</p>
+        <div className="filmverket-hero-stats" aria-label={copy.summaryAria}>
+          <span><strong>{scenarios.length}</strong> {metricSuffix(copy.films(scenarios.length), scenarios.length)}</span>
+          <span><strong>{craftCount}</strong> {metricSuffix(copy.craftStatements(craftCount), craftCount)}</span>
+          <span><strong>6</strong> {metricSuffix(copy.connectedEntrances(6), 6)}</span>
         </div>
       </section>
-      <section className="filmverket-gateway-grid" aria-label="FilmWork entrances">
+      <section className="filmverket-gateway-grid" aria-label={copy.entrancesAria}>
         {gateways.map((gateway, index) => (
           <button className={index === 0 ? "filmverket-gateway filmverket-gateway--primary" : "filmverket-gateway"} key={gateway.id} onClick={() => onNavigate(gateway.id)} type="button">
             <span className="filmverket-gateway-number">{String(index + 1).padStart(2, "0")}</span>
@@ -240,22 +234,24 @@ function PlatformHome({ onNavigate, scenarios }: {
 }
 
 function ProducerGateway({ hasSave, onContinue, onProductionCases, onStart }: Omit<RoutedFilmverketPlatformProps, "navigate" | "route">) {
+  const [language] = useFilmWorkLanguage();
+  const copy = FILMWORK_PLATFORM_COPY[language].producer;
   return (
     <main className="filmverket-page filmverket-producer-page">
       <section className="filmverket-page-hero filmverket-page-hero--producer">
-        <div><span className="filmverket-kicker">The playable production game</span><h1>Film <em>Producer</em></h1><p>Make the project possible. Choose what the film becomes, assemble the production, survive the shoot, shape post-production, and face the release.</p></div>
-        <aside><span>Why “Producer”?</span><p>The game follows the whole film project—not only the artistic decisions made on set. Directing is a focused craft layer inside the wider production system.</p></aside>
+        <div><span className="filmverket-kicker">{copy.heroKicker}</span><h1>Film <em>Producer</em></h1><p>{copy.intro}</p></div>
+        <aside><span>{copy.whyTitle}</span><p>{copy.whyBody}</p></aside>
       </section>
       <section className="producer-mode-grid">
         <article className="producer-mode-card producer-mode-card--recommended">
-          <span className="filmverket-card-kicker">Recommended first</span><h2>Production Cases</h2><p>Reconstruct the production logic of known films through screenplay, cinematography, editing, sound, and reflection missions.</p>
-          <ul><li>Stable MVP path</li><li>Film-history examples</li><li>Case report and learning recap</li></ul>
-          <button className="filmverket-primary-action" onClick={onProductionCases} type="button">Start Production Cases <span>→</span></button>
+          <span className="filmverket-card-kicker">{copy.productionCases.kicker}</span><h2>{copy.productionCases.title}</h2><p>{copy.productionCases.description}</p>
+          <ul>{copy.productionCases.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
+          <button className="filmverket-primary-action" onClick={onProductionCases} type="button">{copy.productionCases.action} <span>→</span></button>
         </article>
         <article className="producer-mode-card">
-          <span className="filmverket-card-kicker">Experimental branch</span><h2>Studio Career</h2><p>Create projects and carry a studio through development, pre-production, shooting, post-production, release, and career consequences.</p>
-          <ul><li>Persistent studio state</li><li>Multi-film pipeline</li><li>Broader simulator foundation</li></ul>
-          <div className="producer-mode-actions">{hasSave && <button className="filmverket-primary-action" onClick={onContinue} type="button">Continue career <span>→</span></button>}<button className="filmverket-secondary-action" onClick={onStart} type="button">Start new career</button></div>
+          <span className="filmverket-card-kicker">{copy.studioCareer.kicker}</span><h2>{copy.studioCareer.title}</h2><p>{copy.studioCareer.description}</p>
+          <ul>{copy.studioCareer.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
+          <div className="producer-mode-actions">{hasSave && <button className="filmverket-primary-action" onClick={onContinue} type="button">{copy.studioCareer.continueAction} <span>→</span></button>}<button className="filmverket-secondary-action" onClick={onStart} type="button">{copy.studioCareer.startAction}</button></div>
         </article>
       </section>
     </main>
@@ -420,6 +416,10 @@ function createDocumentTitle(section: FilmverketSection, scenario?: FilmScenario
   if (section === "director" && scenario) return `${scenario.film.title} · Director Lab · FilmWork`;
   const labels: Record<FilmverketSection, string> = { home: "FilmWork", producer: "Film Producer · FilmWork", atlas: "Film Atlas · FilmWork", director: "Director Lab · FilmWork", school: "Film School · FilmWork", history: "Film History · FilmWork", research: "Research Control · FilmWork" };
   return labels[section];
+}
+
+function metricSuffix(label: string, count: number) {
+  return label.replace(String(count), "").trim();
 }
 
 function countCraftStatements(scenarios: readonly FilmScenarioSeed[]) {
