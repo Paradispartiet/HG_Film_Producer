@@ -17,19 +17,22 @@ export function GenreSelector({ genres, value, error, onChange }: GenreSelectorP
     <fieldset className="setup-fieldset">
       <legend>{copy.legend}</legend>
       <div className="choice-grid choice-grid--genre">
-        {genres.map((genre) => (
-          <label className={value === genre.id ? "choice-card choice-card--selected" : "choice-card"} key={genre.id}>
-            <input
-              checked={value === genre.id}
-              name="genre"
-              onChange={() => onChange(genre.id)}
-              type="radio"
-              value={genre.id}
-            />
-            <strong>{genre.name}</strong>
-            <span>{genre.summary}</span>
-          </label>
-        ))}
+        {genres.map((genre) => {
+          const presentation = copy.presentation(genre);
+          return (
+            <label className={value === genre.id ? "choice-card choice-card--selected" : "choice-card"} key={genre.id}>
+              <input
+                checked={value === genre.id}
+                name="genre"
+                onChange={() => onChange(genre.id)}
+                type="radio"
+                value={genre.id}
+              />
+              <strong>{presentation.name}</strong>
+              <span>{presentation.summary}</span>
+            </label>
+          );
+        })}
       </div>
       {error && <span className="field-error">{error}</span>}
     </fieldset>

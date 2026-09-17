@@ -188,3 +188,111 @@ test("build_reputation presentation keeps the two canonical goal identities dist
     assert.notDeepEqual(present(localOslo), present(technicalCraft), language);
   }
 });
+
+type GenrePresentationInput = {
+  readonly id: string;
+  readonly name: string;
+  readonly summary: string;
+};
+
+type GenrePresentation = {
+  readonly name: string;
+  readonly summary: string;
+};
+
+type GenreCopyWithPresentation = {
+  readonly presentation?: (genre: GenrePresentationInput) => GenrePresentation;
+};
+
+const representativeGenres = [
+  {
+    id: "genre_drama",
+    name: "Drama",
+    summary: "Character and conflict driven stories about people under pressure.",
+  },
+  {
+    id: "genre_thriller",
+    name: "Thriller",
+    summary: "Tension, stakes and suspense that keep the audience leaning forward.",
+  },
+  {
+    id: "genre_comedy",
+    name: "Comedy",
+    summary: "Timing, tone and character chemistry built around laughter.",
+  },
+  {
+    id: "genre_horror",
+    name: "Horror",
+    summary: "Dread and shock built from anticipation and sound.",
+  },
+  {
+    id: "genre_documentary",
+    name: "Documentary",
+    summary: "Real subjects and events shaped into a story.",
+  },
+  {
+    id: "genre_action",
+    name: "Action",
+    summary: "Movement, set pieces and physical stakes at scale.",
+  },
+  {
+    id: "genre_romance",
+    name: "Romance",
+    summary: "Relationships, longing and chemistry between leads.",
+  },
+  {
+    id: "genre_science_fiction",
+    name: "Science fiction",
+    summary: "Speculative worlds that use the future to examine the present.",
+  },
+  {
+    id: "genre_period_drama",
+    name: "Period drama",
+    summary: "Stories set in a recreated past where design and place matter.",
+  },
+  {
+    id: "genre_social_realism",
+    name: "Social realism",
+    summary: "Grounded stories about ordinary lives and social conditions.",
+  },
+] as const satisfies readonly GenrePresentationInput[];
+
+function genrePresentation(language: (typeof FILMWORK_LANGUAGES)[number]) {
+  return (STUDIO_SETUP_COPY[language].genre as unknown as GenreCopyWithPresentation).presentation;
+}
+
+test("Studio genres expose localized presentation for every canonical genre id", () => {
+  for (const language of FILMWORK_LANGUAGES) {
+    const present = genrePresentation(language);
+    assert.equal(typeof present, "function", `${language} genre presentation formatter`);
+    assert.ok(present);
+
+    for (const genre of representativeGenres) {
+      const presentation = present(genre);
+      assert.ok(presentation.name.trim(), `${language} ${genre.id} name`);
+      assert.ok(presentation.summary.trim(), `${language} ${genre.id} summary`);
+    }
+  }
+});
+
+test("English genre presentation preserves canonical genre wording", () => {
+  const present = genrePresentation("en");
+  assert.ok(present);
+
+  for (const genre of representativeGenres) {
+    assert.deepEqual(present(genre), { name: genre.name, summary: genre.summary }, genre.id);
+  }
+});
+
+test("Studio genre presentation localizes visible genre content", () => {
+  const nb = genrePresentation("nb");
+  const fr = genrePresentation("fr");
+  const pt = genrePresentation("pt");
+  assert.ok(nb);
+  assert.ok(fr);
+  assert.ok(pt);
+
+  assert.equal(nb(representativeGenres[1]).name, "Thriller");
+  assert.equal(fr(representativeGenres[7]).name, "Science-fiction");
+  assert.equal(pt(representativeGenres[9]).name, "Realismo social");
+});

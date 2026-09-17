@@ -1,4 +1,5 @@
 import type { StrategicGoalType } from "../domain/career.js";
+import type { Genre } from "../domain/knowledge.js";
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 
 export const STUDIO_SETUP_PRESET_IDS = ["micro_studio", "indie_studio", "prestige_startup"] as const;
@@ -21,6 +22,10 @@ type StrategicGoalPresentation = {
 
 type StrategicGoalPresentationByType = Readonly<Record<StrategicGoalType, StrategicGoalPresentation>>;
 type StrategicGoalPresentationById = Readonly<Partial<Record<string, StrategicGoalPresentation>>>;
+
+type GenrePresentationInput = Pick<Genre, "id" | "name" | "summary">;
+type GenrePresentation = Pick<Genre, "name" | "summary">;
+type GenrePresentationById = Readonly<Record<string, GenrePresentation>>;
 
 type StudioSetupCopy = {
   readonly panel: {
@@ -70,6 +75,7 @@ type StudioSetupCopy = {
   };
   readonly genre: {
     readonly legend: string;
+    readonly presentation: (genre: GenrePresentationInput) => GenrePresentation;
   };
   readonly scriptTemplate: {
     readonly legend: string;
@@ -239,6 +245,45 @@ const PT_STRATEGIC_GOAL_OVERRIDES = {
   },
 } as const satisfies StrategicGoalPresentationById;
 
+const NB_GENRES = {
+  genre_drama: { name: "Drama", summary: "Karakter- og konfliktdrevne historier om mennesker under press." },
+  genre_thriller: { name: "Thriller", summary: "Spenning, innsats og suspense som holder publikum på tå hev." },
+  genre_comedy: { name: "Komedie", summary: "Timing, tone og karakterkjemi bygget rundt latter." },
+  genre_horror: { name: "Skrekk", summary: "Uro og sjokk bygget opp gjennom forventning og lyd." },
+  genre_documentary: { name: "Dokumentar", summary: "Virkelige mennesker og hendelser formet til en historie." },
+  genre_action: { name: "Action", summary: "Bevegelse, store sekvenser og fysiske innsatser i stor skala." },
+  genre_romance: { name: "Romantikk", summary: "Relasjoner, lengsel og kjemi mellom hovedrollene." },
+  genre_science_fiction: { name: "Science fiction", summary: "Spekulative verdener som bruker fremtiden til å undersøke samtiden." },
+  genre_period_drama: { name: "Historisk drama", summary: "Historier lagt til en gjenskapt fortid der design og sted betyr mye." },
+  genre_social_realism: { name: "Sosialrealisme", summary: "Jordnære historier om vanlige liv og sosiale forhold." },
+} as const satisfies GenrePresentationById;
+
+const FR_GENRES = {
+  genre_drama: { name: "Drame", summary: "Des récits guidés par les personnages et les conflits, mettant en scène des personnes sous pression." },
+  genre_thriller: { name: "Thriller", summary: "Tension, enjeux et suspense qui maintiennent le public en haleine." },
+  genre_comedy: { name: "Comédie", summary: "Rythme, ton et alchimie entre les personnages au service du rire." },
+  genre_horror: { name: "Horreur", summary: "Angoisse et choc construits par l’anticipation et le son." },
+  genre_documentary: { name: "Documentaire", summary: "Des sujets et événements réels façonnés en récit." },
+  genre_action: { name: "Action", summary: "Mouvement, scènes spectaculaires et enjeux physiques à grande échelle." },
+  genre_romance: { name: "Romance", summary: "Relations, désir et alchimie entre les rôles principaux." },
+  genre_science_fiction: { name: "Science-fiction", summary: "Des mondes spéculatifs qui utilisent le futur pour interroger le présent." },
+  genre_period_drama: { name: "Drame historique", summary: "Des récits situés dans un passé recréé où les décors et les lieux comptent." },
+  genre_social_realism: { name: "Réalisme social", summary: "Des récits ancrés dans le quotidien, sur des vies ordinaires et les conditions sociales." },
+} as const satisfies GenrePresentationById;
+
+const PT_GENRES = {
+  genre_drama: { name: "Drama", summary: "Histórias movidas por personagens e conflitos sobre pessoas sob pressão." },
+  genre_thriller: { name: "Suspense", summary: "Tensão, riscos e suspense que mantêm o público atento." },
+  genre_comedy: { name: "Comédia", summary: "Ritmo, tom e química entre personagens construídos em torno do humor." },
+  genre_horror: { name: "Terror", summary: "Medo e choque construídos pela antecipação e pelo som." },
+  genre_documentary: { name: "Documentário", summary: "Pessoas e acontecimentos reais moldados numa história." },
+  genre_action: { name: "Ação", summary: "Movimento, grandes sequências e riscos físicos em escala." },
+  genre_romance: { name: "Romance", summary: "Relações, desejo e química entre os protagonistas." },
+  genre_science_fiction: { name: "Ficção científica", summary: "Mundos especulativos que usam o futuro para examinar o presente." },
+  genre_period_drama: { name: "Drama de época", summary: "Histórias situadas num passado recriado, onde o design e o lugar importam." },
+  genre_social_realism: { name: "Realismo social", summary: "Histórias realistas sobre vidas comuns e condições sociais." },
+} as const satisfies GenrePresentationById;
+
 function preserveCanonicalGoalPresentation(goal: StrategicGoalPresentationInput): StrategicGoalPresentation {
   return { title: goal.title, description: goal.description };
 }
@@ -248,6 +293,14 @@ function localizeGoalPresentation(
   byId: StrategicGoalPresentationById,
 ): (goal: StrategicGoalPresentationInput) => StrategicGoalPresentation {
   return (goal) => byId[goal.id] ?? byType[goal.type];
+}
+
+function preserveCanonicalGenrePresentation(genre: GenrePresentationInput): GenrePresentation {
+  return { name: genre.name, summary: genre.summary };
+}
+
+function localizeGenrePresentation(byId: GenrePresentationById): (genre: GenrePresentationInput) => GenrePresentation {
+  return (genre) => byId[genre.id] ?? preserveCanonicalGenrePresentation(genre);
 }
 
 export const STUDIO_SETUP_COPY = {
@@ -301,7 +354,7 @@ export const STUDIO_SETUP_COPY = {
       productionScale: "Production scale",
       scales: { micro: "Micro", indie: "Indie", mid_budget: "Mid budget", studio: "Studio", prestige: "Prestige" },
     },
-    genre: { legend: "Genre" },
+    genre: { legend: "Genre", presentation: preserveCanonicalGenrePresentation },
     scriptTemplate: {
       legend: "Script template",
       noDedicatedTemplate: "No dedicated template exists for this genre yet. Choose any available structure.",
@@ -357,7 +410,7 @@ export const STUDIO_SETUP_COPY = {
       productionScale: "Produksjonsskala",
       scales: { micro: "Mikro", indie: "Indie", mid_budget: "Mellombudsjett", studio: "Studio", prestige: "Prestisje" },
     },
-    genre: { legend: "Sjanger" },
+    genre: { legend: "Sjanger", presentation: localizeGenrePresentation(NB_GENRES) },
     scriptTemplate: {
       legend: "Manusmal",
       noDedicatedTemplate: "Det finnes ingen egen mal for denne sjangeren ennå. Velg en av de tilgjengelige strukturene.",
@@ -413,7 +466,7 @@ export const STUDIO_SETUP_COPY = {
       productionScale: "Échelle de production",
       scales: { micro: "Micro", indie: "Indépendant", mid_budget: "Budget moyen", studio: "Studio", prestige: "Prestige" },
     },
-    genre: { legend: "Genre" },
+    genre: { legend: "Genre", presentation: localizeGenrePresentation(FR_GENRES) },
     scriptTemplate: {
       legend: "Modèle de scénario",
       noDedicatedTemplate: "Il n’existe pas encore de modèle dédié à ce genre. Choisissez une structure disponible.",
@@ -469,7 +522,7 @@ export const STUDIO_SETUP_COPY = {
       productionScale: "Escala de produção",
       scales: { micro: "Micro", indie: "Independente", mid_budget: "Orçamento médio", studio: "Estúdio", prestige: "Prestígio" },
     },
-    genre: { legend: "Género" },
+    genre: { legend: "Género", presentation: localizeGenrePresentation(PT_GENRES) },
     scriptTemplate: {
       legend: "Modelo de argumento",
       noDedicatedTemplate: "Ainda não existe um modelo dedicado para este género. Escolha qualquer estrutura disponível.",
