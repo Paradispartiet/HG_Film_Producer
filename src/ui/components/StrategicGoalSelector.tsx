@@ -46,6 +46,7 @@ export function StrategicGoalSelector({
         )}
         {goals.map((goal) => {
           const alreadyActive = activeGoalIds.includes(goal.id);
+          const presentation = copy.presentation(goal);
           return (
             <label
               className={value === goal.id ? "choice-card choice-card--selected" : "choice-card"}
@@ -58,8 +59,8 @@ export function StrategicGoalSelector({
                 type="radio"
                 value={goal.id}
               />
-              <strong>{goal.title}</strong>
-              <span>{goal.description}</span>
+              <strong>{presentation.title}</strong>
+              <span>{presentation.description}</span>
               <small>{alreadyActive ? copy.alreadyActive : copy.targetYear(goal.targetYear)}</small>
             </label>
           );

@@ -1,3 +1,4 @@
+import type { StrategicGoalType } from "../domain/career.js";
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 
 export const STUDIO_SETUP_PRESET_IDS = ["micro_studio", "indie_studio", "prestige_startup"] as const;
@@ -5,6 +6,21 @@ export type StudioSetupPresetId = (typeof STUDIO_SETUP_PRESET_IDS)[number];
 
 export const STUDIO_SETUP_SCALE_IDS = ["micro", "indie", "mid_budget", "studio", "prestige"] as const;
 export type StudioSetupScaleId = (typeof STUDIO_SETUP_SCALE_IDS)[number];
+
+type StrategicGoalPresentationInput = {
+  readonly id: string;
+  readonly type: StrategicGoalType;
+  readonly title: string;
+  readonly description: string;
+};
+
+type StrategicGoalPresentation = {
+  readonly title: string;
+  readonly description: string;
+};
+
+type StrategicGoalPresentationByType = Readonly<Record<StrategicGoalType, StrategicGoalPresentation>>;
+type StrategicGoalPresentationById = Readonly<Partial<Record<string, StrategicGoalPresentation>>>;
 
 type StudioSetupCopy = {
   readonly panel: {
@@ -42,6 +58,7 @@ type StudioSetupCopy = {
     readonly alreadyActive: string;
     readonly targetYear: (year: number) => string;
     readonly updateHint: string;
+    readonly presentation: (goal: StrategicGoalPresentationInput) => StrategicGoalPresentation;
   };
   readonly project: {
     readonly heading: string;
@@ -59,6 +76,179 @@ type StudioSetupCopy = {
     readonly noDedicatedTemplate: string;
   };
 };
+
+const NB_STRATEGIC_GOALS = {
+  survive_year: {
+    title: "Overlev det første året",
+    description: "Hold studioet solvent gjennom fire kvartaler og fullfør én film.",
+  },
+  make_profit: {
+    title: "Gå med overskudd",
+    description: "Fullfør en film med positiv nettoinntekt.",
+  },
+  build_reputation: {
+    title: "Bygg studioets omdømme",
+    description: "Styrk studioets omdømme gjennom en tydelig og gjenkjennelig filmrekke.",
+  },
+  launch_debut: {
+    title: "Få en lønnsom debut",
+    description: "Lanser studioets første film med positiv nettoinntekt.",
+  },
+  specialize_genre: {
+    title: "Bli kjent for thrillere",
+    description: "Fullfør en sammenhengende rekke spenningsdrevne sjangerfilmer.",
+  },
+  build_prestige: {
+    title: "Bygg et arthouse-omdømme",
+    description: "Utvikle kritisk særpregede filmer og sterke festivalrelasjoner.",
+  },
+  win_award: {
+    title: "Vinn en festivalpris",
+    description: "Før én film fra festivalutvelgelse til en konkurransepris.",
+  },
+  grow_audience: {
+    title: "Bygg et kommersielt publikum",
+    description: "Skap gjentakbar publikumstiltrekning på tvers av studioets filmrekke.",
+  },
+  discover_talent: {
+    title: "Oppdag nye talenter",
+    description: "Løft fram nye skuespillere eller fagfolk gjennom reelt kreativt ansvar.",
+  },
+  international_breakthrough: {
+    title: "Sikre en internasjonal samproduksjon",
+    description: "Bygg nok posisjon til å pakke en film med utenlandske kreative og finansielle partnere.",
+  },
+} as const satisfies StrategicGoalPresentationByType;
+
+const NB_STRATEGIC_GOAL_OVERRIDES = {
+  strategic_goal_local_oslo_studio: {
+    title: "Bli et lokalt Oslo-studio",
+    description: "Bygg en gjenkjennelig lokal stemme gjennom Oslo-fortellinger, team og opptakssteder.",
+  },
+  strategic_goal_improve_technical_craft: {
+    title: "Forbedre det tekniske håndverket",
+    description: "Hev produksjonskvaliteten gjennom opplæring, utstyr og sterke avdelingsledere.",
+  },
+} as const satisfies StrategicGoalPresentationById;
+
+const FR_STRATEGIC_GOALS = {
+  survive_year: {
+    title: "Survivre à la première année",
+    description: "Maintenez le studio solvable pendant quatre trimestres et terminez un film.",
+  },
+  make_profit: {
+    title: "Dégager un bénéfice",
+    description: "Terminez un film avec un résultat net positif.",
+  },
+  build_reputation: {
+    title: "Bâtir la réputation du studio",
+    description: "Renforcez la réputation du studio grâce à une série de films claire et reconnaissable.",
+  },
+  launch_debut: {
+    title: "Réussir des débuts rentables",
+    description: "Sortez le premier film du studio avec un résultat net positif.",
+  },
+  specialize_genre: {
+    title: "Devenir une référence du thriller",
+    description: "Réalisez une série cohérente de films de genre fondés sur le suspense.",
+  },
+  build_prestige: {
+    title: "Bâtir une réputation art et essai",
+    description: "Développez des films singuliers reconnus par la critique et des relations avec les festivals.",
+  },
+  win_award: {
+    title: "Remporter un prix en festival",
+    description: "Accompagnez un film de sa sélection en festival jusqu’à une récompense en compétition.",
+  },
+  grow_audience: {
+    title: "Développer un public commercial",
+    description: "Créez un attrait durable pour le public sur l’ensemble de la programmation du studio.",
+  },
+  discover_talent: {
+    title: "Découvrir de nouveaux talents",
+    description: "Lancez des acteurs ou techniciens émergents en leur confiant de vraies responsabilités créatives.",
+  },
+  international_breakthrough: {
+    title: "Obtenir une coproduction internationale",
+    description: "Acquérez assez de stature pour monter un film avec des partenaires créatifs et financiers étrangers.",
+  },
+} as const satisfies StrategicGoalPresentationByType;
+
+const FR_STRATEGIC_GOAL_OVERRIDES = {
+  strategic_goal_local_oslo_studio: {
+    title: "Devenir un studio local d’Oslo",
+    description: "Construisez une voix locale reconnaissable à travers les récits, équipes et lieux d’Oslo.",
+  },
+  strategic_goal_improve_technical_craft: {
+    title: "Améliorer le savoir-faire technique",
+    description: "Élevez la qualité de production grâce à la formation, au matériel et à de solides chefs de département.",
+  },
+} as const satisfies StrategicGoalPresentationById;
+
+const PT_STRATEGIC_GOALS = {
+  survive_year: {
+    title: "Sobreviver ao primeiro ano",
+    description: "Mantenha o estúdio solvente durante quatro trimestres e conclua um filme.",
+  },
+  make_profit: {
+    title: "Gerar lucro",
+    description: "Conclua um filme com receita líquida positiva.",
+  },
+  build_reputation: {
+    title: "Construir a reputação do estúdio",
+    description: "Reforce a reputação do estúdio através de uma linha de filmes clara e reconhecível.",
+  },
+  launch_debut: {
+    title: "Fazer uma estreia lucrativa",
+    description: "Lance o primeiro filme do estúdio com receita líquida positiva.",
+  },
+  specialize_genre: {
+    title: "Tornar-se conhecido por thrillers",
+    description: "Conclua uma sequência coerente de filmes de género orientados pelo suspense.",
+  },
+  build_prestige: {
+    title: "Construir reputação de cinema de autor",
+    description: "Desenvolva filmes distintivos para a crítica e relações sólidas com festivais.",
+  },
+  win_award: {
+    title: "Ganhar um prémio de festival",
+    description: "Leve um filme da seleção em festival até uma vitória competitiva.",
+  },
+  grow_audience: {
+    title: "Construir uma audiência comercial",
+    description: "Crie um apelo de público repetível em toda a carteira do estúdio.",
+  },
+  discover_talent: {
+    title: "Descobrir novos talentos",
+    description: "Lance atores ou profissionais emergentes através de responsabilidade criativa relevante.",
+  },
+  international_breakthrough: {
+    title: "Garantir uma coprodução internacional",
+    description: "Construa posição suficiente para estruturar um filme com parceiros criativos e financeiros estrangeiros.",
+  },
+} as const satisfies StrategicGoalPresentationByType;
+
+const PT_STRATEGIC_GOAL_OVERRIDES = {
+  strategic_goal_local_oslo_studio: {
+    title: "Tornar-se um estúdio local de Oslo",
+    description: "Construa uma voz local reconhecível através de histórias, equipas e locais de Oslo.",
+  },
+  strategic_goal_improve_technical_craft: {
+    title: "Aperfeiçoar o ofício técnico",
+    description: "Eleve a qualidade de produção através de formação, equipamento e chefias de departamento fortes.",
+  },
+} as const satisfies StrategicGoalPresentationById;
+
+function preserveCanonicalGoalPresentation(goal: StrategicGoalPresentationInput): StrategicGoalPresentation {
+  return { title: goal.title, description: goal.description };
+}
+
+function localizeGoalPresentation(
+  byType: StrategicGoalPresentationByType,
+  byId: StrategicGoalPresentationById,
+): (goal: StrategicGoalPresentationInput) => StrategicGoalPresentation {
+  return (goal) => byId[goal.id] ?? byType[goal.type];
+}
 
 export const STUDIO_SETUP_COPY = {
   en: {
@@ -101,6 +291,7 @@ export const STUDIO_SETUP_COPY = {
       alreadyActive: "Already active",
       targetYear: (year) => `Target year ${year}`,
       updateHint: "Selecting an active goal leaves the career unchanged; a new goal is added to the current slate.",
+      presentation: preserveCanonicalGoalPresentation,
     },
     project: {
       heading: "Package the first film",
@@ -156,6 +347,7 @@ export const STUDIO_SETUP_COPY = {
       alreadyActive: "Allerede aktivt",
       targetYear: (year) => `Målår ${year}`,
       updateHint: "Velger du et aktivt mål, forblir karrieren uendret; et nytt mål legges til den nåværende planen.",
+      presentation: localizeGoalPresentation(NB_STRATEGIC_GOALS, NB_STRATEGIC_GOAL_OVERRIDES),
     },
     project: {
       heading: "Pakk den første filmen",
@@ -211,6 +403,7 @@ export const STUDIO_SETUP_COPY = {
       alreadyActive: "Déjà actif",
       targetYear: (year) => `Année cible ${year}`,
       updateHint: "Sélectionner un objectif déjà actif ne modifie pas la carrière ; un nouvel objectif s’ajoute à la programmation actuelle.",
+      presentation: localizeGoalPresentation(FR_STRATEGIC_GOALS, FR_STRATEGIC_GOAL_OVERRIDES),
     },
     project: {
       heading: "Monter le premier film",
@@ -266,6 +459,7 @@ export const STUDIO_SETUP_COPY = {
       alreadyActive: "Já ativo",
       targetYear: (year) => `Ano-alvo ${year}`,
       updateHint: "Selecionar um objetivo já ativo mantém a carreira inalterada; um novo objetivo é acrescentado à carteira atual.",
+      presentation: localizeGoalPresentation(PT_STRATEGIC_GOALS, PT_STRATEGIC_GOAL_OVERRIDES),
     },
     project: {
       heading: "Estruturar o primeiro filme",
