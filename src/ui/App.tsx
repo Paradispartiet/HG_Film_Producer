@@ -128,7 +128,7 @@ function FilmProjectWorkspace({ project, isLatest, onOpenProductionCases, onStar
   const actionPanelId = getStudioCareerActivePanelId(project.id);
   const activePanelTarget = getStudioCareerActivePhase(project);
   function scrollToActivePanel() { document.getElementById(actionPanelId)?.scrollIntoView({ behavior: "smooth", block: "start" }); }
-  const label = `Film ${project.projectNumber}`;
+  const label = workspaceCopy.workspace.projectLabel(project.projectNumber);
   const lowerLabel = (project.projectNumber === 1 ? "first film" : `film ${project.projectNumber}`) as import("./types").ProjectShootLabel;
   const strategicGoal = getStrategicGoal(project.run, previousProject);
   const classicScenario = "classicScenarioId" in project.run && project.run.classicScenarioId ? getFilmScenarioById(project.run.classicScenarioId) : undefined;

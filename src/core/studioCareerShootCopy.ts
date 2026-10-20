@@ -80,8 +80,8 @@ type StudioCareerShootCopy = {
   };
 };
 
-function numberedLabel(label: string): string {
-  return label.replace(/^film\s+/i, "Film ");
+function numberedLabel(label: string, language: FilmWorkLanguage = "en"): string {
+  return label.replace(/^film\s+/i, language === "pt" ? "Filme " : "Film ");
 }
 
 export const STUDIO_CAREER_SHOOT_COPY = {
@@ -311,19 +311,19 @@ export const STUDIO_CAREER_SHOOT_COPY = {
     },
   },
   pt: {
-    projectLabel: (label) => label === "first film" ? "primeiro filme" : numberedLabel(label),
+    projectLabel: (label) => label === "first film" ? "primeiro filme" : numberedLabel(label, "pt"),
     panel: {
-      eyebrow: (label) => label === "first film" ? "Iniciar rodagem" : `Iniciar rodagem de ${numberedLabel(label)}`,
-      heading: (label) => label === "first film" ? "Mesa de produção em rodagem" : `Rodagem de ${numberedLabel(label)}`,
-      intro: (label) => `Percorra cada dia de rodagem planeado, aplique um evento e resolva o resultado de cada dia para ${label === "first film" ? "o primeiro filme" : numberedLabel(label)}.`,
+      eyebrow: (label) => label === "first film" ? "Iniciar rodagem" : `Iniciar rodagem de ${numberedLabel(label, "pt")}`,
+      heading: (label) => label === "first film" ? "Mesa de produção em rodagem" : `Rodagem de ${numberedLabel(label, "pt")}`,
+      intro: (label) => `Percorra cada dia de rodagem planeado, aplique um evento e resolva o resultado de cada dia para ${label === "first film" ? "o primeiro filme" : numberedLabel(label, "pt")}.`,
       eventSelected: "Evento de produção selecionado. Pronto para resolver o dia.",
       selectEvent: "Selecione um evento de produção para continuar.",
-      dayProgress: (day, total, label) => `Dia ${day} de ${total} para ${label === "first film" ? "o primeiro filme" : numberedLabel(label)}.`,
+      dayProgress: (day, total, label) => `Dia ${day} de ${total} para ${label === "first film" ? "o primeiro filme" : numberedLabel(label, "pt")}.`,
       resolveDay: (day) => `Resolver dia ${day}`,
     },
     schedule: {
       eyebrow: "Plano de produção",
-      heading: (label) => label === "first film" ? "Plano de rodagem" : `Plano de rodagem de ${numberedLabel(label)}`,
+      heading: (label) => label === "first film" ? "Plano de rodagem" : `Plano de rodagem de ${numberedLabel(label, "pt")}`,
       dayOf: (day, total) => `Dia ${day} de ${total}`,
       plannedScenes: "Cenas planeadas",
       plannedCost: "Custo planeado",
@@ -337,7 +337,7 @@ export const STUDIO_CAREER_SHOOT_COPY = {
     difficulty: {
       eyebrow: "Pressão da cena",
       heading: "Cartões de dificuldade",
-      intro: (label) => `Cenas iniciais para o primeiro passo jogável de rodagem de ${label === "first film" ? "o primeiro filme" : numberedLabel(label)}.`,
+      intro: (label) => `Cenas iniciais para o primeiro passo jogável de rodagem de ${label === "first film" ? "o primeiro filme" : numberedLabel(label, "pt")}.`,
       score: "Pontuação de dificuldade",
       conflictLoad: "Carga de conflito",
       emotionalLoad: "Carga emocional",
@@ -348,7 +348,7 @@ export const STUDIO_CAREER_SHOOT_COPY = {
     event: {
       eyebrow: "Variável de rodagem",
       heading: "Escolher um evento de produção",
-      intro: (label) => `Aplique um evento determinístico antes de resolver o dia de rodagem de ${label === "first film" ? "o primeiro filme" : numberedLabel(label)}.`,
+      intro: (label) => `Aplique um evento determinístico antes de resolver o dia de rodagem de ${label === "first film" ? "o primeiro filme" : numberedLabel(label, "pt")}.`,
       costImpact: "Impacto no custo",
       delay: "Atraso",
       upside: "Potencial positivo",
@@ -360,7 +360,7 @@ export const STUDIO_CAREER_SHOOT_COPY = {
     },
     dayResult: {
       eyebrow: "Dia resolvido",
-      heading: (label, day) => label === "first film" ? `Resultado do dia ${day}` : `${numberedLabel(label)} · resultado do dia ${day}`,
+      heading: (label, day) => label === "first film" ? `Resultado do dia ${day}` : `${numberedLabel(label, "pt")} · resultado do dia ${day}`,
       takeQuality: (quality) => `Qualidade da tomada ${quality}`,
       completedScenes: "Cenas concluídas",
       delayedScenes: "Cenas atrasadas",
@@ -371,7 +371,7 @@ export const STUDIO_CAREER_SHOOT_COPY = {
     },
     evaluation: {
       eyebrow: "Avaliação da produção",
-      heading: (label) => label === "first film" ? "Relatório da rodagem" : `Relatório da rodagem de ${numberedLabel(label)}`,
+      heading: (label) => label === "first film" ? "Relatório da rodagem" : `Relatório da rodagem de ${numberedLabel(label, "pt")}`,
       overall: (value) => `Geral ${value}`,
       completedDays: "Dias concluídos",
       delayedDays: "Dias atrasados",
@@ -382,7 +382,7 @@ export const STUDIO_CAREER_SHOOT_COPY = {
       productionMorale: "Moral da produção",
       overallLabel: "Geral",
       nextStep: "Próximo passo",
-      nextMessage: (label) => label === "first film" ? "A pós-produção é desbloqueada quando todos os dias de rodagem planeados estiverem resolvidos." : `Próximo passo: pós-produção de ${numberedLabel(label)}`,
+      nextMessage: (label) => label === "first film" ? "A pós-produção é desbloqueada quando todos os dias de rodagem planeados estiverem resolvidos." : `Próximo passo: pós-produção de ${numberedLabel(label, "pt")}`,
     },
   },
 } as const satisfies Record<FilmWorkLanguage, StudioCareerShootCopy>;

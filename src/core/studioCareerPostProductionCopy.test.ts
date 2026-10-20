@@ -24,5 +24,10 @@ test("post-production dynamic copy preserves project and numeric values", () => 
   assert.equal(STUDIO_CAREER_POST_PRODUCTION_COPY.en.panel.selectedCount(3), "3/5 finishing choices selected");
   assert.equal(STUDIO_CAREER_POST_PRODUCTION_COPY.nb.panel.lockButton("film 2"), "Lås postproduksjon for Film 2");
   assert.equal(STUDIO_CAREER_POST_PRODUCTION_COPY.fr.result.totalCost("1 250 $US"), "Coût total de finition 1 250 $US");
-  assert.equal(STUDIO_CAREER_POST_PRODUCTION_COPY.pt.result.nextMessage("film 3"), "Próximo passo: lançar Film 3");
+  assert.equal(STUDIO_CAREER_POST_PRODUCTION_COPY.pt.result.nextMessage("film 3"), "Próximo passo: lançar filme 3");
+});
+
+test("Portuguese later-film post-production presentation does not leak Film", () => {
+  assert.equal(STUDIO_CAREER_POST_PRODUCTION_COPY.pt.panel.lockButton("film 2"), "Fechar pós-produção de filme 2");
+  assert.equal(STUDIO_CAREER_POST_PRODUCTION_COPY.pt.result.nextMessage("film 3"), "Próximo passo: lançar filme 3");
 });

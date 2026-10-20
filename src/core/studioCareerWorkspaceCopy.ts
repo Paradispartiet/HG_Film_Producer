@@ -39,6 +39,7 @@ type StudioCareerWorkspaceCopy = {
   };
   readonly workspace: {
     readonly completeSummary: (filmNumber: number) => string;
+    readonly projectLabel: (filmNumber: number) => string;
   };
 };
 
@@ -67,7 +68,7 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
       continuePhase: (phaseLabel) => `Continue ${phaseLabel}`,
     },
     completed: { completeSuffix: "Complete", showDetails: "Show details", hideDetails: "Hide details" },
-    workspace: { completeSummary: (filmNumber) => `Film ${filmNumber} · Complete summary` },
+    workspace: { completeSummary: (filmNumber) => `Film ${filmNumber} · Complete summary` , projectLabel: (filmNumber) => `Film ${filmNumber}` },
   },
   nb: {
     pipeline: {
@@ -93,7 +94,7 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
       continuePhase: (phaseLabel) => `Fortsett ${phaseLabel}`,
     },
     completed: { completeSuffix: "Fullført", showDetails: "Vis detaljer", hideDetails: "Skjul detaljer" },
-    workspace: { completeSummary: (filmNumber) => `Film ${filmNumber} · Fullført sammendrag` },
+    workspace: { completeSummary: (filmNumber) => `Film ${filmNumber} · Fullført sammendrag` , projectLabel: (filmNumber) => `Film ${filmNumber}` },
   },
   fr: {
     pipeline: {
@@ -119,7 +120,7 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
       continuePhase: (phaseLabel) => `Continuer ${phaseLabel}`,
     },
     completed: { completeSuffix: "Terminé", showDetails: "Afficher les détails", hideDetails: "Masquer les détails" },
-    workspace: { completeSummary: (filmNumber) => `Film ${filmNumber} · Résumé terminé` },
+    workspace: { completeSummary: (filmNumber) => `Film ${filmNumber} · Résumé terminé` , projectLabel: (filmNumber) => `Film ${filmNumber}` },
   },
   pt: {
     pipeline: {
@@ -145,6 +146,6 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
       continuePhase: (phaseLabel) => `Continuar ${phaseLabel}`,
     },
     completed: { completeSuffix: "Concluído", showDetails: "Mostrar detalhes", hideDetails: "Ocultar detalhes" },
-    workspace: { completeSummary: (filmNumber) => `Filme ${filmNumber} · Resumo concluído` },
+    workspace: { completeSummary: (filmNumber) => `Filme ${filmNumber} · Resumo concluído` , projectLabel: (filmNumber) => `Filme ${filmNumber}` },
   },
 } as const satisfies Record<FilmWorkLanguage, StudioCareerWorkspaceCopy>;

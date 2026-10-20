@@ -25,3 +25,10 @@ test("shoot dynamic copy preserves numeric values", () => {
   assert.equal(STUDIO_CAREER_SHOOT_COPY.nb.dayResult.scheduleDelta(2), "2 dager");
   assert.equal(STUDIO_CAREER_SHOOT_COPY.pt.evaluation.overall(87), "Geral 87");
 });
+
+test("Portuguese numbered shoot labels contain filme, not English Film", () => {
+  const pt = STUDIO_CAREER_SHOOT_COPY.pt;
+  assert.equal(pt.projectLabel("film 2"), "Filme 2");
+  assert.equal(pt.panel.heading("film 2"), "Rodagem de Filme 2");
+  assert.equal(pt.schedule.heading("film 3"), "Plano de rodagem de Filme 3");
+});
