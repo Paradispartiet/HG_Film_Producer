@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { build } from "esbuild";
 
 /**
- * Runtime-derived donor inventory for Film Study's three source-verified
+ * Runtime-derived donor inventory for Film Study's four source-verified
  * translation pilots. The quiz selects two *other* films as distractors;
  * do not translate them without verifying their actual canonical donors.
  *
@@ -14,6 +14,7 @@ const targets = [
   "scenario_12_angry_men_1957",
   "scenario_the_machinist_2004",
   "scenario_the_lives_of_others_2006",
+  "scenario_lost_in_translation_2003",
 ];
 
 const result = await build({
@@ -33,21 +34,6 @@ const { createFilmHistoryChoices, getSourceBackedFilmHistoryIds, getSourceBacked
 const sourceIds = getSourceBackedFilmHistoryIds();
 const profiles = sourceIds.map((id) => getSourceBackedFilmHistoryProfile(id));
 assert.ok(profiles.length > 100, "Historical source inventory unexpectedly small");
-
-const nextCaseProfile = getSourceBackedFilmHistoryProfile("scenario_lost_in_translation_2003");
-assert.ok(nextCaseProfile, "Lost in Translation source-backed history missing");
-const nextDonors = createFilmHistoryChoices(nextCaseProfile).map((choice) => {
-  const donor = profiles.find((candidate) => `${candidate.period}: ${candidate.moment}` === choice.label);
-  assert.ok(donor, `No source donor for Lost in Translation ${choice.quality}`);
-  return {
-    quality: choice.quality,
-    donorScenarioId: donor.scenarioId,
-    period: donor.period,
-    moment: donor.moment,
-    canonicalOption: choice.label,
-  };
-});
-console.log("FILM_HISTORY_NEXT_DONOR_DISCOVERY=" + JSON.stringify(nextDonors));
 
 const inventory = targets.map((scenarioId) => {
   const profile = getSourceBackedFilmHistoryProfile(scenarioId);
@@ -117,7 +103,7 @@ for (const item of inventory) {
     checkedDonorChoices += 1;
   }
 }
-assert.equal(checkedDonorChoices, 6);
+assert.equal(checkedDonorChoices, 8);
 console.log("FILM_HISTORY_TRANSLATED_DONOR_CHOICES=" + checkedDonorChoices);
 
 console.log("FILM_HISTORY_DONOR_INVENTORY=" + JSON.stringify(inventory));
