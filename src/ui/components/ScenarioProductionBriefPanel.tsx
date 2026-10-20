@@ -1,4 +1,6 @@
 import { presentFilmCaseContent } from "../../core/productionCaseFilmStatementCopy";
+import { presentFilmStudySourceSupport, presentFilmStudySourceText } from "../../core/filmStudyVerificationPresentation";
+import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { canCompleteProductionCaseMission } from "../../core/canCompleteProductionCaseMission";
 import {
@@ -375,25 +377,25 @@ function ProductionCaseLearningReportBox({
           ) : <p>{copy.flow.noSpecialReview}</p>}
         </div>
       </div>
-      {sourceVerification ? <ProductionCaseSources copy={copy} verification={sourceVerification} /> : null}
+      {sourceVerification ? <ProductionCaseSources copy={copy} language={language} verification={sourceVerification} /> : null}
     </section>
   );
 }
 
-function ProductionCaseSources({ copy, verification }: { readonly copy: ProductionCaseBriefCopy; readonly verification: ProductionCaseVerificationRecord }) {
+function ProductionCaseSources({ copy, language, verification }: { readonly copy: ProductionCaseBriefCopy; readonly language: FilmWorkLanguage; readonly verification: ProductionCaseVerificationRecord }) {
   return (
     <section className="scenario-production-sources" aria-label={copy.flow.sourcesAriaLabel}>
       <div>
         <span className="eyebrow">{copy.flow.sourceBasis}</span>
         <strong>{copy.flow.verifiedAt(verification.verifiedAt)}</strong>
-        <p>{verification.summary}</p>
+        <p>{presentFilmStudySourceText(language, verification.scenarioId, verification.summary)}</p>
       </div>
       <ul>
         {verification.sources.map((source) => (
           <li key={source.url}>
             <a href={source.url} target="_blank" rel="noreferrer">{source.title}</a>
-            <small>{source.publisher} · {source.supports.join(", ")}</small>
-            <p>{source.note}</p>
+            <small>{source.publisher} · {source.supports.map((area) => presentFilmStudySourceSupport(language, area)).join(", ")}</small>
+            <p>{presentFilmStudySourceText(language, verification.scenarioId, source.note)}</p>
           </li>
         ))}
       </ul>
