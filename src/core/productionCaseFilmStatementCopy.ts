@@ -384,6 +384,56 @@ const livesStatements: Readonly<Record<FilmWorkLanguage, Readonly<Record<LivesOf
   },
 };
 
+export const CANONICAL_LOST_IN_TRANSLATION_STATEMENTS = [
+  "Create a quiet city-and-hotel story where two displaced people find temporary intimacy in loneliness.",
+  "Romantic melancholy",
+  "Alienation drama",
+  "Mood-led comedy",
+  "Wry and tender",
+  "Culturally adrift",
+  "Restrainedly intimate",
+  "Favor mood over plot",
+  "Build connection through pauses",
+  "Keep intimacy temporary and open",
+  "Make the hotel emotional space",
+  "Use the city as distance",
+  "Hold faces in quiet moments",
+  "Let scenes breathe",
+  "Use a drifting episodic rhythm",
+  "Cut gently between solitude and connection",
+  "Layer ambient city noise",
+  "Keep rooms quietly charged",
+  "Use music as emotional texture",
+  "Make alienation playable",
+  "Create intimacy through restraint",
+  "Let place carry emotion",
+] as const;
+
+const lostInTranslationPresentation: ReadonlyMap<string, readonly [string, string, string]> = new Map([
+  ["Create a quiet city-and-hotel story where two displaced people find temporary intimacy in loneliness.", ["Skap en stillferdig fortelling fra en by og et hotell, der to mennesker på fremmed sted finner en kortvarig nærhet i ensomheten.", "Créez un récit discret entre ville et hôtel où deux personnes dépaysées trouvent une intimité passagère dans leur solitude.", "Crie uma história discreta entre a cidade e o hotel, na qual duas pessoas deslocadas encontram uma intimidade passageira na solidão."]],
+  ["Romantic melancholy", ["Romantisk melankoli", "Mélancolie romantique", "Melancolia romântica"]],
+  ["Alienation drama", ["Drama om fremmedgjøring", "Drame de l'aliénation", "Drama de alienação"]],
+  ["Mood-led comedy", ["Stemningsdrevet komedie", "Comédie portée par l'atmosphère", "Comédia guiada pela atmosfera"]],
+  ["Wry and tender", ["Underfundig og øm", "Ironique et tendre", "Irónico e terno"]],
+  ["Culturally adrift", ["Kulturelt på avveie", "En perte de repères culturels", "Sem referências culturais"]],
+  ["Restrainedly intimate", ["Nærhet med tilbakeholdenhet", "Intime avec retenue", "Íntimo com contenção"]],
+  ["Favor mood over plot", ["La stemningen veie tyngre enn handlingen", "Privilégiez l'atmosphère plutôt que l'intrigue", "Privilegie a atmosfera em vez do enredo"]],
+  ["Build connection through pauses", ["Bygg tilknytning gjennom pauser", "Créez un lien par les silences et les pauses", "Crie uma ligação através das pausas"]],
+  ["Keep intimacy temporary and open", ["La nærheten være midlertidig og uavklart", "Gardez l'intimité provisoire et ouverte", "Mantenha a intimidade temporária e em aberto"]],
+  ["Make the hotel emotional space", ["La hotellet bli et følelsesladet rom", "Faites de l'hôtel un espace émotionnel", "Faça do hotel um espaço emocional"]],
+  ["Use the city as distance", ["Bruk byen til å skape avstand", "Utilisez la ville pour suggérer la distance", "Use a cidade para criar distância"]],
+  ["Hold faces in quiet moments", ["Bli værende ved ansiktene i stille øyeblikk", "Attardez-vous sur les visages dans les moments calmes", "Demore-se nos rostos nos momentos de quietude"]],
+  ["Let scenes breathe", ["Gi scenene tid og rom", "Laissez les scènes respirer", "Deixe as cenas respirar"]],
+  ["Use a drifting episodic rhythm", ["Bruk en løs og episodisk rytme", "Adoptez un rythme épisodique et flottant", "Use um ritmo episódico e errante"]],
+  ["Cut gently between solitude and connection", ["Klipp varsomt mellom ensomhet og tilknytning", "Montez avec douceur entre solitude et rapprochement", "Monte com suavidade entre solidão e ligação"]],
+  ["Layer ambient city noise", ["Bygg opp lag av byens omgivelseslyd", "Superposez les ambiances sonores de la ville", "Sobreponha camadas de som ambiente da cidade"]],
+  ["Keep rooms quietly charged", ["La rommene være stille, men ladede", "Chargez les pièces d'une tension discrète", "Mantenha os espaços silenciosos, mas carregados de emoção"]],
+  ["Use music as emotional texture", ["Bruk musikken som følelsesmessig tekstur", "Utilisez la musique comme texture émotionnelle", "Use a música como textura emocional"]],
+  ["Make alienation playable", ["Gjør fremmedgjøring mulig å spille", "Rendez l'aliénation jouable par les acteurs", "Torne a alienação representável pelos atores"]],
+  ["Create intimacy through restraint", ["Skap nærhet med tilbakeholdenhet", "Créez l'intimité par la retenue", "Crie intimidade através da contenção"]],
+  ["Let place carry emotion", ["La stedene bære følelsene", "Laissez les lieux porter l'émotion", "Deixe os lugares transmitir emoção"]],
+]);
+
 export function presentVerifiedFilmStatement(
   language: FilmWorkLanguage,
   briefType: ProductionCaseBriefType,
@@ -402,6 +452,11 @@ export function presentVerifiedFilmStatement(
     return Object.prototype.hasOwnProperty.call(presentation, original)
       ? presentation[original as MachinistStatement]
       : original;
+  }
+  if (scenarioId === "scenario_lost_in_translation_2003") {
+    if (language === "en") return original;
+    const translated = lostInTranslationPresentation.get(original);
+    return translated?.[language === "nb" ? 0 : language === "fr" ? 1 : 2] ?? original;
   }
   if (scenarioId === "scenario_the_lives_of_others_2006") {
     const presentation = livesStatements[language];

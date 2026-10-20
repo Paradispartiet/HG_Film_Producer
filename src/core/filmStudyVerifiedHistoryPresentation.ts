@@ -11,6 +11,98 @@ import { presentVerifiedFilmStudyDonorChoice, presentVerifiedFilmStudyDonorChoic
 type HistoryTextRow = readonly [canonical: string, nb: string, fr: string, pt: string];
 
 export const FILM_HISTORY_PRESENTATION_ROWS = {
+  scenario_lost_in_translation_2003: [
+    [
+      "Early-2000s American independent and transnational location cinema",
+      "Amerikansk uavhengig og transnasjonal stedsfilm fra tidlig 2000-tall",
+      "Cinéma indépendant américain et tournage transnational en décors réels au début des années 2000",
+      "Cinema independente americano e produção transnacional em locais reais do início dos anos 2000",
+    ],
+    [
+      "Independent auteur cinema",
+      "Uavhengig auteurfilm",
+      "Cinéma d'auteur indépendant",
+      "Cinema de autor independente",
+    ],
+    [
+      "City film",
+      "Byfilm",
+      "Film urbain",
+      "Filme urbano",
+    ],
+    [
+      "Mood-led romantic drama",
+      "Stemningsdrevet romantisk drama",
+      "Drame romantique porté par l'atmosphère",
+      "Drama romântico guiado pela atmosfera",
+    ],
+    [
+      "It follows city films and intimate independent dramas that let location, waiting and social dislocation carry narrative weight.",
+      "Den bygger på byfilmer og intime uavhengige dramaer der steder, venting og sosial fremmedgjøring bærer fortellingen.",
+      "Le film s'inscrit dans la lignée des films urbains et des drames indépendants intimistes, où les lieux, l'attente et le dépaysement social portent le récit.",
+      "O filme segue a tradição dos filmes urbanos e dos dramas independentes intimistas em que os lugares, a espera e o desenraizamento social sustentam a narrativa.",
+    ],
+    [
+      "A small crew, 35mm photography, improvised material and on-the-run Tokyo production turn jet lag and cultural displacement into the film's form.",
+      "Et lite filmteam, 35 mm-fotografering, improvisert materiale og raske opptak i Tokyo gjør jetlag og kulturell fremmedgjøring til en del av filmens form.",
+      "Une petite équipe, des images tournées en 35 mm, des séquences improvisées et un tournage mobile à Tokyo transforment le décalage horaire et le dépaysement culturel en forme cinématographique.",
+      "Uma pequena equipa, a fotografia em 35 mm, material improvisado e filmagens rápidas em Tóquio transformam o jet lag e o deslocamento cultural na forma do filme.",
+    ],
+    [
+      "The case became a durable example of how location, music and incomplete intimacy can organize a feature more strongly than conventional plot mechanics.",
+      "Filmen ble et varig eksempel på hvordan steder, musikk og ufullendt nærhet kan strukturere en spillefilm sterkere enn konvensjonell handlingsoppbygging.",
+      "Le film est devenu un exemple durable de la manière dont les lieux, la musique et une intimité inachevée peuvent structurer un long métrage plus fortement qu'une intrigue conventionnelle.",
+      "O filme tornou-se um exemplo duradouro de como os lugares, a música e a intimidade incompleta podem estruturar uma longa-metragem mais do que os mecanismos convencionais do enredo.",
+    ],
+    [
+      "Which production history best explains why Tokyo feels like both a real city and a subjective dream?",
+      "Hvilken produksjonshistorie forklarer best hvorfor Tokyo oppleves både som en virkelig by og som en subjektiv drøm?",
+      "Quelle histoire de production explique le mieux pourquoi Tokyo paraît à la fois une ville réelle et un rêve subjectif ?",
+      "Que história de produção explica melhor por que razão Tóquio parece simultaneamente uma cidade real e um sonho subjetivo?",
+    ],
+    [
+      "The film was made with a small mobile crew working rapidly in Tokyo locations.",
+      "Filmen ble laget av et lite, mobilt team som arbeidet raskt på opptakssteder i Tokyo.",
+      "Le film a été réalisé par une petite équipe mobile travaillant rapidement dans des lieux de Tokyo.",
+      "O filme foi realizado por uma pequena equipa móvel que trabalhou rapidamente em locais de Tóquio.",
+    ],
+    [
+      "Direction allows pauses, observation and improvisation to shape the emotional line.",
+      "Regien lar pauser, observasjon og improvisasjon forme den følelsesmessige utviklingen.",
+      "La mise en scène laisse les pauses, l'observation et l'improvisation façonner la trajectoire émotionnelle.",
+      "A realização permite que pausas, observação e improvisação moldem a trajetória emocional.",
+    ],
+    [
+      "Intimacy is carried through restrained behavior, glances and partially improvised encounters.",
+      "Nærheten formidles gjennom tilbakeholdent spill, blikk og delvis improviserte møter.",
+      "L'intimité passe par des gestes retenus, des regards et des rencontres partiellement improvisées.",
+      "A intimidade é transmitida através de comportamentos contidos, olhares e encontros parcialmente improvisados.",
+    ],
+    [
+      "The Park Hyatt and Tokyo locations operate as emotional architecture rather than neutral backgrounds.",
+      "Park Hyatt og opptaksstedene i Tokyo fungerer som følelsesladet arkitektur, ikke som nøytrale bakgrunner.",
+      "Le Park Hyatt et les lieux de Tokyo constituent une architecture émotionnelle plutôt que de simples décors neutres.",
+      "O Park Hyatt e os locais de Tóquio funcionam como arquitetura emocional, e não como cenários neutros.",
+    ],
+    [
+      "Production reporting documents 35mm photography.",
+      "Produksjonsreportasjer dokumenterer opptak på 35 mm.",
+      "Les reportages de production attestent l'emploi du 35 mm.",
+      "As reportagens de produção documentam a fotografia em 35 mm.",
+    ],
+    [
+      "Dream-pop references, karaoke and curated music are structural parts of the film's emotional world.",
+      "Referanser til drømmepop, karaoke og nøye utvalgt musikk er strukturelle deler av filmens følelsesverden.",
+      "Les références à la dream pop, le karaoké et la musique choisie avec soin structurent l'univers émotionnel du film.",
+      "As referências à dream pop, o karaoke e a música cuidadosamente selecionada estruturam o universo emocional do filme.",
+    ],
+    [
+      "The mobile location practice borrows observational immediacy without becoming documentary.",
+      "Den mobile arbeidsmåten på opptakssteder låner observasjonens umiddelbarhet uten å bli dokumentar.",
+      "Le tournage mobile en décors réels emprunte l'immédiateté de l'observation sans devenir documentaire.",
+      "A prática móvel de filmagem em locais reais utiliza a imediatez da observação sem se tornar documental.",
+    ],
+  ],
   scenario_12_angry_men_1957: [
     ["Late-classical American chamber cinema adapted from television",
      "Amerikansk kammerfilm fra den sene klassiske perioden, basert på fjernsynsdrama",

@@ -23,6 +23,7 @@ const TARGET_IDS = [
   "scenario_12_angry_men_1957",
   "scenario_the_machinist_2004",
   "scenario_the_lives_of_others_2006",
+  "scenario_lost_in_translation_2003",
 ];
 const LANGUAGE_STORAGE_KEY = "hg_filmwork_language_v1";
 const failures = [];
@@ -152,17 +153,20 @@ async function runCase(browser, language, scenario) {
       assert.ok(choice);
       const complete = historyCopy.presentVerifiedFilmHistoryChoice(language, id, choice.label, choice.quality);
       const condensed = historyCopy.presentVerifiedFilmHistoryChoiceSummary(language, id, choice.label, choice.quality);
-      assert.ok(condensed, `${label}: expected source-locked concise label for ${choice.quality}`);
-      await textEquals(answers.nth(index), condensed, `${label}: readable option ${choice.quality}`);
+      await textEquals(answers.nth(index), condensed ?? complete, `${label}: option ${choice.quality}`);
       const details = cards.nth(index).locator("details.scenario-history-choice-expand");
-      assert.equal(await details.count(), 1, `${label}: source explanation disclosure ${choice.quality}`);
-      assert.equal(await details.getAttribute("open"), null, `${label}: complete text initially collapsed`);
-      await details.locator("summary").focus();
-      await page.keyboard.press("Enter");
-      assert.notEqual(await details.getAttribute("open"), null, `${label}: disclosure keyboard-open`);
-      await textEquals(details.locator("p"), complete, `${label}: unchanged complete history statement`);
-      await page.keyboard.press("Enter");
-      assert.equal(await details.getAttribute("open"), null, `${label}: disclosure keyboard-close`);
+      if (condensed) {
+        assert.equal(await details.count(), 1, `${label}: source explanation disclosure ${choice.quality}`);
+        assert.equal(await details.getAttribute("open"), null, `${label}: complete text initially collapsed`);
+        await details.locator("summary").focus();
+        await page.keyboard.press("Enter");
+        assert.notEqual(await details.getAttribute("open"), null, `${label}: disclosure keyboard-open`);
+        await textEquals(details.locator("p"), complete, `${label}: unchanged complete history statement`);
+        await page.keyboard.press("Enter");
+        assert.equal(await details.getAttribute("open"), null, `${label}: disclosure keyboard-close`);
+      } else {
+        assert.equal(await details.count(), 0, `${label}: unreviewed donor must retain its complete canonical answer`);
+      }
 
       await answers.nth(index).click();
       await study.locator(`.scenario-history-feedback--${choice.quality}`).waitFor({ state: "visible" });
@@ -247,19 +251,19 @@ try {
   await browser?.close();
 }
 const report = {
-  scope: "three source-backed filmcases, four interface languages; nonvisual Chromium smoke",
+  scope: "four source-backed filmcases, four interface languages; nonvisual Chromium smoke",
   locales: LANGUAGES,
   films: TARGET_IDS,
-  expectedJourneys: 12,
+  expectedJourneys: 16,
   completedJourneys: checks.filter((entry) => entry.endsWith(": sources")).length,
   checks,
   failures,
   limitations: [
     "Screenshots are retained for human inspection, not automatically judged.",
-    "Other 611 filmcases and full career completion are outside this smoke test.",
+    "Other 610 filmcases and full career completion are outside this smoke test.",
     "Source title and publisher names remain canonical; URLs and grading remain unchanged.",
   ],
 };
 await writeFile(resolve(REPORT_DIR, "summary.json"), JSON.stringify(report, null, 2) + "\n", "utf8");
-console.log(`Browser QA: ${report.completedJourneys}/12 journeys, ${failures.length} failures`);
-if (failures.length || report.completedJourneys !== 12) process.exitCode = 1;
+console.log(`Browser QA: ${report.completedJourneys}/16 journeys, ${failures.length} failures`);
+if (failures.length || report.completedJourneys !== 16) process.exitCode = 1;
