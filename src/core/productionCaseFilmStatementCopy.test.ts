@@ -1,9 +1,11 @@
+import { readFileSync } from "node:fs";
 import assert from "node:assert/strict";
 import test from "node:test";
 
 import { FILMWORK_LANGUAGES } from "./filmWorkLanguage.js";
 import {
   CANONICAL_12_ANGRY_MEN_STATEMENTS,
+  CANONICAL_LOST_IN_TRANSLATION_STATEMENTS,
   presentVerifiedFilmStatement,
 } from "./productionCaseFilmStatementCopy.js";
 
@@ -48,5 +50,34 @@ test("unknown, seed and unrelated claims always fail closed to exact authored te
     assert.equal(presentVerifiedFilmStatement(language, "production_case", "scenario_the_machinist_2004", "Chamber drama"), "Chamber drama");
     assert.equal(presentVerifiedFilmStatement(language, "seed_fallback", scenarioId, "Chamber drama"), "Chamber drama");
     assert.equal(presentVerifiedFilmStatement(language, "production_case", scenarioId, "12 Angry Men"), "12 Angry Men");
+  }
+});
+
+const lostInTranslationScenarioId = "scenario_lost_in_translation_2003";
+const lostBriefSource = readFileSync("src/ui/data/scenarioProductionBriefs.ts", "utf8");
+
+test("Lost in Translation translations cover exactly 22 source-verified original claims", () => {
+  const start = lostBriefSource.indexOf("  scenario_lost_in_translation_2003: {");
+  const end = lostBriefSource.indexOf("\n  },", start);
+  assert.ok(start > 0 && end > start);
+  const canonicalSource = lostBriefSource.slice(start, end);
+  assert.equal(CANONICAL_LOST_IN_TRANSLATION_STATEMENTS.length, 22);
+  assert.equal(new Set(CANONICAL_LOST_IN_TRANSLATION_STATEMENTS).size, 22);
+  for (const original of CANONICAL_LOST_IN_TRANSLATION_STATEMENTS) {
+    assert.ok(canonicalSource.includes(JSON.stringify(original)), `Canonical brief drifted: ${original}`);
+    for (const language of FILMWORK_LANGUAGES) {
+      const translated = presentVerifiedFilmStatement(language, "production_case", lostInTranslationScenarioId, original);
+      assert.ok(translated.trim());
+      if (language === "en") assert.equal(translated, original);
+      else assert.notEqual(translated, original, `${language}: ${original}`);
+    }
+  }
+});
+
+test("Lost in Translation translation only affects its exact original film statements", () => {
+  for (const language of FILMWORK_LANGUAGES) {
+    assert.equal(presentVerifiedFilmStatement(language, "seed_fallback", lostInTranslationScenarioId, "Romantic melancholy"), "Romantic melancholy");
+    assert.equal(presentVerifiedFilmStatement(language, "production_case", "scenario_other_film_2003", "Romantic melancholy"), "Romantic melancholy");
+    assert.equal(presentVerifiedFilmStatement(language, "production_case", lostInTranslationScenarioId, "Unknown revised source claim"), "Unknown revised source claim");
   }
 });
