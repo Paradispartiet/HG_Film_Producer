@@ -35,6 +35,15 @@ const sourceIds = getSourceBackedFilmHistoryIds();
 const profiles = sourceIds.map((id) => getSourceBackedFilmHistoryProfile(id));
 assert.ok(profiles.length > 100, "Historical source inventory unexpectedly small");
 
+const bicycleProfile = getSourceBackedFilmHistoryProfile("scenario_bicycle_thieves_1948");
+assert.ok(bicycleProfile, "Bicycle Thieves profile missing");
+const bicycleDonors = createFilmHistoryChoices(bicycleProfile).map((choice) => {
+  const donors = profiles.filter((candidate) => `${candidate.period}: ${candidate.moment}` === choice.label);
+  assert.equal(donors.length, 1, "Bicycle Thieves donor identity ambiguous");
+  return { quality: choice.quality, donorId: donors[0].scenarioId, canonical: choice.label };
+});
+console.log("BICYCLE_THIEVES_HISTORY_DONORS=" + JSON.stringify(bicycleDonors));
+
 const inventory = targets.map((scenarioId) => {
   const profile = getSourceBackedFilmHistoryProfile(scenarioId);
   assert.ok(profile, `Missing verified profile: ${scenarioId}`);
