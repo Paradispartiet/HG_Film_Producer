@@ -154,7 +154,11 @@ async function runCase(browser, language, scenario) {
       assert.ok(choice);
       const complete = historyCopy.presentVerifiedFilmHistoryChoice(language, id, choice.label, choice.quality);
       const condensed = historyCopy.presentVerifiedFilmHistoryChoiceSummary(language, id, choice.label, choice.quality);
-      await textEquals(answers.nth(index), condensed ?? complete, `${label}: option ${choice.quality}`);
+      assert.ok(condensed, `${label}: all three source-locked options need a concise label`);
+      if (language !== "en") {
+        assert.notEqual(complete, choice.label, `${label}: historical explanation must be localized for ${choice.quality}`);
+      }
+      await textEquals(answers.nth(index), condensed, `${label}: option ${choice.quality}`);
       const details = cards.nth(index).locator("details.scenario-history-choice-expand");
       if (condensed) {
         assert.equal(await details.count(), 1, `${label}: source explanation disclosure ${choice.quality}`);
