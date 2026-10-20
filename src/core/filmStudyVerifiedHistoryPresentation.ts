@@ -1,4 +1,5 @@
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
+import { presentVerifiedFilmStudyDonorChoice } from "./filmStudyVerifiedDonorChoices.js";
 
 /**
  * Source-locked presentation for the first three verified film-history cases.
@@ -207,15 +208,15 @@ export function presentVerifiedFilmHistoryText(
   return row[language === "nb" ? 1 : language === "fr" ? 2 : 3];
 }
 
-/** Match options are concatenated from the same exact profile fields in the source.
- * Donor-film distractors are deliberately left untouched until sourced and translated.
- */
+/** Match options and source-backed donor distractors are translated in the display layer only. */
 export function presentVerifiedFilmHistoryChoice(
   language: FilmWorkLanguage,
   scenarioId: string,
   originalLabel: string,
+  quality: "match" | "partial" | "miss" = "match",
 ): string {
   if (language === "en") return originalLabel;
+  if (quality !== "match") return presentVerifiedFilmStudyDonorChoice(language, scenarioId, quality, originalLabel);
   const rows = FILM_HISTORY_PRESENTATION_ROWS[scenarioId as keyof typeof FILM_HISTORY_PRESENTATION_ROWS];
   if (!rows) return originalLabel;
   const canonicalPeriod = rows[0]?.[0];

@@ -74,7 +74,7 @@ test("generated source-verified answer feedback has EN/NB/FR/PT display text for
 
 test("active study panel uses presentation for profile, learning feedback and coverage notes", () => {
   assert.match(panel, /presentVerifiedFilmHistoryText\(language, scenario\.id, historyProfile\.historyQuestion\)/);
-  assert.match(panel, /presentVerifiedFilmHistoryChoice\(language, scenario\.id, choice\.label\)/);
+  assert.match(panel, /presentVerifiedFilmHistoryChoice\(language, scenario\.id, choice\.label, choice\.quality\)/);
   assert.match(panel, /presentVerifiedFilmHistoryText\(language, scenario\.id, selectedHistoryChoice\.feedback\)/);
   assert.match(panel, /presentVerifiedFilmHistoryText\(language, scenarioId, item\.note\)/);
   for (const key of ["before", "moment", "after", "period"]) {
@@ -82,4 +82,16 @@ test("active study panel uses presentation for profile, learning feedback and co
   }
   assert.doesNotMatch(panel, /<strong>\{historyProfile\.historyQuestion\}<\/strong>/);
   assert.doesNotMatch(panel, /\{choice\.label\}/);
+});
+
+
+test("unreviewed and changed distractors retain canonical text without affecting the answer grades", () => {
+  for (const scenarioId of scenarioIds) {
+    const unknown = "Unknown donor: unverified historical account";
+    for (const language of FILMWORK_LANGUAGES) {
+      assert.equal(presentVerifiedFilmHistoryChoice(language, scenarioId, unknown, "partial"), unknown);
+      assert.equal(presentVerifiedFilmHistoryChoice(language, scenarioId, unknown, "miss"), unknown);
+      assert.equal(presentVerifiedFilmHistoryChoice(language, scenarioId, unknown, "match"), unknown);
+    }
+  }
 });
