@@ -1,3 +1,4 @@
+import { presentSeedFallbackText } from "../../core/productionCaseSeedPresentation";
 import { PRODUCTION_CASE_REFLECTION_COPY } from "../../core/productionCaseReflectionCopy";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { useMemo } from "react";
@@ -72,7 +73,7 @@ export function ScenarioTargetChecklistPanel({
                       onChange={() => toggleTarget(target.id)}
                       type="checkbox"
                     />
-                    <span>{target.label}</span>
+                    <span>{presentSeedFallbackText(language, brief.briefType, target.label)}</span>
                   </label>
                 ))}
               </div>
