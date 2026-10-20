@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import { FILMWORK_LANGUAGES } from "./filmWorkLanguage.js";
-import { STUDIO_SETUP_COPY } from "./studioSetupCopy.js";
+import { STUDIO_SETUP_COPY, presentScriptTemplate } from "./studioSetupCopy.js";
 
 type ScriptTemplatePresentationInput = {
   readonly id: string;
@@ -103,4 +103,30 @@ test("Script Template presentation localizes visible title and default theme", (
     title: "Realismo social",
     defaultTheme: "As vidas comuns cedem sob pressões que não escolheram.",
   });
+});
+
+test("All 6 Script Templates have translated titles and themes for NB, FR, and PT", () => {
+  for (const language of ["nb", "fr", "pt"] as const) {
+    const present = scriptTemplatePresentation(language);
+    assert.ok(present);
+    for (const template of canonicalTemplates) {
+      const translated = present(template);
+      assert.notEqual(translated.title, template.title, `${language} ${template.id} title`);
+      assert.notEqual(translated.defaultTheme, template.defaultTheme, `${language} ${template.id} defaultTheme`);
+    }
+  }
+});
+
+test("Script Template presentation preserves canonical values for unknown ids", () => {
+  const future = {
+    id: "script_template_future_not_yet_localized",
+    title: "Future template",
+    defaultTheme: "An unknown theme.",
+  };
+  assert.deepEqual(presentScriptTemplate(future), { title: future.title, defaultTheme: future.defaultTheme });
+  for (const language of FILMWORK_LANGUAGES) {
+    const present = scriptTemplatePresentation(language);
+    assert.ok(present);
+    assert.deepEqual(present(future), { title: future.title, defaultTheme: future.defaultTheme }, language);
+  }
 });

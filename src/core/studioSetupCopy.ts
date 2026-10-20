@@ -1,5 +1,6 @@
 import type { StrategicGoalType } from "../domain/career.js";
 import type { Genre } from "../domain/knowledge.js";
+import type { ScriptTemplate } from "../domain/script.js";
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 
 export const STUDIO_SETUP_PRESET_IDS = ["micro_studio", "indie_studio", "prestige_startup"] as const;
@@ -26,6 +27,10 @@ type StrategicGoalPresentationById = Readonly<Partial<Record<string, StrategicGo
 type GenrePresentationInput = Pick<Genre, "id" | "name" | "summary">;
 type GenrePresentation = Pick<Genre, "name" | "summary">;
 type GenrePresentationById = Readonly<Record<string, GenrePresentation>>;
+
+type ScriptTemplatePresentationInput = Pick<ScriptTemplate, "id" | "title" | "defaultTheme">;
+type ScriptTemplatePresentation = Pick<ScriptTemplate, "title" | "defaultTheme">;
+type ScriptTemplatePresentationById = Readonly<Record<string, ScriptTemplatePresentation>>;
 
 type StudioSetupCopy = {
   readonly panel: {
@@ -80,6 +85,7 @@ type StudioSetupCopy = {
   readonly scriptTemplate: {
     readonly legend: string;
     readonly noDedicatedTemplate: string;
+    readonly presentation: (template: ScriptTemplatePresentationInput) => ScriptTemplatePresentation;
   };
 };
 
@@ -284,6 +290,46 @@ const PT_GENRES = {
   genre_social_realism: { name: "Realismo social", summary: "Histórias realistas sobre vidas comuns e condições sociais." },
 } as const satisfies GenrePresentationById;
 
+const NB_SCRIPT_TEMPLATES = {
+  script_template_intimate_drama: {"title":"Intimt drama","defaultTheme":"Hva vi skylder menneskene vi elsker."},
+  script_template_urban_thriller: {"title":"Storbythriller","defaultTheme":"Tillit er det farligste vi kan gi fra oss."},
+  script_template_low_budget_horror: {"title":"Lavbudsjettskrekk","defaultTheme":"Det vi nekter å se, er det som finner oss."},
+  script_template_documentary_portrait: {"title":"Dokumentarportrett","defaultTheme":"Et liv er mer enn historien det forteller om seg selv."},
+  script_template_romantic_comedy: {"title":"Romantisk komedie","defaultTheme":"Vi må gi slipp på den utgaven av oss selv som ikke kan elske."},
+  script_template_social_realism: {"title":"Sosialrealisme","defaultTheme":"Vanlige liv bøyes under press de ikke selv har valgt."},
+} as const satisfies ScriptTemplatePresentationById;
+
+const FR_SCRIPT_TEMPLATES = {
+  script_template_intimate_drama: {"title":"Drame intimiste","defaultTheme":"Ce que nous devons aux êtres que nous aimons."},
+  script_template_urban_thriller: {"title":"Thriller urbain","defaultTheme":"La confiance est ce qu’il y a de plus dangereux à donner."},
+  script_template_low_budget_horror: {"title":"Horreur à petit budget","defaultTheme":"Ce que nous refusons de regarder finit par nous trouver."},
+  script_template_documentary_portrait: {"title":"Portrait documentaire","defaultTheme":"Une vie est plus que l’histoire qu’elle raconte sur elle-même."},
+  script_template_romantic_comedy: {"title":"Comédie romantique","defaultTheme":"Nous devons renoncer à la version de nous-mêmes incapable d’aimer."},
+  script_template_social_realism: {"title":"Réalisme social","defaultTheme":"Des vies ordinaires ploient sous des pressions qu’elles n’ont pas choisies."},
+} as const satisfies ScriptTemplatePresentationById;
+
+const PT_SCRIPT_TEMPLATES = {
+  script_template_intimate_drama: {"title":"Drama intimista","defaultTheme":"O que devemos às pessoas que amamos."},
+  script_template_urban_thriller: {"title":"Thriller urbano","defaultTheme":"A confiança é a coisa mais perigosa que podemos oferecer."},
+  script_template_low_budget_horror: {"title":"Terror de baixo orçamento","defaultTheme":"Aquilo que recusamos encarar é aquilo que nos encontra."},
+  script_template_documentary_portrait: {"title":"Retrato documental","defaultTheme":"Uma vida é mais do que a história que conta de si própria."},
+  script_template_romantic_comedy: {"title":"Comédia romântica","defaultTheme":"Temos de deixar para trás a versão de nós próprios que não sabe amar."},
+  script_template_social_realism: {"title":"Realismo social","defaultTheme":"As vidas comuns cedem sob pressões que não escolheram."},
+} as const satisfies ScriptTemplatePresentationById;
+
+export function presentScriptTemplate(
+  template: ScriptTemplatePresentationInput,
+  byId: ScriptTemplatePresentationById = {},
+): ScriptTemplatePresentation {
+  return byId[template.id] ?? { title: template.title, defaultTheme: template.defaultTheme };
+}
+
+function localizeScriptTemplatePresentation(
+  byId: ScriptTemplatePresentationById,
+): (template: ScriptTemplatePresentationInput) => ScriptTemplatePresentation {
+  return (template) => presentScriptTemplate(template, byId);
+}
+
 function preserveCanonicalGoalPresentation(goal: StrategicGoalPresentationInput): StrategicGoalPresentation {
   return { title: goal.title, description: goal.description };
 }
@@ -358,6 +404,7 @@ export const STUDIO_SETUP_COPY = {
     scriptTemplate: {
       legend: "Script template",
       noDedicatedTemplate: "No dedicated template exists for this genre yet. Choose any available structure.",
+      presentation: presentScriptTemplate,
     },
   },
   nb: {
@@ -414,6 +461,7 @@ export const STUDIO_SETUP_COPY = {
     scriptTemplate: {
       legend: "Manusmal",
       noDedicatedTemplate: "Det finnes ingen egen mal for denne sjangeren ennå. Velg en av de tilgjengelige strukturene.",
+      presentation: localizeScriptTemplatePresentation(NB_SCRIPT_TEMPLATES),
     },
   },
   fr: {
@@ -470,6 +518,7 @@ export const STUDIO_SETUP_COPY = {
     scriptTemplate: {
       legend: "Modèle de scénario",
       noDedicatedTemplate: "Il n’existe pas encore de modèle dédié à ce genre. Choisissez une structure disponible.",
+      presentation: localizeScriptTemplatePresentation(FR_SCRIPT_TEMPLATES),
     },
   },
   pt: {
@@ -526,6 +575,7 @@ export const STUDIO_SETUP_COPY = {
     scriptTemplate: {
       legend: "Modelo de argumento",
       noDedicatedTemplate: "Ainda não existe um modelo dedicado para este género. Escolha qualquer estrutura disponível.",
+      presentation: localizeScriptTemplatePresentation(PT_SCRIPT_TEMPLATES),
     },
   },
 } as const satisfies Record<FilmWorkLanguage, StudioSetupCopy>;

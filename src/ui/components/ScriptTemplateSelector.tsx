@@ -20,19 +20,22 @@ export function ScriptTemplateSelector({ templates, selectedGenreId, value, erro
     <fieldset className="setup-fieldset">
       <legend>{copy.legend}</legend>
       <div className="choice-grid choice-grid--templates">
-        {visibleTemplates.map((template) => (
-          <label className={value === template.id ? "choice-card choice-card--selected" : "choice-card"} key={template.id}>
-            <input
-              checked={value === template.id}
-              name="script-template"
-              onChange={() => onChange(template.id)}
-              type="radio"
-              value={template.id}
-            />
-            <strong>{template.title}</strong>
-            <span>{template.defaultTheme}</span>
-          </label>
-        ))}
+        {visibleTemplates.map((template) => {
+          const presentation = copy.presentation(template);
+          return (
+            <label className={value === template.id ? "choice-card choice-card--selected" : "choice-card"} key={template.id}>
+              <input
+                checked={value === template.id}
+                name="script-template"
+                onChange={() => onChange(template.id)}
+                type="radio"
+                value={template.id}
+              />
+              <strong>{presentation.title}</strong>
+              <span>{presentation.defaultTheme}</span>
+            </label>
+          );
+        })}
       </div>
       {selectedGenreId && matchingTemplates.length === 0 && <p className="field-hint">{copy.noDedicatedTemplate}</p>}
       {error && <span className="field-error">{error}</span>}
