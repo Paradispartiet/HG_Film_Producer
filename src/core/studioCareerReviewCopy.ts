@@ -239,7 +239,7 @@ export const STUDIO_CAREER_REVIEW_COPY: Readonly<Record<FilmWorkLanguage, Career
 
 function formatProjectLabel(language: FilmWorkLanguage, projectLabel: ProjectLabel, capitalized: boolean): string {
   const filmNumber = projectLabel.match(/^film (\d+)$/)?.[1];
-  if (filmNumber) return `Film ${filmNumber}`;
+  if (filmNumber) return `${language === "pt" ? "filme" : "Film"} ${filmNumber}`;
   const labels: Readonly<Record<FilmWorkLanguage, string>> = { en: "first film", nb: "første film", fr: "premier film", pt: "primeiro filme" };
   const label = labels[language];
   return capitalized ? label.charAt(0).toUpperCase() + label.slice(1) : label;

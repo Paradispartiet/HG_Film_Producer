@@ -220,7 +220,7 @@ function formatProjectLabel(language: FilmWorkLanguage, projectLabel: ProjectLab
     if (language === "pt") return "primeiro filme";
     return "first film";
   }
-  return `Film ${projectLabel.slice("film ".length)}`;
+  return `${language === "pt" ? "filme" : "Film"} ${projectLabel.slice("film ".length)}`;
 }
 
 function formatList(language: FilmWorkLanguage, items: readonly string[]): string {
