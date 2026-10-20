@@ -6,6 +6,7 @@ import {
   getFilmStudyCoverageStatusLabel,
 } from "../../core/filmStudyCopy";
 import { formatFilmStudyHistoryFeedback } from "../../core/filmStudyHistoryFeedbackCopy";
+import { presentVerifiedFilmHistoryChoice, presentVerifiedFilmHistoryText } from "../../core/filmStudyVerifiedHistoryPresentation";
 import type { FilmStudyCoverageItem } from "../../core/filmStudyCoverage";
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
 import type { FilmScenarioSeed } from "../data/filmScenarios";
@@ -404,13 +405,13 @@ export function ScenarioFilmStudyPanel({
       {historyProfile ? (
         <>
           <div className="scenario-history-tags" aria-label={copy.traditionsAriaLabel}>
-            <span>{historyProfile.period}</span>
-            {historyProfile.traditions.map((tradition) => <span key={tradition}>{tradition}</span>)}
+            <span>{presentVerifiedFilmHistoryText(language, scenario.id, historyProfile.period)}</span>
+            {historyProfile.traditions.map((tradition) => <span key={tradition}>{presentVerifiedFilmHistoryText(language, scenario.id, tradition)}</span>)}
           </div>
 
           <section className="scenario-history-exercise" aria-label={copy.comparisonAriaLabel}>
             <span className="eyebrow">{copy.historyLens}</span>
-            <strong>{historyProfile.historyQuestion}</strong>
+            <strong>{presentVerifiedFilmHistoryText(language, scenario.id, historyProfile.historyQuestion)}</strong>
             <div className="scenario-history-choice-grid">
               {historyChoices.map((choice) => (
                 <button
@@ -420,13 +421,13 @@ export function ScenarioFilmStudyPanel({
                   onClick={() => setSelectedHistoryChoiceId(choice.id)}
                   type="button"
                 >
-                  {choice.label}
+                  {presentVerifiedFilmHistoryChoice(language, scenario.id, choice.label)}
                 </button>
               ))}
             </div>
             {selectedHistoryChoice ? (
               <p className={`scenario-history-feedback scenario-history-feedback--${selectedHistoryChoice.quality}`}>
-                {formatFilmStudyHistoryFeedback(language, selectedHistoryChoice.feedback)}
+                {formatFilmStudyHistoryFeedback(language, presentVerifiedFilmHistoryText(language, scenario.id, selectedHistoryChoice.feedback))}
               </p>
             ) : (
               <p className="scenario-history-feedback">{copy.noChoiceFeedback}</p>
@@ -434,9 +435,9 @@ export function ScenarioFilmStudyPanel({
           </section>
 
           <div className="scenario-history-arc" aria-label={copy.arcAriaLabel}>
-            <HistoryArcStep label={copy.arcBefore} text={historyProfile.before} />
-            <HistoryArcStep label={copy.arcMoment} text={historyProfile.moment} />
-            <HistoryArcStep label={copy.arcAfter} text={historyProfile.after} />
+            <HistoryArcStep label={copy.arcBefore} text={presentVerifiedFilmHistoryText(language, scenario.id, historyProfile.before)} />
+            <HistoryArcStep label={copy.arcMoment} text={presentVerifiedFilmHistoryText(language, scenario.id, historyProfile.moment)} />
+            <HistoryArcStep label={copy.arcAfter} text={presentVerifiedFilmHistoryText(language, scenario.id, historyProfile.after)} />
           </div>
         </>
       ) : (
@@ -452,8 +453,8 @@ export function ScenarioFilmStudyPanel({
           <small>{copy.auditPending(filmStudy.coverageSummary.researchPending, filmStudy.coverageSummary.total)}</small>
         </summary>
         <div className="scenario-study-coverage-groups">
-          <CoverageGroup items={historyCoverage} language={language} title={copy.historyGroupTitle} />
-          <CoverageGroup items={craftCoverage} language={language} title={copy.craftGroupTitle} />
+          <CoverageGroup items={historyCoverage} language={language} scenarioId={scenario.id} title={copy.historyGroupTitle} />
+          <CoverageGroup items={craftCoverage} language={language} scenarioId={scenario.id} title={copy.craftGroupTitle} />
         </div>
       </details>
 
@@ -491,10 +492,12 @@ function HistoryArcStep({ label, text }: { readonly label: string; readonly text
 function CoverageGroup({
   items,
   language,
+  scenarioId,
   title,
 }: {
   readonly items: readonly FilmStudyCoverageItem[];
   readonly language: FilmWorkLanguage;
+  readonly scenarioId: string;
   readonly title: string;
 }) {
   const copy = FILM_STUDY_COPY[language];
@@ -508,7 +511,7 @@ function CoverageGroup({
               <strong>{getFilmStudyAreaLabel(language, item.area)}</strong>
               <span>{getFilmStudyCoverageStatusLabel(language, item.status)}</span>
             </div>
-            {item.note ? <p>{item.note}</p> : <p>{copy.noResearchNote}</p>}
+            {item.note ? <p>{presentVerifiedFilmHistoryText(language, scenarioId, item.note)}</p> : <p>{copy.noResearchNote}</p>}
           </li>
         ))}
       </ul>
