@@ -14,6 +14,7 @@ const scenarioIds = [
   "scenario_12_angry_men_1957",
   "scenario_the_machinist_2004",
   "scenario_the_lives_of_others_2006",
+  "scenario_lost_in_translation_2003",
 ] as const;
 const source = readFileSync("src/ui/data/scenarioFilmStudyMap.ts", "utf8");
 const panel = readFileSync("src/ui/components/ScenarioFilmStudyPanel.tsx", "utf8");
