@@ -175,7 +175,7 @@ async function runCase(browser, language, scenario) {
 
     const sources = study.locator("details.scenario-history-sources");
     await sources.locator("summary").click();
-    await textEquals(sources.locator("> p"), sourceCopy.presentFilmStudySourceText(language, id, evidence.summary), `${label}: source summary`);
+    await textEquals(sources.locator(":scope > p"), sourceCopy.presentFilmStudySourceText(language, id, evidence.summary), `${label}: source summary`);
     const notes = sources.locator("li");
     assert.equal(await notes.count(), evidence.sources.length, `${label}: source count`);
     for (let index = 0; index < evidence.sources.length; index += 1) {
