@@ -1,3 +1,5 @@
+import { PRODUCTION_CASE_REFLECTION_COPY } from "../../core/productionCaseReflectionCopy";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { createScenarioPhaseGuidance, type ScenarioProductionPhase } from "../data/scenarioPhaseGuidance";
 import type { ScenarioProductionBrief } from "../data/scenarioProductionBriefs";
 
@@ -15,17 +17,20 @@ const phaseByPipelineStep: readonly ScenarioProductionPhase[] = [
 ];
 
 export function ScenarioPhaseGuidancePanel({ brief, currentPhase }: ScenarioPhaseGuidancePanelProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = PRODUCTION_CASE_REFLECTION_COPY[language].phases;
   const guidance = createScenarioPhaseGuidance(brief);
+  const isProductionCase = brief.briefType === "production_case";
   const activePhase = phaseByPipelineStep[currentPhase] ?? "release";
 
   return (
     <section className="scenario-phase-guidance" aria-labelledby="scenario-phase-guidance-title">
       <div className="scenario-phase-header">
         <div>
-          <span className="eyebrow">Production roadmap</span>
-          <h3 id="scenario-phase-guidance-title">Scenario phase guidance</h3>
+          <span className="eyebrow">{copy.eyebrow}</span>
+          <h3 id="scenario-phase-guidance-title">{copy.heading}</h3>
         </div>
-        <p>Use the classic brief as phase-by-phase production intent.</p>
+        <p>{copy.intro}</p>
       </div>
       <div className="scenario-phase-grid">
         {guidance.map((phase) => (
@@ -33,13 +38,15 @@ export function ScenarioPhaseGuidancePanel({ brief, currentPhase }: ScenarioPhas
             className={phase.phase === activePhase ? "scenario-phase-card scenario-phase-card--active" : "scenario-phase-card"}
             key={phase.phase}
           >
-            <h4>{phase.title}</h4>
-            <p>{phase.description}</p>
+            <h4>{(isProductionCase ? copy.caseTitles : copy.seedTitles)[phase.phase]}</h4>
+            <p>{isProductionCase
+              ? (phase.phase === "shoot" ? copy.caseShootDescription : phase.description)
+              : copy.seedDescriptions[phase.phase]}</p>
             {phase.targets.length > 0 ? (
               <ul className="scenario-phase-targets">
                 {phase.targets.map((target, index) => <li key={`${phase.phase}-${index}-${target}`}>{target}</li>)}
               </ul>
-            ) : <p className="scenario-phase-empty">No specific targets for this phase yet.</p>}
+            ) : <p className="scenario-phase-empty">{copy.noTargets}</p>}
           </article>
         ))}
       </div>
