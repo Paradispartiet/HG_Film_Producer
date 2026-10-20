@@ -422,7 +422,7 @@ export function ScenarioFilmStudyPanel({
                   onClick={() => setSelectedHistoryChoiceId(choice.id)}
                   type="button"
                 >
-                  {presentVerifiedFilmHistoryChoice(language, scenario.id, choice.label)}
+                  {presentVerifiedFilmHistoryChoice(language, scenario.id, choice.label, choice.quality)}
                 </button>
               ))}
             </div>
