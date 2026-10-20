@@ -10,7 +10,7 @@ export const FILM_STUDY_SOURCE_COPY_ROWS = {
   scenario_12_angry_men_1957: [
     [
       "The brief's one-room blocking, argument-led escalation, tightening faces, controlled lens progression, and lean production method are supported by production history and cinematography analysis.",
-      "Produksjonshistorie og filmanalyse underbygger briefens plassering av skuespillerne i ett rom, konfliktopptrapping gjennom argumentasjon, tettere ansiktsutsnitt, styrt utvikling i objektivbruk og effektive produksjonsmetode.",
+      "Produksjonshistorie og filmanalyse underbygger briefens plassering av skuespillerne i ett rom, konfliktopptrapping gjennom argumentasjon, tettere ansiktsutsnitt, styrt utvikling i objektivbruk og den effektive produksjonsmetoden.",
       "L'histoire de la production et l'analyse photographique étayent la disposition des acteurs dans une seule pièce, la montée du conflit par le débat, les visages de plus en plus serrés, la progression maîtrisée des focales et la méthode de production économe décrites dans le brief.",
       "A história da produção e a análise da fotografia sustentam a marcação numa única sala, a escalada através do debate, os enquadramentos cada vez mais fechados dos rostos, a progressão controlada das objetivas e o método de produção económico descritos no briefing.",
     ],
