@@ -35,6 +35,7 @@ export type FilmStudyCopy = {
   readonly comparisonAriaLabel: string;
   readonly historyLens: string;
   readonly noChoiceFeedback: string;
+  readonly showCompleteExplanation: string;
   readonly arcAriaLabel: string;
   readonly arcBefore: string;
   readonly arcMoment: string;
@@ -76,6 +77,7 @@ export const FILM_STUDY_COPY: Record<FilmWorkLanguage, FilmStudyCopy> = {
     comparisonAriaLabel: "Film history comparison",
     historyLens: "History lens",
     noChoiceFeedback: "Compare the historical explanations. There are no points or penalties.",
+    showCompleteExplanation: "Read full historical explanation",
     arcAriaLabel: "Before, contemporary moment, and afterlife",
     arcBefore: "Before the film",
     arcMoment: "In its moment",
@@ -112,6 +114,7 @@ export const FILM_STUDY_COPY: Record<FilmWorkLanguage, FilmStudyCopy> = {
     comparisonAriaLabel: "Filmhistorisk sammenligning",
     historyLens: "Historisk linse",
     noChoiceFeedback: "Sammenlign de historiske forklaringene. Det gis ingen poeng eller straff.",
+    showCompleteExplanation: "Les hele den historiske forklaringen",
     arcAriaLabel: "Før filmen, samtiden og etterlivet",
     arcBefore: "Før filmen",
     arcMoment: "I sin samtid",
@@ -178,6 +181,7 @@ export const FILM_STUDY_COPY: Record<FilmWorkLanguage, FilmStudyCopy> = {
     comparisonAriaLabel: "Comparaison d’histoire du cinéma",
     historyLens: "Prisme historique",
     noChoiceFeedback: "Comparez les explications historiques. Il n’y a ni points ni pénalités.",
+    showCompleteExplanation: "Lire l’explication historique complète",
     arcAriaLabel: "Avant, moment contemporain et postérité",
     arcBefore: "Avant le film",
     arcMoment: "Dans son époque",
@@ -244,6 +248,7 @@ export const FILM_STUDY_COPY: Record<FilmWorkLanguage, FilmStudyCopy> = {
     comparisonAriaLabel: "Comparação de história do cinema",
     historyLens: "Perspetiva histórica",
     noChoiceFeedback: "Compare as explicações históricas. Não há pontos nem penalizações.",
+    showCompleteExplanation: "Ler a explicação histórica completa",
     arcAriaLabel: "Antes, momento contemporâneo e legado",
     arcBefore: "Antes do filme",
     arcMoment: "No seu tempo",
