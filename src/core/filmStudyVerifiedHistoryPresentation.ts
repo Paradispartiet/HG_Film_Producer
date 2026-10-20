@@ -11,6 +11,98 @@ import { presentVerifiedFilmStudyDonorChoice, presentVerifiedFilmStudyDonorChoic
 type HistoryTextRow = readonly [canonical: string, nb: string, fr: string, pt: string];
 
 export const FILM_HISTORY_PRESENTATION_ROWS = {
+  scenario_bicycle_thieves_1948: [
+    [
+      "Postwar Italian neorealism",
+      "Italiensk neorealisme etter krigen",
+      "Néoréalisme italien de l'après-guerre",
+      "Neorrealismo italiano do pós-guerra",
+    ],
+    [
+      "Italian neorealism",
+      "Italiensk neorealisme",
+      "Néoréalisme italien",
+      "Neorrealismo italiano",
+    ],
+    [
+      "Location realism",
+      "Realisme på autentiske opptakssteder",
+      "Réalisme des décors naturels",
+      "Realismo em locais reais",
+    ],
+    [
+      "Nonprofessional performance",
+      "Skuespill med ikke-profesjonelle",
+      "Interprétation par des non-professionnels",
+      "Interpretação por não profissionais",
+    ],
+    [
+      "Neorealism turned away from polished studio illusion toward streets, ordinary labor and the consequences of war and poverty.",
+      "Neorealismen vendte seg bort fra studioenes polerte illusjoner og mot gatene, vanlige arbeidsfolk og følgene av krig og fattigdom.",
+      "Le néoréalisme délaisse l'illusion soignée des studios pour les rues, le travail ordinaire et les conséquences de la guerre et de la pauvreté.",
+      "O neorrealismo afastou-se da ilusão polida dos estúdios para filmar as ruas, o trabalho comum e as consequências da guerra e da pobreza.",
+    ],
+    [
+      "Rome locations, nonprofessional performers and a simple object-driven search make unemployment and family dignity concrete at human scale.",
+      "Opptakssteder i Roma, ikke-profesjonelle skuespillere og letingen etter én gjenstand gjør arbeidsløshet og familiens verdighet håndgripelige i menneskelig målestokk.",
+      "Les rues de Rome, les interprètes non professionnels et la quête d'un objet rendent le chômage et la dignité familiale concrets à hauteur humaine.",
+      "As ruas de Roma, os intérpretes não profissionais e a procura de um objeto tornam concretos o desemprego e a dignidade familiar à escala humana.",
+    ],
+    [
+      "The film became a central reference for social realism, location production and stories built around everyday material stakes.",
+      "Filmen ble en sentral referanse for sosialrealisme, opptak på autentiske steder og fortellinger om konkrete materielle behov i hverdagen.",
+      "Le film est devenu une référence majeure pour le réalisme social, le tournage en décors naturels et les récits fondés sur les besoins matériels quotidiens.",
+      "O filme tornou-se uma referência central para o realismo social, as filmagens em locais reais e as histórias assentes em necessidades materiais quotidianas.",
+    ],
+    [
+      "Which movement best explains the union of postwar social pressure, street locations and nonprofessional casting?",
+      "Hvilken filmbevegelse forklarer best sammenhengen mellom etterkrigstidens sosiale press, opptak i gatene og ikke-profesjonelle skuespillere?",
+      "Quel mouvement explique le mieux l'association des tensions sociales de l'après-guerre, des tournages dans la rue et d'acteurs non professionnels ?",
+      "Que movimento explica melhor a combinação da pressão social do pós-guerra, das filmagens nas ruas e de atores não profissionais?",
+    ],
+    [
+      "The story and production are rooted in postwar Roman economic reality.",
+      "Fortellingen og produksjonen er forankret i de økonomiske forholdene i etterkrigstidens Roma.",
+      "Le récit et la production s'enracinent dans la réalité économique de la Rome d'après-guerre.",
+      "A história e a produção estão enraizadas na realidade económica da Roma do pós-guerra.",
+    ],
+    [
+      "The film is a core Italian neorealist case.",
+      "Filmen er et kjerneeksempel på italiensk neorealisme.",
+      "Le film est un exemple majeur du néoréalisme italien.",
+      "O filme é um exemplo fundamental do neorrealismo italiano.",
+    ],
+    [
+      "De Sica uses restrained staging and visual rhymes rather than display-oriented virtuosity.",
+      "De Sica bruker tilbakeholden iscenesettelse og visuelle rim fremfor demonstrativ virtuositet.",
+      "De Sica privilégie une mise en scène retenue et des échos visuels plutôt qu'une virtuosité ostentatoire.",
+      "De Sica privilegia a encenação contida e as rimas visuais em vez de um virtuosismo exibicionista.",
+    ],
+    [
+      "Nonprofessional performers are directed toward emotionally precise, socially grounded behavior.",
+      "De ikke-profesjonelle skuespillerne ledes mot følelsesmessig presist spill som er forankret i sosiale forhold.",
+      "Les interprètes non professionnels sont dirigés vers un jeu émotionnellement précis et ancré dans la réalité sociale.",
+      "Os intérpretes não profissionais são dirigidos para atuações emocionalmente precisas e socialmente fundamentadas.",
+    ],
+    [
+      "Real streets and locations replace a heavily designed studio world.",
+      "Virkelige gater og steder erstatter et omfattende utformet studiomiljø.",
+      "Les rues et les lieux réels remplacent les décors de studio élaborés.",
+      "Ruas e locais reais substituem cenários de estúdio elaborados.",
+    ],
+    [
+      "The fiction borrows location observation and social detail from documentary practice.",
+      "Fiksjonsfilmen låner observasjoner fra autentiske steder og sosiale detaljer fra dokumentarisk praksis.",
+      "La fiction emprunte au documentaire l'observation sur place et l'attention aux détails sociaux.",
+      "A ficção inspira-se na observação em locais reais e nos pormenores sociais da prática documental.",
+    ],
+    [
+      "Effects are not central to the neorealist method.",
+      "Effekter er ikke sentrale i den neorealistiske metoden.",
+      "Les effets ne sont pas au cœur de la méthode néoréaliste.",
+      "Os efeitos não são centrais ao método neorrealista.",
+    ],
+  ],
   scenario_lost_in_translation_2003: [
     [
       "Early-2000s American independent and transnational location cinema",
