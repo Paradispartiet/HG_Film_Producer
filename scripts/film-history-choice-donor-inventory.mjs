@@ -34,6 +34,21 @@ const sourceIds = getSourceBackedFilmHistoryIds();
 const profiles = sourceIds.map((id) => getSourceBackedFilmHistoryProfile(id));
 assert.ok(profiles.length > 100, "Historical source inventory unexpectedly small");
 
+const nextCaseProfile = getSourceBackedFilmHistoryProfile("scenario_lost_in_translation_2003");
+assert.ok(nextCaseProfile, "Lost in Translation source-backed history missing");
+const nextDonors = createFilmHistoryChoices(nextCaseProfile).map((choice) => {
+  const donor = profiles.find((candidate) => `${candidate.period}: ${candidate.moment}` === choice.label);
+  assert.ok(donor, `No source donor for Lost in Translation ${choice.quality}`);
+  return {
+    quality: choice.quality,
+    donorScenarioId: donor.scenarioId,
+    period: donor.period,
+    moment: donor.moment,
+    canonicalOption: choice.label,
+  };
+});
+console.log("FILM_HISTORY_NEXT_DONOR_DISCOVERY=" + JSON.stringify(nextDonors));
+
 const inventory = targets.map((scenarioId) => {
   const profile = getSourceBackedFilmHistoryProfile(scenarioId);
   assert.ok(profile, `Missing verified profile: ${scenarioId}`);
