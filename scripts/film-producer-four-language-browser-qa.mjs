@@ -144,16 +144,26 @@ async function runCase(browser, language, scenario) {
       historyCopy.presentVerifiedFilmHistoryText(language, id, history.historyQuestion),
       `${label}: historical question`,
     );
-    const answers = study.locator(".scenario-history-choice-grid button");
+    const cards = study.locator(".scenario-history-choice-grid .scenario-history-choice");
+    const answers = cards.locator(":scope > button");
     assert.equal(await answers.count(), 3, `${label}: quiz answer count`);
     for (let index = 0; index < choices.length; index += 1) {
       const choice = choices[index];
       assert.ok(choice);
-      await textEquals(
-        answers.nth(index),
-        historyCopy.presentVerifiedFilmHistoryChoice(language, id, choice.label, choice.quality),
-        `${label}: option ${choice.quality}`,
-      );
+      const complete = historyCopy.presentVerifiedFilmHistoryChoice(language, id, choice.label, choice.quality);
+      const condensed = historyCopy.presentVerifiedFilmHistoryChoiceSummary(language, id, choice.label, choice.quality);
+      assert.ok(condensed, `${label}: expected source-locked concise label for ${choice.quality}`);
+      await textEquals(answers.nth(index), condensed, `${label}: readable option ${choice.quality}`);
+      const details = cards.nth(index).locator("details.scenario-history-choice-expand");
+      assert.equal(await details.count(), 1, `${label}: source explanation disclosure ${choice.quality}`);
+      assert.equal(await details.getAttribute("open"), null, `${label}: complete text initially collapsed`);
+      await details.locator("summary").focus();
+      await page.keyboard.press("Enter");
+      assert.notEqual(await details.getAttribute("open"), null, `${label}: disclosure keyboard-open`);
+      await textEquals(details.locator("p"), complete, `${label}: unchanged complete history statement`);
+      await page.keyboard.press("Enter");
+      assert.equal(await details.getAttribute("open"), null, `${label}: disclosure keyboard-close`);
+
       await answers.nth(index).click();
       await study.locator(`.scenario-history-feedback--${choice.quality}`).waitFor({ state: "visible" });
       await textEquals(
@@ -162,6 +172,8 @@ async function runCase(browser, language, scenario) {
         `${label}: historical feedback ${choice.quality}`,
       );
       assert.equal(await answers.nth(index).getAttribute("aria-pressed"), "true", `${label}: answer state`);
+      const fontSize = await answers.nth(index).evaluate((element) => Number.parseFloat(getComputedStyle(element).fontSize));
+      assert.ok(fontSize >= 13, `${label}: cramped option text ${fontSize}px`);
     }
 
     await textEquals(study.locator(".scenario-history-tags span").first(), historyCopy.presentVerifiedFilmHistoryText(language, id, history.period), `${label}: period`);
@@ -189,7 +201,20 @@ async function runCase(browser, language, scenario) {
     checks.push(`${label}: sources`);
 
     // Human visual review is separate: screenshots are evidence, not an automatic sign-off.
+    await answers.first().scrollIntoViewIfNeeded();
     await page.screenshot({ path: resolve(REPORT_DIR, `${label}-study.png`), fullPage: false });
+    await page.setViewportSize({ width: 360, height: 780 });
+    const choiceWidth = await study.locator(".scenario-history-exercise").evaluate((element) => ({
+      scroll: element.scrollWidth,
+      client: element.clientWidth,
+    }));
+    assert.ok(choiceWidth.scroll <= choiceWidth.client + 2, `${label}: horizontal overflow on 360px viewport: ${JSON.stringify(choiceWidth)}`);
+    await answers.first().focus();
+    await page.keyboard.press("Enter");
+    assert.equal(await answers.first().getAttribute("aria-pressed"), "true", `${label}: keyboard choice on mobile viewport`);
+    await answers.first().scrollIntoViewIfNeeded();
+    await page.screenshot({ path: resolve(REPORT_DIR, `${label}-mobile.png`), fullPage: false });
+    checks.push(`${label}: 360px mobile layout and keyboard`);
     assert.deepEqual(errors, [], `${label}: uncaught browser errors`);
     console.log(`PASS ${label} · atlas, director, quiz, evidence`);
   } catch (error) {

@@ -8,6 +8,7 @@ import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
  */
 type DonorChoice = {
   readonly donorScenarioId: string;
+  readonly summary: Readonly<Record<FilmWorkLanguage, string>>;
   readonly canonicalLength: number;
   readonly canonicalHash: number;
   readonly preview: string;
@@ -20,6 +21,7 @@ export const FILM_STUDY_VERIFIED_DONOR_CHOICES: Readonly<
   scenario_12_angry_men_1957: {
     partial: {
       donorScenarioId: "scenario_the_fall_of_the_romanov_dynasty_1927",
+      summary: { en: "Esfir Shub: Soviet archival montage (1927)", nb: "Esfir Shub: sovjetisk arkivmontasje (1927)", fr: "Esfir Shub : montage d’archives soviétique (1927)", pt: "Esfir Shub: montagem de arquivo soviética (1927)" },
       canonicalLength: 486,
       canonicalHash: 413694069,
       preview: "1927 Soviet compilation documentary",
@@ -31,6 +33,7 @@ export const FILM_STUDY_VERIFIED_DONOR_CHOICES: Readonly<
     },
     miss: {
       donorScenarioId: "scenario_dunkirk_2017",
+      summary: { en: "Dunkirk: large-format film and three timelines (2017)", nb: "Dunkirk: storformatfilm og tre tidslinjer (2017)", fr: "Dunkirk : grand format et trois temporalités (2017)", pt: "Dunkirk: grande formato e três linhas temporais (2017)" },
       canonicalLength: 949,
       canonicalHash: 378682035,
       preview: "2017 digital-convergence countercurrent",
@@ -44,6 +47,7 @@ export const FILM_STUDY_VERIFIED_DONOR_CHOICES: Readonly<
   scenario_the_machinist_2004: {
     partial: {
       donorScenarioId: "scenario_robocop_1987",
+      summary: { en: "RoboCop: industrial effects production (1987)", nb: "RoboCop: industriell effektproduksjon (1987)", fr: "RoboCop : production d’effets industriels (1987)", pt: "RoboCop: produção industrial de efeitos (1987)" },
       canonicalLength: 902,
       canonicalHash: 3672357580,
       preview: "mid-1980s Orion/Tobor production",
@@ -55,6 +59,7 @@ export const FILM_STUDY_VERIFIED_DONOR_CHOICES: Readonly<
     },
     miss: {
       donorScenarioId: "scenario_avatar_the_way_of_water_2022",
+      summary: { en: "Avatar: The Way of Water — virtual and underwater production (2022)", nb: "Avatar: The Way of Water – virtuell undervannsproduksjon (2022)", fr: "Avatar : La Voie de l’eau — production virtuelle sous-marine (2022)", pt: "Avatar: O Caminho da Água — produção virtual subaquática (2022)" },
       canonicalLength: 1868,
       canonicalHash: 1125186761,
       preview: "2022 mature virtual production",
@@ -68,6 +73,7 @@ export const FILM_STUDY_VERIFIED_DONOR_CHOICES: Readonly<
   scenario_the_lives_of_others_2006: {
     partial: {
       donorScenarioId: "scenario_enthusiasm_1930",
+      summary: { en: "Enthusiasm: Soviet industrial sound montage (1930)", nb: "Enthusiasm: sovjetisk industriell lydmontasje (1930)", fr: "Enthusiasm : montage sonore industriel soviétique (1930)", pt: "Enthusiasm: montagem sonora industrial soviética (1930)" },
       canonicalLength: 543,
       canonicalHash: 1715791960,
       preview: "1930 Soviet Ukrainian/Donbas early sound",
@@ -79,6 +85,7 @@ export const FILM_STUDY_VERIFIED_DONOR_CHOICES: Readonly<
     },
     miss: {
       donorScenarioId: "scenario_the_gold_rush_1925",
+      summary: { en: "The Gold Rush: Chaplin’s silent-film studio production (1925)", nb: "The Gold Rush: Chaplins stumfilmproduksjon (1925)", fr: "La Ruée vers l’or : la production muette de Chaplin (1925)", pt: "A Quimera do Ouro: produção muda de Chaplin (1925)" },
       canonicalLength: 675,
       canonicalHash: 3197439026,
       preview: "1925 mature American silent feature production",
@@ -113,4 +120,24 @@ export function presentVerifiedFilmStudyDonorChoice(
     && canonicalOption.startsWith(entry.preview)
     ? entry.text[language]
     : canonicalOption;
+}
+
+/**
+ * Short option label for the six source-locked donor alternatives.
+ * A changed donor label never receives a stale synopsis.
+ * The complete source-matched explanation remains available through the
+ * adjacent disclosure and is always used for the real quiz.
+ */
+export function presentVerifiedFilmStudyDonorChoiceSummary(
+  language: FilmWorkLanguage,
+  targetScenarioId: string,
+  quality: "match" | "partial" | "miss",
+  canonicalOption: string,
+): string | undefined {
+  if (quality === "match") return undefined;
+  const entry = FILM_STUDY_VERIFIED_DONOR_CHOICES[targetScenarioId]?.[quality];
+  if (!entry || !canonicalOption.startsWith(entry.preview)) return undefined;
+  const fingerprint = canonicalFilmStudyOptionFingerprint(canonicalOption);
+  if (fingerprint.length !== entry.canonicalLength || fingerprint.hash !== entry.canonicalHash) return undefined;
+  return entry.summary[language];
 }

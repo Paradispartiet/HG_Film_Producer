@@ -6,7 +6,7 @@ import {
   getFilmStudyCoverageStatusLabel,
 } from "../../core/filmStudyCopy";
 import { formatFilmStudyHistoryFeedback } from "../../core/filmStudyHistoryFeedbackCopy";
-import { presentVerifiedFilmHistoryChoice, presentVerifiedFilmHistoryText } from "../../core/filmStudyVerifiedHistoryPresentation";
+import { presentVerifiedFilmHistoryChoice, presentVerifiedFilmHistoryChoiceSummary, presentVerifiedFilmHistoryText } from "../../core/filmStudyVerifiedHistoryPresentation";
 import { presentFilmStudySourceSupport, presentFilmStudySourceText } from "../../core/filmStudyVerificationPresentation";
 import type { FilmStudyCoverageItem } from "../../core/filmStudyCoverage";
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
@@ -414,17 +414,29 @@ export function ScenarioFilmStudyPanel({
             <span className="eyebrow">{copy.historyLens}</span>
             <strong>{presentVerifiedFilmHistoryText(language, scenario.id, historyProfile.historyQuestion)}</strong>
             <div className="scenario-history-choice-grid">
-              {historyChoices.map((choice) => (
-                <button
-                  aria-pressed={choice.id === selectedHistoryChoiceId}
-                  className={choice.id === selectedHistoryChoiceId ? "scenario-history-choice scenario-history-choice--selected" : "scenario-history-choice"}
-                  key={choice.id}
-                  onClick={() => setSelectedHistoryChoiceId(choice.id)}
-                  type="button"
-                >
-                  {presentVerifiedFilmHistoryChoice(language, scenario.id, choice.label, choice.quality)}
-                </button>
-              ))}
+              {historyChoices.map((choice) => {
+                const completeExplanation = presentVerifiedFilmHistoryChoice(language, scenario.id, choice.label, choice.quality);
+                const shortLabel = presentVerifiedFilmHistoryChoiceSummary(language, scenario.id, choice.label, choice.quality);
+                const selected = choice.id === selectedHistoryChoiceId;
+                return (
+                  <div className={selected ? "scenario-history-choice scenario-history-choice--selected" : "scenario-history-choice"} key={choice.id}>
+                    <button
+                      aria-pressed={selected}
+                      className="scenario-history-choice-button"
+                      onClick={() => setSelectedHistoryChoiceId(choice.id)}
+                      type="button"
+                    >
+                      {shortLabel ?? completeExplanation}
+                    </button>
+                    {shortLabel ? (
+                      <details className="scenario-history-choice-expand">
+                        <summary>{copy.showCompleteExplanation}</summary>
+                        <p>{completeExplanation}</p>
+                      </details>
+                    ) : null}
+                  </div>
+                );
+              })}
             </div>
             {selectedHistoryChoice ? (
               <p className={`scenario-history-feedback scenario-history-feedback--${selectedHistoryChoice.quality}`}>

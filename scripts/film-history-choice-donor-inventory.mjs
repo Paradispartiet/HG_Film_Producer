@@ -65,7 +65,7 @@ const translationBundle = await build({
   logLevel: "warning",
 });
 assert.equal(translationBundle.outputFiles.length, 1, "Expected one donor presentation module");
-const { FILM_STUDY_VERIFIED_DONOR_CHOICES, canonicalFilmStudyOptionFingerprint, presentVerifiedFilmStudyDonorChoice } =
+const { FILM_STUDY_VERIFIED_DONOR_CHOICES, canonicalFilmStudyOptionFingerprint, presentVerifiedFilmStudyDonorChoice, presentVerifiedFilmStudyDonorChoiceSummary } =
   await import(`data:text/javascript;base64,${Buffer.from(translationBundle.outputFiles[0].text).toString("base64")}`);
 
 let checkedDonorChoices = 0;
@@ -84,6 +84,13 @@ for (const item of inventory) {
       hash: entry.canonicalHash,
     }, `Historical donor statement drifted: ${item.scenarioId} ${choice.quality}`);
     assert.equal(presentVerifiedFilmStudyDonorChoice("en", item.scenarioId, choice.quality, choice.canonicalOption), choice.canonicalOption);
+    for (const lang of ["en", "nb", "fr", "pt"]) {
+      const condensed = presentVerifiedFilmStudyDonorChoiceSummary(lang, item.scenarioId, choice.quality, choice.canonicalOption);
+      assert.equal(condensed, entry.summary[lang], `Wrong summary: ${item.scenarioId} ${choice.quality} ${lang}`);
+      assert.ok(condensed.trim().length >= 20 && condensed.length < 115, "Too long or empty answer title");
+      assert.equal(presentVerifiedFilmStudyDonorChoiceSummary(lang, item.scenarioId, choice.quality, choice.canonicalOption + " revised"),
+        undefined, "Changed historical claim must never get an old short title");
+    }
     for (const language of ["nb", "fr", "pt"]) {
       const localized = presentVerifiedFilmStudyDonorChoice(language, item.scenarioId, choice.quality, choice.canonicalOption);
       assert.equal(localized, entry.text[language], `Wrong translation: ${item.scenarioId} ${choice.quality} ${language}`);

@@ -1,5 +1,5 @@
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
-import { presentVerifiedFilmStudyDonorChoice } from "./filmStudyVerifiedDonorChoices.js";
+import { presentVerifiedFilmStudyDonorChoice, presentVerifiedFilmStudyDonorChoiceSummary } from "./filmStudyVerifiedDonorChoices.js";
 
 /**
  * Source-locked presentation for the first three verified film-history cases.
@@ -227,4 +227,26 @@ export function presentVerifiedFilmHistoryChoice(
     && originalLabel === `${canonicalPeriod}: ${canonicalMoment}`
     ? `${translatedPeriod}: ${translatedMoment}`
     : originalLabel;
+}
+
+/**
+ * Deliberately shorter, source-locked title for the three reviewed film
+ * exercises. The full historical statement must remain independently readable.
+ * Other films and changed canonical statements retain the original answer UI.
+ */
+export function presentVerifiedFilmHistoryChoiceSummary(
+  language: FilmWorkLanguage,
+  scenarioId: string,
+  originalLabel: string,
+  quality: "match" | "partial" | "miss",
+): string | undefined {
+  const rows = FILM_HISTORY_PRESENTATION_ROWS[scenarioId as keyof typeof FILM_HISTORY_PRESENTATION_ROWS];
+  if (!rows) return undefined;
+  if (quality !== "match") {
+    return presentVerifiedFilmStudyDonorChoiceSummary(language, scenarioId, quality, originalLabel);
+  }
+  const period = rows[0]?.[0];
+  const moment = rows[5]?.[0];
+  if (!period || !moment || originalLabel !== `${period}: ${moment}`) return undefined;
+  return presentVerifiedFilmHistoryText(language, scenarioId, period);
 }
