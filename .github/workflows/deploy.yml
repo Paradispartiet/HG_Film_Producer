@@ -78,10 +78,59 @@ jobs:
         with:
           path: ./dist
 
+  browser-qa:
+    name: Chromium journey · 3 films × 4 languages
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install application
+        run: npm ci
+
+      # Keep the production lockfile untouched. Chromium is a QA-only tool;
+      # our application has no browser automation runtime dependency.
+      - name: Install headless Chromium QA tools
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: Build release candidate
+        run: npm run build:ui
+
+      - name: Exercise four-language user journeys
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run preview -- --host 127.0.0.1 --port 4173 --strictPort > browser-qa-preview.log 2>&1 &
+          preview_pid=$!
+          trap 'kill "${preview_pid}" 2>/dev/null || true' EXIT
+          node scripts/film-producer-four-language-browser-qa.mjs
+
+      - name: Preserve smoke evidence and visual-review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-qa-evidence
+          path: |
+            browser-qa-artifacts/
+            browser-qa-preview.log
+          if-no-files-found: warn
+          retention-days: 7
+
   deploy:
     name: Deploy GitHub Pages
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    needs: verify
+    needs: [verify, browser-qa]
     runs-on: ubuntu-latest
 
     permissions:
