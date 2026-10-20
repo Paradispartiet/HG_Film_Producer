@@ -56,3 +56,58 @@ test("experimental career introduction uses a localized second-film label", () =
     if (language !== "en") assert.ok(!intro.includes("Film Two"), language);
   }
 });
+
+test("developer demo inspection exposes localized film, release, and system labels", () => {
+  for (const language of FILMWORK_LANGUAGES) {
+    const demo = STUDIO_CAREER_APP_SHELL_COPY[language].demo as unknown as {
+      readonly filmResult?: {
+        readonly eyebrow: string; readonly heading: string;
+        readonly quality: string; readonly audienceAppeal: string; readonly criticalAppeal: string;
+        readonly budgetSpent: string; readonly revenueEstimate: string;
+      };
+      readonly release?: {
+        readonly eyebrow: string; readonly heading: string;
+        readonly breakEvenCleared: string; readonly belowBreakEven: string;
+        readonly strategy: string; readonly festivalResult: string;
+        readonly selected: string; readonly notSelected: string;
+        readonly reviewSummary: string; readonly audienceSummary: string;
+        readonly audienceValue: (score: number, viewers: string) => string;
+        readonly revenueResult: string; readonly revenueValue: (gross: string, net: string) => string;
+        readonly awardsOutcome: string; readonly awardsValue: (nominations: number, wins: number) => string;
+      };
+      readonly systems?: {
+        readonly eyebrow: string; readonly heading: string;
+        readonly onlineCount: (count: number) => string; readonly represented: string;
+      };
+    };
+    assert.ok(demo.filmResult, language);
+    assert.ok(demo.release, language);
+    assert.ok(demo.systems, language);
+    for (const field of Object.values(demo.filmResult)) assert.ok(field.trim(), language);
+    for (const field of Object.values(demo.systems)) assert.ok(typeof field === "function" || field.trim(), language);
+    for (const field of Object.values(demo.release)) assert.ok(typeof field === "function" || field.trim(), language);
+    assert.match(demo.systems.onlineCount(3), /3\/3/, language);
+    assert.match(demo.release.audienceValue(87, "1 234"), /87.*1 234/, language);
+    assert.match(demo.release.awardsValue(2, 1), /2.*1/, language);
+  }
+});
+
+test("demo inspection preserves canonical English and translates Portuguese", () => {
+  const en = STUDIO_CAREER_APP_SHELL_COPY.en.demo as unknown as {
+    readonly filmResult: { readonly heading: string };
+    readonly release: { readonly heading: string };
+    readonly systems: { readonly heading: string };
+  };
+  const pt = STUDIO_CAREER_APP_SHELL_COPY.pt.demo as unknown as {
+    readonly filmResult: { readonly heading: string };
+    readonly release: { readonly heading: string; readonly awardsValue: (n: number, w: number) => string };
+    readonly systems: { readonly heading: string; readonly represented: string };
+  };
+  assert.equal(en.filmResult.heading, "Film result");
+  assert.equal(en.release.heading, "Release report");
+  assert.equal(en.systems.heading, "System status");
+  assert.equal(pt.filmResult.heading, "Resultado do filme");
+  assert.equal(pt.release.heading, "Relatório de lançamento");
+  assert.equal(pt.systems.represented, "representado");
+  assert.equal(pt.release.awardsValue(2, 1), "2 nomeações · 1 vitória");
+});
