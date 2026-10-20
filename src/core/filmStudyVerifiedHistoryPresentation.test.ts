@@ -1,0 +1,85 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import test from "node:test";
+
+import { FILMWORK_LANGUAGES } from "./filmWorkLanguage.js";
+import {
+  FILM_HISTORY_PRESENTATION_ROWS,
+  presentVerifiedFilmHistoryChoice,
+  presentVerifiedFilmHistoryText,
+} from "./filmStudyVerifiedHistoryPresentation.js";
+
+const scenarioIds = [
+  "scenario_12_angry_men_1957",
+  "scenario_the_machinist_2004",
+  "scenario_the_lives_of_others_2006",
+] as const;
+const source = readFileSync("src/ui/data/scenarioFilmStudyMap.ts", "utf8");
+const panel = readFileSync("src/ui/components/ScenarioFilmStudyPanel.tsx", "utf8");
+
+test("history exact-text translations are grounded in the three unchanged canonical source profiles", () => {
+  for (const scenarioId of scenarioIds) {
+    const start = source.indexOf(`  ${scenarioId}: {`);
+    assert.ok(start > 0, `missing canonical profile: ${scenarioId}`);
+    const end = source.indexOf("\n  },", start);
+    assert.ok(end > start, `missing closing source profile: ${scenarioId}`);
+    const profile = source.slice(start, end);
+    const rows = FILM_HISTORY_PRESENTATION_ROWS[scenarioId];
+    assert.equal(rows.length, scenarioId === "scenario_12_angry_men_1957" ? 16 : 15);
+    assert.equal(new Set(rows.map((row) => row[0])).size, rows.length, `duplicate exact claims: ${scenarioId}`);
+    for (const row of rows) {
+      assert.ok(profile.includes(JSON.stringify(row[0])), `${scenarioId}: source claim changed or missing: ${row[0]}`);
+      for (const language of FILMWORK_LANGUAGES) {
+        const rendered = presentVerifiedFilmHistoryText(language, scenarioId, row[0]);
+        assert.ok(rendered.trim(), `${language}: ${scenarioId}`);
+        assert.equal(rendered, language === "en" ? row[0] : row[language === "nb" ? 1 : language === "fr" ? 2 : 3]);
+        if (language !== "en") assert.notEqual(rendered, row[0], `${scenarioId}: ${language}: ${row[0]}`);
+      }
+    }
+  }
+});
+
+test("only exact matching history options are translated; donor options and unknown claims fail closed", () => {
+  for (const scenarioId of scenarioIds) {
+    const rows = FILM_HISTORY_PRESENTATION_ROWS[scenarioId];
+    const period = rows[0];
+    const moment = rows[5];
+    assert.ok(period && moment);
+    const canonicalOption = `${period[0]}: ${moment[0]}`;
+    for (const language of FILMWORK_LANGUAGES) {
+      const index = language === "en" ? 0 : language === "nb" ? 1 : language === "fr" ? 2 : 3;
+      assert.equal(
+        presentVerifiedFilmHistoryChoice(language, scenarioId, canonicalOption),
+        `${period[index]}: ${moment[index]}`,
+      );
+      assert.equal(presentVerifiedFilmHistoryChoice(language, scenarioId, "Another film: unreviewed donor text"), "Another film: unreviewed donor text");
+      assert.equal(presentVerifiedFilmHistoryText(language, scenarioId, "Unreviewed historical claim"), "Unreviewed historical claim");
+    }
+  }
+  assert.equal(presentVerifiedFilmHistoryText("nb", "other_scenario", "Psychological thriller"), "Psychological thriller");
+});
+
+test("generated source-verified answer feedback has EN/NB/FR/PT display text for all three films", () => {
+  const feedback = [
+    "This connects the film's historical position directly to its documented production method.",
+    "This is a real film-historical explanation, but it belongs to a different case and production tradition.",
+    "This places the film inside the wrong historical and technical system.",
+  ];
+  for (const id of scenarioIds) for (const value of feedback) for (const language of FILMWORK_LANGUAGES) {
+    const translated = presentVerifiedFilmHistoryText(language, id, value);
+    assert.ok(translated.trim());
+    if (language !== "en") assert.notEqual(translated, value, `${id}: ${language}: ${value}`);
+  }
+});
+
+test("active study panel uses presentation for profile, learning feedback and coverage notes", () => {
+  assert.match(panel, /presentVerifiedFilmHistoryText\(language, scenario\.id, historyProfile\.historyQuestion\)/);
+  assert.match(panel, /presentVerifiedFilmHistoryChoice\(language, scenario\.id, choice\.label\)/);
+  assert.match(panel, /presentVerifiedFilmHistoryText\(language, scenario\.id, selectedHistoryChoice\.feedback\)/);
+  assert.match(panel, /presentVerifiedFilmHistoryText\(language, scenarioId, item\.note\)/);
+  for (const key of ["before", "moment", "after", "period"]) {
+    assert.match(panel, new RegExp(`presentVerifiedFilmHistoryText\\(language, scenario\\.id, historyProfile\\.${key}\\)`));
+  }
+  assert.doesNotMatch(panel, /<strong>\{historyProfile\.historyQuestion\}<\/strong>/);
+  assert.doesNotMatch(panel, /\{choice\.label\}/);
+});
