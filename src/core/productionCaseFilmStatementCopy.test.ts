@@ -6,6 +6,7 @@ import { FILMWORK_LANGUAGES } from "./filmWorkLanguage.js";
 import {
   CANONICAL_12_ANGRY_MEN_STATEMENTS,
   CANONICAL_LOST_IN_TRANSLATION_STATEMENTS,
+  CANONICAL_BICYCLE_THIEVES_STATEMENTS,
   presentVerifiedFilmStatement,
 } from "./productionCaseFilmStatementCopy.js";
 
@@ -79,5 +80,35 @@ test("Lost in Translation translation only affects its exact original film state
     assert.equal(presentVerifiedFilmStatement(language, "seed_fallback", lostInTranslationScenarioId, "Romantic melancholy"), "Romantic melancholy");
     assert.equal(presentVerifiedFilmStatement(language, "production_case", "scenario_other_film_2003", "Romantic melancholy"), "Romantic melancholy");
     assert.equal(presentVerifiedFilmStatement(language, "production_case", lostInTranslationScenarioId, "Unknown revised source claim"), "Unknown revised source claim");
+  }
+});
+
+const bicycleScenarioId = "scenario_bicycle_thieves_1948";
+
+test("Bicycle Thieves source brief has 22 positions and exactly 21 unique, source-locked translated statements", () => {
+  const start = lostBriefSource.indexOf("  scenario_bicycle_thieves_1948: {");
+  const end = lostBriefSource.indexOf("\n  },", start);
+  assert.ok(start >= 0 && end > start, "Bicycle Thieves source section is missing");
+  const section = lostBriefSource.slice(start, end);
+  assert.equal(CANONICAL_BICYCLE_THIEVES_STATEMENTS.length, 21);
+  assert.equal(new Set(CANONICAL_BICYCLE_THIEVES_STATEMENTS).size, 21);
+  for (const original of CANONICAL_BICYCLE_THIEVES_STATEMENTS) {
+    assert.ok(section.includes(JSON.stringify(original)), `Canonical Bicycle Thieves brief claim drifted: ${original}`);
+    for (const language of FILMWORK_LANGUAGES) {
+      const presented = presentVerifiedFilmStatement(language, "production_case", bicycleScenarioId, original);
+      assert.ok(presented.trim());
+      if (language === "en") assert.equal(presented, original);
+      else assert.notEqual(presented, original, `${language}: ${original}`);
+    }
+  }
+  const repeated = "Make one object carry a life";
+  assert.equal(section.split(JSON.stringify(repeated)).length - 1, 2, "Expected one repeated learning goal among 22 positions");
+});
+
+test("Bicycle Thieves presentation stays separate from canonical seed and unrelated film statements", () => {
+  for (const language of FILMWORK_LANGUAGES) {
+    assert.equal(presentVerifiedFilmStatement(language, "seed_fallback", bicycleScenarioId, "Social realist drama"), "Social realist drama");
+    assert.equal(presentVerifiedFilmStatement(language, "production_case", "scenario_other_film_1948", "Social realist drama"), "Social realist drama");
+    assert.equal(presentVerifiedFilmStatement(language, "production_case", bicycleScenarioId, "Updated source claim"), "Updated source claim");
   }
 });
