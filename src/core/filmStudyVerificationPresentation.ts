@@ -7,6 +7,32 @@ import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 type SourceCopyRow = readonly [canonical: string, nb: string, fr: string, pt: string];
 
 export const FILM_STUDY_SOURCE_COPY_ROWS = {
+  scenario_bicycle_thieves_1948: [
+    [
+      "The brief's neorealist street realism, nonprofessional casting, human-scale Rome, object-driven survival stakes, and understated cutting are supported by institutional history and close craft analysis.",
+      "Institusjonell filmhistorie og nærstudier av filmhåndverket underbygger briefens neorealistiske gatemiljø, ikke-profesjonelle skuespillere, Roma i menneskelig målestokk, kampen for å klare seg utløst av én gjenstand og tilbakeholden klipping.",
+      "L'histoire institutionnelle du cinéma et des analyses détaillées étayent le réalisme de rue néoréaliste, le recours aux non-professionnels, la Rome à hauteur humaine, l'enjeu de survie concentré sur un objet et le montage discret décrits dans le brief.",
+      "A história institucional do cinema e análises detalhadas sustentam o realismo de rua neorrealista, a escolha de atores não profissionais, uma Roma à escala humana, a sobrevivência dependente de um objeto e a montagem discreta descritos no briefing.",
+    ],
+    [
+      "The BFI documents the film's nonprofessional cast, location work on Rome's streets, postwar social reality, and deliberately simple father-and-son search structure.",
+      "BFI dokumenterer de ikke-profesjonelle skuespillerne, opptakene i Romas gater, etterkrigstidens sosiale virkelighet og den bevisst enkle fortellingen om en far og sønn som leter.",
+      "Le BFI documente les interprètes non professionnels, le tournage dans les rues de Rome, les réalités sociales de l'après-guerre et la structure volontairement simple de la recherche menée par un père et son fils.",
+      "O BFI documenta os intérpretes não profissionais, as filmagens nas ruas de Roma, a realidade social do pós-guerra e a estrutura deliberadamente simples da procura de um pai e do seu filho.",
+    ],
+    [
+      "Production history details De Sica's selection and direction of nonprofessional performers, including factory worker Lamberto Maggiorani and street-discovered Enzo Staiola.",
+      "Produksjonshistorien beskriver hvordan De Sica valgte ut og instruerte ikke-profesjonelle skuespillere, blant dem fabrikkarbeideren Lamberto Maggiorani og Enzo Staiola, som ble oppdaget på gaten.",
+      "L'histoire de la production détaille la sélection et la direction des interprètes non professionnels par De Sica, notamment Lamberto Maggiorani, ouvrier d'usine, et Enzo Staiola, découvert dans la rue.",
+      "A história da produção descreve a seleção e a direção de intérpretes não profissionais por De Sica, incluindo o operário fabril Lamberto Maggiorani e Enzo Staiola, descoberto na rua.",
+    ],
+    [
+      "The Tavianis analyse De Sica's restrained succession of shots, internal visual rhymes, and brief tracking move around Bruno rather than showy virtuoso camerawork.",
+      "Taviani-brødrene analyserer De Sicas tilbakeholdne bilderekkefølge, indre visuelle rim og korte kamerabevegelse rundt Bruno, i stedet for demonstrativt virtuost kameraarbeid.",
+      "Les frères Taviani analysent l'enchaînement sobre des plans de De Sica, ses échos visuels internes et le bref travelling autour de Bruno, plutôt qu'une virtuosité spectaculaire de la caméra.",
+      "Os irmãos Taviani analisam a sucessão contida de planos de De Sica, as rimas visuais internas e o breve movimento de câmara em torno de Bruno, em vez de um trabalho de câmara ostensivamente virtuoso.",
+    ],
+  ],
   scenario_lost_in_translation_2003: [
     [
       "The brief's dislocated hotel-and-city mood, intimate observation, drifting rhythm, improvisational production, 35mm texture, and music-led emotional world are supported by production reporting and Coppola's own account.",

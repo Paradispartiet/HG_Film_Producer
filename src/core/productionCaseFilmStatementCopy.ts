@@ -384,6 +384,55 @@ const livesStatements: Readonly<Record<FilmWorkLanguage, Readonly<Record<LivesOf
   },
 };
 
+/** Film 5: exact canonical authorial claims. The brief repeats one learning goal. */
+export const CANONICAL_BICYCLE_THIEVES_STATEMENTS = [
+  "Follow a social realist drama where one missing object turns an ordinary city journey into survival pressure.",
+  "Social realist drama",
+  "Survival quest",
+  "Human-scale city story",
+  "Plainspoken and urgent",
+  "Dignified under poverty",
+  "Worn dignity under economic strain",
+  "Make one object carry a life",
+  "Turn searching into survival",
+  "Pressure dignity with need",
+  "Use observational street realism",
+  "Keep the city human scale",
+  "Frame ordinary spaces plainly",
+  "Build tension through searching",
+  "Hold waiting and setbacks",
+  "Let public humiliation sting",
+  "Use ambient street sound",
+  "Let silence show social reality",
+  "Keep crowds grounded",
+  "Realism can make a simple object carry an entire life",
+  "Cast non-actors to lower the fiction",
+] as const;
+
+const bicycleThievesPresentation: ReadonlyMap<string, readonly [string, string, string]> = new Map([
+  ["Follow a social realist drama where one missing object turns an ordinary city journey into survival pressure.", ["Følg et sosialrealistisk drama der én forsvunnet gjenstand gjør en vanlig ferd gjennom byen til en kamp for å klare seg.", "Suivez un drame social réaliste où la disparition d'un objet transforme un parcours ordinaire dans la ville en lutte pour survivre.", "Acompanhe um drama de realismo social em que um objeto desaparecido transforma um percurso comum pela cidade numa luta pela sobrevivência."]],
+  ["Social realist drama", ["Sosialrealistisk drama", "Drame social réaliste", "Drama de realismo social"]],
+  ["Survival quest", ["Kamp for å klare seg", "Quête de survie", "Busca pela sobrevivência"]],
+  ["Human-scale city story", ["Byfortelling i menneskelig målestokk", "Récit urbain à hauteur humaine", "História urbana à escala humana"]],
+  ["Plainspoken and urgent", ["Nøkternt og presserende", "Sobre et urgent", "Direto e urgente"]],
+  ["Dignified under poverty", ["Verdighet tross fattigdom", "Digne malgré la pauvreté", "Digno perante a pobreza"]],
+  ["Worn dignity under economic strain", ["Tæret verdighet under økonomisk press", "Dignité mise à l'épreuve par la précarité", "Dignidade desgastada pela pressão económica"]],
+  ["Make one object carry a life", ["La én gjenstand bære et helt liv", "Faites reposer toute une vie sur un seul objet", "Faça um objeto carregar o peso de uma vida"]],
+  ["Turn searching into survival", ["Gjør letingen til et spørsmål om å overleve", "Transformez la recherche en enjeu de survie", "Transforme a procura numa questão de sobrevivência"]],
+  ["Pressure dignity with need", ["Sett verdigheten under press fra nød", "Mettez la dignité à l'épreuve de la nécessité", "Coloque a dignidade sob a pressão da necessidade"]],
+  ["Use observational street realism", ["Bruk observerende realisme fra gatene", "Employez un réalisme de rue fondé sur l'observation", "Use um realismo de rua baseado na observação"]],
+  ["Keep the city human scale", ["Vis byen i menneskelig målestokk", "Montrez la ville à hauteur humaine", "Mostre a cidade à escala humana"]],
+  ["Frame ordinary spaces plainly", ["Vis hverdagslige steder uten staffasje", "Cadrez les lieux ordinaires sans artifice", "Enquadre os espaços comuns sem artifícios"]],
+  ["Build tension through searching", ["Bygg spenning gjennom letingen", "Créez la tension par la recherche", "Construa a tensão através da procura"]],
+  ["Hold waiting and setbacks", ["Gi venting og tilbakeslag tid", "Laissez durer les attentes et les revers", "Dê tempo à espera e aos contratempos"]],
+  ["Let public humiliation sting", ["La offentlig ydmykelse svi", "Faites ressentir la douleur de l'humiliation publique", "Faça sentir o peso da humilhação pública"]],
+  ["Use ambient street sound", ["Bruk omgivelseslyden fra gatene", "Utilisez l'ambiance sonore des rues", "Use o som ambiente das ruas"]],
+  ["Let silence show social reality", ["La stillheten vise den sosiale virkeligheten", "Laissez le silence révéler la réalité sociale", "Deixe o silêncio revelar a realidade social"]],
+  ["Keep crowds grounded", ["La folkemengdene virke hverdagslige og troverdige", "Gardez les foules ancrées dans le quotidien", "Mantenha as multidões ligadas ao quotidiano"]],
+  ["Realism can make a simple object carry an entire life", ["Realisme kan la en enkel gjenstand bære et helt liv", "Le réalisme peut faire porter une vie entière à un simple objet", "O realismo pode fazer com que um objeto simples represente uma vida inteira"]],
+  ["Cast non-actors to lower the fiction", ["Bruk ikke-profesjonelle skuespillere for å gi fiksjonen et hverdagslig preg", "Choisissez des non-professionnels pour rapprocher la fiction du quotidien", "Escolha não atores para aproximar a ficção do quotidiano"]],
+]);
+
 export const CANONICAL_LOST_IN_TRANSLATION_STATEMENTS = [
   "Create a quiet city-and-hotel story where two displaced people find temporary intimacy in loneliness.",
   "Romantic melancholy",
@@ -452,6 +501,11 @@ export function presentVerifiedFilmStatement(
     return Object.prototype.hasOwnProperty.call(presentation, original)
       ? presentation[original as MachinistStatement]
       : original;
+  }
+  if (scenarioId === "scenario_bicycle_thieves_1948") {
+    if (language === "en") return original;
+    const translated = bicycleThievesPresentation.get(original);
+    return translated?.[language === "nb" ? 0 : language === "fr" ? 1 : 2] ?? original;
   }
   if (scenarioId === "scenario_lost_in_translation_2003") {
     if (language === "en") return original;
