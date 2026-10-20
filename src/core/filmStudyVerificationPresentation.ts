@@ -7,6 +7,32 @@ import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 type SourceCopyRow = readonly [canonical: string, nb: string, fr: string, pt: string];
 
 export const FILM_STUDY_SOURCE_COPY_ROWS = {
+  scenario_lost_in_translation_2003: [
+    [
+      "The brief's dislocated hotel-and-city mood, intimate observation, drifting rhythm, improvisational production, 35mm texture, and music-led emotional world are supported by production reporting and Coppola's own account.",
+      "Produksjonsreportasjer og Coppolas egen beretning underbygger briefens fremmedgjorte hotell- og bystemning, nærgående observasjoner, flytende rytme, improviserte opptak, 35 mm-uttrykk og musikkdrevne følelsesverden.",
+      "Des reportages de production et le témoignage de Coppola étayent l'atmosphère dépaysante de l'hôtel et de la ville, l'observation intime, le rythme flottant, les improvisations, la texture du 35 mm et l'univers émotionnel porté par la musique décrits dans le brief.",
+      "Reportagens de produção e o testemunho de Coppola sustentam a atmosfera de deslocamento entre hotel e cidade, a observação íntima, o ritmo errante, a improvisação, a textura dos 35 mm e o universo emocional guiado pela música descritos no briefing.",
+    ],
+    [
+      "Production feature documenting the 35mm format, on-the-run Tokyo photography, intimate close-ups, hotel views, improvised scenes, Avid edit, and music-driven karaoke production.",
+      "Produksjonsreportasje som dokumenterer 35 mm-formatet, raske opptak på steder i Tokyo, intime nærbilder, hotellutsikter, improviserte scener, klipping med Avid og karaokesekvenser formet av musikk.",
+      "Reportage de production documentant le format 35 mm, les prises de vues spontanées à Tokyo, les gros plans intimes, les vues de l'hôtel, les scènes improvisées, le montage sur Avid et les scènes de karaoké structurées par la musique.",
+      "Reportagem de produção que documenta o formato de 35 mm, as filmagens rápidas em Tóquio, os grandes planos íntimos, as vistas do hotel, as cenas improvisadas, a montagem em Avid e a produção das cenas de karaoke orientada pela música.",
+    ],
+    [
+      "Coppola describes the jet-lagged, dreamy neon reference, Blade Runner influence, and Tokyo dream-pop music used to create the romantic dislocation.",
+      "Coppola beskriver jetlag, drømmeaktige neonreferanser, påvirkningen fra Blade Runner og Tokyos drømmepop-musikk som virkemidler for romantisk fremmedgjøring.",
+      "Coppola évoque le décalage horaire, les néons oniriques, l'influence de Blade Runner et la dream pop tokyoïte employés pour créer un dépaysement romantique.",
+      "Coppola descreve o jet lag, os néones oníricos, a influência de Blade Runner e a música dream pop de Tóquio usados para criar um desenraizamento romântico.",
+    ],
+    [
+      "Coppola recounts building the story from Tokyo impressions, the Park Hyatt setting, Tokyo Dream Pop mixes, and the small crew running through Tokyo at night.",
+      "Coppola forteller hvordan hun bygde fortellingen på inntrykk fra Tokyo, miljøet på Park Hyatt, miksene med Tokyo Dream Pop og det lille filmteamets raske arbeid i Tokyo om natten.",
+      "Coppola raconte avoir construit le récit à partir de ses impressions de Tokyo, du cadre du Park Hyatt, des compilations Tokyo Dream Pop et d'une petite équipe parcourant Tokyo la nuit.",
+      "Coppola relata que construiu a história a partir das suas impressões de Tóquio, do cenário do Park Hyatt, das misturas Tokyo Dream Pop e da pequena equipa a filmar pelas ruas de Tóquio à noite.",
+    ],
+  ],
   scenario_12_angry_men_1957: [
     [
       "The brief's one-room blocking, argument-led escalation, tightening faces, controlled lens progression, and lean production method are supported by production history and cinematography analysis.",
