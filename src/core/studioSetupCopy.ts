@@ -32,7 +32,10 @@ type ScriptTemplatePresentationInput = {
   readonly title: string;
   readonly defaultTheme: string;
 };
-type ScriptTemplatePresentation = Pick<ScriptTemplate, "title" | "defaultTheme">;
+type ScriptTemplatePresentation = {
+  readonly title: string;
+  readonly defaultTheme: string;
+};
 type ScriptTemplatePresentationById = Readonly<Record<string, ScriptTemplatePresentation>>;
 
 type StudioSetupCopy = {
