@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Executable Chromium journey for the three source-verified Film Producer pilots.
+ * Executable Chromium journey for the four source-verified Film Producer pilots.
  * 
  * This tests actual browser DOM and navigation in EN/NB/FR/PT. It does NOT
  * certify layout aesthetics, screen-reader usability or all 614 film cases.

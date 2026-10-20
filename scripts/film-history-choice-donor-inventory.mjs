@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { build } from "esbuild";
 
 /**
- * Runtime-derived donor inventory for Film Study's three source-verified
+ * Runtime-derived donor inventory for Film Study's four source-verified
  * translation pilots. The quiz selects two *other* films as distractors;
  * do not translate them without verifying their actual canonical donors.
  *
@@ -14,6 +14,7 @@ const targets = [
   "scenario_12_angry_men_1957",
   "scenario_the_machinist_2004",
   "scenario_the_lives_of_others_2006",
+  "scenario_lost_in_translation_2003",
 ];
 
 const result = await build({
@@ -102,7 +103,7 @@ for (const item of inventory) {
     checkedDonorChoices += 1;
   }
 }
-assert.equal(checkedDonorChoices, 6);
+assert.equal(checkedDonorChoices, 8);
 console.log("FILM_HISTORY_TRANSLATED_DONOR_CHOICES=" + checkedDonorChoices);
 
 console.log("FILM_HISTORY_DONOR_INVENTORY=" + JSON.stringify(inventory));

@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 
 /**
- * Six display-only translations of exact source-backed distractor options.
+ * Eight display-only translations of exact source-backed distractor options.
  * The immutable label is selected by the existing Film Study quiz; fingerprint
  * and source ID are audited against the real data module in CI.
  * Nothing in this file changes the question, the donor, the choice ID or grade.
@@ -18,6 +18,42 @@ type DonorChoice = {
 export const FILM_STUDY_VERIFIED_DONOR_CHOICES: Readonly<
   Record<string, Partial<Record<"partial" | "miss", DonorChoice>>>
 > = {
+  scenario_lost_in_translation_2003: {
+    partial: {
+      donorScenarioId: "scenario_black_girl_1966",
+      summary: {
+        en: "Black Girl: post-independence Senegalese cinema (1966)",
+        nb: "Black Girl: senegalesisk film etter uavhengigheten (1966)",
+        fr: "Black Girl : cinéma sénégalais après l’indépendance (1966)",
+        pt: "Black Girl: cinema senegalês pós-independência (1966)",
+      },
+      canonicalLength: 1131,
+      canonicalHash: 3806643545,
+      preview: "1966 Senegalese post-independence cinema",
+      text: {
+        nb: "Senegalesisk film etter uavhengigheten i 1966: begrenset infrastruktur, migrasjon, husarbeid, dubbet indre stemme, ikke-profesjonelle skuespillere og dekolonialt filmskaperskap: Black Girl gjør disse forholdene til en del av produksjonsmetoden uten å romantisere ressursmangelen. Sembène filmatiserer sin egen fortelling; André Zwoboda ivaretar produsent- og produksjonsledelse; Christian Lacoste fotograferer i svart-hvitt; André Gaudier klipper; M’Bissine Thérèse Diop gestalter Diouana og bidrar med mye av hennes klær; Toto Bissainthe gir Diouana hennes krediterte stemme. Criterions fagtekster dokumenterer at filmbyrået under det franske samarbeidsdepartementet avslo søknaden om produksjonsstøtte på grunn av temaet, selv om departementet er kreditert for medvirkning i den ferdige filmen. De beskriver også Sembènes begrep mégotage om det krevende arbeidet med å skrape sammen budsjetter som afrikanske filmskapere sto overfor. Finansieringsbegrensningene preget også den franske dubbingen av Diouanas indre monolog. Dakar, reisene og den franske rivieraen fungerer dermed ikke bare som kontrasterende steder, men som en geografi for migrasjon, husarbeid og postkolonial makt.",
+        fr: "Cinéma sénégalais de l’après-indépendance en 1966 : infrastructures limitées, migration, travail domestique, voix intérieure doublée, interprétation non professionnelle et création décoloniale : Black Girl intègre ces conditions à sa logique de production sans idéaliser la pénurie. Sembène adapte sa propre nouvelle ; André Zwoboda assume des fonctions de production et de direction de production ; Christian Lacoste photographie en noir et blanc ; André Gaudier assure le montage ; M’Bissine Thérèse Diop incarne physiquement Diouana et fournit une grande partie de ses vêtements ; Toto Bissainthe prête à Diouana sa voix créditée. Les études publiées par Criterion indiquent que le bureau du cinéma du ministère de la Coopération a refusé de financer le scénario en raison de son sujet, bien que le film achevé mentionne une participation du ministère. Elles expliquent aussi le terme mégotage employé par Sembène pour décrire les conditions de financement précaire des cinéastes africains. Ces contraintes ont également influencé le doublage français du monologue intérieur de Diouana. Dakar, les déplacements et la Côte d’Azur forment ainsi non seulement un contraste de lieux, mais une géographie de migration, de travail domestique et de pouvoir postcolonial.",
+        pt: "Cinema senegalês pós-independência em 1966: infraestruturas escassas, migração, trabalho doméstico, voz interior dobrada, interpretação não profissional e autoria descolonial: Black Girl integra essas condições na sua lógica de produção sem romantizar a escassez. Sembène adapta o seu próprio conto; André Zwoboda assume funções de produção e direção de produção; Christian Lacoste fotografa a preto e branco; André Gaudier monta; M’Bissine Thérèse Diop interpreta fisicamente Diouana e fornece grande parte do seu vestuário; Toto Bissainthe assegura a voz creditada da personagem. Os estudos da Criterion registam que o gabinete de cinema do Ministério da Cooperação recusou financiar o argumento devido ao tema, embora o filme concluído credite a participação do Ministério. Também descrevem o termo mégotage, usado por Sembène para as condições de financiamento precário enfrentadas pelos cineastas africanos. As limitações de financiamento influenciaram ainda a dobragem francesa do monólogo interior de Diouana. Dakar, as deslocações e a Riviera Francesa não são, portanto, apenas locais contrastantes, mas uma geografia de migração, trabalho doméstico e poder pós-colonial.",
+      },
+    },
+    miss: {
+      donorScenarioId: "scenario_sankofa_1993",
+      summary: {
+        en: "Sankofa: Black independent and diasporic production (1993)",
+        nb: "Sankofa: uavhengig svart og diasporisk filmproduksjon (1993)",
+        fr: "Sankofa : production noire indépendante et diasporique (1993)",
+        pt: "Sankofa: produção negra independente e da diáspora (1993)",
+      },
+      canonicalLength: 1015,
+      canonicalHash: 3753868261,
+      preview: "1990s Black independent and African diasporic cinema",
+      text: {
+        nb: "Uavhengig svart film og afrikansk diasporafilm fra 1990-årene, bygget på transnasjonal lavbudsjettproduksjon, historisk rekonstruksjon på 35 mm, klipping kontrollert av filmskaperen og grasrotbasert egendistribusjon på kino: Filmen ble realisert med uavhengig finansiering på under én million amerikanske dollar, med stiftelsesmidler, bytteavtaler og kredittkortkjøp. Produksjonsnettverket omfattet Ghanas nasjonale kulturkommisjon, DiProCi, NDR, WDR og Channel Four. Gerima fortalte at han flyttet innspillingen av plantasjescenene fra Louisiana til Jamaica da kostnadene steg, og vendte tilbake til Afrika omtrent ett år senere for å fullføre den gjenværende produksjonen på cirka tre uker. Augustin E. Cubano fotograferte produksjonen i 35 mm farger; Kerry Marshall, Tracey White og David J. White hadde ansvar for henholdsvis produksjonsdesign, kostymer og musikk. Gerima klippet filmen selv. De gjennomgåtte kildene dokumenterer ikke kamerahus, objektiver, råfilm, eksponering, lyssetting eller laboratorieprosess, og disse opplysningene forblir derfor uttrykkelig uavklarte.",
+        fr: "Cinéma noir indépendant et cinéma de la diaspora africaine des années 1990, fondés sur une production transnationale à petit budget, une reconstitution historique en 35 mm, un montage contrôlé par le cinéaste et une autodistribution en salles appuyée sur les réseaux communautaires : Le film a été réalisé grâce à un financement indépendant inférieur à un million de dollars, comprenant des subventions de fondations, du troc et des achats par carte de crédit, ainsi qu’un réseau transnational de production réunissant notamment la Commission nationale de la culture du Ghana, DiProCi, NDR, WDR et Channel Four. Gerima a expliqué avoir déplacé le tournage des scènes de plantation de Louisiane en Jamaïque après une hausse des coûts, puis être revenu en Afrique environ un an plus tard pour achever le tournage restant en trois semaines environ. Augustin E. Cubano a assuré la photographie en couleurs sur pellicule 35 mm ; Kerry Marshall, Tracey White et David J. White ont respectivement pris en charge les décors, les costumes et la musique. Gerima a monté lui-même le film. Les documents examinés ne permettent pas d’identifier le boîtier de caméra, les objectifs, la pellicule, l’exposition, l’éclairage ni les opérations de laboratoire ; ces éléments demeurent explicitement indéterminés.",
+        pt: "Cinema negro independente e cinema da diáspora africana dos anos 1990, construídos através de produção transnacional de baixo orçamento, reconstituição histórica em 35 mm, montagem controlada pelo cineasta e autodistribuição em salas de cinema através de redes comunitárias: O filme foi realizado com financiamento independente inferior a um milhão de dólares, incluindo apoios de fundações, trocas de serviços e compras com cartão de crédito, numa rede transnacional de produção que envolveu a Comissão Nacional da Cultura do Gana, a DiProCi, a NDR, a WDR e o Channel Four. Gerima contou que transferiu a produção das cenas de plantação da Louisiana para a Jamaica quando os custos aumentaram e regressou a África cerca de um ano depois para concluir as filmagens restantes em aproximadamente três semanas. Augustin E. Cubano fotografou a produção a cores em 35 mm; Kerry Marshall, Tracey White e David J. White assumiram, respetivamente, a direção artística, o guarda-roupa e a música. O próprio Gerima montou o filme. As fontes analisadas não estabelecem o modelo da câmara, as objetivas, a película, a exposição, a iluminação ou o processo de laboratório, pelo que esses elementos permanecem expressamente indeterminados.",
+      },
+    },
+  },
   scenario_12_angry_men_1957: {
     partial: {
       donorScenarioId: "scenario_the_fall_of_the_romanov_dynasty_1927",
@@ -123,7 +159,7 @@ export function presentVerifiedFilmStudyDonorChoice(
 }
 
 /**
- * Short option label for the six source-locked donor alternatives.
+ * Short option label for the eight source-locked donor alternatives.
  * A changed donor label never receives a stale synopsis.
  * The complete source-matched explanation remains available through the
  * adjacent disclosure and is always used for the real quiz.
