@@ -6,6 +6,7 @@ import {
   getProductionCaseLibraryStatusLabel,
 } from "../../core/productionCaseLibraryCopy";
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
+import { presentFilmGenreLabel } from "../../core/filmGenrePresentation";
 import {
   createProductionCaseProgressExport,
   defaultProductionCaseLibraryControls,
@@ -309,7 +310,7 @@ export function FilmScenarioLibrary({
                     </dl>
                     <ScenarioCaseStatusBadge language={language} status={caseStatus} />
                     <div className="scenario-tags" aria-label={copy.genresAria(scenario.film.title)}>
-                      {scenario.film.genres.map((genre) => <span key={genre}>{genre}</span>)}
+                      {scenario.film.genres.map((genre) => <span key={genre}>{presentFilmGenreLabel(language, genre)}</span>)}
                     </div>
                     <p>{getScenarioCardDescription(scenario, language)}</p>
                     <button className="secondary-button" disabled={!onStartScenario} onClick={() => onStartScenario?.(scenario)} type="button">
