@@ -6,6 +6,7 @@ import { FILMWORK_LANGUAGES } from "./filmWorkLanguage.js";
 import {
   FILM_HISTORY_PRESENTATION_ROWS,
   presentVerifiedFilmHistoryChoice,
+  presentVerifiedFilmHistoryChoiceSummary,
   presentVerifiedFilmHistoryText,
 } from "./filmStudyVerifiedHistoryPresentation.js";
 
@@ -75,6 +76,9 @@ test("generated source-verified answer feedback has EN/NB/FR/PT display text for
 test("active study panel uses presentation for profile, learning feedback and coverage notes", () => {
   assert.match(panel, /presentVerifiedFilmHistoryText\(language, scenario\.id, historyProfile\.historyQuestion\)/);
   assert.match(panel, /presentVerifiedFilmHistoryChoice\(language, scenario\.id, choice\.label, choice\.quality\)/);
+  assert.match(panel, /presentVerifiedFilmHistoryChoiceSummary\(language, scenario\.id, choice\.label, choice\.quality\)/);
+  assert.match(panel, /<details className="scenario-history-choice-expand">/);
+  assert.match(panel, /<p>\{completeExplanation\}<\/p>/);
   assert.match(panel, /presentVerifiedFilmHistoryText\(language, scenario\.id, selectedHistoryChoice\.feedback\)/);
   assert.match(panel, /presentVerifiedFilmHistoryText\(language, scenarioId, item\.note\)/);
   for (const key of ["before", "moment", "after", "period"]) {
@@ -94,4 +98,21 @@ test("unreviewed and changed distractors retain canonical text without affecting
       assert.equal(presentVerifiedFilmHistoryChoice(language, scenarioId, unknown, "match"), unknown);
     }
   }
+});
+
+test("source-locked brief option labels are complete for all four languages, with fail-closed drift", () => {
+  for (const scenarioId of scenarioIds) {
+    const rows = FILM_HISTORY_PRESENTATION_ROWS[scenarioId];
+    const period = rows[0];
+    const moment = rows[5];
+    assert.ok(period && moment);
+    const correct = `${period[0]}: ${moment[0]}`;
+    for (const language of FILMWORK_LANGUAGES) {
+      const expected = period[language === "en" ? 0 : language === "nb" ? 1 : language === "fr" ? 2 : 3];
+      assert.equal(presentVerifiedFilmHistoryChoiceSummary(language, scenarioId, correct, "match"), expected);
+      assert.equal(presentVerifiedFilmHistoryChoiceSummary(language, scenarioId, correct + " revised", "match"), undefined);
+      assert.equal(presentVerifiedFilmHistoryChoiceSummary(language, scenarioId, "Unknown donor", "miss"), undefined);
+    }
+  }
+  assert.equal(presentVerifiedFilmHistoryChoiceSummary("nb", "unknown_id", "Unknown donor", "miss"), undefined);
 });
