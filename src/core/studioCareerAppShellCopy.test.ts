@@ -42,3 +42,17 @@ test("career and Production Cases shell variants stay distinct", () => {
     assert.notEqual(copy.career.productionCasesHeading, copy.career.experimentalHeading, language);
   }
 });
+
+test("experimental career introduction uses a localized second-film label", () => {
+  const expected = {
+    en: "Film Two",
+    nb: "film nummer to",
+    fr: "le deuxième film",
+    pt: "o segundo filme",
+  } as const;
+  for (const language of FILMWORK_LANGUAGES) {
+    const intro = STUDIO_CAREER_APP_SHELL_COPY[language].career.experimentalIntro;
+    assert.ok(intro.includes(expected[language]), language);
+    if (language !== "en") assert.ok(!intro.includes("Film Two"), language);
+  }
+});

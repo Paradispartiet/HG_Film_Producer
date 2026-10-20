@@ -36,3 +36,8 @@ test("career overview chrome is localized through the review contract", () => {
   assert.equal(STUDIO_CAREER_REVIEW_COPY.en.overview.scoreAria(84), "Career score 84 out of 100");
   assert.equal(STUDIO_CAREER_REVIEW_COPY.nb.overview.studioIdentity, "Studioidentitet");
 });
+
+test("Portuguese numbered career review uses filme", () => {
+  assert.equal(STUDIO_CAREER_REVIEW_COPY.pt.panel.closeYear("film 2"), "Encerrar o ano de filme 2");
+  assert.equal(STUDIO_CAREER_REVIEW_COPY.pt.panel.heading("film 2"), "Concluir a revisão de carreira de filme 2");
+});

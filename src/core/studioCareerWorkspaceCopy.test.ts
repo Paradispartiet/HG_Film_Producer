@@ -49,3 +49,14 @@ test("Production Case naming remains canonical in workspace chrome", () => {
     assert.match(copy.pipeline.latestProductionCaseUpdate, /Production Case/, language);
   }
 });
+
+test("numbered film labels are presented in the selected language", () => {
+  const expected = { en: "Film 2", nb: "Film 2", fr: "Film 2", pt: "Filme 2" } as const;
+  for (const language of FILMWORK_LANGUAGES) {
+    const presentation = STUDIO_CAREER_WORKSPACE_COPY[language].workspace as {
+      readonly projectLabel?: (projectNumber: number) => string;
+    };
+    assert.equal(typeof presentation.projectLabel, "function", language);
+    assert.equal(presentation.projectLabel?.(2), expected[language], language);
+  }
+});
