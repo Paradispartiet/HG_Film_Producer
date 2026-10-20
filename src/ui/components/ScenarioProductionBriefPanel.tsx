@@ -1,4 +1,4 @@
-import { presentSeedFallbackText } from "../../core/productionCaseSeedPresentation";
+import { presentFilmCaseContent } from "../../core/productionCaseFilmStatementCopy";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { canCompleteProductionCaseMission } from "../../core/canCompleteProductionCaseMission";
 import {
@@ -78,7 +78,7 @@ export function ScenarioProductionBriefPanel({
           </span>
           <h3 id="scenario-brief-title">{formatProductionCaseBriefTitle(language, brief.title)}</h3>
           <p>{getProductionCaseBriefIntro(language, brief.briefType, scenario.film.title)}</p>
-          <p>{presentSeedFallbackText(language, brief.briefType, brief.logline)}</p>
+          <p>{presentFilmCaseContent(language, brief.briefType, brief.scenarioId, brief.logline)}</p>
         </div>
         <span className="scenario-brief-status">{getProductionCaseVerificationLabel(language, verificationStatus)}</span>
       </div>
@@ -96,13 +96,13 @@ export function ScenarioProductionBriefPanel({
         />
       ) : (
         <div className="scenario-brief-grid">
-          <BriefSection title={briefCopy.sections.genreTargets} items={brief.genreTargets.map((item) => presentSeedFallbackText(language, brief.briefType, item))} />
-          <BriefSection title={briefCopy.sections.toneTargets} items={brief.toneTargets.map((item) => presentSeedFallbackText(language, brief.briefType, item))} />
-          <BriefSection title={briefCopy.sections.screenplayTargets} items={brief.screenplayTargets.map((item) => presentSeedFallbackText(language, brief.briefType, item))} />
-          <BriefSection title={briefCopy.sections.cinematographyTargets} items={brief.cinematographyTargets.map((item) => presentSeedFallbackText(language, brief.briefType, item))} />
-          <BriefSection title={briefCopy.sections.editingTargets} items={brief.editingTargets.map((item) => presentSeedFallbackText(language, brief.briefType, item))} />
-          <BriefSection title={briefCopy.sections.soundTargets} items={brief.soundTargets.map((item) => presentSeedFallbackText(language, brief.briefType, item))} />
-          <BriefSection title={briefCopy.sections.learningGoals} items={brief.learningGoals.map((item) => presentSeedFallbackText(language, brief.briefType, item))} />
+          <BriefSection title={briefCopy.sections.genreTargets} items={brief.genreTargets.map((item) => presentFilmCaseContent(language, brief.briefType, brief.scenarioId, item))} />
+          <BriefSection title={briefCopy.sections.toneTargets} items={brief.toneTargets.map((item) => presentFilmCaseContent(language, brief.briefType, brief.scenarioId, item))} />
+          <BriefSection title={briefCopy.sections.screenplayTargets} items={brief.screenplayTargets.map((item) => presentFilmCaseContent(language, brief.briefType, brief.scenarioId, item))} />
+          <BriefSection title={briefCopy.sections.cinematographyTargets} items={brief.cinematographyTargets.map((item) => presentFilmCaseContent(language, brief.briefType, brief.scenarioId, item))} />
+          <BriefSection title={briefCopy.sections.editingTargets} items={brief.editingTargets.map((item) => presentFilmCaseContent(language, brief.briefType, brief.scenarioId, item))} />
+          <BriefSection title={briefCopy.sections.soundTargets} items={brief.soundTargets.map((item) => presentFilmCaseContent(language, brief.briefType, brief.scenarioId, item))} />
+          <BriefSection title={briefCopy.sections.learningGoals} items={brief.learningGoals.map((item) => presentFilmCaseContent(language, brief.briefType, brief.scenarioId, item))} />
         </div>
       )}
     </section>
@@ -219,6 +219,7 @@ function ProductionCaseMissionFlow({
       {learningReport ? (
         <ProductionCaseLearningReportBox
           copy={briefUiCopy}
+          scenarioId={scenarioId}
           getMissionTitle={getMissionTitle}
           onBackToProductionCases={onBackToProductionCases}
           onReviewAgain={resetCurrentScenario}
@@ -251,7 +252,7 @@ function ProductionCaseMissionFlow({
               <div className="scenario-mission-collapsed-row">
                 <div>
                   <h4>{missionPresentation.title}</h4>
-                  {selectedChoice ? <p>{selectedChoice.label}</p> : <p>{briefUiCopy.flow.noApproachChosen}</p>}
+                  {selectedChoice ? <p>{presentFilmCaseContent(language, "production_case", scenarioId, selectedChoice.label)}</p> : <p>{briefUiCopy.flow.noApproachChosen}</p>}
                 </div>
                 <button onClick={() => toggleMissionExpanded(mission.id)} type="button">
                   {isComplete ? briefUiCopy.flow.showDetails : missionUiCopy.openPhase}
@@ -278,7 +279,7 @@ function ProductionCaseMissionFlow({
               </div>
               <p>{missionPresentation.prompt}</p>
               <ul className="scenario-brief-list">
-                {mission.targets.map((target) => <li key={target}>{target}</li>)}
+                {mission.targets.map((target) => <li key={target}>{presentFilmCaseContent(language, "production_case", scenarioId, target)}</li>)}
               </ul>
               <div className="scenario-mission-choices" aria-label={briefUiCopy.flow.chooseExplanationAriaLabel(missionPresentation.title)}>
                 <strong>{briefUiCopy.flow.choiceQuestion}</strong>
@@ -291,7 +292,7 @@ function ProductionCaseMissionFlow({
                       onClick={() => selectChoice(mission.id, choice.id)}
                       type="button"
                     >
-                      {choice.label}
+                      {presentFilmCaseContent(language, "production_case", scenarioId, choice.label)}
                     </button>
                   ))}
                 </div>
@@ -322,6 +323,7 @@ function ProductionCaseMissionFlow({
 
 function ProductionCaseLearningReportBox({
   copy,
+  scenarioId,
   getMissionTitle,
   onBackToProductionCases,
   onReviewAgain,
@@ -330,6 +332,7 @@ function ProductionCaseLearningReportBox({
   sourceVerification,
 }: {
   readonly copy: ProductionCaseBriefCopy;
+  readonly scenarioId: string;
   readonly getMissionTitle: (missionId: string, fallback: string) => string;
   readonly onBackToProductionCases?: (() => void) | undefined;
   readonly onReviewAgain: () => void;
@@ -362,13 +365,13 @@ function ProductionCaseLearningReportBox({
         <div>
           <h4>{copy.flow.understoodClearly}</h4>
           {report.clearPhases.length > 0 ? (
-            <ul>{report.clearPhases.map((phase) => <li key={phase.missionId}><span>{getMissionTitle(phase.missionId, phase.title)}</span><small>{phase.selectedChoiceLabel}</small></li>)}</ul>
+            <ul>{report.clearPhases.map((phase) => <li key={phase.missionId}><span>{getMissionTitle(phase.missionId, phase.title)}</span><small>{presentFilmCaseContent(language, "production_case", scenarioId, phase.selectedChoiceLabel)}</small></li>)}</ul>
           ) : <p>{copy.flow.noClearlyIdentified}</p>}
         </div>
         <div>
           <h4>{copy.flow.reviewAndCompare}</h4>
           {reviewPhases.length > 0 ? (
-            <ul>{reviewPhases.map((phase) => <li key={phase.missionId}><span>{getMissionTitle(phase.missionId, phase.title)}</span><small>{phase.selectedChoiceLabel}</small></li>)}</ul>
+            <ul>{reviewPhases.map((phase) => <li key={phase.missionId}><span>{getMissionTitle(phase.missionId, phase.title)}</span><small>{presentFilmCaseContent(language, "production_case", scenarioId, phase.selectedChoiceLabel)}</small></li>)}</ul>
           ) : <p>{copy.flow.noSpecialReview}</p>}
         </div>
       </div>
