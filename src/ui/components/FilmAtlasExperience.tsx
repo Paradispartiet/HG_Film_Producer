@@ -1,4 +1,5 @@
 import { presentFilmCaseContent } from "../../core/productionCaseFilmStatementCopy";
+import { presentFilmGenreLabel } from "../../core/filmGenrePresentation";
 import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 
 import {
@@ -166,7 +167,7 @@ function FilmAtlas({
             <div className="atlas-controls">
               <label><span>{copy.controls.search}</span><input onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)} placeholder={copy.controls.searchPlaceholder} type="search" value={query} /></label>
               <div className="atlas-control-row">
-                <label><span>{copy.controls.genre}</span><select onChange={(event: ChangeEvent<HTMLSelectElement>) => setGenre(event.target.value)} value={genre}><option value="all">{copy.controls.allGenres}</option>{genres.map((item) => <option key={item} value={item}>{item}</option>)}</select></label>
+                <label><span>{copy.controls.genre}</span><select onChange={(event: ChangeEvent<HTMLSelectElement>) => setGenre(event.target.value)} value={genre}><option value="all">{copy.controls.allGenres}</option>{genres.map((item) => <option key={item} value={item}>{presentFilmGenreLabel(language, item)}</option>)}</select></label>
                 <label><span>{copy.controls.order}</span><select onChange={(event: ChangeEvent<HTMLSelectElement>) => setSortOrder(event.target.value as FilmAtlasSortId)} value={sortOrder}><option value="catalogue">{copy.sortOptions.catalogue}</option><option value="year">{copy.sortOptions.year}</option><option value="title">{copy.sortOptions.title}</option></select></label>
               </div>
             </div>
@@ -214,7 +215,7 @@ function FilmAnalysisPage({ brief, language, onOpenDirector, onPlayCase, onSelec
   return (
     <article className="film-analysis">
       <header className="film-analysis-hero"><div className="film-analysis-index" aria-hidden="true">{String(Math.max(1, historicalIndex + 1)).padStart(3, "0")}</div><div className="film-analysis-title"><span>{scenario.film.year} · {scenario.film.runtime_mins > 0 ? `${scenario.film.runtime_mins} min` : copy.runtimeNotRegistered}</span><h2>{scenario.film.title}</h2>{scenario.film.original_title && scenario.film.original_title !== scenario.film.title && <p className="film-original-title">{scenario.film.original_title}</p>}<p>{scenario.film.directors.join(", ") || copy.directorNotRegistered}</p></div><div className="film-analysis-rating"><small>{copy.catalogueRating}</small><strong>{scenario.film.imdb_rating > 0 ? scenario.film.imdb_rating.toFixed(1) : "—"}</strong><span>/ 10</span></div></header>
-      <div className="film-analysis-tags">{scenario.film.genres.map((item) => <span key={item}>{item}</span>)}<span>{getFilmAtlasVerificationLabel(language, brief.verificationStatus)}</span></div>
+      <div className="film-analysis-tags">{scenario.film.genres.map((item) => <span key={item}>{presentFilmGenreLabel(language, item)}</span>)}<span>{getFilmAtlasVerificationLabel(language, brief.verificationStatus)}</span></div>
       <p className="film-analysis-logline">{presentFilmCaseContent(language, brief.briefType, brief.scenarioId, brief.logline)}</p>
       <section className="film-analysis-overview-grid"><AnalysisList title={copy.analysis.genreConstruction} items={brief.genreTargets.map((item) => presentFilmCaseContent(language, brief.briefType, brief.scenarioId, item))} /><AnalysisList title={copy.analysis.toneAndAffect} items={brief.toneTargets.map((item) => presentFilmCaseContent(language, brief.briefType, brief.scenarioId, item))} /></section>
       <section className="film-craft-grid">{craftLenses.map((lens) => <AnalysisList key={lens.id} title={copy.analysis.craftLenses[lens.id]} items={brief[lens.briefKey].map((item) => presentFilmCaseContent(language, brief.briefType, brief.scenarioId, item))} />)}</section>

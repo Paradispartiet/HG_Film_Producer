@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, type ChangeEvent } from "react";
+import { presentFilmCaseContent } from "../../core/productionCaseFilmStatementCopy";
 
 import {
   DIRECTOR_BRIEF_FIELDS,
@@ -164,6 +165,7 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
   const briefCopy = FILM_DIRECTOR_BRIEF_COPY[language];
   const shotCopy = FILM_DIRECTOR_SHOT_COPY[language];
   const referenceBrief = resolveScenarioProductionBrief(selectedScenario);
+  const presentReference = (original: string) => presentFilmCaseContent(language, referenceBrief.briefType, referenceBrief.scenarioId, original);
   const identity = useMemo(() => ({ filmId: selectedScenario.id, filmTitle: selectedScenario.film.title, filmYear: selectedScenario.film.year }), [selectedScenario]);
   const projectStorageKey = getDirectorProjectStorageKey(selectedScenario.id);
   const legacyBriefStorageKey = getDirectorBriefStorageKey(selectedScenario.id);
@@ -172,7 +174,7 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
   const [copyState, setCopyState] = useState<"idle" | "scene" | "project" | "failed">("idle");
   const activeScene = project.scenes.find((scene) => scene.id === project.activeSceneId) ?? project.scenes[0];
   const activeLens = directorLenses.find((lens) => lens.id === activeLensId) ?? directorLenses[0];
-  const activePrinciples = activeLens ? referenceBrief[activeLens.briefKey] : [];
+  const activePrinciples = activeLens ? referenceBrief[activeLens.briefKey].map(presentReference) : [];
   const activeQuestion = projectCopy.referenceLenses[activeLensId].question;
   const totalShots = project.scenes.reduce((count, scene) => count + scene.shots.length, 0);
   const possibleFieldCount = project.scenes.length * DIRECTOR_BRIEF_FIELDS.length + totalShots * DIRECTOR_SHOT_FIELDS.length;
@@ -224,7 +226,7 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
     const text = currentScene.brief.formalStrategy;
     if (!text.includes(principle)) updateBriefField("formalStrategy", `${text.trimEnd()}${text.trim() ? "\n• " : "• "}${principle}`);
   }
-  function useToneStartingPoint() { updateBriefField("audienceEffect", referenceBrief.toneTargets.join("\n• ").replace(/^/, "• ")); }
+  function useToneStartingPoint() { updateBriefField("audienceEffect", referenceBrief.toneTargets.map(presentReference).join("\n• ").replace(/^/, "• ")); }
   function useCraftStartingPoint() { updateBriefField("formalStrategy", activePrinciples.join("\n• ").replace(/^/, "• ")); }
 
   function addShot() {
@@ -272,7 +274,7 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
         <SceneSidebar activeScene={currentScene} copy={projectCopy} onAdd={addScene} onDelete={deleteActiveScene} onDuplicate={duplicateActiveScene} onSelect={selectScene} project={project} />
         <div className="director-active-scene" id="director-active-scene">
           <ActiveSceneHeading copy={projectCopy} copyState={copyState} onCopy={() => copyText(buildFilmDirectorSceneText(language, project, currentScene), "scene")} project={project} scene={currentScene} />
-          <ReferencePanel activeLensId={activeLensId} activePrinciples={activePrinciples} activeQuestion={activeQuestion} brief={referenceBrief} copy={projectCopy} onChangeLens={setActiveLensId} onUseCraft={useCraftStartingPoint} onUsePrinciple={useReferencePrinciple} onUseTone={useToneStartingPoint} scenario={selectedScenario} />
+          <ReferencePanel activeLensId={activeLensId} activePrinciples={activePrinciples} activeQuestion={activeQuestion} logline={presentReference(referenceBrief.logline)} copy={projectCopy} onChangeLens={setActiveLensId} onUseCraft={useCraftStartingPoint} onUsePrinciple={useReferencePrinciple} onUseTone={useToneStartingPoint} scenario={selectedScenario} />
           <SceneBriefForm copy={briefCopy} groups={groups} onChange={updateBriefField} scene={currentScene} />
           <ShotListEditor copy={shotCopy} onAdd={addShot} onChange={changeShot} onDelete={deleteShot} onDuplicate={duplicateShot} onMove={moveShot} scene={currentScene} />
         </div>
@@ -318,11 +320,11 @@ function ActiveSceneHeading({ copy, copyState, onCopy, project, scene }: {
   return <section className="director-active-scene-heading"><div><span>{copy.scenePosition(Math.max(1, index + 1), project.scenes.length)}</span><h2>{scene.brief.sceneTitle.trim() || copy.sceneTitleFallback(index + 1)}</h2><p>{copy.activeSceneSummary(countCompletedDirectorBriefFields(scene.brief), DIRECTOR_BRIEF_FIELDS.length, scene.shots.length)}</p></div><button className="filmverket-secondary-action" onClick={onCopy} type="button">{copyState === "scene" ? copy.sceneCopied : copyState === "failed" ? copy.copyFailed : copy.copyActiveScene}</button></section>;
 }
 
-function ReferencePanel({ activeLensId, activePrinciples, activeQuestion, brief, copy, onChangeLens, onUseCraft, onUsePrinciple, onUseTone, scenario }: {
+function ReferencePanel({ activeLensId, activePrinciples, activeQuestion, logline, copy, onChangeLens, onUseCraft, onUsePrinciple, onUseTone, scenario }: {
   readonly activeLensId: DirectorLensId;
   readonly activePrinciples: readonly string[];
   readonly activeQuestion: string;
-  readonly brief: ReturnType<typeof resolveScenarioProductionBrief>;
+  readonly logline: string;
   readonly copy: FilmDirectorProjectCopy;
   readonly onChangeLens: (id: DirectorLensId) => void;
   readonly onUseCraft: () => void;
@@ -332,7 +334,7 @@ function ReferencePanel({ activeLensId, activePrinciples, activeQuestion, brief,
 }) {
   return (
     <section className="film-director-reference director-project-reference">
-      <header><div><span>{scenario.film.year} · {scenario.film.directors.join(", ") || copy.directorNotRegistered}</span><h2>{scenario.film.title}</h2></div><p>{brief.logline}</p></header>
+      <header><div><span>{scenario.film.year} · {scenario.film.directors.join(", ") || copy.directorNotRegistered}</span><h2>{scenario.film.title}</h2></div><p>{logline}</p></header>
       <div className="film-director-reference-controls"><div className="film-director-lenses" aria-label={copy.referenceCraftLensAria}>{directorLenses.map((lens) => <button className={activeLensId === lens.id ? "film-director-lens film-director-lens--active" : "film-director-lens"} key={lens.id} onClick={() => onChangeLens(lens.id)} type="button">{copy.referenceLenses[lens.id].shortLabel}</button>)}</div><p>{activeQuestion}</p></div>
       <div className="film-director-principles">{activePrinciples.map((principle, index) => <article key={principle}><span>{String(index + 1).padStart(2, "0")}</span><p>{principle}</p><button onClick={() => onUsePrinciple(principle)} type="button">{copy.useInScene}</button></article>)}</div>
       <div className="film-director-reference-seeds"><button onClick={onUseTone} type="button">{copy.useToneAsAudienceEffectDraft}</button><button onClick={onUseCraft} type="button">{copy.useLensAsFormalStrategyDraft}</button></div>
