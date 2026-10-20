@@ -1,5 +1,5 @@
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
-import type { ScenarioProductionBriefType } from "../ui/data/scenarioProductionBriefs.js";
+import type { ProductionCaseBriefType } from "./productionCaseBriefCopy.js";
 
 /** Exact-string translation of generated seed hints only. Film claims and persisted IDs stay canonical. */
 export const CANONICAL_SEED_FALLBACK_TEXT = [
@@ -75,7 +75,7 @@ const SEED_COPY: Readonly<Record<FilmWorkLanguage, Readonly<Record<SeedText, str
 
 export function presentSeedFallbackText(
   language: FilmWorkLanguage,
-  briefType: ScenarioProductionBriefType,
+  briefType: ProductionCaseBriefType,
   text: string,
 ): string {
   if (briefType !== "seed_fallback") return text;
