@@ -1,3 +1,4 @@
+import { presentSeedFallbackText } from "../../core/productionCaseSeedPresentation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { canCompleteProductionCaseMission } from "../../core/canCompleteProductionCaseMission";
 import {
@@ -77,7 +78,7 @@ export function ScenarioProductionBriefPanel({
           </span>
           <h3 id="scenario-brief-title">{formatProductionCaseBriefTitle(language, brief.title)}</h3>
           <p>{getProductionCaseBriefIntro(language, brief.briefType, scenario.film.title)}</p>
-          <p>{brief.logline}</p>
+          <p>{presentSeedFallbackText(language, brief.briefType, brief.logline)}</p>
         </div>
         <span className="scenario-brief-status">{getProductionCaseVerificationLabel(language, verificationStatus)}</span>
       </div>
@@ -95,13 +96,13 @@ export function ScenarioProductionBriefPanel({
         />
       ) : (
         <div className="scenario-brief-grid">
-          <BriefSection title={briefCopy.sections.genreTargets} items={brief.genreTargets} />
-          <BriefSection title={briefCopy.sections.toneTargets} items={brief.toneTargets} />
-          <BriefSection title={briefCopy.sections.screenplayTargets} items={brief.screenplayTargets} />
-          <BriefSection title={briefCopy.sections.cinematographyTargets} items={brief.cinematographyTargets} />
-          <BriefSection title={briefCopy.sections.editingTargets} items={brief.editingTargets} />
-          <BriefSection title={briefCopy.sections.soundTargets} items={brief.soundTargets} />
-          <BriefSection title={briefCopy.sections.learningGoals} items={brief.learningGoals} />
+          <BriefSection title={briefCopy.sections.genreTargets} items={brief.genreTargets.map((item) => presentSeedFallbackText(language, brief.briefType, item))} />
+          <BriefSection title={briefCopy.sections.toneTargets} items={brief.toneTargets.map((item) => presentSeedFallbackText(language, brief.briefType, item))} />
+          <BriefSection title={briefCopy.sections.screenplayTargets} items={brief.screenplayTargets.map((item) => presentSeedFallbackText(language, brief.briefType, item))} />
+          <BriefSection title={briefCopy.sections.cinematographyTargets} items={brief.cinematographyTargets.map((item) => presentSeedFallbackText(language, brief.briefType, item))} />
+          <BriefSection title={briefCopy.sections.editingTargets} items={brief.editingTargets.map((item) => presentSeedFallbackText(language, brief.briefType, item))} />
+          <BriefSection title={briefCopy.sections.soundTargets} items={brief.soundTargets.map((item) => presentSeedFallbackText(language, brief.briefType, item))} />
+          <BriefSection title={briefCopy.sections.learningGoals} items={brief.learningGoals.map((item) => presentSeedFallbackText(language, brief.briefType, item))} />
         </div>
       )}
     </section>

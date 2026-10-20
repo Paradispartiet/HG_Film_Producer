@@ -1,3 +1,4 @@
+import { presentSeedFallbackText } from "../../core/productionCaseSeedPresentation";
 import { PRODUCTION_CASE_REFLECTION_COPY } from "../../core/productionCaseReflectionCopy";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { createScenarioPhaseGuidance, type ScenarioProductionPhase } from "../data/scenarioPhaseGuidance";
@@ -44,7 +45,7 @@ export function ScenarioPhaseGuidancePanel({ brief, currentPhase }: ScenarioPhas
               : copy.seedDescriptions[phase.phase]}</p>
             {phase.targets.length > 0 ? (
               <ul className="scenario-phase-targets">
-                {phase.targets.map((target, index) => <li key={`${phase.phase}-${index}-${target}`}>{target}</li>)}
+                {phase.targets.map((target, index) => <li key={`${phase.phase}-${index}-${target}`}>{presentSeedFallbackText(language, brief.briefType, target)}</li>)}
               </ul>
             ) : <p className="scenario-phase-empty">{copy.noTargets}</p>}
           </article>

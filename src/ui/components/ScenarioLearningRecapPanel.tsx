@@ -1,3 +1,4 @@
+import { presentSeedFallbackText } from "../../core/productionCaseSeedPresentation";
 import { PRODUCTION_CASE_REFLECTION_COPY } from "../../core/productionCaseReflectionCopy";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { assessScenarioAlignment } from "../data/scenarioAlignmentScore";
@@ -34,7 +35,7 @@ export function ScenarioLearningRecapPanel({ scenarioTitle, brief, selectedTarge
   });
   const learned = selectedTargetLabels.length > 0
     ? recap.learned
-    : unselectedTargetLabels.slice(0, 3).map(copy.compareMethod);
+    : unselectedTargetLabels.slice(0, 3).map((label) => copy.compareMethod(presentSeedFallbackText(language, brief.briefType, label)));
   const nextFocus = unselectedTargetLabels.length > 0
     ? recap.nextFocus
     : [copy.revisitOnePhase];
@@ -54,7 +55,7 @@ export function ScenarioLearningRecapPanel({ scenarioTitle, brief, selectedTarge
           <h4>{copy.identified}</h4>
           {selectedTargetLabels.length > 0 ? (
             <ul className="scenario-learning-list">
-              {learned.map((item) => <li key={`learned-${item}`}>{item}</li>)}
+              {learned.map((item) => <li key={`learned-${item}`}>{presentSeedFallbackText(language, brief.briefType, item)}</li>)}
             </ul>
           ) : (
             <p className="scenario-learning-empty">{copy.noSelected}</p>
@@ -64,7 +65,7 @@ export function ScenarioLearningRecapPanel({ scenarioTitle, brief, selectedTarge
           <h4>{copy.review}</h4>
           {unselectedTargetLabels.length > 0 ? (
             <ul className="scenario-learning-list">
-              {nextFocus.map((item) => <li key={`next-${item}`}>{item}</li>)}
+              {nextFocus.map((item) => <li key={`next-${item}`}>{presentSeedFallbackText(language, brief.briefType, item)}</li>)}
             </ul>
           ) : (
             <p className="scenario-learning-empty">{copy.noRemaining}</p>
