@@ -2,10 +2,10 @@ import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 import { presentVerifiedFilmStudyDonorChoice, presentVerifiedFilmStudyDonorChoiceSummary } from "./filmStudyVerifiedDonorChoices.js";
 
 /**
- * Source-locked presentation for the first three verified film-history cases.
+ * Source-locked presentation for the first four verified film-history cases.
  * Canonical profile/choice/source data and grading are never changed.
  * Each row is [exact canonical English text, Norwegian, French, Portuguese].
- * Unknown claims, donor-film distractors and source citations stay canonical
+ * Unknown claims, unreviewed donor-film distractors and source citations stay canonical
  * until their own source-based editorial translation is reviewed.
  */
 type HistoryTextRow = readonly [canonical: string, nb: string, fr: string, pt: string];
@@ -322,7 +322,7 @@ export function presentVerifiedFilmHistoryChoice(
 }
 
 /**
- * Deliberately shorter, source-locked title for the three reviewed film
+ * Deliberately shorter, source-locked title for the four reviewed film
  * exercises. The full historical statement must remain independently readable.
  * Other films and changed canonical statements retain the original answer UI.
  */
