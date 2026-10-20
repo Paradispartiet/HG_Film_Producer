@@ -20,6 +20,38 @@ type StudioCareerAppShellCopy = {
     readonly kicker: string;
     readonly heading: string;
     readonly intro: string;
+    readonly filmResult: {
+      readonly eyebrow: string;
+      readonly heading: string;
+      readonly quality: string;
+      readonly audienceAppeal: string;
+      readonly criticalAppeal: string;
+      readonly budgetSpent: string;
+      readonly revenueEstimate: string;
+    };
+    readonly release: {
+      readonly eyebrow: string;
+      readonly heading: string;
+      readonly breakEvenCleared: string;
+      readonly belowBreakEven: string;
+      readonly strategy: string;
+      readonly festivalResult: string;
+      readonly selected: string;
+      readonly notSelected: string;
+      readonly reviewSummary: string;
+      readonly audienceSummary: string;
+      readonly revenueResult: string;
+      readonly awardsOutcome: string;
+      readonly audienceValue: (score: number, viewers: string) => string;
+      readonly revenueValue: (gross: string, net: string) => string;
+      readonly awardsValue: (nominations: number, wins: number) => string;
+    };
+    readonly systems: {
+      readonly eyebrow: string;
+      readonly heading: string;
+      readonly represented: string;
+      readonly onlineCount: (count: number) => string;
+    };
   };
   readonly career: {
     readonly productionCasesKicker: string;
@@ -53,6 +85,38 @@ export const STUDIO_CAREER_APP_SHELL_COPY = {
       kicker: "Portfolio overview",
       heading: "Production desk",
       intro: "One deterministic studio run, live from the HG simulation engine.",
+      filmResult: {
+        eyebrow: "Locked picture",
+        heading: "Film result",
+        quality: "Quality",
+        audienceAppeal: "Audience appeal",
+        criticalAppeal: "Critical appeal",
+        budgetSpent: "Budget spent",
+        revenueEstimate: "Revenue estimate",
+      },
+      release: {
+        eyebrow: "Market response",
+        heading: "Release report",
+        breakEvenCleared: "Break-even cleared",
+        belowBreakEven: "Below break-even",
+        strategy: "Strategy",
+        festivalResult: "Festival result",
+        selected: "Selected",
+        notSelected: "Not selected",
+        reviewSummary: "Review summary",
+        audienceSummary: "Audience summary",
+        revenueResult: "Revenue result",
+        awardsOutcome: "Awards outcome",
+        audienceValue: (score, viewers) => `${score}/100 satisfaction · ${viewers} viewers`,
+        revenueValue: (gross, net) => `${gross} gross · ${net} net`,
+        awardsValue: (nominations, wins) => `${nominations} nomination${nominations === 1 ? "" : "s"} · ${wins} win${wins === 1 ? "" : "s"}`,
+      },
+      systems: {
+        eyebrow: "Integration layer",
+        heading: "System status",
+        represented: "represented",
+        onlineCount: (count) => `${count}/${count} online`,
+      },
     },
     career: {
       productionCasesKicker: "Production Cases · stable MVP",
@@ -84,6 +148,38 @@ export const STUDIO_CAREER_APP_SHELL_COPY = {
       kicker: "Porteføljeoversikt",
       heading: "Produksjonsbord",
       intro: "Én deterministisk studiorunde, direkte fra HG-simuleringsmotoren.",
+      filmResult: {
+        eyebrow: "Ferdig klippet film",
+        heading: "Filmresultat",
+        quality: "Kvalitet",
+        audienceAppeal: "Publikumsappell",
+        criticalAppeal: "Kritikerappell",
+        budgetSpent: "Brukt budsjett",
+        revenueEstimate: "Anslåtte inntekter",
+      },
+      release: {
+        eyebrow: "Markedsrespons",
+        heading: "Lanseringsrapport",
+        breakEvenCleared: "Balansepunktet nådd",
+        belowBreakEven: "Under balansepunktet",
+        strategy: "Strategi",
+        festivalResult: "Festivalresultat",
+        selected: "Utvalgt",
+        notSelected: "Ikke utvalgt",
+        reviewSummary: "Anmeldelsesoversikt",
+        audienceSummary: "Publikumsoversikt",
+        revenueResult: "Inntektsresultat",
+        awardsOutcome: "Priser og nominasjoner",
+        audienceValue: (score, viewers) => `${score}/100 tilfredshet · ${viewers} seere`,
+        revenueValue: (gross, net) => `${gross} brutto · ${net} netto`,
+        awardsValue: (nominations, wins) => `${nominations} nominasjon${nominations === 1 ? "" : "er"} · ${wins} seier${wins === 1 ? "" : "e"}`,
+      },
+      systems: {
+        eyebrow: "Integrasjonslag",
+        heading: "Systemstatus",
+        represented: "representert",
+        onlineCount: (count) => `${count}/${count} tilkoblet`,
+      },
     },
     career: {
       productionCasesKicker: "Production Cases · stabil MVP",
@@ -115,6 +211,38 @@ export const STUDIO_CAREER_APP_SHELL_COPY = {
       kicker: "Vue d’ensemble du portefeuille",
       heading: "Bureau de production",
       intro: "Une simulation de studio déterministe, en direct du moteur de simulation HG.",
+      filmResult: {
+        eyebrow: "Film finalisé",
+        heading: "Résultat du film",
+        quality: "Qualité",
+        audienceAppeal: "Attrait du public",
+        criticalAppeal: "Accueil critique",
+        budgetSpent: "Budget dépensé",
+        revenueEstimate: "Recettes estimées",
+      },
+      release: {
+        eyebrow: "Réaction du marché",
+        heading: "Bilan de sortie",
+        breakEvenCleared: "Seuil de rentabilité atteint",
+        belowBreakEven: "Sous le seuil de rentabilité",
+        strategy: "Stratégie",
+        festivalResult: "Résultat en festival",
+        selected: "Sélectionné",
+        notSelected: "Non sélectionné",
+        reviewSummary: "Bilan critique",
+        audienceSummary: "Bilan du public",
+        revenueResult: "Résultat financier",
+        awardsOutcome: "Récompenses",
+        audienceValue: (score, viewers) => `${score}/100 de satisfaction · ${viewers} spectateurs`,
+        revenueValue: (gross, net) => `${gross} brut · ${net} net`,
+        awardsValue: (nominations, wins) => `${nominations} nomination${nominations === 1 ? "" : "s"} · ${wins} victoire${wins === 1 ? "" : "s"}`,
+      },
+      systems: {
+        eyebrow: "Couche d’intégration",
+        heading: "État du système",
+        represented: "représenté",
+        onlineCount: (count) => `${count}/${count} en ligne`,
+      },
     },
     career: {
       productionCasesKicker: "Production Cases · MVP stable",
@@ -146,6 +274,38 @@ export const STUDIO_CAREER_APP_SHELL_COPY = {
       kicker: "Visão geral da carteira",
       heading: "Mesa de produção",
       intro: "Uma sessão de estúdio determinística, em direto do motor de simulação HG.",
+      filmResult: {
+        eyebrow: "Montagem final fechada",
+        heading: "Resultado do filme",
+        quality: "Qualidade",
+        audienceAppeal: "Apelo junto do público",
+        criticalAppeal: "Receção da crítica",
+        budgetSpent: "Orçamento gasto",
+        revenueEstimate: "Receita estimada",
+      },
+      release: {
+        eyebrow: "Resposta do mercado",
+        heading: "Relatório de lançamento",
+        breakEvenCleared: "Ponto de equilíbrio atingido",
+        belowBreakEven: "Abaixo do ponto de equilíbrio",
+        strategy: "Estratégia",
+        festivalResult: "Resultado em festivais",
+        selected: "Selecionado",
+        notSelected: "Não selecionado",
+        reviewSummary: "Resumo da crítica",
+        audienceSummary: "Resumo do público",
+        revenueResult: "Resultado financeiro",
+        awardsOutcome: "Prémios e nomeações",
+        audienceValue: (score, viewers) => `${score}/100 de satisfação · ${viewers} espectadores`,
+        revenueValue: (gross, net) => `${gross} brutos · ${net} líquidos`,
+        awardsValue: (nominations, wins) => `${nominations} nomeaç${nominations === 1 ? "ão" : "ões"} · ${wins} vitória${wins === 1 ? "" : "s"}`,
+      },
+      systems: {
+        eyebrow: "Camada de integração",
+        heading: "Estado do sistema",
+        represented: "representado",
+        onlineCount: (count) => `${count}/${count} ativos`,
+      },
     },
     career: {
       productionCasesKicker: "Production Cases · MVP estável",
