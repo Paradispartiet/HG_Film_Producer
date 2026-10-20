@@ -7,6 +7,7 @@ import {
 } from "../../core/filmStudyCopy";
 import { formatFilmStudyHistoryFeedback } from "../../core/filmStudyHistoryFeedbackCopy";
 import { presentVerifiedFilmHistoryChoice, presentVerifiedFilmHistoryText } from "../../core/filmStudyVerifiedHistoryPresentation";
+import { presentFilmStudySourceSupport, presentFilmStudySourceText } from "../../core/filmStudyVerificationPresentation";
 import type { FilmStudyCoverageItem } from "../../core/filmStudyCoverage";
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
 import type { FilmScenarioSeed } from "../data/filmScenarios";
@@ -464,13 +465,13 @@ export function ScenarioFilmStudyPanel({
             <span>{copy.sourcesTitle}</span>
             <small>{copy.sourcesMeta(filmStudy.verification.sources.length, filmStudy.verification.verifiedAt)}</small>
           </summary>
-          <p>{filmStudy.verification.summary}</p>
+          <p>{presentFilmStudySourceText(language, scenario.id, filmStudy.verification.summary)}</p>
           <ul>
             {filmStudy.verification.sources.map((source) => (
               <li key={source.url}>
                 <a href={source.url} rel="noreferrer" target="_blank">{source.title}</a>
-                <small>{source.publisher} · {source.supports.join(", ")}</small>
-                <p>{source.note}</p>
+                <small>{source.publisher} · {source.supports.map((area) => presentFilmStudySourceSupport(language, area)).join(", ")}</small>
+                <p>{presentFilmStudySourceText(language, scenario.id, source.note)}</p>
               </li>
             ))}
           </ul>
