@@ -1,8 +1,9 @@
+import { PRODUCTION_CASE_REFLECTION_COPY } from "../../core/productionCaseReflectionCopy";
+import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { useMemo } from "react";
 import type { ScenarioProductionBrief } from "../data/scenarioProductionBriefs";
 import {
   createScenarioTargetChecklist,
-  getScenarioTargetCategoryLabel,
   type ScenarioTargetCategory,
 } from "../data/scenarioTargetChecklist";
 
@@ -27,6 +28,8 @@ export function ScenarioTargetChecklistPanel({
   selectedTargetIds,
   onChangeSelectedTargetIds,
 }: ScenarioTargetChecklistPanelProps) {
+  const [language] = useFilmWorkLanguage();
+  const copy = PRODUCTION_CASE_REFLECTION_COPY[language].checklist;
   const checklist = useMemo(
     () => createScenarioTargetChecklist(brief),
     [brief],
@@ -47,12 +50,9 @@ export function ScenarioTargetChecklistPanel({
     >
       <div className="scenario-target-header">
         <div>
-          <span className="eyebrow">Film-craft comparison</span>
-          <h3 id="scenario-target-title">Production method checklist</h3>
-          <p>
-            Mark the film methods you want to compare while studying this case.
-            These notes guide reflection and do not create a score or rank.
-          </p>
+          <span className="eyebrow">{copy.eyebrow}</span>
+          <h3 id="scenario-target-title">{copy.heading}</h3>
+          <p>{copy.intro}</p>
         </div>
       </div>
       <div className="scenario-target-grid">
@@ -63,7 +63,7 @@ export function ScenarioTargetChecklistPanel({
           if (targets.length === 0) return null;
           return (
             <section className="scenario-target-category" key={category}>
-              <h4>{getScenarioTargetCategoryLabel(category)}</h4>
+              <h4>{copy.categories[category]}</h4>
               <div className="scenario-target-list">
                 {targets.map((target) => (
                   <label className="scenario-target-item" key={target.id}>
