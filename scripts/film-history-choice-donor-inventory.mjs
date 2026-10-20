@@ -55,4 +55,47 @@ const inventory = targets.map((scenarioId) => {
   });
   return { scenarioId, choices: rows };
 });
+
+const translationBundle = await build({
+  entryPoints: ["src/core/filmStudyVerifiedDonorChoices.ts"],
+  bundle: true,
+  platform: "node",
+  format: "esm",
+  write: false,
+  logLevel: "warning",
+});
+assert.equal(translationBundle.outputFiles.length, 1, "Expected one donor presentation module");
+const { FILM_STUDY_VERIFIED_DONOR_CHOICES, canonicalFilmStudyOptionFingerprint, presentVerifiedFilmStudyDonorChoice } =
+  await import(`data:text/javascript;base64,${Buffer.from(translationBundle.outputFiles[0].text).toString("base64")}`);
+
+let checkedDonorChoices = 0;
+for (const item of inventory) {
+  const expected = FILM_STUDY_VERIFIED_DONOR_CHOICES[item.scenarioId];
+  assert.ok(expected, `Missing donor translations: ${item.scenarioId}`);
+  const donorChoices = item.choices.filter((choice) => choice.quality !== "match");
+  assert.equal(donorChoices.length, 2);
+  for (const choice of donorChoices) {
+    const entry = expected[choice.quality];
+    assert.ok(entry, `Missing translated donor: ${item.scenarioId} ${choice.quality}`);
+    assert.equal(entry.donorScenarioId, choice.sourceScenarioId, "Historical donor identity changed");
+    assert.ok(choice.canonicalOption.startsWith(entry.preview), "Historical donor preview changed");
+    assert.deepEqual(canonicalFilmStudyOptionFingerprint(choice.canonicalOption), {
+      length: entry.canonicalLength,
+      hash: entry.canonicalHash,
+    }, `Historical donor statement drifted: ${item.scenarioId} ${choice.quality}`);
+    assert.equal(presentVerifiedFilmStudyDonorChoice("en", item.scenarioId, choice.quality, choice.canonicalOption), choice.canonicalOption);
+    for (const language of ["nb", "fr", "pt"]) {
+      const localized = presentVerifiedFilmStudyDonorChoice(language, item.scenarioId, choice.quality, choice.canonicalOption);
+      assert.equal(localized, entry.text[language], `Wrong translation: ${item.scenarioId} ${choice.quality} ${language}`);
+      assert.ok(localized.trim().length > 60, "Unexpectedly short translated historical statement");
+      assert.notEqual(localized, choice.canonicalOption, "Original English statement leaked");
+      assert.equal(presentVerifiedFilmStudyDonorChoice(language, item.scenarioId, choice.quality, choice.canonicalOption + " revised"),
+        choice.canonicalOption + " revised", "Revised claims must fail closed");
+    }
+    checkedDonorChoices += 1;
+  }
+}
+assert.equal(checkedDonorChoices, 6);
+console.log("FILM_HISTORY_TRANSLATED_DONOR_CHOICES=" + checkedDonorChoices);
+
 console.log("FILM_HISTORY_DONOR_INVENTORY=" + JSON.stringify(inventory));
