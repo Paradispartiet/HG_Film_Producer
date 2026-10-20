@@ -1,6 +1,5 @@
 import type { StrategicGoalType } from "../domain/career.js";
 import type { Genre } from "../domain/knowledge.js";
-import type { ScriptTemplate } from "../domain/script.js";
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 
 export const STUDIO_SETUP_PRESET_IDS = ["micro_studio", "indie_studio", "prestige_startup"] as const;
@@ -28,7 +27,11 @@ type GenrePresentationInput = Pick<Genre, "id" | "name" | "summary">;
 type GenrePresentation = Pick<Genre, "name" | "summary">;
 type GenrePresentationById = Readonly<Record<string, GenrePresentation>>;
 
-type ScriptTemplatePresentationInput = Pick<ScriptTemplate, "id" | "title" | "defaultTheme">;
+type ScriptTemplatePresentationInput = {
+  readonly id: string;
+  readonly title: string;
+  readonly defaultTheme: string;
+};
 type ScriptTemplatePresentation = Pick<ScriptTemplate, "title" | "defaultTheme">;
 type ScriptTemplatePresentationById = Readonly<Record<string, ScriptTemplatePresentation>>;
 
