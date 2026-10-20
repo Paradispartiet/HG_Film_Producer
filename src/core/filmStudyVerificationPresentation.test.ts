@@ -64,3 +64,21 @@ test("active film-study source renderer translates metadata only, not citation i
   assert.match(panel, /\{source\.publisher\}/);
   assert.doesNotMatch(panel, /<p>\{source\.note\}<\/p>/);
 });
+
+
+test("production learning report and recap reuse localized source metadata without changing links or identifiers", () => {
+  const producer = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
+  const recap = readFileSync("src/ui/components/ScenarioLearningRecapPanel.tsx", "utf8");
+  assert.match(producer, /<ProductionCaseSources copy=\{copy\} language=\{language\} verification=\{sourceVerification\}/);
+  assert.match(recap, /<ProductionCaseVerificationEvidence record=\{verification\} copy=\{copy\} language=\{language\}/);
+
+  for (const view of [producer, recap]) {
+    assert.match(view, /presentFilmStudySourceSupport\(language, area\)/);
+    assert.match(view, /presentFilmStudySourceText\(language, (?:verification|record)\.scenarioId, (?:verification|record)\.summary\)/);
+    assert.match(view, /presentFilmStudySourceText\(language, (?:verification|record)\.scenarioId, source\.note\)/);
+    assert.match(view, /source\.url/);
+    assert.match(view, /\{source\.title\}/);
+    assert.match(view, /\{source\.publisher\}/);
+    assert.doesNotMatch(view, /<p>\{source\.note\}<\/p>/);
+  }
+});
