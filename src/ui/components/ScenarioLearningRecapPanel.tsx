@@ -1,4 +1,6 @@
 import { presentFilmCaseContent } from "../../core/productionCaseFilmStatementCopy";
+import { presentFilmStudySourceSupport, presentFilmStudySourceText } from "../../core/filmStudyVerificationPresentation";
+import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
 import { PRODUCTION_CASE_REFLECTION_COPY } from "../../core/productionCaseReflectionCopy";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { assessScenarioAlignment } from "../data/scenarioAlignmentScore";
@@ -74,7 +76,7 @@ export function ScenarioLearningRecapPanel({ scenarioTitle, brief, selectedTarge
       </div>
       <p className="scenario-learning-replay">{copy.replay}</p>
       <p className="scenario-learning-note">{copy.verificationNotes[verificationStatus]}</p>
-      {verification ? <ProductionCaseVerificationEvidence record={verification} copy={copy} /> : null}
+      {verification ? <ProductionCaseVerificationEvidence record={verification} copy={copy} language={language} /> : null}
     </section>
   );
 }
@@ -82,8 +84,10 @@ export function ScenarioLearningRecapPanel({ scenarioTitle, brief, selectedTarge
 function ProductionCaseVerificationEvidence({
   record,
   copy,
+  language,
 }: {
   readonly record: ProductionCaseVerificationRecord;
+  readonly language: FilmWorkLanguage;
   readonly copy: (typeof PRODUCTION_CASE_REFLECTION_COPY)[keyof typeof PRODUCTION_CASE_REFLECTION_COPY]["recap"];
 }) {
   return (
@@ -93,14 +97,14 @@ function ProductionCaseVerificationEvidence({
         <small>{copy.sourceCount(record.sources.length, record.verifiedAt)}</small>
       </summary>
       <div className="production-case-verification-content">
-        <p>{record.summary}</p>
+        <p>{presentFilmStudySourceText(language, record.scenarioId, record.summary)}</p>
         <ul>
           {record.sources.map((source) => (
             <li key={source.url}>
               <div>
                 <strong>{source.title}</strong>
-                <span>{source.publisher} · {source.supports.join(", ")}</span>
-                <p>{source.note}</p>
+                <span>{source.publisher} · {source.supports.map((area) => presentFilmStudySourceSupport(language, area)).join(", ")}</span>
+                <p>{presentFilmStudySourceText(language, record.scenarioId, source.note)}</p>
               </div>
               <a href={source.url} rel="noreferrer" target="_blank">{copy.openSource}</a>
             </li>
