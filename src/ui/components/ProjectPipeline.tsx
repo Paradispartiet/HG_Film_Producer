@@ -10,10 +10,11 @@ interface ProjectPipelineProps {
   readonly onNextAction?: () => void;
   readonly isProductionCase?: boolean;
   readonly isCareerComplete?: boolean;
+  readonly isPastProject?: boolean;
   readonly nextProjectNumber?: number;
 }
 
-export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction, isProductionCase = false, isCareerComplete = false, nextProjectNumber }: ProjectPipelineProps) {
+export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction, isProductionCase = false, isCareerComplete = false, isPastProject = false, nextProjectNumber }: ProjectPipelineProps) {
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_WORKSPACE_COPY[language];
   const phases = [
@@ -29,7 +30,7 @@ export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction
   const scaleLabel = getScaleLabel(language, project.scale);
   const activeActionLabel = currentPhase === 4 ? copy.actions.openRelease : currentPhase === 5 ? copy.actions.openCareerReview : copy.actions.continuePhase(current.label);
   const actionLabel = isCareerComplete ? copy.actions.openNextProject : activeActionLabel;
-  const focused = Boolean(onNextAction);
+  const focused = Boolean(onNextAction) || isPastProject;
 
   return (
     <section className={focused ? "project-hero project-hero--focused" : "project-hero"}>
@@ -48,8 +49,8 @@ export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction
         <div className="current-phase" aria-live="polite">
           <div>
             <span>{copy.pipeline.whatToDoNow}</span>
-            <strong>{isCareerComplete && nextProjectNumber ? copy.pipeline.nextProjectHeading(nextProjectNumber) : current.label}</strong>
-            <p>{isCareerComplete ? copy.pipeline.nextProjectDescription : current.description}</p>
+            <strong>{isCareerComplete ? isPastProject ? copy.pipeline.pastProjectHeading : nextProjectNumber ? copy.pipeline.nextProjectHeading(nextProjectNumber) : current.label : current.label}</strong>
+            <p>{isCareerComplete ? isPastProject ? copy.pipeline.pastProjectDescription : copy.pipeline.nextProjectDescription : current.description}</p>
           </div>
           {onNextAction && <button className="primary-button studio-career-primary-action" onClick={onNextAction} type="button">{actionLabel} <b aria-hidden="true">→</b></button>}
         </div>
