@@ -11,7 +11,7 @@ const id = "scenario_vertigo_1958";
 
 test("Vertigo has 22 immutable canonical brief claims in the source order", () => {
   const start = briefSource.indexOf(`  ${id}: {`);
-  const end = briefSource.indexOf("\\n  },", start);
+  const end = briefSource.indexOf("\n  },", start);
   assert.ok(start > 0 && end > start, "Missing canonical Vertigo brief");
   const section = briefSource.slice(start, end);
   const logline = section.match(/logline: ("[^"]+")/);
