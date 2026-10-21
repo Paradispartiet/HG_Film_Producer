@@ -18,10 +18,14 @@ const SCALE_BONUS: Record<FilmProject["scale"], number> = {
 export function calculateFilmResult(
   project: FilmProject,
   productionTeam?: ProductionTeamEvaluation,
-  postProduction?: PostProductionEvaluation
+  postProduction?: PostProductionEvaluation,
+  preProductionInvestmentCost = 0
 ): FilmResult {
   if (productionTeam && productionTeam.projectId !== project.id) {
     throw new Error(`Production team evaluation does not belong to project "${project.id}".`);
+  }
+  if (!Number.isFinite(preProductionInvestmentCost) || preProductionInvestmentCost < 0) {
+    throw new Error("Pre-production investment must be a finite non-negative cost.");
   }
   if (postProduction && postProduction.projectId !== project.id) {
     throw new Error(`Post-production evaluation does not belong to project "${project.id}".`);
@@ -54,7 +58,7 @@ export function calculateFilmResult(
   const productionBudgetSpent = Math.round(
     project.budget * budgetPressure(project.scale) * (1 + Math.max(0, teamBudgetPressure - 50) / 500)
   );
-  const budgetSpent = productionBudgetSpent + (postProduction?.totalCost ?? 0);
+  const budgetSpent = productionBudgetSpent + (postProduction?.totalCost ?? 0) + Math.round(preProductionInvestmentCost);
   const revenueEstimate = Math.round(
     (audienceAppeal * 1200 + quality * 800) * revenueMultiplier(project.scale)
   );
