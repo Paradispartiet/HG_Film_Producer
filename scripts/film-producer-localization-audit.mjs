@@ -179,6 +179,28 @@ if (!cuckoosNestMatch || !presentationSource.includes('import { presentCuckoosNe
     problems.push("cuckoos_nest_external_statement_data_not_json");
   }
 }
+// Film 11: The Celebration / Festen (1998) remains exact-canonical.
+const festenSource = read("src/core/productionCaseFestenStatements.ts");
+const festenMatch = festenSource.match(
+  /export const FESTEN_PRODUCTION_STATEMENT_ROWS = (\[[\s\S]*?\]) as const;/,
+);
+if (!festenMatch || !presentationSource.includes('import { presentFestenProductionStatement }') ||
+    !presentationSource.includes('scenarioId === "scenario_the_celebration_1998"')) {
+  problems.push("festen_external_statement_mapping_missing");
+} else {
+  try {
+    const rows = JSON.parse(festenMatch[1]);
+    const originals = rows.map((row) => row[0]);
+    if (rows.length !== 22 || new Set(originals).size !== 22 ||
+        rows.some((row) => row.length !== 4 || row.some((value) => typeof value !== "string" || !value.trim()))) {
+      problems.push("festen_external_statement_contract_invalid");
+    } else {
+      canonicalStatementArrays.push({ name: "CANONICAL_FESTEN_STATEMENTS", count: rows.length });
+    }
+  } catch {
+    problems.push("festen_external_statement_data_not_json");
+  }
+}
 if (canonicalStatementArrays.length !== mappedIds.size ||
     canonicalStatementArrays.some((entry) => entry.count === 0)) {
   problems.push("canonical_statement_array_mapping_requires_review");
