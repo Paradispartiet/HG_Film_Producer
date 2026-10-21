@@ -491,3 +491,41 @@
 .pre-budget-evidence { padding: 12px 14px; border-left: 2px solid var(--accent); }
 .pre-budget-evidence p { margin: 6px 0; }
 .pre-budget-evidence small { color: var(--muted); line-height: 1.5; }
+
+/* Live shoot budget uses recorded day costs and a separately labelled estimate. */
+.shoot-budget-description, .shoot-budget-allocation, .shoot-budget-projection p {
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 12px;
+}
+.shoot-budget-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 12px 0;
+}
+.shoot-budget-metric {
+  border: 1px solid var(--line-soft);
+  padding: 12px;
+  min-width: 0;
+  background: rgba(5, 7, 9, 0.15);
+}
+.shoot-budget-metric span { display: block; color: var(--muted); font-size: 11px; margin-bottom: 5px; }
+.shoot-budget-metric strong { display: block; font-size: 16px; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.shoot-budget-risk { font-size: 12px; line-height: 1.4; }
+.shoot-budget-risk--healthy { color: var(--positive); }
+.shoot-budget-risk--tight { color: var(--accent); }
+.shoot-budget-risk--over { color: var(--negative, #e88d85); }
+.shoot-budget-projection {
+  padding: 12px 14px;
+  border-left: 2px solid var(--accent);
+  margin-top: 13px;
+  background: rgba(5, 7, 9, 0.15);
+}
+.shoot-budget-projection-heading { display: flex; gap: 12px; align-items: center; justify-content: space-between; }
+.shoot-budget-metrics--projection { margin-bottom: 8px; }
+.shoot-budget-assumption { display: block; color: var(--muted); line-height: 1.5; margin-top: 10px; }
+@media (max-width: 500px) {
+  .shoot-budget-metrics { grid-template-columns: minmax(0, 1fr); }
+  .shoot-budget-projection-heading { align-items: flex-start; flex-direction: column; }
+}
