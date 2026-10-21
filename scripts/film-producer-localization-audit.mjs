@@ -138,7 +138,7 @@ if (!fourHundredBlowsMatch || !presentationSource.includes('import { presentFour
 // Film 9: source-locked The Shining brief, without modifying canonical source claims.
 const shiningSource = read("src/core/productionCaseShiningStatements.ts");
 const shiningMatch = shiningSource.match(
-  /export const SHINING_PRODUCTION_STATEMENT_ROWS = (\\[[\\s\\S]*?\\]) as const;/,
+  /export const SHINING_PRODUCTION_STATEMENT_ROWS = (\[[\s\S]*?\]) as const;/,
 );
 if (!shiningMatch || !presentationSource.includes('import { presentShiningProductionStatement }') ||
     !presentationSource.includes('scenarioId === "scenario_the_shining_1980"')) {
