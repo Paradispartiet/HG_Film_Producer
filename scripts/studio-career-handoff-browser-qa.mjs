@@ -40,7 +40,7 @@ try {
   ]) {
     const context = await browser.newContext({ viewport });
     await context.addInitScript(({ state, locale }) => {
-      window.localStorage.setItem("hg-film-producer-career-run-v1", state);
+      if (!window.localStorage.getItem("hg-film-producer-career-run-v1")) window.localStorage.setItem("hg-film-producer-career-run-v1", state);
       window.localStorage.setItem("hg_filmwork_language_v1", locale);
     }, { state: JSON.stringify(completed), locale: language });
     const page = await context.newPage();
@@ -71,7 +71,7 @@ try {
       const readState = () => page.evaluate((storageKey) => JSON.parse(window.localStorage.getItem(storageKey)), SAVE_KEY);
       const created = await readState();
       assert.equal(created.projects[0].id, completed.projects[0].id, `${language}: Film One identity preserved`);
-      assert.deepEqual(created.projects[0].careerApplicationResult, completed.projects[0].careerApplicationResult, `${language}: Film One results unchanged`);
+      assert.deepEqual(created.projects[0].careerApplicationResult, JSON.parse(JSON.stringify(completed.projects[0].careerApplicationResult)), `${language}: Film One results unchanged`);
       assert.equal(created.projects[1].projectNumber, 2);
       assert.equal(created.projects[1].run.project.title, "Second Film");
       assert.equal(created.projects[1].developmentResult, null);
