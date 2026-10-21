@@ -7,6 +7,7 @@ import {
   getStudioCareerActivePanelId,
   getStudioCareerActivePhase,
   getStudioCareerCurrentPhaseIndex,
+  getStudioCareerNextProjectFormId,
   getStudioCareerSummaryProject,
   getStudioCareerFestivalInputName,
   getStudioCareerReleaseStrategyInputName,
@@ -99,4 +100,22 @@ test("App wires active-film status to the summary and keeps next-project actions
   assert.match(source, /strategicGoal=\{summaryStrategicGoal\}/);
   assert.match(source, /shouldOfferStudioCareerNextProject\(\{ isLatest, careerApplicationResult: project\.careerApplicationResult \}\)/);
   assert.doesNotMatch(source, /RunSummaryPanel careerApplicationResult=\{firstProject\.careerApplicationResult\}/);
+});
+
+
+test("finished films offer the next project setup, not the completed career review", () => {
+  const finishedFilm = project({ id: "film-one", careerApplicationResult: result });
+  assert.equal(getStudioCareerActivePhase(finishedFilm), "development", "The phase model does not infer finality from career application alone");
+  assert.equal(getStudioCareerNextProjectFormId("film-one"), "next-project-setup-film-one");
+  assert.notEqual(getStudioCareerNextProjectFormId("film-one"), getStudioCareerActivePanelId("film-one"));
+
+  const app = readFileSync("src/ui/App.tsx", "utf8");
+  const pipeline = readFileSync("src/ui/components/ProjectPipeline.tsx", "utf8");
+  assert.match(app, /project\.careerApplicationResult \? getStudioCareerNextProjectFormId\(project\.id\) : actionPanelId/);
+  assert.match(app, /id=\{getStudioCareerNextProjectFormId\(previousProject\.id\)\}/);
+  assert.match(app, /isCareerComplete=\{Boolean\(project\.careerApplicationResult\)\}/);
+  assert.match(pipeline, /const actionLabel = isCareerComplete \? copy\.actions\.openNextProject : activeActionLabel/);
+  assert.match(pipeline, /isCareerComplete \|\| index < currentPhase/);
+  assert.match(pipeline, /aria-current=\{statusId === "in-progress" \? "step" : undefined\}/);
+  assert.doesNotMatch(pipeline, /phase-card-grid/);
 });
