@@ -86,7 +86,8 @@ export function createPostProductionStepResult(
   projectContext: ProjectRunContext,
   preProductionResult: PreProductionStepResult,
   shootResult: ShootStepResult,
-  choices: PostProductionChoices
+  choices: PostProductionChoices,
+  scriptDraftScore?: number
 ): PostProductionStepResult {
   assertCompletedSteps(projectContext, preProductionResult, shootResult);
   const edit = requireItem(postProductionData.editDecisions, choices.editDecisionId, "edit decision");
@@ -109,7 +110,9 @@ export function createPostProductionStepResult(
   const testScreeningResult = runTestScreening(
     preProductionResult.projectState,
     finishingPlan,
-    shootResult.shootEvaluation
+    shootResult.shootEvaluation,
+    undefined,
+    scriptDraftScore
   );
   const trailerCutResult = createTrailerCut(preProductionResult.projectState, finishingPlan, trailer);
   const postProductionEvaluation = evaluatePostProduction(
