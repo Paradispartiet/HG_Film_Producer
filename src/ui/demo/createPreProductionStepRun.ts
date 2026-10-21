@@ -4,6 +4,7 @@ import locationScoutingBriefsJson from "../../../data/film/location_scouting_bri
 import locationsJson from "../../../data/film/locations.json";
 
 import { applyActorRosterGrowth, applyCrewRosterGrowth } from "../../core/applyRosterGrowth.js";
+import { applyBudgetPriority, type BudgetPriorityResult, type StudioCareerBudgetPriorityId } from "../../core/studioCareerBudgetPriority.js";
 import { attachLocationToProject } from "../../core/attachLocationToProject.js";
 import { calculateCastingChemistry } from "../../core/calculateCastingChemistry.js";
 import { castActor, scoreActorForProject } from "../../core/castActor.js";
@@ -45,6 +46,7 @@ const preProductionData = adaptFilmSeedData<PreProductionSeedData>({
 });
 
 export interface PreProductionChoices {
+  readonly budgetPriorityId?: StudioCareerBudgetPriorityId;
   readonly locationId: string;
   readonly crewMemberIds: readonly string[];
   readonly actorIds: readonly string[];
@@ -107,6 +109,8 @@ export interface CastActorResult {
 }
 
 export interface PreProductionStepResult {
+  /** Optional on completed films saved before budget priorities existed. */
+  readonly budgetPriority?: BudgetPriorityResult;
   readonly projectState: FilmProject;
   readonly location: {
     readonly id: string;
@@ -216,9 +220,11 @@ export function createPreProductionResult(
     return { actor, result: { id: actor.id, name: actor.name, fitScore: score.totalScore } };
   });
   const chemistry = calculateCastingChemistry(castActors.map(({ actor }) => actor));
-  const teamEvaluation = evaluateProductionTeam(project, grownCrewMembers, grownActors);
+  const evaluatedTeam = evaluateProductionTeam(project, grownCrewMembers, grownActors);
+  const { teamEvaluation, budgetPriority } = applyBudgetPriority(evaluatedTeam, project.budget, choices.budgetPriorityId);
 
   return {
+    budgetPriority,
     projectState: project,
     location: {
       id: location.id,

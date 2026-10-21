@@ -1,4 +1,5 @@
 import type { FilmScale } from "../domain/film.js";
+import type { StudioCareerBudgetPriorityId } from "../core/studioCareerBudgetPriority.js";
 import type { StudioCareerEditingApproachId } from "../core/studioCareerEditingApproach.js";
 
 export type AppMode = "demo" | "setup";
@@ -48,6 +49,8 @@ export interface DevelopmentPathOption {
 }
 
 export interface PreProductionSelectionState {
+  /** Missing on older v1 saves: reserve keeps the old calculations. */
+  readonly budgetPriorityId?: StudioCareerBudgetPriorityId;
   readonly selectedLocationId: string;
   readonly selectedCrewIds: readonly string[];
   readonly selectedActorIds: readonly string[];

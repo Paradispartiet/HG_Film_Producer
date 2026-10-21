@@ -211,3 +211,18 @@ function requireAt<T>(items: readonly T[], index: number): T {
   if (!item) throw new Error(`Missing release test fixture at index ${index}.`);
   return item;
 }
+
+test("funded pre-production is charged once in the real release P&L", () => {
+  const plan = createReleasePlan(project, strategy);
+  const audience = generateAudienceResult(project, film, segment, strategy);
+  const original = calculateReleaseRevenue(project, plan, strategy, [audience]);
+  const same = calculateReleaseRevenue(project, plan, strategy, [audience], 0);
+  const funded = calculateReleaseRevenue(project, plan, strategy, [audience], 45_000);
+
+  assert.deepEqual(original, same, "Legacy / reserve revenue must be identical");
+  assert.equal(funded.netRevenue, original.netRevenue - 45_000);
+  assert.equal(funded.grossRevenue, original.grossRevenue);
+  assert.ok(funded.roi <= original.roi);
+  assert.match(funded.notes.join(" "), /45000/);
+  assert.throws(() => calculateReleaseRevenue(project, plan, strategy, [audience], -1), /finite and non-negative/);
+});

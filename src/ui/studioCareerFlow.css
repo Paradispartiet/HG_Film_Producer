@@ -463,3 +463,31 @@
   color: var(--muted);
   line-height: 1.55;
 }
+
+/* Budget investment is a separate producer decision from crew hiring. */
+.pre-budget-section { margin: 18px 0; }
+.pre-budget-heading p { color: var(--muted); line-height: 1.55; }
+.pre-budget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+.pre-budget-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid var(--line-soft);
+  background: rgba(5, 7, 9, 0.18);
+  cursor: pointer;
+}
+.pre-budget-card input { margin-top: 3px; accent-color: var(--accent); flex: none; }
+.pre-budget-card span { display: grid; gap: 6px; }
+.pre-budget-card strong { font-size: 13px; }
+.pre-budget-card small { color: var(--muted); line-height: 1.5; }
+.pre-budget-card em { font-size: 11px; font-style: normal; color: var(--accent); }
+.pre-budget-card--selected { border-color: var(--accent); background: var(--accent-soft); }
+.pre-budget-evidence { padding: 12px 14px; border-left: 2px solid var(--accent); }
+.pre-budget-evidence p { margin: 6px 0; }
+.pre-budget-evidence small { color: var(--muted); line-height: 1.5; }

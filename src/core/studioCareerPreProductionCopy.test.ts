@@ -40,3 +40,16 @@ test("production team result helpers preserve project, counts, and scores", () =
   assert.equal(STUDIO_CAREER_PRE_PRODUCTION_COPY.pt.result.overall(84), "84 global");
   assert.equal(STUDIO_CAREER_PRE_PRODUCTION_COPY.nb.result.scoreAria("Crewscore", 72), "Crewscore 72 av 100");
 });
+
+test("budget tradeoff choices are fully localized across four languages", () => {
+  for (const language of ["en", "nb", "fr", "pt"] as const) {
+    const copy = STUDIO_CAREER_PRE_PRODUCTION_COPY[language].budget;
+    assert.deepEqual(Object.keys(copy.options), ["reserve", "cast_focus", "crew_focus"]);
+    assert.ok(copy.heading.length > 10);
+    for (const id of ["reserve", "cast_focus", "crew_focus"] as const) {
+      assert.ok(copy.options[id].title.length > 5);
+      assert.ok(copy.options[id].tradeoff.length > 10);
+    }
+    assert.match(copy.recorded("48,000"), /48,000/);
+  }
+});

@@ -92,7 +92,8 @@ export function createReleaseStepResult(
   const filmResult = calculateFilmResult(
     project,
     preProductionResult.teamEvaluation,
-    postProductionResult.postProductionEvaluation
+    postProductionResult.postProductionEvaluation,
+    preProductionResult.budgetPriority?.investmentCost ?? 0
   );
   const releaseStrategyScore = scoreReleaseStrategy(
     project,
@@ -114,7 +115,7 @@ export function createReleaseStepResult(
     ));
   const audienceResults = selectAudiences(project.genreId, strategy)
     .map((segment) => generateAudienceResult(project, filmResult, segment, strategy));
-  const revenueResult = calculateReleaseRevenue(project, releasePlan, strategy, audienceResults);
+  const revenueResult = calculateReleaseRevenue(project, releasePlan, strategy, audienceResults, preProductionResult.budgetPriority?.investmentCost ?? 0);
   const awardsOutcome = resolveAwardsOutcome(
     project,
     filmResult,

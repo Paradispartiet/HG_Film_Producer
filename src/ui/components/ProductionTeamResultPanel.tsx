@@ -1,4 +1,5 @@
 import { STUDIO_CAREER_PRE_PRODUCTION_COPY } from "../../core/studioCareerPreProductionCopy.js";
+import { formatStudioCareerPostProductionMoney } from "../../core/studioCareerPostProductionCopy.js";
 import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 
@@ -65,6 +66,11 @@ export function ProductionTeamResultPanel({
             : result.casting.chemistryNote}</p>
         </div>
 
+        {result.budgetPriority && <div className="pre-budget-evidence">
+          <strong>{copy.budget.options[result.budgetPriority.id].title}</strong>
+          <p>{copy.budget.recorded(formatStudioCareerPostProductionMoney(result.budgetPriority.investmentCost, language))}</p>
+          <small>{copy.budget.options[result.budgetPriority.id].tradeoff}</small>
+        </div>}
         <div className="team-evaluation">
           <div className="team-evaluation-heading"><span className="section-label">{copy.result.evaluation}</span><strong>{copy.result.overall(evaluation.overall)}</strong></div>
           <div className="evaluation-metrics">
