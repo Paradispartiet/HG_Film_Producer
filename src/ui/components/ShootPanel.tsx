@@ -1,5 +1,7 @@
 import { useMemo } from "react";
 import type { ShootStrategyId } from "../../core/applyShootStrategy.js";
+import type { ProducerPriorityId } from "../../core/applyProducerPriority.js";
+import { PRODUCER_PRIORITY_COPY } from "../../core/studioCareerProducerPriorityCopy.js";
 import { calculateShootBudgetPosition } from "../../core/calculateShootBudgetPosition.js";
 import { STUDIO_CAREER_SHOOT_COPY } from "../../core/studioCareerShootCopy";
 import type { ProjectShootLabel } from "../types.js";
@@ -15,6 +17,7 @@ import {
 import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { ProductionEventPanel } from "./ProductionEventPanel.js";
+import { ProducerPriorityPanel } from "./ProducerPriorityPanel.js";
 import { SceneDifficultyPanel } from "./SceneDifficultyPanel.js";
 import { ShootDayResultPanel } from "./ShootDayResultPanel.js";
 import { ShootBudgetMonitor } from "./ShootBudgetMonitor.js";
@@ -29,10 +32,12 @@ interface ShootPanelProps {
   readonly preProductionResult: PreProductionStepResult;
   readonly selectedProductionEventId: string;
   readonly selectedShootStrategyId?: ShootStrategyId;
+  readonly selectedProducerPriorityId?: ProducerPriorityId;
   readonly shootDayResults: readonly ShootDayStepResult[];
   readonly shootResult: ShootStepResult | null;
   readonly onSelectProductionEvent: (eventId: string) => void;
   readonly onSelectShootStrategy: (id: ShootStrategyId) => void;
+  readonly onSelectProducerPriority: (id: ProducerPriorityId) => void;
   readonly onResolveShootDay: (result: ShootDayStepResult) => void;
   readonly id?: string | undefined;
 }
@@ -44,15 +49,18 @@ export function ShootPanel({
   preProductionResult,
   selectedProductionEventId,
   selectedShootStrategyId = "steady",
+  selectedProducerPriorityId = "crew_coordination",
   shootDayResults,
   shootResult,
   onSelectProductionEvent,
   onSelectShootStrategy,
+  onSelectProducerPriority,
   onResolveShootDay,
   id
 }: ShootPanelProps) {
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_SHOOT_COPY[language];
+  const producerCopy = PRODUCER_PRIORITY_COPY[language];
   const preparation = useMemo(
     () => getShootPreparation(projectContext, developmentResult, preProductionResult),
     [projectContext, developmentResult, preProductionResult]
@@ -65,7 +73,7 @@ export function ShootPanel({
   // Preview uses the very same deterministic resolver as the confirmation action.
   // It does not change save state or book any costs before the player confirms.
   const previewDay = currentDay && selectedProductionEventId
-    ? resolveNextShootDay(preparation, shootDayResults, { selectedProductionEventId, selectedShootStrategyId }).shootDayResult
+    ? resolveNextShootDay(preparation, shootDayResults, { selectedProductionEventId, selectedShootStrategyId, selectedProducerPriorityId }).shootDayResult
     : undefined;
   const budgetPosition = calculateShootBudgetPosition(
     preparation.productionSchedule,
@@ -75,7 +83,7 @@ export function ShootPanel({
 
   function resolveDay() {
     if (!selectedProductionEventId) return;
-    onResolveShootDay(resolveNextShootDay(preparation, shootDayResults, { selectedProductionEventId, selectedShootStrategyId }));
+    onResolveShootDay(resolveNextShootDay(preparation, shootDayResults, { selectedProductionEventId, selectedShootStrategyId, selectedProducerPriorityId }));
   }
 
   return (
@@ -88,7 +96,6 @@ export function ShootPanel({
         <p>{copy.panel.intro(projectLabel)}</p>
       </div>
       <ShootSchedulePanel currentDay={currentDay} preparation={preparation} projectLabel={projectLabel} resolvedDays={shootDayResults} />
-      <ShootBudgetMonitor position={budgetPosition} />
       <SceneDifficultyPanel projectLabel={projectLabel} summaries={preparation.sceneDifficultySummaries} />
       {latestDay && (
         <ShootDayResultPanel dayNumber={shootDayResults.length} key={latestDay.updatedShootDay.id} preparation={preparation} projectLabel={projectLabel} result={latestDay} />
@@ -102,6 +109,7 @@ export function ShootPanel({
             projectLabel={projectLabel}
             selectedProductionEventId={selectedProductionEventId}
           />
+          <ProducerPriorityPanel inputName={`${projectContext.filmProjectState.id}-producer-priority`} onSelect={onSelectProducerPriority} selectedId={selectedProducerPriorityId} />
           <ShootStrategyPanel budgetRisk={budgetPosition.projected?.risk ?? budgetPosition.actual.risk} onSelect={onSelectShootStrategy} plannedCost={currentDay.plannedCost} selectedId={selectedShootStrategyId} />
           <div className="shoot-actions">
             <div>
@@ -114,6 +122,10 @@ export function ShootPanel({
           </div>
         </>
       )}
+      <details className="shoot-budget-details">
+        <summary>{producerCopy.budgetSummary}</summary>
+        <ShootBudgetMonitor position={budgetPosition} />
+      </details>
       {earlierDays.length > 0 && (
         <details className="shoot-prior-days">
           <summary>{copy.dayResult.priorDays(earlierDays.length)}</summary>
