@@ -1,4 +1,5 @@
 import type { FilmScale } from "../domain/film.js";
+import type { StudioCareerEditingApproachId } from "../core/studioCareerEditingApproach.js";
 
 export type AppMode = "demo" | "setup";
 export type StartingMoneyPreset =
@@ -57,6 +58,8 @@ export interface ShootSelectionState {
 }
 
 export interface PostProductionSelectionState {
+  /** Optional to keep v1 saved careers from earlier game versions valid. */
+  readonly editingApproachId?: StudioCareerEditingApproachId;
   readonly editDecisionId: string;
   readonly soundDecisionId: string;
   readonly musicDecisionId: string;

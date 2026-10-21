@@ -417,3 +417,49 @@
 @media (max-width: 850px) {
   .shoot-strategy-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* A creative tradeoff is independent of the paid edit-decision catalogue. */
+.editing-tradeoff-section {
+  margin: 18px 0;
+}
+.editing-tradeoff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+.editing-tradeoff-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid var(--line-soft);
+  background: rgba(5, 7, 9, 0.18);
+  cursor: pointer;
+}
+.editing-tradeoff-card input {
+  margin-top: 3px;
+  accent-color: var(--accent);
+  flex: none;
+}
+.editing-tradeoff-card span {
+  display: grid;
+  gap: 6px;
+}
+.editing-tradeoff-card strong {
+  font-size: 13px;
+}
+.editing-tradeoff-card small {
+  color: var(--muted);
+  line-height: 1.55;
+}
+.editing-tradeoff-card--selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.editing-tradeoff-evidence {
+  padding: 11px 13px;
+  border-left: 2px solid var(--accent);
+  color: var(--muted);
+  line-height: 1.55;
+}

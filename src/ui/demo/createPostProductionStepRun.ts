@@ -12,6 +12,7 @@ import { createPostProductionPlan } from "../../core/createPostProductionPlan.js
 import { createTrailerCut } from "../../core/createTrailerCut.js";
 import { evaluatePostProduction } from "../../core/evaluatePostProduction.js";
 import { runTestScreening } from "../../core/runTestScreening.js";
+import { getStudioCareerEditingApproach, type StudioCareerEditingApproachId } from "../../core/studioCareerEditingApproach.js";
 import type {
   ColorDecision,
   EditDecision,
@@ -70,6 +71,8 @@ export interface PostProductionOptions {
 }
 
 export interface PostProductionStepResult {
+  /** Absent on previously completed saved films. */
+  readonly editingApproachId?: StudioCareerEditingApproachId;
   readonly postProductionPlan: PostProductionPlan;
   readonly appliedDecisions: AppliedPostProductionDecisions;
   readonly testScreeningResult: TestScreeningResult;
@@ -107,12 +110,14 @@ export function createPostProductionStepResult(
     trailerStrategyId: trailer.id,
     notes: [...colorApplication.plan.notes, `Trailer strategy selected: ${trailer.title}.`]
   };
+  const editingApproachId = getStudioCareerEditingApproach(choices.editingApproachId).id;
   const testScreeningResult = runTestScreening(
     preProductionResult.projectState,
     finishingPlan,
     shootResult.shootEvaluation,
     undefined,
-    scriptDraftScore
+    scriptDraftScore,
+    editingApproachId
   );
   const trailerCutResult = createTrailerCut(preProductionResult.projectState, finishingPlan, trailer);
   const postProductionEvaluation = evaluatePostProduction(
@@ -130,6 +135,7 @@ export function createPostProductionStepResult(
   };
 
   return {
+    editingApproachId,
     postProductionPlan,
     appliedDecisions: {
       edit: summarizeDecision(edit, editApplication.costDelta, editApplication.statChanges),

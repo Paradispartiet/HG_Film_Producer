@@ -31,3 +31,15 @@ test("Portuguese later-film post-production presentation does not leak Film", ()
   assert.equal(STUDIO_CAREER_POST_PRODUCTION_COPY.pt.panel.lockButton("film 2"), "Fechar pós-produção de filme 2");
   assert.equal(STUDIO_CAREER_POST_PRODUCTION_COPY.pt.result.nextMessage("film 3"), "Próximo passo: lançar filme 3");
 });
+
+test("creative editing tradeoffs explain real and different outcomes in all four languages", () => {
+  for (const language of ["en", "nb", "fr", "pt"] as const) {
+    const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[language];
+    assert.equal(Object.keys(copy.editingApproach.options).length, 3);
+    for (const id of ["balanced", "story_first", "bold_cut"] as const) {
+      assert.ok(copy.editingApproach.options[id].title.length > 5);
+      assert.ok(copy.editingApproach.options[id].tradeoff.length > 15);
+      assert.ok(copy.screening.editingEffect[id].length > 15);
+    }
+  }
+});
