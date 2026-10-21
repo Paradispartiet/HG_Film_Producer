@@ -26,10 +26,12 @@ export function runTestScreening(
   const scriptEmotion = scriptEvaluation?.scores.emotion ?? 55;
   // A completed Studio Career script draft is evaluated during development.
   // Its overall score is a modest shared story-readiness signal, rather than
-  // a fabricated set of per-axis script scores. Legacy callers stay unchanged.
+  // a fabricated set of per-axis script scores. Completing a sound draft
+  // creates a noticeable benefit; exceptionally weak drafts can hurt.
+  // Legacy callers stay unchanged.
   const scriptReadiness = scriptDraftScore === undefined || !Number.isFinite(scriptDraftScore)
     ? 0
-    : (Math.max(0, Math.min(100, scriptDraftScore)) - 55) * 0.4;
+    : Math.max(-12, Math.min(18, (Math.max(0, Math.min(100, scriptDraftScore)) - 35) * 0.5));
 
   const clarityScore = clampScore(34 + structure * 0.35 + shootQuality * 0.08 + editCoverage * 6 + soundCoverage * 5 + scriptReadiness);
   const pacingScore = clampScore(34 + scriptPacing * 0.38 + shootQuality * 0.08 + editCoverage * 8 + scriptReadiness);
