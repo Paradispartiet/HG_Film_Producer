@@ -3,6 +3,7 @@ import type { ProductionCaseBriefType } from "./productionCaseBriefCopy.js";
 import { presentSeedFallbackText } from "./productionCaseSeedPresentation.js";
 import { presentVertigoProductionStatement } from "./productionCaseVertigoStatements.js";
 import { presentBreathlessProductionStatement } from "./productionCaseBreathlessStatements.js";
+import { presentFourHundredBlowsProductionStatement } from "./productionCaseFourHundredBlowsStatements.js";
 
 /**
  * One source-verified film at a time. Only exact canonical authored statements
@@ -503,6 +504,9 @@ export function presentVerifiedFilmStatement(
     return Object.prototype.hasOwnProperty.call(presentation, original)
       ? presentation[original as MachinistStatement]
       : original;
+  }
+  if (scenarioId === "scenario_the_400_blows_1959") {
+    return presentFourHundredBlowsProductionStatement(language, original);
   }
   if (scenarioId === "scenario_breathless_1960") {
     return presentBreathlessProductionStatement(language, original);
