@@ -15,7 +15,7 @@ test("Vertigo has 22 immutable canonical brief claims in the source order", () =
   assert.ok(start > 0 && end > start, "Missing canonical Vertigo brief");
   const section = briefSource.slice(start, end);
   const logline = section.match(/logline: ("[^"]+")/);
-  assert.ok(logline);
+  assert.ok(logline?.[1], "Missing canonical logline");
   const fieldNames = [
     "genreTargets", "toneTargets", "screenplayTargets", "cinematographyTargets",
     "editingTargets", "soundTargets", "learningGoals",
