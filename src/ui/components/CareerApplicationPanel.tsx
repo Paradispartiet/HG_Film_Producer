@@ -6,6 +6,8 @@ import type { ReleaseStepResult } from "../demo/createReleaseStepRun";
 import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 import type { ProjectCareerLabel } from "../types";
 import { CareerApplicationResultPanel } from "./CareerApplicationResultPanel";
+import { ProductionDecisionReviewPanel } from "./ProductionDecisionReviewPanel";
+import type { CareerFilmProjectRun } from "../state/careerRunState";
 
 interface CareerApplicationPanelProps {
   readonly projectContext: ProjectRunContext;
@@ -13,6 +15,7 @@ interface CareerApplicationPanelProps {
   readonly strategicGoal: StrategicGoal;
   readonly releaseResult: ReleaseStepResult | null;
   readonly result: CareerApplicationStepResult | null;
+  readonly productionProject?: CareerFilmProjectRun;
   readonly onApply: () => void;
   readonly id?: string | undefined;
 }
@@ -23,6 +26,7 @@ export function CareerApplicationPanel({
   strategicGoal,
   releaseResult,
   result,
+  productionProject,
   onApply,
   id
 }: CareerApplicationPanelProps) {
@@ -54,13 +58,16 @@ export function CareerApplicationPanel({
         </div>
       )}
       {releaseResult && result && (
-        <CareerApplicationResultPanel
-          projectContext={projectContext}
-          projectLabel={projectLabel}
-          releaseResult={releaseResult}
-          result={result}
-          strategicGoal={strategicGoal}
-        />
+        <>
+          <CareerApplicationResultPanel
+            projectContext={projectContext}
+            projectLabel={projectLabel}
+            releaseResult={releaseResult}
+            result={result}
+            strategicGoal={strategicGoal}
+          />
+          {productionProject && <ProductionDecisionReviewPanel project={productionProject} />}
+        </>
       )}
     </section>
   );
