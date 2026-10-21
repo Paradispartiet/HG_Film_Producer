@@ -14,6 +14,8 @@ type StudioCareerWorkspaceCopy = {
     readonly phaseProgress: string;
     readonly nextProjectHeading: (filmNumber: number) => string;
     readonly nextProjectDescription: string;
+      readonly pastProjectHeading: string;
+    readonly pastProjectDescription: string;
     readonly latestProductionCaseUpdate: string;
     readonly latestStudioCareerUpdate: string;
   };
@@ -57,6 +59,8 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
       phaseProgress: "Film production progress",
       nextProjectHeading: (filmNumber) => `Film ${filmNumber} is next`,
       nextProjectDescription: "This film is complete. Start the next film below to continue your studio career.",
+      pastProjectHeading: "Film complete",
+      pastProjectDescription: "This film is saved in your studio history. Continue working on the latest film above.",
       latestProductionCaseUpdate: "Latest Production Case update",
       latestStudioCareerUpdate: "Latest Studio Career update",
     },
@@ -87,6 +91,8 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
       phaseProgress: "Framdrift i filmproduksjonen",
       nextProjectHeading: (filmNumber) => `Film ${filmNumber} er neste steg`,
       nextProjectDescription: "Denne filmen er ferdig. Start neste film nedenfor for å fortsette studiokarrieren.",
+      pastProjectHeading: "Film fullført",
+      pastProjectDescription: "Denne filmen er lagret i studiohistorikken. Fortsett med den nyeste filmen over.",
       latestProductionCaseUpdate: "Siste Production Case-oppdatering",
       latestStudioCareerUpdate: "Siste oppdatering fra studiokarrieren",
     },
@@ -117,6 +123,8 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
       phaseProgress: "Progression de la production",
       nextProjectHeading: (filmNumber) => `Le film ${filmNumber} est la prochaine étape`,
       nextProjectDescription: "Ce film est terminé. Lancez le suivant ci-dessous pour poursuivre la carrière du studio.",
+      pastProjectHeading: "Film terminé",
+      pastProjectDescription: "Ce film figure dans l’historique du studio. Reprenez le film le plus récent ci-dessus.",
       latestProductionCaseUpdate: "Dernière mise à jour Production Case",
       latestStudioCareerUpdate: "Dernière mise à jour de la carrière Studio",
     },
@@ -147,6 +155,8 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
       phaseProgress: "Progresso da produção do filme",
       nextProjectHeading: (filmNumber) => `O filme ${filmNumber} é o próximo passo`,
       nextProjectDescription: "Este filme está concluído. Comece o próximo abaixo para continuar a carreira do estúdio.",
+      pastProjectHeading: "Filme concluído",
+      pastProjectDescription: "Este filme está guardado no histórico do estúdio. Continue com o filme mais recente acima.",
       latestProductionCaseUpdate: "Última atualização de Production Case",
       latestStudioCareerUpdate: "Última atualização da carreira de estúdio",
     },
