@@ -8,7 +8,8 @@ export function runTestScreening(
   project: FilmProject,
   plan: PostProductionPlan,
   shootEvaluation?: ShootResultEvaluation,
-  scriptEvaluation?: ScriptEvaluation
+  scriptEvaluation?: ScriptEvaluation,
+  scriptDraftScore?: number
 ): TestScreeningResult {
   assertProject(plan.projectId, project.id, "Post-production plan");
   if (shootEvaluation) {
@@ -23,15 +24,21 @@ export function runTestScreening(
   const structure = scriptEvaluation?.scores.structure ?? 55;
   const scriptPacing = scriptEvaluation?.scores.pacing ?? 55;
   const scriptEmotion = scriptEvaluation?.scores.emotion ?? 55;
+  // A completed Studio Career script draft is evaluated during development.
+  // Its overall score is a modest shared story-readiness signal, rather than
+  // a fabricated set of per-axis script scores. Legacy callers stay unchanged.
+  const scriptReadiness = scriptDraftScore === undefined || !Number.isFinite(scriptDraftScore)
+    ? 0
+    : (Math.max(0, Math.min(100, scriptDraftScore)) - 55) * 0.4;
 
-  const clarityScore = clampScore(34 + structure * 0.35 + shootQuality * 0.08 + editCoverage * 6 + soundCoverage * 5);
-  const pacingScore = clampScore(34 + scriptPacing * 0.38 + shootQuality * 0.08 + editCoverage * 8);
+  const clarityScore = clampScore(34 + structure * 0.35 + shootQuality * 0.08 + editCoverage * 6 + soundCoverage * 5 + scriptReadiness);
+  const pacingScore = clampScore(34 + scriptPacing * 0.38 + shootQuality * 0.08 + editCoverage * 8 + scriptReadiness);
   const emotionScore = clampScore(
-    32 + scriptEmotion * 0.38 + shootQuality * 0.08 + musicCoverage * 7 + colorCoverage * 3
+    32 + scriptEmotion * 0.38 + shootQuality * 0.08 + musicCoverage * 7 + colorCoverage * 3 + scriptReadiness
   );
   const audienceHookScore = clampScore(
     38 + scriptPacing * 0.16 + scriptEmotion * 0.16 + project.actorIds.length * 3
-      + editCoverage * 4 + musicCoverage * 4 + colorCoverage * 2
+      + editCoverage * 4 + musicCoverage * 4 + colorCoverage * 2 + scriptReadiness
   );
   const confusionRisk = clampScore(100 - clarityScore * 0.72 - pacingScore * 0.18);
   const recommendedChanges: string[] = [];
@@ -59,6 +66,9 @@ export function runTestScreening(
     recommendedChanges,
     notes: [
       `The screening reflects ${editCoverage + soundCoverage + musicCoverage + colorCoverage} active craft decisions.`,
+      ...(scriptDraftScore !== undefined && Number.isFinite(scriptDraftScore)
+        ? [`The completed script draft scored ${Math.round(Math.max(0, Math.min(100, scriptDraftScore)))}/100 and informs story readiness at this screening.`]
+        : []),
       recommendedChanges.length === 0
         ? "The cut tested without a major clarity, pacing, emotion, or hook weakness."
         : `${recommendedChanges.length} area${recommendedChanges.length === 1 ? "" : "s"} should be reviewed before lock.`
