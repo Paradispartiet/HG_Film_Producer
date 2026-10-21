@@ -37,6 +37,18 @@ const sourceIds = getSourceBackedFilmHistoryIds();
 const profiles = sourceIds.map((id) => getSourceBackedFilmHistoryProfile(id));
 assert.ok(profiles.length > 100, "Historical source inventory unexpectedly small");
 
+// Discovery-only, using the same runtime profile and donor choice functions.
+const breathless = getSourceBackedFilmHistoryProfile("scenario_breathless_1960");
+assert.ok(breathless);
+const breathlessDonors = createFilmHistoryChoices(breathless)
+  .filter((choice) => choice.quality !== "match")
+  .map((choice) => {
+    const matches = profiles.filter((candidate) => `${candidate.period}: ${candidate.moment}` === choice.label);
+    assert.equal(matches.length, 1, "ambiguous Breathless donor");
+    return { quality: choice.quality, donorScenarioId: matches[0].scenarioId, canonicalOption: choice.label };
+  });
+console.log("BREATHLESS_DONOR_PROBE=" + JSON.stringify(breathlessDonors));
+
 const inventory = targets.map((scenarioId) => {
   const profile = getSourceBackedFilmHistoryProfile(scenarioId);
   assert.ok(profile, `Missing verified profile: ${scenarioId}`);
