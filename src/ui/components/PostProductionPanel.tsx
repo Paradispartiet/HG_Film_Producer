@@ -7,6 +7,7 @@ import {
   type PostProductionStepResult
 } from "../demo/createPostProductionStepRun.js";
 import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
+import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { ProjectRunContext } from "../demo/createProjectRunContext.js";
 import type { ShootStepResult } from "../demo/createShootStepRun.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
@@ -23,6 +24,7 @@ interface PostProductionPanelProps {
   readonly projectLabel?: ProjectPostProductionLabel;
   readonly preProductionResult: PreProductionStepResult;
   readonly shootResult: ShootStepResult;
+  readonly developmentResults?: readonly DevelopmentStepResult[];
   readonly choices: PostProductionChoices;
   readonly result: PostProductionStepResult | null;
   readonly onChange: (choices: PostProductionChoices) => void;
@@ -37,6 +39,7 @@ export function PostProductionPanel({
   projectLabel = "first film",
   preProductionResult,
   shootResult,
+  developmentResults = [],
   choices,
   result,
   onChange,
@@ -48,6 +51,8 @@ export function PostProductionPanel({
   const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[language];
   const options = getPostProductionOptions();
   const isLaterFilm = projectLabel !== "first film";
+  const scriptAction = developmentResults.find((action) => action.path === "script");
+  const scriptDraftScore = scriptAction?.path === "script" ? scriptAction.overallScore : undefined;
   const choiceLabels: ReadonlyArray<readonly [keyof PostProductionChoices, string]> = [
     ["editDecisionId", copy.panel.choiceLabels.edit],
     ["soundDecisionId", copy.panel.choiceLabels.sound],
@@ -57,7 +62,11 @@ export function PostProductionPanel({
   ];
 
   if (result) {
-    return <PostProductionResultPanel projectLabel={projectLabel} result={result} />;
+    // Old saved results must not claim the draft influenced a screening
+    // that was calculated before this mechanic existed.
+    const scoreUsed = scriptDraftScore !== undefined
+      && result.testScreeningResult.notes.some((note) => note.startsWith("The completed script draft scored "));
+    return <PostProductionResultPanel projectLabel={projectLabel} result={result} scriptDraftScore={scoreUsed ? scriptDraftScore : undefined} />;
   }
 
   function select(key: keyof PostProductionChoices, value: string) {
@@ -73,7 +82,7 @@ export function PostProductionPanel({
     }
 
     setMessage("");
-    onLock(createPostProductionStepResult(projectContext, preProductionResult, shootResult, choices));
+    onLock(createPostProductionStepResult(projectContext, preProductionResult, shootResult, choices, scriptDraftScore));
   }
 
   return (

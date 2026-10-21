@@ -55,6 +55,7 @@ interface PostProductionCopy {
     };
     readonly recommendedChanges: string;
     readonly noRevision: string;
+    readonly scriptDraftEvidence: (score: number) => string;
   };
   readonly result: {
     readonly metrics: {
@@ -100,7 +101,7 @@ export const STUDIO_CAREER_POST_PRODUCTION_COPY: Readonly<Record<FilmWorkLanguag
       strategyTypes: { prestige: "prestige", audience_hook: "audience hook", genre_promise: "genre promise", mystery: "mystery", character: "character", spectacle: "spectacle", festival: "festival" }
     },
     decisionCard: { types: { edit: "Edit", sound: "Sound", music: "Music", color: "Color" }, decision: "decision", solves: "Solves", risk: "Risk", cost: "Cost" },
-    screening: { eyebrow: "Test screening", heading: "Audience room readout", description: "Deterministic feedback from the current cut and first shoot-day evidence.", metrics: { clarity: "Clarity", pacing: "Pacing", emotion: "Emotion", audienceHook: "Audience hook", confusionRisk: "Confusion risk" }, recommendedChanges: "Recommended changes", noRevision: "No major revision priority was identified." },
+    screening: { eyebrow: "Test screening", heading: "Audience room readout", description: "Deterministic feedback from the current cut and first shoot-day evidence.", metrics: { clarity: "Clarity", pacing: "Pacing", emotion: "Emotion", audienceHook: "Audience hook", confusionRisk: "Confusion risk" }, recommendedChanges: "Recommended changes", noRevision: "No major revision priority was identified.", scriptDraftEvidence: (score) => `The ${score}/100 script draft influenced story clarity, pacing, emotion and audience interest in this screening.` },
     result: {
       metrics: { edit: "Edit", sound: "Sound", music: "Music", color: "Color", screening: "Test screening", trailer: "Trailer", lockedCut: "Locked cut", overall: "Overall" },
       lockedEyebrow: (projectLabel) => projectLabel === "first film" ? "Post-production locked" : `${formatProjectLabel("en", projectLabel)} post-production locked`,
@@ -130,7 +131,7 @@ export const STUDIO_CAREER_POST_PRODUCTION_COPY: Readonly<Record<FilmWorkLanguag
       strategyTypes: { prestige: "prestisje", audience_hook: "publikumskrok", genre_promise: "sjangerløfte", mystery: "mysterium", character: "karakter", spectacle: "spektakel", festival: "festival" }
     },
     decisionCard: { types: { edit: "Klipp", sound: "Lyd", music: "Musikk", color: "Farge" }, decision: "beslutning", solves: "Løser", risk: "Risiko", cost: "Kostnad" },
-    screening: { eyebrow: "Testvisning", heading: "Tilbakemelding fra publikum", description: "Deterministisk tilbakemelding fra gjeldende klipp og bevis fra første opptaksdag.", metrics: { clarity: "Tydelighet", pacing: "Tempo", emotion: "Følelse", audienceHook: "Publikumskrok", confusionRisk: "Forvirringsrisiko" }, recommendedChanges: "Anbefalte endringer", noRevision: "Ingen større revisjonsprioritet ble identifisert." },
+    screening: { eyebrow: "Testvisning", heading: "Tilbakemelding fra publikum", description: "Deterministisk tilbakemelding fra gjeldende klipp og bevis fra første opptaksdag.", metrics: { clarity: "Tydelighet", pacing: "Tempo", emotion: "Følelse", audienceHook: "Publikumskrok", confusionRisk: "Forvirringsrisiko" }, recommendedChanges: "Anbefalte endringer", noRevision: "Ingen større revisjonsprioritet ble identifisert.", scriptDraftEvidence: (score) => `Manusutkastet fikk ${score}/100. Vurderingen påvirket tydelighet, tempo, følelse og publikumsinteresse i testvisningen.` },
     result: {
       metrics: { edit: "Klipp", sound: "Lyd", music: "Musikk", color: "Farge", screening: "Testvisning", trailer: "Trailer", lockedCut: "Låst klipp", overall: "Totalt" },
       lockedEyebrow: (projectLabel) => projectLabel === "first film" ? "Postproduksjon låst" : `${formatProjectLabel("nb", projectLabel)} – postproduksjon låst`,
@@ -160,7 +161,7 @@ export const STUDIO_CAREER_POST_PRODUCTION_COPY: Readonly<Record<FilmWorkLanguag
       strategyTypes: { prestige: "prestige", audience_hook: "accroche public", genre_promise: "promesse de genre", mystery: "mystère", character: "personnage", spectacle: "spectacle", festival: "festival" }
     },
     decisionCard: { types: { edit: "Montage", sound: "Son", music: "Musique", color: "Étalonnage" }, decision: "décision", solves: "Résout", risk: "Risque", cost: "Coût" },
-    screening: { eyebrow: "Projection test", heading: "Retour du public", description: "Retour déterministe fondé sur le montage actuel et les éléments de la première journée de tournage.", metrics: { clarity: "Clarté", pacing: "Rythme", emotion: "Émotion", audienceHook: "Accroche public", confusionRisk: "Risque de confusion" }, recommendedChanges: "Changements recommandés", noRevision: "Aucune priorité de révision majeure n'a été identifiée." },
+    screening: { eyebrow: "Projection test", heading: "Retour du public", description: "Retour déterministe fondé sur le montage actuel et les éléments de la première journée de tournage.", metrics: { clarity: "Clarté", pacing: "Rythme", emotion: "Émotion", audienceHook: "Accroche public", confusionRisk: "Risque de confusion" }, recommendedChanges: "Changements recommandés", noRevision: "Aucune priorité de révision majeure n'a été identifiée.", scriptDraftEvidence: (score) => `Le scénario noté ${score}/100 a influencé la clarté, le rythme, l'émotion et l'intérêt du public lors de cette projection.` },
     result: {
       metrics: { edit: "Montage", sound: "Son", music: "Musique", color: "Étalonnage", screening: "Projection test", trailer: "Bande-annonce", lockedCut: "Montage verrouillé", overall: "Global" },
       lockedEyebrow: (projectLabel) => projectLabel === "first film" ? "Postproduction verrouillée" : `${formatProjectLabel("fr", projectLabel)} – postproduction verrouillée`,
@@ -190,7 +191,7 @@ export const STUDIO_CAREER_POST_PRODUCTION_COPY: Readonly<Record<FilmWorkLanguag
       strategyTypes: { prestige: "prestígio", audience_hook: "gancho de público", genre_promise: "promessa de género", mystery: "mistério", character: "personagem", spectacle: "espetáculo", festival: "festival" }
     },
     decisionCard: { types: { edit: "Montagem", sound: "Som", music: "Música", color: "Cor" }, decision: "decisão", solves: "Resolve", risk: "Risco", cost: "Custo" },
-    screening: { eyebrow: "Sessão de teste", heading: "Leitura da sala", description: "Feedback determinístico da montagem atual e das evidências do primeiro dia de rodagem.", metrics: { clarity: "Clareza", pacing: "Ritmo", emotion: "Emoção", audienceHook: "Gancho de público", confusionRisk: "Risco de confusão" }, recommendedChanges: "Alterações recomendadas", noRevision: "Não foi identificada nenhuma prioridade de revisão importante." },
+    screening: { eyebrow: "Sessão de teste", heading: "Leitura da sala", description: "Feedback determinístico da montagem atual e das evidências do primeiro dia de rodagem.", metrics: { clarity: "Clareza", pacing: "Ritmo", emotion: "Emoção", audienceHook: "Gancho de público", confusionRisk: "Risco de confusão" }, recommendedChanges: "Alterações recomendadas", noRevision: "Não foi identificada nenhuma prioridade de revisão importante.", scriptDraftEvidence: (score) => `O guião recebeu ${score}/100 e influenciou a clareza, o ritmo, a emoção e o interesse do público nesta sessão.` },
     result: {
       metrics: { edit: "Montagem", sound: "Som", music: "Música", color: "Cor", screening: "Sessão de teste", trailer: "Trailer", lockedCut: "Montagem fechada", overall: "Global" },
       lockedEyebrow: (projectLabel) => projectLabel === "first film" ? "Pós-produção fechada" : `${formatProjectLabel("pt", projectLabel)} – pós-produção fechada`,
