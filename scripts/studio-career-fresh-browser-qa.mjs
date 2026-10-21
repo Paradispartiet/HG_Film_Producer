@@ -104,13 +104,26 @@ async function run(browser, spec) {
     await expectPhase(page, ".shoot-panel", "shoot", milestones);
     let days = 0;
     while (await page.locator(".shoot-panel .shoot-actions button.primary-button").count()) {
-      const monitor = page.locator(".shoot-panel .shoot-budget-monitor");
+      const financeDisclosure = page.locator(".shoot-panel details.shoot-budget-details");
+      const monitor = financeDisclosure.locator(".shoot-budget-monitor");
+      if (days === 0) assert.equal(await financeDisclosure.getAttribute("open"), null, "Finances are secondary, collapsed by default");
+      if (!(await monitor.isVisible())) await financeDisclosure.locator("summary").click();
       await monitor.waitFor({ state: "visible" });
       const previousActualSpend = days === 0 ? 0
         : (await readSaved(page)).projects[0].shootDayResults
           .reduce((sum, day) => sum + day.shootDayResult.costSpent, 0);
       assert.equal(Number(await monitor.locator(".shoot-budget-metrics").first().getAttribute("data-spent")), previousActualSpend, "Live shoot ledger must equal costs saved from resolved days");
-      await checkFirst(page, '.shoot-panel .production-event-grid input[type="radio"]');
+      // Exercise the producer role against a real artistic obstacle rather than
+      // just selecting a day-stopping weather event in every run.
+      await page.locator('.shoot-panel .production-event-grid input[type="radio"]').nth(days % 2 === 0 ? 4 : 3).check();
+      const creativeChoices = page.locator('.shoot-panel .producer-priority-grid input[type="radio"]');
+      assert.equal(await creativeChoices.count(), 3, "Three creative producing choices, distinct from Film Director");
+      const chosenPriority = days % 2 === 0 ? "performance_trust" : "story_clarity";
+      await creativeChoices.nth(days % 2 === 0 ? 1 : 0).check();
+      await page.waitForFunction(({ key, id }) => {
+        const state = JSON.parse(window.localStorage.getItem(key) ?? "null");
+        return state?.projects?.[0]?.selectedProducerPriorityId === id;
+      }, { key: SAVE_KEY, id: chosenPriority });
       const expectedSteadyCost = Number(await monitor.locator(".shoot-budget-projection").getAttribute("data-forecast-cost"));
       assert.ok(Number.isFinite(expectedSteadyCost) && expectedSteadyCost >= 0, "Event selection provides a real projected day cost");
       const responseRadios = page.locator('.shoot-panel .shoot-strategy-grid input[type="radio"]');
@@ -137,6 +150,9 @@ async function run(browser, spec) {
       const savedDay = (await readSaved(page)).projects[0].shootDayResults[days - 1];
       assert.equal(savedDay.shootDayResult.costSpent, predictedCost, "Budget forecast and recorded day cost use the same engine");
       assert.equal(savedDay.strategySummary?.id, chosenResponse);
+      assert.equal(savedDay.producerPrioritySummary?.id, chosenPriority, "Creative producer choice is persisted with the day");
+      assert.equal(savedDay.producerPrioritySummary?.recommendedId, chosenPriority, "Matched obstacle and producer support are explained");
+      assert.ok(savedDay.producerPrioritySummary?.takeQualityDelta >= 0, "Creative support cannot hurt usable footage");
       if (days === 1) {
         assert.ok(savedDay.strategySummary.costDelta > 0, "Extra takes increase actual daily costs");
         assert.equal(savedDay.strategySummary.delayDaysDelta, 1, "Extra takes add a real shooting delay");
@@ -153,6 +169,9 @@ async function run(browser, spec) {
       // The day feedback is therefore verified while another shoot day remains.
       const liveShoot = !(await readSaved(page)).projects[0].shootResult;
       if (liveShoot) {
+        const producerOutcome = page.locator(".shoot-panel .producer-priority-feedback").first();
+        await producerOutcome.waitFor({ state: "visible" });
+        assert.ok((await producerOutcome.innerText()).length > 45, "Creative producing teaches why the support mattered");
         const strategyOutcome = page.locator(".shoot-panel .shoot-strategy-consequence").first();
         await strategyOutcome.waitFor({ state: "visible" });
         assert.ok((await strategyOutcome.innerText()).length > 20, "Response tradeoff shown alongside saved result");
