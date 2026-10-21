@@ -41,3 +41,19 @@ test("Portuguese numbered career review uses filme", () => {
   assert.equal(STUDIO_CAREER_REVIEW_COPY.pt.panel.closeYear("film 2"), "Encerrar o ano de filme 2");
   assert.equal(STUDIO_CAREER_REVIEW_COPY.pt.panel.heading("film 2"), "Concluir a revisão de carreira de filme 2");
 });
+
+test("decision review uses existing production measurements across languages", () => {
+  for (const language of languages) {
+    const copy = STUDIO_CAREER_REVIEW_COPY[language].decisionReview;
+    assert.ok(copy.heading.length > 0);
+    assert.ok(copy.noBonus.length > 0);
+    assert.ok(copy.shootOutcome(76, "$400").includes("76"));
+    assert.ok(copy.teamOutcome(70, 82).includes("82"));
+    assert.ok(copy.scriptOutcome(3, 88).includes("88"));
+    for (const area of ["script", "casting", "shoot", "edit"] as const) {
+      assert.ok(copy.lessons[area].length > 10);
+    }
+  }
+  assert.equal(STUDIO_CAREER_REVIEW_COPY.nb.decisionReview.nextFilmLesson, "Ta med til neste film");
+  assert.match(STUDIO_CAREER_REVIEW_COPY.en.decisionReview.noBonus, /not a new score/);
+});
