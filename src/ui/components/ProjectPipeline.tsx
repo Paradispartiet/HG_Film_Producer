@@ -1,3 +1,4 @@
+import { getStudioCareerPhaseStatus } from "../../core/studioCareerFlow";
 import { STUDIO_CAREER_WORKSPACE_COPY } from "../../core/studioCareerWorkspaceCopy";
 import { STUDIO_SETUP_COPY, STUDIO_SETUP_SCALE_IDS, type StudioSetupScaleId } from "../../core/studioSetupCopy";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
@@ -31,6 +32,8 @@ export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction
   const activeActionLabel = currentPhase === 4 ? copy.actions.openRelease : currentPhase === 5 ? copy.actions.openCareerReview : copy.actions.continuePhase(current.label);
   const actionLabel = isCareerComplete ? copy.actions.openNextProject : activeActionLabel;
   const focused = Boolean(onNextAction) || isPastProject;
+  const currentHeading = isCareerComplete ? (isPastProject ? copy.pipeline.pastProjectHeading : nextProjectNumber ? copy.pipeline.nextProjectHeading(nextProjectNumber) : current.label) : current.label;
+  const currentDescription = isCareerComplete ? (isPastProject ? copy.pipeline.pastProjectDescription : copy.pipeline.nextProjectDescription) : current.description;
 
   return (
     <section className={focused ? "project-hero project-hero--focused" : "project-hero"}>
@@ -49,14 +52,14 @@ export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction
         <div className="current-phase" aria-live="polite">
           <div>
             <span>{copy.pipeline.whatToDoNow}</span>
-            <strong>{isCareerComplete ? isPastProject ? copy.pipeline.pastProjectHeading : nextProjectNumber ? copy.pipeline.nextProjectHeading(nextProjectNumber) : current.label : current.label}</strong>
-            <p>{isCareerComplete ? isPastProject ? copy.pipeline.pastProjectDescription : copy.pipeline.nextProjectDescription : current.description}</p>
+            <strong>{currentHeading}</strong>
+            <p>{currentDescription}</p>
           </div>
           {onNextAction && <button className="primary-button studio-career-primary-action" onClick={onNextAction} type="button">{actionLabel} <b aria-hidden="true">→</b></button>}
         </div>
         <ol className={focused ? "studio-career-phase-track" : "studio-career-phase-track studio-career-phase-track--demo"} aria-label={copy.pipeline.phaseProgress}>
           {phases.map((phase, index) => {
-            const statusId = isCareerComplete || index < currentPhase ? "complete" : index === currentPhase ? "in-progress" : "locked";
+            const statusId = getStudioCareerPhaseStatus(index, currentPhase, isCareerComplete);
             const statusLabel = statusId === "complete" ? copy.status.complete : statusId === "in-progress" ? copy.status.inProgress : copy.status.locked;
             return (
               <li className={`studio-career-phase-step studio-career-phase-step--${statusId}`} aria-current={statusId === "in-progress" ? "step" : undefined} key={phase.label}>
