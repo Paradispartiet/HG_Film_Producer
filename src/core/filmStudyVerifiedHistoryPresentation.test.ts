@@ -21,6 +21,7 @@ const scenarioIds = [
   "scenario_the_400_blows_1959",
   "scenario_the_shining_1980",
   "scenario_one_flew_over_the_cuckoo_s_nest_1975",
+  "scenario_the_celebration_1998",
 ] as const;
 const source = readFileSync("src/ui/data/scenarioFilmStudyMap.ts", "utf8");
 const panel = readFileSync("src/ui/components/ScenarioFilmStudyPanel.tsx", "utf8");
@@ -33,7 +34,8 @@ test("history exact-text translations are grounded in unchanged canonical source
     assert.ok(end > start, `missing closing source profile: ${scenarioId}`);
     const profile = source.slice(start, end);
     const rows = FILM_HISTORY_PRESENTATION_ROWS[scenarioId];
-    const expectedRows = scenarioId === "scenario_the_shining_1980" ? 17
+    const expectedRows = scenarioId === "scenario_the_celebration_1998" ? 18
+      : scenarioId === "scenario_the_shining_1980" ? 17
       : ["scenario_12_angry_men_1957", "scenario_vertigo_1958", "scenario_the_400_blows_1959"].includes(scenarioId) ? 16 : 15;
     assert.equal(rows.length, expectedRows);
     assert.equal(new Set(rows.map((row) => row[0])).size, rows.length, `duplicate exact claims: ${scenarioId}`);
