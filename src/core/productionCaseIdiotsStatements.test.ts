@@ -12,8 +12,8 @@ const fallbackSource = readFileSync("src/ui/data/scenarioProductionBriefs.ts", "
 const matchPremise = source.match(/premise: ("(?:[^"\\]|\\.)*"),/);
 const matchGoals = source.match(/learningGoals: \[([\s\S]*?)\],\n\s*phases: \[/);
 if (!matchPremise || !matchGoals) throw new Error("The Idiots canonical source fields missing");
-const logline: string = JSON.parse(matchPremise[1]);
-const learningGoals: string[] = [...matchGoals[1].matchAll(/"(?:[^"\\]|\\.)*"/g)].map((part) => JSON.parse(part[0]));
+const logline: string = JSON.parse(matchPremise[1]!);
+const learningGoals: string[] = [...matchGoals[1]!.matchAll(/"(?:[^"\\]|\\.)*"/g)].map((part) => JSON.parse(part[0]));
 const genericSeedFields = [
   "Treat this as an imported seed pending film-specific design",
   "Keep choices readable",
