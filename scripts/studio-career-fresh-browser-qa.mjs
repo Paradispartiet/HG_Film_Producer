@@ -146,6 +146,24 @@ async function run(browser, spec) {
     assert.equal(completed.careerApplicationResult.updatedCareerState.completedFilms.length, 1);
     assert.equal(completed.shootDayResults.length, days);
     assert.equal(await page.locator(".studio-career-phase-step--complete").count(), 6);
+    const debrief = page.locator(".studio-career-debrief:not(.studio-career-debrief--handoff)");
+    await debrief.waitFor({ state: "visible" });
+    const measuredStages = debrief.locator(".studio-career-debrief-step");
+    assert.equal(await measuredStages.count(), 5, "The film debrief should show five genuine production results");
+    const observedValues = [
+      completed.developmentResult.pipelineStep.score,
+      completed.preProductionResult.teamEvaluation.overall,
+      completed.shootResult.shootEvaluation.averageTakeQuality,
+      completed.postProductionResult.postProductionEvaluation.lockedCutQuality,
+      completed.releaseResult.releaseOutcomeEvaluation.overall,
+    ];
+    for (let index = 0; index < observedValues.length; index += 1) {
+      assert.equal(Number(await measuredStages.nth(index).locator(".studio-career-debrief-value strong").innerText()), observedValues[index], "The visible score must match the saved engine result");
+    }
+    const closedYear = debrief.locator(".studio-career-debrief-carryover");
+    assert.equal(await closedYear.count(), 1, "Year-close net changes shown separately from the production");
+    assert.ok((await closedYear.innerText()).includes(String(Math.abs(completed.careerApplicationResult.reputationDelta))), "Actual reputation change shown");
+
     await page.screenshot({ path: resolve(REPORT_DIR, "career-fresh-" + spec.lang + "-completed.png"), fullPage: false });
 
     const setupTwo = page.locator(".next-project-setup-section");
@@ -161,6 +179,14 @@ async function run(browser, spec) {
     assert.equal(finalState.projects[0].careerApplicationResult.completedFilmRecord.projectId, completed.careerApplicationResult.completedFilmRecord.projectId);
     assert.equal(finalState.projects[1].run.project.title, "Second Browser Film");
     assert.equal(await page.locator(".past-project-summary").count(), 1);
+    const handoff = page.locator(".studio-career-debrief--handoff");
+    assert.equal(await handoff.count(), 1, "Film Two should be able to review Film One's decisions");
+    assert.equal(await handoff.getAttribute("open"), null, "The retrospective stays compact by default");
+    await handoff.locator("summary").click();
+    assert.equal(await handoff.locator(".studio-career-debrief-step").count(), 5);
+    const handoffBounds = await handoff.evaluate((el) => ({ width: el.clientWidth, scroll: el.scrollWidth }));
+    assert.ok(handoffBounds.scroll <= handoffBounds.width + 2, "Film Two history overflows: " + JSON.stringify(handoffBounds));
+
     assert.equal(await page.locator(".studio-career-primary-action").count(), 1);
     const overflow = await page.locator(".project-hero--focused").last().evaluate((el) => ({ width: el.clientWidth, scroll: el.scrollWidth }));
     assert.ok(overflow.scroll <= overflow.width + 2, "Film Two overflows: " + JSON.stringify(overflow));
