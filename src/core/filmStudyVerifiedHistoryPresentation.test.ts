@@ -20,6 +20,7 @@ const scenarioIds = [
   "scenario_breathless_1960",
   "scenario_the_400_blows_1959",
   "scenario_the_shining_1980",
+  "scenario_one_flew_over_the_cuckoo_s_nest_1975",
 ] as const;
 const source = readFileSync("src/ui/data/scenarioFilmStudyMap.ts", "utf8");
 const panel = readFileSync("src/ui/components/ScenarioFilmStudyPanel.tsx", "utf8");
