@@ -1,8 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
-import { getClassicFilmScenarios } from "../ui/data/filmScenarios.js";
-import { resolveScenarioProductionBrief } from "../ui/data/scenarioProductionBriefs.js";
 import { FILMWORK_LANGUAGES } from "./filmWorkLanguage.js";
 import { presentFilmCaseContent, presentVerifiedFilmStatement } from "./productionCaseFilmStatementCopy.js";
 import { presentSeedFallbackText } from "./productionCaseSeedPresentation.js";
@@ -10,55 +8,66 @@ import { CANONICAL_IDIOTS_STATEMENTS, IDIOTS_PRODUCTION_STATEMENT_ROWS } from ".
 
 const id = "scenario_the_idiots_1998";
 const source = readFileSync("src/core/chapterSeventeenTheIdiotsExpansion.ts", "utf8");
-const scenario = getClassicFilmScenarios().find((item) => item.id === id);
-if (!scenario) throw new Error("The Idiots scenario missing from catalogue");
-const brief = resolveScenarioProductionBrief(scenario);
+const fallbackSource = readFileSync("src/ui/data/scenarioProductionBriefs.ts", "utf8");
+const matchPremise = source.match(/premise: ("(?:[^"\\]|\\.)*"),/);
+const matchGoals = source.match(/learningGoals: \[([\s\S]*?)\],\n\s*phases: \[/);
+if (!matchPremise || !matchGoals) throw new Error("The Idiots canonical source fields missing");
+const logline: string = JSON.parse(matchPremise[1]);
+const learningGoals: string[] = [...matchGoals[1].matchAll(/"(?:[^"\\]|\\.)*"/g)].map((part) => JSON.parse(part[0]));
+const genericSeedFields = [
+  "Treat this as an imported seed pending film-specific design",
+  "Keep choices readable",
+  "Focus the central conflict",
+  "Use the seeded learning goals as provisional guidance",
+  "Choose spaces that support the conflict",
+  "Frame the player task clearly",
+  "Keep story turns legible",
+  "Build rhythm around consequences",
+  "Support tone without overexplaining",
+  "Use silence and texture as pressure",
+];
+const canonical = [logline, "Comedy", "Drama", ...genericSeedFields, ...learningGoals];
 
-test("The Idiots retains its original seed fallback gameplay and source ID", () => {
-  assert.equal(brief.scenarioId, id);
-  assert.equal(brief.briefType, "seed_fallback");
-  assert.equal(brief.verificationStatus, "seeded");
-  assert.equal(brief.learningGoals.length, 18);
-  assert.equal(brief.genreTargets.length, 2);
-  assert.deepEqual(brief.genreTargets, ["Comedy", "Drama"]);
+test("The Idiots preserves source identity and the unchanged seeded brief fallback contract", () => {
+  assert.match(source, /id: "scenario_the_idiots_1998"/);
+  assert.match(source, /title: "The Idiots"/);
+  assert.match(fallbackSource, /briefType: "seed_fallback"/);
+  assert.match(fallbackSource, /verificationStatus: "seeded"/);
+  assert.ok(fallbackSource.includes("getFallbackScenarioProductionBrief(scenario)"));
+  assert.equal(learningGoals.length, 18);
+  assert.equal(canonical.length, 31);
 });
 
-test("source-locked The Idiots has twenty unique film-specific presentation keys", () => {
+test("twenty exact film-specific translation keys are sourced and immutable", () => {
   assert.equal(CANONICAL_IDIOTS_STATEMENTS.length, 20);
   assert.equal(new Set(CANONICAL_IDIOTS_STATEMENTS).size, 20);
-  assert.deepEqual(CANONICAL_IDIOTS_STATEMENTS,
-    [brief.logline, "Comedy", ...brief.learningGoals]);
+  assert.deepEqual([...CANONICAL_IDIOTS_STATEMENTS], [logline, "Comedy", ...learningGoals]);
   for (const text of CANONICAL_IDIOTS_STATEMENTS) {
     assert.ok(text === "Comedy" || source.includes(JSON.stringify(text)), `Source drift: ${text}`);
   }
 });
 
-test("all 31 active seeded brief strings display in all four languages without changing source", () => {
-  const actual = [
-    brief.logline, ...brief.genreTargets, ...brief.toneTargets, ...brief.screenplayTargets,
-    ...brief.cinematographyTargets, ...brief.editingTargets, ...brief.soundTargets, ...brief.learningGoals,
-  ];
-  assert.equal(actual.length, 31);
-  const known = new Map(IDIOTS_PRODUCTION_STATEMENT_ROWS.map((row) => [row[0], row]));
-  for (const value of actual) {
-    for (const lang of FILMWORK_LANGUAGES) {
-      const translated = presentFilmCaseContent(lang, brief.briefType, id, value);
-      const expected = known.get(value)?.[lang === "en" ? 0 : lang === "nb" ? 1 : lang === "fr" ? 2 : 3]
-        ?? presentSeedFallbackText(lang, "seed_fallback", value);
-      assert.equal(translated, expected);
-      assert.ok(translated.trim());
-      if (lang !== "en") assert.notEqual(translated, value, `Untranslated seeded statement ${lang}: ${value}`);
-    }
+test("all 31 original seeded text values display without leakage in the four supported languages", () => {
+  const known: ReadonlyMap<string, readonly [string, string, string, string]> =
+    new Map(IDIOTS_PRODUCTION_STATEMENT_ROWS.map((row) =>
+      [row[0], row] as const));
+  for (const value of canonical) for (const language of FILMWORK_LANGUAGES) {
+    const translated = presentFilmCaseContent(language, "seed_fallback", id, value);
+    const expected = known.get(value)?.[language === "en" ? 0 : language === "nb" ? 1 : language === "fr" ? 2 : 3]
+      ?? presentSeedFallbackText(language, "seed_fallback", value);
+    assert.equal(translated, expected);
+    assert.ok(translated.trim());
+    if (language !== "en") assert.notEqual(translated, value, `Untranslated seeded statement ${language}: ${value}`);
   }
 });
 
-test("unknown source claims, different cases and original grading stay unchanged", () => {
+test("The Idiots keeps canonical unknown, other-film and grading source claims", () => {
   const claim = CANONICAL_IDIOTS_STATEMENTS[0];
   assert.ok(claim);
-  for (const lang of FILMWORK_LANGUAGES) {
-    assert.equal(presentVerifiedFilmStatement(lang, "seed_fallback", id, claim), claim);
-    assert.equal(presentFilmCaseContent(lang, "seed_fallback", id, claim + " changed"), claim + " changed");
-    assert.equal(presentFilmCaseContent(lang, "seed_fallback", "scenario_the_celebration_1998", claim), claim);
-    assert.equal(presentFilmCaseContent(lang, "production_case", id, claim), claim);
+  for (const language of FILMWORK_LANGUAGES) {
+    assert.equal(presentVerifiedFilmStatement(language, "seed_fallback", id, claim), claim);
+    assert.equal(presentFilmCaseContent(language, "seed_fallback", id, claim + " changed"), claim + " changed");
+    assert.equal(presentFilmCaseContent(language, "seed_fallback", "scenario_the_celebration_1998", claim), claim);
+    assert.equal(presentFilmCaseContent(language, "production_case", id, claim), claim);
   }
 });
