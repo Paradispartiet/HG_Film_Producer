@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { STUDIO_CAREER_PRE_PRODUCTION_COPY } from "../../core/studioCareerPreProductionCopy";
+import { STUDIO_CAREER_BUDGET_PRIORITY_IDS, previewBudgetPriority, type StudioCareerBudgetPriorityId } from "../../core/studioCareerBudgetPriority.js";
+import { formatStudioCareerPostProductionMoney } from "../../core/studioCareerPostProductionCopy.js";
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { ProjectRunContext } from "../demo/createProjectRunContext.js";
 import {
@@ -20,6 +22,8 @@ interface PreProductionPanelProps {
   readonly selectedLocationId: string;
   readonly selectedCrewIds: readonly string[];
   readonly selectedActorIds: readonly string[];
+  readonly selectedBudgetPriorityId?: StudioCareerBudgetPriorityId;
+  readonly onSelectBudgetPriority: (id: StudioCareerBudgetPriorityId) => void;
   readonly onSelectLocation: (locationId: string) => void;
   readonly onSelectCrew: (crewIds: readonly string[]) => void;
   readonly onSelectActors: (actorIds: readonly string[]) => void;
@@ -34,6 +38,8 @@ export function PreProductionPanel({
   selectedLocationId,
   selectedCrewIds,
   selectedActorIds,
+  selectedBudgetPriorityId = "reserve",
+  onSelectBudgetPriority,
   onSelectLocation,
   onSelectCrew,
   onSelectActors,
@@ -69,7 +75,8 @@ export function PreProductionPanel({
       onLock(createPreProductionResult(projectContext, developmentResult, {
         locationId: selectedLocationId,
         crewMemberIds: selectedCrewIds,
-        actorIds: selectedActorIds
+        actorIds: selectedActorIds,
+        budgetPriorityId: selectedBudgetPriorityId
       }));
       setMessage("");
     } catch {
@@ -86,6 +93,19 @@ export function PreProductionPanel({
       <PreProductionLocationPanel options={locationOptions} selectedLocationId={selectedLocationId} onSelect={(locationId) => { onSelectLocation(locationId); setMessage(""); }} />
       <CrewHiringPanel groups={crewGroups} selectedCrewIds={selectedCrewIds} onChange={(crewIds) => { onSelectCrew(crewIds); setMessage(""); }} />
       <CastingPanel candidates={actorCandidates} selectedActorIds={selectedActorIds} onChange={(actorIds) => { onSelectActors(actorIds); setMessage(""); }} />
+      <section className="pre-budget-section">
+        <div className="pre-budget-heading"><span className="section-label">{copy.budget.eyebrow}</span><h3>{copy.budget.heading}</h3><p>{copy.budget.intro}</p></div>
+        <div className="pre-budget-grid" role="radiogroup" aria-label={copy.budget.heading}>
+          {STUDIO_CAREER_BUDGET_PRIORITY_IDS.map((id) => (
+            <label className={selectedBudgetPriorityId === id ? "pre-budget-card pre-budget-card--selected" : "pre-budget-card"} key={id}>
+              <input type="radio" name="pre-production-budget-priority" value={id} checked={selectedBudgetPriorityId === id} onChange={() => { onSelectBudgetPriority(id); setMessage(""); }} />
+              <span><strong>{copy.budget.options[id].title}</strong><small>{copy.budget.options[id].tradeoff}</small>
+                <em>{copy.budget.expense(formatStudioCareerPostProductionMoney(previewBudgetPriority(projectContext.filmProjectState.budget, id), language))}</em>
+              </span>
+            </label>
+          ))}
+        </div>
+      </section>
       <div className="pre-production-actions">
         <div>
           <span className={message ? "inline-message inline-message--error" : "inline-message"} role="status">
