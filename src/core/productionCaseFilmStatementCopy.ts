@@ -6,6 +6,7 @@ import { presentBreathlessProductionStatement } from "./productionCaseBreathless
 import { presentFourHundredBlowsProductionStatement } from "./productionCaseFourHundredBlowsStatements.js";
 import { presentShiningProductionStatement } from "./productionCaseShiningStatements.js";
 import { presentCuckoosNestProductionStatement } from "./productionCaseCuckoosNestStatements.js";
+import { presentFestenProductionStatement } from "./productionCaseFestenStatements.js";
 
 /**
  * One source-verified film at a time. Only exact canonical authored statements
@@ -515,6 +516,9 @@ export function presentVerifiedFilmStatement(
   }
   if (scenarioId === "scenario_one_flew_over_the_cuckoo_s_nest_1975") {
     return presentCuckoosNestProductionStatement(language, original);
+  }
+  if (scenarioId === "scenario_the_celebration_1998") {
+    return presentFestenProductionStatement(language, original);
   }
   if (scenarioId === "scenario_breathless_1960") {
     return presentBreathlessProductionStatement(language, original);
