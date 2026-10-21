@@ -69,5 +69,7 @@ test("the single next action and next-film handoff are localized for all four la
     assert.ok(copy.pipeline.nextProjectHeading(2).includes("2"), language);
     assert.ok(copy.pipeline.nextProjectDescription.trim(), language);
     assert.ok(copy.actions.openNextProject.trim(), language);
+    assert.ok(copy.pipeline.pastProjectHeading.trim(), language);
+    assert.ok(copy.pipeline.pastProjectDescription.trim(), language);
   }
 });
