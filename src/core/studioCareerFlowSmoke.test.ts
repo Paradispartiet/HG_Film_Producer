@@ -115,8 +115,10 @@ test("finished films offer the next project setup, not the completed career revi
   assert.match(app, /project\.careerApplicationResult \? getStudioCareerNextProjectFormId\(project\.id\) : actionPanelId/);
   assert.match(app, /id=\{getStudioCareerNextProjectFormId\(previousProject\.id\)\}/);
   assert.match(app, /isCareerComplete=\{Boolean\(project\.careerApplicationResult\)\}/);
+  assert.match(app, /isPastProject=\{!isLatest\}/);
+  assert.match(app, /onNextAction=\{isLatest \? scrollToActivePanel : undefined\}/);
   assert.match(pipeline, /const actionLabel = isCareerComplete \? copy\.actions\.openNextProject : activeActionLabel/);
-  assert.match(pipeline, /isCareerComplete \|\| index < currentPhase/);
+  assert.match(pipeline, /getStudioCareerPhaseStatus\(index, currentPhase, isCareerComplete\)/);
   assert.match(pipeline, /aria-current=\{statusId === "in-progress" \? "step" : undefined\}/);
   assert.doesNotMatch(pipeline, /phase-card-grid/);
 });
