@@ -3,6 +3,7 @@ import locationsJson from "../../../data/film/locations.json";
 import sceneFunctionsJson from "../../../data/film/scene_functions.json";
 
 import { applyProductionEvent } from "../../core/applyProductionEvent.js";
+import { applyShootStrategy, type ShootStrategyId, type ShootStrategySummary } from "../../core/applyShootStrategy.js";
 import { createProductionSchedule } from "../../core/createProductionSchedule.js";
 import { estimateSceneShootDifficulty } from "../../core/estimateSceneShootDifficulty.js";
 import { evaluateShootResult } from "../../core/evaluateShootResult.js";
@@ -75,11 +76,13 @@ export interface ShootStepPreparation {
 
 export interface ShootStepChoices {
   readonly selectedProductionEventId: string;
+  readonly selectedShootStrategyId?: ShootStrategyId;
 }
 
 export interface ShootDayStepResult {
   readonly updatedShootDay: ShootDay;
   readonly selectedEventSummary: ProductionEventSummary;
+  readonly strategySummary?: ShootStrategySummary;
   readonly shootDayResult: ShootDayResult;
 }
 
@@ -154,7 +157,10 @@ export function resolveNextShootDay(
     "production event"
   );
   const application = applyProductionEvent(currentDay, selectedEvent);
-  const shootDayResult = resolveShootDay(application.shootDay, preparation.starterScenes, [selectedEvent]);
+  const baseResult = resolveShootDay(application.shootDay, preparation.starterScenes, [selectedEvent]);
+  const { result: shootDayResult, summary: strategySummary } = applyShootStrategy(
+    currentDay, baseResult, choices.selectedShootStrategyId ?? "steady"
+  );
   const resolvedShootDay: ShootDay = {
     ...application.shootDay,
     status: shootDayResult.delayedSceneIds.length > 0 || shootDayResult.scheduleDeltaDays > 0 ? "delayed" : "completed",
@@ -163,6 +169,7 @@ export function resolveNextShootDay(
 
   return {
     updatedShootDay: resolvedShootDay,
+    strategySummary,
     selectedEventSummary: {
       title: selectedEvent.title,
       type: formatLabel(selectedEvent.type),

@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import type { ShootStrategyId } from "../../core/applyShootStrategy.js";
 import { STUDIO_CAREER_SHOOT_COPY } from "../../core/studioCareerShootCopy";
 import type { ProjectShootLabel } from "../types.js";
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
@@ -17,6 +18,7 @@ import { SceneDifficultyPanel } from "./SceneDifficultyPanel.js";
 import { ShootDayResultPanel } from "./ShootDayResultPanel.js";
 import { ShootEvaluationPanel } from "./ShootEvaluationPanel.js";
 import { ShootSchedulePanel } from "./ShootSchedulePanel.js";
+import { ShootStrategyPanel } from "./ShootStrategyPanel.js";
 
 interface ShootPanelProps {
   readonly projectContext: ProjectRunContext;
@@ -24,9 +26,11 @@ interface ShootPanelProps {
   readonly developmentResult: DevelopmentStepResult;
   readonly preProductionResult: PreProductionStepResult;
   readonly selectedProductionEventId: string;
+  readonly selectedShootStrategyId?: ShootStrategyId;
   readonly shootDayResults: readonly ShootDayStepResult[];
   readonly shootResult: ShootStepResult | null;
   readonly onSelectProductionEvent: (eventId: string) => void;
+  readonly onSelectShootStrategy: (id: ShootStrategyId) => void;
   readonly onResolveShootDay: (result: ShootDayStepResult) => void;
   readonly id?: string | undefined;
 }
@@ -37,9 +41,11 @@ export function ShootPanel({
   developmentResult,
   preProductionResult,
   selectedProductionEventId,
+  selectedShootStrategyId = "steady",
   shootDayResults,
   shootResult,
   onSelectProductionEvent,
+  onSelectShootStrategy,
   onResolveShootDay,
   id
 }: ShootPanelProps) {
@@ -57,7 +63,7 @@ export function ShootPanel({
 
   function resolveDay() {
     if (!selectedProductionEventId) return;
-    onResolveShootDay(resolveNextShootDay(preparation, shootDayResults, { selectedProductionEventId }));
+    onResolveShootDay(resolveNextShootDay(preparation, shootDayResults, { selectedProductionEventId, selectedShootStrategyId }));
   }
 
   return (
@@ -83,6 +89,7 @@ export function ShootPanel({
             projectLabel={projectLabel}
             selectedProductionEventId={selectedProductionEventId}
           />
+          <ShootStrategyPanel onSelect={onSelectShootStrategy} plannedCost={currentDay.plannedCost} selectedId={selectedShootStrategyId} />
           <div className="shoot-actions">
             <div>
               <span className="inline-message" role="status">

@@ -1,5 +1,6 @@
 import { getFilmWorkIntlLocale } from "../../core/filmWorkLanguage";
 import { STUDIO_CAREER_SHOOT_COPY } from "../../core/studioCareerShootCopy";
+import { SHOOT_STRATEGY_COPY } from "../../core/studioCareerShootStrategyCopy";
 import type { ProjectShootLabel } from "../types.js";
 import type { ShootDayStepResult, ShootStepPreparation } from "../demo/createShootStepRun.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
@@ -14,6 +15,7 @@ interface ShootDayResultPanelProps {
 export function ShootDayResultPanel({ preparation, result, dayNumber, projectLabel = "first film" }: ShootDayResultPanelProps) {
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_SHOOT_COPY[language];
+  const strategyCopy = SHOOT_STRATEGY_COPY[language];
   const locale = getFilmWorkIntlLocale(language);
   return (
     <section className="shoot-desk-section shoot-result-section">
@@ -26,6 +28,13 @@ export function ShootDayResultPanel({ preparation, result, dayNumber, projectLab
         <strong>{result.selectedEventSummary.title}</strong>
         <p>{result.selectedEventSummary.note}</p>
       </div>
+      {result.strategySummary && (
+        <div className="shoot-strategy-consequence">
+          <span className="section-label">{strategyCopy.response}</span>
+          <strong>{strategyCopy.choices[result.strategySummary.id].name}</strong>
+          <p>{strategyCopy.quality}: {signed(result.strategySummary.takeQualityDelta)} · {strategyCopy.cost}: {signedMoney(result.strategySummary.costDelta, locale)} · {strategyCopy.schedule}: {result.strategySummary.delayDaysDelta > 0 ? "+" : ""}{strategyCopy.dayUnit(result.strategySummary.delayDaysDelta)}</p>
+        </div>
+      )}
       <div className="shoot-result-grid">
         <ResultMetric label={copy.dayResult.completedScenes} value={`${result.shootDayResult.completedSceneIds.length}`} detail={sceneTitles(result.shootDayResult.completedSceneIds, preparation)} />
         <ResultMetric label={copy.dayResult.delayedScenes} value={`${result.shootDayResult.delayedSceneIds.length}`} detail={sceneTitles(result.shootDayResult.delayedSceneIds, preparation) || copy.dayResult.noScenesDelayed} />
@@ -47,4 +56,9 @@ function sceneTitles(sceneIds: readonly string[], preparation: ShootStepPreparat
 
 function formatMoney(value: number, locale: string): string {
   return value.toLocaleString(locale, { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+}
+
+function signed(value: number): string { return value > 0 ? `+${value}` : String(value); }
+function signedMoney(value: number, locale: string): string {
+  return `${value > 0 ? "+" : ""}${formatMoney(value, locale)}`;
 }

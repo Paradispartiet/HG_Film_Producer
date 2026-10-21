@@ -378,3 +378,42 @@
     flex-direction: column;
   }
 }
+
+/* Shoot choices affect the actual engine result; keep all three readable on phones. */
+.shoot-strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+.shoot-strategy-card {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid var(--line-soft);
+  background: rgba(5, 7, 9, 0.18);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.shoot-strategy-card--selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.shoot-strategy-card input { justify-self: start; accent-color: var(--accent); }
+.shoot-strategy-card strong { font-size: 14px; }
+.shoot-strategy-card p { margin: 0; font-size: 12px; line-height: 1.45; color: var(--muted); }
+.shoot-strategy-tradeoffs { display: grid; gap: 5px; font-size: 11px; }
+.shoot-strategy-tradeoffs span { font-variant-numeric: tabular-nums; }
+.shoot-strategy-consequence {
+  margin: 10px 0 14px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  overflow-wrap: anywhere;
+}
+.shoot-strategy-consequence strong { display: block; margin-top: 5px; }
+.shoot-strategy-consequence p { margin: 6px 0 0; font-size: 12px; line-height: 1.5; }
+@media (max-width: 850px) {
+  .shoot-strategy-grid { grid-template-columns: minmax(0, 1fr); }
+}
