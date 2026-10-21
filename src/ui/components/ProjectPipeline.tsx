@@ -9,9 +9,11 @@ interface ProjectPipelineProps {
   readonly currentPhase?: number;
   readonly onNextAction?: () => void;
   readonly isProductionCase?: boolean;
+  readonly isCareerComplete?: boolean;
+  readonly nextProjectNumber?: number;
 }
 
-export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction, isProductionCase = false }: ProjectPipelineProps) {
+export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction, isProductionCase = false, isCareerComplete = false, nextProjectNumber }: ProjectPipelineProps) {
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_WORKSPACE_COPY[language];
   const phases = [
@@ -23,11 +25,14 @@ export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction
     copy.phases.careerReview,
   ] as const;
   const latestStep = steps.at(-1);
-  const current = phases[currentPhase] ?? copy.phases.release;
+  const current = phases[currentPhase] ?? copy.phases.careerReview;
   const scaleLabel = getScaleLabel(language, project.scale);
+  const activeActionLabel = currentPhase === 4 ? copy.actions.openRelease : currentPhase === 5 ? copy.actions.openCareerReview : copy.actions.continuePhase(current.label);
+  const actionLabel = isCareerComplete ? copy.actions.openNextProject : activeActionLabel;
+  const focused = Boolean(onNextAction);
 
   return (
-    <section className="project-hero">
+    <section className={focused ? "project-hero project-hero--focused" : "project-hero"}>
       <div className="project-poster" aria-hidden="true">
         <span>{copy.pipeline.posterPrefix}</span>
         <strong>{project.title}</strong>
@@ -40,30 +45,27 @@ export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction
         </div>
         <h2>{project.title}</h2>
         <p>{project.logline}</p>
-        <div className="current-phase">
+        <div className="current-phase" aria-live="polite">
           <div>
             <span>{copy.pipeline.whatToDoNow}</span>
-            <strong>{current.label}</strong>
+            <strong>{isCareerComplete && nextProjectNumber ? copy.pipeline.nextProjectHeading(nextProjectNumber) : current.label}</strong>
+            <p>{isCareerComplete ? copy.pipeline.nextProjectDescription : current.description}</p>
           </div>
-          <p>{current.description}</p>
+          {onNextAction && <button className="primary-button studio-career-primary-action" onClick={onNextAction} type="button">{actionLabel} <b aria-hidden="true">→</b></button>}
         </div>
-        <div className="phase-card-grid">
+        <ol className={focused ? "studio-career-phase-track" : "studio-career-phase-track studio-career-phase-track--demo"} aria-label={copy.pipeline.phaseProgress}>
           {phases.map((phase, index) => {
-            const statusId = index < currentPhase ? "complete" : index === currentPhase ? "in-progress" : "locked";
+            const statusId = isCareerComplete || index < currentPhase ? "complete" : index === currentPhase ? "in-progress" : "locked";
             const statusLabel = statusId === "complete" ? copy.status.complete : statusId === "in-progress" ? copy.status.inProgress : copy.status.locked;
-            const actionLabel = index === 4 ? copy.actions.openRelease : index === 5 ? copy.actions.openCareerReview : copy.actions.continuePhase(phase.label);
             return (
-              <article className={`phase-card phase-card--${statusId}`} key={index}>
-                <span className="phase-number">{String(index + 1).padStart(2, "0")}</span>
-                <div><strong>{phase.label}</strong><p>{phase.description}</p></div>
-                <span className="phase-status">{statusLabel}</span>
-                {index === currentPhase && (
-                  <button onClick={onNextAction} type="button">{actionLabel} <b>→</b></button>
-                )}
-              </article>
+              <li className={`studio-career-phase-step studio-career-phase-step--${statusId}`} aria-current={statusId === "in-progress" ? "step" : undefined} key={phase.label}>
+                <span className="studio-career-phase-number">{String(index + 1).padStart(2, "0")}</span>
+                <strong>{phase.label}</strong>
+                <small>{statusLabel}</small>
+              </li>
             );
           })}
-        </div>
+        </ol>
         {latestStep && (
           <div className="project-update">
             <span>{isProductionCase ? copy.pipeline.latestProductionCaseUpdate : copy.pipeline.latestStudioCareerUpdate}</span>
