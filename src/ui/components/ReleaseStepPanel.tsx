@@ -11,6 +11,7 @@ import type { ShootStepResult } from "../demo/createShootStepRun.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 import type { ProjectReleaseLabel } from "../types.js";
 import { AudienceResultPanel } from "./AudienceResultPanel.js";
+import { FilmDecisionReviewPanel } from "./FilmDecisionReviewPanel.js";
 import { AwardsResultPanel } from "./AwardsResultPanel.js";
 import { FestivalSubmissionPanel } from "./FestivalSubmissionPanel.js";
 import { ReleaseOutcomeResultPanel } from "./ReleaseOutcomeResultPanel.js";
@@ -109,6 +110,7 @@ export function ReleaseStepPanel({
             <Metric label={copy.panel.metrics.criticalAppeal} value={result.filmResult.criticalAppeal} />
             <Metric label={copy.panel.metrics.strategyScore} value={result.releaseStrategyScore.totalScore} />
           </div>
+          <FilmDecisionReviewPanel preProductionResult={preProductionResult} shootResult={shootResult} postProductionResult={postProductionResult} releaseResult={result} />
           <ReviewResultPanel critics={options.criticProfiles} reviews={result.reviewResults} />
           <AudienceResultPanel results={result.audienceResults} segments={options.audienceSegments} />
           <RevenueResultPanel result={result.revenueResult} />
