@@ -22,19 +22,22 @@ const scenarioIds = [
   "scenario_the_shining_1980",
   "scenario_one_flew_over_the_cuckoo_s_nest_1975",
   "scenario_the_celebration_1998",
+  "scenario_the_idiots_1998",
 ] as const;
 const source = readFileSync("src/ui/data/scenarioFilmStudyMap.ts", "utf8");
 const panel = readFileSync("src/ui/components/ScenarioFilmStudyPanel.tsx", "utf8");
+const idiotsSource = readFileSync("src/ui/data/scenarioFilmStudyChapterSeventeenTheIdiots.ts", "utf8");
 
 test("history exact-text translations are grounded in unchanged canonical source profiles", () => {
   for (const scenarioId of scenarioIds) {
     const start = source.indexOf(`  ${scenarioId}: {`);
-    assert.ok(start > 0, `missing canonical profile: ${scenarioId}`);
-    const end = source.indexOf("\n  },", start);
-    assert.ok(end > start, `missing closing source profile: ${scenarioId}`);
-    const profile = source.slice(start, end);
+    if (scenarioId !== "scenario_the_idiots_1998") assert.ok(start > 0, `missing canonical profile: ${scenarioId}`);
+    const end = scenarioId === "scenario_the_idiots_1998" ? -1 : source.indexOf("\n  },", start);
+    if (scenarioId !== "scenario_the_idiots_1998") assert.ok(end > start, `missing closing source profile: ${scenarioId}`);
+    const profile = scenarioId === "scenario_the_idiots_1998" ? idiotsSource : source.slice(start, end);
     const rows = FILM_HISTORY_PRESENTATION_ROWS[scenarioId];
-    const expectedRows = scenarioId === "scenario_the_celebration_1998" ? 18
+    const expectedRows = scenarioId === "scenario_the_idiots_1998" ? 28
+      : scenarioId === "scenario_the_celebration_1998" ? 18
       : scenarioId === "scenario_the_shining_1980" ? 17
       : ["scenario_12_angry_men_1957", "scenario_vertigo_1958", "scenario_the_400_blows_1959"].includes(scenarioId) ? 16 : 15;
     assert.equal(rows.length, expectedRows);
@@ -55,7 +58,7 @@ test("only exact matching history options are translated; donor options and unkn
   for (const scenarioId of scenarioIds) {
     const rows = FILM_HISTORY_PRESENTATION_ROWS[scenarioId];
     const period = rows[0];
-    const moment = rows[5];
+    const moment = rows[scenarioId === "scenario_the_idiots_1998" ? 8 : 5];
     assert.ok(period && moment);
     const canonicalOption = `${period[0]}: ${moment[0]}`;
     for (const language of FILMWORK_LANGUAGES) {
@@ -115,7 +118,7 @@ test("source-locked brief option labels are complete for all four languages, wit
   for (const scenarioId of scenarioIds) {
     const rows = FILM_HISTORY_PRESENTATION_ROWS[scenarioId];
     const period = rows[0];
-    const moment = rows[5];
+    const moment = rows[scenarioId === "scenario_the_idiots_1998" ? 8 : 5];
     assert.ok(period && moment);
     const correct = `${period[0]}: ${moment[0]}`;
     for (const language of FILMWORK_LANGUAGES) {
