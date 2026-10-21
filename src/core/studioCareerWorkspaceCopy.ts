@@ -11,6 +11,11 @@ type StudioCareerWorkspaceCopy = {
     readonly productionCaseKicker: string;
     readonly experimentalKicker: string;
     readonly whatToDoNow: string;
+    readonly phaseProgress: string;
+    readonly nextProjectHeading: (filmNumber: number) => string;
+    readonly nextProjectDescription: string;
+      readonly pastProjectHeading: string;
+    readonly pastProjectDescription: string;
     readonly latestProductionCaseUpdate: string;
     readonly latestStudioCareerUpdate: string;
   };
@@ -30,6 +35,7 @@ type StudioCareerWorkspaceCopy = {
   readonly actions: {
     readonly openRelease: string;
     readonly openCareerReview: string;
+    readonly openNextProject: string;
     readonly continuePhase: (phaseLabel: string) => string;
   };
   readonly completed: {
@@ -50,6 +56,11 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
       productionCaseKicker: "Production Case · active film",
       experimentalKicker: "Experimental Studio Career · active film",
       whatToDoNow: "What to do now",
+      phaseProgress: "Film production progress",
+      nextProjectHeading: (filmNumber) => `Film ${filmNumber} is next`,
+      nextProjectDescription: "This film is complete. Start the next film below to continue your studio career.",
+      pastProjectHeading: "Film complete",
+      pastProjectDescription: "This film is saved in your studio history. Continue working on the latest film above.",
       latestProductionCaseUpdate: "Latest Production Case update",
       latestStudioCareerUpdate: "Latest Studio Career update",
     },
@@ -65,6 +76,7 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
     actions: {
       openRelease: "Open release step",
       openCareerReview: "Open career review",
+      openNextProject: "Set up next film",
       continuePhase: (phaseLabel) => `Continue ${phaseLabel}`,
     },
     completed: { completeSuffix: "Complete", showDetails: "Show details", hideDetails: "Hide details" },
@@ -76,6 +88,11 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
       productionCaseKicker: "Production Case · aktiv film",
       experimentalKicker: "Eksperimentell studiokarriere · aktiv film",
       whatToDoNow: "Hva gjør du nå",
+      phaseProgress: "Framdrift i filmproduksjonen",
+      nextProjectHeading: (filmNumber) => `Film ${filmNumber} er neste steg`,
+      nextProjectDescription: "Denne filmen er ferdig. Start neste film nedenfor for å fortsette studiokarrieren.",
+      pastProjectHeading: "Film fullført",
+      pastProjectDescription: "Denne filmen er lagret i studiohistorikken. Fortsett med den nyeste filmen over.",
       latestProductionCaseUpdate: "Siste Production Case-oppdatering",
       latestStudioCareerUpdate: "Siste oppdatering fra studiokarrieren",
     },
@@ -91,6 +108,7 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
     actions: {
       openRelease: "Åpne lanseringssteget",
       openCareerReview: "Åpne karrieregjennomgangen",
+      openNextProject: "Sett opp neste film",
       continuePhase: (phaseLabel) => `Fortsett ${phaseLabel}`,
     },
     completed: { completeSuffix: "Fullført", showDetails: "Vis detaljer", hideDetails: "Skjul detaljer" },
@@ -102,6 +120,11 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
       productionCaseKicker: "Production Case · film actif",
       experimentalKicker: "Carrière Studio expérimentale · film actif",
       whatToDoNow: "Que faire maintenant",
+      phaseProgress: "Progression de la production",
+      nextProjectHeading: (filmNumber) => `Le film ${filmNumber} est la prochaine étape`,
+      nextProjectDescription: "Ce film est terminé. Lancez le suivant ci-dessous pour poursuivre la carrière du studio.",
+      pastProjectHeading: "Film terminé",
+      pastProjectDescription: "Ce film figure dans l’historique du studio. Reprenez le film le plus récent ci-dessus.",
       latestProductionCaseUpdate: "Dernière mise à jour Production Case",
       latestStudioCareerUpdate: "Dernière mise à jour de la carrière Studio",
     },
@@ -117,6 +140,7 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
     actions: {
       openRelease: "Ouvrir l’étape de sortie",
       openCareerReview: "Ouvrir le bilan de carrière",
+      openNextProject: "Préparer le prochain film",
       continuePhase: (phaseLabel) => `Continuer ${phaseLabel}`,
     },
     completed: { completeSuffix: "Terminé", showDetails: "Afficher les détails", hideDetails: "Masquer les détails" },
@@ -128,6 +152,11 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
       productionCaseKicker: "Production Case · filme ativo",
       experimentalKicker: "Carreira de estúdio experimental · filme ativo",
       whatToDoNow: "O que fazer agora",
+      phaseProgress: "Progresso da produção do filme",
+      nextProjectHeading: (filmNumber) => `O filme ${filmNumber} é o próximo passo`,
+      nextProjectDescription: "Este filme está concluído. Comece o próximo abaixo para continuar a carreira do estúdio.",
+      pastProjectHeading: "Filme concluído",
+      pastProjectDescription: "Este filme está guardado no histórico do estúdio. Continue com o filme mais recente acima.",
       latestProductionCaseUpdate: "Última atualização de Production Case",
       latestStudioCareerUpdate: "Última atualização da carreira de estúdio",
     },
@@ -143,6 +172,7 @@ export const STUDIO_CAREER_WORKSPACE_COPY = {
     actions: {
       openRelease: "Abrir etapa de lançamento",
       openCareerReview: "Abrir revisão de carreira",
+      openNextProject: "Preparar o próximo filme",
       continuePhase: (phaseLabel) => `Continuar ${phaseLabel}`,
     },
     completed: { completeSuffix: "Concluído", showDetails: "Mostrar detalhes", hideDetails: "Ocultar detalhes" },

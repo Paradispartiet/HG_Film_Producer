@@ -36,8 +36,19 @@ export function getStudioCareerActivePhase(project: StudioCareerFlowProject): St
   return "career-application";
 }
 
+/** Exactly one step needs action; a completed film has six completed steps and no active phase. */
+export function getStudioCareerPhaseStatus(stepIndex: number, currentPhase: number, isCareerComplete: boolean): "complete" | "in-progress" | "locked" {
+  if (isCareerComplete || stepIndex < currentPhase) return "complete";
+  return stepIndex === currentPhase ? "in-progress" : "locked";
+}
+
 export function getStudioCareerActivePanelId(projectId: string): string {
   return `phase-action-${projectId}`;
+}
+
+/** Stable target for the next-film setup, separate from the finished career-review panel. */
+export function getStudioCareerNextProjectFormId(projectId: string): string {
+  return `next-project-setup-${projectId}`;
 }
 
 export function shouldCollapseStudioCareerProject(args: {

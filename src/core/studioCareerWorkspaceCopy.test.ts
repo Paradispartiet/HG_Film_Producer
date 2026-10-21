@@ -60,3 +60,16 @@ test("numbered film labels are presented in the selected language", () => {
     assert.equal(presentation.projectLabel?.(2), expected[language], language);
   }
 });
+
+
+test("the single next action and next-film handoff are localized for all four languages", () => {
+  for (const language of FILMWORK_LANGUAGES) {
+    const copy = STUDIO_CAREER_WORKSPACE_COPY[language];
+    assert.ok(copy.pipeline.phaseProgress.trim(), language);
+    assert.ok(copy.pipeline.nextProjectHeading(2).includes("2"), language);
+    assert.ok(copy.pipeline.nextProjectDescription.trim(), language);
+    assert.ok(copy.actions.openNextProject.trim(), language);
+    assert.ok(copy.pipeline.pastProjectHeading.trim(), language);
+    assert.ok(copy.pipeline.pastProjectDescription.trim(), language);
+  }
+});
