@@ -41,6 +41,9 @@ jobs:
           set -o pipefail
           npm run verify:v0.1 2>&1 | tee verify-v0.1-output.txt
 
+      - name: Exercise Studio Career Film One to Film Two lifecycle
+        run: node scripts/studio-career-lifecycle-qa.mjs
+
       - name: Upload failed verification diagnostics
         if: failure()
         uses: actions/upload-artifact@v4
@@ -103,9 +106,6 @@ jobs:
         run: |
           npm install --no-save --package-lock=false playwright@1.56.1
           npx playwright install --with-deps chromium
-
-      - name: Exercise Studio Career Film One to Film Two lifecycle
-        run: node scripts/studio-career-lifecycle-qa.mjs
 
       - name: Build release candidate
         run: npm run build:ui
