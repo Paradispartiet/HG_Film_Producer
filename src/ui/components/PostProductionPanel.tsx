@@ -62,7 +62,11 @@ export function PostProductionPanel({
   ];
 
   if (result) {
-    return <PostProductionResultPanel projectLabel={projectLabel} result={result} scriptDraftScore={scriptDraftScore} />;
+    // Old saved results must not claim the draft influenced a screening
+    // that was calculated before this mechanic existed.
+    const scoreUsed = scriptDraftScore !== undefined
+      && result.testScreeningResult.notes.some((note) => note.startsWith("The completed script draft scored "));
+    return <PostProductionResultPanel projectLabel={projectLabel} result={result} scriptDraftScore={scoreUsed ? scriptDraftScore : undefined} />;
   }
 
   function select(key: keyof PostProductionChoices, value: string) {
