@@ -36,6 +36,17 @@ const sourceIds = getSourceBackedFilmHistoryIds();
 const profiles = sourceIds.map((id) => getSourceBackedFilmHistoryProfile(id));
 assert.ok(profiles.length > 100, "Historical source inventory unexpectedly small");
 
+// Editorial discovery for film #6; remove after its donors are source-locked.
+const vertigoProbeProfile = getSourceBackedFilmHistoryProfile("scenario_vertigo_1958");
+assert.ok(vertigoProbeProfile, "Missing Vertigo source-backed history");
+const vertigoProbeChoices = createFilmHistoryChoices(vertigoProbeProfile)
+  .filter((choice) => choice.quality !== "match").map((choice) => {
+    const matches = profiles.filter((candidate) => `${candidate.period}: ${candidate.moment}` === choice.label);
+    assert.equal(matches.length, 1, "Ambiguous Vertigo historical donor");
+    return { quality: choice.quality, donorScenarioId: matches[0].scenarioId, label: choice.label };
+  });
+console.log("VERTIGO_DONOR_PROBE=" + JSON.stringify(vertigoProbeChoices));
+
 const inventory = targets.map((scenarioId) => {
   const profile = getSourceBackedFilmHistoryProfile(scenarioId);
   assert.ok(profile, `Missing verified profile: ${scenarioId}`);
