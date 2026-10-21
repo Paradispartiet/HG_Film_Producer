@@ -52,7 +52,11 @@ function updateProject(state: CareerRunState, projectId: string, updater: (proje
   // Only the unfinished latest film can be changed. Editing a historical film
   // used to truncate every newer film and could silently erase career progress.
   if (index < 0 || index !== state.projects.length - 1 || state.projects[index]?.careerApplicationResult) return state;
-  return { ...state, projects: state.projects.map((project, projectIndex) => projectIndex === index ? updater(project) : project) };
+  const current = state.projects[index];
+  if (!current) return state;
+  const updated = updater(current);
+  if (updated === current) return state;
+  return { ...state, projects: state.projects.map((project, projectIndex) => projectIndex === index ? updated : project) };
 }
 export const careerRunActions = {
   startStudio(run: ProjectSetupRun): CareerRunState { return { version: 1, projects: [createCareerProject(run, 1)] }; },
