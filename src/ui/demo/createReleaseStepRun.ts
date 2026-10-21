@@ -115,7 +115,7 @@ export function createReleaseStepResult(
     ));
   const audienceResults = selectAudiences(project.genreId, strategy)
     .map((segment) => generateAudienceResult(project, filmResult, segment, strategy));
-  const revenueResult = calculateReleaseRevenue(project, releasePlan, strategy, audienceResults);
+  const revenueResult = calculateReleaseRevenue(project, releasePlan, strategy, audienceResults, preProductionResult.budgetPriority?.investmentCost ?? 0);
   const awardsOutcome = resolveAwardsOutcome(
     project,
     filmResult,
