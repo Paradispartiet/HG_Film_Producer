@@ -97,14 +97,32 @@ async function run(browser, spec) {
     let days = 0;
     while (await page.locator(".shoot-panel .shoot-actions button.primary-button").count()) {
       await checkFirst(page, '.shoot-panel .production-event-grid input[type="radio"]');
+      const responseRadios = page.locator('.shoot-panel .shoot-strategy-grid input[type="radio"]');
+      assert.equal(await responseRadios.count(), 3, "Three actionable shoot responses");
+      if (days === 0) {
+        await responseRadios.nth(1).check();
+        await page.waitForFunction((key) => {
+          const state = JSON.parse(window.localStorage.getItem(key) ?? "null");
+          return state?.projects?.[0]?.selectedShootStrategyId === "extra_takes";
+        }, SAVE_KEY);
+      }
       await page.locator(".shoot-panel .shoot-actions button.primary-button").click();
       days += 1;
       assert.ok(days < 50, "Shoot loop should terminate");
       await awaitSaved(page, "shoot-day", days);
+      const savedDay = (await readSaved(page)).projects[0].shootDayResults[days - 1];
+      assert.equal(savedDay.strategySummary?.id, days === 1 ? "extra_takes" : "steady");
+      if (days === 1) {
+        assert.ok(savedDay.strategySummary.costDelta > 0, "Extra takes increase actual daily costs");
+        assert.equal(savedDay.strategySummary.delayDaysDelta, 1, "Extra takes add a real shooting delay");
+      }
       // Once the last day is resolved, the UI advances straight to post-production.
       // The day feedback is therefore verified while another shoot day remains.
       const liveShoot = !(await readSaved(page)).projects[0].shootResult;
       if (liveShoot) {
+        const strategyOutcome = page.locator(".shoot-panel .shoot-strategy-consequence").first();
+        await strategyOutcome.waitFor({ state: "visible" });
+        assert.ok((await strategyOutcome.innerText()).length > 20, "Response tradeoff shown alongside saved result");
         const latestOutcome = page.locator(".shoot-panel .shoot-decision-consequence").first();
         await latestOutcome.waitFor({ state: "visible" });
         assert.ok((await latestOutcome.locator("strong").innerText()).trim().length > 0, "Selected event is visible in outcome");
