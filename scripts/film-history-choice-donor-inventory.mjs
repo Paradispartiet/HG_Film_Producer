@@ -26,25 +26,6 @@ const targets = [
 ];
 
 
-const briefing = await Promise.all([
-  build({ entryPoints: ["src/ui/data/filmScenarios.ts"], bundle: true, platform: "node", format: "esm", write: false, logLevel: "warning" }),
-  build({ entryPoints: ["src/ui/data/scenarioProductionBriefs.ts"], bundle: true, platform: "node", format: "esm", write: false, logLevel: "warning" }),
-]);
-const loaded = await Promise.all(briefing.map((bundle) =>
-  import(`data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].text).toString("base64")}`)
-));
-const film12 = loaded[0].getClassicFilmScenarios().find((film) => film.id === "scenario_the_idiots_1998");
-assert.ok(film12, "The Idiots must already exist in film catalogue");
-const brief12 = loaded[1].resolveScenarioProductionBrief(film12);
-const canonicalBrief12 = [brief12.logline, ...brief12.genreTargets, ...brief12.toneTargets,
-  ...brief12.screenplayTargets, ...brief12.cinematographyTargets, ...brief12.editingTargets,
-  ...brief12.soundTargets, ...brief12.learningGoals];
-console.log("IDIOTS_RUNTIME_BRIEF=" + JSON.stringify({
-  briefType: brief12.briefType,
-  verificationStatus: brief12.verificationStatus,
-  rows: canonicalBrief12,
-}));
-
 const result = await build({
   entryPoints: ["src/ui/data/scenarioFilmStudyMap.ts"],
   bundle: true,
@@ -86,7 +67,6 @@ const inventory = targets.map((scenarioId) => {
 });
 
 // Review-time source inventory for the twelfth film; log actual selected donor IDs before translation.
-console.log("IDIOTS_RUNTIME_DONORS=" + JSON.stringify(inventory.find((entry) => entry.scenarioId === "scenario_the_idiots_1998")));
 
 const translationBundle = await build({
   entryPoints: ["src/core/filmStudyVerifiedDonorChoices.ts"],
