@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { build } from "esbuild";
 
 /**
- * Runtime-derived donor inventory for Film Study's eight source-verified
+ * Runtime-derived donor inventory for Film Study's nine source-verified
  * translation pilots. The quiz selects two *other* films as distractors;
  * do not translate them without verifying their actual canonical donors.
  *
@@ -19,6 +19,7 @@ const targets = [
   "scenario_vertigo_1958",
   "scenario_breathless_1960",
   "scenario_the_400_blows_1959",
+  "scenario_the_shining_1980",
 ];
 
 const result = await build({
@@ -107,23 +108,7 @@ for (const item of inventory) {
     checkedDonorChoices += 1;
   }
 }
-assert.equal(checkedDonorChoices, 16);
+assert.equal(checkedDonorChoices, 18);
 console.log("FILM_HISTORY_TRANSLATED_DONOR_CHOICES=" + checkedDonorChoices);
 
 console.log("FILM_HISTORY_DONOR_INVENTORY=" + JSON.stringify(inventory));
-
-/** Temporary read-only release research for film 9; no donor accepted until checked. */
-const shiningProfile = getSourceBackedFilmHistoryProfile("scenario_the_shining_1980");
-assert.ok(shiningProfile, "Missing The Shining historical profile");
-const shiningChoices = createFilmHistoryChoices(shiningProfile);
-const shiningDonorDetails = shiningChoices.filter((choice) => choice.quality !== "match").map((choice) => {
-  const matching = profiles.filter((candidate) => `${candidate.period}: ${candidate.moment}` === choice.label);
-  assert.equal(matching.length, 1);
-  return {
-    quality: choice.quality,
-    sourceScenarioId: matching[0].scenarioId,
-    canonicalOption: choice.label,
-    ...canonicalFilmStudyOptionFingerprint(choice.label),
-  };
-});
-console.log("FILM_SHINING_DONOR_RESEARCH=" + JSON.stringify(shiningDonorDetails));
