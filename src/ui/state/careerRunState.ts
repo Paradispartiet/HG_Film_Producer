@@ -43,19 +43,32 @@ function getRunContext(run: ProjectSetupRun | NextProjectStepResult) { return cr
 export function createCareerProject(run: ProjectSetupRun | NextProjectStepResult, projectNumber: number): CareerFilmProjectRun {
   return { id: `${projectNumber}-${run.project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`, projectNumber, run, selectedDevelopmentPath: null, developmentResults: [], developmentResult: null, preProductionSelections: emptyPreProductionSelections, preProductionResult: null, selectedProductionEventId: "", shootDayResults: [], shootResult: null, postProductionChoices: emptyPostProductionChoices, postProductionResult: null, releaseChoices: emptyReleaseChoices, releaseResult: null, careerApplicationResult: null };
 }
-function truncateAfter(projects: readonly CareerFilmProjectRun[], index: number) { return projects.slice(0, index + 1); }
 function resetAfterDevelopment(project: CareerFilmProjectRun, developmentResult: DevelopmentStepResult): CareerFilmProjectRun {
   const selectedLocationId = getPreProductionLocationOptions(getRunContext(project.run), developmentResult).find((option) => option.recommended)?.id ?? "";
   return { ...project, selectedDevelopmentPath: null, developmentResult, preProductionSelections: { ...emptyPreProductionSelections, selectedLocationId }, preProductionResult: null, selectedProductionEventId: "", shootDayResults: [], shootResult: null, postProductionChoices: emptyPostProductionChoices, postProductionResult: null, releaseChoices: emptyReleaseChoices, releaseResult: null, careerApplicationResult: null };
 }
 function updateProject(state: CareerRunState, projectId: string, updater: (project: CareerFilmProjectRun) => CareerFilmProjectRun): CareerRunState {
   const index = state.projects.findIndex((project) => project.id === projectId);
-  if (index < 0) return state;
-  return { ...state, projects: truncateAfter(state.projects, index).map((project, projectIndex) => projectIndex === index ? updater(project) : project) };
+  // Only the unfinished latest film can be changed. Editing a historical film
+  // used to truncate every newer film and could silently erase career progress.
+  if (index < 0 || index !== state.projects.length - 1 || state.projects[index]?.careerApplicationResult) return state;
+  const current = state.projects[index];
+  if (!current) return state;
+  const updated = updater(current);
+  if (updated === current) return state;
+  return { ...state, projects: state.projects.map((project, projectIndex) => projectIndex === index ? updated : project) };
 }
 export const careerRunActions = {
   startStudio(run: ProjectSetupRun): CareerRunState { return { version: 1, projects: [createCareerProject(run, 1)] }; },
-  createProject(state: CareerRunState, run: NextProjectStepResult): CareerRunState { return { ...state, projects: [...state.projects, createCareerProject(run, state.projects.length + 1)] }; },
+  createProject(state: CareerRunState, run: NextProjectStepResult): CareerRunState {
+    const previous = state.projects.at(-1);
+    // React may batch a double-click. Once Film Two exists, Film One cannot
+    // be used to append a duplicate Film Three from the same setup form.
+    if (!previous?.careerApplicationResult) return state;
+    const next = createCareerProject(run, previous.projectNumber + 1);
+    if (state.projects.some((project) => project.id === next.id)) return state;
+    return { ...state, projects: [...state.projects, next] };
+  },
   selectDevelopmentPath(state: CareerRunState, projectId: string, selectedDevelopmentPath: DevelopmentPath): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, selectedDevelopmentPath })); },
   applyDevelopmentAction(state: CareerRunState, projectId: string, result: DevelopmentStepResult): CareerRunState {
     return updateProject(state, projectId, (project) => {
@@ -75,7 +88,7 @@ export const careerRunActions = {
   selectProductionEvent(state: CareerRunState, projectId: string, selectedProductionEventId: string): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, selectedProductionEventId })); },
   resolveShootDay(state: CareerRunState, projectId: string, dayResult: ShootDayStepResult): CareerRunState {
     return updateProject(state, projectId, (project) => {
-      if (!project.developmentResult || !project.preProductionResult) return project;
+      if (!project.developmentResult || !project.preProductionResult || project.shootResult || project.shootDayResults.some((day) => day.updatedShootDay.id === dayResult.updatedShootDay.id)) return project;
       const resolvedDays = [...project.shootDayResults, dayResult];
       const preparation = getShootPreparation(getRunContext(project.run), project.developmentResult, project.preProductionResult);
       const isComplete = resolvedDays.length >= preparation.productionSchedule.shootDays.length;

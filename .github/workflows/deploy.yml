@@ -41,6 +41,9 @@ jobs:
           set -o pipefail
           npm run verify:v0.1 2>&1 | tee verify-v0.1-output.txt
 
+      - name: Exercise Studio Career Film One to Film Two lifecycle
+        run: node scripts/studio-career-lifecycle-qa.mjs
+
       - name: Upload failed verification diagnostics
         if: failure()
         uses: actions/upload-artifact@v4
@@ -115,6 +118,7 @@ jobs:
           preview_pid=$!
           trap 'kill "${preview_pid}" 2>/dev/null || true' EXIT
           node scripts/film-producer-four-language-browser-qa.mjs
+          node scripts/studio-career-handoff-browser-qa.mjs
 
       - name: Preserve smoke evidence and visual-review screenshots
         if: always()
