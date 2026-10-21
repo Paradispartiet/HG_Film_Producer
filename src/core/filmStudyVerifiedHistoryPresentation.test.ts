@@ -17,6 +17,7 @@ const scenarioIds = [
   "scenario_lost_in_translation_2003",
   "scenario_bicycle_thieves_1948",
   "scenario_vertigo_1958",
+  "scenario_breathless_1960",
 ] as const;
 const source = readFileSync("src/ui/data/scenarioFilmStudyMap.ts", "utf8");
 const panel = readFileSync("src/ui/components/ScenarioFilmStudyPanel.tsx", "utf8");
