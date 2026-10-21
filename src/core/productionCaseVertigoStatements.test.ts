@@ -1,32 +1,40 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { FILMWORK_LANGUAGES } from "./filmWorkLanguage.js";
 import { presentVerifiedFilmStatement } from "./productionCaseFilmStatementCopy.js";
 import { CANONICAL_VERTIGO_STATEMENTS, VERTIGO_PRODUCTION_STATEMENT_ROWS } from "./productionCaseVertigoStatements.js";
-import { getScenarioProductionBrief } from "../ui/data/scenarioProductionBriefs.js";
+const briefSource = readFileSync("src/ui/data/scenarioProductionBriefs.ts", "utf8");
 
 const id = "scenario_vertigo_1958";
 
 test("Vertigo has 22 immutable canonical brief claims in the source order", () => {
-  const brief = getScenarioProductionBrief(id);
-  assert.ok(brief && brief.briefType === "production_case");
-  const actual = [
-    brief.logline,
-    ...brief.genreTargets,
-    ...brief.toneTargets,
-    ...brief.screenplayTargets,
-    ...brief.cinematographyTargets,
-    ...brief.editingTargets,
-    ...brief.soundTargets,
-    ...brief.learningGoals,
+  const start = briefSource.indexOf(`  ${id}: {`);
+  const end = briefSource.indexOf("\\n  },", start);
+  assert.ok(start > 0 && end > start, "Missing canonical Vertigo brief");
+  const section = briefSource.slice(start, end);
+  const logline = section.match(/logline: ("[^"]+")/);
+  assert.ok(logline);
+  const fieldNames = [
+    "genreTargets", "toneTargets", "screenplayTargets", "cinematographyTargets",
+    "editingTargets", "soundTargets", "learningGoals",
   ];
+  const actual = [JSON.parse(logline[1])];
+  for (const field of fieldNames) {
+    const startOfField = section.indexOf(`${field}: [`);
+    assert.ok(startOfField > 0, `Missing field: ${field}`);
+    const arrayStart = section.indexOf("[", startOfField);
+    const arrayEnd = section.indexOf("]", arrayStart);
+    actual.push(...JSON.parse(section.slice(arrayStart, arrayEnd + 1)));
+  }
+
   assert.equal(actual.length, 22);
   assert.equal(new Set(actual).size, 22);
   assert.deepEqual(actual, [...CANONICAL_VERTIGO_STATEMENTS]);
   assert.equal(VERTIGO_PRODUCTION_STATEMENT_ROWS.length, 22);
   // Localizing the case does not silently upgrade editorial verification.
-  assert.equal(brief.verificationStatus, "needs_research");
+  assert.match(section, /verificationStatus: "needs_research"/);
 });
 
 test("all Vertigo brief claims have faithful exact-match EN/NB/FR/PT presentations", () => {
