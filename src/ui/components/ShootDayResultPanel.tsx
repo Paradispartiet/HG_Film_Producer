@@ -21,10 +21,15 @@ export function ShootDayResultPanel({ preparation, result, dayNumber, projectLab
         <div><span className="eyebrow">{copy.dayResult.eyebrow}</span><h3>{copy.dayResult.heading(projectLabel, dayNumber)}</h3></div>
         <strong className="shoot-day-badge">{copy.dayResult.takeQuality(result.shootDayResult.takeQuality)}</strong>
       </div>
+      <div className="shoot-decision-consequence">
+        <span className="section-label">{copy.dayResult.selectedEvent}</span>
+        <strong>{result.selectedEventSummary.title}</strong>
+        <p>{result.selectedEventSummary.note}</p>
+      </div>
       <div className="shoot-result-grid">
         <ResultMetric label={copy.dayResult.completedScenes} value={`${result.shootDayResult.completedSceneIds.length}`} detail={sceneTitles(result.shootDayResult.completedSceneIds, preparation)} />
         <ResultMetric label={copy.dayResult.delayedScenes} value={`${result.shootDayResult.delayedSceneIds.length}`} detail={sceneTitles(result.shootDayResult.delayedSceneIds, preparation) || copy.dayResult.noScenesDelayed} />
-        <ResultMetric label={copy.dayResult.costSpent} value={formatMoney(result.shootDayResult.costSpent, locale)} detail={result.selectedEventSummary.note} />
+        <ResultMetric label={copy.dayResult.costSpent} value={formatMoney(result.shootDayResult.costSpent, locale)} detail={`${copy.dayResult.eventCostImpact}: ${formatMoney(result.selectedEventSummary.costImpact, locale)}`} />
         <ResultMetric label={copy.dayResult.scheduleDeltaLabel} value={copy.dayResult.scheduleDelta(result.shootDayResult.scheduleDeltaDays)} detail={copy.schedule.statuses[result.updatedShootDay.status]} />
       </div>
       <ul className="shoot-note-list">{result.shootDayResult.notes.map((note) => <li key={note}>{note}</li>)}</ul>
