@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { build } from "esbuild";
 
 /**
- * Runtime-derived donor inventory for Film Study's five source-verified
+ * Runtime-derived donor inventory for Film Study's six source-verified
  * translation pilots. The quiz selects two *other* films as distractors;
  * do not translate them without verifying their actual canonical donors.
  *
@@ -16,6 +16,7 @@ const targets = [
   "scenario_the_lives_of_others_2006",
   "scenario_lost_in_translation_2003",
   "scenario_bicycle_thieves_1948",
+  "scenario_vertigo_1958",
 ];
 
 const result = await build({
@@ -35,17 +36,6 @@ const { createFilmHistoryChoices, getSourceBackedFilmHistoryIds, getSourceBacked
 const sourceIds = getSourceBackedFilmHistoryIds();
 const profiles = sourceIds.map((id) => getSourceBackedFilmHistoryProfile(id));
 assert.ok(profiles.length > 100, "Historical source inventory unexpectedly small");
-
-// Editorial discovery for film #6; remove after its donors are source-locked.
-const vertigoProbeProfile = getSourceBackedFilmHistoryProfile("scenario_vertigo_1958");
-assert.ok(vertigoProbeProfile, "Missing Vertigo source-backed history");
-const vertigoProbeChoices = createFilmHistoryChoices(vertigoProbeProfile)
-  .filter((choice) => choice.quality !== "match").map((choice) => {
-    const matches = profiles.filter((candidate) => `${candidate.period}: ${candidate.moment}` === choice.label);
-    assert.equal(matches.length, 1, "Ambiguous Vertigo historical donor");
-    return { quality: choice.quality, donorScenarioId: matches[0].scenarioId, label: choice.label };
-  });
-console.log("VERTIGO_DONOR_PROBE=" + JSON.stringify(vertigoProbeChoices));
 
 const inventory = targets.map((scenarioId) => {
   const profile = getSourceBackedFilmHistoryProfile(scenarioId);
@@ -115,7 +105,7 @@ for (const item of inventory) {
     checkedDonorChoices += 1;
   }
 }
-assert.equal(checkedDonorChoices, 10);
+assert.equal(checkedDonorChoices, 12);
 console.log("FILM_HISTORY_TRANSLATED_DONOR_CHOICES=" + checkedDonorChoices);
 
 console.log("FILM_HISTORY_DONOR_INVENTORY=" + JSON.stringify(inventory));
