@@ -1,8 +1,9 @@
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 import { FESTEN_SOURCE_LOCKED_DONORS } from "./filmStudyFestenDonorRows.js";
+import { IDIOTS_SOURCE_LOCKED_DONORS } from "./filmStudyIdiotsDonorRows.js";
 
 /**
- * Twenty original source-bound distractor translations, used for 22 choices across eleven films.
+ * Twenty-two original source-bound distractor translations, used for 24 choices across twelve films.
  * The immutable label is selected by the existing Film Study quiz; fingerprint
  * and source ID are audited against the real data module in CI.
  * Nothing in this file changes the question, the donor, the choice ID or grade.
@@ -20,6 +21,7 @@ const SOURCE_LOCKED_DONOR_CHOICES: Readonly<
   Record<string, Partial<Record<"partial" | "miss", DonorChoice>>>
 > = {
   scenario_the_celebration_1998: FESTEN_SOURCE_LOCKED_DONORS,
+  scenario_the_idiots_1998: IDIOTS_SOURCE_LOCKED_DONORS,
   scenario_one_flew_over_the_cuckoo_s_nest_1975: {
     partial: {
       "donorScenarioId": "scenario_children_of_men_2006",
