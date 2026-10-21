@@ -2,6 +2,9 @@
 
 **HG Film Producer** er en full filmstudio-simulator koblet til History Go-universet.
 
+> **Arbeidsstatus 2026-10-21:** Oversettelsesproduksjonen er satt på pause ved **12/614 filmer** etter publisert [PR #813](https://github.com/Paradispartiet/HG_Film_Producer/pull/813). Ingen nye språkbatcher før eksplisitt gjenopptakelse. Nå prioriteres **spillets kjerneflyt og brukeropplevelse**, særlig Studio Career fra film 1 til film 2. Se [overleveringsstatus](docs/WORK_HANDOFF_TRANSLATION_PAUSE_FILM_PRODUCER_CORE_2026-10-21.md) og [core-arbeid #814](https://github.com/Paradispartiet/HG_Film_Producer/issues/814). Production Cases er stabil referansemodus; Studio Career er fortsatt eksperimentell.
+
+
 
 ## Navnekontrakt for filmsuiten
 
