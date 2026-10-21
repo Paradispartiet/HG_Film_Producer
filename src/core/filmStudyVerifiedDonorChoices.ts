@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 
 /**
- * Twelve display-only translations of exact source-backed distractor options.
+ * Fourteen display-only translations of exact source-backed distractor options.
  * The immutable label is selected by the existing Film Study quiz; fingerprint
  * and source ID are audited against the real data module in CI.
  * Nothing in this file changes the question, the donor, the choice ID or grade.
@@ -18,6 +18,42 @@ type DonorChoice = {
 export const FILM_STUDY_VERIFIED_DONOR_CHOICES: Readonly<
   Record<string, Partial<Record<"partial" | "miss", DonorChoice>>>
 > = {
+  scenario_breathless_1960: {
+    "partial": {
+      "donorScenarioId": "scenario_the_idiots_1998",
+      "canonicalLength": 678,
+      "canonicalHash": 4246430812,
+      "preview": "late-1990s Dogme 95",
+      "summary": {
+        "en": "The Idiots: Dogme 95 and volatile handheld performance (1998)",
+        "nb": "The Idiots: Dogme 95 og urolig håndholdt spill (1998)",
+        "fr": "The Idiots : Dogme 95 et jeu instable à la caméra portée (1998)",
+        "pt": "The Idiots: Dogme 95 e interpretação com câmara à mão (1998)"
+      },
+      "text": {
+        "nb": "Dogme 95 på slutten av 1990-tallet: dansk produksjon på autentiske steder, håndholdte opptak med video som utgangspunkt, krav til synkron lyd og en spillestil som setter prestasjonen foran et polert uttrykk: Produksjonen må forstås gjennom spenningen mellom regler og faktisk gjennomføring. Von Triers spillefilm bruker et bevegelig, håndholdt og stedsbasert produksjonssystem med video som opptaksmedium for å oppnå umiddelbarhet og et uforutsigbart samspill i ensemblet. Men manifestet er ikke i seg selv bevis på at alle regler ble fulgt fullt ut. Produsent Vibeke Windeløv, klipper Molly Malene Stensgaard, skuespillernes arbeid, kameraarbeidet og produksjonslyden utgjør egne deler av produksjonen, og filmens røffe umiddelbarhet avhenger fortsatt av utvalg, rekkefølge og ferdigstilling.",
+        "fr": "Dogme 95 à la fin des années 1990 : tournage danois en décors naturels, prise de vues vidéo à la caméra portée, contraintes de son synchrone et esthétique centrée sur le jeu, loin du fini léché : Il faut comprendre la production dans la tension entre les règles et leur mise en œuvre. Le long métrage de von Trier repose sur un dispositif mobile, tourné sur vidéo, à la caméra portée et dans des lieux réels, afin de rechercher l'immédiateté et un jeu d'ensemble instable. Le manifeste ne prouve pourtant pas, à lui seul, une conformité parfaite. La productrice Vibeke Windeløv, la monteuse Molly Malene Stensgaard, le travail des interprètes, la caméra et le son direct constituent des systèmes de travail distincts ; l'impression de spontanéité brute du film dépend toujours de la sélection, de l'agencement et de la finition.",
+        "pt": "Dogme 95 no final dos anos 1990: produção dinamarquesa em locais reais, captação originalmente em vídeo com câmara à mão, restrições de som sincronizado e estética centrada na interpretação em vez do acabamento polido: A produção deve ser entendida através da tensão entre a regra e a sua aplicação. A longa-metragem de von Trier utiliza um sistema de filmagem móvel, em vídeo, com câmara à mão e em locais reais para procurar imediatismo e uma interpretação de conjunto imprevisível. O manifesto, porém, não prova por si só o cumprimento perfeito das regras. A produtora Vibeke Windeløv, a montadora Molly Malene Stensgaard, o trabalho dos atores, a câmara e o som direto continuam a ser sistemas distintos, e a impressão de espontaneidade crua do filme depende ainda da seleção, ordenação e finalização."
+      }
+    },
+    "miss": {
+      "donorScenarioId": "scenario_enthusiasm_1930",
+      "canonicalLength": 543,
+      "canonicalHash": 1715791960,
+      "preview": "1930 Soviet Ukrainian/Donbas early sound",
+      "summary": {
+        "en": "Enthusiasm: Soviet industrial sound montage (1930)",
+        "nb": "Enthusiasm: sovjetisk industrilyd og montasje (1930)",
+        "fr": "Enthusiasm : montage sonore industriel soviétique (1930)",
+        "pt": "Enthusiasm: montagem sonora industrial soviética (1930)"
+      },
+      "text": {
+        "nb": "Tidlig lydfilm fra det sovjetiske Ukraina og Donbas i 1930: ikke-synkron lyd, lydopptak fra industriområder, politisk dokumentarmontasje og en senere historie med restaurering av bilde og lyd: Enthusiasm gjør femårsplanen og industrialiseringen av Donbas til en tydelig politisk dokumentarkonstruksjon. BFI fremhever lyd som utfyller eller står i kontrast til bildet, maskiner og stemmer og fraværet av en tradisjonell kommentatorstemme. Restaureringshistorien fra Österreichisches Filmmuseum viser dessuten at forholdet mellom bilde og lyd er bevart gjennom senere inngrep i synkroniseringen.",
+        "fr": "Débuts du cinéma sonore en Ukraine soviétique et dans le Donbass en 1930 : non-synchronisation, sons enregistrés sur les sites industriels, montage documentaire politique et histoire ultérieure des restaurations de l'image et du son : Enthusiasm transforme le plan quinquennal et l'industrialisation du Donbass en construction documentaire explicitement politique. Le BFI souligne les usages complémentaires et contrapuntiques du son, les machines, les voix et l'absence de commentaire conventionnel. L'histoire de la restauration établie par le Musée autrichien du film montre également que le rapport entre image et son nous est parvenu à travers des interventions de synchronisation ultérieures.",
+        "pt": "Primeiro cinema sonoro na Ucrânia soviética e no Donbass em 1930: não sincronização, captação sonora em locais industriais, montagem documental política e histórias posteriores de restauro de imagem e som: Enthusiasm transforma o Plano Quinquenal e a industrialização do Donbass numa construção documental assumidamente política. O BFI destaca usos complementares e contrapontísticos do som, maquinaria, vozes e a ausência de comentário convencional. A história do restauro documentada pelo Museu Austríaco do Cinema mostra também que a relação entre imagem e som chegou até nós através de intervenções posteriores de sincronização."
+      }
+    }
+  },
   scenario_vertigo_1958: {
     "partial": {
       "donorScenarioId": "scenario_mad_max_fury_road_2015",
