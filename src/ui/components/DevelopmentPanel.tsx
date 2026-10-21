@@ -49,6 +49,12 @@ export function DevelopmentPanel({
   const [message, setMessage] = useState("");
   const locationChoices = getLocationDevelopmentChoices(projectContext);
   const completedPaths = new Set(completedResults.map((result) => result.path));
+  const lastAction = completedResults.at(-1);
+  const lastActionOutcome = !lastAction ? "" : lastAction.path === "mentor"
+    ? `${copy.result.unlockedTechnique}: ${lastAction.unlockedTechnique ?? copy.result.noTechniqueUnlock}`
+    : lastAction.path === "location"
+      ? `${copy.result.topLocation}: ${lastAction.topLocation} · ${copy.result.totalScore}: ${lastAction.totalScore}/100`
+      : `${copy.result.sceneCount}: ${lastAction.sceneCount} · ${copy.result.overallScore}: ${lastAction.overallScore}/100`;
   const latestProjectState = completedResults.at(-1)?.projectState ?? projectContext.filmProjectState;
   const chainedContext: ProjectRunContext = { ...projectContext, filmProjectState: latestProjectState };
 
@@ -130,6 +136,14 @@ export function DevelopmentPanel({
       )}
       {selectedPath === "script" && (
         <ScriptChoicePanel onApply={() => onApplyAction(createScriptDevelopmentResult(chainedContext))} run={chainedContext} />
+      )}
+      {lastAction && !selectedPath && (
+        <div className="development-decision-feedback" role="status" aria-live="polite">
+          <span className="section-label">{copy.feedback.eyebrow}</span>
+          <strong>{copy.paths[lastAction.path].title}</strong>
+          <p>{lastActionOutcome}</p>
+          <small>{copy.feedback.nextChoice}</small>
+        </div>
       )}
       {completedResults.length > 0 && (
         <div className="development-actions">

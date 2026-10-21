@@ -71,6 +71,10 @@ type StudioCareerDevelopmentCopy = {
     readonly shapeScript: string;
   };
   readonly result: DevelopmentResultCopy;
+  readonly feedback: {
+    readonly eyebrow: string;
+    readonly nextChoice: string;
+  };
   readonly progress: (completedCount: number) => string;
 };
 
@@ -150,6 +154,10 @@ export const STUDIO_CAREER_DEVELOPMENT_COPY = {
       whereThisComesFrom: "Where this comes from",
       developmentNotes: "Development notes",
     },
+    feedback: {
+      eyebrow: "Your latest decision",
+      nextChoice: "Try another creative action, or finish development to begin pre-production.",
+    },
     progress: (completedCount) => `${completedCount} of 3 development action${completedCount === 1 ? "" : "s"} applied.`,
   },
   nb: {
@@ -226,6 +234,10 @@ export const STUDIO_CAREER_DEVELOPMENT_COPY = {
       overallScore: "Totalvurdering",
       whereThisComesFrom: "Bakgrunnen for dette",
       developmentNotes: "Utviklingsnotater",
+    },
+    feedback: {
+      eyebrow: "Resultatet av valget ditt",
+      nextChoice: "Prøv en annen utviklingshandling, eller avslutt utviklingen for å starte forproduksjonen.",
     },
     progress: (completedCount) => `${completedCount} av 3 utviklingshandlinger gjennomført.`,
   },
@@ -304,6 +316,10 @@ export const STUDIO_CAREER_DEVELOPMENT_COPY = {
       whereThisComesFrom: "Origine de cette approche",
       developmentNotes: "Notes de développement",
     },
+    feedback: {
+      eyebrow: "Résultat de votre dernier choix",
+      nextChoice: "Essayez une autre action créative ou terminez le développement pour passer à la préproduction.",
+    },
     progress: (completedCount) => `${completedCount} action${completedCount === 1 ? "" : "s"} de développement sur 3 appliquée${completedCount === 1 ? "" : "s"}.`,
   },
   pt: {
@@ -380,6 +396,10 @@ export const STUDIO_CAREER_DEVELOPMENT_COPY = {
       overallScore: "Pontuação global",
       whereThisComesFrom: "De onde vem esta abordagem",
       developmentNotes: "Notas de desenvolvimento",
+    },
+    feedback: {
+      eyebrow: "Resultado da sua última decisão",
+      nextChoice: "Experimente outra ação criativa ou termine o desenvolvimento para iniciar a pré-produção.",
     },
     progress: (completedCount) => completedCount === 1
       ? "1 de 3 ação de desenvolvimento aplicada."

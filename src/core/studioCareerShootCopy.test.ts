@@ -32,3 +32,13 @@ test("Portuguese numbered shoot labels contain filme, not English Film", () => {
   assert.equal(pt.panel.heading("film 2"), "Rodagem de Filme 2");
   assert.equal(pt.schedule.heading("film 3"), "Plano de rodagem de Filme 3");
 });
+
+test("shoot decision consequence and historical day labels are localized", () => {
+  for (const language of languages) {
+    const copy = STUDIO_CAREER_SHOOT_COPY[language].dayResult;
+    assert.ok(copy.selectedEvent.trim());
+    assert.ok(copy.eventCostImpact.trim());
+    assert.ok(copy.priorDays(2).includes("2"));
+  }
+  assert.equal(STUDIO_CAREER_SHOOT_COPY.nb.dayResult.selectedEvent, "Hendelse på settet");
+});

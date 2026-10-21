@@ -90,6 +90,44 @@
 .next-project-setup-section {
   scroll-margin-top: 24px;
 }
+.development-decision-feedback,
+.shoot-decision-consequence {
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  margin: 14px 0;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.development-decision-feedback strong,
+.shoot-decision-consequence strong {
+  font-size: 15px;
+}
+.development-decision-feedback p,
+.shoot-decision-consequence p {
+  margin: 0;
+  line-height: 1.5;
+}
+.development-decision-feedback small {
+  color: var(--muted);
+  line-height: 1.5;
+}
+.shoot-prior-days {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--line-soft);
+}
+.shoot-prior-days summary {
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1.4;
+  padding: 6px 0;
+}
+.shoot-prior-days[open] .shoot-result-section {
+  margin-top: 12px;
+}
 @media (max-width: 900px) {
   .project-hero--focused {
     grid-template-columns: 1fr;

@@ -75,6 +75,8 @@ async function run(browser, spec) {
     await development.locator(".development-path-grid button").nth(2).click();
     await development.locator(".script-starter-card").waitFor({ state: "visible" });
     await development.locator(".development-choice-panel button.primary-button").click();
+    await development.locator(".development-decision-feedback").waitFor({ state: "visible" });
+    assert.match(await development.locator(".development-decision-feedback").innerText(), /100/);
     await development.locator(".development-actions > button.primary-button").click();
     await awaitSaved(page, "developmentResult");
     assert.equal((await readSaved(page)).projects[0].developmentResult.path, "script");
@@ -99,6 +101,19 @@ async function run(browser, spec) {
       days += 1;
       assert.ok(days < 50, "Shoot loop should terminate");
       await awaitSaved(page, "shoot-day", days);
+      // Once the last day is resolved, the UI advances straight to post-production.
+      // The day feedback is therefore verified while another shoot day remains.
+      const liveShoot = !(await readSaved(page)).projects[0].shootResult;
+      if (liveShoot) {
+        const latestOutcome = page.locator(".shoot-panel .shoot-decision-consequence").first();
+        await latestOutcome.waitFor({ state: "visible" });
+        assert.ok((await latestOutcome.locator("strong").innerText()).trim().length > 0, "Selected event is visible in outcome");
+        if (days > 1) {
+          const past = page.locator(".shoot-panel details.shoot-prior-days");
+          assert.equal(await past.count(), 1, "Older reports are grouped");
+          assert.equal(await past.getAttribute("open"), null, "Older reports start collapsed");
+        }
+      }
       if (days === 1) {
         await page.reload();
         await page.locator(".producer-mode-card:not(.producer-mode-card--recommended) .filmverket-primary-action").click();
