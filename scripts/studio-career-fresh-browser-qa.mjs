@@ -90,8 +90,16 @@ async function run(browser, spec) {
     assert.ok(await cast.count() >= 2, "At least two actors available");
     await cast.nth(0).check();
     await cast.nth(1).check();
+    const budgetChoice = pre.locator('.pre-budget-section input[value="crew_focus"]');
+    assert.equal(await pre.locator('.pre-budget-section input[type="radio"]').count(), 3, "Three budget priorities");
+    await budgetChoice.check();
+    await page.waitForFunction((key) => JSON.parse(window.localStorage.getItem(key) ?? "null")?.projects?.[0]?.preProductionSelections?.budgetPriorityId === "crew_focus", SAVE_KEY);
     await pre.locator(".pre-production-actions button.primary-button").click();
     await awaitSaved(page, "preProductionResult");
+    const savedPre = (await readSaved(page)).projects[0];
+    assert.equal(savedPre.preProductionResult.budgetPriority.id, "crew_focus", "Funded team plan reaches the engine");
+    assert.ok(savedPre.preProductionResult.budgetPriority.investmentCost > 0, "Team preparation costs actual money");
+    assert.ok(savedPre.preProductionResult.budgetPriority.crewGain > 0, "Paid team preparation changes actual crew evaluation");
 
     await expectPhase(page, ".shoot-panel", "shoot", milestones);
     let days = 0;
@@ -178,6 +186,11 @@ async function run(browser, spec) {
     await release.locator(".release-option-grid--festivals input[type=radio]").first().check();
     await release.locator(".release-actions button.primary-button").click();
     await awaitSaved(page, "releaseResult");
+    const completedFilm = (await readSaved(page)).projects[0];
+    const spentOnPreparation = completedFilm.preProductionResult.budgetPriority.investmentCost;
+    const postSpend = completedFilm.postProductionResult.postProductionEvaluation.totalCost;
+    assert.ok(completedFilm.releaseResult.filmResult.budgetSpent >= spentOnPreparation + postSpend,
+      "Pre-production investment must flow into film expenses at release");
     // The completed release can be reopened without changing the saved outcome.
     const completedRelease = page.locator(".completed-phase-row").last();
     await completedRelease.locator("button").click();
