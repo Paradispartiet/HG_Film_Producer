@@ -39,7 +39,7 @@ export const SHINING_FILM_HISTORY_ROWS = [
   [
     "It became a central reference for moving-camera horror, hostile architecture and dread created through spatial inconsistency rather than constant attack.",
     "Filmen ble et sentralt referansepunkt for skrekk skapt med et bevegelig kamera, fiendtlig arkitektur og romlig ulogikk fremfor stadige angrep.",
-    "Torné référence majeure de l'horreur à caméra mobile, le film suscite l'effroi par une architecture hostile et des incohérences spatiales plutôt que par des attaques constantes.",
+    "Devenu une référence majeure de l'horreur à caméra mobile, le film suscite l'effroi par une architecture hostile et des incohérences spatiales plutôt que par des attaques constantes.",
     "Tornou-se uma referência central do terror com câmara móvel, arquitetura hostil e pavor criado pela incoerência espacial, em vez de ataques constantes."
   ],
   [
