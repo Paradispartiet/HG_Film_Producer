@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { build } from "esbuild";
 
 /**
- * Runtime-derived donor inventory for Film Study's nine source-verified
+ * Runtime-derived donor inventory for Film Study's ten source-verified
  * translation pilots. The quiz selects two *other* films as distractors;
  * do not translate them without verifying their actual canonical donors.
  *
@@ -20,6 +20,7 @@ const targets = [
   "scenario_breathless_1960",
   "scenario_the_400_blows_1959",
   "scenario_the_shining_1980",
+  "scenario_one_flew_over_the_cuckoo_s_nest_1975",
 ];
 
 const result = await build({
@@ -108,24 +109,7 @@ for (const item of inventory) {
     checkedDonorChoices += 1;
   }
 }
-assert.equal(checkedDonorChoices, 18);
+assert.equal(checkedDonorChoices, 20);
 console.log("FILM_HISTORY_TRANSLATED_DONOR_CHOICES=" + checkedDonorChoices);
 
 console.log("FILM_HISTORY_DONOR_INVENTORY=" + JSON.stringify(inventory));
-
-/** Film 10 research: derive donor identity from exactly the runtime quiz algorithm. */
-const cuckoosNestProfile = getSourceBackedFilmHistoryProfile("scenario_one_flew_over_the_cuckoo_s_nest_1975");
-assert.ok(cuckoosNestProfile, "Missing film 10 historical profile");
-const cuckoosNestDonors = createFilmHistoryChoices(cuckoosNestProfile)
-  .filter((choice) => choice.quality !== "match")
-  .map((choice) => {
-    const matching = profiles.filter((candidate) => `${candidate.period}: ${candidate.moment}` === choice.label);
-    assert.equal(matching.length, 1, "Film 10 donor must have one real source");
-    return {
-      quality: choice.quality,
-      donorScenarioId: matching[0].scenarioId,
-      canonicalOption: choice.label,
-      ...canonicalFilmStudyOptionFingerprint(choice.label),
-    };
-  });
-console.log("CUCKOOS_NEST_RUNTIME_DONORS=" + JSON.stringify(cuckoosNestDonors));
