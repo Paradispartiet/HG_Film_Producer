@@ -104,7 +104,15 @@ async function run(browser, spec) {
     await expectPhase(page, ".shoot-panel", "shoot", milestones);
     let days = 0;
     while (await page.locator(".shoot-panel .shoot-actions button.primary-button").count()) {
+      const monitor = page.locator(".shoot-panel .shoot-budget-monitor");
+      await monitor.waitFor({ state: "visible" });
+      const previousActualSpend = days === 0 ? 0
+        : (await readSaved(page)).projects[0].shootDayResults
+          .reduce((sum, day) => sum + day.shootDayResult.costSpent, 0);
+      assert.equal(Number(await monitor.locator(".shoot-budget-metrics").first().getAttribute("data-spent")), previousActualSpend, "Live shoot ledger must equal costs saved from resolved days");
       await checkFirst(page, '.shoot-panel .production-event-grid input[type="radio"]');
+      const expectedSteadyCost = Number(await monitor.locator(".shoot-budget-projection").getAttribute("data-forecast-cost"));
+      assert.ok(Number.isFinite(expectedSteadyCost) && expectedSteadyCost >= 0, "Event selection provides a real projected day cost");
       const responseRadios = page.locator('.shoot-panel .shoot-strategy-grid input[type="radio"]');
       assert.equal(await responseRadios.count(), 3, "Three actionable shoot responses");
       if (days === 0) {
@@ -114,11 +122,18 @@ async function run(browser, spec) {
           return state?.projects?.[0]?.selectedShootStrategyId === "extra_takes";
         }, SAVE_KEY);
       }
+      const preview = monitor.locator(".shoot-budget-projection");
+      const predictedCost = Number(await preview.getAttribute("data-forecast-cost"));
+      const projectedHeadroom = Number(await preview.getAttribute("data-forecast-headroom"));
+      assert.ok(Number.isFinite(projectedHeadroom), "Risk preview must show a numeric reserve");
+      assert.ok(["healthy", "tight", "over"].includes(await preview.getAttribute("data-forecast-risk")), "Preview risk uses real cost thresholds");
+      if (days === 0) assert.ok(predictedCost > expectedSteadyCost, "Extra takes must visibly increase the projected shoot cost");
       await page.locator(".shoot-panel .shoot-actions button.primary-button").click();
       days += 1;
       assert.ok(days < 50, "Shoot loop should terminate");
       await awaitSaved(page, "shoot-day", days);
       const savedDay = (await readSaved(page)).projects[0].shootDayResults[days - 1];
+      assert.equal(savedDay.shootDayResult.costSpent, predictedCost, "Budget forecast and recorded day cost use the same engine");
       assert.equal(savedDay.strategySummary?.id, days === 1 ? "extra_takes" : "steady");
       if (days === 1) {
         assert.ok(savedDay.strategySummary.costDelta > 0, "Extra takes increase actual daily costs");
