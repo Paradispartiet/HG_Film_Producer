@@ -169,3 +169,120 @@
     scroll-behavior: auto;
   }
 }
+
+
+/* Completed film: make the causal production trail readable without adding a new game step. */
+.film-decision-review {
+  padding: 20px;
+  margin: 18px 0;
+  border: 1px solid var(--line-soft);
+  min-width: 0;
+}
+.film-decision-review-heading h3 {
+  margin: 6px 0 8px;
+  font-size: clamp(20px, 2.4vw, 27px);
+}
+.film-decision-review-heading p {
+  margin: 0 0 18px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.film-decision-review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.film-decision-review-stage {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--line-soft);
+  background: rgba(5, 7, 9, 0.18);
+}
+.film-decision-review-stage-heading {
+  display: flex;
+  gap: 9px;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+.film-decision-review-stage-heading > span {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+}
+.film-decision-review-stage h4 {
+  margin: 0;
+  font-size: 15px;
+}
+.film-decision-review-signals {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 16px;
+}
+.film-decision-review-signals > span {
+  font-weight: 650;
+}
+.film-decision-review-signal {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.film-decision-review-signal > span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.film-decision-review-signal strong {
+  font-size: 20px;
+  font-variant-numeric: tabular-nums;
+}
+.film-decision-review-signal small {
+  padding-left: 3px;
+  font-size: 10px;
+  color: var(--muted);
+}
+.film-decision-review-stage p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 12px 0 0;
+}
+.film-decision-review-final {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.film-decision-review-final > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+.film-decision-review-lesson {
+  display: grid;
+  gap: 8px;
+  padding-top: 15px;
+}
+.film-decision-review-lesson > strong {
+  font-size: 15px;
+  line-height: 1.45;
+}
+.film-decision-review-lesson small {
+  color: var(--muted);
+  line-height: 1.45;
+}
+@media (max-width: 640px) {
+  .film-decision-review {
+    padding: 14px;
+  }
+  .film-decision-review-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .film-decision-review-final {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
