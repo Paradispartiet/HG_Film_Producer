@@ -138,6 +138,23 @@ async function run(browser, spec) {
     await release.locator(".release-option-grid--festivals input[type=radio]").first().check();
     await release.locator(".release-actions button.primary-button").click();
     await awaitSaved(page, "releaseResult");
+    // The completed release can be reopened without changing the saved outcome.
+    const completedRelease = page.locator(".completed-phase-row").last();
+    await completedRelease.locator("button").click();
+    const decisionReview = page.locator(".release-step-panel .film-decision-review");
+    await decisionReview.waitFor({ state: "visible" });
+    assert.equal(await decisionReview.locator(".film-decision-review-stage").count(), 4, "Four production stages explained");
+    assert.equal(await decisionReview.locator(".film-decision-review-lesson strong").count(), 1, "A next-film learning suggestion is present");
+    const savedRelease = (await readSaved(page)).projects[0].releaseResult;
+    const scoreText = await decisionReview.locator(".film-decision-review-final .film-decision-review-signal strong").allTextContents();
+    assert.deepEqual(scoreText.map((value) => Number(value.split("/")[0])), [
+      savedRelease.filmResult.quality,
+      savedRelease.filmResult.audienceAppeal,
+      savedRelease.filmResult.criticalAppeal
+    ], "Film outcome is read from the saved result");
+    const reviewWidth = await decisionReview.evaluate((el) => ({ width: el.clientWidth, scroll: el.scrollWidth }));
+    assert.ok(reviewWidth.scroll <= reviewWidth.width + 2, "Decision review overflows: " + JSON.stringify(reviewWidth));
+    await completedRelease.locator("button").click();
 
     const review = await expectPhase(page, ".career-application-panel", "career review", milestones);
     await review.locator(".career-application-heading button.primary-button").click();
