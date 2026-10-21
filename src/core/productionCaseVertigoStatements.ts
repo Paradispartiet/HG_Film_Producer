@@ -142,7 +142,7 @@ export const VERTIGO_PRODUCTION_STATEMENT_ROWS = [
 export const CANONICAL_VERTIGO_STATEMENTS = VERTIGO_PRODUCTION_STATEMENT_ROWS.map((row) => row[0]);
 
 const translations: ReadonlyMap<string, readonly [string, string, string]> = new Map(
-  VERTIGO_PRODUCTION_STATEMENT_ROWS.map(([canonical, nb, fr, pt]) => [canonical, [nb, fr, pt] as const]),
+  VERTIGO_PRODUCTION_STATEMENT_ROWS.map(([canonical, nb, fr, pt]) => [canonical, [nb, fr, pt] as const] as const),
 );
 
 export function presentVertigoProductionStatement(
