@@ -59,7 +59,9 @@ export function calculateReleaseRevenue(
     roi,
     notes: [
       `${totalViewers.toLocaleString("en-US")} estimated viewers at ${VIEWER_VALUE[strategy.channel].toFixed(2)} gross value per viewer.`,
-      `Net revenue subtracts the production budget, marketing, additional production preparation (${Math.round(additionalProductionSpend)}), and a ${Math.round(DISTRIBUTION_RATE[strategy.channel] * 100)}% distribution share.`
+      additionalProductionSpend > 0
+        ? `Net revenue subtracts the production budget, marketing, additional production preparation (${Math.round(additionalProductionSpend)}), and a ${Math.round(DISTRIBUTION_RATE[strategy.channel] * 100)}% distribution share.`
+        : `Net revenue subtracts the production budget, marketing, and a ${Math.round(DISTRIBUTION_RATE[strategy.channel] * 100)}% distribution share.`
     ]
   };
 }
