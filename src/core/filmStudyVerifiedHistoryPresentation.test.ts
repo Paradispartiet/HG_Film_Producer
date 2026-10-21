@@ -16,11 +16,12 @@ const scenarioIds = [
   "scenario_the_lives_of_others_2006",
   "scenario_lost_in_translation_2003",
   "scenario_bicycle_thieves_1948",
+  "scenario_vertigo_1958",
 ] as const;
 const source = readFileSync("src/ui/data/scenarioFilmStudyMap.ts", "utf8");
 const panel = readFileSync("src/ui/components/ScenarioFilmStudyPanel.tsx", "utf8");
 
-test("history exact-text translations are grounded in the three unchanged canonical source profiles", () => {
+test("history exact-text translations are grounded in unchanged canonical source profiles", () => {
   for (const scenarioId of scenarioIds) {
     const start = source.indexOf(`  ${scenarioId}: {`);
     assert.ok(start > 0, `missing canonical profile: ${scenarioId}`);
@@ -28,7 +29,7 @@ test("history exact-text translations are grounded in the three unchanged canoni
     assert.ok(end > start, `missing closing source profile: ${scenarioId}`);
     const profile = source.slice(start, end);
     const rows = FILM_HISTORY_PRESENTATION_ROWS[scenarioId];
-    assert.equal(rows.length, scenarioId === "scenario_12_angry_men_1957" ? 16 : 15);
+    assert.equal(rows.length, scenarioId === "scenario_12_angry_men_1957" || scenarioId === "scenario_vertigo_1958" ? 16 : 15);
     assert.equal(new Set(rows.map((row) => row[0])).size, rows.length, `duplicate exact claims: ${scenarioId}`);
     for (const row of rows) {
       assert.ok(profile.includes(JSON.stringify(row[0])), `${scenarioId}: source claim changed or missing: ${row[0]}`);
@@ -62,7 +63,7 @@ test("only exact matching history options are translated; donor options and unkn
   assert.equal(presentVerifiedFilmHistoryText("nb", "other_scenario", "Psychological thriller"), "Psychological thriller");
 });
 
-test("generated source-verified answer feedback has EN/NB/FR/PT display text for all three films", () => {
+test("generated source-verified answer feedback has EN/NB/FR/PT display text for the reviewed films", () => {
   const feedback = [
     "This connects the film's historical position directly to its documented production method.",
     "This is a real film-historical explanation, but it belongs to a different case and production tradition.",

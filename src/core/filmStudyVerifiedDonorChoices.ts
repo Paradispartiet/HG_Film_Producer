@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 
 /**
- * Ten display-only translations of exact source-backed distractor options.
+ * Twelve display-only translations of exact source-backed distractor options.
  * The immutable label is selected by the existing Film Study quiz; fingerprint
  * and source ID are audited against the real data module in CI.
  * Nothing in this file changes the question, the donor, the choice ID or grade.
@@ -18,6 +18,42 @@ type DonorChoice = {
 export const FILM_STUDY_VERIFIED_DONOR_CHOICES: Readonly<
   Record<string, Partial<Record<"partial" | "miss", DonorChoice>>>
 > = {
+  scenario_vertigo_1958: {
+    "partial": {
+      "donorScenarioId": "scenario_mad_max_fury_road_2015",
+      "canonicalLength": 242,
+      "canonicalHash": 962643567,
+      "preview": "2010s global action cinema combining practical production",
+      "summary": {
+        "en": "Mad Max: Fury Road: practical stunts and digital finish (2015)",
+        "nb": "Mad Max: Fury Road: praktiske stunt og digital ferdigstilling (2015)",
+        "fr": "Mad Max: Fury Road : cascades réelles et finition numérique (2015)",
+        "pt": "Mad Max: Fury Road: acrobacias reais e finalização digital (2015)"
+      },
+      "text": {
+        "nb": "Global actionfilm fra 2010-årene med praktisk produksjon og digital ferdigstilling: Utvikling styrt av storyboards, ekte kjøretøy, flerkameraoppsett, sentrert action og omfattende stuntarbeid gir rask klipping som likevel bevarer geografisk oversikt.",
+        "fr": "Cinéma d'action mondial des années 2010 associant production pratique et finition numérique : une préparation guidée par les storyboards, des véhicules réels, des dispositifs multicaméras, une action centrée dans le cadre et d'importantes cascades permettent un montage rapide qui conserve une géographie lisible.",
+        "pt": "Cinema de ação global da década de 2010 que combina produção prática e finalização digital: o desenvolvimento guiado por storyboards, veículos reais, dispositivos multicâmara, ação centrada no enquadramento e numerosas acrobacias permitem uma montagem rápida cuja geografia permanece compreensível."
+      }
+    },
+    "miss": {
+      "donorScenarioId": "scenario_unknown_pleasures_2002",
+      "canonicalLength": 1013,
+      "canonicalHash": 837107067,
+      "preview": "2002 Chinese independent digital-video cinema",
+      "summary": {
+        "en": "Unknown Pleasures: independent DV and hybrid film finish (2002)",
+        "nb": "Unknown Pleasures: uavhengig DV-produksjon (2002)",
+        "fr": "Unknown Pleasures : DV indépendant et finition sur pellicule (2002)",
+        "pt": "Unknown Pleasures: DV independente e finalização em película (2002)"
+      },
+      "text": {
+        "nb": "Kinesisk uavhengig digitalvideofilm i 2002: offentlige steder i Datong, observerende arbeid med små kameraer, skuespill i lange tagninger, digital tekstur, rask produksjon og ferdigstilling fra digitalvideo til filmkopi: Festival de Cannes registrerer Unknown Pleasures som en produksjon fra Japan, Frankrike, Sør-Korea og Kina fra 2002 på 113 minutter, regissert og skrevet av Jia Zhangke, fotografert av Yu Lik-wai, klippet av Chow Keung og med scenografi av Liang Jingdong. Jias egne produksjonsuttalelser forklarer at DV gjorde det mulig å arbeide tett på skuespillerne og i offentlige rom uten å vekke like mye oppmerksomhet, å reagere på uventede hendelser i omgivelsene og å utforske videoens særegne bildeuttrykk fremfor å skjule det. Senses of Cinema oppgir en innspilling på nitten dager med stram økonomi. Den tidlige DV-teknologien hadde samtidig klare begrensninger, blant annet vanskelige utendørsopptak i sterkt lys. Jias senere forklaring av etterarbeidet viser den hybride ferdigstillingen: digital fargebehandling før overføring til film, fulgt av ytterligere fotokjemisk fargejustering.",
+        "fr": "Cinéma indépendant chinois tourné en vidéo numérique en 2002 : espaces publics de Datong, observation avec une petite caméra, jeu en plans longs, texture numérique, production rapide et finition de la vidéo vers la pellicule : le Festival de Cannes répertorie Unknown Pleasures comme une coproduction Japon/France/Corée du Sud/Chine de 2002, d'une durée de 113 minutes, écrite et réalisée par Jia Zhangke, photographiée par Yu Lik-wai, montée par Chow Keung et dont les décors sont signés Liang Jingdong. Le témoignage de Jia sur la production explique que la vidéo numérique permettait de travailler plus près des acteurs et dans l'espace public, avec moins d'intrusion, de réagir aux événements imprévus de l'environnement et d'explorer le caractère visuel du DV plutôt que de le dissimuler. Senses of Cinema rapporte un tournage de dix-neuf jours sous de fortes contraintes financières. Le DV de cette époque imposait toutefois des limites réelles, notamment pour les extérieurs très lumineux. Le récit ultérieur de Jia sur la postproduction précise la finition hybride : un travail numérique sur la couleur précédait le transfert sur pellicule, suivi d'autres ajustements colorimétriques photochimiques.",
+        "pt": "Cinema independente chinês em vídeo digital em 2002: espaços públicos de Datong, observação com câmaras pequenas, interpretação em planos longos, textura digital, produção rápida e finalização com passagem do digital para película: o Festival de Cannes regista Unknown Pleasures como uma coprodução Japão/França/Coreia do Sul/China de 2002, com 113 minutos, escrita e realizada por Jia Zhangke, fotografada por Yu Lik-wai, montada por Chow Keung e com cenografia de Liang Jingdong. O testemunho de Jia sobre a produção explica que o DV permitiu trabalhar mais perto dos atores e nos espaços públicos, de forma menos intrusiva, reagir a acontecimentos inesperados no ambiente e explorar a qualidade visual própria do vídeo digital, em vez de a ocultar. A Senses of Cinema refere uma rodagem de dezanove dias com recursos financeiros limitados. Ao mesmo tempo, o DV inicial impunha limitações reais, incluindo exteriores difíceis sob luz intensa. O relato posterior de Jia sobre a pós-produção explicita a finalização híbrida: o tratamento digital da cor antecedeu a transferência para película, seguido de manipulação fotoquímica adicional da cor."
+      }
+    }
+  },
   scenario_bicycle_thieves_1948: {
     "partial": {
       "donorScenarioId": "scenario_about_dry_grasses_2023",
@@ -195,7 +231,7 @@ export function presentVerifiedFilmStudyDonorChoice(
 }
 
 /**
- * Short option label for the eight source-locked donor alternatives.
+ * Short option label for source-locked donor alternatives.
  * A changed donor label never receives a stale synopsis.
  * The complete source-matched explanation remains available through the
  * adjacent disclosure and is always used for the real quiz.

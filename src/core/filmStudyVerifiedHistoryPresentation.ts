@@ -1,8 +1,9 @@
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 import { presentVerifiedFilmStudyDonorChoice, presentVerifiedFilmStudyDonorChoiceSummary } from "./filmStudyVerifiedDonorChoices.js";
+import { VERTIGO_FILM_HISTORY_ROWS } from "./filmStudyVertigoHistoryRows.js";
 
 /**
- * Source-locked presentation for the first four verified film-history cases.
+ * Source-locked presentation for the reviewed film-history cases.
  * Canonical profile/choice/source data and grading are never changed.
  * Each row is [exact canonical English text, Norwegian, French, Portuguese].
  * Unknown claims, unreviewed donor-film distractors and source citations stay canonical
@@ -11,6 +12,7 @@ import { presentVerifiedFilmStudyDonorChoice, presentVerifiedFilmStudyDonorChoic
 type HistoryTextRow = readonly [canonical: string, nb: string, fr: string, pt: string];
 
 export const FILM_HISTORY_PRESENTATION_ROWS = {
+  scenario_vertigo_1958: VERTIGO_FILM_HISTORY_ROWS,
   scenario_bicycle_thieves_1948: [
     [
       "Postwar Italian neorealism",
@@ -414,7 +416,7 @@ export function presentVerifiedFilmHistoryChoice(
 }
 
 /**
- * Deliberately shorter, source-locked title for the four reviewed film
+ * Deliberately shorter, source-locked title for the reviewed film
  * exercises. The full historical statement must remain independently readable.
  * Other films and changed canonical statements retain the original answer UI.
  */

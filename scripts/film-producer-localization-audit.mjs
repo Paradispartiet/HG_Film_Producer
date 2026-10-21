@@ -68,6 +68,29 @@ for (const match of presentationSource.matchAll(
     count: match[2].split("\n").filter((line) => /^\s*"/.test(line)).length,
   });
 }
+// Explicit external module contract: each source key belongs to one Vertigo
+// production-brief statement, with one presentation for every language.
+const vertigoSource = read("src/core/productionCaseVertigoStatements.ts");
+const vertigoMatch = vertigoSource.match(
+  /export const VERTIGO_PRODUCTION_STATEMENT_ROWS = (\[[\s\S]*?\]) as const;/,
+);
+if (!vertigoMatch || !presentationSource.includes('import { presentVertigoProductionStatement }') ||
+    !presentationSource.includes('scenarioId === "scenario_vertigo_1958"')) {
+  problems.push("vertigo_external_statement_mapping_missing");
+} else {
+  try {
+    const vertigoRows = JSON.parse(vertigoMatch[1]);
+    const originals = vertigoRows.map((row) => row[0]);
+    if (vertigoRows.length !== 22 || new Set(originals).size !== 22 ||
+        vertigoRows.some((row) => row.length !== 4 || row.some((value) => typeof value !== "string" || !value.trim()))) {
+      problems.push("vertigo_external_statement_contract_invalid");
+    } else {
+      canonicalStatementArrays.push({ name: "CANONICAL_VERTIGO_STATEMENTS", count: originals.length });
+    }
+  } catch {
+    problems.push("vertigo_external_statement_data_not_json");
+  }
+}
 if (canonicalStatementArrays.length !== mappedIds.size ||
     canonicalStatementArrays.some((entry) => entry.count === 0)) {
   problems.push("canonical_statement_array_mapping_requires_review");
