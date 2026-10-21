@@ -135,6 +135,28 @@ if (!fourHundredBlowsMatch || !presentationSource.includes('import { presentFour
     problems.push("fourHundredBlows_external_statement_data_not_json");
   }
 }
+// Film 9: source-locked The Shining brief, without modifying canonical source claims.
+const shiningSource = read("src/core/productionCaseShiningStatements.ts");
+const shiningMatch = shiningSource.match(
+  /export const SHINING_PRODUCTION_STATEMENT_ROWS = (\[[\s\S]*?\]) as const;/,
+);
+if (!shiningMatch || !presentationSource.includes('import { presentShiningProductionStatement }') ||
+    !presentationSource.includes('scenarioId === "scenario_the_shining_1980"')) {
+  problems.push("shining_external_statement_mapping_missing");
+} else {
+  try {
+    const rows = JSON.parse(shiningMatch[1]);
+    const originals = rows.map((row) => row[0]);
+    if (rows.length !== 22 || new Set(originals).size !== 22 ||
+        rows.some((row) => row.length !== 4 || row.some((value) => typeof value !== "string" || !value.trim()))) {
+      problems.push("shining_external_statement_contract_invalid");
+    } else {
+      canonicalStatementArrays.push({ name: "CANONICAL_SHINING_STATEMENTS", count: rows.length });
+    }
+  } catch {
+    problems.push("shining_external_statement_data_not_json");
+  }
+}
 if (canonicalStatementArrays.length !== mappedIds.size ||
     canonicalStatementArrays.some((entry) => entry.count === 0)) {
   problems.push("canonical_statement_array_mapping_requires_review");

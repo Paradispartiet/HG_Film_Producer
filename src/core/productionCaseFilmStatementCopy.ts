@@ -4,6 +4,7 @@ import { presentSeedFallbackText } from "./productionCaseSeedPresentation.js";
 import { presentVertigoProductionStatement } from "./productionCaseVertigoStatements.js";
 import { presentBreathlessProductionStatement } from "./productionCaseBreathlessStatements.js";
 import { presentFourHundredBlowsProductionStatement } from "./productionCaseFourHundredBlowsStatements.js";
+import { presentShiningProductionStatement } from "./productionCaseShiningStatements.js";
 
 /**
  * One source-verified film at a time. Only exact canonical authored statements
@@ -507,6 +508,9 @@ export function presentVerifiedFilmStatement(
   }
   if (scenarioId === "scenario_the_400_blows_1959") {
     return presentFourHundredBlowsProductionStatement(language, original);
+  }
+  if (scenarioId === "scenario_the_shining_1980") {
+    return presentShiningProductionStatement(language, original);
   }
   if (scenarioId === "scenario_breathless_1960") {
     return presentBreathlessProductionStatement(language, original);

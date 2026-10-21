@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 
 /**
- * Sixteen display-only translations of exact source-backed distractor options.
+ * Sixteen original source-bound distractor translations, reused for 18 choices across nine films.
  * The immutable label is selected by the existing Film Study quiz; fingerprint
  * and source ID are audited against the real data module in CI.
  * Nothing in this file changes the question, the donor, the choice ID or grade.
@@ -15,7 +15,7 @@ type DonorChoice = {
   readonly text: Readonly<Record<"nb" | "fr" | "pt", string>>;
 };
 
-export const FILM_STUDY_VERIFIED_DONOR_CHOICES: Readonly<
+const SOURCE_LOCKED_DONOR_CHOICES: Readonly<
   Record<string, Partial<Record<"partial" | "miss", DonorChoice>>>
 > = {
   scenario_the_400_blows_1959: {
@@ -275,6 +275,25 @@ export const FILM_STUDY_VERIFIED_DONOR_CHOICES: Readonly<
         pt: `Produção americana amadurecida de longas-metragens mudas em 1925: Charles Chaplin Productions com distribuição pela United Artists, reunindo autoria da estrela-produtora, grande escala de locais de rodagem, construção em estúdio, efeitos e dramaturgia cómica de longa-metragem: Chaplin escreve, realiza, produz, monta e protagoniza, enquanto Roland Totheroh assegura a fotografia e Charles D. Hall dirige a direção artística. Uma grande equipa combina duas semanas de trabalho na neve de Truckee com uma produção extensa nos Chaplin Studios. A imagem da multidão no passo de Chilkoot envolve centenas de figurantes; as filmagens principais regressam depois a Hollywood, onde uma vasta cordilheira artificial e cenários controlados transformam uma geografia perigosa num espaço cómico repetível.`,
       },
     },
+  },
+};
+
+/**
+ * Film 9 uses the same two exact canonical donor profiles as Bicycle Thieves,
+ * but with the reversed partial/miss order. Reuse their vetted long translations
+ * and fingerprint metadata rather than duplicating historical statements.
+ */
+const bicycleThievesDonors = SOURCE_LOCKED_DONOR_CHOICES.scenario_bicycle_thieves_1948;
+if (!bicycleThievesDonors?.partial || !bicycleThievesDonors?.miss) {
+  throw new Error("Missing source-locked Bicycle Thieves historical donor texts");
+}
+export const FILM_STUDY_VERIFIED_DONOR_CHOICES: Readonly<
+  Record<string, Partial<Record<"partial" | "miss", DonorChoice>>>
+> = {
+  ...SOURCE_LOCKED_DONOR_CHOICES,
+  scenario_the_shining_1980: {
+    partial: bicycleThievesDonors.miss, // Oppenheimer (2023)
+    miss: bicycleThievesDonors.partial, // About Dry Grasses (2023)
   },
 };
 
