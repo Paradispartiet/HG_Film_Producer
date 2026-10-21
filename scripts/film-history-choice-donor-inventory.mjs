@@ -64,8 +64,6 @@ const inventory = targets.map((scenarioId) => {
   return { scenarioId, choices: rows };
 });
 
-console.log("FESTEN_RUNTIME_DONORS=" + JSON.stringify(inventory.find((item) => item.scenarioId === "scenario_the_celebration_1998")));
-
 const translationBundle = await build({
   entryPoints: ["src/core/filmStudyVerifiedDonorChoices.ts"],
   bundle: true,
