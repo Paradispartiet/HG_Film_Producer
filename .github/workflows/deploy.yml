@@ -118,6 +118,7 @@ jobs:
           preview_pid=$!
           trap 'kill "${preview_pid}" 2>/dev/null || true' EXIT
           node scripts/film-producer-four-language-browser-qa.mjs
+          node scripts/studio-career-handoff-browser-qa.mjs
 
       - name: Preserve smoke evidence and visual-review screenshots
         if: always()
