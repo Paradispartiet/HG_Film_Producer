@@ -72,7 +72,7 @@ for (const match of presentationSource.matchAll(
 // production-brief statement, with one presentation for every language.
 const vertigoSource = read("src/core/productionCaseVertigoStatements.ts");
 const vertigoMatch = vertigoSource.match(
-  /export const VERTIGO_PRODUCTION_STATEMENT_ROWS = (\\[[\\s\\S]*?\\]) as const;/,
+  /export const VERTIGO_PRODUCTION_STATEMENT_ROWS = (\[[\s\S]*?\]) as const;/,
 );
 if (!vertigoMatch || !presentationSource.includes('import { presentVertigoProductionStatement }') ||
     !presentationSource.includes('scenarioId === "scenario_vertigo_1958"')) {
