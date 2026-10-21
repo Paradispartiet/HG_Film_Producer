@@ -40,3 +40,12 @@ test("development result action counts keep singular and plural grammar", () => 
   assert.equal(STUDIO_CAREER_DEVELOPMENT_COPY.fr.result.actionsApplied(1), "1 action de développement appliquée");
   assert.equal(STUDIO_CAREER_DEVELOPMENT_COPY.pt.result.actionsApplied(2), "2 ações de desenvolvimento aplicadas");
 });
+
+test("latest development outcome guidance remains localized in all four languages", () => {
+  for (const language of languages) {
+    assert.ok(STUDIO_CAREER_DEVELOPMENT_COPY[language].feedback.eyebrow.trim().length > 0);
+    assert.ok(STUDIO_CAREER_DEVELOPMENT_COPY[language].feedback.nextChoice.trim().length > 0);
+  }
+  assert.equal(STUDIO_CAREER_DEVELOPMENT_COPY.nb.feedback.eyebrow, "Resultatet av valget ditt");
+  assert.equal(STUDIO_CAREER_DEVELOPMENT_COPY.en.feedback.eyebrow, "Your latest decision");
+});
