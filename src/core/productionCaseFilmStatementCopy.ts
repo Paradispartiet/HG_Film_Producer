@@ -2,6 +2,7 @@ import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 import type { ProductionCaseBriefType } from "./productionCaseBriefCopy.js";
 import { presentSeedFallbackText } from "./productionCaseSeedPresentation.js";
 import { presentVertigoProductionStatement } from "./productionCaseVertigoStatements.js";
+import { presentBreathlessProductionStatement } from "./productionCaseBreathlessStatements.js";
 
 /**
  * One source-verified film at a time. Only exact canonical authored statements
@@ -502,6 +503,9 @@ export function presentVerifiedFilmStatement(
     return Object.prototype.hasOwnProperty.call(presentation, original)
       ? presentation[original as MachinistStatement]
       : original;
+  }
+  if (scenarioId === "scenario_breathless_1960") {
+    return presentBreathlessProductionStatement(language, original);
   }
   if (scenarioId === "scenario_vertigo_1958") {
     return presentVertigoProductionStatement(language, original);

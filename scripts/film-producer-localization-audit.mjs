@@ -91,6 +91,29 @@ if (!vertigoMatch || !presentationSource.includes('import { presentVertigoProduc
     problems.push("vertigo_external_statement_data_not_json");
   }
 }
+// Explicit external module contract: each source key belongs to one Breathless
+// production-brief statement, with one presentation for every language.
+const breathlessSource = read("src/core/productionCaseBreathlessStatements.ts");
+const breathlessMatch = breathlessSource.match(
+  /export const BREATHLESS_PRODUCTION_STATEMENT_ROWS = (\[[\s\S]*?\]) as const;/,
+);
+if (!breathlessMatch || !presentationSource.includes('import { presentBreathlessProductionStatement }') ||
+    !presentationSource.includes('scenarioId === "scenario_breathless_1960"')) {
+  problems.push("breathless_external_statement_mapping_missing");
+} else {
+  try {
+    const breathlessRows = JSON.parse(breathlessMatch[1]);
+    const originals = breathlessRows.map((row) => row[0]);
+    if (breathlessRows.length !== 22 || new Set(originals).size !== 22 ||
+        breathlessRows.some((row) => row.length !== 4 || row.some((value) => typeof value !== "string" || !value.trim()))) {
+      problems.push("breathless_external_statement_contract_invalid");
+    } else {
+      canonicalStatementArrays.push({ name: "CANONICAL_BREATHLESS_STATEMENTS", count: originals.length });
+    }
+  } catch {
+    problems.push("breathless_external_statement_data_not_json");
+  }
+}
 if (canonicalStatementArrays.length !== mappedIds.size ||
     canonicalStatementArrays.some((entry) => entry.count === 0)) {
   problems.push("canonical_statement_array_mapping_requires_review");
