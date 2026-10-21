@@ -8,11 +8,11 @@ interface ProjectPipelineProps {
   readonly project: ProjectDashboardSummary;
   readonly steps: readonly PipelineStepSummary[];
   readonly currentPhase?: number;
-  readonly onNextAction?: () => void;
+  readonly onNextAction?: (() => void) | undefined;
   readonly isProductionCase?: boolean;
   readonly isCareerComplete?: boolean;
   readonly isPastProject?: boolean;
-  readonly nextProjectNumber?: number;
+  readonly nextProjectNumber?: number | undefined;
 }
 
 export function ProjectPipeline({ project, steps, currentPhase = 0, onNextAction, isProductionCase = false, isCareerComplete = false, isPastProject = false, nextProjectNumber }: ProjectPipelineProps) {
