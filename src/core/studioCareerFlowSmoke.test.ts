@@ -8,6 +8,7 @@ import {
   getStudioCareerActivePhase,
   getStudioCareerCurrentPhaseIndex,
   getStudioCareerNextProjectFormId,
+  getStudioCareerPhaseStatus,
   getStudioCareerSummaryProject,
   getStudioCareerFestivalInputName,
   getStudioCareerReleaseStrategyInputName,
@@ -118,4 +119,15 @@ test("finished films offer the next project setup, not the completed career revi
   assert.match(pipeline, /isCareerComplete \|\| index < currentPhase/);
   assert.match(pipeline, /aria-current=\{statusId === "in-progress" \? "step" : undefined\}/);
   assert.doesNotMatch(pipeline, /phase-card-grid/);
+});
+
+
+test("only one current production step needs action, and a finished film has none", () => {
+  for (let current = 0; current < 6; current++) {
+    const statuses = Array.from({ length: 6 }, (_, index) => getStudioCareerPhaseStatus(index, current, false));
+    assert.equal(statuses.filter((status) => status === "in-progress").length, 1);
+    assert.equal(statuses.filter((status) => status === "complete").length, current);
+    assert.equal(statuses.filter((status) => status === "locked").length, 5 - current);
+  }
+  assert.deepEqual(Array.from({ length: 6 }, (_, index) => getStudioCareerPhaseStatus(index, 5, true)), Array(6).fill("complete"));
 });
