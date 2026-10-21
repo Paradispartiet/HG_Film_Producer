@@ -52,6 +52,8 @@ export function ShootPanel({
   const numberedProject = projectLabel !== "first film";
   const totalDays = preparation.productionSchedule.shootDays.length;
   const currentDay = getNextShootDay(preparation, shootDayResults);
+  const latestDay = shootDayResults.at(-1);
+  const earlierDays = shootDayResults.slice(0, -1);
 
   function resolveDay() {
     if (!selectedProductionEventId) return;
@@ -69,9 +71,9 @@ export function ShootPanel({
       </div>
       <ShootSchedulePanel currentDay={currentDay} preparation={preparation} projectLabel={projectLabel} resolvedDays={shootDayResults} />
       <SceneDifficultyPanel projectLabel={projectLabel} summaries={preparation.sceneDifficultySummaries} />
-      {shootDayResults.map((dayResult, index) => (
-        <ShootDayResultPanel dayNumber={index + 1} key={dayResult.updatedShootDay.id} preparation={preparation} projectLabel={projectLabel} result={dayResult} />
-      ))}
+      {latestDay && (
+        <ShootDayResultPanel dayNumber={shootDayResults.length} key={latestDay.updatedShootDay.id} preparation={preparation} projectLabel={projectLabel} result={latestDay} />
+      )}
       {currentDay && (
         <>
           <ProductionEventPanel
@@ -91,6 +93,14 @@ export function ShootPanel({
             <button className="primary-button" disabled={!selectedProductionEventId} onClick={resolveDay} type="button">{copy.panel.resolveDay(currentDay.dayNumber)}</button>
           </div>
         </>
+      )}
+      {earlierDays.length > 0 && (
+        <details className="shoot-prior-days">
+          <summary>{copy.dayResult.priorDays(earlierDays.length)}</summary>
+          {earlierDays.map((dayResult, index) => (
+            <ShootDayResultPanel dayNumber={index + 1} key={dayResult.updatedShootDay.id} preparation={preparation} projectLabel={projectLabel} result={dayResult} />
+          ))}
+        </details>
       )}
       {shootResult && <ShootEvaluationPanel projectLabel={projectLabel} result={shootResult} />}
     </section>
