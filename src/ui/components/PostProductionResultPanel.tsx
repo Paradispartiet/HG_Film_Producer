@@ -25,7 +25,7 @@ export function PostProductionResultPanel({ result, projectLabel = "first film",
     <section className={`panel post-production-result-panel${isLaterFilm ? " post-production-result-panel--later-project" : ""}`}>
       <div className="post-panel-heading"><div><span className="eyebrow">{copy.lockedEyebrow(projectLabel)}</span><h2>{copy.heading(projectLabel)}</h2></div><div className="locked-cut-score"><span>{copy.overall}</span><strong>{evaluation.overall}</strong></div></div>
       <div className="applied-decision-grid">{decisions.map((decision) => <div key={decision.title}><span>{formatStudioCareerPostProductionMoney(decision.cost, language)}</span><strong>{decision.title}</strong><p>{formatStudioCareerPostProductionStats(decision.statChanges, language)}</p></div>)}</div>
-      <TestScreeningPanel result={result.testScreeningResult} scriptDraftScore={scriptDraftScore} />
+      <TestScreeningPanel result={result.testScreeningResult} scriptDraftScore={scriptDraftScore} editingApproachId={result.editingApproachId} />
       <section className="post-result-section">
         <div className="post-section-heading"><div><span className="eyebrow">{copy.finalEyebrow}</span><h3>{copy.scorecardHeading}</h3></div><p>{copy.totalCost(formatStudioCareerPostProductionMoney(evaluation.totalCost, language))}</p></div>
         <div className="post-metric-grid post-metric-grid--wide">{metrics.map(([label, value]) => <div className="post-metric" key={label}><span>{label}</span><strong>{value}</strong></div>)}</div>
