@@ -8,7 +8,7 @@ export const CUCKOOS_NEST_FILM_HISTORY_ROWS = [
   ],
   [
     "New Hollywood",
-    "New Hollywood",
+    "Den nye Hollywood-bølgen",
     "Nouvel Hollywood",
     "Nova Hollywood"
   ],
