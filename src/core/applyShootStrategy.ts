@@ -1,13 +1,13 @@
 import type { ShootDay, ShootDayResult } from "../domain/shoot.js";
 
 /** Player response to an on-set event. Costs scale with the actual day budget. */
-export const SHOOT_STRATEGY_IDS = ["steady", "extra_takes", "fast_setup"] as const;
+export const SHOOT_STRATEGY_IDS = ["steady", "extra_takes", "fast_setup", "trim_scope", "replan_shoot"] as const;
 export type ShootStrategyId = (typeof SHOOT_STRATEGY_IDS)[number];
 
 export interface ShootStrategyPreview {
   readonly qualityChange: number;
   readonly costChange: number;
-  /** Extra days for an extended shoot; fast setup can instead recover one existing delay. */
+  /** Calendar change: extra takes and re-planning add time; fast setup can recover a delay. */
   readonly extraDays: number;
 }
 
@@ -24,6 +24,10 @@ export function previewShootStrategy(id: ShootStrategyId, plannedCost: number): 
     case "steady": return { qualityChange: 0, costChange: 0, extraDays: 0 };
     case "extra_takes": return { qualityChange: 10, costChange: Math.round(budget * 0.12), extraDays: 1 };
     case "fast_setup": return { qualityChange: -7, costChange: -Math.round(budget * 0.08), extraDays: 0 };
+    // Cut coverage and extras: cheaper production at a visible creative cost.
+    case "trim_scope": return { qualityChange: -12, costChange: -Math.round(budget * 0.18), extraDays: 0 };
+    // Replace overtime with a longer calendar: preserve takes but lose schedule health.
+    case "replan_shoot": return { qualityChange: 0, costChange: -Math.round(budget * 0.10), extraDays: 1 };
   }
 }
 

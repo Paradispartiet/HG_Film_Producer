@@ -379,10 +379,10 @@
   }
 }
 
-/* Shoot choices affect the actual engine result; keep all three readable on phones. */
+/* Shoot choices affect the actual engine result; keep five options readable on phones. */
 .shoot-strategy-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
   gap: 9px;
 }
 .shoot-strategy-card {
@@ -405,6 +405,7 @@
 .shoot-strategy-card p { margin: 0; font-size: 12px; line-height: 1.45; color: var(--muted); }
 .shoot-strategy-tradeoffs { display: grid; gap: 5px; font-size: 11px; }
 .shoot-strategy-tradeoffs span { font-variant-numeric: tabular-nums; }
+.shoot-strategy-budget-pressure { margin: 12px 0; padding: 12px 14px; border-left: 3px solid var(--accent); background: var(--accent-soft); color: var(--muted-light); font-size: 12px; line-height: 1.55; }
 .shoot-strategy-consequence {
   margin: 10px 0 14px;
   padding: 12px 14px;

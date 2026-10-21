@@ -14,7 +14,7 @@ const base: ShootDayResult = {
 };
 const completed: ShootDayResult = { ...base, completedSceneIds: ["scene_1" as never] };
 
-test("all three shoot responses lead to distinct cost, take and time tradeoffs", () => {
+test("original three shoot responses retain their cost, take and time tradeoffs", () => {
   const steady = applyShootStrategy(day, completed, "steady");
   const takes = applyShootStrategy(day, completed, "extra_takes");
   const fast = applyShootStrategy(day, completed, "fast_setup");
@@ -52,4 +52,31 @@ test("interrupted scenes cannot gain take quality from extra takes", () => {
   assert.equal(stopped.result.takeQuality, base.takeQuality);
   assert.equal(stopped.summary.takeQualityDelta, 0);
   assert.equal(stopped.result.costSpent, 116_000);
+});
+
+test("budget pressure offers distinct cost-saving tradeoffs in the real engine", () => {
+  const scope = applyShootStrategy(day, completed, "trim_scope");
+  const reschedule = applyShootStrategy(day, completed, "replan_shoot");
+  assert.deepEqual(previewShootStrategy("trim_scope", 100_000), { qualityChange: -12, costChange: -18_000, extraDays: 0 });
+  assert.deepEqual(previewShootStrategy("replan_shoot", 100_000), { qualityChange: 0, costChange: -10_000, extraDays: 1 });
+  assert.equal(scope.result.costSpent, 86_000);
+  assert.equal(scope.result.takeQuality, 66);
+  assert.equal(scope.result.scheduleDeltaDays, 1);
+  assert.equal(reschedule.result.costSpent, 94_000);
+  assert.equal(reschedule.result.takeQuality, 78);
+  assert.equal(reschedule.result.scheduleDeltaDays, 2);
+  assert.equal(reschedule.summary.delayDaysDelta, 1);
+  assert.equal(scope.summary.delayDaysDelta, 0);
+  assert.deepEqual(completed, { ...base, completedSceneIds: ["scene_1"] }, "Alternatives must not mutate historical days");
+});
+
+test("cost-saving options respect caps and do not create negative costs or take quality", () => {
+  const nearZero = { ...completed, costSpent: 1000, takeQuality: 5, scheduleDeltaDays: 0 };
+  const scope = applyShootStrategy(day, nearZero, "trim_scope");
+  const reschedule = applyShootStrategy(day, nearZero, "replan_shoot");
+  assert.equal(scope.result.costSpent, 0);
+  assert.equal(scope.result.takeQuality, 0);
+  assert.equal(reschedule.result.costSpent, 0);
+  assert.equal(reschedule.result.scheduleDeltaDays, 1);
+  assert.equal(applyShootStrategy(day, base, "replan_shoot").result.takeQuality, base.takeQuality);
 });
