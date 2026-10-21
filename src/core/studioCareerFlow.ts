@@ -40,6 +40,11 @@ export function getStudioCareerActivePanelId(projectId: string): string {
   return `phase-action-${projectId}`;
 }
 
+/** Stable target for the next-film setup, separate from the finished career-review panel. */
+export function getStudioCareerNextProjectFormId(projectId: string): string {
+  return `next-project-setup-${projectId}`;
+}
+
 export function shouldCollapseStudioCareerProject(args: {
   readonly isLatest: boolean;
   readonly careerApplicationResult?: unknown;
