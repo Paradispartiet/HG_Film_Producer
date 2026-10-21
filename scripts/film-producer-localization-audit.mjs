@@ -201,6 +201,31 @@ if (!festenMatch || !presentationSource.includes('import { presentFestenProducti
     problems.push("festen_external_statement_data_not_json");
   }
 }
+// Film 12: exact-source The Idiots / Idioterne seed presentation.
+// Its original seeded gameplay type remains unchanged; this is display-only.
+const idiotsSource = read("src/core/productionCaseIdiotsStatements.ts");
+const idiotsMatch = idiotsSource.match(
+  /export const IDIOTS_PRODUCTION_STATEMENT_ROWS = (\[[\s\S]*?\]) as const;/,
+);
+if (!idiotsMatch || !presentationSource.includes('import { presentIdiotsProductionStatement }') ||
+    !presentationSource.includes('scenarioId === "scenario_the_idiots_1998" && briefType === "seed_fallback"')) {
+  problems.push("idiots_exact_seed_presentation_missing");
+} else {
+  try {
+    const rows = JSON.parse(idiotsMatch[1]);
+    const originals = rows.map((row) => row[0]);
+    const expectedRawSource = read("src/core/chapterSeventeenTheIdiotsExpansion.ts");
+    const missing = originals.filter((original) => !expectedRawSource.includes(JSON.stringify(original)) && original !== "Comedy");
+    if (rows.length !== 20 || new Set(originals).size !== 20 || missing.length > 0 ||
+        rows.some((row) => row.length !== 4 || row.some((value) => typeof value !== "string" || !value.trim()))) {
+      problems.push("idiots_exact_seed_contract_invalid");
+    } else {
+      canonicalStatementArrays.push({ name: "CANONICAL_IDIOTS_STATEMENTS", count: rows.length });
+    }
+  } catch {
+    problems.push("idiots_exact_seed_data_not_json");
+  }
+}
 if (canonicalStatementArrays.length !== mappedIds.size ||
     canonicalStatementArrays.some((entry) => entry.count === 0)) {
   problems.push("canonical_statement_array_mapping_requires_review");
@@ -263,7 +288,7 @@ const report = {
   schemaVersion: "1.0",
   kind: "film_producer_source_localization_inventory",
   languages,
-  coverageDefinition: "Exact film-specific authored statements routed through presentVerifiedFilmStatement; not whole-film or whole-journey localization.",
+  coverageDefinition: "Exact film-specific authored statements routed through a scenario-locked display resolver; film 12 retains seeded gameplay and uses its existing shared generic seed translations. Not whole-film or whole-journey localization.",
   counts: {
     verifiedProductionCases: records.length,
     exactStatementCases: localized.length,
