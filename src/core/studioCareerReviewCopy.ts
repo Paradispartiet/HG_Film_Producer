@@ -68,6 +68,31 @@ interface CareerReviewCopy {
     readonly prestigeGrowth: string;
     readonly awardMomentum: string;
   };
+  readonly decisionReview: {
+    readonly eyebrow: string;
+    readonly heading: string;
+    readonly introduction: string;
+    readonly development: string;
+    readonly team: string;
+    readonly shoot: string;
+    readonly edit: string;
+    readonly scriptOutcome: (scenes: number, score: number) => string;
+    readonly locationOutcome: (name: string, score: number) => string;
+    readonly mentorOutcome: (technique: string) => string;
+    readonly teamChoice: (crew: number, actors: number) => string;
+    readonly teamOutcome: (crewScore: number, chemistry: number) => string;
+    readonly shootChoice: (days: number) => string;
+    readonly shootOutcome: (takeQuality: number, eventCost: string) => string;
+    readonly finalResult: string;
+    readonly quality: string;
+    readonly audience: string;
+    readonly critics: string;
+    readonly reputation: string;
+    readonly nextFilmLesson: string;
+    readonly learningSignal: (score: number) => string;
+    readonly noBonus: string;
+    readonly lessons: Readonly<Record<"script" | "casting" | "shoot" | "edit", string>>;
+  };
   readonly goal: {
     readonly label: string;
     readonly releaseContributed: string;
@@ -116,6 +141,36 @@ export const STUDIO_CAREER_REVIEW_COPY: Readonly<Record<FilmWorkLanguage, Career
     studioDelta: { ledger: "Studio ledger", beforeAfter: "Before / after", money: "Money", reputation: "Reputation", prestige: "Prestige", note: "Release effects and any earned milestone rewards are included in the final totals." },
     completedFilm: { summary: "Completed film summary", quality: "Quality", audienceAppeal: "Audience appeal", criticalAppeal: "Critical appeal", grossRevenue: "Gross revenue", netRevenue: "Net revenue", awardsWon: "Awards won", awardWinsRecorded: "Award wins recorded" },
     careerYear: { label: "Career year", reviewHeading: (year) => `Year ${year} review`, nextQuarter: "Next quarter", income: "Income", expenses: "Expenses", completedFilms: "Completed films", careerEvaluation: "Career evaluation", yearProfit: "Year profit", cashHealth: "Cash health", reputationGrowth: "Reputation growth", prestigeGrowth: "Prestige growth", awardMomentum: "Award momentum" },
+    decisionReview: {
+      eyebrow: "Production reflection",
+      heading: "How this film came together",
+      introduction: "Your recorded decisions and the results observed at each stage. The final score depends on the full simulation, not any one choice alone.",
+      development: "Development",
+      team: "Cast and crew",
+      shoot: "Shooting",
+      edit: "Editing",
+      scriptOutcome: (scenes, score) => `${scenes} scenes · script evaluation ${score}/100`,
+      locationOutcome: (name, score) => `${name} · location fit ${score}/100`,
+      mentorOutcome: (technique) => `Technique: ${technique}`,
+      teamChoice: (crew, actors) => `${crew} crew · ${actors} actors`,
+      teamOutcome: (crewScore, chemistry) => `Crew evaluation ${crewScore}/100 · casting chemistry ${chemistry}/100`,
+      shootChoice: (days) => `${days} shooting days with selected set events`,
+      shootOutcome: (take, cost) => `Average take quality ${take}/100 · combined event cost impact ${cost}`,
+      finalResult: "The finished film and studio impact",
+      quality: "Film quality",
+      audience: "Audience appeal",
+      critics: "Critical appeal",
+      reputation: "Reputation change",
+      nextFilmLesson: "A focus for the next film",
+      learningSignal: (score) => `This was the lowest available production signal (${score}/100).`,
+      noBonus: "An editorial suggestion based on this film's results, not a new score or a gameplay bonus.",
+      lessons: {
+        script: "Give the next script another development pass.",
+        casting: "Prioritize actor chemistry when building the next cast.",
+        shoot: "Plan the next shoot around stronger takes and fewer disruptions.",
+        edit: "Reserve time to refine the next film's final cut."
+      }
+    },
     goal: { label: "Strategic goal", releaseContributed: "Release contributed", noConfirmedProgress: "No confirmed progress yet", helpfulResult: "Helpful result", trackingPending: "Tracking pending", note: "Full strategic-goal progress tracking is not enabled yet. This review keeps the selected goal visible without inventing a progress percentage." }
   },
   nb: {
@@ -155,6 +210,36 @@ export const STUDIO_CAREER_REVIEW_COPY: Readonly<Record<FilmWorkLanguage, Career
     studioDelta: { ledger: "Studiohovedbok", beforeAfter: "Før / etter", money: "Penger", reputation: "Omdømme", prestige: "Prestisje", note: "Effekter fra lanseringen og eventuelle opptjente milepælbelønninger er med i sluttallene." },
     completedFilm: { summary: "Oppsummering av fullført film", quality: "Kvalitet", audienceAppeal: "Publikumsappell", criticalAppeal: "Kritikerappell", grossRevenue: "Bruttoinntekt", netRevenue: "Nettoinntekt", awardsWon: "Priser vunnet", awardWinsRecorded: "Registrerte prisgevinster" },
     careerYear: { label: "Karriereår", reviewHeading: (year) => `Gjennomgang av år ${year}`, nextQuarter: "Neste kvartal", income: "Inntekter", expenses: "Utgifter", completedFilms: "Fullførte filmer", careerEvaluation: "Karrierevurdering", yearProfit: "Årsresultat", cashHealth: "Likviditet", reputationGrowth: "Omdømmevekst", prestigeGrowth: "Prestisjevekst", awardMomentum: "Prismomentum" },
+    decisionReview: {
+      eyebrow: "Produksjonserfaring",
+      heading: "Slik ble filmen til",
+      introduction: "Valgene dine og resultatene som ble registrert i hver fase. Sluttresultatet bygger på hele simuleringen, ikke ett enkelt valg.",
+      development: "Utvikling",
+      team: "Skuespillere og stab",
+      shoot: "Innspilling",
+      edit: "Klipp",
+      scriptOutcome: (scenes, score) => `${scenes} scener · manusvurdering ${score}/100`,
+      locationOutcome: (name, score) => `${name} · lokasjonstilpasning ${score}/100`,
+      mentorOutcome: (technique) => `Teknikk: ${technique}`,
+      teamChoice: (crew, actors) => `${crew} i stab · ${actors} skuespillere`,
+      teamOutcome: (crewScore, chemistry) => `Stabsvurdering ${crewScore}/100 · samspill ${chemistry}/100`,
+      shootChoice: (days) => `${days} opptaksdager med valgte hendelser`,
+      shootOutcome: (take, cost) => `Gjennomsnittlig tagning ${take}/100 · samlet kostnadseffekt fra hendelser ${cost}`,
+      finalResult: "Ferdig film og effekt på studioet",
+      quality: "Filmkvalitet",
+      audience: "Publikumsappell",
+      critics: "Kritikerappell",
+      reputation: "Endring i omdømme",
+      nextFilmLesson: "Ta med til neste film",
+      learningSignal: (score) => `Dette var det laveste tilgjengelige produksjonstallet (${score}/100).`,
+      noBonus: "Et råd basert på filmens resultater, ikke en ny poengsum eller en spillbonus.",
+      lessons: {
+        script: "Bruk mer tid på manusutviklingen i neste film.",
+        casting: "Prioriter samspillet mellom skuespillerne i neste rollebesetning.",
+        shoot: "Planlegg neste innspilling for bedre tagninger og færre forstyrrelser.",
+        edit: "Sett av tid til å videreutvikle klippen i neste film."
+      }
+    },
     goal: { label: "Strategisk mål", releaseContributed: "Lanseringen bidro", noConfirmedProgress: "Ingen bekreftet fremgang ennå", helpfulResult: "Nyttig resultat", trackingPending: "Sporing avventer", note: "Full sporing av fremgang mot strategiske mål er ikke aktivert ennå. Gjennomgangen viser det valgte målet uten å finne på en fremgangsprosent." }
   },
   fr: {
@@ -194,6 +279,36 @@ export const STUDIO_CAREER_REVIEW_COPY: Readonly<Record<FilmWorkLanguage, Career
     studioDelta: { ledger: "Registre du studio", beforeAfter: "Avant / après", money: "Trésorerie", reputation: "Réputation", prestige: "Prestige", note: "Les effets de la sortie et les éventuelles récompenses de jalons sont inclus dans les totaux finaux." },
     completedFilm: { summary: "Résumé du film terminé", quality: "Qualité", audienceAppeal: "Attrait public", criticalAppeal: "Attrait critique", grossRevenue: "Recettes brutes", netRevenue: "Recettes nettes", awardsWon: "Prix remportés", awardWinsRecorded: "Prix remportés enregistrés" },
     careerYear: { label: "Année de carrière", reviewHeading: (year) => `Bilan de l’année ${year}`, nextQuarter: "Trimestre suivant", income: "Revenus", expenses: "Dépenses", completedFilms: "Films terminés", careerEvaluation: "Évaluation de carrière", yearProfit: "Résultat annuel", cashHealth: "Santé de trésorerie", reputationGrowth: "Progression de réputation", prestigeGrowth: "Progression de prestige", awardMomentum: "Dynamique des prix" },
+    decisionReview: {
+      eyebrow: "Bilan de production",
+      heading: "Comment le film a pris forme",
+      introduction: "Vos choix et les résultats enregistrés à chaque étape. Le bilan final provient de l'ensemble de la simulation, pas d'un seul choix.",
+      development: "Développement",
+      team: "Distribution et équipe",
+      shoot: "Tournage",
+      edit: "Montage",
+      scriptOutcome: (scenes, score) => `${scenes} scènes · scénario ${score}/100`,
+      locationOutcome: (name, score) => `${name} · adéquation du lieu ${score}/100`,
+      mentorOutcome: (technique) => `Technique : ${technique}`,
+      teamChoice: (crew, actors) => `${crew} membres d'équipe · ${actors} acteurs`,
+      teamOutcome: (crewScore, chemistry) => `Équipe ${crewScore}/100 · alchimie ${chemistry}/100`,
+      shootChoice: (days) => `${days} jours avec événements choisis`,
+      shootOutcome: (take, cost) => `Qualité moyenne des prises ${take}/100 · impact financier des événements ${cost}`,
+      finalResult: "Film terminé et impact sur le studio",
+      quality: "Qualité du film",
+      audience: "Attrait public",
+      critics: "Attrait critique",
+      reputation: "Variation de réputation",
+      nextFilmLesson: "Piste pour le prochain film",
+      learningSignal: (score) => `C'est l'indicateur de production le plus faible disponible (${score}/100).`,
+      noBonus: "Une suggestion tirée des résultats, sans nouveau score ni bonus.",
+      lessons: {
+        script: "Retravailler davantage le scénario du prochain film.",
+        casting: "Privilégier l'alchimie des acteurs pour la prochaine distribution.",
+        shoot: "Mieux préparer les prises et les imprévus du prochain tournage.",
+        edit: "Prévoir davantage de temps pour affiner le prochain montage."
+      }
+    },
     goal: { label: "Objectif stratégique", releaseContributed: "La sortie a contribué", noConfirmedProgress: "Aucune progression confirmée", helpfulResult: "Résultat favorable", trackingPending: "Suivi en attente", note: "Le suivi complet de la progression des objectifs stratégiques n’est pas encore activé. Ce bilan garde l’objectif sélectionné visible sans inventer de pourcentage de progression." }
   },
   pt: {
@@ -233,6 +348,36 @@ export const STUDIO_CAREER_REVIEW_COPY: Readonly<Record<FilmWorkLanguage, Career
     studioDelta: { ledger: "Registo do estúdio", beforeAfter: "Antes / depois", money: "Dinheiro", reputation: "Reputação", prestige: "Prestígio", note: "Os efeitos do lançamento e quaisquer recompensas de marcos obtidas estão incluídos nos totais finais." },
     completedFilm: { summary: "Resumo do filme concluído", quality: "Qualidade", audienceAppeal: "Apelo ao público", criticalAppeal: "Apelo crítico", grossRevenue: "Receita bruta", netRevenue: "Receita líquida", awardsWon: "Prémios ganhos", awardWinsRecorded: "Prémios ganhos registados" },
     careerYear: { label: "Ano de carreira", reviewHeading: (year) => `Revisão do ano ${year}`, nextQuarter: "Trimestre seguinte", income: "Receitas", expenses: "Despesas", completedFilms: "Filmes concluídos", careerEvaluation: "Avaliação de carreira", yearProfit: "Resultado anual", cashHealth: "Saúde financeira", reputationGrowth: "Crescimento de reputação", prestigeGrowth: "Crescimento de prestígio", awardMomentum: "Impulso de prémios" },
+    decisionReview: {
+      eyebrow: "Balanço da produção",
+      heading: "Como este filme ganhou forma",
+      introduction: "As escolhas e os resultados registados em cada fase. O resultado final depende de toda a simulação, não de uma única escolha.",
+      development: "Desenvolvimento",
+      team: "Elenco e equipa",
+      shoot: "Rodagem",
+      edit: "Montagem",
+      scriptOutcome: (scenes, score) => `${scenes} cenas · avaliação do guião ${score}/100`,
+      locationOutcome: (name, score) => `${name} · adequação do local ${score}/100`,
+      mentorOutcome: (technique) => `Técnica: ${technique}`,
+      teamChoice: (crew, actors) => `${crew} membros da equipa · ${actors} atores`,
+      teamOutcome: (crewScore, chemistry) => `Avaliação da equipa ${crewScore}/100 · química ${chemistry}/100`,
+      shootChoice: (days) => `${days} dias com acontecimentos escolhidos`,
+      shootOutcome: (take, cost) => `Qualidade média das tomadas ${take}/100 · impacto total dos acontecimentos ${cost}`,
+      finalResult: "Filme concluído e impacto no estúdio",
+      quality: "Qualidade do filme",
+      audience: "Apelo ao público",
+      critics: "Apelo crítico",
+      reputation: "Variação da reputação",
+      nextFilmLesson: "Foco para o próximo filme",
+      learningSignal: (score) => `Este foi o indicador de produção disponível mais baixo (${score}/100).`,
+      noBonus: "Sugestão baseada nos resultados do filme, sem pontuação nova nem bónus.",
+      lessons: {
+        script: "Dedicar mais tempo ao guião do próximo filme.",
+        casting: "Dar prioridade à química dos atores no próximo elenco.",
+        shoot: "Preparar melhor as tomadas e os imprevistos da próxima rodagem.",
+        edit: "Reservar tempo para aperfeiçoar a montagem do próximo filme."
+      }
+    },
     goal: { label: "Objetivo estratégico", releaseContributed: "O lançamento contribuiu", noConfirmedProgress: "Ainda sem progresso confirmado", helpfulResult: "Resultado útil", trackingPending: "Acompanhamento pendente", note: "O acompanhamento completo do progresso dos objetivos estratégicos ainda não está ativado. Esta revisão mantém o objetivo selecionado visível sem inventar uma percentagem de progresso." }
   }
 };
