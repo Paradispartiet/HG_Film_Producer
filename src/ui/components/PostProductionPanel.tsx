@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { STUDIO_CAREER_POST_PRODUCTION_COPY } from "../../core/studioCareerPostProductionCopy.js";
+import { STUDIO_CAREER_EDITING_APPROACH_IDS } from "../../core/studioCareerEditingApproach.js";
 import {
   createPostProductionStepResult,
   getPostProductionOptions,
@@ -51,6 +52,7 @@ export function PostProductionPanel({
   const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[language];
   const options = getPostProductionOptions();
   const isLaterFilm = projectLabel !== "first film";
+  const selectedEditingApproach = choices.editingApproachId ?? "balanced";
   const scriptAction = developmentResults.find((action) => action.path === "script");
   const scriptDraftScore = scriptAction?.path === "script" ? scriptAction.overallScore : undefined;
   const choiceLabels: ReadonlyArray<readonly [keyof PostProductionChoices, string]> = [
@@ -95,6 +97,26 @@ export function PostProductionPanel({
         <p>{copy.panel.description}</p>
       </div>
       <EditDecisionPanel onSelect={(id) => select("editDecisionId", id)} options={options.editDecisions} selectedId={choices.editDecisionId} />
+      <section className="editing-tradeoff-section">
+        <div className="post-section-heading">
+          <div><span className="eyebrow">{copy.editingApproach.eyebrow}</span><h3>{copy.editingApproach.heading}</h3></div>
+          <p>{copy.editingApproach.description}</p>
+        </div>
+        <div className="editing-tradeoff-grid" role="radiogroup" aria-label={copy.editingApproach.heading}>
+          {STUDIO_CAREER_EDITING_APPROACH_IDS.map((approachId) => (
+            <label className={selectedEditingApproach === approachId ? "editing-tradeoff-card editing-tradeoff-card--selected" : "editing-tradeoff-card"} key={approachId}>
+              <input
+                type="radio"
+                name="studio-career-editing-approach"
+                value={approachId}
+                checked={selectedEditingApproach === approachId}
+                onChange={() => onChange({ ...choices, editingApproachId: approachId })}
+              />
+              <span><strong>{copy.editingApproach.options[approachId].title}</strong><small>{copy.editingApproach.options[approachId].tradeoff}</small></span>
+            </label>
+          ))}
+        </div>
+      </section>
       <SoundDecisionPanel onSelect={(id) => select("soundDecisionId", id)} options={options.soundDecisions} selectedId={choices.soundDecisionId} />
       <MusicDecisionPanel onSelect={(id) => select("musicDecisionId", id)} options={options.musicDecisions} selectedId={choices.musicDecisionId} />
       <ColorDecisionPanel onSelect={(id) => select("colorDecisionId", id)} options={options.colorDecisions} selectedId={choices.colorDecisionId} />
