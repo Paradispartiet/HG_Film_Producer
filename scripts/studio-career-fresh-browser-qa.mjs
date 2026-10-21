@@ -132,6 +132,19 @@ async function run(browser, spec) {
     }
     await post.locator(".post-production-actions button.primary-button").click();
     await awaitSaved(page, "postProductionResult");
+    const savedPost = (await readSaved(page)).projects[0];
+    const completedScript = savedPost.developmentResults.find((action) => action.path === "script");
+    assert.ok(completedScript, "Script action must be available even after production advances");
+    assert.ok(savedPost.postProductionResult.testScreeningResult.notes.some((note) =>
+      note.includes(completedScript.overallScore + "/100")
+    ), "Script score was actually used during the screening");
+    // Reopen the finished post-production step and verify player-facing evidence.
+    const finishedPostRow = page.locator(".completed-phase-row").last();
+    await finishedPostRow.locator("button").click();
+    const screenplayEvidence = page.locator(".post-production-result-panel .script-screening-evidence");
+    await screenplayEvidence.waitFor({ state: "visible" });
+    assert.match(await screenplayEvidence.innerText(), new RegExp(String(completedScript.overallScore)));
+    await finishedPostRow.locator("button").click();
 
     const release = await expectPhase(page, ".release-step-panel", "release", milestones);
     await release.locator(".release-option-grid--strategies input[type=radio]").first().check();
