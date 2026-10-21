@@ -32,12 +32,15 @@ test("script evidence changes actual test-screening outcome in both directions",
 
 test("legacy screenings are unchanged when no script draft is supplied", () => {
   const legacy = runTestScreening(project, plan);
-  const neutral = runTestScreening(project, plan, undefined, undefined, 55);
+  const neutral = runTestScreening(project, plan, undefined, undefined, 35);
   for (const key of ["clarityScore", "pacingScore", "emotionScore", "audienceHookScore", "confusionRisk"] as const) {
     assert.equal(neutral[key], legacy[key]);
   }
   assert.equal(legacy.notes.length, 2);
   assert.equal(neutral.notes.length, 3);
+  const finishedDraft = runTestScreening(project, plan, undefined, undefined, 55);
+  assert.ok(finishedDraft.clarityScore > legacy.clarityScore, "A typical completed draft should matter");
+  assert.ok(finishedDraft.pacingScore > legacy.pacingScore);
   assert.deepEqual(legacy.recommendedChanges, neutral.recommendedChanges);
 });
 
