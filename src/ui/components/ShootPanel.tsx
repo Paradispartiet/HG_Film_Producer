@@ -102,7 +102,7 @@ export function ShootPanel({
             projectLabel={projectLabel}
             selectedProductionEventId={selectedProductionEventId}
           />
-          <ShootStrategyPanel onSelect={onSelectShootStrategy} plannedCost={currentDay.plannedCost} selectedId={selectedShootStrategyId} />
+          <ShootStrategyPanel budgetRisk={budgetPosition.projected?.risk ?? budgetPosition.actual.risk} onSelect={onSelectShootStrategy} plannedCost={currentDay.plannedCost} selectedId={selectedShootStrategyId} />
           <div className="shoot-actions">
             <div>
               <span className="inline-message" role="status">

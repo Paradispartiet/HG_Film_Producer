@@ -1,4 +1,5 @@
 import { previewShootStrategy, SHOOT_STRATEGY_IDS, type ShootStrategyId } from "../../core/applyShootStrategy.js";
+import type { ShootBudgetRisk } from "../../core/calculateShootBudgetPosition.js";
 import { getFilmWorkIntlLocale } from "../../core/filmWorkLanguage.js";
 import { SHOOT_STRATEGY_COPY } from "../../core/studioCareerShootStrategyCopy.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
@@ -6,16 +7,18 @@ import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 interface ShootStrategyPanelProps {
   readonly selectedId: ShootStrategyId;
   readonly plannedCost: number;
+  readonly budgetRisk: ShootBudgetRisk;
   readonly onSelect: (id: ShootStrategyId) => void;
 }
 
-export function ShootStrategyPanel({ selectedId, plannedCost, onSelect }: ShootStrategyPanelProps) {
+export function ShootStrategyPanel({ selectedId, plannedCost, budgetRisk, onSelect }: ShootStrategyPanelProps) {
   const [language] = useFilmWorkLanguage();
   const copy = SHOOT_STRATEGY_COPY[language];
   const locale = getFilmWorkIntlLocale(language);
   return (
     <section className="shoot-desk-section shoot-strategy-section">
       <div className="shoot-section-heading"><div><span className="eyebrow">{copy.response}</span><h3>{copy.heading}</h3></div><p>{copy.intro}</p></div>
+      {budgetRisk !== "healthy" && <p className="shoot-strategy-budget-pressure" role="status">{copy.budgetPressure[budgetRisk]}</p>}
       <div className="shoot-strategy-grid">
         {SHOOT_STRATEGY_IDS.map((id) => {
           const preview = previewShootStrategy(id, plannedCost);
