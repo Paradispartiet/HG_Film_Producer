@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import type { ShootStrategyId } from "../../core/applyShootStrategy.js";
+import { calculateShootBudgetPosition } from "../../core/calculateShootBudgetPosition.js";
 import { STUDIO_CAREER_SHOOT_COPY } from "../../core/studioCareerShootCopy";
 import type { ProjectShootLabel } from "../types.js";
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
@@ -16,6 +17,7 @@ import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { ProductionEventPanel } from "./ProductionEventPanel.js";
 import { SceneDifficultyPanel } from "./SceneDifficultyPanel.js";
 import { ShootDayResultPanel } from "./ShootDayResultPanel.js";
+import { ShootBudgetMonitor } from "./ShootBudgetMonitor.js";
 import { ShootEvaluationPanel } from "./ShootEvaluationPanel.js";
 import { ShootSchedulePanel } from "./ShootSchedulePanel.js";
 import { ShootStrategyPanel } from "./ShootStrategyPanel.js";
@@ -60,6 +62,16 @@ export function ShootPanel({
   const currentDay = getNextShootDay(preparation, shootDayResults);
   const latestDay = shootDayResults.at(-1);
   const earlierDays = shootDayResults.slice(0, -1);
+  // Preview uses the very same deterministic resolver as the confirmation action.
+  // It does not change save state or book any costs before the player confirms.
+  const previewDay = currentDay && selectedProductionEventId
+    ? resolveNextShootDay(preparation, shootDayResults, { selectedProductionEventId, selectedShootStrategyId }).shootDayResult
+    : undefined;
+  const budgetPosition = calculateShootBudgetPosition(
+    preparation.productionSchedule,
+    shootDayResults.map((day) => day.shootDayResult),
+    previewDay
+  );
 
   function resolveDay() {
     if (!selectedProductionEventId) return;
@@ -76,6 +88,7 @@ export function ShootPanel({
         <p>{copy.panel.intro(projectLabel)}</p>
       </div>
       <ShootSchedulePanel currentDay={currentDay} preparation={preparation} projectLabel={projectLabel} resolvedDays={shootDayResults} />
+      <ShootBudgetMonitor position={budgetPosition} />
       <SceneDifficultyPanel projectLabel={projectLabel} summaries={preparation.sceneDifficultySummaries} />
       {latestDay && (
         <ShootDayResultPanel dayNumber={shootDayResults.length} key={latestDay.updatedShootDay.id} preparation={preparation} projectLabel={projectLabel} result={latestDay} />
