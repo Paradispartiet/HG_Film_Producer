@@ -3,7 +3,7 @@ import type { TestScreeningResult } from "../../domain/post.js";
 import type { StudioCareerEditingApproachId } from "../../core/studioCareerEditingApproach.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 
-export function TestScreeningPanel({ result, scriptDraftScore, editingApproachId }: { readonly result: TestScreeningResult; readonly scriptDraftScore?: number | undefined; readonly editingApproachId?: StudioCareerEditingApproachId }) {
+export function TestScreeningPanel({ result, scriptDraftScore, editingApproachId }: { readonly result: TestScreeningResult; readonly scriptDraftScore?: number | undefined; readonly editingApproachId?: StudioCareerEditingApproachId | undefined }) {
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[language].screening;
   const metrics = [
