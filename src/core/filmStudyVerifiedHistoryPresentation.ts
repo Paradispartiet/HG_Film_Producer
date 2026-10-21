@@ -5,6 +5,7 @@ import { BREATHLESS_FILM_HISTORY_ROWS } from "./filmStudyBreathlessHistoryRows.j
 import { FOUR_HUNDRED_BLOWS_FILM_HISTORY_ROWS } from "./filmStudyFourHundredBlowsHistoryRows.js";
 import { SHINING_FILM_HISTORY_ROWS } from "./filmStudyShiningHistoryRows.js";
 import { CUCKOOS_NEST_FILM_HISTORY_ROWS } from "./filmStudyCuckoosNestHistoryRows.js";
+import { FESTEN_FILM_HISTORY_ROWS } from "./filmStudyFestenHistoryRows.js";
 
 /**
  * Source-locked presentation for the reviewed film-history cases.
@@ -21,6 +22,7 @@ export const FILM_HISTORY_PRESENTATION_ROWS = {
   scenario_the_400_blows_1959: FOUR_HUNDRED_BLOWS_FILM_HISTORY_ROWS,
   scenario_the_shining_1980: SHINING_FILM_HISTORY_ROWS,
   scenario_one_flew_over_the_cuckoo_s_nest_1975: CUCKOOS_NEST_FILM_HISTORY_ROWS,
+  scenario_the_celebration_1998: FESTEN_FILM_HISTORY_ROWS,
   scenario_bicycle_thieves_1948: [
     [
       "Postwar Italian neorealism",
