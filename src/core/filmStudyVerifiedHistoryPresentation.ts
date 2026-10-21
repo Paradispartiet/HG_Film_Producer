@@ -6,6 +6,7 @@ import { FOUR_HUNDRED_BLOWS_FILM_HISTORY_ROWS } from "./filmStudyFourHundredBlow
 import { SHINING_FILM_HISTORY_ROWS } from "./filmStudyShiningHistoryRows.js";
 import { CUCKOOS_NEST_FILM_HISTORY_ROWS } from "./filmStudyCuckoosNestHistoryRows.js";
 import { FESTEN_FILM_HISTORY_ROWS } from "./filmStudyFestenHistoryRows.js";
+import { IDIOTS_FILM_HISTORY_ROWS } from "./filmStudyIdiotsHistoryRows.js";
 
 /**
  * Source-locked presentation for the reviewed film-history cases.
@@ -23,6 +24,7 @@ export const FILM_HISTORY_PRESENTATION_ROWS = {
   scenario_the_shining_1980: SHINING_FILM_HISTORY_ROWS,
   scenario_one_flew_over_the_cuckoo_s_nest_1975: CUCKOOS_NEST_FILM_HISTORY_ROWS,
   scenario_the_celebration_1998: FESTEN_FILM_HISTORY_ROWS,
+  scenario_the_idiots_1998: IDIOTS_FILM_HISTORY_ROWS,
   scenario_bicycle_thieves_1948: [
     [
       "Postwar Italian neorealism",
@@ -417,8 +419,9 @@ export function presentVerifiedFilmHistoryChoice(
   if (!rows) return originalLabel;
   const canonicalPeriod = rows[0]?.[0];
   const translatedPeriod = rows[0]?.[language === "nb" ? 1 : language === "fr" ? 2 : 3];
-  const canonicalMoment = rows[5]?.[0];
-  const translatedMoment = rows[5]?.[language === "nb" ? 1 : language === "fr" ? 2 : 3];
+  const momentIndex = scenarioId === "scenario_the_idiots_1998" ? 8 : 5;
+  const canonicalMoment = rows[momentIndex]?.[0];
+  const translatedMoment = rows[momentIndex]?.[language === "nb" ? 1 : language === "fr" ? 2 : 3];
   return canonicalPeriod && canonicalMoment && translatedPeriod && translatedMoment
     && originalLabel === `${canonicalPeriod}: ${canonicalMoment}`
     ? `${translatedPeriod}: ${translatedMoment}`
@@ -442,7 +445,7 @@ export function presentVerifiedFilmHistoryChoiceSummary(
     return presentVerifiedFilmStudyDonorChoiceSummary(language, scenarioId, quality, originalLabel);
   }
   const period = rows[0]?.[0];
-  const moment = rows[5]?.[0];
+  const moment = rows[scenarioId === "scenario_the_idiots_1998" ? 8 : 5]?.[0];
   if (!period || !moment || originalLabel !== `${period}: ${moment}`) return undefined;
   return presentVerifiedFilmHistoryText(language, scenarioId, period);
 }

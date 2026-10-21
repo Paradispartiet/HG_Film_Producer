@@ -7,6 +7,7 @@ import { presentFourHundredBlowsProductionStatement } from "./productionCaseFour
 import { presentShiningProductionStatement } from "./productionCaseShiningStatements.js";
 import { presentCuckoosNestProductionStatement } from "./productionCaseCuckoosNestStatements.js";
 import { presentFestenProductionStatement } from "./productionCaseFestenStatements.js";
+import { presentIdiotsProductionStatement } from "./productionCaseIdiotsStatements.js";
 
 /**
  * One source-verified film at a time. Only exact canonical authored statements
@@ -552,6 +553,12 @@ export function presentFilmCaseContent(
   scenarioId: string,
   original: string,
 ): string {
+  // The Idiots is still a seeded gameplay brief. Translate only its exact film-specific
+  // runtime texts, then reuse the existing shared seed fallback without changing grading.
+  if (scenarioId === "scenario_the_idiots_1998" && briefType === "seed_fallback") {
+    return presentIdiotsProductionStatement(language, original)
+      ?? presentSeedFallbackText(language, briefType, original);
+  }
   return briefType === "seed_fallback"
     ? presentSeedFallbackText(language, briefType, original)
     : presentVerifiedFilmStatement(language, briefType, scenarioId, original);
