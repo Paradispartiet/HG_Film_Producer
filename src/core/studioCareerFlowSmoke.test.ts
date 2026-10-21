@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 import {
   canApplyStudioCareerResult,
@@ -6,9 +7,11 @@ import {
   getStudioCareerActivePanelId,
   getStudioCareerActivePhase,
   getStudioCareerCurrentPhaseIndex,
+  getStudioCareerSummaryProject,
   getStudioCareerFestivalInputName,
   getStudioCareerReleaseStrategyInputName,
   shouldCollapseStudioCareerProject,
+  shouldOfferStudioCareerNextProject,
   type StudioCareerFlowProject,
 } from "./studioCareerFlow.js";
 
@@ -67,4 +70,33 @@ test("studio career application invariants tolerate missing optional project det
   assert.equal(canApplyStudioCareerResult(sparseReleasedProject), true);
   assert.equal(canCreateNextStudioCareerProject(sparseReleasedProject), false);
   assert.equal(canCreateNextStudioCareerProject({ ...sparseReleasedProject, careerApplicationResult: { updatedCareerState: { completedFilms: [] } } }), true);
+});
+
+test("Studio Career context follows Film Two rather than showing Film One as current", () => {
+  const filmOne = project({ id: "film-one", projectNumber: 1, careerApplicationResult: result });
+  const filmTwo = project({ id: "film-two", projectNumber: 2, developmentResult: result });
+  assert.equal(getStudioCareerSummaryProject([]), undefined);
+  assert.equal(getStudioCareerSummaryProject([filmOne]), filmOne);
+  assert.equal(getStudioCareerSummaryProject([filmOne, filmTwo]), filmTwo);
+  assert.equal(getStudioCareerActivePhase(getStudioCareerSummaryProject([filmOne, filmTwo])!), "pre-production");
+  assert.deepEqual([filmOne, filmTwo], [filmOne, filmTwo], "Reading the active project does not mutate saved films");
+});
+
+test("only the latest completed film can create the next Studio Career project", () => {
+  assert.equal(shouldOfferStudioCareerNextProject({ isLatest: false, careerApplicationResult: result }), false);
+  assert.equal(shouldOfferStudioCareerNextProject({ isLatest: true, careerApplicationResult: result }), true);
+  assert.equal(shouldOfferStudioCareerNextProject({ isLatest: true, careerApplicationResult: null }), false);
+  assert.equal(shouldOfferStudioCareerNextProject({ isLatest: true }), false);
+  assert.equal(shouldOfferStudioCareerNextProject({ isLatest: false }), false);
+  assert.equal(shouldCollapseStudioCareerProject({ isLatest: false, careerApplicationResult: result, manualExpand: true }), false,
+    "Completed earlier projects remain reviewable but may not present another creation action");
+});
+
+test("App wires active-film status to the summary and keeps next-project actions gated", () => {
+  const source = readFileSync("src/ui/App.tsx", "utf8");
+  assert.match(source, /const latestProject = getStudioCareerSummaryProject\(careerRun\)/);
+  assert.match(source, /run=\{summaryProject\.run\}/);
+  assert.match(source, /strategicGoal=\{summaryStrategicGoal\}/);
+  assert.match(source, /shouldOfferStudioCareerNextProject\(\{ isLatest, careerApplicationResult: project\.careerApplicationResult \}\)/);
+  assert.doesNotMatch(source, /RunSummaryPanel careerApplicationResult=\{firstProject\.careerApplicationResult\}/);
 });
