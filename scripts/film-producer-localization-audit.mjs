@@ -157,6 +157,28 @@ if (!shiningMatch || !presentationSource.includes('import { presentShiningProduc
     problems.push("shining_external_statement_data_not_json");
   }
 }
+// Film 10: exact-source One Flew Over the Cuckoo's Nest translations.
+const cuckoosNestSource = read("src/core/productionCaseCuckoosNestStatements.ts");
+const cuckoosNestMatch = cuckoosNestSource.match(
+  /export const CUCKOOS_NEST_PRODUCTION_STATEMENT_ROWS = (\[[\s\S]*?\]) as const;/,
+);
+if (!cuckoosNestMatch || !presentationSource.includes('import { presentCuckoosNestProductionStatement }') ||
+    !presentationSource.includes('scenarioId === "scenario_one_flew_over_the_cuckoo_s_nest_1975"')) {
+  problems.push("cuckoos_nest_external_statement_mapping_missing");
+} else {
+  try {
+    const rows = JSON.parse(cuckoosNestMatch[1]);
+    const originals = rows.map((row) => row[0]);
+    if (rows.length !== 22 || new Set(originals).size !== 22 ||
+        rows.some((row) => row.length !== 4 || row.some((value) => typeof value !== "string" || !value.trim()))) {
+      problems.push("cuckoos_nest_external_statement_contract_invalid");
+    } else {
+      canonicalStatementArrays.push({ name: "CANONICAL_CUCKOOS_NEST_STATEMENTS", count: rows.length });
+    }
+  } catch {
+    problems.push("cuckoos_nest_external_statement_data_not_json");
+  }
+}
 if (canonicalStatementArrays.length !== mappedIds.size ||
     canonicalStatementArrays.some((entry) => entry.count === 0)) {
   problems.push("canonical_statement_array_mapping_requires_review");

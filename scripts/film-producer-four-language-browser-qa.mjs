@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Executable Chromium journey for the nine source-verified Film Producer pilots.
+ * Executable Chromium journey for the ten source-verified Film Producer pilots.
  * 
  * This tests actual browser DOM and navigation in EN/NB/FR/PT. It does NOT
  * certify layout aesthetics, screen-reader usability or all 614 film cases.
@@ -29,6 +29,7 @@ const TARGET_IDS = [
   "scenario_breathless_1960",
   "scenario_the_400_blows_1959",
   "scenario_the_shining_1980",
+  "scenario_one_flew_over_the_cuckoo_s_nest_1975",
 ];
 const LANGUAGE_STORAGE_KEY = "hg_filmwork_language_v1";
 const failures = [];
@@ -260,19 +261,19 @@ try {
   await browser?.close();
 }
 const report = {
-  scope: "nine source-backed filmcases, four interface languages; nonvisual Chromium smoke",
+  scope: "ten source-backed filmcases, four interface languages; nonvisual Chromium smoke",
   locales: LANGUAGES,
   films: TARGET_IDS,
-  expectedJourneys: 36,
+  expectedJourneys: 40,
   completedJourneys: checks.filter((entry) => entry.endsWith(": sources")).length,
   checks,
   failures,
   limitations: [
     "Screenshots are retained for human inspection, not automatically judged.",
-    "Other 605 filmcases and full career completion are outside this smoke test.",
+    "Other 604 filmcases and full career completion are outside this smoke test.",
     "Source title and publisher names remain canonical; URLs and grading remain unchanged.",
   ],
 };
 await writeFile(resolve(REPORT_DIR, "summary.json"), JSON.stringify(report, null, 2) + "\n", "utf8");
-console.log(`Browser QA: ${report.completedJourneys}/36 journeys, ${failures.length} failures`);
-if (failures.length || report.completedJourneys !== 36) process.exitCode = 1;
+console.log(`Browser QA: ${report.completedJourneys}/40 journeys, ${failures.length} failures`);
+if (failures.length || report.completedJourneys !== 40) process.exitCode = 1;
