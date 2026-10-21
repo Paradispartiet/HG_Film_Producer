@@ -3,6 +3,7 @@ import { presentVerifiedFilmStudyDonorChoice, presentVerifiedFilmStudyDonorChoic
 import { VERTIGO_FILM_HISTORY_ROWS } from "./filmStudyVertigoHistoryRows.js";
 import { BREATHLESS_FILM_HISTORY_ROWS } from "./filmStudyBreathlessHistoryRows.js";
 import { FOUR_HUNDRED_BLOWS_FILM_HISTORY_ROWS } from "./filmStudyFourHundredBlowsHistoryRows.js";
+import { SHINING_FILM_HISTORY_ROWS } from "./filmStudyShiningHistoryRows.js";
 
 /**
  * Source-locked presentation for the reviewed film-history cases.
@@ -17,6 +18,7 @@ export const FILM_HISTORY_PRESENTATION_ROWS = {
   scenario_vertigo_1958: VERTIGO_FILM_HISTORY_ROWS,
   scenario_breathless_1960: BREATHLESS_FILM_HISTORY_ROWS,
   scenario_the_400_blows_1959: FOUR_HUNDRED_BLOWS_FILM_HISTORY_ROWS,
+  scenario_the_shining_1980: SHINING_FILM_HISTORY_ROWS,
   scenario_bicycle_thieves_1948: [
     [
       "Postwar Italian neorealism",
