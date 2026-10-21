@@ -156,12 +156,17 @@ async function runCase(browser, language, scenario) {
         assert.ok(complete.trim() && short?.trim(), `${label}: all historical source choices have presentations`);
         if (language !== "en") assert.notEqual(complete, choice.label, `${label}: translated source-backed choice`);
       }
-      await page.setViewportSize({ width: 360, height: 780 });
-      await page.goto(new URL(`#/atlas/film/${slug}`, SITE).href);
-      const mobileLogline = page.locator(".film-analysis-logline");
+      // Use a fresh tab to exercise the canonical deep link at mobile width.
+      // Navigation from the Producer nested flow is a different state transition.
+      const mobile = await context.newPage();
+      mobile.on("pageerror", (error) => errors.push(error.message));
+      await mobile.setViewportSize({ width: 360, height: 780 });
+      await mobile.goto(new URL(`#/atlas/film/${slug}`, SITE).href);
+      const mobileLogline = mobile.locator(".film-analysis-logline");
       await mobileLogline.waitFor({ state: "visible" });
       await textEquals(mobileLogline, caseCopy.presentFilmCaseContent(language, brief.briefType, id, brief.logline), `${label}: 360px translated Atlas premise`);
-      await page.screenshot({ path: resolve(REPORT_DIR, `${label}-seeded-atlas-mobile.png`), fullPage: false });
+      await mobile.screenshot({ path: resolve(REPORT_DIR, `${label}-seeded-atlas-mobile.png`), fullPage: false });
+      await mobile.close();
       checks.push(`${label}: seeded-preview`);
       assert.deepEqual(errors, [], `${label}: uncaught browser errors`);
       console.log(`PASS ${label} · Atlas, Director, seeded preview and verified historical data; Producer mission not yet authored`);
