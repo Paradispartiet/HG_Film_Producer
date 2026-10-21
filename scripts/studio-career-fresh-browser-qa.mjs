@@ -148,9 +148,15 @@ async function run(browser, spec) {
     for (let i = 0; i < 5; i++) {
       await decisions.nth(i).locator('input[type="radio"]').first().check();
     }
+    const boldCut = post.locator('.editing-tradeoff-section input[value="bold_cut"]');
+    await boldCut.check();
+    assert.equal(await boldCut.isChecked(), true, "Bold cut must be selected before locking");
     await post.locator(".post-production-actions button.primary-button").click();
     await awaitSaved(page, "postProductionResult");
     const savedPost = (await readSaved(page)).projects[0];
+    assert.equal(savedPost.postProductionChoices.editingApproachId, "bold_cut", "Editing choice must persist in career save");
+    assert.equal(savedPost.postProductionResult.editingApproachId, "bold_cut", "Editing choice must reach the game engine");
+    assert.ok(savedPost.postProductionResult.testScreeningResult.notes.some((note) => note.includes("Editing approach bold_cut")), "Editing compromise must affect the screening result");
     const completedScript = savedPost.developmentResults.find((action) => action.path === "script");
     assert.ok(completedScript, "Script action must be available even after production advances");
     assert.ok(savedPost.postProductionResult.testScreeningResult.notes.some((note) =>
@@ -161,6 +167,9 @@ async function run(browser, spec) {
     await finishedPostRow.locator("button").click();
     const screenplayEvidence = page.locator(".post-production-result-panel .script-screening-evidence");
     await screenplayEvidence.waitFor({ state: "visible" });
+    const editingEvidence = page.locator(".post-production-result-panel .editing-tradeoff-evidence");
+    await editingEvidence.waitFor({ state: "visible" });
+    assert.ok((await editingEvidence.innerText()).length > 20, "Creative consequence must be visible after locking");
     assert.match(await screenplayEvidence.innerText(), new RegExp(String(completedScript.overallScore)));
     await finishedPostRow.locator("button").click();
 
