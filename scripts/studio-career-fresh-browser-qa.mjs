@@ -146,6 +146,12 @@ async function run(browser, spec) {
     assert.equal(completed.careerApplicationResult.updatedCareerState.completedFilms.length, 1);
     assert.equal(completed.shootDayResults.length, days);
     assert.equal(await page.locator(".studio-career-phase-step--complete").count(), 6);
+    const decisionReview = page.locator(".career-application-panel .production-decision-review");
+    await decisionReview.waitFor({ state: "visible" });
+    assert.ok(await decisionReview.locator(".production-review-decisions li").count() >= 4, "Production choices are visible in the completed-film review");
+    assert.match(await decisionReview.locator(".production-review-final").innerText(), new RegExp(String(completed.careerApplicationResult.completedFilmRecord.quality)));
+    const lessonFromFilmOne = (await decisionReview.locator(".production-review-lesson strong").innerText()).trim();
+    assert.ok(lessonFromFilmOne.length > 15, "Next-film reflection names a concrete area");
     await page.screenshot({ path: resolve(REPORT_DIR, "career-fresh-" + spec.lang + "-completed.png"), fullPage: false });
 
     const setupTwo = page.locator(".next-project-setup-section");
@@ -160,6 +166,9 @@ async function run(browser, spec) {
     const finalState = await readSaved(page);
     assert.equal(finalState.projects[0].careerApplicationResult.completedFilmRecord.projectId, completed.careerApplicationResult.completedFilmRecord.projectId);
     assert.equal(finalState.projects[1].run.project.title, "Second Browser Film");
+    const carriedLesson = page.locator(".next-project-panel").last().locator(".production-decision-review--compact");
+    await carriedLesson.waitFor({ state: "visible" });
+    assert.equal((await carriedLesson.locator(".production-review-lesson strong").innerText()).trim(), lessonFromFilmOne, "Next film reuses its predecessor's learning focus");
     assert.equal(await page.locator(".past-project-summary").count(), 1);
     assert.equal(await page.locator(".studio-career-primary-action").count(), 1);
     const overflow = await page.locator(".project-hero--focused").last().evaluate((el) => ({ width: el.clientWidth, scroll: el.scrollWidth }));
