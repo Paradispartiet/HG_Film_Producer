@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { build } from "esbuild";
 
 /**
- * Runtime-derived donor inventory for Film Study's six source-verified
+ * Runtime-derived donor inventory for Film Study's seven source-verified
  * translation pilots. The quiz selects two *other* films as distractors;
  * do not translate them without verifying their actual canonical donors.
  *
@@ -17,6 +17,7 @@ const targets = [
   "scenario_lost_in_translation_2003",
   "scenario_bicycle_thieves_1948",
   "scenario_vertigo_1958",
+  "scenario_breathless_1960",
 ];
 
 const result = await build({
@@ -36,18 +37,6 @@ const { createFilmHistoryChoices, getSourceBackedFilmHistoryIds, getSourceBacked
 const sourceIds = getSourceBackedFilmHistoryIds();
 const profiles = sourceIds.map((id) => getSourceBackedFilmHistoryProfile(id));
 assert.ok(profiles.length > 100, "Historical source inventory unexpectedly small");
-
-// Discovery-only, using the same runtime profile and donor choice functions.
-const breathless = getSourceBackedFilmHistoryProfile("scenario_breathless_1960");
-assert.ok(breathless);
-const breathlessDonors = createFilmHistoryChoices(breathless)
-  .filter((choice) => choice.quality !== "match")
-  .map((choice) => {
-    const matches = profiles.filter((candidate) => `${candidate.period}: ${candidate.moment}` === choice.label);
-    assert.equal(matches.length, 1, "ambiguous Breathless donor");
-    return { quality: choice.quality, donorScenarioId: matches[0].scenarioId, canonicalOption: choice.label };
-  });
-console.log("BREATHLESS_DONOR_PROBE=" + JSON.stringify(breathlessDonors));
 
 const inventory = targets.map((scenarioId) => {
   const profile = getSourceBackedFilmHistoryProfile(scenarioId);
@@ -117,7 +106,7 @@ for (const item of inventory) {
     checkedDonorChoices += 1;
   }
 }
-assert.equal(checkedDonorChoices, 12);
+assert.equal(checkedDonorChoices, 14);
 console.log("FILM_HISTORY_TRANSLATED_DONOR_CHOICES=" + checkedDonorChoices);
 
 console.log("FILM_HISTORY_DONOR_INVENTORY=" + JSON.stringify(inventory));
