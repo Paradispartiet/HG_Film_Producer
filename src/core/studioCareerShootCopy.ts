@@ -54,6 +54,9 @@ type StudioCareerShootCopy = {
   };
   readonly dayResult: {
     readonly eyebrow: string;
+    readonly selectedEvent: string;
+    readonly eventCostImpact: string;
+    readonly priorDays: (count: number) => string;
     readonly heading: (label: string, day: number) => string;
     readonly takeQuality: (quality: number) => string;
     readonly completedScenes: string;
@@ -135,6 +138,9 @@ export const STUDIO_CAREER_SHOOT_COPY = {
     },
     dayResult: {
       eyebrow: "Resolved day",
+      selectedEvent: "Event on set",
+      eventCostImpact: "Event cost impact",
+      priorDays: (count) => "Earlier day reports" + ` (${count})`,
       heading: (label, day) => label === "first film" ? `Day ${day} result` : `${numberedLabel(label)} day ${day} result`,
       takeQuality: (quality) => `Take quality ${quality}`,
       completedScenes: "Completed scenes",
@@ -210,6 +216,9 @@ export const STUDIO_CAREER_SHOOT_COPY = {
     },
     dayResult: {
       eyebrow: "Løst opptaksdag",
+      selectedEvent: "Hendelse på settet",
+      eventCostImpact: "Kostnadseffekt av hendelsen",
+      priorDays: (count) => "Tidligere dagsrapporter" + ` (${count})`,
       heading: (label, day) => label === "first film" ? `Resultat dag ${day}` : `${numberedLabel(label)} – resultat dag ${day}`,
       takeQuality: (quality) => `Tagning ${quality}`,
       completedScenes: "Fullførte scener",
@@ -285,6 +294,9 @@ export const STUDIO_CAREER_SHOOT_COPY = {
     },
     dayResult: {
       eyebrow: "Journée résolue",
+      selectedEvent: "Événement sur le plateau",
+      eventCostImpact: "Impact financier de l’événement",
+      priorDays: (count) => "Rapports des jours précédents" + ` (${count})`,
       heading: (label, day) => label === "first film" ? `Résultat du jour ${day}` : `${numberedLabel(label)} · résultat du jour ${day}`,
       takeQuality: (quality) => `Qualité de prise ${quality}`,
       completedScenes: "Scènes terminées",
@@ -360,6 +372,9 @@ export const STUDIO_CAREER_SHOOT_COPY = {
     },
     dayResult: {
       eyebrow: "Dia resolvido",
+      selectedEvent: "Ocorrência no cenário",
+      eventCostImpact: "Impacto da ocorrência no custo",
+      priorDays: (count) => "Relatórios dos dias anteriores" + ` (${count})`,
       heading: (label, day) => label === "first film" ? `Resultado do dia ${day}` : `${numberedLabel(label, "pt")} · resultado do dia ${day}`,
       takeQuality: (quality) => `Qualidade da tomada ${quality}`,
       completedScenes: "Cenas concluídas",
