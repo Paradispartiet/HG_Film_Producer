@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { build } from "esbuild";
 
 /**
- * Runtime-derived donor inventory for Film Study's seven source-verified
+ * Runtime-derived donor inventory for Film Study's eight source-verified
  * translation pilots. The quiz selects two *other* films as distractors;
  * do not translate them without verifying their actual canonical donors.
  *
@@ -18,6 +18,7 @@ const targets = [
   "scenario_bicycle_thieves_1948",
   "scenario_vertigo_1958",
   "scenario_breathless_1960",
+  "scenario_the_400_blows_1959",
 ];
 
 const result = await build({
@@ -37,18 +38,6 @@ const { createFilmHistoryChoices, getSourceBackedFilmHistoryIds, getSourceBacked
 const sourceIds = getSourceBackedFilmHistoryIds();
 const profiles = sourceIds.map((id) => getSourceBackedFilmHistoryProfile(id));
 assert.ok(profiles.length > 100, "Historical source inventory unexpectedly small");
-
-// CI-only source-derived discovery for the next French New Wave case.
-const newWaveProfile = getSourceBackedFilmHistoryProfile("scenario_the_400_blows_1959");
-assert.ok(newWaveProfile, "Missing The 400 Blows source-backed history profile");
-const newWaveDonors = createFilmHistoryChoices(newWaveProfile)
-  .filter((choice) => choice.quality !== "match")
-  .map((choice) => {
-    const matches = profiles.filter((candidate) => `${candidate.period}: ${candidate.moment}` === choice.label);
-    assert.equal(matches.length, 1, "Ambiguous The 400 Blows donor");
-    return { quality: choice.quality, donorScenarioId: matches[0].scenarioId, canonicalOption: choice.label };
-  });
-console.log("FOUR_HUNDRED_BLOWS_DONOR_PROBE=" + JSON.stringify(newWaveDonors));
 
 const inventory = targets.map((scenarioId) => {
   const profile = getSourceBackedFilmHistoryProfile(scenarioId);
@@ -118,7 +107,7 @@ for (const item of inventory) {
     checkedDonorChoices += 1;
   }
 }
-assert.equal(checkedDonorChoices, 14);
+assert.equal(checkedDonorChoices, 16);
 console.log("FILM_HISTORY_TRANSLATED_DONOR_CHOICES=" + checkedDonorChoices);
 
 console.log("FILM_HISTORY_DONOR_INVENTORY=" + JSON.stringify(inventory));
