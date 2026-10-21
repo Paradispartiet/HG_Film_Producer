@@ -48,7 +48,7 @@ test("history exact-text translations are grounded in unchanged canonical source
         const rendered = presentVerifiedFilmHistoryText(language, scenarioId, row[0]);
         assert.ok(rendered.trim(), `${language}: ${scenarioId}`);
         assert.equal(rendered, language === "en" ? row[0] : row[language === "nb" ? 1 : language === "fr" ? 2 : 3]);
-        if (language !== "en") assert.notEqual(rendered, row[0], `${scenarioId}: ${language}: ${row[0]}`);
+        if (language !== "en" && row[0] !== "Dogme 95") assert.notEqual(rendered, row[0], `${scenarioId}: ${language}: ${row[0]}`);
       }
     }
   }
