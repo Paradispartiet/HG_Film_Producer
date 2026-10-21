@@ -75,6 +75,9 @@ try {
       assert.equal(created.projects[1].projectNumber, 2);
       assert.equal(created.projects[1].run.project.title, "Second Film");
       assert.equal(created.projects[1].developmentResult, null);
+      const carriedLesson = latest.locator(".production-decision-review--compact");
+      await carriedLesson.waitFor({ state: "visible" });
+      assert.ok((await carriedLesson.locator(".production-review-lesson strong").innerText()).trim().length > 10, `${language}: next film gets a production learning focus`);
       assert.equal(await page.locator(".past-project-summary").count(), 1, `${language}: Film One collapsed`);
       assert.equal(await page.locator(".studio-career-primary-action").count(), 1, `${language}: only Film Two actionable`);
       assert.equal((await page.locator(".project-hero h2").last().textContent())?.trim(), "Second Film");
