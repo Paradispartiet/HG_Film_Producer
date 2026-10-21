@@ -1,4 +1,5 @@
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
+import type { StudioCareerBudgetPriorityId } from "./studioCareerBudgetPriority.js";
 
 const PRE_PRODUCTION_DISCIPLINE_IDS = ["directing", "cinematography", "editing"] as const;
 type PreProductionDisciplineId = (typeof PRE_PRODUCTION_DISCIPLINE_IDS)[number];
@@ -40,6 +41,14 @@ type StudioCareerPreProductionCopy = {
     readonly starPower: string;
     readonly reliability: string;
     readonly fee: string;
+  };
+  readonly budget: {
+    readonly eyebrow: string;
+    readonly heading: string;
+    readonly intro: string;
+    readonly options: Readonly<Record<StudioCareerBudgetPriorityId, { readonly title: string; readonly tradeoff: string }>>;
+    readonly expense: (amount: string) => string;
+    readonly recorded: (amount: string) => string;
   };
   readonly returning: {
     readonly workedTogether: (filmCount: number) => string;
@@ -112,6 +121,18 @@ export const STUDIO_CAREER_PRE_PRODUCTION_COPY = {
       reliability: "Reliability",
       fee: "Fee",
     },
+    budget: {
+      eyebrow: "04 · Budget priority",
+      heading: "Where should the extra preparation money go?",
+      intro: "Choose one tradeoff before locking the team. Funded preparation adds 6% of the film budget to actual film costs; holding the reserve adds no cost.",
+      options: {
+        reserve: { title: "Protect the reserve", tradeoff: "No extra spend or score boost; keep financial headroom." },
+        cast_focus: { title: "Rehearse the cast", tradeoff: "Spend 6% on acting rehearsals: cast fit up to +9 and chemistry up to +4." },
+        crew_focus: { title: "Prepare the crew", tradeoff: "Spend 6% on technical rehearsals: crew fit up to +9 and reliability up to +4." }
+      },
+      expense: (amount) => `Extra investment ${amount}`,
+      recorded: (amount) => `Budget priority · additional cost ${amount}`
+    },
     returning: {
       workedTogether: (filmCount) => `Worked together on ${filmCount} film${filmCount === 1 ? "" : "s"}`,
       studioRegular: "Studio regular",
@@ -180,6 +201,18 @@ export const STUDIO_CAREER_PRE_PRODUCTION_COPY = {
       starPower: "Stjernekraft",
       reliability: "Pålitelighet",
       fee: "Honorar",
+    },
+    budget: {
+      eyebrow: "04 · Budsjettprioritering",
+      heading: "Hva skal vi bruke ekstra forberedelsespenger på?",
+      intro: "Velg ett kompromiss før du låser staben. Forberedelser koster 6 % av filmbudsjettet i tillegg til eksisterende filmkostnader. Å beholde reserven koster ingenting.",
+      options: {
+        reserve: { title: "Behold reserven", tradeoff: "Ingen ekstra utgifter eller poengøkning; behold økonomisk handlingsrom." },
+        cast_focus: { title: "Øv med skuespillerne", tradeoff: "Bruk 6 % på prøver: casting inntil +9 og kjemi inntil +4." },
+        crew_focus: { title: "Forbered filmteamet", tradeoff: "Bruk 6 % på tekniske prøver: stab inntil +9 og pålitelighet inntil +4." }
+      },
+      expense: (amount) => `Ekstra investering ${amount}`,
+      recorded: (amount) => `Budsjettprioritering · ekstra kostnad ${amount}`
     },
     returning: {
       workedTogether: (filmCount) => `Jobbet sammen på ${filmCount} film${filmCount === 1 ? "" : "er"}`,
@@ -250,6 +283,18 @@ export const STUDIO_CAREER_PRE_PRODUCTION_COPY = {
       reliability: "Fiabilité",
       fee: "Cachet",
     },
+    budget: {
+      eyebrow: "04 · Priorité budgétaire",
+      heading: "Où investir dans la préparation ?",
+      intro: "Choisissez un compromis avant de verrouiller l'équipe. La préparation financée ajoute 6 % du budget du film aux dépenses réelles ; garder la réserve ne coûte rien.",
+      options: {
+        reserve: { title: "Conserver la réserve", tradeoff: "Aucune dépense ni amélioration de score ; conserver de la marge." },
+        cast_focus: { title: "Répéter avec les acteurs", tradeoff: "Investir 6 % dans les répétitions : distribution jusqu'à +9 et alchimie jusqu'à +4." },
+        crew_focus: { title: "Préparer l'équipe", tradeoff: "Investir 6 % dans les répétitions techniques : équipe jusqu'à +9 et fiabilité jusqu'à +4." }
+      },
+      expense: (amount) => `Investissement supplémentaire ${amount}`,
+      recorded: (amount) => `Priorité budgétaire · coût supplémentaire ${amount}`
+    },
     returning: {
       workedTogether: (filmCount) => `${filmCount} film${filmCount === 1 ? "" : "s"} ensemble`,
       studioRegular: "Collaborateur régulier du studio",
@@ -318,6 +363,18 @@ export const STUDIO_CAREER_PRE_PRODUCTION_COPY = {
       starPower: "Notoriedade",
       reliability: "Fiabilidade",
       fee: "Remuneração",
+    },
+    budget: {
+      eyebrow: "04 · Prioridade orçamental",
+      heading: "Onde investir na preparação?",
+      intro: "Escolha um compromisso antes de fechar a equipa. A preparação financiada acrescenta 6 % do orçamento aos custos reais do filme; manter a reserva não custa nada.",
+      options: {
+        reserve: { title: "Preservar a reserva", tradeoff: "Sem despesas ou melhoria das pontuações; preservar margem financeira." },
+        cast_focus: { title: "Ensaiar com o elenco", tradeoff: "Investir 6 % em ensaios: elenco até +9 e química até +4." },
+        crew_focus: { title: "Preparar a equipa", tradeoff: "Investir 6 % em ensaios técnicos: equipa até +9 e fiabilidade até +4." }
+      },
+      expense: (amount) => `Investimento extra ${amount}`,
+      recorded: (amount) => `Prioridade orçamental · custo adicional ${amount}`
     },
     returning: {
       workedTogether: (filmCount) => filmCount === 1 ? "Trabalhou em conjunto num filme" : `Trabalhou em conjunto em ${filmCount} filmes`,
