@@ -92,7 +92,8 @@ export function createReleaseStepResult(
   const filmResult = calculateFilmResult(
     project,
     preProductionResult.teamEvaluation,
-    postProductionResult.postProductionEvaluation
+    postProductionResult.postProductionEvaluation,
+    preProductionResult.budgetPriority?.investmentCost ?? 0
   );
   const releaseStrategyScore = scoreReleaseStrategy(
     project,
