@@ -1,8 +1,10 @@
 import { STUDIO_CAREER_SUMMARY_COPY } from "../../core/studioCareerSummaryCopy";
+import type { StrategicGoal } from "../../domain/career.js";
 import { STUDIO_SETUP_COPY, STUDIO_SETUP_SCALE_IDS, type StudioSetupScaleId } from "../../core/studioSetupCopy";
 import type { CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun";
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
 import type { ProjectSetupRun } from "../demo/createProjectSetupRun.js";
+import type { NextProjectStepResult } from "../demo/createNextProjectStepRun.js";
 import type { PreProductionStepResult } from "../demo/createPreProductionStepRun.js";
 import type { PostProductionStepResult } from "../demo/createPostProductionStepRun.js";
 import type { ShootStepResult } from "../demo/createShootStepRun.js";
@@ -10,7 +12,8 @@ import type { ReleaseStepResult } from "../demo/createReleaseStepRun.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 interface RunSummaryPanelProps {
-  readonly run: ProjectSetupRun;
+  readonly run: ProjectSetupRun | NextProjectStepResult;
+  readonly strategicGoal: StrategicGoal;
   readonly careerApplicationResult: CareerApplicationStepResult | null;
   readonly developmentResult: DevelopmentStepResult | null;
   readonly preProductionResult: PreProductionStepResult | null;
@@ -20,7 +23,7 @@ interface RunSummaryPanelProps {
   readonly onEdit: () => void;
 }
 
-export function RunSummaryPanel({ run, careerApplicationResult, developmentResult, preProductionResult, shootResult, postProductionResult, releaseResult, onEdit }: RunSummaryPanelProps) {
+export function RunSummaryPanel({ run, strategicGoal, careerApplicationResult, developmentResult, preProductionResult, shootResult, postProductionResult, releaseResult, onEdit }: RunSummaryPanelProps) {
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_SUMMARY_COPY[language].summary;
   const setupCopy = STUDIO_SETUP_COPY[language];
@@ -32,7 +35,7 @@ export function RunSummaryPanel({ run, careerApplicationResult, developmentResul
         <button className="secondary-button" onClick={onEdit} type="button">{copy.editSetup}</button>
       </div>
       <div className="summary-grid">
-        <SummaryItem label={copy.strategicGoal} value={run.strategicGoal.title} detail={run.strategicGoal.description} />
+        <SummaryItem label={copy.strategicGoal} value={strategicGoal.title} detail={strategicGoal.description} />
         <SummaryItem label={copy.project} value={run.project.title} detail={`${run.project.genre} · ${formatScaleLabel(run.project.scale, setupCopy.project.scales)}`} />
         <SummaryItem label={copy.scriptTemplate} value={run.scriptTemplate.title} detail={run.scriptTemplate.defaultTheme} />
         <SummaryItem

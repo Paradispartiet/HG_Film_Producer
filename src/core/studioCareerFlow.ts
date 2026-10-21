@@ -56,6 +56,21 @@ export function canCreateNextStudioCareerProject(previousProject: StudioCareerFl
   return Boolean(previousProject.careerApplicationResult);
 }
 
+/** Only the last fully applied film may offer the next-film creation form.
+ * Older completed films remain inspectable but must not start duplicate projects.
+ */
+export function shouldOfferStudioCareerNextProject(args: {
+  readonly isLatest: boolean;
+  readonly careerApplicationResult?: unknown;
+}): boolean {
+  return args.isLatest && Boolean(args.careerApplicationResult);
+}
+
+/** The contextual summary follows the most recent film, not Film One forever. */
+export function getStudioCareerSummaryProject<T>(projects: readonly T[]): T | undefined {
+  return projects.at(-1);
+}
+
 export function getStudioCareerReleaseStrategyInputName(projectId: string): string {
   return `${projectId}-release-strategy`;
 }
