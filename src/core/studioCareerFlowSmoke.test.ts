@@ -105,8 +105,8 @@ test("App wires active-film status to the summary and keeps next-project actions
 
 
 test("finished films offer the next project setup, not the completed career review", () => {
-  const finishedFilm = project({ id: "film-one", careerApplicationResult: result });
-  assert.equal(getStudioCareerActivePhase(finishedFilm), "development", "The phase model does not infer finality from career application alone");
+  const finishedFilm = project({ id: "film-one", releaseResult: result, careerApplicationResult: result });
+  assert.equal(getStudioCareerActivePhase(finishedFilm), "career-application", "A finished film still has a historical last phase");
   assert.equal(getStudioCareerNextProjectFormId("film-one"), "next-project-setup-film-one");
   assert.notEqual(getStudioCareerNextProjectFormId("film-one"), getStudioCareerActivePanelId("film-one"));
 
