@@ -79,7 +79,7 @@ jobs:
           path: ./dist
 
   browser-qa:
-    name: Chromium journey · 10 films × 4 languages
+    name: Chromium journey · 11 films × 4 languages
     needs: verify
     runs-on: ubuntu-latest
     timeout-minutes: 20
