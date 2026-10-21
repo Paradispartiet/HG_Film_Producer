@@ -1,6 +1,7 @@
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 import { presentVerifiedFilmStudyDonorChoice, presentVerifiedFilmStudyDonorChoiceSummary } from "./filmStudyVerifiedDonorChoices.js";
 import { VERTIGO_FILM_HISTORY_ROWS } from "./filmStudyVertigoHistoryRows.js";
+import { BREATHLESS_FILM_HISTORY_ROWS } from "./filmStudyBreathlessHistoryRows.js";
 
 /**
  * Source-locked presentation for the reviewed film-history cases.
@@ -13,6 +14,7 @@ type HistoryTextRow = readonly [canonical: string, nb: string, fr: string, pt: s
 
 export const FILM_HISTORY_PRESENTATION_ROWS = {
   scenario_vertigo_1958: VERTIGO_FILM_HISTORY_ROWS,
+  scenario_breathless_1960: BREATHLESS_FILM_HISTORY_ROWS,
   scenario_bicycle_thieves_1948: [
     [
       "Postwar Italian neorealism",
