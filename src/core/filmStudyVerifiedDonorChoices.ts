@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 
 /**
- * Fourteen display-only translations of exact source-backed distractor options.
+ * Sixteen display-only translations of exact source-backed distractor options.
  * The immutable label is selected by the existing Film Study quiz; fingerprint
  * and source ID are audited against the real data module in CI.
  * Nothing in this file changes the question, the donor, the choice ID or grade.
@@ -18,6 +18,42 @@ type DonorChoice = {
 export const FILM_STUDY_VERIFIED_DONOR_CHOICES: Readonly<
   Record<string, Partial<Record<"partial" | "miss", DonorChoice>>>
 > = {
+  scenario_the_400_blows_1959: {
+    "partial": {
+      "donorScenarioId": "scenario_the_battle_of_chile_part_i_1975",
+      "canonicalLength": 756,
+      "canonicalHash": 1355162311,
+      "preview": "1973 Chilean political crisis filmed on portable 16 mm",
+      "summary": {
+        "en": "The Battle of Chile, Part I: 16 mm political documentary (1975)",
+        "nb": "The Battle of Chile, del I: politisk dokumentar på 16 mm (1975)",
+        "fr": "La Bataille du Chili, partie I : documentaire politique en 16 mm (1975)",
+        "pt": "A Batalha do Chile, parte I: documentário político em 16 mm (1975)"
+      },
+      "text": {
+        "nb": "Den politiske krisen i Chile i 1973, filmet med bærbart 16 mm-utstyr; første del ferdigstilt i 1975 gjennom eksil og etterarbeid støttet av ICAIC: Et lite team i felten – Guzmán, fotograf Jorge Müller Silva, lydtekniker Bernardo Menz, produksjonsleder Federico Elton og regiassistent José Bartolomé – arbeidet i Santiago og andre områder med et Éclair-kamera for 16 mm-film, en Nagra-4-opptaker, en Sennheiser-mikrofon, begrenset tilgang på filmmagasiner og batterier og en Citroën 2CV. Etter kuppet i september og teamets fengsling eller fordrivelse sluttet Pedro Chaskel seg til som klipper. Prosjektet fortsatte med støtte fra det kubanske filminstituttet ICAIC. Første del kom i 1975 og bygger på opptak av parlamentariske konflikter, møter, demonstrasjoner, intervjuer og den stadig mer organiserte motstanden mot Unidad Popular.",
+        "fr": "Crise politique chilienne de 1973 filmée avec du matériel 16 mm portable ; achèvement de la première partie en 1975 grâce à l'exil et à une postproduction soutenue par l'ICAIC : Une petite équipe de terrain – Guzmán, le chef opérateur Jorge Müller Silva, l'ingénieur du son Bernardo Menz, le directeur de production Federico Elton et l'assistant réalisateur José Bartolomé – a travaillé à Santiago et ailleurs avec une caméra Éclair 16 mm, un enregistreur Nagra-4, un microphone Sennheiser, des magasins de pellicule et des batteries en quantité limitée, ainsi qu'une Citroën 2CV. Après le coup d'État de septembre et la détention ou le déplacement des membres de l'équipe, Pedro Chaskel a rejoint le projet comme monteur. Le travail s'est poursuivi avec l'appui de l'ICAIC cubain. La première partie, sortie en 1975, assemble des images de conflits parlementaires, de réunions, de manifestations, d'entretiens et de l'opposition de plus en plus organisée à l'Unidad Popular.",
+        "pt": "Crise política chilena de 1973 filmada com equipamento portátil de 16 mm; conclusão da primeira parte em 1975 através do exílio e da pós-produção apoiada pelo ICAIC: Uma pequena equipa de campo – Guzmán, o diretor de fotografia Jorge Müller Silva, o engenheiro de som Bernardo Menz, o diretor de produção Federico Elton e o assistente de realização José Bartolomé – trabalhou em Santiago e noutros locais com uma câmara Éclair de 16 mm, um gravador Nagra-4, um microfone Sennheiser, cartuchos de película e baterias limitados e um Citroën 2CV. Após o golpe de setembro e a detenção ou deslocação dos membros da equipa, Pedro Chaskel integrou o projeto como montador. O trabalho prosseguiu com apoio do ICAIC cubano. A primeira parte, lançada em 1975, resultou de imagens de conflitos parlamentares, reuniões, manifestações, entrevistas e da oposição cada vez mais organizada à Unidad Popular."
+      }
+    },
+    "miss": {
+      "donorScenarioId": "scenario_come_and_see_1985",
+      "canonicalLength": 1010,
+      "canonicalHash": 1978490704,
+      "preview": "mid-1970s screenplay and approval struggle",
+      "summary": {
+        "en": "Come and See: Belarusian wartime drama and subjective filmcraft (1985)",
+        "nb": "Come and See: belarusisk krigsdrama og subjektiv filmform (1985)",
+        "fr": "Requiem pour un massacre : drame de guerre et forme subjective (1985)",
+        "pt": "Come and See: drama de guerra e linguagem subjetiva (1985)"
+      },
+      "text": {
+        "nb": "Manusarbeid og kamp for godkjenning fra midten av 1970-årene; ni måneders innspilling i kronologisk rekkefølge i Belarus i 1984; premiere i 1985; senere restaureringshistorie: Janus beskriver Come and See som en samproduksjon mellom Mosfilm og Belarusfilm, innspilt i handlingens rekkefølge over ni måneder på belarusisk jord i 1984. Aleksej Kravtsjenko, 14 år og i sin første filmrolle, bærer filmens subjektive perspektiv. Fotograf Aleksej Rodionovs visuelle system beskrives gjennom naturalistiske farger, lange opptak med Steadicam og ekstreme nærbilder. Criterion peker også på subjektivt kameraarbeid og ekspresjonistisk lyddesign. Viktor Petrovs scenografi, Eleonora Semjonovas kostymer, Valerija Belovas klipping, Viktor Mors' lydarbeid og Oleg Jantsjenkos musikk er egne faglige produksjonssystemer. Janus dokumenterer også at ekte kuler ble brukt under enkelte opptak. Dette hører bare hjemme i produksjonshistorien som dokumentasjon av svært risikabel praksis og en tydelig sikkerhetsgrense – aldri som en anbefaling i dag eller en snarvei til autentisitet.",
+        "fr": "Écriture du scénario et difficultés d'autorisation à partir du milieu des années 1970 ; neuf mois de tournage chronologique en Biélorussie en 1984 ; sortie en 1985 ; histoire ultérieure des restaurations : Janus présente Requiem pour un massacre comme une coproduction Mosfilm–Belarusfilm tournée dans l'ordre du récit pendant neuf mois en 1984 sur le sol biélorusse. Alexeï Kravtchenko, âgé de quatorze ans et débutant au cinéma, porte le point de vue subjectif du film. L'image d'Alexeï Rodionov repose, selon les descriptions, sur des couleurs naturalistes, de longs plans au Steadicam et de très gros plans. Criterion souligne aussi la caméra subjective et la conception sonore expressionniste. Les décors de Viktor Petrov, les costumes d'Eleonora Semionova, le montage de Valeria Belova, le son de Viktor Mors et la musique d'Oleg Iantchenko relèvent de métiers distincts. Janus documente également l'emploi de vraies balles lors de certaines prises de vues. Ce fait ne doit figurer dans l'histoire de la production que comme une pratique à très haut risque et une limite de sécurité, jamais comme une recommandation actuelle ni comme un raccourci vers l'authenticité.",
+        "pt": "Desenvolvimento do argumento e dificuldades de aprovação desde meados dos anos 1970; nove meses de rodagem pela ordem da narrativa na Bielorrússia em 1984; estreia em 1985; história posterior do restauro: A Janus identifica Come and See como uma coprodução Mosfilm–Belarusfilm, filmada pela ordem das cenas durante nove meses de 1984 em território bielorrusso. Alexei Kravchenko, com catorze anos e na sua primeira participação cinematográfica, sustenta o centro subjetivo da obra. A fotografia de Alexei Rodionov é descrita através de cores naturalistas, longos planos com Steadicam e grandes planos extremos. A Criterion também destaca a câmara subjetiva e o desenho de som expressionista. A direção artística de Viktor Petrov, os figurinos de Eleonora Semyonova, a montagem de Valeriya Belova, o som de Viktor Mors e a música de Oleg Yanchenko constituem áreas técnicas distintas. A Janus também documenta o uso de munições reais durante algumas filmagens. Este facto pertence à história da produção apenas enquanto registo de uma prática de altíssimo risco e de um limite de segurança, nunca como recomendação atual ou atalho para a autenticidade."
+      }
+    }
+  },
   scenario_breathless_1960: {
     "partial": {
       "donorScenarioId": "scenario_the_idiots_1998",

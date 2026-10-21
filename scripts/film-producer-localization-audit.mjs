@@ -114,6 +114,27 @@ if (!breathlessMatch || !presentationSource.includes('import { presentBreathless
     problems.push("breathless_external_statement_data_not_json");
   }
 }
+const fourHundredBlowsSource = read("src/core/productionCaseFourHundredBlowsStatements.ts");
+const fourHundredBlowsMatch = fourHundredBlowsSource.match(
+  /export const FOUR_HUNDRED_BLOWS_PRODUCTION_STATEMENT_ROWS = (\[[\s\S]*?\]) as const;/,
+);
+if (!fourHundredBlowsMatch || !presentationSource.includes('import { presentFourHundredBlowsProductionStatement }') ||
+    !presentationSource.includes('scenarioId === "scenario_the_400_blows_1959"')) {
+  problems.push("fourHundredBlows_external_statement_mapping_missing");
+} else {
+  try {
+    const fourHundredBlowsRows = JSON.parse(fourHundredBlowsMatch[1]);
+    const originals = fourHundredBlowsRows.map((row) => row[0]);
+    if (fourHundredBlowsRows.length !== 22 || new Set(originals).size !== 22 ||
+        fourHundredBlowsRows.some((row) => row.length !== 4 || row.some((value) => typeof value !== "string" || !value.trim()))) {
+      problems.push("fourHundredBlows_external_statement_contract_invalid");
+    } else {
+      canonicalStatementArrays.push({ name: "CANONICAL_FOUR_HUNDRED_BLOWS_STATEMENTS", count: originals.length });
+    }
+  } catch {
+    problems.push("fourHundredBlows_external_statement_data_not_json");
+  }
+}
 if (canonicalStatementArrays.length !== mappedIds.size ||
     canonicalStatementArrays.some((entry) => entry.count === 0)) {
   problems.push("canonical_statement_array_mapping_requires_review");
