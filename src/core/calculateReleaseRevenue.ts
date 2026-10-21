@@ -32,8 +32,12 @@ export function calculateReleaseRevenue(
   project: FilmProject,
   plan: ReleasePlan,
   strategy: ReleaseStrategy,
-  audiences: readonly AudienceResult[]
+  audiences: readonly AudienceResult[],
+  additionalProductionSpend = 0
 ): RevenueResult {
+  if (!Number.isFinite(additionalProductionSpend) || additionalProductionSpend < 0) {
+    throw new Error("Additional production spend must be finite and non-negative.");
+  }
   if (plan.projectId !== project.id || plan.strategyId !== strategy.id) {
     throw new Error(`Release plan does not match project "${project.id}" and strategy "${strategy.id}".`);
   }
@@ -42,7 +46,7 @@ export function calculateReleaseRevenue(
   const grossRevenue = Math.round(totalViewers * VIEWER_VALUE[strategy.channel]);
   const marketingSpend = plan.marketingBudget;
   const distributionCost = Math.round(grossRevenue * DISTRIBUTION_RATE[strategy.channel]);
-  const totalInvestment = project.budget + marketingSpend + distributionCost;
+  const totalInvestment = project.budget + marketingSpend + distributionCost + Math.round(additionalProductionSpend);
   const netRevenue = grossRevenue - totalInvestment;
   const roi = totalInvestment === 0 ? 0 : roundTwo(netRevenue / totalInvestment);
 
@@ -55,7 +59,7 @@ export function calculateReleaseRevenue(
     roi,
     notes: [
       `${totalViewers.toLocaleString("en-US")} estimated viewers at ${VIEWER_VALUE[strategy.channel].toFixed(2)} gross value per viewer.`,
-      `Net revenue subtracts the production budget, marketing, and a ${Math.round(DISTRIBUTION_RATE[strategy.channel] * 100)}% distribution share.`
+      `Net revenue subtracts the production budget, marketing, additional production preparation (${Math.round(additionalProductionSpend)}), and a ${Math.round(DISTRIBUTION_RATE[strategy.channel] * 100)}% distribution share.`
     ]
   };
 }
