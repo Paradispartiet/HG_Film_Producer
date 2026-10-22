@@ -7,6 +7,7 @@ import type { ProjectRunContext } from "../demo/createProjectRunContext.js";
 import {
   createPreProductionResult,
   getActorCandidates,
+  previewCastingChemistry,
   getCrewCandidatesByDiscipline,
   getPreProductionLocationOptions,
   type PreProductionStepResult
@@ -53,6 +54,7 @@ export function PreProductionPanel({
   const locationOptions = getPreProductionLocationOptions(projectContext, developmentResult);
   const crewGroups = getCrewCandidatesByDiscipline(developmentResult, projectContext.careerState);
   const actorCandidates = getActorCandidates(developmentResult, projectContext.careerState);
+  const chemistryPreview = previewCastingChemistry(selectedActorIds, projectContext.careerState);
 
   function lockPreProduction() {
     const missingDiscipline = crewGroups.find((group) =>
@@ -92,7 +94,7 @@ export function PreProductionPanel({
       </div>
       <PreProductionLocationPanel options={locationOptions} selectedLocationId={selectedLocationId} onSelect={(locationId) => { onSelectLocation(locationId); setMessage(""); }} />
       <CrewHiringPanel groups={crewGroups} selectedCrewIds={selectedCrewIds} onChange={(crewIds) => { onSelectCrew(crewIds); setMessage(""); }} />
-      <CastingPanel candidates={actorCandidates} selectedActorIds={selectedActorIds} onChange={(actorIds) => { onSelectActors(actorIds); setMessage(""); }} />
+      <CastingPanel candidates={actorCandidates} selectedActorIds={selectedActorIds} chemistryPreview={chemistryPreview} onChange={(actorIds) => { onSelectActors(actorIds); setMessage(""); }} />
       <section className="pre-budget-section">
         <div className="pre-budget-heading"><span className="section-label">{copy.budget.eyebrow}</span><h3>{copy.budget.heading}</h3><p>{copy.budget.intro}</p></div>
         <div className="pre-budget-grid" role="radiogroup" aria-label={copy.budget.heading}>
