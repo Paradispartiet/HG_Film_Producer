@@ -17,7 +17,7 @@ test("run summary copy localizes headings and status narratives", () => {
 });
 
 test("next-project copy localizes validation and dynamic film labels", () => {
-  assert.equal(STUDIO_CAREER_SUMMARY_COPY.en.nextProject.validation.projectTitle, "Enter a title for the next project.");
+  assert.equal(STUDIO_CAREER_SUMMARY_COPY.en.nextProject.validation.projectTitle, "Choose a title for the next film.");
   assert.equal(STUDIO_CAREER_SUMMARY_COPY.nb.nextProject.validation.genre, "Velg en sjanger.");
   assert.equal(STUDIO_CAREER_SUMMARY_COPY.fr.nextProject.form.greenlight(2), "Feu vert pour le film 2");
   assert.equal(STUDIO_CAREER_SUMMARY_COPY.pt.nextProject.creator.setupHeading(3), "Configuração do filme 3");
