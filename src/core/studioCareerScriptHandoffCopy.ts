@@ -6,6 +6,7 @@ type HandoffCopy = {
   readonly pressure: (before: number, after: number) => string;
   readonly consequence: string;
   readonly result: string;
+  readonly screening: string;
 };
 
 export const STUDIO_CAREER_SCRIPT_HANDOFF_COPY = {
@@ -14,27 +15,31 @@ export const STUDIO_CAREER_SCRIPT_HANDOFF_COPY = {
     intro: "The producer's approved screenplay note now shapes the scenes being scheduled and filmed. Notice how the practical demands change.",
     pressure: (before, after) => `Average scene pressure: ${before}/100 before revision → ${after}/100 for this shoot.`,
     consequence: "This affects scene difficulty and may change usable take quality. It does not automatically add money or days; shooting decisions still matter.",
-    result: "The screenplay decision shaped this shoot's scenes and was included in its quality evaluation."
+    result: "The screenplay decision shaped this shoot's scenes and was included in its quality evaluation.",
+    screening: "The approved draft's dramatic stakes, pacing and emotion now influence the test audience and the locked film cut."
   },
   nb: {
     heading: "Fra manus til opptak",
     intro: "Produsentens godkjente manusnotat påvirker nå scenene som planlegges og spilles inn. Se hvordan kravene til gjennomføringen endres.",
     pressure: (before, after) => `Gjennomsnittlig scenebelastning: ${before}/100 før manusendringen → ${after}/100 ved innspillingen.`,
     consequence: "Dette påvirker scenevanskelighet og kan endre kvaliteten på brukbare opptak. Kostnader og dager legges ikke automatisk til; valgene på settet teller fortsatt.",
-    result: "Manusbeslutningen formet scenene på opptak og inngår i vurderingen av opptakskvalitet."
+    result: "Manusbeslutningen formet scenene på opptak og inngår i vurderingen av opptakskvalitet.",
+    screening: "Manusets konflikt, tempo og følelsesmessige styrke påvirker nå testpublikummets vurdering og den ferdige filmversjonen."
   },
   fr: {
     heading: "Du scénario au tournage",
     intro: "La note approuvée par la production façonne désormais les scènes planifiées et tournées. Observez comment les exigences changent.",
     pressure: (before, after) => `Difficulté moyenne des scènes : ${before}/100 avant la révision → ${after}/100 pour ce tournage.`,
     consequence: "Cela modifie la difficulté et peut affecter la qualité des prises exploitables. Aucun coût ni jour supplémentaire n’est ajouté automatiquement.",
-    result: "La décision scénaristique a façonné les scènes filmées et intervient dans l’évaluation des prises."
+    result: "La décision scénaristique a façonné les scènes filmées et intervient dans l’évaluation des prises.",
+    screening: "Les enjeux, le rythme et l’émotion du scénario influencent désormais la projection test et le montage final."
   },
   pt: {
     heading: "Do argumento à rodagem",
     intro: "A nota aprovada pela produção molda agora as cenas planeadas e filmadas. Veja como as exigências de execução mudam.",
     pressure: (before, after) => `Dificuldade média das cenas: ${before}/100 antes da revisão → ${after}/100 nesta rodagem.`,
     consequence: "Isto altera a dificuldade e pode afetar a qualidade das tomadas utilizáveis. Não acrescenta automaticamente custos nem dias.",
-    result: "A decisão sobre o argumento moldou as cenas e entrou na avaliação da qualidade das tomadas."
+    result: "A decisão sobre o argumento moldou as cenas e entrou na avaliação da qualidade das tomadas.",
+    screening: "O conflito, o ritmo e a emoção do argumento influenciam agora a sessão de teste e a montagem final."
   }
 } as const satisfies Record<FilmWorkLanguage, HandoffCopy>;
