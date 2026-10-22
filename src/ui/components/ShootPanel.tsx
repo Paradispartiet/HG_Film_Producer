@@ -21,6 +21,7 @@ import type { PreProductionStepResult } from "../demo/createPreProductionStepRun
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { ProductionEventPanel } from "./ProductionEventPanel.js";
 import { ProducerPriorityPanel } from "./ProducerPriorityPanel.js";
+import { OnSetDialoguePanel } from "./OnSetDialoguePanel.js";
 import { SceneDifficultyPanel } from "./SceneDifficultyPanel.js";
 import { ShootDayResultPanel } from "./ShootDayResultPanel.js";
 import { ShootBudgetMonitor } from "./ShootBudgetMonitor.js";
@@ -132,6 +133,13 @@ export function ShootPanel({
             selectedProductionEventId={selectedProductionEventId}
           />
           <ProducerPriorityPanel inputName={`${projectContext.filmProjectState.id}-producer-priority`} onSelect={onSelectProducerPriority} selectedId={selectedProducerPriorityId} />
+          {previewDay?.producerPrioritySummary && (
+            <OnSetDialoguePanel
+              eventId={selectedProductionEventId}
+              priority={selectedProducerPriorityId}
+              summary={previewDay.producerPrioritySummary}
+            />
+          )}
           <ShootStrategyPanel budgetRisk={budgetPosition.projected?.risk ?? budgetPosition.actual.risk} onSelect={onSelectShootStrategy} plannedCost={currentDay.plannedCost} selectedId={selectedShootStrategyId} />
           <div className="shoot-actions">
             <div>
