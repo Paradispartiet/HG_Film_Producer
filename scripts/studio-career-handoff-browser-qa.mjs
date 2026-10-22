@@ -60,7 +60,7 @@ try {
       await page.locator(".studio-career-primary-action").click();
 
       const form = setup.locator("form.next-project-form");
-      await form.locator('input[type="text"]').fill("Second Film");
+      await form.locator('select[name="next-film-title-choice"]').selectOption("Second Winter");
       await form.locator('input[name="genre"]').first().check();
       await form.locator('input[name="script-template"]').first().check();
       await form.locator('button[type="submit"]').click();
