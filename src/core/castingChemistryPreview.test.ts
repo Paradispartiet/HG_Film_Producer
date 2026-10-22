@@ -20,7 +20,7 @@ test("shared acting approaches create a stronger ensemble than mismatched approa
   assert.equal(compatible.chemistryScore, 78);
   assert.deepEqual(compatible.sharedTags, ["listener", "supportive"]);
   assert.equal(compatible.tensionTags.length, 0);
-  assert.equal(uncertain.chemistryScore, 38);
+  assert.equal(uncertain.chemistryScore, 28); // supportive vs competitive adds a style tension
   assert.ok(compatible.chemistryScore > uncertain.chemistryScore);
 });
 
