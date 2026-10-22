@@ -1368,3 +1368,34 @@ footer { display: flex; justify-content: space-between; padding-top: 17px; borde
   .scenario-era { grid-template-columns: 1fr; gap: 8px; }
   .scenario-era-rail b { display: inline; margin-right: 10px; }
 }
+
+
+/* On 320px phones the career dashboard must not inherit min-content
+ * widths from stat labels, summaries or finished-phase panels. */
+@media (max-width: 360px) {
+  .dashboard-grid,
+  .custom-dashboard-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .dashboard-main,
+  .dashboard-side,
+  .active-workspace,
+  .run-summary-panel,
+  .next-project-panel,
+  .header-stats {
+    min-width: 0;
+  }
+  .header-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .header-stat {
+    min-width: 0;
+    padding-inline: 12px;
+  }
+  .header-stat dt,
+  .header-stat dd,
+  .summary-item {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
