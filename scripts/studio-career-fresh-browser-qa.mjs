@@ -128,7 +128,7 @@ async function run(browser, spec) {
       // Exercise the producer role against a real artistic obstacle rather than
       // just selecting a day-stopping weather event in every run.
       await page.locator('.shoot-panel .production-event-grid input[type="radio"]').nth(days % 2 === 0 ? 4 : 3).check();
-      const conversation = page.locator(".shoot-panel .on-set-dialogue").first();
+      const conversation = page.locator('.shoot-panel .on-set-dialogue[aria-live="polite"]');
       await conversation.waitFor({ state: "visible" });
       const beforeReply = await conversation.locator(".on-set-dialogue-producer").innerText();
       assert.ok((await conversation.locator(".on-set-dialogue-concern").innerText()).length > 40, "A real team member raises a concrete filmmaking concern");
