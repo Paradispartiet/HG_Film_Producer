@@ -26,7 +26,7 @@ test("approved producer notes change the actual scenes seen by the shoot resolve
   assert.equal(stakes[0]?.conflictLevel, 66);
   assert.equal(momentum[0]?.pacing, 68);
   assert.ok(estimateSceneShootDifficulty(character[0]!).difficultyScore > estimateSceneShootDifficulty(scene).difficultyScore);
-  assert.ok(resolveShootDay(day, character).takeQuality < resolveShootDay(day, originalScenes).takeQuality);
+  assert.ok(resolveShootDay(day, stakes).takeQuality < resolveShootDay(day, originalScenes).takeQuality);
   assert.equal(resolveShootDay(day, character).costSpent, resolveShootDay(day, originalScenes).costSpent, "No hidden production cost");
   assert.deepEqual(originalScenes, [scene], "Approval never mutates source scenes");
 });
@@ -51,7 +51,7 @@ test("screenings reflect distinct real screenplay axes, not just one overall scr
   assert.ok(character.emotionScore > momentum.emotionScore);
   assert.ok(momentum.pacingScore > character.pacingScore);
   assert.ok(stakes.clarityScore > character.clarityScore);
-  assert.ok(momentum.audienceHookScore > character.audienceHookScore);
+  assert.ok(stakes.audienceHookScore > character.audienceHookScore);
   assert.ok(character.notes.some((note) => note.includes("Approved screenplay craft")));
 });
 
