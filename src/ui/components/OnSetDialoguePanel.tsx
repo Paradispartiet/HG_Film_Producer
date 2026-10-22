@@ -7,7 +7,7 @@ interface OnSetDialoguePanelProps {
   readonly eventId: string;
   readonly priority: ProducerPriorityId;
   readonly summary: ProducerPrioritySummary;
-  readonly continuity?: TeamContinuity;
+  readonly continuity?: TeamContinuity | undefined;
   readonly confirmed?: boolean;
 }
 
