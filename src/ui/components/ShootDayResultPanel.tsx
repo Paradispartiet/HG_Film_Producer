@@ -2,6 +2,8 @@ import { getFilmWorkIntlLocale } from "../../core/filmWorkLanguage";
 import { STUDIO_CAREER_SHOOT_COPY } from "../../core/studioCareerShootCopy";
 import { SHOOT_STRATEGY_COPY } from "../../core/studioCareerShootStrategyCopy";
 import { PRODUCER_PRIORITY_COPY } from "../../core/studioCareerProducerPriorityCopy.js";
+import { ON_SET_DIALOGUE_COPY } from "../../core/studioCareerOnSetDialogue.js";
+import { OnSetDialoguePanel } from "./OnSetDialoguePanel.js";
 import type { ProjectShootLabel } from "../types.js";
 import type { ShootDayStepResult, ShootStepPreparation } from "../demo/createShootStepRun.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
@@ -44,6 +46,17 @@ export function ShootDayResultPanel({ preparation, result, dayNumber, projectLab
           <p>{producerCopy.consequence(result.producerPrioritySummary.takeQualityDelta)} · {result.producerPrioritySummary.interrupted ? producerCopy.interrupted : result.producerPrioritySummary.approachFits ? producerCopy.matched : producerCopy.partial}</p>
           <p>{producerCopy.why[result.producerPrioritySummary.recommendedId]}</p>
         </div>
+      )}
+      {result.selectedEventId && result.producerPrioritySummary && (
+        <details className="on-set-conversation-review">
+          <summary>{ON_SET_DIALOGUE_COPY[language].review}</summary>
+          <OnSetDialoguePanel
+            confirmed
+            eventId={result.selectedEventId}
+            priority={result.producerPrioritySummary.id}
+            summary={result.producerPrioritySummary}
+          />
+        </details>
       )}
       <div className="shoot-result-grid">
         <ResultMetric label={copy.dayResult.completedScenes} value={`${result.shootDayResult.completedSceneIds.length}`} detail={sceneTitles(result.shootDayResult.completedSceneIds, preparation)} />
