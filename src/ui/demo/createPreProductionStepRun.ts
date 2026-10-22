@@ -20,7 +20,7 @@ import type {
   CrewFitScore,
   CrewMember,
   ProductionTeamEvaluation,
-  type CastingChemistryResult
+  CastingChemistryResult
 } from "../../domain/crew.js";
 import type { FilmProject } from "../../domain/film.js";
 import type { Location, LocationFitScore, LocationScoutingBrief } from "../../domain/location.js";
