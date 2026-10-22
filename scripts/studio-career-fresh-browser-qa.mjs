@@ -148,6 +148,12 @@ async function run(browser, spec) {
       }, { key: SAVE_KEY, id: chosenPriority });
       const afterReply = await conversation.locator(".on-set-dialogue-producer").innerText();
       assert.notEqual(afterReply, beforeReply, "Changing producer priority changes what the producer actually says to the team");
+      const concreteProducerAction = days % 2 === 0
+        ? await page.locator(".shoot-panel .producer-priority-card--selected small").innerText() : null;
+      if (concreteProducerAction) {
+        assert.ok(concreteProducerAction.length > 70, "A real cast conflict offers a practical production response");
+        assert.equal(await conversation.locator(".on-set-dialogue-producer p").innerText(), concreteProducerAction, "Spoken producer decision matches the chosen scenario action");
+      }
       assert.ok((await conversation.locator(".on-set-dialogue-reaction").innerText()).length > 25, "The team reacts to the real selected producer response");
       const expectedSteadyCost = Number(await monitor.locator(".shoot-budget-projection").getAttribute("data-forecast-cost"));
       assert.ok(Number.isFinite(expectedSteadyCost) && expectedSteadyCost >= 0, "Event selection provides a real projected day cost");
@@ -176,6 +182,7 @@ async function run(browser, spec) {
       assert.equal(savedDay.shootDayResult.costSpent, predictedCost, "Budget forecast and recorded day cost use the same engine");
       assert.equal(savedDay.strategySummary?.id, chosenResponse);
       assert.equal(savedDay.producerPrioritySummary?.id, chosenPriority, "Creative producer choice is persisted with the day");
+      assert.equal(savedDay.practicalActionVersion, 1, "New reports record the practical action version without changing the priority engine");
       assert.equal(savedDay.selectedEventId, days % 2 === 1 ? "production_event_actor_conflict" : "production_event_camera_breakthrough", "Concrete dilemma survives into the saved production report");
       if (days > 1) {
         assert.equal(savedDay.teamContinuity?.previousEventId, days % 2 === 0 ? "production_event_actor_conflict" : "production_event_camera_breakthrough", "Continuation remembers the prior real set challenge");
@@ -205,6 +212,7 @@ async function run(browser, spec) {
         assert.equal(await savedConversation.count(), 1, "Completed day retains a replayable team conversation");
         await savedConversation.locator("summary").click();
         await savedConversation.locator(".on-set-dialogue-producer").waitFor({ state: "visible" });
+        if (concreteProducerAction) assert.equal(await savedConversation.locator(".on-set-dialogue-producer p").innerText(), concreteProducerAction, "Daily report replays the selected practical producer action");
         assert.equal(await savedConversation.locator(".on-set-dialogue-follow-up").count(), days > 1 ? 1 : 0, "Replayed dialogue preserves genuine cross-day follow-up");
         const producerOutcome = page.locator(".shoot-panel .producer-priority-feedback").first();
         await producerOutcome.waitFor({ state: "visible" });

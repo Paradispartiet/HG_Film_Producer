@@ -1,15 +1,17 @@
 import { PRODUCER_PRIORITY_IDS, type ProducerPriorityId } from "../../core/applyProducerPriority.js";
 import { PRODUCER_PRIORITY_COPY } from "../../core/studioCareerProducerPriorityCopy.js";
+import { getOnSetProducerAction } from "../../core/studioCareerOnSetProducerActions.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 
 interface ProducerPriorityPanelProps {
   readonly selectedId: ProducerPriorityId;
   readonly inputName: string;
+  readonly eventId?: string;
   readonly onSelect: (id: ProducerPriorityId) => void;
 }
 
 /** Producer-level support choices, deliberately separate from Film Director shot craft. */
-export function ProducerPriorityPanel({ selectedId, inputName, onSelect }: ProducerPriorityPanelProps) {
+export function ProducerPriorityPanel({ selectedId, inputName, eventId, onSelect }: ProducerPriorityPanelProps) {
   const [language] = useFilmWorkLanguage();
   const copy = PRODUCER_PRIORITY_COPY[language];
   return (
@@ -22,7 +24,7 @@ export function ProducerPriorityPanel({ selectedId, inputName, onSelect }: Produ
         {PRODUCER_PRIORITY_IDS.map((id) => (
           <label className={id === selectedId ? "producer-priority-card producer-priority-card--selected" : "producer-priority-card"} key={id}>
             <input checked={selectedId === id} name={inputName} onChange={() => onSelect(id)} type="radio" />
-            <span><strong>{copy.options[id].title}</strong><small>{copy.options[id].description}</small></span>
+            <span><strong>{copy.options[id].title}</strong><small>{getOnSetProducerAction(language, eventId, id) ?? copy.options[id].description}</small></span>
           </label>
         ))}
       </div>

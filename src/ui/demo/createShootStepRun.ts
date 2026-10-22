@@ -92,6 +92,8 @@ export interface ShootStepChoices {
 export interface ShootDayStepResult {
   /** Stored for playback of the producer's conversation; absent in earlier saves. */
   readonly selectedEventId?: string;
+  /** Present only for newly recorded specific producer actions; legacy reports omit it. */
+  readonly practicalActionVersion?: 1;
   /** The previous day as it was known when this decision was made. */
   readonly teamContinuity?: TeamContinuity;
   readonly updatedShootDay: ShootDay;
@@ -214,6 +216,7 @@ export function resolveNextShootDay(
 
   return {
     selectedEventId: selectedEvent.id,
+    practicalActionVersion: 1,
     ...(teamContinuity ? { teamContinuity } : {}),
     updatedShootDay: resolvedShootDay,
     strategySummary,
