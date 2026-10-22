@@ -21,6 +21,7 @@ import type { PreProductionStepResult } from "../demo/createPreProductionStepRun
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { ProductionEventPanel } from "./ProductionEventPanel.js";
 import { ProducerPriorityPanel } from "./ProducerPriorityPanel.js";
+import { OnSetDialoguePanel } from "./OnSetDialoguePanel.js";
 import { SceneDifficultyPanel } from "./SceneDifficultyPanel.js";
 import { ShootDayResultPanel } from "./ShootDayResultPanel.js";
 import { ShootBudgetMonitor } from "./ShootBudgetMonitor.js";
@@ -80,9 +81,10 @@ export function ShootPanel({
   const earlierDays = shootDayResults.slice(0, -1);
   // Preview uses the very same deterministic resolver as the confirmation action.
   // It does not change save state or book any costs before the player confirms.
-  const previewDay = currentDay && selectedProductionEventId
-    ? resolveNextShootDay(preparation, shootDayResults, { selectedProductionEventId, selectedShootStrategyId, selectedProducerPriorityId }).shootDayResult
+  const previewResolution = currentDay && selectedProductionEventId
+    ? resolveNextShootDay(preparation, shootDayResults, { selectedProductionEventId, selectedShootStrategyId, selectedProducerPriorityId })
     : undefined;
+  const previewDay = previewResolution?.shootDayResult;
   const budgetPosition = calculateShootBudgetPosition(
     preparation.productionSchedule,
     shootDayResults.map((day) => day.shootDayResult),
@@ -132,6 +134,13 @@ export function ShootPanel({
             selectedProductionEventId={selectedProductionEventId}
           />
           <ProducerPriorityPanel inputName={`${projectContext.filmProjectState.id}-producer-priority`} onSelect={onSelectProducerPriority} selectedId={selectedProducerPriorityId} />
+          {previewResolution?.producerPrioritySummary && (
+            <OnSetDialoguePanel
+              eventId={selectedProductionEventId}
+              priority={selectedProducerPriorityId}
+              summary={previewResolution.producerPrioritySummary}
+            />
+          )}
           <ShootStrategyPanel budgetRisk={budgetPosition.projected?.risk ?? budgetPosition.actual.risk} onSelect={onSelectShootStrategy} plannedCost={currentDay.plannedCost} selectedId={selectedShootStrategyId} />
           <div className="shoot-actions">
             <div>

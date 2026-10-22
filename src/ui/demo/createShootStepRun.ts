@@ -89,6 +89,8 @@ export interface ShootStepChoices {
 }
 
 export interface ShootDayStepResult {
+  /** Stored for playback of the producer's conversation; absent in earlier saves. */
+  readonly selectedEventId?: string;
   readonly updatedShootDay: ShootDay;
   readonly selectedEventSummary: ProductionEventSummary;
   readonly strategySummary?: ShootStrategySummary;
@@ -207,6 +209,7 @@ export function resolveNextShootDay(
   };
 
   return {
+    selectedEventId: selectedEvent.id,
     updatedShootDay: resolvedShootDay,
     strategySummary,
     producerPrioritySummary,
