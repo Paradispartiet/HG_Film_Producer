@@ -11,7 +11,7 @@ import { applySoundDecision } from "../../core/applySoundDecision.js";
 import { createPostProductionPlan } from "../../core/createPostProductionPlan.js";
 import { createTrailerCut } from "../../core/createTrailerCut.js";
 import { evaluatePostProduction } from "../../core/evaluatePostProduction.js";
-import { runTestScreening } from "../../core/runTestScreening.js";
+import { runTestScreening, type ScriptCraftScores } from "../../core/runTestScreening.js";
 import { getStudioCareerEditingApproach, type StudioCareerEditingApproachId } from "../../core/studioCareerEditingApproach.js";
 import type {
   ColorDecision,
@@ -73,6 +73,8 @@ export interface PostProductionOptions {
 export interface PostProductionStepResult {
   /** Absent on previously completed saved films. */
   readonly editingApproachId?: StudioCareerEditingApproachId;
+  /** Optional for old saved films; actual approved screenplay craft axes. */
+  readonly scriptCraftScores?: ScriptCraftScores;
   readonly postProductionPlan: PostProductionPlan;
   readonly appliedDecisions: AppliedPostProductionDecisions;
   readonly testScreeningResult: TestScreeningResult;
@@ -90,7 +92,8 @@ export function createPostProductionStepResult(
   preProductionResult: PreProductionStepResult,
   shootResult: ShootStepResult,
   choices: PostProductionChoices,
-  scriptDraftScore?: number
+  scriptDraftScore?: number,
+  scriptCraftScores?: ScriptCraftScores
 ): PostProductionStepResult {
   assertCompletedSteps(projectContext, preProductionResult, shootResult);
   const edit = requireItem(postProductionData.editDecisions, choices.editDecisionId, "edit decision");
@@ -117,7 +120,8 @@ export function createPostProductionStepResult(
     shootResult.shootEvaluation,
     undefined,
     scriptDraftScore,
-    editingApproachId
+    editingApproachId,
+    scriptCraftScores
   );
   const trailerCutResult = createTrailerCut(preProductionResult.projectState, finishingPlan, trailer);
   const postProductionEvaluation = evaluatePostProduction(
@@ -136,6 +140,7 @@ export function createPostProductionStepResult(
 
   return {
     editingApproachId,
+    ...(scriptCraftScores ? { scriptCraftScores } : {}),
     postProductionPlan,
     appliedDecisions: {
       edit: summarizeDecision(edit, editApplication.costDelta, editApplication.statChanges),
