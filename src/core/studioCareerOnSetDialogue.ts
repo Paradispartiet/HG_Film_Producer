@@ -175,7 +175,7 @@ export interface OnSetConversation {
 
 export function getOnSetConversation(
   language: FilmWorkLanguage, eventId: string, priority: ProducerPriorityId, summary: ProducerPrioritySummary,
-  practicalActionVersion?: 1
+  practicalActionVersion?: 1 | 2
 ): OnSetConversation | undefined {
   if (!ON_SET_EVENT_IDS.some((id) => id === eventId)) return undefined;
   const key = eventId as OnSetEventId;
@@ -184,7 +184,7 @@ export function getOnSetConversation(
     speaker: copy.roles[eventRoles[key]],
     concern: copy.concerns[key],
     producer: copy.producer,
-    reply: (practicalActionVersion === 1 ? getOnSetProducerAction(language, eventId, priority) : undefined) ?? copy.replies[priority],
+    reply: (practicalActionVersion ? getOnSetProducerAction(language, eventId, priority, practicalActionVersion) : undefined) ?? copy.replies[priority],
     teamResponse: summary.interrupted ? copy.stopped : summary.approachFits ? copy.fitted : copy.partial,
     lesson: copy.lesson[priority]
   };
