@@ -365,7 +365,7 @@ async function run(browser, spec) {
     await awaitSaved(page, "film-two");
     const finalState = await readSaved(page);
     assert.equal(finalState.projects[0].careerApplicationResult.completedFilmRecord.projectId, completed.careerApplicationResult.completedFilmRecord.projectId);
-    assert.equal(finalState.projects[1].run.project.title, "Second Browser Film");
+    assert.equal(finalState.projects[1].run.project.title, "Second Winter");
     assert.equal(await page.locator(".past-project-summary").count(), 1);
     const handoff = page.locator(".studio-career-debrief--handoff");
     assert.equal(await handoff.count(), 1, "Film Two should be able to review Film One's decisions");
