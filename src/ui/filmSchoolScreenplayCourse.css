@@ -846,9 +846,10 @@
 .school-practice-options { border: 0; padding: 0; margin: 12px 0 16px; min-width: 0; }
 .school-practice-options legend { font-weight: 700; margin-bottom: 10px; }
 .school-practice-options > div { display: grid; gap: 9px; }
-.school-practice-option { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; border-radius: 10px; border: 1px solid var(--line-soft, rgba(150,150,150,.3)); padding: 12px; }
-.school-practice-option.is-selected { border-color: var(--accent, #568cc3); background: var(--accent-soft, rgba(82,140,200,.12)); }
-.school-practice-option input { flex: none; margin-top: 4px; accent-color: var(--accent, #568cc3); }
-.school-practice-option span { line-height: 1.5; }
+.school-practice-option { display: flex; align-items: flex-start; gap: 10px; min-height: 48px; box-sizing: border-box; cursor: pointer; border-radius: 10px; border: 1px solid rgba(255,255,255,.16); padding: 12px; overflow-wrap: anywhere; }
+.school-practice-option.is-selected { border-color: rgba(211,255,70,.8); background: rgba(211,255,70,.09); }
+.school-practice-option:focus-within { outline: 2px solid #d3ff46; outline-offset: 2px; }
+.school-practice-option input { flex: none; margin-top: 4px; accent-color: #d3ff46; }
+.school-practice-option span { line-height: 1.5; min-width: 0; }
 .school-practice-option > span strong { margin-right: 6px; }
 .school-practice-options > small { display: block; margin-top: 9px; opacity: .78; }
