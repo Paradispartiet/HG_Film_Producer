@@ -182,6 +182,7 @@ async function run(browser, spec) {
       assert.equal(savedDay.shootDayResult.costSpent, predictedCost, "Budget forecast and recorded day cost use the same engine");
       assert.equal(savedDay.strategySummary?.id, chosenResponse);
       assert.equal(savedDay.producerPrioritySummary?.id, chosenPriority, "Creative producer choice is persisted with the day");
+      assert.equal(savedDay.practicalActionVersion, 1, "New reports record the practical action version without changing the priority engine");
       assert.equal(savedDay.selectedEventId, days % 2 === 1 ? "production_event_actor_conflict" : "production_event_camera_breakthrough", "Concrete dilemma survives into the saved production report");
       if (days > 1) {
         assert.equal(savedDay.teamContinuity?.previousEventId, days % 2 === 0 ? "production_event_actor_conflict" : "production_event_camera_breakthrough", "Continuation remembers the prior real set challenge");
