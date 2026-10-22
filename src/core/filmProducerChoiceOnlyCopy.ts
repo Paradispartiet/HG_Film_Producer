@@ -23,7 +23,7 @@ export const FILM_SCHOOL_CHOICE_ONLY_COPY: Record<FilmWorkLanguage, {
   }
 };
 
-/** Kept separate from course progress so existing version-one saves remain readable. */
+/** A valid selection must match one of the authored choices, not arbitrary written text. */
 export function isSelectedFilmSchoolOption(options: readonly string[], savedValue: string): boolean {
   return options.includes(savedValue) && savedValue.trim().length > 0;
 }
