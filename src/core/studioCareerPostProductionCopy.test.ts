@@ -43,3 +43,18 @@ test("creative editing tradeoffs explain real and different outcomes in all four
     }
   }
 });
+
+test("finished first film clearly proceeds to the playable release stage in every language", () => {
+  const fragments = {
+    en: /release strategy and a festival/,
+    nb: /lanseringsstrategi og festival/,
+    fr: /stratégie de sortie et un festival/,
+    pt: /estratégia de lançamento e o festival/
+  } as const;
+  for (const language of languages) {
+    const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[language];
+    assert.match(copy.result.nextMessage("first film"), fragments[language]);
+    assert.ok(!/not part|ikke del|ne fait pas partie|não faz parte/i.test(copy.result.nextMessage("first film")));
+    assert.ok(copy.screening.description.length > 35);
+  }
+});
