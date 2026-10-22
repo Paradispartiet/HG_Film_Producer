@@ -1,5 +1,6 @@
 import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 import type { ProducerPriorityId, ProducerPrioritySummary } from "./applyProducerPriority.js";
+import { getOnSetProducerAction } from "./studioCareerOnSetProducerActions.js";
 
 /** Ten playable production challenges; new events can safely omit a dialogue. */
 export const ON_SET_EVENT_IDS = [
@@ -182,7 +183,7 @@ export function getOnSetConversation(
     speaker: copy.roles[eventRoles[key]],
     concern: copy.concerns[key],
     producer: copy.producer,
-    reply: copy.replies[priority],
+    reply: getOnSetProducerAction(language, eventId, priority) ?? copy.replies[priority],
     teamResponse: summary.interrupted ? copy.stopped : summary.approachFits ? copy.fitted : copy.partial,
     lesson: copy.lesson[priority]
   };
