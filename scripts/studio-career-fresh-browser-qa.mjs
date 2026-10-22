@@ -74,12 +74,20 @@ async function run(browser, spec) {
     const development = await expectPhase(page, ".development-panel", "development", milestones);
     await development.locator(".development-path-grid button").nth(2).click();
     await development.locator(".script-starter-card").waitFor({ state: "visible" });
+    assert.equal(await development.locator('input[name="script-producer-note"]').count(), 3, "Producer has three writing notes");
+    const firstPreview = await development.locator(".script-note-preview").innerText();
+    await development.locator('input[name="script-producer-note"][value="scene_momentum"]').check();
+    const newPreview = await development.locator(".script-note-preview").innerText();
+    assert.notEqual(newPreview, firstPreview, "Writing note changes live evaluation");
     await development.locator(".development-choice-panel button.primary-button").click();
     await development.locator(".development-decision-feedback").waitFor({ state: "visible" });
     assert.match(await development.locator(".development-decision-feedback").innerText(), /100/);
     await development.locator(".development-actions > button.primary-button").click();
     await awaitSaved(page, "developmentResult");
-    assert.equal((await readSaved(page)).projects[0].developmentResult.path, "script");
+    const scriptResult = (await readSaved(page)).projects[0].developmentResult;
+    assert.equal(scriptResult.path, "script");
+    assert.equal(scriptResult.revisionFocusId, "scene_momentum", "Producer writing note persists");
+    assert.ok(scriptResult.scoreBreakdown?.pacing > 50, "Pacing revision changes the evaluated screenplay");
 
     const pre = await expectPhase(page, ".pre-production-panel", "pre-production", milestones);
     await checkFirst(page, '.pre-production-panel input[name="pre-production-location"]');
