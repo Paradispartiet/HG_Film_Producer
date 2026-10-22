@@ -1,6 +1,6 @@
-import type { ChangeEvent } from "react";
 import { getFilmWorkIntlLocale } from "../../core/filmWorkLanguage";
 import { STUDIO_SETUP_COPY } from "../../core/studioSetupCopy";
+import { STUDIO_NAME_OPTIONS } from "../../core/filmProducerChoiceOnlyCopy.js";
 import type { StartingStudioPreset } from "../demo/createProjectSetupRun.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import type { StartingMoneyPreset } from "../types.js";
@@ -31,13 +31,15 @@ export function StudioSetupForm({
       <div className="setup-section-heading"><span>01</span><div><h3>{copy.heading}</h3><p>{copy.intro}</p></div></div>
       <label className="text-field">
         <span>{copy.nameLabel}</span>
-        <input
+        <select
           aria-invalid={Boolean(studioNameError)}
-          onChange={(event: ChangeEvent<HTMLInputElement>) => onStudioNameChange(event.target.value)}
-          placeholder={copy.namePlaceholder}
-          type="text"
+          name="studio-name-choice"
+          onChange={(event) => onStudioNameChange(event.target.value)}
           value={studioName}
-        />
+        >
+          <option disabled value="">{copy.namePlaceholder}</option>
+          {STUDIO_NAME_OPTIONS.map((name) => <option key={name} value={name}>{name}</option>)}
+        </select>
         {studioNameError && <small className="field-error">{studioNameError}</small>}
       </label>
       <fieldset className="setup-fieldset">
