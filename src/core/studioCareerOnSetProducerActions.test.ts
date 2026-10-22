@@ -32,9 +32,12 @@ test("the specific selected action is the producer's actual report dialogue, not
   const summary = applyProducerPriority(day, { type: "conflict", possibleUpside: false }, "performance_trust").summary;
   for (const language of FILMWORK_LANGUAGES) {
     const action = getOnSetProducerAction(language, "production_event_actor_conflict", "performance_trust");
-    const dialogue = getOnSetConversation(language, "production_event_actor_conflict", "performance_trust", summary);
+    const dialogue = getOnSetConversation(language, "production_event_actor_conflict", "performance_trust", summary, 1);
     assert.equal(dialogue?.reply, action);
   }
+  const legacy = getOnSetConversation("nb", "production_event_actor_conflict", "performance_trust", summary);
+  assert.ok(legacy?.reply.includes("skjermer prøvetid"), "Older saved decisions must keep the original generic spoken action");
+  assert.notEqual(legacy?.reply, getOnSetProducerAction("nb", "production_event_actor_conflict", "performance_trust"));
   assert.equal(summary.takeQualityDelta, 8, "The existing engine, not localized prose, determines the consequence");
 });
 
