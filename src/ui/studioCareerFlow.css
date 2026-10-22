@@ -546,3 +546,10 @@
 .shoot-budget-details { margin: 15px 0; }
 .shoot-budget-details > summary { cursor: pointer; padding: 13px 15px; border: 1px solid var(--line-soft); color: var(--muted); }
 .shoot-budget-details[open] > .shoot-budget-monitor { margin-top: 12px; }
+
+/* Screenplay producer notes explain the tradeoff before the writing pass. */
+.script-note-preview { margin-top: 1rem; padding: .9rem 1.1rem; border: 1px solid var(--border, rgba(110,110,110,.25)); border-radius: 12px; }
+.script-note-preview dl { display: flex; flex-wrap: wrap; gap: .8rem 1.5rem; margin: .65rem 0; }
+.script-note-preview dt { font-size: .83rem; opacity: .8; }
+.script-note-preview dd { font-weight: 700; margin: .1rem 0 0; }
+.script-note-preview p { margin: .4rem 0; }
