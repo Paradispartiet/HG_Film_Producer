@@ -287,6 +287,15 @@ async function run(browser, spec) {
     await finishedPostRow.locator("button").click();
 
     const release = await expectPhase(page, ".release-step-panel", "release", milestones);
+    const releaseHandoff = release.locator(".release-craft-handoff");
+    await releaseHandoff.waitFor({ state: "visible" });
+    const recordedPost = (await readSaved(page)).projects[0].postProductionResult;
+    assert.ok((await releaseHandoff.innerText()).includes(String(recordedPost.postProductionEvaluation.lockedCutQuality)),
+      "Release carries the actual locked-cut quality");
+    assert.ok((await releaseHandoff.innerText()).includes(String(recordedPost.postProductionEvaluation.trailerScore)),
+      "Release carries the real trailer-strength score");
+    assert.equal(await releaseHandoff.locator(".release-craft-handoff-promise p").innerText(),
+      recordedPost.trailerCutResult.note, "The real recorded trailer promise survives the post-production handoff");
     await release.locator(".release-option-grid--strategies input[type=radio]").first().check();
     await release.locator(".release-option-grid--festivals input[type=radio]").first().check();
     await release.locator(".release-actions button.primary-button").click();
