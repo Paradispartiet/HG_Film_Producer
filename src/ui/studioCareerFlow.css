@@ -558,3 +558,19 @@
 .casting-chemistry-preview p { margin: .35rem 0; }
 .casting-chemistry-preview small { display: block; margin-top: .5rem; }
 .casting-chemistry-context { opacity: .78; font-size: .88rem; }
+
+/* An honest handoff from recorded producer choices to the edit room. */
+.editing-handoff {
+  margin: 16px 0;
+  padding: 16px;
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  background: rgba(5, 7, 9, 0.24);
+}
+.editing-handoff h3 { margin: 0 0 8px; }
+.editing-handoff p { margin: 8px 0; line-height: 1.55; }
+.editing-handoff > strong { display: block; margin: 12px 0; }
+.editing-handoff details { margin: 10px 0; padding: 10px 12px; border: 1px solid var(--line-soft); border-radius: 8px; }
+.editing-handoff summary { cursor: pointer; font-weight: 700; }
+.editing-handoff details p { overflow-wrap: anywhere; }
+.editing-handoff > small { display: block; color: var(--muted); line-height: 1.5; }
