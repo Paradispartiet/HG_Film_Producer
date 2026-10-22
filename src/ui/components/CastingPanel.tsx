@@ -1,18 +1,25 @@
 import { getFilmWorkIntlLocale } from "../../core/filmWorkLanguage";
 import { STUDIO_CAREER_PRE_PRODUCTION_COPY } from "../../core/studioCareerPreProductionCopy";
+import { STUDIO_CAREER_CASTING_PREVIEW_COPY } from "../../core/studioCareerCastingPreviewCopy";
+import type { CastingChemistryResult } from "../../domain/crew.js";
 import type { ActorCandidateOption } from "../demo/createPreProductionStepRun.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 interface CastingPanelProps {
   readonly candidates: readonly ActorCandidateOption[];
+  readonly chemistryPreview: CastingChemistryResult;
   readonly selectedActorIds: readonly string[];
   readonly onChange: (actorIds: readonly string[]) => void;
 }
 
-export function CastingPanel({ candidates, selectedActorIds, onChange }: CastingPanelProps) {
+export function CastingPanel({ candidates, selectedActorIds, chemistryPreview, onChange }: CastingPanelProps) {
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_PRE_PRODUCTION_COPY[language];
   const locale = getFilmWorkIntlLocale(language);
+  const previewCopy = STUDIO_CAREER_CASTING_PREVIEW_COPY[language];
+  const previewSummary = chemistryPreview.chemistryScore >= 75
+    ? previewCopy.strong
+    : chemistryPreview.chemistryScore >= 55 ? previewCopy.developing : previewCopy.challenging;
 
   function toggleActor(actorId: string) {
     onChange(selectedActorIds.includes(actorId)
@@ -45,6 +52,19 @@ export function CastingPanel({ candidates, selectedActorIds, onChange }: Casting
             </dl>
           </label>
         ))}
+      </div>
+      <div className="casting-chemistry-preview" role="status" aria-live="polite">
+        <span className="section-label">{previewCopy.heading}</span>
+        {chemistryPreview.actorIds.length < 2 ? (
+          <p>{previewCopy.pending}</p>
+        ) : (
+          <>
+            <strong>{previewCopy.score(chemistryPreview.chemistryScore)}</strong>
+            <p>{previewSummary}</p>
+            <small>{previewCopy.common(chemistryPreview.sharedTags.length)} · {previewCopy.tension(chemistryPreview.tensionTags.length)}</small>
+            <p className="casting-chemistry-context">{previewCopy.context}</p>
+          </>
+        )}
       </div>
     </section>
   );
