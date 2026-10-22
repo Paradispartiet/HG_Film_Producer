@@ -59,10 +59,20 @@ async function checkNarrowMobileChoices(page, spec, selector, label, selectNames
     await page.setViewportSize({ width: 320, height: 780 });
     const panel = page.locator(selector);
     await panel.waitFor({ state: "visible" });
-    const widths = await page.evaluate(() => ({
-      viewport: document.documentElement.clientWidth,
-      scroll: document.documentElement.scrollWidth
-    }));
+    const widths = await page.evaluate(() => {
+      const viewport = document.documentElement.clientWidth;
+      const offenders = Array.from(document.querySelectorAll("body *")).map((node) => ({
+        name: node.tagName.toLowerCase() + (node.className && typeof node.className === "string"
+          ? "." + node.className.trim().split(/\\s+/).slice(0, 2).join(".") : ""),
+        right: Math.round(node.getBoundingClientRect().right),
+        left: Math.round(node.getBoundingClientRect().left)
+      })).filter((item) => item.right > viewport + 2 || item.left < -2).slice(0, 18);
+      return {
+        viewport,
+        scroll: document.documentElement.scrollWidth,
+        offenders
+      };
+    });
     assert.ok(widths.scroll <= widths.viewport + 2,
       label + ": horizontal page overflow at 320px: " + JSON.stringify(widths));
     const panelWidth = await panel.evaluate((node) => ({ client: node.clientWidth, scroll: node.scrollWidth }));
