@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { getStudioCareerFestivalInputName, getStudioCareerReleaseStrategyInputName } from "../../core/studioCareerFlow.js";
 import { STUDIO_CAREER_RELEASE_COPY } from "../../core/studioCareerReleaseCopy.js";
+import { STUDIO_CAREER_RELEASE_HANDOFF_COPY } from "../../core/studioCareerReleaseHandoffCopy.js";
 import type { ReleaseStepChoices, ReleaseStepResult } from "../demo/createReleaseStepRun.js";
 import { createReleaseStepResult, getReleaseStepOptions } from "../demo/createReleaseStepRun.js";
 import type { DevelopmentStepResult } from "../demo/createDevelopmentStepRun.js";
@@ -51,6 +52,7 @@ export function ReleaseStepPanel({
   const [validationMessage, setValidationMessage] = useState("");
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_RELEASE_COPY[language];
+  const handoffCopy = STUDIO_CAREER_RELEASE_HANDOFF_COPY[language];
 
   function releaseFilm() {
     const message = validateChoices(choices, copy.panel.validation);
@@ -84,6 +86,24 @@ export function ReleaseStepPanel({
         <div><span className="eyebrow">{copy.panel.eyebrow}</span><h2>{copy.panel.heading(projectLabel)}</h2><p>{copy.panel.description}</p></div>
         <div className="release-readiness"><span>{copy.panel.lockedCut}</span><strong>{postProductionResult.postProductionEvaluation.lockedCutQuality}</strong><small>{copy.panel.quality}</small></div>
       </div>
+
+      <section className="release-craft-handoff" aria-label={handoffCopy.heading}>
+        <h3>{handoffCopy.heading}</h3>
+        <p>{handoffCopy.introduction}</p>
+        <div className="release-craft-handoff-metrics">
+          <div><span>{handoffCopy.lockedCut}</span><strong>{postProductionResult.postProductionEvaluation.lockedCutQuality}/100</strong></div>
+          <div><span>{handoffCopy.trailerStrength}</span><strong>{postProductionResult.postProductionEvaluation.trailerScore}/100</strong></div>
+          <div><span>{handoffCopy.audienceInterest}</span><strong>{postProductionResult.trailerCutResult.audienceInterest}/100</strong></div>
+        </div>
+        {postProductionResult.trailerCutResult.note?.trim() && (
+          <div className="release-craft-handoff-promise">
+            <strong>{handoffCopy.trailerPromise}</strong>
+            <p>{postProductionResult.trailerCutResult.note}</p>
+          </div>
+        )}
+        <p>{handoffCopy.explanation}</p>
+        <small>{handoffCopy.disclaimer}</small>
+      </section>
 
       <ReleaseStrategyPanel disabled={Boolean(result)} inputName={getStudioCareerReleaseStrategyInputName(projectContext.filmProjectState.id)} onSelect={(releaseStrategyId) => updateChoices({ ...choices, releaseStrategyId })} selectedId={choices.releaseStrategyId} strategies={options.releaseStrategies} />
       <FestivalSubmissionPanel
