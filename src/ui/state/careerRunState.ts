@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import type { ShootStrategyId } from "../../core/applyShootStrategy";
+import type { ProducerPriorityId } from "../../core/applyProducerPriority";
 import { createCareerApplicationStepResult, type CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun";
 import type { DevelopmentPath, DevelopmentStepResult } from "../demo/createDevelopmentStepRun";
 import { getPreProductionLocationOptions, type PreProductionStepResult } from "../demo/createPreProductionStepRun";
@@ -29,6 +30,8 @@ export interface CareerFilmProjectRun {
   readonly selectedProductionEventId: string;
   /** Optional for compatibility with existing v1 saved film runs. */
   readonly selectedShootStrategyId?: ShootStrategyId;
+  /** Optional so existing v1 saves remain readable. */
+  readonly selectedProducerPriorityId?: ProducerPriorityId;
   readonly shootDayResults: readonly ShootDayStepResult[];
   readonly shootResult: ShootStepResult | null;
   readonly postProductionChoices: PostProductionChoices;
@@ -44,11 +47,11 @@ export function hasSavedCareerRun(): boolean { return typeof window !== "undefin
 function getRunContext(run: ProjectSetupRun | NextProjectStepResult) { return createProjectRunContext(run as ProjectSetupRun & NextProjectStepResult); }
 
 export function createCareerProject(run: ProjectSetupRun | NextProjectStepResult, projectNumber: number): CareerFilmProjectRun {
-  return { id: `${projectNumber}-${run.project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`, projectNumber, run, selectedDevelopmentPath: null, developmentResults: [], developmentResult: null, preProductionSelections: emptyPreProductionSelections, preProductionResult: null, selectedProductionEventId: "", selectedShootStrategyId: "steady", shootDayResults: [], shootResult: null, postProductionChoices: emptyPostProductionChoices, postProductionResult: null, releaseChoices: emptyReleaseChoices, releaseResult: null, careerApplicationResult: null };
+  return { id: `${projectNumber}-${run.project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`, projectNumber, run, selectedDevelopmentPath: null, developmentResults: [], developmentResult: null, preProductionSelections: emptyPreProductionSelections, preProductionResult: null, selectedProductionEventId: "", selectedShootStrategyId: "steady", selectedProducerPriorityId: "crew_coordination", shootDayResults: [], shootResult: null, postProductionChoices: emptyPostProductionChoices, postProductionResult: null, releaseChoices: emptyReleaseChoices, releaseResult: null, careerApplicationResult: null };
 }
 function resetAfterDevelopment(project: CareerFilmProjectRun, developmentResult: DevelopmentStepResult): CareerFilmProjectRun {
   const selectedLocationId = getPreProductionLocationOptions(getRunContext(project.run), developmentResult).find((option) => option.recommended)?.id ?? "";
-  return { ...project, selectedDevelopmentPath: null, developmentResult, preProductionSelections: { ...emptyPreProductionSelections, selectedLocationId }, preProductionResult: null, selectedProductionEventId: "", selectedShootStrategyId: "steady", shootDayResults: [], shootResult: null, postProductionChoices: emptyPostProductionChoices, postProductionResult: null, releaseChoices: emptyReleaseChoices, releaseResult: null, careerApplicationResult: null };
+  return { ...project, selectedDevelopmentPath: null, developmentResult, preProductionSelections: { ...emptyPreProductionSelections, selectedLocationId }, preProductionResult: null, selectedProductionEventId: "", selectedShootStrategyId: "steady", selectedProducerPriorityId: "crew_coordination", shootDayResults: [], shootResult: null, postProductionChoices: emptyPostProductionChoices, postProductionResult: null, releaseChoices: emptyReleaseChoices, releaseResult: null, careerApplicationResult: null };
 }
 function updateProject(state: CareerRunState, projectId: string, updater: (project: CareerFilmProjectRun) => CareerFilmProjectRun): CareerRunState {
   const index = state.projects.findIndex((project) => project.id === projectId);
@@ -87,9 +90,10 @@ export const careerRunActions = {
   },
   changeScenarioTargetSelections(state: CareerRunState, projectId: string, selectedTargetIds: readonly string[]): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, selectedScenarioTargetIds: [...selectedTargetIds] })); },
   changePreProductionSelections(state: CareerRunState, projectId: string, selections: PreProductionSelectionState): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, preProductionSelections: selections })); },
-  lockPreProduction(state: CareerRunState, projectId: string, result: PreProductionStepResult): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, preProductionResult: result, selectedProductionEventId: "", selectedShootStrategyId: "steady", shootDayResults: [], shootResult: null, postProductionChoices: emptyPostProductionChoices, postProductionResult: null, releaseChoices: emptyReleaseChoices, releaseResult: null, careerApplicationResult: null })); },
+  lockPreProduction(state: CareerRunState, projectId: string, result: PreProductionStepResult): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, preProductionResult: result, selectedProductionEventId: "", selectedShootStrategyId: "steady", selectedProducerPriorityId: "crew_coordination", shootDayResults: [], shootResult: null, postProductionChoices: emptyPostProductionChoices, postProductionResult: null, releaseChoices: emptyReleaseChoices, releaseResult: null, careerApplicationResult: null })); },
   selectProductionEvent(state: CareerRunState, projectId: string, selectedProductionEventId: string): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, selectedProductionEventId })); },
   selectShootStrategy(state: CareerRunState, projectId: string, selectedShootStrategyId: ShootStrategyId): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, selectedShootStrategyId })); },
+  selectProducerPriority(state: CareerRunState, projectId: string, selectedProducerPriorityId: ProducerPriorityId): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, selectedProducerPriorityId })); },
   resolveShootDay(state: CareerRunState, projectId: string, dayResult: ShootDayStepResult): CareerRunState {
     return updateProject(state, projectId, (project) => {
       if (!project.developmentResult || !project.preProductionResult || project.shootResult || project.shootDayResults.some((day) => day.updatedShootDay.id === dayResult.updatedShootDay.id)) return project;
@@ -100,7 +104,7 @@ export const careerRunActions = {
         ...project,
         shootDayResults: resolvedDays,
         selectedProductionEventId: "",
-        selectedShootStrategyId: "steady",
+        selectedShootStrategyId: "steady", selectedProducerPriorityId: "crew_coordination",
         shootResult: isComplete ? createShootStepResult(preparation, resolvedDays) : null,
         postProductionChoices: emptyPostProductionChoices,
         postProductionResult: null,

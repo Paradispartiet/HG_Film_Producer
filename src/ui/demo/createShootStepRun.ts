@@ -4,6 +4,7 @@ import sceneFunctionsJson from "../../../data/film/scene_functions.json";
 
 import { applyProductionEvent } from "../../core/applyProductionEvent.js";
 import { applyShootStrategy, type ShootStrategyId, type ShootStrategySummary } from "../../core/applyShootStrategy.js";
+import { applyProducerPriority, type ProducerPriorityId, type ProducerPrioritySummary } from "../../core/applyProducerPriority.js";
 import { createProductionSchedule } from "../../core/createProductionSchedule.js";
 import { estimateSceneShootDifficulty } from "../../core/estimateSceneShootDifficulty.js";
 import { evaluateShootResult } from "../../core/evaluateShootResult.js";
@@ -77,12 +78,15 @@ export interface ShootStepPreparation {
 export interface ShootStepChoices {
   readonly selectedProductionEventId: string;
   readonly selectedShootStrategyId?: ShootStrategyId;
+  readonly selectedProducerPriorityId?: ProducerPriorityId;
 }
 
 export interface ShootDayStepResult {
   readonly updatedShootDay: ShootDay;
   readonly selectedEventSummary: ProductionEventSummary;
   readonly strategySummary?: ShootStrategySummary;
+  /** Optional: restored v1 saves predate the creative producer decision. */
+  readonly producerPrioritySummary?: ProducerPrioritySummary;
   readonly shootDayResult: ShootDayResult;
 }
 
@@ -158,8 +162,11 @@ export function resolveNextShootDay(
   );
   const application = applyProductionEvent(currentDay, selectedEvent);
   const baseResult = resolveShootDay(application.shootDay, preparation.starterScenes, [selectedEvent]);
-  const { result: shootDayResult, summary: strategySummary } = applyShootStrategy(
+  const { result: strategicDay, summary: strategySummary } = applyShootStrategy(
     currentDay, baseResult, choices.selectedShootStrategyId ?? "steady"
+  );
+  const { result: shootDayResult, summary: producerPrioritySummary } = applyProducerPriority(
+    strategicDay, selectedEvent, choices.selectedProducerPriorityId ?? "crew_coordination"
   );
   const resolvedShootDay: ShootDay = {
     ...application.shootDay,
@@ -170,6 +177,7 @@ export function resolveNextShootDay(
   return {
     updatedShootDay: resolvedShootDay,
     strategySummary,
+    producerPrioritySummary,
     selectedEventSummary: {
       title: selectedEvent.title,
       type: formatLabel(selectedEvent.type),

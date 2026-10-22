@@ -1,6 +1,7 @@
 import { getFilmWorkIntlLocale } from "../../core/filmWorkLanguage";
 import { STUDIO_CAREER_SHOOT_COPY } from "../../core/studioCareerShootCopy";
 import { SHOOT_STRATEGY_COPY } from "../../core/studioCareerShootStrategyCopy";
+import { PRODUCER_PRIORITY_COPY } from "../../core/studioCareerProducerPriorityCopy.js";
 import type { ProjectShootLabel } from "../types.js";
 import type { ShootDayStepResult, ShootStepPreparation } from "../demo/createShootStepRun.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
@@ -16,6 +17,7 @@ export function ShootDayResultPanel({ preparation, result, dayNumber, projectLab
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_SHOOT_COPY[language];
   const strategyCopy = SHOOT_STRATEGY_COPY[language];
+  const producerCopy = PRODUCER_PRIORITY_COPY[language];
   const locale = getFilmWorkIntlLocale(language);
   return (
     <section className="shoot-desk-section shoot-result-section">
@@ -33,6 +35,14 @@ export function ShootDayResultPanel({ preparation, result, dayNumber, projectLab
           <span className="section-label">{strategyCopy.response}</span>
           <strong>{strategyCopy.choices[result.strategySummary.id].name}</strong>
           <p>{strategyCopy.quality}: {signed(result.strategySummary.takeQualityDelta)} · {strategyCopy.cost}: {signedMoney(result.strategySummary.costDelta, locale)} · {strategyCopy.schedule}: {result.strategySummary.delayDaysDelta > 0 ? "+" : ""}{strategyCopy.dayUnit(result.strategySummary.delayDaysDelta)}</p>
+        </div>
+      )}
+      {result.producerPrioritySummary && (
+        <div className="producer-priority-feedback">
+          <span className="section-label">{producerCopy.resultHeading}</span>
+          <strong>{producerCopy.options[result.producerPrioritySummary.id].title}</strong>
+          <p>{producerCopy.consequence(result.producerPrioritySummary.takeQualityDelta)} · {result.producerPrioritySummary.interrupted ? producerCopy.interrupted : result.producerPrioritySummary.approachFits ? producerCopy.matched : producerCopy.partial}</p>
+          <p>{producerCopy.why[result.producerPrioritySummary.recommendedId]}</p>
         </div>
       )}
       <div className="shoot-result-grid">

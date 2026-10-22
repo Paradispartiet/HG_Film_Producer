@@ -195,3 +195,9 @@ Before adding a feature, ask:
 - Can the same learning goal be achieved without points, ranks or simulated resources?
 
 If the learning value is unclear, the feature should wait. HG Film Producer grows by improving film understanding, not by adding generic game systems.
+
+## Distinct role: Film Producer versus Film Director
+
+Film Director is a separate game for camera craft, mise-en-scène and actor direction. Film Producer must not duplicate its directing controls. In Film Producer the player learns how productions actually come together: choosing and developing material, aligning creative collaborators, casting and staffing, supporting the director's vision, handling safe working conditions and making informed post-production and release choices.
+
+Producer decisions should protect storytelling, performers and cross-department collaboration and explain their effect on the finished footage. Resource and budget consequences can remain available as optional context, but they must not lead the main interactive sequence. These additions apply to the experimental Studio Career loop; the historical, source-backed Production Cases remain the reference model.

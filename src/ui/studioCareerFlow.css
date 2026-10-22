@@ -530,3 +530,19 @@
   .shoot-budget-metrics { grid-template-columns: minmax(0, 1fr); }
   .shoot-budget-projection-heading { align-items: flex-start; flex-direction: column; }
 }
+
+
+/* Producer creativity is the main shoot choice; finance reports are optional detail. */
+.producer-priority-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 10px; margin-top: 13px; }
+.producer-priority-card { display: flex; align-items: flex-start; gap: 10px; padding: 15px; border: 1px solid var(--line-soft); background: rgba(5,7,9,0.18); cursor: pointer; }
+.producer-priority-card input { flex: none; margin-top: 3px; accent-color: var(--accent); }
+.producer-priority-card span { display: grid; gap: 8px; }
+.producer-priority-card strong { font-size: 13px; }
+.producer-priority-card small { color: var(--muted); line-height: 1.55; }
+.producer-priority-card--selected { border-color: var(--accent); background: var(--accent-soft); }
+.producer-priority-feedback { padding: 13px 15px; margin: 12px 0; border-left: 3px solid var(--accent); background: rgba(5,7,9,0.18); }
+.producer-priority-feedback strong { display: block; margin: 7px 0; }
+.producer-priority-feedback p { color: var(--muted); line-height: 1.55; margin: 6px 0 0; }
+.shoot-budget-details { margin: 15px 0; }
+.shoot-budget-details > summary { cursor: pointer; padding: 13px 15px; border: 1px solid var(--line-soft); color: var(--muted); }
+.shoot-budget-details[open] > .shoot-budget-monitor { margin-top: 12px; }
