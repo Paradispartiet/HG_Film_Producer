@@ -1,4 +1,6 @@
 import { formatStudioCareerPostProductionMoney, formatStudioCareerPostProductionStats, STUDIO_CAREER_POST_PRODUCTION_COPY } from "../../core/studioCareerPostProductionCopy.js";
+import { STUDIO_CAREER_SCRIPT_NOTE_COPY } from "../../core/studioCareerScriptNoteCopy.js";
+import { STUDIO_CAREER_SCRIPT_HANDOFF_COPY } from "../../core/studioCareerScriptHandoffCopy.js";
 import type { PostProductionStepResult } from "../demo/createPostProductionStepRun.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 import type { ProjectPostProductionLabel } from "../types.js";
@@ -13,6 +15,8 @@ interface PostProductionResultPanelProps {
 export function PostProductionResultPanel({ result, projectLabel = "first film", scriptDraftScore }: PostProductionResultPanelProps) {
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[language].result;
+  const scriptCopy = STUDIO_CAREER_SCRIPT_NOTE_COPY[language];
+  const handoffCopy = STUDIO_CAREER_SCRIPT_HANDOFF_COPY[language];
   const evaluation = result.postProductionEvaluation;
   const metrics = [
     [copy.metrics.edit, `${evaluation.editScore}`], [copy.metrics.sound, `${evaluation.soundScore}`], [copy.metrics.music, `${evaluation.musicScore}`],
@@ -25,6 +29,20 @@ export function PostProductionResultPanel({ result, projectLabel = "first film",
     <section className={`panel post-production-result-panel${isLaterFilm ? " post-production-result-panel--later-project" : ""}`}>
       <div className="post-panel-heading"><div><span className="eyebrow">{copy.lockedEyebrow(projectLabel)}</span><h2>{copy.heading(projectLabel)}</h2></div><div className="locked-cut-score"><span>{copy.overall}</span><strong>{evaluation.overall}</strong></div></div>
       <div className="applied-decision-grid">{decisions.map((decision) => <div key={decision.title}><span>{formatStudioCareerPostProductionMoney(decision.cost, language)}</span><strong>{decision.title}</strong><p>{formatStudioCareerPostProductionStats(decision.statChanges, language)}</p></div>)}</div>
+      {result.scriptCraftScores && (
+        <section className="post-result-section script-to-screening-handoff">
+          <div className="post-section-heading"><div>
+            <span className="eyebrow">{handoffCopy.heading}</span>
+            <h3>{scriptCopy.preview}</h3>
+          </div></div>
+          <div className="post-metric-grid">
+            <div className="post-metric"><span>{scriptCopy.conflict}</span><strong>{result.scriptCraftScores.conflict}/100</strong></div>
+            <div className="post-metric"><span>{scriptCopy.pacing}</span><strong>{result.scriptCraftScores.pacing}/100</strong></div>
+            <div className="post-metric"><span>{scriptCopy.emotion}</span><strong>{result.scriptCraftScores.emotion}/100</strong></div>
+          </div>
+          <p>{handoffCopy.screening}</p>
+        </section>
+      )}
       <TestScreeningPanel result={result.testScreeningResult} scriptDraftScore={scriptDraftScore} editingApproachId={result.editingApproachId} />
       <section className="post-result-section">
         <div className="post-section-heading"><div><span className="eyebrow">{copy.finalEyebrow}</span><h3>{copy.scorecardHeading}</h3></div><p>{copy.totalCost(formatStudioCareerPostProductionMoney(evaluation.totalCost, language))}</p></div>
