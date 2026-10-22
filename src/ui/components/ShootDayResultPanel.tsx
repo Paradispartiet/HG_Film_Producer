@@ -52,6 +52,7 @@ export function ShootDayResultPanel({ preparation, result, dayNumber, projectLab
           <summary>{ON_SET_DIALOGUE_COPY[language].review}</summary>
           <OnSetDialoguePanel
             confirmed
+            practicalActionVersion={result.practicalActionVersion}
             eventId={result.selectedEventId}
             priority={result.producerPrioritySummary.id}
             summary={result.producerPrioritySummary}
