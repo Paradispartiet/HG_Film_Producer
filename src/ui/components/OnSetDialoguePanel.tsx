@@ -10,7 +10,7 @@ interface OnSetDialoguePanelProps {
   readonly summary: ProducerPrioritySummary;
   readonly continuity?: TeamContinuity | undefined;
   readonly confirmed?: boolean;
-  readonly practicalActionVersion?: 1 | undefined;
+  readonly practicalActionVersion?: 1 | 2 | undefined;
 }
 
 /** A dialogue using the *real* producer decision and shoot resolver; no separate scoring. */
