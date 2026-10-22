@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { STUDIO_CAREER_POST_PRODUCTION_COPY } from "../../core/studioCareerPostProductionCopy.js";
 import { STUDIO_CAREER_EDITING_APPROACH_IDS } from "../../core/studioCareerEditingApproach.js";
+import { getStudioCareerEditingHandoff, STUDIO_CAREER_EDITING_HANDOFF_COPY } from "../../core/studioCareerEditingHandoff.js";
 import {
   createPostProductionStepResult,
   getPostProductionOptions,
@@ -53,6 +54,8 @@ export function PostProductionPanel({
   const options = getPostProductionOptions();
   const isLaterFilm = projectLabel !== "first film";
   const selectedEditingApproach = choices.editingApproachId ?? "balanced";
+  const handoff = getStudioCareerEditingHandoff(language, shootResult.resolvedDays);
+  const handoffCopy = STUDIO_CAREER_EDITING_HANDOFF_COPY[language];
   const scriptAction = developmentResults.find((action) => action.path === "script");
   const scriptDraftScore = scriptAction?.path === "script" ? scriptAction.overallScore : undefined;
   const scriptCraftScores = scriptAction?.path === "script" ? scriptAction.scoreBreakdown : undefined;
@@ -97,6 +100,19 @@ export function PostProductionPanel({
         </div>
         <p>{copy.panel.description}</p>
       </div>
+      <section className="editing-handoff" aria-label={handoffCopy.heading}>
+        <h3>{handoffCopy.heading}</h3>
+        <p>{handoffCopy.introduction}</p>
+        <strong>{handoffCopy.averageTake(shootResult.shootEvaluation.averageTakeQuality)}</strong>
+        {handoff && (
+          <details>
+            <summary>{handoffCopy.dayLabel(handoff.dayNumber)}</summary>
+            <p>{handoff.action}</p>
+            <p><strong>{handoffCopy.crewResponse}: </strong>{handoff.teamResponse}</p>
+          </details>
+        )}
+        <small>{handoffCopy.limits}</small>
+      </section>
       <EditDecisionPanel onSelect={(id) => select("editDecisionId", id)} options={options.editDecisions} selectedId={choices.editDecisionId} />
       <section className="editing-tradeoff-section">
         <div className="post-section-heading">
