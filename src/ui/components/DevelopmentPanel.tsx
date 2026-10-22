@@ -135,7 +135,7 @@ export function DevelopmentPanel({
         />
       )}
       {selectedPath === "script" && (
-        <ScriptChoicePanel onApply={() => onApplyAction(createScriptDevelopmentResult(chainedContext))} run={chainedContext} />
+        <ScriptChoicePanel onApply={(focusId) => onApplyAction(createScriptDevelopmentResult(chainedContext, focusId))} run={chainedContext} />
       )}
       {lastAction && !selectedPath && (
         <div className="development-decision-feedback" role="status" aria-live="polite">

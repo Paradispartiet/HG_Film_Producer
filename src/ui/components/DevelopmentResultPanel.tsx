@@ -1,4 +1,5 @@
 import { STUDIO_CAREER_DEVELOPMENT_COPY } from "../../core/studioCareerDevelopmentCopy.js";
+import { STUDIO_CAREER_SCRIPT_NOTE_COPY } from "../../core/studioCareerScriptNoteCopy.js";
 import type { DevelopmentStepResult, HistoricalExample } from "../demo/createDevelopmentStepRun.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 
@@ -25,6 +26,7 @@ export function DevelopmentResultPanel({ results, projectLabel = "Film 1" }: Dev
 function DevelopmentActionResult({ result }: { readonly result: DevelopmentStepResult }) {
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_DEVELOPMENT_COPY[language];
+  const scriptNotes = STUDIO_CAREER_SCRIPT_NOTE_COPY[language];
 
   return (
     <div className="development-result-body">
@@ -57,6 +59,16 @@ function DevelopmentActionResult({ result }: { readonly result: DevelopmentStepR
             <ResultMetric label={copy.result.sceneCount} value={`${result.sceneCount}`} />
             <ResultMetric label={copy.result.overallScore} value={`${result.overallScore} / 100`} />
           </div>
+          {result.revisionFocusId && (
+            <ResultCopy label={scriptNotes.decision} value={`${scriptNotes.options[result.revisionFocusId].title} · ${scriptNotes.options[result.revisionFocusId].lesson}`} />
+          )}
+          {result.scoreBreakdown && (
+            <div className="result-metric-grid">
+              <ResultMetric label={scriptNotes.conflict} value={`${result.scoreBreakdown.conflict}/100`} />
+              <ResultMetric label={scriptNotes.pacing} value={`${result.scoreBreakdown.pacing}/100`} />
+              <ResultMetric label={scriptNotes.emotion} value={`${result.scoreBreakdown.emotion}/100`} />
+            </div>
+          )}
           <ResultNotes notes={result.notes} />
         </>
       )}
