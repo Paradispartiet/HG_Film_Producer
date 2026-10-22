@@ -55,6 +55,7 @@ export function PostProductionPanel({
   const selectedEditingApproach = choices.editingApproachId ?? "balanced";
   const scriptAction = developmentResults.find((action) => action.path === "script");
   const scriptDraftScore = scriptAction?.path === "script" ? scriptAction.overallScore : undefined;
+  const scriptCraftScores = scriptAction?.path === "script" ? scriptAction.scoreBreakdown : undefined;
   const choiceLabels: ReadonlyArray<readonly [keyof PostProductionChoices, string]> = [
     ["editDecisionId", copy.panel.choiceLabels.edit],
     ["soundDecisionId", copy.panel.choiceLabels.sound],
@@ -84,7 +85,7 @@ export function PostProductionPanel({
     }
 
     setMessage("");
-    onLock(createPostProductionStepResult(projectContext, preProductionResult, shootResult, choices, scriptDraftScore));
+    onLock(createPostProductionStepResult(projectContext, preProductionResult, shootResult, choices, scriptDraftScore, scriptCraftScores));
   }
 
   return (

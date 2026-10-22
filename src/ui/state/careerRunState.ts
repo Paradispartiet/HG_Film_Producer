@@ -9,7 +9,7 @@ import { createProjectRunContext } from "../demo/createProjectRunContext";
 import type { NextProjectStepResult } from "../demo/createNextProjectStepRun";
 import type { PostProductionChoices, PostProductionStepResult } from "../demo/createPostProductionStepRun";
 import type { ReleaseStepChoices, ReleaseStepResult } from "../demo/createReleaseStepRun";
-import { createShootStepResult, getShootPreparation, type ShootDayStepResult, type ShootStepResult } from "../demo/createShootStepRun";
+import { createShootStepResult, getShootPreparation, getScriptProducerNoteId, type ShootDayStepResult, type ShootStepResult } from "../demo/createShootStepRun";
 import type { PreProductionSelectionState } from "../types";
 
 export const careerRunStorageKey = "hg-film-producer-career-run-v1";
@@ -98,7 +98,7 @@ export const careerRunActions = {
     return updateProject(state, projectId, (project) => {
       if (!project.developmentResult || !project.preProductionResult || project.shootResult || project.shootDayResults.some((day) => day.updatedShootDay.id === dayResult.updatedShootDay.id)) return project;
       const resolvedDays = [...project.shootDayResults, dayResult];
-      const preparation = getShootPreparation(getRunContext(project.run), project.developmentResult, project.preProductionResult);
+      const preparation = getShootPreparation(getRunContext(project.run), project.developmentResult, project.preProductionResult, getScriptProducerNoteId(project.developmentResults));
       const isComplete = resolvedDays.length >= preparation.productionSchedule.shootDays.length;
       return {
         ...project,

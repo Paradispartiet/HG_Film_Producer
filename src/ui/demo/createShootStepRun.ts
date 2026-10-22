@@ -3,6 +3,7 @@ import locationsJson from "../../../data/film/locations.json";
 import sceneFunctionsJson from "../../../data/film/scene_functions.json";
 
 import { applyProductionEvent } from "../../core/applyProductionEvent.js";
+import { applyScriptProducerNote, type ScriptProducerNoteId } from "../../core/applyScriptProducerNote.js";
 import { applyShootStrategy, type ShootStrategyId, type ShootStrategySummary } from "../../core/applyShootStrategy.js";
 import { applyProducerPriority, type ProducerPriorityId, type ProducerPrioritySummary } from "../../core/applyProducerPriority.js";
 import { createProductionSchedule } from "../../core/createProductionSchedule.js";
@@ -23,7 +24,7 @@ import type {
 } from "../../domain/shoot.js";
 import type { PipelineStepSummary } from "../types.js";
 import { adaptFilmSeedData } from "./adaptFilmSeedData.js";
-import type { DevelopmentStepResult } from "./createDevelopmentStepRun.js";
+import type { DevelopmentStepResult, ScriptDevelopmentResult } from "./createDevelopmentStepRun.js";
 import type { PreProductionStepResult } from "./createPreProductionStepRun.js";
 import type { ProjectRunContext } from "./createProjectRunContext.js";
 
@@ -73,6 +74,12 @@ export interface ShootStepPreparation {
   readonly availableProductionEvents: readonly ProductionEventOption[];
   readonly scheduleSummary: ShootScheduleSummary;
   readonly locationName: string;
+  /** Only present when a new, approved producer script note shaped the shoot. */
+  readonly scriptRevision?: {
+    readonly noteId: ScriptProducerNoteId;
+    readonly baselineScenePressure: number;
+    readonly revisedScenePressure: number;
+  };
 }
 
 export interface ShootStepChoices {
@@ -91,6 +98,8 @@ export interface ShootDayStepResult {
 }
 
 export interface ShootStepResult {
+  /** Saved evidence of the writing decision used in this film's actual shoot. */
+  readonly scriptRevisionFocusId?: ScriptProducerNoteId;
   readonly resolvedDays: readonly ShootDayStepResult[];
   readonly shootEvaluation: ShootResultEvaluation;
   readonly pipelineStep: PipelineStepSummary;
@@ -99,19 +108,34 @@ export interface ShootStepResult {
 export function getShootPreparation(
   projectContext: ProjectRunContext,
   developmentResult: DevelopmentStepResult,
-  preProductionResult: PreProductionStepResult
+  preProductionResult: PreProductionStepResult,
+  scriptProducerNoteId?: ScriptProducerNoteId
 ): ShootStepPreparation {
   const selectedLocation = requireItem(shootData.locations, preProductionResult.location.id, "location");
-  const starterScenes = createStarterScenes(projectContext, developmentResult, selectedLocation);
+  const originalScenes = createStarterScenes(projectContext, developmentResult, selectedLocation);
+  // The writing action might not be the last development action. The caller
+  // can therefore pass the script note independently from the final path.
+  const noteId = scriptProducerNoteId
+    ?? (developmentResult.path === "script" ? developmentResult.revisionFocusId : undefined);
+  const starterScenes = applyScriptProducerNote(originalScenes, noteId);
   const productionSchedule = createProductionSchedule(preProductionResult.projectState, starterScenes);
+  const scenePressure = (scene: Scene) => estimateSceneShootDifficulty(scene, {
+    actorCount: preProductionResult.casting.projectActorCount,
+    locationLogistics: selectedLocation.productionModifiers.logistics
+  });
   const sceneDifficultySummaries = starterScenes.slice(0, 3).map((scene) => ({
     scene,
     functionName: requireItem(shootData.sceneFunctions, scene.functionId, "scene function").name,
-    difficulty: estimateSceneShootDifficulty(scene, {
-      actorCount: preProductionResult.casting.projectActorCount,
-      locationLogistics: selectedLocation.productionModifiers.logistics
-    })
+    difficulty: scenePressure(scene)
   }));
+  const averagePressure = (scenes: readonly Scene[]) => scenes.length
+    ? Math.round(scenes.reduce((sum, scene) => sum + scenePressure(scene).difficultyScore, 0) / scenes.length)
+    : 0;
+  const scriptRevision = noteId ? {
+    noteId,
+    baselineScenePressure: averagePressure(originalScenes),
+    revisedScenePressure: averagePressure(starterScenes)
+  } : undefined;
 
   return {
     projectState: preProductionResult.projectState,
@@ -124,8 +148,16 @@ export function getShootPreparation(
       plannedBudget: productionSchedule.plannedBudget,
       contingencyBudget: productionSchedule.contingencyBudget
     },
-    locationName: preProductionResult.location.name
+    locationName: preProductionResult.location.name,
+    ...(scriptRevision ? { scriptRevision } : {})
   };
+}
+
+/** Read an approved script note regardless of what other development action came last. */
+export function getScriptProducerNoteId(
+  results: readonly DevelopmentStepResult[]
+): ScriptProducerNoteId | undefined {
+  return results.find((action): action is ScriptDevelopmentResult => action.path === "script")?.revisionFocusId;
 }
 
 export function getProductionEventOptions(): readonly ProductionEventOption[] {
@@ -208,6 +240,7 @@ export function createShootStepResult(
   const totalScenesCompleted = resolvedDays.reduce((sum, day) => sum + day.shootDayResult.completedSceneIds.length, 0);
 
   return {
+    ...(preparation.scriptRevision ? { scriptRevisionFocusId: preparation.scriptRevision.noteId } : {}),
     resolvedDays,
     shootEvaluation,
     pipelineStep: {

@@ -1,5 +1,7 @@
 import { getFilmWorkIntlLocale } from "../../core/filmWorkLanguage";
 import { STUDIO_CAREER_SHOOT_COPY } from "../../core/studioCareerShootCopy";
+import { STUDIO_CAREER_SCRIPT_NOTE_COPY } from "../../core/studioCareerScriptNoteCopy.js";
+import { STUDIO_CAREER_SCRIPT_HANDOFF_COPY } from "../../core/studioCareerScriptHandoffCopy.js";
 import type { ProjectShootLabel } from "../types.js";
 import type { ShootStepResult } from "../demo/createShootStepRun.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
@@ -12,6 +14,8 @@ interface ShootEvaluationPanelProps {
 export function ShootEvaluationPanel({ result, projectLabel = "first film" }: ShootEvaluationPanelProps) {
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_SHOOT_COPY[language].evaluation;
+  const scriptCopy = STUDIO_CAREER_SCRIPT_NOTE_COPY[language];
+  const handoffCopy = STUDIO_CAREER_SCRIPT_HANDOFF_COPY[language];
   const locale = getFilmWorkIntlLocale(language);
   const evaluation = result.shootEvaluation;
   const metrics = [
@@ -32,6 +36,12 @@ export function ShootEvaluationPanel({ result, projectLabel = "first film" }: Sh
         <strong className="shoot-day-badge">{copy.overall(evaluation.overall)}</strong>
       </div>
       <div className="shoot-evaluation-grid">{metrics.map(([label, value]) => <EvaluationMetric key={label} label={label} value={value} />)}</div>
+      {result.scriptRevisionFocusId && (
+        <div className="script-shoot-result-evidence">
+          <strong>{scriptCopy.options[result.scriptRevisionFocusId].title}</strong>
+          <p>{handoffCopy.result}</p>
+        </div>
+      )}
       <ul className="shoot-note-list">{evaluation.notes.map((note) => <li key={note}>{note}</li>)}</ul>
       <div className="next-step-strip"><span>{copy.nextStep}</span><strong>{copy.nextMessage(projectLabel)}</strong></div>
     </section>

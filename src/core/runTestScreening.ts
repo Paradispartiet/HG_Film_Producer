@@ -4,6 +4,13 @@ import type { ScriptEvaluation } from "../domain/script.js";
 import type { ShootResultEvaluation } from "../domain/shoot.js";
 import { getStudioCareerEditingApproach, type StudioCareerEditingApproachId } from "./studioCareerEditingApproach.js";
 
+/** Story dimensions from a real development draft, kept separate from the overall grade. */
+export interface ScriptCraftScores {
+  readonly conflict: number;
+  readonly pacing: number;
+  readonly emotion: number;
+}
+
 /** Test the current cut using its craft coverage plus any available script and shoot evidence. */
 export function runTestScreening(
   project: FilmProject,
@@ -11,7 +18,8 @@ export function runTestScreening(
   shootEvaluation?: ShootResultEvaluation,
   scriptEvaluation?: ScriptEvaluation,
   scriptDraftScore?: number,
-  editingApproachId?: StudioCareerEditingApproachId
+  editingApproachId?: StudioCareerEditingApproachId,
+  scriptCraftScores?: ScriptCraftScores
 ): TestScreeningResult {
   assertProject(plan.projectId, project.id, "Post-production plan");
   if (shootEvaluation) {
@@ -25,8 +33,14 @@ export function runTestScreening(
   const colorCoverage = Math.min(3, plan.colorDecisionIds.length);
   const shootQuality = shootEvaluation?.averageTakeQuality ?? 55;
   const structure = scriptEvaluation?.scores.structure ?? 55;
-  const scriptPacing = scriptEvaluation?.scores.pacing ?? 55;
-  const scriptEmotion = scriptEvaluation?.scores.emotion ?? 55;
+  // Existing scriptEvaluation callers retain priority; Studio Career supplies
+  // real measured craft axes only when its approved draft recorded them.
+  const measured = (value: number | undefined): number | undefined =>
+    value !== undefined && Number.isFinite(value) ? clampScore(value) : undefined;
+  const scriptPacing = scriptEvaluation?.scores.pacing ?? measured(scriptCraftScores?.pacing) ?? 55;
+  const scriptEmotion = scriptEvaluation?.scores.emotion ?? measured(scriptCraftScores?.emotion) ?? 55;
+  const scriptConflict = scriptEvaluation ? undefined : measured(scriptCraftScores?.conflict);
+  const stakesClarity = scriptConflict === undefined ? 0 : (scriptConflict - 55) * 0.12;
   // A completed Studio Career script draft is evaluated during development.
   // Its overall score is a modest shared story-readiness signal, rather than
   // a fabricated set of per-axis script scores. Completing a sound draft
@@ -36,14 +50,14 @@ export function runTestScreening(
     ? 0
     : Math.max(-12, Math.min(18, (Math.max(0, Math.min(100, scriptDraftScore)) - 35) * 0.5));
 
-  const clarityScore = clampScore(34 + structure * 0.35 + shootQuality * 0.08 + editCoverage * 6 + soundCoverage * 5 + scriptReadiness + editing.clarity);
+  const clarityScore = clampScore(34 + structure * 0.35 + shootQuality * 0.08 + editCoverage * 6 + soundCoverage * 5 + scriptReadiness + stakesClarity + editing.clarity);
   const pacingScore = clampScore(34 + scriptPacing * 0.38 + shootQuality * 0.08 + editCoverage * 8 + scriptReadiness + editing.pacing);
   const emotionScore = clampScore(
     32 + scriptEmotion * 0.38 + shootQuality * 0.08 + musicCoverage * 7 + colorCoverage * 3 + scriptReadiness + editing.emotion
   );
   const audienceHookScore = clampScore(
     38 + scriptPacing * 0.16 + scriptEmotion * 0.16 + project.actorIds.length * 3
-      + editCoverage * 4 + musicCoverage * 4 + colorCoverage * 2 + scriptReadiness + editing.audienceHook
+      + editCoverage * 4 + musicCoverage * 4 + colorCoverage * 2 + scriptReadiness + stakesClarity * 0.6 + editing.audienceHook
   );
   const confusionRisk = clampScore(100 - clarityScore * 0.72 - pacingScore * 0.18);
   const recommendedChanges: string[] = [];
@@ -73,6 +87,9 @@ export function runTestScreening(
       `The screening reflects ${editCoverage + soundCoverage + musicCoverage + colorCoverage} active craft decisions.`,
       ...(scriptDraftScore !== undefined && Number.isFinite(scriptDraftScore)
         ? [`The completed script draft scored ${Math.round(Math.max(0, Math.min(100, scriptDraftScore)))}/100 and informs story readiness at this screening.`]
+        : []),
+      ...(scriptCraftScores && scriptConflict !== undefined
+        ? [`Approved screenplay craft: conflict ${scriptConflict}/100, pacing ${scriptPacing}/100, emotion ${scriptEmotion}/100; these inform the screened cut.`]
         : []),
       ...(editing.id === "balanced"
         ? []
