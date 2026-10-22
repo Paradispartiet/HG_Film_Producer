@@ -110,6 +110,10 @@ async function run(browser, spec) {
     assert.ok(savedPre.preProductionResult.budgetPriority.crewGain > 0, "Paid team preparation changes actual crew evaluation");
 
     await expectPhase(page, ".shoot-panel", "shoot", milestones);
+    const storyHandoff = page.locator(".shoot-panel .script-to-shoot-handoff");
+    await storyHandoff.waitFor({ state: "visible" });
+    assert.ok((await storyHandoff.innerText()).includes("100"), "Approved screenplay note changes visible shooting pressure");
+    assert.ok((await storyHandoff.innerText()).length > 60, "The producer learns the film-craft consequences");
     let days = 0;
     while (await page.locator(".shoot-panel .shoot-actions button.primary-button").count()) {
       const financeDisclosure = page.locator(".shoot-panel details.shoot-budget-details");
@@ -201,6 +205,7 @@ async function run(browser, spec) {
     }
     assert.ok(days > 0, "Shoot was actually played");
     await awaitSaved(page, "shootResult");
+    assert.equal((await readSaved(page)).projects[0].shootResult.scriptRevisionFocusId, "scene_momentum", "The shoot used the producer's approved script revision");
 
     const post = await expectPhase(page, ".post-production-panel", "post-production", milestones);
     const decisions = post.locator(".post-decision-section");
@@ -216,6 +221,8 @@ async function run(browser, spec) {
     const savedPost = (await readSaved(page)).projects[0];
     assert.equal(savedPost.postProductionChoices.editingApproachId, "bold_cut", "Editing choice must persist in career save");
     assert.equal(savedPost.postProductionResult.editingApproachId, "bold_cut", "Editing choice must reach the game engine");
+    assert.deepEqual(savedPost.postProductionResult.scriptCraftScores, scriptResult.scoreBreakdown, "Locked cut uses approved screenplay conflict, pacing and emotion");
+    assert.ok(savedPost.postProductionResult.testScreeningResult.notes.some((note) => note.includes("Approved screenplay craft")), "The actual screening used screenplay craft evidence");
     assert.ok(savedPost.postProductionResult.testScreeningResult.notes.some((note) => note.includes("Editing approach bold_cut")), "Editing compromise must affect the screening result");
     const completedScript = savedPost.developmentResults.find((action) => action.path === "script");
     assert.ok(completedScript, "Script action must be available even after production advances");
@@ -227,6 +234,9 @@ async function run(browser, spec) {
     await finishedPostRow.locator("button").click();
     const screenplayEvidence = page.locator(".post-production-result-panel .script-screening-evidence");
     await screenplayEvidence.waitFor({ state: "visible" });
+    const craftEvidence = page.locator(".post-production-result-panel .script-to-screening-handoff");
+    await craftEvidence.waitFor({ state: "visible" });
+    assert.ok((await craftEvidence.innerText()).includes(String(scriptResult.scoreBreakdown.pacing)), "The screenplay's original craft scores remain readable after post-production");
     const editingEvidence = page.locator(".post-production-result-panel .editing-tradeoff-evidence");
     await editingEvidence.waitFor({ state: "visible" });
     assert.ok((await editingEvidence.innerText()).length > 20, "Creative consequence must be visible after locking");
