@@ -19,7 +19,8 @@ import type {
   CrewDiscipline,
   CrewFitScore,
   CrewMember,
-  ProductionTeamEvaluation
+  ProductionTeamEvaluation,
+  CastingChemistryResult
 } from "../../domain/crew.js";
 import type { FilmProject } from "../../domain/film.js";
 import type { Location, LocationFitScore, LocationScoutingBrief } from "../../domain/location.js";
@@ -181,6 +182,22 @@ export function getActorCandidates(
       };
     })
     .sort((left, right) => right.score.totalScore - left.score.totalScore);
+}
+
+/**
+ * Preview ensemble chemistry before casting is locked. Reuse the same grown
+ * roster data and calculation as final pre-production; no score bonus is given.
+ */
+export function previewCastingChemistry(
+  selectedActorIds: readonly string[],
+  careerState?: CareerState
+): CastingChemistryResult {
+  const selected = new Set(selectedActorIds);
+  return calculateCastingChemistry(
+    preProductionData.actors
+      .filter((actor) => selected.has(actor.id))
+      .map((actor) => applyActorRosterGrowth(actor, careerState?.castRoster[actor.id]))
+  );
 }
 
 export function createPreProductionResult(

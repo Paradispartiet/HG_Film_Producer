@@ -116,7 +116,7 @@ export const STUDIO_CAREER_PRE_PRODUCTION_COPY = {
     casting: {
       step: "03 · Casting",
       heading: "Build the principal cast",
-      intro: "Select at least two actors. Chemistry is calculated when the production plan is locked.",
+      intro: "Select at least two actors. Explore ensemble chemistry now, and weigh role fit alongside star power.",
       starPower: "Star power",
       reliability: "Reliability",
       fee: "Fee",
@@ -197,7 +197,7 @@ export const STUDIO_CAREER_PRE_PRODUCTION_COPY = {
     casting: {
       step: "03 · Casting",
       heading: "Bygg hovedcastet",
-      intro: "Velg minst to skuespillere. Kjemi beregnes når produksjonsplanen låses.",
+      intro: "Velg minst to skuespillere. Undersøk samspillet nå, og vurder rolleegnethet ved siden av stjernekraft.",
       starPower: "Stjernekraft",
       reliability: "Pålitelighet",
       fee: "Honorar",
@@ -278,7 +278,7 @@ export const STUDIO_CAREER_PRE_PRODUCTION_COPY = {
     casting: {
       step: "03 · Casting",
       heading: "Composer la distribution principale",
-      intro: "Sélectionnez au moins deux interprètes. L’alchimie est calculée lorsque le plan de production est verrouillé.",
+      intro: "Sélectionnez au moins deux interprètes. Explorez leur alchimie dès maintenant et comparez-la à leur adéquation aux rôles.",
       starPower: "Notoriété",
       reliability: "Fiabilité",
       fee: "Cachet",
@@ -359,7 +359,7 @@ export const STUDIO_CAREER_PRE_PRODUCTION_COPY = {
     casting: {
       step: "03 · Casting",
       heading: "Formar o elenco principal",
-      intro: "Selecione pelo menos dois intérpretes. A química é calculada quando o plano de produção é fechado.",
+      intro: "Selecione pelo menos dois intérpretes. Explore já a química do elenco e compare-a com a adequação aos papéis.",
       starPower: "Notoriedade",
       reliability: "Fiabilidade",
       fee: "Remuneração",
