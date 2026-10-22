@@ -10,13 +10,14 @@ interface OnSetDialoguePanelProps {
   readonly summary: ProducerPrioritySummary;
   readonly continuity?: TeamContinuity | undefined;
   readonly confirmed?: boolean;
+  readonly practicalActionVersion?: 1;
 }
 
 /** A dialogue using the *real* producer decision and shoot resolver; no separate scoring. */
-export function OnSetDialoguePanel({ eventId, priority, summary, continuity, confirmed = false }: OnSetDialoguePanelProps) {
+export function OnSetDialoguePanel({ eventId, priority, summary, continuity, confirmed = false, practicalActionVersion }: OnSetDialoguePanelProps) {
   const [language] = useFilmWorkLanguage();
   const copy = ON_SET_DIALOGUE_COPY[language];
-  const conversation = getOnSetConversation(language, eventId, priority, summary);
+  const conversation = getOnSetConversation(language, eventId, priority, summary, practicalActionVersion);
   const previousDay = continuity ? describeTeamContinuity(language, continuity) : undefined;
   const spokenFollowUp = describeOnSetFollowUp(language, eventId, continuity);
   if (!conversation) return null;
