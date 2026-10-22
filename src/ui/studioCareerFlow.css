@@ -593,3 +593,23 @@
 .release-craft-handoff-promise { margin: 12px 0; padding: 10px 12px; border-left: 3px solid var(--accent); background: var(--accent-soft); overflow-wrap: anywhere; }
 .release-craft-handoff-promise p { margin: 6px 0 0; }
 .release-craft-handoff > small { display: block; color: var(--muted); line-height: 1.5; }
+
+
+/* Studio and film-title choices replace written names throughout the career. */
+.setup-panel .text-field select,
+.next-project-form .text-field select {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--line-soft, rgba(145, 145, 145, .35));
+  border-radius: 8px;
+  background: var(--panel, #151a20);
+  color: inherit;
+  font: inherit;
+}
+.setup-panel .text-field select:focus-visible,
+.next-project-form .text-field select:focus-visible {
+  outline: 2px solid var(--accent, #568cc3);
+  outline-offset: 2px;
+}
