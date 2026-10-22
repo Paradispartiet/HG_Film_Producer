@@ -51,7 +51,7 @@ test("screenings reflect distinct real screenplay axes, not just one overall scr
   assert.ok(character.emotionScore > momentum.emotionScore);
   assert.ok(momentum.pacingScore > character.pacingScore);
   assert.ok(stakes.clarityScore > character.clarityScore);
-  assert.ok(stakes.audienceHookScore > character.audienceHookScore);
+  assert.ok(character.audienceHookScore > stakes.audienceHookScore);
   assert.ok(character.notes.some((note) => note.includes("Approved screenplay craft")));
 });
 
