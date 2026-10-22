@@ -55,6 +55,7 @@ export function ShootDayResultPanel({ preparation, result, dayNumber, projectLab
             eventId={result.selectedEventId}
             priority={result.producerPrioritySummary.id}
             summary={result.producerPrioritySummary}
+            continuity={result.teamContinuity}
           />
         </details>
       )}

@@ -139,6 +139,7 @@ export function ShootPanel({
               eventId={selectedProductionEventId}
               priority={selectedProducerPriorityId}
               summary={previewResolution.producerPrioritySummary}
+              continuity={previewResolution.teamContinuity}
             />
           )}
           <ShootStrategyPanel budgetRisk={budgetPosition.projected?.risk ?? budgetPosition.actual.risk} onSelect={onSelectShootStrategy} plannedCost={currentDay.plannedCost} selectedId={selectedShootStrategyId} />

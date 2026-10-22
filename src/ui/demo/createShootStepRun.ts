@@ -6,6 +6,7 @@ import { applyProductionEvent } from "../../core/applyProductionEvent.js";
 import { applyScriptProducerNote, type ScriptProducerNoteId } from "../../core/applyScriptProducerNote.js";
 import { applyShootStrategy, type ShootStrategyId, type ShootStrategySummary } from "../../core/applyShootStrategy.js";
 import { applyProducerPriority, type ProducerPriorityId, type ProducerPrioritySummary } from "../../core/applyProducerPriority.js";
+import { getTeamContinuity, type TeamContinuity } from "../../core/studioCareerTeamContinuity.js";
 import { createProductionSchedule } from "../../core/createProductionSchedule.js";
 import { estimateSceneShootDifficulty } from "../../core/estimateSceneShootDifficulty.js";
 import { evaluateShootResult } from "../../core/evaluateShootResult.js";
@@ -91,6 +92,8 @@ export interface ShootStepChoices {
 export interface ShootDayStepResult {
   /** Stored for playback of the producer's conversation; absent in earlier saves. */
   readonly selectedEventId?: string;
+  /** The previous day as it was known when this decision was made. */
+  readonly teamContinuity?: TeamContinuity;
   readonly updatedShootDay: ShootDay;
   readonly selectedEventSummary: ProductionEventSummary;
   readonly strategySummary?: ShootStrategySummary;
@@ -194,13 +197,14 @@ export function resolveNextShootDay(
     choices.selectedProductionEventId,
     "production event"
   );
+  const teamContinuity = getTeamContinuity(resolvedDays.at(-1), selectedEvent);
   const application = applyProductionEvent(currentDay, selectedEvent);
   const baseResult = resolveShootDay(application.shootDay, preparation.starterScenes, [selectedEvent]);
   const { result: strategicDay, summary: strategySummary } = applyShootStrategy(
     currentDay, baseResult, choices.selectedShootStrategyId ?? "steady"
   );
   const { result: shootDayResult, summary: producerPrioritySummary } = applyProducerPriority(
-    strategicDay, selectedEvent, choices.selectedProducerPriorityId ?? "crew_coordination"
+    strategicDay, selectedEvent, choices.selectedProducerPriorityId ?? "crew_coordination", teamContinuity?.recommendedId
   );
   const resolvedShootDay: ShootDay = {
     ...application.shootDay,
@@ -210,6 +214,7 @@ export function resolveNextShootDay(
 
   return {
     selectedEventId: selectedEvent.id,
+    ...(teamContinuity ? { teamContinuity } : {}),
     updatedShootDay: resolvedShootDay,
     strategySummary,
     producerPrioritySummary,

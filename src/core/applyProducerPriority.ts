@@ -28,10 +28,12 @@ export function getRecommendedProducerPriority(event: EventContext): ProducerPri
 export function applyProducerPriority(
   base: ShootDayResult,
   event: EventContext,
-  id: ProducerPriorityId
+  id: ProducerPriorityId,
+  recommendationOverride?: ProducerPriorityId
 ): { readonly result: ShootDayResult; readonly summary: ProducerPrioritySummary } {
   if (!PRODUCER_PRIORITY_IDS.includes(id)) throw new Error(`Unknown producer priority: ${id}`);
-  const recommendedId = getRecommendedProducerPriority(event);
+  if (recommendationOverride && !PRODUCER_PRIORITY_IDS.includes(recommendationOverride)) throw new Error(`Unknown recommendation: ${recommendationOverride}`);
+  const recommendedId = recommendationOverride ?? getRecommendedProducerPriority(event);
   const approachFits = id === recommendedId;
   const interrupted = base.completedSceneIds.length === 0;
   const takeQuality = interrupted ? base.takeQuality : Math.min(100, base.takeQuality + (approachFits ? 8 : 2));

@@ -130,6 +130,9 @@ async function run(browser, spec) {
       await page.locator('.shoot-panel .production-event-grid input[type="radio"]').nth(days % 2 === 0 ? 4 : 3).check();
       const conversation = page.locator('.shoot-panel .on-set-dialogue[aria-live="polite"]');
       await conversation.waitFor({ state: "visible" });
+      if (days > 0) {
+        assert.ok((await conversation.locator(".on-set-dialogue-continuity").innerText()).length > 40, "Later conversation reflects the previous producer decision");
+      }
       const beforeReply = await conversation.locator(".on-set-dialogue-producer").innerText();
       assert.ok((await conversation.locator(".on-set-dialogue-concern").innerText()).length > 40, "A real team member raises a concrete filmmaking concern");
       const creativeChoices = page.locator('.shoot-panel .producer-priority-grid input[type="radio"]');
@@ -171,6 +174,12 @@ async function run(browser, spec) {
       assert.equal(savedDay.strategySummary?.id, chosenResponse);
       assert.equal(savedDay.producerPrioritySummary?.id, chosenPriority, "Creative producer choice is persisted with the day");
       assert.equal(savedDay.selectedEventId, days % 2 === 1 ? "production_event_actor_conflict" : "production_event_camera_breakthrough", "Concrete dilemma survives into the saved production report");
+      if (days > 1) {
+        assert.equal(savedDay.teamContinuity?.previousEventId, days % 2 === 0 ? "production_event_actor_conflict" : "production_event_camera_breakthrough", "Continuation remembers the prior real set challenge");
+        assert.equal(savedDay.teamContinuity?.previousWasMatched, true, "A supported crew relationship carries into the next shooting day");
+      } else {
+        assert.equal(savedDay.teamContinuity, undefined, "First shooting day has no invented relationship history");
+      }
       assert.equal(savedDay.producerPrioritySummary?.recommendedId, chosenPriority, "Matched obstacle and producer support are explained");
       assert.ok(savedDay.producerPrioritySummary?.takeQualityDelta >= 0, "Creative support cannot hurt usable footage");
       if (days === 1) {
