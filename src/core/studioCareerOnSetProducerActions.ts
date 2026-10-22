@@ -12,6 +12,31 @@ type ActionCatalog = Readonly<Partial<Record<OnSetEventId, ActionSet>>>;
 
 export const ON_SET_PRODUCER_ACTIONS: Readonly<Record<FilmWorkLanguage, ActionCatalog>> = {
   en: {
+    production_event_perfect_weather: {
+      story_clarity: "Ask the director and script supervisor which story moment most benefits from the light before approving a schedule change.",
+      performance_trust: "Protect a brief preparation window for performers so an unexpected lighting opportunity does not become rushed acting.",
+      crew_coordination: "Agree a safe short adjustment with camera, sound and the assistant director while preserving the rest of the shooting plan."
+    },
+    production_event_camera_breakthrough: {
+      story_clarity: "Confirm with the director how the proposed technical discovery serves the scene without deciding the shot design for them.",
+      performance_trust: "Give the cast space to prepare for the new technical setup rather than springing a last-minute demand on performers.",
+      crew_coordination: "Bring camera, sound and the assistant director together to confirm equipment, time and safe working conditions for the idea."
+    },
+    production_event_actor_improvisation: {
+      story_clarity: "Ask the director and script supervisor whether the improvisation supports the film's intended character and story arc.",
+      performance_trust: "Protect a short rehearsal for director and cast to explore the spontaneous idea without pressure to accept it.",
+      crew_coordination: "Coordinate camera, sound and the schedule so the idea can be tried without sacrificing planned essential footage."
+    },
+    production_event_location_value: {
+      story_clarity: "Discuss with the director whether the unexpected location detail advances the story before committing to a change.",
+      performance_trust: "Help the director and performers explore the location in a calm rehearsal before filming any new action.",
+      crew_coordination: "Check permissions, crew access, sound conditions and safe movement before adjusting the location plan."
+    },
+    production_event_cost_saving: {
+      story_clarity: "Identify with the director which scenes and narrative beats must survive any simpler production approach.",
+      performance_trust: "Keep essential cast preparation and rehearsal time intact while adopting a leaner production plan.",
+      crew_coordination: "Simplify transport, rentals and department call times together without cutting indispensable crew or safety."
+    },
     production_event_bad_weather: {
       story_clarity: "Ask the director and script supervisor which indoor story beats can be prepared while exterior filming is unsafe.",
       performance_trust: "Protect a sheltered rehearsal space for the director and cast without asking anyone to film outside.",
@@ -39,6 +64,31 @@ export const ON_SET_PRODUCER_ACTIONS: Readonly<Record<FilmWorkLanguage, ActionCa
     }
   },
   nb: {
+    production_event_perfect_weather: {
+      story_clarity: "Avklar med regissør og script hvilket fortellermoment som tjener mest på lyset før opptaksplanen endres.",
+      performance_trust: "Skjerm litt forberedelsestid for skuespillerne slik at godt lys ikke fører til forhastede prestasjoner.",
+      crew_coordination: "Avtal en trygg, kort omlegging med foto, lyd og innspillingsleder uten å miste resten av dagens plan."
+    },
+    production_event_camera_breakthrough: {
+      story_clarity: "Undersøk med regissøren hvordan fotoavdelingens nye løsning støtter scenen, uten å overta bildevalgene.",
+      performance_trust: "Gi skuespillerne rom til å forberede den nye tekniske løsningen uten urimelig tidspress.",
+      crew_coordination: "Samle foto, lyd og innspillingsleder for å kontrollere utstyr, tidsbruk og trygg gjennomføring."
+    },
+    production_event_actor_improvisation: {
+      story_clarity: "Avklar med regissør og script om improvisasjonen passer figurens utvikling og filmens fortelling.",
+      performance_trust: "Skjerm en kort prøve der regissør og skuespillere kan utforske ideen uten press om å bruke den.",
+      crew_coordination: "Samordne foto, lyd og dagsplan slik at ideen kan prøves uten å miste planlagte nødvendige opptak."
+    },
+    production_event_location_value: {
+      story_clarity: "Drøft med regissøren om den uventede detaljen ved opptaksstedet faktisk styrker filmens fortelling.",
+      performance_trust: "Gi regissør og skuespillere en rolig prøve på stedet før eventuelle nye opptak planlegges.",
+      crew_coordination: "Kontroller tillatelser, tilgang, lydforhold og trygg bevegelse før opptaksplanen endres."
+    },
+    production_event_cost_saving: {
+      story_clarity: "Finn sammen med regissøren ut hvilke scener og fortellermomenter som ikke kan forenkles bort.",
+      performance_trust: "Ta vare på nødvendig forberedelses- og prøvetid for skuespillerne selv om produksjonen forenkles.",
+      crew_coordination: "Forenkle transport, leieutstyr og oppmøtetider i samråd med avdelingene uten å svekke sikkerheten."
+    },
     production_event_bad_weather: {
       story_clarity: "Avklar med regissør og script hvilke innendørsscener som kan forberedes mens uteopptak er uforsvarlige.",
       performance_trust: "Sørg for et skjermet prøverom for regissør og skuespillere, uten å presse fram uteopptak.",
@@ -66,6 +116,31 @@ export const ON_SET_PRODUCER_ACTIONS: Readonly<Record<FilmWorkLanguage, ActionCa
     }
   },
   fr: {
+    production_event_perfect_weather: {
+      story_clarity: "Demandez à la réalisation et à la continuité quel moment du récit profite vraiment de cette lumière avant de changer le planning.",
+      performance_trust: "Préservez un temps de préparation pour les interprètes afin que la belle lumière ne crée pas une pression excessive.",
+      crew_coordination: "Concertez image, son et assistance de réalisation pour ajuster le planning sans compromettre la sécurité."
+    },
+    production_event_camera_breakthrough: {
+      story_clarity: "Vérifiez avec la réalisation comment l'idée de l'équipe image sert la scène sans imposer les choix de cadrage.",
+      performance_trust: "Donnez aux interprètes le temps de se préparer au dispositif technique plutôt que d'imposer un changement brusque.",
+      crew_coordination: "Réunissez image, son et assistance de réalisation pour vérifier matériel, temps et sécurité de la proposition."
+    },
+    production_event_actor_improvisation: {
+      story_clarity: "Demandez à la réalisation et à la continuité si l'improvisation respecte l'évolution du personnage et le récit.",
+      performance_trust: "Préservez une répétition calme pour que réalisation et interprètes explorent l'idée sans obligation de la garder.",
+      crew_coordination: "Coordonnez image, son et planning pour essayer la proposition sans perdre les prises indispensables."
+    },
+    production_event_location_value: {
+      story_clarity: "Discutez avec la réalisation de la valeur narrative du lieu découvert avant de modifier le travail prévu.",
+      performance_trust: "Offrez à la réalisation et aux interprètes une répétition paisible sur place avant de décider de nouvelles prises.",
+      crew_coordination: "Vérifiez autorisations, accès, conditions sonores et déplacements sûrs avant d'adapter le plan du lieu."
+    },
+    production_event_cost_saving: {
+      story_clarity: "Définissez avec la réalisation les scènes essentielles à préserver avant toute simplification de la production.",
+      performance_trust: "Conservez la préparation et les répétitions indispensables du casting dans le plan simplifié.",
+      crew_coordination: "Réduisez transports, locations et horaires avec les équipes sans sacrifier les postes essentiels ou la sécurité."
+    },
     production_event_bad_weather: {
       story_clarity: "Demandez à la réalisation et à la continuité quelles scènes intérieures préparer pendant l'arrêt des extérieurs.",
       performance_trust: "Prévoyez une salle de répétition abritée pour la réalisation et les interprètes sans exiger de tournage dehors.",
@@ -93,6 +168,31 @@ export const ON_SET_PRODUCER_ACTIONS: Readonly<Record<FilmWorkLanguage, ActionCa
     }
   },
   pt: {
+    production_event_perfect_weather: {
+      story_clarity: "Confirma com a realização e a continuidade que momento da história beneficia mais desta luz antes de alterar o plano.",
+      performance_trust: "Protege algum tempo de preparação para o elenco para que a oportunidade de luz não crie interpretações apressadas.",
+      crew_coordination: "Combina um ajuste seguro com imagem, som e assistência de realização sem prejudicar o restante plano do dia."
+    },
+    production_event_camera_breakthrough: {
+      story_clarity: "Confirma com a realização como a descoberta da imagem serve a cena sem escolher os enquadramentos por ela.",
+      performance_trust: "Dá ao elenco tempo para se preparar para a nova solução técnica em vez de impor mudanças de última hora.",
+      crew_coordination: "Reúne imagem, som e assistência de realização para validar equipamento, tempo e condições de segurança."
+    },
+    production_event_actor_improvisation: {
+      story_clarity: "Pergunta à realização e à continuidade se a improvisação respeita a personagem e a história do filme.",
+      performance_trust: "Reserva um ensaio tranquilo para a realização e o elenco explorarem a ideia sem obrigação de a usar.",
+      crew_coordination: "Coordena imagem, som e horário para experimentar a ideia sem perder as tomadas essenciais previstas."
+    },
+    production_event_location_value: {
+      story_clarity: "Discute com a realização se o pormenor inesperado do local acrescenta valor à narrativa antes de alterar o plano.",
+      performance_trust: "Dá à realização e ao elenco espaço para um ensaio calmo no local antes de gravar algo novo.",
+      crew_coordination: "Confirma permissões, acessos, som e circulação segura da equipa antes de mudar o plano de rodagem."
+    },
+    production_event_cost_saving: {
+      story_clarity: "Identifica com a realização as cenas e os momentos narrativos essenciais antes de simplificar a produção.",
+      performance_trust: "Mantém o tempo indispensável de preparação e ensaio do elenco mesmo com um plano mais simples.",
+      crew_coordination: "Simplifica transportes, alugueres e horários em conjunto com as equipas sem comprometer a segurança."
+    },
     production_event_bad_weather: {
       story_clarity: "Confirma com a realização e a continuidade que cenas interiores podem ser preparadas sem filmar no exterior inseguro.",
       performance_trust: "Garante um espaço abrigado para ensaios da realização e do elenco, sem exigir filmagens no exterior.",
@@ -121,10 +221,24 @@ export const ON_SET_PRODUCER_ACTIONS: Readonly<Record<FilmWorkLanguage, ActionCa
   }
 };
 
-/** Older/unknown event identifiers fall back to the existing generic action. */
+/** The five dilemmas already in saves made with practicalActionVersion 1. */
+const FIRST_ACTION_EVENT_IDS: ReadonlySet<string> = new Set([
+  "production_event_bad_weather",
+  "production_event_equipment_failure",
+  "production_event_actor_conflict",
+  "production_event_permit_issue",
+  "production_event_budget_overrun"
+]);
+
+/**
+ * Version 1 keeps the five originally authored practical choices, leaving the
+ * other five dialogues generic. Version 2 covers all ten. Missing versions
+ * in legacy saves are handled by the caller, not fabricated here.
+ */
 export function getOnSetProducerAction(
-  language: FilmWorkLanguage, eventId: string | undefined, priority: ProducerPriorityId
+  language: FilmWorkLanguage, eventId: string | undefined, priority: ProducerPriorityId,
+  version: 1 | 2 = 2
 ): string | undefined {
-  if (!eventId) return undefined;
+  if (!eventId || (version === 1 && !FIRST_ACTION_EVENT_IDS.has(eventId))) return undefined;
   return ON_SET_PRODUCER_ACTIONS[language][eventId as OnSetEventId]?.[priority];
 }
