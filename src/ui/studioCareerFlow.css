@@ -574,3 +574,22 @@
 .editing-handoff summary { cursor: pointer; font-weight: 700; }
 .editing-handoff details p { overflow-wrap: anywhere; }
 .editing-handoff > small { display: block; color: var(--muted); line-height: 1.5; }
+
+/* Read-only film-craft evidence connecting the locked edit to release choices. */
+.release-craft-handoff {
+  margin: 14px 0 22px;
+  padding: 16px;
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  background: rgba(5, 7, 9, 0.24);
+}
+.release-craft-handoff h3 { margin: 0 0 8px; }
+.release-craft-handoff p { line-height: 1.55; }
+.release-craft-handoff-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 165px), 1fr)); gap: 10px; margin: 14px 0; }
+.release-craft-handoff-metrics > div { padding: 10px 12px; border: 1px solid var(--line-soft); min-width: 0; }
+.release-craft-handoff-metrics span, .release-craft-handoff-metrics strong { display: block; }
+.release-craft-handoff-metrics span { color: var(--muted); font-size: 12px; }
+.release-craft-handoff-metrics strong { font-size: 18px; margin-top: 5px; }
+.release-craft-handoff-promise { margin: 12px 0; padding: 10px 12px; border-left: 3px solid var(--accent); background: var(--accent-soft); overflow-wrap: anywhere; }
+.release-craft-handoff-promise p { margin: 6px 0 0; }
+.release-craft-handoff > small { display: block; color: var(--muted); line-height: 1.5; }
