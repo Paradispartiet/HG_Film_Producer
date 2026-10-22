@@ -18,7 +18,7 @@ export function FilmSchoolPracticeOptions({ lessonId, options, value, completed,
       <legend>{copy.question}</legend>
       <div role="radiogroup" aria-label={copy.question}>
         {options.map((option, index) => (
-          <label className={value === option ? "school-practice-option is-selected" : "school-practice-option"} key={option}>
+          <label className={value === String(index) ? "school-practice-option is-selected" : "school-practice-option"} key={option}>
             <input
               checked={value === String(index)}
               disabled={completed}
