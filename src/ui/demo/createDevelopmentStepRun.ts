@@ -8,6 +8,7 @@ import sceneFunctionsJson from "../../../data/film/scene_functions.json";
 import techniquesJson from "../../../data/film/techniques.json";
 
 import { addSceneToScript } from "../../core/addSceneToScript.js";
+import { applyScriptProducerNote, type ScriptProducerNoteId } from "../../core/applyScriptProducerNote.js";
 import { applyMentorLesson } from "../../core/applyMentorLesson.js";
 import { attachLocationToProject } from "../../core/attachLocationToProject.js";
 import { createScript } from "../../core/createScript.js";
@@ -72,6 +73,9 @@ export interface LocationDevelopmentResult {
 
 export interface ScriptDevelopmentResult {
   readonly path: "script";
+  /** Optional for older Studio Career saves. */
+  readonly revisionFocusId?: ScriptProducerNoteId;
+  readonly scoreBreakdown?: Readonly<{ conflict: number; pacing: number; emotion: number }>;
   readonly pathLabel: "Shape the script";
   readonly scriptTitle: string;
   readonly structure: string;
@@ -202,12 +206,12 @@ export function createLocationDevelopmentResult(
   };
 }
 
-export function createScriptDevelopmentResult(run: ProjectRunContext): ScriptDevelopmentResult {
+export function createScriptDevelopmentResult(run: ProjectRunContext, focusId?: ScriptProducerNoteId): ScriptDevelopmentResult {
   const template = run.scriptTemplate;
   const starterFunctions = template.recommendedSceneFunctions.slice(0, 3).map((functionId) =>
     requireItem(developmentData.sceneFunctions, functionId, "scene function")
   );
-  const scenes = starterFunctions.map((sceneFunction, index) => createStarterScene(run, sceneFunction, index));
+  const scenes = applyScriptProducerNote(starterFunctions.map((sceneFunction, index) => createStarterScene(run, sceneFunction, index)), focusId);
   let script = createScript({
     title: run.project.title,
     logline: run.project.logline,
@@ -224,6 +228,8 @@ export function createScriptDevelopmentResult(run: ProjectRunContext): ScriptDev
 
   return {
     path: "script",
+    ...(focusId ? { revisionFocusId: focusId } : {}),
+    scoreBreakdown: { conflict: evaluation.scores.conflict, pacing: evaluation.scores.pacing, emotion: evaluation.scores.emotion },
     pathLabel: "Shape the script",
     scriptTitle: script.title,
     structure: formatLabel(script.structure),
