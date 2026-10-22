@@ -353,7 +353,7 @@ export const STUDIO_CAREER_SUMMARY_COPY = {
     },
     nextProject: {
       validation: {
-        projectTitle: "Enter a title for the next project.",
+        projectTitle: "Choose a title for the next film.",
         genre: "Select a genre.",
         scriptTemplate: "Select a script template.",
       },
@@ -367,7 +367,7 @@ export const STUDIO_CAREER_SUMMARY_COPY = {
         heading: "Package the next project",
         intro: "Choose the new film. Development remains a separate next step.",
         titleLabel: "Next project title",
-        titlePlaceholder: "e.g. Northern Exposure",
+        titlePlaceholder: "Choose a film title",
         carryHeading: "Carry the studio forward",
         carryDetail: (previousFilmLabel, projectNumber) => `${previousFilmLabel} stays recorded; film ${projectNumber} begins at setup only.`,
         createFilm: (projectNumber) => `Create film ${projectNumber}`,
@@ -428,7 +428,7 @@ export const STUDIO_CAREER_SUMMARY_COPY = {
     },
     nextProject: {
       validation: {
-        projectTitle: "Skriv inn en tittel for neste prosjekt.",
+        projectTitle: "Velg en tittel for neste film.",
         genre: "Velg en sjanger.",
         scriptTemplate: "Velg en manusmal.",
       },
@@ -442,7 +442,7 @@ export const STUDIO_CAREER_SUMMARY_COPY = {
         heading: "Pakk neste prosjekt",
         intro: "Velg den nye filmen. Utvikling er fortsatt et eget neste steg.",
         titleLabel: "Tittel på neste prosjekt",
-        titlePlaceholder: "f.eks. Nordlys",
+        titlePlaceholder: "Velg en filmtittel",
         carryHeading: "Viderefør studioet",
         carryDetail: (previousFilmLabel, projectNumber) => `${previousFilmLabel} forblir registrert; film ${projectNumber} starter bare i oppsettet.`,
         createFilm: (projectNumber) => `Opprett film ${projectNumber}`,
@@ -503,7 +503,7 @@ export const STUDIO_CAREER_SUMMARY_COPY = {
     },
     nextProject: {
       validation: {
-        projectTitle: "Saisissez un titre pour le projet suivant.",
+        projectTitle: "Choisissez un titre pour le film suivant.",
         genre: "Sélectionnez un genre.",
         scriptTemplate: "Sélectionnez un modèle de scénario.",
       },
@@ -517,7 +517,7 @@ export const STUDIO_CAREER_SUMMARY_COPY = {
         heading: "Monter le projet suivant",
         intro: "Choisissez le nouveau film. Le développement reste une étape distincte.",
         titleLabel: "Titre du projet suivant",
-        titlePlaceholder: "p. ex. Exposition nordique",
+        titlePlaceholder: "Choisissez un titre",
         carryHeading: "Faire avancer le studio",
         carryDetail: (previousFilmLabel, projectNumber) => `${previousFilmLabel} reste enregistré ; le film ${projectNumber} commence uniquement à la configuration.`,
         createFilm: (projectNumber) => `Créer le film ${projectNumber}`,
@@ -578,7 +578,7 @@ export const STUDIO_CAREER_SUMMARY_COPY = {
     },
     nextProject: {
       validation: {
-        projectTitle: "Introduza um título para o projeto seguinte.",
+        projectTitle: "Escolha um título para o próximo filme.",
         genre: "Selecione um género.",
         scriptTemplate: "Selecione um modelo de argumento.",
       },
@@ -592,7 +592,7 @@ export const STUDIO_CAREER_SUMMARY_COPY = {
         heading: "Estruturar o projeto seguinte",
         intro: "Escolha o novo filme. O desenvolvimento continua a ser um passo seguinte separado.",
         titleLabel: "Título do projeto seguinte",
-        titlePlaceholder: "por ex., Exposição do Norte",
+        titlePlaceholder: "Escolha um título",
         carryHeading: "Levar o estúdio adiante",
         carryDetail: (previousFilmLabel, projectNumber) => `${previousFilmLabel} permanece registado; o filme ${projectNumber} começa apenas na configuração.`,
         createFilm: (projectNumber) => `Criar filme ${projectNumber}`,
