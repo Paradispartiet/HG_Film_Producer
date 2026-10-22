@@ -20,10 +20,10 @@ export function FilmSchoolPracticeOptions({ lessonId, options, value, completed,
         {options.map((option, index) => (
           <label className={value === option ? "school-practice-option is-selected" : "school-practice-option"} key={option}>
             <input
-              checked={value === option}
+              checked={value === String(index)}
               disabled={completed}
               name={`school-practice-${lessonId}`}
-              onChange={() => onChange(option)}
+              onChange={() => onChange(String(index))}
               type="radio"
               value={String(index)}
             />
