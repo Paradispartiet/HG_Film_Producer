@@ -132,6 +132,9 @@ async function run(browser, spec) {
       await conversation.waitFor({ state: "visible" });
       if (days > 0) {
         assert.ok((await conversation.locator(".on-set-dialogue-continuity").innerText()).length > 40, "Later conversation reflects the previous producer decision");
+        assert.ok((await conversation.locator(".on-set-dialogue-follow-up").innerText()).length > 90, "The current team member responds to the earlier real production challenge");
+      } else {
+        assert.equal(await conversation.locator(".on-set-dialogue-follow-up").count(), 0, "No invented follow-up on the first shoot day");
       }
       const beforeReply = await conversation.locator(".on-set-dialogue-producer").innerText();
       assert.ok((await conversation.locator(".on-set-dialogue-concern").innerText()).length > 40, "A real team member raises a concrete filmmaking concern");
@@ -202,6 +205,7 @@ async function run(browser, spec) {
         assert.equal(await savedConversation.count(), 1, "Completed day retains a replayable team conversation");
         await savedConversation.locator("summary").click();
         await savedConversation.locator(".on-set-dialogue-producer").waitFor({ state: "visible" });
+        assert.equal(await savedConversation.locator(".on-set-dialogue-follow-up").count(), days > 1 ? 1 : 0, "Replayed dialogue preserves genuine cross-day follow-up");
         const producerOutcome = page.locator(".shoot-panel .producer-priority-feedback").first();
         await producerOutcome.waitFor({ state: "visible" });
         assert.ok((await producerOutcome.innerText()).length > 45, "Creative producing teaches why the support mattered");

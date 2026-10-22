@@ -1,6 +1,7 @@
 import type { ProducerPriorityId, ProducerPrioritySummary } from "../../core/applyProducerPriority.js";
 import { getOnSetConversation, ON_SET_DIALOGUE_COPY } from "../../core/studioCareerOnSetDialogue.js";
 import { describeTeamContinuity, type TeamContinuity } from "../../core/studioCareerTeamContinuity.js";
+import { describeOnSetFollowUp } from "../../core/studioCareerDialogueFollowUp.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
 
 interface OnSetDialoguePanelProps {
@@ -17,6 +18,7 @@ export function OnSetDialoguePanel({ eventId, priority, summary, continuity, con
   const copy = ON_SET_DIALOGUE_COPY[language];
   const conversation = getOnSetConversation(language, eventId, priority, summary);
   const previousDay = continuity ? describeTeamContinuity(language, continuity) : undefined;
+  const spokenFollowUp = describeOnSetFollowUp(language, eventId, continuity);
   if (!conversation) return null;
   return (
     <section className="shoot-desk-section on-set-dialogue" aria-live={confirmed ? "off" : "polite"}>
@@ -34,6 +36,11 @@ export function OnSetDialoguePanel({ eventId, priority, summary, continuity, con
       <div className="on-set-dialogue-turn on-set-dialogue-concern">
         <strong>{conversation.speaker}</strong><p>{conversation.concern}</p>
       </div>
+      {spokenFollowUp && (
+        <div className="on-set-dialogue-turn on-set-dialogue-follow-up">
+          <strong>{conversation.speaker}</strong><p>{spokenFollowUp}</p>
+        </div>
+      )}
       <div className="on-set-dialogue-turn on-set-dialogue-producer">
         <strong>{conversation.producer}</strong><p>{conversation.reply}</p>
       </div>
