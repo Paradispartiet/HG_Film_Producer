@@ -24,7 +24,7 @@ import type {
 } from "../../domain/shoot.js";
 import type { PipelineStepSummary } from "../types.js";
 import { adaptFilmSeedData } from "./adaptFilmSeedData.js";
-import type { DevelopmentStepResult } from "./createDevelopmentStepRun.js";
+import type { DevelopmentStepResult, ScriptDevelopmentResult } from "./createDevelopmentStepRun.js";
 import type { PreProductionStepResult } from "./createPreProductionStepRun.js";
 import type { ProjectRunContext } from "./createProjectRunContext.js";
 
@@ -151,6 +151,13 @@ export function getShootPreparation(
     locationName: preProductionResult.location.name,
     ...(scriptRevision ? { scriptRevision } : {})
   };
+}
+
+/** Read an approved script note regardless of what other development action came last. */
+export function getScriptProducerNoteId(
+  results: readonly DevelopmentStepResult[]
+): ScriptProducerNoteId | undefined {
+  return results.find((action): action is ScriptDevelopmentResult => action.path === "script")?.revisionFocusId;
 }
 
 export function getProductionEventOptions(): readonly ProductionEventOption[] {
