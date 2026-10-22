@@ -49,6 +49,36 @@ async function expectPhase(page, selector, label, milestones) {
   milestones.push({ label, reached: Date.now() });
   return panel;
 }
+/**
+ * Use the same live career browser at a 320px mobile viewport. Never type:
+ * select menus and radio cards must remain usable without horizontal panning.
+ */
+async function checkNarrowMobileChoices(page, spec, selector, label, selectNames = []) {
+  if (spec.viewport.width > 400) return;
+  try {
+    await page.setViewportSize({ width: 320, height: 780 });
+    const panel = page.locator(selector);
+    await panel.waitFor({ state: "visible" });
+    const widths = await page.evaluate(() => ({
+      viewport: document.documentElement.clientWidth,
+      scroll: document.documentElement.scrollWidth
+    }));
+    assert.ok(widths.scroll <= widths.viewport + 2,
+      label + ": horizontal page overflow at 320px: " + JSON.stringify(widths));
+    const panelWidth = await panel.evaluate((node) => ({ client: node.clientWidth, scroll: node.scrollWidth }));
+    assert.ok(panelWidth.scroll <= panelWidth.client + 2,
+      label + ": overflowing choice panel at 320px: " + JSON.stringify(panelWidth));
+    for (const name of selectNames) {
+      const select = panel.locator('select[name="' + name + '"]');
+      assert.ok(await select.isVisible(), label + ": selection must be visible: " + name);
+      const height = await select.evaluate((node) => node.getBoundingClientRect().height);
+      assert.ok(height >= 44, label + ": touch target less than 44px high: " + name + " (" + height + ")");
+    }
+  } finally {
+    await page.setViewportSize(spec.viewport);
+  }
+}
+
 async function run(browser, spec) {
   const context = await browser.newContext({ viewport: spec.viewport });
   await context.addInitScript((lang) => {
@@ -68,6 +98,7 @@ async function run(browser, spec) {
     await setup.locator('select[name="studio-name-choice"]').selectOption("Northlight Pictures");
     await checkFirst(page, '.setup-panel input[name="strategic-goal"]');
     await setup.locator('select[name="first-film-title-choice"]').selectOption("Harbor Lights");
+    await checkNarrowMobileChoices(page, spec, ".setup-panel", "First film setup", ["studio-name-choice", "first-film-title-choice"]);
     await checkFirst(page, '.setup-panel input[name="genre"]');
     await checkFirst(page, '.setup-panel input[name="script-template"]');
     await setup.locator('.setup-actions button[type="submit"]').click();
@@ -290,6 +321,7 @@ async function run(browser, spec) {
 
     const release = await expectPhase(page, ".release-step-panel", "release", milestones);
     const releaseHandoff = release.locator(".release-craft-handoff");
+    await checkNarrowMobileChoices(page, spec, ".release-step-panel", "Film release");
     await releaseHandoff.waitFor({ state: "visible" });
     const recordedPost = (await readSaved(page)).projects[0].postProductionResult;
     assert.ok((await releaseHandoff.innerText()).includes(String(recordedPost.postProductionEvaluation.lockedCutQuality)),
@@ -359,6 +391,7 @@ async function run(browser, spec) {
     assert.equal(await form.locator('input[type="text"], textarea').count(), 0,
       "Second-film setup must use prewritten title options");
     await form.locator('select[name="next-film-title-choice"]').selectOption("Second Winter");
+    await checkNarrowMobileChoices(page, spec, "form.next-project-form", "Film Two setup", ["next-film-title-choice"]);
     await form.locator('input[name="genre"]').first().check();
     await form.locator('input[name="script-template"]').first().check();
     await form.locator('button[type="submit"]').click();
