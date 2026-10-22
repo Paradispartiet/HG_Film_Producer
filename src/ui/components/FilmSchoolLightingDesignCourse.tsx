@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 
 import { FILM_SCHOOL_COURSE_CHROME } from "../../core/filmSchoolCourseChrome";
+import { isSelectedFilmSchoolOption } from "../../core/filmProducerChoiceOnlyCopy.js";
+import { FilmSchoolPracticeOptions } from "./FilmSchoolPracticeOptions.js";
 import { FILM_SCHOOL_COURSE_SURFACE_COPY } from "../../core/filmSchoolCourseSurfaceCopy";
 import { getDirectorTermDisplay } from "../../core/directorDisplay";
 import { getLightingDesignLessonCopy } from "../../core/filmSchoolLightingDesignLessonCopy";
@@ -125,7 +127,7 @@ export function FilmSchoolLightingDesignCourse({
 
   function markPracticeUsed(lessonId: string) {
     const note = progress.notesByLessonId[lessonId]?.trim() ?? "";
-    if (note.length < 20) return;
+    if (!isSelectedFilmSchoolOption(activeCopy.checklist, note)) return;
     setProgress((current) => current.usedLessonIds.includes(lessonId) ? current : {
       ...current,
       usedLessonIds: [...current.usedLessonIds, lessonId],
@@ -232,10 +234,14 @@ export function FilmSchoolLightingDesignCourse({
 
             <section className="school-practice-card">
               <header><div><span className="filmverket-card-kicker">{chrome.useItYourself}</span><h3>{chrome.miniExercise}</h3></div><span>{progress.usedLessonIds.includes(activeLesson.id) ? `✓ ${stageLabels.used}` : chrome.notCompleted}</span></header>
-              <p>{activeCopy.practicePrompt}</p>
-              <textarea onChange={(event) => updatePracticeNote(activeLesson.id, event.target.value)} placeholder={surface.practicePlaceholder} rows={7} value={practiceNote} />
-              <div className="school-practice-checklist"><strong>{chrome.checkBeforeUsed}</strong>{activeCopy.checklist.map((item) => <label key={item}><input readOnly type="checkbox" checked={progress.usedLessonIds.includes(activeLesson.id)} />{item}</label>)}</div>
-              <button className="filmverket-primary-action" disabled={practiceNote.trim().length < 20 || progress.usedLessonIds.includes(activeLesson.id)} onClick={() => markPracticeUsed(activeLesson.id)} type="button">{progress.usedLessonIds.includes(activeLesson.id) ? chrome.exerciseUsed : chrome.markExerciseUsed}</button>
+              <FilmSchoolPracticeOptions
+                lessonId={activeLesson.id}
+                options={activeCopy.checklist}
+                value={practiceNote}
+                completed={progress.usedLessonIds.includes(activeLesson.id)}
+                onChange={(choice) => updatePracticeNote(activeLesson.id, choice)}
+              />
+              <button className="filmverket-primary-action" disabled={!isSelectedFilmSchoolOption(activeCopy.checklist, practiceNote) || progress.usedLessonIds.includes(activeLesson.id)} onClick={() => markPracticeUsed(activeLesson.id)} type="button">{progress.usedLessonIds.includes(activeLesson.id) ? chrome.exerciseUsed : chrome.markExerciseUsed}</button>
             </section>
 
             <nav className="school-lesson-navigation" aria-label={chrome.courseModuleNavAria}>

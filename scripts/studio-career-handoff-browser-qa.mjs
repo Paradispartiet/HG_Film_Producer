@@ -60,7 +60,7 @@ try {
       await page.locator(".studio-career-primary-action").click();
 
       const form = setup.locator("form.next-project-form");
-      await form.locator('input[type="text"]').fill("Second Film");
+      await form.locator('select[name="next-film-title-choice"]').selectOption("Second Winter");
       await form.locator('input[name="genre"]').first().check();
       await form.locator('input[name="script-template"]').first().check();
       await form.locator('button[type="submit"]').click();
@@ -73,11 +73,11 @@ try {
       assert.equal(created.projects[0].id, completed.projects[0].id, `${language}: Film One identity preserved`);
       assert.deepEqual(created.projects[0].careerApplicationResult, JSON.parse(JSON.stringify(completed.projects[0].careerApplicationResult)), `${language}: Film One results unchanged`);
       assert.equal(created.projects[1].projectNumber, 2);
-      assert.equal(created.projects[1].run.project.title, "Second Film");
+      assert.equal(created.projects[1].run.project.title, "Second Winter");
       assert.equal(created.projects[1].developmentResult, null);
       assert.equal(await page.locator(".past-project-summary").count(), 1, `${language}: Film One collapsed`);
       assert.equal(await page.locator(".studio-career-primary-action").count(), 1, `${language}: only Film Two actionable`);
-      assert.equal((await page.locator(".project-hero h2").last().textContent())?.trim(), "Second Film");
+      assert.equal((await page.locator(".project-hero h2").last().textContent())?.trim(), "Second Winter");
 
       await page.locator(".past-project-summary-actions button").click();
       assert.equal(await page.locator(".next-project-panel").count(), 2, `${language}: history is available`);
@@ -89,7 +89,7 @@ try {
       await page.reload();
       await page.locator(".producer-mode-card:not(.producer-mode-card--recommended) .filmverket-primary-action").click();
       await page.locator(".project-hero h2").last().waitFor({ state: "visible" });
-      assert.equal((await page.locator(".project-hero h2").last().textContent())?.trim(), "Second Film", `${language}: Film Two resumes`);
+      assert.equal((await page.locator(".project-hero h2").last().textContent())?.trim(), "Second Winter", `${language}: Film Two resumes`);
       assert.equal((await readState()).projects.length, 2, `${language}: reload preserves two films`);
       assert.equal(await page.locator(".studio-career-primary-action").count(), 1, `${language}: saved Film Two has a next action`);
       const overflow = await page.locator(".project-hero--focused").last().evaluate((element) => ({

@@ -1,6 +1,7 @@
-import type { ChangeEvent, FormEvent } from "react";
+import type { FormEvent } from "react";
 import { STUDIO_CAREER_SUMMARY_COPY } from "../../core/studioCareerSummaryCopy";
 import { STUDIO_SETUP_COPY } from "../../core/studioSetupCopy";
+import { FILM_TITLE_OPTIONS } from "../../core/filmProducerChoiceOnlyCopy.js";
 import type { FilmScale } from "../../domain/film.js";
 import type {
   NextProjectChoices,
@@ -58,15 +59,17 @@ export function NextProjectSetupForm({
       </div>
       <label className="text-field">
         <span>{copy.titleLabel}</span>
-        <input
+        <select
           aria-invalid={Boolean(errors.projectTitle)}
-          onChange={(event: ChangeEvent<HTMLInputElement>) =>
-            onChange({ ...choices, projectTitle: event.target.value })
-          }
-          placeholder={copy.titlePlaceholder}
-          type="text"
+          name="next-film-title-choice"
+          onChange={(event) => onChange({ ...choices, projectTitle: event.target.value })}
           value={choices.projectTitle}
-        />
+        >
+          <option disabled value="">{copy.titlePlaceholder}</option>
+          {FILM_TITLE_OPTIONS.map((title) => (
+            <option key={title} value={title}>{title}</option>
+          ))}
+        </select>
         {errors.projectTitle && (
           <small className="field-error">{errors.projectTitle}</small>
         )}

@@ -1,5 +1,5 @@
-import type { ChangeEvent } from "react";
 import { STUDIO_SETUP_COPY, STUDIO_SETUP_SCALE_IDS } from "../../core/studioSetupCopy";
+import { FILM_TITLE_OPTIONS } from "../../core/filmProducerChoiceOnlyCopy.js";
 import type { FilmScale } from "../../domain/film.js";
 import type { Genre } from "../../domain/knowledge.js";
 import type { ScriptTemplate } from "../../domain/script.js";
@@ -30,13 +30,15 @@ export function ProjectSetupForm(props: ProjectSetupFormProps) {
       <div className="setup-section-heading"><span>03</span><div><h3>{copy.heading}</h3><p>{copy.intro}</p></div></div>
       <label className="text-field">
         <span>{copy.titleLabel}</span>
-        <input
+        <select
           aria-invalid={Boolean(props.errors.projectTitle)}
-          onChange={(event: ChangeEvent<HTMLInputElement>) => props.onTitleChange(event.target.value)}
-          placeholder={copy.titlePlaceholder}
-          type="text"
+          name="first-film-title-choice"
+          onChange={(event) => props.onTitleChange(event.target.value)}
           value={props.title}
-        />
+        >
+          <option disabled value="">{copy.titlePlaceholder}</option>
+          {FILM_TITLE_OPTIONS.map((title) => <option key={title} value={title}>{title}</option>)}
+        </select>
         {props.errors.projectTitle && <small className="field-error">{props.errors.projectTitle}</small>}
       </label>
       <GenreSelector genres={props.genres} value={props.genreId} error={props.errors.genreId} onChange={props.onGenreChange} />

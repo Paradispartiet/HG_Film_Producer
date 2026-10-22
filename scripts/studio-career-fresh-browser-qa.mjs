@@ -63,9 +63,11 @@ async function run(browser, spec) {
     assert.equal(await readSaved(page), null, "Journey must start without a saved career");
     const setup = page.locator(".setup-panel");
     await setup.waitFor({ state: "visible" });
-    await setup.locator(".setup-section input[type=text]").first().fill("Browser Test Studio");
+    assert.equal(await setup.locator('input[type="text"], textarea').count(), 0,
+      "New Film Producer careers must not ask for typed answers");
+    await setup.locator('select[name="studio-name-choice"]').selectOption("Northlight Pictures");
     await checkFirst(page, '.setup-panel input[name="strategic-goal"]');
-    await setup.locator(".setup-section input[type=text]").last().fill("First Browser Film");
+    await setup.locator('select[name="first-film-title-choice"]').selectOption("Harbor Lights");
     await checkFirst(page, '.setup-panel input[name="genre"]');
     await checkFirst(page, '.setup-panel input[name="script-template"]');
     await setup.locator('.setup-actions button[type="submit"]').click();
@@ -354,14 +356,16 @@ async function run(browser, spec) {
     await setupTwo.waitFor({ state: "visible" });
     await page.locator(".studio-career-primary-action").click();
     const form = setupTwo.locator("form.next-project-form");
-    await form.locator('input[type="text"]').fill("Second Browser Film");
+    assert.equal(await form.locator('input[type="text"], textarea').count(), 0,
+      "Second-film setup must use prewritten title options");
+    await form.locator('select[name="next-film-title-choice"]').selectOption("Second Winter");
     await form.locator('input[name="genre"]').first().check();
     await form.locator('input[name="script-template"]').first().check();
     await form.locator('button[type="submit"]').click();
     await awaitSaved(page, "film-two");
     const finalState = await readSaved(page);
     assert.equal(finalState.projects[0].careerApplicationResult.completedFilmRecord.projectId, completed.careerApplicationResult.completedFilmRecord.projectId);
-    assert.equal(finalState.projects[1].run.project.title, "Second Browser Film");
+    assert.equal(finalState.projects[1].run.project.title, "Second Winter");
     assert.equal(await page.locator(".past-project-summary").count(), 1);
     const handoff = page.locator(".studio-career-debrief--handoff");
     assert.equal(await handoff.count(), 1, "Film Two should be able to review Film One's decisions");
