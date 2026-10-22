@@ -2,6 +2,8 @@ import { useMemo } from "react";
 import type { ShootStrategyId } from "../../core/applyShootStrategy.js";
 import type { ProducerPriorityId } from "../../core/applyProducerPriority.js";
 import { PRODUCER_PRIORITY_COPY } from "../../core/studioCareerProducerPriorityCopy.js";
+import { STUDIO_CAREER_SCRIPT_NOTE_COPY } from "../../core/studioCareerScriptNoteCopy.js";
+import { STUDIO_CAREER_SCRIPT_HANDOFF_COPY } from "../../core/studioCareerScriptHandoffCopy.js";
 import { calculateShootBudgetPosition } from "../../core/calculateShootBudgetPosition.js";
 import { STUDIO_CAREER_SHOOT_COPY } from "../../core/studioCareerShootCopy";
 import type { ProjectShootLabel } from "../types.js";
@@ -64,6 +66,8 @@ export function ShootPanel({
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_SHOOT_COPY[language];
   const producerCopy = PRODUCER_PRIORITY_COPY[language];
+  const scriptCopy = STUDIO_CAREER_SCRIPT_NOTE_COPY[language];
+  const handoffCopy = STUDIO_CAREER_SCRIPT_HANDOFF_COPY[language];
   const noteId = getScriptProducerNoteId(developmentResults);
   const preparation = useMemo(
     () => getShootPreparation(projectContext, developmentResult, preProductionResult, noteId),
@@ -99,6 +103,20 @@ export function ShootPanel({
         </div>
         <p>{copy.panel.intro(projectLabel)}</p>
       </div>
+      {preparation.scriptRevision && (
+        <section className="shoot-desk-section script-to-shoot-handoff" role="status">
+          <div className="shoot-section-heading">
+            <div>
+              <span className="eyebrow">{handoffCopy.heading}</span>
+              <h3>{scriptCopy.options[preparation.scriptRevision.noteId].title}</h3>
+            </div>
+            <p>{handoffCopy.intro}</p>
+          </div>
+          <p>{scriptCopy.options[preparation.scriptRevision.noteId].tradeoff}</p>
+          <strong>{handoffCopy.pressure(preparation.scriptRevision.baselineScenePressure, preparation.scriptRevision.revisedScenePressure)}</strong>
+          <p>{handoffCopy.consequence}</p>
+        </section>
+      )}
       <ShootSchedulePanel currentDay={currentDay} preparation={preparation} projectLabel={projectLabel} resolvedDays={shootDayResults} />
       <SceneDifficultyPanel projectLabel={projectLabel} summaries={preparation.sceneDifficultySummaries} />
       {latestDay && (
