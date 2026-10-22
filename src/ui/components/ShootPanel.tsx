@@ -10,6 +10,7 @@ import type { ProjectRunContext } from "../demo/createProjectRunContext.js";
 import {
   getNextShootDay,
   getShootPreparation,
+  getScriptProducerNoteId,
   resolveNextShootDay,
   type ShootDayStepResult,
   type ShootStepResult
@@ -29,6 +30,7 @@ interface ShootPanelProps {
   readonly projectContext: ProjectRunContext;
   readonly projectLabel?: ProjectShootLabel;
   readonly developmentResult: DevelopmentStepResult;
+  readonly developmentResults?: readonly DevelopmentStepResult[];
   readonly preProductionResult: PreProductionStepResult;
   readonly selectedProductionEventId: string;
   readonly selectedShootStrategyId?: ShootStrategyId;
@@ -46,6 +48,7 @@ export function ShootPanel({
   projectContext,
   projectLabel = "first film",
   developmentResult,
+  developmentResults = [],
   preProductionResult,
   selectedProductionEventId,
   selectedShootStrategyId = "steady",
@@ -61,9 +64,10 @@ export function ShootPanel({
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_SHOOT_COPY[language];
   const producerCopy = PRODUCER_PRIORITY_COPY[language];
+  const noteId = getScriptProducerNoteId(developmentResults);
   const preparation = useMemo(
-    () => getShootPreparation(projectContext, developmentResult, preProductionResult),
-    [projectContext, developmentResult, preProductionResult]
+    () => getShootPreparation(projectContext, developmentResult, preProductionResult, noteId),
+    [projectContext, developmentResult, preProductionResult, noteId]
   );
   const numberedProject = projectLabel !== "first film";
   const totalDays = preparation.productionSchedule.shootDays.length;
