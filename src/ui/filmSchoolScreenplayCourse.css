@@ -840,3 +840,15 @@
     bottom: 92px;
   }
 }
+
+
+/* Multiple-choice practice: no essay field or written answer. */
+.school-practice-options { border: 0; padding: 0; margin: 12px 0 16px; min-width: 0; }
+.school-practice-options legend { font-weight: 700; margin-bottom: 10px; }
+.school-practice-options > div { display: grid; gap: 9px; }
+.school-practice-option { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; border-radius: 10px; border: 1px solid var(--line-soft, rgba(150,150,150,.3)); padding: 12px; }
+.school-practice-option.is-selected { border-color: var(--accent, #568cc3); background: var(--accent-soft, rgba(82,140,200,.12)); }
+.school-practice-option input { flex: none; margin-top: 4px; accent-color: var(--accent, #568cc3); }
+.school-practice-option span { line-height: 1.5; }
+.school-practice-option > span strong { margin-right: 6px; }
+.school-practice-options > small { display: block; margin-top: 9px; opacity: .78; }
