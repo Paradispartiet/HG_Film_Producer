@@ -128,6 +128,10 @@ async function run(browser, spec) {
       // Exercise the producer role against a real artistic obstacle rather than
       // just selecting a day-stopping weather event in every run.
       await page.locator('.shoot-panel .production-event-grid input[type="radio"]').nth(days % 2 === 0 ? 4 : 3).check();
+      const conversation = page.locator(".shoot-panel .on-set-dialogue").first();
+      await conversation.waitFor({ state: "visible" });
+      const beforeReply = await conversation.locator(".on-set-dialogue-producer").innerText();
+      assert.ok((await conversation.locator(".on-set-dialogue-concern").innerText()).length > 40, "A real team member raises a concrete filmmaking concern");
       const creativeChoices = page.locator('.shoot-panel .producer-priority-grid input[type="radio"]');
       assert.equal(await creativeChoices.count(), 3, "Three creative producing choices, distinct from Film Director");
       const chosenPriority = days % 2 === 0 ? "performance_trust" : "story_clarity";
@@ -136,6 +140,9 @@ async function run(browser, spec) {
         const state = JSON.parse(window.localStorage.getItem(key) ?? "null");
         return state?.projects?.[0]?.selectedProducerPriorityId === id;
       }, { key: SAVE_KEY, id: chosenPriority });
+      const afterReply = await conversation.locator(".on-set-dialogue-producer").innerText();
+      assert.notEqual(afterReply, beforeReply, "Changing producer priority changes what the producer actually says to the team");
+      assert.ok((await conversation.locator(".on-set-dialogue-reaction").innerText()).length > 25, "The team reacts to the real selected producer response");
       const expectedSteadyCost = Number(await monitor.locator(".shoot-budget-projection").getAttribute("data-forecast-cost"));
       assert.ok(Number.isFinite(expectedSteadyCost) && expectedSteadyCost >= 0, "Event selection provides a real projected day cost");
       const responseRadios = page.locator('.shoot-panel .shoot-strategy-grid input[type="radio"]');
@@ -163,6 +170,7 @@ async function run(browser, spec) {
       assert.equal(savedDay.shootDayResult.costSpent, predictedCost, "Budget forecast and recorded day cost use the same engine");
       assert.equal(savedDay.strategySummary?.id, chosenResponse);
       assert.equal(savedDay.producerPrioritySummary?.id, chosenPriority, "Creative producer choice is persisted with the day");
+      assert.equal(savedDay.selectedEventId, days % 2 === 1 ? "production_event_actor_conflict" : "production_event_camera_breakthrough", "Concrete dilemma survives into the saved production report");
       assert.equal(savedDay.producerPrioritySummary?.recommendedId, chosenPriority, "Matched obstacle and producer support are explained");
       assert.ok(savedDay.producerPrioritySummary?.takeQualityDelta >= 0, "Creative support cannot hurt usable footage");
       if (days === 1) {
@@ -181,6 +189,10 @@ async function run(browser, spec) {
       // The day feedback is therefore verified while another shoot day remains.
       const liveShoot = !(await readSaved(page)).projects[0].shootResult;
       if (liveShoot) {
+        const savedConversation = page.locator(".shoot-panel details.on-set-conversation-review").first();
+        assert.equal(await savedConversation.count(), 1, "Completed day retains a replayable team conversation");
+        await savedConversation.locator("summary").click();
+        await savedConversation.locator(".on-set-dialogue-producer").waitFor({ state: "visible" });
         const producerOutcome = page.locator(".shoot-panel .producer-priority-feedback").first();
         await producerOutcome.waitFor({ state: "visible" });
         assert.ok((await producerOutcome.innerText()).length > 45, "Creative producing teaches why the support mattered");
