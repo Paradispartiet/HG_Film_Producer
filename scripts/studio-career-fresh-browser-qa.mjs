@@ -239,6 +239,18 @@ async function run(browser, spec) {
     assert.equal((await readSaved(page)).projects[0].shootResult.scriptRevisionFocusId, "scene_momentum", "The shoot used the producer's approved script revision");
 
     const post = await expectPhase(page, ".post-production-panel", "post-production", milestones);
+    const savedShoot = (await readSaved(page)).projects[0].shootResult;
+    const editingHandoff = post.locator(".editing-handoff");
+    await editingHandoff.waitFor({ state: "visible" });
+    assert.ok((await editingHandoff.innerText()).includes(String(savedShoot.shootEvaluation.averageTakeQuality)),
+      "The edit room shows actual average take quality from the completed shoot");
+    const producerReplay = editingHandoff.locator("details");
+    assert.equal(await producerReplay.count(), 1, "The edit room retains one real recorded producer decision");
+    await producerReplay.locator("summary").click();
+    assert.ok((await producerReplay.locator("p").first().innerText()).length > 70,
+      "A recorded practical producer action survives into the edit room");
+    assert.ok((await producerReplay.locator("p").last().innerText()).length > 30,
+      "The team's saved reaction remains visible before editing");
     const decisions = post.locator(".post-decision-section");
     assert.equal(await decisions.count(), 5, "Five editorial / sound / music / color / trailer choices");
     for (let i = 0; i < 5; i++) {
