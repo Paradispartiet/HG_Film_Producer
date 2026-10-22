@@ -25,7 +25,7 @@ export const FILM_SCHOOL_CHOICE_ONLY_COPY: Record<FilmWorkLanguage, {
 
 /** A valid selection must match one of the authored choices, not arbitrary written text. */
 export function isSelectedFilmSchoolOption(options: readonly string[], savedValue: string): boolean {
-  return options.includes(savedValue) && savedValue.trim().length > 0;
+  return options.length > 0 && options.some((_, index) => savedValue === String(index));
 }
 
 export const STUDIO_NAME_OPTIONS = [
