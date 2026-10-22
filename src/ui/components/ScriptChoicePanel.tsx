@@ -44,7 +44,7 @@ export function ScriptChoicePanel({ run, onApply }: ScriptChoicePanelProps) {
       <div className="producer-priority-grid" role="radiogroup" aria-label={notesCopy.heading}>
         {SCRIPT_PRODUCER_NOTE_IDS.map((id) => (
           <label className={id === selectedNoteId ? "producer-priority-card producer-priority-card--selected" : "producer-priority-card"} key={id}>
-            <input type="radio" name="script-producer-note" checked={selectedNoteId === id} onChange={() => setSelectedNoteId(id)} />
+            <input type="radio" name="script-producer-note" value={id} checked={selectedNoteId === id} onChange={() => setSelectedNoteId(id)} />
             <span><strong>{notesCopy.options[id].title}</strong><small>{notesCopy.options[id].tradeoff}</small></span>
           </label>
         ))}
