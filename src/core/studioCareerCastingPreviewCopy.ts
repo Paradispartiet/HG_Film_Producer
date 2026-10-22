@@ -54,7 +54,7 @@ export const STUDIO_CAREER_CASTING_PREVIEW_COPY = {
     developing: "A colaboração tem potencial, mas a produção deve reservar tempo para ensaios e construção de confiança.",
     challenging: "Estilos diferentes podem criar tensão. Organize uma prova de química e definam uma abordagem comum.",
     common: (count) => `${count} característica${count === 1 ? "" : "s"} de representação partilhada${count === 1 ? "" : "s"}`,
-    tension: (count) => `${count} possível${count === 1 ? "" : "eis"} tensão${count === 1 ? "" : "ões"} de estilo`,
+    tension: (count) => count === 1 ? "1 possível tensão de estilo" : `${count} possíveis tensões de estilo`,
     context: "Uma estimativa de planeamento, não um juízo sobre talento. Considere também a adequação aos papéis; esta pré-visualização não altera custos nem pontuações.",
   }
 } as const satisfies Record<FilmWorkLanguage, CastingPreviewCopy>;
