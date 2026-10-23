@@ -83,9 +83,9 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Del scenen i enkle opptaksoppsett – bevar den dramatiske hensikten uten unødvendige riggskifter"
     ],
     "proofOfIntent": [
-      "Test om publikum kan forklare vendepunktet uten en ekstra replikk",
-      "Test om publikum oppfatter maktendringen bare gjennom plassering og blikk",
-      "Test om publikum hører den avgjørende hendelsen før den blir vist"
+      "Vis scenen uten forklarende replikk – sjekk om publikum forstår vendepunktet",
+      "Vis to versjoner med ulik blocking – sjekk hvilken som klarest viser maktskiftet",
+      "Spill av lyd før bildet avslører hendelsen – sjekk om publikum forventer riktig endring"
     ]
   },
   "en": {
@@ -165,9 +165,9 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Group shots into simple setups – preserve dramatic intent without excessive resets"
     ],
     "proofOfIntent": [
-      "Test whether viewers can explain the turning point without an extra line",
-      "Test whether blocking and eyelines reveal the power shift on their own",
-      "Test whether viewers hear the crucial event before it is shown"
+      "Screen the scene without an explanatory line – check whether viewers understand the reversal",
+      "Compare two blocking versions – check which reveals the shift of power more clearly",
+      "Play the crucial sound before showing its source – check what viewers expect next"
     ]
   },
   "fr": {
@@ -247,16 +247,16 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Regrouper les plans par dispositifs simples – garder l’intention sans installations inutiles"
     ],
     "proofOfIntent": [
-      "Vérifier que le public comprend le basculement sans réplique ajoutée",
-      "Vérifier que les positions et regards révèlent seuls le rapport de force",
-      "Vérifier que le public entend l’événement décisif avant de le voir"
+      "Projeter sans réplique explicative – vérifier que le public comprend le basculement",
+      "Comparer deux placements d’acteurs – vérifier lequel montre mieux le changement de pouvoir",
+      "Faire entendre le son avant sa source – vérifier ce que le public anticipe"
     ]
   },
   "pt": {
     "sceneTitle": [
       "Escalada – tornar o conflito mais difícil de evitar",
       "Revelação – nova informação altera o rumo da cena",
-      "Decisão – obrigar o protagonista a agir"
+      "Decisão – levar o protagonista a agir"
     ],
     "sceneContext": [
       "Uma informação é ocultada – o público procura pistas",
@@ -329,9 +329,9 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Agrupar planos em montagens simples – manter a intenção com menos mudanças de equipamento"
     ],
     "proofOfIntent": [
-      "Testar se o público compreende a viragem sem diálogo adicional",
-      "Testar se posições e olhares mostram sozinhos a mudança de poder",
-      "Testar se o público ouve o acontecimento decisivo antes de o ver"
+      "Mostrar a cena sem fala explicativa – testar se o público compreende a viragem",
+      "Comparar duas marcações de atores – testar qual revela melhor a mudança de poder",
+      "Fazer ouvir o som antes de revelar a fonte – testar o que o público espera"
     ]
   }
 };
@@ -364,9 +364,9 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "La en hånd skjule og deretter vise en gjenstand – informasjon avsløres gjennom handling"
     ],
     "dramaticPurpose": [
-      "Vis hvem som har kontroll over rommet før konflikten begynner",
-      "La et reaksjonsbilde snu publikums oppfatning av en replikk",
-      "Avslør en gjenstand som endrer målet for neste handling"
+      "Vis hvem som kontrollerer rommet før konflikten – etabler en tydelig maktbalanse",
+      "Hold på en reaksjon etter en replikk – la publikum tolke den annerledes",
+      "Vis gjenstanden som blir avgjørende – gi neste handling et nytt mål"
     ],
     "sound": [
       "Hold dialogen tydelig og demp bakgrunnslyden – prioriter undertekst i replikkene",
@@ -406,9 +406,9 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "Have a hand conceal then reveal an object – disclose information through action"
     ],
     "dramaticPurpose": [
-      "Establish who controls the space before the conflict begins",
-      "Use a reaction to change the meaning of the previous line",
-      "Reveal an object that changes the next action's objective"
+      "Reveal who controls the room before conflict starts – establish a visible power balance",
+      "Hold on a reaction after a line – invite a new interpretation of the dialogue",
+      "Reveal the decisive object – give the next action a new objective"
     ],
     "sound": [
       "Keep dialogue clear and reduce background sound – foreground subtext in the exchange",
@@ -448,9 +448,9 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "Faire cacher puis montrer un objet avec une main – révéler par l’action"
     ],
     "dramaticPurpose": [
-      "Montrer qui contrôle l’espace avant le début du conflit",
-      "Faire changer le sens de la réplique précédente grâce à une réaction",
-      "Révéler un objet qui modifie le but de l’action suivante"
+      "Montrer qui contrôle le lieu avant le conflit – établir le rapport de force",
+      "Rester sur une réaction après une réplique – susciter une interprétation nouvelle",
+      "Révéler l’objet décisif – donner un nouvel objectif à l’action suivante"
     ],
     "sound": [
       "Garder les dialogues clairs et réduire le fond sonore – privilégier le sous-texte",
@@ -490,9 +490,9 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "Fazer uma mão ocultar e depois mostrar um objeto – revelar através da ação"
     ],
     "dramaticPurpose": [
-      "Mostrar quem controla o espaço antes de começar o conflito",
-      "Mudar o sentido da fala anterior através de uma reação",
-      "Revelar um objeto que altera o objetivo da ação seguinte"
+      "Mostrar quem controla o espaço antes do conflito – estabelecer a relação de poder",
+      "Manter uma reação depois de uma fala – permitir nova interpretação do diálogo",
+      "Revelar o objeto decisivo – dar um novo objetivo à ação seguinte"
     ],
     "sound": [
       "Manter o diálogo claro e reduzir o som de fundo – realçar o subtexto",
