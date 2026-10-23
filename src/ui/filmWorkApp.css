@@ -197,6 +197,13 @@ html { -webkit-text-size-adjust: 100%; }
   outline-offset: 2px;
 }
 
+/* Legacy modules also place important instructions inside tiny spans and b tags. */
+.filmwork-app-content :is(span, b),
+.app-shell :is(span, b) {
+  font-size: max(13px, 1em) !important;
+  overflow-wrap: anywhere;
+}
+
 /* Turn the website-like landing into a concise app launcher. */
 .filmwork-app-shell .filmverket-home,
 .filmwork-app-shell .filmverket-page {
