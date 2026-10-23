@@ -379,14 +379,13 @@
   line-height: 1.5;
 }
 
-.film-director-field input,
-.film-director-field textarea {
+.film-director-field select {
   width: 100%;
   min-width: 0;
   padding: 11px 12px;
   border: 1px solid #303741;
   outline: none;
-  resize: vertical;
+  min-height: 48px;
   background: #070a0e;
   color: var(--text);
   font: inherit;
@@ -394,8 +393,7 @@
   line-height: 1.6;
 }
 
-.film-director-field input:focus,
-.film-director-field textarea:focus {
+.film-director-field select:focus-visible {
   border-color: var(--accent);
   box-shadow: 0 0 0 2px rgba(214, 174, 98, 0.08);
 }

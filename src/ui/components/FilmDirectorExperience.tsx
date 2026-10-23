@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 import { presentFilmCaseContent } from "../../core/productionCaseFilmStatementCopy";
+import { DIRECTOR_BRIEF_CHOICES, DIRECTOR_SHOT_CHOICES, DIRECTOR_CHOOSE_COPY, type DirectorShotChoiceFieldId } from "../../core/filmDirectorChoiceCatalog";
+import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
 
 import {
   DIRECTOR_BRIEF_FIELDS,
@@ -275,8 +277,8 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
         <div className="director-active-scene" id="director-active-scene">
           <ActiveSceneHeading copy={projectCopy} copyState={copyState} onCopy={() => copyText(buildFilmDirectorSceneText(language, project, currentScene), "scene")} project={project} scene={currentScene} />
           <ReferencePanel activeLensId={activeLensId} activePrinciples={activePrinciples} activeQuestion={activeQuestion} logline={presentReference(referenceBrief.logline)} copy={projectCopy} onChangeLens={setActiveLensId} onUseCraft={useCraftStartingPoint} onUsePrinciple={useReferencePrinciple} onUseTone={useToneStartingPoint} scenario={selectedScenario} />
-          <SceneBriefForm copy={briefCopy} groups={groups} onChange={updateBriefField} scene={currentScene} />
-          <ShotListEditor copy={shotCopy} onAdd={addShot} onChange={changeShot} onDelete={deleteShot} onDuplicate={duplicateShot} onMove={moveShot} scene={currentScene} />
+          <SceneBriefForm copy={briefCopy} groups={groups} language={language} onChange={updateBriefField} scene={currentScene} />
+          <ShotListEditor copy={shotCopy} language={language} onAdd={addShot} onChange={changeShot} onDelete={deleteShot} onDuplicate={duplicateShot} onMove={moveShot} scene={currentScene} />
         </div>
       </section>
 
@@ -342,17 +344,46 @@ function ReferencePanel({ activeLensId, activePrinciples, activeQuestion, loglin
   );
 }
 
-function SceneBriefForm({ copy, groups, onChange, scene }: {
+function SceneBriefForm({ copy, groups, language, onChange, scene }: {
   readonly copy: FilmDirectorBriefCopy;
   readonly groups: readonly FilmDirectorBriefGroupId[];
+  readonly language: FilmWorkLanguage;
   readonly onChange: (fieldId: DirectorBriefFieldId, value: string) => void;
   readonly scene: DirectorScene;
 }) {
-  return <section className="film-director-form" aria-label={copy.ariaLabel}>{groups.map((group, groupIndex) => <section className="film-director-form-group" key={group}><header><span>{String(groupIndex + 1).padStart(2, "0")}</span><h2>{copy.groups[group]}</h2></header><div className="film-director-fields">{fieldLayout.filter((field) => field.group === group).map((field) => { const fieldCopy = copy.fields[field.id]; const complete = scene.brief[field.id].trim().length > 0; return <label className={complete ? "film-director-field film-director-field--complete" : "film-director-field"} key={field.id}><span><strong>{fieldCopy.label}</strong><small>{complete ? copy.defined : copy.open}</small></span><p>{fieldCopy.prompt}</p>{field.rows === 1 ? <input onChange={(event) => onChange(field.id, event.target.value)} type="text" value={scene.brief[field.id]} /> : <textarea onChange={(event) => onChange(field.id, event.target.value)} rows={field.rows} value={scene.brief[field.id]} />}</label>; })}</div></section>)}</section>;
+  return (
+    <section className="film-director-form" aria-label={copy.ariaLabel}>
+      {groups.map((group, groupIndex) => (
+        <section className="film-director-form-group" key={group}>
+          <header><span>{String(groupIndex + 1).padStart(2, "0")}</span><h2>{copy.groups[group]}</h2></header>
+          <div className="film-director-fields">
+            {fieldLayout.filter((field) => field.group === group).map((field) => {
+              const fieldCopy = copy.fields[field.id];
+              const value = scene.brief[field.id];
+              const complete = value.trim().length > 0;
+              const options = DIRECTOR_BRIEF_CHOICES[language][field.id];
+              return (
+                <label className={complete ? "film-director-field film-director-field--complete" : "film-director-field"} key={field.id}>
+                  <span><strong>{fieldCopy.label}</strong><small>{complete ? copy.defined : copy.open}</small></span>
+                  <p>{fieldCopy.prompt}</p>
+                  <select onChange={(event) => onChange(field.id, event.target.value)} value={value}>
+                    <option value="">{DIRECTOR_CHOOSE_COPY[language]}</option>
+                    {value && !options.includes(value) ? <option value={value}>{value}</option> : null}
+                    {options.map((choice) => <option key={choice} value={choice}>{choice}</option>)}
+                  </select>
+                </label>
+              );
+            })}
+          </div>
+        </section>
+      ))}
+    </section>
+  );
 }
 
-function ShotListEditor({ copy, onAdd, onChange, onDelete, onDuplicate, onMove, scene }: {
+function ShotListEditor({ copy, language, onAdd, onChange, onDelete, onDuplicate, onMove, scene }: {
   readonly copy: FilmDirectorShotCopy;
+  readonly language: FilmWorkLanguage;
   readonly onAdd: () => void;
   readonly onChange: (shotId: string, field: DirectorShotFieldId, value: string) => void;
   readonly onDelete: (shotId: string) => void;
@@ -363,14 +394,15 @@ function ShotListEditor({ copy, onAdd, onChange, onDelete, onDuplicate, onMove, 
   return (
     <section className="director-shot-list-section" id="director-shot-list">
       <header><div><span className="filmverket-card-kicker">{copy.kicker}</span><h2>{copy.title}</h2><p>{copy.description}</p></div><button className="filmverket-primary-action" onClick={onAdd} type="button">{copy.addShot}</button></header>
-      {scene.shots.length === 0 ? <div className="director-shot-empty"><strong>{copy.emptyTitle}</strong><p>{copy.emptyDescription}</p><button onClick={onAdd} type="button">{copy.addFirstShot}</button></div> : <div className="director-shot-list">{scene.shots.map((shot, index) => <ShotCard copy={copy} index={index} key={shot.id} onChange={onChange} onDelete={onDelete} onDuplicate={onDuplicate} onMove={onMove} shot={shot} shotCount={scene.shots.length} />)}</div>}
+      {scene.shots.length === 0 ? <div className="director-shot-empty"><strong>{copy.emptyTitle}</strong><p>{copy.emptyDescription}</p><button onClick={onAdd} type="button">{copy.addFirstShot}</button></div> : <div className="director-shot-list">{scene.shots.map((shot, index) => <ShotCard copy={copy} index={index} key={shot.id} language={language} onChange={onChange} onDelete={onDelete} onDuplicate={onDuplicate} onMove={onMove} shot={shot} shotCount={scene.shots.length} />)}</div>}
     </section>
   );
 }
 
-function ShotCard({ copy, index, onChange, onDelete, onDuplicate, onMove, shot, shotCount }: {
+function ShotCard({ copy, index, language, onChange, onDelete, onDuplicate, onMove, shot, shotCount }: {
   readonly copy: FilmDirectorShotCopy;
   readonly index: number;
+  readonly language: FilmWorkLanguage;
   readonly onChange: (shotId: string, field: DirectorShotFieldId, value: string) => void;
   readonly onDelete: (shotId: string) => void;
   readonly onDuplicate: (shotId: string) => void;
@@ -382,20 +414,40 @@ function ShotCard({ copy, index, onChange, onDelete, onDuplicate, onMove, shot, 
     <article className="director-shot-card">
       <header><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{shot.title.trim() || copy.shotTitleFallback(index + 1)}</strong><small>{copy.fieldsDefined(countCompletedDirectorShotFields(shot), DIRECTOR_SHOT_FIELDS.length)}</small></div><div className="director-shot-card-actions"><button aria-label={copy.moveShotUpAria} disabled={index === 0} onClick={() => onMove(shot.id, -1)} type="button">↑</button><button aria-label={copy.moveShotDownAria} disabled={index === shotCount - 1} onClick={() => onMove(shot.id, 1)} type="button">↓</button><button onClick={() => onDuplicate(shot.id)} type="button">{copy.duplicateShot}</button><button onClick={() => onDelete(shot.id)} type="button">{copy.deleteShot}</button></div></header>
       <div className="director-shot-grid">
-        <ShotInput field="title" label={copy.fields.title} onChange={onChange} shot={shot} />
-        <label className="director-shot-field"><span>{copy.fields.shotSize}</span><select onChange={(event) => onChange(shot.id, "shotSize", event.target.value)} value={shot.shotSize}><option value="">{copy.chooseSize}</option>{shotSizeOptions.map((value) => <option key={value} value={value}>{copy.shotSizes[value]}</option>)}</select></label>
-        <ShotInput field="cameraPosition" label={copy.fields.cameraPosition} onChange={onChange} shot={shot} /><ShotInput field="movement" label={copy.fields.movement} onChange={onChange} shot={shot} /><ShotInput field="lens" label={copy.fields.lens} onChange={onChange} shot={shot} /><ShotInput field="estimatedDuration" label={copy.fields.estimatedDuration} onChange={onChange} shot={shot} />
-        <ShotTextArea field="subjectAction" label={copy.fields.subjectAction} onChange={onChange} shot={shot} /><ShotTextArea field="dramaticPurpose" label={copy.fields.dramaticPurpose} onChange={onChange} shot={shot} /><ShotTextArea field="sound" label={copy.fields.sound} onChange={onChange} shot={shot} />
+        <ShotChoice field="title" label={copy.fields.title} language={language} onChange={onChange} shot={shot} />
+        <label className="director-shot-field"><span>{copy.fields.shotSize}</span><select onChange={(event) => onChange(shot.id, "shotSize", event.target.value)} value={shot.shotSize}><option value="">{copy.chooseSize}</option>{shot.shotSize && !shotSizeOptions.includes(shot.shotSize as typeof shotSizeOptions[number]) ? <option value={shot.shotSize}>{shot.shotSize}</option> : null}{shotSizeOptions.map((value) => <option key={value} value={value}>{copy.shotSizes[value]}</option>)}</select></label>
+        <ShotChoice field="cameraPosition" label={copy.fields.cameraPosition} language={language} onChange={onChange} shot={shot} />
+        <ShotChoice field="movement" label={copy.fields.movement} language={language} onChange={onChange} shot={shot} />
+        <ShotChoice field="lens" label={copy.fields.lens} language={language} onChange={onChange} shot={shot} />
+        <ShotChoice field="estimatedDuration" label={copy.fields.estimatedDuration} language={language} onChange={onChange} shot={shot} />
+        <ShotChoice field="subjectAction" label={copy.fields.subjectAction} language={language} onChange={onChange} shot={shot} wide />
+        <ShotChoice field="dramaticPurpose" label={copy.fields.dramaticPurpose} language={language} onChange={onChange} shot={shot} wide />
+        <ShotChoice field="sound" label={copy.fields.sound} language={language} onChange={onChange} shot={shot} wide />
       </div>
     </article>
   );
 }
 
-function ShotInput({ field, label, onChange, shot }: { readonly field: DirectorShotFieldId; readonly label: string; readonly onChange: (shotId: string, field: DirectorShotFieldId, value: string) => void; readonly shot: DirectorShotCard }) {
-  return <label className="director-shot-field"><span>{label}</span><input onChange={(event) => onChange(shot.id, field, event.target.value)} type="text" value={shot[field]} /></label>;
-}
-function ShotTextArea({ field, label, onChange, shot }: { readonly field: DirectorShotFieldId; readonly label: string; readonly onChange: (shotId: string, field: DirectorShotFieldId, value: string) => void; readonly shot: DirectorShotCard }) {
-  return <label className="director-shot-field director-shot-field--wide"><span>{label}</span><textarea onChange={(event) => onChange(shot.id, field, event.target.value)} rows={3} value={shot[field]} /></label>;
+function ShotChoice({ field, label, language, onChange, shot, wide = false }: {
+  readonly field: DirectorShotChoiceFieldId;
+  readonly label: string;
+  readonly language: FilmWorkLanguage;
+  readonly onChange: (shotId: string, field: DirectorShotFieldId, value: string) => void;
+  readonly shot: DirectorShotCard;
+  readonly wide?: boolean;
+}) {
+  const choices = DIRECTOR_SHOT_CHOICES[language][field];
+  const value = shot[field];
+  return (
+    <label className={wide ? "director-shot-field director-shot-field--wide" : "director-shot-field"}>
+      <span>{label}</span>
+      <select onChange={(event) => onChange(shot.id, field, event.target.value)} value={value}>
+        <option value="">{DIRECTOR_CHOOSE_COPY[language]}</option>
+        {value && !choices.includes(value) ? <option value={value}>{value}</option> : null}
+        {choices.map((choice) => <option key={choice} value={choice}>{choice}</option>)}
+      </select>
+    </label>
+  );
 }
 
 function resolveSelectedScenario(scenarios: readonly FilmScenarioSeed[], filmSlug: string | undefined): FilmScenarioSeed | undefined { return filmSlug ? scenarios.find((scenario) => getScenarioSlug(scenario) === filmSlug) : scenarios[0]; }
