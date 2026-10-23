@@ -412,3 +412,8 @@ html { -webkit-text-size-adjust: 100%; }
 @media (prefers-reduced-motion: reduce) {
   .filmwork-app-shell *, .app-shell * { scroll-behavior: auto !important; }
 }
+
+/* The utilities live in the shared app's More menu; do not cover game cards. */
+body:has(.filmwork-app-shell) :is(.craft-library-trigger, .research-control-trigger) {
+  display: none;
+}
