@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 import { presentFilmCaseContent } from "../../core/productionCaseFilmStatementCopy";
 import { DIRECTOR_BRIEF_CHOICES, DIRECTOR_SHOT_CHOICES, DIRECTOR_CHOOSE_COPY, type DirectorShotChoiceFieldId } from "../../core/filmDirectorChoiceCatalog";
+import { DIRECTOR_REFERENCE_LABEL, getDirectorBriefChoices } from "../../core/filmDirectorReferenceChoices";
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
 
 import {
@@ -41,7 +42,7 @@ import { FILM_DIRECTOR_SHELL_COPY } from "../../core/filmDirectorShellCopy";
 import { FILM_DIRECTOR_SHOT_COPY, type FilmDirectorShotCopy } from "../../core/filmDirectorShotCopy";
 import { createFilmSlug, type FilmverketRoute, type FilmverketSection } from "../../core/filmverketRoutes";
 import { getClassicFilmScenarios, type FilmScenarioSeed } from "../data/filmScenarios";
-import { resolveScenarioProductionBrief } from "../data/scenarioProductionBriefs";
+import { resolveScenarioProductionBrief, type ScenarioProductionBrief } from "../data/scenarioProductionBriefs";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
 
 type FilmDirectorExperienceProps = {
@@ -277,7 +278,7 @@ function DirectorProjectEditor({ navigate, scenarios, selectedScenario }: {
         <div className="director-active-scene" id="director-active-scene">
           <ActiveSceneHeading copy={projectCopy} copyState={copyState} onCopy={() => copyText(buildFilmDirectorSceneText(language, project, currentScene), "scene")} project={project} scene={currentScene} />
           <ReferencePanel activeLensId={activeLensId} activePrinciples={activePrinciples} activeQuestion={activeQuestion} logline={presentReference(referenceBrief.logline)} copy={projectCopy} onChangeLens={setActiveLensId} onUseCraft={useCraftStartingPoint} onUsePrinciple={useReferencePrinciple} onUseTone={useToneStartingPoint} scenario={selectedScenario} />
-          <SceneBriefForm copy={briefCopy} groups={groups} language={language} onChange={updateBriefField} scene={currentScene} />
+          <SceneBriefForm copy={briefCopy} groups={groups} language={language} onChange={updateBriefField} presentReference={presentReference} referenceBrief={referenceBrief} scene={currentScene} />
           <ShotListEditor copy={shotCopy} language={language} onAdd={addShot} onChange={changeShot} onDelete={deleteShot} onDuplicate={duplicateShot} onMove={moveShot} scene={currentScene} />
         </div>
       </section>
@@ -344,11 +345,13 @@ function ReferencePanel({ activeLensId, activePrinciples, activeQuestion, loglin
   );
 }
 
-function SceneBriefForm({ copy, groups, language, onChange, scene }: {
+function SceneBriefForm({ copy, groups, language, onChange, presentReference, referenceBrief, scene }: {
   readonly copy: FilmDirectorBriefCopy;
   readonly groups: readonly FilmDirectorBriefGroupId[];
   readonly language: FilmWorkLanguage;
   readonly onChange: (fieldId: DirectorBriefFieldId, value: string) => void;
+  readonly presentReference: (original: string) => string;
+  readonly referenceBrief: ScenarioProductionBrief;
   readonly scene: DirectorScene;
 }) {
   return (
@@ -361,7 +364,8 @@ function SceneBriefForm({ copy, groups, language, onChange, scene }: {
               const fieldCopy = copy.fields[field.id];
               const value = scene.brief[field.id];
               const complete = value.trim().length > 0;
-              const options = DIRECTOR_BRIEF_CHOICES[language][field.id];
+              const options = getDirectorBriefChoices(language, field.id, referenceBrief, presentReference);
+              const baselineCount = DIRECTOR_BRIEF_CHOICES[language][field.id].length;
               return (
                 <label className={complete ? "film-director-field film-director-field--complete" : "film-director-field"} key={field.id}>
                   <span><strong>{fieldCopy.label}</strong><small>{complete ? copy.defined : copy.open}</small></span>
@@ -369,8 +373,9 @@ function SceneBriefForm({ copy, groups, language, onChange, scene }: {
                   <select onChange={(event) => onChange(field.id, event.target.value)} value={value}>
                     <option value="">{DIRECTOR_CHOOSE_COPY[language]}</option>
                     {value && !options.includes(value) ? <option value={value}>{value}</option> : null}
-                    {options.map((choice) => <option key={choice} value={choice}>{choice}</option>)}
+                    {options.map((choice, index) => <option key={choice} value={choice}>{index >= baselineCount ? `${DIRECTOR_REFERENCE_LABEL[language]}: ${choice}` : choice}</option>)}
                   </select>
+                  {value ? <p className="director-selected-choice">{value}</p> : null}
                 </label>
               );
             })}
@@ -446,6 +451,7 @@ function ShotChoice({ field, label, language, onChange, shot, wide = false }: {
         {value && !choices.includes(value) ? <option value={value}>{value}</option> : null}
         {choices.map((choice) => <option key={choice} value={choice}>{choice}</option>)}
       </select>
+      {value ? <small className="director-selected-choice">{value}</small> : null}
     </label>
   );
 }
