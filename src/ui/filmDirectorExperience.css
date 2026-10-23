@@ -529,3 +529,12 @@
     width: 100%;
   }
 }
+
+/* The chosen filmmaking action can be long; show the complete decision below the menu. */
+.film-director-field .director-selected-choice {
+  overflow-wrap: anywhere;
+  margin-top: 2px;
+  color: var(--muted-light);
+  font-size: 12px;
+  line-height: 1.5;
+}
