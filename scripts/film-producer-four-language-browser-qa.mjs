@@ -205,8 +205,14 @@ async function runCase(browser, language, scenario) {
       assert.equal(await page.locator(".school-course-language-selector").count(), 0, `${label}: screenplay course has no duplicate language buttons`);
       assert.equal(await page.locator(".filmwork-app-language select").inputValue(), language, `${label}: language stays synchronized across courses`);
       assert.equal(await page.locator(".school-course-selector").evaluate((node) => getComputedStyle(node).position), "relative", `${label}: screenplay course picker stays in the page flow`);
-      const schoolPageWidth = await page.evaluate(() => document.documentElement.scrollWidth);
-      assert.ok(schoolPageWidth <= 322, `${label}: no horizontal overflow in School on 320px phone (${schoolPageWidth})`);
+      const schoolPageWidth = await page.evaluate(() => ({
+        viewport: document.documentElement.clientWidth,
+        scroll: document.documentElement.scrollWidth,
+        offenders: [...document.querySelectorAll(".filmwork-app-shell *")]
+          .map((node) => ({ node: node.tagName.toLowerCase() + (typeof node.className === "string" ? "." + node.className.trim().split(/\\s+/).slice(0, 2).join(".") : ""), right: Math.round(node.getBoundingClientRect().right) }))
+          .filter((item) => item.right > document.documentElement.clientWidth + 2).slice(0, 12),
+      }));
+      assert.ok(schoolPageWidth.scroll <= schoolPageWidth.viewport + 2, `${label}: no horizontal overflow in School on 320px phone: ${JSON.stringify(schoolPageWidth)}`);
       await page.setViewportSize({ width: 1440, height: 900 });
       checks.push(`${label}: app-shell-navigation`);
     }
