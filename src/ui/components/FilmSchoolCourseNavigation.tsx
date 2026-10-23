@@ -53,27 +53,19 @@ type NavigationCopy = {
   readonly structure: string;
   readonly open: string;
   readonly openAction: string;
-  readonly languageAria: string;
 };
 
 const navigationCopy: Record<FilmWorkLanguage, NavigationCopy> = {
-  en: { ariaLabel: "Film School ground-course navigation", foundation: "Directing foundations", structure: "5 courses × 5 modules", open: "Open", openAction: "Open →", languageAria: "Film School language" },
-  nb: { ariaLabel: "Navigasjon for Film School-grunnkurset", foundation: "Regi grunnkurs", structure: "5 kurs × 5 moduler", open: "Åpent", openAction: "Åpne →", languageAria: "Språk for Film School" },
-  fr: { ariaLabel: "Navigation du cursus fondamental Film School", foundation: "Fondamentaux de la réalisation", structure: "5 cours × 5 modules", open: "Ouvert", openAction: "Ouvrir →", languageAria: "Langue de Film School" },
-  pt: { ariaLabel: "Navegação do curso fundamental Film School", foundation: "Fundamentos de realização", structure: "5 cursos × 5 módulos", open: "Aberto", openAction: "Abrir →", languageAria: "Idioma do Film School" },
+  en: { ariaLabel: "Film School ground-course navigation", foundation: "Directing foundations", structure: "5 courses × 5 modules", open: "Open", openAction: "Open →" },
+  nb: { ariaLabel: "Navigasjon for Film School-grunnkurset", foundation: "Regi grunnkurs", structure: "5 kurs × 5 moduler", open: "Åpent", openAction: "Åpne →" },
+  fr: { ariaLabel: "Navigation du cursus fondamental Film School", foundation: "Fondamentaux de la réalisation", structure: "5 cours × 5 modules", open: "Ouvert", openAction: "Ouvrir →" },
+  pt: { ariaLabel: "Navegação do curso fundamental Film School", foundation: "Fundamentos de realização", structure: "5 cursos × 5 módulos", open: "Aberto", openAction: "Abrir →" },
 };
-
-const languageOptions: readonly { readonly id: FilmWorkLanguage; readonly label: string; readonly ariaLabel: string }[] = [
-  { id: "en", label: "EN", ariaLabel: "Use English" },
-  { id: "nb", label: "NO", ariaLabel: "Bruk norsk" },
-  { id: "fr", label: "FR", ariaLabel: "Utiliser le français" },
-  { id: "pt", label: "PT", ariaLabel: "Usar português" },
-];
 
 const headerSectionOrder = ["home", "producer", "atlas", "director", "school", "history", "research"] as const;
 
 export function FilmSchoolCourseNavigation({ activeCourseId, language, onSelectCourse }: FilmSchoolCourseNavigationProps) {
-  const [storedLanguage, setStoredLanguage] = useFilmWorkLanguage();
+  const [storedLanguage] = useFilmWorkLanguage();
   const resolvedLanguage = language ?? storedLanguage;
   const copy = navigationCopy[resolvedLanguage];
   const chrome = FILM_SCHOOL_COURSE_CHROME[resolvedLanguage];
@@ -90,37 +82,27 @@ export function FilmSchoolCourseNavigation({ activeCourseId, language, onSelectC
 
   return (
     <aside className="school-course-selector" aria-label={copy.ariaLabel}>
-      <header><span>Film School · {copy.structure}</span><strong>{copy.foundation}</strong></header>
-      {activeCourseId !== "overview" ? (
-        <div aria-label={copy.languageAria} className="school-course-language-selector" role="group">
-          {languageOptions.map((option) => (
+      <details className="school-course-disclosure">
+        <summary>
+          <span>Film School · {copy.structure}</span>
+          <strong>{availableCourses[resolvedLanguage].find((course) => course.id === activeCourseId)?.title ?? copy.foundation}</strong>
+          <span aria-hidden="true" className="school-course-chevron">⌄</span>
+        </summary>
+        <div className="school-course-list">
+          {availableCourses[resolvedLanguage].map((course) => (
             <button
-              aria-label={option.ariaLabel}
-              aria-pressed={resolvedLanguage === option.id}
-              className={resolvedLanguage === option.id ? "filmverket-nav-button filmverket-nav-button--active" : "filmverket-nav-button"}
-              key={option.id}
-              onClick={() => setStoredLanguage(option.id)}
+              className={course.id === activeCourseId ? "is-active" : ""}
+              key={course.id}
+              onClick={() => onSelectCourse(course.id)}
               type="button"
             >
-              {option.label}
+              <span>{course.number}</span>
+              <strong>{course.title}</strong>
+              <b>{course.id === activeCourseId ? copy.open : copy.openAction}</b>
             </button>
           ))}
         </div>
-      ) : null}
-      <div>
-        {availableCourses[resolvedLanguage].map((course) => (
-          <button
-            className={course.id === activeCourseId ? "is-active" : ""}
-            key={course.id}
-            onClick={() => onSelectCourse(course.id)}
-            type="button"
-          >
-            <span>{course.number}</span>
-            <strong>{course.title}</strong>
-            <b>{course.id === activeCourseId ? copy.open : copy.openAction}</b>
-          </button>
-        ))}
-      </div>
+      </details>
     </aside>
   );
 }
