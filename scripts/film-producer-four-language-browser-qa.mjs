@@ -143,8 +143,10 @@ async function runCase(browser, language, scenario) {
     assert.ok(await briefSelects.nth(1).locator("option").count() >= 4, `${label}: real scene choices`);
     if (id === TARGET_IDS[0]) {
       const contextSelect = briefSelects.nth(1);
-      await contextSelect.selectOption({ index: 1 });
-      assert.ok((await contextSelect.inputValue()).trim(), `${label}: choice changes the brief`);
+      assert.equal(await contextSelect.locator("option").count(), 5, `${label}: film-specific option alongside three authored alternatives`);
+      await contextSelect.selectOption({ index: 4 });
+      assert.ok((await contextSelect.inputValue()).trim(), `${label}: film-specific choice changes the brief`);
+      assert.equal(await directorPage.locator(".film-director-field .director-selected-choice").count() > 0, true, `${label}: selected director reasoning is readable`);
       await directorPage.locator(".director-shot-list-section > header button").click();
       const shotSelects = directorPage.locator(".director-shot-field select");
       assert.equal(await shotSelects.count(), 9, `${label}: every shot field is selectable`);

@@ -62,7 +62,7 @@ Every scene contains the same 16 directing decisions:
 15. practical constraints
 16. proof of intent
 
-The fixed structure prevents the workspace from becoming a generic notes page. Each field corresponds to an observable directing decision. All 16 fields now use three prewritten choices per language (Norwegian, English, French, and Portuguese); players never type an answer.
+The fixed structure prevents the workspace from becoming a generic notes page. Each field corresponds to an observable directing decision. All 16 fields use three carefully authored filmmaking choices per language (Norwegian, English, French, and Portuguese). Fourteen of these fields additionally offer a choice grounded in the selected film's existing production brief when source content is available. Players never type an answer. Options now describe observable staging, camera, acting, editing, and sound consequences rather than abstract slogans.
 
 ## Shot cards
 
@@ -128,3 +128,7 @@ This build does not add or change:
 - collaborative editing
 
 The next Film Director layers can add floor-plan blocking, rehearsal notes, setup grouping, schedule integration, printable shot lists, and direct transfer into a Film Producer production.
+
+## Choice-only regression protection
+
+The CI preflight scans all Filmverket UI components for typed gameplay inputs. Radio buttons, checkboxes, selectors and optional catalogue searches are allowed. The optional Production Cases backup panel retains one paste-JSON field and one read-only export field; neither is a playable answer. The audit runs as `npm run audit:choice-only` within `npm run verify:v0.1`.
