@@ -191,6 +191,22 @@ async function runCase(browser, language, scenario) {
       await page.locator(".filmwork-app-more-menu button").last().click();
       await page.locator(".craft-library-panel").waitFor({ state: "visible" });
       await page.locator(".craft-library-header > button").click();
+
+      // Film School must use the global upper-right language selector only.
+      await appTabs.nth(3).click();
+      const schoolSelector = page.locator(".school-course-selector");
+      await schoolSelector.waitFor({ state: "visible" });
+      assert.equal(await page.locator(".filmwork-app-language select:visible").count(), 1, `${label}: exactly one visible language picker`);
+      assert.equal(await page.locator(".school-course-language-selector").count(), 0, `${label}: no language buttons inside lessons`);
+      assert.equal(await schoolSelector.evaluate((node) => getComputedStyle(node).position), "relative", `${label}: course picker must not cover the lesson`);
+      await schoolSelector.locator("summary").click();
+      assert.equal(await schoolSelector.locator(".school-course-list button").count(), 6, `${label}: all six course destinations remain available`);
+      await schoolSelector.locator(".school-course-list button").nth(1).click();
+      assert.equal(await page.locator(".school-course-language-selector").count(), 0, `${label}: screenplay course has no duplicate language buttons`);
+      assert.equal(await page.locator(".filmwork-app-language select").inputValue(), language, `${label}: language stays synchronized across courses`);
+      assert.equal(await page.locator(".school-course-selector").evaluate((node) => getComputedStyle(node).position), "relative", `${label}: screenplay course picker stays in the page flow`);
+      const schoolPageWidth = await page.evaluate(() => document.documentElement.scrollWidth);
+      assert.ok(schoolPageWidth <= 322, `${label}: no horizontal overflow in School on 320px phone (${schoolPageWidth})`);
       await page.setViewportSize({ width: 1440, height: 900 });
       checks.push(`${label}: app-shell-navigation`);
     }
