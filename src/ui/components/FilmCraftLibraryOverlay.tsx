@@ -1,4 +1,4 @@
-import { useMemo, useState, type ChangeEvent } from "react";
+import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 
 import {
   FILM_CRAFT_DOMAIN_IDS,
@@ -20,6 +20,13 @@ export function FilmCraftLibraryOverlay() {
   const [query, setQuery] = useState("");
   const [domain, setDomain] = useState<FilmCraftDomain | "all">("all");
   const [selectedFilmId, setSelectedFilmId] = useState("all");
+
+  // The shared FilmWork app menu replaces the old page-covering launcher.
+  useEffect(() => {
+    const openFromNavigation = () => setOpen(true);
+    window.addEventListener("filmwork-open-craft-library", openFromNavigation);
+    return () => window.removeEventListener("filmwork-open-craft-library", openFromNavigation);
+  }, []);
 
   const selectedFilm = filmScenarios.find((scenario) => scenario.id === selectedFilmId);
   const filmMatchedTechniques = useMemo(() => {

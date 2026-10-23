@@ -165,6 +165,35 @@ async function runCase(browser, language, scenario) {
       assert.equal(await directorPage.locator("input, textarea, [contenteditable='true']").count(), 0, `${label}: no writing at mobile width`);
       await page.setViewportSize({ width: 1440, height: 900 });
     }
+    // Shared FilmWork navigation and readable touch UI across all sections.
+    if (id === TARGET_IDS[0]) {
+      await page.setViewportSize({ width: 320, height: 720 });
+      await page.goto(new URL("#/", SITE).href);
+      const appTabs = page.locator(".filmwork-app-navigation .filmwork-app-tab");
+      assert.equal(await appTabs.count(), 6, `${label}: five destinations plus More`);
+      const bounds = await appTabs.evaluateAll((tabs) => tabs.map((tab) => {
+        const box = tab.getBoundingClientRect();
+        return { height: box.height, width: box.width, visible: box.right > 0 };
+      }));
+      assert.ok(bounds.every((box) => box.height >= 48 && box.width >= 40 && box.visible), `${label}: usable bottom tabs at 320px`);
+      const navPosition = await page.locator(".filmwork-app-navigation").evaluate((nav) => getComputedStyle(nav).position);
+      assert.equal(navPosition, "fixed", `${label}: bottom navigation on phones`);
+      assert.equal(await page.locator(".filmwork-app-language select").inputValue(), language, `${label}: language retained`);
+      assert.equal(await page.locator(".filmwork-app-shell .filmverket-header:visible").count(), 0, `${label}: no duplicate website navigation`);
+      await page.locator(".filmwork-app-more > button").click();
+      await page.locator(".filmwork-app-more-menu button").first().click();
+      await page.locator(".filmwork-app-navigation [aria-current='page']").waitFor({ state: "visible" });
+      assert.ok(page.url().includes("#/history"), `${label}: history remains reachable from More`);
+      await page.locator(".filmwork-app-tab").first().click();
+      assert.ok(page.url().endsWith("#/"), `${label}: home tab navigates back`);
+      assert.equal(await page.locator(".craft-library-trigger:visible, .research-control-trigger:visible").count(), 0, `${label}: floating tools cannot obscure mobile cards`);
+      await page.locator(".filmwork-app-more > button").click();
+      await page.locator(".filmwork-app-more-menu button").last().click();
+      await page.locator(".craft-library-panel").waitFor({ state: "visible" });
+      await page.locator(".craft-library-header > button").click();
+      await page.setViewportSize({ width: 1440, height: 900 });
+      checks.push(`${label}: app-shell-navigation`);
+    }
     checks.push(`${label}: director`);
 
     // The Idiots is a verified history case, but its active production brief is

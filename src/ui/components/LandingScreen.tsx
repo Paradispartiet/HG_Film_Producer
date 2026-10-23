@@ -7,6 +7,7 @@ import { DirectorCourseAssignmentBanner } from "./DirectorCourseAssignmentBanner
 import { DirectorKnowledgeDesk } from "./DirectorKnowledgeDesk";
 import { DirectorPracticeCoach } from "./DirectorPracticeCoach";
 import { FilmAtlasExperience } from "./FilmAtlasExperience";
+import { FilmWorkAppNavigation } from "./FilmWorkAppNavigation";
 import { FilmCraftLibraryOverlay } from "./FilmCraftLibraryOverlay";
 import { FilmDirectorExperience } from "./FilmDirectorExperience";
 import { FilmHistoryExperience } from "./FilmHistoryExperience";
@@ -95,6 +96,9 @@ export function LandingScreen(props: LandingScreenProps) {
 
   return (
     <>
+      <div className="filmwork-app-shell">
+        <FilmWorkAppNavigation navigate={navigate} route={route} />
+        <div className="filmwork-app-content">
       {directorRoute ? (
         <FilmDirectorExperience navigate={navigate} route={directorRoute} />
       ) : route.section === "school" ? (
@@ -106,6 +110,8 @@ export function LandingScreen(props: LandingScreenProps) {
       ) : (
         <RoutedFilmverketPlatform {...props} navigate={navigate} route={route} />
       )}
+        </div>
+      </div>
       <DirectorCourseAssignmentBanner filmSlug={directorRoute?.filmSlug} visible={route.section === "director"} />
       <DirectorPracticeCoach visible={route.section === "director"} />
       <DirectorKnowledgeDesk visible={route.section === "director"} />
