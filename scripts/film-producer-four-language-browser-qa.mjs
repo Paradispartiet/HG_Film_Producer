@@ -134,6 +134,35 @@ async function runCase(browser, language, scenario) {
       caseCopy.presentFilmCaseContent(language, brief.briefType, brief.scenarioId, brief.logline),
       `${label}: Director reference logline`,
     );
+    // Film Director is a choice-only game: all 16 directing decisions and
+    // all nine shot decisions must be selectable without entering free text.
+    const directorPage = page.locator(".director-project-page");
+    const briefSelects = directorPage.locator(".film-director-field select");
+    assert.equal(await briefSelects.count(), 16, `${label}: every directing decision has a menu`);
+    assert.equal(await directorPage.locator("input, textarea, [contenteditable='true']").count(), 0, `${label}: Director must not ask for typing`);
+    assert.ok(await briefSelects.nth(1).locator("option").count() >= 4, `${label}: real scene choices`);
+    if (id === TARGET_IDS[0]) {
+      const contextSelect = briefSelects.nth(1);
+      await contextSelect.selectOption({ index: 1 });
+      assert.ok((await contextSelect.inputValue()).trim(), `${label}: choice changes the brief`);
+      await directorPage.locator(".director-shot-list-section > header button").click();
+      const shotSelects = directorPage.locator(".director-shot-field select");
+      assert.equal(await shotSelects.count(), 9, `${label}: every shot field is selectable`);
+      for (const count of await Promise.all(Array.from({ length: 9 }, (_, index) => shotSelects.nth(index).locator("option").count()))) {
+        assert.ok(count >= 4, `${label}: shot choices include at least three alternatives`);
+      }
+      await shotSelects.first().selectOption({ index: 1 });
+      const savedBrief = await contextSelect.inputValue();
+      const savedShot = await shotSelects.first().inputValue();
+      await page.reload();
+      await page.locator(".film-director-field select").first().waitFor({ state: "visible" });
+      assert.equal(await page.locator(".film-director-field select").nth(1).inputValue(), savedBrief, `${label}: selected brief is persisted`);
+      assert.equal(await page.locator(".director-shot-field select").first().inputValue(), savedShot, `${label}: selected shot is persisted`);
+      await page.setViewportSize({ width: 320, height: 720 });
+      assert.ok(await page.locator(".film-director-field select").first().evaluate((el) => el.getBoundingClientRect().height >= 44), `${label}: touch-size options`);
+      assert.equal(await directorPage.locator("input, textarea, [contenteditable='true']").count(), 0, `${label}: no writing at mobile width`);
+      await page.setViewportSize({ width: 1440, height: 900 });
+    }
     checks.push(`${label}: director`);
 
     // The Idiots is a verified history case, but its active production brief is
