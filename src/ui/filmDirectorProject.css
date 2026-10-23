@@ -448,3 +448,11 @@
     flex: 1;
   }
 }
+
+.director-shot-field .director-selected-choice {
+  display: block;
+  overflow-wrap: anywhere;
+  color: var(--muted-light);
+  font-size: 12px;
+  line-height: 1.5;
+}
