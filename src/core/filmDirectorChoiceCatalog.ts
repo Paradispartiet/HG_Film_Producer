@@ -33,19 +33,19 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Personen velger å bryte med planen"
     ],
     "formalStrategy": [
-      "Hold igjen informasjon til siste bilde",
-      "La kontrasten mellom bilder fortelle",
-      "La handlingen utvikle seg i ett langt opptak"
+      "Vis motstanden i samme ubrutte tagning – publikum opplever presset uten klippepause",
+      "Vis handlingen fra ulike perspektiver – klippene avslører motstridende forståelser",
+      "Hold igjen et viktig bilde til vendepunktet – styr når publikum får vite mer"
     ],
     "blocking": [
-      "La personene nærme seg hverandre",
-      "Bruk avstand for å vise konflikt",
-      "La én person ta kontroll over rommet"
+      "La personen med makt oppta midten av rommet – de andre må forholde seg til plasseringen",
+      "La avstanden mellom personene øke gjennom scenen – konflikten blir synlig",
+      "La en person sperre utgangen – bevegelse i rommet blir en del av motstanden"
     ],
     "performanceDirection": [
-      "Spill følelsene under overflaten",
-      "Bruk pauser og blikk fremfor replikker",
-      "La reaksjonen komme før ordene"
+      "La skuespilleren skjule følelsen mens kroppen røper den – undertekst fremfor forklaring",
+      "La motparten reagere før hovedreplikken er ferdig – et brudd i kontrollen blir synlig",
+      "La et avgjørende valg spilles gjennom nøling og handling – ikke en forklarende monolog"
     ],
     "productionDesign": [
       "Bruk få rekvisitter med tydelig betydning",
@@ -53,29 +53,29 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Bruk miljøet til å skape motstand"
     ],
     "shotPlan": [
-      "Begynn bredt og gå gradvis tettere",
-      "Prioriter reaksjonsbilder",
-      "Hold deg til ett tydelig synspunkt"
+      "Etabler rommet i total før du går nær – publikum forstår hvor presset kommer fra",
+      "Hold på den lyttende personen under avsløringen – reaksjonen bærer scenen",
+      "Begrens dekningen til hovedpersonens perspektiv – vi oppdager informasjon samtidig"
     ],
     "cameraMovementLenses": [
-      "Statisk kamera og rolig utsnitt",
-      "Håndholdt kamera tett på handlingen",
-      "Langsom kamerabevegelse som avslører rommet"
+      "Hold kameraet i ro og la skuespillerne bevege seg – plasseringen viser hvem som styrer",
+      "Følg hovedpersonen håndholdt gjennom trangt rom – usikkerhet oppstår gjennom nærhet",
+      "Flytt kameraet langsomt inn ved en erkjennelse – utsnittet markerer en endring"
     ],
     "lightingPalette": [
-      "Mykt lys med varme toner",
-      "Hard kontrast og markerte skygger",
-      "Kjølig, dempet lys som skaper avstand"
+      "Bruk én motivert vinduslyskilde – retningen gir et forståelig og begrenset rom",
+      "La motlys skjule et ansikt til valget tas – lys brukes til å holde igjen informasjon",
+      "Bruk kjølig grunnlys og én varm lyskilde – fargekontrast viser tilhørighet"
     ],
     "editingRhythm": [
-      "Lange tagninger med rom for pauser",
-      "Raskere klipp når konflikten øker",
-      "Hold igjen klippet til reaksjonen er tydelig"
+      "Hold tagningen gjennom en vanskelig pause – la skuespillerens reaksjon få tid",
+      "Klipp på hver endring i maktbalansen – rytmen følger dramatisk handling",
+      "Vis motpartens reaksjon før svaret – publikum må tolke det som ikke sies"
     ],
     "soundStrategy": [
-      "La romlyd bære stemningen",
-      "Bruk stillhet ved vendepunktet",
-      "La lyd utenfor bildet varsle endring"
+      "La lyden fra rommet fortsette under pausen – stillheten oppleves som levende",
+      "La en lyd utenfor bildet avbryte samtalen – verden utenfor påvirker konflikten",
+      "Demp miljølyden idet en person forstår sannheten – oppmerksomheten snevres inn"
     ],
     "practicalConstraints": [
       "Forenkle til én innspillingsplass",
@@ -83,9 +83,9 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Planlegg for begrenset lys og tid"
     ],
     "proofOfIntent": [
-      "Publikum forstår vendepunktet uten forklaring",
-      "Blikk og plassering viser maktforholdet",
-      "Lyd og klipp støtter den tilsiktede følelsen"
+      "Test om publikum kan forklare vendepunktet uten en ekstra replikk",
+      "Test om publikum oppfatter maktendringen bare gjennom plassering og blikk",
+      "Test om publikum hører den avgjørende hendelsen før den blir vist"
     ]
   },
   "en": {
@@ -115,19 +115,19 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "A character abandons the plan"
     ],
     "formalStrategy": [
-      "Withhold information until the final image",
-      "Tell the story through contrasting images",
-      "Let the action unfold in a long take"
+      "Keep the confrontation in one uninterrupted take – the pressure remains visible without a cut",
+      "Contrast opposing viewpoints in the edit – reveal that characters understand events differently",
+      "Withhold one decisive image until the reversal – control when the audience knows more"
     ],
     "blocking": [
-      "Bring characters gradually closer",
-      "Use distance to show conflict",
-      "Let one character control the space"
+      "Place the dominant character at the center – others must negotiate that position",
+      "Increase the distance between characters as the scene develops – make separation visible",
+      "Have one character block the exit – movement through the room becomes an obstacle"
     ],
     "performanceDirection": [
-      "Keep emotion beneath the surface",
-      "Use pauses and glances over dialogue",
-      "Let the reaction come before words"
+      "Have the actor conceal emotion while the body betrays it – convey subtext without explanation",
+      "Let the other actor react before the main line is finished – expose a loss of control",
+      "Play the decision through hesitation and action – avoid an explanatory speech"
     ],
     "productionDesign": [
       "Use a few meaningful props",
@@ -135,29 +135,29 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Use the environment as an obstacle"
     ],
     "shotPlan": [
-      "Start wide and move gradually closer",
-      "Prioritize reaction shots",
-      "Stay with one clear point of view"
+      "Establish the room wide before moving close – clarify where the pressure comes from",
+      "Hold on the listener during the revelation – let the reaction carry the scene",
+      "Restrict coverage to the protagonist's viewpoint – audience and character discover together"
     ],
     "cameraMovementLenses": [
-      "Static camera and calm framing",
-      "Handheld camera close to action",
-      "Slow camera move revealing the space"
+      "Lock the camera and let actors move – position shows who controls the room",
+      "Follow the protagonist handheld through a tight space – proximity creates uncertainty",
+      "Push in slowly on the realization – framing registers a change in understanding"
     ],
     "lightingPalette": [
-      "Soft light with warm tones",
-      "Hard contrast and distinct shadows",
-      "Cool muted light creating distance"
+      "Motivate the key light from a window – make the space coherent and constrained",
+      "Keep a face in backlight until the decision – use light to delay information",
+      "Combine a cool base with one warm source – color contrast suggests belonging"
     ],
     "editingRhythm": [
-      "Long takes with room for pauses",
-      "Cut faster as the conflict grows",
-      "Delay the cut until the reaction lands"
+      "Stay in the take through an uncomfortable pause – give the reaction time",
+      "Cut when the power balance shifts – let rhythm follow dramatic action",
+      "Show the listener's reaction before the answer – invite interpretation of the unspoken"
     ],
     "soundStrategy": [
-      "Let room tone establish the mood",
-      "Use silence at the turning point",
-      "Use off-screen sound to signal change"
+      "Keep room tone under the pause – silence still feels inhabited",
+      "Let an off-screen sound interrupt dialogue – outside events alter the conflict",
+      "Lower the ambience at a realization – narrow attention without a speech"
     ],
     "practicalConstraints": [
       "Simplify to one location",
@@ -165,9 +165,9 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Plan around limited time and light"
     ],
     "proofOfIntent": [
-      "The turning point reads without explanation",
-      "Gaze and blocking show the power dynamic",
-      "Sound and editing support the intended feeling"
+      "Test whether viewers can explain the turning point without an extra line",
+      "Test whether blocking and eyelines reveal the power shift on their own",
+      "Test whether viewers hear the crucial event before it is shown"
     ]
   },
   "fr": {
@@ -197,19 +197,19 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Un personnage abandonne son plan"
     ],
     "formalStrategy": [
-      "Retenir l’information jusqu’au dernier plan",
-      "Raconter par des images contrastées",
-      "Déployer l’action en un plan long"
+      "Filmer l’affrontement en un plan continu – la pression reste visible sans coupe",
+      "Monter des points de vue opposés – révéler des interprétations contradictoires",
+      "Retarder une image décisive jusqu’au basculement – maîtriser le savoir du public"
     ],
     "blocking": [
-      "Rapprocher progressivement les personnages",
-      "Montrer le conflit par la distance",
-      "Laisser un personnage dominer l’espace"
+      "Placer le personnage dominant au centre – les autres doivent négocier sa position",
+      "Augmenter progressivement l’écart entre les personnages – rendre la rupture visible",
+      "Faire bloquer la sortie par un personnage – l’espace devient un obstacle"
     ],
     "performanceDirection": [
-      "Garder l’émotion sous la surface",
-      "Privilégier pauses et regards aux paroles",
-      "Faire précéder les mots par la réaction"
+      "Faire cacher l’émotion tandis que le corps la trahit – privilégier le sous-texte",
+      "Faire réagir le partenaire avant la fin de la réplique – montrer une perte de contrôle",
+      "Jouer le choix par l’hésitation et l’action – éviter le discours explicatif"
     ],
     "productionDesign": [
       "Choisir peu d’accessoires significatifs",
@@ -217,29 +217,29 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Transformer le lieu en obstacle"
     ],
     "shotPlan": [
-      "Commencer large puis se rapprocher",
-      "Privilégier les plans de réaction",
-      "Adopter un seul point de vue clair"
+      "Présenter d’abord le lieu en plan large – clarifier la source de la pression",
+      "Rester sur celui qui écoute pendant la révélation – laisser porter la réaction",
+      "Limiter les plans au point de vue du protagoniste – découvrir avec lui"
     ],
     "cameraMovementLenses": [
-      "Caméra fixe et cadre calme",
-      "Caméra portée près de l’action",
-      "Mouvement lent révélant l’espace"
+      "Fixer la caméra et laisser bouger les acteurs – la position révèle le pouvoir",
+      "Suivre le protagoniste à l’épaule dans un lieu étroit – créer l’incertitude par la proximité",
+      "Avancer lentement vers un visage lors de la prise de conscience – marquer le changement"
     ],
     "lightingPalette": [
-      "Lumière douce et tons chauds",
-      "Contraste dur et ombres marquées",
-      "Lumière froide et discrète"
+      "Motiver la lumière principale par une fenêtre – garder un espace cohérent",
+      "Garder un visage en contre-jour jusqu’au choix – retarder la révélation",
+      "Associer une base froide à une source chaude – suggérer l’appartenance par la couleur"
     ],
     "editingRhythm": [
-      "Plans longs laissant des pauses",
-      "Accélérer les coupes avec le conflit",
-      "Retarder la coupe pour montrer la réaction"
+      "Garder le plan pendant un silence pénible – donner du temps à la réaction",
+      "Couper à chaque changement de rapport de force – suivre l’action dramatique",
+      "Montrer la réaction avant la réponse – faire interpréter ce qui n’est pas dit"
     ],
     "soundStrategy": [
-      "Utiliser les sons du lieu pour l’ambiance",
-      "Employer le silence au tournant",
-      "Annoncer le changement par le hors-champ"
+      "Maintenir les sons du lieu sous la pause – donner de la vie au silence",
+      "Faire interrompre le dialogue par un son hors champ – laisser le monde agir",
+      "Atténuer l’ambiance à la prise de conscience – concentrer l’attention"
     ],
     "practicalConstraints": [
       "Limiter le tournage à un lieu",
@@ -247,9 +247,9 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Prévoir peu de temps et de lumière"
     ],
     "proofOfIntent": [
-      "Le tournant est compris sans explication",
-      "Regards et positions montrent le pouvoir",
-      "Son et montage créent l’effet voulu"
+      "Vérifier que le public comprend le basculement sans réplique ajoutée",
+      "Vérifier que les positions et regards révèlent seuls le rapport de force",
+      "Vérifier que le public entend l’événement décisif avant de le voir"
     ]
   },
   "pt": {
@@ -279,19 +279,19 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Uma personagem abandona o plano"
     ],
     "formalStrategy": [
-      "Guardar informação até à imagem final",
-      "Narrar por imagens contrastantes",
-      "Deixar a ação decorrer num plano longo"
+      "Manter o confronto num plano contínuo – deixar a pressão visível sem cortes",
+      "Montar pontos de vista opostos – revelar interpretações contraditórias",
+      "Adiar uma imagem decisiva até à viragem – controlar o que o público sabe"
     ],
     "blocking": [
-      "Aproximar gradualmente as personagens",
-      "Usar a distância para mostrar conflito",
-      "Dar o controlo do espaço a uma personagem"
+      "Colocar a personagem dominante no centro – os outros negociam essa posição",
+      "Aumentar a distância entre personagens – tornar a separação visível",
+      "Fazer uma personagem bloquear a saída – o espaço torna-se obstáculo"
     ],
     "performanceDirection": [
-      "Manter a emoção contida",
-      "Privilegiar pausas e olhares",
-      "Mostrar a reação antes das palavras"
+      "Ocultar a emoção nas palavras e revelá-la no corpo – mostrar subtexto",
+      "Fazer o outro ator reagir antes do fim da fala – mostrar perda de controlo",
+      "Representar a decisão com hesitação e ação – evitar discurso explicativo"
     ],
     "productionDesign": [
       "Usar poucos adereços significativos",
@@ -299,29 +299,29 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Transformar o ambiente num obstáculo"
     ],
     "shotPlan": [
-      "Começar aberto e aproximar gradualmente",
-      "Privilegiar planos de reação",
-      "Manter um ponto de vista claro"
+      "Estabelecer primeiro o espaço em plano aberto – esclarecer a origem da pressão",
+      "Manter a câmara em quem escuta durante a revelação – valorizar a reação",
+      "Limitar os planos ao ponto de vista do protagonista – descobrir com ele"
     ],
     "cameraMovementLenses": [
-      "Câmara fixa com enquadramento calmo",
-      "Câmara à mão perto da ação",
-      "Movimento lento que revela o espaço"
+      "Fixar a câmara e deixar os atores moverem-se – o posicionamento revela poder",
+      "Seguir o protagonista à mão por um espaço apertado – criar incerteza pela proximidade",
+      "Aproximar lentamente a câmara na descoberta – assinalar uma mudança"
     ],
     "lightingPalette": [
-      "Luz suave com tons quentes",
-      "Contraste forte e sombras definidas",
-      "Luz fria e discreta que cria distância"
+      "Justificar a luz principal por uma janela – dar coerência ao espaço",
+      "Manter um rosto em contraluz até à escolha – atrasar a revelação",
+      "Combinar base fria com uma fonte quente – sugerir pertença pela cor"
     ],
     "editingRhythm": [
-      "Planos longos com pausas",
-      "Acelerar os cortes com o conflito",
-      "Adiar o corte até à reação"
+      "Manter o plano durante uma pausa difícil – dar tempo à reação",
+      "Cortar em cada mudança de poder – seguir a ação dramática",
+      "Mostrar a reação antes da resposta – convidar a interpretar o silêncio"
     ],
     "soundStrategy": [
-      "Usar o som ambiente para criar atmosfera",
-      "Usar silêncio no ponto de viragem",
-      "Sinalizar mudança com som fora de campo"
+      "Manter o som ambiente durante a pausa – dar vida ao silêncio",
+      "Interromper o diálogo com som fora de campo – trazer o exterior para o conflito",
+      "Reduzir o ambiente na descoberta – concentrar a atenção"
     ],
     "practicalConstraints": [
       "Simplificar para uma única localização",
@@ -329,9 +329,9 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Planear com luz e tempo limitados"
     ],
     "proofOfIntent": [
-      "A viragem é clara sem explicação",
-      "Olhares e posições mostram o poder",
-      "Som e montagem sustentam a emoção"
+      "Testar se o público compreende a viragem sem diálogo adicional",
+      "Testar se posições e olhares mostram sozinhos a mudança de poder",
+      "Testar se o público ouve o acontecimento decisivo antes de o ver"
     ]
   }
 };
@@ -344,14 +344,14 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "Avgjørende detalj"
     ],
     "cameraPosition": [
-      "Kamera i øyehøyde",
-      "Lav kameravinkel",
-      "Høy kameravinkel"
+      "Sett kamera i øyehøyde – personene fremstår som likeverdige",
+      "Bruk lav vinkel mot den som dominerer – posisjonen forsterker overtaket",
+      "Bruk høy vinkel når personen mister kontroll – rommet virker større enn personen"
     ],
     "movement": [
-      "Statisk innstilling",
-      "Rolig innkjøring",
-      "Håndholdt følgebevegelse"
+      "Bruk statisk kamera mens konflikten vokser – bevegelsen skjer mellom personene",
+      "Kjør langsomt inn på avgjørelsen – øk følelsen av uunngåelighet",
+      "Følg personen håndholdt mot døren – nærheten skaper uro"
     ],
     "lens": [
       "Vidvinkel viser miljøet",
@@ -364,9 +364,9 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "En hånd avslører en viktig gjenstand"
     ],
     "dramaticPurpose": [
-      "Etablere sted og forhold",
-      "Vise reaksjonen på ny informasjon",
-      "Avsløre et avgjørende spor"
+      "Vis hvem som har kontroll over rommet før konflikten begynner",
+      "La et reaksjonsbilde snu publikums oppfatning av en replikk",
+      "Avslør en gjenstand som endrer målet for neste handling"
     ],
     "sound": [
       "Prioriter tydelig dialog",
@@ -386,14 +386,14 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "Decisive detail"
     ],
     "cameraPosition": [
-      "Eye-level camera",
-      "Low camera angle",
-      "High camera angle"
+      "Place the camera at eye level – keep the characters on equal footing",
+      "Use a low angle on the dominant character – amplify their advantage",
+      "Use a high angle as control slips – make the space overwhelm the character"
     ],
     "movement": [
-      "Locked-off shot",
-      "Slow push-in",
-      "Handheld tracking move"
+      "Lock off the camera as conflict rises – motion happens between characters",
+      "Push in slowly toward the decision – build a feeling of inevitability",
+      "Track the character handheld toward the door – proximity adds unease"
     ],
     "lens": [
       "Wide lens reveals the environment",
@@ -406,9 +406,9 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "A hand reveals an important object"
     ],
     "dramaticPurpose": [
-      "Establish setting and relationships",
-      "Show a response to new information",
-      "Reveal a decisive clue"
+      "Establish who controls the space before the conflict begins",
+      "Use a reaction to change the meaning of the previous line",
+      "Reveal an object that changes the next action's objective"
     ],
     "sound": [
       "Prioritize clear dialogue",
@@ -428,14 +428,14 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "Détail décisif"
     ],
     "cameraPosition": [
-      "Caméra à hauteur des yeux",
-      "Contre-plongée",
-      "Plongée"
+      "Caméra à hauteur des yeux – personnages placés sur un pied d’égalité",
+      "Contre-plongée sur le personnage dominant – accentuer son avantage",
+      "Plongée quand le contrôle disparaît – rendre l’espace écrasant"
     ],
     "movement": [
-      "Plan fixe",
-      "Lent mouvement avant",
-      "Suivi à l’épaule"
+      "Caméra fixe pendant la montée du conflit – le mouvement reste entre les acteurs",
+      "Avancer lentement vers la décision – accentuer l’inéluctable",
+      "Suivre le personnage à l’épaule jusqu’à la porte – créer l’inquiétude"
     ],
     "lens": [
       "Grand-angle pour montrer le décor",
@@ -448,9 +448,9 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "Une main révèle un objet important"
     ],
     "dramaticPurpose": [
-      "Présenter le lieu et les relations",
-      "Montrer la réaction à une information",
-      "Révéler un indice décisif"
+      "Montrer qui contrôle l’espace avant le début du conflit",
+      "Faire changer le sens de la réplique précédente grâce à une réaction",
+      "Révéler un objet qui modifie le but de l’action suivante"
     ],
     "sound": [
       "Privilégier un dialogue intelligible",
@@ -470,14 +470,14 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "Detalhe decisivo"
     ],
     "cameraPosition": [
-      "Câmara à altura dos olhos",
-      "Ângulo baixo",
-      "Ângulo alto"
+      "Câmara à altura dos olhos – colocar as personagens em igualdade",
+      "Ângulo baixo sobre quem domina – reforçar a vantagem",
+      "Ângulo alto quando o controlo se perde – tornar o espaço esmagador"
     ],
     "movement": [
-      "Plano fixo",
-      "Aproximação lenta",
-      "Seguimento com câmara à mão"
+      "Câmara fixa enquanto o conflito aumenta – os atores criam o movimento",
+      "Aproximação lenta à decisão – criar sensação de inevitabilidade",
+      "Seguir a personagem à mão até à porta – acrescentar inquietação"
     ],
     "lens": [
       "Grande angular mostra o ambiente",
@@ -490,9 +490,9 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "Uma mão revela um objeto importante"
     ],
     "dramaticPurpose": [
-      "Apresentar o lugar e as relações",
-      "Mostrar reação a nova informação",
-      "Revelar uma pista decisiva"
+      "Mostrar quem controla o espaço antes de começar o conflito",
+      "Mudar o sentido da fala anterior através de uma reação",
+      "Revelar um objeto que altera o objetivo da ação seguinte"
     ],
     "sound": [
       "Privilegiar diálogo claro",
