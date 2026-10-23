@@ -8,29 +8,29 @@ export type DirectorShotChoiceFieldId = Exclude<DirectorShotFieldId, "shotSize">
 export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBriefFieldId, readonly string[]>> = {
   "nb": {
     "sceneTitle": [
-      "Åpningsscene",
-      "Konfrontasjon",
-      "Vendepunkt"
+      "Opptrapping – konflikten blir vanskeligere å unngå",
+      "Avsløring – ny informasjon endrer scenens retning",
+      "Beslutning – hovedpersonen må velge en handling"
     ],
     "sceneContext": [
-      "En hemmelighet er i ferd med å avsløres",
-      "To personer vil forskjellige ting",
-      "Hovedpersonen må ta et vanskelig valg"
+      "En opplysning holdes tilbake – publikum leter etter tegn",
+      "Et ønske møter motstand – scenen starter med konkret konflikt",
+      "En tidligere beslutning får konsekvenser – situasjonen er allerede i endring"
     ],
     "sceneObjective": [
-      "Avsløre en viktig opplysning",
-      "Endre maktbalansen mellom personene",
-      "Vise et avgjørende indre valg"
+      "Avslør et avgjørende spor – publikum må revurdere situasjonen",
+      "La en person miste eller vinne kontroll – maktforholdet endres",
+      "Få hovedpersonen til å handle – scenen avsluttes med en tydelig beslutning"
     ],
     "audienceEffect": [
-      "Skape uro og forventning",
-      "Bygge nærhet og empati",
-      "Overraske med en ny forståelse"
+      "Skap forventning med et uavklart spørsmål – publikum følger etter ledetråder",
+      "Bygg empati gjennom en sårbar reaksjon – publikum forstår personens behov",
+      "La en detalj endre mening – publikum opplever overraskelse uten forklaringsreplikk"
     ],
     "conflictTurn": [
-      "Motstanden tvinger frem en innrømmelse",
-      "En ny hendelse snur situasjonen",
-      "Personen velger å bryte med planen"
+      "Motparten nekter å gi etter – hovedpersonen må prøve en ny strategi",
+      "En tilsynelatende liten detalj avslører en løgn – balansen snur",
+      "Hovedpersonen trekker tilbake et løfte – relasjonen endres"
     ],
     "formalStrategy": [
       "Vis motstanden i samme ubrutte tagning – publikum opplever presset uten klippepause",
@@ -48,9 +48,9 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "La et avgjørende valg spilles gjennom nøling og handling – ikke en forklarende monolog"
     ],
     "productionDesign": [
-      "Bruk få rekvisitter med tydelig betydning",
-      "La rommet vise personens status",
-      "Bruk miljøet til å skape motstand"
+      "Gi én rekvisitt en konkret funksjon i vendepunktet – tingen blir dramatisk viktig",
+      "La dører og møbler begrense bevegelsene – rommet skaper motstand",
+      "Bruk kostymeforskjeller til å vise hvem som har makt – status kan leses visuelt"
     ],
     "shotPlan": [
       "Etabler rommet i total før du går nær – publikum forstår hvor presset kommer fra",
@@ -78,41 +78,41 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Demp miljølyden idet en person forstår sannheten – oppmerksomheten snevres inn"
     ],
     "practicalConstraints": [
-      "Forenkle til én innspillingsplass",
-      "Bruk få skuespillere og enkle oppsett",
-      "Planlegg for begrenset lys og tid"
+      "Velg én hovedlocation og færre kameraforflytninger – frigjør tid til skuespillerregi",
+      "Planlegg de mest krevende bildene mens lyset er stabilt – reduser risiko for brudd i kontinuiteten",
+      "Del scenen i enkle opptaksoppsett – bevar den dramatiske hensikten uten unødvendige riggskifter"
     ],
     "proofOfIntent": [
-      "Test om publikum kan forklare vendepunktet uten en ekstra replikk",
-      "Test om publikum oppfatter maktendringen bare gjennom plassering og blikk",
-      "Test om publikum hører den avgjørende hendelsen før den blir vist"
+      "Vis scenen uten forklarende replikk – sjekk om publikum forstår vendepunktet",
+      "Vis to versjoner med ulik blocking – sjekk hvilken som klarest viser maktskiftet",
+      "Spill av lyd før bildet avslører hendelsen – sjekk om publikum forventer riktig endring"
     ]
   },
   "en": {
     "sceneTitle": [
-      "Opening scene",
-      "Confrontation",
-      "Turning point"
+      "Escalation – make the conflict harder to avoid",
+      "Revelation – new information redirects the scene",
+      "Decision – force the protagonist to take action"
     ],
     "sceneContext": [
-      "A secret is about to be revealed",
-      "Two characters want different things",
-      "The protagonist faces a difficult choice"
+      "A fact is withheld – viewers search for clues",
+      "One goal meets resistance – begin with an active conflict",
+      "An earlier choice has consequences – enter during a changing situation"
     ],
     "sceneObjective": [
-      "Reveal essential information",
-      "Shift the balance of power",
-      "Show a decisive internal choice"
+      "Reveal decisive evidence – make viewers reassess the situation",
+      "Shift who controls the space – change the balance of power",
+      "Force the protagonist to act – end on a clear decision"
     ],
     "audienceEffect": [
-      "Create unease and anticipation",
-      "Build closeness and empathy",
-      "Surprise with a new understanding"
+      "Build anticipation with an unanswered question – invite viewers to follow clues",
+      "Build empathy through a vulnerable reaction – reveal what the character needs",
+      "Change the meaning of a small detail – create a surprise without exposition"
     ],
     "conflictTurn": [
-      "Resistance forces an admission",
-      "A new event reverses the situation",
-      "A character abandons the plan"
+      "The opponent refuses to yield – the protagonist must change tactics",
+      "A small detail exposes a lie – the advantage switches sides",
+      "The protagonist withdraws a promise – the relationship changes"
     ],
     "formalStrategy": [
       "Keep the confrontation in one uninterrupted take – the pressure remains visible without a cut",
@@ -130,9 +130,9 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Play the decision through hesitation and action – avoid an explanatory speech"
     ],
     "productionDesign": [
-      "Use a few meaningful props",
-      "Let the room reveal character status",
-      "Use the environment as an obstacle"
+      "Give one prop a role in the reversal – make the object dramatically necessary",
+      "Let doors and furniture constrain movement – the room becomes an obstacle",
+      "Use contrasting costume details to signal status – make power visible without dialogue"
     ],
     "shotPlan": [
       "Establish the room wide before moving close – clarify where the pressure comes from",
@@ -160,41 +160,41 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Lower the ambience at a realization – narrow attention without a speech"
     ],
     "practicalConstraints": [
-      "Simplify to one location",
-      "Use a small cast and basic setups",
-      "Plan around limited time and light"
+      "Use one main location and fewer camera moves – protect rehearsal and performance time",
+      "Schedule the hardest shots while light is consistent – reduce continuity risk",
+      "Group shots into simple setups – preserve dramatic intent without excessive resets"
     ],
     "proofOfIntent": [
-      "Test whether viewers can explain the turning point without an extra line",
-      "Test whether blocking and eyelines reveal the power shift on their own",
-      "Test whether viewers hear the crucial event before it is shown"
+      "Screen the scene without an explanatory line – check whether viewers understand the reversal",
+      "Compare two blocking versions – check which reveals the shift of power more clearly",
+      "Play the crucial sound before showing its source – check what viewers expect next"
     ]
   },
   "fr": {
     "sceneTitle": [
-      "Scène d’ouverture",
-      "Confrontation",
-      "Tournant décisif"
+      "Escalade – rendre le conflit plus difficile à éviter",
+      "Révélation – une information nouvelle réoriente la scène",
+      "Décision – obliger le protagoniste à agir"
     ],
     "sceneContext": [
-      "Un secret va être révélé",
-      "Deux personnages poursuivent des buts opposés",
-      "Le protagoniste doit faire un choix difficile"
+      "Une information est cachée – le public cherche des indices",
+      "Un objectif rencontre une résistance – commencer par un conflit actif",
+      "Un choix antérieur a des conséquences – entrer dans une situation déjà changeante"
     ],
     "sceneObjective": [
-      "Révéler une information essentielle",
-      "Modifier le rapport de force",
-      "Montrer un choix intérieur décisif"
+      "Révéler une preuve décisive – amener le public à revoir la situation",
+      "Faire basculer le contrôle de l’espace – changer le rapport de force",
+      "Pousser le protagoniste à agir – terminer sur une décision claire"
     ],
     "audienceEffect": [
-      "Créer une attente inquiète",
-      "Renforcer la proximité et l’empathie",
-      "Surprendre par une nouvelle compréhension"
+      "Créer l’attente avec une question sans réponse – inviter à chercher des indices",
+      "Créer de l’empathie par une réaction vulnérable – révéler le besoin du personnage",
+      "Changer le sens d’un détail – surprendre sans dialogue explicatif"
     ],
     "conflictTurn": [
-      "La résistance provoque un aveu",
-      "Un événement renverse la situation",
-      "Un personnage abandonne son plan"
+      "L’adversaire ne cède pas – le protagoniste doit changer de tactique",
+      "Un petit détail dévoile un mensonge – l’avantage change de camp",
+      "Le protagoniste retire sa promesse – la relation se transforme"
     ],
     "formalStrategy": [
       "Filmer l’affrontement en un plan continu – la pression reste visible sans coupe",
@@ -212,9 +212,9 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Jouer le choix par l’hésitation et l’action – éviter le discours explicatif"
     ],
     "productionDesign": [
-      "Choisir peu d’accessoires significatifs",
-      "Faire révéler le statut par le décor",
-      "Transformer le lieu en obstacle"
+      "Donner à un accessoire une fonction dans le basculement – le rendre nécessaire à l’action",
+      "Utiliser portes et meubles pour limiter le déplacement – transformer le lieu en obstacle",
+      "Contraster les costumes pour révéler le statut – montrer le pouvoir sans paroles"
     ],
     "shotPlan": [
       "Présenter d’abord le lieu en plan large – clarifier la source de la pression",
@@ -242,41 +242,41 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Atténuer l’ambiance à la prise de conscience – concentrer l’attention"
     ],
     "practicalConstraints": [
-      "Limiter le tournage à un lieu",
-      "Utiliser peu d’acteurs et de dispositifs",
-      "Prévoir peu de temps et de lumière"
+      "Utiliser un seul lieu principal et moins de mouvements – réserver du temps au jeu des acteurs",
+      "Tourner les plans difficiles sous une lumière stable – réduire les problèmes de raccord",
+      "Regrouper les plans par dispositifs simples – garder l’intention sans installations inutiles"
     ],
     "proofOfIntent": [
-      "Vérifier que le public comprend le basculement sans réplique ajoutée",
-      "Vérifier que les positions et regards révèlent seuls le rapport de force",
-      "Vérifier que le public entend l’événement décisif avant de le voir"
+      "Projeter sans réplique explicative – vérifier que le public comprend le basculement",
+      "Comparer deux placements d’acteurs – vérifier lequel montre mieux le changement de pouvoir",
+      "Faire entendre le son avant sa source – vérifier ce que le public anticipe"
     ]
   },
   "pt": {
     "sceneTitle": [
-      "Cena de abertura",
-      "Confronto",
-      "Ponto de viragem"
+      "Escalada – tornar o conflito mais difícil de evitar",
+      "Revelação – nova informação altera o rumo da cena",
+      "Decisão crucial – levar o protagonista a escolher uma ação"
     ],
     "sceneContext": [
-      "Um segredo está prestes a ser revelado",
-      "Duas personagens querem coisas diferentes",
-      "O protagonista enfrenta uma escolha difícil"
+      "Uma informação é ocultada – o público procura pistas",
+      "Um objetivo encontra resistência – começar com um conflito ativo",
+      "Uma escolha anterior tem consequências – entrar numa situação já em mudança"
     ],
     "sceneObjective": [
-      "Revelar informação essencial",
-      "Alterar o equilíbrio de poder",
-      "Mostrar uma escolha interior decisiva"
+      "Revelar uma prova decisiva – levar o público a reavaliar a situação",
+      "Mudar quem domina o espaço – alterar o equilíbrio de poder",
+      "Obrigar o protagonista a agir – terminar com uma decisão clara"
     ],
     "audienceEffect": [
-      "Criar inquietação e expectativa",
-      "Aproximar o público das personagens",
-      "Surpreender com uma nova compreensão"
+      "Criar expectativa com uma pergunta em aberto – convidar o público a seguir pistas",
+      "Criar empatia com uma reação vulnerável – revelar uma necessidade",
+      "Mudar o significado de um detalhe – surpreender sem explicações"
     ],
     "conflictTurn": [
-      "A resistência obriga a uma confissão",
-      "Um acontecimento inverte a situação",
-      "Uma personagem abandona o plano"
+      "O adversário não cede – o protagonista tem de mudar de tática",
+      "Um pequeno detalhe revela uma mentira – a vantagem muda de lado",
+      "O protagonista retira uma promessa – a relação transforma-se"
     ],
     "formalStrategy": [
       "Manter o confronto num plano contínuo – deixar a pressão visível sem cortes",
@@ -294,9 +294,9 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Representar a decisão com hesitação e ação – evitar discurso explicativo"
     ],
     "productionDesign": [
-      "Usar poucos adereços significativos",
-      "Deixar o espaço revelar o estatuto",
-      "Transformar o ambiente num obstáculo"
+      "Dar a um adereço uma função na viragem – tornar o objeto necessário à ação",
+      "Usar portas e móveis para limitar movimentos – transformar o espaço num obstáculo",
+      "Contrastar elementos de figurino para revelar estatuto – mostrar poder sem palavras"
     ],
     "shotPlan": [
       "Estabelecer primeiro o espaço em plano aberto – esclarecer a origem da pressão",
@@ -324,14 +324,14 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
       "Reduzir o ambiente na descoberta – concentrar a atenção"
     ],
     "practicalConstraints": [
-      "Simplificar para uma única localização",
-      "Usar poucos atores e montagens simples",
-      "Planear com luz e tempo limitados"
+      "Usar uma localização principal e menos movimentos de câmara – preservar tempo para os atores",
+      "Filmar os planos difíceis com luz estável – reduzir problemas de continuidade",
+      "Agrupar planos em montagens simples – manter a intenção com menos mudanças de equipamento"
     ],
     "proofOfIntent": [
-      "Testar se o público compreende a viragem sem diálogo adicional",
-      "Testar se posições e olhares mostram sozinhos a mudança de poder",
-      "Testar se o público ouve o acontecimento decisivo antes de o ver"
+      "Mostrar a cena sem fala explicativa – testar se o público compreende a viragem",
+      "Comparar duas marcações de atores – testar qual revela melhor a mudança de poder",
+      "Fazer ouvir o som antes de revelar a fonte – testar o que o público espera"
     ]
   }
 };
@@ -339,9 +339,9 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
 export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShotChoiceFieldId, readonly string[]>> = {
   "nb": {
     "title": [
-      "Etablerende bilde",
-      "Reaksjonsbilde",
-      "Avgjørende detalj"
+      "Etablerende innstilling – viser rommet og personenes plassering",
+      "Reaksjonsinnstilling – lar et ansikt endre betydningen av en replikk",
+      "Detaljinnstilling – avslører informasjon som endrer handlingen"
     ],
     "cameraPosition": [
       "Sett kamera i øyehøyde – personene fremstår som likeverdige",
@@ -354,36 +354,36 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "Følg personen håndholdt mot døren – nærheten skaper uro"
     ],
     "lens": [
-      "Vidvinkel viser miljøet",
-      "Normal brennvidde viser naturlig rom",
-      "Telelinse isolerer personen"
+      "Vidvinkel nær motivet – rom og avstand oppleves tydeligere",
+      "Normal brennvidde og moderat avstand – relasjonen oppleves mindre stilisert",
+      "Teleoptikk med stor kameraavstand – bakgrunnen oppleves komprimert og personen isoleres"
     ],
     "subjectAction": [
-      "Personen går inn og stopper opp",
-      "To personer bytter plass i rommet",
-      "En hånd avslører en viktig gjenstand"
+      "La en person stoppe før døråpningen – nølingen viser motstand",
+      "La to personer bytte plass ved bordet – maktforholdet endres fysisk",
+      "La en hånd skjule og deretter vise en gjenstand – informasjon avsløres gjennom handling"
     ],
     "dramaticPurpose": [
-      "Vis hvem som har kontroll over rommet før konflikten begynner",
-      "La et reaksjonsbilde snu publikums oppfatning av en replikk",
-      "Avslør en gjenstand som endrer målet for neste handling"
+      "Vis hvem som kontrollerer rommet før konflikten – etabler en tydelig maktbalanse",
+      "Hold på en reaksjon etter en replikk – la publikum tolke den annerledes",
+      "Vis gjenstanden som blir avgjørende – gi neste handling et nytt mål"
     ],
     "sound": [
-      "Prioriter tydelig dialog",
-      "Prioriter romlyd og atmosfære",
-      "Bruk stillhet og lyd utenfor bildet"
+      "Hold dialogen tydelig og demp bakgrunnslyden – prioriter undertekst i replikkene",
+      "La romlyden dominere mellom replikkene – pausen blir merkbar",
+      "Bruk en gjenkjennelig lyd utenfor bildet – varsle noe før kameraet viser det"
     ],
     "estimatedDuration": [
-      "Kort: 2–4 sekunder",
-      "Middels: 5–8 sekunder",
-      "Lang: 9–15 sekunder"
+      "Kort, cirka 2–4 sekunder – gi rask orientering eller detaljinformasjon",
+      "Middels, cirka 5–8 sekunder – gi plass til én tydelig handling og reaksjon",
+      "Lang, cirka 9–15 sekunder – la en uavbrutt utvikling bygge spenning"
     ]
   },
   "en": {
     "title": [
-      "Establishing shot",
-      "Reaction shot",
-      "Decisive detail"
+      "Establishing shot – clarify space and character positions",
+      "Reaction shot – let a face change the meaning of a line",
+      "Insert shot – reveal information that redirects the action"
     ],
     "cameraPosition": [
       "Place the camera at eye level – keep the characters on equal footing",
@@ -396,36 +396,36 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "Track the character handheld toward the door – proximity adds unease"
     ],
     "lens": [
-      "Wide lens reveals the environment",
-      "Normal lens keeps natural space",
-      "Telephoto isolates the character"
+      "Use a wide lens close to the subject – emphasize spatial relationships",
+      "Choose a normal focal length at moderate distance – keep the relationship understated",
+      "Use a longer lens from farther away – compress the background and isolate the subject"
     ],
     "subjectAction": [
-      "Character enters and pauses",
-      "Two characters exchange positions",
-      "A hand reveals an important object"
+      "Have a character stop before the doorway – hesitation reveals resistance",
+      "Have two characters trade places at a table – shift the power dynamic physically",
+      "Have a hand conceal then reveal an object – disclose information through action"
     ],
     "dramaticPurpose": [
-      "Establish who controls the space before the conflict begins",
-      "Use a reaction to change the meaning of the previous line",
-      "Reveal an object that changes the next action's objective"
+      "Reveal who controls the room before conflict starts – establish a visible power balance",
+      "Hold on a reaction after a line – invite a new interpretation of the dialogue",
+      "Reveal the decisive object – give the next action a new objective"
     ],
     "sound": [
-      "Prioritize clear dialogue",
-      "Prioritize room tone and atmosphere",
-      "Use silence and off-screen sound"
+      "Keep dialogue clear and reduce background sound – foreground subtext in the exchange",
+      "Let room tone fill the gaps between lines – make the pauses tangible",
+      "Introduce a recognizable off-screen sound – signal an event before showing it"
     ],
     "estimatedDuration": [
-      "Short: 2–4 seconds",
-      "Medium: 5–8 seconds",
-      "Long: 9–15 seconds"
+      "Short, about 2–4 seconds – orient quickly or reveal a detail",
+      "Medium, about 5–8 seconds – allow one clear action and reaction",
+      "Long, about 9–15 seconds – build tension through uninterrupted development"
     ]
   },
   "fr": {
     "title": [
-      "Plan d’ensemble",
-      "Plan de réaction",
-      "Détail décisif"
+      "Plan d’ensemble – montrer l’espace et les positions des personnages",
+      "Plan de réaction – faire changer le sens d’une réplique grâce à un visage",
+      "Plan de détail – dévoiler une information qui réoriente l’action"
     ],
     "cameraPosition": [
       "Caméra à hauteur des yeux – personnages placés sur un pied d’égalité",
@@ -438,36 +438,36 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "Suivre le personnage à l’épaule jusqu’à la porte – créer l’inquiétude"
     ],
     "lens": [
-      "Grand-angle pour montrer le décor",
-      "Focale normale pour un espace naturel",
-      "Téléobjectif pour isoler le personnage"
+      "Grand-angle près du sujet – renforcer les relations spatiales",
+      "Focale normale à distance modérée – garder une relation discrète",
+      "Longue focale à distance – comprimer l’arrière-plan et isoler le sujet"
     ],
     "subjectAction": [
-      "Le personnage entre et s’arrête",
-      "Deux personnages échangent leurs places",
-      "Une main révèle un objet important"
+      "Faire arrêter un personnage devant la porte – l’hésitation montre la résistance",
+      "Faire échanger deux places à table – transformer physiquement le rapport de force",
+      "Faire cacher puis montrer un objet avec une main – révéler par l’action"
     ],
     "dramaticPurpose": [
-      "Montrer qui contrôle l’espace avant le début du conflit",
-      "Faire changer le sens de la réplique précédente grâce à une réaction",
-      "Révéler un objet qui modifie le but de l’action suivante"
+      "Montrer qui contrôle le lieu avant le conflit – établir le rapport de force",
+      "Rester sur une réaction après une réplique – susciter une interprétation nouvelle",
+      "Révéler l’objet décisif – donner un nouvel objectif à l’action suivante"
     ],
     "sound": [
-      "Privilégier un dialogue intelligible",
-      "Privilégier ambiance et son du lieu",
-      "Utiliser silence et son hors champ"
+      "Garder les dialogues clairs et réduire le fond sonore – privilégier le sous-texte",
+      "Laisser l’ambiance remplir les blancs entre les répliques – rendre les pauses sensibles",
+      "Introduire un son reconnaissable hors champ – annoncer avant de montrer"
     ],
     "estimatedDuration": [
-      "Court : 2–4 secondes",
-      "Moyen : 5–8 secondes",
-      "Long : 9–15 secondes"
+      "Court, environ 2–4 secondes – orienter vite ou révéler un détail",
+      "Moyen, environ 5–8 secondes – laisser une action et sa réaction",
+      "Long, environ 9–15 secondes – créer la tension sans interruption"
     ]
   },
   "pt": {
     "title": [
-      "Plano de apresentação",
-      "Plano de reação",
-      "Detalhe decisivo"
+      "Plano de apresentação – mostrar espaço e posições das personagens",
+      "Plano de reação – deixar um rosto mudar o sentido de uma fala",
+      "Plano de detalhe – revelar informação que altera a ação"
     ],
     "cameraPosition": [
       "Câmara à altura dos olhos – colocar as personagens em igualdade",
@@ -480,29 +480,29 @@ export const DIRECTOR_SHOT_CHOICES: Record<FilmWorkLanguage, Record<DirectorShot
       "Seguir a personagem à mão até à porta – acrescentar inquietação"
     ],
     "lens": [
-      "Grande angular mostra o ambiente",
-      "Distância focal normal mostra o espaço",
-      "Teleobjetiva isola a personagem"
+      "Usar grande angular perto do sujeito – acentuar relações espaciais",
+      "Escolher distância focal normal e câmara moderadamente afastada – manter a relação discreta",
+      "Usar teleobjetiva a maior distância – comprimir o fundo e isolar a personagem"
     ],
     "subjectAction": [
-      "A personagem entra e para",
-      "Duas personagens trocam de lugar",
-      "Uma mão revela um objeto importante"
+      "Fazer a personagem parar antes da porta – a hesitação revela resistência",
+      "Fazer duas personagens trocar de lugar à mesa – mudar fisicamente o poder",
+      "Fazer uma mão ocultar e depois mostrar um objeto – revelar através da ação"
     ],
     "dramaticPurpose": [
-      "Mostrar quem controla o espaço antes de começar o conflito",
-      "Mudar o sentido da fala anterior através de uma reação",
-      "Revelar um objeto que altera o objetivo da ação seguinte"
+      "Mostrar quem controla o espaço antes do conflito – estabelecer a relação de poder",
+      "Manter uma reação depois de uma fala – permitir nova interpretação do diálogo",
+      "Revelar o objeto decisivo – dar um novo objetivo à ação seguinte"
     ],
     "sound": [
-      "Privilegiar diálogo claro",
-      "Privilegiar som ambiente e atmosfera",
-      "Usar silêncio e som fora de campo"
+      "Manter o diálogo claro e reduzir o som de fundo – realçar o subtexto",
+      "Deixar o som ambiente preencher os intervalos entre falas – tornar as pausas percetíveis",
+      "Introduzir um som reconhecível fora de campo – anunciar antes de mostrar"
     ],
     "estimatedDuration": [
-      "Curto: 2–4 segundos",
-      "Médio: 5–8 segundos",
-      "Longo: 9–15 segundos"
+      "Curto, cerca de 2–4 segundos – orientar depressa ou revelar um detalhe",
+      "Médio, cerca de 5–8 segundos – permitir uma ação e uma reação",
+      "Longo, cerca de 9–15 segundos – criar tensão sem interrupção"
     ]
   }
 };
