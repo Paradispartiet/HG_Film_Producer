@@ -853,3 +853,40 @@
 .school-practice-option span { line-height: 1.5; min-width: 0; }
 .school-practice-option > span strong { margin-right: 6px; }
 .school-practice-options > small { display: block; margin-top: 9px; opacity: .78; }
+
+/* Long English/French/Norwegian/Portuguese lesson labels must wrap inside
+   320px screens, rather than enlarging the whole page beyond its viewport. */
+@media (max-width: 560px) {
+  .filmwork-app-shell :is(
+    .school-course-shell,
+    .film-school-course-page,
+    .school-course-hero,
+    .school-course-summary,
+    .school-course-workspace,
+    .school-active-lesson,
+    .school-lesson-heading,
+    .school-course-roadmap,
+    .school-term-section,
+    .school-film-example,
+    .school-quiz-card,
+    .school-practice-card
+  ) {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .filmwork-app-shell .school-course-shell :is(h1, h2, h3, p, strong, span, small, button, summary, dt, dd) {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .filmwork-app-shell .school-course-hero {
+    grid-template-columns: minmax(0, 1fr);
+    padding-inline: 16px;
+  }
+  .filmwork-app-shell .school-course-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .filmwork-app-shell .school-lesson-navigation button {
+    min-width: 0;
+    white-space: normal;
+  }
+}

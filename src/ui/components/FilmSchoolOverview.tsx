@@ -274,13 +274,6 @@ const localizedDirectorBriefLabels: Record<Exclude<FilmWorkLanguage, "en">, Reco
   },
 };
 
-const languageOptions: readonly { readonly id: FilmWorkLanguage; readonly label: string; readonly ariaLabel: string }[] = [
-  { id: "en", label: "EN", ariaLabel: "Use English" },
-  { id: "nb", label: "NO", ariaLabel: "Bruk norsk" },
-  { id: "fr", label: "FR", ariaLabel: "Utiliser le français" },
-  { id: "pt", label: "PT", ariaLabel: "Usar português" },
-];
-
 type FilmSchoolOverviewProps = {
   readonly navigate: (route: FilmverketRoute) => void;
   readonly onOpenDirector: (scenario: FilmScenarioSeed) => void;
@@ -289,7 +282,7 @@ type FilmSchoolOverviewProps = {
 };
 
 export function FilmSchoolOverview({ navigate, onOpenDirector, onSelectCourse, scenarios }: FilmSchoolOverviewProps) {
-  const [language, setLanguage] = useFilmWorkLanguage();
+  const [language] = useFilmWorkLanguage();
   const copy = overviewCopy[language];
   const productBrand = language === "nb" ? "Filmverket" : "FilmWork";
   const productMonogram = language === "nb" ? "FV" : "FW";
@@ -360,7 +353,6 @@ export function FilmSchoolOverview({ navigate, onOpenDirector, onSelectCourse, s
         <button className="filmverket-brand" onClick={() => navigate({ section: "home" })} type="button"><span>{productMonogram}</span><strong>{productBrand}</strong></button>
         <nav aria-label={copy.navAria}>
           {navItems.map((item) => <button className={item.id === "school" ? "filmverket-nav-button filmverket-nav-button--active" : "filmverket-nav-button"} key={item.id} onClick={() => navigateSection(item.id)} type="button">{item.label}</button>)}
-          {languageOptions.map((option) => <button aria-label={option.ariaLabel} aria-pressed={language === option.id} className={language === option.id ? "filmverket-nav-button filmverket-nav-button--active" : "filmverket-nav-button"} key={option.id} onClick={() => setLanguage(option.id)} type="button">{option.label}</button>)}
         </nav>
       </header>
 
