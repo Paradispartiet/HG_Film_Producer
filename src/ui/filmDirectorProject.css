@@ -350,34 +350,22 @@
   text-transform: uppercase;
 }
 
-.director-shot-field input,
-.director-shot-field select,
-.director-shot-field textarea {
+.director-shot-field select {
   width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 10px 12px;
   border: 1px solid #303640;
   outline: none;
   background: #090c10;
   color: var(--text);
   font: inherit;
+  font-size: 12px;
 }
 
-.director-shot-field input,
-.director-shot-field select {
-  min-height: 40px;
-  padding: 9px 10px;
-}
-
-.director-shot-field textarea {
-  min-height: 90px;
-  resize: vertical;
-  padding: 10px;
-  line-height: 1.55;
-}
-
-.director-shot-field input:focus,
-.director-shot-field select:focus,
-.director-shot-field textarea:focus {
+.director-shot-field select:focus-visible {
   border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(214, 174, 98, 0.14);
 }
 
 .director-project-summary {
