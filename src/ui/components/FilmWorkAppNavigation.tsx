@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FILMWORK_PLATFORM_COPY } from "../../core/filmWorkPlatformCopy.js";
+import { FILM_KNOWLEDGE_OVERLAYS_COPY } from "../../core/filmKnowledgeOverlaysCopy.js";
 import type { FilmverketRoute, FilmverketSection } from "../../core/filmverketRoutes.js";
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage.js";
@@ -95,6 +96,12 @@ export function FilmWorkAppNavigation({
                   {copy.navLabels[section]}
                 </button>
               ))}
+              <button onClick={() => {
+                setMoreOpen(false);
+                window.dispatchEvent(new Event("filmwork-open-craft-library"));
+              }} type="button">
+                {FILM_KNOWLEDGE_OVERLAYS_COPY[language].craft.triggerTitle}
+              </button>
             </div>
           )}
         </div>
