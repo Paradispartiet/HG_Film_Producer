@@ -8,9 +8,9 @@ Film Director is the practical directing layer inside Filmverket. It does not re
 select reference film
 → create or select a scene
 → inspect screenplay / image / editing / sound principles
-→ define the scene's dramatic and formal plan
+→ choose the scene's dramatic and formal plan from authored alternatives
 → add ordered shot cards
-→ specify production setup and dramatic purpose for every shot
+→ select production setup and dramatic purpose for every shot
 → move between scenes without losing work
 → copy one scene or the complete directing project
 ```
@@ -62,7 +62,7 @@ Every scene contains the same 16 directing decisions:
 15. practical constraints
 16. proof of intent
 
-The fixed structure prevents the workspace from becoming a generic notes page. Each field corresponds to an observable directing decision.
+The fixed structure prevents the workspace from becoming a generic notes page. Each field corresponds to an observable directing decision. All 16 fields now use three prewritten choices per language (Norwegian, English, French, and Portuguese); players never type an answer.
 
 ## Shot cards
 
@@ -78,7 +78,7 @@ Each scene has an ordered shot list. A shot card contains:
 8. sound and dialogue priority
 9. estimated duration
 
-Shots can be added, duplicated, deleted, and moved up or down. The dramatic-purpose field is required by the model conceptually even though the interface permits incomplete drafts; a shot should not exist merely as a technical setup without explaining what it contributes to the scene.
+All nine shot fields use menus: eight have three authored choices in each language, and shot size uses the existing nine shot-size options. Shots can be added, duplicated, deleted, and moved up or down. The dramatic-purpose field is required by the model conceptually even though the interface permits incomplete drafts; a shot should not exist merely as a technical setup without explaining what it contributes to the scene.
 
 ## Film reference use
 
@@ -89,7 +89,7 @@ The selected film is read from the shared Filmverket catalogue and its existing 
 - editing
 - sound
 
-A stored film principle can be inserted into the active scene's formal-strategy draft. Tone targets can be used as an audience-effect starting point. These remain editable starting points rather than automatic finished answers.
+A stored film principle or tone target may still be selected as a reference-based starting point. Players choose from offered alternatives; there are no free-text fields.
 
 ## Persistence and migration
 
