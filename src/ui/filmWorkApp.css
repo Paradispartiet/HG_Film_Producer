@@ -197,11 +197,30 @@ html { -webkit-text-size-adjust: 100%; }
   outline-offset: 2px;
 }
 
-/* Legacy modules also place important instructions inside tiny spans and b tags. */
-.filmwork-app-content :is(span, b),
-.app-shell :is(span, b) {
-  font-size: max(13px, 1em) !important;
+/* Raise tiny metadata without inflating every nested decorative span,
+   which can force fixed-width release cards past a 320px screen. */
+.filmwork-app-content :is(.eyebrow, .filmverket-kicker, .filmverket-card-kicker, .release-card-kicker),
+.app-shell :is(.eyebrow, .release-card-kicker, .release-tags span, .release-card-metrics dt, .release-actions span) {
+  font-size: 13px !important;
   overflow-wrap: anywhere;
+}
+
+/* The release workflow contains long localized strategy names and statistics.
+   Allow their grid children to shrink and wrap rather than overflow on phones. */
+@media (max-width: 560px) {
+  .app-shell .release-step-panel,
+  .app-shell .release-step-panel :is(.release-desk-heading, .release-choice-section, .release-option-grid, .release-option-card, .release-card-metrics, .release-craft-handoff, .release-craft-handoff-metrics, .release-section-heading, .release-actions, .release-results, .release-result-section) {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .app-shell .release-step-panel :is(h2, h3, p, strong, span, small, dt, dd, label) {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+  .app-shell .release-step-panel :is(.release-card-metrics, .release-craft-handoff-metrics) {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 /* Turn the website-like landing into a concise app launcher. */
