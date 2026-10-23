@@ -26,7 +26,7 @@ test("each language provides film-specific alternatives without replacing author
       assert.deepEqual(choices.slice(0, base.length), base, `${language} ${field.id}: base choices retained`);
       assert.ok(choices.length >= 3 && choices.length <= 4, `${language} ${field.id}: finite choices`);
       assert.equal(new Set(choices).size, choices.length, `${language} ${field.id}: no duplicates`);
-      if (choices.length === 4) assert.match(choices[3], /^localized:/, "Film-specific source is presented through translation");
+      if (choices.length === 4) assert.match(choices[3] ?? "", /^localized:/, "Film-specific source is presented through translation");
     }
   }
 });
