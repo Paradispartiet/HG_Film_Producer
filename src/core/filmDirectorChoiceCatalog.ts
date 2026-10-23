@@ -256,7 +256,7 @@ export const DIRECTOR_BRIEF_CHOICES: Record<FilmWorkLanguage, Record<DirectorBri
     "sceneTitle": [
       "Escalada – tornar o conflito mais difícil de evitar",
       "Revelação – nova informação altera o rumo da cena",
-      "Decisão – levar o protagonista a agir"
+      "Decisão – levar o protagonista a escolher uma ação"
     ],
     "sceneContext": [
       "Uma informação é ocultada – o público procura pistas",
