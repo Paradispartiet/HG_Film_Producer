@@ -186,6 +186,11 @@ async function runCase(browser, language, scenario) {
       assert.ok(page.url().includes("#/history"), `${label}: history remains reachable from More`);
       await page.locator(".filmwork-app-tab").first().click();
       assert.ok(page.url().endsWith("#/"), `${label}: home tab navigates back`);
+      assert.equal(await page.locator(".craft-library-trigger:visible, .research-control-trigger:visible").count(), 0, `${label}: floating tools cannot obscure mobile cards`);
+      await page.locator(".filmwork-app-more > button").click();
+      await page.locator(".filmwork-app-more-menu button").last().click();
+      await page.locator(".craft-library-panel").waitFor({ state: "visible" });
+      await page.locator(".craft-library-header > button").click();
       await page.setViewportSize({ width: 1440, height: 900 });
       checks.push(`${label}: app-shell-navigation`);
     }
