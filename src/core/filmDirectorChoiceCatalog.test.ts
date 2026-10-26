@@ -29,3 +29,20 @@ test("Film Director offers distinct selectable answers for every brief and shot 
     }
   }
 });
+
+test("Every Film Director answer states a concrete choice and its intended dramatic effect", () => {
+  for (const language of ["nb", "en", "fr", "pt"] as const) {
+    const fields = {
+      ...DIRECTOR_BRIEF_CHOICES[language],
+      ...DIRECTOR_SHOT_CHOICES[language],
+    };
+    for (const [field, choices] of Object.entries(fields)) {
+      for (const choice of choices) {
+        const parts = choice.split(" – ");
+        assert.equal(parts.length, 2, `${language} ${field}: show action and purpose`);
+        assert.ok(parts.every((part) => part.trim().length >= 8), `${language} ${field}: substantive action and purpose`);
+        assert.ok(choice.length <= 190, `${language} ${field}: avoid unwieldy option labels`);
+      }
+    }
+  }
+});

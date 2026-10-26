@@ -62,7 +62,7 @@ Every scene contains the same 16 directing decisions:
 15. practical constraints
 16. proof of intent
 
-The fixed structure prevents the workspace from becoming a generic notes page. Each field corresponds to an observable directing decision. All 16 fields use three carefully authored filmmaking choices per language (Norwegian, English, French, and Portuguese). Fourteen of these fields additionally offer a choice grounded in the selected film's existing production brief when source content is available. Players never type an answer. Options now describe observable staging, camera, acting, editing, and sound consequences rather than abstract slogans.
+The fixed structure prevents the workspace from becoming a generic notes page. Each field corresponds to an observable directing decision. All 16 fields use three carefully authored filmmaking choices per language (Norwegian, English, French, and Portuguese). Fourteen of these fields additionally offer a choice grounded in the selected film's existing production brief when source content is available. Players never type an answer. All 16 scene-brief and all eight authored shot-card choice groups describe a concrete filmmaking action or scene strategy and its intended observable effect. Options cover dramatic escalation, scene objectives, production design, time constraints, framing, lens choice, actor movement, acting, editing, and sound rather than abstract slogans.
 
 ## Shot cards
 
