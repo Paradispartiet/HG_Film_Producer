@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 
+import { createCareerRunBackup, previewCareerRunBackup, type CareerBackupPreview } from "../../core/careerRunBackup";
+import type { CareerRunState } from "../state/careerRunState";
 import {
   FILMWORK_PLATFORM_COPY,
   FILMWORK_PLATFORM_GATEWAY_IDS,
@@ -17,6 +19,8 @@ import { useFilmWorkLanguage } from "../filmWorkLanguage";
 type CraftCollectionKey = "screenplayTargets" | "cinematographyTargets" | "editingTargets" | "soundTargets";
 
 type RoutedFilmverketPlatformProps = {
+  readonly savedCareerState: CareerRunState;
+  readonly onRestoreCareer: (state: CareerRunState) => void;
   readonly hasSave: boolean;
   readonly savedProjectTitle?: string | undefined;
   readonly navigate: (route: FilmverketRoute) => void;
@@ -81,6 +85,8 @@ const schoolCourses: readonly {
 
 export function RoutedFilmverketPlatform({
   hasSave,
+  savedCareerState,
+  onRestoreCareer,
   savedProjectTitle,
   navigate,
   onContinue,
@@ -130,7 +136,7 @@ export function RoutedFilmverketPlatform({
         <>
           {route.section === "home" && <PlatformHome hasSave={hasSave} savedProjectTitle={savedProjectTitle} onContinue={onContinue} onNavigate={navigateSection} scenarios={scenarios} />}
           {route.section === "producer" && (
-            <ProducerGateway hasSave={hasSave} onContinue={onContinue} onProductionCases={onProductionCases} onStart={onStart} />
+            <ProducerGateway hasSave={hasSave} savedCareerState={savedCareerState} onRestoreCareer={onRestoreCareer} onContinue={onContinue} onProductionCases={onProductionCases} onStart={onStart} />
           )}
           {route.section === "atlas" && (
             <FilmAtlas
@@ -244,10 +250,38 @@ function PlatformHome({ hasSave, savedProjectTitle, onContinue, onNavigate, scen
   );
 }
 
-function ProducerGateway({ hasSave, onContinue, onProductionCases, onStart }: Omit<RoutedFilmverketPlatformProps, "navigate" | "route">) {
+function ProducerGateway({ hasSave, savedCareerState, onRestoreCareer, onContinue, onProductionCases, onStart }: Omit<RoutedFilmverketPlatformProps, "navigate" | "route">) {
   const [language] = useFilmWorkLanguage();
   const copy = FILMWORK_PLATFORM_COPY[language].producer;
   const [confirmReplace, setConfirmReplace] = useState(false);
+  const [pendingBackup, setPendingBackup] = useState<CareerBackupPreview | null>(null);
+  const [backupError, setBackupError] = useState(false);
+  function downloadBackup() {
+    try {
+      const text = createCareerRunBackup(savedCareerState);
+      const url = URL.createObjectURL(new Blob([text], { type: "application/json" }));
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "filmwork-studio-career-backup.json";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+      setBackupError(false);
+    } catch { setBackupError(true); }
+  }
+  async function chooseBackup(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.currentTarget.files?.[0];
+    event.currentTarget.value = "";
+    if (!file) return;
+    try {
+      const backup = file.size > 4_000_000
+        ? { ok: false as const, reason: "too_large" as const }
+        : previewCareerRunBackup(await file.text());
+      setPendingBackup(backup);
+      setBackupError(false);
+    } catch { setPendingBackup({ ok: false, reason: "invalid" }); }
+  }
   function requestNewCareer() {
     if (hasSave) setConfirmReplace(true);
     else onStart();
@@ -268,6 +302,27 @@ function ProducerGateway({ hasSave, onContinue, onProductionCases, onStart }: Om
           <span className="filmverket-card-kicker">{copy.studioCareer.kicker}</span><h2>{copy.studioCareer.title}</h2><p>{copy.studioCareer.description}</p>
           <ul>{copy.studioCareer.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
           <div className="producer-mode-actions">{hasSave && <button className="filmverket-primary-action" onClick={onContinue} type="button">{copy.studioCareer.continueAction} <span>→</span></button>}<button className="filmverket-secondary-action" onClick={requestNewCareer} type="button">{copy.studioCareer.startAction}</button></div>
+          <div className="filmwork-career-backup" aria-label={copy.studioCareer.backupTitle}>
+            <strong>{copy.studioCareer.backupTitle}</strong>
+            <p>{copy.studioCareer.backupDescription}</p>
+            <div className="filmwork-career-backup-actions">
+              {hasSave && <button className="filmverket-secondary-action" onClick={downloadBackup} type="button">{copy.studioCareer.exportBackup}</button>}
+              <label className="filmwork-career-backup-import"><span>{copy.studioCareer.importBackup}</span><input accept=".json,application/json" aria-label={copy.studioCareer.importBackup} onChange={chooseBackup} type="file" /></label>
+            </div>
+            {backupError && <p role="alert">{copy.studioCareer.backupError}</p>}
+            {pendingBackup && !pendingBackup.ok && <p role="alert">{copy.studioCareer.invalidBackup}</p>}
+            {pendingBackup?.ok && (
+              <div className="filmwork-career-backup-confirm" role="group" aria-label={copy.studioCareer.restoreTitle}>
+                <strong>{copy.studioCareer.restoreTitle}</strong>
+                <p>{copy.studioCareer.restorePreview(pendingBackup.filmCount, pendingBackup.lastFilmTitle)}</p>
+                <p>{copy.studioCareer.restoreWarning}</p>
+                <div className="producer-mode-actions">
+                  <button className="filmverket-secondary-action" onClick={() => setPendingBackup(null)} type="button">{copy.studioCareer.replaceCancel}</button>
+                  <button className="filmverket-primary-action" onClick={() => { const backup = pendingBackup; setPendingBackup(null); onRestoreCareer(backup.state); }} type="button">{copy.studioCareer.restoreConfirm}</button>
+                </div>
+              </div>
+            )}
+          </div>
           {hasSave && confirmReplace && (
             <div className="producer-replace-confirmation" role="group" aria-label={copy.studioCareer.replaceHeading}>
               <strong>{copy.studioCareer.replaceHeading}</strong>
