@@ -61,6 +61,8 @@ type StudioCareerAppShellCopy = {
     readonly productionCasesIntro: string;
     readonly experimentalIntro: string;
     readonly reset: string;
+    readonly storageWarning: string;
+    readonly storageRetry: string;
   };
 };
 
@@ -126,6 +128,8 @@ export const STUDIO_CAREER_APP_SHELL_COPY = {
       productionCasesIntro: "You are playing a Production Case through the studio pipeline. Make the case choices phase by phase, complete every mission, then read the Case report.",
       experimentalIntro: "This branch is playable but not the main MVP. Follow the current phase card, make the next film decision, then use career review to start Film Two.",
       reset: "Reset career",
+      storageWarning: "Your latest film decisions could not be saved in this browser. Keep this tab open and export a backup from Film Producer before closing it.",
+      storageRetry: "Try saving again",
     },
   },
   nb: {
@@ -189,6 +193,8 @@ export const STUDIO_CAREER_APP_SHELL_COPY = {
       productionCasesIntro: "Du spiller en Production Case gjennom studiopipelinen. Ta case-valgene fase for fase, fullfør hvert oppdrag og les deretter caserapporten.",
       experimentalIntro: "Denne grenen er spillbar, men er ikke hoved-MVP-en. Følg kortet for aktiv fase, ta neste filmbeslutning, og bruk karrieregjennomgangen til å starte film nummer to.",
       reset: "Nullstill karriere",
+      storageWarning: "De siste filmvalgene kunne ikke lagres i denne nettleseren. Hold fanen åpen, og eksporter en sikkerhetskopi fra Film Producer før du lukker den.",
+      storageRetry: "Prøv å lagre igjen",
     },
   },
   fr: {
@@ -252,6 +258,8 @@ export const STUDIO_CAREER_APP_SHELL_COPY = {
       productionCasesIntro: "Vous parcourez un Production Case dans le pipeline du studio. Faites les choix du cas phase par phase, terminez chaque mission, puis consultez le rapport du cas.",
       experimentalIntro: "Cette branche est jouable, mais ce n’est pas le MVP principal. Suivez la carte de la phase active, prenez la prochaine décision de film, puis utilisez le bilan de carrière pour démarrer le deuxième film.",
       reset: "Réinitialiser la carrière",
+      storageWarning: "Impossible d’enregistrer vos derniers choix de film dans ce navigateur. Gardez cet onglet ouvert et exportez une sauvegarde depuis Film Producer avant de le fermer.",
+      storageRetry: "Réessayer l’enregistrement",
     },
   },
   pt: {
@@ -315,6 +323,8 @@ export const STUDIO_CAREER_APP_SHELL_COPY = {
       productionCasesIntro: "Está a jogar um Production Case através do pipeline do estúdio. Tome as decisões do caso fase a fase, conclua cada missão e depois leia o relatório do caso.",
       experimentalIntro: "Este ramo é jogável, mas não é o MVP principal. Siga o cartão da fase atual, tome a próxima decisão do filme e use a revisão de carreira para iniciar o segundo filme.",
       reset: "Repor carreira",
+      storageWarning: "Não foi possível guardar as últimas decisões do filme neste navegador. Mantenha este separador aberto e exporte uma cópia em Film Producer antes de o fechar.",
+      storageRetry: "Tentar guardar novamente",
     },
   },
 } as const satisfies Record<FilmWorkLanguage, StudioCareerAppShellCopy>;
