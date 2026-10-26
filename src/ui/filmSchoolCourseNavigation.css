@@ -164,3 +164,87 @@
     min-height: 40px;
   }
 }
+
+/* FilmWork app: course selection belongs to the page, never a modal-sized
+   floating menu that covers the lesson or the app's bottom navigation. */
+.filmwork-app-shell .school-course-selector {
+  position: relative;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  z-index: 2;
+  width: min(760px, calc(100% - 32px));
+  max-width: 100%;
+  margin: 14px auto 20px;
+  overflow: visible;
+  border: 1px solid #35414d;
+  border-radius: 14px;
+  background: #151e28;
+  color: #f3f5f7;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.filmwork-app-shell .school-course-disclosure > summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 24px;
+  gap: 2px 10px;
+  align-items: center;
+  min-height: 58px;
+  padding: 10px 14px;
+  cursor: pointer;
+  list-style: none;
+}
+.filmwork-app-shell .school-course-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+.filmwork-app-shell .school-course-disclosure > summary > span:first-child {
+  grid-column: 1;
+  color: #b8c2ce;
+  font-size: 13px !important;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.filmwork-app-shell .school-course-disclosure > summary > strong {
+  grid-column: 1;
+  font-size: 16px;
+  line-height: 1.3;
+}
+.filmwork-app-shell .school-course-chevron {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  color: #d6ae62;
+  text-align: center;
+  font-size: 21px;
+  transition: transform 150ms ease;
+}
+.filmwork-app-shell .school-course-disclosure[open] .school-course-chevron {
+  transform: rotate(180deg);
+}
+.filmwork-app-shell .school-course-list {
+  display: grid;
+  max-height: min(54dvh, 400px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-top: 1px solid #35414d;
+}
+.filmwork-app-shell .school-course-list button {
+  min-height: 48px;
+  border-bottom-color: #2c3743;
+  cursor: pointer;
+}
+.filmwork-app-shell .school-course-list button.is-active {
+  background: #2e291f;
+}
+.filmwork-app-shell .school-course-list button.is-active > :is(span, strong) {
+  color: #e8c17b;
+}
+@media (max-width: 760px) {
+  .filmwork-app-shell .school-course-selector {
+    width: calc(100% - 32px);
+    left: auto;
+    bottom: auto;
+  }
+  .filmwork-app-shell .school-course-list button {
+    min-height: 48px;
+  }
+}
