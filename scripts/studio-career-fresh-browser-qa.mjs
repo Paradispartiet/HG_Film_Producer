@@ -114,6 +114,27 @@ async function run(browser, spec) {
     await setup.locator('.setup-actions button[type="submit"]').click();
     await awaitSaved(page, "setup");
 
+    // A saved career is surfaced on the actual app home; requesting a new one
+    // cannot erase it without an explicit second choice.
+    const originalSave = await readSaved(page);
+    await page.goto(new URL("#/", SITE).href);
+    const resume = page.locator(".filmwork-resume-banner");
+    await resume.waitFor({ state: "visible" });
+    assert.ok((await resume.innerText()).includes("Harbor Lights"), "Home should identify the saved film");
+    await page.goto(new URL("#/producer", SITE).href);
+    const careerCard = page.locator(".producer-mode-card:not(.producer-mode-card--recommended)");
+    await careerCard.locator(".filmverket-secondary-action").click();
+    const warning = careerCard.locator(".producer-replace-confirmation");
+    await warning.waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "First new-career click must preserve existing work");
+    await warning.locator(".filmverket-secondary-action").click();
+    assert.equal(await careerCard.locator(".producer-replace-confirmation").count(), 0, "Cancel closes the warning");
+    assert.deepEqual(await readSaved(page), originalSave, "Cancel must preserve all saved decisions");
+    await page.goto(new URL("#/", SITE).href);
+    await page.locator(".filmwork-resume-banner button").click();
+    await page.locator(".development-panel").waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "Home resume must load the intact career");
+
     const development = await expectPhase(page, ".development-panel", "development", milestones);
     await development.locator(".development-path-grid button").nth(2).click();
     await development.locator(".script-starter-card").waitFor({ state: "visible" });
