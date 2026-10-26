@@ -1,4 +1,11 @@
-import type { CareerRunState } from "../ui/state/careerRunState.js";
+type BackedUpCareerRun = {
+  readonly version: 1;
+  readonly projects: readonly {
+    readonly id: string;
+    readonly projectNumber: number;
+    readonly run: { readonly project: { readonly title: string } };
+  }[];
+};
 
 const BACKUP_FORMAT = "filmwork-studio-career-backup";
 const BACKUP_VERSION = 1;
@@ -11,7 +18,7 @@ const isRecord = (value: unknown): value is UnknownRecord =>
 const isOptionalResult = (value: unknown): boolean =>
   value === null || isRecord(value);
 
-function isValidCareerRun(value: unknown): value is CareerRunState {
+function isValidCareerRun(value: unknown): value is BackedUpCareerRun {
   if (!isRecord(value) || value.version !== 1 || !Array.isArray(value.projects)) return false;
   if (value.projects.length < 1 || value.projects.length > 200) return false;
   const ids = new Set<string>();
@@ -41,7 +48,7 @@ function isValidCareerRun(value: unknown): value is CareerRunState {
   return true;
 }
 
-export function createCareerRunBackup(state: CareerRunState): string {
+export function createCareerRunBackup(state: unknown): string {
   if (!isValidCareerRun(state)) throw new Error("Cannot export an empty or invalid saved career");
   return JSON.stringify({
     format: BACKUP_FORMAT,
@@ -52,7 +59,7 @@ export function createCareerRunBackup(state: CareerRunState): string {
 }
 
 export type CareerBackupPreview =
-  | { readonly ok: true; readonly state: CareerRunState; readonly filmCount: number; readonly lastFilmTitle: string }
+  | { readonly ok: true; readonly state: BackedUpCareerRun; readonly filmCount: number; readonly lastFilmTitle: string }
   | { readonly ok: false; readonly reason: "invalid" | "too_large" };
 
 export function previewCareerRunBackup(text: string): CareerBackupPreview {
