@@ -28,6 +28,7 @@ import { ShootBudgetMonitor } from "./ShootBudgetMonitor.js";
 import { ShootEvaluationPanel } from "./ShootEvaluationPanel.js";
 import { ShootSchedulePanel } from "./ShootSchedulePanel.js";
 import { ShootStrategyPanel } from "./ShootStrategyPanel.js";
+import { ShootDecisionPreview } from "./ShootDecisionPreview.js";
 
 interface ShootPanelProps {
   readonly projectContext: ProjectRunContext;
@@ -144,6 +145,7 @@ export function ShootPanel({
             />
           )}
           <ShootStrategyPanel budgetRisk={budgetPosition.projected?.risk ?? budgetPosition.actual.risk} onSelect={onSelectShootStrategy} plannedCost={currentDay.plannedCost} selectedId={selectedShootStrategyId} />
+          {previewResolution && <ShootDecisionPreview result={previewResolution} />}
           <div className="shoot-actions">
             <div>
               <span className="inline-message" role="status">
