@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import { FILM_SCHOOL_COURSE_CHROME } from "../../core/filmSchoolCourseChrome";
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
@@ -69,6 +69,7 @@ export function FilmSchoolCourseNavigation({ activeCourseId, language, onSelectC
   const resolvedLanguage = language ?? storedLanguage;
   const copy = navigationCopy[resolvedLanguage];
   const chrome = FILM_SCHOOL_COURSE_CHROME[resolvedLanguage];
+  const courseDisclosureRef = useRef<HTMLDetailsElement>(null);
 
   useEffect(() => {
     const headerNav = document.querySelector<HTMLElement>(".filmverket-shell > .filmverket-header nav");
@@ -82,7 +83,7 @@ export function FilmSchoolCourseNavigation({ activeCourseId, language, onSelectC
 
   return (
     <aside className="school-course-selector" aria-label={copy.ariaLabel}>
-      <details className="school-course-disclosure">
+      <details className="school-course-disclosure" ref={courseDisclosureRef}>
         <summary>
           <span>Film School · {copy.structure}</span>
           <strong>{availableCourses[resolvedLanguage].find((course) => course.id === activeCourseId)?.title ?? copy.foundation}</strong>
@@ -93,7 +94,11 @@ export function FilmSchoolCourseNavigation({ activeCourseId, language, onSelectC
             <button
               className={course.id === activeCourseId ? "is-active" : ""}
               key={course.id}
-              onClick={() => onSelectCourse(course.id)}
+              onClick={() => {
+                // Keep the lesson in view instead of leaving a tall menu expanded after navigation.
+                if (courseDisclosureRef.current) courseDisclosureRef.current.open = false;
+                onSelectCourse(course.id);
+              }}
               type="button"
             >
               <span>{course.number}</span>

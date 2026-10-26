@@ -201,7 +201,9 @@ async function runCase(browser, language, scenario) {
       assert.equal(await schoolSelector.evaluate((node) => getComputedStyle(node).position), "relative", `${label}: course picker must not cover the lesson`);
       await schoolSelector.locator("summary").click();
       assert.equal(await schoolSelector.locator(".school-course-list button").count(), 6, `${label}: all six course destinations remain available`);
+      assert.equal(await schoolSelector.locator("details").getAttribute("open"), "", `${label}: course selector expanded before course change`);
       await schoolSelector.locator(".school-course-list button").nth(1).click();
+      assert.equal(await page.locator(".school-course-selector details").getAttribute("open"), null, `${label}: course menu closes after selection`);
       assert.equal(await page.locator(".school-course-language-selector").count(), 0, `${label}: screenplay course has no duplicate language buttons`);
       assert.equal(await page.locator(".filmwork-app-language select").inputValue(), language, `${label}: language stays synchronized across courses`);
       assert.equal(await page.locator(".school-course-selector").evaluate((node) => getComputedStyle(node).position), "relative", `${label}: screenplay course picker stays in the page flow`);
