@@ -28,6 +28,7 @@ interface LandingScreenProps {
   readonly onContinue: () => void;
   readonly onProductionCases: () => void;
   readonly hasSave: boolean;
+  readonly savedProjectTitle?: string;
 }
 
 export function LandingScreen(props: LandingScreenProps) {
