@@ -486,6 +486,12 @@ async function run(browser, spec) {
     assert.equal(await page.locator(".studio-career-primary-action").count(), 1);
     const overflow = await page.locator(".project-hero--focused").last().evaluate((el) => ({ width: el.clientWidth, scroll: el.scrollWidth }));
     assert.ok(overflow.scroll <= overflow.width + 2, "Film Two overflows: " + JSON.stringify(overflow));
+    // Simulate closing and reopening the app after a complete film and the start of Film Two.
+    await page.reload();
+    await continueCareer(page, true);
+    await page.locator(".past-project-summary").waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), finalState, "Reload preserves all completed-film decisions and Film Two setup");
+    assert.equal(await page.locator(".next-project-panel").count(), 2, "Both films remain in the resumed career");
     await page.screenshot({ path: resolve(REPORT_DIR, "career-fresh-" + spec.lang + "-film-two.png"), fullPage: false });
     assert.deepEqual(errors, [], "No browser errors");
     results.push({ ...spec, days, milestones, passed: true });
