@@ -81,6 +81,8 @@ export type FilmWorkPlatformCopy = {
       readonly replaceWarning: string;
       readonly replaceConfirm: string;
       readonly replaceCancel: string;
+      readonly caseReplaceWarning: string;
+      readonly caseReplaceConfirm: string;
     };
   };
 };
@@ -182,6 +184,8 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
         replaceWarning: "Starting a new career replaces the saved Film Producer game in this browser, including its films and decisions.",
         replaceConfirm: "Replace saved game and start career",
         replaceCancel: "Keep saved game",
+        caseReplaceWarning: "Opening this Production Case replaces the Studio Career saved in this browser, including every film and decision.",
+        caseReplaceConfirm: "Replace saved game and open case",
       },
     },
   },
@@ -281,6 +285,8 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
         replaceWarning: "Hvis du starter en ny karriere, erstattes det lagrede Film Producer-spillet i denne nettleseren, inkludert filmer og valg.",
         replaceConfirm: "Erstatt lagret spill og start ny karriere",
         replaceCancel: "Behold lagret spill",
+        caseReplaceWarning: "Å starte denne produksjonscasen erstatter den lagrede studiokarrieren i denne nettleseren, inkludert alle filmer og valg.",
+        caseReplaceConfirm: "Erstatt lagret spill og start casen",
       },
     },
   },
@@ -380,6 +386,8 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
         replaceWarning: "Commencer une nouvelle carrière remplacera la partie Film Producer enregistrée dans ce navigateur, y compris ses films et choix.",
         replaceConfirm: "Remplacer la partie et commencer une carrière",
         replaceCancel: "Garder la partie",
+        caseReplaceWarning: "Ouvrir ce cas de production remplacera la carrière de studio enregistrée dans ce navigateur, avec tous les films et choix.",
+        caseReplaceConfirm: "Remplacer la partie et ouvrir le cas",
       },
     },
   },
@@ -479,6 +487,8 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
         replaceWarning: "Iniciar uma nova carreira substitui o jogo Film Producer guardado neste navegador, incluindo os filmes e as escolhas.",
         replaceConfirm: "Substituir o jogo e iniciar uma nova carreira",
         replaceCancel: "Manter o jogo guardado",
+        caseReplaceWarning: "Abrir este caso de produção substitui a carreira de estúdio guardada neste navegador, incluindo todos os filmes e escolhas.",
+        caseReplaceConfirm: "Substituir o jogo e abrir o caso",
       },
     },
   },
