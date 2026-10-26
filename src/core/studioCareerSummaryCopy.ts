@@ -304,7 +304,7 @@ export const STUDIO_CAREER_SUMMARY_COPY = {
     summary: {
       kicker: "Project summary",
       heading: "Project brief",
-      editSetup: "Edit setup",
+      editSetup: "Start over",
       strategicGoal: "Strategic goal",
       project: "Project",
       scriptTemplate: "Script template",
@@ -379,7 +379,7 @@ export const STUDIO_CAREER_SUMMARY_COPY = {
     summary: {
       kicker: "Prosjektsammendrag",
       heading: "Prosjektbrief",
-      editSetup: "Rediger oppsett",
+      editSetup: "Start på nytt",
       strategicGoal: "Strategisk mål",
       project: "Prosjekt",
       scriptTemplate: "Manusmal",
@@ -454,7 +454,7 @@ export const STUDIO_CAREER_SUMMARY_COPY = {
     summary: {
       kicker: "Résumé du projet",
       heading: "Brief du projet",
-      editSetup: "Modifier la configuration",
+      editSetup: "Recommencer",
       strategicGoal: "Objectif stratégique",
       project: "Projet",
       scriptTemplate: "Modèle de scénario",
@@ -529,7 +529,7 @@ export const STUDIO_CAREER_SUMMARY_COPY = {
     summary: {
       kicker: "Resumo do projeto",
       heading: "Briefing do projeto",
-      editSetup: "Editar configuração",
+      editSetup: "Recomeçar",
       strategicGoal: "Objetivo estratégico",
       project: "Projeto",
       scriptTemplate: "Modelo de argumento",
