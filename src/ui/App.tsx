@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./studioCareerFlow.css";
 import type { StrategicGoal } from "../domain/career";
 import { isDeveloperToolsEnabled } from "../core/developerToolsAccess";
@@ -62,8 +62,21 @@ export function App() {
   const [view, setView] = useState<"landing" | "game" | "dev" | "scenarios">(developerToolsEnabled ? "dev" : "landing");
   const [mode, setMode] = useState<AppMode>("demo");
   const [pendingScenario, setPendingScenario] = useState<FilmScenarioSeed | null>(null);
+  const [resumeRequested, setResumeRequested] = useState(false);
   const { state: careerRun, setState: setCareerRun, hasSave } = useCareerRunState();
   const activeProject = careerRun.projects.at(-1);
+
+  // Continue should reveal the saved active phase, without changing game state.
+  useEffect(() => {
+    if (!resumeRequested || view !== "game") return;
+    if (activeProject) {
+      const targetId = activeProject.careerApplicationResult
+        ? getStudioCareerNextProjectFormId(activeProject.id)
+        : getStudioCareerActivePanelId(activeProject.id);
+      document.getElementById(targetId)?.scrollIntoView({ behavior: "auto", block: "start" });
+    }
+    setResumeRequested(false);
+  }, [activeProject, resumeRequested, view]);
 
   function startStudio(run: ProjectSetupRun) { setCareerRun(careerRunActions.startStudio(run)); }
   function launchClassicScenario(scenario: FilmScenarioSeed) {
@@ -80,7 +93,7 @@ export function App() {
   function resetCareer() { setCareerRun(careerRunActions.resetCareer()); setMode("setup"); setView("game"); }
 
   if (view === "landing") {
-    return <LandingScreen hasSave={hasSave} savedCareerState={careerRun} onRestoreCareer={(state: CareerRunState) => { setCareerRun(state); setMode("setup"); setView("game"); }} savedProjectTitle={activeProject?.run.project.title} onContinue={() => { setMode("setup"); setView("game"); }} onProductionCases={() => setView("scenarios")} onStart={() => { resetCareer(); }} />;
+    return <LandingScreen hasSave={hasSave} savedCareerState={careerRun} onRestoreCareer={(state: CareerRunState) => { setCareerRun(state); setMode("setup"); setView("game"); }} savedProjectTitle={activeProject?.run.project.title} onContinue={() => { setResumeRequested(true); setMode("setup"); setView("game"); }} onProductionCases={() => setView("scenarios")} onStart={() => { resetCareer(); }} />;
   }
 
   return (
