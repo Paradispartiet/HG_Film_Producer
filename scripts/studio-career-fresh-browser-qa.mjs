@@ -161,6 +161,23 @@ async function run(browser, spec) {
     await page.locator(".filmwork-resume-banner button").click();
     await page.locator(".development-panel").waitFor({ state: "visible" });
     assert.deepEqual(await readSaved(page), originalSave, "Home resume must load the intact career");
+    // Opening a Production Case must never destroy an existing Studio Career without a second choice.
+    await page.locator(".game-navigation .game-brand").click();
+    await page.locator(".filmwork-app-logo").click();
+    await page.goto(new URL("#/atlas", SITE).href);
+    await page.locator(".film-analysis-actions button.filmverket-secondary-action").first().click();
+    await page.locator(".scenario-library").waitFor({ state: "visible" });
+    await page.locator(".production-case-dashboard button.secondary-button").first().click();
+    const caseWarning = page.locator(".filmwork-scenario-reset-dialog");
+    await caseWarning.waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "Case start prompts before overwriting the saved career");
+    await caseWarning.locator("button.secondary-button").click();
+    assert.equal(await caseWarning.count(), 0, "Cancel dismisses the case replacement warning");
+    assert.deepEqual(await readSaved(page), originalSave, "Cancel case switch preserves the saved career");
+    await page.reload();
+    await continueCareer(page, true);
+    await page.locator(".development-panel").waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "Saved career survives reload and return from Production Cases");
 
     const development = await expectPhase(page, ".development-panel", "development", milestones);
     await development.locator(".development-path-grid button").nth(2).click();
