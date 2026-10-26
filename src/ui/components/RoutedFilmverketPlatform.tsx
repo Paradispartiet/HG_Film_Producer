@@ -18,7 +18,7 @@ type CraftCollectionKey = "screenplayTargets" | "cinematographyTargets" | "editi
 
 type RoutedFilmverketPlatformProps = {
   readonly hasSave: boolean;
-  readonly savedProjectTitle?: string;
+  readonly savedProjectTitle?: string | undefined;
   readonly navigate: (route: FilmverketRoute) => void;
   readonly onContinue: () => void;
   readonly onProductionCases: () => void;
@@ -195,7 +195,7 @@ function PlatformHeader({ activeSection, onNavigate }: {
 
 function PlatformHome({ hasSave, savedProjectTitle, onContinue, onNavigate, scenarios }: {
   readonly hasSave: boolean;
-  readonly savedProjectTitle?: string;
+  readonly savedProjectTitle?: string | undefined;
   readonly onContinue: () => void;
   readonly onNavigate: (section: FilmverketSection) => void;
   readonly scenarios: readonly FilmScenarioSeed[];
