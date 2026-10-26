@@ -58,17 +58,24 @@ const developerToolsEnabled = typeof window !== "undefined" && isDeveloperToolsE
 export function App() {
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_APP_SHELL_COPY[language];
+  const replacementCopy = FILMWORK_PLATFORM_COPY[language].producer.studioCareer;
   const [view, setView] = useState<"landing" | "game" | "dev" | "scenarios">(developerToolsEnabled ? "dev" : "landing");
   const [mode, setMode] = useState<AppMode>("demo");
+  const [pendingScenario, setPendingScenario] = useState<FilmScenarioSeed | null>(null);
   const { state: careerRun, setState: setCareerRun, hasSave } = useCareerRunState();
   const activeProject = careerRun.projects.at(-1);
 
   function startStudio(run: ProjectSetupRun) { setCareerRun(careerRunActions.startStudio(run)); }
-  function startClassicScenario(scenario: FilmScenarioSeed) {
+  function launchClassicScenario(scenario: FilmScenarioSeed) {
     const run = createScenarioProjectRun(scenario);
     setCareerRun(careerRunActions.startStudio(run));
     setMode("setup");
     setView("game");
+  }
+  function startClassicScenario(scenario: FilmScenarioSeed) {
+    // A Production Case also replaces the Studio Career save; do not overwrite it silently.
+    if (careerRun.projects.length > 0) { setPendingScenario(scenario); return; }
+    launchClassicScenario(scenario);
   }
   function resetCareer() { setCareerRun(careerRunActions.resetCareer()); setMode("setup"); setView("game"); }
 
@@ -82,6 +89,19 @@ export function App() {
         <GameNavigation context={activeProject?.run.project.title ?? copy.newStudioFallback} onHome={() => setView("landing")} />
       ) : <nav className="mode-switch" aria-label={copy.navigation.ariaLabel}><div><span className="eyebrow">{copy.productName}</span><strong>{copy.navigation.workspace}</strong></div><div className="mode-switch-buttons">{developerToolsEnabled && <button className={mode === "demo" && view === "dev" ? "mode-button mode-button--active" : "mode-button"} onClick={() => { setMode("demo"); setView("dev"); }} type="button">{copy.navigation.demoInspection}</button>}<button className={view === "scenarios" ? "mode-button mode-button--active" : "mode-button"} onClick={() => setView("scenarios")} type="button">{copy.navigation.productionCases}</button><button className="mode-button" onClick={() => { setMode("setup"); setView("game"); }} type="button">{copy.navigation.experimentalCareer}</button><button className="mode-button" onClick={() => setView("landing")} type="button">{copy.navigation.titleScreen}</button></div></nav>}
       {view === "scenarios" ? <FilmScenarioLibrary onStartScenario={startClassicScenario} /> : mode === "demo" ? <DemoDashboard /> : (careerRun.projects.length > 0 ? <CareerDashboard careerRun={careerRun.projects} onOpenProductionCases={() => setView("scenarios")} onResetCareer={resetCareer} onStartScenario={startClassicScenario} setCareerRun={setCareerRun} /> : <main className="setup-workspace"><SetupPanel onCreate={startStudio} /></main>)}
+      {pendingScenario && (
+        <div className="filmwork-scenario-reset-backdrop">
+          <section aria-label={replacementCopy.replaceHeading} aria-modal="true" className="filmwork-scenario-reset-dialog" role="alertdialog">
+            <h2>{replacementCopy.replaceHeading}</h2>
+            <p>{replacementCopy.caseReplaceWarning}</p>
+            <strong>{pendingScenario.film.title}</strong>
+            <div className="filmwork-scenario-reset-actions">
+              <button autoFocus className="secondary-button" onClick={() => setPendingScenario(null)} type="button">{replacementCopy.replaceCancel}</button>
+              <button className="primary-button" onClick={() => { const scenario = pendingScenario; setPendingScenario(null); launchClassicScenario(scenario); }} type="button">{replacementCopy.caseReplaceConfirm}</button>
+            </div>
+          </section>
+        </div>
+      )}
       <footer><span>{copy.productName}</span><span>{view === "dev" ? copy.footer.demoInspection : view === "scenarios" || (activeProject && "classicScenarioId" in activeProject.run && activeProject.run.classicScenarioId) ? copy.footer.productionCases : copy.footer.experimentalCareer}</span></footer>
     </div>
   );
