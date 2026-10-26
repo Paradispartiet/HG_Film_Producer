@@ -89,6 +89,44 @@ async function checkNarrowMobileChoices(page, spec, selector, label, selectNames
   }
 }
 
+async function checkMobileProductionOverview(page, spec) {
+  if (spec.viewport.width > 400) return;
+  try {
+    await page.setViewportSize({ width: 320, height: 780 });
+    const hero = page.locator(".project-hero--focused").last();
+    await hero.waitFor({ state: "visible" });
+    const metrics = await hero.evaluate((node) => {
+      const track = node.querySelector(".studio-career-phase-track");
+      const action = node.querySelector(".studio-career-primary-action");
+      const description = node.querySelector(".current-phase p");
+      const poster = node.querySelector(".project-poster");
+      if (!track || !action || !description || !poster) return null;
+      return {
+        pageWidth: document.documentElement.scrollWidth,
+        viewport: document.documentElement.clientWidth,
+        posterVisible: getComputedStyle(poster).display !== "none",
+        phaseCount: track.children.length,
+        trackHeight: track.getBoundingClientRect().height,
+        trackScroll: track.scrollWidth,
+        trackClient: track.clientWidth,
+        actionHeight: action.getBoundingClientRect().height,
+        actionFont: Number.parseFloat(getComputedStyle(action).fontSize),
+        descriptionFont: Number.parseFloat(getComputedStyle(description).fontSize),
+      };
+    });
+    assert.ok(metrics, "Mobile current-production controls must exist");
+    assert.ok(metrics.pageWidth <= metrics.viewport + 2, "Mobile production overview overflows page: " + JSON.stringify(metrics));
+    assert.equal(metrics.posterVisible, false, "Decorative poster should not push the next mobile action below the fold");
+    assert.equal(metrics.phaseCount, 6, "The six existing production phases must remain available");
+    assert.ok(metrics.trackScroll > metrics.trackClient, "Production stage strip should scroll horizontally, not stack vertically");
+    assert.ok(metrics.trackHeight <= 100, "Production stage strip should be compact on mobile");
+    assert.ok(metrics.actionHeight >= 48 && metrics.actionFont >= 16, "Main production action needs a large mobile touch target");
+    assert.ok(metrics.descriptionFont >= 14, "Next-step description must be readable on mobile");
+  } finally {
+    await page.setViewportSize(spec.viewport);
+  }
+}
+
 async function run(browser, spec) {
   const context = await browser.newContext({ viewport: spec.viewport });
   await context.addInitScript((lang) => {
@@ -113,6 +151,7 @@ async function run(browser, spec) {
     await checkFirst(page, '.setup-panel input[name="script-template"]');
     await setup.locator('.setup-actions button[type="submit"]').click();
     await awaitSaved(page, "setup");
+    await checkMobileProductionOverview(page, spec);
 
     // A saved career is surfaced on the actual app home; requesting a new one
     // cannot erase it without an explicit second choice.
