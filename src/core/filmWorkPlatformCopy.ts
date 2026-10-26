@@ -52,6 +52,10 @@ export type FilmWorkPlatformCopy = {
     readonly craftStatements: (count: number) => string;
     readonly connectedEntrances: (count: number) => string;
     readonly entrancesAria: string;
+    readonly resumeKicker: string;
+    readonly resumeFallback: string;
+    readonly resumeDescription: string;
+    readonly resumeAction: string;
     readonly gateways: Readonly<Record<FilmWorkPlatformGatewayId, FilmWorkPlatformGatewayCopy>>;
   };
   readonly producer: {
@@ -73,6 +77,10 @@ export type FilmWorkPlatformCopy = {
       readonly bullets: readonly [string, string, string];
       readonly continueAction: string;
       readonly startAction: string;
+      readonly replaceHeading: string;
+      readonly replaceWarning: string;
+      readonly replaceConfirm: string;
+      readonly replaceCancel: string;
     };
   };
 };
@@ -102,6 +110,10 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
       craftStatements: (count) => `${count} craft statements`,
       connectedEntrances: (count) => `${count} connected entrances`,
       entrancesAria: "FilmWork entrances",
+      resumeKicker: "Saved studio career",
+      resumeFallback: "Your latest film",
+      resumeDescription: "Your film and decisions are saved in this browser. Continue where you left off.",
+      resumeAction: "Continue making the film",
       gateways: {
         producer: {
           eyebrow: "The game",
@@ -166,6 +178,10 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
         bullets: ["Persistent studio state", "Multi-film pipeline", "Broader simulator foundation"],
         continueAction: "Continue career",
         startAction: "Start new career",
+        replaceHeading: "Replace your saved career?",
+        replaceWarning: "Starting again will delete the current studio career and its films from this browser.",
+        replaceConfirm: "Delete career and start again",
+        replaceCancel: "Keep my career",
       },
     },
   },
@@ -193,6 +209,10 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
       craftStatements: (count) => `${count} håndverksutsagn`,
       connectedEntrances: (count) => `${count} sammenkoblede innganger`,
       entrancesAria: "Innganger til Filmverket",
+      resumeKicker: "Lagret studiokarriere",
+      resumeFallback: "Siste film",
+      resumeDescription: "Filmen og valgene dine er lagret i denne nettleseren. Fortsett der du slapp.",
+      resumeAction: "Fortsett filmen",
       gateways: {
         producer: {
           eyebrow: "Spillet",
@@ -257,6 +277,10 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
         bullets: ["Vedvarende studiostatus", "Pipeline med flere filmer", "Bredere simulatorgrunnlag"],
         continueAction: "Fortsett karrieren",
         startAction: "Start ny karriere",
+        replaceHeading: "Erstatte lagret karriere?",
+        replaceWarning: "Hvis du starter på nytt, slettes den nåværende studiokarrieren og filmene fra denne nettleseren.",
+        replaceConfirm: "Slett karrieren og start på nytt",
+        replaceCancel: "Behold karrieren",
       },
     },
   },
@@ -284,6 +308,10 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
       craftStatements: (count) => `${count} énoncés de pratique`,
       connectedEntrances: (count) => `${count} entrées connectées`,
       entrancesAria: "Entrées FilmWork",
+      resumeKicker: "Carrière enregistrée",
+      resumeFallback: "Dernier film",
+      resumeDescription: "Votre film et vos choix sont enregistrés dans ce navigateur. Reprenez où vous en étiez.",
+      resumeAction: "Reprendre le film",
       gateways: {
         producer: {
           eyebrow: "Le jeu",
@@ -348,6 +376,10 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
         bullets: ["État du studio persistant", "Pipeline de plusieurs films", "Base de simulation plus large"],
         continueAction: "Continuer la carrière",
         startAction: "Commencer une nouvelle carrière",
+        replaceHeading: "Remplacer la carrière enregistrée ?",
+        replaceWarning: "Recommencer effacera la carrière actuelle et ses films dans ce navigateur.",
+        replaceConfirm: "Effacer et recommencer",
+        replaceCancel: "Garder ma carrière",
       },
     },
   },
@@ -375,6 +407,10 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
       craftStatements: (count) => `${count} enunciados de prática`,
       connectedEntrances: (count) => `${count} entradas interligadas`,
       entrancesAria: "Entradas FilmWork",
+      resumeKicker: "Carreira guardada",
+      resumeFallback: "Último filme",
+      resumeDescription: "O filme e as escolhas estão guardados neste navegador. Continue de onde ficou.",
+      resumeAction: "Continuar o filme",
       gateways: {
         producer: {
           eyebrow: "O jogo",
@@ -439,6 +475,10 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
         bullets: ["Estado de estúdio persistente", "Pipeline de vários filmes", "Base de simulação mais ampla"],
         continueAction: "Continuar carreira",
         startAction: "Iniciar nova carreira",
+        replaceHeading: "Substituir a carreira guardada?",
+        replaceWarning: "Recomeçar apaga a carreira atual e os seus filmes deste navegador.",
+        replaceConfirm: "Apagar e recomeçar",
+        replaceCancel: "Manter a carreira",
       },
     },
   },
