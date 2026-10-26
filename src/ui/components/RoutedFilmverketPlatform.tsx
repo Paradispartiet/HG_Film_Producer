@@ -318,7 +318,7 @@ function ProducerGateway({ hasSave, savedCareerState, onRestoreCareer, onContinu
                 <p>{copy.studioCareer.restoreWarning}</p>
                 <div className="producer-mode-actions">
                   <button className="filmverket-secondary-action" onClick={() => setPendingBackup(null)} type="button">{copy.studioCareer.replaceCancel}</button>
-                  <button className="filmverket-primary-action" onClick={() => { const backup = pendingBackup; setPendingBackup(null); onRestoreCareer(backup.state); }} type="button">{copy.studioCareer.restoreConfirm}</button>
+                  <button className="filmverket-primary-action" onClick={() => { const backup = pendingBackup; setPendingBackup(null); onRestoreCareer(backup.state as CareerRunState); }} type="button">{copy.studioCareer.restoreConfirm}</button>
                 </div>
               </div>
             )}
