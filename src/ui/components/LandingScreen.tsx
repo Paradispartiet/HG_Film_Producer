@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import { createFilmSlug, type FilmverketRoute } from "../../core/filmverketRoutes";
 import { getClassicFilmScenarios } from "../data/filmScenarios";
+import type { CareerRunState } from "../state/careerRunState";
 import { useFilmverketHashRoute } from "../routing/useFilmverketHashRoute";
 import { DirectorCourseAssignmentBanner } from "./DirectorCourseAssignmentBanner";
 import { DirectorKnowledgeDesk } from "./DirectorKnowledgeDesk";
@@ -28,6 +29,8 @@ interface LandingScreenProps {
   readonly onContinue: () => void;
   readonly onProductionCases: () => void;
   readonly hasSave: boolean;
+  readonly savedCareerState: CareerRunState;
+  readonly onRestoreCareer: (state: CareerRunState) => void;
   readonly savedProjectTitle?: string | undefined;
 }
 
