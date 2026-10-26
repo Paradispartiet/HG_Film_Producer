@@ -181,6 +181,21 @@ async function run(browser, spec) {
     await backupPrompt.locator("button.filmverket-secondary-action").click();
     assert.equal(await backupPrompt.count(), 0, "Cancel restore leaves the current game intact");
     assert.deepEqual(await readSaved(page), originalSave, "Cancelled restore preserves all saved choices");
+    if (spec.viewport.width <= 400) {
+      await page.setViewportSize({ width: 320, height: 720 });
+      const backupWidth = await page.evaluate(() => ({
+        document: document.documentElement.scrollWidth,
+        viewport: document.documentElement.clientWidth,
+      }));
+      assert.ok(backupWidth.document <= backupWidth.viewport + 2, "Backup picker must not overflow at 320px: " + JSON.stringify(backupWidth));
+      await page.setViewportSize(spec.viewport);
+    }
+    await backupInput.setInputFiles({ name: "career.json", mimeType: "application/json", buffer: Buffer.from(careerBackup) });
+    await backupPrompt.waitFor({ state: "visible" });
+    await backupPrompt.locator("button.filmverket-primary-action").click();
+    await page.locator(".development-panel").waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "Confirmed backup restoration preserves every saved choice");
+    await page.locator(".game-navigation .game-brand").click();
 
     await page.locator(".filmwork-app-logo").click();
     await page.locator(".filmwork-resume-banner button").click();
