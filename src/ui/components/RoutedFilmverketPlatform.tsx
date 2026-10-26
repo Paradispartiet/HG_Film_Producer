@@ -18,6 +18,7 @@ type CraftCollectionKey = "screenplayTargets" | "cinematographyTargets" | "editi
 
 type RoutedFilmverketPlatformProps = {
   readonly hasSave: boolean;
+  readonly savedProjectTitle?: string | undefined;
   readonly navigate: (route: FilmverketRoute) => void;
   readonly onContinue: () => void;
   readonly onProductionCases: () => void;
@@ -80,6 +81,7 @@ const schoolCourses: readonly {
 
 export function RoutedFilmverketPlatform({
   hasSave,
+  savedProjectTitle,
   navigate,
   onContinue,
   onProductionCases,
@@ -126,7 +128,7 @@ export function RoutedFilmverketPlatform({
         <FilmRouteNotFound onOpenAtlas={() => navigate({ section: "atlas" })} requestedSlug={requestedFilmSlug ?? ""} />
       ) : (
         <>
-          {route.section === "home" && <PlatformHome onNavigate={navigateSection} scenarios={scenarios} />}
+          {route.section === "home" && <PlatformHome hasSave={hasSave} savedProjectTitle={savedProjectTitle} onContinue={onContinue} onNavigate={navigateSection} scenarios={scenarios} />}
           {route.section === "producer" && (
             <ProducerGateway hasSave={hasSave} onContinue={onContinue} onProductionCases={onProductionCases} onStart={onStart} />
           )}
@@ -191,7 +193,10 @@ function PlatformHeader({ activeSection, onNavigate }: {
   );
 }
 
-function PlatformHome({ onNavigate, scenarios }: {
+function PlatformHome({ hasSave, savedProjectTitle, onContinue, onNavigate, scenarios }: {
+  readonly hasSave: boolean;
+  readonly savedProjectTitle?: string | undefined;
+  readonly onContinue: () => void;
   readonly onNavigate: (section: FilmverketSection) => void;
   readonly scenarios: readonly FilmScenarioSeed[];
 }) {
@@ -220,6 +225,12 @@ function PlatformHome({ onNavigate, scenarios }: {
           <span><strong>6</strong> {metricSuffix(copy.connectedEntrances(6), 6)}</span>
         </div>
       </section>
+      {hasSave && (
+        <section className="filmwork-resume-banner" aria-label={copy.resumeKicker}>
+          <div><span className="filmverket-card-kicker">{copy.resumeKicker}</span><strong>{savedProjectTitle || copy.resumeFallback}</strong><p>{copy.resumeDescription}</p></div>
+          <button className="filmverket-primary-action" onClick={onContinue} type="button">{copy.resumeAction} <span aria-hidden="true">→</span></button>
+        </section>
+      )}
       <section className="filmverket-gateway-grid" aria-label={copy.entrancesAria}>
         {gateways.map((gateway, index) => (
           <button className={index === 0 ? "filmverket-gateway filmverket-gateway--primary" : "filmverket-gateway"} key={gateway.id} onClick={() => onNavigate(gateway.id)} type="button">
@@ -236,6 +247,11 @@ function PlatformHome({ onNavigate, scenarios }: {
 function ProducerGateway({ hasSave, onContinue, onProductionCases, onStart }: Omit<RoutedFilmverketPlatformProps, "navigate" | "route">) {
   const [language] = useFilmWorkLanguage();
   const copy = FILMWORK_PLATFORM_COPY[language].producer;
+  const [confirmReplace, setConfirmReplace] = useState(false);
+  function requestNewCareer() {
+    if (hasSave) setConfirmReplace(true);
+    else onStart();
+  }
   return (
     <main className="filmverket-page filmverket-producer-page">
       <section className="filmverket-page-hero filmverket-page-hero--producer">
@@ -251,7 +267,17 @@ function ProducerGateway({ hasSave, onContinue, onProductionCases, onStart }: Om
         <article className="producer-mode-card">
           <span className="filmverket-card-kicker">{copy.studioCareer.kicker}</span><h2>{copy.studioCareer.title}</h2><p>{copy.studioCareer.description}</p>
           <ul>{copy.studioCareer.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
-          <div className="producer-mode-actions">{hasSave && <button className="filmverket-primary-action" onClick={onContinue} type="button">{copy.studioCareer.continueAction} <span>→</span></button>}<button className="filmverket-secondary-action" onClick={onStart} type="button">{copy.studioCareer.startAction}</button></div>
+          <div className="producer-mode-actions">{hasSave && <button className="filmverket-primary-action" onClick={onContinue} type="button">{copy.studioCareer.continueAction} <span>→</span></button>}<button className="filmverket-secondary-action" onClick={requestNewCareer} type="button">{copy.studioCareer.startAction}</button></div>
+          {hasSave && confirmReplace && (
+            <div className="producer-replace-confirmation" role="group" aria-label={copy.studioCareer.replaceHeading}>
+              <strong>{copy.studioCareer.replaceHeading}</strong>
+              <p>{copy.studioCareer.replaceWarning}</p>
+              <div className="producer-mode-actions">
+                <button className="filmverket-secondary-action" onClick={() => setConfirmReplace(false)} type="button">{copy.studioCareer.replaceCancel}</button>
+                <button className="filmverket-primary-action" onClick={onStart} type="button">{copy.studioCareer.replaceConfirm}</button>
+              </div>
+            </div>
+          )}
         </article>
       </section>
     </main>

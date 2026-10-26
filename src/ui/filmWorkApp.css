@@ -417,3 +417,88 @@ html { -webkit-text-size-adjust: 100%; }
 body:has(.filmwork-app-shell) :is(.craft-library-trigger, .research-control-trigger) {
   display: none;
 }
+
+/* Resume the saved film immediately; never bury a live career below the catalogue. */
+.filmwork-app-shell .filmwork-resume-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 16px;
+  padding: 18px 20px;
+  border: 1px solid #cba463;
+  border-radius: 16px;
+  background: #242720;
+}
+.filmwork-app-shell .filmwork-resume-banner > div { display: grid; min-width: 0; gap: 4px; }
+.filmwork-app-shell .filmwork-resume-banner strong { font-size: 20px; overflow-wrap: anywhere; }
+.filmwork-app-shell .filmwork-resume-banner p { margin: 0; color: #d1d7df; }
+.filmwork-app-shell .filmwork-resume-banner button { flex-shrink: 0; min-height: 48px; }
+.filmwork-app-shell .producer-replace-confirmation {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid #cba463;
+  border-radius: 12px;
+  background: #29251e;
+}
+.filmwork-app-shell .producer-replace-confirmation p { margin: 0; }
+.filmwork-app-shell .producer-replace-confirmation .producer-mode-actions { flex-wrap: wrap; }
+.filmwork-app-shell .producer-replace-confirmation button { min-height: 48px; }
+@media (max-width: 580px) {
+  .filmwork-app-shell .filmwork-resume-banner { flex-direction: column; align-items: stretch; padding: 16px; }
+  .filmwork-app-shell .filmwork-resume-banner button { width: 100%; }
+  .filmwork-app-shell .producer-replace-confirmation .producer-mode-actions { flex-direction: column; }
+  .filmwork-app-shell .producer-replace-confirmation button { width: 100%; }
+}
+
+/* Destructive in-game actions share the same two-step save protection as the Producer gateway. */
+.app-shell .filmwork-career-reset-confirmation {
+  display: grid;
+  gap: 9px;
+  margin: 0 0 18px;
+  padding: 18px;
+  border: 1px solid #cba463;
+  border-radius: 14px;
+  background: #29251e;
+}
+.app-shell .filmwork-career-reset-confirmation p { margin: 0; }
+.app-shell .filmwork-career-reset-confirmation > div { display: flex; flex-wrap: wrap; gap: 10px; }
+.app-shell .filmwork-career-reset-confirmation button { min-height: 48px; }
+@media (max-width: 580px) {
+  .app-shell .filmwork-career-reset-confirmation > div { flex-direction: column; }
+  .app-shell .filmwork-career-reset-confirmation button { width: 100%; }
+}
+
+/* Switching to a Production Case must not silently replace a saved career. */
+.app-shell .filmwork-scenario-reset-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, .8);
+}
+.app-shell .filmwork-scenario-reset-dialog {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 520px);
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  padding: 24px;
+  border: 1px solid #cba463;
+  border-radius: 16px;
+  background: #29251e;
+  color: #f7f4ea;
+}
+.app-shell .filmwork-scenario-reset-dialog h2,
+.app-shell .filmwork-scenario-reset-dialog p { margin: 0; }
+.app-shell .filmwork-scenario-reset-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.app-shell .filmwork-scenario-reset-actions button { min-height: 48px; }
+@media (max-width: 580px) {
+  .app-shell .filmwork-scenario-reset-dialog { padding: 18px; }
+  .app-shell .filmwork-scenario-reset-actions { flex-direction: column; }
+  .app-shell .filmwork-scenario-reset-actions button { width: 100%; }
+}

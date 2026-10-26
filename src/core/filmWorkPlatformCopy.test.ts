@@ -37,6 +37,10 @@ type FilmWorkPlatformCopyShape = {
     readonly craftStatements: (count: number) => string;
     readonly connectedEntrances: (count: number) => string;
     readonly entrancesAria: string;
+    readonly resumeKicker: string;
+    readonly resumeFallback: string;
+    readonly resumeDescription: string;
+    readonly resumeAction: string;
     readonly gateways: Readonly<Record<(typeof GATEWAY_IDS)[number], GatewayCopy>>;
   };
   readonly producer: {
@@ -58,6 +62,12 @@ type FilmWorkPlatformCopyShape = {
       readonly bullets: readonly string[];
       readonly continueAction: string;
       readonly startAction: string;
+      readonly replaceHeading: string;
+      readonly replaceWarning: string;
+      readonly replaceConfirm: string;
+      readonly replaceCancel: string;
+      readonly caseReplaceWarning: string;
+      readonly caseReplaceConfirm: string;
     };
   };
 };
@@ -194,5 +204,23 @@ test("dynamic gateway and summary copy preserves the supplied counts and year ra
     assert.match(copy.home.gateways.atlas.status(stats), /614/);
     assert.match(copy.home.gateways.history.status(stats), /1895/);
     assert.match(copy.home.gateways.history.status(stats), /2025/);
+  }
+});
+
+
+test("saved-film resume and replace warnings are present in every supported language", async () => {
+  const { FILMWORK_PLATFORM_COPY } = await loadPlatformCopyModule();
+  for (const language of FILMWORK_LANGUAGES) {
+    const copy = FILMWORK_PLATFORM_COPY[language];
+    for (const value of [
+      copy.home.resumeKicker, copy.home.resumeFallback, copy.home.resumeDescription,
+      copy.home.resumeAction, copy.producer.studioCareer.replaceHeading,
+      copy.producer.studioCareer.replaceWarning, copy.producer.studioCareer.replaceConfirm,
+      copy.producer.studioCareer.replaceCancel,
+      copy.producer.studioCareer.caseReplaceWarning,
+      copy.producer.studioCareer.caseReplaceConfirm,
+    ]) {
+      assert.ok(typeof value === "string" && value.trim().length >= 5, `${language}: missing saved-run navigation copy`);
+    }
   }
 });

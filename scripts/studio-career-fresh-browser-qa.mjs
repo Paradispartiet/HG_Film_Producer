@@ -114,6 +114,71 @@ async function run(browser, spec) {
     await setup.locator('.setup-actions button[type="submit"]').click();
     await awaitSaved(page, "setup");
 
+    // A saved career is surfaced on the actual app home; requesting a new one
+    // cannot erase it without an explicit second choice.
+    const originalSave = await readSaved(page);
+    // Both the dashboard reset and the summary's setup edit are destructive:
+    // neither may discard the career without explicit confirmation.
+    const inGameWarning = page.locator(".filmwork-career-reset-confirmation");
+    await page.locator(".game-section-heading > button.secondary-button").click();
+    await inGameWarning.waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "Dashboard reset prompt preserves the saved career");
+    await inGameWarning.locator("button.secondary-button").click();
+    assert.equal(await inGameWarning.count(), 0, "Dashboard reset cancellation closes the prompt");
+    await page.locator(".run-summary-panel .panel-heading button.secondary-button").click();
+    await inGameWarning.waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "Edit setup cannot silently reset the career");
+    await inGameWarning.locator("button.secondary-button").click();
+    assert.deepEqual(await readSaved(page), originalSave, "Both reset cancel paths leave the save unchanged");
+    // The running career is an in-app view: a hash-only page.goto does not
+    // unmount it. Use the actual game Home control, then the FilmWork home tab.
+    await page.locator(".game-navigation .game-brand").click();
+    await page.locator(".filmwork-app-logo").click();
+    const resume = page.locator(".filmwork-resume-banner");
+    await resume.waitFor({ state: "visible" });
+    assert.ok((await resume.innerText()).includes("Harbor Lights"), "Home should identify the saved film");
+    if (spec.viewport.width <= 400) {
+      await page.setViewportSize({ width: 320, height: 720 });
+      const dimensions = await page.evaluate(() => ({
+        viewport: document.documentElement.clientWidth,
+        document: document.documentElement.scrollWidth,
+      }));
+      assert.ok(dimensions.document <= dimensions.viewport + 2,
+        "Saved-game banner must not cause horizontal overflow at 320px: " + JSON.stringify(dimensions));
+      assert.ok(await resume.locator("button").isVisible(), "Resume action remains usable at 320px");
+      await page.setViewportSize(spec.viewport);
+    }
+    await page.goto(new URL("#/producer", SITE).href);
+    const careerCard = page.locator(".producer-mode-card:not(.producer-mode-card--recommended)");
+    await careerCard.locator(".filmverket-secondary-action").click();
+    const warning = careerCard.locator(".producer-replace-confirmation");
+    await warning.waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "First new-career click must preserve existing work");
+    await warning.locator(".filmverket-secondary-action").click();
+    assert.equal(await careerCard.locator(".producer-replace-confirmation").count(), 0, "Cancel closes the warning");
+    assert.deepEqual(await readSaved(page), originalSave, "Cancel must preserve all saved decisions");
+    await page.locator(".filmwork-app-logo").click();
+    await page.locator(".filmwork-resume-banner button").click();
+    await page.locator(".development-panel").waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "Home resume must load the intact career");
+    // Opening a Production Case must never destroy an existing Studio Career without a second choice.
+    await page.locator(".game-navigation .game-brand").click();
+    await page.locator(".filmwork-app-logo").click();
+    await page.goto(new URL("#/atlas", SITE).href);
+    await page.locator(".film-analysis-actions button.filmverket-secondary-action").first().click();
+    await page.locator(".scenario-library").waitFor({ state: "visible" });
+    await page.locator(".production-case-dashboard button.secondary-button").first().click();
+    const caseWarning = page.locator(".filmwork-scenario-reset-dialog");
+    await caseWarning.waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "Case start prompts before overwriting the saved career");
+    await caseWarning.locator("button.secondary-button").click();
+    assert.equal(await caseWarning.count(), 0, "Cancel dismisses the case replacement warning");
+    assert.deepEqual(await readSaved(page), originalSave, "Cancel case switch preserves the saved career");
+    await page.reload();
+    await continueCareer(page, true);
+    await page.locator(".development-panel").waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "Saved career survives reload and return from Production Cases");
+
     const development = await expectPhase(page, ".development-panel", "development", milestones);
     await development.locator(".development-path-grid button").nth(2).click();
     await development.locator(".script-starter-card").waitFor({ state: "visible" });
@@ -421,6 +486,12 @@ async function run(browser, spec) {
     assert.equal(await page.locator(".studio-career-primary-action").count(), 1);
     const overflow = await page.locator(".project-hero--focused").last().evaluate((el) => ({ width: el.clientWidth, scroll: el.scrollWidth }));
     assert.ok(overflow.scroll <= overflow.width + 2, "Film Two overflows: " + JSON.stringify(overflow));
+    // Simulate closing and reopening the app after a complete film and the start of Film Two.
+    await page.reload();
+    await continueCareer(page, true);
+    await page.locator(".past-project-summary").waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), finalState, "Reload preserves all completed-film decisions and Film Two setup");
+    assert.equal(await page.locator(".next-project-panel").count(), 2, "Both films remain in the resumed career");
     await page.screenshot({ path: resolve(REPORT_DIR, "career-fresh-" + spec.lang + "-film-two.png"), fullPage: false });
     assert.deepEqual(errors, [], "No browser errors");
     results.push({ ...spec, days, milestones, passed: true });
