@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import type { ShootStrategyId } from "../../core/applyShootStrategy";
 import type { ProducerPriorityId } from "../../core/applyProducerPriority";
 import { createCareerApplicationStepResult, type CareerApplicationStepResult } from "../demo/createCareerApplicationStepRun";
@@ -43,7 +43,11 @@ export interface CareerFilmProjectRun {
 export interface CareerRunState { readonly version: 1; readonly projects: readonly CareerFilmProjectRun[]; }
 
 export function createEmptyCareerRunState(): CareerRunState { return { version: 1, projects: [] }; }
-export function hasSavedCareerRun(): boolean { return typeof window !== "undefined" && window.localStorage.getItem(careerRunStorageKey) !== null; }
+export function hasSavedCareerRun(): boolean {
+  if (typeof window === "undefined") return false;
+  try { return window.localStorage.getItem(careerRunStorageKey) !== null; }
+  catch { return false; }
+}
 function getRunContext(run: ProjectSetupRun | NextProjectStepResult) { return createProjectRunContext(run as ProjectSetupRun & NextProjectStepResult); }
 
 export function createCareerProject(run: ProjectSetupRun | NextProjectStepResult, projectNumber: number): CareerFilmProjectRun {
@@ -120,17 +124,47 @@ export const careerRunActions = {
   releaseFilm(state: CareerRunState, projectId: string, result: ReleaseStepResult): CareerRunState { return updateProject(state, projectId, (project) => ({ ...project, releaseResult: result, careerApplicationResult: null })); },
   applyCareerResult(state: CareerRunState, projectId: string): CareerRunState { return updateProject(state, projectId, (project) => project.releaseResult && project.preProductionResult ? { ...project, careerApplicationResult: createCareerApplicationStepResult(getRunContext(project.run), project.releaseResult, project.preProductionResult, { closeFilmYear: true }) } : project); },
   startNextProject(state: CareerRunState, run: NextProjectStepResult): CareerRunState { return careerRunActions.createProject(state, run); },
-  resetCareer(): CareerRunState { if (typeof window !== "undefined") window.localStorage.removeItem(careerRunStorageKey); return createEmptyCareerRunState(); }
+  resetCareer(): CareerRunState {
+    if (typeof window !== "undefined") {
+      // Access to localStorage can be denied by privacy settings or browser quota.
+      // The hook will report a failed write rather than crashing this game.
+      try { window.localStorage.removeItem(careerRunStorageKey); } catch { /* reported by persistence hook */ }
+    }
+    return createEmptyCareerRunState();
+  }
 };
 export function loadCareerRunState(): CareerRunState {
   if (typeof window === "undefined") return createEmptyCareerRunState();
-  const saved = window.localStorage.getItem(careerRunStorageKey);
-  if (!saved) return createEmptyCareerRunState();
-  try { const parsed = JSON.parse(saved) as CareerRunState; return parsed.version === 1 && Array.isArray(parsed.projects) ? parsed : createEmptyCareerRunState(); }
-  catch { return createEmptyCareerRunState(); }
+  try {
+    const saved = window.localStorage.getItem(careerRunStorageKey);
+    if (!saved) return createEmptyCareerRunState();
+    const parsed = JSON.parse(saved) as CareerRunState;
+    return parsed.version === 1 && Array.isArray(parsed.projects) ? parsed : createEmptyCareerRunState();
+  } catch {
+    // An unreadable save is not treated as a valid new career.
+    return createEmptyCareerRunState();
+  }
 }
+
+/** A failed storage write leaves the live React state available for export and retry. */
+export function persistCareerRunState(state: CareerRunState): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    if (state.projects.length === 0) window.localStorage.removeItem(careerRunStorageKey);
+    else window.localStorage.setItem(careerRunStorageKey, JSON.stringify(state));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export function useCareerRunState() {
   const [state, setState] = useState<CareerRunState>(() => loadCareerRunState());
-  useEffect(() => { if (state.projects.length === 0) window.localStorage.removeItem(careerRunStorageKey); else window.localStorage.setItem(careerRunStorageKey, JSON.stringify(state)); }, [state]);
-  return useMemo(() => ({ state, setState, hasSave: state.projects.length > 0 || hasSavedCareerRun() }), [state]);
+  const [saveError, setSaveError] = useState(false);
+  useEffect(() => { setSaveError(!persistCareerRunState(state)); }, [state]);
+  const retrySave = useCallback(() => { setSaveError(!persistCareerRunState(state)); }, [state]);
+  return useMemo(() => ({
+    state, setState, saveError, retrySave,
+    hasSave: state.projects.length > 0 || hasSavedCareerRun(),
+  }), [state, saveError, retrySave]);
 }
