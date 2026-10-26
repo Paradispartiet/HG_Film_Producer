@@ -117,7 +117,10 @@ async function run(browser, spec) {
     // A saved career is surfaced on the actual app home; requesting a new one
     // cannot erase it without an explicit second choice.
     const originalSave = await readSaved(page);
-    await page.goto(new URL("#/", SITE).href);
+    // The running career is an in-app view: a hash-only page.goto does not
+    // unmount it. Use the actual game Home control, then the FilmWork home tab.
+    await page.locator(".game-navigation .game-brand").click();
+    await page.locator(".filmwork-app-logo").click();
     const resume = page.locator(".filmwork-resume-banner");
     await resume.waitFor({ state: "visible" });
     assert.ok((await resume.innerText()).includes("Harbor Lights"), "Home should identify the saved film");
@@ -130,7 +133,7 @@ async function run(browser, spec) {
     await warning.locator(".filmverket-secondary-action").click();
     assert.equal(await careerCard.locator(".producer-replace-confirmation").count(), 0, "Cancel closes the warning");
     assert.deepEqual(await readSaved(page), originalSave, "Cancel must preserve all saved decisions");
-    await page.goto(new URL("#/", SITE).href);
+    await page.locator(".filmwork-app-logo").click();
     await page.locator(".filmwork-resume-banner button").click();
     await page.locator(".development-panel").waitFor({ state: "visible" });
     assert.deepEqual(await readSaved(page), originalSave, "Home resume must load the intact career");
