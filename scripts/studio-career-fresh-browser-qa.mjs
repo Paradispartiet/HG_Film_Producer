@@ -39,7 +39,7 @@ async function checkFirst(page, selector) {
 async function continueCareer(page, alreadySaved) {
   await page.goto(new URL("#/producer", SITE).href);
   const card = page.locator(".producer-mode-card:not(.producer-mode-card--recommended)");
-  await card.locator(alreadySaved ? ".filmverket-primary-action" : ".filmverket-secondary-action").click();
+  await card.locator(alreadySaved ? ":scope > .producer-mode-actions > .filmverket-primary-action" : ":scope > .producer-mode-actions > .filmverket-secondary-action").click();
 }
 async function expectPhase(page, selector, label, milestones) {
   const panel = page.locator(".next-project-panel").last().locator(selector);
@@ -150,7 +150,7 @@ async function run(browser, spec) {
     }
     await page.goto(new URL("#/producer", SITE).href);
     const careerCard = page.locator(".producer-mode-card:not(.producer-mode-card--recommended)");
-    await careerCard.locator(".filmverket-secondary-action").click();
+    await careerCard.locator(":scope > .producer-mode-actions > .filmverket-secondary-action").click();
     const warning = careerCard.locator(".producer-replace-confirmation");
     await warning.waitFor({ state: "visible" });
     assert.deepEqual(await readSaved(page), originalSave, "First new-career click must preserve existing work");
