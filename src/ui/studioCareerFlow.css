@@ -704,3 +704,60 @@
     line-height: 1.5;
   }
 }
+
+
+/* Unsaved outcome from the actual day resolver, adjacent to the confirmation action. */
+.shoot-decision-preview {
+  margin: 15px 0 10px;
+  padding: 15px;
+  min-width: 0;
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  background: rgba(5, 7, 9, 0.2);
+}
+.shoot-decision-preview-heading h3 {
+  margin: 0 0 5px;
+  font-size: 18px;
+}
+.shoot-decision-preview-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.shoot-decision-preview-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  gap: 9px;
+  margin: 12px 0;
+}
+.shoot-decision-preview-metrics > div {
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid var(--line-soft);
+  border-radius: 7px;
+}
+.shoot-decision-preview-metrics dt {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.shoot-decision-preview-metrics dd {
+  margin: 5px 0 0;
+  font-size: 18px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.shoot-decision-preview > small {
+  display: block;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+@media (max-width: 520px) {
+  .shoot-decision-preview { padding: 13px; }
+  .shoot-decision-preview-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shoot-decision-preview-metrics dd { font-size: 16px; }
+  .shoot-panel .shoot-actions button.primary-button { min-height: 48px; font-size: 16px; }
+}

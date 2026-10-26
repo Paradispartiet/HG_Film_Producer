@@ -347,6 +347,9 @@ async function run(browser, spec) {
         "Spoken producer decision matches the selected scenario action");
       assert.ok((await conversation.locator(".on-set-dialogue-reaction").innerText()).length > 25, "The team reacts to the real selected producer response");
       const expectedSteadyCost = Number(await monitor.locator(".shoot-budget-projection").getAttribute("data-forecast-cost"));
+      const outcome = page.locator(".shoot-panel .shoot-decision-preview");
+      await outcome.waitFor({ state: "visible" });
+      assert.equal(Number(await outcome.getAttribute("data-cost-spent")), expectedSteadyCost, "Visible outcome and budget estimate use the same engine before changing strategy");
       assert.ok(Number.isFinite(expectedSteadyCost) && expectedSteadyCost >= 0, "Event selection provides a real projected day cost");
       const responseRadios = page.locator('.shoot-panel .shoot-strategy-grid input[type="radio"]');
       assert.equal(await responseRadios.count(), 5, "Five actionable shoot responses");
@@ -360,6 +363,15 @@ async function run(browser, spec) {
       }
       const preview = monitor.locator(".shoot-budget-projection");
       const predictedCost = Number(await preview.getAttribute("data-forecast-cost"));
+      const outcomeForecast = {
+        costSpent: Number(await outcome.getAttribute("data-cost-spent")),
+        takeQuality: Number(await outcome.getAttribute("data-take-quality")),
+        completedScenes: Number(await outcome.getAttribute("data-scenes-completed")),
+        delayedScenes: Number(await outcome.getAttribute("data-scenes-delayed")),
+        scheduleDeltaDays: Number(await outcome.getAttribute("data-schedule-delta")),
+      };
+      assert.equal(outcomeForecast.costSpent, predictedCost, "Visible day total matches budget monitor when producer and strategy choices change");
+      if (days === 0) await checkNarrowMobileChoices(page, spec, ".shoot-decision-preview", "Shoot outcome preview");
       const projectedHeadroom = Number(await preview.getAttribute("data-forecast-headroom"));
       assert.ok(Number.isFinite(projectedHeadroom), "Risk preview must show a numeric reserve");
       assert.ok(["healthy", "tight", "over"].includes(await preview.getAttribute("data-forecast-risk")), "Preview risk uses real cost thresholds");
@@ -371,6 +383,13 @@ async function run(browser, spec) {
       await awaitSaved(page, "shoot-day", days);
       const savedDay = (await readSaved(page)).projects[0].shootDayResults[days - 1];
       assert.equal(savedDay.shootDayResult.costSpent, predictedCost, "Budget forecast and recorded day cost use the same engine");
+      assert.deepEqual(outcomeForecast, {
+        costSpent: savedDay.shootDayResult.costSpent,
+        takeQuality: savedDay.shootDayResult.takeQuality,
+        completedScenes: savedDay.shootDayResult.completedSceneIds.length,
+        delayedScenes: savedDay.shootDayResult.delayedSceneIds.length,
+        scheduleDeltaDays: savedDay.shootDayResult.scheduleDeltaDays,
+      }, "The exact visible decision preview must match the actual saved shooting result");
       assert.equal(savedDay.strategySummary?.id, chosenResponse);
       assert.equal(savedDay.producerPrioritySummary?.id, chosenPriority, "Creative producer choice is persisted with the day");
       assert.equal(savedDay.practicalActionVersion, 2, "New reports record the practical action version without changing the priority engine");
