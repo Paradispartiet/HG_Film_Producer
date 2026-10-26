@@ -68,6 +68,16 @@ type FilmWorkPlatformCopyShape = {
       readonly replaceCancel: string;
       readonly caseReplaceWarning: string;
       readonly caseReplaceConfirm: string;
+      readonly backupTitle: string;
+      readonly backupDescription: string;
+      readonly exportBackup: string;
+      readonly importBackup: string;
+      readonly backupError: string;
+      readonly invalidBackup: string;
+      readonly restoreTitle: string;
+      readonly restorePreview: (filmCount: number, title: string) => string;
+      readonly restoreWarning: string;
+      readonly restoreConfirm: string;
     };
   };
 };
