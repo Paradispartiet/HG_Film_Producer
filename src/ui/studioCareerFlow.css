@@ -761,3 +761,42 @@
   .shoot-decision-preview-metrics dd { font-size: 16px; }
   .shoot-panel .shoot-actions button.primary-button { min-height: 48px; font-size: 16px; }
 }
+
+
+/* Put the playable shoot choice ahead of bulky planning and history panels. */
+.shoot-day-context-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+  min-width: 0;
+  padding: 11px 14px;
+  margin: 12px 0;
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  background: rgba(5, 7, 9, 0.17);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.shoot-day-context-strip span,
+.shoot-day-context-strip strong { min-width: 0; overflow-wrap: anywhere; }
+.shoot-day-context-strip strong { font-size: 15px; }
+.shoot-context-details { margin: 10px 0 16px; }
+.shoot-context-details > summary {
+  cursor: pointer;
+  padding: 12px 14px;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  color: var(--muted);
+  line-height: 1.5;
+  font-weight: 600;
+}
+.shoot-context-details > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.shoot-context-details[open] > .shoot-desk-section { margin-top: 12px; }
+@media (max-width: 520px) {
+  .shoot-day-context-strip { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .shoot-context-details > summary { font-size: 14px; }
+}
