@@ -83,6 +83,16 @@ export type FilmWorkPlatformCopy = {
       readonly replaceCancel: string;
       readonly caseReplaceWarning: string;
       readonly caseReplaceConfirm: string;
+      readonly backupTitle: string;
+      readonly backupDescription: string;
+      readonly exportBackup: string;
+      readonly importBackup: string;
+      readonly backupError: string;
+      readonly invalidBackup: string;
+      readonly restoreTitle: string;
+      readonly restorePreview: (filmCount: number, title: string) => string;
+      readonly restoreWarning: string;
+      readonly restoreConfirm: string;
     };
   };
 };
@@ -186,6 +196,14 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
         replaceCancel: "Keep saved game",
         caseReplaceWarning: "Opening this Production Case replaces the Studio Career saved in this browser, including every film and decision.",
         caseReplaceConfirm: "Replace saved game and open case",
+        backupTitle: "Career backup",
+        backupDescription: "Saved only in this browser. Download a backup to protect your films or move to another device.",
+        exportBackup: "Download backup", importBackup: "Choose backup file",
+        backupError: "Could not download the saved career.", invalidBackup: "Invalid or oversized career backup. Your current game was not changed.",
+        restoreTitle: "Restore saved career?",
+        restorePreview: (count, title) => `${count} saved films. Last film: ${title}.`,
+        restoreWarning: "Restoring replaces the career in this browser. Download a backup of your current game first if you want to keep it.",
+        restoreConfirm: "Restore this career",
       },
     },
   },
@@ -287,6 +305,14 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
         replaceCancel: "Behold lagret spill",
         caseReplaceWarning: "Å starte denne produksjonscasen erstatter den lagrede studiokarrieren i denne nettleseren, inkludert alle filmer og valg.",
         caseReplaceConfirm: "Erstatt lagret spill og start casen",
+        backupTitle: "Sikkerhetskopi av karrieren",
+        backupDescription: "Lagres bare i denne nettleseren. Last ned en kopi for å beskytte filmene eller flytte til en annen enhet.",
+        exportBackup: "Last ned sikkerhetskopi", importBackup: "Velg sikkerhetskopi",
+        backupError: "Kunne ikke laste ned karrieren.", invalidBackup: "Ugyldig eller for stor sikkerhetskopi. Det lagrede spillet er ikke endret.",
+        restoreTitle: "Gjenopprette lagret karriere?",
+        restorePreview: (count, title) => `${count} lagrede filmer. Siste film: ${title}.`,
+        restoreWarning: "Gjenoppretting erstatter karrieren i denne nettleseren. Last ned en sikkerhetskopi av nåværende spill først hvis du vil beholde det.",
+        restoreConfirm: "Gjenopprett denne karrieren",
       },
     },
   },
@@ -388,6 +414,14 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
         replaceCancel: "Garder la partie",
         caseReplaceWarning: "Ouvrir ce cas de production remplacera la carrière de studio enregistrée dans ce navigateur, avec tous les films et choix.",
         caseReplaceConfirm: "Remplacer la partie et ouvrir le cas",
+        backupTitle: "Sauvegarde de carrière",
+        backupDescription: "Enregistrée uniquement dans ce navigateur. Téléchargez une copie pour protéger vos films ou changer d’appareil.",
+        exportBackup: "Télécharger la sauvegarde", importBackup: "Choisir une sauvegarde",
+        backupError: "Impossible de télécharger la carrière.", invalidBackup: "Sauvegarde invalide ou trop volumineuse. Votre partie reste inchangée.",
+        restoreTitle: "Restaurer la carrière ?",
+        restorePreview: (count, title) => `${count} films enregistrés. Dernier film : ${title}.`,
+        restoreWarning: "La restauration remplacera la carrière du navigateur. Téléchargez d’abord une copie du jeu actuel si vous souhaitez le conserver.",
+        restoreConfirm: "Restaurer cette carrière",
       },
     },
   },
@@ -489,6 +523,14 @@ export const FILMWORK_PLATFORM_COPY: Readonly<Record<FilmWorkLanguage, FilmWorkP
         replaceCancel: "Manter o jogo guardado",
         caseReplaceWarning: "Abrir este caso de produção substitui a carreira de estúdio guardada neste navegador, incluindo todos os filmes e escolhas.",
         caseReplaceConfirm: "Substituir o jogo e abrir o caso",
+        backupTitle: "Cópia de segurança da carreira",
+        backupDescription: "Guardada apenas neste navegador. Descarregue uma cópia para proteger os filmes ou mudar de dispositivo.",
+        exportBackup: "Descarregar cópia", importBackup: "Escolher cópia de segurança",
+        backupError: "Não foi possível descarregar a carreira.", invalidBackup: "Cópia inválida ou demasiado grande. O jogo atual não foi alterado.",
+        restoreTitle: "Restaurar carreira guardada?",
+        restorePreview: (count, title) => `${count} filmes guardados. Último filme: ${title}.`,
+        restoreWarning: "A restauração substitui a carreira neste navegador. Descarregue primeiro uma cópia do jogo atual se quiser mantê-lo.",
+        restoreConfirm: "Restaurar esta carreira",
       },
     },
   },

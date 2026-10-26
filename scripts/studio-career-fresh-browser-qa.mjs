@@ -157,6 +157,46 @@ async function run(browser, spec) {
     await warning.locator(".filmverket-secondary-action").click();
     assert.equal(await careerCard.locator(".producer-replace-confirmation").count(), 0, "Cancel closes the warning");
     assert.deepEqual(await readSaved(page), originalSave, "Cancel must preserve all saved decisions");
+
+    // The career backup is a real downloadable JSON file. Importing it requires
+    // a valid preview and a second explicit click before any saved data changes.
+    const downloadEvent = page.waitForEvent("download");
+    await careerCard.locator(".filmwork-career-backup-actions button").click();
+    const backupDownload = await downloadEvent;
+    assert.equal(backupDownload.suggestedFilename(), "filmwork-studio-career-backup.json");
+    const careerBackup = JSON.stringify({
+      format: "filmwork-studio-career-backup",
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      state: originalSave,
+    });
+    const backupInput = careerCard.locator(".filmwork-career-backup-import input[type=file]");
+    await backupInput.setInputFiles({ name: "invalid.json", mimeType: "application/json", buffer: Buffer.from("{}") });
+    await careerCard.locator(".filmwork-career-backup [role=alert]").waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "Invalid backup never changes the game");
+    await backupInput.setInputFiles({ name: "career.json", mimeType: "application/json", buffer: Buffer.from(careerBackup) });
+    const backupPrompt = careerCard.locator(".filmwork-career-backup-confirm");
+    await backupPrompt.waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "Backup preview never changes the game");
+    await backupPrompt.locator("button.filmverket-secondary-action").click();
+    assert.equal(await backupPrompt.count(), 0, "Cancel restore leaves the current game intact");
+    assert.deepEqual(await readSaved(page), originalSave, "Cancelled restore preserves all saved choices");
+    if (spec.viewport.width <= 400) {
+      await page.setViewportSize({ width: 320, height: 720 });
+      const backupWidth = await page.evaluate(() => ({
+        document: document.documentElement.scrollWidth,
+        viewport: document.documentElement.clientWidth,
+      }));
+      assert.ok(backupWidth.document <= backupWidth.viewport + 2, "Backup picker must not overflow at 320px: " + JSON.stringify(backupWidth));
+      await page.setViewportSize(spec.viewport);
+    }
+    await backupInput.setInputFiles({ name: "career.json", mimeType: "application/json", buffer: Buffer.from(careerBackup) });
+    await backupPrompt.waitFor({ state: "visible" });
+    await backupPrompt.locator("button.filmverket-primary-action").click();
+    await page.locator(".development-panel").waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "Confirmed backup restoration preserves every saved choice");
+    await page.locator(".game-navigation .game-brand").click();
+
     await page.locator(".filmwork-app-logo").click();
     await page.locator(".filmwork-resume-banner button").click();
     await page.locator(".development-panel").waitFor({ state: "visible" });

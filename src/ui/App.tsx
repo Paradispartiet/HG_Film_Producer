@@ -43,7 +43,7 @@ import { createProjectRunContext } from "./demo/createProjectRunContext";
 import { createNextProjectStepResult, getNextProjectOptions, type NextProjectChoices } from "./demo/createNextProjectStepRun";
 import { useFilmWorkLanguage } from "./filmWorkLanguage";
 import { type AppMode, type NextProjectFormErrors } from "./types";
-import { careerRunActions, createCareerProject, type CareerFilmProjectRun, useCareerRunState } from "./state/careerRunState";
+import { careerRunActions, createCareerProject, type CareerFilmProjectRun, type CareerRunState, useCareerRunState } from "./state/careerRunState";
 import { getClassicFilmScenarios, getFilmScenarioById, type FilmScenarioSeed } from "./data/filmScenarios";
 import { resolveScenarioProductionBrief } from "./data/scenarioProductionBriefs";
 import { createScenarioTargetChecklist, getScenarioTargetCount } from "./data/scenarioTargetChecklist";
@@ -80,7 +80,7 @@ export function App() {
   function resetCareer() { setCareerRun(careerRunActions.resetCareer()); setMode("setup"); setView("game"); }
 
   if (view === "landing") {
-    return <LandingScreen hasSave={hasSave} savedProjectTitle={activeProject?.run.project.title} onContinue={() => { setMode("setup"); setView("game"); }} onProductionCases={() => setView("scenarios")} onStart={() => { resetCareer(); }} />;
+    return <LandingScreen hasSave={hasSave} savedCareerState={careerRun} onRestoreCareer={(state: CareerRunState) => { setCareerRun(state); setMode("setup"); setView("game"); }} savedProjectTitle={activeProject?.run.project.title} onContinue={() => { setMode("setup"); setView("game"); }} onProductionCases={() => setView("scenarios")} onStart={() => { resetCareer(); }} />;
   }
 
   return (

@@ -68,6 +68,16 @@ type FilmWorkPlatformCopyShape = {
       readonly replaceCancel: string;
       readonly caseReplaceWarning: string;
       readonly caseReplaceConfirm: string;
+      readonly backupTitle: string;
+      readonly backupDescription: string;
+      readonly exportBackup: string;
+      readonly importBackup: string;
+      readonly backupError: string;
+      readonly invalidBackup: string;
+      readonly restoreTitle: string;
+      readonly restorePreview: (filmCount: number, title: string) => string;
+      readonly restoreWarning: string;
+      readonly restoreConfirm: string;
     };
   };
 };
@@ -219,6 +229,16 @@ test("saved-film resume and replace warnings are present in every supported lang
       copy.producer.studioCareer.replaceCancel,
       copy.producer.studioCareer.caseReplaceWarning,
       copy.producer.studioCareer.caseReplaceConfirm,
+      copy.producer.studioCareer.backupTitle,
+      copy.producer.studioCareer.backupDescription,
+      copy.producer.studioCareer.exportBackup,
+      copy.producer.studioCareer.importBackup,
+      copy.producer.studioCareer.backupError,
+      copy.producer.studioCareer.invalidBackup,
+      copy.producer.studioCareer.restoreTitle,
+      copy.producer.studioCareer.restoreWarning,
+      copy.producer.studioCareer.restoreConfirm,
+      copy.producer.studioCareer.restorePreview(2, "Sample"),
     ]) {
       assert.ok(typeof value === "string" && value.trim().length >= 5, `${language}: missing saved-run navigation copy`);
     }

@@ -502,3 +502,31 @@ body:has(.filmwork-app-shell) :is(.craft-library-trigger, .research-control-trig
   .app-shell .filmwork-scenario-reset-actions { flex-direction: column; }
   .app-shell .filmwork-scenario-reset-actions button { width: 100%; }
 }
+
+/* Compact Studio Career backup controls within the Producer card. */
+.filmwork-app-shell .filmwork-career-backup {
+  display: grid;
+  gap: 9px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(203, 164, 99, .35);
+}
+.filmwork-app-shell .filmwork-career-backup p { margin: 0; }
+.filmwork-app-shell .filmwork-career-backup-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.filmwork-app-shell .filmwork-career-backup-actions button { min-height: 46px; }
+.filmwork-app-shell .filmwork-career-backup-import { display: grid; gap: 5px; min-width: 0; font-size: .9rem; }
+.filmwork-app-shell .filmwork-career-backup-import input { min-width: 0; max-width: 100%; color: inherit; }
+.filmwork-app-shell .filmwork-career-backup-confirm {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid #cba463;
+  border-radius: 12px;
+  background: #29251e;
+}
+.filmwork-app-shell .filmwork-career-backup-confirm .producer-mode-actions { flex-wrap: wrap; }
+@media (max-width: 580px) {
+  .filmwork-app-shell .filmwork-career-backup-actions { flex-direction: column; align-items: stretch; }
+  .filmwork-app-shell .filmwork-career-backup-confirm .producer-mode-actions { flex-direction: column; }
+  .filmwork-app-shell .filmwork-career-backup-confirm button { width: 100%; }
+}
