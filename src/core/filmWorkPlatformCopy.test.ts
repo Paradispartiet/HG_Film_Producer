@@ -66,6 +66,8 @@ type FilmWorkPlatformCopyShape = {
       readonly replaceWarning: string;
       readonly replaceConfirm: string;
       readonly replaceCancel: string;
+      readonly caseReplaceWarning: string;
+      readonly caseReplaceConfirm: string;
     };
   };
 };
