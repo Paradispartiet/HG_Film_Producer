@@ -120,11 +120,18 @@ export function ShootPanel({
           <p>{handoffCopy.consequence}</p>
         </section>
       )}
-      <ShootSchedulePanel currentDay={currentDay} preparation={preparation} projectLabel={projectLabel} resolvedDays={shootDayResults} />
-      <SceneDifficultyPanel projectLabel={projectLabel} summaries={preparation.sceneDifficultySummaries} />
-      {latestDay && (
-        <ShootDayResultPanel dayNumber={shootDayResults.length} key={latestDay.updatedShootDay.id} preparation={preparation} projectLabel={projectLabel} result={latestDay} />
+      {currentDay && (
+        <div className="shoot-day-context-strip" aria-label={copy.schedule.eyebrow}>
+          <strong>{copy.schedule.dayOf(currentDay.dayNumber, totalDays)}</strong>
+          <span>{copy.schedule.plannedScenes}: {currentDay.sceneIds.length}</span>
+          <span>{copy.schedule.location}: {preparation.locationName}</span>
+        </div>
       )}
+      <details className="shoot-context-details">
+        <summary>{copy.schedule.heading(projectLabel)} · {copy.difficulty.heading}</summary>
+        <ShootSchedulePanel currentDay={currentDay} preparation={preparation} projectLabel={projectLabel} resolvedDays={shootDayResults} />
+        <SceneDifficultyPanel projectLabel={projectLabel} summaries={preparation.sceneDifficultySummaries} />
+      </details>
       {currentDay && (
         <>
           <ProductionEventPanel
@@ -156,6 +163,9 @@ export function ShootPanel({
             <button className="primary-button" disabled={!selectedProductionEventId} onClick={resolveDay} type="button">{copy.panel.resolveDay(currentDay.dayNumber)}</button>
           </div>
         </>
+      )}
+      {latestDay && (
+        <ShootDayResultPanel dayNumber={shootDayResults.length} key={latestDay.updatedShootDay.id} preparation={preparation} projectLabel={projectLabel} result={latestDay} />
       )}
       <details className="shoot-budget-details">
         <summary>{producerCopy.budgetSummary}</summary>
