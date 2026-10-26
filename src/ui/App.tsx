@@ -72,7 +72,7 @@ export function App() {
   function resetCareer() { setCareerRun(careerRunActions.resetCareer()); setMode("setup"); setView("game"); }
 
   if (view === "landing") {
-    return <LandingScreen hasSave={hasSave} onContinue={() => { setMode("setup"); setView("game"); }} onProductionCases={() => setView("scenarios")} onStart={() => { resetCareer(); }} />;
+    return <LandingScreen hasSave={hasSave} savedProjectTitle={activeProject?.run.project.title} onContinue={() => { setMode("setup"); setView("game"); }} onProductionCases={() => setView("scenarios")} onStart={() => { resetCareer(); }} />;
   }
 
   return (
