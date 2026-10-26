@@ -215,6 +215,8 @@ test("saved-film resume and replace warnings are present in every supported lang
       copy.home.resumeAction, copy.producer.studioCareer.replaceHeading,
       copy.producer.studioCareer.replaceWarning, copy.producer.studioCareer.replaceConfirm,
       copy.producer.studioCareer.replaceCancel,
+      copy.producer.studioCareer.caseReplaceWarning,
+      copy.producer.studioCareer.caseReplaceConfirm,
     ]) {
       assert.ok(typeof value === "string" && value.trim().length >= 5, `${language}: missing saved-run navigation copy`);
     }
