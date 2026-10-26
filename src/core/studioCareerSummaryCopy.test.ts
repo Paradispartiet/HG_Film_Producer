@@ -11,7 +11,8 @@ test("studio career summary copy covers every FilmWork language", () => {
 test("run summary copy localizes headings and status narratives", () => {
   assert.equal(STUDIO_CAREER_SUMMARY_COPY.en.summary.heading, "Project brief");
   assert.equal(STUDIO_CAREER_SUMMARY_COPY.nb.summary.heading, "Prosjektbrief");
-  assert.equal(STUDIO_CAREER_SUMMARY_COPY.fr.summary.editSetup, "Modifier la configuration");
+  assert.equal(STUDIO_CAREER_SUMMARY_COPY.fr.summary.editSetup, "Recommencer");
+  assert.equal(STUDIO_CAREER_SUMMARY_COPY.nb.summary.editSetup, "Start på nytt");
   assert.equal(STUDIO_CAREER_SUMMARY_COPY.pt.summary.career.reviewReady, "Revisão pronta");
   assert.match(STUDIO_CAREER_SUMMARY_COPY.nb.summary.shoot.completedDetail(3, 84), /3 opptaksdager/);
 });
