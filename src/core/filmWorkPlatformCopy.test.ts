@@ -37,6 +37,10 @@ type FilmWorkPlatformCopyShape = {
     readonly craftStatements: (count: number) => string;
     readonly connectedEntrances: (count: number) => string;
     readonly entrancesAria: string;
+    readonly resumeKicker: string;
+    readonly resumeFallback: string;
+    readonly resumeDescription: string;
+    readonly resumeAction: string;
     readonly gateways: Readonly<Record<(typeof GATEWAY_IDS)[number], GatewayCopy>>;
   };
   readonly producer: {
@@ -58,6 +62,10 @@ type FilmWorkPlatformCopyShape = {
       readonly bullets: readonly string[];
       readonly continueAction: string;
       readonly startAction: string;
+      readonly replaceHeading: string;
+      readonly replaceWarning: string;
+      readonly replaceConfirm: string;
+      readonly replaceCancel: string;
     };
   };
 };
