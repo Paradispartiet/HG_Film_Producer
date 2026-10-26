@@ -417,3 +417,38 @@ html { -webkit-text-size-adjust: 100%; }
 body:has(.filmwork-app-shell) :is(.craft-library-trigger, .research-control-trigger) {
   display: none;
 }
+
+/* Resume the saved film immediately; never bury a live career below the catalogue. */
+.filmwork-app-shell .filmwork-resume-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 16px;
+  padding: 18px 20px;
+  border: 1px solid #cba463;
+  border-radius: 16px;
+  background: #242720;
+}
+.filmwork-app-shell .filmwork-resume-banner > div { display: grid; min-width: 0; gap: 4px; }
+.filmwork-app-shell .filmwork-resume-banner strong { font-size: 20px; overflow-wrap: anywhere; }
+.filmwork-app-shell .filmwork-resume-banner p { margin: 0; color: #d1d7df; }
+.filmwork-app-shell .filmwork-resume-banner button { flex-shrink: 0; min-height: 48px; }
+.filmwork-app-shell .producer-replace-confirmation {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid #cba463;
+  border-radius: 12px;
+  background: #29251e;
+}
+.filmwork-app-shell .producer-replace-confirmation p { margin: 0; }
+.filmwork-app-shell .producer-replace-confirmation .producer-mode-actions { flex-wrap: wrap; }
+.filmwork-app-shell .producer-replace-confirmation button { min-height: 48px; }
+@media (max-width: 580px) {
+  .filmwork-app-shell .filmwork-resume-banner { flex-direction: column; align-items: stretch; padding: 16px; }
+  .filmwork-app-shell .filmwork-resume-banner button { width: 100%; }
+  .filmwork-app-shell .producer-replace-confirmation .producer-mode-actions { flex-direction: column; }
+  .filmwork-app-shell .producer-replace-confirmation button { width: 100%; }
+}
