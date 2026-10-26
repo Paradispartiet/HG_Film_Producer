@@ -452,3 +452,21 @@ body:has(.filmwork-app-shell) :is(.craft-library-trigger, .research-control-trig
   .filmwork-app-shell .producer-replace-confirmation .producer-mode-actions { flex-direction: column; }
   .filmwork-app-shell .producer-replace-confirmation button { width: 100%; }
 }
+
+/* Destructive in-game actions share the same two-step save protection as the Producer gateway. */
+.app-shell .filmwork-career-reset-confirmation {
+  display: grid;
+  gap: 9px;
+  margin: 0 0 18px;
+  padding: 18px;
+  border: 1px solid #cba463;
+  border-radius: 14px;
+  background: #29251e;
+}
+.app-shell .filmwork-career-reset-confirmation p { margin: 0; }
+.app-shell .filmwork-career-reset-confirmation > div { display: flex; flex-wrap: wrap; gap: 10px; }
+.app-shell .filmwork-career-reset-confirmation button { min-height: 48px; }
+@media (max-width: 580px) {
+  .app-shell .filmwork-career-reset-confirmation > div { flex-direction: column; }
+  .app-shell .filmwork-career-reset-confirmation button { width: 100%; }
+}
