@@ -307,6 +307,18 @@ async function run(browser, spec) {
     await storyHandoff.waitFor({ state: "visible" });
     assert.ok((await storyHandoff.innerText()).includes("100"), "Approved screenplay note changes visible shooting pressure");
     assert.ok((await storyHandoff.innerText()).length > 60, "The producer learns the film-craft consequences");
+    const planDisclosure = page.locator(".shoot-panel .shoot-context-details");
+    assert.equal(await planDisclosure.getAttribute("open"), null, "Planning background should start collapsed so decisions appear first");
+    assert.ok(await page.locator(".shoot-panel .shoot-day-context-strip").isVisible(), "Current shooting day remains visible above playable choices");
+    assert.equal(await planDisclosure.locator(".shoot-schedule-grid").isVisible(), false, "Full schedule stays available without taking over the screen");
+    await planDisclosure.locator("summary").click();
+    await planDisclosure.locator(".shoot-schedule-grid").waitFor({ state: "visible" });
+    await planDisclosure.locator(".scene-difficulty-grid").waitFor({ state: "visible" });
+    await planDisclosure.locator("summary").click();
+    assert.equal(await planDisclosure.locator(".scene-difficulty-grid").isVisible(), false, "Player can close supporting plans and return to decisions");
+    if (spec.viewport.width <= 400) {
+      await checkNarrowMobileChoices(page, spec, ".shoot-day-context-strip", "Current shoot context");
+    }
     let days = 0;
     while (await page.locator(".shoot-panel .shoot-actions button.primary-button").count()) {
       const financeDisclosure = page.locator(".shoot-panel details.shoot-budget-details");
