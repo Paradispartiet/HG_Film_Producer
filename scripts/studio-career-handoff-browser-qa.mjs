@@ -53,6 +53,12 @@ try {
       const latest = page.locator(".next-project-panel").last();
       const setup = latest.locator(".next-project-setup-section");
       await setup.waitFor({ state: "visible" });
+      await page.waitForFunction(() => {
+        const target = document.querySelector('[id^="next-project-setup-"]');
+        if (!target) return false;
+        const bounds = target.getBoundingClientRect();
+        return bounds.top >= -20 && bounds.top < window.innerHeight * 0.85 && bounds.bottom > 0;
+      }, null, { timeout: 8000 });
       assert.equal(await page.locator(".next-project-panel").count(), 1, `${language}: only Film One before continuation`);
       assert.equal(await page.locator(".studio-career-primary-action").count(), 1, `${language}: one active next action`);
       const id = await setup.getAttribute("id");
