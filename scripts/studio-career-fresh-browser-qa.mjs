@@ -137,6 +137,17 @@ async function run(browser, spec) {
     const resume = page.locator(".filmwork-resume-banner");
     await resume.waitFor({ state: "visible" });
     assert.ok((await resume.innerText()).includes("Harbor Lights"), "Home should identify the saved film");
+    if (spec.viewport.width <= 400) {
+      await page.setViewportSize({ width: 320, height: 720 });
+      const dimensions = await page.evaluate(() => ({
+        viewport: document.documentElement.clientWidth,
+        document: document.documentElement.scrollWidth,
+      }));
+      assert.ok(dimensions.document <= dimensions.viewport + 2,
+        "Saved-game banner must not cause horizontal overflow at 320px: " + JSON.stringify(dimensions));
+      assert.ok(await resume.locator("button").isVisible(), "Resume action remains usable at 320px");
+      await page.setViewportSize(spec.viewport);
+    }
     await page.goto(new URL("#/producer", SITE).href);
     const careerCard = page.locator(".producer-mode-card:not(.producer-mode-card--recommended)");
     await careerCard.locator(".filmverket-secondary-action").click();
