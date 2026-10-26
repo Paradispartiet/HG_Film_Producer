@@ -3,6 +3,7 @@ import "./studioCareerFlow.css";
 import type { StrategicGoal } from "../domain/career";
 import { isDeveloperToolsEnabled } from "../core/developerToolsAccess";
 import { STUDIO_CAREER_APP_SHELL_COPY } from "../core/studioCareerAppShellCopy";
+import { FILMWORK_PLATFORM_COPY } from "../core/filmWorkPlatformCopy";
 import { STUDIO_CAREER_SUMMARY_COPY } from "../core/studioCareerSummaryCopy";
 import { STUDIO_CAREER_WORKSPACE_COPY } from "../core/studioCareerWorkspaceCopy";
 import { CareerApplicationPanel } from "./components/CareerApplicationPanel";
@@ -104,6 +105,8 @@ function getStrategicGoal(run: ProjectSetupRun | import("./demo/createNextProjec
 function CareerDashboard({ careerRun, setCareerRun, onOpenProductionCases, onResetCareer, onStartScenario }: { readonly careerRun: readonly CareerFilmProjectRun[]; readonly setCareerRun: React.Dispatch<React.SetStateAction<{ version: 1; projects: readonly CareerFilmProjectRun[] }>>; readonly onOpenProductionCases: () => void; readonly onResetCareer: () => void; readonly onStartScenario: (scenario: FilmScenarioSeed) => void; }) {
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_APP_SHELL_COPY[language].career;
+  const resetCopy = FILMWORK_PLATFORM_COPY[language].producer.studioCareer;
+  const [confirmReset, setConfirmReset] = useState(false);
   const firstProject = careerRun[0];
   if (!firstProject) return null;
   const latestCareerResult = [...careerRun].reverse().find((project) => project.careerApplicationResult)?.careerApplicationResult;
@@ -115,7 +118,18 @@ function CareerDashboard({ careerRun, setCareerRun, onOpenProductionCases, onRes
   const displayedStudio = latestCareerResult ? { name: latestCareerResult.updatedStudio.name, money: latestCareerResult.updatedStudio.money, reputation: latestCareerResult.updatedStudio.reputation, prestige: latestCareerResult.updatedStudio.prestige, currentYear: latestCareerResult.updatedCareerState.currentYear, currentQuarter: latestCareerResult.updatedCareerState.currentQuarter.toUpperCase() } : getRunStudio(firstProject.run);
   function update(action: Parameters<typeof setCareerRun>[0]) { setCareerRun(action); }
 
-  return <><StudioHeader studio={displayedStudio} /><main><div className="game-section-heading"><div><span className="eyebrow">{isProductionCaseRun ? copy.productionCasesKicker : copy.experimentalKicker}</span><h2>{isProductionCaseRun ? copy.productionCasesHeading : copy.experimentalHeading}</h2></div><p>{isProductionCaseRun ? copy.productionCasesIntro : copy.experimentalIntro}</p><button className="secondary-button" onClick={onResetCareer} type="button">{copy.reset}</button></div><div className="custom-dashboard-grid"><div className="dashboard-main active-workspace">{careerRun.map((project, index) => <FilmProjectWorkspace isLatest={index === careerRun.length - 1} key={project.id} onOpenProductionCases={onOpenProductionCases} onStartScenario={onStartScenario} previousProject={index > 0 ? careerRun[index - 1] : undefined} project={project} setCareerRun={update} />)}</div><RunSummaryPanel careerApplicationResult={summaryProject.careerApplicationResult} developmentResult={summaryProject.developmentResult} postProductionResult={summaryProject.postProductionResult} preProductionResult={summaryProject.preProductionResult} releaseResult={summaryProject.releaseResult} run={summaryProject.run} strategicGoal={summaryStrategicGoal} shootResult={summaryProject.shootResult} onEdit={onResetCareer} /></div></main></>;
+  return <><StudioHeader studio={displayedStudio} /><main><div className="game-section-heading"><div><span className="eyebrow">{isProductionCaseRun ? copy.productionCasesKicker : copy.experimentalKicker}</span><h2>{isProductionCaseRun ? copy.productionCasesHeading : copy.experimentalHeading}</h2></div><p>{isProductionCaseRun ? copy.productionCasesIntro : copy.experimentalIntro}</p><button className="secondary-button" onClick={() => setConfirmReset(true)} type="button">{copy.reset}</button></div>
+    {confirmReset && (
+      <div className="filmwork-career-reset-confirmation" role="group" aria-label={resetCopy.replaceHeading}>
+        <strong>{resetCopy.replaceHeading}</strong>
+        <p>{resetCopy.replaceWarning}</p>
+        <div>
+          <button className="secondary-button" onClick={() => setConfirmReset(false)} type="button">{resetCopy.replaceCancel}</button>
+          <button className="primary-button" onClick={onResetCareer} type="button">{resetCopy.replaceConfirm}</button>
+        </div>
+      </div>
+    )}
+    <div className="custom-dashboard-grid"><div className="dashboard-main active-workspace">{careerRun.map((project, index) => <FilmProjectWorkspace isLatest={index === careerRun.length - 1} key={project.id} onOpenProductionCases={onOpenProductionCases} onStartScenario={onStartScenario} previousProject={index > 0 ? careerRun[index - 1] : undefined} project={project} setCareerRun={update} />)}</div><RunSummaryPanel careerApplicationResult={summaryProject.careerApplicationResult} developmentResult={summaryProject.developmentResult} postProductionResult={summaryProject.postProductionResult} preProductionResult={summaryProject.preProductionResult} releaseResult={summaryProject.releaseResult} run={summaryProject.run} strategicGoal={summaryStrategicGoal} shootResult={summaryProject.shootResult} onEdit={() => setConfirmReset(true)} /></div></main></>;
 }
 
 function FilmProjectWorkspace({ project, isLatest, onOpenProductionCases, onStartScenario, previousProject, setCareerRun }: { readonly project: CareerFilmProjectRun; readonly isLatest: boolean; readonly onOpenProductionCases: () => void; readonly onStartScenario: (scenario: FilmScenarioSeed) => void; readonly previousProject: CareerFilmProjectRun | undefined; readonly setCareerRun: React.Dispatch<React.SetStateAction<{ version: 1; projects: readonly CareerFilmProjectRun[] }>>; }) {
