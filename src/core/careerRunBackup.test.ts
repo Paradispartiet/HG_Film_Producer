@@ -1,9 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { createCareerRunBackup, previewCareerRunBackup } from "./careerRunBackup.js";
-import type { CareerRunState } from "../ui/state/careerRunState.js";
 
-function exampleCareer(): CareerRunState {
+function exampleCareer() {
   return {
     version: 1,
     projects: [{
@@ -22,7 +21,7 @@ function exampleCareer(): CareerRunState {
       releaseResult: null,
       careerApplicationResult: null,
     }],
-  } as unknown as CareerRunState;
+  };
 }
 
 test("Studio Career backup round-trips without dropping saved fields", () => {
@@ -55,7 +54,7 @@ test("multiple saved films retain their original order and progression", () => {
     run: { project: { title: "Film Two" } },
     shootDayResults: [{ updatedShootDay: { id: "day-1" } }],
   };
-  const career = { version: 1 as const, projects: [...first.projects, second] } as CareerRunState;
+  const career = { version: 1 as const, projects: [...first.projects, second] };
   const preview = previewCareerRunBackup(createCareerRunBackup(career));
   assert.equal(preview.ok, true);
   if (preview.ok) {
