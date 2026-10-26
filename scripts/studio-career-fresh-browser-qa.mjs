@@ -117,6 +117,19 @@ async function run(browser, spec) {
     // A saved career is surfaced on the actual app home; requesting a new one
     // cannot erase it without an explicit second choice.
     const originalSave = await readSaved(page);
+    // Both the dashboard reset and the summary's setup edit are destructive:
+    // neither may discard the career without explicit confirmation.
+    const inGameWarning = page.locator(".filmwork-career-reset-confirmation");
+    await page.locator(".game-section-heading > button.secondary-button").click();
+    await inGameWarning.waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "Dashboard reset prompt preserves the saved career");
+    await inGameWarning.locator("button.secondary-button").click();
+    assert.equal(await inGameWarning.count(), 0, "Dashboard reset cancellation closes the prompt");
+    await page.locator(".run-summary-panel .panel-heading button.secondary-button").click();
+    await inGameWarning.waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), originalSave, "Edit setup cannot silently reset the career");
+    await inGameWarning.locator("button.secondary-button").click();
+    assert.deepEqual(await readSaved(page), originalSave, "Both reset cancel paths leave the save unchanged");
     // The running career is an in-app view: a hash-only page.goto does not
     // unmount it. Use the actual game Home control, then the FilmWork home tab.
     await page.locator(".game-navigation .game-brand").click();
