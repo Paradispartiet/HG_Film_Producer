@@ -21,6 +21,10 @@ interface PostProductionCopy {
     readonly missingChoices: (labels: readonly string[]) => string;
     readonly selectedCount: (count: number) => string;
     readonly lockHint: string;
+    readonly previewHeading: string;
+    readonly previewDescription: string;
+    readonly previewButton: string;
+    readonly retestButton: string;
     readonly lockButton: (projectLabel: ProjectLabel) => string;
   };
   readonly edit: DecisionSectionCopy & { readonly pacing: string; readonly structure: string };
@@ -98,6 +102,10 @@ export const STUDIO_CAREER_POST_PRODUCTION_COPY: Readonly<Record<FilmWorkLanguag
       missingChoices: (labels) => `Choose ${formatList("en", labels)} before locking post-production.`,
       selectedCount: (count) => `${count}/5 finishing choices selected`,
       lockHint: "Locking runs the test screening, trailer cut and post-production evaluation.",
+      previewHeading: "Preview your audience screening",
+      previewDescription: "This is a rehearsal using your real choices and saved footage. Review the feedback, change your editing decisions above, and run it again before locking.",
+      previewButton: "Test the current cut",
+      retestButton: "Test this cut again",
       lockButton: (projectLabel) => projectLabel === "first film" ? "Lock post-production" : `Lock post-production for ${formatProjectLabel("en", projectLabel)}`
     },
     edit: { eyebrow: "Editorial", heading: "Shape the cut", description: "Choose the cut strategy that controls rhythm and story structure.", effects: ["Pacing", "Structure"], pacing: "Pacing", structure: "Structure" },
@@ -136,6 +144,10 @@ export const STUDIO_CAREER_POST_PRODUCTION_COPY: Readonly<Record<FilmWorkLanguag
       missingChoices: (labels) => `Velg ${formatList("nb", labels)} før du låser postproduksjonen.`,
       selectedCount: (count) => `${count}/5 ferdigstillingsvalg valgt`,
       lockHint: "Låsing kjører testvisning, trailerklipp og evaluering av postproduksjonen.",
+      previewHeading: "Prøvevis klippen",
+      previewDescription: "Dette er en prøvevisning basert på dine valg og lagrede opptak. Se tilbakemeldingene, juster klippevalgene ovenfor og test på nytt før du låser.",
+      previewButton: "Prøvevis klippen",
+      retestButton: "Test klippen på nytt",
       lockButton: (projectLabel) => projectLabel === "first film" ? "Lås postproduksjon" : `Lås postproduksjon for ${formatProjectLabel("nb", projectLabel)}`
     },
     edit: { eyebrow: "Klipp", heading: "Form klippen", description: "Velg klippestrategien som styrer rytme og historiestruktur.", effects: ["Tempo", "Struktur"], pacing: "Tempo", structure: "Struktur" },
@@ -174,6 +186,10 @@ export const STUDIO_CAREER_POST_PRODUCTION_COPY: Readonly<Record<FilmWorkLanguag
       missingChoices: (labels) => `Choisissez ${formatList("fr", labels)} avant de verrouiller la postproduction.`,
       selectedCount: (count) => `${count}/5 choix de finition sélectionnés`,
       lockHint: "Le verrouillage lance la projection test, le montage de la bande-annonce et l'évaluation de la postproduction.",
+      previewHeading: "Tester le montage avant verrouillage",
+      previewDescription: "Cette simulation utilise vos choix et les prises enregistrées. Examinez les réactions, ajustez le montage ci-dessus puis relancez le test avant de verrouiller.",
+      previewButton: "Tester le montage",
+      retestButton: "Relancer le test",
       lockButton: (projectLabel) => projectLabel === "first film" ? "Verrouiller la postproduction" : `Verrouiller la postproduction de ${formatProjectLabel("fr", projectLabel)}`
     },
     edit: { eyebrow: "Montage", heading: "Façonner le montage", description: "Choisissez la stratégie de montage qui contrôle le rythme et la structure du récit.", effects: ["Rythme", "Structure"], pacing: "Rythme", structure: "Structure" },
@@ -212,6 +228,10 @@ export const STUDIO_CAREER_POST_PRODUCTION_COPY: Readonly<Record<FilmWorkLanguag
       missingChoices: (labels) => `Escolha ${formatList("pt", labels)} antes de fechar a pós-produção.`,
       selectedCount: (count) => `${count}/5 escolhas de finalização selecionadas`,
       lockHint: "Fechar executa a sessão de teste, o corte do trailer e a avaliação da pós-produção.",
+      previewHeading: "Testar a montagem antes de fechar",
+      previewDescription: "Esta simulação usa as suas decisões e as filmagens guardadas. Analise os resultados, ajuste a montagem acima e repita o teste antes de fechar.",
+      previewButton: "Testar a montagem",
+      retestButton: "Repetir o teste",
       lockButton: (projectLabel) => projectLabel === "first film" ? "Fechar pós-produção" : `Fechar pós-produção de ${formatProjectLabel("pt", projectLabel)}`
     },
     edit: { eyebrow: "Montagem", heading: "Dar forma à montagem", description: "Escolha a estratégia de montagem que controla o ritmo e a estrutura da história.", effects: ["Ritmo", "Estrutura"], pacing: "Ritmo", structure: "Estrutura" },

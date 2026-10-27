@@ -574,9 +574,39 @@ async function run(browser, spec) {
     const boldCut = post.locator('.editing-tradeoff-section input[value="bold_cut"]');
     await boldCut.check();
     assert.equal(await boldCut.isChecked(), true, "Bold cut must be selected before locking");
+    const previewButton = post.locator(".post-production-action-buttons button.secondary-button");
+    const preview = post.locator(".post-production-preview");
+    const beforePreviewSave = await readSaved(page);
+    await previewButton.click();
+    await preview.waitFor({ state: "visible" });
+    assert.deepEqual(await readSaved(page), beforePreviewSave, "Screening a trial cut must not lock or mutate the saved film");
+    const boldPreviewScores = (await preview.locator(".post-metric strong").allInnerTexts()).map(Number);
+    assert.equal(boldPreviewScores.length, 5, "Preview must report all actual audience scores");
+
+    await post.locator('.editing-tradeoff-section input[value="balanced"]').check();
+    assert.equal(await preview.count(), 0, "Changing the creative cut invalidates old screening feedback");
+    await previewButton.click();
+    await preview.waitFor({ state: "visible" });
+    const balancedPreviewScores = (await preview.locator(".post-metric strong").allInnerTexts()).map(Number);
+    assert.notDeepEqual(balancedPreviewScores, boldPreviewScores, "Creative changes must produce new screening results");
+
+    await boldCut.check();
+    assert.equal(await preview.count(), 0, "A previous screening must not be presented as current");
+    await previewButton.click();
+    await preview.waitFor({ state: "visible" });
+    const lockedPreviewScores = (await preview.locator(".post-metric strong").allInnerTexts()).map(Number);
+    assert.deepEqual(lockedPreviewScores, boldPreviewScores, "Replaying unchanged choices must be deterministic");
+    await checkNarrowMobileChoices(page, spec, ".post-production-panel", "Screening preview");
     await post.locator(".post-production-actions button.primary-button").click();
     await awaitSaved(page, "postProductionResult");
     const savedPost = (await readSaved(page)).projects[0];
+    assert.deepEqual(lockedPreviewScores, [
+      savedPost.postProductionResult.testScreeningResult.clarityScore,
+      savedPost.postProductionResult.testScreeningResult.pacingScore,
+      savedPost.postProductionResult.testScreeningResult.emotionScore,
+      savedPost.postProductionResult.testScreeningResult.audienceHookScore,
+      savedPost.postProductionResult.testScreeningResult.confusionRisk
+    ], "Locking must commit exactly the test-screened cut");
     assert.equal(savedPost.postProductionChoices.editingApproachId, "bold_cut", "Editing choice must persist in career save");
     assert.equal(savedPost.postProductionResult.editingApproachId, "bold_cut", "Editing choice must reach the game engine");
     assert.deepEqual(savedPost.postProductionResult.scriptCraftScores, scriptResult.scoreBreakdown, "Locked cut uses approved screenplay conflict, pacing and emotion");

@@ -435,6 +435,34 @@
   .editing-footage-status { padding: 11px; }
 }
 
+/* Rehearse the cut before committing a locked post-production result. */
+.post-production-preview {
+  border-top: 1px solid var(--line-soft);
+  background: rgba(5, 7, 9, 0.18);
+}
+.post-production-preview-guidance {
+  margin: 0;
+  padding: 18px 26px 4px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted-light);
+}
+.post-production-actions > .post-production-action-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.post-production-action-buttons button {
+  min-height: 44px;
+  font-size: 12px;
+}
+@media (max-width: 560px) {
+  .post-production-preview-guidance { padding-inline: 18px; }
+  .post-production-actions > .post-production-action-buttons { width: 100%; }
+  .post-production-action-buttons button { width: 100%; }
+}
+
 /* A creative tradeoff is independent of the paid edit-decision catalogue. */
 .editing-tradeoff-section {
   margin: 18px 0;
