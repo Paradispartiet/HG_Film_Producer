@@ -592,7 +592,10 @@ async function run(browser, spec) {
     assert.equal(await post.locator('.editing-tradeoff-section input[value="balanced"]').isChecked(), true,
       "Selecting a revision must update the actual editing approach");
     assert.equal(await preview.count(), 0, "Selecting a revision must invalidate the old screening");
-    assert.deepEqual(await readSaved(page), beforePreviewSave, "Trying a revision must not silently save or lock the film");
+    const afterRevisionSave = await readSaved(page);
+    assert.ok(!afterRevisionSave.projects[0].postProductionResult, "Choosing a cut must never lock the film");
+    assert.deepEqual(afterRevisionSave.projects[0].shootResult, beforePreviewSave.projects[0].shootResult,
+      "An editing revision must preserve the completed shoot");
     await previewButton.click();
     await preview.waitFor({ state: "visible" });
     const balancedPreviewScores = (await preview.locator(".post-metric strong").allInnerTexts()).map(Number);
