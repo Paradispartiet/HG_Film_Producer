@@ -7,6 +7,7 @@ interface DramaturgyCopy {
   readonly current: string;
   readonly change: string;
   readonly choose: string;
+  readonly swipeHint: string;
   readonly note: string;
   readonly scriptContext: (conflict: number, pacing: number) => string;
   readonly footageContext: (missing: number) => string;
@@ -21,7 +22,7 @@ export const STUDIO_CAREER_DRAMATURGY_COPY: Readonly<Record<FilmWorkLanguage, Dr
   nb: {
     heading: "Fortell historien på en annen måte",
     introduction: "Utforsk vendepunkt, konflikt, spenningsoppbygging og scenerekkefølge. Dette er simulerte klippegrep basert på ditt manus og det som faktisk ble filmet.",
-    current: "Valgt grep", change: "Beregnet endring", choose: "Prøv dette grepet", 
+    current: "Valgt grep", change: "Beregnet endring", choose: "Prøv dette grepet", swipeHint: "Sveip sidelengs for flere grep", 
     note: "Tallene er beregnet i samme prøvevisningsmotor som sluttfilmen. Et valg kan svekke andre sider av fortellingen. Ingen ny opptaksdag opprettes, og filmen låses ikke.",
     scriptContext: (conflict, pacing) => `Manusgrunnlag: konflikt ${conflict}/100 · rytme ${pacing}/100.`,
     footageContext: (missing) => `${missing} uferdige scener i opptaksrapporten kan begrense dramaturgien.`,
@@ -36,7 +37,7 @@ export const STUDIO_CAREER_DRAMATURGY_COPY: Readonly<Record<FilmWorkLanguage, Dr
   en: {
     heading: "Tell the story differently",
     introduction: "Explore turning points, conflict, suspense and scene order. These are simulated editing decisions grounded in your screenplay and recorded footage.",
-    current: "Selected technique", change: "Projected change", choose: "Try this technique",
+    current: "Selected technique", change: "Projected change", choose: "Try this technique", swipeHint: "Swipe sideways for more choices",
     note: "Scores come from the same screening engine as the final film. A technique may worsen another aspect of storytelling. No new footage is invented, and the film stays unlocked.",
     scriptContext: (conflict, pacing) => `Screenplay evidence: conflict ${conflict}/100 · pacing ${pacing}/100.`,
     footageContext: (missing) => `${missing} unfinished recorded scenes may restrict the available structure.`,
@@ -51,7 +52,7 @@ export const STUDIO_CAREER_DRAMATURGY_COPY: Readonly<Record<FilmWorkLanguage, Dr
   fr: {
     heading: "Raconter autrement",
     introduction: "Explorez les tournants, le conflit, le suspense et l'ordre des scènes. Ces montages simulés utilisent le scénario et les prises réellement enregistrées.",
-    current: "Choix actuel", change: "Variation simulée", choose: "Essayer ce choix",
+    current: "Choix actuel", change: "Variation simulée", choose: "Essayer ce choix", swipeHint: "Balayez sur le côté pour plus de choix",
     note: "Les scores viennent du même moteur que le film final. Un choix peut affaiblir un autre aspect du récit. Aucune prise n'est inventée et le film reste modifiable.",
     scriptContext: (conflict, pacing) => `Scénario : conflit ${conflict}/100 · rythme ${pacing}/100.`,
     footageContext: (missing) => `${missing} scènes non terminées peuvent limiter la construction du récit.`,
@@ -66,7 +67,7 @@ export const STUDIO_CAREER_DRAMATURGY_COPY: Readonly<Record<FilmWorkLanguage, Dr
   pt: {
     heading: "Contar a história de outra forma",
     introduction: "Explora pontos de viragem, conflito, suspense e ordem das cenas. Estas decisões de montagem são simuladas a partir do guião e das imagens gravadas.",
-    current: "Escolha atual", change: "Alteração prevista", choose: "Experimentar escolha",
+    current: "Escolha atual", change: "Alteração prevista", choose: "Experimentar escolha", swipeHint: "Desliza para ver mais escolhas",
     note: "Os valores vêm do mesmo motor da versão final. Uma técnica pode prejudicar outro aspeto da história. Não se inventam cenas e o filme não fica bloqueado.",
     scriptContext: (conflict, pacing) => `Guião: conflito ${conflict}/100 · ritmo ${pacing}/100.`,
     footageContext: (missing) => `${missing} cenas por concluir podem limitar a estrutura narrativa.`,
