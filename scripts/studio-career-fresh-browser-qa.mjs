@@ -319,6 +319,33 @@ async function run(browser, spec) {
     if (spec.viewport.width <= 400) {
       await checkNarrowMobileChoices(page, spec, ".shoot-day-context-strip", "Current shoot context");
     }
+    const eventChoices = page.locator('.shoot-panel .production-event-grid input[type="radio"]');
+    assert.equal(await eventChoices.count(), 10, "All ten shoot events remain available");
+    assert.equal(await page.locator(".shoot-panel .production-event-card .event-consequences").count(), 10,
+      "Every option retains visible comparable cost, delay and upside");
+    if (spec.viewport.width <= 400) {
+      await page.setViewportSize({ width: 320, height: 780 });
+      await eventChoices.nth(4).check();
+      const selectedEvent = page.locator(".shoot-panel .production-event-card--selected");
+      assert.equal(await selectedEvent.count(), 1, "Exactly one event is selected");
+      assert.ok(await selectedEvent.locator("p").isVisible(), "Selected event retains its full story");
+      assert.equal(await page.locator(".shoot-panel .production-event-card:not(.production-event-card--selected) > p").first().isVisible(), false,
+        "Other event cards remain compact on mobile");
+      const metrics = selectedEvent.locator(".event-consequences");
+      const readable = await metrics.evaluate((element) => ({
+        width: element.clientWidth,
+        scroll: element.scrollWidth,
+        labelSize: parseFloat(getComputedStyle(element.querySelector("dt")).fontSize),
+        valueSize: parseFloat(getComputedStyle(element.querySelector("dd")).fontSize)
+      }));
+      assert.ok(readable.labelSize >= 11 && readable.valueSize >= 13,
+        "Costs, delays and creative upside must be legible on phones: " + JSON.stringify(readable));
+      assert.ok(readable.scroll <= readable.width + 2,
+        "Event comparisons must fit in 320px: " + JSON.stringify(readable));
+      await checkNarrowMobileChoices(page, { ...spec, viewport: { width: 320, height: 780 } },
+        ".shoot-panel .production-event-grid", "Compact shoot event choices");
+      await page.setViewportSize(spec.viewport);
+    }
     let days = 0;
     while (await page.locator(".shoot-panel .shoot-actions button.primary-button").count()) {
       const financeDisclosure = page.locator(".shoot-panel details.shoot-budget-details");
