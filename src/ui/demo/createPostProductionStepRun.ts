@@ -123,7 +123,8 @@ export function createPostProductionStepResult(
     scriptDraftScore,
     editingApproachId,
     scriptCraftScores,
-    getStudioCareerFootageEvidence(shootResult.resolvedDays)
+    getStudioCareerFootageEvidence(shootResult.resolvedDays),
+    { sound, music }
   );
   const trailerCutResult = createTrailerCut(preProductionResult.projectState, finishingPlan, trailer);
   const postProductionEvaluation = evaluatePostProduction(
