@@ -96,7 +96,9 @@ export function PostProductionPanel({
   }
   const screeningSignature = makeScreeningSignature(choices);
   const activePreview = screeningPreview?.signature === screeningSignature
-    && screeningPreview.context === projectContext
+    // App.tsx recreates its context wrapper after a saved choice. Compare the
+    // actual immutable film state instead, alongside the production evidence.
+    && screeningPreview.context.filmProjectState === projectContext.filmProjectState
     && screeningPreview.preProduction === preProductionResult
     && screeningPreview.shoot === shootResult
     ? screeningPreview.result
