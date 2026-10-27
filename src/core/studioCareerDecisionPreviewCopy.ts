@@ -4,6 +4,9 @@ import type { FilmWorkLanguage } from "./filmWorkLanguage.js";
 type ShootDecisionPreviewCopy = {
   readonly heading: string;
   readonly intro: string;
+  readonly event: string;
+  readonly producerSupport: string;
+  readonly shootResponse: string;
   readonly takeQuality: string;
   readonly completedScenes: string;
   readonly delayedScenes: string;
@@ -17,6 +20,9 @@ export const SHOOT_DECISION_PREVIEW_COPY: Readonly<Record<FilmWorkLanguage, Shoo
   en: {
     heading: "Before you confirm",
     intro: "With these choices, today's shooting result would be:",
+    event: "On-set situation",
+    producerSupport: "Producer priority",
+    shootResponse: "Shooting approach",
     takeQuality: "Take quality",
     completedScenes: "Scenes completed",
     delayedScenes: "Scenes delayed",
@@ -28,6 +34,9 @@ export const SHOOT_DECISION_PREVIEW_COPY: Readonly<Record<FilmWorkLanguage, Shoo
   nb: {
     heading: "Før du bekrefter",
     intro: "Med disse valgene blir det beregnede resultatet for opptaksdagen:",
+    event: "Hendelse på settet",
+    producerSupport: "Produsentprioritet",
+    shootResponse: "Opptaksstrategi",
     takeQuality: "Opptakskvalitet",
     completedScenes: "Fullførte scener",
     delayedScenes: "Forsinkede scener",
@@ -39,6 +48,9 @@ export const SHOOT_DECISION_PREVIEW_COPY: Readonly<Record<FilmWorkLanguage, Shoo
   fr: {
     heading: "Avant de confirmer",
     intro: "Avec ces choix, le résultat calculé de la journée serait :",
+    event: "Situation sur le plateau",
+    producerSupport: "Priorité de production",
+    shootResponse: "Méthode de tournage",
     takeQuality: "Qualité des prises",
     completedScenes: "Scènes terminées",
     delayedScenes: "Scènes retardées",
@@ -50,6 +62,9 @@ export const SHOOT_DECISION_PREVIEW_COPY: Readonly<Record<FilmWorkLanguage, Shoo
   pt: {
     heading: "Antes de confirmar",
     intro: "Com estas escolhas, o resultado calculado do dia seria:",
+    event: "Situação no plateau",
+    producerSupport: "Prioridade da produção",
+    shootResponse: "Estratégia de rodagem",
     takeQuality: "Qualidade das tomadas",
     completedScenes: "Cenas concluídas",
     delayedScenes: "Cenas adiadas",

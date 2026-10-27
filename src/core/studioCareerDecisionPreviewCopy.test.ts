@@ -6,7 +6,7 @@ import { SHOOT_DECISION_PREVIEW_COPY } from "./studioCareerDecisionPreviewCopy.j
 test("decision preview explains the same unsaved production result in all four languages", () => {
   for (const language of FILMWORK_LANGUAGES) {
     const copy = SHOOT_DECISION_PREVIEW_COPY[language];
-    for (const key of ["heading", "intro", "takeQuality", "completedScenes", "delayedScenes", "dayCost", "scheduleDelta", "footnote"] as const) {
+    for (const key of ["heading", "intro", "event", "producerSupport", "shootResponse", "takeQuality", "completedScenes", "delayedScenes", "dayCost", "scheduleDelta", "footnote"] as const) {
       assert.ok(copy[key].trim().length > 3, `${language} missing ${key}`);
     }
     assert.match(copy.days(1), /\+1/);

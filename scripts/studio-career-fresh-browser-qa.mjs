@@ -400,6 +400,23 @@ async function run(browser, spec) {
           return state?.projects?.[0]?.selectedShootStrategyId === id;
         }, { key: SAVE_KEY, id: chosenResponse });
       }
+      // The review must echo actual selected choices rather than fixed copy
+      // or a separate simulation, on every language and phone size.
+      const decisionReview = outcome.locator(".shoot-decision-preview-selections");
+      assert.equal(await decisionReview.locator("div[data-decision]").count(), 3,
+        "The confirmation review names event, producer support and shoot response");
+      assert.equal(await decisionReview.locator('[data-decision="event"] dd').innerText(),
+        await page.locator(".shoot-panel .production-event-card--selected > strong").innerText(),
+        "The review shows the actual chosen event");
+      assert.equal(await decisionReview.locator('[data-decision="producer"] dd').innerText(),
+        await page.locator(".shoot-panel .producer-priority-card--selected strong").innerText(),
+        "The review updates when producer support changes");
+      assert.equal(await decisionReview.locator('[data-decision="strategy"] dd').innerText(),
+        await page.locator(".shoot-panel .shoot-strategy-card--selected strong").innerText(),
+        "The review updates when shooting approach changes");
+      if (days === 0) await checkNarrowMobileChoices(page, spec,
+        ".shoot-decision-preview-selections", "Selected production decisions");
+
       const preview = monitor.locator(".shoot-budget-projection");
       const predictedCost = Number(await preview.getAttribute("data-forecast-cost"));
       const outcomeForecast = {
