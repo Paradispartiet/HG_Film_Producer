@@ -13,6 +13,7 @@ import { createTrailerCut } from "../../core/createTrailerCut.js";
 import { evaluatePostProduction } from "../../core/evaluatePostProduction.js";
 import { runTestScreening, type ScriptCraftScores } from "../../core/runTestScreening.js";
 import { getStudioCareerEditingApproach, type StudioCareerEditingApproachId } from "../../core/studioCareerEditingApproach.js";
+import { getStudioCareerDramaturgyEffect, type StudioCareerDramaturgyId } from "../../core/studioCareerDramaturgy.js";
 import { getStudioCareerFootageEvidence } from "../../core/studioCareerFootageEditing.js";
 import type {
   ColorDecision,
@@ -74,6 +75,8 @@ export interface PostProductionOptions {
 export interface PostProductionStepResult {
   /** Absent on previously completed saved films. */
   readonly editingApproachId?: StudioCareerEditingApproachId;
+  /** Optional for historical careers with no story structure revision. */
+  readonly dramaturgyDecisionId?: StudioCareerDramaturgyId;
   /** Optional for old saved films; actual approved screenplay craft axes. */
   readonly scriptCraftScores?: ScriptCraftScores;
   readonly postProductionPlan: PostProductionPlan;
@@ -115,6 +118,7 @@ export function createPostProductionStepResult(
     notes: [...colorApplication.plan.notes, `Trailer strategy selected: ${trailer.title}.`]
   };
   const editingApproachId = getStudioCareerEditingApproach(choices.editingApproachId).id;
+  const dramaturgyDecisionId = getStudioCareerDramaturgyEffect(choices.dramaturgyDecisionId).id;
   const testScreeningResult = runTestScreening(
     preProductionResult.projectState,
     finishingPlan,
@@ -124,7 +128,8 @@ export function createPostProductionStepResult(
     editingApproachId,
     scriptCraftScores,
     getStudioCareerFootageEvidence(shootResult.resolvedDays),
-    { sound, music }
+    { sound, music },
+    dramaturgyDecisionId
   );
   const trailerCutResult = createTrailerCut(preProductionResult.projectState, finishingPlan, trailer);
   const postProductionEvaluation = evaluatePostProduction(
@@ -143,6 +148,7 @@ export function createPostProductionStepResult(
 
   return {
     editingApproachId,
+    ...(choices.dramaturgyDecisionId ? { dramaturgyDecisionId } : {}),
     ...(scriptCraftScores ? { scriptCraftScores } : {}),
     postProductionPlan,
     appliedDecisions: {
