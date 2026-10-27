@@ -610,11 +610,37 @@ async function run(browser, spec) {
     await preview.waitFor({ state: "visible" });
     const lockedPreviewScores = (await preview.locator(".post-metric strong").allInnerTexts()).map(Number);
     assert.deepEqual(lockedPreviewScores, boldPreviewScores, "Replaying unchanged choices must be deterministic");
+    // Sound and music cards predict the scores from the SAME engine that locks
+    // the film. Choices change the actual decision and require a fresh preview.
+    let finalCraftScores = lockedPreviewScores;
+    const craft = preview.locator(".screening-craft-revision");
+    assert.equal(await craft.locator('.screening-craft-group[data-craft-kind="sound"] .screening-craft-option').count(), 2,
+      "Two sound choices must be compared");
+    assert.equal(await craft.locator('.screening-craft-group[data-craft-kind="music"] .screening-craft-option').count(), 2,
+      "Two music choices must be compared");
+    assert.equal(await craft.locator(".screening-craft-option .screening-revision-deltas > span").count(), 20,
+      "Both craft groups must project all five audience values");
+    for (const kind of ["sound", "music"]) {
+      const choice = craft.locator(`.screening-craft-group[data-craft-kind="${kind}"] .screening-craft-option`).first();
+      const predicted = JSON.parse(await choice.getAttribute("data-predicted-scores"));
+      assert.equal(predicted.length, 5);
+      await choice.click();
+      assert.equal(await preview.count(), 0, "A revised mix or score invalidates the old preview");
+      const afterCraft = await readSaved(page);
+      assert.ok(!afterCraft.projects[0].postProductionResult, "Craft revisions must not lock the film");
+      assert.deepEqual(afterCraft.projects[0].shootResult, beforePreviewSave.projects[0].shootResult,
+        "Mix and score revisions must retain the filmed footage");
+      await previewButton.click();
+      await preview.waitFor({ state: "visible" });
+      finalCraftScores = (await preview.locator(".post-metric strong").allInnerTexts()).map(Number);
+      assert.deepEqual(finalCraftScores, predicted,
+        `The actual new ${kind} screening must equal its projected scores`);
+    }
     await checkNarrowMobileChoices(page, spec, ".post-production-panel", "Screening preview");
     await post.locator(".post-production-actions button.primary-button").click();
     await awaitSaved(page, "postProductionResult");
     const savedPost = (await readSaved(page)).projects[0];
-    assert.deepEqual(lockedPreviewScores, [
+    assert.deepEqual(finalCraftScores, [
       savedPost.postProductionResult.testScreeningResult.clarityScore,
       savedPost.postProductionResult.testScreeningResult.pacingScore,
       savedPost.postProductionResult.testScreeningResult.emotionScore,
