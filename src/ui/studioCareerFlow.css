@@ -419,6 +419,22 @@
   .shoot-strategy-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
+/* Keep the actual footage evidence legible before the editing choice, even at 320px. */
+.editing-footage-status {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.editing-footage-status strong { display: block; font-size: 14px; }
+.editing-footage-status p { margin: 7px 0; font-size: 13px; line-height: 1.5; }
+.editing-footage-status small { display: block; color: var(--muted-light); line-height: 1.5; }
+@media (max-width: 520px) {
+  .editing-footage-status { padding: 11px; }
+}
+
 /* A creative tradeoff is independent of the paid edit-decision catalogue. */
 .editing-tradeoff-section {
   margin: 18px 0;
