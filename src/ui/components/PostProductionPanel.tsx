@@ -21,6 +21,7 @@ import { MusicDecisionPanel } from "./MusicDecisionPanel.js";
 import { PostProductionResultPanel } from "./PostProductionResultPanel.js";
 import { SoundDecisionPanel } from "./SoundDecisionPanel.js";
 import { TrailerStrategyPanel } from "./TrailerStrategyPanel.js";
+import { TestScreeningPanel } from "./TestScreeningPanel.js";
 
 interface PostProductionPanelProps {
   readonly projectContext: ProjectRunContext;
@@ -50,6 +51,14 @@ export function PostProductionPanel({
   id
 }: PostProductionPanelProps) {
   const [message, setMessage] = useState("");
+  // A preview never commits a film; it is valid only for this exact cut and its source evidence.
+  const [screeningPreview, setScreeningPreview] = useState<{
+    readonly signature: string;
+    readonly context: ProjectRunContext;
+    readonly preProduction: PreProductionStepResult;
+    readonly shoot: ShootStepResult;
+    readonly result: PostProductionStepResult;
+  } | null>(null);
   const [language] = useFilmWorkLanguage();
   const copy = STUDIO_CAREER_POST_PRODUCTION_COPY[language];
   const options = getPostProductionOptions();
@@ -69,6 +78,20 @@ export function PostProductionPanel({
     ["trailerStrategyId", copy.panel.choiceLabels.trailer]
   ];
 
+  const screeningSignature = JSON.stringify([
+    projectContext.filmProjectState.id,
+    ...choiceKeys.map((key) => choices[key]),
+    selectedEditingApproach,
+    scriptDraftScore,
+    scriptCraftScores
+  ]);
+  const activePreview = screeningPreview?.signature === screeningSignature
+    && screeningPreview.context === projectContext
+    && screeningPreview.preProduction === preProductionResult
+    && screeningPreview.shoot === shootResult
+    ? screeningPreview.result
+    : null;
+
   if (result) {
     // Old saved results must not claim the draft influenced a screening
     // that was calculated before this mechanic existed.
@@ -79,6 +102,24 @@ export function PostProductionPanel({
 
   function select(key: keyof PostProductionChoices, value: string) {
     onChange({ ...choices, [key]: value });
+    setScreeningPreview(null);
+    setMessage("");
+  }
+
+  function previewTestScreening() {
+    const missing = choiceLabels.filter(([key]) => !choices[key]).map(([, label]) => label);
+    if (missing.length > 0) {
+      setMessage(copy.panel.missingChoices(missing));
+      return;
+    }
+
+    const next = createPostProductionStepResult(
+      projectContext, preProductionResult, shootResult, choices, scriptDraftScore, scriptCraftScores
+    );
+    setScreeningPreview({
+      signature: screeningSignature, context: projectContext,
+      preProduction: preProductionResult, shoot: shootResult, result: next
+    });
     setMessage("");
   }
 
@@ -90,7 +131,9 @@ export function PostProductionPanel({
     }
 
     setMessage("");
-    onLock(createPostProductionStepResult(projectContext, preProductionResult, shootResult, choices, scriptDraftScore, scriptCraftScores));
+    onLock(activePreview ?? createPostProductionStepResult(
+      projectContext, preProductionResult, shootResult, choices, scriptDraftScore, scriptCraftScores
+    ));
   }
 
   return (
@@ -142,7 +185,7 @@ export function PostProductionPanel({
                 name="studio-career-editing-approach"
                 value={approachId}
                 checked={selectedEditingApproach === approachId}
-                onChange={() => onChange({ ...choices, editingApproachId: approachId })}
+                onChange={() => select("editingApproachId", approachId)}
               />
               <span><strong>{copy.editingApproach.options[approachId].title}</strong><small>{copy.editingApproach.options[approachId].tradeoff}</small></span>
             </label>
@@ -153,6 +196,16 @@ export function PostProductionPanel({
       <MusicDecisionPanel onSelect={(id) => select("musicDecisionId", id)} options={options.musicDecisions} selectedId={choices.musicDecisionId} />
       <ColorDecisionPanel onSelect={(id) => select("colorDecisionId", id)} options={options.colorDecisions} selectedId={choices.colorDecisionId} />
       <TrailerStrategyPanel onSelect={(id) => select("trailerStrategyId", id)} options={options.trailerStrategies} selectedId={choices.trailerStrategyId} />
+      {activePreview && (
+        <section className="post-production-preview" aria-label={copy.panel.previewHeading}>
+          <p className="post-production-preview-guidance">{copy.panel.previewDescription}</p>
+          <TestScreeningPanel
+            result={activePreview.testScreeningResult}
+            scriptDraftScore={scriptDraftScore}
+            editingApproachId={activePreview.editingApproachId}
+          />
+        </section>
+      )}
       <div className="post-production-actions">
         <div>
           <span className={message ? "inline-message inline-message--error" : "inline-message"} role="status">
@@ -160,7 +213,12 @@ export function PostProductionPanel({
           </span>
           <small>{copy.panel.lockHint}</small>
         </div>
-        <button className="primary-button" onClick={lockPostProduction} type="button">{copy.panel.lockButton(projectLabel)}</button>
+        <div className="post-production-action-buttons">
+          <button className="secondary-button" onClick={previewTestScreening} type="button">
+            {activePreview ? copy.panel.retestButton : copy.panel.previewButton}
+          </button>
+          <button className="primary-button" onClick={lockPostProduction} type="button">{copy.panel.lockButton(projectLabel)}</button>
+        </div>
       </div>
     </section>
   );
