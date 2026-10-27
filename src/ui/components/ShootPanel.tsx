@@ -141,9 +141,20 @@ export function ShootPanel({
             projectLabel={projectLabel}
             selectedProductionEventId={selectedProductionEventId}
           />
+          {previewResolution?.producerPrioritySummary && (
+            <OnSetDialoguePanel
+              phase="briefing"
+              practicalActionVersion={2}
+              eventId={selectedProductionEventId}
+              priority={selectedProducerPriorityId}
+              summary={previewResolution.producerPrioritySummary}
+              continuity={previewResolution.teamContinuity}
+            />
+          )}
           <ProducerPriorityPanel eventId={selectedProductionEventId} inputName={`${projectContext.filmProjectState.id}-producer-priority`} onSelect={onSelectProducerPriority} selectedId={selectedProducerPriorityId} />
           {previewResolution?.producerPrioritySummary && (
             <OnSetDialoguePanel
+              phase="response"
               practicalActionVersion={2}
               eventId={selectedProductionEventId}
               priority={selectedProducerPriorityId}
