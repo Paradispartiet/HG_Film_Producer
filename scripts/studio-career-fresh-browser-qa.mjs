@@ -385,6 +385,8 @@ async function run(browser, spec) {
       assert.ok(dialogueOrder, "Team speaks before priority choice, and response follows it");
       assert.ok(["matched", "partial", "stopped"].includes(await conversation.getAttribute("data-dialogue-state")),
         "Reaction state comes from the existing day resolver");
+      assert.equal(await conversation.getAttribute("data-dialogue-status-mode"), "preview",
+        "Unconfirmed responses must be clearly presented as hypothetical");
       if (days === 0) {
         await checkNarrowMobileChoices(page, spec,
           '.shoot-panel .on-set-dialogue[data-dialogue-phase="briefing"]', "Crew briefing");
@@ -423,6 +425,7 @@ async function run(browser, spec) {
       assert.equal(await conversation.locator(".on-set-dialogue-producer p").innerText(), concreteProducerAction,
         "Spoken producer decision matches the selected scenario action");
       assert.ok((await conversation.locator(".on-set-dialogue-reaction").innerText()).length > 25, "The team reacts to the real selected producer response");
+      const forecastStatusLabel = await conversation.locator(".on-set-dialogue-state").innerText();
       const expectedSteadyCost = Number(await monitor.locator(".shoot-budget-projection").getAttribute("data-forecast-cost"));
       const outcome = page.locator(".shoot-panel .shoot-decision-preview");
       await outcome.waitFor({ state: "visible" });
@@ -516,11 +519,17 @@ async function run(browser, spec) {
         assert.equal(await savedConversation.count(), 1, "Completed day retains a replayable team conversation");
         await savedConversation.locator("summary").click();
         await savedConversation.locator(".on-set-dialogue-producer").waitFor({ state: "visible" });
+        assert.equal(await savedConversation.locator(".on-set-dialogue").getAttribute("data-dialogue-status-mode"), "confirmed",
+          "Saved dialogue must be identified as a confirmed result rather than a forecast");
+        assert.notEqual(await savedConversation.locator(".on-set-dialogue-state").innerText(), forecastStatusLabel,
+          "Forecast and actual result cannot use identical final-sounding wording");
         assert.equal(await savedConversation.locator(".on-set-dialogue-producer p").innerText(), concreteProducerAction, "Both situation types replay their saved practical producer action");
         assert.equal(await savedConversation.locator(".on-set-dialogue-follow-up").count(), days > 1 ? 1 : 0, "Replayed dialogue preserves genuine cross-day follow-up");
         const producerOutcome = page.locator(".shoot-panel .producer-priority-feedback").first();
         await producerOutcome.waitFor({ state: "visible" });
         assert.ok((await producerOutcome.innerText()).length > 45, "Creative producing teaches why the support mattered");
+        assert.equal(await producerOutcome.locator(".producer-priority-unmet").count(), 0,
+          "Matched real team needs must not show fabricated outstanding support");
         const strategyOutcome = page.locator(".shoot-panel .shoot-strategy-consequence").first();
         await strategyOutcome.waitFor({ state: "visible" });
         assert.ok((await strategyOutcome.innerText()).length > 20, "Response tradeoff shown alongside saved result");
