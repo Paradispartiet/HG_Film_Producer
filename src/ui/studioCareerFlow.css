@@ -543,6 +543,15 @@
 .producer-priority-feedback { padding: 13px 15px; margin: 12px 0; border-left: 3px solid var(--accent); background: rgba(5,7,9,0.18); }
 .producer-priority-feedback strong { display: block; margin: 7px 0; }
 .producer-priority-feedback p { color: var(--muted); line-height: 1.55; margin: 6px 0 0; }
+.producer-priority-unmet {
+  margin-top: 12px;
+  padding-top: 11px;
+  border-top: 1px solid var(--line-soft);
+  overflow-wrap: anywhere;
+}
+.producer-priority-unmet strong { font-size: 15px; line-height: 1.5; }
+.producer-priority-unmet p { font-size: 14px; line-height: 1.55; }
+
 .shoot-budget-details { margin: 15px 0; }
 .shoot-budget-details > summary { cursor: pointer; padding: 13px 15px; border: 1px solid var(--line-soft); color: var(--muted); }
 .shoot-budget-details[open] > .shoot-budget-monitor { margin-top: 12px; }

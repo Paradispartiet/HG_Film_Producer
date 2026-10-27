@@ -3,6 +3,7 @@ import { STUDIO_CAREER_SHOOT_COPY } from "../../core/studioCareerShootCopy";
 import { SHOOT_STRATEGY_COPY } from "../../core/studioCareerShootStrategyCopy";
 import { PRODUCER_PRIORITY_COPY } from "../../core/studioCareerProducerPriorityCopy.js";
 import { ON_SET_DIALOGUE_COPY } from "../../core/studioCareerOnSetDialogue.js";
+import { getUnmetProducerSupport } from "../../core/studioCareerCrewReflection.js";
 import { OnSetDialoguePanel } from "./OnSetDialoguePanel.js";
 import type { ProjectShootLabel } from "../types.js";
 import type { ShootDayStepResult, ShootStepPreparation } from "../demo/createShootStepRun.js";
@@ -21,6 +22,7 @@ export function ShootDayResultPanel({ preparation, result, dayNumber, projectLab
   const strategyCopy = SHOOT_STRATEGY_COPY[language];
   const producerCopy = PRODUCER_PRIORITY_COPY[language];
   const locale = getFilmWorkIntlLocale(language);
+  const unmetSupport = getUnmetProducerSupport(language, result.producerPrioritySummary);
   return (
     <section className="shoot-desk-section shoot-result-section">
       <div className="shoot-section-heading">
@@ -45,6 +47,12 @@ export function ShootDayResultPanel({ preparation, result, dayNumber, projectLab
           <strong>{producerCopy.options[result.producerPrioritySummary.id].title}</strong>
           <p>{producerCopy.consequence(result.producerPrioritySummary.takeQualityDelta)} · {result.producerPrioritySummary.interrupted ? producerCopy.interrupted : result.producerPrioritySummary.approachFits ? producerCopy.matched : producerCopy.partial}</p>
           <p>{producerCopy.why[result.producerPrioritySummary.recommendedId]}</p>
+          {unmetSupport && (
+            <div className="producer-priority-unmet" data-needed-priority={unmetSupport.id}>
+              <strong>{unmetSupport.heading}</strong>
+              <p>{unmetSupport.explanation}</p>
+            </div>
+          )}
         </div>
       )}
       {result.selectedEventId && result.producerPrioritySummary && (
