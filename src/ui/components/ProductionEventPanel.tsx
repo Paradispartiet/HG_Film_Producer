@@ -3,6 +3,7 @@ import { STUDIO_CAREER_SHOOT_COPY } from "../../core/studioCareerShootCopy";
 import type { ProjectShootLabel } from "../types.js";
 import type { ProductionEventOption } from "../demo/createShootStepRun.js";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
+import "./ProductionEventPanel.css";
 
 interface ProductionEventPanelProps {
   readonly options: readonly ProductionEventOption[];
