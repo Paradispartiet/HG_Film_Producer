@@ -2,6 +2,7 @@ import { useState } from "react";
 import { STUDIO_CAREER_POST_PRODUCTION_COPY } from "../../core/studioCareerPostProductionCopy.js";
 import { STUDIO_CAREER_EDITING_APPROACH_IDS } from "../../core/studioCareerEditingApproach.js";
 import { getStudioCareerEditingHandoff, STUDIO_CAREER_EDITING_HANDOFF_COPY } from "../../core/studioCareerEditingHandoff.js";
+import { getStudioCareerFootageEvidence } from "../../core/studioCareerFootageEditing.js";
 import {
   createPostProductionStepResult,
   getPostProductionOptions,
@@ -55,6 +56,7 @@ export function PostProductionPanel({
   const isLaterFilm = projectLabel !== "first film";
   const selectedEditingApproach = choices.editingApproachId ?? "balanced";
   const handoff = getStudioCareerEditingHandoff(language, shootResult.resolvedDays);
+  const footage = getStudioCareerFootageEvidence(shootResult.resolvedDays);
   const handoffCopy = STUDIO_CAREER_EDITING_HANDOFF_COPY[language];
   const scriptAction = developmentResults.find((action) => action.path === "script");
   const scriptDraftScore = scriptAction?.path === "script" ? scriptAction.overallScore : undefined;
@@ -104,6 +106,19 @@ export function PostProductionPanel({
         <h3>{handoffCopy.heading}</h3>
         <p>{handoffCopy.introduction}</p>
         <strong>{handoffCopy.averageTake(shootResult.shootEvaluation.averageTakeQuality)}</strong>
+        {footage && (
+          <div className="editing-footage-status" data-missing-scenes={footage.missingScenes}>
+            <strong>{handoffCopy.footageHeading}</strong>
+            <p>{handoffCopy.sceneCoverage(footage.completedScenes, footage.missingScenes)}</p>
+            {footage.lowestQualityDay && (
+              <small>{handoffCopy.lowestTake(footage.lowestQualityDay.dayNumber, footage.lowestQualityDay.takeQuality)}</small>
+            )}
+            <p>{footage.missingScenes > 0 ? handoffCopy.gapsAdvice : handoffCopy.completeAdvice}</p>
+            {footage.missingScenes > 0 && selectedEditingApproach === "story_first" && (
+              <small>{handoffCopy.storySupport}</small>
+            )}
+          </div>
+        )}
         {handoff && (
           <details>
             <summary>{handoffCopy.dayLabel(handoff.dayNumber)}</summary>

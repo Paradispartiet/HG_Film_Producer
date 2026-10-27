@@ -3,6 +3,7 @@ import type { PostProductionPlan, TestScreeningResult } from "../domain/post.js"
 import type { ScriptEvaluation } from "../domain/script.js";
 import type { ShootResultEvaluation } from "../domain/shoot.js";
 import { getStudioCareerEditingApproach, type StudioCareerEditingApproachId } from "./studioCareerEditingApproach.js";
+import { getStudioCareerFootageContinuityPenalty, type StudioCareerFootageEvidence } from "./studioCareerFootageEditing.js";
 
 /** Story dimensions from a real development draft, kept separate from the overall grade. */
 export interface ScriptCraftScores {
@@ -19,7 +20,8 @@ export function runTestScreening(
   scriptEvaluation?: ScriptEvaluation,
   scriptDraftScore?: number,
   editingApproachId?: StudioCareerEditingApproachId,
-  scriptCraftScores?: ScriptCraftScores
+  scriptCraftScores?: ScriptCraftScores,
+  footageEvidence?: StudioCareerFootageEvidence
 ): TestScreeningResult {
   assertProject(plan.projectId, project.id, "Post-production plan");
   if (shootEvaluation) {
@@ -27,6 +29,7 @@ export function runTestScreening(
   }
 
   const editing = getStudioCareerEditingApproach(editingApproachId);
+  const continuityPenalty = getStudioCareerFootageContinuityPenalty(footageEvidence, editing.id);
   const editCoverage = Math.min(4, plan.editDecisionIds.length);
   const soundCoverage = Math.min(3, plan.soundDecisionIds.length);
   const musicCoverage = Math.min(3, plan.musicDecisionIds.length);
@@ -50,8 +53,8 @@ export function runTestScreening(
     ? 0
     : Math.max(-12, Math.min(18, (Math.max(0, Math.min(100, scriptDraftScore)) - 35) * 0.5));
 
-  const clarityScore = clampScore(34 + structure * 0.35 + shootQuality * 0.08 + editCoverage * 6 + soundCoverage * 5 + scriptReadiness + stakesClarity + editing.clarity);
-  const pacingScore = clampScore(34 + scriptPacing * 0.38 + shootQuality * 0.08 + editCoverage * 8 + scriptReadiness + editing.pacing);
+  const clarityScore = clampScore(34 + structure * 0.35 + shootQuality * 0.08 + editCoverage * 6 + soundCoverage * 5 + scriptReadiness + stakesClarity + editing.clarity - continuityPenalty);
+  const pacingScore = clampScore(34 + scriptPacing * 0.38 + shootQuality * 0.08 + editCoverage * 8 + scriptReadiness + editing.pacing - continuityPenalty);
   const emotionScore = clampScore(
     32 + scriptEmotion * 0.38 + shootQuality * 0.08 + musicCoverage * 7 + colorCoverage * 3 + scriptReadiness + editing.emotion
   );
@@ -90,6 +93,9 @@ export function runTestScreening(
         : []),
       ...(scriptCraftScores && scriptConflict !== undefined
         ? [`Approved screenplay craft: conflict ${scriptConflict}/100, pacing ${scriptPacing}/100, emotion ${scriptEmotion}/100; these inform the screened cut.`]
+        : []),
+      ...(continuityPenalty > 0
+        ? [`Unfinished recorded scenes reduced screening clarity and pacing by ${continuityPenalty} points; story-first editing can soften this continuity risk.`]
         : []),
       ...(editing.id === "balanced"
         ? []
