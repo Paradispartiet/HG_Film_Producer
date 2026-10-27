@@ -614,6 +614,17 @@ async function run(browser, spec) {
     // preview/lock engine. They must persist, remain reversible and never
     // rewrite the completed shoot or lock the film before confirmation.
     const drama = preview.locator(".screening-dramaturgy");
+    // Reading comfort is part of functional QA on all languages / viewports.
+    const readingStyle = await drama.locator("p").first().evaluate((element) => {
+      const style = window.getComputedStyle(element);
+      return { size: Number.parseFloat(style.fontSize), lineHeight: Number.parseFloat(style.lineHeight) };
+    });
+    assert.ok(readingStyle.size >= 15, "Dramaturgy explanation should remain 15px or larger");
+    assert.ok(readingStyle.lineHeight >= readingStyle.size * 1.5, "Explanation needs comfortable line spacing");
+    const resultsInk = await preview.locator(".post-metric strong").evaluateAll((nodes) =>
+      nodes.map((element) => window.getComputedStyle(element).color));
+    assert.equal(resultsInk.length, 5);
+    assert.notEqual(resultsInk[4], resultsInk[0], "Confusion risk must be distinguishable from other screening measures");
     assert.equal(await drama.locator(".screening-dramaturgy-option").count(), 4,
       "Four dramaturgical multiple-choice alternatives must be available");
     const dramaConflict = drama.locator('.screening-dramaturgy-option[data-dramaturgy="conflict"]');
