@@ -362,7 +362,24 @@ async function run(browser, spec) {
       await page.locator('.shoot-panel .production-event-grid input[type="radio"]').nth(days % 2 === 0 ? 4 : 3).check();
       const conversation = page.locator('.shoot-panel .on-set-dialogue[aria-live="polite"]');
       await conversation.waitFor({ state: "visible" });
+      assert.equal(await conversation.locator(".on-set-dialogue-turn").count(), 3,
+        "Crew challenge, actual producer response and team reaction have separate readable stages");
+      assert.equal(await conversation.locator(".on-set-dialogue-step").count(), 3,
+        "Every conversation stage has a localized label");
+      assert.ok(["matched", "partial", "stopped"].includes(await conversation.getAttribute("data-dialogue-state")),
+        "Reaction state comes from the existing day resolver");
+      if (days === 0) await checkNarrowMobileChoices(page, spec,
+        '.shoot-panel .on-set-dialogue[aria-live="polite"]', "Crew conversation");
       if (days > 0) {
+        const shifted = await conversation.locator(".on-set-dialogue-continuity").getAttribute("data-focus-shifted");
+        const need = conversation.locator(".on-set-dialogue-open-need");
+        if (shifted === "true") {
+          assert.equal(await need.count(), 1, "Real unresolved priority is visible when continuity shifts");
+          assert.ok((await need.getAttribute("data-need-id"))?.length,
+            "Open need points to the saved continuity priority");
+        } else {
+          assert.equal(await need.count(), 0, "No invented follow-up priority");
+        }
         assert.ok((await conversation.locator(".on-set-dialogue-continuity").innerText()).length > 40, "Later conversation reflects the previous producer decision");
         assert.ok((await conversation.locator(".on-set-dialogue-follow-up").innerText()).length > 90, "The current team member responds to the earlier real production challenge");
       } else {

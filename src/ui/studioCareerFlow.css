@@ -839,3 +839,86 @@
   .shoot-day-context-strip { flex-direction: column; align-items: flex-start; gap: 4px; }
   .shoot-context-details > summary { font-size: 14px; }
 }
+
+
+/* On-set conversations: distinguish the crew's concern, the actual producer
+   choice and the resolver-backed response without adding a new game mechanic. */
+.on-set-dialogue {
+  min-width: 0;
+}
+.on-set-dialogue-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 13px 0 12px;
+}
+.on-set-dialogue-turn {
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  background: rgba(5, 7, 9, 0.14);
+  overflow-wrap: anywhere;
+}
+.on-set-dialogue-step {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 750;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.on-set-dialogue-turn > strong {
+  display: block;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.on-set-dialogue-turn p {
+  margin: 7px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.on-set-dialogue-producer {
+  border-color: var(--accent);
+}
+.on-set-dialogue-state {
+  color: var(--accent);
+}
+.on-set-dialogue-follow-up {
+  padding-top: 10px;
+  border-top: 1px solid var(--line-soft);
+}
+.on-set-dialogue-continuity {
+  border-left: 3px solid var(--accent);
+  padding: 9px 13px;
+  background: var(--accent-soft);
+  overflow-wrap: anywhere;
+}
+.on-set-dialogue-continuity > strong {
+  display: block;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.on-set-dialogue-continuity p {
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.on-set-dialogue-open-need {
+  margin-top: 8px;
+  font-size: 14px;
+}
+.on-set-dialogue-lesson {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-top: 1px solid var(--line-soft);
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.on-set-dialogue-lesson strong { color: var(--text); }
+@media (max-width: 760px) {
+  .on-set-dialogue-steps { grid-template-columns: minmax(0, 1fr); gap: 7px; }
+  .on-set-dialogue-turn { padding: 11px 12px; }
+  .on-set-dialogue-turn p { font-size: 15px; }
+}
