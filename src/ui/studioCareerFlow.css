@@ -540,6 +540,25 @@
   .screening-craft-revision { padding-inline: 18px; }
 }
 
+/* Story craft alternatives reuse existing screening comparison cards. */
+.screening-dramaturgy {
+  padding: 20px 26px 24px;
+  border-top: 1px solid var(--line-soft);
+  min-width: 0;
+}
+.screening-dramaturgy h3 { margin: 0 0 8px; }
+.screening-dramaturgy > p { line-height: 1.5; color: var(--muted-light); }
+.screening-dramaturgy-current { margin: 10px 0; }
+.screening-dramaturgy-current strong { color: var(--text); }
+.screening-dramaturgy-context { display: block; margin-bottom: 6px; color: var(--muted-light); line-height: 1.5; }
+.screening-dramaturgy-options { margin-top: 14px; }
+.screening-dramaturgy-tradeoff { font-size: 13px; line-height: 1.45; color: var(--muted-light); }
+@media (max-width: 700px) {
+  .screening-dramaturgy { padding: 16px 18px 20px; }
+  .screening-dramaturgy-option { padding: 14px; }
+  .screening-dramaturgy-options { gap: 9px; }
+}
+
 /* A creative tradeoff is independent of the paid edit-decision catalogue. */
 .editing-tradeoff-section {
   margin: 18px 0;
