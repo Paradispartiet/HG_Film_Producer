@@ -49,6 +49,7 @@ export function ScreeningDramaturgyPanel({
       {missingScenes !== undefined && missingScenes > 0 && (
         <small className="screening-dramaturgy-context">{copy.footageContext(missingScenes)}</small>
       )}
+      <small className="screening-dramaturgy-swipe-hint">{copy.swipeHint}</small>
       <div className="screening-revision-options screening-dramaturgy-options">
         {ordered.map(({ id, result }) => {
           const option = copy.options[id];
