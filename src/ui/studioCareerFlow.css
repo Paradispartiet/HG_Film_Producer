@@ -463,6 +463,67 @@
   .post-production-action-buttons button { width: 100%; }
 }
 
+/* Film craft recommendations use only real projected changes to the existing cut. */
+.screening-revision {
+  padding: 20px 26px 24px;
+  border-top: 1px solid var(--line-soft);
+}
+.screening-revision-heading h3 { margin: 4px 0 8px; }
+.screening-revision-heading p,
+.screening-revision-focus { line-height: 1.55; color: var(--muted-light); }
+.screening-revision-focus {
+  display: grid;
+  gap: 6px;
+  margin: 18px 0;
+}
+.screening-revision-focus strong { color: var(--text); }
+.screening-revision-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.screening-revision-option {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 16px;
+  background: rgba(5, 7, 9, 0.24);
+  border: 1px solid var(--line-soft);
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+.screening-revision-option:hover,
+.screening-revision-option:focus-visible { border-color: var(--accent); }
+.screening-revision-option > strong { font-size: 15px; }
+.screening-revision-technique,
+.screening-revision-disclaimer { font-size: 13px; line-height: 1.55; color: var(--muted-light); }
+.screening-revision-prediction { font-size: 12px; font-weight: 700; }
+.screening-revision-deltas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 112px), 1fr));
+  gap: 6px;
+}
+.screening-revision-deltas > span {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px;
+  border: 1px solid var(--line-soft);
+  font-size: 12px;
+}
+.screening-revision-deltas b { font-variant-numeric: tabular-nums; }
+.screening-revision-action { margin-top: auto; color: var(--accent); font-size: 13px; font-weight: 700; }
+.screening-revision-disclaimer { display: block; margin-top: 14px; }
+@media (max-width: 700px) {
+  .screening-revision { padding-inline: 18px; }
+  .screening-revision-options { grid-template-columns: 1fr; }
+}
+
 /* A creative tradeoff is independent of the paid edit-decision catalogue. */
 .editing-tradeoff-section {
   margin: 18px 0;
