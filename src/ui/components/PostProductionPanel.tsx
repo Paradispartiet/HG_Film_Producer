@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { STUDIO_CAREER_POST_PRODUCTION_COPY } from "../../core/studioCareerPostProductionCopy.js";
 import { STUDIO_CAREER_EDITING_APPROACH_IDS } from "../../core/studioCareerEditingApproach.js";
+import { STUDIO_CAREER_DRAMATURGY_IDS, getStudioCareerDramaturgyEffect, type StudioCareerDramaturgyId } from "../../core/studioCareerDramaturgy.js";
 import { selectScreeningCraftAlternatives } from "../../core/studioCareerScreeningCraftRevision.js";
 import { getStudioCareerEditingHandoff, STUDIO_CAREER_EDITING_HANDOFF_COPY } from "../../core/studioCareerEditingHandoff.js";
 import { getStudioCareerFootageEvidence } from "../../core/studioCareerFootageEditing.js";
@@ -25,6 +26,7 @@ import { TrailerStrategyPanel } from "./TrailerStrategyPanel.js";
 import { TestScreeningPanel } from "./TestScreeningPanel.js";
 import { ScreeningRevisionPanel } from "./ScreeningRevisionPanel.js";
 import { ScreeningCraftRevisionPanel } from "./ScreeningCraftRevisionPanel.js";
+import { ScreeningDramaturgyPanel } from "./ScreeningDramaturgyPanel.js";
 
 interface PostProductionPanelProps {
   readonly projectContext: ProjectRunContext;
@@ -67,6 +69,7 @@ export function PostProductionPanel({
   const options = getPostProductionOptions();
   const isLaterFilm = projectLabel !== "first film";
   const selectedEditingApproach = choices.editingApproachId ?? "balanced";
+  const selectedDramaturgy = getStudioCareerDramaturgyEffect(choices.dramaturgyDecisionId).id;
   const handoff = getStudioCareerEditingHandoff(language, shootResult.resolvedDays);
   const footage = getStudioCareerFootageEvidence(shootResult.resolvedDays);
   const handoffCopy = STUDIO_CAREER_EDITING_HANDOFF_COPY[language];
@@ -81,13 +84,17 @@ export function PostProductionPanel({
     ["trailerStrategyId", copy.panel.choiceLabels.trailer]
   ];
 
-  const screeningSignature = JSON.stringify([
-    projectContext.filmProjectState.id,
-    ...choiceKeys.map((key) => choices[key]),
-    selectedEditingApproach,
-    scriptDraftScore,
-    scriptCraftScores
-  ]);
+  function makeScreeningSignature(selection: PostProductionChoices): string {
+    return JSON.stringify([
+      projectContext.filmProjectState.id,
+      ...choiceKeys.map((key) => selection[key]),
+      selection.editingApproachId ?? "balanced",
+      getStudioCareerDramaturgyEffect(selection.dramaturgyDecisionId).id,
+      scriptDraftScore,
+      scriptCraftScores
+    ]);
+  }
+  const screeningSignature = makeScreeningSignature(choices);
   const activePreview = screeningPreview?.signature === screeningSignature
     && screeningPreview.context === projectContext
     && screeningPreview.preProduction === preProductionResult
@@ -103,6 +110,18 @@ export function PostProductionPanel({
         result: createPostProductionStepResult(
           projectContext, preProductionResult, shootResult,
           { ...choices, editingApproachId: approachId }, scriptDraftScore, scriptCraftScores
+        ).testScreeningResult
+      }))
+    : [];
+
+  const dramaturgyAlternatives = activePreview
+    ? STUDIO_CAREER_DRAMATURGY_IDS
+      .filter((dramaturgyDecisionId) => dramaturgyDecisionId !== selectedDramaturgy)
+      .map((dramaturgyDecisionId) => ({
+        id: dramaturgyDecisionId,
+        result: createPostProductionStepResult(
+          projectContext, preProductionResult, shootResult,
+          { ...choices, dramaturgyDecisionId }, scriptDraftScore, scriptCraftScores
         ).testScreeningResult
       }))
     : [];
@@ -145,6 +164,22 @@ export function PostProductionPanel({
   function select(key: keyof PostProductionChoices, value: string) {
     onChange({ ...choices, [key]: value });
     setScreeningPreview(null);
+    setMessage("");
+  }
+
+  function chooseDramaturgy(dramaturgyDecisionId: StudioCareerDramaturgyId) {
+    const updatedChoices = { ...choices, dramaturgyDecisionId };
+    // Choosing an alternative screens that actual cut immediately; never lock a film.
+    const next = createPostProductionStepResult(
+      projectContext, preProductionResult, shootResult,
+      updatedChoices, scriptDraftScore, scriptCraftScores
+    );
+    onChange(updatedChoices);
+    setScreeningPreview({
+      signature: makeScreeningSignature(updatedChoices),
+      context: projectContext, preProduction: preProductionResult,
+      shoot: shootResult, result: next
+    });
     setMessage("");
   }
 
@@ -250,6 +285,14 @@ export function PostProductionPanel({
             screening={activePreview.testScreeningResult}
             alternatives={screeningAlternatives}
             onChoose={(approachId) => select("editingApproachId", approachId)}
+          />
+          <ScreeningDramaturgyPanel
+            screening={activePreview.testScreeningResult}
+            selectedId={selectedDramaturgy}
+            alternatives={dramaturgyAlternatives}
+            script={scriptCraftScores}
+            missingScenes={footage?.missingScenes}
+            onChoose={chooseDramaturgy}
           />
           {craftAlternatives && (
             <ScreeningCraftRevisionPanel
