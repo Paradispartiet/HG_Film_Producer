@@ -50,7 +50,8 @@ export function OnSetDialoguePanel({ eventId, priority, summary, continuity, con
           <strong>{conversation.speaker}</strong><p>{conversation.concern}</p>
           {spokenFollowUp && <p className="on-set-dialogue-follow-up">{spokenFollowUp}</p>}
         </div>}
-        {showResponse && <div className="on-set-dialogue-turn on-set-dialogue-producer">
+        {showResponse && <>
+        <div className="on-set-dialogue-turn on-set-dialogue-producer">
           <span className="on-set-dialogue-step">{view.producerAction}</span>
           <strong>{conversation.producer}</strong><p>{conversation.reply}</p>
         </div>
@@ -58,7 +59,8 @@ export function OnSetDialoguePanel({ eventId, priority, summary, continuity, con
           <span className="on-set-dialogue-step">{view.response}</span>
           <strong className="on-set-dialogue-state">{view.status[status]}</strong>
           <p>{conversation.teamResponse}</p>
-        </div>}
+        </div>
+        </>}
       </div>
       {showResponse && <p className="on-set-dialogue-lesson"><strong>{view.takeaway}</strong> {conversation.lesson}</p>}
     </section>
