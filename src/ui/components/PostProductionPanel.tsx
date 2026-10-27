@@ -22,6 +22,7 @@ import { PostProductionResultPanel } from "./PostProductionResultPanel.js";
 import { SoundDecisionPanel } from "./SoundDecisionPanel.js";
 import { TrailerStrategyPanel } from "./TrailerStrategyPanel.js";
 import { TestScreeningPanel } from "./TestScreeningPanel.js";
+import { ScreeningRevisionPanel } from "./ScreeningRevisionPanel.js";
 
 interface PostProductionPanelProps {
   readonly projectContext: ProjectRunContext;
@@ -91,6 +92,18 @@ export function PostProductionPanel({
     && screeningPreview.shoot === shootResult
     ? screeningPreview.result
     : null;
+
+  const screeningAlternatives = activePreview
+    ? STUDIO_CAREER_EDITING_APPROACH_IDS
+      .filter((approachId) => approachId !== selectedEditingApproach)
+      .map((approachId) => ({
+        id: approachId,
+        result: createPostProductionStepResult(
+          projectContext, preProductionResult, shootResult,
+          { ...choices, editingApproachId: approachId }, scriptDraftScore, scriptCraftScores
+        ).testScreeningResult
+      }))
+    : [];
 
   if (result) {
     // Old saved results must not claim the draft influenced a screening
@@ -203,6 +216,11 @@ export function PostProductionPanel({
             result={activePreview.testScreeningResult}
             scriptDraftScore={scriptDraftScore}
             editingApproachId={activePreview.editingApproachId}
+          />
+          <ScreeningRevisionPanel
+            screening={activePreview.testScreeningResult}
+            alternatives={screeningAlternatives}
+            onChoose={(approachId) => select("editingApproachId", approachId)}
           />
         </section>
       )}

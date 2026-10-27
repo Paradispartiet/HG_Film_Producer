@@ -582,15 +582,29 @@ async function run(browser, spec) {
     assert.deepEqual(await readSaved(page), beforePreviewSave, "Screening a trial cut must not lock or mutate the saved film");
     const boldPreviewScores = (await preview.locator(".post-metric strong").allInnerTexts()).map(Number);
     assert.equal(boldPreviewScores.length, 5, "Preview must report all actual audience scores");
-
-    await post.locator('.editing-tradeoff-section input[value="balanced"]').check();
-    assert.equal(await preview.count(), 0, "Changing the creative cut invalidates old screening feedback");
+    const revision = preview.locator(".screening-revision");
+    assert.equal(await revision.locator(".screening-revision-option").count(), 2, "Two alternative real cuts must be selectable");
+    assert.equal(await revision.locator(".screening-revision-deltas > span").count(), 10, "Predictions must cover five screening metrics for each cut");
+    const balancedAlternative = revision.locator('.screening-revision-option[data-approach="balanced"]');
+    const predictedBalanced = JSON.parse(await balancedAlternative.getAttribute("data-predicted-scores"));
+    assert.equal(predictedBalanced.length, 5);
+    await balancedAlternative.click();
+    assert.equal(await post.locator('.editing-tradeoff-section input[value="balanced"]').isChecked(), true,
+      "Selecting a revision must update the actual editing approach");
+    assert.equal(await preview.count(), 0, "Selecting a revision must invalidate the old screening");
+    const afterRevisionSave = await readSaved(page);
+    assert.ok(!afterRevisionSave.projects[0].postProductionResult, "Choosing a cut must never lock the film");
+    assert.deepEqual(afterRevisionSave.projects[0].shootResult, beforePreviewSave.projects[0].shootResult,
+      "An editing revision must preserve the completed shoot");
     await previewButton.click();
     await preview.waitFor({ state: "visible" });
     const balancedPreviewScores = (await preview.locator(".post-metric strong").allInnerTexts()).map(Number);
     assert.notDeepEqual(balancedPreviewScores, boldPreviewScores, "Creative changes must produce new screening results");
-
-    await boldCut.check();
+    assert.deepEqual(balancedPreviewScores, predictedBalanced, "Projection must equal a real new screening, not invented values");
+    const predictedBold = JSON.parse(await revision.locator('.screening-revision-option[data-approach="bold_cut"]').getAttribute("data-predicted-scores"));
+    assert.deepEqual(predictedBold, boldPreviewScores, "Reversing the cut must project the original deterministic screening");
+    await revision.locator('.screening-revision-option[data-approach="bold_cut"]').click();
+    assert.equal(await boldCut.isChecked(), true, "Revision action must support returning to the bold cut");
     assert.equal(await preview.count(), 0, "A previous screening must not be presented as current");
     await previewButton.click();
     await preview.waitFor({ state: "visible" });
