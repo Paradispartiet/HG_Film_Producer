@@ -26,14 +26,18 @@ export function getStudioCareerFootageEvidence(
 ): StudioCareerFootageEvidence | undefined {
   const statuses = new Map<string, "completed" | "delayed">();
   let lowestQualityDay: StudioCareerFootageEvidence["lowestQualityDay"];
+  let missingEvidence = false;
 
   days.forEach((day, index) => {
     const result = day?.shootDayResult;
-    if (!result) return;
+    if (!result) { missingEvidence = true; return; }
     const completed = result.completedSceneIds;
     const delayed = result.delayedSceneIds;
     if (!Array.isArray(completed) || !Array.isArray(delayed)
-      || ![...completed, ...delayed].every((id) => typeof id === "string" && id.trim().length > 0)) return;
+      || ![...completed, ...delayed].every((id) => typeof id === "string" && id.trim().length > 0)) {
+      missingEvidence = true;
+      return;
+    }
 
     for (const id of completed) statuses.set(id, "completed");
     for (const id of delayed) statuses.set(id, "delayed");
@@ -46,7 +50,7 @@ export function getStudioCareerFootageEvidence(
     }
   });
 
-  if (statuses.size === 0) return undefined;
+  if (missingEvidence || statuses.size === 0) return undefined;
   const missingScenes = [...statuses.values()].filter((status) => status === "delayed").length;
   return {
     recordedScenes: statuses.size,
