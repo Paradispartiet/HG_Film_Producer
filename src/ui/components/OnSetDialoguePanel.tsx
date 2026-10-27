@@ -31,7 +31,7 @@ export function OnSetDialoguePanel({ eventId, priority, summary, continuity, con
     ? PRODUCER_PRIORITY_COPY[language].options[continuity.recommendedId].title : undefined;
   if (!conversation) return null;
   return (
-    <section className="shoot-desk-section on-set-dialogue" aria-live={confirmed || phase === "briefing" ? "off" : "polite"} data-dialogue-phase={phase} data-dialogue-state={status}>
+    <section className="shoot-desk-section on-set-dialogue" aria-live={confirmed || phase === "briefing" ? "off" : "polite"} data-dialogue-phase={phase} data-dialogue-state={status} data-dialogue-status-mode={confirmed ? "confirmed" : "preview"}>
       <div className="shoot-section-heading">
         <div><span className="eyebrow">{copy.heading}</span><h3>{showBriefing ? conversation.speaker : view.response}</h3></div>
         {!confirmed && showResponse && <p>{copy.forecast}</p>}
@@ -57,7 +57,7 @@ export function OnSetDialoguePanel({ eventId, priority, summary, continuity, con
         </div>
         <div className="on-set-dialogue-turn on-set-dialogue-reaction">
           <span className="on-set-dialogue-step">{view.response}</span>
-          <strong className="on-set-dialogue-state">{view.status[status]}</strong>
+          <strong className="on-set-dialogue-state">{confirmed ? view.status[status] : view.previewStatus[status]}</strong>
           <p>{conversation.teamResponse}</p>
         </div>
         </>}
