@@ -26,6 +26,7 @@ import "./productionCaseDensity.css";
 import "./productionCaseVerification.css";
 import "./productionCaseVerificationLibrary.css";
 import "./filmWorkApp.css";
+import "./filmWorkReadability.css";
 
 console.info("Filmverket · Film Producer booting");
 

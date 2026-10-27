@@ -1,0 +1,357 @@
+/*
+ * FilmWork reading and colour pass.
+ *
+ * Intentionally imported AFTER filmWorkApp.css. Preserves the existing dark
+ * studio theme, routes, interactions, scoring, and local career state.
+ * Colour identifies the kind of information; meaning is still in the text.
+ */
+:root {
+  --fw-reading-bg: #10161d;
+  --fw-reading-card: #1a232c;
+  --fw-reading-outline: #405060;
+  --fw-reading-copy: #d1dae4;
+  --fw-reading-gold: #e1ba75;
+  --fw-reading-teal: #98d6d0;
+  --fw-reading-lilac: #cbb9ed;
+  --fw-reading-clay: #e4ad93;
+}
+
+/* Shared FilmWork app: navigation and destinations stay familiar, but each
+ * screen has a clearer title, warm selection state and readable summaries. */
+.filmwork-app-shell {
+  --filmwork-app-card: #1a232c;
+  --filmwork-app-outline: #405060;
+}
+.filmwork-app-shell .filmwork-app-topbar {
+  border-bottom-color: #465463;
+}
+.filmwork-app-shell .filmwork-app-logo > span {
+  background: var(--fw-reading-gold);
+}
+.filmwork-app-shell .filmwork-app-current {
+  color: #d7e0e9;
+}
+.filmwork-app-shell .filmwork-app-tab {
+  border-radius: 12px;
+}
+.filmwork-app-shell .filmwork-app-tab.is-active {
+  background: #342b1d;
+  border-color: #a88a57;
+  color: #f6dab1;
+}
+.filmwork-app-shell .filmwork-app-tab:focus-visible,
+.filmwork-app-shell .filmwork-app-more-menu button:focus-visible {
+  outline: 3px solid var(--fw-reading-gold);
+  outline-offset: 2px;
+}
+.filmwork-app-shell .filmverket-hero {
+  border: 1px solid #3a4d5b;
+  background: linear-gradient(120deg, #243644, #19252f 70%);
+}
+.filmwork-app-shell .filmverket-gateway {
+  border-color: var(--fw-reading-outline);
+  box-shadow: inset 0 2px 0 rgba(160, 190, 213, .17);
+}
+.filmwork-app-shell .filmverket-gateway--primary {
+  border-color: #ad8d59;
+  background: #302c25;
+  box-shadow: inset 0 3px 0 var(--fw-reading-gold);
+}
+.filmwork-app-shell .filmverket-gateway:nth-child(2):not(.filmverket-gateway--primary) {
+  box-shadow: inset 0 3px 0 var(--fw-reading-teal);
+}
+.filmwork-app-shell .filmverket-gateway:nth-child(3):not(.filmverket-gateway--primary) {
+  box-shadow: inset 0 3px 0 var(--fw-reading-lilac);
+}
+.filmwork-app-shell .filmverket-gateway-copy > span,
+.filmwork-app-shell .filmwork-resume-banner p {
+  color: var(--fw-reading-copy);
+  line-height: 1.6;
+}
+.filmwork-app-shell :is(.filmverket-page-hero, .film-director-hero, .school-overview-hero) p {
+  max-width: 72ch;
+  line-height: 1.65;
+}
+
+/* Producer: legible stage instructions and tappable decision cards. */
+.app-shell .post-production-panel {
+  color: #f0f4f6;
+}
+.app-shell .post-production-panel .post-panel-heading {
+  gap: 14px 24px;
+  border-bottom: 1px solid #544b39;
+  background: linear-gradient(110deg, rgba(225,186,117,.16), rgba(20,26,32,.18) 65%);
+}
+.app-shell .post-production-panel .post-panel-heading h2 {
+  font-size: clamp(23px, 2.5vw, 31px);
+  line-height: 1.22;
+}
+.app-shell .post-production-panel .post-panel-heading p,
+.app-shell .post-production-panel .post-section-heading p {
+  max-width: 66ch;
+  font-size: 15px !important;
+  line-height: 1.65;
+  color: var(--fw-reading-copy);
+}
+.app-shell .post-production-panel .post-section-heading h3 {
+  font-size: clamp(19px, 2.1vw, 23px);
+  line-height: 1.35;
+}
+.app-shell .post-production-panel .post-option-card,
+.app-shell .editing-tradeoff-card {
+  border-radius: 12px;
+  background: var(--fw-reading-bg);
+  border-color: var(--fw-reading-outline);
+}
+.app-shell .post-production-panel .post-option-card {
+  min-height: 190px;
+  padding: 16px;
+  gap: 9px;
+}
+.app-shell .post-production-panel .post-option-card > strong,
+.app-shell .editing-tradeoff-card strong {
+  font-size: 16px;
+  line-height: 1.4;
+}
+.app-shell .post-production-panel .post-option-card > p,
+.app-shell .editing-tradeoff-card small {
+  font-size: 15px !important;
+  line-height: 1.55;
+  color: var(--fw-reading-copy);
+}
+.app-shell .post-production-panel .post-option-card--selected,
+.app-shell .editing-tradeoff-card--selected {
+  border-color: var(--fw-reading-gold);
+  background: #332b20;
+  box-shadow: inset 3px 0 0 var(--fw-reading-gold);
+}
+.app-shell .post-production-panel :is(.post-option-card, .editing-tradeoff-card):focus-within {
+  outline: 3px solid var(--fw-reading-gold);
+  outline-offset: 2px;
+}
+.app-shell .post-production-panel .post-production-actions {
+  gap: 14px;
+  border-top: 1px solid #605039;
+  background: #20231f;
+}
+.app-shell .post-production-panel .post-production-action-buttons button {
+  min-height: 50px;
+  padding: 12px 18px;
+  font-size: 15px !important;
+}
+
+/* Screening results: values are easily scanned, without equating a higher
+ * confusion-risk score with success. Risk uses its own warm accent. */
+.app-shell .post-production-preview .post-result-section {
+  border-bottom: 1px solid #405060;
+}
+.app-shell .post-production-preview-guidance,
+.app-shell .screening-revision-heading p,
+.app-shell .screening-dramaturgy > p,
+.app-shell .screening-craft-revision > p {
+  color: var(--fw-reading-copy);
+  max-width: 76ch;
+  font-size: 15px !important;
+  line-height: 1.65;
+}
+.app-shell .post-production-preview .post-metric {
+  border: 1px solid #485662;
+  border-radius: 11px;
+  background: #1b2730;
+  gap: 8px;
+  padding: 14px;
+}
+.app-shell .post-production-preview .post-metric span {
+  font-size: 13px !important;
+  line-height: 1.3;
+  color: #d1dae4;
+}
+.app-shell .post-production-preview .post-metric strong {
+  color: var(--fw-reading-teal);
+  font-size: clamp(23px, 3vw, 31px);
+  font-variant-numeric: tabular-nums;
+}
+.app-shell .post-production-preview .post-metric:nth-child(5) {
+  border-color: #735242;
+  background: #2a2321;
+}
+.app-shell .post-production-preview .post-metric:nth-child(5) strong {
+  color: var(--fw-reading-clay);
+}
+.app-shell .post-production-preview .screening-notes {
+  border-radius: 10px;
+  border-color: #465463;
+}
+.app-shell .post-production-preview .screening-notes > strong {
+  font-size: 15px;
+}
+.app-shell .post-production-preview .screening-notes :is(li, p) {
+  color: var(--fw-reading-copy);
+  font-size: 15px !important;
+  line-height: 1.6;
+}
+
+/* Craft sections: just enough differentiation to find editing, story and
+ * sound/music without making every option a new bright coloured panel. */
+.app-shell .screening-revision,
+.app-shell .screening-dramaturgy,
+.app-shell .screening-craft-revision {
+  padding-block: 22px;
+  border-top: 2px solid #6c5a3a;
+}
+.app-shell .screening-revision { background: rgba(225,186,117,.025); }
+.app-shell .screening-dramaturgy {
+  border-top-color: #8f7fb3;
+  background: rgba(203,185,237,.035);
+}
+.app-shell .screening-craft-revision {
+  border-top-color: #568d8b;
+  background: rgba(152,214,208,.025);
+}
+.app-shell :is(.screening-revision, .screening-dramaturgy, .screening-craft-revision) h3 {
+  font-size: clamp(20px, 2.4vw, 25px);
+  line-height: 1.32;
+  margin-bottom: 8px;
+}
+.app-shell .screening-revision-focus {
+  border-left: 3px solid var(--fw-reading-gold);
+  border-radius: 0 10px 10px 0;
+  background: #28261f;
+  padding: 13px 16px;
+}
+.app-shell .screening-revision-focus strong { font-size: 16px; }
+.app-shell .screening-revision-focus span { font-size: 15px; line-height: 1.6; }
+.app-shell .screening-dramaturgy-current {
+  border-left: 3px solid var(--fw-reading-lilac);
+  border-radius: 0 10px 10px 0;
+  background: #252532;
+  padding: 12px 15px;
+  color: #e7dff5;
+}
+.app-shell .screening-dramaturgy-context {
+  color: #c8c9da;
+  font-size: 14px !important;
+  line-height: 1.55;
+}
+.app-shell .screening-revision-option {
+  gap: 9px;
+  border: 1px solid #495564;
+  border-radius: 13px;
+  background: var(--fw-reading-card);
+  padding: 17px;
+}
+.app-shell .screening-revision-option:hover {
+  border-color: var(--fw-reading-gold);
+  background: #222c36;
+}
+.app-shell .screening-revision-option:focus-visible {
+  outline: 3px solid var(--fw-reading-gold);
+  outline-offset: 2px;
+}
+.app-shell .screening-revision-option > strong {
+  font-size: 17px;
+  line-height: 1.38;
+  color: #f0f5f8;
+}
+.app-shell .screening-revision-technique,
+.app-shell .screening-dramaturgy-tradeoff {
+  color: var(--fw-reading-copy);
+  font-size: 15px !important;
+  line-height: 1.6;
+}
+.app-shell .screening-revision-prediction {
+  font-size: 13px !important;
+  color: #d0d9e0;
+  letter-spacing: .025em;
+}
+.app-shell .screening-revision-deltas {
+  gap: 7px;
+}
+.app-shell .screening-revision-deltas > span {
+  border-radius: 8px;
+  border-color: #43505d;
+  background: #131a22;
+  font-size: 13px;
+  line-height: 1.3;
+  align-items: center;
+}
+.app-shell .screening-revision-deltas > span > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.app-shell .screening-revision-deltas > span > b {
+  color: #eff4f8;
+  font-size: 15px;
+  white-space: nowrap;
+}
+.app-shell .screening-revision-deltas > span:last-child {
+  border-color: #725445;
+  background: #292321;
+}
+.app-shell .screening-revision-deltas > span:last-child b {
+  color: var(--fw-reading-clay);
+}
+.app-shell .screening-revision-option .screening-revision-action {
+  font-size: 14px !important;
+  font-weight: 750;
+  color: var(--fw-reading-gold);
+}
+.app-shell .screening-dramaturgy-option {
+  border-top: 3px solid #8b7caa;
+}
+.app-shell .screening-dramaturgy-option .screening-revision-action {
+  color: var(--fw-reading-lilac);
+}
+.app-shell .screening-craft-option {
+  border-top: 3px solid #5c9691;
+}
+.app-shell .screening-craft-option .screening-revision-action {
+  color: var(--fw-reading-teal);
+}
+.app-shell :is(.screening-revision-disclaimer, .screening-dramaturgy-swipe-hint) {
+  color: #c5cfd8;
+  font-size: 13px !important;
+  line-height: 1.55;
+}
+
+/* A useful reading width on iPad, but never sacrifice interactive width.
+ * Narrow screens keep the existing horizontal dramaturgy carousel. */
+@media (min-width: 700px) and (max-width: 1100px) {
+  .app-shell .post-production-panel .post-option-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .app-shell .screening-revision-options {
+    gap: 12px;
+  }
+}
+@media (max-width: 700px) {
+  .app-shell .post-production-panel .post-panel-heading,
+  .app-shell .post-production-panel .post-decision-section,
+  .app-shell .post-production-panel .post-result-section,
+  .app-shell :is(.screening-revision, .screening-dramaturgy, .screening-craft-revision) {
+    padding-inline: 16px;
+  }
+  .app-shell .post-production-panel .post-option-card { min-height: 0; }
+  .app-shell .post-production-preview .post-metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .app-shell .post-production-preview .post-metric {
+    min-width: 0;
+    padding: 12px;
+  }
+  .app-shell .screening-dramaturgy-option {
+    flex: 0 0 min(87%, 355px);
+  }
+  .app-shell .screening-revision-deltas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .app-shell .screening-revision-deltas > span { min-width: 0; }
+  .app-shell .post-production-panel :is(button, label, h2, h3, p) {
+    overflow-wrap: anywhere;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-shell .screening-revision-option {
+    transition: none;
+  }
+}

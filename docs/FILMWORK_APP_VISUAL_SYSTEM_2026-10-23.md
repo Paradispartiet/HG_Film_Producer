@@ -30,8 +30,12 @@ migration is part of this design-only change.
 ## Scope and verification
 
 Shared shell mounts in `LandingScreen`; components and their game logic are
-unchanged. `filmWorkApp.css` loads last as an intentional override while the
+unchanged. `filmWorkApp.css` provides the shared baseline, while `filmWorkReadability.css` loads last as an intentional, narrow reading-and-colour override. The
 legacy styles are gradually consolidated. The browser regression checks
 navigation on 320px screens, language continuity, accessibility-sized tap
 targets, and History reachability in all four languages. Other screen-reader
 and manual visual reviews remain separate tasks.
+
+## October 27 reading pass
+
+The dark studio language is retained. Gold remains the primary action colour; restrained teal identifies craft, lilac identifies dramaturgy, and warm terracotta distinguishes the confusion-risk metric. Explanations in screening and editing panels use at least 15 px text with generous line height. Colour never substitutes for labels, visible focus outlines, or the existing five numeric metrics. At narrow widths, the dramaturgy choices still swipe horizontally. All gameplay engines, localisation structures, and saved careers are unchanged. A final manual check on a real iPad remains separate from the automated four-language browser gate.
