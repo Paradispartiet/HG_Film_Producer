@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import type { TestScreeningResult } from "../domain/post.js";
+import { asFilmProjectId } from "../domain/ids.js";
 import {
   getScreeningRevisionFocus,
   STUDIO_CAREER_SCREENING_REVISION_COPY
@@ -8,7 +9,7 @@ import {
 
 function screening(clarity: number, pacing: number, emotion: number, hook: number): TestScreeningResult {
   return {
-    projectId: "test",
+    projectId: asFilmProjectId("test"),
     clarityScore: clarity,
     pacingScore: pacing,
     emotionScore: emotion,
