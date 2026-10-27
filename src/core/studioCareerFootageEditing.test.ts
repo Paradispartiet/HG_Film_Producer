@@ -32,6 +32,9 @@ test("legacy reports without real scene lists do not invent missing footage", ()
   assert.equal(getStudioCareerFootageEvidence([
     { shootDayResult: { completedSceneIds: ["one"], delayedSceneIds: [], takeQuality: NaN } }
   ])?.lowestQualityDay, undefined);
+  assert.equal(getStudioCareerFootageEvidence([
+    day(["one"], [], 90), {}
+  ]), undefined, "a partially known legacy shoot cannot be treated as fully covered");
   assert.equal(getStudioCareerFootageContinuityPenalty(undefined, "bold_cut"), 0);
 });
 
