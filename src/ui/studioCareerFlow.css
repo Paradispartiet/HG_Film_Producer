@@ -553,11 +553,29 @@
 .screening-dramaturgy-context { display: block; margin-bottom: 6px; color: var(--muted-light); line-height: 1.5; }
 .screening-dramaturgy-options { margin-top: 14px; }
 .screening-dramaturgy-tradeoff { font-size: 13px; line-height: 1.45; color: var(--muted-light); }
+.screening-dramaturgy-swipe-hint { display: none; color: var(--muted-light); }
 @media (max-width: 700px) {
   .screening-dramaturgy { padding: 16px 18px 20px; }
   .screening-dramaturgy-option { padding: 14px; }
-  .screening-dramaturgy-options { gap: 9px; }
+  .screening-dramaturgy-options {
+    display: flex;
+    overflow-x: auto;
+    gap: 9px;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .screening-dramaturgy-option {
+    flex: 0 0 min(86%, 350px);
+    scroll-snap-align: start;
+    font-size: 15px;
+  }
+  .screening-dramaturgy-option .screening-revision-technique,
+  .screening-dramaturgy-option .screening-dramaturgy-tradeoff { font-size: 14px; }
+  .screening-dramaturgy-swipe-hint { display: block; margin-top: 10px; }
 }
+
 
 /* A creative tradeoff is independent of the paid edit-decision catalogue. */
 .editing-tradeoff-section {
