@@ -360,19 +360,40 @@ async function run(browser, spec) {
       // Exercise the producer role against a real artistic obstacle rather than
       // just selecting a day-stopping weather event in every run.
       await page.locator('.shoot-panel .production-event-grid input[type="radio"]').nth(days % 2 === 0 ? 4 : 3).check();
-      const conversation = page.locator('.shoot-panel .on-set-dialogue[aria-live="polite"]');
+      const briefing = page.locator('.shoot-panel .on-set-dialogue[data-dialogue-phase="briefing"]');
+      const conversation = page.locator('.shoot-panel .on-set-dialogue[data-dialogue-phase="response"]');
+      await briefing.waitFor({ state: "visible" });
       await conversation.waitFor({ state: "visible" });
-      assert.equal(await conversation.locator(".on-set-dialogue-turn").count(), 3,
-        "Crew challenge, actual producer response and team reaction have separate readable stages");
-      assert.equal(await conversation.locator(".on-set-dialogue-step").count(), 3,
-        "Every conversation stage has a localized label");
+      assert.equal(await briefing.locator(".on-set-dialogue-turn").count(), 1,
+        "The crew concern is shown once before the producer decides");
+      assert.equal(await conversation.locator(".on-set-dialogue-turn").count(), 2,
+        "Only selected producer response and team reaction follow the choice");
+      assert.equal(await briefing.locator(".on-set-dialogue-step").count()
+        + await conversation.locator(".on-set-dialogue-step").count(), 3,
+        "All three conversation stages have localized labels");
+      assert.equal(await briefing.locator(".on-set-dialogue-producer").count(), 0,
+        "A crew briefing must not announce a producer response before the choice");
+      assert.equal(await conversation.locator(".on-set-dialogue-concern").count(), 0,
+        "Do not repeat a long crew concern after the player's choice");
+      const dialogueOrder = await briefing.evaluate((node) => {
+        const priorities = document.querySelector(".shoot-panel .producer-priority-section");
+        const response = document.querySelector('.shoot-panel .on-set-dialogue[data-dialogue-phase="response"]');
+        return priorities && response
+          && Boolean(node.compareDocumentPosition(priorities) & Node.DOCUMENT_POSITION_FOLLOWING)
+          && Boolean(priorities.compareDocumentPosition(response) & Node.DOCUMENT_POSITION_FOLLOWING);
+      });
+      assert.ok(dialogueOrder, "Team speaks before priority choice, and response follows it");
       assert.ok(["matched", "partial", "stopped"].includes(await conversation.getAttribute("data-dialogue-state")),
         "Reaction state comes from the existing day resolver");
-      if (days === 0) await checkNarrowMobileChoices(page, spec,
-        '.shoot-panel .on-set-dialogue[aria-live="polite"]', "Crew conversation");
+      if (days === 0) {
+        await checkNarrowMobileChoices(page, spec,
+          '.shoot-panel .on-set-dialogue[data-dialogue-phase="briefing"]', "Crew briefing");
+        await checkNarrowMobileChoices(page, spec,
+          '.shoot-panel .on-set-dialogue[data-dialogue-phase="response"]', "Producer conversation");
+      }
       if (days > 0) {
-        const shifted = await conversation.locator(".on-set-dialogue-continuity").getAttribute("data-focus-shifted");
-        const need = conversation.locator(".on-set-dialogue-open-need");
+        const shifted = await briefing.locator(".on-set-dialogue-continuity").getAttribute("data-focus-shifted");
+        const need = briefing.locator(".on-set-dialogue-open-need");
         if (shifted === "true") {
           assert.equal(await need.count(), 1, "Real unresolved priority is visible when continuity shifts");
           assert.ok((await need.getAttribute("data-need-id"))?.length,
@@ -380,13 +401,13 @@ async function run(browser, spec) {
         } else {
           assert.equal(await need.count(), 0, "No invented follow-up priority");
         }
-        assert.ok((await conversation.locator(".on-set-dialogue-continuity").innerText()).length > 40, "Later conversation reflects the previous producer decision");
-        assert.ok((await conversation.locator(".on-set-dialogue-follow-up").innerText()).length > 90, "The current team member responds to the earlier real production challenge");
+        assert.ok((await briefing.locator(".on-set-dialogue-continuity").innerText()).length > 40, "Later conversation reflects the previous producer decision");
+        assert.ok((await briefing.locator(".on-set-dialogue-follow-up").innerText()).length > 90, "The current team member responds to the earlier real production challenge");
       } else {
-        assert.equal(await conversation.locator(".on-set-dialogue-follow-up").count(), 0, "No invented follow-up on the first shoot day");
+        assert.equal(await briefing.locator(".on-set-dialogue-follow-up").count(), 0, "No invented follow-up on the first shoot day");
       }
       const beforeReply = await conversation.locator(".on-set-dialogue-producer").innerText();
-      assert.ok((await conversation.locator(".on-set-dialogue-concern").innerText()).length > 40, "A real team member raises a concrete filmmaking concern");
+      assert.ok((await briefing.locator(".on-set-dialogue-concern").innerText()).length > 40, "A real team member raises a concrete filmmaking concern");
       const creativeChoices = page.locator('.shoot-panel .producer-priority-grid input[type="radio"]');
       assert.equal(await creativeChoices.count(), 3, "Three creative producing choices, distinct from Film Director");
       const chosenPriority = days % 2 === 0 ? "performance_trust" : "story_clarity";

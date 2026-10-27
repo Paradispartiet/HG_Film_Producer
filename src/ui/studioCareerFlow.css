@@ -922,3 +922,11 @@
   .on-set-dialogue-turn { padding: 11px 12px; }
   .on-set-dialogue-turn p { font-size: 15px; }
 }
+
+/* A live conversation is ordered like a production meeting: team briefs,
+   producer chooses, then crew reacts. Saved daily reports stay three-part. */
+.on-set-dialogue-steps--briefing { grid-template-columns: minmax(0, 1fr); }
+.on-set-dialogue-steps--response { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 760px) {
+  .on-set-dialogue-steps--response { grid-template-columns: minmax(0, 1fr); }
+}
