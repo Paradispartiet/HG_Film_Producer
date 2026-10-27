@@ -3,6 +3,7 @@ import type { MusicDecision, PostProductionPlan, SoundDecision, TestScreeningRes
 import type { ScriptEvaluation } from "../domain/script.js";
 import type { ShootResultEvaluation } from "../domain/shoot.js";
 import { getStudioCareerEditingApproach, type StudioCareerEditingApproachId } from "./studioCareerEditingApproach.js";
+import { getStudioCareerDramaturgyEffect, type StudioCareerDramaturgyId } from "./studioCareerDramaturgy.js";
 import { getStudioCareerFootageContinuityPenalty, type StudioCareerFootageEvidence } from "./studioCareerFootageEditing.js";
 
 /** Story dimensions from a real development draft, kept separate from the overall grade. */
@@ -22,7 +23,8 @@ export function runTestScreening(
   editingApproachId?: StudioCareerEditingApproachId,
   scriptCraftScores?: ScriptCraftScores,
   footageEvidence?: StudioCareerFootageEvidence,
-  finishingCraft?: { readonly sound: SoundDecision; readonly music: MusicDecision }
+  finishingCraft?: { readonly sound: SoundDecision; readonly music: MusicDecision },
+  dramaturgyId?: StudioCareerDramaturgyId
 ): TestScreeningResult {
   assertProject(plan.projectId, project.id, "Post-production plan");
   if (shootEvaluation) {
@@ -30,6 +32,7 @@ export function runTestScreening(
   }
 
   const editing = getStudioCareerEditingApproach(editingApproachId);
+  const dramaturgy = getStudioCareerDramaturgyEffect(dramaturgyId, scriptCraftScores, footageEvidence);
   const continuityPenalty = getStudioCareerFootageContinuityPenalty(footageEvidence, editing.id);
   const editCoverage = Math.min(4, plan.editDecisionIds.length);
   const soundCoverage = Math.min(3, plan.soundDecisionIds.length);
@@ -63,14 +66,14 @@ export function runTestScreening(
   const scoreHook = finishingCraft
     ? Math.round(finishingCraft.music.identityEffect * 0.25 + (finishingCraft.music.statChanges.audienceAppeal ?? 0) * 0.35)
     : 0;
-  const clarityScore = clampScore(34 + structure * 0.35 + shootQuality * 0.08 + editCoverage * 6 + soundCoverage * 5 + scriptReadiness + stakesClarity + editing.clarity - continuityPenalty + mixClarity);
-  const pacingScore = clampScore(34 + scriptPacing * 0.38 + shootQuality * 0.08 + editCoverage * 8 + scriptReadiness + editing.pacing - continuityPenalty + scoreRhythm);
+  const clarityScore = clampScore(34 + structure * 0.35 + shootQuality * 0.08 + editCoverage * 6 + soundCoverage * 5 + scriptReadiness + stakesClarity + editing.clarity + dramaturgy.clarity - continuityPenalty + mixClarity);
+  const pacingScore = clampScore(34 + scriptPacing * 0.38 + shootQuality * 0.08 + editCoverage * 8 + scriptReadiness + editing.pacing + dramaturgy.pacing - continuityPenalty + scoreRhythm);
   const emotionScore = clampScore(
-    32 + scriptEmotion * 0.38 + shootQuality * 0.08 + musicCoverage * 7 + colorCoverage * 3 + scriptReadiness + editing.emotion + scoreEmotion
+    32 + scriptEmotion * 0.38 + shootQuality * 0.08 + musicCoverage * 7 + colorCoverage * 3 + scriptReadiness + editing.emotion + dramaturgy.emotion + scoreEmotion
   );
   const audienceHookScore = clampScore(
     38 + scriptPacing * 0.16 + scriptEmotion * 0.16 + project.actorIds.length * 3
-      + editCoverage * 4 + musicCoverage * 4 + colorCoverage * 2 + scriptReadiness + stakesClarity * 0.6 + editing.audienceHook + mixPresence + scoreHook
+      + editCoverage * 4 + musicCoverage * 4 + colorCoverage * 2 + scriptReadiness + stakesClarity * 0.6 + editing.audienceHook + dramaturgy.audienceHook + mixPresence + scoreHook
   );
   const confusionRisk = clampScore(100 - clarityScore * 0.72 - pacingScore * 0.18);
   const recommendedChanges: string[] = [];
@@ -113,6 +116,7 @@ export function runTestScreening(
       ...(editing.id === "balanced"
         ? []
         : [`Editing approach ${editing.id} changed screening clarity, pacing, emotion and audience interest.`]),
+      ...(dramaturgy.id === "original" ? [] : [`Dramaturgical revision ${dramaturgy.id} was evaluated against screenplay and available recorded footage.`]),
       recommendedChanges.length === 0
         ? "The cut tested without a major clarity, pacing, emotion, or hook weakness."
         : `${recommendedChanges.length} area${recommendedChanges.length === 1 ? "" : "s"} should be reviewed before lock.`
