@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { STUDIO_CAREER_POST_PRODUCTION_COPY } from "../../core/studioCareerPostProductionCopy.js";
 import { STUDIO_CAREER_EDITING_APPROACH_IDS } from "../../core/studioCareerEditingApproach.js";
+import { selectScreeningCraftAlternatives } from "../../core/studioCareerScreeningCraftRevision.js";
 import { getStudioCareerEditingHandoff, STUDIO_CAREER_EDITING_HANDOFF_COPY } from "../../core/studioCareerEditingHandoff.js";
 import { getStudioCareerFootageEvidence } from "../../core/studioCareerFootageEditing.js";
 import {
@@ -23,6 +24,7 @@ import { SoundDecisionPanel } from "./SoundDecisionPanel.js";
 import { TrailerStrategyPanel } from "./TrailerStrategyPanel.js";
 import { TestScreeningPanel } from "./TestScreeningPanel.js";
 import { ScreeningRevisionPanel } from "./ScreeningRevisionPanel.js";
+import { ScreeningCraftRevisionPanel } from "./ScreeningCraftRevisionPanel.js";
 
 interface PostProductionPanelProps {
   readonly projectContext: ProjectRunContext;
@@ -104,6 +106,33 @@ export function PostProductionPanel({
         ).testScreeningResult
       }))
     : [];
+
+  // Each option uses the exact same evaluation as the current cut and the
+  // locked film. Never invent audience score deltas from generic descriptions.
+  const craftAlternatives = activePreview ? {
+    sound: selectScreeningCraftAlternatives(
+      activePreview.testScreeningResult,
+      options.soundDecisions.filter((option) => option.id !== choices.soundDecisionId).map((option) => ({
+        id: option.id,
+        costDelta: option.cost - (options.soundDecisions.find((candidate) => candidate.id === choices.soundDecisionId)?.cost ?? 0),
+        result: createPostProductionStepResult(
+          projectContext, preProductionResult, shootResult,
+          { ...choices, soundDecisionId: option.id }, scriptDraftScore, scriptCraftScores
+        ).testScreeningResult
+      }))
+    ),
+    music: selectScreeningCraftAlternatives(
+      activePreview.testScreeningResult,
+      options.musicDecisions.filter((option) => option.id !== choices.musicDecisionId).map((option) => ({
+        id: option.id,
+        costDelta: option.cost - (options.musicDecisions.find((candidate) => candidate.id === choices.musicDecisionId)?.cost ?? 0),
+        result: createPostProductionStepResult(
+          projectContext, preProductionResult, shootResult,
+          { ...choices, musicDecisionId: option.id }, scriptDraftScore, scriptCraftScores
+        ).testScreeningResult
+      }))
+    )
+  } : null;
 
   if (result) {
     // Old saved results must not claim the draft influenced a screening
@@ -222,6 +251,14 @@ export function PostProductionPanel({
             alternatives={screeningAlternatives}
             onChoose={(approachId) => select("editingApproachId", approachId)}
           />
+          {craftAlternatives && (
+            <ScreeningCraftRevisionPanel
+              screening={activePreview.testScreeningResult}
+              sound={craftAlternatives.sound}
+              music={craftAlternatives.music}
+              onChoose={(kind, id) => select(kind === "sound" ? "soundDecisionId" : "musicDecisionId", id)}
+            />
+          )}
         </section>
       )}
       <div className="post-production-actions">
