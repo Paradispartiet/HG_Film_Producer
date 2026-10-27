@@ -13,6 +13,7 @@ import { createTrailerCut } from "../../core/createTrailerCut.js";
 import { evaluatePostProduction } from "../../core/evaluatePostProduction.js";
 import { runTestScreening, type ScriptCraftScores } from "../../core/runTestScreening.js";
 import { getStudioCareerEditingApproach, type StudioCareerEditingApproachId } from "../../core/studioCareerEditingApproach.js";
+import { getStudioCareerFootageEvidence } from "../../core/studioCareerFootageEditing.js";
 import type {
   ColorDecision,
   EditDecision,
@@ -121,7 +122,8 @@ export function createPostProductionStepResult(
     undefined,
     scriptDraftScore,
     editingApproachId,
-    scriptCraftScores
+    scriptCraftScores,
+    getStudioCareerFootageEvidence(shootResult.resolvedDays)
   );
   const trailerCutResult = createTrailerCut(preProductionResult.projectState, finishingPlan, trailer);
   const postProductionEvaluation = evaluatePostProduction(
