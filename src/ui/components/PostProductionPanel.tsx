@@ -118,7 +118,7 @@ export function PostProductionPanel({
               <small>{handoffCopy.storySupport}</small>
             )}
           </div>
-        )
+        )}
         {handoff && (
           <details>
             <summary>{handoffCopy.dayLabel(handoff.dayNumber)}</summary>
