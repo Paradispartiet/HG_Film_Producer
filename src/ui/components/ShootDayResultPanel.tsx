@@ -3,6 +3,7 @@ import { STUDIO_CAREER_SHOOT_COPY } from "../../core/studioCareerShootCopy";
 import { SHOOT_STRATEGY_COPY } from "../../core/studioCareerShootStrategyCopy";
 import { PRODUCER_PRIORITY_COPY } from "../../core/studioCareerProducerPriorityCopy.js";
 import { ON_SET_DIALOGUE_COPY } from "../../core/studioCareerOnSetDialogue.js";
+import { ON_SET_DIALOGUE_VIEW_COPY } from "../../core/studioCareerDialogueViewCopy.js";
 import { OnSetDialoguePanel } from "./OnSetDialoguePanel.js";
 import type { ProjectShootLabel } from "../types.js";
 import type { ShootDayStepResult, ShootStepPreparation } from "../demo/createShootStepRun.js";
@@ -45,6 +46,12 @@ export function ShootDayResultPanel({ preparation, result, dayNumber, projectLab
           <strong>{producerCopy.options[result.producerPrioritySummary.id].title}</strong>
           <p>{producerCopy.consequence(result.producerPrioritySummary.takeQualityDelta)} · {result.producerPrioritySummary.interrupted ? producerCopy.interrupted : result.producerPrioritySummary.approachFits ? producerCopy.matched : producerCopy.partial}</p>
           <p>{producerCopy.why[result.producerPrioritySummary.recommendedId]}</p>
+          {!result.producerPrioritySummary.interrupted && !result.producerPrioritySummary.approachFits && (
+            <div className="producer-priority-unmet" data-needed-priority={result.producerPrioritySummary.recommendedId}>
+              <strong>{ON_SET_DIALOGUE_VIEW_COPY[language].missingNeed}: {producerCopy.options[result.producerPrioritySummary.recommendedId].title}</strong>
+              <p>{producerCopy.options[result.producerPrioritySummary.recommendedId].description}</p>
+            </div>
+          )}
         </div>
       )}
       {result.selectedEventId && result.producerPrioritySummary && (
