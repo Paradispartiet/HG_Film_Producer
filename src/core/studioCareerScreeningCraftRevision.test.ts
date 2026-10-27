@@ -38,6 +38,6 @@ test("all real sound and music options have player-facing names in four language
     const copy = SCREENING_CRAFT_REVISION_COPY[locale];
     assert.ok(copy.heading.length > 12);
     assert.ok(copy.note.length > 40);
-    for (const id of ids) assert.ok(copy.names[id]?.length && copy.names[id].length >= 5, `${locale}: ${id}`);
+    for (const id of ids) { const name = copy.names[id]; assert.ok(name && name.length >= 5, `${locale}: ${id}`); }
   }
 });
