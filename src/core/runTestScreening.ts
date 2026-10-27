@@ -1,5 +1,5 @@
 import type { FilmProject } from "../domain/film.js";
-import type { PostProductionPlan, TestScreeningResult } from "../domain/post.js";
+import type { MusicDecision, PostProductionPlan, SoundDecision, TestScreeningResult } from "../domain/post.js";
 import type { ScriptEvaluation } from "../domain/script.js";
 import type { ShootResultEvaluation } from "../domain/shoot.js";
 import { getStudioCareerEditingApproach, type StudioCareerEditingApproachId } from "./studioCareerEditingApproach.js";
@@ -21,7 +21,8 @@ export function runTestScreening(
   scriptDraftScore?: number,
   editingApproachId?: StudioCareerEditingApproachId,
   scriptCraftScores?: ScriptCraftScores,
-  footageEvidence?: StudioCareerFootageEvidence
+  footageEvidence?: StudioCareerFootageEvidence,
+  finishingCraft?: { readonly sound: SoundDecision; readonly music: MusicDecision }
 ): TestScreeningResult {
   assertProject(plan.projectId, project.id, "Post-production plan");
   if (shootEvaluation) {
@@ -53,14 +54,23 @@ export function runTestScreening(
     ? 0
     : Math.max(-12, Math.min(18, (Math.max(0, Math.min(100, scriptDraftScore)) - 35) * 0.5));
 
-  const clarityScore = clampScore(34 + structure * 0.35 + shootQuality * 0.08 + editCoverage * 6 + soundCoverage * 5 + scriptReadiness + stakesClarity + editing.clarity - continuityPenalty);
-  const pacingScore = clampScore(34 + scriptPacing * 0.38 + shootQuality * 0.08 + editCoverage * 8 + scriptReadiness + editing.pacing - continuityPenalty);
+  // Use the same selected, evaluated finishing decisions to shape the audience
+  // screening. Legacy/independent callers omit these and keep their old scores.
+  const mixClarity = finishingCraft ? Math.round(finishingCraft.sound.clarityEffect * 0.5) : 0;
+  const mixPresence = finishingCraft ? Math.round(finishingCraft.sound.immersionEffect * 0.25) : 0;
+  const scoreRhythm = finishingCraft ? Math.round((finishingCraft.music.statChanges.pacing ?? 0) * 0.6) : 0;
+  const scoreEmotion = finishingCraft ? Math.round(finishingCraft.music.emotionEffect * 0.6) : 0;
+  const scoreHook = finishingCraft
+    ? Math.round(finishingCraft.music.identityEffect * 0.25 + (finishingCraft.music.statChanges.audienceAppeal ?? 0) * 0.35)
+    : 0;
+  const clarityScore = clampScore(34 + structure * 0.35 + shootQuality * 0.08 + editCoverage * 6 + soundCoverage * 5 + scriptReadiness + stakesClarity + editing.clarity - continuityPenalty + mixClarity);
+  const pacingScore = clampScore(34 + scriptPacing * 0.38 + shootQuality * 0.08 + editCoverage * 8 + scriptReadiness + editing.pacing - continuityPenalty + scoreRhythm);
   const emotionScore = clampScore(
-    32 + scriptEmotion * 0.38 + shootQuality * 0.08 + musicCoverage * 7 + colorCoverage * 3 + scriptReadiness + editing.emotion
+    32 + scriptEmotion * 0.38 + shootQuality * 0.08 + musicCoverage * 7 + colorCoverage * 3 + scriptReadiness + editing.emotion + scoreEmotion
   );
   const audienceHookScore = clampScore(
     38 + scriptPacing * 0.16 + scriptEmotion * 0.16 + project.actorIds.length * 3
-      + editCoverage * 4 + musicCoverage * 4 + colorCoverage * 2 + scriptReadiness + stakesClarity * 0.6 + editing.audienceHook
+      + editCoverage * 4 + musicCoverage * 4 + colorCoverage * 2 + scriptReadiness + stakesClarity * 0.6 + editing.audienceHook + mixPresence + scoreHook
   );
   const confusionRisk = clampScore(100 - clarityScore * 0.72 - pacingScore * 0.18);
   const recommendedChanges: string[] = [];
@@ -96,6 +106,9 @@ export function runTestScreening(
         : []),
       ...(continuityPenalty > 0
         ? [`Unfinished recorded scenes reduced screening clarity and pacing by ${continuityPenalty} points; story-first editing can soften this continuity risk.`]
+        : []),
+      ...(finishingCraft
+        ? [`Selected sound mix ${finishingCraft.sound.id} and music approach ${finishingCraft.music.id} influenced the screening.`]
         : []),
       ...(editing.id === "balanced"
         ? []
