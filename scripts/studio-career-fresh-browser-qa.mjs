@@ -610,6 +610,36 @@ async function run(browser, spec) {
     await preview.waitFor({ state: "visible" });
     const lockedPreviewScores = (await preview.locator(".post-metric strong").allInnerTexts()).map(Number);
     assert.deepEqual(lockedPreviewScores, boldPreviewScores, "Replaying unchanged choices must be deterministic");
+    // Dramaturgical choices use actual script/footage evidence and the same
+    // preview/lock engine. They must persist, remain reversible and never
+    // rewrite the completed shoot or lock the film before confirmation.
+    const drama = preview.locator(".screening-dramaturgy");
+    assert.equal(await drama.locator(".screening-dramaturgy-option").count(), 4,
+      "Four dramaturgical multiple-choice alternatives must be available");
+    const dramaConflict = drama.locator('.screening-dramaturgy-option[data-dramaturgy="conflict"]');
+    const projectedDrama = JSON.parse(await dramaConflict.getAttribute("data-predicted-scores"));
+    assert.equal(projectedDrama.length, 5, "Dramaturgy projects five real screening values");
+    await dramaConflict.click();
+    await preview.waitFor({ state: "visible" });
+    const playedDrama = (await preview.locator(".post-metric strong").allInnerTexts()).map(Number);
+    assert.deepEqual(playedDrama, projectedDrama,
+      "Choosing conflict must immediately rescreen the same projected cut");
+    const afterDramaSave = (await readSaved(page)).projects[0];
+    assert.equal(afterDramaSave.postProductionChoices.dramaturgyDecisionId, "conflict",
+      "Dramaturgy choice must be retained in the career save");
+    assert.ok(!afterDramaSave.postProductionResult, "Dramaturgy preview must not lock a film");
+    assert.deepEqual(afterDramaSave.shootResult, beforePreviewSave.projects[0].shootResult,
+      "Dramaturgy cannot change previous shoot evidence");
+    const restore = preview.locator('.screening-dramaturgy-option[data-dramaturgy="original"]');
+    const projectedOriginal = JSON.parse(await restore.getAttribute("data-predicted-scores"));
+    assert.deepEqual(projectedOriginal, lockedPreviewScores, "Original cut must remain reversible");
+    await restore.click();
+    await preview.waitFor({ state: "visible" });
+    const restoredDrama = (await preview.locator(".post-metric strong").allInnerTexts()).map(Number);
+    assert.deepEqual(restoredDrama, lockedPreviewScores,
+      "Returning to original dramaturgy must restore the original screening");
+    assert.equal((await readSaved(page)).projects[0].postProductionChoices.dramaturgyDecisionId, "original");
+
     // Sound and music cards predict the scores from the SAME engine that locks
     // the film. Choices change the actual decision and require a fresh preview.
     let finalCraftScores = lockedPreviewScores;

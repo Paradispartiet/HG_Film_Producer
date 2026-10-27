@@ -1,6 +1,7 @@
 import type { FilmScale } from "../domain/film.js";
 import type { StudioCareerBudgetPriorityId } from "../core/studioCareerBudgetPriority.js";
 import type { StudioCareerEditingApproachId } from "../core/studioCareerEditingApproach.js";
+import type { StudioCareerDramaturgyId } from "../core/studioCareerDramaturgy.js";
 
 export type AppMode = "demo" | "setup";
 export type StartingMoneyPreset =
@@ -63,6 +64,8 @@ export interface ShootSelectionState {
 export interface PostProductionSelectionState {
   /** Optional to keep v1 saved careers from earlier game versions valid. */
   readonly editingApproachId?: StudioCareerEditingApproachId;
+  /** Absent in older careers; original cut retains the old screening scores. */
+  readonly dramaturgyDecisionId?: StudioCareerDramaturgyId;
   readonly editDecisionId: string;
   readonly soundDecisionId: string;
   readonly musicDecisionId: string;
