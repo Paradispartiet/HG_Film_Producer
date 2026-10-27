@@ -373,7 +373,7 @@ async function run(browser, spec) {
         "All three conversation stages have localized labels");
       assert.equal(await briefing.locator(".on-set-dialogue-producer").count(), 0,
         "A crew briefing must not announce a producer response before the choice");
-      assert.equal(await briefing.locator(".on-set-dialogue-concern").count(), 0,
+      assert.equal(await conversation.locator(".on-set-dialogue-concern").count(), 0,
         "Do not repeat a long crew concern after the player's choice");
       const dialogueOrder = await briefing.evaluate((node) => {
         const priorities = document.querySelector(".shoot-panel .producer-priority-section");
