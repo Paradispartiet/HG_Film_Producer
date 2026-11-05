@@ -84,7 +84,7 @@ jobs:
   browser-qa:
     name: Chromium journey · 12 films × 4 languages
     needs: verify
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
 
     steps:
