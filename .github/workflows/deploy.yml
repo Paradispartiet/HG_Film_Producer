@@ -84,7 +84,8 @@ jobs:
   browser-qa:
     name: Chromium journey · 12 films × 4 languages
     needs: verify
-    runs-on: ubuntu-latest
+    # Playwright 1.56.1 does not support ubuntu-latest (26.04) yet.
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
 
     steps:
