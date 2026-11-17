@@ -84,7 +84,8 @@ jobs:
   browser-qa:
     name: Chromium journey · 12 films × 4 languages
     needs: verify
-    # Playwright 1.56.1 does not support ubuntu-latest (26.04) yet.
+    # Playwright 1.56.1 bundles browser dependencies for Ubuntu 24.04;
+    # ubuntu-latest now resolves to 26.04 and fails before browser QA starts.
     runs-on: ubuntu-24.04
     timeout-minutes: 20
 
