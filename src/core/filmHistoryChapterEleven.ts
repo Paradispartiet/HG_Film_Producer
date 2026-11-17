@@ -45,7 +45,7 @@ export const filmHistoryChapterEleven: FilmHistoryBookChapter = {
   title: "The sound transition",
   period: "1927–1934",
   summary: "Recorded sound changed the equipment, work, economics, geography and artistic possibilities of cinema. From Vitaphone and optical tracks to multilingual versions, studio microphones, innovative sound editing, and uneven worldwide adoption, the transition cannot be reduced to one premiere or a simple replacement of silent film. This chapter connects those systems to actual films, sources and production choices.",
-  status: "full",
+  status: "draft",
   learningObjectives: [
     "Distinguish recorded sound-on-disc, optical sound-on-film, silent accompaniment and later restoration soundtracks.",
     "Explain why exhibition conversion, studio costs and distribution created an uneven sound transition.",
