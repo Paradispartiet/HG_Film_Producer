@@ -66,7 +66,7 @@ export function FilmHistoryBook({
                   >
                     <span>{String(chapter.number).padStart(2, "0")}</span>
                     <strong>{chapter.title}</strong>
-                    <small>{chapter.status === "full" ? "Full chapter" : "Canonical outline"}</small>
+                    <small>{chapter.status === "full" ? "Full chapter" : chapter.status === "draft" ? "Working draft" : "Canonical outline"}</small>
                   </button>
                 ))}
               </div>
@@ -83,7 +83,7 @@ export function FilmHistoryBook({
               <p>{activeChapter.summary}</p>
             </div>
             <strong className={activeChapter.status === "full" ? "film-history-book-status film-history-book-status--full" : "film-history-book-status"}>
-              {activeChapter.status === "full" ? "Full chapter" : "Canonical outline"}
+              {activeChapter.status === "full" ? "Full chapter" : activeChapter.status === "draft" ? "Working draft" : "Canonical outline"}
             </strong>
           </header>
 
@@ -92,8 +92,14 @@ export function FilmHistoryBook({
             <ol>{activeChapter.learningObjectives.map((objective) => <li key={objective}>{objective}</li>)}</ol>
           </section>
 
-          {activeChapter.status === "full" ? (
+          {activeChapter.status !== "outline" ? (
             <>
+              {activeChapter.status === "draft" && (
+                <section className="film-history-outline-note" aria-label="Working draft status">
+                  <h3>Chapter in editorial development</h3>
+                  <p>This sourced chapter draft can be read and used for comparison, but does not yet satisfy the full-text and independent editorial-review gates. Film sources and research boundaries remain visible.</p>
+                </section>
+              )}
               <div className="film-history-book-prose">
                 {activeChapter.sections.map((section) => (
                   <section id={`history-${section.id}`} key={section.id}>
