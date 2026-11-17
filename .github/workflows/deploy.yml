@@ -134,10 +134,57 @@ jobs:
           if-no-files-found: warn
           retention-days: 7
 
+  ipad-webkit-qa:
+    name: WebKit tablet journey · Film Atlas × 4 languages
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install application
+        run: npm ci
+
+      - name: Install WebKit QA tools
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps webkit
+
+      - name: Build release candidate
+        run: npm run build:ui
+
+      - name: Exercise iPad-sized WebKit journeys
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run preview -- --host 127.0.0.1 --port 4173 --strictPort > ipad-webkit-preview.log 2>&1 &
+          preview_pid=$!
+          trap 'kill "${preview_pid}" 2>/dev/null || true' EXIT
+          node scripts/film-atlas-ipad-webkit-qa.mjs
+
+      - name: Preserve WebKit screenshots and diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ipad-webkit-qa-evidence
+          path: |
+            ipad-webkit-qa-artifacts/
+            ipad-webkit-preview.log
+          if-no-files-found: warn
+          retention-days: 7
+
   deploy:
     name: Deploy GitHub Pages
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    needs: [verify, browser-qa]
+    needs: [verify, browser-qa, ipad-webkit-qa]
     runs-on: ubuntu-latest
 
     permissions:
