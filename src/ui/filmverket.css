@@ -529,6 +529,9 @@
   .filmverket-page-hero { padding: 34px 24px; }
   .producer-mode-grid { grid-template-columns: 1fr; }
   .atlas-workspace { grid-template-columns: 1fr; }
+  /* A shared film link must reveal its film before the very long catalogue. */
+  .atlas-workspace--film-open .film-analysis { order: -1; }
+  .atlas-workspace--film-open .atlas-library { order: 1; }
   .atlas-library { position: static; max-height: none; }
   .atlas-film-list { max-height: 330px; }
   .film-analysis-overview-grid,
