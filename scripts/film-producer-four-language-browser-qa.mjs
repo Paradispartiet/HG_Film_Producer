@@ -122,6 +122,21 @@ async function runCase(browser, language, scenario) {
       `${label}: Atlas film logline`,
     );
     assert.equal(await page.locator("html").getAttribute("lang"), language, `${label}: HTML language`);
+    // Film Atlas must expose the same detailed film-specific evidence as
+    // Production Cases. Do not mistake a concise marketing brief for full content.
+    const atlasDisclosure = atlas.locator("details.film-atlas-complete-study");
+    assert.equal(await atlasDisclosure.count(), 1, `${label}: detailed film study is reachable from Atlas`);
+    await atlasDisclosure.locator(":scope > summary").click();
+    const atlasStudy = atlasDisclosure.locator(".scenario-film-study");
+    await atlasStudy.waitFor({ state: "visible" });
+    const mappedAreas = atlasStudy.locator(".scenario-study-coverage-item");
+    assert.equal(await mappedAreas.count(), 17, `${label}: all 17 history and craft areas are surfaced in Atlas`);
+    assert.equal(await atlasStudy.locator(".scenario-history-choice").count(), 3, `${label}: source-backed history choices are surfaced in Atlas`);
+    const atlasEvidence = atlasStudy.locator("details.scenario-history-sources");
+    assert.equal(await atlasEvidence.count(), 1, `${label}: inspectable evidence exists in Atlas`);
+    await atlasEvidence.locator("summary").click();
+    assert.equal(await atlasEvidence.locator("li").count(), evidence.sources.length, `${label}: Atlas reuses canonical film sources`);
+    checks.push(`${label}: atlas-17-area-study`);
     checks.push(`${label}: atlas`);
 
     // Director Lab: independent route must load the same film and same display copy.
