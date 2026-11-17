@@ -132,7 +132,17 @@ async function runCase(browser, language, scenario) {
       await book.waitFor({ state: "visible" });
       const chapterLink = book.locator(".film-history-book-chapter-link").filter({ hasText: "The sound transition" });
       assert.equal(await chapterLink.count(), 1, `${label}: Chapter 11 appears in the book contents`);
+      // On phones the thirty-item contents list sits above the reader. A
+      // selection must take the user to the actual chapter, not leave them
+      // browsing the table of contents with the prose far below the fold.
+      await page.setViewportSize({ width: 360, height: 840 });
       await chapterLink.click();
+      await page.waitForFunction(() => {
+        const reader = document.querySelector(".film-history-book-reader");
+        if (!reader) return false;
+        const top = reader.getBoundingClientRect().top;
+        return top >= -32 && top < 240;
+      });
       await textEquals(book.locator(".film-history-book-chapter-hero h2"), "The sound transition", `${label}: Chapter 11 heading`);
       await textEquals(book.locator(".film-history-book-status"), "Working draft", `${label}: Chapter 11 is visibly not marked full`);
       assert.equal(await book.locator(".film-history-book-prose > section").count(), 9, `${label}: all nine substantive chapter sections are visible`);
