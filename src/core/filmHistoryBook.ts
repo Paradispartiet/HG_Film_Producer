@@ -49,7 +49,7 @@ export type FilmHistoryBookChapter = {
   readonly title: string;
   readonly period: string;
   readonly summary: string;
-  readonly status: "full" | "outline";
+  readonly status: "full" | "draft" | "outline";
   readonly learningObjectives: readonly string[];
   readonly keyTerms: readonly string[];
   readonly sections: readonly FilmHistoryBookSection[];
