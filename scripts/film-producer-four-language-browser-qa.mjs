@@ -124,6 +124,38 @@ async function runCase(browser, language, scenario) {
     assert.equal(await page.locator("html").getAttribute("lang"), language, `${label}: HTML language`);
     checks.push(`${label}: atlas`);
 
+    // Reading a chapter is a distinct user journey from navigating to Film History.
+    // The 11th chapter must expose actual prose and references, never just an outline.
+    if (id === TARGET_IDS[0]) {
+      await page.goto(new URL("#/history", SITE).href);
+      const book = page.locator(".film-history-book-page");
+      await book.waitFor({ state: "visible" });
+      const chapterLink = book.locator(".film-history-book-chapter-link").filter({ hasText: "The sound transition" });
+      assert.equal(await chapterLink.count(), 1, `${label}: Chapter 11 appears in the book contents`);
+      await chapterLink.click();
+      await textEquals(book.locator(".film-history-book-chapter-hero h2"), "The sound transition", `${label}: Chapter 11 heading`);
+      await textEquals(book.locator(".film-history-book-status"), "Working draft", `${label}: Chapter 11 is visibly not marked full`);
+      assert.equal(await book.locator(".film-history-book-prose > section").count(), 9, `${label}: all nine substantive chapter sections are visible`);
+      assert.equal(await book.locator(".film-history-sources ol > li").count(), 18, `${label}: 18 research sources appear in the reader`);
+      assert.equal(await book.locator(".film-history-atlas-links article").count(), 26, `${label}: all 26 film references appear in the reader`);
+      assert.ok(await book.locator(".film-history-atlas-links article button").count() >= 11, `${label}: existing Atlas films can be opened`);
+      assert.equal(await book.locator(".film-history-outline-note h3").getByText("Chapter in editorial development").count(), 1, `${label}: editorial caveat is readable`);
+      for (const width of [360, 768]) {
+        await page.setViewportSize({ width, height: 840 });
+        const measure = await book.evaluate((node) => ({
+          viewport: document.documentElement.clientWidth,
+          document: document.documentElement.scrollWidth,
+          reader: node.querySelector(".film-history-book-reader")?.getBoundingClientRect().width,
+        }));
+        assert.ok((measure.reader ?? 0) > 0, `${label}: Chapter 11 reader is rendered at ${width}px`);
+        assert.ok(measure.document <= measure.viewport + 2, `${label}: Chapter 11 must not overflow at ${width}px: ${JSON.stringify(measure)}`);
+      }
+      await page.setViewportSize({ width: 1440, height: 900 });
+      checks.push(`${label}: chapter-11-visible-content`);
+      await page.goto(new URL(`#/atlas/film/${slug}`, SITE).href);
+      await page.locator(".film-analysis").waitFor({ state: "visible" });
+    }
+
     // Director Lab: independent route must load the same film and same display copy.
     await page.goto(new URL(`#/director/${slug}`, SITE).href);
     const director = page.locator(".film-director-reference");
