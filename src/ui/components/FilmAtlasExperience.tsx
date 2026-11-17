@@ -60,6 +60,13 @@ export function FilmAtlasExperience({
     if (route.filmSlug) setActiveTab("analysis");
   }, [route.filmSlug]);
 
+  // A deep link or catalogue choice must bring the film itself into view on phones.
+  useEffect(() => {
+    if (route.filmSlug && window.matchMedia("(max-width: 820px)").matches) {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
+  }, [route.filmSlug]);
+
   useEffect(() => {
     if (missingFilm || !selectedScenario) {
       document.title = `${copy.productTitle} · FilmWork`;
@@ -99,6 +106,7 @@ export function FilmAtlasExperience({
       ) : (
         <FilmAtlas
           activeTab={activeTab}
+          filmRouteActive={Boolean(route.filmSlug)}
           language={language}
           onChangeTab={setActiveTab}
           onOpenDirector={(scenario) => navigate({ section: "director", filmSlug: getScenarioSlug(scenario) })}
@@ -114,6 +122,7 @@ export function FilmAtlasExperience({
 
 function FilmAtlas({
   activeTab,
+  filmRouteActive,
   language,
   onChangeTab,
   onOpenDirector,
@@ -123,6 +132,7 @@ function FilmAtlas({
   selectedScenario,
 }: {
   readonly activeTab: FilmAtlasTabId;
+  readonly filmRouteActive: boolean;
   readonly language: FilmWorkLanguage;
   readonly onChangeTab: (tab: FilmAtlasTabId) => void;
   readonly onOpenDirector: (scenario: FilmScenarioSeed) => void;
@@ -164,7 +174,7 @@ function FilmAtlas({
       {activeTab === "timeline" ? (
         <FilmAtlasTimeline language={language} onSelectFilm={onSelectFilm} scenarios={scenarios} />
       ) : (
-        <section className="atlas-workspace">
+        <section className={filmRouteActive ? "atlas-workspace atlas-workspace--film-open" : "atlas-workspace"}>
           <aside className="atlas-library">
             <div className="atlas-controls">
               <label><span>{copy.controls.search}</span><input onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)} placeholder={copy.controls.searchPlaceholder} type="search" value={query} /></label>
