@@ -10,7 +10,7 @@ export const filmHistoryChapterTwelveMovementFour: readonly FilmHistoryBookSecti
       "A source-based article must also confront the film's perspective. The story sentimentalizes the antebellum South and treats slavery through racist nostalgia and restrictive stereotypes. Hattie McDaniel's Academy Award for her performance is a major historical milestone, but it did not undo the industry's segregation or the narrow range of roles offered to Black performers; she was excluded from the Atlanta premiere. Artistic accomplishment and historical harm coexist here. Describing the film as technically influential without examining its racial imagination would present a distorted account of what the images and story communicate.",
       "The film is useful for understanding the limits of the word 'classic'. Its long-term success documents powerful audience attachment, not universal agreement with its representation of history. Compare its color, dramatic scale and use of star performance with The Wizard of Oz, released the same year. Both organize ambitious sound-and-color spectacle, but neither can stand in for all films made in 1939. A critical FilmWork analysis keeps production history, formal design, award history and political evaluation separate enough that none erases the others."
     ],
-    sourceIds: ["ch12_bfi_gwtw", "ch12_bfi_stanwyck", "ch12_bfi_technicolor"]
+    sourceIds: ["ch12_bfi_gwtw", "ch12_loc_registry", "ch12_bfi_technicolor"]
   },
   {
     id: "ch12_citizen_kane",
