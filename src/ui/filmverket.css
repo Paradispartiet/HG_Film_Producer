@@ -391,6 +391,37 @@
 .analysis-list h3 { margin: 0 0 14px; color: var(--accent); font-size: 10px; font-weight: 850; letter-spacing: 0.12em; text-transform: uppercase; }
 .analysis-list ul { display: grid; gap: 9px; margin: 0; padding-left: 18px; color: var(--muted-light); font-size: 12px; line-height: 1.55; }
 .analysis-list li::marker { color: var(--accent); }
+.film-atlas-complete-study {
+  min-width: 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted-light);
+}
+.film-atlas-complete-study > summary {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 14px 34px;
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  cursor: pointer;
+  list-style-position: inside;
+}
+.film-atlas-complete-study > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.film-atlas-complete-study[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+.film-atlas-complete-study > .scenario-film-study {
+  padding: 20px 24px;
+}
+@media (max-width: 520px) {
+  .film-atlas-complete-study > summary { padding-inline: 20px; }
+  .film-atlas-complete-study > .scenario-film-study { padding: 14px 12px; }
+}
 .film-learning-section,
 .film-history-position { display: grid; gap: 24px; padding: 28px 34px; border-top: 1px solid var(--line); }
 .film-learning-section { grid-template-columns: 0.7fr 1.3fr; }
@@ -476,6 +507,11 @@
   .filmverket-gateway { grid-column: span 6; }
   .filmverket-gateway:nth-child(5) { grid-column: span 12; }
   .atlas-workspace { grid-template-columns: minmax(235px, 0.72fr) minmax(0, 1.7fr); }
+  /* A film needs a readable full-width study at tablet sizes. */
+  .atlas-workspace--film-open { grid-template-columns: minmax(0, 1fr); }
+  .atlas-workspace--film-open .film-analysis { order: -1; }
+  .atlas-workspace--film-open .atlas-library { order: 1; position: static; max-height: none; }
+  .atlas-workspace--film-open .atlas-film-list { max-height: 330px; }
   .film-analysis-hero { grid-template-columns: 1fr auto; }
   .film-analysis-index { display: none; }
   .history-decade > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -498,6 +534,9 @@
   .filmverket-page-hero { padding: 34px 24px; }
   .producer-mode-grid { grid-template-columns: 1fr; }
   .atlas-workspace { grid-template-columns: 1fr; }
+  /* A shared film link must reveal its film before the very long catalogue. */
+  .atlas-workspace--film-open .film-analysis { order: -1; }
+  .atlas-workspace--film-open .atlas-library { order: 1; }
   .atlas-library { position: static; max-height: none; }
   .atlas-film-list { max-height: 330px; }
   .film-analysis-overview-grid,

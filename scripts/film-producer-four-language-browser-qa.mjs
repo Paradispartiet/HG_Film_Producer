@@ -122,6 +122,39 @@ async function runCase(browser, language, scenario) {
       `${label}: Atlas film logline`,
     );
     assert.equal(await page.locator("html").getAttribute("lang"), language, `${label}: HTML language`);
+    // Film Atlas must expose the same detailed film-specific evidence as
+    // Production Cases. Do not mistake a concise marketing brief for full content.
+    const atlasDisclosure = atlas.locator("details.film-atlas-complete-study");
+    assert.equal(await atlasDisclosure.count(), 1, `${label}: detailed film study is reachable from Atlas`);
+    await atlasDisclosure.locator(":scope > summary").click();
+    const atlasStudy = atlasDisclosure.locator(".scenario-film-study");
+    await atlasStudy.waitFor({ state: "visible" });
+    const mappedAreas = atlasStudy.locator(".scenario-study-coverage-item");
+    assert.equal(await mappedAreas.count(), 17, `${label}: all 17 history and craft areas are surfaced in Atlas`);
+    assert.equal(await atlasStudy.locator(".scenario-history-choice").count(), 3, `${label}: source-backed history choices are surfaced in Atlas`);
+    const atlasEvidence = atlasStudy.locator("details.scenario-history-sources");
+    assert.equal(await atlasEvidence.count(), 1, `${label}: inspectable evidence exists in Atlas`);
+    await atlasEvidence.locator("summary").click();
+    assert.equal(await atlasEvidence.locator("li").count(), evidence.sources.length, `${label}: Atlas reuses canonical film sources`);
+    checks.push(`${label}: atlas-17-area-study`);
+    if (id === TARGET_IDS[0]) {
+      await page.setViewportSize({ width: 360, height: 780 });
+      const order = await page.locator(".atlas-workspace").evaluate((workspace) => {
+        const analysis = workspace.querySelector(".film-analysis")?.getBoundingClientRect();
+        const library = workspace.querySelector(".atlas-library")?.getBoundingClientRect();
+        return { analysisTop: analysis?.top, libraryTop: library?.top };
+      });
+      assert.ok(
+        typeof order.analysisTop === "number" && typeof order.libraryTop === "number" && order.analysisTop < order.libraryTop,
+        `${label}: mobile film deep link must show analysis before long catalogue: ${JSON.stringify(order)}`,
+      );
+      const width = await atlasDisclosure.evaluate((node) => ({ client: node.clientWidth, scroll: node.scrollWidth }));
+      assert.ok(width.scroll <= width.client + 2, `${label}: expanded Atlas Film Study must fit phone: ${JSON.stringify(width)}`);
+      await atlasDisclosure.scrollIntoViewIfNeeded();
+      await page.screenshot({ path: resolve(REPORT_DIR, `${label}-atlas-study-mobile.png`), fullPage: false });
+      await page.setViewportSize({ width: 1440, height: 900 });
+      checks.push(`${label}: atlas-360px-study`);
+    }
     checks.push(`${label}: atlas`);
 
     // Reading a chapter is a distinct user journey from navigating to Film History.

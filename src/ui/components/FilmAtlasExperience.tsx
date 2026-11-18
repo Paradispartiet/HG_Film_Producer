@@ -17,6 +17,8 @@ import {
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { getClassicFilmScenarios, type FilmScenarioSeed } from "../data/filmScenarios";
 import { resolveScenarioProductionBrief, type ScenarioProductionBrief } from "../data/scenarioProductionBriefs";
+import { FILM_STUDY_COPY } from "../../core/filmStudyCopy";
+import { ScenarioFilmStudyPanel } from "./ScenarioFilmStudyPanel";
 import { FilmAtlasTimeline } from "./FilmAtlasTimeline";
 import { FilmverketKnowledgeShell } from "./FilmverketKnowledgeShell";
 
@@ -58,6 +60,13 @@ export function FilmAtlasExperience({
     if (route.filmSlug) setActiveTab("analysis");
   }, [route.filmSlug]);
 
+  // A deep link or catalogue choice must bring the film itself into view on phones.
+  useEffect(() => {
+    if (route.filmSlug && window.matchMedia("(max-width: 1100px)").matches) {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
+  }, [route.filmSlug]);
+
   useEffect(() => {
     if (missingFilm || !selectedScenario) {
       document.title = `${copy.productTitle} · FilmWork`;
@@ -97,6 +106,7 @@ export function FilmAtlasExperience({
       ) : (
         <FilmAtlas
           activeTab={activeTab}
+          filmRouteActive={Boolean(route.filmSlug)}
           language={language}
           onChangeTab={setActiveTab}
           onOpenDirector={(scenario) => navigate({ section: "director", filmSlug: getScenarioSlug(scenario) })}
@@ -112,6 +122,7 @@ export function FilmAtlasExperience({
 
 function FilmAtlas({
   activeTab,
+  filmRouteActive,
   language,
   onChangeTab,
   onOpenDirector,
@@ -121,6 +132,7 @@ function FilmAtlas({
   selectedScenario,
 }: {
   readonly activeTab: FilmAtlasTabId;
+  readonly filmRouteActive: boolean;
   readonly language: FilmWorkLanguage;
   readonly onChangeTab: (tab: FilmAtlasTabId) => void;
   readonly onOpenDirector: (scenario: FilmScenarioSeed) => void;
@@ -162,7 +174,7 @@ function FilmAtlas({
       {activeTab === "timeline" ? (
         <FilmAtlasTimeline language={language} onSelectFilm={onSelectFilm} scenarios={scenarios} />
       ) : (
-        <section className="atlas-workspace">
+        <section className={filmRouteActive ? "atlas-workspace atlas-workspace--film-open" : "atlas-workspace"}>
           <aside className="atlas-library">
             <div className="atlas-controls">
               <label><span>{copy.controls.search}</span><input onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)} placeholder={copy.controls.searchPlaceholder} type="search" value={query} /></label>
@@ -220,6 +232,10 @@ function FilmAnalysisPage({ brief, language, onOpenDirector, onPlayCase, onSelec
       <section className="film-analysis-overview-grid"><AnalysisList title={copy.analysis.genreConstruction} items={brief.genreTargets.map((item) => presentFilmCaseContent(language, brief.briefType, brief.scenarioId, item))} /><AnalysisList title={copy.analysis.toneAndAffect} items={brief.toneTargets.map((item) => presentFilmCaseContent(language, brief.briefType, brief.scenarioId, item))} /></section>
       <section className="film-craft-grid">{craftLenses.map((lens) => <AnalysisList key={lens.id} title={copy.analysis.craftLenses[lens.id]} items={brief[lens.briefKey].map((item) => presentFilmCaseContent(language, brief.briefType, brief.scenarioId, item))} />)}</section>
       <section className="film-learning-section"><div><span className="filmverket-card-kicker">{copy.analysis.learningKicker}</span><h3>{copy.analysis.learningGoals}</h3></div><ol>{brief.learningGoals.map((goal) => <li key={goal}>{presentFilmCaseContent(language, brief.briefType, brief.scenarioId, goal)}</li>)}</ol></section>
+      <details className="film-atlas-complete-study">
+        <summary>{FILM_STUDY_COPY[language].eyebrow} · {FILM_STUDY_COPY[language].auditTitle}</summary>
+        <ScenarioFilmStudyPanel brief={brief} scenario={scenario} />
+      </details>
       <section className="film-history-position"><div><span className="filmverket-card-kicker">{copy.analysis.historyKicker}</span><h3>{copy.analysis.decadeCinema(getDecade(scenario.film.year))}</h3><p>{copy.analysis.cataloguePosition(historicalIndex + 1, sorted.length)}</p></div><div className="film-history-neighbours"><button disabled={!previousFilm} onClick={() => previousFilm && onSelectFilm(previousFilm)} type="button"><small>{copy.analysis.previous}</small><strong>{previousFilm ? copy.analysis.previousFilm(`${previousFilm.film.year} · ${previousFilm.film.title}`) : copy.analysis.startOfCatalogue}</strong></button><button disabled={!nextFilm} onClick={() => nextFilm && onSelectFilm(nextFilm)} type="button"><small>{copy.analysis.next}</small><strong>{nextFilm ? copy.analysis.nextFilm(`${nextFilm.film.year} · ${nextFilm.film.title}`) : copy.analysis.endOfCatalogue}</strong></button></div></section>
       <div className="film-analysis-actions"><button className="filmverket-primary-action" onClick={onOpenDirector} type="button">{copy.actions.directorLab} <span>→</span></button><button className="filmverket-secondary-action" onClick={onPlayCase} type="button">{copy.actions.openProductionCases}</button><button className="filmverket-secondary-action" onClick={copyFilmLink} type="button">{copied ? copy.actions.linkCopied : copy.actions.copyFilmLink}</button></div>
     </article>
