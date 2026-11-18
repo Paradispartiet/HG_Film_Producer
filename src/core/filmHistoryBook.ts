@@ -14,6 +14,7 @@ import { filmHistoryChapterThirteen } from "./filmHistoryChapterThirteen.js";
 import { filmHistoryChapterFourteen } from "./filmHistoryChapterFourteen.js";
 import { filmHistoryChapterFifteen } from "./filmHistoryChapterFifteen.js";
 import { filmHistoryChapterSixteen } from "./filmHistoryChapterSixteen.js";
+import { filmHistoryChapterSeventeen } from "./filmHistoryChapterSeventeen.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -146,15 +147,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     thesis: "Postwar cinema combines industrial reconstruction, new realism, changing audiences, decolonization and a wave of modernist challenges to classical storytelling.",
     chapters: [
       filmHistoryChapterSixteen,
-      outline(
-        "postwar-japan-asia",
-        17,
-        "Postwar Japan and Asian modernisms",
-        "1945–1960s",
-        "Japanese studio masters and emerging Asian cinemas combine local traditions, genre systems and modernist experimentation amid rapid social change.",
-        ["Compare major Japanese studio and auteur practices.", "Connect postwar institutions to film form.", "Situate Asian modernisms within transnational festival culture."],
-        ["Japanese studio system", "jidaigeki", "gendaigeki", "festival circuit", "modernism"],
-      ),
+      filmHistoryChapterSeventeen,
       outline(
         "hollywood-after-war",
         18,
