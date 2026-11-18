@@ -84,9 +84,9 @@ jobs:
   browser-qa:
     name: Chromium journey · 12 films × 4 languages
     needs: verify
-    # Playwright 1.56.1 bundles browser dependencies for Ubuntu 24.04;
-    # ubuntu-latest now resolves to 26.04 and fails before browser QA starts.
     runs-on: ubuntu-24.04
+    # Use the matching Playwright image rather than downloading apt packages.
+    container: mcr.microsoft.com/playwright:v1.56.1-noble
     timeout-minutes: 20
 
     steps:
@@ -104,10 +104,8 @@ jobs:
 
       # Keep the production lockfile untouched. Chromium is a QA-only tool;
       # our application has no browser automation runtime dependency.
-      - name: Install headless Chromium QA tools
-        run: |
-          npm install --no-save --package-lock=false playwright@1.56.1
-          npx playwright install --with-deps chromium
+      - name: Install matching Chromium QA package
+        run: npm install --no-save --package-lock=false playwright@1.56.1
 
       - name: Build release candidate
         run: npm run build:ui
