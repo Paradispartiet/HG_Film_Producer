@@ -157,21 +157,58 @@ test("Chapter 2 keeps exhibition infrastructure outside fake Production Cases", 
   assert.ok(chapter.historicalObjects.some((item) => /Nickelodeon/i.test(item.label)));
 });
 
-test("Chapters 1–10 remain full; Chapter 11 is a readable draft; Chapters 12–30 remain outlines", () => {
+test("Chapters 1–10 remain full; Chapters 11 and 12 are readable drafts; 13–30 remain outlines", () => {
   const completed = filmHistoryBookChapters.filter((chapter) => chapter.number <= 10);
   assert.equal(completed.length, 10);
   assert.ok(completed.every((chapter) => chapter.status === "full"));
   assert.ok(completed.every((chapter) => chapter.sections.length > 0));
 
-  const draft = filmHistoryBookChapters.find((chapter) => chapter.number === 11);
-  assert.equal(draft?.status, "draft");
-  assert.ok((draft?.sections.length ?? 0) >= 9);
-  assert.ok((draft?.sources.length ?? 0) >= 15);
+  const sound = filmHistoryBookChapters.find((chapter) => chapter.number === 11);
+  assert.equal(sound?.status, "draft");
+  assert.ok((sound?.sections.length ?? 0) >= 9);
+  assert.ok((sound?.sources.length ?? 0) >= 15);
 
-  const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 11);
-  assert.equal(remaining.length, 19);
+  const genres = filmHistoryBookChapters.find((chapter) => chapter.number === 12);
+  assert.equal(genres?.status, "draft");
+  assert.equal(genres?.sections.length, 16);
+  assert.ok((genres?.sources.length ?? 0) >= 20);
+
+  const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 12);
+  assert.equal(remaining.length, 18);
   assert.ok(remaining.every((chapter) => chapter.status === "outline"));
   assert.ok(remaining.every((chapter) => chapter.sections.length === 0));
   assert.ok(remaining.every((chapter) => chapter.summary.length > 40));
   assert.ok(remaining.every((chapter) => chapter.learningObjectives.length >= 3));
+});
+
+test("Chapter 12 carries 16 distinct source-resolved film articles with canonical Atlas references", () => {
+  const chapter = getFilmHistoryBookChapter("hollywood-genres");
+  assert.ok(chapter);
+  assert.equal(chapter.number, 12);
+  assert.equal(chapter.status, "draft");
+  assert.equal(chapter.sections.length, 16);
+  assert.ok(countFilmHistoryChapterWords(chapter) >= 4_000);
+
+  const sectionIds = new Set(chapter.sections.map((section) => section.id));
+  const sourceIds = new Set(chapter.sources.map((source) => source.id));
+  assert.equal(sectionIds.size, chapter.sections.length);
+  assert.equal(sourceIds.size, chapter.sources.length);
+  assert.ok(chapter.sources.every((source) => source.url.startsWith("https://")));
+  assert.ok(chapter.sources.some((source) => source.publisher === "Library of Congress"));
+  assert.ok(chapter.sources.some((source) => /British Film Institute|BFI/.test(source.publisher)));
+  for (const section of chapter.sections) {
+    assert.ok(section.paragraphs.length >= 3, `Article ${section.id} has too few paragraphs`);
+    assert.ok(section.paragraphs.every((paragraph) => paragraph.length >= 200), `Article ${section.id} is underdeveloped`);
+    assert.ok(section.sourceIds.length >= 2, `Article ${section.id} needs independent source references`);
+    for (const id of section.sourceIds) assert.ok(sourceIds.has(id), `Unknown Chapter 12 source ${id}`);
+  }
+
+  const linked = chapter.filmReferences.filter((film) => film.atlasDecision === "use_existing_atlas_case");
+  const bookOnly = chapter.filmReferences.filter((film) => film.atlasDecision === "P2");
+  assert.equal(linked.length, 17, "preserve 17 existing Chapter 12 Atlas scenarios");
+  assert.equal(bookOnly.length, 9, "retain seven audited P2 comparisons and two book-only comparisons");
+  assert.ok(linked.every((film) => film.atlasScenarioId?.startsWith("scenario_")));
+  assert.equal(chapter.filmReferences.length, 26);
+  assert.ok(chapter.historicalObjects.length >= 10);
+  assert.ok(chapter.historicalObjects.every((item) => item.atlasDecision === "no_production_case"));
 });
