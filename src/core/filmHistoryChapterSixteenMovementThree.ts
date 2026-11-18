@@ -1,0 +1,45 @@
+import type { FilmHistoryBookSection } from "./filmHistoryBook.js";
+
+/** Chapter 16 III: Visconti, popular genre and neorealism's social worlds. */
+export const filmHistoryChapterSixteenMovementThree: readonly FilmHistoryBookSection[] = [
+  {
+    id: "ch16_terra",
+    title: "9. La terra trema (1948): a fishing family confronts exploitation in Sicily",
+    paragraphs: [
+      "Visconti's La terra trema follows a family of fishermen in the Sicilian village of Aci Trezza as they attempt to gain control over the value of their own labor. The boats, harbor, households and fish-market economy are more than a scenic setting: they establish the material limits within which the family hopes to change its position. The narrative emphasizes the difficulty of challenging people who control the sale and price of a catch, and refuses to suggest that a single act of bravery must triumph over an entrenched economic system. The villagers' speech and presence make the particular local world central to the film's design.",
+      "Visconti worked on location with local nonprofessional performers and used a style that can seem closer to observational documentary than his earlier Ossessione. Yet the composition, editing, relation of bodies to boats and organized dramatic conflict demonstrate that the film is an authored work. BFI research identifies influences from Soviet montage and from the documentary tradition associated with Robert Flaherty. Those connections complicate a story in which Italian realism invented itself out of nothing. The film adapts ideas and forms across borders while investigating a very specific community's economic dependence.",
+      "The experience is also different from the urban search in Bicycle Thieves. A fisherman cannot resolve his situation by locating one stolen object, because the central obstacle is a market relation shared by many households. A close analysis can therefore compare the scale of action, the use of group scenes and the ethical implications of showing nonprofessional participants in a fiction based on their environment. The reader must not turn their presence into proof that every event on screen happened to them outside the production. La terra trema teaches that social structure can become a film's dramatic antagonist without reducing its people to examples of an abstract theory."
+    ],
+    sourceIds: ["ch16_bfi_topten", "ch16_bfi_roots", "ch16_criterion_senso"]
+  },
+  {
+    id: "ch16_bitter",
+    title: "10. Bitter Rice (1949): work, sex and crime disturb the boundary around neorealism",
+    paragraphs: [
+      "Giuseppe De Santis's Bitter Rice unfolds among seasonal women rice workers in the Po Valley and mixes labor conflict with crime, romance and a star-centered dramatic plot. Silvana Mangano's striking screen presence became central to the film's publicity and reception. It would be misleading to use her performance as a reason to remove the picture from neorealist history. The film's interest lies in exactly this mixture: recognizable agricultural work, migration and collective routines appear alongside the temptations and theatrical exaggeration of a popular crime melodrama. Italian cinema never divided cleanly into documentary-like art films and commercial entertainment.",
+      "Large groups of workers, the movements required by the rice harvest, weather and machinery shape the film's setting and visual action. Criterion's essay shows how De Santis combines extended attention to people beyond the central couple with emphatic dramatic entrances and genre conventions. The everyday laborers are not merely background extras supplying picturesque proof of realism; the way they appear together gives the story its social weight. Yet the camera's treatment of the central star also turns a human body into an object of spectacle, demanding analysis of gender and representation alongside the politics of work.",
+      "Bitter Rice therefore broadens the chapter's account of what social cinema can look like. It can use popular suspense to reach audiences and at the same time portray the unequal conditions of rural work. The BFI's history of pastoral Italian films emphasizes that rural settings were an important alternative to neorealism's better-known cities. In FilmWork, a comparison with La terra trema reveals two films centered on exploitation but organized by radically different dramatic systems. Their formal choices should be explained without ranking one film as morally superior merely because it includes fewer familiar genre devices."
+    ],
+    sourceIds: ["ch16_criterion_bitter", "ch16_bfi_pastoral", "ch16_bfi_stars"]
+  },
+  {
+    id: "ch16_miracle",
+    title: "11. Miracle in Milan (1951): fantasy exposes the logic of property and exclusion",
+    paragraphs: [
+      "De Sica's Miracle in Milan tells the story of Totò and a community of people without secure housing who try to build a place to live on a vacant site. Their fragile solidarity confronts owners, police and the logic of property, while the film allows impossible events and magical interventions to disrupt ordinary realism. Its premise makes a crucial point about the supposed rules of neorealism. A filmmaker deeply involved in social observation could use fantasy not to escape poverty, but to make the contradictions of the existing order more visible. The impossible may express hope and criticism that a straightforward account cannot easily contain.",
+      "The film's comedy depends on relations among the people in its makeshift neighborhood. Small exchanges, quarrels and gestures of generosity give the group a social texture before spectacular effects alter the scale of the story. Criterion preserves De Sica's own reflection on the project and his commitment to the humanity of the central figure. The director linked Totò to people in Shoeshine and Bicycle Thieves, despite the change in tone and method. That connection argues against treating the turn to magic as a repudiation of concern for the poor.",
+      "Miracle in Milan also makes authorship visible through the collaboration with Cesare Zavattini, whose story and cinematic ideas shaped the work. Production design and visual effects help build an urban fairy tale without dissolving the material conflict at its center. An analysis should ask what the comedy permits the film to criticize and how it changes the viewer's expectations about a possible ending. This approach keeps the economic argument legible while respecting the film's deliberate departure from strict observational conventions. Neorealism's history includes the freedom to question its own methods."
+    ],
+    sourceIds: ["ch16_criterion_miracle", "ch16_criterion_miracle_essay", "ch16_criterion_miracle_desica"]
+  },
+  {
+    id: "ch16_bellissima",
+    title: "12. Bellissima (1951): cinema's promise becomes a working mother's trap",
+    paragraphs: [
+      "Visconti's Bellissima follows Maddalena, played by Anna Magnani, as she tries to secure a screen-test opportunity for her daughter. The desire for cinematic success comes from a recognizable wish to improve a family's material circumstances, but the audition process exposes the distance between the promise of glamour and the vulnerability of people seeking access. Unlike La terra trema, which places economic exploitation around the fish trade, Bellissima turns the film industry itself into an institution through which hopes and humiliations are distributed. The mother's forceful personality makes her compelling, while also revealing the difficulty of controlling a system designed around other people's judgments.",
+      "Visconti watches the small rituals of casting, waiting and rehearsing, letting the labor of trying to appear desirable become part of the story. The child's experience is central even when adults speak and make plans around her. Magnani's performance combines comedy, anger, tenderness and the strain of trying to protect someone through an ambition that may expose her to harm. Criterion scholarship describes Bellissima as a bridge between Visconti's earlier neorealist films and his later more elaborate historical dramas. Its self-conscious view of cinema also makes it an unusually rich text for a film education project.",
+      "An Atlas-style analysis should distinguish the visible casting and screen-test scenes from historically verified procedures of a specific Italian studio. The film is fiction about an industry, not an unmediated record of all its workplaces. Yet it exposes how institutions can convert a person's wish for a better life into an opportunity for others to exercise power. Read beside Shoeshine or The Children Are Watching Us, Bellissima extends the chapter's concern with children and adults making consequential decisions on their behalf. The film also shows that women performers and screen labor were vital to the movement's artistic range."
+    ],
+    sourceIds: ["ch16_criterion_modern_italians", "ch16_bfi_magnani", "ch16_criterion_visconti"]
+  }
+];
