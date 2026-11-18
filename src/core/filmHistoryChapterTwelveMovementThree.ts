@@ -20,7 +20,7 @@ export const filmHistoryChapterTwelveMovementThree: readonly FilmHistoryBookSect
       "The New York climax reveals a particularly clear production problem. Actors, city architecture and an animated figure must seem to occupy one shared space even though the component images were produced through different processes. Analyze scale, eyelines, shot order and changes of perspective rather than assuming that realism is the same as invisibility. Visible artifice can itself heighten wonder and terror. Effects work belongs to the film's storytelling grammar, not only to a list of inventions attributed to one technician or studio department.",
       "The film also carries troubling racialized and colonial fantasies in its island setting and treatment of the creature as a captured exhibit. Those elements cannot be set aside as irrelevant to its artistry; they shape the form of adventure and spectacle that the production sells. A careful reading therefore holds two things together: the film is an important feat of collaborative cinematic construction, and its imaginary geography asks the viewer to accept hierarchies that deserve criticism. This tension is part of studying the genre historically."
     ],
-    sourceIds: ["ch12_bfi_horror", "ch12_bfi_disney_history", "ch12_loc_registry"]
+    sourceIds: ["ch12_bfi_horror", "ch12_bfi_king_kong", "ch12_loc_registry"]
   },
   {
     id: "ch12_stagecoach",
