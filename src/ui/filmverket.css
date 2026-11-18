@@ -507,6 +507,11 @@
   .filmverket-gateway { grid-column: span 6; }
   .filmverket-gateway:nth-child(5) { grid-column: span 12; }
   .atlas-workspace { grid-template-columns: minmax(235px, 0.72fr) minmax(0, 1.7fr); }
+  /* A film needs a readable full-width study at tablet sizes. */
+  .atlas-workspace--film-open { grid-template-columns: minmax(0, 1fr); }
+  .atlas-workspace--film-open .film-analysis { order: -1; }
+  .atlas-workspace--film-open .atlas-library { order: 1; position: static; max-height: none; }
+  .atlas-workspace--film-open .atlas-film-list { max-height: 330px; }
   .film-analysis-hero { grid-template-columns: 1fr auto; }
   .film-analysis-index { display: none; }
   .history-decade > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }

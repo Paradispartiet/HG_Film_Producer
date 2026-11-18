@@ -73,7 +73,7 @@ async function check(browser, language, film, tablet) {
     }));
     assert.ok(atlasWidth.scroll <= atlasWidth.inner + 2, `${label}: horizontal study overflow ${JSON.stringify(atlasWidth)}`);
 
-    if (tablet.width <= 820) {
+    if (tablet.width <= 1100) {
       const order = await page.locator(".atlas-workspace").evaluate((workspace) => ({
         filmTop: workspace.querySelector(".film-analysis")?.getBoundingClientRect().top,
         libraryTop: workspace.querySelector(".atlas-library")?.getBoundingClientRect().top,

@@ -62,7 +62,7 @@ export function FilmAtlasExperience({
 
   // A deep link or catalogue choice must bring the film itself into view on phones.
   useEffect(() => {
-    if (route.filmSlug && window.matchMedia("(max-width: 820px)").matches) {
+    if (route.filmSlug && window.matchMedia("(max-width: 1100px)").matches) {
       window.scrollTo({ top: 0, behavior: "auto" });
     }
   }, [route.filmSlug]);
