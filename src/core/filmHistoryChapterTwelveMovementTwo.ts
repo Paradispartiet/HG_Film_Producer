@@ -20,7 +20,7 @@ export const filmHistoryChapterTwelveMovementTwo: readonly FilmHistoryBookSectio
       "Top Hat makes a useful contrast with the elaborate overhead patterns of 42nd Street. In the Astaire–Rogers tradition, extended views of the dancers allow the viewer to appreciate continuous movement and shared timing, while lavish spaces create a world that cannot be reduced to a realistic hotel or ballroom. The choice to preserve a dance phrase through a shot is not the absence of direction; it is a decision about what the image should let the spectator judge. Watch the relation between entrances, footwork, music and camera distance rather than assuming that every musical number obeys the same visual grammar.",
       "The film also illustrates the industrial value of a star partnership. The performers' established screen identities could organize publicity, audience expectation and production decisions, but the familiar pair still needed specific material to make the encounter feel new. Romantic misunderstanding, elegant décor and songs are genre conventions; their exact arrangement is the film's individual design. A historical analysis should credit the production's collective labor while explaining why the dancers themselves remain the scene's central expressive agents."
     ],
-    sourceIds: ["ch12_bfi_musicals", "ch12_bfi_screwball", "ch12_bfi_studio_directors"]
+    sourceIds: ["ch12_bfi_musicals", "ch12_bfi_top_hat", "ch12_bfi_screwball"]
   },
   {
     id: "ch12_it_happened_one_night",
@@ -30,7 +30,7 @@ export const filmHistoryChapterTwelveMovementTwo: readonly FilmHistoryBookSectio
       "A famous improvised division of a shared room uses a blanket as a boundary between strangers. The image is funny because an everyday object turns social propriety into visible stagecraft. Rather than recording a generic romantic obstacle, the film constructs a recurring visual rule that the characters and the audience can measure. Comedy then works through the shifts between what people say, what they conceal and what they are permitted to do. The modest settings and changing modes of transport are not production deficiencies; they are resources for a story about people who must temporarily abandon their status.",
       "Screwball was not solely escapism from the Depression. Its clashes over wealth and independence can expose the contradictions of the period even when the conclusion favors romantic union. The Production Code context also matters: ingenuity in dialogue and staging helped represent intimacy while keeping it indirect. A useful comparison with Top Hat shows two approaches to romantic conflict: one makes travel and material inconvenience central, the other sets bodily cooperation against mistaken identity and luxury. Neither needs to be treated as the universal model for comedy."
     ],
-    sourceIds: ["ch12_bfi_screwball", "ch12_bfi_precode", "ch12_bfi_melodrama"]
+    sourceIds: ["ch12_bfi_screwball", "ch12_bfi_precode", "ch12_loc_registry"]
   },
   {
     id: "ch12_stella_dallas",
