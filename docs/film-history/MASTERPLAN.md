@@ -1,5 +1,8 @@
 # Film History – masterplan for bok, Film Atlas og Production Cases
 
+> **Current editorial status (17 November 2026, pending PR #869):** The original roadmap below is an archived August baseline and its “only Chapter 1 full” statement is no longer current. In the present code, Chapters **1–10 are `full`**, Chapter **11 is a sourced `draft`** in this PR (nine sections; not yet cleared for full status), and Chapters **12–30 remain outlines**. The Chapter 11 Atlas matrix was already audited separately; that does **not** mean the textbook chapter has passed independent editorial review. Use `src/core/filmHistoryBook.ts` as the canonical live status, and preserve this older plan as a historical work record.
+
+
 **Statusgrunnlag:** `Paradispartiet/HG_Film_Producer` på `main` commit `29e927139079a92d923b6d7e542fa1c81f1f0fa0` (14. august 2026).
 
 ## 1. Formål

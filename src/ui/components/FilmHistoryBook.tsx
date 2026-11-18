@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 
 import {
   filmHistoryBookChapters,
@@ -15,6 +15,13 @@ export function FilmHistoryBook({
   readonly scenarios: readonly FilmScenarioSeed[];
 }) {
   const [activeChapterId, setActiveChapterId] = useState("motion-before-cinema");
+  const readerRef = useRef<HTMLElement | null>(null);
+  const openChapter = (chapterId: string) => {
+    setActiveChapterId(chapterId);
+    // A chapter selection must reveal the reader, especially when all 30
+    // chapter links appear above it on phones and tablets.
+    readerRef.current?.scrollIntoView({ block: "start", behavior: "auto" });
+  };
   const activeChapter = getFilmHistoryBookChapter(activeChapterId) ?? filmHistoryBookChapters[0];
   const fullChapterCount = filmHistoryBookChapters.filter((chapter) => chapter.status === "full").length;
 
@@ -61,12 +68,12 @@ export function FilmHistoryBook({
                   <button
                     className={chapter.id === activeChapter.id ? "film-history-book-chapter-link film-history-book-chapter-link--active" : "film-history-book-chapter-link"}
                     key={chapter.id}
-                    onClick={() => setActiveChapterId(chapter.id)}
+                    onClick={() => openChapter(chapter.id)}
                     type="button"
                   >
                     <span>{String(chapter.number).padStart(2, "0")}</span>
                     <strong>{chapter.title}</strong>
-                    <small>{chapter.status === "full" ? "Full chapter" : "Canonical outline"}</small>
+                    <small>{chapter.status === "full" ? "Full chapter" : chapter.status === "draft" ? "Working draft" : "Canonical outline"}</small>
                   </button>
                 ))}
               </div>
@@ -74,7 +81,7 @@ export function FilmHistoryBook({
           ))}
         </nav>
 
-        <article className="film-history-book-reader">
+        <article className="film-history-book-reader" ref={readerRef}>
           <header className="film-history-book-chapter-hero">
             <span className="film-history-book-chapter-number">Chapter {String(activeChapter.number).padStart(2, "0")}</span>
             <div>
@@ -83,7 +90,7 @@ export function FilmHistoryBook({
               <p>{activeChapter.summary}</p>
             </div>
             <strong className={activeChapter.status === "full" ? "film-history-book-status film-history-book-status--full" : "film-history-book-status"}>
-              {activeChapter.status === "full" ? "Full chapter" : "Canonical outline"}
+              {activeChapter.status === "full" ? "Full chapter" : activeChapter.status === "draft" ? "Working draft" : "Canonical outline"}
             </strong>
           </header>
 
@@ -92,8 +99,14 @@ export function FilmHistoryBook({
             <ol>{activeChapter.learningObjectives.map((objective) => <li key={objective}>{objective}</li>)}</ol>
           </section>
 
-          {activeChapter.status === "full" ? (
+          {activeChapter.status !== "outline" ? (
             <>
+              {activeChapter.status === "draft" && (
+                <section className="film-history-outline-note" aria-label="Working draft status">
+                  <h3>Chapter in editorial development</h3>
+                  <p>This sourced chapter draft can be read and used for comparison, but does not yet satisfy the full-text and independent editorial-review gates. Film sources and research boundaries remain visible.</p>
+                </section>
+              )}
               <div className="film-history-book-prose">
                 {activeChapter.sections.map((section) => (
                   <section id={`history-${section.id}`} key={section.id}>
@@ -169,12 +182,12 @@ export function FilmHistoryBook({
             <ChapterStep
               chapter={filmHistoryBookChapters[activeChapter.number - 2]}
               direction="Previous"
-              onOpen={setActiveChapterId}
+              onOpen={openChapter}
             />
             <ChapterStep
               chapter={filmHistoryBookChapters[activeChapter.number]}
               direction="Next"
-              onOpen={setActiveChapterId}
+              onOpen={openChapter}
             />
           </nav>
         </article>

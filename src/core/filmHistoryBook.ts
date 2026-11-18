@@ -8,6 +8,7 @@ import { filmHistoryChapterSeven } from "./filmHistoryChapterSeven.js";
 import { filmHistoryChapterEight } from "./filmHistoryChapterEight.js";
 import { filmHistoryChapterNine } from "./filmHistoryChapterNine.js";
 import { filmHistoryChapterTen } from "./filmHistoryChapterTen.js";
+import { filmHistoryChapterEleven } from "./filmHistoryChapterEleven.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -48,7 +49,7 @@ export type FilmHistoryBookChapter = {
   readonly title: string;
   readonly period: string;
   readonly summary: string;
-  readonly status: "full" | "outline";
+  readonly status: "full" | "draft" | "outline";
   readonly learningObjectives: readonly string[];
   readonly keyTerms: readonly string[];
   readonly sections: readonly FilmHistoryBookSection[];
@@ -125,15 +126,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     period: "1927–1945",
     thesis: "Synchronized sound reorganizes film form and industry while depression, authoritarian states and world war reshape cinema's institutions and political uses.",
     chapters: [
-      outline(
-        "sound-transition",
-        11,
-        "The sound transition",
-        "1927–1934",
-        "Recorded dialogue, music and effects alter acting, camera practice, editing, exhibition, language markets and industrial power.",
-        ["Explain why sound was an industrial transition, not just a technical addition.", "Analyze early sound space and off-screen sound.", "Compare multilingual and dubbing/subtitling strategies."],
-        ["synchronization", "sound-on-film", "sound-on-disc", "dubbing", "multilingual version"],
-      ),
+      filmHistoryChapterEleven,
       outline(
         "hollywood-genres",
         12,
