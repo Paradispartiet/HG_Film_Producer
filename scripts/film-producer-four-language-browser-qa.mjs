@@ -179,7 +179,7 @@ async function runCase(browser, language, scenario) {
       await textEquals(book.locator(".film-history-book-chapter-hero h2"), "The sound transition", `${label}: Chapter 11 heading`);
       await textEquals(book.locator(".film-history-book-status"), "Working draft", `${label}: Chapter 11 is visibly not marked full`);
       assert.equal(await book.locator(".film-history-book-prose > section").count(), 9, `${label}: all nine substantive chapter sections are visible`);
-      assert.equal(await book.locator(".film-history-sources ol > li").count(), 18, `${label}: 18 research sources appear in the reader`);
+      assert.equal(await book.locator(".film-history-sources ol > li").count(), 19, `${label}: 19 research sources appear in the reader`);
       assert.equal(await book.locator(".film-history-atlas-links article").count(), 26, `${label}: all 26 film references appear in the reader`);
       assert.ok(await book.locator(".film-history-atlas-links article button").count() >= 11, `${label}: existing Atlas films can be opened`);
       assert.equal(await book.locator(".film-history-outline-note h3").getByText("Chapter in editorial development").count(), 1, `${label}: editorial caveat is readable`);

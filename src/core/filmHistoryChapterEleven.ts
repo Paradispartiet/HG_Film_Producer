@@ -21,6 +21,7 @@ export const filmHistoryChapterElevenSources: readonly FilmHistoryBookSource[] =
   { id: "ch11_moma_japan", title: "Madamu to Nyobo (1931) screening notes", publisher: "Museum of Modern Art", url: "https://www.moma.org/calendar/events/1062" },
   { id: "ch11_cambridge_japan", title: "Early Japanese Sound Film Aesthetics at Shochiku and Nikkatsu", publisher: "Cambridge University Press", url: "https://www.cambridge.org/core/books/abs/aesthetics-of-early-sound-film/early-japanese-sound-film-aesthetics-at-shochiku-and-nikkatsu/31F6E6ADFD55D1ABB554AD64F2469940" },
   { id: "ch11_shochiku", title: "The history of Shochiku", publisher: "Shochiku", url: "https://www.shochiku.co.jp/global/en/company/history/" },
+  { id: "ch11_uol_china", title: "Sounding the socialist heroine: gender, revolutionary lyricism and Korean war films", publisher: "University of London Press", url: "https://read.uolpress.co.uk/read/gender-emotions-and-power-1750-2020/section/476854aa-0878-4a42-a6db-3da13edcab38" },
   { id: "ch11_arts_alamara", title: "Alam Ara (1931), National Film Archive of India record", publisher: "National Film Archive of India / Google Arts & Culture", url: "https://artsandculture.google.com/asset/alam-ara-1931/QgH9a0GoFzdsoA?hl=en" },
   { id: "ch11_cambridge_india", title: "Sound in Indian Film and Audiovisual Media", publisher: "Cambridge University Press", url: "https://www.cambridge.org/core/books/sound-in-indian-film-and-audiovisual-media/57600079FAAC3D4E98EC0C9B1D1CF2BF/listing" },
 ];
