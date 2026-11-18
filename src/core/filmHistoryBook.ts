@@ -11,6 +11,7 @@ import { filmHistoryChapterTen } from "./filmHistoryChapterTen.js";
 import { filmHistoryChapterEleven } from "./filmHistoryChapterEleven.js";
 import { filmHistoryChapterTwelve } from "./filmHistoryChapterTwelve.js";
 import { filmHistoryChapterThirteen } from "./filmHistoryChapterThirteen.js";
+import { filmHistoryChapterFourteen } from "./filmHistoryChapterFourteen.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -131,15 +132,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
       filmHistoryChapterEleven,
       filmHistoryChapterTwelve,
       filmHistoryChapterThirteen,
-      outline(
-        "documentary-animation-experiment",
-        14,
-        "Documentary, animation and experimental film",
-        "1920s–1945",
-        "Nonfiction, animation and experimental practices develop their own industrial pipelines, political functions and aesthetic possibilities.",
-        ["Distinguish major documentary modes before 1945.", "Describe feature animation as an industrial system.", "Connect experimental film to artistic and political networks."],
-        ["documentary", "animation pipeline", "city symphony", "sponsored film", "experimental cinema"],
-      ),
+      filmHistoryChapterFourteen,
       outline(
         "war-propaganda",
         15,

@@ -1,0 +1,45 @@
+import type { FilmHistoryBookSection } from "./filmHistoryBook.js";
+
+/** Chapter 14 III: drawn, cut-out and direct animation. */
+export const filmHistoryChapterFourteenMovementThree: readonly FilmHistoryBookSection[] = [
+  {
+    id: "ch14_achmed",
+    title: "9. The Adventures of Prince Achmed (1926): silhouette animation constructs an entire world",
+    paragraphs: [
+      "Lotte Reiniger's The Adventures of Prince Achmed shows that feature-length animation did not begin with Disney's Snow White. Reiniger developed an extraordinary visual language from articulated silhouette figures, cut backgrounds and carefully layered movement, with collaborators contributing to the production. The figures' profiles and gestures allow emotions and intentions to register without modeled faces or the illusion of fully rounded bodies. Its tale draws on material associated with One Thousand and One Nights, using flight, magical transformations and threatening encounters to make the possible range of cut-out animation far wider than a simplified children's shadow play.",
+      "The production used a special animation table and layered image construction, techniques that BFI archival research relates to later multiplane approaches. A single projected figure may look effortlessly alive, but the effect requires many small changes of position, decisions about where a body bends and an understanding of how motion reads across time. The animation's flatness becomes expressive rather than something to apologize for. Colored tinting and layered scenery help distinguish narrative spaces, while the silhouette design allows the eye to follow character and action through elaborate passages.",
+      "The film is also an argument against an industry history that recognizes animation innovation only when later large companies adopted comparable methods. Reiniger's leadership and the collaborative craft behind her production deserve independent attention. A FilmWork production case should identify the labor of drawing, cutting, articulation, staging, frame-by-frame recording and preservation, rather than assigning a fictional camera-and-actor workflow to an animated feature. Comparing Achmed with Snow White reveals two different industrial and aesthetic traditions that both deserve a place in cinema history."
+    ],
+    sourceIds: ["ch14_bfi_achmed", "ch14_bfi_women_animation", "ch14_bfi_achmed_archive"]
+  },
+  {
+    id: "ch14_direct_animation",
+    title: "10. A Colour Box (1935): painting on the film itself becomes a commissioned advertisement",
+    paragraphs: [
+      "Len Lye's A Colour Box is a short film made for the British General Post Office in which colorful marks and moving patterns are painted directly onto film. Rather than first photographing a sequence of drawings on a separate animation stand, Lye worked with the strip that would carry the projected image. The result is an exuberant relation among visual rhythm, color and a lively musical recording. The fact that the film was a commercial commission is essential, not incidental: avant-garde techniques entered public circulation through an institution whose ordinary business was postal communication.",
+      "The film's gestures appear to dance, swell and collide with the music. This rhythm cannot be understood by analyzing isolated still frames alone; the experience depends on projection speed, succession and the changing relation between audible beat and visible mark. Physical paint, photographic stock, printing and exhibition turn an apparently spontaneous visual event into a technical process. The BFI identifies A Colour Box as direct animation rather than a demonstration of Disney-style character movement. That difference helps the reader avoid a hierarchy in which more naturalistic movement is always considered more advanced.",
+      "The story also complicates an assumed division between commercial sponsorship and radical experiment. An advertising commission could provide materials and access for a film whose method challenged established animation production. It did not make the finished work independent of its sponsor. A responsible analysis considers both the material freedom of painting directly on film and the conditions of who paid for its manufacture and exhibition. Comparison with the city symphonies reveals a shared concern with visual rhythm, yet their primary material differs: one reorganizes photographed street life, the other invents moving color without photographed actors."
+    ],
+    sourceIds: ["ch14_bfi_colourbox", "ch14_bfi_animation_history", "ch14_bfi_colour_systems"]
+  },
+  {
+    id: "ch14_fantasia",
+    title: "11. Fantasia (1940): music becomes a problem of images, labor and exhibition technology",
+    paragraphs: [
+      "Disney's Fantasia brings several distinct animated sequences into a single concert-like presentation, associating classical music with abstract shapes, animals, mythic scenes and the familiar figure of Mickey Mouse. It is not a simple feature with one continuous story, nor does every sequence illustrate music in the same way. Some sections favor narrative action, others dance-like transformation or abstract association. This variety makes the film an unusually clear experiment in what visual animation can do when the primary organizing force is a prerecorded musical work.",
+      "The film's production demanded many kinds of specialist work: animated performance, color, design, effects, orchestral recording and the coordination of image with musical timing. Disney also presented it through Fantasound, a sophisticated multichannel audio system that required specially equipped theatres for its original roadshow distribution. The material conditions of exhibition therefore became part of the project's aesthetic ambition and commercial risk. A modern digital soundtrack may be very impressive, but it cannot simply stand in for evidence about how an individual 1940 auditorium was equipped or how the work sounded there.",
+      "The film also contains imagery that requires critical attention, including racist caricature in parts of its historical presentation and later circulation controversies over edited versions. Discussions of visual craft should state what version is being described and avoid assuming that the current streaming presentation reproduces every original frame. Fantasia demonstrates the distance between production innovation and historical innocence: its animation and sound experiments were ambitious, but choices about representation and exhibition shaped the work's meanings and access. A FilmWork article should teach music-image analysis with both dimensions visible."
+    ],
+    sourceIds: ["ch14_bfi_disney", "ch14_bfi_disney_history", "ch14_bfi_technicolor"]
+  },
+  {
+    id: "ch14_animation_workforce",
+    title: "12. Animation was never one industrial pipeline: artists, studios and experimental circuits",
+    paragraphs: [
+      "Between the two world wars, animation appeared in theatrical shorts, advertising films, feature experiments and abstract work. Reiniger's articulated silhouettes, Lye's direct painting and Disney's elaborate division of labor were not simply early, middle and late stages on one staircase of technical improvement. Each approach organized artistic decisions differently. Cut-outs could communicate a fairytale with economical profiles; direct marks could turn projected color into a musical event; a feature studio could coordinate large teams to sustain characters across a long narrative. Their conditions of manufacture and distribution were as different as their images.",
+      "Historical descriptions too often reduce animation to the signature of a founder or company. The animators, ink-and-paint workers, designers, technicians, musicians and camera operators who made such works possible did not have identical authority or credit. Women contributed to animated production and sometimes led independent innovation, but access to prestige and control remained unequal. The BFI's history of women animation directors and its research on Reiniger help counter an exclusively studio-founder account. Attribution needs evidence, and an incomplete screen credit is a reason to investigate rather than to erase labor.",
+      "An animation section in FilmWork should make production form legible. What is being manipulated between frames? Which sound elements were composed or recorded first? How are repeated backgrounds, photographed layers or marks on film coordinated with motion? How does a distribution system influence the length and design of an animated work? By answering those questions with real film examples, the learner can compare techniques without treating them as interchangeable buttons. A history of animation becomes richer when it admits competing artistic goals rather than measuring everything by resemblance to live action."
+    ],
+    sourceIds: ["ch14_bfi_women_animation", "ch14_bfi_animation_history", "ch14_bfi_achmed"]
+  }
+];

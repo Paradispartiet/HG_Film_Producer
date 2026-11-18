@@ -1,0 +1,45 @@
+import type { FilmHistoryBookSection } from "./filmHistoryBook.js";
+
+/** Chapter 14 II: civic and political nonfiction as authored film. */
+export const filmHistoryChapterFourteenMovementTwo: readonly FilmHistoryBookSection[] = [
+  {
+    id: "ch14_nice",
+    title: "5. À propos de Nice (1930): the city portrait becomes a social accusation",
+    paragraphs: [
+      "Jean Vigo and Boris Kaufman's À propos de Nice draws its energy from contrasts in a French seaside resort. Streets, bodies, leisure and public display become material for visual jokes and sharp social comparison. The camera moves between the prosperity performed for visitors and the labor and marginal lives that sustain a place of pleasure. Instead of offering a tourist's continuous tour, the film uses interruption and unexpected juxtaposition to expose the rituals through which class presents itself. A cheerful promenade can become an object of scrutiny when cut against different bodies and forms of work.",
+      "The film is frequently discussed alongside other city symphonies, but its satirical intention changes the stakes of the form. Berlin: Symphony of a Great City develops an urban rhythm through recurrent activities; Vigo and Kaufman organize a polemical relation between spectacle and inequality. That difference can be demonstrated in a sequence's shot order, duration and placement of comic detail, rather than asserted from a filmmaker's reputation. Its non-fiction subjects were not invented characters, yet the completed work is an authored argument about what their city conceals beneath its advertised pleasures.",
+      "The production also shows how artistic collaboration can be overlooked by a director-centered shorthand. Kaufman's camera work is inseparable from Vigo's compositional and political sensibility, and the surviving film does not disclose every exchange between them. The correct claim is that their collaboration produced particular effects, not that we can allocate each creative decision without documents. A reader could compare a tourist image and its satirical re-editing to ask how the same pictured location can invite admiration, discomfort or criticism depending on context. Nonfiction's political dimension begins in what is shown together."
+    ],
+    sourceIds: ["ch14_bfi_french_avant", "ch14_bfi_documentary", "ch14_bfi_nice"]
+  },
+  {
+    id: "ch14_song_ceylon",
+    title: "6. The Song of Ceylon (1934): sound montage and the limits of a colonial commission",
+    paragraphs: [
+      "Basil Wright's The Song of Ceylon was produced for a British government-linked context and takes Ceylon, now Sri Lanka, as its subject. Its four-part organization brings ritual, labor, commerce and modern communications into different relations with each other. The intricate soundtrack uses voices and rhythms in a way that prevents the images from functioning as simple travel illustration. The film remains a major achievement in documentary sound construction, but its beauty cannot make the political conditions of its sponsorship disappear. A colonial relationship determined who had the resources to make and circulate the film.",
+      "The tension between formal ambition and institutional perspective is clearest in the movement between ceremonies, working lives and the apparatus of trade. Sound can make distant actions seem connected or contrast a location's texture with the narration imposed on it. The film's structure was substantially shaped in editing, showing why a documentary should not be treated as a chronological transcript of a journey. It is important to ask who speaks directly, who becomes an image, who is translated and whose account of the place is privileged. Those questions do not invalidate formal analysis; they make it more precise.",
+      "An ethical reading resists two inadequate conclusions. It is not enough to praise the film as timeless artistry while ignoring empire, but it is equally unhelpful to claim that every image is a straightforward lie. The footage, its sequence and its colonial framework have different evidentiary status. Compare its treatment of labor and communication with the GPO's domestic postal films, where sponsor and audience were not identical. FilmWork can show how a commissioned documentary combines genuine observation, remarkable craft and unequal power within one film."
+    ],
+    sourceIds: ["ch14_bfi_song", "ch14_bfi_documentary", "ch14_bfi_women_docs"]
+  },
+  {
+    id: "ch14_housing_problems",
+    title: "7. Housing Problems (1935): working-class tenants speak, but the film still has a sponsor",
+    paragraphs: [
+      "Arthur Elton and Edgar Anstey's Housing Problems puts poor housing conditions before the camera and allows tenants to describe their own lives directly. The use of speech by people living with the problems distinguishes the film from a purely authoritative explanatory voice speaking over images of strangers. The recorded testimony remains striking because it locates the claim about public policy in a human speaker. The production was nevertheless sponsored within the British gas industry's public-education context, and a documentary cannot become institutionally neutral merely by incorporating first-person speech.",
+      "Framing, the order of testimony and the contrast between existing housing and proposed improvement help produce a persuasive story. A tenant's words may be genuine and important even when editors select only a small part of the available conversation. The question is not whether interview footage automatically defeats propaganda; it is how the film arranges credibility, access and an answer to the problem it presents. BFI archival work has also recovered Ruby Grierson's important uncredited contribution to this film. The historical narrative must therefore distinguish the official director credits from the wider labor that shaped its perspective.",
+      "Housing Problems is an ideal exercise in separating a documentary's evidence from its preferred solution. What do the tenants testify to? Which conditions are shown independently? Which institution benefits from the proposed remedy? Compare the film with a more lyrical portrait such as Song of Ceylon and with the highly composed Berlin city symphony. All three work with photographed lives; their assignments, distributions of speaking authority and forms of editing differ substantially. The lesson is to examine those differences rather than treating 'documentary realism' as a guarantee of impartiality."
+    ],
+    sourceIds: ["ch14_bfi_women_docs", "ch14_bfi_grierson", "ch14_bfi_ukpropaganda"]
+  },
+  {
+    id: "ch14_the_city",
+    title: "8. The City (1939): an American documentary imagines the built environment it wants",
+    paragraphs: [
+      "Ralph Steiner and Willard Van Dyke's The City was shown at the 1939 New York World's Fair and sponsored by an association of planners. Through images of industrial urban congestion, smaller communities and designed environments, it presents planning as an answer to the strains of modern living. Its political purpose is comparatively explicit, but the film does not communicate through statistics alone. Aaron Copland's music, contrasting scenes of movement and the selection of urban and domestic details give the proposed solution emotional direction. The film argues with images about how society ought to be organized.",
+      "The formal contrast is powerful because the viewer experiences environments through editing: industrial pressure can seem crowded and relentless, while planned living can appear open and humane. Yet those affects result from choices about which streets, workers and residents to photograph. The Library of Congress identifies the project's sponsorship, its premiere setting and its principal creative collaborators, helping distinguish the cinematic argument from an objective survey of American housing. The film reveals how documentary can be part of an active campaign to change policy rather than merely represent a condition already understood.",
+      "Compare The City with Housing Problems. Both try to make the built environment a public concern, but one privileges a planning vision through broad montage while the other uses the speech of tenants as evidence of conditions. Neither form is automatically superior; each emphasizes and excludes different kinds of information. The FilmWork reader should look at rhythm, narration, sponsor and visual counterexample, asking how a different edit might change the policy conclusion without falsifying the individual shots. That question links documentary filmmaking directly to historical accountability."
+    ],
+    sourceIds: ["ch14_loc_registry", "ch14_loc_copland", "ch14_bfi_documentary"]
+  }
+];
