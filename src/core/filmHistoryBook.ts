@@ -13,6 +13,7 @@ import { filmHistoryChapterTwelve } from "./filmHistoryChapterTwelve.js";
 import { filmHistoryChapterThirteen } from "./filmHistoryChapterThirteen.js";
 import { filmHistoryChapterFourteen } from "./filmHistoryChapterFourteen.js";
 import { filmHistoryChapterFifteen } from "./filmHistoryChapterFifteen.js";
+import { filmHistoryChapterSixteen } from "./filmHistoryChapterSixteen.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -144,15 +145,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     period: "1945–1968",
     thesis: "Postwar cinema combines industrial reconstruction, new realism, changing audiences, decolonization and a wave of modernist challenges to classical storytelling.",
     chapters: [
-      outline(
-        "italian-neorealism",
-        16,
-        "Italian Neorealism",
-        "1943–1954",
-        "Location shooting, social crisis, nonprofessional performers and open narrative forms become central to a highly influential postwar movement.",
-        ["Identify Neorealist production conditions and stylistic tendencies.", "Avoid reducing the movement to a single visual formula.", "Trace its international influence."],
-        ["Neorealism", "location shooting", "nonprofessional actor", "open form", "postwar realism"],
-      ),
+      filmHistoryChapterSixteen,
       outline(
         "postwar-japan-asia",
         17,
