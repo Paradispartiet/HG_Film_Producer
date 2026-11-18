@@ -138,6 +138,9 @@ jobs:
     name: WebKit tablet journey · Film Atlas × 4 languages
     needs: verify
     runs-on: ubuntu-24.04
+    # The version-matched Playwright image includes WebKit and system libraries.
+    # Avoid slow apt mirrors on ephemeral runners; retain all real browser checks.
+    container: mcr.microsoft.com/playwright:v1.56.1-noble
     timeout-minutes: 20
 
     steps:
@@ -153,10 +156,8 @@ jobs:
       - name: Install application
         run: npm ci
 
-      - name: Install WebKit QA tools
-        run: |
-          npm install --no-save --package-lock=false playwright@1.56.1
-          npx playwright install --with-deps webkit
+      - name: Install matching Playwright test package
+        run: npm install --no-save --package-lock=false playwright@1.56.1
 
       - name: Build release candidate
         run: npm run build:ui
