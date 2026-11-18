@@ -163,15 +163,15 @@ export const filmHistoryChapterSeventeenSources: readonly FilmHistoryBookSource[
   },
   {
     "id": "ch17_wuxia",
-    "title": "A Touch of Zen: Prowling, Scheming, Flying",
-    "publisher": "The Criterion Collection",
-    "url": "https://www.criterion.com/current/posts/4141-a-touch-of-%20flying"
+    "title": "Where to begin with King Hu",
+    "publisher": "British Film Institute",
+    "url": "https://www.bfi.org.uk/features/where-begin-with-king-hu"
   },
   {
     "id": "ch17_festivals",
-    "title": "Ozu vs Godzilla",
+    "title": "The best Japanese films – one per year",
     "publisher": "British Film Institute",
-    "url": "https://www.bfi.org.uk/features/ozu-vs-godzilla"
+    "url": "https://www.bfi.org.uk/lists/great-japanese-film-every-year-from-1925-now"
   }
 ];
 
