@@ -12,6 +12,7 @@ import { filmHistoryChapterEleven } from "./filmHistoryChapterEleven.js";
 import { filmHistoryChapterTwelve } from "./filmHistoryChapterTwelve.js";
 import { filmHistoryChapterThirteen } from "./filmHistoryChapterThirteen.js";
 import { filmHistoryChapterFourteen } from "./filmHistoryChapterFourteen.js";
+import { filmHistoryChapterFifteen } from "./filmHistoryChapterFifteen.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -133,15 +134,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
       filmHistoryChapterTwelve,
       filmHistoryChapterThirteen,
       filmHistoryChapterFourteen,
-      outline(
-        "war-propaganda",
-        15,
-        "Cinema at war",
-        "1939–1945",
-        "Feature films, newsreels, documentaries, animation and military production become instruments of morale, persuasion, information and memory across combatant states.",
-        ["Differentiate propaganda, information and entertainment functions.", "Compare wartime film institutions.", "Analyze how war accelerates technical and organizational change."],
-        ["propaganda", "newsreel", "morale", "wartime documentary", "state sponsorship"],
-      ),
+      filmHistoryChapterFifteen,
     ],
   },
   {
