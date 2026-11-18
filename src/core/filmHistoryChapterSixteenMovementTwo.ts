@@ -1,0 +1,45 @@
+import type { FilmHistoryBookSection } from "./filmHistoryBook.js";
+
+/** Chapter 16 II: Rossellini's war trilogy and De Sica's child-centered social cinema. */
+export const filmHistoryChapterSixteenMovementTwo: readonly FilmHistoryBookSection[] = [
+  {
+    id: "ch16_paisan",
+    title: "5. Paisan (1946): six encounters across a country that cannot speak with one voice",
+    paragraphs: [
+      "Rossellini's Paisan, also known as Paisà, moves northward through six episodes of the Allied campaign in Italy. Its geography includes Sicily, Naples, Rome, Florence, the Apennines and the Po delta, but the national journey does not generate a simple triumphant narrative. Each episode shows people trying to understand one another under conditions of conflict and mistrust. Differences of language, military position, region and experience become dramatic forces rather than decorative details. The episodes' relatively independent stories also resist the illusion that one protagonist could represent every Italian life transformed by the war.",
+      "The film makes communication difficult in both a literal and ethical sense. A soldier and civilian may fail to share words; an interpreter can be absent; an apparently minor misunderstanding may change a life. Rossellini combines dramatic situations with photographed locations and performers chosen for their connection to the environments depicted. The movement between intimate interactions and historical catastrophe produces emotional force without requiring a continuous conventional plot. At the same time, the images and order of events have been deliberately composed and edited. An episodic form is not an absence of filmmaking structure.",
+      "BFI's study of Rossellini describes Paisan as a geographical journey through the liberation, while research on the roots of neorealism places it among the key works of the period. Compare it with Rome, Open City: one concentrates a network of resistance relationships in a city, while the other disperses attention across regions and encounters. It belongs to the story of war and the story of neorealism, but those contexts ask different questions. FilmWork should link to its existing Atlas case while treating the chosen episode, language use and historical evidence as distinct analytic problems."
+    ],
+    sourceIds: ["ch16_bfi_rossellini", "ch16_bfi_topten", "ch16_bfi_roots"]
+  },
+  {
+    id: "ch16_germany_zero",
+    title: "6. Germany Year Zero (1948): a child's Berlin reveals the danger of false moral certainty",
+    paragraphs: [
+      "Germany Year Zero follows Edmund, a boy trying to survive in the ruined Berlin of the immediate postwar years. The scarcity of food, shattered buildings and uncertain authority define the world he moves through. Unlike a story of liberation whose ending promises renewal, Rossellini's film shows the way catastrophe persists in institutions, homes and children's expectations. Edmund's choices are shaped by adults who remain compromised by the ideas and conditions of the previous regime. The film asks the viewer to understand the pressure upon a child without treating that pressure as an excuse for every action.",
+      "The Berlin ruins provide an unmistakable historical setting, but the camera's attention to Edmund's movement turns that setting into a moral geography. Streets can offer temporary escape while revealing the scale of destruction; interiors can offer shelter while becoming spaces of desperation. Rossellini uses distance, duration and encounters to make uncertainty tangible. BFI commentary has read the film as possessing qualities close to horror, despite its absence of supernatural threat. The comparison is revealing: terror comes from ordinary adult conduct and the persistence of dangerous thought within a damaged city.",
+      "The 1948 film completes the director's wartime and immediate postwar trilogy after Rome, Open City and Paisan. It is important not to collapse these works into one uniform recipe. The first makes political resistance central, the second uses several episodes of cultural encounter, and the third confines the viewer to a young person's catastrophic social world. Germany Year Zero is preserved in the book as a comparative film rather than assigned a nonexistent playable scenario. A historically accurate FilmWork reading should make that boundary visible and distinguish the recorded streets of Berlin from the scripted tragedy unfolding among them."
+    ],
+    sourceIds: ["ch16_bfi_topten", "ch16_bfi_rossellini", "ch16_bfi_roots"]
+  },
+  {
+    id: "ch16_shoeshine",
+    title: "7. Shoeshine (1946): friendship meets the machinery of juvenile punishment",
+    paragraphs: [
+      "Vittorio De Sica's Shoeshine follows two boys earning money through shoe-polishing and dreams of greater freedom in postwar Rome. Their relationship becomes vulnerable when adults, markets and the penal system intervene. The film refuses to treat the boys as simply innocent symbols untouched by the economic world. They make choices, desire possessions and misunderstand the consequences of events, but their power to shape what follows is drastically limited. Criterion's writing on the film connects its production to the immediate aftermath of Rome's liberation, emphasizing a social situation in which children bore burdens created by larger systems.",
+      "De Sica and his collaborators build the boys' friendship through shared movement and small exchanges rather than through a thesis about poverty. Their separation and the structures of confinement then acquire force because those ordinary gestures have been established. Institutional spaces narrow the possible actions while adults hold authority over stories the children are permitted to tell. The film's force comes from the collision of intimate loyalty with procedures that reward suspicion and division. Editing and performance give the moral situation a shape without allowing an easy reassuring solution.",
+      "Shoeshine is a bridge between The Children Are Watching Us and Bicycle Thieves. All place a child's experience alongside adult failure, but one concerns family breakdown, another juvenile institutions, and the last employment and paternal shame. Comparing them also demonstrates the importance of collaboration between De Sica and writer Cesare Zavattini. Criterion scholarship treats the social critique as inseparable from the formal tenderness of its portrayal, not as a list of facts pasted over a story. FilmWork should invite attention to what the children know in a scene, which adults control the frame and how an environment changes the meaning of friendship."
+    ],
+    sourceIds: ["ch16_criterion_shoeshine", "ch16_criterion_shoeshine_essay", "ch16_criterion_bicycle_essay"]
+  },
+  {
+    id: "ch16_bicycle",
+    title: "8. Bicycle Thieves (1948): a missing bicycle becomes a test of social belonging",
+    paragraphs: [
+      "Antonio Ricci needs a bicycle to keep his new job posting advertising bills in Rome. When the bicycle is stolen, his search with his young son Bruno becomes a journey through the city's working lives and institutions. The plot is extraordinarily direct, yet its emotional consequences reach far beyond the object itself. Losing the bicycle threatens wages, parental authority and the possibility of being respected as someone able to provide. De Sica and Zavattini construct a drama in which employment seems contingent on a possession the poor cannot readily replace, and ordinary errands turn into a desperate investigation of social relations.",
+      "The city is organized as a succession of different pressures: a market, a church, busy streets and gathering crowds place father and son inside networks that rarely offer a complete answer. Criterion's detailed essay describes the film as one of cinema's great city films because its spaces acquire social and moral meaning. Bruno is not just an observer accompanying the father. He witnesses Antonio's increasingly unstable decisions and, in moments of danger, helps the audience see the distance between a parent's intentions and actions. The closing gesture between the two can be moving without resolving the family's economic predicament.",
+      "The film's nonprofessional leads and location work have often been emphasized, but these choices do not make the result unplanned. Performance, shot order, sounds and encounters are composed to make a specific experience legible. Its enormous international reputation also changed how viewers outside Italy imagined postwar cinema, sometimes encouraging the false belief that all Italian films were like Bicycle Thieves. FilmWork should reuse the existing Atlas case, then ask how the film's constructed narrative converts one job requirement into a question about dignity and how a child changes the ethical perspective of the story."
+    ],
+    sourceIds: ["ch16_criterion_bicycle", "ch16_criterion_bicycle_essay", "ch16_criterion_desica"]
+  }
+];
