@@ -1,0 +1,45 @@
+import type { FilmHistoryBookSection } from "./filmHistoryBook.js";
+
+/** Chapter 12: industrial conditions, crime and horror. Editorial working draft. */
+export const filmHistoryChapterTwelveMovementOne: readonly FilmHistoryBookSection[] = [
+  {
+    id: "ch12_industry_not_a_formula",
+    title: "1. A studio was a production system, not a machine that made identical films",
+    paragraphs: [
+      "By the early 1930s, Hollywood's large companies could finance, manufacture, distribute and, in several cases, exhibit films through interlocking operations. Executives coordinated release schedules and budgets; writers, set builders, performers, camera crews, editors and composers worked across productions. A recurring genre helped a company plan around familiar audience expectations and existing craft expertise. It did not settle the artistic decisions of every film. Compare the urgent street violence associated with Warner Bros. crime pictures, Universal's theatrical horror, MGM's elaborate musical fantasy and Columbia's comparatively modest romantic comedy: their differences are instructive precisely because all emerged within a shared commercial marketplace.",
+      "The shorthand 'factory system' can make the work sound automatic. A script might be revised during shooting, a director might receive an inherited star or set, and a supporting picture could demand ingenuity under tight constraints. Prestige releases, ordinary programme features and lower-budget productions occupied different positions in the schedules. Stars were contracted and publicized, yet the choices of supporting actors and specialist departments could be decisive for a scene's rhythm or atmosphere. The appropriate unit of explanation is the actual production and its recorded conditions, not a claim that one studio possessed a single fixed style.",
+      "The film article therefore needs to ask different questions from a company history. What does a repeated genre convention make the viewer expect? Which shot, sound cue or performance interrupts that expectation? Which contributors, technical resources and release conditions can be documented? A production case may model departments and constraints, but the historical reader should not confuse a contemporary simulation with an archive record of the original budget, schedule or decisions. Studio organization made recurring forms possible; filmmakers still had to construct individual films."
+    ],
+    sourceIds: ["ch12_bfi_precode", "ch12_bfi_musicals", "ch12_bfi_studio_directors"]
+  },
+  {
+    id: "ch12_public_enemy",
+    title: "2. The Public Enemy (1931): a gangster's rise becomes an argument about power",
+    paragraphs: [
+      "William A. Wellman's The Public Enemy follows Tom Powers from youthful criminality toward a violent career. Its sharply paced scenes, street settings and James Cagney's quick, abrasive performance helped establish a recognizable early-sound gangster style. The protagonist attracts attention through energy and wit, yet that attractiveness is part of the film's moral problem. The narrative lets viewers feel the momentum of illegal power while refusing to make its rewards durable. Warner Bros. turned this tension into a repeatable kind of crime picture at a time when Depression-era audiences encountered both unemployment and headlines about organized crime.",
+      "The film's famous domestic confrontation, in which Tom thrusts a grapefruit into Kitty's face, is not merely a quotation-ready shock. It exposes how the character's violence reaches intimate relationships as well as gang rivalry. Looking at performance and cutting matters more than listing violent incidents: Cagney's abrupt gestures, economical dialogue and the distribution of reaction shots change how quickly comedy curdles into cruelty. The final movement reverses the gangster's apparent control; a genre built around individual ascent is made to end in exposure and vulnerability.",
+      "This is also a test of source discipline. The contemporary public debate over gangster films, the studio's commercial decisions and the visible film itself do not provide identical kinds of evidence. The reader can analyze what the released picture presents without claiming access to an unverified production meeting. Compare The Public Enemy with Little Caesar and Scarface to see a cycle, but keep the different lead performances, institutional pressures and censorship histories distinct. The genre's repeated rise-and-fall structure did not mean its films were interchangeable."
+    ],
+    sourceIds: ["ch12_tcm_warners", "ch12_bfi_gangsters", "ch12_bfi_precode", "ch12_loc_registry"]
+  },
+  {
+    id: "ch12_scarface",
+    title: "3. Scarface (1932): violence, publicity and censorship become part of the film's form",
+    paragraphs: [
+      "Howard Hawks's Scarface makes gangster ambition into a spectacle of escalating brutality. Paul Muni's Tony Camonte moves through an underworld organized by weapons, territory and status, while the film repeatedly connects personal desire to public displays of force. Newspaper accounts and crime mythology fed the cycle, but Scarface is not a documentary reconstruction of a single criminal life. Its expressive framing, bursts of action and visual repetitions are deliberate storytelling devices. The gangster's apparent freedom is both the fantasy the picture sells and the instability it exposes.",
+      "The film also demonstrates why the term 'pre-Code' requires precision. A Production Code existed from 1930, but enforcement changed markedly with the Production Code Administration in 1934. Scarface encountered censorship disputes and alterations before the later enforcement regime. The meaning of the film's violence cannot be explained by saying that there were simply no rules. Producers, distributors, local censor boards and campaigners had competing demands, and the picture's release history belongs to the article alongside its screenplay and images.",
+      "Set Scarface beside The Public Enemy: both build dramatic speed from violence, but not from identical characters or visual strategies. A production-oriented reading asks how action is divided into staging, camera positions, gunfire and edits rather than treating on-screen gunshots as evidence of specific recording equipment. A cultural reading asks why the gangster could be at once commercially attractive and presented as a danger to civil society. This double movement makes the crime cycle a particularly clear case of genre as negotiation rather than formula."
+    ],
+    sourceIds: ["ch12_bfi_gangsters", "ch12_bfi_precode", "ch12_tcm_warners"]
+  },
+  {
+    id: "ch12_universal_horror",
+    title: "4. Dracula (1931), Frankenstein (1931) and Bride of Frankenstein (1935): building a monster cycle",
+    paragraphs: [
+      "Universal's early-sound horror cycle drew on literature, theatre, makeup, design and recognizable performers to create a durable repertoire of fear. Tod Browning's Dracula is built around Bela Lugosi's commanding stillness, the spaces surrounding his entrances and the theatrical weight of speech. James Whale's Frankenstein gives Boris Karloff's creature a physical expressiveness that can make terror and pity coexist. The difference between the two is not merely one monster versus another: the films organize movement, silence, laboratory and castle settings, and audience sympathy differently.",
+      "Whale's Bride of Frankenstein returns to an established property yet shifts its emotional and stylistic balance. The creature's longing for companionship sits alongside gothic set pieces and dark comedy. Sequel production could reuse a popular figure while changing its significance. Creature makeup, special effects, art direction and performance are therefore not decorative departments placed on top of a finished horror story; they are ways the film constructs a body the audience must both fear and understand. An account that attributes every visual effect to a single director would erase this collaborative craft.",
+      "Horror's production system also illuminates representation. Some exotic locations, accents and threatening bodies were designed for audiences presumed to be culturally distant from them; these conventions should be examined rather than reproduced as neutral facts about peoples or places. It would also be inaccurate to describe all Universal horror as cheap or identical. A historically useful comparison traces actual films, styles and theatrical traditions, then distinguishes documented techniques from present-day guesses about how a scene must have been made."
+    ],
+    sourceIds: ["ch12_bfi_universal", "ch12_bfi_horror", "ch12_bfi_precode"]
+  }
+];
