@@ -17,6 +17,7 @@ import { filmHistoryChapterSixteen } from "./filmHistoryChapterSixteen.js";
 import { filmHistoryChapterSeventeen } from "./filmHistoryChapterSeventeen.js";
 import { filmHistoryChapterEighteen } from "./filmHistoryChapterEighteen.js";
 import { filmHistoryChapterNineteen } from "./filmHistoryChapterNineteen.js";
+import { filmHistoryChapterTwenty } from "./filmHistoryChapterTwenty.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -152,15 +153,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
       filmHistoryChapterSeventeen,
       filmHistoryChapterEighteen,
       filmHistoryChapterNineteen,
-      outline(
-        "decolonization-third-cinema",
-        20,
-        "Decolonization and Third Cinema",
-        "1950s–1970s",
-        "Filmmakers in Latin America, Africa and other decolonizing contexts develop new production networks and political theories of cinema.",
-        ["Explain Third Cinema historically and distinguish it from a geographic label.", "Connect anti-colonial politics to production and distribution.", "Identify key African and Latin American institutions and filmmakers."],
-        ["Third Cinema", "decolonization", "anti-colonial cinema", "collective production", "alternative distribution"],
-      ),
+      filmHistoryChapterTwenty,
     ],
   },
   {
