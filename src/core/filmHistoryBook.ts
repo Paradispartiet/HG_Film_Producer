@@ -16,6 +16,7 @@ import { filmHistoryChapterFifteen } from "./filmHistoryChapterFifteen.js";
 import { filmHistoryChapterSixteen } from "./filmHistoryChapterSixteen.js";
 import { filmHistoryChapterSeventeen } from "./filmHistoryChapterSeventeen.js";
 import { filmHistoryChapterEighteen } from "./filmHistoryChapterEighteen.js";
+import { filmHistoryChapterNineteen } from "./filmHistoryChapterNineteen.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -150,15 +151,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
       filmHistoryChapterSixteen,
       filmHistoryChapterSeventeen,
       filmHistoryChapterEighteen,
-      outline(
-        "new-waves-europe",
-        19,
-        "New Waves and new cinemas",
-        "1955–1968",
-        "French, British, Czech, Polish and other new cinemas challenge studio norms through location work, new performers, reflexive style and generational politics.",
-        ["Compare several New Wave movements rather than treating them as one style.", "Connect lightweight production to formal change.", "Analyze criticism, cinephilia and film schools as institutions."],
-        ["French New Wave", "Free Cinema", "Czech New Wave", "cinephilia", "reflexivity"],
-      ),
+      filmHistoryChapterNineteen,
       outline(
         "decolonization-third-cinema",
         20,
