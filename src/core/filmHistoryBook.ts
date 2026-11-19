@@ -15,6 +15,7 @@ import { filmHistoryChapterFourteen } from "./filmHistoryChapterFourteen.js";
 import { filmHistoryChapterFifteen } from "./filmHistoryChapterFifteen.js";
 import { filmHistoryChapterSixteen } from "./filmHistoryChapterSixteen.js";
 import { filmHistoryChapterSeventeen } from "./filmHistoryChapterSeventeen.js";
+import { filmHistoryChapterEighteen } from "./filmHistoryChapterEighteen.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -148,15 +149,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     chapters: [
       filmHistoryChapterSixteen,
       filmHistoryChapterSeventeen,
-      outline(
-        "hollywood-after-war",
-        18,
-        "Hollywood after the studio peak",
-        "1945–1960",
-        "Antitrust decisions, television, widescreen, color, location production, film noir and changing stars alter classical Hollywood's business and style.",
-        ["Explain the Paramount decision's structural significance.", "Relate television competition to widescreen and spectacle.", "Analyze noir and melodrama within postwar culture."],
-        ["Paramount decision", "widescreen", "film noir", "television", "package-unit production"],
-      ),
+      filmHistoryChapterEighteen,
       outline(
         "new-waves-europe",
         19,
