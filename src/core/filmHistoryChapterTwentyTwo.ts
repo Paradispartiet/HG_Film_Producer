@@ -121,9 +121,9 @@ export const filmHistoryChapterTwentyTwoSources: readonly FilmHistoryBookSource[
   },
   {
     "id": "ch22_question",
-    "title": "10 great feminist films: A Question of Silence",
-    "publisher": "British Film Institute",
-    "url": "https://www.bfi.org.uk/lists/10-great-feminist-films"
+    "title": "IAS Laughter: Past and Present of A Question of Silence",
+    "publisher": "University College London",
+    "url": "https://www.ucl.ac.uk/institute-of-advanced-studies/publications/2021/jan/ias-laughter-past-present-question-silence"
   },
   {
     "id": "ch22_ascent",
