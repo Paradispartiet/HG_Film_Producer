@@ -18,6 +18,7 @@ import { filmHistoryChapterSeventeen } from "./filmHistoryChapterSeventeen.js";
 import { filmHistoryChapterEighteen } from "./filmHistoryChapterEighteen.js";
 import { filmHistoryChapterNineteen } from "./filmHistoryChapterNineteen.js";
 import { filmHistoryChapterTwenty } from "./filmHistoryChapterTwenty.js";
+import { filmHistoryChapterTwentyOne } from "./filmHistoryChapterTwentyOne.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -163,15 +164,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     period: "1968–1989",
     thesis: "The collapse of older production assumptions produces both intensified blockbuster economics and new political, independent, experimental and transnational film cultures.",
     chapters: [
-      outline(
-        "new-hollywood",
-        21,
-        "New Hollywood",
-        "1967–1980",
-        "A generation of filmmakers works between countercultural audiences, genre revision, location production, auteur discourse and renewed corporate control.",
-        ["Explain New Hollywood as an industrial as well as stylistic change.", "Analyze genre revision and youth audiences.", "Trace the shift toward blockbuster economics."],
-        ["New Hollywood", "auteurism", "counterculture", "road movie", "blockbuster"],
-      ),
+      filmHistoryChapterTwentyOne,
       outline(
         "feminist-queer-political",
         22,
