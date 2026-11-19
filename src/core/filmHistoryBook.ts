@@ -19,6 +19,7 @@ import { filmHistoryChapterEighteen } from "./filmHistoryChapterEighteen.js";
 import { filmHistoryChapterNineteen } from "./filmHistoryChapterNineteen.js";
 import { filmHistoryChapterTwenty } from "./filmHistoryChapterTwenty.js";
 import { filmHistoryChapterTwentyOne } from "./filmHistoryChapterTwentyOne.js";
+import { filmHistoryChapterTwentyTwo } from "./filmHistoryChapterTwentyTwo.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -165,15 +166,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     thesis: "The collapse of older production assumptions produces both intensified blockbuster economics and new political, independent, experimental and transnational film cultures.",
     chapters: [
       filmHistoryChapterTwentyOne,
-      outline(
-        "feminist-queer-political",
-        22,
-        "Feminist, queer and political counter-cinemas",
-        "1960s–1980s",
-        "Filmmakers, theorists and collectives challenge dominant representation, authorship and spectatorship through new institutions and forms.",
-        ["Connect film form to feminist and queer critique.", "Identify alternative production/distribution networks.", "Distinguish counter-cinema from a single visual style."],
-        ["counter-cinema", "feminist film", "queer cinema", "collective", "spectatorship"],
-      ),
+      filmHistoryChapterTwentyTwo,
       outline(
         "popular-asian-cinemas",
         23,
