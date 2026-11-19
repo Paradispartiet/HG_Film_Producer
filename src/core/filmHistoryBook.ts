@@ -22,6 +22,7 @@ import { filmHistoryChapterTwentyOne } from "./filmHistoryChapterTwentyOne.js";
 import { filmHistoryChapterTwentyTwo } from "./filmHistoryChapterTwentyTwo.js";
 import { filmHistoryChapterTwentyThree } from "./filmHistoryChapterTwentyThree.js";
 import { filmHistoryChapterTwentyFour } from "./filmHistoryChapterTwentyFour.js";
+import { filmHistoryChapterTwentyFive } from "./filmHistoryChapterTwentyFive.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -171,15 +172,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
       filmHistoryChapterTwentyTwo,
       filmHistoryChapterTwentyThree,
       filmHistoryChapterTwentyFour,
-      outline(
-        "festival-art-cinema",
-        25,
-        "Global auteurs and festival networks",
-        "1960s–1989",
-        "Festivals, art-house distribution, state funding and co-production support filmmakers whose work circulates across national borders and critical institutions.",
-        ["Explain the festival circuit as an institution.", "Relate state funding and co-production to art cinema.", "Avoid equating auteur cinema with national isolation."],
-        ["festival circuit", "art-house", "state funding", "co-production", "auteur"],
-      ),
+      filmHistoryChapterTwentyFive,
     ],
   },
   {
