@@ -157,7 +157,7 @@ test("Chapter 2 keeps exhibition infrastructure outside fake Production Cases", 
   assert.ok(chapter.historicalObjects.some((item) => /Nickelodeon/i.test(item.label)));
 });
 
-test("Chapters 1–10 remain full; Chapters 11–16 are readable drafts; 17–30 remain outlines", () => {
+test("Chapters 1–10 remain full; Chapters 11–17 are readable drafts; 18–30 remain outlines", () => {
   const completed = filmHistoryBookChapters.filter((chapter) => chapter.number <= 10);
   assert.equal(completed.length, 10);
   assert.ok(completed.every((chapter) => chapter.status === "full"));
@@ -193,8 +193,13 @@ test("Chapters 1–10 remain full; Chapters 11–16 are readable drafts; 17–30
   assert.equal(neorealism?.sections.length, 16);
   assert.ok((neorealism?.sources.length ?? 0) >= 25);
 
-  const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 16);
-  assert.equal(remaining.length, 14);
+  const asia = filmHistoryBookChapters.find((chapter) => chapter.number === 17);
+  assert.equal(asia?.status, "draft");
+  assert.equal(asia?.sections.length, 18);
+  assert.ok((asia?.sources.length ?? 0) >= 25);
+
+  const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 17);
+  assert.equal(remaining.length, 13);
   assert.ok(remaining.every((chapter) => chapter.status === "outline"));
   assert.ok(remaining.every((chapter) => chapter.sections.length === 0));
   assert.ok(remaining.every((chapter) => chapter.summary.length > 40));
