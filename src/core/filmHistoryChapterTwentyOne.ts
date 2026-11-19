@@ -21,7 +21,7 @@ export const filmHistoryChapterTwentyOneSources: readonly FilmHistoryBookSource[
     "id": "ch21_ratings",
     "title": "The Movie Rating System: Its History",
     "publisher": "Classification and Rating Administration",
-    "url": "https://www.filmratings.com/Content/downloads/cara_about_voluntary_movie_rating.pdf"
+    "url": "https://www.filmratings.com/News/"
   },
   {
     "id": "ch21_bonnie",
@@ -644,7 +644,7 @@ const filmReferences: readonly FilmHistoryBookFilmReference[] = [
   {
     "title": "Badlands",
     "year": 1973,
-    "note": "Malick, Spackek, voiceover and ethically unsettling road imagery",
+    "note": "Malick, Spacek, voiceover and ethically unsettling road imagery",
     "role": "anchor_film",
     "atlasDecision": "P2"
   },
