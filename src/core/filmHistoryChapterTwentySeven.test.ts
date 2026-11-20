@@ -70,7 +70,7 @@ test("Chapter 27 keeps Inuit film authorship and Wang Bing production chronology
   assert.equal(sources.get("ch27_atar_nfb")?.url, "https://cfe.tiff.net/content/films/atanarjuat");
   assert.match(atanarjuat.paragraphs.join(" "), /directed, acted and scripted by Inuit/);
   assert.ok(wang.sourceIds.includes("ch27_wangstudy"));
-  assert.equal(sources.get("ch27_wangstudy")?.publisher, "Cambridge University Press");
+  assert.equal(sources.get("ch27_wangstudy")?.publisher, "Amsterdam University Press");
   assert.match(wang.paragraphs.join(" "), /Rotterdam festival in January 2003/);
   assert.match(wang.paragraphs.join(" "), /1999–2002/);
   assert.match(wang.title, /2002; international screening 2003/);
