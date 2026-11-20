@@ -59,3 +59,28 @@ test("Final chapter keeps research films distinct from playable Film Atlas cases
   assert.equal(chapter.historicalObjects.length, 20);
   assert.ok(chapter.historicalObjects.every(o => o.role === "historical_object" && o.atlasDecision === "no_production_case"));
 });
+
+test("Chapter 30 documents the non-rotoscoped animation and professional smartphone-production workflow", () => {
+  const section = (id: string) => filmHistoryChapterThirty.sections.find(s => s.id === id);
+  const sources = new Map(filmHistoryChapterThirty.sources.map(s => [s.id, s]));
+  const waltz = section("ch30_waltz");
+  const tangerine = section("ch30_tangerine");
+  assert.ok(waltz);
+  assert.ok(tangerine);
+  assert.ok(waltz.sourceIds.includes("ch30_waltz"));
+  assert.equal(sources.get("ch30_waltz")?.url,
+    "https://www.sonyclassics.com/waltzwithbashir/aboutAri.html");
+  assert.match(waltz.paragraphs.join(" "), /not.*rotoscoped/i);
+  assert.match(waltz.paragraphs.join(" "), /Yoni Goodman/);
+  assert.match(waltz.paragraphs.join(" "), /David Polonsky/);
+  assert.match(waltz.paragraphs.join(" "), /not an independent authority/);
+  assert.ok(tangerine.sourceIds.includes("ch30_tangerineplayer"));
+  assert.ok(tangerine.sourceIds.includes("ch30_digitalwatch"));
+  assert.equal(sources.get("ch30_tangerineplayer")?.url,
+    "https://www.academymuseum.org/collection/sean-bakers-tangerine-iphone");
+  assert.equal(sources.get("ch30_digitalwatch")?.url,
+    "https://www.sellingyourscreenplay.com/podcast-transcripts/sys-podcast-episode-110-sean-baker-chris-bergoch-talk-about-their-sundance-comedy-drama-tangerine-transcript/");
+  assert.match(tangerine.paragraphs.join(" "), /Moondog Labs/);
+  assert.match(tangerine.paragraphs.join(" "), /FiLMiC Pro/);
+  assert.match(tangerine.paragraphs.join(" "), /dedicated sound professional/);
+});
