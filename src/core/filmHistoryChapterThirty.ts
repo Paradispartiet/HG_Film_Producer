@@ -99,9 +99,9 @@ export const filmHistoryChapterThirtySources: readonly FilmHistoryBookSource[] =
   },
   {
     "id": "ch30_digitalwatch",
-    "title": "50 modern classics on BFI Player: a watchlist",
-    "publisher": "British Film Institute",
-    "url": "https://www.bfi.org.uk/lists/50-modern-classics-watchlist"
+    "title": "Sean Baker and Chris Bergoch on shooting Tangerine (interview transcript)",
+    "publisher": "Selling Your Screenplay",
+    "url": "https://www.sellingyourscreenplay.com/podcast-transcripts/sys-podcast-episode-110-sean-baker-chris-bergoch-talk-about-their-sundance-comedy-drama-tangerine-transcript/"
   },
   {
     "id": "ch30_documentedit",
@@ -261,9 +261,9 @@ export const filmHistoryChapterThirtySources: readonly FilmHistoryBookSource[] =
   },
   {
     "id": "ch30_tangerineplayer",
-    "title": "Tangerine (2015)",
-    "publisher": "BFI Player",
-    "url": "https://player.bfi.org.uk/subscription/film/watch-tangerine-2015-online"
+    "title": "iPhone 5S 64GB with Anamorphic Adaptor Lens used to shoot Tangerine",
+    "publisher": "Academy Museum of Motion Pictures",
+    "url": "https://www.academymuseum.org/collection/sean-bakers-tangerine-iphone"
   },
   {
     "id": "ch30_tangerinereview",
@@ -297,9 +297,9 @@ export const filmHistoryChapterThirtySources: readonly FilmHistoryBookSource[] =
   },
   {
     "id": "ch30_waltz",
-    "title": "10 great Jewish films: Waltz with Bashir",
-    "publisher": "British Film Institute",
-    "url": "https://www.bfi.org.uk/lists/10-great-jewish-films"
+    "title": "Ari Folman on how Waltz with Bashir was animated (official director interview)",
+    "publisher": "Sony Pictures Classics",
+    "url": "https://www.sonyclassics.com/waltzwithbashir/aboutAri.html"
   },
   {
     "id": "ch30_warfilms",
