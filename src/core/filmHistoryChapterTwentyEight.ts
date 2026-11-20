@@ -253,6 +253,18 @@ export const filmHistoryChapterTwentyEightSources: readonly FilmHistoryBookSourc
     "title": "Yi Yi (2000)",
     "publisher": "The Criterion Collection",
     "url": "https://www.criterion.com/films/781-yi-yi"
+  },
+  {
+    "id": "ch28_xiaowu_bfi",
+    "title": "Xiao Wu (1997) film record",
+    "publisher": "British Film Institute",
+    "url": "https://www.bfi.org.uk/film/6bca4df4-7b4c-5f31-9b19-ebeb2438cec9/xiao-wu"
+  },
+  {
+    "id": "ch28_xiaowu_berlin",
+    "title": "Xiao Wu / Artisan Pickpocket: 1998 Forum premiere, 2020 restored screening",
+    "publisher": "Berlin International Film Festival",
+    "url": "https://www.berlinale.de/en/2020/programme/202012567.html"
   }
 ];
 export const filmHistoryChapterTwentyEightSections: readonly FilmHistoryBookSection[] = [
