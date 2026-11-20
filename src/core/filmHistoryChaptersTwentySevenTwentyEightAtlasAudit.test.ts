@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 /** This calls the same 430-scenario Atlas file inventory used by chapter 11.
@@ -62,4 +63,27 @@ test("Existing Atlas definitions must remain unapproved until film-specific revi
   }
   assert.equal(byTitle.get("Festen")?.year, 1998);
   assert.equal(byTitle.get("The Host")?.year, 2006);
+});
+
+test("Dated 57-film editorial ledger matches the executable 430-case audit", () => {
+  const ledger = JSON.parse(readFileSync(
+    "docs/film-history/chapter27-28-atlas-identity-audit-20261120.json", "utf8",
+  )) as {
+    summary: { canonicalAtlasSize: number; totalReferences: number; existingDefinitions: number;
+      noExactTitleYearMatch: number; approvedPlayableLinks: number };
+    crosswalk: Array<{ chapter: number; title: string; year: number;
+      scenarioId: string | null; scenarioOrigin: string | null; identity: string;
+      scenarioStatus: string | null; playableLinkPresent: boolean }>;
+  };
+  assert.equal(ledger.summary.canonicalAtlasSize, 430);
+  assert.equal(ledger.summary.totalReferences, report.totals.candidates);
+  assert.equal(ledger.summary.existingDefinitions, report.totals.existingDefinitions);
+  assert.equal(ledger.summary.noExactTitleYearMatch, report.totals.noExactMatch);
+  assert.equal(ledger.summary.approvedPlayableLinks, 0);
+  assert.deepEqual(
+    ledger.crosswalk.map(r => [r.chapter, r.title, r.year, r.scenarioId, r.scenarioOrigin,
+      r.identity, r.playableLinkPresent]),
+    report.crosswalk.map(r => [r.chapter, r.title, r.year, r.scenarioId, r.scenarioOrigin,
+      r.identity, r.playableLinkPresent])
+  );
 });
