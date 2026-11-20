@@ -22,9 +22,9 @@ test("Chapter 27 is substantive across industrial, independent and global digita
   ]) assert.match(prose, topic);
 });
 
-test("Chapter 27 cites 39 distinct source records and every record supports at least one essay", () => {
+test("Chapter 27 cites 40 distinct source records and every record supports at least one essay", () => {
   const chapter = filmHistoryChapterTwentySeven;
-  assert.equal(chapter.sources.length, 39);
+  assert.equal(chapter.sources.length, 40);
   const sourceIds = new Set(chapter.sources.map(s => s.id));
   const urls = new Set(chapter.sources.map(s => s.url));
   assert.equal(sourceIds.size, chapter.sources.length);
@@ -58,4 +58,21 @@ test("Chapter 27 uses only book-level provisional film references and no fake At
   assert.ok(chapter.filmReferences.every(f => f.year >= 1989 && f.year <= 2010));
   assert.equal(chapter.historicalObjects.length, 16);
   assert.ok(chapter.historicalObjects.every(o => o.role === "historical_object" && o.atlasDecision === "no_production_case"));
+});
+
+test("Chapter 27 keeps Inuit film authorship and Wang Bing production chronology sourced and distinct", () => {
+  const sources = new Map(filmHistoryChapterTwentySeven.sources.map(s => [s.id, s]));
+  const atanarjuat = filmHistoryChapterTwentySeven.sections.find(s => s.id === "ch27_atar");
+  const wang = filmHistoryChapterTwentySeven.sections.find(s => s.id === "ch27_wang");
+  assert.ok(atanarjuat);
+  assert.ok(wang);
+  assert.ok(atanarjuat.sourceIds.includes("ch27_atar_nfb"));
+  assert.equal(sources.get("ch27_atar_nfb")?.url, "https://cfe.tiff.net/content/films/atanarjuat");
+  assert.match(atanarjuat.paragraphs.join(" "), /directed, acted and scripted by Inuit/);
+  assert.ok(wang.sourceIds.includes("ch27_wangstudy"));
+  assert.equal(sources.get("ch27_wangstudy")?.publisher, "Cambridge University Press");
+  assert.match(wang.paragraphs.join(" "), /Rotterdam festival in January 2003/);
+  assert.match(wang.paragraphs.join(" "), /1999–2002/);
+  assert.match(wang.title, /2002; international screening 2003/);
+  assert.ok(wang.sourceIds.includes("ch27_wangcatalog"));
 });
