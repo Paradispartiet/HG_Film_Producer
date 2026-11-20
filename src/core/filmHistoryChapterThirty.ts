@@ -352,7 +352,7 @@ const filmReferences: readonly FilmHistoryBookFilmReference[] = [
   {
     "title": "Waltz with Bashir",
     "year": 2008,
-    "note": "Book-only film history reference; documentary, essay, low-cost digital or screenlife comparison. Exact Film Atlas matching pending.",
+    "note": "Existing seed definition scenario_waltz_with_bashir_2008 was found in the Atlas inventory, but is marked imported_seed_needs_film_specific_design; keep book-only P2 until the case is historically checked and explicitly approved for playable linking.",
     "role": "anchor_film",
     "atlasDecision": "P2"
   },
@@ -380,7 +380,7 @@ const filmReferences: readonly FilmHistoryBookFilmReference[] = [
   {
     "title": "Leviathan",
     "year": 2012,
-    "note": "Book-only film history reference; documentary, essay, low-cost digital or screenlife comparison. Exact Film Atlas matching pending.",
+    "note": "This is the 2012 fishing-vessel documentary by Lucien Castaing-Taylor and Véréna Paravel. Atlas scenario_leviathan_2014 refers to a DIFFERENT 2014 drama and must never be used as this film's scenario.",
     "role": "anchor_film",
     "atlasDecision": "P2"
   },
@@ -401,7 +401,7 @@ const filmReferences: readonly FilmHistoryBookFilmReference[] = [
   {
     "title": "All the Beauty and the Bloodshed",
     "year": 2022,
-    "note": "Book-only film history reference; documentary, essay, low-cost digital or screenlife comparison. Exact Film Atlas matching pending.",
+    "note": "Existing modern-canon definition scenario_all_the_beauty_and_the_bloodshed_2022 is present, with manual_modern_canon_case_needs_source_verification; retain P2 pending case-level verification and approval.",
     "role": "anchor_film",
     "atlasDecision": "P2"
   },
@@ -415,7 +415,7 @@ const filmReferences: readonly FilmHistoryBookFilmReference[] = [
   {
     "title": "Tangerine",
     "year": 2015,
-    "note": "Book-only film history reference; documentary, essay, low-cost digital or screenlife comparison. Exact Film Atlas matching pending.",
+    "note": "Existing seed definition scenario_tangerine_2015 was found in the Atlas inventory, but is marked imported_seed_needs_film_specific_design; do not present this as an approved playable Atlas case yet.",
     "role": "anchor_film",
     "atlasDecision": "P2"
   },
