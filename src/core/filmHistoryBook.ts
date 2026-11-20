@@ -23,6 +23,7 @@ import { filmHistoryChapterTwentyTwo } from "./filmHistoryChapterTwentyTwo.js";
 import { filmHistoryChapterTwentyThree } from "./filmHistoryChapterTwentyThree.js";
 import { filmHistoryChapterTwentyFour } from "./filmHistoryChapterTwentyFour.js";
 import { filmHistoryChapterTwentyFive } from "./filmHistoryChapterTwentyFive.js";
+import { filmHistoryChapterTwentySix } from "./filmHistoryChapterTwentySix.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -182,15 +183,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     period: "1989–present",
     thesis: "Digital tools, transnational finance, new national movements, franchise economics and platform distribution reorganize both cinema's aesthetics and the institutions through which films reach audiences.",
     chapters: [
-      outline(
-        "post-cold-war",
-        26,
-        "Post-Cold War transnational cinema",
-        "1989–2005",
-        "Co-productions, migration, new funding systems and revived national industries reshape films that move between languages, countries and markets.",
-        ["Define transnational cinema without erasing national institutions.", "Connect migration and co-production to film form.", "Map major post-1989 production shifts."],
-        ["transnational cinema", "co-production", "diaspora", "regional fund", "world cinema"],
-      ),
+      filmHistoryChapterTwentySix,
       outline(
         "digital-production",
         27,
