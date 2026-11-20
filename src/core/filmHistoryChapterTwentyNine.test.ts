@@ -61,3 +61,34 @@ test("Chapter 29 does not fabricate playable Atlas case identifiers for franchis
   assert.equal(chapter.historicalObjects.length, 20);
   assert.ok(chapter.historicalObjects.every(x => x.role === "historical_object" && x.atlasDecision === "no_production_case"));
 });
+
+test("Chapter 29 distinguishes streaming launch dates, plans and territorial cinema windows", () => {
+  const chapter = filmHistoryChapterTwentyNine;
+  const essay = (id: string) => {
+    const section = chapter.sections.find(s => s.id === id);
+    assert.ok(section, `Missing section ${id}`);
+    return section.paragraphs.join(" ");
+  };
+  assert.match(essay("ch29_netflix"), /1997/);
+  assert.match(essay("ch29_netflix"), /1998/);
+  assert.match(essay("ch29_netflix"), /2007/);
+  assert.match(essay("ch29_original"), /October 2014/);
+  assert.match(essay("ch29_original"), /Crouching Tiger, Hidden Dragon: Green Legend/);
+  assert.match(essay("ch29_original"), /delayed/);
+  assert.match(essay("ch29_beasts"), /9 October 2015/);
+  assert.match(essay("ch29_beasts"), /16 October 2015/);
+  assert.match(essay("ch29_okja"), /23 June 2017/);
+  assert.match(essay("ch29_okja"), /28 June 2017/);
+  assert.match(essay("ch29_roma"), /30 November 2018/);
+  assert.match(essay("ch29_roma"), /14 December 2018/);
+
+  const sources = new Map(chapter.sources.map(source => [source.id, source]));
+  assert.equal(sources.get("ch29_netflixhistory")?.url,
+    "https://www.netflix.com/tudum/articles/netflix-trivia-25th-anniversary");
+  assert.equal(sources.get("ch29_beasts")?.url,
+    "https://www.c21media.net/news/netflix-curzon-form-beasts-film-pact/");
+  assert.equal(sources.get("ch29_netflixletter")?.publisher, "Netflix Investor Relations");
+  assert.ok(chapter.sections.find(s => s.id === "ch29_original")?.sourceIds.includes("ch29_beasts"));
+  assert.ok(chapter.sections.find(s => s.id === "ch29_okja")?.sourceIds.includes("ch29_okja"));
+  assert.ok(chapter.sections.find(s => s.id === "ch29_roma")?.sourceIds.includes("ch29_roma"));
+});
