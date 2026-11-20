@@ -61,10 +61,10 @@ export const filmHistoryChapterTwentySevenSources: readonly FilmHistoryBookSourc
     "url": "https://www.bfi.org.uk/lists/10-great-canadian-debut-features"
   },
   {
-    "id": "ch27_atararctic",
-    "title": "10 great films set in the Arctic and Antarctica",
-    "publisher": "British Film Institute",
-    "url": "https://www.bfi.org.uk/lists/10-great-films-set-arctic-antarctica"
+    "id": "ch27_atar_nfb",
+    "title": "Atanarjuat: The Fast Runner (2001) — Canadian Film Encyclopedia",
+    "publisher": "Toronto International Film Festival (TIFF)",
+    "url": "https://cfe.tiff.net/content/films/atanarjuat"
   },
   {
     "id": "ch27_british2002",
@@ -239,6 +239,12 @@ export const filmHistoryChapterTwentySevenSources: readonly FilmHistoryBookSourc
     "title": "West of the Tracks (2002): film record",
     "publisher": "British Film Institute",
     "url": "https://www.bfi.org.uk/film/32dceea7-1d44-5ca6-ac0c-c596fd635b0b/west-of-the-tracks"
+  },
+  {
+    "id": "ch27_wangstudy",
+    "title": "History in the Making: the debut epic Tiexi qu: West of the Tracks",
+    "publisher": "Cambridge University Press",
+    "url": "https://www.cambridge.org/core/books/abs/wang-bings-filmmaking-of-the-china-dream/history-in-the-making-the-debut-epic-tiexi-qu-west-of-the-tracks/22AD8B3DC4ACF6B5AC7A9E06B63C0A6C"
   }
 ];
 export const filmHistoryChapterTwentySevenSections: readonly FilmHistoryBookSection[] = [
