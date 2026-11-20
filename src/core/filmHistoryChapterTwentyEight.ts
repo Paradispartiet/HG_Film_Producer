@@ -265,6 +265,18 @@ export const filmHistoryChapterTwentyEightSources: readonly FilmHistoryBookSourc
     "title": "Xiao Wu / Artisan Pickpocket: 1998 Forum premiere, 2020 restored screening",
     "publisher": "Berlin International Film Festival",
     "url": "https://www.berlinale.de/en/2020/programme/202012567.html"
+  },
+  {
+    "id": "ch28_hongguide",
+    "title": "Where to begin with Hong Sang-soo",
+    "publisher": "British Film Institute",
+    "url": "https://www.bfi.org.uk/features/where-begin-with-hong-sang-soo"
+  },
+  {
+    "id": "ch28_animeindustry",
+    "title": "Anime: the little word that conquered the world",
+    "publisher": "BFI Sight and Sound",
+    "url": "https://www.bfi.org.uk/sight-and-sound/features/anime-little-word-that-conquered-world"
   }
 ];
 export const filmHistoryChapterTwentyEightSections: readonly FilmHistoryBookSection[] = [

@@ -117,13 +117,14 @@ export const filmHistoryChapterTwentyEightChinaKoreaSections: readonly FilmHisto
     "title": "21. Korean cinemas beyond revenge: Hong Sang-soo and smaller forms",
     "paragraphs": [
       "Alongside the spectacular international rise of revenge thrillers and monster films, South Korean directors pursued deliberately modest, conversational filmmaking. Hong Sang-soo's work builds scenes around uncomfortable meals, conversations, repetitions and missed emotional cues. Its apparent simplicity is carefully constructed: small variations in a social encounter can reshape what the viewer understands about desire, artistic self-regard or everyday cruelty. These films show why high box office and extreme genre cinema cannot alone define a national renaissance.",
-      "BFI's overview of Korean cinema and its writing on the period recognize the coexistence of art-house work and popular commercial films. Lee Chang-dong similarly addresses private life and social power, but his narrative strategies differ from Hong's repetitions and elliptical relationships. Festival success could bring these works to audiences abroad even when domestic commercial expectations were different. Independent films also faced constraints of financing and exhibition.",
+      "BFI's director-specific study describes Hong Sang-soo's move towards microbudget independent production with Like You Know It All (2009), an industrial change distinct from the high-cost spectacle often used to represent contemporary Korean cinema overseas. It also explains his recurring long conversational takes, repeated situations and shifting emphasis on men's and women's perspectives. Lee Chang-dong addresses private life and social power as well, but his narrative strategies differ from Hong's repetitions and elliptical relationships. Festival circulation could make these films visible abroad without guaranteeing the same reception or commercial expectations at home.",
       "Presenting Korean cinema as only a violent style risks turning the period's diversity into an export label. Its changing infrastructure gave space to multiple methods, some of them far removed from the extravagant action and horror spectacles most easily promoted internationally. A responsible survey attends to genre, gender, class and the voices that overseas distributors did not choose to market, while avoiding unsupported claims about how every Korean audience responded."
     ],
     "sourceIds": [
       "ch28_koreacollection",
       "ch28_bong",
-      "ch28_lee"
+      "ch28_lee",
+      "ch28_hongguide"
     ]
   }
 ];
