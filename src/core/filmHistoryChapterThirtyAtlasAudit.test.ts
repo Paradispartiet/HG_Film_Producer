@@ -80,3 +80,43 @@ test("Chapter 30's Leviathan documentary is not linked to the unrelated 2014 dra
   assert.ok(inventory.some(s => s.id === "scenario_leviathan_2014" && s.year === 2014));
   assert.ok(!matches.some(m => m.film === "Leviathan"));
 });
+
+test("Dated source audit stays aligned with all fifty chapter source records", () => {
+  const report = JSON.parse(readFileSync("docs/film-history/chapter30-source-atlas-audit-20261120.json", "utf8")) as {
+    chapter: { number: number; id: string };
+    auditDate: string;
+    sourceReview: {
+      expectedCount: number; visitedCount: number;
+      entries: Array<{ id: string; checkedUrl: string; result: string }>;
+    };
+    atlasReview: { candidateFilmCount: number; noExactTitleYearMatchCount: number;
+      matchingDefinitions: Array<{ title: string; year: number; scenarioId: string; decision: string }>;
+      differentFilmCollision: { bookTitle: string; bookYear: number; scenarioYear: number };
+    };
+  };
+  assert.equal(report.chapter.number, 30);
+  assert.equal(report.chapter.id, "contemporary-forms");
+  assert.equal(report.auditDate, "2026-11-20");
+  assert.equal(report.sourceReview.expectedCount, 50);
+  assert.equal(report.sourceReview.visitedCount, 50);
+  assert.equal(report.sourceReview.entries.length, filmHistoryChapterThirty.sources.length);
+  const documented = new Map(report.sourceReview.entries.map(e => [e.id, e]));
+  assert.equal(documented.size, 50);
+  for (const source of filmHistoryChapterThirty.sources) {
+    const entry = documented.get(source.id);
+    assert.ok(entry, `Audit missing source ${source.id}`);
+    assert.equal(entry.checkedUrl, source.url);
+    assert.equal(entry.result, "opened_relevant_page");
+  }
+  assert.equal(report.atlasReview.candidateFilmCount, 20);
+  assert.equal(report.atlasReview.noExactTitleYearMatchCount, 17);
+  assert.equal(report.atlasReview.matchingDefinitions.length, 3);
+  assert.deepEqual(
+    report.atlasReview.matchingDefinitions.map(x => [x.title, x.scenarioId]).sort(),
+    matches.map(x => [x.film, x.scenario]).sort()
+  );
+  assert.ok(report.atlasReview.matchingDefinitions.every(x => x.decision === "retain_P2_until_film_specific_verification"));
+  assert.equal(report.atlasReview.differentFilmCollision.bookTitle, "Leviathan");
+  assert.equal(report.atlasReview.differentFilmCollision.bookYear, 2012);
+  assert.equal(report.atlasReview.differentFilmCollision.scenarioYear, 2014);
+});
