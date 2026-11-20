@@ -20,6 +20,8 @@ const report = JSON.parse(execFileSync("node", [
   crosswalk: AtlasMatch[];
 };
 
+console.log("Chapter 27–28 Atlas identity matches", JSON.stringify(report.crosswalk.filter(f => f.scenarioId !== null).map(f => ({ title: f.title, year: f.year, id: f.scenarioId }))));
+
 test("Chapter 27–28 identity audit covers the full canonical Atlas inventory", () => {
   assert.equal(report.atlas.expectedCount, 430);
   assert.equal(report.atlas.actualCount, 430);
