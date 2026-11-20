@@ -31,13 +31,15 @@ export const filmHistoryChapterTwentyEightChinaKoreaSections: readonly FilmHisto
     "id": "ch28_jia",
     "title": "15. Xiao Wu, Platform and Still Life: modernisation at ground level",
     "paragraphs": [
-      "Jia Zhangke's Xiao Wu (1997) and Platform (2000) follow lives at the edges of China's economic transformation without turning their subjects into examples of a single social category. Their characters improvise careers, friendships and emotional lives while old organizations lose their certainty. Jia's use of provincial settings and ordinary interiors contrasts with the monumental rural past often associated with Fifth Generation cinema, although the boundary between the so-called generations is neither absolute nor universally accepted.",
+      "Jia Zhangke's Xiao Wu is catalogued by BFI as a 1997 film, while the Berlinale records its 1998 presentation in the Forum: production date and festival circulation are not the same event. Alongside Platform (2000), it follows lives at the edges of China's economic transformation without treating its characters as examples of one social category. They improvise careers, friendships and emotional lives while older institutions lose their certainty. The provincial settings and ordinary interiors contrast with the monumental rural past often associated with Fifth Generation cinema, although the boundary between the so-called generations is neither absolute nor universally accepted.",
       "Still Life (2006) moves through the Three Gorges region, where physical transformation and displacement give landscape an unusually direct political force. BFI's guide to Jia emphasizes both his formally observant approach and the uneven conditions under which early work circulated. Before 2004 some films lacked official approval, a fact that should not be converted into a blanket description of every release or every director in mainland China.",
       "The distinction between filming a changing place and interpreting it is essential. Long shots permit viewers to see buildings, boats, factories and people in relation to one another, but every frame still selects an angle and duration. Jia's cinema is socially engaged without being transparent visual data. The international success of his work also depended on festivals, subtitling and distributors, which do not fully describe reception by audiences within China."
     ],
     "sourceIds": [
       "ch28_jia",
-      "ch28_chinacentury"
+      "ch28_chinacentury",
+      "ch28_xiaowu_bfi",
+      "ch28_xiaowu_berlin"
     ]
   },
   {
