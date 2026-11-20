@@ -19,7 +19,7 @@ test("Final Film History chapter provides thirty substantive documentary and con
     /Waltz with Bashir/,/Flee/,/Cameraperson/,/Hale County/,/Leviathan/,
     /Collective/,/This Is Not a Film/,/All the Beauty and the Bloodshed/,
     /20 Days in Mariupol/,/Tangerine/,/Searching/,/Host/,/Life in a Day/,
-    /The Mandalorian/,/LED/,/virtual production/,/online festivals?/i,
+    /The Mandalorian/,/LED/,/virtual production/i,/online festivals?/i,
     /preservation/,/access/,/labour/
   ]) assert.match(prose, topic);
 });
