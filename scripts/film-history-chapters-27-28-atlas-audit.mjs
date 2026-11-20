@@ -74,13 +74,14 @@ function parseDefinitions(file) {
   }
   const begin = code.indexOf("[", declaration.index);
   const end = closing(code, begin, "[", "]");
+  const status = code.match(/\bstatus\s*:\s*"([^"]+)"/)?.[1] ?? "unverified_definition_status";
   return objects(code.slice(begin + 1, end)).map(object => ({
     id: stringField(object, "id"),
     title: stringField(object, "title"),
     originalTitle: stringField(object, "originalTitle"),
     aliases: stringsField(object, "aliases"),
     year: numberField(object, "year"),
-    origin: file,
+    origin: file, status,
   }));
 }
 const seed = JSON.parse(read("data/film/scenarios/film_scenarios_seed.json"));
@@ -97,7 +98,7 @@ for (const file of files) {
     const exists = scenarios.some(s => s.id === definition.id ||
       (s.year === definition.year && [s.title, s.originalTitle].some(t => names.includes(normalize(t)))));
     if (exists) continue;
-    scenarios.push({ ...definition, status: "expansion_not_individually_source_cleared" });
+    scenarios.push(definition);
     appended += 1;
   }
   expansionStats.push({ file, definitions: definitions.length, appended });
