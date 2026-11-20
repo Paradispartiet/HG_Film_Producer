@@ -89,7 +89,7 @@
       },
       {
         "id": "ch30_digitalwatch",
-        "checkedUrl": "https://www.bfi.org.uk/lists/50-modern-classics-watchlist",
+        "checkedUrl": "https://www.sellingyourscreenplay.com/podcast-transcripts/sys-podcast-episode-110-sean-baker-chris-bergoch-talk-about-their-sundance-comedy-drama-tangerine-transcript/",
         "result": "opened_relevant_page"
       },
       {
@@ -224,7 +224,7 @@
       },
       {
         "id": "ch30_tangerineplayer",
-        "checkedUrl": "https://player.bfi.org.uk/subscription/film/watch-tangerine-2015-online",
+        "checkedUrl": "https://www.academymuseum.org/collection/sean-bakers-tangerine-iphone",
         "result": "opened_relevant_page"
       },
       {
@@ -254,7 +254,7 @@
       },
       {
         "id": "ch30_waltz",
-        "checkedUrl": "https://www.bfi.org.uk/lists/10-great-jewish-films",
+        "checkedUrl": "https://www.sonyclassics.com/waltzwithbashir/aboutAri.html",
         "result": "opened_relevant_page"
       },
       {
@@ -264,10 +264,11 @@
       }
     ],
     "caveats": [
-      "BFI Player's Tangerine title page currently displays 'Currently unavailable'. A reachable film-record page is not proof that a film can be streamed in the user's country or at a future date.",
       "Film listing pages document titles/metadata or programme records. They do not by themselves verify every interpretation in an essay.",
       "Pages with updated dates and archived Sight and Sound articles must be distinguished from original publication dates.",
-      "Sensitive documentary history (Indonesian killings, Cambodia, Lebanon, Romanian medical scandal, Iran and Mariupol) still requires independent, case-specific research beyond an accessible film criticism URL."
+      "Sensitive documentary history (Indonesian killings, Cambodia, Lebanon, Romanian medical scandal, Iran and Mariupol) still requires independent, case-specific research beyond an accessible film criticism URL.",
+      "Following a second source-specific check, the generic BFI film list for Waltz with Bashir, BFI Player listing for Tangerine and generic digital watchlist were replaced with the filmmaker's animation interview, Academy Museum's physical camera collection record and Sean Baker's production interview. All three replacement pages were opened and checked on 20 November 2026.",
+      "Ari Folman's interview is first-person evidence about production methods, not independent validation of his interpretation of war responsibility, atrocities or historical testimony. The book must keep source testimony distinct from independent historical findings."
     ]
   },
   "atlasReview": {
