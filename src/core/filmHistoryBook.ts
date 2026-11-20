@@ -27,6 +27,7 @@ import { filmHistoryChapterTwentySix } from "./filmHistoryChapterTwentySix.js";
 import { filmHistoryChapterTwentySeven } from "./filmHistoryChapterTwentySeven.js";
 import { filmHistoryChapterTwentyEight } from "./filmHistoryChapterTwentyEight.js";
 import { filmHistoryChapterTwentyNine } from "./filmHistoryChapterTwentyNine.js";
+import { filmHistoryChapterThirty } from "./filmHistoryChapterThirty.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -190,15 +191,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
       filmHistoryChapterTwentySeven,
       filmHistoryChapterTwentyEight,
       filmHistoryChapterTwentyNine,
-      outline(
-        "contemporary-forms",
-        30,
-        "Contemporary forms and the unfinished present",
-        "2000s–present",
-        "Hybrid documentary, essay film, low-cost digital production, virtual production, expanded animation and new exhibition contexts show a medium still being redefined.",
-        ["Analyze contemporary cinema as multiple overlapping production cultures.", "Connect low-cost tools to new authorship and distribution possibilities.", "Treat the present as historically unfinished rather than as a settled endpoint."],
-        ["hybrid documentary", "essay film", "virtual production", "desktop cinema", "digital exhibition"],
-      ),
+      filmHistoryChapterThirty,
     ],
   },
 ];
