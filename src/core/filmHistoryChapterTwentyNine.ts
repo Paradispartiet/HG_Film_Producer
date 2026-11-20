@@ -32,9 +32,9 @@ export const filmHistoryChapterTwentyNineSources: readonly FilmHistoryBookSource
   },
   {
     "id": "ch29_beasts",
-    "publisher": "Netflix",
-    "title": "Beasts of No Nation: official film listing",
-    "url": "https://www.netflix.com/title/80044545"
+    "publisher": "C21Media",
+    "title": "Netflix, Curzon form Beasts film pact (September 2015)",
+    "url": "https://www.c21media.net/news/netflix-curzon-form-beasts-film-pact/"
   },
   {
     "id": "ch29_bfireleases",
@@ -140,9 +140,9 @@ export const filmHistoryChapterTwentyNineSources: readonly FilmHistoryBookSource
   },
   {
     "id": "ch29_netflixhistory",
-    "publisher": "Netflix",
-    "title": "Made in Asia, watched by the world: 2019 company history",
-    "url": "https://about.netflix.com/en/news/made-in-asia-watched-by-the-world"
+    "publisher": "Netflix Tudum",
+    "title": "Skip Intro: Netflix Turns 25 Today (29 August 2022)",
+    "url": "https://www.netflix.com/tudum/articles/netflix-trivia-25th-anniversary"
   },
   {
     "id": "ch29_netflixletter",
