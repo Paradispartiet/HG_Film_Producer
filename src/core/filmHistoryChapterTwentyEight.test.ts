@@ -23,12 +23,12 @@ test("Chapter 28 gives distinct histories for five East Asian film industries", 
   ]) assert.match(prose, term);
 });
 
-test("Chapter 28's 43 source records are unique and used by substantial essays", () => {
+test("Chapter 28's 45 source records are unique and used by substantial essays", () => {
   const chapter = filmHistoryChapterTwentyEight;
-  assert.equal(chapter.sources.length, 43);
+  assert.equal(chapter.sources.length, 45);
   const ids = new Set(chapter.sources.map(s => s.id));
-  assert.equal(ids.size, 43);
-  assert.equal(new Set(chapter.sources.map(s => s.url)).size, 43);
+  assert.equal(ids.size, 45);
+  assert.equal(new Set(chapter.sources.map(s => s.url)).size, 45);
   assert.ok(chapter.sources.every(s => s.url.startsWith("https://") && s.title.length > 10));
   assert.ok(chapter.sources.some(s => s.publisher === "The Criterion Collection"));
   assert.ok(chapter.sources.some(s => s.publisher === "British Film Institute"));
@@ -80,4 +80,22 @@ test("Chapter 28 records Xiao Wu year and Wong Kar-wai restoration variants with
     assert.match(essay.paragraphs.join(" "), /1\.66:1/);
     assert.match(essay.paragraphs.join(" "), /1\.85:1/);
   }
+});
+
+test("Chapter 28 anchors Hong Sang-soo and Ghost in the Shell to film-specific industrial sources", () => {
+  const chapters = new Map(filmHistoryChapterTwentyEight.sections.map(s => [s.id, s]));
+  const sources = new Map(filmHistoryChapterTwentyEight.sources.map(s => [s.id, s]));
+  const hong = chapters.get("ch28_koreaplural");
+  const oshii = chapters.get("ch28_oshii");
+  assert.ok(hong);
+  assert.ok(oshii);
+  assert.ok(hong.sourceIds.includes("ch28_hongguide"));
+  assert.equal(sources.get("ch28_hongguide")?.url, "https://www.bfi.org.uk/features/where-begin-with-hong-sang-soo");
+  assert.match(hong.paragraphs.join(" "), /Like You Know It All \(2009\)/);
+  assert.match(hong.paragraphs.join(" "), /microbudget independent production/);
+  assert.ok(oshii.sourceIds.includes("ch28_animeindustry"));
+  assert.equal(sources.get("ch28_animeindustry")?.publisher, "BFI Sight and Sound");
+  assert.match(oshii.paragraphs.join(" "), /Manga UK/);
+  assert.match(oshii.paragraphs.join(" "), /co-fund/);
+  assert.match(oshii.paragraphs.join(" "), /Akira \(1988\)/);
 });

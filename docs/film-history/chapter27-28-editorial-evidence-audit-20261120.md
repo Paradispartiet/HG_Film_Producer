@@ -1,7 +1,7 @@
 # Film History chapters 27–28 — targeted editorial evidence audit
 
 **Date:** 20 November 2026  
-**Status:** Targeted review of five film-history claims. **Not** a complete factual, URL, territorial, or Film Atlas audit. Both chapters remain editorial drafts and their stacked PRs remain unmerged.
+**Status:** Targeted review of seven film-history claims. **Not** a complete factual, URL, territorial, or Film Atlas audit. Both chapters remain editorial drafts and their stacked PRs remain unmerged.
 
 ## Chapter 27 — digital production
 
@@ -16,11 +16,14 @@
 4. **Chungking Express (1994).** Wong Kar-wai's [director's note for the Criterion restorations](https://www.criterion.com/current/posts/7325-%20monde-de-wong-kar-wai-note-du-directeur) says that the film was initially shot and theatrically released at **1.66:1**, while certain subsequent video releases used **1.85:1**. The restored version returned to the earlier framing. This has been made explicit in the film's article.
 5. **In the Mood for Love (2000).** The same director's note documents **1.66:1** original theatrical framing, **1.85:1** video versions, and subsequent work on the film's sound. The article now identifies specific version changes instead of treating a generic 'restoration' as an automatic return to one timeless original.
 
+6. **Hong Sang-soo and smaller Korean film forms.** The [BFI director-specific guide](https://www.bfi.org.uk/features/where-begin-with-hong-sang-soo) identifies `Like You Know It All` (2009) as part of Hong's transition to microbudget independent production, and analyses the use of conversational long takes and repeated situations. The essay now cites this direct evidence instead of relying only on profiles of other Korean directors.
+7. **Ghost in the Shell (1995) and international financing.** The [BFI Sight and Sound history of anime](https://www.bfi.org.uk/sight-and-sound/features/anime-little-word-that-conquered-world) documents specialist British distributor Manga UK co-funding the film following the international market established by `Akira` (1988). The article now distinguishes this financing evidence from broad claims about later stylistic influence.
+
 **Files:** `filmHistoryChapterTwentyEight.ts`, `filmHistoryChapterTwentyEightChinaKorea.ts`, `filmHistoryChapterTwentyEightHongKongTaiwan.ts`, `filmHistoryChapterTwentyEight.test.ts`.
 
 ## Verification boundaries
 
-- Chapter 27 currently identifies **40** distinct source records; Chapter 28 currently identifies **43**. All records are attached to essays. This is a **source-link integrity** property, not a conclusion that all sources fully support every claim.
+- Chapter 27 currently identifies **40** distinct source records; Chapter 28 currently identifies **45**. All records are attached to essays. This is a **source-link integrity** property, not a conclusion that all sources fully support every claim.
 - The checks above cover individual dated production, distribution and version claims. The other chapter essays and source records need independent editorial review.
 - No historical objects have been made playable and no existing Film Atlas scenario identifiers have been guessed. A film-by-film Atlas audit and physical iPad verification are still required.
 - These changes must be integrated in order through the stacked draft branches **#885 → #886 → #887 → #888**. Passing automated tests alone does not imply publication approval.
