@@ -64,12 +64,13 @@ export const filmHistoryChapterTwentyEightJapanSections: readonly FilmHistoryBoo
     "paragraphs": [
       "Mamoru Oshii's Ghost in the Shell (1995), adapted from Masamune Shirow's manga, imagines a world in which mechanical bodies and information systems complicate the meaning of personhood. The film combines action, stillness and urban montage rather than pursuing constant combat. Its protagonist's augmented body invites viewers to question the limits between memory, agency and technology. The film's visual world also reflects an international dialogue among science fiction, animation and changing urban imagery.",
       "BFI's survey of anime and its history of women in animation describe the film's distinctive female protagonist while warning against assuming that a character's physical power automatically ends the problem of objectification. The animated body is created by many specialists through drawing, backgrounds, compositing and sound. A history limited to cyberpunk philosophy would miss the production labour and the choices of how the camera seems to observe an imaginary world.",
-      "The film's international circulation influenced later science-fiction discussion, but claims of direct borrowing require specific evidence rather than resemblance alone. Comparing it with The Matrix is fruitful because both ask what counts as reality and how images mediate control; that is an interpretive comparison, not a substitute for production documents. Anime offered many kinds of storytelling during the period, including family drama, fantasy, horror and experimental film."
+      "Ghost in the Shell's international production and circulation are part of its history, not an afterthought to its science-fiction philosophy. BFI's survey of anime documents how the overseas market built around Akira (1988) helped encourage the British distributor Manga UK to co-fund Oshii's 1995 film. This is a specific financing relationship, unlike a vague claim that anime spread internationally through its influence alone. Its imagery later invited comparisons with The Matrix, but the significance of those comparisons should rest on identified testimony or production evidence rather than visual resemblance. Animation's global circulation also encompassed family drama, horror, comedy and experimental work."
     ],
     "sourceIds": [
       "ch28_anime50",
       "ch28_animewomen",
-      "ch28_animeclassic"
+      "ch28_animeclassic",
+      "ch28_animeindustry"
     ]
   },
   {
