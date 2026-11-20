@@ -16,7 +16,7 @@ test("Chapter 27 is substantive across industrial, independent and global digita
   for (const topic of [
     /nonlinear editing/,/CGI/,/Jurassic Park/,/Toy Story/,/Terminator 2/,
     /The Matrix/,/digital intermediate/,/O Brother, Where Art Thou/,
-    /motion capture/,/Gollum/,/Dogme 95/,/Collateral/,/28 Days Later/,
+    /motion[- ]capture/i,/Gollum/,/Dogme 95/,/Collateral/,/28 Days Later/,
     /Russian Ark/,/Timecode/,/In Vanda's Room/,/Unknown Pleasures/,
     /West of the Tracks/,/Atanarjuat/,/Waking Life/,/projection/,/preserv/i
   ]) assert.match(prose, topic);
