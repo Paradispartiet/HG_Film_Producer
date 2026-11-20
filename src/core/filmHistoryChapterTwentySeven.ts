@@ -243,7 +243,7 @@ export const filmHistoryChapterTwentySevenSources: readonly FilmHistoryBookSourc
   {
     "id": "ch27_wangstudy",
     "title": "History in the Making: the debut epic Tiexi qu: West of the Tracks",
-    "publisher": "Cambridge University Press",
+    "publisher": "Amsterdam University Press",
     "url": "https://www.cambridge.org/core/books/abs/wang-bings-filmmaking-of-the-china-dream/history-in-the-making-the-debut-epic-tiexi-qu-west-of-the-tracks/22AD8B3DC4ACF6B5AC7A9E06B63C0A6C"
   }
 ];
