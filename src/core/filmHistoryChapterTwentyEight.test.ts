@@ -23,12 +23,12 @@ test("Chapter 28 gives distinct histories for five East Asian film industries", 
   ]) assert.match(prose, term);
 });
 
-test("Chapter 28's 41 source records are unique and used by substantial essays", () => {
+test("Chapter 28's 43 source records are unique and used by substantial essays", () => {
   const chapter = filmHistoryChapterTwentyEight;
-  assert.equal(chapter.sources.length, 41);
+  assert.equal(chapter.sources.length, 43);
   const ids = new Set(chapter.sources.map(s => s.id));
-  assert.equal(ids.size, 41);
-  assert.equal(new Set(chapter.sources.map(s => s.url)).size, 41);
+  assert.equal(ids.size, 43);
+  assert.equal(new Set(chapter.sources.map(s => s.url)).size, 43);
   assert.ok(chapter.sources.every(s => s.url.startsWith("https://") && s.title.length > 10));
   assert.ok(chapter.sources.some(s => s.publisher === "The Criterion Collection"));
   assert.ok(chapter.sources.some(s => s.publisher === "British Film Institute"));
@@ -57,4 +57,27 @@ test("Chapter 28 does not fabricate playable Film Atlas cases", () => {
   assert.ok(chapter.filmReferences.every(film => film.year >= 1980 && film.year <= 2019));
   assert.equal(chapter.historicalObjects.length, 20);
   assert.ok(chapter.historicalObjects.every(obj => obj.role === "historical_object" && obj.atlasDecision === "no_production_case"));
+});
+
+test("Chapter 28 records Xiao Wu year and Wong Kar-wai restoration variants without confusing releases", () => {
+  const chapter = filmHistoryChapterTwentyEight;
+  const sections = new Map(chapter.sections.map(s => [s.id, s]));
+  const sources = new Map(chapter.sources.map(s => [s.id, s]));
+  const jia = sections.get("ch28_jia");
+  const wong = sections.get("ch28_wong");
+  const mood = sections.get("ch28_mood");
+  assert.ok(jia);
+  assert.ok(wong);
+  assert.ok(mood);
+  assert.ok(jia.sourceIds.includes("ch28_xiaowu_bfi"));
+  assert.ok(jia.sourceIds.includes("ch28_xiaowu_berlin"));
+  assert.match(jia.paragraphs.join(" "), /1997 film/);
+  assert.match(jia.paragraphs.join(" "), /1998 presentation in the Forum/);
+  assert.equal(sources.get("ch28_xiaowu_berlin")?.publisher, "Berlin International Film Festival");
+  assert.equal(sources.get("ch28_xiaowu_bfi")?.publisher, "British Film Institute");
+  for (const essay of [wong, mood]) {
+    assert.ok(essay.sourceIds.includes("ch28_wongrestoration"));
+    assert.match(essay.paragraphs.join(" "), /1\.66:1/);
+    assert.match(essay.paragraphs.join(" "), /1\.85:1/);
+  }
 });
