@@ -26,6 +26,7 @@ import { filmHistoryChapterTwentyFive } from "./filmHistoryChapterTwentyFive.js"
 import { filmHistoryChapterTwentySix } from "./filmHistoryChapterTwentySix.js";
 import { filmHistoryChapterTwentySeven } from "./filmHistoryChapterTwentySeven.js";
 import { filmHistoryChapterTwentyEight } from "./filmHistoryChapterTwentyEight.js";
+import { filmHistoryChapterTwentyNine } from "./filmHistoryChapterTwentyNine.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -188,15 +189,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
       filmHistoryChapterTwentySix,
       filmHistoryChapterTwentySeven,
       filmHistoryChapterTwentyEight,
-      outline(
-        "platform-era",
-        29,
-        "Franchises, streaming and platform distribution",
-        "2000s–present",
-        "Franchise filmmaking, global day-and-date release, streaming services and data-driven platforms alter theatrical windows, financing and audience access.",
-        ["Explain changing release windows and distribution models.", "Distinguish franchise logic from genre alone.", "Analyze how streaming changes production and circulation."],
-        ["franchise", "streaming", "release window", "platform", "day-and-date"],
-      ),
+      filmHistoryChapterTwentyNine,
       outline(
         "contemporary-forms",
         30,
