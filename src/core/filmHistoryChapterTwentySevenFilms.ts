@@ -101,15 +101,16 @@ export const filmHistoryChapterTwentySevenFilmsSections: readonly FilmHistoryBoo
   },
   {
     "id": "ch27_wang",
-    "title": "19. West of the Tracks (2002–2003): duration as documentary evidence",
+    "title": "19. West of the Tracks (2002; international screening 2003): duration as documentary evidence",
     "paragraphs": [
       "Wang Bing's West of the Tracks records industrial decline and the lives around factories and rail lines in northeastern China. Its exceptionally long duration challenges the standard feature documentary's compressed account of economic transition. Portable digital cameras made extended observation possible on a different material footing from long-term shooting on film, though the production still depended on the filmmaker's stamina, access to people and difficult editorial choices.",
-      "BFI's critical essay discusses the documentary's relationship to social upheaval, while the British Film Institute film catalogue records the work under an earlier date than some accounts of its international circulation. That discrepancy is a reminder to distinguish filming, completion, premiere and distribution. None should be silently treated as identical. The viewer's long exposure to workplaces and conversations can reveal processes that a short montage of a closing factory might turn into a convenient symbol.",
+      "BFI catalogues Wang Bing's West of the Tracks as a 2002 film, whereas its critical essay discusses the 2003 circulation of the work. Academic research published by Cambridge University Press dates its first full-length international screening to the Rotterdam festival in January 2003 and notes that shooting took place during 1999–2002. These are different events: filming, the film's catalogue year and its presentation to a festival audience must not be collapsed into one date. That distinction also clarifies why the work's unprecedentedly patient attention to workplaces cannot be judged through the timetable of an ordinary short documentary production.",
       "The film shows the importance of what digital tools make sustainable, rather than what they can simulate. Extended recording produces material that requires equally sustained selection and organization. The result is neither a neutral surveillance record nor a definitive history of every factory worker in the region. Its ethic rests on choosing which encounters remain visible and accepting that documentary knowledge has limits. Technological abundance makes those choices more consequential."
     ],
     "sourceIds": [
       "ch27_wang",
       "ch27_wangcatalog",
+      "ch27_wangstudy",
       "ch27_earlyfilms"
     ]
   },
@@ -117,13 +118,13 @@ export const filmHistoryChapterTwentySevenFilmsSections: readonly FilmHistoryBoo
     "id": "ch27_atar",
     "title": "20. Atanarjuat: The Fast Runner (2001): digital cinema in Inuktitut",
     "paragraphs": [
-      "Zacharias Kunuk's Atanarjuat: The Fast Runner uses digital recording to tell an Inuit story through a production deeply connected to its community, language and setting. BFI identifies it as the first feature written and performed in Inuktitut and describes its predominantly Inuit cast and crew. The significance lies not merely in using an inexpensive camera but in allowing a particular oral storytelling tradition and filmmaking organization to command the form of a feature film.",
+      "Zacharias Kunuk's Atanarjuat: The Fast Runner (2001) uses digital recording to tell an Inuit story through a production inseparable from its community, language and setting. TIFF's Canadian Film Encyclopedia identifies it as the first feature in Inuktitut and the first feature directed, acted and scripted by Inuit filmmakers and performers. These distinct claims matter: using digital video alone neither guarantees local authorship nor explains why a narrative tradition could be realised in its own language on the feature-film scale.",
       "The images of snow, movement, clothing and community life work through culturally specific knowledge rather than serving as decorative evidence of remote geography. The film's dramatic conflicts unfold through performance and narrative choices, not as an ethnographic document that can substitute for all Inuit histories. A historian must distinguish the ancient story, its screen adaptation and the circumstances of modern production. These are linked, but they are not interchangeable.",
       "Digital video mattered by lowering some practical barriers of image acquisition in a challenging location. It did not remove the costs of travel, sound, weather, performers or collective coordination. The film also undermines a Euro-American chronology in which digital innovation starts with a Hollywood studio and spreads outward. Different communities adopted electronic tools for different cultural ambitions, and a complete history must account for that diversity."
     ],
     "sourceIds": [
       "ch27_atar",
-      "ch27_atararctic",
+      "ch27_atar_nfb",
       "ch27_earlyfilms"
     ]
   },
