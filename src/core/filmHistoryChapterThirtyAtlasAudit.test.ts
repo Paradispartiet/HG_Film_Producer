@@ -47,7 +47,7 @@ const inventory = [
 
 const matches = filmHistoryChapterThirty.filmReferences.flatMap((film) =>
   inventory.filter((s) =>
-    s.year === film.year && [s.title, s.originalTitle].some(title => normalize(title) === normalize(film.title))
+    s.year === film.year && [s.title, s.originalTitle].some(title => normalize(title ?? "") === normalize(film.title))
   ).map(s => ({ film: film.title, year: film.year, scenario: s.id, origin: s.origin }))
 );
 
@@ -67,6 +67,7 @@ test("Chapter 30 Atlas name/year audit identifies existing definitions without p
   assert.ok(present.every(f => f.atlasDecision === "P2" && f.atlasScenarioId === undefined));
   for (const m of matches) {
     const film = present.find(f => f.title === m.film);
+    assert.ok(m.scenario, `Scenario ID missing for ${m.film}`);
     assert.ok(film?.note.includes(m.scenario), `Unexplained existing Atlas definition: ${m.film}`);
   }
 });
