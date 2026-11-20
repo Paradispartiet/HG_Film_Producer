@@ -79,3 +79,27 @@ test("Same-name and different-year films never become invented playable Atlas li
   assert.ok(ledger.collisionSafeguards.some(r => r.bookFilm === "Host" &&
     r.bookYear === 2020 && r.differentAtlasId === "scenario_the_host_2006" && r.differentYear === 2006));
 });
+
+test("The twelve existing Atlas cases have individual, source-led approval blockers", () => {
+  const audit = readFileSync(
+    "docs/film-history/chapter27-30-atlas-case-readiness-20261120.md", "utf8"
+  );
+  const existing = report.crosswalk.filter(row => row.scenarioId !== null);
+  assert.equal(existing.length, 12);
+  for (const row of existing) {
+    assert.ok(audit.includes(row.scenarioId!),
+      "Missing case-level review for " + row.scenarioId);
+  }
+  const genericSeeds = ["scenario_the_celebration_1998",
+    "scenario_waltz_with_bashir_2008", "scenario_tangerine_2015"];
+  for (const scenarioId of genericSeeds) {
+    assert.ok(audit.includes(scenarioId));
+  }
+  assert.match(audit, /three generic imported seed cases/i);
+  assert.match(audit, /nine film-specific manual definitions/i);
+  assert.match(audit, /not rotoscoped/i);
+  assert.match(audit, /Sony PC7/);
+  assert.match(audit, /Sony PC3/);
+  assert.match(audit, /sound recording/i);
+  assert.match(audit, /Until then all matching book references remain provisional P2/);
+});
