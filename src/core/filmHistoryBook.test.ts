@@ -267,3 +267,32 @@ test("Chapter 12 anchors selected close readings to source-backed film scenes", 
   assert.ok(getSection("ch12_double_indemnity").sourceIds.includes("ch12_afi_double_indemnity"));
   assert.match(getSection("ch12_double_indemnity").paragraphs.join(" "), /Dictaphone/);
 });
+
+
+test("Chapter 12 grounds visual motifs, dance production, melodrama and Oscar chronology", () => {
+  const chapter = getFilmHistoryBookChapter("hollywood-genres");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const section = (id: string) => {
+    const item = chapter.sections.find((candidate) => candidate.id === id);
+    assert.ok(item, `Missing article ${id}`);
+    return item;
+  };
+  const scarface = section("ch12_scarface");
+  assert.ok(scarface.sourceIds.includes("ch12_criterion_scarface_motif"));
+  assert.match(scarface.paragraphs.join(" "), /X shapes/);
+  const topHat = section("ch12_top_hat");
+  assert.ok(topHat.sourceIds.includes("ch12_afi_top_hat"));
+  assert.match(topHat.paragraphs.join(" "), /feathered dress/);
+  const stella = section("ch12_stella_dallas");
+  assert.ok(stella.sourceIds.includes("ch12_senses_stella_dallas"));
+  assert.match(stella.paragraphs.join(" "), /window separating the mother/);
+  const wind = section("ch12_gone_with_the_wind");
+  assert.ok(wind.sourceIds.includes("ch12_academy_mcdaniel_1940"));
+  assert.match(wind.paragraphs.join(" "), /15 December 1939/);
+  assert.match(wind.paragraphs.join(" "), /29 February 1940/);
+  const refs = new Map(chapter.sources.map((source) => [source.id, source]));
+  for (const id of ["ch12_criterion_scarface_motif", "ch12_afi_top_hat", "ch12_senses_stella_dallas", "ch12_academy_mcdaniel_1940"]) {
+    assert.match(refs.get(id)?.url ?? "", /^https:\/\//);
+  }
+});
