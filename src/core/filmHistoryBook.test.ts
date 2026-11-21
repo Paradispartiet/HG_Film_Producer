@@ -157,7 +157,7 @@ test("Chapter 2 keeps exhibition infrastructure outside fake Production Cases", 
   assert.ok(chapter.historicalObjects.some((item) => /Nickelodeon/i.test(item.label)));
 });
 
-test("Chapters 1–10 remain full; Chapters 11 and 12 are readable drafts; 13–30 remain outlines", () => {
+test("Chapters 1–10 remain full; Chapters 11–13 are readable drafts; 14–30 remain outlines", () => {
   const completed = filmHistoryBookChapters.filter((chapter) => chapter.number <= 10);
   assert.equal(completed.length, 10);
   assert.ok(completed.every((chapter) => chapter.status === "full"));
@@ -173,8 +173,13 @@ test("Chapters 1–10 remain full; Chapters 11 and 12 are readable drafts; 13–
   assert.equal(genres?.sections.length, 16);
   assert.ok((genres?.sources.length ?? 0) >= 20);
 
-  const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 12);
-  assert.equal(remaining.length, 18);
+  const europe = filmHistoryBookChapters.find((chapter) => chapter.number === 13);
+  assert.equal(europe?.status, "draft");
+  assert.equal(europe?.sections.length, 16);
+  assert.ok((europe?.sources.length ?? 0) >= 20);
+
+  const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 13);
+  assert.equal(remaining.length, 17);
   assert.ok(remaining.every((chapter) => chapter.status === "outline"));
   assert.ok(remaining.every((chapter) => chapter.sections.length === 0));
   assert.ok(remaining.every((chapter) => chapter.summary.length > 40));
@@ -295,4 +300,41 @@ test("Chapter 12 grounds visual motifs, dance production, melodrama and Oscar ch
   for (const id of ["ch12_criterion_scarface_motif", "ch12_afi_top_hat", "ch12_senses_stella_dallas", "ch12_academy_mcdaniel_1940"]) {
     assert.match(refs.get(id)?.url ?? "", /^https:\/\//);
   }
+});
+
+test("Chapter 13 adds sixteen sourced European film-history articles without adopting the mismatched postwar Atlas audit", () => {
+  const chapter = getFilmHistoryBookChapter("europe-crisis");
+  assert.ok(chapter);
+  assert.equal(chapter.number, 13);
+  assert.equal(chapter.period, "1930–1945");
+  assert.equal(chapter.status, "draft");
+  assert.equal(chapter.sections.length, 16);
+  assert.ok(countFilmHistoryChapterWords(chapter) >= 4_000);
+  assert.equal(chapter.sections.flatMap((s) => s.paragraphs).length, 48);
+
+  const articleIds = new Set(chapter.sections.map((s) => s.id));
+  const sourceIds = new Set(chapter.sources.map((s) => s.id));
+  assert.equal(articleIds.size, 16);
+  assert.equal(sourceIds.size, chapter.sources.length);
+  assert.ok(chapter.sources.length >= 25);
+  assert.ok(chapter.sources.some((s) => /Holocaust Memorial Museum/.test(s.publisher)));
+  assert.ok(chapter.sources.some((s) => /British Film Institute|BFI/.test(s.publisher)));
+  assert.ok(chapter.sources.every((s) => s.url.startsWith("https://")));
+
+  for (const section of chapter.sections) {
+    assert.match(section.id, /^ch13_/);
+    assert.equal(section.paragraphs.length, 3);
+    assert.ok(section.paragraphs.every((text) => text.length >= 200));
+    assert.ok(section.sourceIds.length >= 2);
+    for (const id of section.sourceIds) assert.ok(sourceIds.has(id), `Unknown Chapter 13 source ${id}`);
+  }
+
+  assert.equal(chapter.filmReferences.length, 13);
+  const atlasRefs = chapter.filmReferences.filter((f) => f.atlasDecision === "use_existing_atlas_case");
+  assert.equal(atlasRefs.length, 1);
+  assert.equal(atlasRefs[0]?.atlasScenarioId, "scenario_the_rules_of_the_game_1939");
+  assert.equal(chapter.filmReferences.filter((f) => f.atlasDecision === "P2").length, 12);
+  assert.ok(chapter.filmReferences.filter((f) => f.atlasDecision === "P2").every((f) => !f.atlasScenarioId));
+  assert.ok(chapter.historicalObjects.length >= 10);
+  assert.ok(chapter.historicalObjects.every((o) => o.atlasDecision === "no_production_case"));
 });

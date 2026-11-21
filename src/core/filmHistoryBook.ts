@@ -10,6 +10,7 @@ import { filmHistoryChapterNine } from "./filmHistoryChapterNine.js";
 import { filmHistoryChapterTen } from "./filmHistoryChapterTen.js";
 import { filmHistoryChapterEleven } from "./filmHistoryChapterEleven.js";
 import { filmHistoryChapterTwelve } from "./filmHistoryChapterTwelve.js";
+import { filmHistoryChapterThirteen } from "./filmHistoryChapterThirteen.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -129,15 +130,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     chapters: [
       filmHistoryChapterEleven,
       filmHistoryChapterTwelve,
-      outline(
-        "europe-crisis",
-        13,
-        "European cinemas between crisis and dictatorship",
-        "1930–1945",
-        "Poetic realism, British documentary, German state cinema, Italian production and other traditions respond to economic crisis and authoritarian politics.",
-        ["Compare state and commercial film institutions.", "Analyze realism and stylization across national contexts.", "Explain how exile redistributed film labor."],
-        ["poetic realism", "state cinema", "exile", "documentary movement", "co-production"],
-      ),
+      filmHistoryChapterThirteen,
       outline(
         "documentary-animation-experiment",
         14,
