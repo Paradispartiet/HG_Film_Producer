@@ -227,3 +227,22 @@ test("Chapter 12 cites film-specific production and premiere provenance without 
   assert.equal(sources.get("ch12_afi_stagecoach")?.url, "https://catalog.afi.com/Film/4173-STAGECOACH");
   assert.equal(sources.get("ch12_emory_gwtw_premiere")?.url, "https://news.emory.edu/stories/2014/11/bernstein-recounts-segregated-atlanta-premiere-gone-wind");
 });
+
+
+test("Chapter 12 separates pre-Code release from July 1934 enforcement", () => {
+  const chapter = getFilmHistoryBookChapter("hollywood-genres");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const sources = new Map(chapter.sources.map((source) => [source.id, source]));
+  for (const id of ["ch12_afi_42nd_street", "ch12_afi_it_happened", "ch12_loc_pca_1934", "ch12_afi_wizard"]) {
+    assert.match(sources.get(id)?.url ?? "", /^https:\/\//);
+  }
+  const capra = chapter.sections.find((section) => section.id === "ch12_it_happened_one_night");
+  assert.ok(capra);
+  assert.ok(capra.sourceIds.includes("ch12_afi_it_happened"));
+  assert.ok(capra.sourceIds.includes("ch12_loc_pca_1934"));
+  assert.match(capra.paragraphs.join(" "), /February 1934/);
+  assert.match(capra.paragraphs.join(" "), /that July/);
+  assert.ok(chapter.sections.find((section) => section.id === "ch12_42nd_street")?.sourceIds.includes("ch12_afi_42nd_street"));
+  assert.ok(chapter.sections.find((section) => section.id === "ch12_wizard_of_oz")?.sourceIds.includes("ch12_afi_wizard"));
+});

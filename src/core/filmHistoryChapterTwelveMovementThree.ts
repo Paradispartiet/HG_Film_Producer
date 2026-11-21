@@ -40,6 +40,6 @@ export const filmHistoryChapterTwelveMovementThree: readonly FilmHistoryBookSect
       "The musical numbers work because choreography, costumes, makeup, sets and photography have been planned as a shared expressive system. Color influences how one reads a character before that character speaks, while songs give the narrative moments to declare desires and forge alliances. Such coordination was difficult and costly. The three-strip Technicolor process imposed its own lighting and photographic demands; a film history should not confuse those demands with a generic assertion that brighter colors automatically improved cinema.",
       "The Wizard of Oz demonstrates why authorship cannot be reduced to the signature of one director. Its production passed through different creative hands, yet the finished work has a striking continuity of emotional and visual design. Compare the film with Snow White and 42nd Street: their methods of integrating songs with imaginary space differ, but each depends on carefully organized specialist work. The reader's question is not simply how an effect was achieved; it is what that effect asks the audience to feel at that point in the journey."
     ],
-    sourceIds: ["ch12_bfi_wizard", "ch12_bfi_technicolor", "ch12_bfi_disney_history"]
+    sourceIds: ["ch12_bfi_wizard", "ch12_afi_wizard", "ch12_bfi_technicolor", "ch12_bfi_disney_history"]
   }
 ];

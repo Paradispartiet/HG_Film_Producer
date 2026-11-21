@@ -13,6 +13,10 @@ import { filmHistoryChapterTwelveMovementFour } from "./filmHistoryChapterTwelve
 export const filmHistoryChapterTwelveSources: readonly FilmHistoryBookSource[] = [
   { id: "ch12_bfi_precode", title: "Pre-Code: Hollywood before the censors", publisher: "BFI Sight and Sound", url: "https://www.bfi.org.uk/sight-and-sound/features/deep-focus/pre-code-hollywood" },
   { id: "ch12_bfi_musicals", title: "10 great American musicals of the 1930s", publisher: "British Film Institute", url: "https://www.bfi.org.uk/lists/10-great-american-musicals-1930s" },
+  { id: "ch12_afi_42nd_street", title: "42nd Street (1933) — production and dance credits", publisher: "AFI Catalog of Feature Films", url: "https://catalog.afi.com/Film/3955-42ND-STREET" },
+  { id: "ch12_afi_it_happened", title: "It Happened One Night (1934) — release and production", publisher: "AFI Catalog of Feature Films", url: "https://catalog.afi.com/Film/6316-IT-HAPPENED-ONE-NIGHT" },
+  { id: "ch12_loc_pca_1934", title: "When “Pre-” Met “Code” — Eighty Years Ago Today", publisher: "Library of Congress", url: "https://blogs.loc.gov/now-see-hear/2014/07/when-pre-met-code-eighty-years-ago-today/" },
+  { id: "ch12_afi_wizard", title: "The Wizard of Oz (1939) — production and color records", publisher: "AFI Catalog of Feature Films", url: "https://catalog.afi.com/Film/7892-THE-WIZARD-OF-OZ" },
   { id: "ch12_bfi_studio_directors", title: "What's the best year a director ever had?", publisher: "British Film Institute", url: "https://www.bfi.org.uk/features/directors-best-years" },
   { id: "ch12_tcm_warners", title: "WB100: Warner Joins a Gang", publisher: "Turner Classic Movies", url: "https://www.tcm.com/articles/021758/wb100-warner-joins-a-gang" },
   { id: "ch12_bfi_gangsters", title: "10 great Hollywood gangster films of the 1930s", publisher: "British Film Institute", url: "https://www.bfi.org.uk/lists/10-great-hollywood-gangster-films-1930s" },
