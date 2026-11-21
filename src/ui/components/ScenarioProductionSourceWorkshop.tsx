@@ -3,7 +3,6 @@ import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
 import {
   getSourceBackedCaseWorkshop,
   isBestSupportedWorkshopOption,
-  type WorkshopText,
 } from "../data/scenarioProductionSourceWorkshops";
 import "../productionCaseSourceWorkshop.css";
 
