@@ -9,6 +9,7 @@ import { filmHistoryChapterEight } from "./filmHistoryChapterEight.js";
 import { filmHistoryChapterNine } from "./filmHistoryChapterNine.js";
 import { filmHistoryChapterTen } from "./filmHistoryChapterTen.js";
 import { filmHistoryChapterEleven } from "./filmHistoryChapterEleven.js";
+import { filmHistoryChapterTwelve } from "./filmHistoryChapterTwelve.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -127,15 +128,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     thesis: "Synchronized sound reorganizes film form and industry while depression, authoritarian states and world war reshape cinema's institutions and political uses.",
     chapters: [
       filmHistoryChapterEleven,
-      outline(
-        "hollywood-genres",
-        12,
-        "Hollywood genres in the studio era",
-        "1930s–1945",
-        "Musicals, horror, gangster films, screwball comedy, animation, melodrama and other genres become coordinated studio products and laboratories of style.",
-        ["Relate genre cycles to studio organization.", "Compare genre conventions and variation.", "Analyze sound, performance and production design as genre systems."],
-        ["genre cycle", "production unit", "backlot", "B picture", "house style"],
-      ),
+      filmHistoryChapterTwelve,
       outline(
         "europe-crisis",
         13,
