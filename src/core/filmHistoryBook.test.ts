@@ -222,7 +222,7 @@ test("Chapter 12 cites film-specific production and premiere provenance without 
   assert.ok(stagecoach && goneWithTheWind);
   assert.ok(stagecoach.sourceIds.includes("ch12_afi_stagecoach"));
   assert.ok(goneWithTheWind.sourceIds.includes("ch12_emory_gwtw_premiere"));
-  assert.ok(goneWithTheWind.paragraphs.some((paragraph) => /segregated 1939 Atlanta premiere/.test(paragraph)));
+  assert.ok(goneWithTheWind.paragraphs.some((paragraph) => /segregated Atlanta premiere on 15 December 1939/.test(paragraph)));
   const sources = new Map(chapter.sources.map((source) => [source.id, source]));
   assert.equal(sources.get("ch12_afi_stagecoach")?.url, "https://catalog.afi.com/Film/4173-STAGECOACH");
   assert.equal(sources.get("ch12_emory_gwtw_premiere")?.url, "https://news.emory.edu/stories/2014/11/bernstein-recounts-segregated-atlanta-premiere-gone-wind");
