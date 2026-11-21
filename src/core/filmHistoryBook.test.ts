@@ -246,3 +246,24 @@ test("Chapter 12 separates pre-Code release from July 1934 enforcement", () => {
   assert.ok(chapter.sections.find((section) => section.id === "ch12_42nd_street")?.sourceIds.includes("ch12_afi_42nd_street"));
   assert.ok(chapter.sections.find((section) => section.id === "ch12_wizard_of_oz")?.sourceIds.includes("ch12_afi_wizard"));
 });
+
+
+test("Chapter 12 anchors selected close readings to source-backed film scenes", () => {
+  const chapter = getFilmHistoryBookChapter("hollywood-genres");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const sources = new Map(chapter.sources.map((source) => [source.id, source]));
+  assert.equal(sources.get("ch12_afi_casablanca")?.url, "https://catalog.afi.com/Film/27175-CASABLANCA");
+  assert.equal(sources.get("ch12_afi_double_indemnity")?.url, "https://catalog.afi.com/Film/2201-DOUBLE-INDEMNITY");
+  const getSection = (id: string) => {
+    const section = chapter.sections.find((item) => item.id === id);
+    assert.ok(section, `Missing Chapter 12 article ${id}`);
+    return section;
+  };
+  assert.match(getSection("ch12_42nd_street").paragraphs.join(" "), /Ruby Keeler plays Peggy Sawyer/);
+  assert.match(getSection("ch12_citizen_kane").paragraphs.join(" "), /breakfast-table montage/);
+  assert.ok(getSection("ch12_casablanca").sourceIds.includes("ch12_afi_casablanca"));
+  assert.match(getSection("ch12_casablanca").paragraphs.join(" "), /La Marseillaise/);
+  assert.ok(getSection("ch12_double_indemnity").sourceIds.includes("ch12_afi_double_indemnity"));
+  assert.match(getSection("ch12_double_indemnity").paragraphs.join(" "), /Dictaphone/);
+});

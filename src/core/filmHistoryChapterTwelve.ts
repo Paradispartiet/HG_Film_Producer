@@ -42,7 +42,9 @@ export const filmHistoryChapterTwelveSources: readonly FilmHistoryBookSource[] =
   { id: "ch12_bfi_kane", title: "Citizen Kane (1941)", publisher: "British Film Institute", url: "https://www.bfi.org.uk/film/f4c92833-af39-5cd6-a41e-8df5933d0dc1/citizen-kane" },
   { id: "ch12_bfi_kane_visual", title: "20 inspired visual moments in Citizen Kane", publisher: "British Film Institute", url: "https://www.bfi.org.uk/features/20-inspired-visual-moments-citizen-kane" },
   { id: "ch12_bfi_casablanca", title: "Casablanca (1942)", publisher: "British Film Institute", url: "https://www.bfi.org.uk/film/61d5c0dc-151e-5c9c-92ef-4a3039aa82f2/casablanca" },
+  { id: "ch12_afi_casablanca", title: "Casablanca (1942) — production history and La Marseillaise scene", publisher: "AFI Catalog of Feature Films", url: "https://catalog.afi.com/Film/27175-CASABLANCA" },
   { id: "ch12_bfi_noir", title: "Double Indemnity (1944)", publisher: "British Film Institute", url: "https://www.bfi.org.uk/film/fbc40f9d-5a17-565a-a2bd-b809efb588fb/double-indemnity" },
+  { id: "ch12_afi_double_indemnity", title: "Double Indemnity (1944) — production history and recorded confession", publisher: "AFI Catalog of Feature Films", url: "https://catalog.afi.com/Film/2201-DOUBLE-INDEMNITY" },
 ];
 
 const sections = [
