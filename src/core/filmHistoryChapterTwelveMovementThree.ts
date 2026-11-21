@@ -30,7 +30,7 @@ export const filmHistoryChapterTwelveMovementThree: readonly FilmHistoryBookSect
       "Ford's direction contrasts the social pressure of interiors with the openness of location exteriors, including Monument Valley imagery that would become deeply influential. Movement, stunts, editing and landscape work together to make danger intelligible. The famous action material is not merely fast spectacle: each change in distance or camera position helps the viewer grasp where the passengers are and what could happen next. A film study should trace these decisions without treating every exterior as documentary evidence about the American frontier.",
       "The depiction of Native people is central to the film's ideological limits. A western built on white settler anxieties can create suspense by denying its Indigenous figures comparable interiority or historical perspective. That structure should be named, not smoothed away in an admiring account of location photography. Stagecoach is also a reminder that important classical-era production occurred outside the most vertically integrated studio arrangements: independent producer Walter Wanger backed the project. The genre's conventions traveled between forms of production as well as between films."
     ],
-    sourceIds: ["ch12_bfi_stagecoach", "ch12_bfi_ford", "ch12_bfi_studio_directors"]
+    sourceIds: ["ch12_bfi_stagecoach", "ch12_afi_stagecoach", "ch12_bfi_ford", "ch12_bfi_studio_directors"]
   },
   {
     id: "ch12_wizard_of_oz",
