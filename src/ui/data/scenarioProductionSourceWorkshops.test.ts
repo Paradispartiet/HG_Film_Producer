@@ -12,7 +12,7 @@ const ids = [
   "scenario_the_celebration_1998",
   "scenario_waltz_with_bashir_2008",
   "scenario_tangerine_2015",
-];
+] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
