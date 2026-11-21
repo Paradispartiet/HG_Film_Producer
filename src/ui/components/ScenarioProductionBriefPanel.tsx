@@ -50,6 +50,7 @@ import {
 } from "../data/scenarioProductionVerificationRegistry";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import { ScenarioFilmStudyPanel } from "./ScenarioFilmStudyPanel";
+import { ScenarioProductionSourceWorkshop } from "./ScenarioProductionSourceWorkshop";
 
 export function ScenarioProductionBriefPanel({
   onBackToProductionCases,
@@ -86,6 +87,7 @@ export function ScenarioProductionBriefPanel({
       </div>
 
       <ScenarioFilmStudyPanel brief={brief} scenario={scenario} />
+      <ScenarioProductionSourceWorkshop scenarioId={scenario.id} language={language} />
 
       {missions.length > 0 && brief.briefType === "production_case" ? (
         <ProductionCaseMissionFlow
