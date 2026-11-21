@@ -212,3 +212,18 @@ test("Chapter 12 carries 16 distinct source-resolved film articles with canonica
   assert.ok(chapter.historicalObjects.length >= 10);
   assert.ok(chapter.historicalObjects.every((item) => item.atlasDecision === "no_production_case"));
 });
+
+test("Chapter 12 cites film-specific production and premiere provenance without changing editorial status", () => {
+  const chapter = getFilmHistoryBookChapter("hollywood-genres");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const stagecoach = chapter.sections.find((section) => section.id === "ch12_stagecoach");
+  const goneWithTheWind = chapter.sections.find((section) => section.id === "ch12_gone_with_the_wind");
+  assert.ok(stagecoach && goneWithTheWind);
+  assert.ok(stagecoach.sourceIds.includes("ch12_afi_stagecoach"));
+  assert.ok(goneWithTheWind.sourceIds.includes("ch12_emory_gwtw_premiere"));
+  assert.ok(goneWithTheWind.paragraphs.some((paragraph) => /segregated 1939 Atlanta premiere/.test(paragraph)));
+  const sources = new Map(chapter.sources.map((source) => [source.id, source]));
+  assert.equal(sources.get("ch12_afi_stagecoach")?.url, "https://catalog.afi.com/Film/4173-STAGECOACH");
+  assert.equal(sources.get("ch12_emory_gwtw_premiere")?.url, "https://news.emory.edu/stories/2014/11/bernstein-recounts-segregated-atlanta-premiere-gone-wind");
+});
