@@ -223,6 +223,90 @@ test("Chapter 12 carries 16 distinct source-resolved film articles with canonica
   assert.ok(chapter.historicalObjects.every((item) => item.atlasDecision === "no_production_case"));
 });
 
+test("Chapter 12 cites film-specific production and premiere provenance without changing editorial status", () => {
+  const chapter = getFilmHistoryBookChapter("hollywood-genres");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const stagecoach = chapter.sections.find((section) => section.id === "ch12_stagecoach");
+  const goneWithTheWind = chapter.sections.find((section) => section.id === "ch12_gone_with_the_wind");
+  assert.ok(stagecoach && goneWithTheWind);
+  assert.ok(stagecoach.sourceIds.includes("ch12_afi_stagecoach"));
+  assert.ok(goneWithTheWind.sourceIds.includes("ch12_emory_gwtw_premiere"));
+  assert.ok(goneWithTheWind.paragraphs.some((paragraph) => /segregated Atlanta premiere on 15 December 1939/.test(paragraph)));
+  const sources = new Map(chapter.sources.map((source) => [source.id, source]));
+  assert.equal(sources.get("ch12_afi_stagecoach")?.url, "https://catalog.afi.com/Film/4173-STAGECOACH");
+  assert.equal(sources.get("ch12_emory_gwtw_premiere")?.url, "https://news.emory.edu/stories/2014/11/bernstein-recounts-segregated-atlanta-premiere-gone-wind");
+});
+
+
+test("Chapter 12 separates pre-Code release from July 1934 enforcement", () => {
+  const chapter = getFilmHistoryBookChapter("hollywood-genres");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const sources = new Map(chapter.sources.map((source) => [source.id, source]));
+  for (const id of ["ch12_afi_42nd_street", "ch12_afi_it_happened", "ch12_loc_pca_1934", "ch12_afi_wizard"]) {
+    assert.match(sources.get(id)?.url ?? "", /^https:\/\//);
+  }
+  const capra = chapter.sections.find((section) => section.id === "ch12_it_happened_one_night");
+  assert.ok(capra);
+  assert.ok(capra.sourceIds.includes("ch12_afi_it_happened"));
+  assert.ok(capra.sourceIds.includes("ch12_loc_pca_1934"));
+  assert.match(capra.paragraphs.join(" "), /February 1934/);
+  assert.match(capra.paragraphs.join(" "), /that July/);
+  assert.ok(chapter.sections.find((section) => section.id === "ch12_42nd_street")?.sourceIds.includes("ch12_afi_42nd_street"));
+  assert.ok(chapter.sections.find((section) => section.id === "ch12_wizard_of_oz")?.sourceIds.includes("ch12_afi_wizard"));
+});
+
+
+test("Chapter 12 anchors selected close readings to source-backed film scenes", () => {
+  const chapter = getFilmHistoryBookChapter("hollywood-genres");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const sources = new Map(chapter.sources.map((source) => [source.id, source]));
+  assert.equal(sources.get("ch12_afi_casablanca")?.url, "https://catalog.afi.com/Film/27175-CASABLANCA");
+  assert.equal(sources.get("ch12_afi_double_indemnity")?.url, "https://catalog.afi.com/Film/2201-DOUBLE-INDEMNITY");
+  const getSection = (id: string) => {
+    const section = chapter.sections.find((item) => item.id === id);
+    assert.ok(section, `Missing Chapter 12 article ${id}`);
+    return section;
+  };
+  assert.match(getSection("ch12_42nd_street").paragraphs.join(" "), /Ruby Keeler plays Peggy Sawyer/);
+  assert.match(getSection("ch12_citizen_kane").paragraphs.join(" "), /breakfast-table montage/);
+  assert.ok(getSection("ch12_casablanca").sourceIds.includes("ch12_afi_casablanca"));
+  assert.match(getSection("ch12_casablanca").paragraphs.join(" "), /La Marseillaise/);
+  assert.ok(getSection("ch12_double_indemnity").sourceIds.includes("ch12_afi_double_indemnity"));
+  assert.match(getSection("ch12_double_indemnity").paragraphs.join(" "), /Dictaphone/);
+});
+
+
+test("Chapter 12 grounds visual motifs, dance production, melodrama and Oscar chronology", () => {
+  const chapter = getFilmHistoryBookChapter("hollywood-genres");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const section = (id: string) => {
+    const item = chapter.sections.find((candidate) => candidate.id === id);
+    assert.ok(item, `Missing article ${id}`);
+    return item;
+  };
+  const scarface = section("ch12_scarface");
+  assert.ok(scarface.sourceIds.includes("ch12_criterion_scarface_motif"));
+  assert.match(scarface.paragraphs.join(" "), /X shapes/);
+  const topHat = section("ch12_top_hat");
+  assert.ok(topHat.sourceIds.includes("ch12_afi_top_hat"));
+  assert.match(topHat.paragraphs.join(" "), /feathered dress/);
+  const stella = section("ch12_stella_dallas");
+  assert.ok(stella.sourceIds.includes("ch12_senses_stella_dallas"));
+  assert.match(stella.paragraphs.join(" "), /window separating the mother/);
+  const wind = section("ch12_gone_with_the_wind");
+  assert.ok(wind.sourceIds.includes("ch12_academy_mcdaniel_1940"));
+  assert.match(wind.paragraphs.join(" "), /15 December 1939/);
+  assert.match(wind.paragraphs.join(" "), /29 February 1940/);
+  const refs = new Map(chapter.sources.map((source) => [source.id, source]));
+  for (const id of ["ch12_criterion_scarface_motif", "ch12_afi_top_hat", "ch12_senses_stella_dallas", "ch12_academy_mcdaniel_1940"]) {
+    assert.match(refs.get(id)?.url ?? "", /^https:\/\//);
+  }
+});
+
 test("Chapter 13 adds sixteen sourced European film-history articles without adopting the mismatched postwar Atlas audit", () => {
   const chapter = getFilmHistoryBookChapter("europe-crisis");
   assert.ok(chapter);
