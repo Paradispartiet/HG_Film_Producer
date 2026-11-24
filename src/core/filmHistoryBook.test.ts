@@ -157,7 +157,7 @@ test("Chapter 2 keeps exhibition infrastructure outside fake Production Cases", 
   assert.ok(chapter.historicalObjects.some((item) => /Nickelodeon/i.test(item.label)));
 });
 
-test("Chapters 1–10 remain full; Chapters 11–13 are readable drafts; 14–30 remain outlines", () => {
+test("Chapters 1–10 remain full; Chapters 11–14 are readable drafts; 15–30 remain outlines", () => {
   const completed = filmHistoryBookChapters.filter((chapter) => chapter.number <= 10);
   assert.equal(completed.length, 10);
   assert.ok(completed.every((chapter) => chapter.status === "full"));
@@ -178,8 +178,13 @@ test("Chapters 1–10 remain full; Chapters 11–13 are readable drafts; 14–30
   assert.equal(europe?.sections.length, 16);
   assert.ok((europe?.sources.length ?? 0) >= 20);
 
-  const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 13);
-  assert.equal(remaining.length, 17);
+  const nonfiction = filmHistoryBookChapters.find((chapter) => chapter.number === 14);
+  assert.equal(nonfiction?.status, "draft");
+  assert.equal(nonfiction?.sections.length, 16);
+  assert.ok((nonfiction?.sources.length ?? 0) >= 25);
+
+  const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 14);
+  assert.equal(remaining.length, 16);
   assert.ok(remaining.every((chapter) => chapter.status === "outline"));
   assert.ok(remaining.every((chapter) => chapter.sections.length === 0));
   assert.ok(remaining.every((chapter) => chapter.summary.length > 40));
@@ -337,4 +342,68 @@ test("Chapter 13 adds sixteen sourced European film-history articles without ado
   assert.ok(chapter.filmReferences.filter((f) => f.atlasDecision === "P2").every((f) => !f.atlasScenarioId));
   assert.ok(chapter.historicalObjects.length >= 10);
   assert.ok(chapter.historicalObjects.every((o) => o.atlasDecision === "no_production_case"));
+});
+
+test("Chapter 14 provides sixteen researched documentary animation and experimental film essays", () => {
+  const chapter = getFilmHistoryBookChapter("documentary-animation-experiment");
+  assert.ok(chapter);
+  assert.equal(chapter.number, 14);
+  assert.equal(chapter.period, "1920s–1945");
+  assert.equal(chapter.status, "draft");
+  assert.equal(chapter.sections.length, 16);
+  assert.equal(chapter.sections.flatMap((s) => s.paragraphs).length, 48);
+  assert.ok(countFilmHistoryChapterWords(chapter) >= 4_000);
+
+  const articleIds = new Set(chapter.sections.map((s) => s.id));
+  const sourceIds = new Set(chapter.sources.map((s) => s.id));
+  assert.equal(articleIds.size, 16);
+  assert.equal(sourceIds.size, chapter.sources.length);
+  assert.ok(chapter.sources.length >= 25);
+  assert.ok(chapter.sources.some((s) => s.publisher === "Library of Congress"));
+  assert.ok(chapter.sources.some((s) => /British Film Institute|BFI/.test(s.publisher)));
+  assert.ok(chapter.sources.some((s) => s.publisher === "The Criterion Collection"));
+  assert.ok(chapter.sources.every((s) => s.url.startsWith("https://")));
+
+  const usedSourceIds = new Set(chapter.sections.flatMap((s) => s.sourceIds));
+  assert.equal(usedSourceIds.size, chapter.sources.length);
+  for (const section of chapter.sections) {
+    assert.match(section.id, /^ch14_/);
+    assert.equal(section.paragraphs.length, 3);
+    assert.ok(section.paragraphs.every((text) => text.length >= 350));
+    assert.ok(section.sourceIds.length >= 2);
+    for (const id of section.sourceIds) assert.ok(sourceIds.has(id), `Unknown Chapter 14 source ${id}`);
+  }
+
+  const existing = chapter.filmReferences.filter((f) => f.atlasDecision === "use_existing_atlas_case");
+  assert.deepEqual(
+    existing.map((f) => [f.title, f.atlasScenarioId]).sort(),
+    [
+      ["Man with a Movie Camera", "scenario_man_with_a_movie_camera_1929"],
+      ["Entr'acte", "scenario_entr_acte_1924"],
+      ["Un Chien Andalou", "scenario_un_chien_andalou_1929"]
+    ].sort()
+  );
+  const bookOnly = chapter.filmReferences.filter((f) => f.atlasDecision === "P2");
+  assert.equal(bookOnly.length, 11);
+  assert.ok(bookOnly.every((f) => !f.atlasScenarioId));
+  assert.equal(chapter.filmReferences.length, 14);
+  assert.ok(chapter.historicalObjects.length >= 12);
+  assert.ok(chapter.historicalObjects.every((h) => h.atlasDecision === "no_production_case"));
+});
+
+
+test("Chapter 14 documents documentary commissions and Cornell presentation with primary institutions", () => {
+  const chapter = getFilmHistoryBookChapter("documentary-animation-experiment");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const byId = new Map(chapter.sections.map((section) => [section.id, section]));
+  const sources = new Map(chapter.sources.map((source) => [source.id, source]));
+  assert.equal(sources.get("ch14_open_song_sponsor")?.url, "https://www.open.edu/openlearn/history-the-arts/history/world-history/selling-empire-film");
+  assert.equal(sources.get("ch14_moma_rose_hobart")?.url, "https://www.moma.org/collection/works/311539");
+  assert.ok(byId.get("ch14_song_ceylon")?.sourceIds.includes("ch14_open_song_sponsor"));
+  assert.match(byId.get("ch14_song_ceylon")?.paragraphs.join(" ") ?? "", /Ceylon Tea Propaganda Board/);
+  assert.match(byId.get("ch14_housing_problems")?.paragraphs.join(" ") ?? "", /British Commercial Gas Association/);
+  assert.ok(byId.get("ch14_housing_problems")?.sourceIds.includes("ch14_bfi_ukpropaganda"));
+  assert.ok(byId.get("ch14_rose_hobart")?.sourceIds.includes("ch14_moma_rose_hobart"));
+  assert.match(byId.get("ch14_rose_hobart")?.paragraphs.join(" ") ?? "", /Brazilian record/);
 });
