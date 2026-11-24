@@ -1,0 +1,45 @@
+import type { FilmHistoryBookSection } from "./filmHistoryBook.js";
+
+/** Chapter 15, movement III: wartime dramatic storytelling. */
+export const filmHistoryChapterFifteenMovementThree: readonly FilmHistoryBookSection[] = [
+  {
+    id: "ch15_in_which_we_serve",
+    title: "9. In Which We Serve (1942): a ship is a community remembered under fire",
+    paragraphs: [
+      "Noël Coward and David Lean's In Which We Serve follows a Royal Navy destroyer and the different lives brought together through its crew. The film's structure is shaped by memory as survivors recall experiences and relationships while facing immediate danger. Domestic scenes and naval work become parts of the same wartime story. It is an effective way of making a military institution feel personal, but it also produces an image of national unity in which ranks and social positions remain recognizable. The BFI's account notes the film's sincere emotional power and the paternal assumptions visible in its treatment of traditional hierarchy.",
+      "The ship provides a dramatic space where practical coordination matters. Orders, watches, cramped quarters and the sudden disruption of attack organize both movement and sound. Rather than present the war as one unbroken action scene, the film alternates among duty, companionship and family attachments ashore. Its editing can make memories interrupt the pressure of the present, explaining why an individual act has emotional significance before it is completed. Such construction belongs to dramatic filmmaking, even though the picture drew on contemporary military experience and public expectations of naval service.",
+      "A historical reading must distinguish the fictional vessel and its characters from the real Royal Navy and the events that inspired the production. Audiences in 1942 might have found reassurance in the film's representation of shared sacrifice; modern viewers can analyze that appeal while asking whose work and viewpoints remain secondary. The film is an example of a commercial production supporting wartime morale without becoming a simple training documentary. In FilmWork, compare its flashback structure with the compilation documentary Why We Fight: both reorder time, but one does so to develop fictional relationships and the other to construct military explanation."
+    ],
+    sourceIds: ["ch15_bfi_in_which", "ch15_bfi_in_which_player", "ch15_bfi_britain_war"]
+  },
+  {
+    id: "ch15_went_day_well",
+    title: "10. Went the Day Well? (1942): invasion fear transforms an English village",
+    paragraphs: [
+      "Alberto Cavalcanti's Went the Day Well? imagines German soldiers infiltrating an English village, forcing familiar institutions and residents into the logic of occupation and armed resistance. The story draws on a Graham Greene premise and turns recognizable homes, schools and meeting places into locations of danger. A wartime audience lived with the fear of invasion; the film uses that anxiety to make the response of ordinary civilians its central action. Unlike an army training film, its force comes from discovering the threat through characters who initially believe they inhabit a safe social world.",
+      "The film's shocks depend on staging and changes in expectation. A village inhabitant may appear harmless or respectable before a scene reveals an unexpected capacity for courage or betrayal. The contrast between pastoral exteriors and violent actions undermines the comforting assumption that familiar places remain untouched by war. Its editing and sound make spatial relationships important: who can reach a building, which road is controlled, and when does information travel between villagers? A viewer should analyze those choices as constructed suspense rather than interpret the fictional invasion as a documented account of an actual operation.",
+      "The film also offers an opportunity to discuss the coercive pressures that wartime narratives place on civilians. What counts as justified violence when a village is threatened, and how does a filmmaker invite viewers to accept it? The answers are historically specific, not a universal rule of storytelling. BFI sources identify the film's wartime production and continuing interest as an invasion thriller. Compared with Jennings's The Silent Village, both relocate the possibility of Nazi violence to recognizable British settings; one imagines resistance in a fictional invasion, while the other uses reconstruction to honor victims of a documented massacre."
+    ],
+    sourceIds: ["ch15_bfi_went", "ch15_bfi_warfilms", "ch15_bfi_silent"]
+  },
+  {
+    id: "ch15_colonel_blimp",
+    title: "11. The Life and Death of Colonel Blimp (1943): friendship unsettles wartime certainties",
+    paragraphs: [
+      "Michael Powell and Emeric Pressburger's The Life and Death of Colonel Blimp follows the career and relationships of a British officer across several wars. Its central friendship between Clive Candy and German officer Theo Kretschmar-Schuldorff crosses the enemy lines through which wartime cinema often defines national belonging. The film's generous attention to memory and changing moral judgment makes it more complicated than a straightforward appeal for victory. The men are shaped by past codes of military honor, yet the conflict confronting them in the 1940s demands different decisions. This tension is carried by performance and the structure of a life recalled across decades.",
+      "The film's Technicolor design, long temporal sweep and transitions among periods help the viewer experience the weight of accumulated habits. Deborah Kerr's several roles develop connections between time, affection and the officer's perception of women. Such casting is a formal decision, not a claim that three different characters are identical people. The film's particular use of color and temporal scale distinguishes it from the studio interiors of Casablanca and the realistic textures of British documentary. Its artistry supports an examination of why an individual may be unable to change as quickly as the historical world around him.",
+      "The production also faced controversy in wartime Britain, as BFI accounts document its challenging view of military leadership and the enemy. That controversy should not be reduced to a simplistic story of censorship versus freedom without examining specific sources and versions. A film could oppose Nazism while resisting caricature of every German character. The reader should trace how the narrative distinguishes people, institutions and political regimes, then compare those distinctions with the one-dimensional enemies often used in other wartime propaganda. Complexity can itself become part of a film's contribution to morale and public debate."
+    ],
+    sourceIds: ["ch15_bfi_blimp", "ch15_bfi_blimp_context", "ch15_bfi_powell"]
+  },
+  {
+    id: "ch15_casablanca",
+    title: "12. Casablanca (1942): refuge, politics and a studio melodrama with wartime stakes",
+    paragraphs: [
+      "Michael Curtiz's Casablanca takes place in Vichy-controlled Morocco, where refugees, resistance figures, officials and opportunists gather in a nightclub managed by Rick Blaine. The story makes decisions about visas, escape and loyalty part of a romantic drama. Its urgent relevance grew from wartime experiences of displacement and the international background of Hollywood workers, including performers who had fled European fascism. The BFI describes the film's combination of witty screenplay, distinctive performances and topical political setting as a prime example of collaborative studio craft. The fiction is not an archive of actual escape routes, but its tensions belong to the historical world from which it emerged.",
+      "Rick's café is a carefully organized dramatic environment. Music, lighting, crowds, documents and entrances bring social geography into one interior, allowing the film to move between private desire and public allegiance. Individual songs acquire significance through repetition and placement rather than simply illustrating emotion. The romantic narrative becomes politically consequential because people have to decide what they owe to others under a regime of coercion. The film's famous choice works as storytelling only because the preceding scenes have made the competing obligations intelligible.",
+      "Casablanca was already discussed in the book's Chapter 12 as an example of collaborative Warner Bros. studio production. Here the emphasis is deliberately different: what happens when a commercial melodrama is made and received in a war whose refugees and national loyalties were immediate public concerns? Reusing the existing Film Atlas case is appropriate; creating a second identical playable scenario would not be. The reader should compare the film's political staging with the more direct claims of the Why We Fight series, resisting the idea that fiction is necessarily apolitical or that propaganda must be documentary."
+    ],
+    sourceIds: ["ch15_bfi_casablanca", "ch15_bfi_in_which", "ch15_bfi_warfilms"]
+  }
+];

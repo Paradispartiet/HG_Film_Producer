@@ -157,7 +157,7 @@ test("Chapter 2 keeps exhibition infrastructure outside fake Production Cases", 
   assert.ok(chapter.historicalObjects.some((item) => /Nickelodeon/i.test(item.label)));
 });
 
-test("Chapters 1–10 remain full; Chapters 11–14 are readable drafts; 15–30 remain outlines", () => {
+test("Chapters 1–10 remain full; Chapters 11–15 are readable drafts; 16–30 remain outlines", () => {
   const completed = filmHistoryBookChapters.filter((chapter) => chapter.number <= 10);
   assert.equal(completed.length, 10);
   assert.ok(completed.every((chapter) => chapter.status === "full"));
@@ -183,8 +183,13 @@ test("Chapters 1–10 remain full; Chapters 11–14 are readable drafts; 15–30
   assert.equal(nonfiction?.sections.length, 16);
   assert.ok((nonfiction?.sources.length ?? 0) >= 25);
 
-  const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 14);
-  assert.equal(remaining.length, 16);
+  const wartime = filmHistoryBookChapters.find((chapter) => chapter.number === 15);
+  assert.equal(wartime?.status, "draft");
+  assert.equal(wartime?.sections.length, 16);
+  assert.ok((wartime?.sources.length ?? 0) >= 30);
+
+  const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 15);
+  assert.equal(remaining.length, 15);
   assert.ok(remaining.every((chapter) => chapter.status === "outline"));
   assert.ok(remaining.every((chapter) => chapter.sections.length === 0));
   assert.ok(remaining.every((chapter) => chapter.summary.length > 40));
@@ -406,4 +411,68 @@ test("Chapter 14 documents documentary commissions and Cornell presentation with
   assert.ok(byId.get("ch14_housing_problems")?.sourceIds.includes("ch14_bfi_ukpropaganda"));
   assert.ok(byId.get("ch14_rose_hobart")?.sourceIds.includes("ch14_moma_rose_hobart"));
   assert.match(byId.get("ch14_rose_hobart")?.paragraphs.join(" ") ?? "", /Brazilian record/);
+});
+
+test("Chapter 15 has sixteen sourced essays, verified existing Atlas references and no borrowed 1970s matrix", () => {
+  const chapter = getFilmHistoryBookChapter("war-propaganda");
+  assert.ok(chapter);
+  assert.equal(chapter.number, 15);
+  assert.equal(chapter.period, "1939–1945");
+  assert.equal(chapter.status, "draft");
+  assert.equal(chapter.sections.length, 16);
+  assert.equal(chapter.sections.flatMap((s) => s.paragraphs).length, 48);
+  assert.ok(countFilmHistoryChapterWords(chapter) >= 4_200);
+
+  const sectionIds = new Set(chapter.sections.map((s) => s.id));
+  const sourceIds = new Set(chapter.sources.map((s) => s.id));
+  assert.equal(sectionIds.size, 16);
+  assert.equal(sourceIds.size, chapter.sources.length);
+  assert.ok(chapter.sources.length >= 30);
+  assert.ok(chapter.sources.some((s) => s.publisher === "Library of Congress"));
+  assert.ok(chapter.sources.some((s) => /British Film Institute/.test(s.publisher)));
+  assert.ok(chapter.sources.some((s) => /Holocaust Memorial Museum/.test(s.publisher)));
+  assert.ok(chapter.sources.every((s) => s.url.startsWith("https://")));
+
+  const usedIds = new Set(chapter.sections.flatMap((s) => s.sourceIds));
+  assert.equal(usedIds.size, sourceIds.size);
+  for (const section of chapter.sections) {
+    assert.match(section.id, /^ch15_/);
+    assert.equal(section.paragraphs.length, 3);
+    assert.ok(section.paragraphs.every((text) => text.length >= 350));
+    assert.ok(section.sourceIds.length >= 2);
+    for (const id of section.sourceIds) assert.ok(sourceIds.has(id), `Unknown Chapter 15 source ${id}`);
+  }
+
+  assert.equal(chapter.filmReferences.length, 15);
+  const existing = chapter.filmReferences.filter((f) => f.atlasDecision === "use_existing_atlas_case");
+  assert.deepEqual(
+    existing.map((f) => [f.title, f.atlasScenarioId]).sort(),
+    [
+      ["Casablanca", "scenario_casablanca_1942"],
+      ["Rome, Open City", "scenario_rome_open_city_1945"],
+    ].sort(),
+  );
+  const bookOnly = chapter.filmReferences.filter((f) => f.atlasDecision === "P2");
+  assert.equal(bookOnly.length, 13);
+  assert.ok(bookOnly.every((f) => f.atlasScenarioId === undefined));
+  assert.ok(chapter.historicalObjects.length >= 12);
+  assert.ok(chapter.historicalObjects.every((h) => h.atlasDecision === "no_production_case"));
+});
+
+
+test("Chapter 15 separates actual and reenacted war footage from coerced Nazi film", () => {
+  const chapter = getFilmHistoryBookChapter("war-propaganda");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const sections = new Map(chapter.sections.map((section) => [section.id, section]));
+  const sanPietro = sections.get("ch15_san_pietro");
+  assert.ok(sanPietro);
+  assert.ok(sanPietro.sourceIds.includes("ch15_afi_san_pietro"));
+  assert.match(sanPietro.paragraphs.join(" "), /battle scenes were reenacted/);
+  assert.equal(chapter.sources.find((source) => source.id === "ch15_afi_san_pietro")?.url, "https://catalog.afi.com/Catalog/moviedetails/24563");
+  const ghetto = sections.get("ch15_theresienstadt");
+  assert.ok(ghetto);
+  assert.match(ghetto.paragraphs.join(" "), /never screened publicly/);
+  assert.match(ghetto.paragraphs.join(" "), /only fragments have survived/);
+  assert.ok(ghetto.sourceIds.includes("ch15_ushmm_theresienstadt"));
 });
