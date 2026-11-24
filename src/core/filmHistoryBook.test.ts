@@ -390,3 +390,20 @@ test("Chapter 14 provides sixteen researched documentary animation and experimen
   assert.ok(chapter.historicalObjects.length >= 12);
   assert.ok(chapter.historicalObjects.every((h) => h.atlasDecision === "no_production_case"));
 });
+
+
+test("Chapter 14 documents documentary commissions and Cornell presentation with primary institutions", () => {
+  const chapter = getFilmHistoryBookChapter("documentary-animation-experiment");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const byId = new Map(chapter.sections.map((section) => [section.id, section]));
+  const sources = new Map(chapter.sources.map((source) => [source.id, source]));
+  assert.equal(sources.get("ch14_open_song_sponsor")?.url, "https://www.open.edu/openlearn/history-the-arts/history/world-history/selling-empire-film");
+  assert.equal(sources.get("ch14_moma_rose_hobart")?.url, "https://www.moma.org/collection/works/311539");
+  assert.ok(byId.get("ch14_song_ceylon")?.sourceIds.includes("ch14_open_song_sponsor"));
+  assert.match(byId.get("ch14_song_ceylon")?.paragraphs.join(" ") ?? "", /Ceylon Tea Propaganda Board/);
+  assert.match(byId.get("ch14_housing_problems")?.paragraphs.join(" ") ?? "", /British Commercial Gas Association/);
+  assert.ok(byId.get("ch14_housing_problems")?.sourceIds.includes("ch14_bfi_ukpropaganda"));
+  assert.ok(byId.get("ch14_rose_hobart")?.sourceIds.includes("ch14_moma_rose_hobart"));
+  assert.match(byId.get("ch14_rose_hobart")?.paragraphs.join(" ") ?? "", /Brazilian record/);
+});
