@@ -458,3 +458,21 @@ test("Chapter 15 has sixteen sourced essays, verified existing Atlas references 
   assert.ok(chapter.historicalObjects.length >= 12);
   assert.ok(chapter.historicalObjects.every((h) => h.atlasDecision === "no_production_case"));
 });
+
+
+test("Chapter 15 separates actual and reenacted war footage from coerced Nazi film", () => {
+  const chapter = getFilmHistoryBookChapter("war-propaganda");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const sections = new Map(chapter.sections.map((section) => [section.id, section]));
+  const sanPietro = sections.get("ch15_san_pietro");
+  assert.ok(sanPietro);
+  assert.ok(sanPietro.sourceIds.includes("ch15_afi_san_pietro"));
+  assert.match(sanPietro.paragraphs.join(" "), /battle scenes were reenacted/);
+  assert.equal(chapter.sources.find((source) => source.id === "ch15_afi_san_pietro")?.url, "https://catalog.afi.com/Catalog/moviedetails/24563");
+  const ghetto = sections.get("ch15_theresienstadt");
+  assert.ok(ghetto);
+  assert.match(ghetto.paragraphs.join(" "), /never screened publicly/);
+  assert.match(ghetto.paragraphs.join(" "), /only fragments have survived/);
+  assert.ok(ghetto.sourceIds.includes("ch15_ushmm_theresienstadt"));
+});
