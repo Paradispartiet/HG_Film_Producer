@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Twenty pre-existing Production Cases receive evidence-backed craft decisions.
+ * Twenty-three pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -2363,6 +2363,571 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "museum",
           "dfi"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_corbett_fitzsimmons_fight_1897",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore event recording, exhibition technology and archive provenance.",
+      "nb": "Utforsk hendelsesopptak, visningsteknologi og arkivhistorie.",
+      "fr": "Explorez la captation d'événements, la projection et la provenance archivistique.",
+      "pt": "Explore a captação de eventos, a projeção e a proveniência arquivística."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Corbett-Fitzsimmons fight--excerpts",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/item/2023602024/"
+      },
+      {
+        "id": "s1",
+        "title": "From our archives: Corbett vs. Fitzsimmons, the fight of the century and the earliest feature film",
+        "publisher": "National Science and Media Museum",
+        "url": "https://blog.scienceandmediamuseum.org.uk/corbett-fitzsimmons-fight-film-fragment/"
+      },
+      {
+        "id": "s2",
+        "title": "Fight Pictures: A History of Boxing and Early Cinema — The Corbett-Fitzsimmons Fight",
+        "publisher": "University of California Press / JSTOR",
+        "url": "https://www.jstor.org/stable/10.1525/j.ctt1pnd60.9"
+      },
+      {
+        "id": "s3",
+        "title": "Corbett and Fitzsimmons Fight",
+        "publisher": "American Film Institute",
+        "url": "https://catalog.afi.com/Film/28825-CORBETT-AND-FITZSIMMONS-FIGHT"
+      }
+    ],
+    "questions": [
+      {
+        "id": "corbett-duration",
+        "area": "camera",
+        "prompt": {
+          "en": "How would you storyboard a harmless event while preserving its duration?",
+          "nb": "Hvordan vil du tegne en ufarlig hendelse og bevare varigheten?",
+          "fr": "Comment scénariser un événement sans danger en préservant sa durée ?",
+          "pt": "Como planear um evento seguro preservando a sua duração?"
+        },
+        "options": [
+          {
+            "id": "handoff",
+            "label": {
+              "en": "Plan coverage changes around the unfolding event",
+              "nb": "Planlegg bildebytter rundt hendelsens faktiske forløp",
+              "fr": "Prévoir les changements de prise selon le déroulement réel",
+              "pt": "Planear mudanças de captação segundo o decorrer do evento"
+            }
+          },
+          {
+            "id": "fiction",
+            "label": {
+              "en": "Replace event chronology with invented dramatic beats",
+              "nb": "Erstatt hendelsesforløpet med oppdiktede dramatiske vendepunkter",
+              "fr": "Remplacer la chronologie par des péripéties inventées",
+              "pt": "Substituir a cronologia por momentos dramáticos inventados"
+            }
+          },
+          {
+            "id": "fragment",
+            "label": {
+              "en": "Record only a fragment and label it the complete event",
+              "nb": "Vis bare et fragment og kall det hele hendelsen",
+              "fr": "Montrer un fragment en le présentant comme complet",
+              "pt": "Mostrar um fragmento como se fosse o evento completo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "handoff",
+        "explanation": {
+          "en": "The museum dossier documents multiple cameras and extended coverage. In a drawing exercise, plan handoffs that preserve chronology; do not confuse surviving fragments with the complete original.",
+          "nb": "Museumsdokumentasjonen beskriver flere kameraer og langvarig dekning. Planlegg overganger i en tegneøvelse som bevarer kronologien; skill bevarte fragmenter fra originalens helhet.",
+          "fr": "Le dossier du musée décrit plusieurs caméras et une captation prolongée. Planifiez les transitions dans un dessin en préservant la chronologie ; distinguez fragments et original complet.",
+          "pt": "O dossier do museu descreve várias câmaras e captação prolongada. Planeie transições num desenho preservando a cronologia; distinga fragmentos do original completo."
+        },
+        "sourceIds": [
+          "s1",
+          "s0"
+        ]
+      },
+      {
+        "id": "corbett-exhibition",
+        "area": "sound",
+        "prompt": {
+          "en": "What connects capture technology to the historical screening experience?",
+          "nb": "Hva knytter opptaksteknologien til den historiske visningen?",
+          "fr": "Qu'est-ce qui relie la captation à la projection historique ?",
+          "pt": "O que liga a captação à exibição histórica?"
+        },
+        "options": [
+          {
+            "id": "sync",
+            "label": {
+              "en": "Assume commentary was recorded as synchronized sound",
+              "nb": "Anta at kommentaren ble tatt opp som synkron lyd",
+              "fr": "Supposer un commentaire enregistré en son synchrone",
+              "pt": "Supor comentários gravados em som sincronizado"
+            }
+          },
+          {
+            "id": "system",
+            "label": {
+              "en": "Match the projection system and keep live commentary separate",
+              "nb": "Tilpass projeksjonssystemet og hold levende kommentar adskilt",
+              "fr": "Adapter le système de projection et distinguer le commentaire en direct",
+              "pt": "Adequar o sistema de projeção e separar o comentário ao vivo"
+            }
+          },
+          {
+            "id": "any",
+            "label": {
+              "en": "Assume any projector can show any historical format",
+              "nb": "Anta at enhver projektor kan vise alle historiske formater",
+              "fr": "Supposer que tout projecteur accepte tous les formats historiques",
+              "pt": "Supor que qualquer projetor aceita todos os formatos históricos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "system",
+        "explanation": {
+          "en": "The Library of Congress dossier describes special projection requirements and live expert commentary. The recorded image and the live presentation are different parts of the exhibition system.",
+          "nb": "Library of Congress beskriver spesielle projeksjonskrav og levende ekspertkommentar. Opptaksbildet og den levende presentasjonen er ulike deler av visningssystemet.",
+          "fr": "Le dossier de la Library of Congress décrit un projecteur spécifique et un commentaire en direct. L'image enregistrée et la présentation sont deux composantes distinctes.",
+          "pt": "O dossier da Library of Congress descreve requisitos especiais de projeção e comentário ao vivo. A imagem registada e a apresentação são componentes distintos."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "corbett-provenance",
+        "area": "research",
+        "prompt": {
+          "en": "How should conflicting catalogue credits and later reproductions be handled?",
+          "nb": "Hvordan bør motstridende katalogkrediteringer og senere reproduksjoner behandles?",
+          "fr": "Comment traiter les crédits contradictoires et les reproductions ultérieures ?",
+          "pt": "Como tratar créditos contraditórios e reproduções posteriores?"
+        },
+        "options": [
+          {
+            "id": "combine",
+            "label": {
+              "en": "Merge all credits and versions into a single record",
+              "nb": "Slå sammen alle krediteringer og versjoner til én oppføring",
+              "fr": "Fusionner tous les crédits et versions en une notice",
+              "pt": "Fundir todos os créditos e versões num único registo"
+            }
+          },
+          {
+            "id": "complete",
+            "label": {
+              "en": "Declare surviving fragments the complete original",
+              "nb": "Erklær bevarte fragmenter som den fullstendige originalen",
+              "fr": "Déclarer les fragments comme l'original complet",
+              "pt": "Declarar os fragmentos como o original completo"
+            }
+          },
+          {
+            "id": "separate",
+            "label": {
+              "en": "Separate original and facsimile using explicit archival evidence",
+              "nb": "Skill original og faksimile ved hjelp av eksplisitte arkivbelegg",
+              "fr": "Distinguer original et fac-similé par des preuves archivistiques explicites",
+              "pt": "Distinguir original e fac-símile por evidência arquivística explícita"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "separate",
+        "explanation": {
+          "en": "The existing LOC record distinguishes the Rector/Stuart original from Lubin's later facsimile. Use AFI only for the narrower camera and duration evidence; document conflicting credits and fragmentary survival.",
+          "nb": "LOC-oppføringen skiller Rector/Stuart-originalen fra Lubins senere faksimile. Bruk AFI bare til avgrenset kamera- og varighetsbelegg; dokumenter motstridende kreditering og fragmentarisk bevaring.",
+          "fr": "La notice LOC distingue l'original Rector/Stuart du fac-similé de Lubin. Limitez l'AFI aux données de caméra et de durée ; documentez les crédits contradictoires et la conservation fragmentaire.",
+          "pt": "O registo LOC distingue o original Rector/Stuart do fac-símile de Lubin. Limite a AFI aos dados de câmara e duração; documente créditos contraditórios e preservação fragmentária."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_employees_leaving_browns_atlas_works_sheffield_1901",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore how local recognition, staging and showmanship shape actuality films.",
+      "nb": "Utforsk hvordan lokal gjenkjennelse, iscenesettelse og visning former aktualitetsfilm.",
+      "fr": "Explorez comment la reconnaissance locale, la mise en scène et la projection façonnent les actualités.",
+      "pt": "Explore como o reconhecimento local, a encenação e a exibição moldam filmes de atualidades."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Employees Leaving Brown's Atlas Works, Sheffield (1901)",
+        "publisher": "British Film Institute",
+        "url": "https://player.bfi.org.uk/free/film/watch-employees-leaving-browns-atlas-works-sheffield-1901-1901-online"
+      },
+      {
+        "id": "s1",
+        "title": "Mitchell & Kenyon's Edwardian Britain",
+        "publisher": "BFI National Archive",
+        "url": "https://replay.bfi.org.uk/collection/430"
+      },
+      {
+        "id": "s2",
+        "title": "Introducing our Writer in Residence, Désirée Reynolds",
+        "publisher": "Sheffield Libraries / Sheffield City Archives",
+        "url": "https://shefflibraries.blogspot.com/2021/07/introducing-our-writer-in-residence.html"
+      },
+      {
+        "id": "s3",
+        "title": "A very short history of cinema",
+        "publisher": "National Science and Media Museum",
+        "url": "https://blog.scienceandmediamuseum.org.uk/very-short-history-of-cinema/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "browns-recognition",
+        "area": "camera",
+        "prompt": {
+          "en": "How could you design a local-recognition exercise with consenting participants?",
+          "nb": "Hvordan kan du lage en lokal gjenkjennelsesøvelse med samtykkende deltakere?",
+          "fr": "Comment créer un exercice de reconnaissance locale avec des participants consentants ?",
+          "pt": "Como criar um exercício de reconhecimento local com participantes que consentem?"
+        },
+        "options": [
+          {
+            "id": "anonymous",
+            "label": {
+              "en": "Remove all recognizable people and places",
+              "nb": "Fjern alle gjenkjennelige personer og steder",
+              "fr": "Supprimer les personnes et lieux reconnaissables",
+              "pt": "Remover pessoas e lugares reconhecíveis"
+            }
+          },
+          {
+            "id": "recognize",
+            "label": {
+              "en": "Frame recognizable places and consenting participants or use drawings",
+              "nb": "Ram inn gjenkjennelige steder og samtykkende deltakere eller bruk tegninger",
+              "fr": "Cadrer des lieux reconnaissables et des participants consentants ou dessiner",
+              "pt": "Enquadrar lugares reconhecíveis e participantes que consentem ou desenhar"
+            }
+          },
+          {
+            "id": "secret",
+            "label": {
+              "en": "Film people secretly for the recognition exercise",
+              "nb": "Film personer i skjul for gjenkjennelsesøvelsen",
+              "fr": "Filmer les personnes à leur insu pour l'exercice",
+              "pt": "Filmar pessoas em segredo para o exercício"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "recognize",
+        "explanation": {
+          "en": "The BFI collection dossier connects local subjects to paying local audiences. An original exercise can explore recognition through voluntary participation or drawings, without assuming historical consent practices.",
+          "nb": "BFI-samlingen knytter lokale motiver til betalende lokalt publikum. En egen øvelse kan undersøke gjenkjennelse gjennom frivillig deltakelse eller tegninger, uten å anta historisk samtykkepraksis.",
+          "fr": "Le dossier BFI relie sujets locaux et publics locaux payants. Un exercice original peut explorer la reconnaissance par participation volontaire ou dessin, sans présumer des pratiques historiques de consentement.",
+          "pt": "O dossier BFI liga temas locais a públicos locais pagantes. Um exercício original pode explorar reconhecimento por participação voluntária ou desenho, sem pressupor práticas históricas de consentimento."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "browns-staging",
+        "area": "research",
+        "prompt": {
+          "en": "How should you interpret visible crowd organization in an actuality?",
+          "nb": "Hvordan bør du tolke synlig organisering av folkemengden i en aktualitetsfilm?",
+          "fr": "Comment interpréter l'organisation visible de la foule dans une actualité ?",
+          "pt": "Como interpretar a organização visível da multidão numa atualidade?"
+        },
+        "options": [
+          {
+            "id": "neutral",
+            "label": {
+              "en": "Treat every filmed action as entirely spontaneous",
+              "nb": "Behandle enhver filmet handling som helt spontan",
+              "fr": "Considérer toute action filmée comme entièrement spontanée",
+              "pt": "Considerar toda ação filmada inteiramente espontânea"
+            }
+          },
+          {
+            "id": "identify",
+            "label": {
+              "en": "State the possible commissioner identification as certain",
+              "nb": "Oppgi den mulige identifikasjonen av bestilleren som sikker",
+              "fr": "Présenter l'identification possible du commanditaire comme certaine",
+              "pt": "Apresentar a possível identificação do comitente como certa"
+            }
+          },
+          {
+            "id": "distinguish",
+            "label": {
+              "en": "Distinguish observed activity from staging and uncertain identities",
+              "nb": "Skill observert aktivitet fra iscenesettelse og usikre identiteter",
+              "fr": "Distinguer activité observée, mise en scène et identités incertaines",
+              "pt": "Distinguir atividade observada, encenação e identidades incertas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "distinguish",
+        "explanation": {
+          "en": "The BFI film record describes marshaling the crowd and treats the Thomas connection as possible, not certain. Local historical evidence can be valuable without being an unmediated record.",
+          "nb": "BFI beskriver organisering av folkemengden og omtaler Thomas-forbindelsen som mulig, ikke sikker. Lokalhistorisk belegg kan være verdifullt uten å være en uformidlet registrering.",
+          "fr": "La notice BFI décrit l'organisation de la foule et présente le lien avec Thomas comme possible, non certain. Un document local peut être précieux sans être un enregistrement sans médiation.",
+          "pt": "O registo BFI descreve a organização da multidão e trata a ligação a Thomas como possível, não certa. A evidência local pode ser valiosa sem ser um registo sem mediação."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "browns-audience",
+        "area": "sound",
+        "prompt": {
+          "en": "How could a producer connect local commissioning and exhibition?",
+          "nb": "Hvordan kan en produsent knytte lokal bestilling og visning sammen?",
+          "fr": "Comment relier commande locale et projection ?",
+          "pt": "Como ligar encomenda local e exibição?"
+        },
+        "options": [
+          {
+            "id": "local",
+            "label": {
+              "en": "Design for a local audience and separate live presentation from capture",
+              "nb": "Planlegg for et lokalt publikum og skill levende visning fra opptaket",
+              "fr": "Concevoir pour un public local et distinguer présentation et captation",
+              "pt": "Planear para um público local e separar apresentação e captação"
+            }
+          },
+          {
+            "id": "sync",
+            "label": {
+              "en": "Treat variable live accompaniment as original synchronized sound",
+              "nb": "Behandle varierende levende akkompagnement som original synkron lyd",
+              "fr": "Traiter l'accompagnement variable comme son synchrone original",
+              "pt": "Tratar acompanhamento variável como som sincronizado original"
+            }
+          },
+          {
+            "id": "ignore",
+            "label": {
+              "en": "Ignore commissioning and the intended paying audience",
+              "nb": "Ignorer bestillingen og det tiltenkte betalende publikummet",
+              "fr": "Ignorer la commande et le public payant visé",
+              "pt": "Ignorar a encomenda e o público pagante pretendido"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "local",
+        "explanation": {
+          "en": "The BFI archive describes showman commissions and paid local screenings; the museum supplies broader exhibition context. Do not infer a particular soundtrack or accompaniment for this film from that general history.",
+          "nb": "BFI-arkivet beskriver bestillinger fra visningsaktører og lokale betalingsvisninger; museet gir bredere visningskontekst. Ikke utled et bestemt lydspor eller akkompagnement for denne filmen fra generell historie.",
+          "fr": "Les archives BFI décrivent commandes et séances locales payantes ; le musée fournit le contexte général. N'en déduisez pas une bande sonore ou un accompagnement précis pour ce film.",
+          "pt": "O arquivo BFI descreve encomendas e sessões locais pagas; o museu fornece o contexto geral. Não deduza daí uma banda sonora ou acompanhamento específico para este filme."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_uncle_josh_at_the_moving_picture_show_1902",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Study fictional spectators, visible projection apparatus and comic escalation.",
+      "nb": "Studer fiktive tilskuere, synlig projeksjonsutstyr og komisk opptrapping.",
+      "fr": "Étudiez les spectateurs fictifs, le dispositif de projection et l'escalade comique.",
+      "pt": "Estude espectadores fictícios, o dispositivo de projeção e a escalada cómica."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Uncle Josh at the moving picture show",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/item/00694324/"
+      },
+      {
+        "id": "s1",
+        "title": "Comedy — Edison motion pictures",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/collections/edison-company-motion-pictures-and-sound-recordings/articles-and-essays/genres/comedy/"
+      },
+      {
+        "id": "s2",
+        "title": "Uncle Josh at the Moving Picture Show",
+        "publisher": "American Film Institute",
+        "url": "https://catalog.afi.com/Film/28980-UNCLE-JOSH-AT-THE-MOVING-PICTURE-SHOW"
+      },
+      {
+        "id": "s3",
+        "title": "Viewing Positions: Ways of Seeing Film",
+        "publisher": "Rutgers University Press",
+        "url": "https://www.rutgersuniversitypress.org/viewing-positions/9780813521336"
+      }
+    ],
+    "questions": [
+      {
+        "id": "josh-space",
+        "area": "camera",
+        "prompt": {
+          "en": "How would you make a fictional spectator and screen relationship readable?",
+          "nb": "Hvordan vil du gjøre forholdet mellom en fiktiv tilskuer og lerretet tydelig?",
+          "fr": "Comment rendre lisible la relation entre spectateur fictif et écran ?",
+          "pt": "Como tornar legível a relação entre espectador fictício e ecrã?"
+        },
+        "options": [
+          {
+            "id": "hide",
+            "label": {
+              "en": "Hide the spatial relationship behind unrelated close-ups",
+              "nb": "Skjul romforholdet bak urelaterte nærbilder",
+              "fr": "Masquer la relation spatiale par des gros plans sans lien",
+              "pt": "Ocultar a relação espacial com grandes planos desligados"
+            }
+          },
+          {
+            "id": "space",
+            "label": {
+              "en": "Use a drawing or safe model showing spectator and screen together",
+              "nb": "Bruk en tegning eller trygg modell som viser tilskuer og lerret sammen",
+              "fr": "Utiliser un dessin ou une maquette sûre réunissant spectateur et écran",
+              "pt": "Usar um desenho ou maquete segura que mostre espectador e ecrã"
+            }
+          },
+          {
+            "id": "destroy",
+            "label": {
+              "en": "Use real equipment damage as the production method",
+              "nb": "Bruk virkelig skade på utstyr som produksjonsmetode",
+              "fr": "Endommager réellement le matériel comme méthode de production",
+              "pt": "Danificar equipamento real como método de produção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "space",
+        "explanation": {
+          "en": "The LOC synopsis makes the projected attractions and the apparatus part of the comedy. A safe original model can preserve this spatial relation without reconstructing the exact historical setup.",
+          "nb": "LOC-sammendraget gjør de projiserte attraksjonene og apparatet til deler av komikken. En trygg, egen modell kan bevare romforholdet uten å rekonstruere det eksakte historiske oppsettet.",
+          "fr": "Le résumé LOC intègre attractions projetées et dispositif à la comédie. Une maquette originale et sûre peut préserver cette relation sans reconstruire exactement le dispositif historique.",
+          "pt": "A sinopse LOC integra atrações projetadas e dispositivo na comédia. Uma maquete original segura pode preservar a relação sem reconstruir exatamente a instalação histórica."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "josh-comedy",
+        "area": "camera",
+        "prompt": {
+          "en": "How could you build escalating reactions in an original silent comedy?",
+          "nb": "Hvordan kan du bygge stadig sterkere reaksjoner i en egen stumfilmkomedie?",
+          "fr": "Comment construire une escalade de réactions dans une comédie muette originale ?",
+          "pt": "Como construir reações crescentes numa comédia muda original?"
+        },
+        "options": [
+          {
+            "id": "beats",
+            "label": {
+              "en": "Arrange contrasting visual cues and progressively stronger reactions",
+              "nb": "Ordne kontrasterende visuelle signaler og gradvis sterkere reaksjoner",
+              "fr": "Organiser des indices visuels contrastés et des réactions croissantes",
+              "pt": "Organizar sinais visuais contrastantes e reações crescentes"
+            }
+          },
+          {
+            "id": "unrelated",
+            "label": {
+              "en": "Choose disconnected reactions without readable causes",
+              "nb": "Velg løsrevne reaksjoner uten tydelige årsaker",
+              "fr": "Choisir des réactions sans causes lisibles",
+              "pt": "Escolher reações desligadas sem causas legíveis"
+            }
+          },
+          {
+            "id": "modern",
+            "label": {
+              "en": "Assert that modern coverage conventions were used historically",
+              "nb": "Påstå at moderne dekningskonvensjoner ble brukt historisk",
+              "fr": "Affirmer l'usage historique des conventions modernes de couverture",
+              "pt": "Afirmar o uso histórico de convenções modernas de cobertura"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "beats",
+        "explanation": {
+          "en": "LOC and AFI document a comic progression through projected attractions and reactions. Create your own visual beats; this is a learning exercise, not a claim about later shot conventions in the original.",
+          "nb": "LOC og AFI dokumenterer en komisk utvikling gjennom projiserte attraksjoner og reaksjoner. Lag egne visuelle hendelser; dette er en øvelse, ikke en påstand om senere klippekonvensjoner i originalen.",
+          "fr": "LOC et AFI documentent une progression comique par attractions et réactions. Créez vos propres étapes visuelles ; l'exercice ne suppose pas les conventions de découpage ultérieures dans l'original.",
+          "pt": "LOC e AFI documentam uma progressão cómica por atrações e reações. Crie os seus próprios momentos visuais; o exercício não pressupõe convenções posteriores de montagem no original."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "josh-spectators",
+        "area": "research",
+        "prompt": {
+          "en": "What can the fictional spectator establish about real early audiences?",
+          "nb": "Hva kan den fiktive tilskueren dokumentere om virkelig tidlig filmpublikum?",
+          "fr": "Que peut établir le spectateur fictif sur les publics réels du premier cinéma ?",
+          "pt": "O que pode o espectador fictício demonstrar sobre os públicos reais do cinema inicial?"
+        },
+        "options": [
+          {
+            "id": "all",
+            "label": {
+              "en": "Declare that every early spectator misunderstood projected images",
+              "nb": "Erklær at alle tidlige tilskuere misforsto projiserte bilder",
+              "fr": "Déclarer que tous les premiers spectateurs comprenaient mal les images",
+              "pt": "Declarar que todos os primeiros espectadores não entendiam imagens projetadas"
+            }
+          },
+          {
+            "id": "record",
+            "label": {
+              "en": "Treat a scripted comedy as direct documentary evidence",
+              "nb": "Behandle en manusbasert komedie som direkte dokumentarisk belegg",
+              "fr": "Traiter une comédie scénarisée comme preuve documentaire directe",
+              "pt": "Tratar uma comédia encenada como prova documental direta"
+            }
+          },
+          {
+            "id": "separate",
+            "label": {
+              "en": "Distinguish comic convention from independently documented audience behaviour",
+              "nb": "Skill komisk konvensjon fra uavhengig dokumentert publikumsatferd",
+              "fr": "Distinguer convention comique et comportement du public documenté indépendamment",
+              "pt": "Distinguir convenção cómica de comportamento do público documentado independentemente"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "separate",
+        "explanation": {
+          "en": "The LOC comedy history identifies a comic stereotype, while the Rutgers volume provides a historiographic framework for questioning universal credulity. Real audience behaviour requires independent evidence.",
+          "nb": "LOCs komediehistorie identifiserer en komisk stereotypi, mens Rutgers-boken gir et historiefaglig rammeverk for å problematisere universell godtroenhet. Virkelig publikumsatferd krever uavhengig belegg.",
+          "fr": "L'histoire de la comédie LOC identifie un stéréotype ; le volume Rutgers offre un cadre historiographique pour interroger la crédulité universelle. Le comportement réel exige des preuves indépendantes.",
+          "pt": "A história da comédia LOC identifica um estereótipo; o volume Rutgers oferece um quadro historiográfico para questionar a credulidade universal. O comportamento real exige evidência independente."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
         ]
       }
     ]
