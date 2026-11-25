@@ -1,0 +1,5 @@
+# Early cinema craft workshops
+
+Two existing canonical films receive three optional localized choices each: Blacksmith Scene (1893) and Workers Leaving the Lumière Factory (1895). The new exercises use the existing repository's SilentFoundations verification records and film-history profiles. No external pages were independently re-opened for this update. The exercise instructions (safe modern staging, consent, timing and daylight tests) are recommendations, not claims about original production instructions. The source links are taken directly from the corresponding previously verified repository dossiers; independent editorial review remains pending.
+
+Blacksmith Scene: staged laboratory performance rather than unstaged actuality; one fixed unedited take; sunlight-oriented studio architecture. Workers Leaving: fixed threshold and timing; distinct surviving versions; separate acquisition, printing and exhibition contexts. All four languages, six new optional decisions; no new film identities, changes to original six missions or saved progress.

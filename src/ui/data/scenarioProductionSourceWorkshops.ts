@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Fourteen pre-existing Production Cases receive evidence-backed craft decisions.
+ * Sixteen pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -891,40 +891,28 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "url": "https://cinema.com/articles/2015/russian-ark-production-notes.phtml"
       },
       {
-        "id": "tcm",
-        "title": "Russian Ark — production history",
-        "publisher": "Turner Classic Movies",
-        "url": "https://www.tcm.com/articles/718963/russian-ark"
+        "id": "project",
+        "title": "Russian Ark — project and credits",
+        "publisher": "Alexander Sokurov / Hermitage Bridge Studio",
+        "url": "https://sokurov.spb.ru/promo/russian_ark/en/ark_pln2.html"
+      },
+      {
+        "id": "taz",
+        "title": "Man entwickelt spezielle Muskeln",
+        "publisher": "taz — die tageszeitung",
+        "url": "https://taz.de/Man-entwickelt-spezielle-Muskeln/%21783542/"
       },
       {
         "id": "dff",
-        "title": "Entfesselte Bilder: Gespräch mit Kameramann Tilman Büttner",
+        "title": "Russian Ark: Tilman Büttner interview",
         "publisher": "Deutsches Filminstitut & Filmmuseum",
         "url": "https://www.dff.film/video/entfesselte-bilder-gespraech-mit-kameramann-tilman-buettner-von-russian-ark-2002/"
       },
       {
-        "id": "sokurov",
-        "title": "Alexander Sokurov — Seamless Art",
-        "publisher": "Cineuropa",
-        "url": "https://cineuropa.org/en/interview/331/en/training/"
-      },
-      {
-        "id": "iffr",
-        "title": "Russian Ark — IFFR 2003 film record",
-        "publisher": "International Film Festival Rotterdam",
-        "url": "https://iffr.com/en/iffr/2003/films/russian-ark"
-      },
-      {
         "id": "cannes",
-        "title": "Russian Ark — Cannes 2002 competition",
+        "title": "Russian Ark — competition film record",
         "publisher": "Festival de Cannes",
         "url": "https://www.festival-cannes.com/en/f/russian-ark/"
-      },
-      {
-        "id": "nziff",
-        "title": "Russian Ark — NZIFF 2002 screening",
-        "publisher": "New Zealand International Film Festival",
-        "url": "https://www.nziff.co.nz/2002/archive-1/russian-ark/"
       }
     ],
     "questions": [
@@ -959,24 +947,23 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
           {
             "id": "screening",
             "label": {
-              "en": "Treat a later 35mm screening print as the original camera recording medium",
-              "nb": "Behandle en senere 35 mm-visningskopi som kameraets opprinnelige opptaksmedium",
-              "fr": "Traiter une copie de projection 35 mm ultérieure comme support original de captation",
-              "pt": "Tratar uma cópia de projeção de 35 mm posterior como suporte original de captação"
+              "en": "Treat a hypothetical exhibition copy as the original camera recording medium",
+              "nb": "Behandle en tenkt visningskopi som kameraets opprinnelige opptaksmedium",
+              "fr": "Traiter une copie de projection hypothétique comme support original de captation",
+              "pt": "Tratar uma cópia de exibição hipotética como suporte original de captação"
             }
           }
         ],
         "bestSupportedOptionId": "disk",
         "explanation": {
-          "en": "The production notes and TCM identify feature-length uncompressed HD recording directly to a portable hard disk. The IFFR record separately identifies 35mm exhibition. The exercise teaches the recording-duration constraint, not an exact camera model or a requirement to use heavy equipment.",
-          "nb": "Produksjonsnotatene og TCM beskriver ukomprimert HD-opptak i spillefilmlengde direkte til en bærbar harddisk. IFFR oppgir 35 mm-visning separat. Øvelsen lærer om opptaksvarighet, ikke en bestemt kameramodell eller krav om tungt utstyr.",
-          "fr": "Les notes de production et TCM décrivent la captation HD non compressée sur disque dur portable. IFFR distingue la projection 35 mm. L'exercice porte sur la durée, non sur un modèle précis ou un matériel lourd.",
-          "pt": "As notas de produção e TCM descrevem captação HD não comprimida em disco rígido portátil. IFFR distingue a projeção de 35 mm. O exercício aborda a duração, não um modelo exato ou equipamento pesado."
+          "en": "The existing production-note dossier describes a portable prototype hard-disk recorder for feature-length uncompressed HD acquisition, because conventional film magazines and HD tape could not sustain the planned take. Keep acquisition separate from exhibition; exact camera and recorder models remain unspecified.",
+          "nb": "De eksisterende produksjonsnotatene beskriver en bærbar harddiskprototype for ukomprimert HD i spillefilmlengde, fordi vanlige filmmagasiner og HD-bånd ikke kunne romme tagningen. Skill opptak fra visning; eksakte kamera- og opptakermodeller er ikke fastslått.",
+          "fr": "Le dossier de production décrit un prototype portable à disque dur pour une captation HD non compressée de longue durée, les magasins et bandes HD ordinaires étant insuffisants. Distinguez captation et projection ; les modèles exacts restent indéterminés.",
+          "pt": "O dossier de produção descreve um protótipo portátil de disco rígido para captação HD não comprimida de longa duração, pois os carregadores e fitas HD comuns eram insuficientes. Separe captação e exibição; os modelos exatos permanecem indeterminados."
         },
         "sourceIds": [
           "production",
-          "tcm",
-          "iffr"
+          "project"
         ]
       },
       {
@@ -1019,13 +1006,14 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         ],
         "bestSupportedOptionId": "rehearse",
         "explanation": {
-          "en": "TCM reports advance rehearsals of scenes and transitions, one day of museum access for the shoot, and strict protection of exhibits. DFF describes the scale of coordinated performance. For a learning exercise, plan a short authorized route, safe camera movement, consent and breaks rather than reproducing the original physical demands.",
-          "nb": "TCM beskriver forhåndsprøver på scener og overganger, én opptaksdag i museet og strengt vern av utstillingene. DFF beskriver omfanget av samordningen. Planlegg en kort tillatt rute, trygg kamerabevegelse, samtykke og pauser fremfor å gjenskape den opprinnelige fysiske belastningen.",
-          "fr": "TCM décrit des répétitions préalables, une journée de tournage au musée et la protection des œuvres. DFF décrit l'ampleur de la coordination. Prévoir un parcours court autorisé, des mouvements sûrs, le consentement et des pauses.",
-          "pt": "TCM descreve ensaios prévios, um dia de rodagem no museu e proteção das obras. DFF descreve a escala da coordenação. Planear percurso curto autorizado, movimentos seguros, consentimento e pausas."
+          "en": "The existing production notes describe advance preparation and a one-day shoot, and Büttner's interview describes a moving support team and aborted starts. DFF contextualizes the scale. For an exercise use a short authorized route, safe movement, consent and breaks instead of reproducing the physical demands.",
+          "nb": "Produksjonsnotatene beskriver forberedelser og én opptaksdag; Büttners intervju beskriver et bevegelig støtteteam og avbrutte forsøk. DFF setter omfanget i kontekst. Bruk en kort godkjent rute, trygg bevegelse, samtykke og pauser i øvelsen.",
+          "fr": "Les notes décrivent la préparation et une journée de tournage ; Büttner décrit une équipe mobile et des tentatives interrompues. DFF contextualise l'échelle. Prévoir un parcours court autorisé, des déplacements sûrs, le consentement et des pauses.",
+          "pt": "As notas descrevem preparação e um dia de rodagem; Büttner descreve uma equipa móvel e tentativas interrompidas. DFF contextualiza a escala. Use um percurso curto autorizado, movimentos seguros, consentimento e pausas."
         },
         "sourceIds": [
-          "tcm",
+          "production",
+          "taz",
           "dff"
         ]
       },
@@ -1069,16 +1057,14 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         ],
         "bestSupportedOptionId": "finish",
         "explanation": {
-          "en": "Sokurov told Cineuropa that the picture was not conventionally edited but the sound was extensively mixed. IFFR records digital colour and light processing. Cannes and IFFR list 96 minutes, while NZIFF lists 95; the cause of the difference is not established. A single take does not mean no post-production.",
-          "nb": "Sokurov fortalte Cineuropa at bildet ikke ble konvensjonelt klippet, men at lyden ble omfattende mikset. IFFR dokumenterer digital farge- og lysbearbeiding. Cannes og IFFR oppgir 96 minutter, NZIFF 95; årsaken til avviket er ikke fastslått. Én tagning betyr ikke fravær av etterarbeid.",
-          "fr": "Sokurov indique à Cineuropa que l'image n'a pas été montée conventionnellement mais que le son a été largement mixé. IFFR documente le traitement numérique de la couleur et de la lumière. Cannes et IFFR indiquent 96 minutes, NZIFF 95 ; l'écart reste inexpliqué. Une prise unique n'exclut pas la postproduction.",
-          "pt": "Sokurov disse à Cineuropa que a imagem não teve montagem convencional, mas o som foi amplamente misturado. IFFR documenta tratamento digital de cor e luz. Cannes e IFFR indicam 96 minutos, NZIFF 95; a causa é desconhecida. Uma tomada única não exclui pós-produção."
+          "en": "The official project credits distinguish digital imaging, colour correction, VFX and sound. Büttner's interview describes colour and brightness adjustment, visible-lamp removal and electronic reframing. A single take does not mean no post-production; the precise sound-sync and mix chain remain unspecified.",
+          "nb": "Prosjektets offisielle kreditering skiller digital bildebehandling, fargekorrigering, VFX og lyd. Büttner beskriver justering av farge og lysstyrke, fjerning av synlige lamper og digital omramming. Én tagning betyr ikke fravær av etterarbeid; den nøyaktige lydkjeden er ikke fastslått.",
+          "fr": "Le générique officiel distingue image numérique, étalonnage, effets et son. Büttner décrit des corrections de couleur et luminosité, le retrait de lampes visibles et le recadrage. Une prise unique n'exclut pas la postproduction ; la chaîne sonore exacte reste inconnue.",
+          "pt": "Os créditos oficiais distinguem imagem digital, correção de cor, efeitos e som. Büttner descreve ajustes de cor e brilho, remoção de luzes visíveis e reenquadramento. Uma tomada única não elimina a pós-produção; a cadeia sonora exata permanece indeterminada."
         },
         "sourceIds": [
-          "sokurov",
-          "iffr",
-          "cannes",
-          "nziff"
+          "project",
+          "taz"
         ]
       }
     ]
@@ -1276,6 +1262,375 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
           "isuma-press",
           "nfb",
           "cannes"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_blacksmith_scene_1893",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Make a short staged work scene using the constraints of the Edison laboratory's fixed-camera production system. These exercises adapt evidence from the existing film dossier.",
+      "nb": "Lag en kort iscenesatt arbeidsscene med utgangspunkt i Edison-laboratoriets faste kamera. Øvelsene bygger på filmens eksisterende kildemateriale.",
+      "fr": "Réalisez une courte scène de travail mise en scène selon les contraintes de la caméra fixe du laboratoire Edison. Les exercices reprennent le dossier existant.",
+      "pt": "Crie uma breve cena de trabalho encenada com as limitações da câmara fixa do laboratório Edison. Os exercícios retomam o dossier existente."
+    },
+    "sources": [
+      {
+        "id": "moma",
+        "title": "Blacksmithing Scene",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/collection/works/316644"
+      },
+      {
+        "id": "nps",
+        "title": "Black Maria Grand Reopening",
+        "publisher": "National Park Service",
+        "url": "https://www.nps.gov/edis/learn/news/black-maria-reopening.htm"
+      },
+      {
+        "id": "loc",
+        "title": "National Film Registry descriptions and essays",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "blacksmith-staging",
+        "area": "research",
+        "prompt": {
+          "en": "How should you describe the performance filmed in Blacksmith Scene?",
+          "nb": "Hvordan bør du beskrive fremføringen i Blacksmith Scene?",
+          "fr": "Comment décrire la performance filmée dans Blacksmith Scene ?",
+          "pt": "Como descrever a atuação filmada em Blacksmith Scene?"
+        },
+        "options": [
+          {
+            "id": "observed",
+            "label": {
+              "en": "An unarranged record of workers in their usual workplace",
+              "nb": "Et uarrangert opptak av arbeidere på sin vanlige arbeidsplass",
+              "fr": "Un enregistrement spontané d'ouvriers sur leur lieu de travail habituel",
+              "pt": "Um registo espontâneo de operários no seu local habitual"
+            }
+          },
+          {
+            "id": "staged",
+            "label": {
+              "en": "Laboratory employees staging recognizable work for the camera",
+              "nb": "Laboratorieansatte som iscenesetter gjenkjennelig arbeid for kameraet",
+              "fr": "Des employés du laboratoire mettent en scène un travail reconnaissable",
+              "pt": "Funcionários do laboratório encenam um trabalho reconhecível"
+            }
+          },
+          {
+            "id": "invent",
+            "label": {
+              "en": "A written screenplay whose exact dialogue survives",
+              "nb": "Et bevart skriftlig manus med nøyaktig dialog",
+              "fr": "Un scénario écrit dont les dialogues exacts subsistent",
+              "pt": "Um argumento escrito com diálogos exatos preservados"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "staged",
+        "explanation": {
+          "en": "The existing MoMA and Library of Congress dossier identifies the performers as Edison laboratory employees. Recognizable labor does not make the recording an unarranged actuality. A modern exercise can stage safe, nonhazardous gestures with consenting performers.",
+          "nb": "Det eksisterende MoMA- og Library of Congress-materialet identifiserer utøverne som Edison-ansatte. Gjenkjennelig arbeid er ikke det samme som uarrangert virkelighet. En moderne øvelse kan iscenesette trygge bevegelser med samtykke.",
+          "fr": "Le dossier MoMA et Library of Congress identifie des employés d'Edison. Un travail reconnaissable n'est pas nécessairement spontané. L'exercice moderne peut mettre en scène des gestes sans danger avec consentement.",
+          "pt": "O dossier MoMA e Library of Congress identifica funcionários de Edison. Um trabalho reconhecível não é necessariamente espontâneo. O exercício moderno pode encenar gestos seguros com consentimento."
+        },
+        "sourceIds": [
+          "moma",
+          "loc"
+        ]
+      },
+      {
+        "id": "blacksmith-frame",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a fixed frame carry the work, pause and return to work?",
+          "nb": "Hvordan kan et fast bilde romme arbeid, pause og gjenopptatt arbeid?",
+          "fr": "Comment un cadre fixe peut-il montrer le travail, la pause et la reprise ?",
+          "pt": "Como pode um enquadramento fixo mostrar o trabalho, a pausa e a retoma?"
+        },
+        "options": [
+          {
+            "id": "coverage",
+            "label": {
+              "en": "Record several close-ups and assemble the action through continuity cuts",
+              "nb": "Ta flere nærbilder og bygg handlingen med kontinuitetsklipp",
+              "fr": "Filmer plusieurs gros plans et construire l'action au montage",
+              "pt": "Filmar vários planos próximos e montar a ação em continuidade"
+            }
+          },
+          {
+            "id": "moving",
+            "label": {
+              "en": "Follow each performer with a moving camera throughout the scene",
+              "nb": "Følg hver utøver med bevegelig kamera gjennom scenen",
+              "fr": "Suivre chaque interprète avec une caméra mobile",
+              "pt": "Seguir cada intérprete com uma câmara móvel"
+            }
+          },
+          {
+            "id": "tableau",
+            "label": {
+              "en": "Arrange readable gestures and timing inside one stationary composition",
+              "nb": "Ordne lesbare bevegelser og timing i én fast komposisjon",
+              "fr": "Organiser des gestes lisibles et leur rythme dans un cadre immobile",
+              "pt": "Organizar gestos legíveis e ritmo numa composição imóvel"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "tableau",
+        "explanation": {
+          "en": "The existing MoMA dossier describes a fixed, single unedited take. Blocking and the sequence of visible actions therefore carry meaning without coverage or later continuity cutting. This is a staging exercise rather than a claim about a written script.",
+          "nb": "MoMA-materialet beskriver én fast, uklippet tagning. Plassering og rekkefølgen av synlige handlinger bærer derfor meningen uten dekningsbilder eller kontinuitetsklipp. Dette er en iscenesettelsesøvelse, ikke en påstand om bevart manus.",
+          "fr": "Le dossier MoMA décrit une prise fixe sans montage. Placement et succession des gestes portent le sens sans plans de couverture ni raccords. Il s'agit d'un exercice de mise en scène, non d'une affirmation sur un scénario écrit.",
+          "pt": "O dossier MoMA descreve uma tomada fixa sem montagem. Posição e sequência dos gestos criam sentido sem planos de cobertura ou cortes de continuidade. É um exercício de encenação, não uma afirmação sobre argumento escrito."
+        },
+        "sourceIds": [
+          "moma"
+        ]
+      },
+      {
+        "id": "blacksmith-light",
+        "area": "camera",
+        "prompt": {
+          "en": "What production problem did the rotating Black Maria studio and opening roof address?",
+          "nb": "Hvilket produksjonsproblem løste det roterbare Black Maria-studioet med åpningsbart tak?",
+          "fr": "Quel problème résolvaient le studio Black Maria pivotant et son toit ouvrant ?",
+          "pt": "Que problema resolviam o estúdio Black Maria rotativo e o teto móvel?"
+        },
+        "options": [
+          {
+            "id": "sunlight",
+            "label": {
+              "en": "Orient the set to use strong daylight for early photographic capture",
+              "nb": "Orienter scenen mot dagslyset for tidlig fotografisk opptak",
+              "fr": "Orienter le plateau pour exploiter la lumière naturelle en photographie",
+              "pt": "Orientar o cenário para aproveitar a luz natural na captação"
+            }
+          },
+          {
+            "id": "sound",
+            "label": {
+              "en": "Isolate synchronized multitrack dialogue recording",
+              "nb": "Isoler synkronisert dialogopptak på flere spor",
+              "fr": "Isoler l'enregistrement multipiste synchrone des dialogues",
+              "pt": "Isolar gravação multipista sincronizada dos diálogos"
+            }
+          },
+          {
+            "id": "projection",
+            "label": {
+              "en": "Turn the studio itself into a public projection screen",
+              "nb": "Gjør selve studioet til et offentlig projeksjonslerret",
+              "fr": "Transformer le studio en écran public de projection",
+              "pt": "Transformar o estúdio num ecrã público de projeção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "sunlight",
+        "explanation": {
+          "en": "The National Park Service record in the existing dossier describes the studio's circular track and opening roof for maximum sunlight. Treat lighting as part of the production architecture; distinguish Kinetograph capture from Kinetoscope viewing. Use a safe indoor daylight test instead of reconstructing the machinery.",
+          "nb": "National Park Service-materialet beskriver studioets sirkulære spor og takåpning for mest mulig sollys. Se lys som del av produksjonsarkitekturen; skill Kinetograph-opptak fra Kinetoscope-visning. Bruk en trygg dagslysprøve innendørs i stedet for å rekonstruere maskineriet.",
+          "fr": "Le dossier National Park Service décrit la voie circulaire et le toit ouvrant pour maximiser la lumière. L'éclairage relève de l'architecture de production ; distinguez captation Kinetograph et visionnement Kinetoscope. Préférez un essai sûr en lumière naturelle.",
+          "pt": "O dossier National Park Service descreve a via circular e o teto móvel para maximizar a luz. A iluminação integra a arquitetura de produção; distinga captação Kinetograph e visionamento Kinetoscope. Prefira um ensaio seguro com luz natural."
+        },
+        "sourceIds": [
+          "nps",
+          "moma"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_workers_leaving_lumiere_factory_1895",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Design a short actuality around a real threshold, a limited recording duration and different versions of a repeated event. The choices draw on the existing Lumière dossier.",
+      "nb": "Utform en kort aktualitetsfilm rundt en virkelig terskel, begrenset opptakstid og ulike versjoner av en gjentatt hendelse. Valgene bygger på det eksisterende Lumière-materialet.",
+      "fr": "Concevez une courte actualité autour d'un seuil réel, d'une durée limitée et de versions d'un événement répété. Les choix reprennent le dossier Lumière existant.",
+      "pt": "Crie uma breve atualidade em torno de uma passagem real, duração limitada e versões de um acontecimento repetido. As escolhas retomam o dossier Lumière existente."
+    },
+    "sources": [
+      {
+        "id": "lumiere",
+        "title": "Le Cinématographe Lumière",
+        "publisher": "Institut Lumière",
+        "url": "https://www.institut-lumiere.org/le-cinematographe-lumiere"
+      },
+      {
+        "id": "bfi",
+        "title": "In the beginning: cinema's murky origin story",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/origins-cinema-early-inventors-pioneers"
+      },
+      {
+        "id": "loc",
+        "title": "Documentary and Actuality Films",
+        "publisher": "Library of Congress",
+        "url": "https://guides.loc.gov/french-and-francophone-film/movements-and-genres/documentary-and-actuality"
+      },
+      {
+        "id": "acmi",
+        "title": "Workers Leaving the Lumiere Factory",
+        "publisher": "Australian Centre for the Moving Image",
+        "url": "https://www.acmi.net.au/works/5476--workers-leaving-the-lumiere-factory/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "lumiere-threshold",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a short fixed view organize people crossing a factory gate?",
+          "nb": "Hvordan kan et kort, fast bilde organisere mennesker som passerer en fabrikkport?",
+          "fr": "Comment organiser les passages à travers une porte d'usine dans un plan fixe bref ?",
+          "pt": "Como organizar passagens por um portão de fábrica num plano fixo breve?"
+        },
+        "options": [
+          {
+            "id": "track",
+            "label": {
+              "en": "Track every individual through the street with a moving camera",
+              "nb": "Følg hver enkelt gjennom gaten med bevegelig kamera",
+              "fr": "Suivre chaque individu dans la rue avec une caméra mobile",
+              "pt": "Seguir cada pessoa na rua com uma câmara móvel"
+            }
+          },
+          {
+            "id": "gate",
+            "label": {
+              "en": "Frame the threshold with room for movement and time the start of recording",
+              "nb": "Ram inn porten med plass til bevegelse og planlegg opptaksstart",
+              "fr": "Cadrer le seuil avec de l'espace pour le mouvement et choisir le début de prise",
+              "pt": "Enquadrar a passagem com espaço para movimento e escolher o início da captação"
+            }
+          },
+          {
+            "id": "reverse",
+            "label": {
+              "en": "Use shot and reverse shot to explain every departure",
+              "nb": "Bruk bilde og motbilde til å forklare hver avgang",
+              "fr": "Employer champ et contrechamp pour expliquer chaque départ",
+              "pt": "Usar campo e contracampo para explicar cada saída"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "gate",
+        "explanation": {
+          "en": "The existing BFI and Institut Lumière records describe a portable apparatus with limited recording capacity. The factory-gate view uses fixed framing and movement within it. In an exercise, choose a safe authorized threshold and coordinate consent, timing and crowd space.",
+          "nb": "BFI- og Institut Lumière-materialet beskriver et bærbart apparat med begrenset opptakskapasitet. Fabrikkportbildet bruker fast ramme og bevegelse inni den. Velg et trygt, godkjent sted og planlegg samtykke, timing og plass.",
+          "fr": "Le dossier BFI et Institut Lumière décrit un appareil portable à capacité limitée. Le plan de la porte repose sur le cadre fixe et le mouvement interne. Choisissez un lieu autorisé et sûr, le consentement, le rythme et l'espace.",
+          "pt": "O dossier BFI e Institut Lumière descreve um aparelho portátil de capacidade limitada. O plano do portão usa enquadramento fixo e movimento interno. Escolha um local seguro e autorizado, consentimento, ritmo e espaço."
+        },
+        "sourceIds": [
+          "bfi",
+          "lumiere"
+        ]
+      },
+      {
+        "id": "lumiere-versions",
+        "area": "research",
+        "prompt": {
+          "en": "How should you handle the existence of different surviving factory-gate views?",
+          "nb": "Hvordan bør du håndtere at ulike versjoner av fabrikkportbildet er bevart?",
+          "fr": "Comment traiter l'existence de plusieurs vues conservées de la porte d'usine ?",
+          "pt": "Como lidar com diferentes versões preservadas da vista do portão?"
+        },
+        "options": [
+          {
+            "id": "single",
+            "label": {
+              "en": "Treat every surviving copy as an identical record of one event",
+              "nb": "Behandle alle bevarte kopier som identiske opptak av én hendelse",
+              "fr": "Traiter chaque copie conservée comme le même enregistrement",
+              "pt": "Tratar cada cópia preservada como registo idêntico"
+            }
+          },
+          {
+            "id": "fiction",
+            "label": {
+              "en": "Declare the film entirely fictional solely because versions differ",
+              "nb": "Erklær filmen helt fiktiv bare fordi versjonene er ulike",
+              "fr": "Déclarer le film entièrement fictif parce que les versions diffèrent",
+              "pt": "Declarar o filme totalmente ficcional porque as versões diferem"
+            }
+          },
+          {
+            "id": "compare",
+            "label": {
+              "en": "Identify versions separately and compare their visible movement and framing",
+              "nb": "Identifiser versjonene separat og sammenlign synlig bevegelse og innramming",
+              "fr": "Identifier les versions séparément et comparer mouvement et cadre visibles",
+              "pt": "Identificar versões separadamente e comparar movimento e enquadramento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "compare",
+        "explanation": {
+          "en": "The existing ACMI record catalogues distinct surviving versions. Library of Congress contextualizes actuality as produced nonfiction rather than inherently neutral evidence. Compare visible differences without inventing exact instructions to the people filmed.",
+          "nb": "ACMI-materialet katalogfører ulike bevarte versjoner. Library of Congress plasserer aktualitetsfilmen som produsert sakprosa, ikke automatisk nøytralt bevis. Sammenlign synlige forskjeller uten å dikte opp instruksjoner til de filmede.",
+          "fr": "Le dossier ACMI catalogue plusieurs versions conservées. Library of Congress situe l'actualité comme non-fiction produite, non comme preuve neutre par nature. Comparez les différences visibles sans inventer les consignes données aux personnes filmées.",
+          "pt": "O dossier ACMI cataloga versões distintas preservadas. Library of Congress contextualiza a atualidade como não ficção produzida, não prova automaticamente neutra. Compare diferenças visíveis sem inventar instruções às pessoas filmadas."
+        },
+        "sourceIds": [
+          "acmi",
+          "loc"
+        ]
+      },
+      {
+        "id": "lumiere-apparatus",
+        "area": "camera",
+        "prompt": {
+          "en": "What does the Cinématographe teach about capture, printing and exhibition?",
+          "nb": "Hva lærer Cinématographe oss om opptak, kopiering og visning?",
+          "fr": "Qu'enseigne le Cinématographe sur la captation, le tirage et la projection ?",
+          "pt": "O que ensina o Cinématographe sobre captação, cópia e projeção?"
+        },
+        "options": [
+          {
+            "id": "system",
+            "label": {
+              "en": "Distinguish the apparatus functions and the conditions for each viewing event",
+              "nb": "Skill apparatets funksjoner og vilkårene for hver visningshendelse",
+              "fr": "Distinguer les fonctions de l'appareil et les conditions de chaque projection",
+              "pt": "Distinguir funções do aparelho e condições de cada exibição"
+            }
+          },
+          {
+            "id": "only",
+            "label": {
+              "en": "Treat filming and public exhibition as the same historical event",
+              "nb": "Behandle opptak og offentlig visning som samme historiske hendelse",
+              "fr": "Assimiler tournage et projection publique au même événement",
+              "pt": "Tratar filmagem e exibição pública como o mesmo acontecimento"
+            }
+          },
+          {
+            "id": "first",
+            "label": {
+              "en": "Declare every earlier moving-image system irrelevant to cinema history",
+              "nb": "Erklær alle tidligere levende-bilde-systemer irrelevante for filmhistorien",
+              "fr": "Déclarer tous les systèmes antérieurs sans rapport avec l'histoire du cinéma",
+              "pt": "Declarar todos os sistemas anteriores irrelevantes para a história do cinema"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "system",
+        "explanation": {
+          "en": "The existing Institut Lumière and BFI records place the apparatus in the development of recording and projected cinema, with distinct demonstration and commercial exhibition contexts. A useful production study separates these operations without claiming a universal first film.",
+          "nb": "Institut Lumière- og BFI-materialet plasserer apparatet i utviklingen av opptak og projisert film, med forskjellige demonstrasjons- og kommersielle visningskontekster. Skill operasjonene uten å påstå at dette er verdens første film.",
+          "fr": "Le dossier Institut Lumière et BFI situe l'appareil dans le développement de la captation et de la projection, avec des démonstrations et séances commerciales distinctes. Séparez ces opérations sans proclamer un premier film universel.",
+          "pt": "O dossier Institut Lumière e BFI situa o aparelho no desenvolvimento da captação e projeção, com demonstrações e sessões comerciais distintas. Separe as operações sem proclamar um primeiro filme universal."
+        },
+        "sourceIds": [
+          "lumiere",
+          "bfi"
         ]
       }
     ]
