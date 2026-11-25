@@ -27,20 +27,22 @@ const ids = [
   "scenario_workers_leaving_lumiere_factory_1895",
   "scenario_fire_1901",
   "scenario_life_of_an_american_fireman_1903",
+  "scenario_the_great_train_robbery_1903",
+  "scenario_rescued_by_rover_1905",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly eighteen existing cases have fifty-four original, source-backed decisions", () => {
+test("Exactly twenty existing cases have sixty original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 18);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 54);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 20);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 60);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
     assert.ok(workshop.sources.length >= 2);
-    if (workshop.scenarioId === "scenario_blacksmith_scene_1893" || workshop.scenarioId === "scenario_workers_leaving_lumiere_factory_1895" || workshop.scenarioId === "scenario_fire_1901" || workshop.scenarioId === "scenario_life_of_an_american_fireman_1903") {
+    if (workshop.scenarioId === "scenario_blacksmith_scene_1893" || workshop.scenarioId === "scenario_workers_leaving_lumiere_factory_1895" || workshop.scenarioId === "scenario_fire_1901" || workshop.scenarioId === "scenario_life_of_an_american_fireman_1903" || workshop.scenarioId === "scenario_the_great_train_robbery_1903") {
       const definition = readFileSync("src/core/chapterOneEarlyCinemaExpansion.ts", "utf8");
       assert.ok(definition.includes(workshop.scenarioId));
       const verification = readFileSync("src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts", "utf8");
@@ -48,6 +50,11 @@ test("Exactly eighteen existing cases have fifty-four original, source-backed de
       assert.ok(start >= 0);
       const end = verification.indexOf('\n  },', start);
       const dossier = verification.slice(start, end);
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (workshop.scenarioId === "scenario_rescued_by_rover_1905") {
+      const definition = readFileSync("src/core/chapterOneRescuedByRoverExpansion.ts", "utf8");
+      assert.ok(definition.includes(workshop.scenarioId));
+      const dossier = readFileSync("src/ui/data/scenarioProductionVerificationRescuedByRover.ts", "utf8");
       for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
     } else if (workshop.scenarioId === "scenario_atanarjuat_the_fast_runner_2001") {
       const manual = readFileSync("src/core/chapterEighteenAtanarjuatExpansion.ts", "utf8");
@@ -358,4 +365,13 @@ test("Rescue-film exercises separate narrative space, version provenance and ori
   assert.deepEqual(porter.questions.map(q => q.bestSupportedOptionId), ["deposit", "viewpoints", "evidence"]);
   assert.match(porter.questions[0]?.explanation.en ?? "", /copyright paper print/);
   assert.match(porter.questions[1]?.explanation.en ?? "", /replay outside/);
+});
+
+ test("Early continuity workshops distinguish historical editing, route clarity and replacement versions", () => {
+  const train = getSourceBackedCaseWorkshop("scenario_the_great_train_robbery_1903");
+  const rover = getSourceBackedCaseWorkshop("scenario_rescued_by_rover_1905");
+  assert.ok(train && rover);
+  assert.deepEqual(train.questions.map(q => q.bestSupportedOptionId), ["hybrid", "historical", "context"]);
+  assert.deepEqual(rover.questions.map(q => q.bestSupportedOptionId), ["landmarks", "draw", "compare"]);
+  assert.match(rover.questions[2]?.explanation.en ?? "", /re-shooting/);
 });
