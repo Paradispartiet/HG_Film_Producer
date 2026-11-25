@@ -1,6 +1,6 @@
 # Film History – masterplan for bok, Film Atlas og Production Cases
 
-> **Current editorial status (25 November 2026, Chapter 25 content PR):** Chapters **1–10** are `full`; Chapters **11–24** are source-attributed `draft` chapters merged to `main`. This PR adds **Chapter 25** (Global auteurs and festival networks, 1960s–1989): 25 essays, 75 paragraphs, 48 source records, and 25 provisional book-only P2 film references. Chapter 25 remains `draft`, pending independent editorial/source review, title-level Film Atlas matching and physical iPad QA; Chapters **26–30** remain `outline`. No playable Atlas scenario IDs are fabricated; archived Atlas chapter numbers do not certify book completion.
+> **Current editorial status (25 November 2026, Chapter 26 content PR):** Chapters **1–10** are `full`; Chapters **11–25** are source-attributed `draft` chapters merged to `main`. This PR adds **Chapter 26** (Post-Cold War transnational cinema, 1989–2005): 22 essays, 66 paragraphs, 44 source records, including official Cannes and original Dogme 95 sources, and 26 provisional book-only P2 film references. Chapter 26 remains `draft`, pending independent editorial/source review, title-level Film Atlas matching and physical iPad QA; Chapters **27–30** remain `outline`. No playable Atlas scenario IDs are fabricated; archived Atlas chapter numbers do not certify book completion.
 
 
 **Statusgrunnlag:** `Paradispartiet/HG_Film_Producer` på `main` commit `29e927139079a92d923b6d7e542fa1c81f1f0fa0` (14. august 2026).
