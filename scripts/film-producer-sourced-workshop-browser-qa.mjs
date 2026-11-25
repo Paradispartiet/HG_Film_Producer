@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Targeted browser interaction QA for all nine sourced film-workshop decisions.
+ * Targeted browser interaction QA for all eighteen sourced film-workshop decisions.
  * No new workflow job; not a substitute for physical iPad or editorial review.
  */
 import assert from "node:assert/strict";
@@ -37,8 +37,8 @@ const cases = data.SOURCE_BACKED_CASE_WORKSHOPS.map(workshop => {
   assert.ok(scenario, "Missing case: " + workshop.scenarioId);
   return { workshop, scenario };
 });
-assert.equal(cases.length, 3);
-assert.equal(cases.reduce((n, c) => n + c.workshop.questions.length, 0), 9);
+assert.equal(cases.length, 6);
+assert.equal(cases.reduce((n, c) => n + c.workshop.questions.length, 0), 18);
 
 async function check(browser, language, item) {
   const context = await browser.newContext({
@@ -121,7 +121,7 @@ try {
   failures.push({ setup: String(error?.stack ?? error) });
 } finally { await browser?.close(); }
 await writeFile(resolve(REPORT_DIR, "sourced-workshop-" + (tablet ? "webkit" : "chromium") + "-summary.json"), JSON.stringify({
-  scope: "Three existing films, nine decisions, four languages; real UI clicks, source URLs and preserved progress, but not physical iPad or editorial approval",
+  scope: "Six existing films, eighteen decisions, four languages; real UI clicks, source URLs and preserved progress, but not physical iPad or editorial approval",
   expected: languages.length * cases.length, passed, failures,
 }, null, 2) + "\n");
 console.log("Sourced workshop " + (tablet ? "WebKit" : "Chromium") + ": " + passed.length + "/" + (languages.length * cases.length) + " passed, " + failures.length + " failures");

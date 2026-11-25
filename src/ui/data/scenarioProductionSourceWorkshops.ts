@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Three pre-existing Production Cases receive evidence-backed craft decisions.
+ * Six pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -329,6 +329,245 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
           "Baker et son coscénariste Chris Bergoch décrivent un long travail d'enquête et de collaboration. Le consentement et la sécurité des participants comptent.",
           "Baker e o coargumentista Chris Bergoch descrevem pesquisa e colaboração prolongadas. A participação e a segurança das pessoas importam."),
         sourceIds: ["baker-interview", "film-independent"]
+      }
+    ]
+  },
+  {
+    scenarioId: "scenario_cure_1997",
+    status: "editorial_learning_exercise_not_case_verified",
+    introduction: t(
+      "Cure (1997) turns ordinary space, sustained performance and withheld explanation into psychological dread. Explore how Kiyoshi Kurosawa's documented choices shape the film without resolving its ambiguity.",
+      "Cure (1997) skaper psykologisk uro gjennom hverdagslige rom, sammenhengende skuespill og tilbakeholdt forklaring. Utforsk Kiyoshi Kurosawas dokumenterte valg uten å oppløse filmens tvetydighet.",
+      "Cure (1997) crée une inquiétude psychologique par les espaces ordinaires, le jeu continu et les explications retenues. Explorez les choix documentés de Kiyoshi Kurosawa sans dissiper son ambiguïté.",
+      "Cure (1997) cria inquietação psicológica através dos espaços comuns, da interpretação contínua e das explicações omitidas. Explore as escolhas documentadas de Kiyoshi Kurosawa sem eliminar a ambiguidade."
+    ),
+    sources: [
+      { id: "tiff-qa", title: "Kurosawa, Yakusho Discuss the Monsters Within Us [Cure: Q&A]", publisher: "Tokyo International Film Festival", url: "https://2018.tiff-jp.net/news/en/?p=14792" },
+      { id: "criterion-credits", title: "Cure (1997): Cast and credits", publisher: "The Criterion Collection", url: "https://www.criterion.com/films/27666-cure" },
+      { id: "fujiwara", title: "Cure: Erasure — Chris Fujiwara", publisher: "The Criterion Collection", url: "https://www.criterion.com/current/posts/7959-cure-erasure" },
+    ],
+    questions: [
+      {
+        id: "cure-duration", area: "camera",
+        prompt: t("How can a conversation change emotional direction without an explanatory cut?",
+          "Hvordan kan en samtale endre følelsesmessig retning uten et forklarende klipp?",
+          "Comment une conversation peut-elle changer de direction émotionnelle sans coupe explicative ?",
+          "Como pode uma conversa mudar de direção emocional sem um corte explicativo?"),
+        options: [
+          { id: "sustained-performance", label: t("Hold a sustained medium shot and let the actor's performance shift within it",
+            "Behold en lengre halvtotal og la skuespillerens uttrykk endre seg i bildet",
+            "Maintenir un plan moyen prolongé et laisser le jeu évoluer dans le cadre",
+            "Manter um plano médio prolongado e deixar a interpretação evoluir no enquadramento") },
+          { id: "constant-reaction-cuts", label: t("Cut to a separate reaction close-up after every spoken phrase",
+            "Klipp til et eget reaksjonsnærbilde etter hver replikk",
+            "Couper vers un gros plan de réaction après chaque réplique",
+            "Cortar para um grande plano de reação após cada fala") },
+          { id: "expository-narrator", label: t("Have a narrator explain every change in the character's feelings",
+            "La en forteller forklare hver endring i figurens følelser",
+            "Faire expliquer chaque changement émotionnel par un narrateur",
+            "Usar um narrador para explicar cada mudança emocional da personagem") },
+        ],
+        bestSupportedOptionId: "sustained-performance",
+        explanation: t("At the 2018 Tokyo festival Q&A, Kurosawa connected his economical film shooting to his V-cinema experience. The discussion highlights long takes in which Yakusho can change his expression without a cut. This is a craft approach, not a universal ban on editing.",
+          "Under festivalsamtalen i Tokyo i 2018 knyttet Kurosawa sin økonomiske filmproduksjon til erfaringen fra V-cinema. Samtalen fremhever lange tagninger der Yakusho endrer uttrykk uten klipp. Dette er et håndverksgrep, ikke et generelt klippeforbud.",
+          "Lors de la rencontre de Tokyo en 2018, Kurosawa a relié son économie de tournage à son expérience du V-cinema. Les plans longs permettent à Yakusho de changer d'expression sans coupe. Ce procédé n'interdit pas le montage.",
+          "Na conversa de Tóquio em 2018, Kurosawa associou a economia de rodagem à experiência no V-cinema. Os planos longos permitem a Yakusho mudar de expressão sem corte. Esta opção não proíbe a montagem."),
+        sourceIds: ["tiff-qa", "criterion-credits"]
+      },
+      {
+        id: "cure-space", area: "camera",
+        prompt: t("How can a domestic scene express distance between people who occupy the same room?",
+          "Hvordan kan en hjemmescene uttrykke avstand mellom personer som befinner seg i samme rom?",
+          "Comment une scène domestique peut-elle exprimer la distance entre deux personnes dans la même pièce ?",
+          "Como pode uma cena doméstica expressar distância entre pessoas no mesmo espaço?"),
+        options: [
+          { id: "isolated-closeups", label: t("Show only alternating faces and remove the shared room from view",
+            "Vis bare vekslende ansiktsnærbilder og fjern det felles rommet fra bildet",
+            "Alterner uniquement les visages en supprimant la pièce commune du cadre",
+            "Alternar apenas rostos e retirar do enquadramento o espaço comum") },
+          { id: "foreground-background", label: t("Compose foreground and background actions within a shared frame",
+            "Komponer handling i forgrunn og bakgrunn innenfor samme bilde",
+            "Composer les actions du premier plan et de l'arrière-plan dans un cadre commun",
+            "Compor ações em primeiro plano e no fundo dentro do mesmo enquadramento") },
+          { id: "caption-emotions", label: t("Insert titles explaining exactly what each person feels",
+            "Legg inn tekstplakater som forklarer nøyaktig hva hver person føler",
+            "Insérer des cartons expliquant précisément les sentiments de chacun",
+            "Inserir cartões que expliquem exatamente o que cada pessoa sente") },
+        ],
+        bestSupportedOptionId: "foreground-background",
+        explanation: t("Chris Fujiwara discusses the apartment composition with Takabe in front and Fumie moving behind him. The shared frame can make their separation visible. This is critical analysis of the finished image, not a claim about the exact lens or lighting setup.",
+          "Chris Fujiwara analyserer leilighetsbildet med Takabe i forgrunnen og Fumie i bevegelse bak ham. Det felles bildet kan synliggjøre avstanden mellom dem. Dette er analyse av den ferdige filmen, ikke dokumentasjon av objektiv eller lysrigg.",
+          "Chris Fujiwara analyse le plan de l'appartement, Takabe devant et Fumie en mouvement derrière lui. Le cadre partagé rend leur séparation perceptible. C'est une analyse du film achevé, non une preuve du dispositif optique ou lumineux.",
+          "Chris Fujiwara analisa o plano do apartamento, com Takabe à frente e Fumie em movimento atrás. O quadro partilhado torna visível a distância entre ambos. É análise do filme acabado, não prova da objetiva ou da iluminação utilizada."),
+        sourceIds: ["fujiwara", "criterion-credits"]
+      },
+      {
+        id: "cure-ending", area: "research",
+        prompt: t("What editorial decision is supported by Kurosawa's account of the final restaurant scene?",
+          "Hvilket klippevalg støttes av Kurosawas beretning om den avsluttende restaurantscenen?",
+          "Quel choix de montage est étayé par le récit de Kurosawa sur la scène finale au restaurant ?",
+          "Que decisão de montagem é sustentada pelo relato de Kurosawa sobre a cena final no restaurante?"),
+        options: [
+          { id: "resolve-all-motives", label: t("Add an explicit explanation of every character's motive",
+            "Legg inn en entydig forklaring av alle figurenes motiver",
+            "Ajouter une explication explicite des motivations de chaque personnage",
+            "Acrescentar uma explicação explícita das motivações de cada personagem") },
+          { id: "prove-hypnosis", label: t("Present the fictional story as scientific proof of hypnosis",
+            "Framstill fiksjonsfortellingen som vitenskapelig bevis for hypnose",
+            "Présenter la fiction comme une preuve scientifique de l'hypnose",
+            "Apresentar a ficção como prova científica da hipnose") },
+          { id: "withhold-explicit-action", label: t("Remove the more explicit continuation and preserve the ending's uncertainty",
+            "Fjern den mer eksplisitte fortsettelsen og behold slutten tvetydig",
+            "Supprimer la suite plus explicite et préserver l'incertitude de la fin",
+            "Retirar a continuação mais explícita e preservar a incerteza do final") },
+        ],
+        bestSupportedOptionId: "withhold-explicit-action",
+        explanation: t("Kurosawa told the Tokyo festival audience that he filmed a more explicit continuation but removed it from the released ending. That production account supports the omission; it does not establish one definitive interpretation or a real-world psychological mechanism.",
+          "Kurosawa fortalte festivalpublikummet i Tokyo at han filmet en mer eksplisitt fortsettelse, men fjernet den fra den utgitte slutten. Produksjonsberetningen støtter utelatelsen, ikke én endelig tolkning eller en virkelig psykologisk mekanisme.",
+          "Kurosawa a raconté au public de Tokyo avoir tourné une suite plus explicite avant de la retirer du montage final. Ce témoignage confirme l'omission, pas une interprétation unique ni un mécanisme psychologique réel.",
+          "Kurosawa relatou ao público de Tóquio que filmou uma continuação mais explícita, mas a retirou da versão final. O relato sustenta a omissão, não uma interpretação única nem um mecanismo psicológico real."),
+        sourceIds: ["tiff-qa", "fujiwara"]
+      }
+    ]
+  },
+  {
+    scenarioId: "scenario_the_host_2006",
+    status: "editorial_learning_exercise_not_case_verified",
+    introduction: t("The Host (2006) brings a digital creature into familiar Seoul riverside spaces. Explore the collaboration between live-action filmmaking, creature effects and family drama.",
+      "The Host (2006) plasserer et digitalt monster i Seouls kjente elvelandskap. Utforsk samspillet mellom realfilm, skapningseffekter og familiedrama.",
+      "The Host (2006) introduit une créature numérique dans les espaces familiers des berges de Séoul. Explorez la collaboration entre prises de vues réelles, effets de créature et drame familial.",
+      "The Host (2006) introduz uma criatura digital nas margens familiares do rio em Seul. Explore a colaboração entre filmagem real, efeitos de criatura e drama familiar."),
+    sources: [
+      { id: "kofic", title: "Korean Films at the 59th Cannes Film Festival", publisher: "Korean Film Council", url: "https://koreanfilm.or.kr/eng/news/news.jsp?blbdComCd=601008&mode=VIEW&seq=390" },
+      { id: "kpbs", title: "The Host / Interview with Bong Joon Ho", publisher: "KPBS Public Media", url: "https://www.kpbs.org/news/arts-culture/2007/03/09/the-hostinterview-with-bong-joon-ho" },
+      { id: "bong-practical", title: "Interview: Bong Joon Ho — Host Stories", publisher: "Combustible Celluloid", url: "https://www.combustiblecelluloid.com/interviews/bongjoonho.shtml" },
+      { id: "folk-museum", title: "The Host — Encyclopedia of Korean Folk Culture", publisher: "National Folk Museum of Korea", url: "https://folkency.nfm.go.kr/en/topic/detail/11845" },
+    ],
+    questions: [
+      {
+        id: "host-water", area: "animation",
+        prompt: t("How can the digital creature's contact with the river gain convincing physical texture?",
+          "Hvordan kan den digitale skapningens kontakt med elven få troverdig fysisk tekstur?",
+          "Comment donner une texture physique convaincante au contact de la créature numérique avec le fleuve ?",
+          "Como dar textura física convincente ao contacto da criatura digital com o rio?"),
+        options: [
+          { id: "digital-only", label: t("Remove all photographed water interaction and rely entirely on synthetic imagery", "Fjern alle filmede vannbevegelser og bruk bare syntetiske bilder", "Supprimer toute interaction filmée avec l'eau et utiliser uniquement des images synthétiques", "Eliminar toda a interação filmada com a água e usar apenas imagens sintéticas") },
+          { id: "practical-splash", label: t("Combine a photographed practical splash with the composited digital creature", "Kombiner et filmet fysisk vannsprut med den digitalt innkomponerte skapningen", "Combiner une éclaboussure filmée avec la créature numérique intégrée", "Combinar um salpico filmado com a criatura digital integrada") },
+          { id: "avoid-water", label: t("Keep the creature and the river in separate shots throughout", "Hold skapningen og elven i separate bilder gjennom hele filmen", "Maintenir la créature et le fleuve dans des plans séparés tout au long du film", "Manter a criatura e o rio em planos separados durante todo o filme") },
+        ],
+        bestSupportedOptionId: "practical-splash",
+        explanation: t("Bong describes filming a real splash with a physical stand-in, then replacing it digitally. The filmed water interaction anchors the synthetic creature in the location. This example is not a claim that every effects shot used the same method.",
+          "Bong beskriver filming av et ekte vannsprut med en fysisk erstatning som senere ble byttet ut digitalt. Vannbevegelsen forankrer den digitale skapningen i miljøet. Ikke alle effektbilder må ha brukt samme metode.",
+          "Bong décrit une éclaboussure réelle filmée avec un substitut physique, ensuite remplacé numériquement. L'eau filmée ancre la créature dans le lieu. Cela ne décrit pas tous les plans à effets.",
+          "Bong descreve um salpico real filmado com um substituto físico, depois trocado digitalmente. A água filmada ancora a criatura no local. Isto não significa que todos os planos de efeitos usaram o mesmo método."),
+        sourceIds: ["bong-practical", "folk-museum"]
+      },
+      {
+        id: "host-pipeline", area: "animation",
+        prompt: t("Which division of production work is supported by accounts of the creature pipeline?",
+          "Hvilken arbeidsdeling støttes av kildene om produksjonen av skapningen?",
+          "Quelle répartition du travail est étayée par les récits de fabrication de la créature ?",
+          "Que divisão de trabalho é sustentada pelos relatos da criação da criatura?"),
+        options: [
+          { id: "shared-pipeline", label: t("Coordinate Korean design, overseas creature workshops and The Orphanage's digital effects", "Samordne koreansk design, utenlandske skapningsverksteder og The Orphanages digitale effekter", "Coordonner la conception coréenne, les ateliers de créatures étrangers et les effets numériques de The Orphanage", "Coordenar o design coreano, oficinas internacionais de criaturas e os efeitos digitais de The Orphanage") },
+          { id: "single-miniature", label: t("Assign the entire creature to one miniature unit with no digital effects", "Overlat hele skapningen til én miniatyravdeling uten digitale effekter", "Confier toute la créature à une seule équipe de maquettes sans effets numériques", "Entregar toda a criatura a uma equipa de miniaturas sem efeitos digitais") },
+          { id: "fully-local-cg", label: t("Keep all design, modeling and digital effects within a single domestic team", "La én lokal avdeling utføre alt design, modellering og digitale effekter", "Confier toute la conception, la modélisation et les effets numériques à une seule équipe nationale", "Manter o design, a modelação e os efeitos digitais numa única equipa nacional") },
+        ],
+        bestSupportedOptionId: "shared-pipeline",
+        explanation: t("The Korean Film Council and National Folk Museum describe international collaboration: Jang Hee-chul's design, Weta Workshop and John Cox's Creature Workshop, and digital work by The Orphanage. The sources support a distributed workflow rather than one studio doing everything.",
+          "Korean Film Council og det koreanske folkemuseet beskriver internasjonalt samarbeid: Jang Hee-chuls design, Weta Workshop og John Cox's Creature Workshop, samt digitalt arbeid hos The Orphanage. Dette var en fordelt arbeidsprosess.",
+          "Le Korean Film Council et le musée national du folklore décrivent une collaboration internationale : conception de Jang Hee-chul, Weta Workshop et John Cox's Creature Workshop, puis travail numérique de The Orphanage. Le travail était réparti.",
+          "O Korean Film Council e o Museu Nacional do Folclore descrevem colaboração internacional: design de Jang Hee-chul, Weta Workshop e John Cox's Creature Workshop, e trabalho digital de The Orphanage. O processo foi distribuído."),
+        sourceIds: ["kofic", "folk-museum"]
+      },
+      {
+        id: "host-family", area: "research",
+        prompt: t("What approach to setting and performance supports Bong's intended mixture of monster film and family drama?",
+          "Hvilken tilnærming til miljø og skuespill støtter Bongs blanding av monsterfilm og familiedrama?",
+          "Quelle approche du décor et du jeu soutient le mélange voulu de film de monstre et de drame familial ?",
+          "Que abordagem ao espaço e à interpretação sustenta a combinação de filme de monstro e drama familiar?"),
+        options: [
+          { id: "anonymous-arena", label: t("Replace familiar public spaces with an anonymous fantasy arena", "Erstatt kjente offentlige rom med en anonym fantasiscene", "Remplacer les lieux publics familiers par une arène fantastique anonyme", "Substituir espaços públicos familiares por uma arena fantástica anónima") },
+          { id: "effects-first", label: t("Let spectacle replace the family's emotional reactions and comic contradictions", "La effektspektaklet erstatte familiens følelser og komiske motsetninger", "Laisser le spectacle remplacer les réactions émotionnelles et les contradictions comiques de la famille", "Deixar o espetáculo substituir as emoções e contradições cómicas da família") },
+          { id: "grounded-family", label: t("Ground the creature in an ordinary riverside setting and sustain specific family performances", "Forankre skapningen i et hverdagslig elvemiljø og behold familiens særegne skuespill", "Ancrer la créature dans un paysage fluvial ordinaire et préserver le jeu singulier de la famille", "Ancorar a criatura num cenário fluvial quotidiano e manter as interpretações específicas da família") },
+        ],
+        bestSupportedOptionId: "grounded-family",
+        explanation: t("In his KPBS interview Bong connects the shock to the familiar Han River and credits Song Kang-ho's performance with making the digital creature feel more credible. The family's sadness and humor are part of this approach, not interruptions to the effects.",
+          "I KPBS-intervjuet knytter Bong sjokket til den velkjente Han-elven og fremhever Song Kang-hos skuespill som viktig for skapningens troverdighet. Familiens sorg og humor er en del av grepet, ikke avbrudd i effektene.",
+          "Dans son entretien à KPBS, Bong relie le choc au fleuve Han familier et souligne que le jeu de Song Kang-ho rend la créature numérique crédible. La tristesse et l'humour familiaux font partie du procédé.",
+          "Na entrevista à KPBS, Bong liga o choque ao familiar rio Han e salienta que a interpretação de Song Kang-ho torna a criatura digital credível. A tristeza e o humor da família fazem parte da abordagem."),
+        sourceIds: ["kpbs"]
+      }
+    ]
+  },
+  {
+    scenarioId: "scenario_still_life_2006",
+    status: "editorial_learning_exercise_not_case_verified",
+    introduction: t("Still Life (2006) combines digital location filmmaking, fictional searches and imagined events within a landscape undergoing rapid change. Explore Jia Zhangke's documented approach without confusing fiction with historical evidence.",
+      "Still Life (2006) kombinerer digitale stedsopptak, fiktive letehistorier og forestilte hendelser i et landskap i rask endring. Utforsk Jia Zhangkes dokumenterte arbeidsmåte uten å forveksle fiksjon med historiske bevis.",
+      "Still Life (2006) mêle tournage numérique en décors réels, recherches fictionnelles et événements imaginaires dans un paysage en mutation rapide. Explorez la méthode documentée de Jia Zhangke sans confondre fiction et preuve historique.",
+      "Still Life (2006) combina filmagem digital em locais reais, buscas ficcionais e acontecimentos imaginados numa paisagem em rápida transformação. Explore o método documentado de Jia Zhangke sem confundir ficção com prova histórica."),
+    sources: [
+      { id: "probe-interview", title: "Filmmaker Jia Zhangke on the forgotten people of Three Gorges", publisher: "Probe International", url: "https://journal.probeinternational.org/2006/10/16/filmmaker-jia-zhangke-forgotten-people-three-gorges/" },
+      { id: "cinergie-hd", title: "Jia Zhang-Ke — interview and digital cinematography discussion", publisher: "Cinergie", url: "https://www.cinergie.be/article/jia-zhang-ke" },
+      { id: "doors-interview", title: "Jia Zhangke: I wanted to acknowledge the sensory link between contemporary history and ancient times", publisher: "Doors Art and Culture Agency", url: "https://www.doors-agency.com/en/2022/01/19/jia-zhangke-i-wanted-to-acknowledge-the-sensory-link-between-contemporary-history-and-ancient-times/" },
+      { id: "iffr-credits", title: "Still Life — 2007 festival programme and credits", publisher: "International Film Festival Rotterdam", url: "https://iffr.com/en/iffr/2007/films/still-life" },
+      { id: "photogenie-diptych", title: "We should think of realism as an expanding concept: A conversation with Jia Zhangke", publisher: "photogénie", url: "https://photogenie.be/we-should-think-of-realism-as-an-expanding-concept-a-conversation-with-jia-zhangke/" },
+    ],
+    questions: [
+      {
+        id: "still-life-location", area: "camera",
+        prompt: t("How can the camera team respond to a town being transformed during production?",
+          "Hvordan kan kamerateamet reagere på en by som forandres mens filmen produseres?",
+          "Comment l'équipe image peut-elle réagir à une ville qui se transforme pendant le tournage ?",
+          "Como pode a equipa de imagem responder a uma cidade que se transforma durante a rodagem?"),
+        options: [
+          { id: "fixed-studio", label: t("Rebuild an unchanging town in a studio and avoid actual locations", "Bygg opp en uforanderlig studioby og unngå de virkelige stedene", "Reconstruire une ville immuable en studio et éviter les lieux réels", "Reconstruir uma cidade imutável em estúdio e evitar os locais reais") },
+          { id: "responsive-digital", label: t("Use flexible digital location shooting to observe demolition and new construction", "Bruk fleksible digitale stedsopptak til å observere riving og nybygging", "Employer un tournage numérique souple sur place pour observer démolition et construction", "Usar filmagem digital flexível no local para observar demolição e construção") },
+          { id: "archive-only", label: t("Replace all new location footage with unrelated archival city images", "Erstatt alle nye stedsopptak med arkivbilder av andre byer", "Remplacer toutes les nouvelles prises de vues par des archives de villes sans rapport", "Substituir todas as novas imagens locais por arquivos de cidades sem relação") },
+        ],
+        bestSupportedOptionId: "responsive-digital",
+        explanation: t("Jia described filming in Fengjie and Wushan while old buildings were demolished and new ones built. His comments on HD emphasize the freedom to wait and repeat takes. IFFR credits Yu Lik-wai and lists a 35mm festival format; that listing alone does not establish the acquisition medium.",
+          "Jia beskriver opptak i Fengjie og Wushan mens gamle bygninger ble revet og nye reist. Han fremhever HD-opptakenes frihet til å vente og gjenta tagninger. IFFR krediterer Yu Lik-wai og oppgir 35 mm som festivalformat, noe som alene ikke fastslår opptaksmediet.",
+          "Jia décrit le tournage à Fengjie et Wushan, entre démolition et construction. Il souligne la liberté d'attendre et de refaire les prises en HD. L'IFFR crédite Yu Lik-wai et indique un format de festival 35 mm, qui ne suffit pas à établir le support de captation.",
+          "Jia descreve filmagens em Fengjie e Wushan entre demolições e construções. Destaca a liberdade de esperar e repetir planos em HD. O IFFR credita Yu Lik-wai e indica um formato de festival de 35 mm, que não determina por si só o suporte de captação."),
+        sourceIds: ["probe-interview", "cinergie-hd", "iffr-credits"]
+      },
+      {
+        id: "still-life-diptych", area: "research",
+        prompt: t("How should the documentary Dong inform the making of the related fiction film?",
+          "Hvordan bør dokumentaren Dong prege arbeidet med den beslektede fiksjonsfilmen?",
+          "Comment le documentaire Dong doit-il nourrir la fabrication de la fiction associée ?",
+          "Como deve o documentário Dong informar a realização da ficção relacionada?"),
+        options: [
+          { id: "literal-proof", label: t("Treat every invented fictional action as a verified documentary event", "Behandle enhver oppdiktet handling som en verifisert dokumentarisk hendelse", "Traiter chaque action fictionnelle inventée comme un fait documentaire vérifié", "Tratar cada ação ficcional inventada como um acontecimento documental verificado") },
+          { id: "ignore-observation", label: t("Ignore observations from the documentary and keep the projects entirely unrelated", "Se bort fra dokumentarens observasjoner og hold prosjektene helt atskilt", "Ignorer les observations du documentaire et rendre les projets entièrement indépendants", "Ignorar as observações do documentário e manter os projetos totalmente desligados") },
+          { id: "observe-transform", label: t("Let observed lives and places inspire fiction while preserving the distinction between genres", "La observerte liv og steder inspirere fiksjonen, men behold skillet mellom sjangrene", "Laisser les vies et lieux observés inspirer la fiction tout en distinguant les genres", "Deixar vidas e locais observados inspirarem a ficção, preservando a distinção entre géneros") },
+        ],
+        bestSupportedOptionId: "observe-transform",
+        explanation: t("Jia recalls going to the region to film painter Liu Xiaodong for Dong. Observing the landscape and workers inspired Still Life, and Han Sanming appears in both works. The director describes them as a diptych, not as interchangeable factual records.",
+          "Jia forteller at han reiste til området for å filme maleren Liu Xiaodong til Dong. Landskapet og arbeiderne inspirerte Still Life, og Han Sanming medvirker i begge filmene. Regissøren beskriver dem som et diptyk, ikke som utskiftbare faktakilder.",
+          "Jia raconte être venu filmer le peintre Liu Xiaodong pour Dong. Le paysage et les travailleurs ont inspiré Still Life, et Han Sanming apparaît dans les deux œuvres. Le réalisateur parle d'un diptyque, non de documents factuels interchangeables.",
+          "Jia recorda ter ido filmar o pintor Liu Xiaodong para Dong. A paisagem e os trabalhadores inspiraram Still Life, e Han Sanming surge em ambas as obras. O realizador descreve um díptico, não registos factuais intercambiáveis."),
+        sourceIds: ["doors-interview", "photogenie-diptych"]
+      },
+      {
+        id: "still-life-surreal", area: "animation",
+        prompt: t("What purpose can a fantastical digital image serve within an otherwise realist film?",
+          "Hvilken funksjon kan et fantastisk digitalt bilde ha i en ellers realistisk film?",
+          "Quelle fonction une image numérique fantastique peut-elle remplir dans un film par ailleurs réaliste ?",
+          "Que função pode uma imagem digital fantástica ter num filme predominantemente realista?"),
+        options: [
+          { id: "express-dislocation", label: t("Use an imagined event to express how bewildering rapid physical change feels", "Bruk en forestilt hendelse til å uttrykke hvor fremmedgjørende raske fysiske endringer oppleves", "Utiliser un événement imaginaire pour exprimer le désarroi face aux transformations rapides", "Usar um acontecimento imaginado para expressar a estranheza de mudanças físicas rápidas") },
+          { id: "document-ufo", label: t("Present the flying building as factual proof of an extraordinary historical event", "Presenter den flygende bygningen som faktabevis for en ekstraordinær historisk hendelse", "Présenter le bâtiment volant comme preuve d'un événement historique extraordinaire", "Apresentar o edifício voador como prova de um acontecimento histórico extraordinário") },
+          { id: "replace-realism", label: t("Remove all social observation and turn the entire film into an effects showcase", "Fjern all sosial observasjon og gjør hele filmen til en effektoppvisning", "Supprimer toute observation sociale et transformer le film en démonstration d'effets", "Eliminar toda a observação social e transformar o filme numa demonstração de efeitos") },
+        ],
+        bestSupportedOptionId: "express-dislocation",
+        explanation: t("Jia explains that the landscape felt strangely unreal and that the flying memorial building was an imaginative response to the speed of change. The digital effect expresses a subjective experience; it is not evidence that a building actually flew.",
+          "Jia forklarer at landskapet virket underlig uvirkelig, og at den flygende minnebygningen var et fantasigrep som svarte på endringstempoet. Den digitale effekten uttrykker en subjektiv erfaring, ikke at en bygning faktisk fløy.",
+          "Jia explique que le paysage semblait irréel et que le monument volant répondait par l'imagination à la vitesse des transformations. L'effet numérique exprime une expérience subjective, non le vol réel d'un bâtiment.",
+          "Jia explica que a paisagem parecia irreal e que o monumento voador era uma resposta imaginativa à velocidade das mudanças. O efeito digital exprime uma experiência subjetiva, não o voo real de um edifício."),
+        sourceIds: ["doors-interview"]
       }
     ]
   }
