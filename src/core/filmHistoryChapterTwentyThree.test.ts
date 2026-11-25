@@ -20,9 +20,9 @@ test("Chapter 23 offers twenty-six substantial essays about different Asian film
   ]) assert.match(prose, topic);
 });
 
-test("Chapter 23 identifies 39 distinct real source records and no unresolved references", () => {
+test("Chapter 23 identifies 40 distinct real source records and no unresolved references", () => {
   const chapter = filmHistoryChapterTwentyThree;
-  assert.equal(chapter.sources.length, 39);
+  assert.equal(chapter.sources.length, 40);
   const sourceIds = new Set(chapter.sources.map(source => source.id));
   const urls = new Set(chapter.sources.map(source => source.url));
   assert.equal(sourceIds.size, chapter.sources.length);
