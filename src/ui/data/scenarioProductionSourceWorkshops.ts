@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Thirty-five pre-existing Production Cases receive evidence-backed craft decisions.
+ * Thirty-six pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -5203,6 +5203,199 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "s0",
           "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_general_1926",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Study Keaton's visual comedy, collaborative production and silent-era exhibition through safe original exercises.",
+      "nb": "Studer Keatons visuelle komikk, produksjonssamarbeid og stumfilmvisning gjennom trygge, selvstendige øvelser.",
+      "fr": "Étudiez la comédie visuelle de Keaton, la production collective et la projection muette par des exercices originaux sans danger.",
+      "pt": "Estude a comédia visual de Keaton, a produção colaborativa e a exibição muda através de exercícios originais seguros."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The General (1926)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/9303-THE-GENERAL"
+      },
+      {
+        "id": "s1",
+        "title": "The General (1926)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/136a6211-90d9-5d18-b047-7967deac8bab/the-general"
+      },
+      {
+        "id": "s2",
+        "title": "The birth of action: 10 sensational stunts from the silent era",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/birth-action-10-sensational-stunts-from-silent-era"
+      },
+      {
+        "id": "s3",
+        "title": "Buster's Best",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/explore/inside_out/2010/03/16/busters-best/"
+      },
+      {
+        "id": "s4",
+        "title": "Buster Keaton in The General",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/item/2021563520"
+      }
+    ],
+    "questions": [
+      {
+        "id": "general-visual-comedy",
+        "area": "camera",
+        "prompt": {
+          "en": "How could you test the clarity of a physical gag in a safe original scene?",
+          "nb": "Hvordan kan du teste tydeligheten i en fysisk vits i en trygg, selvstendig scene?",
+          "fr": "Comment tester la lisibilité d'un gag physique dans une scène originale sans danger ?",
+          "pt": "Como testar a clareza de um gag físico numa cena original segura?"
+        },
+        "options": [
+          {
+            "id": "clear",
+            "label": {
+              "en": "Draw the character and a harmless everyday object in a readable shared space",
+              "nb": "Tegn figuren og en ufarlig hverdagsgjenstand i et tydelig felles rom",
+              "fr": "Dessiner le personnage et un objet quotidien inoffensif dans un espace commun lisible",
+              "pt": "Desenhar a personagem e um objeto quotidiano inofensivo num espaço comum legível"
+            }
+          },
+          {
+            "id": "random",
+            "label": {
+              "en": "Use unrelated close-ups that obscure the cause and effect",
+              "nb": "Bruk urelaterte nærbilder som skjuler årsak og virkning",
+              "fr": "Utiliser des gros plans sans rapport qui masquent cause et effet",
+              "pt": "Usar grandes planos sem relação que escondem causa e efeito"
+            }
+          },
+          {
+            "id": "danger",
+            "label": {
+              "en": "Attempt to reproduce dangerous historical physical action",
+              "nb": "Forsøk å gjenskape farlig historisk fysisk handling",
+              "fr": "Tenter de reproduire une action physique historique dangereuse",
+              "pt": "Tentar reproduzir uma ação física histórica perigosa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "clear",
+        "explanation": {
+          "en": "MoMA places Keaton's comedy in the relationship between body, objects and film form; BFI emphasizes the action-comedy combination. Compare drawn frames of a harmless everyday gag, not real railway action or historical stunts.",
+          "nb": "MoMA plasserer Keatons komikk i forholdet mellom kropp, gjenstander og filmform; BFI fremhever kombinasjonen av handling og komikk. Sammenlign tegnede bilder av en ufarlig hverdagsvits, ikke virkelig jernbanehandling eller historiske stunt.",
+          "fr": "Le MoMA situe la comédie de Keaton dans les rapports entre corps, objets et forme filmique ; le BFI souligne l'association action et comédie. Comparez des dessins d'un gag quotidien sans danger, sans action ferroviaire réelle ni cascade historique.",
+          "pt": "O MoMA situa a comédia de Keaton na relação entre corpo, objetos e forma fílmica; o BFI destaca a combinação de ação e comédia. Compare desenhos de um gag quotidiano seguro, sem ação ferroviária real nem acrobacias históricas."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "general-collaboration",
+        "area": "research",
+        "prompt": {
+          "en": "How should the film's production achievement be credited?",
+          "nb": "Hvordan bør filmens produksjonsprestasjon krediteres?",
+          "fr": "Comment attribuer les mérites de cette production cinématographique ?",
+          "pt": "Como atribuir os méritos desta produção cinematográfica?"
+        },
+        "options": [
+          {
+            "id": "solo",
+            "label": {
+              "en": "Attribute all documented crafts to the screen star alone",
+              "nb": "Tilskriv alle dokumenterte fagfunksjoner filmstjernen alene",
+              "fr": "Attribuer tous les métiers documentés à la seule vedette",
+              "pt": "Atribuir todos os ofícios documentados apenas à estrela"
+            }
+          },
+          {
+            "id": "team",
+            "label": {
+              "en": "Distinguish independent production, direction, cinematography and technical collaboration",
+              "nb": "Skill uavhengig produksjon, regi, filmfoto og teknisk samarbeid",
+              "fr": "Distinguer production indépendante, réalisation, photographie et collaboration technique",
+              "pt": "Distinguir produção independente, realização, fotografia e colaboração técnica"
+            }
+          },
+          {
+            "id": "guess",
+            "label": {
+              "en": "Invent precise undocumented responsibilities for every participant",
+              "nb": "Finn på nøyaktige udokumenterte ansvarsområder for alle deltakerne",
+              "fr": "Inventer des responsabilités précises non documentées pour chaque participant",
+              "pt": "Inventar responsabilidades precisas não documentadas para todos os participantes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "team",
+        "explanation": {
+          "en": "AFI's record identifies Buster Keaton Productions, Schenck, co-directors Keaton and Bruckman, photographers Haines and Jennings, and technical director Gabourie. Preserve supported credits and acknowledge unknown details rather than treating every craft as a solo achievement.",
+          "nb": "AFIs oppføring identifiserer Buster Keaton Productions, Schenck, regissørene Keaton og Bruckman, fotografene Haines og Jennings og teknisk leder Gabourie. Bevar dokumenterte krediteringer og anerkjenn ukjente detaljer fremfor å tilskrive alt én person.",
+          "fr": "La notice AFI identifie Buster Keaton Productions, Schenck, les coréalisateurs Keaton et Bruckman, les opérateurs Haines et Jennings et le directeur technique Gabourie. Préservez les crédits attestés et reconnaissez les détails inconnus.",
+          "pt": "O registo AFI identifica Buster Keaton Productions, Schenck, os correalizadores Keaton e Bruckman, os operadores Haines e Jennings e o diretor técnico Gabourie. Preserve os créditos documentados e reconheça os pormenores desconhecidos."
+        },
+        "sourceIds": [
+          "s0"
+        ]
+      },
+      {
+        "id": "general-cue-sheet",
+        "area": "sound",
+        "prompt": {
+          "en": "What can a surviving silent-era music cue sheet establish?",
+          "nb": "Hva kan et bevart musikkskjema fra stumfilmtiden dokumentere?",
+          "fr": "Que peut établir une feuille d'indications musicales conservée de l'époque muette ?",
+          "pt": "O que pode estabelecer uma folha de indicações musicais preservada da época muda?"
+        },
+        "options": [
+          {
+            "id": "fixed",
+            "label": {
+              "en": "Treat it as proof of a fixed synchronized original recording",
+              "nb": "Behandle den som bevis på et fast synkront originalopptak",
+              "fr": "La traiter comme preuve d'un enregistrement original synchrone fixe",
+              "pt": "Tratá-la como prova de uma gravação original sincronizada fixa"
+            }
+          },
+          {
+            "id": "all",
+            "label": {
+              "en": "Assume every historical venue used exactly the same accompaniment",
+              "nb": "Anta at alle historiske visningssteder brukte nøyaktig samme akkompagnement",
+              "fr": "Supposer que chaque salle historique utilisait exactement le même accompagnement",
+              "pt": "Supor que todas as salas históricas usavam exatamente o mesmo acompanhamento"
+            }
+          },
+          {
+            "id": "context",
+            "label": {
+              "en": "Document the cue sheet as evidence of accompaniment practice, not recorded dialogue",
+              "nb": "Dokumenter musikkskjemaet som belegg for akkompagnementspraksis, ikke innspilt dialog",
+              "fr": "Documenter la feuille comme preuve de pratiques d'accompagnement, non de dialogue enregistré",
+              "pt": "Documentar a folha como evidência de práticas de acompanhamento, não de diálogo gravado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "context",
+        "explanation": {
+          "en": "The Library of Congress preserves a contemporary thematic music cue sheet, while AFI identifies the silent release format. A cue sheet documents musical presentation guidance; it does not prove a single recorded original soundtrack or identical performances in every venue.",
+          "nb": "Library of Congress bevarer et samtidig tematisk musikkskjema, mens AFI identifiserer stumfilmformatet. Musikkskjemaet dokumenterer veiledning for musikkvisning; det beviser ikke ett innspilt originallydspor eller identiske fremføringer på alle visningssteder.",
+          "fr": "La Library of Congress conserve une feuille thématique contemporaine et l'AFI identifie le format muet. La feuille atteste des indications d'accompagnement, non une bande originale enregistrée unique ni des exécutions identiques partout.",
+          "pt": "A Library of Congress preserva uma folha temática contemporânea e a AFI identifica o formato mudo. A folha documenta orientações de acompanhamento, não uma banda sonora original gravada única nem execuções idênticas em todas as salas."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
         ]
       }
     ]

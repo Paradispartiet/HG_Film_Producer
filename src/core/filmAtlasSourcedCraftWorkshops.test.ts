@@ -44,15 +44,16 @@ const ids = [
   "scenario_cabiria_1914",
   "scenario_afgrunden_1910",
   "scenario_atlantis_1913",
+  "scenario_the_general_1926",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly thirty-five existing cases have one hundred and five original, source-backed decisions", () => {
+test("Exactly thirty-six existing cases have one hundred and eight original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 35);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 105);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 36);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 108);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -101,6 +102,14 @@ test("Exactly thirty-five existing cases have one hundred and five original, sou
       assert.ok(definitions.includes(workshop.scenarioId));
       const dossierFiles: Record<string, string> = {"scenario_afgrunden_1910":"src/ui/data/scenarioProductionVerificationAfgrunden.ts","scenario_atlantis_1913":"src/ui/data/scenarioProductionVerificationAtlantis.ts"};
       const dossier = readFileSync(dossierFiles[workshop.scenarioId]!, "utf8");
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (workshop.scenarioId === "scenario_the_general_1926") {
+      const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
+      assert.ok(definition.includes(workshop.scenarioId));
+      const verification = readFileSync("src/ui/data/scenarioProductionVerificationSilentStudioSystemsBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const dossier = verification.slice(start, verification.indexOf("\n  },", start));
       for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
     } else if (workshop.scenarioId === "scenario_a_trip_to_the_moon_1902") {
       const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
@@ -478,4 +487,10 @@ test("Source validation accepts the exact short publisher name Pathé", () => {
   const workshop = getSourceBackedCaseWorkshop("scenario_histoire_d_un_crime_1901");
   assert.ok(workshop);
   assert.ok(workshop.sources.some(source => source.publisher === "Pathé" && source.url === "https://www.pathe.com/en/pathe/"));
+});
+
+test("The General workshop distinguishes visual comedy, collaborative credits and music cues", () => {
+  const general = getSourceBackedCaseWorkshop("scenario_the_general_1926");
+  assert.ok(general);
+  assert.deepEqual(general.questions.map(q => q.bestSupportedOptionId), ["clear","team","context"]);
 });
