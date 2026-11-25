@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Three pre-existing Production Cases receive evidence-backed craft decisions.
+ * Four pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -329,6 +329,104 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
           "Baker et son coscénariste Chris Bergoch décrivent un long travail d'enquête et de collaboration. Le consentement et la sécurité des participants comptent.",
           "Baker e o coargumentista Chris Bergoch descrevem pesquisa e colaboração prolongadas. A participação e a segurança das pessoas importam."),
         sourceIds: ["baker-interview", "film-independent"]
+      }
+    ]
+  },
+  {
+    scenarioId: "scenario_cure_1997",
+    status: "editorial_learning_exercise_not_case_verified",
+    introduction: t(
+      "Cure (1997) turns ordinary space, sustained performance and withheld explanation into psychological dread. Explore how Kiyoshi Kurosawa's documented choices shape the film without resolving its ambiguity.",
+      "Cure (1997) skaper psykologisk uro gjennom hverdagslige rom, sammenhengende skuespill og tilbakeholdt forklaring. Utforsk Kiyoshi Kurosawas dokumenterte valg uten å oppløse filmens tvetydighet.",
+      "Cure (1997) crée une inquiétude psychologique par les espaces ordinaires, le jeu continu et les explications retenues. Explorez les choix documentés de Kiyoshi Kurosawa sans dissiper son ambiguïté.",
+      "Cure (1997) cria inquietação psicológica através dos espaços comuns, da interpretação contínua e das explicações omitidas. Explore as escolhas documentadas de Kiyoshi Kurosawa sem eliminar a ambiguidade."
+    ),
+    sources: [
+      { id: "tiff-qa", title: "Kurosawa, Yakusho Discuss the Monsters Within Us [Cure: Q&A]", publisher: "Tokyo International Film Festival", url: "https://2018.tiff-jp.net/news/en/?p=14792" },
+      { id: "criterion-credits", title: "Cure (1997): Cast and credits", publisher: "The Criterion Collection", url: "https://www.criterion.com/films/27666-cure" },
+      { id: "fujiwara", title: "Cure: Erasure — Chris Fujiwara", publisher: "The Criterion Collection", url: "https://www.criterion.com/current/posts/7959-cure-erasure" },
+    ],
+    questions: [
+      {
+        id: "cure-duration", area: "camera",
+        prompt: t("How can a conversation change emotional direction without an explanatory cut?",
+          "Hvordan kan en samtale endre følelsesmessig retning uten et forklarende klipp?",
+          "Comment une conversation peut-elle changer de direction émotionnelle sans coupe explicative ?",
+          "Como pode uma conversa mudar de direção emocional sem um corte explicativo?"),
+        options: [
+          { id: "sustained-performance", label: t("Hold a sustained medium shot and let the actor's performance shift within it",
+            "Behold en lengre halvtotal og la skuespillerens uttrykk endre seg i bildet",
+            "Maintenir un plan moyen prolongé et laisser le jeu évoluer dans le cadre",
+            "Manter um plano médio prolongado e deixar a interpretação evoluir no enquadramento") },
+          { id: "constant-reaction-cuts", label: t("Cut to a separate reaction close-up after every spoken phrase",
+            "Klipp til et eget reaksjonsnærbilde etter hver replikk",
+            "Couper vers un gros plan de réaction après chaque réplique",
+            "Cortar para um grande plano de reação após cada fala") },
+          { id: "expository-narrator", label: t("Have a narrator explain every change in the character's feelings",
+            "La en forteller forklare hver endring i figurens følelser",
+            "Faire expliquer chaque changement émotionnel par un narrateur",
+            "Usar um narrador para explicar cada mudança emocional da personagem") },
+        ],
+        bestSupportedOptionId: "sustained-performance",
+        explanation: t("At the 2018 Tokyo festival Q&A, Kurosawa connected his economical film shooting to his V-cinema experience. The discussion highlights long takes in which Yakusho can change his expression without a cut. This is a craft approach, not a universal ban on editing.",
+          "Under festivalsamtalen i Tokyo i 2018 knyttet Kurosawa sin økonomiske filmproduksjon til erfaringen fra V-cinema. Samtalen fremhever lange tagninger der Yakusho endrer uttrykk uten klipp. Dette er et håndverksgrep, ikke et generelt klippeforbud.",
+          "Lors de la rencontre de Tokyo en 2018, Kurosawa a relié son économie de tournage à son expérience du V-cinema. Les plans longs permettent à Yakusho de changer d'expression sans coupe. Ce procédé n'interdit pas le montage.",
+          "Na conversa de Tóquio em 2018, Kurosawa associou a economia de rodagem à experiência no V-cinema. Os planos longos permitem a Yakusho mudar de expressão sem corte. Esta opção não proíbe a montagem."),
+        sourceIds: ["tiff-qa", "criterion-credits"]
+      },
+      {
+        id: "cure-space", area: "camera",
+        prompt: t("How can a domestic scene express distance between people who occupy the same room?",
+          "Hvordan kan en hjemmescene uttrykke avstand mellom personer som befinner seg i samme rom?",
+          "Comment une scène domestique peut-elle exprimer la distance entre deux personnes dans la même pièce ?",
+          "Como pode uma cena doméstica expressar distância entre pessoas no mesmo espaço?"),
+        options: [
+          { id: "isolated-closeups", label: t("Show only alternating faces and remove the shared room from view",
+            "Vis bare vekslende ansiktsnærbilder og fjern det felles rommet fra bildet",
+            "Alterner uniquement les visages en supprimant la pièce commune du cadre",
+            "Alternar apenas rostos e retirar do enquadramento o espaço comum") },
+          { id: "foreground-background", label: t("Compose foreground and background actions within a shared frame",
+            "Komponer handling i forgrunn og bakgrunn innenfor samme bilde",
+            "Composer les actions du premier plan et de l'arrière-plan dans un cadre commun",
+            "Compor ações em primeiro plano e no fundo dentro do mesmo enquadramento") },
+          { id: "caption-emotions", label: t("Insert titles explaining exactly what each person feels",
+            "Legg inn tekstplakater som forklarer nøyaktig hva hver person føler",
+            "Insérer des cartons expliquant précisément les sentiments de chacun",
+            "Inserir cartões que expliquem exatamente o que cada pessoa sente") },
+        ],
+        bestSupportedOptionId: "foreground-background",
+        explanation: t("Chris Fujiwara discusses the apartment composition with Takabe in front and Fumie moving behind him. The shared frame can make their separation visible. This is critical analysis of the finished image, not a claim about the exact lens or lighting setup.",
+          "Chris Fujiwara analyserer leilighetsbildet med Takabe i forgrunnen og Fumie i bevegelse bak ham. Det felles bildet kan synliggjøre avstanden mellom dem. Dette er analyse av den ferdige filmen, ikke dokumentasjon av objektiv eller lysrigg.",
+          "Chris Fujiwara analyse le plan de l'appartement, Takabe devant et Fumie en mouvement derrière lui. Le cadre partagé rend leur séparation perceptible. C'est une analyse du film achevé, non une preuve du dispositif optique ou lumineux.",
+          "Chris Fujiwara analisa o plano do apartamento, com Takabe à frente e Fumie em movimento atrás. O quadro partilhado torna visível a distância entre ambos. É análise do filme acabado, não prova da objetiva ou da iluminação utilizada."),
+        sourceIds: ["fujiwara", "criterion-credits"]
+      },
+      {
+        id: "cure-ending", area: "research",
+        prompt: t("What editorial decision is supported by Kurosawa's account of the final restaurant scene?",
+          "Hvilket klippevalg støttes av Kurosawas beretning om den avsluttende restaurantscenen?",
+          "Quel choix de montage est étayé par le récit de Kurosawa sur la scène finale au restaurant ?",
+          "Que decisão de montagem é sustentada pelo relato de Kurosawa sobre a cena final no restaurante?"),
+        options: [
+          { id: "resolve-all-motives", label: t("Add an explicit explanation of every character's motive",
+            "Legg inn en entydig forklaring av alle figurenes motiver",
+            "Ajouter une explication explicite des motivations de chaque personnage",
+            "Acrescentar uma explicação explícita das motivações de cada personagem") },
+          { id: "prove-hypnosis", label: t("Present the fictional story as scientific proof of hypnosis",
+            "Framstill fiksjonsfortellingen som vitenskapelig bevis for hypnose",
+            "Présenter la fiction comme une preuve scientifique de l'hypnose",
+            "Apresentar a ficção como prova científica da hipnose") },
+          { id: "withhold-explicit-action", label: t("Remove the more explicit continuation and preserve the ending's uncertainty",
+            "Fjern den mer eksplisitte fortsettelsen og behold slutten tvetydig",
+            "Supprimer la suite plus explicite et préserver l'incertitude de la fin",
+            "Retirar a continuação mais explícita e preservar a incerteza do final") },
+        ],
+        bestSupportedOptionId: "withhold-explicit-action",
+        explanation: t("Kurosawa told the Tokyo festival audience that he filmed a more explicit continuation but removed it from the released ending. That production account supports the omission; it does not establish one definitive interpretation or a real-world psychological mechanism.",
+          "Kurosawa fortalte festivalpublikummet i Tokyo at han filmet en mer eksplisitt fortsettelse, men fjernet den fra den utgitte slutten. Produksjonsberetningen støtter utelatelsen, ikke én endelig tolkning eller en virkelig psykologisk mekanisme.",
+          "Kurosawa a raconté au public de Tokyo avoir tourné une suite plus explicite avant de la retirer du montage final. Ce témoignage confirme l'omission, pas une interprétation unique ni un mécanisme psychologique réel.",
+          "Kurosawa relatou ao público de Tóquio que filmou uma continuação mais explícita, mas a retirou da versão final. O relato sustenta a omissão, não uma interpretação única nem um mecanismo psicológico real."),
+        sourceIds: ["tiff-qa", "fujiwara"]
       }
     ]
   }

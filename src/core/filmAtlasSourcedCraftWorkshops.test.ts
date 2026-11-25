@@ -12,20 +12,26 @@ const ids = [
   "scenario_the_celebration_1998",
   "scenario_waltz_with_bashir_2008",
   "scenario_tangerine_2015",
+  "scenario_cure_1997",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly three existing cases have nine original, source-backed decisions", () => {
+test("Exactly four existing cases have twelve original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 3);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 9);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 4);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 12);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
     assert.ok(workshop.sources.length >= 2);
-    assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+    if (workshop.scenarioId !== "scenario_cure_1997") {
+      assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+    } else {
+      const manual = readFileSync("src/core/modernCanonExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_cure_1997", title: "Cure"[^\n]*year: 1997/);
+    }
     assert.strictEqual(getSourceBackedCaseWorkshop(workshop.scenarioId), workshop);
     assert.equal(new Set(workshop.questions.map(q => q.id)).size, 3);
     assert.equal(new Set(workshop.sources.map(s => s.id)).size, workshop.sources.length);
@@ -103,8 +109,21 @@ test("The source exercise is visible but isolated from case verification, scorin
   assert.match(sourcePanel, /<details className="scenario-source-workshop__sources">/);
   assert.match(sourcePanel, /type="button"/);
   assert.doesNotMatch(sourcePanel, /(?:setProductionCaseMissionChoice|setProductionCaseMissionCompletion|writeProductionCaseProgress)/);
-  for (const id of ids) {
+  for (const id of ids.slice(0, 3)) {
     const source = seeds.scenarios.find((s: {id: string}) => s.id === id);
     assert.equal(source?.status, "imported_seed_needs_film_specific_design");
   }
+});
+
+test("Cure distinguishes firsthand production evidence from analysis and preserves ambiguity", () => {
+  const workshop = getSourceBackedCaseWorkshop(ids[3]);
+  assert.ok(workshop);
+  const [duration, space, ending] = workshop.questions;
+  assert.equal(duration.bestSupportedOptionId, "sustained-performance");
+  assert.ok(duration.sourceIds.includes("tiff-qa"));
+  assert.equal(space.bestSupportedOptionId, "foreground-background");
+  assert.match(space.explanation.en, /critical analysis/);
+  assert.ok(space.sourceIds.includes("fujiwara"));
+  assert.equal(ending.bestSupportedOptionId, "withhold-explicit-action");
+  assert.match(ending.explanation.en, /does not establish one definitive interpretation/);
 });
