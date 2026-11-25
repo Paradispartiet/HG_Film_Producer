@@ -18,20 +18,24 @@ const ids = [
   "scenario_platform_2000",
   "scenario_raise_the_red_lantern_1991",
   "scenario_a_city_of_sadness_1989",
+  "scenario_vive_l_amour_1994",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly nine existing cases have twenty-seven original, source-backed decisions", () => {
+test("Exactly ten existing cases have thirty original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 9);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 27);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 10);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 30);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
     assert.ok(workshop.sources.length >= 2);
-    if (workshop.scenarioId === "scenario_a_city_of_sadness_1989") {
+    if (workshop.scenarioId === "scenario_vive_l_amour_1994") {
+      const manual = readFileSync("src/core/eastAsianAuteurExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_vive_l_amour_1994",\s*title: "Vive L\x27Amour",[\s\S]{0,120}year: 1994/);
+    } else if (workshop.scenarioId === "scenario_a_city_of_sadness_1989") {
       const manual = readFileSync("src/core/modernCanonExpansion.ts", "utf8");
       assert.match(manual, /id: "scenario_a_city_of_sadness_1989", title: "A City of Sadness"[^\n]*year: 1989/);
     } else if (workshop.scenarioId === "scenario_raise_the_red_lantern_1991") {
@@ -214,4 +218,18 @@ test("A City of Sadness links depth staging, sync sound and indirect narration t
   assert.ok(sound.sourceIds.includes("tu-interview"));
   assert.equal(history.bestSupportedOptionId, "family-perspective");
   assert.match(history.explanation.en, /independently sourced historical records/);
+});
+
+test("Vive L'Amour distinguishes location adaptation, sustained performance and sparse sound", () => {
+  const workshop = getSourceBackedCaseWorkshop(ids[9]);
+  assert.ok(workshop);
+  const [location, duration, sound] = workshop.questions;
+  assert.ok(location && duration && sound);
+  assert.equal(location.bestSupportedOptionId, "adapt-to-place");
+  assert.ok(location.sourceIds.includes("rabbit-interview"));
+  assert.equal(duration.bestSupportedOptionId, "allow-duration");
+  assert.match(duration.explanation.en, /without fixing a disputed exact running time/);
+  assert.equal(sound.bestSupportedOptionId, "ambient-gestures");
+  assert.ok(sound.sourceIds.includes("eye-vive"));
+  assert.match(sound.explanation.en, /not a claim about the exact microphone/);
 });
