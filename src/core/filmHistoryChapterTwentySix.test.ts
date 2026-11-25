@@ -23,9 +23,9 @@ test("Chapter 26 covers post-1989 institutions, regions and 22 substantial film 
   ]) assert.match(prose, essential);
 });
 
-test("Chapter 26 maintains 42 unique, used and resolvable editorial source records", () => {
+test("Chapter 26 maintains 43 unique, used and resolvable editorial source records", () => {
   const chapter = filmHistoryChapterTwentySix;
-  assert.equal(chapter.sources.length, 42);
+  assert.equal(chapter.sources.length, 43);
   const sourceIds = new Set(chapter.sources.map(source => source.id));
   const sourceUrls = new Set(chapter.sources.map(source => source.url));
   assert.equal(sourceIds.size, chapter.sources.length);
@@ -60,4 +60,14 @@ test("Chapter 26 does not create fictional Atlas production scenarios", () => {
   assert.ok(chapter.filmReferences.every(film => film.year >= 1989 && film.year <= 2005));
   assert.equal(chapter.historicalObjects.length, 20);
   assert.ok(chapter.historicalObjects.every(object => object.role === "historical_object" && object.atlasDecision === "no_production_case"));
+});
+
+test("Chapter 26 documents Festen competition, shared Jury Prize and creative crew from Cannes", () => {
+  const chapter = filmHistoryChapterTwentySix;
+  const source = chapter.sources.find(s => s.id === "ch26_festen_cannes");
+  assert.equal(source?.url, "https://www.festival-cannes.com/en/f/festen/");
+  const article = chapter.sections.find(s => s.id === "ch26_dogme");
+  assert.ok(article?.sourceIds.includes("ch26_festen_cannes"));
+  assert.match(article?.paragraphs.join(" ") ?? "", /1998 competition and its shared Jury Prize/);
+  assert.match(article?.paragraphs.join(" ") ?? "", /Anthony Dod Mantle.*Valdís Óskarsdóttir/);
 });

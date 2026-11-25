@@ -97,6 +97,12 @@ export const filmHistoryChapterTwentySixSources: readonly FilmHistoryBookSource[
     "url": "https://www.coe.int/en/web/eurimages/about"
   },
   {
+    "id": "ch26_festen_cannes",
+    "title": "Festen (1998): official competition record and shared Jury Prize",
+    "publisher": "Festival de Cannes",
+    "url": "https://www.festival-cannes.com/en/f/festen/"
+  },
+  {
     "id": "ch26_festen",
     "title": "10 great awkward family gathering films: Festen",
     "publisher": "British Film Institute",
