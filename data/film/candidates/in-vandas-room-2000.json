@@ -1,0 +1,568 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "candidate_in_vandas_room_2000",
+  "proposedScenarioId": "scenario_in_vandas_room_2000",
+  "routeSlug": "candidate-in-vandas-room-2000",
+  "status": "editorial_candidate_not_admitted",
+  "book": {
+    "chapter": 27,
+    "decision": "P2"
+  },
+  "identity": {
+    "title": "In Vanda's Room",
+    "originalTitle": "No Quarto da Vanda",
+    "year": 2000,
+    "directors": [
+      "Pedro Costa"
+    ],
+    "country": "Portugal / Germany / Switzerland (Cineuropa additionally lists Italy)",
+    "genres": [
+      "Documentary",
+      "Drama"
+    ],
+    "runtimeNote": "Criterion: 171 minutes; Film at Lincoln Center, Cineuropa and Cinéma du réel: 170; IFFR: 180. The 35mm exhibition record does not establish film capture. TCM reports approximately 180 hours of footage, while Costa recalls 190 in Othon Cinema. Differences are not resolved here."
+  },
+  "credits": {
+    "director": "Pedro Costa",
+    "cinematography": "Pedro Costa",
+    "editing": "Dominique Auvray; Patricia Saramago also credited by Cineuropa and Cinéma du réel",
+    "sound": "Philippe Morel, Mathieu Imbert and Stephan Konken (Criterion credits)",
+    "sourceIds": [
+      "criterion",
+      "cineuropa",
+      "reel"
+    ]
+  },
+  "sources": [
+    {
+      "id": "criterion",
+      "title": "In Vanda’s Room — film and credits",
+      "publisher": "The Criterion Collection",
+      "url": "https://www.criterion.com/films/20820"
+    },
+    {
+      "id": "rooms",
+      "title": "Pedro Costa’s Fontainhas Trilogy: Rooms for the Living and the Dead",
+      "publisher": "The Criterion Collection",
+      "url": "https://www.criterion.com/current/posts/1425-pedro-costa-s-fontainhas-trilogy-rooms-for-the-living-and-the-dead"
+    },
+    {
+      "id": "tcm",
+      "title": "In Vanda's Room — production analysis",
+      "publisher": "Turner Classic Movies",
+      "url": "https://www.tcm.com/articles/567892/in-vandas-room"
+    },
+    {
+      "id": "sabzian",
+      "title": "Interview with Pedro Costa, Ruben Desiere, 2014",
+      "publisher": "Sabzian",
+      "url": "https://www.sabzian.be/text/interview-with-pedro-costa"
+    },
+    {
+      "id": "othon",
+      "title": "Interview with Pedro Costa",
+      "publisher": "Othon Cinema",
+      "url": "https://othoncinema.com/2024/12/15/interview-with-pedro-costa/"
+    },
+    {
+      "id": "interstices",
+      "title": "Digital Filmmaking at the Interstices",
+      "publisher": "Edinburgh University Press / Cambridge Core",
+      "url": "https://www.cambridge.org/core/books/abs/refocus-the-films-of-pedro-costa/digital-filmmaking-at-the-interstices/5C5BFF7E8BECEF9F7A40950DAFB6395E"
+    },
+    {
+      "id": "flc",
+      "title": "In Vanda's Room — 2015 screening record",
+      "publisher": "Film at Lincoln Center",
+      "url": "https://www.filmlinc.org/films/in-vandas-room/"
+    },
+    {
+      "id": "iffr",
+      "title": "No quarto da Vanda — IFFR 2001",
+      "publisher": "International Film Festival Rotterdam",
+      "url": "https://iffr.com/en/iffr/2001/films/no-quarto-da-vanda"
+    },
+    {
+      "id": "cineuropa",
+      "title": "In Vanda's Room — production and release record",
+      "publisher": "Cineuropa",
+      "url": "https://cineuropa.org/en/film/195871/"
+    },
+    {
+      "id": "reel",
+      "title": "No quarto da Vanda — archive record",
+      "publisher": "Cinéma du réel",
+      "url": "https://archives.cinemadureel.org/en/film/no-quarto-da-vanda-2/"
+    }
+  ],
+  "article": {
+    "title": "In Vanda's Room (2000): portable digital cinema and the work of listening",
+    "paragraphs": [
+      {
+        "text": "After Ossos, Pedro Costa returned to Fontainhas with a different production method: small-scale digital capture and extended encounters with residents. Film at Lincoln Center describes close collaboration with nonprofessional performers and an intersection of documentary and fiction. In the Sabzian interview, Costa discusses the uncertain relationship between filmmaker and participant, including the modest payment made after finishing money arrived. The study uses consensual fictional everyday scenes, not reenactments of addiction or private hardship.",
+        "sourceIds": [
+          "flc",
+          "sabzian",
+          "interstices"
+        ]
+      },
+      {
+        "text": "The reduced crew and portable video equipment changed the relation between production time and daily life. Costa used Panasonic DV and shaped available interior light with simple reflected light. The Criterion essay distinguishes his largely solitary early work from later sound assistance. The low-resource shooting arrangement nevertheless required planning, ongoing negotiation and post-production resources; no exact total budget or uniformly fixed crew size is established.",
+        "sourceIds": [
+          "rooms",
+          "tcm",
+          "interstices"
+        ]
+      },
+      {
+        "text": "Long observation did not mean an untouched recording. Costa recalls discovering a more effective structure through attentive review of participants' words. Editorial credits differ in breadth between the Criterion listing and other film records. TCM also describes post-synchronized sounds and additional demolition ambience; the audible environment should not be treated as an entirely synchronous location recording.",
+        "sourceIds": [
+          "othon",
+          "criterion",
+          "cineuropa",
+          "reel",
+          "tcm"
+        ]
+      },
+      {
+        "text": "The project connects inexpensive digital acquisition to a wider European finishing and circulation infrastructure. Costa describes German funding late in production; Cineuropa identifies production companies and broadcasters across several countries. Film at Lincoln Center explicitly distinguishes digital images from a later 35mm print. Runtime records vary, and reported footage totals are approximate. The evidence supports a production study and a potential comparison with existing low-resource digital cases, not an approved gap or independent self-distribution claim.",
+        "sourceIds": [
+          "sabzian",
+          "cineuropa",
+          "flc",
+          "iffr",
+          "criterion",
+          "othon"
+        ]
+      }
+    ]
+  },
+  "production": {
+    "premise": "Create a short, consensual fictional everyday scene with an unobtrusive portable camera.",
+    "screenplay": "Develop a loose shared situation and listen to performers; no intrusive filming or disclosure required.",
+    "camera": "Use stable composition, window light and a simple reflector without specifying undocumented equipment.",
+    "editing": "Compare alternate cuts with attention to speech and duration; preserve the distinction between observation and selection.",
+    "sound": "Separate original room tone, dialogue and constructed ambience; disclose relevant reconstruction.",
+    "learning": "Connect reduced acquisition scale, fair collaboration, editing labor, finishing finance and exhibition provenance."
+  },
+  "workshopIntroduction": {
+    "en": "Explore small-scale digital production, patient observation, editorial listening and responsible collaboration in a fictional exercise.",
+    "nb": "Utforsk småskala digital produksjon, tålmodig observasjon, lyttende klipping og ansvarlig samarbeid i en fiktiv øvelse.",
+    "fr": "Explorer la production numérique légère, l'observation patiente, l'écoute au montage et la collaboration responsable dans un exercice fictif.",
+    "pt": "Explorar produção digital leve, observação paciente, escuta na montagem e colaboração responsável num exercício fictício."
+  },
+  "phases": [
+    {
+      "id": "ethics",
+      "questionId": "vanda-ethics",
+      "title": {
+        "en": "Collaboration and consent",
+        "nb": "Samarbeid og samtykke",
+        "fr": "Collaboration et consentement",
+        "pt": "Colaboração e consentimento"
+      },
+      "deliverable": {
+        "en": "Write a participation agreement for a short everyday scene, including refusal, breaks and payment.",
+        "nb": "Skriv en deltakeravtale for en kort hverdagsscene med rett til å avslå, pauser og honorar.",
+        "fr": "Rédiger un accord pour une scène quotidienne avec droit de refus, pauses et rémunération.",
+        "pt": "Redigir um acordo para uma cena quotidiana com recusa, pausas e remuneração."
+      }
+    },
+    {
+      "id": "scale",
+      "questionId": "vanda-scale",
+      "title": {
+        "en": "Production scale and time",
+        "nb": "Produksjonsstørrelse og tid",
+        "fr": "Échelle et durée de production",
+        "pt": "Escala e duração de produção"
+      },
+      "deliverable": {
+        "en": "Plan a small crew, agreed short sessions and a distinct post-production budget.",
+        "nb": "Planlegg et lite team, avtalte korte økter og et eget etterarbeidsbudsjett.",
+        "fr": "Prévoir une petite équipe, des séances courtes convenues et un budget de postproduction distinct.",
+        "pt": "Planear uma equipa pequena, sessões curtas acordadas e orçamento de pós-produção distinto."
+      }
+    },
+    {
+      "id": "light",
+      "questionId": "vanda-light",
+      "title": {
+        "en": "Available light and framing",
+        "nb": "Tilgjengelig lys og komposisjon",
+        "fr": "Lumière disponible et cadrage",
+        "pt": "Luz disponível e enquadramento"
+      },
+      "deliverable": {
+        "en": "Create three consent-based still frames using window light and a safe reflector in an ordinary room.",
+        "nb": "Lag tre avtalte stillbilder med vinduslys og en trygg reflektor i et vanlig rom.",
+        "fr": "Créer trois images convenues avec lumière de fenêtre et réflecteur sûr dans une pièce ordinaire.",
+        "pt": "Criar três imagens acordadas com luz de janela e refletor seguro numa divisão comum."
+      }
+    },
+    {
+      "id": "edit",
+      "questionId": "vanda-edit",
+      "title": {
+        "en": "Duration and editorial listening",
+        "nb": "Varighet og lyttende klipping",
+        "fr": "Durée et écoute au montage",
+        "pt": "Duração e escuta na montagem"
+      },
+      "deliverable": {
+        "en": "Compare two edits of a consenting participant's fictional everyday conversation, keeping meaningful pauses.",
+        "nb": "Sammenlign to klipp av en samtykkende deltakers fiktive hverdagssamtale, med meningsfulle pauser.",
+        "fr": "Comparer deux montages d'une conversation fictive consentie en conservant les pauses utiles.",
+        "pt": "Comparar duas montagens de uma conversa fictícia consentida, preservando pausas significativas."
+      }
+    },
+    {
+      "id": "sound",
+      "questionId": "vanda-sound",
+      "title": {
+        "en": "Location sound and reconstruction",
+        "nb": "Stedslyd og rekonstruksjon",
+        "fr": "Son direct et reconstruction",
+        "pt": "Som de local e reconstrução"
+      },
+      "deliverable": {
+        "en": "Create a short original room-tone and offscreen ambience track, labelling separately recorded sounds.",
+        "nb": "Lag et kort originalt spor med romtone og lyd utenfor bildet, og merk lyder tatt opp separat.",
+        "fr": "Créer une courte ambiance originale et identifier les sons enregistrés séparément.",
+        "pt": "Criar uma pista curta de ambiente original e identificar sons gravados separadamente."
+      }
+    },
+    {
+      "id": "delivery",
+      "questionId": "vanda-delivery",
+      "title": {
+        "en": "Co-production and exhibition",
+        "nb": "Samproduksjon og visning",
+        "fr": "Coproduction et projection",
+        "pt": "Coprodução e exibição"
+      },
+      "deliverable": {
+        "en": "Prepare a source ledger separating digital acquisition, finishing, co-production and exhibition records.",
+        "nb": "Lag en kildeoversikt som skiller digitale opptak, ferdigstilling, samproduksjon og visning.",
+        "fr": "Préparer un registre distinguant captation numérique, finition, coproduction et projection.",
+        "pt": "Preparar um registo distinguindo captação digital, finalização, coprodução e exibição."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "vanda-ethics",
+      "area": "research",
+      "prompt": {
+        "en": "What is a responsible way to adapt the film's collaborative approach to a new production?",
+        "nb": "Hvordan kan filmens samarbeidsmetode tilpasses en ny produksjon på en ansvarlig måte?",
+        "fr": "Comment adapter la collaboration du film à une nouvelle production de façon responsable ?",
+        "pt": "Como adaptar a colaboração do filme a uma nova produção de modo responsável?"
+      },
+      "options": [
+        {
+          "id": "assume",
+          "label": {
+            "en": "Assume repeated visits automatically grant unlimited permission to record and publish",
+            "nb": "Anta at gjentatte besøk automatisk gir ubegrenset tillatelse til opptak og publisering",
+            "fr": "Supposer que les visites répétées autorisent toute captation et publication",
+            "pt": "Pressupor que visitas repetidas autorizam toda a captação e publicação"
+          }
+        },
+        {
+          "id": "agreement",
+          "label": {
+            "en": "Agree on voluntary participation, meaningful choices, compensation and ongoing consent",
+            "nb": "Avtal frivillig deltakelse, reell medbestemmelse, honorar og løpende samtykke",
+            "fr": "Convenir d'une participation volontaire, de choix réels, d'une rémunération et d'un consentement continu",
+            "pt": "Acordar participação voluntária, escolhas reais, remuneração e consentimento contínuo"
+          }
+        },
+        {
+          "id": "intrude",
+          "label": {
+            "en": "Film vulnerable strangers without discussing the purpose of the project",
+            "nb": "Film sårbare fremmede uten å diskutere prosjektets formål",
+            "fr": "Filmer des personnes vulnérables sans expliquer le projet",
+            "pt": "Filmar pessoas vulneráveis sem explicar a finalidade do projeto"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "agreement",
+      "explanation": {
+        "en": "Costa's Sabzian interview describes negotiated visits and acknowledges only symbolic compensation after funding arrived. A contemporary learning exercise should explicitly protect autonomy and fair terms, rather than treating that account as a complete ethical protocol.",
+        "nb": "Costa beskriver avtalte besøk og et symbolsk honorar etter at finansieringen kom. En moderne øvelse må beskytte selvbestemmelse og rettferdige vilkår, ikke behandle intervjuet som en fullstendig etisk protokoll.",
+        "fr": "Costa évoque des visites négociées et une rémunération symbolique après le financement. Un exercice actuel doit protéger l'autonomie et les conditions équitables, sans prendre cet entretien pour un protocole éthique complet.",
+        "pt": "Costa descreve visitas negociadas e remuneração simbólica após financiamento. Um exercício atual deve proteger autonomia e condições justas, sem tratar a entrevista como protocolo ético completo."
+      },
+      "sourceIds": [
+        "sabzian",
+        "iffr"
+      ]
+    },
+    {
+      "id": "vanda-scale",
+      "area": "research",
+      "prompt": {
+        "en": "What does Costa's reduced acquisition setup establish about the overall production?",
+        "nb": "Hva fastslår Costas reduserte opptaksoppsett om produksjonen som helhet?",
+        "fr": "Que montre le dispositif réduit de Costa sur l'ensemble de la production ?",
+        "pt": "O que demonstra o dispositivo reduzido de Costa sobre toda a produção?"
+      },
+      "options": [
+        {
+          "id": "free",
+          "label": {
+            "en": "Assume a small camera makes every production and finishing stage free",
+            "nb": "Anta at et lite kamera gjør hele produksjonen og etterarbeidet gratis",
+            "fr": "Supposer qu'une petite caméra rend toute production et finition gratuites",
+            "pt": "Pressupor que uma pequena câmara torna toda a produção gratuita"
+          }
+        },
+        {
+          "id": "large",
+          "label": {
+            "en": "Recreate the large conventional crew used on the preceding feature",
+            "nb": "Gjenskap det store tradisjonelle teamet fra den foregående spillefilmen",
+            "fr": "Reconstituer la grande équipe conventionnelle du film précédent",
+            "pt": "Recriar a grande equipa convencional do filme anterior"
+          }
+        },
+        {
+          "id": "small",
+          "label": {
+            "en": "Use portable acquisition to reduce daily logistics while budgeting separately for finishing",
+            "nb": "Bruk bærbart opptaksutstyr for å forenkle logistikken, med eget budsjett for ferdigstilling",
+            "fr": "Utiliser une captation portable pour réduire la logistique et budgéter séparément la finition",
+            "pt": "Usar captação portátil para reduzir logística e orçamentar separadamente a finalização"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "small",
+      "explanation": {
+        "en": "The academic account describes Costa's shift toward portable digital tools and intermittent professional assistance. His interview records later German finishing funds. Reduced acquisition resources did not eliminate post-production labor or financing.",
+        "nb": "Den akademiske fremstillingen beskriver overgangen til bærbare digitale verktøy og sporadisk faglig hjelp. Costa omtaler senere tyske midler til ferdigstilling. Enkel innspilling fjernet ikke etterarbeid eller finansiering.",
+        "fr": "L'étude décrit le passage aux outils numériques portables et à l'aide ponctuelle de professionnels. Costa mentionne des fonds allemands de finition. La captation réduite n'élimine ni travail ni financement ultérieurs.",
+        "pt": "O estudo descreve ferramentas digitais portáteis e ajuda profissional ocasional. Costa menciona financiamento alemão de finalização. Captação reduzida não elimina trabalho nem financiamento posteriores."
+      },
+      "sourceIds": [
+        "interstices",
+        "sabzian"
+      ]
+    },
+    {
+      "id": "vanda-light",
+      "area": "camera",
+      "prompt": {
+        "en": "Which lighting approach reflects the documented digital production without inventing equipment?",
+        "nb": "Hvilken lysmetode gjenspeiler den dokumenterte digitale produksjonen uten å dikte opp utstyr?",
+        "fr": "Quelle approche lumineuse reflète la production numérique documentée sans inventer de matériel ?",
+        "pt": "Que abordagem de luz reflete a produção digital documentada sem inventar equipamento?"
+      },
+      "options": [
+        {
+          "id": "window",
+          "label": {
+            "en": "Shape a stable composition using available window light and simple reflection",
+            "nb": "Form en stabil komposisjon med tilgjengelig vinduslys og enkel refleksjon",
+            "fr": "Composer un cadre stable avec la lumière de fenêtre et une réflexion simple",
+            "pt": "Compor um enquadramento estável com luz de janela e reflexão simples"
+          }
+        },
+        {
+          "id": "studio",
+          "label": {
+            "en": "Assume a large studio lighting package is necessary for every interior",
+            "nb": "Anta at et stort studiolysoppsett er nødvendig for alle interiører",
+            "fr": "Supposer qu'un grand dispositif de studio est nécessaire dans chaque intérieur",
+            "pt": "Pressupor que um grande sistema de iluminação de estúdio é necessário em cada interior"
+          }
+        },
+        {
+          "id": "invent",
+          "label": {
+            "en": "Identify a precise original lens and exposure solely from the finished image",
+            "nb": "Identifiser et eksakt originalobjektiv og eksponering bare ut fra sluttbildet",
+            "fr": "Identifier l'objectif et l'exposition exacts à partir de l'image finale",
+            "pt": "Identificar objetiva e exposição exatas apenas pela imagem final"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "window",
+      "explanation": {
+        "en": "Criterion's essay describes Costa working with a small window, a mirror and improvised reflectors; TCM describes his Panasonic DV camera. The exercise adapts the simple light-control principle without claiming a specific camera model or lens.",
+        "nb": "Criterions essay beskriver arbeid med et lite vindu, speil og enkle reflektorer; TCM omtaler Panasonic DV-kameraet. Øvelsen tilpasser prinsippet uten å påstå en bestemt kameramodell eller linse.",
+        "fr": "L'essai Criterion décrit fenêtre, miroir et réflecteurs improvisés ; TCM mentionne une caméra Panasonic DV. L'exercice adapte ce principe sans affirmer modèle ou objectif précis.",
+        "pt": "O ensaio Criterion descreve janela, espelho e refletores improvisados; TCM refere uma câmara Panasonic DV. O exercício adapta o princípio sem afirmar modelo ou objetiva específicos."
+      },
+      "sourceIds": [
+        "rooms",
+        "tcm"
+      ]
+    },
+    {
+      "id": "vanda-edit",
+      "area": "camera",
+      "prompt": {
+        "en": "How did Costa describe finding a structure in the recorded material?",
+        "nb": "Hvordan beskrev Costa arbeidet med å finne en struktur i opptaksmaterialet?",
+        "fr": "Comment Costa décrit-il la recherche d'une structure dans les images enregistrées ?",
+        "pt": "Como descreve Costa a procura de estrutura no material gravado?"
+      },
+      "options": [
+        {
+          "id": "impose",
+          "label": {
+            "en": "Force the recorded dialogue into a predetermined plot regardless of what participants say",
+            "nb": "Press dialogen inn i et bestemt plot uavhengig av det deltakerne sier",
+            "fr": "Imposer une intrigue prédéfinie indépendamment des propos des participants",
+            "pt": "Impor uma trama predeterminada independentemente do que dizem os participantes"
+          }
+        },
+        {
+          "id": "listen",
+          "label": {
+            "en": "Review what participants actually say and build continuity from meaningful relations",
+            "nb": "Gjennomgå det deltakerne faktisk sier og bygg kontinuitet fra meningsfulle forbindelser",
+            "fr": "Écouter les propos réels et construire la continuité à partir de relations significatives",
+            "pt": "Escutar o que os participantes dizem e construir continuidade a partir de relações significativas"
+          }
+        },
+        {
+          "id": "untouched",
+          "label": {
+            "en": "Treat recorded duration as proof that the final film required no editing",
+            "nb": "Behandle opptakenes varighet som bevis på at filmen ikke krevde klipping",
+            "fr": "Prendre la durée des prises pour preuve que le film n'a nécessité aucun montage",
+            "pt": "Tratar a duração gravada como prova de que o filme não precisou de montagem"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "listen",
+      "explanation": {
+        "en": "In the Othon Cinema interview, Costa recalls revising an unsuccessful first edit by listening more closely to the people filmed. Criterion credits Dominique Auvray, while Cineuropa and Cinéma du réel also list Patricia Saramago. Long observation is compatible with extensive editorial selection.",
+        "nb": "I Othon Cinema-intervjuet forteller Costa om å forbedre første klippeversjon ved å lytte nærmere til deltakerne. Criterion krediterer Dominique Auvray, mens Cineuropa og Cinéma du réel også oppgir Patricia Saramago. Lange observasjoner kan kreve omfattende klipping.",
+        "fr": "Dans Othon Cinema, Costa évoque une révision du premier montage en écoutant davantage les personnes filmées. Criterion crédite Dominique Auvray ; Cineuropa et Cinéma du réel citent aussi Patricia Saramago. L'observation longue implique des choix.",
+        "pt": "Na Othon Cinema, Costa recorda rever a primeira montagem escutando melhor as pessoas filmadas. Criterion credita Dominique Auvray; Cineuropa e Cinéma du réel incluem Patricia Saramago. Observação longa é compatível com seleção editorial."
+      },
+      "sourceIds": [
+        "othon",
+        "criterion",
+        "cineuropa",
+        "reel"
+      ]
+    },
+    {
+      "id": "vanda-sound",
+      "area": "sound",
+      "prompt": {
+        "en": "How should the film's documentary texture be understood in relation to sound post-production?",
+        "nb": "Hvordan bør filmens dokumentariske tekstur forstås i forhold til lydetterarbeidet?",
+        "fr": "Comment comprendre la texture documentaire du film par rapport à la postproduction sonore ?",
+        "pt": "Como compreender a textura documental do filme perante a pós-produção sonora?"
+      },
+      "options": [
+        {
+          "id": "untouched",
+          "label": {
+            "en": "Assume every sound was recorded simultaneously with the image and left untouched",
+            "nb": "Anta at all lyd ble tatt opp samtidig med bildet og aldri bearbeidet",
+            "fr": "Supposer que tout son est synchrone à l'image et n'a pas été modifié",
+            "pt": "Pressupor que todo som foi gravado com a imagem e ficou inalterado"
+          }
+        },
+        {
+          "id": "fake",
+          "label": {
+            "en": "Present reconstructed ambience as independently verified evidence of an actual event",
+            "nb": "Presenter rekonstruert atmosfære som uavhengig bekreftet bevis for en virkelig hendelse",
+            "fr": "Présenter une ambiance reconstruite comme preuve vérifiée d'un événement réel",
+            "pt": "Apresentar ambiente reconstruído como prova verificada de acontecimento real"
+          }
+        },
+        {
+          "id": "layers",
+          "label": {
+            "en": "Distinguish location recordings, later synchronization and constructed sound layers",
+            "nb": "Skill stedsopptak, senere synkronisering og konstruerte lydlag",
+            "fr": "Distinguer son direct, synchronisation ultérieure et couches sonores construites",
+            "pt": "Distinguir som de local, sincronização posterior e camadas sonoras construídas"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "layers",
+      "explanation": {
+        "en": "TCM describes dialogue re-recording and additional construction sounds used in post-production. The sound credits identify dedicated collaborators. A new nonfiction exercise should disclose reconstruction where it could affect factual interpretation.",
+        "nb": "TCM beskriver nyinnspilt dialog og ekstra anleggslyder brukt i etterarbeidet. Lydkrediteringen viser egne fagmedarbeidere. En ny dokumentarøvelse bør opplyse om rekonstruksjon når den kan påvirke faktatolkningen.",
+        "fr": "TCM décrit des reprises de dialogue et des bruits de chantier ajoutés en postproduction. Les crédits identifient des collaborateurs sonores. Un exercice documentaire doit signaler les reconstructions susceptibles de modifier l'interprétation factuelle.",
+        "pt": "TCM descreve regravação de diálogo e ruídos de obras acrescentados na pós-produção. Os créditos identificam colaboradores de som. Um exercício documental deve declarar reconstruções que possam afetar interpretação factual."
+      },
+      "sourceIds": [
+        "tcm",
+        "criterion"
+      ]
+    },
+    {
+      "id": "vanda-delivery",
+      "area": "research",
+      "prompt": {
+        "en": "How should digital acquisition and later 35mm screening records be catalogued?",
+        "nb": "Hvordan bør digitale opptak og senere 35 mm-visningsoppføringer katalogiseres?",
+        "fr": "Comment cataloguer la captation numérique et les projections ultérieures en 35 mm ?",
+        "pt": "Como catalogar captação digital e projeções posteriores em 35 mm?"
+      },
+      "options": [
+        {
+          "id": "provenance",
+          "label": {
+            "en": "Record digital video capture and 35mm exhibition separately, retaining runtime discrepancies",
+            "nb": "Registrer digitalvideoopptak og 35 mm-visning separat, med bevarte spilletidsavvik",
+            "fr": "Enregistrer séparément captation vidéo numérique et projection 35 mm en conservant les écarts de durée",
+            "pt": "Registar separadamente captação de vídeo digital e exibição em 35 mm, preservando divergências de duração"
+          }
+        },
+        {
+          "id": "film",
+          "label": {
+            "en": "Treat a 35mm exhibition print as proof that original acquisition was on film",
+            "nb": "Behandle en 35 mm-visningskopi som bevis på at originalopptaket var på film",
+            "fr": "Traiter une copie 35 mm comme preuve d'une captation originale sur pellicule",
+            "pt": "Tratar uma cópia de exibição em 35 mm como prova de captação original em película"
+          }
+        },
+        {
+          "id": "duplicate",
+          "label": {
+            "en": "Create a separate film identity for every catalogue duration",
+            "nb": "Opprett en separat filmidentitet for hver oppgitt katalogspilletid",
+            "fr": "Créer une identité distincte pour chaque durée de catalogue",
+            "pt": "Criar identidade distinta para cada duração de catálogo"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "provenance",
+      "explanation": {
+        "en": "Film at Lincoln Center specifies digital acquisition printed onto 35mm for screening. Criterion lists 171 minutes, Film at Lincoln Center and Cinéma du réel 170, IFFR 180. Keep these institutional records separate rather than inventing a version explanation.",
+        "nb": "Film at Lincoln Center beskriver digitale opptak overført til 35 mm-visningskopi. Criterion oppgir 171 minutter, Film at Lincoln Center og Cinéma du réel 170, IFFR 180. Behold oppføringene uten å dikte opp en versjonsforklaring.",
+        "fr": "Film at Lincoln Center précise une captation numérique tirée en 35 mm. Criterion indique 171 minutes, Film at Lincoln Center et Cinéma du réel 170, IFFR 180. Conserver les notices sans inventer d'explication.",
+        "pt": "Film at Lincoln Center indica captação digital transferida para 35 mm. Criterion indica 171 minutos, Film at Lincoln Center e Cinéma du réel 170, IFFR 180. Preservar registos sem inventar explicação."
+      },
+      "sourceIds": [
+        "flc",
+        "criterion",
+        "reel",
+        "iffr"
+      ]
+    }
+  ],
+  "review": {
+    "runtimeAdmission": false,
+    "bookLinkApproved": false,
+    "studyPreview": true,
+    "required": [
+      "Complete exact catalogue overlap including original Portuguese title.",
+      "Review conflicting runtime, footage volume, country and credits independently.",
+      "Assess whether finishing finance and distribution evidence closes an eligible gap beyond existing cases; no self-distribution or approved gap asserted."
+    ]
+  }
+}
