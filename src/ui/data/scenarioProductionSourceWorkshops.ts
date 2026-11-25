@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Thirteen pre-existing Production Cases receive evidence-backed craft decisions.
+ * Fourteen pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -1079,6 +1079,203 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
           "iffr",
           "cannes",
           "nziff"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_atanarjuat_the_fast_runner_2001",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore Inuit-led collaboration, oral-story adaptation and digital production using the film's existing reviewed source dossier, with respect for community authority.",
+      "nb": "Utforsk inuittledet samarbeid, adaptasjon av muntlig fortellertradisjon og digital produksjon med filmens eksisterende kildegrunnlag og respekt for lokalsamfunnets myndighet.",
+      "fr": "Explorer collaboration dirigée par les Inuits, adaptation orale et production numérique à partir du dossier existant, dans le respect de l'autorité communautaire.",
+      "pt": "Explorar colaboração liderada pelos Inuit, adaptação oral e produção digital com o dossier existente, respeitando autoridade comunitária."
+    },
+    "sources": [
+      {
+        "id": "isuma-press",
+        "title": "Atanarjuat (The Fast Runner) Press Kit",
+        "publisher": "Igloolik Isuma Productions",
+        "url": "https://www.isuma.tv/sites/default/themes/atanarjuat/files/Atan_presskit.pdf"
+      },
+      {
+        "id": "isuma-facts",
+        "title": "Facts at a glance — Atanarjuat",
+        "publisher": "IsumaTV / Igloolik Isuma Productions",
+        "url": "https://www.isuma.tv/en/atanarjuat/facts-glance"
+      },
+      {
+        "id": "nfb",
+        "title": "Atanarjuat the Fast Runner",
+        "publisher": "National Film Board of Canada",
+        "url": "https://www.nfb.ca/film/atanarjuat_the_fast_runner_en/"
+      },
+      {
+        "id": "angilirq",
+        "title": "Interview with Paul Apak Angilirq",
+        "publisher": "IsumaTV / Igloolik Isuma Productions",
+        "url": "https://www.isuma.tv/node/5555/"
+      },
+      {
+        "id": "cannes",
+        "title": "Atanarjuat The Fast Runner",
+        "publisher": "Festival de Cannes",
+        "url": "https://cinemadedemain.festival-cannes.com/en/f/atanarjuat-the-fast-runner/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "atanarjuat-oral",
+        "area": "research",
+        "prompt": {
+          "en": "How can a screenplay adaptation respect the community knowledge behind an oral narrative?",
+          "nb": "Hvordan kan en manusadaptasjon respektere lokalsamfunnets kunnskap bak en muntlig fortelling?",
+          "fr": "Comment une adaptation peut-elle respecter les savoirs communautaires d'un récit oral ?",
+          "pt": "Como pode uma adaptação respeitar os saberes comunitários de uma narrativa oral?"
+        },
+        "options": [
+          {
+            "id": "universal",
+            "label": {
+              "en": "Treat one published version as the definitive account and omit the other narrators",
+              "nb": "Behandle én publisert versjon som den endelige fortellingen og utelat de andre fortellerne",
+              "fr": "Traiter une version publiée comme définitive et écarter les autres narrateurs",
+              "pt": "Tratar uma versão publicada como definitiva e excluir os outros narradores"
+            }
+          },
+          {
+            "id": "collaborate",
+            "label": {
+              "en": "Consult authorized storytellers, compare accounts, and review the adapted script together",
+              "nb": "Rådfør deg med autoriserte fortellere, sammenlign versjoner og gjennomgå det adapterte manuset sammen",
+              "fr": "Consulter les narrateurs autorisés, comparer les récits et relire ensemble le scénario adapté",
+              "pt": "Consultar narradores autorizados, comparar relatos e rever em conjunto o argumento adaptado"
+            }
+          },
+          {
+            "id": "documentary",
+            "label": {
+              "en": "Present the dramatized screenplay as an exact documentary record of historical events",
+              "nb": "Presenter det dramatiserte manuset som et eksakt dokumentarisk referat av historiske hendelser",
+              "fr": "Présenter le scénario dramatisé comme un relevé documentaire exact des événements historiques",
+              "pt": "Apresentar o argumento dramatizado como um registo documental exato dos acontecimentos históricos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "collaborate",
+        "explanation": {
+          "en": "The existing Isuma production dossier records Angilirq's interviews with eight elders, collaborative Inuktitut screenwriting and elder review. The NFB distinguishes the result from documentary. New exercises should use an original fictional story or material explicitly authorized by its knowledge holders; cultural knowledge is not automatically free to reproduce.",
+          "nb": "Isumas eksisterende produksjonsdokumentasjon beskriver Angilirqs intervjuer med åtte eldre, samarbeid om manus på inuktitut og gjennomgang med eldre. NFB skiller resultatet fra dokumentarfilm. Nye øvelser bør bruke en egen fiktiv fortelling eller uttrykkelig godkjent materiale; kulturell kunnskap er ikke automatisk fritt tilgjengelig for gjengivelse.",
+          "fr": "Le dossier Isuma décrit les entretiens d'Angilirq avec huit aînés, l'écriture collective en inuktitut et leur relecture. L'ONF distingue le résultat du documentaire. Utiliser une fiction originale ou des récits explicitement autorisés ; les savoirs culturels ne sont pas librement reproductibles par défaut.",
+          "pt": "O dossier Isuma descreve entrevistas de Angilirq com oito anciãos, escrita coletiva em inuktitut e revisão pelos anciãos. O NFB distingue o resultado do documentário. Usar ficção original ou material expressamente autorizado; saberes culturais não são automaticamente livres para reprodução."
+        },
+        "sourceIds": [
+          "isuma-press",
+          "angilirq",
+          "nfb"
+        ]
+      },
+      {
+        "id": "atanarjuat-crew",
+        "area": "research",
+        "prompt": {
+          "en": "Which production plan best reflects the documented Inuit-led collaboration and local training?",
+          "nb": "Hvilken produksjonsplan gjenspeiler best det dokumenterte inuittledede samarbeidet og den lokale opplæringen?",
+          "fr": "Quel plan reflète le mieux la collaboration dirigée par les Inuits et la formation locale documentées ?",
+          "pt": "Que plano reflete melhor a colaboração liderada pelos Inuit e a formação local documentadas?"
+        },
+        "options": [
+          {
+            "id": "external",
+            "label": {
+              "en": "Give visiting specialists all creative authority and assign local participants only background roles",
+              "nb": "Gi tilreisende spesialister all kreativ myndighet og tildel lokale deltakere bare bakgrunnsroller",
+              "fr": "Donner toute l'autorité créative aux spécialistes visiteurs et reléguer les participants locaux à l'arrière-plan",
+              "pt": "Dar toda a autoridade criativa a especialistas visitantes e relegar participantes locais a papéis secundários"
+            }
+          },
+          {
+            "id": "fixed",
+            "label": {
+              "en": "Copy traditional objects from photographs without consulting their makers or community experts",
+              "nb": "Kopier tradisjonelle gjenstander fra fotografier uten å rådføre deg med skapere eller lokalsamfunnets fagpersoner",
+              "fr": "Copier des objets traditionnels depuis des photos sans consulter leurs créateurs ni experts communautaires",
+              "pt": "Copiar objetos tradicionais de fotografias sem consultar criadores ou especialistas comunitários"
+            }
+          },
+          {
+            "id": "local",
+            "label": {
+              "en": "Plan local creative leadership, agreed training, credited craft expertise and safe location access",
+              "nb": "Planlegg lokal kreativ ledelse, avtalt opplæring, kreditert håndverkskompetanse og trygg tilgang til opptakssteder",
+              "fr": "Prévoir direction créative locale, formation convenue, savoir-faire crédité et accès sûr aux lieux",
+              "pt": "Planear liderança criativa local, formação acordada, saber artesanal creditado e acesso seguro aos locais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "local",
+        "explanation": {
+          "en": "Isuma's press kit reports an all-Inuit cast, an approximately 90 percent Inuit technical crew, local trainees and collaboration with elders and artists on costumes, props and sets. These are production-specific accounts, not universal staffing quotas. A learning production must agree on authority, consent, compensation and appropriate permissions rather than reproduce culturally specific objects without authorization.",
+          "nb": "Isumas pressepakke oppgir et utelukkende inuittisk skuespillerensemble, omtrent 90 prosent inuittisk teknisk team, lokal opplæring og samarbeid med eldre og kunstnere om kostymer, rekvisitter og scenografi. Dette er filmspesifikke opplysninger, ikke universelle bemanningskvoter. Avtal myndighet, samtykke, honorar og tillatelser fremfor å gjenskape kulturspesifikke gjenstander uten godkjenning.",
+          "fr": "Le dossier Isuma indique une distribution entièrement inuite, une équipe technique inuite à environ 90 %, des stagiaires locaux et la collaboration d'aînés et d'artistes aux costumes et décors. Ce ne sont pas des quotas universels. Un exercice doit convenir de l'autorité, du consentement, de la rémunération et des autorisations.",
+          "pt": "O dossier Isuma indica elenco inteiramente Inuit, equipa técnica aproximadamente 90% Inuit, formação local e colaboração de anciãos e artistas em figurinos e cenários. Não são quotas universais. Acordar autoridade, consentimento, remuneração e autorizações numa nova produção."
+        },
+        "sourceIds": [
+          "isuma-press",
+          "isuma-facts",
+          "nfb"
+        ]
+      },
+      {
+        "id": "atanarjuat-format",
+        "area": "camera",
+        "prompt": {
+          "en": "How should the film's digital acquisition and theatrical transfer be recorded in a production study?",
+          "nb": "Hvordan bør filmens digitale opptak og kinooverføring dokumenteres i en produksjonsstudie?",
+          "fr": "Comment documenter la captation numérique et le transfert cinéma dans une étude de production ?",
+          "pt": "Como documentar a captação digital e a transferência para cinema num estudo de produção?"
+        },
+        "options": [
+          {
+            "id": "separate",
+            "label": {
+              "en": "Record Digital Betacam acquisition and the later 35mm transfer as distinct stages",
+              "nb": "Registrer Digital Betacam-opptak og senere overføring til 35 mm som ulike faser",
+              "fr": "Enregistrer la captation Digital Betacam et le transfert ultérieur en 35 mm comme étapes distinctes",
+              "pt": "Registar captação Digital Betacam e transferência posterior para 35 mm como etapas distintas"
+            }
+          },
+          {
+            "id": "film",
+            "label": {
+              "en": "Assume a 35mm exhibition print proves the scenes were originally shot on film",
+              "nb": "Anta at en 35 mm-visningskopi beviser at scenene opprinnelig ble filmet på filmrull",
+              "fr": "Supposer qu'une copie 35 mm prouve une captation originale sur pellicule",
+              "pt": "Pressupor que uma cópia de 35 mm prova captação original em película"
+            }
+          },
+          {
+            "id": "speculate",
+            "label": {
+              "en": "Invent the exact camera body, lens and transfer settings from the finished image",
+              "nb": "Finn på eksakt kamerahus, objektiv og overføringsinnstillinger fra det ferdige bildet",
+              "fr": "Inventer le boîtier, l'objectif et les réglages de transfert à partir de l'image finale",
+              "pt": "Inventar corpo de câmara, objetiva e definições de transferência pela imagem final"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "separate",
+        "explanation": {
+          "en": "The existing Isuma production dossier documents 16:9 Digital Betacam acquisition, and both Isuma and the NFB credit Digital Film Group for digital-to-film transfer. Cannes records the completed 172-minute feature. These records do not establish the exact camera body, lens, sound hardware or transfer settings. An exercise can plan a modern digital workflow without imitating hazardous location conditions.",
+          "nb": "Isumas eksisterende produksjonsdokumentasjon oppgir Digital Betacam-opptak i 16:9, og både Isuma og NFB krediterer Digital Film Group for digital-til-film-overføring. Cannes oppgir en ferdig film på 172 minutter. Kildene fastslår ikke eksakt kamerahus, objektiv, lydutstyr eller overføringsinnstillinger. En øvelse kan planlegge et moderne digitalt opptak uten å etterligne farlige forhold på opptaksstedet.",
+          "fr": "Le dossier Isuma indique une captation Digital Betacam 16:9 ; Isuma et l'ONF créditent Digital Film Group pour le transfert sur pellicule. Cannes indique 172 minutes. Ces notices n'établissent ni boîtier, ni objectif, ni matériel sonore précis. Un exercice peut proposer une captation moderne sans reproduire des conditions dangereuses.",
+          "pt": "O dossier Isuma indica captação Digital Betacam 16:9; Isuma e NFB creditam Digital Film Group pela transferência para película. Cannes indica 172 minutos. Os registos não estabelecem câmara, objetiva, áudio ou parâmetros exatos. Um exercício pode planear captação moderna sem reproduzir condições perigosas."
+        },
+        "sourceIds": [
+          "isuma-press",
+          "nfb",
+          "cannes"
         ]
       }
     ]
