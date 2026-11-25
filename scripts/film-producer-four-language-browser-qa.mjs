@@ -295,41 +295,18 @@ async function runCase(browser, language, scenario) {
     }
     checks.push(`${label}: director`);
 
-    // The Idiots is a verified history case, but its active production brief is
-    // still seed_fallback; the existing Producer catalogue deliberately omits
-    // all non-production_case briefs. Do not invent a game mission merely to
-    // satisfy this browser smoke: verify the actually exposed Atlas/Director
-    // routes and source-backed presentation, recording this limited scope.
+    // The Idiots previously had only seed-fallback gameplay. The verified
+    // history bridge intentionally opens its production case without changing
+    // the original seed or source record. Test the new path rather than assert
+    // that a verified film must remain excluded.
     if (id === "scenario_the_idiots_1998") {
-      assert.equal(brief.briefType, "seed_fallback", `${label}: original seeded gameplay must remain unchanged`);
-      assert.equal(evidence.status, "verified", `${label}: source evidence remains verified`);
-      await page.goto(new URL("#/producer", SITE).href);
-      await page.locator(".producer-mode-card--recommended button").click();
-      await page.locator(".scenario-search input").fill(title);
-      assert.equal(await page.locator(".scenario-card").filter({
-        has: page.locator("h3").getByText(title, { exact: true }),
-      }).count(), 0, `${label}: seed-fallback is intentionally excluded from playable case cards`);
-      for (const choice of choices) {
-        const complete = historyCopy.presentVerifiedFilmHistoryChoice(language, id, choice.label, choice.quality);
-        const short = historyCopy.presentVerifiedFilmHistoryChoiceSummary(language, id, choice.label, choice.quality);
-        assert.ok(complete.trim() && short?.trim(), `${label}: all historical source choices have presentations`);
-        if (language !== "en") assert.notEqual(complete, choice.label, `${label}: translated source-backed choice`);
-      }
-      // Use a fresh tab to exercise the canonical deep link at mobile width.
-      // Navigation from the Producer nested flow is a different state transition.
-      const mobile = await context.newPage();
-      mobile.on("pageerror", (error) => errors.push(error.message));
-      await mobile.setViewportSize({ width: 360, height: 780 });
-      await mobile.goto(new URL(`#/atlas/film/${slug}`, SITE).href);
-      const mobileLogline = mobile.locator(".film-analysis-logline");
-      await mobileLogline.waitFor({ state: "visible" });
-      await textEquals(mobileLogline, caseCopy.presentFilmCaseContent(language, brief.briefType, id, brief.logline), `${label}: 360px translated Atlas premise`);
-      await mobile.screenshot({ path: resolve(REPORT_DIR, `${label}-seeded-atlas-mobile.png`), fullPage: false });
-      await mobile.close();
-      checks.push(`${label}: seeded-preview`);
-      assert.deepEqual(errors, [], `${label}: uncaught browser errors`);
-      console.log(`PASS ${label} · Atlas, Director, seeded preview and verified historical data; Producer mission not yet authored`);
-      return;
+      assert.equal(briefData.resolveRegisteredScenarioProductionBrief(scenario), undefined, `${label}: no falsely registered handwritten brief`);
+      const seed = briefData.getFallbackScenarioProductionBrief(scenario);
+      assert.equal(seed.briefType, "seed_fallback", `${label}: original fallback remains available`);
+      assert.equal(seed.logline, scenario.production_challenge, `${label}: original seed premise remains intact`);
+      assert.equal(brief.briefType, "production_case", `${label}: verified history mapping must be playable`);
+      assert.equal(brief.logline, history.moment, `${label}: mapped premise uses the film's own history`);
+      assert.equal(evidence.status, "verified", `${label}: original source evidence remains verified`);
     }
 
     // Actual user path: Producer gateway -> catalogue search -> case card -> Film Study.
@@ -410,6 +387,28 @@ async function runCase(browser, language, scenario) {
       await textEquals(row.locator("a"), source.title, `${label}: unchanged source title`);
       await textEquals(row.locator("p"), sourceCopy.presentFilmStudySourceText(language, id, source.note), `${label}: translated source note ${index}`);
     }
+    // Prove the newly mapped case has real, selectable mission cards. The
+    // existing historical choice, source and localization checks above still run.
+    if (id === "scenario_the_idiots_1998") {
+      const missions = briefData.createProductionCaseMissions(brief);
+      assert.equal(missions.length, 6, `${label}: all mapped production phases`);
+      const flow = page.locator(".scenario-mission-flow");
+      await flow.waitFor({ state: "visible" });
+      assert.equal(await flow.locator(".scenario-mission-card").count(), 6, `${label}: six mission cards rendered`);
+      const first = missions[0];
+      const card = flow.locator(`[data-mission-id="${first.id}"]`);
+      if (await card.locator(".scenario-mission-choice-grid").count() === 0) await card.locator("button").click();
+      const buttons = card.locator(".scenario-mission-choice-grid button");
+      assert.equal(await buttons.count(), first.choices.length, `${label}: rendered production choices`);
+      const matchIndex = first.choices.findIndex(choice => choice.quality === "match");
+      assert.ok(matchIndex >= 0, `${label}: source-mapped correct choice`);
+      await buttons.nth(matchIndex).click();
+      await card.locator(".scenario-choice-feedback--match").waitFor({ state: "visible" });
+      assert.equal(await buttons.nth(matchIndex).getAttribute("aria-pressed"), "true", `${label}: choice selected`);
+      await card.locator(".scenario-mission-card-actions button").first().click();
+      await flow.locator(`[data-mission-id="${first.id}"].scenario-mission-card--complete`).waitFor({ state: "visible" });
+      checks.push(`${label}: mapped-production-phase-completed`);
+    }
     checks.push(`${label}: sources`);
 
     // Human visual review is separate: screenshots are evidence, not an automatic sign-off.
@@ -459,13 +458,13 @@ try {
   await browser?.close();
 }
 const report = {
-  scope: "eleven playable case films (44 complete Producer journeys) and one seeded case (4 Atlas/Director previews), four interface languages; nonvisual Chromium smoke",
+  scope: "twelve playable case films (48 complete Producer journeys), including the verified history-mapped The Idiots; four interface languages; nonvisual Chromium smoke",
   locales: LANGUAGES,
   films: TARGET_IDS,
   expectedJourneys: 48,
   fullProducerJourneys: checks.filter((entry) => entry.endsWith(": sources")).length,
-  seededPreviewJourneys: checks.filter((entry) => entry.endsWith(": seeded-preview")).length,
-  completedJourneys: checks.filter((entry) => entry.endsWith(": sources") || entry.endsWith(": seeded-preview")).length,
+  mappedProductionPhaseJourneys: checks.filter((entry) => entry.endsWith(": mapped-production-phase-completed")).length,
+  completedJourneys: checks.filter((entry) => entry.endsWith(": sources")).length,
   checks,
   failures,
   limitations: [
@@ -476,5 +475,5 @@ const report = {
   ],
 };
 await writeFile(resolve(REPORT_DIR, "summary.json"), JSON.stringify(report, null, 2) + "\n", "utf8");
-console.log(`Browser QA: ${report.completedJourneys}/48 journeys (${report.fullProducerJourneys} full Producer + ${report.seededPreviewJourneys} seeded Atlas/Director), ${failures.length} failures`);
-if (failures.length || report.completedJourneys !== 48) process.exitCode = 1;
+console.log(`Browser QA: ${report.completedJourneys}/48 journeys (${report.fullProducerJourneys} full Producer; ${report.mappedProductionPhaseJourneys} mapped mission completions), ${failures.length} failures`);
+if (failures.length || report.completedJourneys !== 48 || report.mappedProductionPhaseJourneys !== 4) process.exitCode = 1;
