@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Targeted browser interaction QA for all forty-eight sourced film-workshop decisions.
+ * Targeted browser interaction QA for all fifty-four sourced film-workshop decisions.
  * No new workflow job; not a substitute for physical iPad or editorial review.
  */
 import assert from "node:assert/strict";
@@ -39,8 +39,8 @@ const cases = data.SOURCE_BACKED_CASE_WORKSHOPS.map(workshop => {
   assert.equal(briefs.resolveScenarioProductionBrief(scenario).briefType, "production_case", "Missing playable brief: " + workshop.scenarioId);
   return { workshop, scenario };
 });
-assert.equal(cases.length, 16);
-assert.equal(cases.reduce((n, c) => n + c.workshop.questions.length, 0), 48);
+assert.equal(cases.length, 18);
+assert.equal(cases.reduce((n, c) => n + c.workshop.questions.length, 0), 54);
 
 async function check(browser, language, item) {
   const context = await browser.newContext({
