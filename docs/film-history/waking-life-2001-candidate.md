@@ -2,13 +2,15 @@
 
 Chapter 27 · P2 · Not admitted to the canonical case catalogue.
 
-Richard Linklater developed Waking Life around an encounter between philosophical dialogue and a mutable visual world. His interview for University of Illinois Press describes recognizing the expressive potential of the animation work developed by Bob Sabiston and Tommy Pallotta. Rather than treating digital imagery as a way to erase the artist's hand, the film uses changes in line, shape and surface as expressive decisions. ([oxford](https://academic.oup.com/illinois-scholarship-online/book/22643/chapter-abstract/183010759), [linklater](https://nitrateonline.com/2001/fwaking))
+This correction uses the existing chapter 27 article and bibliography as provisional context. No external source pages were independently retrieved in this update. Earlier unconfirmed title-specific source claims, numeric labor estimates, release metadata and exact software details have been removed rather than treated as verified evidence. The following practice instructions are proposed learning methods, not reconstructions of original productions.
 
-The workflow began with digitally filmed performances and editorial selection before animation. Animation World Network's contemporary report identifies interpolated rotoscoping as the method. Computer Graphics World explains the artists' manual drawing of shapes on selected frames and the use of interpolation to assist motion between key drawings. The distinction between reference footage and animation labor is essential: software does not independently interpret the performance. ([awn](https://www.awn.com/news/linklaters-animated-waking-life-finds-home-fox-searchlight), [cgw](https://www.cgw.com/Publications/CGW/2002/Volume-25-Issue-2-Feb-2002-/Life-Lines.aspx))
+Chapter 27 treats Richard Linklater's Waking Life as an example of recorded performances transformed through rotoscoping. Philosophical conversations take place in an animated world whose shifting lines and surfaces foreground uncertainty of perception.
 
-The production gave animators room to interpret individual scenes and characters. Computer Graphics World describes scene-based experimentation and changing visual approaches to the protagonist. The production notes identify a team exceeding thirty artists and substantial labor per animated minute. A useful present-day exercise compares brief tests before committing to a larger schedule, rather than treating one historical estimate as a guaranteed rate. ([cgw](https://www.cgw.com/Publications/CGW/2002/Volume-25-Issue-2-Feb-2002-/Life-Lines.aspx), [notes](https://cinema.com/articles/814/waking-life-production-notes.phtml))
+The chapter distinguishes the actors' recorded movement and speech from the animators' interpretive drawing. Computer-assisted tools are part of the workflow, not a substitute for artistic decisions. Exact capture hardware, editing order and software features still need title-specific source review.
 
-The 2001 Sundance debut was followed by Fox Searchlight's acquisition of worldwide distribution rights, as reported by Animation World Network. This makes a clear distinction between the film's independent creative development and its later commercial distribution. The later production of A Scanner Darkly required a different balance of visual consistency and labor, according to the Los Angeles Times. No new canonical identity or industry-coverage gap is approved by this study. ([awn](https://www.awn.com/news/linklaters-animated-waking-life-finds-home-fox-searchlight), [comparison](https://www.latimes.com/archives/la-xpm-2006-jul-07-et-rotoscope7-story.html))
+For a new exercise, record and edit an original short exchange, draw several key poses and test alternatives for intervening movement. These are proposed learning methods, not a reconstruction of the film's proprietary animation process or a historical productivity estimate.
+
+Compare two expressive treatments of the same performance. A Scanner Darkly is a later comparative example of a related technique serving another narrative purpose. Keep rights, distribution, labor and version metadata open to independent research; this study does not admit a new canonical case.
 
 ## Six-phase practice
 
@@ -19,4 +21,10 @@ The 2001 Sundance debut was followed by Fox Searchlight's acquisition of worldwi
 - **Animation labor and schedule:** Time a short animation test and estimate staffing and review for a longer fictional sequence.
 - **Credits, rights and distribution:** Create a credit and rights ledger for your original footage, drawings and delivery files.
 
-The linked source pages were retrieved during this update. Independent editorial approval remains pending.
+## Existing chapter bibliography (research leads)
+
+- [Where to begin with Richard Linklater](https://www.bfi.org.uk/features/where-begin-richard-linklater) — British Film Institute
+- [Waking Life (2001)](https://www.bfi.org.uk/film/2c5f5eea-19cd-5e55-891c-ce8680edfee2/waking-life) — British Film Institute
+- [A brief history of indie directors working in animation](https://www.bfi.org.uk/features/wes-anderson-david-lynch-indie-animation) — British Film Institute
+
+Independent title-specific source review and editorial approval remain pending. No change to catalogue admission or canonical progress.

@@ -16,81 +16,57 @@
       "Richard Linklater"
     ],
     "country": "United States",
-    "runtimeNote": "2001 Sundance debut and subsequent Fox Searchlight acquisition are documented by Animation World Network. Exact release-version running time and technical mastering metadata are not established by this dossier."
+    "runtimeNote": "Running time, release versions and distribution contracts remain to be independently checked against title-specific records."
   },
   "sources": [
     {
-      "id": "linklater",
-      "title": "Waking Life — Interview with Richard Linklater",
-      "publisher": "Nitrate Online",
-      "url": "https://nitrateonline.com/2001/fwaking"
+      "id": "ch27_linklater",
+      "title": "Where to begin with Richard Linklater",
+      "publisher": "British Film Institute",
+      "url": "https://www.bfi.org.uk/features/where-begin-richard-linklater"
     },
     {
-      "id": "cgw",
-      "title": "Life Lines",
-      "publisher": "Computer Graphics World",
-      "url": "https://www.cgw.com/Publications/CGW/2002/Volume-25-Issue-2-Feb-2002-/Life-Lines.aspx"
+      "id": "ch27_waking",
+      "title": "Waking Life (2001)",
+      "publisher": "British Film Institute",
+      "url": "https://www.bfi.org.uk/film/2c5f5eea-19cd-5e55-891c-ce8680edfee2/waking-life"
     },
     {
-      "id": "awn",
-      "title": "Linklater's Animated Waking Life Finds Home At Fox Searchlight",
-      "publisher": "Animation World Network",
-      "url": "https://www.awn.com/news/linklaters-animated-waking-life-finds-home-fox-searchlight"
-    },
-    {
-      "id": "wired",
-      "title": "Animating a Waking Life",
-      "publisher": "WIRED",
-      "url": "https://www.wired.com/2001/10/animating-a-waking-life/"
-    },
-    {
-      "id": "notes",
-      "title": "Waking Life — Production Notes",
-      "publisher": "Cinema.com",
-      "url": "https://cinema.com/articles/814/waking-life-production-notes.phtml"
-    },
-    {
-      "id": "oxford",
-      "title": "Interview with Richard Linklater",
-      "publisher": "University of Illinois Press / Oxford Academic",
-      "url": "https://academic.oup.com/illinois-scholarship-online/book/22643/chapter-abstract/183010759"
-    },
-    {
-      "id": "comparison",
-      "title": "A long way from Disney",
-      "publisher": "Los Angeles Times",
-      "url": "https://www.latimes.com/archives/la-xpm-2006-jul-07-et-rotoscope7-story.html"
+      "id": "ch27_indieanimation",
+      "title": "A brief history of indie directors working in animation",
+      "publisher": "British Film Institute",
+      "url": "https://www.bfi.org.uk/features/wes-anderson-david-lynch-indie-animation"
     }
   ],
   "article": {
     "title": "Waking Life (2001): filmed performance reinterpreted through drawing",
     "paragraphs": [
       {
-        "text": "Richard Linklater developed Waking Life around an encounter between philosophical dialogue and a mutable visual world. His interview for University of Illinois Press describes recognizing the expressive potential of the animation work developed by Bob Sabiston and Tommy Pallotta. Rather than treating digital imagery as a way to erase the artist's hand, the film uses changes in line, shape and surface as expressive decisions.",
+        "text": "Chapter 27 treats Richard Linklater's Waking Life as an example of recorded performances transformed through rotoscoping. Philosophical conversations take place in an animated world whose shifting lines and surfaces foreground uncertainty of perception.",
         "sourceIds": [
-          "oxford",
-          "linklater"
+          "ch27_linklater",
+          "ch27_waking"
         ]
       },
       {
-        "text": "The workflow began with digitally filmed performances and editorial selection before animation. Animation World Network's contemporary report identifies interpolated rotoscoping as the method. Computer Graphics World explains the artists' manual drawing of shapes on selected frames and the use of interpolation to assist motion between key drawings. The distinction between reference footage and animation labor is essential: software does not independently interpret the performance.",
+        "text": "The chapter distinguishes the actors' recorded movement and speech from the animators' interpretive drawing. Computer-assisted tools are part of the workflow, not a substitute for artistic decisions. Exact capture hardware, editing order and software features still need title-specific source review.",
         "sourceIds": [
-          "awn",
-          "cgw"
+          "ch27_linklater",
+          "ch27_indieanimation"
         ]
       },
       {
-        "text": "The production gave animators room to interpret individual scenes and characters. Computer Graphics World describes scene-based experimentation and changing visual approaches to the protagonist. The production notes identify a team exceeding thirty artists and substantial labor per animated minute. A useful present-day exercise compares brief tests before committing to a larger schedule, rather than treating one historical estimate as a guaranteed rate.",
+        "text": "For a new exercise, record and edit an original short exchange, draw several key poses and test alternatives for intervening movement. These are proposed learning methods, not a reconstruction of the film's proprietary animation process or a historical productivity estimate.",
         "sourceIds": [
-          "cgw",
-          "notes"
+          "ch27_linklater",
+          "ch27_indieanimation"
         ]
       },
       {
-        "text": "The 2001 Sundance debut was followed by Fox Searchlight's acquisition of worldwide distribution rights, as reported by Animation World Network. This makes a clear distinction between the film's independent creative development and its later commercial distribution. The later production of A Scanner Darkly required a different balance of visual consistency and labor, according to the Los Angeles Times. No new canonical identity or industry-coverage gap is approved by this study.",
+        "text": "Compare two expressive treatments of the same performance. A Scanner Darkly is a later comparative example of a related technique serving another narrative purpose. Keep rights, distribution, labor and version metadata open to independent research; this study does not admit a new canonical case.",
         "sourceIds": [
-          "awn",
-          "comparison"
+          "ch27_linklater",
+          "ch27_indieanimation"
         ]
       }
     ]
@@ -249,24 +225,24 @@
       ],
       "bestSupportedOptionId": "express",
       "explanation": {
-        "en": "Linklater describes finding an expressive form for a long-developing film idea through Sabiston's animation. The visual treatment is an artistic decision, not simply a technical conversion.",
-        "nb": "Linklater beskriver hvordan Sabistons animasjon ga en lenge utviklet filmidé et uttrykk. Bildebehandlingen er et kunstnerisk valg, ikke bare en teknisk konvertering.",
-        "fr": "Linklater décrit comment l'animation de Sabiston a donné une forme expressive à une idée ancienne. Le traitement visuel est un choix artistique, non une simple conversion.",
-        "pt": "Linklater descreve como a animação de Sabiston deu forma expressiva a uma ideia antiga. O tratamento visual é escolha artística, não mera conversão."
+        "en": "The chapter describes a changing animated surface that makes perception unstable. In this exercise the artist chooses a visual treatment for the dialogue; the software is not an automatic interpretation.",
+        "nb": "Kapitlet beskriver et skiftende animert uttrykk som gjør persepsjonen ustabil. I øvelsen velger kunstneren et visuelt uttrykk til dialogen; programvaren tolker den ikke automatisk.",
+        "fr": "Le chapitre décrit une surface animée changeante qui trouble la perception. Dans l'exercice, l'artiste choisit un traitement visuel du dialogue ; le logiciel ne l'interprète pas automatiquement.",
+        "pt": "O capítulo descreve uma superfície animada variável que desestabiliza a perceção. No exercício, o artista escolhe o tratamento visual do diálogo; o software não o interpreta automaticamente."
       },
       "sourceIds": [
-        "oxford",
-        "linklater"
+        "ch27_linklater",
+        "ch27_waking"
       ]
     },
     {
       "id": "waking-capture",
       "area": "camera",
       "prompt": {
-        "en": "Which sequence of production stages matches Waking Life's documented workflow?",
-        "nb": "Hvilken rekkefølge av produksjonsfaser samsvarer med Waking Lifes dokumenterte arbeidsflyt?",
-        "fr": "Quel ordre des étapes correspond au processus documenté de Waking Life ?",
-        "pt": "Que ordem de etapas corresponde ao processo documentado de Waking Life?"
+        "en": "Which sequence is useful for a short rotoscoping exercise based on recorded performance?",
+        "nb": "Hvilken rekkefølge passer til en kort rotoskopiøvelse basert på filmet fremføring?",
+        "fr": "Quel enchaînement convient à un exercice de rotoscopie fondé sur une performance filmée ?",
+        "pt": "Que sequência convém a um exercício de rotoscopia baseado numa atuação filmada?"
       },
       "options": [
         {
@@ -299,24 +275,24 @@
       ],
       "bestSupportedOptionId": "edit-first",
       "explanation": {
-        "en": "Animation World Network reported that digital live-action editing preceded the animation. Reference timing and performance therefore give the artists a concrete basis for interpretation; exact camera models are not inferred.",
-        "nb": "Animation World Network rapporterte at de digitale skuespilleropptakene ble klippet før animasjonen. Timing og prestasjon gir tegnerne et konkret utgangspunkt, uten antakelser om eksakte kameramodeller.",
-        "fr": "Animation World Network rapporte que le montage des prises numériques précède l'animation. Le rythme et le jeu donnent une base concrète aux artistes, sans déduire de modèle de caméra précis.",
-        "pt": "Animation World Network relata que a montagem da ação digital precedeu a animação. Ritmo e interpretação dão uma base concreta aos artistas, sem deduzir modelos de câmara."
+        "en": "Chapter 27 distinguishes recorded performance and its animated interpretation. For this exercise, select the reference edit before drawing so that timing is clear. The original film's exact editing order remains to be checked.",
+        "nb": "Kapittel 27 skiller filmet fremføring fra animert tolkning. Velg referanseklippet før tegning i denne øvelsen, slik at timingen er tydelig. Filmens nøyaktige historiske klipperekkefølge må undersøkes videre.",
+        "fr": "Le chapitre 27 distingue performance filmée et interprétation animée. Pour cet exercice, fixez le montage de référence avant le dessin. L'ordre historique exact reste à vérifier.",
+        "pt": "O capítulo 27 distingue atuação filmada e interpretação animada. Neste exercício, escolha a montagem de referência antes de desenhar. A ordem histórica exata continua por verificar."
       },
       "sourceIds": [
-        "awn",
-        "wired"
+        "ch27_linklater",
+        "ch27_indieanimation"
       ]
     },
     {
       "id": "waking-draw",
       "area": "animation",
       "prompt": {
-        "en": "What work did Rotoshop automate, and what still depended on the animator?",
-        "nb": "Hvilket arbeid automatiserte Rotoshop, og hva var fortsatt avhengig av animatøren?",
-        "fr": "Quel travail Rotoshop automatise-t-il et que reste-t-il à l'animateur ?",
-        "pt": "Que trabalho automatiza Rotoshop e o que depende do animador?"
+        "en": "How can an artist use key drawings and interpolation without losing control of expression?",
+        "nb": "Hvordan kan en kunstner bruke nøkkeltegninger og interpolering uten å miste kontroll over uttrykket?",
+        "fr": "Comment utiliser les dessins clés et l'interpolation sans perdre le contrôle de l'expression ?",
+        "pt": "Como usar desenhos-chave e interpolação sem perder o controlo da expressão?"
       },
       "options": [
         {
@@ -349,14 +325,14 @@
       ],
       "bestSupportedOptionId": "keys",
       "explanation": {
-        "en": "Sabiston explains in Computer Graphics World that artists drew shapes and added new key drawings when movement changed, while interpolation could smooth the transition. This is labor-intensive animation, not automatic image tracing.",
-        "nb": "Sabiston forklarer i Computer Graphics World at kunstnerne tegnet former og la til nye nøkkeltegninger når bevegelsen endret seg, mens interpolering kunne jevne ut overgangen. Dette er arbeidskrevende animasjon, ikke automatisk sporing.",
-        "fr": "Sabiston explique que les artistes dessinaient les formes et ajoutaient des clés lors des changements de mouvement ; l'interpolation pouvait lisser la transition. Ce n'est pas un traçage automatique.",
-        "pt": "Sabiston explica que os artistas desenhavam formas e acrescentavam chaves quando o movimento mudava; a interpolação suavizava transições. Não é traçado automático."
+        "en": "The chapter emphasizes artists' interpretation of movement rather than automatic filtering. The key drawing exercise tests interpolation and manual revision as general methods. It does not establish the exact historical software controls.",
+        "nb": "Kapitlet fremhever kunstnernes tolkning av bevegelse fremfor automatisk filtrering. Øvelsen tester interpolering og manuell revisjon som generelle metoder, uten å fastslå historiske programvarefunksjoner.",
+        "fr": "Le chapitre insiste sur l'interprétation du mouvement par les artistes. L'exercice teste interpolation et retouche manuelle comme méthodes générales, sans établir les commandes historiques du logiciel.",
+        "pt": "O capítulo destaca a interpretação artística do movimento. O exercício testa interpolação e revisão manual como métodos gerais, sem estabelecer os controlos históricos do software."
       },
       "sourceIds": [
-        "cgw",
-        "linklater"
+        "ch27_linklater",
+        "ch27_indieanimation"
       ]
     },
     {
@@ -399,14 +375,14 @@
       ],
       "bestSupportedOptionId": "varied",
       "explanation": {
-        "en": "Computer Graphics World describes artists working on whole scenes with distinctive treatments and the protagonist changing appearance across encounters. Linklater likewise describes valuing artists' individual contributions. The exercise adapts that principle rather than imposing a uniform style.",
-        "nb": "Computer Graphics World beskriver ulike uttrykk i hele scener og at hovedfiguren endrer utseende mellom møter. Linklater fremhever også kunstnernes individuelle bidrag. Øvelsen tilpasser prinsippet fremfor å påtvinge lik stil.",
-        "fr": "Computer Graphics World décrit des scènes traitées différemment et un protagoniste dont l'aspect varie. Linklater valorise les apports individuels des artistes. L'exercice adapte ce principe.",
-        "pt": "Computer Graphics World descreve tratamentos distintos por cena e um protagonista que muda de aparência. Linklater valoriza contributos individuais. O exercício adapta esse princípio."
+        "en": "Chapter 27 describes Waking Life's visual surface changing from conversation to conversation. The exercise proposes two scene-specific styles and a review of their narrative effect; it does not establish the original allocation of artists.",
+        "nb": "Kapittel 27 beskriver et visuelt uttrykk som endres fra samtale til samtale. Øvelsen foreslår to sceneuttrykk og vurdering av deres fortellervirkning, uten å fastslå den historiske arbeidsfordelingen.",
+        "fr": "Le chapitre 27 décrit des variations visuelles d'une conversation à l'autre. L'exercice propose deux styles et l'examen de leur effet narratif, sans établir la répartition historique du travail.",
+        "pt": "O capítulo 27 descreve variações visuais entre conversas. O exercício propõe dois estilos e a revisão do efeito narrativo, sem estabelecer a divisão histórica do trabalho."
       },
       "sourceIds": [
-        "cgw",
-        "linklater"
+        "ch27_linklater",
+        "ch27_waking"
       ]
     },
     {
@@ -449,14 +425,14 @@
       ],
       "bestSupportedOptionId": "test",
       "explanation": {
-        "en": "The production notes describe more than thirty artists and substantial per-minute animation labor. A later report contrasts the more demanding uniform style of A Scanner Darkly. Historical estimates are context, not a universal productivity target.",
-        "nb": "Produksjonsnotatene beskriver over tretti kunstnere og betydelig arbeid per animert minutt. En senere reportasje sammenligner med den mer krevende enhetlige stilen i A Scanner Darkly. Historiske anslag er kontekst, ikke universelle krav.",
-        "fr": "Les notes évoquent plus de trente artistes et un travail important par minute. Un reportage ultérieur compare le style uniforme plus exigeant d'A Scanner Darkly. Les estimations historiques ne sont pas des normes universelles.",
-        "pt": "As notas referem mais de trinta artistas e trabalho significativo por minuto. Uma reportagem posterior compara o estilo uniforme mais exigente de A Scanner Darkly. Estimativas históricas não são metas universais."
+        "en": "Manual interpretation and revision require artist time. A sample-shot estimate is a proposed planning method; the original crew size and work per finished minute remain unverified in this candidate.",
+        "nb": "Manuell tolkning og revisjon krever kunstnertid. Et prøveopptak er en foreslått planleggingsmetode; historisk teamstørrelse og arbeidsmengde per ferdig minutt er ikke verifisert i dette utkastet.",
+        "fr": "L'interprétation et la retouche exigent du temps. Un essai sert ici à estimer le travail ; l'effectif et les heures historiques par minute restent non vérifiés.",
+        "pt": "A interpretação e revisão exigem tempo. Um teste serve para estimar o trabalho; a equipa e as horas históricas por minuto continuam por verificar."
       },
       "sourceIds": [
-        "notes",
-        "comparison"
+        "ch27_indieanimation",
+        "ch27_linklater"
       ]
     },
     {
@@ -499,13 +475,14 @@
       ],
       "bestSupportedOptionId": "deal",
       "explanation": {
-        "en": "Animation World Network reported Fox Searchlight's acquisition of worldwide distribution rights following the 2001 Sundance debut. This establishes a distributor relationship, not an audited budget or self-distribution claim. New exercises use original or cleared assets.",
-        "nb": "Animation World Network rapporterte Fox Searchlights kjøp av verdensomspennende distribusjonsrettigheter etter Sundance-debuten i 2001. Det dokumenterer et distributørsamarbeid, ikke et revidert budsjett eller selvdistribusjon. Nye øvelser bruker egne eller klarerte ressurser.",
-        "fr": "Animation World Network rapporte l'acquisition des droits mondiaux par Fox Searchlight après Sundance 2001. Cela établit un distributeur, non un budget audité ni une autodistribution. Utiliser des médias originaux ou autorisés.",
-        "pt": "Animation World Network relata aquisição dos direitos mundiais pela Fox Searchlight após Sundance 2001. Demonstra distribuição por parceiro, não orçamento auditado nem autodistribuição. Usar meios originais ou autorizados."
+        "en": "Keep production, rights and distribution separate in a research ledger. Independent development does not establish a particular distribution contract. Release history must be checked independently; use original or cleared assets for the exercise.",
+        "nb": "Skill produksjon, rettigheter og distribusjon i en kildelogg. Uavhengig utvikling fastslår ingen bestemt distribusjonsavtale. Utgivelseshistorien må undersøkes separat; bruk eget eller klarert materiale i øvelsen.",
+        "fr": "Distinguez production, droits et distribution dans un registre. Le développement indépendant n'établit pas un contrat précis. Vérifiez séparément la sortie ; utilisez des éléments originaux ou autorisés.",
+        "pt": "Separe produção, direitos e distribuição num registo. Desenvolvimento independente não comprova um contrato específico. Verifique o lançamento separadamente; use materiais próprios ou autorizados."
       },
       "sourceIds": [
-        "awn"
+        "ch27_indieanimation",
+        "ch27_linklater"
       ]
     }
   ],
@@ -514,6 +491,7 @@
     "bookLinkApproved": false,
     "studyPreview": true,
     "required": [
+      "Existing Chapter 27 bibliography is reused as provisional context only. Independently retrieve title-specific production records; do not treat proposed practice as historical evidence.",
       "Independently review production testimony and release metadata.",
       "Complete exact catalogue identity and eligible representation-gap assessment before admission."
     ]

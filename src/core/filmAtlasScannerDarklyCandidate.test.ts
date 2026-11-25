@@ -9,7 +9,9 @@ test("A Scanner Darkly is a distinct six-phase study candidate, not a verified c
   assert.equal(candidate.identity.year, 2006);
   assert.equal(candidate.identity.directors[0], "Richard Linklater");
   assert.equal(candidate.identity.originalTitle, "A Scanner Darkly");
-  assert.match(candidate.identity.runtimeNote, /100 minutes/);
+  assert.match(candidate.identity.runtimeNote, /independently checked/);
+  assert.ok(candidate.sources.every((s: {id: string}) => s.id.startsWith("ch27_")));
+  assert.ok(candidate.review.required.some((r: string) => r.includes("provisional context")));
   assert.ok(candidate.questions.some((q: {bestSupportedOptionId: string}) => q.bestSupportedOptionId === "guide"));
   assert.equal(candidate.book.chapter, 27);
   assert.equal(candidate.book.decision, "P2");

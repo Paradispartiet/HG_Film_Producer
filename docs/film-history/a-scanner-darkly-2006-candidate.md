@@ -2,13 +2,15 @@
 
 Chapter 27 · P2 · Not admitted to the canonical case catalogue.
 
-Richard Linklater adapted Philip K. Dick's novel using the computer-assisted drawing process previously employed for Waking Life. In a 2006 Fresh Air interview, he describes casting, rehearsing, filming and editing actors before a substantial animation stage. The study separates the fictional story's unstable perception from the practical decisions of the artists working over reference images. ([fresh](https://freshairarchive.org/segments/richard-linklater-directing-darkly), [bfi](https://www.bfi.org.uk/film/2b2cbfa8-7f35-5fc4-8518-e56a9a68b95a/a-scanner-darkly))
+This correction uses the existing chapter 27 article and bibliography as provisional context. No external source pages were independently retrieved in this update. Earlier unconfirmed title-specific source claims, numeric labor estimates, release metadata and exact software details have been removed rather than treated as verified evidence. The following practice instructions are proposed learning methods, not reconstructions of original productions.
 
-The production built physical sets and captured reference material on location. Contemporary trade coverage describes the new demands on Bob Sabiston's Rotoshop system: more precise line adjustment, improved interpolation control and additional tools for colour and masking. The reference footage and manually constructed drawings are different contributions to a shared image. ([cgw](https://www.cgw.com/Publications/CGW/2006/Volume-29-Issue-8-Aug-2006-/On-Edge.aspx), [wired](https://www.wired.com/2006/03/scanner-2/))
+Chapter 27 identifies A Scanner Darkly (2006) as a later Linklater film using a related animation technique for a different narrative purpose than Waking Life. This comparison motivates a study of how the same broad workflow can serve different expressive goals.
 
-Where Waking Life varied the visual approach between encounters, this film sought sustained graphic continuity. Character guides helped animation leads coordinate the work. A proposed study uses model sheets, adjacent-shot reviews and layered drawing tests rather than requiring proprietary software. The same basic technique can support different artistic strategies. ([awn](https://www.awn.com/animationworld/scanner-darkly-animated-illusion), [cgw](https://www.cgw.com/Publications/CGW/2006/Volume-29-Issue-8-Aug-2006-/On-Edge.aspx))
+The proposed workshop starts with a short recorded performance and then explores human interpretation through drawn imagery. Its planned reference set and edit are exercise instructions, not verified claims about the film's original sets, capture hardware or post-production chronology.
 
-Linklater estimated roughly 500 person-hours of animation per finished minute. Reporting at the time describes the difficulty of applying earlier production schedules to the more detailed film. Paul Ward's later research examines tensions between established creative communities and studio-style organization. Different accounts of the production are not an audited schedule or contract. Training, fair working conditions, review and credit should be planned explicitly. ([fresh](https://freshairarchive.org/segments/richard-linklater-directing-darkly), [lat](https://www.latimes.com/archives/la-xpm-2006-jul-07-et-rotoscope7-story.html), [ward](https://research.aub.ac.uk/id/eprint/209/))
+A model sheet, key drawings, editable color layers and shot-to-shot review can help a team test a consistent graphic vocabulary. These are general animation production methods proposed for the learner; the historical use of any particular guide, layer format or interpolation tool requires further evidence.
+
+Estimate work from original sample shots, plan review and revision, and credit contributors separately. A production dossier must establish actual staffing, labor, software features and costs before presenting them as historical facts. This provisional comparative study is not a canonical case admission.
 
 ## Six-phase practice
 
@@ -19,4 +21,9 @@ Linklater estimated roughly 500 person-hours of animation per finished minute. R
 - **Team workflow and realistic scheduling:** Estimate time for two sample shots of different complexity; plan training, feedback, breaks and revision.
 - **Credits, source comparison and delivery:** Prepare a rights and credit ledger for the original reference performance, animation contributors and finished export.
 
-Seven source records were retrieved in this update; independent editorial approval remains pending.
+## Existing chapter bibliography (research leads)
+
+- [Where to begin with Richard Linklater](https://www.bfi.org.uk/features/where-begin-richard-linklater) — British Film Institute
+- [A brief history of indie directors working in animation](https://www.bfi.org.uk/features/wes-anderson-david-lynch-indie-animation) — British Film Institute
+
+Independent title-specific source review and editorial approval remain pending. No change to catalogue admission or canonical progress.
