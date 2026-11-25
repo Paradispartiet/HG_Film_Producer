@@ -109,19 +109,21 @@ async function check(browser, language, film, tablet) {
 }
 
 
-async function checkPulseCandidate(browser, language) {
+const STUDY_CANDIDATES = [{ id: "candidate_pulse_2001", slug: "candidate-pulse-2001", title: "Pulse", chapter: 28 }, { id: "candidate_searching_2018", slug: "candidate-searching-2018", title: "Searching", chapter: 30 }];
+
+async function checkStudyCandidate(browser, language, film) {
   const context = await browser.newContext({ viewport: { width: 768, height: 1024 }, hasTouch: true });
   await context.addInitScript(lang => localStorage.setItem("hg_filmwork_language_v1", lang), language);
   const page = await context.newPage();
   page.setDefaultTimeout(20000);
-  const label = language + "-pulse-candidate";
+  const label = language + "-" + film.slug;
   try {
     await page.goto(new URL("#/atlas", SITE).href, { waitUntil: "domcontentloaded" });
-    await page.locator(".film-study-candidate-link[data-candidate-id=candidate_pulse_2001]").click();
-    const candidate = page.locator(".film-study-candidate-page[data-candidate-id=candidate_pulse_2001]");
+    await page.locator(`.film-study-candidate-link[data-candidate-id=${film.id}]`).click();
+    const candidate = page.locator(`.film-study-candidate-page[data-candidate-id=${film.id}]`);
     await candidate.waitFor({ state: "visible" });
-    assert.match(page.url(), /candidate-pulse-2001/);
-    assert.match(await candidate.locator("h1").textContent(), /Pulse/);
+    assert.ok(page.url().includes(film.slug));
+    assert.ok((await candidate.locator("h1").textContent()).includes(film.title));
     const before = await page.evaluate(() => JSON.stringify({ ...localStorage }));
     const rows = candidate.locator(".scenario-source-workshop__question");
     assert.equal(await candidate.locator('.candidate-production-phases li').count(), 6);
@@ -139,8 +141,8 @@ async function checkPulseCandidate(browser, language) {
     assert.equal(await page.evaluate(() => JSON.stringify({ ...localStorage })), before);
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 2));
     await candidate.locator("nav button").nth(1).click();
-    await page.locator(".film-history-book-chapter-link").nth(27).click();
-    await page.locator(".film-study-book-candidate-link[data-candidate-id=candidate_pulse_2001]").click();
+    await page.locator(".film-history-book-chapter-link").nth(film.chapter - 1).click();
+    await page.locator(`.film-study-book-candidate-link[data-candidate-id=${film.id}]`).click();
     await candidate.waitFor({ state: "visible" });
     passed.push(label);
     console.log("PASS " + label);
@@ -158,7 +160,7 @@ try {
     for (const film of FILMS) {
       for (const tablet of TABLETS) await check(browser, language, film, tablet);
     }
-    await checkPulseCandidate(browser, language);
+    for (const candidate of STUDY_CANDIDATES) await checkStudyCandidate(browser, language, candidate);
   }
 } catch (error) {
   failures.push({ setup: String(error?.stack ?? error) });
@@ -169,9 +171,9 @@ try {
 
 await writeFile(resolve(REPORT_DIR, "summary.json"), JSON.stringify({
   scope: "WebKit tablet-width functional QA; not physical iPad or aesthetic approval",
-  expected: LANGUAGES.length * (FILMS.length * TABLETS.length + 1),
+  expected: LANGUAGES.length * (FILMS.length * TABLETS.length + STUDY_CANDIDATES.length),
   passed,
   failures,
 }, null, 2) + "\n");
-console.log(`WebKit iPad-sized QA: ${passed.length}/${LANGUAGES.length * (FILMS.length * TABLETS.length + 1)} passed; ${failures.length} failures`);
-if (failures.length || passed.length !== LANGUAGES.length * (FILMS.length * TABLETS.length + 1)) process.exitCode = 1;
+console.log(`WebKit iPad-sized QA: ${passed.length}/${LANGUAGES.length * (FILMS.length * TABLETS.length + STUDY_CANDIDATES.length)} passed; ${failures.length} failures`);
+if (failures.length || passed.length !== LANGUAGES.length * (FILMS.length * TABLETS.length + STUDY_CANDIDATES.length)) process.exitCode = 1;
