@@ -8,7 +8,7 @@ const bundled = await build({
       export { getClassicFilmScenarios } from "./src/ui/data/filmScenarios.ts";
       export { resolveRegisteredScenarioProductionBrief, resolveScenarioProductionBrief, createProductionCaseMissions } from "./src/ui/data/scenarioProductionBriefs.ts";
       export { getVerifiedProductionCaseIds, getProductionCaseVerification } from "./src/ui/data/scenarioProductionVerificationRegistry.ts";
-      export { getSourceBackedFilmHistoryProfile } from "./src/ui/data/scenarioFilmStudyMap.ts";
+      export { getResolvedFilmHistoryProfile, resolveFullScenarioFilmStudyMap } from "./src/ui/data/scenarioFilmStudyProfileResolver.ts";
     `,
     resolveDir: process.cwd(),
     sourcefile: "production-case-runtime-audit.ts",
@@ -29,7 +29,9 @@ for (const scenario of catalogue) {
   const registered = runtime.resolveRegisteredScenarioProductionBrief(scenario);
   const brief = runtime.resolveScenarioProductionBrief(scenario);
   const verification = runtime.getProductionCaseVerification(row.id);
-  const profile = runtime.getSourceBackedFilmHistoryProfile(row.id);
+  const profile = runtime.getResolvedFilmHistoryProfile(row.id);
+  const displayedStudy = runtime.resolveFullScenarioFilmStudyMap(scenario, brief);
+  if (!profile || displayedStudy.historyProfile?.scenarioId !== row.id || displayedStudy.historyStatus !== "source_backed" || JSON.stringify(displayedStudy.historyProfile) !== JSON.stringify(profile)) problems.push({ ...row, reason: "display and production history resolvers disagree or lack exact profile" });
   if (brief.briefType !== "production_case") {
     unresolved.push(row);
     continue;
@@ -63,7 +65,7 @@ if (runtime.resolveScenarioProductionBrief(unknown).briefType !== "seed_fallback
 console.log("HG_FILM_PRODUCTION_RUNTIME_AUDIT_START");
 console.log(JSON.stringify({
   totals: { catalogue: catalogue.length, verificationRecords: verifiedIds.length, existingRegisteredBriefs: existing.length, newlyMappedBriefs: bridged.length, unresolved: unresolved.length, playableBriefs: existing.length + bridged.length },
-  newlyMapped: bridged, unresolved, problems,
+  newlyMappedIds: bridged.map(row => row.id), unresolved, problems,
 }, null, 2));
 console.log("HG_FILM_PRODUCTION_RUNTIME_AUDIT_END");
 assert.equal(catalogue.length, 614, "canonical catalogue must remain unchanged");

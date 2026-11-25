@@ -1,6 +1,7 @@
 import type { FilmScenarioSeed } from "./filmScenarios";
 import type { ScenarioProductionBrief } from "./scenarioProductionBriefs";
-import { getSourceBackedFilmHistoryProfile, type FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import type { FilmHistoryProfile } from "./scenarioFilmStudyMap";
+import { getResolvedFilmHistoryProfile } from "./scenarioFilmStudyProfileResolver";
 import { getProductionCaseVerification, type ProductionCaseVerificationArea, type ProductionCaseVerificationRecord } from "./scenarioProductionVerificationRegistry";
 import type { FilmStudyArea } from "../../core/filmStudyCoverage";
 
@@ -44,7 +45,7 @@ function departmentTargets(
 
 export function getVerifiedHistoryMappedProductionBrief(scenario: FilmScenarioSeed): ScenarioProductionBrief | undefined {
   const verification = getProductionCaseVerification(scenario.id);
-  const profile = getSourceBackedFilmHistoryProfile(scenario.id);
+  const profile = getResolvedFilmHistoryProfile(scenario.id);
   if (!verification || verification.status !== "verified" || verification.scenarioId !== scenario.id
     || !profile || profile.scenarioId !== scenario.id || verification.sources.length === 0
     || !profile.moment.trim() || !profile.historyQuestion.trim()) return undefined;
