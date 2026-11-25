@@ -172,8 +172,7 @@ export const filmHistoryChapterSeventeenSources: readonly FilmHistoryBookSource[
     "title": "The best Japanese films – one per year",
     "publisher": "British Film Institute",
     "url": "https://www.bfi.org.uk/lists/great-japanese-film-every-year-from-1925-now"
-  }
-,
+  },
   {
     "id": "ch17_criterion_rashomon",
     "title": "Rashomon (1950) — film, screenplay and restoration",

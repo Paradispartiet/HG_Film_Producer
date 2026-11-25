@@ -1,6 +1,6 @@
 # Film History – masterplan for bok, Film Atlas og Production Cases
 
-> **Current editorial status (25 November 2026, Chapter 17 content PR):** Chapters **1–10** are `full`, Chapters **11–16** are source-attributed `draft` chapters merged into `main`. This PR adds **Chapter 17** (Postwar Japan and Asian modernisms, 1945–1960s): **18 readable articles**, 54 paragraphs, 28 sources, and 16 book-only P2 film comparisons without invented Atlas scenario IDs. Chapter 17 remains `draft`, pending independent editorial assessment and physical iPad checks; Chapters **18–30** remain `outline`. Archived Atlas documents with matching chapter numbers do not prove completion of canonical book chapters. Consult `src/core/filmHistoryBook.ts` for live states.
+> **Current editorial status (25 November 2026, Chapter 17 content PR):** Chapters **1–10** are `full`, Chapters **11–16** are source-attributed `draft` chapters merged into `main`. This PR adds **Chapter 17** (Postwar Japan and Asian modernisms, 1945–1960s): **18 readable articles**, 54 paragraphs, 31 sources, and 16 book-only P2 film comparisons without invented Atlas scenario IDs. Chapter 17 remains `draft`, pending independent editorial assessment and physical iPad checks; Chapters **18–30** remain `outline`. Archived Atlas documents with matching chapter numbers do not prove completion of canonical book chapters. Consult `src/core/filmHistoryBook.ts` for live states.
 
 
 **Statusgrunnlag:** `Paradispartiet/HG_Film_Producer` på `main` commit `29e927139079a92d923b6d7e542fa1c81f1f0fa0` (14. august 2026).
