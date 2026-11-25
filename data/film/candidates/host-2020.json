@@ -1,0 +1,546 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "candidate_host_2020",
+  "proposedScenarioId": "scenario_host_2020",
+  "routeSlug": "candidate-host-2020",
+  "status": "editorial_candidate_not_admitted",
+  "book": {
+    "chapter": 30,
+    "decision": "P2"
+  },
+  "identity": {
+    "title": "Host",
+    "originalTitle": "Host",
+    "year": 2020,
+    "directors": [
+      "Rob Savage"
+    ],
+    "country": "United Kingdom",
+    "genres": [
+      "Horror"
+    ],
+    "runtimeNote": "Savage reports approximately twelve weeks from conception to release and roughly one week for the bulk of shooting. These are production durations, not theatrical running time. Exact version/runtime metadata remains for editorial review."
+  },
+  "credits": {
+    "director": "Rob Savage",
+    "screenplay": [
+      "Rob Savage",
+      "Gemma Hurley",
+      "Jed Shepherd"
+    ],
+    "producer": "Douglas Cox",
+    "editing": "Brenna Rangott",
+    "sourceIds": [
+      "bfiqa",
+      "horror"
+    ]
+  },
+  "sources": [
+    {
+      "id": "amc",
+      "title": "Shudder Takes Zoom Calls to a Terrifying New Level with Host",
+      "publisher": "AMC Networks",
+      "url": "https://www.amcglobalmedia.com/2020/07/07/shudder-takes-zoom-calls-to-a-terrifying-new-level-with-host-a-horror-movie-shot-and-produced-remotely-during-quarantine/"
+    },
+    {
+      "id": "bfi",
+      "title": "Rob Savage on video call horror Host",
+      "publisher": "BFI Sight and Sound",
+      "url": "https://www.bfi.org.uk/sight-and-sound/interviews/rob-savage-host-zoom-video-call-horror"
+    },
+    {
+      "id": "directors",
+      "title": "Host by Rob Savage: A Zoom-Based Horror Feature",
+      "publisher": "Directors Notes",
+      "url": "https://directorsnotes.com/2020/08/20/rob-savage-host/"
+    },
+    {
+      "id": "horror",
+      "title": "Interview: Rob Savage on Host",
+      "publisher": "Horror Cult Films",
+      "url": "https://horrorcultfilms.co.uk/2020/08/interview-rob-savage-on-host/"
+    },
+    {
+      "id": "scifi",
+      "title": "Host: Interview: Rob Savage",
+      "publisher": "Sci-Fi Bulletin",
+      "url": "https://scifibulletin.com/film-reviews/film-interviews/host-interview-rob-savage/"
+    },
+    {
+      "id": "rolling",
+      "title": "Why Rob Savage’s Quarantine Horror Film Is About More Than a Virus",
+      "publisher": "Rolling Stone Australia",
+      "url": "https://au.rollingstone.com/movies/movie-features/rob-savage-host-interview-15757/"
+    },
+    {
+      "id": "bfiqa",
+      "title": "BFI At Home: Host Q&A",
+      "publisher": "British Film Institute",
+      "url": "https://www.youtube.com/watch?v=hxMR5G_PUOk"
+    }
+  ],
+  "article": {
+    "title": "Host (2020): filmmaking across a distributed set",
+    "paragraphs": [
+      {
+        "text": "Host emerged during the UK's 2020 lockdown as a remotely organized horror feature. The July 7 announcement from AMC Networks establishes that Shudder commissioned the film after seeing Savage's short-form work and planned its exclusive July 30 streaming premiere. This is a specific commissioning and circulation system, not proof that the production was self-financed or self-distributed. Its production conditions and its fictional video call must be examined separately.",
+        "sourceIds": [
+          "amc",
+          "rolling"
+        ]
+      },
+      {
+        "text": "The screenplay was developed by Rob Savage, Gemma Hurley and Jed Shepherd; the BFI production discussion also identifies Douglas Cox as producer and Brenna Rangott as editor. Savage's account describes working from a short narrative outline and inviting contributions from performers. He prepared reference clips and rehearsed camera positions and lighting with actors remotely. The performers' additional operational responsibilities made communication and preparation central to the project.",
+        "sourceIds": [
+          "bfiqa",
+          "rolling",
+          "horror",
+          "directors"
+        ]
+      },
+      {
+        "text": "The apparently continuous group call was not a single untouched recording. Savage explains that Rangott assembled separately shot material to create that illusion, while his Sci-Fi Bulletin interview identifies interface construction and effects as important post-production work. He also reports platform support for recording quality in Sight and Sound. These accounts support a distributed capture and editorial system without establishing exact camera hardware, codecs, software or mixing specifications.",
+        "sourceIds": [
+          "horror",
+          "scifi",
+          "bfi"
+        ]
+      },
+      {
+        "text": "Savage estimates roughly twelve weeks from conception to release, with much of principal photography completed in approximately one week. The short acquisition period should not be confused with the entire production calendar. The film used professional support for effects work; a teaching adaptation should use harmless fictional cues or digital compositing rather than recreate risky actions. Participant consent, original or licensed assets and a separate rights check are necessary in a new project.",
+        "sourceIds": [
+          "scifi",
+          "horror",
+          "amc"
+        ]
+      }
+    ]
+  },
+  "production": {
+    "premise": "Construct a fictional remote video-call sequence with agreed roles and harmless suspense cues.",
+    "screenplay": "Use a flexible beat outline and collaborative performance, with no deception or surprise distress.",
+    "camera": "Prepare reference clips and safe framing diagrams for separately recorded performances.",
+    "editing": "Assemble the separate clips into a coherent fictional conversation; distinguish capture from interface construction.",
+    "sound": "Plan original interface cues and check dialogue without assuming the film's original technical equipment.",
+    "learning": "Connect remote production organization, platform commissioning, distributed capture, editorial labor and delivery."
+  },
+  "workshopIntroduction": {
+    "en": "Explore a remote production through collaborative writing, camera preparation, editing and responsible delivery.",
+    "nb": "Utforsk fjernproduksjon gjennom samarbeid om manus, kameraforberedelser, klipping og ansvarlig levering.",
+    "fr": "Explorer une production à distance par l'écriture collaborative, la préparation caméra, le montage et une livraison responsable.",
+    "pt": "Explorar produção remota através de escrita colaborativa, preparação de câmara, montagem e entrega responsável."
+  },
+  "phases": [
+    {
+      "id": "pitch",
+      "questionId": "host-pitch",
+      "title": {
+        "en": "Commission and pitch",
+        "nb": "Bestilling og pitch",
+        "fr": "Commande et présentation",
+        "pt": "Encomenda e apresentação"
+      },
+      "deliverable": {
+        "en": "Write a fictional video-call premise and a short production plan for a remote team.",
+        "nb": "Skriv en fiktiv videosamtaleidé og en kort produksjonsplan for et fjernteam.",
+        "fr": "Rédiger une prémisse fictive d'appel vidéo et un plan de production à distance.",
+        "pt": "Escrever uma premissa fictícia de videochamada e um plano de produção à distância."
+      }
+    },
+    {
+      "id": "writing",
+      "questionId": "host-writing",
+      "title": {
+        "en": "Writing and collaboration",
+        "nb": "Manus og samarbeid",
+        "fr": "Écriture et collaboration",
+        "pt": "Escrita e colaboração"
+      },
+      "deliverable": {
+        "en": "Outline three fictional conversation beats and invite consensual suggestions from the cast.",
+        "nb": "Skisser tre fiktive samtaleledd og inviter skuespillerne til å bidra frivillig med forslag.",
+        "fr": "Esquisser trois temps d'une conversation fictive et inviter les acteurs à proposer des idées librement.",
+        "pt": "Esboçar três momentos de uma conversa fictícia e convidar os atores a sugerir ideias voluntariamente."
+      }
+    },
+    {
+      "id": "capture",
+      "questionId": "host-capture",
+      "title": {
+        "en": "Remote directing and camera",
+        "nb": "Fjernregi og kamera",
+        "fr": "Direction à distance et caméra",
+        "pt": "Realização remota e câmara"
+      },
+      "deliverable": {
+        "en": "Prepare a reference clip and a safe camera-position diagram for a fictional conversation.",
+        "nb": "Lag et referanseklipp og en trygg skisse av kameraplassering for en fiktiv samtale.",
+        "fr": "Préparer un clip de référence et un schéma sûr de placement de caméra pour une conversation fictive.",
+        "pt": "Preparar um clipe de referência e um esquema seguro de posicionamento da câmara para uma conversa fictícia."
+      }
+    },
+    {
+      "id": "edit",
+      "questionId": "host-edit",
+      "title": {
+        "en": "Editing and screen continuity",
+        "nb": "Klipping og skjermkontinuitet",
+        "fr": "Montage et continuité à l'écran",
+        "pt": "Montagem e continuidade no ecrã"
+      },
+      "deliverable": {
+        "en": "Make a paper edit from three separately captured fictional reaction clips.",
+        "nb": "Lag en papirklippplan fra tre separate fiktive reaksjonsklipp.",
+        "fr": "Préparer un montage sur papier à partir de trois réactions fictives filmées séparément.",
+        "pt": "Preparar uma montagem em papel com três reações fictícias gravadas separadamente."
+      }
+    },
+    {
+      "id": "sound",
+      "questionId": "host-sound",
+      "title": {
+        "en": "Sound and technical boundaries",
+        "nb": "Lyd og tekniske grenser",
+        "fr": "Son et limites techniques",
+        "pt": "Som e limites técnicos"
+      },
+      "deliverable": {
+        "en": "Plan two original notification sounds and a dialogue check using consenting participants.",
+        "nb": "Planlegg to originale varsellyder og en dialogkontroll med samtykkende deltakere.",
+        "fr": "Prévoir deux sons de notification originaux et une vérification des dialogues avec des participants consentants.",
+        "pt": "Planear dois sons de notificação originais e verificar diálogos com participantes que consentem."
+      }
+    },
+    {
+      "id": "release",
+      "questionId": "host-release",
+      "title": {
+        "en": "Safety, delivery and release",
+        "nb": "Sikkerhet, levering og lansering",
+        "fr": "Sécurité, livraison et diffusion",
+        "pt": "Segurança, entrega e distribuição"
+      },
+      "deliverable": {
+        "en": "Draft a release checklist with consent, original media, safe effects alternatives and credits.",
+        "nb": "Lag en lanseringssjekkliste med samtykke, originalmedier, trygge effektalternativer og kreditering.",
+        "fr": "Préparer une liste de diffusion avec consentement, médias originaux, alternatives sûres et crédits.",
+        "pt": "Preparar uma lista de distribuição com consentimento, meios originais, alternativas seguras e créditos."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "host-pitch",
+      "area": "research",
+      "prompt": {
+        "en": "Which production model matches the documented circumstances of Host?",
+        "nb": "Hvilken produksjonsmodell samsvarer med de dokumenterte omstendighetene rundt Host?",
+        "fr": "Quel modèle de production correspond aux circonstances documentées de Host ?",
+        "pt": "Que modelo de produção corresponde às circunstâncias documentadas de Host?"
+      },
+      "options": [
+        {
+          "id": "studio",
+          "label": {
+            "en": "Assume conventional studio shooting with all performers physically together",
+            "nb": "Forutsett tradisjonelt studioopptak med alle skuespillere fysisk samlet",
+            "fr": "Supposer un tournage en studio avec tous les acteurs réunis",
+            "pt": "Pressupor rodagem em estúdio com todos os atores reunidos"
+          }
+        },
+        {
+          "id": "remote",
+          "label": {
+            "en": "Develop a remotely produced feature commissioned for streaming during lockdown",
+            "nb": "Utvikle en fjernprodusert spillefilm bestilt for strømming under nedstengningen",
+            "fr": "Développer un long métrage à distance commandé pour le streaming pendant le confinement",
+            "pt": "Desenvolver uma longa-metragem remota encomendada para streaming durante o confinamento"
+          }
+        },
+        {
+          "id": "unfunded",
+          "label": {
+            "en": "Assume the film was self-distributed without a commissioning partner",
+            "nb": "Anta at filmen ble selvdistribuert uten en bestillende samarbeidspartner",
+            "fr": "Supposer une autodistribution sans partenaire commanditaire",
+            "pt": "Pressupor autodistribuição sem parceiro de encomenda"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "remote",
+      "explanation": {
+        "en": "AMC's announcement identifies Shudder as the commissioning and release partner and places the entire project within three months. This was platform commissioning, not evidence of independent self-distribution.",
+        "nb": "AMCs kunngjøring identifiserer Shudder som bestiller og lanseringspartner og plasserer prosjektet innenfor tre måneder. Dette var en plattformbestilling, ikke dokumentasjon på selvdistribusjon.",
+        "fr": "L'annonce d'AMC identifie Shudder comme commanditaire et diffuseur et situe le projet dans une période de trois mois. Ce n'est pas une preuve d'autodistribution.",
+        "pt": "O anúncio da AMC identifica a Shudder como entidade de encomenda e distribuição num período inferior a três meses. Não demonstra autodistribuição."
+      },
+      "sourceIds": [
+        "amc",
+        "rolling"
+      ]
+    },
+    {
+      "id": "host-writing",
+      "area": "research",
+      "prompt": {
+        "en": "How can writers combine a flexible scene outline with performer collaboration?",
+        "nb": "Hvordan kan manusforfatterne kombinere en fleksibel sceneskisse med skuespillersamarbeid?",
+        "fr": "Comment associer un canevas souple à la collaboration des interprètes ?",
+        "pt": "Como combinar um esboço flexível com a colaboração dos intérpretes?"
+      },
+      "options": [
+        {
+          "id": "fixed",
+          "label": {
+            "en": "Demand identical line readings without any discussion of the scene",
+            "nb": "Krev identiske replikktolkninger uten samtale om scenen",
+            "fr": "Exiger des lectures identiques sans discussion de la scène",
+            "pt": "Exigir interpretações idênticas sem discutir a cena"
+          }
+        },
+        {
+          "id": "unplanned",
+          "label": {
+            "en": "Record disconnected improvisations without an agreed narrative structure",
+            "nb": "Ta opp løsrevet improvisasjon uten avtalt fortellerstruktur",
+            "fr": "Filmer des improvisations isolées sans structure narrative convenue",
+            "pt": "Gravar improvisações isoladas sem estrutura narrativa acordada"
+          }
+        },
+        {
+          "id": "beats",
+          "label": {
+            "en": "Agree on narrative beats while incorporating relevant performer ideas",
+            "nb": "Avtal fortellerledd og innarbeid relevante forslag fra skuespillerne",
+            "fr": "Convenir des temps narratifs en intégrant les idées pertinentes des interprètes",
+            "pt": "Acordar momentos narrativos integrando ideias pertinentes dos intérpretes"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "beats",
+      "explanation": {
+        "en": "Savage describes working from a short outline and filming chronologically. In the BFI interview he emphasizes contributions from actors. The exercise uses agreed fiction and collaboration, not deception or distress.",
+        "nb": "Savage beskriver en kort handlingsskisse og kronologisk innspilling. I BFI-intervjuet fremhever han skuespillernes bidrag. Øvelsen bruker avtalt fiksjon og samarbeid, ikke bedrag eller belastning.",
+        "fr": "Savage décrit un canevas court et un tournage chronologique. Au BFI, il souligne les contributions des acteurs. L'exercice repose sur la fiction convenue et la collaboration, non la tromperie.",
+        "pt": "Savage descreve um esboço curto e uma rodagem cronológica. No BFI destaca os contributos dos atores. O exercício assenta em ficção acordada e colaboração, não em engano."
+      },
+      "sourceIds": [
+        "rolling",
+        "bfi",
+        "bfiqa"
+      ]
+    },
+    {
+      "id": "host-capture",
+      "area": "camera",
+      "prompt": {
+        "en": "How did remote direction help performers coordinate framing and lighting?",
+        "nb": "Hvordan hjalp fjernregi skuespillerne med å samordne utsnitt og lys?",
+        "fr": "Comment la direction à distance a-t-elle aidé les acteurs à coordonner cadrage et lumière ?",
+        "pt": "Como ajudou a direção remota os atores a coordenar enquadramento e luz?"
+      },
+      "options": [
+        {
+          "id": "reference",
+          "label": {
+            "en": "Use reference clips and individual remote rehearsals to agree framing and cues",
+            "nb": "Bruk referanseklipp og individuelle fjernprøver for å avtale utsnitt og signaler",
+            "fr": "Utiliser des clips de référence et des répétitions à distance pour convenir du cadre et des repères",
+            "pt": "Usar clipes de referência e ensaios remotos individuais para acordar enquadramento e sinais"
+          }
+        },
+        {
+          "id": "guess",
+          "label": {
+            "en": "Ask performers to guess camera and lighting decisions without preparation",
+            "nb": "Be skuespillerne gjette kamera- og lysvalg uten forberedelse",
+            "fr": "Demander aux acteurs de deviner cadrage et lumière sans préparation",
+            "pt": "Pedir aos atores que adivinhem enquadramento e luz sem preparação"
+          }
+        },
+        {
+          "id": "identical",
+          "label": {
+            "en": "Assume every home has an identical studio lighting and camera package",
+            "nb": "Anta at alle hjem har identiske studiopakker for kamera og lys",
+            "fr": "Supposer que chaque domicile possède le même matériel de studio",
+            "pt": "Pressupor que todas as casas têm equipamento de estúdio idêntico"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "reference",
+      "explanation": {
+        "en": "Savage recalls making example clips in his own home and rehearsing camera placement and lighting changes individually with actors before shooting. This documents a communication method, not exact camera or lighting hardware.",
+        "nb": "Savage forteller at han laget eksempelklipp hjemme og øvde individuelt med skuespillerne på kameraplassering og lysendringer før opptak. Dette dokumenterer en kommunikasjonsmetode, ikke eksakt kamerautstyr eller lamper.",
+        "fr": "Savage évoque des clips d'exemple et des répétitions individuelles de cadrage et de lumière avant le tournage. Cela documente une méthode de communication, non le matériel exact.",
+        "pt": "Savage recorda clipes de exemplo e ensaios individuais de enquadramento e luz antes da rodagem. Isto documenta um método de comunicação, não equipamento exato."
+      },
+      "sourceIds": [
+        "horror",
+        "directors"
+      ]
+    },
+    {
+      "id": "host-edit",
+      "area": "camera",
+      "prompt": {
+        "en": "Which editing choice creates the impression of a continuous live conversation?",
+        "nb": "Hvilket klippevalg skaper inntrykket av en sammenhengende direktesamtale?",
+        "fr": "Quel choix de montage crée l'impression d'une conversation continue en direct ?",
+        "pt": "Que escolha de montagem cria a impressão de uma conversa contínua em direto?"
+      },
+      "options": [
+        {
+          "id": "one-recording",
+          "label": {
+            "en": "Treat a single unedited call recording as the complete finished film",
+            "nb": "Behandle ett uredigert samtaleopptak som hele den ferdige filmen",
+            "fr": "Traiter un seul enregistrement non monté comme le film achevé",
+            "pt": "Tratar uma gravação não editada como o filme concluído"
+          }
+        },
+        {
+          "id": "assemble",
+          "label": {
+            "en": "Assemble individually filmed shots into a coherent real-time screen sequence",
+            "nb": "Sett individuelt innspilte bilder sammen til en sammenhengende skjermsekvens i sanntid",
+            "fr": "Assembler des plans filmés séparément en une séquence cohérente en temps réel",
+            "pt": "Montar planos filmados separadamente numa sequência coerente em tempo real"
+          }
+        },
+        {
+          "id": "random",
+          "label": {
+            "en": "Arrange the reactions randomly without checking continuity of the conversation",
+            "nb": "Plasser reaksjonene tilfeldig uten å sjekke samtalens kontinuitet",
+            "fr": "Disposer les réactions au hasard sans vérifier la continuité",
+            "pt": "Dispor as reações ao acaso sem verificar a continuidade"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "assemble",
+      "explanation": {
+        "en": "Savage credits Brenna Rangott with assembling separately recorded shots into the appearance of a real-time call. The Sci-Fi Bulletin interview distinguishes the brief shoot from the substantial interface and effects post-production.",
+        "nb": "Savage krediterer Brenna Rangott for å sette separate opptak sammen til inntrykket av en sanntidssamtale. Sci-Fi Bulletin-intervjuet skiller den korte innspillingen fra omfattende etterarbeid med grensesnitt og effekter.",
+        "fr": "Savage attribue à Brenna Rangott l'assemblage des plans séparés en un appel apparemment continu. Sci-Fi Bulletin distingue le tournage bref de la postproduction importante.",
+        "pt": "Savage atribui a Brenna Rangott a montagem dos planos separados num aparente diálogo em tempo real. A Sci-Fi Bulletin distingue a breve rodagem da pós-produção substancial."
+      },
+      "sourceIds": [
+        "horror",
+        "scifi",
+        "bfiqa"
+      ]
+    },
+    {
+      "id": "host-sound",
+      "area": "sound",
+      "prompt": {
+        "en": "What can the documented Zoom collaboration establish about the recording workflow?",
+        "nb": "Hva kan det dokumenterte Zoom-samarbeidet fastslå om opptaksarbeidet?",
+        "fr": "Que permet d'établir la collaboration documentée avec Zoom sur l'enregistrement ?",
+        "pt": "Que permite estabelecer a colaboração documentada com Zoom sobre a gravação?"
+      },
+      "options": [
+        {
+          "id": "hardware",
+          "label": {
+            "en": "Infer the exact microphone model and final mix solely from the platform name",
+            "nb": "Utled eksakt mikrofonmodell og sluttmiks bare fra plattformnavnet",
+            "fr": "Déduire le microphone et le mixage exacts du seul nom de la plateforme",
+            "pt": "Deduzir o microfone e mistura exatos apenas pelo nome da plataforma"
+          }
+        },
+        {
+          "id": "identical",
+          "label": {
+            "en": "Assume every actor had identical recording conditions and equipment",
+            "nb": "Anta at alle skuespillere hadde identiske opptaksforhold og utstyr",
+            "fr": "Supposer des conditions et équipements identiques pour tous les acteurs",
+            "pt": "Pressupor condições e equipamentos idênticos para todos os atores"
+          }
+        },
+        {
+          "id": "boundary",
+          "label": {
+            "en": "Record the platform's assistance with recording quality and leave specific hardware unclaimed",
+            "nb": "Dokumenter plattformens hjelp med opptakskvalitet og la bestemt utstyr stå udokumentert",
+            "fr": "Documenter l'aide de la plateforme à la qualité d'enregistrement sans affirmer le matériel précis",
+            "pt": "Documentar a ajuda da plataforma na qualidade de gravação sem afirmar equipamento específico"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "boundary",
+      "explanation": {
+        "en": "Savage tells BFI that Zoom helped improve the team's video and audio recording. This supports a workflow claim, but does not identify individual microphones, audio codecs or the final mixing setup.",
+        "nb": "Savage forteller BFI at Zoom hjalp teamet med bedre video- og lydopptak. Det støtter en arbeidsflytpåstand, men identifiserer ikke mikrofoner, lydkodeker eller sluttmiksoppsett.",
+        "fr": "Savage explique au BFI que Zoom a aidé à améliorer les enregistrements vidéo et audio. Cela décrit un processus, non les microphones, codecs ou le mixage final.",
+        "pt": "Savage explica ao BFI que Zoom ajudou a melhorar gravações de vídeo e áudio. Isto descreve um processo, não microfones, codecs ou a mistura final."
+      },
+      "sourceIds": [
+        "bfi",
+        "amc"
+      ]
+    },
+    {
+      "id": "host-release",
+      "area": "research",
+      "prompt": {
+        "en": "How should a learning production adapt Host's remote workflow responsibly?",
+        "nb": "Hvordan bør en læringsproduksjon tilpasse Hosts fjernarbeidsflyt på en ansvarlig måte?",
+        "fr": "Comment adapter de façon responsable le processus distant de Host dans un exercice ?",
+        "pt": "Como adaptar responsavelmente o processo remoto de Host num exercício?"
+      },
+      "options": [
+        {
+          "id": "safe",
+          "label": {
+            "en": "Use harmless offscreen cues or digital effects, agreed consent and a documented delivery plan",
+            "nb": "Bruk ufarlige signaler utenfor bildet eller digitale effekter, avtalt samtykke og dokumentert leveringsplan",
+            "fr": "Utiliser des indices hors champ inoffensifs ou des effets numériques, un consentement convenu et un plan de livraison",
+            "pt": "Usar sinais inofensivos fora de campo ou efeitos digitais, consentimento acordado e um plano de entrega"
+          }
+        },
+        {
+          "id": "unreviewed",
+          "label": {
+            "en": "Skip safety and consent review because the cast is working from home",
+            "nb": "Hopp over sikkerhets- og samtykkekontroll fordi skuespillerne arbeider hjemmefra",
+            "fr": "Omettre la sécurité et le consentement parce que les acteurs travaillent à domicile",
+            "pt": "Omitir segurança e consentimento porque os atores trabalham em casa"
+          }
+        },
+        {
+          "id": "rights",
+          "label": {
+            "en": "Assume every platform graphic and recorded conversation is automatically cleared for release",
+            "nb": "Anta at all plattformgrafikk og alle samtaleopptak automatisk er klarert for lansering",
+            "fr": "Supposer que chaque interface et conversation enregistrée est automatiquement autorisée",
+            "pt": "Pressupor que todas as interfaces e conversas gravadas estão automaticamente autorizadas"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "safe",
+      "explanation": {
+        "en": "The production used effects specialists and monitored, insured work; this does not make risky effects appropriate for home practice. AMC records the July 30, 2020 Shudder premiere. A new exercise should use safe alternatives and independently check rights and consent.",
+        "nb": "Produksjonen brukte effektspesialister og overvåket, forsikret arbeid. Det gjør ikke risikofylte effekter egnet for hjemmeøvelser. AMC dokumenterer Shudder-premieren 30. juli 2020. En ny øvelse bør bruke trygge alternativer og kontrollere rettigheter og samtykke.",
+        "fr": "La production recourait à des spécialistes et à un travail surveillé et assuré. Cela ne justifie pas les effets dangereux à domicile. AMC indique la première sur Shudder le 30 juillet 2020. Vérifier droits et consentement.",
+        "pt": "A produção recorreu a especialistas e trabalho monitorizado e segurado. Isto não torna efeitos perigosos adequados para casa. A AMC regista a estreia na Shudder em 30 de julho de 2020. Verificar direitos e consentimento."
+      },
+      "sourceIds": [
+        "horror",
+        "scifi",
+        "amc"
+      ]
+    }
+  ],
+  "review": {
+    "runtimeAdmission": false,
+    "bookLinkApproved": false,
+    "studyPreview": true,
+    "required": [
+      "Check full canonical overlap and distinguish Host (2020) from The Host (2006).",
+      "Review primary testimony and distinguish platform commissioning from self-distribution.",
+      "Assess whether the documented remote production system satisfies an eligible representation gap before any canonical admission."
+    ]
+  }
+}

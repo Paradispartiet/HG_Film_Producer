@@ -3,6 +3,7 @@ import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
 import {
   getSourceBackedCaseWorkshop,
   isBestSupportedWorkshopOption,
+  type SourceBackedCaseWorkshop,
 } from "../data/scenarioProductionSourceWorkshops";
 import "../productionCaseSourceWorkshop.css";
 
@@ -51,11 +52,13 @@ const copy: Record<FilmWorkLanguage, {
 export function ScenarioProductionSourceWorkshop({
   scenarioId,
   language,
+  workshopOverride,
 }: {
   readonly scenarioId: string;
   readonly language: FilmWorkLanguage;
+  readonly workshopOverride?: SourceBackedCaseWorkshop;
 }) {
-  const workshop = getSourceBackedCaseWorkshop(scenarioId);
+  const workshop = workshopOverride ?? getSourceBackedCaseWorkshop(scenarioId);
   const [selections, setSelections] = useState<Record<string, string>>({});
   if (!workshop) return null;
   const ui = copy[language];

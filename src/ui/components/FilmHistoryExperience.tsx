@@ -30,7 +30,7 @@ export function FilmHistoryExperience({
 
   return (
     <FilmverketKnowledgeShell activeSection="history" onNavigate={navigateSection}>
-      <FilmHistoryBook onOpenFilm={openFilm} scenarios={scenarios} />
+      <FilmHistoryBook onOpenFilm={openFilm} onOpenStudyCandidate={(slug) => navigate({ section: "atlas", filmSlug: slug })} scenarios={scenarios} />
     </FilmverketKnowledgeShell>
   );
 }

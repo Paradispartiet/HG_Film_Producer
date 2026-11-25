@@ -1,0 +1,545 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "candidate_searching_2018",
+  "proposedScenarioId": "scenario_searching_2018",
+  "routeSlug": "candidate-searching-2018",
+  "status": "editorial_candidate_not_admitted",
+  "book": {
+    "chapter": 30,
+    "decision": "P2"
+  },
+  "identity": {
+    "title": "Searching",
+    "originalTitle": "Searching",
+    "year": 2018,
+    "directors": [
+      "Aneesh Chaganty"
+    ],
+    "country": "United States",
+    "genres": [
+      "Thriller",
+      "Mystery"
+    ],
+    "runtimeNote": "Interview accounts describe thirteen shooting days and post-production lasting roughly one year or longer. These production durations are not theatrical running time; exact release runtime and version metadata remain to be checked."
+  },
+  "credits": {
+    "cinematography": "Juan Sebastian Baron",
+    "editing": [
+      "Will Merrick",
+      "Nicholas Johnson"
+    ],
+    "screenplay": [
+      "Aneesh Chaganty",
+      "Sev Ohanian"
+    ],
+    "sourceIds": [
+      "baron",
+      "usc",
+      "acv"
+    ]
+  },
+  "sources": [
+    {
+      "id": "acv",
+      "title": "Interview with Aneesh Chaganty and Sev Ohanian of SEARCHING",
+      "publisher": "Asian CineVision",
+      "url": "https://www.asiancinevision.org/interview-aneesh-chaganty-sev-ohanian-searching/"
+    },
+    {
+      "id": "usc",
+      "title": "Searching — School of Cinematic Arts screening discussion",
+      "publisher": "USC School of Cinematic Arts",
+      "url": "https://cinema.usc.edu/news/article.cfm?id=35848"
+    },
+    {
+      "id": "adobe",
+      "title": "Director Aneesh Chaganty Brings the Small Screen to the Big Screen with Searching",
+      "publisher": "Adobe Blog",
+      "url": "https://blog.adobe.com/en/publish/2018/02/06/director-aneesh-chaganty-brings-small-screen-big-screen-search"
+    },
+    {
+      "id": "nfs",
+      "title": "Searching: How the Sundance Digital Thriller Reinvented Filmmaking on a Computer Screen",
+      "publisher": "No Film School",
+      "url": "https://nofilmschool.com/2018/07/searching-sundance-aneesh-chaganty-interview"
+    },
+    {
+      "id": "baron",
+      "title": "Juan Sebastian Baron Shooting Authentic for Searching",
+      "publisher": "Film Threat",
+      "url": "https://filmthreat.com/interviews/juan-sebastian-baron-cinematographer-for-searching/"
+    },
+    {
+      "id": "frame",
+      "title": "Made in Frame: Cutting the Thriller Searching in Adobe Premiere Pro",
+      "publisher": "Frame.io Insider",
+      "url": "https://blog.frame.io/2018/09/10/made-in-frame-searching/"
+    },
+    {
+      "id": "techcrunch",
+      "title": "The filmmakers behind Searching know why you're skeptical about computer screen movies",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2018/08/25/searching-interview/"
+    }
+  ],
+  "article": {
+    "title": "Searching (2018): the desktop as a constructed cinematic space",
+    "paragraphs": [
+      {
+        "text": "Searching turns a missing-person thriller into a narrative presented through digital interfaces. Chaganty and co-writer/producer Sev Ohanian describe how an initial short-film idea became a feature at Bazelevs. The distinctive production question is how to coordinate live performances, graphic interfaces and audience attention rather than simply record a working computer screen. For learning purposes, interfaces and personal details should be fictional; no real account access or private information is needed.",
+        "sourceIds": [
+          "acv",
+          "techcrunch"
+        ]
+      },
+      {
+        "text": "The filmmakers developed a feature-length temporary version before principal photography. In their Asian CineVision interview they describe seven weeks of preparation with temporary images and Chaganty acting the roles himself. The reference film let the crew anticipate framing and narrative timing, and helped actors align their reactions with later screen graphics. The preparation was especially important because the live-action shoot lasted only thirteen days.",
+        "sourceIds": [
+          "acv",
+          "techcrunch",
+          "nfs"
+        ]
+      },
+      {
+        "text": "Post-production treated the interface as a designed image. An Adobe interview describes Illustrator artwork animated in After Effects, connected to Premiere Pro editing. Frame.io's editors' account explains the unconventional editorial sequence, while cinematographer Juan Sebastian Baron describes how camera and editorial departments shared responsibility for directing attention inside the desktop. Reconstructing graphic elements and framing captured performances were connected but distinct tasks.",
+        "sourceIds": [
+          "adobe",
+          "frame",
+          "baron"
+        ]
+      },
+      {
+        "text": "The finished image required selective color treatment: Adobe reports that the team graded the live-action material separately from established interface colors. USC's screening discussion also describes the extra work of adjusting on-screen language for foreign releases. These examples expose post-production and localization as central production costs. Reported editing durations differ across interviews; a short shooting schedule must not be mistaken for a short total production schedule.",
+        "sourceIds": [
+          "adobe",
+          "usc",
+          "nfs"
+        ]
+      }
+    ]
+  },
+  "production": {
+    "premise": "Construct a fictional mystery through a designed screen interface and coordinated live-action inserts.",
+    "screenplay": "Plan story beats through messages, windows, visual emphasis and performance; invent all private data.",
+    "camera": "Use previsualization to coordinate actor eyelines, gestures and eventual interface framing.",
+    "editing": "Build temporary screen sequences before shooting, replace placeholders with designed assets and refine timing.",
+    "sound": "Plan fictional interface cues and dialogue timing; exact original audio equipment remains unverified.",
+    "learning": "Separate capture, motion design, editing, color finishing and localization as distinct but connected work."
+  },
+  "workshopIntroduction": {
+    "en": "Build a fictional screen-based scene through previsualization, interface design, performance and post-production.",
+    "nb": "Bygg en fiktiv skjermscene gjennom forhåndsvisualisering, grensesnittdesign, skuespill og etterarbeid.",
+    "fr": "Construire une scène fictive sur écran par prévisualisation, interface, jeu et postproduction.",
+    "pt": "Construir uma cena fictícia de ecrã com pré-visualização, interface, interpretação e pós-produção."
+  },
+  "phases": [
+    {
+      "id": "previs",
+      "questionId": "searching-previs",
+      "title": {
+        "en": "Previsualization and pitch",
+        "nb": "Forhåndsvisualisering og pitch",
+        "fr": "Prévisualisation et présentation",
+        "pt": "Pré-visualização e apresentação"
+      },
+      "deliverable": {
+        "en": "Create a one-minute animatic with placeholder footage and an invented screen interface.",
+        "nb": "Lag en animatikk på ett minutt med plassholderopptak og et oppdiktet skjermgrensesnitt.",
+        "fr": "Créer une animatique d'une minute avec des images temporaires et une interface fictive.",
+        "pt": "Criar uma animática de um minuto com imagens provisórias e uma interface fictícia."
+      }
+    },
+    {
+      "id": "staging",
+      "questionId": "searching-staging",
+      "title": {
+        "en": "Performance and capture",
+        "nb": "Personregi og opptak",
+        "fr": "Jeu et captation",
+        "pt": "Interpretação e captação"
+      },
+      "deliverable": {
+        "en": "Plan an actor's eyeline map with three timed cues on a fictional interface.",
+        "nb": "Planlegg skuespillerens blikkretninger med tre tidsfestede signaler på et fiktivt grensesnitt.",
+        "fr": "Planifier les regards de l'acteur avec trois signaux synchronisés sur une interface fictive.",
+        "pt": "Planear os olhares do ator com três sinais temporizados numa interface fictícia."
+      }
+    },
+    {
+      "id": "interface",
+      "questionId": "searching-interface",
+      "title": {
+        "en": "Interface and motion design",
+        "nb": "Grensesnitt og animasjon",
+        "fr": "Interface et animation",
+        "pt": "Interface e animação"
+      },
+      "deliverable": {
+        "en": "Design two fictional vector windows and animate one meaningful transition.",
+        "nb": "Design to fiktive vektorvinduer og animer én meningsbærende overgang.",
+        "fr": "Concevoir deux fenêtres vectorielles fictives et animer une transition significative.",
+        "pt": "Conceber duas janelas vetoriais fictícias e animar uma transição significativa."
+      }
+    },
+    {
+      "id": "edit",
+      "questionId": "searching-edit",
+      "title": {
+        "en": "Editing and visual attention",
+        "nb": "Klipping og visuell oppmerksomhet",
+        "fr": "Montage et attention visuelle",
+        "pt": "Montagem e atenção visual"
+      },
+      "deliverable": {
+        "en": "Compare a wide desktop view with a tighter view of a fictional notification; justify the transition.",
+        "nb": "Sammenlign et vidt skjermbilde med et tettere utsnitt av et fiktivt varsel; begrunn overgangen.",
+        "fr": "Comparer une vue large du bureau à un cadrage serré d'une notification fictive ; justifier la transition.",
+        "pt": "Comparar uma vista ampla com um enquadramento fechado de uma notificação fictícia; justificar a transição."
+      }
+    },
+    {
+      "id": "grade",
+      "questionId": "searching-grade",
+      "title": {
+        "en": "Color and compositing",
+        "nb": "Farge og kompositering",
+        "fr": "Couleur et compositing",
+        "pt": "Cor e composição"
+      },
+      "deliverable": {
+        "en": "Plan a separate color correction for live footage and unchanged interface graphics.",
+        "nb": "Planlegg separat fargekorrigering av skuespilleropptak og uendret grensesnittgrafikk.",
+        "fr": "Prévoir une correction distincte des images réelles et des interfaces inchangées.",
+        "pt": "Planear correção separada das imagens reais e das interfaces inalteradas."
+      }
+    },
+    {
+      "id": "release",
+      "questionId": "searching-release",
+      "title": {
+        "en": "Post schedule and localization",
+        "nb": "Etterarbeid og lokalisering",
+        "fr": "Calendrier et localisation",
+        "pt": "Calendário e localização"
+      },
+      "deliverable": {
+        "en": "Draft a delivery plan for two languages using fictional messages, with separate time for interface rebuilding and review.",
+        "nb": "Lag en leveringsplan for to språk med fiktive meldinger og egen tid til ombygging av grensesnitt og kontroll.",
+        "fr": "Préparer un plan de livraison en deux langues avec messages fictifs et temps de reconstruction des interfaces.",
+        "pt": "Preparar um plano de entrega em duas línguas com mensagens fictícias e tempo para reconstrução das interfaces."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "searching-previs",
+      "area": "research",
+      "prompt": {
+        "en": "How should a screen-based film establish its timing before the live-action shoot?",
+        "nb": "Hvordan bør en skjermbasert film etablere rytmen før skuespilleropptakene?",
+        "fr": "Comment établir le rythme d'un film sur écran avant le tournage réel ?",
+        "pt": "Como estabelecer o ritmo de um filme de ecrã antes da rodagem?"
+      },
+      "options": [
+        {
+          "id": "wait",
+          "label": {
+            "en": "Wait until all live-action footage has been recorded before designing any interfaces",
+            "nb": "Vent til alle skuespilleropptak er ferdige før grensesnittet utformes",
+            "fr": "Attendre la fin du tournage avant de concevoir les interfaces",
+            "pt": "Esperar pelo fim da rodagem antes de conceber interfaces"
+          }
+        },
+        {
+          "id": "animatic",
+          "label": {
+            "en": "Build a rough full-scene animatic with temporary performances and screen layouts before shooting",
+            "nb": "Bygg en grov animatikk med midlertidige prestasjoner og skjermoppsett før opptak",
+            "fr": "Créer une animatique avec jeu provisoire et interfaces avant le tournage",
+            "pt": "Criar uma animática com interpretações provisórias e interfaces antes da rodagem"
+          }
+        },
+        {
+          "id": "literal",
+          "label": {
+            "en": "Record an unrelated real desktop and use it as the complete scene",
+            "nb": "Ta opp et uvedkommende ekte skrivebord og bruk det som hele scenen",
+            "fr": "Filmer un bureau réel sans rapport et l'utiliser comme scène complète",
+            "pt": "Gravar um ambiente de trabalho real sem relação e usá-lo como cena completa"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "animatic",
+      "explanation": {
+        "en": "Chaganty and Ohanian describe seven weeks of previsualization before shooting, with the director performing temporary roles. The rough film communicated framing and timing to crew and cast.",
+        "nb": "Chaganty og Ohanian beskriver sju uker med forhåndsvisualisering før opptak, der regissøren spilte midlertidige roller. Grovfilmen formidlet utsnitt og timing til teamet.",
+        "fr": "Chaganty et Ohanian décrivent sept semaines de prévisualisation avant le tournage, avec le réalisateur dans les rôles provisoires. Ce montage communiquait cadrage et rythme à l'équipe.",
+        "pt": "Chaganty e Ohanian descrevem sete semanas de pré-visualização antes da rodagem, com o realizador nos papéis provisórios. A montagem transmitia enquadramento e ritmo à equipa."
+      },
+      "sourceIds": [
+        "acv",
+        "techcrunch"
+      ]
+    },
+    {
+      "id": "searching-staging",
+      "area": "camera",
+      "prompt": {
+        "en": "Which method helps a performer respond to a screen that will be constructed later?",
+        "nb": "Hvilken metode hjelper skuespilleren å reagere på en skjerm som bygges senere?",
+        "fr": "Quelle méthode aide l'acteur à réagir à un écran construit plus tard ?",
+        "pt": "Que método ajuda o ator a reagir a um ecrã construído posteriormente?"
+      },
+      "options": [
+        {
+          "id": "guess",
+          "label": {
+            "en": "Ask the actor to guess every location and timing of future interface elements",
+            "nb": "Be skuespilleren gjette plassering og tidspunkt for alle senere skjermelementer",
+            "fr": "Demander à l'acteur de deviner chaque emplacement et instant des futurs éléments",
+            "pt": "Pedir ao ator que adivinhe a localização e o tempo dos elementos futuros"
+          }
+        },
+        {
+          "id": "no-cues",
+          "label": {
+            "en": "Remove the reference animatic and record disconnected reactions",
+            "nb": "Fjern referanseanimatikken og ta opp løsrevne reaksjoner",
+            "fr": "Supprimer l'animatique de référence et filmer des réactions isolées",
+            "pt": "Remover a animática de referência e gravar reações desligadas"
+          }
+        },
+        {
+          "id": "eyeline",
+          "label": {
+            "en": "Use the animatic to align eyelines, gestures and reaction timing with the planned interface",
+            "nb": "Bruk animatikken til å samordne blikkretning, gester og reaksjoner med planlagt grensesnitt",
+            "fr": "Utiliser l'animatique pour coordonner regards, gestes et réactions avec l'interface prévue",
+            "pt": "Usar a animática para alinhar olhares, gestos e reações com a interface planeada"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "eyeline",
+      "explanation": {
+        "en": "Chaganty describes showing the reference cut to John Cho so his reactions aligned with later graphics. No Film School reports GoPro capture for FaceTime shots; that is a specific setup, not evidence that every shot used it.",
+        "nb": "Chaganty beskriver at John Cho fikk se referanseklippet slik at reaksjonene passet til senere grafikk. No Film School omtaler GoPro til FaceTime-bilder, ikke som utstyr for hele filmen.",
+        "fr": "Chaganty décrit la projection du montage à John Cho pour synchroniser ses réactions. No Film School rapporte une GoPro pour les plans FaceTime, sans établir son usage pour tous les plans.",
+        "pt": "Chaganty descreve a apresentação da montagem a John Cho para sincronizar reações. No Film School refere GoPro nos planos FaceTime, sem estabelecer o seu uso em todos os planos."
+      },
+      "sourceIds": [
+        "nfs",
+        "techcrunch"
+      ]
+    },
+    {
+      "id": "searching-interface",
+      "area": "animation",
+      "prompt": {
+        "en": "How can interface graphics remain sharp and editable throughout post-production?",
+        "nb": "Hvordan kan grensesnittgrafikken forbli skarp og redigerbar gjennom etterarbeidet?",
+        "fr": "Comment préserver la netteté et la modification des interfaces en postproduction ?",
+        "pt": "Como preservar a nitidez e a edição das interfaces na pós-produção?"
+      },
+      "options": [
+        {
+          "id": "vector",
+          "label": {
+            "en": "Rebuild the windows as vector graphics and animate their layers in compositing",
+            "nb": "Bygg vinduene som vektorgrafikk og animer lagene i kompositering",
+            "fr": "Reconstruire les fenêtres en dessin vectoriel et animer les calques en compositing",
+            "pt": "Reconstruir as janelas como vetores e animar as camadas na composição"
+          }
+        },
+        {
+          "id": "flatten",
+          "label": {
+            "en": "Flatten a low-resolution screenshot before all animation and framing changes",
+            "nb": "Slå sammen et lavoppløst skjermbilde før animasjon og utsnittsendringer",
+            "fr": "Aplatir une capture basse résolution avant animation et recadrage",
+            "pt": "Achatar uma captura de baixa resolução antes da animação e reenquadramento"
+          }
+        },
+        {
+          "id": "unrelated",
+          "label": {
+            "en": "Use unrelated desktop recordings instead of planned visual assets",
+            "nb": "Bruk uvedkommende skrivebordsopptak fremfor planlagte visuelle elementer",
+            "fr": "Utiliser des enregistrements de bureau sans rapport plutôt que les éléments prévus",
+            "pt": "Usar gravações de ambiente de trabalho sem relação em vez de elementos planeados"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "vector",
+      "explanation": {
+        "en": "Adobe's interview describes the editors rebuilding screen assets in Illustrator and animating them in After Effects, linked with Premiere Pro. These are documented tools, not a requirement to purchase them for this exercise.",
+        "nb": "Adobes intervju beskriver at klipperne bygde skjermgrafikk i Illustrator og animerte i After Effects, koblet til Premiere Pro. Det er dokumenterte verktøy, ikke et krav om å kjøpe dem.",
+        "fr": "L'entretien Adobe décrit la reconstruction dans Illustrator et l'animation dans After Effects, liées à Premiere Pro. Ces outils documentés ne sont pas obligatoires pour l'exercice.",
+        "pt": "A entrevista da Adobe descreve reconstrução no Illustrator e animação no After Effects, ligados ao Premiere Pro. As ferramentas documentadas não são obrigatórias para o exercício."
+      },
+      "sourceIds": [
+        "adobe",
+        "frame"
+      ]
+    },
+    {
+      "id": "searching-edit",
+      "area": "camera",
+      "prompt": {
+        "en": "How can the audience's attention be directed within the constructed desktop?",
+        "nb": "Hvordan kan publikums oppmerksomhet styres i det konstruerte skrivebordet?",
+        "fr": "Comment orienter l'attention du public dans le bureau reconstruit ?",
+        "pt": "Como orientar a atenção do público no ambiente de trabalho reconstruído?"
+      },
+      "options": [
+        {
+          "id": "random",
+          "label": {
+            "en": "Change framing arbitrarily regardless of narrative information",
+            "nb": "Endre utsnitt vilkårlig uten hensyn til fortellingsinformasjonen",
+            "fr": "Modifier le cadrage arbitrairement sans tenir compte du récit",
+            "pt": "Alterar o enquadramento arbitrariamente sem considerar a narrativa"
+          }
+        },
+        {
+          "id": "guided",
+          "label": {
+            "en": "Coordinate crop, interface movement and timing to direct attention toward a meaningful detail",
+            "nb": "Samordne utsnitt, grensesnittbevegelse og timing mot en meningsbærende detalj",
+            "fr": "Coordonner cadrage, mouvement de l'interface et rythme vers un détail significatif",
+            "pt": "Coordenar enquadramento, movimento da interface e ritmo para um detalhe significativo"
+          }
+        },
+        {
+          "id": "static-rule",
+          "label": {
+            "en": "Require every image to remain at identical scale regardless of the scene's needs",
+            "nb": "Krev identisk bildeskala uansett scenens behov",
+            "fr": "Imposer une échelle identique à chaque image quels que soient les besoins",
+            "pt": "Impor a mesma escala a todas as imagens independentemente da cena"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "guided",
+      "explanation": {
+        "en": "Cinematographer Juan Sebastian Baron describes collaborating with editors on the visual grammar of the screen, including reframing and subtle image treatment. The desktop's virtual framing is distinct from the capture of actors.",
+        "nb": "Filmfotograf Juan Sebastian Baron beskriver samarbeid med klipperne om skjermens visuelle grammatikk, inkludert utsnitt og subtil bildebehandling. Virtuell innramming er noe annet enn opptak av skuespillere.",
+        "fr": "Juan Sebastian Baron décrit le travail avec les monteurs sur la grammaire visuelle de l'écran, dont le recadrage. Le cadrage virtuel se distingue de la captation des acteurs.",
+        "pt": "Juan Sebastian Baron descreve o trabalho com montadores na gramática visual do ecrã, incluindo reenquadramento. O enquadramento virtual distingue-se da captação dos atores."
+      },
+      "sourceIds": [
+        "baron",
+        "frame"
+      ]
+    },
+    {
+      "id": "searching-grade",
+      "area": "camera",
+      "prompt": {
+        "en": "Which finishing approach preserves the interface while grading inserted live-action footage?",
+        "nb": "Hvilket etterarbeidsgrep bevarer grensesnittet når innsatte skuespilleropptak fargekorrigeres?",
+        "fr": "Quelle finition préserve l'interface lors de l'étalonnage des images réelles intégrées ?",
+        "pt": "Que acabamento preserva a interface ao corrigir a cor das imagens reais integradas?"
+      },
+      "options": [
+        {
+          "id": "global",
+          "label": {
+            "en": "Apply the same strong color adjustment to all windows and footage",
+            "nb": "Bruk den samme kraftige fargejusteringen på alle vinduer og opptak",
+            "fr": "Appliquer la même forte correction à toutes les fenêtres et images",
+            "pt": "Aplicar a mesma correção forte a todas as janelas e imagens"
+          }
+        },
+        {
+          "id": "skip",
+          "label": {
+            "en": "Avoid any review of color because the film is set on a screen",
+            "nb": "Unngå enhver fargegjennomgang fordi filmen foregår på skjerm",
+            "fr": "Éviter toute révision colorimétrique parce que le film se passe sur écran",
+            "pt": "Evitar revisão de cor porque o filme decorre num ecrã"
+          }
+        },
+        {
+          "id": "isolate",
+          "label": {
+            "en": "Isolate the live-action inserts for grading without altering established interface colors",
+            "nb": "Isoler skuespilleropptakene for fargekorrigering uten å endre etablerte grensesnittfarger",
+            "fr": "Isoler les inserts réels pour les étalonner sans modifier les couleurs établies de l'interface",
+            "pt": "Isolar as inserções reais para corrigir cor sem alterar as cores estabelecidas da interface"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "isolate",
+      "explanation": {
+        "en": "Adobe reports that the colorist isolated live-action material in After Effects because a global grade would also alter established graphic colors. The evidence supports separating layers, not inventing exact color-space settings.",
+        "nb": "Adobe beskriver at fargekorrigereren isolerte skuespilleropptak i After Effects fordi en global korrigering også ville endre grafikkfargene. Kilden støtter lagdeling, ikke påstander om eksakt fargerom.",
+        "fr": "Adobe rapporte que l'étalonneur isolait les images réelles dans After Effects pour préserver les couleurs graphiques. Cela étaye la séparation des calques, non des réglages colorimétriques précis.",
+        "pt": "A Adobe refere que o colorista isolava as imagens reais no After Effects para preservar cores gráficas. A fonte sustenta a separação de camadas, não configurações exatas de espaço de cor."
+      },
+      "sourceIds": [
+        "adobe"
+      ]
+    },
+    {
+      "id": "searching-release",
+      "area": "research",
+      "prompt": {
+        "en": "How should a producer schedule a screen-based film for international delivery?",
+        "nb": "Hvordan bør produsenten planlegge internasjonal levering av en skjermbasert film?",
+        "fr": "Comment planifier la livraison internationale d'un film sur écran ?",
+        "pt": "Como planear a entrega internacional de um filme de ecrã?"
+      },
+      "options": [
+        {
+          "id": "localize",
+          "label": {
+            "en": "Budget substantial post-production and separately review localized on-screen text and graphics",
+            "nb": "Sett av betydelig etterarbeid og gjennomgå oversatt skjermtekst og grafikk separat",
+            "fr": "Prévoir une postproduction importante et vérifier séparément textes et graphismes localisés",
+            "pt": "Prever pós-produção substancial e rever separadamente textos e grafismos localizados"
+          }
+        },
+        {
+          "id": "shoot-only",
+          "label": {
+            "en": "Use the thirteen-day shooting schedule as the complete delivery schedule",
+            "nb": "Bruk de tretten opptaksdagene som hele leveringsplanen",
+            "fr": "Prendre les treize jours de tournage comme calendrier complet de livraison",
+            "pt": "Usar os treze dias de rodagem como calendário completo de entrega"
+          }
+        },
+        {
+          "id": "ignore-text",
+          "label": {
+            "en": "Leave all on-screen language unchanged without considering overseas audiences",
+            "nb": "La alt skjermspråk stå uendret uten å vurdere internasjonalt publikum",
+            "fr": "Laisser tous les textes à l'écran inchangés sans considérer le public international",
+            "pt": "Deixar todo o texto no ecrã inalterado sem considerar o público internacional"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "localize",
+      "explanation": {
+        "en": "Asian CineVision and USC record a thirteen-day shoot and roughly a year or more of editing; USC also describes re-editing screen elements for international versions. Reported post durations vary by interview, so use a range rather than an invented exact schedule.",
+        "nb": "Asian CineVision og USC beskriver tretten opptaksdager og omtrent ett år eller mer med klipping. USC omtaler også tilpasning av skjermelementer for utenlandske versjoner. Intervjuenes tidsangivelser varierer; ikke finn på en eksakt plan.",
+        "fr": "Asian CineVision et USC indiquent treize jours de tournage et environ un an ou davantage de montage. USC décrit aussi l'adaptation des interfaces aux versions étrangères. Les durées rapportées varient selon l'entretien.",
+        "pt": "Asian CineVision e USC referem treze dias de rodagem e cerca de um ano ou mais de montagem. USC descreve também a adaptação dos ecrãs a versões estrangeiras. As durações relatadas variam entre entrevistas."
+      },
+      "sourceIds": [
+        "acv",
+        "usc",
+        "nfs"
+      ]
+    }
+  ],
+  "review": {
+    "runtimeAdmission": false,
+    "bookLinkApproved": false,
+    "studyPreview": true,
+    "required": [
+      "Complete exact identity and full canonical overlap check.",
+      "Review source-backed production claims and distinguish software-vendor testimony from independent corroboration.",
+      "Assess representation gate before any canonical admission; no approved gap is asserted."
+    ]
+  }
+}
