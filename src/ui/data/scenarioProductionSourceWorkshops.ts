@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Five pre-existing Production Cases receive evidence-backed craft decisions.
+ * Six pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -440,8 +440,8 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
     sources: [
       { id: "kofic", title: "Korean Films at the 59th Cannes Film Festival", publisher: "Korean Film Council", url: "https://koreanfilm.or.kr/eng/news/news.jsp?blbdComCd=601008&mode=VIEW&seq=390" },
       { id: "kpbs", title: "The Host / Interview with Bong Joon Ho", publisher: "KPBS Public Media", url: "https://www.kpbs.org/news/arts-culture/2007/03/09/the-hostinterview-with-bong-joon-ho" },
-      { id: "bong-practical", title: "Interview: Bong Joon Ho — Host Stories", publisher: "Combustible Celluloid", url: "https://combustiblecelluloid.com/interviews/bongjoonho.shtml" },
-      { id: "folk-museum", title: "The Host", publisher: "National Folk Museum of Korea", url: "https://folkency.nfm.go.kr/en/topic/detail/11845" },
+      { id: "bong-practical", title: "Interview: Bong Joon Ho — Host Stories", publisher: "Combustible Celluloid", url: "https://www.combustiblecelluloid.com/interviews/bongjoonho.shtml" },
+      { id: "folk-museum", title: "The Host — Encyclopedia of Korean Folk Culture", publisher: "National Folk Museum of Korea", url: "https://folkency.nfm.go.kr/en/topic/detail/11845" },
     ],
     questions: [
       {
@@ -497,6 +497,77 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
           "Dans son entretien à KPBS, Bong relie le choc au fleuve Han familier et souligne que le jeu de Song Kang-ho rend la créature numérique crédible. La tristesse et l'humour familiaux font partie du procédé.",
           "Na entrevista à KPBS, Bong liga o choque ao familiar rio Han e salienta que a interpretação de Song Kang-ho torna a criatura digital credível. A tristeza e o humor da família fazem parte da abordagem."),
         sourceIds: ["kpbs"]
+      }
+    ]
+  },
+  {
+    scenarioId: "scenario_still_life_2006",
+    status: "editorial_learning_exercise_not_case_verified",
+    introduction: t("Still Life (2006) combines digital location filmmaking, fictional searches and imagined events within a landscape undergoing rapid change. Explore Jia Zhangke's documented approach without confusing fiction with historical evidence.",
+      "Still Life (2006) kombinerer digitale stedsopptak, fiktive letehistorier og forestilte hendelser i et landskap i rask endring. Utforsk Jia Zhangkes dokumenterte arbeidsmåte uten å forveksle fiksjon med historiske bevis.",
+      "Still Life (2006) mêle tournage numérique en décors réels, recherches fictionnelles et événements imaginaires dans un paysage en mutation rapide. Explorez la méthode documentée de Jia Zhangke sans confondre fiction et preuve historique.",
+      "Still Life (2006) combina filmagem digital em locais reais, buscas ficcionais e acontecimentos imaginados numa paisagem em rápida transformação. Explore o método documentado de Jia Zhangke sem confundir ficção com prova histórica."),
+    sources: [
+      { id: "probe-interview", title: "Filmmaker Jia Zhangke on the forgotten people of Three Gorges", publisher: "Probe International", url: "https://journal.probeinternational.org/2006/10/16/filmmaker-jia-zhangke-forgotten-people-three-gorges/" },
+      { id: "cinergie-hd", title: "Jia Zhang-Ke — interview and digital cinematography discussion", publisher: "Cinergie", url: "https://www.cinergie.be/article/jia-zhang-ke" },
+      { id: "doors-interview", title: "Jia Zhangke: I wanted to acknowledge the sensory link between contemporary history and ancient times", publisher: "Doors Art and Culture Agency", url: "https://www.doors-agency.com/en/2022/01/19/jia-zhangke-i-wanted-to-acknowledge-the-sensory-link-between-contemporary-history-and-ancient-times/" },
+      { id: "iffr-credits", title: "Still Life — 2007 festival programme and credits", publisher: "International Film Festival Rotterdam", url: "https://iffr.com/en/iffr/2007/films/still-life" },
+      { id: "photogenie-diptych", title: "We should think of realism as an expanding concept: A conversation with Jia Zhangke", publisher: "photogénie", url: "https://photogenie.be/we-should-think-of-realism-as-an-expanding-concept-a-conversation-with-jia-zhangke/" },
+    ],
+    questions: [
+      {
+        id: "still-life-location", area: "camera",
+        prompt: t("How can the camera team respond to a town being transformed during production?",
+          "Hvordan kan kamerateamet reagere på en by som forandres mens filmen produseres?",
+          "Comment l'équipe image peut-elle réagir à une ville qui se transforme pendant le tournage ?",
+          "Como pode a equipa de imagem responder a uma cidade que se transforma durante a rodagem?"),
+        options: [
+          { id: "fixed-studio", label: t("Rebuild an unchanging town in a studio and avoid actual locations", "Bygg opp en uforanderlig studioby og unngå de virkelige stedene", "Reconstruire une ville immuable en studio et éviter les lieux réels", "Reconstruir uma cidade imutável em estúdio e evitar os locais reais") },
+          { id: "responsive-digital", label: t("Use flexible digital location shooting to observe demolition and new construction", "Bruk fleksible digitale stedsopptak til å observere riving og nybygging", "Employer un tournage numérique souple sur place pour observer démolition et construction", "Usar filmagem digital flexível no local para observar demolição e construção") },
+          { id: "archive-only", label: t("Replace all new location footage with unrelated archival city images", "Erstatt alle nye stedsopptak med arkivbilder av andre byer", "Remplacer toutes les nouvelles prises de vues par des archives de villes sans rapport", "Substituir todas as novas imagens locais por arquivos de cidades sem relação") },
+        ],
+        bestSupportedOptionId: "responsive-digital",
+        explanation: t("Jia described filming in Fengjie and Wushan while old buildings were demolished and new ones built. His comments on HD emphasize the freedom to wait and repeat takes. IFFR credits Yu Lik-wai and lists a 35mm festival format; that listing alone does not establish the acquisition medium.",
+          "Jia beskriver opptak i Fengjie og Wushan mens gamle bygninger ble revet og nye reist. Han fremhever HD-opptakenes frihet til å vente og gjenta tagninger. IFFR krediterer Yu Lik-wai og oppgir 35 mm som festivalformat, noe som alene ikke fastslår opptaksmediet.",
+          "Jia décrit le tournage à Fengjie et Wushan, entre démolition et construction. Il souligne la liberté d'attendre et de refaire les prises en HD. L'IFFR crédite Yu Lik-wai et indique un format de festival 35 mm, qui ne suffit pas à établir le support de captation.",
+          "Jia descreve filmagens em Fengjie e Wushan entre demolições e construções. Destaca a liberdade de esperar e repetir planos em HD. O IFFR credita Yu Lik-wai e indica um formato de festival de 35 mm, que não determina por si só o suporte de captação."),
+        sourceIds: ["probe-interview", "cinergie-hd", "iffr-credits"]
+      },
+      {
+        id: "still-life-diptych", area: "research",
+        prompt: t("How should the documentary Dong inform the making of the related fiction film?",
+          "Hvordan bør dokumentaren Dong prege arbeidet med den beslektede fiksjonsfilmen?",
+          "Comment le documentaire Dong doit-il nourrir la fabrication de la fiction associée ?",
+          "Como deve o documentário Dong informar a realização da ficção relacionada?"),
+        options: [
+          { id: "literal-proof", label: t("Treat every invented fictional action as a verified documentary event", "Behandle enhver oppdiktet handling som en verifisert dokumentarisk hendelse", "Traiter chaque action fictionnelle inventée comme un fait documentaire vérifié", "Tratar cada ação ficcional inventada como um acontecimento documental verificado") },
+          { id: "ignore-observation", label: t("Ignore observations from the documentary and keep the projects entirely unrelated", "Se bort fra dokumentarens observasjoner og hold prosjektene helt atskilt", "Ignorer les observations du documentaire et rendre les projets entièrement indépendants", "Ignorar as observações do documentário e manter os projetos totalmente desligados") },
+          { id: "observe-transform", label: t("Let observed lives and places inspire fiction while preserving the distinction between genres", "La observerte liv og steder inspirere fiksjonen, men behold skillet mellom sjangrene", "Laisser les vies et lieux observés inspirer la fiction tout en distinguant les genres", "Deixar vidas e locais observados inspirarem a ficção, preservando a distinção entre géneros") },
+        ],
+        bestSupportedOptionId: "observe-transform",
+        explanation: t("Jia recalls going to the region to film painter Liu Xiaodong for Dong. Observing the landscape and workers inspired Still Life, and Han Sanming appears in both works. The director describes them as a diptych, not as interchangeable factual records.",
+          "Jia forteller at han reiste til området for å filme maleren Liu Xiaodong til Dong. Landskapet og arbeiderne inspirerte Still Life, og Han Sanming medvirker i begge filmene. Regissøren beskriver dem som et diptyk, ikke som utskiftbare faktakilder.",
+          "Jia raconte être venu filmer le peintre Liu Xiaodong pour Dong. Le paysage et les travailleurs ont inspiré Still Life, et Han Sanming apparaît dans les deux œuvres. Le réalisateur parle d'un diptyque, non de documents factuels interchangeables.",
+          "Jia recorda ter ido filmar o pintor Liu Xiaodong para Dong. A paisagem e os trabalhadores inspiraram Still Life, e Han Sanming surge em ambas as obras. O realizador descreve um díptico, não registos factuais intercambiáveis."),
+        sourceIds: ["doors-interview", "photogenie-diptych"]
+      },
+      {
+        id: "still-life-surreal", area: "animation",
+        prompt: t("What purpose can a fantastical digital image serve within an otherwise realist film?",
+          "Hvilken funksjon kan et fantastisk digitalt bilde ha i en ellers realistisk film?",
+          "Quelle fonction une image numérique fantastique peut-elle remplir dans un film par ailleurs réaliste ?",
+          "Que função pode uma imagem digital fantástica ter num filme predominantemente realista?"),
+        options: [
+          { id: "express-dislocation", label: t("Use an imagined event to express how bewildering rapid physical change feels", "Bruk en forestilt hendelse til å uttrykke hvor fremmedgjørende raske fysiske endringer oppleves", "Utiliser un événement imaginaire pour exprimer le désarroi face aux transformations rapides", "Usar um acontecimento imaginado para expressar a estranheza de mudanças físicas rápidas") },
+          { id: "document-ufo", label: t("Present the flying building as factual proof of an extraordinary historical event", "Presenter den flygende bygningen som faktabevis for en ekstraordinær historisk hendelse", "Présenter le bâtiment volant comme preuve d'un événement historique extraordinaire", "Apresentar o edifício voador como prova de um acontecimento histórico extraordinário") },
+          { id: "replace-realism", label: t("Remove all social observation and turn the entire film into an effects showcase", "Fjern all sosial observasjon og gjør hele filmen til en effektoppvisning", "Supprimer toute observation sociale et transformer le film en démonstration d'effets", "Eliminar toda a observação social e transformar o filme numa demonstração de efeitos") },
+        ],
+        bestSupportedOptionId: "express-dislocation",
+        explanation: t("Jia explains that the landscape felt strangely unreal and that the flying memorial building was an imaginative response to the speed of change. The digital effect expresses a subjective experience; it is not evidence that a building actually flew.",
+          "Jia forklarer at landskapet virket underlig uvirkelig, og at den flygende minnebygningen var et fantasigrep som svarte på endringstempoet. Den digitale effekten uttrykker en subjektiv erfaring, ikke at en bygning faktisk fløy.",
+          "Jia explique que le paysage semblait irréel et que le monument volant répondait par l'imagination à la vitesse des transformations. L'effet numérique exprime une expérience subjective, non le vol réel d'un bâtiment.",
+          "Jia explica que a paisagem parecia irreal e que o monumento voador era uma resposta imaginativa à velocidade das mudanças. O efeito digital exprime uma experiência subjetiva, não o voo real de um edifício."),
+        sourceIds: ["doors-interview"]
       }
     ]
   }

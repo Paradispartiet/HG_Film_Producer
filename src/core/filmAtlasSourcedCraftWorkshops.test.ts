@@ -14,20 +14,24 @@ const ids = [
   "scenario_tangerine_2015",
   "scenario_cure_1997",
   "scenario_the_host_2006",
+  "scenario_still_life_2006",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly five existing cases have fifteen original, source-backed decisions", () => {
+test("Exactly six existing cases have eighteen original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 5);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 15);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 6);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 18);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
     assert.ok(workshop.sources.length >= 2);
-    if (workshop.scenarioId === "scenario_the_host_2006") {
+    if (workshop.scenarioId === "scenario_still_life_2006") {
+      const manual = readFileSync("src/core/modernCanonExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_still_life_2006", title: "Still Life"[^\n]*year: 2006/);
+    } else if (workshop.scenarioId === "scenario_the_host_2006") {
       const manual = readFileSync("src/core/southKoreanCinemaExpansion.ts", "utf8");
       assert.match(manual, /id: "scenario_the_host_2006",\s*title: "The Host",\s*originalTitle: "Gwoemul",[\s\S]{0,100}year: 2006/);
     } else if (workshop.scenarioId !== "scenario_cure_1997") {
@@ -145,4 +149,17 @@ test("The Host links practical water effects, international workflow and perform
   assert.equal(family.bestSupportedOptionId, "grounded-family");
   assert.ok(family.sourceIds.includes("kpbs"));
   assert.equal(getSourceBackedCaseWorkshop("scenario_host_2020"), undefined);
+});
+
+test("Still Life distinguishes digital capture, festival format, documentary and imagined events", () => {
+  const workshop = getSourceBackedCaseWorkshop(ids[5]);
+  assert.ok(workshop);
+  const [location, diptych, surreal] = workshop.questions;
+  assert.ok(location && diptych && surreal);
+  assert.equal(location.bestSupportedOptionId, "responsive-digital");
+  assert.match(location.explanation.en, /does not establish the acquisition medium/);
+  assert.equal(diptych.bestSupportedOptionId, "observe-transform");
+  assert.ok(diptych.sourceIds.includes("photogenie-diptych"));
+  assert.equal(surreal.bestSupportedOptionId, "express-dislocation");
+  assert.match(surreal.explanation.en, /not evidence/);
 });
