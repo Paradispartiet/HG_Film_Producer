@@ -23,9 +23,9 @@ Kurosawa told DVD Talk that a ghost which does very little can be more disturbin
 - **sound:** Use original or licensed modem-like sounds as period-specific recurring motifs; distinguish sound interpretation from documented equipment.
 - **learning:** Distinguish period technology, documented filmmaker intention and critical analysis; keep psychological harm out of scoring.
 
-## Three optional production exercises
+## Six-phase production practice
 
-The companion JSON contains all three questions, three alternatives each, four languages, explanations and source IDs. This is now surfaced through the separate candidate route in Film Atlas and the Chapter 28 candidate link, not a canonical playable case.
+The companion JSON contains six questions, three alternatives each, four languages, explanations, deliverables and source IDs. This is now surfaced through the separate candidate route in Film Atlas and the Chapter 28 candidate link, not a canonical playable case.
 
 ## Evidence limits and approval
 
@@ -36,3 +36,14 @@ Musashino and the TIFF programme report 118 minutes; Eye and BFI list 119. Do no
 - Implement scenario admission and production brief only after resolving catalogue counts and coverage gates.
 - Connect book reference only after appropriate case approval.
 - Run existing QA after runtime integration.
+
+## Admission assessment against the audited core
+
+The current representation contract freezes the 614 verified core identities. Japan industry and genre-industry developments are at status 3; microbudget digital workflows and independent distribution are at status 2. The current Pulse sources support a formal study, not documented microbudget acquisition, financing or distribution. Cure and Ringu offer existing Japanese horror comparisons; Unknown Pleasures and Tangerine offer distinct digital production comparisons. The available evidence does not demonstrate an eligible gap that cannot be addressed through an existing case. No new canonical identity is approved. The full catalogue identity and existing-case search remain prerequisites, not completed claims.
+
+- **Research and pitch:** Write a short period-specific fictional premise and list two historical details to verify.
+- **Screenplay and spatial staging:** Sketch an ordinary interior and plan three restrained dramatic beats using fictional characters.
+- **Cinematography and design:** Create a six-frame storyboard with a muted palette and a selective recurring red motif.
+- **Comparative editing:** Outline two cuts of the same fictional scene and explain how each changes uncertainty.
+- **Sound motif and ambience:** Plan an original or licensed modem-like motif and three ambient sound cues.
+- **Release and evidence dossier:** Prepare a one-page credit and source ledger, marking conflicting runtimes and technical unknowns.

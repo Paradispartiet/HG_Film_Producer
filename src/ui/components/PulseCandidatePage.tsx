@@ -18,6 +18,8 @@ export function pulseCandidateLinkLabel(language: FilmWorkLanguage) {
   return labels[language].open;
 }
 
+const phaseHeading: Record<FilmWorkLanguage, string> = { en: "Six production phases — practice brief", nb: "Seks produksjonsfaser – øvingsoppdrag", fr: "Six phases de production — exercice", pt: "Seis fases de produção — exercício" };
+
 const questions: WorkshopQuestion[] = candidate.questions.map(q => {
   const [first, second, third] = q.options;
   if (!first || !second || !third || q.options.length !== 3) throw new Error("Invalid Pulse workshop options");
@@ -62,6 +64,10 @@ export function PulseCandidatePage({ language, onBack, onHistory }: {
           <h3>{ui.profile}</h3>
           <dl>{Object.entries(candidate.production).map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>
           <p>{candidate.identity.runtimeNote}</p>
+        </section>
+        <section className="pulse-production-phases">
+          <h3>{phaseHeading[language]}</h3>
+          <ol>{candidate.phases.map(phase => <li key={phase.id}><strong>{phase.title[language]}</strong><p>{phase.deliverable[language]}</p></li>)}</ol>
         </section>
         <ScenarioProductionSourceWorkshop scenarioId={candidate.candidateId} language={language} workshopOverride={candidateWorkshop} />
         <details><summary>{ui.sources} ({candidate.sources.length})</summary><ul>{candidate.sources.map(s => <li key={s.id}><a href={s.url} target="_blank" rel="noreferrer">{s.title}</a> — {s.publisher}</li>)}</ul></details>

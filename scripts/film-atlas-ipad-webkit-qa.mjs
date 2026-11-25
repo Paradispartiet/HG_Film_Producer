@@ -124,12 +124,13 @@ async function checkPulseCandidate(browser, language) {
     assert.match(await candidate.locator("h1").textContent(), /Pulse/);
     const before = await page.evaluate(() => JSON.stringify({ ...localStorage }));
     const rows = candidate.locator(".scenario-source-workshop__question");
-    assert.equal(await rows.count(), 3);
-    for (let i = 0; i < 3; i++) {
+    assert.equal(await candidate.locator('.pulse-production-phases li').count(), 6);
+    assert.equal(await rows.count(), 6);
+    for (let i = 0; i < 6; i++) {
       const row = rows.nth(i);
       const choices = row.locator(".scenario-source-workshop__choice");
       assert.equal(await choices.count(), 3);
-      await choices.nth(i).click();
+      await choices.nth(i % 3).click();
       assert.equal(await row.locator('[aria-pressed="true"]').count(), 1);
       await row.locator(".scenario-source-workshop__feedback").waitFor({ state: "visible" });
       await row.locator("summary").click();
