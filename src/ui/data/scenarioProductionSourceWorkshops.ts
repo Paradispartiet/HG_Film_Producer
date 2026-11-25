@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Twenty-four pre-existing Production Cases receive evidence-backed craft decisions.
+ * Twenty-six pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -3117,6 +3117,388 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
           "cannes-film",
           "cannes-return",
           "cannes-classics"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_grandmas_reading_glass_1900",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore motivated detail views, visual perspective and historical interpretation in Smith's 1900 film.",
+      "nb": "Utforsk motiverte detaljbilder, synsvinkel og historisk tolkning i Smiths film fra 1900.",
+      "fr": "Explorez les détails motivés, le point de vue et l'interprétation historique du film de Smith de 1900.",
+      "pt": "Explore os pormenores motivados, o ponto de vista e a interpretação histórica do filme de Smith de 1900."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Grandma's Reading Glass",
+        "publisher": "British Film Institute",
+        "url": "https://replay.bfi.org.uk/video/419/bc4007f9-c8fa-5293-846a-de032dc142af"
+      },
+      {
+        "id": "s1",
+        "title": "Inventing Film Language",
+        "publisher": "BFI National Archive",
+        "url": "https://replay.bfi.org.uk/collection/419"
+      },
+      {
+        "id": "s2",
+        "title": "Grandma's Reading Glass — Title ID 8372",
+        "publisher": "Screen Archive South East",
+        "url": "https://screenarchive.brighton.ac.uk/detail/8372/"
+      },
+      {
+        "id": "s3",
+        "title": "Cinematographic camera, 1899/1900 [?]",
+        "publisher": "Christie's",
+        "url": "https://www.christies.com/en/lot/lot-3045373"
+      },
+      {
+        "id": "s5",
+        "title": "Grandma’s Reading Glass (1900)",
+        "publisher": "University of Bologna Research Archive",
+        "url": "https://cris.unibo.it/handle/11585/962676"
+      }
+    ],
+    "questions": [
+      {
+        "id": "glass-gaze",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a detail image be motivated by a character's act of looking?",
+          "nb": "Hvordan kan et detaljbilde motiveres av at en figur ser på noe?",
+          "fr": "Comment motiver une image de détail par le regard d'un personnage ?",
+          "pt": "Como motivar uma imagem de pormenor pelo olhar de uma personagem?"
+        },
+        "options": [
+          {
+            "id": "look",
+            "label": {
+              "en": "Show a character looking, then a related enlarged object",
+              "nb": "Vis en figur som ser, deretter en tilhørende forstørret gjenstand",
+              "fr": "Montrer un personnage qui regarde, puis un objet agrandi correspondant",
+              "pt": "Mostrar uma personagem a olhar e depois um objeto ampliado relacionado"
+            }
+          },
+          {
+            "id": "random",
+            "label": {
+              "en": "Insert an unrelated detail with no visible motivation",
+              "nb": "Sett inn en urelatert detalj uten synlig motivasjon",
+              "fr": "Insérer un détail sans rapport ni motivation visible",
+              "pt": "Inserir um pormenor sem relação nem motivação visível"
+            }
+          },
+          {
+            "id": "caption",
+            "label": {
+              "en": "Replace every visual relationship with explanatory captions",
+              "nb": "Erstatt alle visuelle sammenhenger med forklarende tekstplakater",
+              "fr": "Remplacer toutes les relations visuelles par des cartons explicatifs",
+              "pt": "Substituir todas as relações visuais por legendas explicativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "look",
+        "explanation": {
+          "en": "The BFI and regional archive dossiers connect enlarged views to the boy's magnifying glass. Make a new storyboard that establishes the act of looking before showing a related detail.",
+          "nb": "BFI og det regionale arkivet knytter forstørrede bilder til guttens forstørrelsesglass. Lag et nytt storyboard som etablerer blikket før en tilhørende detalj vises.",
+          "fr": "Les dossiers BFI et de l'archive régionale relient les vues agrandies à la loupe du garçon. Créez un storyboard qui établit le regard avant le détail correspondant.",
+          "pt": "Os dossiers BFI e do arquivo regional ligam as vistas ampliadas à lupa do rapaz. Crie um storyboard que estabeleça o olhar antes do pormenor correspondente."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "glass-mask",
+        "area": "camera",
+        "prompt": {
+          "en": "How could you distinguish an enlarged optical view from the surrounding composition?",
+          "nb": "Hvordan kan du skille et forstørret optisk bilde fra komposisjonen rundt?",
+          "fr": "Comment distinguer une vue optique agrandie de la composition environnante ?",
+          "pt": "Como distinguir uma vista ótica ampliada da composição envolvente?"
+        },
+        "options": [
+          {
+            "id": "same",
+            "label": {
+              "en": "Keep every view identical in scale and framing",
+              "nb": "Behold identisk størrelse og utsnitt i alle bilder",
+              "fr": "Conserver une échelle et un cadrage identiques partout",
+              "pt": "Manter escala e enquadramento idênticos em todas as vistas"
+            }
+          },
+          {
+            "id": "mask",
+            "label": {
+              "en": "Compare a wide drawing with a circular framed detail",
+              "nb": "Sammenlign en vid tegning med en sirkelformet innrammet detalj",
+              "fr": "Comparer un dessin large et un détail encadré par un cercle",
+              "pt": "Comparar um desenho amplo com um pormenor enquadrado por um círculo"
+            }
+          },
+          {
+            "id": "claim",
+            "label": {
+              "en": "Attribute a modern digital lens system to the original",
+              "nb": "Tilskriv originalen et moderne digitalt objektivsystem",
+              "fr": "Attribuer au film original un système optique numérique moderne",
+              "pt": "Atribuir ao original um sistema ótico digital moderno"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "mask",
+        "explanation": {
+          "en": "The regional archive describes enlarged circular views, and the historical catalogue reproduced in the apparatus dossier documents circular masks. Use paper cutouts to explore the visual distinction without claiming an exact apparatus reconstruction.",
+          "nb": "Det regionale arkivet beskriver forstørrede sirkelbilder, og den historiske katalogen i apparatdokumentasjonen beskriver sirkelmasker. Bruk papirutklipp til å utforske forskjellen uten å hevde en eksakt rekonstruksjon.",
+          "fr": "L'archive régionale décrit des vues circulaires agrandies et le catalogue historique reproduit dans le dossier technique documente les caches circulaires. Explorez la distinction avec du papier, sans prétendre reconstruire l'appareil exact.",
+          "pt": "O arquivo regional descreve vistas circulares ampliadas e o catálogo histórico reproduzido no dossier técnico documenta máscaras circulares. Explore a distinção com papel, sem alegar uma reconstrução exata do aparelho."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "glass-history",
+        "area": "research",
+        "prompt": {
+          "en": "How should you describe this early experiment in represented gaze?",
+          "nb": "Hvordan bør du beskrive dette tidlige forsøket med å fremstille blikk?",
+          "fr": "Comment décrire cette expérience ancienne de représentation du regard ?",
+          "pt": "Como descrever esta experiência inicial de representação do olhar?"
+        },
+        "options": [
+          {
+            "id": "first",
+            "label": {
+              "en": "Declare that Smith invented every later viewpoint convention",
+              "nb": "Erklær at Smith oppfant alle senere synsvinkelkonvensjoner",
+              "fr": "Déclarer que Smith a inventé toutes les conventions ultérieures du regard",
+              "pt": "Declarar que Smith inventou todas as convenções posteriores do olhar"
+            }
+          },
+          {
+            "id": "modern",
+            "label": {
+              "en": "Treat early inserts as identical to classical subjective viewpoint",
+              "nb": "Behandle tidlige innklipp som identiske med klassisk subjektiv synsvinkel",
+              "fr": "Traiter les inserts anciens comme identiques au point de vue subjectif classique",
+              "pt": "Tratar os insertos iniciais como idênticos ao ponto de vista subjetivo clássico"
+            }
+          },
+          {
+            "id": "context",
+            "label": {
+              "en": "Compare the early device with later conventions and related experiments",
+              "nb": "Sammenlign det tidlige grepet med senere konvensjoner og beslektede forsøk",
+              "fr": "Comparer le procédé ancien aux conventions ultérieures et aux expériences voisines",
+              "pt": "Comparar o recurso inicial com convenções posteriores e experiências relacionadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "context",
+        "explanation": {
+          "en": "The BFI collection places the film among multiple visual-language experiments, while the Bologna scholarship distinguishes early represented gaze from later classical subjectivity. Explain the contribution without claiming a sole inventor.",
+          "nb": "BFI plasserer filmen blant flere forsøk med filmspråk, mens Bologna-forskningen skiller tidlig fremstilt blikk fra senere klassisk subjektivitet. Forklar bidraget uten å utpeke én oppfinner.",
+          "fr": "La collection BFI situe le film parmi plusieurs expériences de langage visuel ; la recherche de Bologne distingue le regard ancien de la subjectivité classique. Expliquez cet apport sans désigner un inventeur unique.",
+          "pt": "A coleção BFI situa o filme entre várias experiências de linguagem visual; a investigação de Bolonha distingue o olhar inicial da subjetividade clássica. Explique o contributo sem indicar um inventor único."
+        },
+        "sourceIds": [
+          "s1",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_histoire_d_un_crime_1901",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore multi-tableau narrative, represented memory and Pathé's production context.",
+      "nb": "Utforsk fortelling i flere tablåer, fremstilt erindring og Pathés produksjonskontekst.",
+      "fr": "Explorez le récit en plusieurs tableaux, le souvenir représenté et le contexte de production de Pathé.",
+      "pt": "Explore a narrativa em vários quadros, a memória representada e o contexto de produção da Pathé."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Il y a 160 ans naissait Ferdinand Zecca",
+        "publisher": "Centre national du cinéma et de l'image animée (CNC)",
+        "url": "https://www.cnc.fr/cinema/actualites/il-y-a-160-ans-naissait-ferdinand-zecca_2165740"
+      },
+      {
+        "id": "s1",
+        "title": "Pathé – Our history",
+        "publisher": "Pathé",
+        "url": "https://www.pathe.com/en/pathe/"
+      },
+      {
+        "id": "s2",
+        "title": "Histoire de Pathé",
+        "publisher": "Fondation Jérôme Seydoux-Pathé",
+        "url": "https://www.fondation-jeromeseydoux-pathe.com/cms/histoire_pathe"
+      },
+      {
+        "id": "s4",
+        "title": "Historical Dictionary of French Cinema",
+        "publisher": "Scarecrow Press / Bloomsbury",
+        "url": "https://www.bloomsbury.com/us/historical-dictionary-of-french-cinema-9780810854918/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "crime-memory",
+        "area": "camera",
+        "prompt": {
+          "en": "How could a drawing show present experience and a remembered event together?",
+          "nb": "Hvordan kan en tegning vise nåtidig opplevelse og et minne samtidig?",
+          "fr": "Comment montrer ensemble une expérience présente et un souvenir dans un dessin ?",
+          "pt": "Como mostrar juntos uma experiência presente e uma recordação num desenho?"
+        },
+        "options": [
+          {
+            "id": "planes",
+            "label": {
+              "en": "Use distinct scenic planes for present action and represented memory",
+              "nb": "Bruk adskilte sceniske plan for nåtidig handling og fremstilt minne",
+              "fr": "Employer des plans scéniques distincts pour le présent et le souvenir",
+              "pt": "Usar planos cénicos distintos para a ação presente e a memória representada"
+            }
+          },
+          {
+            "id": "erase",
+            "label": {
+              "en": "Remove all cues separating past and present experience",
+              "nb": "Fjern alle tegn som skiller fortid og nåtidig opplevelse",
+              "fr": "Supprimer tous les indices distinguant passé et présent",
+              "pt": "Remover todos os sinais que distinguem passado e presente"
+            }
+          },
+          {
+            "id": "literal",
+            "label": {
+              "en": "Label the remembered scene as a documentary record",
+              "nb": "Merk minnescenen som en dokumentarisk registrering",
+              "fr": "Présenter la scène remémorée comme un document direct",
+              "pt": "Apresentar a cena recordada como registo documental"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "planes",
+        "explanation": {
+          "en": "The scholarly dictionary dossier describes two scenic sets visible within one composition during the recollection. Draw an original harmless memory scene using distinct planes rather than reconstructing the film's exact staging.",
+          "nb": "Det faglige oppslagsverket beskriver to sceniske dekorasjoner synlige i én komposisjon under erindringen. Tegn en egen ufarlig minnescene med adskilte plan fremfor å rekonstruere filmens eksakte iscenesettelse.",
+          "fr": "Le dictionnaire spécialisé décrit deux décors visibles dans une même composition pendant le souvenir. Dessinez une scène de mémoire originale et sans danger avec des plans distincts, sans reconstruire la mise en scène exacte.",
+          "pt": "O dicionário especializado descreve dois cenários visíveis na mesma composição durante a recordação. Desenhe uma cena de memória original e segura com planos distintos, sem reconstruir a encenação exata."
+        },
+        "sourceIds": [
+          "s4"
+        ]
+      },
+      {
+        "id": "crime-tableaux",
+        "area": "camera",
+        "prompt": {
+          "en": "How could multiple tableaux develop a longer fictional narrative?",
+          "nb": "Hvordan kan flere tablåer utvikle en lengre fiktiv fortelling?",
+          "fr": "Comment plusieurs tableaux peuvent-ils développer un récit fictif plus long ?",
+          "pt": "Como podem vários quadros desenvolver uma narrativa ficcional mais longa?"
+        },
+        "options": [
+          {
+            "id": "unrelated",
+            "label": {
+              "en": "Arrange unrelated images without a readable narrative connection",
+              "nb": "Ordne urelaterte bilder uten lesbar fortellermessig sammenheng",
+              "fr": "Disposer des images sans relation narrative lisible",
+              "pt": "Organizar imagens sem relação narrativa legível"
+            }
+          },
+          {
+            "id": "sequence",
+            "label": {
+              "en": "Arrange distinct fictional scenes with clear causal and temporal links",
+              "nb": "Ordne adskilte fiktive scener med tydelige årsaks- og tidsforhold",
+              "fr": "Organiser des scènes fictives distinctes aux liens causaux et temporels clairs",
+              "pt": "Organizar cenas fictícias distintas com relações causais e temporais claras"
+            }
+          },
+          {
+            "id": "single",
+            "label": {
+              "en": "Keep every event in an unchanging unrelated composition",
+              "nb": "Behold alle hendelser i en uforanderlig og urelatert komposisjon",
+              "fr": "Garder tous les événements dans une composition fixe sans lien",
+              "pt": "Manter todos os acontecimentos numa composição fixa sem relação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "sequence",
+        "explanation": {
+          "en": "The CNC dossier emphasizes Zecca's expanded footage and multiple tableaux. An original story about an everyday misunderstanding can test narrative links without claiming to reproduce the historical film's sequence.",
+          "nb": "CNC-dokumentasjonen fremhever Zeccas økte filmlengde og flere tablåer. En egen fortelling om en hverdagslig misforståelse kan teste fortellerforbindelser uten å gjengi filmens historiske sekvens.",
+          "fr": "Le dossier CNC souligne la longueur accrue et les tableaux multiples chez Zecca. Une histoire originale de malentendu quotidien permet de tester les liens narratifs sans reproduire la séquence historique.",
+          "pt": "O dossier CNC destaca a maior metragem e os vários quadros de Zecca. Uma história original sobre um mal-entendido quotidiano permite testar ligações narrativas sem reproduzir a sequência histórica."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "crime-context",
+        "area": "research",
+        "prompt": {
+          "en": "How should you relate this film's narrative innovation to its production context?",
+          "nb": "Hvordan bør du knytte filmens fortellergrep til produksjonskonteksten?",
+          "fr": "Comment relier l'innovation narrative du film à son contexte de production ?",
+          "pt": "Como relacionar a inovação narrativa do filme com o contexto de produção?"
+        },
+        "options": [
+          {
+            "id": "first",
+            "label": {
+              "en": "Claim the film uniquely invented the cinematic flashback",
+              "nb": "Hevd at filmen alene oppfant filmens tilbakeblikk",
+              "fr": "Affirmer que ce film a inventé à lui seul le flash-back",
+              "pt": "Afirmar que o filme inventou sozinho o flashback"
+            }
+          },
+          {
+            "id": "isolated",
+            "label": {
+              "en": "Ignore Pathé's emerging production service and catalogue genres",
+              "nb": "Ignorer Pathés fremvoksende produksjonstjeneste og katalogsjangre",
+              "fr": "Ignorer le service de production naissant et les genres du catalogue Pathé",
+              "pt": "Ignorar o serviço de produção emergente e os géneros do catálogo Pathé"
+            }
+          },
+          {
+            "id": "system",
+            "label": {
+              "en": "Connect the formal device to Pathé's organization and acknowledge uncertainty",
+              "nb": "Knytt fortellergrepet til Pathés organisering og anerkjenn usikkerhet",
+              "fr": "Relier le procédé à l'organisation de Pathé et reconnaître les incertitudes",
+              "pt": "Relacionar o recurso com a organização da Pathé e reconhecer a incerteza"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "system",
+        "explanation": {
+          "en": "The CNC and Pathé foundation dossiers place the film within Zecca's developing multi-tableau drama and company production organization. Describe the supported historical significance without an absolute first-flashback claim.",
+          "nb": "CNC og Pathé-stiftelsen plasserer filmen i Zeccas utvikling av drama i flere tablåer og selskapets produksjonsorganisering. Beskriv dokumentert historisk betydning uten å hevde det første tilbakeblikket noensinne.",
+          "fr": "Les dossiers CNC et Fondation Pathé situent le film dans le développement des drames en tableaux et de l'organisation de production. Décrivez son importance étayée sans revendiquer un premier flash-back absolu.",
+          "pt": "Os dossiers CNC e Fundação Pathé situam o filme no desenvolvimento do drama em quadros e da organização de produção. Descreva a importância documentada sem afirmar um primeiro flashback absoluto."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
         ]
       }
     ]
