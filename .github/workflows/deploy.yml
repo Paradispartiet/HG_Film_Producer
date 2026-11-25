@@ -120,6 +120,7 @@ jobs:
           node scripts/film-producer-four-language-browser-qa.mjs
           node scripts/studio-career-handoff-browser-qa.mjs
           node scripts/studio-career-fresh-browser-qa.mjs
+          node scripts/film-producer-sourced-workshop-browser-qa.mjs
 
       - name: Preserve smoke evidence and visual-review screenshots
         if: always()
@@ -168,6 +169,7 @@ jobs:
           preview_pid=$!
           trap 'kill "${preview_pid}" 2>/dev/null || true' EXIT
           node scripts/film-atlas-ipad-webkit-qa.mjs
+          node scripts/film-producer-sourced-workshop-browser-qa.mjs --webkit
 
       - name: Preserve WebKit screenshots and diagnostics
         if: always()
