@@ -15,20 +15,36 @@ const ids = [
   "scenario_cure_1997",
   "scenario_the_host_2006",
   "scenario_still_life_2006",
+  "scenario_platform_2000",
+  "scenario_raise_the_red_lantern_1991",
+  "scenario_a_city_of_sadness_1989",
+  "scenario_vive_l_amour_1994",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly six existing cases have eighteen original, source-backed decisions", () => {
+test("Exactly ten existing cases have thirty original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 6);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 18);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 10);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 30);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
     assert.ok(workshop.sources.length >= 2);
-    if (workshop.scenarioId === "scenario_still_life_2006") {
+    if (workshop.scenarioId === "scenario_vive_l_amour_1994") {
+      const manual = readFileSync("src/core/eastAsianAuteurExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_vive_l_amour_1994",\s*title: "Vive L\x27Amour",[\s\S]{0,120}year: 1994/);
+    } else if (workshop.scenarioId === "scenario_a_city_of_sadness_1989") {
+      const manual = readFileSync("src/core/modernCanonExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_a_city_of_sadness_1989", title: "A City of Sadness"[^\n]*year: 1989/);
+    } else if (workshop.scenarioId === "scenario_raise_the_red_lantern_1991") {
+      const manual = readFileSync("src/core/eastAsianAuteurExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_raise_the_red_lantern_1991",\s*title: "Raise the Red Lantern",[\s\S]{0,100}year: 1991/);
+    } else if (workshop.scenarioId === "scenario_platform_2000") {
+      const manual = readFileSync("src/core/modernCanonExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_platform_2000", title: "Platform"[^\n]*year: 2000/);
+    } else if (workshop.scenarioId === "scenario_still_life_2006") {
       const manual = readFileSync("src/core/modernCanonExpansion.ts", "utf8");
       assert.match(manual, /id: "scenario_still_life_2006", title: "Still Life"[^\n]*year: 2006/);
     } else if (workshop.scenarioId === "scenario_the_host_2006") {
@@ -162,4 +178,58 @@ test("Still Life distinguishes digital capture, festival format, documentary and
   assert.ok(diptych.sourceIds.includes("photogenie-diptych"));
   assert.equal(surreal.bestSupportedOptionId, "express-dislocation");
   assert.match(surreal.explanation.en, /not evidence/);
+});
+
+test("Platform distinguishes camera distance, preserved time and guided improvisation", () => {
+  const workshop = getSourceBackedCaseWorkshop(ids[6]);
+  assert.ok(workshop);
+  const [distance, duration, performance] = workshop.questions;
+  assert.ok(distance && duration && performance);
+  assert.equal(distance.bestSupportedOptionId, "observational-distance");
+  assert.match(distance.explanation.en, /absolute objectivity/);
+  assert.equal(duration.bestSupportedOptionId, "preserved-time");
+  assert.match(duration.explanation.en, /not a rule/);
+  assert.equal(performance.bestSupportedOptionId, "guided-improvisation");
+  assert.match(performance.explanation.en, /dialogue was written/);
+  assert.ok(performance.sourceIds.includes("senses-jia"));
+});
+
+test("Raise the Red Lantern distinguishes visual design from historical authentication", () => {
+  const workshop = getSourceBackedCaseWorkshop(ids[7]);
+  assert.ok(workshop);
+  const [architecture, color, ritual] = workshop.questions;
+  assert.ok(architecture && color && ritual);
+  assert.equal(architecture.bestSupportedOptionId, "architectural-frame");
+  assert.equal(color.bestSupportedOptionId, "selective-red");
+  assert.match(color.explanation.en, /not a claim about exact lamp wattage/);
+  assert.equal(ritual.bestSupportedOptionId, "constructed-ritual");
+  assert.ok(ritual.sourceIds.includes("ritual-study"));
+  assert.match(ritual.explanation.en, /inventions for the film/);
+});
+
+test("A City of Sadness links depth staging, sync sound and indirect narration to evidence", () => {
+  const workshop = getSourceBackedCaseWorkshop(ids[8]);
+  assert.ok(workshop);
+  const [depth, sound, history] = workshop.questions;
+  assert.ok(depth && sound && history);
+  assert.equal(depth.bestSupportedOptionId, "sustained-depth");
+  assert.ok(depth.sourceIds.includes("ucla-city"));
+  assert.equal(sound.bestSupportedOptionId, "sync-location");
+  assert.ok(sound.sourceIds.includes("tu-interview"));
+  assert.equal(history.bestSupportedOptionId, "family-perspective");
+  assert.match(history.explanation.en, /independently sourced historical records/);
+});
+
+test("Vive L'Amour distinguishes location adaptation, sustained performance and sparse sound", () => {
+  const workshop = getSourceBackedCaseWorkshop(ids[9]);
+  assert.ok(workshop);
+  const [location, duration, sound] = workshop.questions;
+  assert.ok(location && duration && sound);
+  assert.equal(location.bestSupportedOptionId, "adapt-to-place");
+  assert.ok(location.sourceIds.includes("rabbit-interview"));
+  assert.equal(duration.bestSupportedOptionId, "allow-duration");
+  assert.match(duration.explanation.en, /without fixing a disputed exact running time/);
+  assert.equal(sound.bestSupportedOptionId, "ambient-gestures");
+  assert.ok(sound.sourceIds.includes("eye-vive"));
+  assert.match(sound.explanation.en, /not a claim about the exact microphone/);
 });

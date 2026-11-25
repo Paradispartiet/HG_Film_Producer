@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Six pre-existing Production Cases receive evidence-backed craft decisions.
+ * Ten pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -569,6 +569,213 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
           "Jia explica que a paisagem parecia irreal e que o monumento voador era uma resposta imaginativa à velocidade das mudanças. O efeito digital exprime uma experiência subjetiva, não o voo real de um edifício."),
         sourceIds: ["doors-interview"]
       }
+    ]
+  },
+  {
+    scenarioId: "scenario_platform_2000",
+    status: "editorial_learning_exercise_not_case_verified",
+    introduction: t("Platform (2000) follows a provincial performance troupe through a decade of social transformation. Explore how Jia Zhangke and cinematographer Yu Lik-wai use distance, duration and collaboration to make historical change perceptible.",
+      "Platform (2000) følger en provinsiell artistgruppe gjennom et tiår med samfunnsendringer. Utforsk hvordan Jia Zhangke og filmfotograf Yu Lik-wai bruker avstand, varighet og samarbeid for å gjøre historiske endringer merkbare.",
+      "Platform (2000) suit une troupe provinciale pendant une décennie de transformations sociales. Explorez comment Jia Zhangke et le chef opérateur Yu Lik-wai rendent ces changements perceptibles par la distance, la durée et la collaboration.",
+      "Platform (2000) acompanha uma companhia artística provincial durante uma década de transformação social. Explore como Jia Zhangke e o diretor de fotografia Yu Lik-wai tornam a mudança histórica percetível através da distância, duração e colaboração."),
+    sources: [
+      { id: "senses-jia", title: "Cinema with an Accent – Interview with Jia Zhangke, Director of Platform", publisher: "Senses of Cinema", url: "https://www.sensesofcinema.com/2001/feature-articles/zhangke_interview/" },
+      { id: "nantes-interview", title: "Interview with Jia Zhang Ke at Nantes", publisher: "FilmFestivals.com", url: "https://www.filmfestivals.com/fr/node/178894" },
+      { id: "screen-review", title: "Platform — Derek Malcolm's contemporary review and credits", publisher: "Screen International", url: "https://www.screendaily.com/platform/404251.article" },
+    ],
+    questions: [
+      {
+        id: "platform-distance", area: "camera",
+        prompt: t("How can the camera preserve a sense of historical distance while showing the troupe's everyday life?",
+          "Hvordan kan kameraet bevare historisk avstand samtidig som det viser artistgruppens hverdagsliv?",
+          "Comment la caméra peut-elle préserver une distance historique tout en montrant la vie quotidienne de la troupe ?",
+          "Como pode a câmara preservar uma distância histórica ao mostrar o quotidiano da companhia?"),
+        options: [
+          { id: "explanatory-closeups", label: t("Use frequent explanatory close-ups to dictate where viewers look", "Bruk hyppige forklarende nærbilder for å styre publikums blikk", "Multiplier les gros plans explicatifs pour diriger le regard", "Usar grandes planos explicativos frequentes para dirigir o olhar") },
+          { id: "observational-distance", label: t("Step back and hold wider, sustained views of people within their surroundings", "Trekk kameraet tilbake og behold vide, langvarige bilder av mennesker i omgivelsene", "Reculer la caméra et maintenir des plans larges et prolongés des personnages dans leur milieu", "Recuar a câmara e manter planos amplos e prolongados das pessoas no seu meio") },
+          { id: "constant-pov", label: t("Show every event exclusively from one character's moving point of view", "Vis alle hendelser utelukkende fra én figurs bevegelige synsvinkel", "Montrer chaque événement exclusivement du point de vue mobile d'un personnage", "Mostrar todos os acontecimentos apenas do ponto de vista móvel de uma personagem") },
+        ],
+        bestSupportedOptionId: "observational-distance",
+        explanation: t("In Senses of Cinema, Jia contrasts the close, handheld immediacy of Xiao Wu with the more distant observer in Platform. Wider compositions and sustained takes allow viewers to attend to people and surroundings. He also rejects the idea that this is absolute objectivity.",
+          "I Senses of Cinema sammenligner Jia den nære, håndholdte umiddelbarheten i Xiao Wu med den mer distanserte observatøren i Platform. Vide komposisjoner og lange tagninger lar publikum studere mennesker og omgivelser. Han avviser samtidig at dette er absolutt objektivitet.",
+          "Dans Senses of Cinema, Jia oppose l'immédiateté de la caméra portée de Xiao Wu au regard plus distant de Platform. Plans larges et prises longues permettent d'observer les personnes et leur milieu, sans prétendre à une objectivité absolue.",
+          "Na Senses of Cinema, Jia contrapõe a proximidade da câmara à mão de Xiao Wu ao olhar mais distante de Platform. Planos amplos e prolongados permitem observar pessoas e espaços, sem pretender uma objetividade absoluta."),
+        sourceIds: ["senses-jia", "screen-review"]
+      },
+      {
+        id: "platform-duration", area: "camera",
+        prompt: t("How can the production convey the experience of waiting rather than simply communicate that time has passed?",
+          "Hvordan kan produksjonen formidle opplevelsen av å vente, ikke bare fortelle at tiden har gått?",
+          "Comment la réalisation peut-elle transmettre l'expérience de l'attente plutôt que simplement indiquer que le temps a passé ?",
+          "Como pode a realização transmitir a experiência da espera em vez de apenas indicar que o tempo passou?"),
+        options: [
+          { id: "rapid-montage", label: t("Compress every idle moment into a rapid montage of highlights", "Komprimer alle stille øyeblikk til en rask montasje av høydepunkter", "Comprimer tous les moments d'inaction en un montage rapide de temps forts", "Comprimir todos os momentos de inação numa montagem rápida de destaques") },
+          { id: "time-caption", label: t("Replace the actors' waiting with a caption announcing elapsed time", "Erstatt skuespillernes venting med en tekstplakat som angir tiden", "Remplacer l'attente des acteurs par un carton indiquant le temps écoulé", "Substituir a espera dos atores por um cartão que indique o tempo decorrido") },
+          { id: "preserved-time", label: t("Keep the mundane conversation and pauses unfolding within a continuous take", "La den hverdagslige samtalen og pausene utspille seg i én sammenhengende tagning", "Laisser la conversation ordinaire et les silences se dérouler dans une prise continue", "Deixar a conversa quotidiana e as pausas decorrerem num plano contínuo") },
+        ],
+        bestSupportedOptionId: "preserved-time",
+        explanation: t("Jia explains that a prolonged scene of people smoking and talking conveys stagnation through its actual duration. Breaking it into shorter pieces would change that experience. This supports a particular choice about time, not a rule that all films must avoid montage.",
+          "Jia forklarer at en lang scene der mennesker røyker og snakker, formidler stillstand gjennom selve varigheten. Kortere klipp ville endret opplevelsen. Dette støtter et bestemt tidslig grep, ikke et generelt forbud mot montasje.",
+          "Jia explique qu'une longue scène de conversation et de cigarettes transmet la stagnation par sa durée même. La fragmenter modifierait cette expérience. Ce choix temporel n'est pas une interdiction générale du montage.",
+          "Jia explica que uma cena longa de conversa e cigarros transmite a estagnação pela própria duração. Fragmentá-la mudaria a experiência. Esta escolha temporal não constitui uma proibição geral da montagem."),
+        sourceIds: ["senses-jia", "nantes-interview"]
+      },
+      {
+        id: "platform-performance", area: "research",
+        prompt: t("Which rehearsal and performance approach is consistent with Jia's account of his working method?",
+          "Hvilken tilnærming til prøver og skuespill samsvarer med Jias beskrivelse av arbeidsmetoden?",
+          "Quelle méthode de répétition et de jeu correspond au récit de Jia sur son travail ?",
+          "Que método de ensaio e interpretação corresponde ao relato de Jia sobre o seu trabalho?"),
+        options: [
+          { id: "guided-improvisation", label: t("Keep the scripted dramatic purpose, allow actors to vary dialogue and rehearse on set", "Behold scenens manusfestede formål, la skuespillerne variere replikkene og prøv på settet", "Conserver l'intention dramatique écrite, laisser varier les répliques et répéter sur le plateau", "Manter a intenção dramática escrita, permitir variações no diálogo e ensaiar no local") },
+          { id: "no-script-no-purpose", label: t("Discard the written scene and give the cast no dramatic purpose", "Forkast den skrevne scenen og gi skuespillerne intet dramatisk formål", "Abandonner la scène écrite et ne donner aucun objectif dramatique aux acteurs", "Abandonar a cena escrita e não dar qualquer objetivo dramático aos atores") },
+          { id: "no-variation", label: t("Require every word to be identical and forbid all actor contributions", "Krev at hvert ord er identisk og forby alle bidrag fra skuespillerne", "Exiger des mots strictement identiques et interdire toute contribution des acteurs", "Exigir palavras rigorosamente idênticas e proibir contribuições dos atores") },
+        ],
+        bestSupportedOptionId: "guided-improvisation",
+        explanation: t("Jia says dialogue was written, but actors could find their own phrasing while preserving the scene's purpose. Rehearsal began on set once the camera and lighting were prepared. Improvisation and a written screenplay can therefore coexist.",
+          "Jia sier at replikkene var skrevet, men at skuespillerne kunne finne egne formuleringer så lenge scenens formål ble bevart. Prøvene begynte på settet etter at kamera og lys var klargjort. Improvisasjon og et skrevet manus kan dermed eksistere side om side.",
+          "Jia indique que les dialogues étaient écrits, mais que les acteurs pouvaient les reformuler en conservant l'intention de la scène. Les répétitions commençaient sur le plateau après la préparation de la caméra et de la lumière.",
+          "Jia afirma que os diálogos estavam escritos, mas os atores podiam reformulá-los mantendo a intenção da cena. Os ensaios começavam no local após a preparação da câmara e da iluminação."),
+        sourceIds: ["senses-jia"]
+      }
+    ]
+  },
+  {
+    scenarioId: "scenario_raise_the_red_lantern_1991",
+    status: "editorial_learning_exercise_not_case_verified",
+    introduction: t("Raise the Red Lantern (1991) makes architecture, recurring color and constructed ceremony expressive elements of an enclosed historical drama. Explore their visual function without confusing invention with historical documentation.", "Raise the Red Lantern (1991) gjør arkitektur, gjentatte farger og konstruerte seremonier til uttrykksmidler i et innelukket historisk drama. Utforsk den visuelle funksjonen uten å forveksle fiksjon med historisk dokumentasjon.", "Raise the Red Lantern (1991) transforme l'architecture, les couleurs récurrentes et les cérémonies construites en éléments expressifs d'un drame historique clos. Explorez leur fonction sans confondre invention et documentation.", "Raise the Red Lantern (1991) transforma arquitetura, cores recorrentes e cerimónias construídas em elementos expressivos de um drama histórico fechado. Explore a função visual sem confundir invenção e documentação."),
+    sources: [
+  {
+    "id": "pingyao-masterclass",
+    "title": "Pingyao 2019: Zhang Yimou – Masterclass",
+    "publisher": "Desistfilm",
+    "url": "https://desistfilm.com/pingyao-2019-zhang-yimou-masterclass/"
+  },
+  {
+    "id": "bfi-compound",
+    "title": "10 great country house films",
+    "publisher": "British Film Institute",
+    "url": "https://www.bfi.org.uk/lists/10-great-country-house-films"
+  },
+  {
+    "id": "reverse-shot",
+    "title": "Raise the Red Lantern — visual analysis",
+    "publisher": "Reverse Shot",
+    "url": "https://www.reverseshot.org/symposiums/entry/2738/raise_red_lantern"
+  },
+  {
+    "id": "ritual-study",
+    "title": "Inventing Rituals: Cultural Politics in Zhang Yimou’s Historical Films",
+    "publisher": "Senses of Cinema",
+    "url": "https://www.sensesofcinema.com/2018/feature-articles/zhang-yimou-cultural-politics/"
+  }
+],
+    questions: [
+      { id: "lantern-architecture", area: "camera", prompt: t("How can a fixed camera make a courtyard's architecture part of the drama?", "Hvordan kan et fast kamera gjøre gårdsarkitekturen til en del av dramaet?", "Comment une caméra fixe peut-elle intégrer l'architecture de la cour au drame ?", "Como pode uma câmara fixa integrar a arquitetura do pátio no drama?"), options: [{ id: "architectural-frame", label: t("Hold a composed wide view so walls, entrances and people share the frame", "Behold et komponert oversiktsbilde der murer, innganger og mennesker deler bildeflaten", "Maintenir un plan large composé où murs, entrées et personnes partagent le cadre", "Manter um plano amplo composto onde muros, entradas e pessoas partilham o quadro") },
+          { id: "isolated-faces", label: t("Remove all architecture by using only tight facial close-ups", "Fjern all arkitektur ved å bruke utelukkende tette ansiktsnærbilder", "Supprimer toute architecture en utilisant uniquement des gros plans serrés", "Eliminar toda a arquitetura usando apenas grandes planos fechados") },
+          { id: "constant-tracking", label: t("Keep the camera tracking continuously to avoid every static view", "La kameraet bevege seg kontinuerlig for å unngå alle statiske bilder", "Déplacer sans cesse la caméra pour éviter tout plan fixe", "Mover continuamente a câmara para evitar todos os planos fixos") }], bestSupportedOptionId: "architectural-frame", explanation: t("At the 2019 Pingyao masterclass Zhang explained that he relocated the adaptation to Shanxi and sought fixed compositions. The Qiao Family Compound provides the physical setting; its framing turns enclosure into an expressive choice rather than merely a backdrop.", "Under mesterklassen i Pingyao i 2019 fortalte Zhang at han flyttet adaptasjonen til Shanxi og ønsket faste komposisjoner. Qiao-familiens anlegg gir den fysiske rammen; innrammingen gjør innestengtheten til et uttrykksgrep fremfor bare en bakgrunn.", "À Pingyao en 2019, Zhang a expliqué avoir déplacé l'adaptation au Shanxi et recherché des compositions fixes. La demeure Qiao fournit le lieu réel ; le cadrage transforme l'enfermement en choix expressif plutôt qu'en simple décor.", "Em Pingyao, em 2019, Zhang explicou que deslocou a adaptação para Shanxi e procurou composições fixas. O complexo da família Qiao fornece o espaço físico; o enquadramento transforma o confinamento numa escolha expressiva."), sourceIds: ["pingyao-masterclass","bfi-compound"] },
+      { id: "lantern-color", area: "camera", prompt: t("Which color and composition strategy makes changing household status visible?", "Hvilken farge- og komposisjonsstrategi synliggjør endringer i status i husholdningen?", "Quelle stratégie de couleur et de composition rend visibles les changements de statut dans la maison ?", "Que estratégia de cor e composição torna visíveis as mudanças de estatuto na casa?"), options: [{ id: "uniform-red", label: t("Flood every courtyard with the same red light regardless of the story", "Fyll alle gårdsrom med det samme røde lyset uavhengig av fortellingen", "Inonder toutes les cours de la même lumière rouge indépendamment du récit", "Inundar todos os pátios com a mesma luz vermelha independentemente da narrativa") },
+          { id: "selective-red", label: t("Contrast selective red lantern accents with cooler surroundings in recurring compositions", "Sett utvalgte røde lanterneaksenter mot kjøligere omgivelser i gjentatte komposisjoner", "Opposer des accents rouges sélectifs à un environnement plus froid dans des compositions récurrentes", "Contrastar acentos vermelhos seletivos com ambientes mais frios em composições recorrentes") },
+          { id: "random-palette", label: t("Change the color palette randomly without a narrative relationship", "Endre fargepaletten tilfeldig uten sammenheng med fortellingen", "Modifier la palette au hasard sans rapport avec le récit", "Alterar aleatoriamente a paleta sem relação com a narrativa") }], bestSupportedOptionId: "selective-red", explanation: t("Reverse Shot identifies the recurring contrast of illuminated red lanterns with blue night surroundings and formal frames. Zhang's account connects the lighting cycle to his adaptation. This supports the visual contrast, not a claim about exact lamp wattage, stock or exposure.", "Reverse Shot beskriver den gjentatte kontrasten mellom lysende røde lanterner, blå nattomgivelser og formelle bilder. Zhang knytter lyssyklusen til adaptasjonen. Dette støtter den visuelle kontrasten, ikke påstander om eksakt lampeeffekt, filmtype eller eksponering.", "Reverse Shot relève le contraste récurrent entre lanternes rouges lumineuses, nuit bleue et cadres formels. Zhang relie le cycle lumineux à son adaptation. Cela étaye le contraste visuel, non la puissance des lampes, la pellicule ou l'exposition exacte.", "Reverse Shot identifica o contraste recorrente entre lanternas vermelhas, noite azul e enquadramentos formais. Zhang liga o ciclo de luz à adaptação. Isto sustenta o contraste visual, não a potência das lâmpadas, a película ou a exposição exata."), sourceIds: ["reverse-shot","pingyao-masterclass"] },
+      { id: "lantern-ritual", area: "research", prompt: t("How should a filmmaker label the household's lantern ceremony in historical teaching material?", "Hvordan bør filmskaperen omtale husholdningens lanterneseremoni i historisk undervisningsmateriale?", "Comment présenter la cérémonie des lanternes dans un support pédagogique historique ?", "Como apresentar a cerimónia das lanternas num material pedagógico histórico?"), options: [{ id: "universal-custom", label: t("Describe it as a universal historical custom without further evidence", "Beskriv den som en universell historisk skikk uten ytterligere dokumentasjon", "La présenter comme une coutume historique universelle sans autre preuve", "Descrevê-la como um costume histórico universal sem outras provas") },
+          { id: "building-proves-ritual", label: t("Treat the real filming location as proof that every ceremony occurred there", "Bruk det virkelige opptaksstedet som bevis for at alle seremoniene fant sted der", "Prendre le lieu réel du tournage comme preuve que toutes les cérémonies y existaient", "Tomar o local real de filmagem como prova de que todas as cerimónias lá ocorreram") },
+          { id: "constructed-ritual", label: t("Identify it as a constructed dramatic ritual and research historical practices separately", "Identifiser den som et konstruert dramatisk ritual og undersøk historiske praksiser separat", "L'identifier comme un rituel dramatique construit et étudier séparément les pratiques historiques", "Identificá-la como ritual dramático construído e pesquisar separadamente as práticas históricas") }], bestSupportedOptionId: "constructed-ritual", explanation: t("Zhang describes adding the lantern cycle; Radha O'Meara's study likewise treats the central rituals as inventions for the film. Their symbolic depiction of social control is open to analysis, but neither a real location nor a convincing performance verifies a historical custom.", "Zhang beskriver hvordan han la til lanternesyklusen; Radha O'Mearas studie behandler også de sentrale ritualene som filmskapte. Deres symbolske skildring av sosial kontroll kan analyseres, men verken et virkelig sted eller overbevisende skuespill bekrefter en historisk skikk.", "Zhang décrit l'ajout du cycle des lanternes ; l'étude de Radha O'Meara analyse également les rituels centraux comme des inventions filmiques. Leur représentation symbolique du contrôle social peut être étudiée sans la confondre avec une coutume vérifiée.", "Zhang descreve a introdução do ciclo das lanternas; o estudo de Radha O'Meara também analisa os rituais centrais como invenções do filme. A representação simbólica do controlo social pode ser estudada sem ser confundida com um costume comprovado."), sourceIds: ["pingyao-masterclass","ritual-study"] }
+    ]
+  },
+  {
+    scenarioId: "scenario_a_city_of_sadness_1989",
+    status: "editorial_learning_exercise_not_case_verified",
+    introduction: t("A City of Sadness (1989) connects Taiwan's political transition to the daily experience of a fictional family. Explore spatial staging, synchronized sound and indirect historical narration without treating the drama as an archival record.", "A City of Sadness (1989) knytter Taiwans politiske overgang til en fiktiv families hverdag. Utforsk romlig iscenesettelse, synkronlyd og indirekte historiefortelling uten å behandle dramaet som et arkivdokument.", "A City of Sadness (1989) relie la transition politique de Taïwan au quotidien d'une famille fictive. Explorez la mise en scène spatiale, le son synchrone et le récit historique indirect sans traiter la fiction comme une archive.", "A City of Sadness (1989) liga a transição política de Taiwan ao quotidiano de uma família fictícia. Explore a encenação espacial, o som síncrono e a narrativa histórica indireta sem tratar a ficção como documento de arquivo."),
+    sources: [
+  {
+    "id": "ucla-city",
+    "title": "A City of Sadness — screening notes and credits",
+    "publisher": "UCLA Film & Television Archive",
+    "url": "https://cinema.ucla.edu/events/a-city-of-sadness-taiwan-1989-12-08-13/"
+  },
+  {
+    "id": "harvard-city",
+    "title": "A City of Sadness — programme notes",
+    "publisher": "Harvard Film Archive",
+    "url": "https://harvardfilmarchive.org/programs/a-city-of-sadness-by-hou-hsiao"
+  },
+  {
+    "id": "tu-interview",
+    "title": "Fathering sync sound",
+    "publisher": "Taipei Times",
+    "url": "https://www.taipeitimes.com/News/feat/archives/2001/06/17/0000090444"
+  },
+  {
+    "id": "tu-award",
+    "title": "Tu Duu-Chih — National Award for Arts",
+    "publisher": "National Culture and Arts Foundation",
+    "url": "https://www.ncafroc.org.tw/artsaward/winnerDetail%401233?lang=en_US"
+  },
+  {
+    "id": "smithsonian-hou",
+    "title": "Freer and Sackler Galleries Host First Major Film Retrospective of Hou Hsiao-hsien in More Than a Decade",
+    "publisher": "Smithsonian Institution",
+    "url": "https://www.si.edu/es/newsdesk/releases/freer-and-sackler-galleries-host-first-major-film-retrospective-hou-hsiao-hsien-more-decade"
+  }
+],
+    questions: [
+      { id: "sadness-depth", area: "camera", prompt: t("How can a family scene allow viewers to observe relationships across the room?", "Hvordan kan en familiescene la publikum observere relasjoner på tvers av rommet?", "Comment une scène familiale peut-elle permettre d'observer les relations dans toute la pièce ?", "Como pode uma cena familiar permitir observar as relações em todo o espaço?"), options: [{ id: "sustained-depth", label: t("Hold a precisely composed long take with action distributed through the depth of the room", "Behold en presist komponert lang tagning med handling fordelt i rommets dybde", "Maintenir une prise longue précisément composée avec des actions réparties dans la profondeur", "Manter um plano longo e cuidadosamente composto com ações distribuídas em profundidade") },
+          { id: "fragment-all", label: t("Break every interaction into isolated close-ups that remove the shared space", "Del opp all samhandling i isolerte nærbilder som fjerner det felles rommet", "Fragmenter chaque interaction en gros plans isolés qui suppriment l'espace commun", "Fragmentar cada interação em grandes planos isolados que eliminam o espaço comum") },
+          { id: "explain-relationships", label: t("Replace the family's shared activity with a narrator describing every relationship", "Erstatt familiens felles aktivitet med en forteller som beskriver alle relasjonene", "Remplacer l'activité commune par un narrateur décrivant chaque relation", "Substituir a atividade comum por um narrador que descreve cada relação") }], bestSupportedOptionId: "sustained-depth", explanation: t("UCLA credits Chen Huai-en as cinematographer and describes Hou's sustained shots and deep compositions. The Smithsonian likewise emphasizes staging in depth. This supports a spatial approach to performance, not an assertion about a specific lens or shot duration.", "UCLA krediterer Chen Huai-en som filmfotograf og beskriver Hous lange tagninger og dybdekomposisjoner. Smithsonian fremhever også iscenesettelsen i dybden. Dette støtter et romlig grep i personregien, ikke en påstand om et bestemt objektiv eller en eksakt tagningstid.", "L'UCLA crédite Chen Huai-en à l'image et décrit les prises longues et les compositions en profondeur de Hou. Le Smithsonian souligne aussi la mise en scène en profondeur. Cela étaye un choix spatial, non une focale ou une durée précise.", "A UCLA credita Chen Huai-en na fotografia e descreve os planos longos e as composições em profundidade de Hou. O Smithsonian destaca também a encenação em profundidade. Isto sustenta uma escolha espacial, não uma objetiva ou duração exata."), sourceIds: ["ucla-city","smithsonian-hou"] },
+      { id: "sadness-sync", area: "sound", prompt: t("Which sound-recording method reflects Tu Duu-Chih's documented contribution to the production?", "Hvilken lydopptaksmetode gjenspeiler Tu Duu-Chihs dokumenterte bidrag til produksjonen?", "Quelle méthode de prise de son correspond à la contribution documentée de Tu Duu-Chih ?", "Que método de captação sonora reflete o contributo documentado de Tu Duu-Chih?"), options: [{ id: "studio-replace", label: t("Replace every location performance with dialogue recorded later in a studio", "Erstatt alle stedlige skuespillerprestasjoner med replikker tatt opp senere i studio", "Remplacer toutes les performances sur place par des dialogues enregistrés ensuite en studio", "Substituir todas as interpretações no local por diálogos gravados depois em estúdio") },
+          { id: "sync-location", label: t("Record synchronized sound during filming and coordinate the sound and camera departments", "Ta opp synkronlyd under filmingen og samordne lyd- og kameraavdelingen", "Enregistrer le son synchrone au tournage et coordonner les équipes son et image", "Gravar som síncrono durante a rodagem e coordenar as equipas de som e imagem") },
+          { id: "music-only", label: t("Discard recorded speech and build the entire soundtrack from music alone", "Forkast taleopptakene og bygg hele lydsporet utelukkende av musikk", "Écarter les paroles enregistrées et construire toute la bande-son uniquement avec de la musique", "Descartar as falas gravadas e construir toda a banda sonora apenas com música") }], bestSupportedOptionId: "sync-location", explanation: t("Tu's Taipei Times interview and National Culture and Arts Foundation profile describe the production as a milestone for synchronized sound in Taiwanese cinema. Recording alongside the image helps retain the voices and rhythms of performance; it does not mean that no sound editing or later mixing occurred.", "Tus intervju i Taipei Times og profilen hos National Culture and Arts Foundation beskriver produksjonen som en milepæl for synkronlyd i taiwansk film. Opptak sammen med bildet bevarer stemmer og rytme, men utelukker ikke lydredigering og senere miks.", "L'entretien de Tu au Taipei Times et son profil à la fondation nationale des arts décrivent un tournant du son synchrone à Taïwan. La prise simultanée conserve les voix et rythmes du jeu, sans exclure montage sonore ni mixage ultérieur.", "A entrevista de Tu ao Taipei Times e o perfil na fundação nacional das artes descrevem um marco do som síncrono em Taiwan. A gravação simultânea preserva as vozes e ritmos da interpretação, sem excluir edição sonora ou mistura posterior."), sourceIds: ["tu-interview","tu-award"] },
+      { id: "sadness-history", area: "research", prompt: t("How can a fictional family story represent historical upheaval without claiming that every scene is documentary evidence?", "Hvordan kan en fiktiv familiehistorie skildre historiske omveltninger uten å påstå at hver scene er dokumentariske bevis?", "Comment un récit familial fictif peut-il représenter un bouleversement historique sans présenter chaque scène comme preuve documentaire ?", "Como pode uma história familiar fictícia representar uma transformação histórica sem apresentar cada cena como prova documental?"), options: [{ id: "fiction-as-record", label: t("Treat every fictional conversation as a verified transcript of historical events", "Behandle hver fiktive samtale som en verifisert utskrift av historiske hendelser", "Traiter chaque conversation fictive comme une transcription historique vérifiée", "Tratar cada conversa fictícia como uma transcrição histórica verificada") },
+          { id: "erase-languages", label: t("Remove linguistic differences and explain all historical changes through a single narrator", "Fjern språkforskjellene og forklar alle historiske endringer gjennom én forteller", "Supprimer les différences linguistiques et expliquer tous les changements par un narrateur unique", "Eliminar diferenças linguísticas e explicar todas as mudanças através de um único narrador") },
+          { id: "family-perspective", label: t("Show consequences through family life, varied languages, written text and offscreen events; verify history separately", "Vis konsekvenser gjennom familieliv, ulike språk, skrift og hendelser utenfor bildet; etterprøv historien separat", "Montrer les conséquences par la vie familiale, les langues, l'écrit et le hors-champ ; vérifier l'histoire séparément", "Mostrar consequências através da vida familiar, línguas, textos e acontecimentos fora de campo; verificar a história separadamente") }], bestSupportedOptionId: "family-perspective", explanation: t("Harvard Film Archive and UCLA describe how the film brings political change into everyday family life while leaving major events largely offscreen. Harvard also notes written text, voiceover and multiple languages. These are narrative strategies; independently sourced historical records are needed to establish historical facts.", "Harvard Film Archive og UCLA beskriver hvordan filmen lar politiske endringer prege familiens hverdag mens store hendelser i stor grad foregår utenfor bildet. Harvard fremhever også skrift, fortellerstemme og flere språk. Dette er fortellergrep; historiske fakta må etterprøves med uavhengige kilder.", "Harvard et l'UCLA décrivent les conséquences politiques dans la vie familiale, tandis que les événements majeurs restent surtout hors champ. Harvard souligne aussi l'écrit, la voix off et les langues. Ces procédés narratifs ne remplacent pas des sources historiques indépendantes.", "Harvard e a UCLA descrevem as consequências políticas na vida familiar, com grandes acontecimentos sobretudo fora de campo. Harvard destaca ainda texto, voz off e línguas. Estes recursos narrativos não substituem fontes históricas independentes."), sourceIds: ["harvard-city","ucla-city"] }
+    ]
+  },
+  {
+    scenarioId: "scenario_vive_l_amour_1994",
+    status: "editorial_learning_exercise_not_case_verified",
+    introduction: t("Vive L'Amour (1994) makes physical proximity and emotional distance perceptible through urban space, sparse sound and sustained performance. Explore Tsai Ming-liang's craft choices and distinguish documented production decisions from interpretation.", "Vive L'Amour (1994) gjør fysisk nærhet og følelsesmessig avstand merkbar gjennom byrom, sparsom lyd og langvarig skuespill. Utforsk Tsai Ming-liangs håndverksvalg og skill dokumenterte produksjonsvalg fra fortolkning.", "Vive L'Amour (1994) rend sensibles la proximité physique et la distance émotionnelle par l'espace urbain, le son épuré et le jeu prolongé. Explorez les choix de Tsai Ming-liang en distinguant production documentée et interprétation.", "Vive L'Amour (1994) torna sensíveis a proximidade física e a distância emocional através do espaço urbano, do som contido e da interpretação prolongada. Explore as escolhas de Tsai Ming-liang distinguindo produção documentada e interpretação."),
+    sources: [
+  {
+    "id": "rabbit-interview",
+    "title": "Vive l’amour at 30: Tsai Ming-liang revisits his intoxicating masterpiece",
+    "publisher": "A Rabbit's Foot",
+    "url": "https://a-rabbitsfoot.com/editorial/confessions/vive-lamour-at-30-tsai-ming-liang-revisits-his-intoxicating-masterpiece/"
+  },
+  {
+    "id": "bfi-tsai",
+    "title": "Tsai Ming-liang: 90 minutes with the slow cinema master",
+    "publisher": "British Film Institute",
+    "url": "https://www.bfi.org.uk/interviews/tsai-ming-liang-deserted"
+  },
+  {
+    "id": "eye-vive",
+    "title": "Vive l’amour — programme and collection screening",
+    "publisher": "Eye Filmmuseum",
+    "url": "https://www.eyefilm.nl/en/whats-on/vive-lamour/1377555"
+  },
+  {
+    "id": "film-movement",
+    "title": "Vive L'Amour — restoration and film synopsis",
+    "publisher": "Film Movement",
+    "url": "https://filmmovement.com/product/vive-l-amour"
+  },
+  {
+    "id": "senses-tsai",
+    "title": "Tsai Ming-Liang: Cinematic Painter",
+    "publisher": "Senses of Cinema",
+    "url": "https://www.sensesofcinema.com/2002/tsai-ming-liang/tsai_painter/"
+  }
+],
+    questions: [
+      { id: "vive-location", area: "research", prompt: t("What response to the unfinished park is supported by Tsai's account of filming the ending?", "Hvilken reaksjon på den uferdige parken støttes av Tsais beretning om innspillingen av slutten?", "Quelle réaction au parc inachevé est étayée par le récit de Tsai sur le tournage de la fin ?", "Que reação ao parque inacabado é sustentada pelo relato de Tsai sobre a rodagem do final?"), options: [{ id: "force-planned-ending", label: t("Hide all construction traces and retain the originally hopeful ending", "Skjul alle spor etter byggearbeidet og behold den opprinnelig optimistiske avslutningen", "Masquer les traces du chantier et conserver la fin initialement optimiste", "Ocultar os vestígios das obras e manter o final inicialmente otimista") },
+          { id: "adapt-to-place", label: t("Reconsider the emotional direction of the ending in response to the actual unfinished location", "Revurder avslutningens følelsesmessige retning ut fra det virkelige, uferdige opptaksstedet", "Repenser la direction émotionnelle de la fin en fonction du lieu réel inachevé", "Repensar a direção emocional do final em função do local real inacabado") },
+          { id: "replace-with-studio", label: t("Replace the park with a generic studio interior without considering its meaning", "Erstatt parken med et generisk studiointeriør uten å vurdere stedets betydning", "Remplacer le parc par un intérieur de studio générique sans considérer son sens", "Substituir o parque por um interior genérico de estúdio sem considerar o seu significado") }], bestSupportedOptionId: "adapt-to-place", explanation: t("In his 2024 interview Tsai recalls planning a more optimistic ending at Daan Park, then changing it after finding the park still under construction. His BFI interview also confirms that the released ending differed from the script. The location became a creative constraint rather than a neutral backdrop.", "I intervjuet fra 2024 forteller Tsai at han planla en mer optimistisk avslutning i Daan-parken, men endret den da parken fortsatt var under bygging. BFI-intervjuet bekrefter også at slutten ble annerledes enn manuset. Stedet ble en kreativ ramme fremfor en nøytral bakgrunn.", "Dans son entretien de 2024, Tsai explique avoir envisagé une fin plus optimiste au parc Daan, puis l'avoir modifiée en découvrant le chantier. L'entretien au BFI confirme aussi l'écart avec le scénario. Le lieu devient une contrainte créative.", "Na entrevista de 2024, Tsai recorda ter planeado um final mais otimista no parque Daan e tê-lo alterado ao encontrar as obras. A entrevista ao BFI confirma também a diferença face ao argumento. O lugar torna-se uma condição criativa."), sourceIds: ["rabbit-interview","bfi-tsai"] },
+      { id: "vive-duration", area: "camera", prompt: t("How can the final performance be filmed without prescribing a fixed emotional rhythm to the actor?", "Hvordan kan den avsluttende skuespillerprestasjonen filmes uten å påtvinge skuespilleren en fast følelsesrytme?", "Comment filmer la dernière performance sans imposer un rythme émotionnel fixe à l'actrice ?", "Como filmar a interpretação final sem impor um ritmo emocional fixo à atriz?"), options: [{ id: "reaction-montage", label: t("Build the moment from many brief reaction shots chosen before the performance", "Bygg øyeblikket av mange korte reaksjonsbilder bestemt før skuespillerprestasjonen", "Construire le moment à partir de brefs plans de réaction décidés avant le jeu", "Construir o momento com breves planos de reação decididos antes da interpretação") },
+          { id: "narrator-explains", label: t("Have a narrator announce each emotional shift before it occurs", "La en forteller varsle hver følelsesendring før den inntreffer", "Faire annoncer chaque changement émotionnel par un narrateur", "Usar um narrador para anunciar cada mudança emocional") },
+          { id: "allow-duration", label: t("Allow the actor room to develop the performance within a sustained take", "Gi skuespilleren rom til å utvikle prestasjonen i en sammenhengende tagning", "Laisser à l'actrice la liberté de développer son jeu dans une prise prolongée", "Dar à atriz espaço para desenvolver a interpretação num plano prolongado") }], bestSupportedOptionId: "allow-duration", explanation: t("Tsai recalls giving Yang Kuei-mei simple direction and allowing her to shape the moment within the remaining film stock. Senses of Cinema discusses how the finished long take lets the viewer experience duration itself. These accounts support sustained performance, without fixing a disputed exact running time or requiring personal distress from the actor.", "Tsai forteller at han ga Yang Kuei-mei en enkel regianvisning og lot henne forme øyeblikket innenfor den gjenværende filmrullen. Senses of Cinema analyserer hvordan den ferdige lange tagningen lar publikum erfare selve varigheten. Det gir rom for skuespillet uten å fastslå eksakt lengde eller kreve personlig belastning.", "Tsai se souvient avoir donné des indications simples à Yang Kuei-mei et lui avoir laissé façonner le moment dans la pellicule restante. Senses of Cinema analyse l'expérience de la durée dans la prise finale. Cela ne fixe ni une durée exacte ni une exigence de souffrance personnelle.", "Tsai recorda ter dado indicações simples a Yang Kuei-mei e deixado a atriz desenvolver o momento na película restante. Senses of Cinema analisa a experiência da duração no plano final. Isto não fixa uma duração exata nem exige sofrimento pessoal da atriz."), sourceIds: ["rabbit-interview","senses-tsai"] },
+      { id: "vive-space-sound", area: "sound", prompt: t("How can sound and blocking express isolation inside a shared apartment without explanatory dialogue?", "Hvordan kan lyd og plassering av skuespillere uttrykke ensomhet i en delt leilighet uten forklarende dialog?", "Comment le son et la disposition des acteurs peuvent-ils exprimer l'isolement dans un appartement partagé sans dialogue explicatif ?", "Como podem o som e a disposição dos atores expressar isolamento num apartamento partilhado sem diálogo explicativo?"), options: [{ id: "ambient-gestures", label: t("Let separate movements, small gestures and environmental sounds carry the scene", "La separate bevegelser, små gester og omgivelseslyder bære scenen", "Laisser les mouvements séparés, les petits gestes et les sons ambiants porter la scène", "Deixar movimentos separados, pequenos gestos e sons ambientes conduzir a cena") },
+          { id: "explain-all", label: t("Add continuous dialogue that explicitly explains every character's loneliness", "Legg til kontinuerlig dialog som eksplisitt forklarer ensomheten til hver figur", "Ajouter un dialogue continu expliquant explicitement la solitude de chaque personnage", "Acrescentar diálogo contínuo que explique explicitamente a solidão de cada personagem") },
+          { id: "erase-environment", label: t("Remove every environmental sound and replace it with continuous explanatory narration", "Fjern alle omgivelseslyder og erstatt dem med kontinuerlig forklarende fortellerstemme", "Supprimer tous les sons ambiants et les remplacer par une narration explicative continue", "Eliminar todos os sons ambientes e substituí-los por narração explicativa contínua") }], bestSupportedOptionId: "ambient-gestures", explanation: t("Eye Filmmuseum emphasizes bodily gestures and city sounds in a film with little speech; Film Movement describes the carefully staged near-encounters in the vacant apartment. These observations support a sparse expressive soundtrack and spatial staging, not a claim about the exact microphone or recording system.", "Eye Filmmuseum fremhever kroppsspråk og bylyder i en film med lite tale; Film Movement beskriver de nøye iscenesatte nesten-møtene i den tomme leiligheten. Dette støtter et sparsomt, uttrykksfullt lydbilde og romlig iscenesettelse, ikke en påstand om bestemt mikrofon eller opptakssystem.", "Eye Filmmuseum souligne les gestes et les sons urbains dans un film peu dialogué ; Film Movement décrit les rencontres manquées dans l'appartement vide. Ces observations étayent un son expressif et une mise en scène spatiale, non un microphone ou système précis.", "Eye Filmmuseum destaca os gestos corporais e sons urbanos num filme com pouca fala; Film Movement descreve os encontros desencontrados no apartamento vazio. Isto sustenta um som expressivo e uma encenação espacial, não um microfone ou sistema de gravação específico."), sourceIds: ["eye-vive","film-movement"] }
     ]
   }
 ] as const;
