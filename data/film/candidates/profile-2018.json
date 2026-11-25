@@ -1,0 +1,568 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "candidate_profile_2018",
+  "proposedScenarioId": "scenario_profile_2018",
+  "routeSlug": "candidate-profile-2018",
+  "status": "editorial_candidate_not_admitted",
+  "book": {
+    "chapter": 30,
+    "decision": "P2"
+  },
+  "identity": {
+    "title": "Profile",
+    "originalTitle": "Profile",
+    "year": 2018,
+    "directors": [
+      "Timur Bekmambetov"
+    ],
+    "country": "United States / United Kingdom / Cyprus / Russia",
+    "genres": [
+      "Thriller",
+      "Drama"
+    ],
+    "runtimeNote": "2018 Berlinale premiere; Focus Features US release in May 2021. Cineuropa lists 105 minutes, Universal lists 106. Preserve both without inferring different cuts."
+  },
+  "credits": {
+    "director": "Timur Bekmambetov",
+    "editing": "Andrey Shugaev",
+    "productionDesign": "Ben Smith",
+    "soundRecording": [
+      "Nigel Albermaniche",
+      "Stavros Terlikkas"
+    ],
+    "soundEditing": "Henry Maynard",
+    "soundDesign": "Aaron Glascock",
+    "sourceIds": [
+      "credits",
+      "sound"
+    ]
+  },
+  "sources": [
+    {
+      "id": "moveable",
+      "title": "SXSW ’18 Interview: Timur Bekmambetov and Shazad Latif on Creating a New “Profile”",
+      "publisher": "The Moveable Fest",
+      "url": "https://moveablefest.com/timur-bekmambetov-profile/"
+    },
+    {
+      "id": "latimes",
+      "title": "With 'Searching,' 'Unfriended' and beyond, Timur Bekmambetov seeks a new cinematic language that mirrors our digital lives",
+      "publisher": "Los Angeles Times",
+      "url": "https://www.latimes.com/entertainment/movies/la-ca-mn-timur-bekmambetov-searching-unfriended-dark-web-screenlife-20180817-story.html"
+    },
+    {
+      "id": "kane",
+      "title": "Exclusive: Valene Kane on filming Timur Bekmambetov's new Screenlife film ‘Profile’",
+      "publisher": "BlackFilmandTV.com",
+      "url": "https://www.blackfilmandtv.com/exclusives/exclusive-valene-kane-on-filming-timur-bekmambetovs-new-screenlife-film-profile"
+    },
+    {
+      "id": "cyprus",
+      "title": "Berlin film fest showing was partly shot in Cyprus",
+      "publisher": "Cyprus Mail",
+      "url": "https://archive.cyprus-mail.com/2018/02/25/berlin-film-fest-showing-partly-shot-cyprus/"
+    },
+    {
+      "id": "shockya",
+      "title": "SXSW 2018 Interview: Timur Bekmambetov Talks Profile and Unfriended: Dark Web",
+      "publisher": "Shockya",
+      "url": "https://www.shockya.com/news/2018/07/22/sxsw-2018-interview-timur-bekmambetov-talks-profile-and-unfriended-dark-web-exclusive/"
+    },
+    {
+      "id": "credits",
+      "title": "PROFILE — film and crew credits",
+      "publisher": "Cineuropa",
+      "url": "https://cineuropa.org/en/film/346974/"
+    },
+    {
+      "id": "sound",
+      "title": "PROFILE — production credits",
+      "publisher": "Filmblades",
+      "url": "https://www.filmblades.com/index.php/our-work/profile"
+    },
+    {
+      "id": "berlin",
+      "title": "Profile — Berlinale 2018 programme",
+      "publisher": "Berlin International Film Festival",
+      "url": "https://www.berlinale.de/de/2018/programm/201813990.html"
+    },
+    {
+      "id": "release",
+      "title": "Focus Features takes world on Timur Bekmambetov ISIS thriller ‘Profile’",
+      "publisher": "Screen International",
+      "url": "https://www.screendaily.com/news/focus-features-takes-world-on-timur-bekmambetov-isis-thriller-profile/5158344.article"
+    },
+    {
+      "id": "universal",
+      "title": "Profile — home entertainment release record",
+      "publisher": "Universal Pictures At Home",
+      "url": "https://www.universalpicturesathome.com/movies/profile"
+    }
+  ],
+  "article": {
+    "title": "Profile (2018): the interactive desktop as a performance set",
+    "paragraphs": [
+      {
+        "text": "Profile is a screen-based fictional thriller adapted from Anna Érelle's nonfiction account of a journalist investigating online extremist recruitment. The filmmakers discuss the adaptation and the lead actor's research in interviews. The film is not a documentary transcript. Its useful teaching focus is screen performance and the distinction between evidence and dramatization; exercises use invented ordinary interactions rather than real recruitment material or impersonation.",
+        "sourceIds": [
+          "moveable",
+          "kane",
+          "release"
+        ]
+      },
+      {
+        "text": "Unlike the largely post-built desktop in Unfriended, Bekmambetov prepared a digital environment for interaction during performance, retaining control of individual screen elements for later changes. The approach brings production design and acting into the same workflow. The film's credit records identify Andrey Shugaev as editor and Ben Smith as production designer. The available testimony describes capabilities, not the proprietary implementation or exact recording specifications.",
+        "sourceIds": [
+          "moveable",
+          "credits"
+        ]
+      },
+      {
+        "text": "The actors performed simultaneously in separated locations. The director describes the London and Cyprus units working together; Cyprus Mail's interview with the local production supervisor adds three months of remote preparation and a local crew of forty for three days of shooting in Cyprus. These are specific unit reports, not the total film schedule or crew count. They distinguish transnational production organization from the location represented in the story.",
+        "sourceIds": [
+          "shockya",
+          "cyprus"
+        ]
+      },
+      {
+        "text": "The performance included choices about music playback, while the production credits separately identify recording, sound editing and sound design personnel. The film appeared at the Berlinale in 2018; Screen International reports the 2021 Focus Features distribution deal. Cineuropa and Universal list different running times. Keep these records distinct without guessing a technical reason for the discrepancy. No independent self-distribution or eligible representation gap is established here.",
+        "sourceIds": [
+          "latimes",
+          "sound",
+          "berlin",
+          "release",
+          "credits",
+          "universal"
+        ]
+      }
+    ]
+  },
+  "production": {
+    "premise": "Create an ordinary fictional screen conversation with a prepared interactive set and a clear research boundary.",
+    "screenplay": "Separate adapted evidence from invented dramatic events; never require contact with real subjects or extremist content.",
+    "camera": "Rehearse mutually responsive performances and coordinate capture across separate spaces.",
+    "editing": "Keep performance recordings and editable interface assets distinct; compare alternative timing choices.",
+    "sound": "Plan original interface cues and playback choices separately from final sound editing and design.",
+    "learning": "Compare digital production design, distributed acting, editable capture and release provenance."
+  },
+  "workshopIntroduction": {
+    "en": "Explore a prepared digital set, coordinated acting, editable screen assets and adaptation ethics in a harmless fictional exercise.",
+    "nb": "Utforsk et forberedt digitalt sett, samordnet skuespill, redigerbare skjermelementer og adaptasjonsetikk i en ufarlig fiksjonsøvelse.",
+    "fr": "Explorer un décor numérique préparé, le jeu coordonné, les interfaces modifiables et l'éthique d'adaptation dans un exercice fictif sans danger.",
+    "pt": "Explorar cenário digital preparado, interpretação coordenada, elementos editáveis e ética de adaptação num exercício fictício inofensivo."
+  },
+  "phases": [
+    {
+      "id": "research",
+      "questionId": "profile-research",
+      "title": {
+        "en": "Adaptation and research ethics",
+        "nb": "Adaptasjon og researchetikk",
+        "fr": "Adaptation et éthique de recherche",
+        "pt": "Adaptação e ética de pesquisa"
+      },
+      "deliverable": {
+        "en": "Make a source ledger distinguishing the published account, the adaptation and an invented everyday scene.",
+        "nb": "Lag en kildeoversikt som skiller den publiserte beretningen, adaptasjonen og en oppdiktet hverdagsscene.",
+        "fr": "Établir un registre distinguant le récit publié, l'adaptation et une scène quotidienne fictive.",
+        "pt": "Criar um registo que distinga o relato publicado, a adaptação e uma cena quotidiana fictícia."
+      }
+    },
+    {
+      "id": "set",
+      "questionId": "profile-set",
+      "title": {
+        "en": "Digital production design",
+        "nb": "Digital scenografi",
+        "fr": "Décors numériques",
+        "pt": "Cenografia digital"
+      },
+      "deliverable": {
+        "en": "Design a local fictional desktop with three harmless interactive props and no network connection.",
+        "nb": "Design et lokalt fiktivt skrivebord med tre ufarlige interaktive rekvisitter uten nettforbindelse.",
+        "fr": "Concevoir un bureau fictif local avec trois accessoires interactifs inoffensifs, hors ligne.",
+        "pt": "Conceber um ambiente fictício local com três adereços interativos inofensivos, sem ligação à rede."
+      }
+    },
+    {
+      "id": "performance",
+      "questionId": "profile-performance",
+      "title": {
+        "en": "Rehearsal and distributed performance",
+        "nb": "Prøver og distribuert skuespill",
+        "fr": "Répétition et jeu à distance",
+        "pt": "Ensaio e interpretação distribuída"
+      },
+      "deliverable": {
+        "en": "Rehearse an agreed fictional conversation between two performers using a private local mock interface.",
+        "nb": "Øv på en avtalt fiktiv samtale mellom to skuespillere med et privat lokalt testgrensesnitt.",
+        "fr": "Répéter une conversation fictive convenue entre deux acteurs via une interface locale de démonstration.",
+        "pt": "Ensaiar uma conversa fictícia acordada entre dois atores com uma interface local de teste."
+      }
+    },
+    {
+      "id": "post",
+      "questionId": "profile-post",
+      "title": {
+        "en": "Editable capture and editorial",
+        "nb": "Redigerbare opptak og klipping",
+        "fr": "Captation modifiable et montage",
+        "pt": "Captação editável e montagem"
+      },
+      "deliverable": {
+        "en": "Make a layered mock sequence with separate performance, graphics and timing notes.",
+        "nb": "Lag en lagdelt testsekvens med separate skuespilleropptak, grafikk og timingnotater.",
+        "fr": "Créer une séquence fictive en couches avec jeu, graphismes et notes de rythme distincts.",
+        "pt": "Criar uma sequência fictícia em camadas com interpretação, grafismos e notas de ritmo separados."
+      }
+    },
+    {
+      "id": "sound",
+      "questionId": "profile-sound",
+      "title": {
+        "en": "Sound as performance and post",
+        "nb": "Lyd som skuespill og etterarbeid",
+        "fr": "Son, jeu et postproduction",
+        "pt": "Som, interpretação e pós-produção"
+      },
+      "deliverable": {
+        "en": "Plan two original interface sounds, one music-level change and a separate dialogue review.",
+        "nb": "Planlegg to originale grensesnittlyder, én endring i musikknivå og egen dialoggjennomgang.",
+        "fr": "Prévoir deux sons d'interface originaux, un changement de niveau musical et une révision du dialogue.",
+        "pt": "Planear dois sons de interface originais, uma mudança de volume musical e revisão separada do diálogo."
+      }
+    },
+    {
+      "id": "release",
+      "questionId": "profile-release",
+      "title": {
+        "en": "Release and version provenance",
+        "nb": "Lansering og versjonsdokumentasjon",
+        "fr": "Diffusion et provenance des versions",
+        "pt": "Distribuição e proveniência das versões"
+      },
+      "deliverable": {
+        "en": "Prepare a version ledger with the festival record, later release, running-time discrepancy and rights check.",
+        "nb": "Lag en versjonsoversikt med festivaloppføring, senere lansering, spilletidsavvik og rettighetskontroll.",
+        "fr": "Préparer un registre avec festival, sortie ultérieure, divergence de durée et vérification des droits.",
+        "pt": "Preparar um registo com festival, lançamento posterior, divergência de duração e verificação de direitos."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "profile-research",
+      "area": "research",
+      "prompt": {
+        "en": "How should a fictional film inspired by a journalist's account be studied responsibly?",
+        "nb": "Hvordan bør en fiksjonsfilm inspirert av en journalists beretning studeres ansvarlig?",
+        "fr": "Comment étudier de façon responsable une fiction inspirée du récit d'une journaliste ?",
+        "pt": "Como estudar responsavelmente uma ficção inspirada no relato de uma jornalista?"
+      },
+      "options": [
+        {
+          "id": "literal",
+          "label": {
+            "en": "Treat every fictional exchange as a verified historical transcript",
+            "nb": "Behandle hver fiktive samtale som et verifisert historisk referat",
+            "fr": "Traiter chaque échange fictif comme une transcription historique vérifiée",
+            "pt": "Tratar cada diálogo fictício como transcrição histórica verificada"
+          }
+        },
+        {
+          "id": "ledger",
+          "label": {
+            "en": "Separate the published source from dramatization and use a harmless invented exercise",
+            "nb": "Skill den publiserte kilden fra dramatiseringen og bruk en ufarlig oppdiktet øvelse",
+            "fr": "Distinguer la source publiée de la dramatisation et utiliser un exercice fictif sans danger",
+            "pt": "Distinguir a fonte publicada da dramatização e usar um exercício fictício inofensivo"
+          }
+        },
+        {
+          "id": "contact",
+          "label": {
+            "en": "Require the study to include contact with real subjects instead of using published material",
+            "nb": "Krev kontakt med virkelige personer fremfor å bruke publisert materiale",
+            "fr": "Exiger un contact avec les personnes réelles au lieu de sources publiées",
+            "pt": "Exigir contacto com pessoas reais em vez de material publicado"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "ledger",
+      "explanation": {
+        "en": "The festival interview identifies Anna Erelle's nonfiction book as the adaptation's basis. Kane discusses her preparation and research. A dramatization is not independent proof of every event; this exercise needs no real-world contact or impersonation.",
+        "nb": "Festivalintervjuet identifiserer Anna Érelles sakprosabok som adaptasjonsgrunnlag. Kane omtaler forberedelser og research. Dramatisering beviser ikke hver hendelse; øvelsen krever ingen virkelig kontakt eller falsk identitet.",
+        "fr": "L'entretien du festival identifie le livre documentaire d'Anna Erelle comme base. Kane évoque ses recherches. Une dramatisation ne prouve pas chaque événement ; aucun contact réel ni usurpation n'est nécessaire.",
+        "pt": "A entrevista identifica o livro de não ficção de Anna Erelle como base. Kane fala da pesquisa. A dramatização não prova cada evento; não é necessário contacto real nem falsa identidade."
+      },
+      "sourceIds": [
+        "moveable",
+        "kane",
+        "release"
+      ]
+    },
+    {
+      "id": "profile-set",
+      "area": "animation",
+      "prompt": {
+        "en": "What changed in Bekmambetov's digital set compared with earlier screen films?",
+        "nb": "Hva endret seg i Bekmambetovs digitale sett sammenlignet med tidligere skjermfilmer?",
+        "fr": "Qu'est-ce qui change dans le décor numérique par rapport aux films sur écran précédents ?",
+        "pt": "O que mudou no cenário digital em relação aos filmes de ecrã anteriores?"
+      },
+      "options": [
+        {
+          "id": "empty",
+          "label": {
+            "en": "Give the actors an empty screen and invent every interaction after shooting",
+            "nb": "Gi skuespillerne en tom skjerm og finn opp alle interaksjoner etter opptak",
+            "fr": "Donner aux acteurs un écran vide et inventer les interactions après tournage",
+            "pt": "Dar aos atores um ecrã vazio e inventar as interações depois"
+          }
+        },
+        {
+          "id": "flat",
+          "label": {
+            "en": "Use a flattened still image with no available interactions",
+            "nb": "Bruk et flatt stillbilde uten tilgjengelige interaksjoner",
+            "fr": "Utiliser une image fixe aplatie sans interactions",
+            "pt": "Usar uma imagem fixa achatada sem interações"
+          }
+        },
+        {
+          "id": "interactive",
+          "label": {
+            "en": "Prepare a usable digital set that actors can interact with during performance",
+            "nb": "Forbered et brukbart digitalt sett som skuespillerne kan samhandle med under opptak",
+            "fr": "Préparer un décor numérique utilisable pendant le jeu",
+            "pt": "Preparar um cenário digital utilizável durante a interpretação"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "interactive",
+      "explanation": {
+        "en": "Bekmambetov describes replacing a largely post-built desktop with a prepared, responsive environment. This is production design for performance, not a requirement to reproduce his proprietary software or use real online accounts.",
+        "nb": "Bekmambetov beskriver overgangen fra et skrivebord bygget i etterarbeidet til et forberedt, responsivt miljø. Dette er scenografi for skuespill, ikke et krav om å kopiere proprietær programvare eller bruke ekte nettkontoer.",
+        "fr": "Bekmambetov décrit un environnement préparé et réactif plutôt qu'un bureau construit surtout après tournage. Il ne faut ni reproduire son logiciel propriétaire ni utiliser de vrais comptes.",
+        "pt": "Bekmambetov descreve um ambiente preparado e responsivo em vez de um ambiente construído sobretudo na pós-produção. Não é necessário copiar o software proprietário nem usar contas reais."
+      },
+      "sourceIds": [
+        "moveable",
+        "latimes"
+      ]
+    },
+    {
+      "id": "profile-performance",
+      "area": "camera",
+      "prompt": {
+        "en": "Which method preserves the performers' mutual reactions across separate locations?",
+        "nb": "Hvilken metode bevarer skuespillernes gjensidige reaksjoner på ulike opptakssteder?",
+        "fr": "Quelle méthode préserve les réactions mutuelles des acteurs dans des lieux distincts ?",
+        "pt": "Que método preserva as reações mútuas dos atores em locais distintos?"
+      },
+      "options": [
+        {
+          "id": "together",
+          "label": {
+            "en": "Rehearse the relationship first and coordinate simultaneous performances across locations",
+            "nb": "Øv på relasjonen først og samordne samtidige prestasjoner på ulike steder",
+            "fr": "Répéter la relation puis coordonner les jeux simultanés entre lieux",
+            "pt": "Ensaiar a relação e coordenar interpretações simultâneas em locais distintos"
+          }
+        },
+        {
+          "id": "isolated",
+          "label": {
+            "en": "Record disconnected monologues without agreed timing or interaction",
+            "nb": "Ta opp løsrevne monologer uten avtalt timing eller samspill",
+            "fr": "Filmer des monologues isolés sans rythme ni interaction convenus",
+            "pt": "Gravar monólogos isolados sem ritmo nem interação acordados"
+          }
+        },
+        {
+          "id": "guess",
+          "label": {
+            "en": "Expect actors to guess the other person's responses without rehearsal",
+            "nb": "Forvent at skuespillerne gjetter den andres reaksjoner uten prøver",
+            "fr": "Attendre que les acteurs devinent les réactions sans répétition",
+            "pt": "Esperar que os atores adivinhem reações sem ensaio"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "together",
+      "explanation": {
+        "en": "The director reports simultaneous recording in London and Cyprus after the actors had rehearsed together. A Cyprus production supervisor separately describes extensive remote preparation and a local crew. Physical location and the fictional setting are different facts.",
+        "nb": "Regissøren beskriver samtidige opptak i London og på Kypros etter felles prøver. En kypriotisk produksjonsleder beskriver fjernforberedelser og lokalt team. Opptakssted og fiktivt sted er ulike fakta.",
+        "fr": "Le réalisateur décrit des prises simultanées à Londres et à Chypre après répétition commune. Une responsable chypriote décrit la préparation distante et une équipe locale. Lieu réel et lieu fictif diffèrent.",
+        "pt": "O realizador descreve gravação simultânea em Londres e Chipre após ensaios conjuntos. Uma supervisora cipriota relata preparação remota e equipa local. Local real e fictício são distintos."
+      },
+      "sourceIds": [
+        "shockya",
+        "cyprus",
+        "moveable"
+      ]
+    },
+    {
+      "id": "profile-post",
+      "area": "animation",
+      "prompt": {
+        "en": "Which approach preserves editorial flexibility after a screen-based performance?",
+        "nb": "Hvilken tilnærming bevarer klippefleksibiliteten etter en skjermbasert prestasjon?",
+        "fr": "Quelle approche préserve la souplesse du montage après un jeu sur écran ?",
+        "pt": "Que abordagem preserva a flexibilidade de montagem após interpretação no ecrã?"
+      },
+      "options": [
+        {
+          "id": "flatten",
+          "label": {
+            "en": "Discard all source elements and retain only a flattened recording",
+            "nb": "Forkast alle kildeelementer og behold bare et sammenslått opptak",
+            "fr": "Écarter les éléments sources et ne garder qu'une capture aplatie",
+            "pt": "Descartar os elementos de origem e manter só uma gravação achatada"
+          }
+        },
+        {
+          "id": "editable",
+          "label": {
+            "en": "Preserve separately editable screen elements alongside recorded performance",
+            "nb": "Behold separat redigerbare skjermelementer sammen med skuespilleropptak",
+            "fr": "Conserver les éléments d'écran modifiables séparément du jeu enregistré",
+            "pt": "Preservar elementos editáveis do ecrã junto da interpretação gravada"
+          }
+        },
+        {
+          "id": "uncut",
+          "label": {
+            "en": "Assume simultaneous capture removes the need for editorial review",
+            "nb": "Anta at samtidige opptak fjerner behovet for klippegjennomgang",
+            "fr": "Supposer que la captation simultanée dispense de révision au montage",
+            "pt": "Pressupor que captação simultânea elimina revisão de montagem"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "editable",
+      "explanation": {
+        "en": "The director describes a recording system that preserved editable interface information. The film credits Andrey Shugaev as editor. The general lesson is to retain editable assets, not to infer a particular file format, codec or software implementation.",
+        "nb": "Regissøren beskriver et opptakssystem som bevarte redigerbar grensesnittinformasjon. Andrey Shugaev er kreditert som klipper. Lærdommen er redigerbare elementer, ikke antakelser om filformat, kodek eller programvare.",
+        "fr": "Le réalisateur décrit un système préservant les informations d'interface modifiables. Andrey Shugaev est crédité au montage. Retenir les éléments modifiables sans déduire format, codec ou logiciel.",
+        "pt": "O realizador descreve um sistema que preserva informação editável da interface. Andrey Shugaev é creditado na montagem. Preservar elementos editáveis sem deduzir formato, codec ou software."
+      },
+      "sourceIds": [
+        "moveable",
+        "credits"
+      ]
+    },
+    {
+      "id": "profile-sound",
+      "area": "sound",
+      "prompt": {
+        "en": "How should the study separate a performer's sound choices from final audio production?",
+        "nb": "Hvordan bør studien skille skuespillerens lydvalg fra den endelige lydproduksjonen?",
+        "fr": "Comment distinguer les choix sonores de l'acteur de la production audio finale ?",
+        "pt": "Como distinguir escolhas sonoras do ator da produção de áudio final?"
+      },
+      "options": [
+        {
+          "id": "same",
+          "label": {
+            "en": "Treat an actor's playback choices as proof of the complete final mix",
+            "nb": "Behandle skuespillerens avspillingsvalg som bevis på hele sluttmiksen",
+            "fr": "Traiter les choix de lecture comme preuve du mixage final complet",
+            "pt": "Tratar escolhas de reprodução como prova da mistura final completa"
+          }
+        },
+        {
+          "id": "hardware",
+          "label": {
+            "en": "Infer exact microphones and mix settings from the appearance of the desktop",
+            "nb": "Utled eksakte mikrofoner og mikseinnstillinger fra skrivebordets utseende",
+            "fr": "Déduire microphones et réglages du seul aspect du bureau",
+            "pt": "Deduzir microfones e definições pelo aspeto do ambiente de trabalho"
+          }
+        },
+        {
+          "id": "separate",
+          "label": {
+            "en": "Distinguish performed playback choices from recorded sound, sound editing and design",
+            "nb": "Skill avspillingsvalg under skuespill fra lydopptak, lydklipping og lyddesign",
+            "fr": "Distinguer les choix de lecture joués de la prise de son, du montage et du design sonore",
+            "pt": "Distinguir escolhas de reprodução interpretadas da captação, montagem e design sonoro"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "separate",
+      "explanation": {
+        "en": "Bekmambetov's Los Angeles Times interview describes Kane controlling music playback during performance. Filmblades separately lists recording, sound editing and sound design credits. Those roles do not establish exact equipment or final mix settings.",
+        "nb": "I Los Angeles Times beskriver Bekmambetov hvordan Kane styrte musikkavspilling under opptak. Filmblades krediterer lydopptak, lydklipping og lyddesign separat. Rollene fastslår ikke eksakt utstyr eller sluttmiks.",
+        "fr": "Dans le Los Angeles Times, Bekmambetov évoque le contrôle musical de Kane pendant le jeu. Filmblades distingue prise de son, montage et design sonore. Ces rôles ne prouvent pas le matériel ou mixage précis.",
+        "pt": "No Los Angeles Times, Bekmambetov refere controlo musical de Kane durante a interpretação. Filmblades distingue captação, montagem e design sonoro. Os papéis não provam equipamento ou mistura exatos."
+      },
+      "sourceIds": [
+        "latimes",
+        "sound"
+      ]
+    },
+    {
+      "id": "profile-release",
+      "area": "research",
+      "prompt": {
+        "en": "How should the 2018 festival record and 2021 commercial release be catalogued?",
+        "nb": "Hvordan bør festivaloppføringen fra 2018 og den kommersielle lanseringen fra 2021 katalogiseres?",
+        "fr": "Comment cataloguer le festival de 2018 et la sortie commerciale de 2021 ?",
+        "pt": "Como catalogar o festival de 2018 e o lançamento comercial de 2021?"
+      },
+      "options": [
+        {
+          "id": "chronology",
+          "label": {
+            "en": "Keep one film identity with separate festival, release and running-time records",
+            "nb": "Behold én filmidentitet med separate festival-, lanserings- og spilletidsoppføringer",
+            "fr": "Conserver une identité de film avec notices distinctes de festival, sortie et durée",
+            "pt": "Manter uma identidade com registos separados de festival, lançamento e duração"
+          }
+        },
+        {
+          "id": "duplicate",
+          "label": {
+            "en": "Create a second film identity just because the commercial release came later",
+            "nb": "Opprett en ny filmidentitet bare fordi den kommersielle lanseringen kom senere",
+            "fr": "Créer une seconde identité uniquement parce que la sortie commerciale est ultérieure",
+            "pt": "Criar outra identidade só porque o lançamento comercial foi posterior"
+          }
+        },
+        {
+          "id": "guess",
+          "label": {
+            "en": "Invent a specific explanation for the one-minute discrepancy without evidence",
+            "nb": "Finn på en bestemt forklaring på ett minutts avvik uten dokumentasjon",
+            "fr": "Inventer une explication précise de l'écart d'une minute sans preuve",
+            "pt": "Inventar uma explicação para a diferença de um minuto sem prova"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "chronology",
+      "explanation": {
+        "en": "Berlinale records the 2018 festival appearance; Screen International documents Focus Features acquiring rights and planning a May 2021 US release. Cineuropa reports 105 minutes and Universal lists 106. Keep both records without assuming a different cut.",
+        "nb": "Berlinalen dokumenterer festivalvisningen i 2018; Screen International dokumenterer Focus Features' rettighetskjøp og planlagt USA-lansering i mai 2021. Cineuropa oppgir 105 minutter og Universal 106. Behold begge uten å anta en annen klippeversjon.",
+        "fr": "La Berlinale documente 2018 ; Screen International rapporte l'acquisition par Focus et la sortie américaine prévue en mai 2021. Cineuropa indique 105 minutes, Universal 106. Conserver les deux sans supposer un montage différent.",
+        "pt": "A Berlinale documenta 2018; Screen International relata aquisição pela Focus e lançamento nos EUA previsto para maio de 2021. Cineuropa indica 105 minutos e Universal 106. Manter ambos sem presumir montagem diferente."
+      },
+      "sourceIds": [
+        "berlin",
+        "release",
+        "credits",
+        "universal"
+      ]
+    }
+  ],
+  "review": {
+    "runtimeAdmission": false,
+    "bookLinkApproved": false,
+    "studyPreview": true,
+    "required": [
+      "Check full canonical overlap including the 2021 release year.",
+      "Review primary testimony independently and preserve conflicting runtime records.",
+      "Assess representation gate before canonical admission; no eligible gap is asserted."
+    ]
+  }
+}
