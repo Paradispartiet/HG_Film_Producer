@@ -173,6 +173,25 @@ export const filmHistoryChapterSeventeenSources: readonly FilmHistoryBookSource[
     "publisher": "British Film Institute",
     "url": "https://www.bfi.org.uk/lists/great-japanese-film-every-year-from-1925-now"
   }
+,
+  {
+    "id": "ch17_criterion_rashomon",
+    "title": "Rashomon (1950) — film, screenplay and restoration",
+    "publisher": "The Criterion Collection",
+    "url": "https://www.criterion.com/films/307-rashomon"
+  },
+  {
+    "id": "ch17_criterion_ikiru",
+    "title": "Ikiru (1952) — two-part narrative structure",
+    "publisher": "The Criterion Collection",
+    "url": "https://www.criterion.com/films/353"
+  },
+  {
+    "id": "ch17_criterion_godzilla",
+    "title": "Godzilla (1954) — original Japanese and 1956 American editions",
+    "publisher": "The Criterion Collection",
+    "url": "https://www.criterion.com/films/27755-godzilla"
+  }
 ];
 
 export const filmHistoryChapterSeventeenSections: readonly FilmHistoryBookSection[] = [
@@ -200,6 +219,7 @@ export const filmHistoryChapterSeventeenSections: readonly FilmHistoryBookSectio
     ],
     "sourceIds": [
       "ch17_kurosawa",
+      "ch17_criterion_rashomon",
       "ch17_1950s",
       "ch17_festivals"
     ]
@@ -209,11 +229,12 @@ export const filmHistoryChapterSeventeenSections: readonly FilmHistoryBookSectio
     "title": "3. Ikiru (1952): bureaucracy, mortality and the meaning of a public park",
     "paragraphs": [
       "In Ikiru, Takashi Shimura plays a municipal official whose serious illness breaks the routine of paperwork and institutional delay. Kurosawa treats the question of how a life acquires value through action rather than a claim that every bureaucrat is personally malicious. The modest civic project at the film's center matters because it connects one man's limited time with a public good. The film asks whether an institution designed to serve people can recognize an urgent human need.",
-      "Kurosawa shifts the viewer's relation to his protagonist through changes in narrative time and perspective. What we know about the official is partly reconstructed through the speech and behavior of others, who cannot fully possess his experience. Formal construction thus becomes a critique of institutional memory: a person can act meaningfully while the organization around him rapidly translates that action into routine and self-protection. Shimura's restrained and intense performance gives the drama its human scale.",
+      "Kurosawa shifts the viewer's relation to his protagonist through changes in narrative time and perspective. After following Watanabe during his illness, the film moves to the recollections at his funeral; a living character becomes someone reconstructed through the speech and behavior of others, who cannot fully possess his experience. Formal construction thus becomes a critique of institutional memory: a person can act meaningfully while the organization around him rapidly translates that action into routine and self-protection. Shimura's restrained and intense performance gives the drama its human scale.",
       "Ikiru is a useful antidote to an exclusively samurai-centered account of Kurosawa. His modern city films engage work, administration, illness and collective responsibility, and they employ devices different from large historical action sequences. In Film History, the important comparison is not which genre is more serious, but how stories about public authority change when their protagonists occupy an office rather than a battlefield."
     ],
     "sourceIds": [
       "ch17_kurosawa",
+      "ch17_criterion_ikiru",
       "ch17_samurai"
     ]
   },
@@ -320,11 +341,12 @@ export const filmHistoryChapterSeventeenSections: readonly FilmHistoryBookSectio
     "title": "11. Godzilla (1954): popular spectacle and atomic memory",
     "paragraphs": [
       "Ishiro Honda's Godzilla belongs to popular genre cinema, but its giant creature cannot be separated from the memory of bombed cities, radioactive fallout and postwar fears. The film appeared in the year of the Bikini Atoll nuclear test and the exposure of a Japanese fishing vessel's crew. Its destruction scenes ask audiences to recognize that technological violence could return in altered form. A monster movie could therefore engage public trauma without becoming a literal documentary about one event.",
-      "The effects work, models, miniatures and carefully structured scenes of urban devastation should be studied as filmmaking craft. A simulated city does not make the fear counterfeit. The film alternates public response, scientific debate and spectacle; it places the ethics of destructive power inside a compelling commercial narrative. Later franchise versions changed tone and purpose, making the original's particular historical atmosphere easy to overlook if one knows only the familiar monster icon.",
+      "The effects work, models, miniatures and carefully structured scenes of urban devastation should be studied as filmmaking craft. A simulated city does not make the fear counterfeit. The film alternates public response, scientific debate and spectacle; it places the ethics of destructive power inside a compelling commercial narrative. The 1954 Japanese version and the reworked 1956 US release, Godzilla, King of the Monsters!, are not interchangeable: changes in presentation matter to how international audiences encountered the atomic allegory. Later franchise installments also changed tone and purpose, making the original's particular historical atmosphere easy to overlook if one knows only the familiar monster icon.",
       "BFI explicitly sets Godzilla beside Ozu to challenge a division between respectable arthouse work and supposedly lesser entertainment. That comparison is crucial to Film History: Japanese film culture included family drama, period films, youth pictures, comedy and spectacular genre production at the same time. The reader should ask what a special-effect image makes historically imaginable, not whether its fictional creature could ever have existed."
     ],
     "sourceIds": [
       "ch17_godzilla",
+      "ch17_criterion_godzilla",
       "ch17_godzilla_ozu",
       "ch17_industry"
     ]
