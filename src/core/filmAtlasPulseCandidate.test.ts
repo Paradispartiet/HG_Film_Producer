@@ -37,13 +37,14 @@ test("Pulse candidate remains separate from canonical playable admission", () =>
 test("Pulse candidate has a dedicated Atlas and Chapter 28 study route, not a canonical scenario", () => {
   const atlas = readFileSync("src/ui/components/FilmAtlasExperience.tsx", "utf8");
   const book = readFileSync("src/ui/components/FilmHistoryBook.tsx", "utf8");
-  const page = readFileSync("src/ui/components/PulseCandidatePage.tsx", "utf8");
+  const page = readFileSync("src/ui/components/FilmStudyCandidatePage.tsx", "utf8");
   const history = readFileSync("src/ui/components/FilmHistoryExperience.tsx", "utf8");
-  assert.match(atlas, /route\.filmSlug === PULSE_CANDIDATE_SLUG/);
-  assert.match(atlas, /<PulseCandidatePage language=/);
-  assert.match(book, /activeChapter\.number === 28 && !scenario && pulseCandidateMatches/);
-  assert.match(history, /onOpenPulseCandidate=/);
-  assert.match(page, /candidate-pulse-2001/);
+  assert.match(atlas, /getFilmStudyCandidateBySlug\(route\.filmSlug\)/);
+  assert.match(atlas, /<FilmStudyCandidatePage key=/);
+  assert.match(book, /!scenario \? findFilmStudyCandidateForReference\(activeChapter\.number, reference\.title, reference\.year\)/);
+  assert.match(history, /onOpenStudyCandidate=/);
+  assert.equal(candidate.routeSlug, "candidate-pulse-2001");
+  assert.match(page, /candidate\.identity\.title/);
   assert.match(page, /workshopOverride=\{candidateWorkshop\}/);
   assert.match(page, /not a verified playable Production Case/);
   assert.doesNotMatch(page, /localStorage|setProductionCaseMissionChoice|writeProductionCaseProgress/);
@@ -64,4 +65,16 @@ test("Pulse admission assessment preserves the existing audited representation g
   }
   assert.match(assessment.reason, /not evidence of digital acquisition/);
   assert.equal(candidate.review.runtimeAdmission, false);
+});
+
+test("Candidate preview registration is independent of canonical admission", () => {
+  const registry = readFileSync("src/ui/data/filmStudyCandidates.ts", "utf8");
+  const page = readFileSync("src/ui/components/FilmStudyCandidatePage.tsx", "utf8");
+  assert.match(registry, /const editorialCandidates: readonly FilmStudyCandidate\[\] = \[pulse\]/);
+  assert.match(registry, /!candidate\.review\.runtimeAdmission && !candidate\.review\.bookLinkApproved/);
+  assert.match(registry, /candidate\.identity\.year === year/);
+  assert.match(registry, /matches\.length === 1/);
+  assert.match(page, /key=\{candidate\.candidateId\} scenarioId=/);
+  assert.doesNotMatch(page, /candidate-pulse-2001|Kiyoshi Kurosawa/);
+  for (const lang of ["en", "nb", "fr", "pt"]) assert.ok(candidate.workshopIntroduction[lang].length > 20);
 });

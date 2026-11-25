@@ -47,3 +47,7 @@ The current representation contract freezes the 614 verified core identities. Ja
 - **Comparative editing:** Outline two cuts of the same fictional scene and explain how each changes uncertainty.
 - **Sound motif and ambience:** Plan an original or licensed modem-like motif and three ambient sound cues.
 - **Release and evidence dossier:** Prepare a one-page credit and source ledger, marking conflicting runtimes and technical unknowns.
+
+## Reusable study registry
+
+The candidate reader now resolves the explicit route slug through `filmStudyCandidates.ts`. A new candidate requires a JSON dossier and one registry entry, not a new reader or a new canonical scenario. Book matching uses chapter, year, title or original title, and refuses ambiguous matches. Preview eligibility is separate from admission. The candidate article and production profile remain English; interactive tasks and controls are localized.

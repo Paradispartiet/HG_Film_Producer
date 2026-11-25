@@ -21,7 +21,8 @@ import { FILM_STUDY_COPY } from "../../core/filmStudyCopy";
 import { ScenarioFilmStudyPanel } from "./ScenarioFilmStudyPanel";
 import { FilmAtlasTimeline } from "./FilmAtlasTimeline";
 import { FilmverketKnowledgeShell } from "./FilmverketKnowledgeShell";
-import { PULSE_CANDIDATE_SLUG, PulseCandidatePage, pulseCandidateLinkLabel } from "./PulseCandidatePage";
+import { FilmStudyCandidatePage, candidateLinkLabel } from "./FilmStudyCandidatePage";
+import { getFilmStudyCandidateBySlug, getFilmStudyCandidates } from "../data/filmStudyCandidates";
 
 type AtlasRoute = Extract<FilmverketRoute, { readonly section: "atlas" }>;
 type CraftCollectionKey = "screenplayTargets" | "cinematographyTargets" | "editingTargets" | "soundTargets";
@@ -55,7 +56,7 @@ export function FilmAtlasExperience({
     ? scenarios.find((scenario) => getScenarioSlug(scenario) === route.filmSlug)
     : undefined;
   const selectedScenario = requestedScenario ?? scenarios[0];
-  const candidateRoute = route.filmSlug === PULSE_CANDIDATE_SLUG;
+  const candidateRoute = getFilmStudyCandidateBySlug(route.filmSlug);
   const missingFilm = Boolean(route.filmSlug && !requestedScenario && !candidateRoute);
 
   useEffect(() => {
@@ -71,7 +72,7 @@ export function FilmAtlasExperience({
 
   useEffect(() => {
     if (candidateRoute) {
-      document.title = `Pulse (2001) · ${copy.productTitle} · FilmWork`;
+      document.title = `${candidateRoute.identity.title} (${candidateRoute.identity.year}) · ${copy.productTitle} · FilmWork`;
       return;
     }
     if (missingFilm || !selectedScenario) {
@@ -103,7 +104,7 @@ export function FilmAtlasExperience({
   return (
     <FilmverketKnowledgeShell activeSection="atlas" onNavigate={navigateSection}>
       {candidateRoute ? (
-        <PulseCandidatePage language={language} onBack={() => navigate({ section: "atlas" })} onHistory={() => navigate({ section: "history" })} />
+        <FilmStudyCandidatePage key={candidateRoute.candidateId} candidate={candidateRoute} language={language} onBack={() => navigate({ section: "atlas" })} onHistory={() => navigate({ section: "history" })} />
       ) : missingFilm ? (
         <main className="filmverket-page film-route-not-found">
           <span className="filmverket-kicker">{copy.notFound.kicker}</span>
@@ -119,7 +120,7 @@ export function FilmAtlasExperience({
           onChangeTab={setActiveTab}
           onOpenDirector={(scenario) => navigate({ section: "director", filmSlug: getScenarioSlug(scenario) })}
           onPlayCase={onProductionCases}
-          onOpenCandidate={() => navigate({ section: "atlas", filmSlug: PULSE_CANDIDATE_SLUG })}
+          onOpenCandidate={(slug) => navigate({ section: "atlas", filmSlug: slug })}
           onSelectFilm={openFilm}
           scenarios={scenarios}
           selectedScenario={selectedScenario}
@@ -147,7 +148,7 @@ function FilmAtlas({
   readonly onChangeTab: (tab: FilmAtlasTabId) => void;
   readonly onOpenDirector: (scenario: FilmScenarioSeed) => void;
   readonly onPlayCase: () => void;
-  readonly onOpenCandidate: () => void;
+  readonly onOpenCandidate: (slug: string) => void;
   readonly onSelectFilm: (scenario: FilmScenarioSeed) => void;
   readonly scenarios: readonly FilmScenarioSeed[];
   readonly selectedScenario: FilmScenarioSeed;
@@ -178,7 +179,7 @@ function FilmAtlas({
         <div><span className="filmverket-kicker">{copy.pageKicker}</span><h1>{copy.productTitle}</h1></div>
         <p>{copy.pageIntro}</p>
       </section>
-      <button className="filmverket-primary-action pulse-candidate-link" type="button" onClick={onOpenCandidate}>{pulseCandidateLinkLabel(language)}</button>
+      {getFilmStudyCandidates().map(candidate => <button className="filmverket-primary-action film-study-candidate-link" key={candidate.candidateId} data-candidate-id={candidate.candidateId} type="button" onClick={() => onOpenCandidate(candidate.routeSlug)}>{candidateLinkLabel(language, candidate)}</button>)}
       <nav className="film-atlas-tabs" aria-label={copy.viewsAria}>
         <button className={activeTab === "analysis" ? "film-atlas-tab film-atlas-tab--active" : "film-atlas-tab"} onClick={() => onChangeTab("analysis")} type="button">{copy.tabs.analysis}</button>
         <button className={activeTab === "timeline" ? "film-atlas-tab film-atlas-tab--active" : "film-atlas-tab"} onClick={() => onChangeTab("timeline")} type="button">{copy.tabs.timeline}</button>

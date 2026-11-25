@@ -6,15 +6,15 @@ import {
   getFilmHistoryBookChapter,
 } from "../../core/filmHistoryBook";
 import type { FilmScenarioSeed } from "../data/filmScenarios";
-import { pulseCandidateMatches } from "./PulseCandidatePage";
+import { findFilmStudyCandidateForReference } from "../data/filmStudyCandidates";
 
 export function FilmHistoryBook({
   onOpenFilm,
-  onOpenPulseCandidate,
+  onOpenStudyCandidate,
   scenarios,
 }: {
   readonly onOpenFilm: (scenario: FilmScenarioSeed) => void;
-  readonly onOpenPulseCandidate?: () => void;
+  readonly onOpenStudyCandidate?: (slug: string) => void;
   readonly scenarios: readonly FilmScenarioSeed[];
 }) {
   const [activeChapterId, setActiveChapterId] = useState("motion-before-cinema");
@@ -140,6 +140,7 @@ export function FilmHistoryBook({
                       const scenario = reference.atlasScenarioId
                         ? scenarioLookup.get(reference.atlasScenarioId)
                         : filmLookup.get(`${reference.title}::${reference.year}`);
+                      const studyCandidate = !scenario ? findFilmStudyCandidateForReference(activeChapter.number, reference.title, reference.year) : undefined;
                       const roleLabel = reference.role === "anchor_film" ? "Anchor Film" : reference.role === "comparative_film" ? "Comparative Film" : "Historical Object";
                       const atlasLabel = reference.atlasDecision === "use_existing_atlas_case" ? "Existing Atlas case" : `${reference.atlasDecision} Atlas gap`;
                       return (
@@ -148,7 +149,7 @@ export function FilmHistoryBook({
                           <strong>{reference.title}</strong>
                           <p>{reference.note}</p>
                           {scenario ? <button onClick={() => onOpenFilm(scenario)} type="button">Open Film Atlas analysis →</button> : <small>No standalone Production Case is linked yet.</small>}
-                          {activeChapter.number === 28 && !scenario && pulseCandidateMatches(reference.title, reference.year) && onOpenPulseCandidate && <button className="pulse-book-candidate-link" type="button" onClick={onOpenPulseCandidate}>Open candidate article &amp; workshop →</button>}
+                          {studyCandidate && onOpenStudyCandidate && <button className="film-study-book-candidate-link" data-candidate-id={studyCandidate.candidateId} type="button" onClick={() => onOpenStudyCandidate(studyCandidate.routeSlug)}>Open candidate article &amp; workshop →</button>}
                         </article>
                       );
                     })}

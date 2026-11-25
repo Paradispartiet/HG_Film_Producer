@@ -562,5 +562,12 @@
         "pt": "Preparar uma página de créditos e fontes, assinalando as durações divergentes e as incógnitas técnicas."
       }
     }
-  ]
+  ],
+  "routeSlug": "candidate-pulse-2001",
+  "workshopIntroduction": {
+    "en": "Explore early internet culture, selective colour and period sound in this optional lesson.",
+    "nb": "Utforsk tidlig internettkultur, selektiv fargebruk og tidsriktige lyder i denne frivillige øvelsen.",
+    "fr": "Explorez les débuts d'internet, les couleurs sélectives et les sons d'époque dans cet exercice facultatif.",
+    "pt": "Explore a internet inicial, a cor seletiva e os sons de época neste exercício facultativo."
+  }
 }

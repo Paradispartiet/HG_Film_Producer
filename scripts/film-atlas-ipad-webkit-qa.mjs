@@ -117,14 +117,14 @@ async function checkPulseCandidate(browser, language) {
   const label = language + "-pulse-candidate";
   try {
     await page.goto(new URL("#/atlas", SITE).href, { waitUntil: "domcontentloaded" });
-    await page.locator(".pulse-candidate-link").click();
-    const candidate = page.locator(".pulse-candidate-page");
+    await page.locator(".film-study-candidate-link[data-candidate-id=candidate_pulse_2001]").click();
+    const candidate = page.locator(".film-study-candidate-page[data-candidate-id=candidate_pulse_2001]");
     await candidate.waitFor({ state: "visible" });
     assert.match(page.url(), /candidate-pulse-2001/);
     assert.match(await candidate.locator("h1").textContent(), /Pulse/);
     const before = await page.evaluate(() => JSON.stringify({ ...localStorage }));
     const rows = candidate.locator(".scenario-source-workshop__question");
-    assert.equal(await candidate.locator('.pulse-production-phases li').count(), 6);
+    assert.equal(await candidate.locator('.candidate-production-phases li').count(), 6);
     assert.equal(await rows.count(), 6);
     for (let i = 0; i < 6; i++) {
       const row = rows.nth(i);
@@ -140,7 +140,7 @@ async function checkPulseCandidate(browser, language) {
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 2));
     await candidate.locator("nav button").nth(1).click();
     await page.locator(".film-history-book-chapter-link").nth(27).click();
-    await page.locator(".pulse-book-candidate-link").click();
+    await page.locator(".film-study-book-candidate-link[data-candidate-id=candidate_pulse_2001]").click();
     await candidate.waitFor({ state: "visible" });
     passed.push(label);
     console.log("PASS " + label);
