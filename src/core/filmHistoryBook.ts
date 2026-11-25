@@ -21,6 +21,7 @@ import { filmHistoryChapterTwenty } from "./filmHistoryChapterTwenty.js";
 import { filmHistoryChapterTwentyOne } from "./filmHistoryChapterTwentyOne.js";
 import { filmHistoryChapterTwentyTwo } from "./filmHistoryChapterTwentyTwo.js";
 import { filmHistoryChapterTwentyThree } from "./filmHistoryChapterTwentyThree.js";
+import { filmHistoryChapterTwentyFour } from "./filmHistoryChapterTwentyFour.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -169,15 +170,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
       filmHistoryChapterTwentyOne,
       filmHistoryChapterTwentyTwo,
       filmHistoryChapterTwentyThree,
-      outline(
-        "blockbuster-home-video",
-        24,
-        "Blockbusters, conglomerates and home video",
-        "1975–1989",
-        "Event films, saturation marketing, multiplexes, cable and home video change how films are financed, released, watched and valued.",
-        ["Explain the economics of event-film release.", "Connect home video to catalog value and audience behavior.", "Analyze effects technology inside blockbuster production."],
-        ["saturation booking", "multiplex", "home video", "conglomerate", "high concept"],
-      ),
+      filmHistoryChapterTwentyFour,
       outline(
         "festival-art-cinema",
         25,
