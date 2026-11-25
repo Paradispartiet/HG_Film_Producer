@@ -25,6 +25,7 @@ import { filmHistoryChapterTwentyFour } from "./filmHistoryChapterTwentyFour.js"
 import { filmHistoryChapterTwentyFive } from "./filmHistoryChapterTwentyFive.js";
 import { filmHistoryChapterTwentySix } from "./filmHistoryChapterTwentySix.js";
 import { filmHistoryChapterTwentySeven } from "./filmHistoryChapterTwentySeven.js";
+import { filmHistoryChapterTwentyEight } from "./filmHistoryChapterTwentyEight.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -186,15 +187,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     chapters: [
       filmHistoryChapterTwentySix,
       filmHistoryChapterTwentySeven,
-      outline(
-        "east-asian-turn",
-        28,
-        "East Asian new waves and global genre cinema",
-        "1980s–2010s",
-        "Hong Kong, Taiwan, mainland China, South Korea and Japan become major centers of art cinema, action, horror and genre reinvention with worldwide influence.",
-        ["Compare several East Asian industrial contexts.", "Trace genre circulation and remake cultures.", "Connect festival prestige to commercial regional markets."],
-        ["Hong Kong New Wave", "Taiwan New Cinema", "Korean New Wave", "J-horror", "genre circulation"],
-      ),
+      filmHistoryChapterTwentyEight,
       outline(
         "platform-era",
         29,
