@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Twenty-three pre-existing Production Cases receive evidence-backed craft decisions.
+ * Twenty-four pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -2928,6 +2928,195 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "s1",
           "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_a_trip_to_the_moon_1902",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore Méliès's constructed fantasy spaces, camera transformations and the restoration of the colour version.",
+      "nb": "Utforsk Méliès' konstruerte fantasirom, kameraforvandlinger og restaureringen av fargeversjonen.",
+      "fr": "Explorez les espaces fantastiques construits par Méliès, les transformations à la caméra et la restauration de la version en couleurs.",
+      "pt": "Explore os espaços fantásticos construídos por Méliès, as transformações na câmara e o restauro da versão a cores."
+    },
+    "sources": [
+      {
+        "id": "cannes-film",
+        "title": "Le Voyage dans la lune (A Trip to the Moon)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/le-voyage-dans-la-lune/"
+      },
+      {
+        "id": "cannes-return",
+        "title": "A Trip to the Moon – a return journey",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/2011/a-trip-to-the-moon-a-return-journey/"
+      },
+      {
+        "id": "cannes-classics",
+        "title": "Cannes Classics 2011",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/2011/cannes-classics-2011/"
+      },
+      {
+        "id": "loc",
+        "title": "Lost 19th century film by Méliès discovered at the Library",
+        "publisher": "Library of Congress",
+        "url": "https://blogs.loc.gov/loc/2026/02/lost-19th-century-film-by-melies-discovered-at-the-library/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "moon-tableaux",
+        "area": "camera",
+        "prompt": {
+          "en": "How could an original fantasy tableau make its imaginary world readable?",
+          "nb": "Hvordan kan et eget fantasitablå gjøre den oppdiktede verdenen lesbar?",
+          "fr": "Comment rendre lisible un monde imaginaire dans un tableau fantastique original ?",
+          "pt": "Como tornar legível um mundo imaginário num quadro fantástico original?"
+        },
+        "options": [
+          {
+            "id": "tableau",
+            "label": {
+              "en": "Compose a drawn stage with layered scenery and visible entrances",
+              "nb": "Komponer en tegnet scene med dekor i flere plan og synlige innganger",
+              "fr": "Composer une scène dessinée avec des décors en profondeur et des entrées visibles",
+              "pt": "Compor um palco desenhado com cenários em profundidade e entradas visíveis"
+            }
+          },
+          {
+            "id": "real",
+            "label": {
+              "en": "Treat the imagined voyage as a documentary recording",
+              "nb": "Behandle den oppdiktede reisen som et dokumentaropptak",
+              "fr": "Traiter le voyage imaginaire comme un documentaire",
+              "pt": "Tratar a viagem imaginária como um registo documental"
+            }
+          },
+          {
+            "id": "random",
+            "label": {
+              "en": "Combine unrelated fragments without spatial design",
+              "nb": "Kombiner urelaterte fragmenter uten romlig utforming",
+              "fr": "Combiner des fragments sans organisation spatiale",
+              "pt": "Combinar fragmentos sem organização espacial"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "tableau",
+        "explanation": {
+          "en": "The existing Cannes and Library of Congress dossiers place Méliès in a constructed fantasy and studio tradition. Draw an original tableau to study composition and depth; do not infer an exact historical set plan.",
+          "nb": "Cannes- og LOC-dokumentasjonen plasserer Méliès i en tradisjon med konstruert fantasi og studioarbeid. Tegn et eget tablå for å studere komposisjon og dybde; ikke utled en eksakt historisk scenografi.",
+          "fr": "Les dossiers Cannes et LOC situent Méliès dans une tradition de fantaisie construite en studio. Dessinez un tableau original pour étudier composition et profondeur, sans déduire un plan historique exact.",
+          "pt": "Os dossiers Cannes e LOC situam Méliès numa tradição de fantasia construída em estúdio. Desenhe um quadro original para estudar composição e profundidade, sem deduzir um cenário histórico exato."
+        },
+        "sourceIds": [
+          "cannes-film",
+          "loc"
+        ]
+      },
+      {
+        "id": "moon-transformation",
+        "area": "camera",
+        "prompt": {
+          "en": "How could a safe tabletop exercise explore an apparent magical transformation?",
+          "nb": "Hvordan kan en trygg bordøvelse utforske en tilsynelatende magisk forvandling?",
+          "fr": "Comment explorer une transformation magique apparente dans un exercice de table sans danger ?",
+          "pt": "Como explorar uma transformação mágica aparente num exercício de mesa seguro?"
+        },
+        "options": [
+          {
+            "id": "continuous",
+            "label": {
+              "en": "Record a continuous view without changing any object",
+              "nb": "Ta opp et sammenhengende bilde uten å endre noen gjenstand",
+              "fr": "Filmer en continu sans modifier aucun objet",
+              "pt": "Filmar continuamente sem alterar nenhum objeto"
+            }
+          },
+          {
+            "id": "substitution",
+            "label": {
+              "en": "Keep framing stable and compare two images with a substituted object",
+              "nb": "Hold utsnittet stabilt og sammenlign to bilder der en gjenstand er byttet ut",
+              "fr": "Garder le cadrage stable et comparer deux images avec un objet substitué",
+              "pt": "Manter o enquadramento estável e comparar duas imagens com um objeto substituído"
+            }
+          },
+          {
+            "id": "digital",
+            "label": {
+              "en": "Attribute modern digital effects to the original film",
+              "nb": "Tilskriv originalfilmen moderne digitale effekter",
+              "fr": "Attribuer des effets numériques modernes au film original",
+              "pt": "Atribuir efeitos digitais modernos ao filme original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "substitution",
+        "explanation": {
+          "en": "The LOC dossier documents camera stoppage among Méliès's broader methods. A two-image object substitution illustrates the principle; it is not a verified shot-by-shot reconstruction of this film.",
+          "nb": "LOC-dokumentasjonen beskriver kamerastans som en av Méliès' bredere metoder. Et gjenstandsbytte mellom to bilder illustrerer prinsippet; det er ikke en verifisert rekonstruksjon av filmens enkelte bilder.",
+          "fr": "Le dossier LOC décrit l'arrêt de caméra parmi les méthodes générales de Méliès. Une substitution d'objet entre deux images illustre le principe, sans reconstituer les plans exacts du film.",
+          "pt": "O dossier LOC descreve a paragem da câmara entre os métodos gerais de Méliès. A substituição de um objeto entre duas imagens ilustra o princípio, sem reconstruir os planos exatos do filme."
+        },
+        "sourceIds": [
+          "loc",
+          "cannes-return"
+        ]
+      },
+      {
+        "id": "moon-restoration",
+        "area": "research",
+        "prompt": {
+          "en": "How should a researcher describe the restored colour version and its music?",
+          "nb": "Hvordan bør en forsker beskrive den restaurerte fargeversjonen og musikken?",
+          "fr": "Comment décrire la version en couleurs restaurée et sa musique ?",
+          "pt": "Como descrever a versão a cores restaurada e a sua música?"
+        },
+        "options": [
+          {
+            "id": "original",
+            "label": {
+              "en": "Describe the modern soundtrack as original synchronized sound from 1902",
+              "nb": "Beskriv det moderne lydsporet som original synkron lyd fra 1902",
+              "fr": "Présenter la musique moderne comme son synchrone original de 1902",
+              "pt": "Apresentar a música moderna como som sincronizado original de 1902"
+            }
+          },
+          {
+            "id": "identical",
+            "label": {
+              "en": "Treat all surviving prints and restorations as identical",
+              "nb": "Behandle alle bevarte kopier og restaureringer som identiske",
+              "fr": "Traiter toutes les copies et restaurations comme identiques",
+              "pt": "Tratar todas as cópias e restauros como idênticos"
+            }
+          },
+          {
+            "id": "provenance",
+            "label": {
+              "en": "Identify the recovered colour material, restoration and later soundtrack separately",
+              "nb": "Identifiser det gjenfunne fargematerialet, restaureringen og det senere lydsporet hver for seg",
+              "fr": "Identifier séparément le matériau couleur retrouvé, la restauration et la musique ultérieure",
+              "pt": "Identificar separadamente o material a cores recuperado, o restauro e a música posterior"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "provenance",
+        "explanation": {
+          "en": "Cannes documents the recovered colour material, frame-by-frame restoration and new music by Air for the restored presentation. Separate the 1902 production, the surviving print and the later restoration soundtrack.",
+          "nb": "Cannes dokumenterer gjenfunnet fargemateriale, restaurering bilde for bilde og ny musikk av Air til den restaurerte visningen. Skill produksjonen fra 1902, den bevarte kopien og restaureringens senere lydspor.",
+          "fr": "Cannes documente le matériau couleur retrouvé, la restauration image par image et la nouvelle musique d'Air. Distinguez la production de 1902, la copie conservée et la musique ultérieure de la restauration.",
+          "pt": "Cannes documenta o material a cores recuperado, o restauro imagem a imagem e a nova música de Air. Distinga a produção de 1902, a cópia preservada e a música posterior do restauro."
+        },
+        "sourceIds": [
+          "cannes-film",
+          "cannes-return",
+          "cannes-classics"
         ]
       }
     ]

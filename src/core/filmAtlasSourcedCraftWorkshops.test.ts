@@ -32,15 +32,16 @@ const ids = [
   "scenario_the_corbett_fitzsimmons_fight_1897",
   "scenario_employees_leaving_browns_atlas_works_sheffield_1901",
   "scenario_uncle_josh_at_the_moving_picture_show_1902",
+  "scenario_a_trip_to_the_moon_1902",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly twenty-three existing cases have sixty-nine original, source-backed decisions", () => {
+test("Exactly twenty-four existing cases have seventy-two original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 23);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 69);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 24);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 72);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -59,6 +60,14 @@ test("Exactly twenty-three existing cases have sixty-nine original, source-backe
       assert.ok(definitions.includes(workshop.scenarioId));
       const dossierFiles: Record<string, string> = {"scenario_the_corbett_fitzsimmons_fight_1897":"src/ui/data/scenarioProductionVerificationCorbettFitzsimmons.ts","scenario_employees_leaving_browns_atlas_works_sheffield_1901":"src/ui/data/scenarioProductionVerificationBrownsAtlasWorks.ts","scenario_uncle_josh_at_the_moving_picture_show_1902":"src/ui/data/scenarioProductionVerificationUncleJosh.ts"};
       const dossier = readFileSync(dossierFiles[workshop.scenarioId]!, "utf8");
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (workshop.scenarioId === "scenario_a_trip_to_the_moon_1902") {
+      const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
+      assert.ok(definition.includes(workshop.scenarioId));
+      const verification = readFileSync("src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const dossier = verification.slice(start, verification.indexOf("\n  },", start));
       for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
     } else if (workshop.scenarioId === "scenario_rescued_by_rover_1905") {
       const definition = readFileSync("src/core/chapterOneRescuedByRoverExpansion.ts", "utf8");
@@ -389,4 +398,11 @@ test("Exhibition workshops preserve provenance, staged actuality and fictional s
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_corbett_fitzsimmons_fight_1897")?.questions.map(q => q.bestSupportedOptionId), ["handoff","system","separate"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_employees_leaving_browns_atlas_works_sheffield_1901")?.questions.map(q => q.bestSupportedOptionId), ["recognize","distinguish","local"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_uncle_josh_at_the_moving_picture_show_1902")?.questions.map(q => q.bestSupportedOptionId), ["space","beats","separate"]);
+});
+
+test("Méliès workshop separates studio techniques, original exercises and restoration music", () => {
+  const moon = getSourceBackedCaseWorkshop("scenario_a_trip_to_the_moon_1902");
+  assert.ok(moon);
+  assert.deepEqual(moon.questions.map(q => q.bestSupportedOptionId), ["tableau", "substitution", "provenance"]);
+  assert.match(moon.questions[2]?.explanation.en ?? "", /new music by Air/);
 });
